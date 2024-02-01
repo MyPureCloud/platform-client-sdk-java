@@ -371,14 +371,14 @@ public class Campaign  implements Serializable {
 
 
   /**
-   * The targeted abandon rate percentage. Required for progressive, power, and predictive campaigns.
+   * The targeted compliance abandon rate percentage. Required for power and predictive campaigns.
    **/
   public Campaign abandonRate(Double abandonRate) {
     this.abandonRate = abandonRate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The targeted abandon rate percentage. Required for progressive, power, and predictive campaigns.")
+  @ApiModelProperty(example = "null", value = "The targeted compliance abandon rate percentage. Required for power and predictive campaigns.")
   @JsonProperty("abandonRate")
   public Double getAbandonRate() {
     return abandonRate;

@@ -185,6 +185,8 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationTagAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationTagsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodesDivisionviewRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodesDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRoutinglanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRoutingskillsRequest;
@@ -198,6 +200,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueUserRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingSettingsContactcenterRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchRoutingSettingsTranscriptionRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingSkillgroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserQueuesRequest;
@@ -6358,6 +6361,156 @@ public class RoutingApiAsync {
   }
 
   /**
+   * Get a simplified wrap-up code.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WrapupCode> getRoutingWrapupcodesDivisionviewAsync(GetRoutingWrapupcodesDivisionviewRequest request, final AsyncApiCallback<WrapupCode> callback) {
+    try {
+      final SettableFuture<WrapupCode> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WrapupCode>() {}, new AsyncApiCallback<ApiResponse<WrapupCode>>() {
+        @Override
+        public void onCompleted(ApiResponse<WrapupCode> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a simplified wrap-up code.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WrapupCode>> getRoutingWrapupcodesDivisionviewAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WrapupCode>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WrapupCode>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WrapupCode>() {}, new AsyncApiCallback<ApiResponse<WrapupCode>>() {
+        @Override
+        public void onCompleted(ApiResponse<WrapupCode> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WrapupCode> response = (ApiResponse<WrapupCode>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WrapupCode> response = (ApiResponse<WrapupCode>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a paged listing of simplified wrapup code objects, filterable by name, wrapup code ID(s), or division ID(s).
+   * Specifying both name and ID parameters is not supported.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WrapupCodeEntityListing> getRoutingWrapupcodesDivisionviewsAsync(GetRoutingWrapupcodesDivisionviewsRequest request, final AsyncApiCallback<WrapupCodeEntityListing> callback) {
+    try {
+      final SettableFuture<WrapupCodeEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WrapupCodeEntityListing>() {}, new AsyncApiCallback<ApiResponse<WrapupCodeEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<WrapupCodeEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a paged listing of simplified wrapup code objects, filterable by name, wrapup code ID(s), or division ID(s).
+   * Specifying both name and ID parameters is not supported.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WrapupCodeEntityListing>> getRoutingWrapupcodesDivisionviewsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WrapupCodeEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WrapupCodeEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WrapupCodeEntityListing>() {}, new AsyncApiCallback<ApiResponse<WrapupCodeEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<WrapupCodeEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WrapupCodeEntityListing> response = (ApiResponse<WrapupCodeEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WrapupCodeEntityListing> response = (ApiResponse<WrapupCodeEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get queues for user
    * 
    * @param request the request object
@@ -7325,6 +7478,81 @@ public class RoutingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Patch Transcription Settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TranscriptionSettings> patchRoutingSettingsTranscriptionAsync(PatchRoutingSettingsTranscriptionRequest request, final AsyncApiCallback<TranscriptionSettings> callback) {
+    try {
+      final SettableFuture<TranscriptionSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TranscriptionSettings>() {}, new AsyncApiCallback<ApiResponse<TranscriptionSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<TranscriptionSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Patch Transcription Settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TranscriptionSettings>> patchRoutingSettingsTranscriptionAsync(ApiRequest<TranscriptionSettings> request, final AsyncApiCallback<ApiResponse<TranscriptionSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TranscriptionSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TranscriptionSettings>() {}, new AsyncApiCallback<ApiResponse<TranscriptionSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<TranscriptionSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TranscriptionSettings> response = (ApiResponse<TranscriptionSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TranscriptionSettings> response = (ApiResponse<TranscriptionSettings>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -9293,7 +9521,6 @@ public class RoutingApiAsync {
   /**
    * Imports a phone number for SMS
    * 
-   * postRoutingSmsPhonenumbersImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -9328,7 +9555,6 @@ public class RoutingApiAsync {
   /**
    * Imports a phone number for SMS
    * 
-   * postRoutingSmsPhonenumbersImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

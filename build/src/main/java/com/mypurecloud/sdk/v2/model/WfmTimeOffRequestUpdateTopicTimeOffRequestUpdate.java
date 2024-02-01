@@ -102,6 +102,7 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ADVANCETIMEELAPSED("AdvanceTimeElapsed"),
     AUTOAPPROVED("AutoApproved"),
+    INSUFFICIENTBALANCE("InsufficientBalance"),
     INVALIDDAILYDURATION("InvalidDailyDuration"),
     OUTSIDESHIFT("OutsideShift"),
     REMOVEDFROMWAITLIST("RemovedFromWaitlist"),

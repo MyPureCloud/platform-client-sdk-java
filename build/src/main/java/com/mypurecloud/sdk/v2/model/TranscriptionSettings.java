@@ -74,6 +74,8 @@ public class TranscriptionSettings  implements Serializable {
   private Integer transcriptionConfidenceThreshold = null;
   private Boolean lowLatencyTranscriptionEnabled = null;
   private Boolean contentSearchEnabled = null;
+  private Boolean pciDssRedactionEnabled = null;
+  private Boolean piiRedactionEnabled = null;
 
   
   /**
@@ -148,6 +150,42 @@ public class TranscriptionSettings  implements Serializable {
   }
 
 
+  /**
+   * Setting to enable/disable PCI DSS Redaction
+   **/
+  public TranscriptionSettings pciDssRedactionEnabled(Boolean pciDssRedactionEnabled) {
+    this.pciDssRedactionEnabled = pciDssRedactionEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Setting to enable/disable PCI DSS Redaction")
+  @JsonProperty("pciDssRedactionEnabled")
+  public Boolean getPciDssRedactionEnabled() {
+    return pciDssRedactionEnabled;
+  }
+  public void setPciDssRedactionEnabled(Boolean pciDssRedactionEnabled) {
+    this.pciDssRedactionEnabled = pciDssRedactionEnabled;
+  }
+
+
+  /**
+   * Setting to enable/disable PII Redaction
+   **/
+  public TranscriptionSettings piiRedactionEnabled(Boolean piiRedactionEnabled) {
+    this.piiRedactionEnabled = piiRedactionEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Setting to enable/disable PII Redaction")
+  @JsonProperty("piiRedactionEnabled")
+  public Boolean getPiiRedactionEnabled() {
+    return piiRedactionEnabled;
+  }
+  public void setPiiRedactionEnabled(Boolean piiRedactionEnabled) {
+    this.piiRedactionEnabled = piiRedactionEnabled;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -161,12 +199,14 @@ public class TranscriptionSettings  implements Serializable {
     return Objects.equals(this.transcription, transcriptionSettings.transcription) &&
             Objects.equals(this.transcriptionConfidenceThreshold, transcriptionSettings.transcriptionConfidenceThreshold) &&
             Objects.equals(this.lowLatencyTranscriptionEnabled, transcriptionSettings.lowLatencyTranscriptionEnabled) &&
-            Objects.equals(this.contentSearchEnabled, transcriptionSettings.contentSearchEnabled);
+            Objects.equals(this.contentSearchEnabled, transcriptionSettings.contentSearchEnabled) &&
+            Objects.equals(this.pciDssRedactionEnabled, transcriptionSettings.pciDssRedactionEnabled) &&
+            Objects.equals(this.piiRedactionEnabled, transcriptionSettings.piiRedactionEnabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(transcription, transcriptionConfidenceThreshold, lowLatencyTranscriptionEnabled, contentSearchEnabled);
+    return Objects.hash(transcription, transcriptionConfidenceThreshold, lowLatencyTranscriptionEnabled, contentSearchEnabled, pciDssRedactionEnabled, piiRedactionEnabled);
   }
 
   @Override
@@ -178,6 +218,8 @@ public class TranscriptionSettings  implements Serializable {
     sb.append("    transcriptionConfidenceThreshold: ").append(toIndentedString(transcriptionConfidenceThreshold)).append("\n");
     sb.append("    lowLatencyTranscriptionEnabled: ").append(toIndentedString(lowLatencyTranscriptionEnabled)).append("\n");
     sb.append("    contentSearchEnabled: ").append(toIndentedString(contentSearchEnabled)).append("\n");
+    sb.append("    pciDssRedactionEnabled: ").append(toIndentedString(pciDssRedactionEnabled)).append("\n");
+    sb.append("    piiRedactionEnabled: ").append(toIndentedString(piiRedactionEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }

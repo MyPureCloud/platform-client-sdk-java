@@ -22,6 +22,8 @@ docs/ActionAggregationQuery.md
 docs/ActionAggregationView.md
 docs/ActionAsyncAggregateQueryResponse.md
 docs/ActionAsyncAggregationQuery.md
+docs/ActionCertificate.md
+docs/ActionCertificateListing.md
 docs/ActionConfig.md
 docs/ActionContract.md
 docs/ActionContractInput.md
@@ -64,6 +66,7 @@ docs/AdditionalLanguagesIntent.md
 docs/AdditionalLanguagesSynonyms.md
 docs/AdditionalMessage.md
 docs/Address.md
+docs/AddressableEntity.md
 docs/AddressableEntityRef.md
 docs/AddressableLicenseDefinition.md
 docs/AdherenceExplanationAsyncResponse.md
@@ -246,9 +249,7 @@ docs/AudioState.md
 docs/AudioUpdatedEvent.md
 docs/AuditApi.json
 docs/AuditApi.md
-docs/AuditChange.md
 docs/AuditEntity.md
-docs/AuditEntityReference.md
 docs/AuditFacet.md
 docs/AuditFilter.md
 docs/AuditLogMessage.md
@@ -560,6 +561,7 @@ docs/ChatMessageUser.md
 docs/ChatReaction.md
 docs/ChatSendMessageResponse.md
 docs/ChatSettings.md
+docs/ChatUserSettings.md
 docs/Check.md
 docs/ClientApp.md
 docs/ClientAppConfigurationInfo.md
@@ -591,6 +593,7 @@ docs/CobrowseMediaParticipant.md
 docs/CobrowseSettings.md
 docs/CobrowseWebMessagingSession.md
 docs/Cobrowsesession.md
+docs/Column.md
 docs/ColumnDataTypeSpecification.md
 docs/ColumnStatus.md
 docs/CommandStatus.md
@@ -661,6 +664,7 @@ docs/ContactListFilterEntityListing.md
 docs/ContactListFilterPredicate.md
 docs/ContactListFilterRange.md
 docs/ContactListTemplate.md
+docs/ContactListTemplateBulkRetrieveBody.md
 docs/ContactListTemplateEntityListing.md
 docs/ContactListing.md
 docs/ContactPhoneNumberColumn.md
@@ -672,12 +676,10 @@ docs/ContactlistImportStatusImportStatus.md
 docs/ContactlistImportStatusObject.md
 docs/ContentActions.md
 docs/ContentAttachment.md
-docs/ContentAttributeFilterItem.md
 docs/ContentButtonResponse.md
 docs/ContentCard.md
 docs/ContentCardAction.md
 docs/ContentCarousel.md
-docs/ContentFacetFilterItem.md
 docs/ContentFilterItem.md
 docs/ContentGeneric.md
 docs/ContentList.md
@@ -698,12 +700,10 @@ docs/ContentOfferStyleProperties.md
 docs/ContentOfferStylingConfiguration.md
 docs/ContentPositionProperties.md
 docs/ContentPostback.md
-docs/ContentQueryRequest.md
 docs/ContentQuickReply.md
 docs/ContentQuickReplyV2.md
 docs/ContentReaction.md
 docs/ContentSetting.md
-docs/ContentSortItem.md
 docs/ContentStory.md
 docs/ContentText.md
 docs/Context.md
@@ -1061,6 +1061,7 @@ docs/Cursors.md
 docs/CustomEventAttribute.md
 docs/CustomEventAttributeList.md
 docs/CustomI18nLabels.md
+docs/CustomProvider.md
 docs/CustomerEndDetailEventTopicCustomerEndEvent.md
 docs/CustomerInteractionCenter.md
 docs/CustomerStartDetailEventTopicCustomerStartEvent.md
@@ -1238,8 +1239,6 @@ docs/DoNotSendActionSettings.md
 docs/Document.md
 docs/DocumentArticle.md
 docs/DocumentAttribute.md
-docs/DocumentAudit.md
-docs/DocumentAuditEntityListing.md
 docs/DocumentBody.md
 docs/DocumentBodyBlock.md
 docs/DocumentBodyImage.md
@@ -1377,11 +1376,21 @@ docs/EffectiveConfiguration.md
 docs/Email.md
 docs/EmailAddress.md
 docs/EmailAttachment.md
+docs/EmailBeginTransmittingEvent.md
 docs/EmailCampaignSchedule.md
 docs/EmailColumn.md
+docs/EmailCommunicationAnsweredEvent.md
+docs/EmailCommunicationDispositionAppliedEvent.md
+docs/EmailCommunicationEndedEvent.md
+docs/EmailCommunicationRepliedEvent.md
 docs/EmailConfig.md
 docs/EmailConversation.md
 docs/EmailConversationEntityListing.md
+docs/EmailEndTransferEvent.md
+docs/EmailExternalEstablishedEvent.md
+docs/EmailFlowEstablishedEvent.md
+docs/EmailHoldUpdatedEvent.md
+docs/EmailInitialConfiguration.md
 docs/EmailMediaParticipant.md
 docs/EmailMediaPolicy.md
 docs/EmailMediaPolicyConditions.md
@@ -1390,8 +1399,13 @@ docs/EmailMessagePreview.md
 docs/EmailMessagePreviewListing.md
 docs/EmailMessageReply.md
 docs/EmailOutboundDomainResult.md
+docs/EmailProgressTransferEvent.md
+docs/EmailRoutingEstablishedEvent.md
+docs/EmailRoutingTransferEvent.md
 docs/EmailSettings.md
 docs/EmailSetup.md
+docs/EmailUserEstablishedEvent.md
+docs/EmailUserTransferEvent.md
 docs/EmailsApi.json
 docs/EmailsApi.md
 docs/EmailsSettings.md
@@ -1570,9 +1584,12 @@ docs/FaxTopicLockData.md
 docs/FaxTopicUserData.md
 docs/FaxTopicWorkspaceData.md
 docs/FeatureState.md
+docs/FeedbackAddRequest.md
 docs/FieldConfig.md
 docs/FieldConfigs.md
 docs/FieldList.md
+docs/FileSpecificationTemplate.md
+docs/FileSpecificationTemplateEntityListing.md
 docs/FileUploadMode.md
 docs/FileUploadSettings.md
 docs/Filter.md
@@ -1664,6 +1681,12 @@ docs/Format.md
 docs/FormsTrackTrigger.md
 docs/FromEmailAddress.md
 docs/FullDayTimeOffMarker.md
+docs/Function.md
+docs/FunctionConfig.md
+docs/FunctionRuntime.md
+docs/FunctionUploadRequest.md
+docs/FunctionUploadResponse.md
+docs/FunctionZipConfig.md
 docs/GDPRJourneyCustomer.md
 docs/GDPRRequest.md
 docs/GDPRRequestEntityListing.md
@@ -1776,8 +1799,10 @@ docs/IVRDivisionViewEntityListing.md
 docs/IVREntityListing.md
 docs/IdentifierClaimRequest.md
 docs/IdentityNow.md
+docs/IdentityProvider.md
 docs/IdentityProviderApi.json
 docs/IdentityProviderApi.md
+docs/IdentityProviderEntityListing.md
 docs/IdleEventTrigger.md
 docs/IdleTokenTimeout.md
 docs/IgnoredActivityCategories.md
@@ -1792,6 +1817,8 @@ docs/ImportStatus.md
 docs/ImportStatusRequest.md
 docs/ImportTemplate.md
 docs/ImportTemplateEntityListing.md
+docs/ImportTemplateImportStatusImportStatus.md
+docs/ImportTemplateImportStatusObject.md
 docs/InboundDomain.md
 docs/InboundDomainEntityListing.md
 docs/InboundDomainPatchRequest.md
@@ -2199,7 +2226,6 @@ docs/ListedTopic.md
 docs/LocalDateRange.md
 docs/LocalEncryptionConfiguration.md
 docs/LocalEncryptionKeyRequest.md
-docs/LocalTime.md
 docs/LocaleFlowVersionInfo.md
 docs/LocaleHealth.md
 docs/LocaleInfo.md
@@ -2223,7 +2249,9 @@ docs/LogCaptureApi.json
 docs/LogCaptureApi.md
 docs/LogCaptureDownloadExecutionResponse.md
 docs/LogCaptureQueryRequest.md
+docs/LogCaptureQueryResponse.md
 docs/LogCaptureUserConfiguration.md
+docs/LogEntry.md
 docs/LogicalInterfaceEntityListing.md
 docs/LongTermForecastPlanningGroupData.md
 docs/LongTermForecastResult.md
@@ -2341,6 +2369,8 @@ docs/MinerTopicPhrase.md
 docs/MinerTopicsListing.md
 docs/MobileDevicesApi.json
 docs/MobileDevicesApi.md
+docs/MobileNotificationSettings.md
+docs/MobileSettings.md
 docs/ModelVoid.md
 docs/ModelingProcessingError.md
 docs/ModelingStatusResponse.md
@@ -2417,8 +2447,6 @@ docs/OAuthClientEntityListing.md
 docs/OAuthClientListing.md
 docs/OAuthClientRequest.md
 docs/OAuthLastTokenIssued.md
-docs/OAuthProvider.md
-docs/OAuthProviderEntityListing.md
 docs/OAuthScope.md
 docs/OAuthScopeListing.md
 docs/Objective.md
@@ -2455,6 +2483,9 @@ docs/OpenMessagingToRecipient.md
 docs/OpenNormalizedMessage.md
 docs/OpenReceiptNormalizedMessage.md
 docs/Operation.md
+docs/OperationCreatorUserResponse.md
+docs/OperationListing.md
+docs/OperationResponse.md
 docs/OperationalEventNotificationTopicEventEntity.md
 docs/OperationalEventNotificationTopicOperationalEventNotification.md
 docs/OperationalEventsApi.json
@@ -2536,6 +2567,7 @@ docs/PINConfiguration.md
 docs/Page.md
 docs/PagedNamespaceListing.md
 docs/PagelessDomainEntityListingEvaluationVersion.md
+docs/PagelessEntityListing.md
 docs/PagingSpec.md
 docs/Parameter.md
 docs/ParsedCertificate.md
@@ -2647,6 +2679,7 @@ docs/PredictorModelRetrainingError.md
 docs/PredictorModels.md
 docs/PredictorSchedule.md
 docs/PredictorWorkloadBalancing.md
+docs/PreprocessingRule.md
 docs/PresenceApi.json
 docs/PresenceApi.md
 docs/PresenceDefinition.md
@@ -3183,11 +3216,14 @@ docs/ScimV2SchemaListResponse.md
 docs/ScimV2User.md
 docs/ScorableSurvey.md
 docs/ScoredAgent.md
+docs/ScreenRecordingApi.json
+docs/ScreenRecordingApi.md
 docs/ScreenRecordingMetaData.md
 docs/ScreenRecordingMetaDataRequest.md
 docs/ScreenRecordingSession.md
 docs/ScreenRecordingSessionListing.md
 docs/ScreenRecordingSessionRequest.md
+docs/ScreenRecordingUserAuthenticatedInfo.md
 docs/Screenshare.md
 docs/Script.md
 docs/ScriptEntityListing.md
@@ -3214,11 +3250,7 @@ docs/SecurityProfileEntityListing.md
 docs/Segment.md
 docs/SegmentAssignedEvent.md
 docs/SegmentAssignedEventSegment.md
-docs/SegmentAssignment.md
 docs/SegmentAssignmentEvent.md
-docs/SegmentAssignmentListing.md
-docs/SegmentAssignmentSegment.md
-docs/SegmentAssignmentSession.md
 docs/SegmentDetailQueryClause.md
 docs/SegmentDetailQueryFilter.md
 docs/SegmentDetailQueryPredicate.md
@@ -3993,7 +4025,21 @@ docs/WeekShiftTradeMatchesSummaryResponse.md
 docs/WeekShiftTradeResponse.md
 docs/WemCoachingUserNotificationTopicCoachingAppointmentReference.md
 docs/WemCoachingUserNotificationTopicCoachingUserNotification.md
+docs/WfmAdherenceExplanationJobCompleteTopicAdherenceExplanationChangedNotification.md
+docs/WfmAdherenceExplanationJobCompleteTopicAdherenceExplanationJobNotification.md
+docs/WfmAdherenceExplanationJobCompleteTopicBusinessUnit.md
+docs/WfmAdherenceExplanationJobCompleteTopicErrorBody.md
+docs/WfmAdherenceExplanationJobCompleteTopicManagementUnit.md
+docs/WfmAdherenceExplanationJobCompleteTopicUserReference.md
 docs/WfmAgent.md
+docs/WfmAgentAdherenceExplanationChangedAgentTopicAdherenceExplanationChangedNotification.md
+docs/WfmAgentAdherenceExplanationChangedAgentTopicBusinessUnit.md
+docs/WfmAgentAdherenceExplanationChangedAgentTopicManagementUnit.md
+docs/WfmAgentAdherenceExplanationChangedAgentTopicUserReference.md
+docs/WfmAgentAdherenceExplanationChangedBusinessUnitTopicAdherenceExplanationChangedNotification.md
+docs/WfmAgentAdherenceExplanationChangedBusinessUnitTopicBusinessUnit.md
+docs/WfmAgentAdherenceExplanationChangedBusinessUnitTopicManagementUnit.md
+docs/WfmAgentAdherenceExplanationChangedBusinessUnitTopicUserReference.md
 docs/WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate.md
 docs/WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification.md
 docs/WfmAgentScheduleUpdateTopicUserReference.md
@@ -4165,6 +4211,7 @@ docs/WidgetsApi.json
 docs/WidgetsApi.md
 docs/WorkPlan.md
 docs/WorkPlanActivity.md
+docs/WorkPlanBidRanks.md
 docs/WorkPlanConfigurationViolationMessage.md
 docs/WorkPlanConstraintConflictMessage.md
 docs/WorkPlanConstraintMessage.md
@@ -4222,6 +4269,7 @@ docs/WorkitemStatusReference.md
 docs/WorkitemStatusUpdate.md
 docs/WorkitemTerminate.md
 docs/WorkitemUpdate.md
+docs/WorkitemUtilizationLabelReference.md
 docs/WorkitemVersion.md
 docs/WorkitemVersionListing.md
 docs/WorkitemWrapup.md
@@ -4340,6 +4388,7 @@ docs/deleteConversationsMessagingIntegrationsWhatsappIntegrationId-example.txt
 docs/deleteConversationsMessagingSetting-example.txt
 docs/deleteConversationsMessagingSettingsDefault-example.txt
 docs/deleteConversationsMessagingSupportedcontentSupportedContentId-example.txt
+docs/deleteDiagnosticsLogcaptureBrowserUser-example.txt
 docs/deleteEmployeeperformanceExternalmetricsDefinition-example.txt
 docs/deleteExternalcontactsContact-example.txt
 docs/deleteExternalcontactsContactNote-example.txt
@@ -4358,6 +4407,7 @@ docs/deleteGreeting-example.txt
 docs/deleteGroup-example.txt
 docs/deleteGroupDynamicsettings-example.txt
 docs/deleteGroupMembers-example.txt
+docs/deleteIdentityprovider-example.txt
 docs/deleteIdentityprovidersAdfs-example.txt
 docs/deleteIdentityprovidersCic-example.txt
 docs/deleteIdentityprovidersGeneric-example.txt
@@ -4434,6 +4484,8 @@ docs/deleteOutboundDnclist-example.txt
 docs/deleteOutboundDnclistCustomexclusioncolumns-example.txt
 docs/deleteOutboundDnclistEmailaddresses-example.txt
 docs/deleteOutboundDnclistPhonenumbers-example.txt
+docs/deleteOutboundFilespecificationtemplate-example.txt
+docs/deleteOutboundFilespecificationtemplatesBulk-example.txt
 docs/deleteOutboundImporttemplate-example.txt
 docs/deleteOutboundImporttemplates-example.txt
 docs/deleteOutboundMessagingcampaign-example.txt
@@ -4697,6 +4749,7 @@ docs/getChatsSettings-example.txt
 docs/getChatsThreadMessages-example.txt
 docs/getChatsUserMessage-example.txt
 docs/getChatsUserMessages-example.txt
+docs/getChatsUserSettings-example.txt
 docs/getCoachingAppointment-example.txt
 docs/getCoachingAppointmentAnnotation-example.txt
 docs/getCoachingAppointmentAnnotations-example.txt
@@ -4706,7 +4759,6 @@ docs/getCoachingAppointmentsMe-example.txt
 docs/getCoachingNotification-example.txt
 docs/getCoachingNotifications-example.txt
 docs/getContentmanagementDocument-example.txt
-docs/getContentmanagementDocumentAudits-example.txt
 docs/getContentmanagementDocumentContent-example.txt
 docs/getContentmanagementDocuments-example.txt
 docs/getContentmanagementQuery-example.txt
@@ -4816,6 +4868,8 @@ docs/getDataextensionsCoretypes-example.txt
 docs/getDataextensionsLimits-example.txt
 docs/getDate-example.txt
 docs/getDiagnosticsLogcaptureBrowserEntriesDownloadJob-example.txt
+docs/getDiagnosticsLogcaptureBrowserUser-example.txt
+docs/getDiagnosticsLogcaptureBrowserUsers-example.txt
 docs/getDocumentationGknSearch-example.txt
 docs/getDocumentationSearch-example.txt
 docs/getDownload-example.txt
@@ -4952,6 +5006,7 @@ docs/getGroupProfile-example.txt
 docs/getGroups-example.txt
 docs/getGroupsSearch-example.txt
 docs/getGroupsSearch-example.txt
+docs/getIdentityprovider-example.txt
 docs/getIdentityproviders-example.txt
 docs/getIdentityprovidersAdfs-example.txt
 docs/getIdentityprovidersCic-example.txt
@@ -4973,14 +5028,18 @@ docs/getIntegrationConfigCurrent-example.txt
 docs/getIntegrations-example.txt
 docs/getIntegrationsAction-example.txt
 docs/getIntegrationsActionDraft-example.txt
+docs/getIntegrationsActionDraftFunction-example.txt
 docs/getIntegrationsActionDraftSchema-example.txt
 docs/getIntegrationsActionDraftTemplate-example.txt
 docs/getIntegrationsActionDraftValidation-example.txt
+docs/getIntegrationsActionFunction-example.txt
 docs/getIntegrationsActionSchema-example.txt
 docs/getIntegrationsActionTemplate-example.txt
 docs/getIntegrationsActions-example.txt
 docs/getIntegrationsActionsCategories-example.txt
+docs/getIntegrationsActionsCertificates-example.txt
 docs/getIntegrationsActionsDrafts-example.txt
+docs/getIntegrationsActionsFunctionsRuntimes-example.txt
 docs/getIntegrationsBotconnectorIntegrationIdBot-example.txt
 docs/getIntegrationsBotconnectorIntegrationIdBotVersions-example.txt
 docs/getIntegrationsBotconnectorIntegrationIdBots-example.txt
@@ -5031,7 +5090,6 @@ docs/getJourneySegments-example.txt
 docs/getJourneySession-example.txt
 docs/getJourneySessionEvents-example.txt
 docs/getJourneySessionOutcomescores-example.txt
-docs/getJourneySessionSegments-example.txt
 docs/getKnowledgeGuestSessionCategories-example.txt
 docs/getKnowledgeGuestSessionDocument-example.txt
 docs/getKnowledgeGuestSessionDocuments-example.txt
@@ -5060,6 +5118,8 @@ docs/getKnowledgeKnowledgebaseLanguageDocuments-example.txt
 docs/getKnowledgeKnowledgebaseLanguageDocumentsImport-example.txt
 docs/getKnowledgeKnowledgebaseLanguageTraining-example.txt
 docs/getKnowledgeKnowledgebaseLanguageTrainings-example.txt
+docs/getKnowledgeKnowledgebaseOperations-example.txt
+docs/getKnowledgeKnowledgebaseOperationsUsersQuery-example.txt
 docs/getKnowledgeKnowledgebaseUnansweredGroup-example.txt
 docs/getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup-example.txt
 docs/getKnowledgeKnowledgebaseUnansweredGroups-example.txt
@@ -5200,6 +5260,8 @@ docs/getOutboundDnclistsDivisionview-example.txt
 docs/getOutboundDnclistsDivisionviews-example.txt
 docs/getOutboundEvent-example.txt
 docs/getOutboundEvents-example.txt
+docs/getOutboundFilespecificationtemplate-example.txt
+docs/getOutboundFilespecificationtemplates-example.txt
 docs/getOutboundImporttemplate-example.txt
 docs/getOutboundImporttemplateImportstatus-example.txt
 docs/getOutboundImporttemplates-example.txt
@@ -5347,6 +5409,8 @@ docs/getRoutingUtilizationTagAgents-example.txt
 docs/getRoutingUtilizationTags-example.txt
 docs/getRoutingWrapupcode-example.txt
 docs/getRoutingWrapupcodes-example.txt
+docs/getRoutingWrapupcodesDivisionview-example.txt
+docs/getRoutingWrapupcodesDivisionviews-example.txt
 docs/getScimGroup-example.txt
 docs/getScimGroups-example.txt
 docs/getScimResourcetype-example.txt
@@ -5473,7 +5537,6 @@ docs/getTelephonyProvidersEdgesLogicalinterfaces-example.txt
 docs/getTelephonyProvidersEdgesMediastatisticsConversation-example.txt
 docs/getTelephonyProvidersEdgesMediastatisticsConversationCommunication-example.txt
 docs/getTelephonyProvidersEdgesMetrics-example.txt
-docs/getTelephonyProvidersEdgesOutboundroute-example.txt
 docs/getTelephonyProvidersEdgesOutboundroutes-example.txt
 docs/getTelephonyProvidersEdgesPhone-example.txt
 docs/getTelephonyProvidersEdgesPhonebasesetting-example.txt
@@ -5680,6 +5743,7 @@ docs/patchChatsRoom-example.txt
 docs/patchChatsRoomMessage-example.txt
 docs/patchChatsSettings-example.txt
 docs/patchChatsUserMessage-example.txt
+docs/patchChatsUserSettings-example.txt
 docs/patchCoachingAppointment-example.txt
 docs/patchCoachingAppointmentAnnotation-example.txt
 docs/patchCoachingAppointmentStatus-example.txt
@@ -5777,6 +5841,7 @@ docs/patchRoutingQueueMembers-example.txt
 docs/patchRoutingQueueUser-example.txt
 docs/patchRoutingQueueUsers-example.txt
 docs/patchRoutingSettingsContactcenter-example.txt
+docs/patchRoutingSettingsTranscription-example.txt
 docs/patchRoutingSkillgroup-example.txt
 docs/patchScimGroup-example.txt
 docs/patchScimUser-example.txt
@@ -5949,7 +6014,6 @@ docs/postCoachingAppointmentConversations-example.txt
 docs/postCoachingAppointments-example.txt
 docs/postCoachingAppointmentsAggregatesQuery-example.txt
 docs/postCoachingScheduleslotsQuery-example.txt
-docs/postContentmanagementAuditquery-example.txt
 docs/postContentmanagementDocument-example.txt
 docs/postContentmanagementDocumentContent-example.txt
 docs/postContentmanagementDocuments-example.txt
@@ -5970,6 +6034,7 @@ docs/postConversationParticipantReplaceExternal-example.txt
 docs/postConversationParticipantReplaceQueue-example.txt
 docs/postConversationParticipantSecureivrsessions-example.txt
 docs/postConversationRecordingAnnotations-example.txt
+docs/postConversationSummaryFeedback-example.txt
 docs/postConversationsCall-example.txt
 docs/postConversationsCallParticipantBarge-example.txt
 docs/postConversationsCallParticipantCoach-example.txt
@@ -6033,6 +6098,8 @@ docs/postConversationsSocialParticipantCommunicationWrapup-example.txt
 docs/postConversationsVideoParticipantCommunicationWrapup-example.txt
 docs/postConversationsVideosMeetings-example.txt
 docs/postDiagnosticsLogcaptureBrowserEntriesDownloadJobs-example.txt
+docs/postDiagnosticsLogcaptureBrowserEntriesQuery-example.txt
+docs/postDiagnosticsLogcaptureBrowserUser-example.txt
 docs/postDocumentationAllSearch-example.txt
 docs/postDocumentationGknSearch-example.txt
 docs/postDocumentationSearch-example.txt
@@ -6104,9 +6171,12 @@ docs/postGroups-example.txt
 docs/postGroupsDynamicsettingsPreview-example.txt
 docs/postGroupsSearch-example.txt
 docs/postGroupsSearch-example.txt
+docs/postIdentityproviders-example.txt
 docs/postInfrastructureascodeJobs-example.txt
 docs/postIntegrations-example.txt
 docs/postIntegrationsActionDraft-example.txt
+docs/postIntegrationsActionDraftFunctionUpload-example.txt
+docs/postIntegrationsActionDraftFunctionUpload-example.txt
 docs/postIntegrationsActionDraftPublish-example.txt
 docs/postIntegrationsActionDraftTest-example.txt
 docs/postIntegrationsActionExecute-example.txt
@@ -6219,12 +6289,14 @@ docs/postOutboundContactlistfiltersPreview-example.txt
 docs/postOutboundContactlists-example.txt
 docs/postOutboundContactlisttemplates-example.txt
 docs/postOutboundContactlisttemplatesBulkAdd-example.txt
+docs/postOutboundContactlisttemplatesBulkRetrieve-example.txt
 docs/postOutboundConversationDnc-example.txt
 docs/postOutboundDigitalrulesets-example.txt
 docs/postOutboundDnclistEmailaddresses-example.txt
 docs/postOutboundDnclistExport-example.txt
 docs/postOutboundDnclistPhonenumbers-example.txt
 docs/postOutboundDnclists-example.txt
+docs/postOutboundFilespecificationtemplates-example.txt
 docs/postOutboundImporttemplates-example.txt
 docs/postOutboundImporttemplatesBulkAdd-example.txt
 docs/postOutboundMessagingcampaigns-example.txt
@@ -6290,6 +6362,7 @@ docs/postRoutingUtilizationTags-example.txt
 docs/postRoutingWrapupcodes-example.txt
 docs/postScimUsers-example.txt
 docs/postScimV2Users-example.txt
+docs/postScreenrecordingToken-example.txt
 docs/postScriptExport-example.txt
 docs/postScriptsPublished-example.txt
 docs/postSearch-example.txt
@@ -6523,6 +6596,7 @@ docs/putGreetingsDefaults-example.txt
 docs/putGroup-example.txt
 docs/putGroupDynamicsettings-example.txt
 docs/putGroupGreetingsDefaults-example.txt
+docs/putIdentityprovider-example.txt
 docs/putIdentityprovidersAdfs-example.txt
 docs/putIdentityprovidersCic-example.txt
 docs/putIdentityprovidersGeneric-example.txt
@@ -6535,6 +6609,7 @@ docs/putIdentityprovidersPurecloud-example.txt
 docs/putIdentityprovidersPureengage-example.txt
 docs/putIdentityprovidersSalesforce-example.txt
 docs/putIntegrationConfigCurrent-example.txt
+docs/putIntegrationsActionDraftFunction-example.txt
 docs/putIntegrationsBotconnectorIntegrationIdBots-example.txt
 docs/putIntegrationsCredential-example.txt
 docs/putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings-example.txt
@@ -6572,6 +6647,7 @@ docs/putOutboundContactlistfilter-example.txt
 docs/putOutboundContactlisttemplate-example.txt
 docs/putOutboundDigitalruleset-example.txt
 docs/putOutboundDnclist-example.txt
+docs/putOutboundFilespecificationtemplate-example.txt
 docs/putOutboundImporttemplate-example.txt
 docs/putOutboundMessagingcampaign-example.txt
 docs/putOutboundRuleset-example.txt
@@ -6782,6 +6858,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/RoutingApi.java
 src/main/java/com/mypurecloud/sdk/v2/api/RoutingApiAsync.java
 src/main/java/com/mypurecloud/sdk/v2/api/SCIMApi.java
 src/main/java/com/mypurecloud/sdk/v2/api/SCIMApiAsync.java
+src/main/java/com/mypurecloud/sdk/v2/api/ScreenRecordingApi.java
+src/main/java/com/mypurecloud/sdk/v2/api/ScreenRecordingApiAsync.java
 src/main/java/com/mypurecloud/sdk/v2/api/ScriptsApi.java
 src/main/java/com/mypurecloud/sdk/v2/api/ScriptsApiAsync.java
 src/main/java/com/mypurecloud/sdk/v2/api/SearchApi.java
@@ -6882,6 +6960,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingInt
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingSettingRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingSettingsDefaultRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteConversationsMessagingSupportedcontentSupportedContentIdRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteDiagnosticsLogcaptureBrowserUserRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteEmployeeperformanceExternalmetricsDefinitionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteExternalcontactsContactNoteRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteExternalcontactsContactRequest.java
@@ -6900,6 +6979,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteGreetingRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteGroupDynamicsettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteGroupMembersRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteGroupRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteIdentityproviderRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteIdentityprovidersAdfsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteIdentityprovidersCicRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteIdentityprovidersGenericRequest.java
@@ -6976,6 +7056,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOutboundDnclistCustomexcl
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOutboundDnclistEmailaddressesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOutboundDnclistPhonenumbersRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOutboundDnclistRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOutboundFilespecificationtemplateRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOutboundFilespecificationtemplatesBulkRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOutboundImporttemplateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOutboundImporttemplatesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteOutboundMessagingcampaignProgressRequest.java
@@ -7239,6 +7321,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetChatsSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetChatsThreadMessagesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetChatsUserMessageRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetChatsUserMessagesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetChatsUserSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetCoachingAppointmentAnnotationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetCoachingAppointmentAnnotationsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetCoachingAppointmentRequest.java
@@ -7247,7 +7330,6 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetCoachingAppointmentsMeReques
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetCoachingAppointmentsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetCoachingNotificationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetCoachingNotificationsRequest.java
-src/main/java/com/mypurecloud/sdk/v2/api/request/GetContentmanagementDocumentAuditsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetContentmanagementDocumentContentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetContentmanagementDocumentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetContentmanagementDocumentsRequest.java
@@ -7358,6 +7440,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetDataextensionsCoretypesReque
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetDataextensionsLimitsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetDateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetDiagnosticsLogcaptureBrowserEntriesDownloadJobRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetDiagnosticsLogcaptureBrowserUserRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetDiagnosticsLogcaptureBrowserUsersRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetDocumentationGknSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetDocumentationSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetDownloadRequest.java
@@ -7494,6 +7578,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetGroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetGroupsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetGroupsSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetGroupsSearchRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetIdentityproviderRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetIdentityprovidersAdfsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetIdentityprovidersCicRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetIdentityprovidersGenericRequest.java
@@ -7512,15 +7597,19 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetInfrastructureascodeJobReque
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetInfrastructureascodeJobsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetIntegrationConfigCurrentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetIntegrationRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetIntegrationsActionDraftFunctionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetIntegrationsActionDraftRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetIntegrationsActionDraftSchemaRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetIntegrationsActionDraftTemplateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetIntegrationsActionDraftValidationRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetIntegrationsActionFunctionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetIntegrationsActionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetIntegrationsActionSchemaRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetIntegrationsActionTemplateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetIntegrationsActionsCategoriesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetIntegrationsActionsCertificatesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetIntegrationsActionsDraftsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetIntegrationsActionsFunctionsRuntimesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetIntegrationsActionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetIntegrationsBotconnectorIntegrationIdBotRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetIntegrationsBotconnectorIntegrationIdBotVersionsRequest.java
@@ -7573,7 +7662,6 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneySegmentsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneySessionEventsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneySessionOutcomescoresRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneySessionRequest.java
-src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneySessionSegmentsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeGuestSessionCategoriesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeGuestSessionDocumentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeGuestSessionDocumentsRequest.java
@@ -7601,6 +7689,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseLangua
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseLanguageDocumentsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseLanguageTrainingRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseLanguageTrainingsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseOperationsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseOperationsUsersQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseUnansweredGroupRequest.java
@@ -7742,6 +7832,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetOutboundDnclistsDivisionview
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOutboundDnclistsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOutboundEventRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOutboundEventsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetOutboundFilespecificationtemplateRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetOutboundFilespecificationtemplatesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOutboundImporttemplateImportstatusRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOutboundImporttemplateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOutboundImporttemplatesRequest.java
@@ -7888,6 +7980,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingUtilizationTagAgentsR
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingUtilizationTagRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingUtilizationTagsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingWrapupcodeRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingWrapupcodesDivisionviewRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingWrapupcodesDivisionviewsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRoutingWrapupcodesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetScimGroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetScimGroupsRequest.java
@@ -8014,7 +8108,6 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgesLogic
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgesMediastatisticsConversationCommunicationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgesMediastatisticsConversationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgesMetricsRequest.java
-src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgesOutboundrouteRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgesOutboundroutesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgesPhoneRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgesPhonebasesettingRequest.java
@@ -8222,6 +8315,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PatchChatsRoomMessageRequest.ja
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchChatsRoomRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchChatsSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchChatsUserMessageRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchChatsUserSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchCoachingAppointmentAnnotationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchCoachingAppointmentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchCoachingAppointmentStatusRequest.java
@@ -8319,6 +8413,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PatchRoutingQueueMembersRequest
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchRoutingQueueUserRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchRoutingQueueUsersRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchRoutingSettingsContactcenterRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchRoutingSettingsTranscriptionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchRoutingSkillgroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchScimGroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchScimUserRequest.java
@@ -8491,7 +8586,6 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostCoachingAppointmentConversa
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostCoachingAppointmentsAggregatesQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostCoachingAppointmentsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostCoachingScheduleslotsQueryRequest.java
-src/main/java/com/mypurecloud/sdk/v2/api/request/PostContentmanagementAuditqueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostContentmanagementDocumentContentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostContentmanagementDocumentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostContentmanagementDocumentsRequest.java
@@ -8512,6 +8606,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationParticipantRepl
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationParticipantReplaceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationParticipantSecureivrsessionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationRecordingAnnotationsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationSummaryFeedbackRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCallParticipantBargeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCallParticipantCoachRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsCallParticipantCommunicationWrapupRequest.java
@@ -8575,6 +8670,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsSocialParticip
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsVideoParticipantCommunicationWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostConversationsVideosMeetingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostDiagnosticsLogcaptureBrowserEntriesDownloadJobsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostDiagnosticsLogcaptureBrowserEntriesQueryRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostDiagnosticsLogcaptureBrowserUserRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostDocumentationAllSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostDocumentationGknSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostDocumentationSearchRequest.java
@@ -8646,7 +8743,10 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostGroupsDynamicsettingsPrevie
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostGroupsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostGroupsSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostGroupsSearchRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostIdentityprovidersRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostInfrastructureascodeJobsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostIntegrationsActionDraftFunctionUploadRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostIntegrationsActionDraftFunctionUploadRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostIntegrationsActionDraftPublishRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostIntegrationsActionDraftRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostIntegrationsActionDraftTestRequest.java
@@ -8760,6 +8860,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostOutboundContactlistfiltersP
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostOutboundContactlistfiltersRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostOutboundContactlistsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostOutboundContactlisttemplatesBulkAddRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostOutboundContactlisttemplatesBulkRetrieveRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostOutboundContactlisttemplatesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostOutboundConversationDncRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostOutboundDigitalrulesetsRequest.java
@@ -8767,6 +8868,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostOutboundDnclistEmailaddress
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostOutboundDnclistExportRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostOutboundDnclistPhonenumbersRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostOutboundDnclistsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostOutboundFilespecificationtemplatesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostOutboundImporttemplatesBulkAddRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostOutboundImporttemplatesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostOutboundMessagingcampaignsProgressRequest.java
@@ -8832,6 +8934,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostRoutingUtilizationTagsReque
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostRoutingWrapupcodesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostScimUsersRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostScimV2UsersRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostScreenrecordingTokenRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostScriptExportRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostScriptsPublishedRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostSearchRequest.java
@@ -9065,6 +9168,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PutGreetingsDefaultsRequest.jav
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutGroupDynamicsettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutGroupGreetingsDefaultsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutGroupRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PutIdentityproviderRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutIdentityprovidersAdfsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutIdentityprovidersCicRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutIdentityprovidersGenericRequest.java
@@ -9077,6 +9181,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PutIdentityprovidersPurecloudRe
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutIdentityprovidersPureengageRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutIdentityprovidersSalesforceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutIntegrationConfigCurrentRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PutIntegrationsActionDraftFunctionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutIntegrationsBotconnectorIntegrationIdBotsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutIntegrationsCredentialRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettingsRequest.java
@@ -9114,6 +9219,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PutOutboundContactlistfilterReq
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutOutboundContactlisttemplateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutOutboundDigitalrulesetRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutOutboundDnclistRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PutOutboundFilespecificationtemplateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutOutboundImporttemplateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutOutboundMessagingcampaignRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutOutboundRulesetRequest.java
@@ -9235,6 +9341,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/ActionAggregationQuery.java
 src/main/java/com/mypurecloud/sdk/v2/model/ActionAggregationView.java
 src/main/java/com/mypurecloud/sdk/v2/model/ActionAsyncAggregateQueryResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ActionAsyncAggregationQuery.java
+src/main/java/com/mypurecloud/sdk/v2/model/ActionCertificate.java
+src/main/java/com/mypurecloud/sdk/v2/model/ActionCertificateListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ActionConfig.java
 src/main/java/com/mypurecloud/sdk/v2/model/ActionContract.java
 src/main/java/com/mypurecloud/sdk/v2/model/ActionContractInput.java
@@ -9277,6 +9385,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/AdditionalLanguagesIntent.java
 src/main/java/com/mypurecloud/sdk/v2/model/AdditionalLanguagesSynonyms.java
 src/main/java/com/mypurecloud/sdk/v2/model/AdditionalMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/Address.java
+src/main/java/com/mypurecloud/sdk/v2/model/AddressableEntity.java
 src/main/java/com/mypurecloud/sdk/v2/model/AddressableEntityRef.java
 src/main/java/com/mypurecloud/sdk/v2/model/AddressableLicenseDefinition.java
 src/main/java/com/mypurecloud/sdk/v2/model/AdherenceExplanationAsyncResponse.java
@@ -9451,9 +9560,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/AtzmTimeSlot.java
 src/main/java/com/mypurecloud/sdk/v2/model/AtzmTimeSlotWithTimeZone.java
 src/main/java/com/mypurecloud/sdk/v2/model/AudioState.java
 src/main/java/com/mypurecloud/sdk/v2/model/AudioUpdatedEvent.java
-src/main/java/com/mypurecloud/sdk/v2/model/AuditChange.java
 src/main/java/com/mypurecloud/sdk/v2/model/AuditEntity.java
-src/main/java/com/mypurecloud/sdk/v2/model/AuditEntityReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/AuditFacet.java
 src/main/java/com/mypurecloud/sdk/v2/model/AuditFilter.java
 src/main/java/com/mypurecloud/sdk/v2/model/AuditLogMessage.java
@@ -9757,6 +9864,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ChatMessageUser.java
 src/main/java/com/mypurecloud/sdk/v2/model/ChatReaction.java
 src/main/java/com/mypurecloud/sdk/v2/model/ChatSendMessageResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ChatSettings.java
+src/main/java/com/mypurecloud/sdk/v2/model/ChatUserSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/Check.java
 src/main/java/com/mypurecloud/sdk/v2/model/ClientApp.java
 src/main/java/com/mypurecloud/sdk/v2/model/ClientAppConfigurationInfo.java
@@ -9786,6 +9894,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/CobrowseMediaParticipant.java
 src/main/java/com/mypurecloud/sdk/v2/model/CobrowseSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/CobrowseWebMessagingSession.java
 src/main/java/com/mypurecloud/sdk/v2/model/Cobrowsesession.java
+src/main/java/com/mypurecloud/sdk/v2/model/Column.java
 src/main/java/com/mypurecloud/sdk/v2/model/ColumnDataTypeSpecification.java
 src/main/java/com/mypurecloud/sdk/v2/model/ColumnStatus.java
 src/main/java/com/mypurecloud/sdk/v2/model/CommandStatus.java
@@ -9856,6 +9965,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ContactListFilterEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactListFilterPredicate.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactListFilterRange.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactListTemplate.java
+src/main/java/com/mypurecloud/sdk/v2/model/ContactListTemplateBulkRetrieveBody.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactListTemplateEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContactPhoneNumberColumn.java
@@ -9867,12 +9977,10 @@ src/main/java/com/mypurecloud/sdk/v2/model/ContactlistImportStatusImportStatus.j
 src/main/java/com/mypurecloud/sdk/v2/model/ContactlistImportStatusObject.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentActions.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentAttachment.java
-src/main/java/com/mypurecloud/sdk/v2/model/ContentAttributeFilterItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentButtonResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentCard.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentCardAction.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentCarousel.java
-src/main/java/com/mypurecloud/sdk/v2/model/ContentFacetFilterItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentFilterItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentGeneric.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentList.java
@@ -9891,12 +9999,10 @@ src/main/java/com/mypurecloud/sdk/v2/model/ContentOfferStyleProperties.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentOfferStylingConfiguration.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentPositionProperties.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentPostback.java
-src/main/java/com/mypurecloud/sdk/v2/model/ContentQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentQuickReply.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentQuickReplyV2.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentReaction.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentSetting.java
-src/main/java/com/mypurecloud/sdk/v2/model/ContentSortItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentStory.java
 src/main/java/com/mypurecloud/sdk/v2/model/ContentText.java
 src/main/java/com/mypurecloud/sdk/v2/model/Context.java
@@ -10252,6 +10358,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/Cursors.java
 src/main/java/com/mypurecloud/sdk/v2/model/CustomEventAttribute.java
 src/main/java/com/mypurecloud/sdk/v2/model/CustomEventAttributeList.java
 src/main/java/com/mypurecloud/sdk/v2/model/CustomI18nLabels.java
+src/main/java/com/mypurecloud/sdk/v2/model/CustomProvider.java
 src/main/java/com/mypurecloud/sdk/v2/model/CustomerEndDetailEventTopicCustomerEndEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/CustomerInteractionCenter.java
 src/main/java/com/mypurecloud/sdk/v2/model/CustomerStartDetailEventTopicCustomerStartEvent.java
@@ -10427,8 +10534,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/DoNotSendActionSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/Document.java
 src/main/java/com/mypurecloud/sdk/v2/model/DocumentArticle.java
 src/main/java/com/mypurecloud/sdk/v2/model/DocumentAttribute.java
-src/main/java/com/mypurecloud/sdk/v2/model/DocumentAudit.java
-src/main/java/com/mypurecloud/sdk/v2/model/DocumentAuditEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/DocumentBody.java
 src/main/java/com/mypurecloud/sdk/v2/model/DocumentBodyBlock.java
 src/main/java/com/mypurecloud/sdk/v2/model/DocumentBodyImage.java
@@ -10564,11 +10669,21 @@ src/main/java/com/mypurecloud/sdk/v2/model/EffectiveConfiguration.java
 src/main/java/com/mypurecloud/sdk/v2/model/Email.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailAddress.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailAttachment.java
+src/main/java/com/mypurecloud/sdk/v2/model/EmailBeginTransmittingEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailCampaignSchedule.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailColumn.java
+src/main/java/com/mypurecloud/sdk/v2/model/EmailCommunicationAnsweredEvent.java
+src/main/java/com/mypurecloud/sdk/v2/model/EmailCommunicationDispositionAppliedEvent.java
+src/main/java/com/mypurecloud/sdk/v2/model/EmailCommunicationEndedEvent.java
+src/main/java/com/mypurecloud/sdk/v2/model/EmailCommunicationRepliedEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailConfig.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailConversation.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailConversationEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/EmailEndTransferEvent.java
+src/main/java/com/mypurecloud/sdk/v2/model/EmailExternalEstablishedEvent.java
+src/main/java/com/mypurecloud/sdk/v2/model/EmailFlowEstablishedEvent.java
+src/main/java/com/mypurecloud/sdk/v2/model/EmailHoldUpdatedEvent.java
+src/main/java/com/mypurecloud/sdk/v2/model/EmailInitialConfiguration.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailMediaParticipant.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailMediaPolicy.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailMediaPolicyConditions.java
@@ -10577,8 +10692,13 @@ src/main/java/com/mypurecloud/sdk/v2/model/EmailMessagePreview.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailMessagePreviewListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailMessageReply.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailOutboundDomainResult.java
+src/main/java/com/mypurecloud/sdk/v2/model/EmailProgressTransferEvent.java
+src/main/java/com/mypurecloud/sdk/v2/model/EmailRoutingEstablishedEvent.java
+src/main/java/com/mypurecloud/sdk/v2/model/EmailRoutingTransferEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailSetup.java
+src/main/java/com/mypurecloud/sdk/v2/model/EmailUserEstablishedEvent.java
+src/main/java/com/mypurecloud/sdk/v2/model/EmailUserTransferEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailsSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmbeddedIntegration.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmergencyCallFlow.java
@@ -10749,9 +10869,12 @@ src/main/java/com/mypurecloud/sdk/v2/model/FaxTopicLockData.java
 src/main/java/com/mypurecloud/sdk/v2/model/FaxTopicUserData.java
 src/main/java/com/mypurecloud/sdk/v2/model/FaxTopicWorkspaceData.java
 src/main/java/com/mypurecloud/sdk/v2/model/FeatureState.java
+src/main/java/com/mypurecloud/sdk/v2/model/FeedbackAddRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/FieldConfig.java
 src/main/java/com/mypurecloud/sdk/v2/model/FieldConfigs.java
 src/main/java/com/mypurecloud/sdk/v2/model/FieldList.java
+src/main/java/com/mypurecloud/sdk/v2/model/FileSpecificationTemplate.java
+src/main/java/com/mypurecloud/sdk/v2/model/FileSpecificationTemplateEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/FileUploadMode.java
 src/main/java/com/mypurecloud/sdk/v2/model/FileUploadSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/Filter.java
@@ -10841,6 +10964,12 @@ src/main/java/com/mypurecloud/sdk/v2/model/Format.java
 src/main/java/com/mypurecloud/sdk/v2/model/FormsTrackTrigger.java
 src/main/java/com/mypurecloud/sdk/v2/model/FromEmailAddress.java
 src/main/java/com/mypurecloud/sdk/v2/model/FullDayTimeOffMarker.java
+src/main/java/com/mypurecloud/sdk/v2/model/Function.java
+src/main/java/com/mypurecloud/sdk/v2/model/FunctionConfig.java
+src/main/java/com/mypurecloud/sdk/v2/model/FunctionRuntime.java
+src/main/java/com/mypurecloud/sdk/v2/model/FunctionUploadRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/FunctionUploadResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/FunctionZipConfig.java
 src/main/java/com/mypurecloud/sdk/v2/model/GDPRJourneyCustomer.java
 src/main/java/com/mypurecloud/sdk/v2/model/GDPRRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/GDPRRequestEntityListing.java
@@ -10943,6 +11072,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/IVRDivisionViewEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/IVREntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/IdentifierClaimRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/IdentityNow.java
+src/main/java/com/mypurecloud/sdk/v2/model/IdentityProvider.java
+src/main/java/com/mypurecloud/sdk/v2/model/IdentityProviderEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/IdleEventTrigger.java
 src/main/java/com/mypurecloud/sdk/v2/model/IdleTokenTimeout.java
 src/main/java/com/mypurecloud/sdk/v2/model/IgnoredActivityCategories.java
@@ -10957,6 +11088,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/ImportStatus.java
 src/main/java/com/mypurecloud/sdk/v2/model/ImportStatusRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/ImportTemplate.java
 src/main/java/com/mypurecloud/sdk/v2/model/ImportTemplateEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/ImportTemplateImportStatusImportStatus.java
+src/main/java/com/mypurecloud/sdk/v2/model/ImportTemplateImportStatusObject.java
 src/main/java/com/mypurecloud/sdk/v2/model/InboundDomain.java
 src/main/java/com/mypurecloud/sdk/v2/model/InboundDomainEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/InboundDomainPatchRequest.java
@@ -11348,7 +11481,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/ListedTopic.java
 src/main/java/com/mypurecloud/sdk/v2/model/LocalDateRange.java
 src/main/java/com/mypurecloud/sdk/v2/model/LocalEncryptionConfiguration.java
 src/main/java/com/mypurecloud/sdk/v2/model/LocalEncryptionKeyRequest.java
-src/main/java/com/mypurecloud/sdk/v2/model/LocalTime.java
 src/main/java/com/mypurecloud/sdk/v2/model/LocaleFlowVersionInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/LocaleHealth.java
 src/main/java/com/mypurecloud/sdk/v2/model/LocaleInfo.java
@@ -11368,7 +11500,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/LocationsSearchResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/LockInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/LogCaptureDownloadExecutionResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/LogCaptureQueryRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/LogCaptureQueryResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/LogCaptureUserConfiguration.java
+src/main/java/com/mypurecloud/sdk/v2/model/LogEntry.java
 src/main/java/com/mypurecloud/sdk/v2/model/LogicalInterfaceEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/LongTermForecastPlanningGroupData.java
 src/main/java/com/mypurecloud/sdk/v2/model/LongTermForecastResult.java
@@ -11482,6 +11616,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/MinerListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/MinerTopic.java
 src/main/java/com/mypurecloud/sdk/v2/model/MinerTopicPhrase.java
 src/main/java/com/mypurecloud/sdk/v2/model/MinerTopicsListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/MobileNotificationSettings.java
+src/main/java/com/mypurecloud/sdk/v2/model/MobileSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/ModelVoid.java
 src/main/java/com/mypurecloud/sdk/v2/model/ModelingProcessingError.java
 src/main/java/com/mypurecloud/sdk/v2/model/ModelingStatusResponse.java
@@ -11554,8 +11690,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/OAuthClientEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/OAuthClientListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/OAuthClientRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/OAuthLastTokenIssued.java
-src/main/java/com/mypurecloud/sdk/v2/model/OAuthProvider.java
-src/main/java/com/mypurecloud/sdk/v2/model/OAuthProviderEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/OAuthScope.java
 src/main/java/com/mypurecloud/sdk/v2/model/OAuthScopeListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/Objective.java
@@ -11590,6 +11724,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/OpenMessagingToRecipient.java
 src/main/java/com/mypurecloud/sdk/v2/model/OpenNormalizedMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/OpenReceiptNormalizedMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/Operation.java
+src/main/java/com/mypurecloud/sdk/v2/model/OperationCreatorUserResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/OperationListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/OperationResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/OperationalEventNotificationTopicEventEntity.java
 src/main/java/com/mypurecloud/sdk/v2/model/OperationalEventNotificationTopicOperationalEventNotification.java
 src/main/java/com/mypurecloud/sdk/v2/model/OptInSettings.java
@@ -11663,6 +11800,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/PINConfiguration.java
 src/main/java/com/mypurecloud/sdk/v2/model/Page.java
 src/main/java/com/mypurecloud/sdk/v2/model/PagedNamespaceListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/PagelessDomainEntityListingEvaluationVersion.java
+src/main/java/com/mypurecloud/sdk/v2/model/PagelessEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/PagingSpec.java
 src/main/java/com/mypurecloud/sdk/v2/model/Parameter.java
 src/main/java/com/mypurecloud/sdk/v2/model/ParsedCertificate.java
@@ -11774,6 +11912,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/PredictorModelRetrainingError.java
 src/main/java/com/mypurecloud/sdk/v2/model/PredictorModels.java
 src/main/java/com/mypurecloud/sdk/v2/model/PredictorSchedule.java
 src/main/java/com/mypurecloud/sdk/v2/model/PredictorWorkloadBalancing.java
+src/main/java/com/mypurecloud/sdk/v2/model/PreprocessingRule.java
 src/main/java/com/mypurecloud/sdk/v2/model/PresenceDefinition.java
 src/main/java/com/mypurecloud/sdk/v2/model/PresenceDetailQueryClause.java
 src/main/java/com/mypurecloud/sdk/v2/model/PresenceDetailQueryFilter.java
@@ -12301,6 +12440,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ScreenRecordingMetaDataRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/ScreenRecordingSession.java
 src/main/java/com/mypurecloud/sdk/v2/model/ScreenRecordingSessionListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ScreenRecordingSessionRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/ScreenRecordingUserAuthenticatedInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/Screenshare.java
 src/main/java/com/mypurecloud/sdk/v2/model/Script.java
 src/main/java/com/mypurecloud/sdk/v2/model/ScriptEntityListing.java
@@ -12323,11 +12463,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/SecurityProfileEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/Segment.java
 src/main/java/com/mypurecloud/sdk/v2/model/SegmentAssignedEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/SegmentAssignedEventSegment.java
-src/main/java/com/mypurecloud/sdk/v2/model/SegmentAssignment.java
 src/main/java/com/mypurecloud/sdk/v2/model/SegmentAssignmentEvent.java
-src/main/java/com/mypurecloud/sdk/v2/model/SegmentAssignmentListing.java
-src/main/java/com/mypurecloud/sdk/v2/model/SegmentAssignmentSegment.java
-src/main/java/com/mypurecloud/sdk/v2/model/SegmentAssignmentSession.java
 src/main/java/com/mypurecloud/sdk/v2/model/SegmentDetailQueryClause.java
 src/main/java/com/mypurecloud/sdk/v2/model/SegmentDetailQueryFilter.java
 src/main/java/com/mypurecloud/sdk/v2/model/SegmentDetailQueryPredicate.java
@@ -13064,7 +13200,21 @@ src/main/java/com/mypurecloud/sdk/v2/model/WeekShiftTradeMatchesSummaryResponse.
 src/main/java/com/mypurecloud/sdk/v2/model/WeekShiftTradeResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/WemCoachingUserNotificationTopicCoachingAppointmentReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/WemCoachingUserNotificationTopicCoachingUserNotification.java
+src/main/java/com/mypurecloud/sdk/v2/model/WfmAdherenceExplanationJobCompleteTopicAdherenceExplanationChangedNotification.java
+src/main/java/com/mypurecloud/sdk/v2/model/WfmAdherenceExplanationJobCompleteTopicAdherenceExplanationJobNotification.java
+src/main/java/com/mypurecloud/sdk/v2/model/WfmAdherenceExplanationJobCompleteTopicBusinessUnit.java
+src/main/java/com/mypurecloud/sdk/v2/model/WfmAdherenceExplanationJobCompleteTopicErrorBody.java
+src/main/java/com/mypurecloud/sdk/v2/model/WfmAdherenceExplanationJobCompleteTopicManagementUnit.java
+src/main/java/com/mypurecloud/sdk/v2/model/WfmAdherenceExplanationJobCompleteTopicUserReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/WfmAgent.java
+src/main/java/com/mypurecloud/sdk/v2/model/WfmAgentAdherenceExplanationChangedAgentTopicAdherenceExplanationChangedNotification.java
+src/main/java/com/mypurecloud/sdk/v2/model/WfmAgentAdherenceExplanationChangedAgentTopicBusinessUnit.java
+src/main/java/com/mypurecloud/sdk/v2/model/WfmAgentAdherenceExplanationChangedAgentTopicManagementUnit.java
+src/main/java/com/mypurecloud/sdk/v2/model/WfmAgentAdherenceExplanationChangedAgentTopicUserReference.java
+src/main/java/com/mypurecloud/sdk/v2/model/WfmAgentAdherenceExplanationChangedBusinessUnitTopicAdherenceExplanationChangedNotification.java
+src/main/java/com/mypurecloud/sdk/v2/model/WfmAgentAdherenceExplanationChangedBusinessUnitTopicBusinessUnit.java
+src/main/java/com/mypurecloud/sdk/v2/model/WfmAgentAdherenceExplanationChangedBusinessUnitTopicManagementUnit.java
+src/main/java/com/mypurecloud/sdk/v2/model/WfmAgentAdherenceExplanationChangedBusinessUnitTopicUserReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate.java
 src/main/java/com/mypurecloud/sdk/v2/model/WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification.java
 src/main/java/com/mypurecloud/sdk/v2/model/WfmAgentScheduleUpdateTopicUserReference.java
@@ -13234,6 +13384,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/WidgetDeployment.java
 src/main/java/com/mypurecloud/sdk/v2/model/WidgetDeploymentEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkPlan.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkPlanActivity.java
+src/main/java/com/mypurecloud/sdk/v2/model/WorkPlanBidRanks.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkPlanConfigurationViolationMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkPlanConstraintConflictMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkPlanConstraintMessage.java
@@ -13289,6 +13440,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/WorkitemStatusReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemStatusUpdate.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemTerminate.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemUpdate.java
+src/main/java/com/mypurecloud/sdk/v2/model/WorkitemUtilizationLabelReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemVersion.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemVersionListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemWrapup.java

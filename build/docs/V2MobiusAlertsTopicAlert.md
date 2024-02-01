@@ -24,6 +24,7 @@ title: V2MobiusAlertsTopicAlert
 | **dateSnoozedUntil** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **action** | [**ActionEnum**](#ActionEnum)<!----> |  |  [optional] |
 | **alertSummary** | <!----><!---->[**V2MobiusAlertsTopicAlertSummary**](V2MobiusAlertsTopicAlertSummary.html)<!----> |  |  [optional] |
+| **sendExitingAlarmNotification** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

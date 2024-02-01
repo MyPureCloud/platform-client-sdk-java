@@ -10,7 +10,8 @@ title: MutableUserPresence
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> | The user's id |  [optional] |
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **source** | <!----><!---->**String**<!----> | Represents the source where the Presence was set. Some examples are: PURECLOUD, LYNC, OUTLOOK, etc. |  [optional] |
+| **source** | <!----><!---->**String**<!----> | Deprecated - The sourceID field should be used as a replacement. |  [optional] |
+| **sourceId** | <!----><!---->**String**<!----> | Represents the ID of a registered source |  [optional] |
 | **primary** | <!----><!---->**Boolean**<!----> | A boolean used to tell whether or not to set this presence source as the primary on a PATCH |  [optional] |
 | **presenceDefinition** | <!----><!---->[**PresenceDefinition**](PresenceDefinition.html)<!----> |  |  [optional] |
 | **message** | <!----><!---->**String**<!----> |  |  [optional] |

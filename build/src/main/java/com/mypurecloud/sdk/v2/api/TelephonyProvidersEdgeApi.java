@@ -54,7 +54,6 @@ import com.mypurecloud.sdk.v2.model.LogicalInterfaceEntityListing;
 import com.mypurecloud.sdk.v2.model.MediaStatistics;
 import com.mypurecloud.sdk.v2.model.MediaStatisticsListing;
 import com.mypurecloud.sdk.v2.model.NumberPlan;
-import com.mypurecloud.sdk.v2.model.OutboundRoute;
 import com.mypurecloud.sdk.v2.model.OutboundRouteBase;
 import com.mypurecloud.sdk.v2.model.OutboundRouteBaseEntityListing;
 import com.mypurecloud.sdk.v2.model.OutboundRouteEntityListing;
@@ -136,7 +135,6 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesLogicalinter
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesMediastatisticsConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesMediastatisticsConversationCommunicationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesMetricsRequest;
-import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesOutboundrouteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesOutboundroutesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesPhoneRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesPhonebasesettingRequest;
@@ -3788,7 +3786,6 @@ public class TelephonyProvidersEdgeApi {
   /**
    * Get a pageable list of basic extension pool objects filterable by query parameters.
    * This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
-   * getTelephonyProvidersEdgesExtensionpoolsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param sortBy Sort by (optional, default to name)
@@ -3807,7 +3804,6 @@ public class TelephonyProvidersEdgeApi {
   /**
    * Get a pageable list of basic extension pool objects filterable by query parameters.
    * This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
-   * getTelephonyProvidersEdgesExtensionpoolsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param sortBy Sort by (optional, default to name)
@@ -3844,7 +3840,6 @@ public class TelephonyProvidersEdgeApi {
   /**
    * Get a pageable list of basic extension pool objects filterable by query parameters.
    * This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
-   * getTelephonyProvidersEdgesExtensionpoolsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ExtensionPoolDivisionViewEntityListing
    * @throws ApiException if the request fails on the server
@@ -3864,7 +3859,6 @@ public class TelephonyProvidersEdgeApi {
   /**
    * Get a pageable list of basic extension pool objects filterable by query parameters.
    * This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
-   * getTelephonyProvidersEdgesExtensionpoolsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4731,88 +4725,6 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<List<EdgeMetrics>> response = (ApiResponse<List<EdgeMetrics>>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Get outbound route
-   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
-   * @param outboundRouteId Outbound route ID (required)
-   * @return OutboundRoute
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public OutboundRoute getTelephonyProvidersEdgesOutboundroute(String outboundRouteId) throws IOException, ApiException {
-    return  getTelephonyProvidersEdgesOutboundroute(createGetTelephonyProvidersEdgesOutboundrouteRequest(outboundRouteId));
-  }
-
-  /**
-   * Get outbound route
-   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
-   * @param outboundRouteId Outbound route ID (required)
-   * @return OutboundRoute
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<OutboundRoute> getTelephonyProvidersEdgesOutboundrouteWithHttpInfo(String outboundRouteId) throws IOException {
-    return getTelephonyProvidersEdgesOutboundroute(createGetTelephonyProvidersEdgesOutboundrouteRequest(outboundRouteId).withHttpInfo());
-  }
-
-  private GetTelephonyProvidersEdgesOutboundrouteRequest createGetTelephonyProvidersEdgesOutboundrouteRequest(String outboundRouteId) {
-    return GetTelephonyProvidersEdgesOutboundrouteRequest.builder()
-            .withOutboundRouteId(outboundRouteId)
-
-            .build();
-  }
-
-  /**
-   * Get outbound route
-   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
-   * @param request The request object
-   * @return OutboundRoute
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public OutboundRoute getTelephonyProvidersEdgesOutboundroute(GetTelephonyProvidersEdgesOutboundrouteRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<OutboundRoute> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OutboundRoute>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get outbound route
-   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<OutboundRoute> getTelephonyProvidersEdgesOutboundroute(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<OutboundRoute>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<OutboundRoute> response = (ApiResponse<OutboundRoute>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<OutboundRoute> response = (ApiResponse<OutboundRoute>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -6215,12 +6127,13 @@ public class TelephonyProvidersEdgeApi {
    * @param name Name (optional)
    * @param locationId Location Id (optional)
    * @param managed Filter by managed (optional)
+   * @param expand Fields to expand in the response, comma-separated (optional)
    * @return SiteEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SiteEntityListing getTelephonyProvidersEdgesSites(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, String locationId, Boolean managed) throws IOException, ApiException {
-    return  getTelephonyProvidersEdgesSites(createGetTelephonyProvidersEdgesSitesRequest(pageSize, pageNumber, sortBy, sortOrder, name, locationId, managed));
+  public SiteEntityListing getTelephonyProvidersEdgesSites(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, String locationId, Boolean managed, List<String> expand) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgesSites(createGetTelephonyProvidersEdgesSitesRequest(pageSize, pageNumber, sortBy, sortOrder, name, locationId, managed, expand));
   }
 
   /**
@@ -6233,14 +6146,15 @@ public class TelephonyProvidersEdgeApi {
    * @param name Name (optional)
    * @param locationId Location Id (optional)
    * @param managed Filter by managed (optional)
+   * @param expand Fields to expand in the response, comma-separated (optional)
    * @return SiteEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SiteEntityListing> getTelephonyProvidersEdgesSitesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, String locationId, Boolean managed) throws IOException {
-    return getTelephonyProvidersEdgesSites(createGetTelephonyProvidersEdgesSitesRequest(pageSize, pageNumber, sortBy, sortOrder, name, locationId, managed).withHttpInfo());
+  public ApiResponse<SiteEntityListing> getTelephonyProvidersEdgesSitesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, String locationId, Boolean managed, List<String> expand) throws IOException {
+    return getTelephonyProvidersEdgesSites(createGetTelephonyProvidersEdgesSitesRequest(pageSize, pageNumber, sortBy, sortOrder, name, locationId, managed, expand).withHttpInfo());
   }
 
-  private GetTelephonyProvidersEdgesSitesRequest createGetTelephonyProvidersEdgesSitesRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, String locationId, Boolean managed) {
+  private GetTelephonyProvidersEdgesSitesRequest createGetTelephonyProvidersEdgesSitesRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, String locationId, Boolean managed, List<String> expand) {
     return GetTelephonyProvidersEdgesSitesRequest.builder()
             .withPageSize(pageSize)
 
@@ -6255,6 +6169,8 @@ public class TelephonyProvidersEdgeApi {
             .withLocationId(locationId)
 
             .withManaged(managed)
+
+            .withExpand(expand)
 
             .build();
   }

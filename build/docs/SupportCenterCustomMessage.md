@@ -8,8 +8,8 @@ title: SupportCenterCustomMessage
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **defaultValue** | <!----><!---->**String**<!----> | Default value for the message |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Type of the message |  [optional] |
+| **defaultValue** | <!----><!---->**String**<!----> | Default value for the message |  |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> | Type of the message |  |
 {: class="table table-striped"}
 
 

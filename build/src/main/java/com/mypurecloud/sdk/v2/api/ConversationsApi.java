@@ -88,6 +88,7 @@ import com.mypurecloud.sdk.v2.model.FacebookIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 import com.mypurecloud.sdk.v2.model.FaxSendResponse;
+import com.mypurecloud.sdk.v2.model.FeedbackAddRequest;
 import com.mypurecloud.sdk.v2.model.GenerateMeetingIdRequest;
 import com.mypurecloud.sdk.v2.model.InboundMessageRequest;
 import com.mypurecloud.sdk.v2.model.InstagramIntegration;
@@ -319,6 +320,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceAgen
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceExternalRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantSecureivrsessionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationSummaryFeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantBargeRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantCoachRequest;
@@ -13510,6 +13512,89 @@ public class ConversationsApi {
   }
 
   /**
+   * Submit feedback for the summary.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param summaryId Summary ID (required)
+   * @param body  (optional)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationSummaryFeedback(String conversationId, String summaryId, FeedbackAddRequest body) throws IOException, ApiException {
+     postConversationSummaryFeedback(createPostConversationSummaryFeedbackRequest(conversationId, summaryId, body));
+  }
+
+  /**
+   * Submit feedback for the summary.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param summaryId Summary ID (required)
+   * @param body  (optional)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationSummaryFeedbackWithHttpInfo(String conversationId, String summaryId, FeedbackAddRequest body) throws IOException {
+    return postConversationSummaryFeedback(createPostConversationSummaryFeedbackRequest(conversationId, summaryId, body).withHttpInfo());
+  }
+
+  private PostConversationSummaryFeedbackRequest createPostConversationSummaryFeedbackRequest(String conversationId, String summaryId, FeedbackAddRequest body) {
+    return PostConversationSummaryFeedbackRequest.builder()
+            .withConversationId(conversationId)
+
+            .withSummaryId(summaryId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Submit feedback for the summary.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationSummaryFeedback(PostConversationSummaryFeedbackRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Submit feedback for the summary.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationSummaryFeedback(ApiRequest<FeedbackAddRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Place a new call as part of a callback conversation.
    * 
    * @param conversationId conversationId (required)
@@ -17542,23 +17627,25 @@ public class ConversationsApi {
   }
 
   /**
-   * Create a LINE messenger Integration
-   * 
+   * Create a LINE messenger Integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param body LineIntegrationRequest (required)
    * @return LineIntegration
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public LineIntegration postConversationsMessagingIntegrationsLine(LineIntegrationRequest body) throws IOException, ApiException {
     return  postConversationsMessagingIntegrationsLine(createPostConversationsMessagingIntegrationsLineRequest(body));
   }
 
   /**
-   * Create a LINE messenger Integration
-   * 
+   * Create a LINE messenger Integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param body LineIntegrationRequest (required)
    * @return LineIntegration
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<LineIntegration> postConversationsMessagingIntegrationsLineWithHttpInfo(LineIntegrationRequest body) throws IOException {
     return postConversationsMessagingIntegrationsLine(createPostConversationsMessagingIntegrationsLineRequest(body).withHttpInfo());
@@ -17572,12 +17659,13 @@ public class ConversationsApi {
   }
 
   /**
-   * Create a LINE messenger Integration
-   * 
+   * Create a LINE messenger Integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param request The request object
    * @return LineIntegration
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public LineIntegration postConversationsMessagingIntegrationsLine(PostConversationsMessagingIntegrationsLineRequest request) throws IOException, ApiException {
     try {
@@ -17591,11 +17679,12 @@ public class ConversationsApi {
   }
 
   /**
-   * Create a LINE messenger Integration
-   * 
+   * Create a LINE messenger Integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<LineIntegration> postConversationsMessagingIntegrationsLine(ApiRequest<LineIntegrationRequest> request) throws IOException {
     try {

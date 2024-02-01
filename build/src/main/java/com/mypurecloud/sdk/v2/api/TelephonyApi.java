@@ -122,7 +122,6 @@ public class TelephonyApi {
   /**
    * Get a SIP message.
    * Get the raw form of the SIP message
-   * getTelephonySipmessagesConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId Conversation id (required)
    * @return Callmessage
    * @throws ApiException if the request fails on the server
@@ -135,7 +134,6 @@ public class TelephonyApi {
   /**
    * Get a SIP message.
    * Get the raw form of the SIP message
-   * getTelephonySipmessagesConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId Conversation id (required)
    * @return Callmessage
    * @throws IOException if the request fails to be processed
@@ -154,7 +152,6 @@ public class TelephonyApi {
   /**
    * Get a SIP message.
    * Get the raw form of the SIP message
-   * getTelephonySipmessagesConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Callmessage
    * @throws ApiException if the request fails on the server
@@ -174,7 +171,6 @@ public class TelephonyApi {
   /**
    * Get a SIP message.
    * Get the raw form of the SIP message
-   * getTelephonySipmessagesConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -204,7 +200,6 @@ public class TelephonyApi {
   /**
    * Get SIP headers.
    * Get parsed SIP headers. Returns specific headers if key query parameters are added.
-   * getTelephonySipmessagesConversationHeaders is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId Conversation id (required)
    * @param keys comma-separated list of header identifiers to query. e.g. ruri,to,from (optional)
    * @return Callheader
@@ -218,7 +213,6 @@ public class TelephonyApi {
   /**
    * Get SIP headers.
    * Get parsed SIP headers. Returns specific headers if key query parameters are added.
-   * getTelephonySipmessagesConversationHeaders is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId Conversation id (required)
    * @param keys comma-separated list of header identifiers to query. e.g. ruri,to,from (optional)
    * @return Callheader
@@ -240,7 +234,6 @@ public class TelephonyApi {
   /**
    * Get SIP headers.
    * Get parsed SIP headers. Returns specific headers if key query parameters are added.
-   * getTelephonySipmessagesConversationHeaders is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Callheader
    * @throws ApiException if the request fails on the server
@@ -260,7 +253,6 @@ public class TelephonyApi {
   /**
    * Get SIP headers.
    * Get parsed SIP headers. Returns specific headers if key query parameters are added.
-   * getTelephonySipmessagesConversationHeaders is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

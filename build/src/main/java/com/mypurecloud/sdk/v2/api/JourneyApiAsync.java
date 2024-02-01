@@ -50,7 +50,6 @@ import com.mypurecloud.sdk.v2.model.PatchActionTarget;
 import com.mypurecloud.sdk.v2.model.PatchActionTemplate;
 import com.mypurecloud.sdk.v2.model.PatchOutcome;
 import com.mypurecloud.sdk.v2.model.PatchSegment;
-import com.mypurecloud.sdk.v2.model.SegmentAssignmentListing;
 import com.mypurecloud.sdk.v2.model.SegmentListing;
 import com.mypurecloud.sdk.v2.model.Session;
 import com.mypurecloud.sdk.v2.model.SessionListing;
@@ -84,7 +83,6 @@ import com.mypurecloud.sdk.v2.api.request.GetJourneySegmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneySessionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneySessionEventsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneySessionOutcomescoresRequest;
-import com.mypurecloud.sdk.v2.api.request.GetJourneySessionSegmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActionmapRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontargetRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontemplateRequest;
@@ -2219,83 +2217,6 @@ public class JourneyApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<OutcomeScoresResult> response = (ApiResponse<OutcomeScoresResult>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Retrieve segment assignments by session ID.
-   * 
-   * getJourneySessionSegments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<SegmentAssignmentListing> getJourneySessionSegmentsAsync(GetJourneySessionSegmentsRequest request, final AsyncApiCallback<SegmentAssignmentListing> callback) {
-    try {
-      final SettableFuture<SegmentAssignmentListing> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SegmentAssignmentListing>() {}, new AsyncApiCallback<ApiResponse<SegmentAssignmentListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<SegmentAssignmentListing> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Retrieve segment assignments by session ID.
-   * 
-   * getJourneySessionSegments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<SegmentAssignmentListing>> getJourneySessionSegmentsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SegmentAssignmentListing>> callback) {
-    try {
-      final SettableFuture<ApiResponse<SegmentAssignmentListing>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<SegmentAssignmentListing>() {}, new AsyncApiCallback<ApiResponse<SegmentAssignmentListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<SegmentAssignmentListing> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<SegmentAssignmentListing> response = (ApiResponse<SegmentAssignmentListing>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<SegmentAssignmentListing> response = (ApiResponse<SegmentAssignmentListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

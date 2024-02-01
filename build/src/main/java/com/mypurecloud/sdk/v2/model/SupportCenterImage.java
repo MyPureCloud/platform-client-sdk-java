@@ -33,7 +33,7 @@ public class SupportCenterImage  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Source URLs for image")
+  @ApiModelProperty(example = "null", required = true, value = "Source URLs for image")
   @JsonProperty("source")
   public SupportCenterImageSource getSource() {
     return source;

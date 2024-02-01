@@ -45,6 +45,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getKnowledgeKnowledgebaseLanguageDocumentsImport**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageDocumentsImport) | Get import operation report |
 | [**getKnowledgeKnowledgebaseLanguageTraining**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageTraining) | Get training detail |
 | [**getKnowledgeKnowledgebaseLanguageTrainings**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageTrainings) | Get all trainings information for a knowledgebase |
+| [**getKnowledgeKnowledgebaseOperations**](KnowledgeApi.html#getKnowledgeKnowledgebaseOperations) | Get operations |
+| [**getKnowledgeKnowledgebaseOperationsUsersQuery**](KnowledgeApi.html#getKnowledgeKnowledgebaseOperationsUsersQuery) | Get ids of operation creator users and oauth clients |
 | [**getKnowledgeKnowledgebaseUnansweredGroup**](KnowledgeApi.html#getKnowledgeKnowledgebaseUnansweredGroup) | Get knowledge base unanswered group for a particular groupId |
 | [**getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup**](KnowledgeApi.html#getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup) | Get knowledge base unanswered phrase group for a particular phraseGroupId |
 | [**getKnowledgeKnowledgebaseUnansweredGroups**](KnowledgeApi.html#getKnowledgeKnowledgebaseUnansweredGroups) | Get knowledge base unanswered groups |
@@ -2622,6 +2624,146 @@ try {
 ### Return type
 
 [**TrainingListing**](TrainingListing.html)
+
+<a name="getKnowledgeKnowledgebaseOperations"></a>
+
+# **getKnowledgeKnowledgebaseOperations**
+
+
+
+> [OperationListing](OperationListing.html) getKnowledgeKnowledgebaseOperations(knowledgeBaseId, before, after, pageSize, userId, type, status, interval)
+
+Get operations
+
+getKnowledgeKnowledgebaseOperations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations  
+
+Requires ALL permissions: 
+
+* knowledge:importExportOperationsList:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+List<String> userId = Arrays.asList(null); // List<String> | If specified, retrieves operations associated with user ids, comma separated values expected.
+List<String> type = Arrays.asList(null); // List<String> | If specified, retrieves operations with specified operation type, comma separated values expected.
+List<String> status = Arrays.asList(null); // List<String> | If specified, retrieves operations with specified operation status, comma separated values expected.
+String interval = "interval_example"; // String | Retrieves the operations modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ
+try {
+    OperationListing result = apiInstance.getKnowledgeKnowledgebaseOperations(knowledgeBaseId, before, after, pageSize, userId, type, status, interval);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#getKnowledgeKnowledgebaseOperations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+| **userId** | [**List&lt;String&gt;**](String.html)| If specified, retrieves operations associated with user ids, comma separated values expected. | [optional] 
+| **type** | [**List&lt;String&gt;**](String.html)| If specified, retrieves operations with specified operation type, comma separated values expected. | [optional]<br />**Values**: Export, Import, Parse, Sync 
+| **status** | [**List&lt;String&gt;**](String.html)| If specified, retrieves operations with specified operation status, comma separated values expected. | [optional] 
+| **interval** | **String**| Retrieves the operations modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OperationListing**](OperationListing.html)
+
+<a name="getKnowledgeKnowledgebaseOperationsUsersQuery"></a>
+
+# **getKnowledgeKnowledgebaseOperationsUsersQuery**
+
+
+
+> [OperationCreatorUserResponse](OperationCreatorUserResponse.html) getKnowledgeKnowledgebaseOperationsUsersQuery(knowledgeBaseId)
+
+Get ids of operation creator users and oauth clients
+
+getKnowledgeKnowledgebaseOperationsUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query  
+
+Requires ALL permissions: 
+
+* knowledge:importExportOperationsList:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+try {
+    OperationCreatorUserResponse result = apiInstance.getKnowledgeKnowledgebaseOperationsUsersQuery(knowledgeBaseId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#getKnowledgeKnowledgebaseOperationsUsersQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OperationCreatorUserResponse**](OperationCreatorUserResponse.html)
 
 <a name="getKnowledgeKnowledgebaseUnansweredGroup"></a>
 

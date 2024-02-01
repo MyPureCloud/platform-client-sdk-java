@@ -28,6 +28,7 @@ public class UcUserPresence  implements Serializable {
   private String name = null;
   private String userId = null;
   private String source = null;
+  private String sourceId = null;
   private PresenceDefinition presenceDefinition = null;
   private String message = null;
   private Date modifiedDate = null;
@@ -77,20 +78,38 @@ public class UcUserPresence  implements Serializable {
 
 
   /**
-   * Represents the source where the Presence was set. Some examples are: PURECLOUD, MICROSOFTTEAMS, ZOOMPHONE, etc.
+   * Deprecated - The sourceID field should be used as a replacement.
    **/
   public UcUserPresence source(String source) {
     this.source = source;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Represents the source where the Presence was set. Some examples are: PURECLOUD, MICROSOFTTEAMS, ZOOMPHONE, etc.")
+  @ApiModelProperty(example = "null", value = "Deprecated - The sourceID field should be used as a replacement.")
   @JsonProperty("source")
   public String getSource() {
     return source;
   }
   public void setSource(String source) {
     this.source = source;
+  }
+
+
+  /**
+   * The registered source ID from where the presence was set
+   **/
+  public UcUserPresence sourceId(String sourceId) {
+    this.sourceId = sourceId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The registered source ID from where the presence was set")
+  @JsonProperty("sourceId")
+  public String getSourceId() {
+    return sourceId;
+  }
+  public void setSourceId(String sourceId) {
+    this.sourceId = sourceId;
   }
 
 
@@ -167,6 +186,7 @@ public class UcUserPresence  implements Serializable {
             Objects.equals(this.name, ucUserPresence.name) &&
             Objects.equals(this.userId, ucUserPresence.userId) &&
             Objects.equals(this.source, ucUserPresence.source) &&
+            Objects.equals(this.sourceId, ucUserPresence.sourceId) &&
             Objects.equals(this.presenceDefinition, ucUserPresence.presenceDefinition) &&
             Objects.equals(this.message, ucUserPresence.message) &&
             Objects.equals(this.modifiedDate, ucUserPresence.modifiedDate) &&
@@ -175,7 +195,7 @@ public class UcUserPresence  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, userId, source, presenceDefinition, message, modifiedDate, selfUri);
+    return Objects.hash(id, name, userId, source, sourceId, presenceDefinition, message, modifiedDate, selfUri);
   }
 
   @Override
@@ -187,6 +207,7 @@ public class UcUserPresence  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");
+    sb.append("    sourceId: ").append(toIndentedString(sourceId)).append("\n");
     sb.append("    presenceDefinition: ").append(toIndentedString(presenceDefinition)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");

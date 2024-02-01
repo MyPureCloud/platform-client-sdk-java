@@ -123,6 +123,7 @@ public class UserMe  implements Serializable {
   private List<String> certifications = new ArrayList<String>();
   private Biography biography = null;
   private EmployerInfo employerInfo = null;
+  private String preferredName = null;
   private RoutingStatus routingStatus = null;
   private UserPresence presence = null;
   private UserPresence integrationPresence = null;
@@ -422,6 +423,24 @@ public class UserMe  implements Serializable {
   }
 
 
+  /**
+   * Preferred full name of the agent
+   **/
+  public UserMe preferredName(String preferredName) {
+    this.preferredName = preferredName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Preferred full name of the agent")
+  @JsonProperty("preferredName")
+  public String getPreferredName() {
+    return preferredName;
+  }
+  public void setPreferredName(String preferredName) {
+    this.preferredName = preferredName;
+  }
+
+
   @ApiModelProperty(example = "null", value = "ACD routing status")
   @JsonProperty("routingStatus")
   public RoutingStatus getRoutingStatus() {
@@ -715,6 +734,7 @@ public class UserMe  implements Serializable {
             Objects.equals(this.certifications, userMe.certifications) &&
             Objects.equals(this.biography, userMe.biography) &&
             Objects.equals(this.employerInfo, userMe.employerInfo) &&
+            Objects.equals(this.preferredName, userMe.preferredName) &&
             Objects.equals(this.routingStatus, userMe.routingStatus) &&
             Objects.equals(this.presence, userMe.presence) &&
             Objects.equals(this.integrationPresence, userMe.integrationPresence) &&
@@ -754,7 +774,7 @@ public class UserMe  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, certifications, biography, employerInfo, routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, team, skills, languages, acdAutoAnswer, languagePreference, lastTokenIssued, dateLastLogin, date, geolocationSettings, organization, presenceDefinitions, divisionedPresenceDefinitions, locationDefinitions, orgAuthorization, favorites, superiors, directReports, adjacents, routingSkills, fieldConfigs, token, trustors, orgProducts, selfUri);
+    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, certifications, biography, employerInfo, preferredName, routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, team, skills, languages, acdAutoAnswer, languagePreference, lastTokenIssued, dateLastLogin, date, geolocationSettings, organization, presenceDefinitions, divisionedPresenceDefinitions, locationDefinitions, orgAuthorization, favorites, superiors, directReports, adjacents, routingSkills, fieldConfigs, token, trustors, orgProducts, selfUri);
   }
 
   @Override
@@ -779,6 +799,7 @@ public class UserMe  implements Serializable {
     sb.append("    certifications: ").append(toIndentedString(certifications)).append("\n");
     sb.append("    biography: ").append(toIndentedString(biography)).append("\n");
     sb.append("    employerInfo: ").append(toIndentedString(employerInfo)).append("\n");
+    sb.append("    preferredName: ").append(toIndentedString(preferredName)).append("\n");
     sb.append("    routingStatus: ").append(toIndentedString(routingStatus)).append("\n");
     sb.append("    presence: ").append(toIndentedString(presence)).append("\n");
     sb.append("    integrationPresence: ").append(toIndentedString(integrationPresence)).append("\n");

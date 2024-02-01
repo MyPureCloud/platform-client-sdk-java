@@ -17,6 +17,7 @@ title: GroupUpdate
 | **addresses** | <!----><!---->[**List&lt;GroupContact&gt;**](GroupContact.html)<!----> |  |  [optional] |
 | **rulesVisible** | <!----><!---->**Boolean**<!----> | Are membership rules visible to the person requesting to view the group |  [optional] |
 | **visibility** | [**VisibilityEnum**](#VisibilityEnum)<!----> | Who can view this group |  [optional] |
+| **rolesEnabled** | <!----><!---->**Boolean**<!----> | Allow roles to be assigned to this group |  [optional] |
 | **ownerIds** | <!----><!---->**List&lt;String&gt;**<!----> | Owners of the group |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}

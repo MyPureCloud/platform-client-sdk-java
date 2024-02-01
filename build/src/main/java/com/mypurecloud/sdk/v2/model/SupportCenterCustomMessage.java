@@ -81,7 +81,7 @@ public class SupportCenterCustomMessage  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Default value for the message")
+  @ApiModelProperty(example = "null", required = true, value = "Default value for the message")
   @JsonProperty("defaultValue")
   public String getDefaultValue() {
     return defaultValue;
@@ -99,7 +99,7 @@ public class SupportCenterCustomMessage  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Type of the message")
+  @ApiModelProperty(example = "null", required = true, value = "Type of the message")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;

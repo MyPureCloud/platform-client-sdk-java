@@ -35,7 +35,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getJourneySession**](JourneyApi.html#getJourneySession) | Retrieve a single session. |
 | [**getJourneySessionEvents**](JourneyApi.html#getJourneySessionEvents) | Retrieve all events for a given session. |
 | [**getJourneySessionOutcomescores**](JourneyApi.html#getJourneySessionOutcomescores) | Retrieve latest outcome score associated with a session for all outcomes. |
-| [**getJourneySessionSegments**](JourneyApi.html#getJourneySessionSegments) | Retrieve segment assignments by session ID. |
 | [**patchJourneyActionmap**](JourneyApi.html#patchJourneyActionmap) | Update single action map. |
 | [**patchJourneyActiontarget**](JourneyApi.html#patchJourneyActiontarget) | Update a single action target. |
 | [**patchJourneyActiontemplate**](JourneyApi.html#patchJourneyActiontemplate) | Update a single action template. |
@@ -1825,77 +1824,6 @@ try {
 ### Return type
 
 [**OutcomeScoresResult**](OutcomeScoresResult.html)
-
-<a name="getJourneySessionSegments"></a>
-
-# **getJourneySessionSegments**
-
-
-
-> [SegmentAssignmentListing](SegmentAssignmentListing.html) getJourneySessionSegments(sessionId, pageSize, after, segmentScope, assignmentState)
-
-Retrieve segment assignments by session ID.
-
-getJourneySessionSegments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Wraps GET /api/v2/journey/sessions/{sessionId}/segments  
-
-Requires ANY permissions: 
-
-* journey:segmentassignment:view
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.JourneyApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-JourneyApi apiInstance = new JourneyApi();
-String sessionId = "sessionId_example"; // String | ID of the session to query for segment assignments.
-String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
-String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
-String segmentScope = "segmentScope_example"; // String | Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned.
-String assignmentState = "assignmentState_example"; // String | Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned.
-try {
-    SegmentAssignmentListing result = apiInstance.getJourneySessionSegments(sessionId, pageSize, after, segmentScope, assignmentState);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling JourneyApi#getJourneySessionSegments");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **sessionId** | **String**| ID of the session to query for segment assignments. | 
-| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
-| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
-| **segmentScope** | **String**| Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned. | [optional]<br />**Values**: Session, Customer 
-| **assignmentState** | **String**| Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned. | [optional]<br />**Values**: Assigned, Unassigned 
-{: class="table-striped"}
-
-
-### Return type
-
-[**SegmentAssignmentListing**](SegmentAssignmentListing.html)
 
 <a name="patchJourneyActionmap"></a>
 

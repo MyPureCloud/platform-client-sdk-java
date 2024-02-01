@@ -25,6 +25,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteOutboundDnclistCustomexclusioncolumns**](OutboundApi.html#deleteOutboundDnclistCustomexclusioncolumns) | Deletes all or expired custom exclusion column entries from a DNC list. |
 | [**deleteOutboundDnclistEmailaddresses**](OutboundApi.html#deleteOutboundDnclistEmailaddresses) | Deletes all or expired email addresses from a DNC list. |
 | [**deleteOutboundDnclistPhonenumbers**](OutboundApi.html#deleteOutboundDnclistPhonenumbers) | Deletes all or expired phone numbers from a DNC list. |
+| [**deleteOutboundFilespecificationtemplate**](OutboundApi.html#deleteOutboundFilespecificationtemplate) | Delete File Specification Template |
+| [**deleteOutboundFilespecificationtemplatesBulk**](OutboundApi.html#deleteOutboundFilespecificationtemplatesBulk) | Delete multiple file specification templates. |
 | [**deleteOutboundImporttemplate**](OutboundApi.html#deleteOutboundImporttemplate) | Delete Import Template |
 | [**deleteOutboundImporttemplates**](OutboundApi.html#deleteOutboundImporttemplates) | Delete multiple import templates. |
 | [**deleteOutboundMessagingcampaign**](OutboundApi.html#deleteOutboundMessagingcampaign) | Delete an Outbound Messaging Campaign |
@@ -76,6 +78,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOutboundDnclistsDivisionviews**](OutboundApi.html#getOutboundDnclistsDivisionviews) | Query a list of simplified dnc list objects. |
 | [**getOutboundEvent**](OutboundApi.html#getOutboundEvent) | Get Dialer Event |
 | [**getOutboundEvents**](OutboundApi.html#getOutboundEvents) | Query Event Logs |
+| [**getOutboundFilespecificationtemplate**](OutboundApi.html#getOutboundFilespecificationtemplate) | Get File Specification Template |
+| [**getOutboundFilespecificationtemplates**](OutboundApi.html#getOutboundFilespecificationtemplates) | Query File Specification Templates |
 | [**getOutboundImporttemplate**](OutboundApi.html#getOutboundImporttemplate) | Get Import Template |
 | [**getOutboundImporttemplateImportstatus**](OutboundApi.html#getOutboundImporttemplateImportstatus) | Get the import status for an import template. |
 | [**getOutboundImporttemplates**](OutboundApi.html#getOutboundImporttemplates) | Query Import Templates |
@@ -121,12 +125,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postOutboundContactlists**](OutboundApi.html#postOutboundContactlists) | Create a contact List. |
 | [**postOutboundContactlisttemplates**](OutboundApi.html#postOutboundContactlisttemplates) | Create Contact List Template |
 | [**postOutboundContactlisttemplatesBulkAdd**](OutboundApi.html#postOutboundContactlisttemplatesBulkAdd) | Add multiple contact list templates |
+| [**postOutboundContactlisttemplatesBulkRetrieve**](OutboundApi.html#postOutboundContactlisttemplatesBulkRetrieve) | Get multiple contact list templates |
 | [**postOutboundConversationDnc**](OutboundApi.html#postOutboundConversationDnc) | Add phone numbers to a Dialer DNC list. |
 | [**postOutboundDigitalrulesets**](OutboundApi.html#postOutboundDigitalrulesets) | Create an Outbound Digital Rule Set |
 | [**postOutboundDnclistEmailaddresses**](OutboundApi.html#postOutboundDnclistEmailaddresses) | Add email addresses to a DNC list. |
 | [**postOutboundDnclistExport**](OutboundApi.html#postOutboundDnclistExport) | Initiate the export of a dnc list. |
 | [**postOutboundDnclistPhonenumbers**](OutboundApi.html#postOutboundDnclistPhonenumbers) | Add phone numbers to a DNC list. |
 | [**postOutboundDnclists**](OutboundApi.html#postOutboundDnclists) | Create dialer DNC list |
+| [**postOutboundFilespecificationtemplates**](OutboundApi.html#postOutboundFilespecificationtemplates) | Create File Specification Template |
 | [**postOutboundImporttemplates**](OutboundApi.html#postOutboundImporttemplates) | Create Import Template |
 | [**postOutboundImporttemplatesBulkAdd**](OutboundApi.html#postOutboundImporttemplatesBulkAdd) | Add multiple import templates |
 | [**postOutboundMessagingcampaigns**](OutboundApi.html#postOutboundMessagingcampaigns) | Create a Messaging Campaign |
@@ -145,6 +151,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putOutboundContactlisttemplate**](OutboundApi.html#putOutboundContactlisttemplate) | Update a contact list template. |
 | [**putOutboundDigitalruleset**](OutboundApi.html#putOutboundDigitalruleset) | Update an Outbound Digital Rule Set |
 | [**putOutboundDnclist**](OutboundApi.html#putOutboundDnclist) | Update dialer DNC list |
+| [**putOutboundFilespecificationtemplate**](OutboundApi.html#putOutboundFilespecificationtemplate) | Update File Specification Template |
 | [**putOutboundImporttemplate**](OutboundApi.html#putOutboundImporttemplate) | Update Import Template |
 | [**putOutboundMessagingcampaign**](OutboundApi.html#putOutboundMessagingcampaign) | Update an Outbound Messaging Campaign |
 | [**putOutboundRuleset**](OutboundApi.html#putOutboundRuleset) | Update a Rule Set. |
@@ -1246,6 +1253,126 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **dncListId** | **String**| DncList ID | 
 | **expiredOnly** | **Boolean**| Set to true to only remove DNC entries that are expired | [optional] [default to false] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteOutboundFilespecificationtemplate"></a>
+
+# **deleteOutboundFilespecificationtemplate**
+
+
+
+> Void deleteOutboundFilespecificationtemplate(fileSpecificationTemplateId)
+
+Delete File Specification Template
+
+Wraps DELETE /api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId}  
+
+Requires ANY permissions: 
+
+* outbound:fileSpecificationTemplate:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String fileSpecificationTemplateId = "fileSpecificationTemplateId_example"; // String | File Specification Template ID
+try {
+    apiInstance.deleteOutboundFilespecificationtemplate(fileSpecificationTemplateId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#deleteOutboundFilespecificationtemplate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **fileSpecificationTemplateId** | **String**| File Specification Template ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteOutboundFilespecificationtemplatesBulk"></a>
+
+# **deleteOutboundFilespecificationtemplatesBulk**
+
+
+
+> Void deleteOutboundFilespecificationtemplatesBulk(id)
+
+Delete multiple file specification templates.
+
+Wraps DELETE /api/v2/outbound/filespecificationtemplates/bulk  
+
+Requires ANY permissions: 
+
+* outbound:fileSpecificationTemplate:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+List<String> id = Arrays.asList(null); // List<String> | File Specification template id(s) to delete
+try {
+    apiInstance.deleteOutboundFilespecificationtemplatesBulk(id);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#deleteOutboundFilespecificationtemplatesBulk");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**List&lt;String&gt;**](String.html)| File Specification template id(s) to delete | 
 {: class="table-striped"}
 
 
@@ -4629,6 +4756,140 @@ try {
 
 [**DialerEventEntityListing**](DialerEventEntityListing.html)
 
+<a name="getOutboundFilespecificationtemplate"></a>
+
+# **getOutboundFilespecificationtemplate**
+
+
+
+> [FileSpecificationTemplate](FileSpecificationTemplate.html) getOutboundFilespecificationtemplate(fileSpecificationTemplateId)
+
+Get File Specification Template
+
+Wraps GET /api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId}  
+
+Requires ANY permissions: 
+
+* outbound:fileSpecificationTemplate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String fileSpecificationTemplateId = "fileSpecificationTemplateId_example"; // String | File Specification Template ID
+try {
+    FileSpecificationTemplate result = apiInstance.getOutboundFilespecificationtemplate(fileSpecificationTemplateId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundFilespecificationtemplate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **fileSpecificationTemplateId** | **String**| File Specification Template ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**FileSpecificationTemplate**](FileSpecificationTemplate.html)
+
+<a name="getOutboundFilespecificationtemplates"></a>
+
+# **getOutboundFilespecificationtemplates**
+
+
+
+> [FileSpecificationTemplateEntityListing](FileSpecificationTemplateEntityListing.html) getOutboundFilespecificationtemplates(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
+
+Query File Specification Templates
+
+Wraps GET /api/v2/outbound/filespecificationtemplates  
+
+Requires ANY permissions: 
+
+* outbound:fileSpecificationTemplate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
+Integer pageNumber = 1; // Integer | Page number
+Boolean allowEmptyResult = false; // Boolean | Whether to return an empty page when there are no results for that page
+String filterType = "Prefix"; // String | Filter type
+String name = "name_example"; // String | Name
+String sortBy = "sortBy_example"; // String | Sort by
+String sortOrder = "a"; // String | Sort order
+try {
+    FileSpecificationTemplateEntityListing result = apiInstance.getOutboundFilespecificationtemplates(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundFilespecificationtemplates");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **allowEmptyResult** | **Boolean**| Whether to return an empty page when there are no results for that page | [optional] [default to false] 
+| **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith 
+| **name** | **String**| Name | [optional] 
+| **sortBy** | **String**| Sort by | [optional] 
+| **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending 
+{: class="table-striped"}
+
+
+### Return type
+
+[**FileSpecificationTemplateEntityListing**](FileSpecificationTemplateEntityListing.html)
+
 <a name="getOutboundImporttemplate"></a>
 
 # **getOutboundImporttemplate**
@@ -7465,6 +7726,67 @@ try {
 
 [**ContactListTemplateEntityListing**](ContactListTemplateEntityListing.html)
 
+<a name="postOutboundContactlisttemplatesBulkRetrieve"></a>
+
+# **postOutboundContactlisttemplatesBulkRetrieve**
+
+
+
+> [ContactListTemplateEntityListing](ContactListTemplateEntityListing.html) postOutboundContactlisttemplatesBulkRetrieve(body)
+
+Get multiple contact list templates
+
+Wraps POST /api/v2/outbound/contactlisttemplates/bulk/retrieve  
+
+Requires ANY permissions: 
+
+* outbound:contactListTemplate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+ContactListTemplateBulkRetrieveBody body = new ContactListTemplateBulkRetrieveBody(); // ContactListTemplateBulkRetrieveBody | contact list templates to get
+try {
+    ContactListTemplateEntityListing result = apiInstance.postOutboundContactlisttemplatesBulkRetrieve(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#postOutboundContactlisttemplatesBulkRetrieve");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ContactListTemplateBulkRetrieveBody**](ContactListTemplateBulkRetrieveBody.html)| contact list templates to get | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContactListTemplateEntityListing**](ContactListTemplateEntityListing.html)
+
 <a name="postOutboundConversationDnc"></a>
 
 # **postOutboundConversationDnc**
@@ -7840,6 +8162,67 @@ try {
 ### Return type
 
 [**DncList**](DncList.html)
+
+<a name="postOutboundFilespecificationtemplates"></a>
+
+# **postOutboundFilespecificationtemplates**
+
+
+
+> [FileSpecificationTemplate](FileSpecificationTemplate.html) postOutboundFilespecificationtemplates(body)
+
+Create File Specification Template
+
+Wraps POST /api/v2/outbound/filespecificationtemplates  
+
+Requires ANY permissions: 
+
+* outbound:fileSpecificationTemplate:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+FileSpecificationTemplate body = new FileSpecificationTemplate(); // FileSpecificationTemplate | FileSpecificationTemplate
+try {
+    FileSpecificationTemplate result = apiInstance.postOutboundFilespecificationtemplates(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#postOutboundFilespecificationtemplates");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**FileSpecificationTemplate**](FileSpecificationTemplate.html)| FileSpecificationTemplate | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**FileSpecificationTemplate**](FileSpecificationTemplate.html)
 
 <a name="postOutboundImporttemplates"></a>
 
@@ -8969,6 +9352,69 @@ try {
 ### Return type
 
 [**DncList**](DncList.html)
+
+<a name="putOutboundFilespecificationtemplate"></a>
+
+# **putOutboundFilespecificationtemplate**
+
+
+
+> [FileSpecificationTemplate](FileSpecificationTemplate.html) putOutboundFilespecificationtemplate(fileSpecificationTemplateId, body)
+
+Update File Specification Template
+
+Wraps PUT /api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId}  
+
+Requires ANY permissions: 
+
+* outbound:fileSpecificationTemplate:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String fileSpecificationTemplateId = "fileSpecificationTemplateId_example"; // String | File Specification Template ID
+FileSpecificationTemplate body = new FileSpecificationTemplate(); // FileSpecificationTemplate | fileSpecificationTemplate
+try {
+    FileSpecificationTemplate result = apiInstance.putOutboundFilespecificationtemplate(fileSpecificationTemplateId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#putOutboundFilespecificationtemplate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **fileSpecificationTemplateId** | **String**| File Specification Template ID | 
+| **body** | [**FileSpecificationTemplate**](FileSpecificationTemplate.html)| fileSpecificationTemplate | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**FileSpecificationTemplate**](FileSpecificationTemplate.html)
 
 <a name="putOutboundImporttemplate"></a>
 

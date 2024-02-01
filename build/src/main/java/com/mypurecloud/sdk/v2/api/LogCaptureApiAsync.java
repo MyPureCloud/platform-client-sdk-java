@@ -16,10 +16,18 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LogCaptureDownloadExecutionResponse;
 import com.mypurecloud.sdk.v2.model.LogCaptureQueryRequest;
+import com.mypurecloud.sdk.v2.model.LogCaptureQueryResponse;
+import com.mypurecloud.sdk.v2.model.LogCaptureUserConfiguration;
+import com.mypurecloud.sdk.v2.model.PagelessEntityListing;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteDiagnosticsLogcaptureBrowserUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetDiagnosticsLogcaptureBrowserEntriesDownloadJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetDiagnosticsLogcaptureBrowserUserRequest;
+import com.mypurecloud.sdk.v2.api.request.GetDiagnosticsLogcaptureBrowserUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostDiagnosticsLogcaptureBrowserEntriesDownloadJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostDiagnosticsLogcaptureBrowserEntriesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostDiagnosticsLogcaptureBrowserUserRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -37,6 +45,81 @@ public class LogCaptureApiAsync {
 
   public LogCaptureApiAsync(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Disable browser log capture for the user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteDiagnosticsLogcaptureBrowserUserAsync(DeleteDiagnosticsLogcaptureBrowserUserRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Disable browser log capture for the user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteDiagnosticsLogcaptureBrowserUserAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
@@ -115,6 +198,156 @@ public class LogCaptureApiAsync {
   }
 
   /**
+   * Get log capture configuration for the user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LogCaptureUserConfiguration> getDiagnosticsLogcaptureBrowserUserAsync(GetDiagnosticsLogcaptureBrowserUserRequest request, final AsyncApiCallback<LogCaptureUserConfiguration> callback) {
+    try {
+      final SettableFuture<LogCaptureUserConfiguration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LogCaptureUserConfiguration>() {}, new AsyncApiCallback<ApiResponse<LogCaptureUserConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<LogCaptureUserConfiguration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get log capture configuration for the user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LogCaptureUserConfiguration>> getDiagnosticsLogcaptureBrowserUserAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LogCaptureUserConfiguration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LogCaptureUserConfiguration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LogCaptureUserConfiguration>() {}, new AsyncApiCallback<ApiResponse<LogCaptureUserConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<LogCaptureUserConfiguration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LogCaptureUserConfiguration> response = (ApiResponse<LogCaptureUserConfiguration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LogCaptureUserConfiguration> response = (ApiResponse<LogCaptureUserConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get all log capture enabled users for an org
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<PagelessEntityListing> getDiagnosticsLogcaptureBrowserUsersAsync(GetDiagnosticsLogcaptureBrowserUsersRequest request, final AsyncApiCallback<PagelessEntityListing> callback) {
+    try {
+      final SettableFuture<PagelessEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PagelessEntityListing>() {}, new AsyncApiCallback<ApiResponse<PagelessEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<PagelessEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get all log capture enabled users for an org
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<PagelessEntityListing>> getDiagnosticsLogcaptureBrowserUsersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PagelessEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<PagelessEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PagelessEntityListing>() {}, new AsyncApiCallback<ApiResponse<PagelessEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<PagelessEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PagelessEntityListing> response = (ApiResponse<PagelessEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PagelessEntityListing> response = (ApiResponse<PagelessEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Creates an async download execution
    * 
    * @param request the request object
@@ -178,6 +411,156 @@ public class LogCaptureApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<LogCaptureDownloadExecutionResponse> response = (ApiResponse<LogCaptureDownloadExecutionResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query collected log entries. It returns a limited amount of records, to get all records use download endpoint.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LogCaptureQueryResponse> postDiagnosticsLogcaptureBrowserEntriesQueryAsync(PostDiagnosticsLogcaptureBrowserEntriesQueryRequest request, final AsyncApiCallback<LogCaptureQueryResponse> callback) {
+    try {
+      final SettableFuture<LogCaptureQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LogCaptureQueryResponse>() {}, new AsyncApiCallback<ApiResponse<LogCaptureQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<LogCaptureQueryResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query collected log entries. It returns a limited amount of records, to get all records use download endpoint.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LogCaptureQueryResponse>> postDiagnosticsLogcaptureBrowserEntriesQueryAsync(ApiRequest<LogCaptureQueryRequest> request, final AsyncApiCallback<ApiResponse<LogCaptureQueryResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LogCaptureQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LogCaptureQueryResponse>() {}, new AsyncApiCallback<ApiResponse<LogCaptureQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<LogCaptureQueryResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LogCaptureQueryResponse> response = (ApiResponse<LogCaptureQueryResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LogCaptureQueryResponse> response = (ApiResponse<LogCaptureQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Enable log capture for a user or update expiration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LogCaptureUserConfiguration> postDiagnosticsLogcaptureBrowserUserAsync(PostDiagnosticsLogcaptureBrowserUserRequest request, final AsyncApiCallback<LogCaptureUserConfiguration> callback) {
+    try {
+      final SettableFuture<LogCaptureUserConfiguration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LogCaptureUserConfiguration>() {}, new AsyncApiCallback<ApiResponse<LogCaptureUserConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<LogCaptureUserConfiguration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Enable log capture for a user or update expiration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LogCaptureUserConfiguration>> postDiagnosticsLogcaptureBrowserUserAsync(ApiRequest<LogCaptureUserConfiguration> request, final AsyncApiCallback<ApiResponse<LogCaptureUserConfiguration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LogCaptureUserConfiguration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LogCaptureUserConfiguration>() {}, new AsyncApiCallback<ApiResponse<LogCaptureUserConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<LogCaptureUserConfiguration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LogCaptureUserConfiguration> response = (ApiResponse<LogCaptureUserConfiguration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LogCaptureUserConfiguration> response = (ApiResponse<LogCaptureUserConfiguration>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

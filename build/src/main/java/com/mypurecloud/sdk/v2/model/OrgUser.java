@@ -111,6 +111,7 @@ public class OrgUser  implements Serializable {
   private List<String> certifications = new ArrayList<String>();
   private Biography biography = null;
   private EmployerInfo employerInfo = null;
+  private String preferredName = null;
   private RoutingStatus routingStatus = null;
   private UserPresence presence = null;
   private UserPresence integrationPresence = null;
@@ -394,6 +395,24 @@ public class OrgUser  implements Serializable {
   }
 
 
+  /**
+   * Preferred full name of the agent
+   **/
+  public OrgUser preferredName(String preferredName) {
+    this.preferredName = preferredName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Preferred full name of the agent")
+  @JsonProperty("preferredName")
+  public String getPreferredName() {
+    return preferredName;
+  }
+  public void setPreferredName(String preferredName) {
+    this.preferredName = preferredName;
+  }
+
+
   @ApiModelProperty(example = "null", value = "ACD routing status")
   @JsonProperty("routingStatus")
   public RoutingStatus getRoutingStatus() {
@@ -585,6 +604,7 @@ public class OrgUser  implements Serializable {
             Objects.equals(this.certifications, orgUser.certifications) &&
             Objects.equals(this.biography, orgUser.biography) &&
             Objects.equals(this.employerInfo, orgUser.employerInfo) &&
+            Objects.equals(this.preferredName, orgUser.preferredName) &&
             Objects.equals(this.routingStatus, orgUser.routingStatus) &&
             Objects.equals(this.presence, orgUser.presence) &&
             Objects.equals(this.integrationPresence, orgUser.integrationPresence) &&
@@ -608,7 +628,7 @@ public class OrgUser  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, certifications, biography, employerInfo, routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, team, skills, languages, acdAutoAnswer, languagePreference, lastTokenIssued, dateLastLogin, organization);
+    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, certifications, biography, employerInfo, preferredName, routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, team, skills, languages, acdAutoAnswer, languagePreference, lastTokenIssued, dateLastLogin, organization);
   }
 
   @Override
@@ -633,6 +653,7 @@ public class OrgUser  implements Serializable {
     sb.append("    certifications: ").append(toIndentedString(certifications)).append("\n");
     sb.append("    biography: ").append(toIndentedString(biography)).append("\n");
     sb.append("    employerInfo: ").append(toIndentedString(employerInfo)).append("\n");
+    sb.append("    preferredName: ").append(toIndentedString(preferredName)).append("\n");
     sb.append("    routingStatus: ").append(toIndentedString(routingStatus)).append("\n");
     sb.append("    presence: ").append(toIndentedString(presence)).append("\n");
     sb.append("    integrationPresence: ").append(toIndentedString(integrationPresence)).append("\n");

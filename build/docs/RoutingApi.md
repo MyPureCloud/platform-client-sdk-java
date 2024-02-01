@@ -88,6 +88,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingUtilizationTags**](RoutingApi.html#getRoutingUtilizationTags) | Get list of utilization tags |
 | [**getRoutingWrapupcode**](RoutingApi.html#getRoutingWrapupcode) | Get details about this wrap-up code. |
 | [**getRoutingWrapupcodes**](RoutingApi.html#getRoutingWrapupcodes) | Get list of wrapup codes. |
+| [**getRoutingWrapupcodesDivisionview**](RoutingApi.html#getRoutingWrapupcodesDivisionview) | Get a simplified wrap-up code. |
+| [**getRoutingWrapupcodesDivisionviews**](RoutingApi.html#getRoutingWrapupcodesDivisionviews) | Get a paged listing of simplified wrapup code objects, filterable by name, wrapup code ID(s), or division ID(s). |
 | [**getUserQueues**](RoutingApi.html#getUserQueues) | Get queues for user |
 | [**getUserRoutinglanguages**](RoutingApi.html#getUserRoutinglanguages) | List routing language for user |
 | [**getUserRoutingskills**](RoutingApi.html#getUserRoutingskills) | List routing skills for user |
@@ -101,6 +103,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchRoutingQueueUser**](RoutingApi.html#patchRoutingQueueUser) | DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue. |
 | [**patchRoutingQueueUsers**](RoutingApi.html#patchRoutingQueueUsers) | DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue. |
 | [**patchRoutingSettingsContactcenter**](RoutingApi.html#patchRoutingSettingsContactcenter) | Update Contact Center Settings |
+| [**patchRoutingSettingsTranscription**](RoutingApi.html#patchRoutingSettingsTranscription) | Patch Transcription Settings |
 | [**patchRoutingSkillgroup**](RoutingApi.html#patchRoutingSkillgroup) | Update skill group definition |
 | [**patchUserQueue**](RoutingApi.html#patchUserQueue) | Join or unjoin a queue for a user |
 | [**patchUserQueues**](RoutingApi.html#patchUserQueues) | Join or unjoin a set of queues for a user |
@@ -3313,7 +3316,7 @@ try {
 | **pageNumber** | **Integer**|  | [optional] [default to 1] 
 | **pageSize** | **Integer**| Max value is 100 | [optional] [default to 25] 
 | **sortOrder** | **String**| Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography 
 | **name** | **String**| Filter by queue member name (contains-style search) | [optional] 
 | **profileSkills** | [**List&lt;String&gt;**](String.html)| Filter by profile skill (contains-style search) | [optional] 
 | **skills** | [**List&lt;String&gt;**](String.html)| Filter by skill (contains-style search) | [optional] 
@@ -3398,7 +3401,7 @@ try {
 | **pageNumber** | **Integer**|  | [optional] [default to 1] 
 | **pageSize** | **Integer**| Max value is 100 | [optional] [default to 25] 
 | **sortOrder** | **String**| Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography 
 | **joined** | **Boolean**| Filter by joined status | [optional] 
 | **name** | **String**| Filter by queue member name | [optional] 
 | **profileSkills** | [**List&lt;String&gt;**](String.html)| Filter by profile skill | [optional] 
@@ -5297,6 +5300,140 @@ try {
 
 [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html)
 
+<a name="getRoutingWrapupcodesDivisionview"></a>
+
+# **getRoutingWrapupcodesDivisionview**
+
+
+
+> [WrapupCode](WrapupCode.html) getRoutingWrapupcodesDivisionview(codeId)
+
+Get a simplified wrap-up code.
+
+Wraps GET /api/v2/routing/wrapupcodes/divisionviews/{codeId}  
+
+Requires ALL permissions: 
+
+* routing:wrapupCode:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String codeId = "codeId_example"; // String | Wrapup Code ID
+try {
+    WrapupCode result = apiInstance.getRoutingWrapupcodesDivisionview(codeId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingWrapupcodesDivisionview");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **codeId** | **String**| Wrapup Code ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WrapupCode**](WrapupCode.html)
+
+<a name="getRoutingWrapupcodesDivisionviews"></a>
+
+# **getRoutingWrapupcodesDivisionviews**
+
+
+
+> [WrapupCodeEntityListing](WrapupCodeEntityListing.html) getRoutingWrapupcodesDivisionviews(pageSize, pageNumber, name, id, divisionId, includeState)
+
+Get a paged listing of simplified wrapup code objects, filterable by name, wrapup code ID(s), or division ID(s).
+
+Specifying both name and ID parameters is not supported.
+
+Wraps GET /api/v2/routing/wrapupcodes/divisionviews  
+
+Requires ALL permissions: 
+
+* routing:wrapupCode:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String name = "name_example"; // String | Name (trailing asterisks allowed)
+List<String> id = Arrays.asList(null); // List<String> | Wrapup code ID(s)
+List<String> divisionId = Arrays.asList(null); // List<String> | Division ID(s)
+String includeState = "includeState_example"; // String | Wrapup code state(s) to include
+try {
+    WrapupCodeEntityListing result = apiInstance.getRoutingWrapupcodesDivisionviews(pageSize, pageNumber, name, id, divisionId, includeState);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingWrapupcodesDivisionviews");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **name** | **String**| Name (trailing asterisks allowed) | [optional] 
+| **id** | [**List&lt;String&gt;**](String.html)| Wrapup code ID(s) | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] 
+| **includeState** | **String**| Wrapup code state(s) to include | [optional]<br />**Values**: Active, Deleted, ActiveAndDeleted 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WrapupCodeEntityListing**](WrapupCodeEntityListing.html)
+
 <a name="getUserQueues"></a>
 
 # **getUserQueues**
@@ -6139,6 +6276,67 @@ try {
 ### Return type
 
 null (empty response body)
+
+<a name="patchRoutingSettingsTranscription"></a>
+
+# **patchRoutingSettingsTranscription**
+
+
+
+> [TranscriptionSettings](TranscriptionSettings.html) patchRoutingSettingsTranscription(body)
+
+Patch Transcription Settings
+
+Wraps PATCH /api/v2/routing/settings/transcription  
+
+Requires ANY permissions: 
+
+* routing:transcriptionSettings:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+TranscriptionSettings body = new TranscriptionSettings(); // TranscriptionSettings | Organization Settings
+try {
+    TranscriptionSettings result = apiInstance.patchRoutingSettingsTranscription(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#patchRoutingSettingsTranscription");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**TranscriptionSettings**](TranscriptionSettings.html)| Organization Settings | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TranscriptionSettings**](TranscriptionSettings.html)
 
 <a name="patchRoutingSkillgroup"></a>
 
@@ -7782,8 +7980,6 @@ try {
 > [SmsPhoneNumber](SmsPhoneNumber.html) postRoutingSmsPhonenumbersImport(body)
 
 Imports a phone number for SMS
-
-postRoutingSmsPhonenumbersImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/routing/sms/phonenumbers/import  
 

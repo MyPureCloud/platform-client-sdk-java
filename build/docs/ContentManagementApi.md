@@ -14,7 +14,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteContentmanagementWorkspaceMember**](ContentManagementApi.html#deleteContentmanagementWorkspaceMember) | Delete a member from a workspace |
 | [**deleteContentmanagementWorkspaceTagvalue**](ContentManagementApi.html#deleteContentmanagementWorkspaceTagvalue) | Delete workspace tag |
 | [**getContentmanagementDocument**](ContentManagementApi.html#getContentmanagementDocument) | Get a document. |
-| [**getContentmanagementDocumentAudits**](ContentManagementApi.html#getContentmanagementDocumentAudits) | Get a list of audits for a document. |
 | [**getContentmanagementDocumentContent**](ContentManagementApi.html#getContentmanagementDocumentContent) | Download a document. |
 | [**getContentmanagementDocuments**](ContentManagementApi.html#getContentmanagementDocuments) | Get a list of documents. |
 | [**getContentmanagementQuery**](ContentManagementApi.html#getContentmanagementQuery) | Query content |
@@ -33,7 +32,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getContentmanagementWorkspaceTagvalue**](ContentManagementApi.html#getContentmanagementWorkspaceTagvalue) | Get a workspace tag |
 | [**getContentmanagementWorkspaceTagvalues**](ContentManagementApi.html#getContentmanagementWorkspaceTagvalues) | Get a list of workspace tags |
 | [**getContentmanagementWorkspaces**](ContentManagementApi.html#getContentmanagementWorkspaces) | Get a list of workspaces. |
-| [**postContentmanagementAuditquery**](ContentManagementApi.html#postContentmanagementAuditquery) | Query audits |
 | [**postContentmanagementDocument**](ContentManagementApi.html#postContentmanagementDocument) | Update a document. |
 | [**postContentmanagementDocumentContent**](ContentManagementApi.html#postContentmanagementDocumentContent) | Replace the contents of a document. |
 | [**postContentmanagementDocuments**](ContentManagementApi.html#postContentmanagementDocuments) | Add a document. |
@@ -474,80 +472,6 @@ try {
 ### Return type
 
 [**Document**](Document.html)
-
-<a name="getContentmanagementDocumentAudits"></a>
-
-# **getContentmanagementDocumentAudits**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [DocumentAuditEntityListing](DocumentAuditEntityListing.html) getContentmanagementDocumentAudits(documentId, pageSize, pageNumber, transactionFilter, level, sortBy, sortOrder)
-
-Get a list of audits for a document.
-
-This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
-
-Wraps GET /api/v2/contentmanagement/documents/{documentId}/audits  
-
-Requires NO permissions: 
-
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.ContentManagementApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-ContentManagementApi apiInstance = new ContentManagementApi();
-String documentId = "documentId_example"; // String | Document ID
-Integer pageSize = 25; // Integer | Page size
-Integer pageNumber = 1; // Integer | Page number
-String transactionFilter = "transactionFilter_example"; // String | Transaction filter
-String level = "USER"; // String | level
-String sortBy = "sortBy_example"; // String | Sort by
-String sortOrder = "ascending"; // String | Sort order
-try {
-    DocumentAuditEntityListing result = apiInstance.getContentmanagementDocumentAudits(documentId, pageSize, pageNumber, transactionFilter, level, sortBy, sortOrder);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ContentManagementApi#getContentmanagementDocumentAudits");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **documentId** | **String**| Document ID | 
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **transactionFilter** | **String**| Transaction filter | [optional] 
-| **level** | **String**| level | [optional] [default to USER] 
-| **sortBy** | **String**| Sort by | [optional] 
-| **sortOrder** | **String**| Sort order | [optional] [default to ascending] 
-{: class="table-striped"}
-
-
-### Return type
-
-[**DocumentAuditEntityListing**](DocumentAuditEntityListing.html)
 
 <a name="getContentmanagementDocumentContent"></a>
 
@@ -1710,68 +1634,6 @@ try {
 ### Return type
 
 [**WorkspaceEntityListing**](WorkspaceEntityListing.html)
-
-<a name="postContentmanagementAuditquery"></a>
-
-# **postContentmanagementAuditquery**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [QueryResults](QueryResults.html) postContentmanagementAuditquery(body)
-
-Query audits
-
-This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
-
-Wraps POST /api/v2/contentmanagement/auditquery  
-
-Requires NO permissions: 
-
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.ContentManagementApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-ContentManagementApi apiInstance = new ContentManagementApi();
-ContentQueryRequest body = new ContentQueryRequest(); // ContentQueryRequest | Allows for a filtered query returning facet information
-try {
-    QueryResults result = apiInstance.postContentmanagementAuditquery(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ContentManagementApi#postContentmanagementAuditquery");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ContentQueryRequest**](ContentQueryRequest.html)| Allows for a filtered query returning facet information | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**QueryResults**](QueryResults.html)
 
 <a name="postContentmanagementDocument"></a>
 

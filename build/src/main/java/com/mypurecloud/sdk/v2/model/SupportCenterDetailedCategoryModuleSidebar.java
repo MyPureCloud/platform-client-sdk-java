@@ -32,7 +32,7 @@ public class SupportCenterDetailedCategoryModuleSidebar  implements Serializable
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether sidebar is enabled or not")
+  @ApiModelProperty(example = "null", required = true, value = "Whether sidebar is enabled or not")
   @JsonProperty("enabled")
   public Boolean getEnabled() {
     return enabled;

@@ -29,6 +29,7 @@ public class PhoneBaseEntityListing  implements Serializable, PagedResource<Phon
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
+  private Long totalNumberOfEntities = null;
   private String firstUri = null;
   private String nextUri = null;
   private String previousUri = null;
@@ -102,6 +103,24 @@ public class PhoneBaseEntityListing  implements Serializable, PagedResource<Phon
   }
   public void setTotal(Long total) {
     this.total = total;
+  }
+
+
+  /**
+   * The total organization-wide number of entities.
+   **/
+  public PhoneBaseEntityListing totalNumberOfEntities(Long totalNumberOfEntities) {
+    this.totalNumberOfEntities = totalNumberOfEntities;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The total organization-wide number of entities.")
+  @JsonProperty("totalNumberOfEntities")
+  public Long getTotalNumberOfEntities() {
+    return totalNumberOfEntities;
+  }
+  public void setTotalNumberOfEntities(Long totalNumberOfEntities) {
+    this.totalNumberOfEntities = totalNumberOfEntities;
   }
 
 
@@ -221,6 +240,7 @@ public class PhoneBaseEntityListing  implements Serializable, PagedResource<Phon
             Objects.equals(this.pageSize, phoneBaseEntityListing.pageSize) &&
             Objects.equals(this.pageNumber, phoneBaseEntityListing.pageNumber) &&
             Objects.equals(this.total, phoneBaseEntityListing.total) &&
+            Objects.equals(this.totalNumberOfEntities, phoneBaseEntityListing.totalNumberOfEntities) &&
             Objects.equals(this.firstUri, phoneBaseEntityListing.firstUri) &&
             Objects.equals(this.nextUri, phoneBaseEntityListing.nextUri) &&
             Objects.equals(this.previousUri, phoneBaseEntityListing.previousUri) &&
@@ -231,7 +251,7 @@ public class PhoneBaseEntityListing  implements Serializable, PagedResource<Phon
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, nextUri, previousUri, lastUri, selfUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, totalNumberOfEntities, firstUri, nextUri, previousUri, lastUri, selfUri, pageCount);
   }
 
   @Override
@@ -243,6 +263,7 @@ public class PhoneBaseEntityListing  implements Serializable, PagedResource<Phon
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
+    sb.append("    totalNumberOfEntities: ").append(toIndentedString(totalNumberOfEntities)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");

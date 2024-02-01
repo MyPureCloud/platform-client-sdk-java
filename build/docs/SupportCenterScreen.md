@@ -8,8 +8,8 @@ title: SupportCenterScreen
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of the screen |  [optional] |
-| **moduleSettings** | <!----><!---->[**List&lt;SupportCenterModuleSetting&gt;**](SupportCenterModuleSetting.html)<!----> | Module settings for the screen |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of the screen |  |
+| **moduleSettings** | <!----><!---->[**List&lt;SupportCenterModuleSetting&gt;**](SupportCenterModuleSetting.html)<!----> | Module settings for the screen, valid modules for each screenType: Home: Search, Categories, TopViewedArticles; Category: Search, Categories; SearchResults: Search, Results; Article: Search, Article; |  |
 {: class="table table-striped"}
 
 

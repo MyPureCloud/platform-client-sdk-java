@@ -14,6 +14,7 @@ title: WorkitemVersion
 | **type** | <!----><!---->[**WorktypeReference**](WorktypeReference.html)<!----> | The Worktype of the Workitem. |  [optional] |
 | **description** | <!----><!---->**String**<!----> | The description of the Workitem. |  [optional] |
 | **language** | <!----><!---->[**LanguageReference**](LanguageReference.html)<!----> | The language of the Workitem. |  [optional] |
+| **utilizationLabel** | <!----><!---->[**WorkitemUtilizationLabelReference**](WorkitemUtilizationLabelReference.html)<!----> | The utilization label of the Workitem. |  [optional] |
 | **priority** | <!----><!---->**Integer**<!----> | The priority of the Workitem. The valid range is between -25,000,000 and 25,000,000. |  [optional] |
 | **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | The creation date of the Workitem. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | The modified date of the Workitem. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |

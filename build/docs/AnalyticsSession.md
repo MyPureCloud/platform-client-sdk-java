@@ -83,8 +83,8 @@ title: AnalyticsSession
 | **videoAddressSelf** | <!----><!---->**String**<!----> | Direct Video address |  [optional] |
 | **videoRoomId** | <!----><!---->**String**<!----> | A unique identifier for a PureCloud video room |  [optional] |
 | **waitingInteractionCounts** | <!----><!---->**List&lt;Integer&gt;**<!----> | Number of waiting interactions for each predictive routing attempt |  [optional] |
-| **proposedAgents** | <!----><!---->[**List&lt;AnalyticsProposedAgent&gt;**](AnalyticsProposedAgent.html)<!----> | Proposed agents |  [optional] |
 | **agentGroups** | <!----><!---->[**List&lt;AnalyticsAgentGroup&gt;**](AnalyticsAgentGroup.html)<!----> | Conditional group routing agent groups |  [optional] |
+| **proposedAgents** | <!----><!---->[**List&lt;AnalyticsProposedAgent&gt;**](AnalyticsProposedAgent.html)<!----> | Proposed agents |  [optional] |
 | **mediaEndpointStats** | <!----><!---->[**List&lt;AnalyticsMediaEndpointStat&gt;**](AnalyticsMediaEndpointStat.html)<!----> | MediaEndpointStats associated with this session |  [optional] |
 | **flow** | <!----><!---->[**AnalyticsFlow**](AnalyticsFlow.html)<!----> | IVR flow execution associated with this session |  [optional] |
 | **metrics** | <!----><!---->[**List&lt;AnalyticsSessionMetric&gt;**](AnalyticsSessionMetric.html)<!----> | List of metrics for this session |  [optional] |

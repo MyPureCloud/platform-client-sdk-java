@@ -7,6 +7,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**postIntegrationsActionDraftFunctionUpload**](UploadsApi.html#postIntegrationsActionDraftFunctionUpload) | Create upload presigned URL for draft function package file. |
 | [**postKnowledgeDocumentuploads**](UploadsApi.html#postKnowledgeDocumentuploads) | Creates a presigned URL for uploading a knowledge import file with a set of documents |
 | [**postLanguageunderstandingMinerUploads**](UploadsApi.html#postLanguageunderstandingMinerUploads) | Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner |
 | [**postUploadsLearningCoverart**](UploadsApi.html#postUploadsLearningCoverart) | Generates pre-signed URL to upload cover art for learning modules |
@@ -14,6 +15,71 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postUploadsRecordings**](UploadsApi.html#postUploadsRecordings) | Creates presigned url for uploading a recording file |
 | [**postUploadsWorkforcemanagementHistoricaldataCsv**](UploadsApi.html#postUploadsWorkforcemanagementHistoricaldataCsv) | Creates presigned url for uploading WFM historical data file. Requires data in csv format. |
 {: class="table-striped"}
+
+<a name="postIntegrationsActionDraftFunctionUpload"></a>
+
+# **postIntegrationsActionDraftFunctionUpload**
+
+
+
+> [FunctionUploadResponse](FunctionUploadResponse.html) postIntegrationsActionDraftFunctionUpload(actionId, body)
+
+Create upload presigned URL for draft function package file.
+
+postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/integrations/actions/{actionId}/draft/function/upload  
+
+Requires ANY permissions: 
+
+* integrations:actionFunction:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UploadsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UploadsApi apiInstance = new UploadsApi();
+String actionId = "actionId_example"; // String | actionId
+FunctionUploadRequest body = new FunctionUploadRequest(); // FunctionUploadRequest | Input used to request URL upload.
+try {
+    FunctionUploadResponse result = apiInstance.postIntegrationsActionDraftFunctionUpload(actionId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UploadsApi#postIntegrationsActionDraftFunctionUpload");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **actionId** | **String**| actionId | 
+| **body** | [**FunctionUploadRequest**](FunctionUploadRequest.html)| Input used to request URL upload. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**FunctionUploadResponse**](FunctionUploadResponse.html)
 
 <a name="postKnowledgeDocumentuploads"></a>
 

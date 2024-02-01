@@ -52,6 +52,7 @@ public class ReportingTurnAction  implements Serializable {
     BOTSTATE("BotState"),
     CALLTASKACTION("CallTaskAction"),
     CLEARSLOTACTION("ClearSlotAction"),
+    CLEARUTILIZATIONLABELACTION("ClearUtilizationLabelAction"),
     DISCONNECTACTION("DisconnectAction"),
     ENDTASKACTION("EndTaskAction"),
     EXITBOTFLOWACTION("ExitBotFlowAction"),
@@ -59,6 +60,7 @@ public class ReportingTurnAction  implements Serializable {
     COMMUNICATEACTION("CommunicateAction"),
     DECISIONACTION("DecisionAction"),
     FINDGRAMMARACTION("FindGrammarAction"),
+    FINDGRAMMARBYIDACTION("FindGrammarByIdAction"),
     FINDGROUPACTION("FindGroupAction"),
     FINDLANGUAGESKILLACTION("FindLanguageSkillAction"),
     FINDQUEUEACTION("FindQueueAction"),
@@ -69,6 +71,7 @@ public class ReportingTurnAction  implements Serializable {
     FINDUSERBYIDACTION("FindUserByIdAction"),
     FINDUSERSBYIDACTION("FindUsersByIdAction"),
     FINDUSERPROMPTACTION("FindUserPromptAction"),
+    FINDUTILIZATIONLABELACTION("FindUtilizationLabelAction"),
     SWITCHACTION("SwitchAction"),
     DATAACTION("DataAction"),
     DATATABLELOOKUPACTION("DataTableLookupAction"),
@@ -91,6 +94,7 @@ public class ReportingTurnAction  implements Serializable {
     WAITFORINPUTACTION("WaitForInputAction"),
     SHOWKNOWLEDGEARTICLEACTION("ShowKnowledgeArticleAction"),
     SETLOCALEACTION("SetLocaleAction"),
+    SETUTILIZATIONLABELACTION("SetUtilizationLabelAction"),
     TRANSFERPUREMATCHACTION("TransferPureMatchAction"),
     UNKNOWN("Unknown");
 

@@ -15,11 +15,9 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.CommandStatus;
 import com.mypurecloud.sdk.v2.model.CommandStatusEntityListing;
-import com.mypurecloud.sdk.v2.model.ContentQueryRequest;
 import com.mypurecloud.sdk.v2.model.CreateShareRequest;
 import com.mypurecloud.sdk.v2.model.CreateShareResponse;
 import com.mypurecloud.sdk.v2.model.Document;
-import com.mypurecloud.sdk.v2.model.DocumentAuditEntityListing;
 import com.mypurecloud.sdk.v2.model.DocumentEntityListing;
 import com.mypurecloud.sdk.v2.model.DocumentUpdate;
 import com.mypurecloud.sdk.v2.model.DocumentUpload;
@@ -52,7 +50,6 @@ import com.mypurecloud.sdk.v2.api.request.DeleteContentmanagementWorkspaceReques
 import com.mypurecloud.sdk.v2.api.request.DeleteContentmanagementWorkspaceMemberRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteContentmanagementWorkspaceTagvalueRequest;
 import com.mypurecloud.sdk.v2.api.request.GetContentmanagementDocumentRequest;
-import com.mypurecloud.sdk.v2.api.request.GetContentmanagementDocumentAuditsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetContentmanagementDocumentContentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetContentmanagementDocumentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetContentmanagementQueryRequest;
@@ -71,7 +68,6 @@ import com.mypurecloud.sdk.v2.api.request.GetContentmanagementWorkspaceMembersRe
 import com.mypurecloud.sdk.v2.api.request.GetContentmanagementWorkspaceTagvalueRequest;
 import com.mypurecloud.sdk.v2.api.request.GetContentmanagementWorkspaceTagvaluesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetContentmanagementWorkspacesRequest;
-import com.mypurecloud.sdk.v2.api.request.PostContentmanagementAuditqueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostContentmanagementDocumentRequest;
 import com.mypurecloud.sdk.v2.api.request.PostContentmanagementDocumentContentRequest;
 import com.mypurecloud.sdk.v2.api.request.PostContentmanagementDocumentsRequest;
@@ -616,83 +612,6 @@ public class ContentManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Document> response = (ApiResponse<Document>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get a list of audits for a document.
-   * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<DocumentAuditEntityListing> getContentmanagementDocumentAuditsAsync(GetContentmanagementDocumentAuditsRequest request, final AsyncApiCallback<DocumentAuditEntityListing> callback) {
-    try {
-      final SettableFuture<DocumentAuditEntityListing> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DocumentAuditEntityListing>() {}, new AsyncApiCallback<ApiResponse<DocumentAuditEntityListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<DocumentAuditEntityListing> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get a list of audits for a document.
-   * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ApiResponse<DocumentAuditEntityListing>> getContentmanagementDocumentAuditsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DocumentAuditEntityListing>> callback) {
-    try {
-      final SettableFuture<ApiResponse<DocumentAuditEntityListing>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<DocumentAuditEntityListing>() {}, new AsyncApiCallback<ApiResponse<DocumentAuditEntityListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<DocumentAuditEntityListing> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<DocumentAuditEntityListing> response = (ApiResponse<DocumentAuditEntityListing>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<DocumentAuditEntityListing> response = (ApiResponse<DocumentAuditEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2045,83 +1964,6 @@ public class ContentManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<WorkspaceEntityListing> response = (ApiResponse<WorkspaceEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Query audits
-   * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<QueryResults> postContentmanagementAuditqueryAsync(PostContentmanagementAuditqueryRequest request, final AsyncApiCallback<QueryResults> callback) {
-    try {
-      final SettableFuture<QueryResults> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<QueryResults>() {}, new AsyncApiCallback<ApiResponse<QueryResults>>() {
-        @Override
-        public void onCompleted(ApiResponse<QueryResults> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Query audits
-   * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ApiResponse<QueryResults>> postContentmanagementAuditqueryAsync(ApiRequest<ContentQueryRequest> request, final AsyncApiCallback<ApiResponse<QueryResults>> callback) {
-    try {
-      final SettableFuture<ApiResponse<QueryResults>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<QueryResults>() {}, new AsyncApiCallback<ApiResponse<QueryResults>>() {
-        @Override
-        public void onCompleted(ApiResponse<QueryResults> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<QueryResults> response = (ApiResponse<QueryResults>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<QueryResults> response = (ApiResponse<QueryResults>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -76,6 +76,7 @@ public class KnowledgeAggregationQuery  implements Serializable {
     SEARCHQUERY("searchQuery"),
     SELFSERVED("selfServed"),
     SESSIONID("sessionId"),
+    SURFACINGMETHOD("surfacingMethod"),
     USERID("userId");
 
     private String value;

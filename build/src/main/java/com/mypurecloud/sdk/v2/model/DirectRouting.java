@@ -85,14 +85,14 @@ public class DirectRouting  implements Serializable {
 
 
   /**
-   * ID of queue to be used as the default backup if an agent does not have their Backup Settings configured.
+   * ID of another queue to be used as the default backup if an agent does not have their Backup Settings configured. If not set, the current queue will be used as backup, but with Direct Routing criteria removed from the conversation.
    **/
   public DirectRouting backupQueueId(String backupQueueId) {
     this.backupQueueId = backupQueueId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "ID of queue to be used as the default backup if an agent does not have their Backup Settings configured.")
+  @ApiModelProperty(example = "null", value = "ID of another queue to be used as the default backup if an agent does not have their Backup Settings configured. If not set, the current queue will be used as backup, but with Direct Routing criteria removed from the conversation.")
   @JsonProperty("backupQueueId")
   public String getBackupQueueId() {
     return backupQueueId;

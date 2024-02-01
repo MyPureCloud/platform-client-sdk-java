@@ -221,21 +221,23 @@ public class PresenceApi {
   }
 
   /**
-   * Delete a Presence Definition
+   * Delete a Presence Definition. Apps should migrate to use DELETE /api/v2/presence/definitions/{definitionId} instead
    * 
    * @param presenceId Organization Presence ID (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deletePresencedefinition(String presenceId) throws IOException, ApiException {
      deletePresencedefinition(createDeletePresencedefinitionRequest(presenceId));
   }
 
   /**
-   * Delete a Presence Definition
+   * Delete a Presence Definition. Apps should migrate to use DELETE /api/v2/presence/definitions/{definitionId} instead
    * 
    * @param presenceId Organization Presence ID (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deletePresencedefinitionWithHttpInfo(String presenceId) throws IOException {
     return deletePresencedefinition(createDeletePresencedefinitionRequest(presenceId).withHttpInfo());
@@ -249,11 +251,12 @@ public class PresenceApi {
   }
 
   /**
-   * Delete a Presence Definition
+   * Delete a Presence Definition. Apps should migrate to use DELETE /api/v2/presence/definitions/{definitionId} instead
    * 
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deletePresencedefinition(DeletePresencedefinitionRequest request) throws IOException, ApiException {
     try {
@@ -267,11 +270,12 @@ public class PresenceApi {
   }
 
   /**
-   * Delete a Presence Definition
+   * Delete a Presence Definition. Apps should migrate to use DELETE /api/v2/presence/definitions/{definitionId} instead
    * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deletePresencedefinition(ApiRequest<Void> request) throws IOException {
     try {
@@ -772,25 +776,27 @@ public class PresenceApi {
   }
 
   /**
-   * Get a Presence Definition
+   * Get a Presence Definition. Apps should migrate to use GET /api/v2/presence/definitions/{definitionId} instead
    * 
    * @param presenceId Organization Presence ID (required)
    * @param localeCode The locale code to fetch for the presence definition. Use ALL to fetch everything. (optional)
    * @return OrganizationPresence
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OrganizationPresence getPresencedefinition(String presenceId, String localeCode) throws IOException, ApiException {
     return  getPresencedefinition(createGetPresencedefinitionRequest(presenceId, localeCode));
   }
 
   /**
-   * Get a Presence Definition
+   * Get a Presence Definition. Apps should migrate to use GET /api/v2/presence/definitions/{definitionId} instead
    * 
    * @param presenceId Organization Presence ID (required)
    * @param localeCode The locale code to fetch for the presence definition. Use ALL to fetch everything. (optional)
    * @return OrganizationPresence
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OrganizationPresence> getPresencedefinitionWithHttpInfo(String presenceId, String localeCode) throws IOException {
     return getPresencedefinition(createGetPresencedefinitionRequest(presenceId, localeCode).withHttpInfo());
@@ -806,12 +812,13 @@ public class PresenceApi {
   }
 
   /**
-   * Get a Presence Definition
+   * Get a Presence Definition. Apps should migrate to use GET /api/v2/presence/definitions/{definitionId} instead
    * 
    * @param request The request object
    * @return OrganizationPresence
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OrganizationPresence getPresencedefinition(GetPresencedefinitionRequest request) throws IOException, ApiException {
     try {
@@ -825,11 +832,12 @@ public class PresenceApi {
   }
 
   /**
-   * Get a Presence Definition
+   * Get a Presence Definition. Apps should migrate to use GET /api/v2/presence/definitions/{definitionId} instead
    * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OrganizationPresence> getPresencedefinition(ApiRequest<Void> request) throws IOException {
     try {
@@ -854,7 +862,7 @@ public class PresenceApi {
   }
 
   /**
-   * Get an Organization's list of Presence Definitions
+   * Get an Organization's list of Presence Definitions. Apps should migrate to use GET /api/v2/presence/definitions instead
    * 
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
@@ -863,13 +871,14 @@ public class PresenceApi {
    * @return OrganizationPresenceEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OrganizationPresenceEntityListing getPresencedefinitions(Integer pageNumber, Integer pageSize, String deleted, String localeCode) throws IOException, ApiException {
     return  getPresencedefinitions(createGetPresencedefinitionsRequest(pageNumber, pageSize, deleted, localeCode));
   }
 
   /**
-   * Get an Organization's list of Presence Definitions
+   * Get an Organization's list of Presence Definitions. Apps should migrate to use GET /api/v2/presence/definitions instead
    * 
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
@@ -877,6 +886,7 @@ public class PresenceApi {
    * @param localeCode The locale code to fetch for each presence definition. Use ALL to fetch everything. (optional)
    * @return OrganizationPresenceEntityListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OrganizationPresenceEntityListing> getPresencedefinitionsWithHttpInfo(Integer pageNumber, Integer pageSize, String deleted, String localeCode) throws IOException {
     return getPresencedefinitions(createGetPresencedefinitionsRequest(pageNumber, pageSize, deleted, localeCode).withHttpInfo());
@@ -896,12 +906,13 @@ public class PresenceApi {
   }
 
   /**
-   * Get an Organization's list of Presence Definitions
+   * Get an Organization's list of Presence Definitions. Apps should migrate to use GET /api/v2/presence/definitions instead
    * 
    * @param request The request object
    * @return OrganizationPresenceEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OrganizationPresenceEntityListing getPresencedefinitions(GetPresencedefinitionsRequest request) throws IOException, ApiException {
     try {
@@ -915,11 +926,12 @@ public class PresenceApi {
   }
 
   /**
-   * Get an Organization's list of Presence Definitions
+   * Get an Organization's list of Presence Definitions. Apps should migrate to use GET /api/v2/presence/definitions instead
    * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OrganizationPresenceEntityListing> getPresencedefinitions(ApiRequest<Void> request) throws IOException {
     try {
@@ -1662,23 +1674,25 @@ public class PresenceApi {
   }
 
   /**
-   * Create a Presence Definition
+   * Create a Presence Definition. Apps should migrate to use POST /api/v2/presence/definitions instead
    * 
    * @param body The Presence Definition to create (required)
    * @return OrganizationPresence
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OrganizationPresence postPresencedefinitions(OrganizationPresence body) throws IOException, ApiException {
     return  postPresencedefinitions(createPostPresencedefinitionsRequest(body));
   }
 
   /**
-   * Create a Presence Definition
+   * Create a Presence Definition. Apps should migrate to use POST /api/v2/presence/definitions instead
    * 
    * @param body The Presence Definition to create (required)
    * @return OrganizationPresence
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OrganizationPresence> postPresencedefinitionsWithHttpInfo(OrganizationPresence body) throws IOException {
     return postPresencedefinitions(createPostPresencedefinitionsRequest(body).withHttpInfo());
@@ -1692,12 +1706,13 @@ public class PresenceApi {
   }
 
   /**
-   * Create a Presence Definition
+   * Create a Presence Definition. Apps should migrate to use POST /api/v2/presence/definitions instead
    * 
    * @param request The request object
    * @return OrganizationPresence
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OrganizationPresence postPresencedefinitions(PostPresencedefinitionsRequest request) throws IOException, ApiException {
     try {
@@ -1711,11 +1726,12 @@ public class PresenceApi {
   }
 
   /**
-   * Create a Presence Definition
+   * Create a Presence Definition. Apps should migrate to use POST /api/v2/presence/definitions instead
    * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OrganizationPresence> postPresencedefinitions(ApiRequest<OrganizationPresence> request) throws IOException {
     try {
@@ -2064,25 +2080,27 @@ public class PresenceApi {
   }
 
   /**
-   * Update a Presence Definition
+   * Update a Presence Definition. Apps should migrate to use PUT /api/v2/presence/definitions/{definitionId} instead)
    * 
    * @param presenceId Organization Presence ID (required)
    * @param body The OrganizationPresence to update (required)
    * @return OrganizationPresence
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OrganizationPresence putPresencedefinition(String presenceId, OrganizationPresence body) throws IOException, ApiException {
     return  putPresencedefinition(createPutPresencedefinitionRequest(presenceId, body));
   }
 
   /**
-   * Update a Presence Definition
+   * Update a Presence Definition. Apps should migrate to use PUT /api/v2/presence/definitions/{definitionId} instead)
    * 
    * @param presenceId Organization Presence ID (required)
    * @param body The OrganizationPresence to update (required)
    * @return OrganizationPresence
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OrganizationPresence> putPresencedefinitionWithHttpInfo(String presenceId, OrganizationPresence body) throws IOException {
     return putPresencedefinition(createPutPresencedefinitionRequest(presenceId, body).withHttpInfo());
@@ -2098,12 +2116,13 @@ public class PresenceApi {
   }
 
   /**
-   * Update a Presence Definition
+   * Update a Presence Definition. Apps should migrate to use PUT /api/v2/presence/definitions/{definitionId} instead)
    * 
    * @param request The request object
    * @return OrganizationPresence
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OrganizationPresence putPresencedefinition(PutPresencedefinitionRequest request) throws IOException, ApiException {
     try {
@@ -2117,11 +2136,12 @@ public class PresenceApi {
   }
 
   /**
-   * Update a Presence Definition
+   * Update a Presence Definition. Apps should migrate to use PUT /api/v2/presence/definitions/{definitionId} instead)
    * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OrganizationPresence> putPresencedefinition(ApiRequest<OrganizationPresence> request) throws IOException {
     try {

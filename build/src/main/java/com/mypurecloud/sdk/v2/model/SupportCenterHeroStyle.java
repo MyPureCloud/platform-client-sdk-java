@@ -35,7 +35,7 @@ public class SupportCenterHeroStyle  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Background color for hero section, in hexadecimal format, eg #ffffff")
+  @ApiModelProperty(example = "null", required = true, value = "Background color for hero section, in hexadecimal format, eg #ffffff")
   @JsonProperty("backgroundColor")
   public String getBackgroundColor() {
     return backgroundColor;
@@ -53,7 +53,7 @@ public class SupportCenterHeroStyle  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Text color for hero section, in hexadecimal format, eg #ffffff")
+  @ApiModelProperty(example = "null", required = true, value = "Text color for hero section, in hexadecimal format, eg #ffffff")
   @JsonProperty("textColor")
   public String getTextColor() {
     return textColor;

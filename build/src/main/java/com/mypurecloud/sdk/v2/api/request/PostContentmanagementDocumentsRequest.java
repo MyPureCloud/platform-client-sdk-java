@@ -22,11 +22,9 @@ import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.CommandStatus;
 import com.mypurecloud.sdk.v2.model.CommandStatusEntityListing;
-import com.mypurecloud.sdk.v2.model.ContentQueryRequest;
 import com.mypurecloud.sdk.v2.model.CreateShareRequest;
 import com.mypurecloud.sdk.v2.model.CreateShareResponse;
 import com.mypurecloud.sdk.v2.model.Document;
-import com.mypurecloud.sdk.v2.model.DocumentAuditEntityListing;
 import com.mypurecloud.sdk.v2.model.DocumentEntityListing;
 import com.mypurecloud.sdk.v2.model.DocumentUpdate;
 import com.mypurecloud.sdk.v2.model.DocumentUpload;

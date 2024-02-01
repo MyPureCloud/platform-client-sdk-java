@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.model.ChatMessageEntityListing;
 import com.mypurecloud.sdk.v2.model.ChatMessageResponse;
 import com.mypurecloud.sdk.v2.model.ChatSendMessageResponse;
 import com.mypurecloud.sdk.v2.model.ChatSettings;
+import com.mypurecloud.sdk.v2.model.ChatUserSettings;
 import com.mypurecloud.sdk.v2.model.CreateRoomRequest;
 import com.mypurecloud.sdk.v2.model.CreateRoomResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
@@ -35,10 +36,12 @@ import com.mypurecloud.sdk.v2.api.request.GetChatsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsThreadMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsUserMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsUserMessagesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetChatsUserSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchChatsRoomRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchChatsRoomMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchChatsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchChatsUserMessageRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchChatsUserSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostChatsRoomMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostChatsRoomParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PostChatsRoomPinnedmessagesRequest;
@@ -650,12 +653,6 @@ public class ChatApi {
    * 
    * getChatsRoomMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param roomJid roomJid (required)
-   * @param pageSize The total page size requested (optional, default to 25)
-   * @param pageNumber The page number requested (optional, default to 1)
-   * @param sortBy variable name requested to sort by (optional)
-   * @param expand variable name requested by expand list (optional)
-   * @param nextPage next page token (optional)
-   * @param previousPage Previous page token (optional)
    * @param limit The maximum number of messages to retrieve (optional)
    * @param before The cutoff date for messages to retrieve (optional)
    * @param after The beginning date for messages to retrieve (optional)
@@ -663,8 +660,8 @@ public class ChatApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ChatMessageEntityListing getChatsRoomMessages(String roomJid, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String limit, String before, String after) throws IOException, ApiException {
-    return  getChatsRoomMessages(createGetChatsRoomMessagesRequest(roomJid, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, limit, before, after));
+  public ChatMessageEntityListing getChatsRoomMessages(String roomJid, String limit, String before, String after) throws IOException, ApiException {
+    return  getChatsRoomMessages(createGetChatsRoomMessagesRequest(roomJid, limit, before, after));
   }
 
   /**
@@ -672,37 +669,19 @@ public class ChatApi {
    * 
    * getChatsRoomMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param roomJid roomJid (required)
-   * @param pageSize The total page size requested (optional, default to 25)
-   * @param pageNumber The page number requested (optional, default to 1)
-   * @param sortBy variable name requested to sort by (optional)
-   * @param expand variable name requested by expand list (optional)
-   * @param nextPage next page token (optional)
-   * @param previousPage Previous page token (optional)
    * @param limit The maximum number of messages to retrieve (optional)
    * @param before The cutoff date for messages to retrieve (optional)
    * @param after The beginning date for messages to retrieve (optional)
    * @return ChatMessageEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChatMessageEntityListing> getChatsRoomMessagesWithHttpInfo(String roomJid, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String limit, String before, String after) throws IOException {
-    return getChatsRoomMessages(createGetChatsRoomMessagesRequest(roomJid, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, limit, before, after).withHttpInfo());
+  public ApiResponse<ChatMessageEntityListing> getChatsRoomMessagesWithHttpInfo(String roomJid, String limit, String before, String after) throws IOException {
+    return getChatsRoomMessages(createGetChatsRoomMessagesRequest(roomJid, limit, before, after).withHttpInfo());
   }
 
-  private GetChatsRoomMessagesRequest createGetChatsRoomMessagesRequest(String roomJid, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String limit, String before, String after) {
+  private GetChatsRoomMessagesRequest createGetChatsRoomMessagesRequest(String roomJid, String limit, String before, String after) {
     return GetChatsRoomMessagesRequest.builder()
             .withRoomJid(roomJid)
-
-            .withPageSize(pageSize)
-
-            .withPageNumber(pageNumber)
-
-            .withSortBy(sortBy)
-
-            .withExpand(expand)
-
-            .withNextPage(nextPage)
-
-            .withPreviousPage(previousPage)
 
             .withLimit(limit)
 
@@ -842,12 +821,6 @@ public class ChatApi {
    * 
    * getChatsThreadMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param threadId threadId (required)
-   * @param pageSize The total page size requested (optional, default to 25)
-   * @param pageNumber The page number requested (optional, default to 1)
-   * @param sortBy variable name requested to sort by (optional)
-   * @param expand variable name requested by expand list (optional)
-   * @param nextPage next page token (optional)
-   * @param previousPage Previous page token (optional)
    * @param limit The maximum number of messages to retrieve (optional)
    * @param before The cutoff date for messages to retrieve (optional)
    * @param after The beginning date for messages to retrieve (optional)
@@ -855,8 +828,8 @@ public class ChatApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ChatMessageEntityListing getChatsThreadMessages(String threadId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String limit, String before, String after) throws IOException, ApiException {
-    return  getChatsThreadMessages(createGetChatsThreadMessagesRequest(threadId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, limit, before, after));
+  public ChatMessageEntityListing getChatsThreadMessages(String threadId, String limit, String before, String after) throws IOException, ApiException {
+    return  getChatsThreadMessages(createGetChatsThreadMessagesRequest(threadId, limit, before, after));
   }
 
   /**
@@ -864,37 +837,19 @@ public class ChatApi {
    * 
    * getChatsThreadMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param threadId threadId (required)
-   * @param pageSize The total page size requested (optional, default to 25)
-   * @param pageNumber The page number requested (optional, default to 1)
-   * @param sortBy variable name requested to sort by (optional)
-   * @param expand variable name requested by expand list (optional)
-   * @param nextPage next page token (optional)
-   * @param previousPage Previous page token (optional)
    * @param limit The maximum number of messages to retrieve (optional)
    * @param before The cutoff date for messages to retrieve (optional)
    * @param after The beginning date for messages to retrieve (optional)
    * @return ChatMessageEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChatMessageEntityListing> getChatsThreadMessagesWithHttpInfo(String threadId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String limit, String before, String after) throws IOException {
-    return getChatsThreadMessages(createGetChatsThreadMessagesRequest(threadId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, limit, before, after).withHttpInfo());
+  public ApiResponse<ChatMessageEntityListing> getChatsThreadMessagesWithHttpInfo(String threadId, String limit, String before, String after) throws IOException {
+    return getChatsThreadMessages(createGetChatsThreadMessagesRequest(threadId, limit, before, after).withHttpInfo());
   }
 
-  private GetChatsThreadMessagesRequest createGetChatsThreadMessagesRequest(String threadId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String limit, String before, String after) {
+  private GetChatsThreadMessagesRequest createGetChatsThreadMessagesRequest(String threadId, String limit, String before, String after) {
     return GetChatsThreadMessagesRequest.builder()
             .withThreadId(threadId)
-
-            .withPageSize(pageSize)
-
-            .withPageNumber(pageNumber)
-
-            .withSortBy(sortBy)
-
-            .withExpand(expand)
-
-            .withNextPage(nextPage)
-
-            .withPreviousPage(previousPage)
 
             .withLimit(limit)
 
@@ -1046,12 +1001,6 @@ public class ChatApi {
    * 
    * getChatsUserMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId userId (required)
-   * @param pageSize The total page size requested (optional, default to 25)
-   * @param pageNumber The page number requested (optional, default to 1)
-   * @param sortBy variable name requested to sort by (optional)
-   * @param expand variable name requested by expand list (optional)
-   * @param nextPage next page token (optional)
-   * @param previousPage Previous page token (optional)
    * @param limit The maximum number of messages to retrieve (optional)
    * @param before The cutoff date for messages to retrieve (optional)
    * @param after The beginning date for messages to retrieve (optional)
@@ -1059,8 +1008,8 @@ public class ChatApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ChatMessageResponse getChatsUserMessages(String userId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String limit, String before, String after) throws IOException, ApiException {
-    return  getChatsUserMessages(createGetChatsUserMessagesRequest(userId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, limit, before, after));
+  public ChatMessageResponse getChatsUserMessages(String userId, String limit, String before, String after) throws IOException, ApiException {
+    return  getChatsUserMessages(createGetChatsUserMessagesRequest(userId, limit, before, after));
   }
 
   /**
@@ -1068,37 +1017,19 @@ public class ChatApi {
    * 
    * getChatsUserMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId userId (required)
-   * @param pageSize The total page size requested (optional, default to 25)
-   * @param pageNumber The page number requested (optional, default to 1)
-   * @param sortBy variable name requested to sort by (optional)
-   * @param expand variable name requested by expand list (optional)
-   * @param nextPage next page token (optional)
-   * @param previousPage Previous page token (optional)
    * @param limit The maximum number of messages to retrieve (optional)
    * @param before The cutoff date for messages to retrieve (optional)
    * @param after The beginning date for messages to retrieve (optional)
    * @return ChatMessageResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChatMessageResponse> getChatsUserMessagesWithHttpInfo(String userId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String limit, String before, String after) throws IOException {
-    return getChatsUserMessages(createGetChatsUserMessagesRequest(userId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, limit, before, after).withHttpInfo());
+  public ApiResponse<ChatMessageResponse> getChatsUserMessagesWithHttpInfo(String userId, String limit, String before, String after) throws IOException {
+    return getChatsUserMessages(createGetChatsUserMessagesRequest(userId, limit, before, after).withHttpInfo());
   }
 
-  private GetChatsUserMessagesRequest createGetChatsUserMessagesRequest(String userId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String limit, String before, String after) {
+  private GetChatsUserMessagesRequest createGetChatsUserMessagesRequest(String userId, String limit, String before, String after) {
     return GetChatsUserMessagesRequest.builder()
             .withUserId(userId)
-
-            .withPageSize(pageSize)
-
-            .withPageNumber(pageNumber)
-
-            .withSortBy(sortBy)
-
-            .withExpand(expand)
-
-            .withNextPage(nextPage)
-
-            .withPreviousPage(previousPage)
 
             .withLimit(limit)
 
@@ -1155,6 +1086,88 @@ public class ChatApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ChatMessageResponse> response = (ApiResponse<ChatMessageResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a user's chat settings
+   * 
+   * getChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param userId User ID (required)
+   * @return ChatUserSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ChatUserSettings getChatsUserSettings(String userId) throws IOException, ApiException {
+    return  getChatsUserSettings(createGetChatsUserSettingsRequest(userId));
+  }
+
+  /**
+   * Get a user's chat settings
+   * 
+   * getChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param userId User ID (required)
+   * @return ChatUserSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ChatUserSettings> getChatsUserSettingsWithHttpInfo(String userId) throws IOException {
+    return getChatsUserSettings(createGetChatsUserSettingsRequest(userId).withHttpInfo());
+  }
+
+  private GetChatsUserSettingsRequest createGetChatsUserSettingsRequest(String userId) {
+    return GetChatsUserSettingsRequest.builder()
+            .withUserId(userId)
+
+            .build();
+  }
+
+  /**
+   * Get a user's chat settings
+   * 
+   * getChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ChatUserSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ChatUserSettings getChatsUserSettings(GetChatsUserSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ChatUserSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ChatUserSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a user's chat settings
+   * 
+   * getChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ChatUserSettings> getChatsUserSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ChatUserSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChatUserSettings> response = (ApiResponse<ChatUserSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChatUserSettings> response = (ApiResponse<ChatUserSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1496,6 +1509,92 @@ public class ChatApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ChatSendMessageResponse> response = (ApiResponse<ChatSendMessageResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a user's chat settings
+   * 
+   * patchChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param userId User ID (required)
+   * @param body  (required)
+   * @return ChatUserSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ChatUserSettings patchChatsUserSettings(String userId, ChatUserSettings body) throws IOException, ApiException {
+    return  patchChatsUserSettings(createPatchChatsUserSettingsRequest(userId, body));
+  }
+
+  /**
+   * Update a user's chat settings
+   * 
+   * patchChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param userId User ID (required)
+   * @param body  (required)
+   * @return ChatUserSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ChatUserSettings> patchChatsUserSettingsWithHttpInfo(String userId, ChatUserSettings body) throws IOException {
+    return patchChatsUserSettings(createPatchChatsUserSettingsRequest(userId, body).withHttpInfo());
+  }
+
+  private PatchChatsUserSettingsRequest createPatchChatsUserSettingsRequest(String userId, ChatUserSettings body) {
+    return PatchChatsUserSettingsRequest.builder()
+            .withUserId(userId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a user's chat settings
+   * 
+   * patchChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ChatUserSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ChatUserSettings patchChatsUserSettings(PatchChatsUserSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ChatUserSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ChatUserSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a user's chat settings
+   * 
+   * patchChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ChatUserSettings> patchChatsUserSettings(ApiRequest<ChatUserSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ChatUserSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChatUserSettings> response = (ApiResponse<ChatUserSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChatUserSettings> response = (ApiResponse<ChatUserSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

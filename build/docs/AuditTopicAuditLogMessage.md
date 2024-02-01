@@ -67,14 +67,17 @@ title: AuditTopicAuditLogMessage
 | CALLBACK | &quot;Callback&quot; | 
 | DIRECTORY | &quot;Directory&quot; | 
 | EXTERNALCONTACTS | &quot;ExternalContacts&quot; | 
-| WORKITEMS | &quot;Workitems&quot; | 
+| TASKMANAGEMENT | &quot;TaskManagement&quot; | 
 | SCIM | &quot;SCIM&quot; | 
 | NUMBERPURCHASING | &quot;NumberPurchasing&quot; | 
 | MARKETPLACE | &quot;Marketplace&quot; | 
 | LOGCAPTURE | &quot;LogCapture&quot; | 
-| GDPRSERVICE | &quot;GDPRService&quot; | 
+| GDPR | &quot;GDPR&quot; | 
 | AGENTCONFIG | &quot;AgentConfig&quot; | 
 | EMAILS | &quot;Emails&quot; | 
+| SCRIPTER | &quot;Scripter&quot; | 
+| BILLING | &quot;Billing&quot; | 
+| JOURNEYANALYTICS | &quot;JourneyAnalytics&quot; | 
 {: class="table table-striped"}
 
 
@@ -109,7 +112,6 @@ title: AuditTopicAuditLogMessage
 | AUTHENTICATE | &quot;Authenticate&quot; | 
 | CHANGEPASSWORD | &quot;ChangePassword&quot; | 
 | REVOKE | &quot;Revoke&quot; | 
-| ACTIVATE | &quot;Activate&quot; | 
 | CHECKIN | &quot;Checkin&quot; | 
 | CHECKOUT | &quot;Checkout&quot; | 
 | DEACTIVATE | &quot;Deactivate&quot; | 
@@ -119,6 +121,8 @@ title: AuditTopicAuditLogMessage
 | SAVE | &quot;Save&quot; | 
 | TRANSCODE | &quot;Transcode&quot; | 
 | UPLOAD | &quot;Upload&quot; | 
+| WRAPUPCODEADD | &quot;WrapupCodeAdd&quot; | 
+| WRAPUPCODEREMOVE | &quot;WrapupCodeRemove&quot; | 
 | READ | &quot;Read&quot; | 
 | EXECUTE | &quot;Execute&quot; | 
 | ABANDON | &quot;Abandon&quot; | 
@@ -133,6 +137,7 @@ title: AuditTopicAuditLogMessage
 | DELETEALL | &quot;DeleteAll&quot; | 
 | REASSIGN | &quot;Reassign&quot; | 
 | UNARCHIVE | &quot;Unarchive&quot; | 
+| ACTIVATE | &quot;Activate&quot; | 
 | ASSIGN | &quot;Assign&quot; | 
 | UNASSIGN | &quot;Unassign&quot; | 
 | RESET | &quot;Reset&quot; | 
@@ -162,11 +167,18 @@ title: AuditTopicAuditLogMessage
 | IPALLOWLISTCLEAR | &quot;IpAllowlistClear&quot; | 
 | ADDPAIRINGROLE | &quot;AddPairingRole&quot; | 
 | VERIFY | &quot;Verify&quot; | 
+| RESTOREDELETED | &quot;RestoreDeleted&quot; | 
+| RESTOREALL | &quot;RestoreAll&quot; | 
+| APPROVE | &quot;Approve&quot; | 
+| REJECT | &quot;Reject&quot; | 
+| REVERSE | &quot;Reverse&quot; | 
 | CANCEL | &quot;Cancel&quot; | 
 | HARDDELETE | &quot;HardDelete&quot; | 
 | SOFTDELETE | &quot;SoftDelete&quot; | 
 | ENABLECAPTURE | &quot;EnableCapture&quot; | 
 | DOWNLOADCAPTURE | &quot;DownloadCapture&quot; | 
+| INITIATE | &quot;Initiate&quot; | 
+| REVERSEMANUALLY | &quot;ReverseManually&quot; | 
 {: class="table table-striped"}
 
 
@@ -180,6 +192,7 @@ title: AuditTopicAuditLogMessage
 | FEEDBACK | &quot;Feedback&quot; | 
 | DOCUMENT | &quot;Document&quot; | 
 | WORKSPACE | &quot;Workspace&quot; | 
+| TAG | &quot;Tag&quot; | 
 | ACCESSTOKEN | &quot;AccessToken&quot; | 
 | OAUTHCLIENTAUTHORIZATION | &quot;OAuthClientAuthorization&quot; | 
 | AUTHORGANIZATION | &quot;AuthOrganization&quot; | 
@@ -197,6 +210,8 @@ title: AuditTopicAuditLogMessage
 | PROMPTRESOURCE | &quot;PromptResource&quot; | 
 | FLOWOUTCOME | &quot;FlowOutcome&quot; | 
 | FLOWMILESTONE | &quot;FlowMilestone&quot; | 
+| GRAMMAR | &quot;Grammar&quot; | 
+| GRAMMARLANGUAGE | &quot;GrammarLanguage&quot; | 
 | AGENTROUTINGINFO | &quot;AgentRoutingInfo&quot; | 
 | QUEUE | &quot;Queue&quot; | 
 | WRAPUPCODE | &quot;WrapupCode&quot; | 
@@ -219,7 +234,9 @@ title: AuditTopicAuditLogMessage
 | RECORDINGKEYCONFIG | &quot;RecordingKeyConfig&quot; | 
 | TOPIC | &quot;Topic&quot; | 
 | PROGRAM | &quot;Program&quot; | 
+| CATEGORY | &quot;Category&quot; | 
 | SENTIMENTFEEDBACK | &quot;SentimentFeedback&quot; | 
+| DICTIONARYFEEDBACK | &quot;DictionaryFeedback&quot; | 
 | SEGMENT | &quot;Segment&quot; | 
 | OUTCOME | &quot;Outcome&quot; | 
 | ACTIONMAP | &quot;ActionMap&quot; | 
@@ -229,6 +246,8 @@ title: AuditTopicAuditLogMessage
 | SESSIONTYPE | &quot;SessionType&quot; | 
 | KNOWLEDGEBASE | &quot;KnowledgeBase&quot; | 
 | KNOWLEDGECATEGORY | &quot;KnowledgeCategory&quot; | 
+| KNOWLEDGECONTEXT | &quot;KnowledgeContext&quot; | 
+| KNOWLEDGECONTEXTVALUE | &quot;KnowledgeContextValue&quot; | 
 | KNOWLEDGEDOCUMENT | &quot;KnowledgeDocument&quot; | 
 | KNOWLEDGEDOCUMENTVARIATION | &quot;KnowledgeDocumentVariation&quot; | 
 | KNOWLEDGELABEL | &quot;KnowledgeLabel&quot; | 
@@ -257,12 +276,14 @@ title: AuditTopicAuditLogMessage
 | WORKPLAN | &quot;WorkPlan&quot; | 
 | WORKPLANROTATION | &quot;WorkPlanRotation&quot; | 
 | HISTORICALDATA | &quot;HistoricalData&quot; | 
+| STAFFINGGROUP | &quot;StaffingGroup&quot; | 
 | TRIGGER | &quot;Trigger&quot; | 
 | RESPONSE | &quot;Response&quot; | 
 | RESPONSEASSET | &quot;ResponseAsset&quot; | 
-| SKILLSGROUP | &quot;SkillsGroup&quot; | 
+| SKILLGROUP | &quot;SkillGroup&quot; | 
 | DIRECTORYGROUP | &quot;DirectoryGroup&quot; | 
 | TEAM | &quot;Team&quot; | 
+| SKILLGROUPDEFINITION | &quot;SkillGroupDefinition&quot; | 
 | EDGE | &quot;Edge&quot; | 
 | EDGEGROUP | &quot;EdgeGroup&quot; | 
 | VOICEMAILPOLICY | &quot;VoicemailPolicy&quot; | 
@@ -292,8 +313,11 @@ title: AuditTopicAuditLogMessage
 | SEQUENCESCHEDULE | &quot;SequenceSchedule&quot; | 
 | CONTACTLIST | &quot;ContactList&quot; | 
 | CONTACTLISTFILTER | &quot;ContactListFilter&quot; | 
+| CONTACTLISTTEMPLATE | &quot;ContactListTemplate&quot; | 
 | DIGITALRULESET | &quot;DigitalRuleSet&quot; | 
 | DNCLIST | &quot;DNCList&quot; | 
+| FILESPECIFICATIONTEMPLATE | &quot;FileSpecificationTemplate&quot; | 
+| IMPORTTEMPLATE | &quot;ImportTemplate&quot; | 
 | ORGANIZATIONSETTINGS | &quot;OrganizationSettings&quot; | 
 | CALLANALYSISRESPONSESET | &quot;CallAnalysisResponseSet&quot; | 
 | RULESET | &quot;RuleSet&quot; | 
@@ -302,6 +326,7 @@ title: AuditTopicAuditLogMessage
 | MESSAGINGCAMPAIGNSCHEDULE | &quot;MessagingCampaignSchedule&quot; | 
 | EMAILCAMPAIGNSCHEDULE | &quot;EmailCampaignSchedule&quot; | 
 | PREDICTOR | &quot;Predictor&quot; | 
+| KPISPECIFICATION | &quot;KpiSpecification&quot; | 
 | METRIC | &quot;Metric&quot; | 
 | STATUS | &quot;Status&quot; | 
 | PROFILE | &quot;Profile&quot; | 
@@ -316,6 +341,7 @@ title: AuditTopicAuditLogMessage
 | SCHEDULEDEXPORTS | &quot;ScheduledExports&quot; | 
 | EXPORTS | &quot;Exports&quot; | 
 | CHANGEREQUEST | &quot;ChangeRequest&quot; | 
+| MIGRATION | &quot;Migration&quot; | 
 | EXTERNALMETRICSDEFINITION | &quot;ExternalMetricsDefinition&quot; | 
 | EXTERNALMETRICSDATA | &quot;ExternalMetricsData&quot; | 
 | SCHEMA | &quot;Schema&quot; | 
@@ -343,11 +369,12 @@ title: AuditTopicAuditLogMessage
 | PRODUCT | &quot;Product&quot; | 
 | USER | &quot;User&quot; | 
 | LOCATION | &quot;Location&quot; | 
+| CONVERSATION | &quot;Conversation&quot; | 
+| ORGANIZATIONSUSPENSION | &quot;OrganizationSuspension&quot; | 
 | PARTICIPANT | &quot;Participant&quot; | 
 | CONTACTSCHEMA | &quot;ContactSchema&quot; | 
 | EXTERNALORGANIZATIONSCHEMA | &quot;ExternalOrganizationSchema&quot; | 
 | WORKBIN | &quot;Workbin&quot; | 
-| WORKITEM | &quot;Workitem&quot; | 
 | WORKTYPE | &quot;Worktype&quot; | 
 | CREDENTIAL | &quot;Credential&quot; | 
 | NUMBERORDER | &quot;NumberOrder&quot; | 
@@ -360,6 +387,17 @@ title: AuditTopicAuditLogMessage
 | ORGANIZATIONLIMITS | &quot;OrganizationLimits&quot; | 
 | USERSKILL | &quot;UserSkill&quot; | 
 | USERLANGUAGE | &quot;UserLanguage&quot; | 
+| COMPOSERPAGE | &quot;ComposerPage&quot; | 
+| COMPOSERPUBLISHEDSCRIPT | &quot;ComposerPublishedScript&quot; | 
+| COMPOSERSCRIPT | &quot;ComposerScript&quot; | 
+| COMPOSERTEMPLATE | &quot;ComposerTemplate&quot; | 
+| INTENTMINER | &quot;IntentMiner&quot; | 
+| TOPICMINER | &quot;TopicMiner&quot; | 
+| SOFTSUSPENSION | &quot;SoftSuspension&quot; | 
+| ACTIVITYPLAN | &quot;ActivityPlan&quot; | 
+| ACTIVITYPLANOCCURRENCE | &quot;ActivityPlanOccurrence&quot; | 
+| JOURNEYVIEW | &quot;JourneyView&quot; | 
+| ALTERNATIVESHIFTTRADE | &quot;AlternativeShiftTrade&quot; | 
 {: class="table table-striped"}
 
 

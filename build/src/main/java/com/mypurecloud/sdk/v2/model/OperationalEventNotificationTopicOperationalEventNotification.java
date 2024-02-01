@@ -14,7 +14,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OperationalEventNotificationTopicEventEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.Date;
 
 import java.io.Serializable;
 /**
@@ -33,7 +32,7 @@ public class OperationalEventNotificationTopicOperationalEventNotification  impl
   private String parentEntity = null;
   private String entityType = null;
   private String conversationId = null;
-  private Date timestamp = null;
+  private Integer timestamp = null;
 
   
   /**
@@ -208,17 +207,17 @@ public class OperationalEventNotificationTopicOperationalEventNotification  impl
 
   /**
    **/
-  public OperationalEventNotificationTopicOperationalEventNotification timestamp(Date timestamp) {
+  public OperationalEventNotificationTopicOperationalEventNotification timestamp(Integer timestamp) {
     this.timestamp = timestamp;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("timestamp")
-  public Date getTimestamp() {
+  public Integer getTimestamp() {
     return timestamp;
   }
-  public void setTimestamp(Date timestamp) {
+  public void setTimestamp(Integer timestamp) {
     this.timestamp = timestamp;
   }
 

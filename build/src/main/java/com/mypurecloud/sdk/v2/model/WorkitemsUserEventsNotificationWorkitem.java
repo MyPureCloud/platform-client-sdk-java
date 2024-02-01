@@ -235,6 +235,7 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
   private Map<String, WorkitemsUserEventsNotificationCustomAttribute> customFields = null;
   private WorkitemsUserEventsNotificationWrapup wrapup = null;
   private List<WorkitemsUserEventsNotificationSession> sessions = new ArrayList<WorkitemsUserEventsNotificationSession>();
+  private List<String> skillIds = new ArrayList<String>();
 
   
   /**
@@ -781,6 +782,23 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
   }
 
 
+  /**
+   **/
+  public WorkitemsUserEventsNotificationWorkitem skillIds(List<String> skillIds) {
+    this.skillIds = skillIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("skillIds")
+  public List<String> getSkillIds() {
+    return skillIds;
+  }
+  public void setSkillIds(List<String> skillIds) {
+    this.skillIds = skillIds;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -822,12 +840,13 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
             Objects.equals(this.queueId, workitemsUserEventsNotificationWorkitem.queueId) &&
             Objects.equals(this.customFields, workitemsUserEventsNotificationWorkitem.customFields) &&
             Objects.equals(this.wrapup, workitemsUserEventsNotificationWorkitem.wrapup) &&
-            Objects.equals(this.sessions, workitemsUserEventsNotificationWorkitem.sessions);
+            Objects.equals(this.sessions, workitemsUserEventsNotificationWorkitem.sessions) &&
+            Objects.equals(this.skillIds, workitemsUserEventsNotificationWorkitem.skillIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, typeId, description, languageId, priority, dateCreated, dateModified, dateDue, dateExpires, dateAssignmentStateChanged, durationSeconds, ttl, statusId, statusCategory, dateClosed, workbinId, reporterId, assigneeId, externalContactId, externalTag, wrapupId, modifiedBy, operation, changes, assignmentState, assignmentId, alertTimeoutSeconds, queueId, customFields, wrapup, sessions);
+    return Objects.hash(id, name, typeId, description, languageId, priority, dateCreated, dateModified, dateDue, dateExpires, dateAssignmentStateChanged, durationSeconds, ttl, statusId, statusCategory, dateClosed, workbinId, reporterId, assigneeId, externalContactId, externalTag, wrapupId, modifiedBy, operation, changes, assignmentState, assignmentId, alertTimeoutSeconds, queueId, customFields, wrapup, sessions, skillIds);
   }
 
   @Override
@@ -867,6 +886,7 @@ public class WorkitemsUserEventsNotificationWorkitem  implements Serializable {
     sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    sessions: ").append(toIndentedString(sessions)).append("\n");
+    sb.append("    skillIds: ").append(toIndentedString(skillIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -182,6 +182,8 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationTagAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationTagsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodesDivisionviewRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodesDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRoutinglanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRoutingskillsRequest;
@@ -195,6 +197,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueUserRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingSettingsContactcenterRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchRoutingSettingsTranscriptionRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingSkillgroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserQueuesRequest;
@@ -6995,6 +6998,182 @@ public class RoutingApi {
   }
 
   /**
+   * Get a simplified wrap-up code.
+   * 
+   * @param codeId Wrapup Code ID (required)
+   * @return WrapupCode
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WrapupCode getRoutingWrapupcodesDivisionview(String codeId) throws IOException, ApiException {
+    return  getRoutingWrapupcodesDivisionview(createGetRoutingWrapupcodesDivisionviewRequest(codeId));
+  }
+
+  /**
+   * Get a simplified wrap-up code.
+   * 
+   * @param codeId Wrapup Code ID (required)
+   * @return WrapupCode
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WrapupCode> getRoutingWrapupcodesDivisionviewWithHttpInfo(String codeId) throws IOException {
+    return getRoutingWrapupcodesDivisionview(createGetRoutingWrapupcodesDivisionviewRequest(codeId).withHttpInfo());
+  }
+
+  private GetRoutingWrapupcodesDivisionviewRequest createGetRoutingWrapupcodesDivisionviewRequest(String codeId) {
+    return GetRoutingWrapupcodesDivisionviewRequest.builder()
+            .withCodeId(codeId)
+
+            .build();
+  }
+
+  /**
+   * Get a simplified wrap-up code.
+   * 
+   * @param request The request object
+   * @return WrapupCode
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WrapupCode getRoutingWrapupcodesDivisionview(GetRoutingWrapupcodesDivisionviewRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WrapupCode> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WrapupCode>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a simplified wrap-up code.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WrapupCode> getRoutingWrapupcodesDivisionview(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WrapupCode>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WrapupCode> response = (ApiResponse<WrapupCode>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WrapupCode> response = (ApiResponse<WrapupCode>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a paged listing of simplified wrapup code objects, filterable by name, wrapup code ID(s), or division ID(s).
+   * Specifying both name and ID parameters is not supported.
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param name Name (trailing asterisks allowed) (optional)
+   * @param id Wrapup code ID(s) (optional)
+   * @param divisionId Division ID(s) (optional)
+   * @param includeState Wrapup code state(s) to include (optional)
+   * @return WrapupCodeEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WrapupCodeEntityListing getRoutingWrapupcodesDivisionviews(Integer pageSize, Integer pageNumber, String name, List<String> id, List<String> divisionId, String includeState) throws IOException, ApiException {
+    return  getRoutingWrapupcodesDivisionviews(createGetRoutingWrapupcodesDivisionviewsRequest(pageSize, pageNumber, name, id, divisionId, includeState));
+  }
+
+  /**
+   * Get a paged listing of simplified wrapup code objects, filterable by name, wrapup code ID(s), or division ID(s).
+   * Specifying both name and ID parameters is not supported.
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param name Name (trailing asterisks allowed) (optional)
+   * @param id Wrapup code ID(s) (optional)
+   * @param divisionId Division ID(s) (optional)
+   * @param includeState Wrapup code state(s) to include (optional)
+   * @return WrapupCodeEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WrapupCodeEntityListing> getRoutingWrapupcodesDivisionviewsWithHttpInfo(Integer pageSize, Integer pageNumber, String name, List<String> id, List<String> divisionId, String includeState) throws IOException {
+    return getRoutingWrapupcodesDivisionviews(createGetRoutingWrapupcodesDivisionviewsRequest(pageSize, pageNumber, name, id, divisionId, includeState).withHttpInfo());
+  }
+
+  private GetRoutingWrapupcodesDivisionviewsRequest createGetRoutingWrapupcodesDivisionviewsRequest(Integer pageSize, Integer pageNumber, String name, List<String> id, List<String> divisionId, String includeState) {
+    return GetRoutingWrapupcodesDivisionviewsRequest.builder()
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .withName(name)
+
+            .withId(id)
+
+            .withDivisionId(divisionId)
+
+            .withIncludeState(includeState)
+
+            .build();
+  }
+
+  /**
+   * Get a paged listing of simplified wrapup code objects, filterable by name, wrapup code ID(s), or division ID(s).
+   * Specifying both name and ID parameters is not supported.
+   * @param request The request object
+   * @return WrapupCodeEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WrapupCodeEntityListing getRoutingWrapupcodesDivisionviews(GetRoutingWrapupcodesDivisionviewsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WrapupCodeEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WrapupCodeEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a paged listing of simplified wrapup code objects, filterable by name, wrapup code ID(s), or division ID(s).
+   * Specifying both name and ID parameters is not supported.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WrapupCodeEntityListing> getRoutingWrapupcodesDivisionviews(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WrapupCodeEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WrapupCodeEntityListing> response = (ApiResponse<WrapupCodeEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WrapupCodeEntityListing> response = (ApiResponse<WrapupCodeEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get queues for user
    * 
    * @param userId User ID (required)
@@ -8095,6 +8274,84 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Patch Transcription Settings
+   * 
+   * @param body Organization Settings (required)
+   * @return TranscriptionSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TranscriptionSettings patchRoutingSettingsTranscription(TranscriptionSettings body) throws IOException, ApiException {
+    return  patchRoutingSettingsTranscription(createPatchRoutingSettingsTranscriptionRequest(body));
+  }
+
+  /**
+   * Patch Transcription Settings
+   * 
+   * @param body Organization Settings (required)
+   * @return TranscriptionSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TranscriptionSettings> patchRoutingSettingsTranscriptionWithHttpInfo(TranscriptionSettings body) throws IOException {
+    return patchRoutingSettingsTranscription(createPatchRoutingSettingsTranscriptionRequest(body).withHttpInfo());
+  }
+
+  private PatchRoutingSettingsTranscriptionRequest createPatchRoutingSettingsTranscriptionRequest(TranscriptionSettings body) {
+    return PatchRoutingSettingsTranscriptionRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Patch Transcription Settings
+   * 
+   * @param request The request object
+   * @return TranscriptionSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TranscriptionSettings patchRoutingSettingsTranscription(PatchRoutingSettingsTranscriptionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TranscriptionSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TranscriptionSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Patch Transcription Settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TranscriptionSettings> patchRoutingSettingsTranscription(ApiRequest<TranscriptionSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TranscriptionSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TranscriptionSettings> response = (ApiResponse<TranscriptionSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TranscriptionSettings> response = (ApiResponse<TranscriptionSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -10205,7 +10462,6 @@ public class RoutingApi {
   /**
    * Imports a phone number for SMS
    * 
-   * postRoutingSmsPhonenumbersImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body SmsPhoneNumber (required)
    * @return SmsPhoneNumber
    * @throws ApiException if the request fails on the server
@@ -10218,7 +10474,6 @@ public class RoutingApi {
   /**
    * Imports a phone number for SMS
    * 
-   * postRoutingSmsPhonenumbersImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body SmsPhoneNumber (required)
    * @return SmsPhoneNumber
    * @throws IOException if the request fails to be processed
@@ -10237,7 +10492,6 @@ public class RoutingApi {
   /**
    * Imports a phone number for SMS
    * 
-   * postRoutingSmsPhonenumbersImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return SmsPhoneNumber
    * @throws ApiException if the request fails on the server
@@ -10257,7 +10511,6 @@ public class RoutingApi {
   /**
    * Imports a phone number for SMS
    * 
-   * postRoutingSmsPhonenumbersImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

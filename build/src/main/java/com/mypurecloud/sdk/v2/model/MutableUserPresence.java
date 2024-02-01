@@ -26,6 +26,7 @@ public class MutableUserPresence  implements Serializable {
   private String id = null;
   private String name = null;
   private String source = null;
+  private String sourceId = null;
   private Boolean primary = null;
   private PresenceDefinition presenceDefinition = null;
   private String message = null;
@@ -69,20 +70,38 @@ public class MutableUserPresence  implements Serializable {
 
 
   /**
-   * Represents the source where the Presence was set. Some examples are: PURECLOUD, LYNC, OUTLOOK, etc.
+   * Deprecated - The sourceID field should be used as a replacement.
    **/
   public MutableUserPresence source(String source) {
     this.source = source;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Represents the source where the Presence was set. Some examples are: PURECLOUD, LYNC, OUTLOOK, etc.")
+  @ApiModelProperty(example = "null", value = "Deprecated - The sourceID field should be used as a replacement.")
   @JsonProperty("source")
   public String getSource() {
     return source;
   }
   public void setSource(String source) {
     this.source = source;
+  }
+
+
+  /**
+   * Represents the ID of a registered source
+   **/
+  public MutableUserPresence sourceId(String sourceId) {
+    this.sourceId = sourceId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Represents the ID of a registered source")
+  @JsonProperty("sourceId")
+  public String getSourceId() {
+    return sourceId;
+  }
+  public void setSourceId(String sourceId) {
+    this.sourceId = sourceId;
   }
 
 
@@ -176,6 +195,7 @@ public class MutableUserPresence  implements Serializable {
     return Objects.equals(this.id, mutableUserPresence.id) &&
             Objects.equals(this.name, mutableUserPresence.name) &&
             Objects.equals(this.source, mutableUserPresence.source) &&
+            Objects.equals(this.sourceId, mutableUserPresence.sourceId) &&
             Objects.equals(this.primary, mutableUserPresence.primary) &&
             Objects.equals(this.presenceDefinition, mutableUserPresence.presenceDefinition) &&
             Objects.equals(this.message, mutableUserPresence.message) &&
@@ -185,7 +205,7 @@ public class MutableUserPresence  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, source, primary, presenceDefinition, message, modifiedDate, selfUri);
+    return Objects.hash(id, name, source, sourceId, primary, presenceDefinition, message, modifiedDate, selfUri);
   }
 
   @Override
@@ -196,6 +216,7 @@ public class MutableUserPresence  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");
+    sb.append("    sourceId: ").append(toIndentedString(sourceId)).append("\n");
     sb.append("    primary: ").append(toIndentedString(primary)).append("\n");
     sb.append("    presenceDefinition: ").append(toIndentedString(presenceDefinition)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");

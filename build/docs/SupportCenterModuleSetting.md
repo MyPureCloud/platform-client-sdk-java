@@ -8,8 +8,8 @@ title: SupportCenterModuleSetting
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Screen module type |  [optional] |
-| **enabled** | <!----><!---->**Boolean**<!----> | Whether or not knowledge portal (previously support center) screen module is enabled |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> | Screen module type |  |
+| **enabled** | <!----><!---->**Boolean**<!----> | Whether or not knowledge portal (previously support center) screen module is enabled |  |
 | **compactCategoryModuleTemplate** | <!----><!---->[**SupportCenterCompactCategoryModuleTemplate**](SupportCenterCompactCategoryModuleTemplate.html)<!----> | Compact category module template |  [optional] |
 | **detailedCategoryModuleTemplate** | <!----><!---->[**SupportCenterDetailedCategoryModuleTemplate**](SupportCenterDetailedCategoryModuleTemplate.html)<!----> | Detailed category module template |  [optional] |
 {: class="table table-striped"}

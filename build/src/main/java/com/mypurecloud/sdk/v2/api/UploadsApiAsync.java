@@ -14,11 +14,14 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.FunctionUploadRequest;
+import com.mypurecloud.sdk.v2.model.FunctionUploadResponse;
 import com.mypurecloud.sdk.v2.model.LearningCoverArtUploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 
 
+import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionDraftFunctionUploadRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeDocumentuploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingMinerUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUploadsLearningCoverartRequest;
@@ -42,6 +45,83 @@ public class UploadsApiAsync {
 
   public UploadsApiAsync(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Create upload presigned URL for draft function package file.
+   * 
+   * postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FunctionUploadResponse> postIntegrationsActionDraftFunctionUploadAsync(PostIntegrationsActionDraftFunctionUploadRequest request, final AsyncApiCallback<FunctionUploadResponse> callback) {
+    try {
+      final SettableFuture<FunctionUploadResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FunctionUploadResponse>() {}, new AsyncApiCallback<ApiResponse<FunctionUploadResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<FunctionUploadResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create upload presigned URL for draft function package file.
+   * 
+   * postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FunctionUploadResponse>> postIntegrationsActionDraftFunctionUploadAsync(ApiRequest<FunctionUploadRequest> request, final AsyncApiCallback<ApiResponse<FunctionUploadResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FunctionUploadResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FunctionUploadResponse>() {}, new AsyncApiCallback<ApiResponse<FunctionUploadResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<FunctionUploadResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FunctionUploadResponse> response = (ApiResponse<FunctionUploadResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FunctionUploadResponse> response = (ApiResponse<FunctionUploadResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**

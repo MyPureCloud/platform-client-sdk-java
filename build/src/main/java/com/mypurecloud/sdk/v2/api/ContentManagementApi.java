@@ -12,11 +12,9 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.CommandStatus;
 import com.mypurecloud.sdk.v2.model.CommandStatusEntityListing;
-import com.mypurecloud.sdk.v2.model.ContentQueryRequest;
 import com.mypurecloud.sdk.v2.model.CreateShareRequest;
 import com.mypurecloud.sdk.v2.model.CreateShareResponse;
 import com.mypurecloud.sdk.v2.model.Document;
-import com.mypurecloud.sdk.v2.model.DocumentAuditEntityListing;
 import com.mypurecloud.sdk.v2.model.DocumentEntityListing;
 import com.mypurecloud.sdk.v2.model.DocumentUpdate;
 import com.mypurecloud.sdk.v2.model.DocumentUpload;
@@ -49,7 +47,6 @@ import com.mypurecloud.sdk.v2.api.request.DeleteContentmanagementWorkspaceReques
 import com.mypurecloud.sdk.v2.api.request.DeleteContentmanagementWorkspaceMemberRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteContentmanagementWorkspaceTagvalueRequest;
 import com.mypurecloud.sdk.v2.api.request.GetContentmanagementDocumentRequest;
-import com.mypurecloud.sdk.v2.api.request.GetContentmanagementDocumentAuditsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetContentmanagementDocumentContentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetContentmanagementDocumentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetContentmanagementQueryRequest;
@@ -68,7 +65,6 @@ import com.mypurecloud.sdk.v2.api.request.GetContentmanagementWorkspaceMembersRe
 import com.mypurecloud.sdk.v2.api.request.GetContentmanagementWorkspaceTagvalueRequest;
 import com.mypurecloud.sdk.v2.api.request.GetContentmanagementWorkspaceTagvaluesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetContentmanagementWorkspacesRequest;
-import com.mypurecloud.sdk.v2.api.request.PostContentmanagementAuditqueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostContentmanagementDocumentRequest;
 import com.mypurecloud.sdk.v2.api.request.PostContentmanagementDocumentContentRequest;
 import com.mypurecloud.sdk.v2.api.request.PostContentmanagementDocumentsRequest;
@@ -642,112 +638,6 @@ public class ContentManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Document> response = (ApiResponse<Document>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Get a list of audits for a document.
-   * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
-   * @param documentId Document ID (required)
-   * @param pageSize Page size (optional, default to 25)
-   * @param pageNumber Page number (optional, default to 1)
-   * @param transactionFilter Transaction filter (optional)
-   * @param level level (optional, default to USER)
-   * @param sortBy Sort by (optional)
-   * @param sortOrder Sort order (optional, default to ascending)
-   * @return DocumentAuditEntityListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public DocumentAuditEntityListing getContentmanagementDocumentAudits(String documentId, Integer pageSize, Integer pageNumber, String transactionFilter, String level, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getContentmanagementDocumentAudits(createGetContentmanagementDocumentAuditsRequest(documentId, pageSize, pageNumber, transactionFilter, level, sortBy, sortOrder));
-  }
-
-  /**
-   * Get a list of audits for a document.
-   * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
-   * @param documentId Document ID (required)
-   * @param pageSize Page size (optional, default to 25)
-   * @param pageNumber Page number (optional, default to 1)
-   * @param transactionFilter Transaction filter (optional)
-   * @param level level (optional, default to USER)
-   * @param sortBy Sort by (optional)
-   * @param sortOrder Sort order (optional, default to ascending)
-   * @return DocumentAuditEntityListing
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<DocumentAuditEntityListing> getContentmanagementDocumentAuditsWithHttpInfo(String documentId, Integer pageSize, Integer pageNumber, String transactionFilter, String level, String sortBy, String sortOrder) throws IOException {
-    return getContentmanagementDocumentAudits(createGetContentmanagementDocumentAuditsRequest(documentId, pageSize, pageNumber, transactionFilter, level, sortBy, sortOrder).withHttpInfo());
-  }
-
-  private GetContentmanagementDocumentAuditsRequest createGetContentmanagementDocumentAuditsRequest(String documentId, Integer pageSize, Integer pageNumber, String transactionFilter, String level, String sortBy, String sortOrder) {
-    return GetContentmanagementDocumentAuditsRequest.builder()
-            .withDocumentId(documentId)
-
-            .withPageSize(pageSize)
-
-            .withPageNumber(pageNumber)
-
-            .withTransactionFilter(transactionFilter)
-
-            .withLevel(level)
-
-            .withSortBy(sortBy)
-
-            .withSortOrder(sortOrder)
-
-            .build();
-  }
-
-  /**
-   * Get a list of audits for a document.
-   * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
-   * @param request The request object
-   * @return DocumentAuditEntityListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public DocumentAuditEntityListing getContentmanagementDocumentAudits(GetContentmanagementDocumentAuditsRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<DocumentAuditEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DocumentAuditEntityListing>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get a list of audits for a document.
-   * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<DocumentAuditEntityListing> getContentmanagementDocumentAudits(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<DocumentAuditEntityListing>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<DocumentAuditEntityListing> response = (ApiResponse<DocumentAuditEntityListing>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<DocumentAuditEntityListing> response = (ApiResponse<DocumentAuditEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2316,88 +2206,6 @@ public class ContentManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WorkspaceEntityListing> response = (ApiResponse<WorkspaceEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Query audits
-   * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
-   * @param body Allows for a filtered query returning facet information (required)
-   * @return QueryResults
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public QueryResults postContentmanagementAuditquery(ContentQueryRequest body) throws IOException, ApiException {
-    return  postContentmanagementAuditquery(createPostContentmanagementAuditqueryRequest(body));
-  }
-
-  /**
-   * Query audits
-   * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
-   * @param body Allows for a filtered query returning facet information (required)
-   * @return QueryResults
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<QueryResults> postContentmanagementAuditqueryWithHttpInfo(ContentQueryRequest body) throws IOException {
-    return postContentmanagementAuditquery(createPostContentmanagementAuditqueryRequest(body).withHttpInfo());
-  }
-
-  private PostContentmanagementAuditqueryRequest createPostContentmanagementAuditqueryRequest(ContentQueryRequest body) {
-    return PostContentmanagementAuditqueryRequest.builder()
-            .withBody(body)
-
-            .build();
-  }
-
-  /**
-   * Query audits
-   * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
-   * @param request The request object
-   * @return QueryResults
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public QueryResults postContentmanagementAuditquery(PostContentmanagementAuditqueryRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<QueryResults> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QueryResults>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Query audits
-   * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<QueryResults> postContentmanagementAuditquery(ApiRequest<ContentQueryRequest> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<QueryResults>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<QueryResults> response = (ApiResponse<QueryResults>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<QueryResults> response = (ApiResponse<QueryResults>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

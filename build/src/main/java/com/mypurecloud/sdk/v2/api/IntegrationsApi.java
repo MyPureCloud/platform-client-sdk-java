@@ -11,6 +11,7 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.Action;
+import com.mypurecloud.sdk.v2.model.ActionCertificateListing;
 import com.mypurecloud.sdk.v2.model.ActionEntityListing;
 import com.mypurecloud.sdk.v2.model.AsyncJob;
 import com.mypurecloud.sdk.v2.model.BotConnectorBot;
@@ -29,6 +30,11 @@ import com.mypurecloud.sdk.v2.model.DialogflowAgent;
 import com.mypurecloud.sdk.v2.model.DialogflowAgentSummaryEntityListing;
 import com.mypurecloud.sdk.v2.model.DraftValidationResult;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.Function;
+import com.mypurecloud.sdk.v2.model.FunctionConfig;
+import com.mypurecloud.sdk.v2.model.FunctionRuntime;
+import com.mypurecloud.sdk.v2.model.FunctionUploadRequest;
+import com.mypurecloud.sdk.v2.model.FunctionUploadResponse;
 import com.mypurecloud.sdk.v2.model.Integration;
 import com.mypurecloud.sdk.v2.model.IntegrationConfiguration;
 import com.mypurecloud.sdk.v2.model.IntegrationEntityListing;
@@ -65,14 +71,18 @@ import com.mypurecloud.sdk.v2.api.request.GetIntegrationConfigCurrentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionDraftRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionDraftFunctionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionDraftSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionDraftTemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionDraftValidationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionFunctionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionTemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsCategoriesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsCertificatesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsDraftsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsFunctionsRuntimesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorIntegrationIdBotRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorIntegrationIdBotVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorIntegrationIdBotsRequest;
@@ -107,6 +117,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchIntegrationsActionRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchIntegrationsActionDraftRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionDraftRequest;
+import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionDraftFunctionUploadRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionDraftPublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionDraftTestRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionExecuteRequest;
@@ -118,6 +129,7 @@ import com.mypurecloud.sdk.v2.api.request.PostIntegrationsSpeechNuanceNuanceInte
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationConfigCurrentRequest;
+import com.mypurecloud.sdk.v2.api.request.PutIntegrationsActionDraftFunctionRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationsBotconnectorIntegrationIdBotsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationsCredentialRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettingsRequest;
@@ -895,6 +907,88 @@ public class IntegrationsApi {
   }
 
   /**
+   * Get draft function settings for Action
+   * 
+   * getIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param actionId actionId (required)
+   * @return FunctionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FunctionConfig getIntegrationsActionDraftFunction(String actionId) throws IOException, ApiException {
+    return  getIntegrationsActionDraftFunction(createGetIntegrationsActionDraftFunctionRequest(actionId));
+  }
+
+  /**
+   * Get draft function settings for Action
+   * 
+   * getIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param actionId actionId (required)
+   * @return FunctionConfig
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FunctionConfig> getIntegrationsActionDraftFunctionWithHttpInfo(String actionId) throws IOException {
+    return getIntegrationsActionDraftFunction(createGetIntegrationsActionDraftFunctionRequest(actionId).withHttpInfo());
+  }
+
+  private GetIntegrationsActionDraftFunctionRequest createGetIntegrationsActionDraftFunctionRequest(String actionId) {
+    return GetIntegrationsActionDraftFunctionRequest.builder()
+            .withActionId(actionId)
+
+            .build();
+  }
+
+  /**
+   * Get draft function settings for Action
+   * 
+   * getIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return FunctionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FunctionConfig getIntegrationsActionDraftFunction(GetIntegrationsActionDraftFunctionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FunctionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FunctionConfig>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get draft function settings for Action
+   * 
+   * getIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FunctionConfig> getIntegrationsActionDraftFunction(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FunctionConfig>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FunctionConfig> response = (ApiResponse<FunctionConfig>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FunctionConfig> response = (ApiResponse<FunctionConfig>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Retrieve schema for a Draft based on filename.
    * 
    * @param actionId actionId (required)
@@ -1132,6 +1226,88 @@ public class IntegrationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DraftValidationResult> response = (ApiResponse<DraftValidationResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get published function settings for Action
+   * 
+   * getIntegrationsActionFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param actionId actionId (required)
+   * @return FunctionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FunctionConfig getIntegrationsActionFunction(String actionId) throws IOException, ApiException {
+    return  getIntegrationsActionFunction(createGetIntegrationsActionFunctionRequest(actionId));
+  }
+
+  /**
+   * Get published function settings for Action
+   * 
+   * getIntegrationsActionFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param actionId actionId (required)
+   * @return FunctionConfig
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FunctionConfig> getIntegrationsActionFunctionWithHttpInfo(String actionId) throws IOException {
+    return getIntegrationsActionFunction(createGetIntegrationsActionFunctionRequest(actionId).withHttpInfo());
+  }
+
+  private GetIntegrationsActionFunctionRequest createGetIntegrationsActionFunctionRequest(String actionId) {
+    return GetIntegrationsActionFunctionRequest.builder()
+            .withActionId(actionId)
+
+            .build();
+  }
+
+  /**
+   * Get published function settings for Action
+   * 
+   * getIntegrationsActionFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return FunctionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FunctionConfig getIntegrationsActionFunction(GetIntegrationsActionFunctionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FunctionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FunctionConfig>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get published function settings for Action
+   * 
+   * getIntegrationsActionFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FunctionConfig> getIntegrationsActionFunction(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FunctionConfig>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FunctionConfig> response = (ApiResponse<FunctionConfig>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FunctionConfig> response = (ApiResponse<FunctionConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1521,6 +1697,88 @@ public class IntegrationsApi {
   }
 
   /**
+   * Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress.
+   * 
+   * @param status Indicates the validity of the certificate in question. (optional)
+   * @param type Indicates the type of the certificate. (optional)
+   * @return ActionCertificateListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActionCertificateListing getIntegrationsActionsCertificates(String status, String type) throws IOException, ApiException {
+    return  getIntegrationsActionsCertificates(createGetIntegrationsActionsCertificatesRequest(status, type));
+  }
+
+  /**
+   * Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress.
+   * 
+   * @param status Indicates the validity of the certificate in question. (optional)
+   * @param type Indicates the type of the certificate. (optional)
+   * @return ActionCertificateListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActionCertificateListing> getIntegrationsActionsCertificatesWithHttpInfo(String status, String type) throws IOException {
+    return getIntegrationsActionsCertificates(createGetIntegrationsActionsCertificatesRequest(status, type).withHttpInfo());
+  }
+
+  private GetIntegrationsActionsCertificatesRequest createGetIntegrationsActionsCertificatesRequest(String status, String type) {
+    return GetIntegrationsActionsCertificatesRequest.builder()
+            .withStatus(status)
+
+            .withType(type)
+
+            .build();
+  }
+
+  /**
+   * Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress.
+   * 
+   * @param request The request object
+   * @return ActionCertificateListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActionCertificateListing getIntegrationsActionsCertificates(GetIntegrationsActionsCertificatesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ActionCertificateListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActionCertificateListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActionCertificateListing> getIntegrationsActionsCertificates(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ActionCertificateListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActionCertificateListing> response = (ApiResponse<ActionCertificateListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActionCertificateListing> response = (ApiResponse<ActionCertificateListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Retrieves all action drafts associated with the filters passed in via query param.
    * 
    * @param pageSize The total page size requested (optional, default to 25)
@@ -1634,6 +1892,84 @@ public class IntegrationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ActionEntityListing> response = (ApiResponse<ActionEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get action function settings for Action
+   * 
+   * getIntegrationsActionsFunctionsRuntimes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return List<FunctionRuntime>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<FunctionRuntime> getIntegrationsActionsFunctionsRuntimes() throws IOException, ApiException {
+    return  getIntegrationsActionsFunctionsRuntimes(createGetIntegrationsActionsFunctionsRuntimesRequest());
+  }
+
+  /**
+   * Get action function settings for Action
+   * 
+   * getIntegrationsActionsFunctionsRuntimes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return List<FunctionRuntime>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<FunctionRuntime>> getIntegrationsActionsFunctionsRuntimesWithHttpInfo() throws IOException {
+    return getIntegrationsActionsFunctionsRuntimes(createGetIntegrationsActionsFunctionsRuntimesRequest().withHttpInfo());
+  }
+
+  private GetIntegrationsActionsFunctionsRuntimesRequest createGetIntegrationsActionsFunctionsRuntimesRequest() {
+    return GetIntegrationsActionsFunctionsRuntimesRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get action function settings for Action
+   * 
+   * getIntegrationsActionsFunctionsRuntimes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return List<FunctionRuntime>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<FunctionRuntime> getIntegrationsActionsFunctionsRuntimes(GetIntegrationsActionsFunctionsRuntimesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<FunctionRuntime>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<FunctionRuntime>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get action function settings for Action
+   * 
+   * getIntegrationsActionsFunctionsRuntimes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<FunctionRuntime>> getIntegrationsActionsFunctionsRuntimes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<FunctionRuntime>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<FunctionRuntime>> response = (ApiResponse<List<FunctionRuntime>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<FunctionRuntime>> response = (ApiResponse<List<FunctionRuntime>>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4575,6 +4911,92 @@ public class IntegrationsApi {
   }
 
   /**
+   * Create upload presigned URL for draft function package file.
+   * 
+   * postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param actionId actionId (required)
+   * @param body Input used to request URL upload. (required)
+   * @return FunctionUploadResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FunctionUploadResponse postIntegrationsActionDraftFunctionUpload(String actionId, FunctionUploadRequest body) throws IOException, ApiException {
+    return  postIntegrationsActionDraftFunctionUpload(createPostIntegrationsActionDraftFunctionUploadRequest(actionId, body));
+  }
+
+  /**
+   * Create upload presigned URL for draft function package file.
+   * 
+   * postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param actionId actionId (required)
+   * @param body Input used to request URL upload. (required)
+   * @return FunctionUploadResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FunctionUploadResponse> postIntegrationsActionDraftFunctionUploadWithHttpInfo(String actionId, FunctionUploadRequest body) throws IOException {
+    return postIntegrationsActionDraftFunctionUpload(createPostIntegrationsActionDraftFunctionUploadRequest(actionId, body).withHttpInfo());
+  }
+
+  private PostIntegrationsActionDraftFunctionUploadRequest createPostIntegrationsActionDraftFunctionUploadRequest(String actionId, FunctionUploadRequest body) {
+    return PostIntegrationsActionDraftFunctionUploadRequest.builder()
+            .withActionId(actionId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create upload presigned URL for draft function package file.
+   * 
+   * postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return FunctionUploadResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FunctionUploadResponse postIntegrationsActionDraftFunctionUpload(PostIntegrationsActionDraftFunctionUploadRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FunctionUploadResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FunctionUploadResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create upload presigned URL for draft function package file.
+   * 
+   * postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FunctionUploadResponse> postIntegrationsActionDraftFunctionUpload(ApiRequest<FunctionUploadRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FunctionUploadResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FunctionUploadResponse> response = (ApiResponse<FunctionUploadResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FunctionUploadResponse> response = (ApiResponse<FunctionUploadResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Publish a Draft and make it the active Action configuration
    * 
    * @param actionId actionId (required)
@@ -5485,6 +5907,92 @@ public class IntegrationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<IntegrationConfiguration> response = (ApiResponse<IntegrationConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update draft function settings.
+   * 
+   * putIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param actionId actionId (required)
+   * @param body Input used to update function settings. (required)
+   * @return FunctionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FunctionConfig putIntegrationsActionDraftFunction(String actionId, Function body) throws IOException, ApiException {
+    return  putIntegrationsActionDraftFunction(createPutIntegrationsActionDraftFunctionRequest(actionId, body));
+  }
+
+  /**
+   * Update draft function settings.
+   * 
+   * putIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param actionId actionId (required)
+   * @param body Input used to update function settings. (required)
+   * @return FunctionConfig
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FunctionConfig> putIntegrationsActionDraftFunctionWithHttpInfo(String actionId, Function body) throws IOException {
+    return putIntegrationsActionDraftFunction(createPutIntegrationsActionDraftFunctionRequest(actionId, body).withHttpInfo());
+  }
+
+  private PutIntegrationsActionDraftFunctionRequest createPutIntegrationsActionDraftFunctionRequest(String actionId, Function body) {
+    return PutIntegrationsActionDraftFunctionRequest.builder()
+            .withActionId(actionId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update draft function settings.
+   * 
+   * putIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return FunctionConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FunctionConfig putIntegrationsActionDraftFunction(PutIntegrationsActionDraftFunctionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FunctionConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FunctionConfig>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update draft function settings.
+   * 
+   * putIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FunctionConfig> putIntegrationsActionDraftFunction(ApiRequest<Function> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FunctionConfig>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FunctionConfig> response = (ApiResponse<FunctionConfig>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FunctionConfig> response = (ApiResponse<FunctionConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

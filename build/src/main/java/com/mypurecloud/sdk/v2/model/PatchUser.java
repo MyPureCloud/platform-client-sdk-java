@@ -22,6 +22,7 @@ import java.io.Serializable;
 public class PatchUser  implements Serializable {
   
   private String id = null;
+  private String preferredName = null;
   private Boolean acdAutoAnswer = null;
 
   
@@ -40,6 +41,24 @@ public class PatchUser  implements Serializable {
   }
   public void setId(String id) {
     this.id = id;
+  }
+
+
+  /**
+   * Preferred full name of agent
+   **/
+  public PatchUser preferredName(String preferredName) {
+    this.preferredName = preferredName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Preferred full name of agent")
+  @JsonProperty("preferredName")
+  public String getPreferredName() {
+    return preferredName;
+  }
+  public void setPreferredName(String preferredName) {
+    this.preferredName = preferredName;
   }
 
 
@@ -72,12 +91,13 @@ public class PatchUser  implements Serializable {
     PatchUser patchUser = (PatchUser) o;
 
     return Objects.equals(this.id, patchUser.id) &&
+            Objects.equals(this.preferredName, patchUser.preferredName) &&
             Objects.equals(this.acdAutoAnswer, patchUser.acdAutoAnswer);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, acdAutoAnswer);
+    return Objects.hash(id, preferredName, acdAutoAnswer);
   }
 
   @Override
@@ -86,6 +106,7 @@ public class PatchUser  implements Serializable {
     sb.append("class PatchUser {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    preferredName: ").append(toIndentedString(preferredName)).append("\n");
     sb.append("    acdAutoAnswer: ").append(toIndentedString(acdAutoAnswer)).append("\n");
     sb.append("}");
     return sb.toString();

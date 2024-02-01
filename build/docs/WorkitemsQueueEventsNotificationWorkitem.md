@@ -40,6 +40,7 @@ title: WorkitemsQueueEventsNotificationWorkitem
 | **customFields** | <!----><!---->[**Map&lt;String, WorkitemsQueueEventsNotificationCustomAttribute&gt;**](WorkitemsQueueEventsNotificationCustomAttribute.html)<!----> |  |  [optional] |
 | **wrapup** | <!----><!---->[**WorkitemsQueueEventsNotificationWrapup**](WorkitemsQueueEventsNotificationWrapup.html)<!----> |  |  [optional] |
 | **sessions** | <!----><!---->[**List&lt;WorkitemsQueueEventsNotificationSession&gt;**](WorkitemsQueueEventsNotificationSession.html)<!----> |  |  [optional] |
+| **skillIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

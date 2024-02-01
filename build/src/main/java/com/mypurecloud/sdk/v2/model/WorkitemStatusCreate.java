@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.LocalTime;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -81,7 +80,7 @@ public class WorkitemStatusCreate  implements Serializable {
   private String description = null;
   private String defaultDestinationStatusId = null;
   private Integer statusTransitionDelaySeconds = null;
-  private LocalTime statusTransitionTime = null;
+  private String statusTransitionTime = null;
 
   
   /**
@@ -193,19 +192,19 @@ public class WorkitemStatusCreate  implements Serializable {
 
 
   /**
-   * Time in HH:MM:SS format at which auto status transition will occur after statusTransitionDelaySeconds delay. To set Time, the statusTransitionDelaySeconds must be equal to or greater than 86400 i.e. a day
+   * Time is represented as an ISO-8601 string without a timezone. For example: HH:mm:ss.SSS
    **/
-  public WorkitemStatusCreate statusTransitionTime(LocalTime statusTransitionTime) {
+  public WorkitemStatusCreate statusTransitionTime(String statusTransitionTime) {
     this.statusTransitionTime = statusTransitionTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Time in HH:MM:SS format at which auto status transition will occur after statusTransitionDelaySeconds delay. To set Time, the statusTransitionDelaySeconds must be equal to or greater than 86400 i.e. a day")
+  @ApiModelProperty(example = "null", value = "Time is represented as an ISO-8601 string without a timezone. For example: HH:mm:ss.SSS")
   @JsonProperty("statusTransitionTime")
-  public LocalTime getStatusTransitionTime() {
+  public String getStatusTransitionTime() {
     return statusTransitionTime;
   }
-  public void setStatusTransitionTime(LocalTime statusTransitionTime) {
+  public void setStatusTransitionTime(String statusTransitionTime) {
     this.statusTransitionTime = statusTransitionTime;
   }
 

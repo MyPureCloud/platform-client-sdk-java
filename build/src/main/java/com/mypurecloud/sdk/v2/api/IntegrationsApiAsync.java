@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.Action;
+import com.mypurecloud.sdk.v2.model.ActionCertificateListing;
 import com.mypurecloud.sdk.v2.model.ActionEntityListing;
 import com.mypurecloud.sdk.v2.model.AsyncJob;
 import com.mypurecloud.sdk.v2.model.BotConnectorBot;
@@ -32,6 +33,11 @@ import com.mypurecloud.sdk.v2.model.DialogflowAgent;
 import com.mypurecloud.sdk.v2.model.DialogflowAgentSummaryEntityListing;
 import com.mypurecloud.sdk.v2.model.DraftValidationResult;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.Function;
+import com.mypurecloud.sdk.v2.model.FunctionConfig;
+import com.mypurecloud.sdk.v2.model.FunctionRuntime;
+import com.mypurecloud.sdk.v2.model.FunctionUploadRequest;
+import com.mypurecloud.sdk.v2.model.FunctionUploadResponse;
 import com.mypurecloud.sdk.v2.model.Integration;
 import com.mypurecloud.sdk.v2.model.IntegrationConfiguration;
 import com.mypurecloud.sdk.v2.model.IntegrationEntityListing;
@@ -68,14 +74,18 @@ import com.mypurecloud.sdk.v2.api.request.GetIntegrationConfigCurrentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionDraftRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionDraftFunctionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionDraftSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionDraftTemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionDraftValidationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionFunctionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionTemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsCategoriesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsCertificatesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsDraftsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsFunctionsRuntimesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorIntegrationIdBotRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorIntegrationIdBotVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorIntegrationIdBotsRequest;
@@ -110,6 +120,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchIntegrationsActionRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchIntegrationsActionDraftRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionDraftRequest;
+import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionDraftFunctionUploadRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionDraftPublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionDraftTestRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionExecuteRequest;
@@ -121,6 +132,7 @@ import com.mypurecloud.sdk.v2.api.request.PostIntegrationsSpeechNuanceNuanceInte
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationConfigCurrentRequest;
+import com.mypurecloud.sdk.v2.api.request.PutIntegrationsActionDraftFunctionRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationsBotconnectorIntegrationIdBotsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationsCredentialRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettingsRequest;
@@ -821,6 +833,83 @@ public class IntegrationsApiAsync {
   }
 
   /**
+   * Get draft function settings for Action
+   * 
+   * getIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FunctionConfig> getIntegrationsActionDraftFunctionAsync(GetIntegrationsActionDraftFunctionRequest request, final AsyncApiCallback<FunctionConfig> callback) {
+    try {
+      final SettableFuture<FunctionConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FunctionConfig>() {}, new AsyncApiCallback<ApiResponse<FunctionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<FunctionConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get draft function settings for Action
+   * 
+   * getIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FunctionConfig>> getIntegrationsActionDraftFunctionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FunctionConfig>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FunctionConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FunctionConfig>() {}, new AsyncApiCallback<ApiResponse<FunctionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<FunctionConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FunctionConfig> response = (ApiResponse<FunctionConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FunctionConfig> response = (ApiResponse<FunctionConfig>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Retrieve schema for a Draft based on filename.
    * 
    * @param request the request object
@@ -1034,6 +1123,83 @@ public class IntegrationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DraftValidationResult> response = (ApiResponse<DraftValidationResult>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get published function settings for Action
+   * 
+   * getIntegrationsActionFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FunctionConfig> getIntegrationsActionFunctionAsync(GetIntegrationsActionFunctionRequest request, final AsyncApiCallback<FunctionConfig> callback) {
+    try {
+      final SettableFuture<FunctionConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FunctionConfig>() {}, new AsyncApiCallback<ApiResponse<FunctionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<FunctionConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get published function settings for Action
+   * 
+   * getIntegrationsActionFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FunctionConfig>> getIntegrationsActionFunctionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FunctionConfig>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FunctionConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FunctionConfig>() {}, new AsyncApiCallback<ApiResponse<FunctionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<FunctionConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FunctionConfig> response = (ApiResponse<FunctionConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FunctionConfig> response = (ApiResponse<FunctionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1346,6 +1512,81 @@ public class IntegrationsApiAsync {
   }
 
   /**
+   * Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ActionCertificateListing> getIntegrationsActionsCertificatesAsync(GetIntegrationsActionsCertificatesRequest request, final AsyncApiCallback<ActionCertificateListing> callback) {
+    try {
+      final SettableFuture<ActionCertificateListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ActionCertificateListing>() {}, new AsyncApiCallback<ApiResponse<ActionCertificateListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActionCertificateListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ActionCertificateListing>> getIntegrationsActionsCertificatesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ActionCertificateListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ActionCertificateListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ActionCertificateListing>() {}, new AsyncApiCallback<ApiResponse<ActionCertificateListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActionCertificateListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActionCertificateListing> response = (ApiResponse<ActionCertificateListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActionCertificateListing> response = (ApiResponse<ActionCertificateListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Retrieves all action drafts associated with the filters passed in via query param.
    * 
    * @param request the request object
@@ -1409,6 +1650,83 @@ public class IntegrationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ActionEntityListing> response = (ApiResponse<ActionEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get action function settings for Action
+   * 
+   * getIntegrationsActionsFunctionsRuntimes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<List<FunctionRuntime>> getIntegrationsActionsFunctionsRuntimesAsync(GetIntegrationsActionsFunctionsRuntimesRequest request, final AsyncApiCallback<List<FunctionRuntime>> callback) {
+    try {
+      final SettableFuture<List<FunctionRuntime>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<FunctionRuntime>>() {}, new AsyncApiCallback<ApiResponse<List<FunctionRuntime>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<FunctionRuntime>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get action function settings for Action
+   * 
+   * getIntegrationsActionsFunctionsRuntimes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<List<FunctionRuntime>>> getIntegrationsActionsFunctionsRuntimesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<FunctionRuntime>>> callback) {
+    try {
+      final SettableFuture<ApiResponse<List<FunctionRuntime>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<FunctionRuntime>>() {}, new AsyncApiCallback<ApiResponse<List<FunctionRuntime>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<FunctionRuntime>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<FunctionRuntime>> response = (ApiResponse<List<FunctionRuntime>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<FunctionRuntime>> response = (ApiResponse<List<FunctionRuntime>>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3983,6 +4301,83 @@ public class IntegrationsApiAsync {
   }
 
   /**
+   * Create upload presigned URL for draft function package file.
+   * 
+   * postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FunctionUploadResponse> postIntegrationsActionDraftFunctionUploadAsync(PostIntegrationsActionDraftFunctionUploadRequest request, final AsyncApiCallback<FunctionUploadResponse> callback) {
+    try {
+      final SettableFuture<FunctionUploadResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FunctionUploadResponse>() {}, new AsyncApiCallback<ApiResponse<FunctionUploadResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<FunctionUploadResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create upload presigned URL for draft function package file.
+   * 
+   * postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FunctionUploadResponse>> postIntegrationsActionDraftFunctionUploadAsync(ApiRequest<FunctionUploadRequest> request, final AsyncApiCallback<ApiResponse<FunctionUploadResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FunctionUploadResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FunctionUploadResponse>() {}, new AsyncApiCallback<ApiResponse<FunctionUploadResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<FunctionUploadResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FunctionUploadResponse> response = (ApiResponse<FunctionUploadResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FunctionUploadResponse> response = (ApiResponse<FunctionUploadResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Publish a Draft and make it the active Action configuration
    * 
    * @param request the request object
@@ -4802,6 +5197,83 @@ public class IntegrationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<IntegrationConfiguration> response = (ApiResponse<IntegrationConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update draft function settings.
+   * 
+   * putIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FunctionConfig> putIntegrationsActionDraftFunctionAsync(PutIntegrationsActionDraftFunctionRequest request, final AsyncApiCallback<FunctionConfig> callback) {
+    try {
+      final SettableFuture<FunctionConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FunctionConfig>() {}, new AsyncApiCallback<ApiResponse<FunctionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<FunctionConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update draft function settings.
+   * 
+   * putIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FunctionConfig>> putIntegrationsActionDraftFunctionAsync(ApiRequest<Function> request, final AsyncApiCallback<ApiResponse<FunctionConfig>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FunctionConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FunctionConfig>() {}, new AsyncApiCallback<ApiResponse<FunctionConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<FunctionConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FunctionConfig> response = (ApiResponse<FunctionConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FunctionConfig> response = (ApiResponse<FunctionConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -7,6 +7,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**deleteIdentityprovider**](IdentityProviderApi.html#deleteIdentityprovider) | Delete Identity Provider |
 | [**deleteIdentityprovidersAdfs**](IdentityProviderApi.html#deleteIdentityprovidersAdfs) | Delete ADFS Identity Provider |
 | [**deleteIdentityprovidersCic**](IdentityProviderApi.html#deleteIdentityprovidersCic) | Delete Customer Interaction Center (CIC) Identity Provider |
 | [**deleteIdentityprovidersGeneric**](IdentityProviderApi.html#deleteIdentityprovidersGeneric) | Delete Generic SAML Identity Provider |
@@ -18,6 +19,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteIdentityprovidersPurecloud**](IdentityProviderApi.html#deleteIdentityprovidersPurecloud) | Delete PureCloud Identity Provider |
 | [**deleteIdentityprovidersPureengage**](IdentityProviderApi.html#deleteIdentityprovidersPureengage) | Delete PureEngage Identity Provider |
 | [**deleteIdentityprovidersSalesforce**](IdentityProviderApi.html#deleteIdentityprovidersSalesforce) | Delete Salesforce Identity Provider |
+| [**getIdentityprovider**](IdentityProviderApi.html#getIdentityprovider) | Get Identity Provider |
 | [**getIdentityproviders**](IdentityProviderApi.html#getIdentityproviders) | The list of identity providers |
 | [**getIdentityprovidersAdfs**](IdentityProviderApi.html#getIdentityprovidersAdfs) | Get ADFS Identity Provider |
 | [**getIdentityprovidersCic**](IdentityProviderApi.html#getIdentityprovidersCic) | Get Customer Interaction Center (CIC) Identity Provider |
@@ -30,6 +32,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getIdentityprovidersPurecloud**](IdentityProviderApi.html#getIdentityprovidersPurecloud) | Get PureCloud Identity Provider |
 | [**getIdentityprovidersPureengage**](IdentityProviderApi.html#getIdentityprovidersPureengage) | Get PureEngage Identity Provider |
 | [**getIdentityprovidersSalesforce**](IdentityProviderApi.html#getIdentityprovidersSalesforce) | Get Salesforce Identity Provider |
+| [**postIdentityproviders**](IdentityProviderApi.html#postIdentityproviders) | Create Identity Provider |
+| [**putIdentityprovider**](IdentityProviderApi.html#putIdentityprovider) | Update Identity Provider |
 | [**putIdentityprovidersAdfs**](IdentityProviderApi.html#putIdentityprovidersAdfs) | Update/Create ADFS Identity Provider |
 | [**putIdentityprovidersCic**](IdentityProviderApi.html#putIdentityprovidersCic) | Update/Create Customer Interaction Center (CIC) Identity Provider |
 | [**putIdentityprovidersGeneric**](IdentityProviderApi.html#putIdentityprovidersGeneric) | Update/Create Generic SAML Identity Provider |
@@ -42,6 +46,66 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putIdentityprovidersPureengage**](IdentityProviderApi.html#putIdentityprovidersPureengage) | Update/Create PureEngage Identity Provider |
 | [**putIdentityprovidersSalesforce**](IdentityProviderApi.html#putIdentityprovidersSalesforce) | Update/Create Salesforce Identity Provider |
 {: class="table-striped"}
+
+<a name="deleteIdentityprovider"></a>
+
+# **deleteIdentityprovider**
+
+
+
+> Void deleteIdentityprovider(providerId)
+
+Delete Identity Provider
+
+Wraps DELETE /api/v2/identityproviders/{providerId}  
+
+Requires ANY permissions: 
+
+* sso:provider:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IdentityProviderApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IdentityProviderApi apiInstance = new IdentityProviderApi();
+String providerId = "providerId_example"; // String | Provider ID
+try {
+    apiInstance.deleteIdentityprovider(providerId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IdentityProviderApi#deleteIdentityprovider");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **providerId** | **String**| Provider ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="deleteIdentityprovidersAdfs"></a>
 
@@ -670,13 +734,74 @@ This endpoint does not require any parameters.
 
 **Empty**
 
+<a name="getIdentityprovider"></a>
+
+# **getIdentityprovider**
+
+
+
+> [CustomProvider](CustomProvider.html) getIdentityprovider(providerId)
+
+Get Identity Provider
+
+Wraps GET /api/v2/identityproviders/{providerId}  
+
+Requires ANY permissions: 
+
+* sso:provider:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IdentityProviderApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IdentityProviderApi apiInstance = new IdentityProviderApi();
+String providerId = "providerId_example"; // String | Provider ID
+try {
+    CustomProvider result = apiInstance.getIdentityprovider(providerId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IdentityProviderApi#getIdentityprovider");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **providerId** | **String**| Provider ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CustomProvider**](CustomProvider.html)
+
 <a name="getIdentityproviders"></a>
 
 # **getIdentityproviders**
 
 
 
-> [OAuthProviderEntityListing](OAuthProviderEntityListing.html) getIdentityproviders()
+> [IdentityProviderEntityListing](IdentityProviderEntityListing.html) getIdentityproviders()
 
 The list of identity providers
 
@@ -709,7 +834,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 IdentityProviderApi apiInstance = new IdentityProviderApi();
 try {
-    OAuthProviderEntityListing result = apiInstance.getIdentityproviders();
+    IdentityProviderEntityListing result = apiInstance.getIdentityproviders();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IdentityProviderApi#getIdentityproviders");
@@ -725,7 +850,7 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**OAuthProviderEntityListing**](OAuthProviderEntityListing.html)
+[**IdentityProviderEntityListing**](IdentityProviderEntityListing.html)
 
 <a name="getIdentityprovidersAdfs"></a>
 
@@ -1354,13 +1479,137 @@ This endpoint does not require any parameters.
 
 [**Salesforce**](Salesforce.html)
 
+<a name="postIdentityproviders"></a>
+
+# **postIdentityproviders**
+
+
+
+> [CustomProvider](CustomProvider.html) postIdentityproviders(body)
+
+Create Identity Provider
+
+Wraps POST /api/v2/identityproviders  
+
+Requires ANY permissions: 
+
+* sso:provider:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IdentityProviderApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IdentityProviderApi apiInstance = new IdentityProviderApi();
+CustomProvider body = new CustomProvider(); // CustomProvider | Provider
+try {
+    CustomProvider result = apiInstance.postIdentityproviders(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IdentityProviderApi#postIdentityproviders");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CustomProvider**](CustomProvider.html)| Provider | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CustomProvider**](CustomProvider.html)
+
+<a name="putIdentityprovider"></a>
+
+# **putIdentityprovider**
+
+
+
+> [CustomProvider](CustomProvider.html) putIdentityprovider(providerId, body)
+
+Update Identity Provider
+
+Wraps PUT /api/v2/identityproviders/{providerId}  
+
+Requires ANY permissions: 
+
+* sso:provider:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IdentityProviderApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IdentityProviderApi apiInstance = new IdentityProviderApi();
+String providerId = "providerId_example"; // String | Provider ID
+CustomProvider body = new CustomProvider(); // CustomProvider | Provider
+try {
+    CustomProvider result = apiInstance.putIdentityprovider(providerId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IdentityProviderApi#putIdentityprovider");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **providerId** | **String**| Provider ID | 
+| **body** | [**CustomProvider**](CustomProvider.html)| Provider | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CustomProvider**](CustomProvider.html)
+
 <a name="putIdentityprovidersAdfs"></a>
 
 # **putIdentityprovidersAdfs**
 
 
 
-> [OAuthProvider](OAuthProvider.html) putIdentityprovidersAdfs(body)
+> [IdentityProvider](IdentityProvider.html) putIdentityprovidersAdfs(body)
 
 Update/Create ADFS Identity Provider
 
@@ -1395,7 +1644,7 @@ Configuration.setDefaultApiClient(apiClient);
 IdentityProviderApi apiInstance = new IdentityProviderApi();
 ADFS body = new ADFS(); // ADFS | Provider
 try {
-    OAuthProvider result = apiInstance.putIdentityprovidersAdfs(body);
+    IdentityProvider result = apiInstance.putIdentityprovidersAdfs(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IdentityProviderApi#putIdentityprovidersAdfs");
@@ -1414,7 +1663,7 @@ try {
 
 ### Return type
 
-[**OAuthProvider**](OAuthProvider.html)
+[**IdentityProvider**](IdentityProvider.html)
 
 <a name="putIdentityprovidersCic"></a>
 
@@ -1422,7 +1671,7 @@ try {
 
 
 
-> [OAuthProvider](OAuthProvider.html) putIdentityprovidersCic(body)
+> [IdentityProvider](IdentityProvider.html) putIdentityprovidersCic(body)
 
 Update/Create Customer Interaction Center (CIC) Identity Provider
 
@@ -1457,7 +1706,7 @@ Configuration.setDefaultApiClient(apiClient);
 IdentityProviderApi apiInstance = new IdentityProviderApi();
 CustomerInteractionCenter body = new CustomerInteractionCenter(); // CustomerInteractionCenter | Provider
 try {
-    OAuthProvider result = apiInstance.putIdentityprovidersCic(body);
+    IdentityProvider result = apiInstance.putIdentityprovidersCic(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IdentityProviderApi#putIdentityprovidersCic");
@@ -1476,7 +1725,7 @@ try {
 
 ### Return type
 
-[**OAuthProvider**](OAuthProvider.html)
+[**IdentityProvider**](IdentityProvider.html)
 
 <a name="putIdentityprovidersGeneric"></a>
 
@@ -1484,7 +1733,7 @@ try {
 
 
 
-> [OAuthProvider](OAuthProvider.html) putIdentityprovidersGeneric(body)
+> [IdentityProvider](IdentityProvider.html) putIdentityprovidersGeneric(body)
 
 Update/Create Generic SAML Identity Provider
 
@@ -1519,7 +1768,7 @@ Configuration.setDefaultApiClient(apiClient);
 IdentityProviderApi apiInstance = new IdentityProviderApi();
 GenericSAML body = new GenericSAML(); // GenericSAML | Provider
 try {
-    OAuthProvider result = apiInstance.putIdentityprovidersGeneric(body);
+    IdentityProvider result = apiInstance.putIdentityprovidersGeneric(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IdentityProviderApi#putIdentityprovidersGeneric");
@@ -1538,7 +1787,7 @@ try {
 
 ### Return type
 
-[**OAuthProvider**](OAuthProvider.html)
+[**IdentityProvider**](IdentityProvider.html)
 
 <a name="putIdentityprovidersGsuite"></a>
 
@@ -1546,7 +1795,7 @@ try {
 
 
 
-> [OAuthProvider](OAuthProvider.html) putIdentityprovidersGsuite(body)
+> [IdentityProvider](IdentityProvider.html) putIdentityprovidersGsuite(body)
 
 Update/Create G Suite Identity Provider
 
@@ -1581,7 +1830,7 @@ Configuration.setDefaultApiClient(apiClient);
 IdentityProviderApi apiInstance = new IdentityProviderApi();
 GSuite body = new GSuite(); // GSuite | Provider
 try {
-    OAuthProvider result = apiInstance.putIdentityprovidersGsuite(body);
+    IdentityProvider result = apiInstance.putIdentityprovidersGsuite(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IdentityProviderApi#putIdentityprovidersGsuite");
@@ -1600,7 +1849,7 @@ try {
 
 ### Return type
 
-[**OAuthProvider**](OAuthProvider.html)
+[**IdentityProvider**](IdentityProvider.html)
 
 <a name="putIdentityprovidersIdentitynow"></a>
 
@@ -1670,7 +1919,7 @@ try {
 
 
 
-> [OAuthProvider](OAuthProvider.html) putIdentityprovidersOkta(body)
+> [IdentityProvider](IdentityProvider.html) putIdentityprovidersOkta(body)
 
 Update/Create Okta Identity Provider
 
@@ -1705,7 +1954,7 @@ Configuration.setDefaultApiClient(apiClient);
 IdentityProviderApi apiInstance = new IdentityProviderApi();
 Okta body = new Okta(); // Okta | Provider
 try {
-    OAuthProvider result = apiInstance.putIdentityprovidersOkta(body);
+    IdentityProvider result = apiInstance.putIdentityprovidersOkta(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IdentityProviderApi#putIdentityprovidersOkta");
@@ -1724,7 +1973,7 @@ try {
 
 ### Return type
 
-[**OAuthProvider**](OAuthProvider.html)
+[**IdentityProvider**](IdentityProvider.html)
 
 <a name="putIdentityprovidersOnelogin"></a>
 
@@ -1732,7 +1981,7 @@ try {
 
 
 
-> [OAuthProvider](OAuthProvider.html) putIdentityprovidersOnelogin(body)
+> [IdentityProvider](IdentityProvider.html) putIdentityprovidersOnelogin(body)
 
 Update/Create OneLogin Identity Provider
 
@@ -1767,7 +2016,7 @@ Configuration.setDefaultApiClient(apiClient);
 IdentityProviderApi apiInstance = new IdentityProviderApi();
 OneLogin body = new OneLogin(); // OneLogin | Provider
 try {
-    OAuthProvider result = apiInstance.putIdentityprovidersOnelogin(body);
+    IdentityProvider result = apiInstance.putIdentityprovidersOnelogin(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IdentityProviderApi#putIdentityprovidersOnelogin");
@@ -1786,7 +2035,7 @@ try {
 
 ### Return type
 
-[**OAuthProvider**](OAuthProvider.html)
+[**IdentityProvider**](IdentityProvider.html)
 
 <a name="putIdentityprovidersPing"></a>
 
@@ -1794,7 +2043,7 @@ try {
 
 
 
-> [OAuthProvider](OAuthProvider.html) putIdentityprovidersPing(body)
+> [IdentityProvider](IdentityProvider.html) putIdentityprovidersPing(body)
 
 Update/Create Ping Identity Provider
 
@@ -1829,7 +2078,7 @@ Configuration.setDefaultApiClient(apiClient);
 IdentityProviderApi apiInstance = new IdentityProviderApi();
 PingIdentity body = new PingIdentity(); // PingIdentity | Provider
 try {
-    OAuthProvider result = apiInstance.putIdentityprovidersPing(body);
+    IdentityProvider result = apiInstance.putIdentityprovidersPing(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IdentityProviderApi#putIdentityprovidersPing");
@@ -1848,7 +2097,7 @@ try {
 
 ### Return type
 
-[**OAuthProvider**](OAuthProvider.html)
+[**IdentityProvider**](IdentityProvider.html)
 
 <a name="putIdentityprovidersPurecloud"></a>
 
@@ -1856,7 +2105,7 @@ try {
 
 
 
-> [OAuthProvider](OAuthProvider.html) putIdentityprovidersPurecloud(body)
+> [IdentityProvider](IdentityProvider.html) putIdentityprovidersPurecloud(body)
 
 Update/Create PureCloud Identity Provider
 
@@ -1891,7 +2140,7 @@ Configuration.setDefaultApiClient(apiClient);
 IdentityProviderApi apiInstance = new IdentityProviderApi();
 PureCloud body = new PureCloud(); // PureCloud | Provider
 try {
-    OAuthProvider result = apiInstance.putIdentityprovidersPurecloud(body);
+    IdentityProvider result = apiInstance.putIdentityprovidersPurecloud(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IdentityProviderApi#putIdentityprovidersPurecloud");
@@ -1910,7 +2159,7 @@ try {
 
 ### Return type
 
-[**OAuthProvider**](OAuthProvider.html)
+[**IdentityProvider**](IdentityProvider.html)
 
 <a name="putIdentityprovidersPureengage"></a>
 
@@ -1918,7 +2167,7 @@ try {
 
 
 
-> [OAuthProvider](OAuthProvider.html) putIdentityprovidersPureengage(body)
+> [IdentityProvider](IdentityProvider.html) putIdentityprovidersPureengage(body)
 
 Update/Create PureEngage Identity Provider
 
@@ -1953,7 +2202,7 @@ Configuration.setDefaultApiClient(apiClient);
 IdentityProviderApi apiInstance = new IdentityProviderApi();
 PureEngage body = new PureEngage(); // PureEngage | Provider
 try {
-    OAuthProvider result = apiInstance.putIdentityprovidersPureengage(body);
+    IdentityProvider result = apiInstance.putIdentityprovidersPureengage(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IdentityProviderApi#putIdentityprovidersPureengage");
@@ -1972,7 +2221,7 @@ try {
 
 ### Return type
 
-[**OAuthProvider**](OAuthProvider.html)
+[**IdentityProvider**](IdentityProvider.html)
 
 <a name="putIdentityprovidersSalesforce"></a>
 
@@ -1980,7 +2229,7 @@ try {
 
 
 
-> [OAuthProvider](OAuthProvider.html) putIdentityprovidersSalesforce(body)
+> [IdentityProvider](IdentityProvider.html) putIdentityprovidersSalesforce(body)
 
 Update/Create Salesforce Identity Provider
 
@@ -2015,7 +2264,7 @@ Configuration.setDefaultApiClient(apiClient);
 IdentityProviderApi apiInstance = new IdentityProviderApi();
 Salesforce body = new Salesforce(); // Salesforce | Provider
 try {
-    OAuthProvider result = apiInstance.putIdentityprovidersSalesforce(body);
+    IdentityProvider result = apiInstance.putIdentityprovidersSalesforce(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IdentityProviderApi#putIdentityprovidersSalesforce");
@@ -2034,5 +2283,5 @@ try {
 
 ### Return type
 
-[**OAuthProvider**](OAuthProvider.html)
+[**IdentityProvider**](IdentityProvider.html)
 

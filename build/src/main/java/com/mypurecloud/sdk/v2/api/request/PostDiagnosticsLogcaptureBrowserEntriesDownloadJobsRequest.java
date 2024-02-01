@@ -23,6 +23,9 @@ import java.util.regex.Pattern;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LogCaptureDownloadExecutionResponse;
 import com.mypurecloud.sdk.v2.model.LogCaptureQueryRequest;
+import com.mypurecloud.sdk.v2.model.LogCaptureQueryResponse;
+import com.mypurecloud.sdk.v2.model.LogCaptureUserConfiguration;
+import com.mypurecloud.sdk.v2.model.PagelessEntityListing;
 
 public class PostDiagnosticsLogcaptureBrowserEntriesDownloadJobsRequest {
 

@@ -72,6 +72,8 @@ import com.mypurecloud.sdk.v2.model.LabelListing;
 import com.mypurecloud.sdk.v2.model.LabelResponse;
 import com.mypurecloud.sdk.v2.model.LabelUpdateRequest;
 import java.time.LocalDate;
+import com.mypurecloud.sdk.v2.model.OperationCreatorUserResponse;
+import com.mypurecloud.sdk.v2.model.OperationListing;
 import com.mypurecloud.sdk.v2.model.SearchUpdateRequest;
 import com.mypurecloud.sdk.v2.model.TrainingListing;
 import com.mypurecloud.sdk.v2.model.UnansweredGroup;
@@ -121,6 +123,8 @@ import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageDocum
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageDocumentsImportRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageTrainingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageTrainingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseOperationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseOperationsUsersQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseUnansweredGroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseUnansweredGroupsRequest;
@@ -3692,6 +3696,198 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TrainingListing> response = (ApiResponse<TrainingListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get operations
+   * 
+   * getKnowledgeKnowledgebaseOperations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param userId If specified, retrieves operations associated with user ids, comma separated values expected. (optional)
+   * @param type If specified, retrieves operations with specified operation type, comma separated values expected. (optional)
+   * @param status If specified, retrieves operations with specified operation status, comma separated values expected. (optional)
+   * @param interval Retrieves the operations modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ (optional)
+   * @return OperationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OperationListing getKnowledgeKnowledgebaseOperations(String knowledgeBaseId, String before, String after, String pageSize, List<String> userId, List<String> type, List<String> status, String interval) throws IOException, ApiException {
+    return  getKnowledgeKnowledgebaseOperations(createGetKnowledgeKnowledgebaseOperationsRequest(knowledgeBaseId, before, after, pageSize, userId, type, status, interval));
+  }
+
+  /**
+   * Get operations
+   * 
+   * getKnowledgeKnowledgebaseOperations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param userId If specified, retrieves operations associated with user ids, comma separated values expected. (optional)
+   * @param type If specified, retrieves operations with specified operation type, comma separated values expected. (optional)
+   * @param status If specified, retrieves operations with specified operation status, comma separated values expected. (optional)
+   * @param interval Retrieves the operations modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ (optional)
+   * @return OperationListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OperationListing> getKnowledgeKnowledgebaseOperationsWithHttpInfo(String knowledgeBaseId, String before, String after, String pageSize, List<String> userId, List<String> type, List<String> status, String interval) throws IOException {
+    return getKnowledgeKnowledgebaseOperations(createGetKnowledgeKnowledgebaseOperationsRequest(knowledgeBaseId, before, after, pageSize, userId, type, status, interval).withHttpInfo());
+  }
+
+  private GetKnowledgeKnowledgebaseOperationsRequest createGetKnowledgeKnowledgebaseOperationsRequest(String knowledgeBaseId, String before, String after, String pageSize, List<String> userId, List<String> type, List<String> status, String interval) {
+    return GetKnowledgeKnowledgebaseOperationsRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withBefore(before)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .withUserId(userId)
+
+            .withType(type)
+
+            .withStatus(status)
+
+            .withInterval(interval)
+
+            .build();
+  }
+
+  /**
+   * Get operations
+   * 
+   * getKnowledgeKnowledgebaseOperations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return OperationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OperationListing getKnowledgeKnowledgebaseOperations(GetKnowledgeKnowledgebaseOperationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OperationListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OperationListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get operations
+   * 
+   * getKnowledgeKnowledgebaseOperations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OperationListing> getKnowledgeKnowledgebaseOperations(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OperationListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OperationListing> response = (ApiResponse<OperationListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OperationListing> response = (ApiResponse<OperationListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get ids of operation creator users and oauth clients
+   * 
+   * getKnowledgeKnowledgebaseOperationsUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @return OperationCreatorUserResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OperationCreatorUserResponse getKnowledgeKnowledgebaseOperationsUsersQuery(String knowledgeBaseId) throws IOException, ApiException {
+    return  getKnowledgeKnowledgebaseOperationsUsersQuery(createGetKnowledgeKnowledgebaseOperationsUsersQueryRequest(knowledgeBaseId));
+  }
+
+  /**
+   * Get ids of operation creator users and oauth clients
+   * 
+   * getKnowledgeKnowledgebaseOperationsUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @return OperationCreatorUserResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OperationCreatorUserResponse> getKnowledgeKnowledgebaseOperationsUsersQueryWithHttpInfo(String knowledgeBaseId) throws IOException {
+    return getKnowledgeKnowledgebaseOperationsUsersQuery(createGetKnowledgeKnowledgebaseOperationsUsersQueryRequest(knowledgeBaseId).withHttpInfo());
+  }
+
+  private GetKnowledgeKnowledgebaseOperationsUsersQueryRequest createGetKnowledgeKnowledgebaseOperationsUsersQueryRequest(String knowledgeBaseId) {
+    return GetKnowledgeKnowledgebaseOperationsUsersQueryRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .build();
+  }
+
+  /**
+   * Get ids of operation creator users and oauth clients
+   * 
+   * getKnowledgeKnowledgebaseOperationsUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return OperationCreatorUserResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OperationCreatorUserResponse getKnowledgeKnowledgebaseOperationsUsersQuery(GetKnowledgeKnowledgebaseOperationsUsersQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OperationCreatorUserResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OperationCreatorUserResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get ids of operation creator users and oauth clients
+   * 
+   * getKnowledgeKnowledgebaseOperationsUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OperationCreatorUserResponse> getKnowledgeKnowledgebaseOperationsUsersQuery(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OperationCreatorUserResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OperationCreatorUserResponse> response = (ApiResponse<OperationCreatorUserResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OperationCreatorUserResponse> response = (ApiResponse<OperationCreatorUserResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

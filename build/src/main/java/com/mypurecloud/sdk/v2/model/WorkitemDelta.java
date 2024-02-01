@@ -31,6 +31,7 @@ public class WorkitemDelta  implements Serializable {
   private WorkitemsAttributeChangeString name = null;
   private WorkitemsAttributeChangeString description = null;
   private WorkitemsAttributeChangeString languageId = null;
+  private WorkitemsAttributeChangeString utilizationLabelId = null;
   private WorkitemsAttributeChangeInteger priority = null;
   private WorkitemsAttributeChangeList skillIds = null;
   private WorkitemsAttributeChangeList preferredAgentIds = null;
@@ -103,6 +104,23 @@ public class WorkitemDelta  implements Serializable {
   }
   public void setLanguageId(WorkitemsAttributeChangeString languageId) {
     this.languageId = languageId;
+  }
+
+
+  /**
+   **/
+  public WorkitemDelta utilizationLabelId(WorkitemsAttributeChangeString utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("utilizationLabelId")
+  public WorkitemsAttributeChangeString getUtilizationLabelId() {
+    return utilizationLabelId;
+  }
+  public void setUtilizationLabelId(WorkitemsAttributeChangeString utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
   }
 
 
@@ -493,6 +511,7 @@ public class WorkitemDelta  implements Serializable {
     return Objects.equals(this.name, workitemDelta.name) &&
             Objects.equals(this.description, workitemDelta.description) &&
             Objects.equals(this.languageId, workitemDelta.languageId) &&
+            Objects.equals(this.utilizationLabelId, workitemDelta.utilizationLabelId) &&
             Objects.equals(this.priority, workitemDelta.priority) &&
             Objects.equals(this.skillIds, workitemDelta.skillIds) &&
             Objects.equals(this.preferredAgentIds, workitemDelta.preferredAgentIds) &&
@@ -519,7 +538,7 @@ public class WorkitemDelta  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, languageId, priority, skillIds, preferredAgentIds, dateDue, dateExpires, durationSeconds, statusId, reporterId, externalContactId, assigneeId, workbinId, queueId, externalTag, wrapupId, ttl, dateClosed, assignmentState, autoStatusTransition, customFields, dateModified, modifiedBy, statusCategory);
+    return Objects.hash(name, description, languageId, utilizationLabelId, priority, skillIds, preferredAgentIds, dateDue, dateExpires, durationSeconds, statusId, reporterId, externalContactId, assigneeId, workbinId, queueId, externalTag, wrapupId, ttl, dateClosed, assignmentState, autoStatusTransition, customFields, dateModified, modifiedBy, statusCategory);
   }
 
   @Override
@@ -530,6 +549,7 @@ public class WorkitemDelta  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    languageId: ").append(toIndentedString(languageId)).append("\n");
+    sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    skillIds: ").append(toIndentedString(skillIds)).append("\n");
     sb.append("    preferredAgentIds: ").append(toIndentedString(preferredAgentIds)).append("\n");

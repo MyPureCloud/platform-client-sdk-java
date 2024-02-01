@@ -47,7 +47,6 @@ import com.mypurecloud.sdk.v2.model.PatchActionTarget;
 import com.mypurecloud.sdk.v2.model.PatchActionTemplate;
 import com.mypurecloud.sdk.v2.model.PatchOutcome;
 import com.mypurecloud.sdk.v2.model.PatchSegment;
-import com.mypurecloud.sdk.v2.model.SegmentAssignmentListing;
 import com.mypurecloud.sdk.v2.model.SegmentListing;
 import com.mypurecloud.sdk.v2.model.Session;
 import com.mypurecloud.sdk.v2.model.SessionListing;
@@ -81,7 +80,6 @@ import com.mypurecloud.sdk.v2.api.request.GetJourneySegmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneySessionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneySessionEventsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneySessionOutcomescoresRequest;
-import com.mypurecloud.sdk.v2.api.request.GetJourneySessionSegmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActionmapRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontargetRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontemplateRequest;
@@ -2449,104 +2447,6 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OutcomeScoresResult> response = (ApiResponse<OutcomeScoresResult>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Retrieve segment assignments by session ID.
-   * 
-   * getJourneySessionSegments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param sessionId ID of the session to query for segment assignments. (required)
-   * @param pageSize Number of entities to return. Maximum of 200. (optional)
-   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param segmentScope Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned. (optional)
-   * @param assignmentState Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned. (optional)
-   * @return SegmentAssignmentListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public SegmentAssignmentListing getJourneySessionSegments(String sessionId, String pageSize, String after, String segmentScope, String assignmentState) throws IOException, ApiException {
-    return  getJourneySessionSegments(createGetJourneySessionSegmentsRequest(sessionId, pageSize, after, segmentScope, assignmentState));
-  }
-
-  /**
-   * Retrieve segment assignments by session ID.
-   * 
-   * getJourneySessionSegments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param sessionId ID of the session to query for segment assignments. (required)
-   * @param pageSize Number of entities to return. Maximum of 200. (optional)
-   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param segmentScope Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned. (optional)
-   * @param assignmentState Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned. (optional)
-   * @return SegmentAssignmentListing
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<SegmentAssignmentListing> getJourneySessionSegmentsWithHttpInfo(String sessionId, String pageSize, String after, String segmentScope, String assignmentState) throws IOException {
-    return getJourneySessionSegments(createGetJourneySessionSegmentsRequest(sessionId, pageSize, after, segmentScope, assignmentState).withHttpInfo());
-  }
-
-  private GetJourneySessionSegmentsRequest createGetJourneySessionSegmentsRequest(String sessionId, String pageSize, String after, String segmentScope, String assignmentState) {
-    return GetJourneySessionSegmentsRequest.builder()
-            .withSessionId(sessionId)
-
-            .withPageSize(pageSize)
-
-            .withAfter(after)
-
-            .withSegmentScope(segmentScope)
-
-            .withAssignmentState(assignmentState)
-
-            .build();
-  }
-
-  /**
-   * Retrieve segment assignments by session ID.
-   * 
-   * getJourneySessionSegments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request The request object
-   * @return SegmentAssignmentListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public SegmentAssignmentListing getJourneySessionSegments(GetJourneySessionSegmentsRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<SegmentAssignmentListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SegmentAssignmentListing>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Retrieve segment assignments by session ID.
-   * 
-   * getJourneySessionSegments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<SegmentAssignmentListing> getJourneySessionSegments(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<SegmentAssignmentListing>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<SegmentAssignmentListing> response = (ApiResponse<SegmentAssignmentListing>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<SegmentAssignmentListing> response = (ApiResponse<SegmentAssignmentListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

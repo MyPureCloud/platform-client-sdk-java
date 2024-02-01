@@ -154,6 +154,7 @@ public class WorkitemUpdate  implements Serializable {
   private String externalTag = null;
   private List<String> skillIds = new ArrayList<String>();
   private String languageId = null;
+  private String utilizationLabelId = null;
   private List<String> preferredAgentIds = new ArrayList<String>();
 
   
@@ -536,6 +537,24 @@ public class WorkitemUpdate  implements Serializable {
 
 
   /**
+   * The ID of the utilization label of the Workitem. Must be a valid UUID.
+   **/
+  public WorkitemUpdate utilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ID of the utilization label of the Workitem. Must be a valid UUID.")
+  @JsonProperty("utilizationLabelId")
+  public String getUtilizationLabelId() {
+    return utilizationLabelId;
+  }
+  public void setUtilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+  }
+
+
+  /**
    * The preferred agent IDs of the Workitem. Must be valid UUIDs.
    **/
   public WorkitemUpdate preferredAgentIds(List<String> preferredAgentIds) {
@@ -584,12 +603,13 @@ public class WorkitemUpdate  implements Serializable {
             Objects.equals(this.externalTag, workitemUpdate.externalTag) &&
             Objects.equals(this.skillIds, workitemUpdate.skillIds) &&
             Objects.equals(this.languageId, workitemUpdate.languageId) &&
+            Objects.equals(this.utilizationLabelId, workitemUpdate.utilizationLabelId) &&
             Objects.equals(this.preferredAgentIds, workitemUpdate.preferredAgentIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, priority, dateDue, dateExpires, durationSeconds, ttl, statusId, workbinId, autoStatusTransition, description, dateClosed, assignmentState, assignmentOperation, customFields, queueId, assigneeId, scoredAgents, externalContactId, externalTag, skillIds, languageId, preferredAgentIds);
+    return Objects.hash(name, priority, dateDue, dateExpires, durationSeconds, ttl, statusId, workbinId, autoStatusTransition, description, dateClosed, assignmentState, assignmentOperation, customFields, queueId, assigneeId, scoredAgents, externalContactId, externalTag, skillIds, languageId, utilizationLabelId, preferredAgentIds);
   }
 
   @Override
@@ -618,6 +638,7 @@ public class WorkitemUpdate  implements Serializable {
     sb.append("    externalTag: ").append(toIndentedString(externalTag)).append("\n");
     sb.append("    skillIds: ").append(toIndentedString(skillIds)).append("\n");
     sb.append("    languageId: ").append(toIndentedString(languageId)).append("\n");
+    sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
     sb.append("    preferredAgentIds: ").append(toIndentedString(preferredAgentIds)).append("\n");
     sb.append("}");
     return sb.toString();

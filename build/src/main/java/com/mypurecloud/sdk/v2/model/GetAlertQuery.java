@@ -120,23 +120,23 @@ public class GetAlertQuery  implements Serializable {
   }
   private QueryTypeEnum queryType = null;
 
-  private static class ActiveStatusEnumDeserializer extends StdDeserializer<ActiveStatusEnum> {
-    public ActiveStatusEnumDeserializer() {
-      super(ActiveStatusEnumDeserializer.class);
+  private static class AlertStatusEnumDeserializer extends StdDeserializer<AlertStatusEnum> {
+    public AlertStatusEnumDeserializer() {
+      super(AlertStatusEnumDeserializer.class);
     }
 
     @Override
-    public ActiveStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+    public AlertStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
             throws IOException {
       JsonNode node = jsonParser.getCodec().readTree(jsonParser);
-      return ActiveStatusEnum.fromString(node.toString().replace("\"", ""));
+      return AlertStatusEnum.fromString(node.toString().replace("\"", ""));
     }
   }
   /**
    * The status of the alerts the query will return.
    */
- @JsonDeserialize(using = ActiveStatusEnumDeserializer.class)
-  public enum ActiveStatusEnum {
+ @JsonDeserialize(using = AlertStatusEnumDeserializer.class)
+  public enum AlertStatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACTIVE("Active"),
     INACTIVE("Inactive"),
@@ -144,21 +144,21 @@ public class GetAlertQuery  implements Serializable {
 
     private String value;
 
-    ActiveStatusEnum(String value) {
+    AlertStatusEnum(String value) {
       this.value = value;
     }
 
     @JsonCreator
-    public static ActiveStatusEnum fromString(String key) {
+    public static AlertStatusEnum fromString(String key) {
       if (key == null) return null;
 
-      for (ActiveStatusEnum value : ActiveStatusEnum.values()) {
+      for (AlertStatusEnum value : AlertStatusEnum.values()) {
         if (key.equalsIgnoreCase(value.toString())) {
           return value;
         }
       }
 
-      return ActiveStatusEnum.values()[0];
+      return AlertStatusEnum.values()[0];
     }
 
     @Override
@@ -167,7 +167,7 @@ public class GetAlertQuery  implements Serializable {
       return String.valueOf(value);
     }
   }
-  private ActiveStatusEnum activeStatus = null;
+  private AlertStatusEnum alertStatus = null;
 
   private static class ViewedStatusEnumDeserializer extends StdDeserializer<ViewedStatusEnum> {
     public ViewedStatusEnumDeserializer() {
@@ -356,18 +356,18 @@ public class GetAlertQuery  implements Serializable {
   /**
    * The status of the alerts the query will return.
    **/
-  public GetAlertQuery activeStatus(ActiveStatusEnum activeStatus) {
-    this.activeStatus = activeStatus;
+  public GetAlertQuery alertStatus(AlertStatusEnum alertStatus) {
+    this.alertStatus = alertStatus;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The status of the alerts the query will return.")
-  @JsonProperty("activeStatus")
-  public ActiveStatusEnum getActiveStatus() {
-    return activeStatus;
+  @JsonProperty("alertStatus")
+  public AlertStatusEnum getAlertStatus() {
+    return alertStatus;
   }
-  public void setActiveStatus(ActiveStatusEnum activeStatus) {
-    this.activeStatus = activeStatus;
+  public void setAlertStatus(AlertStatusEnum alertStatus) {
+    this.alertStatus = alertStatus;
   }
 
 
@@ -473,7 +473,7 @@ public class GetAlertQuery  implements Serializable {
 
     return Objects.equals(this.ruleType, getAlertQuery.ruleType) &&
             Objects.equals(this.queryType, getAlertQuery.queryType) &&
-            Objects.equals(this.activeStatus, getAlertQuery.activeStatus) &&
+            Objects.equals(this.alertStatus, getAlertQuery.alertStatus) &&
             Objects.equals(this.viewedStatus, getAlertQuery.viewedStatus) &&
             Objects.equals(this.pageNumber, getAlertQuery.pageNumber) &&
             Objects.equals(this.pageSize, getAlertQuery.pageSize) &&
@@ -483,7 +483,7 @@ public class GetAlertQuery  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(ruleType, queryType, activeStatus, viewedStatus, pageNumber, pageSize, sortBy, sortOrder);
+    return Objects.hash(ruleType, queryType, alertStatus, viewedStatus, pageNumber, pageSize, sortBy, sortOrder);
   }
 
   @Override
@@ -493,7 +493,7 @@ public class GetAlertQuery  implements Serializable {
     
     sb.append("    ruleType: ").append(toIndentedString(ruleType)).append("\n");
     sb.append("    queryType: ").append(toIndentedString(queryType)).append("\n");
-    sb.append("    activeStatus: ").append(toIndentedString(activeStatus)).append("\n");
+    sb.append("    alertStatus: ").append(toIndentedString(alertStatus)).append("\n");
     sb.append("    viewedStatus: ").append(toIndentedString(viewedStatus)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");

@@ -13,7 +13,7 @@ title: WorkitemStatusUpdate
 | **description** | <!----><!---->**String**<!----> | The description of the Status. Maximum length of 4096 characters. |  [optional] |
 | **defaultDestinationStatusId** | <!----><!---->**String**<!----> | Default destination status to which this Status will transition to if auto status transition enabled. |  [optional] |
 | **statusTransitionDelaySeconds** | <!----><!---->**Integer**<!----> | Delay in seconds for auto status transition. Required if defaultDestinationStatusId is provided. |  [optional] |
-| **statusTransitionTime** | <!----><!---->[**LocalTime**](LocalTime.html)<!----> | Time in HH:MM:SS format at which auto status transition will occur after statusTransitionDelaySeconds delay. To set Time, the statusTransitionDelaySeconds must be equal to or greater than 86400 i.e. a day |  [optional] |
+| **statusTransitionTime** | <!----><!---->**String**<!----> | Time is represented as an ISO-8601 string without a timezone. For example: HH:mm:ss.SSS |  [optional] |
 {: class="table table-striped"}
 
 

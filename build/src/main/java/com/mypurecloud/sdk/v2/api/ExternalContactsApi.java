@@ -1028,7 +1028,7 @@ public class ExternalContactsApi {
    * @param contactId ExternalContact Id (required)
    * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 20)
    * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 1)
-   * @param sortOrder Sort order (optional)
+   * @param sortOrder The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. \"createDate:asc\", \"createDate:desc\" (optional)
    * @param expand which fields, if any, to expand (optional)
    * @return NoteListing
    * @throws ApiException if the request fails on the server
@@ -1044,7 +1044,7 @@ public class ExternalContactsApi {
    * @param contactId ExternalContact Id (required)
    * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 20)
    * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 1)
-   * @param sortOrder Sort order (optional)
+   * @param sortOrder The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. \"createDate:asc\", \"createDate:desc\" (optional)
    * @param expand which fields, if any, to expand (optional)
    * @return NoteListing
    * @throws IOException if the request fails to be processed
@@ -1204,7 +1204,7 @@ public class ExternalContactsApi {
    * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 20)
    * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 1)
    * @param q User supplied search keywords (no special syntax is currently supported) (optional)
-   * @param sortOrder Sort order (optional)
+   * @param sortOrder The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \"firstName:asc\", \"title:desc\" (optional)
    * @param expand which fields, if any, to expand (optional)
    * @return ContactListing
    * @throws ApiException if the request fails on the server
@@ -1220,7 +1220,7 @@ public class ExternalContactsApi {
    * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 20)
    * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 1)
    * @param q User supplied search keywords (no special syntax is currently supported) (optional)
-   * @param sortOrder Sort order (optional)
+   * @param sortOrder The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \"firstName:asc\", \"title:desc\" (optional)
    * @param expand which fields, if any, to expand (optional)
    * @return ContactListing
    * @throws IOException if the request fails to be processed
@@ -1697,7 +1697,7 @@ public class ExternalContactsApi {
    * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 20)
    * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 1)
    * @param q User supplied search keywords (no special syntax is currently supported) (optional)
-   * @param sortOrder Sort order (optional)
+   * @param sortOrder The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \"firstName:asc\", \"title:desc\" (optional)
    * @param expand which fields, if any, to expand (optional)
    * @return ContactListing
    * @throws ApiException if the request fails on the server
@@ -1714,7 +1714,7 @@ public class ExternalContactsApi {
    * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 20)
    * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 1)
    * @param q User supplied search keywords (no special syntax is currently supported) (optional)
-   * @param sortOrder Sort order (optional)
+   * @param sortOrder The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \"firstName:asc\", \"title:desc\" (optional)
    * @param expand which fields, if any, to expand (optional)
    * @return ContactListing
    * @throws IOException if the request fails to be processed
@@ -1880,7 +1880,7 @@ public class ExternalContactsApi {
    * @param externalOrganizationId External Organization Id (required)
    * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 20)
    * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 1)
-   * @param sortOrder Sort order (optional)
+   * @param sortOrder The Note field to sort by. Any of: [createDate]. Direction: [asc, desc]. e.g. \"createDate:asc\", \"createDate:desc\" (optional)
    * @param expand which fields, if any, to expand (optional)
    * @return NoteListing
    * @throws ApiException if the request fails on the server
@@ -1896,7 +1896,7 @@ public class ExternalContactsApi {
    * @param externalOrganizationId External Organization Id (required)
    * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 20)
    * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 1)
-   * @param sortOrder Sort order (optional)
+   * @param sortOrder The Note field to sort by. Any of: [createDate]. Direction: [asc, desc]. e.g. \"createDate:asc\", \"createDate:desc\" (optional)
    * @param expand which fields, if any, to expand (optional)
    * @return NoteListing
    * @throws IOException if the request fails to be processed
@@ -1975,7 +1975,7 @@ public class ExternalContactsApi {
    * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 20)
    * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 1)
    * @param expand which fields, if any, to expand (optional)
-   * @param sortOrder Sort order (optional)
+   * @param sortOrder The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. \"createDate:asc\", \"relationship:desc\" (optional)
    * @return RelationshipListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1991,7 +1991,7 @@ public class ExternalContactsApi {
    * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 20)
    * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 1)
    * @param expand which fields, if any, to expand (optional)
-   * @param sortOrder Sort order (optional)
+   * @param sortOrder The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. \"createDate:asc\", \"relationship:desc\" (optional)
    * @return RelationshipListing
    * @throws IOException if the request fails to be processed
    */
@@ -2069,7 +2069,7 @@ public class ExternalContactsApi {
    * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 1)
    * @param q Search query (optional)
    * @param trustorId Search for external organizations by trustorIds (limit 25). If supplied, the 'q' parameters is ignored. Items are returned in the order requested (optional)
-   * @param sortOrder Sort order (optional)
+   * @param sortOrder The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. \"companyType:asc\", \"industry:desc\" (optional)
    * @param expand which fields, if any, to expand (optional)
    * @param includeTrustors (true or false) whether or not to include trustor information embedded in the externalOrganization (optional)
    * @return ExternalOrganizationListing
@@ -2087,7 +2087,7 @@ public class ExternalContactsApi {
    * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional, default to 1)
    * @param q Search query (optional)
    * @param trustorId Search for external organizations by trustorIds (limit 25). If supplied, the 'q' parameters is ignored. Items are returned in the order requested (optional)
-   * @param sortOrder Sort order (optional)
+   * @param sortOrder The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. \"companyType:asc\", \"industry:desc\" (optional)
    * @param expand which fields, if any, to expand (optional)
    * @param includeTrustors (true or false) whether or not to include trustor information embedded in the externalOrganization (optional)
    * @return ExternalOrganizationListing

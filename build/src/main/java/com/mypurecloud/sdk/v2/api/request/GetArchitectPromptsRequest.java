@@ -188,6 +188,48 @@ public class GetArchitectPromptsRequest {
 	    return this;
 	} 
 
+	private Boolean includeMediaUris;
+	public Boolean getIncludeMediaUris() {
+		return this.includeMediaUris;
+	}
+
+	public void setIncludeMediaUris(Boolean includeMediaUris) {
+		this.includeMediaUris = includeMediaUris;
+	}
+
+	public GetArchitectPromptsRequest withIncludeMediaUris(Boolean includeMediaUris) {
+	    this.setIncludeMediaUris(includeMediaUris);
+	    return this;
+	} 
+
+	private Boolean includeResources;
+	public Boolean getIncludeResources() {
+		return this.includeResources;
+	}
+
+	public void setIncludeResources(Boolean includeResources) {
+		this.includeResources = includeResources;
+	}
+
+	public GetArchitectPromptsRequest withIncludeResources(Boolean includeResources) {
+	    this.setIncludeResources(includeResources);
+	    return this;
+	} 
+
+	private List<String> language;
+	public List<String> getLanguage() {
+		return this.language;
+	}
+
+	public void setLanguage(List<String> language) {
+		this.language = language;
+	}
+
+	public GetArchitectPromptsRequest withLanguage(List<String> language) {
+	    this.setLanguage(language);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -231,6 +273,15 @@ public class GetArchitectPromptsRequest {
         
 
                 .withQueryParameters("sortOrder", "", sortOrder)
+        
+
+                .withQueryParameters("includeMediaUris", "", includeMediaUris)
+        
+
+                .withQueryParameters("includeResources", "", includeResources)
+        
+
+                .withQueryParameters("language", "multi", language)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -285,6 +336,21 @@ public class GetArchitectPromptsRequest {
 
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
+			return this;
+		}
+
+		public Builder withIncludeMediaUris(Boolean includeMediaUris) {
+			request.setIncludeMediaUris(includeMediaUris);
+			return this;
+		}
+
+		public Builder withIncludeResources(Boolean includeResources) {
+			request.setIncludeResources(includeResources);
+			return this;
+		}
+
+		public Builder withLanguage(List<String> language) {
+			request.setLanguage(language);
 			return this;
 		}
 

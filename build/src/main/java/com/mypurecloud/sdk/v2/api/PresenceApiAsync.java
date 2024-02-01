@@ -225,11 +225,12 @@ public class PresenceApiAsync {
   }
 
   /**
-   * Delete a Presence Definition
+   * Delete a Presence Definition. Apps should migrate to use DELETE /api/v2/presence/definitions/{definitionId} instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> deletePresencedefinitionAsync(DeletePresencedefinitionRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -259,11 +260,12 @@ public class PresenceApiAsync {
   }
 
   /**
-   * Delete a Presence Definition
+   * Delete a Presence Definition. Apps should migrate to use DELETE /api/v2/presence/definitions/{definitionId} instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> deletePresencedefinitionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -750,11 +752,12 @@ public class PresenceApiAsync {
   }
 
   /**
-   * Get a Presence Definition
+   * Get a Presence Definition. Apps should migrate to use GET /api/v2/presence/definitions/{definitionId} instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<OrganizationPresence> getPresencedefinitionAsync(GetPresencedefinitionRequest request, final AsyncApiCallback<OrganizationPresence> callback) {
     try {
@@ -784,11 +787,12 @@ public class PresenceApiAsync {
   }
 
   /**
-   * Get a Presence Definition
+   * Get a Presence Definition. Apps should migrate to use GET /api/v2/presence/definitions/{definitionId} instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<OrganizationPresence>> getPresencedefinitionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OrganizationPresence>> callback) {
     try {
@@ -825,11 +829,12 @@ public class PresenceApiAsync {
   }
 
   /**
-   * Get an Organization's list of Presence Definitions
+   * Get an Organization's list of Presence Definitions. Apps should migrate to use GET /api/v2/presence/definitions instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<OrganizationPresenceEntityListing> getPresencedefinitionsAsync(GetPresencedefinitionsRequest request, final AsyncApiCallback<OrganizationPresenceEntityListing> callback) {
     try {
@@ -859,11 +864,12 @@ public class PresenceApiAsync {
   }
 
   /**
-   * Get an Organization's list of Presence Definitions
+   * Get an Organization's list of Presence Definitions. Apps should migrate to use GET /api/v2/presence/definitions instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<OrganizationPresenceEntityListing>> getPresencedefinitionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OrganizationPresenceEntityListing>> callback) {
     try {
@@ -1575,11 +1581,12 @@ public class PresenceApiAsync {
   }
 
   /**
-   * Create a Presence Definition
+   * Create a Presence Definition. Apps should migrate to use POST /api/v2/presence/definitions instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<OrganizationPresence> postPresencedefinitionsAsync(PostPresencedefinitionsRequest request, final AsyncApiCallback<OrganizationPresence> callback) {
     try {
@@ -1609,11 +1616,12 @@ public class PresenceApiAsync {
   }
 
   /**
-   * Create a Presence Definition
+   * Create a Presence Definition. Apps should migrate to use POST /api/v2/presence/definitions instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<OrganizationPresence>> postPresencedefinitionsAsync(ApiRequest<OrganizationPresence> request, final AsyncApiCallback<ApiResponse<OrganizationPresence>> callback) {
     try {
@@ -1950,11 +1958,12 @@ public class PresenceApiAsync {
   }
 
   /**
-   * Update a Presence Definition
+   * Update a Presence Definition. Apps should migrate to use PUT /api/v2/presence/definitions/{definitionId} instead)
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<OrganizationPresence> putPresencedefinitionAsync(PutPresencedefinitionRequest request, final AsyncApiCallback<OrganizationPresence> callback) {
     try {
@@ -1984,11 +1993,12 @@ public class PresenceApiAsync {
   }
 
   /**
-   * Update a Presence Definition
+   * Update a Presence Definition. Apps should migrate to use PUT /api/v2/presence/definitions/{definitionId} instead)
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<OrganizationPresence>> putPresencedefinitionAsync(ApiRequest<OrganizationPresence> request, final AsyncApiCallback<ApiResponse<OrganizationPresence>> callback) {
     try {

@@ -9,15 +9,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**deletePresenceDefinition0**](PresenceApi.html#deletePresenceDefinition0) | Delete a Presence Definition |
 | [**deletePresenceSource**](PresenceApi.html#deletePresenceSource) | Delete a Presence Source |
-| [**deletePresencedefinition**](PresenceApi.html#deletePresencedefinition) | Delete a Presence Definition |
+| [**deletePresencedefinition**](PresenceApi.html#deletePresencedefinition) | Delete a Presence Definition. Apps should migrate to use DELETE /api/v2/presence/definitions/{definitionId} instead |
 | [**getPresenceDefinition0**](PresenceApi.html#getPresenceDefinition0) | Get a Presence Definition |
 | [**getPresenceDefinitions0**](PresenceApi.html#getPresenceDefinitions0) | Get a list of Presence Definitions |
 | [**getPresenceSettings**](PresenceApi.html#getPresenceSettings) | Get the presence settings |
 | [**getPresenceSource**](PresenceApi.html#getPresenceSource) | Get a Presence Source |
 | [**getPresenceSources**](PresenceApi.html#getPresenceSources) | Get a list of Presence Sources |
 | [**getPresenceUserPrimarysource**](PresenceApi.html#getPresenceUserPrimarysource) | Get a user's Primary Presence Source |
-| [**getPresencedefinition**](PresenceApi.html#getPresencedefinition) | Get a Presence Definition |
-| [**getPresencedefinitions**](PresenceApi.html#getPresencedefinitions) | Get an Organization's list of Presence Definitions |
+| [**getPresencedefinition**](PresenceApi.html#getPresencedefinition) | Get a Presence Definition. Apps should migrate to use GET /api/v2/presence/definitions/{definitionId} instead |
+| [**getPresencedefinitions**](PresenceApi.html#getPresencedefinitions) | Get an Organization's list of Presence Definitions. Apps should migrate to use GET /api/v2/presence/definitions instead |
 | [**getSystempresences**](PresenceApi.html#getSystempresences) | Get the list of SystemPresences |
 | [**getUserPresence**](PresenceApi.html#getUserPresence) | Get a user's Presence |
 | [**getUserPresencesPurecloud**](PresenceApi.html#getUserPresencesPurecloud) | Get a user's Genesys Cloud presence. |
@@ -27,12 +27,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchUserPresencesPurecloud**](PresenceApi.html#patchUserPresencesPurecloud) | Patch a Genesys Cloud user's presence |
 | [**postPresenceDefinitions0**](PresenceApi.html#postPresenceDefinitions0) | Create a Presence Definition |
 | [**postPresenceSources**](PresenceApi.html#postPresenceSources) | Create a Presence Source |
-| [**postPresencedefinitions**](PresenceApi.html#postPresencedefinitions) | Create a Presence Definition |
+| [**postPresencedefinitions**](PresenceApi.html#postPresencedefinitions) | Create a Presence Definition. Apps should migrate to use POST /api/v2/presence/definitions instead |
 | [**putPresenceDefinition0**](PresenceApi.html#putPresenceDefinition0) | Update a Presence Definition |
 | [**putPresenceSettings**](PresenceApi.html#putPresenceSettings) | Update the presence settings |
 | [**putPresenceSource**](PresenceApi.html#putPresenceSource) | Update a Presence Source |
 | [**putPresenceUserPrimarysource**](PresenceApi.html#putPresenceUserPrimarysource) | Update a user's Primary Presence Source |
-| [**putPresencedefinition**](PresenceApi.html#putPresencedefinition) | Update a Presence Definition |
+| [**putPresencedefinition**](PresenceApi.html#putPresencedefinition) | Update a Presence Definition. Apps should migrate to use PUT /api/v2/presence/definitions/{definitionId} instead) |
 | [**putUsersPresencesBulk**](PresenceApi.html#putUsersPresencesBulk) | Update bulk user Presences |
 {: class="table-striped"}
 
@@ -162,11 +162,11 @@ null (empty response body)
 
 # **deletePresencedefinition**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > Void deletePresencedefinition(presenceId)
 
-Delete a Presence Definition
+Delete a Presence Definition. Apps should migrate to use DELETE /api/v2/presence/definitions/{definitionId} instead
 
 Wraps DELETE /api/v2/presencedefinitions/{presenceId}  
 
@@ -590,11 +590,11 @@ try {
 
 # **getPresencedefinition**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [OrganizationPresence](OrganizationPresence.html) getPresencedefinition(presenceId, localeCode)
 
-Get a Presence Definition
+Get a Presence Definition. Apps should migrate to use GET /api/v2/presence/definitions/{definitionId} instead
 
 Wraps GET /api/v2/presencedefinitions/{presenceId}  
 
@@ -653,11 +653,11 @@ try {
 
 # **getPresencedefinitions**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [OrganizationPresenceEntityListing](OrganizationPresenceEntityListing.html) getPresencedefinitions(pageNumber, pageSize, deleted, localeCode)
 
-Get an Organization's list of Presence Definitions
+Get an Organization's list of Presence Definitions. Apps should migrate to use GET /api/v2/presence/definitions instead
 
 Wraps GET /api/v2/presencedefinitions  
 
@@ -1275,11 +1275,11 @@ try {
 
 # **postPresencedefinitions**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [OrganizationPresence](OrganizationPresence.html) postPresencedefinitions(body)
 
-Create a Presence Definition
+Create a Presence Definition. Apps should migrate to use POST /api/v2/presence/definitions instead
 
 Wraps POST /api/v2/presencedefinitions  
 
@@ -1586,11 +1586,11 @@ try {
 
 # **putPresencedefinition**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [OrganizationPresence](OrganizationPresence.html) putPresencedefinition(presenceId, body)
 
-Update a Presence Definition
+Update a Presence Definition. Apps should migrate to use PUT /api/v2/presence/definitions/{definitionId} instead)
 
 Wraps PUT /api/v2/presencedefinitions/{presenceId}  
 

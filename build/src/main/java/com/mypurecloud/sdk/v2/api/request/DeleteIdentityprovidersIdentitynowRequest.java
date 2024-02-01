@@ -21,13 +21,14 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ADFS;
+import com.mypurecloud.sdk.v2.model.CustomProvider;
 import com.mypurecloud.sdk.v2.model.CustomerInteractionCenter;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.GSuite;
 import com.mypurecloud.sdk.v2.model.GenericSAML;
 import com.mypurecloud.sdk.v2.model.IdentityNow;
-import com.mypurecloud.sdk.v2.model.OAuthProvider;
-import com.mypurecloud.sdk.v2.model.OAuthProviderEntityListing;
+import com.mypurecloud.sdk.v2.model.IdentityProvider;
+import com.mypurecloud.sdk.v2.model.IdentityProviderEntityListing;
 import com.mypurecloud.sdk.v2.model.Okta;
 import com.mypurecloud.sdk.v2.model.OneLogin;
 import com.mypurecloud.sdk.v2.model.PingIdentity;

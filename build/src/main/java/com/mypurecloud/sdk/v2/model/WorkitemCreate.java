@@ -44,6 +44,7 @@ public class WorkitemCreate  implements Serializable {
   private String wrapupCode = null;
   private List<WorkitemScoredAgentRequest> scoredAgents = new ArrayList<WorkitemScoredAgentRequest>();
   private String languageId = null;
+  private String utilizationLabelId = null;
   private String externalContactId = null;
   private String externalTag = null;
   private List<String> skillIds = new ArrayList<String>();
@@ -357,6 +358,24 @@ public class WorkitemCreate  implements Serializable {
 
 
   /**
+   * The ID of utilization label of the Workitem. Must be a valid UUID.
+   **/
+  public WorkitemCreate utilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ID of utilization label of the Workitem. Must be a valid UUID.")
+  @JsonProperty("utilizationLabelId")
+  public String getUtilizationLabelId() {
+    return utilizationLabelId;
+  }
+  public void setUtilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+  }
+
+
+  /**
    * The ID of the external contact of the Workitem. Must be a valid UUID.
    **/
   public WorkitemCreate externalContactId(String externalContactId) {
@@ -455,6 +474,7 @@ public class WorkitemCreate  implements Serializable {
             Objects.equals(this.wrapupCode, workitemCreate.wrapupCode) &&
             Objects.equals(this.scoredAgents, workitemCreate.scoredAgents) &&
             Objects.equals(this.languageId, workitemCreate.languageId) &&
+            Objects.equals(this.utilizationLabelId, workitemCreate.utilizationLabelId) &&
             Objects.equals(this.externalContactId, workitemCreate.externalContactId) &&
             Objects.equals(this.externalTag, workitemCreate.externalTag) &&
             Objects.equals(this.skillIds, workitemCreate.skillIds) &&
@@ -463,7 +483,7 @@ public class WorkitemCreate  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, priority, dateDue, dateExpires, durationSeconds, ttl, statusId, workbinId, autoStatusTransition, description, typeId, customFields, queueId, assigneeId, wrapupCode, scoredAgents, languageId, externalContactId, externalTag, skillIds, preferredAgentIds);
+    return Objects.hash(name, priority, dateDue, dateExpires, durationSeconds, ttl, statusId, workbinId, autoStatusTransition, description, typeId, customFields, queueId, assigneeId, wrapupCode, scoredAgents, languageId, utilizationLabelId, externalContactId, externalTag, skillIds, preferredAgentIds);
   }
 
   @Override
@@ -488,6 +508,7 @@ public class WorkitemCreate  implements Serializable {
     sb.append("    wrapupCode: ").append(toIndentedString(wrapupCode)).append("\n");
     sb.append("    scoredAgents: ").append(toIndentedString(scoredAgents)).append("\n");
     sb.append("    languageId: ").append(toIndentedString(languageId)).append("\n");
+    sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
     sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
     sb.append("    externalTag: ").append(toIndentedString(externalTag)).append("\n");
     sb.append("    skillIds: ").append(toIndentedString(skillIds)).append("\n");

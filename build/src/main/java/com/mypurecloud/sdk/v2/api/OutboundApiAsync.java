@@ -43,6 +43,7 @@ import com.mypurecloud.sdk.v2.model.ContactListEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListFilter;
 import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListTemplate;
+import com.mypurecloud.sdk.v2.model.ContactListTemplateBulkRetrieveBody;
 import com.mypurecloud.sdk.v2.model.ContactListTemplateEntityListing;
 import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
 import com.mypurecloud.sdk.v2.model.DialerContact;
@@ -62,6 +63,8 @@ import com.mypurecloud.sdk.v2.model.EmailCampaignSchedule;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EventLog;
 import com.mypurecloud.sdk.v2.model.ExportUri;
+import com.mypurecloud.sdk.v2.model.FileSpecificationTemplate;
+import com.mypurecloud.sdk.v2.model.FileSpecificationTemplateEntityListing;
 import com.mypurecloud.sdk.v2.model.FilterPreviewResponse;
 import com.mypurecloud.sdk.v2.model.ImportStatus;
 import com.mypurecloud.sdk.v2.model.ImportTemplate;
@@ -102,6 +105,8 @@ import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistCustomexclusioncolumnsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistEmailaddressesRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistPhonenumbersRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOutboundFilespecificationtemplateRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOutboundFilespecificationtemplatesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundImporttemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundImporttemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundMessagingcampaignRequest;
@@ -153,6 +158,8 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistsDivisionviewRequest
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundEventRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundEventsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundFilespecificationtemplateRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundFilespecificationtemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundImporttemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundImporttemplateImportstatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundImporttemplatesRequest;
@@ -198,12 +205,14 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersPreviewR
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlisttemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlisttemplatesBulkAddRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlisttemplatesBulkRetrieveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundConversationDncRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDigitalrulesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistEmailaddressesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistExportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundFilespecificationtemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundImporttemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundImporttemplatesBulkAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundMessagingcampaignsRequest;
@@ -222,6 +231,7 @@ import com.mypurecloud.sdk.v2.api.request.PutOutboundContactlistfilterRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundContactlisttemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundDigitalrulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundDnclistRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOutboundFilespecificationtemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundImporttemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundMessagingcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundRulesetRequest;
@@ -1567,6 +1577,156 @@ public class OutboundApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteOutboundDnclistPhonenumbersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete File Specification Template
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteOutboundFilespecificationtemplateAsync(DeleteOutboundFilespecificationtemplateRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete File Specification Template
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteOutboundFilespecificationtemplateAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete multiple file specification templates.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteOutboundFilespecificationtemplatesBulkAsync(DeleteOutboundFilespecificationtemplatesBulkRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete multiple file specification templates.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteOutboundFilespecificationtemplatesBulkAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -5426,6 +5586,156 @@ public class OutboundApiAsync {
   }
 
   /**
+   * Get File Specification Template
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FileSpecificationTemplate> getOutboundFilespecificationtemplateAsync(GetOutboundFilespecificationtemplateRequest request, final AsyncApiCallback<FileSpecificationTemplate> callback) {
+    try {
+      final SettableFuture<FileSpecificationTemplate> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FileSpecificationTemplate>() {}, new AsyncApiCallback<ApiResponse<FileSpecificationTemplate>>() {
+        @Override
+        public void onCompleted(ApiResponse<FileSpecificationTemplate> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get File Specification Template
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FileSpecificationTemplate>> getOutboundFilespecificationtemplateAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FileSpecificationTemplate>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FileSpecificationTemplate>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FileSpecificationTemplate>() {}, new AsyncApiCallback<ApiResponse<FileSpecificationTemplate>>() {
+        @Override
+        public void onCompleted(ApiResponse<FileSpecificationTemplate> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FileSpecificationTemplate> response = (ApiResponse<FileSpecificationTemplate>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FileSpecificationTemplate> response = (ApiResponse<FileSpecificationTemplate>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query File Specification Templates
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FileSpecificationTemplateEntityListing> getOutboundFilespecificationtemplatesAsync(GetOutboundFilespecificationtemplatesRequest request, final AsyncApiCallback<FileSpecificationTemplateEntityListing> callback) {
+    try {
+      final SettableFuture<FileSpecificationTemplateEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FileSpecificationTemplateEntityListing>() {}, new AsyncApiCallback<ApiResponse<FileSpecificationTemplateEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<FileSpecificationTemplateEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query File Specification Templates
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FileSpecificationTemplateEntityListing>> getOutboundFilespecificationtemplatesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FileSpecificationTemplateEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FileSpecificationTemplateEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FileSpecificationTemplateEntityListing>() {}, new AsyncApiCallback<ApiResponse<FileSpecificationTemplateEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<FileSpecificationTemplateEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FileSpecificationTemplateEntityListing> response = (ApiResponse<FileSpecificationTemplateEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FileSpecificationTemplateEntityListing> response = (ApiResponse<FileSpecificationTemplateEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get Import Template
    * 
    * @param request the request object
@@ -8803,6 +9113,81 @@ public class OutboundApiAsync {
   }
 
   /**
+   * Get multiple contact list templates
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ContactListTemplateEntityListing> postOutboundContactlisttemplatesBulkRetrieveAsync(PostOutboundContactlisttemplatesBulkRetrieveRequest request, final AsyncApiCallback<ContactListTemplateEntityListing> callback) {
+    try {
+      final SettableFuture<ContactListTemplateEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContactListTemplateEntityListing>() {}, new AsyncApiCallback<ApiResponse<ContactListTemplateEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactListTemplateEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get multiple contact list templates
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ContactListTemplateEntityListing>> postOutboundContactlisttemplatesBulkRetrieveAsync(ApiRequest<ContactListTemplateBulkRetrieveBody> request, final AsyncApiCallback<ApiResponse<ContactListTemplateEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ContactListTemplateEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContactListTemplateEntityListing>() {}, new AsyncApiCallback<ApiResponse<ContactListTemplateEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactListTemplateEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactListTemplateEntityListing> response = (ApiResponse<ContactListTemplateEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactListTemplateEntityListing> response = (ApiResponse<ContactListTemplateEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Add phone numbers to a Dialer DNC list.
    * 
    * @param request the request object
@@ -9241,6 +9626,81 @@ public class OutboundApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DncList> response = (ApiResponse<DncList>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create File Specification Template
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FileSpecificationTemplate> postOutboundFilespecificationtemplatesAsync(PostOutboundFilespecificationtemplatesRequest request, final AsyncApiCallback<FileSpecificationTemplate> callback) {
+    try {
+      final SettableFuture<FileSpecificationTemplate> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FileSpecificationTemplate>() {}, new AsyncApiCallback<ApiResponse<FileSpecificationTemplate>>() {
+        @Override
+        public void onCompleted(ApiResponse<FileSpecificationTemplate> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create File Specification Template
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FileSpecificationTemplate>> postOutboundFilespecificationtemplatesAsync(ApiRequest<FileSpecificationTemplate> request, final AsyncApiCallback<ApiResponse<FileSpecificationTemplate>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FileSpecificationTemplate>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FileSpecificationTemplate>() {}, new AsyncApiCallback<ApiResponse<FileSpecificationTemplate>>() {
+        @Override
+        public void onCompleted(ApiResponse<FileSpecificationTemplate> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FileSpecificationTemplate> response = (ApiResponse<FileSpecificationTemplate>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FileSpecificationTemplate> response = (ApiResponse<FileSpecificationTemplate>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -10591,6 +11051,81 @@ public class OutboundApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DncList> response = (ApiResponse<DncList>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update File Specification Template
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FileSpecificationTemplate> putOutboundFilespecificationtemplateAsync(PutOutboundFilespecificationtemplateRequest request, final AsyncApiCallback<FileSpecificationTemplate> callback) {
+    try {
+      final SettableFuture<FileSpecificationTemplate> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FileSpecificationTemplate>() {}, new AsyncApiCallback<ApiResponse<FileSpecificationTemplate>>() {
+        @Override
+        public void onCompleted(ApiResponse<FileSpecificationTemplate> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update File Specification Template
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FileSpecificationTemplate>> putOutboundFilespecificationtemplateAsync(ApiRequest<FileSpecificationTemplate> request, final AsyncApiCallback<ApiResponse<FileSpecificationTemplate>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FileSpecificationTemplate>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FileSpecificationTemplate>() {}, new AsyncApiCallback<ApiResponse<FileSpecificationTemplate>>() {
+        @Override
+        public void onCompleted(ApiResponse<FileSpecificationTemplate> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FileSpecificationTemplate> response = (ApiResponse<FileSpecificationTemplate>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FileSpecificationTemplate> response = (ApiResponse<FileSpecificationTemplate>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

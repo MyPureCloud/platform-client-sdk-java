@@ -63,14 +63,14 @@ public class BatchConversationEventRequest  implements Serializable {
 
   
   /**
-   * EndTransfer events for this batch
+   * Voice - EndTransfer events for this batch
    **/
   public BatchConversationEventRequest endTransferEvents(List<EndTransferEvent> endTransferEvents) {
     this.endTransferEvents = endTransferEvents;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "EndTransfer events for this batch")
+  @ApiModelProperty(example = "null", value = "Voice - EndTransfer events for this batch")
   @JsonProperty("endTransferEvents")
   public List<EndTransferEvent> getEndTransferEvents() {
     return endTransferEvents;
@@ -81,14 +81,14 @@ public class BatchConversationEventRequest  implements Serializable {
 
 
   /**
-   * PhoneTransfer events for this batch
+   * Voice - PhoneTransfer events for this batch
    **/
   public BatchConversationEventRequest phoneTransferEvents(List<PhoneTransferEvent> phoneTransferEvents) {
     this.phoneTransferEvents = phoneTransferEvents;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "PhoneTransfer events for this batch")
+  @ApiModelProperty(example = "null", value = "Voice - PhoneTransfer events for this batch")
   @JsonProperty("phoneTransferEvents")
   public List<PhoneTransferEvent> getPhoneTransferEvents() {
     return phoneTransferEvents;
@@ -99,14 +99,14 @@ public class BatchConversationEventRequest  implements Serializable {
 
 
   /**
-   * ProgressTransfer events for this batch
+   * Voice - ProgressTransfer events for this batch
    **/
   public BatchConversationEventRequest progressTransferEvents(List<ProgressTransferEvent> progressTransferEvents) {
     this.progressTransferEvents = progressTransferEvents;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "ProgressTransfer events for this batch")
+  @ApiModelProperty(example = "null", value = "Voice - ProgressTransfer events for this batch")
   @JsonProperty("progressTransferEvents")
   public List<ProgressTransferEvent> getProgressTransferEvents() {
     return progressTransferEvents;
@@ -117,14 +117,14 @@ public class BatchConversationEventRequest  implements Serializable {
 
 
   /**
-   * RoutingTransfer events for this batch
+   * Voice - RoutingTransfer events for this batch
    **/
   public BatchConversationEventRequest routingTransferEvents(List<RoutingTransferEvent> routingTransferEvents) {
     this.routingTransferEvents = routingTransferEvents;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "RoutingTransfer events for this batch")
+  @ApiModelProperty(example = "null", value = "Voice - RoutingTransfer events for this batch")
   @JsonProperty("routingTransferEvents")
   public List<RoutingTransferEvent> getRoutingTransferEvents() {
     return routingTransferEvents;
@@ -135,14 +135,14 @@ public class BatchConversationEventRequest  implements Serializable {
 
 
   /**
-   * UserTransfer events for this batch
+   * Voice - UserTransfer events for this batch
    **/
   public BatchConversationEventRequest userTransferEvents(List<UserTransferEvent> userTransferEvents) {
     this.userTransferEvents = userTransferEvents;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "UserTransfer events for this batch")
+  @ApiModelProperty(example = "null", value = "Voice - UserTransfer events for this batch")
   @JsonProperty("userTransferEvents")
   public List<UserTransferEvent> getUserTransferEvents() {
     return userTransferEvents;
@@ -153,14 +153,14 @@ public class BatchConversationEventRequest  implements Serializable {
 
 
   /**
-   * CommunicationAnswered events for this batch
+   * Voice - CommunicationAnswered events for this batch
    **/
   public BatchConversationEventRequest communicationAnsweredEvents(List<CommunicationAnsweredEvent> communicationAnsweredEvents) {
     this.communicationAnsweredEvents = communicationAnsweredEvents;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "CommunicationAnswered events for this batch")
+  @ApiModelProperty(example = "null", value = "Voice - CommunicationAnswered events for this batch")
   @JsonProperty("communicationAnsweredEvents")
   public List<CommunicationAnsweredEvent> getCommunicationAnsweredEvents() {
     return communicationAnsweredEvents;
@@ -171,14 +171,14 @@ public class BatchConversationEventRequest  implements Serializable {
 
 
   /**
-   * CommunicationDispositionApplied events for this batch
+   * Voice - CommunicationDispositionApplied events for this batch
    **/
   public BatchConversationEventRequest communicationDispositionAppliedEvents(List<CommunicationDispositionAppliedEvent> communicationDispositionAppliedEvents) {
     this.communicationDispositionAppliedEvents = communicationDispositionAppliedEvents;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "CommunicationDispositionApplied events for this batch")
+  @ApiModelProperty(example = "null", value = "Voice - CommunicationDispositionApplied events for this batch")
   @JsonProperty("communicationDispositionAppliedEvents")
   public List<CommunicationDispositionAppliedEvent> getCommunicationDispositionAppliedEvents() {
     return communicationDispositionAppliedEvents;
@@ -189,14 +189,14 @@ public class BatchConversationEventRequest  implements Serializable {
 
 
   /**
-   * HoldUpdated events for this batch
+   * Voice - HoldUpdated events for this batch
    **/
   public BatchConversationEventRequest holdUpdatedEvents(List<HoldUpdatedEvent> holdUpdatedEvents) {
     this.holdUpdatedEvents = holdUpdatedEvents;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "HoldUpdated events for this batch")
+  @ApiModelProperty(example = "null", value = "Voice - HoldUpdated events for this batch")
   @JsonProperty("holdUpdatedEvents")
   public List<HoldUpdatedEvent> getHoldUpdatedEvents() {
     return holdUpdatedEvents;
@@ -207,14 +207,14 @@ public class BatchConversationEventRequest  implements Serializable {
 
 
   /**
-   * ExternalEstablished events for this batch
+   * Voice - ExternalEstablished events for this batch
    **/
   public BatchConversationEventRequest externalEstablishedEvents(List<ExternalEstablishedEvent> externalEstablishedEvents) {
     this.externalEstablishedEvents = externalEstablishedEvents;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "ExternalEstablished events for this batch")
+  @ApiModelProperty(example = "null", value = "Voice - ExternalEstablished events for this batch")
   @JsonProperty("externalEstablishedEvents")
   public List<ExternalEstablishedEvent> getExternalEstablishedEvents() {
     return externalEstablishedEvents;
@@ -225,14 +225,14 @@ public class BatchConversationEventRequest  implements Serializable {
 
 
   /**
-   * IvrEstablished events for this batch
+   * Voice - IvrEstablished events for this batch
    **/
   public BatchConversationEventRequest ivrEstablishedEvents(List<IvrEstablishedEvent> ivrEstablishedEvents) {
     this.ivrEstablishedEvents = ivrEstablishedEvents;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "IvrEstablished events for this batch")
+  @ApiModelProperty(example = "null", value = "Voice - IvrEstablished events for this batch")
   @JsonProperty("ivrEstablishedEvents")
   public List<IvrEstablishedEvent> getIvrEstablishedEvents() {
     return ivrEstablishedEvents;
@@ -243,14 +243,14 @@ public class BatchConversationEventRequest  implements Serializable {
 
 
   /**
-   * PhoneEstablished events for this batch
+   * Voice - PhoneEstablished events for this batch
    **/
   public BatchConversationEventRequest phoneEstablishedEvents(List<PhoneEstablishedEvent> phoneEstablishedEvents) {
     this.phoneEstablishedEvents = phoneEstablishedEvents;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "PhoneEstablished events for this batch")
+  @ApiModelProperty(example = "null", value = "Voice - PhoneEstablished events for this batch")
   @JsonProperty("phoneEstablishedEvents")
   public List<PhoneEstablishedEvent> getPhoneEstablishedEvents() {
     return phoneEstablishedEvents;
@@ -261,14 +261,14 @@ public class BatchConversationEventRequest  implements Serializable {
 
 
   /**
-   * RoutingEstablished events for this batch
+   * Voice - RoutingEstablished events for this batch
    **/
   public BatchConversationEventRequest routingEstablishedEvents(List<RoutingEstablishedEvent> routingEstablishedEvents) {
     this.routingEstablishedEvents = routingEstablishedEvents;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "RoutingEstablished events for this batch")
+  @ApiModelProperty(example = "null", value = "Voice - RoutingEstablished events for this batch")
   @JsonProperty("routingEstablishedEvents")
   public List<RoutingEstablishedEvent> getRoutingEstablishedEvents() {
     return routingEstablishedEvents;
@@ -279,14 +279,14 @@ public class BatchConversationEventRequest  implements Serializable {
 
 
   /**
-   * UserEstablished events for this batch
+   * Voice - UserEstablished events for this batch
    **/
   public BatchConversationEventRequest userEstablishedEvents(List<UserEstablishedEvent> userEstablishedEvents) {
     this.userEstablishedEvents = userEstablishedEvents;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "UserEstablished events for this batch")
+  @ApiModelProperty(example = "null", value = "Voice - UserEstablished events for this batch")
   @JsonProperty("userEstablishedEvents")
   public List<UserEstablishedEvent> getUserEstablishedEvents() {
     return userEstablishedEvents;
@@ -297,14 +297,14 @@ public class BatchConversationEventRequest  implements Serializable {
 
 
   /**
-   * AudioUpdated events for this batch
+   * Voice - AudioUpdated events for this batch
    **/
   public BatchConversationEventRequest audioUpdatedEvents(List<AudioUpdatedEvent> audioUpdatedEvents) {
     this.audioUpdatedEvents = audioUpdatedEvents;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "AudioUpdated events for this batch")
+  @ApiModelProperty(example = "null", value = "Voice - AudioUpdated events for this batch")
   @JsonProperty("audioUpdatedEvents")
   public List<AudioUpdatedEvent> getAudioUpdatedEvents() {
     return audioUpdatedEvents;
@@ -315,14 +315,14 @@ public class BatchConversationEventRequest  implements Serializable {
 
 
   /**
-   * CommunicationEnded events for this batch
+   * Voice - CommunicationEnded events for this batch
    **/
   public BatchConversationEventRequest communicationEndedEvents(List<CommunicationEndedEvent> communicationEndedEvents) {
     this.communicationEndedEvents = communicationEndedEvents;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "CommunicationEnded events for this batch")
+  @ApiModelProperty(example = "null", value = "Voice - CommunicationEnded events for this batch")
   @JsonProperty("communicationEndedEvents")
   public List<CommunicationEndedEvent> getCommunicationEndedEvents() {
     return communicationEndedEvents;
@@ -333,14 +333,14 @@ public class BatchConversationEventRequest  implements Serializable {
 
 
   /**
-   * ConsultTransfer events for this batch
+   * Voice - ConsultTransfer events for this batch
    **/
   public BatchConversationEventRequest consultTransferEvents(List<ConsultTransferEvent> consultTransferEvents) {
     this.consultTransferEvents = consultTransferEvents;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "ConsultTransfer events for this batch")
+  @ApiModelProperty(example = "null", value = "Voice - ConsultTransfer events for this batch")
   @JsonProperty("consultTransferEvents")
   public List<ConsultTransferEvent> getConsultTransferEvents() {
     return consultTransferEvents;
@@ -351,14 +351,14 @@ public class BatchConversationEventRequest  implements Serializable {
 
 
   /**
-   * ProgressConsultTransfer events for this batch
+   * Voice - ProgressConsultTransfer events for this batch
    **/
   public BatchConversationEventRequest progressConsultTransferEvents(List<ProgressConsultTransferEvent> progressConsultTransferEvents) {
     this.progressConsultTransferEvents = progressConsultTransferEvents;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "ProgressConsultTransfer events for this batch")
+  @ApiModelProperty(example = "null", value = "Voice - ProgressConsultTransfer events for this batch")
   @JsonProperty("progressConsultTransferEvents")
   public List<ProgressConsultTransferEvent> getProgressConsultTransferEvents() {
     return progressConsultTransferEvents;
@@ -369,14 +369,14 @@ public class BatchConversationEventRequest  implements Serializable {
 
 
   /**
-   * EndConsultTransfer events for this batch
+   * Voice - EndConsultTransfer events for this batch
    **/
   public BatchConversationEventRequest endConsultTransferEvents(List<EndConsultTransferEvent> endConsultTransferEvents) {
     this.endConsultTransferEvents = endConsultTransferEvents;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "EndConsultTransfer events for this batch")
+  @ApiModelProperty(example = "null", value = "Voice - EndConsultTransfer events for this batch")
   @JsonProperty("endConsultTransferEvents")
   public List<EndConsultTransferEvent> getEndConsultTransferEvents() {
     return endConsultTransferEvents;

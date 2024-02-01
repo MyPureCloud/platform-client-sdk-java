@@ -183,6 +183,7 @@ public class Group  implements Serializable {
     }
   }
   private VisibilityEnum visibility = null;
+  private Boolean rolesEnabled = null;
   private List<User> owners = new ArrayList<User>();
   private String selfUri = null;
 
@@ -346,6 +347,24 @@ public class Group  implements Serializable {
 
 
   /**
+   * Allow roles to be assigned to this group
+   **/
+  public Group rolesEnabled(Boolean rolesEnabled) {
+    this.rolesEnabled = rolesEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Allow roles to be assigned to this group")
+  @JsonProperty("rolesEnabled")
+  public Boolean getRolesEnabled() {
+    return rolesEnabled;
+  }
+  public void setRolesEnabled(Boolean rolesEnabled) {
+    this.rolesEnabled = rolesEnabled;
+  }
+
+
+  /**
    * Owners of the group
    **/
   public Group owners(List<User> owners) {
@@ -392,13 +411,14 @@ public class Group  implements Serializable {
             Objects.equals(this.addresses, group.addresses) &&
             Objects.equals(this.rulesVisible, group.rulesVisible) &&
             Objects.equals(this.visibility, group.visibility) &&
+            Objects.equals(this.rolesEnabled, group.rolesEnabled) &&
             Objects.equals(this.owners, group.owners) &&
             Objects.equals(this.selfUri, group.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, dateModified, memberCount, state, version, type, images, addresses, rulesVisible, visibility, owners, selfUri);
+    return Objects.hash(id, name, description, dateModified, memberCount, state, version, type, images, addresses, rulesVisible, visibility, rolesEnabled, owners, selfUri);
   }
 
   @Override
@@ -418,6 +438,7 @@ public class Group  implements Serializable {
     sb.append("    addresses: ").append(toIndentedString(addresses)).append("\n");
     sb.append("    rulesVisible: ").append(toIndentedString(rulesVisible)).append("\n");
     sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
+    sb.append("    rolesEnabled: ").append(toIndentedString(rolesEnabled)).append("\n");
     sb.append("    owners: ").append(toIndentedString(owners)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

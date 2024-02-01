@@ -52,6 +52,7 @@ title: WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ADVANCETIMEELAPSED | &quot;AdvanceTimeElapsed&quot; | 
 | AUTOAPPROVED | &quot;AutoApproved&quot; | 
+| INSUFFICIENTBALANCE | &quot;InsufficientBalance&quot; | 
 | INVALIDDAILYDURATION | &quot;InvalidDailyDuration&quot; | 
 | OUTSIDESHIFT | &quot;OutsideShift&quot; | 
 | REMOVEDFROMWAITLIST | &quot;RemovedFromWaitlist&quot; | 

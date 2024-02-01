@@ -334,10 +334,21 @@ public class PhoneStatus  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The URI for this object")
+  /**
+   * The URI for this object. Deprecated. Do not use.
+   **/
+  public PhoneStatus selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The URI for this object. Deprecated. Do not use.")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
   }
 
 

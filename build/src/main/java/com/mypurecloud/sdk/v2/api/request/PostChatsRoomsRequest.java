@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.ChatMessageEntityListing;
 import com.mypurecloud.sdk.v2.model.ChatMessageResponse;
 import com.mypurecloud.sdk.v2.model.ChatSendMessageResponse;
 import com.mypurecloud.sdk.v2.model.ChatSettings;
+import com.mypurecloud.sdk.v2.model.ChatUserSettings;
 import com.mypurecloud.sdk.v2.model.CreateRoomRequest;
 import com.mypurecloud.sdk.v2.model.CreateRoomResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;

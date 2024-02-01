@@ -40,6 +40,7 @@ public class UpdateUser  implements Serializable {
   private List<Contact> addresses = new ArrayList<Contact>();
   private String title = null;
   private String username = null;
+  private String preferredName = null;
   private String manager = null;
   private List<UserImage> images = new ArrayList<UserImage>();
   private Integer version = null;
@@ -233,6 +234,24 @@ public class UpdateUser  implements Serializable {
   }
   public void setUsername(String username) {
     this.username = username;
+  }
+
+
+  /**
+   * Preferred full name of agent
+   **/
+  public UpdateUser preferredName(String preferredName) {
+    this.preferredName = preferredName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Preferred full name of agent")
+  @JsonProperty("preferredName")
+  public String getPreferredName() {
+    return preferredName;
+  }
+  public void setPreferredName(String preferredName) {
+    this.preferredName = preferredName;
   }
 
 
@@ -455,6 +474,7 @@ public class UpdateUser  implements Serializable {
             Objects.equals(this.addresses, updateUser.addresses) &&
             Objects.equals(this.title, updateUser.title) &&
             Objects.equals(this.username, updateUser.username) &&
+            Objects.equals(this.preferredName, updateUser.preferredName) &&
             Objects.equals(this.manager, updateUser.manager) &&
             Objects.equals(this.images, updateUser.images) &&
             Objects.equals(this.version, updateUser.version) &&
@@ -471,7 +491,7 @@ public class UpdateUser  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, chat, department, email, primaryContactInfo, addresses, title, username, manager, images, version, profileSkills, locations, groups, state, acdAutoAnswer, certifications, biography, employerInfo, selfUri);
+    return Objects.hash(id, name, chat, department, email, primaryContactInfo, addresses, title, username, preferredName, manager, images, version, profileSkills, locations, groups, state, acdAutoAnswer, certifications, biography, employerInfo, selfUri);
   }
 
   @Override
@@ -488,6 +508,7 @@ public class UpdateUser  implements Serializable {
     sb.append("    addresses: ").append(toIndentedString(addresses)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    username: ").append(toIndentedString(username)).append("\n");
+    sb.append("    preferredName: ").append(toIndentedString(preferredName)).append("\n");
     sb.append("    manager: ").append(toIndentedString(manager)).append("\n");
     sb.append("    images: ").append(toIndentedString(images)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");

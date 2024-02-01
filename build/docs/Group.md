@@ -20,6 +20,7 @@ title: Group
 | **addresses** | <!----><!---->[**List&lt;GroupContact&gt;**](GroupContact.html)<!----> |  |  [optional] |
 | **rulesVisible** | <!----><!---->**Boolean**<!----> | Are membership rules visible to the person requesting to view the group |  |
 | **visibility** | [**VisibilityEnum**](#VisibilityEnum)<!----> | Who can view this group |  |
+| **rolesEnabled** | <!----><!---->**Boolean**<!----> | Allow roles to be assigned to this group |  [optional] |
 | **owners** | <!----><!---->[**List&lt;User&gt;**](User.html)<!----> | Owners of the group |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}

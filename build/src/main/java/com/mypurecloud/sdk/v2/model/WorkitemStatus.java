@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.LocalTime;
 import com.mypurecloud.sdk.v2.model.WorkitemStatusReference;
 import com.mypurecloud.sdk.v2.model.WorktypeReference;
 import io.swagger.annotations.ApiModel;
@@ -84,7 +83,7 @@ public class WorkitemStatus  implements Serializable {
   private String description = null;
   private WorkitemStatusReference defaultDestinationStatus = null;
   private Integer statusTransitionDelaySeconds = null;
-  private LocalTime statusTransitionTime = null;
+  private String statusTransitionTime = null;
   private WorktypeReference worktype = null;
   private String selfUri = null;
 
@@ -204,19 +203,19 @@ public class WorkitemStatus  implements Serializable {
 
 
   /**
-   * Time in HH:MM:SS format at which auto status transition will occur after statusTransitionDelaySeconds delay. To set Time, the statusTransitionDelaySeconds must be equal to or greater than 86400 i.e. a day
+   * Time is represented as an ISO-8601 string without a timezone. For example: HH:mm:ss.SSS
    **/
-  public WorkitemStatus statusTransitionTime(LocalTime statusTransitionTime) {
+  public WorkitemStatus statusTransitionTime(String statusTransitionTime) {
     this.statusTransitionTime = statusTransitionTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Time in HH:MM:SS format at which auto status transition will occur after statusTransitionDelaySeconds delay. To set Time, the statusTransitionDelaySeconds must be equal to or greater than 86400 i.e. a day")
+  @ApiModelProperty(example = "null", value = "Time is represented as an ISO-8601 string without a timezone. For example: HH:mm:ss.SSS")
   @JsonProperty("statusTransitionTime")
-  public LocalTime getStatusTransitionTime() {
+  public String getStatusTransitionTime() {
     return statusTransitionTime;
   }
-  public void setStatusTransitionTime(LocalTime statusTransitionTime) {
+  public void setStatusTransitionTime(String statusTransitionTime) {
     this.statusTransitionTime = statusTransitionTime;
   }
 

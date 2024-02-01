@@ -62,7 +62,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTelephonyProvidersEdgesMediastatisticsConversation**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesMediastatisticsConversation) | Get media endpoint statistics events. |
 | [**getTelephonyProvidersEdgesMediastatisticsConversationCommunication**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesMediastatisticsConversationCommunication) | Get media endpoint statistics event. |
 | [**getTelephonyProvidersEdgesMetrics**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesMetrics) | Get the metrics for a list of edges. |
-| [**getTelephonyProvidersEdgesOutboundroute**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesOutboundroute) | Get outbound route |
 | [**getTelephonyProvidersEdgesOutboundroutes**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesOutboundroutes) | Get outbound routes |
 | [**getTelephonyProvidersEdgesPhone**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesPhone) | Get a Phone by ID |
 | [**getTelephonyProvidersEdgesPhonebasesetting**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesPhonebasesetting) | Get a Phone Base Settings object by ID |
@@ -2893,8 +2892,6 @@ Get a pageable list of basic extension pool objects filterable by query paramete
 
 This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
 
-getTelephonyProvidersEdgesExtensionpoolsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/telephony/providers/edges/extensionpools/divisionviews  
 
 Requires ALL permissions: 
@@ -3601,69 +3598,6 @@ try {
 ### Return type
 
 [**List&lt;EdgeMetrics&gt;**](EdgeMetrics.html)
-
-<a name="getTelephonyProvidersEdgesOutboundroute"></a>
-
-# **getTelephonyProvidersEdgesOutboundroute**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [OutboundRoute](OutboundRoute.html) getTelephonyProvidersEdgesOutboundroute(outboundRouteId)
-
-Get outbound route
-
-This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
-
-Wraps GET /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}  
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
-String outboundRouteId = "outboundRouteId_example"; // String | Outbound route ID
-try {
-    OutboundRoute result = apiInstance.getTelephonyProvidersEdgesOutboundroute(outboundRouteId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesOutboundroute");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **outboundRouteId** | **String**| Outbound route ID | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**OutboundRoute**](OutboundRoute.html)
 
 <a name="getTelephonyProvidersEdgesOutboundroutes"></a>
 
@@ -4721,7 +4655,7 @@ try {
 
 
 
-> [SiteEntityListing](SiteEntityListing.html) getTelephonyProvidersEdgesSites(pageSize, pageNumber, sortBy, sortOrder, name, locationId, managed)
+> [SiteEntityListing](SiteEntityListing.html) getTelephonyProvidersEdgesSites(pageSize, pageNumber, sortBy, sortOrder, name, locationId, managed, expand)
 
 Get the list of Sites.
 
@@ -4759,8 +4693,9 @@ String sortOrder = "ASC"; // String | Sort order
 String name = "name_example"; // String | Name
 String locationId = "locationId_example"; // String | Location Id
 Boolean managed = true; // Boolean | Filter by managed
+List<String> expand = Arrays.asList(null); // List<String> | Fields to expand in the response, comma-separated
 try {
-    SiteEntityListing result = apiInstance.getTelephonyProvidersEdgesSites(pageSize, pageNumber, sortBy, sortOrder, name, locationId, managed);
+    SiteEntityListing result = apiInstance.getTelephonyProvidersEdgesSites(pageSize, pageNumber, sortBy, sortOrder, name, locationId, managed, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesSites");
@@ -4780,6 +4715,7 @@ try {
 | **name** | **String**| Name | [optional] 
 | **locationId** | **String**| Location Id | [optional] 
 | **managed** | **Boolean**| Filter by managed | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response, comma-separated | [optional]<br />**Values**: edges, location, primarySites, secondarySites 
 {: class="table-striped"}
 
 

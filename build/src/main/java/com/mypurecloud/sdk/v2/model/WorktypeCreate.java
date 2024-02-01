@@ -222,14 +222,14 @@ public class WorktypeCreate  implements Serializable {
 
 
   /**
-   * The ID of the division the Worktype belongs to. Defaults to home division ID. The Worktype must be in the same division as its default Workbin.
+   * The ID of the division the Worktype belongs to. Defaults to the default Workbin division ID. The Worktype must be in the same division as its default Workbin.
    **/
   public WorktypeCreate divisionId(String divisionId) {
     this.divisionId = divisionId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The ID of the division the Worktype belongs to. Defaults to home division ID. The Worktype must be in the same division as its default Workbin.")
+  @ApiModelProperty(example = "null", value = "The ID of the division the Worktype belongs to. Defaults to the default Workbin division ID. The Worktype must be in the same division as its default Workbin.")
   @JsonProperty("divisionId")
   public String getDivisionId() {
     return divisionId;

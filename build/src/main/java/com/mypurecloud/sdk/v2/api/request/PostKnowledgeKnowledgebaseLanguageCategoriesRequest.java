@@ -82,6 +82,8 @@ import com.mypurecloud.sdk.v2.model.LabelListing;
 import com.mypurecloud.sdk.v2.model.LabelResponse;
 import com.mypurecloud.sdk.v2.model.LabelUpdateRequest;
 import java.time.LocalDate;
+import com.mypurecloud.sdk.v2.model.OperationCreatorUserResponse;
+import com.mypurecloud.sdk.v2.model.OperationListing;
 import com.mypurecloud.sdk.v2.model.SearchUpdateRequest;
 import com.mypurecloud.sdk.v2.model.TrainingListing;
 import com.mypurecloud.sdk.v2.model.UnansweredGroup;

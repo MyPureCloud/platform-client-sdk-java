@@ -87,8 +87,6 @@ title: ConversationDetailQueryPredicate
 | TALERT | &quot;tAlert&quot; | 
 | TANSWERED | &quot;tAnswered&quot; | 
 | TBARGING | &quot;tBarging&quot; | 
-| TCALLBACK | &quot;tCallback&quot; | 
-| TCALLBACKCOMPLETE | &quot;tCallbackComplete&quot; | 
 | TCOACHING | &quot;tCoaching&quot; | 
 | TCOACHINGCOMPLETE | &quot;tCoachingComplete&quot; | 
 | TCONNECTED | &quot;tConnected&quot; | 

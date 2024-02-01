@@ -86,7 +86,7 @@ public class SupportCenterScreen  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The type of the screen")
+  @ApiModelProperty(example = "null", required = true, value = "The type of the screen")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;
@@ -97,14 +97,14 @@ public class SupportCenterScreen  implements Serializable {
 
 
   /**
-   * Module settings for the screen
+   * Module settings for the screen, valid modules for each screenType: Home: Search, Categories, TopViewedArticles; Category: Search, Categories; SearchResults: Search, Results; Article: Search, Article;
    **/
   public SupportCenterScreen moduleSettings(List<SupportCenterModuleSetting> moduleSettings) {
     this.moduleSettings = moduleSettings;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Module settings for the screen")
+  @ApiModelProperty(example = "null", required = true, value = "Module settings for the screen, valid modules for each screenType: Home: Search, Categories, TopViewedArticles; Category: Search, Categories; SearchResults: Search, Results; Article: Search, Article;")
   @JsonProperty("moduleSettings")
   public List<SupportCenterModuleSetting> getModuleSettings() {
     return moduleSettings;

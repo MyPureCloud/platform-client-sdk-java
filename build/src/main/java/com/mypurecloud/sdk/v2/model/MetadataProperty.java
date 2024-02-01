@@ -25,6 +25,7 @@ import java.io.Serializable;
 public class MetadataProperty  implements Serializable {
   
   private String type = null;
+  private String displayname = null;
   private String description = null;
   private String sensitive = null;
   private String help = null;
@@ -36,6 +37,13 @@ public class MetadataProperty  implements Serializable {
   @JsonProperty("type")
   public String getType() {
     return type;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "user-friendly name of the input property")
+  @JsonProperty("displayname")
+  public String getDisplayname() {
+    return displayname;
   }
 
 
@@ -85,6 +93,7 @@ public class MetadataProperty  implements Serializable {
     MetadataProperty metadataProperty = (MetadataProperty) o;
 
     return Objects.equals(this.type, metadataProperty.type) &&
+            Objects.equals(this.displayname, metadataProperty.displayname) &&
             Objects.equals(this.description, metadataProperty.description) &&
             Objects.equals(this.sensitive, metadataProperty.sensitive) &&
             Objects.equals(this.help, metadataProperty.help) &&
@@ -94,7 +103,7 @@ public class MetadataProperty  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, description, sensitive, help, _default, _enum);
+    return Objects.hash(type, displayname, description, sensitive, help, _default, _enum);
   }
 
   @Override
@@ -103,6 +112,7 @@ public class MetadataProperty  implements Serializable {
     sb.append("class MetadataProperty {\n");
     
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    displayname: ").append(toIndentedString(displayname)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    sensitive: ").append(toIndentedString(sensitive)).append("\n");
     sb.append("    help: ").append(toIndentedString(help)).append("\n");

@@ -11,6 +11,7 @@ title: WorkitemDelta
 | **name** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
 | **description** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
 | **languageId** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
+| **utilizationLabelId** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
 | **priority** | <!----><!---->[**WorkitemsAttributeChangeInteger**](WorkitemsAttributeChangeInteger.html)<!----> |  |  [optional] |
 | **skillIds** | <!----><!---->[**WorkitemsAttributeChangeList**](WorkitemsAttributeChangeList.html)<!----> |  |  [optional] |
 | **preferredAgentIds** | <!----><!---->[**WorkitemsAttributeChangeList**](WorkitemsAttributeChangeList.html)<!----> |  |  [optional] |

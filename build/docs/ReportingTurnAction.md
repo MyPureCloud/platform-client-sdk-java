@@ -30,6 +30,7 @@ title: ReportingTurnAction
 | BOTSTATE | &quot;BotState&quot; | 
 | CALLTASKACTION | &quot;CallTaskAction&quot; | 
 | CLEARSLOTACTION | &quot;ClearSlotAction&quot; | 
+| CLEARUTILIZATIONLABELACTION | &quot;ClearUtilizationLabelAction&quot; | 
 | DISCONNECTACTION | &quot;DisconnectAction&quot; | 
 | ENDTASKACTION | &quot;EndTaskAction&quot; | 
 | EXITBOTFLOWACTION | &quot;ExitBotFlowAction&quot; | 
@@ -37,6 +38,7 @@ title: ReportingTurnAction
 | COMMUNICATEACTION | &quot;CommunicateAction&quot; | 
 | DECISIONACTION | &quot;DecisionAction&quot; | 
 | FINDGRAMMARACTION | &quot;FindGrammarAction&quot; | 
+| FINDGRAMMARBYIDACTION | &quot;FindGrammarByIdAction&quot; | 
 | FINDGROUPACTION | &quot;FindGroupAction&quot; | 
 | FINDLANGUAGESKILLACTION | &quot;FindLanguageSkillAction&quot; | 
 | FINDQUEUEACTION | &quot;FindQueueAction&quot; | 
@@ -47,6 +49,7 @@ title: ReportingTurnAction
 | FINDUSERBYIDACTION | &quot;FindUserByIdAction&quot; | 
 | FINDUSERSBYIDACTION | &quot;FindUsersByIdAction&quot; | 
 | FINDUSERPROMPTACTION | &quot;FindUserPromptAction&quot; | 
+| FINDUTILIZATIONLABELACTION | &quot;FindUtilizationLabelAction&quot; | 
 | SWITCHACTION | &quot;SwitchAction&quot; | 
 | DATAACTION | &quot;DataAction&quot; | 
 | DATATABLELOOKUPACTION | &quot;DataTableLookupAction&quot; | 
@@ -69,6 +72,7 @@ title: ReportingTurnAction
 | WAITFORINPUTACTION | &quot;WaitForInputAction&quot; | 
 | SHOWKNOWLEDGEARTICLEACTION | &quot;ShowKnowledgeArticleAction&quot; | 
 | SETLOCALEACTION | &quot;SetLocaleAction&quot; | 
+| SETUTILIZATIONLABELACTION | &quot;SetUtilizationLabelAction&quot; | 
 | TRANSFERPUREMATCHACTION | &quot;TransferPureMatchAction&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}

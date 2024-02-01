@@ -57,7 +57,6 @@ import com.mypurecloud.sdk.v2.model.LogicalInterfaceEntityListing;
 import com.mypurecloud.sdk.v2.model.MediaStatistics;
 import com.mypurecloud.sdk.v2.model.MediaStatisticsListing;
 import com.mypurecloud.sdk.v2.model.NumberPlan;
-import com.mypurecloud.sdk.v2.model.OutboundRoute;
 import com.mypurecloud.sdk.v2.model.OutboundRouteBase;
 import com.mypurecloud.sdk.v2.model.OutboundRouteBaseEntityListing;
 import com.mypurecloud.sdk.v2.model.OutboundRouteEntityListing;
@@ -139,7 +138,6 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesLogicalinter
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesMediastatisticsConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesMediastatisticsConversationCommunicationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesMetricsRequest;
-import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesOutboundrouteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesOutboundroutesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesPhoneRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesPhonebasesettingRequest;
@@ -3530,7 +3528,6 @@ public class TelephonyProvidersEdgeApiAsync {
   /**
    * Get a pageable list of basic extension pool objects filterable by query parameters.
    * This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
-   * getTelephonyProvidersEdgesExtensionpoolsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3565,7 +3562,6 @@ public class TelephonyProvidersEdgeApiAsync {
   /**
    * Get a pageable list of basic extension pool objects filterable by query parameters.
    * This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
-   * getTelephonyProvidersEdgesExtensionpoolsDivisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4347,83 +4343,6 @@ public class TelephonyProvidersEdgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<List<EdgeMetrics>> response = (ApiResponse<List<EdgeMetrics>>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get outbound route
-   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<OutboundRoute> getTelephonyProvidersEdgesOutboundrouteAsync(GetTelephonyProvidersEdgesOutboundrouteRequest request, final AsyncApiCallback<OutboundRoute> callback) {
-    try {
-      final SettableFuture<OutboundRoute> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OutboundRoute>() {}, new AsyncApiCallback<ApiResponse<OutboundRoute>>() {
-        @Override
-        public void onCompleted(ApiResponse<OutboundRoute> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get outbound route
-   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ApiResponse<OutboundRoute>> getTelephonyProvidersEdgesOutboundrouteAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OutboundRoute>> callback) {
-    try {
-      final SettableFuture<ApiResponse<OutboundRoute>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<OutboundRoute>() {}, new AsyncApiCallback<ApiResponse<OutboundRoute>>() {
-        @Override
-        public void onCompleted(ApiResponse<OutboundRoute> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<OutboundRoute> response = (ApiResponse<OutboundRoute>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<OutboundRoute> response = (ApiResponse<OutboundRoute>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

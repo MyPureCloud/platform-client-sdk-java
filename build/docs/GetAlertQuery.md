@@ -10,7 +10,7 @@ title: GetAlertQuery
 | ------------ | ------------- | ------------- | ------------- |
 | **ruleType** | [**RuleTypeEnum**](#RuleTypeEnum)<!----> | The rule type of the alerts the query will return |  |
 | **queryType** | [**QueryTypeEnum**](#QueryTypeEnum)<!----> | The type of query being performed. |  |
-| **activeStatus** | [**ActiveStatusEnum**](#ActiveStatusEnum)<!----> | The status of the alerts the query will return. |  [optional] |
+| **alertStatus** | [**AlertStatusEnum**](#AlertStatusEnum)<!----> | The status of the alerts the query will return. |  [optional] |
 | **viewedStatus** | [**ViewedStatusEnum**](#ViewedStatusEnum)<!----> | The view status of the alerts the query will return. |  [optional] |
 | **pageNumber** | <!----><!---->**Integer**<!----> | The page number of the queried response |  [optional] |
 | **pageSize** | <!----><!---->**Integer**<!----> | The number of entities to return of the queried response.  The max is 25 |  [optional] |
@@ -44,9 +44,9 @@ title: GetAlertQuery
 {: class="table table-striped"}
 
 
-<a name="ActiveStatusEnum"></a>
+<a name="AlertStatusEnum"></a>
 
-## Enum: ActiveStatusEnum
+## Enum: AlertStatusEnum
 
 | Name | Value |
 | ---- | ----- |

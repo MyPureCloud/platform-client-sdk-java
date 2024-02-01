@@ -16,14 +16,18 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getIntegrations**](IntegrationsApi.html#getIntegrations) | List integrations |
 | [**getIntegrationsAction**](IntegrationsApi.html#getIntegrationsAction) | Retrieves a single Action matching id. |
 | [**getIntegrationsActionDraft**](IntegrationsApi.html#getIntegrationsActionDraft) | Retrieve a Draft |
+| [**getIntegrationsActionDraftFunction**](IntegrationsApi.html#getIntegrationsActionDraftFunction) | Get draft function settings for Action |
 | [**getIntegrationsActionDraftSchema**](IntegrationsApi.html#getIntegrationsActionDraftSchema) | Retrieve schema for a Draft based on filename. |
 | [**getIntegrationsActionDraftTemplate**](IntegrationsApi.html#getIntegrationsActionDraftTemplate) | Retrieve templates for a Draft based on filename. |
 | [**getIntegrationsActionDraftValidation**](IntegrationsApi.html#getIntegrationsActionDraftValidation) | Validate current Draft configuration. |
+| [**getIntegrationsActionFunction**](IntegrationsApi.html#getIntegrationsActionFunction) | Get published function settings for Action |
 | [**getIntegrationsActionSchema**](IntegrationsApi.html#getIntegrationsActionSchema) | Retrieve schema for an action based on filename. |
 | [**getIntegrationsActionTemplate**](IntegrationsApi.html#getIntegrationsActionTemplate) | Retrieve text of templates for an action based on filename. |
 | [**getIntegrationsActions**](IntegrationsApi.html#getIntegrationsActions) | Retrieves all actions associated with filters passed in via query param. |
 | [**getIntegrationsActionsCategories**](IntegrationsApi.html#getIntegrationsActionsCategories) | Retrieves all categories of available Actions |
+| [**getIntegrationsActionsCertificates**](IntegrationsApi.html#getIntegrationsActionsCertificates) | Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress. |
 | [**getIntegrationsActionsDrafts**](IntegrationsApi.html#getIntegrationsActionsDrafts) | Retrieves all action drafts associated with the filters passed in via query param. |
+| [**getIntegrationsActionsFunctionsRuntimes**](IntegrationsApi.html#getIntegrationsActionsFunctionsRuntimes) | Get action function settings for Action |
 | [**getIntegrationsBotconnectorIntegrationIdBot**](IntegrationsApi.html#getIntegrationsBotconnectorIntegrationIdBot) | Get a specific botConnector bot, plus versions, for this integration |
 | [**getIntegrationsBotconnectorIntegrationIdBotVersions**](IntegrationsApi.html#getIntegrationsBotconnectorIntegrationIdBotVersions) | Get a list of bot versions for a bot |
 | [**getIntegrationsBotconnectorIntegrationIdBots**](IntegrationsApi.html#getIntegrationsBotconnectorIntegrationIdBots) | Get a list of botConnector bots for this integration |
@@ -58,6 +62,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchIntegrationsActionDraft**](IntegrationsApi.html#patchIntegrationsActionDraft) | Update an existing Draft |
 | [**postIntegrations**](IntegrationsApi.html#postIntegrations) | Create an integration. |
 | [**postIntegrationsActionDraft**](IntegrationsApi.html#postIntegrationsActionDraft) | Create a new Draft from existing Action |
+| [**postIntegrationsActionDraftFunctionUpload**](IntegrationsApi.html#postIntegrationsActionDraftFunctionUpload) | Create upload presigned URL for draft function package file. |
 | [**postIntegrationsActionDraftPublish**](IntegrationsApi.html#postIntegrationsActionDraftPublish) | Publish a Draft and make it the active Action configuration |
 | [**postIntegrationsActionDraftTest**](IntegrationsApi.html#postIntegrationsActionDraftTest) | Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging. |
 | [**postIntegrationsActionExecute**](IntegrationsApi.html#postIntegrationsActionExecute) | Execute Action and return response from 3rd party.  Responses will follow the schemas defined on the Action for success and error. |
@@ -69,6 +74,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs**](IntegrationsApi.html#postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs) | Get a list of Nuance bots in the specified Integration asynchronously |
 | [**postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate**](IntegrationsApi.html#postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate) | Try out a single credential for a Nuance bot to know if the secret is correct |
 | [**putIntegrationConfigCurrent**](IntegrationsApi.html#putIntegrationConfigCurrent) | Update integration configuration. |
+| [**putIntegrationsActionDraftFunction**](IntegrationsApi.html#putIntegrationsActionDraftFunction) | Update draft function settings. |
 | [**putIntegrationsBotconnectorIntegrationIdBots**](IntegrationsApi.html#putIntegrationsBotconnectorIntegrationIdBots) | Set a list of botConnector bots plus versions for this integration |
 | [**putIntegrationsCredential**](IntegrationsApi.html#putIntegrationsCredential) | Update a set of credentials |
 | [**putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings**](IntegrationsApi.html#putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings) | Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration |
@@ -653,6 +659,69 @@ try {
 
 [**Action**](Action.html)
 
+<a name="getIntegrationsActionDraftFunction"></a>
+
+# **getIntegrationsActionDraftFunction**
+
+
+
+> [FunctionConfig](FunctionConfig.html) getIntegrationsActionDraftFunction(actionId)
+
+Get draft function settings for Action
+
+getIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/integrations/actions/{actionId}/draft/function  
+
+Requires ANY permissions: 
+
+* integrations:actionFunction:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String actionId = "actionId_example"; // String | actionId
+try {
+    FunctionConfig result = apiInstance.getIntegrationsActionDraftFunction(actionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsActionDraftFunction");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **actionId** | **String**| actionId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**FunctionConfig**](FunctionConfig.html)
+
 <a name="getIntegrationsActionDraftSchema"></a>
 
 # **getIntegrationsActionDraftSchema**
@@ -841,6 +910,69 @@ try {
 ### Return type
 
 [**DraftValidationResult**](DraftValidationResult.html)
+
+<a name="getIntegrationsActionFunction"></a>
+
+# **getIntegrationsActionFunction**
+
+
+
+> [FunctionConfig](FunctionConfig.html) getIntegrationsActionFunction(actionId)
+
+Get published function settings for Action
+
+getIntegrationsActionFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/integrations/actions/{actionId}/function  
+
+Requires ANY permissions: 
+
+* integrations:actionFunction:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String actionId = "actionId_example"; // String | actionId
+try {
+    FunctionConfig result = apiInstance.getIntegrationsActionFunction(actionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsActionFunction");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **actionId** | **String**| actionId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**FunctionConfig**](FunctionConfig.html)
 
 <a name="getIntegrationsActionSchema"></a>
 
@@ -1126,6 +1258,69 @@ try {
 
 [**CategoryEntityListing**](CategoryEntityListing.html)
 
+<a name="getIntegrationsActionsCertificates"></a>
+
+# **getIntegrationsActionsCertificates**
+
+
+
+> [ActionCertificateListing](ActionCertificateListing.html) getIntegrationsActionsCertificates(status, type)
+
+Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress.
+
+Wraps GET /api/v2/integrations/actions/certificates  
+
+Requires ANY permissions: 
+
+* integrations:actionCertificate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String status = "status_example"; // String | Indicates the validity of the certificate in question.
+String type = "type_example"; // String | Indicates the type of the certificate.
+try {
+    ActionCertificateListing result = apiInstance.getIntegrationsActionsCertificates(status, type);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsActionsCertificates");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **status** | **String**| Indicates the validity of the certificate in question. | [optional]<br />**Values**: Current, Upcoming 
+| **type** | **String**| Indicates the type of the certificate. | [optional]<br />**Values**: Client 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActionCertificateListing**](ActionCertificateListing.html)
+
 <a name="getIntegrationsActionsDrafts"></a>
 
 # **getIntegrationsActionsDrafts**
@@ -1207,6 +1402,65 @@ try {
 ### Return type
 
 [**ActionEntityListing**](ActionEntityListing.html)
+
+<a name="getIntegrationsActionsFunctionsRuntimes"></a>
+
+# **getIntegrationsActionsFunctionsRuntimes**
+
+
+
+> [List&lt;FunctionRuntime&gt;](FunctionRuntime.html) getIntegrationsActionsFunctionsRuntimes()
+
+Get action function settings for Action
+
+getIntegrationsActionsFunctionsRuntimes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/integrations/actions/functions/runtimes  
+
+Requires ANY permissions: 
+
+* integrations:actionFunction:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+try {
+    List<FunctionRuntime> result = apiInstance.getIntegrationsActionsFunctionsRuntimes();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsActionsFunctionsRuntimes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**List&lt;FunctionRuntime&gt;**](FunctionRuntime.html)
 
 <a name="getIntegrationsBotconnectorIntegrationIdBot"></a>
 
@@ -3419,6 +3673,71 @@ try {
 
 [**Action**](Action.html)
 
+<a name="postIntegrationsActionDraftFunctionUpload"></a>
+
+# **postIntegrationsActionDraftFunctionUpload**
+
+
+
+> [FunctionUploadResponse](FunctionUploadResponse.html) postIntegrationsActionDraftFunctionUpload(actionId, body)
+
+Create upload presigned URL for draft function package file.
+
+postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/integrations/actions/{actionId}/draft/function/upload  
+
+Requires ANY permissions: 
+
+* integrations:actionFunction:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String actionId = "actionId_example"; // String | actionId
+FunctionUploadRequest body = new FunctionUploadRequest(); // FunctionUploadRequest | Input used to request URL upload.
+try {
+    FunctionUploadResponse result = apiInstance.postIntegrationsActionDraftFunctionUpload(actionId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#postIntegrationsActionDraftFunctionUpload");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **actionId** | **String**| actionId | 
+| **body** | [**FunctionUploadRequest**](FunctionUploadRequest.html)| Input used to request URL upload. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**FunctionUploadResponse**](FunctionUploadResponse.html)
+
 <a name="postIntegrationsActionDraftPublish"></a>
 
 # **postIntegrationsActionDraftPublish**
@@ -4119,6 +4438,71 @@ try {
 ### Return type
 
 [**IntegrationConfiguration**](IntegrationConfiguration.html)
+
+<a name="putIntegrationsActionDraftFunction"></a>
+
+# **putIntegrationsActionDraftFunction**
+
+
+
+> [FunctionConfig](FunctionConfig.html) putIntegrationsActionDraftFunction(actionId, body)
+
+Update draft function settings.
+
+putIntegrationsActionDraftFunction is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/integrations/actions/{actionId}/draft/function  
+
+Requires ANY permissions: 
+
+* integrations:actionFunction:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String actionId = "actionId_example"; // String | actionId
+Function body = new Function(); // Function | Input used to update function settings.
+try {
+    FunctionConfig result = apiInstance.putIntegrationsActionDraftFunction(actionId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#putIntegrationsActionDraftFunction");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **actionId** | **String**| actionId | 
+| **body** | [**Function**](Function.html)| Input used to update function settings. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**FunctionConfig**](FunctionConfig.html)
 
 <a name="putIntegrationsBotconnectorIntegrationIdBots"></a>
 

@@ -27,6 +27,7 @@ public class AssessmentQuestionScore  implements Serializable {
   private String answerId = null;
   private Integer score = null;
   private Boolean markedNA = null;
+  private Boolean systemMarkedNA = null;
   private String freeTextAnswer = null;
 
   
@@ -117,6 +118,24 @@ public class AssessmentQuestionScore  implements Serializable {
 
 
   /**
+   * If markedNA is true, systemMarkedNA indicates whether it was marked by a user or by the system due to visibility conditions. Always false if markedNA is false.
+   **/
+  public AssessmentQuestionScore systemMarkedNA(Boolean systemMarkedNA) {
+    this.systemMarkedNA = systemMarkedNA;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If markedNA is true, systemMarkedNA indicates whether it was marked by a user or by the system due to visibility conditions. Always false if markedNA is false.")
+  @JsonProperty("systemMarkedNA")
+  public Boolean getSystemMarkedNA() {
+    return systemMarkedNA;
+  }
+  public void setSystemMarkedNA(Boolean systemMarkedNA) {
+    this.systemMarkedNA = systemMarkedNA;
+  }
+
+
+  /**
    * Answer for free text answer type
    **/
   public AssessmentQuestionScore freeTextAnswer(String freeTextAnswer) {
@@ -150,12 +169,13 @@ public class AssessmentQuestionScore  implements Serializable {
             Objects.equals(this.answerId, assessmentQuestionScore.answerId) &&
             Objects.equals(this.score, assessmentQuestionScore.score) &&
             Objects.equals(this.markedNA, assessmentQuestionScore.markedNA) &&
+            Objects.equals(this.systemMarkedNA, assessmentQuestionScore.systemMarkedNA) &&
             Objects.equals(this.freeTextAnswer, assessmentQuestionScore.freeTextAnswer);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(failedKillQuestion, comments, questionId, answerId, score, markedNA, freeTextAnswer);
+    return Objects.hash(failedKillQuestion, comments, questionId, answerId, score, markedNA, systemMarkedNA, freeTextAnswer);
   }
 
   @Override
@@ -169,6 +189,7 @@ public class AssessmentQuestionScore  implements Serializable {
     sb.append("    answerId: ").append(toIndentedString(answerId)).append("\n");
     sb.append("    score: ").append(toIndentedString(score)).append("\n");
     sb.append("    markedNA: ").append(toIndentedString(markedNA)).append("\n");
+    sb.append("    systemMarkedNA: ").append(toIndentedString(systemMarkedNA)).append("\n");
     sb.append("    freeTextAnswer: ").append(toIndentedString(freeTextAnswer)).append("\n");
     sb.append("}");
     return sb.toString();

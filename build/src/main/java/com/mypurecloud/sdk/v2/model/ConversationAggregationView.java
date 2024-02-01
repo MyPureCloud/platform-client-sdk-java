@@ -70,8 +70,6 @@ public class ConversationAggregationView  implements Serializable {
     TALERT("tAlert"),
     TANSWERED("tAnswered"),
     TBARGING("tBarging"),
-    TCALLBACK("tCallback"),
-    TCALLBACKCOMPLETE("tCallbackComplete"),
     TCOACHING("tCoaching"),
     TCOACHINGCOMPLETE("tCoachingComplete"),
     TCONNECTED("tConnected"),

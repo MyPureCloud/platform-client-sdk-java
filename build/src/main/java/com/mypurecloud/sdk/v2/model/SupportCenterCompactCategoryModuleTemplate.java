@@ -32,7 +32,7 @@ public class SupportCenterCompactCategoryModuleTemplate  implements Serializable
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether this template is active or not")
+  @ApiModelProperty(example = "null", required = true, value = "Whether this template is active or not")
   @JsonProperty("active")
   public Boolean getActive() {
     return active;

@@ -32,7 +32,7 @@ public class SupportCenterImageSource  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Default URL for image")
+  @ApiModelProperty(example = "null", required = true, value = "Default URL for image")
   @JsonProperty("defaultUrl")
   public String getDefaultUrl() {
     return defaultUrl;

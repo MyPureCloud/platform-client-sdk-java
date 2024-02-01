@@ -96,7 +96,7 @@ public class SupportCenterSettings  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether or not knowledge portal (previously support center) is enabled")
+  @ApiModelProperty(example = "null", required = true, value = "Whether or not knowledge portal (previously support center) is enabled")
   @JsonProperty("enabled")
   public Boolean getEnabled() {
     return enabled;
@@ -114,7 +114,7 @@ public class SupportCenterSettings  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The knowledge base for knowledge portal (previously support center)")
+  @ApiModelProperty(example = "null", required = true, value = "The knowledge base for knowledge portal (previously support center)")
   @JsonProperty("knowledgeBase")
   public AddressableEntityRef getKnowledgeBase() {
     return knowledgeBase;
@@ -168,7 +168,7 @@ public class SupportCenterSettings  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Available screens for the knowledge portal (previously support center) with its modules")
+  @ApiModelProperty(example = "null", required = true, value = "Available screens for the knowledge portal (previously support center) with its modules")
   @JsonProperty("screens")
   public List<SupportCenterScreen> getScreens() {
     return screens;
@@ -186,7 +186,7 @@ public class SupportCenterSettings  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Featured categories for knowledge portal (previously support center) home screen")
+  @ApiModelProperty(example = "null", required = true, value = "Featured categories for knowledge portal (previously support center) home screen")
   @JsonProperty("enabledCategories")
   public List<SupportCenterCategory> getEnabledCategories() {
     return enabledCategories;
@@ -204,7 +204,7 @@ public class SupportCenterSettings  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Style attributes for knowledge portal (previously support center)")
+  @ApiModelProperty(example = "null", required = true, value = "Style attributes for knowledge portal (previously support center)")
   @JsonProperty("styleSetting")
   public SupportCenterStyleSetting getStyleSetting() {
     return styleSetting;

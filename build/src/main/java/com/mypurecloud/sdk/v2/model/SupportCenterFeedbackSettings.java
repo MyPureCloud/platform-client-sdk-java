@@ -32,7 +32,7 @@ public class SupportCenterFeedbackSettings  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether or not requesting customer feedback on article content and article search results is enabled")
+  @ApiModelProperty(example = "null", required = true, value = "Whether or not requesting customer feedback on article content and article search results is enabled")
   @JsonProperty("enabled")
   public Boolean getEnabled() {
     return enabled;

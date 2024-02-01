@@ -11,13 +11,14 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ADFS;
+import com.mypurecloud.sdk.v2.model.CustomProvider;
 import com.mypurecloud.sdk.v2.model.CustomerInteractionCenter;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.GSuite;
 import com.mypurecloud.sdk.v2.model.GenericSAML;
 import com.mypurecloud.sdk.v2.model.IdentityNow;
-import com.mypurecloud.sdk.v2.model.OAuthProvider;
-import com.mypurecloud.sdk.v2.model.OAuthProviderEntityListing;
+import com.mypurecloud.sdk.v2.model.IdentityProvider;
+import com.mypurecloud.sdk.v2.model.IdentityProviderEntityListing;
 import com.mypurecloud.sdk.v2.model.Okta;
 import com.mypurecloud.sdk.v2.model.OneLogin;
 import com.mypurecloud.sdk.v2.model.PingIdentity;
@@ -26,6 +27,7 @@ import com.mypurecloud.sdk.v2.model.PureEngage;
 import com.mypurecloud.sdk.v2.model.Salesforce;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteIdentityproviderRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersAdfsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersCicRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersGenericRequest;
@@ -37,6 +39,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersPingRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersPurecloudRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersPureengageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersSalesforceRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIdentityproviderRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersAdfsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersCicRequest;
@@ -49,6 +52,8 @@ import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersPingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersPurecloudRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersPureengageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersSalesforceRequest;
+import com.mypurecloud.sdk.v2.api.request.PostIdentityprovidersRequest;
+import com.mypurecloud.sdk.v2.api.request.PutIdentityproviderRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersAdfsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersCicRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersGenericRequest;
@@ -76,6 +81,81 @@ public class IdentityProviderApi {
 
   public IdentityProviderApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Delete Identity Provider
+   * 
+   * @param providerId Provider ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteIdentityprovider(String providerId) throws IOException, ApiException {
+     deleteIdentityprovider(createDeleteIdentityproviderRequest(providerId));
+  }
+
+  /**
+   * Delete Identity Provider
+   * 
+   * @param providerId Provider ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteIdentityproviderWithHttpInfo(String providerId) throws IOException {
+    return deleteIdentityprovider(createDeleteIdentityproviderRequest(providerId).withHttpInfo());
+  }
+
+  private DeleteIdentityproviderRequest createDeleteIdentityproviderRequest(String providerId) {
+    return DeleteIdentityproviderRequest.builder()
+            .withProviderId(providerId)
+
+            .build();
+  }
+
+  /**
+   * Delete Identity Provider
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteIdentityprovider(DeleteIdentityproviderRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete Identity Provider
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteIdentityprovider(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -893,23 +973,101 @@ public class IdentityProviderApi {
   }
 
   /**
-   * The list of identity providers
+   * Get Identity Provider
    * 
-   * @return OAuthProviderEntityListing
+   * @param providerId Provider ID (required)
+   * @return CustomProvider
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OAuthProviderEntityListing getIdentityproviders() throws IOException, ApiException {
+  public CustomProvider getIdentityprovider(String providerId) throws IOException, ApiException {
+    return  getIdentityprovider(createGetIdentityproviderRequest(providerId));
+  }
+
+  /**
+   * Get Identity Provider
+   * 
+   * @param providerId Provider ID (required)
+   * @return CustomProvider
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CustomProvider> getIdentityproviderWithHttpInfo(String providerId) throws IOException {
+    return getIdentityprovider(createGetIdentityproviderRequest(providerId).withHttpInfo());
+  }
+
+  private GetIdentityproviderRequest createGetIdentityproviderRequest(String providerId) {
+    return GetIdentityproviderRequest.builder()
+            .withProviderId(providerId)
+
+            .build();
+  }
+
+  /**
+   * Get Identity Provider
+   * 
+   * @param request The request object
+   * @return CustomProvider
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CustomProvider getIdentityprovider(GetIdentityproviderRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CustomProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CustomProvider>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Identity Provider
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CustomProvider> getIdentityprovider(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CustomProvider>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CustomProvider> response = (ApiResponse<CustomProvider>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CustomProvider> response = (ApiResponse<CustomProvider>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * The list of identity providers
+   * 
+   * @return IdentityProviderEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityProviderEntityListing getIdentityproviders() throws IOException, ApiException {
     return  getIdentityproviders(createGetIdentityprovidersRequest());
   }
 
   /**
    * The list of identity providers
    * 
-   * @return OAuthProviderEntityListing
+   * @return IdentityProviderEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProviderEntityListing> getIdentityprovidersWithHttpInfo() throws IOException {
+  public ApiResponse<IdentityProviderEntityListing> getIdentityprovidersWithHttpInfo() throws IOException {
     return getIdentityproviders(createGetIdentityprovidersRequest().withHttpInfo());
   }
 
@@ -922,13 +1080,13 @@ public class IdentityProviderApi {
    * The list of identity providers
    * 
    * @param request The request object
-   * @return OAuthProviderEntityListing
+   * @return IdentityProviderEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OAuthProviderEntityListing getIdentityproviders(GetIdentityprovidersRequest request) throws IOException, ApiException {
+  public IdentityProviderEntityListing getIdentityproviders(GetIdentityprovidersRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<OAuthProviderEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthProviderEntityListing>() {});
+      ApiResponse<IdentityProviderEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityProviderEntityListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -944,13 +1102,13 @@ public class IdentityProviderApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProviderEntityListing> getIdentityproviders(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<IdentityProviderEntityListing> getIdentityproviders(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<OAuthProviderEntityListing>() {});
+      return pcapiClient.invoke(request, new TypeReference<IdentityProviderEntityListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<OAuthProviderEntityListing> response = (ApiResponse<OAuthProviderEntityListing>)(ApiResponse<?>)exception;
+      ApiResponse<IdentityProviderEntityListing> response = (ApiResponse<IdentityProviderEntityListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -961,7 +1119,7 @@ public class IdentityProviderApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<OAuthProviderEntityListing> response = (ApiResponse<OAuthProviderEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<IdentityProviderEntityListing> response = (ApiResponse<IdentityProviderEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1781,14 +1939,174 @@ public class IdentityProviderApi {
   }
 
   /**
-   * Update/Create ADFS Identity Provider
+   * Create Identity Provider
    * 
    * @param body Provider (required)
-   * @return OAuthProvider
+   * @return CustomProvider
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OAuthProvider putIdentityprovidersAdfs(ADFS body) throws IOException, ApiException {
+  public CustomProvider postIdentityproviders(CustomProvider body) throws IOException, ApiException {
+    return  postIdentityproviders(createPostIdentityprovidersRequest(body));
+  }
+
+  /**
+   * Create Identity Provider
+   * 
+   * @param body Provider (required)
+   * @return CustomProvider
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CustomProvider> postIdentityprovidersWithHttpInfo(CustomProvider body) throws IOException {
+    return postIdentityproviders(createPostIdentityprovidersRequest(body).withHttpInfo());
+  }
+
+  private PostIdentityprovidersRequest createPostIdentityprovidersRequest(CustomProvider body) {
+    return PostIdentityprovidersRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create Identity Provider
+   * 
+   * @param request The request object
+   * @return CustomProvider
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CustomProvider postIdentityproviders(PostIdentityprovidersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CustomProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CustomProvider>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create Identity Provider
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CustomProvider> postIdentityproviders(ApiRequest<CustomProvider> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CustomProvider>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CustomProvider> response = (ApiResponse<CustomProvider>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CustomProvider> response = (ApiResponse<CustomProvider>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update Identity Provider
+   * 
+   * @param providerId Provider ID (required)
+   * @param body Provider (required)
+   * @return CustomProvider
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CustomProvider putIdentityprovider(String providerId, CustomProvider body) throws IOException, ApiException {
+    return  putIdentityprovider(createPutIdentityproviderRequest(providerId, body));
+  }
+
+  /**
+   * Update Identity Provider
+   * 
+   * @param providerId Provider ID (required)
+   * @param body Provider (required)
+   * @return CustomProvider
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CustomProvider> putIdentityproviderWithHttpInfo(String providerId, CustomProvider body) throws IOException {
+    return putIdentityprovider(createPutIdentityproviderRequest(providerId, body).withHttpInfo());
+  }
+
+  private PutIdentityproviderRequest createPutIdentityproviderRequest(String providerId, CustomProvider body) {
+    return PutIdentityproviderRequest.builder()
+            .withProviderId(providerId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update Identity Provider
+   * 
+   * @param request The request object
+   * @return CustomProvider
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CustomProvider putIdentityprovider(PutIdentityproviderRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CustomProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CustomProvider>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update Identity Provider
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CustomProvider> putIdentityprovider(ApiRequest<CustomProvider> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CustomProvider>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CustomProvider> response = (ApiResponse<CustomProvider>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CustomProvider> response = (ApiResponse<CustomProvider>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update/Create ADFS Identity Provider
+   * 
+   * @param body Provider (required)
+   * @return IdentityProvider
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IdentityProvider putIdentityprovidersAdfs(ADFS body) throws IOException, ApiException {
     return  putIdentityprovidersAdfs(createPutIdentityprovidersAdfsRequest(body));
   }
 
@@ -1796,10 +2114,10 @@ public class IdentityProviderApi {
    * Update/Create ADFS Identity Provider
    * 
    * @param body Provider (required)
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersAdfsWithHttpInfo(ADFS body) throws IOException {
+  public ApiResponse<IdentityProvider> putIdentityprovidersAdfsWithHttpInfo(ADFS body) throws IOException {
     return putIdentityprovidersAdfs(createPutIdentityprovidersAdfsRequest(body).withHttpInfo());
   }
 
@@ -1814,13 +2132,13 @@ public class IdentityProviderApi {
    * Update/Create ADFS Identity Provider
    * 
    * @param request The request object
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OAuthProvider putIdentityprovidersAdfs(PutIdentityprovidersAdfsRequest request) throws IOException, ApiException {
+  public IdentityProvider putIdentityprovidersAdfs(PutIdentityprovidersAdfsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<OAuthProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
+      ApiResponse<IdentityProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityProvider>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -1836,13 +2154,13 @@ public class IdentityProviderApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersAdfs(ApiRequest<ADFS> request) throws IOException {
+  public ApiResponse<IdentityProvider> putIdentityprovidersAdfs(ApiRequest<ADFS> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<OAuthProvider>() {});
+      return pcapiClient.invoke(request, new TypeReference<IdentityProvider>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+      ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1853,7 +2171,7 @@ public class IdentityProviderApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1862,11 +2180,11 @@ public class IdentityProviderApi {
    * Update/Create Customer Interaction Center (CIC) Identity Provider
    * 
    * @param body Provider (required)
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OAuthProvider putIdentityprovidersCic(CustomerInteractionCenter body) throws IOException, ApiException {
+  public IdentityProvider putIdentityprovidersCic(CustomerInteractionCenter body) throws IOException, ApiException {
     return  putIdentityprovidersCic(createPutIdentityprovidersCicRequest(body));
   }
 
@@ -1874,10 +2192,10 @@ public class IdentityProviderApi {
    * Update/Create Customer Interaction Center (CIC) Identity Provider
    * 
    * @param body Provider (required)
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersCicWithHttpInfo(CustomerInteractionCenter body) throws IOException {
+  public ApiResponse<IdentityProvider> putIdentityprovidersCicWithHttpInfo(CustomerInteractionCenter body) throws IOException {
     return putIdentityprovidersCic(createPutIdentityprovidersCicRequest(body).withHttpInfo());
   }
 
@@ -1892,13 +2210,13 @@ public class IdentityProviderApi {
    * Update/Create Customer Interaction Center (CIC) Identity Provider
    * 
    * @param request The request object
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OAuthProvider putIdentityprovidersCic(PutIdentityprovidersCicRequest request) throws IOException, ApiException {
+  public IdentityProvider putIdentityprovidersCic(PutIdentityprovidersCicRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<OAuthProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
+      ApiResponse<IdentityProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityProvider>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -1914,13 +2232,13 @@ public class IdentityProviderApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersCic(ApiRequest<CustomerInteractionCenter> request) throws IOException {
+  public ApiResponse<IdentityProvider> putIdentityprovidersCic(ApiRequest<CustomerInteractionCenter> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<OAuthProvider>() {});
+      return pcapiClient.invoke(request, new TypeReference<IdentityProvider>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+      ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1931,7 +2249,7 @@ public class IdentityProviderApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1940,11 +2258,11 @@ public class IdentityProviderApi {
    * Update/Create Generic SAML Identity Provider
    * 
    * @param body Provider (required)
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OAuthProvider putIdentityprovidersGeneric(GenericSAML body) throws IOException, ApiException {
+  public IdentityProvider putIdentityprovidersGeneric(GenericSAML body) throws IOException, ApiException {
     return  putIdentityprovidersGeneric(createPutIdentityprovidersGenericRequest(body));
   }
 
@@ -1952,10 +2270,10 @@ public class IdentityProviderApi {
    * Update/Create Generic SAML Identity Provider
    * 
    * @param body Provider (required)
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersGenericWithHttpInfo(GenericSAML body) throws IOException {
+  public ApiResponse<IdentityProvider> putIdentityprovidersGenericWithHttpInfo(GenericSAML body) throws IOException {
     return putIdentityprovidersGeneric(createPutIdentityprovidersGenericRequest(body).withHttpInfo());
   }
 
@@ -1970,13 +2288,13 @@ public class IdentityProviderApi {
    * Update/Create Generic SAML Identity Provider
    * 
    * @param request The request object
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OAuthProvider putIdentityprovidersGeneric(PutIdentityprovidersGenericRequest request) throws IOException, ApiException {
+  public IdentityProvider putIdentityprovidersGeneric(PutIdentityprovidersGenericRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<OAuthProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
+      ApiResponse<IdentityProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityProvider>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -1992,13 +2310,13 @@ public class IdentityProviderApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersGeneric(ApiRequest<GenericSAML> request) throws IOException {
+  public ApiResponse<IdentityProvider> putIdentityprovidersGeneric(ApiRequest<GenericSAML> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<OAuthProvider>() {});
+      return pcapiClient.invoke(request, new TypeReference<IdentityProvider>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+      ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -2009,7 +2327,7 @@ public class IdentityProviderApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2018,11 +2336,11 @@ public class IdentityProviderApi {
    * Update/Create G Suite Identity Provider
    * 
    * @param body Provider (required)
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OAuthProvider putIdentityprovidersGsuite(GSuite body) throws IOException, ApiException {
+  public IdentityProvider putIdentityprovidersGsuite(GSuite body) throws IOException, ApiException {
     return  putIdentityprovidersGsuite(createPutIdentityprovidersGsuiteRequest(body));
   }
 
@@ -2030,10 +2348,10 @@ public class IdentityProviderApi {
    * Update/Create G Suite Identity Provider
    * 
    * @param body Provider (required)
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersGsuiteWithHttpInfo(GSuite body) throws IOException {
+  public ApiResponse<IdentityProvider> putIdentityprovidersGsuiteWithHttpInfo(GSuite body) throws IOException {
     return putIdentityprovidersGsuite(createPutIdentityprovidersGsuiteRequest(body).withHttpInfo());
   }
 
@@ -2048,13 +2366,13 @@ public class IdentityProviderApi {
    * Update/Create G Suite Identity Provider
    * 
    * @param request The request object
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OAuthProvider putIdentityprovidersGsuite(PutIdentityprovidersGsuiteRequest request) throws IOException, ApiException {
+  public IdentityProvider putIdentityprovidersGsuite(PutIdentityprovidersGsuiteRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<OAuthProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
+      ApiResponse<IdentityProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityProvider>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -2070,13 +2388,13 @@ public class IdentityProviderApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersGsuite(ApiRequest<GSuite> request) throws IOException {
+  public ApiResponse<IdentityProvider> putIdentityprovidersGsuite(ApiRequest<GSuite> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<OAuthProvider>() {});
+      return pcapiClient.invoke(request, new TypeReference<IdentityProvider>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+      ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -2087,7 +2405,7 @@ public class IdentityProviderApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2174,11 +2492,11 @@ public class IdentityProviderApi {
    * Update/Create Okta Identity Provider
    * 
    * @param body Provider (required)
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OAuthProvider putIdentityprovidersOkta(Okta body) throws IOException, ApiException {
+  public IdentityProvider putIdentityprovidersOkta(Okta body) throws IOException, ApiException {
     return  putIdentityprovidersOkta(createPutIdentityprovidersOktaRequest(body));
   }
 
@@ -2186,10 +2504,10 @@ public class IdentityProviderApi {
    * Update/Create Okta Identity Provider
    * 
    * @param body Provider (required)
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersOktaWithHttpInfo(Okta body) throws IOException {
+  public ApiResponse<IdentityProvider> putIdentityprovidersOktaWithHttpInfo(Okta body) throws IOException {
     return putIdentityprovidersOkta(createPutIdentityprovidersOktaRequest(body).withHttpInfo());
   }
 
@@ -2204,13 +2522,13 @@ public class IdentityProviderApi {
    * Update/Create Okta Identity Provider
    * 
    * @param request The request object
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OAuthProvider putIdentityprovidersOkta(PutIdentityprovidersOktaRequest request) throws IOException, ApiException {
+  public IdentityProvider putIdentityprovidersOkta(PutIdentityprovidersOktaRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<OAuthProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
+      ApiResponse<IdentityProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityProvider>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -2226,13 +2544,13 @@ public class IdentityProviderApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersOkta(ApiRequest<Okta> request) throws IOException {
+  public ApiResponse<IdentityProvider> putIdentityprovidersOkta(ApiRequest<Okta> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<OAuthProvider>() {});
+      return pcapiClient.invoke(request, new TypeReference<IdentityProvider>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+      ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -2243,7 +2561,7 @@ public class IdentityProviderApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2252,11 +2570,11 @@ public class IdentityProviderApi {
    * Update/Create OneLogin Identity Provider
    * 
    * @param body Provider (required)
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OAuthProvider putIdentityprovidersOnelogin(OneLogin body) throws IOException, ApiException {
+  public IdentityProvider putIdentityprovidersOnelogin(OneLogin body) throws IOException, ApiException {
     return  putIdentityprovidersOnelogin(createPutIdentityprovidersOneloginRequest(body));
   }
 
@@ -2264,10 +2582,10 @@ public class IdentityProviderApi {
    * Update/Create OneLogin Identity Provider
    * 
    * @param body Provider (required)
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersOneloginWithHttpInfo(OneLogin body) throws IOException {
+  public ApiResponse<IdentityProvider> putIdentityprovidersOneloginWithHttpInfo(OneLogin body) throws IOException {
     return putIdentityprovidersOnelogin(createPutIdentityprovidersOneloginRequest(body).withHttpInfo());
   }
 
@@ -2282,13 +2600,13 @@ public class IdentityProviderApi {
    * Update/Create OneLogin Identity Provider
    * 
    * @param request The request object
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OAuthProvider putIdentityprovidersOnelogin(PutIdentityprovidersOneloginRequest request) throws IOException, ApiException {
+  public IdentityProvider putIdentityprovidersOnelogin(PutIdentityprovidersOneloginRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<OAuthProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
+      ApiResponse<IdentityProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityProvider>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -2304,13 +2622,13 @@ public class IdentityProviderApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersOnelogin(ApiRequest<OneLogin> request) throws IOException {
+  public ApiResponse<IdentityProvider> putIdentityprovidersOnelogin(ApiRequest<OneLogin> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<OAuthProvider>() {});
+      return pcapiClient.invoke(request, new TypeReference<IdentityProvider>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+      ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -2321,7 +2639,7 @@ public class IdentityProviderApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2330,11 +2648,11 @@ public class IdentityProviderApi {
    * Update/Create Ping Identity Provider
    * 
    * @param body Provider (required)
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OAuthProvider putIdentityprovidersPing(PingIdentity body) throws IOException, ApiException {
+  public IdentityProvider putIdentityprovidersPing(PingIdentity body) throws IOException, ApiException {
     return  putIdentityprovidersPing(createPutIdentityprovidersPingRequest(body));
   }
 
@@ -2342,10 +2660,10 @@ public class IdentityProviderApi {
    * Update/Create Ping Identity Provider
    * 
    * @param body Provider (required)
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersPingWithHttpInfo(PingIdentity body) throws IOException {
+  public ApiResponse<IdentityProvider> putIdentityprovidersPingWithHttpInfo(PingIdentity body) throws IOException {
     return putIdentityprovidersPing(createPutIdentityprovidersPingRequest(body).withHttpInfo());
   }
 
@@ -2360,13 +2678,13 @@ public class IdentityProviderApi {
    * Update/Create Ping Identity Provider
    * 
    * @param request The request object
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OAuthProvider putIdentityprovidersPing(PutIdentityprovidersPingRequest request) throws IOException, ApiException {
+  public IdentityProvider putIdentityprovidersPing(PutIdentityprovidersPingRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<OAuthProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
+      ApiResponse<IdentityProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityProvider>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -2382,13 +2700,13 @@ public class IdentityProviderApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersPing(ApiRequest<PingIdentity> request) throws IOException {
+  public ApiResponse<IdentityProvider> putIdentityprovidersPing(ApiRequest<PingIdentity> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<OAuthProvider>() {});
+      return pcapiClient.invoke(request, new TypeReference<IdentityProvider>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+      ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -2399,7 +2717,7 @@ public class IdentityProviderApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2408,11 +2726,11 @@ public class IdentityProviderApi {
    * Update/Create PureCloud Identity Provider
    * 
    * @param body Provider (required)
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OAuthProvider putIdentityprovidersPurecloud(PureCloud body) throws IOException, ApiException {
+  public IdentityProvider putIdentityprovidersPurecloud(PureCloud body) throws IOException, ApiException {
     return  putIdentityprovidersPurecloud(createPutIdentityprovidersPurecloudRequest(body));
   }
 
@@ -2420,10 +2738,10 @@ public class IdentityProviderApi {
    * Update/Create PureCloud Identity Provider
    * 
    * @param body Provider (required)
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersPurecloudWithHttpInfo(PureCloud body) throws IOException {
+  public ApiResponse<IdentityProvider> putIdentityprovidersPurecloudWithHttpInfo(PureCloud body) throws IOException {
     return putIdentityprovidersPurecloud(createPutIdentityprovidersPurecloudRequest(body).withHttpInfo());
   }
 
@@ -2438,13 +2756,13 @@ public class IdentityProviderApi {
    * Update/Create PureCloud Identity Provider
    * 
    * @param request The request object
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OAuthProvider putIdentityprovidersPurecloud(PutIdentityprovidersPurecloudRequest request) throws IOException, ApiException {
+  public IdentityProvider putIdentityprovidersPurecloud(PutIdentityprovidersPurecloudRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<OAuthProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
+      ApiResponse<IdentityProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityProvider>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -2460,13 +2778,13 @@ public class IdentityProviderApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersPurecloud(ApiRequest<PureCloud> request) throws IOException {
+  public ApiResponse<IdentityProvider> putIdentityprovidersPurecloud(ApiRequest<PureCloud> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<OAuthProvider>() {});
+      return pcapiClient.invoke(request, new TypeReference<IdentityProvider>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+      ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -2477,7 +2795,7 @@ public class IdentityProviderApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2486,11 +2804,11 @@ public class IdentityProviderApi {
    * Update/Create PureEngage Identity Provider
    * 
    * @param body Provider (required)
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OAuthProvider putIdentityprovidersPureengage(PureEngage body) throws IOException, ApiException {
+  public IdentityProvider putIdentityprovidersPureengage(PureEngage body) throws IOException, ApiException {
     return  putIdentityprovidersPureengage(createPutIdentityprovidersPureengageRequest(body));
   }
 
@@ -2498,10 +2816,10 @@ public class IdentityProviderApi {
    * Update/Create PureEngage Identity Provider
    * 
    * @param body Provider (required)
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersPureengageWithHttpInfo(PureEngage body) throws IOException {
+  public ApiResponse<IdentityProvider> putIdentityprovidersPureengageWithHttpInfo(PureEngage body) throws IOException {
     return putIdentityprovidersPureengage(createPutIdentityprovidersPureengageRequest(body).withHttpInfo());
   }
 
@@ -2516,13 +2834,13 @@ public class IdentityProviderApi {
    * Update/Create PureEngage Identity Provider
    * 
    * @param request The request object
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OAuthProvider putIdentityprovidersPureengage(PutIdentityprovidersPureengageRequest request) throws IOException, ApiException {
+  public IdentityProvider putIdentityprovidersPureengage(PutIdentityprovidersPureengageRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<OAuthProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
+      ApiResponse<IdentityProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityProvider>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -2538,13 +2856,13 @@ public class IdentityProviderApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersPureengage(ApiRequest<PureEngage> request) throws IOException {
+  public ApiResponse<IdentityProvider> putIdentityprovidersPureengage(ApiRequest<PureEngage> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<OAuthProvider>() {});
+      return pcapiClient.invoke(request, new TypeReference<IdentityProvider>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+      ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -2555,7 +2873,7 @@ public class IdentityProviderApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2564,11 +2882,11 @@ public class IdentityProviderApi {
    * Update/Create Salesforce Identity Provider
    * 
    * @param body Provider (required)
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OAuthProvider putIdentityprovidersSalesforce(Salesforce body) throws IOException, ApiException {
+  public IdentityProvider putIdentityprovidersSalesforce(Salesforce body) throws IOException, ApiException {
     return  putIdentityprovidersSalesforce(createPutIdentityprovidersSalesforceRequest(body));
   }
 
@@ -2576,10 +2894,10 @@ public class IdentityProviderApi {
    * Update/Create Salesforce Identity Provider
    * 
    * @param body Provider (required)
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersSalesforceWithHttpInfo(Salesforce body) throws IOException {
+  public ApiResponse<IdentityProvider> putIdentityprovidersSalesforceWithHttpInfo(Salesforce body) throws IOException {
     return putIdentityprovidersSalesforce(createPutIdentityprovidersSalesforceRequest(body).withHttpInfo());
   }
 
@@ -2594,13 +2912,13 @@ public class IdentityProviderApi {
    * Update/Create Salesforce Identity Provider
    * 
    * @param request The request object
-   * @return OAuthProvider
+   * @return IdentityProvider
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OAuthProvider putIdentityprovidersSalesforce(PutIdentityprovidersSalesforceRequest request) throws IOException, ApiException {
+  public IdentityProvider putIdentityprovidersSalesforce(PutIdentityprovidersSalesforceRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<OAuthProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
+      ApiResponse<IdentityProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IdentityProvider>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -2616,13 +2934,13 @@ public class IdentityProviderApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthProvider> putIdentityprovidersSalesforce(ApiRequest<Salesforce> request) throws IOException {
+  public ApiResponse<IdentityProvider> putIdentityprovidersSalesforce(ApiRequest<Salesforce> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<OAuthProvider>() {});
+      return pcapiClient.invoke(request, new TypeReference<IdentityProvider>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+      ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -2633,7 +2951,7 @@ public class IdentityProviderApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

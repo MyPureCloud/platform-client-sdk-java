@@ -166,6 +166,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationParticipantReplaceExternal**](ConversationsApi.html#postConversationParticipantReplaceExternal) | Replace this participant with the an external contact |
 | [**postConversationParticipantReplaceQueue**](ConversationsApi.html#postConversationParticipantReplaceQueue) | Replace this participant with the specified queue |
 | [**postConversationParticipantSecureivrsessions**](ConversationsApi.html#postConversationParticipantSecureivrsessions) | Create secure IVR session. Only a participant in the conversation can invoke a secure IVR. |
+| [**postConversationSummaryFeedback**](ConversationsApi.html#postConversationSummaryFeedback) | Submit feedback for the summary. |
 | [**postConversationsCall**](ConversationsApi.html#postConversationsCall) | Place a new call as part of a callback conversation. |
 | [**postConversationsCallParticipantBarge**](ConversationsApi.html#postConversationsCallParticipantBarge) | Barge a given participant's call creating a barged in conference of connected participants. |
 | [**postConversationsCallParticipantCoach**](ConversationsApi.html#postConversationsCallParticipantCoach) | Listen in on the conversation from the point of view of a given participant while speaking to just the given participant. |
@@ -215,7 +216,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsMessagesInboundOpen**](ConversationsApi.html#postConversationsMessagesInboundOpen) | Send an inbound Open Message |
 | [**postConversationsMessagingIntegrationsFacebook**](ConversationsApi.html#postConversationsMessagingIntegrationsFacebook) | Create a Facebook Integration |
 | [**postConversationsMessagingIntegrationsInstagram**](ConversationsApi.html#postConversationsMessagingIntegrationsInstagram) | Create Instagram Integration |
-| [**postConversationsMessagingIntegrationsLine**](ConversationsApi.html#postConversationsMessagingIntegrationsLine) | Create a LINE messenger Integration |
+| [**postConversationsMessagingIntegrationsLine**](ConversationsApi.html#postConversationsMessagingIntegrationsLine) | Create a LINE messenger Integration (Deprecated) |
 | [**postConversationsMessagingIntegrationsOpen**](ConversationsApi.html#postConversationsMessagingIntegrationsOpen) | Create an Open messaging integration |
 | [**postConversationsMessagingIntegrationsTwitter**](ConversationsApi.html#postConversationsMessagingIntegrationsTwitter) | Create a Twitter Integration |
 | [**postConversationsMessagingIntegrationsWhatsapp**](ConversationsApi.html#postConversationsMessagingIntegrationsWhatsapp) | [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] Create a WhatsApp Integration |
@@ -10261,6 +10262,70 @@ try {
 
 [**SecureSession**](SecureSession.html)
 
+<a name="postConversationSummaryFeedback"></a>
+
+# **postConversationSummaryFeedback**
+
+
+
+> Void postConversationSummaryFeedback(conversationId, summaryId, body)
+
+Submit feedback for the summary.
+
+Wraps POST /api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback  
+
+Requires ALL permissions: 
+
+* conversation:summaryFeedback:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | Conversation ID
+String summaryId = "summaryId_example"; // String | Summary ID
+FeedbackAddRequest body = new FeedbackAddRequest(); // FeedbackAddRequest | 
+try {
+    apiInstance.postConversationSummaryFeedback(conversationId, summaryId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationSummaryFeedback");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| Conversation ID | 
+| **summaryId** | **String**| Summary ID | 
+| **body** | [**FeedbackAddRequest**](FeedbackAddRequest.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
 <a name="postConversationsCall"></a>
 
 # **postConversationsCall**
@@ -13390,11 +13455,13 @@ try {
 
 # **postConversationsMessagingIntegrationsLine**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [LineIntegration](LineIntegration.html) postConversationsMessagingIntegrationsLine(body)
 
-Create a LINE messenger Integration
+Create a LINE messenger Integration (Deprecated)
+
+This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
 
 Wraps POST /api/v2/conversations/messaging/integrations/line  
 

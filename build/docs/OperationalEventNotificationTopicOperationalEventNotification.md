@@ -18,7 +18,7 @@ title: OperationalEventNotificationTopicOperationalEventNotification
 | **parentEntity** | <!----><!---->**String**<!----> |  |  [optional] |
 | **entityType** | <!----><!---->**String**<!----> |  |  [optional] |
 | **conversationId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **timestamp** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **timestamp** | <!----><!---->**Integer**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

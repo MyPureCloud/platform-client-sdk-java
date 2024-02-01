@@ -11,11 +11,14 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.FunctionUploadRequest;
+import com.mypurecloud.sdk.v2.model.FunctionUploadResponse;
 import com.mypurecloud.sdk.v2.model.LearningCoverArtUploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 
 
+import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionDraftFunctionUploadRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeDocumentuploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingMinerUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUploadsLearningCoverartRequest;
@@ -38,6 +41,92 @@ public class UploadsApi {
 
   public UploadsApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Create upload presigned URL for draft function package file.
+   * 
+   * postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param actionId actionId (required)
+   * @param body Input used to request URL upload. (required)
+   * @return FunctionUploadResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FunctionUploadResponse postIntegrationsActionDraftFunctionUpload(String actionId, FunctionUploadRequest body) throws IOException, ApiException {
+    return  postIntegrationsActionDraftFunctionUpload(createPostIntegrationsActionDraftFunctionUploadRequest(actionId, body));
+  }
+
+  /**
+   * Create upload presigned URL for draft function package file.
+   * 
+   * postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param actionId actionId (required)
+   * @param body Input used to request URL upload. (required)
+   * @return FunctionUploadResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FunctionUploadResponse> postIntegrationsActionDraftFunctionUploadWithHttpInfo(String actionId, FunctionUploadRequest body) throws IOException {
+    return postIntegrationsActionDraftFunctionUpload(createPostIntegrationsActionDraftFunctionUploadRequest(actionId, body).withHttpInfo());
+  }
+
+  private PostIntegrationsActionDraftFunctionUploadRequest createPostIntegrationsActionDraftFunctionUploadRequest(String actionId, FunctionUploadRequest body) {
+    return PostIntegrationsActionDraftFunctionUploadRequest.builder()
+            .withActionId(actionId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create upload presigned URL for draft function package file.
+   * 
+   * postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return FunctionUploadResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FunctionUploadResponse postIntegrationsActionDraftFunctionUpload(PostIntegrationsActionDraftFunctionUploadRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FunctionUploadResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FunctionUploadResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create upload presigned URL for draft function package file.
+   * 
+   * postIntegrationsActionDraftFunctionUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FunctionUploadResponse> postIntegrationsActionDraftFunctionUpload(ApiRequest<FunctionUploadRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FunctionUploadResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FunctionUploadResponse> response = (ApiResponse<FunctionUploadResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FunctionUploadResponse> response = (ApiResponse<FunctionUploadResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**

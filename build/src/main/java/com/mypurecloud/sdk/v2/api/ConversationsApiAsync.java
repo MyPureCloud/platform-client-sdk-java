@@ -91,6 +91,7 @@ import com.mypurecloud.sdk.v2.model.FacebookIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 import com.mypurecloud.sdk.v2.model.FaxSendResponse;
+import com.mypurecloud.sdk.v2.model.FeedbackAddRequest;
 import com.mypurecloud.sdk.v2.model.GenerateMeetingIdRequest;
 import com.mypurecloud.sdk.v2.model.InboundMessageRequest;
 import com.mypurecloud.sdk.v2.model.InstagramIntegration;
@@ -322,6 +323,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceAgen
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceExternalRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantSecureivrsessionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationSummaryFeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantBargeRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantCoachRequest;
@@ -12367,6 +12369,81 @@ public class ConversationsApiAsync {
   }
 
   /**
+   * Submit feedback for the summary.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> postConversationSummaryFeedbackAsync(PostConversationSummaryFeedbackRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Submit feedback for the summary.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> postConversationSummaryFeedbackAsync(ApiRequest<FeedbackAddRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Place a new call as part of a callback conversation.
    * 
    * @param request the request object
@@ -16052,11 +16129,12 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Create a LINE messenger Integration
-   * 
+   * Create a LINE messenger Integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<LineIntegration> postConversationsMessagingIntegrationsLineAsync(PostConversationsMessagingIntegrationsLineRequest request, final AsyncApiCallback<LineIntegration> callback) {
     try {
@@ -16086,11 +16164,12 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Create a LINE messenger Integration
-   * 
+   * Create a LINE messenger Integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<LineIntegration>> postConversationsMessagingIntegrationsLineAsync(ApiRequest<LineIntegrationRequest> request, final AsyncApiCallback<ApiResponse<LineIntegration>> callback) {
     try {

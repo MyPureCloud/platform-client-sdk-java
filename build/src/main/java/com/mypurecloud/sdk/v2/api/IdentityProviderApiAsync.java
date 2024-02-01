@@ -14,13 +14,14 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ADFS;
+import com.mypurecloud.sdk.v2.model.CustomProvider;
 import com.mypurecloud.sdk.v2.model.CustomerInteractionCenter;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.GSuite;
 import com.mypurecloud.sdk.v2.model.GenericSAML;
 import com.mypurecloud.sdk.v2.model.IdentityNow;
-import com.mypurecloud.sdk.v2.model.OAuthProvider;
-import com.mypurecloud.sdk.v2.model.OAuthProviderEntityListing;
+import com.mypurecloud.sdk.v2.model.IdentityProvider;
+import com.mypurecloud.sdk.v2.model.IdentityProviderEntityListing;
 import com.mypurecloud.sdk.v2.model.Okta;
 import com.mypurecloud.sdk.v2.model.OneLogin;
 import com.mypurecloud.sdk.v2.model.PingIdentity;
@@ -29,6 +30,7 @@ import com.mypurecloud.sdk.v2.model.PureEngage;
 import com.mypurecloud.sdk.v2.model.Salesforce;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteIdentityproviderRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersAdfsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersCicRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersGenericRequest;
@@ -40,6 +42,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersPingRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersPurecloudRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersPureengageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersSalesforceRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIdentityproviderRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersAdfsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersCicRequest;
@@ -52,6 +55,8 @@ import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersPingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersPurecloudRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersPureengageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersSalesforceRequest;
+import com.mypurecloud.sdk.v2.api.request.PostIdentityprovidersRequest;
+import com.mypurecloud.sdk.v2.api.request.PutIdentityproviderRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersAdfsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersCicRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersGenericRequest;
@@ -80,6 +85,81 @@ public class IdentityProviderApiAsync {
 
   public IdentityProviderApiAsync(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Delete Identity Provider
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteIdentityproviderAsync(DeleteIdentityproviderRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete Identity Provider
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteIdentityproviderAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
@@ -908,19 +988,94 @@ public class IdentityProviderApiAsync {
   }
 
   /**
+   * Get Identity Provider
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CustomProvider> getIdentityproviderAsync(GetIdentityproviderRequest request, final AsyncApiCallback<CustomProvider> callback) {
+    try {
+      final SettableFuture<CustomProvider> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CustomProvider>() {}, new AsyncApiCallback<ApiResponse<CustomProvider>>() {
+        @Override
+        public void onCompleted(ApiResponse<CustomProvider> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Identity Provider
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CustomProvider>> getIdentityproviderAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CustomProvider>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CustomProvider>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CustomProvider>() {}, new AsyncApiCallback<ApiResponse<CustomProvider>>() {
+        @Override
+        public void onCompleted(ApiResponse<CustomProvider> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CustomProvider> response = (ApiResponse<CustomProvider>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CustomProvider> response = (ApiResponse<CustomProvider>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * The list of identity providers
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OAuthProviderEntityListing> getIdentityprovidersAsync(GetIdentityprovidersRequest request, final AsyncApiCallback<OAuthProviderEntityListing> callback) {
+  public Future<IdentityProviderEntityListing> getIdentityprovidersAsync(GetIdentityprovidersRequest request, final AsyncApiCallback<IdentityProviderEntityListing> callback) {
     try {
-      final SettableFuture<OAuthProviderEntityListing> future = SettableFuture.create();
+      final SettableFuture<IdentityProviderEntityListing> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthProviderEntityListing>() {}, new AsyncApiCallback<ApiResponse<OAuthProviderEntityListing>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityProviderEntityListing>() {}, new AsyncApiCallback<ApiResponse<IdentityProviderEntityListing>>() {
         @Override
-        public void onCompleted(ApiResponse<OAuthProviderEntityListing> response) {
+        public void onCompleted(ApiResponse<IdentityProviderEntityListing> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -948,13 +1103,13 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OAuthProviderEntityListing>> getIdentityprovidersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OAuthProviderEntityListing>> callback) {
+  public Future<ApiResponse<IdentityProviderEntityListing>> getIdentityprovidersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IdentityProviderEntityListing>> callback) {
     try {
-      final SettableFuture<ApiResponse<OAuthProviderEntityListing>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<IdentityProviderEntityListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<OAuthProviderEntityListing>() {}, new AsyncApiCallback<ApiResponse<OAuthProviderEntityListing>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityProviderEntityListing>() {}, new AsyncApiCallback<ApiResponse<IdentityProviderEntityListing>>() {
         @Override
-        public void onCompleted(ApiResponse<OAuthProviderEntityListing> response) {
+        public void onCompleted(ApiResponse<IdentityProviderEntityListing> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -962,7 +1117,7 @@ public class IdentityProviderApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<OAuthProviderEntityListing> response = (ApiResponse<OAuthProviderEntityListing>)(ApiResponse<?>)exception;
+            ApiResponse<IdentityProviderEntityListing> response = (ApiResponse<IdentityProviderEntityListing>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -970,7 +1125,7 @@ public class IdentityProviderApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<OAuthProviderEntityListing> response = (ApiResponse<OAuthProviderEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<IdentityProviderEntityListing> response = (ApiResponse<IdentityProviderEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1808,19 +1963,169 @@ public class IdentityProviderApiAsync {
   }
 
   /**
+   * Create Identity Provider
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CustomProvider> postIdentityprovidersAsync(PostIdentityprovidersRequest request, final AsyncApiCallback<CustomProvider> callback) {
+    try {
+      final SettableFuture<CustomProvider> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CustomProvider>() {}, new AsyncApiCallback<ApiResponse<CustomProvider>>() {
+        @Override
+        public void onCompleted(ApiResponse<CustomProvider> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create Identity Provider
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CustomProvider>> postIdentityprovidersAsync(ApiRequest<CustomProvider> request, final AsyncApiCallback<ApiResponse<CustomProvider>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CustomProvider>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CustomProvider>() {}, new AsyncApiCallback<ApiResponse<CustomProvider>>() {
+        @Override
+        public void onCompleted(ApiResponse<CustomProvider> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CustomProvider> response = (ApiResponse<CustomProvider>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CustomProvider> response = (ApiResponse<CustomProvider>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update Identity Provider
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CustomProvider> putIdentityproviderAsync(PutIdentityproviderRequest request, final AsyncApiCallback<CustomProvider> callback) {
+    try {
+      final SettableFuture<CustomProvider> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CustomProvider>() {}, new AsyncApiCallback<ApiResponse<CustomProvider>>() {
+        @Override
+        public void onCompleted(ApiResponse<CustomProvider> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update Identity Provider
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CustomProvider>> putIdentityproviderAsync(ApiRequest<CustomProvider> request, final AsyncApiCallback<ApiResponse<CustomProvider>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CustomProvider>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CustomProvider>() {}, new AsyncApiCallback<ApiResponse<CustomProvider>>() {
+        @Override
+        public void onCompleted(ApiResponse<CustomProvider> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CustomProvider> response = (ApiResponse<CustomProvider>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CustomProvider> response = (ApiResponse<CustomProvider>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Update/Create ADFS Identity Provider
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OAuthProvider> putIdentityprovidersAdfsAsync(PutIdentityprovidersAdfsRequest request, final AsyncApiCallback<OAuthProvider> callback) {
+  public Future<IdentityProvider> putIdentityprovidersAdfsAsync(PutIdentityprovidersAdfsRequest request, final AsyncApiCallback<IdentityProvider> callback) {
     try {
-      final SettableFuture<OAuthProvider> future = SettableFuture.create();
+      final SettableFuture<IdentityProvider> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityProvider>() {}, new AsyncApiCallback<ApiResponse<IdentityProvider>>() {
         @Override
-        public void onCompleted(ApiResponse<OAuthProvider> response) {
+        public void onCompleted(ApiResponse<IdentityProvider> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -1848,13 +2153,13 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersAdfsAsync(ApiRequest<ADFS> request, final AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
+  public Future<ApiResponse<IdentityProvider>> putIdentityprovidersAdfsAsync(ApiRequest<ADFS> request, final AsyncApiCallback<ApiResponse<IdentityProvider>> callback) {
     try {
-      final SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<IdentityProvider>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityProvider>() {}, new AsyncApiCallback<ApiResponse<IdentityProvider>>() {
         @Override
-        public void onCompleted(ApiResponse<OAuthProvider> response) {
+        public void onCompleted(ApiResponse<IdentityProvider> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -1862,7 +2167,7 @@ public class IdentityProviderApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+            ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -1870,7 +2175,7 @@ public class IdentityProviderApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1889,13 +2194,13 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OAuthProvider> putIdentityprovidersCicAsync(PutIdentityprovidersCicRequest request, final AsyncApiCallback<OAuthProvider> callback) {
+  public Future<IdentityProvider> putIdentityprovidersCicAsync(PutIdentityprovidersCicRequest request, final AsyncApiCallback<IdentityProvider> callback) {
     try {
-      final SettableFuture<OAuthProvider> future = SettableFuture.create();
+      final SettableFuture<IdentityProvider> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityProvider>() {}, new AsyncApiCallback<ApiResponse<IdentityProvider>>() {
         @Override
-        public void onCompleted(ApiResponse<OAuthProvider> response) {
+        public void onCompleted(ApiResponse<IdentityProvider> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -1923,13 +2228,13 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersCicAsync(ApiRequest<CustomerInteractionCenter> request, final AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
+  public Future<ApiResponse<IdentityProvider>> putIdentityprovidersCicAsync(ApiRequest<CustomerInteractionCenter> request, final AsyncApiCallback<ApiResponse<IdentityProvider>> callback) {
     try {
-      final SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<IdentityProvider>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityProvider>() {}, new AsyncApiCallback<ApiResponse<IdentityProvider>>() {
         @Override
-        public void onCompleted(ApiResponse<OAuthProvider> response) {
+        public void onCompleted(ApiResponse<IdentityProvider> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -1937,7 +2242,7 @@ public class IdentityProviderApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+            ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -1945,7 +2250,7 @@ public class IdentityProviderApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1964,13 +2269,13 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OAuthProvider> putIdentityprovidersGenericAsync(PutIdentityprovidersGenericRequest request, final AsyncApiCallback<OAuthProvider> callback) {
+  public Future<IdentityProvider> putIdentityprovidersGenericAsync(PutIdentityprovidersGenericRequest request, final AsyncApiCallback<IdentityProvider> callback) {
     try {
-      final SettableFuture<OAuthProvider> future = SettableFuture.create();
+      final SettableFuture<IdentityProvider> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityProvider>() {}, new AsyncApiCallback<ApiResponse<IdentityProvider>>() {
         @Override
-        public void onCompleted(ApiResponse<OAuthProvider> response) {
+        public void onCompleted(ApiResponse<IdentityProvider> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -1998,13 +2303,13 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersGenericAsync(ApiRequest<GenericSAML> request, final AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
+  public Future<ApiResponse<IdentityProvider>> putIdentityprovidersGenericAsync(ApiRequest<GenericSAML> request, final AsyncApiCallback<ApiResponse<IdentityProvider>> callback) {
     try {
-      final SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<IdentityProvider>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityProvider>() {}, new AsyncApiCallback<ApiResponse<IdentityProvider>>() {
         @Override
-        public void onCompleted(ApiResponse<OAuthProvider> response) {
+        public void onCompleted(ApiResponse<IdentityProvider> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -2012,7 +2317,7 @@ public class IdentityProviderApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+            ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -2020,7 +2325,7 @@ public class IdentityProviderApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2039,13 +2344,13 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OAuthProvider> putIdentityprovidersGsuiteAsync(PutIdentityprovidersGsuiteRequest request, final AsyncApiCallback<OAuthProvider> callback) {
+  public Future<IdentityProvider> putIdentityprovidersGsuiteAsync(PutIdentityprovidersGsuiteRequest request, final AsyncApiCallback<IdentityProvider> callback) {
     try {
-      final SettableFuture<OAuthProvider> future = SettableFuture.create();
+      final SettableFuture<IdentityProvider> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityProvider>() {}, new AsyncApiCallback<ApiResponse<IdentityProvider>>() {
         @Override
-        public void onCompleted(ApiResponse<OAuthProvider> response) {
+        public void onCompleted(ApiResponse<IdentityProvider> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -2073,13 +2378,13 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersGsuiteAsync(ApiRequest<GSuite> request, final AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
+  public Future<ApiResponse<IdentityProvider>> putIdentityprovidersGsuiteAsync(ApiRequest<GSuite> request, final AsyncApiCallback<ApiResponse<IdentityProvider>> callback) {
     try {
-      final SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<IdentityProvider>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityProvider>() {}, new AsyncApiCallback<ApiResponse<IdentityProvider>>() {
         @Override
-        public void onCompleted(ApiResponse<OAuthProvider> response) {
+        public void onCompleted(ApiResponse<IdentityProvider> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -2087,7 +2392,7 @@ public class IdentityProviderApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+            ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -2095,7 +2400,7 @@ public class IdentityProviderApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2189,13 +2494,13 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OAuthProvider> putIdentityprovidersOktaAsync(PutIdentityprovidersOktaRequest request, final AsyncApiCallback<OAuthProvider> callback) {
+  public Future<IdentityProvider> putIdentityprovidersOktaAsync(PutIdentityprovidersOktaRequest request, final AsyncApiCallback<IdentityProvider> callback) {
     try {
-      final SettableFuture<OAuthProvider> future = SettableFuture.create();
+      final SettableFuture<IdentityProvider> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityProvider>() {}, new AsyncApiCallback<ApiResponse<IdentityProvider>>() {
         @Override
-        public void onCompleted(ApiResponse<OAuthProvider> response) {
+        public void onCompleted(ApiResponse<IdentityProvider> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -2223,13 +2528,13 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersOktaAsync(ApiRequest<Okta> request, final AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
+  public Future<ApiResponse<IdentityProvider>> putIdentityprovidersOktaAsync(ApiRequest<Okta> request, final AsyncApiCallback<ApiResponse<IdentityProvider>> callback) {
     try {
-      final SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<IdentityProvider>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityProvider>() {}, new AsyncApiCallback<ApiResponse<IdentityProvider>>() {
         @Override
-        public void onCompleted(ApiResponse<OAuthProvider> response) {
+        public void onCompleted(ApiResponse<IdentityProvider> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -2237,7 +2542,7 @@ public class IdentityProviderApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+            ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -2245,7 +2550,7 @@ public class IdentityProviderApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2264,13 +2569,13 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OAuthProvider> putIdentityprovidersOneloginAsync(PutIdentityprovidersOneloginRequest request, final AsyncApiCallback<OAuthProvider> callback) {
+  public Future<IdentityProvider> putIdentityprovidersOneloginAsync(PutIdentityprovidersOneloginRequest request, final AsyncApiCallback<IdentityProvider> callback) {
     try {
-      final SettableFuture<OAuthProvider> future = SettableFuture.create();
+      final SettableFuture<IdentityProvider> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityProvider>() {}, new AsyncApiCallback<ApiResponse<IdentityProvider>>() {
         @Override
-        public void onCompleted(ApiResponse<OAuthProvider> response) {
+        public void onCompleted(ApiResponse<IdentityProvider> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -2298,13 +2603,13 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersOneloginAsync(ApiRequest<OneLogin> request, final AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
+  public Future<ApiResponse<IdentityProvider>> putIdentityprovidersOneloginAsync(ApiRequest<OneLogin> request, final AsyncApiCallback<ApiResponse<IdentityProvider>> callback) {
     try {
-      final SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<IdentityProvider>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityProvider>() {}, new AsyncApiCallback<ApiResponse<IdentityProvider>>() {
         @Override
-        public void onCompleted(ApiResponse<OAuthProvider> response) {
+        public void onCompleted(ApiResponse<IdentityProvider> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -2312,7 +2617,7 @@ public class IdentityProviderApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+            ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -2320,7 +2625,7 @@ public class IdentityProviderApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2339,13 +2644,13 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OAuthProvider> putIdentityprovidersPingAsync(PutIdentityprovidersPingRequest request, final AsyncApiCallback<OAuthProvider> callback) {
+  public Future<IdentityProvider> putIdentityprovidersPingAsync(PutIdentityprovidersPingRequest request, final AsyncApiCallback<IdentityProvider> callback) {
     try {
-      final SettableFuture<OAuthProvider> future = SettableFuture.create();
+      final SettableFuture<IdentityProvider> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityProvider>() {}, new AsyncApiCallback<ApiResponse<IdentityProvider>>() {
         @Override
-        public void onCompleted(ApiResponse<OAuthProvider> response) {
+        public void onCompleted(ApiResponse<IdentityProvider> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -2373,13 +2678,13 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersPingAsync(ApiRequest<PingIdentity> request, final AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
+  public Future<ApiResponse<IdentityProvider>> putIdentityprovidersPingAsync(ApiRequest<PingIdentity> request, final AsyncApiCallback<ApiResponse<IdentityProvider>> callback) {
     try {
-      final SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<IdentityProvider>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityProvider>() {}, new AsyncApiCallback<ApiResponse<IdentityProvider>>() {
         @Override
-        public void onCompleted(ApiResponse<OAuthProvider> response) {
+        public void onCompleted(ApiResponse<IdentityProvider> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -2387,7 +2692,7 @@ public class IdentityProviderApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+            ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -2395,7 +2700,7 @@ public class IdentityProviderApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2414,13 +2719,13 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OAuthProvider> putIdentityprovidersPurecloudAsync(PutIdentityprovidersPurecloudRequest request, final AsyncApiCallback<OAuthProvider> callback) {
+  public Future<IdentityProvider> putIdentityprovidersPurecloudAsync(PutIdentityprovidersPurecloudRequest request, final AsyncApiCallback<IdentityProvider> callback) {
     try {
-      final SettableFuture<OAuthProvider> future = SettableFuture.create();
+      final SettableFuture<IdentityProvider> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityProvider>() {}, new AsyncApiCallback<ApiResponse<IdentityProvider>>() {
         @Override
-        public void onCompleted(ApiResponse<OAuthProvider> response) {
+        public void onCompleted(ApiResponse<IdentityProvider> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -2448,13 +2753,13 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersPurecloudAsync(ApiRequest<PureCloud> request, final AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
+  public Future<ApiResponse<IdentityProvider>> putIdentityprovidersPurecloudAsync(ApiRequest<PureCloud> request, final AsyncApiCallback<ApiResponse<IdentityProvider>> callback) {
     try {
-      final SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<IdentityProvider>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityProvider>() {}, new AsyncApiCallback<ApiResponse<IdentityProvider>>() {
         @Override
-        public void onCompleted(ApiResponse<OAuthProvider> response) {
+        public void onCompleted(ApiResponse<IdentityProvider> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -2462,7 +2767,7 @@ public class IdentityProviderApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+            ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -2470,7 +2775,7 @@ public class IdentityProviderApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2489,13 +2794,13 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OAuthProvider> putIdentityprovidersPureengageAsync(PutIdentityprovidersPureengageRequest request, final AsyncApiCallback<OAuthProvider> callback) {
+  public Future<IdentityProvider> putIdentityprovidersPureengageAsync(PutIdentityprovidersPureengageRequest request, final AsyncApiCallback<IdentityProvider> callback) {
     try {
-      final SettableFuture<OAuthProvider> future = SettableFuture.create();
+      final SettableFuture<IdentityProvider> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityProvider>() {}, new AsyncApiCallback<ApiResponse<IdentityProvider>>() {
         @Override
-        public void onCompleted(ApiResponse<OAuthProvider> response) {
+        public void onCompleted(ApiResponse<IdentityProvider> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -2523,13 +2828,13 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersPureengageAsync(ApiRequest<PureEngage> request, final AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
+  public Future<ApiResponse<IdentityProvider>> putIdentityprovidersPureengageAsync(ApiRequest<PureEngage> request, final AsyncApiCallback<ApiResponse<IdentityProvider>> callback) {
     try {
-      final SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<IdentityProvider>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityProvider>() {}, new AsyncApiCallback<ApiResponse<IdentityProvider>>() {
         @Override
-        public void onCompleted(ApiResponse<OAuthProvider> response) {
+        public void onCompleted(ApiResponse<IdentityProvider> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -2537,7 +2842,7 @@ public class IdentityProviderApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+            ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -2545,7 +2850,7 @@ public class IdentityProviderApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2564,13 +2869,13 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<OAuthProvider> putIdentityprovidersSalesforceAsync(PutIdentityprovidersSalesforceRequest request, final AsyncApiCallback<OAuthProvider> callback) {
+  public Future<IdentityProvider> putIdentityprovidersSalesforceAsync(PutIdentityprovidersSalesforceRequest request, final AsyncApiCallback<IdentityProvider> callback) {
     try {
-      final SettableFuture<OAuthProvider> future = SettableFuture.create();
+      final SettableFuture<IdentityProvider> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IdentityProvider>() {}, new AsyncApiCallback<ApiResponse<IdentityProvider>>() {
         @Override
-        public void onCompleted(ApiResponse<OAuthProvider> response) {
+        public void onCompleted(ApiResponse<IdentityProvider> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -2598,13 +2903,13 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersSalesforceAsync(ApiRequest<Salesforce> request, final AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
+  public Future<ApiResponse<IdentityProvider>> putIdentityprovidersSalesforceAsync(ApiRequest<Salesforce> request, final AsyncApiCallback<ApiResponse<IdentityProvider>> callback) {
     try {
-      final SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<IdentityProvider>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<IdentityProvider>() {}, new AsyncApiCallback<ApiResponse<IdentityProvider>>() {
         @Override
-        public void onCompleted(ApiResponse<OAuthProvider> response) {
+        public void onCompleted(ApiResponse<IdentityProvider> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -2612,7 +2917,7 @@ public class IdentityProviderApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+            ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -2620,7 +2925,7 @@ public class IdentityProviderApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<IdentityProvider> response = (ApiResponse<IdentityProvider>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

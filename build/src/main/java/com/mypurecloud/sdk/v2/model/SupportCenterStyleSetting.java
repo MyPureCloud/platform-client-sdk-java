@@ -35,7 +35,7 @@ public class SupportCenterStyleSetting  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Knowledge portal (previously support center) hero customizations")
+  @ApiModelProperty(example = "null", required = true, value = "Knowledge portal (previously support center) hero customizations")
   @JsonProperty("heroStyle")
   public SupportCenterHeroStyle getHeroStyle() {
     return heroStyle;
@@ -53,7 +53,7 @@ public class SupportCenterStyleSetting  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Knowledge portal (previously support center) global customizations")
+  @ApiModelProperty(example = "null", required = true, value = "Knowledge portal (previously support center) global customizations")
   @JsonProperty("globalStyle")
   public SupportCenterGlobalStyle getGlobalStyle() {
     return globalStyle;

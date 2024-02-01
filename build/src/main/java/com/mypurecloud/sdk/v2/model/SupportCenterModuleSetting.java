@@ -90,7 +90,7 @@ public class SupportCenterModuleSetting  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Screen module type")
+  @ApiModelProperty(example = "null", required = true, value = "Screen module type")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;
@@ -108,7 +108,7 @@ public class SupportCenterModuleSetting  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether or not knowledge portal (previously support center) screen module is enabled")
+  @ApiModelProperty(example = "null", required = true, value = "Whether or not knowledge portal (previously support center) screen module is enabled")
   @JsonProperty("enabled")
   public Boolean getEnabled() {
     return enabled;

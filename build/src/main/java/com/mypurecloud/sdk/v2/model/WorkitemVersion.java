@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.WorkitemQueueReference;
 import com.mypurecloud.sdk.v2.model.WorkitemSchema;
 import com.mypurecloud.sdk.v2.model.WorkitemScoredAgent;
 import com.mypurecloud.sdk.v2.model.WorkitemStatusReference;
+import com.mypurecloud.sdk.v2.model.WorkitemUtilizationLabelReference;
 import com.mypurecloud.sdk.v2.model.WorktypeReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -46,6 +47,7 @@ public class WorkitemVersion  implements Serializable {
   private WorktypeReference type = null;
   private String description = null;
   private LanguageReference language = null;
+  private WorkitemUtilizationLabelReference utilizationLabel = null;
   private Integer priority = null;
   private Date dateCreated = null;
   private Date dateModified = null;
@@ -280,6 +282,24 @@ public class WorkitemVersion  implements Serializable {
   }
   public void setLanguage(LanguageReference language) {
     this.language = language;
+  }
+
+
+  /**
+   * The utilization label of the Workitem.
+   **/
+  public WorkitemVersion utilizationLabel(WorkitemUtilizationLabelReference utilizationLabel) {
+    this.utilizationLabel = utilizationLabel;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The utilization label of the Workitem.")
+  @JsonProperty("utilizationLabel")
+  public WorkitemUtilizationLabelReference getUtilizationLabel() {
+    return utilizationLabel;
+  }
+  public void setUtilizationLabel(WorkitemUtilizationLabelReference utilizationLabel) {
+    this.utilizationLabel = utilizationLabel;
   }
 
 
@@ -828,6 +848,7 @@ public class WorkitemVersion  implements Serializable {
             Objects.equals(this.type, workitemVersion.type) &&
             Objects.equals(this.description, workitemVersion.description) &&
             Objects.equals(this.language, workitemVersion.language) &&
+            Objects.equals(this.utilizationLabel, workitemVersion.utilizationLabel) &&
             Objects.equals(this.priority, workitemVersion.priority) &&
             Objects.equals(this.dateCreated, workitemVersion.dateCreated) &&
             Objects.equals(this.dateModified, workitemVersion.dateModified) &&
@@ -862,7 +883,7 @@ public class WorkitemVersion  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, type, description, language, priority, dateCreated, dateModified, dateDue, dateExpires, durationSeconds, ttl, status, statusCategory, dateStatusChanged, dateClosed, workbin, reporter, assignee, externalContact, externalTag, modifiedBy, queue, assignmentState, dateAssignmentStateChanged, alertTimeoutSeconds, skills, preferredAgents, autoStatusTransition, schema, customFields, autoStatusTransitionDetail, scoredAgents, version, selfUri);
+    return Objects.hash(id, name, division, type, description, language, utilizationLabel, priority, dateCreated, dateModified, dateDue, dateExpires, durationSeconds, ttl, status, statusCategory, dateStatusChanged, dateClosed, workbin, reporter, assignee, externalContact, externalTag, modifiedBy, queue, assignmentState, dateAssignmentStateChanged, alertTimeoutSeconds, skills, preferredAgents, autoStatusTransition, schema, customFields, autoStatusTransitionDetail, scoredAgents, version, selfUri);
   }
 
   @Override
@@ -876,6 +897,7 @@ public class WorkitemVersion  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
+    sb.append("    utilizationLabel: ").append(toIndentedString(utilizationLabel)).append("\n");
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");

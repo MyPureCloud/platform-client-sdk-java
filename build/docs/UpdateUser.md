@@ -17,6 +17,7 @@ title: UpdateUser
 | **addresses** | <!----><!---->[**List&lt;Contact&gt;**](Contact.html)<!----> | Email address, phone number, and/or extension for this user. One entry is allowed per media type |  [optional] |
 | **title** | <!----><!---->**String**<!----> |  |  [optional] |
 | **username** | <!----><!---->**String**<!----> |  |  [optional] |
+| **preferredName** | <!----><!---->**String**<!----> | Preferred full name of agent |  [optional] |
 | **manager** | <!----><!---->**String**<!----> |  |  [optional] |
 | **images** | <!----><!---->[**List&lt;UserImage&gt;**](UserImage.html)<!----> |  |  [optional] |
 | **version** | <!----><!---->**Integer**<!----> | This value should be the current version of the user. The current version can be obtained with a GET on the user before doing a PATCH. |  |

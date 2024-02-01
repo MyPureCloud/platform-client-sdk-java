@@ -19,10 +19,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getChatsThreadMessages**](ChatApi.html#getChatsThreadMessages) | Get history by thread |
 | [**getChatsUserMessage**](ChatApi.html#getChatsUserMessage) | Get messages by id(s) from a 1on1 |
 | [**getChatsUserMessages**](ChatApi.html#getChatsUserMessages) | Get 1on1 History between a user |
+| [**getChatsUserSettings**](ChatApi.html#getChatsUserSettings) | Get a user's chat settings |
 | [**patchChatsRoom**](ChatApi.html#patchChatsRoom) | Set properties for a room |
 | [**patchChatsRoomMessage**](ChatApi.html#patchChatsRoomMessage) | Edit a message in a room |
 | [**patchChatsSettings**](ChatApi.html#patchChatsSettings) | Patch Chat Settings. |
 | [**patchChatsUserMessage**](ChatApi.html#patchChatsUserMessage) | Edit a message to a user |
+| [**patchChatsUserSettings**](ChatApi.html#patchChatsUserSettings) | Update a user's chat settings |
 | [**postChatsRoomMessages**](ChatApi.html#postChatsRoomMessages) | Send a message to a room |
 | [**postChatsRoomParticipant**](ChatApi.html#postChatsRoomParticipant) | Join a room |
 | [**postChatsRoomPinnedmessages**](ChatApi.html#postChatsRoomPinnedmessages) | Add pinned messages for a room, up to a maximum of 5 pinned messages |
@@ -492,7 +494,7 @@ try {
 
 
 
-> [ChatMessageEntityListing](ChatMessageEntityListing.html) getChatsRoomMessages(roomJid, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, limit, before, after)
+> [ChatMessageEntityListing](ChatMessageEntityListing.html) getChatsRoomMessages(roomJid, limit, before, after)
 
 Get a room's message history
 
@@ -528,17 +530,11 @@ Configuration.setDefaultApiClient(apiClient);
 
 ChatApi apiInstance = new ChatApi();
 String roomJid = "roomJid_example"; // String | roomJid
-Integer pageSize = 25; // Integer | The total page size requested
-Integer pageNumber = 1; // Integer | The page number requested
-String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
-String nextPage = "nextPage_example"; // String | next page token
-String previousPage = "previousPage_example"; // String | Previous page token
 String limit = "limit_example"; // String | The maximum number of messages to retrieve
 String before = "before_example"; // String | The cutoff date for messages to retrieve
 String after = "after_example"; // String | The beginning date for messages to retrieve
 try {
-    ChatMessageEntityListing result = apiInstance.getChatsRoomMessages(roomJid, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, limit, before, after);
+    ChatMessageEntityListing result = apiInstance.getChatsRoomMessages(roomJid, limit, before, after);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ChatApi#getChatsRoomMessages");
@@ -552,12 +548,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **roomJid** | **String**| roomJid | 
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
-| **sortBy** | **String**| variable name requested to sort by | [optional] 
-| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
-| **nextPage** | **String**| next page token | [optional] 
-| **previousPage** | **String**| Previous page token | [optional] 
 | **limit** | **String**| The maximum number of messages to retrieve | [optional] 
 | **before** | **String**| The cutoff date for messages to retrieve | [optional] 
 | **after** | **String**| The beginning date for messages to retrieve | [optional] 
@@ -632,7 +622,7 @@ This endpoint does not require any parameters.
 
 
 
-> [ChatMessageEntityListing](ChatMessageEntityListing.html) getChatsThreadMessages(threadId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, limit, before, after)
+> [ChatMessageEntityListing](ChatMessageEntityListing.html) getChatsThreadMessages(threadId, limit, before, after)
 
 Get history by thread
 
@@ -668,17 +658,11 @@ Configuration.setDefaultApiClient(apiClient);
 
 ChatApi apiInstance = new ChatApi();
 String threadId = "threadId_example"; // String | threadId
-Integer pageSize = 25; // Integer | The total page size requested
-Integer pageNumber = 1; // Integer | The page number requested
-String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
-String nextPage = "nextPage_example"; // String | next page token
-String previousPage = "previousPage_example"; // String | Previous page token
 String limit = "limit_example"; // String | The maximum number of messages to retrieve
 String before = "before_example"; // String | The cutoff date for messages to retrieve
 String after = "after_example"; // String | The beginning date for messages to retrieve
 try {
-    ChatMessageEntityListing result = apiInstance.getChatsThreadMessages(threadId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, limit, before, after);
+    ChatMessageEntityListing result = apiInstance.getChatsThreadMessages(threadId, limit, before, after);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ChatApi#getChatsThreadMessages");
@@ -692,12 +676,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **threadId** | **String**| threadId | 
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
-| **sortBy** | **String**| variable name requested to sort by | [optional] 
-| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
-| **nextPage** | **String**| next page token | [optional] 
-| **previousPage** | **String**| Previous page token | [optional] 
 | **limit** | **String**| The maximum number of messages to retrieve | [optional] 
 | **before** | **String**| The cutoff date for messages to retrieve | [optional] 
 | **after** | **String**| The beginning date for messages to retrieve | [optional] 
@@ -780,7 +758,7 @@ try {
 
 
 
-> [ChatMessageResponse](ChatMessageResponse.html) getChatsUserMessages(userId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, limit, before, after)
+> [ChatMessageResponse](ChatMessageResponse.html) getChatsUserMessages(userId, limit, before, after)
 
 Get 1on1 History between a user
 
@@ -816,17 +794,11 @@ Configuration.setDefaultApiClient(apiClient);
 
 ChatApi apiInstance = new ChatApi();
 String userId = "userId_example"; // String | userId
-Integer pageSize = 25; // Integer | The total page size requested
-Integer pageNumber = 1; // Integer | The page number requested
-String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
-String nextPage = "nextPage_example"; // String | next page token
-String previousPage = "previousPage_example"; // String | Previous page token
 String limit = "limit_example"; // String | The maximum number of messages to retrieve
 String before = "before_example"; // String | The cutoff date for messages to retrieve
 String after = "after_example"; // String | The beginning date for messages to retrieve
 try {
-    ChatMessageResponse result = apiInstance.getChatsUserMessages(userId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, limit, before, after);
+    ChatMessageResponse result = apiInstance.getChatsUserMessages(userId, limit, before, after);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ChatApi#getChatsUserMessages");
@@ -840,12 +812,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| userId | 
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
-| **sortBy** | **String**| variable name requested to sort by | [optional] 
-| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
-| **nextPage** | **String**| next page token | [optional] 
-| **previousPage** | **String**| Previous page token | [optional] 
 | **limit** | **String**| The maximum number of messages to retrieve | [optional] 
 | **before** | **String**| The cutoff date for messages to retrieve | [optional] 
 | **after** | **String**| The beginning date for messages to retrieve | [optional] 
@@ -855,6 +821,70 @@ try {
 ### Return type
 
 [**ChatMessageResponse**](ChatMessageResponse.html)
+
+<a name="getChatsUserSettings"></a>
+
+# **getChatsUserSettings**
+
+
+
+> [ChatUserSettings](ChatUserSettings.html) getChatsUserSettings(userId)
+
+Get a user's chat settings
+
+getChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/chats/users/{userId}/settings  
+
+Requires ANY permissions: 
+
+* chat:usersettings:view
+* chat:setting:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ChatApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ChatApi apiInstance = new ChatApi();
+String userId = "userId_example"; // String | User ID
+try {
+    ChatUserSettings result = apiInstance.getChatsUserSettings(userId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ChatApi#getChatsUserSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ChatUserSettings**](ChatUserSettings.html)
 
 <a name="patchChatsRoom"></a>
 
@@ -1117,6 +1147,72 @@ try {
 ### Return type
 
 [**ChatSendMessageResponse**](ChatSendMessageResponse.html)
+
+<a name="patchChatsUserSettings"></a>
+
+# **patchChatsUserSettings**
+
+
+
+> [ChatUserSettings](ChatUserSettings.html) patchChatsUserSettings(userId, body)
+
+Update a user's chat settings
+
+patchChatsUserSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/chats/users/{userId}/settings  
+
+Requires ANY permissions: 
+
+* chat:usersettings:edit
+* chat:setting:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ChatApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ChatApi apiInstance = new ChatApi();
+String userId = "userId_example"; // String | User ID
+ChatUserSettings body = new ChatUserSettings(); // ChatUserSettings | 
+try {
+    ChatUserSettings result = apiInstance.patchChatsUserSettings(userId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ChatApi#patchChatsUserSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | 
+| **body** | [**ChatUserSettings**](ChatUserSettings.html)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ChatUserSettings**](ChatUserSettings.html)
 
 <a name="postChatsRoomMessages"></a>
 

@@ -75,6 +75,8 @@ import com.mypurecloud.sdk.v2.model.LabelListing;
 import com.mypurecloud.sdk.v2.model.LabelResponse;
 import com.mypurecloud.sdk.v2.model.LabelUpdateRequest;
 import java.time.LocalDate;
+import com.mypurecloud.sdk.v2.model.OperationCreatorUserResponse;
+import com.mypurecloud.sdk.v2.model.OperationListing;
 import com.mypurecloud.sdk.v2.model.SearchUpdateRequest;
 import com.mypurecloud.sdk.v2.model.TrainingListing;
 import com.mypurecloud.sdk.v2.model.UnansweredGroup;
@@ -124,6 +126,8 @@ import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageDocum
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageDocumentsImportRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageTrainingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageTrainingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseOperationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseOperationsUsersQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseUnansweredGroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseUnansweredGroupsRequest;
@@ -3050,6 +3054,160 @@ public class KnowledgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<TrainingListing> response = (ApiResponse<TrainingListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get operations
+   * 
+   * getKnowledgeKnowledgebaseOperations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OperationListing> getKnowledgeKnowledgebaseOperationsAsync(GetKnowledgeKnowledgebaseOperationsRequest request, final AsyncApiCallback<OperationListing> callback) {
+    try {
+      final SettableFuture<OperationListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OperationListing>() {}, new AsyncApiCallback<ApiResponse<OperationListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<OperationListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get operations
+   * 
+   * getKnowledgeKnowledgebaseOperations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OperationListing>> getKnowledgeKnowledgebaseOperationsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OperationListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OperationListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OperationListing>() {}, new AsyncApiCallback<ApiResponse<OperationListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<OperationListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OperationListing> response = (ApiResponse<OperationListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OperationListing> response = (ApiResponse<OperationListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get ids of operation creator users and oauth clients
+   * 
+   * getKnowledgeKnowledgebaseOperationsUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OperationCreatorUserResponse> getKnowledgeKnowledgebaseOperationsUsersQueryAsync(GetKnowledgeKnowledgebaseOperationsUsersQueryRequest request, final AsyncApiCallback<OperationCreatorUserResponse> callback) {
+    try {
+      final SettableFuture<OperationCreatorUserResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OperationCreatorUserResponse>() {}, new AsyncApiCallback<ApiResponse<OperationCreatorUserResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<OperationCreatorUserResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get ids of operation creator users and oauth clients
+   * 
+   * getKnowledgeKnowledgebaseOperationsUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OperationCreatorUserResponse>> getKnowledgeKnowledgebaseOperationsUsersQueryAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OperationCreatorUserResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OperationCreatorUserResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OperationCreatorUserResponse>() {}, new AsyncApiCallback<ApiResponse<OperationCreatorUserResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<OperationCreatorUserResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OperationCreatorUserResponse> response = (ApiResponse<OperationCreatorUserResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OperationCreatorUserResponse> response = (ApiResponse<OperationCreatorUserResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

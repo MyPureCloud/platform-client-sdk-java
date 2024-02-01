@@ -109,10 +109,34 @@ public class TaskManagementAsyncAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
+    NWORKITEMSACDCANCELLED("nWorkitemsAcdCancelled"),
+    NWORKITEMSACDEXPIRED("nWorkitemsAcdExpired"),
+    NWORKITEMSACDSTARTED("nWorkitemsAcdStarted"),
+    NWORKITEMSAGENTTRANSFERRED("nWorkitemsAgentTransferred"),
     NWORKITEMSCREATED("nWorkitemsCreated"),
+    NWORKITEMSDECLINED("nWorkitemsDeclined"),
     NWORKITEMSDELETED("nWorkitemsDeleted"),
+    NWORKITEMSDISCONNECTED("nWorkitemsDisconnected"),
+    NWORKITEMSOVERSLA("nWorkitemsOverSla"),
     NWORKITEMSPURGED("nWorkitemsPurged"),
+    NWORKITEMSQUEUETRANSFERRED("nWorkitemsQueueTransferred"),
     NWORKITEMSSTATUSCHANGED("nWorkitemsStatusChanged"),
+    NWORKITEMSTERMINATED("nWorkitemsTerminated"),
+    NWORKITEMSTIMEDOUT("nWorkitemsTimedout"),
+    NWORKITEMSTRANSFERRED("nWorkitemsTransferred"),
+    NWORKITEMSWRAPUPADDED("nWorkitemsWrapupAdded"),
+    NWORKITEMSWRAPUPREMOVED("nWorkitemsWrapupRemoved"),
+    TWORKITEMSALERT("tWorkitemsAlert"),
+    TWORKITEMSANSWERED("tWorkitemsAnswered"),
+    TWORKITEMSDIRECTANSWERED("tWorkitemsDirectAnswered"),
+    TWORKITEMSFOCUS("tWorkitemsFocus"),
+    TWORKITEMSFOCUSCOMPLETE("tWorkitemsFocusComplete"),
+    TWORKITEMSHANDLED("tWorkitemsHandled"),
+    TWORKITEMSHELD("tWorkitemsHeld"),
+    TWORKITEMSHELDCOMPLETE("tWorkitemsHeldComplete"),
+    TWORKITEMSNOTRESPONDING("tWorkitemsNotResponding"),
+    TWORKITEMSPARKED("tWorkitemsParked"),
+    TWORKITEMSQUEUEANSWERED("tWorkitemsQueueAnswered"),
     TWORKITEMSSTATUS("tWorkitemsStatus");
 
     private String value;

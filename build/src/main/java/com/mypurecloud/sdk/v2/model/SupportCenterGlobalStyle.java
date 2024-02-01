@@ -37,7 +37,7 @@ public class SupportCenterGlobalStyle  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Global background color, in hexadecimal format, eg #ffffff")
+  @ApiModelProperty(example = "null", required = true, value = "Global background color, in hexadecimal format, eg #ffffff")
   @JsonProperty("backgroundColor")
   public String getBackgroundColor() {
     return backgroundColor;
@@ -55,7 +55,7 @@ public class SupportCenterGlobalStyle  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Global primary color, in hexadecimal format, eg #ffffff")
+  @ApiModelProperty(example = "null", required = true, value = "Global primary color, in hexadecimal format, eg #ffffff")
   @JsonProperty("primaryColor")
   public String getPrimaryColor() {
     return primaryColor;
@@ -73,7 +73,7 @@ public class SupportCenterGlobalStyle  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Global dark primary color, in hexadecimal format, eg #ffffff")
+  @ApiModelProperty(example = "null", required = true, value = "Global dark primary color, in hexadecimal format, eg #ffffff")
   @JsonProperty("primaryColorDark")
   public String getPrimaryColorDark() {
     return primaryColorDark;
@@ -91,7 +91,7 @@ public class SupportCenterGlobalStyle  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Global light primary color, in hexadecimal format, eg #ffffff")
+  @ApiModelProperty(example = "null", required = true, value = "Global light primary color, in hexadecimal format, eg #ffffff")
   @JsonProperty("primaryColorLight")
   public String getPrimaryColorLight() {
     return primaryColorLight;
@@ -109,7 +109,7 @@ public class SupportCenterGlobalStyle  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Global text color, in hexadecimal format, eg #ffffff")
+  @ApiModelProperty(example = "null", required = true, value = "Global text color, in hexadecimal format, eg #ffffff")
   @JsonProperty("textColor")
   public String getTextColor() {
     return textColor;
@@ -127,7 +127,7 @@ public class SupportCenterGlobalStyle  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Global font family")
+  @ApiModelProperty(example = "null", required = true, value = "Global font family")
   @JsonProperty("fontFamily")
   public String getFontFamily() {
     return fontFamily;

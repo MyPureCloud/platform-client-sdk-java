@@ -3333,28 +3333,40 @@ public class ArchitectApi {
    * Get specified user prompt
    * 
    * @param promptId Prompt ID (required)
+   * @param includeMediaUris Include the media URIs for each resource (optional, default to true)
+   * @param includeResources Include the resources for each system prompt (optional, default to true)
+   * @param language Filter the resources down to the provided languages (optional)
    * @return Prompt
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Prompt getArchitectPrompt(String promptId) throws IOException, ApiException {
-    return  getArchitectPrompt(createGetArchitectPromptRequest(promptId));
+  public Prompt getArchitectPrompt(String promptId, Boolean includeMediaUris, Boolean includeResources, List<String> language) throws IOException, ApiException {
+    return  getArchitectPrompt(createGetArchitectPromptRequest(promptId, includeMediaUris, includeResources, language));
   }
 
   /**
    * Get specified user prompt
    * 
    * @param promptId Prompt ID (required)
+   * @param includeMediaUris Include the media URIs for each resource (optional, default to true)
+   * @param includeResources Include the resources for each system prompt (optional, default to true)
+   * @param language Filter the resources down to the provided languages (optional)
    * @return Prompt
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Prompt> getArchitectPromptWithHttpInfo(String promptId) throws IOException {
-    return getArchitectPrompt(createGetArchitectPromptRequest(promptId).withHttpInfo());
+  public ApiResponse<Prompt> getArchitectPromptWithHttpInfo(String promptId, Boolean includeMediaUris, Boolean includeResources, List<String> language) throws IOException {
+    return getArchitectPrompt(createGetArchitectPromptRequest(promptId, includeMediaUris, includeResources, language).withHttpInfo());
   }
 
-  private GetArchitectPromptRequest createGetArchitectPromptRequest(String promptId) {
+  private GetArchitectPromptRequest createGetArchitectPromptRequest(String promptId, Boolean includeMediaUris, Boolean includeResources, List<String> language) {
     return GetArchitectPromptRequest.builder()
             .withPromptId(promptId)
+
+            .withIncludeMediaUris(includeMediaUris)
+
+            .withIncludeResources(includeResources)
+
+            .withLanguage(language)
 
             .build();
   }
@@ -3687,12 +3699,15 @@ public class ArchitectApi {
    * @param nameOrDescription Name or description (optional)
    * @param sortBy Sort by (optional, default to id)
    * @param sortOrder Sort order (optional, default to asc)
+   * @param includeMediaUris Include the media URIs for each resource (optional, default to true)
+   * @param includeResources Include the resources for each system prompt (optional, default to true)
+   * @param language Filter the resources down to the provided languages (optional)
    * @return PromptEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public PromptEntityListing getArchitectPrompts(Integer pageNumber, Integer pageSize, List<String> name, String description, String nameOrDescription, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getArchitectPrompts(createGetArchitectPromptsRequest(pageNumber, pageSize, name, description, nameOrDescription, sortBy, sortOrder));
+  public PromptEntityListing getArchitectPrompts(Integer pageNumber, Integer pageSize, List<String> name, String description, String nameOrDescription, String sortBy, String sortOrder, Boolean includeMediaUris, Boolean includeResources, List<String> language) throws IOException, ApiException {
+    return  getArchitectPrompts(createGetArchitectPromptsRequest(pageNumber, pageSize, name, description, nameOrDescription, sortBy, sortOrder, includeMediaUris, includeResources, language));
   }
 
   /**
@@ -3705,14 +3720,17 @@ public class ArchitectApi {
    * @param nameOrDescription Name or description (optional)
    * @param sortBy Sort by (optional, default to id)
    * @param sortOrder Sort order (optional, default to asc)
+   * @param includeMediaUris Include the media URIs for each resource (optional, default to true)
+   * @param includeResources Include the resources for each system prompt (optional, default to true)
+   * @param language Filter the resources down to the provided languages (optional)
    * @return PromptEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PromptEntityListing> getArchitectPromptsWithHttpInfo(Integer pageNumber, Integer pageSize, List<String> name, String description, String nameOrDescription, String sortBy, String sortOrder) throws IOException {
-    return getArchitectPrompts(createGetArchitectPromptsRequest(pageNumber, pageSize, name, description, nameOrDescription, sortBy, sortOrder).withHttpInfo());
+  public ApiResponse<PromptEntityListing> getArchitectPromptsWithHttpInfo(Integer pageNumber, Integer pageSize, List<String> name, String description, String nameOrDescription, String sortBy, String sortOrder, Boolean includeMediaUris, Boolean includeResources, List<String> language) throws IOException {
+    return getArchitectPrompts(createGetArchitectPromptsRequest(pageNumber, pageSize, name, description, nameOrDescription, sortBy, sortOrder, includeMediaUris, includeResources, language).withHttpInfo());
   }
 
-  private GetArchitectPromptsRequest createGetArchitectPromptsRequest(Integer pageNumber, Integer pageSize, List<String> name, String description, String nameOrDescription, String sortBy, String sortOrder) {
+  private GetArchitectPromptsRequest createGetArchitectPromptsRequest(Integer pageNumber, Integer pageSize, List<String> name, String description, String nameOrDescription, String sortBy, String sortOrder, Boolean includeMediaUris, Boolean includeResources, List<String> language) {
     return GetArchitectPromptsRequest.builder()
             .withPageNumber(pageNumber)
 
@@ -3727,6 +3745,12 @@ public class ArchitectApi {
             .withSortBy(sortBy)
 
             .withSortOrder(sortOrder)
+
+            .withIncludeMediaUris(includeMediaUris)
+
+            .withIncludeResources(includeResources)
+
+            .withLanguage(language)
 
             .build();
   }
@@ -4343,28 +4367,40 @@ public class ArchitectApi {
    * Get a system prompt
    * 
    * @param promptId promptId (required)
+   * @param includeMediaUris Include the media URIs for each resource (optional, default to true)
+   * @param includeResources Include the resources for each system prompt (optional, default to true)
+   * @param language Filter the resources down to the provided languages (optional)
    * @return SystemPrompt
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SystemPrompt getArchitectSystemprompt(String promptId) throws IOException, ApiException {
-    return  getArchitectSystemprompt(createGetArchitectSystempromptRequest(promptId));
+  public SystemPrompt getArchitectSystemprompt(String promptId, Boolean includeMediaUris, Boolean includeResources, List<String> language) throws IOException, ApiException {
+    return  getArchitectSystemprompt(createGetArchitectSystempromptRequest(promptId, includeMediaUris, includeResources, language));
   }
 
   /**
    * Get a system prompt
    * 
    * @param promptId promptId (required)
+   * @param includeMediaUris Include the media URIs for each resource (optional, default to true)
+   * @param includeResources Include the resources for each system prompt (optional, default to true)
+   * @param language Filter the resources down to the provided languages (optional)
    * @return SystemPrompt
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SystemPrompt> getArchitectSystempromptWithHttpInfo(String promptId) throws IOException {
-    return getArchitectSystemprompt(createGetArchitectSystempromptRequest(promptId).withHttpInfo());
+  public ApiResponse<SystemPrompt> getArchitectSystempromptWithHttpInfo(String promptId, Boolean includeMediaUris, Boolean includeResources, List<String> language) throws IOException {
+    return getArchitectSystemprompt(createGetArchitectSystempromptRequest(promptId, includeMediaUris, includeResources, language).withHttpInfo());
   }
 
-  private GetArchitectSystempromptRequest createGetArchitectSystempromptRequest(String promptId) {
+  private GetArchitectSystempromptRequest createGetArchitectSystempromptRequest(String promptId, Boolean includeMediaUris, Boolean includeResources, List<String> language) {
     return GetArchitectSystempromptRequest.builder()
             .withPromptId(promptId)
+
+            .withIncludeMediaUris(includeMediaUris)
+
+            .withIncludeResources(includeResources)
+
+            .withLanguage(language)
 
             .build();
   }
@@ -4705,12 +4741,15 @@ public class ArchitectApi {
    * @param name Name (optional)
    * @param description Description (optional)
    * @param nameOrDescription Name or description (optional)
+   * @param includeMediaUris Include the media URIs for each resource (optional, default to true)
+   * @param includeResources Include the resources for each system prompt (optional, default to true)
+   * @param language Filter the resources down to the provided languages (optional)
    * @return SystemPromptEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SystemPromptEntityListing getArchitectSystemprompts(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String description, String nameOrDescription) throws IOException, ApiException {
-    return  getArchitectSystemprompts(createGetArchitectSystempromptsRequest(pageNumber, pageSize, sortBy, sortOrder, name, description, nameOrDescription));
+  public SystemPromptEntityListing getArchitectSystemprompts(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String description, String nameOrDescription, Boolean includeMediaUris, Boolean includeResources, List<String> language) throws IOException, ApiException {
+    return  getArchitectSystemprompts(createGetArchitectSystempromptsRequest(pageNumber, pageSize, sortBy, sortOrder, name, description, nameOrDescription, includeMediaUris, includeResources, language));
   }
 
   /**
@@ -4723,14 +4762,17 @@ public class ArchitectApi {
    * @param name Name (optional)
    * @param description Description (optional)
    * @param nameOrDescription Name or description (optional)
+   * @param includeMediaUris Include the media URIs for each resource (optional, default to true)
+   * @param includeResources Include the resources for each system prompt (optional, default to true)
+   * @param language Filter the resources down to the provided languages (optional)
    * @return SystemPromptEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SystemPromptEntityListing> getArchitectSystempromptsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String description, String nameOrDescription) throws IOException {
-    return getArchitectSystemprompts(createGetArchitectSystempromptsRequest(pageNumber, pageSize, sortBy, sortOrder, name, description, nameOrDescription).withHttpInfo());
+  public ApiResponse<SystemPromptEntityListing> getArchitectSystempromptsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String description, String nameOrDescription, Boolean includeMediaUris, Boolean includeResources, List<String> language) throws IOException {
+    return getArchitectSystemprompts(createGetArchitectSystempromptsRequest(pageNumber, pageSize, sortBy, sortOrder, name, description, nameOrDescription, includeMediaUris, includeResources, language).withHttpInfo());
   }
 
-  private GetArchitectSystempromptsRequest createGetArchitectSystempromptsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String description, String nameOrDescription) {
+  private GetArchitectSystempromptsRequest createGetArchitectSystempromptsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String description, String nameOrDescription, Boolean includeMediaUris, Boolean includeResources, List<String> language) {
     return GetArchitectSystempromptsRequest.builder()
             .withPageNumber(pageNumber)
 
@@ -4745,6 +4787,12 @@ public class ArchitectApi {
             .withDescription(description)
 
             .withNameOrDescription(nameOrDescription)
+
+            .withIncludeMediaUris(includeMediaUris)
+
+            .withIncludeResources(includeResources)
+
+            .withLanguage(language)
 
             .build();
   }

@@ -24,6 +24,7 @@ public class AuthenticationSettings  implements Serializable {
   
   private Boolean enabled = null;
   private String integrationId = null;
+  private Boolean allowSessionUpgrade = null;
 
   
   /**
@@ -62,6 +63,24 @@ public class AuthenticationSettings  implements Serializable {
   }
 
 
+  /**
+   * Allow end-users to upgrade an anonymous session to authenticated conversation.
+   **/
+  public AuthenticationSettings allowSessionUpgrade(Boolean allowSessionUpgrade) {
+    this.allowSessionUpgrade = allowSessionUpgrade;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Allow end-users to upgrade an anonymous session to authenticated conversation.")
+  @JsonProperty("allowSessionUpgrade")
+  public Boolean getAllowSessionUpgrade() {
+    return allowSessionUpgrade;
+  }
+  public void setAllowSessionUpgrade(Boolean allowSessionUpgrade) {
+    this.allowSessionUpgrade = allowSessionUpgrade;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -73,12 +92,13 @@ public class AuthenticationSettings  implements Serializable {
     AuthenticationSettings authenticationSettings = (AuthenticationSettings) o;
 
     return Objects.equals(this.enabled, authenticationSettings.enabled) &&
-            Objects.equals(this.integrationId, authenticationSettings.integrationId);
+            Objects.equals(this.integrationId, authenticationSettings.integrationId) &&
+            Objects.equals(this.allowSessionUpgrade, authenticationSettings.allowSessionUpgrade);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, integrationId);
+    return Objects.hash(enabled, integrationId, allowSessionUpgrade);
   }
 
   @Override
@@ -88,6 +108,7 @@ public class AuthenticationSettings  implements Serializable {
     
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    integrationId: ").append(toIndentedString(integrationId)).append("\n");
+    sb.append("    allowSessionUpgrade: ").append(toIndentedString(allowSessionUpgrade)).append("\n");
     sb.append("}");
     return sb.toString();
   }

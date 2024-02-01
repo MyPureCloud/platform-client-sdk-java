@@ -111,6 +111,7 @@ public class GetUsersMeRequest {
 		DATELASTLOGIN("dateLastLogin"),
 		AUTHORIZATION_UNUSEDROLES("authorization.unusedRoles"),
 		TEAM("team"),
+		WORKPLANBIDRANKS("workPlanBidRanks"),
 		PROFILESKILLS("profileSkills"),
 		CERTIFICATIONS("certifications"),
 		LOCATIONS("locations"),

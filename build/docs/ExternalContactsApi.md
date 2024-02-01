@@ -807,7 +807,7 @@ ExternalContactsApi apiInstance = new ExternalContactsApi();
 String contactId = "contactId_example"; // String | ExternalContact Id
 Integer pageSize = 20; // Integer | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
 Integer pageNumber = 1; // Integer | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
-String sortOrder = "sortOrder_example"; // String | Sort order
+String sortOrder = "sortOrder_example"; // String | The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. \"createDate:asc\", \"createDate:desc\"
 List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand
 try {
     NoteListing result = apiInstance.getExternalcontactsContactNotes(contactId, pageSize, pageNumber, sortOrder, expand);
@@ -826,7 +826,7 @@ try {
 | **contactId** | **String**| ExternalContact Id | 
 | **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] 
 | **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] 
-| **sortOrder** | **String**| Sort order | [optional] 
+| **sortOrder** | **String**| The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. \&quot;createDate:asc\&quot;, \&quot;createDate:desc\&quot; | [optional] 
 | **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: author, externalDataSources 
 {: class="table-striped"}
 
@@ -939,7 +939,7 @@ ExternalContactsApi apiInstance = new ExternalContactsApi();
 Integer pageSize = 20; // Integer | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
 Integer pageNumber = 1; // Integer | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
 String q = "q_example"; // String | User supplied search keywords (no special syntax is currently supported)
-String sortOrder = "sortOrder_example"; // String | Sort order
+String sortOrder = "sortOrder_example"; // String | The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \"firstName:asc\", \"title:desc\"
 List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand
 try {
     ContactListing result = apiInstance.getExternalcontactsContacts(pageSize, pageNumber, q, sortOrder, expand);
@@ -958,7 +958,7 @@ try {
 | **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] 
 | **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] 
 | **q** | **String**| User supplied search keywords (no special syntax is currently supported) | [optional] 
-| **sortOrder** | **String**| Sort order | [optional] 
+| **sortOrder** | **String**| The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \&quot;firstName:asc\&quot;, \&quot;title:desc\&quot; | [optional] 
 | **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources 
 {: class="table-striped"}
 
@@ -1317,7 +1317,7 @@ String externalOrganizationId = "externalOrganizationId_example"; // String | Ex
 Integer pageSize = 20; // Integer | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
 Integer pageNumber = 1; // Integer | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
 String q = "q_example"; // String | User supplied search keywords (no special syntax is currently supported)
-String sortOrder = "sortOrder_example"; // String | Sort order
+String sortOrder = "sortOrder_example"; // String | The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \"firstName:asc\", \"title:desc\"
 List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand
 try {
     ContactListing result = apiInstance.getExternalcontactsOrganizationContacts(externalOrganizationId, pageSize, pageNumber, q, sortOrder, expand);
@@ -1337,7 +1337,7 @@ try {
 | **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] 
 | **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] 
 | **q** | **String**| User supplied search keywords (no special syntax is currently supported) | [optional] 
-| **sortOrder** | **String**| Sort order | [optional] 
+| **sortOrder** | **String**| The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \&quot;firstName:asc\&quot;, \&quot;title:desc\&quot; | [optional] 
 | **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources 
 {: class="table-striped"}
 
@@ -1453,7 +1453,7 @@ ExternalContactsApi apiInstance = new ExternalContactsApi();
 String externalOrganizationId = "externalOrganizationId_example"; // String | External Organization Id
 Integer pageSize = 20; // Integer | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
 Integer pageNumber = 1; // Integer | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
-String sortOrder = "sortOrder_example"; // String | Sort order
+String sortOrder = "sortOrder_example"; // String | The Note field to sort by. Any of: [createDate]. Direction: [asc, desc]. e.g. \"createDate:asc\", \"createDate:desc\"
 List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand
 try {
     NoteListing result = apiInstance.getExternalcontactsOrganizationNotes(externalOrganizationId, pageSize, pageNumber, sortOrder, expand);
@@ -1472,7 +1472,7 @@ try {
 | **externalOrganizationId** | **String**| External Organization Id | 
 | **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] 
 | **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] 
-| **sortOrder** | **String**| Sort order | [optional] 
+| **sortOrder** | **String**| The Note field to sort by. Any of: [createDate]. Direction: [asc, desc]. e.g. \&quot;createDate:asc\&quot;, \&quot;createDate:desc\&quot; | [optional] 
 | **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: author, externalDataSources 
 {: class="table-striped"}
 
@@ -1524,7 +1524,7 @@ String externalOrganizationId = "externalOrganizationId_example"; // String | Ex
 Integer pageSize = 20; // Integer | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
 Integer pageNumber = 1; // Integer | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
 String expand = "expand_example"; // String | which fields, if any, to expand
-String sortOrder = "sortOrder_example"; // String | Sort order
+String sortOrder = "sortOrder_example"; // String | The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. \"createDate:asc\", \"relationship:desc\"
 try {
     RelationshipListing result = apiInstance.getExternalcontactsOrganizationRelationships(externalOrganizationId, pageSize, pageNumber, expand, sortOrder);
     System.out.println(result);
@@ -1543,7 +1543,7 @@ try {
 | **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] 
 | **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] 
 | **expand** | **String**| which fields, if any, to expand | [optional]<br />**Values**: externalDataSources 
-| **sortOrder** | **String**| Sort order | [optional] 
+| **sortOrder** | **String**| The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. \&quot;createDate:asc\&quot;, \&quot;relationship:desc\&quot; | [optional] 
 {: class="table-striped"}
 
 
@@ -1594,7 +1594,7 @@ Integer pageSize = 20; // Integer | Page size (limited to fetching first 1,000 r
 Integer pageNumber = 1; // Integer | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
 String q = "q_example"; // String | Search query
 List<String> trustorId = Arrays.asList(null); // List<String> | Search for external organizations by trustorIds (limit 25). If supplied, the 'q' parameters is ignored. Items are returned in the order requested
-String sortOrder = "sortOrder_example"; // String | Sort order
+String sortOrder = "sortOrder_example"; // String | The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. \"companyType:asc\", \"industry:desc\"
 List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand
 Boolean includeTrustors = true; // Boolean | (true or false) whether or not to include trustor information embedded in the externalOrganization
 try {
@@ -1615,7 +1615,7 @@ try {
 | **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] 
 | **q** | **String**| Search query | [optional] 
 | **trustorId** | [**List&lt;String&gt;**](String.html)| Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested | [optional] 
-| **sortOrder** | **String**| Sort order | [optional] 
+| **sortOrder** | **String**| The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. \&quot;companyType:asc\&quot;, \&quot;industry:desc\&quot; | [optional] 
 | **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: externalDataSources 
 | **includeTrustors** | **Boolean**| (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional] 
 {: class="table-striped"}
@@ -4181,6 +4181,7 @@ Wraps PUT /api/v2/externalcontacts/conversations/{conversationId}
 
 Requires ANY permissions: 
 
+* relate:conversation:associate
 * externalContacts:conversation:associate
 
 ### Example

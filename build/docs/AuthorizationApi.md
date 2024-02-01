@@ -372,7 +372,7 @@ try {
 
 
 
-> [AuthzDivisionEntityListing](AuthzDivisionEntityListing.html) getAuthorizationDivisions(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, objectCount, id, name)
+> [AuthzDivisionEntityListing](AuthzDivisionEntityListing.html) getAuthorizationDivisions(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, objectCount, name)
 
 Retrieve a list of all divisions defined for the organization
 
@@ -412,10 +412,9 @@ List<String> expand = Arrays.asList(null); // List<String> | variable name reque
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 Boolean objectCount = false; // Boolean | Include the count of objects contained in the division
-List<String> id = Arrays.asList(null); // List<String> | Optionally request specific divisions by their IDs
 String name = "name_example"; // String | Search term to filter by division name
 try {
-    AuthzDivisionEntityListing result = apiInstance.getAuthorizationDivisions(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, objectCount, id, name);
+    AuthzDivisionEntityListing result = apiInstance.getAuthorizationDivisions(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, objectCount, name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AuthorizationApi#getAuthorizationDivisions");
@@ -435,7 +434,6 @@ try {
 | **nextPage** | **String**| next page token | [optional] 
 | **previousPage** | **String**| Previous page token | [optional] 
 | **objectCount** | **Boolean**| Include the count of objects contained in the division | [optional] [default to false] 
-| **id** | [**List&lt;String&gt;**](String.html)| Optionally request specific divisions by their IDs | [optional] 
 | **name** | **String**| Search term to filter by division name | [optional] 
 {: class="table-striped"}
 

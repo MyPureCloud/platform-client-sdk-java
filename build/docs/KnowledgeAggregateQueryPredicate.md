@@ -65,6 +65,7 @@ title: KnowledgeAggregateQueryPredicate
 | SEARCHQUERY | &quot;searchQuery&quot; | 
 | SELFSERVED | &quot;selfServed&quot; | 
 | SESSIONID | &quot;sessionId&quot; | 
+| SURFACINGMETHOD | &quot;surfacingMethod&quot; | 
 | USERID | &quot;userId&quot; | 
 {: class="table table-striped"}
 

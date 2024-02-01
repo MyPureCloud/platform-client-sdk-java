@@ -100,6 +100,7 @@ public class V2MobiusAlertsTopicAlert  implements Serializable {
   }
   private ActionEnum action = null;
   private V2MobiusAlertsTopicAlertSummary alertSummary = null;
+  private Boolean sendExitingAlarmNotification = null;
 
   
   /**
@@ -374,6 +375,23 @@ public class V2MobiusAlertsTopicAlert  implements Serializable {
   }
 
 
+  /**
+   **/
+  public V2MobiusAlertsTopicAlert sendExitingAlarmNotification(Boolean sendExitingAlarmNotification) {
+    this.sendExitingAlarmNotification = sendExitingAlarmNotification;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("sendExitingAlarmNotification")
+  public Boolean getSendExitingAlarmNotification() {
+    return sendExitingAlarmNotification;
+  }
+  public void setSendExitingAlarmNotification(Boolean sendExitingAlarmNotification) {
+    this.sendExitingAlarmNotification = sendExitingAlarmNotification;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -399,12 +417,13 @@ public class V2MobiusAlertsTopicAlert  implements Serializable {
             Objects.equals(this.dateMutedUntil, v2MobiusAlertsTopicAlert.dateMutedUntil) &&
             Objects.equals(this.dateSnoozedUntil, v2MobiusAlertsTopicAlert.dateSnoozedUntil) &&
             Objects.equals(this.action, v2MobiusAlertsTopicAlert.action) &&
-            Objects.equals(this.alertSummary, v2MobiusAlertsTopicAlert.alertSummary);
+            Objects.equals(this.alertSummary, v2MobiusAlertsTopicAlert.alertSummary) &&
+            Objects.equals(this.sendExitingAlarmNotification, v2MobiusAlertsTopicAlert.sendExitingAlarmNotification);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(rule, id, userId, notifications, dateStart, dateEnd, conditions, additionalProperties, active, unread, muted, snoozed, dateMutedUntil, dateSnoozedUntil, action, alertSummary);
+    return Objects.hash(rule, id, userId, notifications, dateStart, dateEnd, conditions, additionalProperties, active, unread, muted, snoozed, dateMutedUntil, dateSnoozedUntil, action, alertSummary, sendExitingAlarmNotification);
   }
 
   @Override
@@ -428,6 +447,7 @@ public class V2MobiusAlertsTopicAlert  implements Serializable {
     sb.append("    dateSnoozedUntil: ").append(toIndentedString(dateSnoozedUntil)).append("\n");
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
     sb.append("    alertSummary: ").append(toIndentedString(alertSummary)).append("\n");
+    sb.append("    sendExitingAlarmNotification: ").append(toIndentedString(sendExitingAlarmNotification)).append("\n");
     sb.append("}");
     return sb.toString();
   }

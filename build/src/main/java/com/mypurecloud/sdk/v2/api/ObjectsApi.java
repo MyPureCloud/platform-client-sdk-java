@@ -213,14 +213,13 @@ public class ObjectsApi {
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
    * @param objectCount Include the count of objects contained in the division (optional, default to false)
-   * @param id Optionally request specific divisions by their IDs (optional)
    * @param name Search term to filter by division name (optional)
    * @return AuthzDivisionEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AuthzDivisionEntityListing getAuthorizationDivisions(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Boolean objectCount, List<String> id, String name) throws IOException, ApiException {
-    return  getAuthorizationDivisions(createGetAuthorizationDivisionsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, objectCount, id, name));
+  public AuthzDivisionEntityListing getAuthorizationDivisions(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Boolean objectCount, String name) throws IOException, ApiException {
+    return  getAuthorizationDivisions(createGetAuthorizationDivisionsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, objectCount, name));
   }
 
   /**
@@ -233,16 +232,15 @@ public class ObjectsApi {
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
    * @param objectCount Include the count of objects contained in the division (optional, default to false)
-   * @param id Optionally request specific divisions by their IDs (optional)
    * @param name Search term to filter by division name (optional)
    * @return AuthzDivisionEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AuthzDivisionEntityListing> getAuthorizationDivisionsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Boolean objectCount, List<String> id, String name) throws IOException {
-    return getAuthorizationDivisions(createGetAuthorizationDivisionsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, objectCount, id, name).withHttpInfo());
+  public ApiResponse<AuthzDivisionEntityListing> getAuthorizationDivisionsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Boolean objectCount, String name) throws IOException {
+    return getAuthorizationDivisions(createGetAuthorizationDivisionsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, objectCount, name).withHttpInfo());
   }
 
-  private GetAuthorizationDivisionsRequest createGetAuthorizationDivisionsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Boolean objectCount, List<String> id, String name) {
+  private GetAuthorizationDivisionsRequest createGetAuthorizationDivisionsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Boolean objectCount, String name) {
     return GetAuthorizationDivisionsRequest.builder()
             .withPageSize(pageSize)
 
@@ -257,8 +255,6 @@ public class ObjectsApi {
             .withPreviousPage(previousPage)
 
             .withObjectCount(objectCount)
-
-            .withId(id)
 
             .withName(name)
 

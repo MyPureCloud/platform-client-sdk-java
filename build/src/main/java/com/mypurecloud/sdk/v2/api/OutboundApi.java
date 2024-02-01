@@ -40,6 +40,7 @@ import com.mypurecloud.sdk.v2.model.ContactListEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListFilter;
 import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListTemplate;
+import com.mypurecloud.sdk.v2.model.ContactListTemplateBulkRetrieveBody;
 import com.mypurecloud.sdk.v2.model.ContactListTemplateEntityListing;
 import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
 import com.mypurecloud.sdk.v2.model.DialerContact;
@@ -59,6 +60,8 @@ import com.mypurecloud.sdk.v2.model.EmailCampaignSchedule;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EventLog;
 import com.mypurecloud.sdk.v2.model.ExportUri;
+import com.mypurecloud.sdk.v2.model.FileSpecificationTemplate;
+import com.mypurecloud.sdk.v2.model.FileSpecificationTemplateEntityListing;
 import com.mypurecloud.sdk.v2.model.FilterPreviewResponse;
 import com.mypurecloud.sdk.v2.model.ImportStatus;
 import com.mypurecloud.sdk.v2.model.ImportTemplate;
@@ -99,6 +102,8 @@ import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistCustomexclusioncolumnsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistEmailaddressesRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistPhonenumbersRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOutboundFilespecificationtemplateRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOutboundFilespecificationtemplatesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundImporttemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundImporttemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundMessagingcampaignRequest;
@@ -150,6 +155,8 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistsDivisionviewRequest
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundEventRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundEventsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundFilespecificationtemplateRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundFilespecificationtemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundImporttemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundImporttemplateImportstatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundImporttemplatesRequest;
@@ -195,12 +202,14 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersPreviewR
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlisttemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlisttemplatesBulkAddRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlisttemplatesBulkRetrieveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundConversationDncRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDigitalrulesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistEmailaddressesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistExportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundFilespecificationtemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundImporttemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundImporttemplatesBulkAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundMessagingcampaignsRequest;
@@ -219,6 +228,7 @@ import com.mypurecloud.sdk.v2.api.request.PutOutboundContactlistfilterRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundContactlisttemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundDigitalrulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundDnclistRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOutboundFilespecificationtemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundImporttemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundMessagingcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundRulesetRequest;
@@ -1598,6 +1608,156 @@ public class OutboundApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteOutboundDnclistPhonenumbers(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete File Specification Template
+   * 
+   * @param fileSpecificationTemplateId File Specification Template ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundFilespecificationtemplate(String fileSpecificationTemplateId) throws IOException, ApiException {
+     deleteOutboundFilespecificationtemplate(createDeleteOutboundFilespecificationtemplateRequest(fileSpecificationTemplateId));
+  }
+
+  /**
+   * Delete File Specification Template
+   * 
+   * @param fileSpecificationTemplateId File Specification Template ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundFilespecificationtemplateWithHttpInfo(String fileSpecificationTemplateId) throws IOException {
+    return deleteOutboundFilespecificationtemplate(createDeleteOutboundFilespecificationtemplateRequest(fileSpecificationTemplateId).withHttpInfo());
+  }
+
+  private DeleteOutboundFilespecificationtemplateRequest createDeleteOutboundFilespecificationtemplateRequest(String fileSpecificationTemplateId) {
+    return DeleteOutboundFilespecificationtemplateRequest.builder()
+            .withFileSpecificationTemplateId(fileSpecificationTemplateId)
+
+            .build();
+  }
+
+  /**
+   * Delete File Specification Template
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundFilespecificationtemplate(DeleteOutboundFilespecificationtemplateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete File Specification Template
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundFilespecificationtemplate(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete multiple file specification templates.
+   * 
+   * @param id File Specification template id(s) to delete (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundFilespecificationtemplatesBulk(List<String> id) throws IOException, ApiException {
+     deleteOutboundFilespecificationtemplatesBulk(createDeleteOutboundFilespecificationtemplatesBulkRequest(id));
+  }
+
+  /**
+   * Delete multiple file specification templates.
+   * 
+   * @param id File Specification template id(s) to delete (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundFilespecificationtemplatesBulkWithHttpInfo(List<String> id) throws IOException {
+    return deleteOutboundFilespecificationtemplatesBulk(createDeleteOutboundFilespecificationtemplatesBulkRequest(id).withHttpInfo());
+  }
+
+  private DeleteOutboundFilespecificationtemplatesBulkRequest createDeleteOutboundFilespecificationtemplatesBulkRequest(List<String> id) {
+    return DeleteOutboundFilespecificationtemplatesBulkRequest.builder()
+            .withId(id)
+
+            .build();
+  }
+
+  /**
+   * Delete multiple file specification templates.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundFilespecificationtemplatesBulk(DeleteOutboundFilespecificationtemplatesBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete multiple file specification templates.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundFilespecificationtemplatesBulk(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -6075,6 +6235,186 @@ public class OutboundApi {
   }
 
   /**
+   * Get File Specification Template
+   * 
+   * @param fileSpecificationTemplateId File Specification Template ID (required)
+   * @return FileSpecificationTemplate
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FileSpecificationTemplate getOutboundFilespecificationtemplate(String fileSpecificationTemplateId) throws IOException, ApiException {
+    return  getOutboundFilespecificationtemplate(createGetOutboundFilespecificationtemplateRequest(fileSpecificationTemplateId));
+  }
+
+  /**
+   * Get File Specification Template
+   * 
+   * @param fileSpecificationTemplateId File Specification Template ID (required)
+   * @return FileSpecificationTemplate
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FileSpecificationTemplate> getOutboundFilespecificationtemplateWithHttpInfo(String fileSpecificationTemplateId) throws IOException {
+    return getOutboundFilespecificationtemplate(createGetOutboundFilespecificationtemplateRequest(fileSpecificationTemplateId).withHttpInfo());
+  }
+
+  private GetOutboundFilespecificationtemplateRequest createGetOutboundFilespecificationtemplateRequest(String fileSpecificationTemplateId) {
+    return GetOutboundFilespecificationtemplateRequest.builder()
+            .withFileSpecificationTemplateId(fileSpecificationTemplateId)
+
+            .build();
+  }
+
+  /**
+   * Get File Specification Template
+   * 
+   * @param request The request object
+   * @return FileSpecificationTemplate
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FileSpecificationTemplate getOutboundFilespecificationtemplate(GetOutboundFilespecificationtemplateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FileSpecificationTemplate> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FileSpecificationTemplate>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get File Specification Template
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FileSpecificationTemplate> getOutboundFilespecificationtemplate(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FileSpecificationTemplate>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FileSpecificationTemplate> response = (ApiResponse<FileSpecificationTemplate>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FileSpecificationTemplate> response = (ApiResponse<FileSpecificationTemplate>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query File Specification Templates
+   * 
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param allowEmptyResult Whether to return an empty page when there are no results for that page (optional, default to false)
+   * @param filterType Filter type (optional, default to Prefix)
+   * @param name Name (optional)
+   * @param sortBy Sort by (optional)
+   * @param sortOrder Sort order (optional, default to a)
+   * @return FileSpecificationTemplateEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FileSpecificationTemplateEntityListing getOutboundFilespecificationtemplates(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getOutboundFilespecificationtemplates(createGetOutboundFilespecificationtemplatesRequest(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder));
+  }
+
+  /**
+   * Query File Specification Templates
+   * 
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param allowEmptyResult Whether to return an empty page when there are no results for that page (optional, default to false)
+   * @param filterType Filter type (optional, default to Prefix)
+   * @param name Name (optional)
+   * @param sortBy Sort by (optional)
+   * @param sortOrder Sort order (optional, default to a)
+   * @return FileSpecificationTemplateEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FileSpecificationTemplateEntityListing> getOutboundFilespecificationtemplatesWithHttpInfo(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) throws IOException {
+    return getOutboundFilespecificationtemplates(createGetOutboundFilespecificationtemplatesRequest(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder).withHttpInfo());
+  }
+
+  private GetOutboundFilespecificationtemplatesRequest createGetOutboundFilespecificationtemplatesRequest(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) {
+    return GetOutboundFilespecificationtemplatesRequest.builder()
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .withAllowEmptyResult(allowEmptyResult)
+
+            .withFilterType(filterType)
+
+            .withName(name)
+
+            .withSortBy(sortBy)
+
+            .withSortOrder(sortOrder)
+
+            .build();
+  }
+
+  /**
+   * Query File Specification Templates
+   * 
+   * @param request The request object
+   * @return FileSpecificationTemplateEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FileSpecificationTemplateEntityListing getOutboundFilespecificationtemplates(GetOutboundFilespecificationtemplatesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FileSpecificationTemplateEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FileSpecificationTemplateEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query File Specification Templates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FileSpecificationTemplateEntityListing> getOutboundFilespecificationtemplates(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FileSpecificationTemplateEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FileSpecificationTemplateEntityListing> response = (ApiResponse<FileSpecificationTemplateEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FileSpecificationTemplateEntityListing> response = (ApiResponse<FileSpecificationTemplateEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get Import Template
    * 
    * @param importTemplateId Import Template ID (required)
@@ -9746,6 +10086,84 @@ public class OutboundApi {
   }
 
   /**
+   * Get multiple contact list templates
+   * 
+   * @param body contact list templates to get (required)
+   * @return ContactListTemplateEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListTemplateEntityListing postOutboundContactlisttemplatesBulkRetrieve(ContactListTemplateBulkRetrieveBody body) throws IOException, ApiException {
+    return  postOutboundContactlisttemplatesBulkRetrieve(createPostOutboundContactlisttemplatesBulkRetrieveRequest(body));
+  }
+
+  /**
+   * Get multiple contact list templates
+   * 
+   * @param body contact list templates to get (required)
+   * @return ContactListTemplateEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListTemplateEntityListing> postOutboundContactlisttemplatesBulkRetrieveWithHttpInfo(ContactListTemplateBulkRetrieveBody body) throws IOException {
+    return postOutboundContactlisttemplatesBulkRetrieve(createPostOutboundContactlisttemplatesBulkRetrieveRequest(body).withHttpInfo());
+  }
+
+  private PostOutboundContactlisttemplatesBulkRetrieveRequest createPostOutboundContactlisttemplatesBulkRetrieveRequest(ContactListTemplateBulkRetrieveBody body) {
+    return PostOutboundContactlisttemplatesBulkRetrieveRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Get multiple contact list templates
+   * 
+   * @param request The request object
+   * @return ContactListTemplateEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListTemplateEntityListing postOutboundContactlisttemplatesBulkRetrieve(PostOutboundContactlisttemplatesBulkRetrieveRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactListTemplateEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactListTemplateEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get multiple contact list templates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListTemplateEntityListing> postOutboundContactlisttemplatesBulkRetrieve(ApiRequest<ContactListTemplateBulkRetrieveBody> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactListTemplateEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListTemplateEntityListing> response = (ApiResponse<ContactListTemplateEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListTemplateEntityListing> response = (ApiResponse<ContactListTemplateEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Add phone numbers to a Dialer DNC list.
    * 
    * @param conversationId Conversation ID (required)
@@ -10212,6 +10630,84 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DncList> response = (ApiResponse<DncList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create File Specification Template
+   * 
+   * @param body FileSpecificationTemplate (required)
+   * @return FileSpecificationTemplate
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FileSpecificationTemplate postOutboundFilespecificationtemplates(FileSpecificationTemplate body) throws IOException, ApiException {
+    return  postOutboundFilespecificationtemplates(createPostOutboundFilespecificationtemplatesRequest(body));
+  }
+
+  /**
+   * Create File Specification Template
+   * 
+   * @param body FileSpecificationTemplate (required)
+   * @return FileSpecificationTemplate
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FileSpecificationTemplate> postOutboundFilespecificationtemplatesWithHttpInfo(FileSpecificationTemplate body) throws IOException {
+    return postOutboundFilespecificationtemplates(createPostOutboundFilespecificationtemplatesRequest(body).withHttpInfo());
+  }
+
+  private PostOutboundFilespecificationtemplatesRequest createPostOutboundFilespecificationtemplatesRequest(FileSpecificationTemplate body) {
+    return PostOutboundFilespecificationtemplatesRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create File Specification Template
+   * 
+   * @param request The request object
+   * @return FileSpecificationTemplate
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FileSpecificationTemplate postOutboundFilespecificationtemplates(PostOutboundFilespecificationtemplatesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FileSpecificationTemplate> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FileSpecificationTemplate>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create File Specification Template
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FileSpecificationTemplate> postOutboundFilespecificationtemplates(ApiRequest<FileSpecificationTemplate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FileSpecificationTemplate>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FileSpecificationTemplate> response = (ApiResponse<FileSpecificationTemplate>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FileSpecificationTemplate> response = (ApiResponse<FileSpecificationTemplate>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -11672,6 +12168,88 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DncList> response = (ApiResponse<DncList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update File Specification Template
+   * 
+   * @param fileSpecificationTemplateId File Specification Template ID (required)
+   * @param body fileSpecificationTemplate (required)
+   * @return FileSpecificationTemplate
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FileSpecificationTemplate putOutboundFilespecificationtemplate(String fileSpecificationTemplateId, FileSpecificationTemplate body) throws IOException, ApiException {
+    return  putOutboundFilespecificationtemplate(createPutOutboundFilespecificationtemplateRequest(fileSpecificationTemplateId, body));
+  }
+
+  /**
+   * Update File Specification Template
+   * 
+   * @param fileSpecificationTemplateId File Specification Template ID (required)
+   * @param body fileSpecificationTemplate (required)
+   * @return FileSpecificationTemplate
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FileSpecificationTemplate> putOutboundFilespecificationtemplateWithHttpInfo(String fileSpecificationTemplateId, FileSpecificationTemplate body) throws IOException {
+    return putOutboundFilespecificationtemplate(createPutOutboundFilespecificationtemplateRequest(fileSpecificationTemplateId, body).withHttpInfo());
+  }
+
+  private PutOutboundFilespecificationtemplateRequest createPutOutboundFilespecificationtemplateRequest(String fileSpecificationTemplateId, FileSpecificationTemplate body) {
+    return PutOutboundFilespecificationtemplateRequest.builder()
+            .withFileSpecificationTemplateId(fileSpecificationTemplateId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update File Specification Template
+   * 
+   * @param request The request object
+   * @return FileSpecificationTemplate
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FileSpecificationTemplate putOutboundFilespecificationtemplate(PutOutboundFilespecificationtemplateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FileSpecificationTemplate> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FileSpecificationTemplate>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update File Specification Template
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FileSpecificationTemplate> putOutboundFilespecificationtemplate(ApiRequest<FileSpecificationTemplate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FileSpecificationTemplate>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FileSpecificationTemplate> response = (ApiResponse<FileSpecificationTemplate>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FileSpecificationTemplate> response = (ApiResponse<FileSpecificationTemplate>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

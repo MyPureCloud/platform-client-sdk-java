@@ -2508,7 +2508,7 @@ try {
 
 
 
-> [Prompt](Prompt.html) getArchitectPrompt(promptId)
+> [Prompt](Prompt.html) getArchitectPrompt(promptId, includeMediaUris, includeResources, language)
 
 Get specified user prompt
 
@@ -2541,8 +2541,11 @@ Configuration.setDefaultApiClient(apiClient);
 
 ArchitectApi apiInstance = new ArchitectApi();
 String promptId = "promptId_example"; // String | Prompt ID
+Boolean includeMediaUris = true; // Boolean | Include the media URIs for each resource
+Boolean includeResources = true; // Boolean | Include the resources for each system prompt
+List<String> language = Arrays.asList(null); // List<String> | Filter the resources down to the provided languages
 try {
-    Prompt result = apiInstance.getArchitectPrompt(promptId);
+    Prompt result = apiInstance.getArchitectPrompt(promptId, includeMediaUris, includeResources, language);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getArchitectPrompt");
@@ -2556,6 +2559,9 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **promptId** | **String**| Prompt ID | 
+| **includeMediaUris** | **Boolean**| Include the media URIs for each resource | [optional] [default to true] 
+| **includeResources** | **Boolean**| Include the resources for each system prompt | [optional] [default to true] 
+| **language** | [**List&lt;String&gt;**](String.html)| Filter the resources down to the provided languages | [optional] 
 {: class="table-striped"}
 
 
@@ -2772,7 +2778,7 @@ try {
 
 
 
-> [PromptEntityListing](PromptEntityListing.html) getArchitectPrompts(pageNumber, pageSize, name, description, nameOrDescription, sortBy, sortOrder)
+> [PromptEntityListing](PromptEntityListing.html) getArchitectPrompts(pageNumber, pageSize, name, description, nameOrDescription, sortBy, sortOrder, includeMediaUris, includeResources, language)
 
 Get a pageable list of user prompts
 
@@ -2813,8 +2819,11 @@ String description = "description_example"; // String | Description
 String nameOrDescription = "nameOrDescription_example"; // String | Name or description
 String sortBy = "id"; // String | Sort by
 String sortOrder = "asc"; // String | Sort order
+Boolean includeMediaUris = true; // Boolean | Include the media URIs for each resource
+Boolean includeResources = true; // Boolean | Include the resources for each system prompt
+List<String> language = Arrays.asList(null); // List<String> | Filter the resources down to the provided languages
 try {
-    PromptEntityListing result = apiInstance.getArchitectPrompts(pageNumber, pageSize, name, description, nameOrDescription, sortBy, sortOrder);
+    PromptEntityListing result = apiInstance.getArchitectPrompts(pageNumber, pageSize, name, description, nameOrDescription, sortBy, sortOrder, includeMediaUris, includeResources, language);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getArchitectPrompts");
@@ -2834,6 +2843,9 @@ try {
 | **nameOrDescription** | **String**| Name or description | [optional] 
 | **sortBy** | **String**| Sort by | [optional] [default to id] 
 | **sortOrder** | **String**| Sort order | [optional] [default to asc] 
+| **includeMediaUris** | **Boolean**| Include the media URIs for each resource | [optional] [default to true] 
+| **includeResources** | **Boolean**| Include the resources for each system prompt | [optional] [default to true] 
+| **language** | [**List&lt;String&gt;**](String.html)| Filter the resources down to the provided languages | [optional] 
 {: class="table-striped"}
 
 
@@ -3259,7 +3271,7 @@ try {
 
 
 
-> [SystemPrompt](SystemPrompt.html) getArchitectSystemprompt(promptId)
+> [SystemPrompt](SystemPrompt.html) getArchitectSystemprompt(promptId, includeMediaUris, includeResources, language)
 
 Get a system prompt
 
@@ -3292,8 +3304,11 @@ Configuration.setDefaultApiClient(apiClient);
 
 ArchitectApi apiInstance = new ArchitectApi();
 String promptId = "promptId_example"; // String | promptId
+Boolean includeMediaUris = true; // Boolean | Include the media URIs for each resource
+Boolean includeResources = true; // Boolean | Include the resources for each system prompt
+List<String> language = Arrays.asList(null); // List<String> | Filter the resources down to the provided languages
 try {
-    SystemPrompt result = apiInstance.getArchitectSystemprompt(promptId);
+    SystemPrompt result = apiInstance.getArchitectSystemprompt(promptId, includeMediaUris, includeResources, language);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getArchitectSystemprompt");
@@ -3307,6 +3322,9 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **promptId** | **String**| promptId | 
+| **includeMediaUris** | **Boolean**| Include the media URIs for each resource | [optional] [default to true] 
+| **includeResources** | **Boolean**| Include the resources for each system prompt | [optional] [default to true] 
+| **language** | [**List&lt;String&gt;**](String.html)| Filter the resources down to the provided languages | [optional] 
 {: class="table-striped"}
 
 
@@ -3525,7 +3543,7 @@ try {
 
 
 
-> [SystemPromptEntityListing](SystemPromptEntityListing.html) getArchitectSystemprompts(pageNumber, pageSize, sortBy, sortOrder, name, description, nameOrDescription)
+> [SystemPromptEntityListing](SystemPromptEntityListing.html) getArchitectSystemprompts(pageNumber, pageSize, sortBy, sortOrder, name, description, nameOrDescription, includeMediaUris, includeResources, language)
 
 Get System Prompts
 
@@ -3564,8 +3582,11 @@ String sortOrder = "asc"; // String | Sort order
 String name = "name_example"; // String | Name
 String description = "description_example"; // String | Description
 String nameOrDescription = "nameOrDescription_example"; // String | Name or description
+Boolean includeMediaUris = true; // Boolean | Include the media URIs for each resource
+Boolean includeResources = true; // Boolean | Include the resources for each system prompt
+List<String> language = Arrays.asList(null); // List<String> | Filter the resources down to the provided languages
 try {
-    SystemPromptEntityListing result = apiInstance.getArchitectSystemprompts(pageNumber, pageSize, sortBy, sortOrder, name, description, nameOrDescription);
+    SystemPromptEntityListing result = apiInstance.getArchitectSystemprompts(pageNumber, pageSize, sortBy, sortOrder, name, description, nameOrDescription, includeMediaUris, includeResources, language);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getArchitectSystemprompts");
@@ -3585,6 +3606,9 @@ try {
 | **name** | **String**| Name | [optional] 
 | **description** | **String**| Description | [optional] 
 | **nameOrDescription** | **String**| Name or description | [optional] 
+| **includeMediaUris** | **Boolean**| Include the media URIs for each resource | [optional] [default to true] 
+| **includeResources** | **Boolean**| Include the resources for each system prompt | [optional] [default to true] 
+| **language** | [**List&lt;String&gt;**](String.html)| Filter the resources down to the provided languages | [optional] 
 {: class="table-striped"}
 
 

@@ -124,7 +124,8 @@ public class GetUserProfileRequest {
 		LASTTOKENISSUED("lasttokenissued"),
 		DATELASTLOGIN("dateLastLogin"),
 		AUTHORIZATION_UNUSEDROLES("authorization.unusedRoles"),
-		TEAM("team");
+		TEAM("team"),
+		WORKPLANBIDRANKS("workPlanBidRanks");
 
 		private String value;
 

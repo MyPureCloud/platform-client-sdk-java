@@ -135,6 +135,7 @@ public class V2MobiusRulesTopicRule  implements Serializable {
   }
   private ActionEnum action = null;
   private Date dateCreated = null;
+  private Boolean sendExitingAlarmNotification = null;
 
   
   /**
@@ -307,6 +308,23 @@ public class V2MobiusRulesTopicRule  implements Serializable {
   }
 
 
+  /**
+   **/
+  public V2MobiusRulesTopicRule sendExitingAlarmNotification(Boolean sendExitingAlarmNotification) {
+    this.sendExitingAlarmNotification = sendExitingAlarmNotification;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("sendExitingAlarmNotification")
+  public Boolean getSendExitingAlarmNotification() {
+    return sendExitingAlarmNotification;
+  }
+  public void setSendExitingAlarmNotification(Boolean sendExitingAlarmNotification) {
+    this.sendExitingAlarmNotification = sendExitingAlarmNotification;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -326,12 +344,13 @@ public class V2MobiusRulesTopicRule  implements Serializable {
             Objects.equals(this.enabled, v2MobiusRulesTopicRule.enabled) &&
             Objects.equals(this.inAlarm, v2MobiusRulesTopicRule.inAlarm) &&
             Objects.equals(this.action, v2MobiusRulesTopicRule.action) &&
-            Objects.equals(this.dateCreated, v2MobiusRulesTopicRule.dateCreated);
+            Objects.equals(this.dateCreated, v2MobiusRulesTopicRule.dateCreated) &&
+            Objects.equals(this.sendExitingAlarmNotification, v2MobiusRulesTopicRule.sendExitingAlarmNotification);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, userId, name, type, notifications, conditions, enabled, inAlarm, action, dateCreated);
+    return Objects.hash(id, userId, name, type, notifications, conditions, enabled, inAlarm, action, dateCreated, sendExitingAlarmNotification);
   }
 
   @Override
@@ -349,6 +368,7 @@ public class V2MobiusRulesTopicRule  implements Serializable {
     sb.append("    inAlarm: ").append(toIndentedString(inAlarm)).append("\n");
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    sendExitingAlarmNotification: ").append(toIndentedString(sendExitingAlarmNotification)).append("\n");
     sb.append("}");
     return sb.toString();
   }
