@@ -35,7 +35,7 @@ public class SessionSegmentAssignment  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The segment that was assigned.")
+  @ApiModelProperty(example = "null", required = true, value = "The segment that was assigned.")
   @JsonProperty("segment")
   public AssignedSegment getSegment() {
     return segment;
@@ -53,7 +53,7 @@ public class SessionSegmentAssignment  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Timestamp indicating when the segment was assigned. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", required = true, value = "Timestamp indicating when the segment was assigned. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("assignedDate")
   public Date getAssignedDate() {
     return assignedDate;

@@ -9,7 +9,7 @@ title: JourneyPattern
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **criteria** | <!----><!---->[**List&lt;Criteria&gt;**](Criteria.html)<!----> | A list of one or more criteria to satisfy. |  |
-| **count** | <!----><!---->**Integer**<!----> | The number of times the pattern must match. |  [optional] |
+| **count** | <!----><!---->**Integer**<!----> | The number of times the pattern must match. |  |
 | **streamType** | [**StreamTypeEnum**](#StreamTypeEnum)<!----> | The stream type for which this pattern can be matched on. |  |
 | **sessionType** | <!----><!---->**String**<!----> | The session type for which this pattern can be matched on. |  |
 | **eventName** | <!----><!---->**String**<!----> | The name of the event for which this pattern can be matched on. |  [optional] |

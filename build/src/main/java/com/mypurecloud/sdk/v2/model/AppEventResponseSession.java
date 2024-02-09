@@ -32,10 +32,21 @@ public class AppEventResponseSession  implements Serializable {
   private Date createdDate = null;
 
   
-  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  /**
+   * ID of the app session.
+   **/
+  public AppEventResponseSession id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "ID of the app session.")
   @JsonProperty("id")
   public String getId() {
     return id;
+  }
+  public void setId(String id) {
+    this.id = id;
   }
 
 
@@ -47,7 +58,7 @@ public class AppEventResponseSession  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Indicates how long the customer has been in the app within this session.")
+  @ApiModelProperty(example = "null", required = true, value = "Indicates how long the customer has been in the app within this session.")
   @JsonProperty("durationInSeconds")
   public Integer getDurationInSeconds() {
     return durationInSeconds;
@@ -65,7 +76,7 @@ public class AppEventResponseSession  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The count of all events recorded during this session.")
+  @ApiModelProperty(example = "null", required = true, value = "The count of all events recorded during this session.")
   @JsonProperty("eventCount")
   public Integer getEventCount() {
     return eventCount;
@@ -83,7 +94,7 @@ public class AppEventResponseSession  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The count of all screen views recorded during this session.")
+  @ApiModelProperty(example = "null", required = true, value = "The count of all screen views recorded during this session.")
   @JsonProperty("screenviewCount")
   public Integer getScreenviewCount() {
     return screenviewCount;
@@ -126,7 +137,7 @@ public class AppEventResponseSession  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "UTC timestamp of the session's first event, that is when the session starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", required = true, value = "UTC timestamp of the session's first event, that is when the session starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("createdDate")
   public Date getCreatedDate() {
     return createdDate;

@@ -124,6 +124,20 @@ public class GetAuthorizationDivisionsRequest {
 	    return this;
 	} 
 
+	private List<String> id;
+	public List<String> getId() {
+		return this.id;
+	}
+
+	public void setId(List<String> id) {
+		this.id = id;
+	}
+
+	public GetAuthorizationDivisionsRequest withId(List<String> id) {
+	    this.setId(id);
+	    return this;
+	} 
+
 	private String name;
 	public String getName() {
 		return this.name;
@@ -183,6 +197,9 @@ public class GetAuthorizationDivisionsRequest {
                 .withQueryParameters("objectCount", "", objectCount)
         
 
+                .withQueryParameters("id", "multi", id)
+        
+
                 .withQueryParameters("name", "", name)
         
 		.withCustomHeaders(customHeaders)
@@ -238,6 +255,11 @@ public class GetAuthorizationDivisionsRequest {
 
 		public Builder withObjectCount(Boolean objectCount) {
 			request.setObjectCount(objectCount);
+			return this;
+		}
+
+		public Builder withId(List<String> id) {
+			request.setId(id);
 			return this;
 		}
 

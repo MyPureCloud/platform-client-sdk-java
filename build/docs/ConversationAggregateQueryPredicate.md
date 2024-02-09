@@ -97,7 +97,6 @@ title: ConversationAggregateQueryPredicate
 | QUEUEID | &quot;queueId&quot; | 
 | REMOTE | &quot;remote&quot; | 
 | REMOVEDSKILLID | &quot;removedSkillId&quot; | 
-| REOFFERED | &quot;reoffered&quot; | 
 | REQUESTEDLANGUAGEID | &quot;requestedLanguageId&quot; | 
 | REQUESTEDROUTING | &quot;requestedRouting&quot; | 
 | REQUESTEDROUTINGSKILLID | &quot;requestedRoutingSkillId&quot; | 

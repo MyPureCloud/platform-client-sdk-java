@@ -71,7 +71,7 @@ public class WebActionEvent  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The action map that triggered the action.")
+  @ApiModelProperty(example = "null", required = true, value = "The action map that triggered the action.")
   @JsonProperty("actionMap")
   public ActionEventActionMap getActionMap() {
     return actionMap;
@@ -89,7 +89,7 @@ public class WebActionEvent  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The target for engagement actions.")
+  @ApiModelProperty(example = "null", required = true, value = "The target for engagement actions.")
   @JsonProperty("actionTarget")
   public AddressableEntityRef getActionTarget() {
     return actionTarget;
@@ -161,7 +161,7 @@ public class WebActionEvent  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "HTTP User-Agent string (see https://tools.ietf.org/html/rfc1945#section-10.15).")
+  @ApiModelProperty(example = "null", required = true, value = "HTTP User-Agent string (see https://tools.ietf.org/html/rfc1945#section-10.15).")
   @JsonProperty("userAgentString")
   public String getUserAgentString() {
     return userAgentString;
@@ -179,7 +179,7 @@ public class WebActionEvent  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Customer's browser.")
+  @ApiModelProperty(example = "null", required = true, value = "Customer's browser.")
   @JsonProperty("browser")
   public Browser getBrowser() {
     return browser;
@@ -197,7 +197,7 @@ public class WebActionEvent  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Customer's device.")
+  @ApiModelProperty(example = "null", required = true, value = "Customer's device.")
   @JsonProperty("device")
   public Device getDevice() {
     return device;

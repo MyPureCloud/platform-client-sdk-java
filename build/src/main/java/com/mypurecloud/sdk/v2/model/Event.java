@@ -15,7 +15,6 @@ import com.mypurecloud.sdk.v2.model.AppEvent;
 import com.mypurecloud.sdk.v2.model.EventSession;
 import com.mypurecloud.sdk.v2.model.GenericActionEvent;
 import com.mypurecloud.sdk.v2.model.OutcomeAchievedEvent;
-import com.mypurecloud.sdk.v2.model.SegmentAssignedEvent;
 import com.mypurecloud.sdk.v2.model.SegmentAssignmentEvent;
 import com.mypurecloud.sdk.v2.model.WebActionEvent;
 import com.mypurecloud.sdk.v2.model.WebEvent;
@@ -38,7 +37,6 @@ public class Event  implements Serializable {
   private String eventType = null;
   private GenericActionEvent genericActionEvent = null;
   private OutcomeAchievedEvent outcomeAchievedEvent = null;
-  private SegmentAssignedEvent segmentAssignedEvent = null;
   private SegmentAssignmentEvent segmentAssignmentEvent = null;
   private WebActionEvent webActionEvent = null;
   private WebEvent webEvent = null;
@@ -54,7 +52,7 @@ public class Event  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "System-generated UUID for the event.")
+  @ApiModelProperty(example = "null", required = true, value = "System-generated UUID for the event.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -64,10 +62,21 @@ public class Event  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "UUID corresponding to triggering action that caused this event (e.g. HTTP POST, SIP invite, another event).")
+  /**
+   * UUID corresponding to triggering action that caused this event (e.g. HTTP POST, SIP invite, another event).
+   **/
+  public Event correlationId(String correlationId) {
+    this.correlationId = correlationId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "UUID corresponding to triggering action that caused this event (e.g. HTTP POST, SIP invite, another event).")
   @JsonProperty("correlationId")
   public String getCorrelationId() {
     return correlationId;
+  }
+  public void setCorrelationId(String correlationId) {
+    this.correlationId = correlationId;
   }
 
 
@@ -115,7 +124,7 @@ public class Event  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The session that the event belongs to.")
+  @ApiModelProperty(example = "null", required = true, value = "The session that the event belongs to.")
   @JsonProperty("session")
   public EventSession getSession() {
     return session;
@@ -176,24 +185,6 @@ public class Event  implements Serializable {
   }
   public void setOutcomeAchievedEvent(OutcomeAchievedEvent outcomeAchievedEvent) {
     this.outcomeAchievedEvent = outcomeAchievedEvent;
-  }
-
-
-  /**
-   * Event that represents a segment being assigned (deprecated).
-   **/
-  public Event segmentAssignedEvent(SegmentAssignedEvent segmentAssignedEvent) {
-    this.segmentAssignedEvent = segmentAssignedEvent;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Event that represents a segment being assigned (deprecated).")
-  @JsonProperty("segmentAssignedEvent")
-  public SegmentAssignedEvent getSegmentAssignedEvent() {
-    return segmentAssignedEvent;
-  }
-  public void setSegmentAssignedEvent(SegmentAssignedEvent segmentAssignedEvent) {
-    this.segmentAssignedEvent = segmentAssignedEvent;
   }
 
 
@@ -277,7 +268,7 @@ public class Event  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Timestamp indicating when the event actually took place. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", required = true, value = "Timestamp indicating when the event actually took place. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("createdDate")
   public Date getCreatedDate() {
     return createdDate;
@@ -305,7 +296,6 @@ public class Event  implements Serializable {
             Objects.equals(this.eventType, event.eventType) &&
             Objects.equals(this.genericActionEvent, event.genericActionEvent) &&
             Objects.equals(this.outcomeAchievedEvent, event.outcomeAchievedEvent) &&
-            Objects.equals(this.segmentAssignedEvent, event.segmentAssignedEvent) &&
             Objects.equals(this.segmentAssignmentEvent, event.segmentAssignmentEvent) &&
             Objects.equals(this.webActionEvent, event.webActionEvent) &&
             Objects.equals(this.webEvent, event.webEvent) &&
@@ -315,7 +305,7 @@ public class Event  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, correlationId, customerId, customerIdType, session, eventType, genericActionEvent, outcomeAchievedEvent, segmentAssignedEvent, segmentAssignmentEvent, webActionEvent, webEvent, appEvent, createdDate);
+    return Objects.hash(id, correlationId, customerId, customerIdType, session, eventType, genericActionEvent, outcomeAchievedEvent, segmentAssignmentEvent, webActionEvent, webEvent, appEvent, createdDate);
   }
 
   @Override
@@ -331,7 +321,6 @@ public class Event  implements Serializable {
     sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
     sb.append("    genericActionEvent: ").append(toIndentedString(genericActionEvent)).append("\n");
     sb.append("    outcomeAchievedEvent: ").append(toIndentedString(outcomeAchievedEvent)).append("\n");
-    sb.append("    segmentAssignedEvent: ").append(toIndentedString(segmentAssignedEvent)).append("\n");
     sb.append("    segmentAssignmentEvent: ").append(toIndentedString(segmentAssignmentEvent)).append("\n");
     sb.append("    webActionEvent: ").append(toIndentedString(webActionEvent)).append("\n");
     sb.append("    webEvent: ").append(toIndentedString(webEvent)).append("\n");

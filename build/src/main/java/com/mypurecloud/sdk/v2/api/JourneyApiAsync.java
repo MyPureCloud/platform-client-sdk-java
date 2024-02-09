@@ -35,6 +35,7 @@ import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
 import com.mypurecloud.sdk.v2.model.JourneyAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.JourneyAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.JourneySegment;
+import com.mypurecloud.sdk.v2.model.JourneySegmentRequest;
 import com.mypurecloud.sdk.v2.model.Outcome;
 import com.mypurecloud.sdk.v2.model.OutcomeAttributionAsyncResponse;
 import com.mypurecloud.sdk.v2.model.OutcomeAttributionJobStateResponse;
@@ -44,6 +45,7 @@ import com.mypurecloud.sdk.v2.model.OutcomeListing;
 import com.mypurecloud.sdk.v2.model.OutcomePredictor;
 import com.mypurecloud.sdk.v2.model.OutcomePredictorListing;
 import com.mypurecloud.sdk.v2.model.OutcomePredictorRequest;
+import com.mypurecloud.sdk.v2.model.OutcomeRequest;
 import com.mypurecloud.sdk.v2.model.OutcomeScoresResult;
 import com.mypurecloud.sdk.v2.model.PatchActionMap;
 import com.mypurecloud.sdk.v2.model.PatchActionTarget;
@@ -3171,7 +3173,7 @@ public class JourneyApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Outcome>> postJourneyOutcomesAsync(ApiRequest<Outcome> request, final AsyncApiCallback<ApiResponse<Outcome>> callback) {
+  public Future<ApiResponse<Outcome>> postJourneyOutcomesAsync(ApiRequest<OutcomeRequest> request, final AsyncApiCallback<ApiResponse<Outcome>> callback) {
     try {
       final SettableFuture<ApiResponse<Outcome>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -3398,7 +3400,7 @@ public class JourneyApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<JourneySegment>> postJourneySegmentsAsync(ApiRequest<JourneySegment> request, final AsyncApiCallback<ApiResponse<JourneySegment>> callback) {
+  public Future<ApiResponse<JourneySegment>> postJourneySegmentsAsync(ApiRequest<JourneySegmentRequest> request, final AsyncApiCallback<ApiResponse<JourneySegment>> callback) {
     try {
       final SettableFuture<ApiResponse<JourneySegment>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

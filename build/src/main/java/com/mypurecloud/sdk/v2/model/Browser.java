@@ -168,7 +168,7 @@ public class Browser  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether Flash is installed.")
+  @ApiModelProperty(example = "null", required = true, value = "Whether Flash is installed.")
   @JsonProperty("featuresFlash")
   public Boolean getFeaturesFlash() {
     return featuresFlash;
@@ -186,7 +186,7 @@ public class Browser  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether Java is installed.")
+  @ApiModelProperty(example = "null", required = true, value = "Whether Java is installed.")
   @JsonProperty("featuresJava")
   public Boolean getFeaturesJava() {
     return featuresJava;
@@ -204,7 +204,7 @@ public class Browser  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether the browser recognizes PDFs.")
+  @ApiModelProperty(example = "null", required = true, value = "Whether the browser recognizes PDFs.")
   @JsonProperty("featuresPdf")
   public Boolean getFeaturesPdf() {
     return featuresPdf;
@@ -222,7 +222,7 @@ public class Browser  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether WebRTC is supported.")
+  @ApiModelProperty(example = "null", required = true, value = "Whether WebRTC is supported.")
   @JsonProperty("featuresWebrtc")
   public Boolean getFeaturesWebrtc() {
     return featuresWebrtc;

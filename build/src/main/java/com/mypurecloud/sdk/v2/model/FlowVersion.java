@@ -133,6 +133,7 @@ public class FlowVersion  implements Serializable {
     SURVEYINVITE("SURVEYINVITE"),
     VOICE("VOICE"),
     VOICEMAIL("VOICEMAIL"),
+    VOICESURVEY("VOICESURVEY"),
     WORKFLOW("WORKFLOW"),
     WORKITEM("WORKITEM");
 

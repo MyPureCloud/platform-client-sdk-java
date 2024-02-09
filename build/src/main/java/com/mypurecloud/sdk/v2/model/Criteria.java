@@ -149,7 +149,7 @@ public class Criteria  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The comparison operator.")
+  @ApiModelProperty(example = "null", required = true, value = "The comparison operator.")
   @JsonProperty("operator")
   public OperatorEnum getOperator() {
     return operator;

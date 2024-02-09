@@ -11,12 +11,11 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.AssociatedValueField;
-import com.mypurecloud.sdk.v2.model.Context;
-import com.mypurecloud.sdk.v2.model.Journey;
+import com.mypurecloud.sdk.v2.model.PatchAssociatedValueField;
+import com.mypurecloud.sdk.v2.model.PatchContext;
+import com.mypurecloud.sdk.v2.model.PatchJourney;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.Date;
 
 import java.io.Serializable;
 /**
@@ -25,27 +24,16 @@ import java.io.Serializable;
 
 public class PatchOutcome  implements Serializable {
   
-  private String id = null;
   private Boolean isActive = null;
   private String displayName = null;
   private Integer version = null;
   private String description = null;
   private Boolean isPositive = null;
-  private Context context = null;
-  private Journey journey = null;
-  private AssociatedValueField associatedValueField = null;
-  private String selfUri = null;
-  private Date createdDate = null;
-  private Date modifiedDate = null;
+  private PatchContext context = null;
+  private PatchJourney journey = null;
+  private PatchAssociatedValueField associatedValueField = null;
 
   
-  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-
-
   /**
    * Whether or not the outcome is active.
    **/
@@ -139,17 +127,17 @@ public class PatchOutcome  implements Serializable {
   /**
    * The context of the outcome.
    **/
-  public PatchOutcome context(Context context) {
+  public PatchOutcome context(PatchContext context) {
     this.context = context;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The context of the outcome.")
   @JsonProperty("context")
-  public Context getContext() {
+  public PatchContext getContext() {
     return context;
   }
-  public void setContext(Context context) {
+  public void setContext(PatchContext context) {
     this.context = context;
   }
 
@@ -157,17 +145,17 @@ public class PatchOutcome  implements Serializable {
   /**
    * The pattern of rules defining the filter of the outcome.
    **/
-  public PatchOutcome journey(Journey journey) {
+  public PatchOutcome journey(PatchJourney journey) {
     this.journey = journey;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The pattern of rules defining the filter of the outcome.")
   @JsonProperty("journey")
-  public Journey getJourney() {
+  public PatchJourney getJourney() {
     return journey;
   }
-  public void setJourney(Journey journey) {
+  public void setJourney(PatchJourney journey) {
     this.journey = journey;
   }
 
@@ -175,61 +163,18 @@ public class PatchOutcome  implements Serializable {
   /**
    * The field from the event indicating the associated value.
    **/
-  public PatchOutcome associatedValueField(AssociatedValueField associatedValueField) {
+  public PatchOutcome associatedValueField(PatchAssociatedValueField associatedValueField) {
     this.associatedValueField = associatedValueField;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The field from the event indicating the associated value.")
   @JsonProperty("associatedValueField")
-  public AssociatedValueField getAssociatedValueField() {
+  public PatchAssociatedValueField getAssociatedValueField() {
     return associatedValueField;
   }
-  public void setAssociatedValueField(AssociatedValueField associatedValueField) {
+  public void setAssociatedValueField(PatchAssociatedValueField associatedValueField) {
     this.associatedValueField = associatedValueField;
-  }
-
-
-  @ApiModelProperty(example = "null", value = "The URI for this object")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-
-
-  /**
-   * Timestamp indicating when the outcome was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-   **/
-  public PatchOutcome createdDate(Date createdDate) {
-    this.createdDate = createdDate;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Timestamp indicating when the outcome was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
-  @JsonProperty("createdDate")
-  public Date getCreatedDate() {
-    return createdDate;
-  }
-  public void setCreatedDate(Date createdDate) {
-    this.createdDate = createdDate;
-  }
-
-
-  /**
-   * Timestamp indicating when the outcome was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-   **/
-  public PatchOutcome modifiedDate(Date modifiedDate) {
-    this.modifiedDate = modifiedDate;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Timestamp indicating when the outcome was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
-  @JsonProperty("modifiedDate")
-  public Date getModifiedDate() {
-    return modifiedDate;
-  }
-  public void setModifiedDate(Date modifiedDate) {
-    this.modifiedDate = modifiedDate;
   }
 
 
@@ -243,23 +188,19 @@ public class PatchOutcome  implements Serializable {
     }
     PatchOutcome patchOutcome = (PatchOutcome) o;
 
-    return Objects.equals(this.id, patchOutcome.id) &&
-            Objects.equals(this.isActive, patchOutcome.isActive) &&
+    return Objects.equals(this.isActive, patchOutcome.isActive) &&
             Objects.equals(this.displayName, patchOutcome.displayName) &&
             Objects.equals(this.version, patchOutcome.version) &&
             Objects.equals(this.description, patchOutcome.description) &&
             Objects.equals(this.isPositive, patchOutcome.isPositive) &&
             Objects.equals(this.context, patchOutcome.context) &&
             Objects.equals(this.journey, patchOutcome.journey) &&
-            Objects.equals(this.associatedValueField, patchOutcome.associatedValueField) &&
-            Objects.equals(this.selfUri, patchOutcome.selfUri) &&
-            Objects.equals(this.createdDate, patchOutcome.createdDate) &&
-            Objects.equals(this.modifiedDate, patchOutcome.modifiedDate);
+            Objects.equals(this.associatedValueField, patchOutcome.associatedValueField);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, isActive, displayName, version, description, isPositive, context, journey, associatedValueField, selfUri, createdDate, modifiedDate);
+    return Objects.hash(isActive, displayName, version, description, isPositive, context, journey, associatedValueField);
   }
 
   @Override
@@ -267,7 +208,6 @@ public class PatchOutcome  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class PatchOutcome {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
@@ -276,9 +216,6 @@ public class PatchOutcome  implements Serializable {
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    journey: ").append(toIndentedString(journey)).append("\n");
     sb.append("    associatedValueField: ").append(toIndentedString(associatedValueField)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
-    sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

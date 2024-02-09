@@ -8,7 +8,7 @@ title: ConversationChannel
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type or category of this channel. |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type or category of this channel. |  |
 | **messageType** | [**MessageTypeEnum**](#MessageTypeEnum)<!----> | Message type for messaging conversations. |  [optional] |
 | **platform** | <!----><!---->**String**<!----> | The source provider for the conversation (e.g. Edge, PureCloud Messaging, PureCloud Email). |  [optional] |
 {: class="table table-striped"}

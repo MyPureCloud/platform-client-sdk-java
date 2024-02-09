@@ -13,16 +13,21 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobRequest;
+import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FunctionUploadRequest;
 import com.mypurecloud.sdk.v2.model.FunctionUploadResponse;
+import com.mypurecloud.sdk.v2.model.GetUploadSourceUrlJobStatusResponse;
 import com.mypurecloud.sdk.v2.model.LearningCoverArtUploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 
 
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseUploadsUrlsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionDraftFunctionUploadRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeDocumentuploadsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseUploadsUrlsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingMinerUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUploadsLearningCoverartRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUploadsPublicassetsImagesRequest;
@@ -45,6 +50,83 @@ public class UploadsApiAsync {
 
   public UploadsApiAsync(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Get content upload from URL job status
+   * 
+   * getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GetUploadSourceUrlJobStatusResponse> getKnowledgeKnowledgebaseUploadsUrlsJobAsync(GetKnowledgeKnowledgebaseUploadsUrlsJobRequest request, final AsyncApiCallback<GetUploadSourceUrlJobStatusResponse> callback) {
+    try {
+      final SettableFuture<GetUploadSourceUrlJobStatusResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GetUploadSourceUrlJobStatusResponse>() {}, new AsyncApiCallback<ApiResponse<GetUploadSourceUrlJobStatusResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<GetUploadSourceUrlJobStatusResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get content upload from URL job status
+   * 
+   * getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GetUploadSourceUrlJobStatusResponse>> getKnowledgeKnowledgebaseUploadsUrlsJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GetUploadSourceUrlJobStatusResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GetUploadSourceUrlJobStatusResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GetUploadSourceUrlJobStatusResponse>() {}, new AsyncApiCallback<ApiResponse<GetUploadSourceUrlJobStatusResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<GetUploadSourceUrlJobStatusResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GetUploadSourceUrlJobStatusResponse> response = (ApiResponse<GetUploadSourceUrlJobStatusResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GetUploadSourceUrlJobStatusResponse> response = (ApiResponse<GetUploadSourceUrlJobStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   /**
@@ -188,6 +270,83 @@ public class UploadsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create content upload from URL job
+   * 
+   * postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CreateUploadSourceUrlJobResponse> postKnowledgeKnowledgebaseUploadsUrlsJobsAsync(PostKnowledgeKnowledgebaseUploadsUrlsJobsRequest request, final AsyncApiCallback<CreateUploadSourceUrlJobResponse> callback) {
+    try {
+      final SettableFuture<CreateUploadSourceUrlJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CreateUploadSourceUrlJobResponse>() {}, new AsyncApiCallback<ApiResponse<CreateUploadSourceUrlJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CreateUploadSourceUrlJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create content upload from URL job
+   * 
+   * postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CreateUploadSourceUrlJobResponse>> postKnowledgeKnowledgebaseUploadsUrlsJobsAsync(ApiRequest<CreateUploadSourceUrlJobRequest> request, final AsyncApiCallback<ApiResponse<CreateUploadSourceUrlJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CreateUploadSourceUrlJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CreateUploadSourceUrlJobResponse>() {}, new AsyncApiCallback<ApiResponse<CreateUploadSourceUrlJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CreateUploadSourceUrlJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CreateUploadSourceUrlJobResponse> response = (ApiResponse<CreateUploadSourceUrlJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CreateUploadSourceUrlJobResponse> response = (ApiResponse<CreateUploadSourceUrlJobResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

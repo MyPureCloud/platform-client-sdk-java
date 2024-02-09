@@ -126,6 +126,7 @@ public class TaskManagementAggregationQuery  implements Serializable {
     NWORKITEMSTRANSFERRED("nWorkitemsTransferred"),
     NWORKITEMSWRAPUPADDED("nWorkitemsWrapupAdded"),
     NWORKITEMSWRAPUPREMOVED("nWorkitemsWrapupRemoved"),
+    OWORKITEMSSERVICELEVEL("oWorkitemsServiceLevel"),
     TWORKITEMSALERT("tWorkitemsAlert"),
     TWORKITEMSANSWERED("tWorkitemsAnswered"),
     TWORKITEMSDIRECTANSWERED("tWorkitemsDirectAnswered"),

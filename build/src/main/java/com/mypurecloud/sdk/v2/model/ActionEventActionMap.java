@@ -28,13 +28,14 @@ public class ActionEventActionMap  implements Serializable {
 
   
   /**
+   * The ID of the action map.
    **/
   public ActionEventActionMap id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "The ID of the action map.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -69,7 +70,7 @@ public class ActionEventActionMap  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The version of the action map.")
+  @ApiModelProperty(example = "null", required = true, value = "The version of the action map.")
   @JsonProperty("version")
   public Integer getVersion() {
     return version;

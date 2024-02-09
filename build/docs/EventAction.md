@@ -9,10 +9,10 @@ title: EventAction
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> | ID of the action. |  |
-| **state** | [**StateEnum**](#StateEnum)<!----> | Current state of the action (e.g. qualified, succeeded, errored). |  [optional] |
-| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> | The media type used to deliver the action (e.g. email, webhook). |  [optional] |
-| **prompt** | <!----><!---->**String**<!----> | Prompt of the action to be displayed/sent to the visitor. |  [optional] |
-| **createdDate** | <!----><!---->[**Date**](Date.html)<!----> | Timestamp indicating when the action was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **state** | [**StateEnum**](#StateEnum)<!----> | Current state of the action (e.g. qualified, succeeded, errored). |  |
+| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> | The media type used to deliver the action (e.g. email, webhook). |  |
+| **prompt** | <!----><!---->**String**<!----> | Prompt of the action to be displayed/sent to the visitor. |  |
+| **createdDate** | <!----><!---->[**Date**](Date.html)<!----> | Timestamp indicating when the action was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
 {: class="table table-striped"}
 
 

@@ -68,6 +68,7 @@ title: TaskManagementAggregationQuery
 | NWORKITEMSTRANSFERRED | &quot;nWorkitemsTransferred&quot; |
 | NWORKITEMSWRAPUPADDED | &quot;nWorkitemsWrapupAdded&quot; |
 | NWORKITEMSWRAPUPREMOVED | &quot;nWorkitemsWrapupRemoved&quot; |
+| OWORKITEMSSERVICELEVEL | &quot;oWorkitemsServiceLevel&quot; |
 | TWORKITEMSALERT | &quot;tWorkitemsAlert&quot; |
 | TWORKITEMSANSWERED | &quot;tWorkitemsAnswered&quot; |
 | TWORKITEMSDIRECTANSWERED | &quot;tWorkitemsDirectAnswered&quot; |

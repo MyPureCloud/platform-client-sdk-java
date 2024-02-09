@@ -27,13 +27,14 @@ public class EventSession  implements Serializable {
 
   
   /**
+   * The ID of the session.
    **/
   public EventSession id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "The ID of the session.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -68,7 +69,7 @@ public class EventSession  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Session types indicate the type or category of sessions (e.g. web, app).")
+  @ApiModelProperty(example = "null", required = true, value = "Session types indicate the type or category of sessions (e.g. web, app).")
   @JsonProperty("type")
   public String getType() {
     return type;

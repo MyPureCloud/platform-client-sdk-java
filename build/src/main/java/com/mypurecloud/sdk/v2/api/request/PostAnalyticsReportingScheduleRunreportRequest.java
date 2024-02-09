@@ -76,6 +76,8 @@ import com.mypurecloud.sdk.v2.model.KnowledgeAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.PropertyIndexRequest;
 import com.mypurecloud.sdk.v2.model.QueueObservationQuery;
 import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
+import com.mypurecloud.sdk.v2.model.RateLimitAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.RateLimitAggregationQuery;
 import com.mypurecloud.sdk.v2.model.ReportMetaData;
 import com.mypurecloud.sdk.v2.model.ReportMetaDataEntityListing;
 import com.mypurecloud.sdk.v2.model.ReportRunEntry;

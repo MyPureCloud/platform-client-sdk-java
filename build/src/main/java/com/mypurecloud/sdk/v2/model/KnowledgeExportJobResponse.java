@@ -78,6 +78,7 @@ public class KnowledgeExportJobResponse  implements Serializable {
     }
   }
   private FileTypeEnum fileType = null;
+  private Integer jsonFileVersion = null;
   private Integer countDocumentProcessed = null;
   private KnowledgeExportJobFilter exportFilter = null;
 
@@ -196,6 +197,24 @@ public class KnowledgeExportJobResponse  implements Serializable {
   }
   public void setFileType(FileTypeEnum fileType) {
     this.fileType = fileType;
+  }
+
+
+  /**
+   * Requested version of the exported json file.
+   **/
+  public KnowledgeExportJobResponse jsonFileVersion(Integer jsonFileVersion) {
+    this.jsonFileVersion = jsonFileVersion;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Requested version of the exported json file.")
+  @JsonProperty("jsonFileVersion")
+  public Integer getJsonFileVersion() {
+    return jsonFileVersion;
+  }
+  public void setJsonFileVersion(Integer jsonFileVersion) {
+    this.jsonFileVersion = jsonFileVersion;
   }
 
 
@@ -363,6 +382,7 @@ public class KnowledgeExportJobResponse  implements Serializable {
     return Objects.equals(this.id, knowledgeExportJobResponse.id) &&
             Objects.equals(this.downloadURL, knowledgeExportJobResponse.downloadURL) &&
             Objects.equals(this.fileType, knowledgeExportJobResponse.fileType) &&
+            Objects.equals(this.jsonFileVersion, knowledgeExportJobResponse.jsonFileVersion) &&
             Objects.equals(this.countDocumentProcessed, knowledgeExportJobResponse.countDocumentProcessed) &&
             Objects.equals(this.exportFilter, knowledgeExportJobResponse.exportFilter) &&
             Objects.equals(this.status, knowledgeExportJobResponse.status) &&
@@ -376,7 +396,7 @@ public class KnowledgeExportJobResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, downloadURL, fileType, countDocumentProcessed, exportFilter, status, knowledgeBase, createdBy, dateCreated, dateModified, errorInformation, selfUri);
+    return Objects.hash(id, downloadURL, fileType, jsonFileVersion, countDocumentProcessed, exportFilter, status, knowledgeBase, createdBy, dateCreated, dateModified, errorInformation, selfUri);
   }
 
   @Override
@@ -387,6 +407,7 @@ public class KnowledgeExportJobResponse  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    downloadURL: ").append(toIndentedString(downloadURL)).append("\n");
     sb.append("    fileType: ").append(toIndentedString(fileType)).append("\n");
+    sb.append("    jsonFileVersion: ").append(toIndentedString(jsonFileVersion)).append("\n");
     sb.append("    countDocumentProcessed: ").append(toIndentedString(countDocumentProcessed)).append("\n");
     sb.append("    exportFilter: ").append(toIndentedString(exportFilter)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");

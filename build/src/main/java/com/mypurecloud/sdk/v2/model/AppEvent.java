@@ -54,7 +54,7 @@ public class AppEvent  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Represents the action the customer performed. A good event name is typically an object followed by the action performed in past tense (e.g. screen_viewed, order_completed, user_registered).")
+  @ApiModelProperty(example = "null", required = true, value = "Represents the action the customer performed. A good event name is typically an object followed by the action performed in past tense (e.g. screen_viewed, order_completed, user_registered).")
   @JsonProperty("eventName")
   public String getEventName() {
     return eventName;
@@ -72,7 +72,7 @@ public class AppEvent  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The name of the screen in the app that the event took place.")
+  @ApiModelProperty(example = "null", required = true, value = "The name of the screen in the app that the event took place.")
   @JsonProperty("screenName")
   public String getScreenName() {
     return screenName;
@@ -90,7 +90,7 @@ public class AppEvent  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Application that the customer is interacting with.")
+  @ApiModelProperty(example = "null", required = true, value = "Application that the customer is interacting with.")
   @JsonProperty("app")
   public JourneyApp getApp() {
     return app;
@@ -108,7 +108,7 @@ public class AppEvent  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Customer's device.")
+  @ApiModelProperty(example = "null", required = true, value = "Customer's device.")
   @JsonProperty("device")
   public Device getDevice() {
     return device;
@@ -252,7 +252,7 @@ public class AppEvent  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "User-defined attributes associated with a particular event.")
+  @ApiModelProperty(example = "null", required = true, value = "User-defined attributes associated with a particular event.")
   @JsonProperty("attributes")
   public Map<String, CustomEventAttribute> getAttributes() {
     return attributes;
@@ -270,7 +270,7 @@ public class AppEvent  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Traits are attributes intrinsic to the customer that may be sent in selected events. Examples are email, name, phone.")
+  @ApiModelProperty(example = "null", required = true, value = "Traits are attributes intrinsic to the customer that may be sent in selected events. Examples are email, name, phone.")
   @JsonProperty("traits")
   public Map<String, CustomEventAttribute> getTraits() {
     return traits;

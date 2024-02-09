@@ -236,7 +236,7 @@ public class Referrer  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Type of referrer (e.g. search, social).")
+  @ApiModelProperty(example = "null", required = true, value = "Type of referrer (e.g. search, social).")
   @JsonProperty("medium")
   public MediumEnum getMedium() {
     return medium;

@@ -16,10 +16,13 @@ import com.mypurecloud.sdk.v2.model.CategoryListing;
 import com.mypurecloud.sdk.v2.model.CategoryResponse;
 import com.mypurecloud.sdk.v2.model.CategoryResponseListing;
 import com.mypurecloud.sdk.v2.model.CategoryUpdateRequest;
+import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobRequest;
+import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobResponse;
 import com.mypurecloud.sdk.v2.model.DocumentListing;
 import com.mypurecloud.sdk.v2.model.DocumentVariation;
 import com.mypurecloud.sdk.v2.model.DocumentVariationListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.GetUploadSourceUrlJobStatusResponse;
 import com.mypurecloud.sdk.v2.model.GuestCategoryResponseListing;
 import com.mypurecloud.sdk.v2.model.ImportStatusRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeBase;
@@ -64,6 +67,10 @@ import com.mypurecloud.sdk.v2.model.KnowledgeGuestSession;
 import com.mypurecloud.sdk.v2.model.KnowledgeImport;
 import com.mypurecloud.sdk.v2.model.KnowledgeImportJobRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeImportJobResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeParseJobRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeParseJobRequestImport;
+import com.mypurecloud.sdk.v2.model.KnowledgeParseJobRequestPatch;
+import com.mypurecloud.sdk.v2.model.KnowledgeParseJobResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeTraining;
@@ -125,9 +132,11 @@ import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageTrain
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageTrainingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseOperationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseOperationsUsersQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseParseJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseUnansweredGroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseUnansweredGroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseUploadsUrlsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebasesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeGuestSessionDocumentsSearchSearchIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseRequest;
@@ -141,6 +150,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseLanguageCat
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseLanguageDocumentRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseLanguageDocumentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseLanguageDocumentsImportRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseParseJobRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeDocumentuploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentFeedbackRequest;
@@ -167,7 +177,10 @@ import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseLanguageDocu
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseLanguageDocumentsImportsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseLanguageTrainingPromoteRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseLanguageTrainingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseParseJobImportRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseParseJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseUploadsUrlsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebasesRequest;
 
 import java.io.IOException;
@@ -3893,6 +3906,96 @@ public class KnowledgeApi {
   }
 
   /**
+   * Get parse job report
+   * 
+   * getKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param parseJobId Parse job ID (required)
+   * @param expand If expand contains 'urls' downloadURL and failedEntitiesURL will be filled. (optional)
+   * @return KnowledgeParseJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeParseJobResponse getKnowledgeKnowledgebaseParseJob(String knowledgeBaseId, String parseJobId, List<String> expand) throws IOException, ApiException {
+    return  getKnowledgeKnowledgebaseParseJob(createGetKnowledgeKnowledgebaseParseJobRequest(knowledgeBaseId, parseJobId, expand));
+  }
+
+  /**
+   * Get parse job report
+   * 
+   * getKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param parseJobId Parse job ID (required)
+   * @param expand If expand contains 'urls' downloadURL and failedEntitiesURL will be filled. (optional)
+   * @return KnowledgeParseJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeParseJobResponse> getKnowledgeKnowledgebaseParseJobWithHttpInfo(String knowledgeBaseId, String parseJobId, List<String> expand) throws IOException {
+    return getKnowledgeKnowledgebaseParseJob(createGetKnowledgeKnowledgebaseParseJobRequest(knowledgeBaseId, parseJobId, expand).withHttpInfo());
+  }
+
+  private GetKnowledgeKnowledgebaseParseJobRequest createGetKnowledgeKnowledgebaseParseJobRequest(String knowledgeBaseId, String parseJobId, List<String> expand) {
+    return GetKnowledgeKnowledgebaseParseJobRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withParseJobId(parseJobId)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Get parse job report
+   * 
+   * getKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return KnowledgeParseJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeParseJobResponse getKnowledgeKnowledgebaseParseJob(GetKnowledgeKnowledgebaseParseJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeParseJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeParseJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get parse job report
+   * 
+   * getKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeParseJobResponse> getKnowledgeKnowledgebaseParseJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeParseJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeParseJobResponse> response = (ApiResponse<KnowledgeParseJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeParseJobResponse> response = (ApiResponse<KnowledgeParseJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get knowledge base unanswered group for a particular groupId
    * 
    * @param knowledgeBaseId Knowledge base ID (required)
@@ -4170,6 +4273,92 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UnansweredGroups> response = (ApiResponse<UnansweredGroups>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get content upload from URL job status
+   * 
+   * getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param jobId Upload job ID (required)
+   * @return GetUploadSourceUrlJobStatusResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GetUploadSourceUrlJobStatusResponse getKnowledgeKnowledgebaseUploadsUrlsJob(String knowledgeBaseId, String jobId) throws IOException, ApiException {
+    return  getKnowledgeKnowledgebaseUploadsUrlsJob(createGetKnowledgeKnowledgebaseUploadsUrlsJobRequest(knowledgeBaseId, jobId));
+  }
+
+  /**
+   * Get content upload from URL job status
+   * 
+   * getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param jobId Upload job ID (required)
+   * @return GetUploadSourceUrlJobStatusResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GetUploadSourceUrlJobStatusResponse> getKnowledgeKnowledgebaseUploadsUrlsJobWithHttpInfo(String knowledgeBaseId, String jobId) throws IOException {
+    return getKnowledgeKnowledgebaseUploadsUrlsJob(createGetKnowledgeKnowledgebaseUploadsUrlsJobRequest(knowledgeBaseId, jobId).withHttpInfo());
+  }
+
+  private GetKnowledgeKnowledgebaseUploadsUrlsJobRequest createGetKnowledgeKnowledgebaseUploadsUrlsJobRequest(String knowledgeBaseId, String jobId) {
+    return GetKnowledgeKnowledgebaseUploadsUrlsJobRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get content upload from URL job status
+   * 
+   * getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return GetUploadSourceUrlJobStatusResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GetUploadSourceUrlJobStatusResponse getKnowledgeKnowledgebaseUploadsUrlsJob(GetKnowledgeKnowledgebaseUploadsUrlsJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GetUploadSourceUrlJobStatusResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GetUploadSourceUrlJobStatusResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get content upload from URL job status
+   * 
+   * getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GetUploadSourceUrlJobStatusResponse> getKnowledgeKnowledgebaseUploadsUrlsJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GetUploadSourceUrlJobStatusResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GetUploadSourceUrlJobStatusResponse> response = (ApiResponse<GetUploadSourceUrlJobStatusResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GetUploadSourceUrlJobStatusResponse> response = (ApiResponse<GetUploadSourceUrlJobStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5334,6 +5523,93 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<KnowledgeImport> response = (ApiResponse<KnowledgeImport>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Send update to the parse operation
+   * 
+   * patchKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param parseJobId Parse job ID (required)
+   * @param body  (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchKnowledgeKnowledgebaseParseJob(String knowledgeBaseId, String parseJobId, KnowledgeParseJobRequestPatch body) throws IOException, ApiException {
+     patchKnowledgeKnowledgebaseParseJob(createPatchKnowledgeKnowledgebaseParseJobRequest(knowledgeBaseId, parseJobId, body));
+  }
+
+  /**
+   * Send update to the parse operation
+   * 
+   * patchKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param parseJobId Parse job ID (required)
+   * @param body  (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchKnowledgeKnowledgebaseParseJobWithHttpInfo(String knowledgeBaseId, String parseJobId, KnowledgeParseJobRequestPatch body) throws IOException {
+    return patchKnowledgeKnowledgebaseParseJob(createPatchKnowledgeKnowledgebaseParseJobRequest(knowledgeBaseId, parseJobId, body).withHttpInfo());
+  }
+
+  private PatchKnowledgeKnowledgebaseParseJobRequest createPatchKnowledgeKnowledgebaseParseJobRequest(String knowledgeBaseId, String parseJobId, KnowledgeParseJobRequestPatch body) {
+    return PatchKnowledgeKnowledgebaseParseJobRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withParseJobId(parseJobId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Send update to the parse operation
+   * 
+   * patchKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchKnowledgeKnowledgebaseParseJob(PatchKnowledgeKnowledgebaseParseJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Send update to the parse operation
+   * 
+   * patchKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchKnowledgeKnowledgebaseParseJob(ApiRequest<KnowledgeParseJobRequestPatch> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -7560,6 +7836,179 @@ public class KnowledgeApi {
   }
 
   /**
+   * Import the parsed articles
+   * 
+   * postKnowledgeKnowledgebaseParseJobImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param parseJobId Parse job ID (required)
+   * @param body  (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postKnowledgeKnowledgebaseParseJobImport(String knowledgeBaseId, String parseJobId, KnowledgeParseJobRequestImport body) throws IOException, ApiException {
+     postKnowledgeKnowledgebaseParseJobImport(createPostKnowledgeKnowledgebaseParseJobImportRequest(knowledgeBaseId, parseJobId, body));
+  }
+
+  /**
+   * Import the parsed articles
+   * 
+   * postKnowledgeKnowledgebaseParseJobImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param parseJobId Parse job ID (required)
+   * @param body  (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postKnowledgeKnowledgebaseParseJobImportWithHttpInfo(String knowledgeBaseId, String parseJobId, KnowledgeParseJobRequestImport body) throws IOException {
+    return postKnowledgeKnowledgebaseParseJobImport(createPostKnowledgeKnowledgebaseParseJobImportRequest(knowledgeBaseId, parseJobId, body).withHttpInfo());
+  }
+
+  private PostKnowledgeKnowledgebaseParseJobImportRequest createPostKnowledgeKnowledgebaseParseJobImportRequest(String knowledgeBaseId, String parseJobId, KnowledgeParseJobRequestImport body) {
+    return PostKnowledgeKnowledgebaseParseJobImportRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withParseJobId(parseJobId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Import the parsed articles
+   * 
+   * postKnowledgeKnowledgebaseParseJobImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postKnowledgeKnowledgebaseParseJobImport(PostKnowledgeKnowledgebaseParseJobImportRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Import the parsed articles
+   * 
+   * postKnowledgeKnowledgebaseParseJobImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postKnowledgeKnowledgebaseParseJobImport(ApiRequest<KnowledgeParseJobRequestImport> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create parse job
+   * 
+   * postKnowledgeKnowledgebaseParseJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param body  (required)
+   * @return KnowledgeParseJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeParseJobResponse postKnowledgeKnowledgebaseParseJobs(String knowledgeBaseId, KnowledgeParseJobRequest body) throws IOException, ApiException {
+    return  postKnowledgeKnowledgebaseParseJobs(createPostKnowledgeKnowledgebaseParseJobsRequest(knowledgeBaseId, body));
+  }
+
+  /**
+   * Create parse job
+   * 
+   * postKnowledgeKnowledgebaseParseJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param body  (required)
+   * @return KnowledgeParseJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeParseJobResponse> postKnowledgeKnowledgebaseParseJobsWithHttpInfo(String knowledgeBaseId, KnowledgeParseJobRequest body) throws IOException {
+    return postKnowledgeKnowledgebaseParseJobs(createPostKnowledgeKnowledgebaseParseJobsRequest(knowledgeBaseId, body).withHttpInfo());
+  }
+
+  private PostKnowledgeKnowledgebaseParseJobsRequest createPostKnowledgeKnowledgebaseParseJobsRequest(String knowledgeBaseId, KnowledgeParseJobRequest body) {
+    return PostKnowledgeKnowledgebaseParseJobsRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create parse job
+   * 
+   * postKnowledgeKnowledgebaseParseJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return KnowledgeParseJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeParseJobResponse postKnowledgeKnowledgebaseParseJobs(PostKnowledgeKnowledgebaseParseJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeParseJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeParseJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create parse job
+   * 
+   * postKnowledgeKnowledgebaseParseJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeParseJobResponse> postKnowledgeKnowledgebaseParseJobs(ApiRequest<KnowledgeParseJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeParseJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeParseJobResponse> response = (ApiResponse<KnowledgeParseJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeParseJobResponse> response = (ApiResponse<KnowledgeParseJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Search Documents
    * 
    * @param knowledgeBaseId Knowledge base ID (required)
@@ -7641,6 +8090,92 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<KnowledgeSearchResponse> response = (ApiResponse<KnowledgeSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create content upload from URL job
+   * 
+   * postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param body uploadRequest (required)
+   * @return CreateUploadSourceUrlJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CreateUploadSourceUrlJobResponse postKnowledgeKnowledgebaseUploadsUrlsJobs(String knowledgeBaseId, CreateUploadSourceUrlJobRequest body) throws IOException, ApiException {
+    return  postKnowledgeKnowledgebaseUploadsUrlsJobs(createPostKnowledgeKnowledgebaseUploadsUrlsJobsRequest(knowledgeBaseId, body));
+  }
+
+  /**
+   * Create content upload from URL job
+   * 
+   * postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param body uploadRequest (required)
+   * @return CreateUploadSourceUrlJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CreateUploadSourceUrlJobResponse> postKnowledgeKnowledgebaseUploadsUrlsJobsWithHttpInfo(String knowledgeBaseId, CreateUploadSourceUrlJobRequest body) throws IOException {
+    return postKnowledgeKnowledgebaseUploadsUrlsJobs(createPostKnowledgeKnowledgebaseUploadsUrlsJobsRequest(knowledgeBaseId, body).withHttpInfo());
+  }
+
+  private PostKnowledgeKnowledgebaseUploadsUrlsJobsRequest createPostKnowledgeKnowledgebaseUploadsUrlsJobsRequest(String knowledgeBaseId, CreateUploadSourceUrlJobRequest body) {
+    return PostKnowledgeKnowledgebaseUploadsUrlsJobsRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create content upload from URL job
+   * 
+   * postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return CreateUploadSourceUrlJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CreateUploadSourceUrlJobResponse postKnowledgeKnowledgebaseUploadsUrlsJobs(PostKnowledgeKnowledgebaseUploadsUrlsJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CreateUploadSourceUrlJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CreateUploadSourceUrlJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create content upload from URL job
+   * 
+   * postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CreateUploadSourceUrlJobResponse> postKnowledgeKnowledgebaseUploadsUrlsJobs(ApiRequest<CreateUploadSourceUrlJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CreateUploadSourceUrlJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CreateUploadSourceUrlJobResponse> response = (ApiResponse<CreateUploadSourceUrlJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CreateUploadSourceUrlJobResponse> response = (ApiResponse<CreateUploadSourceUrlJobResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

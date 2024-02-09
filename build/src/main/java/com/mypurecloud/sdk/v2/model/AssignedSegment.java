@@ -25,10 +25,21 @@ public class AssignedSegment  implements Serializable {
   private String selfUri = null;
 
   
-  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  /**
+   * The ID of the segment assigned.
+   **/
+  public AssignedSegment id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The ID of the segment assigned.")
   @JsonProperty("id")
   public String getId() {
     return id;
+  }
+  public void setId(String id) {
+    this.id = id;
   }
 
 

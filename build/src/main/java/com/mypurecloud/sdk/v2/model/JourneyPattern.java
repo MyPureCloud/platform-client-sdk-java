@@ -107,7 +107,7 @@ public class JourneyPattern  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The number of times the pattern must match.")
+  @ApiModelProperty(example = "null", required = true, value = "The number of times the pattern must match.")
   @JsonProperty("count")
   public Integer getCount() {
     return count;

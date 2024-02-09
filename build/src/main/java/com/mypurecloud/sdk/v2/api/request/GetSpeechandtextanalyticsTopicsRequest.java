@@ -157,6 +157,64 @@ public class GetSpeechandtextanalyticsTopicsRequest {
 	    return this;
 	} 
 
+	private List<String> dialects;
+	public List<String> getDialects() {
+		return this.dialects;
+	}
+
+	public void setDialects(List<String> dialects) {
+		this.dialects = dialects;
+	}
+
+	public GetSpeechandtextanalyticsTopicsRequest withDialects(List<String> dialects) {
+	    this.setDialects(dialects);
+	    return this;
+	} 
+
+	public enum dialectsValues { 
+		EN_US("en-US"),
+		ES_US("es-US"),
+		EN_AU("en-AU"),
+		EN_GB("en-GB"),
+		EN_ZA("en-ZA"),
+		ES_ES("es-ES"),
+		EN_IN("en-IN"),
+		FR_FR("fr-FR"),
+		FR_CA("fr-CA"),
+		IT_IT("it-IT"),
+		DE_DE("de-DE"),
+		PT_BR("pt-BR"),
+		PL_PL("pl-PL"),
+		PT_PT("pt-PT"),
+		NL_NL("nl-NL"),
+		KO_KR("ko-KR");
+
+		private String value;
+
+		dialectsValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static dialectsValues fromString(String key) {
+			if (key == null) return null;
+
+			for (dialectsValues value : dialectsValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return dialectsValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -283,6 +341,9 @@ public class GetSpeechandtextanalyticsTopicsRequest {
                 .withQueryParameters("ids", "multi", ids)
         
 
+                .withQueryParameters("dialects", "multi", dialects)
+        
+
                 .withQueryParameters("sortBy", "", sortBy)
         
 
@@ -341,6 +402,22 @@ public class GetSpeechandtextanalyticsTopicsRequest {
 		public Builder withIds(List<String> ids) {
 			request.setIds(ids);
 			return this;
+		}
+
+		public Builder withDialects(List<String> dialects) {
+			request.setDialects(dialects);
+			return this;
+		}
+
+
+
+		public Builder withDialectsEnumValues(List<dialectsValues> dialects) {
+		    List<String> stringList = new ArrayList<>();
+	      for (dialectsValues e : dialects) {
+	        stringList.add(e.toString());
+	      }
+	      request.setDialects(stringList);
+		    return this;
 		}
 
 		public Builder withSortBy(String sortBy) {

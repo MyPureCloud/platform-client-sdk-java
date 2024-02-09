@@ -32,6 +32,7 @@ import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
 import com.mypurecloud.sdk.v2.model.JourneyAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.JourneyAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.JourneySegment;
+import com.mypurecloud.sdk.v2.model.JourneySegmentRequest;
 import com.mypurecloud.sdk.v2.model.Outcome;
 import com.mypurecloud.sdk.v2.model.OutcomeAttributionAsyncResponse;
 import com.mypurecloud.sdk.v2.model.OutcomeAttributionJobStateResponse;
@@ -41,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.OutcomeListing;
 import com.mypurecloud.sdk.v2.model.OutcomePredictor;
 import com.mypurecloud.sdk.v2.model.OutcomePredictorListing;
 import com.mypurecloud.sdk.v2.model.OutcomePredictorRequest;
+import com.mypurecloud.sdk.v2.model.OutcomeRequest;
 import com.mypurecloud.sdk.v2.model.OutcomeScoresResult;
 import com.mypurecloud.sdk.v2.model.PatchActionMap;
 import com.mypurecloud.sdk.v2.model.PatchActionTarget;
@@ -3424,7 +3426,7 @@ public class JourneyApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Outcome postJourneyOutcomes(Outcome body) throws IOException, ApiException {
+  public Outcome postJourneyOutcomes(OutcomeRequest body) throws IOException, ApiException {
     return  postJourneyOutcomes(createPostJourneyOutcomesRequest(body));
   }
 
@@ -3435,11 +3437,11 @@ public class JourneyApi {
    * @return Outcome
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Outcome> postJourneyOutcomesWithHttpInfo(Outcome body) throws IOException {
+  public ApiResponse<Outcome> postJourneyOutcomesWithHttpInfo(OutcomeRequest body) throws IOException {
     return postJourneyOutcomes(createPostJourneyOutcomesRequest(body).withHttpInfo());
   }
 
-  private PostJourneyOutcomesRequest createPostJourneyOutcomesRequest(Outcome body) {
+  private PostJourneyOutcomesRequest createPostJourneyOutcomesRequest(OutcomeRequest body) {
     return PostJourneyOutcomesRequest.builder()
             .withBody(body)
 
@@ -3472,7 +3474,7 @@ public class JourneyApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Outcome> postJourneyOutcomes(ApiRequest<Outcome> request) throws IOException {
+  public ApiResponse<Outcome> postJourneyOutcomes(ApiRequest<OutcomeRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<Outcome>() {});
     }
@@ -3662,7 +3664,7 @@ public class JourneyApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public JourneySegment postJourneySegments(JourneySegment body) throws IOException, ApiException {
+  public JourneySegment postJourneySegments(JourneySegmentRequest body) throws IOException, ApiException {
     return  postJourneySegments(createPostJourneySegmentsRequest(body));
   }
 
@@ -3673,11 +3675,11 @@ public class JourneyApi {
    * @return JourneySegment
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<JourneySegment> postJourneySegmentsWithHttpInfo(JourneySegment body) throws IOException {
+  public ApiResponse<JourneySegment> postJourneySegmentsWithHttpInfo(JourneySegmentRequest body) throws IOException {
     return postJourneySegments(createPostJourneySegmentsRequest(body).withHttpInfo());
   }
 
-  private PostJourneySegmentsRequest createPostJourneySegmentsRequest(JourneySegment body) {
+  private PostJourneySegmentsRequest createPostJourneySegmentsRequest(JourneySegmentRequest body) {
     return PostJourneySegmentsRequest.builder()
             .withBody(body)
 
@@ -3710,7 +3712,7 @@ public class JourneyApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<JourneySegment> postJourneySegments(ApiRequest<JourneySegment> request) throws IOException {
+  public ApiResponse<JourneySegment> postJourneySegments(ApiRequest<JourneySegmentRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<JourneySegment>() {});
     }

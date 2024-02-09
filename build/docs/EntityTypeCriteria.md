@@ -11,8 +11,8 @@ title: EntityTypeCriteria
 | **key** | <!----><!---->**String**<!----> | The criteria key. |  |
 | **values** | <!----><!---->**List&lt;String&gt;**<!----> | The criteria values. |  |
 | **shouldIgnoreCase** | <!----><!---->**Boolean**<!----> | Should criteria be case insensitive. |  |
-| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | The comparison operator. |  [optional] |
-| **entityType** | [**EntityTypeEnum**](#EntityTypeEnum)<!----> | The entity to match the pattern against. |  [optional] |
+| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | The comparison operator. |  |
+| **entityType** | [**EntityTypeEnum**](#EntityTypeEnum)<!----> | The entity to match the pattern against. |  |
 {: class="table table-striped"}
 
 

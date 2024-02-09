@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CustomEventAttribute;
-import com.mypurecloud.sdk.v2.model.Device;
 import com.mypurecloud.sdk.v2.model.JourneyApp;
 import com.mypurecloud.sdk.v2.model.NetworkConnectivity;
+import com.mypurecloud.sdk.v2.model.RequestDevice;
 import com.mypurecloud.sdk.v2.model.SdkLibrary;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -33,7 +33,7 @@ public class AppEventRequest  implements Serializable {
   private String eventName = null;
   private String screenName = null;
   private JourneyApp app = null;
-  private Device device = null;
+  private RequestDevice device = null;
   private SdkLibrary sdkLibrary = null;
   private NetworkConnectivity networkConnectivity = null;
   private String referrerUrl = null;
@@ -101,17 +101,17 @@ public class AppEventRequest  implements Serializable {
   /**
    * Customer's device.
    **/
-  public AppEventRequest device(Device device) {
+  public AppEventRequest device(RequestDevice device) {
     this.device = device;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "Customer's device.")
   @JsonProperty("device")
-  public Device getDevice() {
+  public RequestDevice getDevice() {
     return device;
   }
-  public void setDevice(Device device) {
+  public void setDevice(RequestDevice device) {
     this.device = device;
   }
 

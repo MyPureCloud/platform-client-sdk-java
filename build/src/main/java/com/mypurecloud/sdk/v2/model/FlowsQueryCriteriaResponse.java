@@ -59,6 +59,7 @@ public class FlowsQueryCriteriaResponse  implements Serializable {
     SURVEYINVITE("surveyinvite"),
     VOICE("voice"),
     VOICEMAIL("voicemail"),
+    VOICESURVEY("voicesurvey"),
     WORKFLOW("workflow"),
     WORKITEM("workitem");
 

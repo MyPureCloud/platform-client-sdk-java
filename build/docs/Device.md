@@ -10,7 +10,7 @@ title: Device
 | ------------ | ------------- | ------------- | ------------- |
 | **category** | [**CategoryEnum**](#CategoryEnum)<!----> | Device category. |  |
 | **type** | <!----><!---->**String**<!----> | Device type (e.g. iPad, iPhone, Other). |  |
-| **isMobile** | <!----><!---->**Boolean**<!----> | Flag that is true for mobile devices. |  [optional] |
+| **isMobile** | <!----><!---->**Boolean**<!----> | Flag that is true for mobile devices. |  |
 | **screenHeight** | <!----><!---->**Integer**<!----> | Device's screen height. |  [optional] |
 | **screenWidth** | <!----><!---->**Integer**<!----> | Device's screen width. |  [optional] |
 | **screenDensity** | <!----><!---->**Integer**<!----> | Device's screen density, measured as a scale factor where a value of 1 represents a baseline 1:1 ratio of pixels to logical (device-independent) pixels. |  [optional] |

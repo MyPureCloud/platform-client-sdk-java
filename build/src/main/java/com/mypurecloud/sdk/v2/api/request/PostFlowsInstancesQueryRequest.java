@@ -118,6 +118,20 @@ public class PostFlowsInstancesQueryRequest {
 	    return this;
 	} 
 
+	private Integer pageSize;
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public PostFlowsInstancesQueryRequest withPageSize(Integer pageSize) {
+	    this.setPageSize(pageSize);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -148,6 +162,9 @@ public class PostFlowsInstancesQueryRequest {
         return ApiRequestBuilder.create("POST", "/api/v2/flows/instances/query")
 
                 .withQueryParameters("indexOnly", "", indexOnly)
+        
+
+                .withQueryParameters("pageSize", "", pageSize)
         
                 .withBody(body)
 
@@ -184,6 +201,11 @@ public class PostFlowsInstancesQueryRequest {
 
 		public Builder withIndexOnly(Boolean indexOnly) {
 			request.setIndexOnly(indexOnly);
+			return this;
+		}
+
+		public Builder withPageSize(Integer pageSize) {
+			request.setPageSize(pageSize);
 			return this;
 		}
 

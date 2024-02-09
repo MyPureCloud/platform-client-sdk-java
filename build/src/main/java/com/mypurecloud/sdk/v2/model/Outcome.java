@@ -39,10 +39,21 @@ public class Outcome  implements Serializable {
   private Date modifiedDate = null;
 
   
-  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  /**
+   * ID of the outcome.
+   **/
+  public Outcome id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "ID of the outcome.")
   @JsonProperty("id")
   public String getId() {
     return id;
+  }
+  public void setId(String id) {
+    this.id = id;
   }
 
 
@@ -54,7 +65,7 @@ public class Outcome  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether or not the outcome is active.")
+  @ApiModelProperty(example = "null", required = true, value = "Whether or not the outcome is active.")
   @JsonProperty("isActive")
   public Boolean getIsActive() {
     return isActive;
@@ -90,7 +101,7 @@ public class Outcome  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The version of the outcome.")
+  @ApiModelProperty(example = "null", required = true, value = "The version of the outcome.")
   @JsonProperty("version")
   public Integer getVersion() {
     return version;
@@ -126,7 +137,7 @@ public class Outcome  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether or not the outcome is positive.")
+  @ApiModelProperty(example = "null", required = true, value = "Whether or not the outcome is positive.")
   @JsonProperty("isPositive")
   public Boolean getIsPositive() {
     return isPositive;
@@ -144,7 +155,7 @@ public class Outcome  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The context of the outcome.")
+  @ApiModelProperty(example = "null", required = true, value = "The context of the outcome.")
   @JsonProperty("context")
   public Context getContext() {
     return context;
@@ -162,7 +173,7 @@ public class Outcome  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The pattern of rules defining the filter of the outcome.")
+  @ApiModelProperty(example = "null", required = true, value = "The pattern of rules defining the filter of the outcome.")
   @JsonProperty("journey")
   public Journey getJourney() {
     return journey;
@@ -205,7 +216,7 @@ public class Outcome  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Timestamp indicating when the outcome was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", required = true, value = "Timestamp indicating when the outcome was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("createdDate")
   public Date getCreatedDate() {
     return createdDate;
@@ -223,7 +234,7 @@ public class Outcome  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Timestamp indicating when the outcome was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", required = true, value = "Timestamp indicating when the outcome was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("modifiedDate")
   public Date getModifiedDate() {
     return modifiedDate;

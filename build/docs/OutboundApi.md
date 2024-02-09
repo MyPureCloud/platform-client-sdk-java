@@ -121,6 +121,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postOutboundContactlistContactsBulk**](OutboundApi.html#postOutboundContactlistContactsBulk) | Get contacts from a contact list. |
 | [**postOutboundContactlistExport**](OutboundApi.html#postOutboundContactlistExport) | Initiate the export of a contact list. |
 | [**postOutboundContactlistfilters**](OutboundApi.html#postOutboundContactlistfilters) | Create Contact List Filter |
+| [**postOutboundContactlistfiltersBulkRetrieve**](OutboundApi.html#postOutboundContactlistfiltersBulkRetrieve) | Retrieve multiple contact list filters |
 | [**postOutboundContactlistfiltersPreview**](OutboundApi.html#postOutboundContactlistfiltersPreview) | Get a preview of the output of a contact list filter |
 | [**postOutboundContactlists**](OutboundApi.html#postOutboundContactlists) | Create a contact List. |
 | [**postOutboundContactlisttemplates**](OutboundApi.html#postOutboundContactlisttemplates) | Create Contact List Template |
@@ -4896,7 +4897,7 @@ try {
 
 
 
-> [ImportTemplate](ImportTemplate.html) getOutboundImporttemplate(importTemplateId)
+> [ImportTemplate](ImportTemplate.html) getOutboundImporttemplate(importTemplateId, includeImportStatus)
 
 Get Import Template
 
@@ -4929,8 +4930,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String importTemplateId = "importTemplateId_example"; // String | Import Template ID
+Boolean includeImportStatus = false; // Boolean | Import status
 try {
-    ImportTemplate result = apiInstance.getOutboundImporttemplate(importTemplateId);
+    ImportTemplate result = apiInstance.getOutboundImporttemplate(importTemplateId, includeImportStatus);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#getOutboundImporttemplate");
@@ -4944,6 +4946,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **importTemplateId** | **String**| Import Template ID | 
+| **includeImportStatus** | **Boolean**| Import status | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -5020,7 +5023,7 @@ try {
 
 
 
-> [ImportTemplateEntityListing](ImportTemplateEntityListing.html) getOutboundImporttemplates(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder, contactListTemplateId)
+> [ImportTemplateEntityListing](ImportTemplateEntityListing.html) getOutboundImporttemplates(includeImportStatus, pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder, contactListTemplateId)
 
 Query Import Templates
 
@@ -5052,6 +5055,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
+Boolean includeImportStatus = false; // Boolean | Import status
 Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
 Integer pageNumber = 1; // Integer | Page number
 Boolean allowEmptyResult = false; // Boolean | Whether to return an empty page when there are no results for that page
@@ -5061,7 +5065,7 @@ String sortBy = "sortBy_example"; // String | Sort by
 String sortOrder = "a"; // String | Sort order
 String contactListTemplateId = "contactListTemplateId_example"; // String | Contact List Template ID
 try {
-    ImportTemplateEntityListing result = apiInstance.getOutboundImporttemplates(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder, contactListTemplateId);
+    ImportTemplateEntityListing result = apiInstance.getOutboundImporttemplates(includeImportStatus, pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder, contactListTemplateId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#getOutboundImporttemplates");
@@ -5074,6 +5078,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **includeImportStatus** | **Boolean**| Import status | [optional] [default to false] 
 | **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **allowEmptyResult** | **Boolean**| Whether to return an empty page when there are no results for that page | [optional] [default to false] 
@@ -5814,7 +5819,7 @@ try {
 
 
 
-> [MessagingCampaignScheduleEntityListing](MessagingCampaignScheduleEntityListing.html) getOutboundSchedulesEmailcampaigns()
+> [EmailCampaignScheduleEntityListing](EmailCampaignScheduleEntityListing.html) getOutboundSchedulesEmailcampaigns()
 
 Query for a list of email campaign schedules.
 
@@ -5847,7 +5852,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 try {
-    MessagingCampaignScheduleEntityListing result = apiInstance.getOutboundSchedulesEmailcampaigns();
+    EmailCampaignScheduleEntityListing result = apiInstance.getOutboundSchedulesEmailcampaigns();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#getOutboundSchedulesEmailcampaigns");
@@ -5863,7 +5868,7 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**MessagingCampaignScheduleEntityListing**](MessagingCampaignScheduleEntityListing.html)
+[**EmailCampaignScheduleEntityListing**](EmailCampaignScheduleEntityListing.html)
 
 <a name="getOutboundSchedulesMessagingcampaign"></a>
 
@@ -7481,6 +7486,67 @@ try {
 ### Return type
 
 [**ContactListFilter**](ContactListFilter.html)
+
+<a name="postOutboundContactlistfiltersBulkRetrieve"></a>
+
+# **postOutboundContactlistfiltersBulkRetrieve**
+
+
+
+> [ContactListFilterEntityListing](ContactListFilterEntityListing.html) postOutboundContactlistfiltersBulkRetrieve(body)
+
+Retrieve multiple contact list filters
+
+Wraps POST /api/v2/outbound/contactlistfilters/bulk/retrieve  
+
+Requires ANY permissions: 
+
+* outbound:contactListFilter:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+ContactListFilterBulkRetrieveBody body = new ContactListFilterBulkRetrieveBody(); // ContactListFilterBulkRetrieveBody | The contact list filters to retrieve
+try {
+    ContactListFilterEntityListing result = apiInstance.postOutboundContactlistfiltersBulkRetrieve(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#postOutboundContactlistfiltersBulkRetrieve");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ContactListFilterBulkRetrieveBody**](ContactListFilterBulkRetrieveBody.html)| The contact list filters to retrieve | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContactListFilterEntityListing**](ContactListFilterEntityListing.html)
 
 <a name="postOutboundContactlistfiltersPreview"></a>
 

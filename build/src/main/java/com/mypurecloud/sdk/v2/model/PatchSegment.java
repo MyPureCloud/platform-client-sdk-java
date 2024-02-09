@@ -11,12 +11,11 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.Context;
-import com.mypurecloud.sdk.v2.model.Journey;
+import com.mypurecloud.sdk.v2.model.PatchContext;
 import com.mypurecloud.sdk.v2.model.PatchExternalSegment;
+import com.mypurecloud.sdk.v2.model.PatchJourney;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.Date;
 
 import java.io.Serializable;
 /**
@@ -25,29 +24,18 @@ import java.io.Serializable;
 
 public class PatchSegment  implements Serializable {
   
-  private String id = null;
   private Boolean isActive = null;
   private String displayName = null;
   private Integer version = null;
   private String description = null;
   private String color = null;
   private Boolean shouldDisplayToAgent = null;
-  private Context context = null;
-  private Journey journey = null;
+  private PatchContext context = null;
+  private PatchJourney journey = null;
   private PatchExternalSegment externalSegment = null;
   private Integer assignmentExpirationDays = null;
-  private String selfUri = null;
-  private Date createdDate = null;
-  private Date modifiedDate = null;
 
   
-  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-
-
   /**
    * Whether or not the segment is active.
    **/
@@ -74,7 +62,7 @@ public class PatchSegment  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The display name of the segment.")
+  @ApiModelProperty(example = "null", value = "The display name of the segment.")
   @JsonProperty("displayName")
   public String getDisplayName() {
     return displayName;
@@ -159,17 +147,17 @@ public class PatchSegment  implements Serializable {
   /**
    * The context of the segment.
    **/
-  public PatchSegment context(Context context) {
+  public PatchSegment context(PatchContext context) {
     this.context = context;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The context of the segment.")
   @JsonProperty("context")
-  public Context getContext() {
+  public PatchContext getContext() {
     return context;
   }
-  public void setContext(Context context) {
+  public void setContext(PatchContext context) {
     this.context = context;
   }
 
@@ -177,17 +165,17 @@ public class PatchSegment  implements Serializable {
   /**
    * The pattern of rules defining the segment.
    **/
-  public PatchSegment journey(Journey journey) {
+  public PatchSegment journey(PatchJourney journey) {
     this.journey = journey;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The pattern of rules defining the segment.")
   @JsonProperty("journey")
-  public Journey getJourney() {
+  public PatchJourney getJourney() {
     return journey;
   }
-  public void setJourney(Journey journey) {
+  public void setJourney(PatchJourney journey) {
     this.journey = journey;
   }
 
@@ -228,49 +216,6 @@ public class PatchSegment  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The URI for this object")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-
-
-  /**
-   * Timestamp indicating when the segment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-   **/
-  public PatchSegment createdDate(Date createdDate) {
-    this.createdDate = createdDate;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Timestamp indicating when the segment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
-  @JsonProperty("createdDate")
-  public Date getCreatedDate() {
-    return createdDate;
-  }
-  public void setCreatedDate(Date createdDate) {
-    this.createdDate = createdDate;
-  }
-
-
-  /**
-   * Timestamp indicating when the the segment was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-   **/
-  public PatchSegment modifiedDate(Date modifiedDate) {
-    this.modifiedDate = modifiedDate;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Timestamp indicating when the the segment was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
-  @JsonProperty("modifiedDate")
-  public Date getModifiedDate() {
-    return modifiedDate;
-  }
-  public void setModifiedDate(Date modifiedDate) {
-    this.modifiedDate = modifiedDate;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -281,8 +226,7 @@ public class PatchSegment  implements Serializable {
     }
     PatchSegment patchSegment = (PatchSegment) o;
 
-    return Objects.equals(this.id, patchSegment.id) &&
-            Objects.equals(this.isActive, patchSegment.isActive) &&
+    return Objects.equals(this.isActive, patchSegment.isActive) &&
             Objects.equals(this.displayName, patchSegment.displayName) &&
             Objects.equals(this.version, patchSegment.version) &&
             Objects.equals(this.description, patchSegment.description) &&
@@ -291,15 +235,12 @@ public class PatchSegment  implements Serializable {
             Objects.equals(this.context, patchSegment.context) &&
             Objects.equals(this.journey, patchSegment.journey) &&
             Objects.equals(this.externalSegment, patchSegment.externalSegment) &&
-            Objects.equals(this.assignmentExpirationDays, patchSegment.assignmentExpirationDays) &&
-            Objects.equals(this.selfUri, patchSegment.selfUri) &&
-            Objects.equals(this.createdDate, patchSegment.createdDate) &&
-            Objects.equals(this.modifiedDate, patchSegment.modifiedDate);
+            Objects.equals(this.assignmentExpirationDays, patchSegment.assignmentExpirationDays);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, isActive, displayName, version, description, color, shouldDisplayToAgent, context, journey, externalSegment, assignmentExpirationDays, selfUri, createdDate, modifiedDate);
+    return Objects.hash(isActive, displayName, version, description, color, shouldDisplayToAgent, context, journey, externalSegment, assignmentExpirationDays);
   }
 
   @Override
@@ -307,7 +248,6 @@ public class PatchSegment  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class PatchSegment {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
@@ -318,9 +258,6 @@ public class PatchSegment  implements Serializable {
     sb.append("    journey: ").append(toIndentedString(journey)).append("\n");
     sb.append("    externalSegment: ").append(toIndentedString(externalSegment)).append("\n");
     sb.append("    assignmentExpirationDays: ").append(toIndentedString(assignmentExpirationDays)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
-    sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

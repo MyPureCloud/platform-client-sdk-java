@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.ContactListDivisionView;
 import com.mypurecloud.sdk.v2.model.ContactListDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.ContactListEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListFilter;
+import com.mypurecloud.sdk.v2.model.ContactListFilterBulkRetrieveBody;
 import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListTemplate;
 import com.mypurecloud.sdk.v2.model.ContactListTemplateBulkRetrieveBody;
@@ -67,6 +68,7 @@ import com.mypurecloud.sdk.v2.model.DncPatchEmailsRequest;
 import com.mypurecloud.sdk.v2.model.DncPatchPhoneNumbersRequest;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.EmailCampaignSchedule;
+import com.mypurecloud.sdk.v2.model.EmailCampaignScheduleEntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EventLog;
 import com.mypurecloud.sdk.v2.model.ExportUri;
@@ -109,6 +111,20 @@ public class GetOutboundImporttemplateRequest {
 	    return this;
 	} 
 
+	private Boolean includeImportStatus;
+	public Boolean getIncludeImportStatus() {
+		return this.includeImportStatus;
+	}
+
+	public void setIncludeImportStatus(Boolean includeImportStatus) {
+		this.includeImportStatus = includeImportStatus;
+	}
+
+	public GetOutboundImporttemplateRequest withIncludeImportStatus(Boolean includeImportStatus) {
+	    this.setIncludeImportStatus(includeImportStatus);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -139,6 +155,9 @@ public class GetOutboundImporttemplateRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/outbound/importtemplates/{importTemplateId}")
                 .withPathParameter("importTemplateId", importTemplateId)
         
+
+                .withQueryParameters("includeImportStatus", "", includeImportStatus)
+        
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -167,6 +186,11 @@ public class GetOutboundImporttemplateRequest {
 
 		public Builder withImportTemplateId(String importTemplateId) {
 			request.setImportTemplateId(importTemplateId);
+			return this;
+		}
+
+		public Builder withIncludeImportStatus(Boolean includeImportStatus) {
+			request.setIncludeImportStatus(includeImportStatus);
 			return this;
 		}
 

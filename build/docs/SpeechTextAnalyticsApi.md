@@ -1462,7 +1462,7 @@ try {
 
 
 
-> [TopicsEntityListing](TopicsEntityListing.html) getSpeechandtextanalyticsTopics(nextPage, pageSize, state, name, ids, sortBy, sortOrder)
+> [TopicsEntityListing](TopicsEntityListing.html) getSpeechandtextanalyticsTopics(nextPage, pageSize, state, name, ids, dialects, sortBy, sortOrder)
 
 Get the list of Speech & Text Analytics topics
 
@@ -1499,10 +1499,11 @@ Integer pageSize = 20; // Integer | The page size for the listing
 String state = "state_example"; // String | Topic state. Defaults to latest
 String name = "name_example"; // String | Case insensitive partial name to filter by
 List<String> ids = Arrays.asList(null); // List<String> | Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.
+List<String> dialects = Arrays.asList(null); // List<String> | Comma separated dialect strings to filter by. Maximum of 15 dialects allowed.
 String sortBy = "sortBy_example"; // String | Sort results by. Defaults to name
 String sortOrder = "sortOrder_example"; // String | Sort order. Defaults to asc
 try {
-    TopicsEntityListing result = apiInstance.getSpeechandtextanalyticsTopics(nextPage, pageSize, state, name, ids, sortBy, sortOrder);
+    TopicsEntityListing result = apiInstance.getSpeechandtextanalyticsTopics(nextPage, pageSize, state, name, ids, dialects, sortBy, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopics");
@@ -1520,6 +1521,7 @@ try {
 | **state** | **String**| Topic state. Defaults to latest | [optional]<br />**Values**: latest, published 
 | **name** | **String**| Case insensitive partial name to filter by | [optional] 
 | **ids** | [**List&lt;String&gt;**](String.html)| Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. | [optional] 
+| **dialects** | [**List&lt;String&gt;**](String.html)| Comma separated dialect strings to filter by. Maximum of 15 dialects allowed. | [optional]<br />**Values**: en-US, es-US, en-AU, en-GB, en-ZA, es-ES, en-IN, fr-FR, fr-CA, it-IT, de-DE, pt-BR, pl-PL, pt-PT, nl-NL, ko-KR 
 | **sortBy** | **String**| Sort results by. Defaults to name | [optional]<br />**Values**: name 
 | **sortOrder** | **String**| Sort order. Defaults to asc | [optional]<br />**Values**: asc, desc 
 {: class="table-striped"}

@@ -27,10 +27,21 @@ public class SessionLastEvent  implements Serializable {
   private Date createdDate = null;
 
   
-  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  /**
+   * The ID of the last event.
+   **/
+  public SessionLastEvent id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The ID of the last event.")
   @JsonProperty("id")
   public String getId() {
     return id;
+  }
+  public void setId(String id) {
+    this.id = id;
   }
 
 
@@ -42,7 +53,7 @@ public class SessionLastEvent  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The name of the event.")
+  @ApiModelProperty(example = "null", required = true, value = "The name of the event.")
   @JsonProperty("eventName")
   public String getEventName() {
     return eventName;
@@ -60,7 +71,7 @@ public class SessionLastEvent  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Timestamp indicating when the event was published. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", required = true, value = "Timestamp indicating when the event was published. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("createdDate")
   public Date getCreatedDate() {
     return createdDate;

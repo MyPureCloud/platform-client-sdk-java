@@ -10212,12 +10212,13 @@ public class ArchitectApi {
    * postFlowsInstancesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @param indexOnly indexes only (optional)
+   * @param pageSize number of results to return (optional, default to 50)
    * @return FlowResultEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public FlowResultEntityListing postFlowsInstancesQuery(CriteriaQuery body, Boolean indexOnly) throws IOException, ApiException {
-    return  postFlowsInstancesQuery(createPostFlowsInstancesQueryRequest(body, indexOnly));
+  public FlowResultEntityListing postFlowsInstancesQuery(CriteriaQuery body, Boolean indexOnly, Integer pageSize) throws IOException, ApiException {
+    return  postFlowsInstancesQuery(createPostFlowsInstancesQueryRequest(body, indexOnly, pageSize));
   }
 
   /**
@@ -10226,18 +10227,21 @@ public class ArchitectApi {
    * postFlowsInstancesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @param indexOnly indexes only (optional)
+   * @param pageSize number of results to return (optional, default to 50)
    * @return FlowResultEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FlowResultEntityListing> postFlowsInstancesQueryWithHttpInfo(CriteriaQuery body, Boolean indexOnly) throws IOException {
-    return postFlowsInstancesQuery(createPostFlowsInstancesQueryRequest(body, indexOnly).withHttpInfo());
+  public ApiResponse<FlowResultEntityListing> postFlowsInstancesQueryWithHttpInfo(CriteriaQuery body, Boolean indexOnly, Integer pageSize) throws IOException {
+    return postFlowsInstancesQuery(createPostFlowsInstancesQueryRequest(body, indexOnly, pageSize).withHttpInfo());
   }
 
-  private PostFlowsInstancesQueryRequest createPostFlowsInstancesQueryRequest(CriteriaQuery body, Boolean indexOnly) {
+  private PostFlowsInstancesQueryRequest createPostFlowsInstancesQueryRequest(CriteriaQuery body, Boolean indexOnly, Integer pageSize) {
     return PostFlowsInstancesQueryRequest.builder()
             .withBody(body)
 
             .withIndexOnly(indexOnly)
+
+            .withPageSize(pageSize)
 
             .build();
   }

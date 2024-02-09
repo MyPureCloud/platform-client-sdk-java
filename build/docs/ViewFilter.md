@@ -304,6 +304,7 @@ title: ViewFilter
 | SURVEYINVITE | &quot;surveyinvite&quot; |
 | VOICE | &quot;voice&quot; |
 | VOICEMAIL | &quot;voicemail&quot; |
+| VOICESURVEY | &quot;voicesurvey&quot; |
 | WORKFLOW | &quot;workflow&quot; |
 | WORKITEM | &quot;workitem&quot; |
 {: class="table table-striped"}

@@ -167,7 +167,7 @@ public class GenericEventAction  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Current state of the action (e.g. qualified, succeeded, errored).")
+  @ApiModelProperty(example = "null", required = true, value = "Current state of the action (e.g. qualified, succeeded, errored).")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
@@ -185,7 +185,7 @@ public class GenericEventAction  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The media type used to deliver the action (e.g. email, webhook).")
+  @ApiModelProperty(example = "null", required = true, value = "The media type used to deliver the action (e.g. email, webhook).")
   @JsonProperty("mediaType")
   public MediaTypeEnum getMediaType() {
     return mediaType;
@@ -203,7 +203,7 @@ public class GenericEventAction  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Prompt of the action to be displayed/sent to the visitor.")
+  @ApiModelProperty(example = "null", required = true, value = "Prompt of the action to be displayed/sent to the visitor.")
   @JsonProperty("prompt")
   public String getPrompt() {
     return prompt;
@@ -239,7 +239,7 @@ public class GenericEventAction  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Timestamp indicating when the action was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", required = true, value = "Timestamp indicating when the action was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("createdDate")
   public Date getCreatedDate() {
     return createdDate;

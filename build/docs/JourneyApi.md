@@ -2582,7 +2582,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 JourneyApi apiInstance = new JourneyApi();
-Outcome body = new Outcome(); // Outcome | 
+OutcomeRequest body = new OutcomeRequest(); // OutcomeRequest | 
 try {
     Outcome result = apiInstance.postJourneyOutcomes(body);
     System.out.println(result);
@@ -2597,7 +2597,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Outcome**](Outcome.html)|  | [optional] 
+| **body** | [**OutcomeRequest**](OutcomeRequest.html)|  | [optional] 
 {: class="table-striped"}
 
 
@@ -2767,7 +2767,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 JourneyApi apiInstance = new JourneyApi();
-JourneySegment body = new JourneySegment(); // JourneySegment | 
+JourneySegmentRequest body = new JourneySegmentRequest(); // JourneySegmentRequest | 
 try {
     JourneySegment result = apiInstance.postJourneySegments(body);
     System.out.println(result);
@@ -2782,7 +2782,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**JourneySegment**](JourneySegment.html)|  | [optional] 
+| **body** | [**JourneySegmentRequest**](JourneySegmentRequest.html)|  | [optional] 
 {: class="table-striped"}
 
 

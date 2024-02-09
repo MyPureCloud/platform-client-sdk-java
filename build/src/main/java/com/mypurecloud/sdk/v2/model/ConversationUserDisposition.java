@@ -35,7 +35,7 @@ public class ConversationUserDisposition  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "User-defined wrap-up code for the conversation.")
+  @ApiModelProperty(example = "null", required = true, value = "User-defined wrap-up code for the conversation.")
   @JsonProperty("code")
   public String getCode() {
     return code;
@@ -63,7 +63,7 @@ public class ConversationUserDisposition  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "The user that wrapped up the conversation.")
+  @ApiModelProperty(example = "null", required = true, value = "The user that wrapped up the conversation.")
   @JsonProperty("user")
   public AddressableEntityRef getUser() {
     return user;

@@ -66,6 +66,8 @@ import com.mypurecloud.sdk.v2.model.KnowledgeAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.PropertyIndexRequest;
 import com.mypurecloud.sdk.v2.model.QueueObservationQuery;
 import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
+import com.mypurecloud.sdk.v2.model.RateLimitAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.RateLimitAggregationQuery;
 import com.mypurecloud.sdk.v2.model.ReportMetaData;
 import com.mypurecloud.sdk.v2.model.ReportMetaDataEntityListing;
 import com.mypurecloud.sdk.v2.model.ReportRunEntry;
@@ -187,6 +189,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsJourneysAggregatesQueryRe
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsKnowledgeAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsKnowledgeAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsQueuesObservationsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsRatelimitsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingExportsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingScheduleRunreportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingSchedulesRequest;
@@ -5705,7 +5708,6 @@ public class AnalyticsApi {
   /**
    * Query for flow execution aggregates
    * 
-   * postAnalyticsFlowexecutionsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return FlowExecutionAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -5718,7 +5720,6 @@ public class AnalyticsApi {
   /**
    * Query for flow execution aggregates
    * 
-   * postAnalyticsFlowexecutionsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return FlowExecutionAggregateQueryResponse
    * @throws IOException if the request fails to be processed
@@ -5737,7 +5738,6 @@ public class AnalyticsApi {
   /**
    * Query for flow execution aggregates
    * 
-   * postAnalyticsFlowexecutionsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FlowExecutionAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -5757,7 +5757,6 @@ public class AnalyticsApi {
   /**
    * Query for flow execution aggregates
    * 
-   * postAnalyticsFlowexecutionsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6510,6 +6509,84 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<QueueObservationQueryResponse> response = (ApiResponse<QueueObservationQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded
+   * 
+   * @param body query (required)
+   * @return RateLimitAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RateLimitAggregateQueryResponse postAnalyticsRatelimitsAggregatesQuery(RateLimitAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsRatelimitsAggregatesQuery(createPostAnalyticsRatelimitsAggregatesQueryRequest(body));
+  }
+
+  /**
+   * Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded
+   * 
+   * @param body query (required)
+   * @return RateLimitAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RateLimitAggregateQueryResponse> postAnalyticsRatelimitsAggregatesQueryWithHttpInfo(RateLimitAggregationQuery body) throws IOException {
+    return postAnalyticsRatelimitsAggregatesQuery(createPostAnalyticsRatelimitsAggregatesQueryRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsRatelimitsAggregatesQueryRequest createPostAnalyticsRatelimitsAggregatesQueryRequest(RateLimitAggregationQuery body) {
+    return PostAnalyticsRatelimitsAggregatesQueryRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded
+   * 
+   * @param request The request object
+   * @return RateLimitAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RateLimitAggregateQueryResponse postAnalyticsRatelimitsAggregatesQuery(PostAnalyticsRatelimitsAggregatesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RateLimitAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RateLimitAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RateLimitAggregateQueryResponse> postAnalyticsRatelimitsAggregatesQuery(ApiRequest<RateLimitAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RateLimitAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RateLimitAggregateQueryResponse> response = (ApiResponse<RateLimitAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RateLimitAggregateQueryResponse> response = (ApiResponse<RateLimitAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

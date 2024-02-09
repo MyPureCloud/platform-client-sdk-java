@@ -10,16 +10,21 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobRequest;
+import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FunctionUploadRequest;
 import com.mypurecloud.sdk.v2.model.FunctionUploadResponse;
+import com.mypurecloud.sdk.v2.model.GetUploadSourceUrlJobStatusResponse;
 import com.mypurecloud.sdk.v2.model.LearningCoverArtUploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 
 
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseUploadsUrlsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionDraftFunctionUploadRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeDocumentuploadsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseUploadsUrlsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingMinerUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUploadsLearningCoverartRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUploadsPublicassetsImagesRequest;
@@ -41,6 +46,92 @@ public class UploadsApi {
 
   public UploadsApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Get content upload from URL job status
+   * 
+   * getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param jobId Upload job ID (required)
+   * @return GetUploadSourceUrlJobStatusResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GetUploadSourceUrlJobStatusResponse getKnowledgeKnowledgebaseUploadsUrlsJob(String knowledgeBaseId, String jobId) throws IOException, ApiException {
+    return  getKnowledgeKnowledgebaseUploadsUrlsJob(createGetKnowledgeKnowledgebaseUploadsUrlsJobRequest(knowledgeBaseId, jobId));
+  }
+
+  /**
+   * Get content upload from URL job status
+   * 
+   * getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param jobId Upload job ID (required)
+   * @return GetUploadSourceUrlJobStatusResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GetUploadSourceUrlJobStatusResponse> getKnowledgeKnowledgebaseUploadsUrlsJobWithHttpInfo(String knowledgeBaseId, String jobId) throws IOException {
+    return getKnowledgeKnowledgebaseUploadsUrlsJob(createGetKnowledgeKnowledgebaseUploadsUrlsJobRequest(knowledgeBaseId, jobId).withHttpInfo());
+  }
+
+  private GetKnowledgeKnowledgebaseUploadsUrlsJobRequest createGetKnowledgeKnowledgebaseUploadsUrlsJobRequest(String knowledgeBaseId, String jobId) {
+    return GetKnowledgeKnowledgebaseUploadsUrlsJobRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get content upload from URL job status
+   * 
+   * getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return GetUploadSourceUrlJobStatusResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GetUploadSourceUrlJobStatusResponse getKnowledgeKnowledgebaseUploadsUrlsJob(GetKnowledgeKnowledgebaseUploadsUrlsJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GetUploadSourceUrlJobStatusResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GetUploadSourceUrlJobStatusResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get content upload from URL job status
+   * 
+   * getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GetUploadSourceUrlJobStatusResponse> getKnowledgeKnowledgebaseUploadsUrlsJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GetUploadSourceUrlJobStatusResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GetUploadSourceUrlJobStatusResponse> response = (ApiResponse<GetUploadSourceUrlJobStatusResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GetUploadSourceUrlJobStatusResponse> response = (ApiResponse<GetUploadSourceUrlJobStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -203,6 +294,92 @@ public class UploadsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create content upload from URL job
+   * 
+   * postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param body uploadRequest (required)
+   * @return CreateUploadSourceUrlJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CreateUploadSourceUrlJobResponse postKnowledgeKnowledgebaseUploadsUrlsJobs(String knowledgeBaseId, CreateUploadSourceUrlJobRequest body) throws IOException, ApiException {
+    return  postKnowledgeKnowledgebaseUploadsUrlsJobs(createPostKnowledgeKnowledgebaseUploadsUrlsJobsRequest(knowledgeBaseId, body));
+  }
+
+  /**
+   * Create content upload from URL job
+   * 
+   * postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param body uploadRequest (required)
+   * @return CreateUploadSourceUrlJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CreateUploadSourceUrlJobResponse> postKnowledgeKnowledgebaseUploadsUrlsJobsWithHttpInfo(String knowledgeBaseId, CreateUploadSourceUrlJobRequest body) throws IOException {
+    return postKnowledgeKnowledgebaseUploadsUrlsJobs(createPostKnowledgeKnowledgebaseUploadsUrlsJobsRequest(knowledgeBaseId, body).withHttpInfo());
+  }
+
+  private PostKnowledgeKnowledgebaseUploadsUrlsJobsRequest createPostKnowledgeKnowledgebaseUploadsUrlsJobsRequest(String knowledgeBaseId, CreateUploadSourceUrlJobRequest body) {
+    return PostKnowledgeKnowledgebaseUploadsUrlsJobsRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create content upload from URL job
+   * 
+   * postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return CreateUploadSourceUrlJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CreateUploadSourceUrlJobResponse postKnowledgeKnowledgebaseUploadsUrlsJobs(PostKnowledgeKnowledgebaseUploadsUrlsJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CreateUploadSourceUrlJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CreateUploadSourceUrlJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create content upload from URL job
+   * 
+   * postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CreateUploadSourceUrlJobResponse> postKnowledgeKnowledgebaseUploadsUrlsJobs(ApiRequest<CreateUploadSourceUrlJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CreateUploadSourceUrlJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CreateUploadSourceUrlJobResponse> response = (ApiResponse<CreateUploadSourceUrlJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CreateUploadSourceUrlJobResponse> response = (ApiResponse<CreateUploadSourceUrlJobResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

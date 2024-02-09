@@ -45,6 +45,7 @@ title: FlowDivisionView
 | SURVEYINVITE | &quot;SURVEYINVITE&quot; | 
 | VOICE | &quot;VOICE&quot; | 
 | VOICEMAIL | &quot;VOICEMAIL&quot; | 
+| VOICESURVEY | &quot;VOICESURVEY&quot; | 
 | WORKFLOW | &quot;WORKFLOW&quot; | 
 | WORKITEM | &quot;WORKITEM&quot; | 
 {: class="table table-striped"}

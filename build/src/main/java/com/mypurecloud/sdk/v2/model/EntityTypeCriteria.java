@@ -196,7 +196,7 @@ public class EntityTypeCriteria  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The comparison operator.")
+  @ApiModelProperty(example = "null", required = true, value = "The comparison operator.")
   @JsonProperty("operator")
   public OperatorEnum getOperator() {
     return operator;
@@ -214,7 +214,7 @@ public class EntityTypeCriteria  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The entity to match the pattern against.")
+  @ApiModelProperty(example = "null", required = true, value = "The entity to match the pattern against.")
   @JsonProperty("entityType")
   public EntityTypeEnum getEntityType() {
     return entityType;

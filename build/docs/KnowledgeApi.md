@@ -47,9 +47,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getKnowledgeKnowledgebaseLanguageTrainings**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageTrainings) | Get all trainings information for a knowledgebase |
 | [**getKnowledgeKnowledgebaseOperations**](KnowledgeApi.html#getKnowledgeKnowledgebaseOperations) | Get operations |
 | [**getKnowledgeKnowledgebaseOperationsUsersQuery**](KnowledgeApi.html#getKnowledgeKnowledgebaseOperationsUsersQuery) | Get ids of operation creator users and oauth clients |
+| [**getKnowledgeKnowledgebaseParseJob**](KnowledgeApi.html#getKnowledgeKnowledgebaseParseJob) | Get parse job report |
 | [**getKnowledgeKnowledgebaseUnansweredGroup**](KnowledgeApi.html#getKnowledgeKnowledgebaseUnansweredGroup) | Get knowledge base unanswered group for a particular groupId |
 | [**getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup**](KnowledgeApi.html#getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup) | Get knowledge base unanswered phrase group for a particular phraseGroupId |
 | [**getKnowledgeKnowledgebaseUnansweredGroups**](KnowledgeApi.html#getKnowledgeKnowledgebaseUnansweredGroups) | Get knowledge base unanswered groups |
+| [**getKnowledgeKnowledgebaseUploadsUrlsJob**](KnowledgeApi.html#getKnowledgeKnowledgebaseUploadsUrlsJob) | Get content upload from URL job status |
 | [**getKnowledgeKnowledgebases**](KnowledgeApi.html#getKnowledgeKnowledgebases) | Get knowledge bases |
 | [**patchKnowledgeGuestSessionDocumentsSearchSearchId**](KnowledgeApi.html#patchKnowledgeGuestSessionDocumentsSearchSearchId) | Update search result. |
 | [**patchKnowledgeKnowledgebase**](KnowledgeApi.html#patchKnowledgeKnowledgebase) | Update knowledge base |
@@ -63,6 +65,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchKnowledgeKnowledgebaseLanguageDocument**](KnowledgeApi.html#patchKnowledgeKnowledgebaseLanguageDocument) | Update document |
 | [**patchKnowledgeKnowledgebaseLanguageDocuments**](KnowledgeApi.html#patchKnowledgeKnowledgebaseLanguageDocuments) | Update documents collection |
 | [**patchKnowledgeKnowledgebaseLanguageDocumentsImport**](KnowledgeApi.html#patchKnowledgeKnowledgebaseLanguageDocumentsImport) | Start import operation |
+| [**patchKnowledgeKnowledgebaseParseJob**](KnowledgeApi.html#patchKnowledgeKnowledgebaseParseJob) | Send update to the parse operation |
 | [**patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup**](KnowledgeApi.html#patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup) | Update a Knowledge base unanswered phrase group |
 | [**postKnowledgeDocumentuploads**](KnowledgeApi.html#postKnowledgeDocumentuploads) | Creates a presigned URL for uploading a knowledge import file with a set of documents |
 | [**postKnowledgeGuestSessionDocumentFeedback**](KnowledgeApi.html#postKnowledgeGuestSessionDocumentFeedback) | Give feedback on a document |
@@ -89,7 +92,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postKnowledgeKnowledgebaseLanguageDocumentsImports**](KnowledgeApi.html#postKnowledgeKnowledgebaseLanguageDocumentsImports) | Create import operation |
 | [**postKnowledgeKnowledgebaseLanguageTrainingPromote**](KnowledgeApi.html#postKnowledgeKnowledgebaseLanguageTrainingPromote) | Promote trained documents from draft state to active. |
 | [**postKnowledgeKnowledgebaseLanguageTrainings**](KnowledgeApi.html#postKnowledgeKnowledgebaseLanguageTrainings) | Trigger training |
+| [**postKnowledgeKnowledgebaseParseJobImport**](KnowledgeApi.html#postKnowledgeKnowledgebaseParseJobImport) | Import the parsed articles |
+| [**postKnowledgeKnowledgebaseParseJobs**](KnowledgeApi.html#postKnowledgeKnowledgebaseParseJobs) | Create parse job |
 | [**postKnowledgeKnowledgebaseSearch**](KnowledgeApi.html#postKnowledgeKnowledgebaseSearch) | Search Documents |
+| [**postKnowledgeKnowledgebaseUploadsUrlsJobs**](KnowledgeApi.html#postKnowledgeKnowledgebaseUploadsUrlsJobs) | Create content upload from URL job |
 | [**postKnowledgeKnowledgebases**](KnowledgeApi.html#postKnowledgeKnowledgebases) | Create new knowledge base |
 {: class="table-striped"}
 
@@ -2765,6 +2771,73 @@ try {
 
 [**OperationCreatorUserResponse**](OperationCreatorUserResponse.html)
 
+<a name="getKnowledgeKnowledgebaseParseJob"></a>
+
+# **getKnowledgeKnowledgebaseParseJob**
+
+
+
+> [KnowledgeParseJobResponse](KnowledgeParseJobResponse.html) getKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, expand)
+
+Get parse job report
+
+getKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}  
+
+Requires ALL permissions: 
+
+* knowledge:importJob:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+String parseJobId = "parseJobId_example"; // String | Parse job ID
+List<String> expand = Arrays.asList(null); // List<String> | If expand contains 'urls' downloadURL and failedEntitiesURL will be filled.
+try {
+    KnowledgeParseJobResponse result = apiInstance.getKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#getKnowledgeKnowledgebaseParseJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **parseJobId** | **String**| Parse job ID | 
+| **expand** | [**List&lt;String&gt;**](String.html)| If expand contains &#39;urls&#39; downloadURL and failedEntitiesURL will be filled. | [optional]<br />**Values**: urls 
+{: class="table-striped"}
+
+
+### Return type
+
+[**KnowledgeParseJobResponse**](KnowledgeParseJobResponse.html)
+
 <a name="getKnowledgeKnowledgebaseUnansweredGroup"></a>
 
 # **getKnowledgeKnowledgebaseUnansweredGroup**
@@ -2971,6 +3044,71 @@ try {
 ### Return type
 
 [**UnansweredGroups**](UnansweredGroups.html)
+
+<a name="getKnowledgeKnowledgebaseUploadsUrlsJob"></a>
+
+# **getKnowledgeKnowledgebaseUploadsUrlsJob**
+
+
+
+> [GetUploadSourceUrlJobStatusResponse](GetUploadSourceUrlJobStatusResponse.html) getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId)
+
+Get content upload from URL job status
+
+getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId}  
+
+Requires ALL permissions: 
+
+* knowledge:uploadSourceUrlJob:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+String jobId = "jobId_example"; // String | Upload job ID
+try {
+    GetUploadSourceUrlJobStatusResponse result = apiInstance.getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#getKnowledgeKnowledgebaseUploadsUrlsJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **jobId** | **String**| Upload job ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**GetUploadSourceUrlJobStatusResponse**](GetUploadSourceUrlJobStatusResponse.html)
 
 <a name="getKnowledgeKnowledgebases"></a>
 
@@ -3819,6 +3957,72 @@ try {
 ### Return type
 
 [**KnowledgeImport**](KnowledgeImport.html)
+
+<a name="patchKnowledgeKnowledgebaseParseJob"></a>
+
+# **patchKnowledgeKnowledgebaseParseJob**
+
+
+
+> Void patchKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, body)
+
+Send update to the parse operation
+
+patchKnowledgeKnowledgebaseParseJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}  
+
+Requires ALL permissions: 
+
+* knowledge:importJob:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+String parseJobId = "parseJobId_example"; // String | Parse job ID
+KnowledgeParseJobRequestPatch body = new KnowledgeParseJobRequestPatch(); // KnowledgeParseJobRequestPatch | 
+try {
+    apiInstance.patchKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#patchKnowledgeKnowledgebaseParseJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **parseJobId** | **String**| Parse job ID | 
+| **body** | [**KnowledgeParseJobRequestPatch**](KnowledgeParseJobRequestPatch.html)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup"></a>
 
@@ -5437,6 +5641,137 @@ try {
 
 [**KnowledgeTraining**](KnowledgeTraining.html)
 
+<a name="postKnowledgeKnowledgebaseParseJobImport"></a>
+
+# **postKnowledgeKnowledgebaseParseJobImport**
+
+
+
+> Void postKnowledgeKnowledgebaseParseJobImport(knowledgeBaseId, parseJobId, body)
+
+Import the parsed articles
+
+postKnowledgeKnowledgebaseParseJobImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import  
+
+Requires ALL permissions: 
+
+* knowledge:importJob:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+String parseJobId = "parseJobId_example"; // String | Parse job ID
+KnowledgeParseJobRequestImport body = new KnowledgeParseJobRequestImport(); // KnowledgeParseJobRequestImport | 
+try {
+    apiInstance.postKnowledgeKnowledgebaseParseJobImport(knowledgeBaseId, parseJobId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeKnowledgebaseParseJobImport");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **parseJobId** | **String**| Parse job ID | 
+| **body** | [**KnowledgeParseJobRequestImport**](KnowledgeParseJobRequestImport.html)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="postKnowledgeKnowledgebaseParseJobs"></a>
+
+# **postKnowledgeKnowledgebaseParseJobs**
+
+
+
+> [KnowledgeParseJobResponse](KnowledgeParseJobResponse.html) postKnowledgeKnowledgebaseParseJobs(knowledgeBaseId, body)
+
+Create parse job
+
+postKnowledgeKnowledgebaseParseJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs  
+
+Requires ALL permissions: 
+
+* knowledge:importJob:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+KnowledgeParseJobRequest body = new KnowledgeParseJobRequest(); // KnowledgeParseJobRequest | 
+try {
+    KnowledgeParseJobResponse result = apiInstance.postKnowledgeKnowledgebaseParseJobs(knowledgeBaseId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeKnowledgebaseParseJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **body** | [**KnowledgeParseJobRequest**](KnowledgeParseJobRequest.html)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**KnowledgeParseJobResponse**](KnowledgeParseJobResponse.html)
+
 <a name="postKnowledgeKnowledgebaseSearch"></a>
 
 # **postKnowledgeKnowledgebaseSearch**
@@ -5499,6 +5834,71 @@ try {
 ### Return type
 
 [**KnowledgeSearchResponse**](KnowledgeSearchResponse.html)
+
+<a name="postKnowledgeKnowledgebaseUploadsUrlsJobs"></a>
+
+# **postKnowledgeKnowledgebaseUploadsUrlsJobs**
+
+
+
+> [CreateUploadSourceUrlJobResponse](CreateUploadSourceUrlJobResponse.html) postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body)
+
+Create content upload from URL job
+
+postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs  
+
+Requires ALL permissions: 
+
+* knowledge:uploadSourceUrlJob:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+CreateUploadSourceUrlJobRequest body = new CreateUploadSourceUrlJobRequest(); // CreateUploadSourceUrlJobRequest | uploadRequest
+try {
+    CreateUploadSourceUrlJobResponse result = apiInstance.postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeKnowledgebaseUploadsUrlsJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **body** | [**CreateUploadSourceUrlJobRequest**](CreateUploadSourceUrlJobRequest.html)| uploadRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CreateUploadSourceUrlJobResponse**](CreateUploadSourceUrlJobResponse.html)
 
 <a name="postKnowledgeKnowledgebases"></a>
 

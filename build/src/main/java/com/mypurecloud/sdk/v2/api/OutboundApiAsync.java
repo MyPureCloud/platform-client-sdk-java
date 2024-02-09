@@ -41,6 +41,7 @@ import com.mypurecloud.sdk.v2.model.ContactListDivisionView;
 import com.mypurecloud.sdk.v2.model.ContactListDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.ContactListEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListFilter;
+import com.mypurecloud.sdk.v2.model.ContactListFilterBulkRetrieveBody;
 import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListTemplate;
 import com.mypurecloud.sdk.v2.model.ContactListTemplateBulkRetrieveBody;
@@ -60,6 +61,7 @@ import com.mypurecloud.sdk.v2.model.DncPatchEmailsRequest;
 import com.mypurecloud.sdk.v2.model.DncPatchPhoneNumbersRequest;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.EmailCampaignSchedule;
+import com.mypurecloud.sdk.v2.model.EmailCampaignScheduleEntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EventLog;
 import com.mypurecloud.sdk.v2.model.ExportUri;
@@ -201,6 +203,7 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistContactsRequest
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistContactsBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistExportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersBulkRetrieveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersPreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlisttemplatesRequest;
@@ -6792,13 +6795,13 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<MessagingCampaignScheduleEntityListing> getOutboundSchedulesEmailcampaignsAsync(GetOutboundSchedulesEmailcampaignsRequest request, final AsyncApiCallback<MessagingCampaignScheduleEntityListing> callback) {
+  public Future<EmailCampaignScheduleEntityListing> getOutboundSchedulesEmailcampaignsAsync(GetOutboundSchedulesEmailcampaignsRequest request, final AsyncApiCallback<EmailCampaignScheduleEntityListing> callback) {
     try {
-      final SettableFuture<MessagingCampaignScheduleEntityListing> future = SettableFuture.create();
+      final SettableFuture<EmailCampaignScheduleEntityListing> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MessagingCampaignScheduleEntityListing>() {}, new AsyncApiCallback<ApiResponse<MessagingCampaignScheduleEntityListing>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EmailCampaignScheduleEntityListing>() {}, new AsyncApiCallback<ApiResponse<EmailCampaignScheduleEntityListing>>() {
         @Override
-        public void onCompleted(ApiResponse<MessagingCampaignScheduleEntityListing> response) {
+        public void onCompleted(ApiResponse<EmailCampaignScheduleEntityListing> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -6826,13 +6829,13 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<MessagingCampaignScheduleEntityListing>> getOutboundSchedulesEmailcampaignsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<MessagingCampaignScheduleEntityListing>> callback) {
+  public Future<ApiResponse<EmailCampaignScheduleEntityListing>> getOutboundSchedulesEmailcampaignsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EmailCampaignScheduleEntityListing>> callback) {
     try {
-      final SettableFuture<ApiResponse<MessagingCampaignScheduleEntityListing>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<EmailCampaignScheduleEntityListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<MessagingCampaignScheduleEntityListing>() {}, new AsyncApiCallback<ApiResponse<MessagingCampaignScheduleEntityListing>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<EmailCampaignScheduleEntityListing>() {}, new AsyncApiCallback<ApiResponse<EmailCampaignScheduleEntityListing>>() {
         @Override
-        public void onCompleted(ApiResponse<MessagingCampaignScheduleEntityListing> response) {
+        public void onCompleted(ApiResponse<EmailCampaignScheduleEntityListing> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -6840,7 +6843,7 @@ public class OutboundApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<MessagingCampaignScheduleEntityListing> response = (ApiResponse<MessagingCampaignScheduleEntityListing>)(ApiResponse<?>)exception;
+            ApiResponse<EmailCampaignScheduleEntityListing> response = (ApiResponse<EmailCampaignScheduleEntityListing>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -6848,7 +6851,7 @@ public class OutboundApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<MessagingCampaignScheduleEntityListing> response = (ApiResponse<MessagingCampaignScheduleEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<EmailCampaignScheduleEntityListing> response = (ApiResponse<EmailCampaignScheduleEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -8801,6 +8804,81 @@ public class OutboundApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ContactListFilter> response = (ApiResponse<ContactListFilter>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve multiple contact list filters
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ContactListFilterEntityListing> postOutboundContactlistfiltersBulkRetrieveAsync(PostOutboundContactlistfiltersBulkRetrieveRequest request, final AsyncApiCallback<ContactListFilterEntityListing> callback) {
+    try {
+      final SettableFuture<ContactListFilterEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContactListFilterEntityListing>() {}, new AsyncApiCallback<ApiResponse<ContactListFilterEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactListFilterEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve multiple contact list filters
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ContactListFilterEntityListing>> postOutboundContactlistfiltersBulkRetrieveAsync(ApiRequest<ContactListFilterBulkRetrieveBody> request, final AsyncApiCallback<ApiResponse<ContactListFilterEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ContactListFilterEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContactListFilterEntityListing>() {}, new AsyncApiCallback<ApiResponse<ContactListFilterEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactListFilterEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactListFilterEntityListing> response = (ApiResponse<ContactListFilterEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactListFilterEntityListing> response = (ApiResponse<ContactListFilterEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

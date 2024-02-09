@@ -11,7 +11,7 @@ title: Criteria
 | **key** | <!----><!---->**String**<!----> | The criteria key. |  |
 | **values** | <!----><!---->**List&lt;String&gt;**<!----> | The criteria values. |  |
 | **shouldIgnoreCase** | <!----><!---->**Boolean**<!----> | Should criteria be case insensitive. |  |
-| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | The comparison operator. |  [optional] |
+| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | The comparison operator. |  |
 {: class="table table-striped"}
 
 

@@ -90,10 +90,21 @@ public class JourneySegment  implements Serializable {
   private Date modifiedDate = null;
 
   
-  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  /**
+   * The ID of the segment.
+   **/
+  public JourneySegment id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The ID of the segment.")
   @JsonProperty("id")
   public String getId() {
     return id;
+  }
+  public void setId(String id) {
+    this.id = id;
   }
 
 
@@ -105,7 +116,7 @@ public class JourneySegment  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether or not the segment is active.")
+  @ApiModelProperty(example = "null", required = true, value = "Whether or not the segment is active.")
   @JsonProperty("isActive")
   public Boolean getIsActive() {
     return isActive;
@@ -141,7 +152,7 @@ public class JourneySegment  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The version of the segment.")
+  @ApiModelProperty(example = "null", required = true, value = "The version of the segment.")
   @JsonProperty("version")
   public Integer getVersion() {
     return version;
@@ -177,7 +188,7 @@ public class JourneySegment  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The hexadecimal color value of the segment.")
+  @ApiModelProperty(example = "null", required = true, value = "The hexadecimal color value of the segment.")
   @JsonProperty("color")
   public String getColor() {
     return color;
@@ -195,7 +206,7 @@ public class JourneySegment  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The target entity that a segment applies to.")
+  @ApiModelProperty(example = "null", required = true, value = "The target entity that a segment applies to.")
   @JsonProperty("scope")
   public ScopeEnum getScope() {
     return scope;
@@ -213,7 +224,7 @@ public class JourneySegment  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether or not the segment should be displayed to agent/supervisor users.")
+  @ApiModelProperty(example = "null", required = true, value = "Whether or not the segment should be displayed to agent/supervisor users.")
   @JsonProperty("shouldDisplayToAgent")
   public Boolean getShouldDisplayToAgent() {
     return shouldDisplayToAgent;
@@ -231,7 +242,7 @@ public class JourneySegment  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The context of the segment.")
+  @ApiModelProperty(example = "null", required = true, value = "The context of the segment.")
   @JsonProperty("context")
   public Context getContext() {
     return context;
@@ -249,7 +260,7 @@ public class JourneySegment  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The pattern of rules defining the segment.")
+  @ApiModelProperty(example = "null", required = true, value = "The pattern of rules defining the segment.")
   @JsonProperty("journey")
   public Journey getJourney() {
     return journey;
@@ -310,7 +321,7 @@ public class JourneySegment  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Timestamp indicating when the segment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", required = true, value = "Timestamp indicating when the segment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("createdDate")
   public Date getCreatedDate() {
     return createdDate;
@@ -328,7 +339,7 @@ public class JourneySegment  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Timestamp indicating when the the segment was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", required = true, value = "Timestamp indicating when the the segment was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("modifiedDate")
   public Date getModifiedDate() {
     return modifiedDate;

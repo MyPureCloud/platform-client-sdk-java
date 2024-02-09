@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
 import com.mypurecloud.sdk.v2.model.JourneyAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.JourneyAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.JourneySegment;
+import com.mypurecloud.sdk.v2.model.JourneySegmentRequest;
 import com.mypurecloud.sdk.v2.model.Outcome;
 import com.mypurecloud.sdk.v2.model.OutcomeAttributionAsyncResponse;
 import com.mypurecloud.sdk.v2.model.OutcomeAttributionJobStateResponse;
@@ -51,6 +52,7 @@ import com.mypurecloud.sdk.v2.model.OutcomeListing;
 import com.mypurecloud.sdk.v2.model.OutcomePredictor;
 import com.mypurecloud.sdk.v2.model.OutcomePredictorListing;
 import com.mypurecloud.sdk.v2.model.OutcomePredictorRequest;
+import com.mypurecloud.sdk.v2.model.OutcomeRequest;
 import com.mypurecloud.sdk.v2.model.OutcomeScoresResult;
 import com.mypurecloud.sdk.v2.model.PatchActionMap;
 import com.mypurecloud.sdk.v2.model.PatchActionTarget;
@@ -63,16 +65,16 @@ import com.mypurecloud.sdk.v2.model.SessionListing;
 
 public class PostJourneySegmentsRequest {
 
-	private JourneySegment body;
-	public JourneySegment getBody() {
+	private JourneySegmentRequest body;
+	public JourneySegmentRequest getBody() {
 		return this.body;
 	}
 
-	public void setBody(JourneySegment body) {
+	public void setBody(JourneySegmentRequest body) {
 		this.body = body;
 	}
 
-	public PostJourneySegmentsRequest withBody(JourneySegment body) {
+	public PostJourneySegmentsRequest withBody(JourneySegmentRequest body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -96,7 +98,7 @@ public class PostJourneySegmentsRequest {
         return this;
     }
 
-    public ApiRequest<JourneySegment> withHttpInfo() {
+    public ApiRequest<JourneySegmentRequest> withHttpInfo() {
         
 
         return ApiRequestBuilder.create("POST", "/api/v2/journey/segments")
@@ -123,7 +125,7 @@ public class PostJourneySegmentsRequest {
 		}
 
 
-		public Builder withBody(JourneySegment body) {
+		public Builder withBody(JourneySegmentRequest body) {
 			request.setBody(body);
 			return this;
 		}

@@ -16,7 +16,7 @@ title: Referrer
 | **queryString** | <!----><!---->**String**<!----> | Referrer URL querystring. |  [optional] |
 | **fragment** | <!----><!---->**String**<!----> | Referrer URL fragment. |  [optional] |
 | **name** | <!----><!---->**String**<!----> | Name of referrer (e.g. Yahoo!, Google, InfoSpace). |  [optional] |
-| **medium** | [**MediumEnum**](#MediumEnum)<!----> | Type of referrer (e.g. search, social). |  [optional] |
+| **medium** | [**MediumEnum**](#MediumEnum)<!----> | Type of referrer (e.g. search, social). |  |
 {: class="table table-striped"}
 
 

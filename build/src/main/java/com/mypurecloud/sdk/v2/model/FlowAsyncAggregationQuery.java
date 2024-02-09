@@ -120,7 +120,6 @@ public class FlowAsyncAggregationQuery  implements Serializable {
     RECOGNITIONFAILUREREASON("recognitionFailureReason"),
     REMOTE("remote"),
     REMOVEDSKILLID("removedSkillId"),
-    REOFFERED("reoffered"),
     REQUESTEDLANGUAGEID("requestedLanguageId"),
     REQUESTEDROUTING("requestedRouting"),
     REQUESTEDROUTINGSKILLID("requestedRoutingSkillId"),

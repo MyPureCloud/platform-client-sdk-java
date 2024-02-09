@@ -205,7 +205,7 @@ public class JourneyPage  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Hierarchy of the current page in relation to the website's structure.")
+  @ApiModelProperty(example = "null", required = true, value = "Hierarchy of the current page in relation to the website's structure.")
   @JsonProperty("breadcrumb")
   public List<String> getBreadcrumb() {
     return breadcrumb;

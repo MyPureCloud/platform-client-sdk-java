@@ -11,7 +11,7 @@ title: AppEventRequest
 | **eventName** | <!----><!---->**String**<!----> | Represents the action the customer performed. Event types are created for each unique event name and can be faceted on in segment and outcome conditions. A valid event name must only contain alphanumeric characters and underscores. A good event name is typically an object followed by the action performed in past tense, e.g. screen_viewed, search_performed, user_registered. |  |
 | **screenName** | <!----><!---->**String**<!----> | The name of the screen, view, or fragment in the app where the event took place. |  |
 | **app** | <!----><!---->[**JourneyApp**](JourneyApp.html)<!----> | Application that the customer is interacting with. |  |
-| **device** | <!----><!---->[**Device**](Device.html)<!----> | Customer's device. |  |
+| **device** | <!----><!---->[**RequestDevice**](RequestDevice.html)<!----> | Customer's device. |  |
 | **sdkLibrary** | <!----><!---->[**SdkLibrary**](SdkLibrary.html)<!----> | SDK library used to generate the event. |  [optional] |
 | **networkConnectivity** | <!----><!---->[**NetworkConnectivity**](NetworkConnectivity.html)<!----> | Information relating to the device's network connectivity. |  [optional] |
 | **referrerUrl** | <!----><!---->**String**<!----> | The referrer URL of the first event in the app session. |  [optional] |

@@ -8,10 +8,10 @@ title: Session
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The ID of the session. |  |
 | **customerId** | <!----><!---->**String**<!----> | Primary identifier of the customer in the source where the events for the session originate from. |  [optional] |
 | **customerIdType** | <!----><!---->**String**<!----> | Type of source customer identifier (e.g. cookie, email, phone). |  [optional] |
-| **type** | <!----><!---->**String**<!----> | Session types indicate the type or category of sessions (e.g. web, app). |  [optional] |
+| **type** | <!----><!---->**String**<!----> | Session types indicate the type or category of sessions (e.g. web, app). |  |
 | **externalId** | <!----><!---->**String**<!----> | Unique identifier in the external system where the events for the session originate from. |  [optional] |
 | **externalUrl** | <!----><!---->**String**<!----> | A URL that identifies an external system-of-record resource that may have more detailed information on the session. |  [optional] |
 | **shortId** | <!----><!---->**String**<!----> | Shortened numeric identifier of 4-6 digits. |  [optional] |
@@ -33,10 +33,10 @@ title: Session
 | **searchTerms** | <!----><!---->**List&lt;String&gt;**<!----> | Search terms associated with the session. |  [optional] |
 | **userAgentString** | <!----><!---->**String**<!----> | String identifying the user agent. |  [optional] |
 | **durationInSeconds** | <!----><!---->**Integer**<!----> | Indicates how long the session has been active (valid for an individual device). |  [optional] |
-| **eventCount** | <!----><!---->**Integer**<!----> | The count of all events performed during the session. |  [optional] |
+| **eventCount** | <!----><!---->**Integer**<!----> | The count of all events performed during the session. |  |
 | **pageviewCount** | <!----><!---->**Integer**<!----> | The count of all pageviews performed during the session. |  [optional] |
 | **screenviewCount** | <!----><!---->**Integer**<!----> | The count of all screenviews performed during the session. |  [optional] |
-| **lastEvent** | <!----><!---->[**SessionLastEvent**](SessionLastEvent.html)<!----> | Information about the most recent event in this session. |  [optional] |
+| **lastEvent** | <!----><!---->[**SessionLastEvent**](SessionLastEvent.html)<!----> | Information about the most recent event in this session. |  |
 | **lastConnectedQueue** | <!----><!---->[**ConnectedQueue**](ConnectedQueue.html)<!----> | The last queue connected to this session. |  [optional] |
 | **lastConnectedUser** | <!----><!---->[**ConnectedUser**](ConnectedUser.html)<!----> | The last user connected to this session. |  [optional] |
 | **lastUserDisposition** | <!----><!---->[**ConversationUserDisposition**](ConversationUserDisposition.html)<!----> | The last user disposition connected to this session. |  [optional] |
@@ -45,9 +45,9 @@ title: Session
 | **conversationSubject** | <!----><!---->**String**<!----> | The subject for the conversation, for example an email subject. |  [optional] |
 | **lastUserDisconnectType** | [**LastUserDisconnectTypeEnum**](#LastUserDisconnectTypeEnum)<!----> | Disconnect reason for the last user connected to the conversation. |  [optional] |
 | **lastAcdOutcome** | [**LastAcdOutcomeEnum**](#LastAcdOutcomeEnum)<!----> | Last ACD outcome for the conversation. |  [optional] |
-| **authenticated** | <!----><!---->**Boolean**<!----> | Indicates whether or not the session is authenticated. |  [optional] |
+| **authenticated** | <!----><!---->**Boolean**<!----> | Indicates whether or not the session is authenticated. |  |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-| **createdDate** | <!----><!---->[**Date**](Date.html)<!----> | Timestamp indicating when the session was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **createdDate** | <!----><!---->[**Date**](Date.html)<!----> | Timestamp indicating when the session was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
 | **endedDate** | <!----><!---->[**Date**](Date.html)<!----> | Timestamp indicating when the session was ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **externalContact** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | The external contact associated with this session. |  [optional] |
 | **awayDate** | <!----><!---->[**Date**](Date.html)<!----> | Timestamp indicating when the visitor should be considered as away. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |

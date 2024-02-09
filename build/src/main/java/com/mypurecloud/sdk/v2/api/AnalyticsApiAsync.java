@@ -69,6 +69,8 @@ import com.mypurecloud.sdk.v2.model.KnowledgeAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.PropertyIndexRequest;
 import com.mypurecloud.sdk.v2.model.QueueObservationQuery;
 import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
+import com.mypurecloud.sdk.v2.model.RateLimitAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.RateLimitAggregationQuery;
 import com.mypurecloud.sdk.v2.model.ReportMetaData;
 import com.mypurecloud.sdk.v2.model.ReportMetaDataEntityListing;
 import com.mypurecloud.sdk.v2.model.ReportRunEntry;
@@ -190,6 +192,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsJourneysAggregatesQueryRe
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsKnowledgeAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsKnowledgeAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsQueuesObservationsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsRatelimitsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingExportsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingScheduleRunreportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingSchedulesRequest;
@@ -5321,7 +5324,6 @@ public class AnalyticsApiAsync {
   /**
    * Query for flow execution aggregates
    * 
-   * postAnalyticsFlowexecutionsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5356,7 +5358,6 @@ public class AnalyticsApiAsync {
   /**
    * Query for flow execution aggregates
    * 
-   * postAnalyticsFlowexecutionsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6069,6 +6070,81 @@ public class AnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<QueueObservationQueryResponse> response = (ApiResponse<QueueObservationQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<RateLimitAggregateQueryResponse> postAnalyticsRatelimitsAggregatesQueryAsync(PostAnalyticsRatelimitsAggregatesQueryRequest request, final AsyncApiCallback<RateLimitAggregateQueryResponse> callback) {
+    try {
+      final SettableFuture<RateLimitAggregateQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RateLimitAggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<RateLimitAggregateQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<RateLimitAggregateQueryResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<RateLimitAggregateQueryResponse>> postAnalyticsRatelimitsAggregatesQueryAsync(ApiRequest<RateLimitAggregationQuery> request, final AsyncApiCallback<ApiResponse<RateLimitAggregateQueryResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<RateLimitAggregateQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<RateLimitAggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<RateLimitAggregateQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<RateLimitAggregateQueryResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RateLimitAggregateQueryResponse> response = (ApiResponse<RateLimitAggregateQueryResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RateLimitAggregateQueryResponse> response = (ApiResponse<RateLimitAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

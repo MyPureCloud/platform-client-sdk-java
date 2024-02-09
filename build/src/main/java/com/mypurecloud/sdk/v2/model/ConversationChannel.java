@@ -148,7 +148,7 @@ public class ConversationChannel  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The type or category of this channel.")
+  @ApiModelProperty(example = "null", required = true, value = "The type or category of this channel.")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;

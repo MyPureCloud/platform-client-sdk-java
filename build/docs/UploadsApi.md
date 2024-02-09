@@ -7,14 +7,81 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**getKnowledgeKnowledgebaseUploadsUrlsJob**](UploadsApi.html#getKnowledgeKnowledgebaseUploadsUrlsJob) | Get content upload from URL job status |
 | [**postIntegrationsActionDraftFunctionUpload**](UploadsApi.html#postIntegrationsActionDraftFunctionUpload) | Create upload presigned URL for draft function package file. |
 | [**postKnowledgeDocumentuploads**](UploadsApi.html#postKnowledgeDocumentuploads) | Creates a presigned URL for uploading a knowledge import file with a set of documents |
+| [**postKnowledgeKnowledgebaseUploadsUrlsJobs**](UploadsApi.html#postKnowledgeKnowledgebaseUploadsUrlsJobs) | Create content upload from URL job |
 | [**postLanguageunderstandingMinerUploads**](UploadsApi.html#postLanguageunderstandingMinerUploads) | Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner |
 | [**postUploadsLearningCoverart**](UploadsApi.html#postUploadsLearningCoverart) | Generates pre-signed URL to upload cover art for learning modules |
 | [**postUploadsPublicassetsImages**](UploadsApi.html#postUploadsPublicassetsImages) | Creates presigned url for uploading a public asset image |
 | [**postUploadsRecordings**](UploadsApi.html#postUploadsRecordings) | Creates presigned url for uploading a recording file |
 | [**postUploadsWorkforcemanagementHistoricaldataCsv**](UploadsApi.html#postUploadsWorkforcemanagementHistoricaldataCsv) | Creates presigned url for uploading WFM historical data file. Requires data in csv format. |
 {: class="table-striped"}
+
+<a name="getKnowledgeKnowledgebaseUploadsUrlsJob"></a>
+
+# **getKnowledgeKnowledgebaseUploadsUrlsJob**
+
+
+
+> [GetUploadSourceUrlJobStatusResponse](GetUploadSourceUrlJobStatusResponse.html) getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId)
+
+Get content upload from URL job status
+
+getKnowledgeKnowledgebaseUploadsUrlsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId}  
+
+Requires ALL permissions: 
+
+* knowledge:uploadSourceUrlJob:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UploadsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UploadsApi apiInstance = new UploadsApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+String jobId = "jobId_example"; // String | Upload job ID
+try {
+    GetUploadSourceUrlJobStatusResponse result = apiInstance.getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UploadsApi#getKnowledgeKnowledgebaseUploadsUrlsJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **jobId** | **String**| Upload job ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**GetUploadSourceUrlJobStatusResponse**](GetUploadSourceUrlJobStatusResponse.html)
 
 <a name="postIntegrationsActionDraftFunctionUpload"></a>
 
@@ -141,6 +208,71 @@ try {
 ### Return type
 
 [**UploadUrlResponse**](UploadUrlResponse.html)
+
+<a name="postKnowledgeKnowledgebaseUploadsUrlsJobs"></a>
+
+# **postKnowledgeKnowledgebaseUploadsUrlsJobs**
+
+
+
+> [CreateUploadSourceUrlJobResponse](CreateUploadSourceUrlJobResponse.html) postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body)
+
+Create content upload from URL job
+
+postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs  
+
+Requires ALL permissions: 
+
+* knowledge:uploadSourceUrlJob:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UploadsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UploadsApi apiInstance = new UploadsApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+CreateUploadSourceUrlJobRequest body = new CreateUploadSourceUrlJobRequest(); // CreateUploadSourceUrlJobRequest | uploadRequest
+try {
+    CreateUploadSourceUrlJobResponse result = apiInstance.postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UploadsApi#postKnowledgeKnowledgebaseUploadsUrlsJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **body** | [**CreateUploadSourceUrlJobRequest**](CreateUploadSourceUrlJobRequest.html)| uploadRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CreateUploadSourceUrlJobResponse**](CreateUploadSourceUrlJobResponse.html)
 
 <a name="postLanguageunderstandingMinerUploads"></a>
 

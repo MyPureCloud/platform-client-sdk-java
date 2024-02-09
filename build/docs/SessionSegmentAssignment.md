@@ -8,8 +8,8 @@ title: SessionSegmentAssignment
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **segment** | <!----><!---->[**AssignedSegment**](AssignedSegment.html)<!----> | The segment that was assigned. |  [optional] |
-| **assignedDate** | <!----><!---->[**Date**](Date.html)<!----> | Timestamp indicating when the segment was assigned. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **segment** | <!----><!---->[**AssignedSegment**](AssignedSegment.html)<!----> | The segment that was assigned. |  |
+| **assignedDate** | <!----><!---->[**Date**](Date.html)<!----> | Timestamp indicating when the segment was assigned. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
 {: class="table table-striped"}
 
 

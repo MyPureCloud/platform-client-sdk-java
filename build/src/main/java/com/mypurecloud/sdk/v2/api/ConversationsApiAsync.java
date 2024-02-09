@@ -10782,8 +10782,8 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Update or activate a WhatsApp messaging integration
-   * The following steps are required in order to fully activate a WhatsApp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
+   * Update a WhatsApp messaging integration
+   * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -10816,8 +10816,8 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Update or activate a WhatsApp messaging integration
-   * The following steps are required in order to fully activate a WhatsApp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
+   * Update a WhatsApp messaging integration
+   * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -12065,7 +12065,6 @@ public class ConversationsApiAsync {
   /**
    * Replace this participant with the specified agent
    * 
-   * postConversationParticipantReplaceAgent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -12100,7 +12099,6 @@ public class ConversationsApiAsync {
   /**
    * Replace this participant with the specified agent
    * 
-   * postConversationParticipantReplaceAgent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -12142,7 +12140,6 @@ public class ConversationsApiAsync {
   /**
    * Replace this participant with the an external contact
    * 
-   * postConversationParticipantReplaceExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -12177,7 +12174,6 @@ public class ConversationsApiAsync {
   /**
    * Replace this participant with the an external contact
    * 
-   * postConversationParticipantReplaceExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -12219,7 +12215,6 @@ public class ConversationsApiAsync {
   /**
    * Replace this participant with the specified queue
    * 
-   * postConversationParticipantReplaceQueue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -12254,7 +12249,6 @@ public class ConversationsApiAsync {
   /**
    * Replace this participant with the specified queue
    * 
-   * postConversationParticipantReplaceQueue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -12823,7 +12817,6 @@ public class ConversationsApiAsync {
   /**
    * Initiate a consult transfer to an agent
    * 
-   * postConversationsCallParticipantConsultAgent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -12858,7 +12851,6 @@ public class ConversationsApiAsync {
   /**
    * Initiate a consult transfer to an agent
    * 
-   * postConversationsCallParticipantConsultAgent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -12900,7 +12892,6 @@ public class ConversationsApiAsync {
   /**
    * Initiate a consult transfer to an external contact
    * 
-   * postConversationsCallParticipantConsultExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -12935,7 +12926,6 @@ public class ConversationsApiAsync {
   /**
    * Initiate a consult transfer to an external contact
    * 
-   * postConversationsCallParticipantConsultExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -12977,7 +12967,6 @@ public class ConversationsApiAsync {
   /**
    * Initiate a consult transfer to a queue
    * 
-   * postConversationsCallParticipantConsultQueue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -13012,7 +13001,6 @@ public class ConversationsApiAsync {
   /**
    * Initiate a consult transfer to a queue
    * 
-   * postConversationsCallParticipantConsultQueue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -15604,7 +15592,6 @@ public class ConversationsApiAsync {
   /**
    * Listen in on the conversation from the point of view of a given participant.
    * 
-   * postConversationsMessageParticipantMonitor is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -15639,7 +15626,6 @@ public class ConversationsApiAsync {
   /**
    * Listen in on the conversation from the point of view of a given participant.
    * 
-   * postConversationsMessageParticipantMonitor is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

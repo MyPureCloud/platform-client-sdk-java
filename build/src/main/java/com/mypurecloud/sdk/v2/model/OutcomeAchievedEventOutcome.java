@@ -28,13 +28,14 @@ public class OutcomeAchievedEventOutcome  implements Serializable {
 
   
   /**
+   * ID of the outcome.
    **/
   public OutcomeAchievedEventOutcome id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "ID of the outcome.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -87,7 +88,7 @@ public class OutcomeAchievedEventOutcome  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The version of the outcome.")
+  @ApiModelProperty(example = "null", required = true, value = "The version of the outcome.")
   @JsonProperty("version")
   public Integer getVersion() {
     return version;

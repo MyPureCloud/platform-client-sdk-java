@@ -84,6 +84,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsKnowledgeAggregatesJobs**](AnalyticsApi.html#postAnalyticsKnowledgeAggregatesJobs) | Query for knowledge aggregates asynchronously |
 | [**postAnalyticsKnowledgeAggregatesQuery**](AnalyticsApi.html#postAnalyticsKnowledgeAggregatesQuery) | Query for knowledge aggregates |
 | [**postAnalyticsQueuesObservationsQuery**](AnalyticsApi.html#postAnalyticsQueuesObservationsQuery) | Query for queue observations |
+| [**postAnalyticsRatelimitsAggregatesQuery**](AnalyticsApi.html#postAnalyticsRatelimitsAggregatesQuery) | Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded |
 | [**postAnalyticsReportingExports**](AnalyticsApi.html#postAnalyticsReportingExports) | Generate a view export request |
 | [**postAnalyticsReportingScheduleRunreport**](AnalyticsApi.html#postAnalyticsReportingScheduleRunreport) | Place a scheduled report immediately into the reporting queue |
 | [**postAnalyticsReportingSchedules**](AnalyticsApi.html#postAnalyticsReportingSchedules) | Create a scheduled report job |
@@ -4333,8 +4334,6 @@ try {
 
 Query for flow execution aggregates
 
-postAnalyticsFlowexecutionsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/analytics/flowexecutions/aggregates/query  
 
 Requires ANY permissions: 
@@ -4948,6 +4947,67 @@ try {
 ### Return type
 
 [**QueueObservationQueryResponse**](QueueObservationQueryResponse.html)
+
+<a name="postAnalyticsRatelimitsAggregatesQuery"></a>
+
+# **postAnalyticsRatelimitsAggregatesQuery**
+
+
+
+> [RateLimitAggregateQueryResponse](RateLimitAggregateQueryResponse.html) postAnalyticsRatelimitsAggregatesQuery(body)
+
+Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded
+
+Wraps POST /api/v2/analytics/ratelimits/aggregates/query  
+
+Requires ANY permissions: 
+
+* analytics:rateLimitAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+RateLimitAggregationQuery body = new RateLimitAggregationQuery(); // RateLimitAggregationQuery | query
+try {
+    RateLimitAggregateQueryResponse result = apiInstance.postAnalyticsRatelimitsAggregatesQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#postAnalyticsRatelimitsAggregatesQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**RateLimitAggregationQuery**](RateLimitAggregationQuery.html)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**RateLimitAggregateQueryResponse**](RateLimitAggregateQueryResponse.html)
 
 <a name="postAnalyticsReportingExports"></a>
 

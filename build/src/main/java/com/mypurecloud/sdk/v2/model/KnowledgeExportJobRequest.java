@@ -73,6 +73,7 @@ public class KnowledgeExportJobRequest  implements Serializable {
     }
   }
   private FileTypeEnum fileType = null;
+  private Integer jsonFileVersion = null;
 
   
   /**
@@ -111,6 +112,24 @@ public class KnowledgeExportJobRequest  implements Serializable {
   }
 
 
+  /**
+   * Requested version of the exported json file. Available versions are 2 and 3, default is 2
+   **/
+  public KnowledgeExportJobRequest jsonFileVersion(Integer jsonFileVersion) {
+    this.jsonFileVersion = jsonFileVersion;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Requested version of the exported json file. Available versions are 2 and 3, default is 2")
+  @JsonProperty("jsonFileVersion")
+  public Integer getJsonFileVersion() {
+    return jsonFileVersion;
+  }
+  public void setJsonFileVersion(Integer jsonFileVersion) {
+    this.jsonFileVersion = jsonFileVersion;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -122,12 +141,13 @@ public class KnowledgeExportJobRequest  implements Serializable {
     KnowledgeExportJobRequest knowledgeExportJobRequest = (KnowledgeExportJobRequest) o;
 
     return Objects.equals(this.exportFilter, knowledgeExportJobRequest.exportFilter) &&
-            Objects.equals(this.fileType, knowledgeExportJobRequest.fileType);
+            Objects.equals(this.fileType, knowledgeExportJobRequest.fileType) &&
+            Objects.equals(this.jsonFileVersion, knowledgeExportJobRequest.jsonFileVersion);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(exportFilter, fileType);
+    return Objects.hash(exportFilter, fileType, jsonFileVersion);
   }
 
   @Override
@@ -137,6 +157,7 @@ public class KnowledgeExportJobRequest  implements Serializable {
     
     sb.append("    exportFilter: ").append(toIndentedString(exportFilter)).append("\n");
     sb.append("    fileType: ").append(toIndentedString(fileType)).append("\n");
+    sb.append("    jsonFileVersion: ").append(toIndentedString(jsonFileVersion)).append("\n");
     sb.append("}");
     return sb.toString();
   }

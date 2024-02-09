@@ -32,6 +32,9 @@ public class CallbackMediaSettings  implements Serializable {
   private Double autoAnswerAlertToneSeconds = null;
   private Double manualAnswerAlertToneSeconds = null;
   private Map<String, BaseMediaSettings> subTypeSettings = null;
+  private Boolean enableAutoDialAndEnd = null;
+  private Integer autoDialDelaySeconds = null;
+  private Integer autoEndDelaySeconds = null;
 
   
   /**
@@ -142,6 +145,60 @@ public class CallbackMediaSettings  implements Serializable {
   }
 
 
+  /**
+   * Flag to enable Auto-Dial and Auto-End automation for callbacks on this queue.
+   **/
+  public CallbackMediaSettings enableAutoDialAndEnd(Boolean enableAutoDialAndEnd) {
+    this.enableAutoDialAndEnd = enableAutoDialAndEnd;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Flag to enable Auto-Dial and Auto-End automation for callbacks on this queue.")
+  @JsonProperty("enableAutoDialAndEnd")
+  public Boolean getEnableAutoDialAndEnd() {
+    return enableAutoDialAndEnd;
+  }
+  public void setEnableAutoDialAndEnd(Boolean enableAutoDialAndEnd) {
+    this.enableAutoDialAndEnd = enableAutoDialAndEnd;
+  }
+
+
+  /**
+   * Time in seconds after agent connects to callback before outgoing call is auto-dialed. Allowable values in range 0 - 1200 seconds. Defaults to 300 seconds.
+   **/
+  public CallbackMediaSettings autoDialDelaySeconds(Integer autoDialDelaySeconds) {
+    this.autoDialDelaySeconds = autoDialDelaySeconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Time in seconds after agent connects to callback before outgoing call is auto-dialed. Allowable values in range 0 - 1200 seconds. Defaults to 300 seconds.")
+  @JsonProperty("autoDialDelaySeconds")
+  public Integer getAutoDialDelaySeconds() {
+    return autoDialDelaySeconds;
+  }
+  public void setAutoDialDelaySeconds(Integer autoDialDelaySeconds) {
+    this.autoDialDelaySeconds = autoDialDelaySeconds;
+  }
+
+
+  /**
+   * Time in seconds after agent disconnects from the outgoing call before the encasing callback is auto-ended. Allowable values in range 0 - 1200 seconds. Defaults to 300 seconds.
+   **/
+  public CallbackMediaSettings autoEndDelaySeconds(Integer autoEndDelaySeconds) {
+    this.autoEndDelaySeconds = autoEndDelaySeconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Time in seconds after agent disconnects from the outgoing call before the encasing callback is auto-ended. Allowable values in range 0 - 1200 seconds. Defaults to 300 seconds.")
+  @JsonProperty("autoEndDelaySeconds")
+  public Integer getAutoEndDelaySeconds() {
+    return autoEndDelaySeconds;
+  }
+  public void setAutoEndDelaySeconds(Integer autoEndDelaySeconds) {
+    this.autoEndDelaySeconds = autoEndDelaySeconds;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -157,12 +214,15 @@ public class CallbackMediaSettings  implements Serializable {
             Objects.equals(this.serviceLevel, callbackMediaSettings.serviceLevel) &&
             Objects.equals(this.autoAnswerAlertToneSeconds, callbackMediaSettings.autoAnswerAlertToneSeconds) &&
             Objects.equals(this.manualAnswerAlertToneSeconds, callbackMediaSettings.manualAnswerAlertToneSeconds) &&
-            Objects.equals(this.subTypeSettings, callbackMediaSettings.subTypeSettings);
+            Objects.equals(this.subTypeSettings, callbackMediaSettings.subTypeSettings) &&
+            Objects.equals(this.enableAutoDialAndEnd, callbackMediaSettings.enableAutoDialAndEnd) &&
+            Objects.equals(this.autoDialDelaySeconds, callbackMediaSettings.autoDialDelaySeconds) &&
+            Objects.equals(this.autoEndDelaySeconds, callbackMediaSettings.autoEndDelaySeconds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enableAutoAnswer, alertingTimeoutSeconds, serviceLevel, autoAnswerAlertToneSeconds, manualAnswerAlertToneSeconds, subTypeSettings);
+    return Objects.hash(enableAutoAnswer, alertingTimeoutSeconds, serviceLevel, autoAnswerAlertToneSeconds, manualAnswerAlertToneSeconds, subTypeSettings, enableAutoDialAndEnd, autoDialDelaySeconds, autoEndDelaySeconds);
   }
 
   @Override
@@ -176,6 +236,9 @@ public class CallbackMediaSettings  implements Serializable {
     sb.append("    autoAnswerAlertToneSeconds: ").append(toIndentedString(autoAnswerAlertToneSeconds)).append("\n");
     sb.append("    manualAnswerAlertToneSeconds: ").append(toIndentedString(manualAnswerAlertToneSeconds)).append("\n");
     sb.append("    subTypeSettings: ").append(toIndentedString(subTypeSettings)).append("\n");
+    sb.append("    enableAutoDialAndEnd: ").append(toIndentedString(enableAutoDialAndEnd)).append("\n");
+    sb.append("    autoDialDelaySeconds: ").append(toIndentedString(autoDialDelaySeconds)).append("\n");
+    sb.append("    autoEndDelaySeconds: ").append(toIndentedString(autoEndDelaySeconds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

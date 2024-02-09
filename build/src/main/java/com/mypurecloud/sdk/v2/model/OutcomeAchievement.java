@@ -35,7 +35,7 @@ public class OutcomeAchievement  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The outcome that was achieved.")
+  @ApiModelProperty(example = "null", required = true, value = "The outcome that was achieved.")
   @JsonProperty("outcome")
   public AchievedOutcome getOutcome() {
     return outcome;
@@ -53,7 +53,7 @@ public class OutcomeAchievement  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Timestamp indicating when the outcome was achieved. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", required = true, value = "Timestamp indicating when the outcome was achieved. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("achievedDate")
   public Date getAchievedDate() {
     return achievedDate;

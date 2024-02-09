@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
+import com.mypurecloud.sdk.v2.model.ImportStatus;
 import com.mypurecloud.sdk.v2.model.SplittingInformation;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -88,6 +89,7 @@ public class ImportTemplate  implements Serializable {
   }
   private ListNameFormatEnum listNameFormat = null;
   private String customListNameFormatValue = null;
+  private ImportStatus importStatus = null;
   private String selfUri = null;
 
   
@@ -256,6 +258,13 @@ public class ImportTemplate  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The status of the import process.")
+  @JsonProperty("importStatus")
+  public ImportStatus getImportStatus() {
+    return importStatus;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -284,12 +293,13 @@ public class ImportTemplate  implements Serializable {
             Objects.equals(this.splittingInformation, importTemplate.splittingInformation) &&
             Objects.equals(this.listNameFormat, importTemplate.listNameFormat) &&
             Objects.equals(this.customListNameFormatValue, importTemplate.customListNameFormatValue) &&
+            Objects.equals(this.importStatus, importTemplate.importStatus) &&
             Objects.equals(this.selfUri, importTemplate.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, contactListTemplate, contactListFilter, useSplittingCriteria, splittingInformation, listNameFormat, customListNameFormatValue, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, contactListTemplate, contactListFilter, useSplittingCriteria, splittingInformation, listNameFormat, customListNameFormatValue, importStatus, selfUri);
   }
 
   @Override
@@ -308,6 +318,7 @@ public class ImportTemplate  implements Serializable {
     sb.append("    splittingInformation: ").append(toIndentedString(splittingInformation)).append("\n");
     sb.append("    listNameFormat: ").append(toIndentedString(listNameFormat)).append("\n");
     sb.append("    customListNameFormatValue: ").append(toIndentedString(customListNameFormatValue)).append("\n");
+    sb.append("    importStatus: ").append(toIndentedString(importStatus)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -75,7 +75,7 @@ public class WebEvent  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The total count of events performed by the customer across all sessions.")
+  @ApiModelProperty(example = "null", required = true, value = "The total count of events performed by the customer across all sessions.")
   @JsonProperty("totalEventCount")
   public Integer getTotalEventCount() {
     return totalEventCount;
@@ -93,7 +93,7 @@ public class WebEvent  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The total count of pageviews performed by the customer across all sessions.")
+  @ApiModelProperty(example = "null", required = true, value = "The total count of pageviews performed by the customer across all sessions.")
   @JsonProperty("totalPageviewCount")
   public Integer getTotalPageviewCount() {
     return totalPageviewCount;
@@ -111,7 +111,7 @@ public class WebEvent  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The webpage where the user interaction occurred.")
+  @ApiModelProperty(example = "null", required = true, value = "The webpage where the user interaction occurred.")
   @JsonProperty("page")
   public JourneyPage getPage() {
     return page;
@@ -129,7 +129,7 @@ public class WebEvent  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "HTTP User-Agent string (see https://tools.ietf.org/html/rfc1945#section-10.15).")
+  @ApiModelProperty(example = "null", required = true, value = "HTTP User-Agent string (see https://tools.ietf.org/html/rfc1945#section-10.15).")
   @JsonProperty("userAgentString")
   public String getUserAgentString() {
     return userAgentString;
@@ -147,7 +147,7 @@ public class WebEvent  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Customer's browser.")
+  @ApiModelProperty(example = "null", required = true, value = "Customer's browser.")
   @JsonProperty("browser")
   public Browser getBrowser() {
     return browser;
@@ -165,7 +165,7 @@ public class WebEvent  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Customer's device.")
+  @ApiModelProperty(example = "null", required = true, value = "Customer's device.")
   @JsonProperty("device")
   public Device getDevice() {
     return device;
@@ -273,7 +273,7 @@ public class WebEvent  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "User-defined attributes associated with a particular event.")
+  @ApiModelProperty(example = "null", required = true, value = "User-defined attributes associated with a particular event.")
   @JsonProperty("attributes")
   public Map<String, CustomEventAttribute> getAttributes() {
     return attributes;
@@ -291,7 +291,7 @@ public class WebEvent  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "User-defined traits associated with a particular event.")
+  @ApiModelProperty(example = "null", required = true, value = "User-defined traits associated with a particular event.")
   @JsonProperty("traits")
   public Map<String, CustomEventAttribute> getTraits() {
     return traits;
@@ -327,7 +327,7 @@ public class WebEvent  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Indicates whether the event was produced during an authenticated session.")
+  @ApiModelProperty(example = "null", required = true, value = "Indicates whether the event was produced during an authenticated session.")
   @JsonProperty("authenticated")
   public Boolean getAuthenticated() {
     return authenticated;

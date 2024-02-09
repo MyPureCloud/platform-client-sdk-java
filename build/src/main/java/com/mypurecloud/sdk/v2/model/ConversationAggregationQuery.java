@@ -107,7 +107,6 @@ public class ConversationAggregationQuery  implements Serializable {
     QUEUEID("queueId"),
     REMOTE("remote"),
     REMOVEDSKILLID("removedSkillId"),
-    REOFFERED("reoffered"),
     REQUESTEDLANGUAGEID("requestedLanguageId"),
     REQUESTEDROUTING("requestedRouting"),
     REQUESTEDROUTINGSKILLID("requestedRoutingSkillId"),

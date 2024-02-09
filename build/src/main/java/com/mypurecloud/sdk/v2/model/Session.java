@@ -254,10 +254,21 @@ public class Session  implements Serializable {
   private AddressableEntityRef conversation = null;
 
   
-  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  /**
+   * The ID of the session.
+   **/
+  public Session id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The ID of the session.")
   @JsonProperty("id")
   public String getId() {
     return id;
+  }
+  public void setId(String id) {
+    this.id = id;
   }
 
 
@@ -305,7 +316,7 @@ public class Session  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Session types indicate the type or category of sessions (e.g. web, app).")
+  @ApiModelProperty(example = "null", required = true, value = "Session types indicate the type or category of sessions (e.g. web, app).")
   @JsonProperty("type")
   public String getType() {
     return type;
@@ -701,7 +712,7 @@ public class Session  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The count of all events performed during the session.")
+  @ApiModelProperty(example = "null", required = true, value = "The count of all events performed during the session.")
   @JsonProperty("eventCount")
   public Integer getEventCount() {
     return eventCount;
@@ -755,7 +766,7 @@ public class Session  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Information about the most recent event in this session.")
+  @ApiModelProperty(example = "null", required = true, value = "Information about the most recent event in this session.")
   @JsonProperty("lastEvent")
   public SessionLastEvent getLastEvent() {
     return lastEvent;
@@ -917,7 +928,7 @@ public class Session  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Indicates whether or not the session is authenticated.")
+  @ApiModelProperty(example = "null", required = true, value = "Indicates whether or not the session is authenticated.")
   @JsonProperty("authenticated")
   public Boolean getAuthenticated() {
     return authenticated;
@@ -942,7 +953,7 @@ public class Session  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Timestamp indicating when the session was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", required = true, value = "Timestamp indicating when the session was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("createdDate")
   public Date getCreatedDate() {
     return createdDate;

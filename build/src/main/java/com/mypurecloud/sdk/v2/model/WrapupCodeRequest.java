@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.WritableStarrableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -24,6 +25,7 @@ public class WrapupCodeRequest  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private WritableStarrableDivision division = null;
   private Date dateCreated = null;
   private Date dateModified = null;
   private String createdBy = null;
@@ -53,6 +55,24 @@ public class WrapupCodeRequest  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+
+  /**
+   * The division to which this entity belongs.
+   **/
+  public WrapupCodeRequest division(WritableStarrableDivision division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public WritableStarrableDivision getDivision() {
+    return division;
+  }
+  public void setDivision(WritableStarrableDivision division) {
+    this.division = division;
   }
 
 
@@ -147,6 +167,7 @@ public class WrapupCodeRequest  implements Serializable {
 
     return Objects.equals(this.id, wrapupCodeRequest.id) &&
             Objects.equals(this.name, wrapupCodeRequest.name) &&
+            Objects.equals(this.division, wrapupCodeRequest.division) &&
             Objects.equals(this.dateCreated, wrapupCodeRequest.dateCreated) &&
             Objects.equals(this.dateModified, wrapupCodeRequest.dateModified) &&
             Objects.equals(this.createdBy, wrapupCodeRequest.createdBy) &&
@@ -156,7 +177,7 @@ public class WrapupCodeRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, createdBy, modifiedBy, selfUri);
+    return Objects.hash(id, name, division, dateCreated, dateModified, createdBy, modifiedBy, selfUri);
   }
 
   @Override
@@ -166,6 +187,7 @@ public class WrapupCodeRequest  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");

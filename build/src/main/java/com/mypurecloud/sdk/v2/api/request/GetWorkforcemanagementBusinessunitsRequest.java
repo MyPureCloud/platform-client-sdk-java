@@ -218,6 +218,7 @@ public class GetWorkforcemanagementBusinessunitsRequest {
 	public enum featureValues { 
 		AGENTSCHEDULE("AgentSchedule"),
 		AGENTTIMEOFFREQUEST("AgentTimeOffRequest"),
+		ALTERNATIVESHIFT("AlternativeShift"),
 		COACHING("Coaching"),
 		LEARNING("Learning"),
 		ACTIVITYCODES("ActivityCodes"),
@@ -243,6 +244,7 @@ public class GetWorkforcemanagementBusinessunitsRequest {
 		TIMEOFFPLANS("TimeOffPlans"),
 		TIMEOFFREQUESTS("TimeOffRequests"),
 		TIMEOFFLIMITS("TimeOffLimits"),
+		WORKPLANBIDS("WorkPlanBids"),
 		WORKPLANROTATIONS("WorkPlanRotations"),
 		WORKPLANS("WorkPlans");
 

@@ -32,7 +32,7 @@ public class PatchExternalSegment  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Name for the external segment in the system where it originates from.")
+  @ApiModelProperty(example = "null", value = "Name for the external segment in the system where it originates from.")
   @JsonProperty("name")
   public String getName() {
     return name;

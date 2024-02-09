@@ -127,7 +127,7 @@ public class Device  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Flag that is true for mobile devices.")
+  @ApiModelProperty(example = "null", required = true, value = "Flag that is true for mobile devices.")
   @JsonProperty("isMobile")
   public Boolean getIsMobile() {
     return isMobile;

@@ -33,7 +33,7 @@ public class SegmentAssignmentEvent  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The segment which was assigned.")
+  @ApiModelProperty(example = "null", required = true, value = "The segment which was assigned.")
   @JsonProperty("segment")
   public AddressableEntityRef getSegment() {
     return segment;

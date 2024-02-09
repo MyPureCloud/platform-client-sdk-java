@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.ContactListDivisionView;
 import com.mypurecloud.sdk.v2.model.ContactListDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.ContactListEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListFilter;
+import com.mypurecloud.sdk.v2.model.ContactListFilterBulkRetrieveBody;
 import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListTemplate;
 import com.mypurecloud.sdk.v2.model.ContactListTemplateBulkRetrieveBody;
@@ -67,6 +68,7 @@ import com.mypurecloud.sdk.v2.model.DncPatchEmailsRequest;
 import com.mypurecloud.sdk.v2.model.DncPatchPhoneNumbersRequest;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.EmailCampaignSchedule;
+import com.mypurecloud.sdk.v2.model.EmailCampaignScheduleEntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EventLog;
 import com.mypurecloud.sdk.v2.model.ExportUri;
@@ -94,6 +96,20 @@ import com.mypurecloud.sdk.v2.model.WrapUpCodeMapping;
 import com.mypurecloud.sdk.v2.model.WritableDialerContact;
 
 public class GetOutboundImporttemplatesRequest {
+
+	private Boolean includeImportStatus;
+	public Boolean getIncludeImportStatus() {
+		return this.includeImportStatus;
+	}
+
+	public void setIncludeImportStatus(Boolean includeImportStatus) {
+		this.includeImportStatus = includeImportStatus;
+	}
+
+	public GetOutboundImporttemplatesRequest withIncludeImportStatus(Boolean includeImportStatus) {
+	    this.setIncludeImportStatus(includeImportStatus);
+	    return this;
+	} 
 
 	private Integer pageSize;
 	public Integer getPageSize() {
@@ -299,6 +315,9 @@ public class GetOutboundImporttemplatesRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/outbound/importtemplates")
 
+                .withQueryParameters("includeImportStatus", "", includeImportStatus)
+        
+
                 .withQueryParameters("pageSize", "", pageSize)
         
 
@@ -342,6 +361,11 @@ public class GetOutboundImporttemplatesRequest {
 			request = new GetOutboundImporttemplatesRequest();
 		}
 
+
+		public Builder withIncludeImportStatus(Boolean includeImportStatus) {
+			request.setIncludeImportStatus(includeImportStatus);
+			return this;
+		}
 
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);

@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
 import com.mypurecloud.sdk.v2.model.JourneyAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.JourneyAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.JourneySegment;
+import com.mypurecloud.sdk.v2.model.JourneySegmentRequest;
 import com.mypurecloud.sdk.v2.model.Outcome;
 import com.mypurecloud.sdk.v2.model.OutcomeAttributionAsyncResponse;
 import com.mypurecloud.sdk.v2.model.OutcomeAttributionJobStateResponse;
@@ -51,6 +52,7 @@ import com.mypurecloud.sdk.v2.model.OutcomeListing;
 import com.mypurecloud.sdk.v2.model.OutcomePredictor;
 import com.mypurecloud.sdk.v2.model.OutcomePredictorListing;
 import com.mypurecloud.sdk.v2.model.OutcomePredictorRequest;
+import com.mypurecloud.sdk.v2.model.OutcomeRequest;
 import com.mypurecloud.sdk.v2.model.OutcomeScoresResult;
 import com.mypurecloud.sdk.v2.model.PatchActionMap;
 import com.mypurecloud.sdk.v2.model.PatchActionTarget;
@@ -63,16 +65,16 @@ import com.mypurecloud.sdk.v2.model.SessionListing;
 
 public class PostJourneyOutcomesRequest {
 
-	private Outcome body;
-	public Outcome getBody() {
+	private OutcomeRequest body;
+	public OutcomeRequest getBody() {
 		return this.body;
 	}
 
-	public void setBody(Outcome body) {
+	public void setBody(OutcomeRequest body) {
 		this.body = body;
 	}
 
-	public PostJourneyOutcomesRequest withBody(Outcome body) {
+	public PostJourneyOutcomesRequest withBody(OutcomeRequest body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -96,7 +98,7 @@ public class PostJourneyOutcomesRequest {
         return this;
     }
 
-    public ApiRequest<Outcome> withHttpInfo() {
+    public ApiRequest<OutcomeRequest> withHttpInfo() {
         
 
         return ApiRequestBuilder.create("POST", "/api/v2/journey/outcomes")
@@ -123,7 +125,7 @@ public class PostJourneyOutcomesRequest {
 		}
 
 
-		public Builder withBody(Outcome body) {
+		public Builder withBody(OutcomeRequest body) {
 			request.setBody(body);
 			return this;
 		}
