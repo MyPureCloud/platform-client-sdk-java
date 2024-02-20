@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicContactAddress;
 import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicDataSchema;
+import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicDivision;
 import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicExternalOrganization;
 import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicFacebookId;
 import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicInstagramId;
@@ -36,6 +37,7 @@ import java.io.Serializable;
 public class ExternalContactsUnresolvedContactChangedTopicContact  implements Serializable {
   
   private String id = null;
+  private ExternalContactsUnresolvedContactChangedTopicDivision division = null;
   private ExternalContactsUnresolvedContactChangedTopicExternalOrganization externalOrganization = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
@@ -126,6 +128,23 @@ public class ExternalContactsUnresolvedContactChangedTopicContact  implements Se
   }
   public void setId(String id) {
     this.id = id;
+  }
+
+
+  /**
+   **/
+  public ExternalContactsUnresolvedContactChangedTopicContact division(ExternalContactsUnresolvedContactChangedTopicDivision division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("division")
+  public ExternalContactsUnresolvedContactChangedTopicDivision getDivision() {
+    return division;
+  }
+  public void setDivision(ExternalContactsUnresolvedContactChangedTopicDivision division) {
+    this.division = division;
   }
 
 
@@ -582,6 +601,7 @@ public class ExternalContactsUnresolvedContactChangedTopicContact  implements Se
     ExternalContactsUnresolvedContactChangedTopicContact externalContactsUnresolvedContactChangedTopicContact = (ExternalContactsUnresolvedContactChangedTopicContact) o;
 
     return Objects.equals(this.id, externalContactsUnresolvedContactChangedTopicContact.id) &&
+            Objects.equals(this.division, externalContactsUnresolvedContactChangedTopicContact.division) &&
             Objects.equals(this.externalOrganization, externalContactsUnresolvedContactChangedTopicContact.externalOrganization) &&
             Objects.equals(this.type, externalContactsUnresolvedContactChangedTopicContact.type) &&
             Objects.equals(this.firstName, externalContactsUnresolvedContactChangedTopicContact.firstName) &&
@@ -612,7 +632,7 @@ public class ExternalContactsUnresolvedContactChangedTopicContact  implements Se
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, externalOrganization, type, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, surveyOptOut, externalSystemUrl, twitterId, lineId, whatsAppId, facebookId, instagramId, schema, customFields, createDate, modifyDate);
+    return Objects.hash(id, division, externalOrganization, type, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, surveyOptOut, externalSystemUrl, twitterId, lineId, whatsAppId, facebookId, instagramId, schema, customFields, createDate, modifyDate);
   }
 
   @Override
@@ -621,6 +641,7 @@ public class ExternalContactsUnresolvedContactChangedTopicContact  implements Se
     sb.append("class ExternalContactsUnresolvedContactChangedTopicContact {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");

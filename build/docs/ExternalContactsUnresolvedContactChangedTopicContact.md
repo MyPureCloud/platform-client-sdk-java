@@ -9,6 +9,7 @@ title: ExternalContactsUnresolvedContactChangedTopicContact
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **division** | <!----><!---->[**ExternalContactsUnresolvedContactChangedTopicDivision**](ExternalContactsUnresolvedContactChangedTopicDivision.html)<!----> |  |  [optional] |
 | **externalOrganization** | <!----><!---->[**ExternalContactsUnresolvedContactChangedTopicExternalOrganization**](ExternalContactsUnresolvedContactChangedTopicExternalOrganization.html)<!----> |  |  [optional] |
 | **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
 | **firstName** | <!----><!---->**String**<!----> |  |  [optional] |

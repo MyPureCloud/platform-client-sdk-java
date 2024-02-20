@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="138.958" tests="45" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="139.361" tests="45" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/var/build/tools/hudson.model.JDK/OpenJDK_17.0.4/jdk-17.0.4+8/lib"/>
-    <property name="sun.java.command" value="/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/surefire/surefirebooter-20240209080848246_3.jar /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/surefire 2024-02-09T08-08-47_892-jvmRun1 surefire-20240209080848246_1tmp surefire_0-20240209080848246_2tmp"/>
+    <property name="sun.java.command" value="/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/surefire/surefirebooter-20240220190746228_3.jar /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/surefire 2024-02-20T19-07-45_161-jvmRun1 surefire-20240220190746228_1tmp surefire_0-20240220190746228_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/test-classes:/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/classes:/home/jenkins/.m2/repository/io/swagger/swagger-annotations/1.6.13/swagger-annotations-1.6.13.jar:/home/jenkins/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/home/jenkins/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar:/home/jenkins/.m2/repository/org/slf4j/slf4j-api/2.0.12/slf4j-api-2.0.12.jar:/home/jenkins/.m2/repository/org/ini4j/ini4j/0.5.4/ini4j-0.5.4.jar:/home/jenkins/.m2/repository/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.jar:/home/jenkins/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/home/jenkins/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/jenkins/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/home/jenkins/.m2/repository/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar:/home/jenkins/.m2/repository/com/squareup/okio/okio/3.6.0/okio-3.6.0.jar:/home/jenkins/.m2/repository/com/squareup/okio/okio-jvm/3.6.0/okio-jvm-3.6.0.jar:/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.9.10/kotlin-stdlib-common-1.9.10.jar:/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar:/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.8.21/kotlin-stdlib-1.8.21.jar:/home/jenkins/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar:/home/jenkins/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar:/home/jenkins/.m2/repository/org/asynchttpclient/async-http-client/2.12.3/async-http-client-2.12.3.jar:/home/jenkins/.m2/repository/org/asynchttpclient/async-http-client-netty-utils/2.12.3/async-http-client-netty-utils-2.12.3.jar:/home/jenkins/.m2/repository/io/netty/netty-buffer/4.1.60.Final/netty-buffer-4.1.60.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-http/4.1.60.Final/netty-codec-http-4.1.60.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-common/4.1.60.Final/netty-common-4.1.60.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport/4.1.60.Final/netty-transport-4.1.60.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec/4.1.60.Final/netty-codec-4.1.60.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-handler/4.1.60.Final/netty-handler-4.1.60.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-resolver/4.1.60.Final/netty-resolver-4.1.60.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-socks/4.1.60.Final/netty-codec-socks-4.1.60.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-handler-proxy/4.1.60.Final/netty-handler-proxy-4.1.60.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-epoll/4.1.60.Final/netty-transport-native-epoll-4.1.60.Final-linux-x86_64.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.60.Final/netty-transport-native-unix-common-4.1.60.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-kqueue/4.1.60.Final/netty-transport-native-kqueue-4.1.60.Final-osx-x86_64.jar:/home/jenkins/.m2/repository/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar:/home/jenkins/.m2/repository/com/typesafe/netty/netty-reactive-streams/2.0.4/netty-reactive-streams-2.0.4.jar:/home/jenkins/.m2/repository/com/sun/activation/jakarta.activation/1.2.2/jakarta.activation-1.2.2.jar:/home/jenkins/.m2/repository/xerces/xercesImpl/2.12.2/xercesImpl-2.12.2.jar:/home/jenkins/.m2/repository/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.16.1/jackson-core-2.16.1.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.16.1/jackson-annotations-2.16.1.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.16.1/jackson-databind-2.16.1.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.16.1/jackson-jaxrs-json-provider-2.16.1.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.16.1/jackson-jaxrs-base-2.16.1.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.16.1/jackson-module-jaxb-annotations-2.16.1.jar:/home/jenkins/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/2.3.3/jakarta.xml.bind-api-2.3.3.jar:/home/jenkins/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-joda/2.16.1/jackson-datatype-joda-2.16.1.jar:/home/jenkins/.m2/repository/joda-time/joda-time/2.12.7/joda-time-2.12.7.jar:/home/jenkins/.m2/repository/com/brsanthu/migbase64/2.2/migbase64-2.2.jar:/home/jenkins/.m2/repository/org/testng/testng/7.5/testng-7.5.jar:/home/jenkins/.m2/repository/com/google/code/findbugs/jsr305/3.0.1/jsr305-3.0.1.jar:/home/jenkins/.m2/repository/com/beust/jcommander/1.78/jcommander-1.78.jar:/home/jenkins/.m2/repository/org/webjars/jquery/3.5.1/jquery-3.5.1.jar:/home/jenkins/.m2/repository/org/mockito/mockito-core/5.10.0/mockito-core-5.10.0.jar:/home/jenkins/.m2/repository/net/bytebuddy/byte-buddy/1.14.11/byte-buddy-1.14.11.jar:/home/jenkins/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.11/byte-buddy-agent-1.14.11.jar:/home/jenkins/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/jenkins/.m2/repository/com/neovisionaries/nv-websocket-client/2.14/nv-websocket-client-2.14.jar:/home/jenkins/.m2/repository/com/google/guava/guava/33.0.0-jre/guava-33.0.0-jre.jar:/home/jenkins/.m2/repository/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar:/home/jenkins/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/jenkins/.m2/repository/org/checkerframework/checker-qual/3.41.0/checker-qual-3.41.0.jar:/home/jenkins/.m2/repository/com/google/errorprone/error_prone_annotations/2.23.0/error_prone_annotations-2.23.0.jar:/home/jenkins/.m2/repository/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -24,21 +24,21 @@
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="java.version.date" value="2022-07-19"/>
     <property name="java.home" value="/var/build/tools/hudson.model.JDK/OpenJDK_17.0.4/jdk-17.0.4+8"/>
-    <property name="version" value="200.0.0"/>
+    <property name="version" value="200.0.1"/>
     <property name="file.separator" value="/"/>
     <property name="basedir" value="/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/surefire/surefirebooter-20240209080848246_3.jar"/>
+    <property name="surefire.real.class.path" value="/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/target/surefire/surefirebooter-20240220190746228_3.jar"/>
     <property name="com.sun.jndi.rmi.object.trustURLCodebase" value="false"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.4+8"/>
     <property name="user.name" value="jenkins"/>
     <property name="path.separator" value=":"/>
     <property name="com.sun.jndi.cosnaming.object.trustURLCodebase" value="false"/>
-    <property name="os.version" value="4.14.336-253.554.amzn2.x86_64"/>
+    <property name="os.version" value="4.14.336-255.557.amzn2.x86_64"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="sun.nio.ch.bugLevel" value=""/>
@@ -59,24 +59,20 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="traceBasicInformation" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.005">
+  <testcase name="traceBasicInformation" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.007">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] beforeTest
 [&amp#27;[1;36mTEST&amp#27;[0m] beforeTest
-Before test
-Before test
-[&amp#27;[1;32mSUCCESS&amp#27;[0m] beforeTest
-[&amp#27;[1;32mSUCCESS&amp#27;[0m] beforeTest
 [&amp#27;[1;36mTEST&amp#27;[0m] beforeTest
 Before test
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] beforeTest
-[&amp#27;[1;36mTEST&amp#27;[0m] traceBasicInformation
-[&amp#27;[1;36mTEST&amp#27;[0m] traceBasicInformation
-PURECLOUD_ENVIRONMENT=mypurecloud.com
-PURECLOUD_ENVIRONMENT=mypurecloud.com
+Before test
+[&amp#27;[1;32mSUCCESS&amp#27;[0m] beforeTest
+Before test
+[&amp#27;[1;32mSUCCESS&amp#27;[0m] beforeTest
 [&amp#27;[1;36mTEST&amp#27;[0m] traceBasicInformation
 PURECLOUD_ENVIRONMENT=mypurecloud.com
 PURECLOUD_CLIENT_ID=7de3af06-c0b3-4f9b-af45-72f4a14037cc
-userEmail=2498e8bd-b970-4612-97dc-ebf80885c932@mypurecloud.com
+userEmail=e6a0e594-34ff-43d2-a070-300aeed3270a@mypurecloud.com
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] traceBasicInformation
 ]]></system-out>
     <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
@@ -84,84 +80,86 @@ SLF4J(W): Defaulting to no-operation (NOP) logger implementation
 SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
 ]]></system-err>
   </testcase>
-  <testcase name="traceBasicInformation" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.013">
-    <system-out><![CDATA[PURECLOUD_CLIENT_ID=7de3af06-c0b3-4f9b-af45-72f4a14037cc
-userEmail=b9d92689-6214-4d0e-9f1d-14a48880d6bb@mypurecloud.com
-[&amp#27;[1;32mSUCCESS&amp#27;[0m] traceBasicInformation
-]]></system-out>
-  </testcase>
   <testcase name="traceBasicInformation" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.0">
-    <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] authenticate
+    <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] traceBasicInformation
+PURECLOUD_ENVIRONMENT=mypurecloud.com
 PURECLOUD_CLIENT_ID=7de3af06-c0b3-4f9b-af45-72f4a14037cc
-userEmail=99bf6b46-df92-4688-b6dc-b9c2be6d3521@mypurecloud.com
+userEmail=44253338-1280-4973-8ee3-56917449a714@mypurecloud.com
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] traceBasicInformation
 ]]></system-out>
   </testcase>
-  <testcase name="authenticate" classname="com.mypurecloud.sdk.v2.SdkTests" time="2.0">
+  <testcase name="traceBasicInformation" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.003">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] authenticate
 [&amp#27;[1;36mTEST&amp#27;[0m] authenticate
+[&amp#27;[1;36mTEST&amp#27;[0m] traceBasicInformation
+PURECLOUD_ENVIRONMENT=mypurecloud.com
+PURECLOUD_CLIENT_ID=7de3af06-c0b3-4f9b-af45-72f4a14037cc
+userEmail=6cd42699-66c6-4385-a2bc-3c4162cf9d4f@mypurecloud.com
+[&amp#27;[1;32mSUCCESS&amp#27;[0m] traceBasicInformation
+]]></system-out>
+  </testcase>
+  <testcase name="authenticate" classname="com.mypurecloud.sdk.v2.SdkTests" time="2.143">
+    <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] authenticate
+[&amp#27;[1;32mSUCCESS&amp#27;[0m] authenticate
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] authenticate
 ]]></system-out>
   </testcase>
-  <testcase name="authenticate" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.003">
+  <testcase name="authenticate" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.0"/>
+  <testcase name="authenticate" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.402">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] createUser
+[&amp#27;[1;36mTEST&amp#27;[0m] createUser
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] authenticate
 ]]></system-out>
   </testcase>
-  <testcase name="authenticate" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.453">
+  <testcase name="createUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.764">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] createUser
-[&amp#27;[1;32mSUCCESS&amp#27;[0m] authenticate
-]]></system-out>
-  </testcase>
-  <testcase name="createUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.478">
-    <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] createUser
-Created user with ID 6b4a4bb1-6dfa-42bc-bcbb-081e3a7bcf5e
+Created user with ID b4c257fc-2d54-4825-a012-bd834b3d4a2c
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] createUser
 ]]></system-out>
   </testcase>
-  <testcase name="createUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.013">
+  <testcase name="createUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.006">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] updateUser
-Created user with ID 4ce92b4c-dcbf-4518-b8ae-26fee62d5b55
+Created user with ID 00fcbc71-6455-4f0a-b76d-8e5a8b3c12d7
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] createUser
 ]]></system-out>
   </testcase>
-  <testcase name="createUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.086">
-    <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setProfileSkills
-Created user with ID c4775ad4-bc6f-421d-92c7-4cd446fd886e
+  <testcase name="createUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.103">
+    <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] updateUser
+Created user with ID 8cd00e53-da06-415e-a08c-2785274d1526
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] createUser
 ]]></system-out>
   </testcase>
-  <testcase name="updateUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.148">
+  <testcase name="updateUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.147">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] updateUser
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] updateUser
 ]]></system-out>
   </testcase>
-  <testcase name="updateUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.039">
+  <testcase name="updateUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.021">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setProfileSkills
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] updateUser
 ]]></system-out>
   </testcase>
   <testcase name="updateUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.078">
-    <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] testNotifications
+    <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setProfileSkills
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] updateUser
 ]]></system-out>
   </testcase>
-  <testcase name="setProfileSkills" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.044">
-    <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] updateUser
-[&amp#27;[1;32mSUCCESS&amp#27;[0m] setProfileSkills
-]]></system-out>
-  </testcase>
-  <testcase name="setProfileSkills" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.053">
-    <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] testNotifications
-[&amp#27;[1;32mSUCCESS&amp#27;[0m] setProfileSkills
-]]></system-out>
-  </testcase>
-  <testcase name="setProfileSkills" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.18">
+  <testcase name="setProfileSkills" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.045">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setProfileSkills
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setProfileSkills
 ]]></system-out>
   </testcase>
-  <testcase name="testNotifications" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.289">
+  <testcase name="setProfileSkills" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.046">
+    <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] testNotifications
+[&amp#27;[1;32mSUCCESS&amp#27;[0m] setProfileSkills
+]]></system-out>
+  </testcase>
+  <testcase name="setProfileSkills" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.101">
+    <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] testNotifications
+[&amp#27;[1;32mSUCCESS&amp#27;[0m] setProfileSkills
+]]></system-out>
+  </testcase>
+  <testcase name="testNotifications" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.645">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] testNotifications
 system presence -> BUSY
 system presence -> BUSY
@@ -170,35 +168,41 @@ system presence -> AVAILABLE
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] testNotifications
 ]]></system-out>
   </testcase>
-  <testcase name="testNotifications" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.024">
+  <testcase name="testNotifications" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.023">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] getUser
 system presence -> AVAILABLE
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] testNotifications
 ]]></system-out>
   </testcase>
-  <testcase name="testNotifications" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.021">
-    <system-out><![CDATA[[&amp#27;[1;32mSUCCESS&amp#27;[0m] testNotifications
-]]></system-out>
-  </testcase>
-  <testcase name="getUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.009">
+  <testcase name="testNotifications" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.01">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] getUser
 system presence -> AVAILABLE
+[&amp#27;[1;32mSUCCESS&amp#27;[0m] testNotifications
+]]></system-out>
+  </testcase>
+  <testcase name="getUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.025">
+    <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] getUser
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] getUser
 ]]></system-out>
   </testcase>
-  <testcase name="getUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.008">
-    <system-out><![CDATA[[&amp#27;[1;32mSUCCESS&amp#27;[0m] getUser
+  <testcase name="getUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.01">
+    <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] deleteUser
+[&amp#27;[1;32mSUCCESS&amp#27;[0m] getUser
 ]]></system-out>
   </testcase>
-  <testcase name="getUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.009">
+  <testcase name="getUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.052">
+    <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] deleteUser
+[&amp#27;[1;32mSUCCESS&amp#27;[0m] getUser
+]]></system-out>
+  </testcase>
+  <testcase name="testObjectMapperIgnoresUnknownProperties" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.003">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] testObjectMapperIgnoresUnknownProperties
 MockPojo [id 12345]
-[&amp#27;[1;32mSUCCESS&amp#27;[0m] getUser
+[&amp#27;[1;32mSUCCESS&amp#27;[0m] testObjectMapperIgnoresUnknownProperties
 ]]></system-out>
   </testcase>
-  <testcase name="testObjectMapperIgnoresUnknownProperties" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.012">
-    <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] getUser
-[&amp#27;[1;36mTEST&amp#27;[0m] testObjectMapperIgnoresUnknownProperties
+  <testcase name="testObjectMapperIgnoresUnknownProperties" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.001">
+    <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] testObjectMapperIgnoresUnknownProperties
 MockPojo [id 12345]
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] testObjectMapperIgnoresUnknownProperties
 ]]></system-out>
@@ -209,19 +213,20 @@ MockPojo [id 12345]
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] testObjectMapperIgnoresUnknownProperties
 ]]></system-out>
   </testcase>
-  <testcase name="testObjectMapperIgnoresUnknownProperties" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.008">
+  <testcase name="deleteUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.12">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] deleteUser
-[&amp#27;[1;32mSUCCESS&amp#27;[0m] testObjectMapperIgnoresUnknownProperties
-]]></system-out>
-  </testcase>
-  <testcase name="deleteUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.125">
-    <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] deleteUser
-[&amp#27;[1;36mTEST&amp#27;[0m] deleteUser
 system presence -> OFFLINE
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] deleteUser
 ]]></system-out>
   </testcase>
-  <testcase name="deleteUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.141">
+  <testcase name="deleteUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.138">
+    <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] afterTest
+After test
+[&amp#27;[1;32mSUCCESS&amp#27;[0m] afterTest
+[&amp#27;[1;32mSUCCESS&amp#27;[0m] deleteUser
+]]></system-out>
+  </testcase>
+  <testcase name="deleteUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.232">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] afterTest
 After test
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] afterTest
@@ -229,53 +234,46 @@ system presence -> OFFLINE
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] deleteUser
 ]]></system-out>
   </testcase>
-  <testcase name="deleteUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.18">
-    <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] afterTest
-After test
-[&amp#27;[1;32mSUCCESS&amp#27;[0m] afterTest
-system presence -> OFFLINE
-[&amp#27;[1;32mSUCCESS&amp#27;[0m] deleteUser
-]]></system-out>
-  </testcase>
-  <testcase name="invokeTestWith_429" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="6.517">
+  <testcase name="invokeTestWith_429" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="6.293">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] afterTest
 After test
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] afterTest
 [&amp#27;[1;36mTEST&amp#27;[0m] setup
+system presence -> OFFLINE
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] invokeTestWith_429
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] invokeTestWith_429
 ]]></system-out>
   </testcase>
-  <testcase name="invokeTestWith_429_And_No_MaxRetryTime" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="0.139">
+  <testcase name="invokeTestWith_429_And_No_MaxRetryTime" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="0.194">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] invokeTestWith_429_And_No_MaxRetryTime
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] invokeTestWith_429_And_No_MaxRetryTime
 ]]></system-out>
   </testcase>
-  <testcase name="invokeTestWith_502" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="13.118">
+  <testcase name="invokeTestWith_502" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="13.129">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] invokeTestWith_502
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] invokeTestWith_502
 ]]></system-out>
   </testcase>
-  <testcase name="invokeTestWith_503" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="40.114">
+  <testcase name="invokeTestWith_503" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="40.169">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] invokeTestWith_503
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] invokeTestWith_503
 ]]></system-out>
   </testcase>
-  <testcase name="invokeTestWith_504" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="2.1">
+  <testcase name="invokeTestWith_504" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="2.081">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] invokeTestWith_504
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] invokeTestWith_504
 ]]></system-out>
   </testcase>
-  <testcase name="invokeTestWith_504_No_MaxRetryTime" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="0.115">
+  <testcase name="invokeTestWith_504_No_MaxRetryTime" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="0.065">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] invokeTestWith_504_No_MaxRetryTime
@@ -289,77 +287,77 @@ After test
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] shouldRetryTestWith_200
 ]]></system-out>
   </testcase>
-  <testcase name="shouldRetryTestWith_429" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="1.003">
+  <testcase name="shouldRetryTestWith_429" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="1.002">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] shouldRetryTestWith_429
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] shouldRetryTestWith_429
 ]]></system-out>
   </testcase>
-  <testcase name="shouldRetryTestWith_502" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="1.005">
+  <testcase name="shouldRetryTestWith_502" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="1.001">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] shouldRetryTestWith_502
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] shouldRetryTestWith_502
 ]]></system-out>
   </testcase>
-  <testcase name="shouldRetryTestWith_502_And_0_MaxRetryTime" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="0.001">
+  <testcase name="shouldRetryTestWith_502_And_0_MaxRetryTime" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="0.004">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] shouldRetryTestWith_502_And_0_MaxRetryTime
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] shouldRetryTestWith_502_And_0_MaxRetryTime
 ]]></system-out>
   </testcase>
-  <testcase name="shouldRetryTestWith_503_And_RetryConfig" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="3.003">
+  <testcase name="shouldRetryTestWith_503_And_RetryConfig" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="3.009">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] shouldRetryTestWith_503_And_RetryConfig
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] shouldRetryTestWith_503_And_RetryConfig
 ]]></system-out>
   </testcase>
-  <testcase name="shouldRetryTestWith_504_And_No_RetryAfter_Header" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="3.002">
+  <testcase name="shouldRetryTestWith_504_And_No_RetryAfter_Header" classname="com.mypurecloud.sdk.v2.ApiClientRetryTest" time="3.019">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] shouldRetryTestWith_504_And_No_RetryAfter_Header
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] shouldRetryTestWith_504_And_No_RetryAfter_Header
 ]]></system-out>
   </testcase>
-  <testcase name="invokeAsyncTestWith_429" classname="com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest" time="5.095">
+  <testcase name="invokeAsyncTestWith_429" classname="com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest" time="5.123">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] invokeAsyncTestWith_429
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] invokeAsyncTestWith_429
 ]]></system-out>
   </testcase>
-  <testcase name="invokeAsyncTestWith_429_And_No_MaxRetryTime" classname="com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest" time="0.061">
+  <testcase name="invokeAsyncTestWith_429_And_No_MaxRetryTime" classname="com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest" time="0.121">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] invokeAsyncTestWith_429_And_No_MaxRetryTime
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] invokeAsyncTestWith_429_And_No_MaxRetryTime
 ]]></system-out>
   </testcase>
-  <testcase name="invokeAsyncTestWith_502" classname="com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest" time="13.079">
+  <testcase name="invokeAsyncTestWith_502" classname="com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest" time="13.085">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] invokeAsyncTestWith_502
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] invokeAsyncTestWith_502
 ]]></system-out>
   </testcase>
-  <testcase name="invokeAsyncTestWith_503" classname="com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest" time="40.066">
+  <testcase name="invokeAsyncTestWith_503" classname="com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest" time="40.102">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] invokeAsyncTestWith_503
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] invokeAsyncTestWith_503
 ]]></system-out>
   </testcase>
-  <testcase name="invokeAsyncTestWith_504" classname="com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest" time="2.069">
+  <testcase name="invokeAsyncTestWith_504" classname="com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest" time="2.077">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] invokeAsyncTestWith_504
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] invokeAsyncTestWith_504
 ]]></system-out>
   </testcase>
-  <testcase name="invokeAsyncTestWith_504_And_No_MaxRetryTime" classname="com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest" time="0.065">
+  <testcase name="invokeAsyncTestWith_504_And_No_MaxRetryTime" classname="com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest" time="0.086">
     <system-out><![CDATA[[&amp#27;[1;36mTEST&amp#27;[0m] setup
 [&amp#27;[1;32mSUCCESS&amp#27;[0m] setup
 [&amp#27;[1;36mTEST&amp#27;[0m] invokeAsyncTestWith_504_And_No_MaxRetryTime

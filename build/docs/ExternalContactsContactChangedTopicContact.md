@@ -9,6 +9,7 @@ title: ExternalContactsContactChangedTopicContact
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **division** | <!----><!---->[**ExternalContactsContactChangedTopicDivision**](ExternalContactsContactChangedTopicDivision.html)<!----> |  |  [optional] |
 | **externalOrganization** | <!----><!---->[**ExternalContactsContactChangedTopicExternalOrganization**](ExternalContactsContactChangedTopicExternalOrganization.html)<!----> |  |  [optional] |
 | **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
 | **firstName** | <!----><!---->**String**<!----> |  |  [optional] |

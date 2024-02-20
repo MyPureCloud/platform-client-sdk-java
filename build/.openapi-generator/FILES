@@ -242,6 +242,7 @@ docs/AttendanceStatus.md
 docs/AttendanceStatusListing.md
 docs/Attribute.md
 docs/AttributeDetailEventTopicAttributeUpdateEvent.md
+docs/AttributeDetailEventTopicCommunication.md
 docs/AttributeFilterItem.md
 docs/AtzmTimeSlot.md
 docs/AtzmTimeSlotWithTimeZone.md
@@ -1520,6 +1521,7 @@ docs/ExternalContactsApi.md
 docs/ExternalContactsContactChangedTopicContact.md
 docs/ExternalContactsContactChangedTopicContactAddress.md
 docs/ExternalContactsContactChangedTopicDataSchema.md
+docs/ExternalContactsContactChangedTopicDivision.md
 docs/ExternalContactsContactChangedTopicExternalOrganization.md
 docs/ExternalContactsContactChangedTopicFacebookId.md
 docs/ExternalContactsContactChangedTopicFacebookScopedId.md
@@ -1534,6 +1536,7 @@ docs/ExternalContactsContactChangedTopicWhatsAppId.md
 docs/ExternalContactsUnresolvedContactChangedTopicContact.md
 docs/ExternalContactsUnresolvedContactChangedTopicContactAddress.md
 docs/ExternalContactsUnresolvedContactChangedTopicDataSchema.md
+docs/ExternalContactsUnresolvedContactChangedTopicDivision.md
 docs/ExternalContactsUnresolvedContactChangedTopicExternalOrganization.md
 docs/ExternalContactsUnresolvedContactChangedTopicFacebookId.md
 docs/ExternalContactsUnresolvedContactChangedTopicFacebookScopedId.md
@@ -2531,6 +2534,14 @@ docs/OutboundApi.md
 docs/OutboundDetailEventTopicOutboundInitEvent.md
 docs/OutboundDomain.md
 docs/OutboundDomainEntityListing.md
+docs/OutboundMessagingCampaignPostContactEmailEventTopicEmailAttributes.md
+docs/OutboundMessagingCampaignPostContactEmailEventTopicOutboundMessagingCampaignPostContactEmailEvent.md
+docs/OutboundMessagingCampaignPostContactSmsEventTopicOutboundMessagingCampaignPostContactSMSEvent.md
+docs/OutboundMessagingCampaignPostContactSmsEventTopicSMSAttributes.md
+docs/OutboundMessagingCampaignPreContactEmailEventTopicEmailAttributes.md
+docs/OutboundMessagingCampaignPreContactEmailEventTopicOutboundMessagingCampaignPreContactEmailEvent.md
+docs/OutboundMessagingCampaignPreContactSmsEventTopicOutboundMessagingCampaignPreContactSMSEvent.md
+docs/OutboundMessagingCampaignPreContactSmsEventTopicSMSAttributes.md
 docs/OutboundMessagingMessagingCampaignConfigChangeContactSort.md
 docs/OutboundMessagingMessagingCampaignConfigChangeEmailConfig.md
 docs/OutboundMessagingMessagingCampaignConfigChangeErrorDetail.md
@@ -9608,6 +9619,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/AttendanceStatus.java
 src/main/java/com/mypurecloud/sdk/v2/model/AttendanceStatusListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/Attribute.java
 src/main/java/com/mypurecloud/sdk/v2/model/AttributeDetailEventTopicAttributeUpdateEvent.java
+src/main/java/com/mypurecloud/sdk/v2/model/AttributeDetailEventTopicCommunication.java
 src/main/java/com/mypurecloud/sdk/v2/model/AttributeFilterItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/AtzmTimeSlot.java
 src/main/java/com/mypurecloud/sdk/v2/model/AtzmTimeSlotWithTimeZone.java
@@ -10860,6 +10872,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsContactChangedTopicContact.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsContactChangedTopicContactAddress.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsContactChangedTopicDataSchema.java
+src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsContactChangedTopicDivision.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsContactChangedTopicExternalOrganization.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsContactChangedTopicFacebookId.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsContactChangedTopicFacebookScopedId.java
@@ -10874,6 +10887,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsContactChangedTopicWh
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChangedTopicContact.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChangedTopicContactAddress.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChangedTopicDataSchema.java
+src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChangedTopicDivision.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChangedTopicExternalOrganization.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChangedTopicFacebookId.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChangedTopicFacebookScopedId.java
@@ -11817,6 +11831,14 @@ src/main/java/com/mypurecloud/sdk/v2/model/OutOfOfficeEventUser.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutboundDetailEventTopicOutboundInitEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutboundDomain.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutboundDomainEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingCampaignPostContactEmailEventTopicEmailAttributes.java
+src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingCampaignPostContactEmailEventTopicOutboundMessagingCampaignPostContactEmailEvent.java
+src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingCampaignPostContactSmsEventTopicOutboundMessagingCampaignPostContactSMSEvent.java
+src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingCampaignPostContactSmsEventTopicSMSAttributes.java
+src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingCampaignPreContactEmailEventTopicEmailAttributes.java
+src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingCampaignPreContactEmailEventTopicOutboundMessagingCampaignPreContactEmailEvent.java
+src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingCampaignPreContactSmsEventTopicOutboundMessagingCampaignPreContactSMSEvent.java
+src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingCampaignPreContactSmsEventTopicSMSAttributes.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingMessagingCampaignConfigChangeContactSort.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingMessagingCampaignConfigChangeEmailConfig.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingMessagingCampaignConfigChangeErrorDetail.java

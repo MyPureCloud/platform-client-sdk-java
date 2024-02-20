@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.AttributeDetailEventTopicCommunication;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -31,6 +32,7 @@ public class AttributeDetailEventTopicAttributeUpdateEvent  implements Serializa
   private Map<String, String> attributes = null;
   private List<String> conversationExternalContactIds = new ArrayList<String>();
   private List<String> conversationExternalOrganizationIds = new ArrayList<String>();
+  private List<AttributeDetailEventTopicCommunication> communications = new ArrayList<AttributeDetailEventTopicCommunication>();
 
   
   /**
@@ -135,6 +137,23 @@ public class AttributeDetailEventTopicAttributeUpdateEvent  implements Serializa
   }
 
 
+  /**
+   **/
+  public AttributeDetailEventTopicAttributeUpdateEvent communications(List<AttributeDetailEventTopicCommunication> communications) {
+    this.communications = communications;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("communications")
+  public List<AttributeDetailEventTopicCommunication> getCommunications() {
+    return communications;
+  }
+  public void setCommunications(List<AttributeDetailEventTopicCommunication> communications) {
+    this.communications = communications;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -150,12 +169,13 @@ public class AttributeDetailEventTopicAttributeUpdateEvent  implements Serializa
             Objects.equals(this.participantId, attributeDetailEventTopicAttributeUpdateEvent.participantId) &&
             Objects.equals(this.attributes, attributeDetailEventTopicAttributeUpdateEvent.attributes) &&
             Objects.equals(this.conversationExternalContactIds, attributeDetailEventTopicAttributeUpdateEvent.conversationExternalContactIds) &&
-            Objects.equals(this.conversationExternalOrganizationIds, attributeDetailEventTopicAttributeUpdateEvent.conversationExternalOrganizationIds);
+            Objects.equals(this.conversationExternalOrganizationIds, attributeDetailEventTopicAttributeUpdateEvent.conversationExternalOrganizationIds) &&
+            Objects.equals(this.communications, attributeDetailEventTopicAttributeUpdateEvent.communications);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, attributes, conversationExternalContactIds, conversationExternalOrganizationIds);
+    return Objects.hash(eventTime, conversationId, participantId, attributes, conversationExternalContactIds, conversationExternalOrganizationIds, communications);
   }
 
   @Override
@@ -169,6 +189,7 @@ public class AttributeDetailEventTopicAttributeUpdateEvent  implements Serializa
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    conversationExternalContactIds: ").append(toIndentedString(conversationExternalContactIds)).append("\n");
     sb.append("    conversationExternalOrganizationIds: ").append(toIndentedString(conversationExternalOrganizationIds)).append("\n");
+    sb.append("    communications: ").append(toIndentedString(communications)).append("\n");
     sb.append("}");
     return sb.toString();
   }

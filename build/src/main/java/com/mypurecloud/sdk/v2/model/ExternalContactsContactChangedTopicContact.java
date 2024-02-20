@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ExternalContactsContactChangedTopicContactAddress;
 import com.mypurecloud.sdk.v2.model.ExternalContactsContactChangedTopicDataSchema;
+import com.mypurecloud.sdk.v2.model.ExternalContactsContactChangedTopicDivision;
 import com.mypurecloud.sdk.v2.model.ExternalContactsContactChangedTopicExternalOrganization;
 import com.mypurecloud.sdk.v2.model.ExternalContactsContactChangedTopicFacebookId;
 import com.mypurecloud.sdk.v2.model.ExternalContactsContactChangedTopicInstagramId;
@@ -36,6 +37,7 @@ import java.io.Serializable;
 public class ExternalContactsContactChangedTopicContact  implements Serializable {
   
   private String id = null;
+  private ExternalContactsContactChangedTopicDivision division = null;
   private ExternalContactsContactChangedTopicExternalOrganization externalOrganization = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
@@ -126,6 +128,23 @@ public class ExternalContactsContactChangedTopicContact  implements Serializable
   }
   public void setId(String id) {
     this.id = id;
+  }
+
+
+  /**
+   **/
+  public ExternalContactsContactChangedTopicContact division(ExternalContactsContactChangedTopicDivision division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("division")
+  public ExternalContactsContactChangedTopicDivision getDivision() {
+    return division;
+  }
+  public void setDivision(ExternalContactsContactChangedTopicDivision division) {
+    this.division = division;
   }
 
 
@@ -582,6 +601,7 @@ public class ExternalContactsContactChangedTopicContact  implements Serializable
     ExternalContactsContactChangedTopicContact externalContactsContactChangedTopicContact = (ExternalContactsContactChangedTopicContact) o;
 
     return Objects.equals(this.id, externalContactsContactChangedTopicContact.id) &&
+            Objects.equals(this.division, externalContactsContactChangedTopicContact.division) &&
             Objects.equals(this.externalOrganization, externalContactsContactChangedTopicContact.externalOrganization) &&
             Objects.equals(this.type, externalContactsContactChangedTopicContact.type) &&
             Objects.equals(this.firstName, externalContactsContactChangedTopicContact.firstName) &&
@@ -612,7 +632,7 @@ public class ExternalContactsContactChangedTopicContact  implements Serializable
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, externalOrganization, type, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, surveyOptOut, externalSystemUrl, twitterId, lineId, whatsAppId, facebookId, instagramId, schema, customFields, createDate, modifyDate);
+    return Objects.hash(id, division, externalOrganization, type, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, surveyOptOut, externalSystemUrl, twitterId, lineId, whatsAppId, facebookId, instagramId, schema, customFields, createDate, modifyDate);
   }
 
   @Override
@@ -621,6 +641,7 @@ public class ExternalContactsContactChangedTopicContact  implements Serializable
     sb.append("class ExternalContactsContactChangedTopicContact {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");

@@ -668,7 +668,6 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   private String queueId = null;
   private String remote = null;
   private List<String> removedSkillIds = new ArrayList<String>();
-  private Boolean reoffered = null;
   private String requestedLanguageId = null;
   private List<String> requestedRoutingSkillIds = new ArrayList<String>();
 
@@ -1947,24 +1946,6 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
 
 
   /**
-   * Marker for an interaction that got reoffered to the same queue by an in-queue flow
-   **/
-  public ConversationMetricsTopicConversationMetricRecord reoffered(Boolean reoffered) {
-    this.reoffered = reoffered;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Marker for an interaction that got reoffered to the same queue by an in-queue flow")
-  @JsonProperty("reoffered")
-  public Boolean getReoffered() {
-    return reoffered;
-  }
-  public void setReoffered(Boolean reoffered) {
-    this.reoffered = reoffered;
-  }
-
-
-  /**
    * Unique identifier for the language requested for an interaction
    **/
   public ConversationMetricsTopicConversationMetricRecord requestedLanguageId(String requestedLanguageId) {
@@ -2413,7 +2394,6 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
             Objects.equals(this.queueId, conversationMetricsTopicConversationMetricRecord.queueId) &&
             Objects.equals(this.remote, conversationMetricsTopicConversationMetricRecord.remote) &&
             Objects.equals(this.removedSkillIds, conversationMetricsTopicConversationMetricRecord.removedSkillIds) &&
-            Objects.equals(this.reoffered, conversationMetricsTopicConversationMetricRecord.reoffered) &&
             Objects.equals(this.requestedLanguageId, conversationMetricsTopicConversationMetricRecord.requestedLanguageId) &&
             Objects.equals(this.requestedRoutingSkillIds, conversationMetricsTopicConversationMetricRecord.requestedRoutingSkillIds) &&
             Objects.equals(this.requestedRoutings, conversationMetricsTopicConversationMetricRecord.requestedRoutings) &&
@@ -2439,7 +2419,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
 
   @Override
   public int hashCode() {
-    return Objects.hash(metric, metricDate, value, recordId, activeRouting, activeSkillIds, addressFrom, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, conversationId, conversationInitiator, convertedFrom, convertedTo, customerParticipation, deliveryStatus, destinationAddresses, direction, disconnectType, divisionIds, dnis, edgeId, eligibleAgentCounts, errorCode, extendedDeliveryStatus, externalContactId, externalMediaCount, externalOrganizationId, externalTag, firstQueue, flaggedReason, flowInType, flowOutType, groupId, interactionType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, knowledgeBaseIds, mediaCount, mediaType, messageType, originatingDirection, outboundCampaignId, outboundContactId, outboundContactListId, participantName, peerId, provider, purpose, queueId, remote, removedSkillIds, reoffered, requestedLanguageId, requestedRoutingSkillIds, requestedRoutings, roomId, routingPriority, routingRing, routingRule, routingRuleType, selectedAgentId, selectedAgentRank, selfServed, sessionDnis, sessionId, stationId, teamId, usedRouting, userId, waitingInteractionCounts, wrapUpCode, proposedAgents, scoredAgents);
+    return Objects.hash(metric, metricDate, value, recordId, activeRouting, activeSkillIds, addressFrom, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, conversationId, conversationInitiator, convertedFrom, convertedTo, customerParticipation, deliveryStatus, destinationAddresses, direction, disconnectType, divisionIds, dnis, edgeId, eligibleAgentCounts, errorCode, extendedDeliveryStatus, externalContactId, externalMediaCount, externalOrganizationId, externalTag, firstQueue, flaggedReason, flowInType, flowOutType, groupId, interactionType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, knowledgeBaseIds, mediaCount, mediaType, messageType, originatingDirection, outboundCampaignId, outboundContactId, outboundContactListId, participantName, peerId, provider, purpose, queueId, remote, removedSkillIds, requestedLanguageId, requestedRoutingSkillIds, requestedRoutings, roomId, routingPriority, routingRing, routingRule, routingRuleType, selectedAgentId, selectedAgentRank, selfServed, sessionDnis, sessionId, stationId, teamId, usedRouting, userId, waitingInteractionCounts, wrapUpCode, proposedAgents, scoredAgents);
   }
 
   @Override
@@ -2508,7 +2488,6 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
     sb.append("    remote: ").append(toIndentedString(remote)).append("\n");
     sb.append("    removedSkillIds: ").append(toIndentedString(removedSkillIds)).append("\n");
-    sb.append("    reoffered: ").append(toIndentedString(reoffered)).append("\n");
     sb.append("    requestedLanguageId: ").append(toIndentedString(requestedLanguageId)).append("\n");
     sb.append("    requestedRoutingSkillIds: ").append(toIndentedString(requestedRoutingSkillIds)).append("\n");
     sb.append("    requestedRoutings: ").append(toIndentedString(requestedRoutings)).append("\n");
