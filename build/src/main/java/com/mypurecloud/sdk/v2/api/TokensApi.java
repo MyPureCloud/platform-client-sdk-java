@@ -266,7 +266,6 @@ public class TokensApi {
   /**
    * Get the current Idle Token Timeout Value
    * 
-   * getTokensTimeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return IdleTokenTimeout
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -278,7 +277,6 @@ public class TokensApi {
   /**
    * Get the current Idle Token Timeout Value
    * 
-   * getTokensTimeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return IdleTokenTimeout
    * @throws IOException if the request fails to be processed
    */
@@ -294,7 +292,6 @@ public class TokensApi {
   /**
    * Get the current Idle Token Timeout Value
    * 
-   * getTokensTimeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return IdleTokenTimeout
    * @throws ApiException if the request fails on the server
@@ -314,7 +311,6 @@ public class TokensApi {
   /**
    * Get the current Idle Token Timeout Value
    * 
-   * getTokensTimeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -415,7 +411,6 @@ public class TokensApi {
   /**
    * Update or Enable/Disable the Idle Token Timeout
    * 
-   * putTokensTimeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body  (optional)
    * @return IdleTokenTimeout
    * @throws ApiException if the request fails on the server
@@ -428,7 +423,6 @@ public class TokensApi {
   /**
    * Update or Enable/Disable the Idle Token Timeout
    * 
-   * putTokensTimeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body  (optional)
    * @return IdleTokenTimeout
    * @throws IOException if the request fails to be processed
@@ -447,7 +441,6 @@ public class TokensApi {
   /**
    * Update or Enable/Disable the Idle Token Timeout
    * 
-   * putTokensTimeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return IdleTokenTimeout
    * @throws ApiException if the request fails on the server
@@ -467,7 +460,6 @@ public class TokensApi {
   /**
    * Update or Enable/Disable the Idle Token Timeout
    * 
-   * putTokensTimeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

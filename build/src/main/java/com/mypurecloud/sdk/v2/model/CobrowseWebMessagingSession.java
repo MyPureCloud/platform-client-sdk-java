@@ -48,7 +48,8 @@ public class CobrowseWebMessagingSession  implements Serializable {
   public enum CommunicationTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CALL("Call"),
-    MESSAGE("Message");
+    MESSAGE("Message"),
+    UNKNOWN("Unknown");
 
     private String value;
 

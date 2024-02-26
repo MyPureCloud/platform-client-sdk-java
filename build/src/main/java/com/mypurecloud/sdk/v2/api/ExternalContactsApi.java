@@ -2643,7 +2643,7 @@ public class ExternalContactsApi {
   /**
    * Scan for external contacts using paging
    * 
-   * @param limit The number of contacts per page; must be between 10 and 200, default is 100) (optional)
+   * @param limit The number of contacts per page; must be between 10 and 200, default is 100 (optional)
    * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
    * @return CursorContactListing
    * @throws ApiException if the request fails on the server
@@ -2656,7 +2656,7 @@ public class ExternalContactsApi {
   /**
    * Scan for external contacts using paging
    * 
-   * @param limit The number of contacts per page; must be between 10 and 200, default is 100) (optional)
+   * @param limit The number of contacts per page; must be between 10 and 200, default is 100 (optional)
    * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
    * @return CursorContactListing
    * @throws IOException if the request fails to be processed
@@ -2725,7 +2725,7 @@ public class ExternalContactsApi {
   /**
    * Scan for notes using paging
    * 
-   * @param limit The number of notes per page; must be between 10 and 200, default is 100) (optional)
+   * @param limit The number of notes per page; must be between 10 and 200, default is 100 (optional)
    * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
    * @return CursorNoteListing
    * @throws ApiException if the request fails on the server
@@ -2738,7 +2738,7 @@ public class ExternalContactsApi {
   /**
    * Scan for notes using paging
    * 
-   * @param limit The number of notes per page; must be between 10 and 200, default is 100) (optional)
+   * @param limit The number of notes per page; must be between 10 and 200, default is 100 (optional)
    * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
    * @return CursorNoteListing
    * @throws IOException if the request fails to be processed
@@ -2807,7 +2807,7 @@ public class ExternalContactsApi {
   /**
    * Scan for external organizations using paging
    * 
-   * @param limit The number of organizations per page; must be between 10 and 200, default is 100) (optional)
+   * @param limit The number of organizations per page; must be between 10 and 200, default is 100 (optional)
    * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
    * @return CursorOrganizationListing
    * @throws ApiException if the request fails on the server
@@ -2820,7 +2820,7 @@ public class ExternalContactsApi {
   /**
    * Scan for external organizations using paging
    * 
-   * @param limit The number of organizations per page; must be between 10 and 200, default is 100) (optional)
+   * @param limit The number of organizations per page; must be between 10 and 200, default is 100 (optional)
    * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
    * @return CursorOrganizationListing
    * @throws IOException if the request fails to be processed
@@ -2889,7 +2889,7 @@ public class ExternalContactsApi {
   /**
    * Scan for relationships
    * 
-   * @param limit The number of relationships per page; must be between 10 and 200, default is 100) (optional)
+   * @param limit The number of relationships per page; must be between 10 and 200, default is 100 (optional)
    * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
    * @return CursorRelationshipListing
    * @throws ApiException if the request fails on the server
@@ -2902,7 +2902,7 @@ public class ExternalContactsApi {
   /**
    * Scan for relationships
    * 
-   * @param limit The number of relationships per page; must be between 10 and 200, default is 100) (optional)
+   * @param limit The number of relationships per page; must be between 10 and 200, default is 100 (optional)
    * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
    * @return CursorRelationshipListing
    * @throws IOException if the request fails to be processed

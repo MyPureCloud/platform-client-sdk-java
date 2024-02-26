@@ -32,6 +32,7 @@ public class WorktypeUpdate  implements Serializable {
   private Integer defaultTtlSeconds = null;
   private Boolean assignmentEnabled = null;
   private String schemaId = null;
+  private Integer serviceLevelTarget = null;
   private String description = null;
   private String defaultStatusId = null;
   private Integer schemaVersion = null;
@@ -203,6 +204,26 @@ public class WorktypeUpdate  implements Serializable {
 
 
   /**
+   * The target service level for Workitems created from the Worktype. The default value is 100.
+   * minimum: 1
+   * maximum: 100
+   **/
+  public WorktypeUpdate serviceLevelTarget(Integer serviceLevelTarget) {
+    this.serviceLevelTarget = serviceLevelTarget;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The target service level for Workitems created from the Worktype. The default value is 100.")
+  @JsonProperty("serviceLevelTarget")
+  public Integer getServiceLevelTarget() {
+    return serviceLevelTarget;
+  }
+  public void setServiceLevelTarget(Integer serviceLevelTarget) {
+    this.serviceLevelTarget = serviceLevelTarget;
+  }
+
+
+  /**
    * The description of the Worktype. Maximum length of 4096 characters.
    **/
   public WorktypeUpdate description(String description) {
@@ -329,6 +350,7 @@ public class WorktypeUpdate  implements Serializable {
             Objects.equals(this.defaultTtlSeconds, worktypeUpdate.defaultTtlSeconds) &&
             Objects.equals(this.assignmentEnabled, worktypeUpdate.assignmentEnabled) &&
             Objects.equals(this.schemaId, worktypeUpdate.schemaId) &&
+            Objects.equals(this.serviceLevelTarget, worktypeUpdate.serviceLevelTarget) &&
             Objects.equals(this.description, worktypeUpdate.description) &&
             Objects.equals(this.defaultStatusId, worktypeUpdate.defaultStatusId) &&
             Objects.equals(this.schemaVersion, worktypeUpdate.schemaVersion) &&
@@ -339,7 +361,7 @@ public class WorktypeUpdate  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, defaultWorkbinId, defaultDurationSeconds, defaultExpirationSeconds, defaultDueDurationSeconds, defaultPriority, defaultTtlSeconds, assignmentEnabled, schemaId, description, defaultStatusId, schemaVersion, defaultLanguageId, defaultSkillIds, defaultQueueId);
+    return Objects.hash(name, defaultWorkbinId, defaultDurationSeconds, defaultExpirationSeconds, defaultDueDurationSeconds, defaultPriority, defaultTtlSeconds, assignmentEnabled, schemaId, serviceLevelTarget, description, defaultStatusId, schemaVersion, defaultLanguageId, defaultSkillIds, defaultQueueId);
   }
 
   @Override
@@ -356,6 +378,7 @@ public class WorktypeUpdate  implements Serializable {
     sb.append("    defaultTtlSeconds: ").append(toIndentedString(defaultTtlSeconds)).append("\n");
     sb.append("    assignmentEnabled: ").append(toIndentedString(assignmentEnabled)).append("\n");
     sb.append("    schemaId: ").append(toIndentedString(schemaId)).append("\n");
+    sb.append("    serviceLevelTarget: ").append(toIndentedString(serviceLevelTarget)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    defaultStatusId: ").append(toIndentedString(defaultStatusId)).append("\n");
     sb.append("    schemaVersion: ").append(toIndentedString(schemaVersion)).append("\n");

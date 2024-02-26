@@ -1,0 +1,203 @@
+package com.mypurecloud.sdk.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import java.util.Objects;
+import java.util.ArrayList;
+import java.io.IOException;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentVersionVariationReference;
+import com.mypurecloud.sdk.v2.model.KnowledgeGuestSearchClientApplication;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
+
+import java.io.Serializable;
+/**
+ * KnowledgeGuestDocumentPresentation
+ */
+
+public class KnowledgeGuestDocumentPresentation  implements Serializable {
+  
+  private List<KnowledgeDocumentVersionVariationReference> documents = new ArrayList<KnowledgeDocumentVersionVariationReference>();
+  private String searchId = null;
+
+  private static class QueryTypeEnumDeserializer extends StdDeserializer<QueryTypeEnum> {
+    public QueryTypeEnumDeserializer() {
+      super(QueryTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public QueryTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return QueryTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The type of the query that surfaced the documents.
+   */
+ @JsonDeserialize(using = QueryTypeEnumDeserializer.class)
+  public enum QueryTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("Unknown"),
+    ARTICLE("Article"),
+    AUTOSEARCH("AutoSearch"),
+    CATEGORY("Category"),
+    MANUALSEARCH("ManualSearch"),
+    RECOMMENDATION("Recommendation"),
+    SUGGESTION("Suggestion");
+
+    private String value;
+
+    QueryTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static QueryTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (QueryTypeEnum value : QueryTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return QueryTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private QueryTypeEnum queryType = null;
+  private String sessionId = null;
+  private KnowledgeGuestSearchClientApplication application = null;
+
+  
+  /**
+   * The presented documents
+   **/
+  public KnowledgeGuestDocumentPresentation documents(List<KnowledgeDocumentVersionVariationReference> documents) {
+    this.documents = documents;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The presented documents")
+  @JsonProperty("documents")
+  public List<KnowledgeDocumentVersionVariationReference> getDocuments() {
+    return documents;
+  }
+  public void setDocuments(List<KnowledgeDocumentVersionVariationReference> documents) {
+    this.documents = documents;
+  }
+
+
+  /**
+   * The search that surfaced the documents that were presented.
+   **/
+  public KnowledgeGuestDocumentPresentation searchId(String searchId) {
+    this.searchId = searchId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The search that surfaced the documents that were presented.")
+  @JsonProperty("searchId")
+  public String getSearchId() {
+    return searchId;
+  }
+  public void setSearchId(String searchId) {
+    this.searchId = searchId;
+  }
+
+
+  /**
+   * The type of the query that surfaced the documents.
+   **/
+  public KnowledgeGuestDocumentPresentation queryType(QueryTypeEnum queryType) {
+    this.queryType = queryType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The type of the query that surfaced the documents.")
+  @JsonProperty("queryType")
+  public QueryTypeEnum getQueryType() {
+    return queryType;
+  }
+  public void setQueryType(QueryTypeEnum queryType) {
+    this.queryType = queryType;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "Knowledge session ID.")
+  @JsonProperty("sessionId")
+  public String getSessionId() {
+    return sessionId;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The client application in which the documents were presented.")
+  @JsonProperty("application")
+  public KnowledgeGuestSearchClientApplication getApplication() {
+    return application;
+  }
+
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    KnowledgeGuestDocumentPresentation knowledgeGuestDocumentPresentation = (KnowledgeGuestDocumentPresentation) o;
+
+    return Objects.equals(this.documents, knowledgeGuestDocumentPresentation.documents) &&
+            Objects.equals(this.searchId, knowledgeGuestDocumentPresentation.searchId) &&
+            Objects.equals(this.queryType, knowledgeGuestDocumentPresentation.queryType) &&
+            Objects.equals(this.sessionId, knowledgeGuestDocumentPresentation.sessionId) &&
+            Objects.equals(this.application, knowledgeGuestDocumentPresentation.application);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(documents, searchId, queryType, sessionId, application);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class KnowledgeGuestDocumentPresentation {\n");
+    
+    sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
+    sb.append("    searchId: ").append(toIndentedString(searchId)).append("\n");
+    sb.append("    queryType: ").append(toIndentedString(queryType)).append("\n");
+    sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
+    sb.append("    application: ").append(toIndentedString(application)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+}
+

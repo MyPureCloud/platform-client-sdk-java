@@ -53,6 +53,7 @@ public class Worktype  implements Serializable {
   private List<RoutingSkillReference> defaultSkills = new ArrayList<RoutingSkillReference>();
   private Boolean assignmentEnabled = null;
   private WorkitemSchema schema = null;
+  private Integer serviceLevelTarget = null;
   private String selfUri = null;
 
   
@@ -405,6 +406,24 @@ public class Worktype  implements Serializable {
   }
 
 
+  /**
+   * The target service level for Workitems created from the Worktype. The default value is 100.
+   **/
+  public Worktype serviceLevelTarget(Integer serviceLevelTarget) {
+    this.serviceLevelTarget = serviceLevelTarget;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The target service level for Workitems created from the Worktype. The default value is 100.")
+  @JsonProperty("serviceLevelTarget")
+  public Integer getServiceLevelTarget() {
+    return serviceLevelTarget;
+  }
+  public void setServiceLevelTarget(Integer serviceLevelTarget) {
+    this.serviceLevelTarget = serviceLevelTarget;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -442,12 +461,13 @@ public class Worktype  implements Serializable {
             Objects.equals(this.defaultSkills, worktype.defaultSkills) &&
             Objects.equals(this.assignmentEnabled, worktype.assignmentEnabled) &&
             Objects.equals(this.schema, worktype.schema) &&
+            Objects.equals(this.serviceLevelTarget, worktype.serviceLevelTarget) &&
             Objects.equals(this.selfUri, worktype.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, defaultWorkbin, defaultStatus, statuses, defaultDurationSeconds, defaultExpirationSeconds, defaultDueDurationSeconds, defaultPriority, defaultLanguage, defaultTtlSeconds, modifiedBy, defaultQueue, defaultSkills, assignmentEnabled, schema, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, defaultWorkbin, defaultStatus, statuses, defaultDurationSeconds, defaultExpirationSeconds, defaultDueDurationSeconds, defaultPriority, defaultLanguage, defaultTtlSeconds, modifiedBy, defaultQueue, defaultSkills, assignmentEnabled, schema, serviceLevelTarget, selfUri);
   }
 
   @Override
@@ -475,6 +495,7 @@ public class Worktype  implements Serializable {
     sb.append("    defaultSkills: ").append(toIndentedString(defaultSkills)).append("\n");
     sb.append("    assignmentEnabled: ").append(toIndentedString(assignmentEnabled)).append("\n");
     sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
+    sb.append("    serviceLevelTarget: ").append(toIndentedString(serviceLevelTarget)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

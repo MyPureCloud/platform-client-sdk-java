@@ -79,6 +79,7 @@ public class BenefitAssessment  implements Serializable {
     }
   }
   private StateEnum state = null;
+  private String jobId = null;
   private Date dateCreated = null;
   private Date dateModified = null;
   private String selfUri = null;
@@ -109,6 +110,13 @@ public class BenefitAssessment  implements Serializable {
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The unique identifier of job that created this benefit assessment.")
+  @JsonProperty("jobId")
+  public String getJobId() {
+    return jobId;
   }
 
 
@@ -147,6 +155,7 @@ public class BenefitAssessment  implements Serializable {
             Objects.equals(this.queues, benefitAssessment.queues) &&
             Objects.equals(this.kpiAssessments, benefitAssessment.kpiAssessments) &&
             Objects.equals(this.state, benefitAssessment.state) &&
+            Objects.equals(this.jobId, benefitAssessment.jobId) &&
             Objects.equals(this.dateCreated, benefitAssessment.dateCreated) &&
             Objects.equals(this.dateModified, benefitAssessment.dateModified) &&
             Objects.equals(this.selfUri, benefitAssessment.selfUri);
@@ -154,7 +163,7 @@ public class BenefitAssessment  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, queues, kpiAssessments, state, dateCreated, dateModified, selfUri);
+    return Objects.hash(id, queues, kpiAssessments, state, jobId, dateCreated, dateModified, selfUri);
   }
 
   @Override
@@ -166,6 +175,7 @@ public class BenefitAssessment  implements Serializable {
     sb.append("    queues: ").append(toIndentedString(queues)).append("\n");
     sb.append("    kpiAssessments: ").append(toIndentedString(kpiAssessments)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

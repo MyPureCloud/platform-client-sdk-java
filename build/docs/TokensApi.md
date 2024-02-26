@@ -200,8 +200,6 @@ try {
 
 Get the current Idle Token Timeout Value
 
-getTokensTimeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/tokens/timeout  
 
 Requires ANY permissions: 
@@ -313,8 +311,6 @@ null (empty response body)
 > [IdleTokenTimeout](IdleTokenTimeout.html) putTokensTimeout(body)
 
 Update or Enable/Disable the Idle Token Timeout
-
-putTokensTimeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/tokens/timeout  
 

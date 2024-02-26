@@ -37,11 +37,13 @@ import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkUpdateRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkVersionAddRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentContentUpload;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentCopy;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedback;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedbackResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedbackResponseListing;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentGuestSearch;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentGuestSearchRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentPresentation;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentReq;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentResponse;
@@ -59,10 +61,13 @@ import com.mypurecloud.sdk.v2.model.KnowledgeExportJobRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeExportJobResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeExtendedCategory;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocument;
+import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentCopy;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentFeedback;
+import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentPresentation;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentResponseListing;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentSuggestion;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentSuggestionRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentView;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestSession;
 import com.mypurecloud.sdk.v2.model.KnowledgeImport;
 import com.mypurecloud.sdk.v2.model.KnowledgeImportJobRequest;
@@ -153,11 +158,15 @@ import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseLanguageDoc
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseParseJobRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeDocumentuploadsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentCopiesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentFeedbackRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentViewsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentsPresentationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentsSearchSuggestionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseCategoriesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentCopiesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentFeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentVariationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentVersionsRequest;
@@ -165,6 +174,7 @@ import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentView
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsBulkRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsBulkUpdateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsPresentationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsSearchSuggestionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsVersionsBulkAddRequest;
@@ -5783,6 +5793,89 @@ public class KnowledgeApi {
   }
 
   /**
+   * Indicate that the document was copied by the user.
+   * 
+   * @param sessionId Knowledge guest session ID. (required)
+   * @param documentId Document ID (required)
+   * @param body  (optional)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postKnowledgeGuestSessionDocumentCopies(String sessionId, String documentId, KnowledgeGuestDocumentCopy body) throws IOException, ApiException {
+     postKnowledgeGuestSessionDocumentCopies(createPostKnowledgeGuestSessionDocumentCopiesRequest(sessionId, documentId, body));
+  }
+
+  /**
+   * Indicate that the document was copied by the user.
+   * 
+   * @param sessionId Knowledge guest session ID. (required)
+   * @param documentId Document ID (required)
+   * @param body  (optional)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postKnowledgeGuestSessionDocumentCopiesWithHttpInfo(String sessionId, String documentId, KnowledgeGuestDocumentCopy body) throws IOException {
+    return postKnowledgeGuestSessionDocumentCopies(createPostKnowledgeGuestSessionDocumentCopiesRequest(sessionId, documentId, body).withHttpInfo());
+  }
+
+  private PostKnowledgeGuestSessionDocumentCopiesRequest createPostKnowledgeGuestSessionDocumentCopiesRequest(String sessionId, String documentId, KnowledgeGuestDocumentCopy body) {
+    return PostKnowledgeGuestSessionDocumentCopiesRequest.builder()
+            .withSessionId(sessionId)
+
+            .withDocumentId(documentId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Indicate that the document was copied by the user.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postKnowledgeGuestSessionDocumentCopies(PostKnowledgeGuestSessionDocumentCopiesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Indicate that the document was copied by the user.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postKnowledgeGuestSessionDocumentCopies(ApiRequest<KnowledgeGuestDocumentCopy> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Give feedback on a document
    * 
    * @param sessionId Knowledge guest session ID. (required)
@@ -5864,6 +5957,168 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<KnowledgeGuestDocumentFeedback> response = (ApiResponse<KnowledgeGuestDocumentFeedback>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create view event for a document.
+   * 
+   * @param sessionId Knowledge guest session ID. (required)
+   * @param documentId Document ID (required)
+   * @param body  (optional)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postKnowledgeGuestSessionDocumentViews(String sessionId, String documentId, KnowledgeGuestDocumentView body) throws IOException, ApiException {
+     postKnowledgeGuestSessionDocumentViews(createPostKnowledgeGuestSessionDocumentViewsRequest(sessionId, documentId, body));
+  }
+
+  /**
+   * Create view event for a document.
+   * 
+   * @param sessionId Knowledge guest session ID. (required)
+   * @param documentId Document ID (required)
+   * @param body  (optional)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postKnowledgeGuestSessionDocumentViewsWithHttpInfo(String sessionId, String documentId, KnowledgeGuestDocumentView body) throws IOException {
+    return postKnowledgeGuestSessionDocumentViews(createPostKnowledgeGuestSessionDocumentViewsRequest(sessionId, documentId, body).withHttpInfo());
+  }
+
+  private PostKnowledgeGuestSessionDocumentViewsRequest createPostKnowledgeGuestSessionDocumentViewsRequest(String sessionId, String documentId, KnowledgeGuestDocumentView body) {
+    return PostKnowledgeGuestSessionDocumentViewsRequest.builder()
+            .withSessionId(sessionId)
+
+            .withDocumentId(documentId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create view event for a document.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postKnowledgeGuestSessionDocumentViews(PostKnowledgeGuestSessionDocumentViewsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Create view event for a document.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postKnowledgeGuestSessionDocumentViews(ApiRequest<KnowledgeGuestDocumentView> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Indicate that documents were presented to the user.
+   * 
+   * @param sessionId Knowledge guest session ID. (required)
+   * @param body  (optional)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postKnowledgeGuestSessionDocumentsPresentations(String sessionId, KnowledgeGuestDocumentPresentation body) throws IOException, ApiException {
+     postKnowledgeGuestSessionDocumentsPresentations(createPostKnowledgeGuestSessionDocumentsPresentationsRequest(sessionId, body));
+  }
+
+  /**
+   * Indicate that documents were presented to the user.
+   * 
+   * @param sessionId Knowledge guest session ID. (required)
+   * @param body  (optional)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postKnowledgeGuestSessionDocumentsPresentationsWithHttpInfo(String sessionId, KnowledgeGuestDocumentPresentation body) throws IOException {
+    return postKnowledgeGuestSessionDocumentsPresentations(createPostKnowledgeGuestSessionDocumentsPresentationsRequest(sessionId, body).withHttpInfo());
+  }
+
+  private PostKnowledgeGuestSessionDocumentsPresentationsRequest createPostKnowledgeGuestSessionDocumentsPresentationsRequest(String sessionId, KnowledgeGuestDocumentPresentation body) {
+    return PostKnowledgeGuestSessionDocumentsPresentationsRequest.builder()
+            .withSessionId(sessionId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Indicate that documents were presented to the user.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postKnowledgeGuestSessionDocumentsPresentations(PostKnowledgeGuestSessionDocumentsPresentationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Indicate that documents were presented to the user.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postKnowledgeGuestSessionDocumentsPresentations(ApiRequest<KnowledgeGuestDocumentPresentation> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -6192,6 +6447,89 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CategoryResponse> response = (ApiResponse<CategoryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Indicate that the document was copied by the user.
+   * 
+   * @param knowledgeBaseId Knowledge base ID. (required)
+   * @param documentId Document ID. (required)
+   * @param body  (optional)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postKnowledgeKnowledgebaseDocumentCopies(String knowledgeBaseId, String documentId, KnowledgeDocumentCopy body) throws IOException, ApiException {
+     postKnowledgeKnowledgebaseDocumentCopies(createPostKnowledgeKnowledgebaseDocumentCopiesRequest(knowledgeBaseId, documentId, body));
+  }
+
+  /**
+   * Indicate that the document was copied by the user.
+   * 
+   * @param knowledgeBaseId Knowledge base ID. (required)
+   * @param documentId Document ID. (required)
+   * @param body  (optional)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postKnowledgeKnowledgebaseDocumentCopiesWithHttpInfo(String knowledgeBaseId, String documentId, KnowledgeDocumentCopy body) throws IOException {
+    return postKnowledgeKnowledgebaseDocumentCopies(createPostKnowledgeKnowledgebaseDocumentCopiesRequest(knowledgeBaseId, documentId, body).withHttpInfo());
+  }
+
+  private PostKnowledgeKnowledgebaseDocumentCopiesRequest createPostKnowledgeKnowledgebaseDocumentCopiesRequest(String knowledgeBaseId, String documentId, KnowledgeDocumentCopy body) {
+    return PostKnowledgeKnowledgebaseDocumentCopiesRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withDocumentId(documentId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Indicate that the document was copied by the user.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postKnowledgeKnowledgebaseDocumentCopies(PostKnowledgeKnowledgebaseDocumentCopiesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Indicate that the document was copied by the user.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postKnowledgeKnowledgebaseDocumentCopies(ApiRequest<KnowledgeDocumentCopy> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -6787,6 +7125,85 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BulkResponse> response = (ApiResponse<BulkResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Indicate that documents were presented to the user.
+   * 
+   * @param knowledgeBaseId Knowledge base ID. (required)
+   * @param body  (optional)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postKnowledgeKnowledgebaseDocumentsPresentations(String knowledgeBaseId, KnowledgeDocumentPresentation body) throws IOException, ApiException {
+     postKnowledgeKnowledgebaseDocumentsPresentations(createPostKnowledgeKnowledgebaseDocumentsPresentationsRequest(knowledgeBaseId, body));
+  }
+
+  /**
+   * Indicate that documents were presented to the user.
+   * 
+   * @param knowledgeBaseId Knowledge base ID. (required)
+   * @param body  (optional)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postKnowledgeKnowledgebaseDocumentsPresentationsWithHttpInfo(String knowledgeBaseId, KnowledgeDocumentPresentation body) throws IOException {
+    return postKnowledgeKnowledgebaseDocumentsPresentations(createPostKnowledgeKnowledgebaseDocumentsPresentationsRequest(knowledgeBaseId, body).withHttpInfo());
+  }
+
+  private PostKnowledgeKnowledgebaseDocumentsPresentationsRequest createPostKnowledgeKnowledgebaseDocumentsPresentationsRequest(String knowledgeBaseId, KnowledgeDocumentPresentation body) {
+    return PostKnowledgeKnowledgebaseDocumentsPresentationsRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Indicate that documents were presented to the user.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postKnowledgeKnowledgebaseDocumentsPresentations(PostKnowledgeKnowledgebaseDocumentsPresentationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Indicate that documents were presented to the user.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postKnowledgeKnowledgebaseDocumentsPresentations(ApiRequest<KnowledgeDocumentPresentation> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

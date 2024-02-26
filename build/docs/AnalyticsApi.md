@@ -4834,8 +4834,6 @@ try {
 
 Query for knowledge aggregates
 
-postAnalyticsKnowledgeAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/analytics/knowledge/aggregates/query  
 
 Requires ANY permissions: 

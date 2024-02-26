@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.ActionTarget;
 import com.mypurecloud.sdk.v2.model.ActionTargetListing;
 import com.mypurecloud.sdk.v2.model.ActionTemplate;
 import com.mypurecloud.sdk.v2.model.ActionTemplateListing;
+import com.mypurecloud.sdk.v2.model.AddressableEntityListing;
 import com.mypurecloud.sdk.v2.model.AppEventRequest;
 import com.mypurecloud.sdk.v2.model.AppEventResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
@@ -27,12 +28,15 @@ import com.mypurecloud.sdk.v2.model.DeploymentPing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EstimateJobAsyncResponse;
 import com.mypurecloud.sdk.v2.model.EventListing;
+import com.mypurecloud.sdk.v2.model.FlowPaths;
+import com.mypurecloud.sdk.v2.model.FlowPathsQuery;
 import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
 import com.mypurecloud.sdk.v2.model.JourneyAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.JourneyAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.JourneySegment;
 import com.mypurecloud.sdk.v2.model.JourneySegmentRequest;
+import com.mypurecloud.sdk.v2.model.JourneyView;
 import com.mypurecloud.sdk.v2.model.Outcome;
 import com.mypurecloud.sdk.v2.model.OutcomeAttributionAsyncResponse;
 import com.mypurecloud.sdk.v2.model.OutcomeAttributionJobStateResponse;
@@ -59,6 +63,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteJourneyActiontemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneyOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneyOutcomesPredictorRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneySegmentRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteJourneyViewRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsJourneysAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsJourneysAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactJourneySessionsRequest;
@@ -82,6 +87,9 @@ import com.mypurecloud.sdk.v2.api.request.GetJourneySegmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneySessionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneySessionEventsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneySessionOutcomescoresRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyViewRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyViewVersionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActionmapRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontargetRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontemplateRequest;
@@ -94,10 +102,13 @@ import com.mypurecloud.sdk.v2.api.request.PostJourneyActionmapsEstimatesJobsRequ
 import com.mypurecloud.sdk.v2.api.request.PostJourneyActiontemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyDeploymentActioneventRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyDeploymentAppeventsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostJourneyFlowsPathsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyOutcomesAttributionsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyOutcomesPredictorsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneySegmentsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostJourneyViewVersionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostJourneyViewsRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -474,6 +485,85 @@ public class JourneyApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteJourneySegment(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete a Journey View by ID
+   * deletes all versions
+   * deleteJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param viewId viewId (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteJourneyView(String viewId) throws IOException, ApiException {
+     deleteJourneyView(createDeleteJourneyViewRequest(viewId));
+  }
+
+  /**
+   * Delete a Journey View by ID
+   * deletes all versions
+   * deleteJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param viewId viewId (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteJourneyViewWithHttpInfo(String viewId) throws IOException {
+    return deleteJourneyView(createDeleteJourneyViewRequest(viewId).withHttpInfo());
+  }
+
+  private DeleteJourneyViewRequest createDeleteJourneyViewRequest(String viewId) {
+    return DeleteJourneyViewRequest.builder()
+            .withViewId(viewId)
+
+            .build();
+  }
+
+  /**
+   * Delete a Journey View by ID
+   * deletes all versions
+   * deleteJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteJourneyView(DeleteJourneyViewRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a Journey View by ID
+   * deletes all versions
+   * deleteJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteJourneyView(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -2454,6 +2544,252 @@ public class JourneyApi {
   }
 
   /**
+   * Get a Journey View by ID
+   * returns the latest version
+   * getJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param viewId viewId (required)
+   * @return JourneyView
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyView getJourneyView(String viewId) throws IOException, ApiException {
+    return  getJourneyView(createGetJourneyViewRequest(viewId));
+  }
+
+  /**
+   * Get a Journey View by ID
+   * returns the latest version
+   * getJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param viewId viewId (required)
+   * @return JourneyView
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyView> getJourneyViewWithHttpInfo(String viewId) throws IOException {
+    return getJourneyView(createGetJourneyViewRequest(viewId).withHttpInfo());
+  }
+
+  private GetJourneyViewRequest createGetJourneyViewRequest(String viewId) {
+    return GetJourneyViewRequest.builder()
+            .withViewId(viewId)
+
+            .build();
+  }
+
+  /**
+   * Get a Journey View by ID
+   * returns the latest version
+   * getJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return JourneyView
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyView getJourneyView(GetJourneyViewRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JourneyView> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneyView>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Journey View by ID
+   * returns the latest version
+   * getJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyView> getJourneyView(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JourneyView>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyView> response = (ApiResponse<JourneyView>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyView> response = (ApiResponse<JourneyView>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a Journey View by ID and version
+   * 
+   * getJourneyViewVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param viewId viewId (required)
+   * @param versionId versionId (required)
+   * @return JourneyView
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyView getJourneyViewVersion(String viewId, String versionId) throws IOException, ApiException {
+    return  getJourneyViewVersion(createGetJourneyViewVersionRequest(viewId, versionId));
+  }
+
+  /**
+   * Get a Journey View by ID and version
+   * 
+   * getJourneyViewVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param viewId viewId (required)
+   * @param versionId versionId (required)
+   * @return JourneyView
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyView> getJourneyViewVersionWithHttpInfo(String viewId, String versionId) throws IOException {
+    return getJourneyViewVersion(createGetJourneyViewVersionRequest(viewId, versionId).withHttpInfo());
+  }
+
+  private GetJourneyViewVersionRequest createGetJourneyViewVersionRequest(String viewId, String versionId) {
+    return GetJourneyViewVersionRequest.builder()
+            .withViewId(viewId)
+
+            .withVersionId(versionId)
+
+            .build();
+  }
+
+  /**
+   * Get a Journey View by ID and version
+   * 
+   * getJourneyViewVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return JourneyView
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyView getJourneyViewVersion(GetJourneyViewVersionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JourneyView> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneyView>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Journey View by ID and version
+   * 
+   * getJourneyViewVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyView> getJourneyViewVersion(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JourneyView>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyView> response = (ApiResponse<JourneyView>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyView> response = (ApiResponse<JourneyView>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a list of Journey Views
+   * 
+   * getJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return AddressableEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AddressableEntityListing getJourneyViews() throws IOException, ApiException {
+    return  getJourneyViews(createGetJourneyViewsRequest());
+  }
+
+  /**
+   * Get a list of Journey Views
+   * 
+   * getJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return AddressableEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AddressableEntityListing> getJourneyViewsWithHttpInfo() throws IOException {
+    return getJourneyViews(createGetJourneyViewsRequest().withHttpInfo());
+  }
+
+  private GetJourneyViewsRequest createGetJourneyViewsRequest() {
+    return GetJourneyViewsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get a list of Journey Views
+   * 
+   * getJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AddressableEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AddressableEntityListing getJourneyViews(GetJourneyViewsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AddressableEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AddressableEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of Journey Views
+   * 
+   * getJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AddressableEntityListing> getJourneyViews(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AddressableEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AddressableEntityListing> response = (ApiResponse<AddressableEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AddressableEntityListing> response = (ApiResponse<AddressableEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update single action map.
    * 
    * @param actionMapId ID of the action map. (required)
@@ -3419,6 +3755,88 @@ public class JourneyApi {
   }
 
   /**
+   * Query for flow paths.
+   * 
+   * postJourneyFlowsPathsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body  (optional)
+   * @return FlowPaths
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowPaths postJourneyFlowsPathsQuery(FlowPathsQuery body) throws IOException, ApiException {
+    return  postJourneyFlowsPathsQuery(createPostJourneyFlowsPathsQueryRequest(body));
+  }
+
+  /**
+   * Query for flow paths.
+   * 
+   * postJourneyFlowsPathsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body  (optional)
+   * @return FlowPaths
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowPaths> postJourneyFlowsPathsQueryWithHttpInfo(FlowPathsQuery body) throws IOException {
+    return postJourneyFlowsPathsQuery(createPostJourneyFlowsPathsQueryRequest(body).withHttpInfo());
+  }
+
+  private PostJourneyFlowsPathsQueryRequest createPostJourneyFlowsPathsQueryRequest(FlowPathsQuery body) {
+    return PostJourneyFlowsPathsQueryRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for flow paths.
+   * 
+   * postJourneyFlowsPathsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return FlowPaths
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowPaths postJourneyFlowsPathsQuery(PostJourneyFlowsPathsQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowPaths> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowPaths>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for flow paths.
+   * 
+   * postJourneyFlowsPathsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowPaths> postJourneyFlowsPathsQuery(ApiRequest<FlowPathsQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowPaths>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowPaths> response = (ApiResponse<FlowPaths>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowPaths> response = (ApiResponse<FlowPaths>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create an outcome.
    * 
    * @param body  (optional)
@@ -3730,6 +4148,174 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<JourneySegment> response = (ApiResponse<JourneySegment>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a Journey View by ID
+   * creates a new version
+   * postJourneyViewVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param viewId viewId (required)
+   * @param body JourneyView (required)
+   * @return JourneyView
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyView postJourneyViewVersions(String viewId, JourneyView body) throws IOException, ApiException {
+    return  postJourneyViewVersions(createPostJourneyViewVersionsRequest(viewId, body));
+  }
+
+  /**
+   * Update a Journey View by ID
+   * creates a new version
+   * postJourneyViewVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param viewId viewId (required)
+   * @param body JourneyView (required)
+   * @return JourneyView
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyView> postJourneyViewVersionsWithHttpInfo(String viewId, JourneyView body) throws IOException {
+    return postJourneyViewVersions(createPostJourneyViewVersionsRequest(viewId, body).withHttpInfo());
+  }
+
+  private PostJourneyViewVersionsRequest createPostJourneyViewVersionsRequest(String viewId, JourneyView body) {
+    return PostJourneyViewVersionsRequest.builder()
+            .withViewId(viewId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a Journey View by ID
+   * creates a new version
+   * postJourneyViewVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return JourneyView
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyView postJourneyViewVersions(PostJourneyViewVersionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JourneyView> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneyView>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a Journey View by ID
+   * creates a new version
+   * postJourneyViewVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyView> postJourneyViewVersions(ApiRequest<JourneyView> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JourneyView>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyView> response = (ApiResponse<JourneyView>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyView> response = (ApiResponse<JourneyView>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a new Journey View
+   * 
+   * postJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body JourneyView (required)
+   * @return JourneyView
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyView postJourneyViews(JourneyView body) throws IOException, ApiException {
+    return  postJourneyViews(createPostJourneyViewsRequest(body));
+  }
+
+  /**
+   * Create a new Journey View
+   * 
+   * postJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body JourneyView (required)
+   * @return JourneyView
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyView> postJourneyViewsWithHttpInfo(JourneyView body) throws IOException {
+    return postJourneyViews(createPostJourneyViewsRequest(body).withHttpInfo());
+  }
+
+  private PostJourneyViewsRequest createPostJourneyViewsRequest(JourneyView body) {
+    return PostJourneyViewsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a new Journey View
+   * 
+   * postJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return JourneyView
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyView postJourneyViews(PostJourneyViewsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JourneyView> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneyView>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a new Journey View
+   * 
+   * postJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyView> postJourneyViews(ApiRequest<JourneyView> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JourneyView>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyView> response = (ApiResponse<JourneyView>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyView> response = (ApiResponse<JourneyView>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

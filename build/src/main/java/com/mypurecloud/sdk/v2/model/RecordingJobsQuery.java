@@ -82,6 +82,7 @@ public class RecordingJobsQuery  implements Serializable {
   private Boolean includeScreenRecordings = null;
   private Boolean clearExport = null;
   private AsyncConversationQuery conversationQuery = null;
+  private String agedConversationInterval = null;
 
   
   /**
@@ -247,20 +248,38 @@ public class RecordingJobsQuery  implements Serializable {
 
 
   /**
-   * Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability.This is required only when querying for conversations lesser than 5 years.
+   * Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability.This is supported only when querying for conversations up to and including 5 years old.
    **/
   public RecordingJobsQuery conversationQuery(AsyncConversationQuery conversationQuery) {
     this.conversationQuery = conversationQuery;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability.This is required only when querying for conversations lesser than 5 years.")
+  @ApiModelProperty(example = "null", value = "Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability.This is supported only when querying for conversations up to and including 5 years old.")
   @JsonProperty("conversationQuery")
   public AsyncConversationQuery getConversationQuery() {
     return conversationQuery;
   }
   public void setConversationQuery(AsyncConversationQuery conversationQuery) {
     this.conversationQuery = conversationQuery;
+  }
+
+
+  /**
+   * As an alternative to conversationQuery, specify the date and time range of conversations that are older than 5 years to query.Results will include all conversations that had activity during the interval. This is supported only when querying for conversations older than 5 years;conversationQuery must not be provided when this is provided. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss.Interval duration must not exceed 6 months. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+   **/
+  public RecordingJobsQuery agedConversationInterval(String agedConversationInterval) {
+    this.agedConversationInterval = agedConversationInterval;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "As an alternative to conversationQuery, specify the date and time range of conversations that are older than 5 years to query.Results will include all conversations that had activity during the interval. This is supported only when querying for conversations older than 5 years;conversationQuery must not be provided when this is provided. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss.Interval duration must not exceed 6 months. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss")
+  @JsonProperty("agedConversationInterval")
+  public String getAgedConversationInterval() {
+    return agedConversationInterval;
+  }
+  public void setAgedConversationInterval(String agedConversationInterval) {
+    this.agedConversationInterval = agedConversationInterval;
   }
 
 
@@ -283,12 +302,13 @@ public class RecordingJobsQuery  implements Serializable {
             Objects.equals(this.includeRecordingsWithSensitiveData, recordingJobsQuery.includeRecordingsWithSensitiveData) &&
             Objects.equals(this.includeScreenRecordings, recordingJobsQuery.includeScreenRecordings) &&
             Objects.equals(this.clearExport, recordingJobsQuery.clearExport) &&
-            Objects.equals(this.conversationQuery, recordingJobsQuery.conversationQuery);
+            Objects.equals(this.conversationQuery, recordingJobsQuery.conversationQuery) &&
+            Objects.equals(this.agedConversationInterval, recordingJobsQuery.agedConversationInterval);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(action, actionDate, actionAge, screenRecordingActionDate, screenRecordingActionAge, integrationId, includeRecordingsWithSensitiveData, includeScreenRecordings, clearExport, conversationQuery);
+    return Objects.hash(action, actionDate, actionAge, screenRecordingActionDate, screenRecordingActionAge, integrationId, includeRecordingsWithSensitiveData, includeScreenRecordings, clearExport, conversationQuery, agedConversationInterval);
   }
 
   @Override
@@ -306,6 +326,7 @@ public class RecordingJobsQuery  implements Serializable {
     sb.append("    includeScreenRecordings: ").append(toIndentedString(includeScreenRecordings)).append("\n");
     sb.append("    clearExport: ").append(toIndentedString(clearExport)).append("\n");
     sb.append("    conversationQuery: ").append(toIndentedString(conversationQuery)).append("\n");
+    sb.append("    agedConversationInterval: ").append(toIndentedString(agedConversationInterval)).append("\n");
     sb.append("}");
     return sb.toString();
   }

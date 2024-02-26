@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteJourneyOutcome**](JourneyApi.html#deleteJourneyOutcome) | Delete an outcome. |
 | [**deleteJourneyOutcomesPredictor**](JourneyApi.html#deleteJourneyOutcomesPredictor) | Delete an outcome predictor. |
 | [**deleteJourneySegment**](JourneyApi.html#deleteJourneySegment) | Delete a segment. |
+| [**deleteJourneyView**](JourneyApi.html#deleteJourneyView) | Delete a Journey View by ID |
 | [**getAnalyticsJourneysAggregatesJob**](JourneyApi.html#getAnalyticsJourneysAggregatesJob) | Get status for async query for journey aggregates |
 | [**getAnalyticsJourneysAggregatesJobResults**](JourneyApi.html#getAnalyticsJourneysAggregatesJobResults) | Fetch a page of results for an async aggregates query |
 | [**getExternalcontactsContactJourneySessions**](JourneyApi.html#getExternalcontactsContactJourneySessions) | Retrieve all sessions for a given external contact. |
@@ -35,6 +36,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getJourneySession**](JourneyApi.html#getJourneySession) | Retrieve a single session. |
 | [**getJourneySessionEvents**](JourneyApi.html#getJourneySessionEvents) | Retrieve all events for a given session. |
 | [**getJourneySessionOutcomescores**](JourneyApi.html#getJourneySessionOutcomescores) | Retrieve latest outcome score associated with a session for all outcomes. |
+| [**getJourneyView**](JourneyApi.html#getJourneyView) | Get a Journey View by ID |
+| [**getJourneyViewVersion**](JourneyApi.html#getJourneyViewVersion) | Get a Journey View by ID and version |
+| [**getJourneyViews**](JourneyApi.html#getJourneyViews) | Get a list of Journey Views |
 | [**patchJourneyActionmap**](JourneyApi.html#patchJourneyActionmap) | Update single action map. |
 | [**patchJourneyActiontarget**](JourneyApi.html#patchJourneyActiontarget) | Update a single action target. |
 | [**patchJourneyActiontemplate**](JourneyApi.html#patchJourneyActiontemplate) | Update a single action template. |
@@ -47,10 +51,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postJourneyActiontemplates**](JourneyApi.html#postJourneyActiontemplates) | Create a single action template. |
 | [**postJourneyDeploymentActionevent**](JourneyApi.html#postJourneyDeploymentActionevent) | Sends an action event, which is used for changing the state of actions that have been offered to the user. |
 | [**postJourneyDeploymentAppevents**](JourneyApi.html#postJourneyDeploymentAppevents) | Send a journey app event, used for tracking customer activity on an application. |
+| [**postJourneyFlowsPathsQuery**](JourneyApi.html#postJourneyFlowsPathsQuery) | Query for flow paths. |
 | [**postJourneyOutcomes**](JourneyApi.html#postJourneyOutcomes) | Create an outcome. |
 | [**postJourneyOutcomesAttributionsJobs**](JourneyApi.html#postJourneyOutcomesAttributionsJobs) | Create Outcome Attributions |
 | [**postJourneyOutcomesPredictors**](JourneyApi.html#postJourneyOutcomesPredictors) | Create an outcome predictor. |
 | [**postJourneySegments**](JourneyApi.html#postJourneySegments) | Create a segment. |
+| [**postJourneyViewVersions**](JourneyApi.html#postJourneyViewVersions) | Update a Journey View by ID |
+| [**postJourneyViews**](JourneyApi.html#postJourneyViews) | Create a new Journey View |
 {: class="table-striped"}
 
 <a name="deleteJourneyActionmap"></a>
@@ -348,6 +355,70 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **segmentId** | **String**| ID of the segment. | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteJourneyView"></a>
+
+# **deleteJourneyView**
+
+
+
+> Void deleteJourneyView(viewId)
+
+Delete a Journey View by ID
+
+deletes all versions
+
+deleteJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/journey/views/{viewId}  
+
+Requires ALL permissions: 
+
+* journey:views:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String viewId = "viewId_example"; // String | viewId
+try {
+    apiInstance.deleteJourneyView(viewId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#deleteJourneyView");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **viewId** | **String**| viewId | 
 {: class="table-striped"}
 
 
@@ -1825,6 +1896,195 @@ try {
 
 [**OutcomeScoresResult**](OutcomeScoresResult.html)
 
+<a name="getJourneyView"></a>
+
+# **getJourneyView**
+
+
+
+> [JourneyView](JourneyView.html) getJourneyView(viewId)
+
+Get a Journey View by ID
+
+returns the latest version
+
+getJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/journey/views/{viewId}  
+
+Requires ALL permissions: 
+
+* journey:views:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String viewId = "viewId_example"; // String | viewId
+try {
+    JourneyView result = apiInstance.getJourneyView(viewId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyView");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **viewId** | **String**| viewId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**JourneyView**](JourneyView.html)
+
+<a name="getJourneyViewVersion"></a>
+
+# **getJourneyViewVersion**
+
+
+
+> [JourneyView](JourneyView.html) getJourneyViewVersion(viewId, versionId)
+
+Get a Journey View by ID and version
+
+getJourneyViewVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/journey/views/{viewId}/versions/{versionId}  
+
+Requires ALL permissions: 
+
+* journey:views:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String viewId = "viewId_example"; // String | viewId
+String versionId = "versionId_example"; // String | versionId
+try {
+    JourneyView result = apiInstance.getJourneyViewVersion(viewId, versionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyViewVersion");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **viewId** | **String**| viewId | 
+| **versionId** | **String**| versionId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**JourneyView**](JourneyView.html)
+
+<a name="getJourneyViews"></a>
+
+# **getJourneyViews**
+
+
+
+> [AddressableEntityListing](AddressableEntityListing.html) getJourneyViews()
+
+Get a list of Journey Views
+
+getJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/journey/views  
+
+Requires ALL permissions: 
+
+* journey:views:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+try {
+    AddressableEntityListing result = apiInstance.getJourneyViews();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyViews");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**AddressableEntityListing**](AddressableEntityListing.html)
+
 <a name="patchJourneyActionmap"></a>
 
 # **patchJourneyActionmap**
@@ -2544,6 +2804,69 @@ try {
 
 [**AppEventResponse**](AppEventResponse.html)
 
+<a name="postJourneyFlowsPathsQuery"></a>
+
+# **postJourneyFlowsPathsQuery**
+
+
+
+> [FlowPaths](FlowPaths.html) postJourneyFlowsPathsQuery(body)
+
+Query for flow paths.
+
+postJourneyFlowsPathsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/journey/flows/paths/query  
+
+Requires ALL permissions: 
+
+* journey:flowpaths:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+FlowPathsQuery body = new FlowPathsQuery(); // FlowPathsQuery | 
+try {
+    FlowPaths result = apiInstance.postJourneyFlowsPathsQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#postJourneyFlowsPathsQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**FlowPathsQuery**](FlowPathsQuery.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**FlowPaths**](FlowPaths.html)
+
 <a name="postJourneyOutcomes"></a>
 
 # **postJourneyOutcomes**
@@ -2789,4 +3112,134 @@ try {
 ### Return type
 
 [**JourneySegment**](JourneySegment.html)
+
+<a name="postJourneyViewVersions"></a>
+
+# **postJourneyViewVersions**
+
+
+
+> [JourneyView](JourneyView.html) postJourneyViewVersions(viewId, body)
+
+Update a Journey View by ID
+
+creates a new version
+
+postJourneyViewVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/journey/views/{viewId}/versions  
+
+Requires ALL permissions: 
+
+* journey:views:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String viewId = "viewId_example"; // String | viewId
+JourneyView body = new JourneyView(); // JourneyView | JourneyView
+try {
+    JourneyView result = apiInstance.postJourneyViewVersions(viewId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#postJourneyViewVersions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **viewId** | **String**| viewId | 
+| **body** | [**JourneyView**](JourneyView.html)| JourneyView | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**JourneyView**](JourneyView.html)
+
+<a name="postJourneyViews"></a>
+
+# **postJourneyViews**
+
+
+
+> [JourneyView](JourneyView.html) postJourneyViews(body)
+
+Create a new Journey View
+
+postJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/journey/views  
+
+Requires ALL permissions: 
+
+* journey:views:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+JourneyView body = new JourneyView(); // JourneyView | JourneyView
+try {
+    JourneyView result = apiInstance.postJourneyViews(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#postJourneyViews");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**JourneyView**](JourneyView.html)| JourneyView | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**JourneyView**](JourneyView.html)
 

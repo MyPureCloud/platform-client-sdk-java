@@ -29,6 +29,7 @@ public class BuSchedulingSettingsRequest  implements Serializable {
   private List<SchedulerMessageTypeSeverity> messageSeverities = new ArrayList<SchedulerMessageTypeSeverity>();
   private SetWrapperSyncTimeOffProperty syncTimeOffProperties = null;
   private WfmServiceGoalImpactSettings serviceGoalImpact = null;
+  private Boolean allowWorkPlanPerMinuteGranularity = null;
 
   
   /**
@@ -85,6 +86,24 @@ public class BuSchedulingSettingsRequest  implements Serializable {
   }
 
 
+  /**
+   * Indicates whether or not per minute granularity for scheduling will be enabled for this business unit
+   **/
+  public BuSchedulingSettingsRequest allowWorkPlanPerMinuteGranularity(Boolean allowWorkPlanPerMinuteGranularity) {
+    this.allowWorkPlanPerMinuteGranularity = allowWorkPlanPerMinuteGranularity;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates whether or not per minute granularity for scheduling will be enabled for this business unit")
+  @JsonProperty("allowWorkPlanPerMinuteGranularity")
+  public Boolean getAllowWorkPlanPerMinuteGranularity() {
+    return allowWorkPlanPerMinuteGranularity;
+  }
+  public void setAllowWorkPlanPerMinuteGranularity(Boolean allowWorkPlanPerMinuteGranularity) {
+    this.allowWorkPlanPerMinuteGranularity = allowWorkPlanPerMinuteGranularity;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -97,12 +116,13 @@ public class BuSchedulingSettingsRequest  implements Serializable {
 
     return Objects.equals(this.messageSeverities, buSchedulingSettingsRequest.messageSeverities) &&
             Objects.equals(this.syncTimeOffProperties, buSchedulingSettingsRequest.syncTimeOffProperties) &&
-            Objects.equals(this.serviceGoalImpact, buSchedulingSettingsRequest.serviceGoalImpact);
+            Objects.equals(this.serviceGoalImpact, buSchedulingSettingsRequest.serviceGoalImpact) &&
+            Objects.equals(this.allowWorkPlanPerMinuteGranularity, buSchedulingSettingsRequest.allowWorkPlanPerMinuteGranularity);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(messageSeverities, syncTimeOffProperties, serviceGoalImpact);
+    return Objects.hash(messageSeverities, syncTimeOffProperties, serviceGoalImpact, allowWorkPlanPerMinuteGranularity);
   }
 
   @Override
@@ -113,6 +133,7 @@ public class BuSchedulingSettingsRequest  implements Serializable {
     sb.append("    messageSeverities: ").append(toIndentedString(messageSeverities)).append("\n");
     sb.append("    syncTimeOffProperties: ").append(toIndentedString(syncTimeOffProperties)).append("\n");
     sb.append("    serviceGoalImpact: ").append(toIndentedString(serviceGoalImpact)).append("\n");
+    sb.append("    allowWorkPlanPerMinuteGranularity: ").append(toIndentedString(allowWorkPlanPerMinuteGranularity)).append("\n");
     sb.append("}");
     return sb.toString();
   }

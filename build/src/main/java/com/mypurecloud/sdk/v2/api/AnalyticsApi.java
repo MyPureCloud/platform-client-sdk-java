@@ -6356,7 +6356,6 @@ public class AnalyticsApi {
   /**
    * Query for knowledge aggregates
    * 
-   * postAnalyticsKnowledgeAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return KnowledgeAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -6369,7 +6368,6 @@ public class AnalyticsApi {
   /**
    * Query for knowledge aggregates
    * 
-   * postAnalyticsKnowledgeAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return KnowledgeAggregateQueryResponse
    * @throws IOException if the request fails to be processed
@@ -6388,7 +6386,6 @@ public class AnalyticsApi {
   /**
    * Query for knowledge aggregates
    * 
-   * postAnalyticsKnowledgeAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return KnowledgeAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -6408,7 +6405,6 @@ public class AnalyticsApi {
   /**
    * Query for knowledge aggregates
    * 
-   * postAnalyticsKnowledgeAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

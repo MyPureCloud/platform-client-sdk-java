@@ -271,7 +271,6 @@ public class TokensApiAsync {
   /**
    * Get the current Idle Token Timeout Value
    * 
-   * getTokensTimeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -306,7 +305,6 @@ public class TokensApiAsync {
   /**
    * Get the current Idle Token Timeout Value
    * 
-   * getTokensTimeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -423,7 +421,6 @@ public class TokensApiAsync {
   /**
    * Update or Enable/Disable the Idle Token Timeout
    * 
-   * putTokensTimeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -458,7 +455,6 @@ public class TokensApiAsync {
   /**
    * Update or Enable/Disable the Idle Token Timeout
    * 
-   * putTokensTimeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

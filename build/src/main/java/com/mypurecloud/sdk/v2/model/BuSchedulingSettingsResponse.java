@@ -73,6 +73,7 @@ public class BuSchedulingSettingsResponse  implements Serializable {
   }
   private List<SyncTimeOffPropertiesEnum> syncTimeOffProperties = new ArrayList<SyncTimeOffPropertiesEnum>();
   private WfmServiceGoalImpactSettings serviceGoalImpact = null;
+  private Boolean allowWorkPlanPerMinuteGranularity = null;
 
   
   /**
@@ -129,6 +130,24 @@ public class BuSchedulingSettingsResponse  implements Serializable {
   }
 
 
+  /**
+   * Indicates whether or not per minute granularity for scheduling will be enabled for this business unit
+   **/
+  public BuSchedulingSettingsResponse allowWorkPlanPerMinuteGranularity(Boolean allowWorkPlanPerMinuteGranularity) {
+    this.allowWorkPlanPerMinuteGranularity = allowWorkPlanPerMinuteGranularity;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates whether or not per minute granularity for scheduling will be enabled for this business unit")
+  @JsonProperty("allowWorkPlanPerMinuteGranularity")
+  public Boolean getAllowWorkPlanPerMinuteGranularity() {
+    return allowWorkPlanPerMinuteGranularity;
+  }
+  public void setAllowWorkPlanPerMinuteGranularity(Boolean allowWorkPlanPerMinuteGranularity) {
+    this.allowWorkPlanPerMinuteGranularity = allowWorkPlanPerMinuteGranularity;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -141,12 +160,13 @@ public class BuSchedulingSettingsResponse  implements Serializable {
 
     return Objects.equals(this.messageSeverities, buSchedulingSettingsResponse.messageSeverities) &&
             Objects.equals(this.syncTimeOffProperties, buSchedulingSettingsResponse.syncTimeOffProperties) &&
-            Objects.equals(this.serviceGoalImpact, buSchedulingSettingsResponse.serviceGoalImpact);
+            Objects.equals(this.serviceGoalImpact, buSchedulingSettingsResponse.serviceGoalImpact) &&
+            Objects.equals(this.allowWorkPlanPerMinuteGranularity, buSchedulingSettingsResponse.allowWorkPlanPerMinuteGranularity);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(messageSeverities, syncTimeOffProperties, serviceGoalImpact);
+    return Objects.hash(messageSeverities, syncTimeOffProperties, serviceGoalImpact, allowWorkPlanPerMinuteGranularity);
   }
 
   @Override
@@ -157,6 +177,7 @@ public class BuSchedulingSettingsResponse  implements Serializable {
     sb.append("    messageSeverities: ").append(toIndentedString(messageSeverities)).append("\n");
     sb.append("    syncTimeOffProperties: ").append(toIndentedString(syncTimeOffProperties)).append("\n");
     sb.append("    serviceGoalImpact: ").append(toIndentedString(serviceGoalImpact)).append("\n");
+    sb.append("    allowWorkPlanPerMinuteGranularity: ").append(toIndentedString(allowWorkPlanPerMinuteGranularity)).append("\n");
     sb.append("}");
     return sb.toString();
   }

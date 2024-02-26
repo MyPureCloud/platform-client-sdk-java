@@ -68,11 +68,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchKnowledgeKnowledgebaseParseJob**](KnowledgeApi.html#patchKnowledgeKnowledgebaseParseJob) | Send update to the parse operation |
 | [**patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup**](KnowledgeApi.html#patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup) | Update a Knowledge base unanswered phrase group |
 | [**postKnowledgeDocumentuploads**](KnowledgeApi.html#postKnowledgeDocumentuploads) | Creates a presigned URL for uploading a knowledge import file with a set of documents |
+| [**postKnowledgeGuestSessionDocumentCopies**](KnowledgeApi.html#postKnowledgeGuestSessionDocumentCopies) | Indicate that the document was copied by the user. |
 | [**postKnowledgeGuestSessionDocumentFeedback**](KnowledgeApi.html#postKnowledgeGuestSessionDocumentFeedback) | Give feedback on a document |
+| [**postKnowledgeGuestSessionDocumentViews**](KnowledgeApi.html#postKnowledgeGuestSessionDocumentViews) | Create view event for a document. |
+| [**postKnowledgeGuestSessionDocumentsPresentations**](KnowledgeApi.html#postKnowledgeGuestSessionDocumentsPresentations) | Indicate that documents were presented to the user. |
 | [**postKnowledgeGuestSessionDocumentsSearch**](KnowledgeApi.html#postKnowledgeGuestSessionDocumentsSearch) | Search the documents in a guest session. |
 | [**postKnowledgeGuestSessionDocumentsSearchSuggestions**](KnowledgeApi.html#postKnowledgeGuestSessionDocumentsSearchSuggestions) | Query the knowledge documents to provide suggestions for auto completion. |
 | [**postKnowledgeGuestSessions**](KnowledgeApi.html#postKnowledgeGuestSessions) | Create guest session |
 | [**postKnowledgeKnowledgebaseCategories**](KnowledgeApi.html#postKnowledgeKnowledgebaseCategories) | Create new category |
+| [**postKnowledgeKnowledgebaseDocumentCopies**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentCopies) | Indicate that the document was copied by the user. |
 | [**postKnowledgeKnowledgebaseDocumentFeedback**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentFeedback) | Give feedback on a document |
 | [**postKnowledgeKnowledgebaseDocumentVariations**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentVariations) | Create a variation for a document. |
 | [**postKnowledgeKnowledgebaseDocumentVersions**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentVersions) | Creates or restores a document version. |
@@ -80,6 +84,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postKnowledgeKnowledgebaseDocuments**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocuments) | Create document. |
 | [**postKnowledgeKnowledgebaseDocumentsBulkRemove**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsBulkRemove) | Bulk remove documents. |
 | [**postKnowledgeKnowledgebaseDocumentsBulkUpdate**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsBulkUpdate) | Bulk update documents. |
+| [**postKnowledgeKnowledgebaseDocumentsPresentations**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsPresentations) | Indicate that documents were presented to the user. |
 | [**postKnowledgeKnowledgebaseDocumentsSearch**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsSearch) | Search the documents in a knowledge base. |
 | [**postKnowledgeKnowledgebaseDocumentsSearchSuggestions**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsSearchSuggestions) | Query the knowledge documents to provide suggestions for auto completion. |
 | [**postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd) | Bulk add document versions. |
@@ -4153,6 +4158,56 @@ try {
 
 [**UploadUrlResponse**](UploadUrlResponse.html)
 
+<a name="postKnowledgeGuestSessionDocumentCopies"></a>
+
+# **postKnowledgeGuestSessionDocumentCopies**
+
+
+
+> Void postKnowledgeGuestSessionDocumentCopies(sessionId, documentId, body)
+
+Indicate that the document was copied by the user.
+
+Wraps POST /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/copies  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String sessionId = "sessionId_example"; // String | Knowledge guest session ID.
+String documentId = "documentId_example"; // String | Document ID
+KnowledgeGuestDocumentCopy body = new KnowledgeGuestDocumentCopy(); // KnowledgeGuestDocumentCopy | 
+try {
+    apiInstance.postKnowledgeGuestSessionDocumentCopies(sessionId, documentId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeGuestSessionDocumentCopies");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sessionId** | **String**| Knowledge guest session ID. | 
+| **documentId** | **String**| Document ID | 
+| **body** | [**KnowledgeGuestDocumentCopy**](KnowledgeGuestDocumentCopy.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
 <a name="postKnowledgeGuestSessionDocumentFeedback"></a>
 
 # **postKnowledgeGuestSessionDocumentFeedback**
@@ -4203,6 +4258,104 @@ try {
 ### Return type
 
 [**KnowledgeGuestDocumentFeedback**](KnowledgeGuestDocumentFeedback.html)
+
+<a name="postKnowledgeGuestSessionDocumentViews"></a>
+
+# **postKnowledgeGuestSessionDocumentViews**
+
+
+
+> Void postKnowledgeGuestSessionDocumentViews(sessionId, documentId, body)
+
+Create view event for a document.
+
+Wraps POST /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/views  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String sessionId = "sessionId_example"; // String | Knowledge guest session ID.
+String documentId = "documentId_example"; // String | Document ID
+KnowledgeGuestDocumentView body = new KnowledgeGuestDocumentView(); // KnowledgeGuestDocumentView | 
+try {
+    apiInstance.postKnowledgeGuestSessionDocumentViews(sessionId, documentId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeGuestSessionDocumentViews");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sessionId** | **String**| Knowledge guest session ID. | 
+| **documentId** | **String**| Document ID | 
+| **body** | [**KnowledgeGuestDocumentView**](KnowledgeGuestDocumentView.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="postKnowledgeGuestSessionDocumentsPresentations"></a>
+
+# **postKnowledgeGuestSessionDocumentsPresentations**
+
+
+
+> Void postKnowledgeGuestSessionDocumentsPresentations(sessionId, body)
+
+Indicate that documents were presented to the user.
+
+Wraps POST /api/v2/knowledge/guest/sessions/{sessionId}/documents/presentations  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String sessionId = "sessionId_example"; // String | Knowledge guest session ID.
+KnowledgeGuestDocumentPresentation body = new KnowledgeGuestDocumentPresentation(); // KnowledgeGuestDocumentPresentation | 
+try {
+    apiInstance.postKnowledgeGuestSessionDocumentsPresentations(sessionId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeGuestSessionDocumentsPresentations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sessionId** | **String**| Knowledge guest session ID. | 
+| **body** | [**KnowledgeGuestDocumentPresentation**](KnowledgeGuestDocumentPresentation.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="postKnowledgeGuestSessionDocumentsSearch"></a>
 
@@ -4413,6 +4566,70 @@ try {
 ### Return type
 
 [**CategoryResponse**](CategoryResponse.html)
+
+<a name="postKnowledgeKnowledgebaseDocumentCopies"></a>
+
+# **postKnowledgeKnowledgebaseDocumentCopies**
+
+
+
+> Void postKnowledgeKnowledgebaseDocumentCopies(knowledgeBaseId, documentId, body)
+
+Indicate that the document was copied by the user.
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/copies  
+
+Requires ALL permissions: 
+
+* knowledge:documentCopy:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
+String documentId = "documentId_example"; // String | Document ID.
+KnowledgeDocumentCopy body = new KnowledgeDocumentCopy(); // KnowledgeDocumentCopy | 
+try {
+    apiInstance.postKnowledgeKnowledgebaseDocumentCopies(knowledgeBaseId, documentId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeKnowledgebaseDocumentCopies");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID. | 
+| **documentId** | **String**| Document ID. | 
+| **body** | [**KnowledgeDocumentCopy**](KnowledgeDocumentCopy.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="postKnowledgeKnowledgebaseDocumentFeedback"></a>
 
@@ -4866,6 +5083,68 @@ try {
 ### Return type
 
 [**BulkResponse**](BulkResponse.html)
+
+<a name="postKnowledgeKnowledgebaseDocumentsPresentations"></a>
+
+# **postKnowledgeKnowledgebaseDocumentsPresentations**
+
+
+
+> Void postKnowledgeKnowledgebaseDocumentsPresentations(knowledgeBaseId, body)
+
+Indicate that documents were presented to the user.
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/presentations  
+
+Requires ALL permissions: 
+
+* knowledge:documentPresentation:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
+KnowledgeDocumentPresentation body = new KnowledgeDocumentPresentation(); // KnowledgeDocumentPresentation | 
+try {
+    apiInstance.postKnowledgeKnowledgebaseDocumentsPresentations(knowledgeBaseId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeKnowledgebaseDocumentsPresentations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID. | 
+| **body** | [**KnowledgeDocumentPresentation**](KnowledgeDocumentPresentation.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="postKnowledgeKnowledgebaseDocumentsSearch"></a>
 

@@ -72,6 +72,7 @@ public class MessageMediaParticipant  implements Serializable {
     CONVERTING("converting"),
     UPLOADING("uploading"),
     TRANSMITTING("transmitting"),
+    PARKED("parked"),
     NONE("none");
 
     private String value;

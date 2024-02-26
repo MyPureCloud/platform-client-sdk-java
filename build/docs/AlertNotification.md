@@ -23,6 +23,7 @@ title: AlertNotification
 | SMS | &quot;Sms&quot; |
 | DEVICE | &quot;Device&quot; |
 | EMAIL | &quot;Email&quot; |
+| PUSH | &quot;Push&quot; |
 {: class="table table-striped"}
 
 

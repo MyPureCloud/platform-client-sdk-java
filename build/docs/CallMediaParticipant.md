@@ -79,6 +79,7 @@ title: CallMediaParticipant
 | CONVERTING | &quot;converting&quot; | 
 | UPLOADING | &quot;uploading&quot; | 
 | TRANSMITTING | &quot;transmitting&quot; | 
+| PARKED | &quot;parked&quot; | 
 | NONE | &quot;none&quot; | 
 {: class="table table-striped"}
 

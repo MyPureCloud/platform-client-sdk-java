@@ -40,6 +40,7 @@ public class ChatMessageResponse  implements Serializable {
   private Boolean attachmentDeleted = null;
   private String fileUri = null;
   private Entity thread = null;
+  private Entity parentThread = null;
   private AddressableEntityRef user = null;
   private AddressableEntityRef toUser = null;
   private List<ChatReaction> reactions = new ArrayList<ChatReaction>();
@@ -244,6 +245,24 @@ public class ChatMessageResponse  implements Serializable {
 
 
   /**
+   * Parent thread id for thread replies
+   **/
+  public ChatMessageResponse parentThread(Entity parentThread) {
+    this.parentThread = parentThread;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Parent thread id for thread replies")
+  @JsonProperty("parentThread")
+  public Entity getParentThread() {
+    return parentThread;
+  }
+  public void setParentThread(Entity parentThread) {
+    this.parentThread = parentThread;
+  }
+
+
+  /**
    * The user who sent the message
    **/
   public ChatMessageResponse user(AddressableEntityRef user) {
@@ -318,6 +337,7 @@ public class ChatMessageResponse  implements Serializable {
             Objects.equals(this.attachmentDeleted, chatMessageResponse.attachmentDeleted) &&
             Objects.equals(this.fileUri, chatMessageResponse.fileUri) &&
             Objects.equals(this.thread, chatMessageResponse.thread) &&
+            Objects.equals(this.parentThread, chatMessageResponse.parentThread) &&
             Objects.equals(this.user, chatMessageResponse.user) &&
             Objects.equals(this.toUser, chatMessageResponse.toUser) &&
             Objects.equals(this.reactions, chatMessageResponse.reactions);
@@ -325,7 +345,7 @@ public class ChatMessageResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, dateCreated, dateModified, toJid, jid, body, mentions, edited, attachmentDeleted, fileUri, thread, user, toUser, reactions);
+    return Objects.hash(id, dateCreated, dateModified, toJid, jid, body, mentions, edited, attachmentDeleted, fileUri, thread, parentThread, user, toUser, reactions);
   }
 
   @Override
@@ -344,6 +364,7 @@ public class ChatMessageResponse  implements Serializable {
     sb.append("    attachmentDeleted: ").append(toIndentedString(attachmentDeleted)).append("\n");
     sb.append("    fileUri: ").append(toIndentedString(fileUri)).append("\n");
     sb.append("    thread: ").append(toIndentedString(thread)).append("\n");
+    sb.append("    parentThread: ").append(toIndentedString(parentThread)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    toUser: ").append(toIndentedString(toUser)).append("\n");
     sb.append("    reactions: ").append(toIndentedString(reactions)).append("\n");

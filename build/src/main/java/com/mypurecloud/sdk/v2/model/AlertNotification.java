@@ -43,7 +43,8 @@ public class AlertNotification  implements Serializable {
   public enum NotificationTypesEnum {
     SMS("Sms"),
     DEVICE("Device"),
-    EMAIL("Email");
+    EMAIL("Email"),
+    PUSH("Push");
 
     private String value;
 

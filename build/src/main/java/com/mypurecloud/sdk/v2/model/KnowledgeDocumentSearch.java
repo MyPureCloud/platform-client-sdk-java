@@ -85,6 +85,7 @@ public class KnowledgeDocumentSearch  implements Serializable {
   private List<KnowledgeDocumentSearchResult> results = new ArrayList<KnowledgeDocumentSearchResult>();
   private KnowledgeSearchClientApplication application = null;
   private KnowledgeConversationContextResponse conversationContext = null;
+  private Float confidenceThreshold = null;
 
   
   /**
@@ -223,6 +224,24 @@ public class KnowledgeDocumentSearch  implements Serializable {
   }
 
 
+  /**
+   * The confidence threshold for the search results. If applied, the returned results will have an equal or higher confidence than the threshold.
+   **/
+  public KnowledgeDocumentSearch confidenceThreshold(Float confidenceThreshold) {
+    this.confidenceThreshold = confidenceThreshold;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The confidence threshold for the search results. If applied, the returned results will have an equal or higher confidence than the threshold.")
+  @JsonProperty("confidenceThreshold")
+  public Float getConfidenceThreshold() {
+    return confidenceThreshold;
+  }
+  public void setConfidenceThreshold(Float confidenceThreshold) {
+    this.confidenceThreshold = confidenceThreshold;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -242,12 +261,13 @@ public class KnowledgeDocumentSearch  implements Serializable {
             Objects.equals(this.queryType, knowledgeDocumentSearch.queryType) &&
             Objects.equals(this.results, knowledgeDocumentSearch.results) &&
             Objects.equals(this.application, knowledgeDocumentSearch.application) &&
-            Objects.equals(this.conversationContext, knowledgeDocumentSearch.conversationContext);
+            Objects.equals(this.conversationContext, knowledgeDocumentSearch.conversationContext) &&
+            Objects.equals(this.confidenceThreshold, knowledgeDocumentSearch.confidenceThreshold);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(query, pageSize, pageNumber, searchId, total, pageCount, queryType, results, application, conversationContext);
+    return Objects.hash(query, pageSize, pageNumber, searchId, total, pageCount, queryType, results, application, conversationContext, confidenceThreshold);
   }
 
   @Override
@@ -265,6 +285,7 @@ public class KnowledgeDocumentSearch  implements Serializable {
     sb.append("    results: ").append(toIndentedString(results)).append("\n");
     sb.append("    application: ").append(toIndentedString(application)).append("\n");
     sb.append("    conversationContext: ").append(toIndentedString(conversationContext)).append("\n");
+    sb.append("    confidenceThreshold: ").append(toIndentedString(confidenceThreshold)).append("\n");
     sb.append("}");
     return sb.toString();
   }

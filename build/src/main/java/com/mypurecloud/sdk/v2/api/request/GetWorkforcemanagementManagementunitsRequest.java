@@ -316,6 +316,7 @@ public class GetWorkforcemanagementManagementunitsRequest {
 		TIMEOFFREQUESTS("TimeOffRequests"),
 		TIMEOFFLIMITS("TimeOffLimits"),
 		WORKPLANBIDS("WorkPlanBids"),
+		WORKPLANBIDGROUPS("WorkPlanBidGroups"),
 		WORKPLANROTATIONS("WorkPlanRotations"),
 		WORKPLANS("WorkPlans");
 

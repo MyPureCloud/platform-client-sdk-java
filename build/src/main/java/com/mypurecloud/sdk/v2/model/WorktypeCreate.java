@@ -32,6 +32,7 @@ public class WorktypeCreate  implements Serializable {
   private Integer defaultTtlSeconds = null;
   private Boolean assignmentEnabled = null;
   private String schemaId = null;
+  private Integer serviceLevelTarget = null;
   private String description = null;
   private String divisionId = null;
   private Boolean disableDefaultStatusCreation = null;
@@ -204,6 +205,26 @@ public class WorktypeCreate  implements Serializable {
 
 
   /**
+   * The target service level for Workitems created from the Worktype. The default value is 100.
+   * minimum: 1
+   * maximum: 100
+   **/
+  public WorktypeCreate serviceLevelTarget(Integer serviceLevelTarget) {
+    this.serviceLevelTarget = serviceLevelTarget;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The target service level for Workitems created from the Worktype. The default value is 100.")
+  @JsonProperty("serviceLevelTarget")
+  public Integer getServiceLevelTarget() {
+    return serviceLevelTarget;
+  }
+  public void setServiceLevelTarget(Integer serviceLevelTarget) {
+    this.serviceLevelTarget = serviceLevelTarget;
+  }
+
+
+  /**
    * The description of the Worktype. Maximum length of 4096 characters.
    **/
   public WorktypeCreate description(String description) {
@@ -348,6 +369,7 @@ public class WorktypeCreate  implements Serializable {
             Objects.equals(this.defaultTtlSeconds, worktypeCreate.defaultTtlSeconds) &&
             Objects.equals(this.assignmentEnabled, worktypeCreate.assignmentEnabled) &&
             Objects.equals(this.schemaId, worktypeCreate.schemaId) &&
+            Objects.equals(this.serviceLevelTarget, worktypeCreate.serviceLevelTarget) &&
             Objects.equals(this.description, worktypeCreate.description) &&
             Objects.equals(this.divisionId, worktypeCreate.divisionId) &&
             Objects.equals(this.disableDefaultStatusCreation, worktypeCreate.disableDefaultStatusCreation) &&
@@ -359,7 +381,7 @@ public class WorktypeCreate  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, defaultWorkbinId, defaultDurationSeconds, defaultExpirationSeconds, defaultDueDurationSeconds, defaultPriority, defaultTtlSeconds, assignmentEnabled, schemaId, description, divisionId, disableDefaultStatusCreation, schemaVersion, defaultQueueId, defaultLanguageId, defaultSkillIds);
+    return Objects.hash(name, defaultWorkbinId, defaultDurationSeconds, defaultExpirationSeconds, defaultDueDurationSeconds, defaultPriority, defaultTtlSeconds, assignmentEnabled, schemaId, serviceLevelTarget, description, divisionId, disableDefaultStatusCreation, schemaVersion, defaultQueueId, defaultLanguageId, defaultSkillIds);
   }
 
   @Override
@@ -376,6 +398,7 @@ public class WorktypeCreate  implements Serializable {
     sb.append("    defaultTtlSeconds: ").append(toIndentedString(defaultTtlSeconds)).append("\n");
     sb.append("    assignmentEnabled: ").append(toIndentedString(assignmentEnabled)).append("\n");
     sb.append("    schemaId: ").append(toIndentedString(schemaId)).append("\n");
+    sb.append("    serviceLevelTarget: ").append(toIndentedString(serviceLevelTarget)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    divisionId: ").append(toIndentedString(divisionId)).append("\n");
     sb.append("    disableDefaultStatusCreation: ").append(toIndentedString(disableDefaultStatusCreation)).append("\n");

@@ -27,6 +27,7 @@ title: CobrowseWebMessagingSession
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | CALL | &quot;Call&quot; | 
 | MESSAGE | &quot;Message&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}
 
 
