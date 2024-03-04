@@ -32,6 +32,7 @@ import com.mypurecloud.sdk.v2.model.WorkitemPostQueryEntityListing;
 import com.mypurecloud.sdk.v2.model.WorkitemQueryPostRequest;
 import com.mypurecloud.sdk.v2.model.WorkitemStatus;
 import com.mypurecloud.sdk.v2.model.WorkitemStatusCreate;
+import com.mypurecloud.sdk.v2.model.WorkitemStatusListing;
 import com.mypurecloud.sdk.v2.model.WorkitemStatusUpdate;
 import com.mypurecloud.sdk.v2.model.WorkitemTerminate;
 import com.mypurecloud.sdk.v2.model.WorkitemUpdate;
@@ -72,6 +73,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemasReque
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeHistoryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeStatusRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeStatusesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorkbinRequest;
@@ -1795,6 +1797,83 @@ public class TaskManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<WorkitemStatus> response = (ApiResponse<WorkitemStatus>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get list of statuses for this worktype.
+   * 
+   * getTaskmanagementWorktypeStatuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WorkitemStatusListing> getTaskmanagementWorktypeStatusesAsync(GetTaskmanagementWorktypeStatusesRequest request, final AsyncApiCallback<WorkitemStatusListing> callback) {
+    try {
+      final SettableFuture<WorkitemStatusListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WorkitemStatusListing>() {}, new AsyncApiCallback<ApiResponse<WorkitemStatusListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemStatusListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get list of statuses for this worktype.
+   * 
+   * getTaskmanagementWorktypeStatuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WorkitemStatusListing>> getTaskmanagementWorktypeStatusesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WorkitemStatusListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WorkitemStatusListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WorkitemStatusListing>() {}, new AsyncApiCallback<ApiResponse<WorkitemStatusListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemStatusListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemStatusListing> response = (ApiResponse<WorkitemStatusListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemStatusListing> response = (ApiResponse<WorkitemStatusListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

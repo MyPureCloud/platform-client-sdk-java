@@ -39,7 +39,9 @@ import com.mypurecloud.sdk.v2.model.EmergencyGroup;
 import com.mypurecloud.sdk.v2.model.EmergencyGroupDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.EmergencyGroupListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ExecutionDataFlowSettingsResponse;
 import com.mypurecloud.sdk.v2.model.ExecutionDataRequest;
+import com.mypurecloud.sdk.v2.model.ExecutionDataSettingsRequest;
 import com.mypurecloud.sdk.v2.model.Flow;
 import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowEntityListing;
@@ -48,6 +50,8 @@ import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchResponse;
 import com.mypurecloud.sdk.v2.model.FlowHealth;
 import com.mypurecloud.sdk.v2.model.FlowHealthIntent;
 import com.mypurecloud.sdk.v2.model.FlowHealthUtterance;
+import com.mypurecloud.sdk.v2.model.FlowLogLevelCharacteristicsDefinitions;
+import com.mypurecloud.sdk.v2.model.FlowLogLevelRequest;
 import com.mypurecloud.sdk.v2.model.FlowMilestone;
 import com.mypurecloud.sdk.v2.model.FlowMilestoneDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowMilestoneListing;
@@ -56,6 +60,8 @@ import com.mypurecloud.sdk.v2.model.FlowOutcomeDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowOutcomeListing;
 import com.mypurecloud.sdk.v2.model.FlowResultEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowRuntimeExecution;
+import com.mypurecloud.sdk.v2.model.FlowSettingsResponse;
+import com.mypurecloud.sdk.v2.model.FlowSettingsResponseEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowVersion;
 import com.mypurecloud.sdk.v2.model.FlowVersionEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowsQueryCriteriaResponse;
@@ -188,6 +194,7 @@ public class GetArchitectDependencytrackingConsumedresourcesRequest {
 		SECUREACTION("SECUREACTION"),
 		SECURECALLFLOW("SECURECALLFLOW"),
 		STTENGINE("STTENGINE"),
+		SURVEYFORM("SURVEYFORM"),
 		SURVEYINVITEFLOW("SURVEYINVITEFLOW"),
 		SYSTEMPROMPT("SYSTEMPROMPT"),
 		TTSENGINE("TTSENGINE"),
@@ -298,6 +305,7 @@ public class GetArchitectDependencytrackingConsumedresourcesRequest {
 		SECUREACTION("SECUREACTION"),
 		SECURECALLFLOW("SECURECALLFLOW"),
 		STTENGINE("STTENGINE"),
+		SURVEYFORM("SURVEYFORM"),
 		SURVEYINVITEFLOW("SURVEYINVITEFLOW"),
 		SYSTEMPROMPT("SYSTEMPROMPT"),
 		TTSENGINE("TTSENGINE"),

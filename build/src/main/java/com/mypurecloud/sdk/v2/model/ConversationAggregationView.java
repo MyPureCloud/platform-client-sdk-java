@@ -43,6 +43,7 @@ public class ConversationAggregationView  implements Serializable {
   public enum TargetEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NBLINDTRANSFERRED("nBlindTransferred"),
+    NBOTINTERACTIONS("nBotInteractions"),
     NCOBROWSESESSIONS("nCobrowseSessions"),
     NCONNECTED("nConnected"),
     NCONSULT("nConsult"),

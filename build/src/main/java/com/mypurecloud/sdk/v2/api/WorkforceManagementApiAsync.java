@@ -1739,11 +1739,12 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Get status of the modeling job
-   * 
+   * To get status of the modeling job.
+   * This Endpoint is Deprecated, and not recommended to be used.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ModelingStatusResponse> getWorkforcemanagementAdhocmodelingjobAsync(GetWorkforcemanagementAdhocmodelingjobRequest request, final AsyncApiCallback<ModelingStatusResponse> callback) {
     try {
@@ -1773,11 +1774,12 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Get status of the modeling job
-   * 
+   * To get status of the modeling job.
+   * This Endpoint is Deprecated, and not recommended to be used.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<ModelingStatusResponse>> getWorkforcemanagementAdhocmodelingjobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ModelingStatusResponse>> callback) {
     try {

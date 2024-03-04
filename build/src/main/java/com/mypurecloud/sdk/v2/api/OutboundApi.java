@@ -43,6 +43,7 @@ import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListTemplate;
 import com.mypurecloud.sdk.v2.model.ContactListTemplateBulkRetrieveBody;
 import com.mypurecloud.sdk.v2.model.ContactListTemplateEntityListing;
+import com.mypurecloud.sdk.v2.model.ContactsExportRequest;
 import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
 import com.mypurecloud.sdk.v2.model.DialerContact;
 import com.mypurecloud.sdk.v2.model.DialerEventEntityListing;
@@ -9632,28 +9633,32 @@ public class OutboundApi {
    * Initiate the export of a contact list.
    * Returns 200 if received OK.
    * @param contactListId ContactList ID (required)
+   * @param body Export information to get (optional)
    * @return DomainEntityRef
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DomainEntityRef postOutboundContactlistExport(String contactListId) throws IOException, ApiException {
-    return  postOutboundContactlistExport(createPostOutboundContactlistExportRequest(contactListId));
+  public DomainEntityRef postOutboundContactlistExport(String contactListId, ContactsExportRequest body) throws IOException, ApiException {
+    return  postOutboundContactlistExport(createPostOutboundContactlistExportRequest(contactListId, body));
   }
 
   /**
    * Initiate the export of a contact list.
    * Returns 200 if received OK.
    * @param contactListId ContactList ID (required)
+   * @param body Export information to get (optional)
    * @return DomainEntityRef
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainEntityRef> postOutboundContactlistExportWithHttpInfo(String contactListId) throws IOException {
-    return postOutboundContactlistExport(createPostOutboundContactlistExportRequest(contactListId).withHttpInfo());
+  public ApiResponse<DomainEntityRef> postOutboundContactlistExportWithHttpInfo(String contactListId, ContactsExportRequest body) throws IOException {
+    return postOutboundContactlistExport(createPostOutboundContactlistExportRequest(contactListId, body).withHttpInfo());
   }
 
-  private PostOutboundContactlistExportRequest createPostOutboundContactlistExportRequest(String contactListId) {
+  private PostOutboundContactlistExportRequest createPostOutboundContactlistExportRequest(String contactListId, ContactsExportRequest body) {
     return PostOutboundContactlistExportRequest.builder()
             .withContactListId(contactListId)
+
+            .withBody(body)
 
             .build();
   }
@@ -9684,7 +9689,7 @@ public class OutboundApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainEntityRef> postOutboundContactlistExport(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<DomainEntityRef> postOutboundContactlistExport(ApiRequest<ContactsExportRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<DomainEntityRef>() {});
     }

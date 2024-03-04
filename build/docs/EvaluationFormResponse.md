@@ -15,6 +15,7 @@ title: EvaluationFormResponse
 | **contextId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **questionGroups** | <!----><!---->[**List&lt;EvaluationQuestionGroup&gt;**](EvaluationQuestionGroup.html)<!----> | A list of question groups |  [optional] |
 | **weightMode** | [**WeightModeEnum**](#WeightModeEnum)<!----> | Mode for evaluation form weight |  [optional] |
+| **publishedVersions** | <!----><!---->[**DomainEntityListingEvaluationForm**](DomainEntityListingEvaluationForm.html)<!----> | A list of the published versions of this form. Not populated by default, its availability depends on the endpoint. Use the 'expand=publishHistory' query parameter to retrieve this data where applicable (refer to the endpoint description to see if it is applicable). |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

@@ -13,7 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Draft;
-import com.mypurecloud.sdk.v2.model.ErrorInfo;
+import com.mypurecloud.sdk.v2.model.MinerErrorInfo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.LocalDate;
@@ -205,8 +205,8 @@ public class Miner  implements Serializable {
   private LocalDate conversationsDateRangeEnd = null;
   private Date dateCompleted = null;
   private String message = null;
-  private ErrorInfo errorInfo = null;
-  private ErrorInfo warningInfo = null;
+  private MinerErrorInfo errorInfo = null;
+  private MinerErrorInfo warningInfo = null;
   private Boolean conversationDataUploaded = null;
 
   private static class MediaTypeEnumDeserializer extends StdDeserializer<MediaTypeEnum> {
@@ -422,14 +422,14 @@ public class Miner  implements Serializable {
 
   @ApiModelProperty(example = "null", value = "Error Information")
   @JsonProperty("errorInfo")
-  public ErrorInfo getErrorInfo() {
+  public MinerErrorInfo getErrorInfo() {
     return errorInfo;
   }
 
 
   @ApiModelProperty(example = "null", value = "Warning Information")
   @JsonProperty("warningInfo")
-  public ErrorInfo getWarningInfo() {
+  public MinerErrorInfo getWarningInfo() {
     return warningInfo;
   }
 

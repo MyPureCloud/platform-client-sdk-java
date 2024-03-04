@@ -28,6 +28,8 @@ import com.mypurecloud.sdk.v2.model.CredentialInfoListing;
 import com.mypurecloud.sdk.v2.model.CredentialTypeListing;
 import com.mypurecloud.sdk.v2.model.DialogflowAgent;
 import com.mypurecloud.sdk.v2.model.DialogflowAgentSummaryEntityListing;
+import com.mypurecloud.sdk.v2.model.DialogflowCXAgent;
+import com.mypurecloud.sdk.v2.model.DialogflowCXAgentSummaryEntityListing;
 import com.mypurecloud.sdk.v2.model.DraftValidationResult;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Function;
@@ -44,11 +46,16 @@ import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
 import com.mypurecloud.sdk.v2.model.LexBotAlias;
 import com.mypurecloud.sdk.v2.model.LexBotAliasEntityListing;
 import com.mypurecloud.sdk.v2.model.LexBotEntityListing;
+import com.mypurecloud.sdk.v2.model.LexV2BotAlias;
+import com.mypurecloud.sdk.v2.model.LexV2BotAliasEntityListing;
+import com.mypurecloud.sdk.v2.model.LexV2BotEntityListing;
 import com.mypurecloud.sdk.v2.model.NuanceBot;
 import com.mypurecloud.sdk.v2.model.NuanceBotEntityListing;
 import com.mypurecloud.sdk.v2.model.NuanceBotLaunchSettings;
 import com.mypurecloud.sdk.v2.model.PostActionInput;
 import com.mypurecloud.sdk.v2.model.PublishDraftInput;
+import com.mypurecloud.sdk.v2.model.SttEngineEntity;
+import com.mypurecloud.sdk.v2.model.SttEngineEntityListing;
 import com.mypurecloud.sdk.v2.model.TestExecutionResult;
 import com.mypurecloud.sdk.v2.model.TtsEngineEntity;
 import com.mypurecloud.sdk.v2.model.TtsEngineEntityListing;
@@ -57,6 +64,8 @@ import com.mypurecloud.sdk.v2.model.TtsVoiceEntity;
 import com.mypurecloud.sdk.v2.model.TtsVoiceEntityListing;
 import com.mypurecloud.sdk.v2.model.UCIntegrationListing;
 import com.mypurecloud.sdk.v2.model.UCThirdPartyPresence;
+import com.mypurecloud.sdk.v2.model.UnifiedCommunicationsIntegration;
+import com.mypurecloud.sdk.v2.model.UnifiedCommunicationsIntegrationListing;
 import com.mypurecloud.sdk.v2.model.UpdateActionInput;
 import com.mypurecloud.sdk.v2.model.UpdateDraftInput;
 import com.mypurecloud.sdk.v2.model.UserAppEntityListing;
@@ -94,15 +103,22 @@ import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialsTypesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechDialogflowAgentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechDialogflowAgentsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechDialogflowcxAgentRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechDialogflowcxAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechLexBotAliasRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechLexBotBotIdAliasesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechLexBotsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechLexv2BotAliasRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechLexv2BotBotIdAliasesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechLexv2BotsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechNuanceNuanceIntegrationIdBotRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechSttEngineRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechSttEnginesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechTtsEngineRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechTtsEngineVoiceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechTtsEngineVoicesRequest;
@@ -111,6 +127,8 @@ import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechTtsSettingsReques
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsTypeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsTypeConfigschemaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsTypesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsUnifiedcommunicationsClientappRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsUnifiedcommunicationsClientappsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsUserappsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchIntegrationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchIntegrationsActionRequest;
@@ -2909,6 +2927,170 @@ public class IntegrationsApi {
   }
 
   /**
+   * Get details about a Dialogflow CX agent
+   * 
+   * @param agentId The agent ID (required)
+   * @return DialogflowCXAgent
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DialogflowCXAgent getIntegrationsSpeechDialogflowcxAgent(String agentId) throws IOException, ApiException {
+    return  getIntegrationsSpeechDialogflowcxAgent(createGetIntegrationsSpeechDialogflowcxAgentRequest(agentId));
+  }
+
+  /**
+   * Get details about a Dialogflow CX agent
+   * 
+   * @param agentId The agent ID (required)
+   * @return DialogflowCXAgent
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DialogflowCXAgent> getIntegrationsSpeechDialogflowcxAgentWithHttpInfo(String agentId) throws IOException {
+    return getIntegrationsSpeechDialogflowcxAgent(createGetIntegrationsSpeechDialogflowcxAgentRequest(agentId).withHttpInfo());
+  }
+
+  private GetIntegrationsSpeechDialogflowcxAgentRequest createGetIntegrationsSpeechDialogflowcxAgentRequest(String agentId) {
+    return GetIntegrationsSpeechDialogflowcxAgentRequest.builder()
+            .withAgentId(agentId)
+
+            .build();
+  }
+
+  /**
+   * Get details about a Dialogflow CX agent
+   * 
+   * @param request The request object
+   * @return DialogflowCXAgent
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DialogflowCXAgent getIntegrationsSpeechDialogflowcxAgent(GetIntegrationsSpeechDialogflowcxAgentRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DialogflowCXAgent> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DialogflowCXAgent>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get details about a Dialogflow CX agent
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DialogflowCXAgent> getIntegrationsSpeechDialogflowcxAgent(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DialogflowCXAgent>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DialogflowCXAgent> response = (ApiResponse<DialogflowCXAgent>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DialogflowCXAgent> response = (ApiResponse<DialogflowCXAgent>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a list of Dialogflow CX agents in the customers' Google accounts
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param name Filter on agent name (optional)
+   * @return DialogflowCXAgentSummaryEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DialogflowCXAgentSummaryEntityListing getIntegrationsSpeechDialogflowcxAgents(Integer pageNumber, Integer pageSize, String name) throws IOException, ApiException {
+    return  getIntegrationsSpeechDialogflowcxAgents(createGetIntegrationsSpeechDialogflowcxAgentsRequest(pageNumber, pageSize, name));
+  }
+
+  /**
+   * Get a list of Dialogflow CX agents in the customers' Google accounts
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param name Filter on agent name (optional)
+   * @return DialogflowCXAgentSummaryEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DialogflowCXAgentSummaryEntityListing> getIntegrationsSpeechDialogflowcxAgentsWithHttpInfo(Integer pageNumber, Integer pageSize, String name) throws IOException {
+    return getIntegrationsSpeechDialogflowcxAgents(createGetIntegrationsSpeechDialogflowcxAgentsRequest(pageNumber, pageSize, name).withHttpInfo());
+  }
+
+  private GetIntegrationsSpeechDialogflowcxAgentsRequest createGetIntegrationsSpeechDialogflowcxAgentsRequest(Integer pageNumber, Integer pageSize, String name) {
+    return GetIntegrationsSpeechDialogflowcxAgentsRequest.builder()
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withName(name)
+
+            .build();
+  }
+
+  /**
+   * Get a list of Dialogflow CX agents in the customers' Google accounts
+   * 
+   * @param request The request object
+   * @return DialogflowCXAgentSummaryEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DialogflowCXAgentSummaryEntityListing getIntegrationsSpeechDialogflowcxAgents(GetIntegrationsSpeechDialogflowcxAgentsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DialogflowCXAgentSummaryEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DialogflowCXAgentSummaryEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of Dialogflow CX agents in the customers' Google accounts
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DialogflowCXAgentSummaryEntityListing> getIntegrationsSpeechDialogflowcxAgents(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DialogflowCXAgentSummaryEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DialogflowCXAgentSummaryEntityListing> response = (ApiResponse<DialogflowCXAgentSummaryEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DialogflowCXAgentSummaryEntityListing> response = (ApiResponse<DialogflowCXAgentSummaryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get details about a Lex bot alias
    * 
    * @param aliasId The alias ID (required)
@@ -3167,9 +3349,266 @@ public class IntegrationsApi {
   }
 
   /**
+   * Get details about a Lex V2 bot alias
+   * 
+   * @param aliasId The Alias ID (required)
+   * @return LexV2BotAlias
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LexV2BotAlias getIntegrationsSpeechLexv2BotAlias(String aliasId) throws IOException, ApiException {
+    return  getIntegrationsSpeechLexv2BotAlias(createGetIntegrationsSpeechLexv2BotAliasRequest(aliasId));
+  }
+
+  /**
+   * Get details about a Lex V2 bot alias
+   * 
+   * @param aliasId The Alias ID (required)
+   * @return LexV2BotAlias
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LexV2BotAlias> getIntegrationsSpeechLexv2BotAliasWithHttpInfo(String aliasId) throws IOException {
+    return getIntegrationsSpeechLexv2BotAlias(createGetIntegrationsSpeechLexv2BotAliasRequest(aliasId).withHttpInfo());
+  }
+
+  private GetIntegrationsSpeechLexv2BotAliasRequest createGetIntegrationsSpeechLexv2BotAliasRequest(String aliasId) {
+    return GetIntegrationsSpeechLexv2BotAliasRequest.builder()
+            .withAliasId(aliasId)
+
+            .build();
+  }
+
+  /**
+   * Get details about a Lex V2 bot alias
+   * 
+   * @param request The request object
+   * @return LexV2BotAlias
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LexV2BotAlias getIntegrationsSpeechLexv2BotAlias(GetIntegrationsSpeechLexv2BotAliasRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LexV2BotAlias> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LexV2BotAlias>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get details about a Lex V2 bot alias
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LexV2BotAlias> getIntegrationsSpeechLexv2BotAlias(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LexV2BotAlias>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LexV2BotAlias> response = (ApiResponse<LexV2BotAlias>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LexV2BotAlias> response = (ApiResponse<LexV2BotAlias>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a list of aliases for a Lex V2 bot
+   * 
+   * @param botId The Bot ID (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param status Filter on alias status (optional)
+   * @param name Filter on alias name (optional)
+   * @return LexV2BotAliasEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LexV2BotAliasEntityListing getIntegrationsSpeechLexv2BotBotIdAliases(String botId, Integer pageNumber, Integer pageSize, String status, String name) throws IOException, ApiException {
+    return  getIntegrationsSpeechLexv2BotBotIdAliases(createGetIntegrationsSpeechLexv2BotBotIdAliasesRequest(botId, pageNumber, pageSize, status, name));
+  }
+
+  /**
+   * Get a list of aliases for a Lex V2 bot
+   * 
+   * @param botId The Bot ID (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param status Filter on alias status (optional)
+   * @param name Filter on alias name (optional)
+   * @return LexV2BotAliasEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LexV2BotAliasEntityListing> getIntegrationsSpeechLexv2BotBotIdAliasesWithHttpInfo(String botId, Integer pageNumber, Integer pageSize, String status, String name) throws IOException {
+    return getIntegrationsSpeechLexv2BotBotIdAliases(createGetIntegrationsSpeechLexv2BotBotIdAliasesRequest(botId, pageNumber, pageSize, status, name).withHttpInfo());
+  }
+
+  private GetIntegrationsSpeechLexv2BotBotIdAliasesRequest createGetIntegrationsSpeechLexv2BotBotIdAliasesRequest(String botId, Integer pageNumber, Integer pageSize, String status, String name) {
+    return GetIntegrationsSpeechLexv2BotBotIdAliasesRequest.builder()
+            .withBotId(botId)
+
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withStatus(status)
+
+            .withName(name)
+
+            .build();
+  }
+
+  /**
+   * Get a list of aliases for a Lex V2 bot
+   * 
+   * @param request The request object
+   * @return LexV2BotAliasEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LexV2BotAliasEntityListing getIntegrationsSpeechLexv2BotBotIdAliases(GetIntegrationsSpeechLexv2BotBotIdAliasesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LexV2BotAliasEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LexV2BotAliasEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of aliases for a Lex V2 bot
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LexV2BotAliasEntityListing> getIntegrationsSpeechLexv2BotBotIdAliases(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LexV2BotAliasEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LexV2BotAliasEntityListing> response = (ApiResponse<LexV2BotAliasEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LexV2BotAliasEntityListing> response = (ApiResponse<LexV2BotAliasEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a list of Lex V2 bots
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param name Filter on bot name (optional)
+   * @return LexV2BotEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LexV2BotEntityListing getIntegrationsSpeechLexv2Bots(Integer pageNumber, Integer pageSize, String name) throws IOException, ApiException {
+    return  getIntegrationsSpeechLexv2Bots(createGetIntegrationsSpeechLexv2BotsRequest(pageNumber, pageSize, name));
+  }
+
+  /**
+   * Get a list of Lex V2 bots
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param name Filter on bot name (optional)
+   * @return LexV2BotEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LexV2BotEntityListing> getIntegrationsSpeechLexv2BotsWithHttpInfo(Integer pageNumber, Integer pageSize, String name) throws IOException {
+    return getIntegrationsSpeechLexv2Bots(createGetIntegrationsSpeechLexv2BotsRequest(pageNumber, pageSize, name).withHttpInfo());
+  }
+
+  private GetIntegrationsSpeechLexv2BotsRequest createGetIntegrationsSpeechLexv2BotsRequest(Integer pageNumber, Integer pageSize, String name) {
+    return GetIntegrationsSpeechLexv2BotsRequest.builder()
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withName(name)
+
+            .build();
+  }
+
+  /**
+   * Get a list of Lex V2 bots
+   * 
+   * @param request The request object
+   * @return LexV2BotEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LexV2BotEntityListing getIntegrationsSpeechLexv2Bots(GetIntegrationsSpeechLexv2BotsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LexV2BotEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LexV2BotEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of Lex V2 bots
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LexV2BotEntityListing> getIntegrationsSpeechLexv2Bots(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LexV2BotEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LexV2BotEntityListing> response = (ApiResponse<LexV2BotEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LexV2BotEntityListing> response = (ApiResponse<LexV2BotEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a Nuance bot in the specified Integration
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param botId The Nuance bot ID to get (required)
    * @param expand expand (optional)
@@ -3185,7 +3624,6 @@ public class IntegrationsApi {
   /**
    * Get a Nuance bot in the specified Integration
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param botId The Nuance bot ID to get (required)
    * @param expand expand (optional)
@@ -3213,7 +3651,6 @@ public class IntegrationsApi {
   /**
    * Get a Nuance bot in the specified Integration
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return NuanceBot
    * @throws ApiException if the request fails on the server
@@ -3233,7 +3670,6 @@ public class IntegrationsApi {
   /**
    * Get a Nuance bot in the specified Integration
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3263,7 +3699,6 @@ public class IntegrationsApi {
   /**
    * Get the status of an asynchronous Nuance bot GET job
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param botId The Nuance bot ID (required)
    * @param jobId The asynchronous job ID (required)
@@ -3278,7 +3713,6 @@ public class IntegrationsApi {
   /**
    * Get the status of an asynchronous Nuance bot GET job
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param botId The Nuance bot ID (required)
    * @param jobId The asynchronous job ID (required)
@@ -3303,7 +3737,6 @@ public class IntegrationsApi {
   /**
    * Get the status of an asynchronous Nuance bot GET job
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncJob
    * @throws ApiException if the request fails on the server
@@ -3323,7 +3756,6 @@ public class IntegrationsApi {
   /**
    * Get the status of an asynchronous Nuance bot GET job
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3353,7 +3785,6 @@ public class IntegrationsApi {
   /**
    * Get the result of an asynchronous Nuance bot GET job
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param botId The Nuance bot ID (required)
    * @param jobId The asynchronous job ID (required)
@@ -3368,7 +3799,6 @@ public class IntegrationsApi {
   /**
    * Get the result of an asynchronous Nuance bot GET job
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param botId The Nuance bot ID (required)
    * @param jobId The asynchronous job ID (required)
@@ -3393,7 +3823,6 @@ public class IntegrationsApi {
   /**
    * Get the result of an asynchronous Nuance bot GET job
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return NuanceBot
    * @throws ApiException if the request fails on the server
@@ -3413,7 +3842,6 @@ public class IntegrationsApi {
   /**
    * Get the result of an asynchronous Nuance bot GET job
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3443,7 +3871,6 @@ public class IntegrationsApi {
   /**
    * Get a list of Nuance bots available in the specified Integration
    * If the 'onlyRegisteredBots' param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integration's configured discovery credentials are returned.
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
@@ -3459,7 +3886,6 @@ public class IntegrationsApi {
   /**
    * Get a list of Nuance bots available in the specified Integration
    * If the 'onlyRegisteredBots' param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integration's configured discovery credentials are returned.
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
@@ -3487,7 +3913,6 @@ public class IntegrationsApi {
   /**
    * Get a list of Nuance bots available in the specified Integration
    * If the 'onlyRegisteredBots' param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integration's configured discovery credentials are returned.
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return NuanceBotEntityListing
    * @throws ApiException if the request fails on the server
@@ -3507,7 +3932,6 @@ public class IntegrationsApi {
   /**
    * Get a list of Nuance bots available in the specified Integration
    * If the 'onlyRegisteredBots' param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integration's configured discovery credentials are returned.
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3537,7 +3961,6 @@ public class IntegrationsApi {
   /**
    * Get the status of an asynchronous Nuance bots GET job
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param jobId The asynchronous job ID (required)
    * @return AsyncJob
@@ -3551,7 +3974,6 @@ public class IntegrationsApi {
   /**
    * Get the status of an asynchronous Nuance bots GET job
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param jobId The asynchronous job ID (required)
    * @return AsyncJob
@@ -3573,7 +3995,6 @@ public class IntegrationsApi {
   /**
    * Get the status of an asynchronous Nuance bots GET job
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncJob
    * @throws ApiException if the request fails on the server
@@ -3593,7 +4014,6 @@ public class IntegrationsApi {
   /**
    * Get the status of an asynchronous Nuance bots GET job
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3623,7 +4043,6 @@ public class IntegrationsApi {
   /**
    * Get the result of an asynchronous Nuance bots GET job
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param jobId The asynchronous job ID (required)
    * @return NuanceBotEntityListing
@@ -3637,7 +4056,6 @@ public class IntegrationsApi {
   /**
    * Get the result of an asynchronous Nuance bots GET job
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param jobId The asynchronous job ID (required)
    * @return NuanceBotEntityListing
@@ -3659,7 +4077,6 @@ public class IntegrationsApi {
   /**
    * Get the result of an asynchronous Nuance bots GET job
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return NuanceBotEntityListing
    * @throws ApiException if the request fails on the server
@@ -3679,7 +4096,6 @@ public class IntegrationsApi {
   /**
    * Get the result of an asynchronous Nuance bots GET job
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3702,6 +4118,170 @@ public class IntegrationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<NuanceBotEntityListing> response = (ApiResponse<NuanceBotEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get details about a STT engine
+   * 
+   * @param engineId The engine ID (required)
+   * @return SttEngineEntity
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SttEngineEntity getIntegrationsSpeechSttEngine(String engineId) throws IOException, ApiException {
+    return  getIntegrationsSpeechSttEngine(createGetIntegrationsSpeechSttEngineRequest(engineId));
+  }
+
+  /**
+   * Get details about a STT engine
+   * 
+   * @param engineId The engine ID (required)
+   * @return SttEngineEntity
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SttEngineEntity> getIntegrationsSpeechSttEngineWithHttpInfo(String engineId) throws IOException {
+    return getIntegrationsSpeechSttEngine(createGetIntegrationsSpeechSttEngineRequest(engineId).withHttpInfo());
+  }
+
+  private GetIntegrationsSpeechSttEngineRequest createGetIntegrationsSpeechSttEngineRequest(String engineId) {
+    return GetIntegrationsSpeechSttEngineRequest.builder()
+            .withEngineId(engineId)
+
+            .build();
+  }
+
+  /**
+   * Get details about a STT engine
+   * 
+   * @param request The request object
+   * @return SttEngineEntity
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SttEngineEntity getIntegrationsSpeechSttEngine(GetIntegrationsSpeechSttEngineRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SttEngineEntity> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SttEngineEntity>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get details about a STT engine
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SttEngineEntity> getIntegrationsSpeechSttEngine(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SttEngineEntity>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SttEngineEntity> response = (ApiResponse<SttEngineEntity>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SttEngineEntity> response = (ApiResponse<SttEngineEntity>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a list of STT engines enabled for org
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param name Filter on engine name (optional)
+   * @return SttEngineEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SttEngineEntityListing getIntegrationsSpeechSttEngines(Integer pageNumber, Integer pageSize, String name) throws IOException, ApiException {
+    return  getIntegrationsSpeechSttEngines(createGetIntegrationsSpeechSttEnginesRequest(pageNumber, pageSize, name));
+  }
+
+  /**
+   * Get a list of STT engines enabled for org
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param name Filter on engine name (optional)
+   * @return SttEngineEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SttEngineEntityListing> getIntegrationsSpeechSttEnginesWithHttpInfo(Integer pageNumber, Integer pageSize, String name) throws IOException {
+    return getIntegrationsSpeechSttEngines(createGetIntegrationsSpeechSttEnginesRequest(pageNumber, pageSize, name).withHttpInfo());
+  }
+
+  private GetIntegrationsSpeechSttEnginesRequest createGetIntegrationsSpeechSttEnginesRequest(Integer pageNumber, Integer pageSize, String name) {
+    return GetIntegrationsSpeechSttEnginesRequest.builder()
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withName(name)
+
+            .build();
+  }
+
+  /**
+   * Get a list of STT engines enabled for org
+   * 
+   * @param request The request object
+   * @return SttEngineEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SttEngineEntityListing getIntegrationsSpeechSttEngines(GetIntegrationsSpeechSttEnginesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SttEngineEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SttEngineEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of STT engines enabled for org
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SttEngineEntityListing> getIntegrationsSpeechSttEngines(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SttEngineEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SttEngineEntityListing> response = (ApiResponse<SttEngineEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SttEngineEntityListing> response = (ApiResponse<SttEngineEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4378,6 +4958,182 @@ public class IntegrationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<IntegrationTypeEntityListing> response = (ApiResponse<IntegrationTypeEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * UC integration client application configuration.
+   * This endpoint returns basic UI configuration data for the specified Unified Communications integration client application.
+   * @param ucIntegrationId 3rd Party Service Type (required)
+   * @return UnifiedCommunicationsIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UnifiedCommunicationsIntegration getIntegrationsUnifiedcommunicationsClientapp(String ucIntegrationId) throws IOException, ApiException {
+    return  getIntegrationsUnifiedcommunicationsClientapp(createGetIntegrationsUnifiedcommunicationsClientappRequest(ucIntegrationId));
+  }
+
+  /**
+   * UC integration client application configuration.
+   * This endpoint returns basic UI configuration data for the specified Unified Communications integration client application.
+   * @param ucIntegrationId 3rd Party Service Type (required)
+   * @return UnifiedCommunicationsIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UnifiedCommunicationsIntegration> getIntegrationsUnifiedcommunicationsClientappWithHttpInfo(String ucIntegrationId) throws IOException {
+    return getIntegrationsUnifiedcommunicationsClientapp(createGetIntegrationsUnifiedcommunicationsClientappRequest(ucIntegrationId).withHttpInfo());
+  }
+
+  private GetIntegrationsUnifiedcommunicationsClientappRequest createGetIntegrationsUnifiedcommunicationsClientappRequest(String ucIntegrationId) {
+    return GetIntegrationsUnifiedcommunicationsClientappRequest.builder()
+            .withUcIntegrationId(ucIntegrationId)
+
+            .build();
+  }
+
+  /**
+   * UC integration client application configuration.
+   * This endpoint returns basic UI configuration data for the specified Unified Communications integration client application.
+   * @param request The request object
+   * @return UnifiedCommunicationsIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UnifiedCommunicationsIntegration getIntegrationsUnifiedcommunicationsClientapp(GetIntegrationsUnifiedcommunicationsClientappRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UnifiedCommunicationsIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UnifiedCommunicationsIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * UC integration client application configuration.
+   * This endpoint returns basic UI configuration data for the specified Unified Communications integration client application.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UnifiedCommunicationsIntegration> getIntegrationsUnifiedcommunicationsClientapp(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UnifiedCommunicationsIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UnifiedCommunicationsIntegration> response = (ApiResponse<UnifiedCommunicationsIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UnifiedCommunicationsIntegration> response = (ApiResponse<UnifiedCommunicationsIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * List UC integration client application configurations.
+   * This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled.
+   * @param pageSize The total page size requested (optional, default to 25)
+   * @param pageNumber The page number requested (optional, default to 1)
+   * @param sortBy variable name requested to sort by (optional)
+   * @param expand variable name requested by expand list (optional)
+   * @param nextPage next page token (optional)
+   * @param previousPage Previous page token (optional)
+   * @return UnifiedCommunicationsIntegrationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UnifiedCommunicationsIntegrationListing getIntegrationsUnifiedcommunicationsClientapps(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) throws IOException, ApiException {
+    return  getIntegrationsUnifiedcommunicationsClientapps(createGetIntegrationsUnifiedcommunicationsClientappsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage));
+  }
+
+  /**
+   * List UC integration client application configurations.
+   * This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled.
+   * @param pageSize The total page size requested (optional, default to 25)
+   * @param pageNumber The page number requested (optional, default to 1)
+   * @param sortBy variable name requested to sort by (optional)
+   * @param expand variable name requested by expand list (optional)
+   * @param nextPage next page token (optional)
+   * @param previousPage Previous page token (optional)
+   * @return UnifiedCommunicationsIntegrationListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UnifiedCommunicationsIntegrationListing> getIntegrationsUnifiedcommunicationsClientappsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) throws IOException {
+    return getIntegrationsUnifiedcommunicationsClientapps(createGetIntegrationsUnifiedcommunicationsClientappsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage).withHttpInfo());
+  }
+
+  private GetIntegrationsUnifiedcommunicationsClientappsRequest createGetIntegrationsUnifiedcommunicationsClientappsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) {
+    return GetIntegrationsUnifiedcommunicationsClientappsRequest.builder()
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .withSortBy(sortBy)
+
+            .withExpand(expand)
+
+            .withNextPage(nextPage)
+
+            .withPreviousPage(previousPage)
+
+            .build();
+  }
+
+  /**
+   * List UC integration client application configurations.
+   * This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled.
+   * @param request The request object
+   * @return UnifiedCommunicationsIntegrationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UnifiedCommunicationsIntegrationListing getIntegrationsUnifiedcommunicationsClientapps(GetIntegrationsUnifiedcommunicationsClientappsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UnifiedCommunicationsIntegrationListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UnifiedCommunicationsIntegrationListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * List UC integration client application configurations.
+   * This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UnifiedCommunicationsIntegrationListing> getIntegrationsUnifiedcommunicationsClientapps(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UnifiedCommunicationsIntegrationListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UnifiedCommunicationsIntegrationListing> response = (ApiResponse<UnifiedCommunicationsIntegrationListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UnifiedCommunicationsIntegrationListing> response = (ApiResponse<UnifiedCommunicationsIntegrationListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5561,7 +6317,6 @@ public class IntegrationsApi {
   /**
    * Get a Nuance bot in the specified Integration asynchronously
    * 
-   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param botId The Nuance bot ID (required)
    * @param expand expand (optional)
@@ -5577,7 +6332,6 @@ public class IntegrationsApi {
   /**
    * Get a Nuance bot in the specified Integration asynchronously
    * 
-   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param botId The Nuance bot ID (required)
    * @param expand expand (optional)
@@ -5605,7 +6359,6 @@ public class IntegrationsApi {
   /**
    * Get a Nuance bot in the specified Integration asynchronously
    * 
-   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncJob
    * @throws ApiException if the request fails on the server
@@ -5625,7 +6378,6 @@ public class IntegrationsApi {
   /**
    * Get a Nuance bot in the specified Integration asynchronously
    * 
-   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5655,7 +6407,6 @@ public class IntegrationsApi {
   /**
    * Get a list of Nuance bots in the specified Integration asynchronously
    * 
-   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
@@ -5671,7 +6422,6 @@ public class IntegrationsApi {
   /**
    * Get a list of Nuance bots in the specified Integration asynchronously
    * 
-   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
@@ -5699,7 +6449,6 @@ public class IntegrationsApi {
   /**
    * Get a list of Nuance bots in the specified Integration asynchronously
    * 
-   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AsyncJob
    * @throws ApiException if the request fails on the server
@@ -5719,7 +6468,6 @@ public class IntegrationsApi {
   /**
    * Get a list of Nuance bots in the specified Integration asynchronously
    * 
-   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5749,7 +6497,6 @@ public class IntegrationsApi {
   /**
    * Try out a single credential for a Nuance bot to know if the secret is correct
    * 
-   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param settings  (required)
    * @throws ApiException if the request fails on the server
@@ -5762,7 +6509,6 @@ public class IntegrationsApi {
   /**
    * Try out a single credential for a Nuance bot to know if the secret is correct
    * 
-   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param settings  (required)
    * @throws IOException if the request fails to be processed
@@ -5783,7 +6529,6 @@ public class IntegrationsApi {
   /**
    * Try out a single credential for a Nuance bot to know if the secret is correct
    * 
-   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -5802,7 +6547,6 @@ public class IntegrationsApi {
   /**
    * Try out a single credential for a Nuance bot to know if the secret is correct
    * 
-   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6161,7 +6905,6 @@ public class IntegrationsApi {
   /**
    * Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
    * 
-   * putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param settings  (required)
    * @throws ApiException if the request fails on the server
@@ -6174,7 +6917,6 @@ public class IntegrationsApi {
   /**
    * Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
    * 
-   * putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param nuanceIntegrationId The integration ID for this group of bots (required)
    * @param settings  (required)
    * @throws IOException if the request fails to be processed
@@ -6195,7 +6937,6 @@ public class IntegrationsApi {
   /**
    * Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
    * 
-   * putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -6214,7 +6955,6 @@ public class IntegrationsApi {
   /**
    * Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
    * 
-   * putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

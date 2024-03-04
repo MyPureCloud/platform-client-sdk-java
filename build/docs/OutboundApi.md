@@ -7368,7 +7368,7 @@ try {
 
 
 
-> [DomainEntityRef](DomainEntityRef.html) postOutboundContactlistExport(contactListId)
+> [DomainEntityRef](DomainEntityRef.html) postOutboundContactlistExport(contactListId, body)
 
 Initiate the export of a contact list.
 
@@ -7404,8 +7404,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String contactListId = "contactListId_example"; // String | ContactList ID
+ContactsExportRequest body = new ContactsExportRequest(); // ContactsExportRequest | Export information to get
 try {
-    DomainEntityRef result = apiInstance.postOutboundContactlistExport(contactListId);
+    DomainEntityRef result = apiInstance.postOutboundContactlistExport(contactListId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#postOutboundContactlistExport");
@@ -7419,6 +7420,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **contactListId** | **String**| ContactList ID | 
+| **body** | [**ContactsExportRequest**](ContactsExportRequest.html)| Export information to get | [optional] 
 {: class="table-striped"}
 
 

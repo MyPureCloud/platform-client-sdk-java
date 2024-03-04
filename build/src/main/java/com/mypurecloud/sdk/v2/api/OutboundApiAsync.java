@@ -46,6 +46,7 @@ import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListTemplate;
 import com.mypurecloud.sdk.v2.model.ContactListTemplateBulkRetrieveBody;
 import com.mypurecloud.sdk.v2.model.ContactListTemplateEntityListing;
+import com.mypurecloud.sdk.v2.model.ContactsExportRequest;
 import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
 import com.mypurecloud.sdk.v2.model.DialerContact;
 import com.mypurecloud.sdk.v2.model.DialerEventEntityListing;
@@ -8706,7 +8707,7 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DomainEntityRef>> postOutboundContactlistExportAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DomainEntityRef>> callback) {
+  public Future<ApiResponse<DomainEntityRef>> postOutboundContactlistExportAsync(ApiRequest<ContactsExportRequest> request, final AsyncApiCallback<ApiResponse<DomainEntityRef>> callback) {
     try {
       final SettableFuture<ApiResponse<DomainEntityRef>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

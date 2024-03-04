@@ -53,6 +53,7 @@ import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListTemplate;
 import com.mypurecloud.sdk.v2.model.ContactListTemplateBulkRetrieveBody;
 import com.mypurecloud.sdk.v2.model.ContactListTemplateEntityListing;
+import com.mypurecloud.sdk.v2.model.ContactsExportRequest;
 import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
 import com.mypurecloud.sdk.v2.model.DialerContact;
 import com.mypurecloud.sdk.v2.model.DialerEventEntityListing;

@@ -1024,11 +1024,12 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Delete a LINE messenger integration
-   * 
+   * Delete a LINE messenger integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> deleteConversationsMessagingIntegrationsLineIntegrationIdAsync(DeleteConversationsMessagingIntegrationsLineIntegrationIdRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -1058,11 +1059,12 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Delete a LINE messenger integration
-   * 
+   * Delete a LINE messenger integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> deleteConversationsMessagingIntegrationsLineIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -6428,11 +6430,12 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Get a list of LINE messenger Integrations
-   * 
+   * Get a list of LINE messenger Integrations (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<LineIntegrationEntityListing> getConversationsMessagingIntegrationsLineAsync(GetConversationsMessagingIntegrationsLineRequest request, final AsyncApiCallback<LineIntegrationEntityListing> callback) {
     try {
@@ -6462,11 +6465,12 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Get a list of LINE messenger Integrations
-   * 
+   * Get a list of LINE messenger Integrations (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<LineIntegrationEntityListing>> getConversationsMessagingIntegrationsLineAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LineIntegrationEntityListing>> callback) {
     try {
@@ -6503,11 +6507,12 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Get a LINE messenger integration
-   * 
+   * Get a LINE messenger integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<LineIntegration> getConversationsMessagingIntegrationsLineIntegrationIdAsync(GetConversationsMessagingIntegrationsLineIntegrationIdRequest request, final AsyncApiCallback<LineIntegration> callback) {
     try {
@@ -6537,11 +6542,12 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Get a LINE messenger integration
-   * 
+   * Get a LINE messenger integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<LineIntegration>> getConversationsMessagingIntegrationsLineIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LineIntegration>> callback) {
     try {
@@ -17921,11 +17927,12 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Update a LINE messenger integration
-   * 
+   * Update a LINE messenger integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<LineIntegration> putConversationsMessagingIntegrationsLineIntegrationIdAsync(PutConversationsMessagingIntegrationsLineIntegrationIdRequest request, final AsyncApiCallback<LineIntegration> callback) {
     try {
@@ -17955,11 +17962,12 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Update a LINE messenger integration
-   * 
+   * Update a LINE messenger integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<LineIntegration>> putConversationsMessagingIntegrationsLineIntegrationIdAsync(ApiRequest<LineIntegrationRequest> request, final AsyncApiCallback<ApiResponse<LineIntegration>> callback) {
     try {

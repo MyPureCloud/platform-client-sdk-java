@@ -29,6 +29,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTaskmanagementWorktype**](TaskManagementApi.html#getTaskmanagementWorktype) | Get a worktype |
 | [**getTaskmanagementWorktypeHistory**](TaskManagementApi.html#getTaskmanagementWorktypeHistory) | Get a listing of a worktype's attribute change history |
 | [**getTaskmanagementWorktypeStatus**](TaskManagementApi.html#getTaskmanagementWorktypeStatus) | Get a status |
+| [**getTaskmanagementWorktypeStatuses**](TaskManagementApi.html#getTaskmanagementWorktypeStatuses) | Get list of statuses for this worktype. |
 | [**getTaskmanagementWorktypeVersion**](TaskManagementApi.html#getTaskmanagementWorktypeVersion) | Get a version of a worktype |
 | [**getTaskmanagementWorktypeVersions**](TaskManagementApi.html#getTaskmanagementWorktypeVersions) | Get all versions of a worktype |
 | [**patchTaskmanagementWorkbin**](TaskManagementApi.html#patchTaskmanagementWorkbin) | Update the attributes of a workbin |
@@ -1490,6 +1491,69 @@ try {
 ### Return type
 
 [**WorkitemStatus**](WorkitemStatus.html)
+
+<a name="getTaskmanagementWorktypeStatuses"></a>
+
+# **getTaskmanagementWorktypeStatuses**
+
+
+
+> [WorkitemStatusListing](WorkitemStatusListing.html) getTaskmanagementWorktypeStatuses(worktypeId)
+
+Get list of statuses for this worktype.
+
+getTaskmanagementWorktypeStatuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/taskmanagement/worktypes/{worktypeId}/statuses  
+
+Requires ANY permissions: 
+
+* workitems:status:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+String worktypeId = "worktypeId_example"; // String | Worktype id
+try {
+    WorkitemStatusListing result = apiInstance.getTaskmanagementWorktypeStatuses(worktypeId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#getTaskmanagementWorktypeStatuses");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **worktypeId** | **String**| Worktype id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WorkitemStatusListing**](WorkitemStatusListing.html)
 
 <a name="getTaskmanagementWorktypeVersion"></a>
 

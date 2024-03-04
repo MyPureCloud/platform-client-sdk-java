@@ -27,6 +27,7 @@ import com.mypurecloud.sdk.v2.model.EvaluationAggregationQuery;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregationQueryMe;
 import com.mypurecloud.sdk.v2.model.EvaluationAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationAsyncAggregationQuery;
+import com.mypurecloud.sdk.v2.model.EvaluationCreateBody;
 import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;
 import com.mypurecloud.sdk.v2.model.EvaluationForm;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
@@ -1646,7 +1647,7 @@ public class QualityApiAsync {
   }
 
   /**
-   * Get the list of evaluation forms
+   * Get the list of evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1681,7 +1682,7 @@ public class QualityApiAsync {
   }
 
   /**
-   * Get the list of evaluation forms
+   * Get the list of evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1874,7 +1875,7 @@ public class QualityApiAsync {
 
   /**
    * Get the list of evaluation forms
-   * By default, \"published\" field is always returned as false for all evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form. In addition, \"questionGroups\", the detailed information about evaluation form, is not returned by default. We will enhance this field in the future release.
+   * By default, \"published\" field is always returned as false for all evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form. In addition, \"questionGroups\", the detailed information about evaluation form, is not returned. We will enhance this field in a future release.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1908,7 +1909,7 @@ public class QualityApiAsync {
 
   /**
    * Get the list of evaluation forms
-   * By default, \"published\" field is always returned as false for all evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form. In addition, \"questionGroups\", the detailed information about evaluation form, is not returned by default. We will enhance this field in the future release.
+   * By default, \"published\" field is always returned as false for all evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form. In addition, \"questionGroups\", the detailed information about evaluation form, is not returned. We will enhance this field in a future release.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2173,7 +2174,7 @@ public class QualityApiAsync {
   }
 
   /**
-   * Get the list of survey forms
+   * Get the list of survey forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding survey form.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2207,7 +2208,7 @@ public class QualityApiAsync {
   }
 
   /**
-   * Get the list of survey forms
+   * Get the list of survey forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding survey form.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -3496,7 +3497,7 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Evaluation>> postQualityConversationEvaluationsAsync(ApiRequest<Evaluation> request, final AsyncApiCallback<ApiResponse<Evaluation>> callback) {
+  public Future<ApiResponse<Evaluation>> postQualityConversationEvaluationsAsync(ApiRequest<EvaluationCreateBody> request, final AsyncApiCallback<ApiResponse<Evaluation>> callback) {
     try {
       final SettableFuture<ApiResponse<Evaluation>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

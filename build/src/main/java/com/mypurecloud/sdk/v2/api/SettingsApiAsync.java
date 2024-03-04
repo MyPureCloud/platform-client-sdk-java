@@ -15,10 +15,14 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.EmailSettings;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ExecutionDataGlobalSettingsResponse;
+import com.mypurecloud.sdk.v2.model.ExecutionDataSettingsRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetEmailsSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSettingsExecutiondataRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchEmailsSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchSettingsExecutiondataRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -114,6 +118,83 @@ public class SettingsApiAsync {
   }
 
   /**
+   * Get the execution history enabled setting.
+   * Get the execution history enabled setting.
+   * getSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ExecutionDataGlobalSettingsResponse> getSettingsExecutiondataAsync(GetSettingsExecutiondataRequest request, final AsyncApiCallback<ExecutionDataGlobalSettingsResponse> callback) {
+    try {
+      final SettableFuture<ExecutionDataGlobalSettingsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExecutionDataGlobalSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<ExecutionDataGlobalSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExecutionDataGlobalSettingsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the execution history enabled setting.
+   * Get the execution history enabled setting.
+   * getSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ExecutionDataGlobalSettingsResponse>> getSettingsExecutiondataAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ExecutionDataGlobalSettingsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ExecutionDataGlobalSettingsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExecutionDataGlobalSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<ExecutionDataGlobalSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExecutionDataGlobalSettingsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExecutionDataGlobalSettingsResponse> response = (ApiResponse<ExecutionDataGlobalSettingsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExecutionDataGlobalSettingsResponse> response = (ApiResponse<ExecutionDataGlobalSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Patch email Contact Center settings
    * 
    * @param request the request object
@@ -177,6 +258,83 @@ public class SettingsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<EmailSettings> response = (ApiResponse<EmailSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Edit the execution history on off setting.
+   * Edit the execution history on off setting.
+   * patchSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ExecutionDataGlobalSettingsResponse> patchSettingsExecutiondataAsync(PatchSettingsExecutiondataRequest request, final AsyncApiCallback<ExecutionDataGlobalSettingsResponse> callback) {
+    try {
+      final SettableFuture<ExecutionDataGlobalSettingsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExecutionDataGlobalSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<ExecutionDataGlobalSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExecutionDataGlobalSettingsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Edit the execution history on off setting.
+   * Edit the execution history on off setting.
+   * patchSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ExecutionDataGlobalSettingsResponse>> patchSettingsExecutiondataAsync(ApiRequest<ExecutionDataSettingsRequest> request, final AsyncApiCallback<ApiResponse<ExecutionDataGlobalSettingsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ExecutionDataGlobalSettingsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExecutionDataGlobalSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<ExecutionDataGlobalSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExecutionDataGlobalSettingsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExecutionDataGlobalSettingsResponse> response = (ApiResponse<ExecutionDataGlobalSettingsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExecutionDataGlobalSettingsResponse> response = (ApiResponse<ExecutionDataGlobalSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

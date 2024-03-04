@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.EvaluationAggregationQuery;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregationQueryMe;
 import com.mypurecloud.sdk.v2.model.EvaluationAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationAsyncAggregationQuery;
+import com.mypurecloud.sdk.v2.model.EvaluationCreateBody;
 import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;
 import com.mypurecloud.sdk.v2.model.EvaluationForm;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
@@ -1975,7 +1976,7 @@ public class QualityApi {
   }
 
   /**
-   * Get the list of evaluation forms
+   * Get the list of evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form.
    * 
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
@@ -1995,7 +1996,7 @@ public class QualityApi {
   }
 
   /**
-   * Get the list of evaluation forms
+   * Get the list of evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form.
    * 
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
@@ -2035,7 +2036,7 @@ public class QualityApi {
   }
 
   /**
-   * Get the list of evaluation forms
+   * Get the list of evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form.
    * 
    * @param request The request object
    * @return EvaluationFormResponseEntityListing
@@ -2055,7 +2056,7 @@ public class QualityApi {
   }
 
   /**
-   * Get the list of evaluation forms
+   * Get the list of evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form.
    * 
    * @param request The request object
    * @return the response
@@ -2254,7 +2255,7 @@ public class QualityApi {
 
   /**
    * Get the list of evaluation forms
-   * By default, \"published\" field is always returned as false for all evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form. In addition, \"questionGroups\", the detailed information about evaluation form, is not returned by default. We will enhance this field in the future release.
+   * By default, \"published\" field is always returned as false for all evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form. In addition, \"questionGroups\", the detailed information about evaluation form, is not returned. We will enhance this field in a future release.
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
    * @param sortBy variable name requested to sort by (optional)
@@ -2273,7 +2274,7 @@ public class QualityApi {
 
   /**
    * Get the list of evaluation forms
-   * By default, \"published\" field is always returned as false for all evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form. In addition, \"questionGroups\", the detailed information about evaluation form, is not returned by default. We will enhance this field in the future release.
+   * By default, \"published\" field is always returned as false for all evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form. In addition, \"questionGroups\", the detailed information about evaluation form, is not returned. We will enhance this field in a future release.
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
    * @param sortBy variable name requested to sort by (optional)
@@ -2312,7 +2313,7 @@ public class QualityApi {
 
   /**
    * Get the list of evaluation forms
-   * By default, \"published\" field is always returned as false for all evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form. In addition, \"questionGroups\", the detailed information about evaluation form, is not returned by default. We will enhance this field in the future release.
+   * By default, \"published\" field is always returned as false for all evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form. In addition, \"questionGroups\", the detailed information about evaluation form, is not returned. We will enhance this field in a future release.
    * @param request The request object
    * @return EvaluationFormResponseEntityListing
    * @throws ApiException if the request fails on the server
@@ -2331,7 +2332,7 @@ public class QualityApi {
 
   /**
    * Get the list of evaluation forms
-   * By default, \"published\" field is always returned as false for all evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form. In addition, \"questionGroups\", the detailed information about evaluation form, is not returned by default. We will enhance this field in the future release.
+   * By default, \"published\" field is always returned as false for all evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form. In addition, \"questionGroups\", the detailed information about evaluation form, is not returned. We will enhance this field in a future release.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2601,7 +2602,7 @@ public class QualityApi {
   }
 
   /**
-   * Get the list of survey forms
+   * Get the list of survey forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding survey form.
    * 
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
@@ -2620,7 +2621,7 @@ public class QualityApi {
   }
 
   /**
-   * Get the list of survey forms
+   * Get the list of survey forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding survey form.
    * 
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
@@ -2659,7 +2660,7 @@ public class QualityApi {
   }
 
   /**
-   * Get the list of survey forms
+   * Get the list of survey forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding survey form.
    * 
    * @param request The request object
    * @return SurveyFormEntityListing
@@ -2678,7 +2679,7 @@ public class QualityApi {
   }
 
   /**
-   * Get the list of survey forms
+   * Get the list of survey forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding survey form.
    * 
    * @param request The request object
    * @return the response
@@ -4028,7 +4029,7 @@ public class QualityApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Evaluation postQualityConversationEvaluations(String conversationId, Evaluation body, String expand) throws IOException, ApiException {
+  public Evaluation postQualityConversationEvaluations(String conversationId, EvaluationCreateBody body, String expand) throws IOException, ApiException {
     return  postQualityConversationEvaluations(createPostQualityConversationEvaluationsRequest(conversationId, body, expand));
   }
 
@@ -4041,11 +4042,11 @@ public class QualityApi {
    * @return Evaluation
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Evaluation> postQualityConversationEvaluationsWithHttpInfo(String conversationId, Evaluation body, String expand) throws IOException {
+  public ApiResponse<Evaluation> postQualityConversationEvaluationsWithHttpInfo(String conversationId, EvaluationCreateBody body, String expand) throws IOException {
     return postQualityConversationEvaluations(createPostQualityConversationEvaluationsRequest(conversationId, body, expand).withHttpInfo());
   }
 
-  private PostQualityConversationEvaluationsRequest createPostQualityConversationEvaluationsRequest(String conversationId, Evaluation body, String expand) {
+  private PostQualityConversationEvaluationsRequest createPostQualityConversationEvaluationsRequest(String conversationId, EvaluationCreateBody body, String expand) {
     return PostQualityConversationEvaluationsRequest.builder()
             .withConversationId(conversationId)
 
@@ -4082,7 +4083,7 @@ public class QualityApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Evaluation> postQualityConversationEvaluations(ApiRequest<Evaluation> request) throws IOException {
+  public ApiResponse<Evaluation> postQualityConversationEvaluations(ApiRequest<EvaluationCreateBody> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<Evaluation>() {});
     }

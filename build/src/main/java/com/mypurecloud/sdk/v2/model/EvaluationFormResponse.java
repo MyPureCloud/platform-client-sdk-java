@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DomainEntityListingEvaluationForm;
 import com.mypurecloud.sdk.v2.model.EvaluationQuestionGroup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -80,6 +81,7 @@ public class EvaluationFormResponse  implements Serializable {
     }
   }
   private WeightModeEnum weightMode = null;
+  private DomainEntityListingEvaluationForm publishedVersions = null;
   private String selfUri = null;
 
   
@@ -196,6 +198,24 @@ public class EvaluationFormResponse  implements Serializable {
   }
 
 
+  /**
+   * A list of the published versions of this form. Not populated by default, its availability depends on the endpoint. Use the 'expand=publishHistory' query parameter to retrieve this data where applicable (refer to the endpoint description to see if it is applicable).
+   **/
+  public EvaluationFormResponse publishedVersions(DomainEntityListingEvaluationForm publishedVersions) {
+    this.publishedVersions = publishedVersions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of the published versions of this form. Not populated by default, its availability depends on the endpoint. Use the 'expand=publishHistory' query parameter to retrieve this data where applicable (refer to the endpoint description to see if it is applicable).")
+  @JsonProperty("publishedVersions")
+  public DomainEntityListingEvaluationForm getPublishedVersions() {
+    return publishedVersions;
+  }
+  public void setPublishedVersions(DomainEntityListingEvaluationForm publishedVersions) {
+    this.publishedVersions = publishedVersions;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -220,12 +240,13 @@ public class EvaluationFormResponse  implements Serializable {
             Objects.equals(this.contextId, evaluationFormResponse.contextId) &&
             Objects.equals(this.questionGroups, evaluationFormResponse.questionGroups) &&
             Objects.equals(this.weightMode, evaluationFormResponse.weightMode) &&
+            Objects.equals(this.publishedVersions, evaluationFormResponse.publishedVersions) &&
             Objects.equals(this.selfUri, evaluationFormResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, modifiedDate, published, contextId, questionGroups, weightMode, selfUri);
+    return Objects.hash(id, name, modifiedDate, published, contextId, questionGroups, weightMode, publishedVersions, selfUri);
   }
 
   @Override
@@ -240,6 +261,7 @@ public class EvaluationFormResponse  implements Serializable {
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
     sb.append("    questionGroups: ").append(toIndentedString(questionGroups)).append("\n");
     sb.append("    weightMode: ").append(toIndentedString(weightMode)).append("\n");
+    sb.append("    publishedVersions: ").append(toIndentedString(publishedVersions)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

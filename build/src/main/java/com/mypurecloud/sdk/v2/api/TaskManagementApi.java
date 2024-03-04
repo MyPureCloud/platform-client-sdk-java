@@ -29,6 +29,7 @@ import com.mypurecloud.sdk.v2.model.WorkitemPostQueryEntityListing;
 import com.mypurecloud.sdk.v2.model.WorkitemQueryPostRequest;
 import com.mypurecloud.sdk.v2.model.WorkitemStatus;
 import com.mypurecloud.sdk.v2.model.WorkitemStatusCreate;
+import com.mypurecloud.sdk.v2.model.WorkitemStatusListing;
 import com.mypurecloud.sdk.v2.model.WorkitemStatusUpdate;
 import com.mypurecloud.sdk.v2.model.WorkitemTerminate;
 import com.mypurecloud.sdk.v2.model.WorkitemUpdate;
@@ -69,6 +70,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemasReque
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeHistoryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeStatusRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeStatusesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorkbinRequest;
@@ -2013,6 +2015,88 @@ public class TaskManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WorkitemStatus> response = (ApiResponse<WorkitemStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get list of statuses for this worktype.
+   * 
+   * getTaskmanagementWorktypeStatuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param worktypeId Worktype id (required)
+   * @return WorkitemStatusListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemStatusListing getTaskmanagementWorktypeStatuses(String worktypeId) throws IOException, ApiException {
+    return  getTaskmanagementWorktypeStatuses(createGetTaskmanagementWorktypeStatusesRequest(worktypeId));
+  }
+
+  /**
+   * Get list of statuses for this worktype.
+   * 
+   * getTaskmanagementWorktypeStatuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param worktypeId Worktype id (required)
+   * @return WorkitemStatusListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemStatusListing> getTaskmanagementWorktypeStatusesWithHttpInfo(String worktypeId) throws IOException {
+    return getTaskmanagementWorktypeStatuses(createGetTaskmanagementWorktypeStatusesRequest(worktypeId).withHttpInfo());
+  }
+
+  private GetTaskmanagementWorktypeStatusesRequest createGetTaskmanagementWorktypeStatusesRequest(String worktypeId) {
+    return GetTaskmanagementWorktypeStatusesRequest.builder()
+            .withWorktypeId(worktypeId)
+
+            .build();
+  }
+
+  /**
+   * Get list of statuses for this worktype.
+   * 
+   * getTaskmanagementWorktypeStatuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return WorkitemStatusListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemStatusListing getTaskmanagementWorktypeStatuses(GetTaskmanagementWorktypeStatusesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkitemStatusListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkitemStatusListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get list of statuses for this worktype.
+   * 
+   * getTaskmanagementWorktypeStatuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemStatusListing> getTaskmanagementWorktypeStatuses(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkitemStatusListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemStatusListing> response = (ApiResponse<WorkitemStatusListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemStatusListing> response = (ApiResponse<WorkitemStatusListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -39,15 +39,22 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getIntegrationsCredentialsTypes**](IntegrationsApi.html#getIntegrationsCredentialsTypes) | List all credential types |
 | [**getIntegrationsSpeechDialogflowAgent**](IntegrationsApi.html#getIntegrationsSpeechDialogflowAgent) | Get details about a Dialogflow agent |
 | [**getIntegrationsSpeechDialogflowAgents**](IntegrationsApi.html#getIntegrationsSpeechDialogflowAgents) | Get a list of Dialogflow agents in the customers' Google accounts |
+| [**getIntegrationsSpeechDialogflowcxAgent**](IntegrationsApi.html#getIntegrationsSpeechDialogflowcxAgent) | Get details about a Dialogflow CX agent |
+| [**getIntegrationsSpeechDialogflowcxAgents**](IntegrationsApi.html#getIntegrationsSpeechDialogflowcxAgents) | Get a list of Dialogflow CX agents in the customers' Google accounts |
 | [**getIntegrationsSpeechLexBotAlias**](IntegrationsApi.html#getIntegrationsSpeechLexBotAlias) | Get details about a Lex bot alias |
 | [**getIntegrationsSpeechLexBotBotIdAliases**](IntegrationsApi.html#getIntegrationsSpeechLexBotBotIdAliases) | Get a list of aliases for a bot in the customer's AWS accounts |
 | [**getIntegrationsSpeechLexBots**](IntegrationsApi.html#getIntegrationsSpeechLexBots) | Get a list of Lex bots in the customers' AWS accounts |
+| [**getIntegrationsSpeechLexv2BotAlias**](IntegrationsApi.html#getIntegrationsSpeechLexv2BotAlias) | Get details about a Lex V2 bot alias |
+| [**getIntegrationsSpeechLexv2BotBotIdAliases**](IntegrationsApi.html#getIntegrationsSpeechLexv2BotBotIdAliases) | Get a list of aliases for a Lex V2 bot |
+| [**getIntegrationsSpeechLexv2Bots**](IntegrationsApi.html#getIntegrationsSpeechLexv2Bots) | Get a list of Lex V2 bots |
 | [**getIntegrationsSpeechNuanceNuanceIntegrationIdBot**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBot) | Get a Nuance bot in the specified Integration |
 | [**getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob) | Get the status of an asynchronous Nuance bot GET job |
 | [**getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults) | Get the result of an asynchronous Nuance bot GET job |
 | [**getIntegrationsSpeechNuanceNuanceIntegrationIdBots**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBots) | Get a list of Nuance bots available in the specified Integration |
 | [**getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob) | Get the status of an asynchronous Nuance bots GET job |
 | [**getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults) | Get the result of an asynchronous Nuance bots GET job |
+| [**getIntegrationsSpeechSttEngine**](IntegrationsApi.html#getIntegrationsSpeechSttEngine) | Get details about a STT engine |
+| [**getIntegrationsSpeechSttEngines**](IntegrationsApi.html#getIntegrationsSpeechSttEngines) | Get a list of STT engines enabled for org |
 | [**getIntegrationsSpeechTtsEngine**](IntegrationsApi.html#getIntegrationsSpeechTtsEngine) | Get details about a TTS engine |
 | [**getIntegrationsSpeechTtsEngineVoice**](IntegrationsApi.html#getIntegrationsSpeechTtsEngineVoice) | Get details about a specific voice for a TTS engine |
 | [**getIntegrationsSpeechTtsEngineVoices**](IntegrationsApi.html#getIntegrationsSpeechTtsEngineVoices) | Get a list of voices for a TTS engine |
@@ -56,6 +63,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getIntegrationsType**](IntegrationsApi.html#getIntegrationsType) | Get integration type. |
 | [**getIntegrationsTypeConfigschema**](IntegrationsApi.html#getIntegrationsTypeConfigschema) | Get properties config schema for an integration type. |
 | [**getIntegrationsTypes**](IntegrationsApi.html#getIntegrationsTypes) | List integration types |
+| [**getIntegrationsUnifiedcommunicationsClientapp**](IntegrationsApi.html#getIntegrationsUnifiedcommunicationsClientapp) | UC integration client application configuration. |
+| [**getIntegrationsUnifiedcommunicationsClientapps**](IntegrationsApi.html#getIntegrationsUnifiedcommunicationsClientapps) | List UC integration client application configurations. |
 | [**getIntegrationsUserapps**](IntegrationsApi.html#getIntegrationsUserapps) | List permitted user app integrations for the logged in user |
 | [**patchIntegration**](IntegrationsApi.html#patchIntegration) | Update an integration. |
 | [**patchIntegrationsAction**](IntegrationsApi.html#patchIntegrationsAction) | Patch an Action |
@@ -2167,6 +2176,132 @@ try {
 
 [**DialogflowAgentSummaryEntityListing**](DialogflowAgentSummaryEntityListing.html)
 
+<a name="getIntegrationsSpeechDialogflowcxAgent"></a>
+
+# **getIntegrationsSpeechDialogflowcxAgent**
+
+
+
+> [DialogflowCXAgent](DialogflowCXAgent.html) getIntegrationsSpeechDialogflowcxAgent(agentId)
+
+Get details about a Dialogflow CX agent
+
+Wraps GET /api/v2/integrations/speech/dialogflowcx/agents/{agentId}  
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String agentId = "agentId_example"; // String | The agent ID
+try {
+    DialogflowCXAgent result = apiInstance.getIntegrationsSpeechDialogflowcxAgent(agentId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsSpeechDialogflowcxAgent");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **agentId** | **String**| The agent ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DialogflowCXAgent**](DialogflowCXAgent.html)
+
+<a name="getIntegrationsSpeechDialogflowcxAgents"></a>
+
+# **getIntegrationsSpeechDialogflowcxAgents**
+
+
+
+> [DialogflowCXAgentSummaryEntityListing](DialogflowCXAgentSummaryEntityListing.html) getIntegrationsSpeechDialogflowcxAgents(pageNumber, pageSize, name)
+
+Get a list of Dialogflow CX agents in the customers' Google accounts
+
+Wraps GET /api/v2/integrations/speech/dialogflowcx/agents  
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String name = "name_example"; // String | Filter on agent name
+try {
+    DialogflowCXAgentSummaryEntityListing result = apiInstance.getIntegrationsSpeechDialogflowcxAgents(pageNumber, pageSize, name);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsSpeechDialogflowcxAgents");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **name** | **String**| Filter on agent name | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DialogflowCXAgentSummaryEntityListing**](DialogflowCXAgentSummaryEntityListing.html)
+
 <a name="getIntegrationsSpeechLexBotAlias"></a>
 
 # **getIntegrationsSpeechLexBotAlias**
@@ -2362,6 +2497,201 @@ try {
 
 [**LexBotEntityListing**](LexBotEntityListing.html)
 
+<a name="getIntegrationsSpeechLexv2BotAlias"></a>
+
+# **getIntegrationsSpeechLexv2BotAlias**
+
+
+
+> [LexV2BotAlias](LexV2BotAlias.html) getIntegrationsSpeechLexv2BotAlias(aliasId)
+
+Get details about a Lex V2 bot alias
+
+Wraps GET /api/v2/integrations/speech/lexv2/bot/alias/{aliasId}  
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String aliasId = "aliasId_example"; // String | The Alias ID
+try {
+    LexV2BotAlias result = apiInstance.getIntegrationsSpeechLexv2BotAlias(aliasId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsSpeechLexv2BotAlias");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **aliasId** | **String**| The Alias ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LexV2BotAlias**](LexV2BotAlias.html)
+
+<a name="getIntegrationsSpeechLexv2BotBotIdAliases"></a>
+
+# **getIntegrationsSpeechLexv2BotBotIdAliases**
+
+
+
+> [LexV2BotAliasEntityListing](LexV2BotAliasEntityListing.html) getIntegrationsSpeechLexv2BotBotIdAliases(botId, pageNumber, pageSize, status, name)
+
+Get a list of aliases for a Lex V2 bot
+
+Wraps GET /api/v2/integrations/speech/lexv2/bot/{botId}/aliases  
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String botId = "botId_example"; // String | The Bot ID
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String status = "status_example"; // String | Filter on alias status
+String name = "name_example"; // String | Filter on alias name
+try {
+    LexV2BotAliasEntityListing result = apiInstance.getIntegrationsSpeechLexv2BotBotIdAliases(botId, pageNumber, pageSize, status, name);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsSpeechLexv2BotBotIdAliases");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **botId** | **String**| The Bot ID | 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **status** | **String**| Filter on alias status | [optional]<br />**Values**: Creating, Available, Deleting, Failed 
+| **name** | **String**| Filter on alias name | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LexV2BotAliasEntityListing**](LexV2BotAliasEntityListing.html)
+
+<a name="getIntegrationsSpeechLexv2Bots"></a>
+
+# **getIntegrationsSpeechLexv2Bots**
+
+
+
+> [LexV2BotEntityListing](LexV2BotEntityListing.html) getIntegrationsSpeechLexv2Bots(pageNumber, pageSize, name)
+
+Get a list of Lex V2 bots
+
+Wraps GET /api/v2/integrations/speech/lexv2/bots  
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String name = "name_example"; // String | Filter on bot name
+try {
+    LexV2BotEntityListing result = apiInstance.getIntegrationsSpeechLexv2Bots(pageNumber, pageSize, name);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsSpeechLexv2Bots");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **name** | **String**| Filter on bot name | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LexV2BotEntityListing**](LexV2BotEntityListing.html)
+
 <a name="getIntegrationsSpeechNuanceNuanceIntegrationIdBot"></a>
 
 # **getIntegrationsSpeechNuanceNuanceIntegrationIdBot**
@@ -2371,8 +2701,6 @@ try {
 > [NuanceBot](NuanceBot.html) getIntegrationsSpeechNuanceNuanceIntegrationIdBot(nuanceIntegrationId, botId, expand, targetChannel)
 
 Get a Nuance bot in the specified Integration
-
-getIntegrationsSpeechNuanceNuanceIntegrationIdBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}  
 
@@ -2441,8 +2769,6 @@ try {
 
 Get the status of an asynchronous Nuance bot GET job
 
-getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}  
 
 Requires ANY permissions: 
@@ -2507,8 +2833,6 @@ try {
 > [NuanceBot](NuanceBot.html) getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(nuanceIntegrationId, botId, jobId)
 
 Get the result of an asynchronous Nuance bot GET job
-
-getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}/results  
 
@@ -2577,8 +2901,6 @@ Get a list of Nuance bots available in the specified Integration
 
 If the 'onlyRegisteredBots' param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integration's configured discovery credentials are returned.
 
-getIntegrationsSpeechNuanceNuanceIntegrationIdBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots  
 
 Requires ANY permissions: 
@@ -2646,8 +2968,6 @@ try {
 
 Get the status of an asynchronous Nuance bots GET job
 
-getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}  
 
 Requires ANY permissions: 
@@ -2711,8 +3031,6 @@ try {
 
 Get the result of an asynchronous Nuance bots GET job
 
-getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}/results  
 
 Requires ANY permissions: 
@@ -2765,6 +3083,132 @@ try {
 ### Return type
 
 [**NuanceBotEntityListing**](NuanceBotEntityListing.html)
+
+<a name="getIntegrationsSpeechSttEngine"></a>
+
+# **getIntegrationsSpeechSttEngine**
+
+
+
+> [SttEngineEntity](SttEngineEntity.html) getIntegrationsSpeechSttEngine(engineId)
+
+Get details about a STT engine
+
+Wraps GET /api/v2/integrations/speech/stt/engines/{engineId}  
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String engineId = "engineId_example"; // String | The engine ID
+try {
+    SttEngineEntity result = apiInstance.getIntegrationsSpeechSttEngine(engineId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsSpeechSttEngine");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **engineId** | **String**| The engine ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SttEngineEntity**](SttEngineEntity.html)
+
+<a name="getIntegrationsSpeechSttEngines"></a>
+
+# **getIntegrationsSpeechSttEngines**
+
+
+
+> [SttEngineEntityListing](SttEngineEntityListing.html) getIntegrationsSpeechSttEngines(pageNumber, pageSize, name)
+
+Get a list of STT engines enabled for org
+
+Wraps GET /api/v2/integrations/speech/stt/engines  
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String name = "name_example"; // String | Filter on engine name
+try {
+    SttEngineEntityListing result = apiInstance.getIntegrationsSpeechSttEngines(pageNumber, pageSize, name);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsSpeechSttEngines");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **name** | **String**| Filter on engine name | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SttEngineEntityListing**](SttEngineEntityListing.html)
 
 <a name="getIntegrationsSpeechTtsEngine"></a>
 
@@ -3277,6 +3721,142 @@ try {
 ### Return type
 
 [**IntegrationTypeEntityListing**](IntegrationTypeEntityListing.html)
+
+<a name="getIntegrationsUnifiedcommunicationsClientapp"></a>
+
+# **getIntegrationsUnifiedcommunicationsClientapp**
+
+
+
+> [UnifiedCommunicationsIntegration](UnifiedCommunicationsIntegration.html) getIntegrationsUnifiedcommunicationsClientapp(ucIntegrationId)
+
+UC integration client application configuration.
+
+This endpoint returns basic UI configuration data for the specified Unified Communications integration client application.
+
+Wraps GET /api/v2/integrations/unifiedcommunications/clientapps/{ucIntegrationId}  
+
+Requires ANY permissions: 
+
+* integration:unifiedCommunications:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String ucIntegrationId = "ucIntegrationId_example"; // String | 3rd Party Service Type
+try {
+    UnifiedCommunicationsIntegration result = apiInstance.getIntegrationsUnifiedcommunicationsClientapp(ucIntegrationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsUnifiedcommunicationsClientapp");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ucIntegrationId** | **String**| 3rd Party Service Type | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UnifiedCommunicationsIntegration**](UnifiedCommunicationsIntegration.html)
+
+<a name="getIntegrationsUnifiedcommunicationsClientapps"></a>
+
+# **getIntegrationsUnifiedcommunicationsClientapps**
+
+
+
+> [UnifiedCommunicationsIntegrationListing](UnifiedCommunicationsIntegrationListing.html) getIntegrationsUnifiedcommunicationsClientapps(pageSize, pageNumber, sortBy, expand, nextPage, previousPage)
+
+List UC integration client application configurations.
+
+This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled.
+
+Wraps GET /api/v2/integrations/unifiedcommunications/clientapps  
+
+Requires ANY permissions: 
+
+* integration:unifiedCommunications:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+Integer pageSize = 25; // Integer | The total page size requested
+Integer pageNumber = 1; // Integer | The page number requested
+String sortBy = "sortBy_example"; // String | variable name requested to sort by
+List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
+String nextPage = "nextPage_example"; // String | next page token
+String previousPage = "previousPage_example"; // String | Previous page token
+try {
+    UnifiedCommunicationsIntegrationListing result = apiInstance.getIntegrationsUnifiedcommunicationsClientapps(pageSize, pageNumber, sortBy, expand, nextPage, previousPage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsUnifiedcommunicationsClientapps");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
+| **sortBy** | **String**| variable name requested to sort by | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
+| **nextPage** | **String**| next page token | [optional] 
+| **previousPage** | **String**| Previous page token | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UnifiedCommunicationsIntegrationListing**](UnifiedCommunicationsIntegrationListing.html)
 
 <a name="getIntegrationsUserapps"></a>
 
@@ -4184,8 +4764,6 @@ try {
 
 Get a Nuance bot in the specified Integration asynchronously
 
-postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs  
 
 Requires ANY permissions: 
@@ -4253,8 +4831,6 @@ try {
 
 Get a list of Nuance bots in the specified Integration asynchronously
 
-postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs  
 
 Requires ANY permissions: 
@@ -4321,8 +4897,6 @@ try {
 > Void postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(nuanceIntegrationId, settings)
 
 Try out a single credential for a Nuance bot to know if the secret is correct
-
-postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/validate  
 
@@ -4637,8 +5211,6 @@ try {
 > Void putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(nuanceIntegrationId, settings)
 
 Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
-
-putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/settings  
 

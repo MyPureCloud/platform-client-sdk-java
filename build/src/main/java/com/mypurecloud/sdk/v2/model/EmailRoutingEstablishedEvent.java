@@ -165,14 +165,14 @@ public class EmailRoutingEstablishedEvent  implements Serializable {
 
 
   /**
-   * An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level.
+   * An optional label that categorizes the conversation. Max-utilization settings can be configured at a per-label level.
    **/
   public EmailRoutingEstablishedEvent label(String label) {
     this.label = label;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level.")
+  @ApiModelProperty(example = "null", value = "An optional label that categorizes the conversation. Max-utilization settings can be configured at a per-label level.")
   @JsonProperty("label")
   public String getLabel() {
     return label;

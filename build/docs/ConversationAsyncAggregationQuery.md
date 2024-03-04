@@ -117,6 +117,7 @@ title: ConversationAsyncAggregationQuery
 | Name | Value |
 | ---- | ----- |
 | NBLINDTRANSFERRED | &quot;nBlindTransferred&quot; |
+| NBOTINTERACTIONS | &quot;nBotInteractions&quot; |
 | NCOBROWSESESSIONS | &quot;nCobrowseSessions&quot; |
 | NCONNECTED | &quot;nConnected&quot; |
 | NCONSULT | &quot;nConsult&quot; |

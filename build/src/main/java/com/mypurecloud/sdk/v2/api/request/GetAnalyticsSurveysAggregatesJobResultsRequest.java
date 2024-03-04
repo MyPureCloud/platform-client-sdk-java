@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.EvaluationAggregationQuery;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregationQueryMe;
 import com.mypurecloud.sdk.v2.model.EvaluationAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationAsyncAggregationQuery;
+import com.mypurecloud.sdk.v2.model.EvaluationCreateBody;
 import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;
 import com.mypurecloud.sdk.v2.model.EvaluationForm;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;

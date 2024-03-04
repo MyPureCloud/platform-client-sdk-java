@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.EvaluationAggregationQuery;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregationQueryMe;
 import com.mypurecloud.sdk.v2.model.EvaluationAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationAsyncAggregationQuery;
+import com.mypurecloud.sdk.v2.model.EvaluationCreateBody;
 import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;
 import com.mypurecloud.sdk.v2.model.EvaluationForm;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
@@ -73,16 +74,16 @@ public class PostQualityConversationEvaluationsRequest {
 	    return this;
 	} 
 
-	private Evaluation body;
-	public Evaluation getBody() {
+	private EvaluationCreateBody body;
+	public EvaluationCreateBody getBody() {
 		return this.body;
 	}
 
-	public void setBody(Evaluation body) {
+	public void setBody(EvaluationCreateBody body) {
 		this.body = body;
 	}
 
-	public PostQualityConversationEvaluationsRequest withBody(Evaluation body) {
+	public PostQualityConversationEvaluationsRequest withBody(EvaluationCreateBody body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -120,7 +121,7 @@ public class PostQualityConversationEvaluationsRequest {
         return this;
     }
 
-    public ApiRequest<Evaluation> withHttpInfo() {
+    public ApiRequest<EvaluationCreateBody> withHttpInfo() {
         
         // verify the required parameter 'conversationId' is set
         if (this.conversationId == null) {
@@ -153,7 +154,7 @@ public class PostQualityConversationEvaluationsRequest {
 	}
 
 
-	public static Builder builder(String conversationId, Evaluation body) {
+	public static Builder builder(String conversationId, EvaluationCreateBody body) {
 	    return new Builder()
 	            .withRequiredParams(conversationId, body);
 	}
@@ -172,7 +173,7 @@ public class PostQualityConversationEvaluationsRequest {
 			return this;
 		}
 
-		public Builder withBody(Evaluation body) {
+		public Builder withBody(EvaluationCreateBody body) {
 			request.setBody(body);
 			return this;
 		}
@@ -184,7 +185,7 @@ public class PostQualityConversationEvaluationsRequest {
 
 
 
-		public Builder withRequiredParams(String conversationId, Evaluation body) {
+		public Builder withRequiredParams(String conversationId, EvaluationCreateBody body) {
 			request.setConversationId(conversationId);
 			request.setBody(body);
 

@@ -87,14 +87,14 @@ public class BuSchedulingSettingsRequest  implements Serializable {
 
 
   /**
-   * Indicates whether or not per minute granularity for scheduling will be enabled for this business unit
+   * Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false.
    **/
   public BuSchedulingSettingsRequest allowWorkPlanPerMinuteGranularity(Boolean allowWorkPlanPerMinuteGranularity) {
     this.allowWorkPlanPerMinuteGranularity = allowWorkPlanPerMinuteGranularity;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Indicates whether or not per minute granularity for scheduling will be enabled for this business unit")
+  @ApiModelProperty(example = "null", value = "Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false.")
   @JsonProperty("allowWorkPlanPerMinuteGranularity")
   public Boolean getAllowWorkPlanPerMinuteGranularity() {
     return allowWorkPlanPerMinuteGranularity;

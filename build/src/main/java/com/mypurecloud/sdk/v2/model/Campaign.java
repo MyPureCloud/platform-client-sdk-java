@@ -166,6 +166,7 @@ public class Campaign  implements Serializable {
   private List<DomainEntityRef> contactListFilters = new ArrayList<DomainEntityRef>();
   private DomainEntityRef division = null;
   private DynamicContactQueueingSettings dynamicContactQueueingSettings = null;
+  private Integer maxCallsPerAgent = null;
   private String selfUri = null;
 
   
@@ -719,6 +720,24 @@ public class Campaign  implements Serializable {
   }
 
 
+  /**
+   * The maximum number of calls that can be placed per agent on this campaign
+   **/
+  public Campaign maxCallsPerAgent(Integer maxCallsPerAgent) {
+    this.maxCallsPerAgent = maxCallsPerAgent;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The maximum number of calls that can be placed per agent on this campaign")
+  @JsonProperty("maxCallsPerAgent")
+  public Integer getMaxCallsPerAgent() {
+    return maxCallsPerAgent;
+  }
+  public void setMaxCallsPerAgent(Integer maxCallsPerAgent) {
+    this.maxCallsPerAgent = maxCallsPerAgent;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -769,12 +788,13 @@ public class Campaign  implements Serializable {
             Objects.equals(this.contactListFilters, campaign.contactListFilters) &&
             Objects.equals(this.division, campaign.division) &&
             Objects.equals(this.dynamicContactQueueingSettings, campaign.dynamicContactQueueingSettings) &&
+            Objects.equals(this.maxCallsPerAgent, campaign.maxCallsPerAgent) &&
             Objects.equals(this.selfUri, campaign.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, site, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, errors, callerName, callerAddress, outboundLineCount, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, alwaysRunning, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, division, dynamicContactQueueingSettings, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, site, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, errors, callerName, callerAddress, outboundLineCount, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, alwaysRunning, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, division, dynamicContactQueueingSettings, maxCallsPerAgent, selfUri);
   }
 
   @Override
@@ -815,6 +835,7 @@ public class Campaign  implements Serializable {
     sb.append("    contactListFilters: ").append(toIndentedString(contactListFilters)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    dynamicContactQueueingSettings: ").append(toIndentedString(dynamicContactQueueingSettings)).append("\n");
+    sb.append("    maxCallsPerAgent: ").append(toIndentedString(maxCallsPerAgent)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

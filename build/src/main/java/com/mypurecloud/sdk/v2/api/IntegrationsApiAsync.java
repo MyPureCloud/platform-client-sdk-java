@@ -31,6 +31,8 @@ import com.mypurecloud.sdk.v2.model.CredentialInfoListing;
 import com.mypurecloud.sdk.v2.model.CredentialTypeListing;
 import com.mypurecloud.sdk.v2.model.DialogflowAgent;
 import com.mypurecloud.sdk.v2.model.DialogflowAgentSummaryEntityListing;
+import com.mypurecloud.sdk.v2.model.DialogflowCXAgent;
+import com.mypurecloud.sdk.v2.model.DialogflowCXAgentSummaryEntityListing;
 import com.mypurecloud.sdk.v2.model.DraftValidationResult;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Function;
@@ -47,11 +49,16 @@ import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
 import com.mypurecloud.sdk.v2.model.LexBotAlias;
 import com.mypurecloud.sdk.v2.model.LexBotAliasEntityListing;
 import com.mypurecloud.sdk.v2.model.LexBotEntityListing;
+import com.mypurecloud.sdk.v2.model.LexV2BotAlias;
+import com.mypurecloud.sdk.v2.model.LexV2BotAliasEntityListing;
+import com.mypurecloud.sdk.v2.model.LexV2BotEntityListing;
 import com.mypurecloud.sdk.v2.model.NuanceBot;
 import com.mypurecloud.sdk.v2.model.NuanceBotEntityListing;
 import com.mypurecloud.sdk.v2.model.NuanceBotLaunchSettings;
 import com.mypurecloud.sdk.v2.model.PostActionInput;
 import com.mypurecloud.sdk.v2.model.PublishDraftInput;
+import com.mypurecloud.sdk.v2.model.SttEngineEntity;
+import com.mypurecloud.sdk.v2.model.SttEngineEntityListing;
 import com.mypurecloud.sdk.v2.model.TestExecutionResult;
 import com.mypurecloud.sdk.v2.model.TtsEngineEntity;
 import com.mypurecloud.sdk.v2.model.TtsEngineEntityListing;
@@ -60,6 +67,8 @@ import com.mypurecloud.sdk.v2.model.TtsVoiceEntity;
 import com.mypurecloud.sdk.v2.model.TtsVoiceEntityListing;
 import com.mypurecloud.sdk.v2.model.UCIntegrationListing;
 import com.mypurecloud.sdk.v2.model.UCThirdPartyPresence;
+import com.mypurecloud.sdk.v2.model.UnifiedCommunicationsIntegration;
+import com.mypurecloud.sdk.v2.model.UnifiedCommunicationsIntegrationListing;
 import com.mypurecloud.sdk.v2.model.UpdateActionInput;
 import com.mypurecloud.sdk.v2.model.UpdateDraftInput;
 import com.mypurecloud.sdk.v2.model.UserAppEntityListing;
@@ -97,15 +106,22 @@ import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialsTypesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechDialogflowAgentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechDialogflowAgentsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechDialogflowcxAgentRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechDialogflowcxAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechLexBotAliasRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechLexBotBotIdAliasesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechLexBotsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechLexv2BotAliasRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechLexv2BotBotIdAliasesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechLexv2BotsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechNuanceNuanceIntegrationIdBotRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechSttEngineRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechSttEnginesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechTtsEngineRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechTtsEngineVoiceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechTtsEngineVoicesRequest;
@@ -114,6 +130,8 @@ import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechTtsSettingsReques
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsTypeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsTypeConfigschemaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsTypesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsUnifiedcommunicationsClientappRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsUnifiedcommunicationsClientappsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsUserappsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchIntegrationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchIntegrationsActionRequest;
@@ -2564,6 +2582,156 @@ public class IntegrationsApiAsync {
   }
 
   /**
+   * Get details about a Dialogflow CX agent
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DialogflowCXAgent> getIntegrationsSpeechDialogflowcxAgentAsync(GetIntegrationsSpeechDialogflowcxAgentRequest request, final AsyncApiCallback<DialogflowCXAgent> callback) {
+    try {
+      final SettableFuture<DialogflowCXAgent> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DialogflowCXAgent>() {}, new AsyncApiCallback<ApiResponse<DialogflowCXAgent>>() {
+        @Override
+        public void onCompleted(ApiResponse<DialogflowCXAgent> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get details about a Dialogflow CX agent
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DialogflowCXAgent>> getIntegrationsSpeechDialogflowcxAgentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DialogflowCXAgent>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DialogflowCXAgent>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DialogflowCXAgent>() {}, new AsyncApiCallback<ApiResponse<DialogflowCXAgent>>() {
+        @Override
+        public void onCompleted(ApiResponse<DialogflowCXAgent> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DialogflowCXAgent> response = (ApiResponse<DialogflowCXAgent>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DialogflowCXAgent> response = (ApiResponse<DialogflowCXAgent>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of Dialogflow CX agents in the customers' Google accounts
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DialogflowCXAgentSummaryEntityListing> getIntegrationsSpeechDialogflowcxAgentsAsync(GetIntegrationsSpeechDialogflowcxAgentsRequest request, final AsyncApiCallback<DialogflowCXAgentSummaryEntityListing> callback) {
+    try {
+      final SettableFuture<DialogflowCXAgentSummaryEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DialogflowCXAgentSummaryEntityListing>() {}, new AsyncApiCallback<ApiResponse<DialogflowCXAgentSummaryEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DialogflowCXAgentSummaryEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of Dialogflow CX agents in the customers' Google accounts
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DialogflowCXAgentSummaryEntityListing>> getIntegrationsSpeechDialogflowcxAgentsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DialogflowCXAgentSummaryEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DialogflowCXAgentSummaryEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DialogflowCXAgentSummaryEntityListing>() {}, new AsyncApiCallback<ApiResponse<DialogflowCXAgentSummaryEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DialogflowCXAgentSummaryEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DialogflowCXAgentSummaryEntityListing> response = (ApiResponse<DialogflowCXAgentSummaryEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DialogflowCXAgentSummaryEntityListing> response = (ApiResponse<DialogflowCXAgentSummaryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get details about a Lex bot alias
    * 
    * @param request the request object
@@ -2789,9 +2957,233 @@ public class IntegrationsApiAsync {
   }
 
   /**
+   * Get details about a Lex V2 bot alias
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LexV2BotAlias> getIntegrationsSpeechLexv2BotAliasAsync(GetIntegrationsSpeechLexv2BotAliasRequest request, final AsyncApiCallback<LexV2BotAlias> callback) {
+    try {
+      final SettableFuture<LexV2BotAlias> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LexV2BotAlias>() {}, new AsyncApiCallback<ApiResponse<LexV2BotAlias>>() {
+        @Override
+        public void onCompleted(ApiResponse<LexV2BotAlias> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get details about a Lex V2 bot alias
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LexV2BotAlias>> getIntegrationsSpeechLexv2BotAliasAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LexV2BotAlias>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LexV2BotAlias>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LexV2BotAlias>() {}, new AsyncApiCallback<ApiResponse<LexV2BotAlias>>() {
+        @Override
+        public void onCompleted(ApiResponse<LexV2BotAlias> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LexV2BotAlias> response = (ApiResponse<LexV2BotAlias>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LexV2BotAlias> response = (ApiResponse<LexV2BotAlias>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of aliases for a Lex V2 bot
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LexV2BotAliasEntityListing> getIntegrationsSpeechLexv2BotBotIdAliasesAsync(GetIntegrationsSpeechLexv2BotBotIdAliasesRequest request, final AsyncApiCallback<LexV2BotAliasEntityListing> callback) {
+    try {
+      final SettableFuture<LexV2BotAliasEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LexV2BotAliasEntityListing>() {}, new AsyncApiCallback<ApiResponse<LexV2BotAliasEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LexV2BotAliasEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of aliases for a Lex V2 bot
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LexV2BotAliasEntityListing>> getIntegrationsSpeechLexv2BotBotIdAliasesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LexV2BotAliasEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LexV2BotAliasEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LexV2BotAliasEntityListing>() {}, new AsyncApiCallback<ApiResponse<LexV2BotAliasEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LexV2BotAliasEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LexV2BotAliasEntityListing> response = (ApiResponse<LexV2BotAliasEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LexV2BotAliasEntityListing> response = (ApiResponse<LexV2BotAliasEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of Lex V2 bots
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LexV2BotEntityListing> getIntegrationsSpeechLexv2BotsAsync(GetIntegrationsSpeechLexv2BotsRequest request, final AsyncApiCallback<LexV2BotEntityListing> callback) {
+    try {
+      final SettableFuture<LexV2BotEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LexV2BotEntityListing>() {}, new AsyncApiCallback<ApiResponse<LexV2BotEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LexV2BotEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of Lex V2 bots
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LexV2BotEntityListing>> getIntegrationsSpeechLexv2BotsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LexV2BotEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LexV2BotEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LexV2BotEntityListing>() {}, new AsyncApiCallback<ApiResponse<LexV2BotEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LexV2BotEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LexV2BotEntityListing> response = (ApiResponse<LexV2BotEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LexV2BotEntityListing> response = (ApiResponse<LexV2BotEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get a Nuance bot in the specified Integration
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2826,7 +3218,6 @@ public class IntegrationsApiAsync {
   /**
    * Get a Nuance bot in the specified Integration
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2868,7 +3259,6 @@ public class IntegrationsApiAsync {
   /**
    * Get the status of an asynchronous Nuance bot GET job
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2903,7 +3293,6 @@ public class IntegrationsApiAsync {
   /**
    * Get the status of an asynchronous Nuance bot GET job
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2945,7 +3334,6 @@ public class IntegrationsApiAsync {
   /**
    * Get the result of an asynchronous Nuance bot GET job
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2980,7 +3368,6 @@ public class IntegrationsApiAsync {
   /**
    * Get the result of an asynchronous Nuance bot GET job
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3022,7 +3409,6 @@ public class IntegrationsApiAsync {
   /**
    * Get a list of Nuance bots available in the specified Integration
    * If the 'onlyRegisteredBots' param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integration's configured discovery credentials are returned.
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3057,7 +3443,6 @@ public class IntegrationsApiAsync {
   /**
    * Get a list of Nuance bots available in the specified Integration
    * If the 'onlyRegisteredBots' param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integration's configured discovery credentials are returned.
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3099,7 +3484,6 @@ public class IntegrationsApiAsync {
   /**
    * Get the status of an asynchronous Nuance bots GET job
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3134,7 +3518,6 @@ public class IntegrationsApiAsync {
   /**
    * Get the status of an asynchronous Nuance bots GET job
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3176,7 +3559,6 @@ public class IntegrationsApiAsync {
   /**
    * Get the result of an asynchronous Nuance bots GET job
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3211,7 +3593,6 @@ public class IntegrationsApiAsync {
   /**
    * Get the result of an asynchronous Nuance bots GET job
    * 
-   * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3239,6 +3620,156 @@ public class IntegrationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<NuanceBotEntityListing> response = (ApiResponse<NuanceBotEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get details about a STT engine
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SttEngineEntity> getIntegrationsSpeechSttEngineAsync(GetIntegrationsSpeechSttEngineRequest request, final AsyncApiCallback<SttEngineEntity> callback) {
+    try {
+      final SettableFuture<SttEngineEntity> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SttEngineEntity>() {}, new AsyncApiCallback<ApiResponse<SttEngineEntity>>() {
+        @Override
+        public void onCompleted(ApiResponse<SttEngineEntity> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get details about a STT engine
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SttEngineEntity>> getIntegrationsSpeechSttEngineAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SttEngineEntity>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SttEngineEntity>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SttEngineEntity>() {}, new AsyncApiCallback<ApiResponse<SttEngineEntity>>() {
+        @Override
+        public void onCompleted(ApiResponse<SttEngineEntity> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SttEngineEntity> response = (ApiResponse<SttEngineEntity>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SttEngineEntity> response = (ApiResponse<SttEngineEntity>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of STT engines enabled for org
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SttEngineEntityListing> getIntegrationsSpeechSttEnginesAsync(GetIntegrationsSpeechSttEnginesRequest request, final AsyncApiCallback<SttEngineEntityListing> callback) {
+    try {
+      final SettableFuture<SttEngineEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SttEngineEntityListing>() {}, new AsyncApiCallback<ApiResponse<SttEngineEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SttEngineEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of STT engines enabled for org
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SttEngineEntityListing>> getIntegrationsSpeechSttEnginesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SttEngineEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SttEngineEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SttEngineEntityListing>() {}, new AsyncApiCallback<ApiResponse<SttEngineEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SttEngineEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SttEngineEntityListing> response = (ApiResponse<SttEngineEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SttEngineEntityListing> response = (ApiResponse<SttEngineEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3839,6 +4370,156 @@ public class IntegrationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<IntegrationTypeEntityListing> response = (ApiResponse<IntegrationTypeEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * UC integration client application configuration.
+   * This endpoint returns basic UI configuration data for the specified Unified Communications integration client application.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UnifiedCommunicationsIntegration> getIntegrationsUnifiedcommunicationsClientappAsync(GetIntegrationsUnifiedcommunicationsClientappRequest request, final AsyncApiCallback<UnifiedCommunicationsIntegration> callback) {
+    try {
+      final SettableFuture<UnifiedCommunicationsIntegration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UnifiedCommunicationsIntegration>() {}, new AsyncApiCallback<ApiResponse<UnifiedCommunicationsIntegration>>() {
+        @Override
+        public void onCompleted(ApiResponse<UnifiedCommunicationsIntegration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * UC integration client application configuration.
+   * This endpoint returns basic UI configuration data for the specified Unified Communications integration client application.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UnifiedCommunicationsIntegration>> getIntegrationsUnifiedcommunicationsClientappAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UnifiedCommunicationsIntegration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UnifiedCommunicationsIntegration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UnifiedCommunicationsIntegration>() {}, new AsyncApiCallback<ApiResponse<UnifiedCommunicationsIntegration>>() {
+        @Override
+        public void onCompleted(ApiResponse<UnifiedCommunicationsIntegration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UnifiedCommunicationsIntegration> response = (ApiResponse<UnifiedCommunicationsIntegration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UnifiedCommunicationsIntegration> response = (ApiResponse<UnifiedCommunicationsIntegration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * List UC integration client application configurations.
+   * This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UnifiedCommunicationsIntegrationListing> getIntegrationsUnifiedcommunicationsClientappsAsync(GetIntegrationsUnifiedcommunicationsClientappsRequest request, final AsyncApiCallback<UnifiedCommunicationsIntegrationListing> callback) {
+    try {
+      final SettableFuture<UnifiedCommunicationsIntegrationListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UnifiedCommunicationsIntegrationListing>() {}, new AsyncApiCallback<ApiResponse<UnifiedCommunicationsIntegrationListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UnifiedCommunicationsIntegrationListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * List UC integration client application configurations.
+   * This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UnifiedCommunicationsIntegrationListing>> getIntegrationsUnifiedcommunicationsClientappsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UnifiedCommunicationsIntegrationListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UnifiedCommunicationsIntegrationListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UnifiedCommunicationsIntegrationListing>() {}, new AsyncApiCallback<ApiResponse<UnifiedCommunicationsIntegrationListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UnifiedCommunicationsIntegrationListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UnifiedCommunicationsIntegrationListing> response = (ApiResponse<UnifiedCommunicationsIntegrationListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UnifiedCommunicationsIntegrationListing> response = (ApiResponse<UnifiedCommunicationsIntegrationListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -4905,7 +5586,6 @@ public class IntegrationsApiAsync {
   /**
    * Get a Nuance bot in the specified Integration asynchronously
    * 
-   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4940,7 +5620,6 @@ public class IntegrationsApiAsync {
   /**
    * Get a Nuance bot in the specified Integration asynchronously
    * 
-   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4982,7 +5661,6 @@ public class IntegrationsApiAsync {
   /**
    * Get a list of Nuance bots in the specified Integration asynchronously
    * 
-   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5017,7 +5695,6 @@ public class IntegrationsApiAsync {
   /**
    * Get a list of Nuance bots in the specified Integration asynchronously
    * 
-   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5059,7 +5736,6 @@ public class IntegrationsApiAsync {
   /**
    * Try out a single credential for a Nuance bot to know if the secret is correct
    * 
-   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5094,7 +5770,6 @@ public class IntegrationsApiAsync {
   /**
    * Try out a single credential for a Nuance bot to know if the secret is correct
    * 
-   * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5438,7 +6113,6 @@ public class IntegrationsApiAsync {
   /**
    * Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
    * 
-   * putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5473,7 +6147,6 @@ public class IntegrationsApiAsync {
   /**
    * Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
    * 
-   * putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

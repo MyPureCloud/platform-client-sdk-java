@@ -27,14 +27,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getQualityEvaluatorsActivity**](QualityApi.html#getQualityEvaluatorsActivity) | Get an evaluator activity |
 | [**getQualityForm**](QualityApi.html#getQualityForm) | Get an evaluation form |
 | [**getQualityFormVersions**](QualityApi.html#getQualityFormVersions) | Gets all the revisions for a specific evaluation. |
-| [**getQualityForms**](QualityApi.html#getQualityForms) | Get the list of evaluation forms |
+| [**getQualityForms**](QualityApi.html#getQualityForms) | Get the list of evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form. |
 | [**getQualityFormsEvaluation**](QualityApi.html#getQualityFormsEvaluation) | Get an evaluation form |
 | [**getQualityFormsEvaluationVersions**](QualityApi.html#getQualityFormsEvaluationVersions) | Gets all the revisions for a specific evaluation. |
 | [**getQualityFormsEvaluations**](QualityApi.html#getQualityFormsEvaluations) | Get the list of evaluation forms |
 | [**getQualityFormsEvaluationsBulkContexts**](QualityApi.html#getQualityFormsEvaluationsBulkContexts) | Retrieve a list of the latest published evaluation form versions by context ids |
 | [**getQualityFormsSurvey**](QualityApi.html#getQualityFormsSurvey) | Get a survey form |
 | [**getQualityFormsSurveyVersions**](QualityApi.html#getQualityFormsSurveyVersions) | Gets all the revisions for a specific survey. |
-| [**getQualityFormsSurveys**](QualityApi.html#getQualityFormsSurveys) | Get the list of survey forms |
+| [**getQualityFormsSurveys**](QualityApi.html#getQualityFormsSurveys) | Get the list of survey forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding survey form. |
 | [**getQualityFormsSurveysBulk**](QualityApi.html#getQualityFormsSurveysBulk) | Retrieve a list of survey forms by their ids |
 | [**getQualityFormsSurveysBulkContexts**](QualityApi.html#getQualityFormsSurveysBulkContexts) | Retrieve a list of the latest form versions by context ids |
 | [**getQualityPublishedform**](QualityApi.html#getQualityPublishedform) | Get the published evaluation forms. |
@@ -1443,7 +1443,7 @@ try {
 
 > [EvaluationFormResponseEntityListing](EvaluationFormResponseEntityListing.html) getQualityForms(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder)
 
-Get the list of evaluation forms
+Get the list of evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form.
 
 Wraps GET /api/v2/quality/forms  
 
@@ -1648,7 +1648,7 @@ try {
 
 Get the list of evaluation forms
 
-By default, \"published\" field is always returned as false for all evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form. In addition, \"questionGroups\", the detailed information about evaluation form, is not returned by default. We will enhance this field in the future release.
+By default, \"published\" field is always returned as false for all evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form. In addition, \"questionGroups\", the detailed information about evaluation form, is not returned. We will enhance this field in a future release.
 
 Wraps GET /api/v2/quality/forms/evaluations  
 
@@ -1910,7 +1910,7 @@ try {
 
 > [SurveyFormEntityListing](SurveyFormEntityListing.html) getQualityFormsSurveys(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder)
 
-Get the list of survey forms
+Get the list of survey forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding survey form.
 
 Wraps GET /api/v2/quality/forms/surveys  
 
@@ -3006,7 +3006,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 QualityApi apiInstance = new QualityApi();
 String conversationId = "conversationId_example"; // String | conversationId
-Evaluation body = new Evaluation(); // Evaluation | evaluation
+EvaluationCreateBody body = new EvaluationCreateBody(); // EvaluationCreateBody | evaluation
 String expand = "expand_example"; // String | evaluatorId
 try {
     Evaluation result = apiInstance.postQualityConversationEvaluations(conversationId, body, expand);
@@ -3023,7 +3023,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **conversationId** | **String**| conversationId | 
-| **body** | [**Evaluation**](Evaluation.html)| evaluation | 
+| **body** | [**EvaluationCreateBody**](EvaluationCreateBody.html)| evaluation | 
 | **expand** | **String**| evaluatorId | [optional] 
 {: class="table-striped"}
 

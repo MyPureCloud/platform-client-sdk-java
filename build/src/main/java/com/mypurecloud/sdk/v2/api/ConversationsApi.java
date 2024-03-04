@@ -1040,21 +1040,23 @@ public class ConversationsApi {
   }
 
   /**
-   * Delete a LINE messenger integration
-   * 
+   * Delete a LINE messenger integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param integrationId Integration ID (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteConversationsMessagingIntegrationsLineIntegrationId(String integrationId) throws IOException, ApiException {
      deleteConversationsMessagingIntegrationsLineIntegrationId(createDeleteConversationsMessagingIntegrationsLineIntegrationIdRequest(integrationId));
   }
 
   /**
-   * Delete a LINE messenger integration
-   * 
+   * Delete a LINE messenger integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param integrationId Integration ID (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteConversationsMessagingIntegrationsLineIntegrationIdWithHttpInfo(String integrationId) throws IOException {
     return deleteConversationsMessagingIntegrationsLineIntegrationId(createDeleteConversationsMessagingIntegrationsLineIntegrationIdRequest(integrationId).withHttpInfo());
@@ -1068,11 +1070,12 @@ public class ConversationsApi {
   }
 
   /**
-   * Delete a LINE messenger integration
-   * 
+   * Delete a LINE messenger integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteConversationsMessagingIntegrationsLineIntegrationId(DeleteConversationsMessagingIntegrationsLineIntegrationIdRequest request) throws IOException, ApiException {
     try {
@@ -1086,11 +1089,12 @@ public class ConversationsApi {
   }
 
   /**
-   * Delete a LINE messenger integration
-   * 
+   * Delete a LINE messenger integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteConversationsMessagingIntegrationsLineIntegrationId(ApiRequest<Void> request) throws IOException {
     try {
@@ -6902,8 +6906,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Get a list of LINE messenger Integrations
-   * 
+   * Get a list of LINE messenger Integrations (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param expand Expand instructions for the return value. (optional)
@@ -6912,14 +6916,15 @@ public class ConversationsApi {
    * @return LineIntegrationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public LineIntegrationEntityListing getConversationsMessagingIntegrationsLine(Integer pageSize, Integer pageNumber, String expand, String supportedContentId, String messagingSettingId) throws IOException, ApiException {
     return  getConversationsMessagingIntegrationsLine(createGetConversationsMessagingIntegrationsLineRequest(pageSize, pageNumber, expand, supportedContentId, messagingSettingId));
   }
 
   /**
-   * Get a list of LINE messenger Integrations
-   * 
+   * Get a list of LINE messenger Integrations (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param expand Expand instructions for the return value. (optional)
@@ -6927,6 +6932,7 @@ public class ConversationsApi {
    * @param messagingSettingId Filter integrations returned based on the setting ID (optional)
    * @return LineIntegrationEntityListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<LineIntegrationEntityListing> getConversationsMessagingIntegrationsLineWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String supportedContentId, String messagingSettingId) throws IOException {
     return getConversationsMessagingIntegrationsLine(createGetConversationsMessagingIntegrationsLineRequest(pageSize, pageNumber, expand, supportedContentId, messagingSettingId).withHttpInfo());
@@ -6948,12 +6954,13 @@ public class ConversationsApi {
   }
 
   /**
-   * Get a list of LINE messenger Integrations
-   * 
+   * Get a list of LINE messenger Integrations (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param request The request object
    * @return LineIntegrationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public LineIntegrationEntityListing getConversationsMessagingIntegrationsLine(GetConversationsMessagingIntegrationsLineRequest request) throws IOException, ApiException {
     try {
@@ -6967,11 +6974,12 @@ public class ConversationsApi {
   }
 
   /**
-   * Get a list of LINE messenger Integrations
-   * 
+   * Get a list of LINE messenger Integrations (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<LineIntegrationEntityListing> getConversationsMessagingIntegrationsLine(ApiRequest<Void> request) throws IOException {
     try {
@@ -6996,25 +7004,27 @@ public class ConversationsApi {
   }
 
   /**
-   * Get a LINE messenger integration
-   * 
+   * Get a LINE messenger integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param integrationId Integration ID (required)
    * @param expand Expand instructions for the return value. (optional)
    * @return LineIntegration
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public LineIntegration getConversationsMessagingIntegrationsLineIntegrationId(String integrationId, String expand) throws IOException, ApiException {
     return  getConversationsMessagingIntegrationsLineIntegrationId(createGetConversationsMessagingIntegrationsLineIntegrationIdRequest(integrationId, expand));
   }
 
   /**
-   * Get a LINE messenger integration
-   * 
+   * Get a LINE messenger integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param integrationId Integration ID (required)
    * @param expand Expand instructions for the return value. (optional)
    * @return LineIntegration
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<LineIntegration> getConversationsMessagingIntegrationsLineIntegrationIdWithHttpInfo(String integrationId, String expand) throws IOException {
     return getConversationsMessagingIntegrationsLineIntegrationId(createGetConversationsMessagingIntegrationsLineIntegrationIdRequest(integrationId, expand).withHttpInfo());
@@ -7030,12 +7040,13 @@ public class ConversationsApi {
   }
 
   /**
-   * Get a LINE messenger integration
-   * 
+   * Get a LINE messenger integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param request The request object
    * @return LineIntegration
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public LineIntegration getConversationsMessagingIntegrationsLineIntegrationId(GetConversationsMessagingIntegrationsLineIntegrationIdRequest request) throws IOException, ApiException {
     try {
@@ -7049,11 +7060,12 @@ public class ConversationsApi {
   }
 
   /**
-   * Get a LINE messenger integration
-   * 
+   * Get a LINE messenger integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<LineIntegration> getConversationsMessagingIntegrationsLineIntegrationId(ApiRequest<Void> request) throws IOException {
     try {
@@ -19563,25 +19575,27 @@ public class ConversationsApi {
   }
 
   /**
-   * Update a LINE messenger integration
-   * 
+   * Update a LINE messenger integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param integrationId Integration ID (required)
    * @param body LineIntegrationRequest (required)
    * @return LineIntegration
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public LineIntegration putConversationsMessagingIntegrationsLineIntegrationId(String integrationId, LineIntegrationRequest body) throws IOException, ApiException {
     return  putConversationsMessagingIntegrationsLineIntegrationId(createPutConversationsMessagingIntegrationsLineIntegrationIdRequest(integrationId, body));
   }
 
   /**
-   * Update a LINE messenger integration
-   * 
+   * Update a LINE messenger integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param integrationId Integration ID (required)
    * @param body LineIntegrationRequest (required)
    * @return LineIntegration
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<LineIntegration> putConversationsMessagingIntegrationsLineIntegrationIdWithHttpInfo(String integrationId, LineIntegrationRequest body) throws IOException {
     return putConversationsMessagingIntegrationsLineIntegrationId(createPutConversationsMessagingIntegrationsLineIntegrationIdRequest(integrationId, body).withHttpInfo());
@@ -19597,12 +19611,13 @@ public class ConversationsApi {
   }
 
   /**
-   * Update a LINE messenger integration
-   * 
+   * Update a LINE messenger integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param request The request object
    * @return LineIntegration
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public LineIntegration putConversationsMessagingIntegrationsLineIntegrationId(PutConversationsMessagingIntegrationsLineIntegrationIdRequest request) throws IOException, ApiException {
     try {
@@ -19616,11 +19631,12 @@ public class ConversationsApi {
   }
 
   /**
-   * Update a LINE messenger integration
-   * 
+   * Update a LINE messenger integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<LineIntegration> putConversationsMessagingIntegrationsLineIntegrationId(ApiRequest<LineIntegrationRequest> request) throws IOException {
     try {

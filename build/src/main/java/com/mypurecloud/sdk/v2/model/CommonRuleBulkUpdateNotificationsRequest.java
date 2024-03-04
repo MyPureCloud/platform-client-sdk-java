@@ -26,6 +26,104 @@ public class CommonRuleBulkUpdateNotificationsRequest  implements Serializable {
   private List<String> ruleIds = new ArrayList<String>();
   private ModifiableRuleProperties properties = null;
 
+  private static class TypesToAddEnumDeserializer extends StdDeserializer<TypesToAddEnum> {
+    public TypesToAddEnumDeserializer() {
+      super(TypesToAddEnumDeserializer.class);
+    }
+
+    @Override
+    public TypesToAddEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TypesToAddEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets typesToAdd
+   */
+ @JsonDeserialize(using = TypesToAddEnumDeserializer.class)
+  public enum TypesToAddEnum {
+    SMS("Sms"),
+    DEVICE("Device"),
+    EMAIL("Email"),
+    PUSH("Push");
+
+    private String value;
+
+    TypesToAddEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TypesToAddEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TypesToAddEnum value : TypesToAddEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TypesToAddEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<TypesToAddEnum> typesToAdd = new ArrayList<TypesToAddEnum>();
+
+  private static class TypesToRemoveEnumDeserializer extends StdDeserializer<TypesToRemoveEnum> {
+    public TypesToRemoveEnumDeserializer() {
+      super(TypesToRemoveEnumDeserializer.class);
+    }
+
+    @Override
+    public TypesToRemoveEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TypesToRemoveEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets typesToRemove
+   */
+ @JsonDeserialize(using = TypesToRemoveEnumDeserializer.class)
+  public enum TypesToRemoveEnum {
+    SMS("Sms"),
+    DEVICE("Device"),
+    EMAIL("Email"),
+    PUSH("Push");
+
+    private String value;
+
+    TypesToRemoveEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TypesToRemoveEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TypesToRemoveEnum value : TypesToRemoveEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TypesToRemoveEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<TypesToRemoveEnum> typesToRemove = new ArrayList<TypesToRemoveEnum>();
+
   
   /**
    * The user supplied rules ids to be updated
@@ -53,13 +151,49 @@ public class CommonRuleBulkUpdateNotificationsRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The rule properties to be updated")
+  @ApiModelProperty(example = "null", value = "The rule properties to be updated")
   @JsonProperty("properties")
   public ModifiableRuleProperties getProperties() {
     return properties;
   }
   public void setProperties(ModifiableRuleProperties properties) {
     this.properties = properties;
+  }
+
+
+  /**
+   * Collection of alerting notification types to add for all entities in the rules
+   **/
+  public CommonRuleBulkUpdateNotificationsRequest typesToAdd(List<TypesToAddEnum> typesToAdd) {
+    this.typesToAdd = typesToAdd;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Collection of alerting notification types to add for all entities in the rules")
+  @JsonProperty("typesToAdd")
+  public List<TypesToAddEnum> getTypesToAdd() {
+    return typesToAdd;
+  }
+  public void setTypesToAdd(List<TypesToAddEnum> typesToAdd) {
+    this.typesToAdd = typesToAdd;
+  }
+
+
+  /**
+   * Collection of alerting notification types to remove for all entities in the rules
+   **/
+  public CommonRuleBulkUpdateNotificationsRequest typesToRemove(List<TypesToRemoveEnum> typesToRemove) {
+    this.typesToRemove = typesToRemove;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Collection of alerting notification types to remove for all entities in the rules")
+  @JsonProperty("typesToRemove")
+  public List<TypesToRemoveEnum> getTypesToRemove() {
+    return typesToRemove;
+  }
+  public void setTypesToRemove(List<TypesToRemoveEnum> typesToRemove) {
+    this.typesToRemove = typesToRemove;
   }
 
 
@@ -74,12 +208,14 @@ public class CommonRuleBulkUpdateNotificationsRequest  implements Serializable {
     CommonRuleBulkUpdateNotificationsRequest commonRuleBulkUpdateNotificationsRequest = (CommonRuleBulkUpdateNotificationsRequest) o;
 
     return Objects.equals(this.ruleIds, commonRuleBulkUpdateNotificationsRequest.ruleIds) &&
-            Objects.equals(this.properties, commonRuleBulkUpdateNotificationsRequest.properties);
+            Objects.equals(this.properties, commonRuleBulkUpdateNotificationsRequest.properties) &&
+            Objects.equals(this.typesToAdd, commonRuleBulkUpdateNotificationsRequest.typesToAdd) &&
+            Objects.equals(this.typesToRemove, commonRuleBulkUpdateNotificationsRequest.typesToRemove);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(ruleIds, properties);
+    return Objects.hash(ruleIds, properties, typesToAdd, typesToRemove);
   }
 
   @Override
@@ -89,6 +225,8 @@ public class CommonRuleBulkUpdateNotificationsRequest  implements Serializable {
     
     sb.append("    ruleIds: ").append(toIndentedString(ruleIds)).append("\n");
     sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
+    sb.append("    typesToAdd: ").append(toIndentedString(typesToAdd)).append("\n");
+    sb.append("    typesToRemove: ").append(toIndentedString(typesToRemove)).append("\n");
     sb.append("}");
     return sb.toString();
   }

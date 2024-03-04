@@ -1797,23 +1797,25 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Get status of the modeling job
-   * 
+   * To get status of the modeling job.
+   * This Endpoint is Deprecated, and not recommended to be used.
    * @param jobId The id of the modeling job (required)
    * @return ModelingStatusResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ModelingStatusResponse getWorkforcemanagementAdhocmodelingjob(String jobId) throws IOException, ApiException {
     return  getWorkforcemanagementAdhocmodelingjob(createGetWorkforcemanagementAdhocmodelingjobRequest(jobId));
   }
 
   /**
-   * Get status of the modeling job
-   * 
+   * To get status of the modeling job.
+   * This Endpoint is Deprecated, and not recommended to be used.
    * @param jobId The id of the modeling job (required)
    * @return ModelingStatusResponse
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ModelingStatusResponse> getWorkforcemanagementAdhocmodelingjobWithHttpInfo(String jobId) throws IOException {
     return getWorkforcemanagementAdhocmodelingjob(createGetWorkforcemanagementAdhocmodelingjobRequest(jobId).withHttpInfo());
@@ -1827,12 +1829,13 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Get status of the modeling job
-   * 
+   * To get status of the modeling job.
+   * This Endpoint is Deprecated, and not recommended to be used.
    * @param request The request object
    * @return ModelingStatusResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ModelingStatusResponse getWorkforcemanagementAdhocmodelingjob(GetWorkforcemanagementAdhocmodelingjobRequest request) throws IOException, ApiException {
     try {
@@ -1846,11 +1849,12 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Get status of the modeling job
-   * 
+   * To get status of the modeling job.
+   * This Endpoint is Deprecated, and not recommended to be used.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ModelingStatusResponse> getWorkforcemanagementAdhocmodelingjob(ApiRequest<Void> request) throws IOException {
     try {

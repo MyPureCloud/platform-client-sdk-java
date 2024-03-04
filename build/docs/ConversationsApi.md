@@ -15,7 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteConversationsMessagesCachedmediaCachedMediaItemId**](ConversationsApi.html#deleteConversationsMessagesCachedmediaCachedMediaItemId) | Remove a cached media item asychronously |
 | [**deleteConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsFacebookIntegrationId) | Delete a Facebook messaging integration |
 | [**deleteConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsInstagramIntegrationId) | Delete Instagram messaging integration |
-| [**deleteConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsLineIntegrationId) | Delete a LINE messenger integration |
+| [**deleteConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsLineIntegrationId) | Delete a LINE messenger integration (Deprecated) |
 | [**deleteConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsOpenIntegrationId) | Delete an Open messaging integration |
 | [**deleteConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsTwitterIntegrationId) | Delete a Twitter messaging integration |
 | [**deleteConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsWhatsappIntegrationId) | Delete a WhatsApp messaging integration |
@@ -87,8 +87,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsFacebookIntegrationId) | Get a Facebook messaging integration |
 | [**getConversationsMessagingIntegrationsInstagram**](ConversationsApi.html#getConversationsMessagingIntegrationsInstagram) | Get a list of Instagram Integrations |
 | [**getConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsInstagramIntegrationId) | Get Instagram messaging integration |
-| [**getConversationsMessagingIntegrationsLine**](ConversationsApi.html#getConversationsMessagingIntegrationsLine) | Get a list of LINE messenger Integrations |
-| [**getConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsLineIntegrationId) | Get a LINE messenger integration |
+| [**getConversationsMessagingIntegrationsLine**](ConversationsApi.html#getConversationsMessagingIntegrationsLine) | Get a list of LINE messenger Integrations (Deprecated) |
+| [**getConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsLineIntegrationId) | Get a LINE messenger integration (Deprecated) |
 | [**getConversationsMessagingIntegrationsOpen**](ConversationsApi.html#getConversationsMessagingIntegrationsOpen) | Get a list of Open messaging integrations |
 | [**getConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsOpenIntegrationId) | Get an Open messaging integration |
 | [**getConversationsMessagingIntegrationsTwitter**](ConversationsApi.html#getConversationsMessagingIntegrationsTwitter) | Get a list of Twitter Integrations |
@@ -240,7 +240,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putConversationsEmailRecordingstate**](ConversationsApi.html#putConversationsEmailRecordingstate) | Update a conversation by setting its recording state |
 | [**putConversationsKeyconfiguration**](ConversationsApi.html#putConversationsKeyconfiguration) | Update the encryption key configurations |
 | [**putConversationsMessageRecordingstate**](ConversationsApi.html#putConversationsMessageRecordingstate) | Update a conversation by setting its recording state |
-| [**putConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#putConversationsMessagingIntegrationsLineIntegrationId) | Update a LINE messenger integration |
+| [**putConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#putConversationsMessagingIntegrationsLineIntegrationId) | Update a LINE messenger integration (Deprecated) |
 | [**putConversationsMessagingSettingsDefault**](ConversationsApi.html#putConversationsMessagingSettingsDefault) | Set the organization's default setting that may be applied to to integrations without settings |
 | [**putConversationsMessagingSupportedcontentDefault**](ConversationsApi.html#putConversationsMessagingSupportedcontentDefault) | Set the organization's default supported content profile that may be assigned to an integration when it is created. |
 | [**putConversationsMessagingThreadingtimeline**](ConversationsApi.html#putConversationsMessagingThreadingtimeline) | Update conversation threading window timeline for each messaging type |
@@ -740,11 +740,13 @@ null (empty response body)
 
 # **deleteConversationsMessagingIntegrationsLineIntegrationId**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > Void deleteConversationsMessagingIntegrationsLineIntegrationId(integrationId)
 
-Delete a LINE messenger integration
+Delete a LINE messenger integration (Deprecated)
+
+This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
 
 Wraps DELETE /api/v2/conversations/messaging/integrations/line/{integrationId}  
 
@@ -5210,11 +5212,13 @@ try {
 
 # **getConversationsMessagingIntegrationsLine**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [LineIntegrationEntityListing](LineIntegrationEntityListing.html) getConversationsMessagingIntegrationsLine(pageSize, pageNumber, expand, supportedContentId, messagingSettingId)
 
-Get a list of LINE messenger Integrations
+Get a list of LINE messenger Integrations (Deprecated)
+
+This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
 
 Wraps GET /api/v2/conversations/messaging/integrations/line  
 
@@ -5279,11 +5283,13 @@ try {
 
 # **getConversationsMessagingIntegrationsLineIntegrationId**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [LineIntegration](LineIntegration.html) getConversationsMessagingIntegrationsLineIntegrationId(integrationId, expand)
 
-Get a LINE messenger integration
+Get a LINE messenger integration (Deprecated)
+
+This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
 
 Wraps GET /api/v2/conversations/messaging/integrations/line/{integrationId}  
 
@@ -14952,11 +14958,13 @@ try {
 
 # **putConversationsMessagingIntegrationsLineIntegrationId**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [LineIntegration](LineIntegration.html) putConversationsMessagingIntegrationsLineIntegrationId(integrationId, body)
 
-Update a LINE messenger integration
+Update a LINE messenger integration (Deprecated)
+
+This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
 
 Wraps PUT /api/v2/conversations/messaging/integrations/line/{integrationId}  
 

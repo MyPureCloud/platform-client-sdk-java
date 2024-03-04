@@ -181,6 +181,7 @@ title: ViewFilter
 | **assistantIds** | <!----><!---->**List&lt;String&gt;**<!----> | The assistant ids that are used to filter the view. |  [optional] |
 | **knowledgeBaseIds** | <!----><!---->**List&lt;String&gt;**<!----> | The knowledge base ids that are used to filter the view. |  [optional] |
 | **isParked** | <!----><!---->**Boolean**<!----> | Filter to indicate if the interactions are parked. |  [optional] |
+| **agentEmpathyScore** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The agentEmpathyScore is used to filter the view |  [optional] |
 {: class="table table-striped"}
 
 

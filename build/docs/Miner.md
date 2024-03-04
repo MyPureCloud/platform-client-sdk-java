@@ -18,8 +18,8 @@ title: Miner
 | **conversationsDateRangeEnd** | <!----><!---->[**LocalDate**](LocalDate.html)<!----> | Date till which the conversations need to be taken for mining. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
 | **dateCompleted** | <!----><!---->[**Date**](Date.html)<!----> | Date when the mining process was completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **message** | <!----><!---->**String**<!----> | Mining message if present. |  [optional] |
-| **errorInfo** | <!----><!---->[**ErrorInfo**](ErrorInfo.html)<!----> | Error Information |  [optional] |
-| **warningInfo** | <!----><!---->[**ErrorInfo**](ErrorInfo.html)<!----> | Warning Information |  [optional] |
+| **errorInfo** | <!----><!---->[**MinerErrorInfo**](MinerErrorInfo.html)<!----> | Error Information |  [optional] |
+| **warningInfo** | <!----><!---->[**MinerErrorInfo**](MinerErrorInfo.html)<!----> | Warning Information |  [optional] |
 | **conversationDataUploaded** | <!----><!---->**Boolean**<!----> | Flag to indicate whether data file to be mined was uploaded. |  [optional] |
 | **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> | Media type for filtering conversations. |  [optional] |
 | **participantType** | [**ParticipantTypeEnum**](#ParticipantTypeEnum)<!----> | Type of the participant, either agent, customer or both. |  [optional] |

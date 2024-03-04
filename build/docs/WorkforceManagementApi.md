@@ -25,7 +25,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementAdherenceExplanationsJob**](WorkforceManagementApi.html#getWorkforcemanagementAdherenceExplanationsJob) | Query the status of an adherence explanation operation. Only the user who started the operation can query the status |
 | [**getWorkforcemanagementAdherenceHistoricalBulkJob**](WorkforceManagementApi.html#getWorkforcemanagementAdherenceHistoricalBulkJob) | Request to fetch the status of the historical adherence bulk job. Only the user who started the operation can query the status |
 | [**getWorkforcemanagementAdherenceHistoricalJob**](WorkforceManagementApi.html#getWorkforcemanagementAdherenceHistoricalJob) | Query the status of a historical adherence request operation. Only the user who started the operation can query the status |
-| [**getWorkforcemanagementAdhocmodelingjob**](WorkforceManagementApi.html#getWorkforcemanagementAdhocmodelingjob) | Get status of the modeling job |
+| [**getWorkforcemanagementAdhocmodelingjob**](WorkforceManagementApi.html#getWorkforcemanagementAdhocmodelingjob) | To get status of the modeling job. |
 | [**getWorkforcemanagementAgentAdherenceExplanation**](WorkforceManagementApi.html#getWorkforcemanagementAgentAdherenceExplanation) | Get an adherence explanation |
 | [**getWorkforcemanagementAgentManagementunit**](WorkforceManagementApi.html#getWorkforcemanagementAgentManagementunit) | Get the management unit to which the agent belongs |
 | [**getWorkforcemanagementAgentsMeManagementunit**](WorkforceManagementApi.html#getWorkforcemanagementAgentsMeManagementunit) | Get the management unit to which the currently logged in agent belongs |
@@ -1303,11 +1303,13 @@ try {
 
 # **getWorkforcemanagementAdhocmodelingjob**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [ModelingStatusResponse](ModelingStatusResponse.html) getWorkforcemanagementAdhocmodelingjob(jobId)
 
-Get status of the modeling job
+To get status of the modeling job.
+
+This Endpoint is Deprecated, and not recommended to be used.
 
 Wraps GET /api/v2/workforcemanagement/adhocmodelingjobs/{jobId}  
 

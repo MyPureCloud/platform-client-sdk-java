@@ -174,6 +174,7 @@ public class ConversationAggregationQuery  implements Serializable {
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
     NBLINDTRANSFERRED("nBlindTransferred"),
+    NBOTINTERACTIONS("nBotInteractions"),
     NCOBROWSESESSIONS("nCobrowseSessions"),
     NCONNECTED("nConnected"),
     NCONSULT("nConsult"),

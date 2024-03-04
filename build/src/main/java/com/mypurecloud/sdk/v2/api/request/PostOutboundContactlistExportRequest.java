@@ -53,6 +53,7 @@ import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListTemplate;
 import com.mypurecloud.sdk.v2.model.ContactListTemplateBulkRetrieveBody;
 import com.mypurecloud.sdk.v2.model.ContactListTemplateEntityListing;
+import com.mypurecloud.sdk.v2.model.ContactsExportRequest;
 import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
 import com.mypurecloud.sdk.v2.model.DialerContact;
 import com.mypurecloud.sdk.v2.model.DialerEventEntityListing;
@@ -111,6 +112,20 @@ public class PostOutboundContactlistExportRequest {
 	    return this;
 	} 
 
+	private ContactsExportRequest body;
+	public ContactsExportRequest getBody() {
+		return this.body;
+	}
+
+	public void setBody(ContactsExportRequest body) {
+		this.body = body;
+	}
+
+	public PostOutboundContactlistExportRequest withBody(ContactsExportRequest body) {
+	    this.setBody(body);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -130,7 +145,7 @@ public class PostOutboundContactlistExportRequest {
         return this;
     }
 
-    public ApiRequest<Void> withHttpInfo() {
+    public ApiRequest<ContactsExportRequest> withHttpInfo() {
         
         // verify the required parameter 'contactListId' is set
         if (this.contactListId == null) {
@@ -141,6 +156,8 @@ public class PostOutboundContactlistExportRequest {
         return ApiRequestBuilder.create("POST", "/api/v2/outbound/contactlists/{contactListId}/export")
                 .withPathParameter("contactListId", contactListId)
         
+                .withBody(body)
+
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -169,6 +186,11 @@ public class PostOutboundContactlistExportRequest {
 
 		public Builder withContactListId(String contactListId) {
 			request.setContactListId(contactListId);
+			return this;
+		}
+
+		public Builder withBody(ContactsExportRequest body) {
+			request.setBody(body);
 			return this;
 		}
 

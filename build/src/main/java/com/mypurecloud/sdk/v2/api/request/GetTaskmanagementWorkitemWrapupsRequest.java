@@ -39,6 +39,7 @@ import com.mypurecloud.sdk.v2.model.WorkitemPostQueryEntityListing;
 import com.mypurecloud.sdk.v2.model.WorkitemQueryPostRequest;
 import com.mypurecloud.sdk.v2.model.WorkitemStatus;
 import com.mypurecloud.sdk.v2.model.WorkitemStatusCreate;
+import com.mypurecloud.sdk.v2.model.WorkitemStatusListing;
 import com.mypurecloud.sdk.v2.model.WorkitemStatusUpdate;
 import com.mypurecloud.sdk.v2.model.WorkitemTerminate;
 import com.mypurecloud.sdk.v2.model.WorkitemUpdate;

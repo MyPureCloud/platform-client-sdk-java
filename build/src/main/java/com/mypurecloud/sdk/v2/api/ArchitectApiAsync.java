@@ -32,7 +32,9 @@ import com.mypurecloud.sdk.v2.model.EmergencyGroup;
 import com.mypurecloud.sdk.v2.model.EmergencyGroupDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.EmergencyGroupListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ExecutionDataFlowSettingsResponse;
 import com.mypurecloud.sdk.v2.model.ExecutionDataRequest;
+import com.mypurecloud.sdk.v2.model.ExecutionDataSettingsRequest;
 import com.mypurecloud.sdk.v2.model.Flow;
 import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowEntityListing;
@@ -41,6 +43,8 @@ import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchResponse;
 import com.mypurecloud.sdk.v2.model.FlowHealth;
 import com.mypurecloud.sdk.v2.model.FlowHealthIntent;
 import com.mypurecloud.sdk.v2.model.FlowHealthUtterance;
+import com.mypurecloud.sdk.v2.model.FlowLogLevelCharacteristicsDefinitions;
+import com.mypurecloud.sdk.v2.model.FlowLogLevelRequest;
 import com.mypurecloud.sdk.v2.model.FlowMilestone;
 import com.mypurecloud.sdk.v2.model.FlowMilestoneDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowMilestoneListing;
@@ -49,6 +53,8 @@ import com.mypurecloud.sdk.v2.model.FlowOutcomeDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowOutcomeListing;
 import com.mypurecloud.sdk.v2.model.FlowResultEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowRuntimeExecution;
+import com.mypurecloud.sdk.v2.model.FlowSettingsResponse;
+import com.mypurecloud.sdk.v2.model.FlowSettingsResponseEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowVersion;
 import com.mypurecloud.sdk.v2.model.FlowVersionEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowsQueryCriteriaResponse;
@@ -96,9 +102,11 @@ import com.mypurecloud.sdk.v2.api.request.DeleteArchitectScheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectSchedulegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectSystempromptResourceRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteFlowRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteFlowInstancesSettingsLoglevelsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteFlowsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteFlowsDatatableRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteFlowsDatatableRowRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteFlowsInstancesSettingsLoglevelsDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteFlowsMilestoneRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectDependencytrackingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectDependencytrackingBuildRequest;
@@ -136,6 +144,7 @@ import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptResourcesReque
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowHistoryHistoryIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowInstancesSettingsLoglevelsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowLatestconfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowVersionConfigurationRequest;
@@ -158,6 +167,10 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsExecutionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsInstanceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsInstancesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsInstancesQuerycapabilitiesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsInstancesSettingsExecutiondataRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsInstancesSettingsLoglevelsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsInstancesSettingsLoglevelsCharacteristicsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsInstancesSettingsLoglevelsDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestoneRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestonesRequest;
@@ -167,6 +180,7 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomesDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchArchitectGrammarRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchArchitectGrammarLanguageRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchFlowsInstancesSettingsExecutiondataRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectDependencytrackingBuildRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectEmergencygroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectGrammarLanguageFilesDtmfRequest;
@@ -182,6 +196,7 @@ import com.mypurecloud.sdk.v2.api.request.PostArchitectSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectSystempromptHistoryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectSystempromptResourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowHistoryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostFlowInstancesSettingsLoglevelsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsCheckinRequest;
@@ -208,8 +223,10 @@ import com.mypurecloud.sdk.v2.api.request.PutArchitectScheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectSchedulegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectSystempromptResourceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutFlowRequest;
+import com.mypurecloud.sdk.v2.api.request.PutFlowInstancesSettingsLoglevelsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutFlowsDatatableRequest;
 import com.mypurecloud.sdk.v2.api.request.PutFlowsDatatableRowRequest;
+import com.mypurecloud.sdk.v2.api.request.PutFlowsInstancesSettingsLoglevelsDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.PutFlowsMilestoneRequest;
 import com.mypurecloud.sdk.v2.api.request.PutFlowsOutcomeRequest;
 
@@ -1290,6 +1307,83 @@ public class ArchitectApiAsync {
   }
 
   /**
+   * Deletes a log level for a flow by flow id.
+   * Deletes the associated log level for a flow by flow id
+   * deleteFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteFlowInstancesSettingsLoglevelsAsync(DeleteFlowInstancesSettingsLoglevelsRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Deletes a log level for a flow by flow id.
+   * Deletes the associated log level for a flow by flow id
+   * deleteFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteFlowInstancesSettingsLoglevelsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Batch-delete a list of flows
    * Multiple IDs can be specified, in which case all specified flows will be deleted.  Asynchronous.  Notification topic: v2.flows.{flowId}
    * @param request the request object
@@ -1481,6 +1575,83 @@ public class ArchitectApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteFlowsDatatableRowAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Resets the org log level to default, base
+   * Resets the org log level to default, base
+   * deleteFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteFlowsInstancesSettingsLoglevelsDefaultAsync(DeleteFlowsInstancesSettingsLoglevelsDefaultRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Resets the org log level to default, base
+   * Resets the org log level to default, base
+   * deleteFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteFlowsInstancesSettingsLoglevelsDefaultAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -4296,6 +4467,83 @@ public class ArchitectApiAsync {
   }
 
   /**
+   * Retrieves the log level for a flow by flow id.
+   * Retrieves the log level for a flow by flow id.
+   * getFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FlowSettingsResponse> getFlowInstancesSettingsLoglevelsAsync(GetFlowInstancesSettingsLoglevelsRequest request, final AsyncApiCallback<FlowSettingsResponse> callback) {
+    try {
+      final SettableFuture<FlowSettingsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FlowSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<FlowSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowSettingsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieves the log level for a flow by flow id.
+   * Retrieves the log level for a flow by flow id.
+   * getFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FlowSettingsResponse>> getFlowInstancesSettingsLoglevelsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FlowSettingsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FlowSettingsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FlowSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<FlowSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowSettingsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowSettingsResponse> response = (ApiResponse<FlowSettingsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowSettingsResponse> response = (ApiResponse<FlowSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get the latest configuration for flow
    * 
    * @param request the request object
@@ -5723,7 +5971,6 @@ public class ArchitectApiAsync {
   /**
    * Start a process (job) to prepare a download of a singular flow execution data instance by Id
    * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
-   * getFlowsInstance is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5758,7 +6005,6 @@ public class ArchitectApiAsync {
   /**
    * Start a process (job) to prepare a download of a singular flow execution data instance by Id
    * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
-   * getFlowsInstance is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5800,7 +6046,6 @@ public class ArchitectApiAsync {
   /**
    * Get the status and/or results of an asynchronous flow execution data retrieval job
    * 
-   * getFlowsInstancesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5835,7 +6080,6 @@ public class ArchitectApiAsync {
   /**
    * Get the status and/or results of an asynchronous flow execution data retrieval job
    * 
-   * getFlowsInstancesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5877,7 +6121,6 @@ public class ArchitectApiAsync {
   /**
    * Retrieve a list of capabilities that the org can use to query for execution data
    * Returns the queryable parameters that can be used to build a query for execution data.
-   * getFlowsInstancesQuerycapabilities is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5912,7 +6155,6 @@ public class ArchitectApiAsync {
   /**
    * Retrieve a list of capabilities that the org can use to query for execution data
    * Returns the queryable parameters that can be used to build a query for execution data.
-   * getFlowsInstancesQuerycapabilities is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5940,6 +6182,314 @@ public class ArchitectApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<FlowsQueryCriteriaResponse> response = (ApiResponse<FlowsQueryCriteriaResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the execution history enabled setting.
+   * Get the execution history enabled setting.
+   * getFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ExecutionDataFlowSettingsResponse> getFlowsInstancesSettingsExecutiondataAsync(GetFlowsInstancesSettingsExecutiondataRequest request, final AsyncApiCallback<ExecutionDataFlowSettingsResponse> callback) {
+    try {
+      final SettableFuture<ExecutionDataFlowSettingsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExecutionDataFlowSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<ExecutionDataFlowSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExecutionDataFlowSettingsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the execution history enabled setting.
+   * Get the execution history enabled setting.
+   * getFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ExecutionDataFlowSettingsResponse>> getFlowsInstancesSettingsExecutiondataAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ExecutionDataFlowSettingsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ExecutionDataFlowSettingsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExecutionDataFlowSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<ExecutionDataFlowSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExecutionDataFlowSettingsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExecutionDataFlowSettingsResponse> response = (ApiResponse<ExecutionDataFlowSettingsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExecutionDataFlowSettingsResponse> response = (ApiResponse<ExecutionDataFlowSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve a list of LogLevels for the organization.
+   * Returns a paged set of LogLevels per flow id
+   * getFlowsInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FlowSettingsResponseEntityListing> getFlowsInstancesSettingsLoglevelsAsync(GetFlowsInstancesSettingsLoglevelsRequest request, final AsyncApiCallback<FlowSettingsResponseEntityListing> callback) {
+    try {
+      final SettableFuture<FlowSettingsResponseEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FlowSettingsResponseEntityListing>() {}, new AsyncApiCallback<ApiResponse<FlowSettingsResponseEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowSettingsResponseEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve a list of LogLevels for the organization.
+   * Returns a paged set of LogLevels per flow id
+   * getFlowsInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FlowSettingsResponseEntityListing>> getFlowsInstancesSettingsLoglevelsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FlowSettingsResponseEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FlowSettingsResponseEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FlowSettingsResponseEntityListing>() {}, new AsyncApiCallback<ApiResponse<FlowSettingsResponseEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowSettingsResponseEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowSettingsResponseEntityListing> response = (ApiResponse<FlowSettingsResponseEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowSettingsResponseEntityListing> response = (ApiResponse<FlowSettingsResponseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets the available flow log level characteristics for this organization.
+   * Log levels can be customized and this returns the set of available characteristics that can be enabled/disabled.
+   * getFlowsInstancesSettingsLoglevelsCharacteristics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FlowLogLevelCharacteristicsDefinitions> getFlowsInstancesSettingsLoglevelsCharacteristicsAsync(GetFlowsInstancesSettingsLoglevelsCharacteristicsRequest request, final AsyncApiCallback<FlowLogLevelCharacteristicsDefinitions> callback) {
+    try {
+      final SettableFuture<FlowLogLevelCharacteristicsDefinitions> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FlowLogLevelCharacteristicsDefinitions>() {}, new AsyncApiCallback<ApiResponse<FlowLogLevelCharacteristicsDefinitions>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowLogLevelCharacteristicsDefinitions> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets the available flow log level characteristics for this organization.
+   * Log levels can be customized and this returns the set of available characteristics that can be enabled/disabled.
+   * getFlowsInstancesSettingsLoglevelsCharacteristics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FlowLogLevelCharacteristicsDefinitions>> getFlowsInstancesSettingsLoglevelsCharacteristicsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FlowLogLevelCharacteristicsDefinitions>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FlowLogLevelCharacteristicsDefinitions>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FlowLogLevelCharacteristicsDefinitions>() {}, new AsyncApiCallback<ApiResponse<FlowLogLevelCharacteristicsDefinitions>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowLogLevelCharacteristicsDefinitions> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowLogLevelCharacteristicsDefinitions> response = (ApiResponse<FlowLogLevelCharacteristicsDefinitions>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowLogLevelCharacteristicsDefinitions> response = (ApiResponse<FlowLogLevelCharacteristicsDefinitions>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns the flow default log level.
+   * Returns the flow default log level which will be used if no specific flow id log level is found.
+   * getFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FlowSettingsResponse> getFlowsInstancesSettingsLoglevelsDefaultAsync(GetFlowsInstancesSettingsLoglevelsDefaultRequest request, final AsyncApiCallback<FlowSettingsResponse> callback) {
+    try {
+      final SettableFuture<FlowSettingsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FlowSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<FlowSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowSettingsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns the flow default log level.
+   * Returns the flow default log level which will be used if no specific flow id log level is found.
+   * getFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FlowSettingsResponse>> getFlowsInstancesSettingsLoglevelsDefaultAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FlowSettingsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FlowSettingsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FlowSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<FlowSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowSettingsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowSettingsResponse> response = (ApiResponse<FlowSettingsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowSettingsResponse> response = (ApiResponse<FlowSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -6619,6 +7169,83 @@ public class ArchitectApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<GrammarLanguage> response = (ApiResponse<GrammarLanguage>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Edit the execution history enabled setting.
+   * Edit the execution history enabled setting.
+   * patchFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ExecutionDataFlowSettingsResponse> patchFlowsInstancesSettingsExecutiondataAsync(PatchFlowsInstancesSettingsExecutiondataRequest request, final AsyncApiCallback<ExecutionDataFlowSettingsResponse> callback) {
+    try {
+      final SettableFuture<ExecutionDataFlowSettingsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExecutionDataFlowSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<ExecutionDataFlowSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExecutionDataFlowSettingsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Edit the execution history enabled setting.
+   * Edit the execution history enabled setting.
+   * patchFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ExecutionDataFlowSettingsResponse>> patchFlowsInstancesSettingsExecutiondataAsync(ApiRequest<ExecutionDataSettingsRequest> request, final AsyncApiCallback<ApiResponse<ExecutionDataFlowSettingsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ExecutionDataFlowSettingsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExecutionDataFlowSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<ExecutionDataFlowSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExecutionDataFlowSettingsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExecutionDataFlowSettingsResponse> response = (ApiResponse<ExecutionDataFlowSettingsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExecutionDataFlowSettingsResponse> response = (ApiResponse<ExecutionDataFlowSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -7764,6 +8391,83 @@ public class ArchitectApiAsync {
   }
 
   /**
+   * Set the logLevel for a particular flow id
+   * Assigns a new loglevel to a flow id
+   * postFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FlowSettingsResponse> postFlowInstancesSettingsLoglevelsAsync(PostFlowInstancesSettingsLoglevelsRequest request, final AsyncApiCallback<FlowSettingsResponse> callback) {
+    try {
+      final SettableFuture<FlowSettingsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FlowSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<FlowSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowSettingsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Set the logLevel for a particular flow id
+   * Assigns a new loglevel to a flow id
+   * postFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FlowSettingsResponse>> postFlowInstancesSettingsLoglevelsAsync(ApiRequest<FlowLogLevelRequest> request, final AsyncApiCallback<ApiResponse<FlowSettingsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FlowSettingsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FlowSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<FlowSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowSettingsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowSettingsResponse> response = (ApiResponse<FlowSettingsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowSettingsResponse> response = (ApiResponse<FlowSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Create flow version
    * 
    * @param request the request object
@@ -8741,7 +9445,6 @@ public class ArchitectApiAsync {
   /**
    * Start a process (job) that will prepare a list of execution data IDs for download.
    * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
-   * postFlowsInstancesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8776,7 +9479,6 @@ public class ArchitectApiAsync {
   /**
    * Start a process (job) that will prepare a list of execution data IDs for download.
    * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
-   * postFlowsInstancesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8818,7 +9520,6 @@ public class ArchitectApiAsync {
   /**
    * Query the database of existing flow histories to look for particular flow criteria
    * Returns a list of matching flow histories up to 200 max.
-   * postFlowsInstancesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8853,7 +9554,6 @@ public class ArchitectApiAsync {
   /**
    * Query the database of existing flow histories to look for particular flow criteria
    * Returns a list of matching flow histories up to 200 max.
-   * postFlowsInstancesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -9718,6 +10418,83 @@ public class ArchitectApiAsync {
   }
 
   /**
+   * Edit the logLevel for a particular flow id
+   * Updates the loglevel for a flow id
+   * putFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FlowSettingsResponse> putFlowInstancesSettingsLoglevelsAsync(PutFlowInstancesSettingsLoglevelsRequest request, final AsyncApiCallback<FlowSettingsResponse> callback) {
+    try {
+      final SettableFuture<FlowSettingsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FlowSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<FlowSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowSettingsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Edit the logLevel for a particular flow id
+   * Updates the loglevel for a flow id
+   * putFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FlowSettingsResponse>> putFlowInstancesSettingsLoglevelsAsync(ApiRequest<FlowLogLevelRequest> request, final AsyncApiCallback<ApiResponse<FlowSettingsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FlowSettingsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FlowSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<FlowSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowSettingsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowSettingsResponse> response = (ApiResponse<FlowSettingsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowSettingsResponse> response = (ApiResponse<FlowSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Updates a specific datatable by id
    * Updates a schema for a datatable with the given datatableId -updates allow only new fields to be added in the schema, no changes or removals of existing fields.
    * @param request the request object
@@ -9856,6 +10633,83 @@ public class ArchitectApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Map<String, Object>> response = (ApiResponse<Map<String, Object>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Edit the flow default log level.
+   * Edit the flow default log level.
+   * putFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FlowSettingsResponse> putFlowsInstancesSettingsLoglevelsDefaultAsync(PutFlowsInstancesSettingsLoglevelsDefaultRequest request, final AsyncApiCallback<FlowSettingsResponse> callback) {
+    try {
+      final SettableFuture<FlowSettingsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FlowSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<FlowSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowSettingsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Edit the flow default log level.
+   * Edit the flow default log level.
+   * putFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FlowSettingsResponse>> putFlowsInstancesSettingsLoglevelsDefaultAsync(ApiRequest<FlowLogLevelRequest> request, final AsyncApiCallback<ApiResponse<FlowSettingsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FlowSettingsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FlowSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<FlowSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowSettingsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowSettingsResponse> response = (ApiResponse<FlowSettingsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowSettingsResponse> response = (ApiResponse<FlowSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -1524,6 +1524,7 @@ public class ViewFilter  implements Serializable {
   private List<String> assistantIds = new ArrayList<String>();
   private List<String> knowledgeBaseIds = new ArrayList<String>();
   private Boolean isParked = null;
+  private NumericRange agentEmpathyScore = null;
 
   
   /**
@@ -4640,6 +4641,24 @@ public class ViewFilter  implements Serializable {
   }
 
 
+  /**
+   * The agentEmpathyScore is used to filter the view
+   **/
+  public ViewFilter agentEmpathyScore(NumericRange agentEmpathyScore) {
+    this.agentEmpathyScore = agentEmpathyScore;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The agentEmpathyScore is used to filter the view")
+  @JsonProperty("agentEmpathyScore")
+  public NumericRange getAgentEmpathyScore() {
+    return agentEmpathyScore;
+  }
+  public void setAgentEmpathyScore(NumericRange agentEmpathyScore) {
+    this.agentEmpathyScore = agentEmpathyScore;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -4822,12 +4841,13 @@ public class ViewFilter  implements Serializable {
             Objects.equals(this.evaluationAssigned, viewFilter.evaluationAssigned) &&
             Objects.equals(this.assistantIds, viewFilter.assistantIds) &&
             Objects.equals(this.knowledgeBaseIds, viewFilter.knowledgeBaseIds) &&
-            Objects.equals(this.isParked, viewFilter.isParked);
+            Objects.equals(this.isParked, viewFilter.isParked) &&
+            Objects.equals(this.agentEmpathyScore, viewFilter.agentEmpathyScore);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, managementUnitIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds, transcriptTopics, journeyFrequencyCapReasons, journeyBlockingActionMapIds, journeyActionTargetIds, journeyBlockingScheduleGroupIds, journeyBlockingEmergencyScheduleGroupIds, journeyUrlEqualConditions, journeyUrlNotEqualConditions, journeyUrlStartsWithConditions, journeyUrlEndsWithConditions, journeyUrlContainsAnyConditions, journeyUrlNotContainsAnyConditions, journeyUrlContainsAllConditions, journeyUrlNotContainsAllConditions, flowMilestoneIds, isAssessmentPassed, conversationInitiators, hasCustomerParticipated, isAcdInteraction, hasFax, dataActionIds, actionCategoryName, integrationIds, responseStatuses, availableDashboard, favouriteDashboard, myDashboard, stationErrors, canonicalContactIds, alertRuleIds, evaluationFormContextIds, evaluationStatuses, workbinIds, worktypeIds, workitemIds, workitemAssigneeIds, workitemStatuses, isAnalyzedForSensitiveData, hasSensitiveData, hasPciData, hasPiiData, subPath, userState, isClearedByCustomer, evaluationAssigneeIds, evaluationAssigned, assistantIds, knowledgeBaseIds, isParked);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, managementUnitIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds, transcriptTopics, journeyFrequencyCapReasons, journeyBlockingActionMapIds, journeyActionTargetIds, journeyBlockingScheduleGroupIds, journeyBlockingEmergencyScheduleGroupIds, journeyUrlEqualConditions, journeyUrlNotEqualConditions, journeyUrlStartsWithConditions, journeyUrlEndsWithConditions, journeyUrlContainsAnyConditions, journeyUrlNotContainsAnyConditions, journeyUrlContainsAllConditions, journeyUrlNotContainsAllConditions, flowMilestoneIds, isAssessmentPassed, conversationInitiators, hasCustomerParticipated, isAcdInteraction, hasFax, dataActionIds, actionCategoryName, integrationIds, responseStatuses, availableDashboard, favouriteDashboard, myDashboard, stationErrors, canonicalContactIds, alertRuleIds, evaluationFormContextIds, evaluationStatuses, workbinIds, worktypeIds, workitemIds, workitemAssigneeIds, workitemStatuses, isAnalyzedForSensitiveData, hasSensitiveData, hasPciData, hasPiiData, subPath, userState, isClearedByCustomer, evaluationAssigneeIds, evaluationAssigned, assistantIds, knowledgeBaseIds, isParked, agentEmpathyScore);
   }
 
   @Override
@@ -5008,6 +5028,7 @@ public class ViewFilter  implements Serializable {
     sb.append("    assistantIds: ").append(toIndentedString(assistantIds)).append("\n");
     sb.append("    knowledgeBaseIds: ").append(toIndentedString(knowledgeBaseIds)).append("\n");
     sb.append("    isParked: ").append(toIndentedString(isParked)).append("\n");
+    sb.append("    agentEmpathyScore: ").append(toIndentedString(agentEmpathyScore)).append("\n");
     sb.append("}");
     return sb.toString();
   }

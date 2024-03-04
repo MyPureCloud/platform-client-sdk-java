@@ -132,13 +132,14 @@ public class EvaluationForm  implements Serializable {
 
 
   /**
+   * A list of the published versions of this form. Not populated by default, its availability depends on the endpoint. Use the 'expand=publishHistory' query parameter to retrieve this data where applicable (refer to the endpoint description to see if it is applicable).
    **/
   public EvaluationForm publishedVersions(DomainEntityListingEvaluationForm publishedVersions) {
     this.publishedVersions = publishedVersions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A list of the published versions of this form. Not populated by default, its availability depends on the endpoint. Use the 'expand=publishHistory' query parameter to retrieve this data where applicable (refer to the endpoint description to see if it is applicable).")
   @JsonProperty("publishedVersions")
   public DomainEntityListingEvaluationForm getPublishedVersions() {
     return publishedVersions;

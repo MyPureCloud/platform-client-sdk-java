@@ -29,7 +29,9 @@ import com.mypurecloud.sdk.v2.model.EmergencyGroup;
 import com.mypurecloud.sdk.v2.model.EmergencyGroupDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.EmergencyGroupListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ExecutionDataFlowSettingsResponse;
 import com.mypurecloud.sdk.v2.model.ExecutionDataRequest;
+import com.mypurecloud.sdk.v2.model.ExecutionDataSettingsRequest;
 import com.mypurecloud.sdk.v2.model.Flow;
 import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowEntityListing;
@@ -38,6 +40,8 @@ import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchResponse;
 import com.mypurecloud.sdk.v2.model.FlowHealth;
 import com.mypurecloud.sdk.v2.model.FlowHealthIntent;
 import com.mypurecloud.sdk.v2.model.FlowHealthUtterance;
+import com.mypurecloud.sdk.v2.model.FlowLogLevelCharacteristicsDefinitions;
+import com.mypurecloud.sdk.v2.model.FlowLogLevelRequest;
 import com.mypurecloud.sdk.v2.model.FlowMilestone;
 import com.mypurecloud.sdk.v2.model.FlowMilestoneDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowMilestoneListing;
@@ -46,6 +50,8 @@ import com.mypurecloud.sdk.v2.model.FlowOutcomeDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowOutcomeListing;
 import com.mypurecloud.sdk.v2.model.FlowResultEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowRuntimeExecution;
+import com.mypurecloud.sdk.v2.model.FlowSettingsResponse;
+import com.mypurecloud.sdk.v2.model.FlowSettingsResponseEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowVersion;
 import com.mypurecloud.sdk.v2.model.FlowVersionEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowsQueryCriteriaResponse;
@@ -93,9 +99,11 @@ import com.mypurecloud.sdk.v2.api.request.DeleteArchitectScheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectSchedulegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectSystempromptResourceRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteFlowRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteFlowInstancesSettingsLoglevelsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteFlowsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteFlowsDatatableRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteFlowsDatatableRowRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteFlowsInstancesSettingsLoglevelsDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteFlowsMilestoneRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectDependencytrackingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectDependencytrackingBuildRequest;
@@ -133,6 +141,7 @@ import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptResourcesReque
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowHistoryHistoryIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowInstancesSettingsLoglevelsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowLatestconfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowVersionConfigurationRequest;
@@ -155,6 +164,10 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsExecutionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsInstanceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsInstancesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsInstancesQuerycapabilitiesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsInstancesSettingsExecutiondataRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsInstancesSettingsLoglevelsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsInstancesSettingsLoglevelsCharacteristicsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsInstancesSettingsLoglevelsDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestoneRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestonesRequest;
@@ -164,6 +177,7 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomesDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchArchitectGrammarRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchArchitectGrammarLanguageRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchFlowsInstancesSettingsExecutiondataRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectDependencytrackingBuildRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectEmergencygroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectGrammarLanguageFilesDtmfRequest;
@@ -179,6 +193,7 @@ import com.mypurecloud.sdk.v2.api.request.PostArchitectSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectSystempromptHistoryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectSystempromptResourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowHistoryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostFlowInstancesSettingsLoglevelsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsCheckinRequest;
@@ -205,8 +220,10 @@ import com.mypurecloud.sdk.v2.api.request.PutArchitectScheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectSchedulegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectSystempromptResourceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutFlowRequest;
+import com.mypurecloud.sdk.v2.api.request.PutFlowInstancesSettingsLoglevelsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutFlowsDatatableRequest;
 import com.mypurecloud.sdk.v2.api.request.PutFlowsDatatableRowRequest;
+import com.mypurecloud.sdk.v2.api.request.PutFlowsInstancesSettingsLoglevelsDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.PutFlowsMilestoneRequest;
 import com.mypurecloud.sdk.v2.api.request.PutFlowsOutcomeRequest;
 
@@ -1328,6 +1345,85 @@ public class ArchitectApi {
   }
 
   /**
+   * Deletes a log level for a flow by flow id.
+   * Deletes the associated log level for a flow by flow id
+   * deleteFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param flowId The flow id to delete the loglevel for (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteFlowInstancesSettingsLoglevels(String flowId) throws IOException, ApiException {
+     deleteFlowInstancesSettingsLoglevels(createDeleteFlowInstancesSettingsLoglevelsRequest(flowId));
+  }
+
+  /**
+   * Deletes a log level for a flow by flow id.
+   * Deletes the associated log level for a flow by flow id
+   * deleteFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param flowId The flow id to delete the loglevel for (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteFlowInstancesSettingsLoglevelsWithHttpInfo(String flowId) throws IOException {
+    return deleteFlowInstancesSettingsLoglevels(createDeleteFlowInstancesSettingsLoglevelsRequest(flowId).withHttpInfo());
+  }
+
+  private DeleteFlowInstancesSettingsLoglevelsRequest createDeleteFlowInstancesSettingsLoglevelsRequest(String flowId) {
+    return DeleteFlowInstancesSettingsLoglevelsRequest.builder()
+            .withFlowId(flowId)
+
+            .build();
+  }
+
+  /**
+   * Deletes a log level for a flow by flow id.
+   * Deletes the associated log level for a flow by flow id
+   * deleteFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteFlowInstancesSettingsLoglevels(DeleteFlowInstancesSettingsLoglevelsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Deletes a log level for a flow by flow id.
+   * Deletes the associated log level for a flow by flow id
+   * deleteFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteFlowInstancesSettingsLoglevels(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Batch-delete a list of flows
    * Multiple IDs can be specified, in which case all specified flows will be deleted.  Asynchronous.  Notification topic: v2.flows.{flowId}
    * @param id List of Flow IDs (required)
@@ -1542,6 +1638,81 @@ public class ArchitectApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteFlowsDatatableRow(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Resets the org log level to default, base
+   * Resets the org log level to default, base
+   * deleteFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteFlowsInstancesSettingsLoglevelsDefault() throws IOException, ApiException {
+     deleteFlowsInstancesSettingsLoglevelsDefault(createDeleteFlowsInstancesSettingsLoglevelsDefaultRequest());
+  }
+
+  /**
+   * Resets the org log level to default, base
+   * Resets the org log level to default, base
+   * deleteFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteFlowsInstancesSettingsLoglevelsDefaultWithHttpInfo() throws IOException {
+    return deleteFlowsInstancesSettingsLoglevelsDefault(createDeleteFlowsInstancesSettingsLoglevelsDefaultRequest().withHttpInfo());
+  }
+
+  private DeleteFlowsInstancesSettingsLoglevelsDefaultRequest createDeleteFlowsInstancesSettingsLoglevelsDefaultRequest() {
+    return DeleteFlowsInstancesSettingsLoglevelsDefaultRequest.builder()
+            .build();
+  }
+
+  /**
+   * Resets the org log level to default, base
+   * Resets the org log level to default, base
+   * deleteFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteFlowsInstancesSettingsLoglevelsDefault(DeleteFlowsInstancesSettingsLoglevelsDefaultRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Resets the org log level to default, base
+   * Resets the org log level to default, base
+   * deleteFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteFlowsInstancesSettingsLoglevelsDefault(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -5030,6 +5201,92 @@ public class ArchitectApi {
   }
 
   /**
+   * Retrieves the log level for a flow by flow id.
+   * Retrieves the log level for a flow by flow id.
+   * getFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param flowId The flow id to get the loglevel for (required)
+   * @param expand Expand instructions for the result (optional)
+   * @return FlowSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowSettingsResponse getFlowInstancesSettingsLoglevels(String flowId, List<String> expand) throws IOException, ApiException {
+    return  getFlowInstancesSettingsLoglevels(createGetFlowInstancesSettingsLoglevelsRequest(flowId, expand));
+  }
+
+  /**
+   * Retrieves the log level for a flow by flow id.
+   * Retrieves the log level for a flow by flow id.
+   * getFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param flowId The flow id to get the loglevel for (required)
+   * @param expand Expand instructions for the result (optional)
+   * @return FlowSettingsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowSettingsResponse> getFlowInstancesSettingsLoglevelsWithHttpInfo(String flowId, List<String> expand) throws IOException {
+    return getFlowInstancesSettingsLoglevels(createGetFlowInstancesSettingsLoglevelsRequest(flowId, expand).withHttpInfo());
+  }
+
+  private GetFlowInstancesSettingsLoglevelsRequest createGetFlowInstancesSettingsLoglevelsRequest(String flowId, List<String> expand) {
+    return GetFlowInstancesSettingsLoglevelsRequest.builder()
+            .withFlowId(flowId)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Retrieves the log level for a flow by flow id.
+   * Retrieves the log level for a flow by flow id.
+   * getFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return FlowSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowSettingsResponse getFlowInstancesSettingsLoglevels(GetFlowInstancesSettingsLoglevelsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowSettingsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowSettingsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieves the log level for a flow by flow id.
+   * Retrieves the log level for a flow by flow id.
+   * getFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowSettingsResponse> getFlowInstancesSettingsLoglevels(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowSettingsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowSettingsResponse> response = (ApiResponse<FlowSettingsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowSettingsResponse> response = (ApiResponse<FlowSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get the latest configuration for flow
    * 
    * @param flowId Flow ID (required)
@@ -6794,7 +7051,6 @@ public class ArchitectApi {
   /**
    * Start a process (job) to prepare a download of a singular flow execution data instance by Id
    * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
-   * getFlowsInstance is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param instanceId Instance ID (required)
    * @param expand Expand various details. (optional)
    * @return GetFlowExecutionDataJobResult
@@ -6808,7 +7064,6 @@ public class ArchitectApi {
   /**
    * Start a process (job) to prepare a download of a singular flow execution data instance by Id
    * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
-   * getFlowsInstance is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param instanceId Instance ID (required)
    * @param expand Expand various details. (optional)
    * @return GetFlowExecutionDataJobResult
@@ -6830,7 +7085,6 @@ public class ArchitectApi {
   /**
    * Start a process (job) to prepare a download of a singular flow execution data instance by Id
    * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
-   * getFlowsInstance is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return GetFlowExecutionDataJobResult
    * @throws ApiException if the request fails on the server
@@ -6850,7 +7104,6 @@ public class ArchitectApi {
   /**
    * Start a process (job) to prepare a download of a singular flow execution data instance by Id
    * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
-   * getFlowsInstance is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6880,7 +7133,6 @@ public class ArchitectApi {
   /**
    * Get the status and/or results of an asynchronous flow execution data retrieval job
    * 
-   * getFlowsInstancesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId The asynchronous job ID (required)
    * @return GetFlowExecutionDataJobResult
    * @throws ApiException if the request fails on the server
@@ -6893,7 +7145,6 @@ public class ArchitectApi {
   /**
    * Get the status and/or results of an asynchronous flow execution data retrieval job
    * 
-   * getFlowsInstancesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId The asynchronous job ID (required)
    * @return GetFlowExecutionDataJobResult
    * @throws IOException if the request fails to be processed
@@ -6912,7 +7163,6 @@ public class ArchitectApi {
   /**
    * Get the status and/or results of an asynchronous flow execution data retrieval job
    * 
-   * getFlowsInstancesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return GetFlowExecutionDataJobResult
    * @throws ApiException if the request fails on the server
@@ -6932,7 +7182,6 @@ public class ArchitectApi {
   /**
    * Get the status and/or results of an asynchronous flow execution data retrieval job
    * 
-   * getFlowsInstancesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6962,7 +7211,6 @@ public class ArchitectApi {
   /**
    * Retrieve a list of capabilities that the org can use to query for execution data
    * Returns the queryable parameters that can be used to build a query for execution data.
-   * getFlowsInstancesQuerycapabilities is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param expand Expand various query types. (optional)
    * @return FlowsQueryCriteriaResponse
    * @throws ApiException if the request fails on the server
@@ -6975,7 +7223,6 @@ public class ArchitectApi {
   /**
    * Retrieve a list of capabilities that the org can use to query for execution data
    * Returns the queryable parameters that can be used to build a query for execution data.
-   * getFlowsInstancesQuerycapabilities is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param expand Expand various query types. (optional)
    * @return FlowsQueryCriteriaResponse
    * @throws IOException if the request fails to be processed
@@ -6994,7 +7241,6 @@ public class ArchitectApi {
   /**
    * Retrieve a list of capabilities that the org can use to query for execution data
    * Returns the queryable parameters that can be used to build a query for execution data.
-   * getFlowsInstancesQuerycapabilities is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FlowsQueryCriteriaResponse
    * @throws ApiException if the request fails on the server
@@ -7014,7 +7260,6 @@ public class ArchitectApi {
   /**
    * Retrieve a list of capabilities that the org can use to query for execution data
    * Returns the queryable parameters that can be used to build a query for execution data.
-   * getFlowsInstancesQuerycapabilities is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -7037,6 +7282,334 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<FlowsQueryCriteriaResponse> response = (ApiResponse<FlowsQueryCriteriaResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the execution history enabled setting.
+   * Get the execution history enabled setting.
+   * getFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return ExecutionDataFlowSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExecutionDataFlowSettingsResponse getFlowsInstancesSettingsExecutiondata() throws IOException, ApiException {
+    return  getFlowsInstancesSettingsExecutiondata(createGetFlowsInstancesSettingsExecutiondataRequest());
+  }
+
+  /**
+   * Get the execution history enabled setting.
+   * Get the execution history enabled setting.
+   * getFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return ExecutionDataFlowSettingsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExecutionDataFlowSettingsResponse> getFlowsInstancesSettingsExecutiondataWithHttpInfo() throws IOException {
+    return getFlowsInstancesSettingsExecutiondata(createGetFlowsInstancesSettingsExecutiondataRequest().withHttpInfo());
+  }
+
+  private GetFlowsInstancesSettingsExecutiondataRequest createGetFlowsInstancesSettingsExecutiondataRequest() {
+    return GetFlowsInstancesSettingsExecutiondataRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get the execution history enabled setting.
+   * Get the execution history enabled setting.
+   * getFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ExecutionDataFlowSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExecutionDataFlowSettingsResponse getFlowsInstancesSettingsExecutiondata(GetFlowsInstancesSettingsExecutiondataRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExecutionDataFlowSettingsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExecutionDataFlowSettingsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the execution history enabled setting.
+   * Get the execution history enabled setting.
+   * getFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExecutionDataFlowSettingsResponse> getFlowsInstancesSettingsExecutiondata(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExecutionDataFlowSettingsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExecutionDataFlowSettingsResponse> response = (ApiResponse<ExecutionDataFlowSettingsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExecutionDataFlowSettingsResponse> response = (ApiResponse<ExecutionDataFlowSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Retrieve a list of LogLevels for the organization.
+   * Returns a paged set of LogLevels per flow id
+   * getFlowsInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param expand Expand instructions for the result (optional)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional, default to 25)
+   * @return FlowSettingsResponseEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowSettingsResponseEntityListing getFlowsInstancesSettingsLoglevels(List<String> expand, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
+    return  getFlowsInstancesSettingsLoglevels(createGetFlowsInstancesSettingsLoglevelsRequest(expand, pageNumber, pageSize));
+  }
+
+  /**
+   * Retrieve a list of LogLevels for the organization.
+   * Returns a paged set of LogLevels per flow id
+   * getFlowsInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param expand Expand instructions for the result (optional)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional, default to 25)
+   * @return FlowSettingsResponseEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowSettingsResponseEntityListing> getFlowsInstancesSettingsLoglevelsWithHttpInfo(List<String> expand, Integer pageNumber, Integer pageSize) throws IOException {
+    return getFlowsInstancesSettingsLoglevels(createGetFlowsInstancesSettingsLoglevelsRequest(expand, pageNumber, pageSize).withHttpInfo());
+  }
+
+  private GetFlowsInstancesSettingsLoglevelsRequest createGetFlowsInstancesSettingsLoglevelsRequest(List<String> expand, Integer pageNumber, Integer pageSize) {
+    return GetFlowsInstancesSettingsLoglevelsRequest.builder()
+            .withExpand(expand)
+
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * Retrieve a list of LogLevels for the organization.
+   * Returns a paged set of LogLevels per flow id
+   * getFlowsInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return FlowSettingsResponseEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowSettingsResponseEntityListing getFlowsInstancesSettingsLoglevels(GetFlowsInstancesSettingsLoglevelsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowSettingsResponseEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowSettingsResponseEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve a list of LogLevels for the organization.
+   * Returns a paged set of LogLevels per flow id
+   * getFlowsInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowSettingsResponseEntityListing> getFlowsInstancesSettingsLoglevels(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowSettingsResponseEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowSettingsResponseEntityListing> response = (ApiResponse<FlowSettingsResponseEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowSettingsResponseEntityListing> response = (ApiResponse<FlowSettingsResponseEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Gets the available flow log level characteristics for this organization.
+   * Log levels can be customized and this returns the set of available characteristics that can be enabled/disabled.
+   * getFlowsInstancesSettingsLoglevelsCharacteristics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return FlowLogLevelCharacteristicsDefinitions
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowLogLevelCharacteristicsDefinitions getFlowsInstancesSettingsLoglevelsCharacteristics() throws IOException, ApiException {
+    return  getFlowsInstancesSettingsLoglevelsCharacteristics(createGetFlowsInstancesSettingsLoglevelsCharacteristicsRequest());
+  }
+
+  /**
+   * Gets the available flow log level characteristics for this organization.
+   * Log levels can be customized and this returns the set of available characteristics that can be enabled/disabled.
+   * getFlowsInstancesSettingsLoglevelsCharacteristics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return FlowLogLevelCharacteristicsDefinitions
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowLogLevelCharacteristicsDefinitions> getFlowsInstancesSettingsLoglevelsCharacteristicsWithHttpInfo() throws IOException {
+    return getFlowsInstancesSettingsLoglevelsCharacteristics(createGetFlowsInstancesSettingsLoglevelsCharacteristicsRequest().withHttpInfo());
+  }
+
+  private GetFlowsInstancesSettingsLoglevelsCharacteristicsRequest createGetFlowsInstancesSettingsLoglevelsCharacteristicsRequest() {
+    return GetFlowsInstancesSettingsLoglevelsCharacteristicsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Gets the available flow log level characteristics for this organization.
+   * Log levels can be customized and this returns the set of available characteristics that can be enabled/disabled.
+   * getFlowsInstancesSettingsLoglevelsCharacteristics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return FlowLogLevelCharacteristicsDefinitions
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowLogLevelCharacteristicsDefinitions getFlowsInstancesSettingsLoglevelsCharacteristics(GetFlowsInstancesSettingsLoglevelsCharacteristicsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowLogLevelCharacteristicsDefinitions> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowLogLevelCharacteristicsDefinitions>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets the available flow log level characteristics for this organization.
+   * Log levels can be customized and this returns the set of available characteristics that can be enabled/disabled.
+   * getFlowsInstancesSettingsLoglevelsCharacteristics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowLogLevelCharacteristicsDefinitions> getFlowsInstancesSettingsLoglevelsCharacteristics(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowLogLevelCharacteristicsDefinitions>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowLogLevelCharacteristicsDefinitions> response = (ApiResponse<FlowLogLevelCharacteristicsDefinitions>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowLogLevelCharacteristicsDefinitions> response = (ApiResponse<FlowLogLevelCharacteristicsDefinitions>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Returns the flow default log level.
+   * Returns the flow default log level which will be used if no specific flow id log level is found.
+   * getFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param expand Expand instructions for the result (optional)
+   * @return FlowSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowSettingsResponse getFlowsInstancesSettingsLoglevelsDefault(List<String> expand) throws IOException, ApiException {
+    return  getFlowsInstancesSettingsLoglevelsDefault(createGetFlowsInstancesSettingsLoglevelsDefaultRequest(expand));
+  }
+
+  /**
+   * Returns the flow default log level.
+   * Returns the flow default log level which will be used if no specific flow id log level is found.
+   * getFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param expand Expand instructions for the result (optional)
+   * @return FlowSettingsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowSettingsResponse> getFlowsInstancesSettingsLoglevelsDefaultWithHttpInfo(List<String> expand) throws IOException {
+    return getFlowsInstancesSettingsLoglevelsDefault(createGetFlowsInstancesSettingsLoglevelsDefaultRequest(expand).withHttpInfo());
+  }
+
+  private GetFlowsInstancesSettingsLoglevelsDefaultRequest createGetFlowsInstancesSettingsLoglevelsDefaultRequest(List<String> expand) {
+    return GetFlowsInstancesSettingsLoglevelsDefaultRequest.builder()
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Returns the flow default log level.
+   * Returns the flow default log level which will be used if no specific flow id log level is found.
+   * getFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return FlowSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowSettingsResponse getFlowsInstancesSettingsLoglevelsDefault(GetFlowsInstancesSettingsLoglevelsDefaultRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowSettingsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowSettingsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Returns the flow default log level.
+   * Returns the flow default log level which will be used if no specific flow id log level is found.
+   * getFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowSettingsResponse> getFlowsInstancesSettingsLoglevelsDefault(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowSettingsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowSettingsResponse> response = (ApiResponse<FlowSettingsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowSettingsResponse> response = (ApiResponse<FlowSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -7875,6 +8448,88 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<GrammarLanguage> response = (ApiResponse<GrammarLanguage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Edit the execution history enabled setting.
+   * Edit the execution history enabled setting.
+   * patchFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body New Execution Data Setting (required)
+   * @return ExecutionDataFlowSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExecutionDataFlowSettingsResponse patchFlowsInstancesSettingsExecutiondata(ExecutionDataSettingsRequest body) throws IOException, ApiException {
+    return  patchFlowsInstancesSettingsExecutiondata(createPatchFlowsInstancesSettingsExecutiondataRequest(body));
+  }
+
+  /**
+   * Edit the execution history enabled setting.
+   * Edit the execution history enabled setting.
+   * patchFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body New Execution Data Setting (required)
+   * @return ExecutionDataFlowSettingsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExecutionDataFlowSettingsResponse> patchFlowsInstancesSettingsExecutiondataWithHttpInfo(ExecutionDataSettingsRequest body) throws IOException {
+    return patchFlowsInstancesSettingsExecutiondata(createPatchFlowsInstancesSettingsExecutiondataRequest(body).withHttpInfo());
+  }
+
+  private PatchFlowsInstancesSettingsExecutiondataRequest createPatchFlowsInstancesSettingsExecutiondataRequest(ExecutionDataSettingsRequest body) {
+    return PatchFlowsInstancesSettingsExecutiondataRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Edit the execution history enabled setting.
+   * Edit the execution history enabled setting.
+   * patchFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ExecutionDataFlowSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExecutionDataFlowSettingsResponse patchFlowsInstancesSettingsExecutiondata(PatchFlowsInstancesSettingsExecutiondataRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExecutionDataFlowSettingsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExecutionDataFlowSettingsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Edit the execution history enabled setting.
+   * Edit the execution history enabled setting.
+   * patchFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExecutionDataFlowSettingsResponse> patchFlowsInstancesSettingsExecutiondata(ApiRequest<ExecutionDataSettingsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExecutionDataFlowSettingsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExecutionDataFlowSettingsResponse> response = (ApiResponse<ExecutionDataFlowSettingsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExecutionDataFlowSettingsResponse> response = (ApiResponse<ExecutionDataFlowSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -9087,6 +9742,96 @@ public class ArchitectApi {
   }
 
   /**
+   * Set the logLevel for a particular flow id
+   * Assigns a new loglevel to a flow id
+   * postFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param flowId The flow id to set the loglevel for (required)
+   * @param body New LogLevel settings (required)
+   * @param expand Expand instructions for the result (optional)
+   * @return FlowSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowSettingsResponse postFlowInstancesSettingsLoglevels(String flowId, FlowLogLevelRequest body, List<String> expand) throws IOException, ApiException {
+    return  postFlowInstancesSettingsLoglevels(createPostFlowInstancesSettingsLoglevelsRequest(flowId, body, expand));
+  }
+
+  /**
+   * Set the logLevel for a particular flow id
+   * Assigns a new loglevel to a flow id
+   * postFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param flowId The flow id to set the loglevel for (required)
+   * @param body New LogLevel settings (required)
+   * @param expand Expand instructions for the result (optional)
+   * @return FlowSettingsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowSettingsResponse> postFlowInstancesSettingsLoglevelsWithHttpInfo(String flowId, FlowLogLevelRequest body, List<String> expand) throws IOException {
+    return postFlowInstancesSettingsLoglevels(createPostFlowInstancesSettingsLoglevelsRequest(flowId, body, expand).withHttpInfo());
+  }
+
+  private PostFlowInstancesSettingsLoglevelsRequest createPostFlowInstancesSettingsLoglevelsRequest(String flowId, FlowLogLevelRequest body, List<String> expand) {
+    return PostFlowInstancesSettingsLoglevelsRequest.builder()
+            .withFlowId(flowId)
+
+            .withBody(body)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Set the logLevel for a particular flow id
+   * Assigns a new loglevel to a flow id
+   * postFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return FlowSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowSettingsResponse postFlowInstancesSettingsLoglevels(PostFlowInstancesSettingsLoglevelsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowSettingsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowSettingsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Set the logLevel for a particular flow id
+   * Assigns a new loglevel to a flow id
+   * postFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowSettingsResponse> postFlowInstancesSettingsLoglevels(ApiRequest<FlowLogLevelRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowSettingsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowSettingsResponse> response = (ApiResponse<FlowSettingsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowSettingsResponse> response = (ApiResponse<FlowSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create flow version
    * 
    * @param flowId Flow ID (required)
@@ -10123,7 +10868,6 @@ public class ArchitectApi {
   /**
    * Start a process (job) that will prepare a list of execution data IDs for download.
    * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
-   * postFlowsInstancesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Requested Flow Ids (required)
    * @param expand Expand various query types. (optional)
    * @return GetFlowExecutionDataJobResult
@@ -10137,7 +10881,6 @@ public class ArchitectApi {
   /**
    * Start a process (job) that will prepare a list of execution data IDs for download.
    * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
-   * postFlowsInstancesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Requested Flow Ids (required)
    * @param expand Expand various query types. (optional)
    * @return GetFlowExecutionDataJobResult
@@ -10159,7 +10902,6 @@ public class ArchitectApi {
   /**
    * Start a process (job) that will prepare a list of execution data IDs for download.
    * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
-   * postFlowsInstancesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return GetFlowExecutionDataJobResult
    * @throws ApiException if the request fails on the server
@@ -10179,7 +10921,6 @@ public class ArchitectApi {
   /**
    * Start a process (job) that will prepare a list of execution data IDs for download.
    * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
-   * postFlowsInstancesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -10209,7 +10950,6 @@ public class ArchitectApi {
   /**
    * Query the database of existing flow histories to look for particular flow criteria
    * Returns a list of matching flow histories up to 200 max.
-   * postFlowsInstancesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @param indexOnly indexes only (optional)
    * @param pageSize number of results to return (optional, default to 50)
@@ -10224,7 +10964,6 @@ public class ArchitectApi {
   /**
    * Query the database of existing flow histories to look for particular flow criteria
    * Returns a list of matching flow histories up to 200 max.
-   * postFlowsInstancesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @param indexOnly indexes only (optional)
    * @param pageSize number of results to return (optional, default to 50)
@@ -10249,7 +10988,6 @@ public class ArchitectApi {
   /**
    * Query the database of existing flow histories to look for particular flow criteria
    * Returns a list of matching flow histories up to 200 max.
-   * postFlowsInstancesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FlowResultEntityListing
    * @throws ApiException if the request fails on the server
@@ -10269,7 +11007,6 @@ public class ArchitectApi {
   /**
    * Query the database of existing flow histories to look for particular flow criteria
    * Returns a list of matching flow histories up to 200 max.
-   * postFlowsInstancesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -11191,6 +11928,96 @@ public class ArchitectApi {
   }
 
   /**
+   * Edit the logLevel for a particular flow id
+   * Updates the loglevel for a flow id
+   * putFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param flowId The flow id to edit the loglevel for (required)
+   * @param body New LogLevel settings (required)
+   * @param expand Expand instructions for the result (optional)
+   * @return FlowSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowSettingsResponse putFlowInstancesSettingsLoglevels(String flowId, FlowLogLevelRequest body, List<String> expand) throws IOException, ApiException {
+    return  putFlowInstancesSettingsLoglevels(createPutFlowInstancesSettingsLoglevelsRequest(flowId, body, expand));
+  }
+
+  /**
+   * Edit the logLevel for a particular flow id
+   * Updates the loglevel for a flow id
+   * putFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param flowId The flow id to edit the loglevel for (required)
+   * @param body New LogLevel settings (required)
+   * @param expand Expand instructions for the result (optional)
+   * @return FlowSettingsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowSettingsResponse> putFlowInstancesSettingsLoglevelsWithHttpInfo(String flowId, FlowLogLevelRequest body, List<String> expand) throws IOException {
+    return putFlowInstancesSettingsLoglevels(createPutFlowInstancesSettingsLoglevelsRequest(flowId, body, expand).withHttpInfo());
+  }
+
+  private PutFlowInstancesSettingsLoglevelsRequest createPutFlowInstancesSettingsLoglevelsRequest(String flowId, FlowLogLevelRequest body, List<String> expand) {
+    return PutFlowInstancesSettingsLoglevelsRequest.builder()
+            .withFlowId(flowId)
+
+            .withBody(body)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Edit the logLevel for a particular flow id
+   * Updates the loglevel for a flow id
+   * putFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return FlowSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowSettingsResponse putFlowInstancesSettingsLoglevels(PutFlowInstancesSettingsLoglevelsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowSettingsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowSettingsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Edit the logLevel for a particular flow id
+   * Updates the loglevel for a flow id
+   * putFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowSettingsResponse> putFlowInstancesSettingsLoglevels(ApiRequest<FlowLogLevelRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowSettingsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowSettingsResponse> response = (ApiResponse<FlowSettingsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowSettingsResponse> response = (ApiResponse<FlowSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Updates a specific datatable by id
    * Updates a schema for a datatable with the given datatableId -updates allow only new fields to be added in the schema, no changes or removals of existing fields.
    * @param datatableId id of datatable (required)
@@ -11358,6 +12185,92 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Map<String, Object>> response = (ApiResponse<Map<String, Object>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Edit the flow default log level.
+   * Edit the flow default log level.
+   * putFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body New LogLevel settings (required)
+   * @param expand Expand instructions for the result (optional)
+   * @return FlowSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowSettingsResponse putFlowsInstancesSettingsLoglevelsDefault(FlowLogLevelRequest body, List<String> expand) throws IOException, ApiException {
+    return  putFlowsInstancesSettingsLoglevelsDefault(createPutFlowsInstancesSettingsLoglevelsDefaultRequest(body, expand));
+  }
+
+  /**
+   * Edit the flow default log level.
+   * Edit the flow default log level.
+   * putFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body New LogLevel settings (required)
+   * @param expand Expand instructions for the result (optional)
+   * @return FlowSettingsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowSettingsResponse> putFlowsInstancesSettingsLoglevelsDefaultWithHttpInfo(FlowLogLevelRequest body, List<String> expand) throws IOException {
+    return putFlowsInstancesSettingsLoglevelsDefault(createPutFlowsInstancesSettingsLoglevelsDefaultRequest(body, expand).withHttpInfo());
+  }
+
+  private PutFlowsInstancesSettingsLoglevelsDefaultRequest createPutFlowsInstancesSettingsLoglevelsDefaultRequest(FlowLogLevelRequest body, List<String> expand) {
+    return PutFlowsInstancesSettingsLoglevelsDefaultRequest.builder()
+            .withBody(body)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Edit the flow default log level.
+   * Edit the flow default log level.
+   * putFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return FlowSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowSettingsResponse putFlowsInstancesSettingsLoglevelsDefault(PutFlowsInstancesSettingsLoglevelsDefaultRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowSettingsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowSettingsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Edit the flow default log level.
+   * Edit the flow default log level.
+   * putFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowSettingsResponse> putFlowsInstancesSettingsLoglevelsDefault(ApiRequest<FlowLogLevelRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowSettingsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowSettingsResponse> response = (ApiResponse<FlowSettingsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowSettingsResponse> response = (ApiResponse<FlowSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
