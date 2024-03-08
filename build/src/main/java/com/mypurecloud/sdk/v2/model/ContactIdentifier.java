@@ -23,6 +23,7 @@ import java.io.Serializable;
 
 public class ContactIdentifier  implements Serializable {
   
+  private String id = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
     public TypeEnumDeserializer() {
@@ -78,8 +79,16 @@ public class ContactIdentifier  implements Serializable {
   private TypeEnum type = null;
   private String value = null;
   private Date dateCreated = null;
+  private String selfUri = null;
 
   
+  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+
+
   /**
    * The type of this identifier
    **/
@@ -134,6 +143,13 @@ public class ContactIdentifier  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The URI for this object")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -144,14 +160,16 @@ public class ContactIdentifier  implements Serializable {
     }
     ContactIdentifier contactIdentifier = (ContactIdentifier) o;
 
-    return Objects.equals(this.type, contactIdentifier.type) &&
+    return Objects.equals(this.id, contactIdentifier.id) &&
+            Objects.equals(this.type, contactIdentifier.type) &&
             Objects.equals(this.value, contactIdentifier.value) &&
-            Objects.equals(this.dateCreated, contactIdentifier.dateCreated);
+            Objects.equals(this.dateCreated, contactIdentifier.dateCreated) &&
+            Objects.equals(this.selfUri, contactIdentifier.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, value, dateCreated);
+    return Objects.hash(id, type, value, dateCreated, selfUri);
   }
 
   @Override
@@ -159,9 +177,11 @@ public class ContactIdentifier  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ContactIdentifier {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }
