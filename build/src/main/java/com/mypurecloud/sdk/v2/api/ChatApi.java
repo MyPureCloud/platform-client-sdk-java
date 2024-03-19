@@ -12,6 +12,7 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ChatMessageEntityListing;
 import com.mypurecloud.sdk.v2.model.ChatMessageResponse;
+import com.mypurecloud.sdk.v2.model.ChatReactionUpdate;
 import com.mypurecloud.sdk.v2.model.ChatSendMessageResponse;
 import com.mypurecloud.sdk.v2.model.ChatSettings;
 import com.mypurecloud.sdk.v2.model.ChatUserSettings;
@@ -20,6 +21,8 @@ import com.mypurecloud.sdk.v2.model.CreateRoomResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.PinnedMessageRequest;
 import com.mypurecloud.sdk.v2.model.Room;
+import com.mypurecloud.sdk.v2.model.RoomParticipant;
+import com.mypurecloud.sdk.v2.model.RoomParticipantsResponse;
 import com.mypurecloud.sdk.v2.model.RoomUpdateRequest;
 import com.mypurecloud.sdk.v2.model.SendMessageBody;
 
@@ -32,6 +35,8 @@ import com.mypurecloud.sdk.v2.api.request.GetChatsMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsRoomRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsRoomMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsRoomMessagesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetChatsRoomParticipantRequest;
+import com.mypurecloud.sdk.v2.api.request.GetChatsRoomParticipantsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsThreadMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsUserMessageRequest;
@@ -47,6 +52,7 @@ import com.mypurecloud.sdk.v2.api.request.PostChatsRoomParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PostChatsRoomPinnedmessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostChatsRoomsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostChatsUserMessagesRequest;
+import com.mypurecloud.sdk.v2.api.request.PutChatsMessageReactionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutChatsSettingsRequest;
 
 import java.io.IOException;
@@ -69,7 +75,6 @@ public class ChatApi {
   /**
    * Delete a message in a room
    * 
-   * deleteChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param roomJid roomId (required)
    * @param messageId messageId (required)
    * @throws ApiException if the request fails on the server
@@ -82,7 +87,6 @@ public class ChatApi {
   /**
    * Delete a message in a room
    * 
-   * deleteChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param roomJid roomId (required)
    * @param messageId messageId (required)
    * @throws IOException if the request fails to be processed
@@ -103,7 +107,6 @@ public class ChatApi {
   /**
    * Delete a message in a room
    * 
-   * deleteChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -122,7 +125,6 @@ public class ChatApi {
   /**
    * Delete a message in a room
    * 
-   * deleteChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -152,7 +154,6 @@ public class ChatApi {
   /**
    * Remove a user from a room.
    * 
-   * deleteChatsRoomParticipant is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param roomJid roomJid (required)
    * @param userId userId (required)
    * @throws ApiException if the request fails on the server
@@ -165,7 +166,6 @@ public class ChatApi {
   /**
    * Remove a user from a room.
    * 
-   * deleteChatsRoomParticipant is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param roomJid roomJid (required)
    * @param userId userId (required)
    * @throws IOException if the request fails to be processed
@@ -186,7 +186,6 @@ public class ChatApi {
   /**
    * Remove a user from a room.
    * 
-   * deleteChatsRoomParticipant is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -205,7 +204,6 @@ public class ChatApi {
   /**
    * Remove a user from a room.
    * 
-   * deleteChatsRoomParticipant is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -235,7 +233,6 @@ public class ChatApi {
   /**
    * Remove a pinned message from a room
    * 
-   * deleteChatsRoomPinnedmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param roomJid roomJid (required)
    * @param pinnedMessageId pinnedMessageId (required)
    * @throws ApiException if the request fails on the server
@@ -248,7 +245,6 @@ public class ChatApi {
   /**
    * Remove a pinned message from a room
    * 
-   * deleteChatsRoomPinnedmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param roomJid roomJid (required)
    * @param pinnedMessageId pinnedMessageId (required)
    * @throws IOException if the request fails to be processed
@@ -269,7 +265,6 @@ public class ChatApi {
   /**
    * Remove a pinned message from a room
    * 
-   * deleteChatsRoomPinnedmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -288,7 +283,6 @@ public class ChatApi {
   /**
    * Remove a pinned message from a room
    * 
-   * deleteChatsRoomPinnedmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -318,7 +312,6 @@ public class ChatApi {
   /**
    * Delete a message to a user
    * 
-   * deleteChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId userId (required)
    * @param messageId messageId (required)
    * @throws ApiException if the request fails on the server
@@ -331,7 +324,6 @@ public class ChatApi {
   /**
    * Delete a message to a user
    * 
-   * deleteChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId userId (required)
    * @param messageId messageId (required)
    * @throws IOException if the request fails to be processed
@@ -352,7 +344,6 @@ public class ChatApi {
   /**
    * Delete a message to a user
    * 
-   * deleteChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -371,7 +362,6 @@ public class ChatApi {
   /**
    * Delete a message to a user
    * 
-   * deleteChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -401,7 +391,6 @@ public class ChatApi {
   /**
    * Get a message
    * 
-   * getChatsMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param messageId messageId (required)
    * @return ChatMessageResponse
    * @throws ApiException if the request fails on the server
@@ -414,7 +403,6 @@ public class ChatApi {
   /**
    * Get a message
    * 
-   * getChatsMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param messageId messageId (required)
    * @return ChatMessageResponse
    * @throws IOException if the request fails to be processed
@@ -433,7 +421,6 @@ public class ChatApi {
   /**
    * Get a message
    * 
-   * getChatsMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ChatMessageResponse
    * @throws ApiException if the request fails on the server
@@ -453,7 +440,6 @@ public class ChatApi {
   /**
    * Get a message
    * 
-   * getChatsMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -483,7 +469,6 @@ public class ChatApi {
   /**
    * Get a room
    * 
-   * getChatsRoom is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param roomJid roomJid (required)
    * @return Room
    * @throws ApiException if the request fails on the server
@@ -496,7 +481,6 @@ public class ChatApi {
   /**
    * Get a room
    * 
-   * getChatsRoom is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param roomJid roomJid (required)
    * @return Room
    * @throws IOException if the request fails to be processed
@@ -515,7 +499,6 @@ public class ChatApi {
   /**
    * Get a room
    * 
-   * getChatsRoom is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Room
    * @throws ApiException if the request fails on the server
@@ -535,7 +518,6 @@ public class ChatApi {
   /**
    * Get a room
    * 
-   * getChatsRoom is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -565,7 +547,6 @@ public class ChatApi {
   /**
    * Get messages by id(s) from a room
    * 
-   * getChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param roomJid roomJid (required)
    * @param messageIds messageIds, comma separated (required)
    * @return ChatMessageEntityListing
@@ -579,7 +560,6 @@ public class ChatApi {
   /**
    * Get messages by id(s) from a room
    * 
-   * getChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param roomJid roomJid (required)
    * @param messageIds messageIds, comma separated (required)
    * @return ChatMessageEntityListing
@@ -601,7 +581,6 @@ public class ChatApi {
   /**
    * Get messages by id(s) from a room
    * 
-   * getChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ChatMessageEntityListing
    * @throws ApiException if the request fails on the server
@@ -621,7 +600,6 @@ public class ChatApi {
   /**
    * Get messages by id(s) from a room
    * 
-   * getChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -651,7 +629,6 @@ public class ChatApi {
   /**
    * Get a room's message history
    * 
-   * getChatsRoomMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param roomJid roomJid (required)
    * @param limit The maximum number of messages to retrieve (optional)
    * @param before The cutoff date for messages to retrieve (optional)
@@ -667,7 +644,6 @@ public class ChatApi {
   /**
    * Get a room's message history
    * 
-   * getChatsRoomMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param roomJid roomJid (required)
    * @param limit The maximum number of messages to retrieve (optional)
    * @param before The cutoff date for messages to retrieve (optional)
@@ -695,7 +671,6 @@ public class ChatApi {
   /**
    * Get a room's message history
    * 
-   * getChatsRoomMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ChatMessageEntityListing
    * @throws ApiException if the request fails on the server
@@ -715,7 +690,6 @@ public class ChatApi {
   /**
    * Get a room's message history
    * 
-   * getChatsRoomMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -738,6 +712,166 @@ public class ChatApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ChatMessageEntityListing> response = (ApiResponse<ChatMessageEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a room participant
+   * 
+   * @param roomJid roomJid (required)
+   * @param participantJid participantJid (required)
+   * @return RoomParticipant
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RoomParticipant getChatsRoomParticipant(String roomJid, String participantJid) throws IOException, ApiException {
+    return  getChatsRoomParticipant(createGetChatsRoomParticipantRequest(roomJid, participantJid));
+  }
+
+  /**
+   * Get a room participant
+   * 
+   * @param roomJid roomJid (required)
+   * @param participantJid participantJid (required)
+   * @return RoomParticipant
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RoomParticipant> getChatsRoomParticipantWithHttpInfo(String roomJid, String participantJid) throws IOException {
+    return getChatsRoomParticipant(createGetChatsRoomParticipantRequest(roomJid, participantJid).withHttpInfo());
+  }
+
+  private GetChatsRoomParticipantRequest createGetChatsRoomParticipantRequest(String roomJid, String participantJid) {
+    return GetChatsRoomParticipantRequest.builder()
+            .withRoomJid(roomJid)
+
+            .withParticipantJid(participantJid)
+
+            .build();
+  }
+
+  /**
+   * Get a room participant
+   * 
+   * @param request The request object
+   * @return RoomParticipant
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RoomParticipant getChatsRoomParticipant(GetChatsRoomParticipantRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RoomParticipant> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RoomParticipant>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a room participant
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RoomParticipant> getChatsRoomParticipant(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RoomParticipant>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoomParticipant> response = (ApiResponse<RoomParticipant>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoomParticipant> response = (ApiResponse<RoomParticipant>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get room participants in a room
+   * 
+   * @param roomJid roomJid (required)
+   * @return RoomParticipantsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RoomParticipantsResponse getChatsRoomParticipants(String roomJid) throws IOException, ApiException {
+    return  getChatsRoomParticipants(createGetChatsRoomParticipantsRequest(roomJid));
+  }
+
+  /**
+   * Get room participants in a room
+   * 
+   * @param roomJid roomJid (required)
+   * @return RoomParticipantsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RoomParticipantsResponse> getChatsRoomParticipantsWithHttpInfo(String roomJid) throws IOException {
+    return getChatsRoomParticipants(createGetChatsRoomParticipantsRequest(roomJid).withHttpInfo());
+  }
+
+  private GetChatsRoomParticipantsRequest createGetChatsRoomParticipantsRequest(String roomJid) {
+    return GetChatsRoomParticipantsRequest.builder()
+            .withRoomJid(roomJid)
+
+            .build();
+  }
+
+  /**
+   * Get room participants in a room
+   * 
+   * @param request The request object
+   * @return RoomParticipantsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RoomParticipantsResponse getChatsRoomParticipants(GetChatsRoomParticipantsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RoomParticipantsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RoomParticipantsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get room participants in a room
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RoomParticipantsResponse> getChatsRoomParticipants(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RoomParticipantsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoomParticipantsResponse> response = (ApiResponse<RoomParticipantsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoomParticipantsResponse> response = (ApiResponse<RoomParticipantsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -819,7 +953,6 @@ public class ChatApi {
   /**
    * Get history by thread
    * 
-   * getChatsThreadMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param threadId threadId (required)
    * @param limit The maximum number of messages to retrieve (optional)
    * @param before The cutoff date for messages to retrieve (optional)
@@ -835,7 +968,6 @@ public class ChatApi {
   /**
    * Get history by thread
    * 
-   * getChatsThreadMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param threadId threadId (required)
    * @param limit The maximum number of messages to retrieve (optional)
    * @param before The cutoff date for messages to retrieve (optional)
@@ -863,7 +995,6 @@ public class ChatApi {
   /**
    * Get history by thread
    * 
-   * getChatsThreadMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ChatMessageEntityListing
    * @throws ApiException if the request fails on the server
@@ -883,7 +1014,6 @@ public class ChatApi {
   /**
    * Get history by thread
    * 
-   * getChatsThreadMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -913,7 +1043,6 @@ public class ChatApi {
   /**
    * Get messages by id(s) from a 1on1
    * 
-   * getChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId userId (required)
    * @param messageIds messageIds, comma separated (required)
    * @return ChatMessageEntityListing
@@ -927,7 +1056,6 @@ public class ChatApi {
   /**
    * Get messages by id(s) from a 1on1
    * 
-   * getChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId userId (required)
    * @param messageIds messageIds, comma separated (required)
    * @return ChatMessageEntityListing
@@ -949,7 +1077,6 @@ public class ChatApi {
   /**
    * Get messages by id(s) from a 1on1
    * 
-   * getChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ChatMessageEntityListing
    * @throws ApiException if the request fails on the server
@@ -969,7 +1096,6 @@ public class ChatApi {
   /**
    * Get messages by id(s) from a 1on1
    * 
-   * getChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -999,7 +1125,6 @@ public class ChatApi {
   /**
    * Get 1on1 History between a user
    * 
-   * getChatsUserMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId userId (required)
    * @param limit The maximum number of messages to retrieve (optional)
    * @param before The cutoff date for messages to retrieve (optional)
@@ -1015,7 +1140,6 @@ public class ChatApi {
   /**
    * Get 1on1 History between a user
    * 
-   * getChatsUserMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId userId (required)
    * @param limit The maximum number of messages to retrieve (optional)
    * @param before The cutoff date for messages to retrieve (optional)
@@ -1043,7 +1167,6 @@ public class ChatApi {
   /**
    * Get 1on1 History between a user
    * 
-   * getChatsUserMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ChatMessageResponse
    * @throws ApiException if the request fails on the server
@@ -1063,7 +1186,6 @@ public class ChatApi {
   /**
    * Get 1on1 History between a user
    * 
-   * getChatsUserMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1175,7 +1297,6 @@ public class ChatApi {
   /**
    * Set properties for a room
    * 
-   * patchChatsRoom is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param roomJid roomJid (required)
    * @param body Room properties (required)
    * @throws ApiException if the request fails on the server
@@ -1188,7 +1309,6 @@ public class ChatApi {
   /**
    * Set properties for a room
    * 
-   * patchChatsRoom is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param roomJid roomJid (required)
    * @param body Room properties (required)
    * @throws IOException if the request fails to be processed
@@ -1209,7 +1329,6 @@ public class ChatApi {
   /**
    * Set properties for a room
    * 
-   * patchChatsRoom is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1228,7 +1347,6 @@ public class ChatApi {
   /**
    * Set properties for a room
    * 
-   * patchChatsRoom is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1258,7 +1376,6 @@ public class ChatApi {
   /**
    * Edit a message in a room
    * 
-   * patchChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param roomJid roomId (required)
    * @param messageId messageId (required)
    * @param body messageBody (required)
@@ -1273,7 +1390,6 @@ public class ChatApi {
   /**
    * Edit a message in a room
    * 
-   * patchChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param roomJid roomId (required)
    * @param messageId messageId (required)
    * @param body messageBody (required)
@@ -1298,7 +1414,6 @@ public class ChatApi {
   /**
    * Edit a message in a room
    * 
-   * patchChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ChatSendMessageResponse
    * @throws ApiException if the request fails on the server
@@ -1318,7 +1433,6 @@ public class ChatApi {
   /**
    * Edit a message in a room
    * 
-   * patchChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1426,7 +1540,6 @@ public class ChatApi {
   /**
    * Edit a message to a user
    * 
-   * patchChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId userId (required)
    * @param messageId messageId (required)
    * @param body message body (required)
@@ -1441,7 +1554,6 @@ public class ChatApi {
   /**
    * Edit a message to a user
    * 
-   * patchChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId userId (required)
    * @param messageId messageId (required)
    * @param body message body (required)
@@ -1466,7 +1578,6 @@ public class ChatApi {
   /**
    * Edit a message to a user
    * 
-   * patchChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ChatSendMessageResponse
    * @throws ApiException if the request fails on the server
@@ -1486,7 +1597,6 @@ public class ChatApi {
   /**
    * Edit a message to a user
    * 
-   * patchChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1602,7 +1712,6 @@ public class ChatApi {
   /**
    * Send a message to a room
    * 
-   * postChatsRoomMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param roomJid roomId (required)
    * @param body messageBody (required)
    * @return ChatSendMessageResponse
@@ -1616,7 +1725,6 @@ public class ChatApi {
   /**
    * Send a message to a room
    * 
-   * postChatsRoomMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param roomJid roomId (required)
    * @param body messageBody (required)
    * @return ChatSendMessageResponse
@@ -1638,7 +1746,6 @@ public class ChatApi {
   /**
    * Send a message to a room
    * 
-   * postChatsRoomMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ChatSendMessageResponse
    * @throws ApiException if the request fails on the server
@@ -1658,7 +1765,6 @@ public class ChatApi {
   /**
    * Send a message to a room
    * 
-   * postChatsRoomMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1688,7 +1794,6 @@ public class ChatApi {
   /**
    * Join a room
    * 
-   * postChatsRoomParticipant is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param roomJid roomJid (required)
    * @param userId userId (required)
    * @throws ApiException if the request fails on the server
@@ -1701,7 +1806,6 @@ public class ChatApi {
   /**
    * Join a room
    * 
-   * postChatsRoomParticipant is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param roomJid roomJid (required)
    * @param userId userId (required)
    * @throws IOException if the request fails to be processed
@@ -1722,7 +1826,6 @@ public class ChatApi {
   /**
    * Join a room
    * 
-   * postChatsRoomParticipant is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1741,7 +1844,6 @@ public class ChatApi {
   /**
    * Join a room
    * 
-   * postChatsRoomParticipant is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1771,7 +1873,6 @@ public class ChatApi {
   /**
    * Add pinned messages for a room, up to a maximum of 5 pinned messages
    * 
-   * postChatsRoomPinnedmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param roomJid roomJid (required)
    * @param body Pinned Message Ids (required)
    * @throws ApiException if the request fails on the server
@@ -1784,7 +1885,6 @@ public class ChatApi {
   /**
    * Add pinned messages for a room, up to a maximum of 5 pinned messages
    * 
-   * postChatsRoomPinnedmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param roomJid roomJid (required)
    * @param body Pinned Message Ids (required)
    * @throws IOException if the request fails to be processed
@@ -1805,7 +1905,6 @@ public class ChatApi {
   /**
    * Add pinned messages for a room, up to a maximum of 5 pinned messages
    * 
-   * postChatsRoomPinnedmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1824,7 +1923,6 @@ public class ChatApi {
   /**
    * Add pinned messages for a room, up to a maximum of 5 pinned messages
    * 
-   * postChatsRoomPinnedmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1854,7 +1952,6 @@ public class ChatApi {
   /**
    * Create an adhoc room
    * 
-   * postChatsRooms is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Room properties (required)
    * @return CreateRoomResponse
    * @throws ApiException if the request fails on the server
@@ -1867,7 +1964,6 @@ public class ChatApi {
   /**
    * Create an adhoc room
    * 
-   * postChatsRooms is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Room properties (required)
    * @return CreateRoomResponse
    * @throws IOException if the request fails to be processed
@@ -1886,7 +1982,6 @@ public class ChatApi {
   /**
    * Create an adhoc room
    * 
-   * postChatsRooms is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return CreateRoomResponse
    * @throws ApiException if the request fails on the server
@@ -1906,7 +2001,6 @@ public class ChatApi {
   /**
    * Create an adhoc room
    * 
-   * postChatsRooms is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1936,7 +2030,6 @@ public class ChatApi {
   /**
    * Send a message to a user
    * 
-   * postChatsUserMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId userId (required)
    * @param body message body (required)
    * @return ChatSendMessageResponse
@@ -1950,7 +2043,6 @@ public class ChatApi {
   /**
    * Send a message to a user
    * 
-   * postChatsUserMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param userId userId (required)
    * @param body message body (required)
    * @return ChatSendMessageResponse
@@ -1972,7 +2064,6 @@ public class ChatApi {
   /**
    * Send a message to a user
    * 
-   * postChatsUserMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ChatSendMessageResponse
    * @throws ApiException if the request fails on the server
@@ -1992,7 +2083,6 @@ public class ChatApi {
   /**
    * Send a message to a user
    * 
-   * postChatsUserMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2015,6 +2105,85 @@ public class ChatApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ChatSendMessageResponse> response = (ApiResponse<ChatSendMessageResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update reactions to a message
+   * 
+   * @param messageId messageId (required)
+   * @param body reactionUpdate (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void putChatsMessageReactions(String messageId, ChatReactionUpdate body) throws IOException, ApiException {
+     putChatsMessageReactions(createPutChatsMessageReactionsRequest(messageId, body));
+  }
+
+  /**
+   * Update reactions to a message
+   * 
+   * @param messageId messageId (required)
+   * @param body reactionUpdate (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> putChatsMessageReactionsWithHttpInfo(String messageId, ChatReactionUpdate body) throws IOException {
+    return putChatsMessageReactions(createPutChatsMessageReactionsRequest(messageId, body).withHttpInfo());
+  }
+
+  private PutChatsMessageReactionsRequest createPutChatsMessageReactionsRequest(String messageId, ChatReactionUpdate body) {
+    return PutChatsMessageReactionsRequest.builder()
+            .withMessageId(messageId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update reactions to a message
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void putChatsMessageReactions(PutChatsMessageReactionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Update reactions to a message
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> putChatsMessageReactions(ApiRequest<ChatReactionUpdate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

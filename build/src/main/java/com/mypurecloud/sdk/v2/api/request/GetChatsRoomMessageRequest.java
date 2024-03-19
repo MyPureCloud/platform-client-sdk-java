@@ -22,6 +22,7 @@ import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ChatMessageEntityListing;
 import com.mypurecloud.sdk.v2.model.ChatMessageResponse;
+import com.mypurecloud.sdk.v2.model.ChatReactionUpdate;
 import com.mypurecloud.sdk.v2.model.ChatSendMessageResponse;
 import com.mypurecloud.sdk.v2.model.ChatSettings;
 import com.mypurecloud.sdk.v2.model.ChatUserSettings;
@@ -30,6 +31,8 @@ import com.mypurecloud.sdk.v2.model.CreateRoomResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.PinnedMessageRequest;
 import com.mypurecloud.sdk.v2.model.Room;
+import com.mypurecloud.sdk.v2.model.RoomParticipant;
+import com.mypurecloud.sdk.v2.model.RoomParticipantsResponse;
 import com.mypurecloud.sdk.v2.model.RoomUpdateRequest;
 import com.mypurecloud.sdk.v2.model.SendMessageBody;
 

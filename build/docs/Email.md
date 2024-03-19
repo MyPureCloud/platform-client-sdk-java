@@ -34,6 +34,7 @@ title: Email
 | **afterCallWork** | <!----><!---->[**AfterCallWork**](AfterCallWork.html)<!----> | After-call work for the communication. |  [optional] |
 | **afterCallWorkRequired** | <!----><!---->**Boolean**<!----> | Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested. |  [optional] |
 | **queueMediaSettings** | <!----><!---->[**ConversationQueueMediaSettings**](ConversationQueueMediaSettings.html)<!----> | Represents the queue settings for this media type. |  [optional] |
+| **resumeTimestamp** | <!----><!---->**Long**<!----> | Represents the timestamp when a parked conversation will resume. |  [optional] |
 {: class="table table-striped"}
 
 
@@ -48,6 +49,7 @@ title: Email
 | CONNECTED | &quot;connected&quot; | 
 | DISCONNECTED | &quot;disconnected&quot; | 
 | NONE | &quot;none&quot; | 
+| PARKED | &quot;parked&quot; | 
 | TRANSMITTING | &quot;transmitting&quot; | 
 {: class="table table-striped"}
 
@@ -63,6 +65,7 @@ title: Email
 | CONNECTED | &quot;connected&quot; | 
 | DISCONNECTED | &quot;disconnected&quot; | 
 | NONE | &quot;none&quot; | 
+| PARKED | &quot;parked&quot; | 
 | TRANSMITTING | &quot;transmitting&quot; | 
 {: class="table table-striped"}
 

@@ -3316,7 +3316,7 @@ try {
 | **pageNumber** | **Integer**|  | [optional] [default to 1] 
 | **pageSize** | **Integer**| Max value is 100 | [optional] [default to 25] 
 | **sortOrder** | **String**| Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin 
 | **name** | **String**| Filter by queue member name (contains-style search) | [optional] 
 | **profileSkills** | [**List&lt;String&gt;**](String.html)| Filter by profile skill (contains-style search) | [optional] 
 | **skills** | [**List&lt;String&gt;**](String.html)| Filter by skill (contains-style search) | [optional] 
@@ -3401,7 +3401,7 @@ try {
 | **pageNumber** | **Integer**|  | [optional] [default to 1] 
 | **pageSize** | **Integer**| Max value is 100 | [optional] [default to 25] 
 | **sortOrder** | **String**| Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin 
 | **joined** | **Boolean**| Filter by joined status | [optional] 
 | **name** | **String**| Filter by queue member name | [optional] 
 | **profileSkills** | [**List&lt;String&gt;**](String.html)| Filter by profile skill | [optional] 
@@ -3487,7 +3487,7 @@ try {
 
 
 
-> [QueueEntityListing](QueueEntityListing.html) getRoutingQueues(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, hasPeer)
+> [QueueEntityListing](QueueEntityListing.html) getRoutingQueues(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, cannedResponseLibraryId, hasPeer)
 
 Get list of queues.
 
@@ -3522,13 +3522,14 @@ RoutingApi apiInstance = new RoutingApi();
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String sortOrder = "asc"; // String | Note: results are sorted by name.
-String name = "name_example"; // String | Filter by queue name
-List<String> id = Arrays.asList(null); // List<String> | Filter by queue ID(s)
-List<String> divisionId = Arrays.asList(null); // List<String> | Filter by queue division ID(s)
-List<String> peerId = Arrays.asList(null); // List<String> | Filter by queue peer ID(s)
-Boolean hasPeer = true; // Boolean | Filter by queues associated with peer
+String name = "name_example"; // String | Include only queues with the given name (leading and trailing asterisks allowed)
+List<String> id = Arrays.asList(null); // List<String> | Include only queues with the specified ID(s)
+List<String> divisionId = Arrays.asList(null); // List<String> | Include only queues in the specified division ID(s)
+List<String> peerId = Arrays.asList(null); // List<String> | Include only queues with the specified peer ID(s)
+String cannedResponseLibraryId = "cannedResponseLibraryId_example"; // String | Include only queues explicitly associated with the specified canned response library ID
+Boolean hasPeer = true; // Boolean | Include only queues with a peer ID
 try {
-    QueueEntityListing result = apiInstance.getRoutingQueues(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, hasPeer);
+    QueueEntityListing result = apiInstance.getRoutingQueues(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, cannedResponseLibraryId, hasPeer);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingQueues");
@@ -3544,11 +3545,12 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **sortOrder** | **String**| Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc 
-| **name** | **String**| Filter by queue name | [optional] 
-| **id** | [**List&lt;String&gt;**](String.html)| Filter by queue ID(s) | [optional] 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| Filter by queue division ID(s) | [optional] 
-| **peerId** | [**List&lt;String&gt;**](String.html)| Filter by queue peer ID(s) | [optional] 
-| **hasPeer** | **Boolean**| Filter by queues associated with peer | [optional] 
+| **name** | **String**| Include only queues with the given name (leading and trailing asterisks allowed) | [optional] 
+| **id** | [**List&lt;String&gt;**](String.html)| Include only queues with the specified ID(s) | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String.html)| Include only queues in the specified division ID(s) | [optional] 
+| **peerId** | [**List&lt;String&gt;**](String.html)| Include only queues with the specified peer ID(s) | [optional] 
+| **cannedResponseLibraryId** | **String**| Include only queues explicitly associated with the specified canned response library ID | [optional] 
+| **hasPeer** | **Boolean**| Include only queues with a peer ID | [optional] 
 {: class="table-striped"}
 
 

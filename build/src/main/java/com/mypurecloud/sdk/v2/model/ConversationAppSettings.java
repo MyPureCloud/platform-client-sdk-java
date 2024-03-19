@@ -11,7 +11,6 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AutoStart;
 import com.mypurecloud.sdk.v2.model.ConversationClearSettings;
 import com.mypurecloud.sdk.v2.model.ConversationDisconnectSettings;
@@ -31,54 +30,6 @@ public class ConversationAppSettings  implements Serializable {
   private Boolean enabled = null;
   private Boolean showAgentTypingIndicator = null;
   private Boolean showUserTypingIndicator = null;
-
-  private static class AutoStartTypeEnumDeserializer extends StdDeserializer<AutoStartTypeEnum> {
-    public AutoStartTypeEnumDeserializer() {
-      super(AutoStartTypeEnumDeserializer.class);
-    }
-
-    @Override
-    public AutoStartTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
-            throws IOException {
-      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
-      return AutoStartTypeEnum.fromString(node.toString().replace("\"", ""));
-    }
-  }
-  /**
-   * Deprecated. The auto start type for the messenger conversation
-   */
- @JsonDeserialize(using = AutoStartTypeEnumDeserializer.class)
-  public enum AutoStartTypeEnum {
-    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    STANDARD("Standard"),
-    AUTOMATIC("Automatic");
-
-    private String value;
-
-    AutoStartTypeEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonCreator
-    public static AutoStartTypeEnum fromString(String key) {
-      if (key == null) return null;
-
-      for (AutoStartTypeEnum value : AutoStartTypeEnum.values()) {
-        if (key.equalsIgnoreCase(value.toString())) {
-          return value;
-        }
-      }
-
-      return AutoStartTypeEnum.values()[0];
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-  private AutoStartTypeEnum autoStartType = null;
   private AutoStart autoStart = null;
   private Markdown markdown = null;
   private ConversationDisconnectSettings conversationDisconnect = null;
@@ -137,24 +88,6 @@ public class ConversationAppSettings  implements Serializable {
   }
   public void setShowUserTypingIndicator(Boolean showUserTypingIndicator) {
     this.showUserTypingIndicator = showUserTypingIndicator;
-  }
-
-
-  /**
-   * Deprecated. The auto start type for the messenger conversation
-   **/
-  public ConversationAppSettings autoStartType(AutoStartTypeEnum autoStartType) {
-    this.autoStartType = autoStartType;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Deprecated. The auto start type for the messenger conversation")
-  @JsonProperty("autoStartType")
-  public AutoStartTypeEnum getAutoStartType() {
-    return autoStartType;
-  }
-  public void setAutoStartType(AutoStartTypeEnum autoStartType) {
-    this.autoStartType = autoStartType;
   }
 
 
@@ -261,7 +194,6 @@ public class ConversationAppSettings  implements Serializable {
     return Objects.equals(this.enabled, conversationAppSettings.enabled) &&
             Objects.equals(this.showAgentTypingIndicator, conversationAppSettings.showAgentTypingIndicator) &&
             Objects.equals(this.showUserTypingIndicator, conversationAppSettings.showUserTypingIndicator) &&
-            Objects.equals(this.autoStartType, conversationAppSettings.autoStartType) &&
             Objects.equals(this.autoStart, conversationAppSettings.autoStart) &&
             Objects.equals(this.markdown, conversationAppSettings.markdown) &&
             Objects.equals(this.conversationDisconnect, conversationAppSettings.conversationDisconnect) &&
@@ -271,7 +203,7 @@ public class ConversationAppSettings  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, showAgentTypingIndicator, showUserTypingIndicator, autoStartType, autoStart, markdown, conversationDisconnect, conversationClear, humanize);
+    return Objects.hash(enabled, showAgentTypingIndicator, showUserTypingIndicator, autoStart, markdown, conversationDisconnect, conversationClear, humanize);
   }
 
   @Override
@@ -282,7 +214,6 @@ public class ConversationAppSettings  implements Serializable {
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    showAgentTypingIndicator: ").append(toIndentedString(showAgentTypingIndicator)).append("\n");
     sb.append("    showUserTypingIndicator: ").append(toIndentedString(showUserTypingIndicator)).append("\n");
-    sb.append("    autoStartType: ").append(toIndentedString(autoStartType)).append("\n");
     sb.append("    autoStart: ").append(toIndentedString(autoStart)).append("\n");
     sb.append("    markdown: ").append(toIndentedString(markdown)).append("\n");
     sb.append("    conversationDisconnect: ").append(toIndentedString(conversationDisconnect)).append("\n");

@@ -26,9 +26,9 @@ public class ProgramsMappingsEntityListing  implements Serializable {
   
   private List<ProgramMappings> entities = new ArrayList<ProgramMappings>();
   private Integer pageSize = null;
+  private String selfUri = null;
   private String nextUri = null;
   private Integer pageCount = null;
-  private String selfUri = null;
 
   
   /**
@@ -67,6 +67,23 @@ public class ProgramsMappingsEntityListing  implements Serializable {
 
   /**
    **/
+  public ProgramsMappingsEntityListing selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
+  }
+
+
+  /**
+   **/
   public ProgramsMappingsEntityListing nextUri(String nextUri) {
     this.nextUri = nextUri;
     return this;
@@ -99,23 +116,6 @@ public class ProgramsMappingsEntityListing  implements Serializable {
   }
 
 
-  /**
-   **/
-  public ProgramsMappingsEntityListing selfUri(String selfUri) {
-    this.selfUri = selfUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -128,14 +128,14 @@ public class ProgramsMappingsEntityListing  implements Serializable {
 
     return Objects.equals(this.entities, programsMappingsEntityListing.entities) &&
             Objects.equals(this.pageSize, programsMappingsEntityListing.pageSize) &&
+            Objects.equals(this.selfUri, programsMappingsEntityListing.selfUri) &&
             Objects.equals(this.nextUri, programsMappingsEntityListing.nextUri) &&
-            Objects.equals(this.pageCount, programsMappingsEntityListing.pageCount) &&
-            Objects.equals(this.selfUri, programsMappingsEntityListing.selfUri);
+            Objects.equals(this.pageCount, programsMappingsEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, nextUri, pageCount, selfUri);
+    return Objects.hash(entities, pageSize, selfUri, nextUri, pageCount);
   }
 
   @Override
@@ -145,9 +145,9 @@ public class ProgramsMappingsEntityListing  implements Serializable {
     
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

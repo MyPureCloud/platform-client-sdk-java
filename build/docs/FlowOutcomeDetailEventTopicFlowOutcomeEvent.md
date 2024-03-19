@@ -111,6 +111,7 @@ title: FlowOutcomeDetailEventTopicFlowOutcomeEvent
 | VOICE | &quot;VOICE&quot; | 
 | VOICEMAIL | &quot;VOICEMAIL&quot; | 
 | WORKITEM | &quot;WORKITEM&quot; | 
+| VOICESURVEY | &quot;VOICESURVEY&quot; | 
 {: class="table table-striped"}
 
 

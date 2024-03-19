@@ -353,14 +353,14 @@ public class Recording  implements Serializable {
 
 
   /**
-   * The type of media that the recording is. At the moment that could be audio, chat, or email.
+   * The media type of the recording. This could be audio, chat, messaging, email, or screen.
    **/
   public Recording media(String media) {
     this.media = media;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The type of media that the recording is. At the moment that could be audio, chat, or email.")
+  @ApiModelProperty(example = "null", value = "The media type of the recording. This could be audio, chat, messaging, email, or screen.")
   @JsonProperty("media")
   public String getMedia() {
     return media;

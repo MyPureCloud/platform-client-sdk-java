@@ -4579,17 +4579,18 @@ public class RoutingApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param sortOrder Note: results are sorted by name. (optional, default to asc)
-   * @param name Filter by queue name (optional)
-   * @param id Filter by queue ID(s) (optional)
-   * @param divisionId Filter by queue division ID(s) (optional)
-   * @param peerId Filter by queue peer ID(s) (optional)
-   * @param hasPeer Filter by queues associated with peer (optional)
+   * @param name Include only queues with the given name (leading and trailing asterisks allowed) (optional)
+   * @param id Include only queues with the specified ID(s) (optional)
+   * @param divisionId Include only queues in the specified division ID(s) (optional)
+   * @param peerId Include only queues with the specified peer ID(s) (optional)
+   * @param cannedResponseLibraryId Include only queues explicitly associated with the specified canned response library ID (optional)
+   * @param hasPeer Include only queues with a peer ID (optional)
    * @return QueueEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public QueueEntityListing getRoutingQueues(Integer pageNumber, Integer pageSize, String sortOrder, String name, List<String> id, List<String> divisionId, List<String> peerId, Boolean hasPeer) throws IOException, ApiException {
-    return  getRoutingQueues(createGetRoutingQueuesRequest(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, hasPeer));
+  public QueueEntityListing getRoutingQueues(Integer pageNumber, Integer pageSize, String sortOrder, String name, List<String> id, List<String> divisionId, List<String> peerId, String cannedResponseLibraryId, Boolean hasPeer) throws IOException, ApiException {
+    return  getRoutingQueues(createGetRoutingQueuesRequest(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, cannedResponseLibraryId, hasPeer));
   }
 
   /**
@@ -4598,19 +4599,20 @@ public class RoutingApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param sortOrder Note: results are sorted by name. (optional, default to asc)
-   * @param name Filter by queue name (optional)
-   * @param id Filter by queue ID(s) (optional)
-   * @param divisionId Filter by queue division ID(s) (optional)
-   * @param peerId Filter by queue peer ID(s) (optional)
-   * @param hasPeer Filter by queues associated with peer (optional)
+   * @param name Include only queues with the given name (leading and trailing asterisks allowed) (optional)
+   * @param id Include only queues with the specified ID(s) (optional)
+   * @param divisionId Include only queues in the specified division ID(s) (optional)
+   * @param peerId Include only queues with the specified peer ID(s) (optional)
+   * @param cannedResponseLibraryId Include only queues explicitly associated with the specified canned response library ID (optional)
+   * @param hasPeer Include only queues with a peer ID (optional)
    * @return QueueEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<QueueEntityListing> getRoutingQueuesWithHttpInfo(Integer pageNumber, Integer pageSize, String sortOrder, String name, List<String> id, List<String> divisionId, List<String> peerId, Boolean hasPeer) throws IOException {
-    return getRoutingQueues(createGetRoutingQueuesRequest(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, hasPeer).withHttpInfo());
+  public ApiResponse<QueueEntityListing> getRoutingQueuesWithHttpInfo(Integer pageNumber, Integer pageSize, String sortOrder, String name, List<String> id, List<String> divisionId, List<String> peerId, String cannedResponseLibraryId, Boolean hasPeer) throws IOException {
+    return getRoutingQueues(createGetRoutingQueuesRequest(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, cannedResponseLibraryId, hasPeer).withHttpInfo());
   }
 
-  private GetRoutingQueuesRequest createGetRoutingQueuesRequest(Integer pageNumber, Integer pageSize, String sortOrder, String name, List<String> id, List<String> divisionId, List<String> peerId, Boolean hasPeer) {
+  private GetRoutingQueuesRequest createGetRoutingQueuesRequest(Integer pageNumber, Integer pageSize, String sortOrder, String name, List<String> id, List<String> divisionId, List<String> peerId, String cannedResponseLibraryId, Boolean hasPeer) {
     return GetRoutingQueuesRequest.builder()
             .withPageNumber(pageNumber)
 
@@ -4625,6 +4627,8 @@ public class RoutingApi {
             .withDivisionId(divisionId)
 
             .withPeerId(peerId)
+
+            .withCannedResponseLibraryId(cannedResponseLibraryId)
 
             .withHasPeer(hasPeer)
 

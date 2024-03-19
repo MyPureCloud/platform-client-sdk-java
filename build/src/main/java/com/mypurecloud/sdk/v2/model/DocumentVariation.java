@@ -29,12 +29,14 @@ import java.io.Serializable;
 public class DocumentVariation  implements Serializable {
   
   private String id = null;
-  private DocumentBody body = null;
   private Date dateCreated = null;
   private Date dateModified = null;
   private AddressableEntityRef documentVersion = null;
   private List<DocumentVariationContext> contexts = new ArrayList<DocumentVariationContext>();
   private KnowledgeDocumentReference document = null;
+  private Integer priority = null;
+  private String name = null;
+  private DocumentBody body = null;
   private String selfUri = null;
 
   
@@ -42,24 +44,6 @@ public class DocumentVariation  implements Serializable {
   @JsonProperty("id")
   public String getId() {
     return id;
-  }
-
-
-  /**
-   * The content for the variation.
-   **/
-  public DocumentVariation body(DocumentBody body) {
-    this.body = body;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The content for the variation.")
-  @JsonProperty("body")
-  public DocumentBody getBody() {
-    return body;
-  }
-  public void setBody(DocumentBody body) {
-    this.body = body;
   }
 
 
@@ -120,6 +104,60 @@ public class DocumentVariation  implements Serializable {
   }
 
 
+  /**
+   * The priority of the variation.
+   **/
+  public DocumentVariation priority(Integer priority) {
+    this.priority = priority;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The priority of the variation.")
+  @JsonProperty("priority")
+  public Integer getPriority() {
+    return priority;
+  }
+  public void setPriority(Integer priority) {
+    this.priority = priority;
+  }
+
+
+  /**
+   * The name of the variation.
+   **/
+  public DocumentVariation name(String name) {
+    this.name = name;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The name of the variation.")
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+
+  /**
+   * The content for the variation.
+   **/
+  public DocumentVariation body(DocumentBody body) {
+    this.body = body;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The content for the variation.")
+  @JsonProperty("body")
+  public DocumentBody getBody() {
+    return body;
+  }
+  public void setBody(DocumentBody body) {
+    this.body = body;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -138,18 +176,20 @@ public class DocumentVariation  implements Serializable {
     DocumentVariation documentVariation = (DocumentVariation) o;
 
     return Objects.equals(this.id, documentVariation.id) &&
-            Objects.equals(this.body, documentVariation.body) &&
             Objects.equals(this.dateCreated, documentVariation.dateCreated) &&
             Objects.equals(this.dateModified, documentVariation.dateModified) &&
             Objects.equals(this.documentVersion, documentVariation.documentVersion) &&
             Objects.equals(this.contexts, documentVariation.contexts) &&
             Objects.equals(this.document, documentVariation.document) &&
+            Objects.equals(this.priority, documentVariation.priority) &&
+            Objects.equals(this.name, documentVariation.name) &&
+            Objects.equals(this.body, documentVariation.body) &&
             Objects.equals(this.selfUri, documentVariation.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, body, dateCreated, dateModified, documentVersion, contexts, document, selfUri);
+    return Objects.hash(id, dateCreated, dateModified, documentVersion, contexts, document, priority, name, body, selfUri);
   }
 
   @Override
@@ -158,12 +198,14 @@ public class DocumentVariation  implements Serializable {
     sb.append("class DocumentVariation {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    body: ").append(toIndentedString(body)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    documentVersion: ").append(toIndentedString(documentVersion)).append("\n");
     sb.append("    contexts: ").append(toIndentedString(contexts)).append("\n");
     sb.append("    document: ").append(toIndentedString(document)).append("\n");
+    sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    body: ").append(toIndentedString(body)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -39,6 +39,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRecordingUploadsReport**](RecordingApi.html#getRecordingUploadsReport) | Get the status of a recording upload status report |
 | [**getRecordingsRetentionQuery**](RecordingApi.html#getRecordingsRetentionQuery) | Query for recording retention data |
 | [**getRecordingsScreensessions**](RecordingApi.html#getRecordingsScreensessions) | Retrieves a paged listing of screen recording sessions |
+| [**getRecordingsScreensessionsDetails**](RecordingApi.html#getRecordingsScreensessionsDetails) | Retrieves an object containing the total number of concurrent active screen recordings |
 | [**patchRecordingCrossplatformMediaretentionpolicy**](RecordingApi.html#patchRecordingCrossplatformMediaretentionpolicy) | Patch a media retention policy |
 | [**patchRecordingMediaretentionpolicy**](RecordingApi.html#patchRecordingMediaretentionpolicy) | Patch a media retention policy |
 | [**patchRecordingsScreensession**](RecordingApi.html#patchRecordingsScreensession) | Update a screen recording session |
@@ -2154,6 +2155,65 @@ try {
 ### Return type
 
 [**ScreenRecordingSessionListing**](ScreenRecordingSessionListing.html)
+
+<a name="getRecordingsScreensessionsDetails"></a>
+
+# **getRecordingsScreensessionsDetails**
+
+
+
+> [ScreenRecordingActiveSessions](ScreenRecordingActiveSessions.html) getRecordingsScreensessionsDetails()
+
+Retrieves an object containing the total number of concurrent active screen recordings
+
+getRecordingsScreensessionsDetails is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/recordings/screensessions/details  
+
+Requires ANY permissions: 
+
+* recording:screenRecording:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RecordingApi apiInstance = new RecordingApi();
+try {
+    ScreenRecordingActiveSessions result = apiInstance.getRecordingsScreensessionsDetails();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#getRecordingsScreensessionsDetails");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**ScreenRecordingActiveSessions**](ScreenRecordingActiveSessions.html)
 
 <a name="patchRecordingCrossplatformMediaretentionpolicy"></a>
 

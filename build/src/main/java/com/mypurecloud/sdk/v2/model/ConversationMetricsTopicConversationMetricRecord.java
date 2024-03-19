@@ -47,6 +47,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   public enum MetricEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NBLINDTRANSFERRED("nBlindTransferred"),
+    NBOTINTERACTIONS("nBotInteractions"),
     NCOBROWSESESSIONS("nCobrowseSessions"),
     NCONNECTED("nConnected"),
     NCONSULT("nConsult"),

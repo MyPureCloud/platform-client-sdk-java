@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.RecordingRetentionCursorEntityListing;
 import com.mypurecloud.sdk.v2.model.RecordingSettings;
 import com.mypurecloud.sdk.v2.model.RecordingUploadReport;
 import com.mypurecloud.sdk.v2.model.RecordingUploadReportRequest;
+import com.mypurecloud.sdk.v2.model.ScreenRecordingActiveSessions;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingMetaDataRequest;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionRequest;
@@ -85,6 +86,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRecordingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingUploadsReportRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingsRetentionQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingsScreensessionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRecordingsScreensessionsDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRecordingCrossplatformMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRecordingMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRecordingsScreensessionRequest;
@@ -2519,6 +2521,83 @@ public class RecordingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ScreenRecordingSessionListing> response = (ApiResponse<ScreenRecordingSessionListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieves an object containing the total number of concurrent active screen recordings
+   * 
+   * getRecordingsScreensessionsDetails is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScreenRecordingActiveSessions> getRecordingsScreensessionsDetailsAsync(GetRecordingsScreensessionsDetailsRequest request, final AsyncApiCallback<ScreenRecordingActiveSessions> callback) {
+    try {
+      final SettableFuture<ScreenRecordingActiveSessions> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScreenRecordingActiveSessions>() {}, new AsyncApiCallback<ApiResponse<ScreenRecordingActiveSessions>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScreenRecordingActiveSessions> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieves an object containing the total number of concurrent active screen recordings
+   * 
+   * getRecordingsScreensessionsDetails is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScreenRecordingActiveSessions>> getRecordingsScreensessionsDetailsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScreenRecordingActiveSessions>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScreenRecordingActiveSessions>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScreenRecordingActiveSessions>() {}, new AsyncApiCallback<ApiResponse<ScreenRecordingActiveSessions>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScreenRecordingActiveSessions> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScreenRecordingActiveSessions> response = (ApiResponse<ScreenRecordingActiveSessions>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScreenRecordingActiveSessions> response = (ApiResponse<ScreenRecordingActiveSessions>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

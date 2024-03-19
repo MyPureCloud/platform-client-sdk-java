@@ -60,11 +60,13 @@ public class SurveyAggregationQuery  implements Serializable {
     SURVEYFORMID("surveyFormId"),
     SURVEYFORMNAME("surveyFormName"),
     SURVEYID("surveyId"),
+    SURVEYPARTIALRESPONSE("surveyPartialResponse"),
     SURVEYPREVIOUSSTATUS("surveyPreviousStatus"),
     SURVEYPROMOTERSCORE("surveyPromoterScore"),
     SURVEYQUESTIONGROUPID("surveyQuestionGroupId"),
     SURVEYQUESTIONID("surveyQuestionId"),
     SURVEYSTATUS("surveyStatus"),
+    SURVEYTYPE("surveyType"),
     TEAMID("teamId"),
     USERID("userId"),
     WRAPUPCODE("wrapUpCode");
@@ -115,9 +117,11 @@ public class SurveyAggregationQuery  implements Serializable {
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
     NSURVEYERRORS("nSurveyErrors"),
+    NSURVEYFULLRESPONSES("nSurveyFullResponses"),
     NSURVEYNPSDETRACTORS("nSurveyNpsDetractors"),
     NSURVEYNPSPROMOTERS("nSurveyNpsPromoters"),
     NSURVEYNPSRESPONSES("nSurveyNpsResponses"),
+    NSURVEYPARTIALRESPONSES("nSurveyPartialResponses"),
     NSURVEYQUESTIONGROUPRESPONSES("nSurveyQuestionGroupResponses"),
     NSURVEYQUESTIONRESPONSES("nSurveyQuestionResponses"),
     NSURVEYRESPONSES("nSurveyResponses"),
@@ -126,6 +130,8 @@ public class SurveyAggregationQuery  implements Serializable {
     NSURVEYSEXPIRED("nSurveysExpired"),
     NSURVEYSSENT("nSurveysSent"),
     NSURVEYSSTARTED("nSurveysStarted"),
+    NVOICESURVEYS("nVoiceSurveys"),
+    NWEBSURVEYS("nWebSurveys"),
     OSURVEYQUESTIONGROUPSCORE("oSurveyQuestionGroupScore"),
     OSURVEYQUESTIONSCORE("oSurveyQuestionScore"),
     OSURVEYTOTALSCORE("oSurveyTotalScore");

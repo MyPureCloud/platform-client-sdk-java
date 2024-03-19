@@ -39,6 +39,8 @@ import com.mypurecloud.sdk.v2.model.BuAsyncScheduleResponse;
 import com.mypurecloud.sdk.v2.model.BuAsyncScheduleRunResponse;
 import com.mypurecloud.sdk.v2.model.BuCopyScheduleRequest;
 import com.mypurecloud.sdk.v2.model.BuCreateBlankScheduleRequest;
+import com.mypurecloud.sdk.v2.model.BuCreateTimeOffLimitRequest;
+import com.mypurecloud.sdk.v2.model.BuCreateTimeOffPlanRequest;
 import com.mypurecloud.sdk.v2.model.BuCurrentAgentScheduleSearchResponse;
 import com.mypurecloud.sdk.v2.model.BuForecastGenerationResult;
 import com.mypurecloud.sdk.v2.model.BuForecastResultResponse;
@@ -56,8 +58,15 @@ import com.mypurecloud.sdk.v2.model.BuScheduleMetadata;
 import com.mypurecloud.sdk.v2.model.BuScheduleRun;
 import com.mypurecloud.sdk.v2.model.BuScheduleRunListing;
 import com.mypurecloud.sdk.v2.model.BuSearchAgentSchedulesRequest;
+import com.mypurecloud.sdk.v2.model.BuSetTimeOffLimitValuesRequest;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecast;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecastListing;
+import com.mypurecloud.sdk.v2.model.BuTimeOffLimitListing;
+import com.mypurecloud.sdk.v2.model.BuTimeOffLimitResponse;
+import com.mypurecloud.sdk.v2.model.BuTimeOffLimitValuesResponse;
+import com.mypurecloud.sdk.v2.model.BuTimeOffPlanListing;
+import com.mypurecloud.sdk.v2.model.BuTimeOffPlanResponse;
+import com.mypurecloud.sdk.v2.model.BuUpdateTimeOffPlanRequest;
 import com.mypurecloud.sdk.v2.model.BulkShiftTradeStateUpdateRequest;
 import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeStateResponse;
 import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCode;
@@ -75,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.CreateBusinessUnitRequest;
 import com.mypurecloud.sdk.v2.model.CreateManagementUnitApiRequest;
 import com.mypurecloud.sdk.v2.model.CreatePlanningGroupRequest;
 import com.mypurecloud.sdk.v2.model.CreateServiceGoalTemplate;
+import com.mypurecloud.sdk.v2.model.CreateStaffingGroupRequest;
 import com.mypurecloud.sdk.v2.model.CreateTimeOffLimitRequest;
 import com.mypurecloud.sdk.v2.model.CreateTimeOffPlanRequest;
 import com.mypurecloud.sdk.v2.model.CreateWorkPlan;
@@ -118,6 +128,7 @@ import com.mypurecloud.sdk.v2.model.QueryAgentsIntegrationsRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffIntegrationStatusRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesRequest;
 import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesResponse;
+import com.mypurecloud.sdk.v2.model.QueryUserStaffingGroupListRequest;
 import com.mypurecloud.sdk.v2.model.QueryWaitlistPositionsRequest;
 import com.mypurecloud.sdk.v2.model.ScheduleGenerationResult;
 import com.mypurecloud.sdk.v2.model.ScheduleUploadProcessingResponse;
@@ -131,6 +142,8 @@ import com.mypurecloud.sdk.v2.model.SetTimeOffLimitValuesRequest;
 import com.mypurecloud.sdk.v2.model.ShiftTradeListResponse;
 import com.mypurecloud.sdk.v2.model.ShiftTradeMatchesSummaryResponse;
 import com.mypurecloud.sdk.v2.model.ShiftTradeResponse;
+import com.mypurecloud.sdk.v2.model.StaffingGroupListing;
+import com.mypurecloud.sdk.v2.model.StaffingGroupResponse;
 import com.mypurecloud.sdk.v2.model.TimeOffBalanceJobResponse;
 import com.mypurecloud.sdk.v2.model.TimeOffBalanceRequest;
 import com.mypurecloud.sdk.v2.model.TimeOffBalancesResponse;
@@ -153,6 +166,7 @@ import com.mypurecloud.sdk.v2.model.UpdateNotificationsResponse;
 import com.mypurecloud.sdk.v2.model.UpdatePlanningGroupRequest;
 import com.mypurecloud.sdk.v2.model.UpdateScheduleUploadResponse;
 import com.mypurecloud.sdk.v2.model.UpdateServiceGoalTemplate;
+import com.mypurecloud.sdk.v2.model.UpdateStaffingGroupRequest;
 import com.mypurecloud.sdk.v2.model.UpdateTimeOffLimitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateTimeOffPlanRequest;
 import com.mypurecloud.sdk.v2.model.UpdateWorkPlanRotationRequest;
@@ -161,6 +175,7 @@ import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.UserScheduleAdherence;
 import com.mypurecloud.sdk.v2.model.UserScheduleAdherenceListing;
 import com.mypurecloud.sdk.v2.model.UserScheduleContainer;
+import com.mypurecloud.sdk.v2.model.UserStaffingGroupListing;
 import com.mypurecloud.sdk.v2.model.UserTimeOffIntegrationStatusResponse;
 import com.mypurecloud.sdk.v2.model.UserTimeOffIntegrationStatusResponseListing;
 import com.mypurecloud.sdk.v2.model.ValidateWorkPlanResponse;
@@ -195,6 +210,9 @@ import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitA
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitPlanninggroupRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitServicegoaltemplateRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitStaffinggroupRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitTimeofflimitRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitTimeoffplanRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitWeekScheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitWeekShorttermforecastRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementCalendarUrlIcsRequest;
@@ -224,6 +242,12 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSche
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulingRunsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitServicegoaltemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitServicegoaltemplatesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitStaffinggroupRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitStaffinggroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitTimeofflimitRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitTimeofflimitsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitTimeoffplanRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitTimeoffplansRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekScheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekScheduleGenerationresultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekScheduleHeadcountforecastRequest;
@@ -284,6 +308,8 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitAc
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitPlanninggroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitStaffinggroupRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitTimeoffplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeofflimitRequest;
@@ -310,6 +336,11 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitAge
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitIntradayRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitPlanninggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitServicegoaltemplatesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitStaffinggroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitStaffinggroupsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitTimeofflimitsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitTimeofflimitsValuesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitTimeoffplansRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleCopyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsRequest;
@@ -365,6 +396,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTimeoffrequests
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTimeoffrequestsEstimateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTimeoffrequestsIntegrationstatusQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWorkforcemanagementAgentIntegrationsHrisRequest;
+import com.mypurecloud.sdk.v2.api.request.PutWorkforcemanagementBusinessunitTimeofflimitValuesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWorkforcemanagementManagementunitTimeofflimitValuesRequest;
 
 import java.io.IOException;
@@ -754,6 +786,243 @@ public class WorkforceManagementApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteWorkforcemanagementBusinessunitServicegoaltemplate(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Deletes a staffing group
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param staffingGroupId The ID of the staffing group to delete (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitStaffinggroup(String businessUnitId, String staffingGroupId) throws IOException, ApiException {
+     deleteWorkforcemanagementBusinessunitStaffinggroup(createDeleteWorkforcemanagementBusinessunitStaffinggroupRequest(businessUnitId, staffingGroupId));
+  }
+
+  /**
+   * Deletes a staffing group
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param staffingGroupId The ID of the staffing group to delete (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitStaffinggroupWithHttpInfo(String businessUnitId, String staffingGroupId) throws IOException {
+    return deleteWorkforcemanagementBusinessunitStaffinggroup(createDeleteWorkforcemanagementBusinessunitStaffinggroupRequest(businessUnitId, staffingGroupId).withHttpInfo());
+  }
+
+  private DeleteWorkforcemanagementBusinessunitStaffinggroupRequest createDeleteWorkforcemanagementBusinessunitStaffinggroupRequest(String businessUnitId, String staffingGroupId) {
+    return DeleteWorkforcemanagementBusinessunitStaffinggroupRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withStaffingGroupId(staffingGroupId)
+
+            .build();
+  }
+
+  /**
+   * Deletes a staffing group
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitStaffinggroup(DeleteWorkforcemanagementBusinessunitStaffinggroupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Deletes a staffing group
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitStaffinggroup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Deletes a time-off limit object
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param timeOffLimitId The ID of the time-off limit object to delete (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitTimeofflimit(String businessUnitId, String timeOffLimitId) throws IOException, ApiException {
+     deleteWorkforcemanagementBusinessunitTimeofflimit(createDeleteWorkforcemanagementBusinessunitTimeofflimitRequest(businessUnitId, timeOffLimitId));
+  }
+
+  /**
+   * Deletes a time-off limit object
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param timeOffLimitId The ID of the time-off limit object to delete (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitTimeofflimitWithHttpInfo(String businessUnitId, String timeOffLimitId) throws IOException {
+    return deleteWorkforcemanagementBusinessunitTimeofflimit(createDeleteWorkforcemanagementBusinessunitTimeofflimitRequest(businessUnitId, timeOffLimitId).withHttpInfo());
+  }
+
+  private DeleteWorkforcemanagementBusinessunitTimeofflimitRequest createDeleteWorkforcemanagementBusinessunitTimeofflimitRequest(String businessUnitId, String timeOffLimitId) {
+    return DeleteWorkforcemanagementBusinessunitTimeofflimitRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withTimeOffLimitId(timeOffLimitId)
+
+            .build();
+  }
+
+  /**
+   * Deletes a time-off limit object
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitTimeofflimit(DeleteWorkforcemanagementBusinessunitTimeofflimitRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Deletes a time-off limit object
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitTimeofflimit(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Deletes a time-off plan
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param timeOffPlanId The ID of the time-off plan to delete (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitTimeoffplan(String businessUnitId, String timeOffPlanId) throws IOException, ApiException {
+     deleteWorkforcemanagementBusinessunitTimeoffplan(createDeleteWorkforcemanagementBusinessunitTimeoffplanRequest(businessUnitId, timeOffPlanId));
+  }
+
+  /**
+   * Deletes a time-off plan
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param timeOffPlanId The ID of the time-off plan to delete (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitTimeoffplanWithHttpInfo(String businessUnitId, String timeOffPlanId) throws IOException {
+    return deleteWorkforcemanagementBusinessunitTimeoffplan(createDeleteWorkforcemanagementBusinessunitTimeoffplanRequest(businessUnitId, timeOffPlanId).withHttpInfo());
+  }
+
+  private DeleteWorkforcemanagementBusinessunitTimeoffplanRequest createDeleteWorkforcemanagementBusinessunitTimeoffplanRequest(String businessUnitId, String timeOffPlanId) {
+    return DeleteWorkforcemanagementBusinessunitTimeoffplanRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withTimeOffPlanId(timeOffPlanId)
+
+            .build();
+  }
+
+  /**
+   * Deletes a time-off plan
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitTimeoffplan(DeleteWorkforcemanagementBusinessunitTimeoffplanRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Deletes a time-off plan
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitTimeoffplan(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -3100,6 +3369,502 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ServiceGoalTemplateList> response = (ApiResponse<ServiceGoalTemplateList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Gets a staffing group
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param staffingGroupId The ID of the staffing group to fetch (required)
+   * @return StaffingGroupResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public StaffingGroupResponse getWorkforcemanagementBusinessunitStaffinggroup(String businessUnitId, String staffingGroupId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitStaffinggroup(createGetWorkforcemanagementBusinessunitStaffinggroupRequest(businessUnitId, staffingGroupId));
+  }
+
+  /**
+   * Gets a staffing group
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param staffingGroupId The ID of the staffing group to fetch (required)
+   * @return StaffingGroupResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<StaffingGroupResponse> getWorkforcemanagementBusinessunitStaffinggroupWithHttpInfo(String businessUnitId, String staffingGroupId) throws IOException {
+    return getWorkforcemanagementBusinessunitStaffinggroup(createGetWorkforcemanagementBusinessunitStaffinggroupRequest(businessUnitId, staffingGroupId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitStaffinggroupRequest createGetWorkforcemanagementBusinessunitStaffinggroupRequest(String businessUnitId, String staffingGroupId) {
+    return GetWorkforcemanagementBusinessunitStaffinggroupRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withStaffingGroupId(staffingGroupId)
+
+            .build();
+  }
+
+  /**
+   * Gets a staffing group
+   * 
+   * @param request The request object
+   * @return StaffingGroupResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public StaffingGroupResponse getWorkforcemanagementBusinessunitStaffinggroup(GetWorkforcemanagementBusinessunitStaffinggroupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<StaffingGroupResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<StaffingGroupResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets a staffing group
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<StaffingGroupResponse> getWorkforcemanagementBusinessunitStaffinggroup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<StaffingGroupResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<StaffingGroupResponse> response = (ApiResponse<StaffingGroupResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<StaffingGroupResponse> response = (ApiResponse<StaffingGroupResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Gets a list of staffing groups
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param managementUnitId The ID of the management unit to get management unit specific staffing groups (optional)
+   * @return StaffingGroupListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public StaffingGroupListing getWorkforcemanagementBusinessunitStaffinggroups(String businessUnitId, String managementUnitId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitStaffinggroups(createGetWorkforcemanagementBusinessunitStaffinggroupsRequest(businessUnitId, managementUnitId));
+  }
+
+  /**
+   * Gets a list of staffing groups
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param managementUnitId The ID of the management unit to get management unit specific staffing groups (optional)
+   * @return StaffingGroupListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<StaffingGroupListing> getWorkforcemanagementBusinessunitStaffinggroupsWithHttpInfo(String businessUnitId, String managementUnitId) throws IOException {
+    return getWorkforcemanagementBusinessunitStaffinggroups(createGetWorkforcemanagementBusinessunitStaffinggroupsRequest(businessUnitId, managementUnitId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitStaffinggroupsRequest createGetWorkforcemanagementBusinessunitStaffinggroupsRequest(String businessUnitId, String managementUnitId) {
+    return GetWorkforcemanagementBusinessunitStaffinggroupsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withManagementUnitId(managementUnitId)
+
+            .build();
+  }
+
+  /**
+   * Gets a list of staffing groups
+   * 
+   * @param request The request object
+   * @return StaffingGroupListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public StaffingGroupListing getWorkforcemanagementBusinessunitStaffinggroups(GetWorkforcemanagementBusinessunitStaffinggroupsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<StaffingGroupListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<StaffingGroupListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets a list of staffing groups
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<StaffingGroupListing> getWorkforcemanagementBusinessunitStaffinggroups(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<StaffingGroupListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<StaffingGroupListing> response = (ApiResponse<StaffingGroupListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<StaffingGroupListing> response = (ApiResponse<StaffingGroupListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Gets a time-off limit object
+   * Returns properties of time-off limit object, but not daily values
+   * @param businessUnitId The ID of the business unit (required)
+   * @param timeOffLimitId The ID of the time-off limit to fetch (required)
+   * @return BuTimeOffLimitResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuTimeOffLimitResponse getWorkforcemanagementBusinessunitTimeofflimit(String businessUnitId, String timeOffLimitId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitTimeofflimit(createGetWorkforcemanagementBusinessunitTimeofflimitRequest(businessUnitId, timeOffLimitId));
+  }
+
+  /**
+   * Gets a time-off limit object
+   * Returns properties of time-off limit object, but not daily values
+   * @param businessUnitId The ID of the business unit (required)
+   * @param timeOffLimitId The ID of the time-off limit to fetch (required)
+   * @return BuTimeOffLimitResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuTimeOffLimitResponse> getWorkforcemanagementBusinessunitTimeofflimitWithHttpInfo(String businessUnitId, String timeOffLimitId) throws IOException {
+    return getWorkforcemanagementBusinessunitTimeofflimit(createGetWorkforcemanagementBusinessunitTimeofflimitRequest(businessUnitId, timeOffLimitId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitTimeofflimitRequest createGetWorkforcemanagementBusinessunitTimeofflimitRequest(String businessUnitId, String timeOffLimitId) {
+    return GetWorkforcemanagementBusinessunitTimeofflimitRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withTimeOffLimitId(timeOffLimitId)
+
+            .build();
+  }
+
+  /**
+   * Gets a time-off limit object
+   * Returns properties of time-off limit object, but not daily values
+   * @param request The request object
+   * @return BuTimeOffLimitResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuTimeOffLimitResponse getWorkforcemanagementBusinessunitTimeofflimit(GetWorkforcemanagementBusinessunitTimeofflimitRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuTimeOffLimitResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuTimeOffLimitResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets a time-off limit object
+   * Returns properties of time-off limit object, but not daily values
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuTimeOffLimitResponse> getWorkforcemanagementBusinessunitTimeofflimit(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuTimeOffLimitResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuTimeOffLimitResponse> response = (ApiResponse<BuTimeOffLimitResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuTimeOffLimitResponse> response = (ApiResponse<BuTimeOffLimitResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Gets a list of time-off limit objects
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param managementUnitId The ID of the management unit to get management unit specific time-off limit objects (optional)
+   * @return BuTimeOffLimitListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuTimeOffLimitListing getWorkforcemanagementBusinessunitTimeofflimits(String businessUnitId, String managementUnitId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitTimeofflimits(createGetWorkforcemanagementBusinessunitTimeofflimitsRequest(businessUnitId, managementUnitId));
+  }
+
+  /**
+   * Gets a list of time-off limit objects
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param managementUnitId The ID of the management unit to get management unit specific time-off limit objects (optional)
+   * @return BuTimeOffLimitListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuTimeOffLimitListing> getWorkforcemanagementBusinessunitTimeofflimitsWithHttpInfo(String businessUnitId, String managementUnitId) throws IOException {
+    return getWorkforcemanagementBusinessunitTimeofflimits(createGetWorkforcemanagementBusinessunitTimeofflimitsRequest(businessUnitId, managementUnitId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitTimeofflimitsRequest createGetWorkforcemanagementBusinessunitTimeofflimitsRequest(String businessUnitId, String managementUnitId) {
+    return GetWorkforcemanagementBusinessunitTimeofflimitsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withManagementUnitId(managementUnitId)
+
+            .build();
+  }
+
+  /**
+   * Gets a list of time-off limit objects
+   * 
+   * @param request The request object
+   * @return BuTimeOffLimitListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuTimeOffLimitListing getWorkforcemanagementBusinessunitTimeofflimits(GetWorkforcemanagementBusinessunitTimeofflimitsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuTimeOffLimitListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuTimeOffLimitListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets a list of time-off limit objects
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuTimeOffLimitListing> getWorkforcemanagementBusinessunitTimeofflimits(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuTimeOffLimitListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuTimeOffLimitListing> response = (ApiResponse<BuTimeOffLimitListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuTimeOffLimitListing> response = (ApiResponse<BuTimeOffLimitListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Gets a time-off plan
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param timeOffPlanId The ID of the time-off plan to fetch (required)
+   * @return BuTimeOffPlanResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuTimeOffPlanResponse getWorkforcemanagementBusinessunitTimeoffplan(String businessUnitId, String timeOffPlanId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitTimeoffplan(createGetWorkforcemanagementBusinessunitTimeoffplanRequest(businessUnitId, timeOffPlanId));
+  }
+
+  /**
+   * Gets a time-off plan
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param timeOffPlanId The ID of the time-off plan to fetch (required)
+   * @return BuTimeOffPlanResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuTimeOffPlanResponse> getWorkforcemanagementBusinessunitTimeoffplanWithHttpInfo(String businessUnitId, String timeOffPlanId) throws IOException {
+    return getWorkforcemanagementBusinessunitTimeoffplan(createGetWorkforcemanagementBusinessunitTimeoffplanRequest(businessUnitId, timeOffPlanId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitTimeoffplanRequest createGetWorkforcemanagementBusinessunitTimeoffplanRequest(String businessUnitId, String timeOffPlanId) {
+    return GetWorkforcemanagementBusinessunitTimeoffplanRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withTimeOffPlanId(timeOffPlanId)
+
+            .build();
+  }
+
+  /**
+   * Gets a time-off plan
+   * 
+   * @param request The request object
+   * @return BuTimeOffPlanResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuTimeOffPlanResponse getWorkforcemanagementBusinessunitTimeoffplan(GetWorkforcemanagementBusinessunitTimeoffplanRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuTimeOffPlanResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuTimeOffPlanResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets a time-off plan
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuTimeOffPlanResponse> getWorkforcemanagementBusinessunitTimeoffplan(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuTimeOffPlanResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuTimeOffPlanResponse> response = (ApiResponse<BuTimeOffPlanResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuTimeOffPlanResponse> response = (ApiResponse<BuTimeOffPlanResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Gets a list of time-off plans
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param managementUnitId The ID of the management unit to get management unit specific staffing groups (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @return BuTimeOffPlanListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuTimeOffPlanListing getWorkforcemanagementBusinessunitTimeoffplans(String businessUnitId, String managementUnitId, Boolean forceDownloadService) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitTimeoffplans(createGetWorkforcemanagementBusinessunitTimeoffplansRequest(businessUnitId, managementUnitId, forceDownloadService));
+  }
+
+  /**
+   * Gets a list of time-off plans
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param managementUnitId The ID of the management unit to get management unit specific staffing groups (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @return BuTimeOffPlanListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuTimeOffPlanListing> getWorkforcemanagementBusinessunitTimeoffplansWithHttpInfo(String businessUnitId, String managementUnitId, Boolean forceDownloadService) throws IOException {
+    return getWorkforcemanagementBusinessunitTimeoffplans(createGetWorkforcemanagementBusinessunitTimeoffplansRequest(businessUnitId, managementUnitId, forceDownloadService).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitTimeoffplansRequest createGetWorkforcemanagementBusinessunitTimeoffplansRequest(String businessUnitId, String managementUnitId, Boolean forceDownloadService) {
+    return GetWorkforcemanagementBusinessunitTimeoffplansRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withManagementUnitId(managementUnitId)
+
+            .withForceDownloadService(forceDownloadService)
+
+            .build();
+  }
+
+  /**
+   * Gets a list of time-off plans
+   * 
+   * @param request The request object
+   * @return BuTimeOffPlanListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuTimeOffPlanListing getWorkforcemanagementBusinessunitTimeoffplans(GetWorkforcemanagementBusinessunitTimeoffplansRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuTimeOffPlanListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuTimeOffPlanListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets a list of time-off plans
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuTimeOffPlanListing> getWorkforcemanagementBusinessunitTimeoffplans(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuTimeOffPlanListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuTimeOffPlanListing> response = (ApiResponse<BuTimeOffPlanListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuTimeOffPlanListing> response = (ApiResponse<BuTimeOffPlanListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -8098,6 +8863,178 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Updates a staffing group
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param staffingGroupId The ID of the staffing group to update (required)
+   * @param body body (optional)
+   * @return StaffingGroupResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public StaffingGroupResponse patchWorkforcemanagementBusinessunitStaffinggroup(String businessUnitId, String staffingGroupId, UpdateStaffingGroupRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementBusinessunitStaffinggroup(createPatchWorkforcemanagementBusinessunitStaffinggroupRequest(businessUnitId, staffingGroupId, body));
+  }
+
+  /**
+   * Updates a staffing group
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param staffingGroupId The ID of the staffing group to update (required)
+   * @param body body (optional)
+   * @return StaffingGroupResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<StaffingGroupResponse> patchWorkforcemanagementBusinessunitStaffinggroupWithHttpInfo(String businessUnitId, String staffingGroupId, UpdateStaffingGroupRequest body) throws IOException {
+    return patchWorkforcemanagementBusinessunitStaffinggroup(createPatchWorkforcemanagementBusinessunitStaffinggroupRequest(businessUnitId, staffingGroupId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementBusinessunitStaffinggroupRequest createPatchWorkforcemanagementBusinessunitStaffinggroupRequest(String businessUnitId, String staffingGroupId, UpdateStaffingGroupRequest body) {
+    return PatchWorkforcemanagementBusinessunitStaffinggroupRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withStaffingGroupId(staffingGroupId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Updates a staffing group
+   * 
+   * @param request The request object
+   * @return StaffingGroupResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public StaffingGroupResponse patchWorkforcemanagementBusinessunitStaffinggroup(PatchWorkforcemanagementBusinessunitStaffinggroupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<StaffingGroupResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<StaffingGroupResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Updates a staffing group
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<StaffingGroupResponse> patchWorkforcemanagementBusinessunitStaffinggroup(ApiRequest<UpdateStaffingGroupRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<StaffingGroupResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<StaffingGroupResponse> response = (ApiResponse<StaffingGroupResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<StaffingGroupResponse> response = (ApiResponse<StaffingGroupResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Updates a time-off plan
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param timeOffPlanId The ID of the time-off plan to update (required)
+   * @param body body (optional)
+   * @return BuTimeOffPlanResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuTimeOffPlanResponse patchWorkforcemanagementBusinessunitTimeoffplan(String businessUnitId, String timeOffPlanId, BuUpdateTimeOffPlanRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementBusinessunitTimeoffplan(createPatchWorkforcemanagementBusinessunitTimeoffplanRequest(businessUnitId, timeOffPlanId, body));
+  }
+
+  /**
+   * Updates a time-off plan
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param timeOffPlanId The ID of the time-off plan to update (required)
+   * @param body body (optional)
+   * @return BuTimeOffPlanResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuTimeOffPlanResponse> patchWorkforcemanagementBusinessunitTimeoffplanWithHttpInfo(String businessUnitId, String timeOffPlanId, BuUpdateTimeOffPlanRequest body) throws IOException {
+    return patchWorkforcemanagementBusinessunitTimeoffplan(createPatchWorkforcemanagementBusinessunitTimeoffplanRequest(businessUnitId, timeOffPlanId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementBusinessunitTimeoffplanRequest createPatchWorkforcemanagementBusinessunitTimeoffplanRequest(String businessUnitId, String timeOffPlanId, BuUpdateTimeOffPlanRequest body) {
+    return PatchWorkforcemanagementBusinessunitTimeoffplanRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withTimeOffPlanId(timeOffPlanId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Updates a time-off plan
+   * 
+   * @param request The request object
+   * @return BuTimeOffPlanResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuTimeOffPlanResponse patchWorkforcemanagementBusinessunitTimeoffplan(PatchWorkforcemanagementBusinessunitTimeoffplanRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuTimeOffPlanResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuTimeOffPlanResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Updates a time-off plan
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuTimeOffPlanResponse> patchWorkforcemanagementBusinessunitTimeoffplan(ApiRequest<BuUpdateTimeOffPlanRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuTimeOffPlanResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuTimeOffPlanResponse> response = (ApiResponse<BuTimeOffPlanResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuTimeOffPlanResponse> response = (ApiResponse<BuTimeOffPlanResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update the requested management unit
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
@@ -10274,6 +11211,416 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ServiceGoalTemplate> response = (ApiResponse<ServiceGoalTemplate>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Creates a new staffing group
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (optional)
+   * @return StaffingGroupResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public StaffingGroupResponse postWorkforcemanagementBusinessunitStaffinggroups(String businessUnitId, CreateStaffingGroupRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitStaffinggroups(createPostWorkforcemanagementBusinessunitStaffinggroupsRequest(businessUnitId, body));
+  }
+
+  /**
+   * Creates a new staffing group
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (optional)
+   * @return StaffingGroupResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<StaffingGroupResponse> postWorkforcemanagementBusinessunitStaffinggroupsWithHttpInfo(String businessUnitId, CreateStaffingGroupRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitStaffinggroups(createPostWorkforcemanagementBusinessunitStaffinggroupsRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitStaffinggroupsRequest createPostWorkforcemanagementBusinessunitStaffinggroupsRequest(String businessUnitId, CreateStaffingGroupRequest body) {
+    return PostWorkforcemanagementBusinessunitStaffinggroupsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Creates a new staffing group
+   * 
+   * @param request The request object
+   * @return StaffingGroupResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public StaffingGroupResponse postWorkforcemanagementBusinessunitStaffinggroups(PostWorkforcemanagementBusinessunitStaffinggroupsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<StaffingGroupResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<StaffingGroupResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates a new staffing group
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<StaffingGroupResponse> postWorkforcemanagementBusinessunitStaffinggroups(ApiRequest<CreateStaffingGroupRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<StaffingGroupResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<StaffingGroupResponse> response = (ApiResponse<StaffingGroupResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<StaffingGroupResponse> response = (ApiResponse<StaffingGroupResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Gets staffing group associations for a list of user IDs
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (optional)
+   * @return UserStaffingGroupListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserStaffingGroupListing postWorkforcemanagementBusinessunitStaffinggroupsQuery(String businessUnitId, QueryUserStaffingGroupListRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitStaffinggroupsQuery(createPostWorkforcemanagementBusinessunitStaffinggroupsQueryRequest(businessUnitId, body));
+  }
+
+  /**
+   * Gets staffing group associations for a list of user IDs
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (optional)
+   * @return UserStaffingGroupListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserStaffingGroupListing> postWorkforcemanagementBusinessunitStaffinggroupsQueryWithHttpInfo(String businessUnitId, QueryUserStaffingGroupListRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitStaffinggroupsQuery(createPostWorkforcemanagementBusinessunitStaffinggroupsQueryRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitStaffinggroupsQueryRequest createPostWorkforcemanagementBusinessunitStaffinggroupsQueryRequest(String businessUnitId, QueryUserStaffingGroupListRequest body) {
+    return PostWorkforcemanagementBusinessunitStaffinggroupsQueryRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Gets staffing group associations for a list of user IDs
+   * 
+   * @param request The request object
+   * @return UserStaffingGroupListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserStaffingGroupListing postWorkforcemanagementBusinessunitStaffinggroupsQuery(PostWorkforcemanagementBusinessunitStaffinggroupsQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserStaffingGroupListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserStaffingGroupListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets staffing group associations for a list of user IDs
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserStaffingGroupListing> postWorkforcemanagementBusinessunitStaffinggroupsQuery(ApiRequest<QueryUserStaffingGroupListRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserStaffingGroupListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserStaffingGroupListing> response = (ApiResponse<UserStaffingGroupListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserStaffingGroupListing> response = (ApiResponse<UserStaffingGroupListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Creates a new time-off limit object
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (optional)
+   * @return BuTimeOffLimitResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuTimeOffLimitResponse postWorkforcemanagementBusinessunitTimeofflimits(String businessUnitId, BuCreateTimeOffLimitRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitTimeofflimits(createPostWorkforcemanagementBusinessunitTimeofflimitsRequest(businessUnitId, body));
+  }
+
+  /**
+   * Creates a new time-off limit object
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (optional)
+   * @return BuTimeOffLimitResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuTimeOffLimitResponse> postWorkforcemanagementBusinessunitTimeofflimitsWithHttpInfo(String businessUnitId, BuCreateTimeOffLimitRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitTimeofflimits(createPostWorkforcemanagementBusinessunitTimeofflimitsRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitTimeofflimitsRequest createPostWorkforcemanagementBusinessunitTimeofflimitsRequest(String businessUnitId, BuCreateTimeOffLimitRequest body) {
+    return PostWorkforcemanagementBusinessunitTimeofflimitsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Creates a new time-off limit object
+   * 
+   * @param request The request object
+   * @return BuTimeOffLimitResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuTimeOffLimitResponse postWorkforcemanagementBusinessunitTimeofflimits(PostWorkforcemanagementBusinessunitTimeofflimitsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuTimeOffLimitResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuTimeOffLimitResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates a new time-off limit object
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuTimeOffLimitResponse> postWorkforcemanagementBusinessunitTimeofflimits(ApiRequest<BuCreateTimeOffLimitRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuTimeOffLimitResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuTimeOffLimitResponse> response = (ApiResponse<BuTimeOffLimitResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuTimeOffLimitResponse> response = (ApiResponse<BuTimeOffLimitResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Retrieves time-off limit related values based on a given set of filters.
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (optional)
+   * @return BuTimeOffLimitValuesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuTimeOffLimitValuesResponse postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(String businessUnitId, QueryTimeOffLimitValuesRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(createPostWorkforcemanagementBusinessunitTimeofflimitsValuesQueryRequest(businessUnitId, body));
+  }
+
+  /**
+   * Retrieves time-off limit related values based on a given set of filters.
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (optional)
+   * @return BuTimeOffLimitValuesResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuTimeOffLimitValuesResponse> postWorkforcemanagementBusinessunitTimeofflimitsValuesQueryWithHttpInfo(String businessUnitId, QueryTimeOffLimitValuesRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(createPostWorkforcemanagementBusinessunitTimeofflimitsValuesQueryRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitTimeofflimitsValuesQueryRequest createPostWorkforcemanagementBusinessunitTimeofflimitsValuesQueryRequest(String businessUnitId, QueryTimeOffLimitValuesRequest body) {
+    return PostWorkforcemanagementBusinessunitTimeofflimitsValuesQueryRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Retrieves time-off limit related values based on a given set of filters.
+   * 
+   * @param request The request object
+   * @return BuTimeOffLimitValuesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuTimeOffLimitValuesResponse postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(PostWorkforcemanagementBusinessunitTimeofflimitsValuesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuTimeOffLimitValuesResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuTimeOffLimitValuesResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieves time-off limit related values based on a given set of filters.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuTimeOffLimitValuesResponse> postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(ApiRequest<QueryTimeOffLimitValuesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuTimeOffLimitValuesResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuTimeOffLimitValuesResponse> response = (ApiResponse<BuTimeOffLimitValuesResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuTimeOffLimitValuesResponse> response = (ApiResponse<BuTimeOffLimitValuesResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Creates a new time-off plan
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (optional)
+   * @return BuTimeOffPlanResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuTimeOffPlanResponse postWorkforcemanagementBusinessunitTimeoffplans(String businessUnitId, BuCreateTimeOffPlanRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitTimeoffplans(createPostWorkforcemanagementBusinessunitTimeoffplansRequest(businessUnitId, body));
+  }
+
+  /**
+   * Creates a new time-off plan
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (optional)
+   * @return BuTimeOffPlanResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuTimeOffPlanResponse> postWorkforcemanagementBusinessunitTimeoffplansWithHttpInfo(String businessUnitId, BuCreateTimeOffPlanRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitTimeoffplans(createPostWorkforcemanagementBusinessunitTimeoffplansRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitTimeoffplansRequest createPostWorkforcemanagementBusinessunitTimeoffplansRequest(String businessUnitId, BuCreateTimeOffPlanRequest body) {
+    return PostWorkforcemanagementBusinessunitTimeoffplansRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Creates a new time-off plan
+   * 
+   * @param request The request object
+   * @return BuTimeOffPlanResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuTimeOffPlanResponse postWorkforcemanagementBusinessunitTimeoffplans(PostWorkforcemanagementBusinessunitTimeoffplansRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuTimeOffPlanResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuTimeOffPlanResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates a new time-off plan
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuTimeOffPlanResponse> postWorkforcemanagementBusinessunitTimeoffplans(ApiRequest<BuCreateTimeOffPlanRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuTimeOffPlanResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuTimeOffPlanResponse> response = (ApiResponse<BuTimeOffPlanResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuTimeOffPlanResponse> response = (ApiResponse<BuTimeOffPlanResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -14913,6 +16260,92 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AgentIntegrationsResponse> response = (ApiResponse<AgentIntegrationsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Sets daily values for a date range of time-off limit object
+   * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time-off limit API
+   * @param businessUnitId The ID of the business unit (required)
+   * @param timeOffLimitId The ID of the time-off limit object to set values for (required)
+   * @param body body (optional)
+   * @return BuTimeOffLimitResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuTimeOffLimitResponse putWorkforcemanagementBusinessunitTimeofflimitValues(String businessUnitId, String timeOffLimitId, BuSetTimeOffLimitValuesRequest body) throws IOException, ApiException {
+    return  putWorkforcemanagementBusinessunitTimeofflimitValues(createPutWorkforcemanagementBusinessunitTimeofflimitValuesRequest(businessUnitId, timeOffLimitId, body));
+  }
+
+  /**
+   * Sets daily values for a date range of time-off limit object
+   * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time-off limit API
+   * @param businessUnitId The ID of the business unit (required)
+   * @param timeOffLimitId The ID of the time-off limit object to set values for (required)
+   * @param body body (optional)
+   * @return BuTimeOffLimitResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuTimeOffLimitResponse> putWorkforcemanagementBusinessunitTimeofflimitValuesWithHttpInfo(String businessUnitId, String timeOffLimitId, BuSetTimeOffLimitValuesRequest body) throws IOException {
+    return putWorkforcemanagementBusinessunitTimeofflimitValues(createPutWorkforcemanagementBusinessunitTimeofflimitValuesRequest(businessUnitId, timeOffLimitId, body).withHttpInfo());
+  }
+
+  private PutWorkforcemanagementBusinessunitTimeofflimitValuesRequest createPutWorkforcemanagementBusinessunitTimeofflimitValuesRequest(String businessUnitId, String timeOffLimitId, BuSetTimeOffLimitValuesRequest body) {
+    return PutWorkforcemanagementBusinessunitTimeofflimitValuesRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withTimeOffLimitId(timeOffLimitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Sets daily values for a date range of time-off limit object
+   * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time-off limit API
+   * @param request The request object
+   * @return BuTimeOffLimitResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuTimeOffLimitResponse putWorkforcemanagementBusinessunitTimeofflimitValues(PutWorkforcemanagementBusinessunitTimeofflimitValuesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuTimeOffLimitResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuTimeOffLimitResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Sets daily values for a date range of time-off limit object
+   * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time-off limit API
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuTimeOffLimitResponse> putWorkforcemanagementBusinessunitTimeofflimitValues(ApiRequest<BuSetTimeOffLimitValuesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuTimeOffLimitResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuTimeOffLimitResponse> response = (ApiResponse<BuTimeOffLimitResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuTimeOffLimitResponse> response = (ApiResponse<BuTimeOffLimitResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

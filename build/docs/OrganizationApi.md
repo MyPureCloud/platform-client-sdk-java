@@ -13,7 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOrganizationsIpaddressauthentication**](OrganizationApi.html#getOrganizationsIpaddressauthentication) | Get organization IP address whitelist settings |
 | [**getOrganizationsLimitsChangerequest**](OrganizationApi.html#getOrganizationsLimitsChangerequest) | Get a limit change request |
 | [**getOrganizationsLimitsChangerequests**](OrganizationApi.html#getOrganizationsLimitsChangerequests) | Get the available limit change requests |
-| [**getOrganizationsLimitsDocs**](OrganizationApi.html#getOrganizationsLimitsDocs) | Get a link to the limit documentation |
+| [**getOrganizationsLimitsDocs**](OrganizationApi.html#getOrganizationsLimitsDocs) | Get limit documentation |
 | [**getOrganizationsLimitsNamespace**](OrganizationApi.html#getOrganizationsLimitsNamespace) | Get the effective limits in a namespace for an organization |
 | [**getOrganizationsLimitsNamespaceDefaults**](OrganizationApi.html#getOrganizationsLimitsNamespaceDefaults) | Get the default limits in a namespace for an organization |
 | [**getOrganizationsLimitsNamespaces**](OrganizationApi.html#getOrganizationsLimitsNamespaces) | Get the available limit namespaces |
@@ -399,9 +399,9 @@ try {
 
 
 
-> [UrlResponse](UrlResponse.html) getOrganizationsLimitsDocs()
+> [LimitDocumentation](LimitDocumentation.html) getOrganizationsLimitsDocs()
 
-Get a link to the limit documentation
+Get limit documentation
 
 Wraps GET /api/v2/organizations/limits/docs  
 
@@ -431,7 +431,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 OrganizationApi apiInstance = new OrganizationApi();
 try {
-    UrlResponse result = apiInstance.getOrganizationsLimitsDocs();
+    LimitDocumentation result = apiInstance.getOrganizationsLimitsDocs();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationApi#getOrganizationsLimitsDocs");
@@ -447,7 +447,7 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**UrlResponse**](UrlResponse.html)
+[**LimitDocumentation**](LimitDocumentation.html)
 
 <a name="getOrganizationsLimitsNamespace"></a>
 

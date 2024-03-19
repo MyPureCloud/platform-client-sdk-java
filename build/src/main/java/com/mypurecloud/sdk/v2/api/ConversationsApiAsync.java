@@ -1177,10 +1177,11 @@ public class ConversationsApiAsync {
 
   /**
    * Delete a Twitter messaging integration
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> deleteConversationsMessagingIntegrationsTwitterIntegrationIdAsync(DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -1211,10 +1212,11 @@ public class ConversationsApiAsync {
 
   /**
    * Delete a Twitter messaging integration
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> deleteConversationsMessagingIntegrationsTwitterIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -6734,11 +6736,12 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Get a list of Twitter Integrations
-   * 
+   * Get a list of Twitter Integrations (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<TwitterIntegrationEntityListing> getConversationsMessagingIntegrationsTwitterAsync(GetConversationsMessagingIntegrationsTwitterRequest request, final AsyncApiCallback<TwitterIntegrationEntityListing> callback) {
     try {
@@ -6768,11 +6771,12 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Get a list of Twitter Integrations
-   * 
+   * Get a list of Twitter Integrations (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<TwitterIntegrationEntityListing>> getConversationsMessagingIntegrationsTwitterAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TwitterIntegrationEntityListing>> callback) {
     try {
@@ -6809,11 +6813,12 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Get a Twitter messaging integration
-   * 
+   * Get a Twitter messaging integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<TwitterIntegration> getConversationsMessagingIntegrationsTwitterIntegrationIdAsync(GetConversationsMessagingIntegrationsTwitterIntegrationIdRequest request, final AsyncApiCallback<TwitterIntegration> callback) {
     try {
@@ -6843,11 +6848,12 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Get a Twitter messaging integration
-   * 
+   * Get a Twitter messaging integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<TwitterIntegration>> getConversationsMessagingIntegrationsTwitterIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TwitterIntegration>> callback) {
     try {
@@ -10639,10 +10645,11 @@ public class ConversationsApiAsync {
 
   /**
    * Update Twitter messaging integration
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<TwitterIntegration> patchConversationsMessagingIntegrationsTwitterIntegrationIdAsync(PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest request, final AsyncApiCallback<TwitterIntegration> callback) {
     try {
@@ -10673,10 +10680,11 @@ public class ConversationsApiAsync {
 
   /**
    * Update Twitter messaging integration
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<TwitterIntegration>> patchConversationsMessagingIntegrationsTwitterIntegrationIdAsync(ApiRequest<TwitterIntegrationRequest> request, final AsyncApiCallback<ApiResponse<TwitterIntegration>> callback) {
     try {
@@ -16274,10 +16282,11 @@ public class ConversationsApiAsync {
 
   /**
    * Create a Twitter Integration
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<TwitterIntegration> postConversationsMessagingIntegrationsTwitterAsync(PostConversationsMessagingIntegrationsTwitterRequest request, final AsyncApiCallback<TwitterIntegration> callback) {
     try {
@@ -16308,10 +16317,11 @@ public class ConversationsApiAsync {
 
   /**
    * Create a Twitter Integration
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<TwitterIntegration>> postConversationsMessagingIntegrationsTwitterAsync(ApiRequest<TwitterIntegrationRequest> request, final AsyncApiCallback<ApiResponse<TwitterIntegration>> callback) {
     try {

@@ -15,6 +15,7 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ChatMessageEntityListing;
 import com.mypurecloud.sdk.v2.model.ChatMessageResponse;
+import com.mypurecloud.sdk.v2.model.ChatReactionUpdate;
 import com.mypurecloud.sdk.v2.model.ChatSendMessageResponse;
 import com.mypurecloud.sdk.v2.model.ChatSettings;
 import com.mypurecloud.sdk.v2.model.ChatUserSettings;
@@ -23,6 +24,8 @@ import com.mypurecloud.sdk.v2.model.CreateRoomResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.PinnedMessageRequest;
 import com.mypurecloud.sdk.v2.model.Room;
+import com.mypurecloud.sdk.v2.model.RoomParticipant;
+import com.mypurecloud.sdk.v2.model.RoomParticipantsResponse;
 import com.mypurecloud.sdk.v2.model.RoomUpdateRequest;
 import com.mypurecloud.sdk.v2.model.SendMessageBody;
 
@@ -35,6 +38,8 @@ import com.mypurecloud.sdk.v2.api.request.GetChatsMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsRoomRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsRoomMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsRoomMessagesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetChatsRoomParticipantRequest;
+import com.mypurecloud.sdk.v2.api.request.GetChatsRoomParticipantsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsThreadMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsUserMessageRequest;
@@ -50,6 +55,7 @@ import com.mypurecloud.sdk.v2.api.request.PostChatsRoomParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PostChatsRoomPinnedmessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostChatsRoomsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostChatsUserMessagesRequest;
+import com.mypurecloud.sdk.v2.api.request.PutChatsMessageReactionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutChatsSettingsRequest;
 
 import java.io.IOException;
@@ -73,7 +79,6 @@ public class ChatApiAsync {
   /**
    * Delete a message in a room
    * 
-   * deleteChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -108,7 +113,6 @@ public class ChatApiAsync {
   /**
    * Delete a message in a room
    * 
-   * deleteChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -150,7 +154,6 @@ public class ChatApiAsync {
   /**
    * Remove a user from a room.
    * 
-   * deleteChatsRoomParticipant is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -185,7 +188,6 @@ public class ChatApiAsync {
   /**
    * Remove a user from a room.
    * 
-   * deleteChatsRoomParticipant is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -227,7 +229,6 @@ public class ChatApiAsync {
   /**
    * Remove a pinned message from a room
    * 
-   * deleteChatsRoomPinnedmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -262,7 +263,6 @@ public class ChatApiAsync {
   /**
    * Remove a pinned message from a room
    * 
-   * deleteChatsRoomPinnedmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -304,7 +304,6 @@ public class ChatApiAsync {
   /**
    * Delete a message to a user
    * 
-   * deleteChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -339,7 +338,6 @@ public class ChatApiAsync {
   /**
    * Delete a message to a user
    * 
-   * deleteChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -381,7 +379,6 @@ public class ChatApiAsync {
   /**
    * Get a message
    * 
-   * getChatsMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -416,7 +413,6 @@ public class ChatApiAsync {
   /**
    * Get a message
    * 
-   * getChatsMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -458,7 +454,6 @@ public class ChatApiAsync {
   /**
    * Get a room
    * 
-   * getChatsRoom is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -493,7 +488,6 @@ public class ChatApiAsync {
   /**
    * Get a room
    * 
-   * getChatsRoom is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -535,7 +529,6 @@ public class ChatApiAsync {
   /**
    * Get messages by id(s) from a room
    * 
-   * getChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -570,7 +563,6 @@ public class ChatApiAsync {
   /**
    * Get messages by id(s) from a room
    * 
-   * getChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -612,7 +604,6 @@ public class ChatApiAsync {
   /**
    * Get a room's message history
    * 
-   * getChatsRoomMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -647,7 +638,6 @@ public class ChatApiAsync {
   /**
    * Get a room's message history
    * 
-   * getChatsRoomMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -675,6 +665,156 @@ public class ChatApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ChatMessageEntityListing> response = (ApiResponse<ChatMessageEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a room participant
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<RoomParticipant> getChatsRoomParticipantAsync(GetChatsRoomParticipantRequest request, final AsyncApiCallback<RoomParticipant> callback) {
+    try {
+      final SettableFuture<RoomParticipant> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RoomParticipant>() {}, new AsyncApiCallback<ApiResponse<RoomParticipant>>() {
+        @Override
+        public void onCompleted(ApiResponse<RoomParticipant> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a room participant
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<RoomParticipant>> getChatsRoomParticipantAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<RoomParticipant>> callback) {
+    try {
+      final SettableFuture<ApiResponse<RoomParticipant>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<RoomParticipant>() {}, new AsyncApiCallback<ApiResponse<RoomParticipant>>() {
+        @Override
+        public void onCompleted(ApiResponse<RoomParticipant> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RoomParticipant> response = (ApiResponse<RoomParticipant>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RoomParticipant> response = (ApiResponse<RoomParticipant>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get room participants in a room
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<RoomParticipantsResponse> getChatsRoomParticipantsAsync(GetChatsRoomParticipantsRequest request, final AsyncApiCallback<RoomParticipantsResponse> callback) {
+    try {
+      final SettableFuture<RoomParticipantsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RoomParticipantsResponse>() {}, new AsyncApiCallback<ApiResponse<RoomParticipantsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<RoomParticipantsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get room participants in a room
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<RoomParticipantsResponse>> getChatsRoomParticipantsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<RoomParticipantsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<RoomParticipantsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<RoomParticipantsResponse>() {}, new AsyncApiCallback<ApiResponse<RoomParticipantsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<RoomParticipantsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RoomParticipantsResponse> response = (ApiResponse<RoomParticipantsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RoomParticipantsResponse> response = (ApiResponse<RoomParticipantsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -764,7 +904,6 @@ public class ChatApiAsync {
   /**
    * Get history by thread
    * 
-   * getChatsThreadMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -799,7 +938,6 @@ public class ChatApiAsync {
   /**
    * Get history by thread
    * 
-   * getChatsThreadMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -841,7 +979,6 @@ public class ChatApiAsync {
   /**
    * Get messages by id(s) from a 1on1
    * 
-   * getChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -876,7 +1013,6 @@ public class ChatApiAsync {
   /**
    * Get messages by id(s) from a 1on1
    * 
-   * getChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -918,7 +1054,6 @@ public class ChatApiAsync {
   /**
    * Get 1on1 History between a user
    * 
-   * getChatsUserMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -953,7 +1088,6 @@ public class ChatApiAsync {
   /**
    * Get 1on1 History between a user
    * 
-   * getChatsUserMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1072,7 +1206,6 @@ public class ChatApiAsync {
   /**
    * Set properties for a room
    * 
-   * patchChatsRoom is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1107,7 +1240,6 @@ public class ChatApiAsync {
   /**
    * Set properties for a room
    * 
-   * patchChatsRoom is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1149,7 +1281,6 @@ public class ChatApiAsync {
   /**
    * Edit a message in a room
    * 
-   * patchChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1184,7 +1315,6 @@ public class ChatApiAsync {
   /**
    * Edit a message in a room
    * 
-   * patchChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1301,7 +1431,6 @@ public class ChatApiAsync {
   /**
    * Edit a message to a user
    * 
-   * patchChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1336,7 +1465,6 @@ public class ChatApiAsync {
   /**
    * Edit a message to a user
    * 
-   * patchChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1455,7 +1583,6 @@ public class ChatApiAsync {
   /**
    * Send a message to a room
    * 
-   * postChatsRoomMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1490,7 +1617,6 @@ public class ChatApiAsync {
   /**
    * Send a message to a room
    * 
-   * postChatsRoomMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1532,7 +1658,6 @@ public class ChatApiAsync {
   /**
    * Join a room
    * 
-   * postChatsRoomParticipant is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1567,7 +1692,6 @@ public class ChatApiAsync {
   /**
    * Join a room
    * 
-   * postChatsRoomParticipant is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1609,7 +1733,6 @@ public class ChatApiAsync {
   /**
    * Add pinned messages for a room, up to a maximum of 5 pinned messages
    * 
-   * postChatsRoomPinnedmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1644,7 +1767,6 @@ public class ChatApiAsync {
   /**
    * Add pinned messages for a room, up to a maximum of 5 pinned messages
    * 
-   * postChatsRoomPinnedmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1686,7 +1808,6 @@ public class ChatApiAsync {
   /**
    * Create an adhoc room
    * 
-   * postChatsRooms is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1721,7 +1842,6 @@ public class ChatApiAsync {
   /**
    * Create an adhoc room
    * 
-   * postChatsRooms is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1763,7 +1883,6 @@ public class ChatApiAsync {
   /**
    * Send a message to a user
    * 
-   * postChatsUserMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1798,7 +1917,6 @@ public class ChatApiAsync {
   /**
    * Send a message to a user
    * 
-   * postChatsUserMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1826,6 +1944,81 @@ public class ChatApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ChatSendMessageResponse> response = (ApiResponse<ChatSendMessageResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update reactions to a message
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> putChatsMessageReactionsAsync(PutChatsMessageReactionsRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update reactions to a message
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> putChatsMessageReactionsAsync(ApiRequest<ChatReactionUpdate> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

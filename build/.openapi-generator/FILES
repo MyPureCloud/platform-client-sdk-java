@@ -131,6 +131,7 @@ docs/AlertingApi.json
 docs/AlertingApi.md
 docs/AlertingUnreadStatus.md
 docs/AllTimePoints.md
+docs/Alteration.md
 docs/AmazonLexRequest.md
 docs/AnalyticsAgentGroup.md
 docs/AnalyticsApi.json
@@ -365,6 +366,8 @@ docs/BuAsyncScheduleRunResponse.md
 docs/BuAverageSpeedOfAnswer.md
 docs/BuCopyScheduleRequest.md
 docs/BuCreateBlankScheduleRequest.md
+docs/BuCreateTimeOffLimitRequest.md
+docs/BuCreateTimeOffPlanRequest.md
 docs/BuCurrentAgentScheduleSearchResponse.md
 docs/BuForecastGenerationPlanningGroupResult.md
 docs/BuForecastGenerationResult.md
@@ -404,13 +407,23 @@ docs/BuSchedulingSettingsRequest.md
 docs/BuSchedulingSettingsResponse.md
 docs/BuSearchAgentSchedulesRequest.md
 docs/BuServiceLevel.md
+docs/BuSetTimeOffLimitValuesRequest.md
 docs/BuShortTermForecast.md
 docs/BuShortTermForecastListItem.md
 docs/BuShortTermForecastListing.md
 docs/BuShortTermForecastReference.md
 docs/BuShortTermForecastingSettings.md
+docs/BuTimeOffLimitListing.md
+docs/BuTimeOffLimitRange.md
+docs/BuTimeOffLimitReference.md
+docs/BuTimeOffLimitResponse.md
+docs/BuTimeOffLimitValueRange.md
+docs/BuTimeOffLimitValuesResponse.md
+docs/BuTimeOffPlanListing.md
+docs/BuTimeOffPlanResponse.md
 docs/BuUpdateAgentScheduleShift.md
 docs/BuUpdateAgentScheduleUploadSchema.md
+docs/BuUpdateTimeOffPlanRequest.md
 docs/BulkCallbackDisconnectRequest.md
 docs/BulkCallbackPatchRequest.md
 docs/BulkCallbackPatchResponse.md
@@ -562,6 +575,7 @@ docs/ChatMessageEntityListing.md
 docs/ChatMessageResponse.md
 docs/ChatMessageUser.md
 docs/ChatReaction.md
+docs/ChatReactionUpdate.md
 docs/ChatSendMessageResponse.md
 docs/ChatSettings.md
 docs/ChatUserSettings.md
@@ -1023,7 +1037,10 @@ docs/CreateServiceGoalTemplate.md
 docs/CreateShareRequest.md
 docs/CreateShareRequestMember.md
 docs/CreateShareResponse.md
+docs/CreateStaffingGroupRequest.md
 docs/CreateTimeOffLimitRequest.md
+docs/CreateTimeOffPlanBusinessUnitAssociation.md
+docs/CreateTimeOffPlanManagementUnitAssociation.md
 docs/CreateTimeOffPlanRequest.md
 docs/CreateTriggerRequest.md
 docs/CreateUploadSourceUrlJobRequest.md
@@ -1958,6 +1975,8 @@ docs/JourneyCampaign.md
 docs/JourneyContext.md
 docs/JourneyCustomer.md
 docs/JourneyCustomerSession.md
+docs/JourneyEventDefinition.md
+docs/JourneyEventDefinitionListing.md
 docs/JourneyEventsSettings.md
 docs/JourneyGeolocation.md
 docs/JourneyOutcomeEventsNotificationActionMap.md
@@ -2007,8 +2026,13 @@ docs/JourneyViewElement.md
 docs/JourneyViewElementAttributes.md
 docs/JourneyViewElementFilter.md
 docs/JourneyViewElementFilterPredicate.md
+docs/JourneyViewJob.md
 docs/JourneyViewLink.md
 docs/JourneyViewLinkTimeConstraint.md
+docs/JourneyViewResult.md
+docs/JourneyViewResultElement.md
+docs/JourneyViewResultLink.md
+docs/JourneyViewResultMetrics.md
 docs/JourneyViewUser.md
 docs/JourneyWebActionEventsNotificationActionMap.md
 docs/JourneyWebActionEventsNotificationActionMapPageUrlCondition.md
@@ -2162,6 +2186,7 @@ docs/KnowledgeSearchRequest.md
 docs/KnowledgeSearchResponse.md
 docs/KnowledgeTraining.md
 docs/KpiResult.md
+docs/Label.md
 docs/LabelCreateRequest.md
 docs/LabelListing.md
 docs/LabelResponse.md
@@ -2269,6 +2294,8 @@ docs/LicenseUser.md
 docs/Limit.md
 docs/LimitChangeRequestDetails.md
 docs/LimitChangeRequestsEntityListing.md
+docs/LimitDocs.md
+docs/LimitDocumentation.md
 docs/LimitsEntityListing.md
 docs/Line.md
 docs/LineBase.md
@@ -2472,6 +2499,7 @@ docs/NamedEntityTypeBinding.md
 docs/NamedEntityTypeDefinition.md
 docs/NamedEntityTypeItem.md
 docs/NamedEntityTypeMechanism.md
+docs/NamespaceDocs.md
 docs/NetworkConnectivity.md
 docs/NluConfusionMatrixColumn.md
 docs/NluConfusionMatrixRow.md
@@ -2703,6 +2731,7 @@ docs/PatchSurveyQuestion.md
 docs/PatchTextStyleProperties.md
 docs/PatchUser.md
 docs/PatchWebMessagingOfferFields.md
+docs/Pattern.md
 docs/PerformancePredictionCompleteEventTopicErrorBody.md
 docs/PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNotification.md
 docs/PerformancePredictionOutputs.md
@@ -2843,6 +2872,7 @@ docs/QueryResults.md
 docs/QueryTimeOffIntegrationStatusRequest.md
 docs/QueryTimeOffLimitValuesRequest.md
 docs/QueryTimeOffLimitValuesResponse.md
+docs/QueryUserStaffingGroupListRequest.md
 docs/QueryWaitlistPositionsRequest.md
 docs/Queue.md
 docs/QueueConversationCallEventTopicCallConversation.md
@@ -3101,6 +3131,7 @@ docs/QueueUserEventTopicQueueMember.md
 docs/QueueUserEventTopicUserReference.md
 docs/QueueUtilizationDiagnostic.md
 docs/QuickReply.md
+docs/Range.md
 docs/RateLimitAggregateDataContainer.md
 docs/RateLimitAggregateQueryClause.md
 docs/RateLimitAggregateQueryFilter.md
@@ -3150,6 +3181,7 @@ docs/RegionTimeZone.md
 docs/RegisterArchitectJobResponse.md
 docs/Relationship.md
 docs/RelationshipListing.md
+docs/Reoccurrence.md
 docs/ReplaceRequest.md
 docs/ReplaceResponse.md
 docs/ReplacementTerm.md
@@ -3232,6 +3264,9 @@ docs/RoleDivision.md
 docs/RoleDivisionGrants.md
 docs/RoleDivisionPair.md
 docs/Room.md
+docs/RoomParticipant.md
+docs/RoomParticipantResponse.md
+docs/RoomParticipantsResponse.md
 docs/RoomUpdateRequest.md
 docs/RoutePathRequest.md
 docs/RoutePathResponse.md
@@ -3327,6 +3362,7 @@ docs/ScimV2SchemaListResponse.md
 docs/ScimV2User.md
 docs/ScorableSurvey.md
 docs/ScoredAgent.md
+docs/ScreenRecordingActiveSessions.md
 docs/ScreenRecordingApi.json
 docs/ScreenRecordingApi.md
 docs/ScreenRecordingMetaData.md
@@ -3468,6 +3504,9 @@ docs/SpeechTextAnalyticsApi.md
 docs/SpeechTextAnalyticsSettingsRequest.md
 docs/SpeechTextAnalyticsSettingsResponse.md
 docs/SplittingInformation.md
+docs/StaffingGroupListing.md
+docs/StaffingGroupReference.md
+docs/StaffingGroupResponse.md
 docs/StaffingRequirementsPlanningGroupData.md
 docs/StarrableDivision.md
 docs/StatEventCampaignTopicIntervalMetrics.md
@@ -3574,6 +3613,7 @@ docs/TaskManagementApi.json
 docs/TaskManagementApi.md
 docs/TaskManagementAsyncAggregateQueryResponse.md
 docs/TaskManagementAsyncAggregationQuery.md
+docs/TaskManagementErrorDetails.md
 docs/Team.md
 docs/TeamActivityData.md
 docs/TeamActivityEntityData.md
@@ -3655,7 +3695,9 @@ docs/TimeOffLimitRange.md
 docs/TimeOffLimitReference.md
 docs/TimeOffLimitValueRange.md
 docs/TimeOffPlan.md
+docs/TimeOffPlanBusinessUnitAssociation.md
 docs/TimeOffPlanListing.md
+docs/TimeOffPlanManagementUnitAssociation.md
 docs/TimeOffRequest.md
 docs/TimeOffRequestList.md
 docs/TimeOffRequestListing.md
@@ -3817,7 +3859,10 @@ docs/UpdatePlanningGroupRequest.md
 docs/UpdateScheduleUploadResponse.md
 docs/UpdateScheduleUploadSchema.md
 docs/UpdateServiceGoalTemplate.md
+docs/UpdateStaffingGroupRequest.md
 docs/UpdateTimeOffLimitRequest.md
+docs/UpdateTimeOffPlanBusinessUnitAssociation.md
+docs/UpdateTimeOffPlanManagementUnitAssociation.md
 docs/UpdateTimeOffPlanRequest.md
 docs/UpdateTriggerRequest.md
 docs/UpdateUser.md
@@ -3935,6 +3980,8 @@ docs/UserSearchCriteria.md
 docs/UserSearchRequest.md
 docs/UserSkillEntityListing.md
 docs/UserSkillGroupEntityListing.md
+docs/UserStaffingGroupListing.md
+docs/UserStaffingGroupResponse.md
 docs/UserStartDetailEventTopicUserStartEvent.md
 docs/UserState.md
 docs/UserStation.md
@@ -4704,6 +4751,9 @@ docs/deleteWorkforcemanagementBusinessunitActivitycode-example.txt
 docs/deleteWorkforcemanagementBusinessunitPlanninggroup-example.txt
 docs/deleteWorkforcemanagementBusinessunitSchedulingRun-example.txt
 docs/deleteWorkforcemanagementBusinessunitServicegoaltemplate-example.txt
+docs/deleteWorkforcemanagementBusinessunitStaffinggroup-example.txt
+docs/deleteWorkforcemanagementBusinessunitTimeofflimit-example.txt
+docs/deleteWorkforcemanagementBusinessunitTimeoffplan-example.txt
 docs/deleteWorkforcemanagementBusinessunitWeekSchedule-example.txt
 docs/deleteWorkforcemanagementBusinessunitWeekShorttermforecast-example.txt
 docs/deleteWorkforcemanagementCalendarUrlIcs-example.txt
@@ -4862,6 +4912,8 @@ docs/getChatsMessage-example.txt
 docs/getChatsRoom-example.txt
 docs/getChatsRoomMessage-example.txt
 docs/getChatsRoomMessages-example.txt
+docs/getChatsRoomParticipant-example.txt
+docs/getChatsRoomParticipants-example.txt
 docs/getChatsSettings-example.txt
 docs/getChatsThreadMessages-example.txt
 docs/getChatsUserMessage-example.txt
@@ -5223,7 +5275,12 @@ docs/getJourneySessionEvents-example.txt
 docs/getJourneySessionOutcomescores-example.txt
 docs/getJourneyView-example.txt
 docs/getJourneyViewVersion-example.txt
+docs/getJourneyViewVersionJob-example.txt
+docs/getJourneyViewVersionJobResults-example.txt
+docs/getJourneyViewVersionJobsLatest-example.txt
 docs/getJourneyViews-example.txt
+docs/getJourneyViewsEventdefinition-example.txt
+docs/getJourneyViewsEventdefinitions-example.txt
 docs/getKnowledgeGuestSessionCategories-example.txt
 docs/getKnowledgeGuestSessionDocument-example.txt
 docs/getKnowledgeGuestSessionDocuments-example.txt
@@ -5480,6 +5537,7 @@ docs/getRecordingSettings-example.txt
 docs/getRecordingUploadsReport-example.txt
 docs/getRecordingsRetentionQuery-example.txt
 docs/getRecordingsScreensessions-example.txt
+docs/getRecordingsScreensessionsDetails-example.txt
 docs/getResponsemanagementLibraries-example.txt
 docs/getResponsemanagementLibrary-example.txt
 docs/getResponsemanagementResponse-example.txt
@@ -5814,6 +5872,12 @@ docs/getWorkforcemanagementBusinessunitSchedulingRunResult-example.txt
 docs/getWorkforcemanagementBusinessunitSchedulingRuns-example.txt
 docs/getWorkforcemanagementBusinessunitServicegoaltemplate-example.txt
 docs/getWorkforcemanagementBusinessunitServicegoaltemplates-example.txt
+docs/getWorkforcemanagementBusinessunitStaffinggroup-example.txt
+docs/getWorkforcemanagementBusinessunitStaffinggroups-example.txt
+docs/getWorkforcemanagementBusinessunitTimeofflimit-example.txt
+docs/getWorkforcemanagementBusinessunitTimeofflimits-example.txt
+docs/getWorkforcemanagementBusinessunitTimeoffplan-example.txt
+docs/getWorkforcemanagementBusinessunitTimeoffplans-example.txt
 docs/getWorkforcemanagementBusinessunitWeekSchedule-example.txt
 docs/getWorkforcemanagementBusinessunitWeekScheduleGenerationresults-example.txt
 docs/getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast-example.txt
@@ -6027,6 +6091,8 @@ docs/patchWorkforcemanagementBusinessunitActivitycode-example.txt
 docs/patchWorkforcemanagementBusinessunitPlanninggroup-example.txt
 docs/patchWorkforcemanagementBusinessunitSchedulingRun-example.txt
 docs/patchWorkforcemanagementBusinessunitServicegoaltemplate-example.txt
+docs/patchWorkforcemanagementBusinessunitStaffinggroup-example.txt
+docs/patchWorkforcemanagementBusinessunitTimeoffplan-example.txt
 docs/patchWorkforcemanagementManagementunit-example.txt
 docs/patchWorkforcemanagementManagementunitAgents-example.txt
 docs/patchWorkforcemanagementManagementunitTimeofflimit-example.txt
@@ -6341,8 +6407,10 @@ docs/postJourneyOutcomes-example.txt
 docs/postJourneyOutcomesAttributionsJobs-example.txt
 docs/postJourneyOutcomesPredictors-example.txt
 docs/postJourneySegments-example.txt
+docs/postJourneyViewVersionJobs-example.txt
 docs/postJourneyViewVersions-example.txt
 docs/postJourneyViews-example.txt
+docs/postJourneyViewsEncodingsValidate-example.txt
 docs/postKnowledgeDocumentuploads-example.txt
 docs/postKnowledgeDocumentuploads-example.txt
 docs/postKnowledgeGuestSessionDocumentCopies-example.txt
@@ -6632,6 +6700,11 @@ docs/postWorkforcemanagementBusinessunitAgentschedulesSearch-example.txt
 docs/postWorkforcemanagementBusinessunitIntraday-example.txt
 docs/postWorkforcemanagementBusinessunitPlanninggroups-example.txt
 docs/postWorkforcemanagementBusinessunitServicegoaltemplates-example.txt
+docs/postWorkforcemanagementBusinessunitStaffinggroups-example.txt
+docs/postWorkforcemanagementBusinessunitStaffinggroupsQuery-example.txt
+docs/postWorkforcemanagementBusinessunitTimeofflimits-example.txt
+docs/postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery-example.txt
+docs/postWorkforcemanagementBusinessunitTimeoffplans-example.txt
 docs/postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery-example.txt
 docs/postWorkforcemanagementBusinessunitWeekScheduleCopy-example.txt
 docs/postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations-example.txt
@@ -6705,6 +6778,7 @@ docs/putAuthorizationRole-example.txt
 docs/putAuthorizationRoleUsersAdd-example.txt
 docs/putAuthorizationRoleUsersRemove-example.txt
 docs/putAuthorizationRolesDefault-example.txt
+docs/putChatsMessageReactions-example.txt
 docs/putChatsSettings-example.txt
 docs/putContentmanagementWorkspace-example.txt
 docs/putContentmanagementWorkspaceMember-example.txt
@@ -6902,6 +6976,7 @@ docs/putWebdeploymentsConfigurationVersionsDraft-example.txt
 docs/putWebdeploymentsDeployment-example.txt
 docs/putWidgetsDeployment-example.txt
 docs/putWorkforcemanagementAgentIntegrationsHris-example.txt
+docs/putWorkforcemanagementBusinessunitTimeofflimitValues-example.txt
 docs/putWorkforcemanagementManagementunitTimeofflimitValues-example.txt
 git_push.sh
 gradle.properties
@@ -7321,6 +7396,9 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteWorkforcemanagementBusine
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteWorkforcemanagementBusinessunitRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteWorkforcemanagementBusinessunitSchedulingRunRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteWorkforcemanagementBusinessunitServicegoaltemplateRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteWorkforcemanagementBusinessunitStaffinggroupRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteWorkforcemanagementBusinessunitTimeofflimitRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteWorkforcemanagementBusinessunitTimeoffplanRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteWorkforcemanagementBusinessunitWeekScheduleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteWorkforcemanagementBusinessunitWeekShorttermforecastRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteWorkforcemanagementCalendarUrlIcsRequest.java
@@ -7478,6 +7556,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetCarrierservicesIntegrationsE
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetChatsMessageRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetChatsRoomMessageRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetChatsRoomMessagesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetChatsRoomParticipantRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetChatsRoomParticipantsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetChatsRoomRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetChatsSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetChatsThreadMessagesRequest.java
@@ -7839,7 +7919,12 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneySessionEventsRequest.
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneySessionOutcomescoresRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneySessionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneyViewRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneyViewVersionJobRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneyViewVersionJobResultsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneyViewVersionJobsLatestRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneyViewVersionRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneyViewsEventdefinitionRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneyViewsEventdefinitionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneyViewsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeGuestSessionCategoriesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeGuestSessionDocumentRequest.java
@@ -8096,6 +8181,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetRecordingRecordingkeysRotati
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRecordingSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRecordingUploadsReportRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRecordingsRetentionQueryRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetRecordingsScreensessionsDetailsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetRecordingsScreensessionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetResponsemanagementLibrariesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetResponsemanagementLibraryRequest.java
@@ -8431,6 +8517,12 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessu
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitSchedulingRunsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitServicegoaltemplateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitServicegoaltemplatesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitStaffinggroupRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitStaffinggroupsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitTimeofflimitRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitTimeofflimitsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitTimeoffplanRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitTimeoffplansRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitWeekScheduleGenerationresultsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitWeekScheduleHeadcountforecastRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetWorkforcemanagementBusinessunitWeekScheduleHistoryAgentRequest.java
@@ -8644,6 +8736,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementBusines
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementBusinessunitRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementBusinessunitSchedulingRunRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementBusinessunitStaffinggroupRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementBusinessunitTimeoffplanRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementManagementunitAgentsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementManagementunitRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementManagementunitTimeofflimitRequest.java
@@ -8958,7 +9052,9 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostJourneyOutcomesAttributions
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostJourneyOutcomesPredictorsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostJourneyOutcomesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostJourneySegmentsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostJourneyViewVersionJobsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostJourneyViewVersionsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostJourneyViewsEncodingsValidateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostJourneyViewsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostKnowledgeDocumentuploadsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostKnowledgeDocumentuploadsRequest.java
@@ -9249,6 +9345,11 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusiness
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitIntradayRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitPlanninggroupsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitServicegoaltemplatesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitStaffinggroupsQueryRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitStaffinggroupsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitTimeofflimitsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitTimeofflimitsValuesQueryRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitTimeoffplansRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitWeekScheduleCopyRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsRequest.java
@@ -9322,6 +9423,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PutAuthorizationRoleRequest.jav
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutAuthorizationRoleUsersAddRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutAuthorizationRoleUsersRemoveRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutAuthorizationRolesDefaultRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PutChatsMessageReactionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutChatsSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutContentmanagementWorkspaceMemberRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutContentmanagementWorkspaceRequest.java
@@ -9519,6 +9621,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PutWebdeploymentsConfigurationV
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutWebdeploymentsDeploymentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutWidgetsDeploymentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutWorkforcemanagementAgentIntegrationsHrisRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PutWorkforcemanagementBusinessunitTimeofflimitValuesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutWorkforcemanagementManagementunitTimeofflimitValuesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/auth/ApiKeyAuth.java
 src/main/java/com/mypurecloud/sdk/v2/auth/Authentication.java
@@ -9652,6 +9755,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/AlertSummary.java
 src/main/java/com/mypurecloud/sdk/v2/model/AlertSummaryEntity.java
 src/main/java/com/mypurecloud/sdk/v2/model/AlertingUnreadStatus.java
 src/main/java/com/mypurecloud/sdk/v2/model/AllTimePoints.java
+src/main/java/com/mypurecloud/sdk/v2/model/Alteration.java
 src/main/java/com/mypurecloud/sdk/v2/model/AmazonLexRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/AnalyticsAgentGroup.java
 src/main/java/com/mypurecloud/sdk/v2/model/AnalyticsConversation.java
@@ -9876,6 +9980,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/BuAsyncScheduleRunResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/BuAverageSpeedOfAnswer.java
 src/main/java/com/mypurecloud/sdk/v2/model/BuCopyScheduleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/BuCreateBlankScheduleRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/BuCreateTimeOffLimitRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/BuCreateTimeOffPlanRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/BuCurrentAgentScheduleSearchResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/BuForecastGenerationPlanningGroupResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/BuForecastGenerationResult.java
@@ -9915,13 +10021,23 @@ src/main/java/com/mypurecloud/sdk/v2/model/BuSchedulingSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/BuSchedulingSettingsResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/BuSearchAgentSchedulesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/BuServiceLevel.java
+src/main/java/com/mypurecloud/sdk/v2/model/BuSetTimeOffLimitValuesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/BuShortTermForecast.java
 src/main/java/com/mypurecloud/sdk/v2/model/BuShortTermForecastListItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/BuShortTermForecastListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/BuShortTermForecastReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/BuShortTermForecastingSettings.java
+src/main/java/com/mypurecloud/sdk/v2/model/BuTimeOffLimitListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/BuTimeOffLimitRange.java
+src/main/java/com/mypurecloud/sdk/v2/model/BuTimeOffLimitReference.java
+src/main/java/com/mypurecloud/sdk/v2/model/BuTimeOffLimitResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/BuTimeOffLimitValueRange.java
+src/main/java/com/mypurecloud/sdk/v2/model/BuTimeOffLimitValuesResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/BuTimeOffPlanListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/BuTimeOffPlanResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/BuUpdateAgentScheduleShift.java
 src/main/java/com/mypurecloud/sdk/v2/model/BuUpdateAgentScheduleUploadSchema.java
+src/main/java/com/mypurecloud/sdk/v2/model/BuUpdateTimeOffPlanRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/BulkCallbackDisconnectRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/BulkCallbackPatchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/BulkCallbackPatchResponse.java
@@ -10069,6 +10185,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ChatMessageEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ChatMessageResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ChatMessageUser.java
 src/main/java/com/mypurecloud/sdk/v2/model/ChatReaction.java
+src/main/java/com/mypurecloud/sdk/v2/model/ChatReactionUpdate.java
 src/main/java/com/mypurecloud/sdk/v2/model/ChatSendMessageResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ChatSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/ChatUserSettings.java
@@ -10524,7 +10641,10 @@ src/main/java/com/mypurecloud/sdk/v2/model/CreateServiceGoalTemplate.java
 src/main/java/com/mypurecloud/sdk/v2/model/CreateShareRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/CreateShareRequestMember.java
 src/main/java/com/mypurecloud/sdk/v2/model/CreateShareResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/CreateStaffingGroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/CreateTimeOffLimitRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/CreateTimeOffPlanBusinessUnitAssociation.java
+src/main/java/com/mypurecloud/sdk/v2/model/CreateTimeOffPlanManagementUnitAssociation.java
 src/main/java/com/mypurecloud/sdk/v2/model/CreateTimeOffPlanRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/CreateTriggerRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/CreateUploadSourceUrlJobRequest.java
@@ -11427,6 +11547,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/JourneyCampaign.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyContext.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyCustomer.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyCustomerSession.java
+src/main/java/com/mypurecloud/sdk/v2/model/JourneyEventDefinition.java
+src/main/java/com/mypurecloud/sdk/v2/model/JourneyEventDefinitionListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyEventsSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyGeolocation.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyOutcomeEventsNotificationActionMap.java
@@ -11476,8 +11598,13 @@ src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewElement.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewElementAttributes.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewElementFilter.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewElementFilterPredicate.java
+src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewJob.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewLink.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewLinkTimeConstraint.java
+src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewResult.java
+src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewResultElement.java
+src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewResultLink.java
+src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewResultMetrics.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewUser.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyWebActionEventsNotificationActionMap.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyWebActionEventsNotificationActionMapPageUrlCondition.java
@@ -11629,6 +11756,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeSearchResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeTraining.java
 src/main/java/com/mypurecloud/sdk/v2/model/KpiResult.java
+src/main/java/com/mypurecloud/sdk/v2/model/Label.java
 src/main/java/com/mypurecloud/sdk/v2/model/LabelCreateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/LabelListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/LabelResponse.java
@@ -11728,6 +11856,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/LicenseUser.java
 src/main/java/com/mypurecloud/sdk/v2/model/Limit.java
 src/main/java/com/mypurecloud/sdk/v2/model/LimitChangeRequestDetails.java
 src/main/java/com/mypurecloud/sdk/v2/model/LimitChangeRequestsEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/LimitDocs.java
+src/main/java/com/mypurecloud/sdk/v2/model/LimitDocumentation.java
 src/main/java/com/mypurecloud/sdk/v2/model/LimitsEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/Line.java
 src/main/java/com/mypurecloud/sdk/v2/model/LineBase.java
@@ -11923,6 +12053,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/NamedEntityTypeBinding.java
 src/main/java/com/mypurecloud/sdk/v2/model/NamedEntityTypeDefinition.java
 src/main/java/com/mypurecloud/sdk/v2/model/NamedEntityTypeItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/NamedEntityTypeMechanism.java
+src/main/java/com/mypurecloud/sdk/v2/model/NamespaceDocs.java
 src/main/java/com/mypurecloud/sdk/v2/model/NetworkConnectivity.java
 src/main/java/com/mypurecloud/sdk/v2/model/NluConfusionMatrixColumn.java
 src/main/java/com/mypurecloud/sdk/v2/model/NluConfusionMatrixRow.java
@@ -12140,6 +12271,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/PatchSurveyQuestion.java
 src/main/java/com/mypurecloud/sdk/v2/model/PatchTextStyleProperties.java
 src/main/java/com/mypurecloud/sdk/v2/model/PatchUser.java
 src/main/java/com/mypurecloud/sdk/v2/model/PatchWebMessagingOfferFields.java
+src/main/java/com/mypurecloud/sdk/v2/model/Pattern.java
 src/main/java/com/mypurecloud/sdk/v2/model/PerformancePredictionCompleteEventTopicErrorBody.java
 src/main/java/com/mypurecloud/sdk/v2/model/PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNotification.java
 src/main/java/com/mypurecloud/sdk/v2/model/PerformancePredictionOutputs.java
@@ -12274,6 +12406,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/QueryResults.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueryTimeOffIntegrationStatusRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueryTimeOffLimitValuesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueryTimeOffLimitValuesResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/QueryUserStaffingGroupListRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueryWaitlistPositionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/Queue.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationCallEventTopicCallConversation.java
@@ -12532,6 +12665,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/QueueUserEventTopicQueueMember.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueUserEventTopicUserReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueUtilizationDiagnostic.java
 src/main/java/com/mypurecloud/sdk/v2/model/QuickReply.java
+src/main/java/com/mypurecloud/sdk/v2/model/Range.java
 src/main/java/com/mypurecloud/sdk/v2/model/RateLimitAggregateDataContainer.java
 src/main/java/com/mypurecloud/sdk/v2/model/RateLimitAggregateQueryClause.java
 src/main/java/com/mypurecloud/sdk/v2/model/RateLimitAggregateQueryFilter.java
@@ -12579,6 +12713,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/RegionTimeZone.java
 src/main/java/com/mypurecloud/sdk/v2/model/RegisterArchitectJobResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/Relationship.java
 src/main/java/com/mypurecloud/sdk/v2/model/RelationshipListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/Reoccurrence.java
 src/main/java/com/mypurecloud/sdk/v2/model/ReplaceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/ReplaceResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ReplacementTerm.java
@@ -12659,6 +12794,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/RoleDivision.java
 src/main/java/com/mypurecloud/sdk/v2/model/RoleDivisionGrants.java
 src/main/java/com/mypurecloud/sdk/v2/model/RoleDivisionPair.java
 src/main/java/com/mypurecloud/sdk/v2/model/Room.java
+src/main/java/com/mypurecloud/sdk/v2/model/RoomParticipant.java
+src/main/java/com/mypurecloud/sdk/v2/model/RoomParticipantResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/RoomParticipantsResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/RoomUpdateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/RoutePathRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/RoutePathResponse.java
@@ -12750,6 +12888,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ScimV2SchemaListResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ScimV2User.java
 src/main/java/com/mypurecloud/sdk/v2/model/ScorableSurvey.java
 src/main/java/com/mypurecloud/sdk/v2/model/ScoredAgent.java
+src/main/java/com/mypurecloud/sdk/v2/model/ScreenRecordingActiveSessions.java
 src/main/java/com/mypurecloud/sdk/v2/model/ScreenRecordingMetaData.java
 src/main/java/com/mypurecloud/sdk/v2/model/ScreenRecordingMetaDataRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/ScreenRecordingSession.java
@@ -12881,6 +13020,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/SourcePlanningGroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/SpeechTextAnalyticsSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/SpeechTextAnalyticsSettingsResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/SplittingInformation.java
+src/main/java/com/mypurecloud/sdk/v2/model/StaffingGroupListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/StaffingGroupReference.java
+src/main/java/com/mypurecloud/sdk/v2/model/StaffingGroupResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/StaffingRequirementsPlanningGroupData.java
 src/main/java/com/mypurecloud/sdk/v2/model/StarrableDivision.java
 src/main/java/com/mypurecloud/sdk/v2/model/StatEventCampaignTopicIntervalMetrics.java
@@ -12981,6 +13123,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/TaskManagementAggregationQuery.java
 src/main/java/com/mypurecloud/sdk/v2/model/TaskManagementAggregationView.java
 src/main/java/com/mypurecloud/sdk/v2/model/TaskManagementAsyncAggregateQueryResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/TaskManagementAsyncAggregationQuery.java
+src/main/java/com/mypurecloud/sdk/v2/model/TaskManagementErrorDetails.java
 src/main/java/com/mypurecloud/sdk/v2/model/Team.java
 src/main/java/com/mypurecloud/sdk/v2/model/TeamActivityData.java
 src/main/java/com/mypurecloud/sdk/v2/model/TeamActivityEntityData.java
@@ -13054,7 +13197,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/TimeOffLimitRange.java
 src/main/java/com/mypurecloud/sdk/v2/model/TimeOffLimitReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/TimeOffLimitValueRange.java
 src/main/java/com/mypurecloud/sdk/v2/model/TimeOffPlan.java
+src/main/java/com/mypurecloud/sdk/v2/model/TimeOffPlanBusinessUnitAssociation.java
 src/main/java/com/mypurecloud/sdk/v2/model/TimeOffPlanListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/TimeOffPlanManagementUnitAssociation.java
 src/main/java/com/mypurecloud/sdk/v2/model/TimeOffRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/TimeOffRequestList.java
 src/main/java/com/mypurecloud/sdk/v2/model/TimeOffRequestListing.java
@@ -13214,7 +13359,10 @@ src/main/java/com/mypurecloud/sdk/v2/model/UpdatePlanningGroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateScheduleUploadResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateScheduleUploadSchema.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateServiceGoalTemplate.java
+src/main/java/com/mypurecloud/sdk/v2/model/UpdateStaffingGroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateTimeOffLimitRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/UpdateTimeOffPlanBusinessUnitAssociation.java
+src/main/java/com/mypurecloud/sdk/v2/model/UpdateTimeOffPlanManagementUnitAssociation.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateTimeOffPlanRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateTriggerRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateUser.java
@@ -13326,6 +13474,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/UserSearchCriteria.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserSkillEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserSkillGroupEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/UserStaffingGroupListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/UserStaffingGroupResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserStartDetailEventTopicUserStartEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserState.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserStation.java

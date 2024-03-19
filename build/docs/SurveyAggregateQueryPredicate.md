@@ -50,11 +50,13 @@ title: SurveyAggregateQueryPredicate
 | SURVEYFORMID | &quot;surveyFormId&quot; | 
 | SURVEYFORMNAME | &quot;surveyFormName&quot; | 
 | SURVEYID | &quot;surveyId&quot; | 
+| SURVEYPARTIALRESPONSE | &quot;surveyPartialResponse&quot; | 
 | SURVEYPREVIOUSSTATUS | &quot;surveyPreviousStatus&quot; | 
 | SURVEYPROMOTERSCORE | &quot;surveyPromoterScore&quot; | 
 | SURVEYQUESTIONGROUPID | &quot;surveyQuestionGroupId&quot; | 
 | SURVEYQUESTIONID | &quot;surveyQuestionId&quot; | 
 | SURVEYSTATUS | &quot;surveyStatus&quot; | 
+| SURVEYTYPE | &quot;surveyType&quot; | 
 | TEAMID | &quot;teamId&quot; | 
 | USERID | &quot;userId&quot; | 
 | WRAPUPCODE | &quot;wrapUpCode&quot; | 

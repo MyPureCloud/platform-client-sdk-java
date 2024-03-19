@@ -45,6 +45,7 @@ import com.mypurecloud.sdk.v2.model.RecordingRetentionCursorEntityListing;
 import com.mypurecloud.sdk.v2.model.RecordingSettings;
 import com.mypurecloud.sdk.v2.model.RecordingUploadReport;
 import com.mypurecloud.sdk.v2.model.RecordingUploadReportRequest;
+import com.mypurecloud.sdk.v2.model.ScreenRecordingActiveSessions;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingMetaDataRequest;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionRequest;
@@ -82,6 +83,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRecordingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingUploadsReportRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingsRetentionQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingsScreensessionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRecordingsScreensessionsDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRecordingCrossplatformMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRecordingMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRecordingsScreensessionRequest;
@@ -2864,6 +2866,84 @@ public class RecordingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ScreenRecordingSessionListing> response = (ApiResponse<ScreenRecordingSessionListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Retrieves an object containing the total number of concurrent active screen recordings
+   * 
+   * getRecordingsScreensessionsDetails is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return ScreenRecordingActiveSessions
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScreenRecordingActiveSessions getRecordingsScreensessionsDetails() throws IOException, ApiException {
+    return  getRecordingsScreensessionsDetails(createGetRecordingsScreensessionsDetailsRequest());
+  }
+
+  /**
+   * Retrieves an object containing the total number of concurrent active screen recordings
+   * 
+   * getRecordingsScreensessionsDetails is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return ScreenRecordingActiveSessions
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScreenRecordingActiveSessions> getRecordingsScreensessionsDetailsWithHttpInfo() throws IOException {
+    return getRecordingsScreensessionsDetails(createGetRecordingsScreensessionsDetailsRequest().withHttpInfo());
+  }
+
+  private GetRecordingsScreensessionsDetailsRequest createGetRecordingsScreensessionsDetailsRequest() {
+    return GetRecordingsScreensessionsDetailsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Retrieves an object containing the total number of concurrent active screen recordings
+   * 
+   * getRecordingsScreensessionsDetails is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ScreenRecordingActiveSessions
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScreenRecordingActiveSessions getRecordingsScreensessionsDetails(GetRecordingsScreensessionsDetailsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScreenRecordingActiveSessions> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScreenRecordingActiveSessions>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieves an object containing the total number of concurrent active screen recordings
+   * 
+   * getRecordingsScreensessionsDetails is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScreenRecordingActiveSessions> getRecordingsScreensessionsDetails(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScreenRecordingActiveSessions>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScreenRecordingActiveSessions> response = (ApiResponse<ScreenRecordingActiveSessions>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScreenRecordingActiveSessions> response = (ApiResponse<ScreenRecordingActiveSessions>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

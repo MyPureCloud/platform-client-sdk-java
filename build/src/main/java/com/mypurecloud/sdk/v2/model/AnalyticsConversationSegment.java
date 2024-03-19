@@ -56,7 +56,6 @@ public class AnalyticsConversationSegment  implements Serializable {
     DNDENDPOINT("dndEndpoint"),
     DNDTRANSFER("dndTransfer"),
     ENDPOINT("endpoint"),
-    ENDPOINTDND("endpointDnd"),
     ERROR("error"),
     FORWARDTRANSFER("forwardTransfer"),
     NOANSWERTRANSFER("noAnswerTransfer"),
@@ -67,7 +66,6 @@ public class AnalyticsConversationSegment  implements Serializable {
     SYSTEM("system"),
     TIMEOUT("timeout"),
     TRANSFER("transfer"),
-    TRANSFERDND("transferDnd"),
     TRANSPORTFAILURE("transportFailure"),
     UNCALLABLE("uncallable");
 

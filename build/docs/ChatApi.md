@@ -15,6 +15,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getChatsRoom**](ChatApi.html#getChatsRoom) | Get a room |
 | [**getChatsRoomMessage**](ChatApi.html#getChatsRoomMessage) | Get messages by id(s) from a room |
 | [**getChatsRoomMessages**](ChatApi.html#getChatsRoomMessages) | Get a room's message history |
+| [**getChatsRoomParticipant**](ChatApi.html#getChatsRoomParticipant) | Get a room participant |
+| [**getChatsRoomParticipants**](ChatApi.html#getChatsRoomParticipants) | Get room participants in a room |
 | [**getChatsSettings**](ChatApi.html#getChatsSettings) | Get Chat Settings. |
 | [**getChatsThreadMessages**](ChatApi.html#getChatsThreadMessages) | Get history by thread |
 | [**getChatsUserMessage**](ChatApi.html#getChatsUserMessage) | Get messages by id(s) from a 1on1 |
@@ -30,6 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postChatsRoomPinnedmessages**](ChatApi.html#postChatsRoomPinnedmessages) | Add pinned messages for a room, up to a maximum of 5 pinned messages |
 | [**postChatsRooms**](ChatApi.html#postChatsRooms) | Create an adhoc room |
 | [**postChatsUserMessages**](ChatApi.html#postChatsUserMessages) | Send a message to a user |
+| [**putChatsMessageReactions**](ChatApi.html#putChatsMessageReactions) | Update reactions to a message |
 | [**putChatsSettings**](ChatApi.html#putChatsSettings) | Update Chat Settings. |
 {: class="table-striped"}
 
@@ -42,8 +45,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 > Void deleteChatsRoomMessage(roomJid, messageId)
 
 Delete a message in a room
-
-deleteChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/chats/rooms/{roomJid}/messages/{messageId}  
 
@@ -108,8 +109,6 @@ null (empty response body)
 
 Remove a user from a room.
 
-deleteChatsRoomParticipant is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/chats/rooms/{roomJid}/participants/{userId}  
 
 Requires ANY permissions: 
@@ -172,8 +171,6 @@ null (empty response body)
 > Void deleteChatsRoomPinnedmessage(roomJid, pinnedMessageId)
 
 Remove a pinned message from a room
-
-deleteChatsRoomPinnedmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/chats/rooms/{roomJid}/pinnedmessages/{pinnedMessageId}  
 
@@ -238,8 +235,6 @@ null (empty response body)
 
 Delete a message to a user
 
-deleteChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/chats/users/{userId}/messages/{messageId}  
 
 Requires ANY permissions: 
@@ -302,8 +297,6 @@ null (empty response body)
 > [ChatMessageResponse](ChatMessageResponse.html) getChatsMessage(messageId)
 
 Get a message
-
-getChatsMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/chats/messages/{messageId}  
 
@@ -368,8 +361,6 @@ try {
 
 Get a room
 
-getChatsRoom is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/chats/rooms/{roomJid}  
 
 Requires ANY permissions: 
@@ -431,8 +422,6 @@ try {
 > [ChatMessageEntityListing](ChatMessageEntityListing.html) getChatsRoomMessage(roomJid, messageIds)
 
 Get messages by id(s) from a room
-
-getChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/chats/rooms/{roomJid}/messages/{messageIds}  
 
@@ -498,8 +487,6 @@ try {
 
 Get a room's message history
 
-getChatsRoomMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/chats/rooms/{roomJid}/messages  
 
 Requires ANY permissions: 
@@ -557,6 +544,130 @@ try {
 ### Return type
 
 [**ChatMessageEntityListing**](ChatMessageEntityListing.html)
+
+<a name="getChatsRoomParticipant"></a>
+
+# **getChatsRoomParticipant**
+
+
+
+> [RoomParticipant](RoomParticipant.html) getChatsRoomParticipant(roomJid, participantJid)
+
+Get a room participant
+
+Wraps GET /api/v2/chats/rooms/{roomJid}/participants/{participantJid}  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ChatApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ChatApi apiInstance = new ChatApi();
+String roomJid = "roomJid_example"; // String | roomJid
+String participantJid = "participantJid_example"; // String | participantJid
+try {
+    RoomParticipant result = apiInstance.getChatsRoomParticipant(roomJid, participantJid);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ChatApi#getChatsRoomParticipant");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **roomJid** | **String**| roomJid | 
+| **participantJid** | **String**| participantJid | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**RoomParticipant**](RoomParticipant.html)
+
+<a name="getChatsRoomParticipants"></a>
+
+# **getChatsRoomParticipants**
+
+
+
+> [RoomParticipantsResponse](RoomParticipantsResponse.html) getChatsRoomParticipants(roomJid)
+
+Get room participants in a room
+
+Wraps GET /api/v2/chats/rooms/{roomJid}/participants  
+
+Requires ANY permissions: 
+
+* chat:chat:access
+* chat:room:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ChatApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ChatApi apiInstance = new ChatApi();
+String roomJid = "roomJid_example"; // String | roomJid
+try {
+    RoomParticipantsResponse result = apiInstance.getChatsRoomParticipants(roomJid);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ChatApi#getChatsRoomParticipants");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **roomJid** | **String**| roomJid | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**RoomParticipantsResponse**](RoomParticipantsResponse.html)
 
 <a name="getChatsSettings"></a>
 
@@ -626,8 +737,6 @@ This endpoint does not require any parameters.
 
 Get history by thread
 
-getChatsThreadMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/chats/threads/{threadId}/messages  
 
 Requires ANY permissions: 
@@ -696,8 +805,6 @@ try {
 
 Get messages by id(s) from a 1on1
 
-getChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/chats/users/{userId}/messages/{messageIds}  
 
 Requires ANY permissions: 
@@ -761,8 +868,6 @@ try {
 > [ChatMessageResponse](ChatMessageResponse.html) getChatsUserMessages(userId, limit, before, after)
 
 Get 1on1 History between a user
-
-getChatsUserMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/chats/users/{userId}/messages  
 
@@ -896,8 +1001,6 @@ try {
 
 Set properties for a room
 
-patchChatsRoom is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PATCH /api/v2/chats/rooms/{roomJid}  
 
 Requires ANY permissions: 
@@ -960,8 +1063,6 @@ null (empty response body)
 > [ChatSendMessageResponse](ChatSendMessageResponse.html) patchChatsRoomMessage(roomJid, messageId, body)
 
 Edit a message in a room
-
-patchChatsRoomMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/chats/rooms/{roomJid}/messages/{messageId}  
 
@@ -1089,8 +1190,6 @@ try {
 > [ChatSendMessageResponse](ChatSendMessageResponse.html) patchChatsUserMessage(userId, messageId, body)
 
 Edit a message to a user
-
-patchChatsUserMessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/chats/users/{userId}/messages/{messageId}  
 
@@ -1224,8 +1323,6 @@ try {
 
 Send a message to a room
 
-postChatsRoomMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/chats/rooms/{roomJid}/messages  
 
 Requires ANY permissions: 
@@ -1290,8 +1387,6 @@ try {
 
 Join a room
 
-postChatsRoomParticipant is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/chats/rooms/{roomJid}/participants/{userId}  
 
 Requires ANY permissions: 
@@ -1354,8 +1449,6 @@ null (empty response body)
 > Void postChatsRoomPinnedmessages(roomJid, body)
 
 Add pinned messages for a room, up to a maximum of 5 pinned messages
-
-postChatsRoomPinnedmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/chats/rooms/{roomJid}/pinnedmessages  
 
@@ -1420,8 +1513,6 @@ null (empty response body)
 
 Create an adhoc room
 
-postChatsRooms is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/chats/rooms  
 
 Requires ANY permissions: 
@@ -1484,8 +1575,6 @@ try {
 
 Send a message to a user
 
-postChatsUserMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/chats/users/{userId}/messages  
 
 Requires ANY permissions: 
@@ -1539,6 +1628,69 @@ try {
 ### Return type
 
 [**ChatSendMessageResponse**](ChatSendMessageResponse.html)
+
+<a name="putChatsMessageReactions"></a>
+
+# **putChatsMessageReactions**
+
+
+
+> Void putChatsMessageReactions(messageId, body)
+
+Update reactions to a message
+
+Wraps PUT /api/v2/chats/messages/{messageId}/reactions  
+
+Requires ANY permissions: 
+
+* chat:chat:access
+* chat:reactions:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ChatApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ChatApi apiInstance = new ChatApi();
+String messageId = "messageId_example"; // String | messageId
+ChatReactionUpdate body = new ChatReactionUpdate(); // ChatReactionUpdate | reactionUpdate
+try {
+    apiInstance.putChatsMessageReactions(messageId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ChatApi#putChatsMessageReactions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **messageId** | **String**| messageId | 
+| **body** | [**ChatReactionUpdate**](ChatReactionUpdate.html)| reactionUpdate | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="putChatsSettings"></a>
 

@@ -20,12 +20,12 @@ import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.IpAddressAuthentication;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestDetails;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestsEntityListing;
+import com.mypurecloud.sdk.v2.model.LimitDocumentation;
 import com.mypurecloud.sdk.v2.model.LimitsEntityListing;
 import com.mypurecloud.sdk.v2.model.OrgAuthSettings;
 import com.mypurecloud.sdk.v2.model.OrgWhitelistSettings;
 import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.OrganizationFeatures;
-import com.mypurecloud.sdk.v2.model.UrlResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetFieldconfigRequest;
@@ -522,19 +522,19 @@ public class OrganizationApiAsync {
   }
 
   /**
-   * Get a link to the limit documentation
+   * Get limit documentation
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<UrlResponse> getOrganizationsLimitsDocsAsync(GetOrganizationsLimitsDocsRequest request, final AsyncApiCallback<UrlResponse> callback) {
+  public Future<LimitDocumentation> getOrganizationsLimitsDocsAsync(GetOrganizationsLimitsDocsRequest request, final AsyncApiCallback<LimitDocumentation> callback) {
     try {
-      final SettableFuture<UrlResponse> future = SettableFuture.create();
+      final SettableFuture<LimitDocumentation> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UrlResponse>() {}, new AsyncApiCallback<ApiResponse<UrlResponse>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LimitDocumentation>() {}, new AsyncApiCallback<ApiResponse<LimitDocumentation>>() {
         @Override
-        public void onCompleted(ApiResponse<UrlResponse> response) {
+        public void onCompleted(ApiResponse<LimitDocumentation> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -556,19 +556,19 @@ public class OrganizationApiAsync {
   }
 
   /**
-   * Get a link to the limit documentation
+   * Get limit documentation
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<UrlResponse>> getOrganizationsLimitsDocsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UrlResponse>> callback) {
+  public Future<ApiResponse<LimitDocumentation>> getOrganizationsLimitsDocsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LimitDocumentation>> callback) {
     try {
-      final SettableFuture<ApiResponse<UrlResponse>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<LimitDocumentation>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<UrlResponse>() {}, new AsyncApiCallback<ApiResponse<UrlResponse>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<LimitDocumentation>() {}, new AsyncApiCallback<ApiResponse<LimitDocumentation>>() {
         @Override
-        public void onCompleted(ApiResponse<UrlResponse> response) {
+        public void onCompleted(ApiResponse<LimitDocumentation> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -576,7 +576,7 @@ public class OrganizationApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<UrlResponse> response = (ApiResponse<UrlResponse>)(ApiResponse<?>)exception;
+            ApiResponse<LimitDocumentation> response = (ApiResponse<LimitDocumentation>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -584,7 +584,7 @@ public class OrganizationApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<UrlResponse> response = (ApiResponse<UrlResponse>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<LimitDocumentation> response = (ApiResponse<LimitDocumentation>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

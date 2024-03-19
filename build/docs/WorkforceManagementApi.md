@@ -12,6 +12,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitPlanninggroup) | Deletes the planning group |
 | [**deleteWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitSchedulingRun) | Cancel a scheduling run |
 | [**deleteWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitServicegoaltemplate) | Delete a service goal template |
+| [**deleteWorkforcemanagementBusinessunitStaffinggroup**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitStaffinggroup) | Deletes a staffing group |
+| [**deleteWorkforcemanagementBusinessunitTimeofflimit**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitTimeofflimit) | Deletes a time-off limit object |
+| [**deleteWorkforcemanagementBusinessunitTimeoffplan**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitTimeoffplan) | Deletes a time-off plan |
 | [**deleteWorkforcemanagementBusinessunitWeekSchedule**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitWeekSchedule) | Delete a schedule |
 | [**deleteWorkforcemanagementBusinessunitWeekShorttermforecast**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitWeekShorttermforecast) | Delete a short term forecast |
 | [**deleteWorkforcemanagementCalendarUrlIcs**](WorkforceManagementApi.html#deleteWorkforcemanagementCalendarUrlIcs) | Disable generated calendar link for the current user |
@@ -41,6 +44,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementBusinessunitSchedulingRuns**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitSchedulingRuns) | Get the list of scheduling runs |
 | [**getWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitServicegoaltemplate) | Get a service goal template |
 | [**getWorkforcemanagementBusinessunitServicegoaltemplates**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitServicegoaltemplates) | Gets list of service goal templates |
+| [**getWorkforcemanagementBusinessunitStaffinggroup**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitStaffinggroup) | Gets a staffing group |
+| [**getWorkforcemanagementBusinessunitStaffinggroups**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitStaffinggroups) | Gets a list of staffing groups |
+| [**getWorkforcemanagementBusinessunitTimeofflimit**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitTimeofflimit) | Gets a time-off limit object |
+| [**getWorkforcemanagementBusinessunitTimeofflimits**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitTimeofflimits) | Gets a list of time-off limit objects |
+| [**getWorkforcemanagementBusinessunitTimeoffplan**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitTimeoffplan) | Gets a time-off plan |
+| [**getWorkforcemanagementBusinessunitTimeoffplans**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitTimeoffplans) | Gets a list of time-off plans |
 | [**getWorkforcemanagementBusinessunitWeekSchedule**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekSchedule) | Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route |
 | [**getWorkforcemanagementBusinessunitWeekScheduleGenerationresults**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekScheduleGenerationresults) | Get the generation results for a generated schedule |
 | [**getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast) | Get the headcount forecast by planning group for the schedule |
@@ -101,6 +110,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitPlanninggroup) | Updates the planning group |
 | [**patchWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitSchedulingRun) | Mark a schedule run as applied |
 | [**patchWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitServicegoaltemplate) | Updates a service goal template |
+| [**patchWorkforcemanagementBusinessunitStaffinggroup**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitStaffinggroup) | Updates a staffing group |
+| [**patchWorkforcemanagementBusinessunitTimeoffplan**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitTimeoffplan) | Updates a time-off plan |
 | [**patchWorkforcemanagementManagementunit**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunit) | Update the requested management unit |
 | [**patchWorkforcemanagementManagementunitAgents**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitAgents) | Update agent configurations |
 | [**patchWorkforcemanagementManagementunitTimeofflimit**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitTimeofflimit) | Updates a time off limit object. |
@@ -127,6 +138,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementBusinessunitIntraday**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitIntraday) | Get intraday data for the given date for the requested planningGroupIds |
 | [**postWorkforcemanagementBusinessunitPlanninggroups**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitPlanninggroups) | Adds a new planning group |
 | [**postWorkforcemanagementBusinessunitServicegoaltemplates**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitServicegoaltemplates) | Adds a new service goal template |
+| [**postWorkforcemanagementBusinessunitStaffinggroups**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitStaffinggroups) | Creates a new staffing group |
+| [**postWorkforcemanagementBusinessunitStaffinggroupsQuery**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitStaffinggroupsQuery) | Gets staffing group associations for a list of user IDs |
+| [**postWorkforcemanagementBusinessunitTimeofflimits**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitTimeofflimits) | Creates a new time-off limit object |
+| [**postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery) | Retrieves time-off limit related values based on a given set of filters. |
+| [**postWorkforcemanagementBusinessunitTimeoffplans**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitTimeoffplans) | Creates a new time-off plan |
 | [**postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery) | Loads agent schedule data from the schedule. Used in combination with the metadata route |
 | [**postWorkforcemanagementBusinessunitWeekScheduleCopy**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekScheduleCopy) | Copy a schedule |
 | [**postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations) | Request a daily recalculation of the performance prediction for the associated schedule |
@@ -182,6 +198,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementTimeoffrequestsEstimate**](WorkforceManagementApi.html#postWorkforcemanagementTimeoffrequestsEstimate) | Estimates available time off for current user |
 | [**postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery**](WorkforceManagementApi.html#postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery) | Retrieves integration statuses for a list of current user time off requests |
 | [**putWorkforcemanagementAgentIntegrationsHris**](WorkforceManagementApi.html#putWorkforcemanagementAgentIntegrationsHris) | Update integrations for agent |
+| [**putWorkforcemanagementBusinessunitTimeofflimitValues**](WorkforceManagementApi.html#putWorkforcemanagementBusinessunitTimeofflimitValues) | Sets daily values for a date range of time-off limit object |
 | [**putWorkforcemanagementManagementunitTimeofflimitValues**](WorkforceManagementApi.html#putWorkforcemanagementManagementunitTimeofflimitValues) | Sets daily values for a date range of time off limit object |
 {: class="table-striped"}
 
@@ -488,6 +505,192 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit. | 
 | **serviceGoalTemplateId** | **String**| The ID of the service goal template to delete | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteWorkforcemanagementBusinessunitStaffinggroup"></a>
+
+# **deleteWorkforcemanagementBusinessunitStaffinggroup**
+
+
+
+> Void deleteWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId)
+
+Deletes a staffing group
+
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}  
+
+Requires ANY permissions: 
+
+* wfm:staffingGroup:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String staffingGroupId = "staffingGroupId_example"; // String | The ID of the staffing group to delete
+try {
+    apiInstance.deleteWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#deleteWorkforcemanagementBusinessunitStaffinggroup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **staffingGroupId** | **String**| The ID of the staffing group to delete | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteWorkforcemanagementBusinessunitTimeofflimit"></a>
+
+# **deleteWorkforcemanagementBusinessunitTimeofflimit**
+
+
+
+> Void deleteWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId)
+
+Deletes a time-off limit object
+
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}  
+
+Requires ANY permissions: 
+
+* wfm:timeOffLimit:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time-off limit object to delete
+try {
+    apiInstance.deleteWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#deleteWorkforcemanagementBusinessunitTimeofflimit");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **timeOffLimitId** | **String**| The ID of the time-off limit object to delete | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteWorkforcemanagementBusinessunitTimeoffplan"></a>
+
+# **deleteWorkforcemanagementBusinessunitTimeoffplan**
+
+
+
+> Void deleteWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId)
+
+Deletes a time-off plan
+
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}  
+
+Requires ANY permissions: 
+
+* wfm:timeOffPlan:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String timeOffPlanId = "timeOffPlanId_example"; // String | The ID of the time-off plan to delete
+try {
+    apiInstance.deleteWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#deleteWorkforcemanagementBusinessunitTimeoffplan");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **timeOffPlanId** | **String**| The ID of the time-off plan to delete | 
 {: class="table-striped"}
 
 
@@ -2504,6 +2707,389 @@ try {
 ### Return type
 
 [**ServiceGoalTemplateList**](ServiceGoalTemplateList.html)
+
+<a name="getWorkforcemanagementBusinessunitStaffinggroup"></a>
+
+# **getWorkforcemanagementBusinessunitStaffinggroup**
+
+
+
+> [StaffingGroupResponse](StaffingGroupResponse.html) getWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId)
+
+Gets a staffing group
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}  
+
+Requires ANY permissions: 
+
+* wfm:staffingGroup:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String staffingGroupId = "staffingGroupId_example"; // String | The ID of the staffing group to fetch
+try {
+    StaffingGroupResponse result = apiInstance.getWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitStaffinggroup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **staffingGroupId** | **String**| The ID of the staffing group to fetch | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**StaffingGroupResponse**](StaffingGroupResponse.html)
+
+<a name="getWorkforcemanagementBusinessunitStaffinggroups"></a>
+
+# **getWorkforcemanagementBusinessunitStaffinggroups**
+
+
+
+> [StaffingGroupListing](StaffingGroupListing.html) getWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, managementUnitId)
+
+Gets a list of staffing groups
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups  
+
+Requires ANY permissions: 
+
+* wfm:staffingGroup:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit to get management unit specific staffing groups
+try {
+    StaffingGroupListing result = apiInstance.getWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, managementUnitId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitStaffinggroups");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **managementUnitId** | **String**| The ID of the management unit to get management unit specific staffing groups | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**StaffingGroupListing**](StaffingGroupListing.html)
+
+<a name="getWorkforcemanagementBusinessunitTimeofflimit"></a>
+
+# **getWorkforcemanagementBusinessunitTimeofflimit**
+
+
+
+> [BuTimeOffLimitResponse](BuTimeOffLimitResponse.html) getWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId)
+
+Gets a time-off limit object
+
+Returns properties of time-off limit object, but not daily values
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}  
+
+Requires ANY permissions: 
+
+* wfm:timeOffLimit:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time-off limit to fetch
+try {
+    BuTimeOffLimitResponse result = apiInstance.getWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitTimeofflimit");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **timeOffLimitId** | **String**| The ID of the time-off limit to fetch | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BuTimeOffLimitResponse**](BuTimeOffLimitResponse.html)
+
+<a name="getWorkforcemanagementBusinessunitTimeofflimits"></a>
+
+# **getWorkforcemanagementBusinessunitTimeofflimits**
+
+
+
+> [BuTimeOffLimitListing](BuTimeOffLimitListing.html) getWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, managementUnitId)
+
+Gets a list of time-off limit objects
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits  
+
+Requires ANY permissions: 
+
+* wfm:timeOffLimit:view
+* wfm:timeOffPlan:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit to get management unit specific time-off limit objects
+try {
+    BuTimeOffLimitListing result = apiInstance.getWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, managementUnitId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitTimeofflimits");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **managementUnitId** | **String**| The ID of the management unit to get management unit specific time-off limit objects | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BuTimeOffLimitListing**](BuTimeOffLimitListing.html)
+
+<a name="getWorkforcemanagementBusinessunitTimeoffplan"></a>
+
+# **getWorkforcemanagementBusinessunitTimeoffplan**
+
+
+
+> [BuTimeOffPlanResponse](BuTimeOffPlanResponse.html) getWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId)
+
+Gets a time-off plan
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}  
+
+Requires ANY permissions: 
+
+* wfm:timeOffPlan:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String timeOffPlanId = "timeOffPlanId_example"; // String | The ID of the time-off plan to fetch
+try {
+    BuTimeOffPlanResponse result = apiInstance.getWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitTimeoffplan");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **timeOffPlanId** | **String**| The ID of the time-off plan to fetch | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BuTimeOffPlanResponse**](BuTimeOffPlanResponse.html)
+
+<a name="getWorkforcemanagementBusinessunitTimeoffplans"></a>
+
+# **getWorkforcemanagementBusinessunitTimeoffplans**
+
+
+
+> [BuTimeOffPlanListing](BuTimeOffPlanListing.html) getWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, managementUnitId, forceDownloadService)
+
+Gets a list of time-off plans
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans  
+
+Requires ANY permissions: 
+
+* wfm:timeOffPlan:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit to get management unit specific staffing groups
+Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+try {
+    BuTimeOffPlanListing result = apiInstance.getWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, managementUnitId, forceDownloadService);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitTimeoffplans");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **managementUnitId** | **String**| The ID of the management unit to get management unit specific staffing groups | [optional] 
+| **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BuTimeOffPlanListing**](BuTimeOffPlanListing.html)
 
 <a name="getWorkforcemanagementBusinessunitWeekSchedule"></a>
 
@@ -6442,6 +7028,136 @@ try {
 
 [**ServiceGoalTemplate**](ServiceGoalTemplate.html)
 
+<a name="patchWorkforcemanagementBusinessunitStaffinggroup"></a>
+
+# **patchWorkforcemanagementBusinessunitStaffinggroup**
+
+
+
+> [StaffingGroupResponse](StaffingGroupResponse.html) patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId, body)
+
+Updates a staffing group
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}  
+
+Requires ANY permissions: 
+
+* wfm:staffingGroup:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String staffingGroupId = "staffingGroupId_example"; // String | The ID of the staffing group to update
+UpdateStaffingGroupRequest body = new UpdateStaffingGroupRequest(); // UpdateStaffingGroupRequest | body
+try {
+    StaffingGroupResponse result = apiInstance.patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunitStaffinggroup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **staffingGroupId** | **String**| The ID of the staffing group to update | 
+| **body** | [**UpdateStaffingGroupRequest**](UpdateStaffingGroupRequest.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**StaffingGroupResponse**](StaffingGroupResponse.html)
+
+<a name="patchWorkforcemanagementBusinessunitTimeoffplan"></a>
+
+# **patchWorkforcemanagementBusinessunitTimeoffplan**
+
+
+
+> [BuTimeOffPlanResponse](BuTimeOffPlanResponse.html) patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId, body)
+
+Updates a time-off plan
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}  
+
+Requires ANY permissions: 
+
+* wfm:timeOffPlan:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String timeOffPlanId = "timeOffPlanId_example"; // String | The ID of the time-off plan to update
+BuUpdateTimeOffPlanRequest body = new BuUpdateTimeOffPlanRequest(); // BuUpdateTimeOffPlanRequest | body
+try {
+    BuTimeOffPlanResponse result = apiInstance.patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunitTimeoffplan");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **timeOffPlanId** | **String**| The ID of the time-off plan to update | 
+| **body** | [**BuUpdateTimeOffPlanRequest**](BuUpdateTimeOffPlanRequest.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BuTimeOffPlanResponse**](BuTimeOffPlanResponse.html)
+
 <a name="patchWorkforcemanagementManagementunit"></a>
 
 # **patchWorkforcemanagementManagementunit**
@@ -8105,6 +8821,321 @@ try {
 ### Return type
 
 [**ServiceGoalTemplate**](ServiceGoalTemplate.html)
+
+<a name="postWorkforcemanagementBusinessunitStaffinggroups"></a>
+
+# **postWorkforcemanagementBusinessunitStaffinggroups**
+
+
+
+> [StaffingGroupResponse](StaffingGroupResponse.html) postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, body)
+
+Creates a new staffing group
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups  
+
+Requires ANY permissions: 
+
+* wfm:staffingGroup:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+CreateStaffingGroupRequest body = new CreateStaffingGroupRequest(); // CreateStaffingGroupRequest | body
+try {
+    StaffingGroupResponse result = apiInstance.postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitStaffinggroups");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**CreateStaffingGroupRequest**](CreateStaffingGroupRequest.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**StaffingGroupResponse**](StaffingGroupResponse.html)
+
+<a name="postWorkforcemanagementBusinessunitStaffinggroupsQuery"></a>
+
+# **postWorkforcemanagementBusinessunitStaffinggroupsQuery**
+
+
+
+> [UserStaffingGroupListing](UserStaffingGroupListing.html) postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId, body)
+
+Gets staffing group associations for a list of user IDs
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/query  
+
+Requires ANY permissions: 
+
+* wfm:staffingGroup:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+QueryUserStaffingGroupListRequest body = new QueryUserStaffingGroupListRequest(); // QueryUserStaffingGroupListRequest | body
+try {
+    UserStaffingGroupListing result = apiInstance.postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitStaffinggroupsQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**QueryUserStaffingGroupListRequest**](QueryUserStaffingGroupListRequest.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UserStaffingGroupListing**](UserStaffingGroupListing.html)
+
+<a name="postWorkforcemanagementBusinessunitTimeofflimits"></a>
+
+# **postWorkforcemanagementBusinessunitTimeofflimits**
+
+
+
+> [BuTimeOffLimitResponse](BuTimeOffLimitResponse.html) postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, body)
+
+Creates a new time-off limit object
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits  
+
+Requires ANY permissions: 
+
+* wfm:timeOffLimit:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+BuCreateTimeOffLimitRequest body = new BuCreateTimeOffLimitRequest(); // BuCreateTimeOffLimitRequest | body
+try {
+    BuTimeOffLimitResponse result = apiInstance.postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeofflimits");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**BuCreateTimeOffLimitRequest**](BuCreateTimeOffLimitRequest.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BuTimeOffLimitResponse**](BuTimeOffLimitResponse.html)
+
+<a name="postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery"></a>
+
+# **postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery**
+
+
+
+> [BuTimeOffLimitValuesResponse](BuTimeOffLimitValuesResponse.html) postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId, body)
+
+Retrieves time-off limit related values based on a given set of filters.
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query  
+
+Requires ANY permissions: 
+
+* wfm:timeOffLimit:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+QueryTimeOffLimitValuesRequest body = new QueryTimeOffLimitValuesRequest(); // QueryTimeOffLimitValuesRequest | body
+try {
+    BuTimeOffLimitValuesResponse result = apiInstance.postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**QueryTimeOffLimitValuesRequest**](QueryTimeOffLimitValuesRequest.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BuTimeOffLimitValuesResponse**](BuTimeOffLimitValuesResponse.html)
+
+<a name="postWorkforcemanagementBusinessunitTimeoffplans"></a>
+
+# **postWorkforcemanagementBusinessunitTimeoffplans**
+
+
+
+> [BuTimeOffPlanResponse](BuTimeOffPlanResponse.html) postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, body)
+
+Creates a new time-off plan
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans  
+
+Requires ANY permissions: 
+
+* wfm:timeOffPlan:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+BuCreateTimeOffPlanRequest body = new BuCreateTimeOffPlanRequest(); // BuCreateTimeOffPlanRequest | body
+try {
+    BuTimeOffPlanResponse result = apiInstance.postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeoffplans");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**BuCreateTimeOffPlanRequest**](BuCreateTimeOffPlanRequest.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BuTimeOffPlanResponse**](BuTimeOffPlanResponse.html)
 
 <a name="postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery"></a>
 
@@ -11666,6 +12697,73 @@ try {
 ### Return type
 
 [**AgentIntegrationsResponse**](AgentIntegrationsResponse.html)
+
+<a name="putWorkforcemanagementBusinessunitTimeofflimitValues"></a>
+
+# **putWorkforcemanagementBusinessunitTimeofflimitValues**
+
+
+
+> [BuTimeOffLimitResponse](BuTimeOffLimitResponse.html) putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId, timeOffLimitId, body)
+
+Sets daily values for a date range of time-off limit object
+
+Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time-off limit API
+
+Wraps PUT /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values  
+
+Requires ANY permissions: 
+
+* wfm:timeOffLimit:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time-off limit object to set values for
+BuSetTimeOffLimitValuesRequest body = new BuSetTimeOffLimitValuesRequest(); // BuSetTimeOffLimitValuesRequest | body
+try {
+    BuTimeOffLimitResponse result = apiInstance.putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId, timeOffLimitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#putWorkforcemanagementBusinessunitTimeofflimitValues");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **timeOffLimitId** | **String**| The ID of the time-off limit object to set values for | 
+| **body** | [**BuSetTimeOffLimitValuesRequest**](BuSetTimeOffLimitValuesRequest.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BuTimeOffLimitResponse**](BuTimeOffLimitResponse.html)
 
 <a name="putWorkforcemanagementManagementunitTimeofflimitValues"></a>
 

@@ -40,11 +40,13 @@ title: SurveyAsyncAggregationQuery
 | SURVEYFORMID | &quot;surveyFormId&quot; |
 | SURVEYFORMNAME | &quot;surveyFormName&quot; |
 | SURVEYID | &quot;surveyId&quot; |
+| SURVEYPARTIALRESPONSE | &quot;surveyPartialResponse&quot; |
 | SURVEYPREVIOUSSTATUS | &quot;surveyPreviousStatus&quot; |
 | SURVEYPROMOTERSCORE | &quot;surveyPromoterScore&quot; |
 | SURVEYQUESTIONGROUPID | &quot;surveyQuestionGroupId&quot; |
 | SURVEYQUESTIONID | &quot;surveyQuestionId&quot; |
 | SURVEYSTATUS | &quot;surveyStatus&quot; |
+| SURVEYTYPE | &quot;surveyType&quot; |
 | TEAMID | &quot;teamId&quot; |
 | USERID | &quot;userId&quot; |
 | WRAPUPCODE | &quot;wrapUpCode&quot; |
@@ -58,9 +60,11 @@ title: SurveyAsyncAggregationQuery
 | Name | Value |
 | ---- | ----- |
 | NSURVEYERRORS | &quot;nSurveyErrors&quot; |
+| NSURVEYFULLRESPONSES | &quot;nSurveyFullResponses&quot; |
 | NSURVEYNPSDETRACTORS | &quot;nSurveyNpsDetractors&quot; |
 | NSURVEYNPSPROMOTERS | &quot;nSurveyNpsPromoters&quot; |
 | NSURVEYNPSRESPONSES | &quot;nSurveyNpsResponses&quot; |
+| NSURVEYPARTIALRESPONSES | &quot;nSurveyPartialResponses&quot; |
 | NSURVEYQUESTIONGROUPRESPONSES | &quot;nSurveyQuestionGroupResponses&quot; |
 | NSURVEYQUESTIONRESPONSES | &quot;nSurveyQuestionResponses&quot; |
 | NSURVEYRESPONSES | &quot;nSurveyResponses&quot; |
@@ -69,6 +73,8 @@ title: SurveyAsyncAggregationQuery
 | NSURVEYSEXPIRED | &quot;nSurveysExpired&quot; |
 | NSURVEYSSENT | &quot;nSurveysSent&quot; |
 | NSURVEYSSTARTED | &quot;nSurveysStarted&quot; |
+| NVOICESURVEYS | &quot;nVoiceSurveys&quot; |
+| NWEBSURVEYS | &quot;nWebSurveys&quot; |
 | OSURVEYQUESTIONGROUPSCORE | &quot;oSurveyQuestionGroupScore&quot; |
 | OSURVEYQUESTIONSCORE | &quot;oSurveyQuestionScore&quot; |
 | OSURVEYTOTALSCORE | &quot;oSurveyTotalScore&quot; |

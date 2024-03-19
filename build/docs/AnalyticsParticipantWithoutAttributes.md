@@ -56,6 +56,7 @@ title: AnalyticsParticipantWithoutAttributes
 | USER | &quot;user&quot; | 
 | VOICEMAIL | &quot;voicemail&quot; | 
 | WORKFLOW | &quot;workflow&quot; | 
+| VOICESURVEYFLOW | &quot;voicesurveyflow&quot; | 
 {: class="table table-striped"}
 
 

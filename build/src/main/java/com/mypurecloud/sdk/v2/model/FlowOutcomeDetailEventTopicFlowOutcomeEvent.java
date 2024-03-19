@@ -230,7 +230,8 @@ public class FlowOutcomeDetailEventTopicFlowOutcomeEvent  implements Serializabl
     INQUEUESHORTMESSAGE("INQUEUESHORTMESSAGE"),
     VOICE("VOICE"),
     VOICEMAIL("VOICEMAIL"),
-    WORKITEM("WORKITEM");
+    WORKITEM("WORKITEM"),
+    VOICESURVEY("VOICESURVEY");
 
     private String value;
 

@@ -208,7 +208,6 @@ public class GetUsersRequest {
 		STATION("station"),
 		AUTHORIZATION("authorization"),
 		LASTTOKENISSUED("lasttokenissued"),
-		DATELASTLOGIN("dateLastLogin"),
 		AUTHORIZATION_UNUSEDROLES("authorization.unusedRoles"),
 		TEAM("team"),
 		WORKPLANBIDRANKS("workPlanBidRanks"),
@@ -220,7 +219,8 @@ public class GetUsersRequest {
 		LANGUAGES("languages"),
 		LANGUAGEPREFERENCE("languagePreference"),
 		EMPLOYERINFO("employerInfo"),
-		BIOGRAPHY("biography");
+		BIOGRAPHY("biography"),
+		DATELASTLOGIN("dateLastLogin");
 
 		private String value;
 

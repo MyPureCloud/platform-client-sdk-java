@@ -1195,10 +1195,11 @@ public class ConversationsApi {
 
   /**
    * Delete a Twitter messaging integration
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param integrationId Integration ID (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteConversationsMessagingIntegrationsTwitterIntegrationId(String integrationId) throws IOException, ApiException {
      deleteConversationsMessagingIntegrationsTwitterIntegrationId(createDeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest(integrationId));
@@ -1206,9 +1207,10 @@ public class ConversationsApi {
 
   /**
    * Delete a Twitter messaging integration
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param integrationId Integration ID (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteConversationsMessagingIntegrationsTwitterIntegrationIdWithHttpInfo(String integrationId) throws IOException {
     return deleteConversationsMessagingIntegrationsTwitterIntegrationId(createDeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest(integrationId).withHttpInfo());
@@ -1223,10 +1225,11 @@ public class ConversationsApi {
 
   /**
    * Delete a Twitter messaging integration
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void deleteConversationsMessagingIntegrationsTwitterIntegrationId(DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest request) throws IOException, ApiException {
     try {
@@ -1241,10 +1244,11 @@ public class ConversationsApi {
 
   /**
    * Delete a Twitter messaging integration
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> deleteConversationsMessagingIntegrationsTwitterIntegrationId(ApiRequest<Void> request) throws IOException {
     try {
@@ -7266,8 +7270,8 @@ public class ConversationsApi {
   }
 
   /**
-   * Get a list of Twitter Integrations
-   * 
+   * Get a list of Twitter Integrations (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param expand Expand instructions for the return value. (optional)
@@ -7276,14 +7280,15 @@ public class ConversationsApi {
    * @return TwitterIntegrationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public TwitterIntegrationEntityListing getConversationsMessagingIntegrationsTwitter(Integer pageSize, Integer pageNumber, String expand, String supportedContentId, String messagingSettingId) throws IOException, ApiException {
     return  getConversationsMessagingIntegrationsTwitter(createGetConversationsMessagingIntegrationsTwitterRequest(pageSize, pageNumber, expand, supportedContentId, messagingSettingId));
   }
 
   /**
-   * Get a list of Twitter Integrations
-   * 
+   * Get a list of Twitter Integrations (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param expand Expand instructions for the return value. (optional)
@@ -7291,6 +7296,7 @@ public class ConversationsApi {
    * @param messagingSettingId Filter integrations returned based on the setting ID (optional)
    * @return TwitterIntegrationEntityListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<TwitterIntegrationEntityListing> getConversationsMessagingIntegrationsTwitterWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String supportedContentId, String messagingSettingId) throws IOException {
     return getConversationsMessagingIntegrationsTwitter(createGetConversationsMessagingIntegrationsTwitterRequest(pageSize, pageNumber, expand, supportedContentId, messagingSettingId).withHttpInfo());
@@ -7312,12 +7318,13 @@ public class ConversationsApi {
   }
 
   /**
-   * Get a list of Twitter Integrations
-   * 
+   * Get a list of Twitter Integrations (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param request The request object
    * @return TwitterIntegrationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public TwitterIntegrationEntityListing getConversationsMessagingIntegrationsTwitter(GetConversationsMessagingIntegrationsTwitterRequest request) throws IOException, ApiException {
     try {
@@ -7331,11 +7338,12 @@ public class ConversationsApi {
   }
 
   /**
-   * Get a list of Twitter Integrations
-   * 
+   * Get a list of Twitter Integrations (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<TwitterIntegrationEntityListing> getConversationsMessagingIntegrationsTwitter(ApiRequest<Void> request) throws IOException {
     try {
@@ -7360,25 +7368,27 @@ public class ConversationsApi {
   }
 
   /**
-   * Get a Twitter messaging integration
-   * 
+   * Get a Twitter messaging integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param integrationId Integration ID (required)
    * @param expand Expand instructions for the return value. (optional)
    * @return TwitterIntegration
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public TwitterIntegration getConversationsMessagingIntegrationsTwitterIntegrationId(String integrationId, String expand) throws IOException, ApiException {
     return  getConversationsMessagingIntegrationsTwitterIntegrationId(createGetConversationsMessagingIntegrationsTwitterIntegrationIdRequest(integrationId, expand));
   }
 
   /**
-   * Get a Twitter messaging integration
-   * 
+   * Get a Twitter messaging integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param integrationId Integration ID (required)
    * @param expand Expand instructions for the return value. (optional)
    * @return TwitterIntegration
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<TwitterIntegration> getConversationsMessagingIntegrationsTwitterIntegrationIdWithHttpInfo(String integrationId, String expand) throws IOException {
     return getConversationsMessagingIntegrationsTwitterIntegrationId(createGetConversationsMessagingIntegrationsTwitterIntegrationIdRequest(integrationId, expand).withHttpInfo());
@@ -7394,12 +7404,13 @@ public class ConversationsApi {
   }
 
   /**
-   * Get a Twitter messaging integration
-   * 
+   * Get a Twitter messaging integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param request The request object
    * @return TwitterIntegration
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public TwitterIntegration getConversationsMessagingIntegrationsTwitterIntegrationId(GetConversationsMessagingIntegrationsTwitterIntegrationIdRequest request) throws IOException, ApiException {
     try {
@@ -7413,11 +7424,12 @@ public class ConversationsApi {
   }
 
   /**
-   * Get a Twitter messaging integration
-   * 
+   * Get a Twitter messaging integration (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<TwitterIntegration> getConversationsMessagingIntegrationsTwitterIntegrationId(ApiRequest<Void> request) throws IOException {
     try {
@@ -11639,12 +11651,13 @@ public class ConversationsApi {
 
   /**
    * Update Twitter messaging integration
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param integrationId Integration ID (required)
    * @param body TwitterIntegrationRequest (required)
    * @return TwitterIntegration
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public TwitterIntegration patchConversationsMessagingIntegrationsTwitterIntegrationId(String integrationId, TwitterIntegrationRequest body) throws IOException, ApiException {
     return  patchConversationsMessagingIntegrationsTwitterIntegrationId(createPatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest(integrationId, body));
@@ -11652,11 +11665,12 @@ public class ConversationsApi {
 
   /**
    * Update Twitter messaging integration
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param integrationId Integration ID (required)
    * @param body TwitterIntegrationRequest (required)
    * @return TwitterIntegration
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<TwitterIntegration> patchConversationsMessagingIntegrationsTwitterIntegrationIdWithHttpInfo(String integrationId, TwitterIntegrationRequest body) throws IOException {
     return patchConversationsMessagingIntegrationsTwitterIntegrationId(createPatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest(integrationId, body).withHttpInfo());
@@ -11673,11 +11687,12 @@ public class ConversationsApi {
 
   /**
    * Update Twitter messaging integration
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param request The request object
    * @return TwitterIntegration
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public TwitterIntegration patchConversationsMessagingIntegrationsTwitterIntegrationId(PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest request) throws IOException, ApiException {
     try {
@@ -11692,10 +11707,11 @@ public class ConversationsApi {
 
   /**
    * Update Twitter messaging integration
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<TwitterIntegration> patchConversationsMessagingIntegrationsTwitterIntegrationId(ApiRequest<TwitterIntegrationRequest> request) throws IOException {
     try {
@@ -17772,11 +17788,12 @@ public class ConversationsApi {
 
   /**
    * Create a Twitter Integration
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param body TwitterIntegrationRequest (required)
    * @return TwitterIntegration
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public TwitterIntegration postConversationsMessagingIntegrationsTwitter(TwitterIntegrationRequest body) throws IOException, ApiException {
     return  postConversationsMessagingIntegrationsTwitter(createPostConversationsMessagingIntegrationsTwitterRequest(body));
@@ -17784,10 +17801,11 @@ public class ConversationsApi {
 
   /**
    * Create a Twitter Integration
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param body TwitterIntegrationRequest (required)
    * @return TwitterIntegration
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<TwitterIntegration> postConversationsMessagingIntegrationsTwitterWithHttpInfo(TwitterIntegrationRequest body) throws IOException {
     return postConversationsMessagingIntegrationsTwitter(createPostConversationsMessagingIntegrationsTwitterRequest(body).withHttpInfo());
@@ -17802,11 +17820,12 @@ public class ConversationsApi {
 
   /**
    * Create a Twitter Integration
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param request The request object
    * @return TwitterIntegration
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public TwitterIntegration postConversationsMessagingIntegrationsTwitter(PostConversationsMessagingIntegrationsTwitterRequest request) throws IOException, ApiException {
     try {
@@ -17821,10 +17840,11 @@ public class ConversationsApi {
 
   /**
    * Create a Twitter Integration
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<TwitterIntegration> postConversationsMessagingIntegrationsTwitter(ApiRequest<TwitterIntegrationRequest> request) throws IOException {
     try {

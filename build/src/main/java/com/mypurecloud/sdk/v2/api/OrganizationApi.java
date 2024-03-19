@@ -17,12 +17,12 @@ import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.IpAddressAuthentication;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestDetails;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestsEntityListing;
+import com.mypurecloud.sdk.v2.model.LimitDocumentation;
 import com.mypurecloud.sdk.v2.model.LimitsEntityListing;
 import com.mypurecloud.sdk.v2.model.OrgAuthSettings;
 import com.mypurecloud.sdk.v2.model.OrgWhitelistSettings;
 import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.OrganizationFeatures;
-import com.mypurecloud.sdk.v2.model.UrlResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetFieldconfigRequest;
@@ -546,23 +546,23 @@ public class OrganizationApi {
   }
 
   /**
-   * Get a link to the limit documentation
+   * Get limit documentation
    * 
-   * @return UrlResponse
+   * @return LimitDocumentation
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UrlResponse getOrganizationsLimitsDocs() throws IOException, ApiException {
+  public LimitDocumentation getOrganizationsLimitsDocs() throws IOException, ApiException {
     return  getOrganizationsLimitsDocs(createGetOrganizationsLimitsDocsRequest());
   }
 
   /**
-   * Get a link to the limit documentation
+   * Get limit documentation
    * 
-   * @return UrlResponse
+   * @return LimitDocumentation
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UrlResponse> getOrganizationsLimitsDocsWithHttpInfo() throws IOException {
+  public ApiResponse<LimitDocumentation> getOrganizationsLimitsDocsWithHttpInfo() throws IOException {
     return getOrganizationsLimitsDocs(createGetOrganizationsLimitsDocsRequest().withHttpInfo());
   }
 
@@ -572,16 +572,16 @@ public class OrganizationApi {
   }
 
   /**
-   * Get a link to the limit documentation
+   * Get limit documentation
    * 
    * @param request The request object
-   * @return UrlResponse
+   * @return LimitDocumentation
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UrlResponse getOrganizationsLimitsDocs(GetOrganizationsLimitsDocsRequest request) throws IOException, ApiException {
+  public LimitDocumentation getOrganizationsLimitsDocs(GetOrganizationsLimitsDocsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<UrlResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UrlResponse>() {});
+      ApiResponse<LimitDocumentation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LimitDocumentation>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -591,19 +591,19 @@ public class OrganizationApi {
   }
 
   /**
-   * Get a link to the limit documentation
+   * Get limit documentation
    * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UrlResponse> getOrganizationsLimitsDocs(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<LimitDocumentation> getOrganizationsLimitsDocs(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<UrlResponse>() {});
+      return pcapiClient.invoke(request, new TypeReference<LimitDocumentation>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<UrlResponse> response = (ApiResponse<UrlResponse>)(ApiResponse<?>)exception;
+      ApiResponse<LimitDocumentation> response = (ApiResponse<LimitDocumentation>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -614,7 +614,7 @@ public class OrganizationApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<UrlResponse> response = (ApiResponse<UrlResponse>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<LimitDocumentation> response = (ApiResponse<LimitDocumentation>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

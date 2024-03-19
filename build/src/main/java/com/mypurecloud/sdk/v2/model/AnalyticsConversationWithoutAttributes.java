@@ -68,7 +68,8 @@ public class AnalyticsConversationWithoutAttributes  implements Serializable {
     STATION("station"),
     USER("user"),
     VOICEMAIL("voicemail"),
-    WORKFLOW("workflow");
+    WORKFLOW("workflow"),
+    VOICESURVEYFLOW("voicesurveyflow");
 
     private String value;
 

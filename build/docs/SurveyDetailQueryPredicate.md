@@ -43,8 +43,10 @@ title: SurveyDetailQueryPredicate
 | SURVEYFORMCONTEXTID | &quot;surveyFormContextId&quot; | 
 | SURVEYFORMID | &quot;surveyFormId&quot; | 
 | SURVEYID | &quot;surveyId&quot; | 
+| SURVEYPARTIALRESPONSE | &quot;surveyPartialResponse&quot; | 
 | SURVEYPROMOTERSCORE | &quot;surveyPromoterScore&quot; | 
 | SURVEYSTATUS | &quot;surveyStatus&quot; | 
+| SURVEYTYPE | &quot;surveyType&quot; | 
 | USERID | &quot;userId&quot; | 
 {: class="table table-striped"}
 

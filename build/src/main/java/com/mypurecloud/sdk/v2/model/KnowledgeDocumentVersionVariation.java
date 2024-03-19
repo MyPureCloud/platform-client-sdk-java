@@ -28,10 +28,12 @@ import java.io.Serializable;
 public class KnowledgeDocumentVersionVariation  implements Serializable {
   
   private String id = null;
-  private DocumentBody body = null;
   private Date dateCreated = null;
   private Date dateModified = null;
   private List<DocumentVariationContext> contexts = new ArrayList<DocumentVariationContext>();
+  private Integer priority = null;
+  private String name = null;
+  private DocumentBody body = null;
   private String selfUri = null;
   private AddressableEntityRef documentVersion = null;
 
@@ -40,24 +42,6 @@ public class KnowledgeDocumentVersionVariation  implements Serializable {
   @JsonProperty("id")
   public String getId() {
     return id;
-  }
-
-
-  /**
-   * The content for the variation.
-   **/
-  public KnowledgeDocumentVersionVariation body(DocumentBody body) {
-    this.body = body;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The content for the variation.")
-  @JsonProperty("body")
-  public DocumentBody getBody() {
-    return body;
-  }
-  public void setBody(DocumentBody body) {
-    this.body = body;
   }
 
 
@@ -93,6 +77,60 @@ public class KnowledgeDocumentVersionVariation  implements Serializable {
   }
 
 
+  /**
+   * The priority of the variation.
+   **/
+  public KnowledgeDocumentVersionVariation priority(Integer priority) {
+    this.priority = priority;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The priority of the variation.")
+  @JsonProperty("priority")
+  public Integer getPriority() {
+    return priority;
+  }
+  public void setPriority(Integer priority) {
+    this.priority = priority;
+  }
+
+
+  /**
+   * The name of the variation.
+   **/
+  public KnowledgeDocumentVersionVariation name(String name) {
+    this.name = name;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The name of the variation.")
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+
+  /**
+   * The content for the variation.
+   **/
+  public KnowledgeDocumentVersionVariation body(DocumentBody body) {
+    this.body = body;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The content for the variation.")
+  @JsonProperty("body")
+  public DocumentBody getBody() {
+    return body;
+  }
+  public void setBody(DocumentBody body) {
+    this.body = body;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -118,17 +156,19 @@ public class KnowledgeDocumentVersionVariation  implements Serializable {
     KnowledgeDocumentVersionVariation knowledgeDocumentVersionVariation = (KnowledgeDocumentVersionVariation) o;
 
     return Objects.equals(this.id, knowledgeDocumentVersionVariation.id) &&
-            Objects.equals(this.body, knowledgeDocumentVersionVariation.body) &&
             Objects.equals(this.dateCreated, knowledgeDocumentVersionVariation.dateCreated) &&
             Objects.equals(this.dateModified, knowledgeDocumentVersionVariation.dateModified) &&
             Objects.equals(this.contexts, knowledgeDocumentVersionVariation.contexts) &&
+            Objects.equals(this.priority, knowledgeDocumentVersionVariation.priority) &&
+            Objects.equals(this.name, knowledgeDocumentVersionVariation.name) &&
+            Objects.equals(this.body, knowledgeDocumentVersionVariation.body) &&
             Objects.equals(this.selfUri, knowledgeDocumentVersionVariation.selfUri) &&
             Objects.equals(this.documentVersion, knowledgeDocumentVersionVariation.documentVersion);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, body, dateCreated, dateModified, contexts, selfUri, documentVersion);
+    return Objects.hash(id, dateCreated, dateModified, contexts, priority, name, body, selfUri, documentVersion);
   }
 
   @Override
@@ -137,10 +177,12 @@ public class KnowledgeDocumentVersionVariation  implements Serializable {
     sb.append("class KnowledgeDocumentVersionVariation {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    body: ").append(toIndentedString(body)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    contexts: ").append(toIndentedString(contexts)).append("\n");
+    sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    body: ").append(toIndentedString(body)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    documentVersion: ").append(toIndentedString(documentVersion)).append("\n");
     sb.append("}");

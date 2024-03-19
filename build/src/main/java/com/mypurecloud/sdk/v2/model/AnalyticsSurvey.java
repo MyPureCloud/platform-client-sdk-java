@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -29,8 +30,57 @@ public class AnalyticsSurvey  implements Serializable {
   private String surveyFormId = null;
   private String surveyFormName = null;
   private String surveyId = null;
+  private Boolean surveyPartialResponse = null;
   private Integer surveyPromoterScore = null;
   private String surveyStatus = null;
+
+  private static class SurveyTypeEnumDeserializer extends StdDeserializer<SurveyTypeEnum> {
+    public SurveyTypeEnumDeserializer() {
+      super(SurveyTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public SurveyTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SurveyTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The type of the survey
+   */
+ @JsonDeserialize(using = SurveyTypeEnumDeserializer.class)
+  public enum SurveyTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    WEB("Web"),
+    VOICE("Voice");
+
+    private String value;
+
+    SurveyTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SurveyTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SurveyTypeEnum value : SurveyTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SurveyTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private SurveyTypeEnum surveyType = null;
   private String userId = null;
   private Long oSurveyTotalScore = null;
 
@@ -162,6 +212,24 @@ public class AnalyticsSurvey  implements Serializable {
 
 
   /**
+   * Whether the survey was completed with any required questions unanswered.
+   **/
+  public AnalyticsSurvey surveyPartialResponse(Boolean surveyPartialResponse) {
+    this.surveyPartialResponse = surveyPartialResponse;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether the survey was completed with any required questions unanswered.")
+  @JsonProperty("surveyPartialResponse")
+  public Boolean getSurveyPartialResponse() {
+    return surveyPartialResponse;
+  }
+  public void setSurveyPartialResponse(Boolean surveyPartialResponse) {
+    this.surveyPartialResponse = surveyPartialResponse;
+  }
+
+
+  /**
    * Score of the survey used with NPS
    **/
   public AnalyticsSurvey surveyPromoterScore(Integer surveyPromoterScore) {
@@ -194,6 +262,24 @@ public class AnalyticsSurvey  implements Serializable {
   }
   public void setSurveyStatus(String surveyStatus) {
     this.surveyStatus = surveyStatus;
+  }
+
+
+  /**
+   * The type of the survey
+   **/
+  public AnalyticsSurvey surveyType(SurveyTypeEnum surveyType) {
+    this.surveyType = surveyType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The type of the survey")
+  @JsonProperty("surveyType")
+  public SurveyTypeEnum getSurveyType() {
+    return surveyType;
+  }
+  public void setSurveyType(SurveyTypeEnum surveyType) {
+    this.surveyType = surveyType;
   }
 
 
@@ -249,15 +335,17 @@ public class AnalyticsSurvey  implements Serializable {
             Objects.equals(this.surveyFormId, analyticsSurvey.surveyFormId) &&
             Objects.equals(this.surveyFormName, analyticsSurvey.surveyFormName) &&
             Objects.equals(this.surveyId, analyticsSurvey.surveyId) &&
+            Objects.equals(this.surveyPartialResponse, analyticsSurvey.surveyPartialResponse) &&
             Objects.equals(this.surveyPromoterScore, analyticsSurvey.surveyPromoterScore) &&
             Objects.equals(this.surveyStatus, analyticsSurvey.surveyStatus) &&
+            Objects.equals(this.surveyType, analyticsSurvey.surveyType) &&
             Objects.equals(this.userId, analyticsSurvey.userId) &&
             Objects.equals(this.oSurveyTotalScore, analyticsSurvey.oSurveyTotalScore);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, queueId, surveyCompletedDate, surveyFormContextId, surveyFormId, surveyFormName, surveyId, surveyPromoterScore, surveyStatus, userId, oSurveyTotalScore);
+    return Objects.hash(eventTime, queueId, surveyCompletedDate, surveyFormContextId, surveyFormId, surveyFormName, surveyId, surveyPartialResponse, surveyPromoterScore, surveyStatus, surveyType, userId, oSurveyTotalScore);
   }
 
   @Override
@@ -272,8 +360,10 @@ public class AnalyticsSurvey  implements Serializable {
     sb.append("    surveyFormId: ").append(toIndentedString(surveyFormId)).append("\n");
     sb.append("    surveyFormName: ").append(toIndentedString(surveyFormName)).append("\n");
     sb.append("    surveyId: ").append(toIndentedString(surveyId)).append("\n");
+    sb.append("    surveyPartialResponse: ").append(toIndentedString(surveyPartialResponse)).append("\n");
     sb.append("    surveyPromoterScore: ").append(toIndentedString(surveyPromoterScore)).append("\n");
     sb.append("    surveyStatus: ").append(toIndentedString(surveyStatus)).append("\n");
+    sb.append("    surveyType: ").append(toIndentedString(surveyType)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    oSurveyTotalScore: ").append(toIndentedString(oSurveyTotalScore)).append("\n");
     sb.append("}");

@@ -229,7 +229,8 @@ public class FlowStartDetailEventTopicFlowStartEvent  implements Serializable {
     INQUEUESHORTMESSAGE("INQUEUESHORTMESSAGE"),
     VOICE("VOICE"),
     VOICEMAIL("VOICEMAIL"),
-    WORKITEM("WORKITEM");
+    WORKITEM("WORKITEM"),
+    VOICESURVEY("VOICESURVEY");
 
     private String value;
 

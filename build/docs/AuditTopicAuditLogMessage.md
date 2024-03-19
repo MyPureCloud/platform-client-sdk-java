@@ -46,6 +46,7 @@ title: AuditTopicAuditLogMessage
 | KNOWLEDGE | &quot;Knowledge&quot; | 
 | COACHING | &quot;Coaching&quot; | 
 | LEARNING | &quot;Learning&quot; | 
+| EMPLOYEEENGAGEMENT | &quot;EmployeeEngagement&quot; | 
 | WORKFORCEMANAGEMENT | &quot;WorkforceManagement&quot; | 
 | TRIGGERS | &quot;Triggers&quot; | 
 | PROCESSAUTOMATION | &quot;ProcessAutomation&quot; | 
@@ -111,6 +112,7 @@ title: AuditTopicAuditLogMessage
 | DEAUTHORIZE | &quot;Deauthorize&quot; | 
 | AUTHENTICATE | &quot;Authenticate&quot; | 
 | CHANGEPASSWORD | &quot;ChangePassword&quot; | 
+| AUTHENTICATIONFAILED | &quot;AuthenticationFailed&quot; | 
 | REVOKE | &quot;Revoke&quot; | 
 | CHECKIN | &quot;Checkin&quot; | 
 | CHECKOUT | &quot;Checkout&quot; | 
@@ -261,8 +263,10 @@ title: AuditTopicAuditLogMessage
 | MODULE | &quot;Module&quot; | 
 | RULE | &quot;Rule&quot; | 
 | ASSIGNMENT | &quot;Assignment&quot; | 
+| RECOGNITION | &quot;Recognition&quot; | 
 | ACTIVITYCODE | &quot;ActivityCode&quot; | 
 | ADHERENCEEXPLANATION | &quot;AdherenceExplanation&quot; | 
+| ALTERNATIVESHIFT | &quot;AlternativeShift&quot; | 
 | BUSINESSUNIT | &quot;BusinessUnit&quot; | 
 | FORECAST | &quot;Forecast&quot; | 
 | MANAGEMENTUNIT | &quot;ManagementUnit&quot; | 

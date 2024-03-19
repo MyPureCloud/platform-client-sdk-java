@@ -15,10 +15,24 @@ title: AnalyticsSurvey
 | **surveyFormId** | <!----><!---->**String**<!----> | ID of the survey form used |  [optional] |
 | **surveyFormName** | <!----><!---->**String**<!----> | Name of the survey form used |  [optional] |
 | **surveyId** | <!----><!---->**String**<!----> | ID of the survey |  [optional] |
+| **surveyPartialResponse** | <!----><!---->**Boolean**<!----> | Whether the survey was completed with any required questions unanswered. |  [optional] |
 | **surveyPromoterScore** | <!----><!---->**Integer**<!----> | Score of the survey used with NPS |  [optional] |
 | **surveyStatus** | <!----><!---->**String**<!----> | The status of the survey |  [optional] |
+| **surveyType** | [**SurveyTypeEnum**](#SurveyTypeEnum)<!----> | The type of the survey |  [optional] |
 | **userId** | <!----><!---->**String**<!----> | ID of the agent the survey was performed against |  [optional] |
 | **oSurveyTotalScore** | <!----><!---->**Long**<!----> |  |  [optional] |
+{: class="table table-striped"}
+
+
+<a name="SurveyTypeEnum"></a>
+
+## Enum: SurveyTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| WEB | &quot;Web&quot; | 
+| VOICE | &quot;Voice&quot; | 
 {: class="table table-striped"}
 
 

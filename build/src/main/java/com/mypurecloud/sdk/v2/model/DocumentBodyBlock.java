@@ -79,11 +79,11 @@ public class DocumentBodyBlock  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private DocumentBodyParagraph paragraph = null;
   private DocumentBodyImage image = null;
   private DocumentBodyVideo video = null;
   private DocumentBodyList list = null;
   private DocumentBodyTable table = null;
+  private DocumentBodyParagraph paragraph = null;
 
   
   /**
@@ -101,24 +101,6 @@ public class DocumentBodyBlock  implements Serializable {
   }
   public void setType(TypeEnum type) {
     this.type = type;
-  }
-
-
-  /**
-   * Paragraph. It must contain a value if the type of the block is Paragraph.
-   **/
-  public DocumentBodyBlock paragraph(DocumentBodyParagraph paragraph) {
-    this.paragraph = paragraph;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Paragraph. It must contain a value if the type of the block is Paragraph.")
-  @JsonProperty("paragraph")
-  public DocumentBodyParagraph getParagraph() {
-    return paragraph;
-  }
-  public void setParagraph(DocumentBodyParagraph paragraph) {
-    this.paragraph = paragraph;
   }
 
 
@@ -194,6 +176,24 @@ public class DocumentBodyBlock  implements Serializable {
   }
 
 
+  /**
+   * Paragraph. It must contain a value if the type of the block is Paragraph.
+   **/
+  public DocumentBodyBlock paragraph(DocumentBodyParagraph paragraph) {
+    this.paragraph = paragraph;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Paragraph. It must contain a value if the type of the block is Paragraph.")
+  @JsonProperty("paragraph")
+  public DocumentBodyParagraph getParagraph() {
+    return paragraph;
+  }
+  public void setParagraph(DocumentBodyParagraph paragraph) {
+    this.paragraph = paragraph;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -205,16 +205,16 @@ public class DocumentBodyBlock  implements Serializable {
     DocumentBodyBlock documentBodyBlock = (DocumentBodyBlock) o;
 
     return Objects.equals(this.type, documentBodyBlock.type) &&
-            Objects.equals(this.paragraph, documentBodyBlock.paragraph) &&
             Objects.equals(this.image, documentBodyBlock.image) &&
             Objects.equals(this.video, documentBodyBlock.video) &&
             Objects.equals(this.list, documentBodyBlock.list) &&
-            Objects.equals(this.table, documentBodyBlock.table);
+            Objects.equals(this.table, documentBodyBlock.table) &&
+            Objects.equals(this.paragraph, documentBodyBlock.paragraph);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, paragraph, image, video, list, table);
+    return Objects.hash(type, image, video, list, table, paragraph);
   }
 
   @Override
@@ -223,11 +223,11 @@ public class DocumentBodyBlock  implements Serializable {
     sb.append("class DocumentBodyBlock {\n");
     
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    paragraph: ").append(toIndentedString(paragraph)).append("\n");
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("    video: ").append(toIndentedString(video)).append("\n");
     sb.append("    list: ").append(toIndentedString(list)).append("\n");
     sb.append("    table: ").append(toIndentedString(table)).append("\n");
+    sb.append("    paragraph: ").append(toIndentedString(paragraph)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -108,14 +108,14 @@ public class EmailUserEstablishedEvent  implements Serializable {
 
 
   /**
-   * A unique Id (V4 UUID) identifying this userId this communication belongs to.
+   * A unique Id (V4 UUID) identifying the user this communication belongs to.
    **/
   public EmailUserEstablishedEvent userId(String userId) {
     this.userId = userId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "A unique Id (V4 UUID) identifying this userId this communication belongs to.")
+  @ApiModelProperty(example = "null", required = true, value = "A unique Id (V4 UUID) identifying the user this communication belongs to.")
   @JsonProperty("userId")
   public String getUserId() {
     return userId;

@@ -122,7 +122,6 @@ public class GetUserAdjacentsRequest {
 		STATION("station"),
 		AUTHORIZATION("authorization"),
 		LASTTOKENISSUED("lasttokenissued"),
-		DATELASTLOGIN("dateLastLogin"),
 		AUTHORIZATION_UNUSEDROLES("authorization.unusedRoles"),
 		TEAM("team"),
 		WORKPLANBIDRANKS("workPlanBidRanks"),
@@ -134,7 +133,8 @@ public class GetUserAdjacentsRequest {
 		LANGUAGES("languages"),
 		LANGUAGEPREFERENCE("languagePreference"),
 		EMPLOYERINFO("employerInfo"),
-		BIOGRAPHY("biography");
+		BIOGRAPHY("biography"),
+		DATELASTLOGIN("dateLastLogin");
 
 		private String value;
 

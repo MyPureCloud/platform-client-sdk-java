@@ -240,6 +240,20 @@ public class GetRoutingQueuesRequest {
 	    return this;
 	} 
 
+	private String cannedResponseLibraryId;
+	public String getCannedResponseLibraryId() {
+		return this.cannedResponseLibraryId;
+	}
+
+	public void setCannedResponseLibraryId(String cannedResponseLibraryId) {
+		this.cannedResponseLibraryId = cannedResponseLibraryId;
+	}
+
+	public GetRoutingQueuesRequest withCannedResponseLibraryId(String cannedResponseLibraryId) {
+	    this.setCannedResponseLibraryId(cannedResponseLibraryId);
+	    return this;
+	} 
+
 	private Boolean hasPeer;
 	public Boolean getHasPeer() {
 		return this.hasPeer;
@@ -297,6 +311,9 @@ public class GetRoutingQueuesRequest {
         
 
                 .withQueryParameters("peerId", "multi", peerId)
+        
+
+                .withQueryParameters("cannedResponseLibraryId", "", cannedResponseLibraryId)
         
 
                 .withQueryParameters("hasPeer", "", hasPeer)
@@ -363,6 +380,11 @@ public class GetRoutingQueuesRequest {
 
 		public Builder withPeerId(List<String> peerId) {
 			request.setPeerId(peerId);
+			return this;
+		}
+
+		public Builder withCannedResponseLibraryId(String cannedResponseLibraryId) {
+			request.setCannedResponseLibraryId(cannedResponseLibraryId);
 			return this;
 		}
 

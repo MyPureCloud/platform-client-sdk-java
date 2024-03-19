@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.TaskManagementErrorDetails;
 import com.mypurecloud.sdk.v2.model.WorkitemStatusReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -25,6 +26,7 @@ public class AutoStatusTransitionDetail  implements Serializable {
   
   private WorkitemStatusReference nextStatus = null;
   private Date dateOfTransition = null;
+  private TaskManagementErrorDetails errorDetails = null;
 
   
   /**
@@ -63,6 +65,24 @@ public class AutoStatusTransitionDetail  implements Serializable {
   }
 
 
+  /**
+   * This property will be set if auto status transition is failed.
+   **/
+  public AutoStatusTransitionDetail errorDetails(TaskManagementErrorDetails errorDetails) {
+    this.errorDetails = errorDetails;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "This property will be set if auto status transition is failed.")
+  @JsonProperty("errorDetails")
+  public TaskManagementErrorDetails getErrorDetails() {
+    return errorDetails;
+  }
+  public void setErrorDetails(TaskManagementErrorDetails errorDetails) {
+    this.errorDetails = errorDetails;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -74,12 +94,13 @@ public class AutoStatusTransitionDetail  implements Serializable {
     AutoStatusTransitionDetail autoStatusTransitionDetail = (AutoStatusTransitionDetail) o;
 
     return Objects.equals(this.nextStatus, autoStatusTransitionDetail.nextStatus) &&
-            Objects.equals(this.dateOfTransition, autoStatusTransitionDetail.dateOfTransition);
+            Objects.equals(this.dateOfTransition, autoStatusTransitionDetail.dateOfTransition) &&
+            Objects.equals(this.errorDetails, autoStatusTransitionDetail.errorDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(nextStatus, dateOfTransition);
+    return Objects.hash(nextStatus, dateOfTransition, errorDetails);
   }
 
   @Override
@@ -89,6 +110,7 @@ public class AutoStatusTransitionDetail  implements Serializable {
     
     sb.append("    nextStatus: ").append(toIndentedString(nextStatus)).append("\n");
     sb.append("    dateOfTransition: ").append(toIndentedString(dateOfTransition)).append("\n");
+    sb.append("    errorDetails: ").append(toIndentedString(errorDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }

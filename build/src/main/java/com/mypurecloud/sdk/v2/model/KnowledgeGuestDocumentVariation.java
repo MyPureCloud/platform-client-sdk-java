@@ -28,12 +28,12 @@ import java.io.Serializable;
 public class KnowledgeGuestDocumentVariation  implements Serializable {
   
   private String id = null;
-  private DocumentBody body = null;
   private Date dateCreated = null;
   private Date dateModified = null;
   private AddressableEntityRef documentVersion = null;
   private List<KnowledgeGuestDocumentVariationContext> contexts = new ArrayList<KnowledgeGuestDocumentVariationContext>();
   private AddressableEntityRef document = null;
+  private DocumentBody body = null;
   private String selfUri = null;
 
   
@@ -41,24 +41,6 @@ public class KnowledgeGuestDocumentVariation  implements Serializable {
   @JsonProperty("id")
   public String getId() {
     return id;
-  }
-
-
-  /**
-   * The content for the variation.
-   **/
-  public KnowledgeGuestDocumentVariation body(DocumentBody body) {
-    this.body = body;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The content for the variation.")
-  @JsonProperty("body")
-  public DocumentBody getBody() {
-    return body;
-  }
-  public void setBody(DocumentBody body) {
-    this.body = body;
   }
 
 
@@ -119,6 +101,24 @@ public class KnowledgeGuestDocumentVariation  implements Serializable {
   }
 
 
+  /**
+   * The content for the variation.
+   **/
+  public KnowledgeGuestDocumentVariation body(DocumentBody body) {
+    this.body = body;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The content for the variation.")
+  @JsonProperty("body")
+  public DocumentBody getBody() {
+    return body;
+  }
+  public void setBody(DocumentBody body) {
+    this.body = body;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -137,18 +137,18 @@ public class KnowledgeGuestDocumentVariation  implements Serializable {
     KnowledgeGuestDocumentVariation knowledgeGuestDocumentVariation = (KnowledgeGuestDocumentVariation) o;
 
     return Objects.equals(this.id, knowledgeGuestDocumentVariation.id) &&
-            Objects.equals(this.body, knowledgeGuestDocumentVariation.body) &&
             Objects.equals(this.dateCreated, knowledgeGuestDocumentVariation.dateCreated) &&
             Objects.equals(this.dateModified, knowledgeGuestDocumentVariation.dateModified) &&
             Objects.equals(this.documentVersion, knowledgeGuestDocumentVariation.documentVersion) &&
             Objects.equals(this.contexts, knowledgeGuestDocumentVariation.contexts) &&
             Objects.equals(this.document, knowledgeGuestDocumentVariation.document) &&
+            Objects.equals(this.body, knowledgeGuestDocumentVariation.body) &&
             Objects.equals(this.selfUri, knowledgeGuestDocumentVariation.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, body, dateCreated, dateModified, documentVersion, contexts, document, selfUri);
+    return Objects.hash(id, dateCreated, dateModified, documentVersion, contexts, document, body, selfUri);
   }
 
   @Override
@@ -157,12 +157,12 @@ public class KnowledgeGuestDocumentVariation  implements Serializable {
     sb.append("class KnowledgeGuestDocumentVariation {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    body: ").append(toIndentedString(body)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    documentVersion: ").append(toIndentedString(documentVersion)).append("\n");
     sb.append("    contexts: ").append(toIndentedString(contexts)).append("\n");
     sb.append("    document: ").append(toIndentedString(document)).append("\n");
+    sb.append("    body: ").append(toIndentedString(body)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

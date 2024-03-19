@@ -23,9 +23,11 @@ title: SurveyAggregationView
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | NSURVEYERRORS | &quot;nSurveyErrors&quot; | 
+| NSURVEYFULLRESPONSES | &quot;nSurveyFullResponses&quot; | 
 | NSURVEYNPSDETRACTORS | &quot;nSurveyNpsDetractors&quot; | 
 | NSURVEYNPSPROMOTERS | &quot;nSurveyNpsPromoters&quot; | 
 | NSURVEYNPSRESPONSES | &quot;nSurveyNpsResponses&quot; | 
+| NSURVEYPARTIALRESPONSES | &quot;nSurveyPartialResponses&quot; | 
 | NSURVEYQUESTIONGROUPRESPONSES | &quot;nSurveyQuestionGroupResponses&quot; | 
 | NSURVEYQUESTIONRESPONSES | &quot;nSurveyQuestionResponses&quot; | 
 | NSURVEYRESPONSES | &quot;nSurveyResponses&quot; | 
@@ -34,6 +36,8 @@ title: SurveyAggregationView
 | NSURVEYSEXPIRED | &quot;nSurveysExpired&quot; | 
 | NSURVEYSSENT | &quot;nSurveysSent&quot; | 
 | NSURVEYSSTARTED | &quot;nSurveysStarted&quot; | 
+| NVOICESURVEYS | &quot;nVoiceSurveys&quot; | 
+| NWEBSURVEYS | &quot;nWebSurveys&quot; | 
 | OSURVEYQUESTIONGROUPSCORE | &quot;oSurveyQuestionGroupScore&quot; | 
 | OSURVEYQUESTIONSCORE | &quot;oSurveyQuestionScore&quot; | 
 | OSURVEYTOTALSCORE | &quot;oSurveyTotalScore&quot; | 

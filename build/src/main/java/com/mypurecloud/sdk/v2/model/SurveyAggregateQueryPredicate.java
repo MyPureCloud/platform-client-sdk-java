@@ -105,11 +105,13 @@ public class SurveyAggregateQueryPredicate  implements Serializable {
     SURVEYFORMID("surveyFormId"),
     SURVEYFORMNAME("surveyFormName"),
     SURVEYID("surveyId"),
+    SURVEYPARTIALRESPONSE("surveyPartialResponse"),
     SURVEYPREVIOUSSTATUS("surveyPreviousStatus"),
     SURVEYPROMOTERSCORE("surveyPromoterScore"),
     SURVEYQUESTIONGROUPID("surveyQuestionGroupId"),
     SURVEYQUESTIONID("surveyQuestionId"),
     SURVEYSTATUS("surveyStatus"),
+    SURVEYTYPE("surveyType"),
     TEAMID("teamId"),
     USERID("userId"),
     WRAPUPCODE("wrapUpCode");

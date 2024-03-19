@@ -38,7 +38,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getJourneySessionOutcomescores**](JourneyApi.html#getJourneySessionOutcomescores) | Retrieve latest outcome score associated with a session for all outcomes. |
 | [**getJourneyView**](JourneyApi.html#getJourneyView) | Get a Journey View by ID |
 | [**getJourneyViewVersion**](JourneyApi.html#getJourneyViewVersion) | Get a Journey View by ID and version |
+| [**getJourneyViewVersionJob**](JourneyApi.html#getJourneyViewVersionJob) | Get the job for a journey view version. |
+| [**getJourneyViewVersionJobResults**](JourneyApi.html#getJourneyViewVersionJobResults) | Get the result of a job for a journey view version. |
+| [**getJourneyViewVersionJobsLatest**](JourneyApi.html#getJourneyViewVersionJobsLatest) | Get the latest job of a journey view version. |
 | [**getJourneyViews**](JourneyApi.html#getJourneyViews) | Get a list of Journey Views |
+| [**getJourneyViewsEventdefinition**](JourneyApi.html#getJourneyViewsEventdefinition) | Get an Event Definition |
+| [**getJourneyViewsEventdefinitions**](JourneyApi.html#getJourneyViewsEventdefinitions) | Get a list of Event Definitions |
 | [**patchJourneyActionmap**](JourneyApi.html#patchJourneyActionmap) | Update single action map. |
 | [**patchJourneyActiontarget**](JourneyApi.html#patchJourneyActiontarget) | Update a single action target. |
 | [**patchJourneyActiontemplate**](JourneyApi.html#patchJourneyActiontemplate) | Update a single action template. |
@@ -56,8 +61,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postJourneyOutcomesAttributionsJobs**](JourneyApi.html#postJourneyOutcomesAttributionsJobs) | Create Outcome Attributions |
 | [**postJourneyOutcomesPredictors**](JourneyApi.html#postJourneyOutcomesPredictors) | Create an outcome predictor. |
 | [**postJourneySegments**](JourneyApi.html#postJourneySegments) | Create a segment. |
+| [**postJourneyViewVersionJobs**](JourneyApi.html#postJourneyViewVersionJobs) | Submit a job request for a journey view version. |
 | [**postJourneyViewVersions**](JourneyApi.html#postJourneyViewVersions) | Update a Journey View by ID |
 | [**postJourneyViews**](JourneyApi.html#postJourneyViews) | Create a new Journey View |
+| [**postJourneyViewsEncodingsValidate**](JourneyApi.html#postJourneyViewsEncodingsValidate) | Validate whether an encoding exist for a label/value combination. |
 {: class="table-striped"}
 
 <a name="deleteJourneyActionmap"></a>
@@ -2026,6 +2033,211 @@ try {
 
 [**JourneyView**](JourneyView.html)
 
+<a name="getJourneyViewVersionJob"></a>
+
+# **getJourneyViewVersionJob**
+
+
+
+> [JourneyViewJob](JourneyViewJob.html) getJourneyViewVersionJob(viewId, journeyVersionId, jobId)
+
+Get the job for a journey view version.
+
+used for long descriptions
+
+getJourneyViewVersionJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}  
+
+Requires ALL permissions: 
+
+* journey:viewsJobs:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String viewId = "viewId_example"; // String | Journey View Id
+String journeyVersionId = "journeyVersionId_example"; // String | Journey View Version
+String jobId = "jobId_example"; // String | JobId
+try {
+    JourneyViewJob result = apiInstance.getJourneyViewVersionJob(viewId, journeyVersionId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyViewVersionJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **viewId** | **String**| Journey View Id | 
+| **journeyVersionId** | **String**| Journey View Version | 
+| **jobId** | **String**| JobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**JourneyViewJob**](JourneyViewJob.html)
+
+<a name="getJourneyViewVersionJobResults"></a>
+
+# **getJourneyViewVersionJobResults**
+
+
+
+> [JourneyViewResult](JourneyViewResult.html) getJourneyViewVersionJobResults(viewId, journeyViewVersion, jobId)
+
+Get the result of a job for a journey view version.
+
+used for long descriptions
+
+getJourneyViewVersionJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results  
+
+Requires ALL permissions: 
+
+* journey:viewsResults:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String viewId = "viewId_example"; // String | JourneyViewResult id
+String journeyViewVersion = "journeyViewVersion_example"; // String | Journey View Version
+String jobId = "jobId_example"; // String | Id of the executing job
+try {
+    JourneyViewResult result = apiInstance.getJourneyViewVersionJobResults(viewId, journeyViewVersion, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyViewVersionJobResults");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **viewId** | **String**| JourneyViewResult id | 
+| **journeyViewVersion** | **String**| Journey View Version | 
+| **jobId** | **String**| Id of the executing job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**JourneyViewResult**](JourneyViewResult.html)
+
+<a name="getJourneyViewVersionJobsLatest"></a>
+
+# **getJourneyViewVersionJobsLatest**
+
+
+
+> [JourneyViewJob](JourneyViewJob.html) getJourneyViewVersionJobsLatest(viewId, journeyVersionId)
+
+Get the latest job of a journey view version.
+
+used for long descriptions
+
+getJourneyViewVersionJobsLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/latest  
+
+Requires ALL permissions: 
+
+* journey:viewsJobs:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String viewId = "viewId_example"; // String | Journey View Id
+String journeyVersionId = "journeyVersionId_example"; // String | Journey View Version
+try {
+    JourneyViewJob result = apiInstance.getJourneyViewVersionJobsLatest(viewId, journeyVersionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyViewVersionJobsLatest");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **viewId** | **String**| Journey View Id | 
+| **journeyVersionId** | **String**| Journey View Version | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**JourneyViewJob**](JourneyViewJob.html)
+
 <a name="getJourneyViews"></a>
 
 # **getJourneyViews**
@@ -2084,6 +2296,128 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**AddressableEntityListing**](AddressableEntityListing.html)
+
+<a name="getJourneyViewsEventdefinition"></a>
+
+# **getJourneyViewsEventdefinition**
+
+
+
+> [JourneyEventDefinition](JourneyEventDefinition.html) getJourneyViewsEventdefinition(eventDefinitionId)
+
+Get an Event Definition
+
+getJourneyViewsEventdefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/journey/views/eventdefinitions/{eventDefinitionId}  
+
+Requires ALL permissions: 
+
+* journey:eventDefinition:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String eventDefinitionId = "eventDefinitionId_example"; // String | Event Definition ID
+try {
+    JourneyEventDefinition result = apiInstance.getJourneyViewsEventdefinition(eventDefinitionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyViewsEventdefinition");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **eventDefinitionId** | **String**| Event Definition ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**JourneyEventDefinition**](JourneyEventDefinition.html)
+
+<a name="getJourneyViewsEventdefinitions"></a>
+
+# **getJourneyViewsEventdefinitions**
+
+
+
+> [JourneyEventDefinitionListing](JourneyEventDefinitionListing.html) getJourneyViewsEventdefinitions()
+
+Get a list of Event Definitions
+
+getJourneyViewsEventdefinitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/journey/views/eventdefinitions  
+
+Requires ALL permissions: 
+
+* journey:eventDefinition:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+try {
+    JourneyEventDefinitionListing result = apiInstance.getJourneyViewsEventdefinitions();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyViewsEventdefinitions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**JourneyEventDefinitionListing**](JourneyEventDefinitionListing.html)
 
 <a name="patchJourneyActionmap"></a>
 
@@ -3113,6 +3447,73 @@ try {
 
 [**JourneySegment**](JourneySegment.html)
 
+<a name="postJourneyViewVersionJobs"></a>
+
+# **postJourneyViewVersionJobs**
+
+
+
+> [JourneyViewJob](JourneyViewJob.html) postJourneyViewVersionJobs(viewId, journeyVersionId)
+
+Submit a job request for a journey view version.
+
+used for long descriptions
+
+postJourneyViewVersionJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs  
+
+Requires ALL permissions: 
+
+* journey:viewsJobs:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String viewId = "viewId_example"; // String | Journey View Id
+String journeyVersionId = "journeyVersionId_example"; // String | Journey View Version
+try {
+    JourneyViewJob result = apiInstance.postJourneyViewVersionJobs(viewId, journeyVersionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#postJourneyViewVersionJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **viewId** | **String**| Journey View Id | 
+| **journeyVersionId** | **String**| Journey View Version | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**JourneyViewJob**](JourneyViewJob.html)
+
 <a name="postJourneyViewVersions"></a>
 
 # **postJourneyViewVersions**
@@ -3242,4 +3643,69 @@ try {
 ### Return type
 
 [**JourneyView**](JourneyView.html)
+
+<a name="postJourneyViewsEncodingsValidate"></a>
+
+# **postJourneyViewsEncodingsValidate**
+
+
+
+> [EntityListing](EntityListing.html) postJourneyViewsEncodingsValidate(body)
+
+Validate whether an encoding exist for a label/value combination.
+
+True indicates a valid encoding
+
+postJourneyViewsEncodingsValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/journey/views/encodings/validate  
+
+Requires ALL permissions: 
+
+* journey:viewsEncodings:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+List<Label> body = Arrays.asList(new Label()); // List<Label> | 
+try {
+    EntityListing result = apiInstance.postJourneyViewsEncodingsValidate(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#postJourneyViewsEncodingsValidate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**List&lt;Label&gt;**](Label.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EntityListing**](EntityListing.html)
 

@@ -43,9 +43,11 @@ public class SurveyAggregationView  implements Serializable {
   public enum TargetEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NSURVEYERRORS("nSurveyErrors"),
+    NSURVEYFULLRESPONSES("nSurveyFullResponses"),
     NSURVEYNPSDETRACTORS("nSurveyNpsDetractors"),
     NSURVEYNPSPROMOTERS("nSurveyNpsPromoters"),
     NSURVEYNPSRESPONSES("nSurveyNpsResponses"),
+    NSURVEYPARTIALRESPONSES("nSurveyPartialResponses"),
     NSURVEYQUESTIONGROUPRESPONSES("nSurveyQuestionGroupResponses"),
     NSURVEYQUESTIONRESPONSES("nSurveyQuestionResponses"),
     NSURVEYRESPONSES("nSurveyResponses"),
@@ -54,6 +56,8 @@ public class SurveyAggregationView  implements Serializable {
     NSURVEYSEXPIRED("nSurveysExpired"),
     NSURVEYSSENT("nSurveysSent"),
     NSURVEYSSTARTED("nSurveysStarted"),
+    NVOICESURVEYS("nVoiceSurveys"),
+    NWEBSURVEYS("nWebSurveys"),
     OSURVEYQUESTIONGROUPSCORE("oSurveyQuestionGroupScore"),
     OSURVEYQUESTIONSCORE("oSurveyQuestionScore"),
     OSURVEYTOTALSCORE("oSurveyTotalScore");

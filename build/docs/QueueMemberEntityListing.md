@@ -12,9 +12,9 @@ title: QueueMemberEntityListing
 | **pageNumber** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **pageSize** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **firstUri** | <!----><!---->**String**<!----> |  |  [optional] |
+| **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **nextUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **previousUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

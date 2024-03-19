@@ -97,8 +97,10 @@ public class SurveyDetailQueryPredicate  implements Serializable {
     SURVEYFORMCONTEXTID("surveyFormContextId"),
     SURVEYFORMID("surveyFormId"),
     SURVEYID("surveyId"),
+    SURVEYPARTIALRESPONSE("surveyPartialResponse"),
     SURVEYPROMOTERSCORE("surveyPromoterScore"),
     SURVEYSTATUS("surveyStatus"),
+    SURVEYTYPE("surveyType"),
     USERID("userId");
 
     private String value;
