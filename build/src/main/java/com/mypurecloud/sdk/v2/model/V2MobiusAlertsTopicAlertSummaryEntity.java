@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.V2MobiusAlertsTopicAddressableEntityRef;
+import com.mypurecloud.sdk.v2.model.V2MobiusAlertsTopicAlertingAddressableEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -76,10 +76,10 @@ public class V2MobiusAlertsTopicAlertSummaryEntity  implements Serializable {
     }
   }
   private EntityTypeEnum entityType = null;
-  private V2MobiusAlertsTopicAddressableEntityRef user = null;
-  private V2MobiusAlertsTopicAddressableEntityRef group = null;
-  private V2MobiusAlertsTopicAddressableEntityRef queue = null;
-  private V2MobiusAlertsTopicAddressableEntityRef team = null;
+  private V2MobiusAlertsTopicAlertingAddressableEntityRef user = null;
+  private V2MobiusAlertsTopicAlertingAddressableEntityRef group = null;
+  private V2MobiusAlertsTopicAlertingAddressableEntityRef queue = null;
+  private V2MobiusAlertsTopicAlertingAddressableEntityRef team = null;
   private Boolean alerting = null;
 
   
@@ -102,68 +102,68 @@ public class V2MobiusAlertsTopicAlertSummaryEntity  implements Serializable {
 
   /**
    **/
-  public V2MobiusAlertsTopicAlertSummaryEntity user(V2MobiusAlertsTopicAddressableEntityRef user) {
+  public V2MobiusAlertsTopicAlertSummaryEntity user(V2MobiusAlertsTopicAlertingAddressableEntityRef user) {
     this.user = user;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("user")
-  public V2MobiusAlertsTopicAddressableEntityRef getUser() {
+  public V2MobiusAlertsTopicAlertingAddressableEntityRef getUser() {
     return user;
   }
-  public void setUser(V2MobiusAlertsTopicAddressableEntityRef user) {
+  public void setUser(V2MobiusAlertsTopicAlertingAddressableEntityRef user) {
     this.user = user;
   }
 
 
   /**
    **/
-  public V2MobiusAlertsTopicAlertSummaryEntity group(V2MobiusAlertsTopicAddressableEntityRef group) {
+  public V2MobiusAlertsTopicAlertSummaryEntity group(V2MobiusAlertsTopicAlertingAddressableEntityRef group) {
     this.group = group;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("group")
-  public V2MobiusAlertsTopicAddressableEntityRef getGroup() {
+  public V2MobiusAlertsTopicAlertingAddressableEntityRef getGroup() {
     return group;
   }
-  public void setGroup(V2MobiusAlertsTopicAddressableEntityRef group) {
+  public void setGroup(V2MobiusAlertsTopicAlertingAddressableEntityRef group) {
     this.group = group;
   }
 
 
   /**
    **/
-  public V2MobiusAlertsTopicAlertSummaryEntity queue(V2MobiusAlertsTopicAddressableEntityRef queue) {
+  public V2MobiusAlertsTopicAlertSummaryEntity queue(V2MobiusAlertsTopicAlertingAddressableEntityRef queue) {
     this.queue = queue;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("queue")
-  public V2MobiusAlertsTopicAddressableEntityRef getQueue() {
+  public V2MobiusAlertsTopicAlertingAddressableEntityRef getQueue() {
     return queue;
   }
-  public void setQueue(V2MobiusAlertsTopicAddressableEntityRef queue) {
+  public void setQueue(V2MobiusAlertsTopicAlertingAddressableEntityRef queue) {
     this.queue = queue;
   }
 
 
   /**
    **/
-  public V2MobiusAlertsTopicAlertSummaryEntity team(V2MobiusAlertsTopicAddressableEntityRef team) {
+  public V2MobiusAlertsTopicAlertSummaryEntity team(V2MobiusAlertsTopicAlertingAddressableEntityRef team) {
     this.team = team;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("team")
-  public V2MobiusAlertsTopicAddressableEntityRef getTeam() {
+  public V2MobiusAlertsTopicAlertingAddressableEntityRef getTeam() {
     return team;
   }
-  public void setTeam(V2MobiusAlertsTopicAddressableEntityRef team) {
+  public void setTeam(V2MobiusAlertsTopicAlertingAddressableEntityRef team) {
     this.team = team;
   }
 

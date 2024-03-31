@@ -2,276 +2,166 @@
 <testng-results ignored="0" total="45" passed="45" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-19T07:10:15 UTC" name="SDK tests (0)" finished-at="2024-03-19T07:12:31 UTC" duration-ms="135818">
+  <suite started-at="2024-03-31T06:50:55 UTC" name="SDK tests (0)" finished-at="2024-03-31T06:53:10 UTC" duration-ms="134598">
     <groups>
     </groups>
-    <test started-at="2024-03-19T07:10:15 UTC" name="Unit Tests" finished-at="2024-03-19T07:12:31 UTC" duration-ms="135818">
+    <test started-at="2024-03-31T06:50:55 UTC" name="Unit Tests" finished-at="2024-03-31T06:53:10 UTC" duration-ms="134598">
       <class name="com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest@4802796d]" started-at="2024-03-19T07:11:30 UTC" name="setup" finished-at="2024-03-19T07:11:30 UTC" duration-ms="4" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest@4802796d]" started-at="2024-03-31T06:52:09 UTC" name="setup" finished-at="2024-03-31T06:52:09 UTC" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="invokeAsyncTestWith_429()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest@4802796d]" started-at="2024-03-19T07:11:30 UTC" name="invokeAsyncTestWith_429" finished-at="2024-03-19T07:11:35 UTC" duration-ms="5283" status="PASS">
+        <test-method signature="invokeAsyncTestWith_429()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest@4802796d]" started-at="2024-03-31T06:52:09 UTC" name="invokeAsyncTestWith_429" finished-at="2024-03-31T06:52:14 UTC" duration-ms="5167" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invokeAsyncTestWith_429 -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest@4802796d]" started-at="2024-03-19T07:11:35 UTC" name="setup" finished-at="2024-03-19T07:11:35 UTC" duration-ms="12" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest@4802796d]" started-at="2024-03-31T06:52:14 UTC" name="setup" finished-at="2024-03-31T06:52:14 UTC" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="invokeAsyncTestWith_429_And_No_MaxRetryTime()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest@4802796d]" started-at="2024-03-19T07:11:35 UTC" name="invokeAsyncTestWith_429_And_No_MaxRetryTime" finished-at="2024-03-19T07:11:35 UTC" duration-ms="220" status="PASS">
+        <test-method signature="invokeAsyncTestWith_429_And_No_MaxRetryTime()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest@4802796d]" started-at="2024-03-31T06:52:14 UTC" name="invokeAsyncTestWith_429_And_No_MaxRetryTime" finished-at="2024-03-31T06:52:14 UTC" duration-ms="108" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invokeAsyncTestWith_429_And_No_MaxRetryTime -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest@4802796d]" started-at="2024-03-19T07:11:35 UTC" name="setup" finished-at="2024-03-19T07:11:35 UTC" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest@4802796d]" started-at="2024-03-31T06:52:14 UTC" name="setup" finished-at="2024-03-31T06:52:14 UTC" duration-ms="4" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="invokeAsyncTestWith_502()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest@4802796d]" started-at="2024-03-19T07:11:35 UTC" name="invokeAsyncTestWith_502" finished-at="2024-03-19T07:11:49 UTC" duration-ms="13225" status="PASS">
+        <test-method signature="invokeAsyncTestWith_502()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest@4802796d]" started-at="2024-03-31T06:52:14 UTC" name="invokeAsyncTestWith_502" finished-at="2024-03-31T06:52:27 UTC" duration-ms="13118" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invokeAsyncTestWith_502 -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest@4802796d]" started-at="2024-03-19T07:11:49 UTC" name="setup" finished-at="2024-03-19T07:11:49 UTC" duration-ms="5" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest@4802796d]" started-at="2024-03-31T06:52:27 UTC" name="setup" finished-at="2024-03-31T06:52:27 UTC" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="invokeAsyncTestWith_503()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest@4802796d]" started-at="2024-03-19T07:11:49 UTC" name="invokeAsyncTestWith_503" finished-at="2024-03-19T07:12:29 UTC" duration-ms="40200" status="PASS">
+        <test-method signature="invokeAsyncTestWith_503()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest@4802796d]" started-at="2024-03-31T06:52:27 UTC" name="invokeAsyncTestWith_503" finished-at="2024-03-31T06:53:07 UTC" duration-ms="40113" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invokeAsyncTestWith_503 -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest@4802796d]" started-at="2024-03-19T07:12:29 UTC" name="setup" finished-at="2024-03-19T07:12:29 UTC" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest@4802796d]" started-at="2024-03-31T06:53:07 UTC" name="setup" finished-at="2024-03-31T06:53:07 UTC" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="invokeAsyncTestWith_504()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest@4802796d]" started-at="2024-03-19T07:12:29 UTC" name="invokeAsyncTestWith_504" finished-at="2024-03-19T07:12:31 UTC" duration-ms="2144" status="PASS">
+        <test-method signature="invokeAsyncTestWith_504()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest@4802796d]" started-at="2024-03-31T06:53:07 UTC" name="invokeAsyncTestWith_504" finished-at="2024-03-31T06:53:09 UTC" duration-ms="2108" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invokeAsyncTestWith_504 -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest@4802796d]" started-at="2024-03-19T07:12:31 UTC" name="setup" finished-at="2024-03-19T07:12:31 UTC" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest@4802796d]" started-at="2024-03-31T06:53:09 UTC" name="setup" finished-at="2024-03-31T06:53:09 UTC" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="invokeAsyncTestWith_504_And_No_MaxRetryTime()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest@4802796d]" started-at="2024-03-19T07:12:31 UTC" name="invokeAsyncTestWith_504_And_No_MaxRetryTime" finished-at="2024-03-19T07:12:31 UTC" duration-ms="105" status="PASS">
+        <test-method signature="invokeAsyncTestWith_504_And_No_MaxRetryTime()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest@4802796d]" started-at="2024-03-31T06:53:09 UTC" name="invokeAsyncTestWith_504_And_No_MaxRetryTime" finished-at="2024-03-31T06:53:10 UTC" duration-ms="105" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invokeAsyncTestWith_504_And_No_MaxRetryTime -->
       </class> <!-- com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest -->
       <class name="com.mypurecloud.sdk.v2.ApiClientRetryTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-19T07:10:15 UTC" name="setup" finished-at="2024-03-19T07:10:19 UTC" duration-ms="3554" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-31T06:50:55 UTC" name="setup" finished-at="2024-03-31T06:50:58 UTC" duration-ms="3204" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="invokeTestWith_429()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-19T07:10:19 UTC" name="invokeTestWith_429" finished-at="2024-03-19T07:10:26 UTC" duration-ms="6820" status="PASS">
+        <test-method signature="invokeTestWith_429()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-31T06:50:58 UTC" name="invokeTestWith_429" finished-at="2024-03-31T06:51:05 UTC" duration-ms="6615" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invokeTestWith_429 -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-19T07:10:26 UTC" name="setup" finished-at="2024-03-19T07:10:26 UTC" duration-ms="15" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-31T06:51:05 UTC" name="setup" finished-at="2024-03-31T06:51:05 UTC" duration-ms="4" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="invokeTestWith_429_And_No_MaxRetryTime()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-19T07:10:26 UTC" name="invokeTestWith_429_And_No_MaxRetryTime" finished-at="2024-03-19T07:10:26 UTC" duration-ms="274" status="PASS">
+        <test-method signature="invokeTestWith_429_And_No_MaxRetryTime()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-31T06:51:05 UTC" name="invokeTestWith_429_And_No_MaxRetryTime" finished-at="2024-03-31T06:51:05 UTC" duration-ms="175" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invokeTestWith_429_And_No_MaxRetryTime -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-19T07:10:26 UTC" name="setup" finished-at="2024-03-19T07:10:26 UTC" duration-ms="6" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-31T06:51:05 UTC" name="setup" finished-at="2024-03-31T06:51:05 UTC" duration-ms="13" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="invokeTestWith_502()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-19T07:10:26 UTC" name="invokeTestWith_502" finished-at="2024-03-19T07:10:39 UTC" duration-ms="13202" status="PASS">
+        <test-method signature="invokeTestWith_502()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-31T06:51:05 UTC" name="invokeTestWith_502" finished-at="2024-03-31T06:51:18 UTC" duration-ms="13225" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invokeTestWith_502 -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-19T07:10:39 UTC" name="setup" finished-at="2024-03-19T07:10:39 UTC" duration-ms="4" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-31T06:51:18 UTC" name="setup" finished-at="2024-03-31T06:51:18 UTC" duration-ms="4" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="invokeTestWith_503()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-19T07:10:39 UTC" name="invokeTestWith_503" finished-at="2024-03-19T07:11:19 UTC" duration-ms="40159" status="PASS">
+        <test-method signature="invokeTestWith_503()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-31T06:51:18 UTC" name="invokeTestWith_503" finished-at="2024-03-31T06:51:58 UTC" duration-ms="40138" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invokeTestWith_503 -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-19T07:11:19 UTC" name="setup" finished-at="2024-03-19T07:11:19 UTC" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-31T06:51:58 UTC" name="setup" finished-at="2024-03-31T06:51:58 UTC" duration-ms="11" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="invokeTestWith_504()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-19T07:11:19 UTC" name="invokeTestWith_504" finished-at="2024-03-19T07:11:22 UTC" duration-ms="2239" status="PASS">
+        <test-method signature="invokeTestWith_504()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-31T06:51:58 UTC" name="invokeTestWith_504" finished-at="2024-03-31T06:52:01 UTC" duration-ms="2176" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invokeTestWith_504 -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-19T07:11:22 UTC" name="setup" finished-at="2024-03-19T07:11:22 UTC" duration-ms="17" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-31T06:52:01 UTC" name="setup" finished-at="2024-03-31T06:52:01 UTC" duration-ms="7" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="invokeTestWith_504_No_MaxRetryTime()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-19T07:11:22 UTC" name="invokeTestWith_504_No_MaxRetryTime" finished-at="2024-03-19T07:11:22 UTC" duration-ms="213" status="PASS">
+        <test-method signature="invokeTestWith_504_No_MaxRetryTime()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-31T06:52:01 UTC" name="invokeTestWith_504_No_MaxRetryTime" finished-at="2024-03-31T06:52:01 UTC" duration-ms="165" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invokeTestWith_504_No_MaxRetryTime -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-19T07:11:22 UTC" name="setup" finished-at="2024-03-19T07:11:22 UTC" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-31T06:52:01 UTC" name="setup" finished-at="2024-03-31T06:52:01 UTC" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="shouldRetryTestWith_200()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-19T07:11:22 UTC" name="shouldRetryTestWith_200" finished-at="2024-03-19T07:11:22 UTC" duration-ms="1" status="PASS">
+        <test-method signature="shouldRetryTestWith_200()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-31T06:52:01 UTC" name="shouldRetryTestWith_200" finished-at="2024-03-31T06:52:01 UTC" duration-ms="11" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shouldRetryTestWith_200 -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-19T07:11:22 UTC" name="setup" finished-at="2024-03-19T07:11:22 UTC" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-31T06:52:01 UTC" name="setup" finished-at="2024-03-31T06:52:01 UTC" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="shouldRetryTestWith_429()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-19T07:11:22 UTC" name="shouldRetryTestWith_429" finished-at="2024-03-19T07:11:23 UTC" duration-ms="1000" status="PASS">
+        <test-method signature="shouldRetryTestWith_429()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-31T06:52:01 UTC" name="shouldRetryTestWith_429" finished-at="2024-03-31T06:52:02 UTC" duration-ms="1006" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shouldRetryTestWith_429 -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-19T07:11:23 UTC" name="setup" finished-at="2024-03-19T07:11:23 UTC" duration-ms="5" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-31T06:52:02 UTC" name="setup" finished-at="2024-03-31T06:52:02 UTC" duration-ms="8" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="shouldRetryTestWith_502()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-19T07:11:23 UTC" name="shouldRetryTestWith_502" finished-at="2024-03-19T07:11:24 UTC" duration-ms="1002" status="PASS">
+        <test-method signature="shouldRetryTestWith_502()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-31T06:52:02 UTC" name="shouldRetryTestWith_502" finished-at="2024-03-31T06:52:03 UTC" duration-ms="1000" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shouldRetryTestWith_502 -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-19T07:11:24 UTC" name="setup" finished-at="2024-03-19T07:11:24 UTC" duration-ms="11" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-31T06:52:03 UTC" name="setup" finished-at="2024-03-31T06:52:03 UTC" duration-ms="7" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="shouldRetryTestWith_502_And_0_MaxRetryTime()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-19T07:11:24 UTC" name="shouldRetryTestWith_502_And_0_MaxRetryTime" finished-at="2024-03-19T07:11:24 UTC" duration-ms="0" status="PASS">
+        <test-method signature="shouldRetryTestWith_502_And_0_MaxRetryTime()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-31T06:52:03 UTC" name="shouldRetryTestWith_502_And_0_MaxRetryTime" finished-at="2024-03-31T06:52:03 UTC" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shouldRetryTestWith_502_And_0_MaxRetryTime -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-19T07:11:24 UTC" name="setup" finished-at="2024-03-19T07:11:24 UTC" duration-ms="12" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-31T06:52:03 UTC" name="setup" finished-at="2024-03-31T06:52:03 UTC" duration-ms="9" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="shouldRetryTestWith_503_And_RetryConfig()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-19T07:11:24 UTC" name="shouldRetryTestWith_503_And_RetryConfig" finished-at="2024-03-19T07:11:27 UTC" duration-ms="3009" status="PASS">
+        <test-method signature="shouldRetryTestWith_503_And_RetryConfig()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-31T06:52:03 UTC" name="shouldRetryTestWith_503_And_RetryConfig" finished-at="2024-03-31T06:52:06 UTC" duration-ms="3023" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shouldRetryTestWith_503_And_RetryConfig -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-19T07:11:27 UTC" name="setup" finished-at="2024-03-19T07:11:27 UTC" duration-ms="9" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-31T06:52:06 UTC" name="setup" finished-at="2024-03-31T06:52:06 UTC" duration-ms="8" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="shouldRetryTestWith_504_And_No_RetryAfter_Header()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-19T07:11:27 UTC" name="shouldRetryTestWith_504_And_No_RetryAfter_Header" finished-at="2024-03-19T07:11:30 UTC" duration-ms="3000" status="PASS">
+        <test-method signature="shouldRetryTestWith_504_And_No_RetryAfter_Header()[pri:0, instance:com.mypurecloud.sdk.v2.ApiClientRetryTest@7b98f307]" started-at="2024-03-31T06:52:06 UTC" name="shouldRetryTestWith_504_And_No_RetryAfter_Header" finished-at="2024-03-31T06:52:09 UTC" duration-ms="3001" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shouldRetryTestWith_504_And_No_RetryAfter_Header -->
       </class> <!-- com.mypurecloud.sdk.v2.ApiClientRetryTest -->
     </test> <!-- Unit Tests -->
   </suite> <!-- SDK tests (0) -->
-  <suite started-at="2024-03-19T07:10:10 UTC" name="SDK tests" finished-at="2024-03-19T07:10:15 UTC" duration-ms="4865">
+  <suite started-at="2024-03-31T06:50:51 UTC" name="SDK tests" finished-at="2024-03-31T06:50:55 UTC" duration-ms="4331">
     <groups>
     </groups>
-    <test started-at="2024-03-19T07:10:10 UTC" name="OkHTTP" finished-at="2024-03-19T07:10:15 UTC" duration-ms="4854">
+    <test started-at="2024-03-31T06:50:51 UTC" name="Apache" finished-at="2024-03-31T06:50:55 UTC" duration-ms="4136">
       <class name="com.mypurecloud.sdk.v2.SdkTests">
-        <test-method is-config="true" signature="beforeTest(java.lang.String)[pri:0, instance:com.mypurecloud.sdk.v2.SdkTests@409bf450]" started-at="2024-03-19T07:10:10 UTC" name="beforeTest" finished-at="2024-03-19T07:10:10 UTC" duration-ms="8" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[OkHTTP]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method signature="traceBasicInformation()[pri:1, instance:com.mypurecloud.sdk.v2.SdkTests@409bf450]" started-at="2024-03-19T07:10:10 UTC" name="traceBasicInformation" finished-at="2024-03-19T07:10:10 UTC" duration-ms="8" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- traceBasicInformation -->
-        <test-method signature="authenticate()[pri:2, instance:com.mypurecloud.sdk.v2.SdkTests@409bf450]" started-at="2024-03-19T07:10:10 UTC" name="authenticate" finished-at="2024-03-19T07:10:13 UTC" duration-ms="2530" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- authenticate -->
-        <test-method signature="createUser()[pri:3, instance:com.mypurecloud.sdk.v2.SdkTests@409bf450]" started-at="2024-03-19T07:10:13 UTC" name="createUser" finished-at="2024-03-19T07:10:14 UTC" duration-ms="1014" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createUser -->
-        <test-method signature="updateUser()[pri:4, instance:com.mypurecloud.sdk.v2.SdkTests@409bf450]" started-at="2024-03-19T07:10:14 UTC" name="updateUser" finished-at="2024-03-19T07:10:14 UTC" duration-ms="201" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- updateUser -->
-        <test-method signature="setProfileSkills()[pri:5, instance:com.mypurecloud.sdk.v2.SdkTests@409bf450]" started-at="2024-03-19T07:10:14 UTC" name="setProfileSkills" finished-at="2024-03-19T07:10:14 UTC" duration-ms="194" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setProfileSkills -->
-        <test-method signature="testNotifications()[pri:6, instance:com.mypurecloud.sdk.v2.SdkTests@409bf450]" started-at="2024-03-19T07:10:14 UTC" name="testNotifications" finished-at="2024-03-19T07:10:15 UTC" duration-ms="607" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testNotifications -->
-        <test-method signature="getUser()[pri:7, instance:com.mypurecloud.sdk.v2.SdkTests@409bf450]" started-at="2024-03-19T07:10:15 UTC" name="getUser" finished-at="2024-03-19T07:10:15 UTC" duration-ms="51" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getUser -->
-        <test-method signature="testObjectMapperIgnoresUnknownProperties()[pri:8, instance:com.mypurecloud.sdk.v2.SdkTests@409bf450]" started-at="2024-03-19T07:10:15 UTC" name="testObjectMapperIgnoresUnknownProperties" finished-at="2024-03-19T07:10:15 UTC" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testObjectMapperIgnoresUnknownProperties -->
-        <test-method signature="deleteUser()[pri:9, instance:com.mypurecloud.sdk.v2.SdkTests@409bf450]" started-at="2024-03-19T07:10:15 UTC" name="deleteUser" finished-at="2024-03-19T07:10:15 UTC" duration-ms="167" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteUser -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.mypurecloud.sdk.v2.SdkTests@409bf450]" started-at="2024-03-19T07:10:15 UTC" name="afterTest" finished-at="2024-03-19T07:10:15 UTC" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-      </class> <!-- com.mypurecloud.sdk.v2.SdkTests -->
-    </test> <!-- OkHTTP -->
-    <test started-at="2024-03-19T07:10:10 UTC" name="Ning" finished-at="2024-03-19T07:10:15 UTC" duration-ms="4846">
-      <class name="com.mypurecloud.sdk.v2.SdkTests">
-        <test-method is-config="true" signature="beforeTest(java.lang.String)[pri:0, instance:com.mypurecloud.sdk.v2.SdkTests@74f0ea28]" started-at="2024-03-19T07:10:10 UTC" name="beforeTest" finished-at="2024-03-19T07:10:10 UTC" duration-ms="17" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Ning]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method signature="traceBasicInformation()[pri:1, instance:com.mypurecloud.sdk.v2.SdkTests@74f0ea28]" started-at="2024-03-19T07:10:10 UTC" name="traceBasicInformation" finished-at="2024-03-19T07:10:10 UTC" duration-ms="5" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- traceBasicInformation -->
-        <test-method signature="authenticate()[pri:2, instance:com.mypurecloud.sdk.v2.SdkTests@74f0ea28]" started-at="2024-03-19T07:10:10 UTC" name="authenticate" finished-at="2024-03-19T07:10:13 UTC" duration-ms="2822" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- authenticate -->
-        <test-method signature="createUser()[pri:3, instance:com.mypurecloud.sdk.v2.SdkTests@74f0ea28]" started-at="2024-03-19T07:10:13 UTC" name="createUser" finished-at="2024-03-19T07:10:14 UTC" duration-ms="733" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createUser -->
-        <test-method signature="updateUser()[pri:4, instance:com.mypurecloud.sdk.v2.SdkTests@74f0ea28]" started-at="2024-03-19T07:10:14 UTC" name="updateUser" finished-at="2024-03-19T07:10:14 UTC" duration-ms="202" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- updateUser -->
-        <test-method signature="setProfileSkills()[pri:5, instance:com.mypurecloud.sdk.v2.SdkTests@74f0ea28]" started-at="2024-03-19T07:10:14 UTC" name="setProfileSkills" finished-at="2024-03-19T07:10:14 UTC" duration-ms="189" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setProfileSkills -->
-        <test-method signature="testNotifications()[pri:6, instance:com.mypurecloud.sdk.v2.SdkTests@74f0ea28]" started-at="2024-03-19T07:10:14 UTC" name="testNotifications" finished-at="2024-03-19T07:10:15 UTC" duration-ms="617" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testNotifications -->
-        <test-method signature="getUser()[pri:7, instance:com.mypurecloud.sdk.v2.SdkTests@74f0ea28]" started-at="2024-03-19T07:10:15 UTC" name="getUser" finished-at="2024-03-19T07:10:15 UTC" duration-ms="83" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getUser -->
-        <test-method signature="testObjectMapperIgnoresUnknownProperties()[pri:8, instance:com.mypurecloud.sdk.v2.SdkTests@74f0ea28]" started-at="2024-03-19T07:10:15 UTC" name="testObjectMapperIgnoresUnknownProperties" finished-at="2024-03-19T07:10:15 UTC" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testObjectMapperIgnoresUnknownProperties -->
-        <test-method signature="deleteUser()[pri:9, instance:com.mypurecloud.sdk.v2.SdkTests@74f0ea28]" started-at="2024-03-19T07:10:15 UTC" name="deleteUser" finished-at="2024-03-19T07:10:15 UTC" duration-ms="110" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteUser -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.mypurecloud.sdk.v2.SdkTests@74f0ea28]" started-at="2024-03-19T07:10:15 UTC" name="afterTest" finished-at="2024-03-19T07:10:15 UTC" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-      </class> <!-- com.mypurecloud.sdk.v2.SdkTests -->
-    </test> <!-- Ning -->
-    <test started-at="2024-03-19T07:10:10 UTC" name="Apache" finished-at="2024-03-19T07:10:15 UTC" duration-ms="4837">
-      <class name="com.mypurecloud.sdk.v2.SdkTests">
-        <test-method is-config="true" signature="beforeTest(java.lang.String)[pri:0, instance:com.mypurecloud.sdk.v2.SdkTests@515aebb0]" started-at="2024-03-19T07:10:10 UTC" name="beforeTest" finished-at="2024-03-19T07:10:10 UTC" duration-ms="12" status="PASS">
+        <test-method is-config="true" signature="beforeTest(java.lang.String)[pri:0, instance:com.mypurecloud.sdk.v2.SdkTests@515aebb0]" started-at="2024-03-31T06:50:51 UTC" name="beforeTest" finished-at="2024-03-31T06:50:51 UTC" duration-ms="22" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -282,47 +172,157 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="traceBasicInformation()[pri:1, instance:com.mypurecloud.sdk.v2.SdkTests@515aebb0]" started-at="2024-03-19T07:10:10 UTC" name="traceBasicInformation" finished-at="2024-03-19T07:10:10 UTC" duration-ms="1" status="PASS">
+        <test-method signature="traceBasicInformation()[pri:1, instance:com.mypurecloud.sdk.v2.SdkTests@515aebb0]" started-at="2024-03-31T06:50:51 UTC" name="traceBasicInformation" finished-at="2024-03-31T06:50:51 UTC" duration-ms="4" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- traceBasicInformation -->
-        <test-method signature="authenticate()[pri:2, instance:com.mypurecloud.sdk.v2.SdkTests@515aebb0]" started-at="2024-03-19T07:10:10 UTC" name="authenticate" finished-at="2024-03-19T07:10:13 UTC" duration-ms="2529" status="PASS">
+        <test-method signature="authenticate()[pri:2, instance:com.mypurecloud.sdk.v2.SdkTests@515aebb0]" started-at="2024-03-31T06:50:51 UTC" name="authenticate" finished-at="2024-03-31T06:50:53 UTC" duration-ms="2072" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- authenticate -->
-        <test-method signature="createUser()[pri:3, instance:com.mypurecloud.sdk.v2.SdkTests@515aebb0]" started-at="2024-03-19T07:10:13 UTC" name="createUser" finished-at="2024-03-19T07:10:14 UTC" duration-ms="985" status="PASS">
+        <test-method signature="createUser()[pri:3, instance:com.mypurecloud.sdk.v2.SdkTests@515aebb0]" started-at="2024-03-31T06:50:53 UTC" name="createUser" finished-at="2024-03-31T06:50:54 UTC" duration-ms="923" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createUser -->
-        <test-method signature="updateUser()[pri:4, instance:com.mypurecloud.sdk.v2.SdkTests@515aebb0]" started-at="2024-03-19T07:10:14 UTC" name="updateUser" finished-at="2024-03-19T07:10:14 UTC" duration-ms="215" status="PASS">
+        <test-method signature="updateUser()[pri:4, instance:com.mypurecloud.sdk.v2.SdkTests@515aebb0]" started-at="2024-03-31T06:50:54 UTC" name="updateUser" finished-at="2024-03-31T06:50:54 UTC" duration-ms="196" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- updateUser -->
-        <test-method signature="setProfileSkills()[pri:5, instance:com.mypurecloud.sdk.v2.SdkTests@515aebb0]" started-at="2024-03-19T07:10:14 UTC" name="setProfileSkills" finished-at="2024-03-19T07:10:14 UTC" duration-ms="124" status="PASS">
+        <test-method signature="setProfileSkills()[pri:5, instance:com.mypurecloud.sdk.v2.SdkTests@515aebb0]" started-at="2024-03-31T06:50:54 UTC" name="setProfileSkills" finished-at="2024-03-31T06:50:54 UTC" duration-ms="110" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setProfileSkills -->
-        <test-method signature="testNotifications()[pri:6, instance:com.mypurecloud.sdk.v2.SdkTests@515aebb0]" started-at="2024-03-19T07:10:14 UTC" name="testNotifications" finished-at="2024-03-19T07:10:15 UTC" duration-ms="674" status="PASS">
+        <test-method signature="testNotifications()[pri:6, instance:com.mypurecloud.sdk.v2.SdkTests@515aebb0]" started-at="2024-03-31T06:50:54 UTC" name="testNotifications" finished-at="2024-03-31T06:50:55 UTC" duration-ms="525" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testNotifications -->
-        <test-method signature="getUser()[pri:7, instance:com.mypurecloud.sdk.v2.SdkTests@515aebb0]" started-at="2024-03-19T07:10:15 UTC" name="getUser" finished-at="2024-03-19T07:10:15 UTC" duration-ms="44" status="PASS">
+        <test-method signature="getUser()[pri:7, instance:com.mypurecloud.sdk.v2.SdkTests@515aebb0]" started-at="2024-03-31T06:50:55 UTC" name="getUser" finished-at="2024-03-31T06:50:55 UTC" duration-ms="45" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getUser -->
-        <test-method signature="testObjectMapperIgnoresUnknownProperties()[pri:8, instance:com.mypurecloud.sdk.v2.SdkTests@515aebb0]" started-at="2024-03-19T07:10:15 UTC" name="testObjectMapperIgnoresUnknownProperties" finished-at="2024-03-19T07:10:15 UTC" duration-ms="3" status="PASS">
+        <test-method signature="testObjectMapperIgnoresUnknownProperties()[pri:8, instance:com.mypurecloud.sdk.v2.SdkTests@515aebb0]" started-at="2024-03-31T06:50:55 UTC" name="testObjectMapperIgnoresUnknownProperties" finished-at="2024-03-31T06:50:55 UTC" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testObjectMapperIgnoresUnknownProperties -->
-        <test-method signature="deleteUser()[pri:9, instance:com.mypurecloud.sdk.v2.SdkTests@515aebb0]" started-at="2024-03-19T07:10:15 UTC" name="deleteUser" finished-at="2024-03-19T07:10:15 UTC" duration-ms="139" status="PASS">
+        <test-method signature="deleteUser()[pri:9, instance:com.mypurecloud.sdk.v2.SdkTests@515aebb0]" started-at="2024-03-31T06:50:55 UTC" name="deleteUser" finished-at="2024-03-31T06:50:55 UTC" duration-ms="158" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteUser -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.mypurecloud.sdk.v2.SdkTests@515aebb0]" started-at="2024-03-19T07:10:15 UTC" name="afterTest" finished-at="2024-03-19T07:10:15 UTC" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.mypurecloud.sdk.v2.SdkTests@515aebb0]" started-at="2024-03-31T06:50:55 UTC" name="afterTest" finished-at="2024-03-31T06:50:55 UTC" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
       </class> <!-- com.mypurecloud.sdk.v2.SdkTests -->
     </test> <!-- Apache -->
+    <test started-at="2024-03-31T06:50:51 UTC" name="Ning" finished-at="2024-03-31T06:50:55 UTC" duration-ms="4260">
+      <class name="com.mypurecloud.sdk.v2.SdkTests">
+        <test-method is-config="true" signature="beforeTest(java.lang.String)[pri:0, instance:com.mypurecloud.sdk.v2.SdkTests@74f0ea28]" started-at="2024-03-31T06:50:51 UTC" name="beforeTest" finished-at="2024-03-31T06:50:51 UTC" duration-ms="20" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Ning]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="traceBasicInformation()[pri:1, instance:com.mypurecloud.sdk.v2.SdkTests@74f0ea28]" started-at="2024-03-31T06:50:51 UTC" name="traceBasicInformation" finished-at="2024-03-31T06:50:51 UTC" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- traceBasicInformation -->
+        <test-method signature="authenticate()[pri:2, instance:com.mypurecloud.sdk.v2.SdkTests@74f0ea28]" started-at="2024-03-31T06:50:51 UTC" name="authenticate" finished-at="2024-03-31T06:50:53 UTC" duration-ms="2257" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- authenticate -->
+        <test-method signature="createUser()[pri:3, instance:com.mypurecloud.sdk.v2.SdkTests@74f0ea28]" started-at="2024-03-31T06:50:53 UTC" name="createUser" finished-at="2024-03-31T06:50:54 UTC" duration-ms="738" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUser -->
+        <test-method signature="updateUser()[pri:4, instance:com.mypurecloud.sdk.v2.SdkTests@74f0ea28]" started-at="2024-03-31T06:50:54 UTC" name="updateUser" finished-at="2024-03-31T06:50:54 UTC" duration-ms="190" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateUser -->
+        <test-method signature="setProfileSkills()[pri:5, instance:com.mypurecloud.sdk.v2.SdkTests@74f0ea28]" started-at="2024-03-31T06:50:54 UTC" name="setProfileSkills" finished-at="2024-03-31T06:50:54 UTC" duration-ms="123" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setProfileSkills -->
+        <test-method signature="testNotifications()[pri:6, instance:com.mypurecloud.sdk.v2.SdkTests@74f0ea28]" started-at="2024-03-31T06:50:54 UTC" name="testNotifications" finished-at="2024-03-31T06:50:55 UTC" duration-ms="716" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNotifications -->
+        <test-method signature="getUser()[pri:7, instance:com.mypurecloud.sdk.v2.SdkTests@74f0ea28]" started-at="2024-03-31T06:50:55 UTC" name="getUser" finished-at="2024-03-31T06:50:55 UTC" duration-ms="51" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getUser -->
+        <test-method signature="testObjectMapperIgnoresUnknownProperties()[pri:8, instance:com.mypurecloud.sdk.v2.SdkTests@74f0ea28]" started-at="2024-03-31T06:50:55 UTC" name="testObjectMapperIgnoresUnknownProperties" finished-at="2024-03-31T06:50:55 UTC" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testObjectMapperIgnoresUnknownProperties -->
+        <test-method signature="deleteUser()[pri:9, instance:com.mypurecloud.sdk.v2.SdkTests@74f0ea28]" started-at="2024-03-31T06:50:55 UTC" name="deleteUser" finished-at="2024-03-31T06:50:55 UTC" duration-ms="88" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteUser -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.mypurecloud.sdk.v2.SdkTests@74f0ea28]" started-at="2024-03-31T06:50:55 UTC" name="afterTest" finished-at="2024-03-31T06:50:55 UTC" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.mypurecloud.sdk.v2.SdkTests -->
+    </test> <!-- Ning -->
+    <test started-at="2024-03-31T06:50:51 UTC" name="OkHTTP" finished-at="2024-03-31T06:50:55 UTC" duration-ms="4299">
+      <class name="com.mypurecloud.sdk.v2.SdkTests">
+        <test-method is-config="true" signature="beforeTest(java.lang.String)[pri:0, instance:com.mypurecloud.sdk.v2.SdkTests@409bf450]" started-at="2024-03-31T06:50:51 UTC" name="beforeTest" finished-at="2024-03-31T06:50:51 UTC" duration-ms="14" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[OkHTTP]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="traceBasicInformation()[pri:1, instance:com.mypurecloud.sdk.v2.SdkTests@409bf450]" started-at="2024-03-31T06:50:51 UTC" name="traceBasicInformation" finished-at="2024-03-31T06:50:51 UTC" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- traceBasicInformation -->
+        <test-method signature="authenticate()[pri:2, instance:com.mypurecloud.sdk.v2.SdkTests@409bf450]" started-at="2024-03-31T06:50:51 UTC" name="authenticate" finished-at="2024-03-31T06:50:53 UTC" duration-ms="2071" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- authenticate -->
+        <test-method signature="createUser()[pri:3, instance:com.mypurecloud.sdk.v2.SdkTests@409bf450]" started-at="2024-03-31T06:50:53 UTC" name="createUser" finished-at="2024-03-31T06:50:54 UTC" duration-ms="927" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUser -->
+        <test-method signature="updateUser()[pri:4, instance:com.mypurecloud.sdk.v2.SdkTests@409bf450]" started-at="2024-03-31T06:50:54 UTC" name="updateUser" finished-at="2024-03-31T06:50:54 UTC" duration-ms="170" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateUser -->
+        <test-method signature="setProfileSkills()[pri:5, instance:com.mypurecloud.sdk.v2.SdkTests@409bf450]" started-at="2024-03-31T06:50:54 UTC" name="setProfileSkills" finished-at="2024-03-31T06:50:54 UTC" duration-ms="173" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setProfileSkills -->
+        <test-method signature="testNotifications()[pri:6, instance:com.mypurecloud.sdk.v2.SdkTests@409bf450]" started-at="2024-03-31T06:50:54 UTC" name="testNotifications" finished-at="2024-03-31T06:50:55 UTC" duration-ms="739" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNotifications -->
+        <test-method signature="getUser()[pri:7, instance:com.mypurecloud.sdk.v2.SdkTests@409bf450]" started-at="2024-03-31T06:50:55 UTC" name="getUser" finished-at="2024-03-31T06:50:55 UTC" duration-ms="52" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getUser -->
+        <test-method signature="testObjectMapperIgnoresUnknownProperties()[pri:8, instance:com.mypurecloud.sdk.v2.SdkTests@409bf450]" started-at="2024-03-31T06:50:55 UTC" name="testObjectMapperIgnoresUnknownProperties" finished-at="2024-03-31T06:50:55 UTC" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testObjectMapperIgnoresUnknownProperties -->
+        <test-method signature="deleteUser()[pri:9, instance:com.mypurecloud.sdk.v2.SdkTests@409bf450]" started-at="2024-03-31T06:50:55 UTC" name="deleteUser" finished-at="2024-03-31T06:50:55 UTC" duration-ms="96" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteUser -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.mypurecloud.sdk.v2.SdkTests@409bf450]" started-at="2024-03-31T06:50:55 UTC" name="afterTest" finished-at="2024-03-31T06:50:55 UTC" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.mypurecloud.sdk.v2.SdkTests -->
+    </test> <!-- OkHTTP -->
   </suite> <!-- SDK tests -->
 </testng-results>

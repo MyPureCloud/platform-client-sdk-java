@@ -37,6 +37,11 @@ import com.mypurecloud.sdk.v2.model.ConversationAggregationQuery;
 import com.mypurecloud.sdk.v2.model.ConversationAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.ConversationAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.ConversationQuery;
+import com.mypurecloud.sdk.v2.model.DashboardConfigurationBulkRequest;
+import com.mypurecloud.sdk.v2.model.DashboardConfigurationListing;
+import com.mypurecloud.sdk.v2.model.DashboardConfigurationQueryRequest;
+import com.mypurecloud.sdk.v2.model.DashboardUser;
+import com.mypurecloud.sdk.v2.model.DashboardUserListing;
 import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregateQueryResponse;
@@ -139,6 +144,8 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsJourneysAggregatesJobReque
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsJourneysAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsKnowledgeAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsKnowledgeAggregatesJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingDashboardsUserRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingDashboardsUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingExportsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingExportsMetadataRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingMetadataRequest;
@@ -150,6 +157,7 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingScheduleHistoryLa
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingScheduleHistoryRunIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingSettingsUserDashboardsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingTimeperiodsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsResolutionsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsResolutionsAggregatesJobResultsRequest;
@@ -190,9 +198,12 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsKnowledgeAggregatesJobsRe
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsKnowledgeAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsQueuesObservationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsRatelimitsAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingDashboardsUsersBulkRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingExportsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingScheduleRunreportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingSchedulesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingSettingsDashboardsBulkRemoveRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingSettingsDashboardsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsResolutionsAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsRoutingActivityQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSurveysAggregatesJobsRequest;
@@ -2470,6 +2481,178 @@ public class AnalyticsApi {
   }
 
   /**
+   * Get dashboards summary for a user
+   * 
+   * @param userId User ID (required)
+   * @return DashboardUser
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DashboardUser getAnalyticsReportingDashboardsUser(String userId) throws IOException, ApiException {
+    return  getAnalyticsReportingDashboardsUser(createGetAnalyticsReportingDashboardsUserRequest(userId));
+  }
+
+  /**
+   * Get dashboards summary for a user
+   * 
+   * @param userId User ID (required)
+   * @return DashboardUser
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DashboardUser> getAnalyticsReportingDashboardsUserWithHttpInfo(String userId) throws IOException {
+    return getAnalyticsReportingDashboardsUser(createGetAnalyticsReportingDashboardsUserRequest(userId).withHttpInfo());
+  }
+
+  private GetAnalyticsReportingDashboardsUserRequest createGetAnalyticsReportingDashboardsUserRequest(String userId) {
+    return GetAnalyticsReportingDashboardsUserRequest.builder()
+            .withUserId(userId)
+
+            .build();
+  }
+
+  /**
+   * Get dashboards summary for a user
+   * 
+   * @param request The request object
+   * @return DashboardUser
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DashboardUser getAnalyticsReportingDashboardsUser(GetAnalyticsReportingDashboardsUserRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DashboardUser> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DashboardUser>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get dashboards summary for a user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DashboardUser> getAnalyticsReportingDashboardsUser(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DashboardUser>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DashboardUser> response = (ApiResponse<DashboardUser>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DashboardUser> response = (ApiResponse<DashboardUser>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get dashboards summary for users in a org
+   * 
+   * @param sortBy  (optional, default to asc)
+   * @param pageNumber  (optional, default to 1)
+   * @param pageSize  (optional, default to 25)
+   * @param id A list of user IDs to fetch by bulk (optional)
+   * @param state Only list users of this state (optional)
+   * @return DashboardUserListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DashboardUserListing getAnalyticsReportingDashboardsUsers(String sortBy, Integer pageNumber, Integer pageSize, List<String> id, String state) throws IOException, ApiException {
+    return  getAnalyticsReportingDashboardsUsers(createGetAnalyticsReportingDashboardsUsersRequest(sortBy, pageNumber, pageSize, id, state));
+  }
+
+  /**
+   * Get dashboards summary for users in a org
+   * 
+   * @param sortBy  (optional, default to asc)
+   * @param pageNumber  (optional, default to 1)
+   * @param pageSize  (optional, default to 25)
+   * @param id A list of user IDs to fetch by bulk (optional)
+   * @param state Only list users of this state (optional)
+   * @return DashboardUserListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DashboardUserListing> getAnalyticsReportingDashboardsUsersWithHttpInfo(String sortBy, Integer pageNumber, Integer pageSize, List<String> id, String state) throws IOException {
+    return getAnalyticsReportingDashboardsUsers(createGetAnalyticsReportingDashboardsUsersRequest(sortBy, pageNumber, pageSize, id, state).withHttpInfo());
+  }
+
+  private GetAnalyticsReportingDashboardsUsersRequest createGetAnalyticsReportingDashboardsUsersRequest(String sortBy, Integer pageNumber, Integer pageSize, List<String> id, String state) {
+    return GetAnalyticsReportingDashboardsUsersRequest.builder()
+            .withSortBy(sortBy)
+
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withId(id)
+
+            .withState(state)
+
+            .build();
+  }
+
+  /**
+   * Get dashboards summary for users in a org
+   * 
+   * @param request The request object
+   * @return DashboardUserListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DashboardUserListing getAnalyticsReportingDashboardsUsers(GetAnalyticsReportingDashboardsUsersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DashboardUserListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DashboardUserListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get dashboards summary for users in a org
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DashboardUserListing> getAnalyticsReportingDashboardsUsers(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DashboardUserListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DashboardUserListing> response = (ApiResponse<DashboardUserListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DashboardUserListing> response = (ApiResponse<DashboardUserListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get all view export requests for a user
    * 
    * @param pageNumber Page number (optional, default to 1)
@@ -3343,6 +3526,104 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AnalyticsReportingSettings> response = (ApiResponse<AnalyticsReportingSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get list of dashboards for an user
+   * 
+   * @param userId User ID (required)
+   * @param sortBy  (optional, default to asc)
+   * @param pageNumber  (optional, default to 1)
+   * @param pageSize  (optional, default to 50)
+   * @param publicOnly If true, retrieve only public dashboards (optional)
+   * @param favoriteOnly If true, retrieve only favorite dashboards (optional)
+   * @return DashboardConfigurationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DashboardConfigurationListing getAnalyticsReportingSettingsUserDashboards(String userId, String sortBy, Integer pageNumber, Integer pageSize, Boolean publicOnly, Boolean favoriteOnly) throws IOException, ApiException {
+    return  getAnalyticsReportingSettingsUserDashboards(createGetAnalyticsReportingSettingsUserDashboardsRequest(userId, sortBy, pageNumber, pageSize, publicOnly, favoriteOnly));
+  }
+
+  /**
+   * Get list of dashboards for an user
+   * 
+   * @param userId User ID (required)
+   * @param sortBy  (optional, default to asc)
+   * @param pageNumber  (optional, default to 1)
+   * @param pageSize  (optional, default to 50)
+   * @param publicOnly If true, retrieve only public dashboards (optional)
+   * @param favoriteOnly If true, retrieve only favorite dashboards (optional)
+   * @return DashboardConfigurationListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DashboardConfigurationListing> getAnalyticsReportingSettingsUserDashboardsWithHttpInfo(String userId, String sortBy, Integer pageNumber, Integer pageSize, Boolean publicOnly, Boolean favoriteOnly) throws IOException {
+    return getAnalyticsReportingSettingsUserDashboards(createGetAnalyticsReportingSettingsUserDashboardsRequest(userId, sortBy, pageNumber, pageSize, publicOnly, favoriteOnly).withHttpInfo());
+  }
+
+  private GetAnalyticsReportingSettingsUserDashboardsRequest createGetAnalyticsReportingSettingsUserDashboardsRequest(String userId, String sortBy, Integer pageNumber, Integer pageSize, Boolean publicOnly, Boolean favoriteOnly) {
+    return GetAnalyticsReportingSettingsUserDashboardsRequest.builder()
+            .withUserId(userId)
+
+            .withSortBy(sortBy)
+
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withPublicOnly(publicOnly)
+
+            .withFavoriteOnly(favoriteOnly)
+
+            .build();
+  }
+
+  /**
+   * Get list of dashboards for an user
+   * 
+   * @param request The request object
+   * @return DashboardConfigurationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DashboardConfigurationListing getAnalyticsReportingSettingsUserDashboards(GetAnalyticsReportingSettingsUserDashboardsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DashboardConfigurationListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DashboardConfigurationListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get list of dashboards for an user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DashboardConfigurationListing> getAnalyticsReportingSettingsUserDashboards(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DashboardConfigurationListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DashboardConfigurationListing> response = (ApiResponse<DashboardConfigurationListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DashboardConfigurationListing> response = (ApiResponse<DashboardConfigurationListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -6588,6 +6869,81 @@ public class AnalyticsApi {
   }
 
   /**
+   * Bulk delete dashboards owned by other user(s)
+   * 
+   * @param body List of userIds (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postAnalyticsReportingDashboardsUsersBulkRemove(List<String> body) throws IOException, ApiException {
+     postAnalyticsReportingDashboardsUsersBulkRemove(createPostAnalyticsReportingDashboardsUsersBulkRemoveRequest(body));
+  }
+
+  /**
+   * Bulk delete dashboards owned by other user(s)
+   * 
+   * @param body List of userIds (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postAnalyticsReportingDashboardsUsersBulkRemoveWithHttpInfo(List<String> body) throws IOException {
+    return postAnalyticsReportingDashboardsUsersBulkRemove(createPostAnalyticsReportingDashboardsUsersBulkRemoveRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsReportingDashboardsUsersBulkRemoveRequest createPostAnalyticsReportingDashboardsUsersBulkRemoveRequest(List<String> body) {
+    return PostAnalyticsReportingDashboardsUsersBulkRemoveRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Bulk delete dashboards owned by other user(s)
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postAnalyticsReportingDashboardsUsersBulkRemove(PostAnalyticsReportingDashboardsUsersBulkRemoveRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Bulk delete dashboards owned by other user(s)
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postAnalyticsReportingDashboardsUsersBulkRemove(ApiRequest<List<String>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Generate a view export request
    * This API creates a reporting export but the desired way to export analytics data is to use the analytics query APIs instead
    * @param body ReportingExportJobRequest (required)
@@ -6825,6 +7181,159 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ReportSchedule> response = (ApiResponse<ReportSchedule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Bulk remove dashboard configurations
+   * 
+   * @param body  (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postAnalyticsReportingSettingsDashboardsBulkRemove(DashboardConfigurationBulkRequest body) throws IOException, ApiException {
+     postAnalyticsReportingSettingsDashboardsBulkRemove(createPostAnalyticsReportingSettingsDashboardsBulkRemoveRequest(body));
+  }
+
+  /**
+   * Bulk remove dashboard configurations
+   * 
+   * @param body  (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postAnalyticsReportingSettingsDashboardsBulkRemoveWithHttpInfo(DashboardConfigurationBulkRequest body) throws IOException {
+    return postAnalyticsReportingSettingsDashboardsBulkRemove(createPostAnalyticsReportingSettingsDashboardsBulkRemoveRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsReportingSettingsDashboardsBulkRemoveRequest createPostAnalyticsReportingSettingsDashboardsBulkRemoveRequest(DashboardConfigurationBulkRequest body) {
+    return PostAnalyticsReportingSettingsDashboardsBulkRemoveRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Bulk remove dashboard configurations
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postAnalyticsReportingSettingsDashboardsBulkRemove(PostAnalyticsReportingSettingsDashboardsBulkRemoveRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Bulk remove dashboard configurations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postAnalyticsReportingSettingsDashboardsBulkRemove(ApiRequest<DashboardConfigurationBulkRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query dashboard configurations
+   * 
+   * @param body  (required)
+   * @return DashboardConfigurationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DashboardConfigurationListing postAnalyticsReportingSettingsDashboardsQuery(DashboardConfigurationQueryRequest body) throws IOException, ApiException {
+    return  postAnalyticsReportingSettingsDashboardsQuery(createPostAnalyticsReportingSettingsDashboardsQueryRequest(body));
+  }
+
+  /**
+   * Query dashboard configurations
+   * 
+   * @param body  (required)
+   * @return DashboardConfigurationListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DashboardConfigurationListing> postAnalyticsReportingSettingsDashboardsQueryWithHttpInfo(DashboardConfigurationQueryRequest body) throws IOException {
+    return postAnalyticsReportingSettingsDashboardsQuery(createPostAnalyticsReportingSettingsDashboardsQueryRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsReportingSettingsDashboardsQueryRequest createPostAnalyticsReportingSettingsDashboardsQueryRequest(DashboardConfigurationQueryRequest body) {
+    return PostAnalyticsReportingSettingsDashboardsQueryRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query dashboard configurations
+   * 
+   * @param request The request object
+   * @return DashboardConfigurationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DashboardConfigurationListing postAnalyticsReportingSettingsDashboardsQuery(PostAnalyticsReportingSettingsDashboardsQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DashboardConfigurationListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DashboardConfigurationListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query dashboard configurations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DashboardConfigurationListing> postAnalyticsReportingSettingsDashboardsQuery(ApiRequest<DashboardConfigurationQueryRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DashboardConfigurationListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DashboardConfigurationListing> response = (ApiResponse<DashboardConfigurationListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DashboardConfigurationListing> response = (ApiResponse<DashboardConfigurationListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

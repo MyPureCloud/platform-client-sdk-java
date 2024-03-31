@@ -12,6 +12,7 @@ title: ConversationMessageEventTopicMessageConversation
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
 | **participants** | <!----><!---->[**List&lt;ConversationMessageEventTopicMessageMediaParticipant&gt;**](ConversationMessageEventTopicMessageMediaParticipant.html)<!----> |  |  [optional] |
 | **otherMediaUris** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **address** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

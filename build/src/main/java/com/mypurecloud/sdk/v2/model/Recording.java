@@ -40,6 +40,57 @@ public class Recording  implements Serializable {
   private String startTime = null;
   private String endTime = null;
   private String media = null;
+
+  private static class MediaSubtypeEnumDeserializer extends StdDeserializer<MediaSubtypeEnum> {
+    public MediaSubtypeEnumDeserializer() {
+      super(MediaSubtypeEnumDeserializer.class);
+    }
+
+    @Override
+    public MediaSubtypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MediaSubtypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The media subtype of the recording.
+   */
+ @JsonDeserialize(using = MediaSubtypeEnumDeserializer.class)
+  public enum MediaSubtypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    TRUNK("Trunk"),
+    STATION("Station"),
+    CONSULT("Consult"),
+    SCREEN("Screen");
+
+    private String value;
+
+    MediaSubtypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static MediaSubtypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (MediaSubtypeEnum value : MediaSubtypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return MediaSubtypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private MediaSubtypeEnum mediaSubtype = null;
+  private String mediaSubject = null;
   private List<Annotation> annotations = new ArrayList<Annotation>();
   private List<ChatMessage> transcript = new ArrayList<ChatMessage>();
   private List<RecordingEmailMessage> emailTranscript = new ArrayList<RecordingEmailMessage>();
@@ -367,6 +418,42 @@ public class Recording  implements Serializable {
   }
   public void setMedia(String media) {
     this.media = media;
+  }
+
+
+  /**
+   * The media subtype of the recording.
+   **/
+  public Recording mediaSubtype(MediaSubtypeEnum mediaSubtype) {
+    this.mediaSubtype = mediaSubtype;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The media subtype of the recording.")
+  @JsonProperty("mediaSubtype")
+  public MediaSubtypeEnum getMediaSubtype() {
+    return mediaSubtype;
+  }
+  public void setMediaSubtype(MediaSubtypeEnum mediaSubtype) {
+    this.mediaSubtype = mediaSubtype;
+  }
+
+
+  /**
+   * The media subject of the recording.
+   **/
+  public Recording mediaSubject(String mediaSubject) {
+    this.mediaSubject = mediaSubject;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The media subject of the recording.")
+  @JsonProperty("mediaSubject")
+  public String getMediaSubject() {
+    return mediaSubject;
+  }
+  public void setMediaSubject(String mediaSubject) {
+    this.mediaSubject = mediaSubject;
   }
 
 
@@ -824,6 +911,8 @@ public class Recording  implements Serializable {
             Objects.equals(this.startTime, recording.startTime) &&
             Objects.equals(this.endTime, recording.endTime) &&
             Objects.equals(this.media, recording.media) &&
+            Objects.equals(this.mediaSubtype, recording.mediaSubtype) &&
+            Objects.equals(this.mediaSubject, recording.mediaSubject) &&
             Objects.equals(this.annotations, recording.annotations) &&
             Objects.equals(this.transcript, recording.transcript) &&
             Objects.equals(this.emailTranscript, recording.emailTranscript) &&
@@ -853,7 +942,7 @@ public class Recording  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversationId, path, startTime, endTime, media, annotations, transcript, emailTranscript, messagingTranscript, fileState, restoreExpirationTime, mediaUris, estimatedTranscodeTimeMs, actualTranscodeTimeMs, archiveDate, archiveMedium, deleteDate, exportDate, exportedDate, outputDurationMs, outputSizeInBytes, maxAllowedRestorationsForOrg, remainingRestorationsAllowedForOrg, sessionId, users, recordingFileRole, recordingErrorStatus, originalRecordingStartTime, creationTime, selfUri);
+    return Objects.hash(id, name, conversationId, path, startTime, endTime, media, mediaSubtype, mediaSubject, annotations, transcript, emailTranscript, messagingTranscript, fileState, restoreExpirationTime, mediaUris, estimatedTranscodeTimeMs, actualTranscodeTimeMs, archiveDate, archiveMedium, deleteDate, exportDate, exportedDate, outputDurationMs, outputSizeInBytes, maxAllowedRestorationsForOrg, remainingRestorationsAllowedForOrg, sessionId, users, recordingFileRole, recordingErrorStatus, originalRecordingStartTime, creationTime, selfUri);
   }
 
   @Override
@@ -868,6 +957,8 @@ public class Recording  implements Serializable {
     sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
     sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
     sb.append("    media: ").append(toIndentedString(media)).append("\n");
+    sb.append("    mediaSubtype: ").append(toIndentedString(mediaSubtype)).append("\n");
+    sb.append("    mediaSubject: ").append(toIndentedString(mediaSubject)).append("\n");
     sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
     sb.append("    transcript: ").append(toIndentedString(transcript)).append("\n");
     sb.append("    emailTranscript: ").append(toIndentedString(emailTranscript)).append("\n");

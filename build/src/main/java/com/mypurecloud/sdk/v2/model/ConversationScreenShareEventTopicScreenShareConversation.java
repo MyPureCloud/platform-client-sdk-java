@@ -28,6 +28,7 @@ public class ConversationScreenShareEventTopicScreenShareConversation  implement
   private String name = null;
   private List<ConversationScreenShareEventTopicScreenShareMediaParticipant> participants = new ArrayList<ConversationScreenShareEventTopicScreenShareMediaParticipant>();
   private List<String> otherMediaUris = new ArrayList<String>();
+  private String address = null;
 
   
   /**
@@ -98,6 +99,23 @@ public class ConversationScreenShareEventTopicScreenShareConversation  implement
   }
 
 
+  /**
+   **/
+  public ConversationScreenShareEventTopicScreenShareConversation address(String address) {
+    this.address = address;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("address")
+  public String getAddress() {
+    return address;
+  }
+  public void setAddress(String address) {
+    this.address = address;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -111,12 +129,13 @@ public class ConversationScreenShareEventTopicScreenShareConversation  implement
     return Objects.equals(this.id, conversationScreenShareEventTopicScreenShareConversation.id) &&
             Objects.equals(this.name, conversationScreenShareEventTopicScreenShareConversation.name) &&
             Objects.equals(this.participants, conversationScreenShareEventTopicScreenShareConversation.participants) &&
-            Objects.equals(this.otherMediaUris, conversationScreenShareEventTopicScreenShareConversation.otherMediaUris);
+            Objects.equals(this.otherMediaUris, conversationScreenShareEventTopicScreenShareConversation.otherMediaUris) &&
+            Objects.equals(this.address, conversationScreenShareEventTopicScreenShareConversation.address);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris);
+    return Objects.hash(id, name, participants, otherMediaUris, address);
   }
 
   @Override
@@ -128,6 +147,7 @@ public class ConversationScreenShareEventTopicScreenShareConversation  implement
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
+    sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("}");
     return sb.toString();
   }

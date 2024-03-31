@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.model.CreateResponseAssetRequest;
 import com.mypurecloud.sdk.v2.model.CreateResponseAssetResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Library;
+import com.mypurecloud.sdk.v2.model.LibraryBatchRequest;
 import com.mypurecloud.sdk.v2.model.LibraryEntityListing;
 import com.mypurecloud.sdk.v2.model.Response;
 import com.mypurecloud.sdk.v2.model.ResponseAsset;
@@ -36,6 +37,7 @@ import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponseassetRequ
 import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponseassetsStatusStatusIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponsesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementLibrariesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementLibrariesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponseassetsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponseassetsUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponsesRequest;
@@ -856,6 +858,84 @@ public class ResponseManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Library> response = (ApiResponse<Library>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get response libraries.
+   * 
+   * @param body LibraryIDs (max allowed 50) (required)
+   * @return LibraryEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LibraryEntityListing postResponsemanagementLibrariesBulk(LibraryBatchRequest body) throws IOException, ApiException {
+    return  postResponsemanagementLibrariesBulk(createPostResponsemanagementLibrariesBulkRequest(body));
+  }
+
+  /**
+   * Get response libraries.
+   * 
+   * @param body LibraryIDs (max allowed 50) (required)
+   * @return LibraryEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LibraryEntityListing> postResponsemanagementLibrariesBulkWithHttpInfo(LibraryBatchRequest body) throws IOException {
+    return postResponsemanagementLibrariesBulk(createPostResponsemanagementLibrariesBulkRequest(body).withHttpInfo());
+  }
+
+  private PostResponsemanagementLibrariesBulkRequest createPostResponsemanagementLibrariesBulkRequest(LibraryBatchRequest body) {
+    return PostResponsemanagementLibrariesBulkRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Get response libraries.
+   * 
+   * @param request The request object
+   * @return LibraryEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LibraryEntityListing postResponsemanagementLibrariesBulk(PostResponsemanagementLibrariesBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LibraryEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LibraryEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get response libraries.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LibraryEntityListing> postResponsemanagementLibrariesBulk(ApiRequest<LibraryBatchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LibraryEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LibraryEntityListing> response = (ApiResponse<LibraryEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LibraryEntityListing> response = (ApiResponse<LibraryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

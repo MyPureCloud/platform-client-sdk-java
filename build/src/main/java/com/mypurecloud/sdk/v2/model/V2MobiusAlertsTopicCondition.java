@@ -25,6 +25,7 @@ import java.io.Serializable;
 
 public class V2MobiusAlertsTopicCondition  implements Serializable {
   
+  private String id = null;
   private List<V2MobiusAlertsTopicCondition> conditions = new ArrayList<V2MobiusAlertsTopicCondition>();
   private List<V2MobiusAlertsTopicConditionRulePredicate> predicates = new ArrayList<V2MobiusAlertsTopicConditionRulePredicate>();
 
@@ -79,6 +80,23 @@ public class V2MobiusAlertsTopicCondition  implements Serializable {
   private TypeEnum type = null;
 
   
+  /**
+   **/
+  public V2MobiusAlertsTopicCondition id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+  public void setId(String id) {
+    this.id = id;
+  }
+
+
   /**
    **/
   public V2MobiusAlertsTopicCondition conditions(List<V2MobiusAlertsTopicCondition> conditions) {
@@ -140,14 +158,15 @@ public class V2MobiusAlertsTopicCondition  implements Serializable {
     }
     V2MobiusAlertsTopicCondition v2MobiusAlertsTopicCondition = (V2MobiusAlertsTopicCondition) o;
 
-    return Objects.equals(this.conditions, v2MobiusAlertsTopicCondition.conditions) &&
+    return Objects.equals(this.id, v2MobiusAlertsTopicCondition.id) &&
+            Objects.equals(this.conditions, v2MobiusAlertsTopicCondition.conditions) &&
             Objects.equals(this.predicates, v2MobiusAlertsTopicCondition.predicates) &&
             Objects.equals(this.type, v2MobiusAlertsTopicCondition.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conditions, predicates, type);
+    return Objects.hash(id, conditions, predicates, type);
   }
 
   @Override
@@ -155,6 +174,7 @@ public class V2MobiusAlertsTopicCondition  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class V2MobiusAlertsTopicCondition {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
     sb.append("    predicates: ").append(toIndentedString(predicates)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");

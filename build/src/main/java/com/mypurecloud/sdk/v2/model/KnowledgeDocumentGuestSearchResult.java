@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocument;
+import com.mypurecloud.sdk.v2.model.KnowledgeGuestSearchDocumentResponse;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -23,7 +23,7 @@ import java.io.Serializable;
 public class KnowledgeDocumentGuestSearchResult  implements Serializable {
   
   private Double confidence = null;
-  private KnowledgeGuestDocument document = null;
+  private KnowledgeGuestSearchDocumentResponse document = null;
 
   
   /**
@@ -47,17 +47,17 @@ public class KnowledgeDocumentGuestSearchResult  implements Serializable {
   /**
    * Document that matched the query.
    **/
-  public KnowledgeDocumentGuestSearchResult document(KnowledgeGuestDocument document) {
+  public KnowledgeDocumentGuestSearchResult document(KnowledgeGuestSearchDocumentResponse document) {
     this.document = document;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Document that matched the query.")
   @JsonProperty("document")
-  public KnowledgeGuestDocument getDocument() {
+  public KnowledgeGuestSearchDocumentResponse getDocument() {
     return document;
   }
-  public void setDocument(KnowledgeGuestDocument document) {
+  public void setDocument(KnowledgeGuestSearchDocumentResponse document) {
     this.document = document;
   }
 

@@ -100,7 +100,8 @@ public class SmsAvailablePhoneNumber  implements Serializable {
     LOCAL("local"),
     MOBILE("mobile"),
     TOLLFREE("tollfree"),
-    SHORTCODE("shortcode");
+    SHORTCODE("shortcode"),
+    ALPHANUMERIC("alphanumeric");
 
     private String value;
 

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.V2MobiusRulesTopicAddressableEntityRef;
+import com.mypurecloud.sdk.v2.model.V2MobiusRulesTopicAlertingAddressableEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -76,10 +76,10 @@ public class V2MobiusRulesTopicEntityProperties  implements Serializable {
     }
   }
   private EntityTypeEnum entityType = null;
-  private V2MobiusRulesTopicAddressableEntityRef user = null;
-  private V2MobiusRulesTopicAddressableEntityRef group = null;
-  private V2MobiusRulesTopicAddressableEntityRef queue = null;
-  private V2MobiusRulesTopicAddressableEntityRef team = null;
+  private V2MobiusRulesTopicAlertingAddressableEntityRef user = null;
+  private V2MobiusRulesTopicAlertingAddressableEntityRef group = null;
+  private V2MobiusRulesTopicAlertingAddressableEntityRef queue = null;
+  private V2MobiusRulesTopicAlertingAddressableEntityRef team = null;
 
   
   /**
@@ -101,68 +101,68 @@ public class V2MobiusRulesTopicEntityProperties  implements Serializable {
 
   /**
    **/
-  public V2MobiusRulesTopicEntityProperties user(V2MobiusRulesTopicAddressableEntityRef user) {
+  public V2MobiusRulesTopicEntityProperties user(V2MobiusRulesTopicAlertingAddressableEntityRef user) {
     this.user = user;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("user")
-  public V2MobiusRulesTopicAddressableEntityRef getUser() {
+  public V2MobiusRulesTopicAlertingAddressableEntityRef getUser() {
     return user;
   }
-  public void setUser(V2MobiusRulesTopicAddressableEntityRef user) {
+  public void setUser(V2MobiusRulesTopicAlertingAddressableEntityRef user) {
     this.user = user;
   }
 
 
   /**
    **/
-  public V2MobiusRulesTopicEntityProperties group(V2MobiusRulesTopicAddressableEntityRef group) {
+  public V2MobiusRulesTopicEntityProperties group(V2MobiusRulesTopicAlertingAddressableEntityRef group) {
     this.group = group;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("group")
-  public V2MobiusRulesTopicAddressableEntityRef getGroup() {
+  public V2MobiusRulesTopicAlertingAddressableEntityRef getGroup() {
     return group;
   }
-  public void setGroup(V2MobiusRulesTopicAddressableEntityRef group) {
+  public void setGroup(V2MobiusRulesTopicAlertingAddressableEntityRef group) {
     this.group = group;
   }
 
 
   /**
    **/
-  public V2MobiusRulesTopicEntityProperties queue(V2MobiusRulesTopicAddressableEntityRef queue) {
+  public V2MobiusRulesTopicEntityProperties queue(V2MobiusRulesTopicAlertingAddressableEntityRef queue) {
     this.queue = queue;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("queue")
-  public V2MobiusRulesTopicAddressableEntityRef getQueue() {
+  public V2MobiusRulesTopicAlertingAddressableEntityRef getQueue() {
     return queue;
   }
-  public void setQueue(V2MobiusRulesTopicAddressableEntityRef queue) {
+  public void setQueue(V2MobiusRulesTopicAlertingAddressableEntityRef queue) {
     this.queue = queue;
   }
 
 
   /**
    **/
-  public V2MobiusRulesTopicEntityProperties team(V2MobiusRulesTopicAddressableEntityRef team) {
+  public V2MobiusRulesTopicEntityProperties team(V2MobiusRulesTopicAlertingAddressableEntityRef team) {
     this.team = team;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("team")
-  public V2MobiusRulesTopicAddressableEntityRef getTeam() {
+  public V2MobiusRulesTopicAlertingAddressableEntityRef getTeam() {
     return team;
   }
-  public void setTeam(V2MobiusRulesTopicAddressableEntityRef team) {
+  public void setTeam(V2MobiusRulesTopicAlertingAddressableEntityRef team) {
     this.team = team;
   }
 

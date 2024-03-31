@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocument;
+import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentResponse;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ import java.io.Serializable;
 
 public class KnowledgeGuestDocumentResponseListing  implements Serializable {
   
-  private List<KnowledgeGuestDocument> entities = new ArrayList<KnowledgeGuestDocument>();
+  private List<KnowledgeGuestDocumentResponse> entities = new ArrayList<KnowledgeGuestDocumentResponse>();
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;
@@ -32,17 +32,17 @@ public class KnowledgeGuestDocumentResponseListing  implements Serializable {
   
   /**
    **/
-  public KnowledgeGuestDocumentResponseListing entities(List<KnowledgeGuestDocument> entities) {
+  public KnowledgeGuestDocumentResponseListing entities(List<KnowledgeGuestDocumentResponse> entities) {
     this.entities = entities;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("entities")
-  public List<KnowledgeGuestDocument> getEntities() {
+  public List<KnowledgeGuestDocumentResponse> getEntities() {
     return entities;
   }
-  public void setEntities(List<KnowledgeGuestDocument> entities) {
+  public void setEntities(List<KnowledgeGuestDocumentResponse> entities) {
     this.entities = entities;
   }
 

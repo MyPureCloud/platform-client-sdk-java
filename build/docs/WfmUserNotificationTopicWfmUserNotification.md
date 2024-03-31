@@ -15,6 +15,7 @@ title: WfmUserNotificationTopicWfmUserNotification
 | **shiftTrade** | <!----><!---->[**WfmUserNotificationTopicShiftTradeNotification**](WfmUserNotificationTopicShiftTradeNotification.html)<!----> |  |  [optional] |
 | **timeOffRequest** | <!----><!---->[**WfmUserNotificationTopicTimeOffRequestNotification**](WfmUserNotificationTopicTimeOffRequestNotification.html)<!----> |  |  [optional] |
 | **adherenceExplanation** | <!----><!---->[**WfmUserNotificationTopicAdherenceExplanationNotification**](WfmUserNotificationTopicAdherenceExplanationNotification.html)<!----> |  |  [optional] |
+| **alternativeShift** | <!----><!---->[**WfmUserNotificationTopicAlternativeShiftNotification**](WfmUserNotificationTopicAlternativeShiftNotification.html)<!----> |  |  [optional] |
 | **agentNotification** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **otherNotificationIdsInGroup** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 | **markedAsRead** | <!----><!---->**Boolean**<!----> |  |  [optional] |
@@ -31,6 +32,7 @@ title: WfmUserNotificationTopicWfmUserNotification
 | SHIFTTRADE | &quot;ShiftTrade&quot; | 
 | TIMEOFFREQUEST | &quot;TimeOffRequest&quot; | 
 | ADHERENCEEXPLANATION | &quot;AdherenceExplanation&quot; | 
+| ALTERNATIVESHIFT | &quot;AlternativeShift&quot; | 
 {: class="table table-striped"}
 
 

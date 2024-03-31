@@ -8,6 +8,7 @@ title: V2MobiusRulesTopicCondition
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
 | **conditions** | <!----><!---->[**List&lt;V2MobiusRulesTopicCondition&gt;**](V2MobiusRulesTopicCondition.html)<!----> |  |  [optional] |
 | **predicates** | <!----><!---->[**List&lt;V2MobiusRulesTopicConditionRulePredicate&gt;**](V2MobiusRulesTopicConditionRulePredicate.html)<!----> |  |  [optional] |
 | **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |

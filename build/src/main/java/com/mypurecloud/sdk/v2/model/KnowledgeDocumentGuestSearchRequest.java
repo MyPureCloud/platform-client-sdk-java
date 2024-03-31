@@ -78,6 +78,7 @@ public class KnowledgeDocumentGuestSearchRequest  implements Serializable {
   }
   private QueryTypeEnum queryType = null;
   private String sessionId = null;
+  private Integer answerHighlightTopResults = null;
   private Boolean includeDraftDocuments = null;
 
   
@@ -182,6 +183,26 @@ public class KnowledgeDocumentGuestSearchRequest  implements Serializable {
 
 
   /**
+   * The number of articles to be sent for answer-highlighting. Can range from 1-5.
+   * minimum: 1
+   * maximum: 5
+   **/
+  public KnowledgeDocumentGuestSearchRequest answerHighlightTopResults(Integer answerHighlightTopResults) {
+    this.answerHighlightTopResults = answerHighlightTopResults;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The number of articles to be sent for answer-highlighting. Can range from 1-5.")
+  @JsonProperty("answerHighlightTopResults")
+  public Integer getAnswerHighlightTopResults() {
+    return answerHighlightTopResults;
+  }
+  public void setAnswerHighlightTopResults(Integer answerHighlightTopResults) {
+    this.answerHighlightTopResults = answerHighlightTopResults;
+  }
+
+
+  /**
    * Indicates whether the search results would also include draft documents.
    **/
   public KnowledgeDocumentGuestSearchRequest includeDraftDocuments(Boolean includeDraftDocuments) {
@@ -217,12 +238,13 @@ public class KnowledgeDocumentGuestSearchRequest  implements Serializable {
             Objects.equals(this.pageCount, knowledgeDocumentGuestSearchRequest.pageCount) &&
             Objects.equals(this.queryType, knowledgeDocumentGuestSearchRequest.queryType) &&
             Objects.equals(this.sessionId, knowledgeDocumentGuestSearchRequest.sessionId) &&
+            Objects.equals(this.answerHighlightTopResults, knowledgeDocumentGuestSearchRequest.answerHighlightTopResults) &&
             Objects.equals(this.includeDraftDocuments, knowledgeDocumentGuestSearchRequest.includeDraftDocuments);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(query, pageSize, pageNumber, searchId, total, pageCount, queryType, sessionId, includeDraftDocuments);
+    return Objects.hash(query, pageSize, pageNumber, searchId, total, pageCount, queryType, sessionId, answerHighlightTopResults, includeDraftDocuments);
   }
 
   @Override
@@ -238,6 +260,7 @@ public class KnowledgeDocumentGuestSearchRequest  implements Serializable {
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("    queryType: ").append(toIndentedString(queryType)).append("\n");
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
+    sb.append("    answerHighlightTopResults: ").append(toIndentedString(answerHighlightTopResults)).append("\n");
     sb.append("    includeDraftDocuments: ").append(toIndentedString(includeDraftDocuments)).append("\n");
     sb.append("}");
     return sb.toString();

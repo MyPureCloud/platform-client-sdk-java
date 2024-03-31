@@ -2790,12 +2790,13 @@ public class RecordingApi {
 
   /**
    * Retrieves a paged listing of screen recording sessions
-   * 
+   * Coming soon: This API is deprecated and will be replaced by /api/v2/recordings/screensessions/details
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return ScreenRecordingSessionListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ScreenRecordingSessionListing getRecordingsScreensessions(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     return  getRecordingsScreensessions(createGetRecordingsScreensessionsRequest(pageSize, pageNumber));
@@ -2803,11 +2804,12 @@ public class RecordingApi {
 
   /**
    * Retrieves a paged listing of screen recording sessions
-   * 
+   * Coming soon: This API is deprecated and will be replaced by /api/v2/recordings/screensessions/details
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return ScreenRecordingSessionListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ScreenRecordingSessionListing> getRecordingsScreensessionsWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
     return getRecordingsScreensessions(createGetRecordingsScreensessionsRequest(pageSize, pageNumber).withHttpInfo());
@@ -2824,11 +2826,12 @@ public class RecordingApi {
 
   /**
    * Retrieves a paged listing of screen recording sessions
-   * 
+   * Coming soon: This API is deprecated and will be replaced by /api/v2/recordings/screensessions/details
    * @param request The request object
    * @return ScreenRecordingSessionListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ScreenRecordingSessionListing getRecordingsScreensessions(GetRecordingsScreensessionsRequest request) throws IOException, ApiException {
     try {
@@ -2843,10 +2846,11 @@ public class RecordingApi {
 
   /**
    * Retrieves a paged listing of screen recording sessions
-   * 
+   * Coming soon: This API is deprecated and will be replaced by /api/v2/recordings/screensessions/details
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ScreenRecordingSessionListing> getRecordingsScreensessions(ApiRequest<Void> request) throws IOException {
     try {

@@ -75,6 +75,7 @@ title: ConversationCallbackEventTopicCallbackMediaParticipant
 | UPLOADING | &quot;uploading&quot; | 
 | TRANSMITTING | &quot;transmitting&quot; | 
 | SCHEDULED | &quot;scheduled&quot; | 
+| PARKED | &quot;parked&quot; | 
 | NONE | &quot;none&quot; | 
 {: class="table table-striped"}
 
@@ -97,6 +98,7 @@ title: ConversationCallbackEventTopicCallbackMediaParticipant
 | UPLOADING | &quot;uploading&quot; | 
 | TRANSMITTING | &quot;transmitting&quot; | 
 | SCHEDULED | &quot;scheduled&quot; | 
+| PARKED | &quot;parked&quot; | 
 | NONE | &quot;none&quot; | 
 {: class="table table-striped"}
 

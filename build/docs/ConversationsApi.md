@@ -82,6 +82,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsMessagesCachedmedia**](ConversationsApi.html#getConversationsMessagesCachedmedia) | Get a list of cached media items |
 | [**getConversationsMessagesCachedmediaCachedMediaItemId**](ConversationsApi.html#getConversationsMessagesCachedmediaCachedMediaItemId) | Get a cached media item |
 | [**getConversationsMessagingFacebookApp**](ConversationsApi.html#getConversationsMessagingFacebookApp) | Get Genesys Facebook App Id |
+| [**getConversationsMessagingFacebookPermissions**](ConversationsApi.html#getConversationsMessagingFacebookPermissions) | Get a list of Facebook Permissions |
 | [**getConversationsMessagingIntegrations**](ConversationsApi.html#getConversationsMessagingIntegrations) | Get a list of Integrations |
 | [**getConversationsMessagingIntegrationsFacebook**](ConversationsApi.html#getConversationsMessagingIntegrationsFacebook) | Get a list of Facebook Integrations |
 | [**getConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsFacebookIntegrationId) | Get a Facebook messaging integration |
@@ -4876,6 +4877,65 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**FacebookAppCredentials**](FacebookAppCredentials.html)
+
+<a name="getConversationsMessagingFacebookPermissions"></a>
+
+# **getConversationsMessagingFacebookPermissions**
+
+
+
+> [FacebookPermissionEntityListing](FacebookPermissionEntityListing.html) getConversationsMessagingFacebookPermissions()
+
+Get a list of Facebook Permissions
+
+Wraps GET /api/v2/conversations/messaging/facebook/permissions  
+
+Requires ANY permissions: 
+
+* messaging:integration:add
+* messaging:integration:edit
+* messaging:conversationInstagramIntegration:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+try {
+    FacebookPermissionEntityListing result = apiInstance.getConversationsMessagingFacebookPermissions();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessagingFacebookPermissions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**FacebookPermissionEntityListing**](FacebookPermissionEntityListing.html)
 
 <a name="getConversationsMessagingIntegrations"></a>
 

@@ -273,7 +273,7 @@ public class UsageApiAsync {
   }
 
   /**
-   * Get the results of a usage search
+   * Get the results of a usage search. Number of records to be returned is limited to 20,000 results.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -307,7 +307,7 @@ public class UsageApiAsync {
   }
 
   /**
-   * Get the results of a usage search
+   * Get the results of a usage search. Number of records to be returned is limited to 20,000 results.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -498,8 +498,8 @@ public class UsageApiAsync {
   }
 
   /**
-   * Search organization API Usage - 
-   * After calling this method, you will then need to poll for the query results based on the returned execution Id
+   * Search organization API Usage
+   * After calling this method, you will then need to poll for the query results based on the returned execution Id. The number of records is limited to 20,000 results
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -532,8 +532,8 @@ public class UsageApiAsync {
   }
 
   /**
-   * Search organization API Usage - 
-   * After calling this method, you will then need to poll for the query results based on the returned execution Id
+   * Search organization API Usage
+   * After calling this method, you will then need to poll for the query results based on the returned execution Id. The number of records is limited to 20,000 results
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

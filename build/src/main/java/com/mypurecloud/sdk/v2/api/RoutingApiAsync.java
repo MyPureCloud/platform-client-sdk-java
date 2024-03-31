@@ -75,6 +75,7 @@ import com.mypurecloud.sdk.v2.model.SkillGroupWithMemberDivisions;
 import com.mypurecloud.sdk.v2.model.SmsAddress;
 import com.mypurecloud.sdk.v2.model.SmsAddressEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
+import com.mypurecloud.sdk.v2.model.SmsAlphanumericProvision;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumber;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberImport;
@@ -227,6 +228,7 @@ import com.mypurecloud.sdk.v2.api.request.PostRoutingSkillgroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSkillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsAddressesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsPhonenumbersRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsPhonenumbersAlphanumericRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsPhonenumbersImportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingUtilizationLabelsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingUtilizationTagsRequest;
@@ -9485,6 +9487,83 @@ public class RoutingApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<SmsPhoneNumber>> postRoutingSmsPhonenumbersAsync(ApiRequest<SmsPhoneNumberProvision> request, final AsyncApiCallback<ApiResponse<SmsPhoneNumber>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SmsPhoneNumber>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SmsPhoneNumber>() {}, new AsyncApiCallback<ApiResponse<SmsPhoneNumber>>() {
+        @Override
+        public void onCompleted(ApiResponse<SmsPhoneNumber> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SmsPhoneNumber> response = (ApiResponse<SmsPhoneNumber>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SmsPhoneNumber> response = (ApiResponse<SmsPhoneNumber>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Provision an alphanumeric number for SMS
+   * 
+   * postRoutingSmsPhonenumbersAlphanumeric is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SmsPhoneNumber> postRoutingSmsPhonenumbersAlphanumericAsync(PostRoutingSmsPhonenumbersAlphanumericRequest request, final AsyncApiCallback<SmsPhoneNumber> callback) {
+    try {
+      final SettableFuture<SmsPhoneNumber> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SmsPhoneNumber>() {}, new AsyncApiCallback<ApiResponse<SmsPhoneNumber>>() {
+        @Override
+        public void onCompleted(ApiResponse<SmsPhoneNumber> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Provision an alphanumeric number for SMS
+   * 
+   * postRoutingSmsPhonenumbersAlphanumeric is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SmsPhoneNumber>> postRoutingSmsPhonenumbersAlphanumericAsync(ApiRequest<SmsAlphanumericProvision> request, final AsyncApiCallback<ApiResponse<SmsPhoneNumber>> callback) {
     try {
       final SettableFuture<ApiResponse<SmsPhoneNumber>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

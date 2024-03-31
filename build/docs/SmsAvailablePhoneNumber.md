@@ -44,6 +44,7 @@ title: SmsAvailablePhoneNumber
 | MOBILE | &quot;mobile&quot; | 
 | TOLLFREE | &quot;tollfree&quot; | 
 | SHORTCODE | &quot;shortcode&quot; | 
+| ALPHANUMERIC | &quot;alphanumeric&quot; | 
 {: class="table table-striped"}
 
 

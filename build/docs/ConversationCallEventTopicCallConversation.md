@@ -12,6 +12,7 @@ title: ConversationCallEventTopicCallConversation
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
 | **participants** | <!----><!---->[**List&lt;ConversationCallEventTopicCallMediaParticipant&gt;**](ConversationCallEventTopicCallMediaParticipant.html)<!----> |  |  [optional] |
 | **otherMediaUris** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **address** | <!----><!---->**String**<!----> |  |  [optional] |
 | **recordingState** | [**RecordingStateEnum**](#RecordingStateEnum)<!----> |  |  [optional] |
 | **securePause** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **maxParticipants** | <!----><!---->**Integer**<!----> |  |  [optional] |

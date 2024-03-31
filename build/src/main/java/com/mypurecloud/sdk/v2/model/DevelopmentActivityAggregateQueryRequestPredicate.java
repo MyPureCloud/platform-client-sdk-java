@@ -94,14 +94,14 @@ public class DevelopmentActivityAggregateQueryRequestPredicate  implements Seria
 
 
   /**
-   * Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational, AssessedContent, Assessment, Coaching
+   * Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational, AssessedContent, Assessment, Coaching, External
    **/
   public DevelopmentActivityAggregateQueryRequestPredicate value(String value) {
     this.value = value;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational, AssessedContent, Assessment, Coaching")
+  @ApiModelProperty(example = "null", required = true, value = "Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational, AssessedContent, Assessment, Coaching, External")
   @JsonProperty("value")
   public String getValue() {
     return value;

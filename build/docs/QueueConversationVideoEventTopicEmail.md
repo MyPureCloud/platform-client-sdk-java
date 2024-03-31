@@ -46,6 +46,7 @@ title: QueueConversationVideoEventTopicEmail
 | DISCONNECTED | &quot;disconnected&quot; | 
 | NONE | &quot;none&quot; | 
 | TRANSMITTING | &quot;transmitting&quot; | 
+| PARKED | &quot;parked&quot; | 
 {: class="table table-striped"}
 
 
@@ -61,6 +62,7 @@ title: QueueConversationVideoEventTopicEmail
 | DISCONNECTED | &quot;disconnected&quot; | 
 | NONE | &quot;none&quot; | 
 | TRANSMITTING | &quot;transmitting&quot; | 
+| PARKED | &quot;parked&quot; | 
 {: class="table table-striped"}
 
 

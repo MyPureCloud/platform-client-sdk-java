@@ -105,7 +105,9 @@ public class ApprovalNamespace  implements Serializable {
     WEB_MESSAGING("web.messaging"),
     WEBCHAT("webchat"),
     WEBHOOKS("webhooks"),
-    WORKFORCE_MANAGEMENT("workforce.management");
+    WORKFORCE_MANAGEMENT_FORECAST("workforce.management.forecast"),
+    WORKFORCE_MANAGEMENT("workforce.management"),
+    SYSTEM("system");
 
     private String value;
 
@@ -212,7 +214,8 @@ public class ApprovalNamespace  implements Serializable {
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     PRIMARY("Primary"),
-    SECONDARY("Secondary");
+    SECONDARY("Secondary"),
+    SYSTEM("System");
 
     private String value;
 

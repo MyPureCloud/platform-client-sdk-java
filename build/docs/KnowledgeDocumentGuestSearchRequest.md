@@ -16,6 +16,7 @@ title: KnowledgeDocumentGuestSearchRequest
 | **pageCount** | <!----><!---->**Integer**<!----> | Number of pages returned in the result calculated according to the pageSize and the total |  [optional] |
 | **queryType** | [**QueryTypeEnum**](#QueryTypeEnum)<!----> | The type of the query that initiates the search. |  [optional] |
 | **sessionId** | <!----><!---->**String**<!----> | Session ID of the search. |  [optional] |
+| **answerHighlightTopResults** | <!----><!---->**Integer**<!----> | The number of articles to be sent for answer-highlighting. Can range from 1-5. |  [optional] |
 | **includeDraftDocuments** | <!----><!---->**Boolean**<!----> | Indicates whether the search results would also include draft documents. |  [optional] |
 {: class="table table-striped"}
 

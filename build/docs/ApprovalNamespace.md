@@ -85,7 +85,9 @@ title: ApprovalNamespace
 | WEB_MESSAGING | &quot;web.messaging&quot; | 
 | WEBCHAT | &quot;webchat&quot; | 
 | WEBHOOKS | &quot;webhooks&quot; | 
+| WORKFORCE_MANAGEMENT_FORECAST | &quot;workforce.management.forecast&quot; | 
 | WORKFORCE_MANAGEMENT | &quot;workforce.management&quot; | 
+| SYSTEM | &quot;system&quot; | 
 {: class="table table-striped"}
 
 
@@ -121,6 +123,7 @@ title: ApprovalNamespace
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | PRIMARY | &quot;Primary&quot; | 
 | SECONDARY | &quot;Secondary&quot; | 
+| SYSTEM | &quot;System&quot; | 
 {: class="table table-striped"}
 
 

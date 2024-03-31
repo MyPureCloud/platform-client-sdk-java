@@ -63,10 +63,10 @@ import com.mypurecloud.sdk.v2.model.KnowledgeDocumentView;
 import com.mypurecloud.sdk.v2.model.KnowledgeExportJobRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeExportJobResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeExtendedCategory;
-import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocument;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentCopy;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentFeedback;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentPresentation;
+import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentResponseListing;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentSuggestion;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentSuggestionRequest;
@@ -1052,13 +1052,13 @@ public class KnowledgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<KnowledgeGuestDocument> getKnowledgeGuestSessionDocumentAsync(GetKnowledgeGuestSessionDocumentRequest request, final AsyncApiCallback<KnowledgeGuestDocument> callback) {
+  public Future<KnowledgeGuestDocumentResponse> getKnowledgeGuestSessionDocumentAsync(GetKnowledgeGuestSessionDocumentRequest request, final AsyncApiCallback<KnowledgeGuestDocumentResponse> callback) {
     try {
-      final SettableFuture<KnowledgeGuestDocument> future = SettableFuture.create();
+      final SettableFuture<KnowledgeGuestDocumentResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KnowledgeGuestDocument>() {}, new AsyncApiCallback<ApiResponse<KnowledgeGuestDocument>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KnowledgeGuestDocumentResponse>() {}, new AsyncApiCallback<ApiResponse<KnowledgeGuestDocumentResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<KnowledgeGuestDocument> response) {
+        public void onCompleted(ApiResponse<KnowledgeGuestDocumentResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -1086,13 +1086,13 @@ public class KnowledgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<KnowledgeGuestDocument>> getKnowledgeGuestSessionDocumentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<KnowledgeGuestDocument>> callback) {
+  public Future<ApiResponse<KnowledgeGuestDocumentResponse>> getKnowledgeGuestSessionDocumentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<KnowledgeGuestDocumentResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<KnowledgeGuestDocument>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<KnowledgeGuestDocumentResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<KnowledgeGuestDocument>() {}, new AsyncApiCallback<ApiResponse<KnowledgeGuestDocument>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<KnowledgeGuestDocumentResponse>() {}, new AsyncApiCallback<ApiResponse<KnowledgeGuestDocumentResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<KnowledgeGuestDocument> response) {
+        public void onCompleted(ApiResponse<KnowledgeGuestDocumentResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -1100,7 +1100,7 @@ public class KnowledgeApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<KnowledgeGuestDocument> response = (ApiResponse<KnowledgeGuestDocument>)(ApiResponse<?>)exception;
+            ApiResponse<KnowledgeGuestDocumentResponse> response = (ApiResponse<KnowledgeGuestDocumentResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -1108,7 +1108,7 @@ public class KnowledgeApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<KnowledgeGuestDocument> response = (ApiResponse<KnowledgeGuestDocument>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<KnowledgeGuestDocumentResponse> response = (ApiResponse<KnowledgeGuestDocumentResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

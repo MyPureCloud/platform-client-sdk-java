@@ -55,7 +55,8 @@ public class SmsPhoneNumber  implements Serializable {
     LOCAL("local"),
     MOBILE("mobile"),
     TOLLFREE("tollfree"),
-    SHORTCODE("shortcode");
+    SHORTCODE("shortcode"),
+    ALPHANUMERIC("alphanumeric");
 
     private String value;
 
@@ -324,14 +325,14 @@ public class SmsPhoneNumber  implements Serializable {
 
 
   /**
-   * A phone number provisioned for SMS communications in E.164 format. E.g. +13175555555 or +34234234234
+   * A phone number provisioned for SMS communications.
    **/
   public SmsPhoneNumber phoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "A phone number provisioned for SMS communications in E.164 format. E.g. +13175555555 or +34234234234")
+  @ApiModelProperty(example = "null", required = true, value = "A phone number provisioned for SMS communications.")
   @JsonProperty("phoneNumber")
   public String getPhoneNumber() {
     return phoneNumber;

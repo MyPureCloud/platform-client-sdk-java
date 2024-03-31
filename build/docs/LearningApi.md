@@ -306,7 +306,7 @@ try {
 | **sortOrder** | **String**| Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc 
 | **sortBy** | **String**| Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional]<br />**Values**: RecommendedCompletionDate, DateModified 
 | **userId** | [**List&lt;String&gt;**](String.html)| Specifies the list of user IDs to be queried, up to 100 user IDs. | [optional] 
-| **types** | [**List&lt;String&gt;**](String.html)| Specifies the module types to filter by | [optional]<br />**Values**: Informational, AssessedContent, Assessment 
+| **types** | [**List&lt;String&gt;**](String.html)| Specifies the module types to filter by | [optional]<br />**Values**: Informational, AssessedContent, Assessment, External 
 | **states** | [**List&lt;String&gt;**](String.html)| Specifies the assignment states to filter by | [optional]<br />**Values**: Assigned, InProgress, Completed, NotCompleted, InvalidSchedule 
 | **expand** | [**List&lt;String&gt;**](String.html)| Specifies the expand option for returning additional information | [optional]<br />**Values**: ModuleSummary 
 {: class="table-striped"}
@@ -392,7 +392,7 @@ try {
 | **maxPercentageScore** | **Float**| The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional] 
 | **sortOrder** | **String**| Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc 
 | **sortBy** | **String**| Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional]<br />**Values**: RecommendedCompletionDate, DateModified 
-| **types** | [**List&lt;String&gt;**](String.html)| Specifies the module types to filter by | [optional]<br />**Values**: Informational, AssessedContent, Assessment 
+| **types** | [**List&lt;String&gt;**](String.html)| Specifies the module types to filter by | [optional]<br />**Values**: Informational, AssessedContent, Assessment, External 
 | **states** | [**List&lt;String&gt;**](String.html)| Specifies the assignment states to filter by | [optional]<br />**Values**: Assigned, InProgress, Completed, NotCompleted, InvalidSchedule 
 | **expand** | [**List&lt;String&gt;**](String.html)| Specifies the expand option for returning additional information | [optional]<br />**Values**: ModuleSummary 
 {: class="table-striped"}
@@ -718,7 +718,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **isArchived** | **Boolean**| Archive status | [optional] [default to false] 
-| **types** | [**List&lt;String&gt;**](String.html)| Specifies the module types. | [optional]<br />**Values**: Informational, AssessedContent, Assessment 
+| **types** | [**List&lt;String&gt;**](String.html)| Specifies the module types. | [optional]<br />**Values**: Informational, AssessedContent, Assessment, External 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **sortOrder** | **String**| Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending 
@@ -1004,8 +1004,6 @@ try {
 > [LearningAssignment](LearningAssignment.html) patchLearningModuleUserAssignments(moduleId, userId, body)
 
 Update an external assignment for a specific user
-
-patchLearningModuleUserAssignments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/learning/modules/{moduleId}/users/{userId}/assignments  
 

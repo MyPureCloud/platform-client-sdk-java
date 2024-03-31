@@ -15,6 +15,8 @@ title: Recording
 | **startTime** | <!----><!---->**String**<!----> | The start time of the recording. Null when there is no playable media. |  [optional] |
 | **endTime** | <!----><!---->**String**<!----> | The end time of the recording. Null when there is no playable media. |  [optional] |
 | **media** | <!----><!---->**String**<!----> | The media type of the recording. This could be audio, chat, messaging, email, or screen. |  [optional] |
+| **mediaSubtype** | [**MediaSubtypeEnum**](#MediaSubtypeEnum)<!----> | The media subtype of the recording. |  [optional] |
+| **mediaSubject** | <!----><!---->**String**<!----> | The media subject of the recording. |  [optional] |
 | **annotations** | <!----><!---->[**List&lt;Annotation&gt;**](Annotation.html)<!----> | Annotations that belong to the recording. |  [optional] |
 | **transcript** | <!----><!---->[**List&lt;ChatMessage&gt;**](ChatMessage.html)<!----> | Represents a chat transcript |  [optional] |
 | **emailTranscript** | <!----><!---->[**List&lt;RecordingEmailMessage&gt;**](RecordingEmailMessage.html)<!----> | Represents an email transcript |  [optional] |
@@ -40,6 +42,20 @@ title: Recording
 | **originalRecordingStartTime** | <!----><!---->[**Date**](Date.html)<!----> | The start time of the full recording, before any segment access restrictions are applied. Null when there is no playable media. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **creationTime** | <!----><!---->[**Date**](Date.html)<!----> | The creation time of the recording. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
+{: class="table table-striped"}
+
+
+<a name="MediaSubtypeEnum"></a>
+
+## Enum: MediaSubtypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| TRUNK | &quot;Trunk&quot; | 
+| STATION | &quot;Station&quot; | 
+| CONSULT | &quot;Consult&quot; | 
+| SCREEN | &quot;Screen&quot; | 
 {: class="table table-striped"}
 
 

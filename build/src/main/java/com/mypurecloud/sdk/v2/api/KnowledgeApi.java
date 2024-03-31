@@ -60,10 +60,10 @@ import com.mypurecloud.sdk.v2.model.KnowledgeDocumentView;
 import com.mypurecloud.sdk.v2.model.KnowledgeExportJobRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeExportJobResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeExtendedCategory;
-import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocument;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentCopy;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentFeedback;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentPresentation;
+import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentResponseListing;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentSuggestion;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentSuggestionRequest;
@@ -1158,11 +1158,11 @@ public class KnowledgeApi {
    * 
    * @param sessionId Knowledge guest session ID. (required)
    * @param documentId Document ID (required)
-   * @return KnowledgeGuestDocument
+   * @return KnowledgeGuestDocumentResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public KnowledgeGuestDocument getKnowledgeGuestSessionDocument(String sessionId, String documentId) throws IOException, ApiException {
+  public KnowledgeGuestDocumentResponse getKnowledgeGuestSessionDocument(String sessionId, String documentId) throws IOException, ApiException {
     return  getKnowledgeGuestSessionDocument(createGetKnowledgeGuestSessionDocumentRequest(sessionId, documentId));
   }
 
@@ -1171,10 +1171,10 @@ public class KnowledgeApi {
    * 
    * @param sessionId Knowledge guest session ID. (required)
    * @param documentId Document ID (required)
-   * @return KnowledgeGuestDocument
+   * @return KnowledgeGuestDocumentResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KnowledgeGuestDocument> getKnowledgeGuestSessionDocumentWithHttpInfo(String sessionId, String documentId) throws IOException {
+  public ApiResponse<KnowledgeGuestDocumentResponse> getKnowledgeGuestSessionDocumentWithHttpInfo(String sessionId, String documentId) throws IOException {
     return getKnowledgeGuestSessionDocument(createGetKnowledgeGuestSessionDocumentRequest(sessionId, documentId).withHttpInfo());
   }
 
@@ -1191,13 +1191,13 @@ public class KnowledgeApi {
    * Get a knowledge document by ID.
    * 
    * @param request The request object
-   * @return KnowledgeGuestDocument
+   * @return KnowledgeGuestDocumentResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public KnowledgeGuestDocument getKnowledgeGuestSessionDocument(GetKnowledgeGuestSessionDocumentRequest request) throws IOException, ApiException {
+  public KnowledgeGuestDocumentResponse getKnowledgeGuestSessionDocument(GetKnowledgeGuestSessionDocumentRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<KnowledgeGuestDocument> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeGuestDocument>() {});
+      ApiResponse<KnowledgeGuestDocumentResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeGuestDocumentResponse>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -1213,13 +1213,13 @@ public class KnowledgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KnowledgeGuestDocument> getKnowledgeGuestSessionDocument(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<KnowledgeGuestDocumentResponse> getKnowledgeGuestSessionDocument(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<KnowledgeGuestDocument>() {});
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeGuestDocumentResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<KnowledgeGuestDocument> response = (ApiResponse<KnowledgeGuestDocument>)(ApiResponse<?>)exception;
+      ApiResponse<KnowledgeGuestDocumentResponse> response = (ApiResponse<KnowledgeGuestDocumentResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1230,7 +1230,7 @@ public class KnowledgeApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<KnowledgeGuestDocument> response = (ApiResponse<KnowledgeGuestDocument>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<KnowledgeGuestDocumentResponse> response = (ApiResponse<KnowledgeGuestDocumentResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -8,11 +8,14 @@ title: V2MobiusAlertsTopicConditionRulePredicate
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
 | **entity** | <!----><!---->[**V2MobiusAlertsTopicEntityProperties**](V2MobiusAlertsTopicEntityProperties.html)<!----> |  |  [optional] |
 | **metric** | <!----><!---->**String**<!----> |  |  [optional] |
 | **metricType** | [**MetricTypeEnum**](#MetricTypeEnum)<!----> |  |  [optional] |
 | **metricValueType** | [**MetricValueTypeEnum**](#MetricValueTypeEnum)<!----> |  |  [optional] |
 | **value** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
+| **status** | <!----><!---->**String**<!----> |  |  [optional] |
+| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> |  |  [optional] |
 | **comparisonOperator** | [**ComparisonOperatorEnum**](#ComparisonOperatorEnum)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
@@ -44,6 +47,24 @@ title: V2MobiusAlertsTopicConditionRulePredicate
 | OBSERVATION | &quot;Observation&quot; | 
 | MIN | &quot;Min&quot; | 
 | MAX | &quot;Max&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
+{: class="table table-striped"}
+
+
+<a name="MediaTypeEnum"></a>
+
+## Enum: MediaTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| VOICE | &quot;Voice&quot; | 
+| CHAT | &quot;Chat&quot; | 
+| EMAIL | &quot;Email&quot; | 
+| CALLBACK | &quot;Callback&quot; | 
+| MESSAGE | &quot;Message&quot; | 
+| SCREENSHARE | &quot;Screenshare&quot; | 
+| COBROWSE | &quot;Cobrowse&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}
 

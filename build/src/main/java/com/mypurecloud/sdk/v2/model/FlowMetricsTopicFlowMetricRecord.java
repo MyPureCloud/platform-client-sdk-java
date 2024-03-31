@@ -187,6 +187,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     STATION("station"),
     USER("user"),
     VOICEMAIL("voicemail"),
+    VOICESURVEYFLOW("voicesurveyflow"),
     WORKFLOW("workflow");
 
     private String value;
@@ -724,6 +725,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     STATION("station"),
     USER("user"),
     VOICEMAIL("voicemail"),
+    VOICESURVEYFLOW("voicesurveyflow"),
     WORKFLOW("workflow");
 
     private String value;

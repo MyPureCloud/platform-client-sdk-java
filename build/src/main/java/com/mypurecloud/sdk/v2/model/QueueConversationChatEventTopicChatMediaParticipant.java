@@ -71,6 +71,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     UPLOADING("uploading"),
     TRANSMITTING("transmitting"),
     SCHEDULED("scheduled"),
+    PARKED("parked"),
     NONE("none");
 
     private String value;
@@ -129,6 +130,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     UPLOADING("uploading"),
     TRANSMITTING("transmitting"),
     SCHEDULED("scheduled"),
+    PARKED("parked"),
     NONE("none");
 
     private String value;

@@ -89,6 +89,7 @@ import com.mypurecloud.sdk.v2.model.FacebookIntegration;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationUpdateRequest;
+import com.mypurecloud.sdk.v2.model.FacebookPermissionEntityListing;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FeedbackAddRequest;
@@ -239,6 +240,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagesCachedmediaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagesCachedmediaCachedMediaItemIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingFacebookAppRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingFacebookPermissionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsFacebookRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
@@ -6045,6 +6047,81 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<FacebookAppCredentials> response = (ApiResponse<FacebookAppCredentials>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of Facebook Permissions
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FacebookPermissionEntityListing> getConversationsMessagingFacebookPermissionsAsync(GetConversationsMessagingFacebookPermissionsRequest request, final AsyncApiCallback<FacebookPermissionEntityListing> callback) {
+    try {
+      final SettableFuture<FacebookPermissionEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FacebookPermissionEntityListing>() {}, new AsyncApiCallback<ApiResponse<FacebookPermissionEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<FacebookPermissionEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of Facebook Permissions
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FacebookPermissionEntityListing>> getConversationsMessagingFacebookPermissionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FacebookPermissionEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FacebookPermissionEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FacebookPermissionEntityListing>() {}, new AsyncApiCallback<ApiResponse<FacebookPermissionEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<FacebookPermissionEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FacebookPermissionEntityListing> response = (ApiResponse<FacebookPermissionEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FacebookPermissionEntityListing> response = (ApiResponse<FacebookPermissionEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

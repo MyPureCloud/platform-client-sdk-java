@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.CreateResponseAssetRequest;
 import com.mypurecloud.sdk.v2.model.CreateResponseAssetResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Library;
+import com.mypurecloud.sdk.v2.model.LibraryBatchRequest;
 import com.mypurecloud.sdk.v2.model.LibraryEntityListing;
 import com.mypurecloud.sdk.v2.model.Response;
 import com.mypurecloud.sdk.v2.model.ResponseAsset;
@@ -39,6 +40,7 @@ import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponseassetRequ
 import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponseassetsStatusStatusIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetResponsemanagementResponsesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementLibrariesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementLibrariesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponseassetsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponseassetsUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostResponsemanagementResponsesRequest;
@@ -804,6 +806,81 @@ public class ResponseManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Library> response = (ApiResponse<Library>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get response libraries.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LibraryEntityListing> postResponsemanagementLibrariesBulkAsync(PostResponsemanagementLibrariesBulkRequest request, final AsyncApiCallback<LibraryEntityListing> callback) {
+    try {
+      final SettableFuture<LibraryEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LibraryEntityListing>() {}, new AsyncApiCallback<ApiResponse<LibraryEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LibraryEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get response libraries.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LibraryEntityListing>> postResponsemanagementLibrariesBulkAsync(ApiRequest<LibraryBatchRequest> request, final AsyncApiCallback<ApiResponse<LibraryEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LibraryEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LibraryEntityListing>() {}, new AsyncApiCallback<ApiResponse<LibraryEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LibraryEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LibraryEntityListing> response = (ApiResponse<LibraryEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LibraryEntityListing> response = (ApiResponse<LibraryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

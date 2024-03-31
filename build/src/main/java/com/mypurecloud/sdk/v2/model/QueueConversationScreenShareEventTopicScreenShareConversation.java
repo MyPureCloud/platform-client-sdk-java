@@ -28,6 +28,7 @@ public class QueueConversationScreenShareEventTopicScreenShareConversation  impl
   private String name = null;
   private List<QueueConversationScreenShareEventTopicScreenShareMediaParticipant> participants = new ArrayList<QueueConversationScreenShareEventTopicScreenShareMediaParticipant>();
   private List<String> otherMediaUris = new ArrayList<String>();
+  private String address = null;
 
   
   /**
@@ -98,6 +99,23 @@ public class QueueConversationScreenShareEventTopicScreenShareConversation  impl
   }
 
 
+  /**
+   **/
+  public QueueConversationScreenShareEventTopicScreenShareConversation address(String address) {
+    this.address = address;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("address")
+  public String getAddress() {
+    return address;
+  }
+  public void setAddress(String address) {
+    this.address = address;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -111,12 +129,13 @@ public class QueueConversationScreenShareEventTopicScreenShareConversation  impl
     return Objects.equals(this.id, queueConversationScreenShareEventTopicScreenShareConversation.id) &&
             Objects.equals(this.name, queueConversationScreenShareEventTopicScreenShareConversation.name) &&
             Objects.equals(this.participants, queueConversationScreenShareEventTopicScreenShareConversation.participants) &&
-            Objects.equals(this.otherMediaUris, queueConversationScreenShareEventTopicScreenShareConversation.otherMediaUris);
+            Objects.equals(this.otherMediaUris, queueConversationScreenShareEventTopicScreenShareConversation.otherMediaUris) &&
+            Objects.equals(this.address, queueConversationScreenShareEventTopicScreenShareConversation.address);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris);
+    return Objects.hash(id, name, participants, otherMediaUris, address);
   }
 
   @Override
@@ -128,6 +147,7 @@ public class QueueConversationScreenShareEventTopicScreenShareConversation  impl
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
+    sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("}");
     return sb.toString();
   }

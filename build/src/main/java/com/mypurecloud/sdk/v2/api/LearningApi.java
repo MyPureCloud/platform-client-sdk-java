@@ -1376,7 +1376,6 @@ public class LearningApi {
   /**
    * Update an external assignment for a specific user
    * 
-   * patchLearningModuleUserAssignments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param moduleId Key identifier for the module (required)
    * @param userId Key identifier for the user (required)
    * @param body The learning request for updating the assignment (required)
@@ -1391,7 +1390,6 @@ public class LearningApi {
   /**
    * Update an external assignment for a specific user
    * 
-   * patchLearningModuleUserAssignments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param moduleId Key identifier for the module (required)
    * @param userId Key identifier for the user (required)
    * @param body The learning request for updating the assignment (required)
@@ -1416,7 +1414,6 @@ public class LearningApi {
   /**
    * Update an external assignment for a specific user
    * 
-   * patchLearningModuleUserAssignments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return LearningAssignment
    * @throws ApiException if the request fails on the server
@@ -1436,7 +1433,6 @@ public class LearningApi {
   /**
    * Update an external assignment for a specific user
    * 
-   * patchLearningModuleUserAssignments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

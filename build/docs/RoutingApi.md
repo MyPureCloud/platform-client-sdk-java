@@ -130,6 +130,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postRoutingSkills**](RoutingApi.html#postRoutingSkills) | Create Skill |
 | [**postRoutingSmsAddresses**](RoutingApi.html#postRoutingSmsAddresses) | Provision an Address for SMS |
 | [**postRoutingSmsPhonenumbers**](RoutingApi.html#postRoutingSmsPhonenumbers) | Provision a phone number for SMS |
+| [**postRoutingSmsPhonenumbersAlphanumeric**](RoutingApi.html#postRoutingSmsPhonenumbersAlphanumeric) | Provision an alphanumeric number for SMS |
 | [**postRoutingSmsPhonenumbersImport**](RoutingApi.html#postRoutingSmsPhonenumbersImport) | Imports a phone number for SMS |
 | [**postRoutingUtilizationLabels**](RoutingApi.html#postRoutingUtilizationLabels) | Create a utilization label |
 | [**postRoutingUtilizationTags**](RoutingApi.html#postRoutingUtilizationTags) | Create an utilization tag |
@@ -4642,7 +4643,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **phoneNumber** | **String**| Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used. | [optional] 
-| **phoneNumberType** | [**List&lt;String&gt;**](String.html)| Filter on phone number type | [optional]<br />**Values**: local, mobile, tollfree, shortcode 
+| **phoneNumberType** | [**List&lt;String&gt;**](String.html)| Filter on phone number type | [optional]<br />**Values**: local, mobile, tollfree, shortcode, alphanumeric 
 | **phoneNumberStatus** | [**List&lt;String&gt;**](String.html)| Filter on phone number status | [optional]<br />**Values**: active, invalid, initiated, porting, pending, pending-cancellation 
 | **countryCode** | [**List&lt;String&gt;**](String.html)| Filter on country code | [optional] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
@@ -7966,6 +7967,69 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **body** | [**SmsPhoneNumberProvision**](SmsPhoneNumberProvision.html)| SmsPhoneNumber | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SmsPhoneNumber**](SmsPhoneNumber.html)
+
+<a name="postRoutingSmsPhonenumbersAlphanumeric"></a>
+
+# **postRoutingSmsPhonenumbersAlphanumeric**
+
+
+
+> [SmsPhoneNumber](SmsPhoneNumber.html) postRoutingSmsPhonenumbersAlphanumeric(body)
+
+Provision an alphanumeric number for SMS
+
+postRoutingSmsPhonenumbersAlphanumeric is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/routing/sms/phonenumbers/alphanumeric  
+
+Requires ALL permissions: 
+
+* sms:phoneNumber:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+SmsAlphanumericProvision body = new SmsAlphanumericProvision(); // SmsAlphanumericProvision | SmsPhoneNumber
+try {
+    SmsPhoneNumber result = apiInstance.postRoutingSmsPhonenumbersAlphanumeric(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#postRoutingSmsPhonenumbersAlphanumeric");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**SmsAlphanumericProvision**](SmsAlphanumericProvision.html)| SmsPhoneNumber | 
 {: class="table-striped"}
 
 

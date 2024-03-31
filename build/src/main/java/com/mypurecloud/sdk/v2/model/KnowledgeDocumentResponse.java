@@ -96,8 +96,8 @@ public class KnowledgeDocumentResponse  implements Serializable {
   private CategoryResponse category = null;
   private List<LabelResponse> labels = new ArrayList<LabelResponse>();
   private KnowledgeBaseReference knowledgeBase = null;
-  private List<DocumentVariation> variations = new ArrayList<DocumentVariation>();
   private String externalId = null;
+  private List<DocumentVariation> variations = new ArrayList<DocumentVariation>();
   private String selfUri = null;
 
   
@@ -357,24 +357,6 @@ public class KnowledgeDocumentResponse  implements Serializable {
 
 
   /**
-   * Variations of the document.
-   **/
-  public KnowledgeDocumentResponse variations(List<DocumentVariation> variations) {
-    this.variations = variations;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Variations of the document.")
-  @JsonProperty("variations")
-  public List<DocumentVariation> getVariations() {
-    return variations;
-  }
-  public void setVariations(List<DocumentVariation> variations) {
-    this.variations = variations;
-  }
-
-
-  /**
    * The reference to external id associated with the document.
    **/
   public KnowledgeDocumentResponse externalId(String externalId) {
@@ -389,6 +371,24 @@ public class KnowledgeDocumentResponse  implements Serializable {
   }
   public void setExternalId(String externalId) {
     this.externalId = externalId;
+  }
+
+
+  /**
+   * Variations of the document.
+   **/
+  public KnowledgeDocumentResponse variations(List<DocumentVariation> variations) {
+    this.variations = variations;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Variations of the document.")
+  @JsonProperty("variations")
+  public List<DocumentVariation> getVariations() {
+    return variations;
+  }
+  public void setVariations(List<DocumentVariation> variations) {
+    this.variations = variations;
   }
 
 
@@ -425,14 +425,14 @@ public class KnowledgeDocumentResponse  implements Serializable {
             Objects.equals(this.category, knowledgeDocumentResponse.category) &&
             Objects.equals(this.labels, knowledgeDocumentResponse.labels) &&
             Objects.equals(this.knowledgeBase, knowledgeDocumentResponse.knowledgeBase) &&
-            Objects.equals(this.variations, knowledgeDocumentResponse.variations) &&
             Objects.equals(this.externalId, knowledgeDocumentResponse.externalId) &&
+            Objects.equals(this.variations, knowledgeDocumentResponse.variations) &&
             Objects.equals(this.selfUri, knowledgeDocumentResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, title, visible, alternatives, state, dateCreated, dateModified, dateImported, lastPublishedVersionNumber, datePublished, createdBy, modifiedBy, documentVersion, category, labels, knowledgeBase, variations, externalId, selfUri);
+    return Objects.hash(id, title, visible, alternatives, state, dateCreated, dateModified, dateImported, lastPublishedVersionNumber, datePublished, createdBy, modifiedBy, documentVersion, category, labels, knowledgeBase, externalId, variations, selfUri);
   }
 
   @Override
@@ -456,8 +456,8 @@ public class KnowledgeDocumentResponse  implements Serializable {
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
     sb.append("    knowledgeBase: ").append(toIndentedString(knowledgeBase)).append("\n");
-    sb.append("    variations: ").append(toIndentedString(variations)).append("\n");
     sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
+    sb.append("    variations: ").append(toIndentedString(variations)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

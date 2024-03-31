@@ -136,6 +136,7 @@ public class V2MobiusRulesTopicRule  implements Serializable {
   private ActionEnum action = null;
   private Date dateCreated = null;
   private Boolean sendExitingAlarmNotification = null;
+  private Integer waitBetweenNotificationMs = null;
 
   
   /**
@@ -325,6 +326,23 @@ public class V2MobiusRulesTopicRule  implements Serializable {
   }
 
 
+  /**
+   **/
+  public V2MobiusRulesTopicRule waitBetweenNotificationMs(Integer waitBetweenNotificationMs) {
+    this.waitBetweenNotificationMs = waitBetweenNotificationMs;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("waitBetweenNotificationMs")
+  public Integer getWaitBetweenNotificationMs() {
+    return waitBetweenNotificationMs;
+  }
+  public void setWaitBetweenNotificationMs(Integer waitBetweenNotificationMs) {
+    this.waitBetweenNotificationMs = waitBetweenNotificationMs;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -345,12 +363,13 @@ public class V2MobiusRulesTopicRule  implements Serializable {
             Objects.equals(this.inAlarm, v2MobiusRulesTopicRule.inAlarm) &&
             Objects.equals(this.action, v2MobiusRulesTopicRule.action) &&
             Objects.equals(this.dateCreated, v2MobiusRulesTopicRule.dateCreated) &&
-            Objects.equals(this.sendExitingAlarmNotification, v2MobiusRulesTopicRule.sendExitingAlarmNotification);
+            Objects.equals(this.sendExitingAlarmNotification, v2MobiusRulesTopicRule.sendExitingAlarmNotification) &&
+            Objects.equals(this.waitBetweenNotificationMs, v2MobiusRulesTopicRule.waitBetweenNotificationMs);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, userId, name, type, notifications, conditions, enabled, inAlarm, action, dateCreated, sendExitingAlarmNotification);
+    return Objects.hash(id, userId, name, type, notifications, conditions, enabled, inAlarm, action, dateCreated, sendExitingAlarmNotification, waitBetweenNotificationMs);
   }
 
   @Override
@@ -369,6 +388,7 @@ public class V2MobiusRulesTopicRule  implements Serializable {
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    sendExitingAlarmNotification: ").append(toIndentedString(sendExitingAlarmNotification)).append("\n");
+    sb.append("    waitBetweenNotificationMs: ").append(toIndentedString(waitBetweenNotificationMs)).append("\n");
     sb.append("}");
     return sb.toString();
   }

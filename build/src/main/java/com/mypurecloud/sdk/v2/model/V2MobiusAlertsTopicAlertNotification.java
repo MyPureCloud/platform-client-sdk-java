@@ -74,6 +74,7 @@ public class V2MobiusAlertsTopicAlertNotification  implements Serializable {
     }
   }
   private List<NotificationTypesEnum> notificationTypes = new ArrayList<NotificationTypesEnum>();
+  private String locale = null;
 
   
   /**
@@ -110,6 +111,23 @@ public class V2MobiusAlertsTopicAlertNotification  implements Serializable {
   }
 
 
+  /**
+   **/
+  public V2MobiusAlertsTopicAlertNotification locale(String locale) {
+    this.locale = locale;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("locale")
+  public String getLocale() {
+    return locale;
+  }
+  public void setLocale(String locale) {
+    this.locale = locale;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -121,12 +139,13 @@ public class V2MobiusAlertsTopicAlertNotification  implements Serializable {
     V2MobiusAlertsTopicAlertNotification v2MobiusAlertsTopicAlertNotification = (V2MobiusAlertsTopicAlertNotification) o;
 
     return Objects.equals(this.recipient, v2MobiusAlertsTopicAlertNotification.recipient) &&
-            Objects.equals(this.notificationTypes, v2MobiusAlertsTopicAlertNotification.notificationTypes);
+            Objects.equals(this.notificationTypes, v2MobiusAlertsTopicAlertNotification.notificationTypes) &&
+            Objects.equals(this.locale, v2MobiusAlertsTopicAlertNotification.locale);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(recipient, notificationTypes);
+    return Objects.hash(recipient, notificationTypes, locale);
   }
 
   @Override
@@ -136,6 +155,7 @@ public class V2MobiusAlertsTopicAlertNotification  implements Serializable {
     
     sb.append("    recipient: ").append(toIndentedString(recipient)).append("\n");
     sb.append("    notificationTypes: ").append(toIndentedString(notificationTypes)).append("\n");
+    sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
     sb.append("}");
     return sb.toString();
   }

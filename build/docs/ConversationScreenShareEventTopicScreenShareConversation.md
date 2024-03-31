@@ -12,6 +12,7 @@ title: ConversationScreenShareEventTopicScreenShareConversation
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
 | **participants** | <!----><!---->[**List&lt;ConversationScreenShareEventTopicScreenShareMediaParticipant&gt;**](ConversationScreenShareEventTopicScreenShareMediaParticipant.html)<!----> |  |  [optional] |
 | **otherMediaUris** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **address** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

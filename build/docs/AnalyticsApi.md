@@ -34,6 +34,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAnalyticsJourneysAggregatesJobResults**](AnalyticsApi.html#getAnalyticsJourneysAggregatesJobResults) | Fetch a page of results for an async aggregates query |
 | [**getAnalyticsKnowledgeAggregatesJob**](AnalyticsApi.html#getAnalyticsKnowledgeAggregatesJob) | Get status for async query for knowledge aggregates |
 | [**getAnalyticsKnowledgeAggregatesJobResults**](AnalyticsApi.html#getAnalyticsKnowledgeAggregatesJobResults) | Fetch a page of results for an async aggregates query |
+| [**getAnalyticsReportingDashboardsUser**](AnalyticsApi.html#getAnalyticsReportingDashboardsUser) | Get dashboards summary for a user |
+| [**getAnalyticsReportingDashboardsUsers**](AnalyticsApi.html#getAnalyticsReportingDashboardsUsers) | Get dashboards summary for users in a org |
 | [**getAnalyticsReportingExports**](AnalyticsApi.html#getAnalyticsReportingExports) | Get all view export requests for a user |
 | [**getAnalyticsReportingExportsMetadata**](AnalyticsApi.html#getAnalyticsReportingExportsMetadata) | Get all export metadata |
 | [**getAnalyticsReportingMetadata**](AnalyticsApi.html#getAnalyticsReportingMetadata) | Get list of reporting metadata. |
@@ -45,6 +47,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAnalyticsReportingScheduleHistoryRunId**](AnalyticsApi.html#getAnalyticsReportingScheduleHistoryRunId) | A completed scheduled report job |
 | [**getAnalyticsReportingSchedules**](AnalyticsApi.html#getAnalyticsReportingSchedules) | Get a list of scheduled report jobs |
 | [**getAnalyticsReportingSettings**](AnalyticsApi.html#getAnalyticsReportingSettings) | Get AnalyticsReportingSettings for an organization |
+| [**getAnalyticsReportingSettingsUserDashboards**](AnalyticsApi.html#getAnalyticsReportingSettingsUserDashboards) | Get list of dashboards for an user |
 | [**getAnalyticsReportingTimeperiods**](AnalyticsApi.html#getAnalyticsReportingTimeperiods) | Get a list of report time periods. |
 | [**getAnalyticsResolutionsAggregatesJob**](AnalyticsApi.html#getAnalyticsResolutionsAggregatesJob) | Get status for async query for resolution aggregates |
 | [**getAnalyticsResolutionsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsResolutionsAggregatesJobResults) | Fetch a page of results for an async aggregates query |
@@ -85,9 +88,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsKnowledgeAggregatesQuery**](AnalyticsApi.html#postAnalyticsKnowledgeAggregatesQuery) | Query for knowledge aggregates |
 | [**postAnalyticsQueuesObservationsQuery**](AnalyticsApi.html#postAnalyticsQueuesObservationsQuery) | Query for queue observations |
 | [**postAnalyticsRatelimitsAggregatesQuery**](AnalyticsApi.html#postAnalyticsRatelimitsAggregatesQuery) | Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded |
+| [**postAnalyticsReportingDashboardsUsersBulkRemove**](AnalyticsApi.html#postAnalyticsReportingDashboardsUsersBulkRemove) | Bulk delete dashboards owned by other user(s) |
 | [**postAnalyticsReportingExports**](AnalyticsApi.html#postAnalyticsReportingExports) | Generate a view export request |
 | [**postAnalyticsReportingScheduleRunreport**](AnalyticsApi.html#postAnalyticsReportingScheduleRunreport) | Place a scheduled report immediately into the reporting queue |
 | [**postAnalyticsReportingSchedules**](AnalyticsApi.html#postAnalyticsReportingSchedules) | Create a scheduled report job |
+| [**postAnalyticsReportingSettingsDashboardsBulkRemove**](AnalyticsApi.html#postAnalyticsReportingSettingsDashboardsBulkRemove) | Bulk remove dashboard configurations |
+| [**postAnalyticsReportingSettingsDashboardsQuery**](AnalyticsApi.html#postAnalyticsReportingSettingsDashboardsQuery) | Query dashboard configurations |
 | [**postAnalyticsResolutionsAggregatesJobs**](AnalyticsApi.html#postAnalyticsResolutionsAggregatesJobs) | Query for resolution aggregates asynchronously |
 | [**postAnalyticsRoutingActivityQuery**](AnalyticsApi.html#postAnalyticsRoutingActivityQuery) | Query for user activity observations |
 | [**postAnalyticsSurveysAggregatesJobs**](AnalyticsApi.html#postAnalyticsSurveysAggregatesJobs) | Query for survey aggregates asynchronously |
@@ -1829,6 +1835,136 @@ try {
 
 [**KnowledgeAsyncAggregateQueryResponse**](KnowledgeAsyncAggregateQueryResponse.html)
 
+<a name="getAnalyticsReportingDashboardsUser"></a>
+
+# **getAnalyticsReportingDashboardsUser**
+
+
+
+> [DashboardUser](DashboardUser.html) getAnalyticsReportingDashboardsUser(userId)
+
+Get dashboards summary for a user
+
+Wraps GET /api/v2/analytics/reporting/dashboards/users/{userId}  
+
+Requires ALL permissions: 
+
+* analytics:dashboardConfigurations:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String userId = "userId_example"; // String | User ID
+try {
+    DashboardUser result = apiInstance.getAnalyticsReportingDashboardsUser(userId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#getAnalyticsReportingDashboardsUser");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DashboardUser**](DashboardUser.html)
+
+<a name="getAnalyticsReportingDashboardsUsers"></a>
+
+# **getAnalyticsReportingDashboardsUsers**
+
+
+
+> [DashboardUserListing](DashboardUserListing.html) getAnalyticsReportingDashboardsUsers(sortBy, pageNumber, pageSize, id, state)
+
+Get dashboards summary for users in a org
+
+Wraps GET /api/v2/analytics/reporting/dashboards/users  
+
+Requires ALL permissions: 
+
+* analytics:dashboardConfigurations:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String sortBy = "asc"; // String | 
+Integer pageNumber = 1; // Integer | 
+Integer pageSize = 25; // Integer | 
+List<String> id = Arrays.asList(null); // List<String> | A list of user IDs to fetch by bulk
+String state = "state_example"; // String | Only list users of this state
+try {
+    DashboardUserListing result = apiInstance.getAnalyticsReportingDashboardsUsers(sortBy, pageNumber, pageSize, id, state);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#getAnalyticsReportingDashboardsUsers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sortBy** | **String**|  | [optional] [default to asc] 
+| **pageNumber** | **Integer**|  | [optional] [default to 1] 
+| **pageSize** | **Integer**|  | [optional] [default to 25] 
+| **id** | [**List&lt;String&gt;**](String.html)| A list of user IDs to fetch by bulk | [optional] 
+| **state** | **String**| Only list users of this state | [optional]<br />**Values**: active, inactive 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DashboardUserListing**](DashboardUserListing.html)
+
 <a name="getAnalyticsReportingExports"></a>
 
 # **getAnalyticsReportingExports**
@@ -2503,6 +2639,77 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**AnalyticsReportingSettings**](AnalyticsReportingSettings.html)
+
+<a name="getAnalyticsReportingSettingsUserDashboards"></a>
+
+# **getAnalyticsReportingSettingsUserDashboards**
+
+
+
+> [DashboardConfigurationListing](DashboardConfigurationListing.html) getAnalyticsReportingSettingsUserDashboards(userId, sortBy, pageNumber, pageSize, publicOnly, favoriteOnly)
+
+Get list of dashboards for an user
+
+Wraps GET /api/v2/analytics/reporting/settings/users/{userId}/dashboards  
+
+Requires ALL permissions: 
+
+* analytics:dashboardConfigurations:viewPrivate
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String userId = "userId_example"; // String | User ID
+String sortBy = "asc"; // String | 
+Integer pageNumber = 1; // Integer | 
+Integer pageSize = 50; // Integer | 
+Boolean publicOnly = true; // Boolean | If true, retrieve only public dashboards
+Boolean favoriteOnly = true; // Boolean | If true, retrieve only favorite dashboards
+try {
+    DashboardConfigurationListing result = apiInstance.getAnalyticsReportingSettingsUserDashboards(userId, sortBy, pageNumber, pageSize, publicOnly, favoriteOnly);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#getAnalyticsReportingSettingsUserDashboards");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | 
+| **sortBy** | **String**|  | [optional] [default to asc] 
+| **pageNumber** | **Integer**|  | [optional] [default to 1] 
+| **pageSize** | **Integer**|  | [optional] [default to 50] 
+| **publicOnly** | **Boolean**| If true, retrieve only public dashboards | [optional] 
+| **favoriteOnly** | **Boolean**| If true, retrieve only favorite dashboards | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DashboardConfigurationListing**](DashboardConfigurationListing.html)
 
 <a name="getAnalyticsReportingTimeperiods"></a>
 
@@ -3397,11 +3604,7 @@ Wraps PATCH /api/v2/analytics/reporting/settings
 
 Requires ANY permissions: 
 
-* recording:recordingSegment:view
-* analytics:conversationDetail:view
-* analytics:conversationAggregate:view
 * analytics:reportingSettings:edit
-* analytics:dashboardConfigurations:view
 
 ### Example
 
@@ -5007,6 +5210,67 @@ try {
 
 [**RateLimitAggregateQueryResponse**](RateLimitAggregateQueryResponse.html)
 
+<a name="postAnalyticsReportingDashboardsUsersBulkRemove"></a>
+
+# **postAnalyticsReportingDashboardsUsersBulkRemove**
+
+
+
+> Void postAnalyticsReportingDashboardsUsersBulkRemove(body)
+
+Bulk delete dashboards owned by other user(s)
+
+Wraps POST /api/v2/analytics/reporting/dashboards/users/bulk/remove  
+
+Requires ANY permissions: 
+
+* analytics:dashboardConfigurations:deleteActive
+* analytics:dashboardConfigurations:deleteInactive
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+List<String> body = Arrays.asList(null); // List<String> | List of userIds
+try {
+    apiInstance.postAnalyticsReportingDashboardsUsersBulkRemove(body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#postAnalyticsReportingDashboardsUsersBulkRemove");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**List&lt;String&gt;**](String.html)| List of userIds | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
 <a name="postAnalyticsReportingExports"></a>
 
 # **postAnalyticsReportingExports**
@@ -5195,6 +5459,127 @@ try {
 ### Return type
 
 [**ReportSchedule**](ReportSchedule.html)
+
+<a name="postAnalyticsReportingSettingsDashboardsBulkRemove"></a>
+
+# **postAnalyticsReportingSettingsDashboardsBulkRemove**
+
+
+
+> Void postAnalyticsReportingSettingsDashboardsBulkRemove(body)
+
+Bulk remove dashboard configurations
+
+Wraps POST /api/v2/analytics/reporting/settings/dashboards/bulk/remove  
+
+Requires ALL permissions: 
+
+* analytics:dashboardConfigurations:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+DashboardConfigurationBulkRequest body = new DashboardConfigurationBulkRequest(); // DashboardConfigurationBulkRequest | 
+try {
+    apiInstance.postAnalyticsReportingSettingsDashboardsBulkRemove(body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#postAnalyticsReportingSettingsDashboardsBulkRemove");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**DashboardConfigurationBulkRequest**](DashboardConfigurationBulkRequest.html)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="postAnalyticsReportingSettingsDashboardsQuery"></a>
+
+# **postAnalyticsReportingSettingsDashboardsQuery**
+
+
+
+> [DashboardConfigurationListing](DashboardConfigurationListing.html) postAnalyticsReportingSettingsDashboardsQuery(body)
+
+Query dashboard configurations
+
+Wraps POST /api/v2/analytics/reporting/settings/dashboards/query  
+
+Requires ALL permissions: 
+
+* analytics:dashboardConfigurations:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+DashboardConfigurationQueryRequest body = new DashboardConfigurationQueryRequest(); // DashboardConfigurationQueryRequest | 
+try {
+    DashboardConfigurationListing result = apiInstance.postAnalyticsReportingSettingsDashboardsQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#postAnalyticsReportingSettingsDashboardsQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**DashboardConfigurationQueryRequest**](DashboardConfigurationQueryRequest.html)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DashboardConfigurationListing**](DashboardConfigurationListing.html)
 
 <a name="postAnalyticsResolutionsAggregatesJobs"></a>
 

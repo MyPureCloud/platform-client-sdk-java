@@ -86,6 +86,7 @@ import com.mypurecloud.sdk.v2.model.FacebookIntegration;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationUpdateRequest;
+import com.mypurecloud.sdk.v2.model.FacebookPermissionEntityListing;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FeedbackAddRequest;
@@ -236,6 +237,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagesCachedmediaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagesCachedmediaCachedMediaItemIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingFacebookAppRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingFacebookPermissionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsFacebookRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
@@ -6459,6 +6461,80 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<FacebookAppCredentials> response = (ApiResponse<FacebookAppCredentials>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a list of Facebook Permissions
+   * 
+   * @return FacebookPermissionEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FacebookPermissionEntityListing getConversationsMessagingFacebookPermissions() throws IOException, ApiException {
+    return  getConversationsMessagingFacebookPermissions(createGetConversationsMessagingFacebookPermissionsRequest());
+  }
+
+  /**
+   * Get a list of Facebook Permissions
+   * 
+   * @return FacebookPermissionEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FacebookPermissionEntityListing> getConversationsMessagingFacebookPermissionsWithHttpInfo() throws IOException {
+    return getConversationsMessagingFacebookPermissions(createGetConversationsMessagingFacebookPermissionsRequest().withHttpInfo());
+  }
+
+  private GetConversationsMessagingFacebookPermissionsRequest createGetConversationsMessagingFacebookPermissionsRequest() {
+    return GetConversationsMessagingFacebookPermissionsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get a list of Facebook Permissions
+   * 
+   * @param request The request object
+   * @return FacebookPermissionEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FacebookPermissionEntityListing getConversationsMessagingFacebookPermissions(GetConversationsMessagingFacebookPermissionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FacebookPermissionEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FacebookPermissionEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of Facebook Permissions
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FacebookPermissionEntityListing> getConversationsMessagingFacebookPermissions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FacebookPermissionEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FacebookPermissionEntityListing> response = (ApiResponse<FacebookPermissionEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FacebookPermissionEntityListing> response = (ApiResponse<FacebookPermissionEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

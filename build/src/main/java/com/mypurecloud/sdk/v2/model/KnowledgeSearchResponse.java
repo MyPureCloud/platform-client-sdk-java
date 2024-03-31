@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.KnowledgeSearchDocument;
+import com.mypurecloud.sdk.v2.model.KnowledgeSearchDocumentV1;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ public class KnowledgeSearchResponse  implements Serializable {
   private Integer pageCount = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
-  private List<KnowledgeSearchDocument> results = new ArrayList<KnowledgeSearchDocument>();
+  private List<KnowledgeSearchDocumentV1> results = new ArrayList<KnowledgeSearchDocumentV1>();
 
   
   @ApiModelProperty(example = "null", value = "Search Id")
@@ -69,7 +69,7 @@ public class KnowledgeSearchResponse  implements Serializable {
 
   @ApiModelProperty(example = "null", value = "Results associated to the search response")
   @JsonProperty("results")
-  public List<KnowledgeSearchDocument> getResults() {
+  public List<KnowledgeSearchDocumentV1> getResults() {
     return results;
   }
 

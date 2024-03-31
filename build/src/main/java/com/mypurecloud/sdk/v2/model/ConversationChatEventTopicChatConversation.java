@@ -28,6 +28,7 @@ public class ConversationChatEventTopicChatConversation  implements Serializable
   private String name = null;
   private List<ConversationChatEventTopicChatMediaParticipant> participants = new ArrayList<ConversationChatEventTopicChatMediaParticipant>();
   private List<String> otherMediaUris = new ArrayList<String>();
+  private String address = null;
 
   
   /**
@@ -98,6 +99,23 @@ public class ConversationChatEventTopicChatConversation  implements Serializable
   }
 
 
+  /**
+   **/
+  public ConversationChatEventTopicChatConversation address(String address) {
+    this.address = address;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("address")
+  public String getAddress() {
+    return address;
+  }
+  public void setAddress(String address) {
+    this.address = address;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -111,12 +129,13 @@ public class ConversationChatEventTopicChatConversation  implements Serializable
     return Objects.equals(this.id, conversationChatEventTopicChatConversation.id) &&
             Objects.equals(this.name, conversationChatEventTopicChatConversation.name) &&
             Objects.equals(this.participants, conversationChatEventTopicChatConversation.participants) &&
-            Objects.equals(this.otherMediaUris, conversationChatEventTopicChatConversation.otherMediaUris);
+            Objects.equals(this.otherMediaUris, conversationChatEventTopicChatConversation.otherMediaUris) &&
+            Objects.equals(this.address, conversationChatEventTopicChatConversation.address);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris);
+    return Objects.hash(id, name, participants, otherMediaUris, address);
   }
 
   @Override
@@ -128,6 +147,7 @@ public class ConversationChatEventTopicChatConversation  implements Serializable
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
+    sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("}");
     return sb.toString();
   }

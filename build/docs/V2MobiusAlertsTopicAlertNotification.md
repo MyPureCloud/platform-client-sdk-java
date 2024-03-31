@@ -10,6 +10,7 @@ title: V2MobiusAlertsTopicAlertNotification
 | ------------ | ------------- | ------------- | ------------- |
 | **recipient** | <!----><!---->**String**<!----> |  |  [optional] |
 | **notificationTypes** | <!---->[**List&lt;NotificationTypesEnum&gt;**](#NotificationTypesEnum)<!----> |  |  [optional] |
+| **locale** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

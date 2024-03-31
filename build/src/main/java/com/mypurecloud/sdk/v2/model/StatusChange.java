@@ -225,7 +225,9 @@ public class StatusChange  implements Serializable {
     WEB_MESSAGING("web.messaging"),
     WEBCHAT("webchat"),
     WEBHOOKS("webhooks"),
-    WORKFORCE_MANAGEMENT("workforce.management");
+    WORKFORCE_MANAGEMENT_FORECAST("workforce.management.forecast"),
+    WORKFORCE_MANAGEMENT("workforce.management"),
+    SYSTEM("system");
 
     private String value;
 

@@ -10,10 +10,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOauthClientUsageQueryResult**](UsageApi.html#getOauthClientUsageQueryResult) | Get the results of a usage query |
 | [**getOauthClientUsageSummary**](UsageApi.html#getOauthClientUsageSummary) | Get a summary of OAuth client API usage |
 | [**getUsageQueryExecutionIdResults**](UsageApi.html#getUsageQueryExecutionIdResults) | Get the results of a usage query |
-| [**getUsageSimplesearchExecutionIdResults**](UsageApi.html#getUsageSimplesearchExecutionIdResults) | Get the results of a usage search |
+| [**getUsageSimplesearchExecutionIdResults**](UsageApi.html#getUsageSimplesearchExecutionIdResults) | Get the results of a usage search. Number of records to be returned is limited to 20,000 results. |
 | [**postOauthClientUsageQuery**](UsageApi.html#postOauthClientUsageQuery) | Query for OAuth client API usage |
 | [**postUsageQuery**](UsageApi.html#postUsageQuery) | Query organization API Usage -  |
-| [**postUsageSimplesearch**](UsageApi.html#postUsageSimplesearch) | Search organization API Usage -  |
+| [**postUsageSimplesearch**](UsageApi.html#postUsageSimplesearch) | Search organization API Usage |
 {: class="table-striped"}
 
 <a name="getOauthClientUsageQueryResult"></a>
@@ -216,7 +216,7 @@ try {
 
 > [ApiUsageQueryResult](ApiUsageQueryResult.html) getUsageSimplesearchExecutionIdResults(executionId)
 
-Get the results of a usage search
+Get the results of a usage search. Number of records to be returned is limited to 20,000 results.
 
 Wraps GET /api/v2/usage/simplesearch/{executionId}/results  
 
@@ -408,9 +408,9 @@ try {
 
 > [UsageExecutionResult](UsageExecutionResult.html) postUsageSimplesearch(body)
 
-Search organization API Usage - 
+Search organization API Usage
 
-After calling this method, you will then need to poll for the query results based on the returned execution Id
+After calling this method, you will then need to poll for the query results based on the returned execution Id. The number of records is limited to 20,000 results
 
 Wraps POST /api/v2/usage/simplesearch  
 

@@ -15,6 +15,8 @@ title: OrphanRecording
 | **providerType** | [**ProviderTypeEnum**](#ProviderTypeEnum)<!----> |  |  [optional] |
 | **mediaSizeBytes** | <!----><!---->**Long**<!----> |  |  [optional] |
 | **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> |  |  [optional] |
+| **mediaSubtype** | [**MediaSubtypeEnum**](#MediaSubtypeEnum)<!----> |  |  [optional] |
+| **mediaSubject** | <!----><!---->**String**<!----> |  |  [optional] |
 | **fileState** | [**FileStateEnum**](#FileStateEnum)<!----> |  |  [optional] |
 | **providerEndpoint** | <!----><!---->[**Endpoint**](Endpoint.html)<!----> |  |  [optional] |
 | **recording** | <!----><!---->[**Recording**](Recording.html)<!----> |  |  [optional] |
@@ -52,6 +54,20 @@ title: OrphanRecording
 | CHAT | &quot;CHAT&quot; | 
 | EMAIL | &quot;EMAIL&quot; | 
 | SCREEN | &quot;SCREEN&quot; | 
+{: class="table table-striped"}
+
+
+<a name="MediaSubtypeEnum"></a>
+
+## Enum: MediaSubtypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| TRUNK | &quot;Trunk&quot; | 
+| STATION | &quot;Station&quot; | 
+| CONSULT | &quot;Consult&quot; | 
+| SCREEN | &quot;Screen&quot; | 
 {: class="table table-striped"}
 
 

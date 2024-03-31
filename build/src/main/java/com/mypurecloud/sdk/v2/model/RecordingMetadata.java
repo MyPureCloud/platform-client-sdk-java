@@ -33,6 +33,57 @@ public class RecordingMetadata  implements Serializable {
   private String startTime = null;
   private String endTime = null;
   private String media = null;
+
+  private static class MediaSubtypeEnumDeserializer extends StdDeserializer<MediaSubtypeEnum> {
+    public MediaSubtypeEnumDeserializer() {
+      super(MediaSubtypeEnumDeserializer.class);
+    }
+
+    @Override
+    public MediaSubtypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MediaSubtypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The recording media subtype.
+   */
+ @JsonDeserialize(using = MediaSubtypeEnumDeserializer.class)
+  public enum MediaSubtypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    TRUNK("Trunk"),
+    STATION("Station"),
+    CONSULT("Consult"),
+    SCREEN("Screen");
+
+    private String value;
+
+    MediaSubtypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static MediaSubtypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (MediaSubtypeEnum value : MediaSubtypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return MediaSubtypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private MediaSubtypeEnum mediaSubtype = null;
+  private String mediaSubject = null;
   private List<Annotation> annotations = new ArrayList<Annotation>();
 
   private static class FileStateEnumDeserializer extends StdDeserializer<FileStateEnum> {
@@ -253,6 +304,42 @@ public class RecordingMetadata  implements Serializable {
   }
   public void setMedia(String media) {
     this.media = media;
+  }
+
+
+  /**
+   * The recording media subtype.
+   **/
+  public RecordingMetadata mediaSubtype(MediaSubtypeEnum mediaSubtype) {
+    this.mediaSubtype = mediaSubtype;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The recording media subtype.")
+  @JsonProperty("mediaSubtype")
+  public MediaSubtypeEnum getMediaSubtype() {
+    return mediaSubtype;
+  }
+  public void setMediaSubtype(MediaSubtypeEnum mediaSubtype) {
+    this.mediaSubtype = mediaSubtype;
+  }
+
+
+  /**
+   * The recording media subject.
+   **/
+  public RecordingMetadata mediaSubject(String mediaSubject) {
+    this.mediaSubject = mediaSubject;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The recording media subject.")
+  @JsonProperty("mediaSubject")
+  public String getMediaSubject() {
+    return mediaSubject;
+  }
+  public void setMediaSubject(String mediaSubject) {
+    this.mediaSubject = mediaSubject;
   }
 
 
@@ -478,6 +565,8 @@ public class RecordingMetadata  implements Serializable {
             Objects.equals(this.startTime, recordingMetadata.startTime) &&
             Objects.equals(this.endTime, recordingMetadata.endTime) &&
             Objects.equals(this.media, recordingMetadata.media) &&
+            Objects.equals(this.mediaSubtype, recordingMetadata.mediaSubtype) &&
+            Objects.equals(this.mediaSubject, recordingMetadata.mediaSubject) &&
             Objects.equals(this.annotations, recordingMetadata.annotations) &&
             Objects.equals(this.fileState, recordingMetadata.fileState) &&
             Objects.equals(this.restoreExpirationTime, recordingMetadata.restoreExpirationTime) &&
@@ -494,7 +583,7 @@ public class RecordingMetadata  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversationId, path, startTime, endTime, media, annotations, fileState, restoreExpirationTime, archiveDate, archiveMedium, deleteDate, exportDate, exportedDate, maxAllowedRestorationsForOrg, remainingRestorationsAllowedForOrg, sessionId, selfUri);
+    return Objects.hash(id, name, conversationId, path, startTime, endTime, media, mediaSubtype, mediaSubject, annotations, fileState, restoreExpirationTime, archiveDate, archiveMedium, deleteDate, exportDate, exportedDate, maxAllowedRestorationsForOrg, remainingRestorationsAllowedForOrg, sessionId, selfUri);
   }
 
   @Override
@@ -509,6 +598,8 @@ public class RecordingMetadata  implements Serializable {
     sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
     sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
     sb.append("    media: ").append(toIndentedString(media)).append("\n");
+    sb.append("    mediaSubtype: ").append(toIndentedString(mediaSubtype)).append("\n");
+    sb.append("    mediaSubject: ").append(toIndentedString(mediaSubject)).append("\n");
     sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
     sb.append("    fileState: ").append(toIndentedString(fileState)).append("\n");
     sb.append("    restoreExpirationTime: ").append(toIndentedString(restoreExpirationTime)).append("\n");

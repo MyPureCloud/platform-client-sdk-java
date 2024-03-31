@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.FlowLogLevel;
 import com.mypurecloud.sdk.v2.model.FlowLogLevelCharacteristicsDefinition;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -25,23 +26,21 @@ import java.io.Serializable;
 
 public class FlowLogLevelCharacteristicsDefinitions  implements Serializable {
   
+  private List<FlowLogLevel> logLevels = new ArrayList<FlowLogLevel>();
   private List<FlowLogLevelCharacteristicsDefinition> characteristics = new ArrayList<FlowLogLevelCharacteristicsDefinition>();
 
   
-  /**
-   **/
-  public FlowLogLevelCharacteristicsDefinitions characteristics(List<FlowLogLevelCharacteristicsDefinition> characteristics) {
-    this.characteristics = characteristics;
-    return this;
+  @ApiModelProperty(example = "null", value = "A list of flow log levels available to the organization.")
+  @JsonProperty("logLevels")
+  public List<FlowLogLevel> getLogLevels() {
+    return logLevels;
   }
-  
-  @ApiModelProperty(example = "null", value = "")
+
+
+  @ApiModelProperty(example = "null", value = "A list of characteristics that the loglevels will have that are available to the organization..")
   @JsonProperty("characteristics")
   public List<FlowLogLevelCharacteristicsDefinition> getCharacteristics() {
     return characteristics;
-  }
-  public void setCharacteristics(List<FlowLogLevelCharacteristicsDefinition> characteristics) {
-    this.characteristics = characteristics;
   }
 
 
@@ -55,12 +54,13 @@ public class FlowLogLevelCharacteristicsDefinitions  implements Serializable {
     }
     FlowLogLevelCharacteristicsDefinitions flowLogLevelCharacteristicsDefinitions = (FlowLogLevelCharacteristicsDefinitions) o;
 
-    return Objects.equals(this.characteristics, flowLogLevelCharacteristicsDefinitions.characteristics);
+    return Objects.equals(this.logLevels, flowLogLevelCharacteristicsDefinitions.logLevels) &&
+            Objects.equals(this.characteristics, flowLogLevelCharacteristicsDefinitions.characteristics);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(characteristics);
+    return Objects.hash(logLevels, characteristics);
   }
 
   @Override
@@ -68,6 +68,7 @@ public class FlowLogLevelCharacteristicsDefinitions  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class FlowLogLevelCharacteristicsDefinitions {\n");
     
+    sb.append("    logLevels: ").append(toIndentedString(logLevels)).append("\n");
     sb.append("    characteristics: ").append(toIndentedString(characteristics)).append("\n");
     sb.append("}");
     return sb.toString();

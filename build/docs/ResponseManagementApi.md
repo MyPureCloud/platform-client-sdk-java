@@ -17,6 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getResponsemanagementResponseassetsStatusStatusId**](ResponseManagementApi.html#getResponsemanagementResponseassetsStatusStatusId) | Get response asset upload status |
 | [**getResponsemanagementResponses**](ResponseManagementApi.html#getResponsemanagementResponses) | Gets a list of existing responses. |
 | [**postResponsemanagementLibraries**](ResponseManagementApi.html#postResponsemanagementLibraries) | Create a response library. |
+| [**postResponsemanagementLibrariesBulk**](ResponseManagementApi.html#postResponsemanagementLibrariesBulk) | Get response libraries. |
 | [**postResponsemanagementResponseassetsSearch**](ResponseManagementApi.html#postResponsemanagementResponseassetsSearch) | Search response assets |
 | [**postResponsemanagementResponseassetsUploads**](ResponseManagementApi.html#postResponsemanagementResponseassetsUploads) | Creates pre-signed url for uploading response asset |
 | [**postResponsemanagementResponses**](ResponseManagementApi.html#postResponsemanagementResponses) | Create a response. |
@@ -650,6 +651,67 @@ try {
 ### Return type
 
 [**Library**](Library.html)
+
+<a name="postResponsemanagementLibrariesBulk"></a>
+
+# **postResponsemanagementLibrariesBulk**
+
+
+
+> [LibraryEntityListing](LibraryEntityListing.html) postResponsemanagementLibrariesBulk(body)
+
+Get response libraries.
+
+Wraps POST /api/v2/responsemanagement/libraries/bulk  
+
+Requires ANY permissions: 
+
+* responses:library:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ResponseManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ResponseManagementApi apiInstance = new ResponseManagementApi();
+LibraryBatchRequest body = new LibraryBatchRequest(); // LibraryBatchRequest | LibraryIDs (max allowed 50)
+try {
+    LibraryEntityListing result = apiInstance.postResponsemanagementLibrariesBulk(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ResponseManagementApi#postResponsemanagementLibrariesBulk");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**LibraryBatchRequest**](LibraryBatchRequest.html)| LibraryIDs (max allowed 50) | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LibraryEntityListing**](LibraryEntityListing.html)
 
 <a name="postResponsemanagementResponseassetsSearch"></a>
 

@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmUserNotificationTopicAdherenceExplanationNotification;
+import com.mypurecloud.sdk.v2.model.WfmUserNotificationTopicAlternativeShiftNotification;
 import com.mypurecloud.sdk.v2.model.WfmUserNotificationTopicShiftTradeNotification;
 import com.mypurecloud.sdk.v2.model.WfmUserNotificationTopicTimeOffRequestNotification;
 import io.swagger.annotations.ApiModel;
@@ -52,7 +53,8 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SHIFTTRADE("ShiftTrade"),
     TIMEOFFREQUEST("TimeOffRequest"),
-    ADHERENCEEXPLANATION("AdherenceExplanation");
+    ADHERENCEEXPLANATION("AdherenceExplanation"),
+    ALTERNATIVESHIFT("AlternativeShift");
 
     private String value;
 
@@ -83,6 +85,7 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
   private WfmUserNotificationTopicShiftTradeNotification shiftTrade = null;
   private WfmUserNotificationTopicTimeOffRequestNotification timeOffRequest = null;
   private WfmUserNotificationTopicAdherenceExplanationNotification adherenceExplanation = null;
+  private WfmUserNotificationTopicAlternativeShiftNotification alternativeShift = null;
   private Boolean agentNotification = null;
   private List<String> otherNotificationIdsInGroup = new ArrayList<String>();
   private Boolean markedAsRead = null;
@@ -209,6 +212,23 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
 
   /**
    **/
+  public WfmUserNotificationTopicWfmUserNotification alternativeShift(WfmUserNotificationTopicAlternativeShiftNotification alternativeShift) {
+    this.alternativeShift = alternativeShift;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("alternativeShift")
+  public WfmUserNotificationTopicAlternativeShiftNotification getAlternativeShift() {
+    return alternativeShift;
+  }
+  public void setAlternativeShift(WfmUserNotificationTopicAlternativeShiftNotification alternativeShift) {
+    this.alternativeShift = alternativeShift;
+  }
+
+
+  /**
+   **/
   public WfmUserNotificationTopicWfmUserNotification agentNotification(Boolean agentNotification) {
     this.agentNotification = agentNotification;
     return this;
@@ -275,6 +295,7 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
             Objects.equals(this.shiftTrade, wfmUserNotificationTopicWfmUserNotification.shiftTrade) &&
             Objects.equals(this.timeOffRequest, wfmUserNotificationTopicWfmUserNotification.timeOffRequest) &&
             Objects.equals(this.adherenceExplanation, wfmUserNotificationTopicWfmUserNotification.adherenceExplanation) &&
+            Objects.equals(this.alternativeShift, wfmUserNotificationTopicWfmUserNotification.alternativeShift) &&
             Objects.equals(this.agentNotification, wfmUserNotificationTopicWfmUserNotification.agentNotification) &&
             Objects.equals(this.otherNotificationIdsInGroup, wfmUserNotificationTopicWfmUserNotification.otherNotificationIdsInGroup) &&
             Objects.equals(this.markedAsRead, wfmUserNotificationTopicWfmUserNotification.markedAsRead);
@@ -282,7 +303,7 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, mutableGroupId, timestamp, type, shiftTrade, timeOffRequest, adherenceExplanation, agentNotification, otherNotificationIdsInGroup, markedAsRead);
+    return Objects.hash(id, mutableGroupId, timestamp, type, shiftTrade, timeOffRequest, adherenceExplanation, alternativeShift, agentNotification, otherNotificationIdsInGroup, markedAsRead);
   }
 
   @Override
@@ -297,6 +318,7 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
     sb.append("    shiftTrade: ").append(toIndentedString(shiftTrade)).append("\n");
     sb.append("    timeOffRequest: ").append(toIndentedString(timeOffRequest)).append("\n");
     sb.append("    adherenceExplanation: ").append(toIndentedString(adherenceExplanation)).append("\n");
+    sb.append("    alternativeShift: ").append(toIndentedString(alternativeShift)).append("\n");
     sb.append("    agentNotification: ").append(toIndentedString(agentNotification)).append("\n");
     sb.append("    otherNotificationIdsInGroup: ").append(toIndentedString(otherNotificationIdsInGroup)).append("\n");
     sb.append("    markedAsRead: ").append(toIndentedString(markedAsRead)).append("\n");

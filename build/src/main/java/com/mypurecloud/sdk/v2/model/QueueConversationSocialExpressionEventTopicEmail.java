@@ -54,7 +54,8 @@ public class QueueConversationSocialExpressionEventTopicEmail  implements Serial
     CONNECTED("connected"),
     DISCONNECTED("disconnected"),
     NONE("none"),
-    TRANSMITTING("transmitting");
+    TRANSMITTING("transmitting"),
+    PARKED("parked");
 
     private String value;
 
@@ -105,7 +106,8 @@ public class QueueConversationSocialExpressionEventTopicEmail  implements Serial
     CONNECTED("connected"),
     DISCONNECTED("disconnected"),
     NONE("none"),
-    TRANSMITTING("transmitting");
+    TRANSMITTING("transmitting"),
+    PARKED("parked");
 
     private String value;
 

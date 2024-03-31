@@ -24,6 +24,7 @@ import java.io.Serializable;
 
 public class V2MobiusAlertsTopicConditionRulePredicate  implements Serializable {
   
+  private String id = null;
   private V2MobiusAlertsTopicEntityProperties entity = null;
   private String metric = null;
 
@@ -130,6 +131,61 @@ public class V2MobiusAlertsTopicConditionRulePredicate  implements Serializable 
   }
   private MetricValueTypeEnum metricValueType = null;
   private BigDecimal value = null;
+  private String status = null;
+
+  private static class MediaTypeEnumDeserializer extends StdDeserializer<MediaTypeEnum> {
+    public MediaTypeEnumDeserializer() {
+      super(MediaTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public MediaTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MediaTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets mediaType
+   */
+ @JsonDeserialize(using = MediaTypeEnumDeserializer.class)
+  public enum MediaTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    VOICE("Voice"),
+    CHAT("Chat"),
+    EMAIL("Email"),
+    CALLBACK("Callback"),
+    MESSAGE("Message"),
+    SCREENSHARE("Screenshare"),
+    COBROWSE("Cobrowse"),
+    UNKNOWN("Unknown");
+
+    private String value;
+
+    MediaTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static MediaTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (MediaTypeEnum value : MediaTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return MediaTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private MediaTypeEnum mediaType = null;
 
   private static class ComparisonOperatorEnumDeserializer extends StdDeserializer<ComparisonOperatorEnum> {
     public ComparisonOperatorEnumDeserializer() {
@@ -185,6 +241,23 @@ public class V2MobiusAlertsTopicConditionRulePredicate  implements Serializable 
   private ComparisonOperatorEnum comparisonOperator = null;
 
   
+  /**
+   **/
+  public V2MobiusAlertsTopicConditionRulePredicate id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+  public void setId(String id) {
+    this.id = id;
+  }
+
+
   /**
    **/
   public V2MobiusAlertsTopicConditionRulePredicate entity(V2MobiusAlertsTopicEntityProperties entity) {
@@ -272,6 +345,40 @@ public class V2MobiusAlertsTopicConditionRulePredicate  implements Serializable 
 
   /**
    **/
+  public V2MobiusAlertsTopicConditionRulePredicate status(String status) {
+    this.status = status;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("status")
+  public String getStatus() {
+    return status;
+  }
+  public void setStatus(String status) {
+    this.status = status;
+  }
+
+
+  /**
+   **/
+  public V2MobiusAlertsTopicConditionRulePredicate mediaType(MediaTypeEnum mediaType) {
+    this.mediaType = mediaType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("mediaType")
+  public MediaTypeEnum getMediaType() {
+    return mediaType;
+  }
+  public void setMediaType(MediaTypeEnum mediaType) {
+    this.mediaType = mediaType;
+  }
+
+
+  /**
+   **/
   public V2MobiusAlertsTopicConditionRulePredicate comparisonOperator(ComparisonOperatorEnum comparisonOperator) {
     this.comparisonOperator = comparisonOperator;
     return this;
@@ -297,17 +404,20 @@ public class V2MobiusAlertsTopicConditionRulePredicate  implements Serializable 
     }
     V2MobiusAlertsTopicConditionRulePredicate v2MobiusAlertsTopicConditionRulePredicate = (V2MobiusAlertsTopicConditionRulePredicate) o;
 
-    return Objects.equals(this.entity, v2MobiusAlertsTopicConditionRulePredicate.entity) &&
+    return Objects.equals(this.id, v2MobiusAlertsTopicConditionRulePredicate.id) &&
+            Objects.equals(this.entity, v2MobiusAlertsTopicConditionRulePredicate.entity) &&
             Objects.equals(this.metric, v2MobiusAlertsTopicConditionRulePredicate.metric) &&
             Objects.equals(this.metricType, v2MobiusAlertsTopicConditionRulePredicate.metricType) &&
             Objects.equals(this.metricValueType, v2MobiusAlertsTopicConditionRulePredicate.metricValueType) &&
             Objects.equals(this.value, v2MobiusAlertsTopicConditionRulePredicate.value) &&
+            Objects.equals(this.status, v2MobiusAlertsTopicConditionRulePredicate.status) &&
+            Objects.equals(this.mediaType, v2MobiusAlertsTopicConditionRulePredicate.mediaType) &&
             Objects.equals(this.comparisonOperator, v2MobiusAlertsTopicConditionRulePredicate.comparisonOperator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entity, metric, metricType, metricValueType, value, comparisonOperator);
+    return Objects.hash(id, entity, metric, metricType, metricValueType, value, status, mediaType, comparisonOperator);
   }
 
   @Override
@@ -315,11 +425,14 @@ public class V2MobiusAlertsTopicConditionRulePredicate  implements Serializable 
     StringBuilder sb = new StringBuilder();
     sb.append("class V2MobiusAlertsTopicConditionRulePredicate {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    entity: ").append(toIndentedString(entity)).append("\n");
     sb.append("    metric: ").append(toIndentedString(metric)).append("\n");
     sb.append("    metricType: ").append(toIndentedString(metricType)).append("\n");
     sb.append("    metricValueType: ").append(toIndentedString(metricValueType)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
     sb.append("    comparisonOperator: ").append(toIndentedString(comparisonOperator)).append("\n");
     sb.append("}");
     return sb.toString();

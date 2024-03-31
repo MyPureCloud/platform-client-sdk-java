@@ -304,6 +304,7 @@ public class GetWorkforcemanagementManagementunitsRequest {
 	public enum featureValues { 
 		AGENTSCHEDULE("AgentSchedule"),
 		AGENTTIMEOFFREQUEST("AgentTimeOffRequest"),
+		AGENTWORKPLANBID("AgentWorkPlanBid"),
 		ALTERNATIVESHIFT("AlternativeShift"),
 		COACHING("Coaching"),
 		LEARNING("Learning"),

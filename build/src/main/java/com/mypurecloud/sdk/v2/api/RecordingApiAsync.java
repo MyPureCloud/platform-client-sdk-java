@@ -2459,10 +2459,11 @@ public class RecordingApiAsync {
 
   /**
    * Retrieves a paged listing of screen recording sessions
-   * 
+   * Coming soon: This API is deprecated and will be replaced by /api/v2/recordings/screensessions/details
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ScreenRecordingSessionListing> getRecordingsScreensessionsAsync(GetRecordingsScreensessionsRequest request, final AsyncApiCallback<ScreenRecordingSessionListing> callback) {
     try {
@@ -2493,10 +2494,11 @@ public class RecordingApiAsync {
 
   /**
    * Retrieves a paged listing of screen recording sessions
-   * 
+   * Coming soon: This API is deprecated and will be replaced by /api/v2/recordings/screensessions/details
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<ScreenRecordingSessionListing>> getRecordingsScreensessionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScreenRecordingSessionListing>> callback) {
     try {

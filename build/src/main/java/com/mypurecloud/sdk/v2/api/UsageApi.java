@@ -286,7 +286,7 @@ public class UsageApi {
   }
 
   /**
-   * Get the results of a usage search
+   * Get the results of a usage search. Number of records to be returned is limited to 20,000 results.
    * 
    * @param executionId ID of the search execution (required)
    * @return ApiUsageQueryResult
@@ -298,7 +298,7 @@ public class UsageApi {
   }
 
   /**
-   * Get the results of a usage search
+   * Get the results of a usage search. Number of records to be returned is limited to 20,000 results.
    * 
    * @param executionId ID of the search execution (required)
    * @return ApiUsageQueryResult
@@ -316,7 +316,7 @@ public class UsageApi {
   }
 
   /**
-   * Get the results of a usage search
+   * Get the results of a usage search. Number of records to be returned is limited to 20,000 results.
    * 
    * @param request The request object
    * @return ApiUsageQueryResult
@@ -335,7 +335,7 @@ public class UsageApi {
   }
 
   /**
-   * Get the results of a usage search
+   * Get the results of a usage search. Number of records to be returned is limited to 20,000 results.
    * 
    * @param request The request object
    * @return the response
@@ -524,8 +524,8 @@ public class UsageApi {
   }
 
   /**
-   * Search organization API Usage - 
-   * After calling this method, you will then need to poll for the query results based on the returned execution Id
+   * Search organization API Usage
+   * After calling this method, you will then need to poll for the query results based on the returned execution Id. The number of records is limited to 20,000 results
    * @param body SimpleSearch (required)
    * @return UsageExecutionResult
    * @throws ApiException if the request fails on the server
@@ -536,8 +536,8 @@ public class UsageApi {
   }
 
   /**
-   * Search organization API Usage - 
-   * After calling this method, you will then need to poll for the query results based on the returned execution Id
+   * Search organization API Usage
+   * After calling this method, you will then need to poll for the query results based on the returned execution Id. The number of records is limited to 20,000 results
    * @param body SimpleSearch (required)
    * @return UsageExecutionResult
    * @throws IOException if the request fails to be processed
@@ -554,8 +554,8 @@ public class UsageApi {
   }
 
   /**
-   * Search organization API Usage - 
-   * After calling this method, you will then need to poll for the query results based on the returned execution Id
+   * Search organization API Usage
+   * After calling this method, you will then need to poll for the query results based on the returned execution Id. The number of records is limited to 20,000 results
    * @param request The request object
    * @return UsageExecutionResult
    * @throws ApiException if the request fails on the server
@@ -573,8 +573,8 @@ public class UsageApi {
   }
 
   /**
-   * Search organization API Usage - 
-   * After calling this method, you will then need to poll for the query results based on the returned execution Id
+   * Search organization API Usage
+   * After calling this method, you will then need to poll for the query results based on the returned execution Id. The number of records is limited to 20,000 results
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

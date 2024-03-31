@@ -12,6 +12,7 @@ title: QueueConversationCallbackEventTopicCallbackConversation
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
 | **participants** | <!----><!---->[**List&lt;QueueConversationCallbackEventTopicCallbackMediaParticipant&gt;**](QueueConversationCallbackEventTopicCallbackMediaParticipant.html)<!----> |  |  [optional] |
 | **otherMediaUris** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **address** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -72,6 +72,7 @@ import com.mypurecloud.sdk.v2.model.SkillGroupWithMemberDivisions;
 import com.mypurecloud.sdk.v2.model.SmsAddress;
 import com.mypurecloud.sdk.v2.model.SmsAddressEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
+import com.mypurecloud.sdk.v2.model.SmsAlphanumericProvision;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumber;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberImport;
@@ -224,6 +225,7 @@ import com.mypurecloud.sdk.v2.api.request.PostRoutingSkillgroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSkillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsAddressesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsPhonenumbersRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsPhonenumbersAlphanumericRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsPhonenumbersImportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingUtilizationLabelsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingUtilizationTagsRequest;
@@ -10442,6 +10444,88 @@ public class RoutingApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<SmsPhoneNumber> postRoutingSmsPhonenumbers(ApiRequest<SmsPhoneNumberProvision> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SmsPhoneNumber>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SmsPhoneNumber> response = (ApiResponse<SmsPhoneNumber>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SmsPhoneNumber> response = (ApiResponse<SmsPhoneNumber>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Provision an alphanumeric number for SMS
+   * 
+   * postRoutingSmsPhonenumbersAlphanumeric is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body SmsPhoneNumber (required)
+   * @return SmsPhoneNumber
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SmsPhoneNumber postRoutingSmsPhonenumbersAlphanumeric(SmsAlphanumericProvision body) throws IOException, ApiException {
+    return  postRoutingSmsPhonenumbersAlphanumeric(createPostRoutingSmsPhonenumbersAlphanumericRequest(body));
+  }
+
+  /**
+   * Provision an alphanumeric number for SMS
+   * 
+   * postRoutingSmsPhonenumbersAlphanumeric is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body SmsPhoneNumber (required)
+   * @return SmsPhoneNumber
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SmsPhoneNumber> postRoutingSmsPhonenumbersAlphanumericWithHttpInfo(SmsAlphanumericProvision body) throws IOException {
+    return postRoutingSmsPhonenumbersAlphanumeric(createPostRoutingSmsPhonenumbersAlphanumericRequest(body).withHttpInfo());
+  }
+
+  private PostRoutingSmsPhonenumbersAlphanumericRequest createPostRoutingSmsPhonenumbersAlphanumericRequest(SmsAlphanumericProvision body) {
+    return PostRoutingSmsPhonenumbersAlphanumericRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Provision an alphanumeric number for SMS
+   * 
+   * postRoutingSmsPhonenumbersAlphanumeric is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return SmsPhoneNumber
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SmsPhoneNumber postRoutingSmsPhonenumbersAlphanumeric(PostRoutingSmsPhonenumbersAlphanumericRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SmsPhoneNumber> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SmsPhoneNumber>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Provision an alphanumeric number for SMS
+   * 
+   * postRoutingSmsPhonenumbersAlphanumeric is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SmsPhoneNumber> postRoutingSmsPhonenumbersAlphanumeric(ApiRequest<SmsAlphanumericProvision> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<SmsPhoneNumber>() {});
     }

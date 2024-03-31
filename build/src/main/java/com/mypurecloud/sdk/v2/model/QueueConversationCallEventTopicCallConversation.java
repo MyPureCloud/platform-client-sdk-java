@@ -29,6 +29,7 @@ public class QueueConversationCallEventTopicCallConversation  implements Seriali
   private String name = null;
   private List<QueueConversationCallEventTopicCallMediaParticipant> participants = new ArrayList<QueueConversationCallEventTopicCallMediaParticipant>();
   private List<String> otherMediaUris = new ArrayList<String>();
+  private String address = null;
 
   private static class RecordingStateEnumDeserializer extends StdDeserializer<RecordingStateEnum> {
     public RecordingStateEnumDeserializer() {
@@ -152,6 +153,23 @@ public class QueueConversationCallEventTopicCallConversation  implements Seriali
 
   /**
    **/
+  public QueueConversationCallEventTopicCallConversation address(String address) {
+    this.address = address;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("address")
+  public String getAddress() {
+    return address;
+  }
+  public void setAddress(String address) {
+    this.address = address;
+  }
+
+
+  /**
+   **/
   public QueueConversationCallEventTopicCallConversation recordingState(RecordingStateEnum recordingState) {
     this.recordingState = recordingState;
     return this;
@@ -215,6 +233,7 @@ public class QueueConversationCallEventTopicCallConversation  implements Seriali
             Objects.equals(this.name, queueConversationCallEventTopicCallConversation.name) &&
             Objects.equals(this.participants, queueConversationCallEventTopicCallConversation.participants) &&
             Objects.equals(this.otherMediaUris, queueConversationCallEventTopicCallConversation.otherMediaUris) &&
+            Objects.equals(this.address, queueConversationCallEventTopicCallConversation.address) &&
             Objects.equals(this.recordingState, queueConversationCallEventTopicCallConversation.recordingState) &&
             Objects.equals(this.securePause, queueConversationCallEventTopicCallConversation.securePause) &&
             Objects.equals(this.maxParticipants, queueConversationCallEventTopicCallConversation.maxParticipants);
@@ -222,7 +241,7 @@ public class QueueConversationCallEventTopicCallConversation  implements Seriali
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, recordingState, securePause, maxParticipants);
+    return Objects.hash(id, name, participants, otherMediaUris, address, recordingState, securePause, maxParticipants);
   }
 
   @Override
@@ -234,6 +253,7 @@ public class QueueConversationCallEventTopicCallConversation  implements Seriali
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
+    sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    recordingState: ").append(toIndentedString(recordingState)).append("\n");
     sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
     sb.append("    maxParticipants: ").append(toIndentedString(maxParticipants)).append("\n");

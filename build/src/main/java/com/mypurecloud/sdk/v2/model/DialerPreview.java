@@ -29,6 +29,7 @@ public class DialerPreview  implements Serializable {
   private String contactListId = null;
   private String campaignId = null;
   private List<PhoneNumberColumn> phoneNumberColumns = new ArrayList<PhoneNumberColumn>();
+  private Boolean callbackAutoAnswer = null;
 
   
   /**
@@ -120,6 +121,24 @@ public class DialerPreview  implements Serializable {
   }
 
 
+  /**
+   * Whether or not to auto answer the callback
+   **/
+  public DialerPreview callbackAutoAnswer(Boolean callbackAutoAnswer) {
+    this.callbackAutoAnswer = callbackAutoAnswer;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether or not to auto answer the callback")
+  @JsonProperty("callbackAutoAnswer")
+  public Boolean getCallbackAutoAnswer() {
+    return callbackAutoAnswer;
+  }
+  public void setCallbackAutoAnswer(Boolean callbackAutoAnswer) {
+    this.callbackAutoAnswer = callbackAutoAnswer;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -134,12 +153,13 @@ public class DialerPreview  implements Serializable {
             Objects.equals(this.contactId, dialerPreview.contactId) &&
             Objects.equals(this.contactListId, dialerPreview.contactListId) &&
             Objects.equals(this.campaignId, dialerPreview.campaignId) &&
-            Objects.equals(this.phoneNumberColumns, dialerPreview.phoneNumberColumns);
+            Objects.equals(this.phoneNumberColumns, dialerPreview.phoneNumberColumns) &&
+            Objects.equals(this.callbackAutoAnswer, dialerPreview.callbackAutoAnswer);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, contactId, contactListId, campaignId, phoneNumberColumns);
+    return Objects.hash(id, contactId, contactListId, campaignId, phoneNumberColumns, callbackAutoAnswer);
   }
 
   @Override
@@ -152,6 +172,7 @@ public class DialerPreview  implements Serializable {
     sb.append("    contactListId: ").append(toIndentedString(contactListId)).append("\n");
     sb.append("    campaignId: ").append(toIndentedString(campaignId)).append("\n");
     sb.append("    phoneNumberColumns: ").append(toIndentedString(phoneNumberColumns)).append("\n");
+    sb.append("    callbackAutoAnswer: ").append(toIndentedString(callbackAutoAnswer)).append("\n");
     sb.append("}");
     return sb.toString();
   }

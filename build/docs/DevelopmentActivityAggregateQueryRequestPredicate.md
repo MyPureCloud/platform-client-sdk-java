@@ -9,7 +9,7 @@ title: DevelopmentActivityAggregateQueryRequestPredicate
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **dimension** | [**DimensionEnum**](#DimensionEnum)<!----> | Each predicates specifies a dimension. |  |
-| **value** | <!----><!---->**String**<!----> | Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational, AssessedContent, Assessment, Coaching |  |
+| **value** | <!----><!---->**String**<!----> | Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational, AssessedContent, Assessment, Coaching, External |  |
 {: class="table table-striped"}
 
 

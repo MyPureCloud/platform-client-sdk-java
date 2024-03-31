@@ -133,6 +133,57 @@ public class OrphanRecording  implements Serializable {
   }
   private MediaTypeEnum mediaType = null;
 
+  private static class MediaSubtypeEnumDeserializer extends StdDeserializer<MediaSubtypeEnum> {
+    public MediaSubtypeEnumDeserializer() {
+      super(MediaSubtypeEnumDeserializer.class);
+    }
+
+    @Override
+    public MediaSubtypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MediaSubtypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets mediaSubtype
+   */
+ @JsonDeserialize(using = MediaSubtypeEnumDeserializer.class)
+  public enum MediaSubtypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    TRUNK("Trunk"),
+    STATION("Station"),
+    CONSULT("Consult"),
+    SCREEN("Screen");
+
+    private String value;
+
+    MediaSubtypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static MediaSubtypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (MediaSubtypeEnum value : MediaSubtypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return MediaSubtypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private MediaSubtypeEnum mediaSubtype = null;
+  private String mediaSubject = null;
+
   private static class FileStateEnumDeserializer extends StdDeserializer<FileStateEnum> {
     public FileStateEnumDeserializer() {
       super(FileStateEnumDeserializer.class);
@@ -419,6 +470,40 @@ public class OrphanRecording  implements Serializable {
 
   /**
    **/
+  public OrphanRecording mediaSubtype(MediaSubtypeEnum mediaSubtype) {
+    this.mediaSubtype = mediaSubtype;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("mediaSubtype")
+  public MediaSubtypeEnum getMediaSubtype() {
+    return mediaSubtype;
+  }
+  public void setMediaSubtype(MediaSubtypeEnum mediaSubtype) {
+    this.mediaSubtype = mediaSubtype;
+  }
+
+
+  /**
+   **/
+  public OrphanRecording mediaSubject(String mediaSubject) {
+    this.mediaSubject = mediaSubject;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("mediaSubject")
+  public String getMediaSubject() {
+    return mediaSubject;
+  }
+  public void setMediaSubject(String mediaSubject) {
+    this.mediaSubject = mediaSubject;
+  }
+
+
+  /**
+   **/
   public OrphanRecording fileState(FileStateEnum fileState) {
     this.fileState = fileState;
     return this;
@@ -545,6 +630,8 @@ public class OrphanRecording  implements Serializable {
             Objects.equals(this.providerType, orphanRecording.providerType) &&
             Objects.equals(this.mediaSizeBytes, orphanRecording.mediaSizeBytes) &&
             Objects.equals(this.mediaType, orphanRecording.mediaType) &&
+            Objects.equals(this.mediaSubtype, orphanRecording.mediaSubtype) &&
+            Objects.equals(this.mediaSubject, orphanRecording.mediaSubject) &&
             Objects.equals(this.fileState, orphanRecording.fileState) &&
             Objects.equals(this.providerEndpoint, orphanRecording.providerEndpoint) &&
             Objects.equals(this.recording, orphanRecording.recording) &&
@@ -556,7 +643,7 @@ public class OrphanRecording  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, createdTime, recoveredTime, providerType, mediaSizeBytes, mediaType, fileState, providerEndpoint, recording, orphanStatus, sourceOrphaningId, region, selfUri);
+    return Objects.hash(id, name, createdTime, recoveredTime, providerType, mediaSizeBytes, mediaType, mediaSubtype, mediaSubject, fileState, providerEndpoint, recording, orphanStatus, sourceOrphaningId, region, selfUri);
   }
 
   @Override
@@ -571,6 +658,8 @@ public class OrphanRecording  implements Serializable {
     sb.append("    providerType: ").append(toIndentedString(providerType)).append("\n");
     sb.append("    mediaSizeBytes: ").append(toIndentedString(mediaSizeBytes)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
+    sb.append("    mediaSubtype: ").append(toIndentedString(mediaSubtype)).append("\n");
+    sb.append("    mediaSubject: ").append(toIndentedString(mediaSubject)).append("\n");
     sb.append("    fileState: ").append(toIndentedString(fileState)).append("\n");
     sb.append("    providerEndpoint: ").append(toIndentedString(providerEndpoint)).append("\n");
     sb.append("    recording: ").append(toIndentedString(recording)).append("\n");

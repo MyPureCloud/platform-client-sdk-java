@@ -73,6 +73,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
     UPLOADING("uploading"),
     TRANSMITTING("transmitting"),
     SCHEDULED("scheduled"),
+    PARKED("parked"),
     NONE("none");
 
     private String value;
@@ -131,6 +132,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
     UPLOADING("uploading"),
     TRANSMITTING("transmitting"),
     SCHEDULED("scheduled"),
+    PARKED("parked"),
     NONE("none");
 
     private String value;

@@ -19,6 +19,7 @@ title: V2MobiusRulesTopicRule
 | **action** | [**ActionEnum**](#ActionEnum)<!----> |  |  [optional] |
 | **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **sendExitingAlarmNotification** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **waitBetweenNotificationMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

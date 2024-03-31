@@ -72,6 +72,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     UPLOADING("uploading"),
     TRANSMITTING("transmitting"),
     SCHEDULED("scheduled"),
+    PARKED("parked"),
     NONE("none");
 
     private String value;
@@ -130,6 +131,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     UPLOADING("uploading"),
     TRANSMITTING("transmitting"),
     SCHEDULED("scheduled"),
+    PARKED("parked"),
     NONE("none");
 
     private String value;

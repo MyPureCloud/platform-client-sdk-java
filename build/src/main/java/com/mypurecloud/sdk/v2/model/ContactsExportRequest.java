@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class ContactsExportRequest  implements Serializable {
   
   private String contactListFilterId = null;
-  private ContactBulkSearchCriteria searchCriteria = null;
+  private ContactBulkSearchCriteria criteria = null;
   private List<String> contactIds = new ArrayList<String>();
 
   
@@ -50,18 +50,18 @@ public class ContactsExportRequest  implements Serializable {
   /**
    * Criteria to filter the contacts by.
    **/
-  public ContactsExportRequest searchCriteria(ContactBulkSearchCriteria searchCriteria) {
-    this.searchCriteria = searchCriteria;
+  public ContactsExportRequest criteria(ContactBulkSearchCriteria criteria) {
+    this.criteria = criteria;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Criteria to filter the contacts by.")
-  @JsonProperty("searchCriteria")
-  public ContactBulkSearchCriteria getSearchCriteria() {
-    return searchCriteria;
+  @JsonProperty("criteria")
+  public ContactBulkSearchCriteria getCriteria() {
+    return criteria;
   }
-  public void setSearchCriteria(ContactBulkSearchCriteria searchCriteria) {
-    this.searchCriteria = searchCriteria;
+  public void setCriteria(ContactBulkSearchCriteria criteria) {
+    this.criteria = criteria;
   }
 
 
@@ -94,13 +94,13 @@ public class ContactsExportRequest  implements Serializable {
     ContactsExportRequest contactsExportRequest = (ContactsExportRequest) o;
 
     return Objects.equals(this.contactListFilterId, contactsExportRequest.contactListFilterId) &&
-            Objects.equals(this.searchCriteria, contactsExportRequest.searchCriteria) &&
+            Objects.equals(this.criteria, contactsExportRequest.criteria) &&
             Objects.equals(this.contactIds, contactsExportRequest.contactIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contactListFilterId, searchCriteria, contactIds);
+    return Objects.hash(contactListFilterId, criteria, contactIds);
   }
 
   @Override
@@ -109,7 +109,7 @@ public class ContactsExportRequest  implements Serializable {
     sb.append("class ContactsExportRequest {\n");
     
     sb.append("    contactListFilterId: ").append(toIndentedString(contactListFilterId)).append("\n");
-    sb.append("    searchCriteria: ").append(toIndentedString(searchCriteria)).append("\n");
+    sb.append("    criteria: ").append(toIndentedString(criteria)).append("\n");
     sb.append("    contactIds: ").append(toIndentedString(contactIds)).append("\n");
     sb.append("}");
     return sb.toString();

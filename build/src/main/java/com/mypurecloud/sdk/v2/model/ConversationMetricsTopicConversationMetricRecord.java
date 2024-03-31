@@ -224,6 +224,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     STATION("station"),
     USER("user"),
     VOICEMAIL("voicemail"),
+    VOICESURVEYFLOW("voicesurveyflow"),
     WORKFLOW("workflow");
 
     private String value;
@@ -638,6 +639,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     STATION("station"),
     USER("user"),
     VOICEMAIL("voicemail"),
+    VOICESURVEYFLOW("voicesurveyflow"),
     WORKFLOW("workflow");
 
     private String value;

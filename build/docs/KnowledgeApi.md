@@ -807,7 +807,7 @@ try {
 
 
 
-> [KnowledgeGuestDocument](KnowledgeGuestDocument.html) getKnowledgeGuestSessionDocument(sessionId, documentId)
+> [KnowledgeGuestDocumentResponse](KnowledgeGuestDocumentResponse.html) getKnowledgeGuestSessionDocument(sessionId, documentId)
 
 Get a knowledge document by ID.
 
@@ -828,7 +828,7 @@ KnowledgeApi apiInstance = new KnowledgeApi();
 String sessionId = "sessionId_example"; // String | Knowledge guest session ID.
 String documentId = "documentId_example"; // String | Document ID
 try {
-    KnowledgeGuestDocument result = apiInstance.getKnowledgeGuestSessionDocument(sessionId, documentId);
+    KnowledgeGuestDocumentResponse result = apiInstance.getKnowledgeGuestSessionDocument(sessionId, documentId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KnowledgeApi#getKnowledgeGuestSessionDocument");
@@ -848,7 +848,7 @@ try {
 
 ### Return type
 
-[**KnowledgeGuestDocument**](KnowledgeGuestDocument.html)
+[**KnowledgeGuestDocumentResponse**](KnowledgeGuestDocumentResponse.html)
 
 <a name="getKnowledgeGuestSessionDocuments"></a>
 

@@ -9,7 +9,7 @@ title: LearningAssignmentAggregateQueryRequestPredicate
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **dimension** | [**DimensionEnum**](#DimensionEnum)<!----> | Each predicates specifies a dimension. |  |
-| **value** | <!----><!---->**String**<!----> | Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational, AssessedContent, Assessment |  |
+| **value** | <!----><!---->**String**<!----> | Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational, AssessedContent, Assessment, External |  |
 {: class="table table-striped"}
 
 

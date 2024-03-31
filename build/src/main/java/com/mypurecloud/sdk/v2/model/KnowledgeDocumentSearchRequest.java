@@ -186,6 +186,7 @@ public class KnowledgeDocumentSearchRequest  implements Serializable {
   private KnowledgeSearchClientApplication application = null;
   private KnowledgeConversationContext conversationContext = null;
   private Float confidenceThreshold = null;
+  private Integer answerHighlightTopResults = null;
 
   
   /**
@@ -425,6 +426,26 @@ public class KnowledgeDocumentSearchRequest  implements Serializable {
   }
 
 
+  /**
+   * The number of articles to be sent for answer-highlighting. Can range from 1-5.
+   * minimum: 1
+   * maximum: 5
+   **/
+  public KnowledgeDocumentSearchRequest answerHighlightTopResults(Integer answerHighlightTopResults) {
+    this.answerHighlightTopResults = answerHighlightTopResults;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The number of articles to be sent for answer-highlighting. Can range from 1-5.")
+  @JsonProperty("answerHighlightTopResults")
+  public Integer getAnswerHighlightTopResults() {
+    return answerHighlightTopResults;
+  }
+  public void setAnswerHighlightTopResults(Integer answerHighlightTopResults) {
+    this.answerHighlightTopResults = answerHighlightTopResults;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -449,12 +470,13 @@ public class KnowledgeDocumentSearchRequest  implements Serializable {
             Objects.equals(this.sortBy, knowledgeDocumentSearchRequest.sortBy) &&
             Objects.equals(this.application, knowledgeDocumentSearchRequest.application) &&
             Objects.equals(this.conversationContext, knowledgeDocumentSearchRequest.conversationContext) &&
-            Objects.equals(this.confidenceThreshold, knowledgeDocumentSearchRequest.confidenceThreshold);
+            Objects.equals(this.confidenceThreshold, knowledgeDocumentSearchRequest.confidenceThreshold) &&
+            Objects.equals(this.answerHighlightTopResults, knowledgeDocumentSearchRequest.answerHighlightTopResults);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(query, pageSize, pageNumber, searchId, total, pageCount, queryType, includeDraftDocuments, interval, filter, sortOrder, sortBy, application, conversationContext, confidenceThreshold);
+    return Objects.hash(query, pageSize, pageNumber, searchId, total, pageCount, queryType, includeDraftDocuments, interval, filter, sortOrder, sortBy, application, conversationContext, confidenceThreshold, answerHighlightTopResults);
   }
 
   @Override
@@ -477,6 +499,7 @@ public class KnowledgeDocumentSearchRequest  implements Serializable {
     sb.append("    application: ").append(toIndentedString(application)).append("\n");
     sb.append("    conversationContext: ").append(toIndentedString(conversationContext)).append("\n");
     sb.append("    confidenceThreshold: ").append(toIndentedString(confidenceThreshold)).append("\n");
+    sb.append("    answerHighlightTopResults: ").append(toIndentedString(answerHighlightTopResults)).append("\n");
     sb.append("}");
     return sb.toString();
   }

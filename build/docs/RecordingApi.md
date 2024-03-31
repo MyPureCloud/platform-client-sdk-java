@@ -2097,11 +2097,13 @@ try {
 
 # **getRecordingsScreensessions**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [ScreenRecordingSessionListing](ScreenRecordingSessionListing.html) getRecordingsScreensessions(pageSize, pageNumber)
 
 Retrieves a paged listing of screen recording sessions
+
+Coming soon: This API is deprecated and will be replaced by /api/v2/recordings/screensessions/details
 
 Wraps GET /api/v2/recordings/screensessions  
 
