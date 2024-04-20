@@ -98,6 +98,20 @@ public class GetAuthorizationSubjectRequest {
 	    return this;
 	} 
 
+	private Boolean includeDuplicates;
+	public Boolean getIncludeDuplicates() {
+		return this.includeDuplicates;
+	}
+
+	public void setIncludeDuplicates(Boolean includeDuplicates) {
+		this.includeDuplicates = includeDuplicates;
+	}
+
+	public GetAuthorizationSubjectRequest withIncludeDuplicates(Boolean includeDuplicates) {
+	    this.setIncludeDuplicates(includeDuplicates);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -128,6 +142,9 @@ public class GetAuthorizationSubjectRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/authorization/subjects/{subjectId}")
                 .withPathParameter("subjectId", subjectId)
         
+
+                .withQueryParameters("includeDuplicates", "", includeDuplicates)
+        
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -156,6 +173,11 @@ public class GetAuthorizationSubjectRequest {
 
 		public Builder withSubjectId(String subjectId) {
 			request.setSubjectId(subjectId);
+			return this;
+		}
+
+		public Builder withIncludeDuplicates(Boolean includeDuplicates) {
+			request.setIncludeDuplicates(includeDuplicates);
 			return this;
 		}
 

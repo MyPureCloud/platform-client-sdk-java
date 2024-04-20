@@ -8727,8 +8727,8 @@ public class OutboundApi {
   }
 
   /**
-   * Retrieves audits for dialer.
-   * 
+   * Retrieves audits for dialer. (Deprecated)
+   * This endpoint is deprecated as a result of this functionality being moved to the Audit Service. Please use \"/api/v2/audits/query\" instead.
    * @param body AuditSearch (required)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
@@ -8738,14 +8738,15 @@ public class OutboundApi {
    * @return AuditSearchResult
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public AuditSearchResult postOutboundAudits(DialerAuditRequest body, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, Boolean facetsOnly) throws IOException, ApiException {
     return  postOutboundAudits(createPostOutboundAuditsRequest(body, pageSize, pageNumber, sortBy, sortOrder, facetsOnly));
   }
 
   /**
-   * Retrieves audits for dialer.
-   * 
+   * Retrieves audits for dialer. (Deprecated)
+   * This endpoint is deprecated as a result of this functionality being moved to the Audit Service. Please use \"/api/v2/audits/query\" instead.
    * @param body AuditSearch (required)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
@@ -8754,6 +8755,7 @@ public class OutboundApi {
    * @param facetsOnly Facets only (optional, default to false)
    * @return AuditSearchResult
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<AuditSearchResult> postOutboundAuditsWithHttpInfo(DialerAuditRequest body, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, Boolean facetsOnly) throws IOException {
     return postOutboundAudits(createPostOutboundAuditsRequest(body, pageSize, pageNumber, sortBy, sortOrder, facetsOnly).withHttpInfo());
@@ -8777,12 +8779,13 @@ public class OutboundApi {
   }
 
   /**
-   * Retrieves audits for dialer.
-   * 
+   * Retrieves audits for dialer. (Deprecated)
+   * This endpoint is deprecated as a result of this functionality being moved to the Audit Service. Please use \"/api/v2/audits/query\" instead.
    * @param request The request object
    * @return AuditSearchResult
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public AuditSearchResult postOutboundAudits(PostOutboundAuditsRequest request) throws IOException, ApiException {
     try {
@@ -8796,11 +8799,12 @@ public class OutboundApi {
   }
 
   /**
-   * Retrieves audits for dialer.
-   * 
+   * Retrieves audits for dialer. (Deprecated)
+   * This endpoint is deprecated as a result of this functionality being moved to the Audit Service. Please use \"/api/v2/audits/query\" instead.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<AuditSearchResult> postOutboundAudits(ApiRequest<DialerAuditRequest> request) throws IOException {
     try {

@@ -25,7 +25,10 @@ import com.mypurecloud.sdk.v2.model.Workitem;
 import com.mypurecloud.sdk.v2.model.WorkitemChangeListing;
 import com.mypurecloud.sdk.v2.model.WorkitemCreate;
 import com.mypurecloud.sdk.v2.model.WorkitemManualAssign;
+import com.mypurecloud.sdk.v2.model.WorkitemPagedEntityListing;
 import com.mypurecloud.sdk.v2.model.WorkitemPostQueryEntityListing;
+import com.mypurecloud.sdk.v2.model.WorkitemQueryJobCreate;
+import com.mypurecloud.sdk.v2.model.WorkitemQueryJobResponse;
 import com.mypurecloud.sdk.v2.model.WorkitemQueryPostRequest;
 import com.mypurecloud.sdk.v2.model.WorkitemStatus;
 import com.mypurecloud.sdk.v2.model.WorkitemStatusCreate;
@@ -63,6 +66,8 @@ import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemUserWrapupsRe
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemWrapupsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsQueryJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsQueryJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemaVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemaVersionsRequest;
@@ -87,6 +92,7 @@ import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemDisconnectRe
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemTerminateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsQueryJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorktypeStatusesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorktypesRequest;
@@ -1421,6 +1427,170 @@ public class TaskManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WorkitemWrapupEntityListing> response = (ApiResponse<WorkitemWrapupEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the workitem query job associated with the job id.
+   * 
+   * getTaskmanagementWorkitemsQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @return WorkitemQueryJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemQueryJobResponse getTaskmanagementWorkitemsQueryJob(String jobId) throws IOException, ApiException {
+    return  getTaskmanagementWorkitemsQueryJob(createGetTaskmanagementWorkitemsQueryJobRequest(jobId));
+  }
+
+  /**
+   * Get the workitem query job associated with the job id.
+   * 
+   * getTaskmanagementWorkitemsQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @return WorkitemQueryJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemQueryJobResponse> getTaskmanagementWorkitemsQueryJobWithHttpInfo(String jobId) throws IOException {
+    return getTaskmanagementWorkitemsQueryJob(createGetTaskmanagementWorkitemsQueryJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetTaskmanagementWorkitemsQueryJobRequest createGetTaskmanagementWorkitemsQueryJobRequest(String jobId) {
+    return GetTaskmanagementWorkitemsQueryJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get the workitem query job associated with the job id.
+   * 
+   * getTaskmanagementWorkitemsQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return WorkitemQueryJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemQueryJobResponse getTaskmanagementWorkitemsQueryJob(GetTaskmanagementWorkitemsQueryJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkitemQueryJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkitemQueryJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the workitem query job associated with the job id.
+   * 
+   * getTaskmanagementWorkitemsQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemQueryJobResponse> getTaskmanagementWorkitemsQueryJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkitemQueryJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemQueryJobResponse> response = (ApiResponse<WorkitemQueryJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemQueryJobResponse> response = (ApiResponse<WorkitemQueryJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get results from for workitem query job 
+   * 
+   * getTaskmanagementWorkitemsQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @return WorkitemPagedEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemPagedEntityListing getTaskmanagementWorkitemsQueryJobResults(String jobId) throws IOException, ApiException {
+    return  getTaskmanagementWorkitemsQueryJobResults(createGetTaskmanagementWorkitemsQueryJobResultsRequest(jobId));
+  }
+
+  /**
+   * Get results from for workitem query job 
+   * 
+   * getTaskmanagementWorkitemsQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param jobId jobId (required)
+   * @return WorkitemPagedEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemPagedEntityListing> getTaskmanagementWorkitemsQueryJobResultsWithHttpInfo(String jobId) throws IOException {
+    return getTaskmanagementWorkitemsQueryJobResults(createGetTaskmanagementWorkitemsQueryJobResultsRequest(jobId).withHttpInfo());
+  }
+
+  private GetTaskmanagementWorkitemsQueryJobResultsRequest createGetTaskmanagementWorkitemsQueryJobResultsRequest(String jobId) {
+    return GetTaskmanagementWorkitemsQueryJobResultsRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get results from for workitem query job 
+   * 
+   * getTaskmanagementWorkitemsQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return WorkitemPagedEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemPagedEntityListing getTaskmanagementWorkitemsQueryJobResults(GetTaskmanagementWorkitemsQueryJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkitemPagedEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkitemPagedEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get results from for workitem query job 
+   * 
+   * getTaskmanagementWorkitemsQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemPagedEntityListing> getTaskmanagementWorkitemsQueryJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkitemPagedEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemPagedEntityListing> response = (ApiResponse<WorkitemPagedEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemPagedEntityListing> response = (ApiResponse<WorkitemPagedEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -3462,6 +3632,88 @@ public class TaskManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WorkitemPostQueryEntityListing> response = (ApiResponse<WorkitemPostQueryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a workitem query job
+   * 
+   * postTaskmanagementWorkitemsQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body WorkitemQueryJobCreate (required)
+   * @return WorkitemQueryJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemQueryJobResponse postTaskmanagementWorkitemsQueryJobs(WorkitemQueryJobCreate body) throws IOException, ApiException {
+    return  postTaskmanagementWorkitemsQueryJobs(createPostTaskmanagementWorkitemsQueryJobsRequest(body));
+  }
+
+  /**
+   * Create a workitem query job
+   * 
+   * postTaskmanagementWorkitemsQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body WorkitemQueryJobCreate (required)
+   * @return WorkitemQueryJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemQueryJobResponse> postTaskmanagementWorkitemsQueryJobsWithHttpInfo(WorkitemQueryJobCreate body) throws IOException {
+    return postTaskmanagementWorkitemsQueryJobs(createPostTaskmanagementWorkitemsQueryJobsRequest(body).withHttpInfo());
+  }
+
+  private PostTaskmanagementWorkitemsQueryJobsRequest createPostTaskmanagementWorkitemsQueryJobsRequest(WorkitemQueryJobCreate body) {
+    return PostTaskmanagementWorkitemsQueryJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a workitem query job
+   * 
+   * postTaskmanagementWorkitemsQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return WorkitemQueryJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemQueryJobResponse postTaskmanagementWorkitemsQueryJobs(PostTaskmanagementWorkitemsQueryJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkitemQueryJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkitemQueryJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a workitem query job
+   * 
+   * postTaskmanagementWorkitemsQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemQueryJobResponse> postTaskmanagementWorkitemsQueryJobs(ApiRequest<WorkitemQueryJobCreate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkitemQueryJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemQueryJobResponse> response = (ApiResponse<WorkitemQueryJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemQueryJobResponse> response = (ApiResponse<WorkitemQueryJobResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

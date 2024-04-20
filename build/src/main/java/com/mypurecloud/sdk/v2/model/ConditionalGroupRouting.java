@@ -28,14 +28,14 @@ public class ConditionalGroupRouting  implements Serializable {
 
   
   /**
-   * The set of rules that defines Conditional Group Routing for this queue
+   * The set of rules to be executed for each conversation
    **/
   public ConditionalGroupRouting rules(List<ConditionalGroupRoutingRule> rules) {
     this.rules = rules;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The set of rules that defines Conditional Group Routing for this queue")
+  @ApiModelProperty(example = "null", value = "The set of rules to be executed for each conversation")
   @JsonProperty("rules")
   public List<ConditionalGroupRoutingRule> getRules() {
     return rules;

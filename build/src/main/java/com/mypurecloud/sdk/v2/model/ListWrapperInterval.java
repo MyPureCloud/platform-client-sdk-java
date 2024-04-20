@@ -27,13 +27,14 @@ public class ListWrapperInterval  implements Serializable {
 
   
   /**
+   * Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
    **/
   public ListWrapperInterval values(List<String> values) {
     this.values = values;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss")
   @JsonProperty("values")
   public List<String> getValues() {
     return values;

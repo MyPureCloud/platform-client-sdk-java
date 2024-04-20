@@ -8,7 +8,7 @@ title: SupportedDialectsEntityListing
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | <!----><!---->[**List&lt;TranscriptionEngines&gt;**](TranscriptionEngines.html)<!----> |  |  [optional] |
+| **entities** | <!----><!---->[**List&lt;SupportedDialectsTranscriptionEngine&gt;**](SupportedDialectsTranscriptionEngine.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

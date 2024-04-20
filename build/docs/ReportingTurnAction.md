@@ -26,6 +26,7 @@ title: ReportingTurnAction
 | ASKFORNLUINTENTACTION | &quot;AskForNLUIntentAction&quot; | 
 | ASKFORBOOLEANACTION | &quot;AskForBooleanAction&quot; | 
 | ASKFORSLOTACTION | &quot;AskForSlotAction&quot; | 
+| ASKSURVEYQUESTIONACTION | &quot;AskSurveyQuestionAction&quot; | 
 | ASKFORNLUNEXTINTENTACTION | &quot;AskForNLUNextIntentAction&quot; | 
 | BOTSTATE | &quot;BotState&quot; | 
 | CALLTASKACTION | &quot;CallTaskAction&quot; | 
@@ -37,12 +38,15 @@ title: ReportingTurnAction
 | UPDATEVARIABLEACTION | &quot;UpdateVariableAction&quot; | 
 | COMMUNICATEACTION | &quot;CommunicateAction&quot; | 
 | DECISIONACTION | &quot;DecisionAction&quot; | 
+| FINDEMERGENCYGROUPACTION | &quot;FindEmergencyGroupAction&quot; | 
 | FINDGRAMMARACTION | &quot;FindGrammarAction&quot; | 
 | FINDGRAMMARBYIDACTION | &quot;FindGrammarByIdAction&quot; | 
 | FINDGROUPACTION | &quot;FindGroupAction&quot; | 
 | FINDLANGUAGESKILLACTION | &quot;FindLanguageSkillAction&quot; | 
 | FINDQUEUEACTION | &quot;FindQueueAction&quot; | 
 | FINDQUEUEBYIDACTION | &quot;FindQueueByIdAction&quot; | 
+| FINDSCHEDULEACTION | &quot;FindScheduleAction&quot; | 
+| FINDSCHEDULEGROUPACTION | &quot;FindScheduleGroupAction&quot; | 
 | FINDSKILLACTION | &quot;FindSkillAction&quot; | 
 | FINDSYSTEMPROMPTACTION | &quot;FindSystemPromptAction&quot; | 
 | FINDUSERACTION | &quot;FindUserAction&quot; | 
@@ -70,8 +74,12 @@ title: ReportingTurnAction
 | TRANSFERTASKACTION | &quot;TransferTaskAction&quot; | 
 | DIGITALMENUACTION | &quot;DigitalMenuAction&quot; | 
 | WAITFORINPUTACTION | &quot;WaitForInputAction&quot; | 
+| EVALUATESCHEDULEACTION | &quot;EvaluateScheduleAction&quot; | 
+| EVALUATESCHEDULEGROUPACTION | &quot;EvaluateScheduleGroupAction&quot; | 
 | SHOWKNOWLEDGEARTICLEACTION | &quot;ShowKnowledgeArticleAction&quot; | 
+| SENDKNOWLEDGEFEEDBACKACTION | &quot;SendKnowledgeFeedbackAction&quot; | 
 | SETLOCALEACTION | &quot;SetLocaleAction&quot; | 
+| SCREENPOPACTION | &quot;ScreenPopAction&quot; | 
 | SETUTILIZATIONLABELACTION | &quot;SetUtilizationLabelAction&quot; | 
 | TRANSFERPUREMATCHACTION | &quot;TransferPureMatchAction&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 

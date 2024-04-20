@@ -97,6 +97,7 @@ public class BotAggregateQueryPredicate  implements Serializable {
     BOTFINALINTENT("botFinalIntent"),
     BOTID("botId"),
     BOTINTENT("botIntent"),
+    BOTFLOWTYPE("botFlowType"),
     BOTPRODUCT("botProduct"),
     BOTPROVIDER("botProvider"),
     BOTRECOGNITIONFAILUREREASON("botRecognitionFailureReason"),

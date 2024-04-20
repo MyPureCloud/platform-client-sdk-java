@@ -11,8 +11,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getFaxDocument**](FaxApi.html#getFaxDocument) | Get a document. |
 | [**getFaxDocumentContent**](FaxApi.html#getFaxDocumentContent) | Download a fax document. |
 | [**getFaxDocuments**](FaxApi.html#getFaxDocuments) | Get a list of fax documents. |
+| [**getFaxSettings**](FaxApi.html#getFaxSettings) | Get organization config for given organization |
 | [**getFaxSummary**](FaxApi.html#getFaxSummary) | Get fax summary |
 | [**putFaxDocument**](FaxApi.html#putFaxDocument) | Update a fax document. |
+| [**putFaxSettings**](FaxApi.html#putFaxSettings) | Update/write organization config for given organization |
 {: class="table-striped"}
 
 <a name="deleteFaxDocument"></a>
@@ -256,6 +258,62 @@ try {
 
 [**FaxDocumentEntityListing**](FaxDocumentEntityListing.html)
 
+<a name="getFaxSettings"></a>
+
+# **getFaxSettings**
+
+
+
+> [FaxConfig](FaxConfig.html) getFaxSettings()
+
+Get organization config for given organization
+
+Wraps GET /api/v2/fax/settings  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.FaxApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+FaxApi apiInstance = new FaxApi();
+try {
+    FaxConfig result = apiInstance.getFaxSettings();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling FaxApi#getFaxSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**FaxConfig**](FaxConfig.html)
+
 <a name="getFaxSummary"></a>
 
 # **getFaxSummary**
@@ -373,4 +431,65 @@ try {
 ### Return type
 
 [**FaxDocument**](FaxDocument.html)
+
+<a name="putFaxSettings"></a>
+
+# **putFaxSettings**
+
+
+
+> [FaxConfig](FaxConfig.html) putFaxSettings(body)
+
+Update/write organization config for given organization
+
+Wraps PUT /api/v2/fax/settings  
+
+Requires ANY permissions: 
+
+* directory:organization:admin
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.FaxApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+FaxApi apiInstance = new FaxApi();
+FaxConfig body = new FaxConfig(); // FaxConfig | 
+try {
+    FaxConfig result = apiInstance.putFaxSettings(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling FaxApi#putFaxSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**FaxConfig**](FaxConfig.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**FaxConfig**](FaxConfig.html)
 

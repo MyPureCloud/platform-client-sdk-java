@@ -1166,7 +1166,7 @@ try {
 
 
 
-> [AuthzSubject](AuthzSubject.html) getAuthorizationSubject(subjectId)
+> [AuthzSubject](AuthzSubject.html) getAuthorizationSubject(subjectId, includeDuplicates)
 
 Returns a listing of roles and permissions for a user.
 
@@ -1199,8 +1199,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 UsersApi apiInstance = new UsersApi();
 String subjectId = "subjectId_example"; // String | Subject ID (user or group)
+Boolean includeDuplicates = false; // Boolean | Include multiple entries with the same role and division but different subjects
 try {
-    AuthzSubject result = apiInstance.getAuthorizationSubject(subjectId);
+    AuthzSubject result = apiInstance.getAuthorizationSubject(subjectId, includeDuplicates);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#getAuthorizationSubject");
@@ -1214,6 +1215,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **subjectId** | **String**| Subject ID (user or group) | 
+| **includeDuplicates** | **Boolean**| Include multiple entries with the same role and division but different subjects | [optional] [default to false]<br />**Values**: true, false 
 {: class="table-striped"}
 
 
@@ -1227,7 +1229,7 @@ try {
 
 
 
-> [AuthzSubject](AuthzSubject.html) getAuthorizationSubjectsMe()
+> [AuthzSubject](AuthzSubject.html) getAuthorizationSubjectsMe(includeDuplicates)
 
 Returns a listing of roles and permissions for the currently authenticated user.
 
@@ -1258,8 +1260,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 UsersApi apiInstance = new UsersApi();
+Boolean includeDuplicates = false; // Boolean | Include multiple entries with the same role and division but different subjects
 try {
-    AuthzSubject result = apiInstance.getAuthorizationSubjectsMe();
+    AuthzSubject result = apiInstance.getAuthorizationSubjectsMe(includeDuplicates);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#getAuthorizationSubjectsMe");
@@ -1269,8 +1272,11 @@ try {
 
 ### Parameters
 
-This endpoint does not require any parameters.
 
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **includeDuplicates** | **Boolean**| Include multiple entries with the same role and division but different subjects | [optional] [default to false]<br />**Values**: true, false 
+{: class="table-striped"}
 
 
 ### Return type
@@ -2891,7 +2897,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **sortOrder** | **String**| Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc 
 | **types** | [**List&lt;String&gt;**](String.html)| Specifies the activity types. | [optional]<br />**Values**: Informational, Coaching, AssessedContent, Assessment 
-| **statuses** | [**List&lt;String&gt;**](String.html)| Specifies the activity statuses to filter by | [optional]<br />**Values**: Planned, InProgress, Completed, InvalidSchedule 
+| **statuses** | [**List&lt;String&gt;**](String.html)| Specifies the activity statuses to filter by | [optional]<br />**Values**: Planned, InProgress, Completed, InvalidSchedule, NotCompleted 
 | **relationship** | [**List&lt;String&gt;**](String.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional]<br />**Values**: Creator, Facilitator, Attendee 
 {: class="table-striped"}
 
@@ -2973,7 +2979,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **sortOrder** | **String**| Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc 
 | **types** | [**List&lt;String&gt;**](String.html)| Specifies the activity types. | [optional]<br />**Values**: Informational, Coaching, AssessedContent, Assessment 
-| **statuses** | [**List&lt;String&gt;**](String.html)| Specifies the activity statuses to filter by | [optional]<br />**Values**: Planned, InProgress, Completed, InvalidSchedule 
+| **statuses** | [**List&lt;String&gt;**](String.html)| Specifies the activity statuses to filter by | [optional]<br />**Values**: Planned, InProgress, Completed, InvalidSchedule, NotCompleted 
 | **relationship** | [**List&lt;String&gt;**](String.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional]<br />**Values**: Creator, Facilitator, Attendee 
 {: class="table-striped"}
 

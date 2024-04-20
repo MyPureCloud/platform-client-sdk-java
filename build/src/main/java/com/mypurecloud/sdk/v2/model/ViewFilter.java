@@ -1526,6 +1526,101 @@ public class ViewFilter  implements Serializable {
   private Boolean isParked = null;
   private NumericRange agentEmpathyScore = null;
 
+  private static class SurveyTypesEnumDeserializer extends StdDeserializer<SurveyTypesEnum> {
+    public SurveyTypesEnumDeserializer() {
+      super(SurveyTypesEnumDeserializer.class);
+    }
+
+    @Override
+    public SurveyTypesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SurveyTypesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets surveyTypes
+   */
+ @JsonDeserialize(using = SurveyTypesEnumDeserializer.class)
+  public enum SurveyTypesEnum {
+    WEB("Web"),
+    VOICE("Voice");
+
+    private String value;
+
+    SurveyTypesEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SurveyTypesEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SurveyTypesEnum value : SurveyTypesEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SurveyTypesEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<SurveyTypesEnum> surveyTypes = new ArrayList<SurveyTypesEnum>();
+
+  private static class SurveyResponseStatusesEnumDeserializer extends StdDeserializer<SurveyResponseStatusesEnum> {
+    public SurveyResponseStatusesEnumDeserializer() {
+      super(SurveyResponseStatusesEnumDeserializer.class);
+    }
+
+    @Override
+    public SurveyResponseStatusesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SurveyResponseStatusesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets surveyResponseStatuses
+   */
+ @JsonDeserialize(using = SurveyResponseStatusesEnumDeserializer.class)
+  public enum SurveyResponseStatusesEnum {
+    UNKNOWN("Unknown"),
+    FULLRESPONSE("FullResponse"),
+    PARTIALRESPONSE("PartialResponse");
+
+    private String value;
+
+    SurveyResponseStatusesEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SurveyResponseStatusesEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SurveyResponseStatusesEnum value : SurveyResponseStatusesEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SurveyResponseStatusesEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<SurveyResponseStatusesEnum> surveyResponseStatuses = new ArrayList<SurveyResponseStatusesEnum>();
+
   
   /**
    * The media types are used to filter the view
@@ -4659,6 +4754,42 @@ public class ViewFilter  implements Serializable {
   }
 
 
+  /**
+   * The surveyTypes is used to filter the view
+   **/
+  public ViewFilter surveyTypes(List<SurveyTypesEnum> surveyTypes) {
+    this.surveyTypes = surveyTypes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The surveyTypes is used to filter the view")
+  @JsonProperty("surveyTypes")
+  public List<SurveyTypesEnum> getSurveyTypes() {
+    return surveyTypes;
+  }
+  public void setSurveyTypes(List<SurveyTypesEnum> surveyTypes) {
+    this.surveyTypes = surveyTypes;
+  }
+
+
+  /**
+   * The list of Survey Response Status
+   **/
+  public ViewFilter surveyResponseStatuses(List<SurveyResponseStatusesEnum> surveyResponseStatuses) {
+    this.surveyResponseStatuses = surveyResponseStatuses;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of Survey Response Status")
+  @JsonProperty("surveyResponseStatuses")
+  public List<SurveyResponseStatusesEnum> getSurveyResponseStatuses() {
+    return surveyResponseStatuses;
+  }
+  public void setSurveyResponseStatuses(List<SurveyResponseStatusesEnum> surveyResponseStatuses) {
+    this.surveyResponseStatuses = surveyResponseStatuses;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -4842,12 +4973,14 @@ public class ViewFilter  implements Serializable {
             Objects.equals(this.assistantIds, viewFilter.assistantIds) &&
             Objects.equals(this.knowledgeBaseIds, viewFilter.knowledgeBaseIds) &&
             Objects.equals(this.isParked, viewFilter.isParked) &&
-            Objects.equals(this.agentEmpathyScore, viewFilter.agentEmpathyScore);
+            Objects.equals(this.agentEmpathyScore, viewFilter.agentEmpathyScore) &&
+            Objects.equals(this.surveyTypes, viewFilter.surveyTypes) &&
+            Objects.equals(this.surveyResponseStatuses, viewFilter.surveyResponseStatuses);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, managementUnitIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds, transcriptTopics, journeyFrequencyCapReasons, journeyBlockingActionMapIds, journeyActionTargetIds, journeyBlockingScheduleGroupIds, journeyBlockingEmergencyScheduleGroupIds, journeyUrlEqualConditions, journeyUrlNotEqualConditions, journeyUrlStartsWithConditions, journeyUrlEndsWithConditions, journeyUrlContainsAnyConditions, journeyUrlNotContainsAnyConditions, journeyUrlContainsAllConditions, journeyUrlNotContainsAllConditions, flowMilestoneIds, isAssessmentPassed, conversationInitiators, hasCustomerParticipated, isAcdInteraction, hasFax, dataActionIds, actionCategoryName, integrationIds, responseStatuses, availableDashboard, favouriteDashboard, myDashboard, stationErrors, canonicalContactIds, alertRuleIds, evaluationFormContextIds, evaluationStatuses, workbinIds, worktypeIds, workitemIds, workitemAssigneeIds, workitemStatuses, isAnalyzedForSensitiveData, hasSensitiveData, hasPciData, hasPiiData, subPath, userState, isClearedByCustomer, evaluationAssigneeIds, evaluationAssigned, assistantIds, knowledgeBaseIds, isParked, agentEmpathyScore);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, managementUnitIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds, transcriptTopics, journeyFrequencyCapReasons, journeyBlockingActionMapIds, journeyActionTargetIds, journeyBlockingScheduleGroupIds, journeyBlockingEmergencyScheduleGroupIds, journeyUrlEqualConditions, journeyUrlNotEqualConditions, journeyUrlStartsWithConditions, journeyUrlEndsWithConditions, journeyUrlContainsAnyConditions, journeyUrlNotContainsAnyConditions, journeyUrlContainsAllConditions, journeyUrlNotContainsAllConditions, flowMilestoneIds, isAssessmentPassed, conversationInitiators, hasCustomerParticipated, isAcdInteraction, hasFax, dataActionIds, actionCategoryName, integrationIds, responseStatuses, availableDashboard, favouriteDashboard, myDashboard, stationErrors, canonicalContactIds, alertRuleIds, evaluationFormContextIds, evaluationStatuses, workbinIds, worktypeIds, workitemIds, workitemAssigneeIds, workitemStatuses, isAnalyzedForSensitiveData, hasSensitiveData, hasPciData, hasPiiData, subPath, userState, isClearedByCustomer, evaluationAssigneeIds, evaluationAssigned, assistantIds, knowledgeBaseIds, isParked, agentEmpathyScore, surveyTypes, surveyResponseStatuses);
   }
 
   @Override
@@ -5029,6 +5162,8 @@ public class ViewFilter  implements Serializable {
     sb.append("    knowledgeBaseIds: ").append(toIndentedString(knowledgeBaseIds)).append("\n");
     sb.append("    isParked: ").append(toIndentedString(isParked)).append("\n");
     sb.append("    agentEmpathyScore: ").append(toIndentedString(agentEmpathyScore)).append("\n");
+    sb.append("    surveyTypes: ").append(toIndentedString(surveyTypes)).append("\n");
+    sb.append("    surveyResponseStatuses: ").append(toIndentedString(surveyResponseStatuses)).append("\n");
     sb.append("}");
     return sb.toString();
   }

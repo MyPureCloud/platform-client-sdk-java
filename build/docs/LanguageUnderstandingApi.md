@@ -28,6 +28,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getLanguageunderstandingMinerTopicPhrase**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerTopicPhrase) | Retrieves utterances related to a phrase in a topic. |
 | [**getLanguageunderstandingMinerTopics**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerTopics) | Retrieve a list of mined topics. |
 | [**getLanguageunderstandingMiners**](LanguageUnderstandingApi.html#getLanguageunderstandingMiners) | Retrieve the list of miners created. |
+| [**getLanguageunderstandingSettings**](LanguageUnderstandingApi.html#getLanguageunderstandingSettings) | Get Organization Configuration |
 | [**patchLanguageunderstandingDomain**](LanguageUnderstandingApi.html#patchLanguageunderstandingDomain) | Update an NLU Domain. |
 | [**patchLanguageunderstandingMinerDraft**](LanguageUnderstandingApi.html#patchLanguageunderstandingMinerDraft) | Save information for the draft. Either topic draft or intent draft should be sent. |
 | [**postLanguageunderstandingDomainFeedback**](LanguageUnderstandingApi.html#postLanguageunderstandingDomainFeedback) | Create feedback for the NLU Domain Version. |
@@ -1395,6 +1396,65 @@ try {
 ### Return type
 
 [**MinerListing**](MinerListing.html)
+
+<a name="getLanguageunderstandingSettings"></a>
+
+# **getLanguageunderstandingSettings**
+
+
+
+> [NluOrganization](NluOrganization.html) getLanguageunderstandingSettings()
+
+Get Organization Configuration
+
+getLanguageunderstandingSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/languageunderstanding/settings  
+
+Requires ANY permissions: 
+
+* languageUnderstanding:settings:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
+try {
+    NluOrganization result = apiInstance.getLanguageunderstandingSettings();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LanguageUnderstandingApi#getLanguageunderstandingSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**NluOrganization**](NluOrganization.html)
 
 <a name="patchLanguageunderstandingDomain"></a>
 

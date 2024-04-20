@@ -2432,7 +2432,7 @@ public class IntegrationsApi {
 
   /**
    * UC integration client application configuration.
-   * This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
+   * Deprecated: Please use GET /integrations/unifiedcommunications/clientapps instead. This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
    * @param sortBy variable name requested to sort by (optional)
@@ -2442,6 +2442,7 @@ public class IntegrationsApi {
    * @return UCIntegrationListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public UCIntegrationListing getIntegrationsClientappsUnifiedcommunications(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) throws IOException, ApiException {
     return  getIntegrationsClientappsUnifiedcommunications(createGetIntegrationsClientappsUnifiedcommunicationsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage));
@@ -2449,7 +2450,7 @@ public class IntegrationsApi {
 
   /**
    * UC integration client application configuration.
-   * This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
+   * Deprecated: Please use GET /integrations/unifiedcommunications/clientapps instead. This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
    * @param sortBy variable name requested to sort by (optional)
@@ -2458,6 +2459,7 @@ public class IntegrationsApi {
    * @param previousPage Previous page token (optional)
    * @return UCIntegrationListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<UCIntegrationListing> getIntegrationsClientappsUnifiedcommunicationsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) throws IOException {
     return getIntegrationsClientappsUnifiedcommunications(createGetIntegrationsClientappsUnifiedcommunicationsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage).withHttpInfo());
@@ -2482,11 +2484,12 @@ public class IntegrationsApi {
 
   /**
    * UC integration client application configuration.
-   * This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
+   * Deprecated: Please use GET /integrations/unifiedcommunications/clientapps instead. This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
    * @param request The request object
    * @return UCIntegrationListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public UCIntegrationListing getIntegrationsClientappsUnifiedcommunications(GetIntegrationsClientappsUnifiedcommunicationsRequest request) throws IOException, ApiException {
     try {
@@ -2501,10 +2504,11 @@ public class IntegrationsApi {
 
   /**
    * UC integration client application configuration.
-   * This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
+   * Deprecated: Please use GET /integrations/unifiedcommunications/clientapps instead. This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<UCIntegrationListing> getIntegrationsClientappsUnifiedcommunications(ApiRequest<Void> request) throws IOException {
     try {

@@ -1298,7 +1298,7 @@ This endpoint does not require any parameters.
 
 
 
-> [AuthzSubject](AuthzSubject.html) getAuthorizationSubject(subjectId)
+> [AuthzSubject](AuthzSubject.html) getAuthorizationSubject(subjectId, includeDuplicates)
 
 Returns a listing of roles and permissions for a user.
 
@@ -1331,8 +1331,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 AuthorizationApi apiInstance = new AuthorizationApi();
 String subjectId = "subjectId_example"; // String | Subject ID (user or group)
+Boolean includeDuplicates = false; // Boolean | Include multiple entries with the same role and division but different subjects
 try {
-    AuthzSubject result = apiInstance.getAuthorizationSubject(subjectId);
+    AuthzSubject result = apiInstance.getAuthorizationSubject(subjectId, includeDuplicates);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AuthorizationApi#getAuthorizationSubject");
@@ -1346,6 +1347,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **subjectId** | **String**| Subject ID (user or group) | 
+| **includeDuplicates** | **Boolean**| Include multiple entries with the same role and division but different subjects | [optional] [default to false]<br />**Values**: true, false 
 {: class="table-striped"}
 
 
@@ -1359,7 +1361,7 @@ try {
 
 
 
-> [AuthzSubject](AuthzSubject.html) getAuthorizationSubjectsMe()
+> [AuthzSubject](AuthzSubject.html) getAuthorizationSubjectsMe(includeDuplicates)
 
 Returns a listing of roles and permissions for the currently authenticated user.
 
@@ -1390,8 +1392,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 AuthorizationApi apiInstance = new AuthorizationApi();
+Boolean includeDuplicates = false; // Boolean | Include multiple entries with the same role and division but different subjects
 try {
-    AuthzSubject result = apiInstance.getAuthorizationSubjectsMe();
+    AuthzSubject result = apiInstance.getAuthorizationSubjectsMe(includeDuplicates);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AuthorizationApi#getAuthorizationSubjectsMe");
@@ -1401,8 +1404,11 @@ try {
 
 ### Parameters
 
-This endpoint does not require any parameters.
 
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **includeDuplicates** | **Boolean**| Include multiple entries with the same role and division but different subjects | [optional] [default to false]<br />**Values**: true, false 
+{: class="table-striped"}
 
 
 ### Return type

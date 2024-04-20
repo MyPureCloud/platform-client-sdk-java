@@ -22,6 +22,7 @@ import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.DownloadResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.FaxConfig;
 import com.mypurecloud.sdk.v2.model.FaxDocument;
 import com.mypurecloud.sdk.v2.model.FaxDocumentEntityListing;
 import com.mypurecloud.sdk.v2.model.FaxSummary;

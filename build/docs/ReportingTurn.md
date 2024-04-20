@@ -31,6 +31,7 @@ title: ReportingTurn
 | SUCCESSCOLLECTION | &quot;SuccessCollection&quot; | 
 | SUCCESSCONFIRMATIONYES | &quot;SuccessConfirmationYes&quot; | 
 | SUCCESSCONFIRMATIONNO | &quot;SuccessConfirmationNo&quot; | 
+| SKIPPEDCOLLECTION | &quot;SkippedCollection&quot; | 
 | NOMATCHCOLLECTION | &quot;NoMatchCollection&quot; | 
 | NOMATCHCONFIRMATION | &quot;NoMatchConfirmation&quot; | 
 | AGENTREQUESTEDBYUSER | &quot;AgentRequestedByUser&quot; | 

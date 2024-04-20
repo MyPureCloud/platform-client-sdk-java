@@ -7840,11 +7840,12 @@ public class OutboundApiAsync {
   }
 
   /**
-   * Retrieves audits for dialer.
-   * 
+   * Retrieves audits for dialer. (Deprecated)
+   * This endpoint is deprecated as a result of this functionality being moved to the Audit Service. Please use \"/api/v2/audits/query\" instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<AuditSearchResult> postOutboundAuditsAsync(PostOutboundAuditsRequest request, final AsyncApiCallback<AuditSearchResult> callback) {
     try {
@@ -7874,11 +7875,12 @@ public class OutboundApiAsync {
   }
 
   /**
-   * Retrieves audits for dialer.
-   * 
+   * Retrieves audits for dialer. (Deprecated)
+   * This endpoint is deprecated as a result of this functionality being moved to the Audit Service. Please use \"/api/v2/audits/query\" instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<AuditSearchResult>> postOutboundAuditsAsync(ApiRequest<DialerAuditRequest> request, final AsyncApiCallback<ApiResponse<AuditSearchResult>> callback) {
     try {

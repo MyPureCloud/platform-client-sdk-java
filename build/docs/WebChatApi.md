@@ -324,11 +324,13 @@ This endpoint does not require any parameters.
 
 # **getWebchatGuestConversationMediarequest**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [WebChatGuestMediaRequest](WebChatGuestMediaRequest.html) getWebchatGuestConversationMediarequest(conversationId, mediaRequestId)
 
 Get a media request in the conversation
+
+This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
 
 Wraps GET /api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId}  
 
@@ -743,11 +745,13 @@ This endpoint does not require any parameters.
 
 # **patchWebchatGuestConversationMediarequest**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [WebChatGuestMediaRequest](WebChatGuestMediaRequest.html) patchWebchatGuestConversationMediarequest(conversationId, mediaRequestId, body)
 
 Update a media request in the conversation, setting the state to ACCEPTED/DECLINED/ERRORED
+
+This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
 
 Wraps PATCH /api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId}  
 

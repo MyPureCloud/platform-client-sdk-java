@@ -15,6 +15,7 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.DownloadResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.FaxConfig;
 import com.mypurecloud.sdk.v2.model.FaxDocument;
 import com.mypurecloud.sdk.v2.model.FaxDocumentEntityListing;
 import com.mypurecloud.sdk.v2.model.FaxSummary;
@@ -24,8 +25,10 @@ import com.mypurecloud.sdk.v2.api.request.DeleteFaxDocumentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFaxDocumentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFaxDocumentContentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFaxDocumentsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFaxSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFaxSummaryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutFaxDocumentRequest;
+import com.mypurecloud.sdk.v2.api.request.PutFaxSettingsRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -346,6 +349,81 @@ public class FaxApiAsync {
   }
 
   /**
+   * Get organization config for given organization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FaxConfig> getFaxSettingsAsync(GetFaxSettingsRequest request, final AsyncApiCallback<FaxConfig> callback) {
+    try {
+      final SettableFuture<FaxConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FaxConfig>() {}, new AsyncApiCallback<ApiResponse<FaxConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<FaxConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get organization config for given organization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FaxConfig>> getFaxSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FaxConfig>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FaxConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FaxConfig>() {}, new AsyncApiCallback<ApiResponse<FaxConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<FaxConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FaxConfig> response = (ApiResponse<FaxConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FaxConfig> response = (ApiResponse<FaxConfig>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get fax summary
    * 
    * @param request the request object
@@ -484,6 +562,81 @@ public class FaxApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<FaxDocument> response = (ApiResponse<FaxDocument>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update/write organization config for given organization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FaxConfig> putFaxSettingsAsync(PutFaxSettingsRequest request, final AsyncApiCallback<FaxConfig> callback) {
+    try {
+      final SettableFuture<FaxConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FaxConfig>() {}, new AsyncApiCallback<ApiResponse<FaxConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<FaxConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update/write organization config for given organization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FaxConfig>> putFaxSettingsAsync(ApiRequest<FaxConfig> request, final AsyncApiCallback<ApiResponse<FaxConfig>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FaxConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FaxConfig>() {}, new AsyncApiCallback<ApiResponse<FaxConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<FaxConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FaxConfig> response = (ApiResponse<FaxConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FaxConfig> response = (ApiResponse<FaxConfig>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -289,28 +289,36 @@ public class UsageApi {
    * Get the results of a usage search. Number of records to be returned is limited to 20,000 results.
    * 
    * @param executionId ID of the search execution (required)
+   * @param after The cursor that points to the end of the set of entities that has been returned (optional)
+   * @param pageSize The max number of entities to be returned per request. Maximum page size of 1000 (optional)
    * @return ApiUsageQueryResult
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ApiUsageQueryResult getUsageSimplesearchExecutionIdResults(String executionId) throws IOException, ApiException {
-    return  getUsageSimplesearchExecutionIdResults(createGetUsageSimplesearchExecutionIdResultsRequest(executionId));
+  public ApiUsageQueryResult getUsageSimplesearchExecutionIdResults(String executionId, String after, Integer pageSize) throws IOException, ApiException {
+    return  getUsageSimplesearchExecutionIdResults(createGetUsageSimplesearchExecutionIdResultsRequest(executionId, after, pageSize));
   }
 
   /**
    * Get the results of a usage search. Number of records to be returned is limited to 20,000 results.
    * 
    * @param executionId ID of the search execution (required)
+   * @param after The cursor that points to the end of the set of entities that has been returned (optional)
+   * @param pageSize The max number of entities to be returned per request. Maximum page size of 1000 (optional)
    * @return ApiUsageQueryResult
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ApiUsageQueryResult> getUsageSimplesearchExecutionIdResultsWithHttpInfo(String executionId) throws IOException {
-    return getUsageSimplesearchExecutionIdResults(createGetUsageSimplesearchExecutionIdResultsRequest(executionId).withHttpInfo());
+  public ApiResponse<ApiUsageQueryResult> getUsageSimplesearchExecutionIdResultsWithHttpInfo(String executionId, String after, Integer pageSize) throws IOException {
+    return getUsageSimplesearchExecutionIdResults(createGetUsageSimplesearchExecutionIdResultsRequest(executionId, after, pageSize).withHttpInfo());
   }
 
-  private GetUsageSimplesearchExecutionIdResultsRequest createGetUsageSimplesearchExecutionIdResultsRequest(String executionId) {
+  private GetUsageSimplesearchExecutionIdResultsRequest createGetUsageSimplesearchExecutionIdResultsRequest(String executionId, String after, Integer pageSize) {
     return GetUsageSimplesearchExecutionIdResultsRequest.builder()
             .withExecutionId(executionId)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
 
             .build();
   }

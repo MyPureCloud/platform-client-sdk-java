@@ -104,13 +104,14 @@ public class AddShiftTradeRequest  implements Serializable {
 
 
   /**
+   * The acceptable intervals the initiating user is willing to accept in trade.  Empty indicates the user is giving up the shift. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
    **/
   public AddShiftTradeRequest acceptableIntervals(List<String> acceptableIntervals) {
     this.acceptableIntervals = acceptableIntervals;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The acceptable intervals the initiating user is willing to accept in trade.  Empty indicates the user is giving up the shift. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss")
   @JsonProperty("acceptableIntervals")
   public List<String> getAcceptableIntervals() {
     return acceptableIntervals;

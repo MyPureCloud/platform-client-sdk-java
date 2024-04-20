@@ -37,6 +37,7 @@ import com.mypurecloud.sdk.v2.model.NluDomainVersionTrainingResponse;
 import com.mypurecloud.sdk.v2.model.NluFeedbackListing;
 import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
 import com.mypurecloud.sdk.v2.model.NluFeedbackResponse;
+import com.mypurecloud.sdk.v2.model.NluOrganization;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteLanguageunderstandingDomainRequest;
@@ -60,6 +61,7 @@ import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerTopicRequ
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerTopicPhraseRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerTopicsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLanguageunderstandingDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLanguageunderstandingMinerDraftRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainFeedbackRequest;
@@ -1655,6 +1657,83 @@ public class LanguageUnderstandingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<MinerListing> response = (ApiResponse<MinerListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Organization Configuration
+   * 
+   * getLanguageunderstandingSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<NluOrganization> getLanguageunderstandingSettingsAsync(GetLanguageunderstandingSettingsRequest request, final AsyncApiCallback<NluOrganization> callback) {
+    try {
+      final SettableFuture<NluOrganization> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<NluOrganization>() {}, new AsyncApiCallback<ApiResponse<NluOrganization>>() {
+        @Override
+        public void onCompleted(ApiResponse<NluOrganization> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Organization Configuration
+   * 
+   * getLanguageunderstandingSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<NluOrganization>> getLanguageunderstandingSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<NluOrganization>> callback) {
+    try {
+      final SettableFuture<ApiResponse<NluOrganization>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<NluOrganization>() {}, new AsyncApiCallback<ApiResponse<NluOrganization>>() {
+        @Override
+        public void onCompleted(ApiResponse<NluOrganization> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<NluOrganization> response = (ApiResponse<NluOrganization>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<NluOrganization> response = (ApiResponse<NluOrganization>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

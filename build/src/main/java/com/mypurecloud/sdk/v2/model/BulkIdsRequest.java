@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.WritableEntity;
+import com.mypurecloud.sdk.v2.model.ExternalContactsEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -24,22 +24,22 @@ import java.io.Serializable;
 
 public class BulkIdsRequest  implements Serializable {
   
-  private List<WritableEntity> entities = new ArrayList<WritableEntity>();
+  private List<ExternalContactsEntity> entities = new ArrayList<ExternalContactsEntity>();
 
   
   /**
    **/
-  public BulkIdsRequest entities(List<WritableEntity> entities) {
+  public BulkIdsRequest entities(List<ExternalContactsEntity> entities) {
     this.entities = entities;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("entities")
-  public List<WritableEntity> getEntities() {
+  public List<ExternalContactsEntity> getEntities() {
     return entities;
   }
-  public void setEntities(List<WritableEntity> entities) {
+  public void setEntities(List<ExternalContactsEntity> entities) {
     this.entities = entities;
   }
 

@@ -1910,7 +1910,7 @@ public class SpeechTextAnalyticsApi {
    * Get the list of Speech & Text Analytics topics
    * 
    * @param nextPage The key for listing the next page (optional)
-   * @param pageSize The page size for the listing (optional, default to 20)
+   * @param pageSize The page size for the listing. The max that will be returned is 500. (optional, default to 20)
    * @param state Topic state. Defaults to latest (optional)
    * @param name Case insensitive partial name to filter by (optional)
    * @param ids Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. (optional)
@@ -1929,7 +1929,7 @@ public class SpeechTextAnalyticsApi {
    * Get the list of Speech & Text Analytics topics
    * 
    * @param nextPage The key for listing the next page (optional)
-   * @param pageSize The page size for the listing (optional, default to 20)
+   * @param pageSize The page size for the listing. The max that will be returned is 500. (optional, default to 20)
    * @param state Topic state. Defaults to latest (optional)
    * @param name Case insensitive partial name to filter by (optional)
    * @param ids Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. (optional)

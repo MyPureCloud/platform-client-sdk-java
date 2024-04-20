@@ -4110,10 +4110,11 @@ public class ConversationsApiAsync {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<AssignedWrapupCode> getConversationsCobrowsesessionParticipantCommunicationWrapupAsync(GetConversationsCobrowsesessionParticipantCommunicationWrapupRequest request, final AsyncApiCallback<AssignedWrapupCode> callback) {
     try {
@@ -4144,10 +4145,11 @@ public class ConversationsApiAsync {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<AssignedWrapupCode>> getConversationsCobrowsesessionParticipantCommunicationWrapupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AssignedWrapupCode>> callback) {
     try {
@@ -4185,10 +4187,11 @@ public class ConversationsApiAsync {
 
   /**
    * Get the wrap-up for this conversation participant. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<AssignedWrapupCode> getConversationsCobrowsesessionParticipantWrapupAsync(GetConversationsCobrowsesessionParticipantWrapupRequest request, final AsyncApiCallback<AssignedWrapupCode> callback) {
     try {
@@ -4219,10 +4222,11 @@ public class ConversationsApiAsync {
 
   /**
    * Get the wrap-up for this conversation participant. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<AssignedWrapupCode>> getConversationsCobrowsesessionParticipantWrapupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AssignedWrapupCode>> callback) {
     try {
@@ -4260,10 +4264,11 @@ public class ConversationsApiAsync {
 
   /**
    * Get list of wrapup codes for this conversation participant
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<List<WrapupCode>> getConversationsCobrowsesessionParticipantWrapupcodesAsync(GetConversationsCobrowsesessionParticipantWrapupcodesRequest request, final AsyncApiCallback<List<WrapupCode>> callback) {
     try {
@@ -4294,10 +4299,11 @@ public class ConversationsApiAsync {
 
   /**
    * Get list of wrapup codes for this conversation participant
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<List<WrapupCode>>> getConversationsCobrowsesessionParticipantWrapupcodesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<WrapupCode>>> callback) {
     try {
@@ -7342,11 +7348,12 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Get a list of Messaging Stickers
-   * 
+   * Get a list of Messaging Stickers (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<MessagingStickerEntityListing> getConversationsMessagingStickerAsync(GetConversationsMessagingStickerRequest request, final AsyncApiCallback<MessagingStickerEntityListing> callback) {
     try {
@@ -7376,11 +7383,12 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Get a list of Messaging Stickers
-   * 
+   * Get a list of Messaging Stickers (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<MessagingStickerEntityListing>> getConversationsMessagingStickerAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<MessagingStickerEntityListing>> callback) {
     try {
@@ -7718,10 +7726,11 @@ public class ConversationsApiAsync {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<AssignedWrapupCode> getConversationsScreenshareParticipantCommunicationWrapupAsync(GetConversationsScreenshareParticipantCommunicationWrapupRequest request, final AsyncApiCallback<AssignedWrapupCode> callback) {
     try {
@@ -7752,10 +7761,11 @@ public class ConversationsApiAsync {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<AssignedWrapupCode>> getConversationsScreenshareParticipantCommunicationWrapupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AssignedWrapupCode>> callback) {
     try {
@@ -9522,10 +9532,11 @@ public class ConversationsApiAsync {
 
   /**
    * Update a conversation by disconnecting all of the participants
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Conversation> patchConversationsCobrowsesessionAsync(PatchConversationsCobrowsesessionRequest request, final AsyncApiCallback<Conversation> callback) {
     try {
@@ -9556,10 +9567,11 @@ public class ConversationsApiAsync {
 
   /**
    * Update a conversation by disconnecting all of the participants
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Conversation>> patchConversationsCobrowsesessionAsync(ApiRequest<Conversation> request, final AsyncApiCallback<ApiResponse<Conversation>> callback) {
     try {
@@ -9597,10 +9609,11 @@ public class ConversationsApiAsync {
 
   /**
    * Update conversation participant
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> patchConversationsCobrowsesessionParticipantAsync(PatchConversationsCobrowsesessionParticipantRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -9631,10 +9644,11 @@ public class ConversationsApiAsync {
 
   /**
    * Update conversation participant
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> patchConversationsCobrowsesessionParticipantAsync(ApiRequest<MediaParticipantRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -9672,10 +9686,11 @@ public class ConversationsApiAsync {
 
   /**
    * Update the attributes on a conversation participant.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ParticipantAttributes> patchConversationsCobrowsesessionParticipantAttributesAsync(PatchConversationsCobrowsesessionParticipantAttributesRequest request, final AsyncApiCallback<ParticipantAttributes> callback) {
     try {
@@ -9706,10 +9721,11 @@ public class ConversationsApiAsync {
 
   /**
    * Update the attributes on a conversation participant.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<ParticipantAttributes>> patchConversationsCobrowsesessionParticipantAttributesAsync(ApiRequest<ParticipantAttributes> request, final AsyncApiCallback<ApiResponse<ParticipantAttributes>> callback) {
     try {
@@ -9747,10 +9763,11 @@ public class ConversationsApiAsync {
 
   /**
    * Update conversation participant's communication by disconnecting it.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Empty> patchConversationsCobrowsesessionParticipantCommunicationAsync(PatchConversationsCobrowsesessionParticipantCommunicationRequest request, final AsyncApiCallback<Empty> callback) {
     try {
@@ -9781,10 +9798,11 @@ public class ConversationsApiAsync {
 
   /**
    * Update conversation participant's communication by disconnecting it.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Empty>> patchConversationsCobrowsesessionParticipantCommunicationAsync(ApiRequest<MediaParticipantRequest> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
     try {
@@ -14182,10 +14200,11 @@ public class ConversationsApiAsync {
 
   /**
    * Apply wrap-up for this conversation communication
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> postConversationsCobrowsesessionParticipantCommunicationWrapupAsync(PostConversationsCobrowsesessionParticipantCommunicationWrapupRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -14216,10 +14235,11 @@ public class ConversationsApiAsync {
 
   /**
    * Apply wrap-up for this conversation communication
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> postConversationsCobrowsesessionParticipantCommunicationWrapupAsync(ApiRequest<WrapupInput> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -14257,10 +14277,11 @@ public class ConversationsApiAsync {
 
   /**
    * Replace this participant with the specified user and/or address
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> postConversationsCobrowsesessionParticipantReplaceAsync(PostConversationsCobrowsesessionParticipantReplaceRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -14291,10 +14312,11 @@ public class ConversationsApiAsync {
 
   /**
    * Replace this participant with the specified user and/or address
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> postConversationsCobrowsesessionParticipantReplaceAsync(ApiRequest<TransferRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -15982,10 +16004,11 @@ public class ConversationsApiAsync {
 
   /**
    * Send an inbound Open Message
-   * Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * [This API is deprecated. Instead, use 1. POST /api/v2/conversations/messages/{integrationId}/inbound/open/event, if you want to send an inbound Open Event Message 2. POST /api/v2/conversations/messages/{integrationId}/inbound/open/message, if you want to send an inbound Open Message 3. POST /api/v2/conversations/messages/{integrationId}/inbound/open/receipt, to send an inbound Open Receipt Message]  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<OpenNormalizedMessage> postConversationsMessagesInboundOpenAsync(PostConversationsMessagesInboundOpenRequest request, final AsyncApiCallback<OpenNormalizedMessage> callback) {
     try {
@@ -16016,10 +16039,11 @@ public class ConversationsApiAsync {
 
   /**
    * Send an inbound Open Message
-   * Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * [This API is deprecated. Instead, use 1. POST /api/v2/conversations/messages/{integrationId}/inbound/open/event, if you want to send an inbound Open Event Message 2. POST /api/v2/conversations/messages/{integrationId}/inbound/open/message, if you want to send an inbound Open Message 3. POST /api/v2/conversations/messages/{integrationId}/inbound/open/receipt, to send an inbound Open Receipt Message]  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<OpenNormalizedMessage>> postConversationsMessagesInboundOpenAsync(ApiRequest<OpenNormalizedMessage> request, final AsyncApiCallback<ApiResponse<OpenNormalizedMessage>> callback) {
     try {
@@ -16813,10 +16837,11 @@ public class ConversationsApiAsync {
 
   /**
    * Apply wrap-up for this conversation communication
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> postConversationsScreenshareParticipantCommunicationWrapupAsync(PostConversationsScreenshareParticipantCommunicationWrapupRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -16847,10 +16872,11 @@ public class ConversationsApiAsync {
 
   /**
    * Apply wrap-up for this conversation communication
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> postConversationsScreenshareParticipantCommunicationWrapupAsync(ApiRequest<WrapupInput> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
@@ -18317,10 +18343,11 @@ public class ConversationsApiAsync {
 
   /**
    * Update a conversation by setting its recording state
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<String> putConversationsScreenshareRecordingstateAsync(PutConversationsScreenshareRecordingstateRequest request, final AsyncApiCallback<String> callback) {
     try {
@@ -18351,10 +18378,11 @@ public class ConversationsApiAsync {
 
   /**
    * Update a conversation by setting its recording state
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<String>> putConversationsScreenshareRecordingstateAsync(ApiRequest<SetRecordingState> request, final AsyncApiCallback<ApiResponse<String>> callback) {
     try {

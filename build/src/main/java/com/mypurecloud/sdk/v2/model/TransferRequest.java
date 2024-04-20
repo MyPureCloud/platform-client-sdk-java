@@ -36,7 +36,7 @@ public class TransferRequest  implements Serializable {
     }
   }
   /**
-   * Gets or Sets transferType
+   * The type of transfer to perform. Attended, where the initiating agent maintains ownership of the conversation until the intended recipient accepts the transfer, or Unattended, where the initiating agent immediately disconnects. Default is Unattended.
    */
  @JsonDeserialize(using = TransferTypeEnumDeserializer.class)
   public enum TransferTypeEnum {
@@ -78,13 +78,14 @@ public class TransferRequest  implements Serializable {
 
   
   /**
+   * The type of transfer to perform. Attended, where the initiating agent maintains ownership of the conversation until the intended recipient accepts the transfer, or Unattended, where the initiating agent immediately disconnects. Default is Unattended.
    **/
   public TransferRequest transferType(TransferTypeEnum transferType) {
     this.transferType = transferType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The type of transfer to perform. Attended, where the initiating agent maintains ownership of the conversation until the intended recipient accepts the transfer, or Unattended, where the initiating agent immediately disconnects. Default is Unattended.")
   @JsonProperty("transferType")
   public TransferTypeEnum getTransferType() {
     return transferType;

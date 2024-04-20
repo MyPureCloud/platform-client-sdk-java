@@ -130,14 +130,14 @@ public class ConditionalGroupRoutingRule  implements Serializable {
 
   
   /**
-   * The queue being evaluated for this rule.  For rule 1, this is always the current queue, so should not be specified.
+   * The queue being evaluated for this rule.  If null, the current queue will be used.
    **/
   public ConditionalGroupRoutingRule queue(DomainEntityRef queue) {
     this.queue = queue;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The queue being evaluated for this rule.  For rule 1, this is always the current queue, so should not be specified.")
+  @ApiModelProperty(example = "null", value = "The queue being evaluated for this rule.  If null, the current queue will be used.")
   @JsonProperty("queue")
   public DomainEntityRef getQueue() {
     return queue;

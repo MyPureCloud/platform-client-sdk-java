@@ -59,6 +59,7 @@ public class ReportingTurn  implements Serializable {
     SUCCESSCOLLECTION("SuccessCollection"),
     SUCCESSCONFIRMATIONYES("SuccessConfirmationYes"),
     SUCCESSCONFIRMATIONNO("SuccessConfirmationNo"),
+    SKIPPEDCOLLECTION("SkippedCollection"),
     NOMATCHCOLLECTION("NoMatchCollection"),
     NOMATCHCONFIRMATION("NoMatchConfirmation"),
     AGENTREQUESTEDBYUSER("AgentRequestedByUser"),

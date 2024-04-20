@@ -8,9 +8,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | Description |
 | ------------- | ------------- |
 | [**deleteChatsRoomMessage**](ChatApi.html#deleteChatsRoomMessage) | Delete a message in a room |
+| [**deleteChatsRoomMessagesPin**](ChatApi.html#deleteChatsRoomMessagesPin) | Remove a pinned message from a room |
 | [**deleteChatsRoomParticipant**](ChatApi.html#deleteChatsRoomParticipant) | Remove a user from a room. |
-| [**deleteChatsRoomPinnedmessage**](ChatApi.html#deleteChatsRoomPinnedmessage) | Remove a pinned message from a room |
 | [**deleteChatsUserMessage**](ChatApi.html#deleteChatsUserMessage) | Delete a message to a user |
+| [**deleteChatsUserMessagesPin**](ChatApi.html#deleteChatsUserMessagesPin) | Remove a pinned message from a 1on1 |
 | [**getChatsMessage**](ChatApi.html#getChatsMessage) | Get a message |
 | [**getChatsRoom**](ChatApi.html#getChatsRoom) | Get a room |
 | [**getChatsRoomMessage**](ChatApi.html#getChatsRoomMessage) | Get messages by id(s) from a room |
@@ -19,6 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getChatsRoomParticipants**](ChatApi.html#getChatsRoomParticipants) | Get room participants in a room |
 | [**getChatsSettings**](ChatApi.html#getChatsSettings) | Get Chat Settings. |
 | [**getChatsThreadMessages**](ChatApi.html#getChatsThreadMessages) | Get history by thread |
+| [**getChatsUser**](ChatApi.html#getChatsUser) | Get information for a 1on1 |
 | [**getChatsUserMessage**](ChatApi.html#getChatsUserMessage) | Get messages by id(s) from a 1on1 |
 | [**getChatsUserMessages**](ChatApi.html#getChatsUserMessages) | Get 1on1 History between a user |
 | [**getChatsUserSettings**](ChatApi.html#getChatsUserSettings) | Get a user's chat settings |
@@ -28,10 +30,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchChatsUserMessage**](ChatApi.html#patchChatsUserMessage) | Edit a message to a user |
 | [**patchChatsUserSettings**](ChatApi.html#patchChatsUserSettings) | Update a user's chat settings |
 | [**postChatsRoomMessages**](ChatApi.html#postChatsRoomMessages) | Send a message to a room |
+| [**postChatsRoomMessagesPins**](ChatApi.html#postChatsRoomMessagesPins) | Add pinned messages for a room, up to a maximum of 5 pinned messages |
 | [**postChatsRoomParticipant**](ChatApi.html#postChatsRoomParticipant) | Join a room |
-| [**postChatsRoomPinnedmessages**](ChatApi.html#postChatsRoomPinnedmessages) | Add pinned messages for a room, up to a maximum of 5 pinned messages |
 | [**postChatsRooms**](ChatApi.html#postChatsRooms) | Create an adhoc room |
 | [**postChatsUserMessages**](ChatApi.html#postChatsUserMessages) | Send a message to a user |
+| [**postChatsUserMessagesPins**](ChatApi.html#postChatsUserMessagesPins) | Add pinned messages for a 1on1, up to a maximum of 5 pinned messages |
 | [**putChatsMessageReactions**](ChatApi.html#putChatsMessageReactions) | Update reactions to a message |
 | [**putChatsSettings**](ChatApi.html#putChatsSettings) | Update Chat Settings. |
 {: class="table-striped"}
@@ -92,6 +95,69 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **roomJid** | **String**| roomId | 
 | **messageId** | **String**| messageId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteChatsRoomMessagesPin"></a>
+
+# **deleteChatsRoomMessagesPin**
+
+
+
+> Void deleteChatsRoomMessagesPin(roomJid, pinnedMessageId)
+
+Remove a pinned message from a room
+
+Wraps DELETE /api/v2/chats/rooms/{roomJid}/messages/pins/{pinnedMessageId}  
+
+Requires ANY permissions: 
+
+* chat:chat:access
+* chat:room:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ChatApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ChatApi apiInstance = new ChatApi();
+String roomJid = "roomJid_example"; // String | roomJid
+String pinnedMessageId = "pinnedMessageId_example"; // String | pinnedMessageId
+try {
+    apiInstance.deleteChatsRoomMessagesPin(roomJid, pinnedMessageId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ChatApi#deleteChatsRoomMessagesPin");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **roomJid** | **String**| roomJid | 
+| **pinnedMessageId** | **String**| pinnedMessageId | 
 {: class="table-striped"}
 
 
@@ -162,69 +228,6 @@ try {
 
 null (empty response body)
 
-<a name="deleteChatsRoomPinnedmessage"></a>
-
-# **deleteChatsRoomPinnedmessage**
-
-
-
-> Void deleteChatsRoomPinnedmessage(roomJid, pinnedMessageId)
-
-Remove a pinned message from a room
-
-Wraps DELETE /api/v2/chats/rooms/{roomJid}/pinnedmessages/{pinnedMessageId}  
-
-Requires ANY permissions: 
-
-* chat:chat:access
-* chat:room:edit
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.ChatApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-ChatApi apiInstance = new ChatApi();
-String roomJid = "roomJid_example"; // String | roomJid
-String pinnedMessageId = "pinnedMessageId_example"; // String | pinnedMessageId
-try {
-    apiInstance.deleteChatsRoomPinnedmessage(roomJid, pinnedMessageId);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ChatApi#deleteChatsRoomPinnedmessage");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **roomJid** | **String**| roomJid | 
-| **pinnedMessageId** | **String**| pinnedMessageId | 
-{: class="table-striped"}
-
-
-### Return type
-
-null (empty response body)
-
 <a name="deleteChatsUserMessage"></a>
 
 # **deleteChatsUserMessage**
@@ -281,6 +284,71 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| userId | 
 | **messageId** | **String**| messageId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteChatsUserMessagesPin"></a>
+
+# **deleteChatsUserMessagesPin**
+
+
+
+> Void deleteChatsUserMessagesPin(userId, pinnedMessageId)
+
+Remove a pinned message from a 1on1
+
+deleteChatsUserMessagesPin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/chats/users/{userId}/messages/pins/{pinnedMessageId}  
+
+Requires ANY permissions: 
+
+* chat:chat:access
+* chat:1on1:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ChatApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ChatApi apiInstance = new ChatApi();
+String userId = "userId_example"; // String | userId
+String pinnedMessageId = "pinnedMessageId_example"; // String | pinnedMessageId
+try {
+    apiInstance.deleteChatsUserMessagesPin(userId, pinnedMessageId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ChatApi#deleteChatsUserMessagesPin");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| userId | 
+| **pinnedMessageId** | **String**| pinnedMessageId | 
 {: class="table-striped"}
 
 
@@ -794,6 +862,70 @@ try {
 ### Return type
 
 [**ChatMessageEntityListing**](ChatMessageEntityListing.html)
+
+<a name="getChatsUser"></a>
+
+# **getChatsUser**
+
+
+
+> [OneOnOne](OneOnOne.html) getChatsUser(userId)
+
+Get information for a 1on1
+
+getChatsUser is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/chats/users/{userId}  
+
+Requires ANY permissions: 
+
+* chat:chat:access
+* chat:1on1:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ChatApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ChatApi apiInstance = new ChatApi();
+String userId = "userId_example"; // String | userId
+try {
+    OneOnOne result = apiInstance.getChatsUser(userId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ChatApi#getChatsUser");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| userId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OneOnOne**](OneOnOne.html)
 
 <a name="getChatsUserMessage"></a>
 
@@ -1377,6 +1509,69 @@ try {
 
 [**ChatSendMessageResponse**](ChatSendMessageResponse.html)
 
+<a name="postChatsRoomMessagesPins"></a>
+
+# **postChatsRoomMessagesPins**
+
+
+
+> Void postChatsRoomMessagesPins(roomJid, body)
+
+Add pinned messages for a room, up to a maximum of 5 pinned messages
+
+Wraps POST /api/v2/chats/rooms/{roomJid}/messages/pins  
+
+Requires ANY permissions: 
+
+* chat:chat:access
+* chat:room:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ChatApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ChatApi apiInstance = new ChatApi();
+String roomJid = "roomJid_example"; // String | roomJid
+PinnedMessageRequest body = new PinnedMessageRequest(); // PinnedMessageRequest | Pinned Message Ids
+try {
+    apiInstance.postChatsRoomMessagesPins(roomJid, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ChatApi#postChatsRoomMessagesPins");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **roomJid** | **String**| roomJid | 
+| **body** | [**PinnedMessageRequest**](PinnedMessageRequest.html)| Pinned Message Ids | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
 <a name="postChatsRoomParticipant"></a>
 
 # **postChatsRoomParticipant**
@@ -1433,69 +1628,6 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **roomJid** | **String**| roomJid | 
 | **userId** | **String**| userId | 
-{: class="table-striped"}
-
-
-### Return type
-
-null (empty response body)
-
-<a name="postChatsRoomPinnedmessages"></a>
-
-# **postChatsRoomPinnedmessages**
-
-
-
-> Void postChatsRoomPinnedmessages(roomJid, body)
-
-Add pinned messages for a room, up to a maximum of 5 pinned messages
-
-Wraps POST /api/v2/chats/rooms/{roomJid}/pinnedmessages  
-
-Requires ANY permissions: 
-
-* chat:chat:access
-* chat:room:edit
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.ChatApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-ChatApi apiInstance = new ChatApi();
-String roomJid = "roomJid_example"; // String | roomJid
-PinnedMessageRequest body = new PinnedMessageRequest(); // PinnedMessageRequest | Pinned Message Ids
-try {
-    apiInstance.postChatsRoomPinnedmessages(roomJid, body);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ChatApi#postChatsRoomPinnedmessages");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **roomJid** | **String**| roomJid | 
-| **body** | [**PinnedMessageRequest**](PinnedMessageRequest.html)| Pinned Message Ids | 
 {: class="table-striped"}
 
 
@@ -1628,6 +1760,71 @@ try {
 ### Return type
 
 [**ChatSendMessageResponse**](ChatSendMessageResponse.html)
+
+<a name="postChatsUserMessagesPins"></a>
+
+# **postChatsUserMessagesPins**
+
+
+
+> Void postChatsUserMessagesPins(userId, body)
+
+Add pinned messages for a 1on1, up to a maximum of 5 pinned messages
+
+postChatsUserMessagesPins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/chats/users/{userId}/messages/pins  
+
+Requires ANY permissions: 
+
+* chat:chat:access
+* chat:1on1:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ChatApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ChatApi apiInstance = new ChatApi();
+String userId = "userId_example"; // String | userId
+PinnedMessageRequest body = new PinnedMessageRequest(); // PinnedMessageRequest | Pinned Message Ids
+try {
+    apiInstance.postChatsUserMessagesPins(userId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ChatApi#postChatsUserMessagesPins");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| userId | 
+| **body** | [**PinnedMessageRequest**](PinnedMessageRequest.html)| Pinned Message Ids | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="putChatsMessageReactions"></a>
 

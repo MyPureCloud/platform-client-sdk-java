@@ -8,7 +8,7 @@ title: TransferToAgentRequest
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **transferType** | [**TransferTypeEnum**](#TransferTypeEnum)<!----> |  |  [optional] |
+| **transferType** | [**TransferTypeEnum**](#TransferTypeEnum)<!----> | The type of transfer to perform. Attended, where the initiating agent maintains ownership of the conversation until the intended recipient accepts the transfer, or Unattended, where the initiating agent immediately disconnects. Default is Unattended. |  [optional] |
 | **userId** | <!----><!---->**String**<!----> | The id of the internal user. |  [optional] |
 | **userName** | <!----><!---->**String**<!----> | The userName (like user’s email) of the internal user. |  [optional] |
 | **userDisplayName** | <!----><!---->**String**<!----> | The name of the internal user. |  [optional] |

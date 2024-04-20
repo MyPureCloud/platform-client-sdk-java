@@ -450,10 +450,11 @@ public class WebChatApiAsync {
 
   /**
    * Get a media request in the conversation
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<WebChatGuestMediaRequest> getWebchatGuestConversationMediarequestAsync(GetWebchatGuestConversationMediarequestRequest request, final AsyncApiCallback<WebChatGuestMediaRequest> callback) {
     try {
@@ -484,10 +485,11 @@ public class WebChatApiAsync {
 
   /**
    * Get a media request in the conversation
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<WebChatGuestMediaRequest>> getWebchatGuestConversationMediarequestAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WebChatGuestMediaRequest>> callback) {
     try {
@@ -975,10 +977,11 @@ public class WebChatApiAsync {
 
   /**
    * Update a media request in the conversation, setting the state to ACCEPTED/DECLINED/ERRORED
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<WebChatGuestMediaRequest> patchWebchatGuestConversationMediarequestAsync(PatchWebchatGuestConversationMediarequestRequest request, final AsyncApiCallback<WebChatGuestMediaRequest> callback) {
     try {
@@ -1009,10 +1012,11 @@ public class WebChatApiAsync {
 
   /**
    * Update a media request in the conversation, setting the state to ACCEPTED/DECLINED/ERRORED
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<WebChatGuestMediaRequest>> patchWebchatGuestConversationMediarequestAsync(ApiRequest<WebChatGuestMediaRequest> request, final AsyncApiCallback<ApiResponse<WebChatGuestMediaRequest>> callback) {
     try {

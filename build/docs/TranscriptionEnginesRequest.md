@@ -8,7 +8,7 @@ title: TranscriptionEnginesRequest
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **transcriptionEngines** | <!----><!---->[**List&lt;TranscriptionEngines&gt;**](TranscriptionEngines.html)<!----> | The transcription engine setting |  |
+| **transcriptionEngines** | <!----><!---->[**List&lt;ProgramTranscriptionEngine&gt;**](ProgramTranscriptionEngine.html)<!----> | The transcription engine setting |  |
 {: class="table table-striped"}
 
 

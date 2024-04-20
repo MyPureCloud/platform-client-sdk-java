@@ -59,7 +59,8 @@ public class AuditLogMessage  implements Serializable {
   public enum LevelEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     USER("USER"),
-    SYSTEM("SYSTEM");
+    SYSTEM("SYSTEM"),
+    GENESYS_INTERNAL("GENESYS_INTERNAL");
 
     private String value;
 

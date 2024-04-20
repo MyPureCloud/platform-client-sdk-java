@@ -1736,28 +1736,32 @@ public class AuthorizationApi {
    * Returns a listing of roles and permissions for a user.
    * 
    * @param subjectId Subject ID (user or group) (required)
+   * @param includeDuplicates Include multiple entries with the same role and division but different subjects (optional, default to false)
    * @return AuthzSubject
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AuthzSubject getAuthorizationSubject(String subjectId) throws IOException, ApiException {
-    return  getAuthorizationSubject(createGetAuthorizationSubjectRequest(subjectId));
+  public AuthzSubject getAuthorizationSubject(String subjectId, Boolean includeDuplicates) throws IOException, ApiException {
+    return  getAuthorizationSubject(createGetAuthorizationSubjectRequest(subjectId, includeDuplicates));
   }
 
   /**
    * Returns a listing of roles and permissions for a user.
    * 
    * @param subjectId Subject ID (user or group) (required)
+   * @param includeDuplicates Include multiple entries with the same role and division but different subjects (optional, default to false)
    * @return AuthzSubject
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AuthzSubject> getAuthorizationSubjectWithHttpInfo(String subjectId) throws IOException {
-    return getAuthorizationSubject(createGetAuthorizationSubjectRequest(subjectId).withHttpInfo());
+  public ApiResponse<AuthzSubject> getAuthorizationSubjectWithHttpInfo(String subjectId, Boolean includeDuplicates) throws IOException {
+    return getAuthorizationSubject(createGetAuthorizationSubjectRequest(subjectId, includeDuplicates).withHttpInfo());
   }
 
-  private GetAuthorizationSubjectRequest createGetAuthorizationSubjectRequest(String subjectId) {
+  private GetAuthorizationSubjectRequest createGetAuthorizationSubjectRequest(String subjectId, Boolean includeDuplicates) {
     return GetAuthorizationSubjectRequest.builder()
             .withSubjectId(subjectId)
+
+            .withIncludeDuplicates(includeDuplicates)
 
             .build();
   }
@@ -1813,26 +1817,30 @@ public class AuthorizationApi {
   /**
    * Returns a listing of roles and permissions for the currently authenticated user.
    * 
+   * @param includeDuplicates Include multiple entries with the same role and division but different subjects (optional, default to false)
    * @return AuthzSubject
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AuthzSubject getAuthorizationSubjectsMe() throws IOException, ApiException {
-    return  getAuthorizationSubjectsMe(createGetAuthorizationSubjectsMeRequest());
+  public AuthzSubject getAuthorizationSubjectsMe(Boolean includeDuplicates) throws IOException, ApiException {
+    return  getAuthorizationSubjectsMe(createGetAuthorizationSubjectsMeRequest(includeDuplicates));
   }
 
   /**
    * Returns a listing of roles and permissions for the currently authenticated user.
    * 
+   * @param includeDuplicates Include multiple entries with the same role and division but different subjects (optional, default to false)
    * @return AuthzSubject
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AuthzSubject> getAuthorizationSubjectsMeWithHttpInfo() throws IOException {
-    return getAuthorizationSubjectsMe(createGetAuthorizationSubjectsMeRequest().withHttpInfo());
+  public ApiResponse<AuthzSubject> getAuthorizationSubjectsMeWithHttpInfo(Boolean includeDuplicates) throws IOException {
+    return getAuthorizationSubjectsMe(createGetAuthorizationSubjectsMeRequest(includeDuplicates).withHttpInfo());
   }
 
-  private GetAuthorizationSubjectsMeRequest createGetAuthorizationSubjectsMeRequest() {
+  private GetAuthorizationSubjectsMeRequest createGetAuthorizationSubjectsMeRequest(Boolean includeDuplicates) {
     return GetAuthorizationSubjectsMeRequest.builder()
+            .withIncludeDuplicates(includeDuplicates)
+
             .build();
   }
 

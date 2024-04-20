@@ -17,6 +17,7 @@ title: DefaultObjective
 | **topics** | <!----><!---->[**List&lt;AddressableEntityRef&gt;**](AddressableEntityRef.html)<!----> | A list of topic ids for detected topic metrics |  [optional] |
 | **topicIdsFilterType** | [**TopicIdsFilterTypeEnum**](#TopicIdsFilterTypeEnum)<!----> | A filter type for topic Ids. It's only used for objectives with topicIds. Default filter behavior is \"or\". |  [optional] |
 | **evaluationFormContextIds** | <!----><!---->**List&lt;String&gt;**<!----> | The ids of associated evaluation form context, for Quality Evaluation Score metrics |  [optional] |
+| **initialDirection** | [**InitialDirectionEnum**](#InitialDirectionEnum)<!----> | The initial direction to filter on |  [optional] |
 {: class="table table-striped"}
 
 
@@ -47,6 +48,18 @@ title: DefaultObjective
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | AND | &quot;and&quot; | 
 | OR | &quot;or&quot; | 
+{: class="table table-striped"}
+
+
+<a name="InitialDirectionEnum"></a>
+
+## Enum: InitialDirectionEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INBOUND | &quot;inbound&quot; | 
+| OUTBOUND | &quot;outbound&quot; | 
 {: class="table table-striped"}
 
 

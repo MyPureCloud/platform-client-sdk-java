@@ -13,7 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.BaseProgramEntity;
-import com.mypurecloud.sdk.v2.model.TranscriptionEngines;
+import com.mypurecloud.sdk.v2.model.ProgramTranscriptionEngine;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -27,12 +27,21 @@ import java.io.Serializable;
 
 public class ProgramTranscriptionEngines  implements Serializable {
   
+  private String id = null;
   private BaseProgramEntity program = null;
-  private List<TranscriptionEngines> transcriptionEngines = new ArrayList<TranscriptionEngines>();
+  private List<ProgramTranscriptionEngine> transcriptionEngines = new ArrayList<ProgramTranscriptionEngine>();
   private AddressableEntityRef modifiedBy = null;
   private Date dateModified = null;
+  private String selfUri = null;
 
   
+  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+
+
   /**
    * The ID of the program
    **/
@@ -54,17 +63,17 @@ public class ProgramTranscriptionEngines  implements Serializable {
   /**
    * The program transcription engine settings
    **/
-  public ProgramTranscriptionEngines transcriptionEngines(List<TranscriptionEngines> transcriptionEngines) {
+  public ProgramTranscriptionEngines transcriptionEngines(List<ProgramTranscriptionEngine> transcriptionEngines) {
     this.transcriptionEngines = transcriptionEngines;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The program transcription engine settings")
   @JsonProperty("transcriptionEngines")
-  public List<TranscriptionEngines> getTranscriptionEngines() {
+  public List<ProgramTranscriptionEngine> getTranscriptionEngines() {
     return transcriptionEngines;
   }
-  public void setTranscriptionEngines(List<TranscriptionEngines> transcriptionEngines) {
+  public void setTranscriptionEngines(List<ProgramTranscriptionEngine> transcriptionEngines) {
     this.transcriptionEngines = transcriptionEngines;
   }
 
@@ -105,6 +114,13 @@ public class ProgramTranscriptionEngines  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The URI for this object")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -115,15 +131,17 @@ public class ProgramTranscriptionEngines  implements Serializable {
     }
     ProgramTranscriptionEngines programTranscriptionEngines = (ProgramTranscriptionEngines) o;
 
-    return Objects.equals(this.program, programTranscriptionEngines.program) &&
+    return Objects.equals(this.id, programTranscriptionEngines.id) &&
+            Objects.equals(this.program, programTranscriptionEngines.program) &&
             Objects.equals(this.transcriptionEngines, programTranscriptionEngines.transcriptionEngines) &&
             Objects.equals(this.modifiedBy, programTranscriptionEngines.modifiedBy) &&
-            Objects.equals(this.dateModified, programTranscriptionEngines.dateModified);
+            Objects.equals(this.dateModified, programTranscriptionEngines.dateModified) &&
+            Objects.equals(this.selfUri, programTranscriptionEngines.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(program, transcriptionEngines, modifiedBy, dateModified);
+    return Objects.hash(id, program, transcriptionEngines, modifiedBy, dateModified, selfUri);
   }
 
   @Override
@@ -131,10 +149,12 @@ public class ProgramTranscriptionEngines  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ProgramTranscriptionEngines {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    program: ").append(toIndentedString(program)).append("\n");
     sb.append("    transcriptionEngines: ").append(toIndentedString(transcriptionEngines)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

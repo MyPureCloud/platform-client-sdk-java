@@ -22,6 +22,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTaskmanagementWorkitemVersion**](TaskManagementApi.html#getTaskmanagementWorkitemVersion) | Get a version of a workitem |
 | [**getTaskmanagementWorkitemVersions**](TaskManagementApi.html#getTaskmanagementWorkitemVersions) | Get all versions of a workitem |
 | [**getTaskmanagementWorkitemWrapups**](TaskManagementApi.html#getTaskmanagementWorkitemWrapups) | Get all wrapup codes added for all users for a workitem. |
+| [**getTaskmanagementWorkitemsQueryJob**](TaskManagementApi.html#getTaskmanagementWorkitemsQueryJob) | Get the workitem query job associated with the job id. |
+| [**getTaskmanagementWorkitemsQueryJobResults**](TaskManagementApi.html#getTaskmanagementWorkitemsQueryJobResults) | Get results from for workitem query job  |
 | [**getTaskmanagementWorkitemsSchema**](TaskManagementApi.html#getTaskmanagementWorkitemsSchema) | Get a schema |
 | [**getTaskmanagementWorkitemsSchemaVersion**](TaskManagementApi.html#getTaskmanagementWorkitemsSchemaVersion) | Get a specific version of a schema |
 | [**getTaskmanagementWorkitemsSchemaVersions**](TaskManagementApi.html#getTaskmanagementWorkitemsSchemaVersions) | Get all versions of a schema |
@@ -46,6 +48,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postTaskmanagementWorkitemTerminate**](TaskManagementApi.html#postTaskmanagementWorkitemTerminate) | Terminate a workitem |
 | [**postTaskmanagementWorkitems**](TaskManagementApi.html#postTaskmanagementWorkitems) | Create a workitem |
 | [**postTaskmanagementWorkitemsQuery**](TaskManagementApi.html#postTaskmanagementWorkitemsQuery) | Query for workitems |
+| [**postTaskmanagementWorkitemsQueryJobs**](TaskManagementApi.html#postTaskmanagementWorkitemsQueryJobs) | Create a workitem query job |
 | [**postTaskmanagementWorkitemsSchemas**](TaskManagementApi.html#postTaskmanagementWorkitemsSchemas) | Create a schema |
 | [**postTaskmanagementWorktypeStatuses**](TaskManagementApi.html#postTaskmanagementWorktypeStatuses) | Add a status to a worktype |
 | [**postTaskmanagementWorktypes**](TaskManagementApi.html#postTaskmanagementWorktypes) | Create a worktype |
@@ -1042,6 +1045,132 @@ try {
 ### Return type
 
 [**WorkitemWrapupEntityListing**](WorkitemWrapupEntityListing.html)
+
+<a name="getTaskmanagementWorkitemsQueryJob"></a>
+
+# **getTaskmanagementWorkitemsQueryJob**
+
+
+
+> [WorkitemQueryJobResponse](WorkitemQueryJobResponse.html) getTaskmanagementWorkitemsQueryJob(jobId)
+
+Get the workitem query job associated with the job id.
+
+getTaskmanagementWorkitemsQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/taskmanagement/workitems/query/jobs/{jobId}  
+
+Requires ALL permissions: 
+
+* workitems:queryJob:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    WorkitemQueryJobResponse result = apiInstance.getTaskmanagementWorkitemsQueryJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#getTaskmanagementWorkitemsQueryJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WorkitemQueryJobResponse**](WorkitemQueryJobResponse.html)
+
+<a name="getTaskmanagementWorkitemsQueryJobResults"></a>
+
+# **getTaskmanagementWorkitemsQueryJobResults**
+
+
+
+> [WorkitemPagedEntityListing](WorkitemPagedEntityListing.html) getTaskmanagementWorkitemsQueryJobResults(jobId)
+
+Get results from for workitem query job 
+
+getTaskmanagementWorkitemsQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/taskmanagement/workitems/query/jobs/{jobId}/results  
+
+Requires ALL permissions: 
+
+* workitems:queryJobResults:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    WorkitemPagedEntityListing result = apiInstance.getTaskmanagementWorkitemsQueryJobResults(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#getTaskmanagementWorkitemsQueryJobResults");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WorkitemPagedEntityListing**](WorkitemPagedEntityListing.html)
 
 <a name="getTaskmanagementWorkitemsSchema"></a>
 
@@ -2593,6 +2722,69 @@ try {
 ### Return type
 
 [**WorkitemPostQueryEntityListing**](WorkitemPostQueryEntityListing.html)
+
+<a name="postTaskmanagementWorkitemsQueryJobs"></a>
+
+# **postTaskmanagementWorkitemsQueryJobs**
+
+
+
+> [WorkitemQueryJobResponse](WorkitemQueryJobResponse.html) postTaskmanagementWorkitemsQueryJobs(body)
+
+Create a workitem query job
+
+postTaskmanagementWorkitemsQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/taskmanagement/workitems/query/jobs  
+
+Requires ANY permissions: 
+
+* workitems:queryJob:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+WorkitemQueryJobCreate body = new WorkitemQueryJobCreate(); // WorkitemQueryJobCreate | WorkitemQueryJobCreate
+try {
+    WorkitemQueryJobResponse result = apiInstance.postTaskmanagementWorkitemsQueryJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#postTaskmanagementWorkitemsQueryJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**WorkitemQueryJobCreate**](WorkitemQueryJobCreate.html)| WorkitemQueryJobCreate | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WorkitemQueryJobResponse**](WorkitemQueryJobResponse.html)
 
 <a name="postTaskmanagementWorkitemsSchemas"></a>
 

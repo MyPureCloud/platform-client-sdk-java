@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.ChatUserSettings;
 import com.mypurecloud.sdk.v2.model.CreateRoomRequest;
 import com.mypurecloud.sdk.v2.model.CreateRoomResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.OneOnOne;
 import com.mypurecloud.sdk.v2.model.PinnedMessageRequest;
 import com.mypurecloud.sdk.v2.model.Room;
 import com.mypurecloud.sdk.v2.model.RoomParticipant;
@@ -28,9 +29,10 @@ import com.mypurecloud.sdk.v2.model.SendMessageBody;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteChatsRoomMessageRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteChatsRoomMessagesPinRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteChatsRoomParticipantRequest;
-import com.mypurecloud.sdk.v2.api.request.DeleteChatsRoomPinnedmessageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteChatsUserMessageRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteChatsUserMessagesPinRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsRoomRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsRoomMessageRequest;
@@ -39,6 +41,7 @@ import com.mypurecloud.sdk.v2.api.request.GetChatsRoomParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsRoomParticipantsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsThreadMessagesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetChatsUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsUserMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsUserMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsUserSettingsRequest;
@@ -48,10 +51,11 @@ import com.mypurecloud.sdk.v2.api.request.PatchChatsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchChatsUserMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchChatsUserSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostChatsRoomMessagesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostChatsRoomMessagesPinsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostChatsRoomParticipantRequest;
-import com.mypurecloud.sdk.v2.api.request.PostChatsRoomPinnedmessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostChatsRoomsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostChatsUserMessagesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostChatsUserMessagesPinsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutChatsMessageReactionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutChatsSettingsRequest;
 
@@ -130,6 +134,85 @@ public class ChatApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteChatsRoomMessage(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Remove a pinned message from a room
+   * 
+   * @param roomJid roomJid (required)
+   * @param pinnedMessageId pinnedMessageId (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteChatsRoomMessagesPin(String roomJid, String pinnedMessageId) throws IOException, ApiException {
+     deleteChatsRoomMessagesPin(createDeleteChatsRoomMessagesPinRequest(roomJid, pinnedMessageId));
+  }
+
+  /**
+   * Remove a pinned message from a room
+   * 
+   * @param roomJid roomJid (required)
+   * @param pinnedMessageId pinnedMessageId (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteChatsRoomMessagesPinWithHttpInfo(String roomJid, String pinnedMessageId) throws IOException {
+    return deleteChatsRoomMessagesPin(createDeleteChatsRoomMessagesPinRequest(roomJid, pinnedMessageId).withHttpInfo());
+  }
+
+  private DeleteChatsRoomMessagesPinRequest createDeleteChatsRoomMessagesPinRequest(String roomJid, String pinnedMessageId) {
+    return DeleteChatsRoomMessagesPinRequest.builder()
+            .withRoomJid(roomJid)
+
+            .withPinnedMessageId(pinnedMessageId)
+
+            .build();
+  }
+
+  /**
+   * Remove a pinned message from a room
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteChatsRoomMessagesPin(DeleteChatsRoomMessagesPinRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Remove a pinned message from a room
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteChatsRoomMessagesPin(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -231,85 +314,6 @@ public class ChatApi {
   }
 
   /**
-   * Remove a pinned message from a room
-   * 
-   * @param roomJid roomJid (required)
-   * @param pinnedMessageId pinnedMessageId (required)
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public void deleteChatsRoomPinnedmessage(String roomJid, String pinnedMessageId) throws IOException, ApiException {
-     deleteChatsRoomPinnedmessage(createDeleteChatsRoomPinnedmessageRequest(roomJid, pinnedMessageId));
-  }
-
-  /**
-   * Remove a pinned message from a room
-   * 
-   * @param roomJid roomJid (required)
-   * @param pinnedMessageId pinnedMessageId (required)
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Void> deleteChatsRoomPinnedmessageWithHttpInfo(String roomJid, String pinnedMessageId) throws IOException {
-    return deleteChatsRoomPinnedmessage(createDeleteChatsRoomPinnedmessageRequest(roomJid, pinnedMessageId).withHttpInfo());
-  }
-
-  private DeleteChatsRoomPinnedmessageRequest createDeleteChatsRoomPinnedmessageRequest(String roomJid, String pinnedMessageId) {
-    return DeleteChatsRoomPinnedmessageRequest.builder()
-            .withRoomJid(roomJid)
-
-            .withPinnedMessageId(pinnedMessageId)
-
-            .build();
-  }
-
-  /**
-   * Remove a pinned message from a room
-   * 
-   * @param request The request object
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public void deleteChatsRoomPinnedmessage(DeleteChatsRoomPinnedmessageRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
-    }
-  }
-
-  /**
-   * Remove a pinned message from a room
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Void> deleteChatsRoomPinnedmessage(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, null);
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
    * Delete a message to a user
    * 
    * @param userId userId (required)
@@ -367,6 +371,89 @@ public class ChatApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteChatsUserMessage(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Remove a pinned message from a 1on1
+   * 
+   * deleteChatsUserMessagesPin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param userId userId (required)
+   * @param pinnedMessageId pinnedMessageId (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteChatsUserMessagesPin(String userId, String pinnedMessageId) throws IOException, ApiException {
+     deleteChatsUserMessagesPin(createDeleteChatsUserMessagesPinRequest(userId, pinnedMessageId));
+  }
+
+  /**
+   * Remove a pinned message from a 1on1
+   * 
+   * deleteChatsUserMessagesPin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param userId userId (required)
+   * @param pinnedMessageId pinnedMessageId (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteChatsUserMessagesPinWithHttpInfo(String userId, String pinnedMessageId) throws IOException {
+    return deleteChatsUserMessagesPin(createDeleteChatsUserMessagesPinRequest(userId, pinnedMessageId).withHttpInfo());
+  }
+
+  private DeleteChatsUserMessagesPinRequest createDeleteChatsUserMessagesPinRequest(String userId, String pinnedMessageId) {
+    return DeleteChatsUserMessagesPinRequest.builder()
+            .withUserId(userId)
+
+            .withPinnedMessageId(pinnedMessageId)
+
+            .build();
+  }
+
+  /**
+   * Remove a pinned message from a 1on1
+   * 
+   * deleteChatsUserMessagesPin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteChatsUserMessagesPin(DeleteChatsUserMessagesPinRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Remove a pinned message from a 1on1
+   * 
+   * deleteChatsUserMessagesPin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteChatsUserMessagesPin(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -1036,6 +1123,88 @@ public class ChatApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ChatMessageEntityListing> response = (ApiResponse<ChatMessageEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get information for a 1on1
+   * 
+   * getChatsUser is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param userId userId (required)
+   * @return OneOnOne
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OneOnOne getChatsUser(String userId) throws IOException, ApiException {
+    return  getChatsUser(createGetChatsUserRequest(userId));
+  }
+
+  /**
+   * Get information for a 1on1
+   * 
+   * getChatsUser is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param userId userId (required)
+   * @return OneOnOne
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OneOnOne> getChatsUserWithHttpInfo(String userId) throws IOException {
+    return getChatsUser(createGetChatsUserRequest(userId).withHttpInfo());
+  }
+
+  private GetChatsUserRequest createGetChatsUserRequest(String userId) {
+    return GetChatsUserRequest.builder()
+            .withUserId(userId)
+
+            .build();
+  }
+
+  /**
+   * Get information for a 1on1
+   * 
+   * getChatsUser is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return OneOnOne
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OneOnOne getChatsUser(GetChatsUserRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OneOnOne> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OneOnOne>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get information for a 1on1
+   * 
+   * getChatsUser is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OneOnOne> getChatsUser(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OneOnOne>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OneOnOne> response = (ApiResponse<OneOnOne>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OneOnOne> response = (ApiResponse<OneOnOne>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1792,6 +1961,85 @@ public class ChatApi {
   }
 
   /**
+   * Add pinned messages for a room, up to a maximum of 5 pinned messages
+   * 
+   * @param roomJid roomJid (required)
+   * @param body Pinned Message Ids (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postChatsRoomMessagesPins(String roomJid, PinnedMessageRequest body) throws IOException, ApiException {
+     postChatsRoomMessagesPins(createPostChatsRoomMessagesPinsRequest(roomJid, body));
+  }
+
+  /**
+   * Add pinned messages for a room, up to a maximum of 5 pinned messages
+   * 
+   * @param roomJid roomJid (required)
+   * @param body Pinned Message Ids (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postChatsRoomMessagesPinsWithHttpInfo(String roomJid, PinnedMessageRequest body) throws IOException {
+    return postChatsRoomMessagesPins(createPostChatsRoomMessagesPinsRequest(roomJid, body).withHttpInfo());
+  }
+
+  private PostChatsRoomMessagesPinsRequest createPostChatsRoomMessagesPinsRequest(String roomJid, PinnedMessageRequest body) {
+    return PostChatsRoomMessagesPinsRequest.builder()
+            .withRoomJid(roomJid)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Add pinned messages for a room, up to a maximum of 5 pinned messages
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postChatsRoomMessagesPins(PostChatsRoomMessagesPinsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Add pinned messages for a room, up to a maximum of 5 pinned messages
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postChatsRoomMessagesPins(ApiRequest<PinnedMessageRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Join a room
    * 
    * @param roomJid roomJid (required)
@@ -1849,85 +2097,6 @@ public class ChatApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> postChatsRoomParticipant(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, null);
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Add pinned messages for a room, up to a maximum of 5 pinned messages
-   * 
-   * @param roomJid roomJid (required)
-   * @param body Pinned Message Ids (required)
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public void postChatsRoomPinnedmessages(String roomJid, PinnedMessageRequest body) throws IOException, ApiException {
-     postChatsRoomPinnedmessages(createPostChatsRoomPinnedmessagesRequest(roomJid, body));
-  }
-
-  /**
-   * Add pinned messages for a room, up to a maximum of 5 pinned messages
-   * 
-   * @param roomJid roomJid (required)
-   * @param body Pinned Message Ids (required)
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Void> postChatsRoomPinnedmessagesWithHttpInfo(String roomJid, PinnedMessageRequest body) throws IOException {
-    return postChatsRoomPinnedmessages(createPostChatsRoomPinnedmessagesRequest(roomJid, body).withHttpInfo());
-  }
-
-  private PostChatsRoomPinnedmessagesRequest createPostChatsRoomPinnedmessagesRequest(String roomJid, PinnedMessageRequest body) {
-    return PostChatsRoomPinnedmessagesRequest.builder()
-            .withRoomJid(roomJid)
-
-            .withBody(body)
-
-            .build();
-  }
-
-  /**
-   * Add pinned messages for a room, up to a maximum of 5 pinned messages
-   * 
-   * @param request The request object
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public void postChatsRoomPinnedmessages(PostChatsRoomPinnedmessagesRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
-    }
-  }
-
-  /**
-   * Add pinned messages for a room, up to a maximum of 5 pinned messages
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Void> postChatsRoomPinnedmessages(ApiRequest<PinnedMessageRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -2105,6 +2274,89 @@ public class ChatApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ChatSendMessageResponse> response = (ApiResponse<ChatSendMessageResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Add pinned messages for a 1on1, up to a maximum of 5 pinned messages
+   * 
+   * postChatsUserMessagesPins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param userId userId (required)
+   * @param body Pinned Message Ids (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postChatsUserMessagesPins(String userId, PinnedMessageRequest body) throws IOException, ApiException {
+     postChatsUserMessagesPins(createPostChatsUserMessagesPinsRequest(userId, body));
+  }
+
+  /**
+   * Add pinned messages for a 1on1, up to a maximum of 5 pinned messages
+   * 
+   * postChatsUserMessagesPins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param userId userId (required)
+   * @param body Pinned Message Ids (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postChatsUserMessagesPinsWithHttpInfo(String userId, PinnedMessageRequest body) throws IOException {
+    return postChatsUserMessagesPins(createPostChatsUserMessagesPinsRequest(userId, body).withHttpInfo());
+  }
+
+  private PostChatsUserMessagesPinsRequest createPostChatsUserMessagesPinsRequest(String userId, PinnedMessageRequest body) {
+    return PostChatsUserMessagesPinsRequest.builder()
+            .withUserId(userId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Add pinned messages for a 1on1, up to a maximum of 5 pinned messages
+   * 
+   * postChatsUserMessagesPins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postChatsUserMessagesPins(PostChatsUserMessagesPinsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Add pinned messages for a 1on1, up to a maximum of 5 pinned messages
+   * 
+   * postChatsUserMessagesPins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postChatsUserMessagesPins(ApiRequest<PinnedMessageRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

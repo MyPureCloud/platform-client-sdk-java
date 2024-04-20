@@ -28,7 +28,10 @@ import com.mypurecloud.sdk.v2.model.Workitem;
 import com.mypurecloud.sdk.v2.model.WorkitemChangeListing;
 import com.mypurecloud.sdk.v2.model.WorkitemCreate;
 import com.mypurecloud.sdk.v2.model.WorkitemManualAssign;
+import com.mypurecloud.sdk.v2.model.WorkitemPagedEntityListing;
 import com.mypurecloud.sdk.v2.model.WorkitemPostQueryEntityListing;
+import com.mypurecloud.sdk.v2.model.WorkitemQueryJobCreate;
+import com.mypurecloud.sdk.v2.model.WorkitemQueryJobResponse;
 import com.mypurecloud.sdk.v2.model.WorkitemQueryPostRequest;
 import com.mypurecloud.sdk.v2.model.WorkitemStatus;
 import com.mypurecloud.sdk.v2.model.WorkitemStatusCreate;
@@ -66,6 +69,8 @@ import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemUserWrapupsRe
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemWrapupsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsQueryJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsQueryJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemaVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemaVersionsRequest;
@@ -90,6 +95,7 @@ import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemDisconnectRe
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemTerminateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsQueryJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorktypeStatusesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorktypesRequest;
@@ -1258,6 +1264,160 @@ public class TaskManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<WorkitemWrapupEntityListing> response = (ApiResponse<WorkitemWrapupEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the workitem query job associated with the job id.
+   * 
+   * getTaskmanagementWorkitemsQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WorkitemQueryJobResponse> getTaskmanagementWorkitemsQueryJobAsync(GetTaskmanagementWorkitemsQueryJobRequest request, final AsyncApiCallback<WorkitemQueryJobResponse> callback) {
+    try {
+      final SettableFuture<WorkitemQueryJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WorkitemQueryJobResponse>() {}, new AsyncApiCallback<ApiResponse<WorkitemQueryJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemQueryJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the workitem query job associated with the job id.
+   * 
+   * getTaskmanagementWorkitemsQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WorkitemQueryJobResponse>> getTaskmanagementWorkitemsQueryJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WorkitemQueryJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WorkitemQueryJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WorkitemQueryJobResponse>() {}, new AsyncApiCallback<ApiResponse<WorkitemQueryJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemQueryJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemQueryJobResponse> response = (ApiResponse<WorkitemQueryJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemQueryJobResponse> response = (ApiResponse<WorkitemQueryJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get results from for workitem query job 
+   * 
+   * getTaskmanagementWorkitemsQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WorkitemPagedEntityListing> getTaskmanagementWorkitemsQueryJobResultsAsync(GetTaskmanagementWorkitemsQueryJobResultsRequest request, final AsyncApiCallback<WorkitemPagedEntityListing> callback) {
+    try {
+      final SettableFuture<WorkitemPagedEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WorkitemPagedEntityListing>() {}, new AsyncApiCallback<ApiResponse<WorkitemPagedEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemPagedEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get results from for workitem query job 
+   * 
+   * getTaskmanagementWorkitemsQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WorkitemPagedEntityListing>> getTaskmanagementWorkitemsQueryJobResultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WorkitemPagedEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WorkitemPagedEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WorkitemPagedEntityListing>() {}, new AsyncApiCallback<ApiResponse<WorkitemPagedEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemPagedEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemPagedEntityListing> response = (ApiResponse<WorkitemPagedEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemPagedEntityListing> response = (ApiResponse<WorkitemPagedEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3106,6 +3266,83 @@ public class TaskManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<WorkitemPostQueryEntityListing> response = (ApiResponse<WorkitemPostQueryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a workitem query job
+   * 
+   * postTaskmanagementWorkitemsQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WorkitemQueryJobResponse> postTaskmanagementWorkitemsQueryJobsAsync(PostTaskmanagementWorkitemsQueryJobsRequest request, final AsyncApiCallback<WorkitemQueryJobResponse> callback) {
+    try {
+      final SettableFuture<WorkitemQueryJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WorkitemQueryJobResponse>() {}, new AsyncApiCallback<ApiResponse<WorkitemQueryJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemQueryJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a workitem query job
+   * 
+   * postTaskmanagementWorkitemsQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WorkitemQueryJobResponse>> postTaskmanagementWorkitemsQueryJobsAsync(ApiRequest<WorkitemQueryJobCreate> request, final AsyncApiCallback<ApiResponse<WorkitemQueryJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WorkitemQueryJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WorkitemQueryJobResponse>() {}, new AsyncApiCallback<ApiResponse<WorkitemQueryJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemQueryJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemQueryJobResponse> response = (ApiResponse<WorkitemQueryJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemQueryJobResponse> response = (ApiResponse<WorkitemQueryJobResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

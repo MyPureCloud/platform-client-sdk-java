@@ -2133,10 +2133,11 @@ public class IntegrationsApiAsync {
 
   /**
    * UC integration client application configuration.
-   * This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
+   * Deprecated: Please use GET /integrations/unifiedcommunications/clientapps instead. This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<UCIntegrationListing> getIntegrationsClientappsUnifiedcommunicationsAsync(GetIntegrationsClientappsUnifiedcommunicationsRequest request, final AsyncApiCallback<UCIntegrationListing> callback) {
     try {
@@ -2167,10 +2168,11 @@ public class IntegrationsApiAsync {
 
   /**
    * UC integration client application configuration.
-   * This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
+   * Deprecated: Please use GET /integrations/unifiedcommunications/clientapps instead. This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<UCIntegrationListing>> getIntegrationsClientappsUnifiedcommunicationsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UCIntegrationListing>> callback) {
     try {

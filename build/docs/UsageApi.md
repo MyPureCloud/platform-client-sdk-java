@@ -214,7 +214,7 @@ try {
 
 
 
-> [ApiUsageQueryResult](ApiUsageQueryResult.html) getUsageSimplesearchExecutionIdResults(executionId)
+> [ApiUsageQueryResult](ApiUsageQueryResult.html) getUsageSimplesearchExecutionIdResults(executionId, after, pageSize)
 
 Get the results of a usage search. Number of records to be returned is limited to 20,000 results.
 
@@ -248,8 +248,10 @@ Configuration.setDefaultApiClient(apiClient);
 
 UsageApi apiInstance = new UsageApi();
 String executionId = "executionId_example"; // String | ID of the search execution
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned
+Integer pageSize = 56; // Integer | The max number of entities to be returned per request. Maximum page size of 1000
 try {
-    ApiUsageQueryResult result = apiInstance.getUsageSimplesearchExecutionIdResults(executionId);
+    ApiUsageQueryResult result = apiInstance.getUsageSimplesearchExecutionIdResults(executionId, after, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsageApi#getUsageSimplesearchExecutionIdResults");
@@ -263,6 +265,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **executionId** | **String**| ID of the search execution | 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned | [optional] 
+| **pageSize** | **Integer**| The max number of entities to be returned per request. Maximum page size of 1000 | [optional] 
 {: class="table-striped"}
 
 

@@ -39,6 +39,7 @@ title: AuditLogMessage
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | USER | &quot;USER&quot; | 
 | SYSTEM | &quot;SYSTEM&quot; | 
+| GENESYS_INTERNAL | &quot;GENESYS_INTERNAL&quot; | 
 {: class="table table-striped"}
 
 

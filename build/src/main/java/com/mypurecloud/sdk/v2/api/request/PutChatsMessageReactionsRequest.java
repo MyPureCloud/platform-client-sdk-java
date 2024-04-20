@@ -29,6 +29,7 @@ import com.mypurecloud.sdk.v2.model.ChatUserSettings;
 import com.mypurecloud.sdk.v2.model.CreateRoomRequest;
 import com.mypurecloud.sdk.v2.model.CreateRoomResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.OneOnOne;
 import com.mypurecloud.sdk.v2.model.PinnedMessageRequest;
 import com.mypurecloud.sdk.v2.model.Room;
 import com.mypurecloud.sdk.v2.model.RoomParticipant;

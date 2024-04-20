@@ -8,7 +8,7 @@ title: TransferToQueueRequest
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **transferType** | [**TransferTypeEnum**](#TransferTypeEnum)<!----> |  |  [optional] |
+| **transferType** | [**TransferTypeEnum**](#TransferTypeEnum)<!----> | The type of transfer to perform. Attended, where the initiating agent maintains ownership of the conversation until the intended recipient accepts the transfer, or Unattended, where the initiating agent immediately disconnects. Default is Unattended. |  [optional] |
 | **queueId** | <!----><!---->**String**<!----> | The id of the queue. |  [optional] |
 | **queueName** | <!----><!---->**String**<!----> | The name of the queue. |  [optional] |
 {: class="table table-striped"}

@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.NluDomainVersionTrainingResponse;
 import com.mypurecloud.sdk.v2.model.NluFeedbackListing;
 import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
 import com.mypurecloud.sdk.v2.model.NluFeedbackResponse;
+import com.mypurecloud.sdk.v2.model.NluOrganization;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteLanguageunderstandingDomainRequest;
@@ -57,6 +58,7 @@ import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerTopicRequ
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerTopicPhraseRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerTopicsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLanguageunderstandingDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLanguageunderstandingMinerDraftRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainFeedbackRequest;
@@ -1842,6 +1844,84 @@ public class LanguageUnderstandingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<MinerListing> response = (ApiResponse<MinerListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get Organization Configuration
+   * 
+   * getLanguageunderstandingSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return NluOrganization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public NluOrganization getLanguageunderstandingSettings() throws IOException, ApiException {
+    return  getLanguageunderstandingSettings(createGetLanguageunderstandingSettingsRequest());
+  }
+
+  /**
+   * Get Organization Configuration
+   * 
+   * getLanguageunderstandingSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return NluOrganization
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<NluOrganization> getLanguageunderstandingSettingsWithHttpInfo() throws IOException {
+    return getLanguageunderstandingSettings(createGetLanguageunderstandingSettingsRequest().withHttpInfo());
+  }
+
+  private GetLanguageunderstandingSettingsRequest createGetLanguageunderstandingSettingsRequest() {
+    return GetLanguageunderstandingSettingsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get Organization Configuration
+   * 
+   * getLanguageunderstandingSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return NluOrganization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public NluOrganization getLanguageunderstandingSettings(GetLanguageunderstandingSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<NluOrganization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<NluOrganization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Organization Configuration
+   * 
+   * getLanguageunderstandingSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<NluOrganization> getLanguageunderstandingSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<NluOrganization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<NluOrganization> response = (ApiResponse<NluOrganization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<NluOrganization> response = (ApiResponse<NluOrganization>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

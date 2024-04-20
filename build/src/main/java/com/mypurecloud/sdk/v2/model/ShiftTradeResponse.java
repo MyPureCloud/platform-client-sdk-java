@@ -353,13 +353,14 @@ public class ShiftTradeResponse  implements Serializable {
 
 
   /**
+   * Time frames when the initiating user is willing to accept trades.  Empty means giving up the shift. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
    **/
   public ShiftTradeResponse acceptableIntervals(List<String> acceptableIntervals) {
     this.acceptableIntervals = acceptableIntervals;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Time frames when the initiating user is willing to accept trades.  Empty means giving up the shift. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss")
   @JsonProperty("acceptableIntervals")
   public List<String> getAcceptableIntervals() {
     return acceptableIntervals;

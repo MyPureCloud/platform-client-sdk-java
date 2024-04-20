@@ -35,7 +35,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTelephonyProvidersEdgeSoftwareversions**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeSoftwareversions) | Gets all the available software versions for this edge. |
 | [**getTelephonyProvidersEdgeTrunks**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeTrunks) | Get the list of available trunks for the given Edge. |
 | [**getTelephonyProvidersEdges**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdges) | Get the list of edges. |
-| [**getTelephonyProvidersEdgesAvailablelanguages**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesAvailablelanguages) | Get the list of available languages. For never released keyword spotting feature. Deprecated, do not use. |
 | [**getTelephonyProvidersEdgesCertificateauthorities**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesCertificateauthorities) | Get the list of certificate authorities. |
 | [**getTelephonyProvidersEdgesCertificateauthority**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesCertificateauthority) | Get a certificate authority. |
 | [**getTelephonyProvidersEdgesDid**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesDid) | Get a DID by ID. |
@@ -1870,62 +1869,6 @@ try {
 ### Return type
 
 [**EdgeEntityListing**](EdgeEntityListing.html)
-
-<a name="getTelephonyProvidersEdgesAvailablelanguages"></a>
-
-# **getTelephonyProvidersEdgesAvailablelanguages**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [AvailableLanguageList](AvailableLanguageList.html) getTelephonyProvidersEdgesAvailablelanguages()
-
-Get the list of available languages. For never released keyword spotting feature. Deprecated, do not use.
-
-Wraps GET /api/v2/telephony/providers/edges/availablelanguages  
-
-Requires NO permissions: 
-
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
-try {
-    AvailableLanguageList result = apiInstance.getTelephonyProvidersEdgesAvailablelanguages();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesAvailablelanguages");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-This endpoint does not require any parameters.
-
-
-
-### Return type
-
-[**AvailableLanguageList**](AvailableLanguageList.html)
 
 <a name="getTelephonyProvidersEdgesCertificateauthorities"></a>
 

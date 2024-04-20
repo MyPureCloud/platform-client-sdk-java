@@ -188,9 +188,10 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteAuthorizationRoleRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteAuthorizationSubjectDivisionRoleRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteChatsRoomMessageRequest.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteChatsRoomMessagesPinRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteChatsRoomParticipantRequest.java
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteChatsRoomPinnedmessageRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteChatsUserMessageRequest.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteChatsUserMessagesPinRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteCoachingAppointmentAnnotationRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteCoachingAppointmentRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteContentmanagementDocumentRequest.java
@@ -554,6 +555,7 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetChatsThreadMessagesRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetChatsUserMessageRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetChatsUserMessagesRequest.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetChatsUserRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetChatsUserSettingsRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetCoachingAppointmentAnnotationRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetCoachingAppointmentAnnotationsRequest.java
@@ -712,6 +714,7 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetFaxDocumentContentRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetFaxDocumentRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetFaxDocumentsRequest.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetFaxSettingsRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetFaxSummaryRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetFieldconfigRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetFlowHistoryHistoryIdRequest.java
@@ -971,6 +974,7 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetLanguageunderstandingMinerTopicRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetLanguageunderstandingMinerTopicsRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetLanguageunderstandingMinersRequest.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetLanguageunderstandingSettingsRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetLearningAssignmentRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetLearningAssignmentsMeRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetLearningAssignmentsRequest.java
@@ -1302,6 +1306,8 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorkitemVersionRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorkitemVersionsRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorkitemWrapupsRequest.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorkitemsQueryJobRequest.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorkitemsQueryJobResultsRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorkitemsSchemaRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorkitemsSchemaVersionRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorkitemsSchemaVersionsRequest.java
@@ -1331,7 +1337,6 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgeSoftwareupdateRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgeSoftwareversionsRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgeTrunksRequest.java
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgesAvailablelanguagesRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgesCertificateauthoritiesRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgesCertificateauthorityRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgesDidRequest.java
@@ -1793,10 +1798,11 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/PostAuthorizationSubjectDivisionRoleRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/PostCarrierservicesIntegrationsEmergencylocationsMeRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/PostCertificateDetailsRequest.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/PostChatsRoomMessagesPinsRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/PostChatsRoomMessagesRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/PostChatsRoomParticipantRequest.java
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/PostChatsRoomPinnedmessagesRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/PostChatsRoomsRequest.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/PostChatsUserMessagesPinsRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/PostChatsUserMessagesRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/PostCoachingAppointmentAnnotationsRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/PostCoachingAppointmentConversationsRequest.java
@@ -2179,6 +2185,7 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/PostTaskmanagementWorkitemAcdCancelRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/PostTaskmanagementWorkitemDisconnectRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/PostTaskmanagementWorkitemTerminateRequest.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/PostTaskmanagementWorkitemsQueryJobsRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/PostTaskmanagementWorkitemsQueryRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/PostTaskmanagementWorkitemsRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/PostTaskmanagementWorkitemsSchemasRequest.java
@@ -2376,6 +2383,7 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/PutExternalcontactsOrganizationsSchemaRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/PutExternalcontactsRelationshipRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/PutFaxDocumentRequest.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/PutFaxSettingsRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/PutFlowInstancesSettingsLoglevelsRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/PutFlowRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/api/request/PutFlowsDatatableRequest.java
@@ -2678,6 +2686,7 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/AgentQueryAdherenceExplanationsResponse.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/AgentQueueTimeRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/AgentTimeOffRequestPatch.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/AgentVideoSettings.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/AgentlessEmailSendRequestDto.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/AgentlessEmailSendResponseDto.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/AgentsIntegrationsListing.java
@@ -2845,7 +2854,6 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/AutoStart.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/AutoStatusTransitionDetail.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/AutomaticTimeZoneMappingSettings.java
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/AvailableLanguageList.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/AvailableMediaType.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/AvailableMediaTypeEntityListing.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/AvailableTime.java
@@ -2855,6 +2863,7 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/AvailableTopic.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/AvailableTopicEntityListing.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/AvailableTranslations.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/BackgroundImageSettings.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/BaseMediaSettings.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/BaseProgramEntity.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/BaseTopicEntitiy.java
@@ -3077,6 +3086,7 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/CampaignEntityListing.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/CampaignInteraction.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/CampaignInteractions.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/CampaignLinesUtilization.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/CampaignProgress.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/CampaignRule.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/CampaignRuleAction.java
@@ -3186,6 +3196,7 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ComplianceResponse.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/Condition.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ConditionalGroupRouting.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ConditionalGroupRoutingCondition.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ConditionalGroupRoutingRule.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ConfigurationOverrides.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ConfusionDetails.java
@@ -3539,6 +3550,7 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ConversationVideoEventTopicVideoConversation.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ConversationVideoEventTopicVideoMediaParticipant.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ConversationVideoEventTopicWrapup.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/CopilotScoring.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/CopyAttachmentsRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/CopyBuForecastRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/CopyVoicemailMessage.java
@@ -4010,6 +4022,7 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/EndConsultTransferEvent.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/EndTransferEvent.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/Endpoint.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/EngineIntegration.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/Entity.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/EntityChange.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/EntityListing.java
@@ -4119,6 +4132,7 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsContactChangedTopicPhoneNumber.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsContactChangedTopicTwitterId.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsContactChangedTopicWhatsAppId.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsEntity.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChangedTopicContact.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChangedTopicContactAddress.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChangedTopicDataSchema.java
@@ -4136,6 +4150,7 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChangedTopicWhatsAppId.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ExternalDataSource.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ExternalEstablishedEvent.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ExternalId.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ExternalMetricDataItem.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ExternalMetricDataProcessedItem.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ExternalMetricDataUnprocessedItem.java
@@ -4149,6 +4164,7 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ExternalOrganizationListing.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ExternalOrganizationTrustorLink.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ExternalSegment.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ExternalSource.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/FacebookAppCredentials.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/FacebookId.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/FacebookIntegration.java
@@ -4166,6 +4182,7 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/FacetTerm.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/FailedObject.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/FailedRecordingEntityListing.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/FaxConfig.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/FaxDocument.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/FaxDocumentEntityListing.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/FaxSendRequest.java
@@ -4342,6 +4359,7 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/GreetingMediaInfo.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/GreetingOwner.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/Group.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/GroupByAttribute.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/GroupContact.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/GroupCreate.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/GroupEntityListing.java
@@ -4556,6 +4574,9 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewChart.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewChartGroupByAttribute.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewChartMetric.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewChartMetricResult.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewChartMetricResultValue.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewChartResult.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewElement.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewElementAttributes.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/JourneyViewElementFilter.java
@@ -4835,6 +4856,7 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/LineIntegrationRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/LineStatus.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/LineUserId.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/LinkConfiguration.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ListItemComponent.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ListWrapperInterval.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ListWrapperSecondaryPresence.java
@@ -5038,6 +5060,7 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/NluFeedbackRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/NluFeedbackResponse.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/NluInfo.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/NluOrganization.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/NluQualityReportSummary.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/NluQualityReportSummaryMetric.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/NluUtterance.java
@@ -5080,6 +5103,7 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ObservationValue.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/Okta.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/OneLogin.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/OneOnOne.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/OpenActionFields.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/OpenActionProperties.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/OpenContentAttachment.java
@@ -5326,6 +5350,7 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ProgramMappings.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ProgramMappingsRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ProgramRequest.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ProgramTranscriptionEngine.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ProgramTranscriptionEngines.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ProgramsEntityListing.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ProgramsMappingsEntityListing.java
@@ -6046,7 +6071,10 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/SupportedContentListing.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/SupportedContentReference.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/SupportedDialectsEntityListing.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/SupportedDialectsTranscriptionEngine.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/SupportedEntityTypeStatus.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/SupportedLanguage.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/SupportedLanguagesInfoDefinition.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/Survey.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/SurveyAggregateDataContainer.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/SurveyAggregateQueryClause.java
@@ -6210,7 +6238,6 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/TranscriptTopics.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/TranscriptUrl.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/TranscriptUrls.java
-/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/TranscriptionEngines.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/TranscriptionEnginesRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/TranscriptionSettings.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/TranscriptionTopicTranscriptAlternative.java
@@ -6457,6 +6484,7 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/UserTokensTopicUriReference.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/UserTransferEvent.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/UserTrendData.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/UserVideoSettings.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/UsersSearchResponse.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/UtilizationLabel.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/UtilizationLabelEntityListing.java
@@ -6557,6 +6585,7 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/VideoConferenceDetails.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/VideoConferenceUpdateTopicParticipantInfo.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/VideoConferenceUpdateTopicVideoConference.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/VideoSettings.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/ViewFilter.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/VisibilityCondition.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/VmPairingInfo.java
@@ -6864,7 +6893,13 @@
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/WorkitemDelta.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/WorkitemFilter.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/WorkitemManualAssign.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/WorkitemPagedEntityListing.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/WorkitemPostQueryEntityListing.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/WorkitemQueryJobCreate.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/WorkitemQueryJobError.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/WorkitemQueryJobFilter.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/WorkitemQueryJobResponse.java
+/var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/WorkitemQueryJobSort.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/WorkitemQueryPostRequest.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/WorkitemQuerySort.java
 /var/build/workspace/build-platform-sdks-pipeline/output/purecloudjava/build/src/main/java/com/mypurecloud/sdk/v2/model/WorkitemQueueReference.java

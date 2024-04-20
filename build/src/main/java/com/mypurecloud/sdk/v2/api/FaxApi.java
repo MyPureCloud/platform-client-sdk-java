@@ -12,6 +12,7 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.DownloadResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.FaxConfig;
 import com.mypurecloud.sdk.v2.model.FaxDocument;
 import com.mypurecloud.sdk.v2.model.FaxDocumentEntityListing;
 import com.mypurecloud.sdk.v2.model.FaxSummary;
@@ -21,8 +22,10 @@ import com.mypurecloud.sdk.v2.api.request.DeleteFaxDocumentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFaxDocumentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFaxDocumentContentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFaxDocumentsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFaxSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFaxSummaryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutFaxDocumentRequest;
+import com.mypurecloud.sdk.v2.api.request.PutFaxSettingsRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -355,6 +358,80 @@ public class FaxApi {
   }
 
   /**
+   * Get organization config for given organization
+   * 
+   * @return FaxConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FaxConfig getFaxSettings() throws IOException, ApiException {
+    return  getFaxSettings(createGetFaxSettingsRequest());
+  }
+
+  /**
+   * Get organization config for given organization
+   * 
+   * @return FaxConfig
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FaxConfig> getFaxSettingsWithHttpInfo() throws IOException {
+    return getFaxSettings(createGetFaxSettingsRequest().withHttpInfo());
+  }
+
+  private GetFaxSettingsRequest createGetFaxSettingsRequest() {
+    return GetFaxSettingsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get organization config for given organization
+   * 
+   * @param request The request object
+   * @return FaxConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FaxConfig getFaxSettings(GetFaxSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FaxConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FaxConfig>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get organization config for given organization
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FaxConfig> getFaxSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FaxConfig>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FaxConfig> response = (ApiResponse<FaxConfig>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FaxConfig> response = (ApiResponse<FaxConfig>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get fax summary
    * 
    * @return FaxSummary
@@ -506,6 +583,84 @@ public class FaxApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<FaxDocument> response = (ApiResponse<FaxDocument>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update/write organization config for given organization
+   * 
+   * @param body  (optional)
+   * @return FaxConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FaxConfig putFaxSettings(FaxConfig body) throws IOException, ApiException {
+    return  putFaxSettings(createPutFaxSettingsRequest(body));
+  }
+
+  /**
+   * Update/write organization config for given organization
+   * 
+   * @param body  (optional)
+   * @return FaxConfig
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FaxConfig> putFaxSettingsWithHttpInfo(FaxConfig body) throws IOException {
+    return putFaxSettings(createPutFaxSettingsRequest(body).withHttpInfo());
+  }
+
+  private PutFaxSettingsRequest createPutFaxSettingsRequest(FaxConfig body) {
+    return PutFaxSettingsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update/write organization config for given organization
+   * 
+   * @param request The request object
+   * @return FaxConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FaxConfig putFaxSettings(PutFaxSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FaxConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FaxConfig>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update/write organization config for given organization
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FaxConfig> putFaxSettings(ApiRequest<FaxConfig> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FaxConfig>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FaxConfig> response = (ApiResponse<FaxConfig>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FaxConfig> response = (ApiResponse<FaxConfig>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

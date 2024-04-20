@@ -33,6 +33,7 @@ title: BotAsyncAggregationQuery
 | BOTFINALINTENT | &quot;botFinalIntent&quot; |
 | BOTID | &quot;botId&quot; |
 | BOTINTENT | &quot;botIntent&quot; |
+| BOTFLOWTYPE | &quot;botFlowType&quot; |
 | BOTPRODUCT | &quot;botProduct&quot; |
 | BOTPROVIDER | &quot;botProvider&quot; |
 | BOTRECOGNITIONFAILUREREASON | &quot;botRecognitionFailureReason&quot; |

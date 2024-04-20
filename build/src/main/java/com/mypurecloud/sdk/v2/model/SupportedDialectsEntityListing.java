@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.TranscriptionEngines;
+import com.mypurecloud.sdk.v2.model.SupportedDialectsTranscriptionEngine;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -24,22 +24,22 @@ import java.io.Serializable;
 
 public class SupportedDialectsEntityListing  implements Serializable {
   
-  private List<TranscriptionEngines> entities = new ArrayList<TranscriptionEngines>();
+  private List<SupportedDialectsTranscriptionEngine> entities = new ArrayList<SupportedDialectsTranscriptionEngine>();
 
   
   /**
    **/
-  public SupportedDialectsEntityListing entities(List<TranscriptionEngines> entities) {
+  public SupportedDialectsEntityListing entities(List<SupportedDialectsTranscriptionEngine> entities) {
     this.entities = entities;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("entities")
-  public List<TranscriptionEngines> getEntities() {
+  public List<SupportedDialectsTranscriptionEngine> getEntities() {
     return entities;
   }
-  public void setEntities(List<TranscriptionEngines> entities) {
+  public void setEntities(List<SupportedDialectsTranscriptionEngine> entities) {
     this.entities = entities;
   }
 

@@ -352,7 +352,8 @@ public class GetUsersDevelopmentActivitiesMeRequest {
 		PLANNED("Planned"),
 		INPROGRESS("InProgress"),
 		COMPLETED("Completed"),
-		INVALIDSCHEDULE("InvalidSchedule");
+		INVALIDSCHEDULE("InvalidSchedule"),
+		NOTCOMPLETED("NotCompleted");
 
 		private String value;
 

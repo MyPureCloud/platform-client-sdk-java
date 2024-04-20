@@ -4355,7 +4355,7 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
@@ -4363,6 +4363,7 @@ public class ConversationsApi {
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public AssignedWrapupCode getConversationsCobrowsesessionParticipantCommunicationWrapup(String conversationId, String participantId, String communicationId, Boolean provisional) throws IOException, ApiException {
     return  getConversationsCobrowsesessionParticipantCommunicationWrapup(createGetConversationsCobrowsesessionParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, provisional));
@@ -4370,13 +4371,14 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<AssignedWrapupCode> getConversationsCobrowsesessionParticipantCommunicationWrapupWithHttpInfo(String conversationId, String participantId, String communicationId, Boolean provisional) throws IOException {
     return getConversationsCobrowsesessionParticipantCommunicationWrapup(createGetConversationsCobrowsesessionParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, provisional).withHttpInfo());
@@ -4397,11 +4399,12 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public AssignedWrapupCode getConversationsCobrowsesessionParticipantCommunicationWrapup(GetConversationsCobrowsesessionParticipantCommunicationWrapupRequest request) throws IOException, ApiException {
     try {
@@ -4416,10 +4419,11 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<AssignedWrapupCode> getConversationsCobrowsesessionParticipantCommunicationWrapup(ApiRequest<Void> request) throws IOException {
     try {
@@ -4445,13 +4449,14 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation participant. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public AssignedWrapupCode getConversationsCobrowsesessionParticipantWrapup(String conversationId, String participantId, Boolean provisional) throws IOException, ApiException {
     return  getConversationsCobrowsesessionParticipantWrapup(createGetConversationsCobrowsesessionParticipantWrapupRequest(conversationId, participantId, provisional));
@@ -4459,12 +4464,13 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation participant. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<AssignedWrapupCode> getConversationsCobrowsesessionParticipantWrapupWithHttpInfo(String conversationId, String participantId, Boolean provisional) throws IOException {
     return getConversationsCobrowsesessionParticipantWrapup(createGetConversationsCobrowsesessionParticipantWrapupRequest(conversationId, participantId, provisional).withHttpInfo());
@@ -4483,11 +4489,12 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation participant. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public AssignedWrapupCode getConversationsCobrowsesessionParticipantWrapup(GetConversationsCobrowsesessionParticipantWrapupRequest request) throws IOException, ApiException {
     try {
@@ -4502,10 +4509,11 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation participant. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<AssignedWrapupCode> getConversationsCobrowsesessionParticipantWrapup(ApiRequest<Void> request) throws IOException {
     try {
@@ -4531,12 +4539,13 @@ public class ConversationsApi {
 
   /**
    * Get list of wrapup codes for this conversation participant
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @return List<WrapupCode>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public List<WrapupCode> getConversationsCobrowsesessionParticipantWrapupcodes(String conversationId, String participantId) throws IOException, ApiException {
     return  getConversationsCobrowsesessionParticipantWrapupcodes(createGetConversationsCobrowsesessionParticipantWrapupcodesRequest(conversationId, participantId));
@@ -4544,11 +4553,12 @@ public class ConversationsApi {
 
   /**
    * Get list of wrapup codes for this conversation participant
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @return List<WrapupCode>
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<List<WrapupCode>> getConversationsCobrowsesessionParticipantWrapupcodesWithHttpInfo(String conversationId, String participantId) throws IOException {
     return getConversationsCobrowsesessionParticipantWrapupcodes(createGetConversationsCobrowsesessionParticipantWrapupcodesRequest(conversationId, participantId).withHttpInfo());
@@ -4565,11 +4575,12 @@ public class ConversationsApi {
 
   /**
    * Get list of wrapup codes for this conversation participant
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return List<WrapupCode>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public List<WrapupCode> getConversationsCobrowsesessionParticipantWrapupcodes(GetConversationsCobrowsesessionParticipantWrapupcodesRequest request) throws IOException, ApiException {
     try {
@@ -4584,10 +4595,11 @@ public class ConversationsApi {
 
   /**
    * Get list of wrapup codes for this conversation participant
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<List<WrapupCode>> getConversationsCobrowsesessionParticipantWrapupcodes(ApiRequest<Void> request) throws IOException {
     try {
@@ -7940,27 +7952,29 @@ public class ConversationsApi {
   }
 
   /**
-   * Get a list of Messaging Stickers
-   * 
+   * Get a list of Messaging Stickers (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param messengerType Messenger Type (required)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return MessagingStickerEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public MessagingStickerEntityListing getConversationsMessagingSticker(String messengerType, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     return  getConversationsMessagingSticker(createGetConversationsMessagingStickerRequest(messengerType, pageSize, pageNumber));
   }
 
   /**
-   * Get a list of Messaging Stickers
-   * 
+   * Get a list of Messaging Stickers (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param messengerType Messenger Type (required)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return MessagingStickerEntityListing
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<MessagingStickerEntityListing> getConversationsMessagingStickerWithHttpInfo(String messengerType, Integer pageSize, Integer pageNumber) throws IOException {
     return getConversationsMessagingSticker(createGetConversationsMessagingStickerRequest(messengerType, pageSize, pageNumber).withHttpInfo());
@@ -7978,12 +7992,13 @@ public class ConversationsApi {
   }
 
   /**
-   * Get a list of Messaging Stickers
-   * 
+   * Get a list of Messaging Stickers (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param request The request object
    * @return MessagingStickerEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public MessagingStickerEntityListing getConversationsMessagingSticker(GetConversationsMessagingStickerRequest request) throws IOException, ApiException {
     try {
@@ -7997,11 +8012,12 @@ public class ConversationsApi {
   }
 
   /**
-   * Get a list of Messaging Stickers
-   * 
+   * Get a list of Messaging Stickers (Deprecated)
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<MessagingStickerEntityListing> getConversationsMessagingSticker(ApiRequest<Void> request) throws IOException {
     try {
@@ -8335,7 +8351,7 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
@@ -8343,6 +8359,7 @@ public class ConversationsApi {
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public AssignedWrapupCode getConversationsScreenshareParticipantCommunicationWrapup(String conversationId, String participantId, String communicationId, Boolean provisional) throws IOException, ApiException {
     return  getConversationsScreenshareParticipantCommunicationWrapup(createGetConversationsScreenshareParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, provisional));
@@ -8350,13 +8367,14 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
    * @return AssignedWrapupCode
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<AssignedWrapupCode> getConversationsScreenshareParticipantCommunicationWrapupWithHttpInfo(String conversationId, String participantId, String communicationId, Boolean provisional) throws IOException {
     return getConversationsScreenshareParticipantCommunicationWrapup(createGetConversationsScreenshareParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, provisional).withHttpInfo());
@@ -8377,11 +8395,12 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public AssignedWrapupCode getConversationsScreenshareParticipantCommunicationWrapup(GetConversationsScreenshareParticipantCommunicationWrapupRequest request) throws IOException, ApiException {
     try {
@@ -8396,10 +8415,11 @@ public class ConversationsApi {
 
   /**
    * Get the wrap-up for this conversation communication. 
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<AssignedWrapupCode> getConversationsScreenshareParticipantCommunicationWrapup(ApiRequest<Void> request) throws IOException {
     try {
@@ -10368,12 +10388,13 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by disconnecting all of the participants
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param body Conversation (required)
    * @return Conversation
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public Conversation patchConversationsCobrowsesession(String conversationId, Conversation body) throws IOException, ApiException {
     return  patchConversationsCobrowsesession(createPatchConversationsCobrowsesessionRequest(conversationId, body));
@@ -10381,11 +10402,12 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by disconnecting all of the participants
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param body Conversation (required)
    * @return Conversation
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Conversation> patchConversationsCobrowsesessionWithHttpInfo(String conversationId, Conversation body) throws IOException {
     return patchConversationsCobrowsesession(createPatchConversationsCobrowsesessionRequest(conversationId, body).withHttpInfo());
@@ -10402,11 +10424,12 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by disconnecting all of the participants
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return Conversation
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public Conversation patchConversationsCobrowsesession(PatchConversationsCobrowsesessionRequest request) throws IOException, ApiException {
     try {
@@ -10421,10 +10444,11 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by disconnecting all of the participants
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Conversation> patchConversationsCobrowsesession(ApiRequest<Conversation> request) throws IOException {
     try {
@@ -10450,12 +10474,13 @@ public class ConversationsApi {
 
   /**
    * Update conversation participant
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body  (optional)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void patchConversationsCobrowsesessionParticipant(String conversationId, String participantId, MediaParticipantRequest body) throws IOException, ApiException {
      patchConversationsCobrowsesessionParticipant(createPatchConversationsCobrowsesessionParticipantRequest(conversationId, participantId, body));
@@ -10463,11 +10488,12 @@ public class ConversationsApi {
 
   /**
    * Update conversation participant
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body  (optional)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> patchConversationsCobrowsesessionParticipantWithHttpInfo(String conversationId, String participantId, MediaParticipantRequest body) throws IOException {
     return patchConversationsCobrowsesessionParticipant(createPatchConversationsCobrowsesessionParticipantRequest(conversationId, participantId, body).withHttpInfo());
@@ -10486,10 +10512,11 @@ public class ConversationsApi {
 
   /**
    * Update conversation participant
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void patchConversationsCobrowsesessionParticipant(PatchConversationsCobrowsesessionParticipantRequest request) throws IOException, ApiException {
     try {
@@ -10504,10 +10531,11 @@ public class ConversationsApi {
 
   /**
    * Update conversation participant
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> patchConversationsCobrowsesessionParticipant(ApiRequest<MediaParticipantRequest> request) throws IOException {
     try {
@@ -10533,13 +10561,14 @@ public class ConversationsApi {
 
   /**
    * Update the attributes on a conversation participant.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body  (optional)
    * @return ParticipantAttributes
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ParticipantAttributes patchConversationsCobrowsesessionParticipantAttributes(String conversationId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
     return  patchConversationsCobrowsesessionParticipantAttributes(createPatchConversationsCobrowsesessionParticipantAttributesRequest(conversationId, participantId, body));
@@ -10547,12 +10576,13 @@ public class ConversationsApi {
 
   /**
    * Update the attributes on a conversation participant.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body  (optional)
    * @return ParticipantAttributes
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ParticipantAttributes> patchConversationsCobrowsesessionParticipantAttributesWithHttpInfo(String conversationId, String participantId, ParticipantAttributes body) throws IOException {
     return patchConversationsCobrowsesessionParticipantAttributes(createPatchConversationsCobrowsesessionParticipantAttributesRequest(conversationId, participantId, body).withHttpInfo());
@@ -10571,11 +10601,12 @@ public class ConversationsApi {
 
   /**
    * Update the attributes on a conversation participant.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return ParticipantAttributes
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ParticipantAttributes patchConversationsCobrowsesessionParticipantAttributes(PatchConversationsCobrowsesessionParticipantAttributesRequest request) throws IOException, ApiException {
     try {
@@ -10590,10 +10621,11 @@ public class ConversationsApi {
 
   /**
    * Update the attributes on a conversation participant.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ParticipantAttributes> patchConversationsCobrowsesessionParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException {
     try {
@@ -10619,7 +10651,7 @@ public class ConversationsApi {
 
   /**
    * Update conversation participant's communication by disconnecting it.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
@@ -10627,6 +10659,7 @@ public class ConversationsApi {
    * @return Empty
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public Empty patchConversationsCobrowsesessionParticipantCommunication(String conversationId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException, ApiException {
     return  patchConversationsCobrowsesessionParticipantCommunication(createPatchConversationsCobrowsesessionParticipantCommunicationRequest(conversationId, participantId, communicationId, body));
@@ -10634,13 +10667,14 @@ public class ConversationsApi {
 
   /**
    * Update conversation participant's communication by disconnecting it.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
    * @param body Participant (required)
    * @return Empty
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Empty> patchConversationsCobrowsesessionParticipantCommunicationWithHttpInfo(String conversationId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException {
     return patchConversationsCobrowsesessionParticipantCommunication(createPatchConversationsCobrowsesessionParticipantCommunicationRequest(conversationId, participantId, communicationId, body).withHttpInfo());
@@ -10661,11 +10695,12 @@ public class ConversationsApi {
 
   /**
    * Update conversation participant's communication by disconnecting it.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return Empty
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public Empty patchConversationsCobrowsesessionParticipantCommunication(PatchConversationsCobrowsesessionParticipantCommunicationRequest request) throws IOException, ApiException {
     try {
@@ -10680,10 +10715,11 @@ public class ConversationsApi {
 
   /**
    * Update conversation participant's communication by disconnecting it.
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Empty> patchConversationsCobrowsesessionParticipantCommunication(ApiRequest<MediaParticipantRequest> request) throws IOException {
     try {
@@ -15502,13 +15538,14 @@ public class ConversationsApi {
 
   /**
    * Apply wrap-up for this conversation communication
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
    * @param body Wrap-up (optional)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationsCobrowsesessionParticipantCommunicationWrapup(String conversationId, String participantId, String communicationId, WrapupInput body) throws IOException, ApiException {
      postConversationsCobrowsesessionParticipantCommunicationWrapup(createPostConversationsCobrowsesessionParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, body));
@@ -15516,12 +15553,13 @@ public class ConversationsApi {
 
   /**
    * Apply wrap-up for this conversation communication
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
    * @param body Wrap-up (optional)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationsCobrowsesessionParticipantCommunicationWrapupWithHttpInfo(String conversationId, String participantId, String communicationId, WrapupInput body) throws IOException {
     return postConversationsCobrowsesessionParticipantCommunicationWrapup(createPostConversationsCobrowsesessionParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, body).withHttpInfo());
@@ -15542,10 +15580,11 @@ public class ConversationsApi {
 
   /**
    * Apply wrap-up for this conversation communication
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationsCobrowsesessionParticipantCommunicationWrapup(PostConversationsCobrowsesessionParticipantCommunicationWrapupRequest request) throws IOException, ApiException {
     try {
@@ -15560,10 +15599,11 @@ public class ConversationsApi {
 
   /**
    * Apply wrap-up for this conversation communication
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationsCobrowsesessionParticipantCommunicationWrapup(ApiRequest<WrapupInput> request) throws IOException {
     try {
@@ -15589,12 +15629,13 @@ public class ConversationsApi {
 
   /**
    * Replace this participant with the specified user and/or address
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body  (optional)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationsCobrowsesessionParticipantReplace(String conversationId, String participantId, TransferRequest body) throws IOException, ApiException {
      postConversationsCobrowsesessionParticipantReplace(createPostConversationsCobrowsesessionParticipantReplaceRequest(conversationId, participantId, body));
@@ -15602,11 +15643,12 @@ public class ConversationsApi {
 
   /**
    * Replace this participant with the specified user and/or address
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body  (optional)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationsCobrowsesessionParticipantReplaceWithHttpInfo(String conversationId, String participantId, TransferRequest body) throws IOException {
     return postConversationsCobrowsesessionParticipantReplace(createPostConversationsCobrowsesessionParticipantReplaceRequest(conversationId, participantId, body).withHttpInfo());
@@ -15625,10 +15667,11 @@ public class ConversationsApi {
 
   /**
    * Replace this participant with the specified user and/or address
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationsCobrowsesessionParticipantReplace(PostConversationsCobrowsesessionParticipantReplaceRequest request) throws IOException, ApiException {
     try {
@@ -15643,10 +15686,11 @@ public class ConversationsApi {
 
   /**
    * Replace this participant with the specified user and/or address
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationsCobrowsesessionParticipantReplace(ApiRequest<TransferRequest> request) throws IOException {
     try {
@@ -17470,11 +17514,12 @@ public class ConversationsApi {
 
   /**
    * Send an inbound Open Message
-   * Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * [This API is deprecated. Instead, use 1. POST /api/v2/conversations/messages/{integrationId}/inbound/open/event, if you want to send an inbound Open Event Message 2. POST /api/v2/conversations/messages/{integrationId}/inbound/open/message, if you want to send an inbound Open Message 3. POST /api/v2/conversations/messages/{integrationId}/inbound/open/receipt, to send an inbound Open Receipt Message]  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
    * @param body NormalizedMessage (required)
    * @return OpenNormalizedMessage
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OpenNormalizedMessage postConversationsMessagesInboundOpen(OpenNormalizedMessage body) throws IOException, ApiException {
     return  postConversationsMessagesInboundOpen(createPostConversationsMessagesInboundOpenRequest(body));
@@ -17482,10 +17527,11 @@ public class ConversationsApi {
 
   /**
    * Send an inbound Open Message
-   * Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * [This API is deprecated. Instead, use 1. POST /api/v2/conversations/messages/{integrationId}/inbound/open/event, if you want to send an inbound Open Event Message 2. POST /api/v2/conversations/messages/{integrationId}/inbound/open/message, if you want to send an inbound Open Message 3. POST /api/v2/conversations/messages/{integrationId}/inbound/open/receipt, to send an inbound Open Receipt Message]  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
    * @param body NormalizedMessage (required)
    * @return OpenNormalizedMessage
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OpenNormalizedMessage> postConversationsMessagesInboundOpenWithHttpInfo(OpenNormalizedMessage body) throws IOException {
     return postConversationsMessagesInboundOpen(createPostConversationsMessagesInboundOpenRequest(body).withHttpInfo());
@@ -17500,11 +17546,12 @@ public class ConversationsApi {
 
   /**
    * Send an inbound Open Message
-   * Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * [This API is deprecated. Instead, use 1. POST /api/v2/conversations/messages/{integrationId}/inbound/open/event, if you want to send an inbound Open Event Message 2. POST /api/v2/conversations/messages/{integrationId}/inbound/open/message, if you want to send an inbound Open Message 3. POST /api/v2/conversations/messages/{integrationId}/inbound/open/receipt, to send an inbound Open Receipt Message]  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
    * @param request The request object
    * @return OpenNormalizedMessage
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public OpenNormalizedMessage postConversationsMessagesInboundOpen(PostConversationsMessagesInboundOpenRequest request) throws IOException, ApiException {
     try {
@@ -17519,10 +17566,11 @@ public class ConversationsApi {
 
   /**
    * Send an inbound Open Message
-   * Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * [This API is deprecated. Instead, use 1. POST /api/v2/conversations/messages/{integrationId}/inbound/open/event, if you want to send an inbound Open Event Message 2. POST /api/v2/conversations/messages/{integrationId}/inbound/open/message, if you want to send an inbound Open Message 3. POST /api/v2/conversations/messages/{integrationId}/inbound/open/receipt, to send an inbound Open Receipt Message]  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<OpenNormalizedMessage> postConversationsMessagesInboundOpen(ApiRequest<OpenNormalizedMessage> request) throws IOException {
     try {
@@ -18340,13 +18388,14 @@ public class ConversationsApi {
 
   /**
    * Apply wrap-up for this conversation communication
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
    * @param body Wrap-up (optional)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationsScreenshareParticipantCommunicationWrapup(String conversationId, String participantId, String communicationId, WrapupInput body) throws IOException, ApiException {
      postConversationsScreenshareParticipantCommunicationWrapup(createPostConversationsScreenshareParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, body));
@@ -18354,12 +18403,13 @@ public class ConversationsApi {
 
   /**
    * Apply wrap-up for this conversation communication
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param communicationId communicationId (required)
    * @param body Wrap-up (optional)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationsScreenshareParticipantCommunicationWrapupWithHttpInfo(String conversationId, String participantId, String communicationId, WrapupInput body) throws IOException {
     return postConversationsScreenshareParticipantCommunicationWrapup(createPostConversationsScreenshareParticipantCommunicationWrapupRequest(conversationId, participantId, communicationId, body).withHttpInfo());
@@ -18380,10 +18430,11 @@ public class ConversationsApi {
 
   /**
    * Apply wrap-up for this conversation communication
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationsScreenshareParticipantCommunicationWrapup(PostConversationsScreenshareParticipantCommunicationWrapupRequest request) throws IOException, ApiException {
     try {
@@ -18398,10 +18449,11 @@ public class ConversationsApi {
 
   /**
    * Apply wrap-up for this conversation communication
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationsScreenshareParticipantCommunicationWrapup(ApiRequest<WrapupInput> request) throws IOException {
     try {
@@ -19992,12 +20044,13 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by setting its recording state
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param body SetRecordingState (required)
    * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public String putConversationsScreenshareRecordingstate(String conversationId, SetRecordingState body) throws IOException, ApiException {
     return  putConversationsScreenshareRecordingstate(createPutConversationsScreenshareRecordingstateRequest(conversationId, body));
@@ -20005,11 +20058,12 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by setting its recording state
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param conversationId conversationId (required)
    * @param body SetRecordingState (required)
    * @return String
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<String> putConversationsScreenshareRecordingstateWithHttpInfo(String conversationId, SetRecordingState body) throws IOException {
     return putConversationsScreenshareRecordingstate(createPutConversationsScreenshareRecordingstateRequest(conversationId, body).withHttpInfo());
@@ -20026,11 +20080,12 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by setting its recording state
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public String putConversationsScreenshareRecordingstate(PutConversationsScreenshareRecordingstateRequest request) throws IOException, ApiException {
     try {
@@ -20045,10 +20100,11 @@ public class ConversationsApi {
 
   /**
    * Update a conversation by setting its recording state
-   * 
+   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<String> putConversationsScreenshareRecordingstate(ApiRequest<SetRecordingState> request) throws IOException {
     try {

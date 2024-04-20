@@ -1079,7 +1079,7 @@ public class QualityApi {
 
   /**
    * Get the list of calibrations
-   * 
+   * NOTE: The count for total and pageCount might not be accurate when querying for a large number of calibrations. nextUri, if present, will indicate that there are more calibrations to fetch.
    * @param calibratorId user id of calibrator (required)
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
@@ -1100,7 +1100,7 @@ public class QualityApi {
 
   /**
    * Get the list of calibrations
-   * 
+   * NOTE: The count for total and pageCount might not be accurate when querying for a large number of calibrations. nextUri, if present, will indicate that there are more calibrations to fetch.
    * @param calibratorId user id of calibrator (required)
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
@@ -1145,7 +1145,7 @@ public class QualityApi {
 
   /**
    * Get the list of calibrations
-   * 
+   * NOTE: The count for total and pageCount might not be accurate when querying for a large number of calibrations. nextUri, if present, will indicate that there are more calibrations to fetch.
    * @param request The request object
    * @return CalibrationEntityListing
    * @throws ApiException if the request fails on the server
@@ -1164,7 +1164,7 @@ public class QualityApi {
 
   /**
    * Get the list of calibrations
-   * 
+   * NOTE: The count for total and pageCount might not be accurate when querying for a large number of calibrations. nextUri, if present, will indicate that there are more calibrations to fetch.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1525,7 +1525,7 @@ public class QualityApi {
 
   /**
    * Queries Evaluations and returns a paged list
-   * Query params must include one of conversationId, evaluatorUserId, agentUserId or assigneeUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
+   * Query params must include one of conversationId, evaluatorUserId, agentUserId or assigneeUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date. NOTE: The count for total and pageCount might not be accurate when querying for a large number of evaluations. nextUri, if present, will indicate that there are more evaluations to fetch.
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
    * @param sortBy NOTE: Does not work when querying evaluations (optional)
@@ -1557,7 +1557,7 @@ public class QualityApi {
 
   /**
    * Queries Evaluations and returns a paged list
-   * Query params must include one of conversationId, evaluatorUserId, agentUserId or assigneeUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
+   * Query params must include one of conversationId, evaluatorUserId, agentUserId or assigneeUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date. NOTE: The count for total and pageCount might not be accurate when querying for a large number of evaluations. nextUri, if present, will indicate that there are more evaluations to fetch.
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
    * @param sortBy NOTE: Does not work when querying evaluations (optional)
@@ -1635,7 +1635,7 @@ public class QualityApi {
 
   /**
    * Queries Evaluations and returns a paged list
-   * Query params must include one of conversationId, evaluatorUserId, agentUserId or assigneeUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
+   * Query params must include one of conversationId, evaluatorUserId, agentUserId or assigneeUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date. NOTE: The count for total and pageCount might not be accurate when querying for a large number of evaluations. nextUri, if present, will indicate that there are more evaluations to fetch.
    * @param request The request object
    * @return EvaluationEntityListing
    * @throws ApiException if the request fails on the server
@@ -1654,7 +1654,7 @@ public class QualityApi {
 
   /**
    * Queries Evaluations and returns a paged list
-   * Query params must include one of conversationId, evaluatorUserId, agentUserId or assigneeUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
+   * Query params must include one of conversationId, evaluatorUserId, agentUserId or assigneeUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date. NOTE: The count for total and pageCount might not be accurate when querying for a large number of evaluations. nextUri, if present, will indicate that there are more evaluations to fetch.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

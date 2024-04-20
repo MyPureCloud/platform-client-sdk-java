@@ -1495,7 +1495,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
 String nextPage = "nextPage_example"; // String | The key for listing the next page
-Integer pageSize = 20; // Integer | The page size for the listing
+Integer pageSize = 20; // Integer | The page size for the listing. The max that will be returned is 500.
 String state = "state_example"; // String | Topic state. Defaults to latest
 String name = "name_example"; // String | Case insensitive partial name to filter by
 List<String> ids = Arrays.asList(null); // List<String> | Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.
@@ -1517,7 +1517,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **nextPage** | **String**| The key for listing the next page | [optional] 
-| **pageSize** | **Integer**| The page size for the listing | [optional] [default to 20] 
+| **pageSize** | **Integer**| The page size for the listing. The max that will be returned is 500. | [optional] [default to 20] 
 | **state** | **String**| Topic state. Defaults to latest | [optional]<br />**Values**: latest, published 
 | **name** | **String**| Case insensitive partial name to filter by | [optional] 
 | **ids** | [**List&lt;String&gt;**](String.html)| Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. | [optional] 

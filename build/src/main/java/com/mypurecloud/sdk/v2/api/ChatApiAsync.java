@@ -22,6 +22,7 @@ import com.mypurecloud.sdk.v2.model.ChatUserSettings;
 import com.mypurecloud.sdk.v2.model.CreateRoomRequest;
 import com.mypurecloud.sdk.v2.model.CreateRoomResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.OneOnOne;
 import com.mypurecloud.sdk.v2.model.PinnedMessageRequest;
 import com.mypurecloud.sdk.v2.model.Room;
 import com.mypurecloud.sdk.v2.model.RoomParticipant;
@@ -31,9 +32,10 @@ import com.mypurecloud.sdk.v2.model.SendMessageBody;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteChatsRoomMessageRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteChatsRoomMessagesPinRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteChatsRoomParticipantRequest;
-import com.mypurecloud.sdk.v2.api.request.DeleteChatsRoomPinnedmessageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteChatsUserMessageRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteChatsUserMessagesPinRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsRoomRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsRoomMessageRequest;
@@ -42,6 +44,7 @@ import com.mypurecloud.sdk.v2.api.request.GetChatsRoomParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsRoomParticipantsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsThreadMessagesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetChatsUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsUserMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsUserMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsUserSettingsRequest;
@@ -51,10 +54,11 @@ import com.mypurecloud.sdk.v2.api.request.PatchChatsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchChatsUserMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchChatsUserSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostChatsRoomMessagesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostChatsRoomMessagesPinsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostChatsRoomParticipantRequest;
-import com.mypurecloud.sdk.v2.api.request.PostChatsRoomPinnedmessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostChatsRoomsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostChatsUserMessagesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostChatsUserMessagesPinsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutChatsMessageReactionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutChatsSettingsRequest;
 
@@ -118,6 +122,81 @@ public class ChatApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteChatsRoomMessageAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Remove a pinned message from a room
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteChatsRoomMessagesPinAsync(DeleteChatsRoomMessagesPinRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Remove a pinned message from a room
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteChatsRoomMessagesPinAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -227,81 +306,6 @@ public class ChatApiAsync {
   }
 
   /**
-   * Remove a pinned message from a room
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<Void> deleteChatsRoomPinnedmessageAsync(DeleteChatsRoomPinnedmessageRequest request, final AsyncApiCallback<Void> callback) {
-    try {
-      final SettableFuture<Void> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
-        @Override
-        public void onCompleted(ApiResponse<Void> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Remove a pinned message from a room
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<Void>> deleteChatsRoomPinnedmessageAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
-    try {
-      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
-        @Override
-        public void onCompleted(ApiResponse<Void> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
    * Delete a message to a user
    * 
    * @param request the request object
@@ -343,6 +347,83 @@ public class ChatApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteChatsUserMessageAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Remove a pinned message from a 1on1
+   * 
+   * deleteChatsUserMessagesPin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteChatsUserMessagesPinAsync(DeleteChatsUserMessagesPinRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Remove a pinned message from a 1on1
+   * 
+   * deleteChatsUserMessagesPin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteChatsUserMessagesPinAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -965,6 +1046,83 @@ public class ChatApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ChatMessageEntityListing> response = (ApiResponse<ChatMessageEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get information for a 1on1
+   * 
+   * getChatsUser is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OneOnOne> getChatsUserAsync(GetChatsUserRequest request, final AsyncApiCallback<OneOnOne> callback) {
+    try {
+      final SettableFuture<OneOnOne> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OneOnOne>() {}, new AsyncApiCallback<ApiResponse<OneOnOne>>() {
+        @Override
+        public void onCompleted(ApiResponse<OneOnOne> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get information for a 1on1
+   * 
+   * getChatsUser is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OneOnOne>> getChatsUserAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OneOnOne>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OneOnOne>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OneOnOne>() {}, new AsyncApiCallback<ApiResponse<OneOnOne>>() {
+        @Override
+        public void onCompleted(ApiResponse<OneOnOne> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OneOnOne> response = (ApiResponse<OneOnOne>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OneOnOne> response = (ApiResponse<OneOnOne>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1656,6 +1814,81 @@ public class ChatApiAsync {
   }
 
   /**
+   * Add pinned messages for a room, up to a maximum of 5 pinned messages
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> postChatsRoomMessagesPinsAsync(PostChatsRoomMessagesPinsRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add pinned messages for a room, up to a maximum of 5 pinned messages
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> postChatsRoomMessagesPinsAsync(ApiRequest<PinnedMessageRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Join a room
    * 
    * @param request the request object
@@ -1697,81 +1930,6 @@ public class ChatApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> postChatsRoomParticipantAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
-    try {
-      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
-        @Override
-        public void onCompleted(ApiResponse<Void> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Add pinned messages for a room, up to a maximum of 5 pinned messages
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<Void> postChatsRoomPinnedmessagesAsync(PostChatsRoomPinnedmessagesRequest request, final AsyncApiCallback<Void> callback) {
-    try {
-      final SettableFuture<Void> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
-        @Override
-        public void onCompleted(ApiResponse<Void> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Add pinned messages for a room, up to a maximum of 5 pinned messages
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<Void>> postChatsRoomPinnedmessagesAsync(ApiRequest<PinnedMessageRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -1944,6 +2102,83 @@ public class ChatApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ChatSendMessageResponse> response = (ApiResponse<ChatSendMessageResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add pinned messages for a 1on1, up to a maximum of 5 pinned messages
+   * 
+   * postChatsUserMessagesPins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> postChatsUserMessagesPinsAsync(PostChatsUserMessagesPinsRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add pinned messages for a 1on1, up to a maximum of 5 pinned messages
+   * 
+   * postChatsUserMessagesPins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> postChatsUserMessagesPinsAsync(ApiRequest<PinnedMessageRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -182,6 +182,8 @@ title: ViewFilter
 | **knowledgeBaseIds** | <!----><!---->**List&lt;String&gt;**<!----> | The knowledge base ids that are used to filter the view. |  [optional] |
 | **isParked** | <!----><!---->**Boolean**<!----> | Filter to indicate if the interactions are parked. |  [optional] |
 | **agentEmpathyScore** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The agentEmpathyScore is used to filter the view |  [optional] |
+| **surveyTypes** | <!---->[**List&lt;SurveyTypesEnum&gt;**](#SurveyTypesEnum)<!----> | The surveyTypes is used to filter the view |  [optional] |
+| **surveyResponseStatuses** | <!---->[**List&lt;SurveyResponseStatusesEnum&gt;**](#SurveyResponseStatusesEnum)<!----> | The list of Survey Response Status |  [optional] |
 {: class="table table-striped"}
 
 
@@ -595,6 +597,29 @@ title: ViewFilter
 | ACTIVE | &quot;Active&quot; | 
 | INACTIVE | &quot;Inactive&quot; | 
 | DELETED | &quot;Deleted&quot; | 
+{: class="table table-striped"}
+
+
+<a name="SurveyTypesEnum"></a>
+
+## Enum: SurveyTypesEnum
+
+| Name | Value |
+| ---- | ----- |
+| WEB | &quot;Web&quot; |
+| VOICE | &quot;Voice&quot; |
+{: class="table table-striped"}
+
+
+<a name="SurveyResponseStatusesEnum"></a>
+
+## Enum: SurveyResponseStatusesEnum
+
+| Name | Value |
+| ---- | ----- |
+| UNKNOWN | &quot;Unknown&quot; |
+| FULLRESPONSE | &quot;FullResponse&quot; |
+| PARTIALRESPONSE | &quot;PartialResponse&quot; |
 {: class="table table-striped"}
 
 

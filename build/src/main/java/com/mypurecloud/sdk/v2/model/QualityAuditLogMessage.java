@@ -106,7 +106,8 @@ public class QualityAuditLogMessage  implements Serializable {
   public enum LevelEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     USER("User"),
-    SYSTEM("System");
+    SYSTEM("System"),
+    GENESYS_INTERNAL("GENESYS_INTERNAL");
 
     private String value;
 
@@ -211,6 +212,7 @@ public class QualityAuditLogMessage  implements Serializable {
     ABANDON("Abandon"),
     ARCHIVE("Archive"),
     EXPORT("Export"),
+    DOWNLOAD("Download"),
     RESTOREREQUEST("RestoreRequest"),
     RESTORECOMPLETE("RestoreComplete"),
     APPLYPROTECTION("ApplyProtection"),

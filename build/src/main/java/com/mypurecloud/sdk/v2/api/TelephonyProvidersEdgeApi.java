@@ -10,7 +10,6 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.AvailableLanguageList;
 import com.mypurecloud.sdk.v2.model.CertificateAuthorityEntityListing;
 import com.mypurecloud.sdk.v2.model.DID;
 import com.mypurecloud.sdk.v2.model.DIDEntityListing;
@@ -108,7 +107,6 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeSoftwareupdat
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeSoftwareversionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeTrunksRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesRequest;
-import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesAvailablelanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesCertificateauthoritiesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesCertificateauthorityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesDidRequest;
@@ -2447,84 +2445,6 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EdgeEntityListing> response = (ApiResponse<EdgeEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Get the list of available languages. For never released keyword spotting feature. Deprecated, do not use.
-   * 
-   * @return AvailableLanguageList
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public AvailableLanguageList getTelephonyProvidersEdgesAvailablelanguages() throws IOException, ApiException {
-    return  getTelephonyProvidersEdgesAvailablelanguages(createGetTelephonyProvidersEdgesAvailablelanguagesRequest());
-  }
-
-  /**
-   * Get the list of available languages. For never released keyword spotting feature. Deprecated, do not use.
-   * 
-   * @return AvailableLanguageList
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<AvailableLanguageList> getTelephonyProvidersEdgesAvailablelanguagesWithHttpInfo() throws IOException {
-    return getTelephonyProvidersEdgesAvailablelanguages(createGetTelephonyProvidersEdgesAvailablelanguagesRequest().withHttpInfo());
-  }
-
-  private GetTelephonyProvidersEdgesAvailablelanguagesRequest createGetTelephonyProvidersEdgesAvailablelanguagesRequest() {
-    return GetTelephonyProvidersEdgesAvailablelanguagesRequest.builder()
-            .build();
-  }
-
-  /**
-   * Get the list of available languages. For never released keyword spotting feature. Deprecated, do not use.
-   * 
-   * @param request The request object
-   * @return AvailableLanguageList
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public AvailableLanguageList getTelephonyProvidersEdgesAvailablelanguages(GetTelephonyProvidersEdgesAvailablelanguagesRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<AvailableLanguageList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AvailableLanguageList>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get the list of available languages. For never released keyword spotting feature. Deprecated, do not use.
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<AvailableLanguageList> getTelephonyProvidersEdgesAvailablelanguages(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<AvailableLanguageList>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<AvailableLanguageList> response = (ApiResponse<AvailableLanguageList>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<AvailableLanguageList> response = (ApiResponse<AvailableLanguageList>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

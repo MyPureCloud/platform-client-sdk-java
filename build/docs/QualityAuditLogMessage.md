@@ -49,6 +49,7 @@ title: QualityAuditLogMessage
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | USER | &quot;User&quot; | 
 | SYSTEM | &quot;System&quot; | 
+| GENESYS_INTERNAL | &quot;GENESYS_INTERNAL&quot; | 
 {: class="table table-striped"}
 
 
@@ -79,6 +80,7 @@ title: QualityAuditLogMessage
 | ABANDON | &quot;Abandon&quot; | 
 | ARCHIVE | &quot;Archive&quot; | 
 | EXPORT | &quot;Export&quot; | 
+| DOWNLOAD | &quot;Download&quot; | 
 | RESTOREREQUEST | &quot;RestoreRequest&quot; | 
 | RESTORECOMPLETE | &quot;RestoreComplete&quot; | 
 | APPLYPROTECTION | &quot;ApplyProtection&quot; | 

@@ -84,6 +84,20 @@ import com.mypurecloud.sdk.v2.model.VerifierEntityListing;
 
 public class GetAuthorizationSubjectsMeRequest {
 
+	private Boolean includeDuplicates;
+	public Boolean getIncludeDuplicates() {
+		return this.includeDuplicates;
+	}
+
+	public void setIncludeDuplicates(Boolean includeDuplicates) {
+		this.includeDuplicates = includeDuplicates;
+	}
+
+	public GetAuthorizationSubjectsMeRequest withIncludeDuplicates(Boolean includeDuplicates) {
+	    this.setIncludeDuplicates(includeDuplicates);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -107,6 +121,9 @@ public class GetAuthorizationSubjectsMeRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/authorization/subjects/me")
+
+                .withQueryParameters("includeDuplicates", "", includeDuplicates)
+        
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -127,6 +144,11 @@ public class GetAuthorizationSubjectsMeRequest {
 			request = new GetAuthorizationSubjectsMeRequest();
 		}
 
+
+		public Builder withIncludeDuplicates(Boolean includeDuplicates) {
+			request.setIncludeDuplicates(includeDuplicates);
+			return this;
+		}
 
 
 

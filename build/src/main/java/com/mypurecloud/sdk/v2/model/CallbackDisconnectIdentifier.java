@@ -51,7 +51,7 @@ public class CallbackDisconnectIdentifier  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The callback id.")
+  @ApiModelProperty(example = "null", required = true, value = "The callback id.")
   @JsonProperty("callbackId")
   public String getCallbackId() {
     return callbackId;

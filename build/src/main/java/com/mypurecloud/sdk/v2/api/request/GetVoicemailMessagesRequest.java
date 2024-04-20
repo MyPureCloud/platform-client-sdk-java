@@ -67,7 +67,8 @@ public class GetVoicemailMessagesRequest {
 		CALLERUSER_PRIMARYPRESENCE("callerUser.primaryPresence"),
 		CALLERUSER_CONVERSATIONSUMMARY("callerUser.conversationSummary"),
 		CALLERUSER_OUTOFOFFICE("callerUser.outOfOffice"),
-		CALLERUSER_GEOLOCATION("callerUser.geolocation");
+		CALLERUSER_GEOLOCATION("callerUser.geolocation"),
+		CONVERSATIONS("conversations");
 
 		private String value;
 

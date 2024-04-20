@@ -10,6 +10,7 @@ title: ApiUsageQueryResult
 | ------------ | ------------- | ------------- | ------------- |
 | **results** | <!----><!---->[**List&lt;ApiUsageRow&gt;**](ApiUsageRow.html)<!----> | Query results |  [optional] |
 | **queryStatus** | [**QueryStatusEnum**](#QueryStatusEnum)<!----> | Query status |  [optional] |
+| **cursors** | <!----><!---->[**Cursors**](Cursors.html)<!----> | Cursor tokens to be used for navigating paginated results |  [optional] |
 {: class="table table-striped"}
 
 

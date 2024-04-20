@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ApiUsageRow;
+import com.mypurecloud.sdk.v2.model.Cursors;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -75,6 +76,7 @@ public class ApiUsageQueryResult  implements Serializable {
     }
   }
   private QueryStatusEnum queryStatus = null;
+  private Cursors cursors = null;
 
   
   /**
@@ -113,6 +115,24 @@ public class ApiUsageQueryResult  implements Serializable {
   }
 
 
+  /**
+   * Cursor tokens to be used for navigating paginated results
+   **/
+  public ApiUsageQueryResult cursors(Cursors cursors) {
+    this.cursors = cursors;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Cursor tokens to be used for navigating paginated results")
+  @JsonProperty("cursors")
+  public Cursors getCursors() {
+    return cursors;
+  }
+  public void setCursors(Cursors cursors) {
+    this.cursors = cursors;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -124,12 +144,13 @@ public class ApiUsageQueryResult  implements Serializable {
     ApiUsageQueryResult apiUsageQueryResult = (ApiUsageQueryResult) o;
 
     return Objects.equals(this.results, apiUsageQueryResult.results) &&
-            Objects.equals(this.queryStatus, apiUsageQueryResult.queryStatus);
+            Objects.equals(this.queryStatus, apiUsageQueryResult.queryStatus) &&
+            Objects.equals(this.cursors, apiUsageQueryResult.cursors);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(results, queryStatus);
+    return Objects.hash(results, queryStatus, cursors);
   }
 
   @Override
@@ -139,6 +160,7 @@ public class ApiUsageQueryResult  implements Serializable {
     
     sb.append("    results: ").append(toIndentedString(results)).append("\n");
     sb.append("    queryStatus: ").append(toIndentedString(queryStatus)).append("\n");
+    sb.append("    cursors: ").append(toIndentedString(cursors)).append("\n");
     sb.append("}");
     return sb.toString();
   }

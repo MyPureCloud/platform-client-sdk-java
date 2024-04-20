@@ -43,6 +43,34 @@ public class GetUsageSimplesearchExecutionIdResultsRequest {
 	    return this;
 	} 
 
+	private String after;
+	public String getAfter() {
+		return this.after;
+	}
+
+	public void setAfter(String after) {
+		this.after = after;
+	}
+
+	public GetUsageSimplesearchExecutionIdResultsRequest withAfter(String after) {
+	    this.setAfter(after);
+	    return this;
+	} 
+
+	private Integer pageSize;
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public GetUsageSimplesearchExecutionIdResultsRequest withPageSize(Integer pageSize) {
+	    this.setPageSize(pageSize);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -73,6 +101,12 @@ public class GetUsageSimplesearchExecutionIdResultsRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/usage/simplesearch/{executionId}/results")
                 .withPathParameter("executionId", executionId)
         
+
+                .withQueryParameters("after", "", after)
+        
+
+                .withQueryParameters("pageSize", "", pageSize)
+        
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -101,6 +135,16 @@ public class GetUsageSimplesearchExecutionIdResultsRequest {
 
 		public Builder withExecutionId(String executionId) {
 			request.setExecutionId(executionId);
+			return this;
+		}
+
+		public Builder withAfter(String after) {
+			request.setAfter(after);
+			return this;
+		}
+
+		public Builder withPageSize(Integer pageSize) {
+			request.setPageSize(pageSize);
 			return this;
 		}
 

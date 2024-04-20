@@ -620,7 +620,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **messageId** | **String**| Message ID | 
-| **expand** | [**List&lt;String&gt;**](String.html)| If the caller is a known user, which fields, if any, to expand | [optional]<br />**Values**: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation 
+| **expand** | [**List&lt;String&gt;**](String.html)| If the caller is a known user, which fields, if any, to expand | [optional]<br />**Values**: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations 
 {: class="table-striped"}
 
 
@@ -744,7 +744,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **ids** | **String**| An optional comma separated list of VoicemailMessage ids | [optional] 
-| **expand** | [**List&lt;String&gt;**](String.html)| If the caller is a known user, which fields, if any, to expand | [optional]<br />**Values**: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation 
+| **expand** | [**List&lt;String&gt;**](String.html)| If the caller is a known user, which fields, if any, to expand | [optional]<br />**Values**: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations 
 {: class="table-striped"}
 
 

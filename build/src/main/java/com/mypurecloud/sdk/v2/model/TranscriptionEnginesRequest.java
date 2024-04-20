@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.TranscriptionEngines;
+import com.mypurecloud.sdk.v2.model.ProgramTranscriptionEngine;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -24,23 +24,23 @@ import java.io.Serializable;
 
 public class TranscriptionEnginesRequest  implements Serializable {
   
-  private List<TranscriptionEngines> transcriptionEngines = new ArrayList<TranscriptionEngines>();
+  private List<ProgramTranscriptionEngine> transcriptionEngines = new ArrayList<ProgramTranscriptionEngine>();
 
   
   /**
    * The transcription engine setting
    **/
-  public TranscriptionEnginesRequest transcriptionEngines(List<TranscriptionEngines> transcriptionEngines) {
+  public TranscriptionEnginesRequest transcriptionEngines(List<ProgramTranscriptionEngine> transcriptionEngines) {
     this.transcriptionEngines = transcriptionEngines;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "The transcription engine setting")
   @JsonProperty("transcriptionEngines")
-  public List<TranscriptionEngines> getTranscriptionEngines() {
+  public List<ProgramTranscriptionEngine> getTranscriptionEngines() {
     return transcriptionEngines;
   }
-  public void setTranscriptionEngines(List<TranscriptionEngines> transcriptionEngines) {
+  public void setTranscriptionEngines(List<ProgramTranscriptionEngine> transcriptionEngines) {
     this.transcriptionEngines = transcriptionEngines;
   }
 

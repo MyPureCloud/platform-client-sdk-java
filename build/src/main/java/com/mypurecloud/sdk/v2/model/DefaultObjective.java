@@ -136,6 +136,54 @@ public class DefaultObjective  implements Serializable {
   private TopicIdsFilterTypeEnum topicIdsFilterType = null;
   private List<String> evaluationFormContextIds = new ArrayList<String>();
 
+  private static class InitialDirectionEnumDeserializer extends StdDeserializer<InitialDirectionEnum> {
+    public InitialDirectionEnumDeserializer() {
+      super(InitialDirectionEnumDeserializer.class);
+    }
+
+    @Override
+    public InitialDirectionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return InitialDirectionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The initial direction to filter on
+   */
+ @JsonDeserialize(using = InitialDirectionEnumDeserializer.class)
+  public enum InitialDirectionEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    INBOUND("inbound"),
+    OUTBOUND("outbound");
+
+    private String value;
+
+    InitialDirectionEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static InitialDirectionEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (InitialDirectionEnum value : InitialDirectionEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return InitialDirectionEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private InitialDirectionEnum initialDirection = null;
+
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")
@@ -288,6 +336,24 @@ public class DefaultObjective  implements Serializable {
   }
 
 
+  /**
+   * The initial direction to filter on
+   **/
+  public DefaultObjective initialDirection(InitialDirectionEnum initialDirection) {
+    this.initialDirection = initialDirection;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The initial direction to filter on")
+  @JsonProperty("initialDirection")
+  public InitialDirectionEnum getInitialDirection() {
+    return initialDirection;
+  }
+  public void setInitialDirection(InitialDirectionEnum initialDirection) {
+    this.initialDirection = initialDirection;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -306,12 +372,13 @@ public class DefaultObjective  implements Serializable {
             Objects.equals(this.queues, defaultObjective.queues) &&
             Objects.equals(this.topics, defaultObjective.topics) &&
             Objects.equals(this.topicIdsFilterType, defaultObjective.topicIdsFilterType) &&
-            Objects.equals(this.evaluationFormContextIds, defaultObjective.evaluationFormContextIds);
+            Objects.equals(this.evaluationFormContextIds, defaultObjective.evaluationFormContextIds) &&
+            Objects.equals(this.initialDirection, defaultObjective.initialDirection);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, templateId, zones, enabled, mediaTypes, queues, topics, topicIdsFilterType, evaluationFormContextIds);
+    return Objects.hash(id, templateId, zones, enabled, mediaTypes, queues, topics, topicIdsFilterType, evaluationFormContextIds, initialDirection);
   }
 
   @Override
@@ -328,6 +395,7 @@ public class DefaultObjective  implements Serializable {
     sb.append("    topics: ").append(toIndentedString(topics)).append("\n");
     sb.append("    topicIdsFilterType: ").append(toIndentedString(topicIdsFilterType)).append("\n");
     sb.append("    evaluationFormContextIds: ").append(toIndentedString(evaluationFormContextIds)).append("\n");
+    sb.append("    initialDirection: ").append(toIndentedString(initialDirection)).append("\n");
     sb.append("}");
     return sb.toString();
   }

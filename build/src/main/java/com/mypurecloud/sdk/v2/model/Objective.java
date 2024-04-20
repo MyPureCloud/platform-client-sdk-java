@@ -136,6 +136,54 @@ public class Objective  implements Serializable {
   }
   private TopicIdsFilterTypeEnum topicIdsFilterType = null;
   private List<String> evaluationFormContextIds = new ArrayList<String>();
+
+  private static class InitialDirectionEnumDeserializer extends StdDeserializer<InitialDirectionEnum> {
+    public InitialDirectionEnumDeserializer() {
+      super(InitialDirectionEnumDeserializer.class);
+    }
+
+    @Override
+    public InitialDirectionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return InitialDirectionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The initial direction to filter on
+   */
+ @JsonDeserialize(using = InitialDirectionEnumDeserializer.class)
+  public enum InitialDirectionEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    INBOUND("inbound"),
+    OUTBOUND("outbound");
+
+    private String value;
+
+    InitialDirectionEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static InitialDirectionEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (InitialDirectionEnum value : InitialDirectionEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return InitialDirectionEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private InitialDirectionEnum initialDirection = null;
   private LocalDate dateStart = null;
 
   
@@ -291,6 +339,24 @@ public class Objective  implements Serializable {
 
 
   /**
+   * The initial direction to filter on
+   **/
+  public Objective initialDirection(InitialDirectionEnum initialDirection) {
+    this.initialDirection = initialDirection;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The initial direction to filter on")
+  @JsonProperty("initialDirection")
+  public InitialDirectionEnum getInitialDirection() {
+    return initialDirection;
+  }
+  public void setInitialDirection(InitialDirectionEnum initialDirection) {
+    this.initialDirection = initialDirection;
+  }
+
+
+  /**
    * start date of the objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
   public Objective dateStart(LocalDate dateStart) {
@@ -327,12 +393,13 @@ public class Objective  implements Serializable {
             Objects.equals(this.topics, objective.topics) &&
             Objects.equals(this.topicIdsFilterType, objective.topicIdsFilterType) &&
             Objects.equals(this.evaluationFormContextIds, objective.evaluationFormContextIds) &&
+            Objects.equals(this.initialDirection, objective.initialDirection) &&
             Objects.equals(this.dateStart, objective.dateStart);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, templateId, zones, enabled, mediaTypes, queues, topics, topicIdsFilterType, evaluationFormContextIds, dateStart);
+    return Objects.hash(id, templateId, zones, enabled, mediaTypes, queues, topics, topicIdsFilterType, evaluationFormContextIds, initialDirection, dateStart);
   }
 
   @Override
@@ -349,6 +416,7 @@ public class Objective  implements Serializable {
     sb.append("    topics: ").append(toIndentedString(topics)).append("\n");
     sb.append("    topicIdsFilterType: ").append(toIndentedString(topicIdsFilterType)).append("\n");
     sb.append("    evaluationFormContextIds: ").append(toIndentedString(evaluationFormContextIds)).append("\n");
+    sb.append("    initialDirection: ").append(toIndentedString(initialDirection)).append("\n");
     sb.append("    dateStart: ").append(toIndentedString(dateStart)).append("\n");
     sb.append("}");
     return sb.toString();

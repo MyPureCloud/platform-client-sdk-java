@@ -19,8 +19,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * JourneyViewResult
+ * A journey view result
  */
+@ApiModel(description = "A journey view result")
 
 public class JourneyViewResult  implements Serializable {
   

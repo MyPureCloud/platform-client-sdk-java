@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.NluDomainVersionTrainingResponse;
 import com.mypurecloud.sdk.v2.model.NluFeedbackListing;
 import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
 import com.mypurecloud.sdk.v2.model.NluFeedbackResponse;
+import com.mypurecloud.sdk.v2.model.NluOrganization;
 
 public class PutLanguageunderstandingDomainVersionRequest {
 
