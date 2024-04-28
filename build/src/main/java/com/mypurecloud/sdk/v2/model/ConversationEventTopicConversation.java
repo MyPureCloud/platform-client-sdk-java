@@ -32,6 +32,7 @@ public class ConversationEventTopicConversation  implements Serializable {
   private String recordingState = null;
   private String address = null;
   private String externalTag = null;
+  private String utilizationLabelId = null;
   private Boolean securePause = null;
 
   
@@ -156,6 +157,23 @@ public class ConversationEventTopicConversation  implements Serializable {
 
   /**
    **/
+  public ConversationEventTopicConversation utilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("utilizationLabelId")
+  public String getUtilizationLabelId() {
+    return utilizationLabelId;
+  }
+  public void setUtilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+  }
+
+
+  /**
+   **/
   public ConversationEventTopicConversation securePause(Boolean securePause) {
     this.securePause = securePause;
     return this;
@@ -188,12 +206,13 @@ public class ConversationEventTopicConversation  implements Serializable {
             Objects.equals(this.recordingState, conversationEventTopicConversation.recordingState) &&
             Objects.equals(this.address, conversationEventTopicConversation.address) &&
             Objects.equals(this.externalTag, conversationEventTopicConversation.externalTag) &&
+            Objects.equals(this.utilizationLabelId, conversationEventTopicConversation.utilizationLabelId) &&
             Objects.equals(this.securePause, conversationEventTopicConversation.securePause);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag, securePause);
+    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag, utilizationLabelId, securePause);
   }
 
   @Override
@@ -208,6 +227,7 @@ public class ConversationEventTopicConversation  implements Serializable {
     sb.append("    recordingState: ").append(toIndentedString(recordingState)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    externalTag: ").append(toIndentedString(externalTag)).append("\n");
+    sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
     sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
     sb.append("}");
     return sb.toString();

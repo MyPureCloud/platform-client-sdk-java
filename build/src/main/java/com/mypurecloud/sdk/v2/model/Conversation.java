@@ -147,6 +147,7 @@ public class Conversation  implements Serializable {
   private List<ConversationDivisionMembership> divisions = new ArrayList<ConversationDivisionMembership>();
   private List<TransferResponse> recentTransfers = new ArrayList<TransferResponse>();
   private Boolean securePause = null;
+  private String utilizationLabelId = null;
   private String selfUri = null;
 
   
@@ -390,6 +391,24 @@ public class Conversation  implements Serializable {
   }
 
 
+  /**
+   * An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
+   **/
+  public Conversation utilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level")
+  @JsonProperty("utilizationLabelId")
+  public String getUtilizationLabelId() {
+    return utilizationLabelId;
+  }
+  public void setUtilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -421,12 +440,13 @@ public class Conversation  implements Serializable {
             Objects.equals(this.divisions, conversation.divisions) &&
             Objects.equals(this.recentTransfers, conversation.recentTransfers) &&
             Objects.equals(this.securePause, conversation.securePause) &&
+            Objects.equals(this.utilizationLabelId, conversation.utilizationLabelId) &&
             Objects.equals(this.selfUri, conversation.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, externalTag, startTime, endTime, address, participants, conversationIds, maxParticipants, recordingState, state, divisions, recentTransfers, securePause, selfUri);
+    return Objects.hash(id, name, externalTag, startTime, endTime, address, participants, conversationIds, maxParticipants, recordingState, state, divisions, recentTransfers, securePause, utilizationLabelId, selfUri);
   }
 
   @Override
@@ -448,6 +468,7 @@ public class Conversation  implements Serializable {
     sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("    recentTransfers: ").append(toIndentedString(recentTransfers)).append("\n");
     sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
+    sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

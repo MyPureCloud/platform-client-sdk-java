@@ -339,6 +339,7 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
   private QueueConversationMessageEventTopicJourneyContext journeyContext = null;
   private Date startAcwTime = null;
   private Date endAcwTime = null;
+  private Date resumeTime = null;
   private List<String> mediaRoles = new ArrayList<String>();
   private QueueConversationMessageEventTopicQueueMediaSettings queueMediaSettings = null;
   private List<QueueConversationMessageEventTopicMessageDetails> messages = new ArrayList<QueueConversationMessageEventTopicMessageDetails>();
@@ -1004,6 +1005,23 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
 
   /**
    **/
+  public QueueConversationMessageEventTopicMessageMediaParticipant resumeTime(Date resumeTime) {
+    this.resumeTime = resumeTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("resumeTime")
+  public Date getResumeTime() {
+    return resumeTime;
+  }
+  public void setResumeTime(Date resumeTime) {
+    this.resumeTime = resumeTime;
+  }
+
+
+  /**
+   **/
   public QueueConversationMessageEventTopicMessageMediaParticipant mediaRoles(List<String> mediaRoles) {
     this.mediaRoles = mediaRoles;
     return this;
@@ -1183,6 +1201,7 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
             Objects.equals(this.journeyContext, queueConversationMessageEventTopicMessageMediaParticipant.journeyContext) &&
             Objects.equals(this.startAcwTime, queueConversationMessageEventTopicMessageMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, queueConversationMessageEventTopicMessageMediaParticipant.endAcwTime) &&
+            Objects.equals(this.resumeTime, queueConversationMessageEventTopicMessageMediaParticipant.resumeTime) &&
             Objects.equals(this.mediaRoles, queueConversationMessageEventTopicMessageMediaParticipant.mediaRoles) &&
             Objects.equals(this.queueMediaSettings, queueConversationMessageEventTopicMessageMediaParticipant.queueMediaSettings) &&
             Objects.equals(this.messages, queueConversationMessageEventTopicMessageMediaParticipant.messages) &&
@@ -1195,7 +1214,7 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, queueMediaSettings, messages, type, recipientCountry, recipientType, byoSmsIntegrationId, monitoredParticipantId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, mediaRoles, queueMediaSettings, messages, type, recipientCountry, recipientType, byoSmsIntegrationId, monitoredParticipantId);
   }
 
   @Override
@@ -1238,6 +1257,7 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
+    sb.append("    resumeTime: ").append(toIndentedString(resumeTime)).append("\n");
     sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
     sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("    messages: ").append(toIndentedString(messages)).append("\n");

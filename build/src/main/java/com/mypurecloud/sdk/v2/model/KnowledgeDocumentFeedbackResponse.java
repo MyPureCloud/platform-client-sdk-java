@@ -184,6 +184,56 @@ public class KnowledgeDocumentFeedbackResponse  implements Serializable {
   }
   private QueryTypeEnum queryType = null;
 
+  private static class SurfacingMethodEnumDeserializer extends StdDeserializer<SurfacingMethodEnum> {
+    public SurfacingMethodEnumDeserializer() {
+      super(SurfacingMethodEnumDeserializer.class);
+    }
+
+    @Override
+    public SurfacingMethodEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SurfacingMethodEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
+   */
+ @JsonDeserialize(using = SurfacingMethodEnumDeserializer.class)
+  public enum SurfacingMethodEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("Unknown"),
+    ARTICLE("Article"),
+    SNIPPET("Snippet"),
+    HIGHLIGHT("Highlight");
+
+    private String value;
+
+    SurfacingMethodEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SurfacingMethodEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SurfacingMethodEnum value : SurfacingMethodEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SurfacingMethodEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private SurfacingMethodEnum surfacingMethod = null;
+
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
     public StateEnumDeserializer() {
       super(StateEnumDeserializer.class);
@@ -368,6 +418,24 @@ public class KnowledgeDocumentFeedbackResponse  implements Serializable {
 
 
   /**
+   * The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
+   **/
+  public KnowledgeDocumentFeedbackResponse surfacingMethod(SurfacingMethodEnum surfacingMethod) {
+    this.surfacingMethod = surfacingMethod;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.")
+  @JsonProperty("surfacingMethod")
+  public SurfacingMethodEnum getSurfacingMethod() {
+    return surfacingMethod;
+  }
+  public void setSurfacingMethod(SurfacingMethodEnum surfacingMethod) {
+    this.surfacingMethod = surfacingMethod;
+  }
+
+
+  /**
    * The state of the feedback.
    **/
   public KnowledgeDocumentFeedbackResponse state(StateEnum state) {
@@ -472,6 +540,7 @@ public class KnowledgeDocumentFeedbackResponse  implements Serializable {
             Objects.equals(this.sessionId, knowledgeDocumentFeedbackResponse.sessionId) &&
             Objects.equals(this.dateCreated, knowledgeDocumentFeedbackResponse.dateCreated) &&
             Objects.equals(this.queryType, knowledgeDocumentFeedbackResponse.queryType) &&
+            Objects.equals(this.surfacingMethod, knowledgeDocumentFeedbackResponse.surfacingMethod) &&
             Objects.equals(this.state, knowledgeDocumentFeedbackResponse.state) &&
             Objects.equals(this.document, knowledgeDocumentFeedbackResponse.document) &&
             Objects.equals(this.application, knowledgeDocumentFeedbackResponse.application) &&
@@ -482,7 +551,7 @@ public class KnowledgeDocumentFeedbackResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, documentVariation, rating, reason, comment, search, sessionId, dateCreated, queryType, state, document, application, conversationContext, user, selfUri);
+    return Objects.hash(id, documentVariation, rating, reason, comment, search, sessionId, dateCreated, queryType, surfacingMethod, state, document, application, conversationContext, user, selfUri);
   }
 
   @Override
@@ -499,6 +568,7 @@ public class KnowledgeDocumentFeedbackResponse  implements Serializable {
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    queryType: ").append(toIndentedString(queryType)).append("\n");
+    sb.append("    surfacingMethod: ").append(toIndentedString(surfacingMethod)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    document: ").append(toIndentedString(document)).append("\n");
     sb.append("    application: ").append(toIndentedString(application)).append("\n");

@@ -24,6 +24,7 @@ public class Settings  implements Serializable {
   private Boolean communicationBasedACW = null;
   private Boolean includeNonAgentConversationSummary = null;
   private Boolean allowCallbackQueueSelection = null;
+  private Boolean callbacksInheritRoutingFromInboundCall = null;
   private Boolean completeAcwWhenAgentTransitionsOffline = null;
   private Boolean totalActiveCallback = null;
 
@@ -83,6 +84,24 @@ public class Settings  implements Serializable {
 
 
   /**
+   * Inherit callback routing data from inbound calls
+   **/
+  public Settings callbacksInheritRoutingFromInboundCall(Boolean callbacksInheritRoutingFromInboundCall) {
+    this.callbacksInheritRoutingFromInboundCall = callbacksInheritRoutingFromInboundCall;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Inherit callback routing data from inbound calls")
+  @JsonProperty("callbacksInheritRoutingFromInboundCall")
+  public Boolean getCallbacksInheritRoutingFromInboundCall() {
+    return callbacksInheritRoutingFromInboundCall;
+  }
+  public void setCallbacksInheritRoutingFromInboundCall(Boolean callbacksInheritRoutingFromInboundCall) {
+    this.callbacksInheritRoutingFromInboundCall = callbacksInheritRoutingFromInboundCall;
+  }
+
+
+  /**
    * Complete ACW When Agent Transitions Offline
    **/
   public Settings completeAcwWhenAgentTransitionsOffline(Boolean completeAcwWhenAgentTransitionsOffline) {
@@ -131,13 +150,14 @@ public class Settings  implements Serializable {
     return Objects.equals(this.communicationBasedACW, settings.communicationBasedACW) &&
             Objects.equals(this.includeNonAgentConversationSummary, settings.includeNonAgentConversationSummary) &&
             Objects.equals(this.allowCallbackQueueSelection, settings.allowCallbackQueueSelection) &&
+            Objects.equals(this.callbacksInheritRoutingFromInboundCall, settings.callbacksInheritRoutingFromInboundCall) &&
             Objects.equals(this.completeAcwWhenAgentTransitionsOffline, settings.completeAcwWhenAgentTransitionsOffline) &&
             Objects.equals(this.totalActiveCallback, settings.totalActiveCallback);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(communicationBasedACW, includeNonAgentConversationSummary, allowCallbackQueueSelection, completeAcwWhenAgentTransitionsOffline, totalActiveCallback);
+    return Objects.hash(communicationBasedACW, includeNonAgentConversationSummary, allowCallbackQueueSelection, callbacksInheritRoutingFromInboundCall, completeAcwWhenAgentTransitionsOffline, totalActiveCallback);
   }
 
   @Override
@@ -148,6 +168,7 @@ public class Settings  implements Serializable {
     sb.append("    communicationBasedACW: ").append(toIndentedString(communicationBasedACW)).append("\n");
     sb.append("    includeNonAgentConversationSummary: ").append(toIndentedString(includeNonAgentConversationSummary)).append("\n");
     sb.append("    allowCallbackQueueSelection: ").append(toIndentedString(allowCallbackQueueSelection)).append("\n");
+    sb.append("    callbacksInheritRoutingFromInboundCall: ").append(toIndentedString(callbacksInheritRoutingFromInboundCall)).append("\n");
     sb.append("    completeAcwWhenAgentTransitionsOffline: ").append(toIndentedString(completeAcwWhenAgentTransitionsOffline)).append("\n");
     sb.append("    totalActiveCallback: ").append(toIndentedString(totalActiveCallback)).append("\n");
     sb.append("}");

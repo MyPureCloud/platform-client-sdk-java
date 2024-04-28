@@ -79,6 +79,56 @@ public class KnowledgeGuestDocumentView  implements Serializable {
   }
   private QueryTypeEnum queryType = null;
 
+  private static class SurfacingMethodEnumDeserializer extends StdDeserializer<SurfacingMethodEnum> {
+    public SurfacingMethodEnumDeserializer() {
+      super(SurfacingMethodEnumDeserializer.class);
+    }
+
+    @Override
+    public SurfacingMethodEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SurfacingMethodEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
+   */
+ @JsonDeserialize(using = SurfacingMethodEnumDeserializer.class)
+  public enum SurfacingMethodEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("Unknown"),
+    ARTICLE("Article"),
+    SNIPPET("Snippet"),
+    HIGHLIGHT("Highlight");
+
+    private String value;
+
+    SurfacingMethodEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SurfacingMethodEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SurfacingMethodEnum value : SurfacingMethodEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SurfacingMethodEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private SurfacingMethodEnum surfacingMethod = null;
+
   
   /**
    * The variation of the viewed document.
@@ -152,6 +202,24 @@ public class KnowledgeGuestDocumentView  implements Serializable {
   }
 
 
+  /**
+   * The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
+   **/
+  public KnowledgeGuestDocumentView surfacingMethod(SurfacingMethodEnum surfacingMethod) {
+    this.surfacingMethod = surfacingMethod;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.")
+  @JsonProperty("surfacingMethod")
+  public SurfacingMethodEnum getSurfacingMethod() {
+    return surfacingMethod;
+  }
+  public void setSurfacingMethod(SurfacingMethodEnum surfacingMethod) {
+    this.surfacingMethod = surfacingMethod;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -165,12 +233,13 @@ public class KnowledgeGuestDocumentView  implements Serializable {
     return Objects.equals(this.documentVariationId, knowledgeGuestDocumentView.documentVariationId) &&
             Objects.equals(this.documentVersionId, knowledgeGuestDocumentView.documentVersionId) &&
             Objects.equals(this.searchId, knowledgeGuestDocumentView.searchId) &&
-            Objects.equals(this.queryType, knowledgeGuestDocumentView.queryType);
+            Objects.equals(this.queryType, knowledgeGuestDocumentView.queryType) &&
+            Objects.equals(this.surfacingMethod, knowledgeGuestDocumentView.surfacingMethod);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(documentVariationId, documentVersionId, searchId, queryType);
+    return Objects.hash(documentVariationId, documentVersionId, searchId, queryType, surfacingMethod);
   }
 
   @Override
@@ -182,6 +251,7 @@ public class KnowledgeGuestDocumentView  implements Serializable {
     sb.append("    documentVersionId: ").append(toIndentedString(documentVersionId)).append("\n");
     sb.append("    searchId: ").append(toIndentedString(searchId)).append("\n");
     sb.append("    queryType: ").append(toIndentedString(queryType)).append("\n");
+    sb.append("    surfacingMethod: ").append(toIndentedString(surfacingMethod)).append("\n");
     sb.append("}");
     return sb.toString();
   }

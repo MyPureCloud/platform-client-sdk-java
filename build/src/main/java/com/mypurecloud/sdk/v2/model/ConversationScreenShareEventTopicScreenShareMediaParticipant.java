@@ -338,6 +338,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
   private ConversationScreenShareEventTopicJourneyContext journeyContext = null;
   private Date startAcwTime = null;
   private Date endAcwTime = null;
+  private Date resumeTime = null;
   private List<String> mediaRoles = new ArrayList<String>();
   private ConversationScreenShareEventTopicQueueMediaSettings queueMediaSettings = null;
   private String context = null;
@@ -942,6 +943,23 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
 
   /**
    **/
+  public ConversationScreenShareEventTopicScreenShareMediaParticipant resumeTime(Date resumeTime) {
+    this.resumeTime = resumeTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("resumeTime")
+  public Date getResumeTime() {
+    return resumeTime;
+  }
+  public void setResumeTime(Date resumeTime) {
+    this.resumeTime = resumeTime;
+  }
+
+
+  /**
+   **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant mediaRoles(List<String> mediaRoles) {
     this.mediaRoles = mediaRoles;
     return this;
@@ -1070,6 +1088,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
             Objects.equals(this.journeyContext, conversationScreenShareEventTopicScreenShareMediaParticipant.journeyContext) &&
             Objects.equals(this.startAcwTime, conversationScreenShareEventTopicScreenShareMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, conversationScreenShareEventTopicScreenShareMediaParticipant.endAcwTime) &&
+            Objects.equals(this.resumeTime, conversationScreenShareEventTopicScreenShareMediaParticipant.resumeTime) &&
             Objects.equals(this.mediaRoles, conversationScreenShareEventTopicScreenShareMediaParticipant.mediaRoles) &&
             Objects.equals(this.queueMediaSettings, conversationScreenShareEventTopicScreenShareMediaParticipant.queueMediaSettings) &&
             Objects.equals(this.context, conversationScreenShareEventTopicScreenShareMediaParticipant.context) &&
@@ -1079,7 +1098,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, queueMediaSettings, context, peerCount, sharing);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, mediaRoles, queueMediaSettings, context, peerCount, sharing);
   }
 
   @Override
@@ -1122,6 +1141,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
+    sb.append("    resumeTime: ").append(toIndentedString(resumeTime)).append("\n");
     sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
     sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");

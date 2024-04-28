@@ -29,6 +29,7 @@ public class QueueConversationChatEventTopicChatConversation  implements Seriali
   private List<QueueConversationChatEventTopicChatMediaParticipant> participants = new ArrayList<QueueConversationChatEventTopicChatMediaParticipant>();
   private List<String> otherMediaUris = new ArrayList<String>();
   private String address = null;
+  private String utilizationLabelId = null;
 
   
   /**
@@ -116,6 +117,23 @@ public class QueueConversationChatEventTopicChatConversation  implements Seriali
   }
 
 
+  /**
+   **/
+  public QueueConversationChatEventTopicChatConversation utilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("utilizationLabelId")
+  public String getUtilizationLabelId() {
+    return utilizationLabelId;
+  }
+  public void setUtilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -130,12 +148,13 @@ public class QueueConversationChatEventTopicChatConversation  implements Seriali
             Objects.equals(this.name, queueConversationChatEventTopicChatConversation.name) &&
             Objects.equals(this.participants, queueConversationChatEventTopicChatConversation.participants) &&
             Objects.equals(this.otherMediaUris, queueConversationChatEventTopicChatConversation.otherMediaUris) &&
-            Objects.equals(this.address, queueConversationChatEventTopicChatConversation.address);
+            Objects.equals(this.address, queueConversationChatEventTopicChatConversation.address) &&
+            Objects.equals(this.utilizationLabelId, queueConversationChatEventTopicChatConversation.utilizationLabelId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, address);
+    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId);
   }
 
   @Override
@@ -148,6 +167,7 @@ public class QueueConversationChatEventTopicChatConversation  implements Seriali
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

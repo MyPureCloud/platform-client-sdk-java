@@ -31,6 +31,7 @@ public class CallConversation  implements Serializable {
   private List<CallMediaParticipant> participants = new ArrayList<CallMediaParticipant>();
   private List<String> otherMediaUris = new ArrayList<String>();
   private List<TransferResponse> recentTransfers = new ArrayList<TransferResponse>();
+  private String utilizationLabelId = null;
 
   private static class RecordingStateEnumDeserializer extends StdDeserializer<RecordingStateEnum> {
     public RecordingStateEnumDeserializer() {
@@ -164,6 +165,24 @@ public class CallConversation  implements Serializable {
 
 
   /**
+   * An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
+   **/
+  public CallConversation utilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level")
+  @JsonProperty("utilizationLabelId")
+  public String getUtilizationLabelId() {
+    return utilizationLabelId;
+  }
+  public void setUtilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+  }
+
+
+  /**
    **/
   public CallConversation recordingState(RecordingStateEnum recordingState) {
     this.recordingState = recordingState;
@@ -238,6 +257,7 @@ public class CallConversation  implements Serializable {
             Objects.equals(this.participants, callConversation.participants) &&
             Objects.equals(this.otherMediaUris, callConversation.otherMediaUris) &&
             Objects.equals(this.recentTransfers, callConversation.recentTransfers) &&
+            Objects.equals(this.utilizationLabelId, callConversation.utilizationLabelId) &&
             Objects.equals(this.recordingState, callConversation.recordingState) &&
             Objects.equals(this.maxParticipants, callConversation.maxParticipants) &&
             Objects.equals(this.securePause, callConversation.securePause) &&
@@ -246,7 +266,7 @@ public class CallConversation  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, recentTransfers, recordingState, maxParticipants, securePause, selfUri);
+    return Objects.hash(id, name, participants, otherMediaUris, recentTransfers, utilizationLabelId, recordingState, maxParticipants, securePause, selfUri);
   }
 
   @Override
@@ -259,6 +279,7 @@ public class CallConversation  implements Serializable {
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
     sb.append("    recentTransfers: ").append(toIndentedString(recentTransfers)).append("\n");
+    sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
     sb.append("    recordingState: ").append(toIndentedString(recordingState)).append("\n");
     sb.append("    maxParticipants: ").append(toIndentedString(maxParticipants)).append("\n");
     sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");

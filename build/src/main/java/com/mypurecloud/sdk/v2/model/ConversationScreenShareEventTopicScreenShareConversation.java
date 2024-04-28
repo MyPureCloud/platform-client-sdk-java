@@ -29,6 +29,7 @@ public class ConversationScreenShareEventTopicScreenShareConversation  implement
   private List<ConversationScreenShareEventTopicScreenShareMediaParticipant> participants = new ArrayList<ConversationScreenShareEventTopicScreenShareMediaParticipant>();
   private List<String> otherMediaUris = new ArrayList<String>();
   private String address = null;
+  private String utilizationLabelId = null;
 
   
   /**
@@ -116,6 +117,23 @@ public class ConversationScreenShareEventTopicScreenShareConversation  implement
   }
 
 
+  /**
+   **/
+  public ConversationScreenShareEventTopicScreenShareConversation utilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("utilizationLabelId")
+  public String getUtilizationLabelId() {
+    return utilizationLabelId;
+  }
+  public void setUtilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -130,12 +148,13 @@ public class ConversationScreenShareEventTopicScreenShareConversation  implement
             Objects.equals(this.name, conversationScreenShareEventTopicScreenShareConversation.name) &&
             Objects.equals(this.participants, conversationScreenShareEventTopicScreenShareConversation.participants) &&
             Objects.equals(this.otherMediaUris, conversationScreenShareEventTopicScreenShareConversation.otherMediaUris) &&
-            Objects.equals(this.address, conversationScreenShareEventTopicScreenShareConversation.address);
+            Objects.equals(this.address, conversationScreenShareEventTopicScreenShareConversation.address) &&
+            Objects.equals(this.utilizationLabelId, conversationScreenShareEventTopicScreenShareConversation.utilizationLabelId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, address);
+    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId);
   }
 
   @Override
@@ -148,6 +167,7 @@ public class ConversationScreenShareEventTopicScreenShareConversation  implement
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

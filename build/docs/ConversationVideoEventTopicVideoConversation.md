@@ -13,6 +13,7 @@ title: ConversationVideoEventTopicVideoConversation
 | **participants** | <!----><!---->[**List&lt;ConversationVideoEventTopicVideoMediaParticipant&gt;**](ConversationVideoEventTopicVideoMediaParticipant.html)<!----> |  |  [optional] |
 | **otherMediaUris** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 | **address** | <!----><!---->**String**<!----> |  |  [optional] |
+| **utilizationLabelId** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

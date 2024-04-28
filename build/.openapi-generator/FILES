@@ -983,6 +983,7 @@ docs/ConversationThreadingWindow.md
 docs/ConversationThreadingWindowSetting.md
 docs/ConversationUser.md
 docs/ConversationUserDisposition.md
+docs/ConversationUtilizationLabelUpdate.md
 docs/ConversationVideoEventTopicConversationRoutingData.md
 docs/ConversationVideoEventTopicDetail.md
 docs/ConversationVideoEventTopicErrorBody.md
@@ -1440,6 +1441,7 @@ docs/EmailConfig.md
 docs/EmailConversation.md
 docs/EmailConversationEntityListing.md
 docs/EmailEndTransferEvent.md
+docs/EmailErrorInfo.md
 docs/EmailExternalEstablishedEvent.md
 docs/EmailFlowEstablishedEvent.md
 docs/EmailHoldUpdatedEvent.md
@@ -1891,6 +1893,7 @@ docs/IdentityProviderEntityListing.md
 docs/IdleEventTrigger.md
 docs/IdleTokenTimeout.md
 docs/IgnoredActivityCategories.md
+docs/ImapSettings.md
 docs/ImportError.md
 docs/ImportForecastResponse.md
 docs/ImportForecastUploadResponse.md
@@ -6022,6 +6025,7 @@ docs/patchCoachingNotification-example.txt
 docs/patchConversationParticipant-example.txt
 docs/patchConversationParticipantAttributes-example.txt
 docs/patchConversationSecureattributes-example.txt
+docs/patchConversationUtilizationlabel-example.txt
 docs/patchConversationsAftercallworkConversationIdParticipantCommunication-example.txt
 docs/patchConversationsCall-example.txt
 docs/patchConversationsCallParticipant-example.txt
@@ -8684,6 +8688,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PatchCoachingNotificationReques
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationParticipantAttributesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationParticipantRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationSecureattributesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationUtilizationlabelRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsAftercallworkConversationIdParticipantCommunicationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsCallParticipantAttributesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchConversationsCallParticipantCommunicationRequest.java
@@ -10682,6 +10687,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationThreadingWindow.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationThreadingWindowSetting.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationUser.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationUserDisposition.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationUtilizationLabelUpdate.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationVideoEventTopicConversationRoutingData.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationVideoEventTopicDetail.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationVideoEventTopicErrorBody.java
@@ -11133,6 +11139,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/EmailConfig.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailConversation.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailConversationEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailEndTransferEvent.java
+src/main/java/com/mypurecloud/sdk/v2/model/EmailErrorInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailExternalEstablishedEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailFlowEstablishedEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/EmailHoldUpdatedEvent.java
@@ -11562,6 +11569,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/IdentityProviderEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/IdleEventTrigger.java
 src/main/java/com/mypurecloud/sdk/v2/model/IdleTokenTimeout.java
 src/main/java/com/mypurecloud/sdk/v2/model/IgnoredActivityCategories.java
+src/main/java/com/mypurecloud/sdk/v2/model/ImapSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/ImportError.java
 src/main/java/com/mypurecloud/sdk/v2/model/ImportForecastResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ImportForecastUploadResponse.java

@@ -33,6 +33,7 @@ public class ConversationBasic  implements Serializable {
   private Date endTime = null;
   private List<ConversationDivisionMembership> divisions = new ArrayList<ConversationDivisionMembership>();
   private Boolean securePause = null;
+  private String utilizationLabelId = null;
   private String selfUri = null;
   private List<ParticipantBasic> participants = new ArrayList<ParticipantBasic>();
 
@@ -151,6 +152,24 @@ public class ConversationBasic  implements Serializable {
   }
 
 
+  /**
+   * An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
+   **/
+  public ConversationBasic utilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level")
+  @JsonProperty("utilizationLabelId")
+  public String getUtilizationLabelId() {
+    return utilizationLabelId;
+  }
+  public void setUtilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -182,13 +201,14 @@ public class ConversationBasic  implements Serializable {
             Objects.equals(this.endTime, conversationBasic.endTime) &&
             Objects.equals(this.divisions, conversationBasic.divisions) &&
             Objects.equals(this.securePause, conversationBasic.securePause) &&
+            Objects.equals(this.utilizationLabelId, conversationBasic.utilizationLabelId) &&
             Objects.equals(this.selfUri, conversationBasic.selfUri) &&
             Objects.equals(this.participants, conversationBasic.participants);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, externalTag, startTime, endTime, divisions, securePause, selfUri, participants);
+    return Objects.hash(id, name, externalTag, startTime, endTime, divisions, securePause, utilizationLabelId, selfUri, participants);
   }
 
   @Override
@@ -203,6 +223,7 @@ public class ConversationBasic  implements Serializable {
     sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
     sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
+    sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("}");

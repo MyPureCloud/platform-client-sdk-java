@@ -13,6 +13,7 @@ title: ConversationMessageEventTopicMessageConversation
 | **participants** | <!----><!---->[**List&lt;ConversationMessageEventTopicMessageMediaParticipant&gt;**](ConversationMessageEventTopicMessageMediaParticipant.html)<!----> |  |  [optional] |
 | **otherMediaUris** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 | **address** | <!----><!---->**String**<!----> |  |  [optional] |
+| **utilizationLabelId** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

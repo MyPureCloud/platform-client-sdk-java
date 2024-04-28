@@ -29,6 +29,7 @@ public class ConversationSocialExpressionEventTopicSocialConversation  implement
   private List<ConversationSocialExpressionEventTopicSocialMediaParticipant> participants = new ArrayList<ConversationSocialExpressionEventTopicSocialMediaParticipant>();
   private List<String> otherMediaUris = new ArrayList<String>();
   private String address = null;
+  private String utilizationLabelId = null;
 
   
   /**
@@ -116,6 +117,23 @@ public class ConversationSocialExpressionEventTopicSocialConversation  implement
   }
 
 
+  /**
+   **/
+  public ConversationSocialExpressionEventTopicSocialConversation utilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("utilizationLabelId")
+  public String getUtilizationLabelId() {
+    return utilizationLabelId;
+  }
+  public void setUtilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -130,12 +148,13 @@ public class ConversationSocialExpressionEventTopicSocialConversation  implement
             Objects.equals(this.name, conversationSocialExpressionEventTopicSocialConversation.name) &&
             Objects.equals(this.participants, conversationSocialExpressionEventTopicSocialConversation.participants) &&
             Objects.equals(this.otherMediaUris, conversationSocialExpressionEventTopicSocialConversation.otherMediaUris) &&
-            Objects.equals(this.address, conversationSocialExpressionEventTopicSocialConversation.address);
+            Objects.equals(this.address, conversationSocialExpressionEventTopicSocialConversation.address) &&
+            Objects.equals(this.utilizationLabelId, conversationSocialExpressionEventTopicSocialConversation.utilizationLabelId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, address);
+    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId);
   }
 
   @Override
@@ -148,6 +167,7 @@ public class ConversationSocialExpressionEventTopicSocialConversation  implement
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

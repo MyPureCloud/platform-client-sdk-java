@@ -13,6 +13,7 @@ title: QueueConversationScreenShareEventTopicScreenShareConversation
 | **participants** | <!----><!---->[**List&lt;QueueConversationScreenShareEventTopicScreenShareMediaParticipant&gt;**](QueueConversationScreenShareEventTopicScreenShareMediaParticipant.html)<!----> |  |  [optional] |
 | **otherMediaUris** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 | **address** | <!----><!---->**String**<!----> |  |  [optional] |
+| **utilizationLabelId** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

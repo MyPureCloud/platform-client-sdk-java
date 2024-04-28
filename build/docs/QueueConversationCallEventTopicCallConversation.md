@@ -13,6 +13,7 @@ title: QueueConversationCallEventTopicCallConversation
 | **participants** | <!----><!---->[**List&lt;QueueConversationCallEventTopicCallMediaParticipant&gt;**](QueueConversationCallEventTopicCallMediaParticipant.html)<!----> |  |  [optional] |
 | **otherMediaUris** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 | **address** | <!----><!---->**String**<!----> |  |  [optional] |
+| **utilizationLabelId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **recordingState** | [**RecordingStateEnum**](#RecordingStateEnum)<!----> |  |  [optional] |
 | **securePause** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **maxParticipants** | <!----><!---->**Integer**<!----> |  |  [optional] |

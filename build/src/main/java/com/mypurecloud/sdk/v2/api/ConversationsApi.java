@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.ConversationSecureAttributes;
 import com.mypurecloud.sdk.v2.model.ConversationTagsUpdate;
 import com.mypurecloud.sdk.v2.model.ConversationThreadingWindow;
 import com.mypurecloud.sdk.v2.model.ConversationUser;
+import com.mypurecloud.sdk.v2.model.ConversationUtilizationLabelUpdate;
 import com.mypurecloud.sdk.v2.model.CopyAttachmentsRequest;
 import com.mypurecloud.sdk.v2.model.CreateCallRequest;
 import com.mypurecloud.sdk.v2.model.CreateCallResponse;
@@ -268,6 +269,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsVideosMeetingRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationSecureattributesRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationUtilizationlabelRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsAftercallworkConversationIdParticipantCommunicationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallParticipantRequest;
@@ -9088,6 +9090,92 @@ public class ConversationsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<String> patchConversationSecureattributes(ApiRequest<ConversationSecureAttributes> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update the utilization label on a conversation. When there is no value provided, the system default label is applied
+   * 
+   * patchConversationUtilizationlabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversation ID (required)
+   * @param body Conversation Utilization Label (required)
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String patchConversationUtilizationlabel(String conversationId, ConversationUtilizationLabelUpdate body) throws IOException, ApiException {
+    return  patchConversationUtilizationlabel(createPatchConversationUtilizationlabelRequest(conversationId, body));
+  }
+
+  /**
+   * Update the utilization label on a conversation. When there is no value provided, the system default label is applied
+   * 
+   * patchConversationUtilizationlabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversation ID (required)
+   * @param body Conversation Utilization Label (required)
+   * @return String
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> patchConversationUtilizationlabelWithHttpInfo(String conversationId, ConversationUtilizationLabelUpdate body) throws IOException {
+    return patchConversationUtilizationlabel(createPatchConversationUtilizationlabelRequest(conversationId, body).withHttpInfo());
+  }
+
+  private PatchConversationUtilizationlabelRequest createPatchConversationUtilizationlabelRequest(String conversationId, ConversationUtilizationLabelUpdate body) {
+    return PatchConversationUtilizationlabelRequest.builder()
+            .withConversationId(conversationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the utilization label on a conversation. When there is no value provided, the system default label is applied
+   * 
+   * patchConversationUtilizationlabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String patchConversationUtilizationlabel(PatchConversationUtilizationlabelRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the utilization label on a conversation. When there is no value provided, the system default label is applied
+   * 
+   * patchConversationUtilizationlabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> patchConversationUtilizationlabel(ApiRequest<ConversationUtilizationLabelUpdate> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<String>() {});
     }

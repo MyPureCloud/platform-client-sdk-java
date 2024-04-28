@@ -2168,8 +2168,6 @@ try {
 
 Retrieves an object containing the total number of concurrent active screen recordings
 
-getRecordingsScreensessionsDetails is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/recordings/screensessions/details  
 
 Requires ANY permissions: 

@@ -29,6 +29,7 @@ public class QueueConversationEmailEventTopicEmailConversation  implements Seria
   private List<QueueConversationEmailEventTopicEmailMediaParticipant> participants = new ArrayList<QueueConversationEmailEventTopicEmailMediaParticipant>();
   private List<String> otherMediaUris = new ArrayList<String>();
   private String address = null;
+  private String utilizationLabelId = null;
 
   
   /**
@@ -116,6 +117,23 @@ public class QueueConversationEmailEventTopicEmailConversation  implements Seria
   }
 
 
+  /**
+   **/
+  public QueueConversationEmailEventTopicEmailConversation utilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("utilizationLabelId")
+  public String getUtilizationLabelId() {
+    return utilizationLabelId;
+  }
+  public void setUtilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -130,12 +148,13 @@ public class QueueConversationEmailEventTopicEmailConversation  implements Seria
             Objects.equals(this.name, queueConversationEmailEventTopicEmailConversation.name) &&
             Objects.equals(this.participants, queueConversationEmailEventTopicEmailConversation.participants) &&
             Objects.equals(this.otherMediaUris, queueConversationEmailEventTopicEmailConversation.otherMediaUris) &&
-            Objects.equals(this.address, queueConversationEmailEventTopicEmailConversation.address);
+            Objects.equals(this.address, queueConversationEmailEventTopicEmailConversation.address) &&
+            Objects.equals(this.utilizationLabelId, queueConversationEmailEventTopicEmailConversation.utilizationLabelId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, address);
+    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId);
   }
 
   @Override
@@ -148,6 +167,7 @@ public class QueueConversationEmailEventTopicEmailConversation  implements Seria
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

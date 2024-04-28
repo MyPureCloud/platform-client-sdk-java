@@ -32,6 +32,7 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
   private String recordingState = null;
   private String address = null;
   private String externalTag = null;
+  private String utilizationLabelId = null;
   private Boolean securePause = null;
 
   
@@ -156,6 +157,23 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
 
   /**
    **/
+  public QueueConversationVideoEventTopicConversation utilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("utilizationLabelId")
+  public String getUtilizationLabelId() {
+    return utilizationLabelId;
+  }
+  public void setUtilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+  }
+
+
+  /**
+   **/
   public QueueConversationVideoEventTopicConversation securePause(Boolean securePause) {
     this.securePause = securePause;
     return this;
@@ -188,12 +206,13 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
             Objects.equals(this.recordingState, queueConversationVideoEventTopicConversation.recordingState) &&
             Objects.equals(this.address, queueConversationVideoEventTopicConversation.address) &&
             Objects.equals(this.externalTag, queueConversationVideoEventTopicConversation.externalTag) &&
+            Objects.equals(this.utilizationLabelId, queueConversationVideoEventTopicConversation.utilizationLabelId) &&
             Objects.equals(this.securePause, queueConversationVideoEventTopicConversation.securePause);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag, securePause);
+    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag, utilizationLabelId, securePause);
   }
 
   @Override
@@ -208,6 +227,7 @@ public class QueueConversationVideoEventTopicConversation  implements Serializab
     sb.append("    recordingState: ").append(toIndentedString(recordingState)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    externalTag: ").append(toIndentedString(externalTag)).append("\n");
+    sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
     sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -29,6 +29,7 @@ public class QueueConversationMessageEventTopicMessageConversation  implements S
   private List<QueueConversationMessageEventTopicMessageMediaParticipant> participants = new ArrayList<QueueConversationMessageEventTopicMessageMediaParticipant>();
   private List<String> otherMediaUris = new ArrayList<String>();
   private String address = null;
+  private String utilizationLabelId = null;
 
   
   /**
@@ -116,6 +117,23 @@ public class QueueConversationMessageEventTopicMessageConversation  implements S
   }
 
 
+  /**
+   **/
+  public QueueConversationMessageEventTopicMessageConversation utilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("utilizationLabelId")
+  public String getUtilizationLabelId() {
+    return utilizationLabelId;
+  }
+  public void setUtilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -130,12 +148,13 @@ public class QueueConversationMessageEventTopicMessageConversation  implements S
             Objects.equals(this.name, queueConversationMessageEventTopicMessageConversation.name) &&
             Objects.equals(this.participants, queueConversationMessageEventTopicMessageConversation.participants) &&
             Objects.equals(this.otherMediaUris, queueConversationMessageEventTopicMessageConversation.otherMediaUris) &&
-            Objects.equals(this.address, queueConversationMessageEventTopicMessageConversation.address);
+            Objects.equals(this.address, queueConversationMessageEventTopicMessageConversation.address) &&
+            Objects.equals(this.utilizationLabelId, queueConversationMessageEventTopicMessageConversation.utilizationLabelId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, address);
+    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId);
   }
 
   @Override
@@ -148,6 +167,7 @@ public class QueueConversationMessageEventTopicMessageConversation  implements S
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

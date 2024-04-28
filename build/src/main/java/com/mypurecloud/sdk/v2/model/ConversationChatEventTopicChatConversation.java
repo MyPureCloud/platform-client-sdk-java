@@ -29,6 +29,7 @@ public class ConversationChatEventTopicChatConversation  implements Serializable
   private List<ConversationChatEventTopicChatMediaParticipant> participants = new ArrayList<ConversationChatEventTopicChatMediaParticipant>();
   private List<String> otherMediaUris = new ArrayList<String>();
   private String address = null;
+  private String utilizationLabelId = null;
 
   
   /**
@@ -116,6 +117,23 @@ public class ConversationChatEventTopicChatConversation  implements Serializable
   }
 
 
+  /**
+   **/
+  public ConversationChatEventTopicChatConversation utilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("utilizationLabelId")
+  public String getUtilizationLabelId() {
+    return utilizationLabelId;
+  }
+  public void setUtilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -130,12 +148,13 @@ public class ConversationChatEventTopicChatConversation  implements Serializable
             Objects.equals(this.name, conversationChatEventTopicChatConversation.name) &&
             Objects.equals(this.participants, conversationChatEventTopicChatConversation.participants) &&
             Objects.equals(this.otherMediaUris, conversationChatEventTopicChatConversation.otherMediaUris) &&
-            Objects.equals(this.address, conversationChatEventTopicChatConversation.address);
+            Objects.equals(this.address, conversationChatEventTopicChatConversation.address) &&
+            Objects.equals(this.utilizationLabelId, conversationChatEventTopicChatConversation.utilizationLabelId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, address);
+    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId);
   }
 
   @Override
@@ -148,6 +167,7 @@ public class ConversationChatEventTopicChatConversation  implements Serializable
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

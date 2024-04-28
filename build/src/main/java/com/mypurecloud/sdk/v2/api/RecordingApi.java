@@ -2877,7 +2877,6 @@ public class RecordingApi {
   /**
    * Retrieves an object containing the total number of concurrent active screen recordings
    * 
-   * getRecordingsScreensessionsDetails is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return ScreenRecordingActiveSessions
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2889,7 +2888,6 @@ public class RecordingApi {
   /**
    * Retrieves an object containing the total number of concurrent active screen recordings
    * 
-   * getRecordingsScreensessionsDetails is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return ScreenRecordingActiveSessions
    * @throws IOException if the request fails to be processed
    */
@@ -2905,7 +2903,6 @@ public class RecordingApi {
   /**
    * Retrieves an object containing the total number of concurrent active screen recordings
    * 
-   * getRecordingsScreensessionsDetails is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ScreenRecordingActiveSessions
    * @throws ApiException if the request fails on the server
@@ -2925,7 +2922,6 @@ public class RecordingApi {
   /**
    * Retrieves an object containing the total number of concurrent active screen recordings
    * 
-   * getRecordingsScreensessionsDetails is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

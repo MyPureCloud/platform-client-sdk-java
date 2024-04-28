@@ -30,6 +30,7 @@ public class ConversationCallEventTopicCallConversation  implements Serializable
   private List<ConversationCallEventTopicCallMediaParticipant> participants = new ArrayList<ConversationCallEventTopicCallMediaParticipant>();
   private List<String> otherMediaUris = new ArrayList<String>();
   private String address = null;
+  private String utilizationLabelId = null;
 
   private static class RecordingStateEnumDeserializer extends StdDeserializer<RecordingStateEnum> {
     public RecordingStateEnumDeserializer() {
@@ -170,6 +171,23 @@ public class ConversationCallEventTopicCallConversation  implements Serializable
 
   /**
    **/
+  public ConversationCallEventTopicCallConversation utilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("utilizationLabelId")
+  public String getUtilizationLabelId() {
+    return utilizationLabelId;
+  }
+  public void setUtilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+  }
+
+
+  /**
+   **/
   public ConversationCallEventTopicCallConversation recordingState(RecordingStateEnum recordingState) {
     this.recordingState = recordingState;
     return this;
@@ -234,6 +252,7 @@ public class ConversationCallEventTopicCallConversation  implements Serializable
             Objects.equals(this.participants, conversationCallEventTopicCallConversation.participants) &&
             Objects.equals(this.otherMediaUris, conversationCallEventTopicCallConversation.otherMediaUris) &&
             Objects.equals(this.address, conversationCallEventTopicCallConversation.address) &&
+            Objects.equals(this.utilizationLabelId, conversationCallEventTopicCallConversation.utilizationLabelId) &&
             Objects.equals(this.recordingState, conversationCallEventTopicCallConversation.recordingState) &&
             Objects.equals(this.securePause, conversationCallEventTopicCallConversation.securePause) &&
             Objects.equals(this.maxParticipants, conversationCallEventTopicCallConversation.maxParticipants);
@@ -241,7 +260,7 @@ public class ConversationCallEventTopicCallConversation  implements Serializable
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, address, recordingState, securePause, maxParticipants);
+    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId, recordingState, securePause, maxParticipants);
   }
 
   @Override
@@ -254,6 +273,7 @@ public class ConversationCallEventTopicCallConversation  implements Serializable
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
     sb.append("    recordingState: ").append(toIndentedString(recordingState)).append("\n");
     sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
     sb.append("    maxParticipants: ").append(toIndentedString(maxParticipants)).append("\n");

@@ -82,6 +82,56 @@ public class KnowledgeDocumentPresentation  implements Serializable {
     }
   }
   private QueryTypeEnum queryType = null;
+
+  private static class SurfacingMethodEnumDeserializer extends StdDeserializer<SurfacingMethodEnum> {
+    public SurfacingMethodEnumDeserializer() {
+      super(SurfacingMethodEnumDeserializer.class);
+    }
+
+    @Override
+    public SurfacingMethodEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SurfacingMethodEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
+   */
+ @JsonDeserialize(using = SurfacingMethodEnumDeserializer.class)
+  public enum SurfacingMethodEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("Unknown"),
+    ARTICLE("Article"),
+    SNIPPET("Snippet"),
+    HIGHLIGHT("Highlight");
+
+    private String value;
+
+    SurfacingMethodEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SurfacingMethodEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SurfacingMethodEnum value : SurfacingMethodEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SurfacingMethodEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private SurfacingMethodEnum surfacingMethod = null;
   private String sessionId = null;
   private KnowledgeConversationContext conversationContext = null;
   private KnowledgeSearchClientApplication application = null;
@@ -141,6 +191,24 @@ public class KnowledgeDocumentPresentation  implements Serializable {
   }
 
 
+  /**
+   * The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
+   **/
+  public KnowledgeDocumentPresentation surfacingMethod(SurfacingMethodEnum surfacingMethod) {
+    this.surfacingMethod = surfacingMethod;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.")
+  @JsonProperty("surfacingMethod")
+  public SurfacingMethodEnum getSurfacingMethod() {
+    return surfacingMethod;
+  }
+  public void setSurfacingMethod(SurfacingMethodEnum surfacingMethod) {
+    this.surfacingMethod = surfacingMethod;
+  }
+
+
   @ApiModelProperty(example = "null", value = "Knowledge session ID.")
   @JsonProperty("sessionId")
   public String getSessionId() {
@@ -197,6 +265,7 @@ public class KnowledgeDocumentPresentation  implements Serializable {
     return Objects.equals(this.documents, knowledgeDocumentPresentation.documents) &&
             Objects.equals(this.searchId, knowledgeDocumentPresentation.searchId) &&
             Objects.equals(this.queryType, knowledgeDocumentPresentation.queryType) &&
+            Objects.equals(this.surfacingMethod, knowledgeDocumentPresentation.surfacingMethod) &&
             Objects.equals(this.sessionId, knowledgeDocumentPresentation.sessionId) &&
             Objects.equals(this.conversationContext, knowledgeDocumentPresentation.conversationContext) &&
             Objects.equals(this.application, knowledgeDocumentPresentation.application);
@@ -204,7 +273,7 @@ public class KnowledgeDocumentPresentation  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(documents, searchId, queryType, sessionId, conversationContext, application);
+    return Objects.hash(documents, searchId, queryType, surfacingMethod, sessionId, conversationContext, application);
   }
 
   @Override
@@ -215,6 +284,7 @@ public class KnowledgeDocumentPresentation  implements Serializable {
     sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
     sb.append("    searchId: ").append(toIndentedString(searchId)).append("\n");
     sb.append("    queryType: ").append(toIndentedString(queryType)).append("\n");
+    sb.append("    surfacingMethod: ").append(toIndentedString(surfacingMethod)).append("\n");
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
     sb.append("    conversationContext: ").append(toIndentedString(conversationContext)).append("\n");
     sb.append("    application: ").append(toIndentedString(application)).append("\n");

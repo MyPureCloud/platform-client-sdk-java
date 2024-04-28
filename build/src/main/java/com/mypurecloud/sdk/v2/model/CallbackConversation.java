@@ -30,6 +30,7 @@ public class CallbackConversation  implements Serializable {
   private List<CallbackMediaParticipant> participants = new ArrayList<CallbackMediaParticipant>();
   private List<String> otherMediaUris = new ArrayList<String>();
   private List<TransferResponse> recentTransfers = new ArrayList<TransferResponse>();
+  private String utilizationLabelId = null;
   private String selfUri = null;
 
   
@@ -111,6 +112,24 @@ public class CallbackConversation  implements Serializable {
   }
 
 
+  /**
+   * An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
+   **/
+  public CallbackConversation utilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level")
+  @JsonProperty("utilizationLabelId")
+  public String getUtilizationLabelId() {
+    return utilizationLabelId;
+  }
+  public void setUtilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -133,12 +152,13 @@ public class CallbackConversation  implements Serializable {
             Objects.equals(this.participants, callbackConversation.participants) &&
             Objects.equals(this.otherMediaUris, callbackConversation.otherMediaUris) &&
             Objects.equals(this.recentTransfers, callbackConversation.recentTransfers) &&
+            Objects.equals(this.utilizationLabelId, callbackConversation.utilizationLabelId) &&
             Objects.equals(this.selfUri, callbackConversation.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, recentTransfers, selfUri);
+    return Objects.hash(id, name, participants, otherMediaUris, recentTransfers, utilizationLabelId, selfUri);
   }
 
   @Override
@@ -151,6 +171,7 @@ public class CallbackConversation  implements Serializable {
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
     sb.append("    recentTransfers: ").append(toIndentedString(recentTransfers)).append("\n");
+    sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

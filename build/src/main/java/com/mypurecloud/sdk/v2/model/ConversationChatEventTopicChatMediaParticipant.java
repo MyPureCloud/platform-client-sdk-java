@@ -338,6 +338,7 @@ public class ConversationChatEventTopicChatMediaParticipant  implements Serializ
   private ConversationChatEventTopicJourneyContext journeyContext = null;
   private Date startAcwTime = null;
   private Date endAcwTime = null;
+  private Date resumeTime = null;
   private List<String> mediaRoles = new ArrayList<String>();
   private ConversationChatEventTopicQueueMediaSettings queueMediaSettings = null;
   private String roomId = null;
@@ -941,6 +942,23 @@ public class ConversationChatEventTopicChatMediaParticipant  implements Serializ
 
   /**
    **/
+  public ConversationChatEventTopicChatMediaParticipant resumeTime(Date resumeTime) {
+    this.resumeTime = resumeTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("resumeTime")
+  public Date getResumeTime() {
+    return resumeTime;
+  }
+  public void setResumeTime(Date resumeTime) {
+    this.resumeTime = resumeTime;
+  }
+
+
+  /**
+   **/
   public ConversationChatEventTopicChatMediaParticipant mediaRoles(List<String> mediaRoles) {
     this.mediaRoles = mediaRoles;
     return this;
@@ -1052,6 +1070,7 @@ public class ConversationChatEventTopicChatMediaParticipant  implements Serializ
             Objects.equals(this.journeyContext, conversationChatEventTopicChatMediaParticipant.journeyContext) &&
             Objects.equals(this.startAcwTime, conversationChatEventTopicChatMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, conversationChatEventTopicChatMediaParticipant.endAcwTime) &&
+            Objects.equals(this.resumeTime, conversationChatEventTopicChatMediaParticipant.resumeTime) &&
             Objects.equals(this.mediaRoles, conversationChatEventTopicChatMediaParticipant.mediaRoles) &&
             Objects.equals(this.queueMediaSettings, conversationChatEventTopicChatMediaParticipant.queueMediaSettings) &&
             Objects.equals(this.roomId, conversationChatEventTopicChatMediaParticipant.roomId) &&
@@ -1060,7 +1079,7 @@ public class ConversationChatEventTopicChatMediaParticipant  implements Serializ
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, queueMediaSettings, roomId, avatarImageUrl);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, mediaRoles, queueMediaSettings, roomId, avatarImageUrl);
   }
 
   @Override
@@ -1103,6 +1122,7 @@ public class ConversationChatEventTopicChatMediaParticipant  implements Serializ
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
+    sb.append("    resumeTime: ").append(toIndentedString(resumeTime)).append("\n");
     sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
     sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");

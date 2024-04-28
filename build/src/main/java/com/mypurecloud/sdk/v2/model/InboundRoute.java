@@ -92,6 +92,7 @@ public class InboundRoute  implements Serializable {
   }
   private HistoryInclusionEnum historyInclusion = null;
   private Boolean allowMultipleActions = null;
+  private String imapFolder = null;
   private String selfUri = null;
 
   
@@ -371,6 +372,24 @@ public class InboundRoute  implements Serializable {
   }
 
 
+  /**
+   * Imap folder routed to this route
+   **/
+  public InboundRoute imapFolder(String imapFolder) {
+    this.imapFolder = imapFolder;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Imap folder routed to this route")
+  @JsonProperty("imapFolder")
+  public String getImapFolder() {
+    return imapFolder;
+  }
+  public void setImapFolder(String imapFolder) {
+    this.imapFolder = imapFolder;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -404,12 +423,13 @@ public class InboundRoute  implements Serializable {
             Objects.equals(this.signature, inboundRoute.signature) &&
             Objects.equals(this.historyInclusion, inboundRoute.historyInclusion) &&
             Objects.equals(this.allowMultipleActions, inboundRoute.allowMultipleActions) &&
+            Objects.equals(this.imapFolder, inboundRoute.imapFolder) &&
             Objects.equals(this.selfUri, inboundRoute.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, pattern, queue, priority, skills, language, fromName, fromEmail, flow, replyEmailAddress, autoBcc, spamFlow, signature, historyInclusion, allowMultipleActions, selfUri);
+    return Objects.hash(id, name, pattern, queue, priority, skills, language, fromName, fromEmail, flow, replyEmailAddress, autoBcc, spamFlow, signature, historyInclusion, allowMultipleActions, imapFolder, selfUri);
   }
 
   @Override
@@ -433,6 +453,7 @@ public class InboundRoute  implements Serializable {
     sb.append("    signature: ").append(toIndentedString(signature)).append("\n");
     sb.append("    historyInclusion: ").append(toIndentedString(historyInclusion)).append("\n");
     sb.append("    allowMultipleActions: ").append(toIndentedString(allowMultipleActions)).append("\n");
+    sb.append("    imapFolder: ").append(toIndentedString(imapFolder)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

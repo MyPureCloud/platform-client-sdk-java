@@ -43,6 +43,7 @@ title: V2MobiusAlertsTopicAlert
 | RENOTIFY | &quot;RENOTIFY&quot; | 
 | BULK_DELETE | &quot;BULK_DELETE&quot; | 
 | BULK_UPDATE | &quot;BULK_UPDATE&quot; | 
+| UNREAD_COUNT_UPDATE | &quot;UNREAD_COUNT_UPDATE&quot; | 
 {: class="table table-striped"}
 
 

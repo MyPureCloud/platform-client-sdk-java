@@ -15,7 +15,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.OutboundMessagingCampaignPreContactSmsEventTopicSMSAttributes;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.Date;
 
 import java.io.Serializable;
 /**
@@ -24,7 +23,7 @@ import java.io.Serializable;
 
 public class OutboundMessagingCampaignPreContactSmsEventTopicOutboundMessagingCampaignPreContactSMSEvent  implements Serializable {
   
-  private Date eventTime = null;
+  private Integer eventTime = null;
 
   private static class OutboundCampaignTypeEnumDeserializer extends StdDeserializer<OutboundCampaignTypeEnum> {
     public OutboundCampaignTypeEnumDeserializer() {
@@ -150,17 +149,17 @@ public class OutboundMessagingCampaignPreContactSmsEventTopicOutboundMessagingCa
   
   /**
    **/
-  public OutboundMessagingCampaignPreContactSmsEventTopicOutboundMessagingCampaignPreContactSMSEvent eventTime(Date eventTime) {
+  public OutboundMessagingCampaignPreContactSmsEventTopicOutboundMessagingCampaignPreContactSMSEvent eventTime(Integer eventTime) {
     this.eventTime = eventTime;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("eventTime")
-  public Date getEventTime() {
+  public Integer getEventTime() {
     return eventTime;
   }
-  public void setEventTime(Date eventTime) {
+  public void setEventTime(Integer eventTime) {
     this.eventTime = eventTime;
   }
 

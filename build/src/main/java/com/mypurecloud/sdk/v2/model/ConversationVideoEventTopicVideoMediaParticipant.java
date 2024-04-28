@@ -338,6 +338,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
   private ConversationVideoEventTopicJourneyContext journeyContext = null;
   private Date startAcwTime = null;
   private Date endAcwTime = null;
+  private Date resumeTime = null;
   private List<String> mediaRoles = new ArrayList<String>();
   private ConversationVideoEventTopicQueueMediaSettings queueMediaSettings = null;
   private Boolean audioMuted = null;
@@ -945,6 +946,23 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
 
   /**
    **/
+  public ConversationVideoEventTopicVideoMediaParticipant resumeTime(Date resumeTime) {
+    this.resumeTime = resumeTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("resumeTime")
+  public Date getResumeTime() {
+    return resumeTime;
+  }
+  public void setResumeTime(Date resumeTime) {
+    this.resumeTime = resumeTime;
+  }
+
+
+  /**
+   **/
   public ConversationVideoEventTopicVideoMediaParticipant mediaRoles(List<String> mediaRoles) {
     this.mediaRoles = mediaRoles;
     return this;
@@ -1124,6 +1142,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
             Objects.equals(this.journeyContext, conversationVideoEventTopicVideoMediaParticipant.journeyContext) &&
             Objects.equals(this.startAcwTime, conversationVideoEventTopicVideoMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, conversationVideoEventTopicVideoMediaParticipant.endAcwTime) &&
+            Objects.equals(this.resumeTime, conversationVideoEventTopicVideoMediaParticipant.resumeTime) &&
             Objects.equals(this.mediaRoles, conversationVideoEventTopicVideoMediaParticipant.mediaRoles) &&
             Objects.equals(this.queueMediaSettings, conversationVideoEventTopicVideoMediaParticipant.queueMediaSettings) &&
             Objects.equals(this.audioMuted, conversationVideoEventTopicVideoMediaParticipant.audioMuted) &&
@@ -1136,7 +1155,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, queueMediaSettings, audioMuted, videoMuted, sharingScreen, peerCount, context, msids);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, mediaRoles, queueMediaSettings, audioMuted, videoMuted, sharingScreen, peerCount, context, msids);
   }
 
   @Override
@@ -1179,6 +1198,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
+    sb.append("    resumeTime: ").append(toIndentedString(resumeTime)).append("\n");
     sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
     sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("    audioMuted: ").append(toIndentedString(audioMuted)).append("\n");

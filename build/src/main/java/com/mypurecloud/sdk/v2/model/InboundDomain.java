@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
+import com.mypurecloud.sdk.v2.model.ImapSettings;
 import com.mypurecloud.sdk.v2.model.MailFromResult;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -78,6 +79,7 @@ public class InboundDomain  implements Serializable {
   private Boolean subDomain = null;
   private MailFromResult mailFromSettings = null;
   private DomainEntityRef customSMTPServer = null;
+  private ImapSettings imapSettings = null;
   private String selfUri = null;
 
   
@@ -188,6 +190,24 @@ public class InboundDomain  implements Serializable {
   }
 
 
+  /**
+   * The IMAP server integration and settings to use for processing inbound emails.
+   **/
+  public InboundDomain imapSettings(ImapSettings imapSettings) {
+    this.imapSettings = imapSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The IMAP server integration and settings to use for processing inbound emails.")
+  @JsonProperty("imapSettings")
+  public ImapSettings getImapSettings() {
+    return imapSettings;
+  }
+  public void setImapSettings(ImapSettings imapSettings) {
+    this.imapSettings = imapSettings;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -211,12 +231,13 @@ public class InboundDomain  implements Serializable {
             Objects.equals(this.subDomain, inboundDomain.subDomain) &&
             Objects.equals(this.mailFromSettings, inboundDomain.mailFromSettings) &&
             Objects.equals(this.customSMTPServer, inboundDomain.customSMTPServer) &&
+            Objects.equals(this.imapSettings, inboundDomain.imapSettings) &&
             Objects.equals(this.selfUri, inboundDomain.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, mxRecordStatus, subDomain, mailFromSettings, customSMTPServer, selfUri);
+    return Objects.hash(id, name, mxRecordStatus, subDomain, mailFromSettings, customSMTPServer, imapSettings, selfUri);
   }
 
   @Override
@@ -230,6 +251,7 @@ public class InboundDomain  implements Serializable {
     sb.append("    subDomain: ").append(toIndentedString(subDomain)).append("\n");
     sb.append("    mailFromSettings: ").append(toIndentedString(mailFromSettings)).append("\n");
     sb.append("    customSMTPServer: ").append(toIndentedString(customSMTPServer)).append("\n");
+    sb.append("    imapSettings: ").append(toIndentedString(imapSettings)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

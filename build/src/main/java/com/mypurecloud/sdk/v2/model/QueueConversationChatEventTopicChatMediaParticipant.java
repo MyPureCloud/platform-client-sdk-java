@@ -338,6 +338,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
   private QueueConversationChatEventTopicJourneyContext journeyContext = null;
   private Date startAcwTime = null;
   private Date endAcwTime = null;
+  private Date resumeTime = null;
   private List<String> mediaRoles = new ArrayList<String>();
   private QueueConversationChatEventTopicQueueMediaSettings queueMediaSettings = null;
   private String roomId = null;
@@ -941,6 +942,23 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
 
   /**
    **/
+  public QueueConversationChatEventTopicChatMediaParticipant resumeTime(Date resumeTime) {
+    this.resumeTime = resumeTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("resumeTime")
+  public Date getResumeTime() {
+    return resumeTime;
+  }
+  public void setResumeTime(Date resumeTime) {
+    this.resumeTime = resumeTime;
+  }
+
+
+  /**
+   **/
   public QueueConversationChatEventTopicChatMediaParticipant mediaRoles(List<String> mediaRoles) {
     this.mediaRoles = mediaRoles;
     return this;
@@ -1052,6 +1070,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
             Objects.equals(this.journeyContext, queueConversationChatEventTopicChatMediaParticipant.journeyContext) &&
             Objects.equals(this.startAcwTime, queueConversationChatEventTopicChatMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, queueConversationChatEventTopicChatMediaParticipant.endAcwTime) &&
+            Objects.equals(this.resumeTime, queueConversationChatEventTopicChatMediaParticipant.resumeTime) &&
             Objects.equals(this.mediaRoles, queueConversationChatEventTopicChatMediaParticipant.mediaRoles) &&
             Objects.equals(this.queueMediaSettings, queueConversationChatEventTopicChatMediaParticipant.queueMediaSettings) &&
             Objects.equals(this.roomId, queueConversationChatEventTopicChatMediaParticipant.roomId) &&
@@ -1060,7 +1079,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, mediaRoles, queueMediaSettings, roomId, avatarImageUrl);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, mediaRoles, queueMediaSettings, roomId, avatarImageUrl);
   }
 
   @Override
@@ -1103,6 +1122,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
+    sb.append("    resumeTime: ").append(toIndentedString(resumeTime)).append("\n");
     sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
     sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");

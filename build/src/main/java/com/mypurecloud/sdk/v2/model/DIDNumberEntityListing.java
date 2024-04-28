@@ -29,11 +29,11 @@ public class DIDNumberEntityListing  implements Serializable, PagedResource<DIDN
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String previousUri = null;
+  private String nextUri = null;
   private String lastUri = null;
   private String firstUri = null;
   private String selfUri = null;
-  private String nextUri = null;
+  private String previousUri = null;
   private Integer pageCount = null;
 
   
@@ -107,18 +107,18 @@ public class DIDNumberEntityListing  implements Serializable, PagedResource<DIDN
 
   /**
    **/
-  public DIDNumberEntityListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
+  public DIDNumberEntityListing nextUri(String nextUri) {
+    this.nextUri = nextUri;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
+  @JsonProperty("nextUri")
+  public String getNextUri() {
+    return nextUri;
   }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
+  public void setNextUri(String nextUri) {
+    this.nextUri = nextUri;
   }
 
 
@@ -175,18 +175,18 @@ public class DIDNumberEntityListing  implements Serializable, PagedResource<DIDN
 
   /**
    **/
-  public DIDNumberEntityListing nextUri(String nextUri) {
-    this.nextUri = nextUri;
+  public DIDNumberEntityListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("nextUri")
-  public String getNextUri() {
-    return nextUri;
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
   }
-  public void setNextUri(String nextUri) {
-    this.nextUri = nextUri;
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
   }
 
 
@@ -221,17 +221,17 @@ public class DIDNumberEntityListing  implements Serializable, PagedResource<DIDN
             Objects.equals(this.pageSize, dIDNumberEntityListing.pageSize) &&
             Objects.equals(this.pageNumber, dIDNumberEntityListing.pageNumber) &&
             Objects.equals(this.total, dIDNumberEntityListing.total) &&
-            Objects.equals(this.previousUri, dIDNumberEntityListing.previousUri) &&
+            Objects.equals(this.nextUri, dIDNumberEntityListing.nextUri) &&
             Objects.equals(this.lastUri, dIDNumberEntityListing.lastUri) &&
             Objects.equals(this.firstUri, dIDNumberEntityListing.firstUri) &&
             Objects.equals(this.selfUri, dIDNumberEntityListing.selfUri) &&
-            Objects.equals(this.nextUri, dIDNumberEntityListing.nextUri) &&
+            Objects.equals(this.previousUri, dIDNumberEntityListing.previousUri) &&
             Objects.equals(this.pageCount, dIDNumberEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, previousUri, lastUri, firstUri, selfUri, nextUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, nextUri, lastUri, firstUri, selfUri, previousUri, pageCount);
   }
 
   @Override
@@ -243,11 +243,11 @@ public class DIDNumberEntityListing  implements Serializable, PagedResource<DIDN
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
+    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

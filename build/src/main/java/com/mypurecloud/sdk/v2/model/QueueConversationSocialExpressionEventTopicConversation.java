@@ -32,6 +32,7 @@ public class QueueConversationSocialExpressionEventTopicConversation  implements
   private String recordingState = null;
   private String address = null;
   private String externalTag = null;
+  private String utilizationLabelId = null;
   private Boolean securePause = null;
 
   
@@ -156,6 +157,23 @@ public class QueueConversationSocialExpressionEventTopicConversation  implements
 
   /**
    **/
+  public QueueConversationSocialExpressionEventTopicConversation utilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("utilizationLabelId")
+  public String getUtilizationLabelId() {
+    return utilizationLabelId;
+  }
+  public void setUtilizationLabelId(String utilizationLabelId) {
+    this.utilizationLabelId = utilizationLabelId;
+  }
+
+
+  /**
+   **/
   public QueueConversationSocialExpressionEventTopicConversation securePause(Boolean securePause) {
     this.securePause = securePause;
     return this;
@@ -188,12 +206,13 @@ public class QueueConversationSocialExpressionEventTopicConversation  implements
             Objects.equals(this.recordingState, queueConversationSocialExpressionEventTopicConversation.recordingState) &&
             Objects.equals(this.address, queueConversationSocialExpressionEventTopicConversation.address) &&
             Objects.equals(this.externalTag, queueConversationSocialExpressionEventTopicConversation.externalTag) &&
+            Objects.equals(this.utilizationLabelId, queueConversationSocialExpressionEventTopicConversation.utilizationLabelId) &&
             Objects.equals(this.securePause, queueConversationSocialExpressionEventTopicConversation.securePause);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag, securePause);
+    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag, utilizationLabelId, securePause);
   }
 
   @Override
@@ -208,6 +227,7 @@ public class QueueConversationSocialExpressionEventTopicConversation  implements
     sb.append("    recordingState: ").append(toIndentedString(recordingState)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    externalTag: ").append(toIndentedString(externalTag)).append("\n");
+    sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
     sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
     sb.append("}");
     return sb.toString();
