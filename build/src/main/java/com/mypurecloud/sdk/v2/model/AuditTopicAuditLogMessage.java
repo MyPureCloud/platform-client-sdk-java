@@ -101,7 +101,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     EMAILS("Emails"),
     SCRIPTER("Scripter"),
     BILLING("Billing"),
-    JOURNEYANALYTICS("JourneyAnalytics");
+    JOURNEYANALYTICS("JourneyAnalytics"),
+    NERSERVICE("NerService");
 
     private String value;
 
@@ -213,6 +214,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     DISABLE("Disable"),
     RECYCLE("Recycle"),
     APPEND("Append"),
+    CONTACTSUPDATED("ContactsUpdated"),
+    CONTACTSDELETED("ContactsDeleted"),
     RESTORE("Restore"),
     OPEN("Open"),
     APPROVED("Approved"),
@@ -302,6 +305,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     ORGANIZATIONAUTHORIZATIONUSERTRUST("OrganizationAuthorizationUserTrust"),
     ROLE("Role"),
     ROLESETTINGS("RoleSettings"),
+    POLICY("Policy"),
     VOICEMAILUSERPOLICY("VoicemailUserPolicy"),
     USERPRESENCE("UserPresence"),
     DEPENDENCYTRACKINGBUILD("DependencyTrackingBuild"),
@@ -327,7 +331,6 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     SCREENRECORDING("ScreenRecording"),
     BULKACTIONS("BulkActions"),
     ORPHANEDRECORDING("OrphanedRecording"),
-    POLICY("Policy"),
     RECORDINGANNOTATION("RecordingAnnotation"),
     RECORDINGSETTINGS("RecordingSettings"),
     RECORDINGKEY("RecordingKey"),
@@ -363,6 +366,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     ASSIGNMENT("Assignment"),
     RECOGNITION("Recognition"),
     ACTIVITYCODE("ActivityCode"),
+    ACTIVITYPLAN("ActivityPlan"),
+    ACTIVITYPLANOCCURRENCE("ActivityPlanOccurrence"),
     ADHERENCEEXPLANATION("AdherenceExplanation"),
     ALTERNATIVESHIFT("AlternativeShift"),
     BUSINESSUNIT("BusinessUnit"),
@@ -496,10 +501,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     INTENTMINER("IntentMiner"),
     TOPICMINER("TopicMiner"),
     SOFTSUSPENSION("SoftSuspension"),
-    ACTIVITYPLAN("ActivityPlan"),
-    ACTIVITYPLANOCCURRENCE("ActivityPlanOccurrence"),
     JOURNEYVIEW("JourneyView"),
-    ALTERNATIVESHIFTTRADE("AlternativeShiftTrade");
+    CUSTOMENTITY("CustomEntity");
 
     private String value;
 

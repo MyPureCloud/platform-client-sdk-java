@@ -278,6 +278,49 @@ public class GetWorkforcemanagementManagementunitWorkplansRequest {
 		}
 	}
 
+	private List<String> exclude;
+	public List<String> getExclude() {
+		return this.exclude;
+	}
+
+	public void setExclude(List<String> exclude) {
+		this.exclude = exclude;
+	}
+
+	public GetWorkforcemanagementManagementunitWorkplansRequest withExclude(List<String> exclude) {
+	    this.setExclude(exclude);
+	    return this;
+	} 
+
+	public enum excludeValues { 
+		SHIFTS_ACTIVITIES("shifts.activities");
+
+		private String value;
+
+		excludeValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static excludeValues fromString(String key) {
+			if (key == null) return null;
+
+			for (excludeValues value : excludeValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return excludeValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -310,6 +353,9 @@ public class GetWorkforcemanagementManagementunitWorkplansRequest {
         
 
                 .withQueryParameters("expand", "multi", expand)
+        
+
+                .withQueryParameters("exclude", "multi", exclude)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -355,6 +401,22 @@ public class GetWorkforcemanagementManagementunitWorkplansRequest {
 	        stringList.add(e.toString());
 	      }
 	      request.setExpand(stringList);
+		    return this;
+		}
+
+		public Builder withExclude(List<String> exclude) {
+			request.setExclude(exclude);
+			return this;
+		}
+
+
+
+		public Builder withExcludeEnumValues(List<excludeValues> exclude) {
+		    List<String> stringList = new ArrayList<>();
+	      for (excludeValues e : exclude) {
+	        stringList.add(e.toString());
+	      }
+	      request.setExclude(stringList);
 		    return this;
 		}
 

@@ -29,6 +29,7 @@ title: CustomerStartDetailEventTopicCustomerStartEvent
 | **conversationExternalContactIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 | **conversationExternalOrganizationIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 | **journeyContext** | <!----><!---->[**CustomerStartDetailEventTopicJourneyContext**](CustomerStartDetailEventTopicJourneyContext.html)<!----> |  |  [optional] |
+| **divisionId** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

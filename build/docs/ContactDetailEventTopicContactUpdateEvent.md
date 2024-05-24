@@ -28,6 +28,7 @@ title: ContactDetailEventTopicContactUpdateEvent
 | **messageType** | [**MessageTypeEnum**](#MessageTypeEnum)<!----> |  |  [optional] |
 | **conversationExternalContactIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 | **conversationExternalOrganizationIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **divisionId** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

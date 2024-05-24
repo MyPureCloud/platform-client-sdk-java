@@ -45,11 +45,13 @@ import com.mypurecloud.sdk.v2.api.request.GetChatsUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsUserMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsUserMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsUserSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetChatsUsersMeSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchChatsRoomRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchChatsRoomMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchChatsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchChatsUserMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchChatsUserSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchChatsUsersMeSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostChatsRoomMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostChatsRoomMessagesPinsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostChatsRoomParticipantRequest;
@@ -1464,6 +1466,84 @@ public class ChatApi {
   }
 
   /**
+   * Get a user's chat settings
+   * 
+   * getChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return ChatUserSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ChatUserSettings getChatsUsersMeSettings() throws IOException, ApiException {
+    return  getChatsUsersMeSettings(createGetChatsUsersMeSettingsRequest());
+  }
+
+  /**
+   * Get a user's chat settings
+   * 
+   * getChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return ChatUserSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ChatUserSettings> getChatsUsersMeSettingsWithHttpInfo() throws IOException {
+    return getChatsUsersMeSettings(createGetChatsUsersMeSettingsRequest().withHttpInfo());
+  }
+
+  private GetChatsUsersMeSettingsRequest createGetChatsUsersMeSettingsRequest() {
+    return GetChatsUsersMeSettingsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get a user's chat settings
+   * 
+   * getChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ChatUserSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ChatUserSettings getChatsUsersMeSettings(GetChatsUsersMeSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ChatUserSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ChatUserSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a user's chat settings
+   * 
+   * getChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ChatUserSettings> getChatsUsersMeSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ChatUserSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChatUserSettings> response = (ApiResponse<ChatUserSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChatUserSettings> response = (ApiResponse<ChatUserSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Set properties for a room
    * 
    * @param roomJid roomJid (required)
@@ -1857,6 +1937,88 @@ public class ChatApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<ChatUserSettings> patchChatsUserSettings(ApiRequest<ChatUserSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ChatUserSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChatUserSettings> response = (ApiResponse<ChatUserSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChatUserSettings> response = (ApiResponse<ChatUserSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a user's chat settings
+   * 
+   * patchChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body  (required)
+   * @return ChatUserSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ChatUserSettings patchChatsUsersMeSettings(ChatUserSettings body) throws IOException, ApiException {
+    return  patchChatsUsersMeSettings(createPatchChatsUsersMeSettingsRequest(body));
+  }
+
+  /**
+   * Update a user's chat settings
+   * 
+   * patchChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body  (required)
+   * @return ChatUserSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ChatUserSettings> patchChatsUsersMeSettingsWithHttpInfo(ChatUserSettings body) throws IOException {
+    return patchChatsUsersMeSettings(createPatchChatsUsersMeSettingsRequest(body).withHttpInfo());
+  }
+
+  private PatchChatsUsersMeSettingsRequest createPatchChatsUsersMeSettingsRequest(ChatUserSettings body) {
+    return PatchChatsUsersMeSettingsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a user's chat settings
+   * 
+   * patchChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ChatUserSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ChatUserSettings patchChatsUsersMeSettings(PatchChatsUsersMeSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ChatUserSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ChatUserSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a user's chat settings
+   * 
+   * patchChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ChatUserSettings> patchChatsUsersMeSettings(ApiRequest<ChatUserSettings> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<ChatUserSettings>() {});
     }

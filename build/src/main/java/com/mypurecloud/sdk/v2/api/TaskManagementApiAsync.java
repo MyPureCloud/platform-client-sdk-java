@@ -123,7 +123,6 @@ public class TaskManagementApiAsync {
   /**
    * Delete a workbin
    * 
-   * deleteTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -158,7 +157,6 @@ public class TaskManagementApiAsync {
   /**
    * Delete a workbin
    * 
-   * deleteTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -200,7 +198,6 @@ public class TaskManagementApiAsync {
   /**
    * Delete a workitem
    * 
-   * deleteTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -235,7 +232,6 @@ public class TaskManagementApiAsync {
   /**
    * Delete a workitem
    * 
-   * deleteTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -277,7 +273,6 @@ public class TaskManagementApiAsync {
   /**
    * Delete a schema
    * 
-   * deleteTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -312,7 +307,6 @@ public class TaskManagementApiAsync {
   /**
    * Delete a schema
    * 
-   * deleteTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -354,7 +348,6 @@ public class TaskManagementApiAsync {
   /**
    * Delete a worktype
    * 
-   * deleteTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -389,7 +382,6 @@ public class TaskManagementApiAsync {
   /**
    * Delete a worktype
    * 
-   * deleteTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -431,7 +423,6 @@ public class TaskManagementApiAsync {
   /**
    * Delete a status
    * 
-   * deleteTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -466,7 +457,6 @@ public class TaskManagementApiAsync {
   /**
    * Delete a status
    * 
-   * deleteTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -508,7 +498,6 @@ public class TaskManagementApiAsync {
   /**
    * Get a workbin
    * 
-   * getTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -543,7 +532,6 @@ public class TaskManagementApiAsync {
   /**
    * Get a workbin
    * 
-   * getTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -816,7 +804,6 @@ public class TaskManagementApiAsync {
   /**
    * Get a workitem
    * 
-   * getTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -851,7 +838,6 @@ public class TaskManagementApiAsync {
   /**
    * Get a workitem
    * 
-   * getTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -970,7 +956,6 @@ public class TaskManagementApiAsync {
   /**
    * Get all wrapup codes added for the given user for a workitem.
    * 
-   * getTaskmanagementWorkitemUserWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1005,7 +990,6 @@ public class TaskManagementApiAsync {
   /**
    * Get all wrapup codes added for the given user for a workitem.
    * 
-   * getTaskmanagementWorkitemUserWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1201,7 +1185,6 @@ public class TaskManagementApiAsync {
   /**
    * Get all wrapup codes added for all users for a workitem.
    * 
-   * getTaskmanagementWorkitemWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1236,7 +1219,6 @@ public class TaskManagementApiAsync {
   /**
    * Get all wrapup codes added for all users for a workitem.
    * 
-   * getTaskmanagementWorkitemWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1278,7 +1260,6 @@ public class TaskManagementApiAsync {
   /**
    * Get the workitem query job associated with the job id.
    * 
-   * getTaskmanagementWorkitemsQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1313,7 +1294,6 @@ public class TaskManagementApiAsync {
   /**
    * Get the workitem query job associated with the job id.
    * 
-   * getTaskmanagementWorkitemsQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1355,7 +1335,6 @@ public class TaskManagementApiAsync {
   /**
    * Get results from for workitem query job 
    * 
-   * getTaskmanagementWorkitemsQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1390,7 +1369,6 @@ public class TaskManagementApiAsync {
   /**
    * Get results from for workitem query job 
    * 
-   * getTaskmanagementWorkitemsQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1432,7 +1410,6 @@ public class TaskManagementApiAsync {
   /**
    * Get a schema
    * 
-   * getTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1467,7 +1444,6 @@ public class TaskManagementApiAsync {
   /**
    * Get a schema
    * 
-   * getTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1509,7 +1485,6 @@ public class TaskManagementApiAsync {
   /**
    * Get a specific version of a schema
    * 
-   * getTaskmanagementWorkitemsSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1544,7 +1519,6 @@ public class TaskManagementApiAsync {
   /**
    * Get a specific version of a schema
    * 
-   * getTaskmanagementWorkitemsSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1586,7 +1560,6 @@ public class TaskManagementApiAsync {
   /**
    * Get all versions of a schema
    * 
-   * getTaskmanagementWorkitemsSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1621,7 +1594,6 @@ public class TaskManagementApiAsync {
   /**
    * Get all versions of a schema
    * 
-   * getTaskmanagementWorkitemsSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1663,7 +1635,6 @@ public class TaskManagementApiAsync {
   /**
    * Get a list of schemas.
    * 
-   * getTaskmanagementWorkitemsSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1698,7 +1669,6 @@ public class TaskManagementApiAsync {
   /**
    * Get a list of schemas.
    * 
-   * getTaskmanagementWorkitemsSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1740,7 +1710,6 @@ public class TaskManagementApiAsync {
   /**
    * Get a worktype
    * 
-   * getTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1775,7 +1744,6 @@ public class TaskManagementApiAsync {
   /**
    * Get a worktype
    * 
-   * getTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1894,7 +1862,6 @@ public class TaskManagementApiAsync {
   /**
    * Get a status
    * 
-   * getTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1929,7 +1896,6 @@ public class TaskManagementApiAsync {
   /**
    * Get a status
    * 
-   * getTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1971,7 +1937,6 @@ public class TaskManagementApiAsync {
   /**
    * Get list of statuses for this worktype.
    * 
-   * getTaskmanagementWorktypeStatuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2006,7 +1971,6 @@ public class TaskManagementApiAsync {
   /**
    * Get list of statuses for this worktype.
    * 
-   * getTaskmanagementWorktypeStatuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2202,7 +2166,6 @@ public class TaskManagementApiAsync {
   /**
    * Update the attributes of a workbin
    * 
-   * patchTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2237,7 +2200,6 @@ public class TaskManagementApiAsync {
   /**
    * Update the attributes of a workbin
    * 
-   * patchTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2279,7 +2241,6 @@ public class TaskManagementApiAsync {
   /**
    * Update the attributes of a workitem
    * 
-   * patchTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2314,7 +2275,6 @@ public class TaskManagementApiAsync {
   /**
    * Update the attributes of a workitem
    * 
-   * patchTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2356,7 +2316,6 @@ public class TaskManagementApiAsync {
   /**
    * Attempts to manually assign a specified workitem to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
    * 
-   * patchTaskmanagementWorkitemAssignment is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2391,7 +2350,6 @@ public class TaskManagementApiAsync {
   /**
    * Attempts to manually assign a specified workitem to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
    * 
-   * patchTaskmanagementWorkitemAssignment is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2433,7 +2391,6 @@ public class TaskManagementApiAsync {
   /**
    * Add/Remove a wrapup code for a given user in a workitem.
    * 
-   * patchTaskmanagementWorkitemUserWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2468,7 +2425,6 @@ public class TaskManagementApiAsync {
   /**
    * Add/Remove a wrapup code for a given user in a workitem.
    * 
-   * patchTaskmanagementWorkitemUserWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2510,7 +2466,6 @@ public class TaskManagementApiAsync {
   /**
    * Add/Remove a wrapup code for the current user in a workitem.
    * 
-   * patchTaskmanagementWorkitemUsersMeWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2545,7 +2500,6 @@ public class TaskManagementApiAsync {
   /**
    * Add/Remove a wrapup code for the current user in a workitem.
    * 
-   * patchTaskmanagementWorkitemUsersMeWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2587,7 +2541,6 @@ public class TaskManagementApiAsync {
   /**
    * Update the attributes of a worktype
    * 
-   * patchTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2622,7 +2575,6 @@ public class TaskManagementApiAsync {
   /**
    * Update the attributes of a worktype
    * 
-   * patchTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2664,7 +2616,6 @@ public class TaskManagementApiAsync {
   /**
    * Update the attributes of a status
    * 
-   * patchTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2699,7 +2650,6 @@ public class TaskManagementApiAsync {
   /**
    * Update the attributes of a status
    * 
-   * patchTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2741,7 +2691,6 @@ public class TaskManagementApiAsync {
   /**
    * Create a workbin
    * 
-   * postTaskmanagementWorkbins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2776,7 +2725,6 @@ public class TaskManagementApiAsync {
   /**
    * Create a workbin
    * 
-   * postTaskmanagementWorkbins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2818,7 +2766,6 @@ public class TaskManagementApiAsync {
   /**
    * Query for workbins
    * 
-   * postTaskmanagementWorkbinsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2853,7 +2800,6 @@ public class TaskManagementApiAsync {
   /**
    * Query for workbins
    * 
-   * postTaskmanagementWorkbinsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2895,7 +2841,6 @@ public class TaskManagementApiAsync {
   /**
    * Cancel the assignment process for a workitem that is currently queued for assignment through ACD.
    * 
-   * postTaskmanagementWorkitemAcdCancel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2930,7 +2875,6 @@ public class TaskManagementApiAsync {
   /**
    * Cancel the assignment process for a workitem that is currently queued for assignment through ACD.
    * 
-   * postTaskmanagementWorkitemAcdCancel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2972,7 +2916,6 @@ public class TaskManagementApiAsync {
   /**
    * Disconnect the assignee of the workitem
    * 
-   * postTaskmanagementWorkitemDisconnect is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3007,7 +2950,6 @@ public class TaskManagementApiAsync {
   /**
    * Disconnect the assignee of the workitem
    * 
-   * postTaskmanagementWorkitemDisconnect is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3049,7 +2991,6 @@ public class TaskManagementApiAsync {
   /**
    * Terminate a workitem
    * 
-   * postTaskmanagementWorkitemTerminate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3084,7 +3025,6 @@ public class TaskManagementApiAsync {
   /**
    * Terminate a workitem
    * 
-   * postTaskmanagementWorkitemTerminate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3126,7 +3066,6 @@ public class TaskManagementApiAsync {
   /**
    * Create a workitem
    * 
-   * postTaskmanagementWorkitems is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3161,7 +3100,6 @@ public class TaskManagementApiAsync {
   /**
    * Create a workitem
    * 
-   * postTaskmanagementWorkitems is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3280,7 +3218,6 @@ public class TaskManagementApiAsync {
   /**
    * Create a workitem query job
    * 
-   * postTaskmanagementWorkitemsQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3315,7 +3252,6 @@ public class TaskManagementApiAsync {
   /**
    * Create a workitem query job
    * 
-   * postTaskmanagementWorkitemsQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3357,7 +3293,6 @@ public class TaskManagementApiAsync {
   /**
    * Create a schema
    * 
-   * postTaskmanagementWorkitemsSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3392,7 +3327,6 @@ public class TaskManagementApiAsync {
   /**
    * Create a schema
    * 
-   * postTaskmanagementWorkitemsSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3434,7 +3368,6 @@ public class TaskManagementApiAsync {
   /**
    * Add a status to a worktype
    * 
-   * postTaskmanagementWorktypeStatuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3469,7 +3402,6 @@ public class TaskManagementApiAsync {
   /**
    * Add a status to a worktype
    * 
-   * postTaskmanagementWorktypeStatuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3511,7 +3443,6 @@ public class TaskManagementApiAsync {
   /**
    * Create a worktype
    * 
-   * postTaskmanagementWorktypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3546,7 +3477,6 @@ public class TaskManagementApiAsync {
   /**
    * Create a worktype
    * 
-   * postTaskmanagementWorktypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3588,7 +3518,6 @@ public class TaskManagementApiAsync {
   /**
    * Query for worktypes
    * 
-   * postTaskmanagementWorktypesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3623,7 +3552,6 @@ public class TaskManagementApiAsync {
   /**
    * Query for worktypes
    * 
-   * postTaskmanagementWorktypesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3665,7 +3593,6 @@ public class TaskManagementApiAsync {
   /**
    * Update a schema
    * 
-   * putTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3700,7 +3627,6 @@ public class TaskManagementApiAsync {
   /**
    * Update a schema
    * 
-   * putTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

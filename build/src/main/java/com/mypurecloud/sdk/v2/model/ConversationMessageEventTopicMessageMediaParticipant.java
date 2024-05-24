@@ -228,6 +228,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
   public enum DisconnectTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ENDPOINT("endpoint"),
+    ENDPOINT_DND("endpoint.dnd"),
     CLIENT("client"),
     SYSTEM("system"),
     TRANSFER("transfer"),
@@ -237,6 +238,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     TRANSFER_FORWARD("transfer.forward"),
     TRANSFER_NOANSWER("transfer.noanswer"),
     TRANSFER_NOTAVAILABLE("transfer.notavailable"),
+    TRANSFER_DND("transfer.dnd"),
     TRANSPORT_FAILURE("transport.failure"),
     ERROR("error"),
     PEER("peer"),
@@ -340,6 +342,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
   private Date startAcwTime = null;
   private Date endAcwTime = null;
   private Date resumeTime = null;
+  private Date parkTime = null;
   private List<String> mediaRoles = new ArrayList<String>();
   private ConversationMessageEventTopicQueueMediaSettings queueMediaSettings = null;
   private List<ConversationMessageEventTopicMessageDetails> messages = new ArrayList<ConversationMessageEventTopicMessageDetails>();
@@ -1022,6 +1025,23 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
 
   /**
    **/
+  public ConversationMessageEventTopicMessageMediaParticipant parkTime(Date parkTime) {
+    this.parkTime = parkTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("parkTime")
+  public Date getParkTime() {
+    return parkTime;
+  }
+  public void setParkTime(Date parkTime) {
+    this.parkTime = parkTime;
+  }
+
+
+  /**
+   **/
   public ConversationMessageEventTopicMessageMediaParticipant mediaRoles(List<String> mediaRoles) {
     this.mediaRoles = mediaRoles;
     return this;
@@ -1202,6 +1222,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
             Objects.equals(this.startAcwTime, conversationMessageEventTopicMessageMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, conversationMessageEventTopicMessageMediaParticipant.endAcwTime) &&
             Objects.equals(this.resumeTime, conversationMessageEventTopicMessageMediaParticipant.resumeTime) &&
+            Objects.equals(this.parkTime, conversationMessageEventTopicMessageMediaParticipant.parkTime) &&
             Objects.equals(this.mediaRoles, conversationMessageEventTopicMessageMediaParticipant.mediaRoles) &&
             Objects.equals(this.queueMediaSettings, conversationMessageEventTopicMessageMediaParticipant.queueMediaSettings) &&
             Objects.equals(this.messages, conversationMessageEventTopicMessageMediaParticipant.messages) &&
@@ -1214,7 +1235,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, mediaRoles, queueMediaSettings, messages, type, recipientCountry, recipientType, byoSmsIntegrationId, monitoredParticipantId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, messages, type, recipientCountry, recipientType, byoSmsIntegrationId, monitoredParticipantId);
   }
 
   @Override
@@ -1258,6 +1279,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    resumeTime: ").append(toIndentedString(resumeTime)).append("\n");
+    sb.append("    parkTime: ").append(toIndentedString(parkTime)).append("\n");
     sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
     sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("    messages: ").append(toIndentedString(messages)).append("\n");

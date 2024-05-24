@@ -8,7 +8,7 @@ title: V2MobiusAlertsTopicAlertNotification
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **recipient** | <!----><!---->**String**<!----> |  |  [optional] |
+| **recipient** | <!----><!---->[**V2MobiusAlertsTopicAlertNotificationRecipient**](V2MobiusAlertsTopicAlertNotificationRecipient.html)<!----> |  |  [optional] |
 | **notificationTypes** | <!---->[**List&lt;NotificationTypesEnum&gt;**](#NotificationTypesEnum)<!----> |  |  [optional] |
 | **locale** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}

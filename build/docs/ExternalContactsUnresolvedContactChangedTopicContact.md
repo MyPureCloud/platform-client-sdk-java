@@ -32,6 +32,7 @@ title: ExternalContactsUnresolvedContactChangedTopicContact
 | **whatsAppId** | <!----><!---->[**ExternalContactsUnresolvedContactChangedTopicWhatsAppId**](ExternalContactsUnresolvedContactChangedTopicWhatsAppId.html)<!----> |  |  [optional] |
 | **facebookId** | <!----><!---->[**ExternalContactsUnresolvedContactChangedTopicFacebookId**](ExternalContactsUnresolvedContactChangedTopicFacebookId.html)<!----> |  |  [optional] |
 | **instagramId** | <!----><!---->[**ExternalContactsUnresolvedContactChangedTopicInstagramId**](ExternalContactsUnresolvedContactChangedTopicInstagramId.html)<!----> |  |  [optional] |
+| **externalIds** | <!----><!---->[**List&lt;ExternalContactsUnresolvedContactChangedTopicExternalId&gt;**](ExternalContactsUnresolvedContactChangedTopicExternalId.html)<!----> |  |  [optional] |
 | **schema** | <!----><!---->[**ExternalContactsUnresolvedContactChangedTopicDataSchema**](ExternalContactsUnresolvedContactChangedTopicDataSchema.html)<!----> |  |  [optional] |
 | **customFields** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
 | **createDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |

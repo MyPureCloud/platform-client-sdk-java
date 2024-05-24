@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.EmbeddedIntegration;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FeatureState;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
+import com.mypurecloud.sdk.v2.model.FreeTrialLimitDocs;
 import com.mypurecloud.sdk.v2.model.IpAddressAuthentication;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestDetails;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestsEntityListing;

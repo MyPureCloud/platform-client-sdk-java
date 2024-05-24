@@ -227,6 +227,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
   public enum DisconnectTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ENDPOINT("endpoint"),
+    ENDPOINT_DND("endpoint.dnd"),
     CLIENT("client"),
     SYSTEM("system"),
     TRANSFER("transfer"),
@@ -236,6 +237,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     TRANSFER_FORWARD("transfer.forward"),
     TRANSFER_NOANSWER("transfer.noanswer"),
     TRANSFER_NOTAVAILABLE("transfer.notavailable"),
+    TRANSFER_DND("transfer.dnd"),
     TRANSPORT_FAILURE("transport.failure"),
     ERROR("error"),
     PEER("peer"),
@@ -339,6 +341,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
   private Date startAcwTime = null;
   private Date endAcwTime = null;
   private Date resumeTime = null;
+  private Date parkTime = null;
   private List<String> mediaRoles = new ArrayList<String>();
   private QueueConversationChatEventTopicQueueMediaSettings queueMediaSettings = null;
   private String roomId = null;
@@ -959,6 +962,23 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
 
   /**
    **/
+  public QueueConversationChatEventTopicChatMediaParticipant parkTime(Date parkTime) {
+    this.parkTime = parkTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("parkTime")
+  public Date getParkTime() {
+    return parkTime;
+  }
+  public void setParkTime(Date parkTime) {
+    this.parkTime = parkTime;
+  }
+
+
+  /**
+   **/
   public QueueConversationChatEventTopicChatMediaParticipant mediaRoles(List<String> mediaRoles) {
     this.mediaRoles = mediaRoles;
     return this;
@@ -1071,6 +1091,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
             Objects.equals(this.startAcwTime, queueConversationChatEventTopicChatMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, queueConversationChatEventTopicChatMediaParticipant.endAcwTime) &&
             Objects.equals(this.resumeTime, queueConversationChatEventTopicChatMediaParticipant.resumeTime) &&
+            Objects.equals(this.parkTime, queueConversationChatEventTopicChatMediaParticipant.parkTime) &&
             Objects.equals(this.mediaRoles, queueConversationChatEventTopicChatMediaParticipant.mediaRoles) &&
             Objects.equals(this.queueMediaSettings, queueConversationChatEventTopicChatMediaParticipant.queueMediaSettings) &&
             Objects.equals(this.roomId, queueConversationChatEventTopicChatMediaParticipant.roomId) &&
@@ -1079,7 +1100,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, mediaRoles, queueMediaSettings, roomId, avatarImageUrl);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, roomId, avatarImageUrl);
   }
 
   @Override
@@ -1123,6 +1144,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    resumeTime: ").append(toIndentedString(resumeTime)).append("\n");
+    sb.append("    parkTime: ").append(toIndentedString(parkTime)).append("\n");
     sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
     sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");

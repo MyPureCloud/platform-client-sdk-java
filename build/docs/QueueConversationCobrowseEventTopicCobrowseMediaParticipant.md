@@ -44,6 +44,7 @@ title: QueueConversationCobrowseEventTopicCobrowseMediaParticipant
 | **startAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **endAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **resumeTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **parkTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **mediaRoles** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 | **queueMediaSettings** | <!----><!---->[**QueueConversationCobrowseEventTopicQueueMediaSettings**](QueueConversationCobrowseEventTopicQueueMediaSettings.html)<!----> |  |  [optional] |
 | **cobrowseSessionId** | <!----><!---->**String**<!----> |  |  [optional] |
@@ -120,6 +121,7 @@ title: QueueConversationCobrowseEventTopicCobrowseMediaParticipant
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ENDPOINT | &quot;endpoint&quot; | 
+| ENDPOINT_DND | &quot;endpoint.dnd&quot; | 
 | CLIENT | &quot;client&quot; | 
 | SYSTEM | &quot;system&quot; | 
 | TRANSFER | &quot;transfer&quot; | 
@@ -129,6 +131,7 @@ title: QueueConversationCobrowseEventTopicCobrowseMediaParticipant
 | TRANSFER_FORWARD | &quot;transfer.forward&quot; | 
 | TRANSFER_NOANSWER | &quot;transfer.noanswer&quot; | 
 | TRANSFER_NOTAVAILABLE | &quot;transfer.notavailable&quot; | 
+| TRANSFER_DND | &quot;transfer.dnd&quot; | 
 | TRANSPORT_FAILURE | &quot;transport.failure&quot; | 
 | ERROR | &quot;error&quot; | 
 | PEER | &quot;peer&quot; | 

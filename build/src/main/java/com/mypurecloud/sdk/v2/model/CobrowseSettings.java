@@ -26,6 +26,7 @@ public class CobrowseSettings  implements Serializable {
   
   private Boolean enabled = null;
   private Boolean allowAgentControl = null;
+  private Boolean allowAgentNavigation = null;
   private List<String> maskSelectors = new ArrayList<String>();
 
   private static class ChannelsEnumDeserializer extends StdDeserializer<ChannelsEnum> {
@@ -114,6 +115,24 @@ public class CobrowseSettings  implements Serializable {
 
 
   /**
+   * Whether the viewer should have option to request navigation
+   **/
+  public CobrowseSettings allowAgentNavigation(Boolean allowAgentNavigation) {
+    this.allowAgentNavigation = allowAgentNavigation;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether the viewer should have option to request navigation")
+  @JsonProperty("allowAgentNavigation")
+  public Boolean getAllowAgentNavigation() {
+    return allowAgentNavigation;
+  }
+  public void setAllowAgentNavigation(Boolean allowAgentNavigation) {
+    this.allowAgentNavigation = allowAgentNavigation;
+  }
+
+
+  /**
    * Mask patterns that will apply to pages being shared
    **/
   public CobrowseSettings maskSelectors(List<String> maskSelectors) {
@@ -179,6 +198,7 @@ public class CobrowseSettings  implements Serializable {
 
     return Objects.equals(this.enabled, cobrowseSettings.enabled) &&
             Objects.equals(this.allowAgentControl, cobrowseSettings.allowAgentControl) &&
+            Objects.equals(this.allowAgentNavigation, cobrowseSettings.allowAgentNavigation) &&
             Objects.equals(this.maskSelectors, cobrowseSettings.maskSelectors) &&
             Objects.equals(this.channels, cobrowseSettings.channels) &&
             Objects.equals(this.readonlySelectors, cobrowseSettings.readonlySelectors);
@@ -186,7 +206,7 @@ public class CobrowseSettings  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, allowAgentControl, maskSelectors, channels, readonlySelectors);
+    return Objects.hash(enabled, allowAgentControl, allowAgentNavigation, maskSelectors, channels, readonlySelectors);
   }
 
   @Override
@@ -196,6 +216,7 @@ public class CobrowseSettings  implements Serializable {
     
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    allowAgentControl: ").append(toIndentedString(allowAgentControl)).append("\n");
+    sb.append("    allowAgentNavigation: ").append(toIndentedString(allowAgentNavigation)).append("\n");
     sb.append("    maskSelectors: ").append(toIndentedString(maskSelectors)).append("\n");
     sb.append("    channels: ").append(toIndentedString(channels)).append("\n");
     sb.append("    readonlySelectors: ").append(toIndentedString(readonlySelectors)).append("\n");

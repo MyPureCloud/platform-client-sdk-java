@@ -72,6 +72,7 @@ title: QueueConversationSocialExpressionEventTopicScreenshare
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ENDPOINT | &quot;endpoint&quot; | 
+| ENDPOINT_DND | &quot;endpoint.dnd&quot; | 
 | CLIENT | &quot;client&quot; | 
 | SYSTEM | &quot;system&quot; | 
 | TIMEOUT | &quot;timeout&quot; | 
@@ -81,6 +82,7 @@ title: QueueConversationSocialExpressionEventTopicScreenshare
 | TRANSFER_FORWARD | &quot;transfer.forward&quot; | 
 | TRANSFER_NOANSWER | &quot;transfer.noanswer&quot; | 
 | TRANSFER_NOTAVAILABLE | &quot;transfer.notavailable&quot; | 
+| TRANSFER_DND | &quot;transfer.dnd&quot; | 
 | TRANSPORT_FAILURE | &quot;transport.failure&quot; | 
 | ERROR | &quot;error&quot; | 
 | PEER | &quot;peer&quot; | 

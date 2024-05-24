@@ -10,6 +10,7 @@ title: CobrowseSettings
 | ------------ | ------------- | ------------- | ------------- |
 | **enabled** | <!----><!---->**Boolean**<!----> | Whether or not cobrowse is enabled |  [optional] |
 | **allowAgentControl** | <!----><!---->**Boolean**<!----> | Whether the viewer should have option to request control |  [optional] |
+| **allowAgentNavigation** | <!----><!---->**Boolean**<!----> | Whether the viewer should have option to request navigation |  [optional] |
 | **maskSelectors** | <!----><!---->**List&lt;String&gt;**<!----> | Mask patterns that will apply to pages being shared |  [optional] |
 | **channels** | <!---->[**List&lt;ChannelsEnum&gt;**](#ChannelsEnum)<!----> | Cobrowse channels for web messenger |  [optional] |
 | **readonlySelectors** | <!----><!---->**List&lt;String&gt;**<!----> | Readonly patterns that will apply to pages being shared |  [optional] |

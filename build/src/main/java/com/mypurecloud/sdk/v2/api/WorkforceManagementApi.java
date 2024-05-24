@@ -5973,12 +5973,13 @@ public class WorkforceManagementApi {
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param agentId The agent id (required)
    * @param excludeCapabilities Excludes all capabilities of the agent such as queues, languages, and skills (optional)
+   * @param expand  (optional)
    * @return WfmAgent
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WfmAgent getWorkforcemanagementManagementunitAgent(String managementUnitId, String agentId, Boolean excludeCapabilities) throws IOException, ApiException {
-    return  getWorkforcemanagementManagementunitAgent(createGetWorkforcemanagementManagementunitAgentRequest(managementUnitId, agentId, excludeCapabilities));
+  public WfmAgent getWorkforcemanagementManagementunitAgent(String managementUnitId, String agentId, Boolean excludeCapabilities, List<String> expand) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitAgent(createGetWorkforcemanagementManagementunitAgentRequest(managementUnitId, agentId, excludeCapabilities, expand));
   }
 
   /**
@@ -5987,20 +5988,23 @@ public class WorkforceManagementApi {
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param agentId The agent id (required)
    * @param excludeCapabilities Excludes all capabilities of the agent such as queues, languages, and skills (optional)
+   * @param expand  (optional)
    * @return WfmAgent
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WfmAgent> getWorkforcemanagementManagementunitAgentWithHttpInfo(String managementUnitId, String agentId, Boolean excludeCapabilities) throws IOException {
-    return getWorkforcemanagementManagementunitAgent(createGetWorkforcemanagementManagementunitAgentRequest(managementUnitId, agentId, excludeCapabilities).withHttpInfo());
+  public ApiResponse<WfmAgent> getWorkforcemanagementManagementunitAgentWithHttpInfo(String managementUnitId, String agentId, Boolean excludeCapabilities, List<String> expand) throws IOException {
+    return getWorkforcemanagementManagementunitAgent(createGetWorkforcemanagementManagementunitAgentRequest(managementUnitId, agentId, excludeCapabilities, expand).withHttpInfo());
   }
 
-  private GetWorkforcemanagementManagementunitAgentRequest createGetWorkforcemanagementManagementunitAgentRequest(String managementUnitId, String agentId, Boolean excludeCapabilities) {
+  private GetWorkforcemanagementManagementunitAgentRequest createGetWorkforcemanagementManagementunitAgentRequest(String managementUnitId, String agentId, Boolean excludeCapabilities, List<String> expand) {
     return GetWorkforcemanagementManagementunitAgentRequest.builder()
             .withManagementUnitId(managementUnitId)
 
             .withAgentId(agentId)
 
             .withExcludeCapabilities(excludeCapabilities)
+
+            .withExpand(expand)
 
             .build();
   }
@@ -7488,12 +7492,13 @@ public class WorkforceManagementApi {
    * \"expand=details\" is deprecated
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param expand Include to access additional data on the work plans (optional)
+   * @param exclude Exclude specific data on the work plans from the response (optional)
    * @return WorkPlanListResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WorkPlanListResponse getWorkforcemanagementManagementunitWorkplans(String managementUnitId, List<String> expand) throws IOException, ApiException {
-    return  getWorkforcemanagementManagementunitWorkplans(createGetWorkforcemanagementManagementunitWorkplansRequest(managementUnitId, expand));
+  public WorkPlanListResponse getWorkforcemanagementManagementunitWorkplans(String managementUnitId, List<String> expand, List<String> exclude) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitWorkplans(createGetWorkforcemanagementManagementunitWorkplansRequest(managementUnitId, expand, exclude));
   }
 
   /**
@@ -7501,18 +7506,21 @@ public class WorkforceManagementApi {
    * \"expand=details\" is deprecated
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param expand Include to access additional data on the work plans (optional)
+   * @param exclude Exclude specific data on the work plans from the response (optional)
    * @return WorkPlanListResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WorkPlanListResponse> getWorkforcemanagementManagementunitWorkplansWithHttpInfo(String managementUnitId, List<String> expand) throws IOException {
-    return getWorkforcemanagementManagementunitWorkplans(createGetWorkforcemanagementManagementunitWorkplansRequest(managementUnitId, expand).withHttpInfo());
+  public ApiResponse<WorkPlanListResponse> getWorkforcemanagementManagementunitWorkplansWithHttpInfo(String managementUnitId, List<String> expand, List<String> exclude) throws IOException {
+    return getWorkforcemanagementManagementunitWorkplans(createGetWorkforcemanagementManagementunitWorkplansRequest(managementUnitId, expand, exclude).withHttpInfo());
   }
 
-  private GetWorkforcemanagementManagementunitWorkplansRequest createGetWorkforcemanagementManagementunitWorkplansRequest(String managementUnitId, List<String> expand) {
+  private GetWorkforcemanagementManagementunitWorkplansRequest createGetWorkforcemanagementManagementunitWorkplansRequest(String managementUnitId, List<String> expand, List<String> exclude) {
     return GetWorkforcemanagementManagementunitWorkplansRequest.builder()
             .withManagementUnitId(managementUnitId)
 
             .withExpand(expand)
+
+            .withExclude(exclude)
 
             .build();
   }

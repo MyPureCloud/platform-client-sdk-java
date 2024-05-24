@@ -14,6 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOrganizationsLimitsChangerequest**](OrganizationApi.html#getOrganizationsLimitsChangerequest) | Get a limit change request |
 | [**getOrganizationsLimitsChangerequests**](OrganizationApi.html#getOrganizationsLimitsChangerequests) | Get the available limit change requests |
 | [**getOrganizationsLimitsDocs**](OrganizationApi.html#getOrganizationsLimitsDocs) | Get limit documentation |
+| [**getOrganizationsLimitsDocsFreetrial**](OrganizationApi.html#getOrganizationsLimitsDocsFreetrial) | Get free trial limit documentation |
 | [**getOrganizationsLimitsNamespace**](OrganizationApi.html#getOrganizationsLimitsNamespace) | Get the effective limits in a namespace for an organization |
 | [**getOrganizationsLimitsNamespaceDefaults**](OrganizationApi.html#getOrganizationsLimitsNamespaceDefaults) | Get the default limits in a namespace for an organization |
 | [**getOrganizationsLimitsNamespaces**](OrganizationApi.html#getOrganizationsLimitsNamespaces) | Get the available limit namespaces |
@@ -448,6 +449,62 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**LimitDocumentation**](LimitDocumentation.html)
+
+<a name="getOrganizationsLimitsDocsFreetrial"></a>
+
+# **getOrganizationsLimitsDocsFreetrial**
+
+
+
+> [FreeTrialLimitDocs](FreeTrialLimitDocs.html) getOrganizationsLimitsDocsFreetrial()
+
+Get free trial limit documentation
+
+Wraps GET /api/v2/organizations/limits/docs/freetrial  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OrganizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OrganizationApi apiInstance = new OrganizationApi();
+try {
+    FreeTrialLimitDocs result = apiInstance.getOrganizationsLimitsDocsFreetrial();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationApi#getOrganizationsLimitsDocsFreetrial");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**FreeTrialLimitDocs**](FreeTrialLimitDocs.html)
 
 <a name="getOrganizationsLimitsNamespace"></a>
 

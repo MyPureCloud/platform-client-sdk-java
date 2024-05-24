@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.model.EmbeddedIntegration;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FeatureState;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
+import com.mypurecloud.sdk.v2.model.FreeTrialLimitDocs;
 import com.mypurecloud.sdk.v2.model.IpAddressAuthentication;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestDetails;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestsEntityListing;
@@ -32,6 +33,7 @@ import com.mypurecloud.sdk.v2.api.request.GetOrganizationsIpaddressauthenticatio
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsChangerequestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsChangerequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsDocsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsDocsFreetrialRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsNamespaceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsNamespaceDefaultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsNamespacesRequest;
@@ -615,6 +617,80 @@ public class OrganizationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<LimitDocumentation> response = (ApiResponse<LimitDocumentation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get free trial limit documentation
+   * 
+   * @return FreeTrialLimitDocs
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FreeTrialLimitDocs getOrganizationsLimitsDocsFreetrial() throws IOException, ApiException {
+    return  getOrganizationsLimitsDocsFreetrial(createGetOrganizationsLimitsDocsFreetrialRequest());
+  }
+
+  /**
+   * Get free trial limit documentation
+   * 
+   * @return FreeTrialLimitDocs
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FreeTrialLimitDocs> getOrganizationsLimitsDocsFreetrialWithHttpInfo() throws IOException {
+    return getOrganizationsLimitsDocsFreetrial(createGetOrganizationsLimitsDocsFreetrialRequest().withHttpInfo());
+  }
+
+  private GetOrganizationsLimitsDocsFreetrialRequest createGetOrganizationsLimitsDocsFreetrialRequest() {
+    return GetOrganizationsLimitsDocsFreetrialRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get free trial limit documentation
+   * 
+   * @param request The request object
+   * @return FreeTrialLimitDocs
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FreeTrialLimitDocs getOrganizationsLimitsDocsFreetrial(GetOrganizationsLimitsDocsFreetrialRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FreeTrialLimitDocs> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FreeTrialLimitDocs>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get free trial limit documentation
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FreeTrialLimitDocs> getOrganizationsLimitsDocsFreetrial(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FreeTrialLimitDocs>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FreeTrialLimitDocs> response = (ApiResponse<FreeTrialLimitDocs>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FreeTrialLimitDocs> response = (ApiResponse<FreeTrialLimitDocs>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

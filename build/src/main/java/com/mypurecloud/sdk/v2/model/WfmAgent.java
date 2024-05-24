@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.QueueReference;
 import com.mypurecloud.sdk.v2.model.RoutingSkillReference;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
+import com.mypurecloud.sdk.v2.model.WorkPlanOverride;
 import com.mypurecloud.sdk.v2.model.WorkPlanReference;
 import com.mypurecloud.sdk.v2.model.WorkPlanRotationReference;
 import io.swagger.annotations.ApiModel;
@@ -35,6 +36,7 @@ public class WfmAgent  implements Serializable {
   private WorkPlanReference workPlan = null;
   private WorkPlanRotationReference workPlanRotation = null;
   private Boolean acceptDirectShiftTrades = null;
+  private List<WorkPlanOverride> workPlanOverrides = new ArrayList<WorkPlanOverride>();
   private List<QueueReference> queues = new ArrayList<QueueReference>();
   private List<LanguageReference> languages = new ArrayList<LanguageReference>();
   private List<RoutingSkillReference> skills = new ArrayList<RoutingSkillReference>();
@@ -119,6 +121,24 @@ public class WfmAgent  implements Serializable {
   }
   public void setAcceptDirectShiftTrades(Boolean acceptDirectShiftTrades) {
     this.acceptDirectShiftTrades = acceptDirectShiftTrades;
+  }
+
+
+  /**
+   * The work plan overrides associated with this agent. Populate with expand=workPlanOverrides
+   **/
+  public WfmAgent workPlanOverrides(List<WorkPlanOverride> workPlanOverrides) {
+    this.workPlanOverrides = workPlanOverrides;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The work plan overrides associated with this agent. Populate with expand=workPlanOverrides")
+  @JsonProperty("workPlanOverrides")
+  public List<WorkPlanOverride> getWorkPlanOverrides() {
+    return workPlanOverrides;
+  }
+  public void setWorkPlanOverrides(List<WorkPlanOverride> workPlanOverrides) {
+    this.workPlanOverrides = workPlanOverrides;
   }
 
 
@@ -234,6 +254,7 @@ public class WfmAgent  implements Serializable {
             Objects.equals(this.workPlan, wfmAgent.workPlan) &&
             Objects.equals(this.workPlanRotation, wfmAgent.workPlanRotation) &&
             Objects.equals(this.acceptDirectShiftTrades, wfmAgent.acceptDirectShiftTrades) &&
+            Objects.equals(this.workPlanOverrides, wfmAgent.workPlanOverrides) &&
             Objects.equals(this.queues, wfmAgent.queues) &&
             Objects.equals(this.languages, wfmAgent.languages) &&
             Objects.equals(this.skills, wfmAgent.skills) &&
@@ -244,7 +265,7 @@ public class WfmAgent  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, user, workPlan, workPlanRotation, acceptDirectShiftTrades, queues, languages, skills, schedulable, metadata, selfUri);
+    return Objects.hash(id, user, workPlan, workPlanRotation, acceptDirectShiftTrades, workPlanOverrides, queues, languages, skills, schedulable, metadata, selfUri);
   }
 
   @Override
@@ -257,6 +278,7 @@ public class WfmAgent  implements Serializable {
     sb.append("    workPlan: ").append(toIndentedString(workPlan)).append("\n");
     sb.append("    workPlanRotation: ").append(toIndentedString(workPlanRotation)).append("\n");
     sb.append("    acceptDirectShiftTrades: ").append(toIndentedString(acceptDirectShiftTrades)).append("\n");
+    sb.append("    workPlanOverrides: ").append(toIndentedString(workPlanOverrides)).append("\n");
     sb.append("    queues: ").append(toIndentedString(queues)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    skills: ").append(toIndentedString(skills)).append("\n");

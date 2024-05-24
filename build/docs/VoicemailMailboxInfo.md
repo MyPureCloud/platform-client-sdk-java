@@ -14,6 +14,10 @@ title: VoicemailMailboxInfo
 | **deletedCount** | <!----><!---->**Integer**<!----> | The total number of voicemail messages marked as deleted |  [optional] |
 | **createdDate** | <!----><!---->[**Date**](Date.html)<!----> | The date of the oldest voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **modifiedDate** | <!----><!---->[**Date**](Date.html)<!----> | The date of the most recent voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **newestUnreadDate** | <!----><!---->[**Date**](Date.html)<!----> | The date of the most recent unread voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **oldestUnreadDate** | <!----><!---->[**Date**](Date.html)<!----> | The date of the most oldest unread voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **newestReadDate** | <!----><!---->[**Date**](Date.html)<!----> | The date of the most recent read voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **oldestReadDate** | <!----><!---->[**Date**](Date.html)<!----> | The date of the most oldest read voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 {: class="table table-striped"}
 
 

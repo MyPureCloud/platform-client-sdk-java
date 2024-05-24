@@ -28,6 +28,10 @@ public class VoicemailMailboxInfo  implements Serializable {
   private Integer deletedCount = null;
   private Date createdDate = null;
   private Date modifiedDate = null;
+  private Date newestUnreadDate = null;
+  private Date oldestUnreadDate = null;
+  private Date newestReadDate = null;
+  private Date oldestReadDate = null;
 
   
   @ApiModelProperty(example = "null", value = "The total number of bytes for all voicemail message audio recordings")
@@ -72,6 +76,34 @@ public class VoicemailMailboxInfo  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The date of the most recent unread voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("newestUnreadDate")
+  public Date getNewestUnreadDate() {
+    return newestUnreadDate;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The date of the most oldest unread voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("oldestUnreadDate")
+  public Date getOldestUnreadDate() {
+    return oldestUnreadDate;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The date of the most recent read voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("newestReadDate")
+  public Date getNewestReadDate() {
+    return newestReadDate;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The date of the most oldest read voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("oldestReadDate")
+  public Date getOldestReadDate() {
+    return oldestReadDate;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -87,12 +119,16 @@ public class VoicemailMailboxInfo  implements Serializable {
             Objects.equals(this.unreadCount, voicemailMailboxInfo.unreadCount) &&
             Objects.equals(this.deletedCount, voicemailMailboxInfo.deletedCount) &&
             Objects.equals(this.createdDate, voicemailMailboxInfo.createdDate) &&
-            Objects.equals(this.modifiedDate, voicemailMailboxInfo.modifiedDate);
+            Objects.equals(this.modifiedDate, voicemailMailboxInfo.modifiedDate) &&
+            Objects.equals(this.newestUnreadDate, voicemailMailboxInfo.newestUnreadDate) &&
+            Objects.equals(this.oldestUnreadDate, voicemailMailboxInfo.oldestUnreadDate) &&
+            Objects.equals(this.newestReadDate, voicemailMailboxInfo.newestReadDate) &&
+            Objects.equals(this.oldestReadDate, voicemailMailboxInfo.oldestReadDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(usageSizeBytes, totalCount, unreadCount, deletedCount, createdDate, modifiedDate);
+    return Objects.hash(usageSizeBytes, totalCount, unreadCount, deletedCount, createdDate, modifiedDate, newestUnreadDate, oldestUnreadDate, newestReadDate, oldestReadDate);
   }
 
   @Override
@@ -106,6 +142,10 @@ public class VoicemailMailboxInfo  implements Serializable {
     sb.append("    deletedCount: ").append(toIndentedString(deletedCount)).append("\n");
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");
+    sb.append("    newestUnreadDate: ").append(toIndentedString(newestUnreadDate)).append("\n");
+    sb.append("    oldestUnreadDate: ").append(toIndentedString(oldestUnreadDate)).append("\n");
+    sb.append("    newestReadDate: ").append(toIndentedString(newestReadDate)).append("\n");
+    sb.append("    oldestReadDate: ").append(toIndentedString(oldestReadDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

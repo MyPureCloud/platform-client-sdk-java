@@ -73,12 +73,6 @@ import com.mypurecloud.sdk.v2.model.QueueObservationQuery;
 import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.RateLimitAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.RateLimitAggregationQuery;
-import com.mypurecloud.sdk.v2.model.ReportMetaData;
-import com.mypurecloud.sdk.v2.model.ReportMetaDataEntityListing;
-import com.mypurecloud.sdk.v2.model.ReportRunEntry;
-import com.mypurecloud.sdk.v2.model.ReportRunEntryEntityDomainListing;
-import com.mypurecloud.sdk.v2.model.ReportSchedule;
-import com.mypurecloud.sdk.v2.model.ReportScheduleEntityListing;
 import com.mypurecloud.sdk.v2.model.ReportingExportJobListing;
 import com.mypurecloud.sdk.v2.model.ReportingExportJobRequest;
 import com.mypurecloud.sdk.v2.model.ReportingExportJobResponse;
@@ -88,7 +82,6 @@ import com.mypurecloud.sdk.v2.model.ResolutionAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.ResolutionAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.RoutingActivityQuery;
 import com.mypurecloud.sdk.v2.model.RoutingActivityResponse;
-import com.mypurecloud.sdk.v2.model.RunNowResponse;
 import com.mypurecloud.sdk.v2.model.SessionsResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregationQuery;
@@ -118,10 +111,10 @@ import com.mypurecloud.sdk.v2.model.UserObservationQueryResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsConversationsDetailsJobRequest;
-import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsReportingScheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsUsersDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsActionsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsActionsAggregatesJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotflowDivisionsReportingturnsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotflowReportingturnsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotflowSessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotsAggregatesJobRequest;
@@ -148,17 +141,8 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingDashboardsUserReq
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingDashboardsUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingExportsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingExportsMetadataRequest;
-import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingMetadataRequest;
-import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingReportIdMetadataRequest;
-import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingReportformatsRequest;
-import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingScheduleRequest;
-import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingScheduleHistoryRequest;
-import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingScheduleHistoryLatestRequest;
-import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingScheduleHistoryRunIdRequest;
-import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingSettingsUserDashboardsRequest;
-import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingTimeperiodsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsResolutionsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsResolutionsAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsSurveysAggregatesJobRequest;
@@ -200,8 +184,6 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsQueuesObservationsQueryRe
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsRatelimitsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingDashboardsUsersBulkRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingExportsRequest;
-import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingScheduleRunreportRequest;
-import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingSettingsDashboardsBulkRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingSettingsDashboardsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsResolutionsAggregatesJobsRequest;
@@ -220,7 +202,6 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersDetailsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersDetailsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersObservationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAnalyticsDataretentionSettingsRequest;
-import com.mypurecloud.sdk.v2.api.request.PutAnalyticsReportingScheduleRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -293,81 +274,6 @@ public class AnalyticsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteAnalyticsConversationsDetailsJob(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, null);
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Delete a scheduled report job.
-   * 
-   * @param scheduleId Schedule ID (required)
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public void deleteAnalyticsReportingSchedule(String scheduleId) throws IOException, ApiException {
-     deleteAnalyticsReportingSchedule(createDeleteAnalyticsReportingScheduleRequest(scheduleId));
-  }
-
-  /**
-   * Delete a scheduled report job.
-   * 
-   * @param scheduleId Schedule ID (required)
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Void> deleteAnalyticsReportingScheduleWithHttpInfo(String scheduleId) throws IOException {
-    return deleteAnalyticsReportingSchedule(createDeleteAnalyticsReportingScheduleRequest(scheduleId).withHttpInfo());
-  }
-
-  private DeleteAnalyticsReportingScheduleRequest createDeleteAnalyticsReportingScheduleRequest(String scheduleId) {
-    return DeleteAnalyticsReportingScheduleRequest.builder()
-            .withScheduleId(scheduleId)
-
-            .build();
-  }
-
-  /**
-   * Delete a scheduled report job.
-   * 
-   * @param request The request object
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public void deleteAnalyticsReportingSchedule(DeleteAnalyticsReportingScheduleRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
-    }
-  }
-
-  /**
-   * Delete a scheduled report job.
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Void> deleteAnalyticsReportingSchedule(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -633,8 +539,8 @@ public class AnalyticsApi {
   }
 
   /**
-   * Get Reporting Turns.
-   * Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+   * Get Reporting Turns (division aware).
+   * Returns the reporting turns for the specified flow, filtered by the clients divisions and grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
    * @param botFlowId ID of the bot flow. (required)
    * @param after The cursor that points to the ID of the last item in the list of entities that has been returned. (optional)
    * @param pageSize Max number of entities to return. Maximum of 250 (optional, default to 50)
@@ -647,13 +553,13 @@ public class AnalyticsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ReportingTurnsResponse getAnalyticsBotflowReportingturns(String botFlowId, String after, String pageSize, String interval, String actionId, String sessionId, String language, String askActionResults) throws IOException, ApiException {
-    return  getAnalyticsBotflowReportingturns(createGetAnalyticsBotflowReportingturnsRequest(botFlowId, after, pageSize, interval, actionId, sessionId, language, askActionResults));
+  public ReportingTurnsResponse getAnalyticsBotflowDivisionsReportingturns(String botFlowId, String after, String pageSize, String interval, String actionId, String sessionId, String language, String askActionResults) throws IOException, ApiException {
+    return  getAnalyticsBotflowDivisionsReportingturns(createGetAnalyticsBotflowDivisionsReportingturnsRequest(botFlowId, after, pageSize, interval, actionId, sessionId, language, askActionResults));
   }
 
   /**
-   * Get Reporting Turns.
-   * Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+   * Get Reporting Turns (division aware).
+   * Returns the reporting turns for the specified flow, filtered by the clients divisions and grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
    * @param botFlowId ID of the bot flow. (required)
    * @param after The cursor that points to the ID of the last item in the list of entities that has been returned. (optional)
    * @param pageSize Max number of entities to return. Maximum of 250 (optional, default to 50)
@@ -664,6 +570,114 @@ public class AnalyticsApi {
    * @param askActionResults Optional case-insensitive comma separated list of ask action results to filter the reporting turns. (optional)
    * @return ReportingTurnsResponse
    * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ReportingTurnsResponse> getAnalyticsBotflowDivisionsReportingturnsWithHttpInfo(String botFlowId, String after, String pageSize, String interval, String actionId, String sessionId, String language, String askActionResults) throws IOException {
+    return getAnalyticsBotflowDivisionsReportingturns(createGetAnalyticsBotflowDivisionsReportingturnsRequest(botFlowId, after, pageSize, interval, actionId, sessionId, language, askActionResults).withHttpInfo());
+  }
+
+  private GetAnalyticsBotflowDivisionsReportingturnsRequest createGetAnalyticsBotflowDivisionsReportingturnsRequest(String botFlowId, String after, String pageSize, String interval, String actionId, String sessionId, String language, String askActionResults) {
+    return GetAnalyticsBotflowDivisionsReportingturnsRequest.builder()
+            .withBotFlowId(botFlowId)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .withInterval(interval)
+
+            .withActionId(actionId)
+
+            .withSessionId(sessionId)
+
+            .withLanguage(language)
+
+            .withAskActionResults(askActionResults)
+
+            .build();
+  }
+
+  /**
+   * Get Reporting Turns (division aware).
+   * Returns the reporting turns for the specified flow, filtered by the clients divisions and grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+   * @param request The request object
+   * @return ReportingTurnsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ReportingTurnsResponse getAnalyticsBotflowDivisionsReportingturns(GetAnalyticsBotflowDivisionsReportingturnsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ReportingTurnsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ReportingTurnsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Reporting Turns (division aware).
+   * Returns the reporting turns for the specified flow, filtered by the clients divisions and grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ReportingTurnsResponse> getAnalyticsBotflowDivisionsReportingturns(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ReportingTurnsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ReportingTurnsResponse> response = (ApiResponse<ReportingTurnsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ReportingTurnsResponse> response = (ApiResponse<ReportingTurnsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get Reporting Turns.
+   * Deprecated: Please use GET /analytics/botflows/{botFlowId}/divisions/reportingturns instead. Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+   * @param botFlowId ID of the bot flow. (required)
+   * @param after The cursor that points to the ID of the last item in the list of entities that has been returned. (optional)
+   * @param pageSize Max number of entities to return. Maximum of 250 (optional, default to 50)
+   * @param interval Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional, default to null)
+   * @param actionId Optional action ID to get the reporting turns associated to a particular flow action (optional)
+   * @param sessionId Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed. (optional)
+   * @param language Optional language code to get the reporting turns for a particular language (optional, default to null)
+   * @param askActionResults Optional case-insensitive comma separated list of ask action results to filter the reporting turns. (optional)
+   * @return ReportingTurnsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   * @deprecated
+   */
+  public ReportingTurnsResponse getAnalyticsBotflowReportingturns(String botFlowId, String after, String pageSize, String interval, String actionId, String sessionId, String language, String askActionResults) throws IOException, ApiException {
+    return  getAnalyticsBotflowReportingturns(createGetAnalyticsBotflowReportingturnsRequest(botFlowId, after, pageSize, interval, actionId, sessionId, language, askActionResults));
+  }
+
+  /**
+   * Get Reporting Turns.
+   * Deprecated: Please use GET /analytics/botflows/{botFlowId}/divisions/reportingturns instead. Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+   * @param botFlowId ID of the bot flow. (required)
+   * @param after The cursor that points to the ID of the last item in the list of entities that has been returned. (optional)
+   * @param pageSize Max number of entities to return. Maximum of 250 (optional, default to 50)
+   * @param interval Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional, default to null)
+   * @param actionId Optional action ID to get the reporting turns associated to a particular flow action (optional)
+   * @param sessionId Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed. (optional)
+   * @param language Optional language code to get the reporting turns for a particular language (optional, default to null)
+   * @param askActionResults Optional case-insensitive comma separated list of ask action results to filter the reporting turns. (optional)
+   * @return ReportingTurnsResponse
+   * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ReportingTurnsResponse> getAnalyticsBotflowReportingturnsWithHttpInfo(String botFlowId, String after, String pageSize, String interval, String actionId, String sessionId, String language, String askActionResults) throws IOException {
     return getAnalyticsBotflowReportingturns(createGetAnalyticsBotflowReportingturnsRequest(botFlowId, after, pageSize, interval, actionId, sessionId, language, askActionResults).withHttpInfo());
@@ -692,11 +706,12 @@ public class AnalyticsApi {
 
   /**
    * Get Reporting Turns.
-   * Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+   * Deprecated: Please use GET /analytics/botflows/{botFlowId}/divisions/reportingturns instead. Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
    * @param request The request object
    * @return ReportingTurnsResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ReportingTurnsResponse getAnalyticsBotflowReportingturns(GetAnalyticsBotflowReportingturnsRequest request) throws IOException, ApiException {
     try {
@@ -711,10 +726,11 @@ public class AnalyticsApi {
 
   /**
    * Get Reporting Turns.
-   * Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+   * Deprecated: Please use GET /analytics/botflows/{botFlowId}/divisions/reportingturns instead. Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ReportingTurnsResponse> getAnalyticsBotflowReportingturns(ApiRequest<Void> request) throws IOException {
     try {
@@ -2809,654 +2825,6 @@ public class AnalyticsApi {
   }
 
   /**
-   * Get list of reporting metadata.
-   * 
-   * @param pageNumber Page number (optional, default to 1)
-   * @param pageSize Page size (optional, default to 25)
-   * @param locale Locale (optional)
-   * @return ReportMetaDataEntityListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public ReportMetaDataEntityListing getAnalyticsReportingMetadata(Integer pageNumber, Integer pageSize, String locale) throws IOException, ApiException {
-    return  getAnalyticsReportingMetadata(createGetAnalyticsReportingMetadataRequest(pageNumber, pageSize, locale));
-  }
-
-  /**
-   * Get list of reporting metadata.
-   * 
-   * @param pageNumber Page number (optional, default to 1)
-   * @param pageSize Page size (optional, default to 25)
-   * @param locale Locale (optional)
-   * @return ReportMetaDataEntityListing
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<ReportMetaDataEntityListing> getAnalyticsReportingMetadataWithHttpInfo(Integer pageNumber, Integer pageSize, String locale) throws IOException {
-    return getAnalyticsReportingMetadata(createGetAnalyticsReportingMetadataRequest(pageNumber, pageSize, locale).withHttpInfo());
-  }
-
-  private GetAnalyticsReportingMetadataRequest createGetAnalyticsReportingMetadataRequest(Integer pageNumber, Integer pageSize, String locale) {
-    return GetAnalyticsReportingMetadataRequest.builder()
-            .withPageNumber(pageNumber)
-
-            .withPageSize(pageSize)
-
-            .withLocale(locale)
-
-            .build();
-  }
-
-  /**
-   * Get list of reporting metadata.
-   * 
-   * @param request The request object
-   * @return ReportMetaDataEntityListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public ReportMetaDataEntityListing getAnalyticsReportingMetadata(GetAnalyticsReportingMetadataRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<ReportMetaDataEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ReportMetaDataEntityListing>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get list of reporting metadata.
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<ReportMetaDataEntityListing> getAnalyticsReportingMetadata(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<ReportMetaDataEntityListing>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<ReportMetaDataEntityListing> response = (ApiResponse<ReportMetaDataEntityListing>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<ReportMetaDataEntityListing> response = (ApiResponse<ReportMetaDataEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Get a reporting metadata.
-   * 
-   * @param reportId Report ID (required)
-   * @param locale Locale (optional)
-   * @return ReportMetaData
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public ReportMetaData getAnalyticsReportingReportIdMetadata(String reportId, String locale) throws IOException, ApiException {
-    return  getAnalyticsReportingReportIdMetadata(createGetAnalyticsReportingReportIdMetadataRequest(reportId, locale));
-  }
-
-  /**
-   * Get a reporting metadata.
-   * 
-   * @param reportId Report ID (required)
-   * @param locale Locale (optional)
-   * @return ReportMetaData
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<ReportMetaData> getAnalyticsReportingReportIdMetadataWithHttpInfo(String reportId, String locale) throws IOException {
-    return getAnalyticsReportingReportIdMetadata(createGetAnalyticsReportingReportIdMetadataRequest(reportId, locale).withHttpInfo());
-  }
-
-  private GetAnalyticsReportingReportIdMetadataRequest createGetAnalyticsReportingReportIdMetadataRequest(String reportId, String locale) {
-    return GetAnalyticsReportingReportIdMetadataRequest.builder()
-            .withReportId(reportId)
-
-            .withLocale(locale)
-
-            .build();
-  }
-
-  /**
-   * Get a reporting metadata.
-   * 
-   * @param request The request object
-   * @return ReportMetaData
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public ReportMetaData getAnalyticsReportingReportIdMetadata(GetAnalyticsReportingReportIdMetadataRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<ReportMetaData> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ReportMetaData>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get a reporting metadata.
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<ReportMetaData> getAnalyticsReportingReportIdMetadata(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<ReportMetaData>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<ReportMetaData> response = (ApiResponse<ReportMetaData>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<ReportMetaData> response = (ApiResponse<ReportMetaData>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Get a list of report formats
-   * Get a list of report formats.
-   * @return List<String>
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public List<String> getAnalyticsReportingReportformats() throws IOException, ApiException {
-    return  getAnalyticsReportingReportformats(createGetAnalyticsReportingReportformatsRequest());
-  }
-
-  /**
-   * Get a list of report formats
-   * Get a list of report formats.
-   * @return List<String>
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<List<String>> getAnalyticsReportingReportformatsWithHttpInfo() throws IOException {
-    return getAnalyticsReportingReportformats(createGetAnalyticsReportingReportformatsRequest().withHttpInfo());
-  }
-
-  private GetAnalyticsReportingReportformatsRequest createGetAnalyticsReportingReportformatsRequest() {
-    return GetAnalyticsReportingReportformatsRequest.builder()
-            .build();
-  }
-
-  /**
-   * Get a list of report formats
-   * Get a list of report formats.
-   * @param request The request object
-   * @return List<String>
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public List<String> getAnalyticsReportingReportformats(GetAnalyticsReportingReportformatsRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<List<String>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<String>>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get a list of report formats
-   * Get a list of report formats.
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<List<String>> getAnalyticsReportingReportformats(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<List<String>>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<List<String>> response = (ApiResponse<List<String>>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<List<String>> response = (ApiResponse<List<String>>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Get a scheduled report job.
-   * 
-   * @param scheduleId Schedule ID (required)
-   * @return ReportSchedule
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public ReportSchedule getAnalyticsReportingSchedule(String scheduleId) throws IOException, ApiException {
-    return  getAnalyticsReportingSchedule(createGetAnalyticsReportingScheduleRequest(scheduleId));
-  }
-
-  /**
-   * Get a scheduled report job.
-   * 
-   * @param scheduleId Schedule ID (required)
-   * @return ReportSchedule
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<ReportSchedule> getAnalyticsReportingScheduleWithHttpInfo(String scheduleId) throws IOException {
-    return getAnalyticsReportingSchedule(createGetAnalyticsReportingScheduleRequest(scheduleId).withHttpInfo());
-  }
-
-  private GetAnalyticsReportingScheduleRequest createGetAnalyticsReportingScheduleRequest(String scheduleId) {
-    return GetAnalyticsReportingScheduleRequest.builder()
-            .withScheduleId(scheduleId)
-
-            .build();
-  }
-
-  /**
-   * Get a scheduled report job.
-   * 
-   * @param request The request object
-   * @return ReportSchedule
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public ReportSchedule getAnalyticsReportingSchedule(GetAnalyticsReportingScheduleRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<ReportSchedule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ReportSchedule>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get a scheduled report job.
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<ReportSchedule> getAnalyticsReportingSchedule(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<ReportSchedule>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<ReportSchedule> response = (ApiResponse<ReportSchedule>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<ReportSchedule> response = (ApiResponse<ReportSchedule>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Get list of completed scheduled report jobs.
-   * 
-   * @param scheduleId Schedule ID (required)
-   * @param pageNumber  (optional, default to 1)
-   * @param pageSize  (optional, default to 25)
-   * @return ReportRunEntryEntityDomainListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public ReportRunEntryEntityDomainListing getAnalyticsReportingScheduleHistory(String scheduleId, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
-    return  getAnalyticsReportingScheduleHistory(createGetAnalyticsReportingScheduleHistoryRequest(scheduleId, pageNumber, pageSize));
-  }
-
-  /**
-   * Get list of completed scheduled report jobs.
-   * 
-   * @param scheduleId Schedule ID (required)
-   * @param pageNumber  (optional, default to 1)
-   * @param pageSize  (optional, default to 25)
-   * @return ReportRunEntryEntityDomainListing
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<ReportRunEntryEntityDomainListing> getAnalyticsReportingScheduleHistoryWithHttpInfo(String scheduleId, Integer pageNumber, Integer pageSize) throws IOException {
-    return getAnalyticsReportingScheduleHistory(createGetAnalyticsReportingScheduleHistoryRequest(scheduleId, pageNumber, pageSize).withHttpInfo());
-  }
-
-  private GetAnalyticsReportingScheduleHistoryRequest createGetAnalyticsReportingScheduleHistoryRequest(String scheduleId, Integer pageNumber, Integer pageSize) {
-    return GetAnalyticsReportingScheduleHistoryRequest.builder()
-            .withScheduleId(scheduleId)
-
-            .withPageNumber(pageNumber)
-
-            .withPageSize(pageSize)
-
-            .build();
-  }
-
-  /**
-   * Get list of completed scheduled report jobs.
-   * 
-   * @param request The request object
-   * @return ReportRunEntryEntityDomainListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public ReportRunEntryEntityDomainListing getAnalyticsReportingScheduleHistory(GetAnalyticsReportingScheduleHistoryRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<ReportRunEntryEntityDomainListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ReportRunEntryEntityDomainListing>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get list of completed scheduled report jobs.
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<ReportRunEntryEntityDomainListing> getAnalyticsReportingScheduleHistory(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<ReportRunEntryEntityDomainListing>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<ReportRunEntryEntityDomainListing> response = (ApiResponse<ReportRunEntryEntityDomainListing>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<ReportRunEntryEntityDomainListing> response = (ApiResponse<ReportRunEntryEntityDomainListing>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Get most recently completed scheduled report job.
-   * 
-   * @param scheduleId Schedule ID (required)
-   * @return ReportRunEntry
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public ReportRunEntry getAnalyticsReportingScheduleHistoryLatest(String scheduleId) throws IOException, ApiException {
-    return  getAnalyticsReportingScheduleHistoryLatest(createGetAnalyticsReportingScheduleHistoryLatestRequest(scheduleId));
-  }
-
-  /**
-   * Get most recently completed scheduled report job.
-   * 
-   * @param scheduleId Schedule ID (required)
-   * @return ReportRunEntry
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<ReportRunEntry> getAnalyticsReportingScheduleHistoryLatestWithHttpInfo(String scheduleId) throws IOException {
-    return getAnalyticsReportingScheduleHistoryLatest(createGetAnalyticsReportingScheduleHistoryLatestRequest(scheduleId).withHttpInfo());
-  }
-
-  private GetAnalyticsReportingScheduleHistoryLatestRequest createGetAnalyticsReportingScheduleHistoryLatestRequest(String scheduleId) {
-    return GetAnalyticsReportingScheduleHistoryLatestRequest.builder()
-            .withScheduleId(scheduleId)
-
-            .build();
-  }
-
-  /**
-   * Get most recently completed scheduled report job.
-   * 
-   * @param request The request object
-   * @return ReportRunEntry
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public ReportRunEntry getAnalyticsReportingScheduleHistoryLatest(GetAnalyticsReportingScheduleHistoryLatestRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<ReportRunEntry> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ReportRunEntry>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get most recently completed scheduled report job.
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<ReportRunEntry> getAnalyticsReportingScheduleHistoryLatest(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<ReportRunEntry>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<ReportRunEntry> response = (ApiResponse<ReportRunEntry>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<ReportRunEntry> response = (ApiResponse<ReportRunEntry>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * A completed scheduled report job
-   * A completed scheduled report job.
-   * @param runId Run ID (required)
-   * @param scheduleId Schedule ID (required)
-   * @return ReportRunEntry
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public ReportRunEntry getAnalyticsReportingScheduleHistoryRunId(String runId, String scheduleId) throws IOException, ApiException {
-    return  getAnalyticsReportingScheduleHistoryRunId(createGetAnalyticsReportingScheduleHistoryRunIdRequest(runId, scheduleId));
-  }
-
-  /**
-   * A completed scheduled report job
-   * A completed scheduled report job.
-   * @param runId Run ID (required)
-   * @param scheduleId Schedule ID (required)
-   * @return ReportRunEntry
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<ReportRunEntry> getAnalyticsReportingScheduleHistoryRunIdWithHttpInfo(String runId, String scheduleId) throws IOException {
-    return getAnalyticsReportingScheduleHistoryRunId(createGetAnalyticsReportingScheduleHistoryRunIdRequest(runId, scheduleId).withHttpInfo());
-  }
-
-  private GetAnalyticsReportingScheduleHistoryRunIdRequest createGetAnalyticsReportingScheduleHistoryRunIdRequest(String runId, String scheduleId) {
-    return GetAnalyticsReportingScheduleHistoryRunIdRequest.builder()
-            .withRunId(runId)
-
-            .withScheduleId(scheduleId)
-
-            .build();
-  }
-
-  /**
-   * A completed scheduled report job
-   * A completed scheduled report job.
-   * @param request The request object
-   * @return ReportRunEntry
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public ReportRunEntry getAnalyticsReportingScheduleHistoryRunId(GetAnalyticsReportingScheduleHistoryRunIdRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<ReportRunEntry> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ReportRunEntry>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * A completed scheduled report job
-   * A completed scheduled report job.
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<ReportRunEntry> getAnalyticsReportingScheduleHistoryRunId(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<ReportRunEntry>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<ReportRunEntry> response = (ApiResponse<ReportRunEntry>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<ReportRunEntry> response = (ApiResponse<ReportRunEntry>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Get a list of scheduled report jobs
-   * Get a list of scheduled report jobs.
-   * @param pageNumber Page number (optional, default to 1)
-   * @param pageSize Page size (optional, default to 25)
-   * @return ReportScheduleEntityListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public ReportScheduleEntityListing getAnalyticsReportingSchedules(Integer pageNumber, Integer pageSize) throws IOException, ApiException {
-    return  getAnalyticsReportingSchedules(createGetAnalyticsReportingSchedulesRequest(pageNumber, pageSize));
-  }
-
-  /**
-   * Get a list of scheduled report jobs
-   * Get a list of scheduled report jobs.
-   * @param pageNumber Page number (optional, default to 1)
-   * @param pageSize Page size (optional, default to 25)
-   * @return ReportScheduleEntityListing
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<ReportScheduleEntityListing> getAnalyticsReportingSchedulesWithHttpInfo(Integer pageNumber, Integer pageSize) throws IOException {
-    return getAnalyticsReportingSchedules(createGetAnalyticsReportingSchedulesRequest(pageNumber, pageSize).withHttpInfo());
-  }
-
-  private GetAnalyticsReportingSchedulesRequest createGetAnalyticsReportingSchedulesRequest(Integer pageNumber, Integer pageSize) {
-    return GetAnalyticsReportingSchedulesRequest.builder()
-            .withPageNumber(pageNumber)
-
-            .withPageSize(pageSize)
-
-            .build();
-  }
-
-  /**
-   * Get a list of scheduled report jobs
-   * Get a list of scheduled report jobs.
-   * @param request The request object
-   * @return ReportScheduleEntityListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public ReportScheduleEntityListing getAnalyticsReportingSchedules(GetAnalyticsReportingSchedulesRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<ReportScheduleEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ReportScheduleEntityListing>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get a list of scheduled report jobs
-   * Get a list of scheduled report jobs.
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<ReportScheduleEntityListing> getAnalyticsReportingSchedules(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<ReportScheduleEntityListing>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<ReportScheduleEntityListing> response = (ApiResponse<ReportScheduleEntityListing>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<ReportScheduleEntityListing> response = (ApiResponse<ReportScheduleEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
    * Get AnalyticsReportingSettings for an organization
    * 
    * @return AnalyticsReportingSettings
@@ -3539,12 +2907,13 @@ public class AnalyticsApi {
    * @param pageSize  (optional, default to 50)
    * @param publicOnly If true, retrieve only public dashboards (optional)
    * @param favoriteOnly If true, retrieve only favorite dashboards (optional)
+   * @param name retrieve dashboards that match with given name (optional)
    * @return DashboardConfigurationListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DashboardConfigurationListing getAnalyticsReportingSettingsUserDashboards(String userId, String sortBy, Integer pageNumber, Integer pageSize, Boolean publicOnly, Boolean favoriteOnly) throws IOException, ApiException {
-    return  getAnalyticsReportingSettingsUserDashboards(createGetAnalyticsReportingSettingsUserDashboardsRequest(userId, sortBy, pageNumber, pageSize, publicOnly, favoriteOnly));
+  public DashboardConfigurationListing getAnalyticsReportingSettingsUserDashboards(String userId, String sortBy, Integer pageNumber, Integer pageSize, Boolean publicOnly, Boolean favoriteOnly, String name) throws IOException, ApiException {
+    return  getAnalyticsReportingSettingsUserDashboards(createGetAnalyticsReportingSettingsUserDashboardsRequest(userId, sortBy, pageNumber, pageSize, publicOnly, favoriteOnly, name));
   }
 
   /**
@@ -3556,14 +2925,15 @@ public class AnalyticsApi {
    * @param pageSize  (optional, default to 50)
    * @param publicOnly If true, retrieve only public dashboards (optional)
    * @param favoriteOnly If true, retrieve only favorite dashboards (optional)
+   * @param name retrieve dashboards that match with given name (optional)
    * @return DashboardConfigurationListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DashboardConfigurationListing> getAnalyticsReportingSettingsUserDashboardsWithHttpInfo(String userId, String sortBy, Integer pageNumber, Integer pageSize, Boolean publicOnly, Boolean favoriteOnly) throws IOException {
-    return getAnalyticsReportingSettingsUserDashboards(createGetAnalyticsReportingSettingsUserDashboardsRequest(userId, sortBy, pageNumber, pageSize, publicOnly, favoriteOnly).withHttpInfo());
+  public ApiResponse<DashboardConfigurationListing> getAnalyticsReportingSettingsUserDashboardsWithHttpInfo(String userId, String sortBy, Integer pageNumber, Integer pageSize, Boolean publicOnly, Boolean favoriteOnly, String name) throws IOException {
+    return getAnalyticsReportingSettingsUserDashboards(createGetAnalyticsReportingSettingsUserDashboardsRequest(userId, sortBy, pageNumber, pageSize, publicOnly, favoriteOnly, name).withHttpInfo());
   }
 
-  private GetAnalyticsReportingSettingsUserDashboardsRequest createGetAnalyticsReportingSettingsUserDashboardsRequest(String userId, String sortBy, Integer pageNumber, Integer pageSize, Boolean publicOnly, Boolean favoriteOnly) {
+  private GetAnalyticsReportingSettingsUserDashboardsRequest createGetAnalyticsReportingSettingsUserDashboardsRequest(String userId, String sortBy, Integer pageNumber, Integer pageSize, Boolean publicOnly, Boolean favoriteOnly, String name) {
     return GetAnalyticsReportingSettingsUserDashboardsRequest.builder()
             .withUserId(userId)
 
@@ -3576,6 +2946,8 @@ public class AnalyticsApi {
             .withPublicOnly(publicOnly)
 
             .withFavoriteOnly(favoriteOnly)
+
+            .withName(name)
 
             .build();
   }
@@ -3624,80 +2996,6 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DashboardConfigurationListing> response = (ApiResponse<DashboardConfigurationListing>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Get a list of report time periods.
-   * 
-   * @return List<String>
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public List<String> getAnalyticsReportingTimeperiods() throws IOException, ApiException {
-    return  getAnalyticsReportingTimeperiods(createGetAnalyticsReportingTimeperiodsRequest());
-  }
-
-  /**
-   * Get a list of report time periods.
-   * 
-   * @return List<String>
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<List<String>> getAnalyticsReportingTimeperiodsWithHttpInfo() throws IOException {
-    return getAnalyticsReportingTimeperiods(createGetAnalyticsReportingTimeperiodsRequest().withHttpInfo());
-  }
-
-  private GetAnalyticsReportingTimeperiodsRequest createGetAnalyticsReportingTimeperiodsRequest() {
-    return GetAnalyticsReportingTimeperiodsRequest.builder()
-            .build();
-  }
-
-  /**
-   * Get a list of report time periods.
-   * 
-   * @param request The request object
-   * @return List<String>
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public List<String> getAnalyticsReportingTimeperiods(GetAnalyticsReportingTimeperiodsRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<List<String>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<String>>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get a list of report time periods.
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<List<String>> getAnalyticsReportingTimeperiods(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<List<String>>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<List<String>> response = (ApiResponse<List<String>>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<List<String>> response = (ApiResponse<List<String>>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5263,7 +4561,6 @@ public class AnalyticsApi {
   /**
    * Query for conversation activity observations
    * 
-   * postAnalyticsConversationsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @param pageSize The desired page size (optional)
    * @param pageNumber The desired page number (optional)
@@ -5278,7 +4575,6 @@ public class AnalyticsApi {
   /**
    * Query for conversation activity observations
    * 
-   * postAnalyticsConversationsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @param pageSize The desired page size (optional)
    * @param pageNumber The desired page number (optional)
@@ -5303,7 +4599,6 @@ public class AnalyticsApi {
   /**
    * Query for conversation activity observations
    * 
-   * postAnalyticsConversationsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ConversationActivityResponse
    * @throws ApiException if the request fails on the server
@@ -5323,7 +4618,6 @@ public class AnalyticsApi {
   /**
    * Query for conversation activity observations
    * 
-   * postAnalyticsConversationsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6067,7 +5361,6 @@ public class AnalyticsApi {
   /**
    * Query for flow activity observations
    * 
-   * postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @param pageSize The desired page size (optional)
    * @param pageNumber The desired page number (optional)
@@ -6082,7 +5375,6 @@ public class AnalyticsApi {
   /**
    * Query for flow activity observations
    * 
-   * postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @param pageSize The desired page size (optional)
    * @param pageNumber The desired page number (optional)
@@ -6107,7 +5399,6 @@ public class AnalyticsApi {
   /**
    * Query for flow activity observations
    * 
-   * postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FlowActivityResponse
    * @throws ApiException if the request fails on the server
@@ -6127,7 +5418,6 @@ public class AnalyticsApi {
   /**
    * Query for flow activity observations
    * 
-   * postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -7022,170 +6312,6 @@ public class AnalyticsApi {
   }
 
   /**
-   * Place a scheduled report immediately into the reporting queue
-   * This route is deprecated, please use POST:api/v2/analytics/reporting/exports/{exportId}/execute instead
-   * @param scheduleId Schedule ID (required)
-   * @return RunNowResponse
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public RunNowResponse postAnalyticsReportingScheduleRunreport(String scheduleId) throws IOException, ApiException {
-    return  postAnalyticsReportingScheduleRunreport(createPostAnalyticsReportingScheduleRunreportRequest(scheduleId));
-  }
-
-  /**
-   * Place a scheduled report immediately into the reporting queue
-   * This route is deprecated, please use POST:api/v2/analytics/reporting/exports/{exportId}/execute instead
-   * @param scheduleId Schedule ID (required)
-   * @return RunNowResponse
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<RunNowResponse> postAnalyticsReportingScheduleRunreportWithHttpInfo(String scheduleId) throws IOException {
-    return postAnalyticsReportingScheduleRunreport(createPostAnalyticsReportingScheduleRunreportRequest(scheduleId).withHttpInfo());
-  }
-
-  private PostAnalyticsReportingScheduleRunreportRequest createPostAnalyticsReportingScheduleRunreportRequest(String scheduleId) {
-    return PostAnalyticsReportingScheduleRunreportRequest.builder()
-            .withScheduleId(scheduleId)
-
-            .build();
-  }
-
-  /**
-   * Place a scheduled report immediately into the reporting queue
-   * This route is deprecated, please use POST:api/v2/analytics/reporting/exports/{exportId}/execute instead
-   * @param request The request object
-   * @return RunNowResponse
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public RunNowResponse postAnalyticsReportingScheduleRunreport(PostAnalyticsReportingScheduleRunreportRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<RunNowResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RunNowResponse>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Place a scheduled report immediately into the reporting queue
-   * This route is deprecated, please use POST:api/v2/analytics/reporting/exports/{exportId}/execute instead
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<RunNowResponse> postAnalyticsReportingScheduleRunreport(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<RunNowResponse>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<RunNowResponse> response = (ApiResponse<RunNowResponse>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<RunNowResponse> response = (ApiResponse<RunNowResponse>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Create a scheduled report job
-   * This route is deprecated, please use POST:api/v2/analytics/reporting/exports instead
-   * @param body ReportSchedule (required)
-   * @return ReportSchedule
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ReportSchedule postAnalyticsReportingSchedules(ReportSchedule body) throws IOException, ApiException {
-    return  postAnalyticsReportingSchedules(createPostAnalyticsReportingSchedulesRequest(body));
-  }
-
-  /**
-   * Create a scheduled report job
-   * This route is deprecated, please use POST:api/v2/analytics/reporting/exports instead
-   * @param body ReportSchedule (required)
-   * @return ReportSchedule
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<ReportSchedule> postAnalyticsReportingSchedulesWithHttpInfo(ReportSchedule body) throws IOException {
-    return postAnalyticsReportingSchedules(createPostAnalyticsReportingSchedulesRequest(body).withHttpInfo());
-  }
-
-  private PostAnalyticsReportingSchedulesRequest createPostAnalyticsReportingSchedulesRequest(ReportSchedule body) {
-    return PostAnalyticsReportingSchedulesRequest.builder()
-            .withBody(body)
-
-            .build();
-  }
-
-  /**
-   * Create a scheduled report job
-   * This route is deprecated, please use POST:api/v2/analytics/reporting/exports instead
-   * @param request The request object
-   * @return ReportSchedule
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ReportSchedule postAnalyticsReportingSchedules(PostAnalyticsReportingSchedulesRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<ReportSchedule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ReportSchedule>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Create a scheduled report job
-   * This route is deprecated, please use POST:api/v2/analytics/reporting/exports instead
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<ReportSchedule> postAnalyticsReportingSchedules(ApiRequest<ReportSchedule> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<ReportSchedule>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<ReportSchedule> response = (ApiResponse<ReportSchedule>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<ReportSchedule> response = (ApiResponse<ReportSchedule>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
    * Bulk remove dashboard configurations
    * 
    * @param body  (required)
@@ -7423,7 +6549,6 @@ public class AnalyticsApi {
   /**
    * Query for user activity observations
    * 
-   * postAnalyticsRoutingActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @param pageSize The desired page size (optional)
    * @param pageNumber The desired page number (optional)
@@ -7438,7 +6563,6 @@ public class AnalyticsApi {
   /**
    * Query for user activity observations
    * 
-   * postAnalyticsRoutingActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @param pageSize The desired page size (optional)
    * @param pageNumber The desired page number (optional)
@@ -7463,7 +6587,6 @@ public class AnalyticsApi {
   /**
    * Query for user activity observations
    * 
-   * postAnalyticsRoutingActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return RoutingActivityResponse
    * @throws ApiException if the request fails on the server
@@ -7483,7 +6606,6 @@ public class AnalyticsApi {
   /**
    * Query for user activity observations
    * 
-   * postAnalyticsRoutingActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -7837,7 +6959,6 @@ public class AnalyticsApi {
   /**
    * Query for team activity observations
    * 
-   * postAnalyticsTeamsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @param pageSize The desired page size (optional)
    * @param pageNumber The desired page number (optional)
@@ -7852,7 +6973,6 @@ public class AnalyticsApi {
   /**
    * Query for team activity observations
    * 
-   * postAnalyticsTeamsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @param pageSize The desired page size (optional)
    * @param pageNumber The desired page number (optional)
@@ -7877,7 +6997,6 @@ public class AnalyticsApi {
   /**
    * Query for team activity observations
    * 
-   * postAnalyticsTeamsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return TeamActivityResponse
    * @throws ApiException if the request fails on the server
@@ -7897,7 +7016,6 @@ public class AnalyticsApi {
   /**
    * Query for team activity observations
    * 
-   * postAnalyticsTeamsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -8087,7 +7205,6 @@ public class AnalyticsApi {
   /**
    * Query for user activity observations
    * 
-   * postAnalyticsUsersActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @param pageSize The desired page size (optional)
    * @param pageNumber The desired page number (optional)
@@ -8102,7 +7219,6 @@ public class AnalyticsApi {
   /**
    * Query for user activity observations
    * 
-   * postAnalyticsUsersActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @param pageSize The desired page size (optional)
    * @param pageNumber The desired page number (optional)
@@ -8127,7 +7243,6 @@ public class AnalyticsApi {
   /**
    * Query for user activity observations
    * 
-   * postAnalyticsUsersActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return UserActivityResponse
    * @throws ApiException if the request fails on the server
@@ -8147,7 +7262,6 @@ public class AnalyticsApi {
   /**
    * Query for user activity observations
    * 
-   * postAnalyticsUsersActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -8642,92 +7756,6 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AnalyticsDataRetentionResponse> response = (ApiResponse<AnalyticsDataRetentionResponse>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Update a scheduled report job.
-   * This route is deprecated, please use PATCH:api/v2/analytics/reporting/exports/{exportId}/schedule instead
-   * @param scheduleId Schedule ID (required)
-   * @param body ReportSchedule (required)
-   * @return ReportSchedule
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ReportSchedule putAnalyticsReportingSchedule(String scheduleId, ReportSchedule body) throws IOException, ApiException {
-    return  putAnalyticsReportingSchedule(createPutAnalyticsReportingScheduleRequest(scheduleId, body));
-  }
-
-  /**
-   * Update a scheduled report job.
-   * This route is deprecated, please use PATCH:api/v2/analytics/reporting/exports/{exportId}/schedule instead
-   * @param scheduleId Schedule ID (required)
-   * @param body ReportSchedule (required)
-   * @return ReportSchedule
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<ReportSchedule> putAnalyticsReportingScheduleWithHttpInfo(String scheduleId, ReportSchedule body) throws IOException {
-    return putAnalyticsReportingSchedule(createPutAnalyticsReportingScheduleRequest(scheduleId, body).withHttpInfo());
-  }
-
-  private PutAnalyticsReportingScheduleRequest createPutAnalyticsReportingScheduleRequest(String scheduleId, ReportSchedule body) {
-    return PutAnalyticsReportingScheduleRequest.builder()
-            .withScheduleId(scheduleId)
-
-            .withBody(body)
-
-            .build();
-  }
-
-  /**
-   * Update a scheduled report job.
-   * This route is deprecated, please use PATCH:api/v2/analytics/reporting/exports/{exportId}/schedule instead
-   * @param request The request object
-   * @return ReportSchedule
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ReportSchedule putAnalyticsReportingSchedule(PutAnalyticsReportingScheduleRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<ReportSchedule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ReportSchedule>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Update a scheduled report job.
-   * This route is deprecated, please use PATCH:api/v2/analytics/reporting/exports/{exportId}/schedule instead
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<ReportSchedule> putAnalyticsReportingSchedule(ApiRequest<ReportSchedule> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<ReportSchedule>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<ReportSchedule> response = (ApiResponse<ReportSchedule>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<ReportSchedule> response = (ApiResponse<ReportSchedule>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

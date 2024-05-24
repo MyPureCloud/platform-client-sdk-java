@@ -83,12 +83,6 @@ import com.mypurecloud.sdk.v2.model.QueueObservationQuery;
 import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.RateLimitAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.RateLimitAggregationQuery;
-import com.mypurecloud.sdk.v2.model.ReportMetaData;
-import com.mypurecloud.sdk.v2.model.ReportMetaDataEntityListing;
-import com.mypurecloud.sdk.v2.model.ReportRunEntry;
-import com.mypurecloud.sdk.v2.model.ReportRunEntryEntityDomainListing;
-import com.mypurecloud.sdk.v2.model.ReportSchedule;
-import com.mypurecloud.sdk.v2.model.ReportScheduleEntityListing;
 import com.mypurecloud.sdk.v2.model.ReportingExportJobListing;
 import com.mypurecloud.sdk.v2.model.ReportingExportJobRequest;
 import com.mypurecloud.sdk.v2.model.ReportingExportJobResponse;
@@ -98,7 +92,6 @@ import com.mypurecloud.sdk.v2.model.ResolutionAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.ResolutionAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.RoutingActivityQuery;
 import com.mypurecloud.sdk.v2.model.RoutingActivityResponse;
-import com.mypurecloud.sdk.v2.model.RunNowResponse;
 import com.mypurecloud.sdk.v2.model.SessionsResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregationQuery;
@@ -212,6 +205,20 @@ public class GetAnalyticsReportingSettingsUserDashboardsRequest {
 	    return this;
 	} 
 
+	private String name;
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public GetAnalyticsReportingSettingsUserDashboardsRequest withName(String name) {
+	    this.setName(name);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -256,6 +263,9 @@ public class GetAnalyticsReportingSettingsUserDashboardsRequest {
         
 
                 .withQueryParameters("favoriteOnly", "", favoriteOnly)
+        
+
+                .withQueryParameters("name", "", name)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -310,6 +320,11 @@ public class GetAnalyticsReportingSettingsUserDashboardsRequest {
 
 		public Builder withFavoriteOnly(Boolean favoriteOnly) {
 			request.setFavoriteOnly(favoriteOnly);
+			return this;
+		}
+
+		public Builder withName(String name) {
+			request.setName(name);
 			return this;
 		}
 

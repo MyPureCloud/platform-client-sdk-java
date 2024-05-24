@@ -163,6 +163,7 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
   public enum DisconnectTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ENDPOINT("endpoint"),
+    ENDPOINT_DND("endpoint.dnd"),
     CLIENT("client"),
     SYSTEM("system"),
     TIMEOUT("timeout"),
@@ -172,6 +173,7 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
     TRANSFER_FORWARD("transfer.forward"),
     TRANSFER_NOANSWER("transfer.noanswer"),
     TRANSFER_NOTAVAILABLE("transfer.notavailable"),
+    TRANSFER_DND("transfer.dnd"),
     TRANSPORT_FAILURE("transport.failure"),
     ERROR("error"),
     PEER("peer"),

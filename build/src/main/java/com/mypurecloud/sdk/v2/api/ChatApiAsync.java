@@ -48,11 +48,13 @@ import com.mypurecloud.sdk.v2.api.request.GetChatsUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsUserMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsUserMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetChatsUserSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetChatsUsersMeSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchChatsRoomRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchChatsRoomMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchChatsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchChatsUserMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchChatsUserSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchChatsUsersMeSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostChatsRoomMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostChatsRoomMessagesPinsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostChatsRoomParticipantRequest;
@@ -1362,6 +1364,83 @@ public class ChatApiAsync {
   }
 
   /**
+   * Get a user's chat settings
+   * 
+   * getChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ChatUserSettings> getChatsUsersMeSettingsAsync(GetChatsUsersMeSettingsRequest request, final AsyncApiCallback<ChatUserSettings> callback) {
+    try {
+      final SettableFuture<ChatUserSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ChatUserSettings>() {}, new AsyncApiCallback<ApiResponse<ChatUserSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<ChatUserSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a user's chat settings
+   * 
+   * getChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ChatUserSettings>> getChatsUsersMeSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ChatUserSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ChatUserSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ChatUserSettings>() {}, new AsyncApiCallback<ApiResponse<ChatUserSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<ChatUserSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ChatUserSettings> response = (ApiResponse<ChatUserSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ChatUserSettings> response = (ApiResponse<ChatUserSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Set properties for a room
    * 
    * @param request the request object
@@ -1705,6 +1784,83 @@ public class ChatApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ChatUserSettings>> patchChatsUserSettingsAsync(ApiRequest<ChatUserSettings> request, final AsyncApiCallback<ApiResponse<ChatUserSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ChatUserSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ChatUserSettings>() {}, new AsyncApiCallback<ApiResponse<ChatUserSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<ChatUserSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ChatUserSettings> response = (ApiResponse<ChatUserSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ChatUserSettings> response = (ApiResponse<ChatUserSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a user's chat settings
+   * 
+   * patchChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ChatUserSettings> patchChatsUsersMeSettingsAsync(PatchChatsUsersMeSettingsRequest request, final AsyncApiCallback<ChatUserSettings> callback) {
+    try {
+      final SettableFuture<ChatUserSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ChatUserSettings>() {}, new AsyncApiCallback<ApiResponse<ChatUserSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<ChatUserSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a user's chat settings
+   * 
+   * patchChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ChatUserSettings>> patchChatsUsersMeSettingsAsync(ApiRequest<ChatUserSettings> request, final AsyncApiCallback<ApiResponse<ChatUserSettings>> callback) {
     try {
       final SettableFuture<ApiResponse<ChatUserSettings>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

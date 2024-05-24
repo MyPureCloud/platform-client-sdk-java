@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Alteration;
+import com.mypurecloud.sdk.v2.model.NextOccurrenceDetails;
 import com.mypurecloud.sdk.v2.model.Pattern;
 import com.mypurecloud.sdk.v2.model.Range;
 import io.swagger.annotations.ApiModel;
@@ -33,6 +34,7 @@ public class Reoccurrence  implements Serializable {
   private Pattern pattern = null;
   private Range range = null;
   private List<Alteration> alterations = new ArrayList<Alteration>();
+  private NextOccurrenceDetails nextOccurrenceDetails = null;
 
   
   /**
@@ -160,6 +162,13 @@ public class Reoccurrence  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The next occurrence details for the next start and end occurrences for the recurrence")
+  @JsonProperty("nextOccurrenceDetails")
+  public NextOccurrenceDetails getNextOccurrenceDetails() {
+    return nextOccurrenceDetails;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -176,12 +185,13 @@ public class Reoccurrence  implements Serializable {
             Objects.equals(this.timeZone, reoccurrence.timeZone) &&
             Objects.equals(this.pattern, reoccurrence.pattern) &&
             Objects.equals(this.range, reoccurrence.range) &&
-            Objects.equals(this.alterations, reoccurrence.alterations);
+            Objects.equals(this.alterations, reoccurrence.alterations) &&
+            Objects.equals(this.nextOccurrenceDetails, reoccurrence.nextOccurrenceDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, start, end, timeZone, pattern, range, alterations);
+    return Objects.hash(id, start, end, timeZone, pattern, range, alterations, nextOccurrenceDetails);
   }
 
   @Override
@@ -196,6 +206,7 @@ public class Reoccurrence  implements Serializable {
     sb.append("    pattern: ").append(toIndentedString(pattern)).append("\n");
     sb.append("    range: ").append(toIndentedString(range)).append("\n");
     sb.append("    alterations: ").append(toIndentedString(alterations)).append("\n");
+    sb.append("    nextOccurrenceDetails: ").append(toIndentedString(nextOccurrenceDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }

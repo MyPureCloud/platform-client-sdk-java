@@ -13,6 +13,7 @@ title: WfmAgent
 | **workPlan** | <!----><!---->[**WorkPlanReference**](WorkPlanReference.html)<!----> | The work plan associated with this agent, if applicable |  [optional] |
 | **workPlanRotation** | <!----><!---->[**WorkPlanRotationReference**](WorkPlanRotationReference.html)<!----> | The work plan rotation associated with this agent, if applicable |  [optional] |
 | **acceptDirectShiftTrades** | <!----><!---->**Boolean**<!----> | Whether the agent accepts direct shift trade requests |  [optional] |
+| **workPlanOverrides** | <!----><!---->[**List&lt;WorkPlanOverride&gt;**](WorkPlanOverride.html)<!----> | The work plan overrides associated with this agent. Populate with expand=workPlanOverrides |  [optional] |
 | **queues** | <!----><!---->[**List&lt;QueueReference&gt;**](QueueReference.html)<!----> | List of queues to which this agent is capable of handling |  [optional] |
 | **languages** | <!----><!---->[**List&lt;LanguageReference&gt;**](LanguageReference.html)<!----> | The list of languages this agent is capable of handling |  [optional] |
 | **skills** | <!----><!---->[**List&lt;RoutingSkillReference&gt;**](RoutingSkillReference.html)<!----> | The list of skills this agent is capable of handling |  [optional] |

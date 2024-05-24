@@ -153,8 +153,6 @@ try {
 
 Query for flow activity observations
 
-postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/analytics/flows/activity/query  
 
 Requires ANY permissions: 

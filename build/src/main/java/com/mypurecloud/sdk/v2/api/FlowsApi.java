@@ -218,7 +218,6 @@ public class FlowsApi {
   /**
    * Query for flow activity observations
    * 
-   * postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @param pageSize The desired page size (optional)
    * @param pageNumber The desired page number (optional)
@@ -233,7 +232,6 @@ public class FlowsApi {
   /**
    * Query for flow activity observations
    * 
-   * postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @param pageSize The desired page size (optional)
    * @param pageNumber The desired page number (optional)
@@ -258,7 +256,6 @@ public class FlowsApi {
   /**
    * Query for flow activity observations
    * 
-   * postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FlowActivityResponse
    * @throws ApiException if the request fails on the server
@@ -278,7 +275,6 @@ public class FlowsApi {
   /**
    * Query for flow activity observations
    * 
-   * postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

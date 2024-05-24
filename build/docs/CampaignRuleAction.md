@@ -29,6 +29,11 @@ title: CampaignRuleAction
 | SETCAMPAIGNPRIORITY | &quot;setCampaignPriority&quot; | 
 | RECYCLECAMPAIGN | &quot;recycleCampaign&quot; | 
 | SETCAMPAIGNDIALINGMODE | &quot;setCampaignDialingMode&quot; | 
+| SETCAMPAIGNABANDONRATE | &quot;setCampaignAbandonRate&quot; | 
+| SETCAMPAIGNNUMBEROFLINES | &quot;setCampaignNumberOfLines&quot; | 
+| SETCAMPAIGNWEIGHT | &quot;setCampaignWeight&quot; | 
+| SETCAMPAIGNMAXCALLSPERAGENT | &quot;setCampaignMaxCallsPerAgent&quot; | 
+| CHANGECAMPAIGNQUEUE | &quot;changeCampaignQueue&quot; | 
 {: class="table table-striped"}
 
 

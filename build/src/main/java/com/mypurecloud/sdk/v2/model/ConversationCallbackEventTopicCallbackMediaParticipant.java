@@ -229,6 +229,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
   public enum DisconnectTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ENDPOINT("endpoint"),
+    ENDPOINT_DND("endpoint.dnd"),
     CLIENT("client"),
     SYSTEM("system"),
     TRANSFER("transfer"),
@@ -238,6 +239,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
     TRANSFER_FORWARD("transfer.forward"),
     TRANSFER_NOANSWER("transfer.noanswer"),
     TRANSFER_NOTAVAILABLE("transfer.notavailable"),
+    TRANSFER_DND("transfer.dnd"),
     TRANSPORT_FAILURE("transport.failure"),
     ERROR("error"),
     PEER("peer"),
@@ -341,6 +343,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
   private Date startAcwTime = null;
   private Date endAcwTime = null;
   private Date resumeTime = null;
+  private Date parkTime = null;
   private List<String> mediaRoles = new ArrayList<String>();
   private ConversationCallbackEventTopicQueueMediaSettings queueMediaSettings = null;
   private ConversationCallbackEventTopicDialerPreview outboundPreview = null;
@@ -968,6 +971,23 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
 
   /**
    **/
+  public ConversationCallbackEventTopicCallbackMediaParticipant parkTime(Date parkTime) {
+    this.parkTime = parkTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("parkTime")
+  public Date getParkTime() {
+    return parkTime;
+  }
+  public void setParkTime(Date parkTime) {
+    this.parkTime = parkTime;
+  }
+
+
+  /**
+   **/
   public ConversationCallbackEventTopicCallbackMediaParticipant mediaRoles(List<String> mediaRoles) {
     this.mediaRoles = mediaRoles;
     return this;
@@ -1199,6 +1219,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
             Objects.equals(this.startAcwTime, conversationCallbackEventTopicCallbackMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, conversationCallbackEventTopicCallbackMediaParticipant.endAcwTime) &&
             Objects.equals(this.resumeTime, conversationCallbackEventTopicCallbackMediaParticipant.resumeTime) &&
+            Objects.equals(this.parkTime, conversationCallbackEventTopicCallbackMediaParticipant.parkTime) &&
             Objects.equals(this.mediaRoles, conversationCallbackEventTopicCallbackMediaParticipant.mediaRoles) &&
             Objects.equals(this.queueMediaSettings, conversationCallbackEventTopicCallbackMediaParticipant.queueMediaSettings) &&
             Objects.equals(this.outboundPreview, conversationCallbackEventTopicCallbackMediaParticipant.outboundPreview) &&
@@ -1214,7 +1235,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, mediaRoles, queueMediaSettings, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, externalCampaign, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, externalCampaign, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
   }
 
   @Override
@@ -1258,6 +1279,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    resumeTime: ").append(toIndentedString(resumeTime)).append("\n");
+    sb.append("    parkTime: ").append(toIndentedString(parkTime)).append("\n");
     sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
     sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("    outboundPreview: ").append(toIndentedString(outboundPreview)).append("\n");

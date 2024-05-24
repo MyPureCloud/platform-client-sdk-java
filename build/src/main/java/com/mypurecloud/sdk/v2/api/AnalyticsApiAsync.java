@@ -76,12 +76,6 @@ import com.mypurecloud.sdk.v2.model.QueueObservationQuery;
 import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.RateLimitAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.RateLimitAggregationQuery;
-import com.mypurecloud.sdk.v2.model.ReportMetaData;
-import com.mypurecloud.sdk.v2.model.ReportMetaDataEntityListing;
-import com.mypurecloud.sdk.v2.model.ReportRunEntry;
-import com.mypurecloud.sdk.v2.model.ReportRunEntryEntityDomainListing;
-import com.mypurecloud.sdk.v2.model.ReportSchedule;
-import com.mypurecloud.sdk.v2.model.ReportScheduleEntityListing;
 import com.mypurecloud.sdk.v2.model.ReportingExportJobListing;
 import com.mypurecloud.sdk.v2.model.ReportingExportJobRequest;
 import com.mypurecloud.sdk.v2.model.ReportingExportJobResponse;
@@ -91,7 +85,6 @@ import com.mypurecloud.sdk.v2.model.ResolutionAsyncAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.ResolutionAsyncAggregationQuery;
 import com.mypurecloud.sdk.v2.model.RoutingActivityQuery;
 import com.mypurecloud.sdk.v2.model.RoutingActivityResponse;
-import com.mypurecloud.sdk.v2.model.RunNowResponse;
 import com.mypurecloud.sdk.v2.model.SessionsResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregationQuery;
@@ -121,10 +114,10 @@ import com.mypurecloud.sdk.v2.model.UserObservationQueryResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsConversationsDetailsJobRequest;
-import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsReportingScheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsUsersDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsActionsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsActionsAggregatesJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotflowDivisionsReportingturnsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotflowReportingturnsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotflowSessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotsAggregatesJobRequest;
@@ -151,17 +144,8 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingDashboardsUserReq
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingDashboardsUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingExportsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingExportsMetadataRequest;
-import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingMetadataRequest;
-import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingReportIdMetadataRequest;
-import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingReportformatsRequest;
-import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingScheduleRequest;
-import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingScheduleHistoryRequest;
-import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingScheduleHistoryLatestRequest;
-import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingScheduleHistoryRunIdRequest;
-import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingSettingsUserDashboardsRequest;
-import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingTimeperiodsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsResolutionsAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsResolutionsAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsSurveysAggregatesJobRequest;
@@ -203,8 +187,6 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsQueuesObservationsQueryRe
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsRatelimitsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingDashboardsUsersBulkRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingExportsRequest;
-import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingScheduleRunreportRequest;
-import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingSettingsDashboardsBulkRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingSettingsDashboardsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsResolutionsAggregatesJobsRequest;
@@ -223,7 +205,6 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersDetailsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersDetailsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersObservationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAnalyticsDataretentionSettingsRequest;
-import com.mypurecloud.sdk.v2.api.request.PutAnalyticsReportingScheduleRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -285,81 +266,6 @@ public class AnalyticsApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteAnalyticsConversationsDetailsJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
-    try {
-      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
-        @Override
-        public void onCompleted(ApiResponse<Void> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Delete a scheduled report job.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<Void> deleteAnalyticsReportingScheduleAsync(DeleteAnalyticsReportingScheduleRequest request, final AsyncApiCallback<Void> callback) {
-    try {
-      final SettableFuture<Void> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
-        @Override
-        public void onCompleted(ApiResponse<Void> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Delete a scheduled report job.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<Void>> deleteAnalyticsReportingScheduleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -623,11 +529,87 @@ public class AnalyticsApiAsync {
   }
 
   /**
-   * Get Reporting Turns.
-   * Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+   * Get Reporting Turns (division aware).
+   * Returns the reporting turns for the specified flow, filtered by the clients divisions and grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   */
+  public Future<ReportingTurnsResponse> getAnalyticsBotflowDivisionsReportingturnsAsync(GetAnalyticsBotflowDivisionsReportingturnsRequest request, final AsyncApiCallback<ReportingTurnsResponse> callback) {
+    try {
+      final SettableFuture<ReportingTurnsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ReportingTurnsResponse>() {}, new AsyncApiCallback<ApiResponse<ReportingTurnsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ReportingTurnsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Reporting Turns (division aware).
+   * Returns the reporting turns for the specified flow, filtered by the clients divisions and grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ReportingTurnsResponse>> getAnalyticsBotflowDivisionsReportingturnsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ReportingTurnsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ReportingTurnsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ReportingTurnsResponse>() {}, new AsyncApiCallback<ApiResponse<ReportingTurnsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ReportingTurnsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ReportingTurnsResponse> response = (ApiResponse<ReportingTurnsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ReportingTurnsResponse> response = (ApiResponse<ReportingTurnsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Reporting Turns.
+   * Deprecated: Please use GET /analytics/botflows/{botFlowId}/divisions/reportingturns instead. Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ReportingTurnsResponse> getAnalyticsBotflowReportingturnsAsync(GetAnalyticsBotflowReportingturnsRequest request, final AsyncApiCallback<ReportingTurnsResponse> callback) {
     try {
@@ -658,10 +640,11 @@ public class AnalyticsApiAsync {
 
   /**
    * Get Reporting Turns.
-   * Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+   * Deprecated: Please use GET /analytics/botflows/{botFlowId}/divisions/reportingturns instead. Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<ReportingTurnsResponse>> getAnalyticsBotflowReportingturnsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ReportingTurnsResponse>> callback) {
     try {
@@ -2601,606 +2584,6 @@ public class AnalyticsApiAsync {
   }
 
   /**
-   * Get list of reporting metadata.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ReportMetaDataEntityListing> getAnalyticsReportingMetadataAsync(GetAnalyticsReportingMetadataRequest request, final AsyncApiCallback<ReportMetaDataEntityListing> callback) {
-    try {
-      final SettableFuture<ReportMetaDataEntityListing> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ReportMetaDataEntityListing>() {}, new AsyncApiCallback<ApiResponse<ReportMetaDataEntityListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<ReportMetaDataEntityListing> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get list of reporting metadata.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<ReportMetaDataEntityListing>> getAnalyticsReportingMetadataAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ReportMetaDataEntityListing>> callback) {
-    try {
-      final SettableFuture<ApiResponse<ReportMetaDataEntityListing>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<ReportMetaDataEntityListing>() {}, new AsyncApiCallback<ApiResponse<ReportMetaDataEntityListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<ReportMetaDataEntityListing> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<ReportMetaDataEntityListing> response = (ApiResponse<ReportMetaDataEntityListing>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<ReportMetaDataEntityListing> response = (ApiResponse<ReportMetaDataEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get a reporting metadata.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ReportMetaData> getAnalyticsReportingReportIdMetadataAsync(GetAnalyticsReportingReportIdMetadataRequest request, final AsyncApiCallback<ReportMetaData> callback) {
-    try {
-      final SettableFuture<ReportMetaData> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ReportMetaData>() {}, new AsyncApiCallback<ApiResponse<ReportMetaData>>() {
-        @Override
-        public void onCompleted(ApiResponse<ReportMetaData> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get a reporting metadata.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<ReportMetaData>> getAnalyticsReportingReportIdMetadataAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ReportMetaData>> callback) {
-    try {
-      final SettableFuture<ApiResponse<ReportMetaData>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<ReportMetaData>() {}, new AsyncApiCallback<ApiResponse<ReportMetaData>>() {
-        @Override
-        public void onCompleted(ApiResponse<ReportMetaData> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<ReportMetaData> response = (ApiResponse<ReportMetaData>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<ReportMetaData> response = (ApiResponse<ReportMetaData>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get a list of report formats
-   * Get a list of report formats.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<List<String>> getAnalyticsReportingReportformatsAsync(GetAnalyticsReportingReportformatsRequest request, final AsyncApiCallback<List<String>> callback) {
-    try {
-      final SettableFuture<List<String>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<String>>() {}, new AsyncApiCallback<ApiResponse<List<String>>>() {
-        @Override
-        public void onCompleted(ApiResponse<List<String>> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get a list of report formats
-   * Get a list of report formats.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<List<String>>> getAnalyticsReportingReportformatsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<String>>> callback) {
-    try {
-      final SettableFuture<ApiResponse<List<String>>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<List<String>>() {}, new AsyncApiCallback<ApiResponse<List<String>>>() {
-        @Override
-        public void onCompleted(ApiResponse<List<String>> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<List<String>> response = (ApiResponse<List<String>>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<List<String>> response = (ApiResponse<List<String>>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get a scheduled report job.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ReportSchedule> getAnalyticsReportingScheduleAsync(GetAnalyticsReportingScheduleRequest request, final AsyncApiCallback<ReportSchedule> callback) {
-    try {
-      final SettableFuture<ReportSchedule> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ReportSchedule>() {}, new AsyncApiCallback<ApiResponse<ReportSchedule>>() {
-        @Override
-        public void onCompleted(ApiResponse<ReportSchedule> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get a scheduled report job.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<ReportSchedule>> getAnalyticsReportingScheduleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ReportSchedule>> callback) {
-    try {
-      final SettableFuture<ApiResponse<ReportSchedule>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<ReportSchedule>() {}, new AsyncApiCallback<ApiResponse<ReportSchedule>>() {
-        @Override
-        public void onCompleted(ApiResponse<ReportSchedule> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<ReportSchedule> response = (ApiResponse<ReportSchedule>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<ReportSchedule> response = (ApiResponse<ReportSchedule>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get list of completed scheduled report jobs.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ReportRunEntryEntityDomainListing> getAnalyticsReportingScheduleHistoryAsync(GetAnalyticsReportingScheduleHistoryRequest request, final AsyncApiCallback<ReportRunEntryEntityDomainListing> callback) {
-    try {
-      final SettableFuture<ReportRunEntryEntityDomainListing> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ReportRunEntryEntityDomainListing>() {}, new AsyncApiCallback<ApiResponse<ReportRunEntryEntityDomainListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<ReportRunEntryEntityDomainListing> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get list of completed scheduled report jobs.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<ReportRunEntryEntityDomainListing>> getAnalyticsReportingScheduleHistoryAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ReportRunEntryEntityDomainListing>> callback) {
-    try {
-      final SettableFuture<ApiResponse<ReportRunEntryEntityDomainListing>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<ReportRunEntryEntityDomainListing>() {}, new AsyncApiCallback<ApiResponse<ReportRunEntryEntityDomainListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<ReportRunEntryEntityDomainListing> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<ReportRunEntryEntityDomainListing> response = (ApiResponse<ReportRunEntryEntityDomainListing>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<ReportRunEntryEntityDomainListing> response = (ApiResponse<ReportRunEntryEntityDomainListing>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get most recently completed scheduled report job.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ReportRunEntry> getAnalyticsReportingScheduleHistoryLatestAsync(GetAnalyticsReportingScheduleHistoryLatestRequest request, final AsyncApiCallback<ReportRunEntry> callback) {
-    try {
-      final SettableFuture<ReportRunEntry> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ReportRunEntry>() {}, new AsyncApiCallback<ApiResponse<ReportRunEntry>>() {
-        @Override
-        public void onCompleted(ApiResponse<ReportRunEntry> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get most recently completed scheduled report job.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<ReportRunEntry>> getAnalyticsReportingScheduleHistoryLatestAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ReportRunEntry>> callback) {
-    try {
-      final SettableFuture<ApiResponse<ReportRunEntry>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<ReportRunEntry>() {}, new AsyncApiCallback<ApiResponse<ReportRunEntry>>() {
-        @Override
-        public void onCompleted(ApiResponse<ReportRunEntry> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<ReportRunEntry> response = (ApiResponse<ReportRunEntry>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<ReportRunEntry> response = (ApiResponse<ReportRunEntry>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * A completed scheduled report job
-   * A completed scheduled report job.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ReportRunEntry> getAnalyticsReportingScheduleHistoryRunIdAsync(GetAnalyticsReportingScheduleHistoryRunIdRequest request, final AsyncApiCallback<ReportRunEntry> callback) {
-    try {
-      final SettableFuture<ReportRunEntry> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ReportRunEntry>() {}, new AsyncApiCallback<ApiResponse<ReportRunEntry>>() {
-        @Override
-        public void onCompleted(ApiResponse<ReportRunEntry> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * A completed scheduled report job
-   * A completed scheduled report job.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<ReportRunEntry>> getAnalyticsReportingScheduleHistoryRunIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ReportRunEntry>> callback) {
-    try {
-      final SettableFuture<ApiResponse<ReportRunEntry>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<ReportRunEntry>() {}, new AsyncApiCallback<ApiResponse<ReportRunEntry>>() {
-        @Override
-        public void onCompleted(ApiResponse<ReportRunEntry> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<ReportRunEntry> response = (ApiResponse<ReportRunEntry>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<ReportRunEntry> response = (ApiResponse<ReportRunEntry>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get a list of scheduled report jobs
-   * Get a list of scheduled report jobs.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ReportScheduleEntityListing> getAnalyticsReportingSchedulesAsync(GetAnalyticsReportingSchedulesRequest request, final AsyncApiCallback<ReportScheduleEntityListing> callback) {
-    try {
-      final SettableFuture<ReportScheduleEntityListing> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ReportScheduleEntityListing>() {}, new AsyncApiCallback<ApiResponse<ReportScheduleEntityListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<ReportScheduleEntityListing> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get a list of scheduled report jobs
-   * Get a list of scheduled report jobs.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<ReportScheduleEntityListing>> getAnalyticsReportingSchedulesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ReportScheduleEntityListing>> callback) {
-    try {
-      final SettableFuture<ApiResponse<ReportScheduleEntityListing>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<ReportScheduleEntityListing>() {}, new AsyncApiCallback<ApiResponse<ReportScheduleEntityListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<ReportScheduleEntityListing> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<ReportScheduleEntityListing> response = (ApiResponse<ReportScheduleEntityListing>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<ReportScheduleEntityListing> response = (ApiResponse<ReportScheduleEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
    * Get AnalyticsReportingSettings for an organization
    * 
    * @param request the request object
@@ -3339,81 +2722,6 @@ public class AnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DashboardConfigurationListing> response = (ApiResponse<DashboardConfigurationListing>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get a list of report time periods.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<List<String>> getAnalyticsReportingTimeperiodsAsync(GetAnalyticsReportingTimeperiodsRequest request, final AsyncApiCallback<List<String>> callback) {
-    try {
-      final SettableFuture<List<String>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<String>>() {}, new AsyncApiCallback<ApiResponse<List<String>>>() {
-        @Override
-        public void onCompleted(ApiResponse<List<String>> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get a list of report time periods.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<List<String>>> getAnalyticsReportingTimeperiodsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<String>>> callback) {
-    try {
-      final SettableFuture<ApiResponse<List<String>>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<List<String>>() {}, new AsyncApiCallback<ApiResponse<List<String>>>() {
-        @Override
-        public void onCompleted(ApiResponse<List<String>> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<List<String>> response = (ApiResponse<List<String>>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<List<String>> response = (ApiResponse<List<String>>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -4877,7 +4185,6 @@ public class AnalyticsApiAsync {
   /**
    * Query for conversation activity observations
    * 
-   * postAnalyticsConversationsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4912,7 +4219,6 @@ public class AnalyticsApiAsync {
   /**
    * Query for conversation activity observations
    * 
-   * postAnalyticsConversationsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5635,7 +4941,6 @@ public class AnalyticsApiAsync {
   /**
    * Query for flow activity observations
    * 
-   * postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5670,7 +4975,6 @@ public class AnalyticsApiAsync {
   /**
    * Query for flow activity observations
    * 
-   * postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6541,160 +5845,6 @@ public class AnalyticsApiAsync {
   }
 
   /**
-   * Place a scheduled report immediately into the reporting queue
-   * This route is deprecated, please use POST:api/v2/analytics/reporting/exports/{exportId}/execute instead
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<RunNowResponse> postAnalyticsReportingScheduleRunreportAsync(PostAnalyticsReportingScheduleRunreportRequest request, final AsyncApiCallback<RunNowResponse> callback) {
-    try {
-      final SettableFuture<RunNowResponse> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RunNowResponse>() {}, new AsyncApiCallback<ApiResponse<RunNowResponse>>() {
-        @Override
-        public void onCompleted(ApiResponse<RunNowResponse> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Place a scheduled report immediately into the reporting queue
-   * This route is deprecated, please use POST:api/v2/analytics/reporting/exports/{exportId}/execute instead
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ApiResponse<RunNowResponse>> postAnalyticsReportingScheduleRunreportAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<RunNowResponse>> callback) {
-    try {
-      final SettableFuture<ApiResponse<RunNowResponse>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<RunNowResponse>() {}, new AsyncApiCallback<ApiResponse<RunNowResponse>>() {
-        @Override
-        public void onCompleted(ApiResponse<RunNowResponse> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<RunNowResponse> response = (ApiResponse<RunNowResponse>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<RunNowResponse> response = (ApiResponse<RunNowResponse>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Create a scheduled report job
-   * This route is deprecated, please use POST:api/v2/analytics/reporting/exports instead
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ReportSchedule> postAnalyticsReportingSchedulesAsync(PostAnalyticsReportingSchedulesRequest request, final AsyncApiCallback<ReportSchedule> callback) {
-    try {
-      final SettableFuture<ReportSchedule> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ReportSchedule>() {}, new AsyncApiCallback<ApiResponse<ReportSchedule>>() {
-        @Override
-        public void onCompleted(ApiResponse<ReportSchedule> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Create a scheduled report job
-   * This route is deprecated, please use POST:api/v2/analytics/reporting/exports instead
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ApiResponse<ReportSchedule>> postAnalyticsReportingSchedulesAsync(ApiRequest<ReportSchedule> request, final AsyncApiCallback<ApiResponse<ReportSchedule>> callback) {
-    try {
-      final SettableFuture<ApiResponse<ReportSchedule>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<ReportSchedule>() {}, new AsyncApiCallback<ApiResponse<ReportSchedule>>() {
-        @Override
-        public void onCompleted(ApiResponse<ReportSchedule> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<ReportSchedule> response = (ApiResponse<ReportSchedule>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<ReportSchedule> response = (ApiResponse<ReportSchedule>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
    * Bulk remove dashboard configurations
    * 
    * @param request the request object
@@ -6924,7 +6074,6 @@ public class AnalyticsApiAsync {
   /**
    * Query for user activity observations
    * 
-   * postAnalyticsRoutingActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6959,7 +6108,6 @@ public class AnalyticsApiAsync {
   /**
    * Query for user activity observations
    * 
-   * postAnalyticsRoutingActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7307,7 +6455,6 @@ public class AnalyticsApiAsync {
   /**
    * Query for team activity observations
    * 
-   * postAnalyticsTeamsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7342,7 +6489,6 @@ public class AnalyticsApiAsync {
   /**
    * Query for team activity observations
    * 
-   * postAnalyticsTeamsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7536,7 +6682,6 @@ public class AnalyticsApiAsync {
   /**
    * Query for user activity observations
    * 
-   * postAnalyticsUsersActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7571,7 +6716,6 @@ public class AnalyticsApiAsync {
   /**
    * Query for user activity observations
    * 
-   * postAnalyticsUsersActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8051,83 +7195,6 @@ public class AnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<AnalyticsDataRetentionResponse> response = (ApiResponse<AnalyticsDataRetentionResponse>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Update a scheduled report job.
-   * This route is deprecated, please use PATCH:api/v2/analytics/reporting/exports/{exportId}/schedule instead
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ReportSchedule> putAnalyticsReportingScheduleAsync(PutAnalyticsReportingScheduleRequest request, final AsyncApiCallback<ReportSchedule> callback) {
-    try {
-      final SettableFuture<ReportSchedule> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ReportSchedule>() {}, new AsyncApiCallback<ApiResponse<ReportSchedule>>() {
-        @Override
-        public void onCompleted(ApiResponse<ReportSchedule> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Update a scheduled report job.
-   * This route is deprecated, please use PATCH:api/v2/analytics/reporting/exports/{exportId}/schedule instead
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ApiResponse<ReportSchedule>> putAnalyticsReportingScheduleAsync(ApiRequest<ReportSchedule> request, final AsyncApiCallback<ApiResponse<ReportSchedule>> callback) {
-    try {
-      final SettableFuture<ApiResponse<ReportSchedule>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<ReportSchedule>() {}, new AsyncApiCallback<ApiResponse<ReportSchedule>>() {
-        @Override
-        public void onCompleted(ApiResponse<ReportSchedule> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<ReportSchedule> response = (ApiResponse<ReportSchedule>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<ReportSchedule> response = (ApiResponse<ReportSchedule>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

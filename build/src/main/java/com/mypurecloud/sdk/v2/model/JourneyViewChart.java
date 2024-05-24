@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.JourneyViewChartDisplayAttributes;
 import com.mypurecloud.sdk.v2.model.JourneyViewChartGroupByAttribute;
 import com.mypurecloud.sdk.v2.model.JourneyViewChartMetric;
 import io.swagger.annotations.ApiModel;
@@ -82,6 +83,8 @@ public class JourneyViewChart  implements Serializable {
   private GroupByTimeEnum groupByTime = null;
   private List<JourneyViewChartGroupByAttribute> groupByAttributes = new ArrayList<JourneyViewChartGroupByAttribute>();
   private List<JourneyViewChartMetric> metrics = new ArrayList<JourneyViewChartMetric>();
+  private JourneyViewChartDisplayAttributes displayAttributes = null;
+  private Integer groupByMax = null;
   private String selfUri = null;
 
   
@@ -170,6 +173,42 @@ public class JourneyViewChart  implements Serializable {
   }
 
 
+  /**
+   * Optional display attributes for rendering the chart
+   **/
+  public JourneyViewChart displayAttributes(JourneyViewChartDisplayAttributes displayAttributes) {
+    this.displayAttributes = displayAttributes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Optional display attributes for rendering the chart")
+  @JsonProperty("displayAttributes")
+  public JourneyViewChartDisplayAttributes getDisplayAttributes() {
+    return displayAttributes;
+  }
+  public void setDisplayAttributes(JourneyViewChartDisplayAttributes displayAttributes) {
+    this.displayAttributes = displayAttributes;
+  }
+
+
+  /**
+   * A maximum on the number of values being grouped by
+   **/
+  public JourneyViewChart groupByMax(Integer groupByMax) {
+    this.groupByMax = groupByMax;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A maximum on the number of values being grouped by")
+  @JsonProperty("groupByMax")
+  public Integer getGroupByMax() {
+    return groupByMax;
+  }
+  public void setGroupByMax(Integer groupByMax) {
+    this.groupByMax = groupByMax;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -193,12 +232,14 @@ public class JourneyViewChart  implements Serializable {
             Objects.equals(this.groupByTime, journeyViewChart.groupByTime) &&
             Objects.equals(this.groupByAttributes, journeyViewChart.groupByAttributes) &&
             Objects.equals(this.metrics, journeyViewChart.metrics) &&
+            Objects.equals(this.displayAttributes, journeyViewChart.displayAttributes) &&
+            Objects.equals(this.groupByMax, journeyViewChart.groupByMax) &&
             Objects.equals(this.selfUri, journeyViewChart.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, version, groupByTime, groupByAttributes, metrics, selfUri);
+    return Objects.hash(id, name, version, groupByTime, groupByAttributes, metrics, displayAttributes, groupByMax, selfUri);
   }
 
   @Override
@@ -212,6 +253,8 @@ public class JourneyViewChart  implements Serializable {
     sb.append("    groupByTime: ").append(toIndentedString(groupByTime)).append("\n");
     sb.append("    groupByAttributes: ").append(toIndentedString(groupByAttributes)).append("\n");
     sb.append("    metrics: ").append(toIndentedString(metrics)).append("\n");
+    sb.append("    displayAttributes: ").append(toIndentedString(displayAttributes)).append("\n");
+    sb.append("    groupByMax: ").append(toIndentedString(groupByMax)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

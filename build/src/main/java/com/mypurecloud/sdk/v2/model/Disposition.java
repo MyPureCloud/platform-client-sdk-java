@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DispositionParameters;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
 
 import java.io.Serializable;
 /**
@@ -25,6 +26,8 @@ public class Disposition  implements Serializable {
   private String name = null;
   private String analyzer = null;
   private DispositionParameters dispositionParameters = null;
+  private Date detectedSpeechStart = null;
+  private Date detectedSpeechEnd = null;
 
   
   /**
@@ -81,6 +84,42 @@ public class Disposition  implements Serializable {
   }
 
 
+  /**
+   * Absolute time when the speech started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public Disposition detectedSpeechStart(Date detectedSpeechStart) {
+    this.detectedSpeechStart = detectedSpeechStart;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Absolute time when the speech started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("detectedSpeechStart")
+  public Date getDetectedSpeechStart() {
+    return detectedSpeechStart;
+  }
+  public void setDetectedSpeechStart(Date detectedSpeechStart) {
+    this.detectedSpeechStart = detectedSpeechStart;
+  }
+
+
+  /**
+   * Absolute time when the speech ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public Disposition detectedSpeechEnd(Date detectedSpeechEnd) {
+    this.detectedSpeechEnd = detectedSpeechEnd;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Absolute time when the speech ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("detectedSpeechEnd")
+  public Date getDetectedSpeechEnd() {
+    return detectedSpeechEnd;
+  }
+  public void setDetectedSpeechEnd(Date detectedSpeechEnd) {
+    this.detectedSpeechEnd = detectedSpeechEnd;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -93,12 +132,14 @@ public class Disposition  implements Serializable {
 
     return Objects.equals(this.name, disposition.name) &&
             Objects.equals(this.analyzer, disposition.analyzer) &&
-            Objects.equals(this.dispositionParameters, disposition.dispositionParameters);
+            Objects.equals(this.dispositionParameters, disposition.dispositionParameters) &&
+            Objects.equals(this.detectedSpeechStart, disposition.detectedSpeechStart) &&
+            Objects.equals(this.detectedSpeechEnd, disposition.detectedSpeechEnd);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, analyzer, dispositionParameters);
+    return Objects.hash(name, analyzer, dispositionParameters, detectedSpeechStart, detectedSpeechEnd);
   }
 
   @Override
@@ -109,6 +150,8 @@ public class Disposition  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    analyzer: ").append(toIndentedString(analyzer)).append("\n");
     sb.append("    dispositionParameters: ").append(toIndentedString(dispositionParameters)).append("\n");
+    sb.append("    detectedSpeechStart: ").append(toIndentedString(detectedSpeechStart)).append("\n");
+    sb.append("    detectedSpeechEnd: ").append(toIndentedString(detectedSpeechEnd)).append("\n");
     sb.append("}");
     return sb.toString();
   }

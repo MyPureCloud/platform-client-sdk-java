@@ -75,6 +75,7 @@ public class AnalyticsSession  implements Serializable {
     DELIVERYFAILED("DeliveryFailed"),
     DELIVERYSUCCESS("DeliverySuccess"),
     FAILED("Failed"),
+    PUBLISHED("Published"),
     QUEUED("Queued"),
     READ("Read"),
     RECEIVED("Received"),

@@ -51,7 +51,12 @@ public class CampaignRuleAction  implements Serializable {
     TURNOFFSEQUENCE("turnOffSequence"),
     SETCAMPAIGNPRIORITY("setCampaignPriority"),
     RECYCLECAMPAIGN("recycleCampaign"),
-    SETCAMPAIGNDIALINGMODE("setCampaignDialingMode");
+    SETCAMPAIGNDIALINGMODE("setCampaignDialingMode"),
+    SETCAMPAIGNABANDONRATE("setCampaignAbandonRate"),
+    SETCAMPAIGNNUMBEROFLINES("setCampaignNumberOfLines"),
+    SETCAMPAIGNWEIGHT("setCampaignWeight"),
+    SETCAMPAIGNMAXCALLSPERAGENT("setCampaignMaxCallsPerAgent"),
+    CHANGECAMPAIGNQUEUE("changeCampaignQueue");
 
     private String value;
 

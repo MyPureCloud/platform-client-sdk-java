@@ -99,6 +99,11 @@ title: KnowledgeImport
 | DA_DK | &quot;da-DK&quot; | 
 | JA_JP | &quot;ja-JP&quot; | 
 | AR_AE | &quot;ar-AE&quot; | 
+| ZH_CN | &quot;zh-CN&quot; | 
+| ZH_TW | &quot;zh-TW&quot; | 
+| ZH_HK | &quot;zh-HK&quot; | 
+| KO_KR | &quot;ko-KR&quot; | 
+| PL_PL | &quot;pl-PL&quot; | 
 {: class="table table-striped"}
 
 

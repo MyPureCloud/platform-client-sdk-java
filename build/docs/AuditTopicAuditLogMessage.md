@@ -79,6 +79,7 @@ title: AuditTopicAuditLogMessage
 | SCRIPTER | &quot;Scripter&quot; | 
 | BILLING | &quot;Billing&quot; | 
 | JOURNEYANALYTICS | &quot;JourneyAnalytics&quot; | 
+| NERSERVICE | &quot;NerService&quot; | 
 {: class="table table-striped"}
 
 
@@ -151,6 +152,8 @@ title: AuditTopicAuditLogMessage
 | DISABLE | &quot;Disable&quot; | 
 | RECYCLE | &quot;Recycle&quot; | 
 | APPEND | &quot;Append&quot; | 
+| CONTACTSUPDATED | &quot;ContactsUpdated&quot; | 
+| CONTACTSDELETED | &quot;ContactsDeleted&quot; | 
 | RESTORE | &quot;Restore&quot; | 
 | OPEN | &quot;Open&quot; | 
 | APPROVED | &quot;Approved&quot; | 
@@ -204,6 +207,7 @@ title: AuditTopicAuditLogMessage
 | ORGANIZATIONAUTHORIZATIONUSERTRUST | &quot;OrganizationAuthorizationUserTrust&quot; | 
 | ROLE | &quot;Role&quot; | 
 | ROLESETTINGS | &quot;RoleSettings&quot; | 
+| POLICY | &quot;Policy&quot; | 
 | VOICEMAILUSERPOLICY | &quot;VoicemailUserPolicy&quot; | 
 | USERPRESENCE | &quot;UserPresence&quot; | 
 | DEPENDENCYTRACKINGBUILD | &quot;DependencyTrackingBuild&quot; | 
@@ -229,7 +233,6 @@ title: AuditTopicAuditLogMessage
 | SCREENRECORDING | &quot;ScreenRecording&quot; | 
 | BULKACTIONS | &quot;BulkActions&quot; | 
 | ORPHANEDRECORDING | &quot;OrphanedRecording&quot; | 
-| POLICY | &quot;Policy&quot; | 
 | RECORDINGANNOTATION | &quot;RecordingAnnotation&quot; | 
 | RECORDINGSETTINGS | &quot;RecordingSettings&quot; | 
 | RECORDINGKEY | &quot;RecordingKey&quot; | 
@@ -265,6 +268,8 @@ title: AuditTopicAuditLogMessage
 | ASSIGNMENT | &quot;Assignment&quot; | 
 | RECOGNITION | &quot;Recognition&quot; | 
 | ACTIVITYCODE | &quot;ActivityCode&quot; | 
+| ACTIVITYPLAN | &quot;ActivityPlan&quot; | 
+| ACTIVITYPLANOCCURRENCE | &quot;ActivityPlanOccurrence&quot; | 
 | ADHERENCEEXPLANATION | &quot;AdherenceExplanation&quot; | 
 | ALTERNATIVESHIFT | &quot;AlternativeShift&quot; | 
 | BUSINESSUNIT | &quot;BusinessUnit&quot; | 
@@ -398,10 +403,8 @@ title: AuditTopicAuditLogMessage
 | INTENTMINER | &quot;IntentMiner&quot; | 
 | TOPICMINER | &quot;TopicMiner&quot; | 
 | SOFTSUSPENSION | &quot;SoftSuspension&quot; | 
-| ACTIVITYPLAN | &quot;ActivityPlan&quot; | 
-| ACTIVITYPLANOCCURRENCE | &quot;ActivityPlanOccurrence&quot; | 
 | JOURNEYVIEW | &quot;JourneyView&quot; | 
-| ALTERNATIVESHIFTTRADE | &quot;AlternativeShiftTrade&quot; | 
+| CUSTOMENTITY | &quot;CustomEntity&quot; | 
 {: class="table table-striped"}
 
 

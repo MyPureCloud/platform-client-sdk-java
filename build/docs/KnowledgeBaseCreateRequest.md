@@ -10,7 +10,7 @@ title: KnowledgeBaseCreateRequest
 | ------------ | ------------- | ------------- | ------------- |
 | **name** | <!----><!---->**String**<!----> | Knowledge base name |  |
 | **description** | <!----><!---->**String**<!----> | Knowledge base description |  [optional] |
-| **coreLanguage** | [**CoreLanguageEnum**](#CoreLanguageEnum)<!----> | Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently. However, the new DX knowledge will support all these language codes, along with 'early preview' language codes [ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE] which might have a lower accuracy. |  |
+| **coreLanguage** | [**CoreLanguageEnum**](#CoreLanguageEnum)<!----> | Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently. However, the new DX knowledge will support all these language codes, along with 'early preview' language codes [ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL] which might have a lower accuracy. |  |
 {: class="table table-striped"}
 
 
@@ -57,6 +57,11 @@ title: KnowledgeBaseCreateRequest
 | DA_DK | &quot;da-DK&quot; | 
 | JA_JP | &quot;ja-JP&quot; | 
 | AR_AE | &quot;ar-AE&quot; | 
+| ZH_CN | &quot;zh-CN&quot; | 
+| ZH_TW | &quot;zh-TW&quot; | 
+| ZH_HK | &quot;zh-HK&quot; | 
+| KO_KR | &quot;ko-KR&quot; | 
+| PL_PL | &quot;pl-PL&quot; | 
 {: class="table table-striped"}
 
 

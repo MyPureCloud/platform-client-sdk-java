@@ -73,6 +73,7 @@ public class JourneyViewChartMetric  implements Serializable {
     }
   }
   private AggregateEnum aggregate = null;
+  private String displayLabel = null;
 
   
   /**
@@ -129,6 +130,24 @@ public class JourneyViewChartMetric  implements Serializable {
   }
 
 
+  /**
+   * A display label for the metric
+   **/
+  public JourneyViewChartMetric displayLabel(String displayLabel) {
+    this.displayLabel = displayLabel;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A display label for the metric")
+  @JsonProperty("displayLabel")
+  public String getDisplayLabel() {
+    return displayLabel;
+  }
+  public void setDisplayLabel(String displayLabel) {
+    this.displayLabel = displayLabel;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -141,12 +160,13 @@ public class JourneyViewChartMetric  implements Serializable {
 
     return Objects.equals(this.id, journeyViewChartMetric.id) &&
             Objects.equals(this.elementId, journeyViewChartMetric.elementId) &&
-            Objects.equals(this.aggregate, journeyViewChartMetric.aggregate);
+            Objects.equals(this.aggregate, journeyViewChartMetric.aggregate) &&
+            Objects.equals(this.displayLabel, journeyViewChartMetric.displayLabel);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, elementId, aggregate);
+    return Objects.hash(id, elementId, aggregate, displayLabel);
   }
 
   @Override
@@ -157,6 +177,7 @@ public class JourneyViewChartMetric  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    elementId: ").append(toIndentedString(elementId)).append("\n");
     sb.append("    aggregate: ").append(toIndentedString(aggregate)).append("\n");
+    sb.append("    displayLabel: ").append(toIndentedString(displayLabel)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -6800,8 +6800,6 @@ try {
 
 Query for user activity observations
 
-postAnalyticsRoutingActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/analytics/routing/activity/query  
 
 Requires ANY permissions: 

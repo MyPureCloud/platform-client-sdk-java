@@ -35,6 +35,7 @@ title: MessageDetails
 | DELIVERY_FAILED | &quot;delivery-failed&quot; | 
 | READ | &quot;read&quot; | 
 | REMOVED | &quot;removed&quot; | 
+| PUBLISHED | &quot;published&quot; | 
 {: class="table table-striped"}
 
 

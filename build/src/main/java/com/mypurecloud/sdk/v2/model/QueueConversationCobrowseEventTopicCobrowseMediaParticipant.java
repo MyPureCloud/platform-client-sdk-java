@@ -227,6 +227,7 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
   public enum DisconnectTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ENDPOINT("endpoint"),
+    ENDPOINT_DND("endpoint.dnd"),
     CLIENT("client"),
     SYSTEM("system"),
     TRANSFER("transfer"),
@@ -236,6 +237,7 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
     TRANSFER_FORWARD("transfer.forward"),
     TRANSFER_NOANSWER("transfer.noanswer"),
     TRANSFER_NOTAVAILABLE("transfer.notavailable"),
+    TRANSFER_DND("transfer.dnd"),
     TRANSPORT_FAILURE("transport.failure"),
     ERROR("error"),
     PEER("peer"),
@@ -339,6 +341,7 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
   private Date startAcwTime = null;
   private Date endAcwTime = null;
   private Date resumeTime = null;
+  private Date parkTime = null;
   private List<String> mediaRoles = new ArrayList<String>();
   private QueueConversationCobrowseEventTopicQueueMediaSettings queueMediaSettings = null;
   private String cobrowseSessionId = null;
@@ -962,6 +965,23 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
 
   /**
    **/
+  public QueueConversationCobrowseEventTopicCobrowseMediaParticipant parkTime(Date parkTime) {
+    this.parkTime = parkTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("parkTime")
+  public Date getParkTime() {
+    return parkTime;
+  }
+  public void setParkTime(Date parkTime) {
+    this.parkTime = parkTime;
+  }
+
+
+  /**
+   **/
   public QueueConversationCobrowseEventTopicCobrowseMediaParticipant mediaRoles(List<String> mediaRoles) {
     this.mediaRoles = mediaRoles;
     return this;
@@ -1125,6 +1145,7 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
             Objects.equals(this.startAcwTime, queueConversationCobrowseEventTopicCobrowseMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, queueConversationCobrowseEventTopicCobrowseMediaParticipant.endAcwTime) &&
             Objects.equals(this.resumeTime, queueConversationCobrowseEventTopicCobrowseMediaParticipant.resumeTime) &&
+            Objects.equals(this.parkTime, queueConversationCobrowseEventTopicCobrowseMediaParticipant.parkTime) &&
             Objects.equals(this.mediaRoles, queueConversationCobrowseEventTopicCobrowseMediaParticipant.mediaRoles) &&
             Objects.equals(this.queueMediaSettings, queueConversationCobrowseEventTopicCobrowseMediaParticipant.queueMediaSettings) &&
             Objects.equals(this.cobrowseSessionId, queueConversationCobrowseEventTopicCobrowseMediaParticipant.cobrowseSessionId) &&
@@ -1136,7 +1157,7 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, mediaRoles, queueMediaSettings, cobrowseSessionId, cobrowseRole, viewerUrl, providerEventTime, controlling);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, cobrowseSessionId, cobrowseRole, viewerUrl, providerEventTime, controlling);
   }
 
   @Override
@@ -1180,6 +1201,7 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    resumeTime: ").append(toIndentedString(resumeTime)).append("\n");
+    sb.append("    parkTime: ").append(toIndentedString(parkTime)).append("\n");
     sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
     sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("    cobrowseSessionId: ").append(toIndentedString(cobrowseSessionId)).append("\n");

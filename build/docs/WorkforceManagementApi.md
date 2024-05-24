@@ -4794,7 +4794,7 @@ try {
 
 
 
-> [WfmAgent](WfmAgent.html) getWorkforcemanagementManagementunitAgent(managementUnitId, agentId, excludeCapabilities)
+> [WfmAgent](WfmAgent.html) getWorkforcemanagementManagementunitAgent(managementUnitId, agentId, excludeCapabilities, expand)
 
 Get data for agent in the management unit
 
@@ -4829,8 +4829,9 @@ WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 String agentId = "agentId_example"; // String | The agent id
 Boolean excludeCapabilities = true; // Boolean | Excludes all capabilities of the agent such as queues, languages, and skills
+List<String> expand = Arrays.asList(null); // List<String> | 
 try {
-    WfmAgent result = apiInstance.getWorkforcemanagementManagementunitAgent(managementUnitId, agentId, excludeCapabilities);
+    WfmAgent result = apiInstance.getWorkforcemanagementManagementunitAgent(managementUnitId, agentId, excludeCapabilities, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementManagementunitAgent");
@@ -4846,6 +4847,7 @@ try {
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **agentId** | **String**| The agent id | 
 | **excludeCapabilities** | **Boolean**| Excludes all capabilities of the agent such as queues, languages, and skills | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)|  | [optional]<br />**Values**: workPlanOverrides 
 {: class="table-striped"}
 
 
@@ -5966,7 +5968,7 @@ try {
 
 
 
-> [WorkPlanListResponse](WorkPlanListResponse.html) getWorkforcemanagementManagementunitWorkplans(managementUnitId, expand)
+> [WorkPlanListResponse](WorkPlanListResponse.html) getWorkforcemanagementManagementunitWorkplans(managementUnitId, expand, exclude)
 
 Get work plans
 
@@ -6006,8 +6008,9 @@ Configuration.setDefaultApiClient(apiClient);
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 List<String> expand = Arrays.asList(null); // List<String> | Include to access additional data on the work plans
+List<String> exclude = Arrays.asList(null); // List<String> | Exclude specific data on the work plans from the response
 try {
-    WorkPlanListResponse result = apiInstance.getWorkforcemanagementManagementunitWorkplans(managementUnitId, expand);
+    WorkPlanListResponse result = apiInstance.getWorkforcemanagementManagementunitWorkplans(managementUnitId, expand, exclude);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementManagementunitWorkplans");
@@ -6022,6 +6025,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **expand** | [**List&lt;String&gt;**](String.html)| Include to access additional data on the work plans | [optional]<br />**Values**: agentCount, agents, optionalDays, shifts, shiftStartVariances, details 
+| **exclude** | [**List&lt;String&gt;**](String.html)| Exclude specific data on the work plans from the response | [optional]<br />**Values**: shifts.activities 
 {: class="table-striped"}
 
 

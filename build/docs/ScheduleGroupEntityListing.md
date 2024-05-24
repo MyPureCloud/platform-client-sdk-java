@@ -12,11 +12,11 @@ title: ScheduleGroupEntityListing
 | **pageSize** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **pageNumber** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **total** | <!----><!---->**Long**<!----> |  |  [optional] |
-| **nextUri** | <!----><!---->**String**<!----> |  |  [optional] |
+| **previousUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **lastUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **firstUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **previousUri** | <!----><!---->**String**<!----> |  |  [optional] |
+| **nextUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **pageCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
 {: class="table table-striped"}
 

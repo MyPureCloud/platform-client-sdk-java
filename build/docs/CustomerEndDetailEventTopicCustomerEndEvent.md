@@ -30,6 +30,7 @@ title: CustomerEndDetailEventTopicCustomerEndEvent
 | **interactingDurationMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **conversationExternalContactIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 | **conversationExternalOrganizationIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **divisionId** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

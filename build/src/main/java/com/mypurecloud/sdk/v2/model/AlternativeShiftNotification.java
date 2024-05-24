@@ -46,8 +46,7 @@ public class AlternativeShiftNotification  implements Serializable {
  @JsonDeserialize(using = GranularityEnumDeserializer.class)
   public enum GranularityEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    DAILY("Daily"),
-    WEEKLY("Weekly");
+    DAILY("Daily");
 
     private String value;
 

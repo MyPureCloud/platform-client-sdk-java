@@ -102,6 +102,7 @@ title: AnalyticsSession
 | DELIVERYFAILED | &quot;DeliveryFailed&quot; | 
 | DELIVERYSUCCESS | &quot;DeliverySuccess&quot; | 
 | FAILED | &quot;Failed&quot; | 
+| PUBLISHED | &quot;Published&quot; | 
 | QUEUED | &quot;Queued&quot; | 
 | READ | &quot;Read&quot; | 
 | RECEIVED | &quot;Received&quot; | 

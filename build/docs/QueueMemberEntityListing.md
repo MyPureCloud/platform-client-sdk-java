@@ -11,10 +11,10 @@ title: QueueMemberEntityListing
 | **entities** | <!----><!---->[**List&lt;QueueMember&gt;**](QueueMember.html)<!----> |  |  [optional] |
 | **pageNumber** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **pageSize** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **nextUri** | <!----><!---->**String**<!----> |  |  [optional] |
+| **previousUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **firstUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **previousUri** | <!----><!---->**String**<!----> |  |  [optional] |
+| **nextUri** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -28,7 +28,6 @@ title: AlternativeShiftNotification
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | DAILY | &quot;Daily&quot; | 
-| WEEKLY | &quot;Weekly&quot; | 
 {: class="table table-striped"}
 
 

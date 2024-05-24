@@ -227,6 +227,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
   public enum DisconnectTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ENDPOINT("endpoint"),
+    ENDPOINT_DND("endpoint.dnd"),
     CLIENT("client"),
     SYSTEM("system"),
     TRANSFER("transfer"),
@@ -236,6 +237,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     TRANSFER_FORWARD("transfer.forward"),
     TRANSFER_NOANSWER("transfer.noanswer"),
     TRANSFER_NOTAVAILABLE("transfer.notavailable"),
+    TRANSFER_DND("transfer.dnd"),
     TRANSPORT_FAILURE("transport.failure"),
     ERROR("error"),
     PEER("peer"),
@@ -339,6 +341,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
   private Date startAcwTime = null;
   private Date endAcwTime = null;
   private Date resumeTime = null;
+  private Date parkTime = null;
   private List<String> mediaRoles = new ArrayList<String>();
   private QueueConversationScreenShareEventTopicQueueMediaSettings queueMediaSettings = null;
   private String context = null;
@@ -960,6 +963,23 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
 
   /**
    **/
+  public QueueConversationScreenShareEventTopicScreenShareMediaParticipant parkTime(Date parkTime) {
+    this.parkTime = parkTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("parkTime")
+  public Date getParkTime() {
+    return parkTime;
+  }
+  public void setParkTime(Date parkTime) {
+    this.parkTime = parkTime;
+  }
+
+
+  /**
+   **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant mediaRoles(List<String> mediaRoles) {
     this.mediaRoles = mediaRoles;
     return this;
@@ -1089,6 +1109,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
             Objects.equals(this.startAcwTime, queueConversationScreenShareEventTopicScreenShareMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, queueConversationScreenShareEventTopicScreenShareMediaParticipant.endAcwTime) &&
             Objects.equals(this.resumeTime, queueConversationScreenShareEventTopicScreenShareMediaParticipant.resumeTime) &&
+            Objects.equals(this.parkTime, queueConversationScreenShareEventTopicScreenShareMediaParticipant.parkTime) &&
             Objects.equals(this.mediaRoles, queueConversationScreenShareEventTopicScreenShareMediaParticipant.mediaRoles) &&
             Objects.equals(this.queueMediaSettings, queueConversationScreenShareEventTopicScreenShareMediaParticipant.queueMediaSettings) &&
             Objects.equals(this.context, queueConversationScreenShareEventTopicScreenShareMediaParticipant.context) &&
@@ -1098,7 +1119,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, mediaRoles, queueMediaSettings, context, peerCount, sharing);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, context, peerCount, sharing);
   }
 
   @Override
@@ -1142,6 +1163,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    resumeTime: ").append(toIndentedString(resumeTime)).append("\n");
+    sb.append("    parkTime: ").append(toIndentedString(parkTime)).append("\n");
     sb.append("    mediaRoles: ").append(toIndentedString(mediaRoles)).append("\n");
     sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");

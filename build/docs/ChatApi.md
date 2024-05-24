@@ -24,11 +24,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getChatsUserMessage**](ChatApi.html#getChatsUserMessage) | Get messages by id(s) from a 1on1 |
 | [**getChatsUserMessages**](ChatApi.html#getChatsUserMessages) | Get 1on1 History between a user |
 | [**getChatsUserSettings**](ChatApi.html#getChatsUserSettings) | Get a user's chat settings |
+| [**getChatsUsersMeSettings**](ChatApi.html#getChatsUsersMeSettings) | Get a user's chat settings |
 | [**patchChatsRoom**](ChatApi.html#patchChatsRoom) | Set properties for a room |
 | [**patchChatsRoomMessage**](ChatApi.html#patchChatsRoomMessage) | Edit a message in a room |
 | [**patchChatsSettings**](ChatApi.html#patchChatsSettings) | Patch Chat Settings. |
 | [**patchChatsUserMessage**](ChatApi.html#patchChatsUserMessage) | Edit a message to a user |
 | [**patchChatsUserSettings**](ChatApi.html#patchChatsUserSettings) | Update a user's chat settings |
+| [**patchChatsUsersMeSettings**](ChatApi.html#patchChatsUsersMeSettings) | Update a user's chat settings |
 | [**postChatsRoomMessages**](ChatApi.html#postChatsRoomMessages) | Send a message to a room |
 | [**postChatsRoomMessagesPins**](ChatApi.html#postChatsRoomMessagesPins) | Add pinned messages for a room, up to a maximum of 5 pinned messages |
 | [**postChatsRoomParticipant**](ChatApi.html#postChatsRoomParticipant) | Join a room |
@@ -1123,6 +1125,64 @@ try {
 
 [**ChatUserSettings**](ChatUserSettings.html)
 
+<a name="getChatsUsersMeSettings"></a>
+
+# **getChatsUsersMeSettings**
+
+
+
+> [ChatUserSettings](ChatUserSettings.html) getChatsUsersMeSettings()
+
+Get a user's chat settings
+
+getChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/chats/users/me/settings  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ChatApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ChatApi apiInstance = new ChatApi();
+try {
+    ChatUserSettings result = apiInstance.getChatsUsersMeSettings();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ChatApi#getChatsUsersMeSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**ChatUserSettings**](ChatUserSettings.html)
+
 <a name="patchChatsRoom"></a>
 
 # **patchChatsRoom**
@@ -1437,6 +1497,68 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | 
+| **body** | [**ChatUserSettings**](ChatUserSettings.html)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ChatUserSettings**](ChatUserSettings.html)
+
+<a name="patchChatsUsersMeSettings"></a>
+
+# **patchChatsUsersMeSettings**
+
+
+
+> [ChatUserSettings](ChatUserSettings.html) patchChatsUsersMeSettings(body)
+
+Update a user's chat settings
+
+patchChatsUsersMeSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/chats/users/me/settings  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ChatApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ChatApi apiInstance = new ChatApi();
+ChatUserSettings body = new ChatUserSettings(); // ChatUserSettings | 
+try {
+    ChatUserSettings result = apiInstance.patchChatsUsersMeSettings(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ChatApi#patchChatsUsersMeSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
 | **body** | [**ChatUserSettings**](ChatUserSettings.html)|  | 
 {: class="table-striped"}
 

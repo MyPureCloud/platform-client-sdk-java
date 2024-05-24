@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.V2MobiusRulesTopicAlertNotificationRecipient;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ import java.io.Serializable;
 
 public class V2MobiusRulesTopicAlertNotification  implements Serializable {
   
-  private String recipient = null;
+  private V2MobiusRulesTopicAlertNotificationRecipient recipient = null;
 
   private static class NotificationTypesEnumDeserializer extends StdDeserializer<NotificationTypesEnum> {
     public NotificationTypesEnumDeserializer() {
@@ -79,17 +80,17 @@ public class V2MobiusRulesTopicAlertNotification  implements Serializable {
   
   /**
    **/
-  public V2MobiusRulesTopicAlertNotification recipient(String recipient) {
+  public V2MobiusRulesTopicAlertNotification recipient(V2MobiusRulesTopicAlertNotificationRecipient recipient) {
     this.recipient = recipient;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("recipient")
-  public String getRecipient() {
+  public V2MobiusRulesTopicAlertNotificationRecipient getRecipient() {
     return recipient;
   }
-  public void setRecipient(String recipient) {
+  public void setRecipient(V2MobiusRulesTopicAlertNotificationRecipient recipient) {
     this.recipient = recipient;
   }
 

@@ -11,6 +11,7 @@ title: JourneyViewChartMetric
 | **id** | <!----><!---->**String**<!----> | The unique identifier of the metric within the chart |  |
 | **elementId** | <!----><!---->**String**<!----> | The element in the list of elements which the metric is measuring |  |
 | **aggregate** | [**AggregateEnum**](#AggregateEnum)<!----> | How to aggregate the given element, defaults to EventCount |  [optional] |
+| **displayLabel** | <!----><!---->**String**<!----> | A display label for the metric |  [optional] |
 {: class="table table-striped"}
 
 

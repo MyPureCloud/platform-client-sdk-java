@@ -172,7 +172,12 @@ public class GetKnowledgeKnowledgebaseLanguageCategoriesRequest {
 		NB_NO("nb-NO"),
 		DA_DK("da-DK"),
 		JA_JP("ja-JP"),
-		AR_AE("ar-AE");
+		AR_AE("ar-AE"),
+		ZH_CN("zh-CN"),
+		ZH_TW("zh-TW"),
+		ZH_HK("zh-HK"),
+		KO_KR("ko-KR"),
+		PL_PL("pl-PL");
 
 		private String value;
 

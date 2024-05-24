@@ -8,10 +8,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | Description |
 | ------------- | ------------- |
 | [**deleteAnalyticsConversationsDetailsJob**](AnalyticsApi.html#deleteAnalyticsConversationsDetailsJob) | Delete/cancel an async details job |
-| [**deleteAnalyticsReportingSchedule**](AnalyticsApi.html#deleteAnalyticsReportingSchedule) | Delete a scheduled report job. |
 | [**deleteAnalyticsUsersDetailsJob**](AnalyticsApi.html#deleteAnalyticsUsersDetailsJob) | Delete/cancel an async request |
 | [**getAnalyticsActionsAggregatesJob**](AnalyticsApi.html#getAnalyticsActionsAggregatesJob) | Get status for async query for action aggregates |
 | [**getAnalyticsActionsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsActionsAggregatesJobResults) | Fetch a page of results for an async aggregates query |
+| [**getAnalyticsBotflowDivisionsReportingturns**](AnalyticsApi.html#getAnalyticsBotflowDivisionsReportingturns) | Get Reporting Turns (division aware). |
 | [**getAnalyticsBotflowReportingturns**](AnalyticsApi.html#getAnalyticsBotflowReportingturns) | Get Reporting Turns. |
 | [**getAnalyticsBotflowSessions**](AnalyticsApi.html#getAnalyticsBotflowSessions) | Get Bot Flow Sessions. |
 | [**getAnalyticsBotsAggregatesJob**](AnalyticsApi.html#getAnalyticsBotsAggregatesJob) | Get status for async query for bot aggregates |
@@ -38,17 +38,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAnalyticsReportingDashboardsUsers**](AnalyticsApi.html#getAnalyticsReportingDashboardsUsers) | Get dashboards summary for users in a org |
 | [**getAnalyticsReportingExports**](AnalyticsApi.html#getAnalyticsReportingExports) | Get all view export requests for a user |
 | [**getAnalyticsReportingExportsMetadata**](AnalyticsApi.html#getAnalyticsReportingExportsMetadata) | Get all export metadata |
-| [**getAnalyticsReportingMetadata**](AnalyticsApi.html#getAnalyticsReportingMetadata) | Get list of reporting metadata. |
-| [**getAnalyticsReportingReportIdMetadata**](AnalyticsApi.html#getAnalyticsReportingReportIdMetadata) | Get a reporting metadata. |
-| [**getAnalyticsReportingReportformats**](AnalyticsApi.html#getAnalyticsReportingReportformats) | Get a list of report formats |
-| [**getAnalyticsReportingSchedule**](AnalyticsApi.html#getAnalyticsReportingSchedule) | Get a scheduled report job. |
-| [**getAnalyticsReportingScheduleHistory**](AnalyticsApi.html#getAnalyticsReportingScheduleHistory) | Get list of completed scheduled report jobs. |
-| [**getAnalyticsReportingScheduleHistoryLatest**](AnalyticsApi.html#getAnalyticsReportingScheduleHistoryLatest) | Get most recently completed scheduled report job. |
-| [**getAnalyticsReportingScheduleHistoryRunId**](AnalyticsApi.html#getAnalyticsReportingScheduleHistoryRunId) | A completed scheduled report job |
-| [**getAnalyticsReportingSchedules**](AnalyticsApi.html#getAnalyticsReportingSchedules) | Get a list of scheduled report jobs |
 | [**getAnalyticsReportingSettings**](AnalyticsApi.html#getAnalyticsReportingSettings) | Get AnalyticsReportingSettings for an organization |
 | [**getAnalyticsReportingSettingsUserDashboards**](AnalyticsApi.html#getAnalyticsReportingSettingsUserDashboards) | Get list of dashboards for an user |
-| [**getAnalyticsReportingTimeperiods**](AnalyticsApi.html#getAnalyticsReportingTimeperiods) | Get a list of report time periods. |
 | [**getAnalyticsResolutionsAggregatesJob**](AnalyticsApi.html#getAnalyticsResolutionsAggregatesJob) | Get status for async query for resolution aggregates |
 | [**getAnalyticsResolutionsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsResolutionsAggregatesJobResults) | Fetch a page of results for an async aggregates query |
 | [**getAnalyticsSurveysAggregatesJob**](AnalyticsApi.html#getAnalyticsSurveysAggregatesJob) | Get status for async query for survey aggregates |
@@ -90,8 +81,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsRatelimitsAggregatesQuery**](AnalyticsApi.html#postAnalyticsRatelimitsAggregatesQuery) | Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded |
 | [**postAnalyticsReportingDashboardsUsersBulkRemove**](AnalyticsApi.html#postAnalyticsReportingDashboardsUsersBulkRemove) | Bulk delete dashboards owned by other user(s) |
 | [**postAnalyticsReportingExports**](AnalyticsApi.html#postAnalyticsReportingExports) | Generate a view export request |
-| [**postAnalyticsReportingScheduleRunreport**](AnalyticsApi.html#postAnalyticsReportingScheduleRunreport) | Place a scheduled report immediately into the reporting queue |
-| [**postAnalyticsReportingSchedules**](AnalyticsApi.html#postAnalyticsReportingSchedules) | Create a scheduled report job |
 | [**postAnalyticsReportingSettingsDashboardsBulkRemove**](AnalyticsApi.html#postAnalyticsReportingSettingsDashboardsBulkRemove) | Bulk remove dashboard configurations |
 | [**postAnalyticsReportingSettingsDashboardsQuery**](AnalyticsApi.html#postAnalyticsReportingSettingsDashboardsQuery) | Query dashboard configurations |
 | [**postAnalyticsResolutionsAggregatesJobs**](AnalyticsApi.html#postAnalyticsResolutionsAggregatesJobs) | Query for resolution aggregates asynchronously |
@@ -110,7 +99,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsUsersDetailsQuery**](AnalyticsApi.html#postAnalyticsUsersDetailsQuery) | Query for user details |
 | [**postAnalyticsUsersObservationsQuery**](AnalyticsApi.html#postAnalyticsUsersObservationsQuery) | Query for user observations |
 | [**putAnalyticsDataretentionSettings**](AnalyticsApi.html#putAnalyticsDataretentionSettings) | Update analytics data retention setting |
-| [**putAnalyticsReportingSchedule**](AnalyticsApi.html#putAnalyticsReportingSchedule) | Update a scheduled report job. |
 {: class="table-striped"}
 
 <a name="deleteAnalyticsConversationsDetailsJob"></a>
@@ -167,65 +155,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **jobId** | **String**| jobId | 
-{: class="table-striped"}
-
-
-### Return type
-
-null (empty response body)
-
-<a name="deleteAnalyticsReportingSchedule"></a>
-
-# **deleteAnalyticsReportingSchedule**
-
-
-
-> Void deleteAnalyticsReportingSchedule(scheduleId)
-
-Delete a scheduled report job.
-
-Wraps DELETE /api/v2/analytics/reporting/schedules/{scheduleId}  
-
-Requires NO permissions: 
-
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.AnalyticsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-AnalyticsApi apiInstance = new AnalyticsApi();
-String scheduleId = "scheduleId_example"; // String | Schedule ID
-try {
-    apiInstance.deleteAnalyticsReportingSchedule(scheduleId);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AnalyticsApi#deleteAnalyticsReportingSchedule");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **scheduleId** | **String**| Schedule ID | 
 {: class="table-striped"}
 
 
@@ -423,17 +352,94 @@ try {
 
 [**ActionAsyncAggregateQueryResponse**](ActionAsyncAggregateQueryResponse.html)
 
+<a name="getAnalyticsBotflowDivisionsReportingturns"></a>
+
+# **getAnalyticsBotflowDivisionsReportingturns**
+
+
+
+> [ReportingTurnsResponse](ReportingTurnsResponse.html) getAnalyticsBotflowDivisionsReportingturns(botFlowId, after, pageSize, interval, actionId, sessionId, language, askActionResults)
+
+Get Reporting Turns (division aware).
+
+Returns the reporting turns for the specified flow, filtered by the clients divisions and grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+
+Wraps GET /api/v2/analytics/botflows/{botFlowId}/divisions/reportingturns  
+
+Requires ANY permissions: 
+
+* analytics:botFlowDivisionAwareReportingTurn:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String botFlowId = "botFlowId_example"; // String | ID of the bot flow.
+String after = "after_example"; // String | The cursor that points to the ID of the last item in the list of entities that has been returned.
+String pageSize = "50"; // String | Max number of entities to return. Maximum of 250
+String interval = 2023-07-17T08:15:44.586Z/2023-07-26T09:22:33.111Z; // String | Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+String actionId = "actionId_example"; // String | Optional action ID to get the reporting turns associated to a particular flow action
+String sessionId = "sessionId_example"; // String | Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed.
+String language = en-us; // String | Optional language code to get the reporting turns for a particular language
+String askActionResults = "askActionResults_example"; // String | Optional case-insensitive comma separated list of ask action results to filter the reporting turns.
+try {
+    ReportingTurnsResponse result = apiInstance.getAnalyticsBotflowDivisionsReportingturns(botFlowId, after, pageSize, interval, actionId, sessionId, language, askActionResults);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#getAnalyticsBotflowDivisionsReportingturns");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **botFlowId** | **String**| ID of the bot flow. | 
+| **after** | **String**| The cursor that points to the ID of the last item in the list of entities that has been returned. | [optional] 
+| **pageSize** | **String**| Max number of entities to return. Maximum of 250 | [optional] [default to 50] 
+| **interval** | **String**| Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: &#39;2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07&#39;. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional] [default to null] 
+| **actionId** | **String**| Optional action ID to get the reporting turns associated to a particular flow action | [optional] 
+| **sessionId** | **String**| Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed. | [optional] 
+| **language** | **String**| Optional language code to get the reporting turns for a particular language | [optional] [default to null] 
+| **askActionResults** | **String**| Optional case-insensitive comma separated list of ask action results to filter the reporting turns. | [optional]<br />**Values**: AgentRequestedByUser, ConfirmationRequired, DisambiguationRequired, Error, ExpressionError, NoInputCollection, NoInputConfirmation, NoInputDisambiguation, NoMatchCollection, NoMatchConfirmation, NoMatchDisambiguation, SuccessCollection, SuccessConfirmationNo, SuccessConfirmationYes, SuccessDisambiguation, SuccessDisambiguationNone 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ReportingTurnsResponse**](ReportingTurnsResponse.html)
+
 <a name="getAnalyticsBotflowReportingturns"></a>
 
 # **getAnalyticsBotflowReportingturns**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [ReportingTurnsResponse](ReportingTurnsResponse.html) getAnalyticsBotflowReportingturns(botFlowId, after, pageSize, interval, actionId, sessionId, language, askActionResults)
 
 Get Reporting Turns.
 
-Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+Deprecated: Please use GET /analytics/botflows/{botFlowId}/divisions/reportingturns instead. Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
 
 Wraps GET /api/v2/analytics/botflows/{botFlowId}/reportingturns  
 
@@ -2085,505 +2091,6 @@ This endpoint does not require any parameters.
 
 [**ReportingExportMetadataJobListing**](ReportingExportMetadataJobListing.html)
 
-<a name="getAnalyticsReportingMetadata"></a>
-
-# **getAnalyticsReportingMetadata**
-
-
-
-> [ReportMetaDataEntityListing](ReportMetaDataEntityListing.html) getAnalyticsReportingMetadata(pageNumber, pageSize, locale)
-
-Get list of reporting metadata.
-
-Wraps GET /api/v2/analytics/reporting/metadata  
-
-Requires ANY permissions: 
-
-* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.AnalyticsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-AnalyticsApi apiInstance = new AnalyticsApi();
-Integer pageNumber = 1; // Integer | Page number
-Integer pageSize = 25; // Integer | Page size
-String locale = "locale_example"; // String | Locale
-try {
-    ReportMetaDataEntityListing result = apiInstance.getAnalyticsReportingMetadata(pageNumber, pageSize, locale);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AnalyticsApi#getAnalyticsReportingMetadata");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
-| **locale** | **String**| Locale | [optional] 
-{: class="table-striped"}
-
-
-### Return type
-
-[**ReportMetaDataEntityListing**](ReportMetaDataEntityListing.html)
-
-<a name="getAnalyticsReportingReportIdMetadata"></a>
-
-# **getAnalyticsReportingReportIdMetadata**
-
-
-
-> [ReportMetaData](ReportMetaData.html) getAnalyticsReportingReportIdMetadata(reportId, locale)
-
-Get a reporting metadata.
-
-Wraps GET /api/v2/analytics/reporting/{reportId}/metadata  
-
-Requires ANY permissions: 
-
-* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.AnalyticsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-AnalyticsApi apiInstance = new AnalyticsApi();
-String reportId = "reportId_example"; // String | Report ID
-String locale = "locale_example"; // String | Locale
-try {
-    ReportMetaData result = apiInstance.getAnalyticsReportingReportIdMetadata(reportId, locale);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AnalyticsApi#getAnalyticsReportingReportIdMetadata");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **reportId** | **String**| Report ID | 
-| **locale** | **String**| Locale | [optional] 
-{: class="table-striped"}
-
-
-### Return type
-
-[**ReportMetaData**](ReportMetaData.html)
-
-<a name="getAnalyticsReportingReportformats"></a>
-
-# **getAnalyticsReportingReportformats**
-
-
-
-> List&lt;String&gt; getAnalyticsReportingReportformats()
-
-Get a list of report formats
-
-Get a list of report formats.
-
-Wraps GET /api/v2/analytics/reporting/reportformats  
-
-Requires NO permissions: 
-
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.AnalyticsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-AnalyticsApi apiInstance = new AnalyticsApi();
-try {
-    List<String> result = apiInstance.getAnalyticsReportingReportformats();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AnalyticsApi#getAnalyticsReportingReportformats");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-This endpoint does not require any parameters.
-
-
-
-### Return type
-
-**List&lt;String&gt;**
-
-<a name="getAnalyticsReportingSchedule"></a>
-
-# **getAnalyticsReportingSchedule**
-
-
-
-> [ReportSchedule](ReportSchedule.html) getAnalyticsReportingSchedule(scheduleId)
-
-Get a scheduled report job.
-
-Wraps GET /api/v2/analytics/reporting/schedules/{scheduleId}  
-
-Requires NO permissions: 
-
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.AnalyticsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-AnalyticsApi apiInstance = new AnalyticsApi();
-String scheduleId = "scheduleId_example"; // String | Schedule ID
-try {
-    ReportSchedule result = apiInstance.getAnalyticsReportingSchedule(scheduleId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AnalyticsApi#getAnalyticsReportingSchedule");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **scheduleId** | **String**| Schedule ID | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**ReportSchedule**](ReportSchedule.html)
-
-<a name="getAnalyticsReportingScheduleHistory"></a>
-
-# **getAnalyticsReportingScheduleHistory**
-
-
-
-> [ReportRunEntryEntityDomainListing](ReportRunEntryEntityDomainListing.html) getAnalyticsReportingScheduleHistory(scheduleId, pageNumber, pageSize)
-
-Get list of completed scheduled report jobs.
-
-Wraps GET /api/v2/analytics/reporting/schedules/{scheduleId}/history  
-
-Requires NO permissions: 
-
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.AnalyticsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-AnalyticsApi apiInstance = new AnalyticsApi();
-String scheduleId = "scheduleId_example"; // String | Schedule ID
-Integer pageNumber = 1; // Integer | 
-Integer pageSize = 25; // Integer | 
-try {
-    ReportRunEntryEntityDomainListing result = apiInstance.getAnalyticsReportingScheduleHistory(scheduleId, pageNumber, pageSize);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AnalyticsApi#getAnalyticsReportingScheduleHistory");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **scheduleId** | **String**| Schedule ID | 
-| **pageNumber** | **Integer**|  | [optional] [default to 1] 
-| **pageSize** | **Integer**|  | [optional] [default to 25] 
-{: class="table-striped"}
-
-
-### Return type
-
-[**ReportRunEntryEntityDomainListing**](ReportRunEntryEntityDomainListing.html)
-
-<a name="getAnalyticsReportingScheduleHistoryLatest"></a>
-
-# **getAnalyticsReportingScheduleHistoryLatest**
-
-
-
-> [ReportRunEntry](ReportRunEntry.html) getAnalyticsReportingScheduleHistoryLatest(scheduleId)
-
-Get most recently completed scheduled report job.
-
-Wraps GET /api/v2/analytics/reporting/schedules/{scheduleId}/history/latest  
-
-Requires NO permissions: 
-
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.AnalyticsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-AnalyticsApi apiInstance = new AnalyticsApi();
-String scheduleId = "scheduleId_example"; // String | Schedule ID
-try {
-    ReportRunEntry result = apiInstance.getAnalyticsReportingScheduleHistoryLatest(scheduleId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AnalyticsApi#getAnalyticsReportingScheduleHistoryLatest");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **scheduleId** | **String**| Schedule ID | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**ReportRunEntry**](ReportRunEntry.html)
-
-<a name="getAnalyticsReportingScheduleHistoryRunId"></a>
-
-# **getAnalyticsReportingScheduleHistoryRunId**
-
-
-
-> [ReportRunEntry](ReportRunEntry.html) getAnalyticsReportingScheduleHistoryRunId(runId, scheduleId)
-
-A completed scheduled report job
-
-A completed scheduled report job.
-
-Wraps GET /api/v2/analytics/reporting/schedules/{scheduleId}/history/{runId}  
-
-Requires NO permissions: 
-
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.AnalyticsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-AnalyticsApi apiInstance = new AnalyticsApi();
-String runId = "runId_example"; // String | Run ID
-String scheduleId = "scheduleId_example"; // String | Schedule ID
-try {
-    ReportRunEntry result = apiInstance.getAnalyticsReportingScheduleHistoryRunId(runId, scheduleId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AnalyticsApi#getAnalyticsReportingScheduleHistoryRunId");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **runId** | **String**| Run ID | 
-| **scheduleId** | **String**| Schedule ID | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**ReportRunEntry**](ReportRunEntry.html)
-
-<a name="getAnalyticsReportingSchedules"></a>
-
-# **getAnalyticsReportingSchedules**
-
-
-
-> [ReportScheduleEntityListing](ReportScheduleEntityListing.html) getAnalyticsReportingSchedules(pageNumber, pageSize)
-
-Get a list of scheduled report jobs
-
-Get a list of scheduled report jobs.
-
-Wraps GET /api/v2/analytics/reporting/schedules  
-
-Requires ANY permissions: 
-
-* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.AnalyticsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-AnalyticsApi apiInstance = new AnalyticsApi();
-Integer pageNumber = 1; // Integer | Page number
-Integer pageSize = 25; // Integer | Page size
-try {
-    ReportScheduleEntityListing result = apiInstance.getAnalyticsReportingSchedules(pageNumber, pageSize);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AnalyticsApi#getAnalyticsReportingSchedules");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
-{: class="table-striped"}
-
-
-### Return type
-
-[**ReportScheduleEntityListing**](ReportScheduleEntityListing.html)
-
 <a name="getAnalyticsReportingSettings"></a>
 
 # **getAnalyticsReportingSettings**
@@ -2646,7 +2153,7 @@ This endpoint does not require any parameters.
 
 
 
-> [DashboardConfigurationListing](DashboardConfigurationListing.html) getAnalyticsReportingSettingsUserDashboards(userId, sortBy, pageNumber, pageSize, publicOnly, favoriteOnly)
+> [DashboardConfigurationListing](DashboardConfigurationListing.html) getAnalyticsReportingSettingsUserDashboards(userId, sortBy, pageNumber, pageSize, publicOnly, favoriteOnly, name)
 
 Get list of dashboards for an user
 
@@ -2684,8 +2191,9 @@ Integer pageNumber = 1; // Integer |
 Integer pageSize = 50; // Integer | 
 Boolean publicOnly = true; // Boolean | If true, retrieve only public dashboards
 Boolean favoriteOnly = true; // Boolean | If true, retrieve only favorite dashboards
+String name = "name_example"; // String | retrieve dashboards that match with given name
 try {
-    DashboardConfigurationListing result = apiInstance.getAnalyticsReportingSettingsUserDashboards(userId, sortBy, pageNumber, pageSize, publicOnly, favoriteOnly);
+    DashboardConfigurationListing result = apiInstance.getAnalyticsReportingSettingsUserDashboards(userId, sortBy, pageNumber, pageSize, publicOnly, favoriteOnly, name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AnalyticsApi#getAnalyticsReportingSettingsUserDashboards");
@@ -2704,68 +2212,13 @@ try {
 | **pageSize** | **Integer**|  | [optional] [default to 50] 
 | **publicOnly** | **Boolean**| If true, retrieve only public dashboards | [optional] 
 | **favoriteOnly** | **Boolean**| If true, retrieve only favorite dashboards | [optional] 
+| **name** | **String**| retrieve dashboards that match with given name | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
 [**DashboardConfigurationListing**](DashboardConfigurationListing.html)
-
-<a name="getAnalyticsReportingTimeperiods"></a>
-
-# **getAnalyticsReportingTimeperiods**
-
-
-
-> List&lt;String&gt; getAnalyticsReportingTimeperiods()
-
-Get a list of report time periods.
-
-Wraps GET /api/v2/analytics/reporting/timeperiods  
-
-Requires NO permissions: 
-
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.AnalyticsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-AnalyticsApi apiInstance = new AnalyticsApi();
-try {
-    List<String> result = apiInstance.getAnalyticsReportingTimeperiods();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AnalyticsApi#getAnalyticsReportingTimeperiods");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-This endpoint does not require any parameters.
-
-
-
-### Return type
-
-**List&lt;String&gt;**
 
 <a name="getAnalyticsResolutionsAggregatesJob"></a>
 
@@ -3974,8 +3427,6 @@ try {
 
 Query for conversation activity observations
 
-postAnalyticsConversationsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/analytics/conversations/activity/query  
 
 Requires ANY permissions: 
@@ -4597,8 +4048,6 @@ try {
 > [FlowActivityResponse](FlowActivityResponse.html) postAnalyticsFlowsActivityQuery(body, pageSize, pageNumber)
 
 Query for flow activity observations
-
-postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/flows/activity/query  
 
@@ -5334,132 +4783,6 @@ try {
 
 [**ReportingExportJobResponse**](ReportingExportJobResponse.html)
 
-<a name="postAnalyticsReportingScheduleRunreport"></a>
-
-# **postAnalyticsReportingScheduleRunreport**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [RunNowResponse](RunNowResponse.html) postAnalyticsReportingScheduleRunreport(scheduleId)
-
-Place a scheduled report immediately into the reporting queue
-
-This route is deprecated, please use POST:api/v2/analytics/reporting/exports/{exportId}/execute instead
-
-Wraps POST /api/v2/analytics/reporting/schedules/{scheduleId}/runreport  
-
-Requires ANY permissions: 
-
-* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.AnalyticsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-AnalyticsApi apiInstance = new AnalyticsApi();
-String scheduleId = "scheduleId_example"; // String | Schedule ID
-try {
-    RunNowResponse result = apiInstance.postAnalyticsReportingScheduleRunreport(scheduleId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AnalyticsApi#postAnalyticsReportingScheduleRunreport");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **scheduleId** | **String**| Schedule ID | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**RunNowResponse**](RunNowResponse.html)
-
-<a name="postAnalyticsReportingSchedules"></a>
-
-# **postAnalyticsReportingSchedules**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [ReportSchedule](ReportSchedule.html) postAnalyticsReportingSchedules(body)
-
-Create a scheduled report job
-
-This route is deprecated, please use POST:api/v2/analytics/reporting/exports instead
-
-Wraps POST /api/v2/analytics/reporting/schedules  
-
-Requires ANY permissions: 
-
-* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.AnalyticsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-AnalyticsApi apiInstance = new AnalyticsApi();
-ReportSchedule body = new ReportSchedule(); // ReportSchedule | ReportSchedule
-try {
-    ReportSchedule result = apiInstance.postAnalyticsReportingSchedules(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AnalyticsApi#postAnalyticsReportingSchedules");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ReportSchedule**](ReportSchedule.html)| ReportSchedule | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**ReportSchedule**](ReportSchedule.html)
-
 <a name="postAnalyticsReportingSettingsDashboardsBulkRemove"></a>
 
 # **postAnalyticsReportingSettingsDashboardsBulkRemove**
@@ -5653,8 +4976,6 @@ try {
 > [RoutingActivityResponse](RoutingActivityResponse.html) postAnalyticsRoutingActivityQuery(body, pageSize, pageNumber)
 
 Query for user activity observations
-
-postAnalyticsRoutingActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/routing/activity/query  
 
@@ -5971,8 +5292,6 @@ try {
 
 Query for team activity observations
 
-postAnalyticsTeamsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/analytics/teams/activity/query  
 
 Requires ANY permissions: 
@@ -6161,8 +5480,6 @@ try {
 > [UserActivityResponse](UserActivityResponse.html) postAnalyticsUsersActivityQuery(body, pageSize, pageNumber)
 
 Query for user activity observations
-
-postAnalyticsUsersActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/users/activity/query  
 
@@ -6586,69 +5903,4 @@ try {
 ### Return type
 
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse.html)
-
-<a name="putAnalyticsReportingSchedule"></a>
-
-# **putAnalyticsReportingSchedule**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [ReportSchedule](ReportSchedule.html) putAnalyticsReportingSchedule(scheduleId, body)
-
-Update a scheduled report job.
-
-This route is deprecated, please use PATCH:api/v2/analytics/reporting/exports/{exportId}/schedule instead
-
-Wraps PUT /api/v2/analytics/reporting/schedules/{scheduleId}  
-
-Requires ANY permissions: 
-
-* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.AnalyticsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-AnalyticsApi apiInstance = new AnalyticsApi();
-String scheduleId = "scheduleId_example"; // String | Schedule ID
-ReportSchedule body = new ReportSchedule(); // ReportSchedule | ReportSchedule
-try {
-    ReportSchedule result = apiInstance.putAnalyticsReportingSchedule(scheduleId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AnalyticsApi#putAnalyticsReportingSchedule");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **scheduleId** | **String**| Schedule ID | 
-| **body** | [**ReportSchedule**](ReportSchedule.html)| ReportSchedule | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**ReportSchedule**](ReportSchedule.html)
 

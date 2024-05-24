@@ -15,6 +15,7 @@ title: Reoccurrence
 | **pattern** | <!----><!---->[**Pattern**](Pattern.html)<!----> | The schedule pattern e.g.: Daily/Weekly |  |
 | **range** | <!----><!---->[**Range**](Range.html)<!----> | The schedule range e.g.: EndDate/NoEnd/Numbered |  |
 | **alterations** | <!----><!---->[**List&lt;Alteration&gt;**](Alteration.html)<!----> | Modifications to the original recurrence schedule (Exclusions/Inclusions) |  [optional] |
+| **nextOccurrenceDetails** | <!----><!---->[**NextOccurrenceDetails**](NextOccurrenceDetails.html)<!----> | The next occurrence details for the next start and end occurrences for the recurrence |  [optional] |
 {: class="table table-striped"}
 
 

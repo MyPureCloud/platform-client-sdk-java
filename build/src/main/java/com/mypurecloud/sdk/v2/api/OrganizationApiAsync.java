@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.EmbeddedIntegration;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FeatureState;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
+import com.mypurecloud.sdk.v2.model.FreeTrialLimitDocs;
 import com.mypurecloud.sdk.v2.model.IpAddressAuthentication;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestDetails;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestsEntityListing;
@@ -35,6 +36,7 @@ import com.mypurecloud.sdk.v2.api.request.GetOrganizationsIpaddressauthenticatio
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsChangerequestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsChangerequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsDocsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsDocsFreetrialRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsNamespaceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsNamespaceDefaultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsNamespacesRequest;
@@ -585,6 +587,81 @@ public class OrganizationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<LimitDocumentation> response = (ApiResponse<LimitDocumentation>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get free trial limit documentation
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FreeTrialLimitDocs> getOrganizationsLimitsDocsFreetrialAsync(GetOrganizationsLimitsDocsFreetrialRequest request, final AsyncApiCallback<FreeTrialLimitDocs> callback) {
+    try {
+      final SettableFuture<FreeTrialLimitDocs> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FreeTrialLimitDocs>() {}, new AsyncApiCallback<ApiResponse<FreeTrialLimitDocs>>() {
+        @Override
+        public void onCompleted(ApiResponse<FreeTrialLimitDocs> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get free trial limit documentation
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FreeTrialLimitDocs>> getOrganizationsLimitsDocsFreetrialAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FreeTrialLimitDocs>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FreeTrialLimitDocs>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FreeTrialLimitDocs>() {}, new AsyncApiCallback<ApiResponse<FreeTrialLimitDocs>>() {
+        @Override
+        public void onCompleted(ApiResponse<FreeTrialLimitDocs> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FreeTrialLimitDocs> response = (ApiResponse<FreeTrialLimitDocs>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FreeTrialLimitDocs> response = (ApiResponse<FreeTrialLimitDocs>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -184,6 +184,7 @@ title: ViewFilter
 | **agentEmpathyScore** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The agentEmpathyScore is used to filter the view |  [optional] |
 | **surveyTypes** | <!---->[**List&lt;SurveyTypesEnum&gt;**](#SurveyTypesEnum)<!----> | The surveyTypes is used to filter the view |  [optional] |
 | **surveyResponseStatuses** | <!---->[**List&lt;SurveyResponseStatusesEnum&gt;**](#SurveyResponseStatusesEnum)<!----> | The list of Survey Response Status |  [optional] |
+| **botFlowTypes** | <!---->[**List&lt;BotFlowTypesEnum&gt;**](#BotFlowTypesEnum)<!----> | The botFlowTypes is used to filter the view |  [optional] |
 {: class="table table-striped"}
 
 
@@ -553,6 +554,7 @@ title: ViewFilter
 | DELIVERYFAILED | &quot;DeliveryFailed&quot; |
 | DELIVERYSUCCESS | &quot;DeliverySuccess&quot; |
 | FAILED | &quot;Failed&quot; |
+| PUBLISHED | &quot;Published&quot; |
 | QUEUED | &quot;Queued&quot; |
 | READ | &quot;Read&quot; |
 | RECEIVED | &quot;Received&quot; |
@@ -620,6 +622,19 @@ title: ViewFilter
 | UNKNOWN | &quot;Unknown&quot; |
 | FULLRESPONSE | &quot;FullResponse&quot; |
 | PARTIALRESPONSE | &quot;PartialResponse&quot; |
+{: class="table table-striped"}
+
+
+<a name="BotFlowTypesEnum"></a>
+
+## Enum: BotFlowTypesEnum
+
+| Name | Value |
+| ---- | ----- |
+| UNKNOWN | &quot;Unknown&quot; |
+| BOT | &quot;Bot&quot; |
+| DIGITALBOT | &quot;DigitalBot&quot; |
+| VOICESURVEY | &quot;VoiceSurvey&quot; |
 {: class="table table-striped"}
 
 
