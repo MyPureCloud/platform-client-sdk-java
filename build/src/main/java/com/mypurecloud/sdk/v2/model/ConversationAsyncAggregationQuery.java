@@ -125,6 +125,7 @@ public class ConversationAsyncAggregationQuery  implements Serializable {
     TEAMID("teamId"),
     USEDROUTING("usedRouting"),
     USERID("userId"),
+    VIDEOPRESENT("videoPresent"),
     WAITINGINTERACTIONCOUNT("waitingInteractionCount"),
     WRAPUPCODE("wrapUpCode");
 

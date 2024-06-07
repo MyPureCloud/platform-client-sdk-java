@@ -52,8 +52,8 @@ title: AnalyticsConversationWithoutAttributes
 | STATION | &quot;station&quot; | 
 | USER | &quot;user&quot; | 
 | VOICEMAIL | &quot;voicemail&quot; | 
-| WORKFLOW | &quot;workflow&quot; | 
 | VOICESURVEYFLOW | &quot;voicesurveyflow&quot; | 
+| WORKFLOW | &quot;workflow&quot; | 
 {: class="table table-striped"}
 
 

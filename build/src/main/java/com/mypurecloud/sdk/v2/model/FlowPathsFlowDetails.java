@@ -46,7 +46,10 @@ public class FlowPathsFlowDetails  implements Serializable {
     DIGITALBOT("DigitalBot"),
     BOT("Bot"),
     INBOUNDCALL("InboundCall"),
-    SECURECALL("SecureCall");
+    SECURECALL("SecureCall"),
+    INBOUNDSHORTMESSAGE("InboundShortMessage"),
+    INBOUNDEMAIL("InboundEmail"),
+    OUTBOUNDCALL("OutboundCall");
 
     private String value;
 

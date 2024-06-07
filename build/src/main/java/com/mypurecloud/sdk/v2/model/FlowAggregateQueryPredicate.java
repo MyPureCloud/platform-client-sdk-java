@@ -187,6 +187,7 @@ public class FlowAggregateQueryPredicate  implements Serializable {
     TRANSFERTYPE("transferType"),
     USEDROUTING("usedRouting"),
     USERID("userId"),
+    VIDEOPRESENT("videoPresent"),
     WAITINGINTERACTIONCOUNT("waitingInteractionCount"),
     WRAPUPCODE("wrapUpCode");
 

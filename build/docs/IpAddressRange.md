@@ -24,6 +24,7 @@ title: IpAddressRange
 | DATA_ACTIONS | &quot;data-actions&quot; | 
 | SMTP | &quot;smtp&quot; | 
 | AUDIOHOOK | &quot;audiohook&quot; | 
+| OPEN_MESSAGING | &quot;open-messaging&quot; | 
 | API | &quot;api&quot; | 
 {: class="table table-striped"}
 

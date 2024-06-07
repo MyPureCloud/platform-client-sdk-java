@@ -93,14 +93,14 @@ public class Alteration  implements Serializable {
 
 
   /**
-   * The start date of an alteration range as an ISO-8601 string in UTC time, e.g: 2023-12-21T16:30:25.000Z
+   * The start date of an alteration range as an ISO-8601 string
    **/
   public Alteration start(String start) {
     this.start = start;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The start date of an alteration range as an ISO-8601 string in UTC time, e.g: 2023-12-21T16:30:25.000Z")
+  @ApiModelProperty(example = "2023-12-21T16:30:25", value = "The start date of an alteration range as an ISO-8601 string")
   @JsonProperty("start")
   public String getStart() {
     return start;
@@ -111,14 +111,14 @@ public class Alteration  implements Serializable {
 
 
   /**
-   * The end date of an alteration range as an ISO-8601 string in UTC time, e.g: 2023-12-21T18:30:25.000Z
+   * The end date of an alteration range as an ISO-8601 string
    **/
   public Alteration end(String end) {
     this.end = end;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The end date of an alteration range as an ISO-8601 string in UTC time, e.g: 2023-12-21T18:30:25.000Z")
+  @ApiModelProperty(example = "2023-12-21T16:30:25", value = "The end date of an alteration range as an ISO-8601 string")
   @JsonProperty("end")
   public String getEnd() {
     return end;

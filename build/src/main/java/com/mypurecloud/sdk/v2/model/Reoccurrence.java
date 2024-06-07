@@ -55,14 +55,14 @@ public class Reoccurrence  implements Serializable {
 
 
   /**
-   * The  start date time of the initial occurrence as an ISO-8601 string in UTC time, e.g: 2023-11-21T16:30:25.000Z
+   * The start date time of the initial occurrence as an ISO-8601 string in the format YYYY-MM-DDThh:mm:ss
    **/
   public Reoccurrence start(String start) {
     this.start = start;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The  start date time of the initial occurrence as an ISO-8601 string in UTC time, e.g: 2023-11-21T16:30:25.000Z")
+  @ApiModelProperty(example = "2023-11-21T16:30:25", required = true, value = "The start date time of the initial occurrence as an ISO-8601 string in the format YYYY-MM-DDThh:mm:ss")
   @JsonProperty("start")
   public String getStart() {
     return start;
@@ -73,14 +73,14 @@ public class Reoccurrence  implements Serializable {
 
 
   /**
-   * The end date time of the initial occurrence as an ISO-8601 string in UTC time, e.g: 2023-12-21T16:30:25.000Z
+   * The end date time of the initial occurrence as an ISO-8601 string in the format YYYY-MM-DDThh:mm:ss
    **/
   public Reoccurrence end(String end) {
     this.end = end;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The end date time of the initial occurrence as an ISO-8601 string in UTC time, e.g: 2023-12-21T16:30:25.000Z")
+  @ApiModelProperty(example = "2023-11-21T16:30:25", required = true, value = "The end date time of the initial occurrence as an ISO-8601 string in the format YYYY-MM-DDThh:mm:ss")
   @JsonProperty("end")
   public String getEnd() {
     return end;

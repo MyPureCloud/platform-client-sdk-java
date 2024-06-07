@@ -30,9 +30,9 @@ title: BotAggregationQuery
 | ASKACTIONRESULT | &quot;askActionResult&quot; |
 | ASKACTIONTYPE | &quot;askActionType&quot; |
 | BOTFINALINTENT | &quot;botFinalIntent&quot; |
+| BOTFLOWTYPE | &quot;botFlowType&quot; |
 | BOTID | &quot;botId&quot; |
 | BOTINTENT | &quot;botIntent&quot; |
-| BOTFLOWTYPE | &quot;botFlowType&quot; |
 | BOTPRODUCT | &quot;botProduct&quot; |
 | BOTPROVIDER | &quot;botProvider&quot; |
 | BOTRECOGNITIONFAILUREREASON | &quot;botRecognitionFailureReason&quot; |

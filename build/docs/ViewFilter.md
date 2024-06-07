@@ -185,6 +185,8 @@ title: ViewFilter
 | **surveyTypes** | <!---->[**List&lt;SurveyTypesEnum&gt;**](#SurveyTypesEnum)<!----> | The surveyTypes is used to filter the view |  [optional] |
 | **surveyResponseStatuses** | <!---->[**List&lt;SurveyResponseStatusesEnum&gt;**](#SurveyResponseStatusesEnum)<!----> | The list of Survey Response Status |  [optional] |
 | **botFlowTypes** | <!---->[**List&lt;BotFlowTypesEnum&gt;**](#BotFlowTypesEnum)<!----> | The botFlowTypes is used to filter the view |  [optional] |
+| **isScreenRecorded** | <!----><!---->**Boolean**<!----> | Filter to indicate if the screen is recorded |  [optional] |
+| **screenMonitorUserIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of Screen Monitor User Ids |  [optional] |
 {: class="table table-striped"}
 
 

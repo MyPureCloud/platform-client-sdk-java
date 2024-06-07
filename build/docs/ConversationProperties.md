@@ -17,6 +17,7 @@ title: ConversationProperties
 | **isVoicemail** | <!----><!---->**Boolean**<!----> | Indicates filtering for Voice mail |  [optional] |
 | **isFlagged** | <!----><!---->**Boolean**<!----> | Indicates filtering for flagged |  [optional] |
 | **isMonitored** | <!----><!---->**Boolean**<!----> | Indicates filtering for monitored |  [optional] |
+| **isScreenMonitored** | <!----><!---->**Boolean**<!----> | Indicates filtering for screenMonitored |  [optional] |
 | **filterWrapUpNotes** | <!----><!---->**Boolean**<!----> | Indicates filtering for WrapUpNotes |  [optional] |
 | **matchAll** | <!----><!---->**Boolean**<!----> | Indicates comparison operation, TRUE indicates filters will use AND logic, FALSE indicates OR logic |  [optional] |
 {: class="table table-striped"}

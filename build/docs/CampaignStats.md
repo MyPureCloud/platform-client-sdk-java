@@ -15,6 +15,7 @@ title: CampaignStats
 | **outstandingCalls** | <!----><!---->**Integer**<!----> | Number of campaign calls currently ongoing |  [optional] |
 | **scheduledCalls** | <!----><!---->**Integer**<!----> | Number of campaign calls currently scheduled |  [optional] |
 | **timeZoneRescheduledCalls** | <!----><!---->**Integer**<!----> | Number of campaign calls currently timezone rescheduled |  [optional] |
+| **linesUtilization** | <!----><!---->[**CampaignLinesUtilization**](CampaignLinesUtilization.html)<!----> | Information on the campaign's lines utilization |  [optional] |
 {: class="table table-striped"}
 
 

@@ -122,6 +122,7 @@ title: FlowAsyncAggregationQuery
 | TRANSFERTYPE | &quot;transferType&quot; |
 | USEDROUTING | &quot;usedRouting&quot; |
 | USERID | &quot;userId&quot; |
+| VIDEOPRESENT | &quot;videoPresent&quot; |
 | WAITINGINTERACTIONCOUNT | &quot;waitingInteractionCount&quot; |
 | WRAPUPCODE | &quot;wrapUpCode&quot; |
 {: class="table table-striped"}

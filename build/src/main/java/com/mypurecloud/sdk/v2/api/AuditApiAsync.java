@@ -19,6 +19,8 @@ import com.mypurecloud.sdk.v2.model.AuditQueryRequest;
 import com.mypurecloud.sdk.v2.model.AuditQueryServiceMapping;
 import com.mypurecloud.sdk.v2.model.AuditRealtimeQueryRequest;
 import com.mypurecloud.sdk.v2.model.AuditRealtimeQueryResultsResponse;
+import com.mypurecloud.sdk.v2.model.AuditRealtimeRelatedRequest;
+import com.mypurecloud.sdk.v2.model.AuditRealtimeRelatedResultsResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 
@@ -28,6 +30,7 @@ import com.mypurecloud.sdk.v2.api.request.GetAuditsQueryTransactionIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuditsQueryTransactionIdResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuditsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuditsQueryRealtimeRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAuditsQueryRealtimeRelatedRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -486,6 +489,81 @@ public class AuditApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<AuditRealtimeQueryResultsResponse> response = (ApiResponse<AuditRealtimeQueryResultsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AuditRealtimeRelatedResultsResponse> postAuditsQueryRealtimeRelatedAsync(PostAuditsQueryRealtimeRelatedRequest request, final AsyncApiCallback<AuditRealtimeRelatedResultsResponse> callback) {
+    try {
+      final SettableFuture<AuditRealtimeRelatedResultsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AuditRealtimeRelatedResultsResponse>() {}, new AsyncApiCallback<ApiResponse<AuditRealtimeRelatedResultsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuditRealtimeRelatedResultsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AuditRealtimeRelatedResultsResponse>> postAuditsQueryRealtimeRelatedAsync(ApiRequest<AuditRealtimeRelatedRequest> request, final AsyncApiCallback<ApiResponse<AuditRealtimeRelatedResultsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AuditRealtimeRelatedResultsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AuditRealtimeRelatedResultsResponse>() {}, new AsyncApiCallback<ApiResponse<AuditRealtimeRelatedResultsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuditRealtimeRelatedResultsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuditRealtimeRelatedResultsResponse> response = (ApiResponse<AuditRealtimeRelatedResultsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuditRealtimeRelatedResultsResponse> response = (ApiResponse<AuditRealtimeRelatedResultsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

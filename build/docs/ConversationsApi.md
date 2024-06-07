@@ -15,9 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteConversationsMessagesCachedmediaCachedMediaItemId**](ConversationsApi.html#deleteConversationsMessagesCachedmediaCachedMediaItemId) | Remove a cached media item asychronously |
 | [**deleteConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsFacebookIntegrationId) | Delete a Facebook messaging integration |
 | [**deleteConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsInstagramIntegrationId) | Delete Instagram messaging integration |
-| [**deleteConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsLineIntegrationId) | Delete a LINE messenger integration (Deprecated) |
 | [**deleteConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsOpenIntegrationId) | Delete an Open messaging integration |
-| [**deleteConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsTwitterIntegrationId) | Delete a Twitter messaging integration |
 | [**deleteConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsWhatsappIntegrationId) | Delete a WhatsApp messaging integration |
 | [**deleteConversationsMessagingSetting**](ConversationsApi.html#deleteConversationsMessagingSetting) | Delete a messaging setting |
 | [**deleteConversationsMessagingSettingsDefault**](ConversationsApi.html#deleteConversationsMessagingSettingsDefault) | Delete the organization's default setting, a global default will be applied to integrations without settings |
@@ -88,12 +86,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsFacebookIntegrationId) | Get a Facebook messaging integration |
 | [**getConversationsMessagingIntegrationsInstagram**](ConversationsApi.html#getConversationsMessagingIntegrationsInstagram) | Get a list of Instagram Integrations |
 | [**getConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsInstagramIntegrationId) | Get Instagram messaging integration |
-| [**getConversationsMessagingIntegrationsLine**](ConversationsApi.html#getConversationsMessagingIntegrationsLine) | Get a list of LINE messenger Integrations (Deprecated) |
-| [**getConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsLineIntegrationId) | Get a LINE messenger integration (Deprecated) |
 | [**getConversationsMessagingIntegrationsOpen**](ConversationsApi.html#getConversationsMessagingIntegrationsOpen) | Get a list of Open messaging integrations |
 | [**getConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsOpenIntegrationId) | Get an Open messaging integration |
-| [**getConversationsMessagingIntegrationsTwitter**](ConversationsApi.html#getConversationsMessagingIntegrationsTwitter) | Get a list of Twitter Integrations (Deprecated) |
-| [**getConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsTwitterIntegrationId) | Get a Twitter messaging integration (Deprecated) |
 | [**getConversationsMessagingIntegrationsWhatsapp**](ConversationsApi.html#getConversationsMessagingIntegrationsWhatsapp) | Get a list of WhatsApp Integrations |
 | [**getConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsWhatsappIntegrationId) | Get a WhatsApp messaging integration |
 | [**getConversationsMessagingSetting**](ConversationsApi.html#getConversationsMessagingSetting) | Get a messaging setting |
@@ -145,7 +139,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsFacebookIntegrationId) | Update Facebook messaging integration |
 | [**patchConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsInstagramIntegrationId) | Update Instagram messaging integration |
 | [**patchConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsOpenIntegrationId) | Update an Open messaging integration |
-| [**patchConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsTwitterIntegrationId) | Update Twitter messaging integration |
 | [**patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId) | Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow |
 | [**patchConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsWhatsappIntegrationId) | Update a WhatsApp messaging integration |
 | [**patchConversationsMessagingSetting**](ConversationsApi.html#patchConversationsMessagingSetting) | Update a messaging setting |
@@ -218,9 +211,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsMessagesInboundOpen**](ConversationsApi.html#postConversationsMessagesInboundOpen) | Send an inbound Open Message |
 | [**postConversationsMessagingIntegrationsFacebook**](ConversationsApi.html#postConversationsMessagingIntegrationsFacebook) | Create a Facebook Integration |
 | [**postConversationsMessagingIntegrationsInstagram**](ConversationsApi.html#postConversationsMessagingIntegrationsInstagram) | Create Instagram Integration |
-| [**postConversationsMessagingIntegrationsLine**](ConversationsApi.html#postConversationsMessagingIntegrationsLine) | Create a LINE messenger Integration (Deprecated) |
 | [**postConversationsMessagingIntegrationsOpen**](ConversationsApi.html#postConversationsMessagingIntegrationsOpen) | Create an Open messaging integration |
-| [**postConversationsMessagingIntegrationsTwitter**](ConversationsApi.html#postConversationsMessagingIntegrationsTwitter) | Create a Twitter Integration |
 | [**postConversationsMessagingIntegrationsWhatsapp**](ConversationsApi.html#postConversationsMessagingIntegrationsWhatsapp) | [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] Create a WhatsApp Integration |
 | [**postConversationsMessagingIntegrationsWhatsappEmbeddedsignup**](ConversationsApi.html#postConversationsMessagingIntegrationsWhatsappEmbeddedsignup) | Create a WhatsApp Integration using the WhatsApp embedded signup flow |
 | [**postConversationsMessagingSettings**](ConversationsApi.html#postConversationsMessagingSettings) | Create a messaging setting |
@@ -242,7 +233,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putConversationsEmailRecordingstate**](ConversationsApi.html#putConversationsEmailRecordingstate) | Update a conversation by setting its recording state |
 | [**putConversationsKeyconfiguration**](ConversationsApi.html#putConversationsKeyconfiguration) | Update the encryption key configurations |
 | [**putConversationsMessageRecordingstate**](ConversationsApi.html#putConversationsMessageRecordingstate) | Update a conversation by setting its recording state |
-| [**putConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#putConversationsMessagingIntegrationsLineIntegrationId) | Update a LINE messenger integration (Deprecated) |
 | [**putConversationsMessagingSettingsDefault**](ConversationsApi.html#putConversationsMessagingSettingsDefault) | Set the organization's default setting that may be applied to to integrations without settings |
 | [**putConversationsMessagingSupportedcontentDefault**](ConversationsApi.html#putConversationsMessagingSupportedcontentDefault) | Set the organization's default supported content profile that may be assigned to an integration when it is created. |
 | [**putConversationsMessagingThreadingtimeline**](ConversationsApi.html#putConversationsMessagingThreadingtimeline) | Update conversation threading window timeline for each messaging type |
@@ -738,68 +728,6 @@ try {
 
 null (empty response body)
 
-<a name="deleteConversationsMessagingIntegrationsLineIntegrationId"></a>
-
-# **deleteConversationsMessagingIntegrationsLineIntegrationId**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> Void deleteConversationsMessagingIntegrationsLineIntegrationId(integrationId)
-
-Delete a LINE messenger integration (Deprecated)
-
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-
-Wraps DELETE /api/v2/conversations/messaging/integrations/line/{integrationId}  
-
-Requires ALL permissions: 
-
-* messaging:integration:delete
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.ConversationsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-ConversationsApi apiInstance = new ConversationsApi();
-String integrationId = "integrationId_example"; // String | Integration ID
-try {
-    apiInstance.deleteConversationsMessagingIntegrationsLineIntegrationId(integrationId);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ConversationsApi#deleteConversationsMessagingIntegrationsLineIntegrationId");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **integrationId** | **String**| Integration ID | 
-{: class="table-striped"}
-
-
-### Return type
-
-null (empty response body)
-
 <a name="deleteConversationsMessagingIntegrationsOpenIntegrationId"></a>
 
 # **deleteConversationsMessagingIntegrationsOpenIntegrationId**
@@ -845,68 +773,6 @@ try {
     apiInstance.deleteConversationsMessagingIntegrationsOpenIntegrationId(integrationId);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#deleteConversationsMessagingIntegrationsOpenIntegrationId");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **integrationId** | **String**| Integration ID | 
-{: class="table-striped"}
-
-
-### Return type
-
-null (empty response body)
-
-<a name="deleteConversationsMessagingIntegrationsTwitterIntegrationId"></a>
-
-# **deleteConversationsMessagingIntegrationsTwitterIntegrationId**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> Void deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId)
-
-Delete a Twitter messaging integration
-
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-
-Wraps DELETE /api/v2/conversations/messaging/integrations/twitter/{integrationId}  
-
-Requires ALL permissions: 
-
-* messaging:integration:delete
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.ConversationsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-ConversationsApi apiInstance = new ConversationsApi();
-String integrationId = "integrationId_example"; // String | Integration ID
-try {
-    apiInstance.deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ConversationsApi#deleteConversationsMessagingIntegrationsTwitterIntegrationId");
     e.printStackTrace();
 }
 ```
@@ -5277,142 +5143,6 @@ try {
 
 [**InstagramIntegration**](InstagramIntegration.html)
 
-<a name="getConversationsMessagingIntegrationsLine"></a>
-
-# **getConversationsMessagingIntegrationsLine**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [LineIntegrationEntityListing](LineIntegrationEntityListing.html) getConversationsMessagingIntegrationsLine(pageSize, pageNumber, expand, supportedContentId, messagingSettingId)
-
-Get a list of LINE messenger Integrations (Deprecated)
-
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-
-Wraps GET /api/v2/conversations/messaging/integrations/line  
-
-Requires ALL permissions: 
-
-* messaging:integration:view
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.ConversationsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-ConversationsApi apiInstance = new ConversationsApi();
-Integer pageSize = 25; // Integer | Page size
-Integer pageNumber = 1; // Integer | Page number
-String expand = "expand_example"; // String | Expand instructions for the return value.
-String supportedContentId = "supportedContentId_example"; // String | Filter integrations returned based on the supported content ID
-String messagingSettingId = "messagingSettingId_example"; // String | Filter integrations returned based on the setting ID
-try {
-    LineIntegrationEntityListing result = apiInstance.getConversationsMessagingIntegrationsLine(pageSize, pageNumber, expand, supportedContentId, messagingSettingId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrationsLine");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
-| **supportedContentId** | **String**| Filter integrations returned based on the supported content ID | [optional] 
-| **messagingSettingId** | **String**| Filter integrations returned based on the setting ID | [optional] 
-{: class="table-striped"}
-
-
-### Return type
-
-[**LineIntegrationEntityListing**](LineIntegrationEntityListing.html)
-
-<a name="getConversationsMessagingIntegrationsLineIntegrationId"></a>
-
-# **getConversationsMessagingIntegrationsLineIntegrationId**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [LineIntegration](LineIntegration.html) getConversationsMessagingIntegrationsLineIntegrationId(integrationId, expand)
-
-Get a LINE messenger integration (Deprecated)
-
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-
-Wraps GET /api/v2/conversations/messaging/integrations/line/{integrationId}  
-
-Requires ALL permissions: 
-
-* messaging:integration:view
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.ConversationsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-ConversationsApi apiInstance = new ConversationsApi();
-String integrationId = "integrationId_example"; // String | Integration ID
-String expand = "expand_example"; // String | Expand instructions for the return value.
-try {
-    LineIntegration result = apiInstance.getConversationsMessagingIntegrationsLineIntegrationId(integrationId, expand);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrationsLineIntegrationId");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **integrationId** | **String**| Integration ID | 
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
-{: class="table-striped"}
-
-
-### Return type
-
-[**LineIntegration**](LineIntegration.html)
-
 <a name="getConversationsMessagingIntegrationsOpen"></a>
 
 # **getConversationsMessagingIntegrationsOpen**
@@ -5548,142 +5278,6 @@ try {
 ### Return type
 
 [**OpenIntegration**](OpenIntegration.html)
-
-<a name="getConversationsMessagingIntegrationsTwitter"></a>
-
-# **getConversationsMessagingIntegrationsTwitter**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [TwitterIntegrationEntityListing](TwitterIntegrationEntityListing.html) getConversationsMessagingIntegrationsTwitter(pageSize, pageNumber, expand, supportedContentId, messagingSettingId)
-
-Get a list of Twitter Integrations (Deprecated)
-
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-
-Wraps GET /api/v2/conversations/messaging/integrations/twitter  
-
-Requires ALL permissions: 
-
-* messaging:integration:view
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.ConversationsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-ConversationsApi apiInstance = new ConversationsApi();
-Integer pageSize = 25; // Integer | Page size
-Integer pageNumber = 1; // Integer | Page number
-String expand = "expand_example"; // String | Expand instructions for the return value.
-String supportedContentId = "supportedContentId_example"; // String | Filter integrations returned based on the supported content ID
-String messagingSettingId = "messagingSettingId_example"; // String | Filter integrations returned based on the setting ID
-try {
-    TwitterIntegrationEntityListing result = apiInstance.getConversationsMessagingIntegrationsTwitter(pageSize, pageNumber, expand, supportedContentId, messagingSettingId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrationsTwitter");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
-| **supportedContentId** | **String**| Filter integrations returned based on the supported content ID | [optional] 
-| **messagingSettingId** | **String**| Filter integrations returned based on the setting ID | [optional] 
-{: class="table-striped"}
-
-
-### Return type
-
-[**TwitterIntegrationEntityListing**](TwitterIntegrationEntityListing.html)
-
-<a name="getConversationsMessagingIntegrationsTwitterIntegrationId"></a>
-
-# **getConversationsMessagingIntegrationsTwitterIntegrationId**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [TwitterIntegration](TwitterIntegration.html) getConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, expand)
-
-Get a Twitter messaging integration (Deprecated)
-
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-
-Wraps GET /api/v2/conversations/messaging/integrations/twitter/{integrationId}  
-
-Requires ALL permissions: 
-
-* messaging:integration:view
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.ConversationsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-ConversationsApi apiInstance = new ConversationsApi();
-String integrationId = "integrationId_example"; // String | Integration ID
-String expand = "expand_example"; // String | Expand instructions for the return value.
-try {
-    TwitterIntegration result = apiInstance.getConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, expand);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrationsTwitterIntegrationId");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **integrationId** | **String**| Integration ID | 
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent, messagingSetting 
-{: class="table-striped"}
-
-
-### Return type
-
-[**TwitterIntegration**](TwitterIntegration.html)
 
 <a name="getConversationsMessagingIntegrationsWhatsapp"></a>
 
@@ -8947,71 +8541,6 @@ try {
 ### Return type
 
 [**OpenIntegration**](OpenIntegration.html)
-
-<a name="patchConversationsMessagingIntegrationsTwitterIntegrationId"></a>
-
-# **patchConversationsMessagingIntegrationsTwitterIntegrationId**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [TwitterIntegration](TwitterIntegration.html) patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, body)
-
-Update Twitter messaging integration
-
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-
-Wraps PATCH /api/v2/conversations/messaging/integrations/twitter/{integrationId}  
-
-Requires ALL permissions: 
-
-* messaging:integration:edit
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.ConversationsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-ConversationsApi apiInstance = new ConversationsApi();
-String integrationId = "integrationId_example"; // String | Integration ID
-TwitterIntegrationRequest body = new TwitterIntegrationRequest(); // TwitterIntegrationRequest | TwitterIntegrationRequest
-try {
-    TwitterIntegration result = apiInstance.patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ConversationsApi#patchConversationsMessagingIntegrationsTwitterIntegrationId");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **integrationId** | **String**| Integration ID | 
-| **body** | [**TwitterIntegrationRequest**](TwitterIntegrationRequest.html)| TwitterIntegrationRequest | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**TwitterIntegration**](TwitterIntegration.html)
 
 <a name="patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId"></a>
 
@@ -13595,69 +13124,6 @@ try {
 
 [**InstagramIntegration**](InstagramIntegration.html)
 
-<a name="postConversationsMessagingIntegrationsLine"></a>
-
-# **postConversationsMessagingIntegrationsLine**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [LineIntegration](LineIntegration.html) postConversationsMessagingIntegrationsLine(body)
-
-Create a LINE messenger Integration (Deprecated)
-
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-
-Wraps POST /api/v2/conversations/messaging/integrations/line  
-
-Requires ALL permissions: 
-
-* messaging:integration:add
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.ConversationsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-ConversationsApi apiInstance = new ConversationsApi();
-LineIntegrationRequest body = new LineIntegrationRequest(); // LineIntegrationRequest | LineIntegrationRequest
-try {
-    LineIntegration result = apiInstance.postConversationsMessagingIntegrationsLine(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ConversationsApi#postConversationsMessagingIntegrationsLine");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **body** | [**LineIntegrationRequest**](LineIntegrationRequest.html)| LineIntegrationRequest | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**LineIntegration**](LineIntegration.html)
-
 <a name="postConversationsMessagingIntegrationsOpen"></a>
 
 # **postConversationsMessagingIntegrationsOpen**
@@ -13720,69 +13186,6 @@ try {
 ### Return type
 
 [**OpenIntegration**](OpenIntegration.html)
-
-<a name="postConversationsMessagingIntegrationsTwitter"></a>
-
-# **postConversationsMessagingIntegrationsTwitter**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [TwitterIntegration](TwitterIntegration.html) postConversationsMessagingIntegrationsTwitter(body)
-
-Create a Twitter Integration
-
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-
-Wraps POST /api/v2/conversations/messaging/integrations/twitter  
-
-Requires ALL permissions: 
-
-* messaging:integration:add
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.ConversationsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-ConversationsApi apiInstance = new ConversationsApi();
-TwitterIntegrationRequest body = new TwitterIntegrationRequest(); // TwitterIntegrationRequest | TwitterIntegrationRequest
-try {
-    TwitterIntegration result = apiInstance.postConversationsMessagingIntegrationsTwitter(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ConversationsApi#postConversationsMessagingIntegrationsTwitter");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **body** | [**TwitterIntegrationRequest**](TwitterIntegrationRequest.html)| TwitterIntegrationRequest | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**TwitterIntegration**](TwitterIntegration.html)
 
 <a name="postConversationsMessagingIntegrationsWhatsapp"></a>
 
@@ -15111,71 +14514,6 @@ try {
 ### Return type
 
 **String**
-
-<a name="putConversationsMessagingIntegrationsLineIntegrationId"></a>
-
-# **putConversationsMessagingIntegrationsLineIntegrationId**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [LineIntegration](LineIntegration.html) putConversationsMessagingIntegrationsLineIntegrationId(integrationId, body)
-
-Update a LINE messenger integration (Deprecated)
-
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-
-Wraps PUT /api/v2/conversations/messaging/integrations/line/{integrationId}  
-
-Requires ALL permissions: 
-
-* messaging:integration:edit
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.ConversationsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-ConversationsApi apiInstance = new ConversationsApi();
-String integrationId = "integrationId_example"; // String | Integration ID
-LineIntegrationRequest body = new LineIntegrationRequest(); // LineIntegrationRequest | LineIntegrationRequest
-try {
-    LineIntegration result = apiInstance.putConversationsMessagingIntegrationsLineIntegrationId(integrationId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ConversationsApi#putConversationsMessagingIntegrationsLineIntegrationId");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **integrationId** | **String**| Integration ID | 
-| **body** | [**LineIntegrationRequest**](LineIntegrationRequest.html)| LineIntegrationRequest | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**LineIntegration**](LineIntegration.html)
 
 <a name="putConversationsMessagingSettingsDefault"></a>
 

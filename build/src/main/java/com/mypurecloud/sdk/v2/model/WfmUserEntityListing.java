@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.User;
+import com.mypurecloud.sdk.v2.model.UserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -24,22 +24,22 @@ import java.io.Serializable;
 
 public class WfmUserEntityListing  implements Serializable {
   
-  private List<User> entities = new ArrayList<User>();
+  private List<UserReference> entities = new ArrayList<UserReference>();
 
   
   /**
    **/
-  public WfmUserEntityListing entities(List<User> entities) {
+  public WfmUserEntityListing entities(List<UserReference> entities) {
     this.entities = entities;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("entities")
-  public List<User> getEntities() {
+  public List<UserReference> getEntities() {
     return entities;
   }
-  public void setEntities(List<User> entities) {
+  public void setEntities(List<UserReference> entities) {
     this.entities = entities;
   }
 

@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAuditsQueryTransactionIdResults**](AuditApi.html#getAuditsQueryTransactionIdResults) | Get results of audit query |
 | [**postAuditsQuery**](AuditApi.html#postAuditsQuery) | Create audit query execution |
 | [**postAuditsQueryRealtime**](AuditApi.html#postAuditsQueryRealtime) | This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits. |
+| [**postAuditsQueryRealtimeRelated**](AuditApi.html#postAuditsQueryRealtimeRelated) | Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id. |
 {: class="table-striped"}
 
 <a name="getAuditsQueryRealtimeServicemapping"></a>
@@ -384,4 +385,67 @@ try {
 ### Return type
 
 [**AuditRealtimeQueryResultsResponse**](AuditRealtimeQueryResultsResponse.html)
+
+<a name="postAuditsQueryRealtimeRelated"></a>
+
+# **postAuditsQueryRealtimeRelated**
+
+
+
+> [AuditRealtimeRelatedResultsResponse](AuditRealtimeRelatedResultsResponse.html) postAuditsQueryRealtimeRelated(body, expand)
+
+Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id.
+
+Wraps POST /api/v2/audits/query/realtime/related  
+
+Requires ALL permissions: 
+
+* audits:audit:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AuditApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AuditApi apiInstance = new AuditApi();
+AuditRealtimeRelatedRequest body = new AuditRealtimeRelatedRequest(); // AuditRealtimeRelatedRequest | query
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
+try {
+    AuditRealtimeRelatedResultsResponse result = apiInstance.postAuditsQueryRealtimeRelated(body, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AuditApi#postAuditsQueryRealtimeRelated");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**AuditRealtimeRelatedRequest**](AuditRealtimeRelatedRequest.html)| query | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: user 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AuditRealtimeRelatedResultsResponse**](AuditRealtimeRelatedResultsResponse.html)
 

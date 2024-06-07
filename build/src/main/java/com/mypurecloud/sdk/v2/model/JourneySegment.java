@@ -332,14 +332,14 @@ public class JourneySegment  implements Serializable {
 
 
   /**
-   * Timestamp indicating when the the segment was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   * Timestamp indicating when the segment was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public JourneySegment modifiedDate(Date modifiedDate) {
     this.modifiedDate = modifiedDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Timestamp indicating when the the segment was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", required = true, value = "Timestamp indicating when the segment was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("modifiedDate")
   public Date getModifiedDate() {
     return modifiedDate;

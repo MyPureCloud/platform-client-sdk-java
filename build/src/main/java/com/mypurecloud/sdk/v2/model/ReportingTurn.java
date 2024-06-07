@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.ReportingTurnAction;
 import com.mypurecloud.sdk.v2.model.ReportingTurnIntent;
 import com.mypurecloud.sdk.v2.model.ReportingTurnKnowledge;
+import com.mypurecloud.sdk.v2.model.ReportingTurnKnowledgeEvents;
 import com.mypurecloud.sdk.v2.model.SessionEndDetails;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -36,6 +37,7 @@ public class ReportingTurn  implements Serializable {
   private ReportingTurnAction askAction = null;
   private ReportingTurnIntent intent = null;
   private ReportingTurnKnowledge knowledge = null;
+  private ReportingTurnKnowledgeEvents knowledgeBaseEvents = null;
   private Date dateCreated = null;
 
   private static class AskActionResultEnumDeserializer extends StdDeserializer<AskActionResultEnum> {
@@ -213,6 +215,24 @@ public class ReportingTurn  implements Serializable {
 
 
   /**
+   * The knowledge data captured during this reporting turn.
+   **/
+  public ReportingTurn knowledgeBaseEvents(ReportingTurnKnowledgeEvents knowledgeBaseEvents) {
+    this.knowledgeBaseEvents = knowledgeBaseEvents;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The knowledge data captured during this reporting turn.")
+  @JsonProperty("knowledgeBaseEvents")
+  public ReportingTurnKnowledgeEvents getKnowledgeBaseEvents() {
+    return knowledgeBaseEvents;
+  }
+  public void setKnowledgeBaseEvents(ReportingTurnKnowledgeEvents knowledgeBaseEvents) {
+    this.knowledgeBaseEvents = knowledgeBaseEvents;
+  }
+
+
+  /**
    * Timestamp indicating when the original turn was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public ReportingTurn dateCreated(Date dateCreated) {
@@ -289,6 +309,7 @@ public class ReportingTurn  implements Serializable {
             Objects.equals(this.askAction, reportingTurn.askAction) &&
             Objects.equals(this.intent, reportingTurn.intent) &&
             Objects.equals(this.knowledge, reportingTurn.knowledge) &&
+            Objects.equals(this.knowledgeBaseEvents, reportingTurn.knowledgeBaseEvents) &&
             Objects.equals(this.dateCreated, reportingTurn.dateCreated) &&
             Objects.equals(this.askActionResult, reportingTurn.askActionResult) &&
             Objects.equals(this.sessionEndDetails, reportingTurn.sessionEndDetails) &&
@@ -297,7 +318,7 @@ public class ReportingTurn  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(userInput, botPrompts, sessionId, askAction, intent, knowledge, dateCreated, askActionResult, sessionEndDetails, conversation);
+    return Objects.hash(userInput, botPrompts, sessionId, askAction, intent, knowledge, knowledgeBaseEvents, dateCreated, askActionResult, sessionEndDetails, conversation);
   }
 
   @Override
@@ -311,6 +332,7 @@ public class ReportingTurn  implements Serializable {
     sb.append("    askAction: ").append(toIndentedString(askAction)).append("\n");
     sb.append("    intent: ").append(toIndentedString(intent)).append("\n");
     sb.append("    knowledge: ").append(toIndentedString(knowledge)).append("\n");
+    sb.append("    knowledgeBaseEvents: ").append(toIndentedString(knowledgeBaseEvents)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    askActionResult: ").append(toIndentedString(askActionResult)).append("\n");
     sb.append("    sessionEndDetails: ").append(toIndentedString(sessionEndDetails)).append("\n");

@@ -101,9 +101,6 @@ import com.mypurecloud.sdk.v2.model.InstagramIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.InstagramIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.InstagramIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.JsonCursorSearchResponse;
-import com.mypurecloud.sdk.v2.model.LineIntegration;
-import com.mypurecloud.sdk.v2.model.LineIntegrationEntityListing;
-import com.mypurecloud.sdk.v2.model.LineIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.MaxParticipants;
 import com.mypurecloud.sdk.v2.model.MediaParticipantRequest;
 import com.mypurecloud.sdk.v2.model.MeetingIdRecord;
@@ -149,9 +146,6 @@ import com.mypurecloud.sdk.v2.model.TransferRequest;
 import com.mypurecloud.sdk.v2.model.TransferToAgentRequest;
 import com.mypurecloud.sdk.v2.model.TransferToExternalRequest;
 import com.mypurecloud.sdk.v2.model.TransferToQueueRequest;
-import com.mypurecloud.sdk.v2.model.TwitterIntegration;
-import com.mypurecloud.sdk.v2.model.TwitterIntegrationEntityListing;
-import com.mypurecloud.sdk.v2.model.TwitterIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.VideoConferenceDetails;
 import com.mypurecloud.sdk.v2.model.WebChatMessage;
 import com.mypurecloud.sdk.v2.model.WebChatMessageEntityList;
@@ -174,9 +168,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteConversationsEmailMessagesDraftA
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagesCachedmediaCachedMediaItemIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
-import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsLineIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsOpenIntegrationIdRequest;
-import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingSettingsDefaultRequest;
@@ -247,12 +239,8 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsF
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsInstagramRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
-import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsLineRequest;
-import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsLineIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsOpenRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsOpenIntegrationIdRequest;
-import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsTwitterRequest;
-import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsWhatsappRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSettingRequest;
@@ -304,7 +292,6 @@ import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantCo
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsOpenIntegrationIdRequest;
-import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingSettingRequest;
@@ -377,9 +364,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesAgentlessRequ
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesInboundOpenRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsFacebookRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsInstagramRequest;
-import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsLineRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsOpenRequest;
-import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsTwitterRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsWhatsappRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsWhatsappEmbeddedsignupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingSettingsRequest;
@@ -401,7 +386,6 @@ import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailMessagesDraftRequ
 import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailRecordingstateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsKeyconfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessageRecordingstateRequest;
-import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIntegrationsLineIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingSettingsDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingSupportedcontentDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingThreadingtimelineRequest;
@@ -1028,83 +1012,6 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Delete a LINE messenger integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<Void> deleteConversationsMessagingIntegrationsLineIntegrationIdAsync(DeleteConversationsMessagingIntegrationsLineIntegrationIdRequest request, final AsyncApiCallback<Void> callback) {
-    try {
-      final SettableFuture<Void> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
-        @Override
-        public void onCompleted(ApiResponse<Void> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Delete a LINE messenger integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ApiResponse<Void>> deleteConversationsMessagingIntegrationsLineIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
-    try {
-      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
-        @Override
-        public void onCompleted(ApiResponse<Void> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
    * Delete an Open messaging integration
    * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
    * @param request the request object
@@ -1146,83 +1053,6 @@ public class ConversationsApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteConversationsMessagingIntegrationsOpenIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
-    try {
-      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
-        @Override
-        public void onCompleted(ApiResponse<Void> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Delete a Twitter messaging integration
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<Void> deleteConversationsMessagingIntegrationsTwitterIntegrationIdAsync(DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest request, final AsyncApiCallback<Void> callback) {
-    try {
-      final SettableFuture<Void> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
-        @Override
-        public void onCompleted(ApiResponse<Void> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Delete a Twitter messaging integration
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ApiResponse<Void>> deleteConversationsMessagingIntegrationsTwitterIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -6517,160 +6347,6 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Get a list of LINE messenger Integrations (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<LineIntegrationEntityListing> getConversationsMessagingIntegrationsLineAsync(GetConversationsMessagingIntegrationsLineRequest request, final AsyncApiCallback<LineIntegrationEntityListing> callback) {
-    try {
-      final SettableFuture<LineIntegrationEntityListing> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LineIntegrationEntityListing>() {}, new AsyncApiCallback<ApiResponse<LineIntegrationEntityListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<LineIntegrationEntityListing> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get a list of LINE messenger Integrations (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ApiResponse<LineIntegrationEntityListing>> getConversationsMessagingIntegrationsLineAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LineIntegrationEntityListing>> callback) {
-    try {
-      final SettableFuture<ApiResponse<LineIntegrationEntityListing>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<LineIntegrationEntityListing>() {}, new AsyncApiCallback<ApiResponse<LineIntegrationEntityListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<LineIntegrationEntityListing> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<LineIntegrationEntityListing> response = (ApiResponse<LineIntegrationEntityListing>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<LineIntegrationEntityListing> response = (ApiResponse<LineIntegrationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get a LINE messenger integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<LineIntegration> getConversationsMessagingIntegrationsLineIntegrationIdAsync(GetConversationsMessagingIntegrationsLineIntegrationIdRequest request, final AsyncApiCallback<LineIntegration> callback) {
-    try {
-      final SettableFuture<LineIntegration> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LineIntegration>() {}, new AsyncApiCallback<ApiResponse<LineIntegration>>() {
-        @Override
-        public void onCompleted(ApiResponse<LineIntegration> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get a LINE messenger integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ApiResponse<LineIntegration>> getConversationsMessagingIntegrationsLineIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LineIntegration>> callback) {
-    try {
-      final SettableFuture<ApiResponse<LineIntegration>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<LineIntegration>() {}, new AsyncApiCallback<ApiResponse<LineIntegration>>() {
-        @Override
-        public void onCompleted(ApiResponse<LineIntegration> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<LineIntegration> response = (ApiResponse<LineIntegration>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<LineIntegration> response = (ApiResponse<LineIntegration>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
    * Get a list of Open messaging integrations
    * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
    * @param request the request object
@@ -6809,160 +6485,6 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<OpenIntegration> response = (ApiResponse<OpenIntegration>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get a list of Twitter Integrations (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<TwitterIntegrationEntityListing> getConversationsMessagingIntegrationsTwitterAsync(GetConversationsMessagingIntegrationsTwitterRequest request, final AsyncApiCallback<TwitterIntegrationEntityListing> callback) {
-    try {
-      final SettableFuture<TwitterIntegrationEntityListing> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TwitterIntegrationEntityListing>() {}, new AsyncApiCallback<ApiResponse<TwitterIntegrationEntityListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<TwitterIntegrationEntityListing> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get a list of Twitter Integrations (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ApiResponse<TwitterIntegrationEntityListing>> getConversationsMessagingIntegrationsTwitterAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TwitterIntegrationEntityListing>> callback) {
-    try {
-      final SettableFuture<ApiResponse<TwitterIntegrationEntityListing>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<TwitterIntegrationEntityListing>() {}, new AsyncApiCallback<ApiResponse<TwitterIntegrationEntityListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<TwitterIntegrationEntityListing> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<TwitterIntegrationEntityListing> response = (ApiResponse<TwitterIntegrationEntityListing>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<TwitterIntegrationEntityListing> response = (ApiResponse<TwitterIntegrationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get a Twitter messaging integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<TwitterIntegration> getConversationsMessagingIntegrationsTwitterIntegrationIdAsync(GetConversationsMessagingIntegrationsTwitterIntegrationIdRequest request, final AsyncApiCallback<TwitterIntegration> callback) {
-    try {
-      final SettableFuture<TwitterIntegration> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TwitterIntegration>() {}, new AsyncApiCallback<ApiResponse<TwitterIntegration>>() {
-        @Override
-        public void onCompleted(ApiResponse<TwitterIntegration> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get a Twitter messaging integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ApiResponse<TwitterIntegration>> getConversationsMessagingIntegrationsTwitterIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TwitterIntegration>> callback) {
-    try {
-      final SettableFuture<ApiResponse<TwitterIntegration>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<TwitterIntegration>() {}, new AsyncApiCallback<ApiResponse<TwitterIntegration>>() {
-        @Override
-        public void onCompleted(ApiResponse<TwitterIntegration> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<TwitterIntegration> response = (ApiResponse<TwitterIntegration>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<TwitterIntegration> response = (ApiResponse<TwitterIntegration>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -10806,83 +10328,6 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<OpenIntegration> response = (ApiResponse<OpenIntegration>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Update Twitter messaging integration
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<TwitterIntegration> patchConversationsMessagingIntegrationsTwitterIntegrationIdAsync(PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest request, final AsyncApiCallback<TwitterIntegration> callback) {
-    try {
-      final SettableFuture<TwitterIntegration> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TwitterIntegration>() {}, new AsyncApiCallback<ApiResponse<TwitterIntegration>>() {
-        @Override
-        public void onCompleted(ApiResponse<TwitterIntegration> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Update Twitter messaging integration
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ApiResponse<TwitterIntegration>> patchConversationsMessagingIntegrationsTwitterIntegrationIdAsync(ApiRequest<TwitterIntegrationRequest> request, final AsyncApiCallback<ApiResponse<TwitterIntegration>> callback) {
-    try {
-      final SettableFuture<ApiResponse<TwitterIntegration>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<TwitterIntegration>() {}, new AsyncApiCallback<ApiResponse<TwitterIntegration>>() {
-        @Override
-        public void onCompleted(ApiResponse<TwitterIntegration> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<TwitterIntegration> response = (ApiResponse<TwitterIntegration>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<TwitterIntegration> response = (ApiResponse<TwitterIntegration>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -16307,83 +15752,6 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Create a LINE messenger Integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<LineIntegration> postConversationsMessagingIntegrationsLineAsync(PostConversationsMessagingIntegrationsLineRequest request, final AsyncApiCallback<LineIntegration> callback) {
-    try {
-      final SettableFuture<LineIntegration> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LineIntegration>() {}, new AsyncApiCallback<ApiResponse<LineIntegration>>() {
-        @Override
-        public void onCompleted(ApiResponse<LineIntegration> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Create a LINE messenger Integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ApiResponse<LineIntegration>> postConversationsMessagingIntegrationsLineAsync(ApiRequest<LineIntegrationRequest> request, final AsyncApiCallback<ApiResponse<LineIntegration>> callback) {
-    try {
-      final SettableFuture<ApiResponse<LineIntegration>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<LineIntegration>() {}, new AsyncApiCallback<ApiResponse<LineIntegration>>() {
-        @Override
-        public void onCompleted(ApiResponse<LineIntegration> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<LineIntegration> response = (ApiResponse<LineIntegration>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<LineIntegration> response = (ApiResponse<LineIntegration>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
    * Create an Open messaging integration
    * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
    * @param request the request object
@@ -16447,83 +15815,6 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<OpenIntegration> response = (ApiResponse<OpenIntegration>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Create a Twitter Integration
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<TwitterIntegration> postConversationsMessagingIntegrationsTwitterAsync(PostConversationsMessagingIntegrationsTwitterRequest request, final AsyncApiCallback<TwitterIntegration> callback) {
-    try {
-      final SettableFuture<TwitterIntegration> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TwitterIntegration>() {}, new AsyncApiCallback<ApiResponse<TwitterIntegration>>() {
-        @Override
-        public void onCompleted(ApiResponse<TwitterIntegration> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Create a Twitter Integration
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ApiResponse<TwitterIntegration>> postConversationsMessagingIntegrationsTwitterAsync(ApiRequest<TwitterIntegrationRequest> request, final AsyncApiCallback<ApiResponse<TwitterIntegration>> callback) {
-    try {
-      final SettableFuture<ApiResponse<TwitterIntegration>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<TwitterIntegration>() {}, new AsyncApiCallback<ApiResponse<TwitterIntegration>>() {
-        @Override
-        public void onCompleted(ApiResponse<TwitterIntegration> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<TwitterIntegration> response = (ApiResponse<TwitterIntegration>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<TwitterIntegration> response = (ApiResponse<TwitterIntegration>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -18105,83 +17396,6 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Update a LINE messenger integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<LineIntegration> putConversationsMessagingIntegrationsLineIntegrationIdAsync(PutConversationsMessagingIntegrationsLineIntegrationIdRequest request, final AsyncApiCallback<LineIntegration> callback) {
-    try {
-      final SettableFuture<LineIntegration> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LineIntegration>() {}, new AsyncApiCallback<ApiResponse<LineIntegration>>() {
-        @Override
-        public void onCompleted(ApiResponse<LineIntegration> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Update a LINE messenger integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ApiResponse<LineIntegration>> putConversationsMessagingIntegrationsLineIntegrationIdAsync(ApiRequest<LineIntegrationRequest> request, final AsyncApiCallback<ApiResponse<LineIntegration>> callback) {
-    try {
-      final SettableFuture<ApiResponse<LineIntegration>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<LineIntegration>() {}, new AsyncApiCallback<ApiResponse<LineIntegration>>() {
-        @Override
-        public void onCompleted(ApiResponse<LineIntegration> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<LineIntegration> response = (ApiResponse<LineIntegration>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<LineIntegration> response = (ApiResponse<LineIntegration>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

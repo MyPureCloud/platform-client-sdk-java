@@ -26,6 +26,8 @@ import com.mypurecloud.sdk.v2.model.AuditQueryRequest;
 import com.mypurecloud.sdk.v2.model.AuditQueryServiceMapping;
 import com.mypurecloud.sdk.v2.model.AuditRealtimeQueryRequest;
 import com.mypurecloud.sdk.v2.model.AuditRealtimeQueryResultsResponse;
+import com.mypurecloud.sdk.v2.model.AuditRealtimeRelatedRequest;
+import com.mypurecloud.sdk.v2.model.AuditRealtimeRelatedResultsResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 public class GetAuditsQueryRealtimeServicemappingRequest {

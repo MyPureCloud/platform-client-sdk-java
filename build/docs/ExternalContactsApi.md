@@ -1257,7 +1257,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 String externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
-String expand = "expand_example"; // String | which fields, if any, to expand (externalDataSources)
+List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand (externalDataSources)
 Boolean includeTrustors = true; // Boolean | (true or false) whether or not to include trustor information embedded in the externalOrganization
 try {
     ExternalOrganization result = apiInstance.getExternalcontactsOrganization(externalOrganizationId, expand, includeTrustors);
@@ -1274,7 +1274,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **externalOrganizationId** | **String**| External Organization ID | 
-| **expand** | **String**| which fields, if any, to expand (externalDataSources) | [optional]<br />**Values**: externalDataSources 
+| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand (externalDataSources) | [optional]<br />**Values**: externalDataSources 
 | **includeTrustors** | **Boolean**| (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional] 
 {: class="table-striped"}
 
@@ -1533,7 +1533,7 @@ ExternalContactsApi apiInstance = new ExternalContactsApi();
 String externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
 Integer pageSize = 20; // Integer | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
 Integer pageNumber = 1; // Integer | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
-String expand = "expand_example"; // String | which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand
 String sortOrder = "sortOrder_example"; // String | The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. \"createDate:asc\", \"relationship:desc\"
 try {
     RelationshipListing result = apiInstance.getExternalcontactsOrganizationRelationships(externalOrganizationId, pageSize, pageNumber, expand, sortOrder);
@@ -1552,7 +1552,7 @@ try {
 | **externalOrganizationId** | **String**| External Organization ID | 
 | **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] 
 | **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] 
-| **expand** | **String**| which fields, if any, to expand | [optional]<br />**Values**: externalDataSources 
+| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: externalDataSources 
 | **sortOrder** | **String**| The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. \&quot;createDate:asc\&quot;, \&quot;relationship:desc\&quot; | [optional] 
 {: class="table-striped"}
 
@@ -1917,7 +1917,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 String relationshipId = "relationshipId_example"; // String | Relationship Id
-String expand = "expand_example"; // String | which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand
 try {
     Relationship result = apiInstance.getExternalcontactsRelationship(relationshipId, expand);
     System.out.println(result);
@@ -1933,7 +1933,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **relationshipId** | **String**| Relationship Id | 
-| **expand** | **String**| which fields, if any, to expand | [optional]<br />**Values**: externalDataSources 
+| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: externalDataSources 
 {: class="table-striped"}
 
 

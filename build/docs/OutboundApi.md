@@ -47,6 +47,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOutboundCampaignAgentownedmappingpreviewResults**](OutboundApi.html#getOutboundCampaignAgentownedmappingpreviewResults) | Get a preview of how agents will be mapped to this campaign's contact list. |
 | [**getOutboundCampaignDiagnostics**](OutboundApi.html#getOutboundCampaignDiagnostics) | Get campaign diagnostics |
 | [**getOutboundCampaignInteractions**](OutboundApi.html#getOutboundCampaignInteractions) | Get dialer campaign interactions. |
+| [**getOutboundCampaignLinedistribution**](OutboundApi.html#getOutboundCampaignLinedistribution) | Get line distribution information for campaigns using same Edge Group or Site as given campaign |
 | [**getOutboundCampaignProgress**](OutboundApi.html#getOutboundCampaignProgress) | Get campaign progress |
 | [**getOutboundCampaignStats**](OutboundApi.html#getOutboundCampaignStats) | Get statistics about a Dialer Campaign |
 | [**getOutboundCampaignrule**](OutboundApi.html#getOutboundCampaignrule) | Get Campaign Rule |
@@ -119,6 +120,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postOutboundContactlistClear**](OutboundApi.html#postOutboundContactlistClear) | Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled. |
 | [**postOutboundContactlistContacts**](OutboundApi.html#postOutboundContactlistContacts) | Add contacts to a contact list. |
 | [**postOutboundContactlistContactsBulk**](OutboundApi.html#postOutboundContactlistContactsBulk) | Get contacts from a contact list. |
+| [**postOutboundContactlistContactsBulkRemove**](OutboundApi.html#postOutboundContactlistContactsBulkRemove) | Start an async job to delete contacts using a filter. |
+| [**postOutboundContactlistContactsBulkUpdate**](OutboundApi.html#postOutboundContactlistContactsBulkUpdate) | Start an async job to bulk edit contacts. |
+| [**postOutboundContactlistContactsSearch**](OutboundApi.html#postOutboundContactlistContactsSearch) | Query contacts from a contact list. |
 | [**postOutboundContactlistExport**](OutboundApi.html#postOutboundContactlistExport) | Initiate the export of a contact list. |
 | [**postOutboundContactlistfilters**](OutboundApi.html#postOutboundContactlistfilters) | Create Contact List Filter |
 | [**postOutboundContactlistfiltersBulkRetrieve**](OutboundApi.html#postOutboundContactlistfiltersBulkRetrieve) | Retrieve multiple contact list filters |
@@ -2631,6 +2635,79 @@ try {
 ### Return type
 
 [**CampaignInteractions**](CampaignInteractions.html)
+
+<a name="getOutboundCampaignLinedistribution"></a>
+
+# **getOutboundCampaignLinedistribution**
+
+
+
+> [CampaignOutboundLinesDistribution](CampaignOutboundLinesDistribution.html) getOutboundCampaignLinedistribution(campaignId, includeOnlyActiveCampaigns, edgeGroupId, siteId, useWeight, relativeWeight, outboundLineCount)
+
+Get line distribution information for campaigns using same Edge Group or Site as given campaign
+
+Wraps GET /api/v2/outbound/campaigns/{campaignId}/linedistribution  
+
+Requires ANY permissions: 
+
+* outbound:lineDistribution:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String campaignId = "campaignId_example"; // String | Campaign ID
+Boolean includeOnlyActiveCampaigns = true; // Boolean | If true will return only active Campaigns
+String edgeGroupId = "edgeGroupId_example"; // String | Edge group to be used in line distribution calculations instead of current Campaign's Edge Group. Campaign's Site and Edge Group are mutually exclusive.
+String siteId = "siteId_example"; // String | Site to be used in line distribution calculations instead of current Campaign's Site.  Campaign's Site and Edge Group are mutually exclusive.
+Boolean useWeight = true; // Boolean | Enable usage of weight, this value overrides current Campaign's setting in line distribution calculations
+Integer relativeWeight = 56; // Integer | Relative weight to be used in line distribution calculations instead of current Campaign's relative weight
+Integer outboundLineCount = 56; // Integer | The number of outbound lines to be used in line distribution calculations, instead of current Campaign's Outbound Lines Count
+try {
+    CampaignOutboundLinesDistribution result = apiInstance.getOutboundCampaignLinedistribution(campaignId, includeOnlyActiveCampaigns, edgeGroupId, siteId, useWeight, relativeWeight, outboundLineCount);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundCampaignLinedistribution");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaignId** | **String**| Campaign ID | 
+| **includeOnlyActiveCampaigns** | **Boolean**| If true will return only active Campaigns | [optional] [default to true] 
+| **edgeGroupId** | **String**| Edge group to be used in line distribution calculations instead of current Campaign&#39;s Edge Group. Campaign&#39;s Site and Edge Group are mutually exclusive. | [optional] 
+| **siteId** | **String**| Site to be used in line distribution calculations instead of current Campaign&#39;s Site.  Campaign&#39;s Site and Edge Group are mutually exclusive. | [optional] 
+| **useWeight** | **Boolean**| Enable usage of weight, this value overrides current Campaign&#39;s setting in line distribution calculations | [optional] 
+| **relativeWeight** | **Integer**| Relative weight to be used in line distribution calculations instead of current Campaign&#39;s relative weight | [optional] 
+| **outboundLineCount** | **Integer**| The number of outbound lines to be used in line distribution calculations, instead of current Campaign&#39;s Outbound Lines Count | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CampaignOutboundLinesDistribution**](CampaignOutboundLinesDistribution.html)
 
 <a name="getOutboundCampaignProgress"></a>
 
@@ -7363,6 +7440,195 @@ try {
 ### Return type
 
 [**List&lt;DialerContact&gt;**](DialerContact.html)
+
+<a name="postOutboundContactlistContactsBulkRemove"></a>
+
+# **postOutboundContactlistContactsBulkRemove**
+
+
+
+> [ContactsBulkOperationJob](ContactsBulkOperationJob.html) postOutboundContactlistContactsBulkRemove(contactListId, body)
+
+Start an async job to delete contacts using a filter.
+
+Wraps POST /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/remove  
+
+Requires ANY permissions: 
+
+* outbound:contact:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String contactListId = "contactListId_example"; // String | Contact List ID
+ContactBulkSearchParameters body = new ContactBulkSearchParameters(); // ContactBulkSearchParameters | Contact filter information.
+try {
+    ContactsBulkOperationJob result = apiInstance.postOutboundContactlistContactsBulkRemove(contactListId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#postOutboundContactlistContactsBulkRemove");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contactListId** | **String**| Contact List ID | 
+| **body** | [**ContactBulkSearchParameters**](ContactBulkSearchParameters.html)| Contact filter information. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContactsBulkOperationJob**](ContactsBulkOperationJob.html)
+
+<a name="postOutboundContactlistContactsBulkUpdate"></a>
+
+# **postOutboundContactlistContactsBulkUpdate**
+
+
+
+> [ContactsBulkOperationJob](ContactsBulkOperationJob.html) postOutboundContactlistContactsBulkUpdate(contactListId, body)
+
+Start an async job to bulk edit contacts.
+
+Wraps POST /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/update  
+
+Requires ANY permissions: 
+
+* outbound:contact:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String contactListId = "contactListId_example"; // String | Contact List ID
+ContactBulkEditRequest body = new ContactBulkEditRequest(); // ContactBulkEditRequest | Contact bulk edit request information.
+try {
+    ContactsBulkOperationJob result = apiInstance.postOutboundContactlistContactsBulkUpdate(contactListId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#postOutboundContactlistContactsBulkUpdate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contactListId** | **String**| Contact List ID | 
+| **body** | [**ContactBulkEditRequest**](ContactBulkEditRequest.html)| Contact bulk edit request information. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContactsBulkOperationJob**](ContactsBulkOperationJob.html)
+
+<a name="postOutboundContactlistContactsSearch"></a>
+
+# **postOutboundContactlistContactsSearch**
+
+
+
+> [ContactListingResponse](ContactListingResponse.html) postOutboundContactlistContactsSearch(contactListId, body)
+
+Query contacts from a contact list.
+
+Wraps POST /api/v2/outbound/contactlists/{contactListId}/contacts/search  
+
+Requires ANY permissions: 
+
+* outbound:contact:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String contactListId = "contactListId_example"; // String | Contact List ID
+ContactListingRequest body = new ContactListingRequest(); // ContactListingRequest | Contact search parameters.
+try {
+    ContactListingResponse result = apiInstance.postOutboundContactlistContactsSearch(contactListId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#postOutboundContactlistContactsSearch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contactListId** | **String**| Contact List ID | 
+| **body** | [**ContactListingRequest**](ContactListingRequest.html)| Contact search parameters. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContactListingResponse**](ContactListingResponse.html)
 
 <a name="postOutboundContactlistExport"></a>
 

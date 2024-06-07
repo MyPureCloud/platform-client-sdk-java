@@ -13,7 +13,6 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AppEvent;
 import com.mypurecloud.sdk.v2.model.EventSession;
-import com.mypurecloud.sdk.v2.model.GenericActionEvent;
 import com.mypurecloud.sdk.v2.model.OutcomeAchievedEvent;
 import com.mypurecloud.sdk.v2.model.SegmentAssignmentEvent;
 import com.mypurecloud.sdk.v2.model.WebActionEvent;
@@ -35,7 +34,6 @@ public class Event  implements Serializable {
   private String customerIdType = null;
   private EventSession session = null;
   private String eventType = null;
-  private GenericActionEvent genericActionEvent = null;
   private OutcomeAchievedEvent outcomeAchievedEvent = null;
   private SegmentAssignmentEvent segmentAssignmentEvent = null;
   private WebActionEvent webActionEvent = null;
@@ -149,24 +147,6 @@ public class Event  implements Serializable {
   }
   public void setEventType(String eventType) {
     this.eventType = eventType;
-  }
-
-
-  /**
-   * Event triggered by generic actions.
-   **/
-  public Event genericActionEvent(GenericActionEvent genericActionEvent) {
-    this.genericActionEvent = genericActionEvent;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Event triggered by generic actions.")
-  @JsonProperty("genericActionEvent")
-  public GenericActionEvent getGenericActionEvent() {
-    return genericActionEvent;
-  }
-  public void setGenericActionEvent(GenericActionEvent genericActionEvent) {
-    this.genericActionEvent = genericActionEvent;
   }
 
 
@@ -294,7 +274,6 @@ public class Event  implements Serializable {
             Objects.equals(this.customerIdType, event.customerIdType) &&
             Objects.equals(this.session, event.session) &&
             Objects.equals(this.eventType, event.eventType) &&
-            Objects.equals(this.genericActionEvent, event.genericActionEvent) &&
             Objects.equals(this.outcomeAchievedEvent, event.outcomeAchievedEvent) &&
             Objects.equals(this.segmentAssignmentEvent, event.segmentAssignmentEvent) &&
             Objects.equals(this.webActionEvent, event.webActionEvent) &&
@@ -305,7 +284,7 @@ public class Event  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, correlationId, customerId, customerIdType, session, eventType, genericActionEvent, outcomeAchievedEvent, segmentAssignmentEvent, webActionEvent, webEvent, appEvent, createdDate);
+    return Objects.hash(id, correlationId, customerId, customerIdType, session, eventType, outcomeAchievedEvent, segmentAssignmentEvent, webActionEvent, webEvent, appEvent, createdDate);
   }
 
   @Override
@@ -319,7 +298,6 @@ public class Event  implements Serializable {
     sb.append("    customerIdType: ").append(toIndentedString(customerIdType)).append("\n");
     sb.append("    session: ").append(toIndentedString(session)).append("\n");
     sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
-    sb.append("    genericActionEvent: ").append(toIndentedString(genericActionEvent)).append("\n");
     sb.append("    outcomeAchievedEvent: ").append(toIndentedString(outcomeAchievedEvent)).append("\n");
     sb.append("    segmentAssignmentEvent: ").append(toIndentedString(segmentAssignmentEvent)).append("\n");
     sb.append("    webActionEvent: ").append(toIndentedString(webActionEvent)).append("\n");

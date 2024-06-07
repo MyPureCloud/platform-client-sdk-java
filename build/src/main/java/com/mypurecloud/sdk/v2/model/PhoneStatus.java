@@ -28,7 +28,6 @@ import java.io.Serializable;
 public class PhoneStatus  implements Serializable {
   
   private String id = null;
-  private String name = null;
 
   private static class OperationalStatusEnumDeserializer extends StdDeserializer<OperationalStatusEnum> {
     public OperationalStatusEnumDeserializer() {
@@ -184,27 +183,20 @@ public class PhoneStatus  implements Serializable {
   private String selfUri = null;
 
   
-  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-
-
   /**
    **/
-  public PhoneStatus name(String name) {
-    this.name = name;
+  public PhoneStatus id(String id) {
+    this.id = id;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("name")
-  public String getName() {
-    return name;
+  @JsonProperty("id")
+  public String getId() {
+    return id;
   }
-  public void setName(String name) {
-    this.name = name;
+  public void setId(String id) {
+    this.id = id;
   }
 
 
@@ -363,7 +355,6 @@ public class PhoneStatus  implements Serializable {
     PhoneStatus phoneStatus = (PhoneStatus) o;
 
     return Objects.equals(this.id, phoneStatus.id) &&
-            Objects.equals(this.name, phoneStatus.name) &&
             Objects.equals(this.operationalStatus, phoneStatus.operationalStatus) &&
             Objects.equals(this.edgesStatus, phoneStatus.edgesStatus) &&
             Objects.equals(this.eventCreationTime, phoneStatus.eventCreationTime) &&
@@ -376,7 +367,7 @@ public class PhoneStatus  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, operationalStatus, edgesStatus, eventCreationTime, provision, lineStatuses, phoneAssignmentToEdgeType, edge, selfUri);
+    return Objects.hash(id, operationalStatus, edgesStatus, eventCreationTime, provision, lineStatuses, phoneAssignmentToEdgeType, edge, selfUri);
   }
 
   @Override
@@ -385,7 +376,6 @@ public class PhoneStatus  implements Serializable {
     sb.append("class PhoneStatus {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    operationalStatus: ").append(toIndentedString(operationalStatus)).append("\n");
     sb.append("    edgesStatus: ").append(toIndentedString(edgesStatus)).append("\n");
     sb.append("    eventCreationTime: ").append(toIndentedString(eventCreationTime)).append("\n");

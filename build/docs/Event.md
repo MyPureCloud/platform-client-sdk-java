@@ -14,7 +14,6 @@ title: Event
 | **customerIdType** | <!----><!---->**String**<!----> | Type of primary identifier (e.g. cookie, email, phone). |  [optional] |
 | **session** | <!----><!---->[**EventSession**](EventSession.html)<!----> | The session that the event belongs to. |  |
 | **eventType** | <!----><!---->**String**<!----> | The name representing the type of event. |  |
-| **genericActionEvent** | <!----><!---->[**GenericActionEvent**](GenericActionEvent.html)<!----> | Event triggered by generic actions. |  [optional] |
 | **outcomeAchievedEvent** | <!----><!---->[**OutcomeAchievedEvent**](OutcomeAchievedEvent.html)<!----> | Event where a customer has achieved a specific outcome or goal. |  [optional] |
 | **segmentAssignmentEvent** | <!----><!---->[**SegmentAssignmentEvent**](SegmentAssignmentEvent.html)<!----> | Event that represents a segment being assigned. |  [optional] |
 | **webActionEvent** | <!----><!---->[**WebActionEvent**](WebActionEvent.html)<!----> | Event triggered by web actions. |  [optional] |

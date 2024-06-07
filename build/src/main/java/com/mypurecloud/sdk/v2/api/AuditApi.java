@@ -16,6 +16,8 @@ import com.mypurecloud.sdk.v2.model.AuditQueryRequest;
 import com.mypurecloud.sdk.v2.model.AuditQueryServiceMapping;
 import com.mypurecloud.sdk.v2.model.AuditRealtimeQueryRequest;
 import com.mypurecloud.sdk.v2.model.AuditRealtimeQueryResultsResponse;
+import com.mypurecloud.sdk.v2.model.AuditRealtimeRelatedRequest;
+import com.mypurecloud.sdk.v2.model.AuditRealtimeRelatedResultsResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 
@@ -25,6 +27,7 @@ import com.mypurecloud.sdk.v2.api.request.GetAuditsQueryTransactionIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuditsQueryTransactionIdResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuditsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuditsQueryRealtimeRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAuditsQueryRealtimeRelatedRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -515,6 +518,88 @@ public class AuditApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AuditRealtimeQueryResultsResponse> response = (ApiResponse<AuditRealtimeQueryResultsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id.
+   * 
+   * @param body query (required)
+   * @param expand Which fields, if any, to expand (optional)
+   * @return AuditRealtimeRelatedResultsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuditRealtimeRelatedResultsResponse postAuditsQueryRealtimeRelated(AuditRealtimeRelatedRequest body, List<String> expand) throws IOException, ApiException {
+    return  postAuditsQueryRealtimeRelated(createPostAuditsQueryRealtimeRelatedRequest(body, expand));
+  }
+
+  /**
+   * Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id.
+   * 
+   * @param body query (required)
+   * @param expand Which fields, if any, to expand (optional)
+   * @return AuditRealtimeRelatedResultsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuditRealtimeRelatedResultsResponse> postAuditsQueryRealtimeRelatedWithHttpInfo(AuditRealtimeRelatedRequest body, List<String> expand) throws IOException {
+    return postAuditsQueryRealtimeRelated(createPostAuditsQueryRealtimeRelatedRequest(body, expand).withHttpInfo());
+  }
+
+  private PostAuditsQueryRealtimeRelatedRequest createPostAuditsQueryRealtimeRelatedRequest(AuditRealtimeRelatedRequest body, List<String> expand) {
+    return PostAuditsQueryRealtimeRelatedRequest.builder()
+            .withBody(body)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id.
+   * 
+   * @param request The request object
+   * @return AuditRealtimeRelatedResultsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuditRealtimeRelatedResultsResponse postAuditsQueryRealtimeRelated(PostAuditsQueryRealtimeRelatedRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AuditRealtimeRelatedResultsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AuditRealtimeRelatedResultsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuditRealtimeRelatedResultsResponse> postAuditsQueryRealtimeRelated(ApiRequest<AuditRealtimeRelatedRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AuditRealtimeRelatedResultsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuditRealtimeRelatedResultsResponse> response = (ApiResponse<AuditRealtimeRelatedResultsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuditRealtimeRelatedResultsResponse> response = (ApiResponse<AuditRealtimeRelatedResultsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

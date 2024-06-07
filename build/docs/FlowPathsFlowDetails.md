@@ -26,6 +26,9 @@ title: FlowPathsFlowDetails
 | BOT | &quot;Bot&quot; | 
 | INBOUNDCALL | &quot;InboundCall&quot; | 
 | SECURECALL | &quot;SecureCall&quot; | 
+| INBOUNDSHORTMESSAGE | &quot;InboundShortMessage&quot; | 
+| INBOUNDEMAIL | &quot;InboundEmail&quot; | 
+| OUTBOUNDCALL | &quot;OutboundCall&quot; | 
 {: class="table table-striped"}
 
 

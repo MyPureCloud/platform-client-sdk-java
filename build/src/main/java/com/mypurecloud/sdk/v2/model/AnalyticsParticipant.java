@@ -114,8 +114,8 @@ public class AnalyticsParticipant  implements Serializable {
     STATION("station"),
     USER("user"),
     VOICEMAIL("voicemail"),
-    WORKFLOW("workflow"),
-    VOICESURVEYFLOW("voicesurveyflow");
+    VOICESURVEYFLOW("voicesurveyflow"),
+    WORKFLOW("workflow");
 
     private String value;
 

@@ -30,6 +30,7 @@ public class ConversationProperties  implements Serializable {
   private Boolean isVoicemail = null;
   private Boolean isFlagged = null;
   private Boolean isMonitored = null;
+  private Boolean isScreenMonitored = null;
   private Boolean filterWrapUpNotes = null;
   private Boolean matchAll = null;
 
@@ -197,6 +198,24 @@ public class ConversationProperties  implements Serializable {
 
 
   /**
+   * Indicates filtering for screenMonitored
+   **/
+  public ConversationProperties isScreenMonitored(Boolean isScreenMonitored) {
+    this.isScreenMonitored = isScreenMonitored;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates filtering for screenMonitored")
+  @JsonProperty("isScreenMonitored")
+  public Boolean getIsScreenMonitored() {
+    return isScreenMonitored;
+  }
+  public void setIsScreenMonitored(Boolean isScreenMonitored) {
+    this.isScreenMonitored = isScreenMonitored;
+  }
+
+
+  /**
    * Indicates filtering for WrapUpNotes
    **/
   public ConversationProperties filterWrapUpNotes(Boolean filterWrapUpNotes) {
@@ -251,13 +270,14 @@ public class ConversationProperties  implements Serializable {
             Objects.equals(this.isVoicemail, conversationProperties.isVoicemail) &&
             Objects.equals(this.isFlagged, conversationProperties.isFlagged) &&
             Objects.equals(this.isMonitored, conversationProperties.isMonitored) &&
+            Objects.equals(this.isScreenMonitored, conversationProperties.isScreenMonitored) &&
             Objects.equals(this.filterWrapUpNotes, conversationProperties.filterWrapUpNotes) &&
             Objects.equals(this.matchAll, conversationProperties.matchAll);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(isWaiting, isActive, isAcd, isPreferred, isScreenshare, isCobrowse, isVoicemail, isFlagged, isMonitored, filterWrapUpNotes, matchAll);
+    return Objects.hash(isWaiting, isActive, isAcd, isPreferred, isScreenshare, isCobrowse, isVoicemail, isFlagged, isMonitored, isScreenMonitored, filterWrapUpNotes, matchAll);
   }
 
   @Override
@@ -274,6 +294,7 @@ public class ConversationProperties  implements Serializable {
     sb.append("    isVoicemail: ").append(toIndentedString(isVoicemail)).append("\n");
     sb.append("    isFlagged: ").append(toIndentedString(isFlagged)).append("\n");
     sb.append("    isMonitored: ").append(toIndentedString(isMonitored)).append("\n");
+    sb.append("    isScreenMonitored: ").append(toIndentedString(isScreenMonitored)).append("\n");
     sb.append("    filterWrapUpNotes: ").append(toIndentedString(filterWrapUpNotes)).append("\n");
     sb.append("    matchAll: ").append(toIndentedString(matchAll)).append("\n");
     sb.append("}");

@@ -94,14 +94,14 @@ public class Range  implements Serializable {
 
 
   /**
-   * The end date time of the last occurrence of the range as an ISO-8601 string in UTC time, e.g: 2023-12-21T16:30:25.000Z, Required to set for EndDate range type.
+   * The end date time of the last occurrence of the range as an ISO-8601 string. Required for EndDate range type.
    **/
   public Range end(String end) {
     this.end = end;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The end date time of the last occurrence of the range as an ISO-8601 string in UTC time, e.g: 2023-12-21T16:30:25.000Z, Required to set for EndDate range type.")
+  @ApiModelProperty(example = "2023-12-21T16:30:25", value = "The end date time of the last occurrence of the range as an ISO-8601 string. Required for EndDate range type.")
   @JsonProperty("end")
   public String getEnd() {
     return end;

@@ -22,7 +22,7 @@ title: JourneySegment
 | **assignmentExpirationDays** | <!----><!---->**Integer**<!----> | Time, in days, from when the segment is assigned until it is automatically unassigned. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 | **createdDate** | <!----><!---->[**Date**](Date.html)<!----> | Timestamp indicating when the segment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
-| **modifiedDate** | <!----><!---->[**Date**](Date.html)<!----> | Timestamp indicating when the the segment was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
+| **modifiedDate** | <!----><!---->[**Date**](Date.html)<!----> | Timestamp indicating when the segment was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
 {: class="table table-striped"}
 
 

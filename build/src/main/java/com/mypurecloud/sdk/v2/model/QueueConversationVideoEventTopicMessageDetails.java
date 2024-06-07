@@ -57,7 +57,8 @@ public class QueueConversationVideoEventTopicMessageDetails  implements Serializ
     DELIVERY_SUCCESS("delivery-success"),
     DELIVERY_FAILED("delivery-failed"),
     READ("read"),
-    REMOVED("removed");
+    REMOVED("removed"),
+    PUBLISHED("published");
 
     private String value;
 

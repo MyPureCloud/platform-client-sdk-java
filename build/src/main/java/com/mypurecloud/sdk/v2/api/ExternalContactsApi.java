@@ -1614,7 +1614,7 @@ public class ExternalContactsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ExternalOrganization getExternalcontactsOrganization(String externalOrganizationId, String expand, Boolean includeTrustors) throws IOException, ApiException {
+  public ExternalOrganization getExternalcontactsOrganization(String externalOrganizationId, List<String> expand, Boolean includeTrustors) throws IOException, ApiException {
     return  getExternalcontactsOrganization(createGetExternalcontactsOrganizationRequest(externalOrganizationId, expand, includeTrustors));
   }
 
@@ -1627,11 +1627,11 @@ public class ExternalContactsApi {
    * @return ExternalOrganization
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExternalOrganization> getExternalcontactsOrganizationWithHttpInfo(String externalOrganizationId, String expand, Boolean includeTrustors) throws IOException {
+  public ApiResponse<ExternalOrganization> getExternalcontactsOrganizationWithHttpInfo(String externalOrganizationId, List<String> expand, Boolean includeTrustors) throws IOException {
     return getExternalcontactsOrganization(createGetExternalcontactsOrganizationRequest(externalOrganizationId, expand, includeTrustors).withHttpInfo());
   }
 
-  private GetExternalcontactsOrganizationRequest createGetExternalcontactsOrganizationRequest(String externalOrganizationId, String expand, Boolean includeTrustors) {
+  private GetExternalcontactsOrganizationRequest createGetExternalcontactsOrganizationRequest(String externalOrganizationId, List<String> expand, Boolean includeTrustors) {
     return GetExternalcontactsOrganizationRequest.builder()
             .withExternalOrganizationId(externalOrganizationId)
 
@@ -1980,7 +1980,7 @@ public class ExternalContactsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public RelationshipListing getExternalcontactsOrganizationRelationships(String externalOrganizationId, Integer pageSize, Integer pageNumber, String expand, String sortOrder) throws IOException, ApiException {
+  public RelationshipListing getExternalcontactsOrganizationRelationships(String externalOrganizationId, Integer pageSize, Integer pageNumber, List<String> expand, String sortOrder) throws IOException, ApiException {
     return  getExternalcontactsOrganizationRelationships(createGetExternalcontactsOrganizationRelationshipsRequest(externalOrganizationId, pageSize, pageNumber, expand, sortOrder));
   }
 
@@ -1995,11 +1995,11 @@ public class ExternalContactsApi {
    * @return RelationshipListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RelationshipListing> getExternalcontactsOrganizationRelationshipsWithHttpInfo(String externalOrganizationId, Integer pageSize, Integer pageNumber, String expand, String sortOrder) throws IOException {
+  public ApiResponse<RelationshipListing> getExternalcontactsOrganizationRelationshipsWithHttpInfo(String externalOrganizationId, Integer pageSize, Integer pageNumber, List<String> expand, String sortOrder) throws IOException {
     return getExternalcontactsOrganizationRelationships(createGetExternalcontactsOrganizationRelationshipsRequest(externalOrganizationId, pageSize, pageNumber, expand, sortOrder).withHttpInfo());
   }
 
-  private GetExternalcontactsOrganizationRelationshipsRequest createGetExternalcontactsOrganizationRelationshipsRequest(String externalOrganizationId, Integer pageSize, Integer pageNumber, String expand, String sortOrder) {
+  private GetExternalcontactsOrganizationRelationshipsRequest createGetExternalcontactsOrganizationRelationshipsRequest(String externalOrganizationId, Integer pageSize, Integer pageNumber, List<String> expand, String sortOrder) {
     return GetExternalcontactsOrganizationRelationshipsRequest.builder()
             .withExternalOrganizationId(externalOrganizationId)
 
@@ -2485,7 +2485,7 @@ public class ExternalContactsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Relationship getExternalcontactsRelationship(String relationshipId, String expand) throws IOException, ApiException {
+  public Relationship getExternalcontactsRelationship(String relationshipId, List<String> expand) throws IOException, ApiException {
     return  getExternalcontactsRelationship(createGetExternalcontactsRelationshipRequest(relationshipId, expand));
   }
 
@@ -2497,11 +2497,11 @@ public class ExternalContactsApi {
    * @return Relationship
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Relationship> getExternalcontactsRelationshipWithHttpInfo(String relationshipId, String expand) throws IOException {
+  public ApiResponse<Relationship> getExternalcontactsRelationshipWithHttpInfo(String relationshipId, List<String> expand) throws IOException {
     return getExternalcontactsRelationship(createGetExternalcontactsRelationshipRequest(relationshipId, expand).withHttpInfo());
   }
 
-  private GetExternalcontactsRelationshipRequest createGetExternalcontactsRelationshipRequest(String relationshipId, String expand) {
+  private GetExternalcontactsRelationshipRequest createGetExternalcontactsRelationshipRequest(String relationshipId, List<String> expand) {
     return GetExternalcontactsRelationshipRequest.builder()
             .withRelationshipId(relationshipId)
 

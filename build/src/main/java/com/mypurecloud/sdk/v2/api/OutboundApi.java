@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.CampaignDivisionView;
 import com.mypurecloud.sdk.v2.model.CampaignDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.CampaignEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignInteractions;
+import com.mypurecloud.sdk.v2.model.CampaignOutboundLinesDistribution;
 import com.mypurecloud.sdk.v2.model.CampaignProgress;
 import com.mypurecloud.sdk.v2.model.CampaignRule;
 import com.mypurecloud.sdk.v2.model.CampaignRuleEntityListing;
@@ -32,6 +33,8 @@ import com.mypurecloud.sdk.v2.model.CampaignSequenceEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignStats;
 import com.mypurecloud.sdk.v2.model.CommonCampaignDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.CommonCampaignEntityListing;
+import com.mypurecloud.sdk.v2.model.ContactBulkEditRequest;
+import com.mypurecloud.sdk.v2.model.ContactBulkSearchParameters;
 import com.mypurecloud.sdk.v2.model.ContactCallbackRequest;
 import com.mypurecloud.sdk.v2.model.ContactList;
 import com.mypurecloud.sdk.v2.model.ContactListDivisionView;
@@ -43,6 +46,9 @@ import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListTemplate;
 import com.mypurecloud.sdk.v2.model.ContactListTemplateBulkRetrieveBody;
 import com.mypurecloud.sdk.v2.model.ContactListTemplateEntityListing;
+import com.mypurecloud.sdk.v2.model.ContactListingRequest;
+import com.mypurecloud.sdk.v2.model.ContactListingResponse;
+import com.mypurecloud.sdk.v2.model.ContactsBulkOperationJob;
 import com.mypurecloud.sdk.v2.model.ContactsExportRequest;
 import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
 import com.mypurecloud.sdk.v2.model.DialerContact;
@@ -127,6 +133,7 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignAgentownedmappingpreviewResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignDiagnosticsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignInteractionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignLinedistributionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignProgressRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignStatsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignruleRequest;
@@ -199,6 +206,9 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignsProgressRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistClearRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistContactsBulkRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistContactsBulkRemoveRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistContactsBulkUpdateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistContactsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistExportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersBulkRetrieveRequest;
@@ -3384,6 +3394,108 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CampaignInteractions> response = (ApiResponse<CampaignInteractions>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get line distribution information for campaigns using same Edge Group or Site as given campaign
+   * 
+   * @param campaignId Campaign ID (required)
+   * @param includeOnlyActiveCampaigns If true will return only active Campaigns (optional, default to true)
+   * @param edgeGroupId Edge group to be used in line distribution calculations instead of current Campaign's Edge Group. Campaign's Site and Edge Group are mutually exclusive. (optional)
+   * @param siteId Site to be used in line distribution calculations instead of current Campaign's Site.  Campaign's Site and Edge Group are mutually exclusive. (optional)
+   * @param useWeight Enable usage of weight, this value overrides current Campaign's setting in line distribution calculations (optional)
+   * @param relativeWeight Relative weight to be used in line distribution calculations instead of current Campaign's relative weight (optional)
+   * @param outboundLineCount The number of outbound lines to be used in line distribution calculations, instead of current Campaign's Outbound Lines Count (optional)
+   * @return CampaignOutboundLinesDistribution
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CampaignOutboundLinesDistribution getOutboundCampaignLinedistribution(String campaignId, Boolean includeOnlyActiveCampaigns, String edgeGroupId, String siteId, Boolean useWeight, Integer relativeWeight, Integer outboundLineCount) throws IOException, ApiException {
+    return  getOutboundCampaignLinedistribution(createGetOutboundCampaignLinedistributionRequest(campaignId, includeOnlyActiveCampaigns, edgeGroupId, siteId, useWeight, relativeWeight, outboundLineCount));
+  }
+
+  /**
+   * Get line distribution information for campaigns using same Edge Group or Site as given campaign
+   * 
+   * @param campaignId Campaign ID (required)
+   * @param includeOnlyActiveCampaigns If true will return only active Campaigns (optional, default to true)
+   * @param edgeGroupId Edge group to be used in line distribution calculations instead of current Campaign's Edge Group. Campaign's Site and Edge Group are mutually exclusive. (optional)
+   * @param siteId Site to be used in line distribution calculations instead of current Campaign's Site.  Campaign's Site and Edge Group are mutually exclusive. (optional)
+   * @param useWeight Enable usage of weight, this value overrides current Campaign's setting in line distribution calculations (optional)
+   * @param relativeWeight Relative weight to be used in line distribution calculations instead of current Campaign's relative weight (optional)
+   * @param outboundLineCount The number of outbound lines to be used in line distribution calculations, instead of current Campaign's Outbound Lines Count (optional)
+   * @return CampaignOutboundLinesDistribution
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CampaignOutboundLinesDistribution> getOutboundCampaignLinedistributionWithHttpInfo(String campaignId, Boolean includeOnlyActiveCampaigns, String edgeGroupId, String siteId, Boolean useWeight, Integer relativeWeight, Integer outboundLineCount) throws IOException {
+    return getOutboundCampaignLinedistribution(createGetOutboundCampaignLinedistributionRequest(campaignId, includeOnlyActiveCampaigns, edgeGroupId, siteId, useWeight, relativeWeight, outboundLineCount).withHttpInfo());
+  }
+
+  private GetOutboundCampaignLinedistributionRequest createGetOutboundCampaignLinedistributionRequest(String campaignId, Boolean includeOnlyActiveCampaigns, String edgeGroupId, String siteId, Boolean useWeight, Integer relativeWeight, Integer outboundLineCount) {
+    return GetOutboundCampaignLinedistributionRequest.builder()
+            .withCampaignId(campaignId)
+
+            .withIncludeOnlyActiveCampaigns(includeOnlyActiveCampaigns)
+
+            .withEdgeGroupId(edgeGroupId)
+
+            .withSiteId(siteId)
+
+            .withUseWeight(useWeight)
+
+            .withRelativeWeight(relativeWeight)
+
+            .withOutboundLineCount(outboundLineCount)
+
+            .build();
+  }
+
+  /**
+   * Get line distribution information for campaigns using same Edge Group or Site as given campaign
+   * 
+   * @param request The request object
+   * @return CampaignOutboundLinesDistribution
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CampaignOutboundLinesDistribution getOutboundCampaignLinedistribution(GetOutboundCampaignLinedistributionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CampaignOutboundLinesDistribution> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CampaignOutboundLinesDistribution>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get line distribution information for campaigns using same Edge Group or Site as given campaign
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CampaignOutboundLinesDistribution> getOutboundCampaignLinedistribution(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CampaignOutboundLinesDistribution>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignOutboundLinesDistribution> response = (ApiResponse<CampaignOutboundLinesDistribution>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignOutboundLinesDistribution> response = (ApiResponse<CampaignOutboundLinesDistribution>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -9629,6 +9741,252 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<List<DialerContact>> response = (ApiResponse<List<DialerContact>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Start an async job to delete contacts using a filter.
+   * 
+   * @param contactListId Contact List ID (required)
+   * @param body Contact filter information. (required)
+   * @return ContactsBulkOperationJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactsBulkOperationJob postOutboundContactlistContactsBulkRemove(String contactListId, ContactBulkSearchParameters body) throws IOException, ApiException {
+    return  postOutboundContactlistContactsBulkRemove(createPostOutboundContactlistContactsBulkRemoveRequest(contactListId, body));
+  }
+
+  /**
+   * Start an async job to delete contacts using a filter.
+   * 
+   * @param contactListId Contact List ID (required)
+   * @param body Contact filter information. (required)
+   * @return ContactsBulkOperationJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactsBulkOperationJob> postOutboundContactlistContactsBulkRemoveWithHttpInfo(String contactListId, ContactBulkSearchParameters body) throws IOException {
+    return postOutboundContactlistContactsBulkRemove(createPostOutboundContactlistContactsBulkRemoveRequest(contactListId, body).withHttpInfo());
+  }
+
+  private PostOutboundContactlistContactsBulkRemoveRequest createPostOutboundContactlistContactsBulkRemoveRequest(String contactListId, ContactBulkSearchParameters body) {
+    return PostOutboundContactlistContactsBulkRemoveRequest.builder()
+            .withContactListId(contactListId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Start an async job to delete contacts using a filter.
+   * 
+   * @param request The request object
+   * @return ContactsBulkOperationJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactsBulkOperationJob postOutboundContactlistContactsBulkRemove(PostOutboundContactlistContactsBulkRemoveRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactsBulkOperationJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactsBulkOperationJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Start an async job to delete contacts using a filter.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactsBulkOperationJob> postOutboundContactlistContactsBulkRemove(ApiRequest<ContactBulkSearchParameters> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactsBulkOperationJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactsBulkOperationJob> response = (ApiResponse<ContactsBulkOperationJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactsBulkOperationJob> response = (ApiResponse<ContactsBulkOperationJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Start an async job to bulk edit contacts.
+   * 
+   * @param contactListId Contact List ID (required)
+   * @param body Contact bulk edit request information. (required)
+   * @return ContactsBulkOperationJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactsBulkOperationJob postOutboundContactlistContactsBulkUpdate(String contactListId, ContactBulkEditRequest body) throws IOException, ApiException {
+    return  postOutboundContactlistContactsBulkUpdate(createPostOutboundContactlistContactsBulkUpdateRequest(contactListId, body));
+  }
+
+  /**
+   * Start an async job to bulk edit contacts.
+   * 
+   * @param contactListId Contact List ID (required)
+   * @param body Contact bulk edit request information. (required)
+   * @return ContactsBulkOperationJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactsBulkOperationJob> postOutboundContactlistContactsBulkUpdateWithHttpInfo(String contactListId, ContactBulkEditRequest body) throws IOException {
+    return postOutboundContactlistContactsBulkUpdate(createPostOutboundContactlistContactsBulkUpdateRequest(contactListId, body).withHttpInfo());
+  }
+
+  private PostOutboundContactlistContactsBulkUpdateRequest createPostOutboundContactlistContactsBulkUpdateRequest(String contactListId, ContactBulkEditRequest body) {
+    return PostOutboundContactlistContactsBulkUpdateRequest.builder()
+            .withContactListId(contactListId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Start an async job to bulk edit contacts.
+   * 
+   * @param request The request object
+   * @return ContactsBulkOperationJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactsBulkOperationJob postOutboundContactlistContactsBulkUpdate(PostOutboundContactlistContactsBulkUpdateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactsBulkOperationJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactsBulkOperationJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Start an async job to bulk edit contacts.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactsBulkOperationJob> postOutboundContactlistContactsBulkUpdate(ApiRequest<ContactBulkEditRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactsBulkOperationJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactsBulkOperationJob> response = (ApiResponse<ContactsBulkOperationJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactsBulkOperationJob> response = (ApiResponse<ContactsBulkOperationJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query contacts from a contact list.
+   * 
+   * @param contactListId Contact List ID (required)
+   * @param body Contact search parameters. (required)
+   * @return ContactListingResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListingResponse postOutboundContactlistContactsSearch(String contactListId, ContactListingRequest body) throws IOException, ApiException {
+    return  postOutboundContactlistContactsSearch(createPostOutboundContactlistContactsSearchRequest(contactListId, body));
+  }
+
+  /**
+   * Query contacts from a contact list.
+   * 
+   * @param contactListId Contact List ID (required)
+   * @param body Contact search parameters. (required)
+   * @return ContactListingResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListingResponse> postOutboundContactlistContactsSearchWithHttpInfo(String contactListId, ContactListingRequest body) throws IOException {
+    return postOutboundContactlistContactsSearch(createPostOutboundContactlistContactsSearchRequest(contactListId, body).withHttpInfo());
+  }
+
+  private PostOutboundContactlistContactsSearchRequest createPostOutboundContactlistContactsSearchRequest(String contactListId, ContactListingRequest body) {
+    return PostOutboundContactlistContactsSearchRequest.builder()
+            .withContactListId(contactListId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query contacts from a contact list.
+   * 
+   * @param request The request object
+   * @return ContactListingResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListingResponse postOutboundContactlistContactsSearch(PostOutboundContactlistContactsSearchRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactListingResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactListingResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query contacts from a contact list.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListingResponse> postOutboundContactlistContactsSearch(ApiRequest<ContactListingRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactListingResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListingResponse> response = (ApiResponse<ContactListingResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListingResponse> response = (ApiResponse<ContactListingResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

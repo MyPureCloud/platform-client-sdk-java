@@ -98,9 +98,6 @@ import com.mypurecloud.sdk.v2.model.InstagramIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.InstagramIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.InstagramIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.JsonCursorSearchResponse;
-import com.mypurecloud.sdk.v2.model.LineIntegration;
-import com.mypurecloud.sdk.v2.model.LineIntegrationEntityListing;
-import com.mypurecloud.sdk.v2.model.LineIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.MaxParticipants;
 import com.mypurecloud.sdk.v2.model.MediaParticipantRequest;
 import com.mypurecloud.sdk.v2.model.MeetingIdRecord;
@@ -146,9 +143,6 @@ import com.mypurecloud.sdk.v2.model.TransferRequest;
 import com.mypurecloud.sdk.v2.model.TransferToAgentRequest;
 import com.mypurecloud.sdk.v2.model.TransferToExternalRequest;
 import com.mypurecloud.sdk.v2.model.TransferToQueueRequest;
-import com.mypurecloud.sdk.v2.model.TwitterIntegration;
-import com.mypurecloud.sdk.v2.model.TwitterIntegrationEntityListing;
-import com.mypurecloud.sdk.v2.model.TwitterIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.VideoConferenceDetails;
 import com.mypurecloud.sdk.v2.model.WebChatMessage;
 import com.mypurecloud.sdk.v2.model.WebChatMessageEntityList;
@@ -171,9 +165,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteConversationsEmailMessagesDraftA
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagesCachedmediaCachedMediaItemIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
-import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsLineIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsOpenIntegrationIdRequest;
-import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingSettingsDefaultRequest;
@@ -244,12 +236,8 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsF
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsInstagramRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
-import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsLineRequest;
-import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsLineIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsOpenRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsOpenIntegrationIdRequest;
-import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsTwitterRequest;
-import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsWhatsappRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSettingRequest;
@@ -301,7 +289,6 @@ import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantCo
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsInstagramIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsOpenIntegrationIdRequest;
-import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingSettingRequest;
@@ -374,9 +361,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesAgentlessRequ
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesInboundOpenRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsFacebookRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsInstagramRequest;
-import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsLineRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsOpenRequest;
-import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsTwitterRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsWhatsappRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsWhatsappEmbeddedsignupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingSettingsRequest;
@@ -398,7 +383,6 @@ import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailMessagesDraftRequ
 import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailRecordingstateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsKeyconfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessageRecordingstateRequest;
-import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIntegrationsLineIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingSettingsDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingSupportedcontentDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingThreadingtimelineRequest;
@@ -1044,85 +1028,6 @@ public class ConversationsApi {
   }
 
   /**
-   * Delete a LINE messenger integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param integrationId Integration ID (required)
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public void deleteConversationsMessagingIntegrationsLineIntegrationId(String integrationId) throws IOException, ApiException {
-     deleteConversationsMessagingIntegrationsLineIntegrationId(createDeleteConversationsMessagingIntegrationsLineIntegrationIdRequest(integrationId));
-  }
-
-  /**
-   * Delete a LINE messenger integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param integrationId Integration ID (required)
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<Void> deleteConversationsMessagingIntegrationsLineIntegrationIdWithHttpInfo(String integrationId) throws IOException {
-    return deleteConversationsMessagingIntegrationsLineIntegrationId(createDeleteConversationsMessagingIntegrationsLineIntegrationIdRequest(integrationId).withHttpInfo());
-  }
-
-  private DeleteConversationsMessagingIntegrationsLineIntegrationIdRequest createDeleteConversationsMessagingIntegrationsLineIntegrationIdRequest(String integrationId) {
-    return DeleteConversationsMessagingIntegrationsLineIntegrationIdRequest.builder()
-            .withIntegrationId(integrationId)
-
-            .build();
-  }
-
-  /**
-   * Delete a LINE messenger integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param request The request object
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public void deleteConversationsMessagingIntegrationsLineIntegrationId(DeleteConversationsMessagingIntegrationsLineIntegrationIdRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
-    }
-  }
-
-  /**
-   * Delete a LINE messenger integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<Void> deleteConversationsMessagingIntegrationsLineIntegrationId(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, null);
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
    * Delete an Open messaging integration
    * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
    * @param integrationId Integration ID (required)
@@ -1176,85 +1081,6 @@ public class ConversationsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteConversationsMessagingIntegrationsOpenIntegrationId(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, null);
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Delete a Twitter messaging integration
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param integrationId Integration ID (required)
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public void deleteConversationsMessagingIntegrationsTwitterIntegrationId(String integrationId) throws IOException, ApiException {
-     deleteConversationsMessagingIntegrationsTwitterIntegrationId(createDeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest(integrationId));
-  }
-
-  /**
-   * Delete a Twitter messaging integration
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param integrationId Integration ID (required)
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<Void> deleteConversationsMessagingIntegrationsTwitterIntegrationIdWithHttpInfo(String integrationId) throws IOException {
-    return deleteConversationsMessagingIntegrationsTwitterIntegrationId(createDeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest(integrationId).withHttpInfo());
-  }
-
-  private DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest createDeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest(String integrationId) {
-    return DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest.builder()
-            .withIntegrationId(integrationId)
-
-            .build();
-  }
-
-  /**
-   * Delete a Twitter messaging integration
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param request The request object
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public void deleteConversationsMessagingIntegrationsTwitterIntegrationId(DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
-    }
-  }
-
-  /**
-   * Delete a Twitter messaging integration
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<Void> deleteConversationsMessagingIntegrationsTwitterIntegrationId(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -7000,190 +6826,6 @@ public class ConversationsApi {
   }
 
   /**
-   * Get a list of LINE messenger Integrations (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param pageSize Page size (optional, default to 25)
-   * @param pageNumber Page number (optional, default to 1)
-   * @param expand Expand instructions for the return value. (optional)
-   * @param supportedContentId Filter integrations returned based on the supported content ID (optional)
-   * @param messagingSettingId Filter integrations returned based on the setting ID (optional)
-   * @return LineIntegrationEntityListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public LineIntegrationEntityListing getConversationsMessagingIntegrationsLine(Integer pageSize, Integer pageNumber, String expand, String supportedContentId, String messagingSettingId) throws IOException, ApiException {
-    return  getConversationsMessagingIntegrationsLine(createGetConversationsMessagingIntegrationsLineRequest(pageSize, pageNumber, expand, supportedContentId, messagingSettingId));
-  }
-
-  /**
-   * Get a list of LINE messenger Integrations (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param pageSize Page size (optional, default to 25)
-   * @param pageNumber Page number (optional, default to 1)
-   * @param expand Expand instructions for the return value. (optional)
-   * @param supportedContentId Filter integrations returned based on the supported content ID (optional)
-   * @param messagingSettingId Filter integrations returned based on the setting ID (optional)
-   * @return LineIntegrationEntityListing
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<LineIntegrationEntityListing> getConversationsMessagingIntegrationsLineWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String supportedContentId, String messagingSettingId) throws IOException {
-    return getConversationsMessagingIntegrationsLine(createGetConversationsMessagingIntegrationsLineRequest(pageSize, pageNumber, expand, supportedContentId, messagingSettingId).withHttpInfo());
-  }
-
-  private GetConversationsMessagingIntegrationsLineRequest createGetConversationsMessagingIntegrationsLineRequest(Integer pageSize, Integer pageNumber, String expand, String supportedContentId, String messagingSettingId) {
-    return GetConversationsMessagingIntegrationsLineRequest.builder()
-            .withPageSize(pageSize)
-
-            .withPageNumber(pageNumber)
-
-            .withExpand(expand)
-
-            .withSupportedContentId(supportedContentId)
-
-            .withMessagingSettingId(messagingSettingId)
-
-            .build();
-  }
-
-  /**
-   * Get a list of LINE messenger Integrations (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param request The request object
-   * @return LineIntegrationEntityListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public LineIntegrationEntityListing getConversationsMessagingIntegrationsLine(GetConversationsMessagingIntegrationsLineRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<LineIntegrationEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LineIntegrationEntityListing>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get a list of LINE messenger Integrations (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<LineIntegrationEntityListing> getConversationsMessagingIntegrationsLine(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<LineIntegrationEntityListing>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<LineIntegrationEntityListing> response = (ApiResponse<LineIntegrationEntityListing>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<LineIntegrationEntityListing> response = (ApiResponse<LineIntegrationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Get a LINE messenger integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param integrationId Integration ID (required)
-   * @param expand Expand instructions for the return value. (optional)
-   * @return LineIntegration
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public LineIntegration getConversationsMessagingIntegrationsLineIntegrationId(String integrationId, String expand) throws IOException, ApiException {
-    return  getConversationsMessagingIntegrationsLineIntegrationId(createGetConversationsMessagingIntegrationsLineIntegrationIdRequest(integrationId, expand));
-  }
-
-  /**
-   * Get a LINE messenger integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param integrationId Integration ID (required)
-   * @param expand Expand instructions for the return value. (optional)
-   * @return LineIntegration
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<LineIntegration> getConversationsMessagingIntegrationsLineIntegrationIdWithHttpInfo(String integrationId, String expand) throws IOException {
-    return getConversationsMessagingIntegrationsLineIntegrationId(createGetConversationsMessagingIntegrationsLineIntegrationIdRequest(integrationId, expand).withHttpInfo());
-  }
-
-  private GetConversationsMessagingIntegrationsLineIntegrationIdRequest createGetConversationsMessagingIntegrationsLineIntegrationIdRequest(String integrationId, String expand) {
-    return GetConversationsMessagingIntegrationsLineIntegrationIdRequest.builder()
-            .withIntegrationId(integrationId)
-
-            .withExpand(expand)
-
-            .build();
-  }
-
-  /**
-   * Get a LINE messenger integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param request The request object
-   * @return LineIntegration
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public LineIntegration getConversationsMessagingIntegrationsLineIntegrationId(GetConversationsMessagingIntegrationsLineIntegrationIdRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<LineIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LineIntegration>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get a LINE messenger integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<LineIntegration> getConversationsMessagingIntegrationsLineIntegrationId(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<LineIntegration>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<LineIntegration> response = (ApiResponse<LineIntegration>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<LineIntegration> response = (ApiResponse<LineIntegration>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
    * Get a list of Open messaging integrations
    * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
    * @param pageSize Page size (optional, default to 25)
@@ -7355,190 +6997,6 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OpenIntegration> response = (ApiResponse<OpenIntegration>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Get a list of Twitter Integrations (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param pageSize Page size (optional, default to 25)
-   * @param pageNumber Page number (optional, default to 1)
-   * @param expand Expand instructions for the return value. (optional)
-   * @param supportedContentId Filter integrations returned based on the supported content ID (optional)
-   * @param messagingSettingId Filter integrations returned based on the setting ID (optional)
-   * @return TwitterIntegrationEntityListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public TwitterIntegrationEntityListing getConversationsMessagingIntegrationsTwitter(Integer pageSize, Integer pageNumber, String expand, String supportedContentId, String messagingSettingId) throws IOException, ApiException {
-    return  getConversationsMessagingIntegrationsTwitter(createGetConversationsMessagingIntegrationsTwitterRequest(pageSize, pageNumber, expand, supportedContentId, messagingSettingId));
-  }
-
-  /**
-   * Get a list of Twitter Integrations (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param pageSize Page size (optional, default to 25)
-   * @param pageNumber Page number (optional, default to 1)
-   * @param expand Expand instructions for the return value. (optional)
-   * @param supportedContentId Filter integrations returned based on the supported content ID (optional)
-   * @param messagingSettingId Filter integrations returned based on the setting ID (optional)
-   * @return TwitterIntegrationEntityListing
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<TwitterIntegrationEntityListing> getConversationsMessagingIntegrationsTwitterWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String supportedContentId, String messagingSettingId) throws IOException {
-    return getConversationsMessagingIntegrationsTwitter(createGetConversationsMessagingIntegrationsTwitterRequest(pageSize, pageNumber, expand, supportedContentId, messagingSettingId).withHttpInfo());
-  }
-
-  private GetConversationsMessagingIntegrationsTwitterRequest createGetConversationsMessagingIntegrationsTwitterRequest(Integer pageSize, Integer pageNumber, String expand, String supportedContentId, String messagingSettingId) {
-    return GetConversationsMessagingIntegrationsTwitterRequest.builder()
-            .withPageSize(pageSize)
-
-            .withPageNumber(pageNumber)
-
-            .withExpand(expand)
-
-            .withSupportedContentId(supportedContentId)
-
-            .withMessagingSettingId(messagingSettingId)
-
-            .build();
-  }
-
-  /**
-   * Get a list of Twitter Integrations (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param request The request object
-   * @return TwitterIntegrationEntityListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public TwitterIntegrationEntityListing getConversationsMessagingIntegrationsTwitter(GetConversationsMessagingIntegrationsTwitterRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<TwitterIntegrationEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TwitterIntegrationEntityListing>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get a list of Twitter Integrations (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<TwitterIntegrationEntityListing> getConversationsMessagingIntegrationsTwitter(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<TwitterIntegrationEntityListing>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<TwitterIntegrationEntityListing> response = (ApiResponse<TwitterIntegrationEntityListing>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<TwitterIntegrationEntityListing> response = (ApiResponse<TwitterIntegrationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Get a Twitter messaging integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param integrationId Integration ID (required)
-   * @param expand Expand instructions for the return value. (optional)
-   * @return TwitterIntegration
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public TwitterIntegration getConversationsMessagingIntegrationsTwitterIntegrationId(String integrationId, String expand) throws IOException, ApiException {
-    return  getConversationsMessagingIntegrationsTwitterIntegrationId(createGetConversationsMessagingIntegrationsTwitterIntegrationIdRequest(integrationId, expand));
-  }
-
-  /**
-   * Get a Twitter messaging integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param integrationId Integration ID (required)
-   * @param expand Expand instructions for the return value. (optional)
-   * @return TwitterIntegration
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<TwitterIntegration> getConversationsMessagingIntegrationsTwitterIntegrationIdWithHttpInfo(String integrationId, String expand) throws IOException {
-    return getConversationsMessagingIntegrationsTwitterIntegrationId(createGetConversationsMessagingIntegrationsTwitterIntegrationIdRequest(integrationId, expand).withHttpInfo());
-  }
-
-  private GetConversationsMessagingIntegrationsTwitterIntegrationIdRequest createGetConversationsMessagingIntegrationsTwitterIntegrationIdRequest(String integrationId, String expand) {
-    return GetConversationsMessagingIntegrationsTwitterIntegrationIdRequest.builder()
-            .withIntegrationId(integrationId)
-
-            .withExpand(expand)
-
-            .build();
-  }
-
-  /**
-   * Get a Twitter messaging integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param request The request object
-   * @return TwitterIntegration
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public TwitterIntegration getConversationsMessagingIntegrationsTwitterIntegrationId(GetConversationsMessagingIntegrationsTwitterIntegrationIdRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<TwitterIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TwitterIntegration>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get a Twitter messaging integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<TwitterIntegration> getConversationsMessagingIntegrationsTwitterIntegrationId(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<TwitterIntegration>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<TwitterIntegration> response = (ApiResponse<TwitterIntegration>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<TwitterIntegration> response = (ApiResponse<TwitterIntegration>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -11845,92 +11303,6 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OpenIntegration> response = (ApiResponse<OpenIntegration>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Update Twitter messaging integration
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param integrationId Integration ID (required)
-   * @param body TwitterIntegrationRequest (required)
-   * @return TwitterIntegration
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public TwitterIntegration patchConversationsMessagingIntegrationsTwitterIntegrationId(String integrationId, TwitterIntegrationRequest body) throws IOException, ApiException {
-    return  patchConversationsMessagingIntegrationsTwitterIntegrationId(createPatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest(integrationId, body));
-  }
-
-  /**
-   * Update Twitter messaging integration
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param integrationId Integration ID (required)
-   * @param body TwitterIntegrationRequest (required)
-   * @return TwitterIntegration
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<TwitterIntegration> patchConversationsMessagingIntegrationsTwitterIntegrationIdWithHttpInfo(String integrationId, TwitterIntegrationRequest body) throws IOException {
-    return patchConversationsMessagingIntegrationsTwitterIntegrationId(createPatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest(integrationId, body).withHttpInfo());
-  }
-
-  private PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest createPatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest(String integrationId, TwitterIntegrationRequest body) {
-    return PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest.builder()
-            .withIntegrationId(integrationId)
-
-            .withBody(body)
-
-            .build();
-  }
-
-  /**
-   * Update Twitter messaging integration
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param request The request object
-   * @return TwitterIntegration
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public TwitterIntegration patchConversationsMessagingIntegrationsTwitterIntegrationId(PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<TwitterIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TwitterIntegration>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Update Twitter messaging integration
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<TwitterIntegration> patchConversationsMessagingIntegrationsTwitterIntegrationId(ApiRequest<TwitterIntegrationRequest> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<TwitterIntegration>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<TwitterIntegration> response = (ApiResponse<TwitterIntegration>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<TwitterIntegration> response = (ApiResponse<TwitterIntegration>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -17835,88 +17207,6 @@ public class ConversationsApi {
   }
 
   /**
-   * Create a LINE messenger Integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param body LineIntegrationRequest (required)
-   * @return LineIntegration
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public LineIntegration postConversationsMessagingIntegrationsLine(LineIntegrationRequest body) throws IOException, ApiException {
-    return  postConversationsMessagingIntegrationsLine(createPostConversationsMessagingIntegrationsLineRequest(body));
-  }
-
-  /**
-   * Create a LINE messenger Integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param body LineIntegrationRequest (required)
-   * @return LineIntegration
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<LineIntegration> postConversationsMessagingIntegrationsLineWithHttpInfo(LineIntegrationRequest body) throws IOException {
-    return postConversationsMessagingIntegrationsLine(createPostConversationsMessagingIntegrationsLineRequest(body).withHttpInfo());
-  }
-
-  private PostConversationsMessagingIntegrationsLineRequest createPostConversationsMessagingIntegrationsLineRequest(LineIntegrationRequest body) {
-    return PostConversationsMessagingIntegrationsLineRequest.builder()
-            .withBody(body)
-
-            .build();
-  }
-
-  /**
-   * Create a LINE messenger Integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param request The request object
-   * @return LineIntegration
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public LineIntegration postConversationsMessagingIntegrationsLine(PostConversationsMessagingIntegrationsLineRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<LineIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LineIntegration>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Create a LINE messenger Integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<LineIntegration> postConversationsMessagingIntegrationsLine(ApiRequest<LineIntegrationRequest> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<LineIntegration>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<LineIntegration> response = (ApiResponse<LineIntegration>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<LineIntegration> response = (ApiResponse<LineIntegration>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
    * Create an Open messaging integration
    * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
    * @param body OpenIntegrationRequest (required)
@@ -17990,88 +17280,6 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OpenIntegration> response = (ApiResponse<OpenIntegration>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Create a Twitter Integration
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param body TwitterIntegrationRequest (required)
-   * @return TwitterIntegration
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public TwitterIntegration postConversationsMessagingIntegrationsTwitter(TwitterIntegrationRequest body) throws IOException, ApiException {
-    return  postConversationsMessagingIntegrationsTwitter(createPostConversationsMessagingIntegrationsTwitterRequest(body));
-  }
-
-  /**
-   * Create a Twitter Integration
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param body TwitterIntegrationRequest (required)
-   * @return TwitterIntegration
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<TwitterIntegration> postConversationsMessagingIntegrationsTwitterWithHttpInfo(TwitterIntegrationRequest body) throws IOException {
-    return postConversationsMessagingIntegrationsTwitter(createPostConversationsMessagingIntegrationsTwitterRequest(body).withHttpInfo());
-  }
-
-  private PostConversationsMessagingIntegrationsTwitterRequest createPostConversationsMessagingIntegrationsTwitterRequest(TwitterIntegrationRequest body) {
-    return PostConversationsMessagingIntegrationsTwitterRequest.builder()
-            .withBody(body)
-
-            .build();
-  }
-
-  /**
-   * Create a Twitter Integration
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param request The request object
-   * @return TwitterIntegration
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public TwitterIntegration postConversationsMessagingIntegrationsTwitter(PostConversationsMessagingIntegrationsTwitterRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<TwitterIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TwitterIntegration>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Create a Twitter Integration
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<TwitterIntegration> postConversationsMessagingIntegrationsTwitter(ApiRequest<TwitterIntegrationRequest> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<TwitterIntegration>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<TwitterIntegration> response = (ApiResponse<TwitterIntegration>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<TwitterIntegration> response = (ApiResponse<TwitterIntegration>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -19802,92 +19010,6 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Update a LINE messenger integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param integrationId Integration ID (required)
-   * @param body LineIntegrationRequest (required)
-   * @return LineIntegration
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public LineIntegration putConversationsMessagingIntegrationsLineIntegrationId(String integrationId, LineIntegrationRequest body) throws IOException, ApiException {
-    return  putConversationsMessagingIntegrationsLineIntegrationId(createPutConversationsMessagingIntegrationsLineIntegrationIdRequest(integrationId, body));
-  }
-
-  /**
-   * Update a LINE messenger integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param integrationId Integration ID (required)
-   * @param body LineIntegrationRequest (required)
-   * @return LineIntegration
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<LineIntegration> putConversationsMessagingIntegrationsLineIntegrationIdWithHttpInfo(String integrationId, LineIntegrationRequest body) throws IOException {
-    return putConversationsMessagingIntegrationsLineIntegrationId(createPutConversationsMessagingIntegrationsLineIntegrationIdRequest(integrationId, body).withHttpInfo());
-  }
-
-  private PutConversationsMessagingIntegrationsLineIntegrationIdRequest createPutConversationsMessagingIntegrationsLineIntegrationIdRequest(String integrationId, LineIntegrationRequest body) {
-    return PutConversationsMessagingIntegrationsLineIntegrationIdRequest.builder()
-            .withIntegrationId(integrationId)
-
-            .withBody(body)
-
-            .build();
-  }
-
-  /**
-   * Update a LINE messenger integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param request The request object
-   * @return LineIntegration
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public LineIntegration putConversationsMessagingIntegrationsLineIntegrationId(PutConversationsMessagingIntegrationsLineIntegrationIdRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<LineIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LineIntegration>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Update a LINE messenger integration (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<LineIntegration> putConversationsMessagingIntegrationsLineIntegrationId(ApiRequest<LineIntegrationRequest> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<LineIntegration>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<LineIntegration> response = (ApiResponse<LineIntegration>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<LineIntegration> response = (ApiResponse<LineIntegration>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
