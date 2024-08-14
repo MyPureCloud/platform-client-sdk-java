@@ -18,6 +18,7 @@ title: Program
 | **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **publishedBy** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> |  |  [optional] |
 | **datePublished** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **topicLinksJob** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> |  |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

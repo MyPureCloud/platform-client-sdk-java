@@ -80,6 +80,8 @@ title: AuditTopicAuditLogMessage
 | BILLING | &quot;Billing&quot; | 
 | JOURNEYANALYTICS | &quot;JourneyAnalytics&quot; | 
 | NERSERVICE | &quot;NerService&quot; | 
+| ONBOARDING | &quot;Onboarding&quot; | 
+| SOCIALLISTENING | &quot;SocialListening&quot; | 
 {: class="table table-striped"}
 
 
@@ -155,6 +157,8 @@ title: AuditTopicAuditLogMessage
 | CONTACTSUPDATED | &quot;ContactsUpdated&quot; | 
 | CONTACTSDELETED | &quot;ContactsDeleted&quot; | 
 | RESTORE | &quot;Restore&quot; | 
+| BLOCK | &quot;Block&quot; | 
+| UNBLOCK | &quot;Unblock&quot; | 
 | OPEN | &quot;Open&quot; | 
 | APPROVED | &quot;Approved&quot; | 
 | REJECTED | &quot;Rejected&quot; | 
@@ -169,6 +173,23 @@ title: AuditTopicAuditLogMessage
 | UPDATEOUTOFSERVICE | &quot;UpdateOutOfService&quot; | 
 | CYCLE | &quot;Cycle&quot; | 
 | SCALE | &quot;Scale&quot; | 
+| ASGINSERVICE | &quot;AsgInservice&quot; | 
+| AWSOUTOFSERVICE | &quot;AwsOutofservice&quot; | 
+| ASGTERMINATE | &quot;AsgTerminate&quot; | 
+| DETACH | &quot;Detach&quot; | 
+| TERMINATE | &quot;Terminate&quot; | 
+| BLOCKUPGRADE | &quot;BlockUpgrade&quot; | 
+| UNBLOCKUPGRADE | &quot;UnblockUpgrade&quot; | 
+| ASGSWAPINSTANCETYPE | &quot;AsgSwapInstanceType&quot; | 
+| RECREATEASG | &quot;RecreateAsg&quot; | 
+| DELETEUNCONFIGUREDEDGE | &quot;DeleteUnconfiguredEdge&quot; | 
+| GETASGLIST | &quot;GetAsgList&quot; | 
+| GETASG | &quot;GetAsg&quot; | 
+| UPGRADEORGANIZATIONSITE | &quot;UpgradeOrganizationSite&quot; | 
+| UPDATEAWSCONFIG | &quot;UpdateAwsConfig&quot; | 
+| GETAWSCONFIG | &quot;GetAwsConfig&quot; | 
+| DELETEGHOSTEDGERECORD | &quot;DeleteGhostEdgeRecord&quot; | 
+| UPGRADECLEANUP | &quot;UpgradeCleanup&quot; | 
 | IPALLOWLISTCLEAR | &quot;IpAllowlistClear&quot; | 
 | ADDPAIRINGROLE | &quot;AddPairingRole&quot; | 
 | VERIFY | &quot;Verify&quot; | 
@@ -180,10 +201,12 @@ title: AuditTopicAuditLogMessage
 | CANCEL | &quot;Cancel&quot; | 
 | HARDDELETE | &quot;HardDelete&quot; | 
 | SOFTDELETE | &quot;SoftDelete&quot; | 
+| SUBMIT | &quot;Submit&quot; | 
 | ENABLECAPTURE | &quot;EnableCapture&quot; | 
 | DOWNLOADCAPTURE | &quot;DownloadCapture&quot; | 
 | INITIATE | &quot;Initiate&quot; | 
 | REVERSEMANUALLY | &quot;ReverseManually&quot; | 
+| PROVISIONED | &quot;Provisioned&quot; | 
 {: class="table table-striped"}
 
 
@@ -283,6 +306,8 @@ title: AuditTopicAuditLogMessage
 | TIMEOFFPLAN | &quot;TimeOffPlan&quot; | 
 | TIMEOFFREQUEST | &quot;TimeOffRequest&quot; | 
 | WORKPLAN | &quot;WorkPlan&quot; | 
+| WORKPLANBID | &quot;WorkPlanBid&quot; | 
+| WORKPLANBIDGROUP | &quot;WorkPlanBidGroup&quot; | 
 | WORKPLANROTATION | &quot;WorkPlanRotation&quot; | 
 | HISTORICALDATA | &quot;HistoricalData&quot; | 
 | STAFFINGGROUP | &quot;StaffingGroup&quot; | 
@@ -302,6 +327,7 @@ title: AuditTopicAuditLogMessage
 | SCHEDULEGROUP | &quot;ScheduleGroup&quot; | 
 | EMERGENCYGROUP | &quot;EmergencyGroup&quot; | 
 | IVR | &quot;IVR&quot; | 
+| ALERTABLEPRESENCESOVERRIDES | &quot;AlertablePresencesOverrides&quot; | 
 | DID | &quot;DID&quot; | 
 | DIDPOOL | &quot;DIDPool&quot; | 
 | EXTENSION | &quot;Extension&quot; | 
@@ -388,6 +414,7 @@ title: AuditTopicAuditLogMessage
 | CREDENTIAL | &quot;Credential&quot; | 
 | NUMBERORDER | &quot;NumberOrder&quot; | 
 | ENTERPRISEAGREEMENT | &quot;EnterpriseAgreement&quot; | 
+| VENDORLISTING | &quot;VendorListing&quot; | 
 | GDPRREQUEST | &quot;GdprRequest&quot; | 
 | DEFAULTPANELSETTINGS | &quot;DefaultPanelSettings&quot; | 
 | INBOUNDDOMAIN | &quot;InboundDomain&quot; | 
@@ -405,6 +432,7 @@ title: AuditTopicAuditLogMessage
 | SOFTSUSPENSION | &quot;SoftSuspension&quot; | 
 | JOURNEYVIEW | &quot;JourneyView&quot; | 
 | CUSTOMENTITY | &quot;CustomEntity&quot; | 
+| DIRECTORYFEATURE | &quot;DirectoryFeature&quot; | 
 {: class="table table-striped"}
 
 

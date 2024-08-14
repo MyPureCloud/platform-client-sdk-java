@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteUserrecording**](UserRecordingsApi.html#deleteUserrecording) | Delete a user recording. |
 | [**getUserrecording**](UserRecordingsApi.html#getUserrecording) | Get a user recording. |
 | [**getUserrecordingMedia**](UserRecordingsApi.html#getUserrecordingMedia) | Download a user recording. |
+| [**getUserrecordingTranscoding**](UserRecordingsApi.html#getUserrecordingTranscoding) | Download a user recording. |
 | [**getUserrecordings**](UserRecordingsApi.html#getUserrecordings) | Get a list of user recordings. |
 | [**getUserrecordingsSummary**](UserRecordingsApi.html#getUserrecordingsSummary) | Get user recording summary |
 | [**putUserrecording**](UserRecordingsApi.html#putUserrecording) | Update a user recording. |
@@ -140,11 +141,13 @@ try {
 
 # **getUserrecordingMedia**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [DownloadResponse](DownloadResponse.html) getUserrecordingMedia(recordingId, formatId, async)
 
 Download a user recording.
+
+API should migrate to use GET api/v2/userrecordings/{recordingId}/transcoding
 
 Wraps GET /api/v2/userrecordings/{recordingId}/media  
 
@@ -193,6 +196,69 @@ try {
 | **recordingId** | **String**| User Recording ID | 
 | **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE 
 | **async** | **Boolean**| When set to true, api will return 202 response until the recording is ready for download | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DownloadResponse**](DownloadResponse.html)
+
+<a name="getUserrecordingTranscoding"></a>
+
+# **getUserrecordingTranscoding**
+
+
+
+> [DownloadResponse](DownloadResponse.html) getUserrecordingTranscoding(recordingId, formatId)
+
+Download a user recording.
+
+Wraps GET /api/v2/userrecordings/{recordingId}/transcoding  
+
+Requires ANY permissions: 
+
+* They are enforced by the backend
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UserRecordingsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UserRecordingsApi apiInstance = new UserRecordingsApi();
+String recordingId = "recordingId_example"; // String | User Recording ID
+String formatId = "WEBM"; // String | The desired media format.
+try {
+    DownloadResponse result = apiInstance.getUserrecordingTranscoding(recordingId, formatId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UserRecordingsApi#getUserrecordingTranscoding");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **recordingId** | **String**| User Recording ID | 
+| **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE 
 {: class="table-striped"}
 
 

@@ -53,7 +53,6 @@ title: Miner
 | DE_DE | &quot;de-de&quot; | 
 | PT_PT | &quot;pt-pt&quot; | 
 | PT_BR | &quot;pt-br&quot; | 
-| NL_NL | &quot;nl-nl&quot; | 
 | IT_IT | &quot;it-it&quot; | 
 {: class="table table-striped"}
 

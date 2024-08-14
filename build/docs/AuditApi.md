@@ -197,7 +197,7 @@ try {
 
 
 
-> [AuditQueryExecutionResultsResponse](AuditQueryExecutionResultsResponse.html) getAuditsQueryTransactionIdResults(transactionId, cursor, pageSize, expand)
+> [AuditQueryExecutionResultsResponse](AuditQueryExecutionResultsResponse.html) getAuditsQueryTransactionIdResults(transactionId, cursor, pageSize, expand, allowRedirect)
 
 Get results of audit query
 
@@ -233,8 +233,9 @@ String transactionId = "transactionId_example"; // String | Transaction ID
 String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page)
 Integer pageSize = 25; // Integer | Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500.
 List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
+Boolean allowRedirect = true; // Boolean | Result sets with large amounts of data will respond with a download url
 try {
-    AuditQueryExecutionResultsResponse result = apiInstance.getAuditsQueryTransactionIdResults(transactionId, cursor, pageSize, expand);
+    AuditQueryExecutionResultsResponse result = apiInstance.getAuditsQueryTransactionIdResults(transactionId, cursor, pageSize, expand, allowRedirect);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AuditApi#getAuditsQueryTransactionIdResults");
@@ -251,6 +252,7 @@ try {
 | **cursor** | **String**| Indicates where to resume query results (not required for first page) | [optional] 
 | **pageSize** | **Integer**| Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500. | [optional] [default to 25] 
 | **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: user 
+| **allowRedirect** | **Boolean**| Result sets with large amounts of data will respond with a download url | [optional] 
 {: class="table-striped"}
 
 

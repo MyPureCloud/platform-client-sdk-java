@@ -27,14 +27,14 @@ public class FunctionUploadRequest  implements Serializable {
 
   
   /**
-   * Name of the file to upload. It must not start with a dot and not end with a forward slash. Whitespace and the following characters are not allowed: \\{^}%`]\">[~<#|
+   * Name of the file to upload.File name can only contain letters, numbers, and the following special characters: + - _ . ' ( )
    **/
   public FunctionUploadRequest fileName(String fileName) {
     this.fileName = fileName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Name of the file to upload. It must not start with a dot and not end with a forward slash. Whitespace and the following characters are not allowed: \\{^}%`]\">[~<#|")
+  @ApiModelProperty(example = "null", required = true, value = "Name of the file to upload.File name can only contain letters, numbers, and the following special characters: + - _ . ' ( )")
   @JsonProperty("fileName")
   public String getFileName() {
     return fileName;
@@ -46,6 +46,8 @@ public class FunctionUploadRequest  implements Serializable {
 
   /**
    * The number of seconds the presigned URL is valid for (from 1 to 604800 seconds). If none provided, defaults to 900 seconds
+   * minimum: 1
+   * maximum: 604800
    **/
   public FunctionUploadRequest signedUrlTimeoutSeconds(Integer signedUrlTimeoutSeconds) {
     this.signedUrlTimeoutSeconds = signedUrlTimeoutSeconds;

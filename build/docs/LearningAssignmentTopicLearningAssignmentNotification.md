@@ -20,6 +20,9 @@ title: LearningAssignmentTopicLearningAssignmentNotification
 | **dateModified** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **isOverdue** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **lengthInMinutes** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **percentageScore** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
+| **isPassed** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 
@@ -36,6 +39,19 @@ title: LearningAssignmentTopicLearningAssignmentNotification
 | DELETED | &quot;Deleted&quot; | 
 | NOTCOMPLETED | &quot;NotCompleted&quot; | 
 | INVALIDSCHEDULE | &quot;InvalidSchedule&quot; | 
+{: class="table table-striped"}
+
+
+<a name="TypeEnum"></a>
+
+## Enum: TypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
+| NATIVE | &quot;Native&quot; | 
+| EXTERNAL | &quot;External&quot; | 
 {: class="table table-striped"}
 
 

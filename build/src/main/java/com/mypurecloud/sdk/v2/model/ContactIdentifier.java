@@ -49,7 +49,8 @@ public class ContactIdentifier  implements Serializable {
     SOCIALWHATSAPP("SocialWhatsapp"),
     EMAIL("Email"),
     PHONE("Phone"),
-    COOKIE("Cookie");
+    COOKIE("Cookie"),
+    EXTERNALID("ExternalId");
 
     private String value;
 

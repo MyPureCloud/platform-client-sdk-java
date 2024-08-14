@@ -23,6 +23,12 @@ title: CampaignRuleCondition
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | CAMPAIGNPROGRESS | &quot;campaignProgress&quot; | 
 | CAMPAIGNAGENTS | &quot;campaignAgents&quot; | 
+| CAMPAIGNRECORDSATTEMPTED | &quot;campaignRecordsAttempted&quot; | 
+| CAMPAIGNBUSINESSSUCCESS | &quot;campaignBusinessSuccess&quot; | 
+| CAMPAIGNBUSINESSFAILURE | &quot;campaignBusinessFailure&quot; | 
+| CAMPAIGNBUSINESSNEUTRAL | &quot;campaignBusinessNeutral&quot; | 
+| CAMPAIGNVALIDATTEMPTS | &quot;campaignValidAttempts&quot; | 
+| CAMPAIGNRIGHTPARTYCONTACTS | &quot;campaignRightPartyContacts&quot; | 
 {: class="table table-striped"}
 
 

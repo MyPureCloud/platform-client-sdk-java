@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.PauseCriteria;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -76,6 +77,7 @@ public class CobrowseSettings  implements Serializable {
   }
   private List<ChannelsEnum> channels = new ArrayList<ChannelsEnum>();
   private List<String> readonlySelectors = new ArrayList<String>();
+  private List<PauseCriteria> pauseCriteria = new ArrayList<PauseCriteria>();
 
   
   /**
@@ -186,6 +188,24 @@ public class CobrowseSettings  implements Serializable {
   }
 
 
+  /**
+   * Pause criteria that will pause cobrowse if some of them are met in the user's URL
+   **/
+  public CobrowseSettings pauseCriteria(List<PauseCriteria> pauseCriteria) {
+    this.pauseCriteria = pauseCriteria;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Pause criteria that will pause cobrowse if some of them are met in the user's URL")
+  @JsonProperty("pauseCriteria")
+  public List<PauseCriteria> getPauseCriteria() {
+    return pauseCriteria;
+  }
+  public void setPauseCriteria(List<PauseCriteria> pauseCriteria) {
+    this.pauseCriteria = pauseCriteria;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -201,12 +221,13 @@ public class CobrowseSettings  implements Serializable {
             Objects.equals(this.allowAgentNavigation, cobrowseSettings.allowAgentNavigation) &&
             Objects.equals(this.maskSelectors, cobrowseSettings.maskSelectors) &&
             Objects.equals(this.channels, cobrowseSettings.channels) &&
-            Objects.equals(this.readonlySelectors, cobrowseSettings.readonlySelectors);
+            Objects.equals(this.readonlySelectors, cobrowseSettings.readonlySelectors) &&
+            Objects.equals(this.pauseCriteria, cobrowseSettings.pauseCriteria);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, allowAgentControl, allowAgentNavigation, maskSelectors, channels, readonlySelectors);
+    return Objects.hash(enabled, allowAgentControl, allowAgentNavigation, maskSelectors, channels, readonlySelectors, pauseCriteria);
   }
 
   @Override
@@ -220,6 +241,7 @@ public class CobrowseSettings  implements Serializable {
     sb.append("    maskSelectors: ").append(toIndentedString(maskSelectors)).append("\n");
     sb.append("    channels: ").append(toIndentedString(channels)).append("\n");
     sb.append("    readonlySelectors: ").append(toIndentedString(readonlySelectors)).append("\n");
+    sb.append("    pauseCriteria: ").append(toIndentedString(pauseCriteria)).append("\n");
     sb.append("}");
     return sb.toString();
   }

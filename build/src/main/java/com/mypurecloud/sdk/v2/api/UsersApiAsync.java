@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.Adjacents;
+import com.mypurecloud.sdk.v2.model.AgentDirectRoutingBackupSettings;
 import com.mypurecloud.sdk.v2.model.AgentMaxUtilizationResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsAsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsQueryResponse;
@@ -78,6 +79,8 @@ import com.mypurecloud.sdk.v2.model.VerifierEntityListing;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsUsersDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationSubjectDivisionRoleRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingDirectroutingbackupSettingsMeRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUserDirectroutingbackupSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutinglanguageRequest;
@@ -97,6 +100,8 @@ import com.mypurecloud.sdk.v2.api.request.GetAuthorizationSubjectRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationSubjectsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFieldconfigRequest;
 import com.mypurecloud.sdk.v2.api.request.GetProfilesUsersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingDirectroutingbackupSettingsMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingUserDirectroutingbackupSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserAdjacentsRequest;
@@ -155,6 +160,8 @@ import com.mypurecloud.sdk.v2.api.request.PostUsersSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersSearchConversationTargetRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersSearchQueuemembersManageRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersSearchTeamsAssignRequest;
+import com.mypurecloud.sdk.v2.api.request.PutRoutingDirectroutingbackupSettingsMeRequest;
+import com.mypurecloud.sdk.v2.api.request.PutRoutingUserDirectroutingbackupSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserCallforwardingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserOutofofficeRequest;
@@ -303,6 +310,156 @@ public class UsersApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteAuthorizationSubjectDivisionRoleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteRoutingDirectroutingbackupSettingsMeAsync(DeleteRoutingDirectroutingbackupSettingsMeRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteRoutingDirectroutingbackupSettingsMeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteRoutingUserDirectroutingbackupSettingsAsync(DeleteRoutingUserDirectroutingbackupSettingsRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteRoutingUserDirectroutingbackupSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -1762,6 +1919,156 @@ public class UsersApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<UserProfileEntityListing> response = (ApiResponse<UserProfileEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the user's Direct Routing Backup settings.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentDirectRoutingBackupSettings> getRoutingDirectroutingbackupSettingsMeAsync(GetRoutingDirectroutingbackupSettingsMeRequest request, final AsyncApiCallback<AgentDirectRoutingBackupSettings> callback) {
+    try {
+      final SettableFuture<AgentDirectRoutingBackupSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentDirectRoutingBackupSettings>() {}, new AsyncApiCallback<ApiResponse<AgentDirectRoutingBackupSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentDirectRoutingBackupSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the user's Direct Routing Backup settings.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentDirectRoutingBackupSettings>> getRoutingDirectroutingbackupSettingsMeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AgentDirectRoutingBackupSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentDirectRoutingBackupSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentDirectRoutingBackupSettings>() {}, new AsyncApiCallback<ApiResponse<AgentDirectRoutingBackupSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentDirectRoutingBackupSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentDirectRoutingBackupSettings> response = (ApiResponse<AgentDirectRoutingBackupSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentDirectRoutingBackupSettings> response = (ApiResponse<AgentDirectRoutingBackupSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the user's Direct Routing Backup settings.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentDirectRoutingBackupSettings> getRoutingUserDirectroutingbackupSettingsAsync(GetRoutingUserDirectroutingbackupSettingsRequest request, final AsyncApiCallback<AgentDirectRoutingBackupSettings> callback) {
+    try {
+      final SettableFuture<AgentDirectRoutingBackupSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentDirectRoutingBackupSettings>() {}, new AsyncApiCallback<ApiResponse<AgentDirectRoutingBackupSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentDirectRoutingBackupSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the user's Direct Routing Backup settings.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentDirectRoutingBackupSettings>> getRoutingUserDirectroutingbackupSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AgentDirectRoutingBackupSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentDirectRoutingBackupSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentDirectRoutingBackupSettings>() {}, new AsyncApiCallback<ApiResponse<AgentDirectRoutingBackupSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentDirectRoutingBackupSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentDirectRoutingBackupSettings> response = (ApiResponse<AgentDirectRoutingBackupSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentDirectRoutingBackupSettings> response = (ApiResponse<AgentDirectRoutingBackupSettings>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -6122,6 +6429,156 @@ public class UsersApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<UsersSearchResponse> response = (ApiResponse<UsersSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the user's Direct Routing Backup settings.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentDirectRoutingBackupSettings> putRoutingDirectroutingbackupSettingsMeAsync(PutRoutingDirectroutingbackupSettingsMeRequest request, final AsyncApiCallback<AgentDirectRoutingBackupSettings> callback) {
+    try {
+      final SettableFuture<AgentDirectRoutingBackupSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentDirectRoutingBackupSettings>() {}, new AsyncApiCallback<ApiResponse<AgentDirectRoutingBackupSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentDirectRoutingBackupSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the user's Direct Routing Backup settings.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentDirectRoutingBackupSettings>> putRoutingDirectroutingbackupSettingsMeAsync(ApiRequest<AgentDirectRoutingBackupSettings> request, final AsyncApiCallback<ApiResponse<AgentDirectRoutingBackupSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentDirectRoutingBackupSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentDirectRoutingBackupSettings>() {}, new AsyncApiCallback<ApiResponse<AgentDirectRoutingBackupSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentDirectRoutingBackupSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentDirectRoutingBackupSettings> response = (ApiResponse<AgentDirectRoutingBackupSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentDirectRoutingBackupSettings> response = (ApiResponse<AgentDirectRoutingBackupSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the user's Direct Routing Backup settings.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentDirectRoutingBackupSettings> putRoutingUserDirectroutingbackupSettingsAsync(PutRoutingUserDirectroutingbackupSettingsRequest request, final AsyncApiCallback<AgentDirectRoutingBackupSettings> callback) {
+    try {
+      final SettableFuture<AgentDirectRoutingBackupSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentDirectRoutingBackupSettings>() {}, new AsyncApiCallback<ApiResponse<AgentDirectRoutingBackupSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentDirectRoutingBackupSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the user's Direct Routing Backup settings.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentDirectRoutingBackupSettings>> putRoutingUserDirectroutingbackupSettingsAsync(ApiRequest<AgentDirectRoutingBackupSettings> request, final AsyncApiCallback<ApiResponse<AgentDirectRoutingBackupSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentDirectRoutingBackupSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentDirectRoutingBackupSettings>() {}, new AsyncApiCallback<ApiResponse<AgentDirectRoutingBackupSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentDirectRoutingBackupSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentDirectRoutingBackupSettings> response = (ApiResponse<AgentDirectRoutingBackupSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentDirectRoutingBackupSettings> response = (ApiResponse<AgentDirectRoutingBackupSettings>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

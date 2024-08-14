@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.KnowledgeBase;
 import com.mypurecloud.sdk.v2.model.KnowledgeExportJobFilter;
+import com.mypurecloud.sdk.v2.model.KnowledgeOperationSource;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -143,6 +144,7 @@ public class KnowledgeExportJobResponse  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private ErrorBody errorInformation = null;
+  private KnowledgeOperationSource source = null;
   private String selfUri = null;
 
   
@@ -362,6 +364,24 @@ public class KnowledgeExportJobResponse  implements Serializable {
   }
 
 
+  /**
+   * Source of the export job.
+   **/
+  public KnowledgeExportJobResponse source(KnowledgeOperationSource source) {
+    this.source = source;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Source of the export job.")
+  @JsonProperty("source")
+  public KnowledgeOperationSource getSource() {
+    return source;
+  }
+  public void setSource(KnowledgeOperationSource source) {
+    this.source = source;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -391,12 +411,13 @@ public class KnowledgeExportJobResponse  implements Serializable {
             Objects.equals(this.dateCreated, knowledgeExportJobResponse.dateCreated) &&
             Objects.equals(this.dateModified, knowledgeExportJobResponse.dateModified) &&
             Objects.equals(this.errorInformation, knowledgeExportJobResponse.errorInformation) &&
+            Objects.equals(this.source, knowledgeExportJobResponse.source) &&
             Objects.equals(this.selfUri, knowledgeExportJobResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, downloadURL, fileType, jsonFileVersion, countDocumentProcessed, exportFilter, status, knowledgeBase, createdBy, dateCreated, dateModified, errorInformation, selfUri);
+    return Objects.hash(id, downloadURL, fileType, jsonFileVersion, countDocumentProcessed, exportFilter, status, knowledgeBase, createdBy, dateCreated, dateModified, errorInformation, source, selfUri);
   }
 
   @Override
@@ -416,6 +437,7 @@ public class KnowledgeExportJobResponse  implements Serializable {
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");
+    sb.append("    source: ").append(toIndentedString(source)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

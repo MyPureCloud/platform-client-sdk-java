@@ -30,6 +30,8 @@ title: BotSearchResponse
 | GOOGLEDIALOGFLOWCX | &quot;GoogleDialogFlowCX&quot; | 
 | NUANCEDLG | &quot;NuanceDlg&quot; | 
 | GENESYSBOTFLOW | &quot;GenesysBotFlow&quot; | 
+| GENESYSDIGITALBOTFLOW | &quot;GenesysDigitalBotFlow&quot; | 
+| GENESYSVOICESURVEYFLOW | &quot;GenesysVoiceSurveyFlow&quot; | 
 {: class="table table-striped"}
 
 

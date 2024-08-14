@@ -29,7 +29,6 @@ import com.mypurecloud.sdk.v2.model.ActionTarget;
 import com.mypurecloud.sdk.v2.model.ActionTargetListing;
 import com.mypurecloud.sdk.v2.model.ActionTemplate;
 import com.mypurecloud.sdk.v2.model.ActionTemplateListing;
-import com.mypurecloud.sdk.v2.model.AddressableEntityListing;
 import com.mypurecloud.sdk.v2.model.AppEventRequest;
 import com.mypurecloud.sdk.v2.model.AppEventResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
@@ -51,6 +50,8 @@ import com.mypurecloud.sdk.v2.model.JourneySegment;
 import com.mypurecloud.sdk.v2.model.JourneySegmentRequest;
 import com.mypurecloud.sdk.v2.model.JourneyView;
 import com.mypurecloud.sdk.v2.model.JourneyViewJob;
+import com.mypurecloud.sdk.v2.model.JourneyViewJobListing;
+import com.mypurecloud.sdk.v2.model.JourneyViewListing;
 import com.mypurecloud.sdk.v2.model.JourneyViewResult;
 import com.mypurecloud.sdk.v2.model.Label;
 import com.mypurecloud.sdk.v2.model.Outcome;
@@ -72,6 +73,8 @@ import com.mypurecloud.sdk.v2.model.PatchSegment;
 import com.mypurecloud.sdk.v2.model.SegmentListing;
 import com.mypurecloud.sdk.v2.model.Session;
 import com.mypurecloud.sdk.v2.model.SessionListing;
+import com.mypurecloud.sdk.v2.model.WebEventRequest;
+import com.mypurecloud.sdk.v2.model.WebEventResponse;
 
 public class GetJourneySessionEventsRequest {
 
@@ -117,6 +120,53 @@ public class GetJourneySessionEventsRequest {
 	    return this;
 	} 
 
+	private String eventType;
+	public String getEventType() {
+		return this.eventType;
+	}
+
+	public void setEventType(String eventType) {
+		this.eventType = eventType;
+	}
+
+	public GetJourneySessionEventsRequest withEventType(String eventType) {
+	    this.setEventType(eventType);
+	    return this;
+	} 
+
+	public enum eventTypeValues { 
+		COM_GENESYS_JOURNEY_OUTCOMEACHIEVEDEVENT("com.genesys.journey.OutcomeAchievedEvent"),
+		COM_GENESYS_JOURNEY_SEGMENTASSIGNMENTEVENT("com.genesys.journey.SegmentAssignmentEvent"),
+		COM_GENESYS_JOURNEY_WEBACTIONEVENT("com.genesys.journey.WebActionEvent"),
+		COM_GENESYS_JOURNEY_WEBEVENT("com.genesys.journey.WebEvent"),
+		COM_GENESYS_JOURNEY_APPEVENT("com.genesys.journey.AppEvent");
+
+		private String value;
+
+		eventTypeValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static eventTypeValues fromString(String key) {
+			if (key == null) return null;
+
+			for (eventTypeValues value : eventTypeValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return eventTypeValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -152,6 +202,9 @@ public class GetJourneySessionEventsRequest {
         
 
                 .withQueryParameters("after", "", after)
+        
+
+                .withQueryParameters("eventType", "", eventType)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -192,6 +245,20 @@ public class GetJourneySessionEventsRequest {
 		public Builder withAfter(String after) {
 			request.setAfter(after);
 			return this;
+		}
+
+		public Builder withEventType(String eventType) {
+			request.setEventType(eventType);
+			return this;
+		}
+
+
+
+		
+		public Builder withEventType(eventTypeValues eventType) {
+		    request.setEventType(eventType.toString());
+
+		    return this;
 		}
 
 

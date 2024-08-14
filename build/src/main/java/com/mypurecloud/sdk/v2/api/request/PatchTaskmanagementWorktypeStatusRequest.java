@@ -135,6 +135,11 @@ public class PatchTaskmanagementWorktypeStatusRequest {
             throw new IllegalStateException("Missing the required parameter 'statusId' when building request for PatchTaskmanagementWorktypeStatusRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchTaskmanagementWorktypeStatusRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PATCH", "/api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId}")
                 .withPathParameter("worktypeId", worktypeId)
@@ -155,9 +160,9 @@ public class PatchTaskmanagementWorktypeStatusRequest {
 	}
 
 
-	public static Builder builder(String worktypeId, String statusId) {
+	public static Builder builder(String worktypeId, String statusId, WorkitemStatusUpdate body) {
 	    return new Builder()
-	            .withRequiredParams(worktypeId, statusId);
+	            .withRequiredParams(worktypeId, statusId, body);
 	}
 
 
@@ -186,9 +191,10 @@ public class PatchTaskmanagementWorktypeStatusRequest {
 
 
 
-		public Builder withRequiredParams(String worktypeId, String statusId) {
+		public Builder withRequiredParams(String worktypeId, String statusId, WorkitemStatusUpdate body) {
 			request.setWorktypeId(worktypeId);
 			request.setStatusId(statusId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -204,6 +210,11 @@ public class PatchTaskmanagementWorktypeStatusRequest {
             // verify the required parameter 'statusId' is set
             if (request.statusId == null) {
                 throw new IllegalStateException("Missing the required parameter 'statusId' when building request for PatchTaskmanagementWorktypeStatusRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchTaskmanagementWorktypeStatusRequest.");
             }
             
 			return request;

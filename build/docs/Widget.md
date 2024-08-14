@@ -35,6 +35,7 @@ title: Widget
 | **showTimeInStatus** | <!----><!---->**Boolean**<!----> | Indicates the show time in status of a widget configuration. |  [optional] |
 | **showOfflineAgents** | <!----><!---->**Boolean**<!----> | Indicates to show offline agent widget. |  [optional] |
 | **selectedStatuses** | <!---->[**List&lt;SelectedStatusesEnum&gt;**](#SelectedStatusesEnum)<!----> | Indicates the selected statuses used to filter the agent widget in the dashboard. |  [optional] |
+| **agentInteractionSortOrder** | [**AgentInteractionSortOrderEnum**](#AgentInteractionSortOrderEnum)<!----> | The sort order of the interactions in the agent status widget. |  [optional] |
 {: class="table table-striped"}
 
 
@@ -371,6 +372,18 @@ title: Widget
 | OFFQUEUE | &quot;OffQueue&quot; |
 | ONLINE | &quot;Online&quot; |
 | OFFLINE | &quot;Offline&quot; |
+{: class="table table-striped"}
+
+
+<a name="AgentInteractionSortOrderEnum"></a>
+
+## Enum: AgentInteractionSortOrderEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ASCENDING | &quot;ascending&quot; | 
+| DESCENDING | &quot;descending&quot; | 
 {: class="table table-striped"}
 
 

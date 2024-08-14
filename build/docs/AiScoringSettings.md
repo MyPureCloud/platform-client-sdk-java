@@ -8,8 +8,9 @@ title: AiScoringSettings
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **enabled** | <!----><!---->**Boolean**<!----> | True if AI scoring feature is configured, false if not. |  [optional] |
-| **prompt** | <!----><!---->**String**<!----> | The prompt text that would be used by a LLM. |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
+| **questionGroupSettings** | <!----><!---->[**List&lt;QuestionGroupSettings&gt;**](QuestionGroupSettings.html)<!----> |  |  [optional] |
+| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
 

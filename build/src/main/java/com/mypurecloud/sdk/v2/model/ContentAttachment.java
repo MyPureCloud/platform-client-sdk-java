@@ -80,6 +80,7 @@ public class ContentAttachment  implements Serializable {
   private String text = null;
   private String sha256 = null;
   private String filename = null;
+  private Long contentSizeBytes = null;
 
   
   /**
@@ -208,6 +209,24 @@ public class ContentAttachment  implements Serializable {
   }
 
 
+  /**
+   * Size in bytes of the attachment content.
+   **/
+  public ContentAttachment contentSizeBytes(Long contentSizeBytes) {
+    this.contentSizeBytes = contentSizeBytes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Size in bytes of the attachment content.")
+  @JsonProperty("contentSizeBytes")
+  public Long getContentSizeBytes() {
+    return contentSizeBytes;
+  }
+  public void setContentSizeBytes(Long contentSizeBytes) {
+    this.contentSizeBytes = contentSizeBytes;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -224,12 +243,13 @@ public class ContentAttachment  implements Serializable {
             Objects.equals(this.mime, contentAttachment.mime) &&
             Objects.equals(this.text, contentAttachment.text) &&
             Objects.equals(this.sha256, contentAttachment.sha256) &&
-            Objects.equals(this.filename, contentAttachment.filename);
+            Objects.equals(this.filename, contentAttachment.filename) &&
+            Objects.equals(this.contentSizeBytes, contentAttachment.contentSizeBytes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, mediaType, url, mime, text, sha256, filename);
+    return Objects.hash(id, mediaType, url, mime, text, sha256, filename, contentSizeBytes);
   }
 
   @Override
@@ -244,6 +264,7 @@ public class ContentAttachment  implements Serializable {
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    sha256: ").append(toIndentedString(sha256)).append("\n");
     sb.append("    filename: ").append(toIndentedString(filename)).append("\n");
+    sb.append("    contentSizeBytes: ").append(toIndentedString(contentSizeBytes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

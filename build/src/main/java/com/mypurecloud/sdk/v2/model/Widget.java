@@ -635,6 +635,54 @@ public class Widget  implements Serializable {
   }
   private List<SelectedStatusesEnum> selectedStatuses = new ArrayList<SelectedStatusesEnum>();
 
+  private static class AgentInteractionSortOrderEnumDeserializer extends StdDeserializer<AgentInteractionSortOrderEnum> {
+    public AgentInteractionSortOrderEnumDeserializer() {
+      super(AgentInteractionSortOrderEnumDeserializer.class);
+    }
+
+    @Override
+    public AgentInteractionSortOrderEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return AgentInteractionSortOrderEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The sort order of the interactions in the agent status widget.
+   */
+ @JsonDeserialize(using = AgentInteractionSortOrderEnumDeserializer.class)
+  public enum AgentInteractionSortOrderEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ASCENDING("ascending"),
+    DESCENDING("descending");
+
+    private String value;
+
+    AgentInteractionSortOrderEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static AgentInteractionSortOrderEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (AgentInteractionSortOrderEnum value : AgentInteractionSortOrderEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return AgentInteractionSortOrderEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private AgentInteractionSortOrderEnum agentInteractionSortOrder = null;
+
   
   /**
    * The row number for the specific dashboard widget configuration.
@@ -1122,6 +1170,24 @@ public class Widget  implements Serializable {
   }
 
 
+  /**
+   * The sort order of the interactions in the agent status widget.
+   **/
+  public Widget agentInteractionSortOrder(AgentInteractionSortOrderEnum agentInteractionSortOrder) {
+    this.agentInteractionSortOrder = agentInteractionSortOrder;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The sort order of the interactions in the agent status widget.")
+  @JsonProperty("agentInteractionSortOrder")
+  public AgentInteractionSortOrderEnum getAgentInteractionSortOrder() {
+    return agentInteractionSortOrder;
+  }
+  public void setAgentInteractionSortOrder(AgentInteractionSortOrderEnum agentInteractionSortOrder) {
+    this.agentInteractionSortOrder = agentInteractionSortOrder;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -1158,12 +1224,13 @@ public class Widget  implements Serializable {
             Objects.equals(this.warnings, widget.warnings) &&
             Objects.equals(this.showTimeInStatus, widget.showTimeInStatus) &&
             Objects.equals(this.showOfflineAgents, widget.showOfflineAgents) &&
-            Objects.equals(this.selectedStatuses, widget.selectedStatuses);
+            Objects.equals(this.selectedStatuses, widget.selectedStatuses) &&
+            Objects.equals(this.agentInteractionSortOrder, widget.agentInteractionSortOrder);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(row, column, title, type, metrics, displayText, displayTextColor, webContentUrl, splitFilters, splitByMediaType, showLongest, displayAsTable, showDuration, sortOrder, sortKey, entityLimit, displayAggregates, isFullWidth, showPercentageChange, showProfilePicture, filter, periods, mediaTypes, warnings, showTimeInStatus, showOfflineAgents, selectedStatuses);
+    return Objects.hash(row, column, title, type, metrics, displayText, displayTextColor, webContentUrl, splitFilters, splitByMediaType, showLongest, displayAsTable, showDuration, sortOrder, sortKey, entityLimit, displayAggregates, isFullWidth, showPercentageChange, showProfilePicture, filter, periods, mediaTypes, warnings, showTimeInStatus, showOfflineAgents, selectedStatuses, agentInteractionSortOrder);
   }
 
   @Override
@@ -1198,6 +1265,7 @@ public class Widget  implements Serializable {
     sb.append("    showTimeInStatus: ").append(toIndentedString(showTimeInStatus)).append("\n");
     sb.append("    showOfflineAgents: ").append(toIndentedString(showOfflineAgents)).append("\n");
     sb.append("    selectedStatuses: ").append(toIndentedString(selectedStatuses)).append("\n");
+    sb.append("    agentInteractionSortOrder: ").append(toIndentedString(agentInteractionSortOrder)).append("\n");
     sb.append("}");
     return sb.toString();
   }

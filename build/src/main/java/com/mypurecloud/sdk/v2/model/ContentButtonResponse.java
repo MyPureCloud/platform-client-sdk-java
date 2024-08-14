@@ -44,6 +44,7 @@ public class ContentButtonResponse  implements Serializable {
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BUTTON("Button"),
+    DATEPICKER("DatePicker"),
     QUICKREPLY("QuickReply");
 
     private String value;

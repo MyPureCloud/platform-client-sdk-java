@@ -1461,7 +1461,7 @@ try {
 
 
 
-> [WorktypeChangeListing](WorktypeChangeListing.html) getTaskmanagementWorktypeHistory(worktypeId, after, pageSize, sortOrder)
+> [WorktypeChangeListing](WorktypeChangeListing.html) getTaskmanagementWorktypeHistory(worktypeId, after, pageSize, sortOrder, fields)
 
 Get a listing of a worktype's attribute change history
 
@@ -1499,8 +1499,9 @@ String worktypeId = "worktypeId_example"; // String | Worktype id
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
 Integer pageSize = 25; // Integer | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
 String sortOrder = "descending"; // String | Ascending or descending sort order
+List<String> fields = Arrays.asList(null); // List<String> | Comma-separated list of fields. The response will contain only versions created as a result of changes to these fields.
 try {
-    WorktypeChangeListing result = apiInstance.getTaskmanagementWorktypeHistory(worktypeId, after, pageSize, sortOrder);
+    WorktypeChangeListing result = apiInstance.getTaskmanagementWorktypeHistory(worktypeId, after, pageSize, sortOrder, fields);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaskManagementApi#getTaskmanagementWorktypeHistory");
@@ -1517,6 +1518,7 @@ try {
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **pageSize** | **Integer**| Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an &#x60;after&#x60; key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] [default to 25] 
 | **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to descending]<br />**Values**: ascending, descending 
+| **fields** | [**List&lt;String&gt;**](String.html)| Comma-separated list of fields. The response will contain only versions created as a result of changes to these fields. | [optional]<br />**Values**: name, serviceLevelTarget, defaultWorkbinId, defaultDueDurationSeconds, defaultExpirationSeconds, defaultPriority, defaultLanguageId, defaultSkillIds, defaultQueueId, assignmentEnabled, defaultStatusId, statuses 
 {: class="table-striped"}
 
 
@@ -2139,7 +2141,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 TaskManagementApi apiInstance = new TaskManagementApi();
 String worktypeId = "worktypeId_example"; // String | Worktype id
-WorktypeUpdate body = new WorktypeUpdate(); // WorktypeUpdate | body
+WorktypeUpdate body = new WorktypeUpdate(); // WorktypeUpdate | Worktype
 try {
     Worktype result = apiInstance.patchTaskmanagementWorktype(worktypeId, body);
     System.out.println(result);
@@ -2155,7 +2157,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **worktypeId** | **String**| Worktype id | 
-| **body** | [**WorktypeUpdate**](WorktypeUpdate.html)| body | [optional] 
+| **body** | [**WorktypeUpdate**](WorktypeUpdate.html)| Worktype | 
 {: class="table-striped"}
 
 
@@ -2203,7 +2205,7 @@ Configuration.setDefaultApiClient(apiClient);
 TaskManagementApi apiInstance = new TaskManagementApi();
 String worktypeId = "worktypeId_example"; // String | Worktype id
 String statusId = "statusId_example"; // String | Status id
-WorkitemStatusUpdate body = new WorkitemStatusUpdate(); // WorkitemStatusUpdate | body
+WorkitemStatusUpdate body = new WorkitemStatusUpdate(); // WorkitemStatusUpdate | Status
 try {
     WorkitemStatus result = apiInstance.patchTaskmanagementWorktypeStatus(worktypeId, statusId, body);
     System.out.println(result);
@@ -2220,7 +2222,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **worktypeId** | **String**| Worktype id | 
 | **statusId** | **String**| Status id | 
-| **body** | [**WorkitemStatusUpdate**](WorkitemStatusUpdate.html)| body | [optional] 
+| **body** | [**WorkitemStatusUpdate**](WorkitemStatusUpdate.html)| Status | 
 {: class="table-striped"}
 
 
@@ -2266,7 +2268,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 TaskManagementApi apiInstance = new TaskManagementApi();
-WorkbinCreate body = new WorkbinCreate(); // WorkbinCreate | body
+WorkbinCreate body = new WorkbinCreate(); // WorkbinCreate | Workbin
 try {
     Workbin result = apiInstance.postTaskmanagementWorkbins(body);
     System.out.println(result);
@@ -2281,7 +2283,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**WorkbinCreate**](WorkbinCreate.html)| body | [optional] 
+| **body** | [**WorkbinCreate**](WorkbinCreate.html)| Workbin | 
 {: class="table-striped"}
 
 
@@ -2822,7 +2824,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 TaskManagementApi apiInstance = new TaskManagementApi();
 String worktypeId = "worktypeId_example"; // String | Worktype id
-WorkitemStatusCreate body = new WorkitemStatusCreate(); // WorkitemStatusCreate | body
+WorkitemStatusCreate body = new WorkitemStatusCreate(); // WorkitemStatusCreate | Status
 try {
     WorkitemStatus result = apiInstance.postTaskmanagementWorktypeStatuses(worktypeId, body);
     System.out.println(result);
@@ -2838,7 +2840,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **worktypeId** | **String**| Worktype id | 
-| **body** | [**WorkitemStatusCreate**](WorkitemStatusCreate.html)| body | [optional] 
+| **body** | [**WorkitemStatusCreate**](WorkitemStatusCreate.html)| Status | 
 {: class="table-striped"}
 
 
@@ -2884,7 +2886,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 TaskManagementApi apiInstance = new TaskManagementApi();
-WorktypeCreate body = new WorktypeCreate(); // WorktypeCreate | body
+WorktypeCreate body = new WorktypeCreate(); // WorktypeCreate | Worktype
 try {
     Worktype result = apiInstance.postTaskmanagementWorktypes(body);
     System.out.println(result);
@@ -2899,7 +2901,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**WorktypeCreate**](WorktypeCreate.html)| body | [optional] 
+| **body** | [**WorktypeCreate**](WorktypeCreate.html)| Worktype | 
 {: class="table-striped"}
 
 

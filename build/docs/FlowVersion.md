@@ -25,6 +25,7 @@ title: FlowVersion
 | **publishResultUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **inputSchema** | <!----><!---->[**JsonSchemaDocument**](JsonSchemaDocument.html)<!----> |  |  [optional] |
 | **outputSchema** | <!----><!---->[**JsonSchemaDocument**](JsonSchemaDocument.html)<!----> |  |  [optional] |
+| **virtualAgentEnabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **datePublished** | <!----><!---->[**Date**](Date.html)<!----> | The date this version became the published version of the flow. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **datePublishedEnd** | <!----><!---->[**Date**](Date.html)<!----> | The date this version was no longer the published version of the flow. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **nluInfo** | <!----><!---->[**NluInfo**](NluInfo.html)<!----> | Information about the natural language understanding configuration for the flow version |  [optional] |

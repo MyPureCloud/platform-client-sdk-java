@@ -22,6 +22,9 @@ title: RecipientAdditionalIdentifier
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | DEPLOYMENT | &quot;Deployment&quot; | 
 | SUBJECT | &quot;Subject&quot; | 
+| TOPIC | &quot;Topic&quot; | 
+| INGESTIONRULE | &quot;IngestionRule&quot; | 
+| INGESTIONRULEVERSION | &quot;IngestionRuleVersion&quot; | 
 {: class="table table-striped"}
 
 

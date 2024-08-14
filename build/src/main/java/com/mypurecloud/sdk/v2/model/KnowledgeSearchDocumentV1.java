@@ -90,7 +90,12 @@ public class KnowledgeSearchDocumentV1  implements Serializable {
     ZH_TW("zh-TW"),
     ZH_HK("zh-HK"),
     KO_KR("ko-KR"),
-    PL_PL("pl-PL");
+    PL_PL("pl-PL"),
+    HI_IN("hi-IN"),
+    TH_TH("th-TH"),
+    HU_HU("hu-HU"),
+    VI_VN("vi-VN"),
+    UK_UA("uk-UA");
 
     private String value;
 

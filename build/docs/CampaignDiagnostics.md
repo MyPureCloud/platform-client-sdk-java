@@ -14,6 +14,7 @@ title: CampaignDiagnostics
 | **outstandingInteractionsCount** | <!----><!---->**Integer**<!----> | Current number of outstanding interactions on the campaign |  [optional] |
 | **scheduledInteractionsCount** | <!----><!---->**Integer**<!----> | Current number of scheduled interactions on the campaign |  [optional] |
 | **timeZoneRescheduledCallsCount** | <!----><!---->**Integer**<!----> | Current number of time zone rescheduled calls on the campaign |  [optional] |
+| **filteredOutContactsCount** | <!----><!---->**Integer**<!----> | Number of contacts that don't match filter. This is currently supported only for Campaigns with dynamic filter on. |  [optional] |
 | **campaignSkillStatistics** | <!----><!---->[**CampaignSkillStatistics**](CampaignSkillStatistics.html)<!----> | Information regarding the campaign's skills |  [optional] |
 {: class="table table-striped"}
 

@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.AgentDirectRoutingBackupSettings;
 import com.mypurecloud.sdk.v2.model.AgentMaxUtilizationResponse;
 import com.mypurecloud.sdk.v2.model.AssessmentJobListing;
 import com.mypurecloud.sdk.v2.model.AssessmentListing;
@@ -131,7 +132,6 @@ public class GetRoutingMessageRecipientsRequest {
 		SMS("sms"),
 		FACEBOOK("facebook"),
 		TWITTER("twitter"),
-		LINE("line"),
 		WHATSAPP("whatsapp"),
 		OPEN("open"),
 		INSTAGRAM("instagram");

@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannelMetadata;
 import com.mypurecloud.sdk.v2.model.V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingFromRecipient;
 import com.mypurecloud.sdk.v2.model.V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient;
 import io.swagger.annotations.ApiModel;
@@ -81,13 +80,9 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagi
     }
   }
   private PlatformEnum platform = null;
-  private String messageId = null;
   private V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient to = null;
   private V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingFromRecipient from = null;
   private Date time = null;
-  private Date dateModified = null;
-  private Date dateDeleted = null;
-  private V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannelMetadata metadata = null;
 
   
   /**
@@ -121,23 +116,6 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagi
   }
   public void setPlatform(PlatformEnum platform) {
     this.platform = platform;
-  }
-
-
-  /**
-   **/
-  public V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel messageId(String messageId) {
-    this.messageId = messageId;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("messageId")
-  public String getMessageId() {
-    return messageId;
-  }
-  public void setMessageId(String messageId) {
-    this.messageId = messageId;
   }
 
 
@@ -192,57 +170,6 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagi
   }
 
 
-  /**
-   **/
-  public V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel dateModified(Date dateModified) {
-    this.dateModified = dateModified;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("dateModified")
-  public Date getDateModified() {
-    return dateModified;
-  }
-  public void setDateModified(Date dateModified) {
-    this.dateModified = dateModified;
-  }
-
-
-  /**
-   **/
-  public V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel dateDeleted(Date dateDeleted) {
-    this.dateDeleted = dateDeleted;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("dateDeleted")
-  public Date getDateDeleted() {
-    return dateDeleted;
-  }
-  public void setDateDeleted(Date dateDeleted) {
-    this.dateDeleted = dateDeleted;
-  }
-
-
-  /**
-   **/
-  public V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel metadata(V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannelMetadata metadata) {
-    this.metadata = metadata;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("metadata")
-  public V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannelMetadata getMetadata() {
-    return metadata;
-  }
-  public void setMetadata(V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannelMetadata metadata) {
-    this.metadata = metadata;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -255,18 +182,14 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagi
 
     return Objects.equals(this.id, v2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel.id) &&
             Objects.equals(this.platform, v2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel.platform) &&
-            Objects.equals(this.messageId, v2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel.messageId) &&
             Objects.equals(this.to, v2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel.to) &&
             Objects.equals(this.from, v2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel.from) &&
-            Objects.equals(this.time, v2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel.time) &&
-            Objects.equals(this.dateModified, v2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel.dateModified) &&
-            Objects.equals(this.dateDeleted, v2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel.dateDeleted) &&
-            Objects.equals(this.metadata, v2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel.metadata);
+            Objects.equals(this.time, v2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel.time);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, platform, messageId, to, from, time, dateModified, dateDeleted, metadata);
+    return Objects.hash(id, platform, to, from, time);
   }
 
   @Override
@@ -276,13 +199,9 @@ public class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagi
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
-    sb.append("    messageId: ").append(toIndentedString(messageId)).append("\n");
     sb.append("    to: ").append(toIndentedString(to)).append("\n");
     sb.append("    from: ").append(toIndentedString(from)).append("\n");
     sb.append("    time: ").append(toIndentedString(time)).append("\n");
-    sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
-    sb.append("    dateDeleted: ").append(toIndentedString(dateDeleted)).append("\n");
-    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

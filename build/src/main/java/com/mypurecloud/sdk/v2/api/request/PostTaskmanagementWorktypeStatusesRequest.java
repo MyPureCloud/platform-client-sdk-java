@@ -116,6 +116,11 @@ public class PostTaskmanagementWorktypeStatusesRequest {
             throw new IllegalStateException("Missing the required parameter 'worktypeId' when building request for PostTaskmanagementWorktypeStatusesRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostTaskmanagementWorktypeStatusesRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/taskmanagement/worktypes/{worktypeId}/statuses")
                 .withPathParameter("worktypeId", worktypeId)
@@ -134,9 +139,9 @@ public class PostTaskmanagementWorktypeStatusesRequest {
 	}
 
 
-	public static Builder builder(String worktypeId) {
+	public static Builder builder(String worktypeId, WorkitemStatusCreate body) {
 	    return new Builder()
-	            .withRequiredParams(worktypeId);
+	            .withRequiredParams(worktypeId, body);
 	}
 
 
@@ -160,8 +165,9 @@ public class PostTaskmanagementWorktypeStatusesRequest {
 
 
 
-		public Builder withRequiredParams(String worktypeId) {
+		public Builder withRequiredParams(String worktypeId, WorkitemStatusCreate body) {
 			request.setWorktypeId(worktypeId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -172,6 +178,11 @@ public class PostTaskmanagementWorktypeStatusesRequest {
             // verify the required parameter 'worktypeId' is set
             if (request.worktypeId == null) {
                 throw new IllegalStateException("Missing the required parameter 'worktypeId' when building request for PostTaskmanagementWorktypeStatusesRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostTaskmanagementWorktypeStatusesRequest.");
             }
             
 			return request;

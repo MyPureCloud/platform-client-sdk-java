@@ -97,6 +97,7 @@ title: DependencyObject
 | WIDGET | &quot;WIDGET&quot; | 
 | WORKFLOW | &quot;WORKFLOW&quot; | 
 | WORKITEMFLOW | &quot;WORKITEMFLOW&quot; | 
+| WORKTYPE | &quot;WORKTYPE&quot; | 
 {: class="table table-striped"}
 
 

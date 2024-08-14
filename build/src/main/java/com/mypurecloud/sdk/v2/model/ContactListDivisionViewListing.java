@@ -29,11 +29,11 @@ public class ContactListDivisionViewListing  implements Serializable, PagedResou
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String previousUri = null;
-  private String lastUri = null;
   private String firstUri = null;
   private String selfUri = null;
+  private String lastUri = null;
   private String nextUri = null;
+  private String previousUri = null;
   private Integer pageCount = null;
 
   
@@ -107,40 +107,6 @@ public class ContactListDivisionViewListing  implements Serializable, PagedResou
 
   /**
    **/
-  public ContactListDivisionViewListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
-  }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
-  }
-
-
-  /**
-   **/
-  public ContactListDivisionViewListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
   public ContactListDivisionViewListing firstUri(String firstUri) {
     this.firstUri = firstUri;
     return this;
@@ -175,6 +141,23 @@ public class ContactListDivisionViewListing  implements Serializable, PagedResou
 
   /**
    **/
+  public ContactListDivisionViewListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
   public ContactListDivisionViewListing nextUri(String nextUri) {
     this.nextUri = nextUri;
     return this;
@@ -187,6 +170,23 @@ public class ContactListDivisionViewListing  implements Serializable, PagedResou
   }
   public void setNextUri(String nextUri) {
     this.nextUri = nextUri;
+  }
+
+
+  /**
+   **/
+  public ContactListDivisionViewListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
+  }
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
   }
 
 
@@ -221,17 +221,17 @@ public class ContactListDivisionViewListing  implements Serializable, PagedResou
             Objects.equals(this.pageSize, contactListDivisionViewListing.pageSize) &&
             Objects.equals(this.pageNumber, contactListDivisionViewListing.pageNumber) &&
             Objects.equals(this.total, contactListDivisionViewListing.total) &&
-            Objects.equals(this.previousUri, contactListDivisionViewListing.previousUri) &&
-            Objects.equals(this.lastUri, contactListDivisionViewListing.lastUri) &&
             Objects.equals(this.firstUri, contactListDivisionViewListing.firstUri) &&
             Objects.equals(this.selfUri, contactListDivisionViewListing.selfUri) &&
+            Objects.equals(this.lastUri, contactListDivisionViewListing.lastUri) &&
             Objects.equals(this.nextUri, contactListDivisionViewListing.nextUri) &&
+            Objects.equals(this.previousUri, contactListDivisionViewListing.previousUri) &&
             Objects.equals(this.pageCount, contactListDivisionViewListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, previousUri, lastUri, firstUri, selfUri, nextUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, lastUri, nextUri, previousUri, pageCount);
   }
 
   @Override
@@ -243,11 +243,11 @@ public class ContactListDivisionViewListing  implements Serializable, PagedResou
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

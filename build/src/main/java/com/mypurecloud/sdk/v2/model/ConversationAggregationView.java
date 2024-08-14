@@ -59,6 +59,8 @@ public class ConversationAggregationView  implements Serializable {
     NTRANSFERRED("nTransferred"),
     OEXTERNALMEDIACOUNT("oExternalMediaCount"),
     OMEDIACOUNT("oMediaCount"),
+    OMESSAGECOUNT("oMessageCount"),
+    OMESSAGESEGMENTCOUNT("oMessageSegmentCount"),
     OMESSAGETURN("oMessageTurn"),
     OSERVICELEVEL("oServiceLevel"),
     OSERVICETARGET("oServiceTarget"),

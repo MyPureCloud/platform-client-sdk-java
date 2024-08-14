@@ -76,14 +76,14 @@ public class AiAnswer  implements Serializable {
 
   
   /**
-   * The unique identifier of the suggested ai answer.
+   * The unique identifier of the suggested AI answer.
    **/
   public AiAnswer answerId(String answerId) {
     this.answerId = answerId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The unique identifier of the suggested ai answer.")
+  @ApiModelProperty(example = "null", value = "The unique identifier of the suggested AI answer.")
   @JsonProperty("answerId")
   public String getAnswerId() {
     return answerId;

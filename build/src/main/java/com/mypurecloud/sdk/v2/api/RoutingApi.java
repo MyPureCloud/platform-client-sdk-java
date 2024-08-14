@@ -10,6 +10,7 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.AgentDirectRoutingBackupSettings;
 import com.mypurecloud.sdk.v2.model.AgentMaxUtilizationResponse;
 import com.mypurecloud.sdk.v2.model.AssessmentJobListing;
 import com.mypurecloud.sdk.v2.model.AssessmentListing;
@@ -103,6 +104,7 @@ import com.mypurecloud.sdk.v2.model.WritableEntity;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingAssessmentRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingDirectroutingbackupSettingsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingEmailDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingEmailDomainRouteRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingEmailOutboundDomainRequest;
@@ -117,6 +119,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSkillRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSkillgroupRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSmsAddressRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSmsPhonenumberRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUserDirectroutingbackupSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUtilizationLabelRequest;
@@ -129,6 +132,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingAssessmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingAssessmentsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingAssessmentsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingAvailablemediatypesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingDirectroutingbackupSettingsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRouteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRoutesRequest;
@@ -173,6 +177,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsAddressesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsAvailablephonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsPhonenumbersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingUserDirectroutingbackupSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationLabelRequest;
@@ -232,6 +237,7 @@ import com.mypurecloud.sdk.v2.api.request.PostRoutingUtilizationTagsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserRoutinglanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserRoutingskillsRequest;
+import com.mypurecloud.sdk.v2.api.request.PutRoutingDirectroutingbackupSettingsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingEmailDomainRouteRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingEmailOutboundDomainActivationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingMessageRecipientRequest;
@@ -239,6 +245,7 @@ import com.mypurecloud.sdk.v2.api.request.PutRoutingQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingSettingsTranscriptionRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingSmsPhonenumberRequest;
+import com.mypurecloud.sdk.v2.api.request.PutRoutingUserDirectroutingbackupSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUtilizationLabelRequest;
@@ -317,6 +324,77 @@ public class RoutingApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteRoutingAssessment(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+   * 
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingDirectroutingbackupSettingsMe() throws IOException, ApiException {
+     deleteRoutingDirectroutingbackupSettingsMe(createDeleteRoutingDirectroutingbackupSettingsMeRequest());
+  }
+
+  /**
+   * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+   * 
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingDirectroutingbackupSettingsMeWithHttpInfo() throws IOException {
+    return deleteRoutingDirectroutingbackupSettingsMe(createDeleteRoutingDirectroutingbackupSettingsMeRequest().withHttpInfo());
+  }
+
+  private DeleteRoutingDirectroutingbackupSettingsMeRequest createDeleteRoutingDirectroutingbackupSettingsMeRequest() {
+    return DeleteRoutingDirectroutingbackupSettingsMeRequest.builder()
+            .build();
+  }
+
+  /**
+   * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingDirectroutingbackupSettingsMe(DeleteRoutingDirectroutingbackupSettingsMeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingDirectroutingbackupSettingsMe(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -1409,6 +1487,81 @@ public class RoutingApi {
   }
 
   /**
+   * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+   * 
+   * @param userId User ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingUserDirectroutingbackupSettings(String userId) throws IOException, ApiException {
+     deleteRoutingUserDirectroutingbackupSettings(createDeleteRoutingUserDirectroutingbackupSettingsRequest(userId));
+  }
+
+  /**
+   * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+   * 
+   * @param userId User ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingUserDirectroutingbackupSettingsWithHttpInfo(String userId) throws IOException {
+    return deleteRoutingUserDirectroutingbackupSettings(createDeleteRoutingUserDirectroutingbackupSettingsRequest(userId).withHttpInfo());
+  }
+
+  private DeleteRoutingUserDirectroutingbackupSettingsRequest createDeleteRoutingUserDirectroutingbackupSettingsRequest(String userId) {
+    return DeleteRoutingUserDirectroutingbackupSettingsRequest.builder()
+            .withUserId(userId)
+
+            .build();
+  }
+
+  /**
+   * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingUserDirectroutingbackupSettings(DeleteRoutingUserDirectroutingbackupSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingUserDirectroutingbackupSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Delete the user's max utilization settings and revert to the organization-wide default.
    * 
    * @param userId User ID (required)
@@ -1557,7 +1710,6 @@ public class RoutingApi {
   /**
    * Delete a utilization label
    * 
-   * deleteRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param labelId Utilization Label ID (required)
    * @param forceDelete Remove all label usages (if found) without warning (optional, default to false)
    * @throws ApiException if the request fails on the server
@@ -1570,7 +1722,6 @@ public class RoutingApi {
   /**
    * Delete a utilization label
    * 
-   * deleteRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param labelId Utilization Label ID (required)
    * @param forceDelete Remove all label usages (if found) without warning (optional, default to false)
    * @throws IOException if the request fails to be processed
@@ -1591,7 +1742,6 @@ public class RoutingApi {
   /**
    * Delete a utilization label
    * 
-   * deleteRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1610,7 +1760,6 @@ public class RoutingApi {
   /**
    * Delete a utilization label
    * 
-   * deleteRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2351,6 +2500,80 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AvailableMediaTypeEntityListing> response = (ApiResponse<AvailableMediaTypeEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the user's Direct Routing Backup settings.
+   * 
+   * @return AgentDirectRoutingBackupSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentDirectRoutingBackupSettings getRoutingDirectroutingbackupSettingsMe() throws IOException, ApiException {
+    return  getRoutingDirectroutingbackupSettingsMe(createGetRoutingDirectroutingbackupSettingsMeRequest());
+  }
+
+  /**
+   * Get the user's Direct Routing Backup settings.
+   * 
+   * @return AgentDirectRoutingBackupSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentDirectRoutingBackupSettings> getRoutingDirectroutingbackupSettingsMeWithHttpInfo() throws IOException {
+    return getRoutingDirectroutingbackupSettingsMe(createGetRoutingDirectroutingbackupSettingsMeRequest().withHttpInfo());
+  }
+
+  private GetRoutingDirectroutingbackupSettingsMeRequest createGetRoutingDirectroutingbackupSettingsMeRequest() {
+    return GetRoutingDirectroutingbackupSettingsMeRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get the user's Direct Routing Backup settings.
+   * 
+   * @param request The request object
+   * @return AgentDirectRoutingBackupSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentDirectRoutingBackupSettings getRoutingDirectroutingbackupSettingsMe(GetRoutingDirectroutingbackupSettingsMeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentDirectRoutingBackupSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentDirectRoutingBackupSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the user's Direct Routing Backup settings.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentDirectRoutingBackupSettings> getRoutingDirectroutingbackupSettingsMe(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentDirectRoutingBackupSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentDirectRoutingBackupSettings> response = (ApiResponse<AgentDirectRoutingBackupSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentDirectRoutingBackupSettings> response = (ApiResponse<AgentDirectRoutingBackupSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -6054,12 +6277,13 @@ public class RoutingApi {
    * @param sortOrder Sort order (optional)
    * @param language A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize country field and sort operations (optional, default to "en-US")
    * @param integrationId Filter on the Genesys Cloud integration id to which the phone number belongs to (optional)
+   * @param supportedContentId Filter based on the supported content ID (optional)
    * @return SmsPhoneNumberEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SmsPhoneNumberEntityListing getRoutingSmsPhonenumbers(String phoneNumber, List<String> phoneNumberType, List<String> phoneNumberStatus, List<String> countryCode, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String language, String integrationId) throws IOException, ApiException {
-    return  getRoutingSmsPhonenumbers(createGetRoutingSmsPhonenumbersRequest(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId));
+  public SmsPhoneNumberEntityListing getRoutingSmsPhonenumbers(String phoneNumber, List<String> phoneNumberType, List<String> phoneNumberStatus, List<String> countryCode, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String language, String integrationId, String supportedContentId) throws IOException, ApiException {
+    return  getRoutingSmsPhonenumbers(createGetRoutingSmsPhonenumbersRequest(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId, supportedContentId));
   }
 
   /**
@@ -6075,14 +6299,15 @@ public class RoutingApi {
    * @param sortOrder Sort order (optional)
    * @param language A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize country field and sort operations (optional, default to "en-US")
    * @param integrationId Filter on the Genesys Cloud integration id to which the phone number belongs to (optional)
+   * @param supportedContentId Filter based on the supported content ID (optional)
    * @return SmsPhoneNumberEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SmsPhoneNumberEntityListing> getRoutingSmsPhonenumbersWithHttpInfo(String phoneNumber, List<String> phoneNumberType, List<String> phoneNumberStatus, List<String> countryCode, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String language, String integrationId) throws IOException {
-    return getRoutingSmsPhonenumbers(createGetRoutingSmsPhonenumbersRequest(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId).withHttpInfo());
+  public ApiResponse<SmsPhoneNumberEntityListing> getRoutingSmsPhonenumbersWithHttpInfo(String phoneNumber, List<String> phoneNumberType, List<String> phoneNumberStatus, List<String> countryCode, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String language, String integrationId, String supportedContentId) throws IOException {
+    return getRoutingSmsPhonenumbers(createGetRoutingSmsPhonenumbersRequest(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId, supportedContentId).withHttpInfo());
   }
 
-  private GetRoutingSmsPhonenumbersRequest createGetRoutingSmsPhonenumbersRequest(String phoneNumber, List<String> phoneNumberType, List<String> phoneNumberStatus, List<String> countryCode, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String language, String integrationId) {
+  private GetRoutingSmsPhonenumbersRequest createGetRoutingSmsPhonenumbersRequest(String phoneNumber, List<String> phoneNumberType, List<String> phoneNumberStatus, List<String> countryCode, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String language, String integrationId, String supportedContentId) {
     return GetRoutingSmsPhonenumbersRequest.builder()
             .withPhoneNumber(phoneNumber)
 
@@ -6103,6 +6328,8 @@ public class RoutingApi {
             .withLanguage(language)
 
             .withIntegrationId(integrationId)
+
+            .withSupportedContentId(supportedContentId)
 
             .build();
   }
@@ -6151,6 +6378,84 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<SmsPhoneNumberEntityListing> response = (ApiResponse<SmsPhoneNumberEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the user's Direct Routing Backup settings.
+   * 
+   * @param userId User ID (required)
+   * @return AgentDirectRoutingBackupSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentDirectRoutingBackupSettings getRoutingUserDirectroutingbackupSettings(String userId) throws IOException, ApiException {
+    return  getRoutingUserDirectroutingbackupSettings(createGetRoutingUserDirectroutingbackupSettingsRequest(userId));
+  }
+
+  /**
+   * Get the user's Direct Routing Backup settings.
+   * 
+   * @param userId User ID (required)
+   * @return AgentDirectRoutingBackupSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentDirectRoutingBackupSettings> getRoutingUserDirectroutingbackupSettingsWithHttpInfo(String userId) throws IOException {
+    return getRoutingUserDirectroutingbackupSettings(createGetRoutingUserDirectroutingbackupSettingsRequest(userId).withHttpInfo());
+  }
+
+  private GetRoutingUserDirectroutingbackupSettingsRequest createGetRoutingUserDirectroutingbackupSettingsRequest(String userId) {
+    return GetRoutingUserDirectroutingbackupSettingsRequest.builder()
+            .withUserId(userId)
+
+            .build();
+  }
+
+  /**
+   * Get the user's Direct Routing Backup settings.
+   * 
+   * @param request The request object
+   * @return AgentDirectRoutingBackupSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentDirectRoutingBackupSettings getRoutingUserDirectroutingbackupSettings(GetRoutingUserDirectroutingbackupSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentDirectRoutingBackupSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentDirectRoutingBackupSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the user's Direct Routing Backup settings.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentDirectRoutingBackupSettings> getRoutingUserDirectroutingbackupSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentDirectRoutingBackupSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentDirectRoutingBackupSettings> response = (ApiResponse<AgentDirectRoutingBackupSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentDirectRoutingBackupSettings> response = (ApiResponse<AgentDirectRoutingBackupSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -6310,7 +6615,6 @@ public class RoutingApi {
   /**
    * Get details about this utilization label
    * 
-   * getRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param labelId Utilization Label ID (required)
    * @return UtilizationLabel
    * @throws ApiException if the request fails on the server
@@ -6323,7 +6627,6 @@ public class RoutingApi {
   /**
    * Get details about this utilization label
    * 
-   * getRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param labelId Utilization Label ID (required)
    * @return UtilizationLabel
    * @throws IOException if the request fails to be processed
@@ -6342,7 +6645,6 @@ public class RoutingApi {
   /**
    * Get details about this utilization label
    * 
-   * getRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return UtilizationLabel
    * @throws ApiException if the request fails on the server
@@ -6362,7 +6664,6 @@ public class RoutingApi {
   /**
    * Get details about this utilization label
    * 
-   * getRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6392,7 +6693,6 @@ public class RoutingApi {
   /**
    * Get list of agent ids associated with a utilization label
    * 
-   * getRoutingUtilizationLabelAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param labelId Utilization Label ID (required)
    * @return List<Object>
    * @throws ApiException if the request fails on the server
@@ -6405,7 +6705,6 @@ public class RoutingApi {
   /**
    * Get list of agent ids associated with a utilization label
    * 
-   * getRoutingUtilizationLabelAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param labelId Utilization Label ID (required)
    * @return List<Object>
    * @throws IOException if the request fails to be processed
@@ -6424,7 +6723,6 @@ public class RoutingApi {
   /**
    * Get list of agent ids associated with a utilization label
    * 
-   * getRoutingUtilizationLabelAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return List<Object>
    * @throws ApiException if the request fails on the server
@@ -6444,7 +6742,6 @@ public class RoutingApi {
   /**
    * Get list of agent ids associated with a utilization label
    * 
-   * getRoutingUtilizationLabelAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6474,7 +6771,6 @@ public class RoutingApi {
   /**
    * Get list of utilization labels
    * 
-   * getRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param sortOrder Sort order by name (optional, default to ascending)
@@ -6490,7 +6786,6 @@ public class RoutingApi {
   /**
    * Get list of utilization labels
    * 
-   * getRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param sortOrder Sort order by name (optional, default to ascending)
@@ -6518,7 +6813,6 @@ public class RoutingApi {
   /**
    * Get list of utilization labels
    * 
-   * getRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return UtilizationLabelEntityListing
    * @throws ApiException if the request fails on the server
@@ -6538,7 +6832,6 @@ public class RoutingApi {
   /**
    * Get list of utilization labels
    * 
-   * getRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -10624,7 +10917,6 @@ public class RoutingApi {
   /**
    * Create a utilization label
    * 
-   * postRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body UtilizationLabel (required)
    * @return UtilizationLabel
    * @throws ApiException if the request fails on the server
@@ -10637,7 +10929,6 @@ public class RoutingApi {
   /**
    * Create a utilization label
    * 
-   * postRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body UtilizationLabel (required)
    * @return UtilizationLabel
    * @throws IOException if the request fails to be processed
@@ -10656,7 +10947,6 @@ public class RoutingApi {
   /**
    * Create a utilization label
    * 
-   * postRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return UtilizationLabel
    * @throws ApiException if the request fails on the server
@@ -10676,7 +10966,6 @@ public class RoutingApi {
   /**
    * Create a utilization label
    * 
-   * postRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -11023,6 +11312,84 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UserRoutingSkill> response = (ApiResponse<UserRoutingSkill>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update the user's Direct Routing Backup settings.
+   * 
+   * @param body directRoutingBackup (required)
+   * @return AgentDirectRoutingBackupSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentDirectRoutingBackupSettings putRoutingDirectroutingbackupSettingsMe(AgentDirectRoutingBackupSettings body) throws IOException, ApiException {
+    return  putRoutingDirectroutingbackupSettingsMe(createPutRoutingDirectroutingbackupSettingsMeRequest(body));
+  }
+
+  /**
+   * Update the user's Direct Routing Backup settings.
+   * 
+   * @param body directRoutingBackup (required)
+   * @return AgentDirectRoutingBackupSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentDirectRoutingBackupSettings> putRoutingDirectroutingbackupSettingsMeWithHttpInfo(AgentDirectRoutingBackupSettings body) throws IOException {
+    return putRoutingDirectroutingbackupSettingsMe(createPutRoutingDirectroutingbackupSettingsMeRequest(body).withHttpInfo());
+  }
+
+  private PutRoutingDirectroutingbackupSettingsMeRequest createPutRoutingDirectroutingbackupSettingsMeRequest(AgentDirectRoutingBackupSettings body) {
+    return PutRoutingDirectroutingbackupSettingsMeRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the user's Direct Routing Backup settings.
+   * 
+   * @param request The request object
+   * @return AgentDirectRoutingBackupSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentDirectRoutingBackupSettings putRoutingDirectroutingbackupSettingsMe(PutRoutingDirectroutingbackupSettingsMeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentDirectRoutingBackupSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentDirectRoutingBackupSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the user's Direct Routing Backup settings.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentDirectRoutingBackupSettings> putRoutingDirectroutingbackupSettingsMe(ApiRequest<AgentDirectRoutingBackupSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentDirectRoutingBackupSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentDirectRoutingBackupSettings> response = (ApiResponse<AgentDirectRoutingBackupSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentDirectRoutingBackupSettings> response = (ApiResponse<AgentDirectRoutingBackupSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -11594,6 +11961,88 @@ public class RoutingApi {
   }
 
   /**
+   * Update the user's Direct Routing Backup settings.
+   * 
+   * @param userId User ID (required)
+   * @param body directRoutingBackup (required)
+   * @return AgentDirectRoutingBackupSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentDirectRoutingBackupSettings putRoutingUserDirectroutingbackupSettings(String userId, AgentDirectRoutingBackupSettings body) throws IOException, ApiException {
+    return  putRoutingUserDirectroutingbackupSettings(createPutRoutingUserDirectroutingbackupSettingsRequest(userId, body));
+  }
+
+  /**
+   * Update the user's Direct Routing Backup settings.
+   * 
+   * @param userId User ID (required)
+   * @param body directRoutingBackup (required)
+   * @return AgentDirectRoutingBackupSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentDirectRoutingBackupSettings> putRoutingUserDirectroutingbackupSettingsWithHttpInfo(String userId, AgentDirectRoutingBackupSettings body) throws IOException {
+    return putRoutingUserDirectroutingbackupSettings(createPutRoutingUserDirectroutingbackupSettingsRequest(userId, body).withHttpInfo());
+  }
+
+  private PutRoutingUserDirectroutingbackupSettingsRequest createPutRoutingUserDirectroutingbackupSettingsRequest(String userId, AgentDirectRoutingBackupSettings body) {
+    return PutRoutingUserDirectroutingbackupSettingsRequest.builder()
+            .withUserId(userId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the user's Direct Routing Backup settings.
+   * 
+   * @param request The request object
+   * @return AgentDirectRoutingBackupSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentDirectRoutingBackupSettings putRoutingUserDirectroutingbackupSettings(PutRoutingUserDirectroutingbackupSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentDirectRoutingBackupSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentDirectRoutingBackupSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the user's Direct Routing Backup settings.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentDirectRoutingBackupSettings> putRoutingUserDirectroutingbackupSettings(ApiRequest<AgentDirectRoutingBackupSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentDirectRoutingBackupSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentDirectRoutingBackupSettings> response = (ApiResponse<AgentDirectRoutingBackupSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentDirectRoutingBackupSettings> response = (ApiResponse<AgentDirectRoutingBackupSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update the user's max utilization settings.  Include only those media types requiring custom configuration.
    * 
    * @param userId User ID (required)
@@ -11756,7 +12205,6 @@ public class RoutingApi {
   /**
    * Update a utilization label
    * 
-   * putRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param labelId Utilization Label ID (required)
    * @param body UtilizationLabel (required)
    * @return UtilizationLabel
@@ -11770,7 +12218,6 @@ public class RoutingApi {
   /**
    * Update a utilization label
    * 
-   * putRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param labelId Utilization Label ID (required)
    * @param body UtilizationLabel (required)
    * @return UtilizationLabel
@@ -11792,7 +12239,6 @@ public class RoutingApi {
   /**
    * Update a utilization label
    * 
-   * putRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return UtilizationLabel
    * @throws ApiException if the request fails on the server
@@ -11812,7 +12258,6 @@ public class RoutingApi {
   /**
    * Update a utilization label
    * 
-   * putRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

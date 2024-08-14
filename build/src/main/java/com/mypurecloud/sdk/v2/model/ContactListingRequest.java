@@ -87,14 +87,14 @@ public class ContactListingRequest  implements Serializable {
 
 
   /**
-   * Page size. The max that will be returned is 50.
+   * Page size. The max that will be returned is 100.
    **/
   public ContactListingRequest pageSize(Integer pageSize) {
     this.pageSize = pageSize;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Page size. The max that will be returned is 50.")
+  @ApiModelProperty(example = "null", required = true, value = "Page size. The max that will be returned is 100.")
   @JsonProperty("pageSize")
   public Integer getPageSize() {
     return pageSize;

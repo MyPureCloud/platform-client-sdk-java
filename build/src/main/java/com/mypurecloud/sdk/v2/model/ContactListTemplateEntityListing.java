@@ -29,11 +29,11 @@ public class ContactListTemplateEntityListing  implements Serializable, PagedRes
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String previousUri = null;
-  private String lastUri = null;
   private String firstUri = null;
   private String selfUri = null;
+  private String lastUri = null;
   private String nextUri = null;
+  private String previousUri = null;
   private Integer pageCount = null;
 
   
@@ -107,40 +107,6 @@ public class ContactListTemplateEntityListing  implements Serializable, PagedRes
 
   /**
    **/
-  public ContactListTemplateEntityListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
-  }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
-  }
-
-
-  /**
-   **/
-  public ContactListTemplateEntityListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
   public ContactListTemplateEntityListing firstUri(String firstUri) {
     this.firstUri = firstUri;
     return this;
@@ -175,6 +141,23 @@ public class ContactListTemplateEntityListing  implements Serializable, PagedRes
 
   /**
    **/
+  public ContactListTemplateEntityListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
   public ContactListTemplateEntityListing nextUri(String nextUri) {
     this.nextUri = nextUri;
     return this;
@@ -187,6 +170,23 @@ public class ContactListTemplateEntityListing  implements Serializable, PagedRes
   }
   public void setNextUri(String nextUri) {
     this.nextUri = nextUri;
+  }
+
+
+  /**
+   **/
+  public ContactListTemplateEntityListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
+  }
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
   }
 
 
@@ -221,17 +221,17 @@ public class ContactListTemplateEntityListing  implements Serializable, PagedRes
             Objects.equals(this.pageSize, contactListTemplateEntityListing.pageSize) &&
             Objects.equals(this.pageNumber, contactListTemplateEntityListing.pageNumber) &&
             Objects.equals(this.total, contactListTemplateEntityListing.total) &&
-            Objects.equals(this.previousUri, contactListTemplateEntityListing.previousUri) &&
-            Objects.equals(this.lastUri, contactListTemplateEntityListing.lastUri) &&
             Objects.equals(this.firstUri, contactListTemplateEntityListing.firstUri) &&
             Objects.equals(this.selfUri, contactListTemplateEntityListing.selfUri) &&
+            Objects.equals(this.lastUri, contactListTemplateEntityListing.lastUri) &&
             Objects.equals(this.nextUri, contactListTemplateEntityListing.nextUri) &&
+            Objects.equals(this.previousUri, contactListTemplateEntityListing.previousUri) &&
             Objects.equals(this.pageCount, contactListTemplateEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, previousUri, lastUri, firstUri, selfUri, nextUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, lastUri, nextUri, previousUri, pageCount);
   }
 
   @Override
@@ -243,11 +243,11 @@ public class ContactListTemplateEntityListing  implements Serializable, PagedRes
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

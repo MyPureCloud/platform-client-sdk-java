@@ -91,7 +91,11 @@ public class ResolutionAggregateQueryPredicate  implements Serializable {
  @JsonDeserialize(using = DimensionEnumDeserializer.class)
   public enum DimensionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    CONVERSATIONID("conversationId"),
+    MEDIATYPE("mediaType"),
     QUEUEID("queueId"),
+    REQUESTEDROUTING("requestedRouting"),
+    USEDROUTING("usedRouting"),
     USERID("userId");
 
     private String value;

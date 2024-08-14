@@ -29,6 +29,7 @@ title: MessagingRecipient
 | EMAIL | &quot;Email&quot; | 
 | PHONE | &quot;Phone&quot; | 
 | OPAQUE | &quot;Opaque&quot; | 
+| TOPIC | &quot;Topic&quot; | 
 {: class="table table-striped"}
 
 

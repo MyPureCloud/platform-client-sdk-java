@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerSequenceScheduleConfigChangeScheduleInterval;
+import com.mypurecloud.sdk.v2.model.DialerSequenceScheduleConfigChangeScheduleRecurrence;
 import com.mypurecloud.sdk.v2.model.DialerSequenceScheduleConfigChangeUriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -29,6 +30,7 @@ import java.io.Serializable;
 public class DialerSequenceScheduleConfigChangeSequenceSchedule  implements Serializable {
   
   private List<DialerSequenceScheduleConfigChangeScheduleInterval> intervals = new ArrayList<DialerSequenceScheduleConfigChangeScheduleInterval>();
+  private List<DialerSequenceScheduleConfigChangeScheduleRecurrence> recurrences = new ArrayList<DialerSequenceScheduleConfigChangeScheduleRecurrence>();
   private String timeZone = null;
   private DialerSequenceScheduleConfigChangeUriReference sequence = null;
   private Map<String, Object> additionalProperties = null;
@@ -54,6 +56,24 @@ public class DialerSequenceScheduleConfigChangeSequenceSchedule  implements Seri
   }
   public void setIntervals(List<DialerSequenceScheduleConfigChangeScheduleInterval> intervals) {
     this.intervals = intervals;
+  }
+
+
+  /**
+   * a list of recurrences for a schedule
+   **/
+  public DialerSequenceScheduleConfigChangeSequenceSchedule recurrences(List<DialerSequenceScheduleConfigChangeScheduleRecurrence> recurrences) {
+    this.recurrences = recurrences;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "a list of recurrences for a schedule")
+  @JsonProperty("recurrences")
+  public List<DialerSequenceScheduleConfigChangeScheduleRecurrence> getRecurrences() {
+    return recurrences;
+  }
+  public void setRecurrences(List<DialerSequenceScheduleConfigChangeScheduleRecurrence> recurrences) {
+    this.recurrences = recurrences;
   }
 
 
@@ -210,6 +230,7 @@ public class DialerSequenceScheduleConfigChangeSequenceSchedule  implements Seri
     DialerSequenceScheduleConfigChangeSequenceSchedule dialerSequenceScheduleConfigChangeSequenceSchedule = (DialerSequenceScheduleConfigChangeSequenceSchedule) o;
 
     return Objects.equals(this.intervals, dialerSequenceScheduleConfigChangeSequenceSchedule.intervals) &&
+            Objects.equals(this.recurrences, dialerSequenceScheduleConfigChangeSequenceSchedule.recurrences) &&
             Objects.equals(this.timeZone, dialerSequenceScheduleConfigChangeSequenceSchedule.timeZone) &&
             Objects.equals(this.sequence, dialerSequenceScheduleConfigChangeSequenceSchedule.sequence) &&
             Objects.equals(this.additionalProperties, dialerSequenceScheduleConfigChangeSequenceSchedule.additionalProperties) &&
@@ -222,7 +243,7 @@ public class DialerSequenceScheduleConfigChangeSequenceSchedule  implements Seri
 
   @Override
   public int hashCode() {
-    return Objects.hash(intervals, timeZone, sequence, additionalProperties, id, name, dateCreated, dateModified, version);
+    return Objects.hash(intervals, recurrences, timeZone, sequence, additionalProperties, id, name, dateCreated, dateModified, version);
   }
 
   @Override
@@ -231,6 +252,7 @@ public class DialerSequenceScheduleConfigChangeSequenceSchedule  implements Seri
     sb.append("class DialerSequenceScheduleConfigChangeSequenceSchedule {\n");
     
     sb.append("    intervals: ").append(toIndentedString(intervals)).append("\n");
+    sb.append("    recurrences: ").append(toIndentedString(recurrences)).append("\n");
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("    sequence: ").append(toIndentedString(sequence)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");

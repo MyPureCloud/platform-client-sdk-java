@@ -50,6 +50,7 @@ public class TaskManagementAggregationView  implements Serializable {
     NWORKITEMSDECLINED("nWorkitemsDeclined"),
     NWORKITEMSDELETED("nWorkitemsDeleted"),
     NWORKITEMSDISCONNECTED("nWorkitemsDisconnected"),
+    NWORKITEMSOFFERED("nWorkitemsOffered"),
     NWORKITEMSOVERSLA("nWorkitemsOverSla"),
     NWORKITEMSPURGED("nWorkitemsPurged"),
     NWORKITEMSQUEUETRANSFERRED("nWorkitemsQueueTransferred"),

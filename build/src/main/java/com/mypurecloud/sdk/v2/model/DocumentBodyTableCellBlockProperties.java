@@ -303,14 +303,14 @@ public class DocumentBodyTableCellBlockProperties  implements Serializable {
 
 
   /**
-   * The width for the table cell.
+   * The width of the table cell converted to em unit.
    **/
   public DocumentBodyTableCellBlockProperties width(Float width) {
     this.width = width;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The width for the table cell.")
+  @ApiModelProperty(example = "null", value = "The width of the table cell converted to em unit.")
   @JsonProperty("width")
   public Float getWidth() {
     return width;

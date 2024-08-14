@@ -31,6 +31,8 @@ title: BuUpdateTimeOffPlanRequest
 | NEVER | &quot;Never&quot; | 
 | ALWAYS | &quot;Always&quot; | 
 | CHECKLIMITS | &quot;CheckLimits&quot; | 
+| CHECKACTIVITYCODES | &quot;CheckActivityCodes&quot; | 
+| CHECKLIMITSANDACTIVITYCODES | &quot;CheckLimitsAndActivityCodes&quot; | 
 {: class="table table-striped"}
 
 

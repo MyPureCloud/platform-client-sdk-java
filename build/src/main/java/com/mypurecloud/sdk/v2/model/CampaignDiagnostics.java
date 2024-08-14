@@ -33,6 +33,7 @@ public class CampaignDiagnostics  implements Serializable {
   private Integer outstandingInteractionsCount = null;
   private Integer scheduledInteractionsCount = null;
   private Integer timeZoneRescheduledCallsCount = null;
+  private Integer filteredOutContactsCount = null;
   private CampaignSkillStatistics campaignSkillStatistics = null;
 
   
@@ -78,6 +79,13 @@ public class CampaignDiagnostics  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Number of contacts that don't match filter. This is currently supported only for Campaigns with dynamic filter on.")
+  @JsonProperty("filteredOutContactsCount")
+  public Integer getFilteredOutContactsCount() {
+    return filteredOutContactsCount;
+  }
+
+
   @ApiModelProperty(example = "null", value = "Information regarding the campaign's skills")
   @JsonProperty("campaignSkillStatistics")
   public CampaignSkillStatistics getCampaignSkillStatistics() {
@@ -101,12 +109,13 @@ public class CampaignDiagnostics  implements Serializable {
             Objects.equals(this.outstandingInteractionsCount, campaignDiagnostics.outstandingInteractionsCount) &&
             Objects.equals(this.scheduledInteractionsCount, campaignDiagnostics.scheduledInteractionsCount) &&
             Objects.equals(this.timeZoneRescheduledCallsCount, campaignDiagnostics.timeZoneRescheduledCallsCount) &&
+            Objects.equals(this.filteredOutContactsCount, campaignDiagnostics.filteredOutContactsCount) &&
             Objects.equals(this.campaignSkillStatistics, campaignDiagnostics.campaignSkillStatistics);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(callableContacts, queueUtilizationDiagnostic, ruleSetDiagnostics, outstandingInteractionsCount, scheduledInteractionsCount, timeZoneRescheduledCallsCount, campaignSkillStatistics);
+    return Objects.hash(callableContacts, queueUtilizationDiagnostic, ruleSetDiagnostics, outstandingInteractionsCount, scheduledInteractionsCount, timeZoneRescheduledCallsCount, filteredOutContactsCount, campaignSkillStatistics);
   }
 
   @Override
@@ -120,6 +129,7 @@ public class CampaignDiagnostics  implements Serializable {
     sb.append("    outstandingInteractionsCount: ").append(toIndentedString(outstandingInteractionsCount)).append("\n");
     sb.append("    scheduledInteractionsCount: ").append(toIndentedString(scheduledInteractionsCount)).append("\n");
     sb.append("    timeZoneRescheduledCallsCount: ").append(toIndentedString(timeZoneRescheduledCallsCount)).append("\n");
+    sb.append("    filteredOutContactsCount: ").append(toIndentedString(filteredOutContactsCount)).append("\n");
     sb.append("    campaignSkillStatistics: ").append(toIndentedString(campaignSkillStatistics)).append("\n");
     sb.append("}");
     return sb.toString();

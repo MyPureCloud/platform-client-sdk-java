@@ -72,6 +72,7 @@ import com.mypurecloud.sdk.v2.model.CreateCallbackOnConversationCommand;
 import com.mypurecloud.sdk.v2.model.CreateCallbackResponse;
 import com.mypurecloud.sdk.v2.model.CreateEmailRequest;
 import com.mypurecloud.sdk.v2.model.CreateOutboundMessagingConversationRequest;
+import com.mypurecloud.sdk.v2.model.CreateOutboundMessagingConversationResponse;
 import com.mypurecloud.sdk.v2.model.CreateSecureSession;
 import com.mypurecloud.sdk.v2.model.CreateWebChatMessageRequest;
 import com.mypurecloud.sdk.v2.model.CreateWebChatRequest;
@@ -93,6 +94,7 @@ import com.mypurecloud.sdk.v2.model.FacebookIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.FacebookPermissionEntityListing;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 import com.mypurecloud.sdk.v2.model.FaxSendResponse;
+import com.mypurecloud.sdk.v2.model.Feedback;
 import com.mypurecloud.sdk.v2.model.FeedbackAddRequest;
 import com.mypurecloud.sdk.v2.model.GenerateMeetingIdRequest;
 import com.mypurecloud.sdk.v2.model.InboundMessageRequest;
@@ -115,7 +117,6 @@ import com.mypurecloud.sdk.v2.model.MessagingSetting;
 import com.mypurecloud.sdk.v2.model.MessagingSettingDefaultRequest;
 import com.mypurecloud.sdk.v2.model.MessagingSettingPatchRequest;
 import com.mypurecloud.sdk.v2.model.MessagingSettingRequest;
-import com.mypurecloud.sdk.v2.model.MessagingStickerEntityListing;
 import com.mypurecloud.sdk.v2.model.OpenEventNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.OpenInboundNormalizedEvent;
 import com.mypurecloud.sdk.v2.model.OpenInboundNormalizedMessage;
@@ -127,6 +128,7 @@ import com.mypurecloud.sdk.v2.model.OpenIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.OpenMessageNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.OpenNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.OpenReceiptNormalizedMessage;
+import com.mypurecloud.sdk.v2.model.ParkingStateRequest;
 import com.mypurecloud.sdk.v2.model.ParticipantAttributes;
 import com.mypurecloud.sdk.v2.model.PatchCallbackRequest;
 import com.mypurecloud.sdk.v2.model.PatchCallbackResponse;
@@ -138,6 +140,9 @@ import com.mypurecloud.sdk.v2.model.SendAgentlessOutboundMessageResponse;
 import com.mypurecloud.sdk.v2.model.SetRecordingState;
 import com.mypurecloud.sdk.v2.model.SetUuiDataRequest;
 import com.mypurecloud.sdk.v2.model.Settings;
+import com.mypurecloud.sdk.v2.model.Suggestion;
+import com.mypurecloud.sdk.v2.model.SuggestionEngagement;
+import com.mypurecloud.sdk.v2.model.SuggestionListing;
 import com.mypurecloud.sdk.v2.model.SupportedContent;
 import com.mypurecloud.sdk.v2.model.SupportedContentListing;
 import com.mypurecloud.sdk.v2.model.SupportedContentReference;
@@ -186,6 +191,8 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantSecureivrses
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationSecureattributesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationSuggestionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationSuggestionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsCallRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsCallParticipantCommunicationWrapupRequest;
@@ -246,7 +253,6 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsW
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSettingsDefaultRequest;
-import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingStickerRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSupportedcontentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSupportedcontentDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSupportedcontentSupportedContentIdRequest;
@@ -285,6 +291,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchConversationsEmailMessagesDraftRe
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsEmailParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsEmailParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsEmailParticipantCommunicationRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsEmailParticipantParkingstateRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantAttributesRequest;
@@ -314,6 +321,8 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceAgen
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceExternalRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantSecureivrsessionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationSuggestionEngagementRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationSuggestionsFeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationSummaryFeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantBargeRequest;
@@ -344,6 +353,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailMessagesDraftAttachmentsCopyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailParticipantReplaceRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailReconnectRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailsAgentlessRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsFaxesRequest;
@@ -2354,6 +2364,156 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ConversationSecureAttributes> response = (ApiResponse<ConversationSecureAttributes>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Suggestion.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Suggestion> getConversationSuggestionAsync(GetConversationSuggestionRequest request, final AsyncApiCallback<Suggestion> callback) {
+    try {
+      final SettableFuture<Suggestion> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Suggestion>() {}, new AsyncApiCallback<ApiResponse<Suggestion>>() {
+        @Override
+        public void onCompleted(ApiResponse<Suggestion> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Suggestion.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Suggestion>> getConversationSuggestionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Suggestion>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Suggestion>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Suggestion>() {}, new AsyncApiCallback<ApiResponse<Suggestion>>() {
+        @Override
+        public void onCompleted(ApiResponse<Suggestion> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Suggestion> response = (ApiResponse<Suggestion>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Suggestion> response = (ApiResponse<Suggestion>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get all suggestions for a conversation.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SuggestionListing> getConversationSuggestionsAsync(GetConversationSuggestionsRequest request, final AsyncApiCallback<SuggestionListing> callback) {
+    try {
+      final SettableFuture<SuggestionListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SuggestionListing>() {}, new AsyncApiCallback<ApiResponse<SuggestionListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SuggestionListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get all suggestions for a conversation.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SuggestionListing>> getConversationSuggestionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SuggestionListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SuggestionListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SuggestionListing>() {}, new AsyncApiCallback<ApiResponse<SuggestionListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SuggestionListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SuggestionListing> response = (ApiResponse<SuggestionListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SuggestionListing> response = (ApiResponse<SuggestionListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -6872,83 +7032,6 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Get a list of Messaging Stickers (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<MessagingStickerEntityListing> getConversationsMessagingStickerAsync(GetConversationsMessagingStickerRequest request, final AsyncApiCallback<MessagingStickerEntityListing> callback) {
-    try {
-      final SettableFuture<MessagingStickerEntityListing> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MessagingStickerEntityListing>() {}, new AsyncApiCallback<ApiResponse<MessagingStickerEntityListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<MessagingStickerEntityListing> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get a list of Messaging Stickers (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ApiResponse<MessagingStickerEntityListing>> getConversationsMessagingStickerAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<MessagingStickerEntityListing>> callback) {
-    try {
-      final SettableFuture<ApiResponse<MessagingStickerEntityListing>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<MessagingStickerEntityListing>() {}, new AsyncApiCallback<ApiResponse<MessagingStickerEntityListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<MessagingStickerEntityListing> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<MessagingStickerEntityListing> response = (ApiResponse<MessagingStickerEntityListing>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<MessagingStickerEntityListing> response = (ApiResponse<MessagingStickerEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
    * Get a list of Supported Content profiles
    * 
    * @param request the request object
@@ -9815,6 +9898,83 @@ public class ConversationsApiAsync {
   }
 
   /**
+   * Update conversation by setting its parking state
+   * 
+   * patchConversationsEmailParticipantParkingstate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> patchConversationsEmailParticipantParkingstateAsync(PatchConversationsEmailParticipantParkingstateRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update conversation by setting its parking state
+   * 
+   * patchConversationsEmailParticipantParkingstate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> patchConversationsEmailParticipantParkingstateAsync(ApiRequest<ParkingStateRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Update a conversation by disconnecting all of the participants
    * 
    * @param request the request object
@@ -11244,7 +11404,6 @@ public class ConversationsApiAsync {
   /**
    * Barge a conversation creating a barged in conference of connected participants.
    * 
-   * postConversationBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -11279,7 +11438,6 @@ public class ConversationsApiAsync {
   /**
    * Barge a conversation creating a barged in conference of connected participants.
    * 
-   * postConversationBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -11994,6 +12152,156 @@ public class ConversationsApiAsync {
   }
 
   /**
+   * Save an engagement on the suggestion.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SuggestionEngagement> postConversationSuggestionEngagementAsync(PostConversationSuggestionEngagementRequest request, final AsyncApiCallback<SuggestionEngagement> callback) {
+    try {
+      final SettableFuture<SuggestionEngagement> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SuggestionEngagement>() {}, new AsyncApiCallback<ApiResponse<SuggestionEngagement>>() {
+        @Override
+        public void onCompleted(ApiResponse<SuggestionEngagement> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Save an engagement on the suggestion.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SuggestionEngagement>> postConversationSuggestionEngagementAsync(ApiRequest<SuggestionEngagement> request, final AsyncApiCallback<ApiResponse<SuggestionEngagement>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SuggestionEngagement>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SuggestionEngagement>() {}, new AsyncApiCallback<ApiResponse<SuggestionEngagement>>() {
+        @Override
+        public void onCompleted(ApiResponse<SuggestionEngagement> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SuggestionEngagement> response = (ApiResponse<SuggestionEngagement>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SuggestionEngagement> response = (ApiResponse<SuggestionEngagement>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Suggestion feedback.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> postConversationSuggestionsFeedbackAsync(PostConversationSuggestionsFeedbackRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Suggestion feedback.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> postConversationSuggestionsFeedbackAsync(ApiRequest<Feedback> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Submit feedback for the summary.
    * 
    * @param request the request object
@@ -12146,7 +12454,6 @@ public class ConversationsApiAsync {
   /**
    * Barge a given participant's call creating a barged in conference of connected participants.
    * 
-   * postConversationsCallParticipantBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -12181,7 +12488,6 @@ public class ConversationsApiAsync {
   /**
    * Barge a given participant's call creating a barged in conference of connected participants.
    * 
-   * postConversationsCallParticipantBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -14250,6 +14556,81 @@ public class ConversationsApiAsync {
   }
 
   /**
+   * Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> postConversationsEmailReconnectAsync(PostConversationsEmailReconnectRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> postConversationsEmailReconnectAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Create an email conversation
    * If the direction of the request is INBOUND, this will create an external conversation with a third party provider. If the direction of the the request is OUTBOUND, this will create a conversation to send outbound emails on behalf of a queue.
    * @param request the request object
@@ -15381,13 +15762,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<MessageConversation> postConversationsMessagesAsync(PostConversationsMessagesRequest request, final AsyncApiCallback<MessageConversation> callback) {
+  public Future<CreateOutboundMessagingConversationResponse> postConversationsMessagesAsync(PostConversationsMessagesRequest request, final AsyncApiCallback<CreateOutboundMessagingConversationResponse> callback) {
     try {
-      final SettableFuture<MessageConversation> future = SettableFuture.create();
+      final SettableFuture<CreateOutboundMessagingConversationResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MessageConversation>() {}, new AsyncApiCallback<ApiResponse<MessageConversation>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CreateOutboundMessagingConversationResponse>() {}, new AsyncApiCallback<ApiResponse<CreateOutboundMessagingConversationResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<MessageConversation> response) {
+        public void onCompleted(ApiResponse<CreateOutboundMessagingConversationResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -15415,13 +15796,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<MessageConversation>> postConversationsMessagesAsync(ApiRequest<CreateOutboundMessagingConversationRequest> request, final AsyncApiCallback<ApiResponse<MessageConversation>> callback) {
+  public Future<ApiResponse<CreateOutboundMessagingConversationResponse>> postConversationsMessagesAsync(ApiRequest<CreateOutboundMessagingConversationRequest> request, final AsyncApiCallback<ApiResponse<CreateOutboundMessagingConversationResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<MessageConversation>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<CreateOutboundMessagingConversationResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<MessageConversation>() {}, new AsyncApiCallback<ApiResponse<MessageConversation>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<CreateOutboundMessagingConversationResponse>() {}, new AsyncApiCallback<ApiResponse<CreateOutboundMessagingConversationResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<MessageConversation> response) {
+        public void onCompleted(ApiResponse<CreateOutboundMessagingConversationResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -15429,7 +15810,7 @@ public class ConversationsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<MessageConversation> response = (ApiResponse<MessageConversation>)(ApiResponse<?>)exception;
+            ApiResponse<CreateOutboundMessagingConversationResponse> response = (ApiResponse<CreateOutboundMessagingConversationResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -15437,7 +15818,7 @@ public class ConversationsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<MessageConversation> response = (ApiResponse<MessageConversation>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<CreateOutboundMessagingConversationResponse> response = (ApiResponse<CreateOutboundMessagingConversationResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -106,7 +106,8 @@ public class VoicemailSearchCriteria  implements Serializable {
     TERM("TERM"),
     TERMS("TERMS"),
     REQUIRED_FIELDS("REQUIRED_FIELDS"),
-    MATCH_ALL("MATCH_ALL");
+    MATCH_ALL("MATCH_ALL"),
+    DATE_RANGE("DATE_RANGE");
 
     private String value;
 

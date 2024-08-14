@@ -108,7 +108,8 @@ public class TimeOffRequestResponse  implements Serializable {
     INVALIDDAILYDURATION("InvalidDailyDuration"),
     OUTSIDESHIFT("OutsideShift"),
     REMOVEDFROMWAITLIST("RemovedFromWaitlist"),
-    WAITLISTED("Waitlisted");
+    WAITLISTED("Waitlisted"),
+    OVERLAPSRESTRICTEDACTIVITYCODE("OverlapsRestrictedActivityCode");
 
     private String value;
 

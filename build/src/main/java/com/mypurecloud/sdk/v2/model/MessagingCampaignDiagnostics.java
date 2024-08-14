@@ -22,12 +22,20 @@ import java.io.Serializable;
 public class MessagingCampaignDiagnostics  implements Serializable {
   
   private Integer timeZoneRescheduledContactsCount = null;
+  private Integer filteredOutContactsCount = null;
 
   
   @ApiModelProperty(example = "null", value = "Current number of time zone rescheduled messages on the campaign")
   @JsonProperty("timeZoneRescheduledContactsCount")
   public Integer getTimeZoneRescheduledContactsCount() {
     return timeZoneRescheduledContactsCount;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "Number of contacts that don't match filter. This is currently supported only for Campaigns with dynamic filter on.")
+  @JsonProperty("filteredOutContactsCount")
+  public Integer getFilteredOutContactsCount() {
+    return filteredOutContactsCount;
   }
 
 
@@ -41,12 +49,13 @@ public class MessagingCampaignDiagnostics  implements Serializable {
     }
     MessagingCampaignDiagnostics messagingCampaignDiagnostics = (MessagingCampaignDiagnostics) o;
 
-    return Objects.equals(this.timeZoneRescheduledContactsCount, messagingCampaignDiagnostics.timeZoneRescheduledContactsCount);
+    return Objects.equals(this.timeZoneRescheduledContactsCount, messagingCampaignDiagnostics.timeZoneRescheduledContactsCount) &&
+            Objects.equals(this.filteredOutContactsCount, messagingCampaignDiagnostics.filteredOutContactsCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(timeZoneRescheduledContactsCount);
+    return Objects.hash(timeZoneRescheduledContactsCount, filteredOutContactsCount);
   }
 
   @Override
@@ -55,6 +64,7 @@ public class MessagingCampaignDiagnostics  implements Serializable {
     sb.append("class MessagingCampaignDiagnostics {\n");
     
     sb.append("    timeZoneRescheduledContactsCount: ").append(toIndentedString(timeZoneRescheduledContactsCount)).append("\n");
+    sb.append("    filteredOutContactsCount: ").append(toIndentedString(filteredOutContactsCount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

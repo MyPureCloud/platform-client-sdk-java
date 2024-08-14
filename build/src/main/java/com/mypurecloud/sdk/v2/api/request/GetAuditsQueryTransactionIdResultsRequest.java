@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.AuditQueryExecutionLargeResultsResponse;
 import com.mypurecloud.sdk.v2.model.AuditQueryExecutionResultsResponse;
 import com.mypurecloud.sdk.v2.model.AuditQueryExecutionStatusResponse;
 import com.mypurecloud.sdk.v2.model.AuditQueryRequest;
@@ -117,6 +118,20 @@ public class GetAuditsQueryTransactionIdResultsRequest {
 		}
 	}
 
+	private Boolean allowRedirect;
+	public Boolean getAllowRedirect() {
+		return this.allowRedirect;
+	}
+
+	public void setAllowRedirect(Boolean allowRedirect) {
+		this.allowRedirect = allowRedirect;
+	}
+
+	public GetAuditsQueryTransactionIdResultsRequest withAllowRedirect(Boolean allowRedirect) {
+	    this.setAllowRedirect(allowRedirect);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -155,6 +170,9 @@ public class GetAuditsQueryTransactionIdResultsRequest {
         
 
                 .withQueryParameters("expand", "multi", expand)
+        
+
+                .withQueryParameters("allowRedirect", "", allowRedirect)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -211,6 +229,11 @@ public class GetAuditsQueryTransactionIdResultsRequest {
 	      }
 	      request.setExpand(stringList);
 		    return this;
+		}
+
+		public Builder withAllowRedirect(Boolean allowRedirect) {
+			request.setAllowRedirect(allowRedirect);
+			return this;
 		}
 
 

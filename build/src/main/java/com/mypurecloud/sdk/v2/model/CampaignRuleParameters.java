@@ -12,8 +12,10 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.math.BigDecimal;
 
 import java.io.Serializable;
 /**
@@ -177,6 +179,11 @@ public class CampaignRuleParameters  implements Serializable {
     }
   }
   private DialingModeEnum dialingMode = null;
+  private BigDecimal abandonRate = null;
+  private Integer outboundLineCount = null;
+  private Integer relativeWeight = null;
+  private BigDecimal maxCallsPerAgent = null;
+  private DomainEntityRef queue = null;
 
   
   /**
@@ -251,6 +258,96 @@ public class CampaignRuleParameters  implements Serializable {
   }
 
 
+  /**
+   * The abandon rate to set a campaign to. Required for the 'setCampaignAbandonRate' action.
+   **/
+  public CampaignRuleParameters abandonRate(BigDecimal abandonRate) {
+    this.abandonRate = abandonRate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The abandon rate to set a campaign to. Required for the 'setCampaignAbandonRate' action.")
+  @JsonProperty("abandonRate")
+  public BigDecimal getAbandonRate() {
+    return abandonRate;
+  }
+  public void setAbandonRate(BigDecimal abandonRate) {
+    this.abandonRate = abandonRate;
+  }
+
+
+  /**
+   * The  number of outbound lines to set a campaign to. Required for the 'setCampaignNumberOfLines' action.
+   **/
+  public CampaignRuleParameters outboundLineCount(Integer outboundLineCount) {
+    this.outboundLineCount = outboundLineCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The  number of outbound lines to set a campaign to. Required for the 'setCampaignNumberOfLines' action.")
+  @JsonProperty("outboundLineCount")
+  public Integer getOutboundLineCount() {
+    return outboundLineCount;
+  }
+  public void setOutboundLineCount(Integer outboundLineCount) {
+    this.outboundLineCount = outboundLineCount;
+  }
+
+
+  /**
+   * The relative weight to set a campaign to. Required for the 'setCampaignWeight' action.
+   **/
+  public CampaignRuleParameters relativeWeight(Integer relativeWeight) {
+    this.relativeWeight = relativeWeight;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The relative weight to set a campaign to. Required for the 'setCampaignWeight' action.")
+  @JsonProperty("relativeWeight")
+  public Integer getRelativeWeight() {
+    return relativeWeight;
+  }
+  public void setRelativeWeight(Integer relativeWeight) {
+    this.relativeWeight = relativeWeight;
+  }
+
+
+  /**
+   * The maximum number of calls per agent to set a campaign to. Required for the 'setCampaignMaxCallsPerAgent' action.
+   **/
+  public CampaignRuleParameters maxCallsPerAgent(BigDecimal maxCallsPerAgent) {
+    this.maxCallsPerAgent = maxCallsPerAgent;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The maximum number of calls per agent to set a campaign to. Required for the 'setCampaignMaxCallsPerAgent' action.")
+  @JsonProperty("maxCallsPerAgent")
+  public BigDecimal getMaxCallsPerAgent() {
+    return maxCallsPerAgent;
+  }
+  public void setMaxCallsPerAgent(BigDecimal maxCallsPerAgent) {
+    this.maxCallsPerAgent = maxCallsPerAgent;
+  }
+
+
+  /**
+   * The queue a campaign to. Required for the 'changeCampaignQueue' action.
+   **/
+  public CampaignRuleParameters queue(DomainEntityRef queue) {
+    this.queue = queue;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The queue a campaign to. Required for the 'changeCampaignQueue' action.")
+  @JsonProperty("queue")
+  public DomainEntityRef getQueue() {
+    return queue;
+  }
+  public void setQueue(DomainEntityRef queue) {
+    this.queue = queue;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -264,12 +361,17 @@ public class CampaignRuleParameters  implements Serializable {
     return Objects.equals(this.operator, campaignRuleParameters.operator) &&
             Objects.equals(this.value, campaignRuleParameters.value) &&
             Objects.equals(this.priority, campaignRuleParameters.priority) &&
-            Objects.equals(this.dialingMode, campaignRuleParameters.dialingMode);
+            Objects.equals(this.dialingMode, campaignRuleParameters.dialingMode) &&
+            Objects.equals(this.abandonRate, campaignRuleParameters.abandonRate) &&
+            Objects.equals(this.outboundLineCount, campaignRuleParameters.outboundLineCount) &&
+            Objects.equals(this.relativeWeight, campaignRuleParameters.relativeWeight) &&
+            Objects.equals(this.maxCallsPerAgent, campaignRuleParameters.maxCallsPerAgent) &&
+            Objects.equals(this.queue, campaignRuleParameters.queue);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(operator, value, priority, dialingMode);
+    return Objects.hash(operator, value, priority, dialingMode, abandonRate, outboundLineCount, relativeWeight, maxCallsPerAgent, queue);
   }
 
   @Override
@@ -281,6 +383,11 @@ public class CampaignRuleParameters  implements Serializable {
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    dialingMode: ").append(toIndentedString(dialingMode)).append("\n");
+    sb.append("    abandonRate: ").append(toIndentedString(abandonRate)).append("\n");
+    sb.append("    outboundLineCount: ").append(toIndentedString(outboundLineCount)).append("\n");
+    sb.append("    relativeWeight: ").append(toIndentedString(relativeWeight)).append("\n");
+    sb.append("    maxCallsPerAgent: ").append(toIndentedString(maxCallsPerAgent)).append("\n");
+    sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -94,14 +94,14 @@ public class LearningAssignmentAggregateQueryRequestPredicate  implements Serial
 
 
   /**
-   * Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational, AssessedContent, Assessment, External
+   * Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational (deprecated), AssessedContent (deprecated), Assessment (deprecated), External, Native
    **/
   public LearningAssignmentAggregateQueryRequestPredicate value(String value) {
     this.value = value;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational, AssessedContent, Assessment, External")
+  @ApiModelProperty(example = "null", required = true, value = "Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational (deprecated), AssessedContent (deprecated), Assessment (deprecated), External, Native")
   @JsonProperty("value")
   public String getValue() {
     return value;

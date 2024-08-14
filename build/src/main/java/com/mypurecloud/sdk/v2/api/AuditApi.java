@@ -10,6 +10,7 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.AuditQueryExecutionLargeResultsResponse;
 import com.mypurecloud.sdk.v2.model.AuditQueryExecutionResultsResponse;
 import com.mypurecloud.sdk.v2.model.AuditQueryExecutionStatusResponse;
 import com.mypurecloud.sdk.v2.model.AuditQueryRequest;
@@ -279,12 +280,13 @@ public class AuditApi {
    * @param cursor Indicates where to resume query results (not required for first page) (optional)
    * @param pageSize Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500. (optional, default to 25)
    * @param expand Which fields, if any, to expand (optional)
+   * @param allowRedirect Result sets with large amounts of data will respond with a download url (optional)
    * @return AuditQueryExecutionResultsResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AuditQueryExecutionResultsResponse getAuditsQueryTransactionIdResults(String transactionId, String cursor, Integer pageSize, List<String> expand) throws IOException, ApiException {
-    return  getAuditsQueryTransactionIdResults(createGetAuditsQueryTransactionIdResultsRequest(transactionId, cursor, pageSize, expand));
+  public AuditQueryExecutionResultsResponse getAuditsQueryTransactionIdResults(String transactionId, String cursor, Integer pageSize, List<String> expand, Boolean allowRedirect) throws IOException, ApiException {
+    return  getAuditsQueryTransactionIdResults(createGetAuditsQueryTransactionIdResultsRequest(transactionId, cursor, pageSize, expand, allowRedirect));
   }
 
   /**
@@ -294,14 +296,15 @@ public class AuditApi {
    * @param cursor Indicates where to resume query results (not required for first page) (optional)
    * @param pageSize Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500. (optional, default to 25)
    * @param expand Which fields, if any, to expand (optional)
+   * @param allowRedirect Result sets with large amounts of data will respond with a download url (optional)
    * @return AuditQueryExecutionResultsResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AuditQueryExecutionResultsResponse> getAuditsQueryTransactionIdResultsWithHttpInfo(String transactionId, String cursor, Integer pageSize, List<String> expand) throws IOException {
-    return getAuditsQueryTransactionIdResults(createGetAuditsQueryTransactionIdResultsRequest(transactionId, cursor, pageSize, expand).withHttpInfo());
+  public ApiResponse<AuditQueryExecutionResultsResponse> getAuditsQueryTransactionIdResultsWithHttpInfo(String transactionId, String cursor, Integer pageSize, List<String> expand, Boolean allowRedirect) throws IOException {
+    return getAuditsQueryTransactionIdResults(createGetAuditsQueryTransactionIdResultsRequest(transactionId, cursor, pageSize, expand, allowRedirect).withHttpInfo());
   }
 
-  private GetAuditsQueryTransactionIdResultsRequest createGetAuditsQueryTransactionIdResultsRequest(String transactionId, String cursor, Integer pageSize, List<String> expand) {
+  private GetAuditsQueryTransactionIdResultsRequest createGetAuditsQueryTransactionIdResultsRequest(String transactionId, String cursor, Integer pageSize, List<String> expand, Boolean allowRedirect) {
     return GetAuditsQueryTransactionIdResultsRequest.builder()
             .withTransactionId(transactionId)
 
@@ -310,6 +313,8 @@ public class AuditApi {
             .withPageSize(pageSize)
 
             .withExpand(expand)
+
+            .withAllowRedirect(allowRedirect)
 
             .build();
   }

@@ -79,7 +79,9 @@ public class TranscriptionTopicTranscriptResult  implements Serializable {
   private ChannelEnum channel = null;
   private List<TranscriptionTopicTranscriptAlternative> alternatives = new ArrayList<TranscriptionTopicTranscriptAlternative>();
   private String agentAssistantId = null;
+  private String engineProvider = null;
   private String engineId = null;
+  private String engineName = null;
   private String dialect = null;
   private String speechTextAnalyticsProgramId = null;
   private Boolean agentAssistEnabled = null;
@@ -173,6 +175,23 @@ public class TranscriptionTopicTranscriptResult  implements Serializable {
 
   /**
    **/
+  public TranscriptionTopicTranscriptResult engineProvider(String engineProvider) {
+    this.engineProvider = engineProvider;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("engineProvider")
+  public String getEngineProvider() {
+    return engineProvider;
+  }
+  public void setEngineProvider(String engineProvider) {
+    this.engineProvider = engineProvider;
+  }
+
+
+  /**
+   **/
   public TranscriptionTopicTranscriptResult engineId(String engineId) {
     this.engineId = engineId;
     return this;
@@ -185,6 +204,23 @@ public class TranscriptionTopicTranscriptResult  implements Serializable {
   }
   public void setEngineId(String engineId) {
     this.engineId = engineId;
+  }
+
+
+  /**
+   **/
+  public TranscriptionTopicTranscriptResult engineName(String engineName) {
+    this.engineName = engineName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("engineName")
+  public String getEngineName() {
+    return engineName;
+  }
+  public void setEngineName(String engineName) {
+    this.engineName = engineName;
   }
 
 
@@ -271,7 +307,9 @@ public class TranscriptionTopicTranscriptResult  implements Serializable {
             Objects.equals(this.channel, transcriptionTopicTranscriptResult.channel) &&
             Objects.equals(this.alternatives, transcriptionTopicTranscriptResult.alternatives) &&
             Objects.equals(this.agentAssistantId, transcriptionTopicTranscriptResult.agentAssistantId) &&
+            Objects.equals(this.engineProvider, transcriptionTopicTranscriptResult.engineProvider) &&
             Objects.equals(this.engineId, transcriptionTopicTranscriptResult.engineId) &&
+            Objects.equals(this.engineName, transcriptionTopicTranscriptResult.engineName) &&
             Objects.equals(this.dialect, transcriptionTopicTranscriptResult.dialect) &&
             Objects.equals(this.speechTextAnalyticsProgramId, transcriptionTopicTranscriptResult.speechTextAnalyticsProgramId) &&
             Objects.equals(this.agentAssistEnabled, transcriptionTopicTranscriptResult.agentAssistEnabled) &&
@@ -280,7 +318,7 @@ public class TranscriptionTopicTranscriptResult  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(utteranceId, isFinal, channel, alternatives, agentAssistantId, engineId, dialect, speechTextAnalyticsProgramId, agentAssistEnabled, voiceTranscriptionEnabled);
+    return Objects.hash(utteranceId, isFinal, channel, alternatives, agentAssistantId, engineProvider, engineId, engineName, dialect, speechTextAnalyticsProgramId, agentAssistEnabled, voiceTranscriptionEnabled);
   }
 
   @Override
@@ -293,7 +331,9 @@ public class TranscriptionTopicTranscriptResult  implements Serializable {
     sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
     sb.append("    alternatives: ").append(toIndentedString(alternatives)).append("\n");
     sb.append("    agentAssistantId: ").append(toIndentedString(agentAssistantId)).append("\n");
+    sb.append("    engineProvider: ").append(toIndentedString(engineProvider)).append("\n");
     sb.append("    engineId: ").append(toIndentedString(engineId)).append("\n");
+    sb.append("    engineName: ").append(toIndentedString(engineName)).append("\n");
     sb.append("    dialect: ").append(toIndentedString(dialect)).append("\n");
     sb.append("    speechTextAnalyticsProgramId: ").append(toIndentedString(speechTextAnalyticsProgramId)).append("\n");
     sb.append("    agentAssistEnabled: ").append(toIndentedString(agentAssistEnabled)).append("\n");

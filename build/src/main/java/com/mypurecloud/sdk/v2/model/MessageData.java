@@ -105,7 +105,6 @@ public class MessageData  implements Serializable {
     SMS("sms"),
     FACEBOOK("facebook"),
     TWITTER("twitter"),
-    LINE("line"),
     WHATSAPP("whatsapp"),
     WEBMESSAGING("webmessaging"),
     INSTAGRAM("instagram"),

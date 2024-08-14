@@ -277,6 +277,7 @@ public class ChatMediaParticipant  implements Serializable {
   private ConversationRoutingData conversationRoutingData = null;
   private Date startAcwTime = null;
   private Date endAcwTime = null;
+  private Date parkTime = null;
   private String roomId = null;
   private String avatarImageUrl = null;
 
@@ -894,6 +895,24 @@ public class ChatMediaParticipant  implements Serializable {
 
 
   /**
+   * The time when this participant's communication was last parked.  Does not reset on resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public ChatMediaParticipant parkTime(Date parkTime) {
+    this.parkTime = parkTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The time when this participant's communication was last parked.  Does not reset on resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("parkTime")
+  public Date getParkTime() {
+    return parkTime;
+  }
+  public void setParkTime(Date parkTime) {
+    this.parkTime = parkTime;
+  }
+
+
+  /**
    * The ID of the chat room.
    **/
   public ChatMediaParticipant roomId(String roomId) {
@@ -973,13 +992,14 @@ public class ChatMediaParticipant  implements Serializable {
             Objects.equals(this.conversationRoutingData, chatMediaParticipant.conversationRoutingData) &&
             Objects.equals(this.startAcwTime, chatMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, chatMediaParticipant.endAcwTime) &&
+            Objects.equals(this.parkTime, chatMediaParticipant.parkTime) &&
             Objects.equals(this.roomId, chatMediaParticipant.roomId) &&
             Objects.equals(this.avatarImageUrl, chatMediaParticipant.avatarImageUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, roomId, avatarImageUrl);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, parkTime, roomId, avatarImageUrl);
   }
 
   @Override
@@ -1021,6 +1041,7 @@ public class ChatMediaParticipant  implements Serializable {
     sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
+    sb.append("    parkTime: ").append(toIndentedString(parkTime)).append("\n");
     sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
     sb.append("    avatarImageUrl: ").append(toIndentedString(avatarImageUrl)).append("\n");
     sb.append("}");

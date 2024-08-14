@@ -48,8 +48,7 @@ public class FieldConfig  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     PERSON("person"),
     GROUP("group"),
-    ORG("org"),
-    EXTERNALCONTACT("externalContact");
+    ORG("org");
 
     private String value;
 

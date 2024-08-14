@@ -12,6 +12,7 @@ title: ConversationMessageEvent
 | **coBrowse** | <!----><!---->[**ConversationEventCoBrowse**](ConversationEventCoBrowse.html)<!----> | CoBrowse event. |  [optional] |
 | **typing** | <!----><!---->[**ConversationEventTyping**](ConversationEventTyping.html)<!----> | Typing event. |  [optional] |
 | **presence** | <!----><!---->[**ConversationEventPresence**](ConversationEventPresence.html)<!----> | Presence event. |  [optional] |
+| **video** | <!----><!---->[**ConversationEventVideo**](ConversationEventVideo.html)<!----> | Video event. |  [optional] |
 {: class="table table-striped"}
 
 
@@ -25,6 +26,7 @@ title: ConversationMessageEvent
 | COBROWSE | &quot;CoBrowse&quot; | 
 | TYPING | &quot;Typing&quot; | 
 | PRESENCE | &quot;Presence&quot; | 
+| VIDEO | &quot;Video&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}
 

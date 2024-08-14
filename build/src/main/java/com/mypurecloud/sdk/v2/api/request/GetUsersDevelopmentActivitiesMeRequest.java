@@ -21,6 +21,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.Adjacents;
+import com.mypurecloud.sdk.v2.model.AgentDirectRoutingBackupSettings;
 import com.mypurecloud.sdk.v2.model.AgentMaxUtilizationResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsAsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsQueryResponse;
@@ -306,7 +307,9 @@ public class GetUsersDevelopmentActivitiesMeRequest {
 		INFORMATIONAL("Informational"),
 		COACHING("Coaching"),
 		ASSESSEDCONTENT("AssessedContent"),
-		ASSESSMENT("Assessment");
+		ASSESSMENT("Assessment"),
+		EXTERNAL("External"),
+		NATIVE("Native");
 
 		private String value;
 

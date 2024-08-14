@@ -13,7 +13,9 @@ title: TranscriptionTopicTranscriptResult
 | **channel** | [**ChannelEnum**](#ChannelEnum)<!----> |  |  [optional] |
 | **alternatives** | <!----><!---->[**List&lt;TranscriptionTopicTranscriptAlternative&gt;**](TranscriptionTopicTranscriptAlternative.html)<!----> |  |  [optional] |
 | **agentAssistantId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **engineProvider** | <!----><!---->**String**<!----> |  |  [optional] |
 | **engineId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **engineName** | <!----><!---->**String**<!----> |  |  [optional] |
 | **dialect** | <!----><!---->**String**<!----> |  |  [optional] |
 | **speechTextAnalyticsProgramId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **agentAssistEnabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |

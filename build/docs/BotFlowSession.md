@@ -16,6 +16,7 @@ title: BotFlowSession
 | **botResult** | [**BotResultEnum**](#BotResultEnum)<!----> | The reason for session termination. |  [optional] |
 | **botResultCategory** | [**BotResultCategoryEnum**](#BotResultCategoryEnum)<!----> | The category of result for the session. |  [optional] |
 | **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Timestamp indicating when the session was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **dateCompleted** | <!----><!---->[**Date**](Date.html)<!----> | Timestamp indicating when the session was completed. Note: The 'interval' query param uses this timestamp to filter the output. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **conversation** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | The conversation details, across potentially multiple Bot Flow sessions. |  [optional] |
 {: class="table table-striped"}
 

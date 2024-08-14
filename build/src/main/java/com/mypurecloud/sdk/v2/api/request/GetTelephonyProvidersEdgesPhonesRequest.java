@@ -133,6 +133,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	} 
 
 	public enum sortByValues { 
+		ID("id"),
 		NAME("name"),
 		STATUS_OPERATIONALSTATUS("status.operationalStatus"),
 		SECONDARYSTATUS_OPERATIONALSTATUS("secondaryStatus.operationalStatus");

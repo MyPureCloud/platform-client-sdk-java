@@ -89,6 +89,7 @@ public class HistoryEntry  implements Serializable {
   private DomainEntityRef client = null;
   private String version = null;
   private Boolean secure = null;
+  private Boolean virtualAgentEnabled = null;
 
   
   /**
@@ -215,6 +216,23 @@ public class HistoryEntry  implements Serializable {
   }
 
 
+  /**
+   **/
+  public HistoryEntry virtualAgentEnabled(Boolean virtualAgentEnabled) {
+    this.virtualAgentEnabled = virtualAgentEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("virtualAgentEnabled")
+  public Boolean getVirtualAgentEnabled() {
+    return virtualAgentEnabled;
+  }
+  public void setVirtualAgentEnabled(Boolean virtualAgentEnabled) {
+    this.virtualAgentEnabled = virtualAgentEnabled;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -231,12 +249,13 @@ public class HistoryEntry  implements Serializable {
             Objects.equals(this.user, historyEntry.user) &&
             Objects.equals(this.client, historyEntry.client) &&
             Objects.equals(this.version, historyEntry.version) &&
-            Objects.equals(this.secure, historyEntry.secure);
+            Objects.equals(this.secure, historyEntry.secure) &&
+            Objects.equals(this.virtualAgentEnabled, historyEntry.virtualAgentEnabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(action, resource, timestamp, user, client, version, secure);
+    return Objects.hash(action, resource, timestamp, user, client, version, secure, virtualAgentEnabled);
   }
 
   @Override
@@ -251,6 +270,7 @@ public class HistoryEntry  implements Serializable {
     sb.append("    client: ").append(toIndentedString(client)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    secure: ").append(toIndentedString(secure)).append("\n");
+    sb.append("    virtualAgentEnabled: ").append(toIndentedString(virtualAgentEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }

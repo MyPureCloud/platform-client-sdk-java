@@ -279,6 +279,7 @@ public class CallbackMediaParticipant  implements Serializable {
   private ConversationRoutingData conversationRoutingData = null;
   private Date startAcwTime = null;
   private Date endAcwTime = null;
+  private Date parkTime = null;
   private DialerPreview outboundPreview = null;
   private Voicemail voicemail = null;
   private List<String> callbackNumbers = new ArrayList<String>();
@@ -903,6 +904,24 @@ public class CallbackMediaParticipant  implements Serializable {
 
 
   /**
+   * The time when this participant's communication was last parked.  Does not reset on resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public CallbackMediaParticipant parkTime(Date parkTime) {
+    this.parkTime = parkTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The time when this participant's communication was last parked.  Does not reset on resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("parkTime")
+  public Date getParkTime() {
+    return parkTime;
+  }
+  public void setParkTime(Date parkTime) {
+    this.parkTime = parkTime;
+  }
+
+
+  /**
    * The outbound preview associated with this callback.
    **/
   public CallbackMediaParticipant outboundPreview(DialerPreview outboundPreview) {
@@ -1108,6 +1127,7 @@ public class CallbackMediaParticipant  implements Serializable {
             Objects.equals(this.conversationRoutingData, callbackMediaParticipant.conversationRoutingData) &&
             Objects.equals(this.startAcwTime, callbackMediaParticipant.startAcwTime) &&
             Objects.equals(this.endAcwTime, callbackMediaParticipant.endAcwTime) &&
+            Objects.equals(this.parkTime, callbackMediaParticipant.parkTime) &&
             Objects.equals(this.outboundPreview, callbackMediaParticipant.outboundPreview) &&
             Objects.equals(this.voicemail, callbackMediaParticipant.voicemail) &&
             Objects.equals(this.callbackNumbers, callbackMediaParticipant.callbackNumbers) &&
@@ -1121,7 +1141,7 @@ public class CallbackMediaParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, outboundPreview, voicemail, callbackNumbers, callbackUserName, externalCampaign, skipEnabled, timeoutSeconds, automatedCallbackConfigId, callbackScheduledTime);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, parkTime, outboundPreview, voicemail, callbackNumbers, callbackUserName, externalCampaign, skipEnabled, timeoutSeconds, automatedCallbackConfigId, callbackScheduledTime);
   }
 
   @Override
@@ -1163,6 +1183,7 @@ public class CallbackMediaParticipant  implements Serializable {
     sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
+    sb.append("    parkTime: ").append(toIndentedString(parkTime)).append("\n");
     sb.append("    outboundPreview: ").append(toIndentedString(outboundPreview)).append("\n");
     sb.append("    voicemail: ").append(toIndentedString(voicemail)).append("\n");
     sb.append("    callbackNumbers: ").append(toIndentedString(callbackNumbers)).append("\n");

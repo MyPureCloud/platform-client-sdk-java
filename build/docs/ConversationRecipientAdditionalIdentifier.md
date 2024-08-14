@@ -23,6 +23,9 @@ title: ConversationRecipientAdditionalIdentifier
 | DEPLOYMENT | &quot;Deployment&quot; | 
 | SUBJECT | &quot;Subject&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
+| TOPIC | &quot;Topic&quot; | 
+| INGESTIONRULE | &quot;IngestionRule&quot; | 
+| INGESTIONRULEVERSION | &quot;IngestionRuleVersion&quot; | 
 {: class="table table-striped"}
 
 

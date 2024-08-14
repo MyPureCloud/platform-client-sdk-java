@@ -14,7 +14,6 @@ import com.mypurecloud.sdk.v2.model.Agent;
 import com.mypurecloud.sdk.v2.model.AgentOwnedMappingPreviewListing;
 import com.mypurecloud.sdk.v2.model.AttemptLimits;
 import com.mypurecloud.sdk.v2.model.AttemptLimitsEntityListing;
-import com.mypurecloud.sdk.v2.model.AuditSearchResult;
 import com.mypurecloud.sdk.v2.model.CallableTimeSet;
 import com.mypurecloud.sdk.v2.model.CallableTimeSetEntityListing;
 import com.mypurecloud.sdk.v2.model.Campaign;
@@ -24,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.CampaignDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.CampaignEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignInteractions;
 import com.mypurecloud.sdk.v2.model.CampaignOutboundLinesDistribution;
+import com.mypurecloud.sdk.v2.model.CampaignPatchRequest;
 import com.mypurecloud.sdk.v2.model.CampaignProgress;
 import com.mypurecloud.sdk.v2.model.CampaignRule;
 import com.mypurecloud.sdk.v2.model.CampaignRuleEntityListing;
@@ -49,8 +49,8 @@ import com.mypurecloud.sdk.v2.model.ContactListTemplateEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListingRequest;
 import com.mypurecloud.sdk.v2.model.ContactListingResponse;
 import com.mypurecloud.sdk.v2.model.ContactsBulkOperationJob;
+import com.mypurecloud.sdk.v2.model.ContactsBulkOperationJobListing;
 import com.mypurecloud.sdk.v2.model.ContactsExportRequest;
-import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
 import com.mypurecloud.sdk.v2.model.DialerContact;
 import com.mypurecloud.sdk.v2.model.DialerEventEntityListing;
 import com.mypurecloud.sdk.v2.model.DigitalRuleSet;
@@ -145,6 +145,8 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignsDivisionviewReques
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistContactRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistContactsBulkJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistContactsBulkJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistExportRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistImportstatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistTimezonemappingpreviewRequest;
@@ -190,12 +192,12 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundSequenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSequencesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundWrapupcodemappingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchOutboundCampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchOutboundDnclistCustomexclusioncolumnsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchOutboundDnclistEmailaddressesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchOutboundDnclistPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchOutboundSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundAttemptlimitsRequest;
-import com.mypurecloud.sdk.v2.api.request.PostOutboundAuditsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCallabletimesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCallanalysisresponsesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignAgentownedmappingpreviewRequest;
@@ -2023,7 +2025,7 @@ public class OutboundApi {
 
   /**
    * Reset messaging campaign progress and recycle the messaging campaign
-   * 
+   * Documented permissions are applicable based on campaign type.
    * @param messagingCampaignId The Messaging Campaign ID (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2034,7 +2036,7 @@ public class OutboundApi {
 
   /**
    * Reset messaging campaign progress and recycle the messaging campaign
-   * 
+   * Documented permissions are applicable based on campaign type.
    * @param messagingCampaignId The Messaging Campaign ID (required)
    * @throws IOException if the request fails to be processed
    */
@@ -2051,7 +2053,7 @@ public class OutboundApi {
 
   /**
    * Reset messaging campaign progress and recycle the messaging campaign
-   * 
+   * Documented permissions are applicable based on campaign type.
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2069,7 +2071,7 @@ public class OutboundApi {
 
   /**
    * Reset messaging campaign progress and recycle the messaging campaign
-   * 
+   * Documented permissions are applicable based on campaign type.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4510,6 +4512,166 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DialerContact> response = (ApiResponse<DialerContact>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get bulk operation job.
+   * 
+   * @param contactListId Contact List ID (required)
+   * @param jobId Job ID (required)
+   * @return ContactsBulkOperationJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactsBulkOperationJob getOutboundContactlistContactsBulkJob(String contactListId, String jobId) throws IOException, ApiException {
+    return  getOutboundContactlistContactsBulkJob(createGetOutboundContactlistContactsBulkJobRequest(contactListId, jobId));
+  }
+
+  /**
+   * Get bulk operation job.
+   * 
+   * @param contactListId Contact List ID (required)
+   * @param jobId Job ID (required)
+   * @return ContactsBulkOperationJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactsBulkOperationJob> getOutboundContactlistContactsBulkJobWithHttpInfo(String contactListId, String jobId) throws IOException {
+    return getOutboundContactlistContactsBulkJob(createGetOutboundContactlistContactsBulkJobRequest(contactListId, jobId).withHttpInfo());
+  }
+
+  private GetOutboundContactlistContactsBulkJobRequest createGetOutboundContactlistContactsBulkJobRequest(String contactListId, String jobId) {
+    return GetOutboundContactlistContactsBulkJobRequest.builder()
+            .withContactListId(contactListId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Get bulk operation job.
+   * 
+   * @param request The request object
+   * @return ContactsBulkOperationJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactsBulkOperationJob getOutboundContactlistContactsBulkJob(GetOutboundContactlistContactsBulkJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactsBulkOperationJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactsBulkOperationJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get bulk operation job.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactsBulkOperationJob> getOutboundContactlistContactsBulkJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactsBulkOperationJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactsBulkOperationJob> response = (ApiResponse<ContactsBulkOperationJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactsBulkOperationJob> response = (ApiResponse<ContactsBulkOperationJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get 10 most recent bulk operation jobs associated with contact list.
+   * 
+   * @param contactListId Contact List ID (required)
+   * @return ContactsBulkOperationJobListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactsBulkOperationJobListing getOutboundContactlistContactsBulkJobs(String contactListId) throws IOException, ApiException {
+    return  getOutboundContactlistContactsBulkJobs(createGetOutboundContactlistContactsBulkJobsRequest(contactListId));
+  }
+
+  /**
+   * Get 10 most recent bulk operation jobs associated with contact list.
+   * 
+   * @param contactListId Contact List ID (required)
+   * @return ContactsBulkOperationJobListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactsBulkOperationJobListing> getOutboundContactlistContactsBulkJobsWithHttpInfo(String contactListId) throws IOException {
+    return getOutboundContactlistContactsBulkJobs(createGetOutboundContactlistContactsBulkJobsRequest(contactListId).withHttpInfo());
+  }
+
+  private GetOutboundContactlistContactsBulkJobsRequest createGetOutboundContactlistContactsBulkJobsRequest(String contactListId) {
+    return GetOutboundContactlistContactsBulkJobsRequest.builder()
+            .withContactListId(contactListId)
+
+            .build();
+  }
+
+  /**
+   * Get 10 most recent bulk operation jobs associated with contact list.
+   * 
+   * @param request The request object
+   * @return ContactsBulkOperationJobListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactsBulkOperationJobListing getOutboundContactlistContactsBulkJobs(GetOutboundContactlistContactsBulkJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactsBulkOperationJobListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactsBulkOperationJobListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get 10 most recent bulk operation jobs associated with contact list.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactsBulkOperationJobListing> getOutboundContactlistContactsBulkJobs(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactsBulkOperationJobListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactsBulkOperationJobListing> response = (ApiResponse<ContactsBulkOperationJobListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactsBulkOperationJobListing> response = (ApiResponse<ContactsBulkOperationJobListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -8449,6 +8611,85 @@ public class OutboundApi {
   }
 
   /**
+   * Update a campaign.
+   * 
+   * @param campaignId Campaign ID (required)
+   * @param body CampaignPatchRequest (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchOutboundCampaign(String campaignId, CampaignPatchRequest body) throws IOException, ApiException {
+     patchOutboundCampaign(createPatchOutboundCampaignRequest(campaignId, body));
+  }
+
+  /**
+   * Update a campaign.
+   * 
+   * @param campaignId Campaign ID (required)
+   * @param body CampaignPatchRequest (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchOutboundCampaignWithHttpInfo(String campaignId, CampaignPatchRequest body) throws IOException {
+    return patchOutboundCampaign(createPatchOutboundCampaignRequest(campaignId, body).withHttpInfo());
+  }
+
+  private PatchOutboundCampaignRequest createPatchOutboundCampaignRequest(String campaignId, CampaignPatchRequest body) {
+    return PatchOutboundCampaignRequest.builder()
+            .withCampaignId(campaignId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a campaign.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchOutboundCampaign(PatchOutboundCampaignRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Update a campaign.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchOutboundCampaign(ApiRequest<CampaignPatchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Add entries to or delete entries from a DNC list.
    * Only Internal DNC lists may be deleted from
    * @param dncListId DncList ID (required)
@@ -8834,108 +9075,6 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AttemptLimits> response = (ApiResponse<AttemptLimits>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Retrieves audits for dialer. (Deprecated)
-   * This endpoint is deprecated as a result of this functionality being moved to the Audit Service. Please use \"/api/v2/audits/query\" instead.
-   * @param body AuditSearch (required)
-   * @param pageSize Page size (optional, default to 25)
-   * @param pageNumber Page number (optional, default to 1)
-   * @param sortBy Sort by (optional, default to entity.name)
-   * @param sortOrder Sort order (optional, default to ascending)
-   * @param facetsOnly Facets only (optional, default to false)
-   * @return AuditSearchResult
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public AuditSearchResult postOutboundAudits(DialerAuditRequest body, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, Boolean facetsOnly) throws IOException, ApiException {
-    return  postOutboundAudits(createPostOutboundAuditsRequest(body, pageSize, pageNumber, sortBy, sortOrder, facetsOnly));
-  }
-
-  /**
-   * Retrieves audits for dialer. (Deprecated)
-   * This endpoint is deprecated as a result of this functionality being moved to the Audit Service. Please use \"/api/v2/audits/query\" instead.
-   * @param body AuditSearch (required)
-   * @param pageSize Page size (optional, default to 25)
-   * @param pageNumber Page number (optional, default to 1)
-   * @param sortBy Sort by (optional, default to entity.name)
-   * @param sortOrder Sort order (optional, default to ascending)
-   * @param facetsOnly Facets only (optional, default to false)
-   * @return AuditSearchResult
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<AuditSearchResult> postOutboundAuditsWithHttpInfo(DialerAuditRequest body, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, Boolean facetsOnly) throws IOException {
-    return postOutboundAudits(createPostOutboundAuditsRequest(body, pageSize, pageNumber, sortBy, sortOrder, facetsOnly).withHttpInfo());
-  }
-
-  private PostOutboundAuditsRequest createPostOutboundAuditsRequest(DialerAuditRequest body, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, Boolean facetsOnly) {
-    return PostOutboundAuditsRequest.builder()
-            .withBody(body)
-
-            .withPageSize(pageSize)
-
-            .withPageNumber(pageNumber)
-
-            .withSortBy(sortBy)
-
-            .withSortOrder(sortOrder)
-
-            .withFacetsOnly(facetsOnly)
-
-            .build();
-  }
-
-  /**
-   * Retrieves audits for dialer. (Deprecated)
-   * This endpoint is deprecated as a result of this functionality being moved to the Audit Service. Please use \"/api/v2/audits/query\" instead.
-   * @param request The request object
-   * @return AuditSearchResult
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public AuditSearchResult postOutboundAudits(PostOutboundAuditsRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<AuditSearchResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AuditSearchResult>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Retrieves audits for dialer. (Deprecated)
-   * This endpoint is deprecated as a result of this functionality being moved to the Audit Service. Please use \"/api/v2/audits/query\" instead.
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<AuditSearchResult> postOutboundAudits(ApiRequest<DialerAuditRequest> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<AuditSearchResult>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<AuditSearchResult> response = (ApiResponse<AuditSearchResult>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<AuditSearchResult> response = (ApiResponse<AuditSearchResult>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

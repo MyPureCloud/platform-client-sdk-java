@@ -193,7 +193,8 @@ public class GetArchitectDependencytrackingConsumingresourcesRequest {
 		VOICESURVEYFLOW("VOICESURVEYFLOW"),
 		WIDGET("WIDGET"),
 		WORKFLOW("WORKFLOW"),
-		WORKITEMFLOW("WORKITEMFLOW");
+		WORKITEMFLOW("WORKITEMFLOW"),
+		WORKTYPE("WORKTYPE");
 
 		private String value;
 
@@ -304,7 +305,8 @@ public class GetArchitectDependencytrackingConsumingresourcesRequest {
 		VOICESURVEYFLOW("VOICESURVEYFLOW"),
 		WIDGET("WIDGET"),
 		WORKFLOW("WORKFLOW"),
-		WORKITEMFLOW("WORKITEMFLOW");
+		WORKITEMFLOW("WORKITEMFLOW"),
+		WORKTYPE("WORKTYPE");
 
 		private String value;
 

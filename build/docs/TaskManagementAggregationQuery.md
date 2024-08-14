@@ -59,6 +59,7 @@ title: TaskManagementAggregationQuery
 | NWORKITEMSDECLINED | &quot;nWorkitemsDeclined&quot; |
 | NWORKITEMSDELETED | &quot;nWorkitemsDeleted&quot; |
 | NWORKITEMSDISCONNECTED | &quot;nWorkitemsDisconnected&quot; |
+| NWORKITEMSOFFERED | &quot;nWorkitemsOffered&quot; |
 | NWORKITEMSOVERSLA | &quot;nWorkitemsOverSla&quot; |
 | NWORKITEMSPURGED | &quot;nWorkitemsPurged&quot; |
 | NWORKITEMSQUEUETRANSFERRED | &quot;nWorkitemsQueueTransferred&quot; |

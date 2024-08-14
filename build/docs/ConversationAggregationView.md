@@ -39,6 +39,8 @@ title: ConversationAggregationView
 | NTRANSFERRED | &quot;nTransferred&quot; | 
 | OEXTERNALMEDIACOUNT | &quot;oExternalMediaCount&quot; | 
 | OMEDIACOUNT | &quot;oMediaCount&quot; | 
+| OMESSAGECOUNT | &quot;oMessageCount&quot; | 
+| OMESSAGESEGMENTCOUNT | &quot;oMessageSegmentCount&quot; | 
 | OMESSAGETURN | &quot;oMessageTurn&quot; | 
 | OSERVICELEVEL | &quot;oServiceLevel&quot; | 
 | OSERVICETARGET | &quot;oServiceTarget&quot; | 

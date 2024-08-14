@@ -11,8 +11,11 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.QuestionGroupSettings;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -21,43 +24,39 @@ import java.io.Serializable;
 
 public class AiScoringSettings  implements Serializable {
   
-  private Boolean enabled = null;
-  private String prompt = null;
+  private String id = null;
+  private List<QuestionGroupSettings> questionGroupSettings = new ArrayList<QuestionGroupSettings>();
+  private String selfUri = null;
 
   
-  /**
-   * True if AI scoring feature is configured, false if not.
-   **/
-  public AiScoringSettings enabled(Boolean enabled) {
-    this.enabled = enabled;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "True if AI scoring feature is configured, false if not.")
-  @JsonProperty("enabled")
-  public Boolean getEnabled() {
-    return enabled;
-  }
-  public void setEnabled(Boolean enabled) {
-    this.enabled = enabled;
+  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
   }
 
 
   /**
-   * The prompt text that would be used by a LLM.
    **/
-  public AiScoringSettings prompt(String prompt) {
-    this.prompt = prompt;
+  public AiScoringSettings questionGroupSettings(List<QuestionGroupSettings> questionGroupSettings) {
+    this.questionGroupSettings = questionGroupSettings;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The prompt text that would be used by a LLM.")
-  @JsonProperty("prompt")
-  public String getPrompt() {
-    return prompt;
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("questionGroupSettings")
+  public List<QuestionGroupSettings> getQuestionGroupSettings() {
+    return questionGroupSettings;
   }
-  public void setPrompt(String prompt) {
-    this.prompt = prompt;
+  public void setQuestionGroupSettings(List<QuestionGroupSettings> questionGroupSettings) {
+    this.questionGroupSettings = questionGroupSettings;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The URI for this object")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
   }
 
 
@@ -71,13 +70,14 @@ public class AiScoringSettings  implements Serializable {
     }
     AiScoringSettings aiScoringSettings = (AiScoringSettings) o;
 
-    return Objects.equals(this.enabled, aiScoringSettings.enabled) &&
-            Objects.equals(this.prompt, aiScoringSettings.prompt);
+    return Objects.equals(this.id, aiScoringSettings.id) &&
+            Objects.equals(this.questionGroupSettings, aiScoringSettings.questionGroupSettings) &&
+            Objects.equals(this.selfUri, aiScoringSettings.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, prompt);
+    return Objects.hash(id, questionGroupSettings, selfUri);
   }
 
   @Override
@@ -85,8 +85,9 @@ public class AiScoringSettings  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class AiScoringSettings {\n");
     
-    sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
-    sb.append("    prompt: ").append(toIndentedString(prompt)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    questionGroupSettings: ").append(toIndentedString(questionGroupSettings)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

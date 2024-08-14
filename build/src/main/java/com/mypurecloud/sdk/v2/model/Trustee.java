@@ -27,6 +27,8 @@ public class Trustee  implements Serializable {
   private String id = null;
   private Boolean enabled = null;
   private Boolean usesDefaultRole = null;
+  private Boolean hasFullAccess = null;
+  private Boolean isTrustedUser = null;
   private Date dateCreated = null;
   private Date dateExpired = null;
   private OrgUser createdBy = null;
@@ -74,6 +76,42 @@ public class Trustee  implements Serializable {
   }
   public void setUsesDefaultRole(Boolean usesDefaultRole) {
     this.usesDefaultRole = usesDefaultRole;
+  }
+
+
+  /**
+   * Denotes if trustee uses full access role by default.
+   **/
+  public Trustee hasFullAccess(Boolean hasFullAccess) {
+    this.hasFullAccess = hasFullAccess;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Denotes if trustee uses full access role by default.")
+  @JsonProperty("hasFullAccess")
+  public Boolean getHasFullAccess() {
+    return hasFullAccess;
+  }
+  public void setHasFullAccess(Boolean hasFullAccess) {
+    this.hasFullAccess = hasFullAccess;
+  }
+
+
+  /**
+   * Denotes if trustee is given Trusted User access by default.
+   **/
+  public Trustee isTrustedUser(Boolean isTrustedUser) {
+    this.isTrustedUser = isTrustedUser;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Denotes if trustee is given Trusted User access by default.")
+  @JsonProperty("isTrustedUser")
+  public Boolean getIsTrustedUser() {
+    return isTrustedUser;
+  }
+  public void setIsTrustedUser(Boolean isTrustedUser) {
+    this.isTrustedUser = isTrustedUser;
   }
 
 
@@ -136,6 +174,8 @@ public class Trustee  implements Serializable {
     return Objects.equals(this.id, trustee.id) &&
             Objects.equals(this.enabled, trustee.enabled) &&
             Objects.equals(this.usesDefaultRole, trustee.usesDefaultRole) &&
+            Objects.equals(this.hasFullAccess, trustee.hasFullAccess) &&
+            Objects.equals(this.isTrustedUser, trustee.isTrustedUser) &&
             Objects.equals(this.dateCreated, trustee.dateCreated) &&
             Objects.equals(this.dateExpired, trustee.dateExpired) &&
             Objects.equals(this.createdBy, trustee.createdBy) &&
@@ -145,7 +185,7 @@ public class Trustee  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, enabled, usesDefaultRole, dateCreated, dateExpired, createdBy, organization, selfUri);
+    return Objects.hash(id, enabled, usesDefaultRole, hasFullAccess, isTrustedUser, dateCreated, dateExpired, createdBy, organization, selfUri);
   }
 
   @Override
@@ -156,6 +196,8 @@ public class Trustee  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    usesDefaultRole: ").append(toIndentedString(usesDefaultRole)).append("\n");
+    sb.append("    hasFullAccess: ").append(toIndentedString(hasFullAccess)).append("\n");
+    sb.append("    isTrustedUser: ").append(toIndentedString(isTrustedUser)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateExpired: ").append(toIndentedString(dateExpired)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");

@@ -116,6 +116,11 @@ public class PatchTaskmanagementWorktypeRequest {
             throw new IllegalStateException("Missing the required parameter 'worktypeId' when building request for PatchTaskmanagementWorktypeRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchTaskmanagementWorktypeRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PATCH", "/api/v2/taskmanagement/worktypes/{worktypeId}")
                 .withPathParameter("worktypeId", worktypeId)
@@ -134,9 +139,9 @@ public class PatchTaskmanagementWorktypeRequest {
 	}
 
 
-	public static Builder builder(String worktypeId) {
+	public static Builder builder(String worktypeId, WorktypeUpdate body) {
 	    return new Builder()
-	            .withRequiredParams(worktypeId);
+	            .withRequiredParams(worktypeId, body);
 	}
 
 
@@ -160,8 +165,9 @@ public class PatchTaskmanagementWorktypeRequest {
 
 
 
-		public Builder withRequiredParams(String worktypeId) {
+		public Builder withRequiredParams(String worktypeId, WorktypeUpdate body) {
 			request.setWorktypeId(worktypeId);
+			request.setBody(body);
 
 			return this;
 		}
@@ -172,6 +178,11 @@ public class PatchTaskmanagementWorktypeRequest {
             // verify the required parameter 'worktypeId' is set
             if (request.worktypeId == null) {
                 throw new IllegalStateException("Missing the required parameter 'worktypeId' when building request for PatchTaskmanagementWorktypeRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchTaskmanagementWorktypeRequest.");
             }
             
 			return request;

@@ -45,14 +45,14 @@ public class WorkbinCreate  implements Serializable {
 
 
   /**
-   * Workbin description. Maximum length of 4096 characters.
+   * Workbin description. Maximum length of 512 characters.
    **/
   public WorkbinCreate description(String description) {
     this.description = description;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Workbin description. Maximum length of 4096 characters.")
+  @ApiModelProperty(example = "null", value = "Workbin description. Maximum length of 512 characters.")
   @JsonProperty("description")
   public String getDescription() {
     return description;

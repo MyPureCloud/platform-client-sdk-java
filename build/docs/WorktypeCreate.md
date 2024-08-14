@@ -8,7 +8,7 @@ title: WorktypeCreate
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | <!----><!---->**String**<!----> | The name of the Worktype. Length between 3 and 256 characters. |  |
+| **name** | <!----><!---->**String**<!----> | The name of the Worktype. Valid length between 3 and 256 characters. |  |
 | **defaultWorkbinId** | <!----><!---->**String**<!----> | The ID of the default Workbin for Workitems created from the Worktype. |  |
 | **defaultDurationSeconds** | <!----><!---->**Integer**<!----> | The default duration in seconds for Workitems created from the Worktype. Maximum of 365 days. |  [optional] |
 | **defaultExpirationSeconds** | <!----><!---->**Integer**<!----> | The default expiration time in seconds for Workitems created from the Worktype. Maximum of 365 days. |  [optional] |
@@ -18,7 +18,7 @@ title: WorktypeCreate
 | **assignmentEnabled** | <!----><!---->**Boolean**<!----> | When set to true, Workitems will be sent to the queue of the Worktype as they are created. Default value is false. |  [optional] |
 | **schemaId** | <!----><!---->**String**<!----> | The ID of the custom attribute schema for Workitems created from the Worktype. Must be a valid UUID. |  [optional] |
 | **serviceLevelTarget** | <!----><!---->**Integer**<!----> | The target service level for Workitems created from the Worktype. The default value is 100. |  [optional] |
-| **description** | <!----><!---->**String**<!----> | The description of the Worktype. Maximum length of 4096 characters. |  [optional] |
+| **description** | <!----><!---->**String**<!----> | The description of the Worktype. Maximum length of 512 characters. |  [optional] |
 | **divisionId** | <!----><!---->**String**<!----> | The ID of the division the Worktype belongs to. Defaults to the default Workbin division ID. The Worktype must be in the same division as its default Workbin. |  [optional] |
 | **disableDefaultStatusCreation** | <!----><!---->**Boolean**<!----> | Set to true to disable default status creation. Default statuses are created with the Worktype by default |  [optional] |
 | **schemaVersion** | <!----><!---->**Integer**<!----> | The version of the Worktypes custom attribute schema. The latest schema version will be used if this property is not set. |  [optional] |

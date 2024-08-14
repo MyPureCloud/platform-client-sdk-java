@@ -105,6 +105,7 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     INSUFFICIENTBALANCE("InsufficientBalance"),
     INVALIDDAILYDURATION("InvalidDailyDuration"),
     OUTSIDESHIFT("OutsideShift"),
+    OVERLAPSRESTRICTEDACTIVITYCODE("OverlapsRestrictedActivityCode"),
     REMOVEDFROMWAITLIST("RemovedFromWaitlist"),
     WAITLISTED("Waitlisted");
 

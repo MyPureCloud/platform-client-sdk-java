@@ -29,11 +29,12 @@ public class PhoneEntityListing  implements Serializable, PagedResource<Phone> {
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String previousUri = null;
-  private String lastUri = null;
+  private Long totalNumberOfEntities = null;
   private String firstUri = null;
   private String selfUri = null;
+  private String lastUri = null;
   private String nextUri = null;
+  private String previousUri = null;
   private Integer pageCount = null;
 
   
@@ -106,36 +107,20 @@ public class PhoneEntityListing  implements Serializable, PagedResource<Phone> {
 
 
   /**
+   * The total organization-wide number of entities.
    **/
-  public PhoneEntityListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
+  public PhoneEntityListing totalNumberOfEntities(Long totalNumberOfEntities) {
+    this.totalNumberOfEntities = totalNumberOfEntities;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
+  @ApiModelProperty(example = "null", value = "The total organization-wide number of entities.")
+  @JsonProperty("totalNumberOfEntities")
+  public Long getTotalNumberOfEntities() {
+    return totalNumberOfEntities;
   }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
-  }
-
-
-  /**
-   **/
-  public PhoneEntityListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
+  public void setTotalNumberOfEntities(Long totalNumberOfEntities) {
+    this.totalNumberOfEntities = totalNumberOfEntities;
   }
 
 
@@ -175,6 +160,23 @@ public class PhoneEntityListing  implements Serializable, PagedResource<Phone> {
 
   /**
    **/
+  public PhoneEntityListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
   public PhoneEntityListing nextUri(String nextUri) {
     this.nextUri = nextUri;
     return this;
@@ -187,6 +189,23 @@ public class PhoneEntityListing  implements Serializable, PagedResource<Phone> {
   }
   public void setNextUri(String nextUri) {
     this.nextUri = nextUri;
+  }
+
+
+  /**
+   **/
+  public PhoneEntityListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
+  }
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
   }
 
 
@@ -221,17 +240,18 @@ public class PhoneEntityListing  implements Serializable, PagedResource<Phone> {
             Objects.equals(this.pageSize, phoneEntityListing.pageSize) &&
             Objects.equals(this.pageNumber, phoneEntityListing.pageNumber) &&
             Objects.equals(this.total, phoneEntityListing.total) &&
-            Objects.equals(this.previousUri, phoneEntityListing.previousUri) &&
-            Objects.equals(this.lastUri, phoneEntityListing.lastUri) &&
+            Objects.equals(this.totalNumberOfEntities, phoneEntityListing.totalNumberOfEntities) &&
             Objects.equals(this.firstUri, phoneEntityListing.firstUri) &&
             Objects.equals(this.selfUri, phoneEntityListing.selfUri) &&
+            Objects.equals(this.lastUri, phoneEntityListing.lastUri) &&
             Objects.equals(this.nextUri, phoneEntityListing.nextUri) &&
+            Objects.equals(this.previousUri, phoneEntityListing.previousUri) &&
             Objects.equals(this.pageCount, phoneEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, previousUri, lastUri, firstUri, selfUri, nextUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, totalNumberOfEntities, firstUri, selfUri, lastUri, nextUri, previousUri, pageCount);
   }
 
   @Override
@@ -243,11 +263,12 @@ public class PhoneEntityListing  implements Serializable, PagedResource<Phone> {
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    totalNumberOfEntities: ").append(toIndentedString(totalNumberOfEntities)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -25,14 +25,14 @@ public class ChatSettings  implements Serializable {
 
   
   /**
-   * Retention time for messages in days
+   * Retention time for messages in days, expressed as int in the range [10,3650]
    **/
   public ChatSettings messageRetentionPeriodDays(Integer messageRetentionPeriodDays) {
     this.messageRetentionPeriodDays = messageRetentionPeriodDays;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Retention time for messages in days")
+  @ApiModelProperty(example = "null", value = "Retention time for messages in days, expressed as int in the range [10,3650]")
   @JsonProperty("messageRetentionPeriodDays")
   public Integer getMessageRetentionPeriodDays() {
     return messageRetentionPeriodDays;

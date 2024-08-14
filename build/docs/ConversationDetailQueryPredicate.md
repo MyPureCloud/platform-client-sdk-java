@@ -78,6 +78,8 @@ title: ConversationDetailQueryPredicate
 | OEXTERNALMEDIACOUNT | &quot;oExternalMediaCount&quot; | 
 | OFLOWMILESTONE | &quot;oFlowMilestone&quot; | 
 | OMEDIACOUNT | &quot;oMediaCount&quot; | 
+| OMESSAGECOUNT | &quot;oMessageCount&quot; | 
+| OMESSAGESEGMENTCOUNT | &quot;oMessageSegmentCount&quot; | 
 | OMESSAGETURN | &quot;oMessageTurn&quot; | 
 | TABANDON | &quot;tAbandon&quot; | 
 | TACD | &quot;tAcd&quot; | 

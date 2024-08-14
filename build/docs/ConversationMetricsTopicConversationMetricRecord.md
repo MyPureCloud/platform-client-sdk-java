@@ -86,6 +86,7 @@ title: ConversationMetricsTopicConversationMetricRecord
 | **teamId** | <!----><!---->**String**<!----> | The team ID the user is a member of |  [optional] |
 | **usedRouting** | [**UsedRoutingEnum**](#UsedRoutingEnum)<!----> | Complete routing method |  [optional] |
 | **userId** | <!----><!---->**String**<!----> | Unique identifier for the user |  [optional] |
+| **videoPresent** | <!----><!---->**Boolean**<!----> | Flag indicating if video is present |  [optional] |
 | **waitingInteractionCounts** | <!----><!---->**List&lt;Integer&gt;**<!----> | Number of waiting interactions for each predictive routing attempt |  [optional] |
 | **wrapUpCode** | <!----><!---->**String**<!----> | Wrap up code |  [optional] |
 | **proposedAgents** | <!----><!---->[**List&lt;ConversationMetricsTopicConversationProposedAgent&gt;**](ConversationMetricsTopicConversationProposedAgent.html)<!----> | Proposed agents |  [optional] |
@@ -116,6 +117,8 @@ title: ConversationMetricsTopicConversationMetricRecord
 | NTRANSFERRED | &quot;nTransferred&quot; | 
 | OEXTERNALMEDIACOUNT | &quot;oExternalMediaCount&quot; | 
 | OMEDIACOUNT | &quot;oMediaCount&quot; | 
+| OMESSAGECOUNT | &quot;oMessageCount&quot; | 
+| OMESSAGESEGMENTCOUNT | &quot;oMessageSegmentCount&quot; | 
 | OMESSAGETURN | &quot;oMessageTurn&quot; | 
 | TABANDON | &quot;tAbandon&quot; | 
 | TACD | &quot;tAcd&quot; | 
@@ -208,6 +211,7 @@ title: ConversationMetricsTopicConversationMetricRecord
 | DELIVERYFAILED | &quot;DeliveryFailed&quot; | 
 | DELIVERYSUCCESS | &quot;DeliverySuccess&quot; | 
 | FAILED | &quot;Failed&quot; | 
+| PUBLISHED | &quot;Published&quot; | 
 | QUEUED | &quot;Queued&quot; | 
 | READ | &quot;Read&quot; | 
 | RECEIVED | &quot;Received&quot; | 

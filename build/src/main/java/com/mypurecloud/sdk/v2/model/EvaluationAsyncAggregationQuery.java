@@ -57,6 +57,7 @@ public class EvaluationAsyncAggregationQuery  implements Serializable {
     EVALUATIONID("evaluationId"),
     EVALUATORID("evaluatorId"),
     FORMID("formId"),
+    MEDIATYPE("mediaType"),
     QUEUEID("queueId"),
     RELEASED("released"),
     RESCORED("rescored"),

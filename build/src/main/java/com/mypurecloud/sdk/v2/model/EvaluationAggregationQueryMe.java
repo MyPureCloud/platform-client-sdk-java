@@ -54,6 +54,7 @@ public class EvaluationAggregationQueryMe  implements Serializable {
     EVALUATIONID("evaluationId"),
     EVALUATORID("evaluatorId"),
     FORMID("formId"),
+    MEDIATYPE("mediaType"),
     QUEUEID("queueId"),
     RELEASED("released"),
     RESCORED("rescored"),

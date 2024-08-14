@@ -48,6 +48,7 @@ title: VoicemailSearchCriteria
 | TERMS | &quot;TERMS&quot; | 
 | REQUIRED_FIELDS | &quot;REQUIRED_FIELDS&quot; | 
 | MATCH_ALL | &quot;MATCH_ALL&quot; | 
+| DATE_RANGE | &quot;DATE_RANGE&quot; | 
 {: class="table table-striped"}
 
 

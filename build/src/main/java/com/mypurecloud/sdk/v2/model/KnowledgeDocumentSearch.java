@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.KnowledgeAnswerGenerationResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeConversationContextResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentSearchResult;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchClientApplication;
@@ -86,6 +87,7 @@ public class KnowledgeDocumentSearch  implements Serializable {
   private KnowledgeSearchClientApplication application = null;
   private KnowledgeConversationContextResponse conversationContext = null;
   private Float confidenceThreshold = null;
+  private KnowledgeAnswerGenerationResponse answerGeneration = null;
 
   
   /**
@@ -242,6 +244,24 @@ public class KnowledgeDocumentSearch  implements Serializable {
   }
 
 
+  /**
+   * The results with AI-generated answer if the answerMode request property contains \"AnswerGeneration\".
+   **/
+  public KnowledgeDocumentSearch answerGeneration(KnowledgeAnswerGenerationResponse answerGeneration) {
+    this.answerGeneration = answerGeneration;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The results with AI-generated answer if the answerMode request property contains \"AnswerGeneration\".")
+  @JsonProperty("answerGeneration")
+  public KnowledgeAnswerGenerationResponse getAnswerGeneration() {
+    return answerGeneration;
+  }
+  public void setAnswerGeneration(KnowledgeAnswerGenerationResponse answerGeneration) {
+    this.answerGeneration = answerGeneration;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -262,12 +282,13 @@ public class KnowledgeDocumentSearch  implements Serializable {
             Objects.equals(this.results, knowledgeDocumentSearch.results) &&
             Objects.equals(this.application, knowledgeDocumentSearch.application) &&
             Objects.equals(this.conversationContext, knowledgeDocumentSearch.conversationContext) &&
-            Objects.equals(this.confidenceThreshold, knowledgeDocumentSearch.confidenceThreshold);
+            Objects.equals(this.confidenceThreshold, knowledgeDocumentSearch.confidenceThreshold) &&
+            Objects.equals(this.answerGeneration, knowledgeDocumentSearch.answerGeneration);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(query, pageSize, pageNumber, searchId, total, pageCount, queryType, results, application, conversationContext, confidenceThreshold);
+    return Objects.hash(query, pageSize, pageNumber, searchId, total, pageCount, queryType, results, application, conversationContext, confidenceThreshold, answerGeneration);
   }
 
   @Override
@@ -286,6 +307,7 @@ public class KnowledgeDocumentSearch  implements Serializable {
     sb.append("    application: ").append(toIndentedString(application)).append("\n");
     sb.append("    conversationContext: ").append(toIndentedString(conversationContext)).append("\n");
     sb.append("    confidenceThreshold: ").append(toIndentedString(confidenceThreshold)).append("\n");
+    sb.append("    answerGeneration: ").append(toIndentedString(answerGeneration)).append("\n");
     sb.append("}");
     return sb.toString();
   }

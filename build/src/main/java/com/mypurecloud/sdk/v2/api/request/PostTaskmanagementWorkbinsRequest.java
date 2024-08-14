@@ -97,6 +97,11 @@ public class PostTaskmanagementWorkbinsRequest {
 
     public ApiRequest<WorkbinCreate> withHttpInfo() {
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostTaskmanagementWorkbinsRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/taskmanagement/workbins")
                 .withBody(body)
@@ -112,6 +117,11 @@ public class PostTaskmanagementWorkbinsRequest {
 		return new Builder();
 	}
 
+
+	public static Builder builder(WorkbinCreate body) {
+	    return new Builder()
+	            .withRequiredParams(body);
+	}
 
 
 	public static class Builder {
@@ -129,8 +139,19 @@ public class PostTaskmanagementWorkbinsRequest {
 
 
 
+		public Builder withRequiredParams(WorkbinCreate body) {
+			request.setBody(body);
+
+			return this;
+		}
+
 
 		public PostTaskmanagementWorkbinsRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostTaskmanagementWorkbinsRequest.");
+            }
             
 			return request;
 		}

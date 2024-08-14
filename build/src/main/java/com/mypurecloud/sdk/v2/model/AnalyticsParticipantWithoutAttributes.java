@@ -141,6 +141,7 @@ public class AnalyticsParticipantWithoutAttributes  implements Serializable {
     }
   }
   private PurposeEnum purpose = null;
+  private Boolean screenRecording = null;
   private String teamId = null;
   private String userId = null;
   private List<AnalyticsSession> sessions = new ArrayList<AnalyticsSession>();
@@ -255,6 +256,24 @@ public class AnalyticsParticipantWithoutAttributes  implements Serializable {
 
 
   /**
+   * Flag determining if a screen recording was started or not
+   **/
+  public AnalyticsParticipantWithoutAttributes screenRecording(Boolean screenRecording) {
+    this.screenRecording = screenRecording;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Flag determining if a screen recording was started or not")
+  @JsonProperty("screenRecording")
+  public Boolean getScreenRecording() {
+    return screenRecording;
+  }
+  public void setScreenRecording(Boolean screenRecording) {
+    this.screenRecording = screenRecording;
+  }
+
+
+  /**
    * The team ID the user is a member of
    **/
   public AnalyticsParticipantWithoutAttributes teamId(String teamId) {
@@ -324,6 +343,7 @@ public class AnalyticsParticipantWithoutAttributes  implements Serializable {
             Objects.equals(this.participantId, analyticsParticipantWithoutAttributes.participantId) &&
             Objects.equals(this.participantName, analyticsParticipantWithoutAttributes.participantName) &&
             Objects.equals(this.purpose, analyticsParticipantWithoutAttributes.purpose) &&
+            Objects.equals(this.screenRecording, analyticsParticipantWithoutAttributes.screenRecording) &&
             Objects.equals(this.teamId, analyticsParticipantWithoutAttributes.teamId) &&
             Objects.equals(this.userId, analyticsParticipantWithoutAttributes.userId) &&
             Objects.equals(this.sessions, analyticsParticipantWithoutAttributes.sessions);
@@ -331,7 +351,7 @@ public class AnalyticsParticipantWithoutAttributes  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(externalContactId, externalOrganizationId, flaggedReason, participantId, participantName, purpose, teamId, userId, sessions);
+    return Objects.hash(externalContactId, externalOrganizationId, flaggedReason, participantId, participantName, purpose, screenRecording, teamId, userId, sessions);
   }
 
   @Override
@@ -345,6 +365,7 @@ public class AnalyticsParticipantWithoutAttributes  implements Serializable {
     sb.append("    participantId: ").append(toIndentedString(participantId)).append("\n");
     sb.append("    participantName: ").append(toIndentedString(participantName)).append("\n");
     sb.append("    purpose: ").append(toIndentedString(purpose)).append("\n");
+    sb.append("    screenRecording: ").append(toIndentedString(screenRecording)).append("\n");
     sb.append("    teamId: ").append(toIndentedString(teamId)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    sessions: ").append(toIndentedString(sessions)).append("\n");

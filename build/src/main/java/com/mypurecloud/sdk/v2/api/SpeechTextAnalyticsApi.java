@@ -10,7 +10,11 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.CategoriesEntityListing;
+import com.mypurecloud.sdk.v2.model.CategoryRequest;
+import com.mypurecloud.sdk.v2.model.ConversationCategoriesEntityListing;
 import com.mypurecloud.sdk.v2.model.ConversationMetrics;
+import com.mypurecloud.sdk.v2.model.DeleteProgramResponse;
 import com.mypurecloud.sdk.v2.model.DictionaryFeedback;
 import com.mypurecloud.sdk.v2.model.DictionaryFeedbackEntityListing;
 import com.mypurecloud.sdk.v2.model.EntityListing;
@@ -32,6 +36,7 @@ import com.mypurecloud.sdk.v2.model.SentimentFeedback;
 import com.mypurecloud.sdk.v2.model.SentimentFeedbackEntityListing;
 import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsRequest;
 import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsResponse;
+import com.mypurecloud.sdk.v2.model.StaCategory;
 import com.mypurecloud.sdk.v2.model.SupportedDialectsEntityListing;
 import com.mypurecloud.sdk.v2.model.Topic;
 import com.mypurecloud.sdk.v2.model.TopicJob;
@@ -46,12 +51,16 @@ import com.mypurecloud.sdk.v2.model.UnifiedGeneralTopicEntityListing;
 import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsCategoryRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsProgramRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsSentimentfeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsTopicRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsCategoriesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsCategoryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCategoriesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscripturlRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscripturlsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsDictionaryfeedbackRequest;
@@ -75,6 +84,7 @@ import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsGeneral
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsGeneralStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsPublishjobRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSpeechandtextanalyticsSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsCategoriesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsDictionaryfeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsProgramsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsProgramsGeneralJobsRequest;
@@ -83,6 +93,7 @@ import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsSentimentfee
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsPublishjobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTranscriptsSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsCategoryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsProgramRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsProgramMappingsRequest;
@@ -105,6 +116,81 @@ public class SpeechTextAnalyticsApi {
 
   public SpeechTextAnalyticsApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  /**
+   * Delete a Speech & Text Analytics category by ID
+   * 
+   * @param categoryId The id of the category (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteSpeechandtextanalyticsCategory(String categoryId) throws IOException, ApiException {
+     deleteSpeechandtextanalyticsCategory(createDeleteSpeechandtextanalyticsCategoryRequest(categoryId));
+  }
+
+  /**
+   * Delete a Speech & Text Analytics category by ID
+   * 
+   * @param categoryId The id of the category (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteSpeechandtextanalyticsCategoryWithHttpInfo(String categoryId) throws IOException {
+    return deleteSpeechandtextanalyticsCategory(createDeleteSpeechandtextanalyticsCategoryRequest(categoryId).withHttpInfo());
+  }
+
+  private DeleteSpeechandtextanalyticsCategoryRequest createDeleteSpeechandtextanalyticsCategoryRequest(String categoryId) {
+    return DeleteSpeechandtextanalyticsCategoryRequest.builder()
+            .withCategoryId(categoryId)
+
+            .build();
+  }
+
+  /**
+   * Delete a Speech & Text Analytics category by ID
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteSpeechandtextanalyticsCategory(DeleteSpeechandtextanalyticsCategoryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a Speech & Text Analytics category by ID
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteSpeechandtextanalyticsCategory(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   /**
@@ -187,11 +273,12 @@ public class SpeechTextAnalyticsApi {
    * 
    * @param programId The id of the program (required)
    * @param forceDelete Indicates whether the program is forced to be deleted or not. Required when the program to delete is the default program. (optional, default to false)
+   * @return DeleteProgramResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void deleteSpeechandtextanalyticsProgram(String programId, Boolean forceDelete) throws IOException, ApiException {
-     deleteSpeechandtextanalyticsProgram(createDeleteSpeechandtextanalyticsProgramRequest(programId, forceDelete));
+  public DeleteProgramResponse deleteSpeechandtextanalyticsProgram(String programId, Boolean forceDelete) throws IOException, ApiException {
+    return  deleteSpeechandtextanalyticsProgram(createDeleteSpeechandtextanalyticsProgramRequest(programId, forceDelete));
   }
 
   /**
@@ -199,9 +286,10 @@ public class SpeechTextAnalyticsApi {
    * 
    * @param programId The id of the program (required)
    * @param forceDelete Indicates whether the program is forced to be deleted or not. Required when the program to delete is the default program. (optional, default to false)
+   * @return DeleteProgramResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteSpeechandtextanalyticsProgramWithHttpInfo(String programId, Boolean forceDelete) throws IOException {
+  public ApiResponse<DeleteProgramResponse> deleteSpeechandtextanalyticsProgramWithHttpInfo(String programId, Boolean forceDelete) throws IOException {
     return deleteSpeechandtextanalyticsProgram(createDeleteSpeechandtextanalyticsProgramRequest(programId, forceDelete).withHttpInfo());
   }
 
@@ -218,17 +306,18 @@ public class SpeechTextAnalyticsApi {
    * Delete a Speech & Text Analytics program by id
    * 
    * @param request The request object
+   * @return DeleteProgramResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void deleteSpeechandtextanalyticsProgram(DeleteSpeechandtextanalyticsProgramRequest request) throws IOException, ApiException {
+  public DeleteProgramResponse deleteSpeechandtextanalyticsProgram(DeleteSpeechandtextanalyticsProgramRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
+      ApiResponse<DeleteProgramResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DeleteProgramResponse>() {});
+      return response.getBody();
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
+      return null;
     }
   }
 
@@ -239,13 +328,13 @@ public class SpeechTextAnalyticsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteSpeechandtextanalyticsProgram(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<DeleteProgramResponse> deleteSpeechandtextanalyticsProgram(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, null);
+      return pcapiClient.invoke(request, new TypeReference<DeleteProgramResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      ApiResponse<DeleteProgramResponse> response = (ApiResponse<DeleteProgramResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -256,7 +345,7 @@ public class SpeechTextAnalyticsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<DeleteProgramResponse> response = (ApiResponse<DeleteProgramResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -483,6 +572,182 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
+   * Get the list of Speech and Text Analytics categories
+   * 
+   * @param pageSize The page size for the listing. The max that will be returned is 50. (optional, default to 25)
+   * @param pageNumber The page number for the listing (optional, default to 1)
+   * @param name The category name filter applied to the listing (optional)
+   * @param sortOrder The sort order for the listing (optional, default to asc)
+   * @param sortBy The field to sort by for the listing (optional, default to name)
+   * @param ids Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. (optional)
+   * @return CategoriesEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CategoriesEntityListing getSpeechandtextanalyticsCategories(Integer pageSize, Integer pageNumber, String name, String sortOrder, String sortBy, List<String> ids) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsCategories(createGetSpeechandtextanalyticsCategoriesRequest(pageSize, pageNumber, name, sortOrder, sortBy, ids));
+  }
+
+  /**
+   * Get the list of Speech and Text Analytics categories
+   * 
+   * @param pageSize The page size for the listing. The max that will be returned is 50. (optional, default to 25)
+   * @param pageNumber The page number for the listing (optional, default to 1)
+   * @param name The category name filter applied to the listing (optional)
+   * @param sortOrder The sort order for the listing (optional, default to asc)
+   * @param sortBy The field to sort by for the listing (optional, default to name)
+   * @param ids Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. (optional)
+   * @return CategoriesEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CategoriesEntityListing> getSpeechandtextanalyticsCategoriesWithHttpInfo(Integer pageSize, Integer pageNumber, String name, String sortOrder, String sortBy, List<String> ids) throws IOException {
+    return getSpeechandtextanalyticsCategories(createGetSpeechandtextanalyticsCategoriesRequest(pageSize, pageNumber, name, sortOrder, sortBy, ids).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsCategoriesRequest createGetSpeechandtextanalyticsCategoriesRequest(Integer pageSize, Integer pageNumber, String name, String sortOrder, String sortBy, List<String> ids) {
+    return GetSpeechandtextanalyticsCategoriesRequest.builder()
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .withName(name)
+
+            .withSortOrder(sortOrder)
+
+            .withSortBy(sortBy)
+
+            .withIds(ids)
+
+            .build();
+  }
+
+  /**
+   * Get the list of Speech and Text Analytics categories
+   * 
+   * @param request The request object
+   * @return CategoriesEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CategoriesEntityListing getSpeechandtextanalyticsCategories(GetSpeechandtextanalyticsCategoriesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CategoriesEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CategoriesEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the list of Speech and Text Analytics categories
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CategoriesEntityListing> getSpeechandtextanalyticsCategories(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CategoriesEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CategoriesEntityListing> response = (ApiResponse<CategoriesEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CategoriesEntityListing> response = (ApiResponse<CategoriesEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a Speech & Text Analytics Category by ID
+   * 
+   * @param categoryId The id of the category (required)
+   * @return StaCategory
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public StaCategory getSpeechandtextanalyticsCategory(String categoryId) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsCategory(createGetSpeechandtextanalyticsCategoryRequest(categoryId));
+  }
+
+  /**
+   * Get a Speech & Text Analytics Category by ID
+   * 
+   * @param categoryId The id of the category (required)
+   * @return StaCategory
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<StaCategory> getSpeechandtextanalyticsCategoryWithHttpInfo(String categoryId) throws IOException {
+    return getSpeechandtextanalyticsCategory(createGetSpeechandtextanalyticsCategoryRequest(categoryId).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsCategoryRequest createGetSpeechandtextanalyticsCategoryRequest(String categoryId) {
+    return GetSpeechandtextanalyticsCategoryRequest.builder()
+            .withCategoryId(categoryId)
+
+            .build();
+  }
+
+  /**
+   * Get a Speech & Text Analytics Category by ID
+   * 
+   * @param request The request object
+   * @return StaCategory
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public StaCategory getSpeechandtextanalyticsCategory(GetSpeechandtextanalyticsCategoryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<StaCategory> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<StaCategory>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Speech & Text Analytics Category by ID
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<StaCategory> getSpeechandtextanalyticsCategory(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<StaCategory>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<StaCategory> response = (ApiResponse<StaCategory>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<StaCategory> response = (ApiResponse<StaCategory>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get Speech and Text Analytics for a specific conversation
    * 
    * @param conversationId Conversation Id (required)
@@ -556,6 +821,92 @@ public class SpeechTextAnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ConversationMetrics> response = (ApiResponse<ConversationMetrics>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the list of detected Speech and Text Analytics categories of conversation
+   * 
+   * @param conversationId The id of the conversation (required)
+   * @param pageSize The page size for the listing. The max that will be returned is 50. (optional, default to 25)
+   * @param pageNumber The page number for the listing (optional, default to 1)
+   * @return ConversationCategoriesEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationCategoriesEntityListing getSpeechandtextanalyticsConversationCategories(String conversationId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsConversationCategories(createGetSpeechandtextanalyticsConversationCategoriesRequest(conversationId, pageSize, pageNumber));
+  }
+
+  /**
+   * Get the list of detected Speech and Text Analytics categories of conversation
+   * 
+   * @param conversationId The id of the conversation (required)
+   * @param pageSize The page size for the listing. The max that will be returned is 50. (optional, default to 25)
+   * @param pageNumber The page number for the listing (optional, default to 1)
+   * @return ConversationCategoriesEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationCategoriesEntityListing> getSpeechandtextanalyticsConversationCategoriesWithHttpInfo(String conversationId, Integer pageSize, Integer pageNumber) throws IOException {
+    return getSpeechandtextanalyticsConversationCategories(createGetSpeechandtextanalyticsConversationCategoriesRequest(conversationId, pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsConversationCategoriesRequest createGetSpeechandtextanalyticsConversationCategoriesRequest(String conversationId, Integer pageSize, Integer pageNumber) {
+    return GetSpeechandtextanalyticsConversationCategoriesRequest.builder()
+            .withConversationId(conversationId)
+
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .build();
+  }
+
+  /**
+   * Get the list of detected Speech and Text Analytics categories of conversation
+   * 
+   * @param request The request object
+   * @return ConversationCategoriesEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationCategoriesEntityListing getSpeechandtextanalyticsConversationCategories(GetSpeechandtextanalyticsConversationCategoriesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConversationCategoriesEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConversationCategoriesEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the list of detected Speech and Text Analytics categories of conversation
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationCategoriesEntityListing> getSpeechandtextanalyticsConversationCategories(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConversationCategoriesEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationCategoriesEntityListing> response = (ApiResponse<ConversationCategoriesEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationCategoriesEntityListing> response = (ApiResponse<ConversationCategoriesEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2399,6 +2750,84 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
+   * Create new Speech & Text Analytics category
+   * 
+   * @param body The category to create (required)
+   * @return StaCategory
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public StaCategory postSpeechandtextanalyticsCategories(CategoryRequest body) throws IOException, ApiException {
+    return  postSpeechandtextanalyticsCategories(createPostSpeechandtextanalyticsCategoriesRequest(body));
+  }
+
+  /**
+   * Create new Speech & Text Analytics category
+   * 
+   * @param body The category to create (required)
+   * @return StaCategory
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<StaCategory> postSpeechandtextanalyticsCategoriesWithHttpInfo(CategoryRequest body) throws IOException {
+    return postSpeechandtextanalyticsCategories(createPostSpeechandtextanalyticsCategoriesRequest(body).withHttpInfo());
+  }
+
+  private PostSpeechandtextanalyticsCategoriesRequest createPostSpeechandtextanalyticsCategoriesRequest(CategoryRequest body) {
+    return PostSpeechandtextanalyticsCategoriesRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create new Speech & Text Analytics category
+   * 
+   * @param request The request object
+   * @return StaCategory
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public StaCategory postSpeechandtextanalyticsCategories(PostSpeechandtextanalyticsCategoriesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<StaCategory> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<StaCategory>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create new Speech & Text Analytics category
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<StaCategory> postSpeechandtextanalyticsCategories(ApiRequest<CategoryRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<StaCategory>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<StaCategory> response = (ApiResponse<StaCategory>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<StaCategory> response = (ApiResponse<StaCategory>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create a Speech & Text Analytics DictionaryFeedback
    * 
    * @param body The DictionaryFeedback to create (required)
@@ -3018,6 +3447,88 @@ public class SpeechTextAnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<JsonSearchResponse> response = (ApiResponse<JsonSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a Speech & Text Analytics category by ID
+   * 
+   * @param categoryId The id of the category (required)
+   * @param body The updated category (required)
+   * @return StaCategory
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public StaCategory putSpeechandtextanalyticsCategory(String categoryId, CategoryRequest body) throws IOException, ApiException {
+    return  putSpeechandtextanalyticsCategory(createPutSpeechandtextanalyticsCategoryRequest(categoryId, body));
+  }
+
+  /**
+   * Update a Speech & Text Analytics category by ID
+   * 
+   * @param categoryId The id of the category (required)
+   * @param body The updated category (required)
+   * @return StaCategory
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<StaCategory> putSpeechandtextanalyticsCategoryWithHttpInfo(String categoryId, CategoryRequest body) throws IOException {
+    return putSpeechandtextanalyticsCategory(createPutSpeechandtextanalyticsCategoryRequest(categoryId, body).withHttpInfo());
+  }
+
+  private PutSpeechandtextanalyticsCategoryRequest createPutSpeechandtextanalyticsCategoryRequest(String categoryId, CategoryRequest body) {
+    return PutSpeechandtextanalyticsCategoryRequest.builder()
+            .withCategoryId(categoryId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a Speech & Text Analytics category by ID
+   * 
+   * @param request The request object
+   * @return StaCategory
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public StaCategory putSpeechandtextanalyticsCategory(PutSpeechandtextanalyticsCategoryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<StaCategory> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<StaCategory>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a Speech & Text Analytics category by ID
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<StaCategory> putSpeechandtextanalyticsCategory(ApiRequest<CategoryRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<StaCategory>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<StaCategory> response = (ApiResponse<StaCategory>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<StaCategory> response = (ApiResponse<StaCategory>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

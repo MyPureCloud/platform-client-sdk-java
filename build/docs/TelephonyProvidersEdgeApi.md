@@ -4001,7 +4001,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
-| **sortBy** | **String**| The field to sort by | [optional] [default to name]<br />**Values**: name, status.operationalStatus, secondaryStatus.operationalStatus 
+| **sortBy** | **String**| The field to sort by | [optional] [default to name]<br />**Values**: id, name, status.operationalStatus, secondaryStatus.operationalStatus 
 | **sortOrder** | **String**| Sort order | [optional] [default to ASC] 
 | **siteId** | **String**| Filter by site.id | [optional] 
 | **webRtcUserId** | **String**| Filter by webRtcUser.id | [optional] 

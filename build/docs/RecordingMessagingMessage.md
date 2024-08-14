@@ -14,6 +14,10 @@ title: RecordingMessagingMessage
 | **to** | <!----><!---->**String**<!----> | The message recipient. |  [optional] |
 | **timestamp** | <!----><!---->[**Date**](Date.html)<!----> | The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **id** | <!----><!---->**String**<!----> | A globally unique identifier for this communication. |  [optional] |
+| **purpose** | <!----><!---->**String**<!----> | A well known string that specifies the purpose or type of the participant on this communication. |  [optional] |
+| **participantId** | <!----><!---->**String**<!----> | A globally unique identifier for the participant on this communication. |  [optional] |
+| **queue** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | A globally unique identifier for the queue involved in this communication. |  [optional] |
+| **workflow** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | A globally unique identifier for the workflow involved in this communication. |  [optional] |
 | **messageText** | <!----><!---->**String**<!----> | The content of this message. |  [optional] |
 | **messageMediaAttachments** | <!----><!---->[**List&lt;MessageMediaAttachment&gt;**](MessageMediaAttachment.html)<!----> | List of media objects attached  with this message. |  [optional] |
 | **messageStickerAttachments** | <!----><!---->[**List&lt;MessageStickerAttachment&gt;**](MessageStickerAttachment.html)<!----> | List of message stickers attached with this message. |  [optional] |

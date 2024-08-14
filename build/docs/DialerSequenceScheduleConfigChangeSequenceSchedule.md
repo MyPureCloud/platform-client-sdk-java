@@ -9,6 +9,7 @@ title: DialerSequenceScheduleConfigChangeSequenceSchedule
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **intervals** | <!----><!---->[**List&lt;DialerSequenceScheduleConfigChangeScheduleInterval&gt;**](DialerSequenceScheduleConfigChangeScheduleInterval.html)<!----> | a list of start and end times |  [optional] |
+| **recurrences** | <!----><!---->[**List&lt;DialerSequenceScheduleConfigChangeScheduleRecurrence&gt;**](DialerSequenceScheduleConfigChangeScheduleRecurrence.html)<!----> | a list of recurrences for a schedule |  [optional] |
 | **timeZone** | <!----><!---->**String**<!----> | time zone identifier to be applied to the intervals; for example Africa/Abidjan |  [optional] |
 | **sequence** | <!----><!---->[**DialerSequenceScheduleConfigChangeUriReference**](DialerSequenceScheduleConfigChangeUriReference.html)<!----> |  |  [optional] |
 | **additionalProperties** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |

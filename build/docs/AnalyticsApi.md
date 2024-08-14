@@ -11,6 +11,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteAnalyticsUsersDetailsJob**](AnalyticsApi.html#deleteAnalyticsUsersDetailsJob) | Delete/cancel an async request |
 | [**getAnalyticsActionsAggregatesJob**](AnalyticsApi.html#getAnalyticsActionsAggregatesJob) | Get status for async query for action aggregates |
 | [**getAnalyticsActionsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsActionsAggregatesJobResults) | Fetch a page of results for an async aggregates query |
+| [**getAnalyticsAgentcopilotsAggregatesJob**](AnalyticsApi.html#getAnalyticsAgentcopilotsAggregatesJob) | Get status for async query for agent copilot aggregates |
+| [**getAnalyticsAgentcopilotsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsAgentcopilotsAggregatesJobResults) | Fetch a page of results for an async aggregates query |
 | [**getAnalyticsBotflowDivisionsReportingturns**](AnalyticsApi.html#getAnalyticsBotflowDivisionsReportingturns) | Get Reporting Turns (division aware). |
 | [**getAnalyticsBotflowReportingturns**](AnalyticsApi.html#getAnalyticsBotflowReportingturns) | Get Reporting Turns. |
 | [**getAnalyticsBotflowSessions**](AnalyticsApi.html#getAnalyticsBotflowSessions) | Get Bot Flow Sessions. |
@@ -39,6 +41,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAnalyticsReportingExports**](AnalyticsApi.html#getAnalyticsReportingExports) | Get all view export requests for a user |
 | [**getAnalyticsReportingExportsMetadata**](AnalyticsApi.html#getAnalyticsReportingExportsMetadata) | Get all export metadata |
 | [**getAnalyticsReportingSettings**](AnalyticsApi.html#getAnalyticsReportingSettings) | Get AnalyticsReportingSettings for an organization |
+| [**getAnalyticsReportingSettingsDashboardsQuery**](AnalyticsApi.html#getAnalyticsReportingSettingsDashboardsQuery) | Get list of dashboard configurations |
 | [**getAnalyticsReportingSettingsUserDashboards**](AnalyticsApi.html#getAnalyticsReportingSettingsUserDashboards) | Get list of dashboards for an user |
 | [**getAnalyticsResolutionsAggregatesJob**](AnalyticsApi.html#getAnalyticsResolutionsAggregatesJob) | Get status for async query for resolution aggregates |
 | [**getAnalyticsResolutionsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsResolutionsAggregatesJobResults) | Fetch a page of results for an async aggregates query |
@@ -56,6 +59,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchAnalyticsReportingSettings**](AnalyticsApi.html#patchAnalyticsReportingSettings) | Patch AnalyticsReportingSettings values for an organization |
 | [**postAnalyticsActionsAggregatesJobs**](AnalyticsApi.html#postAnalyticsActionsAggregatesJobs) | Query for action aggregates asynchronously |
 | [**postAnalyticsActionsAggregatesQuery**](AnalyticsApi.html#postAnalyticsActionsAggregatesQuery) | Query for action aggregates |
+| [**postAnalyticsAgentcopilotsAggregatesJobs**](AnalyticsApi.html#postAnalyticsAgentcopilotsAggregatesJobs) | Query for agent copilot aggregates asynchronously |
+| [**postAnalyticsAgentcopilotsAggregatesQuery**](AnalyticsApi.html#postAnalyticsAgentcopilotsAggregatesQuery) | Query for agent copilot aggregates |
 | [**postAnalyticsBotsAggregatesJobs**](AnalyticsApi.html#postAnalyticsBotsAggregatesJobs) | Query for bot aggregates asynchronously |
 | [**postAnalyticsBotsAggregatesQuery**](AnalyticsApi.html#postAnalyticsBotsAggregatesQuery) | Query for bot aggregates |
 | [**postAnalyticsConversationDetailsProperties**](AnalyticsApi.html#postAnalyticsConversationDetailsProperties) | Index conversation properties |
@@ -78,7 +83,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsKnowledgeAggregatesJobs**](AnalyticsApi.html#postAnalyticsKnowledgeAggregatesJobs) | Query for knowledge aggregates asynchronously |
 | [**postAnalyticsKnowledgeAggregatesQuery**](AnalyticsApi.html#postAnalyticsKnowledgeAggregatesQuery) | Query for knowledge aggregates |
 | [**postAnalyticsQueuesObservationsQuery**](AnalyticsApi.html#postAnalyticsQueuesObservationsQuery) | Query for queue observations |
-| [**postAnalyticsRatelimitsAggregatesQuery**](AnalyticsApi.html#postAnalyticsRatelimitsAggregatesQuery) | Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded |
+| [**postAnalyticsRatelimitsAggregatesQuery**](AnalyticsApi.html#postAnalyticsRatelimitsAggregatesQuery) | Query for limits rate limit aggregates. Data populated when limits reach 90% of the maximum. Not a source of truth for limits hit but a best effort estimate. |
 | [**postAnalyticsReportingDashboardsUsersBulkRemove**](AnalyticsApi.html#postAnalyticsReportingDashboardsUsersBulkRemove) | Bulk delete dashboards owned by other user(s) |
 | [**postAnalyticsReportingExports**](AnalyticsApi.html#postAnalyticsReportingExports) | Generate a view export request |
 | [**postAnalyticsReportingSettingsDashboardsBulkRemove**](AnalyticsApi.html#postAnalyticsReportingSettingsDashboardsBulkRemove) | Bulk remove dashboard configurations |
@@ -351,6 +356,134 @@ try {
 ### Return type
 
 [**ActionAsyncAggregateQueryResponse**](ActionAsyncAggregateQueryResponse.html)
+
+<a name="getAnalyticsAgentcopilotsAggregatesJob"></a>
+
+# **getAnalyticsAgentcopilotsAggregatesJob**
+
+
+
+> [AsyncQueryStatus](AsyncQueryStatus.html) getAnalyticsAgentcopilotsAggregatesJob(jobId)
+
+Get status for async query for agent copilot aggregates
+
+getAnalyticsAgentcopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* analytics:agentCopilotAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    AsyncQueryStatus result = apiInstance.getAnalyticsAgentcopilotsAggregatesJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#getAnalyticsAgentcopilotsAggregatesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus.html)
+
+<a name="getAnalyticsAgentcopilotsAggregatesJobResults"></a>
+
+# **getAnalyticsAgentcopilotsAggregatesJobResults**
+
+
+
+> [AgentCopilotAsyncAggregateQueryResponse](AgentCopilotAsyncAggregateQueryResponse.html) getAnalyticsAgentcopilotsAggregatesJobResults(jobId, cursor)
+
+Fetch a page of results for an async aggregates query
+
+getAnalyticsAgentcopilotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}/results  
+
+Requires ANY permissions: 
+
+* analytics:agentCopilotAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String jobId = "jobId_example"; // String | jobId
+String cursor = "cursor_example"; // String | Cursor token to retrieve next page
+try {
+    AgentCopilotAsyncAggregateQueryResponse result = apiInstance.getAnalyticsAgentcopilotsAggregatesJobResults(jobId, cursor);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#getAnalyticsAgentcopilotsAggregatesJobResults");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+| **cursor** | **String**| Cursor token to retrieve next page | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentCopilotAsyncAggregateQueryResponse**](AgentCopilotAsyncAggregateQueryResponse.html)
 
 <a name="getAnalyticsBotflowDivisionsReportingturns"></a>
 
@@ -2147,6 +2280,75 @@ This endpoint does not require any parameters.
 
 [**AnalyticsReportingSettings**](AnalyticsReportingSettings.html)
 
+<a name="getAnalyticsReportingSettingsDashboardsQuery"></a>
+
+# **getAnalyticsReportingSettingsDashboardsQuery**
+
+
+
+> [DashboardConfigurationListing](DashboardConfigurationListing.html) getAnalyticsReportingSettingsDashboardsQuery(dashboardType, dashboardAccessFilter, sortBy, pageNumber, pageSize)
+
+Get list of dashboard configurations
+
+Wraps GET /api/v2/analytics/reporting/settings/dashboards/query  
+
+Requires ALL permissions: 
+
+* analytics:dashboardConfigurations:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String dashboardType = "dashboardType_example"; // String | List dashboard of given type
+String dashboardAccessFilter = "dashboardAccessFilter_example"; // String | Filter dashboard based on the owner of dashboard
+String sortBy = "desc"; // String | 
+Integer pageNumber = 1; // Integer | 
+Integer pageSize = 9; // Integer | 
+try {
+    DashboardConfigurationListing result = apiInstance.getAnalyticsReportingSettingsDashboardsQuery(dashboardType, dashboardAccessFilter, sortBy, pageNumber, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#getAnalyticsReportingSettingsDashboardsQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dashboardType** | **String**| List dashboard of given type |<br />**Values**: All, Public, Private, Shared, Favorites 
+| **dashboardAccessFilter** | **String**| Filter dashboard based on the owner of dashboard |<br />**Values**: OwnedByMe, OwnedByAnyone, NotOwnedByMe 
+| **sortBy** | **String**|  | [optional] [default to desc] 
+| **pageNumber** | **Integer**|  | [optional] [default to 1] 
+| **pageSize** | **Integer**|  | [optional] [default to 9] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DashboardConfigurationListing**](DashboardConfigurationListing.html)
+
 <a name="getAnalyticsReportingSettingsUserDashboards"></a>
 
 # **getAnalyticsReportingSettingsUserDashboards**
@@ -3229,6 +3431,132 @@ try {
 ### Return type
 
 [**ActionAggregateQueryResponse**](ActionAggregateQueryResponse.html)
+
+<a name="postAnalyticsAgentcopilotsAggregatesJobs"></a>
+
+# **postAnalyticsAgentcopilotsAggregatesJobs**
+
+
+
+> [AsyncQueryResponse](AsyncQueryResponse.html) postAnalyticsAgentcopilotsAggregatesJobs(body)
+
+Query for agent copilot aggregates asynchronously
+
+postAnalyticsAgentcopilotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/analytics/agentcopilots/aggregates/jobs  
+
+Requires ANY permissions: 
+
+* analytics:agentCopilotAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+AgentCopilotAsyncAggregationQuery body = new AgentCopilotAsyncAggregationQuery(); // AgentCopilotAsyncAggregationQuery | query
+try {
+    AsyncQueryResponse result = apiInstance.postAnalyticsAgentcopilotsAggregatesJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#postAnalyticsAgentcopilotsAggregatesJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**AgentCopilotAsyncAggregationQuery**](AgentCopilotAsyncAggregationQuery.html)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse.html)
+
+<a name="postAnalyticsAgentcopilotsAggregatesQuery"></a>
+
+# **postAnalyticsAgentcopilotsAggregatesQuery**
+
+
+
+> [AgentCopilotAggregateQueryResponse](AgentCopilotAggregateQueryResponse.html) postAnalyticsAgentcopilotsAggregatesQuery(body)
+
+Query for agent copilot aggregates
+
+postAnalyticsAgentcopilotsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/analytics/agentcopilots/aggregates/query  
+
+Requires ANY permissions: 
+
+* analytics:agentCopilotAggregate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+AgentCopilotAggregationQuery body = new AgentCopilotAggregationQuery(); // AgentCopilotAggregationQuery | query
+try {
+    AgentCopilotAggregateQueryResponse result = apiInstance.postAnalyticsAgentcopilotsAggregatesQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#postAnalyticsAgentcopilotsAggregatesQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**AgentCopilotAggregationQuery**](AgentCopilotAggregationQuery.html)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentCopilotAggregateQueryResponse**](AgentCopilotAggregateQueryResponse.html)
 
 <a name="postAnalyticsBotsAggregatesJobs"></a>
 
@@ -4606,7 +4934,9 @@ try {
 
 > [RateLimitAggregateQueryResponse](RateLimitAggregateQueryResponse.html) postAnalyticsRatelimitsAggregatesQuery(body)
 
-Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded
+Query for limits rate limit aggregates. Data populated when limits reach 90% of the maximum. Not a source of truth for limits hit but a best effort estimate.
+
+The 'max' property can be used to determine estimated rate limit value hit. See https://developer.genesys.cloud/organization/organization/limits#available-limits for limits that are trackable (Operational Events Enabled).
 
 Wraps POST /api/v2/analytics/ratelimits/aggregates/query  
 

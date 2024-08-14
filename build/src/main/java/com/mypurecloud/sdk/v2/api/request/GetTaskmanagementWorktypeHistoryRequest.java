@@ -148,6 +148,60 @@ public class GetTaskmanagementWorktypeHistoryRequest {
 		}
 	}
 
+	private List<String> fields;
+	public List<String> getFields() {
+		return this.fields;
+	}
+
+	public void setFields(List<String> fields) {
+		this.fields = fields;
+	}
+
+	public GetTaskmanagementWorktypeHistoryRequest withFields(List<String> fields) {
+	    this.setFields(fields);
+	    return this;
+	} 
+
+	public enum fieldsValues { 
+		NAME("name"),
+		SERVICELEVELTARGET("serviceLevelTarget"),
+		DEFAULTWORKBINID("defaultWorkbinId"),
+		DEFAULTDUEDURATIONSECONDS("defaultDueDurationSeconds"),
+		DEFAULTEXPIRATIONSECONDS("defaultExpirationSeconds"),
+		DEFAULTPRIORITY("defaultPriority"),
+		DEFAULTLANGUAGEID("defaultLanguageId"),
+		DEFAULTSKILLIDS("defaultSkillIds"),
+		DEFAULTQUEUEID("defaultQueueId"),
+		ASSIGNMENTENABLED("assignmentEnabled"),
+		DEFAULTSTATUSID("defaultStatusId"),
+		STATUSES("statuses");
+
+		private String value;
+
+		fieldsValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static fieldsValues fromString(String key) {
+			if (key == null) return null;
+
+			for (fieldsValues value : fieldsValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return fieldsValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -186,6 +240,9 @@ public class GetTaskmanagementWorktypeHistoryRequest {
         
 
                 .withQueryParameters("sortOrder", "", sortOrder)
+        
+
+                .withQueryParameters("fields", "multi", fields)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -239,6 +296,22 @@ public class GetTaskmanagementWorktypeHistoryRequest {
 		public Builder withSortOrder(sortOrderValues sortOrder) {
 		    request.setSortOrder(sortOrder.toString());
 
+		    return this;
+		}
+
+		public Builder withFields(List<String> fields) {
+			request.setFields(fields);
+			return this;
+		}
+
+
+
+		public Builder withFieldsEnumValues(List<fieldsValues> fields) {
+		    List<String> stringList = new ArrayList<>();
+	      for (fieldsValues e : fields) {
+	        stringList.add(e.toString());
+	      }
+	      request.setFields(stringList);
 		    return this;
 		}
 

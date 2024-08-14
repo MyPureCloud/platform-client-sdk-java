@@ -1491,7 +1491,7 @@ public class RecordingApi {
   }
 
   /**
-   * Get the status and results for a batch request job, only the user that submitted the job may retrieve results
+   * Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.
    * 
    * @param jobId jobId (required)
    * @return BatchDownloadJobStatusResult
@@ -1503,7 +1503,7 @@ public class RecordingApi {
   }
 
   /**
-   * Get the status and results for a batch request job, only the user that submitted the job may retrieve results
+   * Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.
    * 
    * @param jobId jobId (required)
    * @return BatchDownloadJobStatusResult
@@ -1521,7 +1521,7 @@ public class RecordingApi {
   }
 
   /**
-   * Get the status and results for a batch request job, only the user that submitted the job may retrieve results
+   * Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.
    * 
    * @param request The request object
    * @return BatchDownloadJobStatusResult
@@ -1540,7 +1540,7 @@ public class RecordingApi {
   }
 
   /**
-   * Get the status and results for a batch request job, only the user that submitted the job may retrieve results
+   * Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.
    * 
    * @param request The request object
    * @return the response
@@ -3114,11 +3114,12 @@ public class RecordingApi {
 
   /**
    * Update a screen recording session
-   * 
+   * This API is deprecated and the functionality to stop screen recording will be no longer supported.
    * @param recordingSessionId Screen recording session ID (required)
    * @param body  (optional)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void patchRecordingsScreensession(String recordingSessionId, ScreenRecordingSessionRequest body) throws IOException, ApiException {
      patchRecordingsScreensession(createPatchRecordingsScreensessionRequest(recordingSessionId, body));
@@ -3126,10 +3127,11 @@ public class RecordingApi {
 
   /**
    * Update a screen recording session
-   * 
+   * This API is deprecated and the functionality to stop screen recording will be no longer supported.
    * @param recordingSessionId Screen recording session ID (required)
    * @param body  (optional)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> patchRecordingsScreensessionWithHttpInfo(String recordingSessionId, ScreenRecordingSessionRequest body) throws IOException {
     return patchRecordingsScreensession(createPatchRecordingsScreensessionRequest(recordingSessionId, body).withHttpInfo());
@@ -3146,10 +3148,11 @@ public class RecordingApi {
 
   /**
    * Update a screen recording session
-   * 
+   * This API is deprecated and the functionality to stop screen recording will be no longer supported.
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void patchRecordingsScreensession(PatchRecordingsScreensessionRequest request) throws IOException, ApiException {
     try {
@@ -3164,10 +3167,11 @@ public class RecordingApi {
 
   /**
    * Update a screen recording session
-   * 
+   * This API is deprecated and the functionality to stop screen recording will be no longer supported.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> patchRecordingsScreensession(ApiRequest<ScreenRecordingSessionRequest> request) throws IOException {
     try {

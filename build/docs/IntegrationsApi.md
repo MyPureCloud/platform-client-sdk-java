@@ -26,6 +26,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getIntegrationsActions**](IntegrationsApi.html#getIntegrationsActions) | Retrieves all actions associated with filters passed in via query param. |
 | [**getIntegrationsActionsCategories**](IntegrationsApi.html#getIntegrationsActionsCategories) | Retrieves all categories of available Actions |
 | [**getIntegrationsActionsCertificates**](IntegrationsApi.html#getIntegrationsActionsCertificates) | Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress. |
+| [**getIntegrationsActionsCertificatesTruststore**](IntegrationsApi.html#getIntegrationsActionsCertificatesTruststore) | Retrieves basic info about trusted root CA certificates |
 | [**getIntegrationsActionsDrafts**](IntegrationsApi.html#getIntegrationsActionsDrafts) | Retrieves all action drafts associated with the filters passed in via query param. |
 | [**getIntegrationsActionsFunctionsRuntimes**](IntegrationsApi.html#getIntegrationsActionsFunctionsRuntimes) | Get action function settings for Action |
 | [**getIntegrationsBotconnectorIntegrationIdBot**](IntegrationsApi.html#getIntegrationsBotconnectorIntegrationIdBot) | Get a specific botConnector bot, plus versions, for this integration |
@@ -284,8 +285,9 @@ Delete a set of credentials
 
 Wraps DELETE /api/v2/integrations/credentials/{credentialId}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* integrations:integration:delete
 
 ### Example
 
@@ -1330,6 +1332,63 @@ try {
 
 [**ActionCertificateListing**](ActionCertificateListing.html)
 
+<a name="getIntegrationsActionsCertificatesTruststore"></a>
+
+# **getIntegrationsActionsCertificatesTruststore**
+
+
+
+> [TrustedCertificates](TrustedCertificates.html) getIntegrationsActionsCertificatesTruststore()
+
+Retrieves basic info about trusted root CA certificates
+
+Wraps GET /api/v2/integrations/actions/certificates/truststore  
+
+Requires ANY permissions: 
+
+* integrations:actionCertificate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+try {
+    TrustedCertificates result = apiInstance.getIntegrationsActionsCertificatesTruststore();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsActionsCertificatesTruststore");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**TrustedCertificates**](TrustedCertificates.html)
+
 <a name="getIntegrationsActionsDrafts"></a>
 
 # **getIntegrationsActionsDrafts**
@@ -1884,8 +1943,9 @@ Get a single credential with sensitive fields redacted
 
 Wraps GET /api/v2/integrations/credentials/{credentialId}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* integrations:integration:view
 
 ### Example
 
@@ -1944,8 +2004,9 @@ List multiple sets of credentials
 
 Wraps GET /api/v2/integrations/credentials  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* integrations:integration:view
 
 ### Example
 
@@ -2006,8 +2067,9 @@ List all credential types
 
 Wraps GET /api/v2/integrations/credentials/types  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* integrations:integration:view
 
 ### Example
 
@@ -4706,8 +4768,9 @@ Create a set of credentials
 
 Wraps POST /api/v2/integrations/credentials  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* integrations:integration:add
 
 ### Example
 
@@ -5152,8 +5215,9 @@ Update a set of credentials
 
 Wraps PUT /api/v2/integrations/credentials/{credentialId}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* integrations:integration:edit
 
 ### Example
 

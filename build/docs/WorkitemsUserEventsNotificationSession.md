@@ -28,6 +28,7 @@ title: WorkitemsUserEventsNotificationSession
 | AGENT | &quot;Agent&quot; | 
 | QUEUEASSIGNMENT | &quot;QueueAssignment&quot; | 
 | DIRECTASSIGNMENT | &quot;DirectAssignment&quot; | 
+| AGENTCOMPLETE | &quot;AgentComplete&quot; | 
 {: class="table table-striped"}
 
 

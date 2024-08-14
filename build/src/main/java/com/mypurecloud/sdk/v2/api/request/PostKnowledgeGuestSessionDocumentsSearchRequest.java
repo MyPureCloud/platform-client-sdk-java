@@ -138,7 +138,8 @@ public class PostKnowledgeGuestSessionDocumentsSearchRequest {
 
 	public enum expandValues { 
 		DOCUMENTVARIATIONS("documentVariations"),
-		DOCUMENTALTERNATIVES("documentAlternatives");
+		DOCUMENTALTERNATIVES("documentAlternatives"),
+		KNOWLEDGEBASELANGUAGECODE("knowledgeBaseLanguageCode");
 
 		private String value;
 

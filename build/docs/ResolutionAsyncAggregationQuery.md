@@ -27,7 +27,11 @@ title: ResolutionAsyncAggregationQuery
 
 | Name | Value |
 | ---- | ----- |
+| CONVERSATIONID | &quot;conversationId&quot; |
+| MEDIATYPE | &quot;mediaType&quot; |
 | QUEUEID | &quot;queueId&quot; |
+| REQUESTEDROUTING | &quot;requestedRouting&quot; |
+| USEDROUTING | &quot;usedRouting&quot; |
 | USERID | &quot;userId&quot; |
 {: class="table table-striped"}
 

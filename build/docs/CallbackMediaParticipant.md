@@ -42,6 +42,7 @@ title: CallbackMediaParticipant
 | **conversationRoutingData** | <!----><!---->[**ConversationRoutingData**](ConversationRoutingData.html)<!----> | Information on how a communication should be routed to an agent. |  [optional] |
 | **startAcwTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **endAcwTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **parkTime** | <!----><!---->[**Date**](Date.html)<!----> | The time when this participant's communication was last parked.  Does not reset on resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **outboundPreview** | <!----><!---->[**DialerPreview**](DialerPreview.html)<!----> | The outbound preview associated with this callback. |  [optional] |
 | **voicemail** | <!----><!---->[**Voicemail**](Voicemail.html)<!----> | The voicemail associated with this callback. |  [optional] |
 | **callbackNumbers** | <!----><!---->**List&lt;String&gt;**<!----> | The list of phone number to use for this callback. |  [optional] |

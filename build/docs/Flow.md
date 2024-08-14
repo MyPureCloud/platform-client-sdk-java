@@ -29,6 +29,8 @@ title: Flow
 | **nluInfo** | <!----><!---->[**NluInfo**](NluInfo.html)<!----> | Information about the natural language understanding configuration for the published version of the flow |  [optional] |
 | **supportedLanguages** | <!----><!---->[**List&lt;SupportedLanguage&gt;**](SupportedLanguage.html)<!----> | List of supported languages for the published version of the flow. |  [optional] |
 | **compatibleFlowTypes** | <!---->[**List&lt;CompatibleFlowTypesEnum&gt;**](#CompatibleFlowTypesEnum)<!----> | Compatible flow types designate which flow types are allowed to embed a flow’s configuration within their own flow configuration.  Currently the only flows that can be embedded are Common Module flows and the embedding flow can invoke them using the Call Common Module action. |  [optional] |
+| **worktypeId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **virtualAgentEnabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

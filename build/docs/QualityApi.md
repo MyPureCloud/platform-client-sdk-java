@@ -66,6 +66,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putQualityConversationEvaluation**](QualityApi.html#putQualityConversationEvaluation) | Update an evaluation |
 | [**putQualityForm**](QualityApi.html#putQualityForm) | Update an evaluation form. |
 | [**putQualityFormsEvaluation**](QualityApi.html#putQualityFormsEvaluation) | Update an evaluation form. |
+| [**putQualityFormsEvaluationAiscoringSettings**](QualityApi.html#putQualityFormsEvaluationAiscoringSettings) | Update the AI Scoring settings of an evaluation form. |
 | [**putQualityFormsSurvey**](QualityApi.html#putQualityFormsSurvey) | Update a survey form. |
 | [**putQualitySurveysScorable**](QualityApi.html#putQualitySurveysScorable) | Update a survey as an end-customer, for the purposes of scoring it. |
 {: class="table-striped"}
@@ -1131,7 +1132,7 @@ try {
 
 
 
-> [EvaluationEntityListing](EvaluationEntityListing.html) getQualityEvaluationsQuery(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, agentTeamId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, formContextId, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder)
+> [EvaluationEntityListing](EvaluationEntityListing.html) getQualityEvaluationsQuery(pageSize, pageNumber, expand, previousPage, conversationId, agentUserId, agentTeamId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, formContextId, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder)
 
 Queries Evaluations and returns a paged list
 
@@ -1167,9 +1168,7 @@ Configuration.setDefaultApiClient(apiClient);
 QualityApi apiInstance = new QualityApi();
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
-String sortBy = "sortBy_example"; // String | NOTE: Does not work when querying evaluations
 List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
-String nextPage = "nextPage_example"; // String | NOTE: Does not work when querying evaluations
 String previousPage = "previousPage_example"; // String | Previous page token
 String conversationId = "conversationId_example"; // String | conversationId specified
 String agentUserId = "agentUserId_example"; // String | user id of the agent
@@ -1187,7 +1186,7 @@ Boolean expandAnswerTotalScores = true; // Boolean | get the total scores for ev
 Integer maximum = 56; // Integer | the maximum number of results to return
 String sortOrder = "sortOrder_example"; // String | NOTE: Does not work when conversationId is supplied.
 try {
-    EvaluationEntityListing result = apiInstance.getQualityEvaluationsQuery(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, agentTeamId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, formContextId, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder);
+    EvaluationEntityListing result = apiInstance.getQualityEvaluationsQuery(pageSize, pageNumber, expand, previousPage, conversationId, agentUserId, agentTeamId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, formContextId, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityEvaluationsQuery");
@@ -1202,9 +1201,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
 | **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
-| **sortBy** | **String**| NOTE: Does not work when querying evaluations | [optional] 
 | **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
-| **nextPage** | **String**| NOTE: Does not work when querying evaluations | [optional] 
 | **previousPage** | **String**| Previous page token | [optional] 
 | **conversationId** | **String**| conversationId specified | [optional] 
 | **agentUserId** | **String**| user id of the agent | [optional] 
@@ -3900,6 +3897,71 @@ try {
 ### Return type
 
 [**EvaluationFormResponse**](EvaluationFormResponse.html)
+
+<a name="putQualityFormsEvaluationAiscoringSettings"></a>
+
+# **putQualityFormsEvaluationAiscoringSettings**
+
+
+
+> [AiScoringSettings](AiScoringSettings.html) putQualityFormsEvaluationAiscoringSettings(formId, body)
+
+Update the AI Scoring settings of an evaluation form.
+
+putQualityFormsEvaluationAiscoringSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/quality/forms/evaluations/{formId}/aiscoring/settings  
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:aiScoringEdit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+QualityApi apiInstance = new QualityApi();
+String formId = "formId_example"; // String | Form ID
+AiScoringSettings body = new AiScoringSettings(); // AiScoringSettings | AI Scoring Settings
+try {
+    AiScoringSettings result = apiInstance.putQualityFormsEvaluationAiscoringSettings(formId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#putQualityFormsEvaluationAiscoringSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **formId** | **String**| Form ID | 
+| **body** | [**AiScoringSettings**](AiScoringSettings.html)| AI Scoring Settings | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AiScoringSettings**](AiScoringSettings.html)
 
 <a name="putQualityFormsSurvey"></a>
 

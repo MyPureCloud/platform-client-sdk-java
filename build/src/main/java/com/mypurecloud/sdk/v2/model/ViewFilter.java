@@ -849,7 +849,8 @@ public class ViewFilter  implements Serializable {
     COACHING("Coaching"),
     ASSESSMENT("Assessment"),
     ASSESSEDCONTENT("AssessedContent"),
-    EXTERNAL("External");
+    EXTERNAL("External"),
+    NATIVE("Native");
 
     private String value;
 
@@ -1670,8 +1671,123 @@ public class ViewFilter  implements Serializable {
     }
   }
   private List<BotFlowTypesEnum> botFlowTypes = new ArrayList<BotFlowTypesEnum>();
+  private List<NumericRange> agentTalkDurationMilliseconds = new ArrayList<NumericRange>();
+  private List<NumericRange> customerTalkDurationMilliseconds = new ArrayList<NumericRange>();
+  private List<NumericRange> overtalkDurationMilliseconds = new ArrayList<NumericRange>();
+  private List<NumericRange> silenceDurationMilliseconds = new ArrayList<NumericRange>();
+  private List<NumericRange> acdDurationMilliseconds = new ArrayList<NumericRange>();
+  private List<NumericRange> ivrDurationMilliseconds = new ArrayList<NumericRange>();
+  private List<NumericRange> otherDurationMilliseconds = new ArrayList<NumericRange>();
+  private NumericRange agentTalkPercentage = null;
+  private NumericRange customerTalkPercentage = null;
+  private NumericRange overtalkPercentage = null;
+  private NumericRange silencePercentage = null;
+  private NumericRange acdPercentage = null;
+  private NumericRange ivrPercentage = null;
+  private NumericRange otherPercentage = null;
+  private NumericRange overtalkInstances = null;
   private Boolean isScreenRecorded = null;
   private List<String> screenMonitorUserIds = new ArrayList<String>();
+
+  private static class DashboardTypeEnumDeserializer extends StdDeserializer<DashboardTypeEnum> {
+    public DashboardTypeEnumDeserializer() {
+      super(DashboardTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public DashboardTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DashboardTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The type of dashboard being filtered
+   */
+ @JsonDeserialize(using = DashboardTypeEnumDeserializer.class)
+  public enum DashboardTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ALL("All"),
+    PUBLIC("Public"),
+    PRIVATE("Private"),
+    SHARED("Shared"),
+    FAVORITES("Favorites");
+
+    private String value;
+
+    DashboardTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static DashboardTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (DashboardTypeEnum value : DashboardTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return DashboardTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private DashboardTypeEnum dashboardType = null;
+
+  private static class DashboardAccessFilterEnumDeserializer extends StdDeserializer<DashboardAccessFilterEnum> {
+    public DashboardAccessFilterEnumDeserializer() {
+      super(DashboardAccessFilterEnumDeserializer.class);
+    }
+
+    @Override
+    public DashboardAccessFilterEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DashboardAccessFilterEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The type of dashboard access being filtered
+   */
+ @JsonDeserialize(using = DashboardAccessFilterEnumDeserializer.class)
+  public enum DashboardAccessFilterEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    OWNEDBYME("OwnedByMe"),
+    OWNEDBYANYONE("OwnedByAnyone"),
+    NOTOWNEDBYME("NotOwnedByMe");
+
+    private String value;
+
+    DashboardAccessFilterEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static DashboardAccessFilterEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (DashboardAccessFilterEnum value : DashboardAccessFilterEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return DashboardAccessFilterEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private DashboardAccessFilterEnum dashboardAccessFilter = null;
 
   
   /**
@@ -4861,6 +4977,276 @@ public class ViewFilter  implements Serializable {
 
 
   /**
+   * The agent talk durations in milliseconds used to filter the view
+   **/
+  public ViewFilter agentTalkDurationMilliseconds(List<NumericRange> agentTalkDurationMilliseconds) {
+    this.agentTalkDurationMilliseconds = agentTalkDurationMilliseconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The agent talk durations in milliseconds used to filter the view")
+  @JsonProperty("agentTalkDurationMilliseconds")
+  public List<NumericRange> getAgentTalkDurationMilliseconds() {
+    return agentTalkDurationMilliseconds;
+  }
+  public void setAgentTalkDurationMilliseconds(List<NumericRange> agentTalkDurationMilliseconds) {
+    this.agentTalkDurationMilliseconds = agentTalkDurationMilliseconds;
+  }
+
+
+  /**
+   * The customer talk durations in milliseconds used to filter the view
+   **/
+  public ViewFilter customerTalkDurationMilliseconds(List<NumericRange> customerTalkDurationMilliseconds) {
+    this.customerTalkDurationMilliseconds = customerTalkDurationMilliseconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The customer talk durations in milliseconds used to filter the view")
+  @JsonProperty("customerTalkDurationMilliseconds")
+  public List<NumericRange> getCustomerTalkDurationMilliseconds() {
+    return customerTalkDurationMilliseconds;
+  }
+  public void setCustomerTalkDurationMilliseconds(List<NumericRange> customerTalkDurationMilliseconds) {
+    this.customerTalkDurationMilliseconds = customerTalkDurationMilliseconds;
+  }
+
+
+  /**
+   * The overtalk durations in milliseconds used to filter the view
+   **/
+  public ViewFilter overtalkDurationMilliseconds(List<NumericRange> overtalkDurationMilliseconds) {
+    this.overtalkDurationMilliseconds = overtalkDurationMilliseconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The overtalk durations in milliseconds used to filter the view")
+  @JsonProperty("overtalkDurationMilliseconds")
+  public List<NumericRange> getOvertalkDurationMilliseconds() {
+    return overtalkDurationMilliseconds;
+  }
+  public void setOvertalkDurationMilliseconds(List<NumericRange> overtalkDurationMilliseconds) {
+    this.overtalkDurationMilliseconds = overtalkDurationMilliseconds;
+  }
+
+
+  /**
+   * The silence durations in milliseconds used to filter the view
+   **/
+  public ViewFilter silenceDurationMilliseconds(List<NumericRange> silenceDurationMilliseconds) {
+    this.silenceDurationMilliseconds = silenceDurationMilliseconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The silence durations in milliseconds used to filter the view")
+  @JsonProperty("silenceDurationMilliseconds")
+  public List<NumericRange> getSilenceDurationMilliseconds() {
+    return silenceDurationMilliseconds;
+  }
+  public void setSilenceDurationMilliseconds(List<NumericRange> silenceDurationMilliseconds) {
+    this.silenceDurationMilliseconds = silenceDurationMilliseconds;
+  }
+
+
+  /**
+   * The acd durations in milliseconds used to filter the view
+   **/
+  public ViewFilter acdDurationMilliseconds(List<NumericRange> acdDurationMilliseconds) {
+    this.acdDurationMilliseconds = acdDurationMilliseconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The acd durations in milliseconds used to filter the view")
+  @JsonProperty("acdDurationMilliseconds")
+  public List<NumericRange> getAcdDurationMilliseconds() {
+    return acdDurationMilliseconds;
+  }
+  public void setAcdDurationMilliseconds(List<NumericRange> acdDurationMilliseconds) {
+    this.acdDurationMilliseconds = acdDurationMilliseconds;
+  }
+
+
+  /**
+   * The ivr durations in milliseconds used to filter the view
+   **/
+  public ViewFilter ivrDurationMilliseconds(List<NumericRange> ivrDurationMilliseconds) {
+    this.ivrDurationMilliseconds = ivrDurationMilliseconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ivr durations in milliseconds used to filter the view")
+  @JsonProperty("ivrDurationMilliseconds")
+  public List<NumericRange> getIvrDurationMilliseconds() {
+    return ivrDurationMilliseconds;
+  }
+  public void setIvrDurationMilliseconds(List<NumericRange> ivrDurationMilliseconds) {
+    this.ivrDurationMilliseconds = ivrDurationMilliseconds;
+  }
+
+
+  /**
+   * The other (hold/music) durations in milliseconds used to filter the view
+   **/
+  public ViewFilter otherDurationMilliseconds(List<NumericRange> otherDurationMilliseconds) {
+    this.otherDurationMilliseconds = otherDurationMilliseconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The other (hold/music) durations in milliseconds used to filter the view")
+  @JsonProperty("otherDurationMilliseconds")
+  public List<NumericRange> getOtherDurationMilliseconds() {
+    return otherDurationMilliseconds;
+  }
+  public void setOtherDurationMilliseconds(List<NumericRange> otherDurationMilliseconds) {
+    this.otherDurationMilliseconds = otherDurationMilliseconds;
+  }
+
+
+  /**
+   * The agent talk percentage used to filter the view
+   **/
+  public ViewFilter agentTalkPercentage(NumericRange agentTalkPercentage) {
+    this.agentTalkPercentage = agentTalkPercentage;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The agent talk percentage used to filter the view")
+  @JsonProperty("agentTalkPercentage")
+  public NumericRange getAgentTalkPercentage() {
+    return agentTalkPercentage;
+  }
+  public void setAgentTalkPercentage(NumericRange agentTalkPercentage) {
+    this.agentTalkPercentage = agentTalkPercentage;
+  }
+
+
+  /**
+   * The customer talk percentage used to filter the view
+   **/
+  public ViewFilter customerTalkPercentage(NumericRange customerTalkPercentage) {
+    this.customerTalkPercentage = customerTalkPercentage;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The customer talk percentage used to filter the view")
+  @JsonProperty("customerTalkPercentage")
+  public NumericRange getCustomerTalkPercentage() {
+    return customerTalkPercentage;
+  }
+  public void setCustomerTalkPercentage(NumericRange customerTalkPercentage) {
+    this.customerTalkPercentage = customerTalkPercentage;
+  }
+
+
+  /**
+   * The overtalk percentage used to filter the view
+   **/
+  public ViewFilter overtalkPercentage(NumericRange overtalkPercentage) {
+    this.overtalkPercentage = overtalkPercentage;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The overtalk percentage used to filter the view")
+  @JsonProperty("overtalkPercentage")
+  public NumericRange getOvertalkPercentage() {
+    return overtalkPercentage;
+  }
+  public void setOvertalkPercentage(NumericRange overtalkPercentage) {
+    this.overtalkPercentage = overtalkPercentage;
+  }
+
+
+  /**
+   * The silence percentage used to filter the view
+   **/
+  public ViewFilter silencePercentage(NumericRange silencePercentage) {
+    this.silencePercentage = silencePercentage;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The silence percentage used to filter the view")
+  @JsonProperty("silencePercentage")
+  public NumericRange getSilencePercentage() {
+    return silencePercentage;
+  }
+  public void setSilencePercentage(NumericRange silencePercentage) {
+    this.silencePercentage = silencePercentage;
+  }
+
+
+  /**
+   * The acd percentage used to filter the view
+   **/
+  public ViewFilter acdPercentage(NumericRange acdPercentage) {
+    this.acdPercentage = acdPercentage;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The acd percentage used to filter the view")
+  @JsonProperty("acdPercentage")
+  public NumericRange getAcdPercentage() {
+    return acdPercentage;
+  }
+  public void setAcdPercentage(NumericRange acdPercentage) {
+    this.acdPercentage = acdPercentage;
+  }
+
+
+  /**
+   * The ivr percentage used to filter the view
+   **/
+  public ViewFilter ivrPercentage(NumericRange ivrPercentage) {
+    this.ivrPercentage = ivrPercentage;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ivr percentage used to filter the view")
+  @JsonProperty("ivrPercentage")
+  public NumericRange getIvrPercentage() {
+    return ivrPercentage;
+  }
+  public void setIvrPercentage(NumericRange ivrPercentage) {
+    this.ivrPercentage = ivrPercentage;
+  }
+
+
+  /**
+   * The other (hold/music percentage used to filter the view
+   **/
+  public ViewFilter otherPercentage(NumericRange otherPercentage) {
+    this.otherPercentage = otherPercentage;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The other (hold/music percentage used to filter the view")
+  @JsonProperty("otherPercentage")
+  public NumericRange getOtherPercentage() {
+    return otherPercentage;
+  }
+  public void setOtherPercentage(NumericRange otherPercentage) {
+    this.otherPercentage = otherPercentage;
+  }
+
+
+  /**
+   * The overtalk instance range used to filter the view
+   **/
+  public ViewFilter overtalkInstances(NumericRange overtalkInstances) {
+    this.overtalkInstances = overtalkInstances;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The overtalk instance range used to filter the view")
+  @JsonProperty("overtalkInstances")
+  public NumericRange getOvertalkInstances() {
+    return overtalkInstances;
+  }
+  public void setOvertalkInstances(NumericRange overtalkInstances) {
+    this.overtalkInstances = overtalkInstances;
+  }
+
+
+  /**
    * Filter to indicate if the screen is recorded
    **/
   public ViewFilter isScreenRecorded(Boolean isScreenRecorded) {
@@ -4893,6 +5279,42 @@ public class ViewFilter  implements Serializable {
   }
   public void setScreenMonitorUserIds(List<String> screenMonitorUserIds) {
     this.screenMonitorUserIds = screenMonitorUserIds;
+  }
+
+
+  /**
+   * The type of dashboard being filtered
+   **/
+  public ViewFilter dashboardType(DashboardTypeEnum dashboardType) {
+    this.dashboardType = dashboardType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The type of dashboard being filtered")
+  @JsonProperty("dashboardType")
+  public DashboardTypeEnum getDashboardType() {
+    return dashboardType;
+  }
+  public void setDashboardType(DashboardTypeEnum dashboardType) {
+    this.dashboardType = dashboardType;
+  }
+
+
+  /**
+   * The type of dashboard access being filtered
+   **/
+  public ViewFilter dashboardAccessFilter(DashboardAccessFilterEnum dashboardAccessFilter) {
+    this.dashboardAccessFilter = dashboardAccessFilter;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The type of dashboard access being filtered")
+  @JsonProperty("dashboardAccessFilter")
+  public DashboardAccessFilterEnum getDashboardAccessFilter() {
+    return dashboardAccessFilter;
+  }
+  public void setDashboardAccessFilter(DashboardAccessFilterEnum dashboardAccessFilter) {
+    this.dashboardAccessFilter = dashboardAccessFilter;
   }
 
 
@@ -5083,13 +5505,30 @@ public class ViewFilter  implements Serializable {
             Objects.equals(this.surveyTypes, viewFilter.surveyTypes) &&
             Objects.equals(this.surveyResponseStatuses, viewFilter.surveyResponseStatuses) &&
             Objects.equals(this.botFlowTypes, viewFilter.botFlowTypes) &&
+            Objects.equals(this.agentTalkDurationMilliseconds, viewFilter.agentTalkDurationMilliseconds) &&
+            Objects.equals(this.customerTalkDurationMilliseconds, viewFilter.customerTalkDurationMilliseconds) &&
+            Objects.equals(this.overtalkDurationMilliseconds, viewFilter.overtalkDurationMilliseconds) &&
+            Objects.equals(this.silenceDurationMilliseconds, viewFilter.silenceDurationMilliseconds) &&
+            Objects.equals(this.acdDurationMilliseconds, viewFilter.acdDurationMilliseconds) &&
+            Objects.equals(this.ivrDurationMilliseconds, viewFilter.ivrDurationMilliseconds) &&
+            Objects.equals(this.otherDurationMilliseconds, viewFilter.otherDurationMilliseconds) &&
+            Objects.equals(this.agentTalkPercentage, viewFilter.agentTalkPercentage) &&
+            Objects.equals(this.customerTalkPercentage, viewFilter.customerTalkPercentage) &&
+            Objects.equals(this.overtalkPercentage, viewFilter.overtalkPercentage) &&
+            Objects.equals(this.silencePercentage, viewFilter.silencePercentage) &&
+            Objects.equals(this.acdPercentage, viewFilter.acdPercentage) &&
+            Objects.equals(this.ivrPercentage, viewFilter.ivrPercentage) &&
+            Objects.equals(this.otherPercentage, viewFilter.otherPercentage) &&
+            Objects.equals(this.overtalkInstances, viewFilter.overtalkInstances) &&
             Objects.equals(this.isScreenRecorded, viewFilter.isScreenRecorded) &&
-            Objects.equals(this.screenMonitorUserIds, viewFilter.screenMonitorUserIds);
+            Objects.equals(this.screenMonitorUserIds, viewFilter.screenMonitorUserIds) &&
+            Objects.equals(this.dashboardType, viewFilter.dashboardType) &&
+            Objects.equals(this.dashboardAccessFilter, viewFilter.dashboardAccessFilter);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, managementUnitIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds, transcriptTopics, journeyFrequencyCapReasons, journeyBlockingActionMapIds, journeyActionTargetIds, journeyBlockingScheduleGroupIds, journeyBlockingEmergencyScheduleGroupIds, journeyUrlEqualConditions, journeyUrlNotEqualConditions, journeyUrlStartsWithConditions, journeyUrlEndsWithConditions, journeyUrlContainsAnyConditions, journeyUrlNotContainsAnyConditions, journeyUrlContainsAllConditions, journeyUrlNotContainsAllConditions, flowMilestoneIds, isAssessmentPassed, conversationInitiators, hasCustomerParticipated, isAcdInteraction, hasFax, dataActionIds, actionCategoryName, integrationIds, responseStatuses, availableDashboard, favouriteDashboard, myDashboard, stationErrors, canonicalContactIds, alertRuleIds, evaluationFormContextIds, evaluationStatuses, workbinIds, worktypeIds, workitemIds, workitemAssigneeIds, workitemStatuses, isAnalyzedForSensitiveData, hasSensitiveData, hasPciData, hasPiiData, subPath, userState, isClearedByCustomer, evaluationAssigneeIds, evaluationAssigned, assistantIds, knowledgeBaseIds, isParked, agentEmpathyScore, surveyTypes, surveyResponseStatuses, botFlowTypes, isScreenRecorded, screenMonitorUserIds);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, managementUnitIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds, transcriptTopics, journeyFrequencyCapReasons, journeyBlockingActionMapIds, journeyActionTargetIds, journeyBlockingScheduleGroupIds, journeyBlockingEmergencyScheduleGroupIds, journeyUrlEqualConditions, journeyUrlNotEqualConditions, journeyUrlStartsWithConditions, journeyUrlEndsWithConditions, journeyUrlContainsAnyConditions, journeyUrlNotContainsAnyConditions, journeyUrlContainsAllConditions, journeyUrlNotContainsAllConditions, flowMilestoneIds, isAssessmentPassed, conversationInitiators, hasCustomerParticipated, isAcdInteraction, hasFax, dataActionIds, actionCategoryName, integrationIds, responseStatuses, availableDashboard, favouriteDashboard, myDashboard, stationErrors, canonicalContactIds, alertRuleIds, evaluationFormContextIds, evaluationStatuses, workbinIds, worktypeIds, workitemIds, workitemAssigneeIds, workitemStatuses, isAnalyzedForSensitiveData, hasSensitiveData, hasPciData, hasPiiData, subPath, userState, isClearedByCustomer, evaluationAssigneeIds, evaluationAssigned, assistantIds, knowledgeBaseIds, isParked, agentEmpathyScore, surveyTypes, surveyResponseStatuses, botFlowTypes, agentTalkDurationMilliseconds, customerTalkDurationMilliseconds, overtalkDurationMilliseconds, silenceDurationMilliseconds, acdDurationMilliseconds, ivrDurationMilliseconds, otherDurationMilliseconds, agentTalkPercentage, customerTalkPercentage, overtalkPercentage, silencePercentage, acdPercentage, ivrPercentage, otherPercentage, overtalkInstances, isScreenRecorded, screenMonitorUserIds, dashboardType, dashboardAccessFilter);
   }
 
   @Override
@@ -5274,8 +5713,25 @@ public class ViewFilter  implements Serializable {
     sb.append("    surveyTypes: ").append(toIndentedString(surveyTypes)).append("\n");
     sb.append("    surveyResponseStatuses: ").append(toIndentedString(surveyResponseStatuses)).append("\n");
     sb.append("    botFlowTypes: ").append(toIndentedString(botFlowTypes)).append("\n");
+    sb.append("    agentTalkDurationMilliseconds: ").append(toIndentedString(agentTalkDurationMilliseconds)).append("\n");
+    sb.append("    customerTalkDurationMilliseconds: ").append(toIndentedString(customerTalkDurationMilliseconds)).append("\n");
+    sb.append("    overtalkDurationMilliseconds: ").append(toIndentedString(overtalkDurationMilliseconds)).append("\n");
+    sb.append("    silenceDurationMilliseconds: ").append(toIndentedString(silenceDurationMilliseconds)).append("\n");
+    sb.append("    acdDurationMilliseconds: ").append(toIndentedString(acdDurationMilliseconds)).append("\n");
+    sb.append("    ivrDurationMilliseconds: ").append(toIndentedString(ivrDurationMilliseconds)).append("\n");
+    sb.append("    otherDurationMilliseconds: ").append(toIndentedString(otherDurationMilliseconds)).append("\n");
+    sb.append("    agentTalkPercentage: ").append(toIndentedString(agentTalkPercentage)).append("\n");
+    sb.append("    customerTalkPercentage: ").append(toIndentedString(customerTalkPercentage)).append("\n");
+    sb.append("    overtalkPercentage: ").append(toIndentedString(overtalkPercentage)).append("\n");
+    sb.append("    silencePercentage: ").append(toIndentedString(silencePercentage)).append("\n");
+    sb.append("    acdPercentage: ").append(toIndentedString(acdPercentage)).append("\n");
+    sb.append("    ivrPercentage: ").append(toIndentedString(ivrPercentage)).append("\n");
+    sb.append("    otherPercentage: ").append(toIndentedString(otherPercentage)).append("\n");
+    sb.append("    overtalkInstances: ").append(toIndentedString(overtalkInstances)).append("\n");
     sb.append("    isScreenRecorded: ").append(toIndentedString(isScreenRecorded)).append("\n");
     sb.append("    screenMonitorUserIds: ").append(toIndentedString(screenMonitorUserIds)).append("\n");
+    sb.append("    dashboardType: ").append(toIndentedString(dashboardType)).append("\n");
+    sb.append("    dashboardAccessFilter: ").append(toIndentedString(dashboardAccessFilter)).append("\n");
     sb.append("}");
     return sb.toString();
   }

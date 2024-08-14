@@ -263,7 +263,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **type** | **String**| Field type |<br />**Values**: person, group, org, externalContact 
+| **type** | **String**| Field type |<br />**Values**: person, group, org 
 {: class="table-striped"}
 
 

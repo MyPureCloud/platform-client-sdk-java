@@ -144,6 +144,7 @@ public class BotFlowSession  implements Serializable {
   }
   private BotResultCategoryEnum botResultCategory = null;
   private Date dateCreated = null;
+  private Date dateCompleted = null;
   private AddressableEntityRef conversation = null;
 
   
@@ -291,6 +292,24 @@ public class BotFlowSession  implements Serializable {
   }
 
 
+  /**
+   * Timestamp indicating when the session was completed. Note: The 'interval' query param uses this timestamp to filter the output. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public BotFlowSession dateCompleted(Date dateCompleted) {
+    this.dateCompleted = dateCompleted;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Timestamp indicating when the session was completed. Note: The 'interval' query param uses this timestamp to filter the output. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateCompleted")
+  public Date getDateCompleted() {
+    return dateCompleted;
+  }
+  public void setDateCompleted(Date dateCompleted) {
+    this.dateCompleted = dateCompleted;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The conversation details, across potentially multiple Bot Flow sessions.")
   @JsonProperty("conversation")
   public AddressableEntityRef getConversation() {
@@ -316,12 +335,13 @@ public class BotFlowSession  implements Serializable {
             Objects.equals(this.botResult, botFlowSession.botResult) &&
             Objects.equals(this.botResultCategory, botFlowSession.botResultCategory) &&
             Objects.equals(this.dateCreated, botFlowSession.dateCreated) &&
+            Objects.equals(this.dateCompleted, botFlowSession.dateCompleted) &&
             Objects.equals(this.conversation, botFlowSession.conversation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, flow, channel, language, endLanguage, botResult, botResultCategory, dateCreated, conversation);
+    return Objects.hash(id, flow, channel, language, endLanguage, botResult, botResultCategory, dateCreated, dateCompleted, conversation);
   }
 
   @Override
@@ -337,6 +357,7 @@ public class BotFlowSession  implements Serializable {
     sb.append("    botResult: ").append(toIndentedString(botResult)).append("\n");
     sb.append("    botResultCategory: ").append(toIndentedString(botResultCategory)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    dateCompleted: ").append(toIndentedString(dateCompleted)).append("\n");
     sb.append("    conversation: ").append(toIndentedString(conversation)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -75,14 +75,14 @@ public class FileUploadMode  implements Serializable {
 
   
   /**
-   * A list of supported content types for uploading files
+   * A list of supported content types for uploading files.
    **/
   public FileUploadMode fileTypes(List<FileTypesEnum> fileTypes) {
     this.fileTypes = fileTypes;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A list of supported content types for uploading files")
+  @ApiModelProperty(example = "null", value = "A list of supported content types for uploading files.")
   @JsonProperty("fileTypes")
   public List<FileTypesEnum> getFileTypes() {
     return fileTypes;

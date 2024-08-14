@@ -21,6 +21,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.AgentActivityEntityListing;
+import com.mypurecloud.sdk.v2.model.AiScoringSettings;
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
 import com.mypurecloud.sdk.v2.model.Calibration;
@@ -88,20 +89,6 @@ public class GetQualityEvaluationsQueryRequest {
 	    return this;
 	} 
 
-	private String sortBy;
-	public String getSortBy() {
-		return this.sortBy;
-	}
-
-	public void setSortBy(String sortBy) {
-		this.sortBy = sortBy;
-	}
-
-	public GetQualityEvaluationsQueryRequest withSortBy(String sortBy) {
-	    this.setSortBy(sortBy);
-	    return this;
-	} 
-
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -113,20 +100,6 @@ public class GetQualityEvaluationsQueryRequest {
 
 	public GetQualityEvaluationsQueryRequest withExpand(List<String> expand) {
 	    this.setExpand(expand);
-	    return this;
-	} 
-
-	private String nextPage;
-	public String getNextPage() {
-		return this.nextPage;
-	}
-
-	public void setNextPage(String nextPage) {
-		this.nextPage = nextPage;
-	}
-
-	public GetQualityEvaluationsQueryRequest withNextPage(String nextPage) {
-	    this.setNextPage(nextPage);
 	    return this;
 	} 
 
@@ -384,13 +357,7 @@ public class GetQualityEvaluationsQueryRequest {
                 .withQueryParameters("pageNumber", "", pageNumber)
         
 
-                .withQueryParameters("sortBy", "", sortBy)
-        
-
                 .withQueryParameters("expand", "multi", expand)
-        
-
-                .withQueryParameters("nextPage", "", nextPage)
         
 
                 .withQueryParameters("previousPage", "", previousPage)
@@ -471,18 +438,8 @@ public class GetQualityEvaluationsQueryRequest {
 			return this;
 		}
 
-		public Builder withSortBy(String sortBy) {
-			request.setSortBy(sortBy);
-			return this;
-		}
-
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
-			return this;
-		}
-
-		public Builder withNextPage(String nextPage) {
-			request.setNextPage(nextPage);
 			return this;
 		}
 

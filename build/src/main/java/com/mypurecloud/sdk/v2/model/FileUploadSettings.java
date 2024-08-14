@@ -30,14 +30,14 @@ public class FileUploadSettings  implements Serializable {
 
   
   /**
-   * whether or not attachments is enabled
+   * whether or not attachments are enabled
    **/
   public FileUploadSettings enableAttachments(Boolean enableAttachments) {
     this.enableAttachments = enableAttachments;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "whether or not attachments is enabled")
+  @ApiModelProperty(example = "null", value = "whether or not attachments are enabled")
   @JsonProperty("enableAttachments")
   public Boolean getEnableAttachments() {
     return enableAttachments;

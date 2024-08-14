@@ -9,7 +9,6 @@ title: V2ConversationMessageTypingEventForUserTopicConversationMessageEvent
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **eventType** | [**EventTypeEnum**](#EventTypeEnum)<!----> |  |  [optional] |
-| **coBrowse** | <!----><!---->[**V2ConversationMessageTypingEventForUserTopicConversationEventCoBrowse**](V2ConversationMessageTypingEventForUserTopicConversationEventCoBrowse.html)<!----> |  |  [optional] |
 | **typing** | <!----><!---->[**V2ConversationMessageTypingEventForUserTopicConversationEventTyping**](V2ConversationMessageTypingEventForUserTopicConversationEventTyping.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 

@@ -73,6 +73,7 @@ public class KnowledgeExportJobRequest  implements Serializable {
     }
   }
   private FileTypeEnum fileType = null;
+  private String sourceId = null;
   private Integer jsonFileVersion = null;
 
   
@@ -113,6 +114,24 @@ public class KnowledgeExportJobRequest  implements Serializable {
 
 
   /**
+   * Knowledge integration source id.
+   **/
+  public KnowledgeExportJobRequest sourceId(String sourceId) {
+    this.sourceId = sourceId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Knowledge integration source id.")
+  @JsonProperty("sourceId")
+  public String getSourceId() {
+    return sourceId;
+  }
+  public void setSourceId(String sourceId) {
+    this.sourceId = sourceId;
+  }
+
+
+  /**
    * Requested version of the exported json file. Available versions are 2 and 3, default is 2
    **/
   public KnowledgeExportJobRequest jsonFileVersion(Integer jsonFileVersion) {
@@ -142,12 +161,13 @@ public class KnowledgeExportJobRequest  implements Serializable {
 
     return Objects.equals(this.exportFilter, knowledgeExportJobRequest.exportFilter) &&
             Objects.equals(this.fileType, knowledgeExportJobRequest.fileType) &&
+            Objects.equals(this.sourceId, knowledgeExportJobRequest.sourceId) &&
             Objects.equals(this.jsonFileVersion, knowledgeExportJobRequest.jsonFileVersion);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(exportFilter, fileType, jsonFileVersion);
+    return Objects.hash(exportFilter, fileType, sourceId, jsonFileVersion);
   }
 
   @Override
@@ -157,6 +177,7 @@ public class KnowledgeExportJobRequest  implements Serializable {
     
     sb.append("    exportFilter: ").append(toIndentedString(exportFilter)).append("\n");
     sb.append("    fileType: ").append(toIndentedString(fileType)).append("\n");
+    sb.append("    sourceId: ").append(toIndentedString(sourceId)).append("\n");
     sb.append("    jsonFileVersion: ").append(toIndentedString(jsonFileVersion)).append("\n");
     sb.append("}");
     return sb.toString();

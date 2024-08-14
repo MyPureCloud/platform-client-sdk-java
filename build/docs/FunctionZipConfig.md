@@ -26,6 +26,9 @@ title: FunctionZipConfig
 | TRANSFERRING | &quot;Transferring&quot; | 
 | AVAILABLE | &quot;Available&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
+| INVALID | &quot;Invalid&quot; | 
+| INVALIDFORMAT | &quot;InvalidFormat&quot; | 
+| INVALIDFILE | &quot;InvalidFile&quot; | 
 {: class="table table-striped"}
 
 

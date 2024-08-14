@@ -33,8 +33,13 @@ title: ExternalContactsContactChangedTopicContact
 | **facebookId** | <!----><!---->[**ExternalContactsContactChangedTopicFacebookId**](ExternalContactsContactChangedTopicFacebookId.html)<!----> |  |  [optional] |
 | **instagramId** | <!----><!---->[**ExternalContactsContactChangedTopicInstagramId**](ExternalContactsContactChangedTopicInstagramId.html)<!----> |  |  [optional] |
 | **externalIds** | <!----><!---->[**List&lt;ExternalContactsContactChangedTopicExternalId&gt;**](ExternalContactsContactChangedTopicExternalId.html)<!----> |  |  [optional] |
+| **canonicalContactId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **schema** | <!----><!---->[**ExternalContactsContactChangedTopicDataSchema**](ExternalContactsContactChangedTopicDataSchema.html)<!----> |  |  [optional] |
 | **customFields** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
+| **mergeSet** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **mergedFrom** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **mergedTo** | <!----><!---->**String**<!----> |  |  [optional] |
+| **mergeOperation** | <!----><!---->[**ExternalContactsContactChangedTopicMergeOperation**](ExternalContactsContactChangedTopicMergeOperation.html)<!----> |  |  [optional] |
 | **createDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **modifyDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 {: class="table table-striped"}

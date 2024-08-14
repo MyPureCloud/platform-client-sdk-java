@@ -45,6 +45,7 @@ public class ConversationMessageMetadataEvent  implements Serializable {
     COBROWSE("CoBrowse"),
     TYPING("Typing"),
     PRESENCE("Presence"),
+    VIDEO("Video"),
     UNKNOWN("Unknown");
 
     private String value;

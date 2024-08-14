@@ -12,6 +12,11 @@ title: CampaignRuleParameters
 | **value** | <!----><!---->**String**<!----> | The value for comparison. Required for a CampaignRuleCondition. |  [optional] |
 | **priority** | [**PriorityEnum**](#PriorityEnum)<!----> | The priority to set a campaign to. Required for the 'setCampaignPriority' action. |  [optional] |
 | **dialingMode** | [**DialingModeEnum**](#DialingModeEnum)<!----> | The dialing mode to set a campaign to. Required for the 'setCampaignDialingMode' action. |  [optional] |
+| **abandonRate** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> | The abandon rate to set a campaign to. Required for the 'setCampaignAbandonRate' action. |  [optional] |
+| **outboundLineCount** | <!----><!---->**Integer**<!----> | The  number of outbound lines to set a campaign to. Required for the 'setCampaignNumberOfLines' action. |  [optional] |
+| **relativeWeight** | <!----><!---->**Integer**<!----> | The relative weight to set a campaign to. Required for the 'setCampaignWeight' action. |  [optional] |
+| **maxCallsPerAgent** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> | The maximum number of calls per agent to set a campaign to. Required for the 'setCampaignMaxCallsPerAgent' action. |  [optional] |
+| **queue** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The queue a campaign to. Required for the 'changeCampaignQueue' action. |  [optional] |
 {: class="table table-striped"}
 
 

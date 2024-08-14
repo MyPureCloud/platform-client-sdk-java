@@ -29,6 +29,9 @@ title: ContentReaction
 | THANKFUL | &quot;Thankful&quot; | 
 | PRIDE | &quot;Pride&quot; | 
 | CARE | &quot;Care&quot; | 
+| SHARE | &quot;Share&quot; | 
+| COMMENT | &quot;Comment&quot; | 
+| VIEW | &quot;View&quot; | 
 {: class="table table-striped"}
 
 

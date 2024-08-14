@@ -143,6 +143,7 @@ public class AnalyticsParticipant  implements Serializable {
     }
   }
   private PurposeEnum purpose = null;
+  private Boolean screenRecording = null;
   private String teamId = null;
   private String userId = null;
   private List<AnalyticsSession> sessions = new ArrayList<AnalyticsSession>();
@@ -258,6 +259,24 @@ public class AnalyticsParticipant  implements Serializable {
 
 
   /**
+   * Flag determining if a screen recording was started or not
+   **/
+  public AnalyticsParticipant screenRecording(Boolean screenRecording) {
+    this.screenRecording = screenRecording;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Flag determining if a screen recording was started or not")
+  @JsonProperty("screenRecording")
+  public Boolean getScreenRecording() {
+    return screenRecording;
+  }
+  public void setScreenRecording(Boolean screenRecording) {
+    this.screenRecording = screenRecording;
+  }
+
+
+  /**
    * The team ID the user is a member of
    **/
   public AnalyticsParticipant teamId(String teamId) {
@@ -345,6 +364,7 @@ public class AnalyticsParticipant  implements Serializable {
             Objects.equals(this.participantId, analyticsParticipant.participantId) &&
             Objects.equals(this.participantName, analyticsParticipant.participantName) &&
             Objects.equals(this.purpose, analyticsParticipant.purpose) &&
+            Objects.equals(this.screenRecording, analyticsParticipant.screenRecording) &&
             Objects.equals(this.teamId, analyticsParticipant.teamId) &&
             Objects.equals(this.userId, analyticsParticipant.userId) &&
             Objects.equals(this.sessions, analyticsParticipant.sessions) &&
@@ -353,7 +373,7 @@ public class AnalyticsParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(externalContactId, externalOrganizationId, flaggedReason, participantId, participantName, purpose, teamId, userId, sessions, attributes);
+    return Objects.hash(externalContactId, externalOrganizationId, flaggedReason, participantId, participantName, purpose, screenRecording, teamId, userId, sessions, attributes);
   }
 
   @Override
@@ -367,6 +387,7 @@ public class AnalyticsParticipant  implements Serializable {
     sb.append("    participantId: ").append(toIndentedString(participantId)).append("\n");
     sb.append("    participantName: ").append(toIndentedString(participantName)).append("\n");
     sb.append("    purpose: ").append(toIndentedString(purpose)).append("\n");
+    sb.append("    screenRecording: ").append(toIndentedString(screenRecording)).append("\n");
     sb.append("    teamId: ").append(toIndentedString(teamId)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    sessions: ").append(toIndentedString(sessions)).append("\n");

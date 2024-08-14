@@ -179,6 +179,8 @@ public class Flow  implements Serializable {
     }
   }
   private List<CompatibleFlowTypesEnum> compatibleFlowTypes = new ArrayList<CompatibleFlowTypesEnum>();
+  private String worktypeId = null;
+  private Boolean virtualAgentEnabled = null;
   private String selfUri = null;
 
   
@@ -516,6 +518,40 @@ public class Flow  implements Serializable {
   }
 
 
+  /**
+   **/
+  public Flow worktypeId(String worktypeId) {
+    this.worktypeId = worktypeId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("worktypeId")
+  public String getWorktypeId() {
+    return worktypeId;
+  }
+  public void setWorktypeId(String worktypeId) {
+    this.worktypeId = worktypeId;
+  }
+
+
+  /**
+   **/
+  public Flow virtualAgentEnabled(Boolean virtualAgentEnabled) {
+    this.virtualAgentEnabled = virtualAgentEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("virtualAgentEnabled")
+  public Boolean getVirtualAgentEnabled() {
+    return virtualAgentEnabled;
+  }
+  public void setVirtualAgentEnabled(Boolean virtualAgentEnabled) {
+    this.virtualAgentEnabled = virtualAgentEnabled;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -554,12 +590,14 @@ public class Flow  implements Serializable {
             Objects.equals(this.nluInfo, flow.nluInfo) &&
             Objects.equals(this.supportedLanguages, flow.supportedLanguages) &&
             Objects.equals(this.compatibleFlowTypes, flow.compatibleFlowTypes) &&
+            Objects.equals(this.worktypeId, flow.worktypeId) &&
+            Objects.equals(this.virtualAgentEnabled, flow.virtualAgentEnabled) &&
             Objects.equals(this.selfUri, flow.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, type, lockedUser, lockedClient, active, system, deleted, publishedVersion, savedVersion, inputSchema, outputSchema, checkedInVersion, debugVersion, publishedBy, currentOperation, nluInfo, supportedLanguages, compatibleFlowTypes, selfUri);
+    return Objects.hash(id, name, division, description, type, lockedUser, lockedClient, active, system, deleted, publishedVersion, savedVersion, inputSchema, outputSchema, checkedInVersion, debugVersion, publishedBy, currentOperation, nluInfo, supportedLanguages, compatibleFlowTypes, worktypeId, virtualAgentEnabled, selfUri);
   }
 
   @Override
@@ -588,6 +626,8 @@ public class Flow  implements Serializable {
     sb.append("    nluInfo: ").append(toIndentedString(nluInfo)).append("\n");
     sb.append("    supportedLanguages: ").append(toIndentedString(supportedLanguages)).append("\n");
     sb.append("    compatibleFlowTypes: ").append(toIndentedString(compatibleFlowTypes)).append("\n");
+    sb.append("    worktypeId: ").append(toIndentedString(worktypeId)).append("\n");
+    sb.append("    virtualAgentEnabled: ").append(toIndentedString(virtualAgentEnabled)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

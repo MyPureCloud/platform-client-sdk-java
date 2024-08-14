@@ -62,6 +62,7 @@ title: TimeOffRequestResponse
 | OUTSIDESHIFT | &quot;OutsideShift&quot; | 
 | REMOVEDFROMWAITLIST | &quot;RemovedFromWaitlist&quot; | 
 | WAITLISTED | &quot;Waitlisted&quot; | 
+| OVERLAPSRESTRICTEDACTIVITYCODE | &quot;OverlapsRestrictedActivityCode&quot; | 
 {: class="table table-striped"}
 
 

@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.LearningAssignmentTopicLearningModuleReferen
 import com.mypurecloud.sdk.v2.model.LearningAssignmentTopicUserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.math.BigDecimal;
 import java.util.Date;
 
 import java.io.Serializable;
@@ -88,6 +89,57 @@ public class LearningAssignmentTopicLearningAssignmentNotification  implements S
   private Date dateModified = null;
   private Boolean isOverdue = null;
   private Integer lengthInMinutes = null;
+  private BigDecimal percentageScore = null;
+  private Boolean isPassed = null;
+
+  private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
+    public TypeEnumDeserializer() {
+      super(TypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets type
+   */
+ @JsonDeserialize(using = TypeEnumDeserializer.class)
+  public enum TypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("Unknown"),
+    NATIVE("Native"),
+    EXTERNAL("External");
+
+    private String value;
+
+    TypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TypeEnum value : TypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private TypeEnum type = null;
 
   
   /**
@@ -294,6 +346,57 @@ public class LearningAssignmentTopicLearningAssignmentNotification  implements S
   }
 
 
+  /**
+   **/
+  public LearningAssignmentTopicLearningAssignmentNotification percentageScore(BigDecimal percentageScore) {
+    this.percentageScore = percentageScore;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("percentageScore")
+  public BigDecimal getPercentageScore() {
+    return percentageScore;
+  }
+  public void setPercentageScore(BigDecimal percentageScore) {
+    this.percentageScore = percentageScore;
+  }
+
+
+  /**
+   **/
+  public LearningAssignmentTopicLearningAssignmentNotification isPassed(Boolean isPassed) {
+    this.isPassed = isPassed;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("isPassed")
+  public Boolean getIsPassed() {
+    return isPassed;
+  }
+  public void setIsPassed(Boolean isPassed) {
+    this.isPassed = isPassed;
+  }
+
+
+  /**
+   **/
+  public LearningAssignmentTopicLearningAssignmentNotification type(TypeEnum type) {
+    this.type = type;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("type")
+  public TypeEnum getType() {
+    return type;
+  }
+  public void setType(TypeEnum type) {
+    this.type = type;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -315,12 +418,15 @@ public class LearningAssignmentTopicLearningAssignmentNotification  implements S
             Objects.equals(this.modifiedBy, learningAssignmentTopicLearningAssignmentNotification.modifiedBy) &&
             Objects.equals(this.dateModified, learningAssignmentTopicLearningAssignmentNotification.dateModified) &&
             Objects.equals(this.isOverdue, learningAssignmentTopicLearningAssignmentNotification.isOverdue) &&
-            Objects.equals(this.lengthInMinutes, learningAssignmentTopicLearningAssignmentNotification.lengthInMinutes);
+            Objects.equals(this.lengthInMinutes, learningAssignmentTopicLearningAssignmentNotification.lengthInMinutes) &&
+            Objects.equals(this.percentageScore, learningAssignmentTopicLearningAssignmentNotification.percentageScore) &&
+            Objects.equals(this.isPassed, learningAssignmentTopicLearningAssignmentNotification.isPassed) &&
+            Objects.equals(this.type, learningAssignmentTopicLearningAssignmentNotification.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, user, module, version, state, dateRecommendedForCompletion, createdBy, dateCreated, modifiedBy, dateModified, isOverdue, lengthInMinutes);
+    return Objects.hash(id, user, module, version, state, dateRecommendedForCompletion, createdBy, dateCreated, modifiedBy, dateModified, isOverdue, lengthInMinutes, percentageScore, isPassed, type);
   }
 
   @Override
@@ -340,6 +446,9 @@ public class LearningAssignmentTopicLearningAssignmentNotification  implements S
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    isOverdue: ").append(toIndentedString(isOverdue)).append("\n");
     sb.append("    lengthInMinutes: ").append(toIndentedString(lengthInMinutes)).append("\n");
+    sb.append("    percentageScore: ").append(toIndentedString(percentageScore)).append("\n");
+    sb.append("    isPassed: ").append(toIndentedString(isPassed)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -46,7 +46,10 @@ public class FunctionZipConfig  implements Serializable {
     PENDING("Pending"),
     TRANSFERRING("Transferring"),
     AVAILABLE("Available"),
-    UNKNOWN("Unknown");
+    UNKNOWN("Unknown"),
+    INVALID("Invalid"),
+    INVALIDFORMAT("InvalidFormat"),
+    INVALIDFILE("InvalidFile");
 
     private String value;
 

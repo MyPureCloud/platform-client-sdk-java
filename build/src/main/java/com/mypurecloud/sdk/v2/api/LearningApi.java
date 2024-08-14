@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentExternalUpdate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentItem;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentReschedule;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentStep;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUserListing;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUserQuery;
@@ -31,6 +32,9 @@ import com.mypurecloud.sdk.v2.model.LearningModule;
 import com.mypurecloud.sdk.v2.model.LearningModuleCoverArtResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleJobRequest;
 import com.mypurecloud.sdk.v2.model.LearningModuleJobResponse;
+import com.mypurecloud.sdk.v2.model.LearningModulePreviewGetResponse;
+import com.mypurecloud.sdk.v2.model.LearningModulePreviewUpdateRequest;
+import com.mypurecloud.sdk.v2.model.LearningModulePreviewUpdateResponse;
 import com.mypurecloud.sdk.v2.model.LearningModulePublishRequest;
 import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
@@ -38,22 +42,29 @@ import com.mypurecloud.sdk.v2.model.LearningModuleRule;
 import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.LearningScheduleSlotsQueryRequest;
 import com.mypurecloud.sdk.v2.model.LearningScheduleSlotsQueryResponse;
+import com.mypurecloud.sdk.v2.model.LearningScormResponse;
+import com.mypurecloud.sdk.v2.model.LearningScormUploadRequest;
+import com.mypurecloud.sdk.v2.model.LearningScormUploadResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteLearningAssignmentRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteLearningModuleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningAssignmentRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLearningAssignmentStepRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningAssignmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningAssignmentsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModuleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModuleJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLearningModulePreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModuleRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModuleVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModulesAssignmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModulesCoverartCoverArtIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLearningScormScormIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLearningAssignmentRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLearningAssignmentRescheduleRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchLearningAssignmentStepRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLearningModuleUserAssignmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssessmentsScoringRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentReassignRequest;
@@ -67,7 +78,9 @@ import com.mypurecloud.sdk.v2.api.request.PostLearningModulePublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningModulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningRulesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningScheduleslotsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLearningScormRequest;
 import com.mypurecloud.sdk.v2.api.request.PutLearningModuleRequest;
+import com.mypurecloud.sdk.v2.api.request.PutLearningModulePreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.PutLearningModuleRuleRequest;
 
 import java.io.IOException;
@@ -320,6 +333,100 @@ public class LearningApi {
   }
 
   /**
+   * Get Learning Assignment Step
+   * Permission not required if you are the assigned user of the learning assignment
+   * @param assignmentId The ID of Learning Assignment (required)
+   * @param stepId The ID of Learning Assignment Step (required)
+   * @param shareableContentObjectId The ID of SCO to load (optional)
+   * @param defaultShareableContentObject The default SCO to retrieve (optional)
+   * @param expand Fields to expand in response (optional)
+   * @return LearningAssignmentStep
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningAssignmentStep getLearningAssignmentStep(String assignmentId, String stepId, String shareableContentObjectId, String defaultShareableContentObject, List<String> expand) throws IOException, ApiException {
+    return  getLearningAssignmentStep(createGetLearningAssignmentStepRequest(assignmentId, stepId, shareableContentObjectId, defaultShareableContentObject, expand));
+  }
+
+  /**
+   * Get Learning Assignment Step
+   * Permission not required if you are the assigned user of the learning assignment
+   * @param assignmentId The ID of Learning Assignment (required)
+   * @param stepId The ID of Learning Assignment Step (required)
+   * @param shareableContentObjectId The ID of SCO to load (optional)
+   * @param defaultShareableContentObject The default SCO to retrieve (optional)
+   * @param expand Fields to expand in response (optional)
+   * @return LearningAssignmentStep
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningAssignmentStep> getLearningAssignmentStepWithHttpInfo(String assignmentId, String stepId, String shareableContentObjectId, String defaultShareableContentObject, List<String> expand) throws IOException {
+    return getLearningAssignmentStep(createGetLearningAssignmentStepRequest(assignmentId, stepId, shareableContentObjectId, defaultShareableContentObject, expand).withHttpInfo());
+  }
+
+  private GetLearningAssignmentStepRequest createGetLearningAssignmentStepRequest(String assignmentId, String stepId, String shareableContentObjectId, String defaultShareableContentObject, List<String> expand) {
+    return GetLearningAssignmentStepRequest.builder()
+            .withAssignmentId(assignmentId)
+
+            .withStepId(stepId)
+
+            .withShareableContentObjectId(shareableContentObjectId)
+
+            .withDefaultShareableContentObject(defaultShareableContentObject)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Get Learning Assignment Step
+   * Permission not required if you are the assigned user of the learning assignment
+   * @param request The request object
+   * @return LearningAssignmentStep
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningAssignmentStep getLearningAssignmentStep(GetLearningAssignmentStepRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LearningAssignmentStep> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LearningAssignmentStep>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Learning Assignment Step
+   * Permission not required if you are the assigned user of the learning assignment
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningAssignmentStep> getLearningAssignmentStep(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LearningAssignmentStep>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningAssignmentStep> response = (ApiResponse<LearningAssignmentStep>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningAssignmentStep> response = (ApiResponse<LearningAssignmentStep>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * List of Learning module Assignments
    * Either moduleId or user value is required
    * @param moduleId Specifies the ID of the learning module. Fetch assignments for learning module ID (optional)
@@ -334,7 +441,7 @@ public class LearningApi {
    * @param sortOrder Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional, default to Desc)
    * @param sortBy Specifies which field to sort the results by, default sort is by recommendedCompletionDate (optional)
    * @param userId Specifies the list of user IDs to be queried, up to 100 user IDs. (optional)
-   * @param types Specifies the module types to filter by (optional)
+   * @param types Specifies the module types to filter by. Informational, AssessedContent and Assessment are deprecated (optional)
    * @param states Specifies the assignment states to filter by (optional)
    * @param expand Specifies the expand option for returning additional information (optional)
    * @return LearningAssignmentsDomainEntity
@@ -360,7 +467,7 @@ public class LearningApi {
    * @param sortOrder Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional, default to Desc)
    * @param sortBy Specifies which field to sort the results by, default sort is by recommendedCompletionDate (optional)
    * @param userId Specifies the list of user IDs to be queried, up to 100 user IDs. (optional)
-   * @param types Specifies the module types to filter by (optional)
+   * @param types Specifies the module types to filter by. Informational, AssessedContent and Assessment are deprecated (optional)
    * @param states Specifies the assignment states to filter by (optional)
    * @param expand Specifies the expand option for returning additional information (optional)
    * @return LearningAssignmentsDomainEntity
@@ -467,7 +574,7 @@ public class LearningApi {
    * @param maxPercentageScore The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
    * @param sortOrder Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional, default to Desc)
    * @param sortBy Specifies which field to sort the results by, default sort is by recommendedCompletionDate (optional)
-   * @param types Specifies the module types to filter by (optional)
+   * @param types Specifies the module types to filter by. Informational, AssessedContent and Assessment are deprecated (optional)
    * @param states Specifies the assignment states to filter by (optional)
    * @param expand Specifies the expand option for returning additional information (optional)
    * @return LearningAssignmentsDomainEntity
@@ -492,7 +599,7 @@ public class LearningApi {
    * @param maxPercentageScore The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
    * @param sortOrder Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional, default to Desc)
    * @param sortBy Specifies which field to sort the results by, default sort is by recommendedCompletionDate (optional)
-   * @param types Specifies the module types to filter by (optional)
+   * @param types Specifies the module types to filter by. Informational, AssessedContent and Assessment are deprecated (optional)
    * @param states Specifies the assignment states to filter by (optional)
    * @param expand Specifies the expand option for returning additional information (optional)
    * @return LearningAssignmentsDomainEntity
@@ -748,6 +855,84 @@ public class LearningApi {
   }
 
   /**
+   * Get a learning module preview
+   * 
+   * @param moduleId The ID of the learning module (required)
+   * @return LearningModulePreviewGetResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningModulePreviewGetResponse getLearningModulePreview(String moduleId) throws IOException, ApiException {
+    return  getLearningModulePreview(createGetLearningModulePreviewRequest(moduleId));
+  }
+
+  /**
+   * Get a learning module preview
+   * 
+   * @param moduleId The ID of the learning module (required)
+   * @return LearningModulePreviewGetResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningModulePreviewGetResponse> getLearningModulePreviewWithHttpInfo(String moduleId) throws IOException {
+    return getLearningModulePreview(createGetLearningModulePreviewRequest(moduleId).withHttpInfo());
+  }
+
+  private GetLearningModulePreviewRequest createGetLearningModulePreviewRequest(String moduleId) {
+    return GetLearningModulePreviewRequest.builder()
+            .withModuleId(moduleId)
+
+            .build();
+  }
+
+  /**
+   * Get a learning module preview
+   * 
+   * @param request The request object
+   * @return LearningModulePreviewGetResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningModulePreviewGetResponse getLearningModulePreview(GetLearningModulePreviewRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LearningModulePreviewGetResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LearningModulePreviewGetResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a learning module preview
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningModulePreviewGetResponse> getLearningModulePreview(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LearningModulePreviewGetResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningModulePreviewGetResponse> response = (ApiResponse<LearningModulePreviewGetResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningModulePreviewGetResponse> response = (ApiResponse<LearningModulePreviewGetResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a learning module rule
    * 
    * @param moduleId The ID of the learning module (required)
@@ -915,7 +1100,7 @@ public class LearningApi {
    * Get all learning modules of an organization
    * 
    * @param isArchived Archive status (optional, default to false)
-   * @param types Specifies the module types. (optional)
+   * @param types Specifies the module types. Informational, AssessedContent and Assessment are deprecated (optional)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param sortOrder Sort order (optional, default to ascending)
@@ -937,7 +1122,7 @@ public class LearningApi {
    * Get all learning modules of an organization
    * 
    * @param isArchived Archive status (optional, default to false)
-   * @param types Specifies the module types. (optional)
+   * @param types Specifies the module types. Informational, AssessedContent and Assessment are deprecated (optional)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param sortOrder Sort order (optional, default to ascending)
@@ -1210,6 +1395,84 @@ public class LearningApi {
   }
 
   /**
+   * Get Learning SCORM Result
+   * 
+   * @param scormId The ID of the SCORM package (required)
+   * @return LearningScormResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningScormResponse getLearningScormScormId(String scormId) throws IOException, ApiException {
+    return  getLearningScormScormId(createGetLearningScormScormIdRequest(scormId));
+  }
+
+  /**
+   * Get Learning SCORM Result
+   * 
+   * @param scormId The ID of the SCORM package (required)
+   * @return LearningScormResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningScormResponse> getLearningScormScormIdWithHttpInfo(String scormId) throws IOException {
+    return getLearningScormScormId(createGetLearningScormScormIdRequest(scormId).withHttpInfo());
+  }
+
+  private GetLearningScormScormIdRequest createGetLearningScormScormIdRequest(String scormId) {
+    return GetLearningScormScormIdRequest.builder()
+            .withScormId(scormId)
+
+            .build();
+  }
+
+  /**
+   * Get Learning SCORM Result
+   * 
+   * @param request The request object
+   * @return LearningScormResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningScormResponse getLearningScormScormId(GetLearningScormScormIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LearningScormResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LearningScormResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Learning SCORM Result
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningScormResponse> getLearningScormScormId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LearningScormResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningScormResponse> response = (ApiResponse<LearningScormResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningScormResponse> response = (ApiResponse<LearningScormResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update Learning Assignment
    * 
    * @param assignmentId The ID of Learning Assignment (required)
@@ -1369,6 +1632,92 @@ public class LearningApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<LearningAssignment> response = (ApiResponse<LearningAssignment>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update Learning Assignment Step
+   * Permission not required if you are the assigned user of the learning assignment
+   * @param assignmentId The ID of Learning Assignment (required)
+   * @param stepId The ID of Learning Assignment Step (required)
+   * @param body The Learning Assignment Step to be updated (optional)
+   * @return LearningAssignmentStep
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningAssignmentStep patchLearningAssignmentStep(String assignmentId, String stepId, LearningAssignmentStep body) throws IOException, ApiException {
+    return  patchLearningAssignmentStep(createPatchLearningAssignmentStepRequest(assignmentId, stepId, body));
+  }
+
+  /**
+   * Update Learning Assignment Step
+   * Permission not required if you are the assigned user of the learning assignment
+   * @param assignmentId The ID of Learning Assignment (required)
+   * @param stepId The ID of Learning Assignment Step (required)
+   * @param body The Learning Assignment Step to be updated (optional)
+   * @return LearningAssignmentStep
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningAssignmentStep> patchLearningAssignmentStepWithHttpInfo(String assignmentId, String stepId, LearningAssignmentStep body) throws IOException {
+    return patchLearningAssignmentStep(createPatchLearningAssignmentStepRequest(assignmentId, stepId, body).withHttpInfo());
+  }
+
+  private PatchLearningAssignmentStepRequest createPatchLearningAssignmentStepRequest(String assignmentId, String stepId, LearningAssignmentStep body) {
+    return PatchLearningAssignmentStepRequest.builder()
+            .withAssignmentId(assignmentId)
+
+            .withStepId(stepId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update Learning Assignment Step
+   * Permission not required if you are the assigned user of the learning assignment
+   * @param request The request object
+   * @return LearningAssignmentStep
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningAssignmentStep patchLearningAssignmentStep(PatchLearningAssignmentStepRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LearningAssignmentStep> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LearningAssignmentStep>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update Learning Assignment Step
+   * Permission not required if you are the assigned user of the learning assignment
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningAssignmentStep> patchLearningAssignmentStep(ApiRequest<LearningAssignmentStep> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LearningAssignmentStep>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningAssignmentStep> response = (ApiResponse<LearningAssignmentStep>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningAssignmentStep> response = (ApiResponse<LearningAssignmentStep>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2412,6 +2761,84 @@ public class LearningApi {
   }
 
   /**
+   * Create a SCORM package upload request
+   * 
+   * @param body The SCORM package to be uploaded (optional)
+   * @return LearningScormUploadResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningScormUploadResponse postLearningScorm(LearningScormUploadRequest body) throws IOException, ApiException {
+    return  postLearningScorm(createPostLearningScormRequest(body));
+  }
+
+  /**
+   * Create a SCORM package upload request
+   * 
+   * @param body The SCORM package to be uploaded (optional)
+   * @return LearningScormUploadResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningScormUploadResponse> postLearningScormWithHttpInfo(LearningScormUploadRequest body) throws IOException {
+    return postLearningScorm(createPostLearningScormRequest(body).withHttpInfo());
+  }
+
+  private PostLearningScormRequest createPostLearningScormRequest(LearningScormUploadRequest body) {
+    return PostLearningScormRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a SCORM package upload request
+   * 
+   * @param request The request object
+   * @return LearningScormUploadResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningScormUploadResponse postLearningScorm(PostLearningScormRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LearningScormUploadResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LearningScormUploadResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a SCORM package upload request
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningScormUploadResponse> postLearningScorm(ApiRequest<LearningScormUploadRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LearningScormUploadResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningScormUploadResponse> response = (ApiResponse<LearningScormUploadResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningScormUploadResponse> response = (ApiResponse<LearningScormUploadResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update a learning module
    * This will update the name, description, completion time in days and inform steps for a learning module
    * @param moduleId The ID of the learning module (required)
@@ -2489,6 +2916,88 @@ public class LearningApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<LearningModule> response = (ApiResponse<LearningModule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a learning module preview
+   * This will update a learning module preview
+   * @param moduleId The ID of the learning module (required)
+   * @param body The learning module to be updated (required)
+   * @return LearningModulePreviewUpdateResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningModulePreviewUpdateResponse putLearningModulePreview(String moduleId, LearningModulePreviewUpdateRequest body) throws IOException, ApiException {
+    return  putLearningModulePreview(createPutLearningModulePreviewRequest(moduleId, body));
+  }
+
+  /**
+   * Update a learning module preview
+   * This will update a learning module preview
+   * @param moduleId The ID of the learning module (required)
+   * @param body The learning module to be updated (required)
+   * @return LearningModulePreviewUpdateResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningModulePreviewUpdateResponse> putLearningModulePreviewWithHttpInfo(String moduleId, LearningModulePreviewUpdateRequest body) throws IOException {
+    return putLearningModulePreview(createPutLearningModulePreviewRequest(moduleId, body).withHttpInfo());
+  }
+
+  private PutLearningModulePreviewRequest createPutLearningModulePreviewRequest(String moduleId, LearningModulePreviewUpdateRequest body) {
+    return PutLearningModulePreviewRequest.builder()
+            .withModuleId(moduleId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a learning module preview
+   * This will update a learning module preview
+   * @param request The request object
+   * @return LearningModulePreviewUpdateResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningModulePreviewUpdateResponse putLearningModulePreview(PutLearningModulePreviewRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LearningModulePreviewUpdateResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LearningModulePreviewUpdateResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a learning module preview
+   * This will update a learning module preview
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningModulePreviewUpdateResponse> putLearningModulePreview(ApiRequest<LearningModulePreviewUpdateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LearningModulePreviewUpdateResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningModulePreviewUpdateResponse> response = (ApiResponse<LearningModulePreviewUpdateResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningModulePreviewUpdateResponse> response = (ApiResponse<LearningModulePreviewUpdateResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

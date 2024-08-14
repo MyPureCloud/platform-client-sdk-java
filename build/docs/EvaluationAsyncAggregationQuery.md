@@ -37,6 +37,7 @@ title: EvaluationAsyncAggregationQuery
 | EVALUATIONID | &quot;evaluationId&quot; |
 | EVALUATORID | &quot;evaluatorId&quot; |
 | FORMID | &quot;formId&quot; |
+| MEDIATYPE | &quot;mediaType&quot; |
 | QUEUEID | &quot;queueId&quot; |
 | RELEASED | &quot;released&quot; |
 | RESCORED | &quot;rescored&quot; |

@@ -43,7 +43,10 @@ public class RecipientAdditionalIdentifier  implements Serializable {
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DEPLOYMENT("Deployment"),
-    SUBJECT("Subject");
+    SUBJECT("Subject"),
+    TOPIC("Topic"),
+    INGESTIONRULE("IngestionRule"),
+    INGESTIONRULEVERSION("IngestionRuleVersion");
 
     private String value;
 

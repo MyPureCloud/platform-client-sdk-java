@@ -35,6 +35,7 @@ public class VoicemailMessage  implements Serializable {
   private Boolean read = null;
   private Integer audioRecordingDurationSeconds = null;
   private Long audioRecordingSizeBytes = null;
+  private String transcription = null;
   private Date createdDate = null;
   private Date modifiedDate = null;
   private Date deletedDate = null;
@@ -95,6 +96,13 @@ public class VoicemailMessage  implements Serializable {
   @JsonProperty("audioRecordingSizeBytes")
   public Long getAudioRecordingSizeBytes() {
     return audioRecordingSizeBytes;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The transcription of the voicemail's audio")
+  @JsonProperty("transcription")
+  public String getTranscription() {
+    return transcription;
   }
 
 
@@ -251,6 +259,7 @@ public class VoicemailMessage  implements Serializable {
             Objects.equals(this.read, voicemailMessage.read) &&
             Objects.equals(this.audioRecordingDurationSeconds, voicemailMessage.audioRecordingDurationSeconds) &&
             Objects.equals(this.audioRecordingSizeBytes, voicemailMessage.audioRecordingSizeBytes) &&
+            Objects.equals(this.transcription, voicemailMessage.transcription) &&
             Objects.equals(this.createdDate, voicemailMessage.createdDate) &&
             Objects.equals(this.modifiedDate, voicemailMessage.modifiedDate) &&
             Objects.equals(this.deletedDate, voicemailMessage.deletedDate) &&
@@ -270,7 +279,7 @@ public class VoicemailMessage  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, conversation, read, audioRecordingDurationSeconds, audioRecordingSizeBytes, createdDate, modifiedDate, deletedDate, callerAddress, callerName, callerUser, deleted, note, user, group, queue, copiedFrom, copiedTo, deleteRetentionPolicy, selfUri);
+    return Objects.hash(id, conversation, read, audioRecordingDurationSeconds, audioRecordingSizeBytes, transcription, createdDate, modifiedDate, deletedDate, callerAddress, callerName, callerUser, deleted, note, user, group, queue, copiedFrom, copiedTo, deleteRetentionPolicy, selfUri);
   }
 
   @Override
@@ -283,6 +292,7 @@ public class VoicemailMessage  implements Serializable {
     sb.append("    read: ").append(toIndentedString(read)).append("\n");
     sb.append("    audioRecordingDurationSeconds: ").append(toIndentedString(audioRecordingDurationSeconds)).append("\n");
     sb.append("    audioRecordingSizeBytes: ").append(toIndentedString(audioRecordingSizeBytes)).append("\n");
+    sb.append("    transcription: ").append(toIndentedString(transcription)).append("\n");
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");
     sb.append("    deletedDate: ").append(toIndentedString(deletedDate)).append("\n");

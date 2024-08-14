@@ -20,6 +20,7 @@ import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopi
 import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicFacebookId;
 import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicInstagramId;
 import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicLineId;
+import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicMergeOperation;
 import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicPhoneNumber;
 import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicTwitterId;
 import com.mypurecloud.sdk.v2.model.ExternalContactsUnresolvedContactChangedTopicWhatsAppId;
@@ -111,8 +112,13 @@ public class ExternalContactsUnresolvedContactChangedTopicContact  implements Se
   private ExternalContactsUnresolvedContactChangedTopicFacebookId facebookId = null;
   private ExternalContactsUnresolvedContactChangedTopicInstagramId instagramId = null;
   private List<ExternalContactsUnresolvedContactChangedTopicExternalId> externalIds = new ArrayList<ExternalContactsUnresolvedContactChangedTopicExternalId>();
+  private String canonicalContactId = null;
   private ExternalContactsUnresolvedContactChangedTopicDataSchema schema = null;
   private Map<String, Object> customFields = null;
+  private List<String> mergeSet = new ArrayList<String>();
+  private List<String> mergedFrom = new ArrayList<String>();
+  private String mergedTo = null;
+  private ExternalContactsUnresolvedContactChangedTopicMergeOperation mergeOperation = null;
   private Date createDate = null;
   private Date modifyDate = null;
 
@@ -544,6 +550,23 @@ public class ExternalContactsUnresolvedContactChangedTopicContact  implements Se
 
   /**
    **/
+  public ExternalContactsUnresolvedContactChangedTopicContact canonicalContactId(String canonicalContactId) {
+    this.canonicalContactId = canonicalContactId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("canonicalContactId")
+  public String getCanonicalContactId() {
+    return canonicalContactId;
+  }
+  public void setCanonicalContactId(String canonicalContactId) {
+    this.canonicalContactId = canonicalContactId;
+  }
+
+
+  /**
+   **/
   public ExternalContactsUnresolvedContactChangedTopicContact schema(ExternalContactsUnresolvedContactChangedTopicDataSchema schema) {
     this.schema = schema;
     return this;
@@ -573,6 +596,74 @@ public class ExternalContactsUnresolvedContactChangedTopicContact  implements Se
   }
   public void setCustomFields(Map<String, Object> customFields) {
     this.customFields = customFields;
+  }
+
+
+  /**
+   **/
+  public ExternalContactsUnresolvedContactChangedTopicContact mergeSet(List<String> mergeSet) {
+    this.mergeSet = mergeSet;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("mergeSet")
+  public List<String> getMergeSet() {
+    return mergeSet;
+  }
+  public void setMergeSet(List<String> mergeSet) {
+    this.mergeSet = mergeSet;
+  }
+
+
+  /**
+   **/
+  public ExternalContactsUnresolvedContactChangedTopicContact mergedFrom(List<String> mergedFrom) {
+    this.mergedFrom = mergedFrom;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("mergedFrom")
+  public List<String> getMergedFrom() {
+    return mergedFrom;
+  }
+  public void setMergedFrom(List<String> mergedFrom) {
+    this.mergedFrom = mergedFrom;
+  }
+
+
+  /**
+   **/
+  public ExternalContactsUnresolvedContactChangedTopicContact mergedTo(String mergedTo) {
+    this.mergedTo = mergedTo;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("mergedTo")
+  public String getMergedTo() {
+    return mergedTo;
+  }
+  public void setMergedTo(String mergedTo) {
+    this.mergedTo = mergedTo;
+  }
+
+
+  /**
+   **/
+  public ExternalContactsUnresolvedContactChangedTopicContact mergeOperation(ExternalContactsUnresolvedContactChangedTopicMergeOperation mergeOperation) {
+    this.mergeOperation = mergeOperation;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("mergeOperation")
+  public ExternalContactsUnresolvedContactChangedTopicMergeOperation getMergeOperation() {
+    return mergeOperation;
+  }
+  public void setMergeOperation(ExternalContactsUnresolvedContactChangedTopicMergeOperation mergeOperation) {
+    this.mergeOperation = mergeOperation;
   }
 
 
@@ -645,15 +736,20 @@ public class ExternalContactsUnresolvedContactChangedTopicContact  implements Se
             Objects.equals(this.facebookId, externalContactsUnresolvedContactChangedTopicContact.facebookId) &&
             Objects.equals(this.instagramId, externalContactsUnresolvedContactChangedTopicContact.instagramId) &&
             Objects.equals(this.externalIds, externalContactsUnresolvedContactChangedTopicContact.externalIds) &&
+            Objects.equals(this.canonicalContactId, externalContactsUnresolvedContactChangedTopicContact.canonicalContactId) &&
             Objects.equals(this.schema, externalContactsUnresolvedContactChangedTopicContact.schema) &&
             Objects.equals(this.customFields, externalContactsUnresolvedContactChangedTopicContact.customFields) &&
+            Objects.equals(this.mergeSet, externalContactsUnresolvedContactChangedTopicContact.mergeSet) &&
+            Objects.equals(this.mergedFrom, externalContactsUnresolvedContactChangedTopicContact.mergedFrom) &&
+            Objects.equals(this.mergedTo, externalContactsUnresolvedContactChangedTopicContact.mergedTo) &&
+            Objects.equals(this.mergeOperation, externalContactsUnresolvedContactChangedTopicContact.mergeOperation) &&
             Objects.equals(this.createDate, externalContactsUnresolvedContactChangedTopicContact.createDate) &&
             Objects.equals(this.modifyDate, externalContactsUnresolvedContactChangedTopicContact.modifyDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, division, externalOrganization, type, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, surveyOptOut, externalSystemUrl, twitterId, lineId, whatsAppId, facebookId, instagramId, externalIds, schema, customFields, createDate, modifyDate);
+    return Objects.hash(id, division, externalOrganization, type, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, surveyOptOut, externalSystemUrl, twitterId, lineId, whatsAppId, facebookId, instagramId, externalIds, canonicalContactId, schema, customFields, mergeSet, mergedFrom, mergedTo, mergeOperation, createDate, modifyDate);
   }
 
   @Override
@@ -686,8 +782,13 @@ public class ExternalContactsUnresolvedContactChangedTopicContact  implements Se
     sb.append("    facebookId: ").append(toIndentedString(facebookId)).append("\n");
     sb.append("    instagramId: ").append(toIndentedString(instagramId)).append("\n");
     sb.append("    externalIds: ").append(toIndentedString(externalIds)).append("\n");
+    sb.append("    canonicalContactId: ").append(toIndentedString(canonicalContactId)).append("\n");
     sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
     sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
+    sb.append("    mergeSet: ").append(toIndentedString(mergeSet)).append("\n");
+    sb.append("    mergedFrom: ").append(toIndentedString(mergedFrom)).append("\n");
+    sb.append("    mergedTo: ").append(toIndentedString(mergedTo)).append("\n");
+    sb.append("    mergeOperation: ").append(toIndentedString(mergeOperation)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("    modifyDate: ").append(toIndentedString(modifyDate)).append("\n");
     sb.append("}");

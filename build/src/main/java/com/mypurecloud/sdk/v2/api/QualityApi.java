@@ -11,6 +11,7 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.AgentActivityEntityListing;
+import com.mypurecloud.sdk.v2.model.AiScoringSettings;
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
 import com.mypurecloud.sdk.v2.model.Calibration;
@@ -108,6 +109,7 @@ import com.mypurecloud.sdk.v2.api.request.PutQualityCalibrationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityConversationEvaluationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityFormRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityFormsEvaluationRequest;
+import com.mypurecloud.sdk.v2.api.request.PutQualityFormsEvaluationAiscoringSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityFormsSurveyRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualitySurveysScorableRequest;
 
@@ -1528,9 +1530,7 @@ public class QualityApi {
    * Query params must include one of conversationId, evaluatorUserId, agentUserId or assigneeUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date. NOTE: The count for total and pageCount might not be accurate when querying for a large number of evaluations. nextUri, if present, will indicate that there are more evaluations to fetch. The evaluation entities contained in the response might only contain a subset of all the properties listed below. It is often because a given property's value has not yet been populated or is not applicable in the current state of the evaluation. It might also be because the missing property in the response was not requested by the user.
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
-   * @param sortBy NOTE: Does not work when querying evaluations (optional)
    * @param expand variable name requested by expand list (optional)
-   * @param nextPage NOTE: Does not work when querying evaluations (optional)
    * @param previousPage Previous page token (optional)
    * @param conversationId conversationId specified (optional)
    * @param agentUserId user id of the agent (optional)
@@ -1551,8 +1551,8 @@ public class QualityApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EvaluationEntityListing getQualityEvaluationsQuery(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String conversationId, String agentUserId, String agentTeamId, String evaluatorUserId, String assigneeUserId, String queueId, String startTime, String endTime, String formContextId, List<String> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum, String sortOrder) throws IOException, ApiException {
-    return  getQualityEvaluationsQuery(createGetQualityEvaluationsQueryRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, agentTeamId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, formContextId, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder));
+  public EvaluationEntityListing getQualityEvaluationsQuery(Integer pageSize, Integer pageNumber, List<String> expand, String previousPage, String conversationId, String agentUserId, String agentTeamId, String evaluatorUserId, String assigneeUserId, String queueId, String startTime, String endTime, String formContextId, List<String> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum, String sortOrder) throws IOException, ApiException {
+    return  getQualityEvaluationsQuery(createGetQualityEvaluationsQueryRequest(pageSize, pageNumber, expand, previousPage, conversationId, agentUserId, agentTeamId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, formContextId, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder));
   }
 
   /**
@@ -1560,9 +1560,7 @@ public class QualityApi {
    * Query params must include one of conversationId, evaluatorUserId, agentUserId or assigneeUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date. NOTE: The count for total and pageCount might not be accurate when querying for a large number of evaluations. nextUri, if present, will indicate that there are more evaluations to fetch. The evaluation entities contained in the response might only contain a subset of all the properties listed below. It is often because a given property's value has not yet been populated or is not applicable in the current state of the evaluation. It might also be because the missing property in the response was not requested by the user.
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
-   * @param sortBy NOTE: Does not work when querying evaluations (optional)
    * @param expand variable name requested by expand list (optional)
-   * @param nextPage NOTE: Does not work when querying evaluations (optional)
    * @param previousPage Previous page token (optional)
    * @param conversationId conversationId specified (optional)
    * @param agentUserId user id of the agent (optional)
@@ -1582,21 +1580,17 @@ public class QualityApi {
    * @return EvaluationEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationEntityListing> getQualityEvaluationsQueryWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String conversationId, String agentUserId, String agentTeamId, String evaluatorUserId, String assigneeUserId, String queueId, String startTime, String endTime, String formContextId, List<String> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum, String sortOrder) throws IOException {
-    return getQualityEvaluationsQuery(createGetQualityEvaluationsQueryRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, agentTeamId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, formContextId, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder).withHttpInfo());
+  public ApiResponse<EvaluationEntityListing> getQualityEvaluationsQueryWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> expand, String previousPage, String conversationId, String agentUserId, String agentTeamId, String evaluatorUserId, String assigneeUserId, String queueId, String startTime, String endTime, String formContextId, List<String> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum, String sortOrder) throws IOException {
+    return getQualityEvaluationsQuery(createGetQualityEvaluationsQueryRequest(pageSize, pageNumber, expand, previousPage, conversationId, agentUserId, agentTeamId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, formContextId, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder).withHttpInfo());
   }
 
-  private GetQualityEvaluationsQueryRequest createGetQualityEvaluationsQueryRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String conversationId, String agentUserId, String agentTeamId, String evaluatorUserId, String assigneeUserId, String queueId, String startTime, String endTime, String formContextId, List<String> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum, String sortOrder) {
+  private GetQualityEvaluationsQueryRequest createGetQualityEvaluationsQueryRequest(Integer pageSize, Integer pageNumber, List<String> expand, String previousPage, String conversationId, String agentUserId, String agentTeamId, String evaluatorUserId, String assigneeUserId, String queueId, String startTime, String endTime, String formContextId, List<String> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum, String sortOrder) {
     return GetQualityEvaluationsQueryRequest.builder()
             .withPageSize(pageSize)
 
             .withPageNumber(pageNumber)
 
-            .withSortBy(sortBy)
-
             .withExpand(expand)
-
-            .withNextPage(nextPage)
 
             .withPreviousPage(previousPage)
 
@@ -5229,6 +5223,92 @@ public class QualityApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EvaluationFormResponse> response = (ApiResponse<EvaluationFormResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update the AI Scoring settings of an evaluation form.
+   * 
+   * putQualityFormsEvaluationAiscoringSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param formId Form ID (required)
+   * @param body AI Scoring Settings (required)
+   * @return AiScoringSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AiScoringSettings putQualityFormsEvaluationAiscoringSettings(String formId, AiScoringSettings body) throws IOException, ApiException {
+    return  putQualityFormsEvaluationAiscoringSettings(createPutQualityFormsEvaluationAiscoringSettingsRequest(formId, body));
+  }
+
+  /**
+   * Update the AI Scoring settings of an evaluation form.
+   * 
+   * putQualityFormsEvaluationAiscoringSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param formId Form ID (required)
+   * @param body AI Scoring Settings (required)
+   * @return AiScoringSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AiScoringSettings> putQualityFormsEvaluationAiscoringSettingsWithHttpInfo(String formId, AiScoringSettings body) throws IOException {
+    return putQualityFormsEvaluationAiscoringSettings(createPutQualityFormsEvaluationAiscoringSettingsRequest(formId, body).withHttpInfo());
+  }
+
+  private PutQualityFormsEvaluationAiscoringSettingsRequest createPutQualityFormsEvaluationAiscoringSettingsRequest(String formId, AiScoringSettings body) {
+    return PutQualityFormsEvaluationAiscoringSettingsRequest.builder()
+            .withFormId(formId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the AI Scoring settings of an evaluation form.
+   * 
+   * putQualityFormsEvaluationAiscoringSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AiScoringSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AiScoringSettings putQualityFormsEvaluationAiscoringSettings(PutQualityFormsEvaluationAiscoringSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AiScoringSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AiScoringSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the AI Scoring settings of an evaluation form.
+   * 
+   * putQualityFormsEvaluationAiscoringSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AiScoringSettings> putQualityFormsEvaluationAiscoringSettings(ApiRequest<AiScoringSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AiScoringSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AiScoringSettings> response = (ApiResponse<AiScoringSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AiScoringSettings> response = (ApiResponse<AiScoringSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

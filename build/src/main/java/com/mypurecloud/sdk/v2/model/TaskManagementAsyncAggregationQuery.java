@@ -117,6 +117,7 @@ public class TaskManagementAsyncAggregationQuery  implements Serializable {
     NWORKITEMSDECLINED("nWorkitemsDeclined"),
     NWORKITEMSDELETED("nWorkitemsDeleted"),
     NWORKITEMSDISCONNECTED("nWorkitemsDisconnected"),
+    NWORKITEMSOFFERED("nWorkitemsOffered"),
     NWORKITEMSOVERSLA("nWorkitemsOverSla"),
     NWORKITEMSPURGED("nWorkitemsPurged"),
     NWORKITEMSQUEUETRANSFERRED("nWorkitemsQueueTransferred"),

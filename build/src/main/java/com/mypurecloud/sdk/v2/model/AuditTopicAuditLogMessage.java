@@ -102,7 +102,9 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     SCRIPTER("Scripter"),
     BILLING("Billing"),
     JOURNEYANALYTICS("JourneyAnalytics"),
-    NERSERVICE("NerService");
+    NERSERVICE("NerService"),
+    ONBOARDING("Onboarding"),
+    SOCIALLISTENING("SocialListening");
 
     private String value;
 
@@ -217,6 +219,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     CONTACTSUPDATED("ContactsUpdated"),
     CONTACTSDELETED("ContactsDeleted"),
     RESTORE("Restore"),
+    BLOCK("Block"),
+    UNBLOCK("Unblock"),
     OPEN("Open"),
     APPROVED("Approved"),
     REJECTED("Rejected"),
@@ -231,6 +235,23 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     UPDATEOUTOFSERVICE("UpdateOutOfService"),
     CYCLE("Cycle"),
     SCALE("Scale"),
+    ASGINSERVICE("AsgInservice"),
+    AWSOUTOFSERVICE("AwsOutofservice"),
+    ASGTERMINATE("AsgTerminate"),
+    DETACH("Detach"),
+    TERMINATE("Terminate"),
+    BLOCKUPGRADE("BlockUpgrade"),
+    UNBLOCKUPGRADE("UnblockUpgrade"),
+    ASGSWAPINSTANCETYPE("AsgSwapInstanceType"),
+    RECREATEASG("RecreateAsg"),
+    DELETEUNCONFIGUREDEDGE("DeleteUnconfiguredEdge"),
+    GETASGLIST("GetAsgList"),
+    GETASG("GetAsg"),
+    UPGRADEORGANIZATIONSITE("UpgradeOrganizationSite"),
+    UPDATEAWSCONFIG("UpdateAwsConfig"),
+    GETAWSCONFIG("GetAwsConfig"),
+    DELETEGHOSTEDGERECORD("DeleteGhostEdgeRecord"),
+    UPGRADECLEANUP("UpgradeCleanup"),
     IPALLOWLISTCLEAR("IpAllowlistClear"),
     ADDPAIRINGROLE("AddPairingRole"),
     VERIFY("Verify"),
@@ -242,10 +263,12 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     CANCEL("Cancel"),
     HARDDELETE("HardDelete"),
     SOFTDELETE("SoftDelete"),
+    SUBMIT("Submit"),
     ENABLECAPTURE("EnableCapture"),
     DOWNLOADCAPTURE("DownloadCapture"),
     INITIATE("Initiate"),
-    REVERSEMANUALLY("ReverseManually");
+    REVERSEMANUALLY("ReverseManually"),
+    PROVISIONED("Provisioned");
 
     private String value;
 
@@ -381,6 +404,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     TIMEOFFPLAN("TimeOffPlan"),
     TIMEOFFREQUEST("TimeOffRequest"),
     WORKPLAN("WorkPlan"),
+    WORKPLANBID("WorkPlanBid"),
+    WORKPLANBIDGROUP("WorkPlanBidGroup"),
     WORKPLANROTATION("WorkPlanRotation"),
     HISTORICALDATA("HistoricalData"),
     STAFFINGGROUP("StaffingGroup"),
@@ -400,6 +425,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     SCHEDULEGROUP("ScheduleGroup"),
     EMERGENCYGROUP("EmergencyGroup"),
     IVR("IVR"),
+    ALERTABLEPRESENCESOVERRIDES("AlertablePresencesOverrides"),
     DID("DID"),
     DIDPOOL("DIDPool"),
     EXTENSION("Extension"),
@@ -486,6 +512,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     CREDENTIAL("Credential"),
     NUMBERORDER("NumberOrder"),
     ENTERPRISEAGREEMENT("EnterpriseAgreement"),
+    VENDORLISTING("VendorListing"),
     GDPRREQUEST("GdprRequest"),
     DEFAULTPANELSETTINGS("DefaultPanelSettings"),
     INBOUNDDOMAIN("InboundDomain"),
@@ -502,7 +529,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     TOPICMINER("TopicMiner"),
     SOFTSUSPENSION("SoftSuspension"),
     JOURNEYVIEW("JourneyView"),
-    CUSTOMENTITY("CustomEntity");
+    CUSTOMENTITY("CustomEntity"),
+    DIRECTORYFEATURE("DirectoryFeature");
 
     private String value;
 

@@ -14,6 +14,19 @@ title: MessengerSettings
 | **fileUpload** | <!----><!---->[**FileUploadSettings**](FileUploadSettings.html)<!----> | The file upload settings for messenger |  [optional] |
 | **apps** | <!----><!---->[**MessengerApps**](MessengerApps.html)<!----> | The apps embedded in the messenger |  [optional] |
 | **homeScreen** | <!----><!---->[**MessengerHomeScreen**](MessengerHomeScreen.html)<!----> | The homescreen settings for messenger |  [optional] |
+| **sessionPersistenceType** | [**SessionPersistenceTypeEnum**](#SessionPersistenceTypeEnum)<!----> | The session persistence type for messenger |  [optional] |
+{: class="table table-striped"}
+
+
+<a name="SessionPersistenceTypeEnum"></a>
+
+## Enum: SessionPersistenceTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ACROSSSUBDOMAINS | &quot;AcrossSubdomains&quot; | 
+| DOMAINORSUBDOMAINONLY | &quot;DomainOrSubdomainOnly&quot; | 
 {: class="table table-striped"}
 
 

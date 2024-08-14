@@ -9,7 +9,7 @@ title: JourneyViewElementFilter
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **type** | [**TypeEnum**](#TypeEnum)<!----> | Boolean operation to apply to the provided predicates and clauses. Valid values: And |  |
-| **predicates** | <!----><!---->[**List&lt;JourneyViewElementFilterPredicate&gt;**](JourneyViewElementFilterPredicate.html)<!----> | predicates |  |
+| **predicates** | <!----><!---->[**List&lt;JourneyViewElementFilterPredicate&gt;**](JourneyViewElementFilterPredicate.html)<!----> | predicates |  [optional] |
 {: class="table table-striped"}
 
 

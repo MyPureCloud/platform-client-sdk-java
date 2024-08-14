@@ -30,7 +30,6 @@ title: Recipient
 | SMS | &quot;sms&quot; | 
 | FACEBOOK | &quot;facebook&quot; | 
 | TWITTER | &quot;twitter&quot; | 
-| LINE | &quot;line&quot; | 
 | WHATSAPP | &quot;whatsapp&quot; | 
 | WEBMESSAGING | &quot;webmessaging&quot; | 
 | INSTAGRAM | &quot;instagram&quot; | 

@@ -102,7 +102,7 @@ public class JourneyViewElementFilter  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "predicates")
+  @ApiModelProperty(example = "null", value = "predicates")
   @JsonProperty("predicates")
   public List<JourneyViewElementFilterPredicate> getPredicates() {
     return predicates;

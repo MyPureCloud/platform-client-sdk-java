@@ -59,6 +59,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOutboundCampaignsDivisionviews**](OutboundApi.html#getOutboundCampaignsDivisionviews) | Query a list of basic Campaign information objects |
 | [**getOutboundContactlist**](OutboundApi.html#getOutboundContactlist) | Get a dialer contact list. |
 | [**getOutboundContactlistContact**](OutboundApi.html#getOutboundContactlistContact) | Get a contact. |
+| [**getOutboundContactlistContactsBulkJob**](OutboundApi.html#getOutboundContactlistContactsBulkJob) | Get bulk operation job. |
+| [**getOutboundContactlistContactsBulkJobs**](OutboundApi.html#getOutboundContactlistContactsBulkJobs) | Get 10 most recent bulk operation jobs associated with contact list. |
 | [**getOutboundContactlistExport**](OutboundApi.html#getOutboundContactlistExport) | Get the URI of a contact list export. |
 | [**getOutboundContactlistImportstatus**](OutboundApi.html#getOutboundContactlistImportstatus) | Get dialer contactList import status. |
 | [**getOutboundContactlistTimezonemappingpreview**](OutboundApi.html#getOutboundContactlistTimezonemappingpreview) | Preview the result of applying Automatic Time Zone Mapping to a contact list |
@@ -104,12 +106,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOutboundSequences**](OutboundApi.html#getOutboundSequences) | Query a list of dialer campaign sequences. |
 | [**getOutboundSettings**](OutboundApi.html#getOutboundSettings) | Get the outbound settings for this organization |
 | [**getOutboundWrapupcodemappings**](OutboundApi.html#getOutboundWrapupcodemappings) | Get the Dialer wrap up code mapping. |
+| [**patchOutboundCampaign**](OutboundApi.html#patchOutboundCampaign) | Update a campaign. |
 | [**patchOutboundDnclistCustomexclusioncolumns**](OutboundApi.html#patchOutboundDnclistCustomexclusioncolumns) | Add entries to or delete entries from a DNC list. |
 | [**patchOutboundDnclistEmailaddresses**](OutboundApi.html#patchOutboundDnclistEmailaddresses) | Add emails to or Delete emails from a DNC list. |
 | [**patchOutboundDnclistPhonenumbers**](OutboundApi.html#patchOutboundDnclistPhonenumbers) | Add numbers to or delete numbers from a DNC list. |
 | [**patchOutboundSettings**](OutboundApi.html#patchOutboundSettings) | Update the outbound settings for this organization |
 | [**postOutboundAttemptlimits**](OutboundApi.html#postOutboundAttemptlimits) | Create attempt limits |
-| [**postOutboundAudits**](OutboundApi.html#postOutboundAudits) | Retrieves audits for dialer. (Deprecated) |
 | [**postOutboundCallabletimesets**](OutboundApi.html#postOutboundCallabletimesets) | Create callable time set |
 | [**postOutboundCallanalysisresponsesets**](OutboundApi.html#postOutboundCallanalysisresponsesets) | Create a dialer call analysis response set. |
 | [**postOutboundCampaignAgentownedmappingpreview**](OutboundApi.html#postOutboundCampaignAgentownedmappingpreview) | Initiate request for a preview of how agents will be mapped to this campaign's contact list. |
@@ -424,6 +426,7 @@ Wraps DELETE /api/v2/outbound/campaigns/{campaignId}/progress
 Requires ANY permissions: 
 
 * outbound:campaign:edit
+* outbound:campaign:recycle
 
 ### Example
 
@@ -1577,12 +1580,16 @@ try {
 
 Reset messaging campaign progress and recycle the messaging campaign
 
+Documented permissions are applicable based on campaign type.
+
 Wraps DELETE /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress  
 
 Requires ANY permissions: 
 
 * outbound:messagingCampaign:edit
 * outbound:emailCampaign:edit
+* outbound:messagingCampaign:recycle
+* outbound:emailCampaign:recycle
 
 ### Example
 
@@ -3465,6 +3472,130 @@ try {
 ### Return type
 
 [**DialerContact**](DialerContact.html)
+
+<a name="getOutboundContactlistContactsBulkJob"></a>
+
+# **getOutboundContactlistContactsBulkJob**
+
+
+
+> [ContactsBulkOperationJob](ContactsBulkOperationJob.html) getOutboundContactlistContactsBulkJob(contactListId, jobId)
+
+Get bulk operation job.
+
+Wraps GET /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* outbound:contactList:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String contactListId = "contactListId_example"; // String | Contact List ID
+String jobId = "jobId_example"; // String | Job ID
+try {
+    ContactsBulkOperationJob result = apiInstance.getOutboundContactlistContactsBulkJob(contactListId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundContactlistContactsBulkJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contactListId** | **String**| Contact List ID | 
+| **jobId** | **String**| Job ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContactsBulkOperationJob**](ContactsBulkOperationJob.html)
+
+<a name="getOutboundContactlistContactsBulkJobs"></a>
+
+# **getOutboundContactlistContactsBulkJobs**
+
+
+
+> [ContactsBulkOperationJobListing](ContactsBulkOperationJobListing.html) getOutboundContactlistContactsBulkJobs(contactListId)
+
+Get 10 most recent bulk operation jobs associated with contact list.
+
+Wraps GET /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs  
+
+Requires ANY permissions: 
+
+* outbound:contactList:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String contactListId = "contactListId_example"; // String | Contact List ID
+try {
+    ContactsBulkOperationJobListing result = apiInstance.getOutboundContactlistContactsBulkJobs(contactListId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundContactlistContactsBulkJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contactListId** | **String**| Contact List ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContactsBulkOperationJobListing**](ContactsBulkOperationJobListing.html)
 
 <a name="getOutboundContactlistExport"></a>
 
@@ -6431,6 +6562,68 @@ This endpoint does not require any parameters.
 
 [**WrapUpCodeMapping**](WrapUpCodeMapping.html)
 
+<a name="patchOutboundCampaign"></a>
+
+# **patchOutboundCampaign**
+
+
+
+> Void patchOutboundCampaign(campaignId, body)
+
+Update a campaign.
+
+Wraps PATCH /api/v2/outbound/campaigns/{campaignId}  
+
+Requires ALL permissions: 
+
+* outbound:campaign:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String campaignId = "campaignId_example"; // String | Campaign ID
+CampaignPatchRequest body = new CampaignPatchRequest(); // CampaignPatchRequest | CampaignPatchRequest
+try {
+    apiInstance.patchOutboundCampaign(campaignId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#patchOutboundCampaign");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaignId** | **String**| Campaign ID | 
+| **body** | [**CampaignPatchRequest**](CampaignPatchRequest.html)| CampaignPatchRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
 <a name="patchOutboundDnclistCustomexclusioncolumns"></a>
 
 # **patchOutboundDnclistCustomexclusioncolumns**
@@ -6743,79 +6936,6 @@ try {
 ### Return type
 
 [**AttemptLimits**](AttemptLimits.html)
-
-<a name="postOutboundAudits"></a>
-
-# **postOutboundAudits**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [AuditSearchResult](AuditSearchResult.html) postOutboundAudits(body, pageSize, pageNumber, sortBy, sortOrder, facetsOnly)
-
-Retrieves audits for dialer. (Deprecated)
-
-This endpoint is deprecated as a result of this functionality being moved to the Audit Service. Please use \"/api/v2/audits/query\" instead.
-
-Wraps POST /api/v2/outbound/audits  
-
-Requires ANY permissions: 
-
-* outbound:audit:view
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.OutboundApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-OutboundApi apiInstance = new OutboundApi();
-DialerAuditRequest body = new DialerAuditRequest(); // DialerAuditRequest | AuditSearch
-Integer pageSize = 25; // Integer | Page size
-Integer pageNumber = 1; // Integer | Page number
-String sortBy = "entity.name"; // String | Sort by
-String sortOrder = "ascending"; // String | Sort order
-Boolean facetsOnly = false; // Boolean | Facets only
-try {
-    AuditSearchResult result = apiInstance.postOutboundAudits(body, pageSize, pageNumber, sortBy, sortOrder, facetsOnly);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling OutboundApi#postOutboundAudits");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **body** | [**DialerAuditRequest**](DialerAuditRequest.html)| AuditSearch | 
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **sortBy** | **String**| Sort by | [optional] [default to entity.name] 
-| **sortOrder** | **String**| Sort order | [optional] [default to ascending] 
-| **facetsOnly** | **Boolean**| Facets only | [optional] [default to false] 
-{: class="table-striped"}
-
-
-### Return type
-
-[**AuditSearchResult**](AuditSearchResult.html)
 
 <a name="postOutboundCallabletimesets"></a>
 

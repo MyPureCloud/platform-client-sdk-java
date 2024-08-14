@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DocumentThumbnail;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -24,11 +25,79 @@ import java.io.Serializable;
 
 public class DownloadResponse  implements Serializable {
   
+  private String id = null;
   private String contentLocationUri = null;
   private String imageUri = null;
   private List<DocumentThumbnail> thumbnails = new ArrayList<DocumentThumbnail>();
 
+  private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
+    public StateEnumDeserializer() {
+      super(StateEnumDeserializer.class);
+    }
+
+    @Override
+    public StateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets state
+   */
+ @JsonDeserialize(using = StateEnumDeserializer.class)
+  public enum StateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    RUNNING("Running"),
+    COMPLETED("Completed");
+
+    private String value;
+
+    StateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static StateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (StateEnum value : StateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return StateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private StateEnum state = null;
+  private String resultUri = null;
+  private String selfUri = null;
+
   
+  /**
+   **/
+  public DownloadResponse id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+  public void setId(String id) {
+    this.id = id;
+  }
+
+
   /**
    **/
   public DownloadResponse contentLocationUri(String contentLocationUri) {
@@ -80,6 +149,57 @@ public class DownloadResponse  implements Serializable {
   }
 
 
+  /**
+   **/
+  public DownloadResponse state(StateEnum state) {
+    this.state = state;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("state")
+  public StateEnum getState() {
+    return state;
+  }
+  public void setState(StateEnum state) {
+    this.state = state;
+  }
+
+
+  /**
+   **/
+  public DownloadResponse resultUri(String resultUri) {
+    this.resultUri = resultUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("resultUri")
+  public String getResultUri() {
+    return resultUri;
+  }
+  public void setResultUri(String resultUri) {
+    this.resultUri = resultUri;
+  }
+
+
+  /**
+   **/
+  public DownloadResponse selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -90,14 +210,18 @@ public class DownloadResponse  implements Serializable {
     }
     DownloadResponse downloadResponse = (DownloadResponse) o;
 
-    return Objects.equals(this.contentLocationUri, downloadResponse.contentLocationUri) &&
+    return Objects.equals(this.id, downloadResponse.id) &&
+            Objects.equals(this.contentLocationUri, downloadResponse.contentLocationUri) &&
             Objects.equals(this.imageUri, downloadResponse.imageUri) &&
-            Objects.equals(this.thumbnails, downloadResponse.thumbnails);
+            Objects.equals(this.thumbnails, downloadResponse.thumbnails) &&
+            Objects.equals(this.state, downloadResponse.state) &&
+            Objects.equals(this.resultUri, downloadResponse.resultUri) &&
+            Objects.equals(this.selfUri, downloadResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contentLocationUri, imageUri, thumbnails);
+    return Objects.hash(id, contentLocationUri, imageUri, thumbnails, state, resultUri, selfUri);
   }
 
   @Override
@@ -105,9 +229,13 @@ public class DownloadResponse  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class DownloadResponse {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    contentLocationUri: ").append(toIndentedString(contentLocationUri)).append("\n");
     sb.append("    imageUri: ").append(toIndentedString(imageUri)).append("\n");
     sb.append("    thumbnails: ").append(toIndentedString(thumbnails)).append("\n");
+    sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    resultUri: ").append(toIndentedString(resultUri)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

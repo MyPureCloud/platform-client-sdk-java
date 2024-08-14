@@ -44,7 +44,10 @@ public class ConversationRecipientAdditionalIdentifier  implements Serializable 
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DEPLOYMENT("Deployment"),
     SUBJECT("Subject"),
-    UNKNOWN("Unknown");
+    UNKNOWN("Unknown"),
+    TOPIC("Topic"),
+    INGESTIONRULE("IngestionRule"),
+    INGESTIONRULEVERSION("IngestionRuleVersion");
 
     private String value;
 

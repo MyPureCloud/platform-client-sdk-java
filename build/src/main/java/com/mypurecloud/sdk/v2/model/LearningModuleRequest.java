@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AssessmentForm;
 import com.mypurecloud.sdk.v2.model.LearningModuleCoverArtRequest;
 import com.mypurecloud.sdk.v2.model.LearningModuleInformStepRequest;
+import com.mypurecloud.sdk.v2.model.ReviewAssessmentResults;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -46,7 +47,7 @@ public class LearningModuleRequest  implements Serializable {
     }
   }
   /**
-   * The type for the learning module
+   * The type for the learning module. Informational, AssessedContent and Assessment are deprecated
    */
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
@@ -54,7 +55,8 @@ public class LearningModuleRequest  implements Serializable {
     INFORMATIONAL("Informational"),
     ASSESSEDCONTENT("AssessedContent"),
     ASSESSMENT("Assessment"),
-    EXTERNAL("External");
+    EXTERNAL("External"),
+    NATIVE("Native");
 
     private String value;
 
@@ -87,6 +89,8 @@ public class LearningModuleRequest  implements Serializable {
   private Integer lengthInMinutes = null;
   private Boolean excludedFromCatalog = null;
   private String externalId = null;
+  private Boolean enforceContentOrder = null;
+  private ReviewAssessmentResults reviewAssessmentResults = null;
 
   
   /**
@@ -162,14 +166,14 @@ public class LearningModuleRequest  implements Serializable {
 
 
   /**
-   * The type for the learning module
+   * The type for the learning module. Informational, AssessedContent and Assessment are deprecated
    **/
   public LearningModuleRequest type(TypeEnum type) {
     this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The type for the learning module")
+  @ApiModelProperty(example = "null", value = "The type for the learning module. Informational, AssessedContent and Assessment are deprecated")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;
@@ -269,6 +273,42 @@ public class LearningModuleRequest  implements Serializable {
   }
 
 
+  /**
+   * If true, learning module content should be viewed one by one in order
+   **/
+  public LearningModuleRequest enforceContentOrder(Boolean enforceContentOrder) {
+    this.enforceContentOrder = enforceContentOrder;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If true, learning module content should be viewed one by one in order")
+  @JsonProperty("enforceContentOrder")
+  public Boolean getEnforceContentOrder() {
+    return enforceContentOrder;
+  }
+  public void setEnforceContentOrder(Boolean enforceContentOrder) {
+    this.enforceContentOrder = enforceContentOrder;
+  }
+
+
+  /**
+   * Allows to view Assessment results in detail
+   **/
+  public LearningModuleRequest reviewAssessmentResults(ReviewAssessmentResults reviewAssessmentResults) {
+    this.reviewAssessmentResults = reviewAssessmentResults;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Allows to view Assessment results in detail")
+  @JsonProperty("reviewAssessmentResults")
+  public ReviewAssessmentResults getReviewAssessmentResults() {
+    return reviewAssessmentResults;
+  }
+  public void setReviewAssessmentResults(ReviewAssessmentResults reviewAssessmentResults) {
+    this.reviewAssessmentResults = reviewAssessmentResults;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -288,12 +328,14 @@ public class LearningModuleRequest  implements Serializable {
             Objects.equals(this.coverArt, learningModuleRequest.coverArt) &&
             Objects.equals(this.lengthInMinutes, learningModuleRequest.lengthInMinutes) &&
             Objects.equals(this.excludedFromCatalog, learningModuleRequest.excludedFromCatalog) &&
-            Objects.equals(this.externalId, learningModuleRequest.externalId);
+            Objects.equals(this.externalId, learningModuleRequest.externalId) &&
+            Objects.equals(this.enforceContentOrder, learningModuleRequest.enforceContentOrder) &&
+            Objects.equals(this.reviewAssessmentResults, learningModuleRequest.reviewAssessmentResults);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, completionTimeInDays, informSteps, type, assessmentForm, coverArt, lengthInMinutes, excludedFromCatalog, externalId);
+    return Objects.hash(name, description, completionTimeInDays, informSteps, type, assessmentForm, coverArt, lengthInMinutes, excludedFromCatalog, externalId, enforceContentOrder, reviewAssessmentResults);
   }
 
   @Override
@@ -311,6 +353,8 @@ public class LearningModuleRequest  implements Serializable {
     sb.append("    lengthInMinutes: ").append(toIndentedString(lengthInMinutes)).append("\n");
     sb.append("    excludedFromCatalog: ").append(toIndentedString(excludedFromCatalog)).append("\n");
     sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
+    sb.append("    enforceContentOrder: ").append(toIndentedString(enforceContentOrder)).append("\n");
+    sb.append("    reviewAssessmentResults: ").append(toIndentedString(reviewAssessmentResults)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationEventCoBrowse;
 import com.mypurecloud.sdk.v2.model.ConversationEventPresence;
 import com.mypurecloud.sdk.v2.model.ConversationEventTyping;
+import com.mypurecloud.sdk.v2.model.ConversationEventVideo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -48,6 +49,7 @@ public class ConversationMessageEvent  implements Serializable {
     COBROWSE("CoBrowse"),
     TYPING("Typing"),
     PRESENCE("Presence"),
+    VIDEO("Video"),
     UNKNOWN("Unknown");
 
     private String value;
@@ -79,6 +81,7 @@ public class ConversationMessageEvent  implements Serializable {
   private ConversationEventCoBrowse coBrowse = null;
   private ConversationEventTyping typing = null;
   private ConversationEventPresence presence = null;
+  private ConversationEventVideo video = null;
 
   
   /**
@@ -153,6 +156,24 @@ public class ConversationMessageEvent  implements Serializable {
   }
 
 
+  /**
+   * Video event.
+   **/
+  public ConversationMessageEvent video(ConversationEventVideo video) {
+    this.video = video;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Video event.")
+  @JsonProperty("video")
+  public ConversationEventVideo getVideo() {
+    return video;
+  }
+  public void setVideo(ConversationEventVideo video) {
+    this.video = video;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -166,12 +187,13 @@ public class ConversationMessageEvent  implements Serializable {
     return Objects.equals(this.eventType, conversationMessageEvent.eventType) &&
             Objects.equals(this.coBrowse, conversationMessageEvent.coBrowse) &&
             Objects.equals(this.typing, conversationMessageEvent.typing) &&
-            Objects.equals(this.presence, conversationMessageEvent.presence);
+            Objects.equals(this.presence, conversationMessageEvent.presence) &&
+            Objects.equals(this.video, conversationMessageEvent.video);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventType, coBrowse, typing, presence);
+    return Objects.hash(eventType, coBrowse, typing, presence, video);
   }
 
   @Override
@@ -183,6 +205,7 @@ public class ConversationMessageEvent  implements Serializable {
     sb.append("    coBrowse: ").append(toIndentedString(coBrowse)).append("\n");
     sb.append("    typing: ").append(toIndentedString(typing)).append("\n");
     sb.append("    presence: ").append(toIndentedString(presence)).append("\n");
+    sb.append("    video: ").append(toIndentedString(video)).append("\n");
     sb.append("}");
     return sb.toString();
   }

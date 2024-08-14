@@ -97,6 +97,7 @@ public class EvaluationResponse  implements Serializable {
   private Date releaseDate = null;
   private Date assignedDate = null;
   private Date changedDate = null;
+  private Date revisionCreatedDate = null;
   private Queue queue = null;
 
   private static class MediaTypeEnumDeserializer extends StdDeserializer<MediaTypeEnum> {
@@ -465,6 +466,24 @@ public class EvaluationResponse  implements Serializable {
 
 
   /**
+   * Date of when evaluation revision is created. Null if there is no revision. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public EvaluationResponse revisionCreatedDate(Date revisionCreatedDate) {
+    this.revisionCreatedDate = revisionCreatedDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Date of when evaluation revision is created. Null if there is no revision. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("revisionCreatedDate")
+  public Date getRevisionCreatedDate() {
+    return revisionCreatedDate;
+  }
+  public void setRevisionCreatedDate(Date revisionCreatedDate) {
+    this.revisionCreatedDate = revisionCreatedDate;
+  }
+
+
+  /**
    **/
   public EvaluationResponse queue(Queue queue) {
     this.queue = queue;
@@ -753,6 +772,7 @@ public class EvaluationResponse  implements Serializable {
             Objects.equals(this.releaseDate, evaluationResponse.releaseDate) &&
             Objects.equals(this.assignedDate, evaluationResponse.assignedDate) &&
             Objects.equals(this.changedDate, evaluationResponse.changedDate) &&
+            Objects.equals(this.revisionCreatedDate, evaluationResponse.revisionCreatedDate) &&
             Objects.equals(this.queue, evaluationResponse.queue) &&
             Objects.equals(this.mediaType, evaluationResponse.mediaType) &&
             Objects.equals(this.rescore, evaluationResponse.rescore) &&
@@ -773,7 +793,7 @@ public class EvaluationResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversation, evaluationForm, evaluator, agent, calibration, status, answers, agentHasRead, assignee, assigneeApplicable, releaseDate, assignedDate, changedDate, queue, mediaType, rescore, conversationDate, conversationEndDate, neverRelease, assigned, dateAssigneeChanged, resourceId, resourceType, redacted, isScoringIndex, authorizedActions, hasAssistanceFailed, evaluationSource, selfUri);
+    return Objects.hash(id, name, conversation, evaluationForm, evaluator, agent, calibration, status, answers, agentHasRead, assignee, assigneeApplicable, releaseDate, assignedDate, changedDate, revisionCreatedDate, queue, mediaType, rescore, conversationDate, conversationEndDate, neverRelease, assigned, dateAssigneeChanged, resourceId, resourceType, redacted, isScoringIndex, authorizedActions, hasAssistanceFailed, evaluationSource, selfUri);
   }
 
   @Override
@@ -796,6 +816,7 @@ public class EvaluationResponse  implements Serializable {
     sb.append("    releaseDate: ").append(toIndentedString(releaseDate)).append("\n");
     sb.append("    assignedDate: ").append(toIndentedString(assignedDate)).append("\n");
     sb.append("    changedDate: ").append(toIndentedString(changedDate)).append("\n");
+    sb.append("    revisionCreatedDate: ").append(toIndentedString(revisionCreatedDate)).append("\n");
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
     sb.append("    rescore: ").append(toIndentedString(rescore)).append("\n");

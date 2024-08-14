@@ -44,6 +44,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getJourneyViews**](JourneyApi.html#getJourneyViews) | Get a list of Journey Views |
 | [**getJourneyViewsEventdefinition**](JourneyApi.html#getJourneyViewsEventdefinition) | Get an Event Definition |
 | [**getJourneyViewsEventdefinitions**](JourneyApi.html#getJourneyViewsEventdefinitions) | Get a list of Event Definitions |
+| [**getJourneyViewsJobs**](JourneyApi.html#getJourneyViewsJobs) | Get the jobs for an organization. |
 | [**patchJourneyActionmap**](JourneyApi.html#patchJourneyActionmap) | Update single action map. |
 | [**patchJourneyActiontarget**](JourneyApi.html#patchJourneyActiontarget) | Update a single action target. |
 | [**patchJourneyActiontemplate**](JourneyApi.html#patchJourneyActiontemplate) | Update a single action template. |
@@ -56,6 +57,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postJourneyActiontemplates**](JourneyApi.html#postJourneyActiontemplates) | Create a single action template. |
 | [**postJourneyDeploymentActionevent**](JourneyApi.html#postJourneyDeploymentActionevent) | Sends an action event, which is used for changing the state of actions that have been offered to the user. |
 | [**postJourneyDeploymentAppevents**](JourneyApi.html#postJourneyDeploymentAppevents) | Send a journey app event, used for tracking customer activity on an application. |
+| [**postJourneyDeploymentWebevents**](JourneyApi.html#postJourneyDeploymentWebevents) | Send a journey web event, used for tracking customer activity on a website. |
 | [**postJourneyFlowsPathsQuery**](JourneyApi.html#postJourneyFlowsPathsQuery) | Query for flow paths. |
 | [**postJourneyOutcomes**](JourneyApi.html#postJourneyOutcomes) | Create an outcome. |
 | [**postJourneyOutcomesAttributionsJobs**](JourneyApi.html#postJourneyOutcomesAttributionsJobs) | Create Outcome Attributions |
@@ -1781,11 +1783,9 @@ try {
 
 
 
-> [EventListing](EventListing.html) getJourneySessionEvents(sessionId, pageSize, after)
+> [EventListing](EventListing.html) getJourneySessionEvents(sessionId, pageSize, after, eventType)
 
 Retrieve all events for a given session.
-
-getJourneySessionEvents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/journey/sessions/{sessionId}/events  
 
@@ -1818,8 +1818,9 @@ JourneyApi apiInstance = new JourneyApi();
 String sessionId = "sessionId_example"; // String | System-generated UUID that represents the session the event is a part of.
 String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String eventType = "eventType_example"; // String | A comma separated list of journey event types to include in the results.
 try {
-    EventListing result = apiInstance.getJourneySessionEvents(sessionId, pageSize, after);
+    EventListing result = apiInstance.getJourneySessionEvents(sessionId, pageSize, after, eventType);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling JourneyApi#getJourneySessionEvents");
@@ -1835,6 +1836,7 @@ try {
 | **sessionId** | **String**| System-generated UUID that represents the session the event is a part of. | 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **eventType** | **String**| A comma separated list of journey event types to include in the results. | [optional]<br />**Values**: com.genesys.journey.OutcomeAchievedEvent, com.genesys.journey.SegmentAssignmentEvent, com.genesys.journey.WebActionEvent, com.genesys.journey.WebEvent, com.genesys.journey.AppEvent 
 {: class="table-striped"}
 
 
@@ -2244,7 +2246,7 @@ try {
 
 
 
-> [AddressableEntityListing](AddressableEntityListing.html) getJourneyViews()
+> [JourneyViewListing](JourneyViewListing.html) getJourneyViews(pageNumber, pageSize, nameOrCreatedBy, expand)
 
 Get a list of Journey Views
 
@@ -2278,8 +2280,12 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 JourneyApi apiInstance = new JourneyApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String nameOrCreatedBy = "nameOrCreatedBy_example"; // String | Journey View Name or Created By
+String expand = "expand_example"; // String | Parameter to request additional data to return in Journey payload
 try {
-    AddressableEntityListing result = apiInstance.getJourneyViews();
+    JourneyViewListing result = apiInstance.getJourneyViews(pageNumber, pageSize, nameOrCreatedBy, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling JourneyApi#getJourneyViews");
@@ -2289,13 +2295,19 @@ try {
 
 ### Parameters
 
-This endpoint does not require any parameters.
 
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **nameOrCreatedBy** | **String**| Journey View Name or Created By | [optional] 
+| **expand** | **String**| Parameter to request additional data to return in Journey payload | [optional]<br />**Values**: charts 
+{: class="table-striped"}
 
 
 ### Return type
 
-[**AddressableEntityListing**](AddressableEntityListing.html)
+[**JourneyViewListing**](JourneyViewListing.html)
 
 <a name="getJourneyViewsEventdefinition"></a>
 
@@ -2418,6 +2430,75 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**JourneyEventDefinitionListing**](JourneyEventDefinitionListing.html)
+
+<a name="getJourneyViewsJobs"></a>
+
+# **getJourneyViewsJobs**
+
+
+
+> [JourneyViewJobListing](JourneyViewJobListing.html) getJourneyViewsJobs(pageNumber, pageSize, interval, statuses)
+
+Get the jobs for an organization.
+
+getJourneyViewsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/journey/views/jobs  
+
+Requires ALL permissions: 
+
+* journey:viewsJobs:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+Integer pageNumber = 1; // Integer | The number of the page to return
+Integer pageSize = 25; // Integer | Max number of entities to return
+String interval = 2023-07-17T00:00:00Z/2023-07-18T00:00:00Z; // String | An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval.
+String statuses = statuses=Accepted,Executing,Complete,Failed; // String | Job statuses to filter for
+try {
+    JourneyViewJobListing result = apiInstance.getJourneyViewsJobs(pageNumber, pageSize, interval, statuses);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyViewsJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| The number of the page to return | [optional] [default to 1] 
+| **pageSize** | **Integer**| Max number of entities to return | [optional] [default to 25] 
+| **interval** | **String**| An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval. | [optional] [default to null] 
+| **statuses** | **String**| Job statuses to filter for | [optional] [default to null] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**JourneyViewJobListing**](JourneyViewJobListing.html)
 
 <a name="patchJourneyActionmap"></a>
 
@@ -3137,6 +3218,55 @@ try {
 ### Return type
 
 [**AppEventResponse**](AppEventResponse.html)
+
+<a name="postJourneyDeploymentWebevents"></a>
+
+# **postJourneyDeploymentWebevents**
+
+
+
+> [WebEventResponse](WebEventResponse.html) postJourneyDeploymentWebevents(deploymentId, body)
+
+Send a journey web event, used for tracking customer activity on a website.
+
+Wraps POST /api/v2/journey/deployments/{deploymentId}/webevents  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+
+JourneyApi apiInstance = new JourneyApi();
+String deploymentId = "deploymentId_example"; // String | The ID of the deployment sending the web event.
+WebEventRequest body = new WebEventRequest(); // WebEventRequest | 
+try {
+    WebEventResponse result = apiInstance.postJourneyDeploymentWebevents(deploymentId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#postJourneyDeploymentWebevents");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **deploymentId** | **String**| The ID of the deployment sending the web event. | 
+| **body** | [**WebEventRequest**](WebEventRequest.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WebEventResponse**](WebEventResponse.html)
 
 <a name="postJourneyFlowsPathsQuery"></a>
 

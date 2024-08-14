@@ -33,8 +33,13 @@ title: ExternalContactsUnresolvedContactChangedTopicContact
 | **facebookId** | <!----><!---->[**ExternalContactsUnresolvedContactChangedTopicFacebookId**](ExternalContactsUnresolvedContactChangedTopicFacebookId.html)<!----> |  |  [optional] |
 | **instagramId** | <!----><!---->[**ExternalContactsUnresolvedContactChangedTopicInstagramId**](ExternalContactsUnresolvedContactChangedTopicInstagramId.html)<!----> |  |  [optional] |
 | **externalIds** | <!----><!---->[**List&lt;ExternalContactsUnresolvedContactChangedTopicExternalId&gt;**](ExternalContactsUnresolvedContactChangedTopicExternalId.html)<!----> |  |  [optional] |
+| **canonicalContactId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **schema** | <!----><!---->[**ExternalContactsUnresolvedContactChangedTopicDataSchema**](ExternalContactsUnresolvedContactChangedTopicDataSchema.html)<!----> |  |  [optional] |
 | **customFields** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
+| **mergeSet** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **mergedFrom** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **mergedTo** | <!----><!---->**String**<!----> |  |  [optional] |
+| **mergeOperation** | <!----><!---->[**ExternalContactsUnresolvedContactChangedTopicMergeOperation**](ExternalContactsUnresolvedContactChangedTopicMergeOperation.html)<!----> |  |  [optional] |
 | **createDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **modifyDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 {: class="table table-striped"}

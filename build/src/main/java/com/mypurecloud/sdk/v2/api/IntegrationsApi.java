@@ -57,6 +57,7 @@ import com.mypurecloud.sdk.v2.model.PublishDraftInput;
 import com.mypurecloud.sdk.v2.model.SttEngineEntity;
 import com.mypurecloud.sdk.v2.model.SttEngineEntityListing;
 import com.mypurecloud.sdk.v2.model.TestExecutionResult;
+import com.mypurecloud.sdk.v2.model.TrustedCertificates;
 import com.mypurecloud.sdk.v2.model.TtsEngineEntity;
 import com.mypurecloud.sdk.v2.model.TtsEngineEntityListing;
 import com.mypurecloud.sdk.v2.model.TtsSettings;
@@ -90,6 +91,7 @@ import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionTemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsCategoriesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsCertificatesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsCertificatesTruststoreRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsDraftsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsFunctionsRuntimesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorIntegrationIdBotRequest;
@@ -1792,6 +1794,80 @@ public class IntegrationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ActionCertificateListing> response = (ApiResponse<ActionCertificateListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Retrieves basic info about trusted root CA certificates
+   * 
+   * @return TrustedCertificates
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrustedCertificates getIntegrationsActionsCertificatesTruststore() throws IOException, ApiException {
+    return  getIntegrationsActionsCertificatesTruststore(createGetIntegrationsActionsCertificatesTruststoreRequest());
+  }
+
+  /**
+   * Retrieves basic info about trusted root CA certificates
+   * 
+   * @return TrustedCertificates
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrustedCertificates> getIntegrationsActionsCertificatesTruststoreWithHttpInfo() throws IOException {
+    return getIntegrationsActionsCertificatesTruststore(createGetIntegrationsActionsCertificatesTruststoreRequest().withHttpInfo());
+  }
+
+  private GetIntegrationsActionsCertificatesTruststoreRequest createGetIntegrationsActionsCertificatesTruststoreRequest() {
+    return GetIntegrationsActionsCertificatesTruststoreRequest.builder()
+            .build();
+  }
+
+  /**
+   * Retrieves basic info about trusted root CA certificates
+   * 
+   * @param request The request object
+   * @return TrustedCertificates
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrustedCertificates getIntegrationsActionsCertificatesTruststore(GetIntegrationsActionsCertificatesTruststoreRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TrustedCertificates> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TrustedCertificates>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieves basic info about trusted root CA certificates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrustedCertificates> getIntegrationsActionsCertificatesTruststore(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TrustedCertificates>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrustedCertificates> response = (ApiResponse<TrustedCertificates>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrustedCertificates> response = (ApiResponse<TrustedCertificates>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

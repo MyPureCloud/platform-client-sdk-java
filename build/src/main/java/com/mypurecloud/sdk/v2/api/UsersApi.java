@@ -11,6 +11,7 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.Adjacents;
+import com.mypurecloud.sdk.v2.model.AgentDirectRoutingBackupSettings;
 import com.mypurecloud.sdk.v2.model.AgentMaxUtilizationResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsAsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsQueryResponse;
@@ -75,6 +76,8 @@ import com.mypurecloud.sdk.v2.model.VerifierEntityListing;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsUsersDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationSubjectDivisionRoleRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingDirectroutingbackupSettingsMeRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUserDirectroutingbackupSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutinglanguageRequest;
@@ -94,6 +97,8 @@ import com.mypurecloud.sdk.v2.api.request.GetAuthorizationSubjectRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationSubjectsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFieldconfigRequest;
 import com.mypurecloud.sdk.v2.api.request.GetProfilesUsersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingDirectroutingbackupSettingsMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingUserDirectroutingbackupSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserAdjacentsRequest;
@@ -152,6 +157,8 @@ import com.mypurecloud.sdk.v2.api.request.PostUsersSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersSearchConversationTargetRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersSearchQueuemembersManageRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersSearchTeamsAssignRequest;
+import com.mypurecloud.sdk.v2.api.request.PutRoutingDirectroutingbackupSettingsMeRequest;
+import com.mypurecloud.sdk.v2.api.request.PutRoutingUserDirectroutingbackupSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserCallforwardingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserOutofofficeRequest;
@@ -319,6 +326,152 @@ public class UsersApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteAuthorizationSubjectDivisionRole(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+   * 
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingDirectroutingbackupSettingsMe() throws IOException, ApiException {
+     deleteRoutingDirectroutingbackupSettingsMe(createDeleteRoutingDirectroutingbackupSettingsMeRequest());
+  }
+
+  /**
+   * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+   * 
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingDirectroutingbackupSettingsMeWithHttpInfo() throws IOException {
+    return deleteRoutingDirectroutingbackupSettingsMe(createDeleteRoutingDirectroutingbackupSettingsMeRequest().withHttpInfo());
+  }
+
+  private DeleteRoutingDirectroutingbackupSettingsMeRequest createDeleteRoutingDirectroutingbackupSettingsMeRequest() {
+    return DeleteRoutingDirectroutingbackupSettingsMeRequest.builder()
+            .build();
+  }
+
+  /**
+   * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingDirectroutingbackupSettingsMe(DeleteRoutingDirectroutingbackupSettingsMeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingDirectroutingbackupSettingsMe(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+   * 
+   * @param userId User ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingUserDirectroutingbackupSettings(String userId) throws IOException, ApiException {
+     deleteRoutingUserDirectroutingbackupSettings(createDeleteRoutingUserDirectroutingbackupSettingsRequest(userId));
+  }
+
+  /**
+   * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+   * 
+   * @param userId User ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingUserDirectroutingbackupSettingsWithHttpInfo(String userId) throws IOException {
+    return deleteRoutingUserDirectroutingbackupSettings(createDeleteRoutingUserDirectroutingbackupSettingsRequest(userId).withHttpInfo());
+  }
+
+  private DeleteRoutingUserDirectroutingbackupSettingsRequest createDeleteRoutingUserDirectroutingbackupSettingsRequest(String userId) {
+    return DeleteRoutingUserDirectroutingbackupSettingsRequest.builder()
+            .withUserId(userId)
+
+            .build();
+  }
+
+  /**
+   * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingUserDirectroutingbackupSettings(DeleteRoutingUserDirectroutingbackupSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingUserDirectroutingbackupSettings(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -1901,6 +2054,158 @@ public class UsersApi {
   }
 
   /**
+   * Get the user's Direct Routing Backup settings.
+   * 
+   * @return AgentDirectRoutingBackupSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentDirectRoutingBackupSettings getRoutingDirectroutingbackupSettingsMe() throws IOException, ApiException {
+    return  getRoutingDirectroutingbackupSettingsMe(createGetRoutingDirectroutingbackupSettingsMeRequest());
+  }
+
+  /**
+   * Get the user's Direct Routing Backup settings.
+   * 
+   * @return AgentDirectRoutingBackupSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentDirectRoutingBackupSettings> getRoutingDirectroutingbackupSettingsMeWithHttpInfo() throws IOException {
+    return getRoutingDirectroutingbackupSettingsMe(createGetRoutingDirectroutingbackupSettingsMeRequest().withHttpInfo());
+  }
+
+  private GetRoutingDirectroutingbackupSettingsMeRequest createGetRoutingDirectroutingbackupSettingsMeRequest() {
+    return GetRoutingDirectroutingbackupSettingsMeRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get the user's Direct Routing Backup settings.
+   * 
+   * @param request The request object
+   * @return AgentDirectRoutingBackupSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentDirectRoutingBackupSettings getRoutingDirectroutingbackupSettingsMe(GetRoutingDirectroutingbackupSettingsMeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentDirectRoutingBackupSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentDirectRoutingBackupSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the user's Direct Routing Backup settings.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentDirectRoutingBackupSettings> getRoutingDirectroutingbackupSettingsMe(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentDirectRoutingBackupSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentDirectRoutingBackupSettings> response = (ApiResponse<AgentDirectRoutingBackupSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentDirectRoutingBackupSettings> response = (ApiResponse<AgentDirectRoutingBackupSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the user's Direct Routing Backup settings.
+   * 
+   * @param userId User ID (required)
+   * @return AgentDirectRoutingBackupSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentDirectRoutingBackupSettings getRoutingUserDirectroutingbackupSettings(String userId) throws IOException, ApiException {
+    return  getRoutingUserDirectroutingbackupSettings(createGetRoutingUserDirectroutingbackupSettingsRequest(userId));
+  }
+
+  /**
+   * Get the user's Direct Routing Backup settings.
+   * 
+   * @param userId User ID (required)
+   * @return AgentDirectRoutingBackupSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentDirectRoutingBackupSettings> getRoutingUserDirectroutingbackupSettingsWithHttpInfo(String userId) throws IOException {
+    return getRoutingUserDirectroutingbackupSettings(createGetRoutingUserDirectroutingbackupSettingsRequest(userId).withHttpInfo());
+  }
+
+  private GetRoutingUserDirectroutingbackupSettingsRequest createGetRoutingUserDirectroutingbackupSettingsRequest(String userId) {
+    return GetRoutingUserDirectroutingbackupSettingsRequest.builder()
+            .withUserId(userId)
+
+            .build();
+  }
+
+  /**
+   * Get the user's Direct Routing Backup settings.
+   * 
+   * @param request The request object
+   * @return AgentDirectRoutingBackupSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentDirectRoutingBackupSettings getRoutingUserDirectroutingbackupSettings(GetRoutingUserDirectroutingbackupSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentDirectRoutingBackupSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentDirectRoutingBackupSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the user's Direct Routing Backup settings.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentDirectRoutingBackupSettings> getRoutingUserDirectroutingbackupSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentDirectRoutingBackupSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentDirectRoutingBackupSettings> response = (ApiResponse<AgentDirectRoutingBackupSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentDirectRoutingBackupSettings> response = (ApiResponse<AgentDirectRoutingBackupSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
    * 
    * @param userId User ID (required)
@@ -1982,7 +2287,7 @@ public class UsersApi {
    * Get user.
    * 
    * @param userId User ID (required)
-   * @param expand Which fields, if any, to expand (optional)
+   * @param expand Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. (optional)
    * @param integrationPresenceSource Gets an integration presence for a user instead of their default. (optional)
    * @param state Search for a user with this state (optional, default to active)
    * @return User
@@ -1997,7 +2302,7 @@ public class UsersApi {
    * Get user.
    * 
    * @param userId User ID (required)
-   * @param expand Which fields, if any, to expand (optional)
+   * @param expand Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. (optional)
    * @param integrationPresenceSource Gets an integration presence for a user instead of their default. (optional)
    * @param state Search for a user with this state (optional, default to active)
    * @return User
@@ -3666,7 +3971,7 @@ public class UsersApi {
    * @param id A list of user IDs to fetch by bulk (optional)
    * @param jabberId A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter) (optional)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
-   * @param expand Which fields, if any, to expand (optional)
+   * @param expand Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. (optional)
    * @param integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100. (optional)
    * @param state Only list users of this state (optional, default to active)
    * @return UserEntityListing
@@ -3685,7 +3990,7 @@ public class UsersApi {
    * @param id A list of user IDs to fetch by bulk (optional)
    * @param jabberId A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter) (optional)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
-   * @param expand Which fields, if any, to expand (optional)
+   * @param expand Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. (optional)
    * @param integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100. (optional)
    * @param state Only list users of this state (optional, default to active)
    * @return UserEntityListing
@@ -3776,7 +4081,7 @@ public class UsersApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param sortOrder Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (optional, default to Desc)
-   * @param types Specifies the activity types. (optional)
+   * @param types Specifies the activity types. Informational, AssessedContent and Assessment are deprecated (optional)
    * @param statuses Specifies the activity statuses to filter by (optional)
    * @param relationship Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. (optional)
    * @return DevelopmentActivityListing
@@ -3799,7 +4104,7 @@ public class UsersApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param sortOrder Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (optional, default to Desc)
-   * @param types Specifies the activity types. (optional)
+   * @param types Specifies the activity types. Informational, AssessedContent and Assessment are deprecated (optional)
    * @param statuses Specifies the activity statuses to filter by (optional)
    * @param relationship Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. (optional)
    * @return DevelopmentActivityListing
@@ -3897,7 +4202,7 @@ public class UsersApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param sortOrder Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (optional, default to Desc)
-   * @param types Specifies the activity types. (optional)
+   * @param types Specifies the activity types. Informational, AssessedContent and Assessment are deprecated (optional)
    * @param statuses Specifies the activity statuses to filter by (optional)
    * @param relationship Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. (optional)
    * @return DevelopmentActivityListing
@@ -3919,7 +4224,7 @@ public class UsersApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param sortOrder Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (optional, default to Desc)
-   * @param types Specifies the activity types. (optional)
+   * @param types Specifies the activity types. Informational, AssessedContent and Assessment are deprecated (optional)
    * @param statuses Specifies the activity statuses to filter by (optional)
    * @param relationship Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. (optional)
    * @return DevelopmentActivityListing
@@ -4008,7 +4313,7 @@ public class UsersApi {
    * Get a Development Activity
    * Permission not required if you are the attendee, creator or facilitator of the coaching appointment or you are the assigned user of the learning assignment.
    * @param activityId Specifies the activity ID, maps to either assignment or appointment ID (required)
-   * @param type Specifies the activity type. (required)
+   * @param type Specifies the activity type. Informational, AssessedContent and Assessment are deprecated (required)
    * @return DevelopmentActivity
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4021,7 +4326,7 @@ public class UsersApi {
    * Get a Development Activity
    * Permission not required if you are the attendee, creator or facilitator of the coaching appointment or you are the assigned user of the learning assignment.
    * @param activityId Specifies the activity ID, maps to either assignment or appointment ID (required)
-   * @param type Specifies the activity type. (required)
+   * @param type Specifies the activity type. Informational, AssessedContent and Assessment are deprecated (required)
    * @return DevelopmentActivity
    * @throws IOException if the request fails to be processed
    */
@@ -6767,6 +7072,166 @@ public class UsersApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UsersSearchResponse> response = (ApiResponse<UsersSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update the user's Direct Routing Backup settings.
+   * 
+   * @param body directRoutingBackup (required)
+   * @return AgentDirectRoutingBackupSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentDirectRoutingBackupSettings putRoutingDirectroutingbackupSettingsMe(AgentDirectRoutingBackupSettings body) throws IOException, ApiException {
+    return  putRoutingDirectroutingbackupSettingsMe(createPutRoutingDirectroutingbackupSettingsMeRequest(body));
+  }
+
+  /**
+   * Update the user's Direct Routing Backup settings.
+   * 
+   * @param body directRoutingBackup (required)
+   * @return AgentDirectRoutingBackupSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentDirectRoutingBackupSettings> putRoutingDirectroutingbackupSettingsMeWithHttpInfo(AgentDirectRoutingBackupSettings body) throws IOException {
+    return putRoutingDirectroutingbackupSettingsMe(createPutRoutingDirectroutingbackupSettingsMeRequest(body).withHttpInfo());
+  }
+
+  private PutRoutingDirectroutingbackupSettingsMeRequest createPutRoutingDirectroutingbackupSettingsMeRequest(AgentDirectRoutingBackupSettings body) {
+    return PutRoutingDirectroutingbackupSettingsMeRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the user's Direct Routing Backup settings.
+   * 
+   * @param request The request object
+   * @return AgentDirectRoutingBackupSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentDirectRoutingBackupSettings putRoutingDirectroutingbackupSettingsMe(PutRoutingDirectroutingbackupSettingsMeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentDirectRoutingBackupSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentDirectRoutingBackupSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the user's Direct Routing Backup settings.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentDirectRoutingBackupSettings> putRoutingDirectroutingbackupSettingsMe(ApiRequest<AgentDirectRoutingBackupSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentDirectRoutingBackupSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentDirectRoutingBackupSettings> response = (ApiResponse<AgentDirectRoutingBackupSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentDirectRoutingBackupSettings> response = (ApiResponse<AgentDirectRoutingBackupSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update the user's Direct Routing Backup settings.
+   * 
+   * @param userId User ID (required)
+   * @param body directRoutingBackup (required)
+   * @return AgentDirectRoutingBackupSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentDirectRoutingBackupSettings putRoutingUserDirectroutingbackupSettings(String userId, AgentDirectRoutingBackupSettings body) throws IOException, ApiException {
+    return  putRoutingUserDirectroutingbackupSettings(createPutRoutingUserDirectroutingbackupSettingsRequest(userId, body));
+  }
+
+  /**
+   * Update the user's Direct Routing Backup settings.
+   * 
+   * @param userId User ID (required)
+   * @param body directRoutingBackup (required)
+   * @return AgentDirectRoutingBackupSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentDirectRoutingBackupSettings> putRoutingUserDirectroutingbackupSettingsWithHttpInfo(String userId, AgentDirectRoutingBackupSettings body) throws IOException {
+    return putRoutingUserDirectroutingbackupSettings(createPutRoutingUserDirectroutingbackupSettingsRequest(userId, body).withHttpInfo());
+  }
+
+  private PutRoutingUserDirectroutingbackupSettingsRequest createPutRoutingUserDirectroutingbackupSettingsRequest(String userId, AgentDirectRoutingBackupSettings body) {
+    return PutRoutingUserDirectroutingbackupSettingsRequest.builder()
+            .withUserId(userId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the user's Direct Routing Backup settings.
+   * 
+   * @param request The request object
+   * @return AgentDirectRoutingBackupSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentDirectRoutingBackupSettings putRoutingUserDirectroutingbackupSettings(PutRoutingUserDirectroutingbackupSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentDirectRoutingBackupSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentDirectRoutingBackupSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the user's Direct Routing Backup settings.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentDirectRoutingBackupSettings> putRoutingUserDirectroutingbackupSettings(ApiRequest<AgentDirectRoutingBackupSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentDirectRoutingBackupSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentDirectRoutingBackupSettings> response = (ApiResponse<AgentDirectRoutingBackupSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentDirectRoutingBackupSettings> response = (ApiResponse<AgentDirectRoutingBackupSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

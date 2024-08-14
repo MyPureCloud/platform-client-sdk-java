@@ -55,6 +55,8 @@ title: SegmentDetailQueryPredicate
 | DELIVERYSTATUS | &quot;deliveryStatus&quot; | 
 | DESTINATIONADDRESS | &quot;destinationAddress&quot; | 
 | DESTINATIONCONVERSATIONID | &quot;destinationConversationId&quot; | 
+| DETECTEDSPEECHEND | &quot;detectedSpeechEnd&quot; | 
+| DETECTEDSPEECHSTART | &quot;detectedSpeechStart&quot; | 
 | DIRECTION | &quot;direction&quot; | 
 | DISCONNECTTYPE | &quot;disconnectType&quot; | 
 | DNIS | &quot;dnis&quot; | 
@@ -97,6 +99,7 @@ title: SegmentDetailQueryPredicate
 | REQUESTEDROUTING | &quot;requestedRouting&quot; | 
 | REQUESTEDROUTINGSKILLID | &quot;requestedRoutingSkillId&quot; | 
 | SCOREDAGENTID | &quot;scoredAgentId&quot; | 
+| SCREENRECORDING | &quot;screenRecording&quot; | 
 | SCRIPTID | &quot;scriptId&quot; | 
 | SEGMENTEND | &quot;segmentEnd&quot; | 
 | SEGMENTTYPE | &quot;segmentType&quot; | 

@@ -17,6 +17,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteWorkforcemanagementBusinessunitTimeoffplan**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitTimeoffplan) | Deletes a time-off plan |
 | [**deleteWorkforcemanagementBusinessunitWeekSchedule**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitWeekSchedule) | Delete a schedule |
 | [**deleteWorkforcemanagementBusinessunitWeekShorttermforecast**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitWeekShorttermforecast) | Delete a short term forecast |
+| [**deleteWorkforcemanagementBusinessunitWorkplanbid**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitWorkplanbid) | Delete a work plan bid |
+| [**deleteWorkforcemanagementBusinessunitWorkplanbidGroup**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitWorkplanbidGroup) | Delete a bid group by bid group Id |
 | [**deleteWorkforcemanagementCalendarUrlIcs**](WorkforceManagementApi.html#deleteWorkforcemanagementCalendarUrlIcs) | Disable generated calendar link for the current user |
 | [**deleteWorkforcemanagementManagementunit**](WorkforceManagementApi.html#deleteWorkforcemanagementManagementunit) | Delete management unit |
 | [**deleteWorkforcemanagementManagementunitTimeofflimit**](WorkforceManagementApi.html#deleteWorkforcemanagementManagementunitTimeofflimit) | Deletes a time off limit object |
@@ -28,13 +30,26 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementAdherenceExplanationsJob**](WorkforceManagementApi.html#getWorkforcemanagementAdherenceExplanationsJob) | Query the status of an adherence explanation operation. Only the user who started the operation can query the status |
 | [**getWorkforcemanagementAdherenceHistoricalBulkJob**](WorkforceManagementApi.html#getWorkforcemanagementAdherenceHistoricalBulkJob) | Request to fetch the status of the historical adherence bulk job. Only the user who started the operation can query the status |
 | [**getWorkforcemanagementAdherenceHistoricalJob**](WorkforceManagementApi.html#getWorkforcemanagementAdherenceHistoricalJob) | Query the status of a historical adherence request operation. Only the user who started the operation can query the status |
-| [**getWorkforcemanagementAdhocmodelingjob**](WorkforceManagementApi.html#getWorkforcemanagementAdhocmodelingjob) | To get status of the modeling job. |
 | [**getWorkforcemanagementAgentAdherenceExplanation**](WorkforceManagementApi.html#getWorkforcemanagementAgentAdherenceExplanation) | Get an adherence explanation |
 | [**getWorkforcemanagementAgentManagementunit**](WorkforceManagementApi.html#getWorkforcemanagementAgentManagementunit) | Get the management unit to which the agent belongs |
 | [**getWorkforcemanagementAgentsMeManagementunit**](WorkforceManagementApi.html#getWorkforcemanagementAgentsMeManagementunit) | Get the management unit to which the currently logged in agent belongs |
+| [**getWorkforcemanagementAlternativeshiftsOffersJob**](WorkforceManagementApi.html#getWorkforcemanagementAlternativeshiftsOffersJob) | Query the status of an alternative shift offers operation. Only the user who started the operation can query the status |
+| [**getWorkforcemanagementAlternativeshiftsOffersSearchJob**](WorkforceManagementApi.html#getWorkforcemanagementAlternativeshiftsOffersSearchJob) | Query the status of an alternative shift search offers operation. Only the user who started the operation can query the status |
+| [**getWorkforcemanagementAlternativeshiftsSettings**](WorkforceManagementApi.html#getWorkforcemanagementAlternativeshiftsSettings) | Get alternative shifts settings from the current logged in agent’s business unit |
+| [**getWorkforcemanagementAlternativeshiftsTrade**](WorkforceManagementApi.html#getWorkforcemanagementAlternativeshiftsTrade) | Get my alternative shift trade by trade ID |
+| [**getWorkforcemanagementAlternativeshiftsTrades**](WorkforceManagementApi.html#getWorkforcemanagementAlternativeshiftsTrades) | Get a list of my alternative shifts trades |
+| [**getWorkforcemanagementAlternativeshiftsTradesJob**](WorkforceManagementApi.html#getWorkforcemanagementAlternativeshiftsTradesJob) | Query the status of an alternative shift trades operation. Only the user who started the operation can query the status |
+| [**getWorkforcemanagementAlternativeshiftsTradesStateJob**](WorkforceManagementApi.html#getWorkforcemanagementAlternativeshiftsTradesStateJob) | Query the status of an alternative shift trade state operation. Only the user who started the operation can query the status |
 | [**getWorkforcemanagementBusinessunit**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunit) | Get business unit |
 | [**getWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitActivitycode) | Get an activity code |
 | [**getWorkforcemanagementBusinessunitActivitycodes**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitActivitycodes) | Get activity codes |
+| [**getWorkforcemanagementBusinessunitActivityplan**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitActivityplan) | Get an activity plan |
+| [**getWorkforcemanagementBusinessunitActivityplanRunsJob**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitActivityplanRunsJob) | Gets an activity plan run job |
+| [**getWorkforcemanagementBusinessunitActivityplans**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitActivityplans) | Get activity plans |
+| [**getWorkforcemanagementBusinessunitActivityplansJobs**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitActivityplansJobs) | Gets the latest job for all activity plans in the business unit |
+| [**getWorkforcemanagementBusinessunitAlternativeshiftsSettings**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitAlternativeshiftsSettings) | Get alternative shifts settings for a business unit |
+| [**getWorkforcemanagementBusinessunitAlternativeshiftsTrade**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitAlternativeshiftsTrade) | Get an alternative shifts trade in a business unit for a given trade ID |
+| [**getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob) | Query the status of an alternative shift search trade operation. Only the user who started the operation can query the status |
 | [**getWorkforcemanagementBusinessunitIntradayPlanninggroups**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitIntradayPlanninggroups) | Get intraday planning groups for the given date |
 | [**getWorkforcemanagementBusinessunitManagementunits**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitManagementunits) | Get all authorized management units in the business unit |
 | [**getWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitPlanninggroup) | Get a planning group |
@@ -64,6 +79,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups) | Gets the forecast planning group snapshot |
 | [**getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement) | Get the staffing requirement by planning group for a forecast |
 | [**getWorkforcemanagementBusinessunitWeekShorttermforecasts**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecasts) | Get short term forecasts |
+| [**getWorkforcemanagementBusinessunitWorkplanbid**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWorkplanbid) | Get a work plan bid |
+| [**getWorkforcemanagementBusinessunitWorkplanbidGroup**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWorkplanbidGroup) | Get a bid group by bid group Id |
+| [**getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences) | Gets the work plan preferences of all the agents in the work plan bid group |
+| [**getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary) | Get summary of bid groups that belong to a work plan bid |
+| [**getWorkforcemanagementBusinessunitWorkplanbids**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWorkplanbids) | Get list of work plan bids |
 | [**getWorkforcemanagementBusinessunits**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunits) | Get business units |
 | [**getWorkforcemanagementBusinessunitsDivisionviews**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitsDivisionviews) | Get business units across divisions |
 | [**getWorkforcemanagementCalendarDataIcs**](WorkforceManagementApi.html#getWorkforcemanagementCalendarDataIcs) | Get ics formatted calendar based on shareable link |
@@ -104,14 +124,25 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequest) | Get a time off request for the current user |
 | [**getWorkforcemanagementTimeoffrequestWaitlistpositions**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequestWaitlistpositions) | Get the daily waitlist positions of a time off request for the current user |
 | [**getWorkforcemanagementTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequests) | Get a list of time off requests for the current user |
+| [**getWorkforcemanagementUserWorkplanbidranks**](WorkforceManagementApi.html#getWorkforcemanagementUserWorkplanbidranks) | Get work plan bid ranks for a user |
+| [**getWorkforcemanagementWorkplanbidPreferences**](WorkforceManagementApi.html#getWorkforcemanagementWorkplanbidPreferences) | Gets an agent's work plan bidding preference |
+| [**getWorkforcemanagementWorkplanbidWorkplans**](WorkforceManagementApi.html#getWorkforcemanagementWorkplanbidWorkplans) | Gets an agent's work plans for a bid |
+| [**getWorkforcemanagementWorkplanbids**](WorkforceManagementApi.html#getWorkforcemanagementWorkplanbids) | Gets the list of work plan bids that belong to an agent |
 | [**patchWorkforcemanagementAgentAdherenceExplanation**](WorkforceManagementApi.html#patchWorkforcemanagementAgentAdherenceExplanation) | Update an adherence explanation |
+| [**patchWorkforcemanagementAlternativeshiftsTrade**](WorkforceManagementApi.html#patchWorkforcemanagementAlternativeshiftsTrade) | Update my alternative shifts trade by trade ID |
+| [**patchWorkforcemanagementAlternativeshiftsTradesStateJobs**](WorkforceManagementApi.html#patchWorkforcemanagementAlternativeshiftsTradesStateJobs) | Bulk update alternative shift trade states |
 | [**patchWorkforcemanagementBusinessunit**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunit) | Update business unit |
 | [**patchWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitActivitycode) | Update an activity code |
+| [**patchWorkforcemanagementBusinessunitActivityplan**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitActivityplan) | Update an activity plan |
+| [**patchWorkforcemanagementBusinessunitAlternativeshiftsSettings**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitAlternativeshiftsSettings) | Update alternative shifts settings for a business unit |
 | [**patchWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitPlanninggroup) | Updates the planning group |
 | [**patchWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitSchedulingRun) | Mark a schedule run as applied |
 | [**patchWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitServicegoaltemplate) | Updates a service goal template |
 | [**patchWorkforcemanagementBusinessunitStaffinggroup**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitStaffinggroup) | Updates a staffing group |
 | [**patchWorkforcemanagementBusinessunitTimeoffplan**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitTimeoffplan) | Updates a time-off plan |
+| [**patchWorkforcemanagementBusinessunitWorkplanbid**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitWorkplanbid) | Update work plan bid |
+| [**patchWorkforcemanagementBusinessunitWorkplanbidGroup**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitWorkplanbidGroup) | Update a bid group by bid group Id |
+| [**patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences) | Overrides the assigned work plan for the specified agents |
 | [**patchWorkforcemanagementManagementunit**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunit) | Update the requested management unit |
 | [**patchWorkforcemanagementManagementunitAgents**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitAgents) | Update agent configurations |
 | [**patchWorkforcemanagementManagementunitTimeofflimit**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitTimeofflimit) | Updates a time off limit object. |
@@ -122,6 +153,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitWorkplan) | Update a work plan |
 | [**patchWorkforcemanagementManagementunitWorkplanrotation**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitWorkplanrotation) | Update a work plan rotation |
 | [**patchWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#patchWorkforcemanagementTimeoffrequest) | Update a time off request for the current user |
+| [**patchWorkforcemanagementUserWorkplanbidranks**](WorkforceManagementApi.html#patchWorkforcemanagementUserWorkplanbidranks) | Update work plan bid ranks for a user |
+| [**patchWorkforcemanagementUsersWorkplanbidranksBulk**](WorkforceManagementApi.html#patchWorkforcemanagementUsersWorkplanbidranksBulk) | Update bulk work plan bid ranks on users. Max 50 users can be updated at a time. |
+| [**patchWorkforcemanagementWorkplanbidPreferences**](WorkforceManagementApi.html#patchWorkforcemanagementWorkplanbidPreferences) | Update an agent's work plan bidding preference |
 | [**postWorkforcemanagementAdherenceExplanations**](WorkforceManagementApi.html#postWorkforcemanagementAdherenceExplanations) | Submit an adherence explanation for the current user |
 | [**postWorkforcemanagementAdherenceExplanationsQuery**](WorkforceManagementApi.html#postWorkforcemanagementAdherenceExplanationsQuery) | Query adherence explanations for the current user |
 | [**postWorkforcemanagementAdherenceHistorical**](WorkforceManagementApi.html#postWorkforcemanagementAdherenceHistorical) | Deprecated. Use bulk routes instead (/adherence/historical/bulk) |
@@ -132,9 +166,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementAgentsIntegrationsHrisQuery**](WorkforceManagementApi.html#postWorkforcemanagementAgentsIntegrationsHrisQuery) | Query integrations for agents |
 | [**postWorkforcemanagementAgentsMePossibleworkshifts**](WorkforceManagementApi.html#postWorkforcemanagementAgentsMePossibleworkshifts) | Get agent possible work shifts for requested time frame |
 | [**postWorkforcemanagementAgentschedulesMine**](WorkforceManagementApi.html#postWorkforcemanagementAgentschedulesMine) | Get published schedule for the current user |
+| [**postWorkforcemanagementAlternativeshiftsOffersJobs**](WorkforceManagementApi.html#postWorkforcemanagementAlternativeshiftsOffersJobs) | Request a list of alternative shift offers for a given schedule |
+| [**postWorkforcemanagementAlternativeshiftsOffersSearchJobs**](WorkforceManagementApi.html#postWorkforcemanagementAlternativeshiftsOffersSearchJobs) | Request a search of alternative shift offers for a given shift |
+| [**postWorkforcemanagementAlternativeshiftsTrades**](WorkforceManagementApi.html#postWorkforcemanagementAlternativeshiftsTrades) | Create my alternative shift trade using an existing offer's jobId |
 | [**postWorkforcemanagementBusinessunitActivitycodes**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitActivitycodes) | Create a new activity code |
+| [**postWorkforcemanagementBusinessunitActivityplanRunsJobs**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitActivityplanRunsJobs) | Run an activity plan manually |
+| [**postWorkforcemanagementBusinessunitActivityplans**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitActivityplans) | Create an activity plan |
 | [**postWorkforcemanagementBusinessunitAdherenceExplanationsQuery**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitAdherenceExplanationsQuery) | Query adherence explanations across an entire business unit for the requested period |
 | [**postWorkforcemanagementBusinessunitAgentschedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitAgentschedulesSearch) | Search published schedules |
+| [**postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch) | List alternative shifts trades for a given management unit or agent |
 | [**postWorkforcemanagementBusinessunitIntraday**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitIntraday) | Get intraday data for the given date for the requested planningGroupIds |
 | [**postWorkforcemanagementBusinessunitPlanninggroups**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitPlanninggroups) | Adds a new planning group |
 | [**postWorkforcemanagementBusinessunitServicegoaltemplates**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitServicegoaltemplates) | Adds a new service goal template |
@@ -158,6 +198,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate) | Generate a short term forecast |
 | [**postWorkforcemanagementBusinessunitWeekShorttermforecastsImport**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekShorttermforecastsImport) | Starts importing the uploaded short term forecast |
 | [**postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl) | Creates a signed upload URL for importing a short term forecast |
+| [**postWorkforcemanagementBusinessunitWorkplanbidCopy**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWorkplanbidCopy) | Copy a work plan bid |
+| [**postWorkforcemanagementBusinessunitWorkplanbidGroups**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWorkplanbidGroups) | Add a bid group in a given work plan bid |
+| [**postWorkforcemanagementBusinessunitWorkplanbids**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWorkplanbids) | Create a new work plan bid |
 | [**postWorkforcemanagementBusinessunits**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunits) | Add a new business unit |
 | [**postWorkforcemanagementCalendarUrlIcs**](WorkforceManagementApi.html#postWorkforcemanagementCalendarUrlIcs) | Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned |
 | [**postWorkforcemanagementHistoricaldataDeletejob**](WorkforceManagementApi.html#postWorkforcemanagementHistoricaldataDeletejob) | Delete the entries of the historical data imports in the organization |
@@ -822,6 +865,132 @@ try {
 | **businessUnitId** | **String**| The ID of the business unit to which the forecast belongs | 
 | **weekDateId** | **LocalDate**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **forecastId** | **String**| The ID of the forecast | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteWorkforcemanagementBusinessunitWorkplanbid"></a>
+
+# **deleteWorkforcemanagementBusinessunitWorkplanbid**
+
+
+
+> Void deleteWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId)
+
+Delete a work plan bid
+
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}  
+
+Requires ANY permissions: 
+
+* wfm:workPlanBid:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String bidId = "bidId_example"; // String | The ID of the work plan bid
+try {
+    apiInstance.deleteWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#deleteWorkforcemanagementBusinessunitWorkplanbid");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **bidId** | **String**| The ID of the work plan bid | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteWorkforcemanagementBusinessunitWorkplanbidGroup"></a>
+
+# **deleteWorkforcemanagementBusinessunitWorkplanbidGroup**
+
+
+
+> Void deleteWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId)
+
+Delete a bid group by bid group Id
+
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}  
+
+Requires ANY permissions: 
+
+* wfm:workPlanBidGroup:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String bidId = "bidId_example"; // String | The work plan bid id of the bid groups
+String bidGroupId = "bidGroupId_example"; // String | Work Plan Bid Group id
+try {
+    apiInstance.deleteWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#deleteWorkforcemanagementBusinessunitWorkplanbidGroup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **bidId** | **String**| The work plan bid id of the bid groups | 
+| **bidGroupId** | **String**| Work Plan Bid Group id | 
 {: class="table-striped"}
 
 
@@ -1502,69 +1671,6 @@ try {
 
 [**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse.html)
 
-<a name="getWorkforcemanagementAdhocmodelingjob"></a>
-
-# **getWorkforcemanagementAdhocmodelingjob**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [ModelingStatusResponse](ModelingStatusResponse.html) getWorkforcemanagementAdhocmodelingjob(jobId)
-
-To get status of the modeling job.
-
-This Endpoint is Deprecated, and not recommended to be used.
-
-Wraps GET /api/v2/workforcemanagement/adhocmodelingjobs/{jobId}  
-
-Requires ANY permissions: 
-
-* wfm:adhocModel:view
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String jobId = "jobId_example"; // String | The id of the modeling job
-try {
-    ModelingStatusResponse result = apiInstance.getWorkforcemanagementAdhocmodelingjob(jobId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementAdhocmodelingjob");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **jobId** | **String**| The id of the modeling job | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**ModelingStatusResponse**](ModelingStatusResponse.html)
-
 <a name="getWorkforcemanagementAgentAdherenceExplanation"></a>
 
 # **getWorkforcemanagementAgentAdherenceExplanation**
@@ -1808,6 +1914,437 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**AgentManagementUnitReference**](AgentManagementUnitReference.html)
+
+<a name="getWorkforcemanagementAlternativeshiftsOffersJob"></a>
+
+# **getWorkforcemanagementAlternativeshiftsOffersJob**
+
+
+
+> [AlternativeShiftJobResponse](AlternativeShiftJobResponse.html) getWorkforcemanagementAlternativeshiftsOffersJob(jobId)
+
+Query the status of an alternative shift offers operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/alternativeshifts/offers/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* wfm:agentAlternativeShift:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String jobId = "jobId_example"; // String | The ID of the job
+try {
+    AlternativeShiftJobResponse result = apiInstance.getWorkforcemanagementAlternativeshiftsOffersJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementAlternativeshiftsOffersJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| The ID of the job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AlternativeShiftJobResponse**](AlternativeShiftJobResponse.html)
+
+<a name="getWorkforcemanagementAlternativeshiftsOffersSearchJob"></a>
+
+# **getWorkforcemanagementAlternativeshiftsOffersSearchJob**
+
+
+
+> [AlternativeShiftJobResponse](AlternativeShiftJobResponse.html) getWorkforcemanagementAlternativeshiftsOffersSearchJob(jobId)
+
+Query the status of an alternative shift search offers operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/alternativeshifts/offers/search/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* wfm:agentAlternativeShift:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String jobId = "jobId_example"; // String | The ID of the job
+try {
+    AlternativeShiftJobResponse result = apiInstance.getWorkforcemanagementAlternativeshiftsOffersSearchJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementAlternativeshiftsOffersSearchJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| The ID of the job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AlternativeShiftJobResponse**](AlternativeShiftJobResponse.html)
+
+<a name="getWorkforcemanagementAlternativeshiftsSettings"></a>
+
+# **getWorkforcemanagementAlternativeshiftsSettings**
+
+
+
+> [AlternativeShiftBuSettingsResponse](AlternativeShiftBuSettingsResponse.html) getWorkforcemanagementAlternativeshiftsSettings()
+
+Get alternative shifts settings from the current logged in agent’s business unit
+
+Wraps GET /api/v2/workforcemanagement/alternativeshifts/settings  
+
+Requires ANY permissions: 
+
+* wfm:agentAlternativeShift:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+try {
+    AlternativeShiftBuSettingsResponse result = apiInstance.getWorkforcemanagementAlternativeshiftsSettings();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementAlternativeshiftsSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**AlternativeShiftBuSettingsResponse**](AlternativeShiftBuSettingsResponse.html)
+
+<a name="getWorkforcemanagementAlternativeshiftsTrade"></a>
+
+# **getWorkforcemanagementAlternativeshiftsTrade**
+
+
+
+> [AlternativeShiftTradeResponse](AlternativeShiftTradeResponse.html) getWorkforcemanagementAlternativeshiftsTrade(tradeId)
+
+Get my alternative shift trade by trade ID
+
+Wraps GET /api/v2/workforcemanagement/alternativeshifts/trades/{tradeId}  
+
+Requires ANY permissions: 
+
+* wfm:agentAlternativeShift:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String tradeId = "tradeId_example"; // String | The ID of the alternative shift trade
+try {
+    AlternativeShiftTradeResponse result = apiInstance.getWorkforcemanagementAlternativeshiftsTrade(tradeId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementAlternativeshiftsTrade");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tradeId** | **String**| The ID of the alternative shift trade | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AlternativeShiftTradeResponse**](AlternativeShiftTradeResponse.html)
+
+<a name="getWorkforcemanagementAlternativeshiftsTrades"></a>
+
+# **getWorkforcemanagementAlternativeshiftsTrades**
+
+
+
+> [ListAlternativeShiftTradesResponse](ListAlternativeShiftTradesResponse.html) getWorkforcemanagementAlternativeshiftsTrades(forceAsync)
+
+Get a list of my alternative shifts trades
+
+Wraps GET /api/v2/workforcemanagement/alternativeshifts/trades  
+
+Requires ANY permissions: 
+
+* wfm:agentAlternativeShift:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+try {
+    ListAlternativeShiftTradesResponse result = apiInstance.getWorkforcemanagementAlternativeshiftsTrades(forceAsync);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementAlternativeshiftsTrades");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ListAlternativeShiftTradesResponse**](ListAlternativeShiftTradesResponse.html)
+
+<a name="getWorkforcemanagementAlternativeshiftsTradesJob"></a>
+
+# **getWorkforcemanagementAlternativeshiftsTradesJob**
+
+
+
+> [AlternativeShiftJobResponse](AlternativeShiftJobResponse.html) getWorkforcemanagementAlternativeshiftsTradesJob(jobId)
+
+Query the status of an alternative shift trades operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/alternativeshifts/trades/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* wfm:agentAlternativeShift:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String jobId = "jobId_example"; // String | The ID of the job
+try {
+    AlternativeShiftJobResponse result = apiInstance.getWorkforcemanagementAlternativeshiftsTradesJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementAlternativeshiftsTradesJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| The ID of the job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AlternativeShiftJobResponse**](AlternativeShiftJobResponse.html)
+
+<a name="getWorkforcemanagementAlternativeshiftsTradesStateJob"></a>
+
+# **getWorkforcemanagementAlternativeshiftsTradesStateJob**
+
+
+
+> [AlternativeShiftJobResponse](AlternativeShiftJobResponse.html) getWorkforcemanagementAlternativeshiftsTradesStateJob(jobId)
+
+Query the status of an alternative shift trade state operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/alternativeshifts/trades/state/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* wfm:alternativeShift:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String jobId = "jobId_example"; // String | The ID of the job
+try {
+    AlternativeShiftJobResponse result = apiInstance.getWorkforcemanagementAlternativeshiftsTradesStateJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementAlternativeshiftsTradesStateJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| The ID of the job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AlternativeShiftJobResponse**](AlternativeShiftJobResponse.html)
 
 <a name="getWorkforcemanagementBusinessunit"></a>
 
@@ -2127,6 +2664,447 @@ try {
 ### Return type
 
 [**BusinessUnitActivityCodeListing**](BusinessUnitActivityCodeListing.html)
+
+<a name="getWorkforcemanagementBusinessunitActivityplan"></a>
+
+# **getWorkforcemanagementBusinessunitActivityplan**
+
+
+
+> [ActivityPlanResponse](ActivityPlanResponse.html) getWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId)
+
+Get an activity plan
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}  
+
+Requires ANY permissions: 
+
+* wfm:activityPlan:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan to fetch
+try {
+    ActivityPlanResponse result = apiInstance.getWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplan");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **activityPlanId** | **String**| The ID of the activity plan to fetch | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActivityPlanResponse**](ActivityPlanResponse.html)
+
+<a name="getWorkforcemanagementBusinessunitActivityplanRunsJob"></a>
+
+# **getWorkforcemanagementBusinessunitActivityplanRunsJob**
+
+
+
+> [ActivityPlanRunJobResponse](ActivityPlanRunJobResponse.html) getWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId, activityPlanId, jobId)
+
+Gets an activity plan run job
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/runs/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* wfm:activityPlanRunJob:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan associated with the run job
+String jobId = "jobId_example"; // String | The ID of the activity plan run job
+try {
+    ActivityPlanRunJobResponse result = apiInstance.getWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId, activityPlanId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanRunsJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **activityPlanId** | **String**| The ID of the activity plan associated with the run job | 
+| **jobId** | **String**| The ID of the activity plan run job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActivityPlanRunJobResponse**](ActivityPlanRunJobResponse.html)
+
+<a name="getWorkforcemanagementBusinessunitActivityplans"></a>
+
+# **getWorkforcemanagementBusinessunitActivityplans**
+
+
+
+> [ActivityPlanListing](ActivityPlanListing.html) getWorkforcemanagementBusinessunitActivityplans(businessUnitId, state)
+
+Get activity plans
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans  
+
+Requires ANY permissions: 
+
+* wfm:activityPlan:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String state = "state_example"; // String | Optionally filter by activity plan state
+try {
+    ActivityPlanListing result = apiInstance.getWorkforcemanagementBusinessunitActivityplans(businessUnitId, state);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplans");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **state** | **String**| Optionally filter by activity plan state | [optional]<br />**Values**: Active, Inactive 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActivityPlanListing**](ActivityPlanListing.html)
+
+<a name="getWorkforcemanagementBusinessunitActivityplansJobs"></a>
+
+# **getWorkforcemanagementBusinessunitActivityplansJobs**
+
+
+
+> [ActivityPlanJobListing](ActivityPlanJobListing.html) getWorkforcemanagementBusinessunitActivityplansJobs(businessUnitId)
+
+Gets the latest job for all activity plans in the business unit
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/jobs  
+
+Requires ANY permissions: 
+
+* wfm:activityPlan:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+try {
+    ActivityPlanJobListing result = apiInstance.getWorkforcemanagementBusinessunitActivityplansJobs(businessUnitId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplansJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActivityPlanJobListing**](ActivityPlanJobListing.html)
+
+<a name="getWorkforcemanagementBusinessunitAlternativeshiftsSettings"></a>
+
+# **getWorkforcemanagementBusinessunitAlternativeshiftsSettings**
+
+
+
+> [AlternativeShiftBuSettingsResponse](AlternativeShiftBuSettingsResponse.html) getWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId)
+
+Get alternative shifts settings for a business unit
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings  
+
+Requires ANY permissions: 
+
+* wfm:businessUnit:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+try {
+    AlternativeShiftBuSettingsResponse result = apiInstance.getWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitAlternativeshiftsSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AlternativeShiftBuSettingsResponse**](AlternativeShiftBuSettingsResponse.html)
+
+<a name="getWorkforcemanagementBusinessunitAlternativeshiftsTrade"></a>
+
+# **getWorkforcemanagementBusinessunitAlternativeshiftsTrade**
+
+
+
+> [AlternativeShiftTradeResponse](AlternativeShiftTradeResponse.html) getWorkforcemanagementBusinessunitAlternativeshiftsTrade(businessUnitId, tradeId)
+
+Get an alternative shifts trade in a business unit for a given trade ID
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/{tradeId}  
+
+Requires ANY permissions: 
+
+* wfm:alternativeShift:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String tradeId = "tradeId_example"; // String | The ID of the alternative shift trade
+try {
+    AlternativeShiftTradeResponse result = apiInstance.getWorkforcemanagementBusinessunitAlternativeshiftsTrade(businessUnitId, tradeId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitAlternativeshiftsTrade");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **tradeId** | **String**| The ID of the alternative shift trade | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AlternativeShiftTradeResponse**](AlternativeShiftTradeResponse.html)
+
+<a name="getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob"></a>
+
+# **getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob**
+
+
+
+> [BuAlternativeShiftJobResponse](BuAlternativeShiftJobResponse.html) getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob(businessUnitId, jobId)
+
+Query the status of an alternative shift search trade operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/search/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* wfm:alternativeShift:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String jobId = "jobId_example"; // String | The ID of the job
+try {
+    BuAlternativeShiftJobResponse result = apiInstance.getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob(businessUnitId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **jobId** | **String**| The ID of the job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BuAlternativeShiftJobResponse**](BuAlternativeShiftJobResponse.html)
 
 <a name="getWorkforcemanagementBusinessunitIntradayPlanninggroups"></a>
 
@@ -4036,6 +5014,323 @@ try {
 ### Return type
 
 [**BuShortTermForecastListing**](BuShortTermForecastListing.html)
+
+<a name="getWorkforcemanagementBusinessunitWorkplanbid"></a>
+
+# **getWorkforcemanagementBusinessunitWorkplanbid**
+
+
+
+> [WorkPlanBid](WorkPlanBid.html) getWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId)
+
+Get a work plan bid
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}  
+
+Requires ANY permissions: 
+
+* wfm:workPlanBid:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String bidId = "bidId_example"; // String | The id of the workplanbid
+try {
+    WorkPlanBid result = apiInstance.getWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitWorkplanbid");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **bidId** | **String**| The id of the workplanbid | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WorkPlanBid**](WorkPlanBid.html)
+
+<a name="getWorkforcemanagementBusinessunitWorkplanbidGroup"></a>
+
+# **getWorkforcemanagementBusinessunitWorkplanbidGroup**
+
+
+
+> [WorkPlanBidGroupResponse](WorkPlanBidGroupResponse.html) getWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId)
+
+Get a bid group by bid group Id
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}  
+
+Requires ANY permissions: 
+
+* wfm:workPlanBidGroup:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String bidId = "bidId_example"; // String | The work plan bid id of the bid groups
+String bidGroupId = "bidGroupId_example"; // String | Work Plan Bid Group id
+try {
+    WorkPlanBidGroupResponse result = apiInstance.getWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitWorkplanbidGroup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **bidId** | **String**| The work plan bid id of the bid groups | 
+| **bidGroupId** | **String**| Work Plan Bid Group id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WorkPlanBidGroupResponse**](WorkPlanBidGroupResponse.html)
+
+<a name="getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences"></a>
+
+# **getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences**
+
+
+
+> [AdminAgentWorkPlanPreferenceResponse](AdminAgentWorkPlanPreferenceResponse.html) getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId)
+
+Gets the work plan preferences of all the agents in the work plan bid group
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}/preferences  
+
+Requires ANY permissions: 
+
+* wfm:workPlanBidGroup:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String bidId = "bidId_example"; // String | The work plan bid id of the bid groups
+String bidGroupId = "bidGroupId_example"; // String | The ID of the work plan bid group
+try {
+    AdminAgentWorkPlanPreferenceResponse result = apiInstance.getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **bidId** | **String**| The work plan bid id of the bid groups | 
+| **bidGroupId** | **String**| The ID of the work plan bid group | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AdminAgentWorkPlanPreferenceResponse**](AdminAgentWorkPlanPreferenceResponse.html)
+
+<a name="getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary"></a>
+
+# **getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary**
+
+
+
+> [WorkPlanBidGroupSummaryList](WorkPlanBidGroupSummaryList.html) getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary(businessUnitId, bidId)
+
+Get summary of bid groups that belong to a work plan bid
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/summary  
+
+Requires ANY permissions: 
+
+* wfm:workPlanBidGroup:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String bidId = "bidId_example"; // String | The work plan bid id of the bid groups
+try {
+    WorkPlanBidGroupSummaryList result = apiInstance.getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary(businessUnitId, bidId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **bidId** | **String**| The work plan bid id of the bid groups | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WorkPlanBidGroupSummaryList**](WorkPlanBidGroupSummaryList.html)
+
+<a name="getWorkforcemanagementBusinessunitWorkplanbids"></a>
+
+# **getWorkforcemanagementBusinessunitWorkplanbids**
+
+
+
+> [WorkPlanBidListResponse](WorkPlanBidListResponse.html) getWorkforcemanagementBusinessunitWorkplanbids(businessUnitId)
+
+Get list of work plan bids
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids  
+
+Requires ANY permissions: 
+
+* wfm:workPlanBid:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+try {
+    WorkPlanBidListResponse result = apiInstance.getWorkforcemanagementBusinessunitWorkplanbids(businessUnitId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitWorkplanbids");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WorkPlanBidListResponse**](WorkPlanBidListResponse.html)
 
 <a name="getWorkforcemanagementBusinessunits"></a>
 
@@ -6645,6 +7940,246 @@ try {
 
 [**TimeOffRequestList**](TimeOffRequestList.html)
 
+<a name="getWorkforcemanagementUserWorkplanbidranks"></a>
+
+# **getWorkforcemanagementUserWorkplanbidranks**
+
+
+
+> [WorkPlanBidRanks](WorkPlanBidRanks.html) getWorkforcemanagementUserWorkplanbidranks(userId)
+
+Get work plan bid ranks for a user
+
+Wraps GET /api/v2/workforcemanagement/users/{userId}/workplanbidranks  
+
+Requires ANY permissions: 
+
+* wfm:workPlanBid:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String userId = "userId_example"; // String | The userId to whom the work plan bid ranks apply.
+try {
+    WorkPlanBidRanks result = apiInstance.getWorkforcemanagementUserWorkplanbidranks(userId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementUserWorkplanbidranks");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| The userId to whom the work plan bid ranks apply. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WorkPlanBidRanks**](WorkPlanBidRanks.html)
+
+<a name="getWorkforcemanagementWorkplanbidPreferences"></a>
+
+# **getWorkforcemanagementWorkplanbidPreferences**
+
+
+
+> [AgentWorkPlanBiddingPreferenceResponse](AgentWorkPlanBiddingPreferenceResponse.html) getWorkforcemanagementWorkplanbidPreferences(bidId)
+
+Gets an agent's work plan bidding preference
+
+Wraps GET /api/v2/workforcemanagement/workplanbids/{bidId}/preferences  
+
+Requires ANY permissions: 
+
+* wfm:agentWorkPlanBid:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String bidId = "bidId_example"; // String | The ID of the work plan bid
+try {
+    AgentWorkPlanBiddingPreferenceResponse result = apiInstance.getWorkforcemanagementWorkplanbidPreferences(bidId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementWorkplanbidPreferences");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **bidId** | **String**| The ID of the work plan bid | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentWorkPlanBiddingPreferenceResponse**](AgentWorkPlanBiddingPreferenceResponse.html)
+
+<a name="getWorkforcemanagementWorkplanbidWorkplans"></a>
+
+# **getWorkforcemanagementWorkplanbidWorkplans**
+
+
+
+> [AgentWorkPlanListResponse](AgentWorkPlanListResponse.html) getWorkforcemanagementWorkplanbidWorkplans(bidId)
+
+Gets an agent's work plans for a bid
+
+Wraps GET /api/v2/workforcemanagement/workplanbids/{bidId}/workplans  
+
+Requires ANY permissions: 
+
+* wfm:agentWorkPlanBid:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String bidId = "bidId_example"; // String | The ID of the work plan bid
+try {
+    AgentWorkPlanListResponse result = apiInstance.getWorkforcemanagementWorkplanbidWorkplans(bidId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementWorkplanbidWorkplans");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **bidId** | **String**| The ID of the work plan bid | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentWorkPlanListResponse**](AgentWorkPlanListResponse.html)
+
+<a name="getWorkforcemanagementWorkplanbids"></a>
+
+# **getWorkforcemanagementWorkplanbids**
+
+
+
+> [AgentWorkPlanBids](AgentWorkPlanBids.html) getWorkforcemanagementWorkplanbids()
+
+Gets the list of work plan bids that belong to an agent
+
+Wraps GET /api/v2/workforcemanagement/workplanbids  
+
+Requires ANY permissions: 
+
+* wfm:agentWorkPlanBid:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+try {
+    AgentWorkPlanBids result = apiInstance.getWorkforcemanagementWorkplanbids();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementWorkplanbids");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**AgentWorkPlanBids**](AgentWorkPlanBids.html)
+
 <a name="patchWorkforcemanagementAgentAdherenceExplanation"></a>
 
 # **patchWorkforcemanagementAgentAdherenceExplanation**
@@ -6709,6 +8244,130 @@ try {
 ### Return type
 
 [**AdherenceExplanationAsyncResponse**](AdherenceExplanationAsyncResponse.html)
+
+<a name="patchWorkforcemanagementAlternativeshiftsTrade"></a>
+
+# **patchWorkforcemanagementAlternativeshiftsTrade**
+
+
+
+> [AlternativeShiftTradeResponse](AlternativeShiftTradeResponse.html) patchWorkforcemanagementAlternativeshiftsTrade(tradeId, body)
+
+Update my alternative shifts trade by trade ID
+
+Wraps PATCH /api/v2/workforcemanagement/alternativeshifts/trades/{tradeId}  
+
+Requires ANY permissions: 
+
+* wfm:agentAlternativeShift:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String tradeId = "tradeId_example"; // String | The ID of the alternative shift trade
+AgentUpdateAlternativeShiftTradeRequest body = new AgentUpdateAlternativeShiftTradeRequest(); // AgentUpdateAlternativeShiftTradeRequest | body
+try {
+    AlternativeShiftTradeResponse result = apiInstance.patchWorkforcemanagementAlternativeshiftsTrade(tradeId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementAlternativeshiftsTrade");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **tradeId** | **String**| The ID of the alternative shift trade | 
+| **body** | [**AgentUpdateAlternativeShiftTradeRequest**](AgentUpdateAlternativeShiftTradeRequest.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AlternativeShiftTradeResponse**](AlternativeShiftTradeResponse.html)
+
+<a name="patchWorkforcemanagementAlternativeshiftsTradesStateJobs"></a>
+
+# **patchWorkforcemanagementAlternativeshiftsTradesStateJobs**
+
+
+
+> [AlternativeShiftAsyncResponse](AlternativeShiftAsyncResponse.html) patchWorkforcemanagementAlternativeshiftsTradesStateJobs(body)
+
+Bulk update alternative shift trade states
+
+Wraps PATCH /api/v2/workforcemanagement/alternativeshifts/trades/state/jobs  
+
+Requires ANY permissions: 
+
+* wfm:alternativeShift:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+AdminBulkUpdateAlternativeShiftTradeStateRequest body = new AdminBulkUpdateAlternativeShiftTradeStateRequest(); // AdminBulkUpdateAlternativeShiftTradeStateRequest | The request body
+try {
+    AlternativeShiftAsyncResponse result = apiInstance.patchWorkforcemanagementAlternativeshiftsTradesStateJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementAlternativeshiftsTradesStateJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**AdminBulkUpdateAlternativeShiftTradeStateRequest**](AdminBulkUpdateAlternativeShiftTradeStateRequest.html)| The request body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AlternativeShiftAsyncResponse**](AlternativeShiftAsyncResponse.html)
 
 <a name="patchWorkforcemanagementBusinessunit"></a>
 
@@ -6837,6 +8496,136 @@ try {
 ### Return type
 
 [**BusinessUnitActivityCode**](BusinessUnitActivityCode.html)
+
+<a name="patchWorkforcemanagementBusinessunitActivityplan"></a>
+
+# **patchWorkforcemanagementBusinessunitActivityplan**
+
+
+
+> [ActivityPlanResponse](ActivityPlanResponse.html) patchWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId, body)
+
+Update an activity plan
+
+If a job associated with the activity plan is in 'Processing' state the activity plan cannot be updated
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}  
+
+Requires ANY permissions: 
+
+* wfm:activityPlan:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan to update
+UpdateActivityPlanRequest body = new UpdateActivityPlanRequest(); // UpdateActivityPlanRequest | body
+try {
+    ActivityPlanResponse result = apiInstance.patchWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunitActivityplan");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **activityPlanId** | **String**| The ID of the activity plan to update | 
+| **body** | [**UpdateActivityPlanRequest**](UpdateActivityPlanRequest.html)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActivityPlanResponse**](ActivityPlanResponse.html)
+
+<a name="patchWorkforcemanagementBusinessunitAlternativeshiftsSettings"></a>
+
+# **patchWorkforcemanagementBusinessunitAlternativeshiftsSettings**
+
+
+
+> [AlternativeShiftBuSettingsResponse](AlternativeShiftBuSettingsResponse.html) patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId, body)
+
+Update alternative shifts settings for a business unit
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings  
+
+Requires ANY permissions: 
+
+* wfm:businessUnit:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+UpdateAlternativeShiftBuSettingsRequest body = new UpdateAlternativeShiftBuSettingsRequest(); // UpdateAlternativeShiftBuSettingsRequest | body
+try {
+    AlternativeShiftBuSettingsResponse result = apiInstance.patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunitAlternativeshiftsSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**UpdateAlternativeShiftBuSettingsRequest**](UpdateAlternativeShiftBuSettingsRequest.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AlternativeShiftBuSettingsResponse**](AlternativeShiftBuSettingsResponse.html)
 
 <a name="patchWorkforcemanagementBusinessunitPlanninggroup"></a>
 
@@ -7161,6 +8950,205 @@ try {
 ### Return type
 
 [**BuTimeOffPlanResponse**](BuTimeOffPlanResponse.html)
+
+<a name="patchWorkforcemanagementBusinessunitWorkplanbid"></a>
+
+# **patchWorkforcemanagementBusinessunitWorkplanbid**
+
+
+
+> [WorkPlanBid](WorkPlanBid.html) patchWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId, body)
+
+Update work plan bid
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}  
+
+Requires ANY permissions: 
+
+* wfm:workPlanBid:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String bidId = "bidId_example"; // String | The id of the workplanbid
+UpdateWorkPlanBid body = new UpdateWorkPlanBid(); // UpdateWorkPlanBid | The work plan bid to be updated
+try {
+    WorkPlanBid result = apiInstance.patchWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunitWorkplanbid");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **bidId** | **String**| The id of the workplanbid | 
+| **body** | [**UpdateWorkPlanBid**](UpdateWorkPlanBid.html)| The work plan bid to be updated | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WorkPlanBid**](WorkPlanBid.html)
+
+<a name="patchWorkforcemanagementBusinessunitWorkplanbidGroup"></a>
+
+# **patchWorkforcemanagementBusinessunitWorkplanbidGroup**
+
+
+
+> [WorkPlanBidGroupResponse](WorkPlanBidGroupResponse.html) patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId, body)
+
+Update a bid group by bid group Id
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}  
+
+Requires ANY permissions: 
+
+* wfm:workPlanBidGroup:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String bidId = "bidId_example"; // String | The work plan bid id of the bid groups
+String bidGroupId = "bidGroupId_example"; // String | Work Plan Bid Group id
+WorkPlanBidGroupUpdate body = new WorkPlanBidGroupUpdate(); // WorkPlanBidGroupUpdate | body
+try {
+    WorkPlanBidGroupResponse result = apiInstance.patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunitWorkplanbidGroup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **bidId** | **String**| The work plan bid id of the bid groups | 
+| **bidGroupId** | **String**| Work Plan Bid Group id | 
+| **body** | [**WorkPlanBidGroupUpdate**](WorkPlanBidGroupUpdate.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WorkPlanBidGroupResponse**](WorkPlanBidGroupResponse.html)
+
+<a name="patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences"></a>
+
+# **patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences**
+
+
+
+> [AdminAgentWorkPlanPreferenceResponse](AdminAgentWorkPlanPreferenceResponse.html) patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId, body)
+
+Overrides the assigned work plan for the specified agents
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}/preferences  
+
+Requires ANY permissions: 
+
+* wfm:workPlanBidGroup:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String bidId = "bidId_example"; // String | The work plan bid id of the bid groups
+String bidGroupId = "bidGroupId_example"; // String | The ID of the work plan bid group
+AgentsBidAssignedWorkPlanOverrideRequest body = new AgentsBidAssignedWorkPlanOverrideRequest(); // AgentsBidAssignedWorkPlanOverrideRequest | body
+try {
+    AdminAgentWorkPlanPreferenceResponse result = apiInstance.patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **bidId** | **String**| The work plan bid id of the bid groups | 
+| **bidGroupId** | **String**| The ID of the work plan bid group | 
+| **body** | [**AgentsBidAssignedWorkPlanOverrideRequest**](AgentsBidAssignedWorkPlanOverrideRequest.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AdminAgentWorkPlanPreferenceResponse**](AdminAgentWorkPlanPreferenceResponse.html)
 
 <a name="patchWorkforcemanagementManagementunit"></a>
 
@@ -7815,6 +9803,193 @@ try {
 
 [**TimeOffRequestResponse**](TimeOffRequestResponse.html)
 
+<a name="patchWorkforcemanagementUserWorkplanbidranks"></a>
+
+# **patchWorkforcemanagementUserWorkplanbidranks**
+
+
+
+> [WorkPlanBidRanks](WorkPlanBidRanks.html) patchWorkforcemanagementUserWorkplanbidranks(userId, body)
+
+Update work plan bid ranks for a user
+
+Wraps PATCH /api/v2/workforcemanagement/users/{userId}/workplanbidranks  
+
+Requires ANY permissions: 
+
+* wfm:workPlanBid:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String userId = "userId_example"; // String | The userId to whom the work plan bid ranks apply.
+WorkPlanBidRanks body = new WorkPlanBidRanks(); // WorkPlanBidRanks | body
+try {
+    WorkPlanBidRanks result = apiInstance.patchWorkforcemanagementUserWorkplanbidranks(userId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementUserWorkplanbidranks");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| The userId to whom the work plan bid ranks apply. | 
+| **body** | [**WorkPlanBidRanks**](WorkPlanBidRanks.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WorkPlanBidRanks**](WorkPlanBidRanks.html)
+
+<a name="patchWorkforcemanagementUsersWorkplanbidranksBulk"></a>
+
+# **patchWorkforcemanagementUsersWorkplanbidranksBulk**
+
+
+
+> [EntityListing](EntityListing.html) patchWorkforcemanagementUsersWorkplanbidranksBulk(body)
+
+Update bulk work plan bid ranks on users. Max 50 users can be updated at a time.
+
+Wraps PATCH /api/v2/workforcemanagement/users/workplanbidranks/bulk  
+
+Requires ANY permissions: 
+
+* wfm:workPlanBid:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+List<WorkPlanBidRanks> body = Arrays.asList(new WorkPlanBidRanks()); // List<WorkPlanBidRanks> | Users
+try {
+    EntityListing result = apiInstance.patchWorkforcemanagementUsersWorkplanbidranksBulk(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementUsersWorkplanbidranksBulk");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**List&lt;WorkPlanBidRanks&gt;**](WorkPlanBidRanks.html)| Users | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EntityListing**](EntityListing.html)
+
+<a name="patchWorkforcemanagementWorkplanbidPreferences"></a>
+
+# **patchWorkforcemanagementWorkplanbidPreferences**
+
+
+
+> [AgentWorkPlanBiddingPreferenceResponse](AgentWorkPlanBiddingPreferenceResponse.html) patchWorkforcemanagementWorkplanbidPreferences(bidId, body)
+
+Update an agent's work plan bidding preference
+
+Wraps PATCH /api/v2/workforcemanagement/workplanbids/{bidId}/preferences  
+
+Requires ANY permissions: 
+
+* wfm:agentWorkPlanBid:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String bidId = "bidId_example"; // String | The ID of the work plan bid
+UpdateAgentWorkPlanBiddingPreference body = new UpdateAgentWorkPlanBiddingPreference(); // UpdateAgentWorkPlanBiddingPreference | body
+try {
+    AgentWorkPlanBiddingPreferenceResponse result = apiInstance.patchWorkforcemanagementWorkplanbidPreferences(bidId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementWorkplanbidPreferences");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **bidId** | **String**| The ID of the work plan bid | 
+| **body** | [**UpdateAgentWorkPlanBiddingPreference**](UpdateAgentWorkPlanBiddingPreference.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentWorkPlanBiddingPreferenceResponse**](AgentWorkPlanBiddingPreferenceResponse.html)
+
 <a name="postWorkforcemanagementAdherenceExplanations"></a>
 
 # **postWorkforcemanagementAdherenceExplanations**
@@ -8437,6 +10612,189 @@ try {
 
 [**BuCurrentAgentScheduleSearchResponse**](BuCurrentAgentScheduleSearchResponse.html)
 
+<a name="postWorkforcemanagementAlternativeshiftsOffersJobs"></a>
+
+# **postWorkforcemanagementAlternativeshiftsOffersJobs**
+
+
+
+> [AlternativeShiftAsyncResponse](AlternativeShiftAsyncResponse.html) postWorkforcemanagementAlternativeshiftsOffersJobs(body)
+
+Request a list of alternative shift offers for a given schedule
+
+Wraps POST /api/v2/workforcemanagement/alternativeshifts/offers/jobs  
+
+Requires ANY permissions: 
+
+* wfm:agentAlternativeShift:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+AlternativeShiftOffersRequest body = new AlternativeShiftOffersRequest(); // AlternativeShiftOffersRequest | The request body
+try {
+    AlternativeShiftAsyncResponse result = apiInstance.postWorkforcemanagementAlternativeshiftsOffersJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementAlternativeshiftsOffersJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**AlternativeShiftOffersRequest**](AlternativeShiftOffersRequest.html)| The request body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AlternativeShiftAsyncResponse**](AlternativeShiftAsyncResponse.html)
+
+<a name="postWorkforcemanagementAlternativeshiftsOffersSearchJobs"></a>
+
+# **postWorkforcemanagementAlternativeshiftsOffersSearchJobs**
+
+
+
+> [AlternativeShiftAsyncResponse](AlternativeShiftAsyncResponse.html) postWorkforcemanagementAlternativeshiftsOffersSearchJobs(body)
+
+Request a search of alternative shift offers for a given shift
+
+Wraps POST /api/v2/workforcemanagement/alternativeshifts/offers/search/jobs  
+
+Requires ANY permissions: 
+
+* wfm:agentAlternativeShift:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+AlternativeShiftSearchOffersRequest body = new AlternativeShiftSearchOffersRequest(); // AlternativeShiftSearchOffersRequest | The request body
+try {
+    AlternativeShiftAsyncResponse result = apiInstance.postWorkforcemanagementAlternativeshiftsOffersSearchJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementAlternativeshiftsOffersSearchJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**AlternativeShiftSearchOffersRequest**](AlternativeShiftSearchOffersRequest.html)| The request body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AlternativeShiftAsyncResponse**](AlternativeShiftAsyncResponse.html)
+
+<a name="postWorkforcemanagementAlternativeshiftsTrades"></a>
+
+# **postWorkforcemanagementAlternativeshiftsTrades**
+
+
+
+> [AlternativeShiftTradeResponse](AlternativeShiftTradeResponse.html) postWorkforcemanagementAlternativeshiftsTrades(body)
+
+Create my alternative shift trade using an existing offer's jobId
+
+Wraps POST /api/v2/workforcemanagement/alternativeshifts/trades  
+
+Requires ANY permissions: 
+
+* wfm:agentAlternativeShift:submit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+CreateAlternativeShiftTradeRequest body = new CreateAlternativeShiftTradeRequest(); // CreateAlternativeShiftTradeRequest | The request body
+try {
+    AlternativeShiftTradeResponse result = apiInstance.postWorkforcemanagementAlternativeshiftsTrades(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementAlternativeshiftsTrades");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CreateAlternativeShiftTradeRequest**](CreateAlternativeShiftTradeRequest.html)| The request body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AlternativeShiftTradeResponse**](AlternativeShiftTradeResponse.html)
+
 <a name="postWorkforcemanagementBusinessunitActivitycodes"></a>
 
 # **postWorkforcemanagementBusinessunitActivitycodes**
@@ -8499,6 +10857,134 @@ try {
 ### Return type
 
 [**BusinessUnitActivityCode**](BusinessUnitActivityCode.html)
+
+<a name="postWorkforcemanagementBusinessunitActivityplanRunsJobs"></a>
+
+# **postWorkforcemanagementBusinessunitActivityplanRunsJobs**
+
+
+
+> [ActivityPlanJobResponse](ActivityPlanJobResponse.html) postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnitId, activityPlanId)
+
+Run an activity plan manually
+
+Triggers a job running the activity plan. The activity plan cannot be updated until the job completes
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/runs/jobs  
+
+Requires ANY permissions: 
+
+* wfm:activityPlanRunJob:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan to run
+try {
+    ActivityPlanJobResponse result = apiInstance.postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnitId, activityPlanId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplanRunsJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **activityPlanId** | **String**| The ID of the activity plan to run | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActivityPlanJobResponse**](ActivityPlanJobResponse.html)
+
+<a name="postWorkforcemanagementBusinessunitActivityplans"></a>
+
+# **postWorkforcemanagementBusinessunitActivityplans**
+
+
+
+> [ActivityPlanResponse](ActivityPlanResponse.html) postWorkforcemanagementBusinessunitActivityplans(businessUnitId, body)
+
+Create an activity plan
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans  
+
+Requires ANY permissions: 
+
+* wfm:activityPlan:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+CreateActivityPlanRequest body = new CreateActivityPlanRequest(); // CreateActivityPlanRequest | body
+try {
+    ActivityPlanResponse result = apiInstance.postWorkforcemanagementBusinessunitActivityplans(businessUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplans");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**CreateActivityPlanRequest**](CreateActivityPlanRequest.html)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActivityPlanResponse**](ActivityPlanResponse.html)
 
 <a name="postWorkforcemanagementBusinessunitAdherenceExplanationsQuery"></a>
 
@@ -8634,6 +11120,71 @@ try {
 ### Return type
 
 [**BuAsyncAgentSchedulesSearchResponse**](BuAsyncAgentSchedulesSearchResponse.html)
+
+<a name="postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch"></a>
+
+# **postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch**
+
+
+
+> [BuListAlternativeShiftTradesResponse](BuListAlternativeShiftTradesResponse.html) postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch(businessUnitId, body, forceAsync)
+
+List alternative shifts trades for a given management unit or agent
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/search  
+
+Requires ANY permissions: 
+
+* wfm:alternativeShift:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+SearchAlternativeShiftTradesRequest body = new SearchAlternativeShiftTradesRequest(); // SearchAlternativeShiftTradesRequest | The request body
+Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+try {
+    BuListAlternativeShiftTradesResponse result = apiInstance.postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch(businessUnitId, body, forceAsync);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**SearchAlternativeShiftTradesRequest**](SearchAlternativeShiftTradesRequest.html)| The request body | 
+| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BuListAlternativeShiftTradesResponse**](BuListAlternativeShiftTradesResponse.html)
 
 <a name="postWorkforcemanagementBusinessunitIntraday"></a>
 
@@ -10152,6 +12703,199 @@ try {
 ### Return type
 
 [**ImportForecastUploadResponse**](ImportForecastUploadResponse.html)
+
+<a name="postWorkforcemanagementBusinessunitWorkplanbidCopy"></a>
+
+# **postWorkforcemanagementBusinessunitWorkplanbidCopy**
+
+
+
+> [WorkPlanBid](WorkPlanBid.html) postWorkforcemanagementBusinessunitWorkplanbidCopy(businessUnitId, bidId, body)
+
+Copy a work plan bid
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/copy  
+
+Requires ANY permissions: 
+
+* wfm:workPlanBid:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String bidId = "bidId_example"; // String | The ID of the work plan bid to copy
+CopyWorkPlanBid body = new CopyWorkPlanBid(); // CopyWorkPlanBid | body
+try {
+    WorkPlanBid result = apiInstance.postWorkforcemanagementBusinessunitWorkplanbidCopy(businessUnitId, bidId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitWorkplanbidCopy");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **bidId** | **String**| The ID of the work plan bid to copy | 
+| **body** | [**CopyWorkPlanBid**](CopyWorkPlanBid.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WorkPlanBid**](WorkPlanBid.html)
+
+<a name="postWorkforcemanagementBusinessunitWorkplanbidGroups"></a>
+
+# **postWorkforcemanagementBusinessunitWorkplanbidGroups**
+
+
+
+> [WorkPlanBidGroupResponse](WorkPlanBidGroupResponse.html) postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId, bidId, body)
+
+Add a bid group in a given work plan bid
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups  
+
+Requires ANY permissions: 
+
+* wfm:workPlanBidGroup:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String bidId = "bidId_example"; // String | The work plan bid id of the bid groups
+WorkPlanBidGroupCreate body = new WorkPlanBidGroupCreate(); // WorkPlanBidGroupCreate | body
+try {
+    WorkPlanBidGroupResponse result = apiInstance.postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId, bidId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitWorkplanbidGroups");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **bidId** | **String**| The work plan bid id of the bid groups | 
+| **body** | [**WorkPlanBidGroupCreate**](WorkPlanBidGroupCreate.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WorkPlanBidGroupResponse**](WorkPlanBidGroupResponse.html)
+
+<a name="postWorkforcemanagementBusinessunitWorkplanbids"></a>
+
+# **postWorkforcemanagementBusinessunitWorkplanbids**
+
+
+
+> [WorkPlanBid](WorkPlanBid.html) postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId, body)
+
+Create a new work plan bid
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids  
+
+Requires ANY permissions: 
+
+* wfm:workPlanBid:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+CreateWorkPlanBid body = new CreateWorkPlanBid(); // CreateWorkPlanBid | The work plan bid to be created
+try {
+    WorkPlanBid result = apiInstance.postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitWorkplanbids");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**CreateWorkPlanBid**](CreateWorkPlanBid.html)| The work plan bid to be created | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WorkPlanBid**](WorkPlanBid.html)
 
 <a name="postWorkforcemanagementBusinessunits"></a>
 

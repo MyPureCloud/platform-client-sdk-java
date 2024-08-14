@@ -269,6 +269,7 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
   private Integer alertingDurationMs = null;
   private Integer contactingDurationMs = null;
   private Integer dialingDurationMs = null;
+  private Integer callbackDurationMs = null;
   private List<String> conversationExternalContactIds = new ArrayList<String>();
   private List<String> conversationExternalOrganizationIds = new ArrayList<String>();
 
@@ -700,6 +701,23 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
 
   /**
    **/
+  public UserEndDetailEventTopicUserEndEvent callbackDurationMs(Integer callbackDurationMs) {
+    this.callbackDurationMs = callbackDurationMs;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("callbackDurationMs")
+  public Integer getCallbackDurationMs() {
+    return callbackDurationMs;
+  }
+  public void setCallbackDurationMs(Integer callbackDurationMs) {
+    this.callbackDurationMs = callbackDurationMs;
+  }
+
+
+  /**
+   **/
   public UserEndDetailEventTopicUserEndEvent conversationExternalContactIds(List<String> conversationExternalContactIds) {
     this.conversationExternalContactIds = conversationExternalContactIds;
     return this;
@@ -767,13 +785,14 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
             Objects.equals(this.alertingDurationMs, userEndDetailEventTopicUserEndEvent.alertingDurationMs) &&
             Objects.equals(this.contactingDurationMs, userEndDetailEventTopicUserEndEvent.contactingDurationMs) &&
             Objects.equals(this.dialingDurationMs, userEndDetailEventTopicUserEndEvent.dialingDurationMs) &&
+            Objects.equals(this.callbackDurationMs, userEndDetailEventTopicUserEndEvent.callbackDurationMs) &&
             Objects.equals(this.conversationExternalContactIds, userEndDetailEventTopicUserEndEvent.conversationExternalContactIds) &&
             Objects.equals(this.conversationExternalOrganizationIds, userEndDetailEventTopicUserEndEvent.conversationExternalOrganizationIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, disconnectType, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, userId, divisionId, queueId, interactingDurationMs, heldDurationMs, alertingDurationMs, contactingDurationMs, dialingDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, disconnectType, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, userId, divisionId, queueId, interactingDurationMs, heldDurationMs, alertingDurationMs, contactingDurationMs, dialingDurationMs, callbackDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds);
   }
 
   @Override
@@ -806,6 +825,7 @@ public class UserEndDetailEventTopicUserEndEvent  implements Serializable {
     sb.append("    alertingDurationMs: ").append(toIndentedString(alertingDurationMs)).append("\n");
     sb.append("    contactingDurationMs: ").append(toIndentedString(contactingDurationMs)).append("\n");
     sb.append("    dialingDurationMs: ").append(toIndentedString(dialingDurationMs)).append("\n");
+    sb.append("    callbackDurationMs: ").append(toIndentedString(callbackDurationMs)).append("\n");
     sb.append("    conversationExternalContactIds: ").append(toIndentedString(conversationExternalContactIds)).append("\n");
     sb.append("    conversationExternalOrganizationIds: ").append(toIndentedString(conversationExternalOrganizationIds)).append("\n");
     sb.append("}");

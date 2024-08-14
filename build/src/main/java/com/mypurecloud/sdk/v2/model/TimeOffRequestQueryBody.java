@@ -95,7 +95,8 @@ public class TimeOffRequestQueryBody  implements Serializable {
     INVALIDDAILYDURATION("InvalidDailyDuration"),
     OUTSIDESHIFT("OutsideShift"),
     REMOVEDFROMWAITLIST("RemovedFromWaitlist"),
-    WAITLISTED("Waitlisted");
+    WAITLISTED("Waitlisted"),
+    OVERLAPSRESTRICTEDACTIVITYCODE("OverlapsRestrictedActivityCode");
 
     private String value;
 

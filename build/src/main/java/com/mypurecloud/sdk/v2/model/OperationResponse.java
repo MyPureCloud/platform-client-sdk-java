@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.KnowledgeOperationSource;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -79,6 +80,7 @@ public class OperationResponse  implements Serializable {
   private UserReference createdBy = null;
   private Date dateCreated = null;
   private Date dateModified = null;
+  private KnowledgeOperationSource source = null;
   private String selfUri = null;
 
   
@@ -179,6 +181,24 @@ public class OperationResponse  implements Serializable {
   }
 
 
+  /**
+   * Source of the operation.
+   **/
+  public OperationResponse source(KnowledgeOperationSource source) {
+    this.source = source;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Source of the operation.")
+  @JsonProperty("source")
+  public KnowledgeOperationSource getSource() {
+    return source;
+  }
+  public void setSource(KnowledgeOperationSource source) {
+    this.source = source;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -202,12 +222,13 @@ public class OperationResponse  implements Serializable {
             Objects.equals(this.createdBy, operationResponse.createdBy) &&
             Objects.equals(this.dateCreated, operationResponse.dateCreated) &&
             Objects.equals(this.dateModified, operationResponse.dateModified) &&
+            Objects.equals(this.source, operationResponse.source) &&
             Objects.equals(this.selfUri, operationResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, status, type, createdBy, dateCreated, dateModified, selfUri);
+    return Objects.hash(id, status, type, createdBy, dateCreated, dateModified, source, selfUri);
   }
 
   @Override
@@ -221,6 +242,7 @@ public class OperationResponse  implements Serializable {
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
+    sb.append("    source: ").append(toIndentedString(source)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

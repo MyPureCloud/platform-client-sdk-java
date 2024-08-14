@@ -15,7 +15,9 @@ import com.mypurecloud.sdk.v2.model.Destination;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -31,6 +33,7 @@ public class CreateCallRequest  implements Serializable {
   private String callQueueId = null;
   private String callUserId = null;
   private Integer priority = null;
+  private Map<String, String> attributes = null;
   private String languageId = null;
   private List<String> routingSkillsIds = new ArrayList<String>();
   private List<String> conversationIds = new ArrayList<String>();
@@ -163,6 +166,24 @@ public class CreateCallRequest  implements Serializable {
   }
   public void setPriority(Integer priority) {
     this.priority = priority;
+  }
+
+
+  /**
+   * The list of attributes to associate with the customer participant.
+   **/
+  public CreateCallRequest attributes(Map<String, String> attributes) {
+    this.attributes = attributes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of attributes to associate with the customer participant.")
+  @JsonProperty("attributes")
+  public Map<String, String> getAttributes() {
+    return attributes;
+  }
+  public void setAttributes(Map<String, String> attributes) {
+    this.attributes = attributes;
   }
 
 
@@ -309,6 +330,7 @@ public class CreateCallRequest  implements Serializable {
             Objects.equals(this.callQueueId, createCallRequest.callQueueId) &&
             Objects.equals(this.callUserId, createCallRequest.callUserId) &&
             Objects.equals(this.priority, createCallRequest.priority) &&
+            Objects.equals(this.attributes, createCallRequest.attributes) &&
             Objects.equals(this.languageId, createCallRequest.languageId) &&
             Objects.equals(this.routingSkillsIds, createCallRequest.routingSkillsIds) &&
             Objects.equals(this.conversationIds, createCallRequest.conversationIds) &&
@@ -320,7 +342,7 @@ public class CreateCallRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(phoneNumber, callerId, callerIdName, callFromQueueId, callQueueId, callUserId, priority, languageId, routingSkillsIds, conversationIds, participants, uuiData, externalContactId, label);
+    return Objects.hash(phoneNumber, callerId, callerIdName, callFromQueueId, callQueueId, callUserId, priority, attributes, languageId, routingSkillsIds, conversationIds, participants, uuiData, externalContactId, label);
   }
 
   @Override
@@ -335,6 +357,7 @@ public class CreateCallRequest  implements Serializable {
     sb.append("    callQueueId: ").append(toIndentedString(callQueueId)).append("\n");
     sb.append("    callUserId: ").append(toIndentedString(callUserId)).append("\n");
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
+    sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    languageId: ").append(toIndentedString(languageId)).append("\n");
     sb.append("    routingSkillsIds: ").append(toIndentedString(routingSkillsIds)).append("\n");
     sb.append("    conversationIds: ").append(toIndentedString(conversationIds)).append("\n");

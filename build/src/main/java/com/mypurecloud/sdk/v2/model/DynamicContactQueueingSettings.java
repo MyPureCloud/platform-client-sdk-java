@@ -22,6 +22,7 @@ import java.io.Serializable;
 public class DynamicContactQueueingSettings  implements Serializable {
   
   private Boolean sort = null;
+  private Boolean filter = null;
 
   
   /**
@@ -42,6 +43,24 @@ public class DynamicContactQueueingSettings  implements Serializable {
   }
 
 
+  /**
+   * Whether to filter contacts dynamically
+   **/
+  public DynamicContactQueueingSettings filter(Boolean filter) {
+    this.filter = filter;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether to filter contacts dynamically")
+  @JsonProperty("filter")
+  public Boolean getFilter() {
+    return filter;
+  }
+  public void setFilter(Boolean filter) {
+    this.filter = filter;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -52,12 +71,13 @@ public class DynamicContactQueueingSettings  implements Serializable {
     }
     DynamicContactQueueingSettings dynamicContactQueueingSettings = (DynamicContactQueueingSettings) o;
 
-    return Objects.equals(this.sort, dynamicContactQueueingSettings.sort);
+    return Objects.equals(this.sort, dynamicContactQueueingSettings.sort) &&
+            Objects.equals(this.filter, dynamicContactQueueingSettings.filter);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sort);
+    return Objects.hash(sort, filter);
   }
 
   @Override
@@ -66,6 +86,7 @@ public class DynamicContactQueueingSettings  implements Serializable {
     sb.append("class DynamicContactQueueingSettings {\n");
     
     sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
+    sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
     sb.append("}");
     return sb.toString();
   }

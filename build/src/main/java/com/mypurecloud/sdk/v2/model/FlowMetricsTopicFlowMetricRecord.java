@@ -241,6 +241,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     DELIVERYFAILED("DeliveryFailed"),
     DELIVERYSUCCESS("DeliverySuccess"),
     FAILED("Failed"),
+    PUBLISHED("Published"),
     QUEUED("Queued"),
     READ("Read"),
     RECEIVED("Received"),
@@ -935,6 +936,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
   }
   private UsedRoutingEnum usedRouting = null;
   private String userId = null;
+  private Boolean videoPresent = null;
   private List<Integer> waitingInteractionCounts = new ArrayList<Integer>();
   private String wrapUpCode = null;
   private List<FlowMetricsTopicFlowProposedAgent> proposedAgents = new ArrayList<FlowMetricsTopicFlowProposedAgent>();
@@ -2599,6 +2601,24 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
 
 
   /**
+   * Flag indicating if video is present
+   **/
+  public FlowMetricsTopicFlowMetricRecord videoPresent(Boolean videoPresent) {
+    this.videoPresent = videoPresent;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Flag indicating if video is present")
+  @JsonProperty("videoPresent")
+  public Boolean getVideoPresent() {
+    return videoPresent;
+  }
+  public void setVideoPresent(Boolean videoPresent) {
+    this.videoPresent = videoPresent;
+  }
+
+
+  /**
    * Number of waiting interactions for each predictive routing attempt
    **/
   public FlowMetricsTopicFlowMetricRecord waitingInteractionCounts(List<Integer> waitingInteractionCounts) {
@@ -2790,6 +2810,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
             Objects.equals(this.transferType, flowMetricsTopicFlowMetricRecord.transferType) &&
             Objects.equals(this.usedRouting, flowMetricsTopicFlowMetricRecord.usedRouting) &&
             Objects.equals(this.userId, flowMetricsTopicFlowMetricRecord.userId) &&
+            Objects.equals(this.videoPresent, flowMetricsTopicFlowMetricRecord.videoPresent) &&
             Objects.equals(this.waitingInteractionCounts, flowMetricsTopicFlowMetricRecord.waitingInteractionCounts) &&
             Objects.equals(this.wrapUpCode, flowMetricsTopicFlowMetricRecord.wrapUpCode) &&
             Objects.equals(this.proposedAgents, flowMetricsTopicFlowMetricRecord.proposedAgents) &&
@@ -2799,7 +2820,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(metric, metricDate, value, recordId, activeRouting, activeSkillIds, addressFrom, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, conversationId, conversationInitiator, convertedFrom, convertedTo, customerParticipation, deliveryStatus, destinationAddresses, direction, disconnectType, divisionIds, dnis, edgeId, eligibleAgentCounts, endingLanguage, entryReason, entryType, errorCode, exitReason, extendedDeliveryStatus, externalContactId, externalMediaCount, externalOrganizationId, externalTag, firstQueue, flaggedReason, flowId, flowInType, flowMilestoneIds, flowName, flowOutType, flowType, flowVersion, groupId, interactionType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, knowledgeBaseId, mediaCount, mediaType, messageType, originatingDirection, outboundCampaignId, outboundContactId, outboundContactListId, participantName, peerId, provider, purpose, queueId, recognitionFailureReason, remote, removedSkillIds, requestedLanguageId, requestedRoutingSkillIds, requestedRoutings, roomId, routingPriority, routingRing, routingRule, routingRuleType, selectedAgentId, selectedAgentRank, selfServed, sessionDnis, sessionId, startingLanguage, stationId, teamId, transferTargetAddress, transferTargetName, transferType, usedRouting, userId, waitingInteractionCounts, wrapUpCode, proposedAgents, outcomes, scoredAgents);
+    return Objects.hash(metric, metricDate, value, recordId, activeRouting, activeSkillIds, addressFrom, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, conversationId, conversationInitiator, convertedFrom, convertedTo, customerParticipation, deliveryStatus, destinationAddresses, direction, disconnectType, divisionIds, dnis, edgeId, eligibleAgentCounts, endingLanguage, entryReason, entryType, errorCode, exitReason, extendedDeliveryStatus, externalContactId, externalMediaCount, externalOrganizationId, externalTag, firstQueue, flaggedReason, flowId, flowInType, flowMilestoneIds, flowName, flowOutType, flowType, flowVersion, groupId, interactionType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, knowledgeBaseId, mediaCount, mediaType, messageType, originatingDirection, outboundCampaignId, outboundContactId, outboundContactListId, participantName, peerId, provider, purpose, queueId, recognitionFailureReason, remote, removedSkillIds, requestedLanguageId, requestedRoutingSkillIds, requestedRoutings, roomId, routingPriority, routingRing, routingRule, routingRuleType, selectedAgentId, selectedAgentRank, selfServed, sessionDnis, sessionId, startingLanguage, stationId, teamId, transferTargetAddress, transferTargetName, transferType, usedRouting, userId, videoPresent, waitingInteractionCounts, wrapUpCode, proposedAgents, outcomes, scoredAgents);
   }
 
   @Override
@@ -2899,6 +2920,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     sb.append("    transferType: ").append(toIndentedString(transferType)).append("\n");
     sb.append("    usedRouting: ").append(toIndentedString(usedRouting)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+    sb.append("    videoPresent: ").append(toIndentedString(videoPresent)).append("\n");
     sb.append("    waitingInteractionCounts: ").append(toIndentedString(waitingInteractionCounts)).append("\n");
     sb.append("    wrapUpCode: ").append(toIndentedString(wrapUpCode)).append("\n");
     sb.append("    proposedAgents: ").append(toIndentedString(proposedAgents)).append("\n");

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.ActivityCodeReference;
+import com.mypurecloud.sdk.v2.model.ActivityCodeSummary;
 import com.mypurecloud.sdk.v2.model.BusinessUnitReference;
 import com.mypurecloud.sdk.v2.model.ManagementUnitReference;
 import com.mypurecloud.sdk.v2.model.QueueReference;
@@ -93,7 +93,7 @@ public class UserScheduleAdherence  implements Serializable {
     }
   }
   private ScheduledActivityCategoryEnum scheduledActivityCategory = null;
-  private ActivityCodeReference scheduledActivityCode = null;
+  private ActivityCodeSummary scheduledActivityCode = null;
 
   private static class SystemPresenceEnumDeserializer extends StdDeserializer<SystemPresenceEnum> {
     public SystemPresenceEnumDeserializer() {
@@ -430,7 +430,7 @@ public class UserScheduleAdherence  implements Serializable {
 
   @ApiModelProperty(example = "null", value = "Activity code for which the user is currently scheduled")
   @JsonProperty("scheduledActivityCode")
-  public ActivityCodeReference getScheduledActivityCode() {
+  public ActivityCodeSummary getScheduledActivityCode() {
     return scheduledActivityCode;
   }
 

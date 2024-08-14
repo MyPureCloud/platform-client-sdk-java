@@ -75,17 +75,18 @@ public class CreateOutboundMessagingConversationRequest  implements Serializable
   private ToAddressMessengerTypeEnum toAddressMessengerType = null;
   private Boolean useExistingConversation = null;
   private String externalContactId = null;
+  private Boolean useUserFromAddress = null;
 
   
   /**
-   * The ID of the queue to be associated with the message. This will determine the fromAddress of the message.
+   * The ID of the queue to be associated with the message. This will determine the fromAddress of the message, unless useUserFromAddress is true and the queue is configured to use the agent's Direct Routing address as the fromAddress.
    **/
   public CreateOutboundMessagingConversationRequest queueId(String queueId) {
     this.queueId = queueId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The ID of the queue to be associated with the message. This will determine the fromAddress of the message.")
+  @ApiModelProperty(example = "null", required = true, value = "The ID of the queue to be associated with the message. This will determine the fromAddress of the message, unless useUserFromAddress is true and the queue is configured to use the agent's Direct Routing address as the fromAddress.")
   @JsonProperty("queueId")
   public String getQueueId() {
     return queueId;
@@ -167,6 +168,24 @@ public class CreateOutboundMessagingConversationRequest  implements Serializable
   }
 
 
+  /**
+   * An override to attempt to use the user's configured direct routing address as the fromAddress.  If set to true, users configured address with 'directrouting' integration will be used as fromAddress.  If set to false or not set, the queueId will be used for determining fromAddress.
+   **/
+  public CreateOutboundMessagingConversationRequest useUserFromAddress(Boolean useUserFromAddress) {
+    this.useUserFromAddress = useUserFromAddress;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "An override to attempt to use the user's configured direct routing address as the fromAddress.  If set to true, users configured address with 'directrouting' integration will be used as fromAddress.  If set to false or not set, the queueId will be used for determining fromAddress.")
+  @JsonProperty("useUserFromAddress")
+  public Boolean getUseUserFromAddress() {
+    return useUserFromAddress;
+  }
+  public void setUseUserFromAddress(Boolean useUserFromAddress) {
+    this.useUserFromAddress = useUserFromAddress;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -181,12 +200,13 @@ public class CreateOutboundMessagingConversationRequest  implements Serializable
             Objects.equals(this.toAddress, createOutboundMessagingConversationRequest.toAddress) &&
             Objects.equals(this.toAddressMessengerType, createOutboundMessagingConversationRequest.toAddressMessengerType) &&
             Objects.equals(this.useExistingConversation, createOutboundMessagingConversationRequest.useExistingConversation) &&
-            Objects.equals(this.externalContactId, createOutboundMessagingConversationRequest.externalContactId);
+            Objects.equals(this.externalContactId, createOutboundMessagingConversationRequest.externalContactId) &&
+            Objects.equals(this.useUserFromAddress, createOutboundMessagingConversationRequest.useUserFromAddress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(queueId, toAddress, toAddressMessengerType, useExistingConversation, externalContactId);
+    return Objects.hash(queueId, toAddress, toAddressMessengerType, useExistingConversation, externalContactId, useUserFromAddress);
   }
 
   @Override
@@ -199,6 +219,7 @@ public class CreateOutboundMessagingConversationRequest  implements Serializable
     sb.append("    toAddressMessengerType: ").append(toIndentedString(toAddressMessengerType)).append("\n");
     sb.append("    useExistingConversation: ").append(toIndentedString(useExistingConversation)).append("\n");
     sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
+    sb.append("    useUserFromAddress: ").append(toIndentedString(useUserFromAddress)).append("\n");
     sb.append("}");
     return sb.toString();
   }

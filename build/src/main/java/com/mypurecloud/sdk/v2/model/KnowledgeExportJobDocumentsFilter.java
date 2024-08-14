@@ -26,6 +26,7 @@ public class KnowledgeExportJobDocumentsFilter  implements Serializable {
   
   private String interval = null;
   private List<Entity> entities = new ArrayList<Entity>();
+  private String sourceId = null;
 
   
   /**
@@ -64,6 +65,23 @@ public class KnowledgeExportJobDocumentsFilter  implements Serializable {
   }
 
 
+  /**
+   **/
+  public KnowledgeExportJobDocumentsFilter sourceId(String sourceId) {
+    this.sourceId = sourceId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("sourceId")
+  public String getSourceId() {
+    return sourceId;
+  }
+  public void setSourceId(String sourceId) {
+    this.sourceId = sourceId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -75,12 +93,13 @@ public class KnowledgeExportJobDocumentsFilter  implements Serializable {
     KnowledgeExportJobDocumentsFilter knowledgeExportJobDocumentsFilter = (KnowledgeExportJobDocumentsFilter) o;
 
     return Objects.equals(this.interval, knowledgeExportJobDocumentsFilter.interval) &&
-            Objects.equals(this.entities, knowledgeExportJobDocumentsFilter.entities);
+            Objects.equals(this.entities, knowledgeExportJobDocumentsFilter.entities) &&
+            Objects.equals(this.sourceId, knowledgeExportJobDocumentsFilter.sourceId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(interval, entities);
+    return Objects.hash(interval, entities, sourceId);
   }
 
   @Override
@@ -90,6 +109,7 @@ public class KnowledgeExportJobDocumentsFilter  implements Serializable {
     
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
+    sb.append("    sourceId: ").append(toIndentedString(sourceId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

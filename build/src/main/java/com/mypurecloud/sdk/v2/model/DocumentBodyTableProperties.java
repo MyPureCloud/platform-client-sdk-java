@@ -139,14 +139,14 @@ public class DocumentBodyTableProperties  implements Serializable {
 
   
   /**
-   * The width for the table. The valid values in 'em'.
+   * The width of the table converted to em unit.
    **/
   public DocumentBodyTableProperties width(Float width) {
     this.width = width;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The width for the table. The valid values in 'em'.")
+  @ApiModelProperty(example = "null", value = "The width of the table converted to em unit.")
   @JsonProperty("width")
   public Float getWidth() {
     return width;

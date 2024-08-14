@@ -62,6 +62,8 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     NTRANSFERRED("nTransferred"),
     OEXTERNALMEDIACOUNT("oExternalMediaCount"),
     OMEDIACOUNT("oMediaCount"),
+    OMESSAGECOUNT("oMessageCount"),
+    OMESSAGESEGMENTCOUNT("oMessageSegmentCount"),
     OMESSAGETURN("oMessageTurn"),
     TABANDON("tAbandon"),
     TACD("tAcd"),
@@ -278,6 +280,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     DELIVERYFAILED("DeliveryFailed"),
     DELIVERYSUCCESS("DeliverySuccess"),
     FAILED("Failed"),
+    PUBLISHED("Published"),
     QUEUED("Queued"),
     READ("Read"),
     RECEIVED("Received"),
@@ -844,6 +847,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
   }
   private UsedRoutingEnum usedRouting = null;
   private String userId = null;
+  private Boolean videoPresent = null;
   private List<Integer> waitingInteractionCounts = new ArrayList<Integer>();
   private String wrapUpCode = null;
   private List<ConversationMetricsTopicConversationProposedAgent> proposedAgents = new ArrayList<ConversationMetricsTopicConversationProposedAgent>();
@@ -2255,6 +2259,24 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
 
 
   /**
+   * Flag indicating if video is present
+   **/
+  public ConversationMetricsTopicConversationMetricRecord videoPresent(Boolean videoPresent) {
+    this.videoPresent = videoPresent;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Flag indicating if video is present")
+  @JsonProperty("videoPresent")
+  public Boolean getVideoPresent() {
+    return videoPresent;
+  }
+  public void setVideoPresent(Boolean videoPresent) {
+    this.videoPresent = videoPresent;
+  }
+
+
+  /**
    * Number of waiting interactions for each predictive routing attempt
    **/
   public ConversationMetricsTopicConversationMetricRecord waitingInteractionCounts(List<Integer> waitingInteractionCounts) {
@@ -2414,6 +2436,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
             Objects.equals(this.teamId, conversationMetricsTopicConversationMetricRecord.teamId) &&
             Objects.equals(this.usedRouting, conversationMetricsTopicConversationMetricRecord.usedRouting) &&
             Objects.equals(this.userId, conversationMetricsTopicConversationMetricRecord.userId) &&
+            Objects.equals(this.videoPresent, conversationMetricsTopicConversationMetricRecord.videoPresent) &&
             Objects.equals(this.waitingInteractionCounts, conversationMetricsTopicConversationMetricRecord.waitingInteractionCounts) &&
             Objects.equals(this.wrapUpCode, conversationMetricsTopicConversationMetricRecord.wrapUpCode) &&
             Objects.equals(this.proposedAgents, conversationMetricsTopicConversationMetricRecord.proposedAgents) &&
@@ -2422,7 +2445,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
 
   @Override
   public int hashCode() {
-    return Objects.hash(metric, metricDate, value, recordId, activeRouting, activeSkillIds, addressFrom, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, conversationId, conversationInitiator, convertedFrom, convertedTo, customerParticipation, deliveryStatus, destinationAddresses, direction, disconnectType, divisionIds, dnis, edgeId, eligibleAgentCounts, errorCode, extendedDeliveryStatus, externalContactId, externalMediaCount, externalOrganizationId, externalTag, firstQueue, flaggedReason, flowInType, flowOutType, groupId, interactionType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, knowledgeBaseIds, mediaCount, mediaType, messageType, originatingDirection, outboundCampaignId, outboundContactId, outboundContactListId, participantName, peerId, provider, purpose, queueId, remote, removedSkillIds, requestedLanguageId, requestedRoutingSkillIds, requestedRoutings, roomId, routingPriority, routingRing, routingRule, routingRuleType, selectedAgentId, selectedAgentRank, selfServed, sessionDnis, sessionId, stationId, teamId, usedRouting, userId, waitingInteractionCounts, wrapUpCode, proposedAgents, scoredAgents);
+    return Objects.hash(metric, metricDate, value, recordId, activeRouting, activeSkillIds, addressFrom, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, conversationId, conversationInitiator, convertedFrom, convertedTo, customerParticipation, deliveryStatus, destinationAddresses, direction, disconnectType, divisionIds, dnis, edgeId, eligibleAgentCounts, errorCode, extendedDeliveryStatus, externalContactId, externalMediaCount, externalOrganizationId, externalTag, firstQueue, flaggedReason, flowInType, flowOutType, groupId, interactionType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, knowledgeBaseIds, mediaCount, mediaType, messageType, originatingDirection, outboundCampaignId, outboundContactId, outboundContactListId, participantName, peerId, provider, purpose, queueId, remote, removedSkillIds, requestedLanguageId, requestedRoutingSkillIds, requestedRoutings, roomId, routingPriority, routingRing, routingRule, routingRuleType, selectedAgentId, selectedAgentRank, selfServed, sessionDnis, sessionId, stationId, teamId, usedRouting, userId, videoPresent, waitingInteractionCounts, wrapUpCode, proposedAgents, scoredAgents);
   }
 
   @Override
@@ -2508,6 +2531,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     sb.append("    teamId: ").append(toIndentedString(teamId)).append("\n");
     sb.append("    usedRouting: ").append(toIndentedString(usedRouting)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+    sb.append("    videoPresent: ").append(toIndentedString(videoPresent)).append("\n");
     sb.append("    waitingInteractionCounts: ").append(toIndentedString(waitingInteractionCounts)).append("\n");
     sb.append("    wrapUpCode: ").append(toIndentedString(wrapUpCode)).append("\n");
     sb.append("    proposedAgents: ").append(toIndentedString(proposedAgents)).append("\n");

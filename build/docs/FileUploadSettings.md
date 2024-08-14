@@ -8,7 +8,7 @@ title: FileUploadSettings
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **enableAttachments** | <!----><!---->**Boolean**<!----> | whether or not attachments is enabled |  [optional] |
+| **enableAttachments** | <!----><!---->**Boolean**<!----> | whether or not attachments are enabled |  [optional] |
 | **modes** | <!----><!---->[**List&lt;FileUploadMode&gt;**](FileUploadMode.html)<!----> | The list of supported file upload modes |  [optional] |
 {: class="table table-striped"}
 

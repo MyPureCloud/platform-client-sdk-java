@@ -7,12 +7,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**deleteSpeechandtextanalyticsCategory**](SpeechTextAnalyticsApi.html#deleteSpeechandtextanalyticsCategory) | Delete a Speech & Text Analytics category by ID |
 | [**deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId**](SpeechTextAnalyticsApi.html#deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId) | Delete a Speech & Text Analytics DictionaryFeedback by Id |
 | [**deleteSpeechandtextanalyticsProgram**](SpeechTextAnalyticsApi.html#deleteSpeechandtextanalyticsProgram) | Delete a Speech & Text Analytics program by id |
 | [**deleteSpeechandtextanalyticsSentimentfeedback**](SpeechTextAnalyticsApi.html#deleteSpeechandtextanalyticsSentimentfeedback) | Delete All Speech & Text Analytics SentimentFeedback |
 | [**deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId**](SpeechTextAnalyticsApi.html#deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId) | Delete a Speech & Text Analytics SentimentFeedback by Id |
 | [**deleteSpeechandtextanalyticsTopic**](SpeechTextAnalyticsApi.html#deleteSpeechandtextanalyticsTopic) | Delete a Speech & Text Analytics topic by id |
+| [**getSpeechandtextanalyticsCategories**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsCategories) | Get the list of Speech and Text Analytics categories |
+| [**getSpeechandtextanalyticsCategory**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsCategory) | Get a Speech & Text Analytics Category by ID |
 | [**getSpeechandtextanalyticsConversation**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsConversation) | Get Speech and Text Analytics for a specific conversation |
+| [**getSpeechandtextanalyticsConversationCategories**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsConversationCategories) | Get the list of detected Speech and Text Analytics categories of conversation |
 | [**getSpeechandtextanalyticsConversationCommunicationTranscripturl**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsConversationCommunicationTranscripturl) | Get the pre-signed S3 URL for the transcript of a specific communication of a conversation |
 | [**getSpeechandtextanalyticsConversationCommunicationTranscripturls**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsConversationCommunicationTranscripturls) | Get the list of pre-signed S3 URL for the transcripts of a specific communication of a conversation |
 | [**getSpeechandtextanalyticsDictionaryfeedback**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsDictionaryfeedback) | Get the list of Speech & Text Analytics dictionary feedbacks |
@@ -36,6 +40,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getSpeechandtextanalyticsTopicsGeneralStatus**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsTopicsGeneralStatus) | Get the list of general topics from the org and the system with their current status |
 | [**getSpeechandtextanalyticsTopicsPublishjob**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsTopicsPublishjob) | Get a Speech & Text Analytics publish topics job by id |
 | [**patchSpeechandtextanalyticsSettings**](SpeechTextAnalyticsApi.html#patchSpeechandtextanalyticsSettings) | Patch Speech And Text Analytics Settings |
+| [**postSpeechandtextanalyticsCategories**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsCategories) | Create new Speech & Text Analytics category |
 | [**postSpeechandtextanalyticsDictionaryfeedback**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsDictionaryfeedback) | Create a Speech & Text Analytics DictionaryFeedback |
 | [**postSpeechandtextanalyticsPrograms**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsPrograms) | Create new Speech & Text Analytics program |
 | [**postSpeechandtextanalyticsProgramsGeneralJobs**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsProgramsGeneralJobs) | Create new Speech & Text Analytics general program job |
@@ -44,6 +49,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postSpeechandtextanalyticsTopics**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsTopics) | Create new Speech & Text Analytics topic |
 | [**postSpeechandtextanalyticsTopicsPublishjobs**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsTopicsPublishjobs) | Create new Speech & Text Analytics publish topics job |
 | [**postSpeechandtextanalyticsTranscriptsSearch**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsTranscriptsSearch) | Search resources. |
+| [**putSpeechandtextanalyticsCategory**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsCategory) | Update a Speech & Text Analytics category by ID |
 | [**putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId) | Update existing Speech & Text Analytics dictionary feedback by id |
 | [**putSpeechandtextanalyticsProgram**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsProgram) | Update existing Speech & Text Analytics program |
 | [**putSpeechandtextanalyticsProgramMappings**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsProgramMappings) | Set Speech & Text Analytics program mappings to queues and flows |
@@ -51,6 +57,66 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putSpeechandtextanalyticsSettings**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsSettings) | Update Speech And Text Analytics Settings |
 | [**putSpeechandtextanalyticsTopic**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsTopic) | Update existing Speech & Text Analytics topic |
 {: class="table-striped"}
+
+<a name="deleteSpeechandtextanalyticsCategory"></a>
+
+# **deleteSpeechandtextanalyticsCategory**
+
+
+
+> Void deleteSpeechandtextanalyticsCategory(categoryId)
+
+Delete a Speech & Text Analytics category by ID
+
+Wraps DELETE /api/v2/speechandtextanalytics/categories/{categoryId}  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:category:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String categoryId = "categoryId_example"; // String | The id of the category
+try {
+    apiInstance.deleteSpeechandtextanalyticsCategory(categoryId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#deleteSpeechandtextanalyticsCategory");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **categoryId** | **String**| The id of the category | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId"></a>
 
@@ -118,7 +184,7 @@ null (empty response body)
 
 
 
-> Void deleteSpeechandtextanalyticsProgram(programId, forceDelete)
+> [DeleteProgramResponse](DeleteProgramResponse.html) deleteSpeechandtextanalyticsProgram(programId, forceDelete)
 
 Delete a Speech & Text Analytics program by id
 
@@ -153,7 +219,8 @@ SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
 String programId = "programId_example"; // String | The id of the program
 Boolean forceDelete = false; // Boolean | Indicates whether the program is forced to be deleted or not. Required when the program to delete is the default program.
 try {
-    apiInstance.deleteSpeechandtextanalyticsProgram(programId, forceDelete);
+    DeleteProgramResponse result = apiInstance.deleteSpeechandtextanalyticsProgram(programId, forceDelete);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SpeechTextAnalyticsApi#deleteSpeechandtextanalyticsProgram");
     e.printStackTrace();
@@ -172,7 +239,7 @@ try {
 
 ### Return type
 
-null (empty response body)
+[**DeleteProgramResponse**](DeleteProgramResponse.html)
 
 <a name="deleteSpeechandtextanalyticsSentimentfeedback"></a>
 
@@ -350,6 +417,138 @@ try {
 
 null (empty response body)
 
+<a name="getSpeechandtextanalyticsCategories"></a>
+
+# **getSpeechandtextanalyticsCategories**
+
+
+
+> [CategoriesEntityListing](CategoriesEntityListing.html) getSpeechandtextanalyticsCategories(pageSize, pageNumber, name, sortOrder, sortBy, ids)
+
+Get the list of Speech and Text Analytics categories
+
+Wraps GET /api/v2/speechandtextanalytics/categories  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:category:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+Integer pageSize = 25; // Integer | The page size for the listing. The max that will be returned is 50.
+Integer pageNumber = 1; // Integer | The page number for the listing
+String name = "name_example"; // String | The category name filter applied to the listing
+String sortOrder = "asc"; // String | The sort order for the listing
+String sortBy = "name"; // String | The field to sort by for the listing
+List<String> ids = Arrays.asList(null); // List<String> | Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.
+try {
+    CategoriesEntityListing result = apiInstance.getSpeechandtextanalyticsCategories(pageSize, pageNumber, name, sortOrder, sortBy, ids);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsCategories");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| The page size for the listing. The max that will be returned is 50. | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number for the listing | [optional] [default to 1] 
+| **name** | **String**| The category name filter applied to the listing | [optional] 
+| **sortOrder** | **String**| The sort order for the listing | [optional] [default to asc]<br />**Values**: asc, desc 
+| **sortBy** | **String**| The field to sort by for the listing | [optional] [default to name]<br />**Values**: name, description 
+| **ids** | [**List&lt;String&gt;**](String.html)| Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CategoriesEntityListing**](CategoriesEntityListing.html)
+
+<a name="getSpeechandtextanalyticsCategory"></a>
+
+# **getSpeechandtextanalyticsCategory**
+
+
+
+> [StaCategory](StaCategory.html) getSpeechandtextanalyticsCategory(categoryId)
+
+Get a Speech & Text Analytics Category by ID
+
+Wraps GET /api/v2/speechandtextanalytics/categories/{categoryId}  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:category:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String categoryId = "categoryId_example"; // String | The id of the category
+try {
+    StaCategory result = apiInstance.getSpeechandtextanalyticsCategory(categoryId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsCategory");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **categoryId** | **String**| The id of the category | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**StaCategory**](StaCategory.html)
+
 <a name="getSpeechandtextanalyticsConversation"></a>
 
 # **getSpeechandtextanalyticsConversation**
@@ -411,6 +610,71 @@ try {
 ### Return type
 
 [**ConversationMetrics**](ConversationMetrics.html)
+
+<a name="getSpeechandtextanalyticsConversationCategories"></a>
+
+# **getSpeechandtextanalyticsConversationCategories**
+
+
+
+> [ConversationCategoriesEntityListing](ConversationCategoriesEntityListing.html) getSpeechandtextanalyticsConversationCategories(conversationId, pageSize, pageNumber)
+
+Get the list of detected Speech and Text Analytics categories of conversation
+
+Wraps GET /api/v2/speechandtextanalytics/conversations/{conversationId}/categories  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:data:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String conversationId = "conversationId_example"; // String | The id of the conversation
+Integer pageSize = 25; // Integer | The page size for the listing. The max that will be returned is 50.
+Integer pageNumber = 1; // Integer | The page number for the listing
+try {
+    ConversationCategoriesEntityListing result = apiInstance.getSpeechandtextanalyticsConversationCategories(conversationId, pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsConversationCategories");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| The id of the conversation | 
+| **pageSize** | **Integer**| The page size for the listing. The max that will be returned is 50. | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number for the listing | [optional] [default to 1] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ConversationCategoriesEntityListing**](ConversationCategoriesEntityListing.html)
 
 <a name="getSpeechandtextanalyticsConversationCommunicationTranscripturl"></a>
 
@@ -1831,6 +2095,67 @@ try {
 
 [**SpeechTextAnalyticsSettingsResponse**](SpeechTextAnalyticsSettingsResponse.html)
 
+<a name="postSpeechandtextanalyticsCategories"></a>
+
+# **postSpeechandtextanalyticsCategories**
+
+
+
+> [StaCategory](StaCategory.html) postSpeechandtextanalyticsCategories(body)
+
+Create new Speech & Text Analytics category
+
+Wraps POST /api/v2/speechandtextanalytics/categories  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:category:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+CategoryRequest body = new CategoryRequest(); // CategoryRequest | The category to create
+try {
+    StaCategory result = apiInstance.postSpeechandtextanalyticsCategories(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#postSpeechandtextanalyticsCategories");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CategoryRequest**](CategoryRequest.html)| The category to create | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**StaCategory**](StaCategory.html)
+
 <a name="postSpeechandtextanalyticsDictionaryfeedback"></a>
 
 # **postSpeechandtextanalyticsDictionaryfeedback**
@@ -2322,6 +2647,69 @@ try {
 ### Return type
 
 [**JsonSearchResponse**](JsonSearchResponse.html)
+
+<a name="putSpeechandtextanalyticsCategory"></a>
+
+# **putSpeechandtextanalyticsCategory**
+
+
+
+> [StaCategory](StaCategory.html) putSpeechandtextanalyticsCategory(categoryId, body)
+
+Update a Speech & Text Analytics category by ID
+
+Wraps PUT /api/v2/speechandtextanalytics/categories/{categoryId}  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:category:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String categoryId = "categoryId_example"; // String | The id of the category
+CategoryRequest body = new CategoryRequest(); // CategoryRequest | The updated category
+try {
+    StaCategory result = apiInstance.putSpeechandtextanalyticsCategory(categoryId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#putSpeechandtextanalyticsCategory");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **categoryId** | **String**| The id of the category | 
+| **body** | [**CategoryRequest**](CategoryRequest.html)| The updated category | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**StaCategory**](StaCategory.html)
 
 <a name="putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId"></a>
 

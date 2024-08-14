@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.AgentDirectRoutingBackupSettings;
 import com.mypurecloud.sdk.v2.model.AgentMaxUtilizationResponse;
 import com.mypurecloud.sdk.v2.model.AssessmentJobListing;
 import com.mypurecloud.sdk.v2.model.AssessmentListing;
@@ -389,6 +390,20 @@ public class GetRoutingSmsPhonenumbersRequest {
 	    return this;
 	} 
 
+	private String supportedContentId;
+	public String getSupportedContentId() {
+		return this.supportedContentId;
+	}
+
+	public void setSupportedContentId(String supportedContentId) {
+		this.supportedContentId = supportedContentId;
+	}
+
+	public GetRoutingSmsPhonenumbersRequest withSupportedContentId(String supportedContentId) {
+	    this.setSupportedContentId(supportedContentId);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -441,6 +456,9 @@ public class GetRoutingSmsPhonenumbersRequest {
         
 
                 .withQueryParameters("integration.id", "", integrationId)
+        
+
+                .withQueryParameters("supportedContent.id", "", supportedContentId)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -550,6 +568,11 @@ public class GetRoutingSmsPhonenumbersRequest {
 
 		public Builder withIntegrationId(String integrationId) {
 			request.setIntegrationId(integrationId);
+			return this;
+		}
+
+		public Builder withSupportedContentId(String supportedContentId) {
+			request.setSupportedContentId(supportedContentId);
 			return this;
 		}
 

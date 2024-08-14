@@ -28,6 +28,7 @@ import com.mypurecloud.sdk.v2.model.FreeTrialLimitDocs;
 import com.mypurecloud.sdk.v2.model.IpAddressAuthentication;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestDetails;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestsEntityListing;
+import com.mypurecloud.sdk.v2.model.LimitCountListing;
 import com.mypurecloud.sdk.v2.model.LimitDocumentation;
 import com.mypurecloud.sdk.v2.model.LimitsEntityListing;
 import com.mypurecloud.sdk.v2.model.OrgAuthSettings;

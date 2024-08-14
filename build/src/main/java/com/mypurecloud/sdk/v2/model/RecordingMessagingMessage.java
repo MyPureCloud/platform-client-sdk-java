@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.ButtonResponse;
 import com.mypurecloud.sdk.v2.model.Card;
 import com.mypurecloud.sdk.v2.model.ExternalContact;
@@ -39,6 +40,10 @@ public class RecordingMessagingMessage  implements Serializable {
   private String to = null;
   private Date timestamp = null;
   private String id = null;
+  private String purpose = null;
+  private String participantId = null;
+  private AddressableEntityRef queue = null;
+  private AddressableEntityRef workflow = null;
   private String messageText = null;
   private List<MessageMediaAttachment> messageMediaAttachments = new ArrayList<MessageMediaAttachment>();
   private List<MessageStickerAttachment> messageStickerAttachments = new ArrayList<MessageStickerAttachment>();
@@ -216,6 +221,78 @@ public class RecordingMessagingMessage  implements Serializable {
 
 
   /**
+   * A well known string that specifies the purpose or type of the participant on this communication.
+   **/
+  public RecordingMessagingMessage purpose(String purpose) {
+    this.purpose = purpose;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A well known string that specifies the purpose or type of the participant on this communication.")
+  @JsonProperty("purpose")
+  public String getPurpose() {
+    return purpose;
+  }
+  public void setPurpose(String purpose) {
+    this.purpose = purpose;
+  }
+
+
+  /**
+   * A globally unique identifier for the participant on this communication.
+   **/
+  public RecordingMessagingMessage participantId(String participantId) {
+    this.participantId = participantId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A globally unique identifier for the participant on this communication.")
+  @JsonProperty("participantId")
+  public String getParticipantId() {
+    return participantId;
+  }
+  public void setParticipantId(String participantId) {
+    this.participantId = participantId;
+  }
+
+
+  /**
+   * A globally unique identifier for the queue involved in this communication.
+   **/
+  public RecordingMessagingMessage queue(AddressableEntityRef queue) {
+    this.queue = queue;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A globally unique identifier for the queue involved in this communication.")
+  @JsonProperty("queue")
+  public AddressableEntityRef getQueue() {
+    return queue;
+  }
+  public void setQueue(AddressableEntityRef queue) {
+    this.queue = queue;
+  }
+
+
+  /**
+   * A globally unique identifier for the workflow involved in this communication.
+   **/
+  public RecordingMessagingMessage workflow(AddressableEntityRef workflow) {
+    this.workflow = workflow;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A globally unique identifier for the workflow involved in this communication.")
+  @JsonProperty("workflow")
+  public AddressableEntityRef getWorkflow() {
+    return workflow;
+  }
+  public void setWorkflow(AddressableEntityRef workflow) {
+    this.workflow = workflow;
+  }
+
+
+  /**
    * The content of this message.
    **/
   public RecordingMessagingMessage messageText(String messageText) {
@@ -375,6 +452,10 @@ public class RecordingMessagingMessage  implements Serializable {
             Objects.equals(this.to, recordingMessagingMessage.to) &&
             Objects.equals(this.timestamp, recordingMessagingMessage.timestamp) &&
             Objects.equals(this.id, recordingMessagingMessage.id) &&
+            Objects.equals(this.purpose, recordingMessagingMessage.purpose) &&
+            Objects.equals(this.participantId, recordingMessagingMessage.participantId) &&
+            Objects.equals(this.queue, recordingMessagingMessage.queue) &&
+            Objects.equals(this.workflow, recordingMessagingMessage.workflow) &&
             Objects.equals(this.messageText, recordingMessagingMessage.messageText) &&
             Objects.equals(this.messageMediaAttachments, recordingMessagingMessage.messageMediaAttachments) &&
             Objects.equals(this.messageStickerAttachments, recordingMessagingMessage.messageStickerAttachments) &&
@@ -387,7 +468,7 @@ public class RecordingMessagingMessage  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(from, fromUser, fromExternalContact, to, timestamp, id, messageText, messageMediaAttachments, messageStickerAttachments, quickReplies, buttonResponse, story, cards, contentType);
+    return Objects.hash(from, fromUser, fromExternalContact, to, timestamp, id, purpose, participantId, queue, workflow, messageText, messageMediaAttachments, messageStickerAttachments, quickReplies, buttonResponse, story, cards, contentType);
   }
 
   @Override
@@ -401,6 +482,10 @@ public class RecordingMessagingMessage  implements Serializable {
     sb.append("    to: ").append(toIndentedString(to)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    purpose: ").append(toIndentedString(purpose)).append("\n");
+    sb.append("    participantId: ").append(toIndentedString(participantId)).append("\n");
+    sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
+    sb.append("    workflow: ").append(toIndentedString(workflow)).append("\n");
     sb.append("    messageText: ").append(toIndentedString(messageText)).append("\n");
     sb.append("    messageMediaAttachments: ").append(toIndentedString(messageMediaAttachments)).append("\n");
     sb.append("    messageStickerAttachments: ").append(toIndentedString(messageStickerAttachments)).append("\n");

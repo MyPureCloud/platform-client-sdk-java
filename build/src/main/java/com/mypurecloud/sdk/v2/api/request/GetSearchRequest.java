@@ -84,6 +84,7 @@ public class GetSearchRequest {
 		CALLERUSER_OUTOFOFFICE("callerUser.outOfOffice"),
 		CALLERUSER_GEOLOCATION("callerUser.geolocation"),
 		CONVERSATIONS("conversations"),
+		TRANSCRIPTION("transcription"),
 		IMAGES("images"),
 		ADDRESSVERIFICATIONDETAILS("addressVerificationDetails");
 

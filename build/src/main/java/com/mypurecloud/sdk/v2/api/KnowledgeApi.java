@@ -3735,12 +3735,13 @@ public class KnowledgeApi {
    * @param type If specified, retrieves operations with specified operation type, comma separated values expected. (optional)
    * @param status If specified, retrieves operations with specified operation status, comma separated values expected. (optional)
    * @param interval Retrieves the operations modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ (optional)
+   * @param sourceId If specified, retrieves operations associated with source ids, comma separated values expected. (optional)
    * @return OperationListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OperationListing getKnowledgeKnowledgebaseOperations(String knowledgeBaseId, String before, String after, String pageSize, List<String> userId, List<String> type, List<String> status, String interval) throws IOException, ApiException {
-    return  getKnowledgeKnowledgebaseOperations(createGetKnowledgeKnowledgebaseOperationsRequest(knowledgeBaseId, before, after, pageSize, userId, type, status, interval));
+  public OperationListing getKnowledgeKnowledgebaseOperations(String knowledgeBaseId, String before, String after, String pageSize, List<String> userId, List<String> type, List<String> status, String interval, List<String> sourceId) throws IOException, ApiException {
+    return  getKnowledgeKnowledgebaseOperations(createGetKnowledgeKnowledgebaseOperationsRequest(knowledgeBaseId, before, after, pageSize, userId, type, status, interval, sourceId));
   }
 
   /**
@@ -3755,14 +3756,15 @@ public class KnowledgeApi {
    * @param type If specified, retrieves operations with specified operation type, comma separated values expected. (optional)
    * @param status If specified, retrieves operations with specified operation status, comma separated values expected. (optional)
    * @param interval Retrieves the operations modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ (optional)
+   * @param sourceId If specified, retrieves operations associated with source ids, comma separated values expected. (optional)
    * @return OperationListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OperationListing> getKnowledgeKnowledgebaseOperationsWithHttpInfo(String knowledgeBaseId, String before, String after, String pageSize, List<String> userId, List<String> type, List<String> status, String interval) throws IOException {
-    return getKnowledgeKnowledgebaseOperations(createGetKnowledgeKnowledgebaseOperationsRequest(knowledgeBaseId, before, after, pageSize, userId, type, status, interval).withHttpInfo());
+  public ApiResponse<OperationListing> getKnowledgeKnowledgebaseOperationsWithHttpInfo(String knowledgeBaseId, String before, String after, String pageSize, List<String> userId, List<String> type, List<String> status, String interval, List<String> sourceId) throws IOException {
+    return getKnowledgeKnowledgebaseOperations(createGetKnowledgeKnowledgebaseOperationsRequest(knowledgeBaseId, before, after, pageSize, userId, type, status, interval, sourceId).withHttpInfo());
   }
 
-  private GetKnowledgeKnowledgebaseOperationsRequest createGetKnowledgeKnowledgebaseOperationsRequest(String knowledgeBaseId, String before, String after, String pageSize, List<String> userId, List<String> type, List<String> status, String interval) {
+  private GetKnowledgeKnowledgebaseOperationsRequest createGetKnowledgeKnowledgebaseOperationsRequest(String knowledgeBaseId, String before, String after, String pageSize, List<String> userId, List<String> type, List<String> status, String interval, List<String> sourceId) {
     return GetKnowledgeKnowledgebaseOperationsRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
 
@@ -3779,6 +3781,8 @@ public class KnowledgeApi {
             .withStatus(status)
 
             .withInterval(interval)
+
+            .withSourceId(sourceId)
 
             .build();
   }

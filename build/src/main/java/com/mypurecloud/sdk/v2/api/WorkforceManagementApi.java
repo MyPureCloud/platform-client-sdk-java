@@ -11,6 +11,11 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ActivityCodeContainer;
+import com.mypurecloud.sdk.v2.model.ActivityPlanJobListing;
+import com.mypurecloud.sdk.v2.model.ActivityPlanJobResponse;
+import com.mypurecloud.sdk.v2.model.ActivityPlanListing;
+import com.mypurecloud.sdk.v2.model.ActivityPlanResponse;
+import com.mypurecloud.sdk.v2.model.ActivityPlanRunJobResponse;
 import com.mypurecloud.sdk.v2.model.AddAdherenceExplanationAdminRequest;
 import com.mypurecloud.sdk.v2.model.AddAdherenceExplanationAgentRequest;
 import com.mypurecloud.sdk.v2.model.AddShiftTradeRequest;
@@ -18,6 +23,8 @@ import com.mypurecloud.sdk.v2.model.AddWorkPlanRotationRequest;
 import com.mypurecloud.sdk.v2.model.AdherenceExplanationAsyncResponse;
 import com.mypurecloud.sdk.v2.model.AdherenceExplanationJob;
 import com.mypurecloud.sdk.v2.model.AdherenceExplanationResponse;
+import com.mypurecloud.sdk.v2.model.AdminAgentWorkPlanPreferenceResponse;
+import com.mypurecloud.sdk.v2.model.AdminBulkUpdateAlternativeShiftTradeStateRequest;
 import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.AgentIntegrationsRequest;
 import com.mypurecloud.sdk.v2.model.AgentIntegrationsResponse;
@@ -27,12 +34,24 @@ import com.mypurecloud.sdk.v2.model.AgentPossibleWorkShiftsResponse;
 import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceExplanationsResponse;
 import com.mypurecloud.sdk.v2.model.AgentTimeOffRequestPatch;
+import com.mypurecloud.sdk.v2.model.AgentUpdateAlternativeShiftTradeRequest;
+import com.mypurecloud.sdk.v2.model.AgentWorkPlanBiddingPreferenceResponse;
+import com.mypurecloud.sdk.v2.model.AgentWorkPlanBids;
+import com.mypurecloud.sdk.v2.model.AgentWorkPlanListResponse;
+import com.mypurecloud.sdk.v2.model.AgentsBidAssignedWorkPlanOverrideRequest;
 import com.mypurecloud.sdk.v2.model.AgentsIntegrationsListing;
+import com.mypurecloud.sdk.v2.model.AlternativeShiftAsyncResponse;
+import com.mypurecloud.sdk.v2.model.AlternativeShiftBuSettingsResponse;
+import com.mypurecloud.sdk.v2.model.AlternativeShiftJobResponse;
+import com.mypurecloud.sdk.v2.model.AlternativeShiftOffersRequest;
+import com.mypurecloud.sdk.v2.model.AlternativeShiftSearchOffersRequest;
+import com.mypurecloud.sdk.v2.model.AlternativeShiftTradeResponse;
 import com.mypurecloud.sdk.v2.model.AsyncForecastOperationResult;
 import com.mypurecloud.sdk.v2.model.AsyncIntradayResponse;
 import com.mypurecloud.sdk.v2.model.AvailableTimeOffRequest;
 import com.mypurecloud.sdk.v2.model.AvailableTimeOffResponse;
 import com.mypurecloud.sdk.v2.model.BuAgentScheduleHistoryResponse;
+import com.mypurecloud.sdk.v2.model.BuAlternativeShiftJobResponse;
 import com.mypurecloud.sdk.v2.model.BuAsyncAgentSchedulesQueryResponse;
 import com.mypurecloud.sdk.v2.model.BuAsyncAgentSchedulesSearchResponse;
 import com.mypurecloud.sdk.v2.model.BuAsyncScheduleResponse;
@@ -48,6 +67,7 @@ import com.mypurecloud.sdk.v2.model.BuForecastStaffingRequirementsResultResponse
 import com.mypurecloud.sdk.v2.model.BuGenerateScheduleRequest;
 import com.mypurecloud.sdk.v2.model.BuGetCurrentAgentScheduleRequest;
 import com.mypurecloud.sdk.v2.model.BuHeadcountForecastResponse;
+import com.mypurecloud.sdk.v2.model.BuListAlternativeShiftTradesResponse;
 import com.mypurecloud.sdk.v2.model.BuQueryAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.model.BuQueryAdherenceExplanationsResponse;
 import com.mypurecloud.sdk.v2.model.BuQueryAgentSchedulesRequest;
@@ -76,10 +96,13 @@ import com.mypurecloud.sdk.v2.model.BusinessUnitResponse;
 import com.mypurecloud.sdk.v2.model.CalendarUrlResponse;
 import com.mypurecloud.sdk.v2.model.CopyBuForecastRequest;
 import com.mypurecloud.sdk.v2.model.CopyWorkPlan;
+import com.mypurecloud.sdk.v2.model.CopyWorkPlanBid;
 import com.mypurecloud.sdk.v2.model.CopyWorkPlanRotationRequest;
 import com.mypurecloud.sdk.v2.model.CreateActivityCodeRequest;
+import com.mypurecloud.sdk.v2.model.CreateActivityPlanRequest;
 import com.mypurecloud.sdk.v2.model.CreateAdminTimeOffRequest;
 import com.mypurecloud.sdk.v2.model.CreateAgentTimeOffRequest;
+import com.mypurecloud.sdk.v2.model.CreateAlternativeShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.CreateBusinessUnitRequest;
 import com.mypurecloud.sdk.v2.model.CreateManagementUnitApiRequest;
 import com.mypurecloud.sdk.v2.model.CreatePlanningGroupRequest;
@@ -88,8 +111,10 @@ import com.mypurecloud.sdk.v2.model.CreateStaffingGroupRequest;
 import com.mypurecloud.sdk.v2.model.CreateTimeOffLimitRequest;
 import com.mypurecloud.sdk.v2.model.CreateTimeOffPlanRequest;
 import com.mypurecloud.sdk.v2.model.CreateWorkPlan;
+import com.mypurecloud.sdk.v2.model.CreateWorkPlanBid;
 import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.CurrentUserTimeOffIntegrationStatusRequest;
+import com.mypurecloud.sdk.v2.model.EntityListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.EstimateAvailableTimeOffRequest;
 import com.mypurecloud.sdk.v2.model.EstimateAvailableTimeOffResponse;
@@ -103,13 +128,13 @@ import com.mypurecloud.sdk.v2.model.ImportForecastResponse;
 import com.mypurecloud.sdk.v2.model.ImportForecastUploadResponse;
 import com.mypurecloud.sdk.v2.model.ImportScheduleUploadResponse;
 import com.mypurecloud.sdk.v2.model.IntradayPlanningGroupRequest;
+import com.mypurecloud.sdk.v2.model.ListAlternativeShiftTradesResponse;
 import java.time.LocalDate;
 import com.mypurecloud.sdk.v2.model.LongTermForecastResultResponse;
 import com.mypurecloud.sdk.v2.model.ManagementUnit;
 import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
 import com.mypurecloud.sdk.v2.model.MatchShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.MatchShiftTradeResponse;
-import com.mypurecloud.sdk.v2.model.ModelingStatusResponse;
 import com.mypurecloud.sdk.v2.model.MoveAgentsRequest;
 import com.mypurecloud.sdk.v2.model.MoveAgentsResponse;
 import com.mypurecloud.sdk.v2.model.MoveManagementUnitRequest;
@@ -133,6 +158,7 @@ import com.mypurecloud.sdk.v2.model.QueryWaitlistPositionsRequest;
 import com.mypurecloud.sdk.v2.model.ScheduleGenerationResult;
 import com.mypurecloud.sdk.v2.model.ScheduleUploadProcessingResponse;
 import com.mypurecloud.sdk.v2.model.SchedulingStatusResponse;
+import com.mypurecloud.sdk.v2.model.SearchAlternativeShiftTradesRequest;
 import com.mypurecloud.sdk.v2.model.SearchShiftTradesRequest;
 import com.mypurecloud.sdk.v2.model.SearchShiftTradesResponse;
 import com.mypurecloud.sdk.v2.model.ServiceGoalTemplate;
@@ -157,7 +183,10 @@ import com.mypurecloud.sdk.v2.model.TimeOffRequestListing;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestQueryBody;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestResponse;
 import com.mypurecloud.sdk.v2.model.UpdateActivityCodeRequest;
+import com.mypurecloud.sdk.v2.model.UpdateActivityPlanRequest;
 import com.mypurecloud.sdk.v2.model.UpdateAdherenceExplanationStatusRequest;
+import com.mypurecloud.sdk.v2.model.UpdateAgentWorkPlanBiddingPreference;
+import com.mypurecloud.sdk.v2.model.UpdateAlternativeShiftBuSettingsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateBusinessUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateManagementUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateMuAgentsRequest;
@@ -169,6 +198,7 @@ import com.mypurecloud.sdk.v2.model.UpdateServiceGoalTemplate;
 import com.mypurecloud.sdk.v2.model.UpdateStaffingGroupRequest;
 import com.mypurecloud.sdk.v2.model.UpdateTimeOffLimitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateTimeOffPlanRequest;
+import com.mypurecloud.sdk.v2.model.UpdateWorkPlanBid;
 import com.mypurecloud.sdk.v2.model.UpdateWorkPlanRotationRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlRequestBody;
 import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
@@ -199,6 +229,13 @@ import com.mypurecloud.sdk.v2.model.WfmIntradayPlanningGroupListing;
 import com.mypurecloud.sdk.v2.model.WfmProcessUploadRequest;
 import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
 import com.mypurecloud.sdk.v2.model.WorkPlan;
+import com.mypurecloud.sdk.v2.model.WorkPlanBid;
+import com.mypurecloud.sdk.v2.model.WorkPlanBidGroupCreate;
+import com.mypurecloud.sdk.v2.model.WorkPlanBidGroupResponse;
+import com.mypurecloud.sdk.v2.model.WorkPlanBidGroupSummaryList;
+import com.mypurecloud.sdk.v2.model.WorkPlanBidGroupUpdate;
+import com.mypurecloud.sdk.v2.model.WorkPlanBidListResponse;
+import com.mypurecloud.sdk.v2.model.WorkPlanBidRanks;
 import com.mypurecloud.sdk.v2.model.WorkPlanListResponse;
 import com.mypurecloud.sdk.v2.model.WorkPlanRotationListResponse;
 import com.mypurecloud.sdk.v2.model.WorkPlanRotationResponse;
@@ -215,6 +252,8 @@ import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitT
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitTimeoffplanRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitWeekScheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitWeekShorttermforecastRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitWorkplanbidRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitWorkplanbidGroupRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementCalendarUrlIcsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitTimeofflimitRequest;
@@ -226,13 +265,26 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceExplana
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceExplanationsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceHistoricalBulkJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceHistoricalJobRequest;
-import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdhocmodelingjobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentAdherenceExplanationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentsMeManagementunitRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAlternativeshiftsOffersJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAlternativeshiftsOffersSearchJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAlternativeshiftsSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAlternativeshiftsTradeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAlternativeshiftsTradesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAlternativeshiftsTradesJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAlternativeshiftsTradesStateJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivitycodeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivitycodesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanRunsJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplansRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplansJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAlternativeshiftsTradeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitIntradayPlanninggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitManagementunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitPlanninggroupRequest;
@@ -262,6 +314,11 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeek
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirementRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWorkplanbidRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWorkplanbidGroupRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWorkplanbidGroupsSummaryRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWorkplanbidsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementCalendarDataIcsRequest;
@@ -302,14 +359,25 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffbalanceJo
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestWaitlistpositionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementUserWorkplanbidranksRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementWorkplanbidPreferencesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementWorkplanbidWorkplansRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementWorkplanbidsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementAgentAdherenceExplanationRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementAlternativeshiftsTradeRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementAlternativeshiftsTradesStateJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitActivitycodeRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitActivityplanRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitPlanninggroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitStaffinggroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitTimeoffplanRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitWorkplanbidRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitWorkplanbidGroupRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeofflimitRequest;
@@ -320,6 +388,9 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunit
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWorkplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWorkplanrotationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementTimeoffrequestRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementUserWorkplanbidranksRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementUsersWorkplanbidranksBulkRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementWorkplanbidPreferencesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceExplanationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceHistoricalRequest;
@@ -330,9 +401,15 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsIntegrationsHrisQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsMePossibleworkshiftsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentschedulesMineRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAlternativeshiftsOffersJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAlternativeshiftsOffersSearchJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAlternativeshiftsTradesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivitycodesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivityplanRunsJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivityplansRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitAdherenceExplanationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitIntradayRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitPlanninggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitServicegoaltemplatesRequest;
@@ -356,6 +433,9 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWee
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurlRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWorkplanbidCopyRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWorkplanbidGroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWorkplanbidsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementCalendarUrlIcsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementHistoricaldataDeletejobRequest;
@@ -1192,6 +1272,168 @@ public class WorkforceManagementApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteWorkforcemanagementBusinessunitWeekShorttermforecast(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete a work plan bid
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The ID of the work plan bid (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitWorkplanbid(String businessUnitId, String bidId) throws IOException, ApiException {
+     deleteWorkforcemanagementBusinessunitWorkplanbid(createDeleteWorkforcemanagementBusinessunitWorkplanbidRequest(businessUnitId, bidId));
+  }
+
+  /**
+   * Delete a work plan bid
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The ID of the work plan bid (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitWorkplanbidWithHttpInfo(String businessUnitId, String bidId) throws IOException {
+    return deleteWorkforcemanagementBusinessunitWorkplanbid(createDeleteWorkforcemanagementBusinessunitWorkplanbidRequest(businessUnitId, bidId).withHttpInfo());
+  }
+
+  private DeleteWorkforcemanagementBusinessunitWorkplanbidRequest createDeleteWorkforcemanagementBusinessunitWorkplanbidRequest(String businessUnitId, String bidId) {
+    return DeleteWorkforcemanagementBusinessunitWorkplanbidRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBidId(bidId)
+
+            .build();
+  }
+
+  /**
+   * Delete a work plan bid
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitWorkplanbid(DeleteWorkforcemanagementBusinessunitWorkplanbidRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a work plan bid
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitWorkplanbid(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete a bid group by bid group Id
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The work plan bid id of the bid groups (required)
+   * @param bidGroupId Work Plan Bid Group id (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitWorkplanbidGroup(String businessUnitId, String bidId, String bidGroupId) throws IOException, ApiException {
+     deleteWorkforcemanagementBusinessunitWorkplanbidGroup(createDeleteWorkforcemanagementBusinessunitWorkplanbidGroupRequest(businessUnitId, bidId, bidGroupId));
+  }
+
+  /**
+   * Delete a bid group by bid group Id
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The work plan bid id of the bid groups (required)
+   * @param bidGroupId Work Plan Bid Group id (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitWorkplanbidGroupWithHttpInfo(String businessUnitId, String bidId, String bidGroupId) throws IOException {
+    return deleteWorkforcemanagementBusinessunitWorkplanbidGroup(createDeleteWorkforcemanagementBusinessunitWorkplanbidGroupRequest(businessUnitId, bidId, bidGroupId).withHttpInfo());
+  }
+
+  private DeleteWorkforcemanagementBusinessunitWorkplanbidGroupRequest createDeleteWorkforcemanagementBusinessunitWorkplanbidGroupRequest(String businessUnitId, String bidId, String bidGroupId) {
+    return DeleteWorkforcemanagementBusinessunitWorkplanbidGroupRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBidId(bidId)
+
+            .withBidGroupId(bidGroupId)
+
+            .build();
+  }
+
+  /**
+   * Delete a bid group by bid group Id
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitWorkplanbidGroup(DeleteWorkforcemanagementBusinessunitWorkplanbidGroupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a bid group by bid group Id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitWorkplanbidGroup(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -2066,88 +2308,6 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * To get status of the modeling job.
-   * This Endpoint is Deprecated, and not recommended to be used.
-   * @param jobId The id of the modeling job (required)
-   * @return ModelingStatusResponse
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ModelingStatusResponse getWorkforcemanagementAdhocmodelingjob(String jobId) throws IOException, ApiException {
-    return  getWorkforcemanagementAdhocmodelingjob(createGetWorkforcemanagementAdhocmodelingjobRequest(jobId));
-  }
-
-  /**
-   * To get status of the modeling job.
-   * This Endpoint is Deprecated, and not recommended to be used.
-   * @param jobId The id of the modeling job (required)
-   * @return ModelingStatusResponse
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<ModelingStatusResponse> getWorkforcemanagementAdhocmodelingjobWithHttpInfo(String jobId) throws IOException {
-    return getWorkforcemanagementAdhocmodelingjob(createGetWorkforcemanagementAdhocmodelingjobRequest(jobId).withHttpInfo());
-  }
-
-  private GetWorkforcemanagementAdhocmodelingjobRequest createGetWorkforcemanagementAdhocmodelingjobRequest(String jobId) {
-    return GetWorkforcemanagementAdhocmodelingjobRequest.builder()
-            .withJobId(jobId)
-
-            .build();
-  }
-
-  /**
-   * To get status of the modeling job.
-   * This Endpoint is Deprecated, and not recommended to be used.
-   * @param request The request object
-   * @return ModelingStatusResponse
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ModelingStatusResponse getWorkforcemanagementAdhocmodelingjob(GetWorkforcemanagementAdhocmodelingjobRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<ModelingStatusResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ModelingStatusResponse>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * To get status of the modeling job.
-   * This Endpoint is Deprecated, and not recommended to be used.
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<ModelingStatusResponse> getWorkforcemanagementAdhocmodelingjob(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<ModelingStatusResponse>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<ModelingStatusResponse> response = (ApiResponse<ModelingStatusResponse>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<ModelingStatusResponse> response = (ApiResponse<ModelingStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
    * Get an adherence explanation
    * 
    * @param agentId The ID of the agent to query (required)
@@ -2377,6 +2537,548 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AgentManagementUnitReference> response = (ApiResponse<AgentManagementUnitReference>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query the status of an alternative shift offers operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param jobId The ID of the job (required)
+   * @return AlternativeShiftJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlternativeShiftJobResponse getWorkforcemanagementAlternativeshiftsOffersJob(String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementAlternativeshiftsOffersJob(createGetWorkforcemanagementAlternativeshiftsOffersJobRequest(jobId));
+  }
+
+  /**
+   * Query the status of an alternative shift offers operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param jobId The ID of the job (required)
+   * @return AlternativeShiftJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlternativeShiftJobResponse> getWorkforcemanagementAlternativeshiftsOffersJobWithHttpInfo(String jobId) throws IOException {
+    return getWorkforcemanagementAlternativeshiftsOffersJob(createGetWorkforcemanagementAlternativeshiftsOffersJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementAlternativeshiftsOffersJobRequest createGetWorkforcemanagementAlternativeshiftsOffersJobRequest(String jobId) {
+    return GetWorkforcemanagementAlternativeshiftsOffersJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Query the status of an alternative shift offers operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return AlternativeShiftJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlternativeShiftJobResponse getWorkforcemanagementAlternativeshiftsOffersJob(GetWorkforcemanagementAlternativeshiftsOffersJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AlternativeShiftJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AlternativeShiftJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query the status of an alternative shift offers operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlternativeShiftJobResponse> getWorkforcemanagementAlternativeshiftsOffersJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AlternativeShiftJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlternativeShiftJobResponse> response = (ApiResponse<AlternativeShiftJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlternativeShiftJobResponse> response = (ApiResponse<AlternativeShiftJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query the status of an alternative shift search offers operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param jobId The ID of the job (required)
+   * @return AlternativeShiftJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlternativeShiftJobResponse getWorkforcemanagementAlternativeshiftsOffersSearchJob(String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementAlternativeshiftsOffersSearchJob(createGetWorkforcemanagementAlternativeshiftsOffersSearchJobRequest(jobId));
+  }
+
+  /**
+   * Query the status of an alternative shift search offers operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param jobId The ID of the job (required)
+   * @return AlternativeShiftJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlternativeShiftJobResponse> getWorkforcemanagementAlternativeshiftsOffersSearchJobWithHttpInfo(String jobId) throws IOException {
+    return getWorkforcemanagementAlternativeshiftsOffersSearchJob(createGetWorkforcemanagementAlternativeshiftsOffersSearchJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementAlternativeshiftsOffersSearchJobRequest createGetWorkforcemanagementAlternativeshiftsOffersSearchJobRequest(String jobId) {
+    return GetWorkforcemanagementAlternativeshiftsOffersSearchJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Query the status of an alternative shift search offers operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return AlternativeShiftJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlternativeShiftJobResponse getWorkforcemanagementAlternativeshiftsOffersSearchJob(GetWorkforcemanagementAlternativeshiftsOffersSearchJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AlternativeShiftJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AlternativeShiftJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query the status of an alternative shift search offers operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlternativeShiftJobResponse> getWorkforcemanagementAlternativeshiftsOffersSearchJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AlternativeShiftJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlternativeShiftJobResponse> response = (ApiResponse<AlternativeShiftJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlternativeShiftJobResponse> response = (ApiResponse<AlternativeShiftJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get alternative shifts settings from the current logged in agent’s business unit
+   * 
+   * @return AlternativeShiftBuSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlternativeShiftBuSettingsResponse getWorkforcemanagementAlternativeshiftsSettings() throws IOException, ApiException {
+    return  getWorkforcemanagementAlternativeshiftsSettings(createGetWorkforcemanagementAlternativeshiftsSettingsRequest());
+  }
+
+  /**
+   * Get alternative shifts settings from the current logged in agent’s business unit
+   * 
+   * @return AlternativeShiftBuSettingsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlternativeShiftBuSettingsResponse> getWorkforcemanagementAlternativeshiftsSettingsWithHttpInfo() throws IOException {
+    return getWorkforcemanagementAlternativeshiftsSettings(createGetWorkforcemanagementAlternativeshiftsSettingsRequest().withHttpInfo());
+  }
+
+  private GetWorkforcemanagementAlternativeshiftsSettingsRequest createGetWorkforcemanagementAlternativeshiftsSettingsRequest() {
+    return GetWorkforcemanagementAlternativeshiftsSettingsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get alternative shifts settings from the current logged in agent’s business unit
+   * 
+   * @param request The request object
+   * @return AlternativeShiftBuSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlternativeShiftBuSettingsResponse getWorkforcemanagementAlternativeshiftsSettings(GetWorkforcemanagementAlternativeshiftsSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AlternativeShiftBuSettingsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AlternativeShiftBuSettingsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get alternative shifts settings from the current logged in agent’s business unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlternativeShiftBuSettingsResponse> getWorkforcemanagementAlternativeshiftsSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AlternativeShiftBuSettingsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlternativeShiftBuSettingsResponse> response = (ApiResponse<AlternativeShiftBuSettingsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlternativeShiftBuSettingsResponse> response = (ApiResponse<AlternativeShiftBuSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get my alternative shift trade by trade ID
+   * 
+   * @param tradeId The ID of the alternative shift trade (required)
+   * @return AlternativeShiftTradeResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlternativeShiftTradeResponse getWorkforcemanagementAlternativeshiftsTrade(String tradeId) throws IOException, ApiException {
+    return  getWorkforcemanagementAlternativeshiftsTrade(createGetWorkforcemanagementAlternativeshiftsTradeRequest(tradeId));
+  }
+
+  /**
+   * Get my alternative shift trade by trade ID
+   * 
+   * @param tradeId The ID of the alternative shift trade (required)
+   * @return AlternativeShiftTradeResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlternativeShiftTradeResponse> getWorkforcemanagementAlternativeshiftsTradeWithHttpInfo(String tradeId) throws IOException {
+    return getWorkforcemanagementAlternativeshiftsTrade(createGetWorkforcemanagementAlternativeshiftsTradeRequest(tradeId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementAlternativeshiftsTradeRequest createGetWorkforcemanagementAlternativeshiftsTradeRequest(String tradeId) {
+    return GetWorkforcemanagementAlternativeshiftsTradeRequest.builder()
+            .withTradeId(tradeId)
+
+            .build();
+  }
+
+  /**
+   * Get my alternative shift trade by trade ID
+   * 
+   * @param request The request object
+   * @return AlternativeShiftTradeResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlternativeShiftTradeResponse getWorkforcemanagementAlternativeshiftsTrade(GetWorkforcemanagementAlternativeshiftsTradeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AlternativeShiftTradeResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AlternativeShiftTradeResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get my alternative shift trade by trade ID
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlternativeShiftTradeResponse> getWorkforcemanagementAlternativeshiftsTrade(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AlternativeShiftTradeResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlternativeShiftTradeResponse> response = (ApiResponse<AlternativeShiftTradeResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlternativeShiftTradeResponse> response = (ApiResponse<AlternativeShiftTradeResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a list of my alternative shifts trades
+   * 
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+   * @return ListAlternativeShiftTradesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ListAlternativeShiftTradesResponse getWorkforcemanagementAlternativeshiftsTrades(Boolean forceAsync) throws IOException, ApiException {
+    return  getWorkforcemanagementAlternativeshiftsTrades(createGetWorkforcemanagementAlternativeshiftsTradesRequest(forceAsync));
+  }
+
+  /**
+   * Get a list of my alternative shifts trades
+   * 
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+   * @return ListAlternativeShiftTradesResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ListAlternativeShiftTradesResponse> getWorkforcemanagementAlternativeshiftsTradesWithHttpInfo(Boolean forceAsync) throws IOException {
+    return getWorkforcemanagementAlternativeshiftsTrades(createGetWorkforcemanagementAlternativeshiftsTradesRequest(forceAsync).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementAlternativeshiftsTradesRequest createGetWorkforcemanagementAlternativeshiftsTradesRequest(Boolean forceAsync) {
+    return GetWorkforcemanagementAlternativeshiftsTradesRequest.builder()
+            .withForceAsync(forceAsync)
+
+            .build();
+  }
+
+  /**
+   * Get a list of my alternative shifts trades
+   * 
+   * @param request The request object
+   * @return ListAlternativeShiftTradesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ListAlternativeShiftTradesResponse getWorkforcemanagementAlternativeshiftsTrades(GetWorkforcemanagementAlternativeshiftsTradesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ListAlternativeShiftTradesResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ListAlternativeShiftTradesResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of my alternative shifts trades
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ListAlternativeShiftTradesResponse> getWorkforcemanagementAlternativeshiftsTrades(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ListAlternativeShiftTradesResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ListAlternativeShiftTradesResponse> response = (ApiResponse<ListAlternativeShiftTradesResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ListAlternativeShiftTradesResponse> response = (ApiResponse<ListAlternativeShiftTradesResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query the status of an alternative shift trades operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param jobId The ID of the job (required)
+   * @return AlternativeShiftJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlternativeShiftJobResponse getWorkforcemanagementAlternativeshiftsTradesJob(String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementAlternativeshiftsTradesJob(createGetWorkforcemanagementAlternativeshiftsTradesJobRequest(jobId));
+  }
+
+  /**
+   * Query the status of an alternative shift trades operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param jobId The ID of the job (required)
+   * @return AlternativeShiftJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlternativeShiftJobResponse> getWorkforcemanagementAlternativeshiftsTradesJobWithHttpInfo(String jobId) throws IOException {
+    return getWorkforcemanagementAlternativeshiftsTradesJob(createGetWorkforcemanagementAlternativeshiftsTradesJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementAlternativeshiftsTradesJobRequest createGetWorkforcemanagementAlternativeshiftsTradesJobRequest(String jobId) {
+    return GetWorkforcemanagementAlternativeshiftsTradesJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Query the status of an alternative shift trades operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return AlternativeShiftJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlternativeShiftJobResponse getWorkforcemanagementAlternativeshiftsTradesJob(GetWorkforcemanagementAlternativeshiftsTradesJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AlternativeShiftJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AlternativeShiftJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query the status of an alternative shift trades operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlternativeShiftJobResponse> getWorkforcemanagementAlternativeshiftsTradesJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AlternativeShiftJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlternativeShiftJobResponse> response = (ApiResponse<AlternativeShiftJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlternativeShiftJobResponse> response = (ApiResponse<AlternativeShiftJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query the status of an alternative shift trade state operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param jobId The ID of the job (required)
+   * @return AlternativeShiftJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlternativeShiftJobResponse getWorkforcemanagementAlternativeshiftsTradesStateJob(String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementAlternativeshiftsTradesStateJob(createGetWorkforcemanagementAlternativeshiftsTradesStateJobRequest(jobId));
+  }
+
+  /**
+   * Query the status of an alternative shift trade state operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param jobId The ID of the job (required)
+   * @return AlternativeShiftJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlternativeShiftJobResponse> getWorkforcemanagementAlternativeshiftsTradesStateJobWithHttpInfo(String jobId) throws IOException {
+    return getWorkforcemanagementAlternativeshiftsTradesStateJob(createGetWorkforcemanagementAlternativeshiftsTradesStateJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementAlternativeshiftsTradesStateJobRequest createGetWorkforcemanagementAlternativeshiftsTradesStateJobRequest(String jobId) {
+    return GetWorkforcemanagementAlternativeshiftsTradesStateJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Query the status of an alternative shift trade state operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return AlternativeShiftJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlternativeShiftJobResponse getWorkforcemanagementAlternativeshiftsTradesStateJob(GetWorkforcemanagementAlternativeshiftsTradesStateJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AlternativeShiftJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AlternativeShiftJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query the status of an alternative shift trade state operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlternativeShiftJobResponse> getWorkforcemanagementAlternativeshiftsTradesStateJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AlternativeShiftJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlternativeShiftJobResponse> response = (ApiResponse<AlternativeShiftJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlternativeShiftJobResponse> response = (ApiResponse<AlternativeShiftJobResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2623,6 +3325,576 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BusinessUnitActivityCodeListing> response = (ApiResponse<BusinessUnitActivityCodeListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get an activity plan
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan to fetch (required)
+   * @return ActivityPlanResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanResponse getWorkforcemanagementBusinessunitActivityplan(String businessUnitId, String activityPlanId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitActivityplan(createGetWorkforcemanagementBusinessunitActivityplanRequest(businessUnitId, activityPlanId));
+  }
+
+  /**
+   * Get an activity plan
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan to fetch (required)
+   * @return ActivityPlanResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanResponse> getWorkforcemanagementBusinessunitActivityplanWithHttpInfo(String businessUnitId, String activityPlanId) throws IOException {
+    return getWorkforcemanagementBusinessunitActivityplan(createGetWorkforcemanagementBusinessunitActivityplanRequest(businessUnitId, activityPlanId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitActivityplanRequest createGetWorkforcemanagementBusinessunitActivityplanRequest(String businessUnitId, String activityPlanId) {
+    return GetWorkforcemanagementBusinessunitActivityplanRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withActivityPlanId(activityPlanId)
+
+            .build();
+  }
+
+  /**
+   * Get an activity plan
+   * 
+   * @param request The request object
+   * @return ActivityPlanResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanResponse getWorkforcemanagementBusinessunitActivityplan(GetWorkforcemanagementBusinessunitActivityplanRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ActivityPlanResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActivityPlanResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an activity plan
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanResponse> getWorkforcemanagementBusinessunitActivityplan(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ActivityPlanResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanResponse> response = (ApiResponse<ActivityPlanResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanResponse> response = (ApiResponse<ActivityPlanResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Gets an activity plan run job
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan associated with the run job (required)
+   * @param jobId The ID of the activity plan run job (required)
+   * @return ActivityPlanRunJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanRunJobResponse getWorkforcemanagementBusinessunitActivityplanRunsJob(String businessUnitId, String activityPlanId, String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitActivityplanRunsJob(createGetWorkforcemanagementBusinessunitActivityplanRunsJobRequest(businessUnitId, activityPlanId, jobId));
+  }
+
+  /**
+   * Gets an activity plan run job
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan associated with the run job (required)
+   * @param jobId The ID of the activity plan run job (required)
+   * @return ActivityPlanRunJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanRunJobResponse> getWorkforcemanagementBusinessunitActivityplanRunsJobWithHttpInfo(String businessUnitId, String activityPlanId, String jobId) throws IOException {
+    return getWorkforcemanagementBusinessunitActivityplanRunsJob(createGetWorkforcemanagementBusinessunitActivityplanRunsJobRequest(businessUnitId, activityPlanId, jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitActivityplanRunsJobRequest createGetWorkforcemanagementBusinessunitActivityplanRunsJobRequest(String businessUnitId, String activityPlanId, String jobId) {
+    return GetWorkforcemanagementBusinessunitActivityplanRunsJobRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withActivityPlanId(activityPlanId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Gets an activity plan run job
+   * 
+   * @param request The request object
+   * @return ActivityPlanRunJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanRunJobResponse getWorkforcemanagementBusinessunitActivityplanRunsJob(GetWorkforcemanagementBusinessunitActivityplanRunsJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ActivityPlanRunJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActivityPlanRunJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets an activity plan run job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanRunJobResponse> getWorkforcemanagementBusinessunitActivityplanRunsJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ActivityPlanRunJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanRunJobResponse> response = (ApiResponse<ActivityPlanRunJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanRunJobResponse> response = (ApiResponse<ActivityPlanRunJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get activity plans
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param state Optionally filter by activity plan state (optional)
+   * @return ActivityPlanListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanListing getWorkforcemanagementBusinessunitActivityplans(String businessUnitId, String state) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitActivityplans(createGetWorkforcemanagementBusinessunitActivityplansRequest(businessUnitId, state));
+  }
+
+  /**
+   * Get activity plans
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param state Optionally filter by activity plan state (optional)
+   * @return ActivityPlanListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanListing> getWorkforcemanagementBusinessunitActivityplansWithHttpInfo(String businessUnitId, String state) throws IOException {
+    return getWorkforcemanagementBusinessunitActivityplans(createGetWorkforcemanagementBusinessunitActivityplansRequest(businessUnitId, state).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitActivityplansRequest createGetWorkforcemanagementBusinessunitActivityplansRequest(String businessUnitId, String state) {
+    return GetWorkforcemanagementBusinessunitActivityplansRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withState(state)
+
+            .build();
+  }
+
+  /**
+   * Get activity plans
+   * 
+   * @param request The request object
+   * @return ActivityPlanListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanListing getWorkforcemanagementBusinessunitActivityplans(GetWorkforcemanagementBusinessunitActivityplansRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ActivityPlanListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActivityPlanListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get activity plans
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanListing> getWorkforcemanagementBusinessunitActivityplans(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ActivityPlanListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanListing> response = (ApiResponse<ActivityPlanListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanListing> response = (ApiResponse<ActivityPlanListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Gets the latest job for all activity plans in the business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @return ActivityPlanJobListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanJobListing getWorkforcemanagementBusinessunitActivityplansJobs(String businessUnitId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitActivityplansJobs(createGetWorkforcemanagementBusinessunitActivityplansJobsRequest(businessUnitId));
+  }
+
+  /**
+   * Gets the latest job for all activity plans in the business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @return ActivityPlanJobListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanJobListing> getWorkforcemanagementBusinessunitActivityplansJobsWithHttpInfo(String businessUnitId) throws IOException {
+    return getWorkforcemanagementBusinessunitActivityplansJobs(createGetWorkforcemanagementBusinessunitActivityplansJobsRequest(businessUnitId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitActivityplansJobsRequest createGetWorkforcemanagementBusinessunitActivityplansJobsRequest(String businessUnitId) {
+    return GetWorkforcemanagementBusinessunitActivityplansJobsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .build();
+  }
+
+  /**
+   * Gets the latest job for all activity plans in the business unit
+   * 
+   * @param request The request object
+   * @return ActivityPlanJobListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanJobListing getWorkforcemanagementBusinessunitActivityplansJobs(GetWorkforcemanagementBusinessunitActivityplansJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ActivityPlanJobListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActivityPlanJobListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets the latest job for all activity plans in the business unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanJobListing> getWorkforcemanagementBusinessunitActivityplansJobs(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ActivityPlanJobListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanJobListing> response = (ApiResponse<ActivityPlanJobListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanJobListing> response = (ApiResponse<ActivityPlanJobListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get alternative shifts settings for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @return AlternativeShiftBuSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlternativeShiftBuSettingsResponse getWorkforcemanagementBusinessunitAlternativeshiftsSettings(String businessUnitId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitAlternativeshiftsSettings(createGetWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest(businessUnitId));
+  }
+
+  /**
+   * Get alternative shifts settings for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @return AlternativeShiftBuSettingsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlternativeShiftBuSettingsResponse> getWorkforcemanagementBusinessunitAlternativeshiftsSettingsWithHttpInfo(String businessUnitId) throws IOException {
+    return getWorkforcemanagementBusinessunitAlternativeshiftsSettings(createGetWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest(businessUnitId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest createGetWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest(String businessUnitId) {
+    return GetWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .build();
+  }
+
+  /**
+   * Get alternative shifts settings for a business unit
+   * 
+   * @param request The request object
+   * @return AlternativeShiftBuSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlternativeShiftBuSettingsResponse getWorkforcemanagementBusinessunitAlternativeshiftsSettings(GetWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AlternativeShiftBuSettingsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AlternativeShiftBuSettingsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get alternative shifts settings for a business unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlternativeShiftBuSettingsResponse> getWorkforcemanagementBusinessunitAlternativeshiftsSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AlternativeShiftBuSettingsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlternativeShiftBuSettingsResponse> response = (ApiResponse<AlternativeShiftBuSettingsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlternativeShiftBuSettingsResponse> response = (ApiResponse<AlternativeShiftBuSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get an alternative shifts trade in a business unit for a given trade ID
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param tradeId The ID of the alternative shift trade (required)
+   * @return AlternativeShiftTradeResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlternativeShiftTradeResponse getWorkforcemanagementBusinessunitAlternativeshiftsTrade(String businessUnitId, String tradeId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitAlternativeshiftsTrade(createGetWorkforcemanagementBusinessunitAlternativeshiftsTradeRequest(businessUnitId, tradeId));
+  }
+
+  /**
+   * Get an alternative shifts trade in a business unit for a given trade ID
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param tradeId The ID of the alternative shift trade (required)
+   * @return AlternativeShiftTradeResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlternativeShiftTradeResponse> getWorkforcemanagementBusinessunitAlternativeshiftsTradeWithHttpInfo(String businessUnitId, String tradeId) throws IOException {
+    return getWorkforcemanagementBusinessunitAlternativeshiftsTrade(createGetWorkforcemanagementBusinessunitAlternativeshiftsTradeRequest(businessUnitId, tradeId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitAlternativeshiftsTradeRequest createGetWorkforcemanagementBusinessunitAlternativeshiftsTradeRequest(String businessUnitId, String tradeId) {
+    return GetWorkforcemanagementBusinessunitAlternativeshiftsTradeRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withTradeId(tradeId)
+
+            .build();
+  }
+
+  /**
+   * Get an alternative shifts trade in a business unit for a given trade ID
+   * 
+   * @param request The request object
+   * @return AlternativeShiftTradeResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlternativeShiftTradeResponse getWorkforcemanagementBusinessunitAlternativeshiftsTrade(GetWorkforcemanagementBusinessunitAlternativeshiftsTradeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AlternativeShiftTradeResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AlternativeShiftTradeResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an alternative shifts trade in a business unit for a given trade ID
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlternativeShiftTradeResponse> getWorkforcemanagementBusinessunitAlternativeshiftsTrade(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AlternativeShiftTradeResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlternativeShiftTradeResponse> response = (ApiResponse<AlternativeShiftTradeResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlternativeShiftTradeResponse> response = (ApiResponse<AlternativeShiftTradeResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query the status of an alternative shift search trade operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param businessUnitId The ID of the business unit (required)
+   * @param jobId The ID of the job (required)
+   * @return BuAlternativeShiftJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuAlternativeShiftJobResponse getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob(String businessUnitId, String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob(createGetWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJobRequest(businessUnitId, jobId));
+  }
+
+  /**
+   * Query the status of an alternative shift search trade operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param businessUnitId The ID of the business unit (required)
+   * @param jobId The ID of the job (required)
+   * @return BuAlternativeShiftJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuAlternativeShiftJobResponse> getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJobWithHttpInfo(String businessUnitId, String jobId) throws IOException {
+    return getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob(createGetWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJobRequest(businessUnitId, jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJobRequest createGetWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJobRequest(String businessUnitId, String jobId) {
+    return GetWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJobRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Query the status of an alternative shift search trade operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return BuAlternativeShiftJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuAlternativeShiftJobResponse getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob(GetWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuAlternativeShiftJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuAlternativeShiftJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query the status of an alternative shift search trade operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuAlternativeShiftJobResponse> getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuAlternativeShiftJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuAlternativeShiftJobResponse> response = (ApiResponse<BuAlternativeShiftJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuAlternativeShiftJobResponse> response = (ApiResponse<BuAlternativeShiftJobResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5105,6 +6377,420 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BuShortTermForecastListing> response = (ApiResponse<BuShortTermForecastListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a work plan bid
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The id of the workplanbid (required)
+   * @return WorkPlanBid
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanBid getWorkforcemanagementBusinessunitWorkplanbid(String businessUnitId, String bidId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitWorkplanbid(createGetWorkforcemanagementBusinessunitWorkplanbidRequest(businessUnitId, bidId));
+  }
+
+  /**
+   * Get a work plan bid
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The id of the workplanbid (required)
+   * @return WorkPlanBid
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanBid> getWorkforcemanagementBusinessunitWorkplanbidWithHttpInfo(String businessUnitId, String bidId) throws IOException {
+    return getWorkforcemanagementBusinessunitWorkplanbid(createGetWorkforcemanagementBusinessunitWorkplanbidRequest(businessUnitId, bidId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitWorkplanbidRequest createGetWorkforcemanagementBusinessunitWorkplanbidRequest(String businessUnitId, String bidId) {
+    return GetWorkforcemanagementBusinessunitWorkplanbidRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBidId(bidId)
+
+            .build();
+  }
+
+  /**
+   * Get a work plan bid
+   * 
+   * @param request The request object
+   * @return WorkPlanBid
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanBid getWorkforcemanagementBusinessunitWorkplanbid(GetWorkforcemanagementBusinessunitWorkplanbidRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkPlanBid> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkPlanBid>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a work plan bid
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanBid> getWorkforcemanagementBusinessunitWorkplanbid(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkPlanBid>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanBid> response = (ApiResponse<WorkPlanBid>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanBid> response = (ApiResponse<WorkPlanBid>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a bid group by bid group Id
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The work plan bid id of the bid groups (required)
+   * @param bidGroupId Work Plan Bid Group id (required)
+   * @return WorkPlanBidGroupResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanBidGroupResponse getWorkforcemanagementBusinessunitWorkplanbidGroup(String businessUnitId, String bidId, String bidGroupId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitWorkplanbidGroup(createGetWorkforcemanagementBusinessunitWorkplanbidGroupRequest(businessUnitId, bidId, bidGroupId));
+  }
+
+  /**
+   * Get a bid group by bid group Id
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The work plan bid id of the bid groups (required)
+   * @param bidGroupId Work Plan Bid Group id (required)
+   * @return WorkPlanBidGroupResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanBidGroupResponse> getWorkforcemanagementBusinessunitWorkplanbidGroupWithHttpInfo(String businessUnitId, String bidId, String bidGroupId) throws IOException {
+    return getWorkforcemanagementBusinessunitWorkplanbidGroup(createGetWorkforcemanagementBusinessunitWorkplanbidGroupRequest(businessUnitId, bidId, bidGroupId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitWorkplanbidGroupRequest createGetWorkforcemanagementBusinessunitWorkplanbidGroupRequest(String businessUnitId, String bidId, String bidGroupId) {
+    return GetWorkforcemanagementBusinessunitWorkplanbidGroupRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBidId(bidId)
+
+            .withBidGroupId(bidGroupId)
+
+            .build();
+  }
+
+  /**
+   * Get a bid group by bid group Id
+   * 
+   * @param request The request object
+   * @return WorkPlanBidGroupResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanBidGroupResponse getWorkforcemanagementBusinessunitWorkplanbidGroup(GetWorkforcemanagementBusinessunitWorkplanbidGroupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkPlanBidGroupResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkPlanBidGroupResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a bid group by bid group Id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanBidGroupResponse> getWorkforcemanagementBusinessunitWorkplanbidGroup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkPlanBidGroupResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanBidGroupResponse> response = (ApiResponse<WorkPlanBidGroupResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanBidGroupResponse> response = (ApiResponse<WorkPlanBidGroupResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Gets the work plan preferences of all the agents in the work plan bid group
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The work plan bid id of the bid groups (required)
+   * @param bidGroupId The ID of the work plan bid group (required)
+   * @return AdminAgentWorkPlanPreferenceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdminAgentWorkPlanPreferenceResponse getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(String businessUnitId, String bidId, String bidGroupId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(createGetWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesRequest(businessUnitId, bidId, bidGroupId));
+  }
+
+  /**
+   * Gets the work plan preferences of all the agents in the work plan bid group
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The work plan bid id of the bid groups (required)
+   * @param bidGroupId The ID of the work plan bid group (required)
+   * @return AdminAgentWorkPlanPreferenceResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdminAgentWorkPlanPreferenceResponse> getWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesWithHttpInfo(String businessUnitId, String bidId, String bidGroupId) throws IOException {
+    return getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(createGetWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesRequest(businessUnitId, bidId, bidGroupId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesRequest createGetWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesRequest(String businessUnitId, String bidId, String bidGroupId) {
+    return GetWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBidId(bidId)
+
+            .withBidGroupId(bidGroupId)
+
+            .build();
+  }
+
+  /**
+   * Gets the work plan preferences of all the agents in the work plan bid group
+   * 
+   * @param request The request object
+   * @return AdminAgentWorkPlanPreferenceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdminAgentWorkPlanPreferenceResponse getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(GetWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AdminAgentWorkPlanPreferenceResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AdminAgentWorkPlanPreferenceResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets the work plan preferences of all the agents in the work plan bid group
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdminAgentWorkPlanPreferenceResponse> getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AdminAgentWorkPlanPreferenceResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdminAgentWorkPlanPreferenceResponse> response = (ApiResponse<AdminAgentWorkPlanPreferenceResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdminAgentWorkPlanPreferenceResponse> response = (ApiResponse<AdminAgentWorkPlanPreferenceResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get summary of bid groups that belong to a work plan bid
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The work plan bid id of the bid groups (required)
+   * @return WorkPlanBidGroupSummaryList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanBidGroupSummaryList getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary(String businessUnitId, String bidId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary(createGetWorkforcemanagementBusinessunitWorkplanbidGroupsSummaryRequest(businessUnitId, bidId));
+  }
+
+  /**
+   * Get summary of bid groups that belong to a work plan bid
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The work plan bid id of the bid groups (required)
+   * @return WorkPlanBidGroupSummaryList
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanBidGroupSummaryList> getWorkforcemanagementBusinessunitWorkplanbidGroupsSummaryWithHttpInfo(String businessUnitId, String bidId) throws IOException {
+    return getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary(createGetWorkforcemanagementBusinessunitWorkplanbidGroupsSummaryRequest(businessUnitId, bidId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitWorkplanbidGroupsSummaryRequest createGetWorkforcemanagementBusinessunitWorkplanbidGroupsSummaryRequest(String businessUnitId, String bidId) {
+    return GetWorkforcemanagementBusinessunitWorkplanbidGroupsSummaryRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBidId(bidId)
+
+            .build();
+  }
+
+  /**
+   * Get summary of bid groups that belong to a work plan bid
+   * 
+   * @param request The request object
+   * @return WorkPlanBidGroupSummaryList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanBidGroupSummaryList getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary(GetWorkforcemanagementBusinessunitWorkplanbidGroupsSummaryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkPlanBidGroupSummaryList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkPlanBidGroupSummaryList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get summary of bid groups that belong to a work plan bid
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanBidGroupSummaryList> getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkPlanBidGroupSummaryList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanBidGroupSummaryList> response = (ApiResponse<WorkPlanBidGroupSummaryList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanBidGroupSummaryList> response = (ApiResponse<WorkPlanBidGroupSummaryList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get list of work plan bids
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @return WorkPlanBidListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanBidListResponse getWorkforcemanagementBusinessunitWorkplanbids(String businessUnitId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitWorkplanbids(createGetWorkforcemanagementBusinessunitWorkplanbidsRequest(businessUnitId));
+  }
+
+  /**
+   * Get list of work plan bids
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @return WorkPlanBidListResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanBidListResponse> getWorkforcemanagementBusinessunitWorkplanbidsWithHttpInfo(String businessUnitId) throws IOException {
+    return getWorkforcemanagementBusinessunitWorkplanbids(createGetWorkforcemanagementBusinessunitWorkplanbidsRequest(businessUnitId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitWorkplanbidsRequest createGetWorkforcemanagementBusinessunitWorkplanbidsRequest(String businessUnitId) {
+    return GetWorkforcemanagementBusinessunitWorkplanbidsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .build();
+  }
+
+  /**
+   * Get list of work plan bids
+   * 
+   * @param request The request object
+   * @return WorkPlanBidListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanBidListResponse getWorkforcemanagementBusinessunitWorkplanbids(GetWorkforcemanagementBusinessunitWorkplanbidsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkPlanBidListResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkPlanBidListResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get list of work plan bids
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanBidListResponse> getWorkforcemanagementBusinessunitWorkplanbids(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkPlanBidListResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanBidListResponse> response = (ApiResponse<WorkPlanBidListResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanBidListResponse> response = (ApiResponse<WorkPlanBidListResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -8362,6 +10048,314 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Get work plan bid ranks for a user
+   * 
+   * @param userId The userId to whom the work plan bid ranks apply. (required)
+   * @return WorkPlanBidRanks
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanBidRanks getWorkforcemanagementUserWorkplanbidranks(String userId) throws IOException, ApiException {
+    return  getWorkforcemanagementUserWorkplanbidranks(createGetWorkforcemanagementUserWorkplanbidranksRequest(userId));
+  }
+
+  /**
+   * Get work plan bid ranks for a user
+   * 
+   * @param userId The userId to whom the work plan bid ranks apply. (required)
+   * @return WorkPlanBidRanks
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanBidRanks> getWorkforcemanagementUserWorkplanbidranksWithHttpInfo(String userId) throws IOException {
+    return getWorkforcemanagementUserWorkplanbidranks(createGetWorkforcemanagementUserWorkplanbidranksRequest(userId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementUserWorkplanbidranksRequest createGetWorkforcemanagementUserWorkplanbidranksRequest(String userId) {
+    return GetWorkforcemanagementUserWorkplanbidranksRequest.builder()
+            .withUserId(userId)
+
+            .build();
+  }
+
+  /**
+   * Get work plan bid ranks for a user
+   * 
+   * @param request The request object
+   * @return WorkPlanBidRanks
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanBidRanks getWorkforcemanagementUserWorkplanbidranks(GetWorkforcemanagementUserWorkplanbidranksRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkPlanBidRanks> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkPlanBidRanks>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get work plan bid ranks for a user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanBidRanks> getWorkforcemanagementUserWorkplanbidranks(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkPlanBidRanks>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanBidRanks> response = (ApiResponse<WorkPlanBidRanks>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanBidRanks> response = (ApiResponse<WorkPlanBidRanks>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Gets an agent's work plan bidding preference
+   * 
+   * @param bidId The ID of the work plan bid (required)
+   * @return AgentWorkPlanBiddingPreferenceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentWorkPlanBiddingPreferenceResponse getWorkforcemanagementWorkplanbidPreferences(String bidId) throws IOException, ApiException {
+    return  getWorkforcemanagementWorkplanbidPreferences(createGetWorkforcemanagementWorkplanbidPreferencesRequest(bidId));
+  }
+
+  /**
+   * Gets an agent's work plan bidding preference
+   * 
+   * @param bidId The ID of the work plan bid (required)
+   * @return AgentWorkPlanBiddingPreferenceResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentWorkPlanBiddingPreferenceResponse> getWorkforcemanagementWorkplanbidPreferencesWithHttpInfo(String bidId) throws IOException {
+    return getWorkforcemanagementWorkplanbidPreferences(createGetWorkforcemanagementWorkplanbidPreferencesRequest(bidId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementWorkplanbidPreferencesRequest createGetWorkforcemanagementWorkplanbidPreferencesRequest(String bidId) {
+    return GetWorkforcemanagementWorkplanbidPreferencesRequest.builder()
+            .withBidId(bidId)
+
+            .build();
+  }
+
+  /**
+   * Gets an agent's work plan bidding preference
+   * 
+   * @param request The request object
+   * @return AgentWorkPlanBiddingPreferenceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentWorkPlanBiddingPreferenceResponse getWorkforcemanagementWorkplanbidPreferences(GetWorkforcemanagementWorkplanbidPreferencesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentWorkPlanBiddingPreferenceResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentWorkPlanBiddingPreferenceResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets an agent's work plan bidding preference
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentWorkPlanBiddingPreferenceResponse> getWorkforcemanagementWorkplanbidPreferences(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentWorkPlanBiddingPreferenceResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentWorkPlanBiddingPreferenceResponse> response = (ApiResponse<AgentWorkPlanBiddingPreferenceResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentWorkPlanBiddingPreferenceResponse> response = (ApiResponse<AgentWorkPlanBiddingPreferenceResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Gets an agent's work plans for a bid
+   * 
+   * @param bidId The ID of the work plan bid (required)
+   * @return AgentWorkPlanListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentWorkPlanListResponse getWorkforcemanagementWorkplanbidWorkplans(String bidId) throws IOException, ApiException {
+    return  getWorkforcemanagementWorkplanbidWorkplans(createGetWorkforcemanagementWorkplanbidWorkplansRequest(bidId));
+  }
+
+  /**
+   * Gets an agent's work plans for a bid
+   * 
+   * @param bidId The ID of the work plan bid (required)
+   * @return AgentWorkPlanListResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentWorkPlanListResponse> getWorkforcemanagementWorkplanbidWorkplansWithHttpInfo(String bidId) throws IOException {
+    return getWorkforcemanagementWorkplanbidWorkplans(createGetWorkforcemanagementWorkplanbidWorkplansRequest(bidId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementWorkplanbidWorkplansRequest createGetWorkforcemanagementWorkplanbidWorkplansRequest(String bidId) {
+    return GetWorkforcemanagementWorkplanbidWorkplansRequest.builder()
+            .withBidId(bidId)
+
+            .build();
+  }
+
+  /**
+   * Gets an agent's work plans for a bid
+   * 
+   * @param request The request object
+   * @return AgentWorkPlanListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentWorkPlanListResponse getWorkforcemanagementWorkplanbidWorkplans(GetWorkforcemanagementWorkplanbidWorkplansRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentWorkPlanListResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentWorkPlanListResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets an agent's work plans for a bid
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentWorkPlanListResponse> getWorkforcemanagementWorkplanbidWorkplans(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentWorkPlanListResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentWorkPlanListResponse> response = (ApiResponse<AgentWorkPlanListResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentWorkPlanListResponse> response = (ApiResponse<AgentWorkPlanListResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Gets the list of work plan bids that belong to an agent
+   * 
+   * @return AgentWorkPlanBids
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentWorkPlanBids getWorkforcemanagementWorkplanbids() throws IOException, ApiException {
+    return  getWorkforcemanagementWorkplanbids(createGetWorkforcemanagementWorkplanbidsRequest());
+  }
+
+  /**
+   * Gets the list of work plan bids that belong to an agent
+   * 
+   * @return AgentWorkPlanBids
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentWorkPlanBids> getWorkforcemanagementWorkplanbidsWithHttpInfo() throws IOException {
+    return getWorkforcemanagementWorkplanbids(createGetWorkforcemanagementWorkplanbidsRequest().withHttpInfo());
+  }
+
+  private GetWorkforcemanagementWorkplanbidsRequest createGetWorkforcemanagementWorkplanbidsRequest() {
+    return GetWorkforcemanagementWorkplanbidsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Gets the list of work plan bids that belong to an agent
+   * 
+   * @param request The request object
+   * @return AgentWorkPlanBids
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentWorkPlanBids getWorkforcemanagementWorkplanbids(GetWorkforcemanagementWorkplanbidsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentWorkPlanBids> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentWorkPlanBids>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets the list of work plan bids that belong to an agent
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentWorkPlanBids> getWorkforcemanagementWorkplanbids(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentWorkPlanBids>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentWorkPlanBids> response = (ApiResponse<AgentWorkPlanBids>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentWorkPlanBids> response = (ApiResponse<AgentWorkPlanBids>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update an adherence explanation
    * 
    * @param agentId The ID of the agent to query (required)
@@ -8443,6 +10437,166 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AdherenceExplanationAsyncResponse> response = (ApiResponse<AdherenceExplanationAsyncResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update my alternative shifts trade by trade ID
+   * 
+   * @param tradeId The ID of the alternative shift trade (required)
+   * @param body body (optional)
+   * @return AlternativeShiftTradeResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlternativeShiftTradeResponse patchWorkforcemanagementAlternativeshiftsTrade(String tradeId, AgentUpdateAlternativeShiftTradeRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementAlternativeshiftsTrade(createPatchWorkforcemanagementAlternativeshiftsTradeRequest(tradeId, body));
+  }
+
+  /**
+   * Update my alternative shifts trade by trade ID
+   * 
+   * @param tradeId The ID of the alternative shift trade (required)
+   * @param body body (optional)
+   * @return AlternativeShiftTradeResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlternativeShiftTradeResponse> patchWorkforcemanagementAlternativeshiftsTradeWithHttpInfo(String tradeId, AgentUpdateAlternativeShiftTradeRequest body) throws IOException {
+    return patchWorkforcemanagementAlternativeshiftsTrade(createPatchWorkforcemanagementAlternativeshiftsTradeRequest(tradeId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementAlternativeshiftsTradeRequest createPatchWorkforcemanagementAlternativeshiftsTradeRequest(String tradeId, AgentUpdateAlternativeShiftTradeRequest body) {
+    return PatchWorkforcemanagementAlternativeshiftsTradeRequest.builder()
+            .withTradeId(tradeId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update my alternative shifts trade by trade ID
+   * 
+   * @param request The request object
+   * @return AlternativeShiftTradeResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlternativeShiftTradeResponse patchWorkforcemanagementAlternativeshiftsTrade(PatchWorkforcemanagementAlternativeshiftsTradeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AlternativeShiftTradeResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AlternativeShiftTradeResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update my alternative shifts trade by trade ID
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlternativeShiftTradeResponse> patchWorkforcemanagementAlternativeshiftsTrade(ApiRequest<AgentUpdateAlternativeShiftTradeRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AlternativeShiftTradeResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlternativeShiftTradeResponse> response = (ApiResponse<AlternativeShiftTradeResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlternativeShiftTradeResponse> response = (ApiResponse<AlternativeShiftTradeResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Bulk update alternative shift trade states
+   * 
+   * @param body The request body (required)
+   * @return AlternativeShiftAsyncResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlternativeShiftAsyncResponse patchWorkforcemanagementAlternativeshiftsTradesStateJobs(AdminBulkUpdateAlternativeShiftTradeStateRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementAlternativeshiftsTradesStateJobs(createPatchWorkforcemanagementAlternativeshiftsTradesStateJobsRequest(body));
+  }
+
+  /**
+   * Bulk update alternative shift trade states
+   * 
+   * @param body The request body (required)
+   * @return AlternativeShiftAsyncResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlternativeShiftAsyncResponse> patchWorkforcemanagementAlternativeshiftsTradesStateJobsWithHttpInfo(AdminBulkUpdateAlternativeShiftTradeStateRequest body) throws IOException {
+    return patchWorkforcemanagementAlternativeshiftsTradesStateJobs(createPatchWorkforcemanagementAlternativeshiftsTradesStateJobsRequest(body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementAlternativeshiftsTradesStateJobsRequest createPatchWorkforcemanagementAlternativeshiftsTradesStateJobsRequest(AdminBulkUpdateAlternativeShiftTradeStateRequest body) {
+    return PatchWorkforcemanagementAlternativeshiftsTradesStateJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Bulk update alternative shift trade states
+   * 
+   * @param request The request object
+   * @return AlternativeShiftAsyncResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlternativeShiftAsyncResponse patchWorkforcemanagementAlternativeshiftsTradesStateJobs(PatchWorkforcemanagementAlternativeshiftsTradesStateJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AlternativeShiftAsyncResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AlternativeShiftAsyncResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk update alternative shift trade states
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlternativeShiftAsyncResponse> patchWorkforcemanagementAlternativeshiftsTradesStateJobs(ApiRequest<AdminBulkUpdateAlternativeShiftTradeStateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AlternativeShiftAsyncResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlternativeShiftAsyncResponse> response = (ApiResponse<AlternativeShiftAsyncResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlternativeShiftAsyncResponse> response = (ApiResponse<AlternativeShiftAsyncResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -8611,6 +10765,174 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BusinessUnitActivityCode> response = (ApiResponse<BusinessUnitActivityCode>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update an activity plan
+   * If a job associated with the activity plan is in 'Processing' state the activity plan cannot be updated
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan to update (required)
+   * @param body body (required)
+   * @return ActivityPlanResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanResponse patchWorkforcemanagementBusinessunitActivityplan(String businessUnitId, String activityPlanId, UpdateActivityPlanRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementBusinessunitActivityplan(createPatchWorkforcemanagementBusinessunitActivityplanRequest(businessUnitId, activityPlanId, body));
+  }
+
+  /**
+   * Update an activity plan
+   * If a job associated with the activity plan is in 'Processing' state the activity plan cannot be updated
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan to update (required)
+   * @param body body (required)
+   * @return ActivityPlanResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanResponse> patchWorkforcemanagementBusinessunitActivityplanWithHttpInfo(String businessUnitId, String activityPlanId, UpdateActivityPlanRequest body) throws IOException {
+    return patchWorkforcemanagementBusinessunitActivityplan(createPatchWorkforcemanagementBusinessunitActivityplanRequest(businessUnitId, activityPlanId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementBusinessunitActivityplanRequest createPatchWorkforcemanagementBusinessunitActivityplanRequest(String businessUnitId, String activityPlanId, UpdateActivityPlanRequest body) {
+    return PatchWorkforcemanagementBusinessunitActivityplanRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withActivityPlanId(activityPlanId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update an activity plan
+   * If a job associated with the activity plan is in 'Processing' state the activity plan cannot be updated
+   * @param request The request object
+   * @return ActivityPlanResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanResponse patchWorkforcemanagementBusinessunitActivityplan(PatchWorkforcemanagementBusinessunitActivityplanRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ActivityPlanResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActivityPlanResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update an activity plan
+   * If a job associated with the activity plan is in 'Processing' state the activity plan cannot be updated
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanResponse> patchWorkforcemanagementBusinessunitActivityplan(ApiRequest<UpdateActivityPlanRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ActivityPlanResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanResponse> response = (ApiResponse<ActivityPlanResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanResponse> response = (ApiResponse<ActivityPlanResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update alternative shifts settings for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (optional)
+   * @return AlternativeShiftBuSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlternativeShiftBuSettingsResponse patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(String businessUnitId, UpdateAlternativeShiftBuSettingsRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(createPatchWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest(businessUnitId, body));
+  }
+
+  /**
+   * Update alternative shifts settings for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (optional)
+   * @return AlternativeShiftBuSettingsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlternativeShiftBuSettingsResponse> patchWorkforcemanagementBusinessunitAlternativeshiftsSettingsWithHttpInfo(String businessUnitId, UpdateAlternativeShiftBuSettingsRequest body) throws IOException {
+    return patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(createPatchWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest createPatchWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest(String businessUnitId, UpdateAlternativeShiftBuSettingsRequest body) {
+    return PatchWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update alternative shifts settings for a business unit
+   * 
+   * @param request The request object
+   * @return AlternativeShiftBuSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlternativeShiftBuSettingsResponse patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(PatchWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AlternativeShiftBuSettingsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AlternativeShiftBuSettingsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update alternative shifts settings for a business unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlternativeShiftBuSettingsResponse> patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(ApiRequest<UpdateAlternativeShiftBuSettingsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AlternativeShiftBuSettingsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlternativeShiftBuSettingsResponse> response = (ApiResponse<AlternativeShiftBuSettingsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlternativeShiftBuSettingsResponse> response = (ApiResponse<AlternativeShiftBuSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -9038,6 +11360,272 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BuTimeOffPlanResponse> response = (ApiResponse<BuTimeOffPlanResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update work plan bid
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The id of the workplanbid (required)
+   * @param body The work plan bid to be updated (required)
+   * @return WorkPlanBid
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanBid patchWorkforcemanagementBusinessunitWorkplanbid(String businessUnitId, String bidId, UpdateWorkPlanBid body) throws IOException, ApiException {
+    return  patchWorkforcemanagementBusinessunitWorkplanbid(createPatchWorkforcemanagementBusinessunitWorkplanbidRequest(businessUnitId, bidId, body));
+  }
+
+  /**
+   * Update work plan bid
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The id of the workplanbid (required)
+   * @param body The work plan bid to be updated (required)
+   * @return WorkPlanBid
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanBid> patchWorkforcemanagementBusinessunitWorkplanbidWithHttpInfo(String businessUnitId, String bidId, UpdateWorkPlanBid body) throws IOException {
+    return patchWorkforcemanagementBusinessunitWorkplanbid(createPatchWorkforcemanagementBusinessunitWorkplanbidRequest(businessUnitId, bidId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementBusinessunitWorkplanbidRequest createPatchWorkforcemanagementBusinessunitWorkplanbidRequest(String businessUnitId, String bidId, UpdateWorkPlanBid body) {
+    return PatchWorkforcemanagementBusinessunitWorkplanbidRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBidId(bidId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update work plan bid
+   * 
+   * @param request The request object
+   * @return WorkPlanBid
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanBid patchWorkforcemanagementBusinessunitWorkplanbid(PatchWorkforcemanagementBusinessunitWorkplanbidRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkPlanBid> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkPlanBid>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update work plan bid
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanBid> patchWorkforcemanagementBusinessunitWorkplanbid(ApiRequest<UpdateWorkPlanBid> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkPlanBid>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanBid> response = (ApiResponse<WorkPlanBid>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanBid> response = (ApiResponse<WorkPlanBid>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a bid group by bid group Id
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The work plan bid id of the bid groups (required)
+   * @param bidGroupId Work Plan Bid Group id (required)
+   * @param body body (optional)
+   * @return WorkPlanBidGroupResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanBidGroupResponse patchWorkforcemanagementBusinessunitWorkplanbidGroup(String businessUnitId, String bidId, String bidGroupId, WorkPlanBidGroupUpdate body) throws IOException, ApiException {
+    return  patchWorkforcemanagementBusinessunitWorkplanbidGroup(createPatchWorkforcemanagementBusinessunitWorkplanbidGroupRequest(businessUnitId, bidId, bidGroupId, body));
+  }
+
+  /**
+   * Update a bid group by bid group Id
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The work plan bid id of the bid groups (required)
+   * @param bidGroupId Work Plan Bid Group id (required)
+   * @param body body (optional)
+   * @return WorkPlanBidGroupResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanBidGroupResponse> patchWorkforcemanagementBusinessunitWorkplanbidGroupWithHttpInfo(String businessUnitId, String bidId, String bidGroupId, WorkPlanBidGroupUpdate body) throws IOException {
+    return patchWorkforcemanagementBusinessunitWorkplanbidGroup(createPatchWorkforcemanagementBusinessunitWorkplanbidGroupRequest(businessUnitId, bidId, bidGroupId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementBusinessunitWorkplanbidGroupRequest createPatchWorkforcemanagementBusinessunitWorkplanbidGroupRequest(String businessUnitId, String bidId, String bidGroupId, WorkPlanBidGroupUpdate body) {
+    return PatchWorkforcemanagementBusinessunitWorkplanbidGroupRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBidId(bidId)
+
+            .withBidGroupId(bidGroupId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a bid group by bid group Id
+   * 
+   * @param request The request object
+   * @return WorkPlanBidGroupResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanBidGroupResponse patchWorkforcemanagementBusinessunitWorkplanbidGroup(PatchWorkforcemanagementBusinessunitWorkplanbidGroupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkPlanBidGroupResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkPlanBidGroupResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a bid group by bid group Id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanBidGroupResponse> patchWorkforcemanagementBusinessunitWorkplanbidGroup(ApiRequest<WorkPlanBidGroupUpdate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkPlanBidGroupResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanBidGroupResponse> response = (ApiResponse<WorkPlanBidGroupResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanBidGroupResponse> response = (ApiResponse<WorkPlanBidGroupResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Overrides the assigned work plan for the specified agents
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The work plan bid id of the bid groups (required)
+   * @param bidGroupId The ID of the work plan bid group (required)
+   * @param body body (optional)
+   * @return AdminAgentWorkPlanPreferenceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdminAgentWorkPlanPreferenceResponse patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(String businessUnitId, String bidId, String bidGroupId, AgentsBidAssignedWorkPlanOverrideRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(createPatchWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesRequest(businessUnitId, bidId, bidGroupId, body));
+  }
+
+  /**
+   * Overrides the assigned work plan for the specified agents
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The work plan bid id of the bid groups (required)
+   * @param bidGroupId The ID of the work plan bid group (required)
+   * @param body body (optional)
+   * @return AdminAgentWorkPlanPreferenceResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdminAgentWorkPlanPreferenceResponse> patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesWithHttpInfo(String businessUnitId, String bidId, String bidGroupId, AgentsBidAssignedWorkPlanOverrideRequest body) throws IOException {
+    return patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(createPatchWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesRequest(businessUnitId, bidId, bidGroupId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesRequest createPatchWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesRequest(String businessUnitId, String bidId, String bidGroupId, AgentsBidAssignedWorkPlanOverrideRequest body) {
+    return PatchWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBidId(bidId)
+
+            .withBidGroupId(bidGroupId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Overrides the assigned work plan for the specified agents
+   * 
+   * @param request The request object
+   * @return AdminAgentWorkPlanPreferenceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdminAgentWorkPlanPreferenceResponse patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(PatchWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AdminAgentWorkPlanPreferenceResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AdminAgentWorkPlanPreferenceResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Overrides the assigned work plan for the specified agents
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdminAgentWorkPlanPreferenceResponse> patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(ApiRequest<AgentsBidAssignedWorkPlanOverrideRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AdminAgentWorkPlanPreferenceResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdminAgentWorkPlanPreferenceResponse> response = (ApiResponse<AdminAgentWorkPlanPreferenceResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdminAgentWorkPlanPreferenceResponse> response = (ApiResponse<AdminAgentWorkPlanPreferenceResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -9904,6 +12492,248 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Update work plan bid ranks for a user
+   * 
+   * @param userId The userId to whom the work plan bid ranks apply. (required)
+   * @param body body (optional)
+   * @return WorkPlanBidRanks
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanBidRanks patchWorkforcemanagementUserWorkplanbidranks(String userId, WorkPlanBidRanks body) throws IOException, ApiException {
+    return  patchWorkforcemanagementUserWorkplanbidranks(createPatchWorkforcemanagementUserWorkplanbidranksRequest(userId, body));
+  }
+
+  /**
+   * Update work plan bid ranks for a user
+   * 
+   * @param userId The userId to whom the work plan bid ranks apply. (required)
+   * @param body body (optional)
+   * @return WorkPlanBidRanks
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanBidRanks> patchWorkforcemanagementUserWorkplanbidranksWithHttpInfo(String userId, WorkPlanBidRanks body) throws IOException {
+    return patchWorkforcemanagementUserWorkplanbidranks(createPatchWorkforcemanagementUserWorkplanbidranksRequest(userId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementUserWorkplanbidranksRequest createPatchWorkforcemanagementUserWorkplanbidranksRequest(String userId, WorkPlanBidRanks body) {
+    return PatchWorkforcemanagementUserWorkplanbidranksRequest.builder()
+            .withUserId(userId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update work plan bid ranks for a user
+   * 
+   * @param request The request object
+   * @return WorkPlanBidRanks
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanBidRanks patchWorkforcemanagementUserWorkplanbidranks(PatchWorkforcemanagementUserWorkplanbidranksRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkPlanBidRanks> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkPlanBidRanks>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update work plan bid ranks for a user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanBidRanks> patchWorkforcemanagementUserWorkplanbidranks(ApiRequest<WorkPlanBidRanks> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkPlanBidRanks>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanBidRanks> response = (ApiResponse<WorkPlanBidRanks>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanBidRanks> response = (ApiResponse<WorkPlanBidRanks>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update bulk work plan bid ranks on users. Max 50 users can be updated at a time.
+   * 
+   * @param body Users (required)
+   * @return EntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EntityListing patchWorkforcemanagementUsersWorkplanbidranksBulk(List<WorkPlanBidRanks> body) throws IOException, ApiException {
+    return  patchWorkforcemanagementUsersWorkplanbidranksBulk(createPatchWorkforcemanagementUsersWorkplanbidranksBulkRequest(body));
+  }
+
+  /**
+   * Update bulk work plan bid ranks on users. Max 50 users can be updated at a time.
+   * 
+   * @param body Users (required)
+   * @return EntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EntityListing> patchWorkforcemanagementUsersWorkplanbidranksBulkWithHttpInfo(List<WorkPlanBidRanks> body) throws IOException {
+    return patchWorkforcemanagementUsersWorkplanbidranksBulk(createPatchWorkforcemanagementUsersWorkplanbidranksBulkRequest(body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementUsersWorkplanbidranksBulkRequest createPatchWorkforcemanagementUsersWorkplanbidranksBulkRequest(List<WorkPlanBidRanks> body) {
+    return PatchWorkforcemanagementUsersWorkplanbidranksBulkRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update bulk work plan bid ranks on users. Max 50 users can be updated at a time.
+   * 
+   * @param request The request object
+   * @return EntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EntityListing patchWorkforcemanagementUsersWorkplanbidranksBulk(PatchWorkforcemanagementUsersWorkplanbidranksBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update bulk work plan bid ranks on users. Max 50 users can be updated at a time.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EntityListing> patchWorkforcemanagementUsersWorkplanbidranksBulk(ApiRequest<List<WorkPlanBidRanks>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EntityListing> response = (ApiResponse<EntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EntityListing> response = (ApiResponse<EntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update an agent's work plan bidding preference
+   * 
+   * @param bidId The ID of the work plan bid (required)
+   * @param body body (optional)
+   * @return AgentWorkPlanBiddingPreferenceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentWorkPlanBiddingPreferenceResponse patchWorkforcemanagementWorkplanbidPreferences(String bidId, UpdateAgentWorkPlanBiddingPreference body) throws IOException, ApiException {
+    return  patchWorkforcemanagementWorkplanbidPreferences(createPatchWorkforcemanagementWorkplanbidPreferencesRequest(bidId, body));
+  }
+
+  /**
+   * Update an agent's work plan bidding preference
+   * 
+   * @param bidId The ID of the work plan bid (required)
+   * @param body body (optional)
+   * @return AgentWorkPlanBiddingPreferenceResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentWorkPlanBiddingPreferenceResponse> patchWorkforcemanagementWorkplanbidPreferencesWithHttpInfo(String bidId, UpdateAgentWorkPlanBiddingPreference body) throws IOException {
+    return patchWorkforcemanagementWorkplanbidPreferences(createPatchWorkforcemanagementWorkplanbidPreferencesRequest(bidId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementWorkplanbidPreferencesRequest createPatchWorkforcemanagementWorkplanbidPreferencesRequest(String bidId, UpdateAgentWorkPlanBiddingPreference body) {
+    return PatchWorkforcemanagementWorkplanbidPreferencesRequest.builder()
+            .withBidId(bidId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update an agent's work plan bidding preference
+   * 
+   * @param request The request object
+   * @return AgentWorkPlanBiddingPreferenceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentWorkPlanBiddingPreferenceResponse patchWorkforcemanagementWorkplanbidPreferences(PatchWorkforcemanagementWorkplanbidPreferencesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentWorkPlanBiddingPreferenceResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentWorkPlanBiddingPreferenceResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update an agent's work plan bidding preference
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentWorkPlanBiddingPreferenceResponse> patchWorkforcemanagementWorkplanbidPreferences(ApiRequest<UpdateAgentWorkPlanBiddingPreference> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentWorkPlanBiddingPreferenceResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentWorkPlanBiddingPreferenceResponse> response = (ApiResponse<AgentWorkPlanBiddingPreferenceResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentWorkPlanBiddingPreferenceResponse> response = (ApiResponse<AgentWorkPlanBiddingPreferenceResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Submit an adherence explanation for the current user
    * 
    * @param body The request body (required)
@@ -10712,6 +13542,240 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Request a list of alternative shift offers for a given schedule
+   * 
+   * @param body The request body (required)
+   * @return AlternativeShiftAsyncResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlternativeShiftAsyncResponse postWorkforcemanagementAlternativeshiftsOffersJobs(AlternativeShiftOffersRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementAlternativeshiftsOffersJobs(createPostWorkforcemanagementAlternativeshiftsOffersJobsRequest(body));
+  }
+
+  /**
+   * Request a list of alternative shift offers for a given schedule
+   * 
+   * @param body The request body (required)
+   * @return AlternativeShiftAsyncResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlternativeShiftAsyncResponse> postWorkforcemanagementAlternativeshiftsOffersJobsWithHttpInfo(AlternativeShiftOffersRequest body) throws IOException {
+    return postWorkforcemanagementAlternativeshiftsOffersJobs(createPostWorkforcemanagementAlternativeshiftsOffersJobsRequest(body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementAlternativeshiftsOffersJobsRequest createPostWorkforcemanagementAlternativeshiftsOffersJobsRequest(AlternativeShiftOffersRequest body) {
+    return PostWorkforcemanagementAlternativeshiftsOffersJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Request a list of alternative shift offers for a given schedule
+   * 
+   * @param request The request object
+   * @return AlternativeShiftAsyncResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlternativeShiftAsyncResponse postWorkforcemanagementAlternativeshiftsOffersJobs(PostWorkforcemanagementAlternativeshiftsOffersJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AlternativeShiftAsyncResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AlternativeShiftAsyncResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Request a list of alternative shift offers for a given schedule
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlternativeShiftAsyncResponse> postWorkforcemanagementAlternativeshiftsOffersJobs(ApiRequest<AlternativeShiftOffersRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AlternativeShiftAsyncResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlternativeShiftAsyncResponse> response = (ApiResponse<AlternativeShiftAsyncResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlternativeShiftAsyncResponse> response = (ApiResponse<AlternativeShiftAsyncResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Request a search of alternative shift offers for a given shift
+   * 
+   * @param body The request body (required)
+   * @return AlternativeShiftAsyncResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlternativeShiftAsyncResponse postWorkforcemanagementAlternativeshiftsOffersSearchJobs(AlternativeShiftSearchOffersRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementAlternativeshiftsOffersSearchJobs(createPostWorkforcemanagementAlternativeshiftsOffersSearchJobsRequest(body));
+  }
+
+  /**
+   * Request a search of alternative shift offers for a given shift
+   * 
+   * @param body The request body (required)
+   * @return AlternativeShiftAsyncResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlternativeShiftAsyncResponse> postWorkforcemanagementAlternativeshiftsOffersSearchJobsWithHttpInfo(AlternativeShiftSearchOffersRequest body) throws IOException {
+    return postWorkforcemanagementAlternativeshiftsOffersSearchJobs(createPostWorkforcemanagementAlternativeshiftsOffersSearchJobsRequest(body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementAlternativeshiftsOffersSearchJobsRequest createPostWorkforcemanagementAlternativeshiftsOffersSearchJobsRequest(AlternativeShiftSearchOffersRequest body) {
+    return PostWorkforcemanagementAlternativeshiftsOffersSearchJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Request a search of alternative shift offers for a given shift
+   * 
+   * @param request The request object
+   * @return AlternativeShiftAsyncResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlternativeShiftAsyncResponse postWorkforcemanagementAlternativeshiftsOffersSearchJobs(PostWorkforcemanagementAlternativeshiftsOffersSearchJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AlternativeShiftAsyncResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AlternativeShiftAsyncResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Request a search of alternative shift offers for a given shift
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlternativeShiftAsyncResponse> postWorkforcemanagementAlternativeshiftsOffersSearchJobs(ApiRequest<AlternativeShiftSearchOffersRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AlternativeShiftAsyncResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlternativeShiftAsyncResponse> response = (ApiResponse<AlternativeShiftAsyncResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlternativeShiftAsyncResponse> response = (ApiResponse<AlternativeShiftAsyncResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create my alternative shift trade using an existing offer's jobId
+   * 
+   * @param body The request body (required)
+   * @return AlternativeShiftTradeResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlternativeShiftTradeResponse postWorkforcemanagementAlternativeshiftsTrades(CreateAlternativeShiftTradeRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementAlternativeshiftsTrades(createPostWorkforcemanagementAlternativeshiftsTradesRequest(body));
+  }
+
+  /**
+   * Create my alternative shift trade using an existing offer's jobId
+   * 
+   * @param body The request body (required)
+   * @return AlternativeShiftTradeResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlternativeShiftTradeResponse> postWorkforcemanagementAlternativeshiftsTradesWithHttpInfo(CreateAlternativeShiftTradeRequest body) throws IOException {
+    return postWorkforcemanagementAlternativeshiftsTrades(createPostWorkforcemanagementAlternativeshiftsTradesRequest(body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementAlternativeshiftsTradesRequest createPostWorkforcemanagementAlternativeshiftsTradesRequest(CreateAlternativeShiftTradeRequest body) {
+    return PostWorkforcemanagementAlternativeshiftsTradesRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create my alternative shift trade using an existing offer's jobId
+   * 
+   * @param request The request object
+   * @return AlternativeShiftTradeResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlternativeShiftTradeResponse postWorkforcemanagementAlternativeshiftsTrades(PostWorkforcemanagementAlternativeshiftsTradesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AlternativeShiftTradeResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AlternativeShiftTradeResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create my alternative shift trade using an existing offer's jobId
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlternativeShiftTradeResponse> postWorkforcemanagementAlternativeshiftsTrades(ApiRequest<CreateAlternativeShiftTradeRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AlternativeShiftTradeResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlternativeShiftTradeResponse> response = (ApiResponse<AlternativeShiftTradeResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlternativeShiftTradeResponse> response = (ApiResponse<AlternativeShiftTradeResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create a new activity code
    * 
    * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
@@ -10789,6 +13853,170 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BusinessUnitActivityCode> response = (ApiResponse<BusinessUnitActivityCode>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Run an activity plan manually
+   * Triggers a job running the activity plan. The activity plan cannot be updated until the job completes
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan to run (required)
+   * @return ActivityPlanJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanJobResponse postWorkforcemanagementBusinessunitActivityplanRunsJobs(String businessUnitId, String activityPlanId) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitActivityplanRunsJobs(createPostWorkforcemanagementBusinessunitActivityplanRunsJobsRequest(businessUnitId, activityPlanId));
+  }
+
+  /**
+   * Run an activity plan manually
+   * Triggers a job running the activity plan. The activity plan cannot be updated until the job completes
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan to run (required)
+   * @return ActivityPlanJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanJobResponse> postWorkforcemanagementBusinessunitActivityplanRunsJobsWithHttpInfo(String businessUnitId, String activityPlanId) throws IOException {
+    return postWorkforcemanagementBusinessunitActivityplanRunsJobs(createPostWorkforcemanagementBusinessunitActivityplanRunsJobsRequest(businessUnitId, activityPlanId).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitActivityplanRunsJobsRequest createPostWorkforcemanagementBusinessunitActivityplanRunsJobsRequest(String businessUnitId, String activityPlanId) {
+    return PostWorkforcemanagementBusinessunitActivityplanRunsJobsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withActivityPlanId(activityPlanId)
+
+            .build();
+  }
+
+  /**
+   * Run an activity plan manually
+   * Triggers a job running the activity plan. The activity plan cannot be updated until the job completes
+   * @param request The request object
+   * @return ActivityPlanJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanJobResponse postWorkforcemanagementBusinessunitActivityplanRunsJobs(PostWorkforcemanagementBusinessunitActivityplanRunsJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ActivityPlanJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActivityPlanJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Run an activity plan manually
+   * Triggers a job running the activity plan. The activity plan cannot be updated until the job completes
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanJobResponse> postWorkforcemanagementBusinessunitActivityplanRunsJobs(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ActivityPlanJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create an activity plan
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return ActivityPlanResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanResponse postWorkforcemanagementBusinessunitActivityplans(String businessUnitId, CreateActivityPlanRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitActivityplans(createPostWorkforcemanagementBusinessunitActivityplansRequest(businessUnitId, body));
+  }
+
+  /**
+   * Create an activity plan
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return ActivityPlanResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanResponse> postWorkforcemanagementBusinessunitActivityplansWithHttpInfo(String businessUnitId, CreateActivityPlanRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitActivityplans(createPostWorkforcemanagementBusinessunitActivityplansRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitActivityplansRequest createPostWorkforcemanagementBusinessunitActivityplansRequest(String businessUnitId, CreateActivityPlanRequest body) {
+    return PostWorkforcemanagementBusinessunitActivityplansRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create an activity plan
+   * 
+   * @param request The request object
+   * @return ActivityPlanResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanResponse postWorkforcemanagementBusinessunitActivityplans(PostWorkforcemanagementBusinessunitActivityplansRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ActivityPlanResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActivityPlanResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create an activity plan
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanResponse> postWorkforcemanagementBusinessunitActivityplans(ApiRequest<CreateActivityPlanRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ActivityPlanResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanResponse> response = (ApiResponse<ActivityPlanResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanResponse> response = (ApiResponse<ActivityPlanResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -10969,6 +14197,92 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BuAsyncAgentSchedulesSearchResponse> response = (ApiResponse<BuAsyncAgentSchedulesSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * List alternative shifts trades for a given management unit or agent
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body The request body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+   * @return BuListAlternativeShiftTradesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuListAlternativeShiftTradesResponse postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch(String businessUnitId, SearchAlternativeShiftTradesRequest body, Boolean forceAsync) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch(createPostWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchRequest(businessUnitId, body, forceAsync));
+  }
+
+  /**
+   * List alternative shifts trades for a given management unit or agent
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body The request body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+   * @return BuListAlternativeShiftTradesResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuListAlternativeShiftTradesResponse> postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchWithHttpInfo(String businessUnitId, SearchAlternativeShiftTradesRequest body, Boolean forceAsync) throws IOException {
+    return postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch(createPostWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchRequest(businessUnitId, body, forceAsync).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchRequest createPostWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchRequest(String businessUnitId, SearchAlternativeShiftTradesRequest body, Boolean forceAsync) {
+    return PostWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .withForceAsync(forceAsync)
+
+            .build();
+  }
+
+  /**
+   * List alternative shifts trades for a given management unit or agent
+   * 
+   * @param request The request object
+   * @return BuListAlternativeShiftTradesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuListAlternativeShiftTradesResponse postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch(PostWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuListAlternativeShiftTradesResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuListAlternativeShiftTradesResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * List alternative shifts trades for a given management unit or agent
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuListAlternativeShiftTradesResponse> postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch(ApiRequest<SearchAlternativeShiftTradesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuListAlternativeShiftTradesResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuListAlternativeShiftTradesResponse> response = (ApiResponse<BuListAlternativeShiftTradesResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuListAlternativeShiftTradesResponse> response = (ApiResponse<BuListAlternativeShiftTradesResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -12967,6 +16281,260 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ImportForecastUploadResponse> response = (ApiResponse<ImportForecastUploadResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Copy a work plan bid
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The ID of the work plan bid to copy (required)
+   * @param body body (optional)
+   * @return WorkPlanBid
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanBid postWorkforcemanagementBusinessunitWorkplanbidCopy(String businessUnitId, String bidId, CopyWorkPlanBid body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitWorkplanbidCopy(createPostWorkforcemanagementBusinessunitWorkplanbidCopyRequest(businessUnitId, bidId, body));
+  }
+
+  /**
+   * Copy a work plan bid
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The ID of the work plan bid to copy (required)
+   * @param body body (optional)
+   * @return WorkPlanBid
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanBid> postWorkforcemanagementBusinessunitWorkplanbidCopyWithHttpInfo(String businessUnitId, String bidId, CopyWorkPlanBid body) throws IOException {
+    return postWorkforcemanagementBusinessunitWorkplanbidCopy(createPostWorkforcemanagementBusinessunitWorkplanbidCopyRequest(businessUnitId, bidId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitWorkplanbidCopyRequest createPostWorkforcemanagementBusinessunitWorkplanbidCopyRequest(String businessUnitId, String bidId, CopyWorkPlanBid body) {
+    return PostWorkforcemanagementBusinessunitWorkplanbidCopyRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBidId(bidId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Copy a work plan bid
+   * 
+   * @param request The request object
+   * @return WorkPlanBid
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanBid postWorkforcemanagementBusinessunitWorkplanbidCopy(PostWorkforcemanagementBusinessunitWorkplanbidCopyRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkPlanBid> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkPlanBid>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Copy a work plan bid
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanBid> postWorkforcemanagementBusinessunitWorkplanbidCopy(ApiRequest<CopyWorkPlanBid> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkPlanBid>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanBid> response = (ApiResponse<WorkPlanBid>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanBid> response = (ApiResponse<WorkPlanBid>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Add a bid group in a given work plan bid
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The work plan bid id of the bid groups (required)
+   * @param body body (optional)
+   * @return WorkPlanBidGroupResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanBidGroupResponse postWorkforcemanagementBusinessunitWorkplanbidGroups(String businessUnitId, String bidId, WorkPlanBidGroupCreate body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitWorkplanbidGroups(createPostWorkforcemanagementBusinessunitWorkplanbidGroupsRequest(businessUnitId, bidId, body));
+  }
+
+  /**
+   * Add a bid group in a given work plan bid
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param bidId The work plan bid id of the bid groups (required)
+   * @param body body (optional)
+   * @return WorkPlanBidGroupResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanBidGroupResponse> postWorkforcemanagementBusinessunitWorkplanbidGroupsWithHttpInfo(String businessUnitId, String bidId, WorkPlanBidGroupCreate body) throws IOException {
+    return postWorkforcemanagementBusinessunitWorkplanbidGroups(createPostWorkforcemanagementBusinessunitWorkplanbidGroupsRequest(businessUnitId, bidId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitWorkplanbidGroupsRequest createPostWorkforcemanagementBusinessunitWorkplanbidGroupsRequest(String businessUnitId, String bidId, WorkPlanBidGroupCreate body) {
+    return PostWorkforcemanagementBusinessunitWorkplanbidGroupsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBidId(bidId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Add a bid group in a given work plan bid
+   * 
+   * @param request The request object
+   * @return WorkPlanBidGroupResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanBidGroupResponse postWorkforcemanagementBusinessunitWorkplanbidGroups(PostWorkforcemanagementBusinessunitWorkplanbidGroupsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkPlanBidGroupResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkPlanBidGroupResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Add a bid group in a given work plan bid
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanBidGroupResponse> postWorkforcemanagementBusinessunitWorkplanbidGroups(ApiRequest<WorkPlanBidGroupCreate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkPlanBidGroupResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanBidGroupResponse> response = (ApiResponse<WorkPlanBidGroupResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanBidGroupResponse> response = (ApiResponse<WorkPlanBidGroupResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a new work plan bid
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body The work plan bid to be created (optional)
+   * @return WorkPlanBid
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanBid postWorkforcemanagementBusinessunitWorkplanbids(String businessUnitId, CreateWorkPlanBid body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitWorkplanbids(createPostWorkforcemanagementBusinessunitWorkplanbidsRequest(businessUnitId, body));
+  }
+
+  /**
+   * Create a new work plan bid
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body The work plan bid to be created (optional)
+   * @return WorkPlanBid
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanBid> postWorkforcemanagementBusinessunitWorkplanbidsWithHttpInfo(String businessUnitId, CreateWorkPlanBid body) throws IOException {
+    return postWorkforcemanagementBusinessunitWorkplanbids(createPostWorkforcemanagementBusinessunitWorkplanbidsRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitWorkplanbidsRequest createPostWorkforcemanagementBusinessunitWorkplanbidsRequest(String businessUnitId, CreateWorkPlanBid body) {
+    return PostWorkforcemanagementBusinessunitWorkplanbidsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create a new work plan bid
+   * 
+   * @param request The request object
+   * @return WorkPlanBid
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanBid postWorkforcemanagementBusinessunitWorkplanbids(PostWorkforcemanagementBusinessunitWorkplanbidsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkPlanBid> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkPlanBid>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a new work plan bid
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanBid> postWorkforcemanagementBusinessunitWorkplanbids(ApiRequest<CreateWorkPlanBid> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkPlanBid>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanBid> response = (ApiResponse<WorkPlanBid>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanBid> response = (ApiResponse<WorkPlanBid>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

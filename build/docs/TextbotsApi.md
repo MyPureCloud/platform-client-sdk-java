@@ -71,7 +71,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **botType** | [**List&lt;String&gt;**](String.html)| Bot types | [optional]<br />**Values**: GenesysBotConnector, GenesysDialogEngine, AmazonLex, GoogleDialogFlowES, GoogleDialogFlowCX, NuanceDlg, GenesysBotFlow 
+| **botType** | [**List&lt;String&gt;**](String.html)| Bot types | [optional]<br />**Values**: GenesysBotConnector, GenesysDialogEngine, AmazonLex, GoogleDialogFlowES, GoogleDialogFlowCX, NuanceDlg, GenesysBotFlow, GenesysDigitalBotFlow, GenesysVoiceSurveyFlow 
 | **botName** | **String**| Bot name | [optional] 
 | **botId** | [**List&lt;String&gt;**](String.html)| Bot IDs | [optional] 
 | **pageSize** | **Integer**| The maximum results to return | [optional] [default to 25] 

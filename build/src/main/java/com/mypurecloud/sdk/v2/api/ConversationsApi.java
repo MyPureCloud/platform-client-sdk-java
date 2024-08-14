@@ -69,6 +69,7 @@ import com.mypurecloud.sdk.v2.model.CreateCallbackOnConversationCommand;
 import com.mypurecloud.sdk.v2.model.CreateCallbackResponse;
 import com.mypurecloud.sdk.v2.model.CreateEmailRequest;
 import com.mypurecloud.sdk.v2.model.CreateOutboundMessagingConversationRequest;
+import com.mypurecloud.sdk.v2.model.CreateOutboundMessagingConversationResponse;
 import com.mypurecloud.sdk.v2.model.CreateSecureSession;
 import com.mypurecloud.sdk.v2.model.CreateWebChatMessageRequest;
 import com.mypurecloud.sdk.v2.model.CreateWebChatRequest;
@@ -90,6 +91,7 @@ import com.mypurecloud.sdk.v2.model.FacebookIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.FacebookPermissionEntityListing;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 import com.mypurecloud.sdk.v2.model.FaxSendResponse;
+import com.mypurecloud.sdk.v2.model.Feedback;
 import com.mypurecloud.sdk.v2.model.FeedbackAddRequest;
 import com.mypurecloud.sdk.v2.model.GenerateMeetingIdRequest;
 import com.mypurecloud.sdk.v2.model.InboundMessageRequest;
@@ -112,7 +114,6 @@ import com.mypurecloud.sdk.v2.model.MessagingSetting;
 import com.mypurecloud.sdk.v2.model.MessagingSettingDefaultRequest;
 import com.mypurecloud.sdk.v2.model.MessagingSettingPatchRequest;
 import com.mypurecloud.sdk.v2.model.MessagingSettingRequest;
-import com.mypurecloud.sdk.v2.model.MessagingStickerEntityListing;
 import com.mypurecloud.sdk.v2.model.OpenEventNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.OpenInboundNormalizedEvent;
 import com.mypurecloud.sdk.v2.model.OpenInboundNormalizedMessage;
@@ -124,6 +125,7 @@ import com.mypurecloud.sdk.v2.model.OpenIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.OpenMessageNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.OpenNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.OpenReceiptNormalizedMessage;
+import com.mypurecloud.sdk.v2.model.ParkingStateRequest;
 import com.mypurecloud.sdk.v2.model.ParticipantAttributes;
 import com.mypurecloud.sdk.v2.model.PatchCallbackRequest;
 import com.mypurecloud.sdk.v2.model.PatchCallbackResponse;
@@ -135,6 +137,9 @@ import com.mypurecloud.sdk.v2.model.SendAgentlessOutboundMessageResponse;
 import com.mypurecloud.sdk.v2.model.SetRecordingState;
 import com.mypurecloud.sdk.v2.model.SetUuiDataRequest;
 import com.mypurecloud.sdk.v2.model.Settings;
+import com.mypurecloud.sdk.v2.model.Suggestion;
+import com.mypurecloud.sdk.v2.model.SuggestionEngagement;
+import com.mypurecloud.sdk.v2.model.SuggestionListing;
 import com.mypurecloud.sdk.v2.model.SupportedContent;
 import com.mypurecloud.sdk.v2.model.SupportedContentListing;
 import com.mypurecloud.sdk.v2.model.SupportedContentReference;
@@ -183,6 +188,8 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantSecureivrses
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationSecureattributesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationSuggestionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationSuggestionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsCallRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsCallParticipantCommunicationWrapupRequest;
@@ -243,7 +250,6 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsW
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSettingsDefaultRequest;
-import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingStickerRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSupportedcontentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSupportedcontentDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingSupportedcontentSupportedContentIdRequest;
@@ -282,6 +288,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchConversationsEmailMessagesDraftRe
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsEmailParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsEmailParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsEmailParticipantCommunicationRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsEmailParticipantParkingstateRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantAttributesRequest;
@@ -311,6 +318,8 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceAgen
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceExternalRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantSecureivrsessionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationSuggestionEngagementRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationSuggestionsFeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationSummaryFeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantBargeRequest;
@@ -341,6 +350,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailMessagesDraftAttachmentsCopyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailParticipantReplaceRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailReconnectRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailsAgentlessRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsFaxesRequest;
@@ -2451,6 +2461,186 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ConversationSecureAttributes> response = (ApiResponse<ConversationSecureAttributes>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get Suggestion.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param suggestionId Suggestion ID (required)
+   * @return Suggestion
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Suggestion getConversationSuggestion(String conversationId, String suggestionId) throws IOException, ApiException {
+    return  getConversationSuggestion(createGetConversationSuggestionRequest(conversationId, suggestionId));
+  }
+
+  /**
+   * Get Suggestion.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param suggestionId Suggestion ID (required)
+   * @return Suggestion
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Suggestion> getConversationSuggestionWithHttpInfo(String conversationId, String suggestionId) throws IOException {
+    return getConversationSuggestion(createGetConversationSuggestionRequest(conversationId, suggestionId).withHttpInfo());
+  }
+
+  private GetConversationSuggestionRequest createGetConversationSuggestionRequest(String conversationId, String suggestionId) {
+    return GetConversationSuggestionRequest.builder()
+            .withConversationId(conversationId)
+
+            .withSuggestionId(suggestionId)
+
+            .build();
+  }
+
+  /**
+   * Get Suggestion.
+   * 
+   * @param request The request object
+   * @return Suggestion
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Suggestion getConversationSuggestion(GetConversationSuggestionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Suggestion> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Suggestion>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Suggestion.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Suggestion> getConversationSuggestion(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Suggestion>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Suggestion> response = (ApiResponse<Suggestion>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Suggestion> response = (ApiResponse<Suggestion>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get all suggestions for a conversation.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param type Suggestion type to filter by. (optional)
+   * @param state Suggestion state to filter Copilot suggestions. (optional)
+   * @return SuggestionListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SuggestionListing getConversationSuggestions(String conversationId, String before, String after, String pageSize, String type, String state) throws IOException, ApiException {
+    return  getConversationSuggestions(createGetConversationSuggestionsRequest(conversationId, before, after, pageSize, type, state));
+  }
+
+  /**
+   * Get all suggestions for a conversation.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param type Suggestion type to filter by. (optional)
+   * @param state Suggestion state to filter Copilot suggestions. (optional)
+   * @return SuggestionListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SuggestionListing> getConversationSuggestionsWithHttpInfo(String conversationId, String before, String after, String pageSize, String type, String state) throws IOException {
+    return getConversationSuggestions(createGetConversationSuggestionsRequest(conversationId, before, after, pageSize, type, state).withHttpInfo());
+  }
+
+  private GetConversationSuggestionsRequest createGetConversationSuggestionsRequest(String conversationId, String before, String after, String pageSize, String type, String state) {
+    return GetConversationSuggestionsRequest.builder()
+            .withConversationId(conversationId)
+
+            .withBefore(before)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .withType(type)
+
+            .withState(state)
+
+            .build();
+  }
+
+  /**
+   * Get all suggestions for a conversation.
+   * 
+   * @param request The request object
+   * @return SuggestionListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SuggestionListing getConversationSuggestions(GetConversationSuggestionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SuggestionListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SuggestionListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get all suggestions for a conversation.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SuggestionListing> getConversationSuggestions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SuggestionListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SuggestionListing> response = (ApiResponse<SuggestionListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SuggestionListing> response = (ApiResponse<SuggestionListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -7412,96 +7602,6 @@ public class ConversationsApi {
   }
 
   /**
-   * Get a list of Messaging Stickers (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param messengerType Messenger Type (required)
-   * @param pageSize Page size (optional, default to 25)
-   * @param pageNumber Page number (optional, default to 1)
-   * @return MessagingStickerEntityListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public MessagingStickerEntityListing getConversationsMessagingSticker(String messengerType, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return  getConversationsMessagingSticker(createGetConversationsMessagingStickerRequest(messengerType, pageSize, pageNumber));
-  }
-
-  /**
-   * Get a list of Messaging Stickers (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param messengerType Messenger Type (required)
-   * @param pageSize Page size (optional, default to 25)
-   * @param pageNumber Page number (optional, default to 1)
-   * @return MessagingStickerEntityListing
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<MessagingStickerEntityListing> getConversationsMessagingStickerWithHttpInfo(String messengerType, Integer pageSize, Integer pageNumber) throws IOException {
-    return getConversationsMessagingSticker(createGetConversationsMessagingStickerRequest(messengerType, pageSize, pageNumber).withHttpInfo());
-  }
-
-  private GetConversationsMessagingStickerRequest createGetConversationsMessagingStickerRequest(String messengerType, Integer pageSize, Integer pageNumber) {
-    return GetConversationsMessagingStickerRequest.builder()
-            .withMessengerType(messengerType)
-
-            .withPageSize(pageSize)
-
-            .withPageNumber(pageNumber)
-
-            .build();
-  }
-
-  /**
-   * Get a list of Messaging Stickers (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param request The request object
-   * @return MessagingStickerEntityListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public MessagingStickerEntityListing getConversationsMessagingSticker(GetConversationsMessagingStickerRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<MessagingStickerEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessagingStickerEntityListing>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get a list of Messaging Stickers (Deprecated)
-   * This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<MessagingStickerEntityListing> getConversationsMessagingSticker(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<MessagingStickerEntityListing>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<MessagingStickerEntityListing> response = (ApiResponse<MessagingStickerEntityListing>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<MessagingStickerEntityListing> response = (ApiResponse<MessagingStickerEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
    * Get a list of Supported Content profiles
    * 
    * @param pageSize Page size (optional, default to 25)
@@ -10721,6 +10821,93 @@ public class ConversationsApi {
   }
 
   /**
+   * Update conversation by setting its parking state
+   * 
+   * patchConversationsEmailParticipantParkingstate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param body Parking update request (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchConversationsEmailParticipantParkingstate(String conversationId, String participantId, ParkingStateRequest body) throws IOException, ApiException {
+     patchConversationsEmailParticipantParkingstate(createPatchConversationsEmailParticipantParkingstateRequest(conversationId, participantId, body));
+  }
+
+  /**
+   * Update conversation by setting its parking state
+   * 
+   * patchConversationsEmailParticipantParkingstate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param body Parking update request (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchConversationsEmailParticipantParkingstateWithHttpInfo(String conversationId, String participantId, ParkingStateRequest body) throws IOException {
+    return patchConversationsEmailParticipantParkingstate(createPatchConversationsEmailParticipantParkingstateRequest(conversationId, participantId, body).withHttpInfo());
+  }
+
+  private PatchConversationsEmailParticipantParkingstateRequest createPatchConversationsEmailParticipantParkingstateRequest(String conversationId, String participantId, ParkingStateRequest body) {
+    return PatchConversationsEmailParticipantParkingstateRequest.builder()
+            .withConversationId(conversationId)
+
+            .withParticipantId(participantId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update conversation by setting its parking state
+   * 
+   * patchConversationsEmailParticipantParkingstate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchConversationsEmailParticipantParkingstate(PatchConversationsEmailParticipantParkingstateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Update conversation by setting its parking state
+   * 
+   * patchConversationsEmailParticipantParkingstate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchConversationsEmailParticipantParkingstate(ApiRequest<ParkingStateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update a conversation by disconnecting all of the participants
    * 
    * @param conversationId conversationId (required)
@@ -12279,7 +12466,6 @@ public class ConversationsApi {
   /**
    * Barge a conversation creating a barged in conference of connected participants.
    * 
-   * postConversationBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversation ID (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -12291,7 +12477,6 @@ public class ConversationsApi {
   /**
    * Barge a conversation creating a barged in conference of connected participants.
    * 
-   * postConversationBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversation ID (required)
    * @throws IOException if the request fails to be processed
    */
@@ -12309,7 +12494,6 @@ public class ConversationsApi {
   /**
    * Barge a conversation creating a barged in conference of connected participants.
    * 
-   * postConversationBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -12328,7 +12512,6 @@ public class ConversationsApi {
   /**
    * Barge a conversation creating a barged in conference of connected participants.
    * 
-   * postConversationBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -13096,6 +13279,171 @@ public class ConversationsApi {
   }
 
   /**
+   * Save an engagement on the suggestion.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param suggestionId Suggestion ID (required)
+   * @param body  (required)
+   * @return SuggestionEngagement
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SuggestionEngagement postConversationSuggestionEngagement(String conversationId, String suggestionId, SuggestionEngagement body) throws IOException, ApiException {
+    return  postConversationSuggestionEngagement(createPostConversationSuggestionEngagementRequest(conversationId, suggestionId, body));
+  }
+
+  /**
+   * Save an engagement on the suggestion.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param suggestionId Suggestion ID (required)
+   * @param body  (required)
+   * @return SuggestionEngagement
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SuggestionEngagement> postConversationSuggestionEngagementWithHttpInfo(String conversationId, String suggestionId, SuggestionEngagement body) throws IOException {
+    return postConversationSuggestionEngagement(createPostConversationSuggestionEngagementRequest(conversationId, suggestionId, body).withHttpInfo());
+  }
+
+  private PostConversationSuggestionEngagementRequest createPostConversationSuggestionEngagementRequest(String conversationId, String suggestionId, SuggestionEngagement body) {
+    return PostConversationSuggestionEngagementRequest.builder()
+            .withConversationId(conversationId)
+
+            .withSuggestionId(suggestionId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Save an engagement on the suggestion.
+   * 
+   * @param request The request object
+   * @return SuggestionEngagement
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SuggestionEngagement postConversationSuggestionEngagement(PostConversationSuggestionEngagementRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SuggestionEngagement> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SuggestionEngagement>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Save an engagement on the suggestion.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SuggestionEngagement> postConversationSuggestionEngagement(ApiRequest<SuggestionEngagement> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SuggestionEngagement>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SuggestionEngagement> response = (ApiResponse<SuggestionEngagement>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SuggestionEngagement> response = (ApiResponse<SuggestionEngagement>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Suggestion feedback.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param body SuggestionFeedback (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationSuggestionsFeedback(String conversationId, Feedback body) throws IOException, ApiException {
+     postConversationSuggestionsFeedback(createPostConversationSuggestionsFeedbackRequest(conversationId, body));
+  }
+
+  /**
+   * Suggestion feedback.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param body SuggestionFeedback (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationSuggestionsFeedbackWithHttpInfo(String conversationId, Feedback body) throws IOException {
+    return postConversationSuggestionsFeedback(createPostConversationSuggestionsFeedbackRequest(conversationId, body).withHttpInfo());
+  }
+
+  private PostConversationSuggestionsFeedbackRequest createPostConversationSuggestionsFeedbackRequest(String conversationId, Feedback body) {
+    return PostConversationSuggestionsFeedbackRequest.builder()
+            .withConversationId(conversationId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Suggestion feedback.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationSuggestionsFeedback(PostConversationSuggestionsFeedbackRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Suggestion feedback.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationSuggestionsFeedback(ApiRequest<Feedback> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Submit feedback for the summary.
    * 
    * @param conversationId Conversation ID (required)
@@ -13263,7 +13611,6 @@ public class ConversationsApi {
   /**
    * Barge a given participant's call creating a barged in conference of connected participants.
    * 
-   * postConversationsCallParticipantBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @throws ApiException if the request fails on the server
@@ -13276,7 +13623,6 @@ public class ConversationsApi {
   /**
    * Barge a given participant's call creating a barged in conference of connected participants.
    * 
-   * postConversationsCallParticipantBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @throws IOException if the request fails to be processed
@@ -13297,7 +13643,6 @@ public class ConversationsApi {
   /**
    * Barge a given participant's call creating a barged in conference of connected participants.
    * 
-   * postConversationsCallParticipantBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -13316,7 +13661,6 @@ public class ConversationsApi {
   /**
    * Barge a given participant's call creating a barged in conference of connected participants.
    * 
-   * postConversationsCallParticipantBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -15587,6 +15931,81 @@ public class ConversationsApi {
   }
 
   /**
+   * Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
+   * 
+   * @param conversationId conversationId (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationsEmailReconnect(String conversationId) throws IOException, ApiException {
+     postConversationsEmailReconnect(createPostConversationsEmailReconnectRequest(conversationId));
+  }
+
+  /**
+   * Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
+   * 
+   * @param conversationId conversationId (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationsEmailReconnectWithHttpInfo(String conversationId) throws IOException {
+    return postConversationsEmailReconnect(createPostConversationsEmailReconnectRequest(conversationId).withHttpInfo());
+  }
+
+  private PostConversationsEmailReconnectRequest createPostConversationsEmailReconnectRequest(String conversationId) {
+    return PostConversationsEmailReconnectRequest.builder()
+            .withConversationId(conversationId)
+
+            .build();
+  }
+
+  /**
+   * Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationsEmailReconnect(PostConversationsEmailReconnectRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationsEmailReconnect(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create an email conversation
    * If the direction of the request is INBOUND, this will create an external conversation with a third party provider. If the direction of the the request is OUTBOUND, this will create a conversation to send outbound emails on behalf of a queue.
    * @param body Create email request (required)
@@ -16816,11 +17235,11 @@ public class ConversationsApi {
    * Create an outbound messaging conversation.
    * If there is an existing conversation between the remote address and the address associated with the queue specified in createOutboundRequest then the result of this request depends on the state of that conversation and the useExistingConversation field of createOutboundRequest. If the existing conversation is in alerting or connected state, then the request will fail. If the existing conversation is disconnected but still within the conversation window then the request will fail unless useExistingConversation is set to true.
    * @param body Create outbound messaging conversation (required)
-   * @return MessageConversation
+   * @return CreateOutboundMessagingConversationResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public MessageConversation postConversationsMessages(CreateOutboundMessagingConversationRequest body) throws IOException, ApiException {
+  public CreateOutboundMessagingConversationResponse postConversationsMessages(CreateOutboundMessagingConversationRequest body) throws IOException, ApiException {
     return  postConversationsMessages(createPostConversationsMessagesRequest(body));
   }
 
@@ -16828,10 +17247,10 @@ public class ConversationsApi {
    * Create an outbound messaging conversation.
    * If there is an existing conversation between the remote address and the address associated with the queue specified in createOutboundRequest then the result of this request depends on the state of that conversation and the useExistingConversation field of createOutboundRequest. If the existing conversation is in alerting or connected state, then the request will fail. If the existing conversation is disconnected but still within the conversation window then the request will fail unless useExistingConversation is set to true.
    * @param body Create outbound messaging conversation (required)
-   * @return MessageConversation
+   * @return CreateOutboundMessagingConversationResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<MessageConversation> postConversationsMessagesWithHttpInfo(CreateOutboundMessagingConversationRequest body) throws IOException {
+  public ApiResponse<CreateOutboundMessagingConversationResponse> postConversationsMessagesWithHttpInfo(CreateOutboundMessagingConversationRequest body) throws IOException {
     return postConversationsMessages(createPostConversationsMessagesRequest(body).withHttpInfo());
   }
 
@@ -16846,13 +17265,13 @@ public class ConversationsApi {
    * Create an outbound messaging conversation.
    * If there is an existing conversation between the remote address and the address associated with the queue specified in createOutboundRequest then the result of this request depends on the state of that conversation and the useExistingConversation field of createOutboundRequest. If the existing conversation is in alerting or connected state, then the request will fail. If the existing conversation is disconnected but still within the conversation window then the request will fail unless useExistingConversation is set to true.
    * @param request The request object
-   * @return MessageConversation
+   * @return CreateOutboundMessagingConversationResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public MessageConversation postConversationsMessages(PostConversationsMessagesRequest request) throws IOException, ApiException {
+  public CreateOutboundMessagingConversationResponse postConversationsMessages(PostConversationsMessagesRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<MessageConversation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessageConversation>() {});
+      ApiResponse<CreateOutboundMessagingConversationResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CreateOutboundMessagingConversationResponse>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -16868,13 +17287,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<MessageConversation> postConversationsMessages(ApiRequest<CreateOutboundMessagingConversationRequest> request) throws IOException {
+  public ApiResponse<CreateOutboundMessagingConversationResponse> postConversationsMessages(ApiRequest<CreateOutboundMessagingConversationRequest> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<MessageConversation>() {});
+      return pcapiClient.invoke(request, new TypeReference<CreateOutboundMessagingConversationResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<MessageConversation> response = (ApiResponse<MessageConversation>)(ApiResponse<?>)exception;
+      ApiResponse<CreateOutboundMessagingConversationResponse> response = (ApiResponse<CreateOutboundMessagingConversationResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -16885,7 +17304,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<MessageConversation> response = (ApiResponse<MessageConversation>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<CreateOutboundMessagingConversationResponse> response = (ApiResponse<CreateOutboundMessagingConversationResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

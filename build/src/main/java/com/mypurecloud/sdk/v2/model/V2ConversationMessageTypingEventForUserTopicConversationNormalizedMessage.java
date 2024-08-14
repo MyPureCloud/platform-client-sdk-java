@@ -12,16 +12,12 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.V2ConversationMessageTypingEventForUserTopicConversationMessageContent;
 import com.mypurecloud.sdk.v2.model.V2ConversationMessageTypingEventForUserTopicConversationMessageEvent;
 import com.mypurecloud.sdk.v2.model.V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel;
-import com.mypurecloud.sdk.v2.model.V2ConversationMessageTypingEventForUserTopicConversationReason;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -30,7 +26,6 @@ import java.io.Serializable;
 
 public class V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage  implements Serializable {
   
-  private String id = null;
   private V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel channel = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
@@ -51,9 +46,6 @@ public class V2ConversationMessageTypingEventForUserTopicConversationNormalizedM
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    TEXT("Text"),
-    STRUCTURED("Structured"),
-    RECEIPT("Receipt"),
     EVENT("Event");
 
     private String value;
@@ -82,111 +74,7 @@ public class V2ConversationMessageTypingEventForUserTopicConversationNormalizedM
     }
   }
   private TypeEnum type = null;
-  private String text = null;
-  private List<V2ConversationMessageTypingEventForUserTopicConversationMessageContent> content = new ArrayList<V2ConversationMessageTypingEventForUserTopicConversationMessageContent>();
   private List<V2ConversationMessageTypingEventForUserTopicConversationMessageEvent> events = new ArrayList<V2ConversationMessageTypingEventForUserTopicConversationMessageEvent>();
-
-  private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
-    public StatusEnumDeserializer() {
-      super(StatusEnumDeserializer.class);
-    }
-
-    @Override
-    public StatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
-            throws IOException {
-      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
-      return StatusEnum.fromString(node.toString().replace("\"", ""));
-    }
-  }
-  /**
-   * Gets or Sets status
-   */
- @JsonDeserialize(using = StatusEnumDeserializer.class)
-  public enum StatusEnum {
-    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    SENT("Sent"),
-    DELIVERED("Delivered"),
-    READ("Read"),
-    FAILED("Failed"),
-    PUBLISHED("Published"),
-    REMOVED("Removed");
-
-    private String value;
-
-    StatusEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonCreator
-    public static StatusEnum fromString(String key) {
-      if (key == null) return null;
-
-      for (StatusEnum value : StatusEnum.values()) {
-        if (key.equalsIgnoreCase(value.toString())) {
-          return value;
-        }
-      }
-
-      return StatusEnum.values()[0];
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-  private StatusEnum status = null;
-  private List<V2ConversationMessageTypingEventForUserTopicConversationReason> reasons = new ArrayList<V2ConversationMessageTypingEventForUserTopicConversationReason>();
-
-  private static class OriginatingEntityEnumDeserializer extends StdDeserializer<OriginatingEntityEnum> {
-    public OriginatingEntityEnumDeserializer() {
-      super(OriginatingEntityEnumDeserializer.class);
-    }
-
-    @Override
-    public OriginatingEntityEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
-            throws IOException {
-      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
-      return OriginatingEntityEnum.fromString(node.toString().replace("\"", ""));
-    }
-  }
-  /**
-   * Gets or Sets originatingEntity
-   */
- @JsonDeserialize(using = OriginatingEntityEnumDeserializer.class)
-  public enum OriginatingEntityEnum {
-    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    HUMAN("Human"),
-    BOT("Bot");
-
-    private String value;
-
-    OriginatingEntityEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonCreator
-    public static OriginatingEntityEnum fromString(String key) {
-      if (key == null) return null;
-
-      for (OriginatingEntityEnum value : OriginatingEntityEnum.values()) {
-        if (key.equalsIgnoreCase(value.toString())) {
-          return value;
-        }
-      }
-
-      return OriginatingEntityEnum.values()[0];
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-  private OriginatingEntityEnum originatingEntity = null;
-  private Boolean isFinalReceipt = null;
 
   private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
     public DirectionEnumDeserializer() {
@@ -235,26 +123,8 @@ public class V2ConversationMessageTypingEventForUserTopicConversationNormalizedM
     }
   }
   private DirectionEnum direction = null;
-  private Map<String, String> metadata = null;
 
   
-  /**
-   **/
-  public V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage id(String id) {
-    this.id = id;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-  public void setId(String id) {
-    this.id = id;
-  }
-
-
   /**
    **/
   public V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage channel(V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel channel) {
@@ -291,40 +161,6 @@ public class V2ConversationMessageTypingEventForUserTopicConversationNormalizedM
 
   /**
    **/
-  public V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage text(String text) {
-    this.text = text;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("text")
-  public String getText() {
-    return text;
-  }
-  public void setText(String text) {
-    this.text = text;
-  }
-
-
-  /**
-   **/
-  public V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage content(List<V2ConversationMessageTypingEventForUserTopicConversationMessageContent> content) {
-    this.content = content;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("content")
-  public List<V2ConversationMessageTypingEventForUserTopicConversationMessageContent> getContent() {
-    return content;
-  }
-  public void setContent(List<V2ConversationMessageTypingEventForUserTopicConversationMessageContent> content) {
-    this.content = content;
-  }
-
-
-  /**
-   **/
   public V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage events(List<V2ConversationMessageTypingEventForUserTopicConversationMessageEvent> events) {
     this.events = events;
     return this;
@@ -337,74 +173,6 @@ public class V2ConversationMessageTypingEventForUserTopicConversationNormalizedM
   }
   public void setEvents(List<V2ConversationMessageTypingEventForUserTopicConversationMessageEvent> events) {
     this.events = events;
-  }
-
-
-  /**
-   **/
-  public V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage status(StatusEnum status) {
-    this.status = status;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("status")
-  public StatusEnum getStatus() {
-    return status;
-  }
-  public void setStatus(StatusEnum status) {
-    this.status = status;
-  }
-
-
-  /**
-   **/
-  public V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage reasons(List<V2ConversationMessageTypingEventForUserTopicConversationReason> reasons) {
-    this.reasons = reasons;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("reasons")
-  public List<V2ConversationMessageTypingEventForUserTopicConversationReason> getReasons() {
-    return reasons;
-  }
-  public void setReasons(List<V2ConversationMessageTypingEventForUserTopicConversationReason> reasons) {
-    this.reasons = reasons;
-  }
-
-
-  /**
-   **/
-  public V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage originatingEntity(OriginatingEntityEnum originatingEntity) {
-    this.originatingEntity = originatingEntity;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("originatingEntity")
-  public OriginatingEntityEnum getOriginatingEntity() {
-    return originatingEntity;
-  }
-  public void setOriginatingEntity(OriginatingEntityEnum originatingEntity) {
-    this.originatingEntity = originatingEntity;
-  }
-
-
-  /**
-   **/
-  public V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage isFinalReceipt(Boolean isFinalReceipt) {
-    this.isFinalReceipt = isFinalReceipt;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("isFinalReceipt")
-  public Boolean getIsFinalReceipt() {
-    return isFinalReceipt;
-  }
-  public void setIsFinalReceipt(Boolean isFinalReceipt) {
-    this.isFinalReceipt = isFinalReceipt;
   }
 
 
@@ -425,23 +193,6 @@ public class V2ConversationMessageTypingEventForUserTopicConversationNormalizedM
   }
 
 
-  /**
-   **/
-  public V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage metadata(Map<String, String> metadata) {
-    this.metadata = metadata;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("metadata")
-  public Map<String, String> getMetadata() {
-    return metadata;
-  }
-  public void setMetadata(Map<String, String> metadata) {
-    this.metadata = metadata;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -452,23 +203,15 @@ public class V2ConversationMessageTypingEventForUserTopicConversationNormalizedM
     }
     V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage = (V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage) o;
 
-    return Objects.equals(this.id, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.id) &&
-            Objects.equals(this.channel, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.channel) &&
+    return Objects.equals(this.channel, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.channel) &&
             Objects.equals(this.type, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.type) &&
-            Objects.equals(this.text, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.text) &&
-            Objects.equals(this.content, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.content) &&
             Objects.equals(this.events, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.events) &&
-            Objects.equals(this.status, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.status) &&
-            Objects.equals(this.reasons, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.reasons) &&
-            Objects.equals(this.originatingEntity, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.originatingEntity) &&
-            Objects.equals(this.isFinalReceipt, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.isFinalReceipt) &&
-            Objects.equals(this.direction, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.direction) &&
-            Objects.equals(this.metadata, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.metadata);
+            Objects.equals(this.direction, v2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage.direction);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, channel, type, text, content, events, status, reasons, originatingEntity, isFinalReceipt, direction, metadata);
+    return Objects.hash(channel, type, events, direction);
   }
 
   @Override
@@ -476,18 +219,10 @@ public class V2ConversationMessageTypingEventForUserTopicConversationNormalizedM
     StringBuilder sb = new StringBuilder();
     sb.append("class V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    text: ").append(toIndentedString(text)).append("\n");
-    sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("    events: ").append(toIndentedString(events)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    reasons: ").append(toIndentedString(reasons)).append("\n");
-    sb.append("    originatingEntity: ").append(toIndentedString(originatingEntity)).append("\n");
-    sb.append("    isFinalReceipt: ").append(toIndentedString(isFinalReceipt)).append("\n");
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
-    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

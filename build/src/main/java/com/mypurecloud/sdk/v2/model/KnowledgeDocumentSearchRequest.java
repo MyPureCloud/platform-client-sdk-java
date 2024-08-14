@@ -18,6 +18,8 @@ import com.mypurecloud.sdk.v2.model.KnowledgeConversationContext;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchClientApplication;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -187,6 +189,53 @@ public class KnowledgeDocumentSearchRequest  implements Serializable {
   private KnowledgeConversationContext conversationContext = null;
   private Float confidenceThreshold = null;
   private Integer answerHighlightTopResults = null;
+
+  private static class AnswerModeEnumDeserializer extends StdDeserializer<AnswerModeEnum> {
+    public AnswerModeEnumDeserializer() {
+      super(AnswerModeEnumDeserializer.class);
+    }
+
+    @Override
+    public AnswerModeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return AnswerModeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets answerMode
+   */
+ @JsonDeserialize(using = AnswerModeEnumDeserializer.class)
+  public enum AnswerModeEnum {
+    ANSWERHIGHLIGHT("AnswerHighlight"),
+    ANSWERGENERATION("AnswerGeneration");
+
+    private String value;
+
+    AnswerModeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static AnswerModeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (AnswerModeEnum value : AnswerModeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return AnswerModeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<AnswerModeEnum> answerMode = new ArrayList<AnswerModeEnum>();
 
   
   /**
@@ -446,6 +495,24 @@ public class KnowledgeDocumentSearchRequest  implements Serializable {
   }
 
 
+  /**
+   * Allows extracted answers from an article (AnswerHighlight) and/or AI-generated answers (AnswerGeneration). Default mode: AnswerHighlight. Use this property with answerHighlightTopResults.
+   **/
+  public KnowledgeDocumentSearchRequest answerMode(List<AnswerModeEnum> answerMode) {
+    this.answerMode = answerMode;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Allows extracted answers from an article (AnswerHighlight) and/or AI-generated answers (AnswerGeneration). Default mode: AnswerHighlight. Use this property with answerHighlightTopResults.")
+  @JsonProperty("answerMode")
+  public List<AnswerModeEnum> getAnswerMode() {
+    return answerMode;
+  }
+  public void setAnswerMode(List<AnswerModeEnum> answerMode) {
+    this.answerMode = answerMode;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -471,12 +538,13 @@ public class KnowledgeDocumentSearchRequest  implements Serializable {
             Objects.equals(this.application, knowledgeDocumentSearchRequest.application) &&
             Objects.equals(this.conversationContext, knowledgeDocumentSearchRequest.conversationContext) &&
             Objects.equals(this.confidenceThreshold, knowledgeDocumentSearchRequest.confidenceThreshold) &&
-            Objects.equals(this.answerHighlightTopResults, knowledgeDocumentSearchRequest.answerHighlightTopResults);
+            Objects.equals(this.answerHighlightTopResults, knowledgeDocumentSearchRequest.answerHighlightTopResults) &&
+            Objects.equals(this.answerMode, knowledgeDocumentSearchRequest.answerMode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(query, pageSize, pageNumber, searchId, total, pageCount, queryType, includeDraftDocuments, interval, filter, sortOrder, sortBy, application, conversationContext, confidenceThreshold, answerHighlightTopResults);
+    return Objects.hash(query, pageSize, pageNumber, searchId, total, pageCount, queryType, includeDraftDocuments, interval, filter, sortOrder, sortBy, application, conversationContext, confidenceThreshold, answerHighlightTopResults, answerMode);
   }
 
   @Override
@@ -500,6 +568,7 @@ public class KnowledgeDocumentSearchRequest  implements Serializable {
     sb.append("    conversationContext: ").append(toIndentedString(conversationContext)).append("\n");
     sb.append("    confidenceThreshold: ").append(toIndentedString(confidenceThreshold)).append("\n");
     sb.append("    answerHighlightTopResults: ").append(toIndentedString(answerHighlightTopResults)).append("\n");
+    sb.append("    answerMode: ").append(toIndentedString(answerMode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

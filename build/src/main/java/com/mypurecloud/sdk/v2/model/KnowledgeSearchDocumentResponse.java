@@ -97,6 +97,9 @@ public class KnowledgeSearchDocumentResponse  implements Serializable {
   private List<LabelResponse> labels = new ArrayList<LabelResponse>();
   private KnowledgeBaseReference knowledgeBase = null;
   private String externalId = null;
+  private String externalUrl = null;
+  private AddressableEntityRef source = null;
+  private Boolean readonly = null;
   private List<DocumentVariationAnswer> variations = new ArrayList<DocumentVariationAnswer>();
   private String answer = null;
   private String selfUri = null;
@@ -376,6 +379,60 @@ public class KnowledgeSearchDocumentResponse  implements Serializable {
 
 
   /**
+   * The URL to external document.
+   **/
+  public KnowledgeSearchDocumentResponse externalUrl(String externalUrl) {
+    this.externalUrl = externalUrl;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The URL to external document.")
+  @JsonProperty("externalUrl")
+  public String getExternalUrl() {
+    return externalUrl;
+  }
+  public void setExternalUrl(String externalUrl) {
+    this.externalUrl = externalUrl;
+  }
+
+
+  /**
+   * The reference to source associated with the document.
+   **/
+  public KnowledgeSearchDocumentResponse source(AddressableEntityRef source) {
+    this.source = source;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The reference to source associated with the document.")
+  @JsonProperty("source")
+  public AddressableEntityRef getSource() {
+    return source;
+  }
+  public void setSource(AddressableEntityRef source) {
+    this.source = source;
+  }
+
+
+  /**
+   * Whether the document is read-only.
+   **/
+  public KnowledgeSearchDocumentResponse readonly(Boolean readonly) {
+    this.readonly = readonly;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether the document is read-only.")
+  @JsonProperty("readonly")
+  public Boolean getReadonly() {
+    return readonly;
+  }
+  public void setReadonly(Boolean readonly) {
+    this.readonly = readonly;
+  }
+
+
+  /**
    * Variations of the document.
    **/
   public KnowledgeSearchDocumentResponse variations(List<DocumentVariationAnswer> variations) {
@@ -445,6 +502,9 @@ public class KnowledgeSearchDocumentResponse  implements Serializable {
             Objects.equals(this.labels, knowledgeSearchDocumentResponse.labels) &&
             Objects.equals(this.knowledgeBase, knowledgeSearchDocumentResponse.knowledgeBase) &&
             Objects.equals(this.externalId, knowledgeSearchDocumentResponse.externalId) &&
+            Objects.equals(this.externalUrl, knowledgeSearchDocumentResponse.externalUrl) &&
+            Objects.equals(this.source, knowledgeSearchDocumentResponse.source) &&
+            Objects.equals(this.readonly, knowledgeSearchDocumentResponse.readonly) &&
             Objects.equals(this.variations, knowledgeSearchDocumentResponse.variations) &&
             Objects.equals(this.answer, knowledgeSearchDocumentResponse.answer) &&
             Objects.equals(this.selfUri, knowledgeSearchDocumentResponse.selfUri);
@@ -452,7 +512,7 @@ public class KnowledgeSearchDocumentResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, title, visible, alternatives, state, dateCreated, dateModified, dateImported, lastPublishedVersionNumber, datePublished, createdBy, modifiedBy, documentVersion, category, labels, knowledgeBase, externalId, variations, answer, selfUri);
+    return Objects.hash(id, title, visible, alternatives, state, dateCreated, dateModified, dateImported, lastPublishedVersionNumber, datePublished, createdBy, modifiedBy, documentVersion, category, labels, knowledgeBase, externalId, externalUrl, source, readonly, variations, answer, selfUri);
   }
 
   @Override
@@ -477,6 +537,9 @@ public class KnowledgeSearchDocumentResponse  implements Serializable {
     sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
     sb.append("    knowledgeBase: ").append(toIndentedString(knowledgeBase)).append("\n");
     sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
+    sb.append("    externalUrl: ").append(toIndentedString(externalUrl)).append("\n");
+    sb.append("    source: ").append(toIndentedString(source)).append("\n");
+    sb.append("    readonly: ").append(toIndentedString(readonly)).append("\n");
     sb.append("    variations: ").append(toIndentedString(variations)).append("\n");
     sb.append("    answer: ").append(toIndentedString(answer)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

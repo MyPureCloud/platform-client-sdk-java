@@ -20,6 +20,7 @@ import com.mypurecloud.sdk.v2.model.UserRecordingEntityListing;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserrecordingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserrecordingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserrecordingMediaRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUserrecordingTranscodingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserrecordingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserrecordingsSummaryRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserrecordingRequest;
@@ -200,13 +201,14 @@ public class UserRecordingsApi {
 
   /**
    * Download a user recording.
-   * 
+   * API should migrate to use GET api/v2/userrecordings/{recordingId}/transcoding
    * @param recordingId User Recording ID (required)
    * @param formatId The desired media format. (optional, default to WEBM)
    * @param async When set to true, api will return 202 response until the recording is ready for download (optional)
    * @return DownloadResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public DownloadResponse getUserrecordingMedia(String recordingId, String formatId, Boolean async) throws IOException, ApiException {
     return  getUserrecordingMedia(createGetUserrecordingMediaRequest(recordingId, formatId, async));
@@ -214,12 +216,13 @@ public class UserRecordingsApi {
 
   /**
    * Download a user recording.
-   * 
+   * API should migrate to use GET api/v2/userrecordings/{recordingId}/transcoding
    * @param recordingId User Recording ID (required)
    * @param formatId The desired media format. (optional, default to WEBM)
    * @param async When set to true, api will return 202 response until the recording is ready for download (optional)
    * @return DownloadResponse
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<DownloadResponse> getUserrecordingMediaWithHttpInfo(String recordingId, String formatId, Boolean async) throws IOException {
     return getUserrecordingMedia(createGetUserrecordingMediaRequest(recordingId, formatId, async).withHttpInfo());
@@ -238,13 +241,97 @@ public class UserRecordingsApi {
 
   /**
    * Download a user recording.
+   * API should migrate to use GET api/v2/userrecordings/{recordingId}/transcoding
+   * @param request The request object
+   * @return DownloadResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   * @deprecated
+   */
+  public DownloadResponse getUserrecordingMedia(GetUserrecordingMediaRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DownloadResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DownloadResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Download a user recording.
+   * API should migrate to use GET api/v2/userrecordings/{recordingId}/transcoding
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   * @deprecated
+   */
+  public ApiResponse<DownloadResponse> getUserrecordingMedia(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DownloadResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DownloadResponse> response = (ApiResponse<DownloadResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DownloadResponse> response = (ApiResponse<DownloadResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Download a user recording.
+   * 
+   * @param recordingId User Recording ID (required)
+   * @param formatId The desired media format. (optional, default to WEBM)
+   * @return DownloadResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DownloadResponse getUserrecordingTranscoding(String recordingId, String formatId) throws IOException, ApiException {
+    return  getUserrecordingTranscoding(createGetUserrecordingTranscodingRequest(recordingId, formatId));
+  }
+
+  /**
+   * Download a user recording.
+   * 
+   * @param recordingId User Recording ID (required)
+   * @param formatId The desired media format. (optional, default to WEBM)
+   * @return DownloadResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DownloadResponse> getUserrecordingTranscodingWithHttpInfo(String recordingId, String formatId) throws IOException {
+    return getUserrecordingTranscoding(createGetUserrecordingTranscodingRequest(recordingId, formatId).withHttpInfo());
+  }
+
+  private GetUserrecordingTranscodingRequest createGetUserrecordingTranscodingRequest(String recordingId, String formatId) {
+    return GetUserrecordingTranscodingRequest.builder()
+            .withRecordingId(recordingId)
+
+            .withFormatId(formatId)
+
+            .build();
+  }
+
+  /**
+   * Download a user recording.
    * 
    * @param request The request object
    * @return DownloadResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DownloadResponse getUserrecordingMedia(GetUserrecordingMediaRequest request) throws IOException, ApiException {
+  public DownloadResponse getUserrecordingTranscoding(GetUserrecordingTranscodingRequest request) throws IOException, ApiException {
     try {
       ApiResponse<DownloadResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DownloadResponse>() {});
       return response.getBody();
@@ -262,7 +349,7 @@ public class UserRecordingsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DownloadResponse> getUserrecordingMedia(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<DownloadResponse> getUserrecordingTranscoding(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<DownloadResponse>() {});
     }

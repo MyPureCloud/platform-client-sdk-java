@@ -109,6 +109,8 @@ public class AnalyticsSession  implements Serializable {
   private DeliveryStatusEnum deliveryStatus = null;
   private Date deliveryStatusChangeDate = null;
   private List<String> destinationAddresses = new ArrayList<String>();
+  private Date detectedSpeechEnd = null;
+  private Date detectedSpeechStart = null;
 
   private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
     public DirectionEnumDeserializer() {
@@ -871,6 +873,42 @@ public class AnalyticsSession  implements Serializable {
   }
   public void setDestinationAddresses(List<String> destinationAddresses) {
     this.destinationAddresses = destinationAddresses;
+  }
+
+
+  /**
+   * Absolute time when the speech ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public AnalyticsSession detectedSpeechEnd(Date detectedSpeechEnd) {
+    this.detectedSpeechEnd = detectedSpeechEnd;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Absolute time when the speech ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("detectedSpeechEnd")
+  public Date getDetectedSpeechEnd() {
+    return detectedSpeechEnd;
+  }
+  public void setDetectedSpeechEnd(Date detectedSpeechEnd) {
+    this.detectedSpeechEnd = detectedSpeechEnd;
+  }
+
+
+  /**
+   * Absolute time when the speech started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public AnalyticsSession detectedSpeechStart(Date detectedSpeechStart) {
+    this.detectedSpeechStart = detectedSpeechStart;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Absolute time when the speech started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("detectedSpeechStart")
+  public Date getDetectedSpeechStart() {
+    return detectedSpeechStart;
+  }
+  public void setDetectedSpeechStart(Date detectedSpeechStart) {
+    this.detectedSpeechStart = detectedSpeechStart;
   }
 
 
@@ -1917,6 +1955,8 @@ public class AnalyticsSession  implements Serializable {
             Objects.equals(this.deliveryStatus, analyticsSession.deliveryStatus) &&
             Objects.equals(this.deliveryStatusChangeDate, analyticsSession.deliveryStatusChangeDate) &&
             Objects.equals(this.destinationAddresses, analyticsSession.destinationAddresses) &&
+            Objects.equals(this.detectedSpeechEnd, analyticsSession.detectedSpeechEnd) &&
+            Objects.equals(this.detectedSpeechStart, analyticsSession.detectedSpeechStart) &&
             Objects.equals(this.direction, analyticsSession.direction) &&
             Objects.equals(this.dispositionAnalyzer, analyticsSession.dispositionAnalyzer) &&
             Objects.equals(this.dispositionName, analyticsSession.dispositionName) &&
@@ -1977,7 +2017,7 @@ public class AnalyticsSession  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(activeSkillIds, acwSkipped, addressFrom, addressOther, addressSelf, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, bargedParticipantId, bcc, callbackNumbers, callbackScheduledTime, callbackUserName, cc, cleared, coachedParticipantId, cobrowseRole, cobrowseRoomId, deliveryStatus, deliveryStatusChangeDate, destinationAddresses, direction, dispositionAnalyzer, dispositionName, dnis, edgeId, eligibleAgentCounts, extendedDeliveryStatus, flowInType, flowOutType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, mediaBridgeId, mediaCount, mediaType, messageType, monitoredParticipantId, outboundCampaignId, outboundContactId, outboundContactListId, peerId, protocolCallId, provider, recording, remote, remoteNameDisplayable, removedSkillIds, requestedRoutings, roomId, routingRing, routingRule, routingRuleType, screenShareAddressSelf, screenShareRoomId, scriptId, selectedAgentId, selectedAgentRank, sessionDnis, sessionId, sharingScreen, skipEnabled, timeoutSeconds, usedRouting, videoAddressSelf, videoRoomId, waitingInteractionCounts, agentGroups, proposedAgents, mediaEndpointStats, flow, metrics, segments);
+    return Objects.hash(activeSkillIds, acwSkipped, addressFrom, addressOther, addressSelf, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, bargedParticipantId, bcc, callbackNumbers, callbackScheduledTime, callbackUserName, cc, cleared, coachedParticipantId, cobrowseRole, cobrowseRoomId, deliveryStatus, deliveryStatusChangeDate, destinationAddresses, detectedSpeechEnd, detectedSpeechStart, direction, dispositionAnalyzer, dispositionName, dnis, edgeId, eligibleAgentCounts, extendedDeliveryStatus, flowInType, flowOutType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, mediaBridgeId, mediaCount, mediaType, messageType, monitoredParticipantId, outboundCampaignId, outboundContactId, outboundContactListId, peerId, protocolCallId, provider, recording, remote, remoteNameDisplayable, removedSkillIds, requestedRoutings, roomId, routingRing, routingRule, routingRuleType, screenShareAddressSelf, screenShareRoomId, scriptId, selectedAgentId, selectedAgentRank, sessionDnis, sessionId, sharingScreen, skipEnabled, timeoutSeconds, usedRouting, videoAddressSelf, videoRoomId, waitingInteractionCounts, agentGroups, proposedAgents, mediaEndpointStats, flow, metrics, segments);
   }
 
   @Override
@@ -2010,6 +2050,8 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    deliveryStatus: ").append(toIndentedString(deliveryStatus)).append("\n");
     sb.append("    deliveryStatusChangeDate: ").append(toIndentedString(deliveryStatusChangeDate)).append("\n");
     sb.append("    destinationAddresses: ").append(toIndentedString(destinationAddresses)).append("\n");
+    sb.append("    detectedSpeechEnd: ").append(toIndentedString(detectedSpeechEnd)).append("\n");
+    sb.append("    detectedSpeechStart: ").append(toIndentedString(detectedSpeechStart)).append("\n");
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
     sb.append("    dispositionAnalyzer: ").append(toIndentedString(dispositionAnalyzer)).append("\n");
     sb.append("    dispositionName: ").append(toIndentedString(dispositionName)).append("\n");

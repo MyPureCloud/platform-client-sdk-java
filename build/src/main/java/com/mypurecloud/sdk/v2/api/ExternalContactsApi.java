@@ -690,7 +690,7 @@ public class ExternalContactsApi {
    * Fetch an external contact
    * 
    * @param contactId ExternalContact ID (required)
-   * @param expand which fields, if any, to expand (externalOrganization,externalDataSources) (optional)
+   * @param expand which fields, if any, to expand (externalOrganization,externalDataSources,identifiers) (optional)
    * @return ExternalContact
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -703,7 +703,7 @@ public class ExternalContactsApi {
    * Fetch an external contact
    * 
    * @param contactId ExternalContact ID (required)
-   * @param expand which fields, if any, to expand (externalOrganization,externalDataSources) (optional)
+   * @param expand which fields, if any, to expand (externalOrganization,externalDataSources,identifiers) (optional)
    * @return ExternalContact
    * @throws IOException if the request fails to be processed
    */
@@ -1120,7 +1120,7 @@ public class ExternalContactsApi {
    * Fetch an unresolved external contact
    * 
    * @param contactId ExternalContact ID (required)
-   * @param expand which fields, if any, to expand (externalOrganization,externalDataSources) (optional)
+   * @param expand which fields, if any, to expand (externalOrganization,externalDataSources,identifiers) (optional)
    * @return ExternalContact
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1133,7 +1133,7 @@ public class ExternalContactsApi {
    * Fetch an unresolved external contact
    * 
    * @param contactId ExternalContact ID (required)
-   * @param expand which fields, if any, to expand (externalOrganization,externalDataSources) (optional)
+   * @param expand which fields, if any, to expand (externalOrganization,externalDataSources,identifiers) (optional)
    * @return ExternalContact
    * @throws IOException if the request fails to be processed
    */
@@ -4696,28 +4696,32 @@ public class ExternalContactsApi {
    * Fetch a contact using an identifier type and value.
    * Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
    * @param identifier  (required)
+   * @param expand which field, if any, to expand (optional)
    * @return ExternalContact
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ExternalContact postExternalcontactsIdentifierlookup(ContactIdentifier identifier) throws IOException, ApiException {
-    return  postExternalcontactsIdentifierlookup(createPostExternalcontactsIdentifierlookupRequest(identifier));
+  public ExternalContact postExternalcontactsIdentifierlookup(ContactIdentifier identifier, List<String> expand) throws IOException, ApiException {
+    return  postExternalcontactsIdentifierlookup(createPostExternalcontactsIdentifierlookupRequest(identifier, expand));
   }
 
   /**
    * Fetch a contact using an identifier type and value.
    * Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
    * @param identifier  (required)
+   * @param expand which field, if any, to expand (optional)
    * @return ExternalContact
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExternalContact> postExternalcontactsIdentifierlookupWithHttpInfo(ContactIdentifier identifier) throws IOException {
-    return postExternalcontactsIdentifierlookup(createPostExternalcontactsIdentifierlookupRequest(identifier).withHttpInfo());
+  public ApiResponse<ExternalContact> postExternalcontactsIdentifierlookupWithHttpInfo(ContactIdentifier identifier, List<String> expand) throws IOException {
+    return postExternalcontactsIdentifierlookup(createPostExternalcontactsIdentifierlookupRequest(identifier, expand).withHttpInfo());
   }
 
-  private PostExternalcontactsIdentifierlookupRequest createPostExternalcontactsIdentifierlookupRequest(ContactIdentifier identifier) {
+  private PostExternalcontactsIdentifierlookupRequest createPostExternalcontactsIdentifierlookupRequest(ContactIdentifier identifier, List<String> expand) {
     return PostExternalcontactsIdentifierlookupRequest.builder()
             .withIdentifier(identifier)
+
+            .withExpand(expand)
 
             .build();
   }

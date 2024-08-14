@@ -52,7 +52,9 @@ public class GetTextbotsBotsSearchRequest {
 		GOOGLEDIALOGFLOWES("GoogleDialogFlowES"),
 		GOOGLEDIALOGFLOWCX("GoogleDialogFlowCX"),
 		NUANCEDLG("NuanceDlg"),
-		GENESYSBOTFLOW("GenesysBotFlow");
+		GENESYSBOTFLOW("GenesysBotFlow"),
+		GENESYSDIGITALBOTFLOW("GenesysDigitalBotFlow"),
+		GENESYSVOICESURVEYFLOW("GenesysVoiceSurveyFlow");
 
 		private String value;
 

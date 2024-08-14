@@ -86,10 +86,11 @@ public class Room  implements Serializable {
   private Integer participantLimit = null;
   private List<UserReference> owners = new ArrayList<UserReference>();
   private List<AddressableEntityRef> pinnedMessages = new ArrayList<AddressableEntityRef>();
+  private String jid = null;
   private String selfUri = null;
 
   
-  @ApiModelProperty(example = "null", value = "The jid of the room")
+  @ApiModelProperty(example = "null", value = "The jid of the room if adhoc, the id of the group for group rooms")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -239,6 +240,24 @@ public class Room  implements Serializable {
   }
 
 
+  /**
+   * The jid of the room
+   **/
+  public Room jid(String jid) {
+    this.jid = jid;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The jid of the room")
+  @JsonProperty("jid")
+  public String getJid() {
+    return jid;
+  }
+  public void setJid(String jid) {
+    this.jid = jid;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -265,12 +284,13 @@ public class Room  implements Serializable {
             Objects.equals(this.participantLimit, room.participantLimit) &&
             Objects.equals(this.owners, room.owners) &&
             Objects.equals(this.pinnedMessages, room.pinnedMessages) &&
+            Objects.equals(this.jid, room.jid) &&
             Objects.equals(this.selfUri, room.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, roomType, description, subject, participantLimit, owners, pinnedMessages, selfUri);
+    return Objects.hash(id, name, dateCreated, roomType, description, subject, participantLimit, owners, pinnedMessages, jid, selfUri);
   }
 
   @Override
@@ -287,6 +307,7 @@ public class Room  implements Serializable {
     sb.append("    participantLimit: ").append(toIndentedString(participantLimit)).append("\n");
     sb.append("    owners: ").append(toIndentedString(owners)).append("\n");
     sb.append("    pinnedMessages: ").append(toIndentedString(pinnedMessages)).append("\n");
+    sb.append("    jid: ").append(toIndentedString(jid)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -20,6 +20,7 @@ import com.mypurecloud.sdk.v2.model.ExternalContactsContactChangedTopicExternalO
 import com.mypurecloud.sdk.v2.model.ExternalContactsContactChangedTopicFacebookId;
 import com.mypurecloud.sdk.v2.model.ExternalContactsContactChangedTopicInstagramId;
 import com.mypurecloud.sdk.v2.model.ExternalContactsContactChangedTopicLineId;
+import com.mypurecloud.sdk.v2.model.ExternalContactsContactChangedTopicMergeOperation;
 import com.mypurecloud.sdk.v2.model.ExternalContactsContactChangedTopicPhoneNumber;
 import com.mypurecloud.sdk.v2.model.ExternalContactsContactChangedTopicTwitterId;
 import com.mypurecloud.sdk.v2.model.ExternalContactsContactChangedTopicWhatsAppId;
@@ -111,8 +112,13 @@ public class ExternalContactsContactChangedTopicContact  implements Serializable
   private ExternalContactsContactChangedTopicFacebookId facebookId = null;
   private ExternalContactsContactChangedTopicInstagramId instagramId = null;
   private List<ExternalContactsContactChangedTopicExternalId> externalIds = new ArrayList<ExternalContactsContactChangedTopicExternalId>();
+  private String canonicalContactId = null;
   private ExternalContactsContactChangedTopicDataSchema schema = null;
   private Map<String, Object> customFields = null;
+  private List<String> mergeSet = new ArrayList<String>();
+  private List<String> mergedFrom = new ArrayList<String>();
+  private String mergedTo = null;
+  private ExternalContactsContactChangedTopicMergeOperation mergeOperation = null;
   private Date createDate = null;
   private Date modifyDate = null;
 
@@ -544,6 +550,23 @@ public class ExternalContactsContactChangedTopicContact  implements Serializable
 
   /**
    **/
+  public ExternalContactsContactChangedTopicContact canonicalContactId(String canonicalContactId) {
+    this.canonicalContactId = canonicalContactId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("canonicalContactId")
+  public String getCanonicalContactId() {
+    return canonicalContactId;
+  }
+  public void setCanonicalContactId(String canonicalContactId) {
+    this.canonicalContactId = canonicalContactId;
+  }
+
+
+  /**
+   **/
   public ExternalContactsContactChangedTopicContact schema(ExternalContactsContactChangedTopicDataSchema schema) {
     this.schema = schema;
     return this;
@@ -573,6 +596,74 @@ public class ExternalContactsContactChangedTopicContact  implements Serializable
   }
   public void setCustomFields(Map<String, Object> customFields) {
     this.customFields = customFields;
+  }
+
+
+  /**
+   **/
+  public ExternalContactsContactChangedTopicContact mergeSet(List<String> mergeSet) {
+    this.mergeSet = mergeSet;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("mergeSet")
+  public List<String> getMergeSet() {
+    return mergeSet;
+  }
+  public void setMergeSet(List<String> mergeSet) {
+    this.mergeSet = mergeSet;
+  }
+
+
+  /**
+   **/
+  public ExternalContactsContactChangedTopicContact mergedFrom(List<String> mergedFrom) {
+    this.mergedFrom = mergedFrom;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("mergedFrom")
+  public List<String> getMergedFrom() {
+    return mergedFrom;
+  }
+  public void setMergedFrom(List<String> mergedFrom) {
+    this.mergedFrom = mergedFrom;
+  }
+
+
+  /**
+   **/
+  public ExternalContactsContactChangedTopicContact mergedTo(String mergedTo) {
+    this.mergedTo = mergedTo;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("mergedTo")
+  public String getMergedTo() {
+    return mergedTo;
+  }
+  public void setMergedTo(String mergedTo) {
+    this.mergedTo = mergedTo;
+  }
+
+
+  /**
+   **/
+  public ExternalContactsContactChangedTopicContact mergeOperation(ExternalContactsContactChangedTopicMergeOperation mergeOperation) {
+    this.mergeOperation = mergeOperation;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("mergeOperation")
+  public ExternalContactsContactChangedTopicMergeOperation getMergeOperation() {
+    return mergeOperation;
+  }
+  public void setMergeOperation(ExternalContactsContactChangedTopicMergeOperation mergeOperation) {
+    this.mergeOperation = mergeOperation;
   }
 
 
@@ -645,15 +736,20 @@ public class ExternalContactsContactChangedTopicContact  implements Serializable
             Objects.equals(this.facebookId, externalContactsContactChangedTopicContact.facebookId) &&
             Objects.equals(this.instagramId, externalContactsContactChangedTopicContact.instagramId) &&
             Objects.equals(this.externalIds, externalContactsContactChangedTopicContact.externalIds) &&
+            Objects.equals(this.canonicalContactId, externalContactsContactChangedTopicContact.canonicalContactId) &&
             Objects.equals(this.schema, externalContactsContactChangedTopicContact.schema) &&
             Objects.equals(this.customFields, externalContactsContactChangedTopicContact.customFields) &&
+            Objects.equals(this.mergeSet, externalContactsContactChangedTopicContact.mergeSet) &&
+            Objects.equals(this.mergedFrom, externalContactsContactChangedTopicContact.mergedFrom) &&
+            Objects.equals(this.mergedTo, externalContactsContactChangedTopicContact.mergedTo) &&
+            Objects.equals(this.mergeOperation, externalContactsContactChangedTopicContact.mergeOperation) &&
             Objects.equals(this.createDate, externalContactsContactChangedTopicContact.createDate) &&
             Objects.equals(this.modifyDate, externalContactsContactChangedTopicContact.modifyDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, division, externalOrganization, type, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, surveyOptOut, externalSystemUrl, twitterId, lineId, whatsAppId, facebookId, instagramId, externalIds, schema, customFields, createDate, modifyDate);
+    return Objects.hash(id, division, externalOrganization, type, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, surveyOptOut, externalSystemUrl, twitterId, lineId, whatsAppId, facebookId, instagramId, externalIds, canonicalContactId, schema, customFields, mergeSet, mergedFrom, mergedTo, mergeOperation, createDate, modifyDate);
   }
 
   @Override
@@ -686,8 +782,13 @@ public class ExternalContactsContactChangedTopicContact  implements Serializable
     sb.append("    facebookId: ").append(toIndentedString(facebookId)).append("\n");
     sb.append("    instagramId: ").append(toIndentedString(instagramId)).append("\n");
     sb.append("    externalIds: ").append(toIndentedString(externalIds)).append("\n");
+    sb.append("    canonicalContactId: ").append(toIndentedString(canonicalContactId)).append("\n");
     sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
     sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
+    sb.append("    mergeSet: ").append(toIndentedString(mergeSet)).append("\n");
+    sb.append("    mergedFrom: ").append(toIndentedString(mergedFrom)).append("\n");
+    sb.append("    mergedTo: ").append(toIndentedString(mergedTo)).append("\n");
+    sb.append("    mergeOperation: ").append(toIndentedString(mergeOperation)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("    modifyDate: ").append(toIndentedString(modifyDate)).append("\n");
     sb.append("}");

@@ -22,7 +22,6 @@ import com.mypurecloud.sdk.v2.model.ActionTarget;
 import com.mypurecloud.sdk.v2.model.ActionTargetListing;
 import com.mypurecloud.sdk.v2.model.ActionTemplate;
 import com.mypurecloud.sdk.v2.model.ActionTemplateListing;
-import com.mypurecloud.sdk.v2.model.AddressableEntityListing;
 import com.mypurecloud.sdk.v2.model.AppEventRequest;
 import com.mypurecloud.sdk.v2.model.AppEventResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
@@ -44,6 +43,8 @@ import com.mypurecloud.sdk.v2.model.JourneySegment;
 import com.mypurecloud.sdk.v2.model.JourneySegmentRequest;
 import com.mypurecloud.sdk.v2.model.JourneyView;
 import com.mypurecloud.sdk.v2.model.JourneyViewJob;
+import com.mypurecloud.sdk.v2.model.JourneyViewJobListing;
+import com.mypurecloud.sdk.v2.model.JourneyViewListing;
 import com.mypurecloud.sdk.v2.model.JourneyViewResult;
 import com.mypurecloud.sdk.v2.model.Label;
 import com.mypurecloud.sdk.v2.model.Outcome;
@@ -65,6 +66,8 @@ import com.mypurecloud.sdk.v2.model.PatchSegment;
 import com.mypurecloud.sdk.v2.model.SegmentListing;
 import com.mypurecloud.sdk.v2.model.Session;
 import com.mypurecloud.sdk.v2.model.SessionListing;
+import com.mypurecloud.sdk.v2.model.WebEventRequest;
+import com.mypurecloud.sdk.v2.model.WebEventResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneyActionmapRequest;
@@ -104,6 +107,7 @@ import com.mypurecloud.sdk.v2.api.request.GetJourneyViewVersionJobsLatestRequest
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsEventdefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsEventdefinitionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActionmapRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontargetRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontemplateRequest;
@@ -116,6 +120,7 @@ import com.mypurecloud.sdk.v2.api.request.PostJourneyActionmapsEstimatesJobsRequ
 import com.mypurecloud.sdk.v2.api.request.PostJourneyActiontemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyDeploymentActioneventRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyDeploymentAppeventsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostJourneyDeploymentWebeventsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyFlowsPathsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyOutcomesAttributionsJobsRequest;
@@ -2182,7 +2187,6 @@ public class JourneyApiAsync {
   /**
    * Retrieve all events for a given session.
    * 
-   * getJourneySessionEvents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2217,7 +2221,6 @@ public class JourneyApiAsync {
   /**
    * Retrieve all events for a given session.
    * 
-   * getJourneySessionEvents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2724,13 +2727,13 @@ public class JourneyApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<AddressableEntityListing> getJourneyViewsAsync(GetJourneyViewsRequest request, final AsyncApiCallback<AddressableEntityListing> callback) {
+  public Future<JourneyViewListing> getJourneyViewsAsync(GetJourneyViewsRequest request, final AsyncApiCallback<JourneyViewListing> callback) {
     try {
-      final SettableFuture<AddressableEntityListing> future = SettableFuture.create();
+      final SettableFuture<JourneyViewListing> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AddressableEntityListing>() {}, new AsyncApiCallback<ApiResponse<AddressableEntityListing>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<JourneyViewListing>() {}, new AsyncApiCallback<ApiResponse<JourneyViewListing>>() {
         @Override
-        public void onCompleted(ApiResponse<AddressableEntityListing> response) {
+        public void onCompleted(ApiResponse<JourneyViewListing> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -2759,13 +2762,13 @@ public class JourneyApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<AddressableEntityListing>> getJourneyViewsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AddressableEntityListing>> callback) {
+  public Future<ApiResponse<JourneyViewListing>> getJourneyViewsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<JourneyViewListing>> callback) {
     try {
-      final SettableFuture<ApiResponse<AddressableEntityListing>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<JourneyViewListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<AddressableEntityListing>() {}, new AsyncApiCallback<ApiResponse<AddressableEntityListing>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<JourneyViewListing>() {}, new AsyncApiCallback<ApiResponse<JourneyViewListing>>() {
         @Override
-        public void onCompleted(ApiResponse<AddressableEntityListing> response) {
+        public void onCompleted(ApiResponse<JourneyViewListing> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -2773,7 +2776,7 @@ public class JourneyApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<AddressableEntityListing> response = (ApiResponse<AddressableEntityListing>)(ApiResponse<?>)exception;
+            ApiResponse<JourneyViewListing> response = (ApiResponse<JourneyViewListing>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -2781,7 +2784,7 @@ public class JourneyApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<AddressableEntityListing> response = (ApiResponse<AddressableEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<JourneyViewListing> response = (ApiResponse<JourneyViewListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2936,6 +2939,83 @@ public class JourneyApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<JourneyEventDefinitionListing> response = (ApiResponse<JourneyEventDefinitionListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the jobs for an organization.
+   * 
+   * getJourneyViewsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<JourneyViewJobListing> getJourneyViewsJobsAsync(GetJourneyViewsJobsRequest request, final AsyncApiCallback<JourneyViewJobListing> callback) {
+    try {
+      final SettableFuture<JourneyViewJobListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<JourneyViewJobListing>() {}, new AsyncApiCallback<ApiResponse<JourneyViewJobListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<JourneyViewJobListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the jobs for an organization.
+   * 
+   * getJourneyViewsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<JourneyViewJobListing>> getJourneyViewsJobsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<JourneyViewJobListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<JourneyViewJobListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<JourneyViewJobListing>() {}, new AsyncApiCallback<ApiResponse<JourneyViewJobListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<JourneyViewJobListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JourneyViewJobListing> response = (ApiResponse<JourneyViewJobListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JourneyViewJobListing> response = (ApiResponse<JourneyViewJobListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3838,6 +3918,81 @@ public class JourneyApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<AppEventResponse> response = (ApiResponse<AppEventResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Send a journey web event, used for tracking customer activity on a website.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WebEventResponse> postJourneyDeploymentWebeventsAsync(PostJourneyDeploymentWebeventsRequest request, final AsyncApiCallback<WebEventResponse> callback) {
+    try {
+      final SettableFuture<WebEventResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WebEventResponse>() {}, new AsyncApiCallback<ApiResponse<WebEventResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<WebEventResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Send a journey web event, used for tracking customer activity on a website.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WebEventResponse>> postJourneyDeploymentWebeventsAsync(ApiRequest<WebEventRequest> request, final AsyncApiCallback<ApiResponse<WebEventResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WebEventResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WebEventResponse>() {}, new AsyncApiCallback<ApiResponse<WebEventResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<WebEventResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WebEventResponse> response = (ApiResponse<WebEventResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WebEventResponse> response = (ApiResponse<WebEventResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

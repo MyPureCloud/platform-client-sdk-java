@@ -185,8 +185,25 @@ title: ViewFilter
 | **surveyTypes** | <!---->[**List&lt;SurveyTypesEnum&gt;**](#SurveyTypesEnum)<!----> | The surveyTypes is used to filter the view |  [optional] |
 | **surveyResponseStatuses** | <!---->[**List&lt;SurveyResponseStatusesEnum&gt;**](#SurveyResponseStatusesEnum)<!----> | The list of Survey Response Status |  [optional] |
 | **botFlowTypes** | <!---->[**List&lt;BotFlowTypesEnum&gt;**](#BotFlowTypesEnum)<!----> | The botFlowTypes is used to filter the view |  [optional] |
+| **agentTalkDurationMilliseconds** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The agent talk durations in milliseconds used to filter the view |  [optional] |
+| **customerTalkDurationMilliseconds** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The customer talk durations in milliseconds used to filter the view |  [optional] |
+| **overtalkDurationMilliseconds** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The overtalk durations in milliseconds used to filter the view |  [optional] |
+| **silenceDurationMilliseconds** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The silence durations in milliseconds used to filter the view |  [optional] |
+| **acdDurationMilliseconds** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The acd durations in milliseconds used to filter the view |  [optional] |
+| **ivrDurationMilliseconds** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The ivr durations in milliseconds used to filter the view |  [optional] |
+| **otherDurationMilliseconds** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The other (hold/music) durations in milliseconds used to filter the view |  [optional] |
+| **agentTalkPercentage** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The agent talk percentage used to filter the view |  [optional] |
+| **customerTalkPercentage** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The customer talk percentage used to filter the view |  [optional] |
+| **overtalkPercentage** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The overtalk percentage used to filter the view |  [optional] |
+| **silencePercentage** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The silence percentage used to filter the view |  [optional] |
+| **acdPercentage** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The acd percentage used to filter the view |  [optional] |
+| **ivrPercentage** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The ivr percentage used to filter the view |  [optional] |
+| **otherPercentage** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The other (hold/music percentage used to filter the view |  [optional] |
+| **overtalkInstances** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The overtalk instance range used to filter the view |  [optional] |
 | **isScreenRecorded** | <!----><!---->**Boolean**<!----> | Filter to indicate if the screen is recorded |  [optional] |
 | **screenMonitorUserIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of Screen Monitor User Ids |  [optional] |
+| **dashboardType** | [**DashboardTypeEnum**](#DashboardTypeEnum)<!----> | The type of dashboard being filtered |  [optional] |
+| **dashboardAccessFilter** | [**DashboardAccessFilterEnum**](#DashboardAccessFilterEnum)<!----> | The type of dashboard access being filtered |  [optional] |
 {: class="table table-striped"}
 
 
@@ -415,6 +432,7 @@ title: ViewFilter
 | ASSESSMENT | &quot;Assessment&quot; |
 | ASSESSEDCONTENT | &quot;AssessedContent&quot; |
 | EXTERNAL | &quot;External&quot; |
+| NATIVE | &quot;Native&quot; |
 {: class="table table-striped"}
 
 
@@ -637,6 +655,34 @@ title: ViewFilter
 | BOT | &quot;Bot&quot; |
 | DIGITALBOT | &quot;DigitalBot&quot; |
 | VOICESURVEY | &quot;VoiceSurvey&quot; |
+{: class="table table-striped"}
+
+
+<a name="DashboardTypeEnum"></a>
+
+## Enum: DashboardTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ALL | &quot;All&quot; | 
+| PUBLIC | &quot;Public&quot; | 
+| PRIVATE | &quot;Private&quot; | 
+| SHARED | &quot;Shared&quot; | 
+| FAVORITES | &quot;Favorites&quot; | 
+{: class="table table-striped"}
+
+
+<a name="DashboardAccessFilterEnum"></a>
+
+## Enum: DashboardAccessFilterEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| OWNEDBYME | &quot;OwnedByMe&quot; | 
+| OWNEDBYANYONE | &quot;OwnedByAnyone&quot; | 
+| NOTOWNEDBYME | &quot;NotOwnedByMe&quot; | 
 {: class="table table-striped"}
 
 

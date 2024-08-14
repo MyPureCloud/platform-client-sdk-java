@@ -45,7 +45,13 @@ public class CampaignRuleCondition  implements Serializable {
   public enum ConditionTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CAMPAIGNPROGRESS("campaignProgress"),
-    CAMPAIGNAGENTS("campaignAgents");
+    CAMPAIGNAGENTS("campaignAgents"),
+    CAMPAIGNRECORDSATTEMPTED("campaignRecordsAttempted"),
+    CAMPAIGNBUSINESSSUCCESS("campaignBusinessSuccess"),
+    CAMPAIGNBUSINESSFAILURE("campaignBusinessFailure"),
+    CAMPAIGNBUSINESSNEUTRAL("campaignBusinessNeutral"),
+    CAMPAIGNVALIDATTEMPTS("campaignValidAttempts"),
+    CAMPAIGNRIGHTPARTYCONTACTS("campaignRightPartyContacts");
 
     private String value;
 

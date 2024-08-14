@@ -29,11 +29,12 @@ public class DIDPoolEntityListing  implements Serializable, PagedResource<DIDPoo
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String previousUri = null;
-  private String lastUri = null;
+  private Long totalNumberOfEntities = null;
   private String firstUri = null;
   private String selfUri = null;
+  private String lastUri = null;
   private String nextUri = null;
+  private String previousUri = null;
   private Integer pageCount = null;
 
   
@@ -106,36 +107,20 @@ public class DIDPoolEntityListing  implements Serializable, PagedResource<DIDPoo
 
 
   /**
+   * The total organization-wide number of entities.
    **/
-  public DIDPoolEntityListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
+  public DIDPoolEntityListing totalNumberOfEntities(Long totalNumberOfEntities) {
+    this.totalNumberOfEntities = totalNumberOfEntities;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
+  @ApiModelProperty(example = "null", value = "The total organization-wide number of entities.")
+  @JsonProperty("totalNumberOfEntities")
+  public Long getTotalNumberOfEntities() {
+    return totalNumberOfEntities;
   }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
-  }
-
-
-  /**
-   **/
-  public DIDPoolEntityListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
+  public void setTotalNumberOfEntities(Long totalNumberOfEntities) {
+    this.totalNumberOfEntities = totalNumberOfEntities;
   }
 
 
@@ -175,6 +160,23 @@ public class DIDPoolEntityListing  implements Serializable, PagedResource<DIDPoo
 
   /**
    **/
+  public DIDPoolEntityListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
   public DIDPoolEntityListing nextUri(String nextUri) {
     this.nextUri = nextUri;
     return this;
@@ -187,6 +189,23 @@ public class DIDPoolEntityListing  implements Serializable, PagedResource<DIDPoo
   }
   public void setNextUri(String nextUri) {
     this.nextUri = nextUri;
+  }
+
+
+  /**
+   **/
+  public DIDPoolEntityListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
+  }
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
   }
 
 
@@ -221,17 +240,18 @@ public class DIDPoolEntityListing  implements Serializable, PagedResource<DIDPoo
             Objects.equals(this.pageSize, dIDPoolEntityListing.pageSize) &&
             Objects.equals(this.pageNumber, dIDPoolEntityListing.pageNumber) &&
             Objects.equals(this.total, dIDPoolEntityListing.total) &&
-            Objects.equals(this.previousUri, dIDPoolEntityListing.previousUri) &&
-            Objects.equals(this.lastUri, dIDPoolEntityListing.lastUri) &&
+            Objects.equals(this.totalNumberOfEntities, dIDPoolEntityListing.totalNumberOfEntities) &&
             Objects.equals(this.firstUri, dIDPoolEntityListing.firstUri) &&
             Objects.equals(this.selfUri, dIDPoolEntityListing.selfUri) &&
+            Objects.equals(this.lastUri, dIDPoolEntityListing.lastUri) &&
             Objects.equals(this.nextUri, dIDPoolEntityListing.nextUri) &&
+            Objects.equals(this.previousUri, dIDPoolEntityListing.previousUri) &&
             Objects.equals(this.pageCount, dIDPoolEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, previousUri, lastUri, firstUri, selfUri, nextUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, totalNumberOfEntities, firstUri, selfUri, lastUri, nextUri, previousUri, pageCount);
   }
 
   @Override
@@ -243,11 +263,12 @@ public class DIDPoolEntityListing  implements Serializable, PagedResource<DIDPoo
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    totalNumberOfEntities: ").append(toIndentedString(totalNumberOfEntities)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

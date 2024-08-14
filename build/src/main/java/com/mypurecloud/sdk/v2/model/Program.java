@@ -36,6 +36,7 @@ public class Program  implements Serializable {
   private Date dateModified = null;
   private AddressableEntityRef publishedBy = null;
   private Date datePublished = null;
+  private AddressableEntityRef topicLinksJob = null;
   private String selfUri = null;
 
   
@@ -201,6 +202,23 @@ public class Program  implements Serializable {
   }
 
 
+  /**
+   **/
+  public Program topicLinksJob(AddressableEntityRef topicLinksJob) {
+    this.topicLinksJob = topicLinksJob;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("topicLinksJob")
+  public AddressableEntityRef getTopicLinksJob() {
+    return topicLinksJob;
+  }
+  public void setTopicLinksJob(AddressableEntityRef topicLinksJob) {
+    this.topicLinksJob = topicLinksJob;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -228,12 +246,13 @@ public class Program  implements Serializable {
             Objects.equals(this.dateModified, program.dateModified) &&
             Objects.equals(this.publishedBy, program.publishedBy) &&
             Objects.equals(this.datePublished, program.datePublished) &&
+            Objects.equals(this.topicLinksJob, program.topicLinksJob) &&
             Objects.equals(this.selfUri, program.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, published, topics, tags, modifiedBy, dateModified, publishedBy, datePublished, selfUri);
+    return Objects.hash(id, name, description, published, topics, tags, modifiedBy, dateModified, publishedBy, datePublished, topicLinksJob, selfUri);
   }
 
   @Override
@@ -251,6 +270,7 @@ public class Program  implements Serializable {
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    publishedBy: ").append(toIndentedString(publishedBy)).append("\n");
     sb.append("    datePublished: ").append(toIndentedString(datePublished)).append("\n");
+    sb.append("    topicLinksJob: ").append(toIndentedString(topicLinksJob)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

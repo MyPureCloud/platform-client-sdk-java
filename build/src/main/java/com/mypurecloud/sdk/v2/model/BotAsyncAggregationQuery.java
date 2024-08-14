@@ -51,6 +51,7 @@ public class BotAsyncAggregationQuery  implements Serializable {
     ASKACTIONRESULT("askActionResult"),
     ASKACTIONTYPE("askActionType"),
     BOTFINALINTENT("botFinalIntent"),
+    BOTFLOWSUBTYPE("botFlowSubType"),
     BOTFLOWTYPE("botFlowType"),
     BOTID("botId"),
     BOTINTENT("botIntent"),
@@ -70,6 +71,7 @@ public class BotAsyncAggregationQuery  implements Serializable {
     LASTINPUTACTIONID("lastInputActionId"),
     MEDIATYPE("mediaType"),
     MESSAGETYPE("messageType"),
+    PREVIEWMODE("previewMode"),
     SELFSERVED("selfServed");
 
     private String value;
@@ -120,6 +122,8 @@ public class BotAsyncAggregationQuery  implements Serializable {
     NBOTSESSIONTURNS("nBotSessionTurns"),
     NBOTSESSIONS("nBotSessions"),
     OBOTINTENT("oBotIntent"),
+    OBOTSESSIONCOLLECTION("oBotSessionCollection"),
+    OBOTSESSIONCOLLECTIONSELFSERVED("oBotSessionCollectionSelfServed"),
     OBOTSESSIONQUERY("oBotSessionQuery"),
     OBOTSESSIONQUERYSELFSERVED("oBotSessionQuerySelfServed"),
     OBOTSESSIONTURN("oBotSessionTurn"),

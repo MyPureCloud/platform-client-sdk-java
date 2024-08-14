@@ -24,6 +24,7 @@ title: KnowledgeDocumentSearchRequest
 | **conversationContext** | <!----><!---->[**KnowledgeConversationContext**](KnowledgeConversationContext.html)<!----> | Conversation context information if the search is initiated in the context of a conversation. |  [optional] |
 | **confidenceThreshold** | <!----><!---->**Float**<!----> | The confidence threshold for the search results. If applied, the returned results will have an equal or higher confidence than the threshold. The value should be between 0 to 1. |  [optional] |
 | **answerHighlightTopResults** | <!----><!---->**Integer**<!----> | The number of articles to be sent for answer-highlighting. Can range from 1-5. |  [optional] |
+| **answerMode** | <!---->[**List&lt;AnswerModeEnum&gt;**](#AnswerModeEnum)<!----> | Allows extracted answers from an article (AnswerHighlight) and/or AI-generated answers (AnswerGeneration). Default mode: AnswerHighlight. Use this property with answerHighlightTopResults. |  [optional] |
 {: class="table table-striped"}
 
 
@@ -64,6 +65,17 @@ title: KnowledgeDocumentSearchRequest
 | DATEMODIFIED | &quot;DateModified&quot; | 
 | CATEGORYNAME | &quot;CategoryName&quot; | 
 | LABELNAME | &quot;LabelName&quot; | 
+{: class="table table-striped"}
+
+
+<a name="AnswerModeEnum"></a>
+
+## Enum: AnswerModeEnum
+
+| Name | Value |
+| ---- | ----- |
+| ANSWERHIGHLIGHT | &quot;AnswerHighlight&quot; |
+| ANSWERGENERATION | &quot;AnswerGeneration&quot; |
 {: class="table table-striped"}
 
 

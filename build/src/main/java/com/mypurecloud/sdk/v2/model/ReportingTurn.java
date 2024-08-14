@@ -39,6 +39,7 @@ public class ReportingTurn  implements Serializable {
   private ReportingTurnKnowledge knowledge = null;
   private ReportingTurnKnowledgeEvents knowledgeBaseEvents = null;
   private Date dateCreated = null;
+  private Date dateCompleted = null;
 
   private static class AskActionResultEnumDeserializer extends StdDeserializer<AskActionResultEnum> {
     public AskActionResultEnumDeserializer() {
@@ -251,6 +252,24 @@ public class ReportingTurn  implements Serializable {
 
 
   /**
+   * Timestamp indicating when the original turn was completed. Note: The 'interval' query param uses this timestamp to filter the output. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public ReportingTurn dateCompleted(Date dateCompleted) {
+    this.dateCompleted = dateCompleted;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Timestamp indicating when the original turn was completed. Note: The 'interval' query param uses this timestamp to filter the output. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateCompleted")
+  public Date getDateCompleted() {
+    return dateCompleted;
+  }
+  public void setDateCompleted(Date dateCompleted) {
+    this.dateCompleted = dateCompleted;
+  }
+
+
+  /**
    * Result of the bot flow 'ask' action.
    **/
   public ReportingTurn askActionResult(AskActionResultEnum askActionResult) {
@@ -311,6 +330,7 @@ public class ReportingTurn  implements Serializable {
             Objects.equals(this.knowledge, reportingTurn.knowledge) &&
             Objects.equals(this.knowledgeBaseEvents, reportingTurn.knowledgeBaseEvents) &&
             Objects.equals(this.dateCreated, reportingTurn.dateCreated) &&
+            Objects.equals(this.dateCompleted, reportingTurn.dateCompleted) &&
             Objects.equals(this.askActionResult, reportingTurn.askActionResult) &&
             Objects.equals(this.sessionEndDetails, reportingTurn.sessionEndDetails) &&
             Objects.equals(this.conversation, reportingTurn.conversation);
@@ -318,7 +338,7 @@ public class ReportingTurn  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(userInput, botPrompts, sessionId, askAction, intent, knowledge, knowledgeBaseEvents, dateCreated, askActionResult, sessionEndDetails, conversation);
+    return Objects.hash(userInput, botPrompts, sessionId, askAction, intent, knowledge, knowledgeBaseEvents, dateCreated, dateCompleted, askActionResult, sessionEndDetails, conversation);
   }
 
   @Override
@@ -334,6 +354,7 @@ public class ReportingTurn  implements Serializable {
     sb.append("    knowledge: ").append(toIndentedString(knowledge)).append("\n");
     sb.append("    knowledgeBaseEvents: ").append(toIndentedString(knowledgeBaseEvents)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    dateCompleted: ").append(toIndentedString(dateCompleted)).append("\n");
     sb.append("    askActionResult: ").append(toIndentedString(askActionResult)).append("\n");
     sb.append("    sessionEndDetails: ").append(toIndentedString(sessionEndDetails)).append("\n");
     sb.append("    conversation: ").append(toIndentedString(conversation)).append("\n");

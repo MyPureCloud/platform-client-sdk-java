@@ -15,6 +15,7 @@ title: HistoryEntry
 | **client** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | OAuth client associated with this entry. |  [optional] |
 | **version** | <!----><!---->**String**<!----> |  |  [optional] |
 | **secure** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **virtualAgentEnabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

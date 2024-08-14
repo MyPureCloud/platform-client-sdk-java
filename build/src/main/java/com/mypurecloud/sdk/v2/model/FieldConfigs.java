@@ -25,7 +25,6 @@ public class FieldConfigs  implements Serializable {
   private FieldConfig org = null;
   private FieldConfig person = null;
   private FieldConfig group = null;
-  private FieldConfig externalContact = null;
 
   
   /**
@@ -79,23 +78,6 @@ public class FieldConfigs  implements Serializable {
   }
 
 
-  /**
-   **/
-  public FieldConfigs externalContact(FieldConfig externalContact) {
-    this.externalContact = externalContact;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("externalContact")
-  public FieldConfig getExternalContact() {
-    return externalContact;
-  }
-  public void setExternalContact(FieldConfig externalContact) {
-    this.externalContact = externalContact;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -108,13 +90,12 @@ public class FieldConfigs  implements Serializable {
 
     return Objects.equals(this.org, fieldConfigs.org) &&
             Objects.equals(this.person, fieldConfigs.person) &&
-            Objects.equals(this.group, fieldConfigs.group) &&
-            Objects.equals(this.externalContact, fieldConfigs.externalContact);
+            Objects.equals(this.group, fieldConfigs.group);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(org, person, group, externalContact);
+    return Objects.hash(org, person, group);
   }
 
   @Override
@@ -125,7 +106,6 @@ public class FieldConfigs  implements Serializable {
     sb.append("    org: ").append(toIndentedString(org)).append("\n");
     sb.append("    person: ").append(toIndentedString(person)).append("\n");
     sb.append("    group: ").append(toIndentedString(group)).append("\n");
-    sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("}");
     return sb.toString();
   }

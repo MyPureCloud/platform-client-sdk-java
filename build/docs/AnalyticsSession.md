@@ -33,6 +33,8 @@ title: AnalyticsSession
 | **deliveryStatus** | [**DeliveryStatusEnum**](#DeliveryStatusEnum)<!----> | The email or SMS delivery status |  [optional] |
 | **deliveryStatusChangeDate** | <!----><!---->[**Date**](Date.html)<!----> | Date and time of the most recent delivery status change. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **destinationAddresses** | <!----><!---->**List&lt;String&gt;**<!----> | Destination address(es) of transfers or consults |  [optional] |
+| **detectedSpeechEnd** | <!----><!---->[**Date**](Date.html)<!----> | Absolute time when the speech ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **detectedSpeechStart** | <!----><!---->[**Date**](Date.html)<!----> | Absolute time when the speech started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **direction** | [**DirectionEnum**](#DirectionEnum)<!----> | The direction of the communication |  [optional] |
 | **dispositionAnalyzer** | <!----><!---->**String**<!----> | (Dialer) Analyzer (for example speech.person) |  [optional] |
 | **dispositionName** | <!----><!---->**String**<!----> | (Dialer) Result of the analysis (for example disposition.classification.callable.machine) |  [optional] |

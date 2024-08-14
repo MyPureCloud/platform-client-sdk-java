@@ -14,6 +14,7 @@ title: OperationResponse
 | **createdBy** | <!----><!---->[**UserReference**](UserReference.html)<!----> | The user who created the operation. |  [optional] |
 | **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Operation creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | Operation last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **source** | <!----><!---->[**KnowledgeOperationSource**](KnowledgeOperationSource.html)<!----> | Source of the operation. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

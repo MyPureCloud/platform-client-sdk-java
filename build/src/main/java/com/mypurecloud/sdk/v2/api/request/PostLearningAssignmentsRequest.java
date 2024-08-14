@@ -33,6 +33,7 @@ import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentExternalUpdate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentItem;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentReschedule;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentStep;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUserListing;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUserQuery;
@@ -41,6 +42,9 @@ import com.mypurecloud.sdk.v2.model.LearningModule;
 import com.mypurecloud.sdk.v2.model.LearningModuleCoverArtResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleJobRequest;
 import com.mypurecloud.sdk.v2.model.LearningModuleJobResponse;
+import com.mypurecloud.sdk.v2.model.LearningModulePreviewGetResponse;
+import com.mypurecloud.sdk.v2.model.LearningModulePreviewUpdateRequest;
+import com.mypurecloud.sdk.v2.model.LearningModulePreviewUpdateResponse;
 import com.mypurecloud.sdk.v2.model.LearningModulePublishRequest;
 import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
@@ -48,6 +52,9 @@ import com.mypurecloud.sdk.v2.model.LearningModuleRule;
 import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.LearningScheduleSlotsQueryRequest;
 import com.mypurecloud.sdk.v2.model.LearningScheduleSlotsQueryResponse;
+import com.mypurecloud.sdk.v2.model.LearningScormResponse;
+import com.mypurecloud.sdk.v2.model.LearningScormUploadRequest;
+import com.mypurecloud.sdk.v2.model.LearningScormUploadResponse;
 
 public class PostLearningAssignmentsRequest {
 

@@ -108,7 +108,8 @@ public class DevelopmentActivity  implements Serializable {
     COACHING("Coaching"),
     ASSESSEDCONTENT("AssessedContent"),
     ASSESSMENT("Assessment"),
-    EXTERNAL("External");
+    EXTERNAL("External"),
+    NATIVE("Native");
 
     private String value;
 

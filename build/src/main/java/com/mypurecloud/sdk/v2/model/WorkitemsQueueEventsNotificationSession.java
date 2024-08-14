@@ -47,7 +47,8 @@ public class WorkitemsQueueEventsNotificationSession  implements Serializable {
     UNKNOWN("Unknown"),
     AGENT("Agent"),
     QUEUEASSIGNMENT("QueueAssignment"),
-    DIRECTASSIGNMENT("DirectAssignment");
+    DIRECTASSIGNMENT("DirectAssignment"),
+    AGENTCOMPLETE("AgentComplete");
 
     private String value;
 

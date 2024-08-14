@@ -554,7 +554,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 String contactId = "contactId_example"; // String | ExternalContact ID
-List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand (externalOrganization,externalDataSources)
+List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand (externalOrganization,externalDataSources,identifiers)
 try {
     ExternalContact result = apiInstance.getExternalcontactsContact(contactId, expand);
     System.out.println(result);
@@ -570,7 +570,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **contactId** | **String**| ExternalContact ID | 
-| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand (externalOrganization,externalDataSources) | [optional]<br />**Values**: externalOrganization, externalDataSources 
+| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand (externalOrganization,externalDataSources,identifiers) | [optional]<br />**Values**: externalOrganization, externalDataSources, identifiers 
 {: class="table-striped"}
 
 
@@ -881,7 +881,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 String contactId = "contactId_example"; // String | ExternalContact ID
-List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand (externalOrganization,externalDataSources)
+List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand (externalOrganization,externalDataSources,identifiers)
 try {
     ExternalContact result = apiInstance.getExternalcontactsContactUnresolved(contactId, expand);
     System.out.println(result);
@@ -897,7 +897,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **contactId** | **String**| ExternalContact ID | 
-| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand (externalOrganization,externalDataSources) | [optional]<br />**Values**: externalOrganization, externalDataSources 
+| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand (externalOrganization,externalDataSources,identifiers) | [optional]<br />**Values**: externalOrganization, externalDataSources, identifiers 
 {: class="table-striped"}
 
 
@@ -967,7 +967,7 @@ try {
 | **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] 
 | **q** | **String**| User supplied search keywords (no special syntax is currently supported) | [optional] 
 | **sortOrder** | **String**| The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \&quot;firstName:asc\&quot;, \&quot;title:desc\&quot; | [optional] 
-| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources 
+| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources, identifiers 
 {: class="table-striped"}
 
 
@@ -1347,7 +1347,7 @@ try {
 | **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] 
 | **q** | **String**| User supplied search keywords (no special syntax is currently supported) | [optional] 
 | **sortOrder** | **String**| The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \&quot;firstName:asc\&quot;, \&quot;title:desc\&quot; | [optional] 
-| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources 
+| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources, identifiers 
 {: class="table-striped"}
 
 
@@ -3622,7 +3622,7 @@ try {
 
 
 
-> [ExternalContact](ExternalContact.html) postExternalcontactsIdentifierlookup(identifier)
+> [ExternalContact](ExternalContact.html) postExternalcontactsIdentifierlookup(identifier, expand)
 
 Fetch a contact using an identifier type and value.
 
@@ -3658,8 +3658,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 ContactIdentifier identifier = new ContactIdentifier(); // ContactIdentifier | 
+List<String> expand = Arrays.asList(null); // List<String> | which field, if any, to expand
 try {
-    ExternalContact result = apiInstance.postExternalcontactsIdentifierlookup(identifier);
+    ExternalContact result = apiInstance.postExternalcontactsIdentifierlookup(identifier, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#postExternalcontactsIdentifierlookup");
@@ -3673,6 +3674,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **identifier** | [**ContactIdentifier**](ContactIdentifier.html)|  | 
+| **expand** | [**List&lt;String&gt;**](String.html)| which field, if any, to expand | [optional]<br />**Values**: externalOrganization, identifiers 
 {: class="table-striped"}
 
 

@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.LearningModuleInformStep;
 import com.mypurecloud.sdk.v2.model.LearningModuleReassignSummary;
 import com.mypurecloud.sdk.v2.model.LearningModuleRule;
 import com.mypurecloud.sdk.v2.model.LearningModuleSummary;
+import com.mypurecloud.sdk.v2.model.ReviewAssessmentResults;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -91,6 +92,8 @@ public class LearningModule  implements Serializable {
   }
   private SourceEnum source = null;
   private LearningModuleRule rule = null;
+  private Boolean enforceContentOrder = null;
+  private ReviewAssessmentResults reviewAssessmentResults = null;
   private String selfUri = null;
   private Boolean isArchived = null;
   private Boolean isPublished = null;
@@ -118,7 +121,8 @@ public class LearningModule  implements Serializable {
     INFORMATIONAL("Informational"),
     ASSESSEDCONTENT("AssessedContent"),
     ASSESSMENT("Assessment"),
-    EXTERNAL("External");
+    EXTERNAL("External"),
+    NATIVE("Native");
 
     private String value;
 
@@ -298,6 +302,42 @@ public class LearningModule  implements Serializable {
   @JsonProperty("rule")
   public LearningModuleRule getRule() {
     return rule;
+  }
+
+
+  /**
+   * If true, learning module content should be viewed one by one in order
+   **/
+  public LearningModule enforceContentOrder(Boolean enforceContentOrder) {
+    this.enforceContentOrder = enforceContentOrder;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If true, learning module content should be viewed one by one in order")
+  @JsonProperty("enforceContentOrder")
+  public Boolean getEnforceContentOrder() {
+    return enforceContentOrder;
+  }
+  public void setEnforceContentOrder(Boolean enforceContentOrder) {
+    this.enforceContentOrder = enforceContentOrder;
+  }
+
+
+  /**
+   * Allows to view Assessment results in detail
+   **/
+  public LearningModule reviewAssessmentResults(ReviewAssessmentResults reviewAssessmentResults) {
+    this.reviewAssessmentResults = reviewAssessmentResults;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Allows to view Assessment results in detail")
+  @JsonProperty("reviewAssessmentResults")
+  public ReviewAssessmentResults getReviewAssessmentResults() {
+    return reviewAssessmentResults;
+  }
+  public void setReviewAssessmentResults(ReviewAssessmentResults reviewAssessmentResults) {
+    this.reviewAssessmentResults = reviewAssessmentResults;
   }
 
 
@@ -523,6 +563,8 @@ public class LearningModule  implements Serializable {
             Objects.equals(this.externalId, learningModule.externalId) &&
             Objects.equals(this.source, learningModule.source) &&
             Objects.equals(this.rule, learningModule.rule) &&
+            Objects.equals(this.enforceContentOrder, learningModule.enforceContentOrder) &&
+            Objects.equals(this.reviewAssessmentResults, learningModule.reviewAssessmentResults) &&
             Objects.equals(this.selfUri, learningModule.selfUri) &&
             Objects.equals(this.isArchived, learningModule.isArchived) &&
             Objects.equals(this.isPublished, learningModule.isPublished) &&
@@ -540,7 +582,7 @@ public class LearningModule  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, excludedFromCatalog, createdBy, dateCreated, modifiedBy, dateModified, version, externalId, source, rule, selfUri, isArchived, isPublished, description, completionTimeInDays, type, informSteps, assessmentForm, summaryData, reassignSummaryData, coverArt, lengthInMinutes, archivalMode);
+    return Objects.hash(id, name, excludedFromCatalog, createdBy, dateCreated, modifiedBy, dateModified, version, externalId, source, rule, enforceContentOrder, reviewAssessmentResults, selfUri, isArchived, isPublished, description, completionTimeInDays, type, informSteps, assessmentForm, summaryData, reassignSummaryData, coverArt, lengthInMinutes, archivalMode);
   }
 
   @Override
@@ -559,6 +601,8 @@ public class LearningModule  implements Serializable {
     sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");
     sb.append("    rule: ").append(toIndentedString(rule)).append("\n");
+    sb.append("    enforceContentOrder: ").append(toIndentedString(enforceContentOrder)).append("\n");
+    sb.append("    reviewAssessmentResults: ").append(toIndentedString(reviewAssessmentResults)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    isArchived: ").append(toIndentedString(isArchived)).append("\n");
     sb.append("    isPublished: ").append(toIndentedString(isPublished)).append("\n");

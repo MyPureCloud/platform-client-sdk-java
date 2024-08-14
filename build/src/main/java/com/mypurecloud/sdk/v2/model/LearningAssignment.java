@@ -14,11 +14,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AssessmentForm;
 import com.mypurecloud.sdk.v2.model.LearningAssessment;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentStep;
 import com.mypurecloud.sdk.v2.model.LearningModule;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -36,10 +39,15 @@ public class LearningAssignment  implements Serializable {
   private Date dateModified = null;
   private Boolean isOverdue = null;
   private Float percentageScore = null;
+  private Float assessmentPercentageScore = null;
   private Boolean isRule = null;
   private Boolean isManual = null;
   private Boolean isPassed = null;
   private Boolean isLatest = null;
+  private Float assessmentCompletionPercentage = null;
+  private Float completionPercentage = null;
+  private List<LearningAssignmentStep> steps = new ArrayList<LearningAssignmentStep>();
+  private LearningAssignmentStep nextStep = null;
   private String selfUri = null;
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
@@ -168,6 +176,13 @@ public class LearningAssignment  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The user's percentage score for this assignment's assessment")
+  @JsonProperty("assessmentPercentageScore")
+  public Float getAssessmentPercentageScore() {
+    return assessmentPercentageScore;
+  }
+
+
   @ApiModelProperty(example = "null", value = "True if this assignment was created by a Rule")
   @JsonProperty("isRule")
   public Boolean getIsRule() {
@@ -193,6 +208,34 @@ public class LearningAssignment  implements Serializable {
   @JsonProperty("isLatest")
   public Boolean getIsLatest() {
     return isLatest;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The assessment completion percentage of assignment")
+  @JsonProperty("assessmentCompletionPercentage")
+  public Float getAssessmentCompletionPercentage() {
+    return assessmentCompletionPercentage;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The overall completion percentage of assignment")
+  @JsonProperty("completionPercentage")
+  public Float getCompletionPercentage() {
+    return completionPercentage;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "List of assignment steps")
+  @JsonProperty("steps")
+  public List<LearningAssignmentStep> getSteps() {
+    return steps;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The next assignment step")
+  @JsonProperty("nextStep")
+  public LearningAssignmentStep getNextStep() {
+    return nextStep;
   }
 
 
@@ -347,10 +390,15 @@ public class LearningAssignment  implements Serializable {
             Objects.equals(this.dateModified, learningAssignment.dateModified) &&
             Objects.equals(this.isOverdue, learningAssignment.isOverdue) &&
             Objects.equals(this.percentageScore, learningAssignment.percentageScore) &&
+            Objects.equals(this.assessmentPercentageScore, learningAssignment.assessmentPercentageScore) &&
             Objects.equals(this.isRule, learningAssignment.isRule) &&
             Objects.equals(this.isManual, learningAssignment.isManual) &&
             Objects.equals(this.isPassed, learningAssignment.isPassed) &&
             Objects.equals(this.isLatest, learningAssignment.isLatest) &&
+            Objects.equals(this.assessmentCompletionPercentage, learningAssignment.assessmentCompletionPercentage) &&
+            Objects.equals(this.completionPercentage, learningAssignment.completionPercentage) &&
+            Objects.equals(this.steps, learningAssignment.steps) &&
+            Objects.equals(this.nextStep, learningAssignment.nextStep) &&
             Objects.equals(this.selfUri, learningAssignment.selfUri) &&
             Objects.equals(this.state, learningAssignment.state) &&
             Objects.equals(this.dateRecommendedForCompletion, learningAssignment.dateRecommendedForCompletion) &&
@@ -363,7 +411,7 @@ public class LearningAssignment  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, assessment, createdBy, dateCreated, modifiedBy, dateModified, isOverdue, percentageScore, isRule, isManual, isPassed, isLatest, selfUri, state, dateRecommendedForCompletion, version, module, user, assessmentForm, lengthInMinutes);
+    return Objects.hash(id, assessment, createdBy, dateCreated, modifiedBy, dateModified, isOverdue, percentageScore, assessmentPercentageScore, isRule, isManual, isPassed, isLatest, assessmentCompletionPercentage, completionPercentage, steps, nextStep, selfUri, state, dateRecommendedForCompletion, version, module, user, assessmentForm, lengthInMinutes);
   }
 
   @Override
@@ -379,10 +427,15 @@ public class LearningAssignment  implements Serializable {
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    isOverdue: ").append(toIndentedString(isOverdue)).append("\n");
     sb.append("    percentageScore: ").append(toIndentedString(percentageScore)).append("\n");
+    sb.append("    assessmentPercentageScore: ").append(toIndentedString(assessmentPercentageScore)).append("\n");
     sb.append("    isRule: ").append(toIndentedString(isRule)).append("\n");
     sb.append("    isManual: ").append(toIndentedString(isManual)).append("\n");
     sb.append("    isPassed: ").append(toIndentedString(isPassed)).append("\n");
     sb.append("    isLatest: ").append(toIndentedString(isLatest)).append("\n");
+    sb.append("    assessmentCompletionPercentage: ").append(toIndentedString(assessmentCompletionPercentage)).append("\n");
+    sb.append("    completionPercentage: ").append(toIndentedString(completionPercentage)).append("\n");
+    sb.append("    steps: ").append(toIndentedString(steps)).append("\n");
+    sb.append("    nextStep: ").append(toIndentedString(nextStep)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    dateRecommendedForCompletion: ").append(toIndentedString(dateRecommendedForCompletion)).append("\n");

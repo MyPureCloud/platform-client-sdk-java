@@ -8,6 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | Description |
 | ------------- | ------------- |
 | [**deleteRoutingAssessment**](RoutingApi.html#deleteRoutingAssessment) | Delete single benefit assessment. |
+| [**deleteRoutingDirectroutingbackupSettingsMe**](RoutingApi.html#deleteRoutingDirectroutingbackupSettingsMe) | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default. |
 | [**deleteRoutingEmailDomain**](RoutingApi.html#deleteRoutingEmailDomain) | Delete a domain |
 | [**deleteRoutingEmailDomainRoute**](RoutingApi.html#deleteRoutingEmailDomainRoute) | Delete a route |
 | [**deleteRoutingEmailOutboundDomain**](RoutingApi.html#deleteRoutingEmailOutboundDomain) | Delete an outbound domain |
@@ -22,6 +23,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteRoutingSkillgroup**](RoutingApi.html#deleteRoutingSkillgroup) | Remove skill group definition |
 | [**deleteRoutingSmsAddress**](RoutingApi.html#deleteRoutingSmsAddress) | Delete an Address by Id for SMS |
 | [**deleteRoutingSmsPhonenumber**](RoutingApi.html#deleteRoutingSmsPhonenumber) | Delete a phone number provisioned for SMS. |
+| [**deleteRoutingUserDirectroutingbackupSettings**](RoutingApi.html#deleteRoutingUserDirectroutingbackupSettings) | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default. |
 | [**deleteRoutingUserUtilization**](RoutingApi.html#deleteRoutingUserUtilization) | Delete the user's max utilization settings and revert to the organization-wide default. |
 | [**deleteRoutingUtilization**](RoutingApi.html#deleteRoutingUtilization) | Delete the organization-wide max utilization settings and revert to the system default. |
 | [**deleteRoutingUtilizationLabel**](RoutingApi.html#deleteRoutingUtilizationLabel) | Delete a utilization label |
@@ -34,6 +36,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingAssessmentsJob**](RoutingApi.html#getRoutingAssessmentsJob) | Retrieve a single benefit assessments job. |
 | [**getRoutingAssessmentsJobs**](RoutingApi.html#getRoutingAssessmentsJobs) | Retrieve all benefit assessment jobs. |
 | [**getRoutingAvailablemediatypes**](RoutingApi.html#getRoutingAvailablemediatypes) | Get available media types |
+| [**getRoutingDirectroutingbackupSettingsMe**](RoutingApi.html#getRoutingDirectroutingbackupSettingsMe) | Get the user's Direct Routing Backup settings. |
 | [**getRoutingEmailDomain**](RoutingApi.html#getRoutingEmailDomain) | Get domain |
 | [**getRoutingEmailDomainRoute**](RoutingApi.html#getRoutingEmailDomainRoute) | Get a route |
 | [**getRoutingEmailDomainRoutes**](RoutingApi.html#getRoutingEmailDomainRoutes) | Get routes |
@@ -78,6 +81,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingSmsAvailablephonenumbers**](RoutingApi.html#getRoutingSmsAvailablephonenumbers) | Get a list of available phone numbers for SMS provisioning. |
 | [**getRoutingSmsPhonenumber**](RoutingApi.html#getRoutingSmsPhonenumber) | Get a phone number provisioned for SMS. |
 | [**getRoutingSmsPhonenumbers**](RoutingApi.html#getRoutingSmsPhonenumbers) | Get a list of provisioned phone numbers. |
+| [**getRoutingUserDirectroutingbackupSettings**](RoutingApi.html#getRoutingUserDirectroutingbackupSettings) | Get the user's Direct Routing Backup settings. |
 | [**getRoutingUserUtilization**](RoutingApi.html#getRoutingUserUtilization) | Get the user's max utilization settings.  If not configured, the organization-wide default is returned. |
 | [**getRoutingUtilization**](RoutingApi.html#getRoutingUtilization) | Get the organization-wide max utilization settings. |
 | [**getRoutingUtilizationLabel**](RoutingApi.html#getRoutingUtilizationLabel) | Get details about this utilization label |
@@ -137,6 +141,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postRoutingWrapupcodes**](RoutingApi.html#postRoutingWrapupcodes) | Create a wrap-up code |
 | [**postUserRoutinglanguages**](RoutingApi.html#postUserRoutinglanguages) | Add routing language to user |
 | [**postUserRoutingskills**](RoutingApi.html#postUserRoutingskills) | Add routing skill to user |
+| [**putRoutingDirectroutingbackupSettingsMe**](RoutingApi.html#putRoutingDirectroutingbackupSettingsMe) | Update the user's Direct Routing Backup settings. |
 | [**putRoutingEmailDomainRoute**](RoutingApi.html#putRoutingEmailDomainRoute) | Update a route |
 | [**putRoutingEmailOutboundDomainActivation**](RoutingApi.html#putRoutingEmailOutboundDomainActivation) | Request an activation status (cname + dkim) update of an outbound domain |
 | [**putRoutingMessageRecipient**](RoutingApi.html#putRoutingMessageRecipient) | Update a recipient |
@@ -144,6 +149,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putRoutingSettings**](RoutingApi.html#putRoutingSettings) | Update an organization's routing settings |
 | [**putRoutingSettingsTranscription**](RoutingApi.html#putRoutingSettingsTranscription) | Update Transcription Settings |
 | [**putRoutingSmsPhonenumber**](RoutingApi.html#putRoutingSmsPhonenumber) | Update a phone number provisioned for SMS. |
+| [**putRoutingUserDirectroutingbackupSettings**](RoutingApi.html#putRoutingUserDirectroutingbackupSettings) | Update the user's Direct Routing Backup settings. |
 | [**putRoutingUserUtilization**](RoutingApi.html#putRoutingUserUtilization) | Update the user's max utilization settings.  Include only those media types requiring custom configuration. |
 | [**putRoutingUtilization**](RoutingApi.html#putRoutingUtilization) | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. |
 | [**putRoutingUtilizationLabel**](RoutingApi.html#putRoutingUtilizationLabel) | Update a utilization label |
@@ -206,6 +212,62 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **assessmentId** | **String**| Benefit Assessment ID | 
 {: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteRoutingDirectroutingbackupSettingsMe"></a>
+
+# **deleteRoutingDirectroutingbackupSettingsMe**
+
+
+
+> Void deleteRoutingDirectroutingbackupSettingsMe()
+
+Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+
+Wraps DELETE /api/v2/routing/directroutingbackup/settings/me  
+
+Requires ANY permissions: 
+
+* routing:directRoutingBackup:selfDelete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+try {
+    apiInstance.deleteRoutingDirectroutingbackupSettingsMe();
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#deleteRoutingDirectroutingbackupSettingsMe");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
 
 
 ### Return type
@@ -1061,6 +1123,66 @@ try {
 
 null (empty response body)
 
+<a name="deleteRoutingUserDirectroutingbackupSettings"></a>
+
+# **deleteRoutingUserDirectroutingbackupSettings**
+
+
+
+> Void deleteRoutingUserDirectroutingbackupSettings(userId)
+
+Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+
+Wraps DELETE /api/v2/routing/users/{userId}/directroutingbackup/settings  
+
+Requires ANY permissions: 
+
+* routing:directRoutingBackup:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String userId = "userId_example"; // String | User ID
+try {
+    apiInstance.deleteRoutingUserDirectroutingbackupSettings(userId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#deleteRoutingUserDirectroutingbackupSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
 <a name="deleteRoutingUserUtilization"></a>
 
 # **deleteRoutingUserUtilization**
@@ -1186,8 +1308,6 @@ null (empty response body)
 > Void deleteRoutingUtilizationLabel(labelId, forceDelete)
 
 Delete a utilization label
-
-deleteRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/routing/utilization/labels/{labelId}  
 
@@ -1798,6 +1918,63 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**AvailableMediaTypeEntityListing**](AvailableMediaTypeEntityListing.html)
+
+<a name="getRoutingDirectroutingbackupSettingsMe"></a>
+
+# **getRoutingDirectroutingbackupSettingsMe**
+
+
+
+> [AgentDirectRoutingBackupSettings](AgentDirectRoutingBackupSettings.html) getRoutingDirectroutingbackupSettingsMe()
+
+Get the user's Direct Routing Backup settings.
+
+Wraps GET /api/v2/routing/directroutingbackup/settings/me  
+
+Requires ANY permissions: 
+
+* routing:directRoutingBackup:selfView
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+try {
+    AgentDirectRoutingBackupSettings result = apiInstance.getRoutingDirectroutingbackupSettingsMe();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingDirectroutingbackupSettingsMe");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)
 
 <a name="getRoutingEmailDomain"></a>
 
@@ -2603,7 +2780,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **messengerType** | **String**| Messenger Type | [optional]<br />**Values**: sms, facebook, twitter, line, whatsapp, open, instagram 
+| **messengerType** | **String**| Messenger Type | [optional]<br />**Values**: sms, facebook, twitter, whatsapp, open, instagram 
 | **name** | **String**| Recipient Name | [optional] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
@@ -4572,7 +4749,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **addressId** | **String**| Address ID | 
-| **expand** | **String**| Expand response with additional information | [optional]<br />**Values**: compliance 
+| **expand** | **String**| Expand response with additional information | [optional]<br />**Values**: compliance, supportedContent 
 {: class="table-striped"}
 
 
@@ -4586,7 +4763,7 @@ try {
 
 
 
-> [SmsPhoneNumberEntityListing](SmsPhoneNumberEntityListing.html) getRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId)
+> [SmsPhoneNumberEntityListing](SmsPhoneNumberEntityListing.html) getRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId, supportedContentId)
 
 Get a list of provisioned phone numbers.
 
@@ -4628,8 +4805,9 @@ String sortBy = "sortBy_example"; // String | Optional field to sort results
 String sortOrder = "sortOrder_example"; // String | Sort order
 String language = en-US; // String | A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize country field and sort operations
 String integrationId = "integrationId_example"; // String | Filter on the Genesys Cloud integration id to which the phone number belongs to
+String supportedContentId = "supportedContentId_example"; // String | Filter based on the supported content ID
 try {
-    SmsPhoneNumberEntityListing result = apiInstance.getRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId);
+    SmsPhoneNumberEntityListing result = apiInstance.getRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId, supportedContentId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingSmsPhonenumbers");
@@ -4652,12 +4830,74 @@ try {
 | **sortOrder** | **String**| Sort order | [optional]<br />**Values**: ascending, descending 
 | **language** | **String**| A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations | [optional] [default to &quot;en-US&quot;] 
 | **integrationId** | **String**| Filter on the Genesys Cloud integration id to which the phone number belongs to | [optional] 
+| **supportedContentId** | **String**| Filter based on the supported content ID | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
 [**SmsPhoneNumberEntityListing**](SmsPhoneNumberEntityListing.html)
+
+<a name="getRoutingUserDirectroutingbackupSettings"></a>
+
+# **getRoutingUserDirectroutingbackupSettings**
+
+
+
+> [AgentDirectRoutingBackupSettings](AgentDirectRoutingBackupSettings.html) getRoutingUserDirectroutingbackupSettings(userId)
+
+Get the user's Direct Routing Backup settings.
+
+Wraps GET /api/v2/routing/users/{userId}/directroutingbackup/settings  
+
+Requires ANY permissions: 
+
+* routing:directRoutingBackup:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String userId = "userId_example"; // String | User ID
+try {
+    AgentDirectRoutingBackupSettings result = apiInstance.getRoutingUserDirectroutingbackupSettings(userId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingUserDirectroutingbackupSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)
 
 <a name="getRoutingUserUtilization"></a>
 
@@ -4789,8 +5029,6 @@ This endpoint does not require any parameters.
 
 Get details about this utilization label
 
-getRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/routing/utilization/labels/{labelId}  
 
 Requires ALL permissions: 
@@ -4852,8 +5090,6 @@ try {
 
 Get list of agent ids associated with a utilization label
 
-getRoutingUtilizationLabelAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/routing/utilization/labels/{labelId}/agents  
 
 Requires ALL permissions: 
@@ -4914,8 +5150,6 @@ try {
 > [UtilizationLabelEntityListing](UtilizationLabelEntityListing.html) getRoutingUtilizationLabels(pageSize, pageNumber, sortOrder, name)
 
 Get list of utilization labels
-
-getRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/routing/utilization/labels  
 
@@ -8106,8 +8340,6 @@ try {
 
 Create a utilization label
 
-postRoutingUtilizationLabels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/routing/utilization/labels  
 
 Requires ALL permissions: 
@@ -8409,6 +8641,67 @@ try {
 ### Return type
 
 [**UserRoutingSkill**](UserRoutingSkill.html)
+
+<a name="putRoutingDirectroutingbackupSettingsMe"></a>
+
+# **putRoutingDirectroutingbackupSettingsMe**
+
+
+
+> [AgentDirectRoutingBackupSettings](AgentDirectRoutingBackupSettings.html) putRoutingDirectroutingbackupSettingsMe(body)
+
+Update the user's Direct Routing Backup settings.
+
+Wraps PUT /api/v2/routing/directroutingbackup/settings/me  
+
+Requires ANY permissions: 
+
+* routing:directRoutingBackup:selfEdit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+AgentDirectRoutingBackupSettings body = new AgentDirectRoutingBackupSettings(); // AgentDirectRoutingBackupSettings | directRoutingBackup
+try {
+    AgentDirectRoutingBackupSettings result = apiInstance.putRoutingDirectroutingbackupSettingsMe(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#putRoutingDirectroutingbackupSettingsMe");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)| directRoutingBackup | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)
 
 <a name="putRoutingEmailDomainRoute"></a>
 
@@ -8847,6 +9140,69 @@ try {
 
 [**SmsPhoneNumber**](SmsPhoneNumber.html)
 
+<a name="putRoutingUserDirectroutingbackupSettings"></a>
+
+# **putRoutingUserDirectroutingbackupSettings**
+
+
+
+> [AgentDirectRoutingBackupSettings](AgentDirectRoutingBackupSettings.html) putRoutingUserDirectroutingbackupSettings(userId, body)
+
+Update the user's Direct Routing Backup settings.
+
+Wraps PUT /api/v2/routing/users/{userId}/directroutingbackup/settings  
+
+Requires ANY permissions: 
+
+* routing:directRoutingBackup:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String userId = "userId_example"; // String | User ID
+AgentDirectRoutingBackupSettings body = new AgentDirectRoutingBackupSettings(); // AgentDirectRoutingBackupSettings | directRoutingBackup
+try {
+    AgentDirectRoutingBackupSettings result = apiInstance.putRoutingUserDirectroutingbackupSettings(userId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#putRoutingUserDirectroutingbackupSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | 
+| **body** | [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)| directRoutingBackup | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)
+
 <a name="putRoutingUserUtilization"></a>
 
 # **putRoutingUserUtilization**
@@ -8980,8 +9336,6 @@ try {
 > [UtilizationLabel](UtilizationLabel.html) putRoutingUtilizationLabel(labelId, body)
 
 Update a utilization label
-
-putRoutingUtilizationLabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/routing/utilization/labels/{labelId}  
 

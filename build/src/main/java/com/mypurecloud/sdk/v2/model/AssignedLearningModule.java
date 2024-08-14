@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.LearningModuleInformStep;
 import com.mypurecloud.sdk.v2.model.LearningModuleReassignSummary;
 import com.mypurecloud.sdk.v2.model.LearningModuleRule;
 import com.mypurecloud.sdk.v2.model.LearningModuleSummary;
+import com.mypurecloud.sdk.v2.model.ReviewAssessmentResults;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -92,6 +93,8 @@ public class AssignedLearningModule  implements Serializable {
   }
   private SourceEnum source = null;
   private LearningModuleRule rule = null;
+  private Boolean enforceContentOrder = null;
+  private ReviewAssessmentResults reviewAssessmentResults = null;
   private List<LearningAssignment> currentAssignments = new ArrayList<LearningAssignment>();
   private String selfUri = null;
   private Boolean isArchived = null;
@@ -120,7 +123,8 @@ public class AssignedLearningModule  implements Serializable {
     INFORMATIONAL("Informational"),
     ASSESSEDCONTENT("AssessedContent"),
     ASSESSMENT("Assessment"),
-    EXTERNAL("External");
+    EXTERNAL("External"),
+    NATIVE("Native");
 
     private String value;
 
@@ -300,6 +304,42 @@ public class AssignedLearningModule  implements Serializable {
   @JsonProperty("rule")
   public LearningModuleRule getRule() {
     return rule;
+  }
+
+
+  /**
+   * If true, learning module content should be viewed one by one in order
+   **/
+  public AssignedLearningModule enforceContentOrder(Boolean enforceContentOrder) {
+    this.enforceContentOrder = enforceContentOrder;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If true, learning module content should be viewed one by one in order")
+  @JsonProperty("enforceContentOrder")
+  public Boolean getEnforceContentOrder() {
+    return enforceContentOrder;
+  }
+  public void setEnforceContentOrder(Boolean enforceContentOrder) {
+    this.enforceContentOrder = enforceContentOrder;
+  }
+
+
+  /**
+   * Allows to view Assessment results in detail
+   **/
+  public AssignedLearningModule reviewAssessmentResults(ReviewAssessmentResults reviewAssessmentResults) {
+    this.reviewAssessmentResults = reviewAssessmentResults;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Allows to view Assessment results in detail")
+  @JsonProperty("reviewAssessmentResults")
+  public ReviewAssessmentResults getReviewAssessmentResults() {
+    return reviewAssessmentResults;
+  }
+  public void setReviewAssessmentResults(ReviewAssessmentResults reviewAssessmentResults) {
+    this.reviewAssessmentResults = reviewAssessmentResults;
   }
 
 
@@ -543,6 +583,8 @@ public class AssignedLearningModule  implements Serializable {
             Objects.equals(this.externalId, assignedLearningModule.externalId) &&
             Objects.equals(this.source, assignedLearningModule.source) &&
             Objects.equals(this.rule, assignedLearningModule.rule) &&
+            Objects.equals(this.enforceContentOrder, assignedLearningModule.enforceContentOrder) &&
+            Objects.equals(this.reviewAssessmentResults, assignedLearningModule.reviewAssessmentResults) &&
             Objects.equals(this.currentAssignments, assignedLearningModule.currentAssignments) &&
             Objects.equals(this.selfUri, assignedLearningModule.selfUri) &&
             Objects.equals(this.isArchived, assignedLearningModule.isArchived) &&
@@ -561,7 +603,7 @@ public class AssignedLearningModule  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, excludedFromCatalog, createdBy, dateCreated, modifiedBy, dateModified, version, externalId, source, rule, currentAssignments, selfUri, isArchived, isPublished, description, completionTimeInDays, type, informSteps, assessmentForm, summaryData, reassignSummaryData, coverArt, lengthInMinutes, archivalMode);
+    return Objects.hash(id, name, excludedFromCatalog, createdBy, dateCreated, modifiedBy, dateModified, version, externalId, source, rule, enforceContentOrder, reviewAssessmentResults, currentAssignments, selfUri, isArchived, isPublished, description, completionTimeInDays, type, informSteps, assessmentForm, summaryData, reassignSummaryData, coverArt, lengthInMinutes, archivalMode);
   }
 
   @Override
@@ -580,6 +622,8 @@ public class AssignedLearningModule  implements Serializable {
     sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");
     sb.append("    rule: ").append(toIndentedString(rule)).append("\n");
+    sb.append("    enforceContentOrder: ").append(toIndentedString(enforceContentOrder)).append("\n");
+    sb.append("    reviewAssessmentResults: ").append(toIndentedString(reviewAssessmentResults)).append("\n");
     sb.append("    currentAssignments: ").append(toIndentedString(currentAssignments)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    isArchived: ").append(toIndentedString(isArchived)).append("\n");

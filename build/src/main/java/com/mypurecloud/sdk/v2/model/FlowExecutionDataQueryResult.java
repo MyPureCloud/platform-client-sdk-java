@@ -96,6 +96,7 @@ public class FlowExecutionDataQueryResult  implements Serializable {
   }
   private FlowTypeEnum flowType = null;
   private String flowErrorReason = null;
+  private String flowWarningReason = null;
   private String flowName = null;
   private String selfUri = null;
 
@@ -251,6 +252,24 @@ public class FlowExecutionDataQueryResult  implements Serializable {
 
 
   /**
+   * If the flow had a warning, this is the reason.
+   **/
+  public FlowExecutionDataQueryResult flowWarningReason(String flowWarningReason) {
+    this.flowWarningReason = flowWarningReason;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If the flow had a warning, this is the reason.")
+  @JsonProperty("flowWarningReason")
+  public String getFlowWarningReason() {
+    return flowWarningReason;
+  }
+  public void setFlowWarningReason(String flowWarningReason) {
+    this.flowWarningReason = flowWarningReason;
+  }
+
+
+  /**
    * The name of the flow.
    **/
   public FlowExecutionDataQueryResult flowName(String flowName) {
@@ -294,13 +313,14 @@ public class FlowExecutionDataQueryResult  implements Serializable {
             Objects.equals(this.conversationId, flowExecutionDataQueryResult.conversationId) &&
             Objects.equals(this.flowType, flowExecutionDataQueryResult.flowType) &&
             Objects.equals(this.flowErrorReason, flowExecutionDataQueryResult.flowErrorReason) &&
+            Objects.equals(this.flowWarningReason, flowExecutionDataQueryResult.flowWarningReason) &&
             Objects.equals(this.flowName, flowExecutionDataQueryResult.flowName) &&
             Objects.equals(this.selfUri, flowExecutionDataQueryResult.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, startDateTime, endDateTime, flowId, flowVersion, conversationId, flowType, flowErrorReason, flowName, selfUri);
+    return Objects.hash(id, name, startDateTime, endDateTime, flowId, flowVersion, conversationId, flowType, flowErrorReason, flowWarningReason, flowName, selfUri);
   }
 
   @Override
@@ -317,6 +337,7 @@ public class FlowExecutionDataQueryResult  implements Serializable {
     sb.append("    conversationId: ").append(toIndentedString(conversationId)).append("\n");
     sb.append("    flowType: ").append(toIndentedString(flowType)).append("\n");
     sb.append("    flowErrorReason: ").append(toIndentedString(flowErrorReason)).append("\n");
+    sb.append("    flowWarningReason: ").append(toIndentedString(flowWarningReason)).append("\n");
     sb.append("    flowName: ").append(toIndentedString(flowName)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

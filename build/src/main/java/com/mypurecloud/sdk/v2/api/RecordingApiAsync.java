@@ -1333,7 +1333,7 @@ public class RecordingApiAsync {
   }
 
   /**
-   * Get the status and results for a batch request job, only the user that submitted the job may retrieve results
+   * Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1367,7 +1367,7 @@ public class RecordingApiAsync {
   }
 
   /**
-   * Get the status and results for a batch request job, only the user that submitted the job may retrieve results
+   * Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2761,10 +2761,11 @@ public class RecordingApiAsync {
 
   /**
    * Update a screen recording session
-   * 
+   * This API is deprecated and the functionality to stop screen recording will be no longer supported.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> patchRecordingsScreensessionAsync(PatchRecordingsScreensessionRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -2795,10 +2796,11 @@ public class RecordingApiAsync {
 
   /**
    * Update a screen recording session
-   * 
+   * This API is deprecated and the functionality to stop screen recording will be no longer supported.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> patchRecordingsScreensessionAsync(ApiRequest<ScreenRecordingSessionRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {

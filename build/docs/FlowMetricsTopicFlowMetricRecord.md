@@ -100,6 +100,7 @@ title: FlowMetricsTopicFlowMetricRecord
 | **transferType** | <!----><!---->**String**<!----> | The type of transfer for flows that ended with a transfer |  [optional] |
 | **usedRouting** | [**UsedRoutingEnum**](#UsedRoutingEnum)<!----> | Complete routing method |  [optional] |
 | **userId** | <!----><!---->**String**<!----> | Unique identifier for the user |  [optional] |
+| **videoPresent** | <!----><!---->**Boolean**<!----> | Flag indicating if video is present |  [optional] |
 | **waitingInteractionCounts** | <!----><!---->**List&lt;Integer&gt;**<!----> | Number of waiting interactions for each predictive routing attempt |  [optional] |
 | **wrapUpCode** | <!----><!---->**String**<!----> | Wrap up code |  [optional] |
 | **proposedAgents** | <!----><!---->[**List&lt;FlowMetricsTopicFlowProposedAgent&gt;**](FlowMetricsTopicFlowProposedAgent.html)<!----> | Proposed agents |  [optional] |
@@ -185,6 +186,7 @@ title: FlowMetricsTopicFlowMetricRecord
 | DELIVERYFAILED | &quot;DeliveryFailed&quot; | 
 | DELIVERYSUCCESS | &quot;DeliverySuccess&quot; | 
 | FAILED | &quot;Failed&quot; | 
+| PUBLISHED | &quot;Published&quot; | 
 | QUEUED | &quot;Queued&quot; | 
 | READ | &quot;Read&quot; | 
 | RECEIVED | &quot;Received&quot; | 

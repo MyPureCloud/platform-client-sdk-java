@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.PublishDraftInput;
 import com.mypurecloud.sdk.v2.model.SttEngineEntity;
 import com.mypurecloud.sdk.v2.model.SttEngineEntityListing;
 import com.mypurecloud.sdk.v2.model.TestExecutionResult;
+import com.mypurecloud.sdk.v2.model.TrustedCertificates;
 import com.mypurecloud.sdk.v2.model.TtsEngineEntity;
 import com.mypurecloud.sdk.v2.model.TtsEngineEntityListing;
 import com.mypurecloud.sdk.v2.model.TtsSettings;
@@ -93,6 +94,7 @@ import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionTemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsCategoriesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsCertificatesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsCertificatesTruststoreRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsDraftsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsFunctionsRuntimesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorIntegrationIdBotRequest;
@@ -1593,6 +1595,81 @@ public class IntegrationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ActionCertificateListing> response = (ApiResponse<ActionCertificateListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieves basic info about trusted root CA certificates
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TrustedCertificates> getIntegrationsActionsCertificatesTruststoreAsync(GetIntegrationsActionsCertificatesTruststoreRequest request, final AsyncApiCallback<TrustedCertificates> callback) {
+    try {
+      final SettableFuture<TrustedCertificates> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TrustedCertificates>() {}, new AsyncApiCallback<ApiResponse<TrustedCertificates>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrustedCertificates> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieves basic info about trusted root CA certificates
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TrustedCertificates>> getIntegrationsActionsCertificatesTruststoreAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TrustedCertificates>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TrustedCertificates>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TrustedCertificates>() {}, new AsyncApiCallback<ApiResponse<TrustedCertificates>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrustedCertificates> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrustedCertificates> response = (ApiResponse<TrustedCertificates>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrustedCertificates> response = (ApiResponse<TrustedCertificates>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

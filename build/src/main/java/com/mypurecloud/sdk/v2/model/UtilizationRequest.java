@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.LabelUtilizationRequest;
 import com.mypurecloud.sdk.v2.model.MediaUtilization;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -26,6 +27,7 @@ import java.io.Serializable;
 public class UtilizationRequest  implements Serializable {
   
   private Map<String, MediaUtilization> utilization = null;
+  private Map<String, LabelUtilizationRequest> labelUtilizations = null;
 
   
   /**
@@ -46,6 +48,24 @@ public class UtilizationRequest  implements Serializable {
   }
 
 
+  /**
+   * Map of label ids to utilization settings.
+   **/
+  public UtilizationRequest labelUtilizations(Map<String, LabelUtilizationRequest> labelUtilizations) {
+    this.labelUtilizations = labelUtilizations;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Map of label ids to utilization settings.")
+  @JsonProperty("labelUtilizations")
+  public Map<String, LabelUtilizationRequest> getLabelUtilizations() {
+    return labelUtilizations;
+  }
+  public void setLabelUtilizations(Map<String, LabelUtilizationRequest> labelUtilizations) {
+    this.labelUtilizations = labelUtilizations;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -56,12 +76,13 @@ public class UtilizationRequest  implements Serializable {
     }
     UtilizationRequest utilizationRequest = (UtilizationRequest) o;
 
-    return Objects.equals(this.utilization, utilizationRequest.utilization);
+    return Objects.equals(this.utilization, utilizationRequest.utilization) &&
+            Objects.equals(this.labelUtilizations, utilizationRequest.labelUtilizations);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(utilization);
+    return Objects.hash(utilization, labelUtilizations);
   }
 
   @Override
@@ -70,6 +91,7 @@ public class UtilizationRequest  implements Serializable {
     sb.append("class UtilizationRequest {\n");
     
     sb.append("    utilization: ").append(toIndentedString(utilization)).append("\n");
+    sb.append("    labelUtilizations: ").append(toIndentedString(labelUtilizations)).append("\n");
     sb.append("}");
     return sb.toString();
   }

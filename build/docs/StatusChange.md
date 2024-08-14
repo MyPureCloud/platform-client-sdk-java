@@ -101,6 +101,7 @@ title: StatusChange
 | INFRASTRUCTUREASCODE | &quot;infrastructureascode&quot; | 
 | INTEGRATIONS | &quot;integrations&quot; | 
 | INTENT_MINER | &quot;intent.miner&quot; | 
+| INTERNAL_MESSAGING | &quot;internal.messaging&quot; | 
 | JOURNEY | &quot;journey&quot; | 
 | KNOWLEDGE | &quot;knowledge&quot; | 
 | LANGUAGE_UNDERSTANDING | &quot;language.understanding&quot; | 
@@ -123,6 +124,7 @@ title: StatusChange
 | SEARCH | &quot;search&quot; | 
 | SECONDARY_AUTOMATION_TESTING | &quot;secondary.automation.testing&quot; | 
 | SKILLS | &quot;skills&quot; | 
+| SOCIAL_MEDIA | &quot;social.media&quot; | 
 | SPEECH_AND_TEXT_ANALYTICS | &quot;speech.and.text.analytics&quot; | 
 | SPEECH_INTEGRATION | &quot;speech.integration&quot; | 
 | SUPPORTABILITY | &quot;supportability&quot; | 

@@ -16,6 +16,7 @@ title: ReportingTurn
 | **knowledge** | <!----><!---->[**ReportingTurnKnowledge**](ReportingTurnKnowledge.html)<!----> | The knowledge data captured during this reporting turn. |  [optional] |
 | **knowledgeBaseEvents** | <!----><!---->[**ReportingTurnKnowledgeEvents**](ReportingTurnKnowledgeEvents.html)<!----> | The knowledge data captured during this reporting turn. |  [optional] |
 | **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Timestamp indicating when the original turn was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **dateCompleted** | <!----><!---->[**Date**](Date.html)<!----> | Timestamp indicating when the original turn was completed. Note: The 'interval' query param uses this timestamp to filter the output. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **askActionResult** | [**AskActionResultEnum**](#AskActionResultEnum)<!----> | Result of the bot flow 'ask' action. |  [optional] |
 | **sessionEndDetails** | <!----><!---->[**SessionEndDetails**](SessionEndDetails.html)<!----> | The details related to end of bot flow session. |  [optional] |
 | **conversation** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | The conversation details, across potentially multiple Bot Flow sessions. |  [optional] |

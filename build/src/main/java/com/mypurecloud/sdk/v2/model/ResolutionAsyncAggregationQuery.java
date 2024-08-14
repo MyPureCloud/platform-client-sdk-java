@@ -47,7 +47,11 @@ public class ResolutionAsyncAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
+    CONVERSATIONID("conversationId"),
+    MEDIATYPE("mediaType"),
     QUEUEID("queueId"),
+    REQUESTEDROUTING("requestedRouting"),
+    USEDROUTING("usedRouting"),
     USERID("userId");
 
     private String value;

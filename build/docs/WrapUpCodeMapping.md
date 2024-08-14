@@ -28,6 +28,9 @@ title: WrapUpCodeMapping
 | CONTACT_UNCALLABLE | &quot;CONTACT_UNCALLABLE&quot; |
 | NUMBER_UNCALLABLE | &quot;NUMBER_UNCALLABLE&quot; |
 | RIGHT_PARTY_CONTACT | &quot;RIGHT_PARTY_CONTACT&quot; |
+| BUSINESS_SUCCESS | &quot;BUSINESS_SUCCESS&quot; |
+| BUSINESS_FAILURE | &quot;BUSINESS_FAILURE&quot; |
+| BUSINESS_NEUTRAL | &quot;BUSINESS_NEUTRAL&quot; |
 {: class="table table-striped"}
 
 

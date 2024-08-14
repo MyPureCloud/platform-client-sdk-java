@@ -104,6 +104,7 @@ public class EvaluationAggregateQueryPredicate  implements Serializable {
     EVALUATIONRELEASEDATE("evaluationReleaseDate"),
     EVALUATORID("evaluatorId"),
     FORMID("formId"),
+    MEDIATYPE("mediaType"),
     QUEUEID("queueId"),
     RELEASED("released"),
     RESCORED("rescored"),

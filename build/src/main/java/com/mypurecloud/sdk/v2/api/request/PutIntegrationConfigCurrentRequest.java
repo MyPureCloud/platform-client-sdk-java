@@ -67,6 +67,7 @@ import com.mypurecloud.sdk.v2.model.PublishDraftInput;
 import com.mypurecloud.sdk.v2.model.SttEngineEntity;
 import com.mypurecloud.sdk.v2.model.SttEngineEntityListing;
 import com.mypurecloud.sdk.v2.model.TestExecutionResult;
+import com.mypurecloud.sdk.v2.model.TrustedCertificates;
 import com.mypurecloud.sdk.v2.model.TtsEngineEntity;
 import com.mypurecloud.sdk.v2.model.TtsEngineEntityListing;
 import com.mypurecloud.sdk.v2.model.TtsSettings;

@@ -23,6 +23,7 @@ title: ButtonResponse
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | BUTTON | &quot;Button&quot; | 
+| DATEPICKER | &quot;DatePicker&quot; | 
 | QUICKREPLY | &quot;QuickReply&quot; | 
 {: class="table table-striped"}
 

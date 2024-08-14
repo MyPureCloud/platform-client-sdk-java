@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.LabelUtilizationResponse;
 import com.mypurecloud.sdk.v2.model.MediaUtilization;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -27,6 +28,7 @@ import java.io.Serializable;
 public class AgentMaxUtilizationResponse  implements Serializable {
   
   private Map<String, MediaUtilization> utilization = null;
+  private Map<String, LabelUtilizationResponse> labelUtilizations = null;
 
   private static class LevelEnumDeserializer extends StdDeserializer<LevelEnum> {
     public LevelEnumDeserializer() {
@@ -96,6 +98,24 @@ public class AgentMaxUtilizationResponse  implements Serializable {
 
 
   /**
+   * Map of label ids to utilization settings.
+   **/
+  public AgentMaxUtilizationResponse labelUtilizations(Map<String, LabelUtilizationResponse> labelUtilizations) {
+    this.labelUtilizations = labelUtilizations;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Map of label ids to utilization settings.")
+  @JsonProperty("labelUtilizations")
+  public Map<String, LabelUtilizationResponse> getLabelUtilizations() {
+    return labelUtilizations;
+  }
+  public void setLabelUtilizations(Map<String, LabelUtilizationResponse> labelUtilizations) {
+    this.labelUtilizations = labelUtilizations;
+  }
+
+
+  /**
    **/
   public AgentMaxUtilizationResponse level(LevelEnum level) {
     this.level = level;
@@ -123,12 +143,13 @@ public class AgentMaxUtilizationResponse  implements Serializable {
     AgentMaxUtilizationResponse agentMaxUtilizationResponse = (AgentMaxUtilizationResponse) o;
 
     return Objects.equals(this.utilization, agentMaxUtilizationResponse.utilization) &&
+            Objects.equals(this.labelUtilizations, agentMaxUtilizationResponse.labelUtilizations) &&
             Objects.equals(this.level, agentMaxUtilizationResponse.level);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(utilization, level);
+    return Objects.hash(utilization, labelUtilizations, level);
   }
 
   @Override
@@ -137,6 +158,7 @@ public class AgentMaxUtilizationResponse  implements Serializable {
     sb.append("class AgentMaxUtilizationResponse {\n");
     
     sb.append("    utilization: ").append(toIndentedString(utilization)).append("\n");
+    sb.append("    labelUtilizations: ").append(toIndentedString(labelUtilizations)).append("\n");
     sb.append("    level: ").append(toIndentedString(level)).append("\n");
     sb.append("}");
     return sb.toString();

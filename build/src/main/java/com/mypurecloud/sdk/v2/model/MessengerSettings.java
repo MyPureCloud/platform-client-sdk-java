@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.FileUploadSettings;
 import com.mypurecloud.sdk.v2.model.LauncherButtonSettings;
 import com.mypurecloud.sdk.v2.model.MessengerApps;
@@ -33,6 +34,54 @@ public class MessengerSettings  implements Serializable {
   private FileUploadSettings fileUpload = null;
   private MessengerApps apps = null;
   private MessengerHomeScreen homeScreen = null;
+
+  private static class SessionPersistenceTypeEnumDeserializer extends StdDeserializer<SessionPersistenceTypeEnum> {
+    public SessionPersistenceTypeEnumDeserializer() {
+      super(SessionPersistenceTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public SessionPersistenceTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SessionPersistenceTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The session persistence type for messenger
+   */
+ @JsonDeserialize(using = SessionPersistenceTypeEnumDeserializer.class)
+  public enum SessionPersistenceTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ACROSSSUBDOMAINS("AcrossSubdomains"),
+    DOMAINORSUBDOMAINONLY("DomainOrSubdomainOnly");
+
+    private String value;
+
+    SessionPersistenceTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SessionPersistenceTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SessionPersistenceTypeEnum value : SessionPersistenceTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SessionPersistenceTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private SessionPersistenceTypeEnum sessionPersistenceType = null;
 
   
   /**
@@ -143,6 +192,24 @@ public class MessengerSettings  implements Serializable {
   }
 
 
+  /**
+   * The session persistence type for messenger
+   **/
+  public MessengerSettings sessionPersistenceType(SessionPersistenceTypeEnum sessionPersistenceType) {
+    this.sessionPersistenceType = sessionPersistenceType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The session persistence type for messenger")
+  @JsonProperty("sessionPersistenceType")
+  public SessionPersistenceTypeEnum getSessionPersistenceType() {
+    return sessionPersistenceType;
+  }
+  public void setSessionPersistenceType(SessionPersistenceTypeEnum sessionPersistenceType) {
+    this.sessionPersistenceType = sessionPersistenceType;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -158,12 +225,13 @@ public class MessengerSettings  implements Serializable {
             Objects.equals(this.launcherButton, messengerSettings.launcherButton) &&
             Objects.equals(this.fileUpload, messengerSettings.fileUpload) &&
             Objects.equals(this.apps, messengerSettings.apps) &&
-            Objects.equals(this.homeScreen, messengerSettings.homeScreen);
+            Objects.equals(this.homeScreen, messengerSettings.homeScreen) &&
+            Objects.equals(this.sessionPersistenceType, messengerSettings.sessionPersistenceType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, styles, launcherButton, fileUpload, apps, homeScreen);
+    return Objects.hash(enabled, styles, launcherButton, fileUpload, apps, homeScreen, sessionPersistenceType);
   }
 
   @Override
@@ -177,6 +245,7 @@ public class MessengerSettings  implements Serializable {
     sb.append("    fileUpload: ").append(toIndentedString(fileUpload)).append("\n");
     sb.append("    apps: ").append(toIndentedString(apps)).append("\n");
     sb.append("    homeScreen: ").append(toIndentedString(homeScreen)).append("\n");
+    sb.append("    sessionPersistenceType: ").append(toIndentedString(sessionPersistenceType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

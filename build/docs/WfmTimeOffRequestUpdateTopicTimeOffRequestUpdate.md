@@ -55,6 +55,7 @@ title: WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate
 | INSUFFICIENTBALANCE | &quot;InsufficientBalance&quot; | 
 | INVALIDDAILYDURATION | &quot;InvalidDailyDuration&quot; | 
 | OUTSIDESHIFT | &quot;OutsideShift&quot; | 
+| OVERLAPSRESTRICTEDACTIVITYCODE | &quot;OverlapsRestrictedActivityCode&quot; | 
 | REMOVEDFROMWAITLIST | &quot;RemovedFromWaitlist&quot; | 
 | WAITLISTED | &quot;Waitlisted&quot; | 
 {: class="table table-striped"}

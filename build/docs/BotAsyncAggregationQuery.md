@@ -31,6 +31,7 @@ title: BotAsyncAggregationQuery
 | ASKACTIONRESULT | &quot;askActionResult&quot; |
 | ASKACTIONTYPE | &quot;askActionType&quot; |
 | BOTFINALINTENT | &quot;botFinalIntent&quot; |
+| BOTFLOWSUBTYPE | &quot;botFlowSubType&quot; |
 | BOTFLOWTYPE | &quot;botFlowType&quot; |
 | BOTID | &quot;botId&quot; |
 | BOTINTENT | &quot;botIntent&quot; |
@@ -50,6 +51,7 @@ title: BotAsyncAggregationQuery
 | LASTINPUTACTIONID | &quot;lastInputActionId&quot; |
 | MEDIATYPE | &quot;mediaType&quot; |
 | MESSAGETYPE | &quot;messageType&quot; |
+| PREVIEWMODE | &quot;previewMode&quot; |
 | SELFSERVED | &quot;selfServed&quot; |
 {: class="table table-striped"}
 
@@ -63,6 +65,8 @@ title: BotAsyncAggregationQuery
 | NBOTSESSIONTURNS | &quot;nBotSessionTurns&quot; |
 | NBOTSESSIONS | &quot;nBotSessions&quot; |
 | OBOTINTENT | &quot;oBotIntent&quot; |
+| OBOTSESSIONCOLLECTION | &quot;oBotSessionCollection&quot; |
+| OBOTSESSIONCOLLECTIONSELFSERVED | &quot;oBotSessionCollectionSelfServed&quot; |
 | OBOTSESSIONQUERY | &quot;oBotSessionQuery&quot; |
 | OBOTSESSIONQUERYSELFSERVED | &quot;oBotSessionQuerySelfServed&quot; |
 | OBOTSESSIONTURN | &quot;oBotSessionTurn&quot; |

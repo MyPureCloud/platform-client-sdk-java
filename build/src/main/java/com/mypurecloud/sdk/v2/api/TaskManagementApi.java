@@ -1953,12 +1953,13 @@ public class TaskManagementApi {
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
    * @param sortOrder Ascending or descending sort order (optional, default to descending)
+   * @param fields Comma-separated list of fields. The response will contain only versions created as a result of changes to these fields. (optional)
    * @return WorktypeChangeListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WorktypeChangeListing getTaskmanagementWorktypeHistory(String worktypeId, String after, Integer pageSize, String sortOrder) throws IOException, ApiException {
-    return  getTaskmanagementWorktypeHistory(createGetTaskmanagementWorktypeHistoryRequest(worktypeId, after, pageSize, sortOrder));
+  public WorktypeChangeListing getTaskmanagementWorktypeHistory(String worktypeId, String after, Integer pageSize, String sortOrder, List<String> fields) throws IOException, ApiException {
+    return  getTaskmanagementWorktypeHistory(createGetTaskmanagementWorktypeHistoryRequest(worktypeId, after, pageSize, sortOrder, fields));
   }
 
   /**
@@ -1969,14 +1970,15 @@ public class TaskManagementApi {
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
    * @param sortOrder Ascending or descending sort order (optional, default to descending)
+   * @param fields Comma-separated list of fields. The response will contain only versions created as a result of changes to these fields. (optional)
    * @return WorktypeChangeListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WorktypeChangeListing> getTaskmanagementWorktypeHistoryWithHttpInfo(String worktypeId, String after, Integer pageSize, String sortOrder) throws IOException {
-    return getTaskmanagementWorktypeHistory(createGetTaskmanagementWorktypeHistoryRequest(worktypeId, after, pageSize, sortOrder).withHttpInfo());
+  public ApiResponse<WorktypeChangeListing> getTaskmanagementWorktypeHistoryWithHttpInfo(String worktypeId, String after, Integer pageSize, String sortOrder, List<String> fields) throws IOException {
+    return getTaskmanagementWorktypeHistory(createGetTaskmanagementWorktypeHistoryRequest(worktypeId, after, pageSize, sortOrder, fields).withHttpInfo());
   }
 
-  private GetTaskmanagementWorktypeHistoryRequest createGetTaskmanagementWorktypeHistoryRequest(String worktypeId, String after, Integer pageSize, String sortOrder) {
+  private GetTaskmanagementWorktypeHistoryRequest createGetTaskmanagementWorktypeHistoryRequest(String worktypeId, String after, Integer pageSize, String sortOrder, List<String> fields) {
     return GetTaskmanagementWorktypeHistoryRequest.builder()
             .withWorktypeId(worktypeId)
 
@@ -1985,6 +1987,8 @@ public class TaskManagementApi {
             .withPageSize(pageSize)
 
             .withSortOrder(sortOrder)
+
+            .withFields(fields)
 
             .build();
   }
@@ -2794,7 +2798,7 @@ public class TaskManagementApi {
    * Update the attributes of a worktype
    * 
    * @param worktypeId Worktype id (required)
-   * @param body body (optional)
+   * @param body Worktype (required)
    * @return Worktype
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2807,7 +2811,7 @@ public class TaskManagementApi {
    * Update the attributes of a worktype
    * 
    * @param worktypeId Worktype id (required)
-   * @param body body (optional)
+   * @param body Worktype (required)
    * @return Worktype
    * @throws IOException if the request fails to be processed
    */
@@ -2877,7 +2881,7 @@ public class TaskManagementApi {
    * 
    * @param worktypeId Worktype id (required)
    * @param statusId Status id (required)
-   * @param body body (optional)
+   * @param body Status (required)
    * @return WorkitemStatus
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2891,7 +2895,7 @@ public class TaskManagementApi {
    * 
    * @param worktypeId Worktype id (required)
    * @param statusId Status id (required)
-   * @param body body (optional)
+   * @param body Status (required)
    * @return WorkitemStatus
    * @throws IOException if the request fails to be processed
    */
@@ -2961,7 +2965,7 @@ public class TaskManagementApi {
   /**
    * Create a workbin
    * 
-   * @param body body (optional)
+   * @param body Workbin (required)
    * @return Workbin
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2973,7 +2977,7 @@ public class TaskManagementApi {
   /**
    * Create a workbin
    * 
-   * @param body body (optional)
+   * @param body Workbin (required)
    * @return Workbin
    * @throws IOException if the request fails to be processed
    */
@@ -3672,7 +3676,7 @@ public class TaskManagementApi {
    * Add a status to a worktype
    * 
    * @param worktypeId Worktype id (required)
-   * @param body body (optional)
+   * @param body Status (required)
    * @return WorkitemStatus
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -3685,7 +3689,7 @@ public class TaskManagementApi {
    * Add a status to a worktype
    * 
    * @param worktypeId Worktype id (required)
-   * @param body body (optional)
+   * @param body Status (required)
    * @return WorkitemStatus
    * @throws IOException if the request fails to be processed
    */
@@ -3753,7 +3757,7 @@ public class TaskManagementApi {
   /**
    * Create a worktype
    * 
-   * @param body body (optional)
+   * @param body Worktype (required)
    * @return Worktype
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -3765,7 +3769,7 @@ public class TaskManagementApi {
   /**
    * Create a worktype
    * 
-   * @param body body (optional)
+   * @param body Worktype (required)
    * @return Worktype
    * @throws IOException if the request fails to be processed
    */

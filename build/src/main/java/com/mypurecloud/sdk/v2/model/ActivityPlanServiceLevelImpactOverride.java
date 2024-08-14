@@ -1,0 +1,84 @@
+package com.mypurecloud.sdk.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import java.util.Objects;
+import java.util.ArrayList;
+import java.io.IOException;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+import java.io.Serializable;
+/**
+ * ActivityPlanServiceLevelImpactOverride
+ */
+
+public class ActivityPlanServiceLevelImpactOverride  implements Serializable {
+  
+  private Double decreaseByPercent = null;
+
+  
+  /**
+   * Allowed service level decrease percent, from 0.0 to 100.0
+   **/
+  public ActivityPlanServiceLevelImpactOverride decreaseByPercent(Double decreaseByPercent) {
+    this.decreaseByPercent = decreaseByPercent;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "Allowed service level decrease percent, from 0.0 to 100.0")
+  @JsonProperty("decreaseByPercent")
+  public Double getDecreaseByPercent() {
+    return decreaseByPercent;
+  }
+  public void setDecreaseByPercent(Double decreaseByPercent) {
+    this.decreaseByPercent = decreaseByPercent;
+  }
+
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    ActivityPlanServiceLevelImpactOverride activityPlanServiceLevelImpactOverride = (ActivityPlanServiceLevelImpactOverride) o;
+
+    return Objects.equals(this.decreaseByPercent, activityPlanServiceLevelImpactOverride.decreaseByPercent);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(decreaseByPercent);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class ActivityPlanServiceLevelImpactOverride {\n");
+    
+    sb.append("    decreaseByPercent: ").append(toIndentedString(decreaseByPercent)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+}
+

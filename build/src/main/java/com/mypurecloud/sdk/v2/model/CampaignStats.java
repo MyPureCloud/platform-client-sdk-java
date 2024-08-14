@@ -30,6 +30,7 @@ public class CampaignStats  implements Serializable {
   private Integer outstandingCalls = null;
   private Integer scheduledCalls = null;
   private Integer timeZoneRescheduledCalls = null;
+  private Integer filteredOutContactsCount = null;
   private CampaignLinesUtilization linesUtilization = null;
 
   
@@ -82,6 +83,13 @@ public class CampaignStats  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Number of contacts that don't match filter. This is currently supported only for Campaigns with dynamic filter on.")
+  @JsonProperty("filteredOutContactsCount")
+  public Integer getFilteredOutContactsCount() {
+    return filteredOutContactsCount;
+  }
+
+
   @ApiModelProperty(example = "null", value = "Information on the campaign's lines utilization")
   @JsonProperty("linesUtilization")
   public CampaignLinesUtilization getLinesUtilization() {
@@ -106,12 +114,13 @@ public class CampaignStats  implements Serializable {
             Objects.equals(this.outstandingCalls, campaignStats.outstandingCalls) &&
             Objects.equals(this.scheduledCalls, campaignStats.scheduledCalls) &&
             Objects.equals(this.timeZoneRescheduledCalls, campaignStats.timeZoneRescheduledCalls) &&
+            Objects.equals(this.filteredOutContactsCount, campaignStats.filteredOutContactsCount) &&
             Objects.equals(this.linesUtilization, campaignStats.linesUtilization);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contactRate, idleAgents, effectiveIdleAgents, adjustedCallsPerAgent, outstandingCalls, scheduledCalls, timeZoneRescheduledCalls, linesUtilization);
+    return Objects.hash(contactRate, idleAgents, effectiveIdleAgents, adjustedCallsPerAgent, outstandingCalls, scheduledCalls, timeZoneRescheduledCalls, filteredOutContactsCount, linesUtilization);
   }
 
   @Override
@@ -126,6 +135,7 @@ public class CampaignStats  implements Serializable {
     sb.append("    outstandingCalls: ").append(toIndentedString(outstandingCalls)).append("\n");
     sb.append("    scheduledCalls: ").append(toIndentedString(scheduledCalls)).append("\n");
     sb.append("    timeZoneRescheduledCalls: ").append(toIndentedString(timeZoneRescheduledCalls)).append("\n");
+    sb.append("    filteredOutContactsCount: ").append(toIndentedString(filteredOutContactsCount)).append("\n");
     sb.append("    linesUtilization: ").append(toIndentedString(linesUtilization)).append("\n");
     sb.append("}");
     return sb.toString();

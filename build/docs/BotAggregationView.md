@@ -25,6 +25,8 @@ title: BotAggregationView
 | NBOTSESSIONTURNS | &quot;nBotSessionTurns&quot; | 
 | NBOTSESSIONS | &quot;nBotSessions&quot; | 
 | OBOTINTENT | &quot;oBotIntent&quot; | 
+| OBOTSESSIONCOLLECTION | &quot;oBotSessionCollection&quot; | 
+| OBOTSESSIONCOLLECTIONSELFSERVED | &quot;oBotSessionCollectionSelfServed&quot; | 
 | OBOTSESSIONQUERY | &quot;oBotSessionQuery&quot; | 
 | OBOTSESSIONQUERYSELFSERVED | &quot;oBotSessionQuerySelfServed&quot; | 
 | OBOTSESSIONTURN | &quot;oBotSessionTurn&quot; | 

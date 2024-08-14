@@ -252,6 +252,20 @@ public class GetKnowledgeKnowledgebaseOperationsRequest {
 	    return this;
 	} 
 
+	private List<String> sourceId;
+	public List<String> getSourceId() {
+		return this.sourceId;
+	}
+
+	public void setSourceId(List<String> sourceId) {
+		this.sourceId = sourceId;
+	}
+
+	public GetKnowledgeKnowledgebaseOperationsRequest withSourceId(List<String> sourceId) {
+	    this.setSourceId(sourceId);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -302,6 +316,9 @@ public class GetKnowledgeKnowledgebaseOperationsRequest {
         
 
                 .withQueryParameters("interval", "", interval)
+        
+
+                .withQueryParameters("sourceId", "multi", sourceId)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -377,6 +394,11 @@ public class GetKnowledgeKnowledgebaseOperationsRequest {
 
 		public Builder withInterval(String interval) {
 			request.setInterval(interval);
+			return this;
+		}
+
+		public Builder withSourceId(List<String> sourceId) {
+			request.setSourceId(sourceId);
 			return this;
 		}
 

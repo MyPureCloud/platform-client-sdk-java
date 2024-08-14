@@ -168,6 +168,8 @@ public class ConversationDetailQueryPredicate  implements Serializable {
     OEXTERNALMEDIACOUNT("oExternalMediaCount"),
     OFLOWMILESTONE("oFlowMilestone"),
     OMEDIACOUNT("oMediaCount"),
+    OMESSAGECOUNT("oMessageCount"),
+    OMESSAGESEGMENTCOUNT("oMessageSegmentCount"),
     OMESSAGETURN("oMessageTurn"),
     TABANDON("tAbandon"),
     TACD("tAcd"),

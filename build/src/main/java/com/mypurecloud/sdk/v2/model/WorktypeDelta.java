@@ -42,6 +42,7 @@ public class WorktypeDelta  implements Serializable {
   private WorkitemsAttributeChangeString defaultQueueId = null;
   private WorkitemsAttributeChangeString schemaId = null;
   private WorkitemsAttributeChangeString schemaVersion = null;
+  private WorkitemsAttributeChangeInteger serviceLevelTarget = null;
   private WorkitemsAttributeChangeInstant dateModified = null;
   private WorkitemsAttributeChangeString modifiedBy = null;
 
@@ -320,6 +321,23 @@ public class WorktypeDelta  implements Serializable {
 
   /**
    **/
+  public WorktypeDelta serviceLevelTarget(WorkitemsAttributeChangeInteger serviceLevelTarget) {
+    this.serviceLevelTarget = serviceLevelTarget;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("serviceLevelTarget")
+  public WorkitemsAttributeChangeInteger getServiceLevelTarget() {
+    return serviceLevelTarget;
+  }
+  public void setServiceLevelTarget(WorkitemsAttributeChangeInteger serviceLevelTarget) {
+    this.serviceLevelTarget = serviceLevelTarget;
+  }
+
+
+  /**
+   **/
   public WorktypeDelta dateModified(WorkitemsAttributeChangeInstant dateModified) {
     this.dateModified = dateModified;
     return this;
@@ -378,13 +396,14 @@ public class WorktypeDelta  implements Serializable {
             Objects.equals(this.defaultQueueId, worktypeDelta.defaultQueueId) &&
             Objects.equals(this.schemaId, worktypeDelta.schemaId) &&
             Objects.equals(this.schemaVersion, worktypeDelta.schemaVersion) &&
+            Objects.equals(this.serviceLevelTarget, worktypeDelta.serviceLevelTarget) &&
             Objects.equals(this.dateModified, worktypeDelta.dateModified) &&
             Objects.equals(this.modifiedBy, worktypeDelta.modifiedBy);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, statuses, defaultWorkbinId, defaultDurationSeconds, defaultExpirationSeconds, defaultDueDurationSeconds, defaultPriority, defaultSkillIds, defaultStatusId, defaultLanguageId, defaultTtlSeconds, assignmentEnabled, defaultQueueId, schemaId, schemaVersion, dateModified, modifiedBy);
+    return Objects.hash(name, description, statuses, defaultWorkbinId, defaultDurationSeconds, defaultExpirationSeconds, defaultDueDurationSeconds, defaultPriority, defaultSkillIds, defaultStatusId, defaultLanguageId, defaultTtlSeconds, assignmentEnabled, defaultQueueId, schemaId, schemaVersion, serviceLevelTarget, dateModified, modifiedBy);
   }
 
   @Override
@@ -408,6 +427,7 @@ public class WorktypeDelta  implements Serializable {
     sb.append("    defaultQueueId: ").append(toIndentedString(defaultQueueId)).append("\n");
     sb.append("    schemaId: ").append(toIndentedString(schemaId)).append("\n");
     sb.append("    schemaVersion: ").append(toIndentedString(schemaVersion)).append("\n");
+    sb.append("    serviceLevelTarget: ").append(toIndentedString(serviceLevelTarget)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("}");

@@ -17,7 +17,7 @@ title: WorkitemUpdate
 | **statusId** | <!----><!---->**String**<!----> | The ID of the Status of the Workitem. |  [optional] |
 | **workbinId** | <!----><!---->**String**<!----> | The ID of Workbin that contains the Workitem. |  [optional] |
 | **autoStatusTransition** | <!----><!---->**Boolean**<!----> | Set it to false to disable auto status transition. By default, it is enabled. |  [optional] |
-| **description** | <!----><!---->**String**<!----> | The description of the Workitem. Maximum length of 4096 characters. |  [optional] |
+| **description** | <!----><!---->**String**<!----> | The description of the Workitem. Maximum length of 512 characters. |  [optional] |
 | **dateClosed** | <!----><!---->[**Date**](Date.html)<!----> | The closed date of the Workitem. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **assignmentState** | [**AssignmentStateEnum**](#AssignmentStateEnum)<!----> | The assignment state of the Workitem. |  [optional] |
 | **assignmentOperation** | [**AssignmentOperationEnum**](#AssignmentOperationEnum)<!----> | Set this value to AgentAssignmentAlerting and supply an 'assigneeId' to assign the workitem to an agent and alert the agent of the assignment. Set this value to QueueAssignmentAlerting and supply a 'queueId' to route the workitem to an agent who is a member of the queue and alert the agent. |  [optional] |

@@ -95,6 +95,7 @@ public class BotAggregateQueryPredicate  implements Serializable {
     ASKACTIONRESULT("askActionResult"),
     ASKACTIONTYPE("askActionType"),
     BOTFINALINTENT("botFinalIntent"),
+    BOTFLOWSUBTYPE("botFlowSubType"),
     BOTFLOWTYPE("botFlowType"),
     BOTID("botId"),
     BOTINTENT("botIntent"),
@@ -114,6 +115,7 @@ public class BotAggregateQueryPredicate  implements Serializable {
     LASTINPUTACTIONID("lastInputActionId"),
     MEDIATYPE("mediaType"),
     MESSAGETYPE("messageType"),
+    PREVIEWMODE("previewMode"),
     SELFSERVED("selfServed");
 
     private String value;

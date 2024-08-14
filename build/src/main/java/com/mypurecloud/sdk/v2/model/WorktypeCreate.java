@@ -43,14 +43,14 @@ public class WorktypeCreate  implements Serializable {
 
   
   /**
-   * The name of the Worktype. Length between 3 and 256 characters.
+   * The name of the Worktype. Valid length between 3 and 256 characters.
    **/
   public WorktypeCreate name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The name of the Worktype. Length between 3 and 256 characters.")
+  @ApiModelProperty(example = "null", required = true, value = "The name of the Worktype. Valid length between 3 and 256 characters.")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -225,14 +225,14 @@ public class WorktypeCreate  implements Serializable {
 
 
   /**
-   * The description of the Worktype. Maximum length of 4096 characters.
+   * The description of the Worktype. Maximum length of 512 characters.
    **/
   public WorktypeCreate description(String description) {
     this.description = description;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The description of the Worktype. Maximum length of 4096 characters.")
+  @ApiModelProperty(example = "null", value = "The description of the Worktype. Maximum length of 512 characters.")
   @JsonProperty("description")
   public String getDescription() {
     return description;

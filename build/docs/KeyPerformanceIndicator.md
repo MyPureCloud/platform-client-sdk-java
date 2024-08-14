@@ -62,7 +62,6 @@ title: KeyPerformanceIndicator
 | RETENTION | &quot;Retention&quot; | 
 | SALESVALUE | &quot;SalesValue&quot; | 
 | HANDLETIME | &quot;HandleTime&quot; | 
-| NUMBEROFTRANSFERS | &quot;NumberOfTransfers&quot; | 
 {: class="table table-striped"}
 
 

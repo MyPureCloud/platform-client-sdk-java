@@ -52,6 +52,7 @@ title: DevelopmentActivity
 | ASSESSEDCONTENT | &quot;AssessedContent&quot; | 
 | ASSESSMENT | &quot;Assessment&quot; | 
 | EXTERNAL | &quot;External&quot; | 
+| NATIVE | &quot;Native&quot; | 
 {: class="table table-striped"}
 
 

@@ -49,7 +49,9 @@ public class BuCreateTimeOffPlanRequest  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NEVER("Never"),
     ALWAYS("Always"),
-    CHECKLIMITS("CheckLimits");
+    CHECKLIMITS("CheckLimits"),
+    CHECKACTIVITYCODES("CheckActivityCodes"),
+    CHECKLIMITSANDACTIVITYCODES("CheckLimitsAndActivityCodes");
 
     private String value;
 

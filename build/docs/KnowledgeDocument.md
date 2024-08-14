@@ -71,6 +71,11 @@ title: KnowledgeDocument
 | ZH_HK | &quot;zh-HK&quot; | 
 | KO_KR | &quot;ko-KR&quot; | 
 | PL_PL | &quot;pl-PL&quot; | 
+| HI_IN | &quot;hi-IN&quot; | 
+| TH_TH | &quot;th-TH&quot; | 
+| HU_HU | &quot;hu-HU&quot; | 
+| VI_VN | &quot;vi-VN&quot; | 
+| UK_UA | &quot;uk-UA&quot; | 
 {: class="table table-striped"}
 
 

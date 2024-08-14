@@ -225,14 +225,14 @@ public class AppEventRequest  implements Serializable {
 
 
   /**
-   * Cookie ID of the customer associated with the app event. This is expected to be set per application install or device and can be used to identify a single customer across multiple sessions. This identifier, along with others passed as traits, is used for identity resolution.
+   * A UUID representing the customer associated with the app event. This is expected to be set per application install or device and can be used to identify a single customer across multiple sessions. This identifier, along with others passed as traits, is used for identity resolution.
    **/
   public AppEventRequest customerCookieId(String customerCookieId) {
     this.customerCookieId = customerCookieId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Cookie ID of the customer associated with the app event. This is expected to be set per application install or device and can be used to identify a single customer across multiple sessions. This identifier, along with others passed as traits, is used for identity resolution.")
+  @ApiModelProperty(example = "null", required = true, value = "A UUID representing the customer associated with the app event. This is expected to be set per application install or device and can be used to identify a single customer across multiple sessions. This identifier, along with others passed as traits, is used for identity resolution.")
   @JsonProperty("customerCookieId")
   public String getCustomerCookieId() {
     return customerCookieId;

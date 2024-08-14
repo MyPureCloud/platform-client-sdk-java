@@ -23,6 +23,7 @@ title: ConversationMessageMetadataEvent
 | COBROWSE | &quot;CoBrowse&quot; | 
 | TYPING | &quot;Typing&quot; | 
 | PRESENCE | &quot;Presence&quot; | 
+| VIDEO | &quot;Video&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}
 

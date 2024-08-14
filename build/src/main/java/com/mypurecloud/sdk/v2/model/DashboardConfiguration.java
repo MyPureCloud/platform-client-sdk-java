@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
+import com.mypurecloud.sdk.v2.model.DashboardsSharedWith;
 import com.mypurecloud.sdk.v2.model.Widget;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -86,6 +87,8 @@ public class DashboardConfiguration  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private AddressableEntityRef createdBy = null;
+  private Boolean shared = null;
+  private DashboardsSharedWith dashboardsSharedWith = null;
   private String selfUri = null;
 
   
@@ -272,6 +275,42 @@ public class DashboardConfiguration  implements Serializable {
   }
 
 
+  /**
+   * The flag to indicate if the dashboard is shared
+   **/
+  public DashboardConfiguration shared(Boolean shared) {
+    this.shared = shared;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The flag to indicate if the dashboard is shared")
+  @JsonProperty("shared")
+  public Boolean getShared() {
+    return shared;
+  }
+  public void setShared(Boolean shared) {
+    this.shared = shared;
+  }
+
+
+  /**
+   * The list of users and teams the dashboard is shared with
+   **/
+  public DashboardConfiguration dashboardsSharedWith(DashboardsSharedWith dashboardsSharedWith) {
+    this.dashboardsSharedWith = dashboardsSharedWith;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of users and teams the dashboard is shared with")
+  @JsonProperty("dashboardsSharedWith")
+  public DashboardsSharedWith getDashboardsSharedWith() {
+    return dashboardsSharedWith;
+  }
+  public void setDashboardsSharedWith(DashboardsSharedWith dashboardsSharedWith) {
+    this.dashboardsSharedWith = dashboardsSharedWith;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -301,12 +340,14 @@ public class DashboardConfiguration  implements Serializable {
             Objects.equals(this.dateCreated, dashboardConfiguration.dateCreated) &&
             Objects.equals(this.dateModified, dashboardConfiguration.dateModified) &&
             Objects.equals(this.createdBy, dashboardConfiguration.createdBy) &&
+            Objects.equals(this.shared, dashboardConfiguration.shared) &&
+            Objects.equals(this.dashboardsSharedWith, dashboardConfiguration.dashboardsSharedWith) &&
             Objects.equals(this.selfUri, dashboardConfiguration.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, rows, columns, widgets, favorite, publicDashboard, restricted, layoutType, dateCreated, dateModified, createdBy, selfUri);
+    return Objects.hash(id, name, rows, columns, widgets, favorite, publicDashboard, restricted, layoutType, dateCreated, dateModified, createdBy, shared, dashboardsSharedWith, selfUri);
   }
 
   @Override
@@ -326,6 +367,8 @@ public class DashboardConfiguration  implements Serializable {
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
+    sb.append("    shared: ").append(toIndentedString(shared)).append("\n");
+    sb.append("    dashboardsSharedWith: ").append(toIndentedString(dashboardsSharedWith)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

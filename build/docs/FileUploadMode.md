@@ -8,7 +8,7 @@ title: FileUploadMode
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **fileTypes** | <!---->[**List&lt;FileTypesEnum&gt;**](#FileTypesEnum)<!----> | A list of supported content types for uploading files |  [optional] |
+| **fileTypes** | <!---->[**List&lt;FileTypesEnum&gt;**](#FileTypesEnum)<!----> | A list of supported content types for uploading files. |  [optional] |
 | **maxFileSizeKB** | <!----><!---->**Long**<!----> | The maximum file size for file uploads in kilobytes. Default is 10240 (10 MB) |  [optional] |
 {: class="table table-striped"}
 

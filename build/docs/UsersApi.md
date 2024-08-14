@@ -9,6 +9,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**deleteAnalyticsUsersDetailsJob**](UsersApi.html#deleteAnalyticsUsersDetailsJob) | Delete/cancel an async request |
 | [**deleteAuthorizationSubjectDivisionRole**](UsersApi.html#deleteAuthorizationSubjectDivisionRole) | Delete a grant of a role in a division |
+| [**deleteRoutingDirectroutingbackupSettingsMe**](UsersApi.html#deleteRoutingDirectroutingbackupSettingsMe) | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default. |
+| [**deleteRoutingUserDirectroutingbackupSettings**](UsersApi.html#deleteRoutingUserDirectroutingbackupSettings) | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default. |
 | [**deleteRoutingUserUtilization**](UsersApi.html#deleteRoutingUserUtilization) | Delete the user's max utilization settings and revert to the organization-wide default. |
 | [**deleteUser**](UsersApi.html#deleteUser) | Delete user |
 | [**deleteUserRoutinglanguage**](UsersApi.html#deleteUserRoutinglanguage) | Remove routing language from user |
@@ -28,6 +30,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAuthorizationSubjectsMe**](UsersApi.html#getAuthorizationSubjectsMe) | Returns a listing of roles and permissions for the currently authenticated user. |
 | [**getFieldconfig**](UsersApi.html#getFieldconfig) | Fetch field config for an entity type |
 | [**getProfilesUsers**](UsersApi.html#getProfilesUsers) | Get a user profile listing |
+| [**getRoutingDirectroutingbackupSettingsMe**](UsersApi.html#getRoutingDirectroutingbackupSettingsMe) | Get the user's Direct Routing Backup settings. |
+| [**getRoutingUserDirectroutingbackupSettings**](UsersApi.html#getRoutingUserDirectroutingbackupSettings) | Get the user's Direct Routing Backup settings. |
 | [**getRoutingUserUtilization**](UsersApi.html#getRoutingUserUtilization) | Get the user's max utilization settings.  If not configured, the organization-wide default is returned. |
 | [**getUser**](UsersApi.html#getUser) | Get user. |
 | [**getUserAdjacents**](UsersApi.html#getUserAdjacents) | Get adjacents |
@@ -86,6 +90,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postUsersSearchConversationTarget**](UsersApi.html#postUsersSearchConversationTarget) | Search users as conversation targets |
 | [**postUsersSearchQueuemembersManage**](UsersApi.html#postUsersSearchQueuemembersManage) | Search manage queue member |
 | [**postUsersSearchTeamsAssign**](UsersApi.html#postUsersSearchTeamsAssign) | Search users assigned to teams |
+| [**putRoutingDirectroutingbackupSettingsMe**](UsersApi.html#putRoutingDirectroutingbackupSettingsMe) | Update the user's Direct Routing Backup settings. |
+| [**putRoutingUserDirectroutingbackupSettings**](UsersApi.html#putRoutingUserDirectroutingbackupSettings) | Update the user's Direct Routing Backup settings. |
 | [**putRoutingUserUtilization**](UsersApi.html#putRoutingUserUtilization) | Update the user's max utilization settings.  Include only those media types requiring custom configuration. |
 | [**putUserCallforwarding**](UsersApi.html#putUserCallforwarding) | Update a user's CallForwarding |
 | [**putUserOutofoffice**](UsersApi.html#putUserOutofoffice) | Update an OutOfOffice |
@@ -217,6 +223,122 @@ try {
 | **subjectId** | **String**| Subject ID (user or group) | 
 | **divisionId** | **String**| the id of the division of the grant | 
 | **roleId** | **String**| the id of the role of the grant | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteRoutingDirectroutingbackupSettingsMe"></a>
+
+# **deleteRoutingDirectroutingbackupSettingsMe**
+
+
+
+> Void deleteRoutingDirectroutingbackupSettingsMe()
+
+Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+
+Wraps DELETE /api/v2/routing/directroutingbackup/settings/me  
+
+Requires ANY permissions: 
+
+* routing:directRoutingBackup:selfDelete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+try {
+    apiInstance.deleteRoutingDirectroutingbackupSettingsMe();
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#deleteRoutingDirectroutingbackupSettingsMe");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteRoutingUserDirectroutingbackupSettings"></a>
+
+# **deleteRoutingUserDirectroutingbackupSettings**
+
+
+
+> Void deleteRoutingUserDirectroutingbackupSettings(userId)
+
+Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+
+Wraps DELETE /api/v2/routing/users/{userId}/directroutingbackup/settings  
+
+Requires ANY permissions: 
+
+* routing:directRoutingBackup:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | User ID
+try {
+    apiInstance.deleteRoutingUserDirectroutingbackupSettings(userId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#deleteRoutingUserDirectroutingbackupSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | 
 {: class="table-striped"}
 
 
@@ -1335,7 +1457,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **type** | **String**| Field type |<br />**Values**: person, group, org, externalContact 
+| **type** | **String**| Field type |<br />**Values**: person, group, org 
 {: class="table-striped"}
 
 
@@ -1416,6 +1538,124 @@ try {
 ### Return type
 
 [**UserProfileEntityListing**](UserProfileEntityListing.html)
+
+<a name="getRoutingDirectroutingbackupSettingsMe"></a>
+
+# **getRoutingDirectroutingbackupSettingsMe**
+
+
+
+> [AgentDirectRoutingBackupSettings](AgentDirectRoutingBackupSettings.html) getRoutingDirectroutingbackupSettingsMe()
+
+Get the user's Direct Routing Backup settings.
+
+Wraps GET /api/v2/routing/directroutingbackup/settings/me  
+
+Requires ANY permissions: 
+
+* routing:directRoutingBackup:selfView
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+try {
+    AgentDirectRoutingBackupSettings result = apiInstance.getRoutingDirectroutingbackupSettingsMe();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getRoutingDirectroutingbackupSettingsMe");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)
+
+<a name="getRoutingUserDirectroutingbackupSettings"></a>
+
+# **getRoutingUserDirectroutingbackupSettings**
+
+
+
+> [AgentDirectRoutingBackupSettings](AgentDirectRoutingBackupSettings.html) getRoutingUserDirectroutingbackupSettings(userId)
+
+Get the user's Direct Routing Backup settings.
+
+Wraps GET /api/v2/routing/users/{userId}/directroutingbackup/settings  
+
+Requires ANY permissions: 
+
+* routing:directRoutingBackup:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | User ID
+try {
+    AgentDirectRoutingBackupSettings result = apiInstance.getRoutingUserDirectroutingbackupSettings(userId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getRoutingUserDirectroutingbackupSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)
 
 <a name="getRoutingUserUtilization"></a>
 
@@ -1517,7 +1757,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 UsersApi apiInstance = new UsersApi();
 String userId = "userId_example"; // String | User ID
-List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
 String integrationPresenceSource = "integrationPresenceSource_example"; // String | Gets an integration presence for a user instead of their default.
 String state = "active"; // String | Search for a user with this state
 try {
@@ -1535,7 +1775,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it&#39;s recommended to use specific API requests instead. | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin 
 | **integrationPresenceSource** | **String**| Gets an integration presence for a user instead of their default. | [optional]<br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight 
 | **state** | **String**| Search for a user with this state | [optional] [default to active]<br />**Values**: active, deleted 
 {: class="table-striped"}
@@ -2788,7 +3028,7 @@ Integer pageNumber = 1; // Integer | Page number
 List<String> id = Arrays.asList(null); // List<String> | A list of user IDs to fetch by bulk
 List<String> jabberId = Arrays.asList(null); // List<String> | A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter)
 String sortOrder = "ASC"; // String | Ascending or descending sort order
-List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
+List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
 String integrationPresenceSource = "integrationPresenceSource_example"; // String | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100.
 String state = "active"; // String | Only list users of this state
 try {
@@ -2810,7 +3050,7 @@ try {
 | **id** | [**List&lt;String&gt;**](String.html)| A list of user IDs to fetch by bulk | [optional] 
 | **jabberId** | [**List&lt;String&gt;**](String.html)| A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional] 
 | **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it&#39;s recommended to use specific API requests instead. | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin 
 | **integrationPresenceSource** | **String**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 100. | [optional]<br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight 
 | **state** | **String**| Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted, any 
 {: class="table-striped"}
@@ -2870,7 +3110,7 @@ String pass = "Any"; // String | Specifies if only the failed (pass is \"False\"
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String sortOrder = "Desc"; // String | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)
-List<String> types = Arrays.asList(null); // List<String> | Specifies the activity types.
+List<String> types = Arrays.asList(null); // List<String> | Specifies the activity types. Informational, AssessedContent and Assessment are deprecated
 List<String> statuses = Arrays.asList(null); // List<String> | Specifies the activity statuses to filter by
 List<String> relationship = Arrays.asList(null); // List<String> | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
 try {
@@ -2896,7 +3136,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **sortOrder** | **String**| Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc 
-| **types** | [**List&lt;String&gt;**](String.html)| Specifies the activity types. | [optional]<br />**Values**: Informational, Coaching, AssessedContent, Assessment 
+| **types** | [**List&lt;String&gt;**](String.html)| Specifies the activity types. Informational, AssessedContent and Assessment are deprecated | [optional]<br />**Values**: Informational, Coaching, AssessedContent, Assessment, External, Native 
 | **statuses** | [**List&lt;String&gt;**](String.html)| Specifies the activity statuses to filter by | [optional]<br />**Values**: Planned, InProgress, Completed, InvalidSchedule, NotCompleted 
 | **relationship** | [**List&lt;String&gt;**](String.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional]<br />**Values**: Creator, Facilitator, Attendee 
 {: class="table-striped"}
@@ -2953,7 +3193,7 @@ String pass = "Any"; // String | Specifies if only the failed (pass is \"False\"
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String sortOrder = "Desc"; // String | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)
-List<String> types = Arrays.asList(null); // List<String> | Specifies the activity types.
+List<String> types = Arrays.asList(null); // List<String> | Specifies the activity types. Informational, AssessedContent and Assessment are deprecated
 List<String> statuses = Arrays.asList(null); // List<String> | Specifies the activity statuses to filter by
 List<String> relationship = Arrays.asList(null); // List<String> | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
 try {
@@ -2978,7 +3218,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **sortOrder** | **String**| Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc 
-| **types** | [**List&lt;String&gt;**](String.html)| Specifies the activity types. | [optional]<br />**Values**: Informational, Coaching, AssessedContent, Assessment 
+| **types** | [**List&lt;String&gt;**](String.html)| Specifies the activity types. Informational, AssessedContent and Assessment are deprecated | [optional]<br />**Values**: Informational, Coaching, AssessedContent, Assessment, External, Native 
 | **statuses** | [**List&lt;String&gt;**](String.html)| Specifies the activity statuses to filter by | [optional]<br />**Values**: Planned, InProgress, Completed, InvalidSchedule, NotCompleted 
 | **relationship** | [**List&lt;String&gt;**](String.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional]<br />**Values**: Creator, Facilitator, Attendee 
 {: class="table-striped"}
@@ -3030,7 +3270,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 UsersApi apiInstance = new UsersApi();
 String activityId = "activityId_example"; // String | Specifies the activity ID, maps to either assignment or appointment ID
-String type = "type_example"; // String | Specifies the activity type.
+String type = "type_example"; // String | Specifies the activity type. Informational, AssessedContent and Assessment are deprecated
 try {
     DevelopmentActivity result = apiInstance.getUsersDevelopmentActivity(activityId, type);
     System.out.println(result);
@@ -3046,7 +3286,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **activityId** | **String**| Specifies the activity ID, maps to either assignment or appointment ID | 
-| **type** | **String**| Specifies the activity type. |<br />**Values**: Informational, Coaching, AssessedContent, Assessment, External 
+| **type** | **String**| Specifies the activity type. Informational, AssessedContent and Assessment are deprecated |<br />**Values**: Informational, Coaching, AssessedContent, Assessment, External, Native 
 {: class="table-striped"}
 
 
@@ -5145,6 +5385,130 @@ try {
 ### Return type
 
 [**UsersSearchResponse**](UsersSearchResponse.html)
+
+<a name="putRoutingDirectroutingbackupSettingsMe"></a>
+
+# **putRoutingDirectroutingbackupSettingsMe**
+
+
+
+> [AgentDirectRoutingBackupSettings](AgentDirectRoutingBackupSettings.html) putRoutingDirectroutingbackupSettingsMe(body)
+
+Update the user's Direct Routing Backup settings.
+
+Wraps PUT /api/v2/routing/directroutingbackup/settings/me  
+
+Requires ANY permissions: 
+
+* routing:directRoutingBackup:selfEdit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+AgentDirectRoutingBackupSettings body = new AgentDirectRoutingBackupSettings(); // AgentDirectRoutingBackupSettings | directRoutingBackup
+try {
+    AgentDirectRoutingBackupSettings result = apiInstance.putRoutingDirectroutingbackupSettingsMe(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#putRoutingDirectroutingbackupSettingsMe");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)| directRoutingBackup | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)
+
+<a name="putRoutingUserDirectroutingbackupSettings"></a>
+
+# **putRoutingUserDirectroutingbackupSettings**
+
+
+
+> [AgentDirectRoutingBackupSettings](AgentDirectRoutingBackupSettings.html) putRoutingUserDirectroutingbackupSettings(userId, body)
+
+Update the user's Direct Routing Backup settings.
+
+Wraps PUT /api/v2/routing/users/{userId}/directroutingbackup/settings  
+
+Requires ANY permissions: 
+
+* routing:directRoutingBackup:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | User ID
+AgentDirectRoutingBackupSettings body = new AgentDirectRoutingBackupSettings(); // AgentDirectRoutingBackupSettings | directRoutingBackup
+try {
+    AgentDirectRoutingBackupSettings result = apiInstance.putRoutingUserDirectroutingbackupSettings(userId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#putRoutingUserDirectroutingbackupSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | 
+| **body** | [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)| directRoutingBackup | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)
 
 <a name="putRoutingUserUtilization"></a>
 

@@ -9,7 +9,7 @@ title: DocumentBodyTableCellBlockProperties
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **cellType** | [**CellTypeEnum**](#CellTypeEnum)<!----> | The type of the table cell. |  [optional] |
-| **width** | <!----><!---->**Float**<!----> | The width for the table cell. |  [optional] |
+| **width** | <!----><!---->**Float**<!----> | The width of the table cell converted to em unit. |  [optional] |
 | **height** | <!----><!---->**Float**<!----> | The height for the table cell. |  [optional] |
 | **horizontalAlign** | [**HorizontalAlignEnum**](#HorizontalAlignEnum)<!----> | The horizontal alignment for the table cell. |  [optional] |
 | **verticalAlign** | [**VerticalAlignEnum**](#VerticalAlignEnum)<!----> | The vertical alignment for the table cell. |  [optional] |

@@ -19,7 +19,6 @@ import com.mypurecloud.sdk.v2.model.ActionTarget;
 import com.mypurecloud.sdk.v2.model.ActionTargetListing;
 import com.mypurecloud.sdk.v2.model.ActionTemplate;
 import com.mypurecloud.sdk.v2.model.ActionTemplateListing;
-import com.mypurecloud.sdk.v2.model.AddressableEntityListing;
 import com.mypurecloud.sdk.v2.model.AppEventRequest;
 import com.mypurecloud.sdk.v2.model.AppEventResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
@@ -41,6 +40,8 @@ import com.mypurecloud.sdk.v2.model.JourneySegment;
 import com.mypurecloud.sdk.v2.model.JourneySegmentRequest;
 import com.mypurecloud.sdk.v2.model.JourneyView;
 import com.mypurecloud.sdk.v2.model.JourneyViewJob;
+import com.mypurecloud.sdk.v2.model.JourneyViewJobListing;
+import com.mypurecloud.sdk.v2.model.JourneyViewListing;
 import com.mypurecloud.sdk.v2.model.JourneyViewResult;
 import com.mypurecloud.sdk.v2.model.Label;
 import com.mypurecloud.sdk.v2.model.Outcome;
@@ -62,6 +63,8 @@ import com.mypurecloud.sdk.v2.model.PatchSegment;
 import com.mypurecloud.sdk.v2.model.SegmentListing;
 import com.mypurecloud.sdk.v2.model.Session;
 import com.mypurecloud.sdk.v2.model.SessionListing;
+import com.mypurecloud.sdk.v2.model.WebEventRequest;
+import com.mypurecloud.sdk.v2.model.WebEventResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneyActionmapRequest;
@@ -101,6 +104,7 @@ import com.mypurecloud.sdk.v2.api.request.GetJourneyViewVersionJobsLatestRequest
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsEventdefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsEventdefinitionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActionmapRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontargetRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontemplateRequest;
@@ -113,6 +117,7 @@ import com.mypurecloud.sdk.v2.api.request.PostJourneyActionmapsEstimatesJobsRequ
 import com.mypurecloud.sdk.v2.api.request.PostJourneyActiontemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyDeploymentActioneventRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyDeploymentAppeventsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostJourneyDeploymentWebeventsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyFlowsPathsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyOutcomesAttributionsJobsRequest;
@@ -2391,33 +2396,33 @@ public class JourneyApi {
   /**
    * Retrieve all events for a given session.
    * 
-   * getJourneySessionEvents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param sessionId System-generated UUID that represents the session the event is a part of. (required)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param eventType A comma separated list of journey event types to include in the results. (optional)
    * @return EventListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EventListing getJourneySessionEvents(String sessionId, String pageSize, String after) throws IOException, ApiException {
-    return  getJourneySessionEvents(createGetJourneySessionEventsRequest(sessionId, pageSize, after));
+  public EventListing getJourneySessionEvents(String sessionId, String pageSize, String after, String eventType) throws IOException, ApiException {
+    return  getJourneySessionEvents(createGetJourneySessionEventsRequest(sessionId, pageSize, after, eventType));
   }
 
   /**
    * Retrieve all events for a given session.
    * 
-   * getJourneySessionEvents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param sessionId System-generated UUID that represents the session the event is a part of. (required)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param eventType A comma separated list of journey event types to include in the results. (optional)
    * @return EventListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EventListing> getJourneySessionEventsWithHttpInfo(String sessionId, String pageSize, String after) throws IOException {
-    return getJourneySessionEvents(createGetJourneySessionEventsRequest(sessionId, pageSize, after).withHttpInfo());
+  public ApiResponse<EventListing> getJourneySessionEventsWithHttpInfo(String sessionId, String pageSize, String after, String eventType) throws IOException {
+    return getJourneySessionEvents(createGetJourneySessionEventsRequest(sessionId, pageSize, after, eventType).withHttpInfo());
   }
 
-  private GetJourneySessionEventsRequest createGetJourneySessionEventsRequest(String sessionId, String pageSize, String after) {
+  private GetJourneySessionEventsRequest createGetJourneySessionEventsRequest(String sessionId, String pageSize, String after, String eventType) {
     return GetJourneySessionEventsRequest.builder()
             .withSessionId(sessionId)
 
@@ -2425,13 +2430,14 @@ public class JourneyApi {
 
             .withAfter(after)
 
+            .withEventType(eventType)
+
             .build();
   }
 
   /**
    * Retrieve all events for a given session.
    * 
-   * getJourneySessionEvents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return EventListing
    * @throws ApiException if the request fails on the server
@@ -2451,7 +2457,6 @@ public class JourneyApi {
   /**
    * Retrieve all events for a given session.
    * 
-   * getJourneySessionEvents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2994,27 +2999,43 @@ public class JourneyApi {
    * Get a list of Journey Views
    * 
    * getJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @return AddressableEntityListing
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param nameOrCreatedBy Journey View Name or Created By (optional)
+   * @param expand Parameter to request additional data to return in Journey payload (optional)
+   * @return JourneyViewListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AddressableEntityListing getJourneyViews() throws IOException, ApiException {
-    return  getJourneyViews(createGetJourneyViewsRequest());
+  public JourneyViewListing getJourneyViews(Integer pageNumber, Integer pageSize, String nameOrCreatedBy, String expand) throws IOException, ApiException {
+    return  getJourneyViews(createGetJourneyViewsRequest(pageNumber, pageSize, nameOrCreatedBy, expand));
   }
 
   /**
    * Get a list of Journey Views
    * 
    * getJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-   * @return AddressableEntityListing
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param nameOrCreatedBy Journey View Name or Created By (optional)
+   * @param expand Parameter to request additional data to return in Journey payload (optional)
+   * @return JourneyViewListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AddressableEntityListing> getJourneyViewsWithHttpInfo() throws IOException {
-    return getJourneyViews(createGetJourneyViewsRequest().withHttpInfo());
+  public ApiResponse<JourneyViewListing> getJourneyViewsWithHttpInfo(Integer pageNumber, Integer pageSize, String nameOrCreatedBy, String expand) throws IOException {
+    return getJourneyViews(createGetJourneyViewsRequest(pageNumber, pageSize, nameOrCreatedBy, expand).withHttpInfo());
   }
 
-  private GetJourneyViewsRequest createGetJourneyViewsRequest() {
+  private GetJourneyViewsRequest createGetJourneyViewsRequest(Integer pageNumber, Integer pageSize, String nameOrCreatedBy, String expand) {
     return GetJourneyViewsRequest.builder()
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withNameOrCreatedBy(nameOrCreatedBy)
+
+            .withExpand(expand)
+
             .build();
   }
 
@@ -3023,13 +3044,13 @@ public class JourneyApi {
    * 
    * getJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
-   * @return AddressableEntityListing
+   * @return JourneyViewListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AddressableEntityListing getJourneyViews(GetJourneyViewsRequest request) throws IOException, ApiException {
+  public JourneyViewListing getJourneyViews(GetJourneyViewsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<AddressableEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AddressableEntityListing>() {});
+      ApiResponse<JourneyViewListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneyViewListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -3046,13 +3067,13 @@ public class JourneyApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AddressableEntityListing> getJourneyViews(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<JourneyViewListing> getJourneyViews(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<AddressableEntityListing>() {});
+      return pcapiClient.invoke(request, new TypeReference<JourneyViewListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<AddressableEntityListing> response = (ApiResponse<AddressableEntityListing>)(ApiResponse<?>)exception;
+      ApiResponse<JourneyViewListing> response = (ApiResponse<JourneyViewListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -3063,7 +3084,7 @@ public class JourneyApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<AddressableEntityListing> response = (ApiResponse<AddressableEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<JourneyViewListing> response = (ApiResponse<JourneyViewListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -3224,6 +3245,100 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<JourneyEventDefinitionListing> response = (ApiResponse<JourneyEventDefinitionListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the jobs for an organization.
+   * 
+   * getJourneyViewsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param pageNumber The number of the page to return (optional, default to 1)
+   * @param pageSize Max number of entities to return (optional, default to 25)
+   * @param interval An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval. (optional, default to null)
+   * @param statuses Job statuses to filter for (optional, default to null)
+   * @return JourneyViewJobListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyViewJobListing getJourneyViewsJobs(Integer pageNumber, Integer pageSize, String interval, String statuses) throws IOException, ApiException {
+    return  getJourneyViewsJobs(createGetJourneyViewsJobsRequest(pageNumber, pageSize, interval, statuses));
+  }
+
+  /**
+   * Get the jobs for an organization.
+   * 
+   * getJourneyViewsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param pageNumber The number of the page to return (optional, default to 1)
+   * @param pageSize Max number of entities to return (optional, default to 25)
+   * @param interval An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval. (optional, default to null)
+   * @param statuses Job statuses to filter for (optional, default to null)
+   * @return JourneyViewJobListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyViewJobListing> getJourneyViewsJobsWithHttpInfo(Integer pageNumber, Integer pageSize, String interval, String statuses) throws IOException {
+    return getJourneyViewsJobs(createGetJourneyViewsJobsRequest(pageNumber, pageSize, interval, statuses).withHttpInfo());
+  }
+
+  private GetJourneyViewsJobsRequest createGetJourneyViewsJobsRequest(Integer pageNumber, Integer pageSize, String interval, String statuses) {
+    return GetJourneyViewsJobsRequest.builder()
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withInterval(interval)
+
+            .withStatuses(statuses)
+
+            .build();
+  }
+
+  /**
+   * Get the jobs for an organization.
+   * 
+   * getJourneyViewsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return JourneyViewJobListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyViewJobListing getJourneyViewsJobs(GetJourneyViewsJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JourneyViewJobListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneyViewJobListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the jobs for an organization.
+   * 
+   * getJourneyViewsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyViewJobListing> getJourneyViewsJobs(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JourneyViewJobListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyViewJobListing> response = (ApiResponse<JourneyViewJobListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyViewJobListing> response = (ApiResponse<JourneyViewJobListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4189,6 +4304,88 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AppEventResponse> response = (ApiResponse<AppEventResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Send a journey web event, used for tracking customer activity on a website.
+   * 
+   * @param deploymentId The ID of the deployment sending the web event. (required)
+   * @param body  (optional)
+   * @return WebEventResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WebEventResponse postJourneyDeploymentWebevents(String deploymentId, WebEventRequest body) throws IOException, ApiException {
+    return  postJourneyDeploymentWebevents(createPostJourneyDeploymentWebeventsRequest(deploymentId, body));
+  }
+
+  /**
+   * Send a journey web event, used for tracking customer activity on a website.
+   * 
+   * @param deploymentId The ID of the deployment sending the web event. (required)
+   * @param body  (optional)
+   * @return WebEventResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WebEventResponse> postJourneyDeploymentWebeventsWithHttpInfo(String deploymentId, WebEventRequest body) throws IOException {
+    return postJourneyDeploymentWebevents(createPostJourneyDeploymentWebeventsRequest(deploymentId, body).withHttpInfo());
+  }
+
+  private PostJourneyDeploymentWebeventsRequest createPostJourneyDeploymentWebeventsRequest(String deploymentId, WebEventRequest body) {
+    return PostJourneyDeploymentWebeventsRequest.builder()
+            .withDeploymentId(deploymentId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Send a journey web event, used for tracking customer activity on a website.
+   * 
+   * @param request The request object
+   * @return WebEventResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WebEventResponse postJourneyDeploymentWebevents(PostJourneyDeploymentWebeventsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WebEventResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WebEventResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Send a journey web event, used for tracking customer activity on a website.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WebEventResponse> postJourneyDeploymentWebevents(ApiRequest<WebEventRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WebEventResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WebEventResponse> response = (ApiResponse<WebEventResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WebEventResponse> response = (ApiResponse<WebEventResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

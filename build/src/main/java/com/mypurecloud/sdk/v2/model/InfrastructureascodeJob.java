@@ -45,7 +45,7 @@ public class InfrastructureascodeJob  implements Serializable {
     }
   }
   /**
-   * status
+   * Job status
    */
  @JsonDeserialize(using = StatusEnumDeserializer.class)
   public enum StatusEnum {
@@ -85,6 +85,7 @@ public class InfrastructureascodeJob  implements Serializable {
   private StatusEnum status = null;
   private ErrorInfo errorInfo = null;
   private String results = null;
+  private String rollbackResults = null;
   private String selfUri = null;
 
   
@@ -96,14 +97,14 @@ public class InfrastructureascodeJob  implements Serializable {
 
 
   /**
-   * dryRun
+   * Whether or not the job was a dry run
    **/
   public InfrastructureascodeJob dryRun(Boolean dryRun) {
     this.dryRun = dryRun;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "dryRun")
+  @ApiModelProperty(example = "null", required = true, value = "Whether or not the job was a dry run")
   @JsonProperty("dryRun")
   public Boolean getDryRun() {
     return dryRun;
@@ -113,45 +114,52 @@ public class InfrastructureascodeJob  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "acceleratorId")
+  @ApiModelProperty(example = "null", value = "Accelerator associated with the job")
   @JsonProperty("acceleratorId")
   public String getAcceleratorId() {
     return acceleratorId;
   }
 
 
-  @ApiModelProperty(example = "null", value = "dateSubmitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", value = "Date and time on which job was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateSubmitted")
   public Date getDateSubmitted() {
     return dateSubmitted;
   }
 
 
-  @ApiModelProperty(example = "null", value = "submittedBy")
+  @ApiModelProperty(example = "null", value = "User who submitted the job")
   @JsonProperty("submittedBy")
   public UserReference getSubmittedBy() {
     return submittedBy;
   }
 
 
-  @ApiModelProperty(example = "null", value = "status")
+  @ApiModelProperty(example = "null", value = "Job status")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;
   }
 
 
-  @ApiModelProperty(example = "null", value = "errorInfo")
+  @ApiModelProperty(example = "null", value = "Information about errors, if any")
   @JsonProperty("errorInfo")
   public ErrorInfo getErrorInfo() {
     return errorInfo;
   }
 
 
-  @ApiModelProperty(example = "null", value = "results")
+  @ApiModelProperty(example = "null", value = "The output results of the terraform job")
   @JsonProperty("results")
   public String getResults() {
     return results;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The results of rolling back the job if there were errors.  Not returned if job was successful.")
+  @JsonProperty("rollbackResults")
+  public String getRollbackResults() {
+    return rollbackResults;
   }
 
 
@@ -180,12 +188,13 @@ public class InfrastructureascodeJob  implements Serializable {
             Objects.equals(this.status, infrastructureascodeJob.status) &&
             Objects.equals(this.errorInfo, infrastructureascodeJob.errorInfo) &&
             Objects.equals(this.results, infrastructureascodeJob.results) &&
+            Objects.equals(this.rollbackResults, infrastructureascodeJob.rollbackResults) &&
             Objects.equals(this.selfUri, infrastructureascodeJob.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, dryRun, acceleratorId, dateSubmitted, submittedBy, status, errorInfo, results, selfUri);
+    return Objects.hash(id, dryRun, acceleratorId, dateSubmitted, submittedBy, status, errorInfo, results, rollbackResults, selfUri);
   }
 
   @Override
@@ -201,6 +210,7 @@ public class InfrastructureascodeJob  implements Serializable {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("    results: ").append(toIndentedString(results)).append("\n");
+    sb.append("    rollbackResults: ").append(toIndentedString(rollbackResults)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

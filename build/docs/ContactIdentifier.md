@@ -30,6 +30,7 @@ title: ContactIdentifier
 | EMAIL | &quot;Email&quot; | 
 | PHONE | &quot;Phone&quot; | 
 | COOKIE | &quot;Cookie&quot; | 
+| EXTERNALID | &quot;ExternalId&quot; | 
 {: class="table table-striped"}
 
 

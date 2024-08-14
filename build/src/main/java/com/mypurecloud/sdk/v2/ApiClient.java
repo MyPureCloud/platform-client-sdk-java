@@ -467,6 +467,8 @@ public class ApiClient implements AutoCloseable {
                 b.append(String.valueOf(o));
             }
             return b.toString();
+        } else if (param instanceof Boolean) {
+            return String.valueOf(param).toLowerCase();
         } else {
             return String.valueOf(param);
         }
@@ -1021,7 +1023,7 @@ public class ApiClient implements AutoCloseable {
         private Builder(ConnectorProperties properties) {
             this.properties = (properties != null) ? properties.copy() : new ConnectorProperties();
             withUserAgent(DEFAULT_USER_AGENT);
-            withDefaultHeader("purecloud-sdk", "206.0.0");
+            withDefaultHeader("purecloud-sdk", "207.0.0");
         }
 
         public Builder withDefaultHeader(String header, String value) {

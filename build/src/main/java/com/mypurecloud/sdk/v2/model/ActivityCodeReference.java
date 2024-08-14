@@ -11,11 +11,8 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.SecondaryPresence;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -25,8 +22,6 @@ import java.io.Serializable;
 public class ActivityCodeReference  implements Serializable {
   
   private String id = null;
-  private String name = null;
-  private List<SecondaryPresence> secondaryPresences = new ArrayList<SecondaryPresence>();
   private String selfUri = null;
 
   
@@ -48,41 +43,6 @@ public class ActivityCodeReference  implements Serializable {
   }
 
 
-  /**
-   **/
-  public ActivityCodeReference name(String name) {
-    this.name = name;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("name")
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
-  }
-
-
-  /**
-   * The secondary presences of this activity code.
-   **/
-  public ActivityCodeReference secondaryPresences(List<SecondaryPresence> secondaryPresences) {
-    this.secondaryPresences = secondaryPresences;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The secondary presences of this activity code.")
-  @JsonProperty("secondaryPresences")
-  public List<SecondaryPresence> getSecondaryPresences() {
-    return secondaryPresences;
-  }
-  public void setSecondaryPresences(List<SecondaryPresence> secondaryPresences) {
-    this.secondaryPresences = secondaryPresences;
-  }
-
-
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -101,14 +61,12 @@ public class ActivityCodeReference  implements Serializable {
     ActivityCodeReference activityCodeReference = (ActivityCodeReference) o;
 
     return Objects.equals(this.id, activityCodeReference.id) &&
-            Objects.equals(this.name, activityCodeReference.name) &&
-            Objects.equals(this.secondaryPresences, activityCodeReference.secondaryPresences) &&
             Objects.equals(this.selfUri, activityCodeReference.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, secondaryPresences, selfUri);
+    return Objects.hash(id, selfUri);
   }
 
   @Override
@@ -117,8 +75,6 @@ public class ActivityCodeReference  implements Serializable {
     sb.append("class ActivityCodeReference {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    secondaryPresences: ").append(toIndentedString(secondaryPresences)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

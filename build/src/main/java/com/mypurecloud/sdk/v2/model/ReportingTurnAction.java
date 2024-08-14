@@ -103,6 +103,7 @@ public class ReportingTurnAction  implements Serializable {
     SETLOCALEACTION("SetLocaleAction"),
     SCREENPOPACTION("ScreenPopAction"),
     SETUTILIZATIONLABELACTION("SetUtilizationLabelAction"),
+    SETWRAPUPCODEACTION("SetWrapupCodeAction"),
     TRANSFERPUREMATCHACTION("TransferPureMatchAction"),
     UNKNOWN("Unknown");
 

@@ -152,14 +152,14 @@ public class ActionMap  implements Serializable {
 
 
   /**
-   * Probability conditions for outcomes that must be satisfied to trigger the action map.
+   * (deprecated - use triggerWithOutcomeQuantileConditions instead) Probability conditions for outcomes that must be satisfied to trigger the action map.
    **/
   public ActionMap triggerWithOutcomeProbabilityConditions(List<OutcomeProbabilityCondition> triggerWithOutcomeProbabilityConditions) {
     this.triggerWithOutcomeProbabilityConditions = triggerWithOutcomeProbabilityConditions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Probability conditions for outcomes that must be satisfied to trigger the action map.")
+  @ApiModelProperty(example = "null", value = "(deprecated - use triggerWithOutcomeQuantileConditions instead) Probability conditions for outcomes that must be satisfied to trigger the action map.")
   @JsonProperty("triggerWithOutcomeProbabilityConditions")
   public List<OutcomeProbabilityCondition> getTriggerWithOutcomeProbabilityConditions() {
     return triggerWithOutcomeProbabilityConditions;

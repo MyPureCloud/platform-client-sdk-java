@@ -41,14 +41,14 @@ public class BatchDownloadJobStatusResult  implements Serializable {
 
 
   /**
-   * JobId returned when job was initially submitted
+   * JobId returned when job was initially submitted.
    **/
   public BatchDownloadJobStatusResult jobId(String jobId) {
     this.jobId = jobId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "JobId returned when job was initially submitted")
+  @ApiModelProperty(example = "null", value = "JobId returned when job was initially submitted.")
   @JsonProperty("jobId")
   public String getJobId() {
     return jobId;
@@ -59,14 +59,14 @@ public class BatchDownloadJobStatusResult  implements Serializable {
 
 
   /**
-   * Number of results expected when job is completed
+   * Number of results expected when job is completed, this includes both success and error results. This number could change as recordings are being discovered and processed.
    **/
   public BatchDownloadJobStatusResult expectedResultCount(Integer expectedResultCount) {
     this.expectedResultCount = expectedResultCount;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Number of results expected when job is completed")
+  @ApiModelProperty(example = "null", value = "Number of results expected when job is completed, this includes both success and error results. This number could change as recordings are being discovered and processed.")
   @JsonProperty("expectedResultCount")
   public Integer getExpectedResultCount() {
     return expectedResultCount;
@@ -77,14 +77,14 @@ public class BatchDownloadJobStatusResult  implements Serializable {
 
 
   /**
-   * Current number of results available
+   * Current number of results available, this includes both success and error results.
    **/
   public BatchDownloadJobStatusResult resultCount(Integer resultCount) {
     this.resultCount = resultCount;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Current number of results available")
+  @ApiModelProperty(example = "null", value = "Current number of results available, this includes both success and error results.")
   @JsonProperty("resultCount")
   public Integer getResultCount() {
     return resultCount;
@@ -95,14 +95,14 @@ public class BatchDownloadJobStatusResult  implements Serializable {
 
 
   /**
-   * Number of error results produced so far
+   * Current number of error results.
    **/
   public BatchDownloadJobStatusResult errorCount(Integer errorCount) {
     this.errorCount = errorCount;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Number of error results produced so far")
+  @ApiModelProperty(example = "null", value = "Current number of error results.")
   @JsonProperty("errorCount")
   public Integer getErrorCount() {
     return errorCount;
@@ -113,14 +113,14 @@ public class BatchDownloadJobStatusResult  implements Serializable {
 
 
   /**
-   * Current set of results for the job
+   * Current set of results for the job.
    **/
   public BatchDownloadJobStatusResult results(List<BatchDownloadJobResult> results) {
     this.results = results;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Current set of results for the job")
+  @ApiModelProperty(example = "null", value = "Current set of results for the job.")
   @JsonProperty("results")
   public List<BatchDownloadJobResult> getResults() {
     return results;

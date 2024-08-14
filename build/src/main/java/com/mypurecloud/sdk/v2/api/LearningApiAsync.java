@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentExternalUpdate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentItem;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentReschedule;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentStep;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUserListing;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUserQuery;
@@ -34,6 +35,9 @@ import com.mypurecloud.sdk.v2.model.LearningModule;
 import com.mypurecloud.sdk.v2.model.LearningModuleCoverArtResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleJobRequest;
 import com.mypurecloud.sdk.v2.model.LearningModuleJobResponse;
+import com.mypurecloud.sdk.v2.model.LearningModulePreviewGetResponse;
+import com.mypurecloud.sdk.v2.model.LearningModulePreviewUpdateRequest;
+import com.mypurecloud.sdk.v2.model.LearningModulePreviewUpdateResponse;
 import com.mypurecloud.sdk.v2.model.LearningModulePublishRequest;
 import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
@@ -41,22 +45,29 @@ import com.mypurecloud.sdk.v2.model.LearningModuleRule;
 import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.LearningScheduleSlotsQueryRequest;
 import com.mypurecloud.sdk.v2.model.LearningScheduleSlotsQueryResponse;
+import com.mypurecloud.sdk.v2.model.LearningScormResponse;
+import com.mypurecloud.sdk.v2.model.LearningScormUploadRequest;
+import com.mypurecloud.sdk.v2.model.LearningScormUploadResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteLearningAssignmentRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteLearningModuleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningAssignmentRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLearningAssignmentStepRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningAssignmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningAssignmentsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModuleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModuleJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLearningModulePreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModuleRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModuleVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModulesAssignmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModulesCoverartCoverArtIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLearningScormScormIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLearningAssignmentRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLearningAssignmentRescheduleRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchLearningAssignmentStepRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLearningModuleUserAssignmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssessmentsScoringRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentReassignRequest;
@@ -70,7 +81,9 @@ import com.mypurecloud.sdk.v2.api.request.PostLearningModulePublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningModulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningRulesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningScheduleslotsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLearningScormRequest;
 import com.mypurecloud.sdk.v2.api.request.PutLearningModuleRequest;
+import com.mypurecloud.sdk.v2.api.request.PutLearningModulePreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.PutLearningModuleRuleRequest;
 
 import java.io.IOException;
@@ -305,6 +318,81 @@ public class LearningApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<LearningAssignment> response = (ApiResponse<LearningAssignment>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Learning Assignment Step
+   * Permission not required if you are the assigned user of the learning assignment
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LearningAssignmentStep> getLearningAssignmentStepAsync(GetLearningAssignmentStepRequest request, final AsyncApiCallback<LearningAssignmentStep> callback) {
+    try {
+      final SettableFuture<LearningAssignmentStep> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LearningAssignmentStep>() {}, new AsyncApiCallback<ApiResponse<LearningAssignmentStep>>() {
+        @Override
+        public void onCompleted(ApiResponse<LearningAssignmentStep> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Learning Assignment Step
+   * Permission not required if you are the assigned user of the learning assignment
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LearningAssignmentStep>> getLearningAssignmentStepAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LearningAssignmentStep>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LearningAssignmentStep>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LearningAssignmentStep>() {}, new AsyncApiCallback<ApiResponse<LearningAssignmentStep>>() {
+        @Override
+        public void onCompleted(ApiResponse<LearningAssignmentStep> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LearningAssignmentStep> response = (ApiResponse<LearningAssignmentStep>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LearningAssignmentStep> response = (ApiResponse<LearningAssignmentStep>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -605,6 +693,81 @@ public class LearningApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<LearningModuleJobResponse> response = (ApiResponse<LearningModuleJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a learning module preview
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LearningModulePreviewGetResponse> getLearningModulePreviewAsync(GetLearningModulePreviewRequest request, final AsyncApiCallback<LearningModulePreviewGetResponse> callback) {
+    try {
+      final SettableFuture<LearningModulePreviewGetResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LearningModulePreviewGetResponse>() {}, new AsyncApiCallback<ApiResponse<LearningModulePreviewGetResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<LearningModulePreviewGetResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a learning module preview
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LearningModulePreviewGetResponse>> getLearningModulePreviewAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LearningModulePreviewGetResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LearningModulePreviewGetResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LearningModulePreviewGetResponse>() {}, new AsyncApiCallback<ApiResponse<LearningModulePreviewGetResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<LearningModulePreviewGetResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LearningModulePreviewGetResponse> response = (ApiResponse<LearningModulePreviewGetResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LearningModulePreviewGetResponse> response = (ApiResponse<LearningModulePreviewGetResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -992,6 +1155,81 @@ public class LearningApiAsync {
   }
 
   /**
+   * Get Learning SCORM Result
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LearningScormResponse> getLearningScormScormIdAsync(GetLearningScormScormIdRequest request, final AsyncApiCallback<LearningScormResponse> callback) {
+    try {
+      final SettableFuture<LearningScormResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LearningScormResponse>() {}, new AsyncApiCallback<ApiResponse<LearningScormResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<LearningScormResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Learning SCORM Result
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LearningScormResponse>> getLearningScormScormIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LearningScormResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LearningScormResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LearningScormResponse>() {}, new AsyncApiCallback<ApiResponse<LearningScormResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<LearningScormResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LearningScormResponse> response = (ApiResponse<LearningScormResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LearningScormResponse> response = (ApiResponse<LearningScormResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Update Learning Assignment
    * 
    * @param request the request object
@@ -1130,6 +1368,81 @@ public class LearningApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<LearningAssignment> response = (ApiResponse<LearningAssignment>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update Learning Assignment Step
+   * Permission not required if you are the assigned user of the learning assignment
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LearningAssignmentStep> patchLearningAssignmentStepAsync(PatchLearningAssignmentStepRequest request, final AsyncApiCallback<LearningAssignmentStep> callback) {
+    try {
+      final SettableFuture<LearningAssignmentStep> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LearningAssignmentStep>() {}, new AsyncApiCallback<ApiResponse<LearningAssignmentStep>>() {
+        @Override
+        public void onCompleted(ApiResponse<LearningAssignmentStep> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update Learning Assignment Step
+   * Permission not required if you are the assigned user of the learning assignment
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LearningAssignmentStep>> patchLearningAssignmentStepAsync(ApiRequest<LearningAssignmentStep> request, final AsyncApiCallback<ApiResponse<LearningAssignmentStep>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LearningAssignmentStep>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LearningAssignmentStep>() {}, new AsyncApiCallback<ApiResponse<LearningAssignmentStep>>() {
+        @Override
+        public void onCompleted(ApiResponse<LearningAssignmentStep> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LearningAssignmentStep> response = (ApiResponse<LearningAssignmentStep>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LearningAssignmentStep> response = (ApiResponse<LearningAssignmentStep>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2117,6 +2430,81 @@ public class LearningApiAsync {
   }
 
   /**
+   * Create a SCORM package upload request
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LearningScormUploadResponse> postLearningScormAsync(PostLearningScormRequest request, final AsyncApiCallback<LearningScormUploadResponse> callback) {
+    try {
+      final SettableFuture<LearningScormUploadResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LearningScormUploadResponse>() {}, new AsyncApiCallback<ApiResponse<LearningScormUploadResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<LearningScormUploadResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a SCORM package upload request
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LearningScormUploadResponse>> postLearningScormAsync(ApiRequest<LearningScormUploadRequest> request, final AsyncApiCallback<ApiResponse<LearningScormUploadResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LearningScormUploadResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LearningScormUploadResponse>() {}, new AsyncApiCallback<ApiResponse<LearningScormUploadResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<LearningScormUploadResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LearningScormUploadResponse> response = (ApiResponse<LearningScormUploadResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LearningScormUploadResponse> response = (ApiResponse<LearningScormUploadResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Update a learning module
    * This will update the name, description, completion time in days and inform steps for a learning module
    * @param request the request object
@@ -2180,6 +2568,81 @@ public class LearningApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<LearningModule> response = (ApiResponse<LearningModule>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a learning module preview
+   * This will update a learning module preview
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LearningModulePreviewUpdateResponse> putLearningModulePreviewAsync(PutLearningModulePreviewRequest request, final AsyncApiCallback<LearningModulePreviewUpdateResponse> callback) {
+    try {
+      final SettableFuture<LearningModulePreviewUpdateResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LearningModulePreviewUpdateResponse>() {}, new AsyncApiCallback<ApiResponse<LearningModulePreviewUpdateResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<LearningModulePreviewUpdateResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a learning module preview
+   * This will update a learning module preview
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LearningModulePreviewUpdateResponse>> putLearningModulePreviewAsync(ApiRequest<LearningModulePreviewUpdateRequest> request, final AsyncApiCallback<ApiResponse<LearningModulePreviewUpdateResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LearningModulePreviewUpdateResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LearningModulePreviewUpdateResponse>() {}, new AsyncApiCallback<ApiResponse<LearningModulePreviewUpdateResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<LearningModulePreviewUpdateResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LearningModulePreviewUpdateResponse> response = (ApiResponse<LearningModulePreviewUpdateResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LearningModulePreviewUpdateResponse> response = (ApiResponse<LearningModulePreviewUpdateResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

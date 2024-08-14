@@ -81,6 +81,7 @@ title: ReportingTurnAction
 | SETLOCALEACTION | &quot;SetLocaleAction&quot; | 
 | SCREENPOPACTION | &quot;ScreenPopAction&quot; | 
 | SETUTILIZATIONLABELACTION | &quot;SetUtilizationLabelAction&quot; | 
+| SETWRAPUPCODEACTION | &quot;SetWrapupCodeAction&quot; | 
 | TRANSFERPUREMATCHACTION | &quot;TransferPureMatchAction&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}

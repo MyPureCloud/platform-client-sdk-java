@@ -14,6 +14,7 @@ title: CobrowseSettings
 | **maskSelectors** | <!----><!---->**List&lt;String&gt;**<!----> | Mask patterns that will apply to pages being shared |  [optional] |
 | **channels** | <!---->[**List&lt;ChannelsEnum&gt;**](#ChannelsEnum)<!----> | Cobrowse channels for web messenger |  [optional] |
 | **readonlySelectors** | <!----><!---->**List&lt;String&gt;**<!----> | Readonly patterns that will apply to pages being shared |  [optional] |
+| **pauseCriteria** | <!----><!---->[**List&lt;PauseCriteria&gt;**](PauseCriteria.html)<!----> | Pause criteria that will pause cobrowse if some of them are met in the user's URL |  [optional] |
 {: class="table table-striped"}
 
 

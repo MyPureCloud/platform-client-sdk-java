@@ -29,7 +29,6 @@ title: FieldConfig
 | PERSON | &quot;person&quot; | 
 | GROUP | &quot;group&quot; | 
 | ORG | &quot;org&quot; | 
-| EXTERNALCONTACT | &quot;externalContact&quot; | 
 {: class="table table-striped"}
 
 
