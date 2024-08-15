@@ -1,0 +1,19 @@
+# EdgeMetricsTopicEdgeMetrics
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **edge** | [**EdgeMetricsTopicUriReference**](EdgeMetricsTopicUriReference) |  |  [optional] |
+| **eventTime** | [**Date**](Date) |  |  [optional] |
+| **upTimeMsec** | **Integer** |  |  [optional] |
+| **processors** | [**List&lt;EdgeMetricsTopicEdgeMetricProcessor&gt;**](EdgeMetricsTopicEdgeMetricProcessor) |  |  [optional] |
+| **memory** | [**List&lt;EdgeMetricsTopicEdgeMetricMemory&gt;**](EdgeMetricsTopicEdgeMetricMemory) |  |  [optional] |
+| **disks** | [**List&lt;EdgeMetricsTopicEdgeMetricDisk&gt;**](EdgeMetricsTopicEdgeMetricDisk) |  |  [optional] |
+| **subsystems** | [**List&lt;EdgeMetricsTopicEdgeMetricSubsystem&gt;**](EdgeMetricsTopicEdgeMetricSubsystem) |  |  [optional] |
+| **networks** | [**List&lt;EdgeMetricsTopicEdgeMetricNetworks&gt;**](EdgeMetricsTopicEdgeMetricNetworks) |  |  [optional] |
+{: class="table table-striped"}
+
+
+

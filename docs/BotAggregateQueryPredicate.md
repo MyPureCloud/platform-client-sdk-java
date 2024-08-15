@@ -1,0 +1,72 @@
+# BotAggregateQueryPredicate
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Optional type, can usually be inferred |  [optional] |
+| **dimension** | [**DimensionEnum**](#Enum--DimensionEnum) | Left hand side for dimension predicates |  [optional] |
+| **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | Optional operator, default is matches |  [optional] |
+| **value** | **String** | Right hand side for dimension predicates |  [optional] |
+| **range** | [**NumericRange**](NumericRange) | Right hand side for dimension predicates |  [optional] |
+{: class="table table-striped"}
+
+
+## Enum: TypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| DIMENSION | &quot;dimension&quot; | 
+| PROPERTY | &quot;property&quot; | 
+| METRIC | &quot;metric&quot; | 
+{: class="table table-striped"}
+
+
+## Enum: DimensionEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ASKACTIONID | &quot;askActionId&quot; | 
+| ASKACTIONRESULT | &quot;askActionResult&quot; | 
+| ASKACTIONTYPE | &quot;askActionType&quot; | 
+| BOTFINALINTENT | &quot;botFinalIntent&quot; | 
+| BOTFLOWSUBTYPE | &quot;botFlowSubType&quot; | 
+| BOTFLOWTYPE | &quot;botFlowType&quot; | 
+| BOTID | &quot;botId&quot; | 
+| BOTINTENT | &quot;botIntent&quot; | 
+| BOTPRODUCT | &quot;botProduct&quot; | 
+| BOTPROVIDER | &quot;botProvider&quot; | 
+| BOTRECOGNITIONFAILUREREASON | &quot;botRecognitionFailureReason&quot; | 
+| BOTRESULT | &quot;botResult&quot; | 
+| BOTSESSIONID | &quot;botSessionId&quot; | 
+| BOTSLOT | &quot;botSlot&quot; | 
+| BOTVERSION | &quot;botVersion&quot; | 
+| CONVERSATIONID | &quot;conversationId&quot; | 
+| EXTERNALCONTACTID | &quot;externalContactId&quot; | 
+| INTERMEDIATEINTENTNAME | &quot;intermediateIntentName&quot; | 
+| KNOWLEDGEBASEID | &quot;knowledgeBaseId&quot; | 
+| LANGUAGECODE | &quot;languageCode&quot; | 
+| LASTACTIONID | &quot;lastActionId&quot; | 
+| LASTINPUTACTIONID | &quot;lastInputActionId&quot; | 
+| MEDIATYPE | &quot;mediaType&quot; | 
+| MESSAGETYPE | &quot;messageType&quot; | 
+| PREVIEWMODE | &quot;previewMode&quot; | 
+| SELFSERVED | &quot;selfServed&quot; | 
+{: class="table table-striped"}
+
+
+## Enum: OperatorEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| MATCHES | &quot;matches&quot; | 
+| EXISTS | &quot;exists&quot; | 
+| NOTEXISTS | &quot;notExists&quot; | 
+{: class="table table-striped"}
+
+
+

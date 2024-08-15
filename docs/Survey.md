@@ -1,0 +1,38 @@
+# Survey
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **conversation** | [**ConversationReference**](ConversationReference) |  |  [optional] |
+| **surveyForm** | [**SurveyForm**](SurveyForm) | Survey form used for this survey. |  [optional] |
+| **agent** | [**DomainEntityRef**](DomainEntityRef) |  |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
+| **queue** | [**QueueReference**](QueueReference) |  |  [optional] |
+| **answers** | [**SurveyScoringSet**](SurveyScoringSet) |  |  [optional] |
+| **completedDate** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **surveyErrorDetails** | [**SurveyErrorDetails**](SurveyErrorDetails) | Additional information about what happened when the survey is in Error status. |  [optional] |
+| **agentTeam** | [**Team**](Team) | The team that the agent belongs to |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
+{: class="table table-striped"}
+
+
+## Enum: StatusEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PENDING | &quot;Pending&quot; | 
+| SENT | &quot;Sent&quot; | 
+| INPROGRESS | &quot;InProgress&quot; | 
+| FINISHED | &quot;Finished&quot; | 
+| OPTOUT | &quot;OptOut&quot; | 
+| ERROR | &quot;Error&quot; | 
+| EXPIRED | &quot;Expired&quot; | 
+{: class="table table-striped"}
+
+
+

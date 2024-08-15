@@ -1,0 +1,27 @@
+# WfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForecastProgressNotification
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
+| **result** | [**WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast**](WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast) |  |  [optional] |
+| **operationId** | **String** |  |  [optional] |
+| **progress** | **Integer** |  |  [optional] |
+{: class="table table-striped"}
+
+
+## Enum: StatusEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PROCESSING | &quot;Processing&quot; | 
+| COMPLETE | &quot;Complete&quot; | 
+| CANCELED | &quot;Canceled&quot; | 
+| ERROR | &quot;Error&quot; | 
+{: class="table table-striped"}
+
+
+

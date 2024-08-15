@@ -1,0 +1,23 @@
+# WfmIntradayPlanningGroupListing
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **entities** | [**List&lt;ForecastPlanningGroupResponse&gt;**](ForecastPlanningGroupResponse) |  |  [optional] |
+| **noDataReason** | [**NoDataReasonEnum**](#Enum--NoDataReasonEnum) | The reason there was no data for the request |  [optional] |
+{: class="table table-striped"}
+
+
+## Enum: NoDataReasonEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NOPUBLISHEDSCHEDULE | &quot;NoPublishedSchedule&quot; | 
+| NOSOURCEFORECAST | &quot;NoSourceForecast&quot; | 
+{: class="table table-striped"}
+
+
+

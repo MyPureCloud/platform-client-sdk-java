@@ -1,0 +1,13 @@
+# SupportCenterDetailedCategoryModuleTemplate
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **active** | **Boolean** | Whether this template is active or not |  |
+| **sidebar** | [**SupportCenterDetailedCategoryModuleSidebar**](SupportCenterDetailedCategoryModuleSidebar) | Sidebar settings for the template |  |
+{: class="table table-striped"}
+
+
+

@@ -1,0 +1,25 @@
+# SupportCenterScreen
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of the screen |  |
+| **moduleSettings** | [**List&lt;SupportCenterModuleSetting&gt;**](SupportCenterModuleSetting) | Module settings for the screen, valid modules for each screenType: Home: Search, Categories, TopViewedArticles; Category: Search, Categories; SearchResults: Search, Results; Article: Search, Article; |  |
+{: class="table table-striped"}
+
+
+## Enum: TypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| HOME | &quot;Home&quot; | 
+| CATEGORY | &quot;Category&quot; | 
+| SEARCHRESULTS | &quot;SearchResults&quot; | 
+| ARTICLE | &quot;Article&quot; | 
+{: class="table table-striped"}
+
+
+

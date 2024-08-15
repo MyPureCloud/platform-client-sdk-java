@@ -1,0 +1,22 @@
+# IVRDivisionViewEntityListing
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **entities** | [**List&lt;IVRDivisionView&gt;**](IVRDivisionView) |  |  [optional] |
+| **pageSize** | **Integer** |  |  [optional] |
+| **pageNumber** | **Integer** |  |  [optional] |
+| **total** | **Long** |  |  [optional] |
+| **totalNumberOfEntities** | **Long** | The total organization-wide number of entities. |  [optional] |
+| **firstUri** | **String** |  |  [optional] |
+| **selfUri** | **String** |  |  [optional] |
+| **lastUri** | **String** |  |  [optional] |
+| **nextUri** | **String** |  |  [optional] |
+| **previousUri** | **String** |  |  [optional] |
+| **pageCount** | **Integer** |  |  [optional] |
+{: class="table table-striped"}
+
+
+

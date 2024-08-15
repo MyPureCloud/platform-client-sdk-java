@@ -1,0 +1,24 @@
+# ConversationActivityMetricValue
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **metric** | [**MetricEnum**](#Enum--MetricEnum) | metric |  [optional] |
+| **count** | **Integer** | metric count |  [optional] |
+{: class="table table-striped"}
+
+
+## Enum: MetricEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| OALERTING | &quot;oAlerting&quot; | 
+| OINTERACTING | &quot;oInteracting&quot; | 
+| OWAITING | &quot;oWaiting&quot; | 
+{: class="table table-striped"}
+
+
+

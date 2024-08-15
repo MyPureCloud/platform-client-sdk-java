@@ -1,0 +1,22 @@
+# MarkContactUncontactableActionSettings
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **mediaTypes** | [**List<MediaTypesEnum>**](#Enum--MediaTypesEnum) | A list of media types to evaluate. |  |
+{: class="table table-striped"}
+
+
+## Enum: MediaTypesEnum
+
+| Name | Value |
+| ---- | ----- |
+| VOICE | &quot;Voice&quot; |
+| EMAIL | &quot;Email&quot; |
+| SMS | &quot;Sms&quot; |
+{: class="table table-striped"}
+
+
+

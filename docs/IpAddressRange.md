@@ -1,0 +1,27 @@
+# IpAddressRange
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **cidr** | **String** |  |  [optional] |
+| **service** | [**ServiceEnum**](#Enum--ServiceEnum) |  |  [optional] |
+| **region** | **String** |  |  [optional] |
+{: class="table table-striped"}
+
+
+## Enum: ServiceEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| DATA_ACTIONS | &quot;data-actions&quot; | 
+| SMTP | &quot;smtp&quot; | 
+| AUDIOHOOK | &quot;audiohook&quot; | 
+| OPEN_MESSAGING | &quot;open-messaging&quot; | 
+| API | &quot;api&quot; | 
+{: class="table table-striped"}
+
+
+

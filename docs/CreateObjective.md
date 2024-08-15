@@ -1,0 +1,58 @@
+# CreateObjective
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **templateId** | **String** | The id of this objective's base template |  [optional] |
+| **zones** | [**List&lt;ObjectiveZone&gt;**](ObjectiveZone) | Objective zone specifies min,max points and values for the associated metric |  [optional] |
+| **enabled** | **Boolean** | A flag for whether this objective is enabled for the related metric |  [optional] |
+| **topicIds** | **List&lt;String&gt;** | A list of topic ids for detected topic metrics |  [optional] |
+| **mediaTypes** | [**List<MediaTypesEnum>**](#Enum--MediaTypesEnum) | A list of media types for the metric |  [optional] |
+| **queueIds** | **List&lt;String&gt;** | A list of queue ids for the metric |  [optional] |
+| **topicIdsFilterType** | [**TopicIdsFilterTypeEnum**](#Enum--TopicIdsFilterTypeEnum) | A filter type for topic Ids. It's only used for objectives with topicIds. Default filter behavior is \"or\". |  [optional] |
+| **evaluationFormContextIds** | **List&lt;String&gt;** | The ids of associated evaluation form context, for Quality Evaluation Score metrics |  [optional] |
+| **initialDirection** | [**InitialDirectionEnum**](#Enum--InitialDirectionEnum) | The initial direction to filter on |  [optional] |
+| **dateStart** | [**LocalDate**](LocalDate) | start date of the objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
+{: class="table table-striped"}
+
+
+## Enum: MediaTypesEnum
+
+| Name | Value |
+| ---- | ----- |
+| CALLBACK | &quot;callback&quot; |
+| CHAT | &quot;chat&quot; |
+| COBROWSE | &quot;cobrowse&quot; |
+| EMAIL | &quot;email&quot; |
+| MESSAGE | &quot;message&quot; |
+| SCREENSHARE | &quot;screenshare&quot; |
+| UNKNOWN | &quot;unknown&quot; |
+| VIDEO | &quot;video&quot; |
+| VOICE | &quot;voice&quot; |
+{: class="table table-striped"}
+
+
+## Enum: TopicIdsFilterTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| AND | &quot;and&quot; | 
+| OR | &quot;or&quot; | 
+{: class="table table-striped"}
+
+
+## Enum: InitialDirectionEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| INBOUND | &quot;inbound&quot; | 
+| OUTBOUND | &quot;outbound&quot; | 
+{: class="table table-striped"}
+
+
+

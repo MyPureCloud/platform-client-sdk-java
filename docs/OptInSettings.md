@@ -1,0 +1,13 @@
+# OptInSettings
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **keyword** | **List&lt;String&gt;** | List of keywords for compliance |  |
+| **response** | [**ComplianceResponse**](ComplianceResponse) | The response configuration for the keywords |  |
+{: class="table table-striped"}
+
+
+

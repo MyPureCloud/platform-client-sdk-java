@@ -1,0 +1,15 @@
+# NumericRange
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **gt** | [**BigDecimal**](BigDecimal) | Greater than |  [optional] |
+| **gte** | [**BigDecimal**](BigDecimal) | Greater than or equal to |  [optional] |
+| **lt** | [**BigDecimal**](BigDecimal) | Less than |  [optional] |
+| **lte** | [**BigDecimal**](BigDecimal) | Less than or equal to |  [optional] |
+{: class="table table-striped"}
+
+
+

@@ -1,0 +1,16 @@
+# QueueConversationVideoEventTopicConversationRoutingData
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **queue** | [**QueueConversationVideoEventTopicUriReference**](QueueConversationVideoEventTopicUriReference) |  |  [optional] |
+| **language** | [**QueueConversationVideoEventTopicUriReference**](QueueConversationVideoEventTopicUriReference) | A UriReference for a resource |  [optional] |
+| **priority** | **Integer** | The priority of the conversation to use for routing decisions |  [optional] |
+| **skills** | [**List&lt;QueueConversationVideoEventTopicUriReference&gt;**](QueueConversationVideoEventTopicUriReference) | The skills to use for routing decisions |  [optional] |
+| **scoredAgents** | [**List&lt;QueueConversationVideoEventTopicScoredAgent&gt;**](QueueConversationVideoEventTopicScoredAgent) | A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents |  [optional] |
+{: class="table table-striped"}
+
+
+

@@ -1,0 +1,13 @@
+# StatEventWrapUpCodeTopicStatsNotification
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **group** | **Map&lt;String, String&gt;** |  |  [optional] |
+| **data** | [**List&lt;StatEventWrapUpCodeTopicIntervalMetrics&gt;**](StatEventWrapUpCodeTopicIntervalMetrics) |  |  [optional] |
+{: class="table table-striped"}
+
+
+

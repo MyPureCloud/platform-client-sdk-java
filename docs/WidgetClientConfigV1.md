@@ -1,0 +1,23 @@
+# WidgetClientConfigV1
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **webChatSkin** | [**WebChatSkinEnum**](#Enum--WebChatSkinEnum) |  |  [optional] |
+| **authenticationUrl** | **String** |  |  [optional] |
+{: class="table table-striped"}
+
+
+## Enum: WebChatSkinEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| BASIC | &quot;basic&quot; | 
+| MODERN_CARET_SKIN | &quot;modern-caret-skin&quot; | 
+{: class="table table-striped"}
+
+
+

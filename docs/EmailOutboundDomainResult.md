@@ -1,0 +1,40 @@
+# EmailOutboundDomainResult
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **dnsCnameBounceRecord** | [**DnsRecordEntry**](DnsRecordEntry) |  |  [optional] |
+| **dnsTxtSendingRecord** | [**DnsRecordEntry**](DnsRecordEntry) |  |  [optional] |
+| **domainName** | **String** |  |  [optional] |
+| **senderStatus** | [**SenderStatusEnum**](#Enum--SenderStatusEnum) |  |  [optional] |
+| **senderType** | [**SenderTypeEnum**](#Enum--SenderTypeEnum) |  |  [optional] |
+{: class="table table-striped"}
+
+
+## Enum: SenderStatusEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| REQUESTRECEIVED | &quot;RequestReceived&quot; | 
+| PROVISIONREQUESTSENTVENDOR | &quot;ProvisionRequestSentVendor&quot; | 
+| PROVISIONED | &quot;Provisioned&quot; | 
+| ERROR | &quot;Error&quot; | 
+| DEPROVISIONED | &quot;Deprovisioned&quot; | 
+{: class="table table-striped"}
+
+
+## Enum: SenderTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
+| EMAILDOMAIN | &quot;EmailDomain&quot; | 
+| MOCKEMAILDOMAIN | &quot;MockEmailDomain&quot; | 
+{: class="table table-striped"}
+
+
+

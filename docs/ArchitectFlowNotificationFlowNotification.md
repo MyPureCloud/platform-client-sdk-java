@@ -1,0 +1,19 @@
+# ArchitectFlowNotificationFlowNotification
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **id** | **String** | The flow ID |  [optional] |
+| **name** | **String** | The flow name |  [optional] |
+| **description** | **String** | The flow description |  [optional] |
+| **deleted** | **Boolean** | The flow deleted state |  [optional] |
+| **checkedInVersion** | [**ArchitectFlowNotificationFlowVersion**](ArchitectFlowNotificationFlowVersion) |  |  [optional] |
+| **savedVersion** | [**ArchitectFlowNotificationFlowVersion**](ArchitectFlowNotificationFlowVersion) | A bare-bones flow version object |  [optional] |
+| **publishedVersion** | [**ArchitectFlowNotificationFlowVersion**](ArchitectFlowNotificationFlowVersion) | A bare-bones flow version object |  [optional] |
+| **currentOperation** | [**ArchitectFlowNotificationArchitectOperation**](ArchitectFlowNotificationArchitectOperation) |  |  [optional] |
+{: class="table table-striped"}
+
+
+

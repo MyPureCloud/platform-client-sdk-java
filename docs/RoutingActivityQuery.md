@@ -1,0 +1,34 @@
+# RoutingActivityQuery
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **metrics** | [**List&lt;RoutingActivityQueryMetric&gt;**](RoutingActivityQueryMetric) | List of requested metrics |  |
+| **groupBy** | [**List<GroupByEnum>**](#Enum--GroupByEnum) | Dimension(s) to group by |  |
+| **filter** | [**RoutingActivityQueryFilter**](RoutingActivityQueryFilter) | Filter to return a subset of observations. Expresses boolean logical predicates as well as dimensional filters |  [optional] |
+| **order** | [**OrderEnum**](#Enum--OrderEnum) | Sort the result set in ascending/descending order. Default is ascending |  [optional] |
+{: class="table table-striped"}
+
+
+## Enum: GroupByEnum
+
+| Name | Value |
+| ---- | ----- |
+| QUEUEID | &quot;queueId&quot; |
+{: class="table table-striped"}
+
+
+## Enum: OrderEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| ASC | &quot;asc&quot; | 
+| DESC | &quot;desc&quot; | 
+| UNORDERED | &quot;unordered&quot; | 
+{: class="table table-striped"}
+
+
+

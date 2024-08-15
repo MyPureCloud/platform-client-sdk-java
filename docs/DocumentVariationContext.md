@@ -1,0 +1,13 @@
+# DocumentVariationContext
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **context** | [**KnowledgeContextReference**](KnowledgeContextReference) | The knowledge context associated with the variation. |  |
+| **values** | [**List&lt;KnowledgeContextValueReference&gt;**](KnowledgeContextValueReference) | The list of knowledge context values associated with the variation. |  |
+{: class="table table-striped"}
+
+
+
