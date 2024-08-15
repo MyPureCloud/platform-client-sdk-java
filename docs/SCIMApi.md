@@ -1944,3 +1944,5 @@ try {
 
 [**ScimV2User**](ScimV2User)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:207.0.0_

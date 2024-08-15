@@ -124,3 +124,5 @@ This endpoint does not require any parameters.
 
 [**EventDefinitionListing**](EventDefinitionListing)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:207.0.0_

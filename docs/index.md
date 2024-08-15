@@ -10,9 +10,11 @@ title: Platform API Client SDK - Java
 * **Documentation** https://developer.genesys.cloud/devapps/sdk/docexplorer/purecloudjava/
 * **Source** https://github.com/MyPureCloud/platform-client-sdk-java
 
+Documentation version: com.mypurecloud.sdk.v2:platform-client-v2:207.0.0
+
 ## Install Using maven
 
-Install the library from maven via the package [com.mypurecloud:platform-client-v2](https://mvnrepository.com/artifact/com.mypurecloud/platform-client-v2)
+Install the library from maven via the package [com.mypurecloud.sdk.v2:platform-client-v2](https://mvnrepository.com/artifact/com.mypurecloud/platform-client-v2)
 
 ## Android Support
 
