@@ -1,2 +1,2 @@
-build/.idea
-build/platform-client-v2.iml
+node_modules
+.npmrc
