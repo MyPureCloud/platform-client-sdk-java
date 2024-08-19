@@ -29,9 +29,9 @@ public class AlertListing  implements Serializable, PagedResource<CommonAlert> {
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
+  private String lastUri = null;
   private String firstUri = null;
   private String selfUri = null;
-  private String lastUri = null;
   private String nextUri = null;
   private String previousUri = null;
   private Integer pageCount = null;
@@ -107,6 +107,23 @@ public class AlertListing  implements Serializable, PagedResource<CommonAlert> {
 
   /**
    **/
+  public AlertListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
   public AlertListing firstUri(String firstUri) {
     this.firstUri = firstUri;
     return this;
@@ -136,23 +153,6 @@ public class AlertListing  implements Serializable, PagedResource<CommonAlert> {
   }
   public void setSelfUri(String selfUri) {
     this.selfUri = selfUri;
-  }
-
-
-  /**
-   **/
-  public AlertListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
   }
 
 
@@ -221,9 +221,9 @@ public class AlertListing  implements Serializable, PagedResource<CommonAlert> {
             Objects.equals(this.pageSize, alertListing.pageSize) &&
             Objects.equals(this.pageNumber, alertListing.pageNumber) &&
             Objects.equals(this.total, alertListing.total) &&
+            Objects.equals(this.lastUri, alertListing.lastUri) &&
             Objects.equals(this.firstUri, alertListing.firstUri) &&
             Objects.equals(this.selfUri, alertListing.selfUri) &&
-            Objects.equals(this.lastUri, alertListing.lastUri) &&
             Objects.equals(this.nextUri, alertListing.nextUri) &&
             Objects.equals(this.previousUri, alertListing.previousUri) &&
             Objects.equals(this.pageCount, alertListing.pageCount);
@@ -231,7 +231,7 @@ public class AlertListing  implements Serializable, PagedResource<CommonAlert> {
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, lastUri, nextUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, lastUri, firstUri, selfUri, nextUri, previousUri, pageCount);
   }
 
   @Override
@@ -243,9 +243,9 @@ public class AlertListing  implements Serializable, PagedResource<CommonAlert> {
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");

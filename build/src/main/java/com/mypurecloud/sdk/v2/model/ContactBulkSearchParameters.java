@@ -24,7 +24,6 @@ public class ContactBulkSearchParameters  implements Serializable {
   
   private String contactListFilterId = null;
   private ContactBulkSearchCriteria criteria = null;
-  private Boolean generateDownloadUri = null;
 
   
   /**
@@ -63,23 +62,6 @@ public class ContactBulkSearchParameters  implements Serializable {
   }
 
 
-  /**
-   **/
-  public ContactBulkSearchParameters generateDownloadUri(Boolean generateDownloadUri) {
-    this.generateDownloadUri = generateDownloadUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("generateDownloadUri")
-  public Boolean getGenerateDownloadUri() {
-    return generateDownloadUri;
-  }
-  public void setGenerateDownloadUri(Boolean generateDownloadUri) {
-    this.generateDownloadUri = generateDownloadUri;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -91,13 +73,12 @@ public class ContactBulkSearchParameters  implements Serializable {
     ContactBulkSearchParameters contactBulkSearchParameters = (ContactBulkSearchParameters) o;
 
     return Objects.equals(this.contactListFilterId, contactBulkSearchParameters.contactListFilterId) &&
-            Objects.equals(this.criteria, contactBulkSearchParameters.criteria) &&
-            Objects.equals(this.generateDownloadUri, contactBulkSearchParameters.generateDownloadUri);
+            Objects.equals(this.criteria, contactBulkSearchParameters.criteria);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contactListFilterId, criteria, generateDownloadUri);
+    return Objects.hash(contactListFilterId, criteria);
   }
 
   @Override
@@ -107,7 +88,6 @@ public class ContactBulkSearchParameters  implements Serializable {
     
     sb.append("    contactListFilterId: ").append(toIndentedString(contactListFilterId)).append("\n");
     sb.append("    criteria: ").append(toIndentedString(criteria)).append("\n");
-    sb.append("    generateDownloadUri: ").append(toIndentedString(generateDownloadUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -2308,6 +2308,8 @@ docs/KnowledgeDocumentGuestSearch.md
 docs/KnowledgeDocumentGuestSearchRequest.md
 docs/KnowledgeDocumentGuestSearchResult.md
 docs/KnowledgeDocumentPresentation.md
+docs/KnowledgeDocumentQuery.md
+docs/KnowledgeDocumentQueryResponse.md
 docs/KnowledgeDocumentReference.md
 docs/KnowledgeDocumentReq.md
 docs/KnowledgeDocumentRequest.md
@@ -3485,6 +3487,7 @@ docs/Ring.md
 docs/RoleDivision.md
 docs/RoleDivisionGrants.md
 docs/RoleDivisionPair.md
+docs/RoleSettings.md
 docs/Room.md
 docs/RoomParticipant.md
 docs/RoomParticipantResponse.md
@@ -5162,6 +5165,7 @@ docs/getAuthorizationRoleComparedefaultRightRoleId-example.txt
 docs/getAuthorizationRoleSubjectgrants-example.txt
 docs/getAuthorizationRoleUsers-example.txt
 docs/getAuthorizationRoles-example.txt
+docs/getAuthorizationRolesSettings-example.txt
 docs/getAuthorizationSettings-example.txt
 docs/getAuthorizationSubject-example.txt
 docs/getAuthorizationSubject-example.txt
@@ -6766,6 +6770,7 @@ docs/postKnowledgeKnowledgebaseDocuments-example.txt
 docs/postKnowledgeKnowledgebaseDocumentsBulkRemove-example.txt
 docs/postKnowledgeKnowledgebaseDocumentsBulkUpdate-example.txt
 docs/postKnowledgeKnowledgebaseDocumentsPresentations-example.txt
+docs/postKnowledgeKnowledgebaseDocumentsQuery-example.txt
 docs/postKnowledgeKnowledgebaseDocumentsSearch-example.txt
 docs/postKnowledgeKnowledgebaseDocumentsSearchSuggestions-example.txt
 docs/postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd-example.txt
@@ -7129,6 +7134,7 @@ docs/putAuthorizationRole-example.txt
 docs/putAuthorizationRoleUsersAdd-example.txt
 docs/putAuthorizationRoleUsersRemove-example.txt
 docs/putAuthorizationRolesDefault-example.txt
+docs/putAuthorizationRolesSettings-example.txt
 docs/putChatsMessageReactions-example.txt
 docs/putChatsSettings-example.txt
 docs/putContentmanagementWorkspace-example.txt
@@ -7914,6 +7920,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetAuthorizationRoleRequest.jav
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetAuthorizationRoleSubjectgrantsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetAuthorizationRoleUsersRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetAuthorizationRolesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetAuthorizationRolesSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetAuthorizationSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetAuthorizationSubjectRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetAuthorizationSubjectRequest.java
@@ -9517,6 +9524,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostKnowledgeKnowledgebaseDocum
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostKnowledgeKnowledgebaseDocumentsBulkRemoveRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostKnowledgeKnowledgebaseDocumentsBulkUpdateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostKnowledgeKnowledgebaseDocumentsPresentationsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostKnowledgeKnowledgebaseDocumentsQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostKnowledgeKnowledgebaseDocumentsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostKnowledgeKnowledgebaseDocumentsSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostKnowledgeKnowledgebaseDocumentsSearchSuggestionsRequest.java
@@ -9881,6 +9889,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PutAuthorizationRoleRequest.jav
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutAuthorizationRoleUsersAddRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutAuthorizationRoleUsersRemoveRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutAuthorizationRolesDefaultRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PutAuthorizationRolesSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutChatsMessageReactionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutChatsSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutContentmanagementWorkspaceMemberRequest.java
@@ -12341,6 +12350,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeDocumentGuestSearch.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeDocumentGuestSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeDocumentGuestSearchResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeDocumentPresentation.java
+src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeDocumentQuery.java
+src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeDocumentQueryResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeDocumentReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeDocumentReq.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeDocumentRequest.java
@@ -13478,6 +13489,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/Ring.java
 src/main/java/com/mypurecloud/sdk/v2/model/RoleDivision.java
 src/main/java/com/mypurecloud/sdk/v2/model/RoleDivisionGrants.java
 src/main/java/com/mypurecloud/sdk/v2/model/RoleDivisionPair.java
+src/main/java/com/mypurecloud/sdk/v2/model/RoleSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/Room.java
 src/main/java/com/mypurecloud/sdk/v2/model/RoomParticipant.java
 src/main/java/com/mypurecloud/sdk/v2/model/RoomParticipantResponse.java

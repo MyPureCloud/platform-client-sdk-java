@@ -29,7 +29,6 @@ public class ContactBulkEditRequest  implements Serializable {
   private ContactBulkSearchCriteria criteria = null;
   private List<String> contactIds = new ArrayList<String>();
   private DialerContact contact = null;
-  private Boolean generateDownloadUri = null;
 
   
   /**
@@ -104,23 +103,6 @@ public class ContactBulkEditRequest  implements Serializable {
   }
 
 
-  /**
-   **/
-  public ContactBulkEditRequest generateDownloadUri(Boolean generateDownloadUri) {
-    this.generateDownloadUri = generateDownloadUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("generateDownloadUri")
-  public Boolean getGenerateDownloadUri() {
-    return generateDownloadUri;
-  }
-  public void setGenerateDownloadUri(Boolean generateDownloadUri) {
-    this.generateDownloadUri = generateDownloadUri;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -134,13 +116,12 @@ public class ContactBulkEditRequest  implements Serializable {
     return Objects.equals(this.contactListFilterId, contactBulkEditRequest.contactListFilterId) &&
             Objects.equals(this.criteria, contactBulkEditRequest.criteria) &&
             Objects.equals(this.contactIds, contactBulkEditRequest.contactIds) &&
-            Objects.equals(this.contact, contactBulkEditRequest.contact) &&
-            Objects.equals(this.generateDownloadUri, contactBulkEditRequest.generateDownloadUri);
+            Objects.equals(this.contact, contactBulkEditRequest.contact);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contactListFilterId, criteria, contactIds, contact, generateDownloadUri);
+    return Objects.hash(contactListFilterId, criteria, contactIds, contact);
   }
 
   @Override
@@ -152,7 +133,6 @@ public class ContactBulkEditRequest  implements Serializable {
     sb.append("    criteria: ").append(toIndentedString(criteria)).append("\n");
     sb.append("    contactIds: ").append(toIndentedString(contactIds)).append("\n");
     sb.append("    contact: ").append(toIndentedString(contact)).append("\n");
-    sb.append("    generateDownloadUri: ").append(toIndentedString(generateDownloadUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

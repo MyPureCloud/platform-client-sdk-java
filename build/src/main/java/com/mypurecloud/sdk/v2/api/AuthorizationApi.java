@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.OrganizationProductEntityListing;
 import com.mypurecloud.sdk.v2.model.OrganizationRoleEntityListing;
 import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
 import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
+import com.mypurecloud.sdk.v2.model.RoleSettings;
 import com.mypurecloud.sdk.v2.model.SubjectDivisionGrantsEntityListing;
 import com.mypurecloud.sdk.v2.model.SubjectDivisions;
 import com.mypurecloud.sdk.v2.model.UserAuthorization;
@@ -49,6 +50,7 @@ import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRoleComparedefaultRigh
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRoleSubjectgrantsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRoleUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRolesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRolesSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationSubjectRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationSubjectsMeRequest;
@@ -72,6 +74,7 @@ import com.mypurecloud.sdk.v2.api.request.PutAuthorizationRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAuthorizationRoleUsersAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAuthorizationRoleUsersRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAuthorizationRolesDefaultRequest;
+import com.mypurecloud.sdk.v2.api.request.PutAuthorizationRolesSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserRolesRequest;
 
 import java.io.IOException;
@@ -1654,6 +1657,80 @@ public class AuthorizationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OrganizationRoleEntityListing> response = (ApiResponse<OrganizationRoleEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get authorization role settings
+   * 
+   * @return RoleSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RoleSettings getAuthorizationRolesSettings() throws IOException, ApiException {
+    return  getAuthorizationRolesSettings(createGetAuthorizationRolesSettingsRequest());
+  }
+
+  /**
+   * Get authorization role settings
+   * 
+   * @return RoleSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RoleSettings> getAuthorizationRolesSettingsWithHttpInfo() throws IOException {
+    return getAuthorizationRolesSettings(createGetAuthorizationRolesSettingsRequest().withHttpInfo());
+  }
+
+  private GetAuthorizationRolesSettingsRequest createGetAuthorizationRolesSettingsRequest() {
+    return GetAuthorizationRolesSettingsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get authorization role settings
+   * 
+   * @param request The request object
+   * @return RoleSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RoleSettings getAuthorizationRolesSettings(GetAuthorizationRolesSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RoleSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RoleSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get authorization role settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RoleSettings> getAuthorizationRolesSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RoleSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoleSettings> response = (ApiResponse<RoleSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoleSettings> response = (ApiResponse<RoleSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -3510,6 +3587,84 @@ public class AuthorizationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OrganizationRoleEntityListing> response = (ApiResponse<OrganizationRoleEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Change authorization role settings
+   * Change role settings
+   * @param body Authorization Role Settings (required)
+   * @return RoleSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RoleSettings putAuthorizationRolesSettings(RoleSettings body) throws IOException, ApiException {
+    return  putAuthorizationRolesSettings(createPutAuthorizationRolesSettingsRequest(body));
+  }
+
+  /**
+   * Change authorization role settings
+   * Change role settings
+   * @param body Authorization Role Settings (required)
+   * @return RoleSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RoleSettings> putAuthorizationRolesSettingsWithHttpInfo(RoleSettings body) throws IOException {
+    return putAuthorizationRolesSettings(createPutAuthorizationRolesSettingsRequest(body).withHttpInfo());
+  }
+
+  private PutAuthorizationRolesSettingsRequest createPutAuthorizationRolesSettingsRequest(RoleSettings body) {
+    return PutAuthorizationRolesSettingsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Change authorization role settings
+   * Change role settings
+   * @param request The request object
+   * @return RoleSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RoleSettings putAuthorizationRolesSettings(PutAuthorizationRolesSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RoleSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RoleSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Change authorization role settings
+   * Change role settings
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RoleSettings> putAuthorizationRolesSettings(ApiRequest<RoleSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RoleSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoleSettings> response = (ApiResponse<RoleSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoleSettings> response = (ApiResponse<RoleSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

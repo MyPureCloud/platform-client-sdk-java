@@ -118,6 +118,8 @@ public class PostTextRequest  implements Serializable {
     LINE("Line"),
     DISCORD("Discord"),
     TWITTERDIRECTMESSAGE("TwitterDirectMessage"),
+    OPEN("Open"),
+    INSTAGRAM("Instagram"),
     OTHER("Other"),
     UNKNOWN("Unknown");
 

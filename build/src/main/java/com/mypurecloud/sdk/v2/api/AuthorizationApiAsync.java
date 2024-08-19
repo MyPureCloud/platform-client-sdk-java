@@ -28,6 +28,7 @@ import com.mypurecloud.sdk.v2.model.OrganizationProductEntityListing;
 import com.mypurecloud.sdk.v2.model.OrganizationRoleEntityListing;
 import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
 import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
+import com.mypurecloud.sdk.v2.model.RoleSettings;
 import com.mypurecloud.sdk.v2.model.SubjectDivisionGrantsEntityListing;
 import com.mypurecloud.sdk.v2.model.SubjectDivisions;
 import com.mypurecloud.sdk.v2.model.UserAuthorization;
@@ -52,6 +53,7 @@ import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRoleComparedefaultRigh
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRoleSubjectgrantsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRoleUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRolesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRolesSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationSubjectRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationSubjectsMeRequest;
@@ -75,6 +77,7 @@ import com.mypurecloud.sdk.v2.api.request.PutAuthorizationRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAuthorizationRoleUsersAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAuthorizationRoleUsersRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAuthorizationRolesDefaultRequest;
+import com.mypurecloud.sdk.v2.api.request.PutAuthorizationRolesSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserRolesRequest;
 
 import java.io.IOException;
@@ -1438,6 +1441,81 @@ public class AuthorizationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<OrganizationRoleEntityListing> response = (ApiResponse<OrganizationRoleEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get authorization role settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<RoleSettings> getAuthorizationRolesSettingsAsync(GetAuthorizationRolesSettingsRequest request, final AsyncApiCallback<RoleSettings> callback) {
+    try {
+      final SettableFuture<RoleSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RoleSettings>() {}, new AsyncApiCallback<ApiResponse<RoleSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<RoleSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get authorization role settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<RoleSettings>> getAuthorizationRolesSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<RoleSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<RoleSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<RoleSettings>() {}, new AsyncApiCallback<ApiResponse<RoleSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<RoleSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RoleSettings> response = (ApiResponse<RoleSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RoleSettings> response = (ApiResponse<RoleSettings>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3163,6 +3241,81 @@ public class AuthorizationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<OrganizationRoleEntityListing> response = (ApiResponse<OrganizationRoleEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Change authorization role settings
+   * Change role settings
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<RoleSettings> putAuthorizationRolesSettingsAsync(PutAuthorizationRolesSettingsRequest request, final AsyncApiCallback<RoleSettings> callback) {
+    try {
+      final SettableFuture<RoleSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RoleSettings>() {}, new AsyncApiCallback<ApiResponse<RoleSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<RoleSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Change authorization role settings
+   * Change role settings
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<RoleSettings>> putAuthorizationRolesSettingsAsync(ApiRequest<RoleSettings> request, final AsyncApiCallback<ApiResponse<RoleSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<RoleSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<RoleSettings>() {}, new AsyncApiCallback<ApiResponse<RoleSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<RoleSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RoleSettings> response = (ApiResponse<RoleSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RoleSettings> response = (ApiResponse<RoleSettings>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

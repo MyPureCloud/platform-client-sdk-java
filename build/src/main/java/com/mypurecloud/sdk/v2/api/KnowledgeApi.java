@@ -44,6 +44,8 @@ import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedbackResponseListing;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentGuestSearch;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentGuestSearchRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentPresentation;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentQuery;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentQueryResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentReq;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentResponse;
@@ -175,6 +177,7 @@ import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsReq
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsBulkRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsBulkUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsPresentationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsSearchSuggestionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsVersionsBulkAddRequest;
@@ -7208,6 +7211,92 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query for knowledge documents.
+   * 
+   * @param knowledgeBaseId Knowledge Base ID (required)
+   * @param expand Fields, if any, to expand for each document in the search result matching the query. (optional)
+   * @param body  (optional)
+   * @return KnowledgeDocumentQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeDocumentQueryResponse postKnowledgeKnowledgebaseDocumentsQuery(String knowledgeBaseId, List<String> expand, KnowledgeDocumentQuery body) throws IOException, ApiException {
+    return  postKnowledgeKnowledgebaseDocumentsQuery(createPostKnowledgeKnowledgebaseDocumentsQueryRequest(knowledgeBaseId, expand, body));
+  }
+
+  /**
+   * Query for knowledge documents.
+   * 
+   * @param knowledgeBaseId Knowledge Base ID (required)
+   * @param expand Fields, if any, to expand for each document in the search result matching the query. (optional)
+   * @param body  (optional)
+   * @return KnowledgeDocumentQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeDocumentQueryResponse> postKnowledgeKnowledgebaseDocumentsQueryWithHttpInfo(String knowledgeBaseId, List<String> expand, KnowledgeDocumentQuery body) throws IOException {
+    return postKnowledgeKnowledgebaseDocumentsQuery(createPostKnowledgeKnowledgebaseDocumentsQueryRequest(knowledgeBaseId, expand, body).withHttpInfo());
+  }
+
+  private PostKnowledgeKnowledgebaseDocumentsQueryRequest createPostKnowledgeKnowledgebaseDocumentsQueryRequest(String knowledgeBaseId, List<String> expand, KnowledgeDocumentQuery body) {
+    return PostKnowledgeKnowledgebaseDocumentsQueryRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withExpand(expand)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query for knowledge documents.
+   * 
+   * @param request The request object
+   * @return KnowledgeDocumentQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeDocumentQueryResponse postKnowledgeKnowledgebaseDocumentsQuery(PostKnowledgeKnowledgebaseDocumentsQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeDocumentQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeDocumentQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for knowledge documents.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeDocumentQueryResponse> postKnowledgeKnowledgebaseDocumentsQuery(ApiRequest<KnowledgeDocumentQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeDocumentQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeDocumentQueryResponse> response = (ApiResponse<KnowledgeDocumentQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeDocumentQueryResponse> response = (ApiResponse<KnowledgeDocumentQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

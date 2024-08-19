@@ -58,6 +58,8 @@ title: PostTextRequest
 | LINE | &quot;Line&quot; | 
 | DISCORD | &quot;Discord&quot; | 
 | TWITTERDIRECTMESSAGE | &quot;TwitterDirectMessage&quot; | 
+| OPEN | &quot;Open&quot; | 
+| INSTAGRAM | &quot;Instagram&quot; | 
 | OTHER | &quot;Other&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}

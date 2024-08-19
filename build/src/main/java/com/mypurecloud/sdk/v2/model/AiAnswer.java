@@ -45,7 +45,8 @@ public class AiAnswer  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     LOWCONFIDENCEERROR("LowConfidenceError"),
     PARSINGERROR("ParsingError"),
-    SERVICEERROR("ServiceError");
+    SERVICEERROR("ServiceError"),
+    LOWHISTORICALACCURACYERROR("LowHistoricalAccuracyError");
 
     private String value;
 

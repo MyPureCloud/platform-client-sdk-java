@@ -71,6 +71,7 @@ title: FlowAggregationQuery
 | FLOWOUTCOME | &quot;flowOutcome&quot; |
 | FLOWOUTCOMEID | &quot;flowOutcomeId&quot; |
 | FLOWOUTCOMEVALUE | &quot;flowOutcomeValue&quot; |
+| FLOWSUBTYPE | &quot;flowSubType&quot; |
 | FLOWTYPE | &quot;flowType&quot; |
 | FLOWVERSION | &quot;flowVersion&quot; |
 | GROUPID | &quot;groupId&quot; |

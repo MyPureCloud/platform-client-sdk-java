@@ -1347,7 +1347,6 @@ public class ArchitectApi {
   /**
    * Deletes a log level for a flow by flow id.
    * Deletes the associated log level for a flow by flow id
-   * deleteFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param flowId The flow id to delete the loglevel for (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1359,7 +1358,6 @@ public class ArchitectApi {
   /**
    * Deletes a log level for a flow by flow id.
    * Deletes the associated log level for a flow by flow id
-   * deleteFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param flowId The flow id to delete the loglevel for (required)
    * @throws IOException if the request fails to be processed
    */
@@ -1377,7 +1375,6 @@ public class ArchitectApi {
   /**
    * Deletes a log level for a flow by flow id.
    * Deletes the associated log level for a flow by flow id
-   * deleteFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1396,7 +1393,6 @@ public class ArchitectApi {
   /**
    * Deletes a log level for a flow by flow id.
    * Deletes the associated log level for a flow by flow id
-   * deleteFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1662,7 +1658,6 @@ public class ArchitectApi {
   /**
    * Resets the org log level to default, base
    * Resets the org log level to default, base
-   * deleteFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
@@ -1673,7 +1668,6 @@ public class ArchitectApi {
   /**
    * Resets the org log level to default, base
    * Resets the org log level to default, base
-   * deleteFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteFlowsInstancesSettingsLoglevelsDefaultWithHttpInfo() throws IOException {
@@ -1688,7 +1682,6 @@ public class ArchitectApi {
   /**
    * Resets the org log level to default, base
    * Resets the org log level to default, base
-   * deleteFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1707,7 +1700,6 @@ public class ArchitectApi {
   /**
    * Resets the org log level to default, base
    * Resets the org log level to default, base
-   * deleteFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5203,7 +5195,6 @@ public class ArchitectApi {
   /**
    * Retrieves the log level for a flow by flow id.
    * Retrieves the log level for a flow by flow id.
-   * getFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param flowId The flow id to get the loglevel for (required)
    * @param expand Expand instructions for the result (optional)
    * @return FlowSettingsResponse
@@ -5217,7 +5208,6 @@ public class ArchitectApi {
   /**
    * Retrieves the log level for a flow by flow id.
    * Retrieves the log level for a flow by flow id.
-   * getFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param flowId The flow id to get the loglevel for (required)
    * @param expand Expand instructions for the result (optional)
    * @return FlowSettingsResponse
@@ -5239,7 +5229,6 @@ public class ArchitectApi {
   /**
    * Retrieves the log level for a flow by flow id.
    * Retrieves the log level for a flow by flow id.
-   * getFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FlowSettingsResponse
    * @throws ApiException if the request fails on the server
@@ -5259,7 +5248,6 @@ public class ArchitectApi {
   /**
    * Retrieves the log level for a flow by flow id.
    * Retrieves the log level for a flow by flow id.
-   * getFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -7289,7 +7277,6 @@ public class ArchitectApi {
   /**
    * Get the execution history enabled setting.
    * Get the execution history enabled setting.
-   * getFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return ExecutionDataFlowSettingsResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -7301,7 +7288,6 @@ public class ArchitectApi {
   /**
    * Get the execution history enabled setting.
    * Get the execution history enabled setting.
-   * getFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return ExecutionDataFlowSettingsResponse
    * @throws IOException if the request fails to be processed
    */
@@ -7317,7 +7303,6 @@ public class ArchitectApi {
   /**
    * Get the execution history enabled setting.
    * Get the execution history enabled setting.
-   * getFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ExecutionDataFlowSettingsResponse
    * @throws ApiException if the request fails on the server
@@ -7337,7 +7322,6 @@ public class ArchitectApi {
   /**
    * Get the execution history enabled setting.
    * Get the execution history enabled setting.
-   * getFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -7367,7 +7351,6 @@ public class ArchitectApi {
   /**
    * Retrieve a list of LogLevels for the organization.
    * Returns a paged set of LogLevels per flow id
-   * getFlowsInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param expand Expand instructions for the result (optional)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Number of entities to return. Maximum of 200. (optional, default to 25)
@@ -7382,7 +7365,6 @@ public class ArchitectApi {
   /**
    * Retrieve a list of LogLevels for the organization.
    * Returns a paged set of LogLevels per flow id
-   * getFlowsInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param expand Expand instructions for the result (optional)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Number of entities to return. Maximum of 200. (optional, default to 25)
@@ -7407,7 +7389,6 @@ public class ArchitectApi {
   /**
    * Retrieve a list of LogLevels for the organization.
    * Returns a paged set of LogLevels per flow id
-   * getFlowsInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FlowSettingsResponseEntityListing
    * @throws ApiException if the request fails on the server
@@ -7427,7 +7408,6 @@ public class ArchitectApi {
   /**
    * Retrieve a list of LogLevels for the organization.
    * Returns a paged set of LogLevels per flow id
-   * getFlowsInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -7457,7 +7437,6 @@ public class ArchitectApi {
   /**
    * Gets the available flow log level characteristics for this organization.
    * Log levels can be customized and this returns the set of available characteristics that can be enabled/disabled.
-   * getFlowsInstancesSettingsLoglevelsCharacteristics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return FlowLogLevelCharacteristicsDefinitions
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -7469,7 +7448,6 @@ public class ArchitectApi {
   /**
    * Gets the available flow log level characteristics for this organization.
    * Log levels can be customized and this returns the set of available characteristics that can be enabled/disabled.
-   * getFlowsInstancesSettingsLoglevelsCharacteristics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return FlowLogLevelCharacteristicsDefinitions
    * @throws IOException if the request fails to be processed
    */
@@ -7485,7 +7463,6 @@ public class ArchitectApi {
   /**
    * Gets the available flow log level characteristics for this organization.
    * Log levels can be customized and this returns the set of available characteristics that can be enabled/disabled.
-   * getFlowsInstancesSettingsLoglevelsCharacteristics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FlowLogLevelCharacteristicsDefinitions
    * @throws ApiException if the request fails on the server
@@ -7505,7 +7482,6 @@ public class ArchitectApi {
   /**
    * Gets the available flow log level characteristics for this organization.
    * Log levels can be customized and this returns the set of available characteristics that can be enabled/disabled.
-   * getFlowsInstancesSettingsLoglevelsCharacteristics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -7535,7 +7511,6 @@ public class ArchitectApi {
   /**
    * Returns the flow default log level.
    * Returns the flow default log level which will be used if no specific flow id log level is found.
-   * getFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param expand Expand instructions for the result (optional)
    * @return FlowSettingsResponse
    * @throws ApiException if the request fails on the server
@@ -7548,7 +7523,6 @@ public class ArchitectApi {
   /**
    * Returns the flow default log level.
    * Returns the flow default log level which will be used if no specific flow id log level is found.
-   * getFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param expand Expand instructions for the result (optional)
    * @return FlowSettingsResponse
    * @throws IOException if the request fails to be processed
@@ -7567,7 +7541,6 @@ public class ArchitectApi {
   /**
    * Returns the flow default log level.
    * Returns the flow default log level which will be used if no specific flow id log level is found.
-   * getFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FlowSettingsResponse
    * @throws ApiException if the request fails on the server
@@ -7587,7 +7560,6 @@ public class ArchitectApi {
   /**
    * Returns the flow default log level.
    * Returns the flow default log level which will be used if no specific flow id log level is found.
-   * getFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -8455,7 +8427,6 @@ public class ArchitectApi {
   /**
    * Edit the execution history enabled setting.
    * Edit the execution history enabled setting.
-   * patchFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body New Execution Data Setting (required)
    * @return ExecutionDataFlowSettingsResponse
    * @throws ApiException if the request fails on the server
@@ -8468,7 +8439,6 @@ public class ArchitectApi {
   /**
    * Edit the execution history enabled setting.
    * Edit the execution history enabled setting.
-   * patchFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body New Execution Data Setting (required)
    * @return ExecutionDataFlowSettingsResponse
    * @throws IOException if the request fails to be processed
@@ -8487,7 +8457,6 @@ public class ArchitectApi {
   /**
    * Edit the execution history enabled setting.
    * Edit the execution history enabled setting.
-   * patchFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ExecutionDataFlowSettingsResponse
    * @throws ApiException if the request fails on the server
@@ -8507,7 +8476,6 @@ public class ArchitectApi {
   /**
    * Edit the execution history enabled setting.
    * Edit the execution history enabled setting.
-   * patchFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -9744,7 +9712,6 @@ public class ArchitectApi {
   /**
    * Set the logLevel for a particular flow id
    * Assigns a new loglevel to a flow id
-   * postFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param flowId The flow id to set the loglevel for (required)
    * @param body New LogLevel settings (required)
    * @param expand Expand instructions for the result (optional)
@@ -9759,7 +9726,6 @@ public class ArchitectApi {
   /**
    * Set the logLevel for a particular flow id
    * Assigns a new loglevel to a flow id
-   * postFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param flowId The flow id to set the loglevel for (required)
    * @param body New LogLevel settings (required)
    * @param expand Expand instructions for the result (optional)
@@ -9784,7 +9750,6 @@ public class ArchitectApi {
   /**
    * Set the logLevel for a particular flow id
    * Assigns a new loglevel to a flow id
-   * postFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FlowSettingsResponse
    * @throws ApiException if the request fails on the server
@@ -9804,7 +9769,6 @@ public class ArchitectApi {
   /**
    * Set the logLevel for a particular flow id
    * Assigns a new loglevel to a flow id
-   * postFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -11930,7 +11894,6 @@ public class ArchitectApi {
   /**
    * Edit the logLevel for a particular flow id
    * Updates the loglevel for a flow id
-   * putFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param flowId The flow id to edit the loglevel for (required)
    * @param body New LogLevel settings (required)
    * @param expand Expand instructions for the result (optional)
@@ -11945,7 +11908,6 @@ public class ArchitectApi {
   /**
    * Edit the logLevel for a particular flow id
    * Updates the loglevel for a flow id
-   * putFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param flowId The flow id to edit the loglevel for (required)
    * @param body New LogLevel settings (required)
    * @param expand Expand instructions for the result (optional)
@@ -11970,7 +11932,6 @@ public class ArchitectApi {
   /**
    * Edit the logLevel for a particular flow id
    * Updates the loglevel for a flow id
-   * putFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FlowSettingsResponse
    * @throws ApiException if the request fails on the server
@@ -11990,7 +11951,6 @@ public class ArchitectApi {
   /**
    * Edit the logLevel for a particular flow id
    * Updates the loglevel for a flow id
-   * putFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -12192,7 +12152,6 @@ public class ArchitectApi {
   /**
    * Edit the flow default log level.
    * Edit the flow default log level.
-   * putFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body New LogLevel settings (required)
    * @param expand Expand instructions for the result (optional)
    * @return FlowSettingsResponse
@@ -12206,7 +12165,6 @@ public class ArchitectApi {
   /**
    * Edit the flow default log level.
    * Edit the flow default log level.
-   * putFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body New LogLevel settings (required)
    * @param expand Expand instructions for the result (optional)
    * @return FlowSettingsResponse
@@ -12228,7 +12186,6 @@ public class ArchitectApi {
   /**
    * Edit the flow default log level.
    * Edit the flow default log level.
-   * putFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return FlowSettingsResponse
    * @throws ApiException if the request fails on the server
@@ -12248,7 +12205,6 @@ public class ArchitectApi {
   /**
    * Edit the flow default log level.
    * Edit the flow default log level.
-   * putFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

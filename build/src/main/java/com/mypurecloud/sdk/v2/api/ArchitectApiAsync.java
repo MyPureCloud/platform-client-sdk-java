@@ -1309,7 +1309,6 @@ public class ArchitectApiAsync {
   /**
    * Deletes a log level for a flow by flow id.
    * Deletes the associated log level for a flow by flow id
-   * deleteFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1344,7 +1343,6 @@ public class ArchitectApiAsync {
   /**
    * Deletes a log level for a flow by flow id.
    * Deletes the associated log level for a flow by flow id
-   * deleteFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1611,7 +1609,6 @@ public class ArchitectApiAsync {
   /**
    * Resets the org log level to default, base
    * Resets the org log level to default, base
-   * deleteFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1646,7 +1643,6 @@ public class ArchitectApiAsync {
   /**
    * Resets the org log level to default, base
    * Resets the org log level to default, base
-   * deleteFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4469,7 +4465,6 @@ public class ArchitectApiAsync {
   /**
    * Retrieves the log level for a flow by flow id.
    * Retrieves the log level for a flow by flow id.
-   * getFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4504,7 +4499,6 @@ public class ArchitectApiAsync {
   /**
    * Retrieves the log level for a flow by flow id.
    * Retrieves the log level for a flow by flow id.
-   * getFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6196,7 +6190,6 @@ public class ArchitectApiAsync {
   /**
    * Get the execution history enabled setting.
    * Get the execution history enabled setting.
-   * getFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6231,7 +6224,6 @@ public class ArchitectApiAsync {
   /**
    * Get the execution history enabled setting.
    * Get the execution history enabled setting.
-   * getFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6273,7 +6265,6 @@ public class ArchitectApiAsync {
   /**
    * Retrieve a list of LogLevels for the organization.
    * Returns a paged set of LogLevels per flow id
-   * getFlowsInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6308,7 +6299,6 @@ public class ArchitectApiAsync {
   /**
    * Retrieve a list of LogLevels for the organization.
    * Returns a paged set of LogLevels per flow id
-   * getFlowsInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6350,7 +6340,6 @@ public class ArchitectApiAsync {
   /**
    * Gets the available flow log level characteristics for this organization.
    * Log levels can be customized and this returns the set of available characteristics that can be enabled/disabled.
-   * getFlowsInstancesSettingsLoglevelsCharacteristics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6385,7 +6374,6 @@ public class ArchitectApiAsync {
   /**
    * Gets the available flow log level characteristics for this organization.
    * Log levels can be customized and this returns the set of available characteristics that can be enabled/disabled.
-   * getFlowsInstancesSettingsLoglevelsCharacteristics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6427,7 +6415,6 @@ public class ArchitectApiAsync {
   /**
    * Returns the flow default log level.
    * Returns the flow default log level which will be used if no specific flow id log level is found.
-   * getFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6462,7 +6449,6 @@ public class ArchitectApiAsync {
   /**
    * Returns the flow default log level.
    * Returns the flow default log level which will be used if no specific flow id log level is found.
-   * getFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7183,7 +7169,6 @@ public class ArchitectApiAsync {
   /**
    * Edit the execution history enabled setting.
    * Edit the execution history enabled setting.
-   * patchFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7218,7 +7203,6 @@ public class ArchitectApiAsync {
   /**
    * Edit the execution history enabled setting.
    * Edit the execution history enabled setting.
-   * patchFlowsInstancesSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8393,7 +8377,6 @@ public class ArchitectApiAsync {
   /**
    * Set the logLevel for a particular flow id
    * Assigns a new loglevel to a flow id
-   * postFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8428,7 +8411,6 @@ public class ArchitectApiAsync {
   /**
    * Set the logLevel for a particular flow id
    * Assigns a new loglevel to a flow id
-   * postFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -10420,7 +10402,6 @@ public class ArchitectApiAsync {
   /**
    * Edit the logLevel for a particular flow id
    * Updates the loglevel for a flow id
-   * putFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -10455,7 +10436,6 @@ public class ArchitectApiAsync {
   /**
    * Edit the logLevel for a particular flow id
    * Updates the loglevel for a flow id
-   * putFlowInstancesSettingsLoglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -10647,7 +10627,6 @@ public class ArchitectApiAsync {
   /**
    * Edit the flow default log level.
    * Edit the flow default log level.
-   * putFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -10682,7 +10661,6 @@ public class ArchitectApiAsync {
   /**
    * Edit the flow default log level.
    * Edit the flow default log level.
-   * putFlowsInstancesSettingsLoglevelsDefault is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

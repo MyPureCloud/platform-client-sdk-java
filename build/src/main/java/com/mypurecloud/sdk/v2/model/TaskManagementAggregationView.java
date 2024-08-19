@@ -61,6 +61,7 @@ public class TaskManagementAggregationView  implements Serializable {
     NWORKITEMSWRAPUPADDED("nWorkitemsWrapupAdded"),
     NWORKITEMSWRAPUPREMOVED("nWorkitemsWrapupRemoved"),
     OWORKITEMSSERVICELEVEL("oWorkitemsServiceLevel"),
+    TWORKITEMSAGENTFOCUSCOMPLETE("tWorkitemsAgentFocusComplete"),
     TWORKITEMSALERT("tWorkitemsAlert"),
     TWORKITEMSANSWERED("tWorkitemsAnswered"),
     TWORKITEMSDIRECTANSWERED("tWorkitemsDirectAnswered"),

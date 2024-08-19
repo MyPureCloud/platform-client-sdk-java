@@ -24,6 +24,7 @@ title: AiAnswer
 | LOWCONFIDENCEERROR | &quot;LowConfidenceError&quot; | 
 | PARSINGERROR | &quot;ParsingError&quot; | 
 | SERVICEERROR | &quot;ServiceError&quot; | 
+| LOWHISTORICALACCURACYERROR | &quot;LowHistoricalAccuracyError&quot; | 
 {: class="table table-striped"}
 
 

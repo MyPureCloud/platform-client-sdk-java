@@ -29,9 +29,9 @@ public class ActionCertificateListing  implements Serializable, PagedResource<Ac
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
+  private String lastUri = null;
   private String firstUri = null;
   private String selfUri = null;
-  private String lastUri = null;
   private String nextUri = null;
   private String previousUri = null;
   private Integer pageCount = null;
@@ -107,6 +107,23 @@ public class ActionCertificateListing  implements Serializable, PagedResource<Ac
 
   /**
    **/
+  public ActionCertificateListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
   public ActionCertificateListing firstUri(String firstUri) {
     this.firstUri = firstUri;
     return this;
@@ -136,23 +153,6 @@ public class ActionCertificateListing  implements Serializable, PagedResource<Ac
   }
   public void setSelfUri(String selfUri) {
     this.selfUri = selfUri;
-  }
-
-
-  /**
-   **/
-  public ActionCertificateListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
   }
 
 
@@ -221,9 +221,9 @@ public class ActionCertificateListing  implements Serializable, PagedResource<Ac
             Objects.equals(this.pageSize, actionCertificateListing.pageSize) &&
             Objects.equals(this.pageNumber, actionCertificateListing.pageNumber) &&
             Objects.equals(this.total, actionCertificateListing.total) &&
+            Objects.equals(this.lastUri, actionCertificateListing.lastUri) &&
             Objects.equals(this.firstUri, actionCertificateListing.firstUri) &&
             Objects.equals(this.selfUri, actionCertificateListing.selfUri) &&
-            Objects.equals(this.lastUri, actionCertificateListing.lastUri) &&
             Objects.equals(this.nextUri, actionCertificateListing.nextUri) &&
             Objects.equals(this.previousUri, actionCertificateListing.previousUri) &&
             Objects.equals(this.pageCount, actionCertificateListing.pageCount);
@@ -231,7 +231,7 @@ public class ActionCertificateListing  implements Serializable, PagedResource<Ac
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, lastUri, nextUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, lastUri, firstUri, selfUri, nextUri, previousUri, pageCount);
   }
 
   @Override
@@ -243,9 +243,9 @@ public class ActionCertificateListing  implements Serializable, PagedResource<Ac
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");

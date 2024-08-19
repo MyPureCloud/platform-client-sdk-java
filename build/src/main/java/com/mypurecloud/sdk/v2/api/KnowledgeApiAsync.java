@@ -47,6 +47,8 @@ import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedbackResponseListing;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentGuestSearch;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentGuestSearchRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentPresentation;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentQuery;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentQueryResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentReq;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentResponse;
@@ -178,6 +180,7 @@ import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsReq
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsBulkRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsBulkUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsPresentationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsSearchSuggestionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsVersionsBulkAddRequest;
@@ -6099,6 +6102,81 @@ public class KnowledgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for knowledge documents.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<KnowledgeDocumentQueryResponse> postKnowledgeKnowledgebaseDocumentsQueryAsync(PostKnowledgeKnowledgebaseDocumentsQueryRequest request, final AsyncApiCallback<KnowledgeDocumentQueryResponse> callback) {
+    try {
+      final SettableFuture<KnowledgeDocumentQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KnowledgeDocumentQueryResponse>() {}, new AsyncApiCallback<ApiResponse<KnowledgeDocumentQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<KnowledgeDocumentQueryResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for knowledge documents.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<KnowledgeDocumentQueryResponse>> postKnowledgeKnowledgebaseDocumentsQueryAsync(ApiRequest<KnowledgeDocumentQuery> request, final AsyncApiCallback<ApiResponse<KnowledgeDocumentQueryResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<KnowledgeDocumentQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<KnowledgeDocumentQueryResponse>() {}, new AsyncApiCallback<ApiResponse<KnowledgeDocumentQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<KnowledgeDocumentQueryResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KnowledgeDocumentQueryResponse> response = (ApiResponse<KnowledgeDocumentQueryResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KnowledgeDocumentQueryResponse> response = (ApiResponse<KnowledgeDocumentQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

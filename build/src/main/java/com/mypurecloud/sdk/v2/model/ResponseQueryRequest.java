@@ -27,6 +27,7 @@ public class ResponseQueryRequest  implements Serializable {
   
   private String queryPhrase = null;
   private Integer pageSize = null;
+  private Integer pageNumber = null;
   private List<ResponseFilter> filters = new ArrayList<ResponseFilter>();
 
   
@@ -67,6 +68,24 @@ public class ResponseQueryRequest  implements Serializable {
 
 
   /**
+   * Page Number
+   **/
+  public ResponseQueryRequest pageNumber(Integer pageNumber) {
+    this.pageNumber = pageNumber;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Page Number")
+  @JsonProperty("pageNumber")
+  public Integer getPageNumber() {
+    return pageNumber;
+  }
+  public void setPageNumber(Integer pageNumber) {
+    this.pageNumber = pageNumber;
+  }
+
+
+  /**
    * Filter the query results.
    **/
   public ResponseQueryRequest filters(List<ResponseFilter> filters) {
@@ -96,12 +115,13 @@ public class ResponseQueryRequest  implements Serializable {
 
     return Objects.equals(this.queryPhrase, responseQueryRequest.queryPhrase) &&
             Objects.equals(this.pageSize, responseQueryRequest.pageSize) &&
+            Objects.equals(this.pageNumber, responseQueryRequest.pageNumber) &&
             Objects.equals(this.filters, responseQueryRequest.filters);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(queryPhrase, pageSize, filters);
+    return Objects.hash(queryPhrase, pageSize, pageNumber, filters);
   }
 
   @Override
@@ -111,6 +131,7 @@ public class ResponseQueryRequest  implements Serializable {
     
     sb.append("    queryPhrase: ").append(toIndentedString(queryPhrase)).append("\n");
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
+    sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    filters: ").append(toIndentedString(filters)).append("\n");
     sb.append("}");
     return sb.toString();

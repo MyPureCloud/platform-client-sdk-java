@@ -85,6 +85,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postKnowledgeKnowledgebaseDocumentsBulkRemove**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsBulkRemove) | Bulk remove documents. |
 | [**postKnowledgeKnowledgebaseDocumentsBulkUpdate**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsBulkUpdate) | Bulk update documents. |
 | [**postKnowledgeKnowledgebaseDocumentsPresentations**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsPresentations) | Indicate that documents were presented to the user. |
+| [**postKnowledgeKnowledgebaseDocumentsQuery**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsQuery) | Query for knowledge documents. |
 | [**postKnowledgeKnowledgebaseDocumentsSearch**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsSearch) | Search the documents in a knowledge base. |
 | [**postKnowledgeKnowledgebaseDocumentsSearchSuggestions**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsSearchSuggestions) | Query the knowledge documents to provide suggestions for auto completion. |
 | [**postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd) | Bulk add document versions. |
@@ -5147,6 +5148,71 @@ try {
 ### Return type
 
 null (empty response body)
+
+<a name="postKnowledgeKnowledgebaseDocumentsQuery"></a>
+
+# **postKnowledgeKnowledgebaseDocumentsQuery**
+
+
+
+> [KnowledgeDocumentQueryResponse](KnowledgeDocumentQueryResponse.html) postKnowledgeKnowledgebaseDocumentsQuery(knowledgeBaseId, expand, body)
+
+Query for knowledge documents.
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/query  
+
+Requires ALL permissions: 
+
+* knowledge:document:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge Base ID
+List<String> expand = Arrays.asList(null); // List<String> | Fields, if any, to expand for each document in the search result matching the query.
+KnowledgeDocumentQuery body = new KnowledgeDocumentQuery(); // KnowledgeDocumentQuery | 
+try {
+    KnowledgeDocumentQueryResponse result = apiInstance.postKnowledgeKnowledgebaseDocumentsQuery(knowledgeBaseId, expand, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeKnowledgebaseDocumentsQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge Base ID | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Fields, if any, to expand for each document in the search result matching the query. | [optional]<br />**Values**: documentVariations, documentAlternatives, knowledgeBaseLanguageCode 
+| **body** | [**KnowledgeDocumentQuery**](KnowledgeDocumentQuery.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**KnowledgeDocumentQueryResponse**](KnowledgeDocumentQueryResponse.html)
 
 <a name="postKnowledgeKnowledgebaseDocumentsSearch"></a>
 

@@ -70,6 +70,7 @@ title: TaskManagementAggregationQuery
 | NWORKITEMSWRAPUPADDED | &quot;nWorkitemsWrapupAdded&quot; |
 | NWORKITEMSWRAPUPREMOVED | &quot;nWorkitemsWrapupRemoved&quot; |
 | OWORKITEMSSERVICELEVEL | &quot;oWorkitemsServiceLevel&quot; |
+| TWORKITEMSAGENTFOCUSCOMPLETE | &quot;tWorkitemsAgentFocusComplete&quot; |
 | TWORKITEMSALERT | &quot;tWorkitemsAlert&quot; |
 | TWORKITEMSANSWERED | &quot;tWorkitemsAnswered&quot; |
 | TWORKITEMSDIRECTANSWERED | &quot;tWorkitemsDirectAnswered&quot; |

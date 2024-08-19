@@ -54,6 +54,8 @@ import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedbackResponseListing;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentGuestSearch;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentGuestSearchRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentPresentation;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentQuery;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentQueryResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentReq;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentResponse;
