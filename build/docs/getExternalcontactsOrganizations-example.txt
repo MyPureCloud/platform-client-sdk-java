@@ -1,0 +1,35 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ExternalOrganizationListing;
+
+public class ExamplegetExternalcontactsOrganizations {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        ExternalContactsApi apiInstance = new ExternalContactsApi();
+        Integer pageSize = 20; // Integer | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
+Integer pageNumber = 1; // Integer | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
+String q = "q_example"; // String | Search query
+List<String> trustorId = Arrays.asList(null); // List<String> | Search for external organizations by trustorIds (limit 25). If supplied, the 'q' parameters is ignored. Items are returned in the order requested
+String sortOrder = "sortOrder_example"; // String | The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. \"companyType:asc\", \"industry:desc\"
+List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand
+Boolean includeTrustors = true; // Boolean | (true or false) whether or not to include trustor information embedded in the externalOrganization
+        try { 
+            // Search for external organizations
+            ExternalOrganizationListing result = apiInstance.getExternalcontactsOrganizations(pageSize, pageNumber, q, trustorId, sortOrder, expand, includeTrustors);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsOrganizations");
+            e.printStackTrace();
+        }
+    }
+}

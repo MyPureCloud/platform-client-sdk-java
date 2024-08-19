@@ -1,0 +1,29 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExampledeleteKnowledgeKnowledgebaseDocument {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        KnowledgeApi apiInstance = new KnowledgeApi();
+        String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
+String documentId = "documentId_example"; // String | Document ID.
+        try { 
+            // Delete document.
+            apiInstance.deleteKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling KnowledgeApi#deleteKnowledgeKnowledgebaseDocument");
+            e.printStackTrace();
+        }
+    }
+}

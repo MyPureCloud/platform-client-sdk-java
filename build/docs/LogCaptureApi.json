@@ -1,0 +1,113 @@
+{
+    "DELETE /api/v2/diagnostics/logcapture/browser/users/{userId}": {
+        "operationId": "deletediagnosticslogcapturebrowseruser",
+        "functionName": "deleteDiagnosticsLogcaptureBrowserUser",
+        "signature": "deleteDiagnosticsLogcaptureBrowserUser(userId)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/diagnostics/logcapture/browser/entries/download/jobs/{jobId}": {
+        "operationId": "getdiagnosticslogcapturebrowserentriesdownloadjob",
+        "functionName": "getDiagnosticsLogcaptureBrowserEntriesDownloadJob",
+        "signature": "getDiagnosticsLogcaptureBrowserEntriesDownloadJob(jobId)",
+        "parameters": [
+            {
+                "name": "jobId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "LogCaptureDownloadExecutionResponse"
+    },
+    "GET /api/v2/diagnostics/logcapture/browser/users/{userId}": {
+        "operationId": "getdiagnosticslogcapturebrowseruser",
+        "functionName": "getDiagnosticsLogcaptureBrowserUser",
+        "signature": "getDiagnosticsLogcaptureBrowserUser(userId)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "LogCaptureUserConfiguration"
+    },
+    "GET /api/v2/diagnostics/logcapture/browser/users": {
+        "operationId": "getdiagnosticslogcapturebrowserusers",
+        "functionName": "getDiagnosticsLogcaptureBrowserUsers",
+        "signature": "getDiagnosticsLogcaptureBrowserUsers(includeExpired)",
+        "parameters": [
+            {
+                "name": "includeExpired",
+                "type": "Boolean",
+                "required": "false"
+            }
+        ],
+        "return": "PagelessEntityListing"
+    },
+    "POST /api/v2/diagnostics/logcapture/browser/entries/download/jobs": {
+        "operationId": "postdiagnosticslogcapturebrowserentriesdownloadjobs",
+        "functionName": "postDiagnosticsLogcaptureBrowserEntriesDownloadJobs",
+        "signature": "postDiagnosticsLogcaptureBrowserEntriesDownloadJobs(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "LogCaptureQueryRequest",
+                "required": "false"
+            }
+        ],
+        "return": "LogCaptureDownloadExecutionResponse"
+    },
+    "POST /api/v2/diagnostics/logcapture/browser/entries/query": {
+        "operationId": "postdiagnosticslogcapturebrowserentriesquery",
+        "functionName": "postDiagnosticsLogcaptureBrowserEntriesQuery",
+        "signature": "postDiagnosticsLogcaptureBrowserEntriesQuery(before, after, pageSize, body)",
+        "parameters": [
+            {
+                "name": "before",
+                "type": "String",
+                "required": "false"
+            }, 
+            {
+                "name": "after",
+                "type": "String",
+                "required": "false"
+            }, 
+            {
+                "name": "pageSize",
+                "type": "String",
+                "required": "false"
+            }, 
+            {
+                "name": "body",
+                "type": "LogCaptureQueryRequest",
+                "required": "false"
+            }
+        ],
+        "return": "LogCaptureQueryResponse"
+    },
+    "POST /api/v2/diagnostics/logcapture/browser/users/{userId}": {
+        "operationId": "postdiagnosticslogcapturebrowseruser",
+        "functionName": "postDiagnosticsLogcaptureBrowserUser",
+        "signature": "postDiagnosticsLogcaptureBrowserUser(userId, body)",
+        "parameters": [
+            {
+                "name": "userId",
+                "type": "String",
+                "required": "true"
+            }, 
+            {
+                "name": "body",
+                "type": "LogCaptureUserConfiguration",
+                "required": "false"
+            }
+        ],
+        "return": "LogCaptureUserConfiguration"
+    }
+    
+}

@@ -1,0 +1,30 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.GeneralDataProtectionRegulationApi;
+import com.mypurecloud.sdk.v2.model.GDPRSubjectEntityListing;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExamplegetGdprSubjects {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        GeneralDataProtectionRegulationApi apiInstance = new GeneralDataProtectionRegulationApi();
+        String searchType = "searchType_example"; // String | Search Type
+String searchValue = "searchValue_example"; // String | Search Value
+        try { 
+            // Get GDPR subjects
+            GDPRSubjectEntityListing result = apiInstance.getGdprSubjects(searchType, searchValue);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling GeneralDataProtectionRegulationApi#getGdprSubjects");
+            e.printStackTrace();
+        }
+    }
+}

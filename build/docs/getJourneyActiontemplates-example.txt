@@ -1,0 +1,35 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+import com.mypurecloud.sdk.v2.model.ActionTemplateListing;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExamplegetJourneyActiontemplates {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        JourneyApi apiInstance = new JourneyApi();
+        Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String sortBy = "sortBy_example"; // String | Field(s) to sort by. Prefix with '-' for descending (e.g. sortBy=name,-createdDate).
+String mediaType = "mediaType_example"; // String | Media type
+String state = "state_example"; // String | Action template state.
+List<String> queryFields = Arrays.asList(null); // List<String> | ActionTemplate field(s) to query on. Requires 'queryValue' to also be set.
+String queryValue = "queryValue_example"; // String | Value to query on. Requires 'queryFields' to also be set.
+        try { 
+            // Retrieve all action templates.
+            ActionTemplateListing result = apiInstance.getJourneyActiontemplates(pageNumber, pageSize, sortBy, mediaType, state, queryFields, queryValue);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling JourneyApi#getJourneyActiontemplates");
+            e.printStackTrace();
+        }
+    }
+}

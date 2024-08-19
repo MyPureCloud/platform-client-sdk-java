@@ -1,0 +1,30 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.CoachingApi;
+import com.mypurecloud.sdk.v2.model.CoachingAnnotation;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CoachingAnnotationCreateRequest;
+
+public class ExamplepostCoachingAppointmentAnnotations {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        CoachingApi apiInstance = new CoachingApi();
+        String appointmentId = "appointmentId_example"; // String | The ID of the coaching appointment.
+CoachingAnnotationCreateRequest body = new CoachingAnnotationCreateRequest(); // CoachingAnnotationCreateRequest | The annotation to add
+        try { 
+            // Create a new annotation.
+            CoachingAnnotation result = apiInstance.postCoachingAppointmentAnnotations(appointmentId, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CoachingApi#postCoachingAppointmentAnnotations");
+            e.printStackTrace();
+        }
+    }
+}

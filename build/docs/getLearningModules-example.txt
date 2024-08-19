@@ -1,0 +1,39 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.LearningApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
+
+public class ExamplegetLearningModules {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        LearningApi apiInstance = new LearningApi();
+        Boolean isArchived = false; // Boolean | Archive status
+List<String> types = Arrays.asList(null); // List<String> | Specifies the module types. Informational, AssessedContent and Assessment are deprecated
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String sortOrder = "ascending"; // String | Sort order
+String sortBy = "name"; // String | Sort by
+String searchTerm = "searchTerm_example"; // String | Search Term (searchable by name)
+List<String> expand = Arrays.asList(null); // List<String> | Fields to expand in response(case insensitive)
+String isPublished = "Any"; // String | Specifies if only the Unpublished (isPublished is \"False\") or Published (isPublished is \"True\") modules are returned. If isPublished is \"Any\" or omitted, both types are returned
+List<String> statuses = Arrays.asList(null); // List<String> | Specifies the module statuses to filter by
+List<String> externalIds = Arrays.asList(null); // List<String> | Specifies the module external IDs to filter by. Only one ID is allowed
+        try { 
+            // Get all learning modules of an organization
+            LearningModulesDomainEntityListing result = apiInstance.getLearningModules(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses, externalIds);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling LearningApi#getLearningModules");
+            e.printStackTrace();
+        }
+    }
+}

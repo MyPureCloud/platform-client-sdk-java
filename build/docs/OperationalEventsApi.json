@@ -1,0 +1,23 @@
+{
+    "GET /api/v2/usage/events/definitions/{eventDefinitionId}": {
+        "operationId": "getusageeventsdefinition",
+        "functionName": "getUsageEventsDefinition",
+        "signature": "getUsageEventsDefinition(eventDefinitionId)",
+        "parameters": [
+            {
+                "name": "eventDefinitionId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "EventDefinition"
+    },
+    "GET /api/v2/usage/events/definitions": {
+        "operationId": "getusageeventsdefinitions",
+        "functionName": "getUsageEventsDefinitions",
+        "signature": "getUsageEventsDefinitions()",
+        
+        "return": "EventDefinitionListing"
+    }
+    
+}

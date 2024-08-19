@@ -1,0 +1,104 @@
+{
+    "DELETE /api/v2/fax/documents/{documentId}": {
+        "operationId": "deletefaxdocument",
+        "functionName": "deleteFaxDocument",
+        "signature": "deleteFaxDocument(documentId)",
+        "parameters": [
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/fax/documents/{documentId}": {
+        "operationId": "getfaxdocument",
+        "functionName": "getFaxDocument",
+        "signature": "getFaxDocument(documentId)",
+        "parameters": [
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "FaxDocument"
+    },
+    "GET /api/v2/fax/documents/{documentId}/content": {
+        "operationId": "getfaxdocumentcontent",
+        "functionName": "getFaxDocumentContent",
+        "signature": "getFaxDocumentContent(documentId)",
+        "parameters": [
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "DownloadResponse"
+    },
+    "GET /api/v2/fax/documents": {
+        "operationId": "getfaxdocuments",
+        "functionName": "getFaxDocuments",
+        "signature": "getFaxDocuments(pageSize, pageNumber)",
+        "parameters": [
+            {
+                "name": "pageSize",
+                "type": "Integer",
+                "required": "false"
+            }, 
+            {
+                "name": "pageNumber",
+                "type": "Integer",
+                "required": "false"
+            }
+        ],
+        "return": "FaxDocumentEntityListing"
+    },
+    "GET /api/v2/fax/settings": {
+        "operationId": "getfaxsettings",
+        "functionName": "getFaxSettings",
+        "signature": "getFaxSettings()",
+        
+        "return": "FaxConfig"
+    },
+    "GET /api/v2/fax/summary": {
+        "operationId": "getfaxsummary",
+        "functionName": "getFaxSummary",
+        "signature": "getFaxSummary()",
+        
+        "return": "FaxSummary"
+    },
+    "PUT /api/v2/fax/documents/{documentId}": {
+        "operationId": "putfaxdocument",
+        "functionName": "putFaxDocument",
+        "signature": "putFaxDocument(documentId, body)",
+        "parameters": [
+            {
+                "name": "documentId",
+                "type": "String",
+                "required": "true"
+            }, 
+            {
+                "name": "body",
+                "type": "FaxDocument",
+                "required": "true"
+            }
+        ],
+        "return": "FaxDocument"
+    },
+    "PUT /api/v2/fax/settings": {
+        "operationId": "putfaxsettings",
+        "functionName": "putFaxSettings",
+        "signature": "putFaxSettings(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "FaxConfig",
+                "required": "false"
+            }
+        ],
+        "return": "FaxConfig"
+    }
+    
+}

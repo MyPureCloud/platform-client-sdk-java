@@ -1,0 +1,35 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.DashboardConfigurationListing;
+
+public class ExamplegetAnalyticsReportingSettingsUserDashboards {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        AnalyticsApi apiInstance = new AnalyticsApi();
+        String userId = "userId_example"; // String | User ID
+String sortBy = "asc"; // String | 
+Integer pageNumber = 1; // Integer | 
+Integer pageSize = 50; // Integer | 
+Boolean publicOnly = true; // Boolean | If true, retrieve only public dashboards
+Boolean favoriteOnly = true; // Boolean | If true, retrieve only favorite dashboards
+String name = "name_example"; // String | retrieve dashboards that match with given name
+        try { 
+            // Get list of dashboards for an user
+            DashboardConfigurationListing result = apiInstance.getAnalyticsReportingSettingsUserDashboards(userId, sortBy, pageNumber, pageSize, publicOnly, favoriteOnly, name);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AnalyticsApi#getAnalyticsReportingSettingsUserDashboards");
+            e.printStackTrace();
+        }
+    }
+}

@@ -1,0 +1,28 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ScreenRecordingActiveSessions;
+
+public class ExamplegetRecordingsScreensessionsDetails {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        RecordingApi apiInstance = new RecordingApi();
+                try { 
+            // Retrieves an object containing the total number of concurrent active screen recordings
+            ScreenRecordingActiveSessions result = apiInstance.getRecordingsScreensessionsDetails();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling RecordingApi#getRecordingsScreensessionsDetails");
+            e.printStackTrace();
+        }
+    }
+}

@@ -1,0 +1,31 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.SCIMApi;
+import com.mypurecloud.sdk.v2.model.ScimError;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ScimV2Group;
+
+public class ExampleputScimV2Group {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        SCIMApi apiInstance = new SCIMApi();
+        String groupId = "groupId_example"; // String | The ID of a group. Returned with GET /api/v2/scim/v2/groups.
+ScimV2Group body = new ScimV2Group(); // ScimV2Group | The information used to replace a group.
+String ifMatch = "ifMatch_example"; // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a \"scimType\" of \"invalidVers\".
+        try { 
+            // Replace a group
+            ScimV2Group result = apiInstance.putScimV2Group(groupId, body, ifMatch);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SCIMApi#putScimV2Group");
+            e.printStackTrace();
+        }
+    }
+}

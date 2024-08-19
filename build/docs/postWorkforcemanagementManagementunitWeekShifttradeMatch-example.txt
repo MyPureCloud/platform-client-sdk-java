@@ -1,0 +1,32 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+import com.mypurecloud.sdk.v2.model.MatchShiftTradeRequest;import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.MatchShiftTradeResponse;import com.mypurecloud.sdk.v2.model.LocalDate;
+
+public class ExamplepostWorkforcemanagementManagementunitWeekShifttradeMatch {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+        String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+LocalDate weekDateId = new LocalDate(); // LocalDate | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+String tradeId = "tradeId_example"; // String | The ID of the shift trade to update
+MatchShiftTradeRequest body = new MatchShiftTradeRequest(); // MatchShiftTradeRequest | body
+        try { 
+            // Matches a shift trade. This route can only be called by the receiving agent
+            MatchShiftTradeResponse result = apiInstance.postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId, weekDateId, tradeId, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementManagementunitWeekShifttradeMatch");
+            e.printStackTrace();
+        }
+    }
+}

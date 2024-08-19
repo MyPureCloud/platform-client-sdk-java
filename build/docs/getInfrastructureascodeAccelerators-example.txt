@@ -1,0 +1,38 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.InfrastructureAsCodeApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.AcceleratorList;
+
+public class ExamplegetInfrastructureascodeAccelerators {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        InfrastructureAsCodeApi apiInstance = new InfrastructureAsCodeApi();
+        Integer pageSize = 25; // Integer | The total page size requested
+Integer pageNumber = 1; // Integer | The page number requested
+String sortBy = "sortBy_example"; // String | variable name requested to sort by
+String sortOrder = "asc"; // String | Sort order
+String name = "name_example"; // String | Filter by name
+String description = "description_example"; // String | Filter by description
+String origin = "origin_example"; // String | Filter by origin
+String type = "type_example"; // String | Filter by type
+String classification = "classification_example"; // String | Filter by classification
+String tags = "tags_example"; // String | Filter by tags
+        try { 
+            // Get a list of available accelerators
+            AcceleratorList result = apiInstance.getInfrastructureascodeAccelerators(pageSize, pageNumber, sortBy, sortOrder, name, description, origin, type, classification, tags);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling InfrastructureAsCodeApi#getInfrastructureascodeAccelerators");
+            e.printStackTrace();
+        }
+    }
+}

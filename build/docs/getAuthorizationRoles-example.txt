@@ -1,0 +1,39 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.AuthorizationApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.OrganizationRoleEntityListing;
+
+public class ExamplegetAuthorizationRoles {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        AuthorizationApi apiInstance = new AuthorizationApi();
+        Integer pageSize = 25; // Integer | The total page size requested
+Integer pageNumber = 1; // Integer | The page number requested
+String sortBy = "sortBy_example"; // String | variable name requested to sort by
+List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
+String nextPage = "nextPage_example"; // String | next page token
+String previousPage = "previousPage_example"; // String | Previous page token
+String name = "name_example"; // String | 
+List<String> permission = Arrays.asList(null); // List<String> | 
+List<String> defaultRoleId = Arrays.asList(null); // List<String> | 
+Boolean userCount = true; // Boolean | 
+List<String> id = Arrays.asList(null); // List<String> | id
+        try { 
+            // Retrieve a list of all roles defined for the organization
+            OrganizationRoleEntityListing result = apiInstance.getAuthorizationRoles(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, permission, defaultRoleId, userCount, id);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AuthorizationApi#getAuthorizationRoles");
+            e.printStackTrace();
+        }
+    }
+}

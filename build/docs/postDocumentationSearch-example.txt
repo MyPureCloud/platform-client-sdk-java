@@ -1,0 +1,27 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.SearchApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.DocumentationSearchResponse;import com.mypurecloud.sdk.v2.model.DocumentationSearchRequest;
+
+public class ExamplepostDocumentationSearch {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+
+        SearchApi apiInstance = new SearchApi();
+        DocumentationSearchRequest body = new DocumentationSearchRequest(); // DocumentationSearchRequest | Search request options
+        try { 
+            // Search documentation
+            DocumentationSearchResponse result = apiInstance.postDocumentationSearch(body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling SearchApi#postDocumentationSearch");
+            e.printStackTrace();
+        }
+    }
+}

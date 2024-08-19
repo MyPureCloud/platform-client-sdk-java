@@ -1,0 +1,104 @@
+{
+    "DELETE /api/v2/users/agentui/agents/autoanswer/{agentId}/settings": {
+        "operationId": "deleteusersagentuiagentsautoansweragentidsettings",
+        "functionName": "deleteUsersAgentuiAgentsAutoanswerAgentIdSettings",
+        "signature": "deleteUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId)",
+        "parameters": [
+            {
+                "name": "agentId",
+                "type": "String",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/emails/settings": {
+        "operationId": "getemailssettings",
+        "functionName": "getEmailsSettings",
+        "signature": "getEmailsSettings()",
+        
+        "return": "EmailSettings"
+    },
+    "GET /api/v2/settings/executiondata": {
+        "operationId": "getsettingsexecutiondata",
+        "functionName": "getSettingsExecutiondata",
+        "signature": "getSettingsExecutiondata()",
+        
+        "return": "ExecutionDataGlobalSettingsResponse"
+    },
+    "GET /api/v2/users/agentui/agents/autoanswer/{agentId}/settings": {
+        "operationId": "getusersagentuiagentsautoansweragentidsettings",
+        "functionName": "getUsersAgentuiAgentsAutoanswerAgentIdSettings",
+        "signature": "getUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId)",
+        "parameters": [
+            {
+                "name": "agentId",
+                "type": "String",
+                "required": "true"
+            }
+        ],
+        "return": "AutoAnswerSettings"
+    },
+    "PATCH /api/v2/emails/settings": {
+        "operationId": "patchemailssettings",
+        "functionName": "patchEmailsSettings",
+        "signature": "patchEmailsSettings(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "EmailSettings",
+                "required": "false"
+            }
+        ],
+        "return": "EmailSettings"
+    },
+    "PATCH /api/v2/settings/executiondata": {
+        "operationId": "patchsettingsexecutiondata",
+        "functionName": "patchSettingsExecutiondata",
+        "signature": "patchSettingsExecutiondata(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ExecutionDataSettingsRequest",
+                "required": "true"
+            }
+        ],
+        "return": "ExecutionDataGlobalSettingsResponse"
+    },
+    "PATCH /api/v2/users/agentui/agents/autoanswer/{agentId}/settings": {
+        "operationId": "patchusersagentuiagentsautoansweragentidsettings",
+        "functionName": "patchUsersAgentuiAgentsAutoanswerAgentIdSettings",
+        "signature": "patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)",
+        "parameters": [
+            {
+                "name": "agentId",
+                "type": "String",
+                "required": "true"
+            }, 
+            {
+                "name": "body",
+                "type": "AutoAnswerSettings",
+                "required": "true"
+            }
+        ],
+        "return": "AutoAnswerSettings"
+    },
+    "PUT /api/v2/users/agentui/agents/autoanswer/{agentId}/settings": {
+        "operationId": "putusersagentuiagentsautoansweragentidsettings",
+        "functionName": "putUsersAgentuiAgentsAutoanswerAgentIdSettings",
+        "signature": "putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)",
+        "parameters": [
+            {
+                "name": "agentId",
+                "type": "String",
+                "required": "true"
+            }, 
+            {
+                "name": "body",
+                "type": "AutoAnswerSettings",
+                "required": "true"
+            }
+        ],
+        "return": "AutoAnswerSettings"
+    }
+    
+}

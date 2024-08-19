@@ -1,0 +1,30 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.CoachingApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusRequest;import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponse;
+
+public class ExamplepatchCoachingAppointmentStatus {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        CoachingApi apiInstance = new CoachingApi();
+        String appointmentId = "appointmentId_example"; // String | The ID of the coaching appointment.
+CoachingAppointmentStatusRequest body = new CoachingAppointmentStatusRequest(); // CoachingAppointmentStatusRequest | Updated status of the coaching appointment
+        try { 
+            // Update the status of a coaching appointment
+            CoachingAppointmentStatusResponse result = apiInstance.patchCoachingAppointmentStatus(appointmentId, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling CoachingApi#patchCoachingAppointmentStatus");
+            e.printStackTrace();
+        }
+    }
+}

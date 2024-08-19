@@ -1,0 +1,36 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.DependencyObject;
+
+public class ExamplegetArchitectDependencytrackingObject {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        ArchitectApi apiInstance = new ArchitectApi();
+        String id = "id_example"; // String | Object ID
+String version = "version_example"; // String | Object version
+String objectType = "objectType_example"; // String | Object type
+Boolean consumedResources = true; // Boolean | Include resources this item consumes
+Boolean consumingResources = true; // Boolean | Include resources that consume this item
+List<String> consumedResourceType = Arrays.asList(null); // List<String> | Types of consumed resources to return, if consumed resources are requested
+List<String> consumingResourceType = Arrays.asList(null); // List<String> | Types of consuming resources to return, if consuming resources are requested
+Boolean consumedResourceRequest = true; // Boolean | Indicate that this is going to look up a consumed resource object
+        try { 
+            // Get a Dependency Tracking object
+            DependencyObject result = apiInstance.getArchitectDependencytrackingObject(id, version, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType, consumedResourceRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ArchitectApi#getArchitectDependencytrackingObject");
+            e.printStackTrace();
+        }
+    }
+}

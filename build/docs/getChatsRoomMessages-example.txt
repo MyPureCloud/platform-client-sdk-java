@@ -1,0 +1,32 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.ChatApi;
+import com.mypurecloud.sdk.v2.model.ErrorBody;import com.mypurecloud.sdk.v2.model.ChatMessageEntityListing;
+
+public class ExamplegetChatsRoomMessages {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        ChatApi apiInstance = new ChatApi();
+        String roomJid = "roomJid_example"; // String | roomJid
+String limit = "limit_example"; // String | The maximum number of messages to retrieve
+String before = "before_example"; // String | The cutoff date for messages to retrieve
+String after = "after_example"; // String | The beginning date for messages to retrieve
+        try { 
+            // Get a room's message history
+            ChatMessageEntityListing result = apiInstance.getChatsRoomMessages(roomJid, limit, before, after);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ChatApi#getChatsRoomMessages");
+            e.printStackTrace();
+        }
+    }
+}

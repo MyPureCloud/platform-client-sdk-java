@@ -1,0 +1,30 @@
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.api.QualityApi;
+import com.mypurecloud.sdk.v2.model.SurveyForm;import com.mypurecloud.sdk.v2.model.ErrorBody;
+
+public class ExamplegetQualityFormsSurveysBulkContexts {
+    public static void main(String[] args) {
+        // Create ApiClient instance
+        ApiClient apiClient = ApiClient.Builder.standard()
+                .withAccessToken("your_access_token")   // or use authorizeClientCredentials(...), authorizeCodeAuthorization(...), authorizePKCE(...) or authorizeSaml2Bearer(...)
+                .withBasePath("https://api.mypurecloud.com") // expected format: https://api.[base path]
+                .build();
+        
+        // Use the ApiClient instance
+        Configuration.setDefaultApiClient(apiClient);
+
+        QualityApi apiInstance = new QualityApi();
+        List<String> contextId = Arrays.asList(null); // List<String> | A comma-delimited list of valid survey form context ids. The maximum number of ids allowed in this list is 100.
+Boolean published = true; // Boolean | If true, the latest published version will be included. If false, only the unpublished version will be included.
+        try { 
+            // Retrieve a list of the latest form versions by context ids
+            List<SurveyForm> result = apiInstance.getQualityFormsSurveysBulkContexts(contextId, published);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling QualityApi#getQualityFormsSurveysBulkContexts");
+            e.printStackTrace();
+        }
+    }
+}
