@@ -10,19 +10,17 @@ title: Platform API Client SDK - Java
 * **Documentation** https://developer.genesys.cloud/devapps/sdk/docexplorer/purecloudjava/
 * **Source** https://github.com/MyPureCloud/platform-client-sdk-java
 
-Documentation version: com.mypurecloud.sdk.v2:platform-client-v2:207.0.0
-
 ## Install Using maven
 
-Install the library from maven via the package [com.mypurecloud.sdk.v2:platform-client-v2](https://mvnrepository.com/artifact/com.mypurecloud/platform-client-v2)
+Install the library from maven via the package [com.mypurecloud:platform-client-v2](https://mvnrepository.com/artifact/com.mypurecloud/platform-client-v2)
 
 ## Android Support
 
 The SDK may be used in Android as of SDK version 5.0.1. This requires Java 8 support in Android Studio (2.4 Preview 6 or later). For more information, see the Android Developers Blog: [Java 8 Language Features Support Update](https://android-developers.googleblog.com/2017/04/java-8-language-features-support-update.html)
 
-## Preview APIs
+## Preview API's
 
-**Warning:** Preview APIs are included in this SDK. These resources are subject to both breaking and non-breaking changes at any time without notice. This includes, but is not limited to, changing resource names, paths, contracts, documentation, and removing resources entirely. For a full list of the preview APIs see [here](https://developer.genesys.cloud/platform/preview-apis)
+**Warning:** Preview API's are included in this SDK. These resources are subject to both breaking and non-breaking changes at any time without notice. This includes, but is not limited to, changing resource names, paths, contracts, documentation, and removing resources entirely. For a full list of the preview API's see [here](https://developer.genesys.cloud/platform/preview-apis)
 
 ## Using the SDK
 
