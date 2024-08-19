@@ -22,6 +22,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAuthorizationRoleSubjectgrants**](AuthorizationApi#getAuthorizationRoleSubjectgrants) | Get the subjects' granted divisions in the specified role. |
 | [**getAuthorizationRoleUsers**](AuthorizationApi#getAuthorizationRoleUsers) | Get a list of the users in a specified role. |
 | [**getAuthorizationRoles**](AuthorizationApi#getAuthorizationRoles) | Retrieve a list of all roles defined for the organization |
+| [**getAuthorizationRolesSettings**](AuthorizationApi#getAuthorizationRolesSettings) | Get authorization role settings |
 | [**getAuthorizationSettings**](AuthorizationApi#getAuthorizationSettings) | Get authorization settings |
 | [**getAuthorizationSubject**](AuthorizationApi#getAuthorizationSubject) | Returns a listing of roles and permissions for a user. |
 | [**getAuthorizationSubjectsMe**](AuthorizationApi#getAuthorizationSubjectsMe) | Returns a listing of roles and permissions for the currently authenticated user. |
@@ -45,6 +46,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putAuthorizationRoleUsersAdd**](AuthorizationApi#putAuthorizationRoleUsersAdd) | Sets the users for the role |
 | [**putAuthorizationRoleUsersRemove**](AuthorizationApi#putAuthorizationRoleUsersRemove) | Removes the users from the role |
 | [**putAuthorizationRolesDefault**](AuthorizationApi#putAuthorizationRolesDefault) | Restore specified default roles |
+| [**putAuthorizationRolesSettings**](AuthorizationApi#putAuthorizationRolesSettings) | Change authorization role settings |
 | [**putUserRoles**](AuthorizationApi#putUserRoles) | Sets the user's roles |
 {: class="table-striped"}
 
@@ -1212,6 +1214,63 @@ try {
 ### Return type
 
 [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing)
+
+
+# **getAuthorizationRolesSettings**
+
+
+
+> [RoleSettings](RoleSettings) getAuthorizationRolesSettings()
+
+Get authorization role settings
+
+Wraps GET /api/v2/authorization/roles/settings  
+
+Requires ANY permissions: 
+
+* directory:organization:admin
+* authorization:settings:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AuthorizationApi apiInstance = new AuthorizationApi();
+try {
+    RoleSettings result = apiInstance.getAuthorizationRolesSettings();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AuthorizationApi#getAuthorizationRolesSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**RoleSettings**](RoleSettings)
 
 
 # **getAuthorizationSettings**
@@ -2642,6 +2701,69 @@ try {
 [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing)
 
 
+# **putAuthorizationRolesSettings**
+
+
+
+> [RoleSettings](RoleSettings) putAuthorizationRolesSettings(body)
+
+Change authorization role settings
+
+Change role settings
+
+Wraps PUT /api/v2/authorization/roles/settings  
+
+Requires ANY permissions: 
+
+* directory:organization:admin
+* authorization:settings:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AuthorizationApi apiInstance = new AuthorizationApi();
+RoleSettings body = new RoleSettings(); // RoleSettings | Authorization Role Settings
+try {
+    RoleSettings result = apiInstance.putAuthorizationRolesSettings(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AuthorizationApi#putAuthorizationRolesSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**RoleSettings**](RoleSettings)| Authorization Role Settings | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**RoleSettings**](RoleSettings)
+
+
 # **putUserRoles**
 
 
@@ -2703,3 +2825,5 @@ try {
 
 [**UserAuthorization**](UserAuthorization)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_

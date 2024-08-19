@@ -21,7 +21,6 @@
 | **signature** | [**Signature**](Signature) | The configuration for the canned response signature that will be appended to outbound emails sent via this route |  [optional] |
 | **historyInclusion** | [**HistoryInclusionEnum**](#Enum--HistoryInclusionEnum) | The configuration to indicate how the history of a conversation has to be included in a draft |  [optional] |
 | **allowMultipleActions** | **Boolean** | Control if multiple actions are allowed on this route. When true the disconnect has to be done manually. When false a conversation will be disconnected by the system after every action |  [optional] |
-| **imapFolder** | **String** | Imap folder routed to this route |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
@@ -38,3 +37,5 @@
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_

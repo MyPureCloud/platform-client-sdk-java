@@ -64,6 +64,7 @@
 | NWORKITEMSWRAPUPADDED | &quot;nWorkitemsWrapupAdded&quot; |
 | NWORKITEMSWRAPUPREMOVED | &quot;nWorkitemsWrapupRemoved&quot; |
 | OWORKITEMSSERVICELEVEL | &quot;oWorkitemsServiceLevel&quot; |
+| TWORKITEMSAGENTFOCUSCOMPLETE | &quot;tWorkitemsAgentFocusComplete&quot; |
 | TWORKITEMSALERT | &quot;tWorkitemsAlert&quot; |
 | TWORKITEMSANSWERED | &quot;tWorkitemsAnswered&quot; |
 | TWORKITEMSDIRECTANSWERED | &quot;tWorkitemsDirectAnswered&quot; |
@@ -89,3 +90,5 @@
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
