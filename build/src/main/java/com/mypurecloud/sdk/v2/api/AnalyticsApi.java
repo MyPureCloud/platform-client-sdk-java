@@ -3080,6 +3080,7 @@ public class AnalyticsApi {
    * 
    * @param dashboardType List dashboard of given type (required)
    * @param dashboardAccessFilter Filter dashboard based on the owner of dashboard (required)
+   * @param name name of the dashboard (optional)
    * @param sortBy  (optional, default to desc)
    * @param pageNumber  (optional, default to 1)
    * @param pageSize  (optional, default to 9)
@@ -3087,8 +3088,8 @@ public class AnalyticsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DashboardConfigurationListing getAnalyticsReportingSettingsDashboardsQuery(String dashboardType, String dashboardAccessFilter, String sortBy, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
-    return  getAnalyticsReportingSettingsDashboardsQuery(createGetAnalyticsReportingSettingsDashboardsQueryRequest(dashboardType, dashboardAccessFilter, sortBy, pageNumber, pageSize));
+  public DashboardConfigurationListing getAnalyticsReportingSettingsDashboardsQuery(String dashboardType, String dashboardAccessFilter, String name, String sortBy, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
+    return  getAnalyticsReportingSettingsDashboardsQuery(createGetAnalyticsReportingSettingsDashboardsQueryRequest(dashboardType, dashboardAccessFilter, name, sortBy, pageNumber, pageSize));
   }
 
   /**
@@ -3096,21 +3097,24 @@ public class AnalyticsApi {
    * 
    * @param dashboardType List dashboard of given type (required)
    * @param dashboardAccessFilter Filter dashboard based on the owner of dashboard (required)
+   * @param name name of the dashboard (optional)
    * @param sortBy  (optional, default to desc)
    * @param pageNumber  (optional, default to 1)
    * @param pageSize  (optional, default to 9)
    * @return DashboardConfigurationListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DashboardConfigurationListing> getAnalyticsReportingSettingsDashboardsQueryWithHttpInfo(String dashboardType, String dashboardAccessFilter, String sortBy, Integer pageNumber, Integer pageSize) throws IOException {
-    return getAnalyticsReportingSettingsDashboardsQuery(createGetAnalyticsReportingSettingsDashboardsQueryRequest(dashboardType, dashboardAccessFilter, sortBy, pageNumber, pageSize).withHttpInfo());
+  public ApiResponse<DashboardConfigurationListing> getAnalyticsReportingSettingsDashboardsQueryWithHttpInfo(String dashboardType, String dashboardAccessFilter, String name, String sortBy, Integer pageNumber, Integer pageSize) throws IOException {
+    return getAnalyticsReportingSettingsDashboardsQuery(createGetAnalyticsReportingSettingsDashboardsQueryRequest(dashboardType, dashboardAccessFilter, name, sortBy, pageNumber, pageSize).withHttpInfo());
   }
 
-  private GetAnalyticsReportingSettingsDashboardsQueryRequest createGetAnalyticsReportingSettingsDashboardsQueryRequest(String dashboardType, String dashboardAccessFilter, String sortBy, Integer pageNumber, Integer pageSize) {
+  private GetAnalyticsReportingSettingsDashboardsQueryRequest createGetAnalyticsReportingSettingsDashboardsQueryRequest(String dashboardType, String dashboardAccessFilter, String name, String sortBy, Integer pageNumber, Integer pageSize) {
     return GetAnalyticsReportingSettingsDashboardsQueryRequest.builder()
             .withDashboardType(dashboardType)
 
             .withDashboardAccessFilter(dashboardAccessFilter)
+
+            .withName(name)
 
             .withSortBy(sortBy)
 
@@ -4672,7 +4676,6 @@ public class AnalyticsApi {
   /**
    * Query for agent copilot aggregates
    * 
-   * postAnalyticsAgentcopilotsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AgentCopilotAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -4685,7 +4688,6 @@ public class AnalyticsApi {
   /**
    * Query for agent copilot aggregates
    * 
-   * postAnalyticsAgentcopilotsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return AgentCopilotAggregateQueryResponse
    * @throws IOException if the request fails to be processed
@@ -4704,7 +4706,6 @@ public class AnalyticsApi {
   /**
    * Query for agent copilot aggregates
    * 
-   * postAnalyticsAgentcopilotsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return AgentCopilotAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -4724,7 +4725,6 @@ public class AnalyticsApi {
   /**
    * Query for agent copilot aggregates
    * 
-   * postAnalyticsAgentcopilotsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

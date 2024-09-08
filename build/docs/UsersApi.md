@@ -420,6 +420,7 @@ Wraps DELETE /api/v2/users/{userId}
 
 Requires ANY permissions: 
 
+* admin
 * directory:user:delete
 * directory:organization:admin
 
@@ -3437,6 +3438,7 @@ Wraps PATCH /api/v2/users/{userId}
 
 Requires ANY permissions: 
 
+* admin
 * directory:user:edit
 * directory:organization:admin
 
@@ -4713,6 +4715,7 @@ Wraps POST /api/v2/users/{userId}/invite
 
 Requires ANY permissions: 
 
+* admin
 * directory:organization:admin
 * directory:userPassword:edit
 

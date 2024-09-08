@@ -26,6 +26,7 @@ title: IpAddressRange
 | AUDIOHOOK | &quot;audiohook&quot; | 
 | OPEN_MESSAGING | &quot;open-messaging&quot; | 
 | API | &quot;api&quot; | 
+| AUDIO_CONNECTOR | &quot;audio-connector&quot; | 
 {: class="table table-striped"}
 
 

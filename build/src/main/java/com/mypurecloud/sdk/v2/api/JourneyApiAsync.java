@@ -527,7 +527,6 @@ public class JourneyApiAsync {
   /**
    * Delete a Journey View by ID
    * deletes all versions
-   * deleteJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -562,7 +561,6 @@ public class JourneyApiAsync {
   /**
    * Delete a Journey View by ID
    * deletes all versions
-   * deleteJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2337,7 +2335,6 @@ public class JourneyApiAsync {
   /**
    * Get a Journey View by ID
    * returns the latest version
-   * getJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2372,7 +2369,6 @@ public class JourneyApiAsync {
   /**
    * Get a Journey View by ID
    * returns the latest version
-   * getJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2414,7 +2410,6 @@ public class JourneyApiAsync {
   /**
    * Get a Journey View by ID and version
    * 
-   * getJourneyViewVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2449,7 +2444,6 @@ public class JourneyApiAsync {
   /**
    * Get a Journey View by ID and version
    * 
-   * getJourneyViewVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2491,7 +2485,6 @@ public class JourneyApiAsync {
   /**
    * Get the job for a journey view version.
    * used for long descriptions
-   * getJourneyViewVersionJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2526,7 +2519,6 @@ public class JourneyApiAsync {
   /**
    * Get the job for a journey view version.
    * used for long descriptions
-   * getJourneyViewVersionJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2568,7 +2560,6 @@ public class JourneyApiAsync {
   /**
    * Get the result of a job for a journey view version.
    * used for long descriptions
-   * getJourneyViewVersionJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2603,7 +2594,6 @@ public class JourneyApiAsync {
   /**
    * Get the result of a job for a journey view version.
    * used for long descriptions
-   * getJourneyViewVersionJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2645,7 +2635,6 @@ public class JourneyApiAsync {
   /**
    * Get the latest job of a journey view version.
    * used for long descriptions
-   * getJourneyViewVersionJobsLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2680,7 +2669,6 @@ public class JourneyApiAsync {
   /**
    * Get the latest job of a journey view version.
    * used for long descriptions
-   * getJourneyViewVersionJobsLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2722,7 +2710,6 @@ public class JourneyApiAsync {
   /**
    * Get a list of Journey Views
    * 
-   * getJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2757,7 +2744,6 @@ public class JourneyApiAsync {
   /**
    * Get a list of Journey Views
    * 
-   * getJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2953,7 +2939,6 @@ public class JourneyApiAsync {
   /**
    * Get the jobs for an organization.
    * 
-   * getJourneyViewsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2988,7 +2973,6 @@ public class JourneyApiAsync {
   /**
    * Get the jobs for an organization.
    * 
-   * getJourneyViewsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4384,7 +4368,6 @@ public class JourneyApiAsync {
   /**
    * Submit a job request for a journey view version.
    * used for long descriptions
-   * postJourneyViewVersionJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4419,7 +4402,6 @@ public class JourneyApiAsync {
   /**
    * Submit a job request for a journey view version.
    * used for long descriptions
-   * postJourneyViewVersionJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4461,7 +4443,6 @@ public class JourneyApiAsync {
   /**
    * Update a Journey View by ID
    * creates a new version
-   * postJourneyViewVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4496,7 +4477,6 @@ public class JourneyApiAsync {
   /**
    * Update a Journey View by ID
    * creates a new version
-   * postJourneyViewVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4538,7 +4518,6 @@ public class JourneyApiAsync {
   /**
    * Create a new Journey View
    * 
-   * postJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4573,7 +4552,6 @@ public class JourneyApiAsync {
   /**
    * Create a new Journey View
    * 
-   * postJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

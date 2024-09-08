@@ -46,7 +46,8 @@ public class IpAddressRange  implements Serializable {
     SMTP("smtp"),
     AUDIOHOOK("audiohook"),
     OPEN_MESSAGING("open-messaging"),
-    API("api");
+    API("api"),
+    AUDIO_CONNECTOR("audio-connector");
 
     private String value;
 

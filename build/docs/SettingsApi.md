@@ -146,8 +146,6 @@ Get the execution history enabled setting.
 
 Get the execution history enabled setting.
 
-getSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/settings/executiondata  
 
 Requires ANY permissions: 
@@ -328,8 +326,6 @@ try {
 Edit the execution history on off setting.
 
 Edit the execution history on off setting.
-
-patchSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/settings/executiondata  
 

@@ -18,9 +18,9 @@ import java.util.Date;
 
 import java.io.Serializable;
 /**
- * Action function current zip file upload settings and state.
+ * Action function zip file upload settings and state.
  */
-@ApiModel(description = "Action function current zip file upload settings and state.")
+@ApiModel(description = "Action function zip file upload settings and state.")
 
 public class FunctionZipConfig  implements Serializable {
   
@@ -80,77 +80,49 @@ public class FunctionZipConfig  implements Serializable {
   private String id = null;
   private String name = null;
   private Date dateCreated = null;
+  private String errorMessage = null;
+  private String requestId = null;
 
-  
-  /**
-   * Status of zip upload.
-   **/
-  public FunctionZipConfig status(StatusEnum status) {
-    this.status = status;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Status of zip upload.")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;
   }
-  public void setStatus(StatusEnum status) {
-    this.status = status;
-  }
 
 
-  /**
-   * Zip file Identifier
-   **/
-  public FunctionZipConfig id(String id) {
-    this.id = id;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Zip file Identifier")
   @JsonProperty("id")
   public String getId() {
     return id;
   }
-  public void setId(String id) {
-    this.id = id;
-  }
 
 
-  /**
-   * Zip file name
-   **/
-  public FunctionZipConfig name(String name) {
-    this.name = name;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Zip file name")
   @JsonProperty("name")
   public String getName() {
     return name;
   }
-  public void setName(String name) {
-    this.name = name;
-  }
 
 
-  /**
-   * Date and time zip record was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-   **/
-  public FunctionZipConfig dateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Date and time zip record was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
-  public void setDateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
+
+
+  @ApiModelProperty(example = "null", value = "Error message if upload failed.")
+  @JsonProperty("errorMessage")
+  public String getErrorMessage() {
+    return errorMessage;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "Upload request id used for zip upload")
+  @JsonProperty("requestId")
+  public String getRequestId() {
+    return requestId;
   }
 
 
@@ -167,12 +139,14 @@ public class FunctionZipConfig  implements Serializable {
     return Objects.equals(this.status, functionZipConfig.status) &&
             Objects.equals(this.id, functionZipConfig.id) &&
             Objects.equals(this.name, functionZipConfig.name) &&
-            Objects.equals(this.dateCreated, functionZipConfig.dateCreated);
+            Objects.equals(this.dateCreated, functionZipConfig.dateCreated) &&
+            Objects.equals(this.errorMessage, functionZipConfig.errorMessage) &&
+            Objects.equals(this.requestId, functionZipConfig.requestId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, id, name, dateCreated);
+    return Objects.hash(status, id, name, dateCreated, errorMessage, requestId);
   }
 
   @Override
@@ -184,6 +158,8 @@ public class FunctionZipConfig  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
+    sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -27,6 +27,7 @@ public class RoutingConversationAttributesRequest  implements Serializable {
   private Integer priority = null;
   private List<String> skillIds = new ArrayList<String>();
   private String languageId = null;
+  private String labelId = null;
   private List<RequestScoredAgent> requestScoredAgents = new ArrayList<RequestScoredAgent>();
 
   
@@ -87,6 +88,24 @@ public class RoutingConversationAttributesRequest  implements Serializable {
 
 
   /**
+   * Label requirement for the conversation.  To remove the label requirement (setting it to System Default Label), specify an empty string, i.e., \"\".
+   **/
+  public RoutingConversationAttributesRequest labelId(String labelId) {
+    this.labelId = labelId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Label requirement for the conversation.  To remove the label requirement (setting it to System Default Label), specify an empty string, i.e., \"\".")
+  @JsonProperty("labelId")
+  public String getLabelId() {
+    return labelId;
+  }
+  public void setLabelId(String labelId) {
+    this.labelId = labelId;
+  }
+
+
+  /**
    **/
   public RoutingConversationAttributesRequest requestScoredAgents(List<RequestScoredAgent> requestScoredAgents) {
     this.requestScoredAgents = requestScoredAgents;
@@ -116,12 +135,13 @@ public class RoutingConversationAttributesRequest  implements Serializable {
     return Objects.equals(this.priority, routingConversationAttributesRequest.priority) &&
             Objects.equals(this.skillIds, routingConversationAttributesRequest.skillIds) &&
             Objects.equals(this.languageId, routingConversationAttributesRequest.languageId) &&
+            Objects.equals(this.labelId, routingConversationAttributesRequest.labelId) &&
             Objects.equals(this.requestScoredAgents, routingConversationAttributesRequest.requestScoredAgents);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(priority, skillIds, languageId, requestScoredAgents);
+    return Objects.hash(priority, skillIds, languageId, labelId, requestScoredAgents);
   }
 
   @Override
@@ -132,6 +152,7 @@ public class RoutingConversationAttributesRequest  implements Serializable {
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    skillIds: ").append(toIndentedString(skillIds)).append("\n");
     sb.append("    languageId: ").append(toIndentedString(languageId)).append("\n");
+    sb.append("    labelId: ").append(toIndentedString(labelId)).append("\n");
     sb.append("    requestScoredAgents: ").append(toIndentedString(requestScoredAgents)).append("\n");
     sb.append("}");
     return sb.toString();

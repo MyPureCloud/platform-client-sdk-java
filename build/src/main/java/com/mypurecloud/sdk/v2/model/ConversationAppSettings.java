@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.ConversationClearSettings;
 import com.mypurecloud.sdk.v2.model.ConversationDisconnectSettings;
 import com.mypurecloud.sdk.v2.model.Humanize;
 import com.mypurecloud.sdk.v2.model.Markdown;
+import com.mypurecloud.sdk.v2.model.NotificationsSettings;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -35,6 +36,7 @@ public class ConversationAppSettings  implements Serializable {
   private ConversationDisconnectSettings conversationDisconnect = null;
   private ConversationClearSettings conversationClear = null;
   private Humanize humanize = null;
+  private NotificationsSettings notifications = null;
 
   
   /**
@@ -181,6 +183,24 @@ public class ConversationAppSettings  implements Serializable {
   }
 
 
+  /**
+   * The notification settings for messenger apps
+   **/
+  public ConversationAppSettings notifications(NotificationsSettings notifications) {
+    this.notifications = notifications;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The notification settings for messenger apps")
+  @JsonProperty("notifications")
+  public NotificationsSettings getNotifications() {
+    return notifications;
+  }
+  public void setNotifications(NotificationsSettings notifications) {
+    this.notifications = notifications;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -198,12 +218,13 @@ public class ConversationAppSettings  implements Serializable {
             Objects.equals(this.markdown, conversationAppSettings.markdown) &&
             Objects.equals(this.conversationDisconnect, conversationAppSettings.conversationDisconnect) &&
             Objects.equals(this.conversationClear, conversationAppSettings.conversationClear) &&
-            Objects.equals(this.humanize, conversationAppSettings.humanize);
+            Objects.equals(this.humanize, conversationAppSettings.humanize) &&
+            Objects.equals(this.notifications, conversationAppSettings.notifications);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, showAgentTypingIndicator, showUserTypingIndicator, autoStart, markdown, conversationDisconnect, conversationClear, humanize);
+    return Objects.hash(enabled, showAgentTypingIndicator, showUserTypingIndicator, autoStart, markdown, conversationDisconnect, conversationClear, humanize, notifications);
   }
 
   @Override
@@ -219,6 +240,7 @@ public class ConversationAppSettings  implements Serializable {
     sb.append("    conversationDisconnect: ").append(toIndentedString(conversationDisconnect)).append("\n");
     sb.append("    conversationClear: ").append(toIndentedString(conversationClear)).append("\n");
     sb.append("    humanize: ").append(toIndentedString(humanize)).append("\n");
+    sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
     sb.append("}");
     return sb.toString();
   }

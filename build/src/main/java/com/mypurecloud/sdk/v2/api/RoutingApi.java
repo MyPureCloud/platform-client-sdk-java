@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.model.AgentDirectRoutingBackupSettings;
 import com.mypurecloud.sdk.v2.model.AgentMaxUtilizationResponse;
 import com.mypurecloud.sdk.v2.model.AssessmentJobListing;
 import com.mypurecloud.sdk.v2.model.AssessmentListing;
+import com.mypurecloud.sdk.v2.model.AssistantQueue;
 import com.mypurecloud.sdk.v2.model.AvailableMediaTypeEntityListing;
 import com.mypurecloud.sdk.v2.model.BenefitAssessment;
 import com.mypurecloud.sdk.v2.model.BenefitAssessmentJob;
@@ -152,6 +153,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorModelsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorsKeyperformanceindicatorsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueAssistantRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueComparisonperiodRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueComparisonperiodsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueEstimatedwaittimeRequest;
@@ -4132,6 +4134,88 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Queue> response = (ApiResponse<Queue>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get an assistant associated with a queue.
+   * 
+   * @param queueId Queue ID (required)
+   * @param expand Which fields, if any, to expand. (optional)
+   * @return AssistantQueue
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AssistantQueue getRoutingQueueAssistant(String queueId, String expand) throws IOException, ApiException {
+    return  getRoutingQueueAssistant(createGetRoutingQueueAssistantRequest(queueId, expand));
+  }
+
+  /**
+   * Get an assistant associated with a queue.
+   * 
+   * @param queueId Queue ID (required)
+   * @param expand Which fields, if any, to expand. (optional)
+   * @return AssistantQueue
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AssistantQueue> getRoutingQueueAssistantWithHttpInfo(String queueId, String expand) throws IOException {
+    return getRoutingQueueAssistant(createGetRoutingQueueAssistantRequest(queueId, expand).withHttpInfo());
+  }
+
+  private GetRoutingQueueAssistantRequest createGetRoutingQueueAssistantRequest(String queueId, String expand) {
+    return GetRoutingQueueAssistantRequest.builder()
+            .withQueueId(queueId)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Get an assistant associated with a queue.
+   * 
+   * @param request The request object
+   * @return AssistantQueue
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AssistantQueue getRoutingQueueAssistant(GetRoutingQueueAssistantRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AssistantQueue> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AssistantQueue>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an assistant associated with a queue.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AssistantQueue> getRoutingQueueAssistant(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AssistantQueue>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AssistantQueue> response = (ApiResponse<AssistantQueue>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AssistantQueue> response = (ApiResponse<AssistantQueue>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

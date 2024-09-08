@@ -22,18 +22,10 @@ import java.io.Serializable;
 
 public class ActivityCodesReference  implements Serializable {
   
-  private String id = null;
   private List<String> ids = new ArrayList<String>();
   private String selfUri = null;
 
   
-  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-
-
   /**
    * The IDs of activity codes
    **/
@@ -69,14 +61,13 @@ public class ActivityCodesReference  implements Serializable {
     }
     ActivityCodesReference activityCodesReference = (ActivityCodesReference) o;
 
-    return Objects.equals(this.id, activityCodesReference.id) &&
-            Objects.equals(this.ids, activityCodesReference.ids) &&
+    return Objects.equals(this.ids, activityCodesReference.ids) &&
             Objects.equals(this.selfUri, activityCodesReference.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, ids, selfUri);
+    return Objects.hash(ids, selfUri);
   }
 
   @Override
@@ -84,7 +75,6 @@ public class ActivityCodesReference  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ActivityCodesReference {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    ids: ").append(toIndentedString(ids)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

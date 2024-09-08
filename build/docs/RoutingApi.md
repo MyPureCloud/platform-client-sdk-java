@@ -56,6 +56,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingPredictors**](RoutingApi.html#getRoutingPredictors) | Retrieve all predictors. |
 | [**getRoutingPredictorsKeyperformanceindicators**](RoutingApi.html#getRoutingPredictorsKeyperformanceindicators) | Get a list of Key Performance Indicators |
 | [**getRoutingQueue**](RoutingApi.html#getRoutingQueue) | Get details about this queue. |
+| [**getRoutingQueueAssistant**](RoutingApi.html#getRoutingQueueAssistant) | Get an assistant associated with a queue. |
 | [**getRoutingQueueComparisonperiod**](RoutingApi.html#getRoutingQueueComparisonperiod) | Get a Comparison Period. |
 | [**getRoutingQueueComparisonperiods**](RoutingApi.html#getRoutingQueueComparisonperiods) | Get list of comparison periods |
 | [**getRoutingQueueEstimatedwaittime**](RoutingApi.html#getRoutingQueueEstimatedwaittime) | Get Estimated Wait Time |
@@ -3169,6 +3170,69 @@ try {
 ### Return type
 
 [**Queue**](Queue.html)
+
+<a name="getRoutingQueueAssistant"></a>
+
+# **getRoutingQueueAssistant**
+
+
+
+> [AssistantQueue](AssistantQueue.html) getRoutingQueueAssistant(queueId, expand)
+
+Get an assistant associated with a queue.
+
+Wraps GET /api/v2/routing/queues/{queueId}/assistant  
+
+Requires ALL permissions: 
+
+* assistants:queue:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String queueId = "queueId_example"; // String | Queue ID
+String expand = "expand_example"; // String | Which fields, if any, to expand.
+try {
+    AssistantQueue result = apiInstance.getRoutingQueueAssistant(queueId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingQueueAssistant");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **queueId** | **String**| Queue ID | 
+| **expand** | **String**| Which fields, if any, to expand. | [optional]<br />**Values**: assistant 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AssistantQueue**](AssistantQueue.html)
 
 <a name="getRoutingQueueComparisonperiod"></a>
 

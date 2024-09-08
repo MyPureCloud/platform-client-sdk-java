@@ -15,6 +15,8 @@ import com.mypurecloud.sdk.v2.model.Function;
 import com.mypurecloud.sdk.v2.model.FunctionZipConfig;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -27,6 +29,7 @@ public class FunctionConfig  implements Serializable {
   private String id = null;
   private Function function = null;
   private FunctionZipConfig zip = null;
+  private List<FunctionZipConfig> uploadExceptionHistory = new ArrayList<FunctionZipConfig>();
   private String selfUri = null;
 
   
@@ -51,6 +54,13 @@ public class FunctionConfig  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "History of failed zip upload file configuration including their state and error messages. Contains no more than last ten failures.")
+  @JsonProperty("uploadExceptionHistory")
+  public List<FunctionZipConfig> getUploadExceptionHistory() {
+    return uploadExceptionHistory;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -71,12 +81,13 @@ public class FunctionConfig  implements Serializable {
     return Objects.equals(this.id, functionConfig.id) &&
             Objects.equals(this.function, functionConfig.function) &&
             Objects.equals(this.zip, functionConfig.zip) &&
+            Objects.equals(this.uploadExceptionHistory, functionConfig.uploadExceptionHistory) &&
             Objects.equals(this.selfUri, functionConfig.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, function, zip, selfUri);
+    return Objects.hash(id, function, zip, uploadExceptionHistory, selfUri);
   }
 
   @Override
@@ -87,6 +98,7 @@ public class FunctionConfig  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    function: ").append(toIndentedString(function)).append("\n");
     sb.append("    zip: ").append(toIndentedString(zip)).append("\n");
+    sb.append("    uploadExceptionHistory: ").append(toIndentedString(uploadExceptionHistory)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

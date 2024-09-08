@@ -116,14 +116,16 @@ public class Function  implements Serializable {
 
 
   /**
-   * Execution timeout to apply to function. Value is in seconds. Range allowed 1 to 60. Default value 15 seconds.
+   * Execution timeout to apply to function. Value is in seconds. Range allowed 1 to 15. Default value 15 seconds.
+   * minimum: 1
+   * maximum: 15
    **/
   public Function timeoutSeconds(Integer timeoutSeconds) {
     this.timeoutSeconds = timeoutSeconds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Execution timeout to apply to function. Value is in seconds. Range allowed 1 to 60. Default value 15 seconds.")
+  @ApiModelProperty(example = "null", value = "Execution timeout to apply to function. Value is in seconds. Range allowed 1 to 15. Default value 15 seconds.")
   @JsonProperty("timeoutSeconds")
   public Integer getTimeoutSeconds() {
     return timeoutSeconds;

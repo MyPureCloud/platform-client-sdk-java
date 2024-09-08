@@ -233,7 +233,8 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     WHATSAPP("WHATSAPP"),
     WEBMESSAGING("WEBMESSAGING"),
     OPEN("OPEN"),
-    INSTAGRAM("INSTAGRAM");
+    INSTAGRAM("INSTAGRAM"),
+    APPLE("APPLE");
 
     private String value;
 
@@ -432,6 +433,8 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
   private Integer connectedDurationMs = null;
   private List<String> conversationExternalContactIds = new ArrayList<String>();
   private List<String> conversationExternalOrganizationIds = new ArrayList<String>();
+  private String utilizationLabel = null;
+  private String flowType = null;
 
   
   /**
@@ -944,6 +947,40 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
   }
 
 
+  /**
+   **/
+  public AcdEndDetailEventTopicAcdEndEvent utilizationLabel(String utilizationLabel) {
+    this.utilizationLabel = utilizationLabel;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("utilizationLabel")
+  public String getUtilizationLabel() {
+    return utilizationLabel;
+  }
+  public void setUtilizationLabel(String utilizationLabel) {
+    this.utilizationLabel = utilizationLabel;
+  }
+
+
+  /**
+   **/
+  public AcdEndDetailEventTopicAcdEndEvent flowType(String flowType) {
+    this.flowType = flowType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("flowType")
+  public String getFlowType() {
+    return flowType;
+  }
+  public void setFlowType(String flowType) {
+    this.flowType = flowType;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -983,12 +1020,14 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
             Objects.equals(this.routingPriority, acdEndDetailEventTopicAcdEndEvent.routingPriority) &&
             Objects.equals(this.connectedDurationMs, acdEndDetailEventTopicAcdEndEvent.connectedDurationMs) &&
             Objects.equals(this.conversationExternalContactIds, acdEndDetailEventTopicAcdEndEvent.conversationExternalContactIds) &&
-            Objects.equals(this.conversationExternalOrganizationIds, acdEndDetailEventTopicAcdEndEvent.conversationExternalOrganizationIds);
+            Objects.equals(this.conversationExternalOrganizationIds, acdEndDetailEventTopicAcdEndEvent.conversationExternalOrganizationIds) &&
+            Objects.equals(this.utilizationLabel, acdEndDetailEventTopicAcdEndEvent.utilizationLabel) &&
+            Objects.equals(this.flowType, acdEndDetailEventTopicAcdEndEvent.flowType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, disconnectType, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, queueId, divisionId, acdOutcome, answeredUserId, requestedRoutings, usedRouting, requestedRoutingSkillIds, requestedLanguageId, requestedRoutingUserIds, routingPriority, connectedDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, disconnectType, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, queueId, divisionId, acdOutcome, answeredUserId, requestedRoutings, usedRouting, requestedRoutingSkillIds, requestedLanguageId, requestedRoutingUserIds, routingPriority, connectedDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds, utilizationLabel, flowType);
   }
 
   @Override
@@ -1026,6 +1065,8 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     sb.append("    connectedDurationMs: ").append(toIndentedString(connectedDurationMs)).append("\n");
     sb.append("    conversationExternalContactIds: ").append(toIndentedString(conversationExternalContactIds)).append("\n");
     sb.append("    conversationExternalOrganizationIds: ").append(toIndentedString(conversationExternalOrganizationIds)).append("\n");
+    sb.append("    utilizationLabel: ").append(toIndentedString(utilizationLabel)).append("\n");
+    sb.append("    flowType: ").append(toIndentedString(flowType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

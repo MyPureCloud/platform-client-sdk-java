@@ -383,8 +383,6 @@ Delete a Journey View by ID
 
 deletes all versions
 
-deleteJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/journey/views/{viewId}  
 
 Requires ALL permissions: 
@@ -1917,8 +1915,6 @@ Get a Journey View by ID
 
 returns the latest version
 
-getJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/journey/views/{viewId}  
 
 Requires ALL permissions: 
@@ -1979,8 +1975,6 @@ try {
 > [JourneyView](JourneyView.html) getJourneyViewVersion(viewId, versionId)
 
 Get a Journey View by ID and version
-
-getJourneyViewVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/journey/views/{viewId}/versions/{versionId}  
 
@@ -2046,8 +2040,6 @@ try {
 Get the job for a journey view version.
 
 used for long descriptions
-
-getJourneyViewVersionJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}  
 
@@ -2116,8 +2108,6 @@ Get the result of a job for a journey view version.
 
 used for long descriptions
 
-getJourneyViewVersionJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results  
 
 Requires ALL permissions: 
@@ -2185,8 +2175,6 @@ Get the latest job of a journey view version.
 
 used for long descriptions
 
-getJourneyViewVersionJobsLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/latest  
 
 Requires ALL permissions: 
@@ -2246,11 +2234,9 @@ try {
 
 
 
-> [JourneyViewListing](JourneyViewListing.html) getJourneyViews(pageNumber, pageSize, nameOrCreatedBy, expand)
+> [JourneyViewListing](JourneyViewListing.html) getJourneyViews(pageNumber, pageSize, nameOrCreatedBy, expand, id)
 
 Get a list of Journey Views
-
-getJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/journey/views  
 
@@ -2284,8 +2270,9 @@ Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String nameOrCreatedBy = "nameOrCreatedBy_example"; // String | Journey View Name or Created By
 String expand = "expand_example"; // String | Parameter to request additional data to return in Journey payload
+String id = "id_example"; // String | Parameter to request a list of Journey Views by id, separated by commas. Limit of 100 items.
 try {
-    JourneyViewListing result = apiInstance.getJourneyViews(pageNumber, pageSize, nameOrCreatedBy, expand);
+    JourneyViewListing result = apiInstance.getJourneyViews(pageNumber, pageSize, nameOrCreatedBy, expand, id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling JourneyApi#getJourneyViews");
@@ -2302,6 +2289,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **nameOrCreatedBy** | **String**| Journey View Name or Created By | [optional] 
 | **expand** | **String**| Parameter to request additional data to return in Journey payload | [optional]<br />**Values**: charts 
+| **id** | **String**| Parameter to request a list of Journey Views by id, separated by commas. Limit of 100 items. | [optional] 
 {: class="table-striped"}
 
 
@@ -2440,8 +2428,6 @@ This endpoint does not require any parameters.
 > [JourneyViewJobListing](JourneyViewJobListing.html) getJourneyViewsJobs(pageNumber, pageSize, interval, statuses)
 
 Get the jobs for an organization.
-
-getJourneyViewsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/journey/views/jobs  
 
@@ -3587,8 +3573,6 @@ Submit a job request for a journey view version.
 
 used for long descriptions
 
-postJourneyViewVersionJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs  
 
 Requires ALL permissions: 
@@ -3654,8 +3638,6 @@ Update a Journey View by ID
 
 creates a new version
 
-postJourneyViewVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/journey/views/{viewId}/versions  
 
 Requires ALL permissions: 
@@ -3718,8 +3700,6 @@ try {
 > [JourneyView](JourneyView.html) postJourneyViews(body)
 
 Create a new Journey View
-
-postJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/journey/views  
 

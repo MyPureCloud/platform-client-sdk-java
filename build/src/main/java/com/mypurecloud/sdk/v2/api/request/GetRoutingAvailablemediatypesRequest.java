@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.AgentDirectRoutingBackupSettings;
 import com.mypurecloud.sdk.v2.model.AgentMaxUtilizationResponse;
 import com.mypurecloud.sdk.v2.model.AssessmentJobListing;
 import com.mypurecloud.sdk.v2.model.AssessmentListing;
+import com.mypurecloud.sdk.v2.model.AssistantQueue;
 import com.mypurecloud.sdk.v2.model.AvailableMediaTypeEntityListing;
 import com.mypurecloud.sdk.v2.model.BenefitAssessment;
 import com.mypurecloud.sdk.v2.model.BenefitAssessmentJob;

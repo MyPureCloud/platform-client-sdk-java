@@ -28,6 +28,7 @@ import com.mypurecloud.sdk.v2.model.ContactIdentifier;
 import com.mypurecloud.sdk.v2.model.ContactListing;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 import com.mypurecloud.sdk.v2.model.CursorContactListing;
+import com.mypurecloud.sdk.v2.model.CursorExternalSourceListing;
 import com.mypurecloud.sdk.v2.model.CursorNoteListing;
 import com.mypurecloud.sdk.v2.model.CursorOrganizationListing;
 import com.mypurecloud.sdk.v2.model.CursorRelationshipListing;
@@ -39,6 +40,7 @@ import com.mypurecloud.sdk.v2.model.ExternalContact;
 import com.mypurecloud.sdk.v2.model.ExternalOrganization;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationListing;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationTrustorLink;
+import com.mypurecloud.sdk.v2.model.ExternalSource;
 import com.mypurecloud.sdk.v2.model.IdentifierClaimRequest;
 import com.mypurecloud.sdk.v2.model.MergeRequest;
 import com.mypurecloud.sdk.v2.model.Note;
@@ -52,6 +54,7 @@ import com.mypurecloud.sdk.v2.model.SessionListing;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsContactRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsContactNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsContactsSchemaRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsExternalsourceRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsOrganizationNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsOrganizationTrustorRequest;
@@ -67,6 +70,8 @@ import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemaReque
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemaVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemaVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemasRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsExternalsourceRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsExternalsourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationNoteRequest;
@@ -105,6 +110,7 @@ import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactNotesReques
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactPromotionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsSchemasRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsExternalsourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsIdentifierlookupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsMergeContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsOrganizationNotesRequest;
@@ -115,6 +121,7 @@ import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsContactRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsContactNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsContactsSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsConversationRequest;
+import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsExternalsourceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsOrganizationNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsOrganizationTrustorTrustorIdRequest;
@@ -369,6 +376,88 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.
+   * 
+   * deleteExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param externalSourceId External Source ID (required)
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty deleteExternalcontactsExternalsource(String externalSourceId) throws IOException, ApiException {
+    return  deleteExternalcontactsExternalsource(createDeleteExternalcontactsExternalsourceRequest(externalSourceId));
+  }
+
+  /**
+   * Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.
+   * 
+   * deleteExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param externalSourceId External Source ID (required)
+   * @return Empty
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> deleteExternalcontactsExternalsourceWithHttpInfo(String externalSourceId) throws IOException {
+    return deleteExternalcontactsExternalsource(createDeleteExternalcontactsExternalsourceRequest(externalSourceId).withHttpInfo());
+  }
+
+  private DeleteExternalcontactsExternalsourceRequest createDeleteExternalcontactsExternalsourceRequest(String externalSourceId) {
+    return DeleteExternalcontactsExternalsourceRequest.builder()
+            .withExternalSourceId(externalSourceId)
+
+            .build();
+  }
+
+  /**
+   * Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.
+   * 
+   * deleteExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty deleteExternalcontactsExternalsource(DeleteExternalcontactsExternalsourceRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.
+   * 
+   * deleteExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> deleteExternalcontactsExternalsource(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -690,7 +779,7 @@ public class ExternalContactsApi {
    * Fetch an external contact
    * 
    * @param contactId ExternalContact ID (required)
-   * @param expand which fields, if any, to expand (externalOrganization,externalDataSources,identifiers) (optional)
+   * @param expand which fields, if any, to expand (optional)
    * @return ExternalContact
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -703,7 +792,7 @@ public class ExternalContactsApi {
    * Fetch an external contact
    * 
    * @param contactId ExternalContact ID (required)
-   * @param expand which fields, if any, to expand (externalOrganization,externalDataSources,identifiers) (optional)
+   * @param expand which fields, if any, to expand (optional)
    * @return ExternalContact
    * @throws IOException if the request fails to be processed
    */
@@ -1600,6 +1689,182 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch an External Source
+   * 
+   * getExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param externalSourceId External Source ID (required)
+   * @return ExternalSource
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalSource getExternalcontactsExternalsource(String externalSourceId) throws IOException, ApiException {
+    return  getExternalcontactsExternalsource(createGetExternalcontactsExternalsourceRequest(externalSourceId));
+  }
+
+  /**
+   * Fetch an External Source
+   * 
+   * getExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param externalSourceId External Source ID (required)
+   * @return ExternalSource
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalSource> getExternalcontactsExternalsourceWithHttpInfo(String externalSourceId) throws IOException {
+    return getExternalcontactsExternalsource(createGetExternalcontactsExternalsourceRequest(externalSourceId).withHttpInfo());
+  }
+
+  private GetExternalcontactsExternalsourceRequest createGetExternalcontactsExternalsourceRequest(String externalSourceId) {
+    return GetExternalcontactsExternalsourceRequest.builder()
+            .withExternalSourceId(externalSourceId)
+
+            .build();
+  }
+
+  /**
+   * Fetch an External Source
+   * 
+   * getExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ExternalSource
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalSource getExternalcontactsExternalsource(GetExternalcontactsExternalsourceRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalSource> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalSource>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch an External Source
+   * 
+   * getExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalSource> getExternalcontactsExternalsource(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalSource>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalSource> response = (ApiResponse<ExternalSource>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalSource> response = (ApiResponse<ExternalSource>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch a list of External Sources
+   * 
+   * getExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+   * @param limit The number of ExternalSources per page; must be between 10 and 200, default is 100 (optional)
+   * @param name Filter by external source name. Filtering is prefix filtering and not an exact match (optional)
+   * @param active Filter by active status of external source (optional)
+   * @return CursorExternalSourceListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CursorExternalSourceListing getExternalcontactsExternalsources(String cursor, Integer limit, String name, Boolean active) throws IOException, ApiException {
+    return  getExternalcontactsExternalsources(createGetExternalcontactsExternalsourcesRequest(cursor, limit, name, active));
+  }
+
+  /**
+   * Fetch a list of External Sources
+   * 
+   * getExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+   * @param limit The number of ExternalSources per page; must be between 10 and 200, default is 100 (optional)
+   * @param name Filter by external source name. Filtering is prefix filtering and not an exact match (optional)
+   * @param active Filter by active status of external source (optional)
+   * @return CursorExternalSourceListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CursorExternalSourceListing> getExternalcontactsExternalsourcesWithHttpInfo(String cursor, Integer limit, String name, Boolean active) throws IOException {
+    return getExternalcontactsExternalsources(createGetExternalcontactsExternalsourcesRequest(cursor, limit, name, active).withHttpInfo());
+  }
+
+  private GetExternalcontactsExternalsourcesRequest createGetExternalcontactsExternalsourcesRequest(String cursor, Integer limit, String name, Boolean active) {
+    return GetExternalcontactsExternalsourcesRequest.builder()
+            .withCursor(cursor)
+
+            .withLimit(limit)
+
+            .withName(name)
+
+            .withActive(active)
+
+            .build();
+  }
+
+  /**
+   * Fetch a list of External Sources
+   * 
+   * getExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return CursorExternalSourceListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CursorExternalSourceListing getExternalcontactsExternalsources(GetExternalcontactsExternalsourcesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CursorExternalSourceListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CursorExternalSourceListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch a list of External Sources
+   * 
+   * getExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CursorExternalSourceListing> getExternalcontactsExternalsources(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CursorExternalSourceListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CursorExternalSourceListing> response = (ApiResponse<CursorExternalSourceListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CursorExternalSourceListing> response = (ApiResponse<CursorExternalSourceListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4693,6 +4958,88 @@ public class ExternalContactsApi {
   }
 
   /**
+   * Create an External Source
+   * 
+   * postExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body External Source (required)
+   * @return ExternalSource
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalSource postExternalcontactsExternalsources(ExternalSource body) throws IOException, ApiException {
+    return  postExternalcontactsExternalsources(createPostExternalcontactsExternalsourcesRequest(body));
+  }
+
+  /**
+   * Create an External Source
+   * 
+   * postExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body External Source (required)
+   * @return ExternalSource
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalSource> postExternalcontactsExternalsourcesWithHttpInfo(ExternalSource body) throws IOException {
+    return postExternalcontactsExternalsources(createPostExternalcontactsExternalsourcesRequest(body).withHttpInfo());
+  }
+
+  private PostExternalcontactsExternalsourcesRequest createPostExternalcontactsExternalsourcesRequest(ExternalSource body) {
+    return PostExternalcontactsExternalsourcesRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create an External Source
+   * 
+   * postExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ExternalSource
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalSource postExternalcontactsExternalsources(PostExternalcontactsExternalsourcesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalSource> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalSource>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create an External Source
+   * 
+   * postExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalSource> postExternalcontactsExternalsources(ApiRequest<ExternalSource> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalSource>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalSource> response = (ApiResponse<ExternalSource>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalSource> response = (ApiResponse<ExternalSource>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Fetch a contact using an identifier type and value.
    * Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
    * @param identifier  (required)
@@ -5493,6 +5840,92 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update an External Source
+   * 
+   * putExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param externalSourceId External Source ID (required)
+   * @param body External Source (required)
+   * @return ExternalSource
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalSource putExternalcontactsExternalsource(String externalSourceId, ExternalSource body) throws IOException, ApiException {
+    return  putExternalcontactsExternalsource(createPutExternalcontactsExternalsourceRequest(externalSourceId, body));
+  }
+
+  /**
+   * Update an External Source
+   * 
+   * putExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param externalSourceId External Source ID (required)
+   * @param body External Source (required)
+   * @return ExternalSource
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalSource> putExternalcontactsExternalsourceWithHttpInfo(String externalSourceId, ExternalSource body) throws IOException {
+    return putExternalcontactsExternalsource(createPutExternalcontactsExternalsourceRequest(externalSourceId, body).withHttpInfo());
+  }
+
+  private PutExternalcontactsExternalsourceRequest createPutExternalcontactsExternalsourceRequest(String externalSourceId, ExternalSource body) {
+    return PutExternalcontactsExternalsourceRequest.builder()
+            .withExternalSourceId(externalSourceId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update an External Source
+   * 
+   * putExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ExternalSource
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalSource putExternalcontactsExternalsource(PutExternalcontactsExternalsourceRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalSource> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalSource>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update an External Source
+   * 
+   * putExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalSource> putExternalcontactsExternalsource(ApiRequest<ExternalSource> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalSource>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalSource> response = (ApiResponse<ExternalSource>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalSource> response = (ApiResponse<ExternalSource>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

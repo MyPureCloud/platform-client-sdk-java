@@ -168,7 +168,8 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
     WHATSAPP("WHATSAPP"),
     WEBMESSAGING("WEBMESSAGING"),
     OPEN("OPEN"),
-    INSTAGRAM("INSTAGRAM");
+    INSTAGRAM("INSTAGRAM"),
+    APPLE("APPLE");
 
     private String value;
 
@@ -200,6 +201,9 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
   private String divisionId = null;
   private List<String> conversationExternalContactIds = new ArrayList<String>();
   private List<String> conversationExternalOrganizationIds = new ArrayList<String>();
+  private String utilizationLabel = null;
+  private Integer routingPriority = null;
+  private List<String> requestedRoutingSkillIds = new ArrayList<String>();
 
   
   /**
@@ -542,6 +546,57 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
   }
 
 
+  /**
+   **/
+  public AcdStartDetailEventTopicAcdStartEvent utilizationLabel(String utilizationLabel) {
+    this.utilizationLabel = utilizationLabel;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("utilizationLabel")
+  public String getUtilizationLabel() {
+    return utilizationLabel;
+  }
+  public void setUtilizationLabel(String utilizationLabel) {
+    this.utilizationLabel = utilizationLabel;
+  }
+
+
+  /**
+   **/
+  public AcdStartDetailEventTopicAcdStartEvent routingPriority(Integer routingPriority) {
+    this.routingPriority = routingPriority;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("routingPriority")
+  public Integer getRoutingPriority() {
+    return routingPriority;
+  }
+  public void setRoutingPriority(Integer routingPriority) {
+    this.routingPriority = routingPriority;
+  }
+
+
+  /**
+   **/
+  public AcdStartDetailEventTopicAcdStartEvent requestedRoutingSkillIds(List<String> requestedRoutingSkillIds) {
+    this.requestedRoutingSkillIds = requestedRoutingSkillIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("requestedRoutingSkillIds")
+  public List<String> getRequestedRoutingSkillIds() {
+    return requestedRoutingSkillIds;
+  }
+  public void setRequestedRoutingSkillIds(List<String> requestedRoutingSkillIds) {
+    this.requestedRoutingSkillIds = requestedRoutingSkillIds;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -571,12 +626,15 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
             Objects.equals(this.queueId, acdStartDetailEventTopicAcdStartEvent.queueId) &&
             Objects.equals(this.divisionId, acdStartDetailEventTopicAcdStartEvent.divisionId) &&
             Objects.equals(this.conversationExternalContactIds, acdStartDetailEventTopicAcdStartEvent.conversationExternalContactIds) &&
-            Objects.equals(this.conversationExternalOrganizationIds, acdStartDetailEventTopicAcdStartEvent.conversationExternalOrganizationIds);
+            Objects.equals(this.conversationExternalOrganizationIds, acdStartDetailEventTopicAcdStartEvent.conversationExternalOrganizationIds) &&
+            Objects.equals(this.utilizationLabel, acdStartDetailEventTopicAcdStartEvent.utilizationLabel) &&
+            Objects.equals(this.routingPriority, acdStartDetailEventTopicAcdStartEvent.routingPriority) &&
+            Objects.equals(this.requestedRoutingSkillIds, acdStartDetailEventTopicAcdStartEvent.requestedRoutingSkillIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, queueId, divisionId, conversationExternalContactIds, conversationExternalOrganizationIds);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, queueId, divisionId, conversationExternalContactIds, conversationExternalOrganizationIds, utilizationLabel, routingPriority, requestedRoutingSkillIds);
   }
 
   @Override
@@ -604,6 +662,9 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
     sb.append("    divisionId: ").append(toIndentedString(divisionId)).append("\n");
     sb.append("    conversationExternalContactIds: ").append(toIndentedString(conversationExternalContactIds)).append("\n");
     sb.append("    conversationExternalOrganizationIds: ").append(toIndentedString(conversationExternalOrganizationIds)).append("\n");
+    sb.append("    utilizationLabel: ").append(toIndentedString(utilizationLabel)).append("\n");
+    sb.append("    routingPriority: ").append(toIndentedString(routingPriority)).append("\n");
+    sb.append("    requestedRoutingSkillIds: ").append(toIndentedString(requestedRoutingSkillIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

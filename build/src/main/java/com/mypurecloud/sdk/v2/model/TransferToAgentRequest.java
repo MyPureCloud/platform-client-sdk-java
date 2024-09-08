@@ -70,6 +70,7 @@ public class TransferToAgentRequest  implements Serializable {
     }
   }
   private TransferTypeEnum transferType = null;
+  private Boolean keepInternalMessageAlive = null;
   private String userId = null;
   private String userName = null;
   private String userDisplayName = null;
@@ -91,6 +92,24 @@ public class TransferToAgentRequest  implements Serializable {
   }
   public void setTransferType(TransferTypeEnum transferType) {
     this.transferType = transferType;
+  }
+
+
+  /**
+   * If true, the digital internal message will NOT be terminated.
+   **/
+  public TransferToAgentRequest keepInternalMessageAlive(Boolean keepInternalMessageAlive) {
+    this.keepInternalMessageAlive = keepInternalMessageAlive;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If true, the digital internal message will NOT be terminated.")
+  @JsonProperty("keepInternalMessageAlive")
+  public Boolean getKeepInternalMessageAlive() {
+    return keepInternalMessageAlive;
+  }
+  public void setKeepInternalMessageAlive(Boolean keepInternalMessageAlive) {
+    this.keepInternalMessageAlive = keepInternalMessageAlive;
   }
 
 
@@ -177,6 +196,7 @@ public class TransferToAgentRequest  implements Serializable {
     TransferToAgentRequest transferToAgentRequest = (TransferToAgentRequest) o;
 
     return Objects.equals(this.transferType, transferToAgentRequest.transferType) &&
+            Objects.equals(this.keepInternalMessageAlive, transferToAgentRequest.keepInternalMessageAlive) &&
             Objects.equals(this.userId, transferToAgentRequest.userId) &&
             Objects.equals(this.userName, transferToAgentRequest.userName) &&
             Objects.equals(this.userDisplayName, transferToAgentRequest.userDisplayName) &&
@@ -185,7 +205,7 @@ public class TransferToAgentRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(transferType, userId, userName, userDisplayName, voicemail);
+    return Objects.hash(transferType, keepInternalMessageAlive, userId, userName, userDisplayName, voicemail);
   }
 
   @Override
@@ -194,6 +214,7 @@ public class TransferToAgentRequest  implements Serializable {
     sb.append("class TransferToAgentRequest {\n");
     
     sb.append("    transferType: ").append(toIndentedString(transferType)).append("\n");
+    sb.append("    keepInternalMessageAlive: ").append(toIndentedString(keepInternalMessageAlive)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
     sb.append("    userDisplayName: ").append(toIndentedString(userDisplayName)).append("\n");

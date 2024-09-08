@@ -22,18 +22,18 @@ import java.io.Serializable;
 public class JourneyViewElementFilterRangeData  implements Serializable {
   
   private String duration = null;
-  private Integer number = null;
+  private Double number = null;
 
   
   /**
-   * an ISO 8601 time duration.Only one of number or duration must be specified. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H
+   * An ISO 8601 time duration. Only one of number or duration must be specified.
    **/
   public JourneyViewElementFilterRangeData duration(String duration) {
     this.duration = duration;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "an ISO 8601 time duration.Only one of number or duration must be specified. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H")
+  @ApiModelProperty(example = "null", value = "An ISO 8601 time duration. Only one of number or duration must be specified.")
   @JsonProperty("duration")
   public String getDuration() {
     return duration;
@@ -44,19 +44,19 @@ public class JourneyViewElementFilterRangeData  implements Serializable {
 
 
   /**
-   * an Integer value.Only one of number or duration must be specified.
+   * A numeric value. Only one of number or duration must be specified.
    **/
-  public JourneyViewElementFilterRangeData number(Integer number) {
+  public JourneyViewElementFilterRangeData number(Double number) {
     this.number = number;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "an Integer value.Only one of number or duration must be specified.")
+  @ApiModelProperty(example = "null", value = "A numeric value. Only one of number or duration must be specified.")
   @JsonProperty("number")
-  public Integer getNumber() {
+  public Double getNumber() {
     return number;
   }
-  public void setNumber(Integer number) {
+  public void setNumber(Double number) {
     this.number = number;
   }
 

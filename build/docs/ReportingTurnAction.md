@@ -83,6 +83,8 @@ title: ReportingTurnAction
 | SETUTILIZATIONLABELACTION | &quot;SetUtilizationLabelAction&quot; | 
 | SETWRAPUPCODEACTION | &quot;SetWrapupCodeAction&quot; | 
 | TRANSFERPUREMATCHACTION | &quot;TransferPureMatchAction&quot; | 
+| GETATTRIBUTESACTION | &quot;GetAttributesAction&quot; | 
+| SETATTRIBUTESACTION | &quot;SetAttributesAction&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 {: class="table table-striped"}
 

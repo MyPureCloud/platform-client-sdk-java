@@ -200,7 +200,6 @@ public class SettingsApiAsync {
   /**
    * Get the execution history enabled setting.
    * Get the execution history enabled setting.
-   * getSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -235,7 +234,6 @@ public class SettingsApiAsync {
   /**
    * Get the execution history enabled setting.
    * Get the execution history enabled setting.
-   * getSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -427,7 +425,6 @@ public class SettingsApiAsync {
   /**
    * Edit the execution history on off setting.
    * Edit the execution history on off setting.
-   * patchSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -462,7 +459,6 @@ public class SettingsApiAsync {
   /**
    * Edit the execution history on off setting.
    * Edit the execution history on off setting.
-   * patchSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

@@ -70,6 +70,7 @@ public class TransferToExternalRequest  implements Serializable {
     }
   }
   private TransferTypeEnum transferType = null;
+  private Boolean keepInternalMessageAlive = null;
   private String address = null;
 
   
@@ -88,6 +89,24 @@ public class TransferToExternalRequest  implements Serializable {
   }
   public void setTransferType(TransferTypeEnum transferType) {
     this.transferType = transferType;
+  }
+
+
+  /**
+   * If true, the digital internal message will NOT be terminated.
+   **/
+  public TransferToExternalRequest keepInternalMessageAlive(Boolean keepInternalMessageAlive) {
+    this.keepInternalMessageAlive = keepInternalMessageAlive;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If true, the digital internal message will NOT be terminated.")
+  @JsonProperty("keepInternalMessageAlive")
+  public Boolean getKeepInternalMessageAlive() {
+    return keepInternalMessageAlive;
+  }
+  public void setKeepInternalMessageAlive(Boolean keepInternalMessageAlive) {
+    this.keepInternalMessageAlive = keepInternalMessageAlive;
   }
 
 
@@ -120,12 +139,13 @@ public class TransferToExternalRequest  implements Serializable {
     TransferToExternalRequest transferToExternalRequest = (TransferToExternalRequest) o;
 
     return Objects.equals(this.transferType, transferToExternalRequest.transferType) &&
+            Objects.equals(this.keepInternalMessageAlive, transferToExternalRequest.keepInternalMessageAlive) &&
             Objects.equals(this.address, transferToExternalRequest.address);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(transferType, address);
+    return Objects.hash(transferType, keepInternalMessageAlive, address);
   }
 
   @Override
@@ -134,6 +154,7 @@ public class TransferToExternalRequest  implements Serializable {
     sb.append("class TransferToExternalRequest {\n");
     
     sb.append("    transferType: ").append(toIndentedString(transferType)).append("\n");
+    sb.append("    keepInternalMessageAlive: ").append(toIndentedString(keepInternalMessageAlive)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("}");
     return sb.toString();

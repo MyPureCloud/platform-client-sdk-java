@@ -78,6 +78,7 @@ title: FlowStartDetailEventTopicFlowStartEvent
 | WEBMESSAGING | &quot;WEBMESSAGING&quot; | 
 | OPEN | &quot;OPEN&quot; | 
 | INSTAGRAM | &quot;INSTAGRAM&quot; | 
+| APPLE | &quot;APPLE&quot; | 
 {: class="table table-striped"}
 
 

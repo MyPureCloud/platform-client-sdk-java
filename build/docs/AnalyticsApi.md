@@ -2286,7 +2286,7 @@ This endpoint does not require any parameters.
 
 
 
-> [DashboardConfigurationListing](DashboardConfigurationListing.html) getAnalyticsReportingSettingsDashboardsQuery(dashboardType, dashboardAccessFilter, sortBy, pageNumber, pageSize)
+> [DashboardConfigurationListing](DashboardConfigurationListing.html) getAnalyticsReportingSettingsDashboardsQuery(dashboardType, dashboardAccessFilter, name, sortBy, pageNumber, pageSize)
 
 Get list of dashboard configurations
 
@@ -2320,11 +2320,12 @@ Configuration.setDefaultApiClient(apiClient);
 AnalyticsApi apiInstance = new AnalyticsApi();
 String dashboardType = "dashboardType_example"; // String | List dashboard of given type
 String dashboardAccessFilter = "dashboardAccessFilter_example"; // String | Filter dashboard based on the owner of dashboard
+String name = "name_example"; // String | name of the dashboard
 String sortBy = "desc"; // String | 
 Integer pageNumber = 1; // Integer | 
 Integer pageSize = 9; // Integer | 
 try {
-    DashboardConfigurationListing result = apiInstance.getAnalyticsReportingSettingsDashboardsQuery(dashboardType, dashboardAccessFilter, sortBy, pageNumber, pageSize);
+    DashboardConfigurationListing result = apiInstance.getAnalyticsReportingSettingsDashboardsQuery(dashboardType, dashboardAccessFilter, name, sortBy, pageNumber, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AnalyticsApi#getAnalyticsReportingSettingsDashboardsQuery");
@@ -2339,6 +2340,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **dashboardType** | **String**| List dashboard of given type |<br />**Values**: All, Public, Private, Shared, Favorites 
 | **dashboardAccessFilter** | **String**| Filter dashboard based on the owner of dashboard |<br />**Values**: OwnedByMe, OwnedByAnyone, NotOwnedByMe 
+| **name** | **String**| name of the dashboard | [optional] 
 | **sortBy** | **String**|  | [optional] [default to desc] 
 | **pageNumber** | **Integer**|  | [optional] [default to 1] 
 | **pageSize** | **Integer**|  | [optional] [default to 9] 
@@ -3504,8 +3506,6 @@ try {
 > [AgentCopilotAggregateQueryResponse](AgentCopilotAggregateQueryResponse.html) postAnalyticsAgentcopilotsAggregatesQuery(body)
 
 Query for agent copilot aggregates
-
-postAnalyticsAgentcopilotsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/agentcopilots/aggregates/query  
 

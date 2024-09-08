@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.GetUploadSourceUrlJobStatusResponse;
 import com.mypurecloud.sdk.v2.model.GuestCategoryResponseListing;
 import com.mypurecloud.sdk.v2.model.ImportStatusRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeAnswerDocumentsResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeBase;
 import com.mypurecloud.sdk.v2.model.KnowledgeBaseCreateRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeBaseListing;
@@ -41,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.KnowledgeDocumentCopy;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedback;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedbackResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedbackResponseListing;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedbackUpdateRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentGuestSearch;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentGuestSearchRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentPresentation;
@@ -59,9 +61,11 @@ import com.mypurecloud.sdk.v2.model.KnowledgeDocumentVersionListing;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentVersionVariation;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentVersionVariationListing;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentView;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentsAnswerFilter;
 import com.mypurecloud.sdk.v2.model.KnowledgeExportJobRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeExportJobResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeExtendedCategory;
+import com.mypurecloud.sdk.v2.model.KnowledgeGuestAnswerDocumentsResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentCopy;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentFeedback;
 import com.mypurecloud.sdk.v2.model.KnowledgeGuestDocumentPresentation;
@@ -149,6 +153,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeGuestSessionDocumentsSea
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseCategoryRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseDocumentRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseDocumentVariationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseDocumentsSearchSearchIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseImportJobRequest;
@@ -163,6 +168,7 @@ import com.mypurecloud.sdk.v2.api.request.PostKnowledgeDocumentuploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentCopiesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentFeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentViewsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentsAnswersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentsPresentationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentsSearchSuggestionsRequest;
@@ -174,6 +180,7 @@ import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentVari
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentViewsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsAnswersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsBulkRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsBulkUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseDocumentsPresentationsRequest;
@@ -4828,6 +4835,96 @@ public class KnowledgeApi {
   }
 
   /**
+   * Update feedback on a document
+   * 
+   * @param knowledgeBaseId Knowledge base ID. (required)
+   * @param documentId Document ID. (required)
+   * @param feedbackId Feedback ID. (required)
+   * @param body  (optional)
+   * @return KnowledgeDocumentFeedbackResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeDocumentFeedbackResponse patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(String knowledgeBaseId, String documentId, String feedbackId, KnowledgeDocumentFeedbackUpdateRequest body) throws IOException, ApiException {
+    return  patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(createPatchKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdRequest(knowledgeBaseId, documentId, feedbackId, body));
+  }
+
+  /**
+   * Update feedback on a document
+   * 
+   * @param knowledgeBaseId Knowledge base ID. (required)
+   * @param documentId Document ID. (required)
+   * @param feedbackId Feedback ID. (required)
+   * @param body  (optional)
+   * @return KnowledgeDocumentFeedbackResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeDocumentFeedbackResponse> patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdWithHttpInfo(String knowledgeBaseId, String documentId, String feedbackId, KnowledgeDocumentFeedbackUpdateRequest body) throws IOException {
+    return patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(createPatchKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdRequest(knowledgeBaseId, documentId, feedbackId, body).withHttpInfo());
+  }
+
+  private PatchKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdRequest createPatchKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdRequest(String knowledgeBaseId, String documentId, String feedbackId, KnowledgeDocumentFeedbackUpdateRequest body) {
+    return PatchKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withDocumentId(documentId)
+
+            .withFeedbackId(feedbackId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update feedback on a document
+   * 
+   * @param request The request object
+   * @return KnowledgeDocumentFeedbackResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeDocumentFeedbackResponse patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(PatchKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeDocumentFeedbackResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeDocumentFeedbackResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update feedback on a document
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeDocumentFeedbackResponse> patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(ApiRequest<KnowledgeDocumentFeedbackUpdateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeDocumentFeedbackResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeDocumentFeedbackResponse> response = (ApiResponse<KnowledgeDocumentFeedbackResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeDocumentFeedbackResponse> response = (ApiResponse<KnowledgeDocumentFeedbackResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update a variation for a document.
    * 
    * @param documentVariationId Globally unique identifier for a document variation. (required)
@@ -6052,6 +6149,88 @@ public class KnowledgeApi {
   }
 
   /**
+   * Answer documents.
+   * 
+   * @param sessionId Knowledge guest session ID. (required)
+   * @param body  (required)
+   * @return KnowledgeGuestAnswerDocumentsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeGuestAnswerDocumentsResponse postKnowledgeGuestSessionDocumentsAnswers(String sessionId, KnowledgeDocumentsAnswerFilter body) throws IOException, ApiException {
+    return  postKnowledgeGuestSessionDocumentsAnswers(createPostKnowledgeGuestSessionDocumentsAnswersRequest(sessionId, body));
+  }
+
+  /**
+   * Answer documents.
+   * 
+   * @param sessionId Knowledge guest session ID. (required)
+   * @param body  (required)
+   * @return KnowledgeGuestAnswerDocumentsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeGuestAnswerDocumentsResponse> postKnowledgeGuestSessionDocumentsAnswersWithHttpInfo(String sessionId, KnowledgeDocumentsAnswerFilter body) throws IOException {
+    return postKnowledgeGuestSessionDocumentsAnswers(createPostKnowledgeGuestSessionDocumentsAnswersRequest(sessionId, body).withHttpInfo());
+  }
+
+  private PostKnowledgeGuestSessionDocumentsAnswersRequest createPostKnowledgeGuestSessionDocumentsAnswersRequest(String sessionId, KnowledgeDocumentsAnswerFilter body) {
+    return PostKnowledgeGuestSessionDocumentsAnswersRequest.builder()
+            .withSessionId(sessionId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Answer documents.
+   * 
+   * @param request The request object
+   * @return KnowledgeGuestAnswerDocumentsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeGuestAnswerDocumentsResponse postKnowledgeGuestSessionDocumentsAnswers(PostKnowledgeGuestSessionDocumentsAnswersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeGuestAnswerDocumentsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeGuestAnswerDocumentsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Answer documents.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeGuestAnswerDocumentsResponse> postKnowledgeGuestSessionDocumentsAnswers(ApiRequest<KnowledgeDocumentsAnswerFilter> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeGuestAnswerDocumentsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeGuestAnswerDocumentsResponse> response = (ApiResponse<KnowledgeGuestAnswerDocumentsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeGuestAnswerDocumentsResponse> response = (ApiResponse<KnowledgeGuestAnswerDocumentsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Indicate that documents were presented to the user.
    * 
    * @param sessionId Knowledge guest session ID. (required)
@@ -6960,6 +7139,88 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<KnowledgeDocumentResponse> response = (ApiResponse<KnowledgeDocumentResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Answer documents.
+   * 
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param body  (required)
+   * @return KnowledgeAnswerDocumentsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeAnswerDocumentsResponse postKnowledgeKnowledgebaseDocumentsAnswers(String knowledgeBaseId, KnowledgeDocumentsAnswerFilter body) throws IOException, ApiException {
+    return  postKnowledgeKnowledgebaseDocumentsAnswers(createPostKnowledgeKnowledgebaseDocumentsAnswersRequest(knowledgeBaseId, body));
+  }
+
+  /**
+   * Answer documents.
+   * 
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param body  (required)
+   * @return KnowledgeAnswerDocumentsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeAnswerDocumentsResponse> postKnowledgeKnowledgebaseDocumentsAnswersWithHttpInfo(String knowledgeBaseId, KnowledgeDocumentsAnswerFilter body) throws IOException {
+    return postKnowledgeKnowledgebaseDocumentsAnswers(createPostKnowledgeKnowledgebaseDocumentsAnswersRequest(knowledgeBaseId, body).withHttpInfo());
+  }
+
+  private PostKnowledgeKnowledgebaseDocumentsAnswersRequest createPostKnowledgeKnowledgebaseDocumentsAnswersRequest(String knowledgeBaseId, KnowledgeDocumentsAnswerFilter body) {
+    return PostKnowledgeKnowledgebaseDocumentsAnswersRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Answer documents.
+   * 
+   * @param request The request object
+   * @return KnowledgeAnswerDocumentsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeAnswerDocumentsResponse postKnowledgeKnowledgebaseDocumentsAnswers(PostKnowledgeKnowledgebaseDocumentsAnswersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeAnswerDocumentsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeAnswerDocumentsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Answer documents.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeAnswerDocumentsResponse> postKnowledgeKnowledgebaseDocumentsAnswers(ApiRequest<KnowledgeDocumentsAnswerFilter> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeAnswerDocumentsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeAnswerDocumentsResponse> response = (ApiResponse<KnowledgeAnswerDocumentsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeAnswerDocumentsResponse> response = (ApiResponse<KnowledgeAnswerDocumentsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

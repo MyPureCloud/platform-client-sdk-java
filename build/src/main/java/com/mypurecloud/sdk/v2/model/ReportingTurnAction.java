@@ -105,6 +105,8 @@ public class ReportingTurnAction  implements Serializable {
     SETUTILIZATIONLABELACTION("SetUtilizationLabelAction"),
     SETWRAPUPCODEACTION("SetWrapupCodeAction"),
     TRANSFERPUREMATCHACTION("TransferPureMatchAction"),
+    GETATTRIBUTESACTION("GetAttributesAction"),
+    SETATTRIBUTESACTION("SetAttributesAction"),
     UNKNOWN("Unknown");
 
     private String value;

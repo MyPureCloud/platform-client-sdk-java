@@ -163,6 +163,20 @@ public class GetJourneyViewsRequest {
 		}
 	}
 
+	private String id;
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public GetJourneyViewsRequest withId(String id) {
+	    this.setId(id);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -197,6 +211,9 @@ public class GetJourneyViewsRequest {
         
 
                 .withQueryParameters("expand", "", expand)
+        
+
+                .withQueryParameters("id", "", id)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -246,6 +263,11 @@ public class GetJourneyViewsRequest {
 		    request.setExpand(expand.toString());
 
 		    return this;
+		}
+
+		public Builder withId(String id) {
+			request.setId(id);
+			return this;
 		}
 
 

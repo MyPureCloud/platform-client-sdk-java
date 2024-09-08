@@ -286,7 +286,10 @@ public class GetWorkforcemanagementBusinessunitRequest {
 		SETTINGS_TIMEZONE("settings.timeZone"),
 		SETTINGS_STARTDAYOFWEEK("settings.startDayOfWeek"),
 		SETTINGS_SHORTTERMFORECASTING("settings.shortTermForecasting"),
-		SETTINGS_SCHEDULING("settings.scheduling");
+		SETTINGS_SCHEDULING("settings.scheduling"),
+		SETTINGS_NOTIFICATIONS_SCHEDULING("settings.notifications.scheduling"),
+		SETTINGS_LEARNING("settings.learning"),
+		SETTINGS_COACHING("settings.coaching");
 
 		private String value;
 

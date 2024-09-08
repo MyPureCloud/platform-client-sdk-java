@@ -195,7 +195,6 @@ public class SettingsApi {
   /**
    * Get the execution history enabled setting.
    * Get the execution history enabled setting.
-   * getSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return ExecutionDataGlobalSettingsResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -207,7 +206,6 @@ public class SettingsApi {
   /**
    * Get the execution history enabled setting.
    * Get the execution history enabled setting.
-   * getSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return ExecutionDataGlobalSettingsResponse
    * @throws IOException if the request fails to be processed
    */
@@ -223,7 +221,6 @@ public class SettingsApi {
   /**
    * Get the execution history enabled setting.
    * Get the execution history enabled setting.
-   * getSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ExecutionDataGlobalSettingsResponse
    * @throws ApiException if the request fails on the server
@@ -243,7 +240,6 @@ public class SettingsApi {
   /**
    * Get the execution history enabled setting.
    * Get the execution history enabled setting.
-   * getSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -429,7 +425,6 @@ public class SettingsApi {
   /**
    * Edit the execution history on off setting.
    * Edit the execution history on off setting.
-   * patchSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body New Execution Data Setting (required)
    * @return ExecutionDataGlobalSettingsResponse
    * @throws ApiException if the request fails on the server
@@ -442,7 +437,6 @@ public class SettingsApi {
   /**
    * Edit the execution history on off setting.
    * Edit the execution history on off setting.
-   * patchSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body New Execution Data Setting (required)
    * @return ExecutionDataGlobalSettingsResponse
    * @throws IOException if the request fails to be processed
@@ -461,7 +455,6 @@ public class SettingsApi {
   /**
    * Edit the execution history on off setting.
    * Edit the execution history on off setting.
-   * patchSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ExecutionDataGlobalSettingsResponse
    * @throws ApiException if the request fails on the server
@@ -481,7 +474,6 @@ public class SettingsApi {
   /**
    * Edit the execution history on off setting.
    * Edit the execution history on off setting.
-   * patchSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

@@ -73,6 +73,54 @@ public class ResponseText  implements Serializable {
   }
   private ContentTypeEnum contentType = null;
 
+  private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
+    public TypeEnumDeserializer() {
+      super(TypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Response text type.
+   */
+ @JsonDeserialize(using = TypeEnumDeserializer.class)
+  public enum TypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    BODY("body"),
+    SUBJECT("subject");
+
+    private String value;
+
+    TypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TypeEnum value : TypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private TypeEnum type = null;
+
   
   /**
    * Response text content.
@@ -110,6 +158,24 @@ public class ResponseText  implements Serializable {
   }
 
 
+  /**
+   * Response text type.
+   **/
+  public ResponseText type(TypeEnum type) {
+    this.type = type;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Response text type.")
+  @JsonProperty("type")
+  public TypeEnum getType() {
+    return type;
+  }
+  public void setType(TypeEnum type) {
+    this.type = type;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -121,12 +187,13 @@ public class ResponseText  implements Serializable {
     ResponseText responseText = (ResponseText) o;
 
     return Objects.equals(this.content, responseText.content) &&
-            Objects.equals(this.contentType, responseText.contentType);
+            Objects.equals(this.contentType, responseText.contentType) &&
+            Objects.equals(this.type, responseText.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(content, contentType);
+    return Objects.hash(content, contentType, type);
   }
 
   @Override
@@ -136,6 +203,7 @@ public class ResponseText  implements Serializable {
     
     sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -527,7 +527,6 @@ public class JourneyApi {
   /**
    * Delete a Journey View by ID
    * deletes all versions
-   * deleteJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param viewId viewId (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -539,7 +538,6 @@ public class JourneyApi {
   /**
    * Delete a Journey View by ID
    * deletes all versions
-   * deleteJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param viewId viewId (required)
    * @throws IOException if the request fails to be processed
    */
@@ -557,7 +555,6 @@ public class JourneyApi {
   /**
    * Delete a Journey View by ID
    * deletes all versions
-   * deleteJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -576,7 +573,6 @@ public class JourneyApi {
   /**
    * Delete a Journey View by ID
    * deletes all versions
-   * deleteJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2564,7 +2560,6 @@ public class JourneyApi {
   /**
    * Get a Journey View by ID
    * returns the latest version
-   * getJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param viewId viewId (required)
    * @return JourneyView
    * @throws ApiException if the request fails on the server
@@ -2577,7 +2572,6 @@ public class JourneyApi {
   /**
    * Get a Journey View by ID
    * returns the latest version
-   * getJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param viewId viewId (required)
    * @return JourneyView
    * @throws IOException if the request fails to be processed
@@ -2596,7 +2590,6 @@ public class JourneyApi {
   /**
    * Get a Journey View by ID
    * returns the latest version
-   * getJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return JourneyView
    * @throws ApiException if the request fails on the server
@@ -2616,7 +2609,6 @@ public class JourneyApi {
   /**
    * Get a Journey View by ID
    * returns the latest version
-   * getJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2646,7 +2638,6 @@ public class JourneyApi {
   /**
    * Get a Journey View by ID and version
    * 
-   * getJourneyViewVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param viewId viewId (required)
    * @param versionId versionId (required)
    * @return JourneyView
@@ -2660,7 +2651,6 @@ public class JourneyApi {
   /**
    * Get a Journey View by ID and version
    * 
-   * getJourneyViewVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param viewId viewId (required)
    * @param versionId versionId (required)
    * @return JourneyView
@@ -2682,7 +2672,6 @@ public class JourneyApi {
   /**
    * Get a Journey View by ID and version
    * 
-   * getJourneyViewVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return JourneyView
    * @throws ApiException if the request fails on the server
@@ -2702,7 +2691,6 @@ public class JourneyApi {
   /**
    * Get a Journey View by ID and version
    * 
-   * getJourneyViewVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2732,7 +2720,6 @@ public class JourneyApi {
   /**
    * Get the job for a journey view version.
    * used for long descriptions
-   * getJourneyViewVersionJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param viewId Journey View Id (required)
    * @param journeyVersionId Journey View Version (required)
    * @param jobId JobId (required)
@@ -2747,7 +2734,6 @@ public class JourneyApi {
   /**
    * Get the job for a journey view version.
    * used for long descriptions
-   * getJourneyViewVersionJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param viewId Journey View Id (required)
    * @param journeyVersionId Journey View Version (required)
    * @param jobId JobId (required)
@@ -2772,7 +2758,6 @@ public class JourneyApi {
   /**
    * Get the job for a journey view version.
    * used for long descriptions
-   * getJourneyViewVersionJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return JourneyViewJob
    * @throws ApiException if the request fails on the server
@@ -2792,7 +2777,6 @@ public class JourneyApi {
   /**
    * Get the job for a journey view version.
    * used for long descriptions
-   * getJourneyViewVersionJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2822,7 +2806,6 @@ public class JourneyApi {
   /**
    * Get the result of a job for a journey view version.
    * used for long descriptions
-   * getJourneyViewVersionJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param viewId JourneyViewResult id (required)
    * @param journeyViewVersion Journey View Version (required)
    * @param jobId Id of the executing job (required)
@@ -2837,7 +2820,6 @@ public class JourneyApi {
   /**
    * Get the result of a job for a journey view version.
    * used for long descriptions
-   * getJourneyViewVersionJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param viewId JourneyViewResult id (required)
    * @param journeyViewVersion Journey View Version (required)
    * @param jobId Id of the executing job (required)
@@ -2862,7 +2844,6 @@ public class JourneyApi {
   /**
    * Get the result of a job for a journey view version.
    * used for long descriptions
-   * getJourneyViewVersionJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return JourneyViewResult
    * @throws ApiException if the request fails on the server
@@ -2882,7 +2863,6 @@ public class JourneyApi {
   /**
    * Get the result of a job for a journey view version.
    * used for long descriptions
-   * getJourneyViewVersionJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2912,7 +2892,6 @@ public class JourneyApi {
   /**
    * Get the latest job of a journey view version.
    * used for long descriptions
-   * getJourneyViewVersionJobsLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param viewId Journey View Id (required)
    * @param journeyVersionId Journey View Version (required)
    * @return JourneyViewJob
@@ -2926,7 +2905,6 @@ public class JourneyApi {
   /**
    * Get the latest job of a journey view version.
    * used for long descriptions
-   * getJourneyViewVersionJobsLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param viewId Journey View Id (required)
    * @param journeyVersionId Journey View Version (required)
    * @return JourneyViewJob
@@ -2948,7 +2926,6 @@ public class JourneyApi {
   /**
    * Get the latest job of a journey view version.
    * used for long descriptions
-   * getJourneyViewVersionJobsLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return JourneyViewJob
    * @throws ApiException if the request fails on the server
@@ -2968,7 +2945,6 @@ public class JourneyApi {
   /**
    * Get the latest job of a journey view version.
    * used for long descriptions
-   * getJourneyViewVersionJobsLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2998,35 +2974,35 @@ public class JourneyApi {
   /**
    * Get a list of Journey Views
    * 
-   * getJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param nameOrCreatedBy Journey View Name or Created By (optional)
    * @param expand Parameter to request additional data to return in Journey payload (optional)
+   * @param id Parameter to request a list of Journey Views by id, separated by commas. Limit of 100 items. (optional)
    * @return JourneyViewListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public JourneyViewListing getJourneyViews(Integer pageNumber, Integer pageSize, String nameOrCreatedBy, String expand) throws IOException, ApiException {
-    return  getJourneyViews(createGetJourneyViewsRequest(pageNumber, pageSize, nameOrCreatedBy, expand));
+  public JourneyViewListing getJourneyViews(Integer pageNumber, Integer pageSize, String nameOrCreatedBy, String expand, String id) throws IOException, ApiException {
+    return  getJourneyViews(createGetJourneyViewsRequest(pageNumber, pageSize, nameOrCreatedBy, expand, id));
   }
 
   /**
    * Get a list of Journey Views
    * 
-   * getJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param nameOrCreatedBy Journey View Name or Created By (optional)
    * @param expand Parameter to request additional data to return in Journey payload (optional)
+   * @param id Parameter to request a list of Journey Views by id, separated by commas. Limit of 100 items. (optional)
    * @return JourneyViewListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<JourneyViewListing> getJourneyViewsWithHttpInfo(Integer pageNumber, Integer pageSize, String nameOrCreatedBy, String expand) throws IOException {
-    return getJourneyViews(createGetJourneyViewsRequest(pageNumber, pageSize, nameOrCreatedBy, expand).withHttpInfo());
+  public ApiResponse<JourneyViewListing> getJourneyViewsWithHttpInfo(Integer pageNumber, Integer pageSize, String nameOrCreatedBy, String expand, String id) throws IOException {
+    return getJourneyViews(createGetJourneyViewsRequest(pageNumber, pageSize, nameOrCreatedBy, expand, id).withHttpInfo());
   }
 
-  private GetJourneyViewsRequest createGetJourneyViewsRequest(Integer pageNumber, Integer pageSize, String nameOrCreatedBy, String expand) {
+  private GetJourneyViewsRequest createGetJourneyViewsRequest(Integer pageNumber, Integer pageSize, String nameOrCreatedBy, String expand, String id) {
     return GetJourneyViewsRequest.builder()
             .withPageNumber(pageNumber)
 
@@ -3036,13 +3012,14 @@ public class JourneyApi {
 
             .withExpand(expand)
 
+            .withId(id)
+
             .build();
   }
 
   /**
    * Get a list of Journey Views
    * 
-   * getJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return JourneyViewListing
    * @throws ApiException if the request fails on the server
@@ -3062,7 +3039,6 @@ public class JourneyApi {
   /**
    * Get a list of Journey Views
    * 
-   * getJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3252,7 +3228,6 @@ public class JourneyApi {
   /**
    * Get the jobs for an organization.
    * 
-   * getJourneyViewsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param pageNumber The number of the page to return (optional, default to 1)
    * @param pageSize Max number of entities to return (optional, default to 25)
    * @param interval An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval. (optional, default to null)
@@ -3268,7 +3243,6 @@ public class JourneyApi {
   /**
    * Get the jobs for an organization.
    * 
-   * getJourneyViewsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param pageNumber The number of the page to return (optional, default to 1)
    * @param pageSize Max number of entities to return (optional, default to 25)
    * @param interval An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval. (optional, default to null)
@@ -3296,7 +3270,6 @@ public class JourneyApi {
   /**
    * Get the jobs for an organization.
    * 
-   * getJourneyViewsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return JourneyViewJobListing
    * @throws ApiException if the request fails on the server
@@ -3316,7 +3289,6 @@ public class JourneyApi {
   /**
    * Get the jobs for an organization.
    * 
-   * getJourneyViewsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4787,7 +4759,6 @@ public class JourneyApi {
   /**
    * Submit a job request for a journey view version.
    * used for long descriptions
-   * postJourneyViewVersionJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param viewId Journey View Id (required)
    * @param journeyVersionId Journey View Version (required)
    * @return JourneyViewJob
@@ -4801,7 +4772,6 @@ public class JourneyApi {
   /**
    * Submit a job request for a journey view version.
    * used for long descriptions
-   * postJourneyViewVersionJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param viewId Journey View Id (required)
    * @param journeyVersionId Journey View Version (required)
    * @return JourneyViewJob
@@ -4823,7 +4793,6 @@ public class JourneyApi {
   /**
    * Submit a job request for a journey view version.
    * used for long descriptions
-   * postJourneyViewVersionJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return JourneyViewJob
    * @throws ApiException if the request fails on the server
@@ -4843,7 +4812,6 @@ public class JourneyApi {
   /**
    * Submit a job request for a journey view version.
    * used for long descriptions
-   * postJourneyViewVersionJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4873,7 +4841,6 @@ public class JourneyApi {
   /**
    * Update a Journey View by ID
    * creates a new version
-   * postJourneyViewVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param viewId viewId (required)
    * @param body JourneyView (required)
    * @return JourneyView
@@ -4887,7 +4854,6 @@ public class JourneyApi {
   /**
    * Update a Journey View by ID
    * creates a new version
-   * postJourneyViewVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param viewId viewId (required)
    * @param body JourneyView (required)
    * @return JourneyView
@@ -4909,7 +4875,6 @@ public class JourneyApi {
   /**
    * Update a Journey View by ID
    * creates a new version
-   * postJourneyViewVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return JourneyView
    * @throws ApiException if the request fails on the server
@@ -4929,7 +4894,6 @@ public class JourneyApi {
   /**
    * Update a Journey View by ID
    * creates a new version
-   * postJourneyViewVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4959,7 +4923,6 @@ public class JourneyApi {
   /**
    * Create a new Journey View
    * 
-   * postJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body JourneyView (required)
    * @return JourneyView
    * @throws ApiException if the request fails on the server
@@ -4972,7 +4935,6 @@ public class JourneyApi {
   /**
    * Create a new Journey View
    * 
-   * postJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body JourneyView (required)
    * @return JourneyView
    * @throws IOException if the request fails to be processed
@@ -4991,7 +4953,6 @@ public class JourneyApi {
   /**
    * Create a new Journey View
    * 
-   * postJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return JourneyView
    * @throws ApiException if the request fails on the server
@@ -5011,7 +4972,6 @@ public class JourneyApi {
   /**
    * Create a new Journey View
    * 
-   * postJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

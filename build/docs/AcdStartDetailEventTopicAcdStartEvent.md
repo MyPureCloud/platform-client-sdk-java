@@ -28,6 +28,9 @@ title: AcdStartDetailEventTopicAcdStartEvent
 | **divisionId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **conversationExternalContactIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 | **conversationExternalOrganizationIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **utilizationLabel** | <!----><!---->**String**<!----> |  |  [optional] |
+| **routingPriority** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **requestedRoutingSkillIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 
@@ -79,6 +82,7 @@ title: AcdStartDetailEventTopicAcdStartEvent
 | WEBMESSAGING | &quot;WEBMESSAGING&quot; | 
 | OPEN | &quot;OPEN&quot; | 
 | INSTAGRAM | &quot;INSTAGRAM&quot; | 
+| APPLE | &quot;APPLE&quot; | 
 {: class="table table-striped"}
 
 

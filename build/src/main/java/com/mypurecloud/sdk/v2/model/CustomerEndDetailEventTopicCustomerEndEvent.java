@@ -235,7 +235,8 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
     WHATSAPP("WHATSAPP"),
     WEBMESSAGING("WEBMESSAGING"),
     OPEN("OPEN"),
-    INSTAGRAM("INSTAGRAM");
+    INSTAGRAM("INSTAGRAM"),
+    APPLE("APPLE");
 
     private String value;
 

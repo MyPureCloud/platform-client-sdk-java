@@ -217,6 +217,20 @@ public class GetAnalyticsReportingSettingsDashboardsQueryRequest {
 		}
 	}
 
+	private String name;
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public GetAnalyticsReportingSettingsDashboardsQueryRequest withName(String name) {
+	    this.setName(name);
+	    return this;
+	} 
+
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -293,6 +307,9 @@ public class GetAnalyticsReportingSettingsDashboardsQueryRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/analytics/reporting/settings/dashboards/query")
 
+                .withQueryParameters("name", "", name)
+        
+
                 .withQueryParameters("dashboardType", "", dashboardType)
         
 
@@ -359,6 +376,11 @@ public class GetAnalyticsReportingSettingsDashboardsQueryRequest {
 		    request.setDashboardAccessFilter(dashboardAccessFilter.toString());
 
 		    return this;
+		}
+
+		public Builder withName(String name) {
+			request.setName(name);
+			return this;
 		}
 
 		public Builder withSortBy(String sortBy) {

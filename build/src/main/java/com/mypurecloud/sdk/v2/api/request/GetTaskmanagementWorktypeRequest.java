@@ -94,7 +94,8 @@ public class GetTaskmanagementWorktypeRequest {
 		DEFAULTQUEUE("defaultQueue"),
 		DEFAULTSKILLS("defaultSkills"),
 		DEFAULTLANGUAGE("defaultLanguage"),
-		SCHEMA("schema");
+		SCHEMA("schema"),
+		FLOW("flow");
 
 		private String value;
 

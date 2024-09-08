@@ -70,6 +70,7 @@ public class TransferToQueueRequest  implements Serializable {
     }
   }
   private TransferTypeEnum transferType = null;
+  private Boolean keepInternalMessageAlive = null;
   private String queueId = null;
   private String queueName = null;
 
@@ -89,6 +90,24 @@ public class TransferToQueueRequest  implements Serializable {
   }
   public void setTransferType(TransferTypeEnum transferType) {
     this.transferType = transferType;
+  }
+
+
+  /**
+   * If true, the digital internal message will NOT be terminated.
+   **/
+  public TransferToQueueRequest keepInternalMessageAlive(Boolean keepInternalMessageAlive) {
+    this.keepInternalMessageAlive = keepInternalMessageAlive;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If true, the digital internal message will NOT be terminated.")
+  @JsonProperty("keepInternalMessageAlive")
+  public Boolean getKeepInternalMessageAlive() {
+    return keepInternalMessageAlive;
+  }
+  public void setKeepInternalMessageAlive(Boolean keepInternalMessageAlive) {
+    this.keepInternalMessageAlive = keepInternalMessageAlive;
   }
 
 
@@ -139,13 +158,14 @@ public class TransferToQueueRequest  implements Serializable {
     TransferToQueueRequest transferToQueueRequest = (TransferToQueueRequest) o;
 
     return Objects.equals(this.transferType, transferToQueueRequest.transferType) &&
+            Objects.equals(this.keepInternalMessageAlive, transferToQueueRequest.keepInternalMessageAlive) &&
             Objects.equals(this.queueId, transferToQueueRequest.queueId) &&
             Objects.equals(this.queueName, transferToQueueRequest.queueName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(transferType, queueId, queueName);
+    return Objects.hash(transferType, keepInternalMessageAlive, queueId, queueName);
   }
 
   @Override
@@ -154,6 +174,7 @@ public class TransferToQueueRequest  implements Serializable {
     sb.append("class TransferToQueueRequest {\n");
     
     sb.append("    transferType: ").append(toIndentedString(transferType)).append("\n");
+    sb.append("    keepInternalMessageAlive: ").append(toIndentedString(keepInternalMessageAlive)).append("\n");
     sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
     sb.append("    queueName: ").append(toIndentedString(queueName)).append("\n");
     sb.append("}");

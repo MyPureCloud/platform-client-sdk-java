@@ -70,6 +70,7 @@ public class TransferRequest  implements Serializable {
     }
   }
   private TransferTypeEnum transferType = null;
+  private Boolean keepInternalMessageAlive = null;
   private String userId = null;
   private String address = null;
   private String userName = null;
@@ -92,6 +93,24 @@ public class TransferRequest  implements Serializable {
   }
   public void setTransferType(TransferTypeEnum transferType) {
     this.transferType = transferType;
+  }
+
+
+  /**
+   * If true, the digital internal message will NOT be terminated.
+   **/
+  public TransferRequest keepInternalMessageAlive(Boolean keepInternalMessageAlive) {
+    this.keepInternalMessageAlive = keepInternalMessageAlive;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If true, the digital internal message will NOT be terminated.")
+  @JsonProperty("keepInternalMessageAlive")
+  public Boolean getKeepInternalMessageAlive() {
+    return keepInternalMessageAlive;
+  }
+  public void setKeepInternalMessageAlive(Boolean keepInternalMessageAlive) {
+    this.keepInternalMessageAlive = keepInternalMessageAlive;
   }
 
 
@@ -196,6 +215,7 @@ public class TransferRequest  implements Serializable {
     TransferRequest transferRequest = (TransferRequest) o;
 
     return Objects.equals(this.transferType, transferRequest.transferType) &&
+            Objects.equals(this.keepInternalMessageAlive, transferRequest.keepInternalMessageAlive) &&
             Objects.equals(this.userId, transferRequest.userId) &&
             Objects.equals(this.address, transferRequest.address) &&
             Objects.equals(this.userName, transferRequest.userName) &&
@@ -205,7 +225,7 @@ public class TransferRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(transferType, userId, address, userName, queueId, voicemail);
+    return Objects.hash(transferType, keepInternalMessageAlive, userId, address, userName, queueId, voicemail);
   }
 
   @Override
@@ -214,6 +234,7 @@ public class TransferRequest  implements Serializable {
     sb.append("class TransferRequest {\n");
     
     sb.append("    transferType: ").append(toIndentedString(transferType)).append("\n");
+    sb.append("    keepInternalMessageAlive: ").append(toIndentedString(keepInternalMessageAlive)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    userName: ").append(toIndentedString(userName)).append("\n");

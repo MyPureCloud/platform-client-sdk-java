@@ -10,6 +10,7 @@ title: ResponseText
 | ------------ | ------------- | ------------- | ------------- |
 | **content** | <!----><!---->**String**<!----> | Response text content. |  |
 | **contentType** | [**ContentTypeEnum**](#ContentTypeEnum)<!----> | Response text content type. |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> | Response text type. |  [optional] |
 {: class="table table-striped"}
 
 
@@ -22,6 +23,18 @@ title: ResponseText
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | TEXT_PLAIN | &quot;text/plain&quot; | 
 | TEXT_HTML | &quot;text/html&quot; | 
+{: class="table table-striped"}
+
+
+<a name="TypeEnum"></a>
+
+## Enum: TypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| BODY | &quot;body&quot; | 
+| SUBJECT | &quot;subject&quot; | 
 {: class="table table-striped"}
 
 

@@ -1447,7 +1447,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **worktypeId** | **String**| Worktype id | 
-| **expands** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: defaultQueue, defaultSkills, defaultLanguage, schema 
+| **expands** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: defaultQueue, defaultSkills, defaultLanguage, schema, flow 
 {: class="table-striped"}
 
 
