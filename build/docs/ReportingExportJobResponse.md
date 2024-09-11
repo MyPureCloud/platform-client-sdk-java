@@ -1,50 +1,44 @@
----
-title: ReportingExportJobResponse
----
-## ReportingExportJobResponse
+# ReportingExportJobResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **runId** | <!----><!---->**String**<!----> | The unique run id of the export schedule execute |  |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> | The current status of the export request |  |
-| **timeZone** | <!----><!---->**String**<!----> | The requested timezone of the exported data. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London |  |
-| **exportFormat** | [**ExportFormatEnum**](#ExportFormatEnum)<!----> | The requested format of the exported data |  |
-| **interval** | <!----><!---->**String**<!----> | The time period used to limit the the exported data. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss |  |
-| **downloadUrl** | <!----><!---->**String**<!----> | The url to download the request if it's status is completed |  [optional] |
-| **viewType** | [**ViewTypeEnum**](#ViewTypeEnum)<!----> | The type of view export job to be created |  |
-| **exportErrorMessagesType** | [**ExportErrorMessagesTypeEnum**](#ExportErrorMessagesTypeEnum)<!----> | The error message in case the export request failed |  [optional] |
-| **period** | <!----><!---->**String**<!----> | The Period of the request in which to break down the intervals. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H |  |
-| **filter** | <!----><!---->[**ViewFilter**](ViewFilter.html)<!----> | Filters to apply to create the view |  |
-| **read** | <!----><!---->**Boolean**<!----> | Indicates if the request has been marked as read |  |
-| **createdDateTime** | <!----><!---->[**Date**](Date.html)<!----> | The created date/time of the request. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
-| **modifiedDateTime** | <!----><!---->[**Date**](Date.html)<!----> | The last modified date/time of the request. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
-| **locale** | <!----><!---->**String**<!----> | The locale use for localization of the exported data, i.e. en-us, es-mx   |  |
-| **percentageComplete** | <!----><!---->**Double**<!----> | The percentage of the job that has completed processing |  |
-| **hasFormatDurations** | <!----><!---->**Boolean**<!----> | Indicates if durations are formatted in hh:mm:ss format instead of ms |  [optional] |
-| **hasSplitFilters** | <!----><!---->**Boolean**<!----> | Indicates if filters will be split in aggregate detail exports |  [optional] |
-| **excludeEmptyRows** | <!----><!---->**Boolean**<!----> | Excludes empty rows from the exports |  [optional] |
-| **hasSplitByMedia** | <!----><!---->**Boolean**<!----> | Indicates if media type will be split in aggregate detail exports |  [optional] |
-| **hasSummaryRow** | <!----><!---->**Boolean**<!----> | Indicates if summary row needs to be present in exports |  [optional] |
-| **csvDelimiter** | [**CsvDelimiterEnum**](#CsvDelimiterEnum)<!----> | The user supplied csv delimiter string value either of type 'comma' or 'semicolon' permitted for the export request |  [optional] |
-| **selectedColumns** | <!----><!---->[**List&lt;SelectedColumns&gt;**](SelectedColumns.html)<!----> | The list of ordered selected columns from the export view by the user |  [optional] |
-| **hasCustomParticipantAttributes** | <!----><!---->**Boolean**<!----> | Indicates if custom participant attributes will be exported |  [optional] |
-| **recipientEmails** | <!----><!---->**List&lt;String&gt;**<!----> | The list of email recipients for the exports |  [optional] |
-| **emailStatuses** | <!---->[**Map&lt;String, InnerEnum&gt;**](#InnerEnum)<!----> | The status of individual email addresses as a map |  [optional] |
-| **emailErrorDescription** | <!----><!---->**String**<!----> | The optional error message in case the export fail to email |  [optional] |
-| **includeDurationFormatInHeader** | <!----><!---->**Boolean**<!----> | Indicates whether to include selected duration format to the column headers |  [optional] |
-| **durationFormat** | [**DurationFormatEnum**](#DurationFormatEnum)<!----> | Indicates the duration format for the exports |  [optional] |
-| **exportAllowedToRerun** | <!----><!---->**Boolean**<!----> | Indicates whether the export run is allowed to rerun |  [optional] |
-| **enabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **runId** | **String** | The unique run id of the export schedule execute |  |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) | The current status of the export request |  |
+| **timeZone** | **String** | The requested timezone of the exported data. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London |  |
+| **exportFormat** | [**ExportFormatEnum**](#Enum--ExportFormatEnum) | The requested format of the exported data |  |
+| **interval** | **String** | The time period used to limit the the exported data. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss |  |
+| **downloadUrl** | **String** | The url to download the request if it's status is completed |  [optional] |
+| **viewType** | [**ViewTypeEnum**](#Enum--ViewTypeEnum) | The type of view export job to be created |  |
+| **exportErrorMessagesType** | [**ExportErrorMessagesTypeEnum**](#Enum--ExportErrorMessagesTypeEnum) | The error message in case the export request failed |  [optional] |
+| **period** | **String** | The Period of the request in which to break down the intervals. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H |  |
+| **filter** | [**ViewFilter**](ViewFilter) | Filters to apply to create the view |  |
+| **read** | **Boolean** | Indicates if the request has been marked as read |  |
+| **createdDateTime** | [**Date**](Date) | The created date/time of the request. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
+| **modifiedDateTime** | [**Date**](Date) | The last modified date/time of the request. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
+| **locale** | **String** | The locale use for localization of the exported data, i.e. en-us, es-mx   |  |
+| **percentageComplete** | **Double** | The percentage of the job that has completed processing |  |
+| **hasFormatDurations** | **Boolean** | Indicates if durations are formatted in hh:mm:ss format instead of ms |  [optional] |
+| **hasSplitFilters** | **Boolean** | Indicates if filters will be split in aggregate detail exports |  [optional] |
+| **excludeEmptyRows** | **Boolean** | Excludes empty rows from the exports |  [optional] |
+| **hasSplitByMedia** | **Boolean** | Indicates if media type will be split in aggregate detail exports |  [optional] |
+| **hasSummaryRow** | **Boolean** | Indicates if summary row needs to be present in exports |  [optional] |
+| **csvDelimiter** | [**CsvDelimiterEnum**](#Enum--CsvDelimiterEnum) | The user supplied csv delimiter string value either of type 'comma' or 'semicolon' permitted for the export request |  [optional] |
+| **selectedColumns** | [**List&lt;SelectedColumns&gt;**](SelectedColumns) | The list of ordered selected columns from the export view by the user |  [optional] |
+| **hasCustomParticipantAttributes** | **Boolean** | Indicates if custom participant attributes will be exported |  [optional] |
+| **recipientEmails** | **List&lt;String&gt;** | The list of email recipients for the exports |  [optional] |
+| **emailStatuses** | [**Map<String, InnerEnum>**](#Enum--InnerEnum) | The status of individual email addresses as a map |  [optional] |
+| **emailErrorDescription** | **String** | The optional error message in case the export fail to email |  [optional] |
+| **includeDurationFormatInHeader** | **Boolean** | Indicates whether to include selected duration format to the column headers |  [optional] |
+| **durationFormat** | [**DurationFormatEnum**](#Enum--DurationFormatEnum) | Indicates the duration format for the exports |  [optional] |
+| **exportAllowedToRerun** | **Boolean** | Indicates whether the export run is allowed to rerun |  [optional] |
+| **enabled** | **Boolean** |  |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -58,10 +52,7 @@ title: ReportingExportJobResponse
 | COMPLETED | &quot;COMPLETED&quot; | 
 | COMPLETED_WITH_PARTIAL_RESULTS | &quot;COMPLETED_WITH_PARTIAL_RESULTS&quot; | 
 | FAILED | &quot;FAILED&quot; | 
-{: class="table table-striped"}
 
-
-<a name="ExportFormatEnum"></a>
 
 ## Enum: ExportFormatEnum
 
@@ -70,10 +61,7 @@ title: ReportingExportJobResponse
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | CSV | &quot;CSV&quot; | 
 | PDF | &quot;PDF&quot; | 
-{: class="table table-striped"}
 
-
-<a name="ViewTypeEnum"></a>
 
 ## Enum: ViewTypeEnum
 
@@ -196,10 +184,7 @@ title: ReportingExportJobResponse
 | SOCIAL_LISTENING_VIEW | &quot;SOCIAL_LISTENING_VIEW&quot; | 
 | SOCIAL_LISTENING_POSTS_VIEW | &quot;SOCIAL_LISTENING_POSTS_VIEW&quot; | 
 | AGENT_PERFORMANCE_TIMELINE_DETAIL_VIEW | &quot;AGENT_PERFORMANCE_TIMELINE_DETAIL_VIEW&quot; | 
-{: class="table table-striped"}
 
-
-<a name="ExportErrorMessagesTypeEnum"></a>
 
 ## Enum: ExportErrorMessagesTypeEnum
 
@@ -225,10 +210,7 @@ title: ReportingExportJobResponse
 | SEARCH_CRITERIA_VALUES_EXCEED_LIMIT | &quot;SEARCH_CRITERIA_VALUES_EXCEED_LIMIT&quot; | 
 | EXPORT_EMAIL_FILE_SIZE_EXCEEDED_LIMIT | &quot;EXPORT_EMAIL_FILE_SIZE_EXCEEDED_LIMIT&quot; | 
 | CIRCUIT_BREAKER_OPEN_FOR_VIEW_TYPE | &quot;CIRCUIT_BREAKER_OPEN_FOR_VIEW_TYPE&quot; | 
-{: class="table table-striped"}
 
-
-<a name="CsvDelimiterEnum"></a>
 
 ## Enum: CsvDelimiterEnum
 
@@ -237,10 +219,7 @@ title: ReportingExportJobResponse
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | SEMICOLON | &quot;SEMICOLON&quot; | 
 | COMMA | &quot;COMMA&quot; | 
-{: class="table table-striped"}
 
-
-<a name="InnerEnum"></a>
 
 ## Enum: InnerEnum
 
@@ -249,10 +228,7 @@ title: ReportingExportJobResponse
 | SENT | &quot;Sent&quot; |
 | PENDING | &quot;Pending&quot; |
 | FAILED | &quot;Failed&quot; |
-{: class="table table-striped"}
 
-
-<a name="DurationFormatEnum"></a>
 
 ## Enum: DurationFormatEnum
 
@@ -263,7 +239,8 @@ title: ReportingExportJobResponse
 | MILLISECONDS | &quot;Milliseconds&quot; | 
 | HHMMSS | &quot;Hhmmss&quot; | 
 | HMS | &quot;Hms&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

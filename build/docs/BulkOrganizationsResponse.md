@@ -1,17 +1,15 @@
----
-title: BulkOrganizationsResponse
----
-## BulkOrganizationsResponse
+# BulkOrganizationsResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **results** | <!----><!---->[**List&lt;BulkResponseResultExternalOrganizationExternalOrganization&gt;**](BulkResponseResultExternalOrganizationExternalOrganization.html)<!----> |  |  [optional] |
-| **errorCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **errorIndexes** | <!----><!---->**List&lt;Integer&gt;**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **results** | [**List&lt;BulkResponseResultExternalOrganizationExternalOrganization&gt;**](BulkResponseResultExternalOrganizationExternalOrganization) |  |  [optional] |
+| **errorCount** | **Integer** |  |  [optional] |
+| **errorIndexes** | **List&lt;Integer&gt;** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

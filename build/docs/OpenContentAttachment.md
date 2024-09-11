@@ -1,24 +1,18 @@
----
-title: OpenContentAttachment
----
-## OpenContentAttachment
+# OpenContentAttachment
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | Provider specific ID for attachment. For example, middleware media UUID. |  [optional] |
-| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> | The type of attachment this instance represents. |  |
-| **url** | <!----><!---->**String**<!----> | URL of the attachment. |  |
-| **mime** | <!----><!---->**String**<!----> | Attachment mime type (https://www.iana.org/assignments/media-types/media-types.xhtml). |  |
-| **text** | <!----><!---->**String**<!----> | Text associated with attachment such as an image caption. |  [optional] |
-| **sha256** | <!----><!---->**String**<!----> | Secure hash of the attachment content. |  [optional] |
-| **filename** | <!----><!---->**String**<!----> | Suggested file name for attachment. |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | Provider specific ID for attachment. For example, middleware media UUID. |  [optional] |
+| **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) | The type of attachment this instance represents. |  |
+| **url** | **String** | URL of the attachment. |  |
+| **mime** | **String** | Attachment mime type (https://www.iana.org/assignments/media-types/media-types.xhtml). |  |
+| **text** | **String** | Text associated with attachment such as an image caption. |  [optional] |
+| **sha256** | **String** | Secure hash of the attachment content. |  [optional] |
+| **filename** | **String** | Suggested file name for attachment. |  [optional] |
 
-
-<a name="MediaTypeEnum"></a>
 
 ## Enum: MediaTypeEnum
 
@@ -30,7 +24,8 @@ title: OpenContentAttachment
 | AUDIO | &quot;Audio&quot; | 
 | FILE | &quot;File&quot; | 
 | LINK | &quot;Link&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,25 +1,19 @@
----
-title: LearningModuleInformStepRequest
----
-## LearningModuleInformStepRequest
+# LearningModuleInformStepRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | The learning module inform step type |  |
-| **name** | <!----><!---->**String**<!----> | The name of the inform step or content |  [optional] |
-| **value** | <!----><!---->**String**<!----> | The value for inform step |  |
-| **sharingUri** | <!----><!---->**String**<!----> | The sharing uri for Content type inform step |  [optional] |
-| **contentType** | <!----><!---->**String**<!----> | The document type for Content type Inform step |  [optional] |
-| **order** | <!----><!---->**Integer**<!----> | The order of inform step in a learning module |  |
-| **displayName** | <!----><!---->**String**<!----> | The display name for the inform step |  [optional] |
-| **description** | <!----><!---->**String**<!----> | The description for the inform step |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | The learning module inform step type |  |
+| **name** | **String** | The name of the inform step or content |  [optional] |
+| **value** | **String** | The value for inform step |  |
+| **sharingUri** | **String** | The sharing uri for Content type inform step |  [optional] |
+| **contentType** | **String** | The document type for Content type Inform step |  [optional] |
+| **order** | **Integer** | The order of inform step in a learning module |  |
+| **displayName** | **String** | The display name for the inform step |  [optional] |
+| **description** | **String** | The description for the inform step |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -31,7 +25,8 @@ title: LearningModuleInformStepRequest
 | GENESYSBUILTINCOURSE | &quot;GenesysBuiltInCourse&quot; | 
 | RICHTEXT | &quot;RichText&quot; | 
 | SCORM | &quot;Scorm&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

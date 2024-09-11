@@ -1,21 +1,15 @@
----
-title: LocationAddressVerificationDetails
----
-## LocationAddressVerificationDetails
+# LocationAddressVerificationDetails
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> | Status of address verification process |  [optional] |
-| **dateFinished** | <!----><!---->[**Date**](Date.html)<!----> | Finished time of address verification process. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **dateStarted** | <!----><!---->[**Date**](Date.html)<!----> | Time started of address verification process. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **service** | <!----><!---->**String**<!----> | Third party service used for address verification |  [optional] |
-{: class="table table-striped"}
+| **status** | [**StatusEnum**](#Enum--StatusEnum) | Status of address verification process |  [optional] |
+| **dateFinished** | [**Date**](Date) | Finished time of address verification process. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **dateStarted** | [**Date**](Date) | Time started of address verification process. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **service** | **String** | Third party service used for address verification |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -27,7 +21,8 @@ title: LocationAddressVerificationDetails
 | RETRY | &quot;Retry&quot; | 
 | COMPLETE | &quot;Complete&quot; | 
 | FAILED | &quot;Failed&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

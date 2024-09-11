@@ -1,19 +1,13 @@
----
-title: IdentifierClaimRequest
----
-## IdentifierClaimRequest
+# IdentifierClaimRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **operation** | [**OperationEnum**](#OperationEnum)<!----> | The operation to perform claim/release |  |
-| **identifier** | <!----><!---->[**ContactIdentifier**](ContactIdentifier.html)<!----> | The identifier that should be claimed/released from a contact |  |
-{: class="table table-striped"}
+| **operation** | [**OperationEnum**](#Enum--OperationEnum) | The operation to perform claim/release |  |
+| **identifier** | [**ContactIdentifier**](ContactIdentifier) | The identifier that should be claimed/released from a contact |  |
 
-
-<a name="OperationEnum"></a>
 
 ## Enum: OperationEnum
 
@@ -22,7 +16,8 @@ title: IdentifierClaimRequest
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | CLAIM | &quot;Claim&quot; | 
 | RELEASE | &quot;Release&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,16 +1,14 @@
----
-title: CampaignRuleEntities
----
-## CampaignRuleEntities
+# CampaignRuleEntities
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **campaigns** | <!----><!---->[**List&lt;DomainEntityRef&gt;**](DomainEntityRef.html)<!----> | The list of campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a campaign. |  [optional] |
-| **sequences** | <!----><!---->[**List&lt;DomainEntityRef&gt;**](DomainEntityRef.html)<!----> | The list of sequences for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a sequence. |  [optional] |
-{: class="table table-striped"}
+| **campaigns** | [**List&lt;DomainEntityRef&gt;**](DomainEntityRef) | The list of campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a campaign. |  [optional] |
+| **sequences** | [**List&lt;DomainEntityRef&gt;**](DomainEntityRef) | The list of sequences for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a sequence. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

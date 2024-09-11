@@ -1,21 +1,15 @@
----
-title: WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation
----
-## WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation
+# WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **startDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **lengthMinutes** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **startDate** | [**Date**](Date) |  |  [optional] |
+| **lengthMinutes** | **Integer** |  |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -25,7 +19,8 @@ title: WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation
 | PENDING | &quot;Pending&quot; | 
 | APPROVED | &quot;Approved&quot; | 
 | DENIED | &quot;Denied&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

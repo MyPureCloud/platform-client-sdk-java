@@ -1,17 +1,15 @@
----
-title: InitiateScreenRecording
----
-## InitiateScreenRecording
+# InitiateScreenRecording
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **recordACW** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **archiveRetention** | <!----><!---->[**ArchiveRetention**](ArchiveRetention.html)<!----> |  |  [optional] |
-| **deleteRetention** | <!----><!---->[**DeleteRetention**](DeleteRetention.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **recordACW** | **Boolean** |  |  [optional] |
+| **archiveRetention** | [**ArchiveRetention**](ArchiveRetention) |  |  [optional] |
+| **deleteRetention** | [**DeleteRetention**](DeleteRetention) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

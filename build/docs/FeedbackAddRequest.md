@@ -1,19 +1,13 @@
----
-title: FeedbackAddRequest
----
-## FeedbackAddRequest
+# FeedbackAddRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **summary** | <!----><!---->**String**<!----> | Agent's summary for the conversation |  |
-| **rating** | [**RatingEnum**](#RatingEnum)<!----> | Agent’s rating for the system-generated summary. |  [optional] |
-{: class="table table-striped"}
+| **summary** | **String** | Agent's summary for the conversation |  |
+| **rating** | [**RatingEnum**](#Enum--RatingEnum) | Agent’s rating for the system-generated summary. |  [optional] |
 
-
-<a name="RatingEnum"></a>
 
 ## Enum: RatingEnum
 
@@ -22,7 +16,8 @@ title: FeedbackAddRequest
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | POSITIVE | &quot;Positive&quot; | 
 | NEGATIVE | &quot;Negative&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

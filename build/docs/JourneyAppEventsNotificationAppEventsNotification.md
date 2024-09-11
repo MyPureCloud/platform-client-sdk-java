@@ -1,28 +1,22 @@
----
-title: JourneyAppEventsNotificationAppEventsNotification
----
-## JourneyAppEventsNotificationAppEventsNotification
+# JourneyAppEventsNotificationAppEventsNotification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **correlationId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **externalContact** | <!----><!---->[**JourneyAppEventsNotificationExternalContact**](JourneyAppEventsNotificationExternalContact.html)<!----> |  |  [optional] |
-| **createdDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **customerId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **customerIdType** | <!----><!---->**String**<!----> |  |  [optional] |
-| **session** | <!----><!---->[**JourneyAppEventsNotificationSession**](JourneyAppEventsNotificationSession.html)<!----> |  |  [optional] |
-| **eventType** | [**EventTypeEnum**](#EventTypeEnum)<!----> |  |  [optional] |
-| **appEvent** | <!----><!---->[**JourneyAppEventsNotificationAppMessage**](JourneyAppEventsNotificationAppMessage.html)<!----> |  |  [optional] |
-| **outcomeAchievedEvent** | <!----><!---->[**JourneyAppEventsNotificationOutcomeAchievedMessage**](JourneyAppEventsNotificationOutcomeAchievedMessage.html)<!----> |  |  [optional] |
-| **segmentAssignmentEvent** | <!----><!---->[**JourneyAppEventsNotificationSegmentAssignmentMessage**](JourneyAppEventsNotificationSegmentAssignmentMessage.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **correlationId** | **String** |  |  [optional] |
+| **externalContact** | [**JourneyAppEventsNotificationExternalContact**](JourneyAppEventsNotificationExternalContact) |  |  [optional] |
+| **createdDate** | [**Date**](Date) |  |  [optional] |
+| **customerId** | **String** |  |  [optional] |
+| **customerIdType** | **String** |  |  [optional] |
+| **session** | [**JourneyAppEventsNotificationSession**](JourneyAppEventsNotificationSession) |  |  [optional] |
+| **eventType** | [**EventTypeEnum**](#Enum--EventTypeEnum) |  |  [optional] |
+| **appEvent** | [**JourneyAppEventsNotificationAppMessage**](JourneyAppEventsNotificationAppMessage) |  |  [optional] |
+| **outcomeAchievedEvent** | [**JourneyAppEventsNotificationOutcomeAchievedMessage**](JourneyAppEventsNotificationOutcomeAchievedMessage) |  |  [optional] |
+| **segmentAssignmentEvent** | [**JourneyAppEventsNotificationSegmentAssignmentMessage**](JourneyAppEventsNotificationSegmentAssignmentMessage) |  |  [optional] |
 
-
-<a name="EventTypeEnum"></a>
 
 ## Enum: EventTypeEnum
 
@@ -32,7 +26,8 @@ title: JourneyAppEventsNotificationAppEventsNotification
 | APPEVENT | &quot;AppEvent&quot; | 
 | OUTCOMEACHIEVEDEVENT | &quot;OutcomeAchievedEvent&quot; | 
 | SEGMENTASSIGNMENTEVENT | &quot;SegmentAssignmentEvent&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

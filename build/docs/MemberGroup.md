@@ -1,23 +1,17 @@
----
-title: MemberGroup
----
-## MemberGroup
+# MemberGroup
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **division** | <!----><!---->[**WritableDivision**](WritableDivision.html)<!----> | The division to which this entity belongs. |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | The group type |  [optional] |
-| **memberCount** | <!----><!---->**Integer**<!----> | The number of members in this group |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **division** | [**WritableDivision**](WritableDivision) | The division to which this entity belongs. |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | The group type |  [optional] |
+| **memberCount** | **Integer** | The number of members in this group |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -27,7 +21,8 @@ title: MemberGroup
 | TEAM | &quot;TEAM&quot; | 
 | GROUP | &quot;GROUP&quot; | 
 | SKILLGROUP | &quot;SKILLGROUP&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

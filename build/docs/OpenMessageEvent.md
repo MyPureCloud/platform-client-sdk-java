@@ -1,19 +1,13 @@
----
-title: OpenMessageEvent
----
-## OpenMessageEvent
+# OpenMessageEvent
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **eventType** | [**EventTypeEnum**](#EventTypeEnum)<!----> | Type of this event element |  |
-| **typing** | <!----><!---->[**ConversationEventTyping**](ConversationEventTyping.html)<!----> | Typing event. |  [optional] |
-{: class="table table-striped"}
+| **eventType** | [**EventTypeEnum**](#Enum--EventTypeEnum) | Type of this event element |  |
+| **typing** | [**ConversationEventTyping**](ConversationEventTyping) | Typing event. |  [optional] |
 
-
-<a name="EventTypeEnum"></a>
 
 ## Enum: EventTypeEnum
 
@@ -21,7 +15,8 @@ title: OpenMessageEvent
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | TYPING | &quot;Typing&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

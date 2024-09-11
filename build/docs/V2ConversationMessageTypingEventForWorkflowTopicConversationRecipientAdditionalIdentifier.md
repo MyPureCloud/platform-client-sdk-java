@@ -1,19 +1,13 @@
----
-title: V2ConversationMessageTypingEventForWorkflowTopicConversationRecipientAdditionalIdentifier
----
-## V2ConversationMessageTypingEventForWorkflowTopicConversationRecipientAdditionalIdentifier
+# V2ConversationMessageTypingEventForWorkflowTopicConversationRecipientAdditionalIdentifier
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-| **value** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
+| **value** | **String** |  |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -23,7 +17,8 @@ title: V2ConversationMessageTypingEventForWorkflowTopicConversationRecipientAddi
 | DEPLOYMENT | &quot;Deployment&quot; | 
 | SUBJECT | &quot;Subject&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

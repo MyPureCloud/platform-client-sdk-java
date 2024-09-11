@@ -1,58 +1,52 @@
----
-title: JourneySessionEventsNotificationSessionEvent
----
-## JourneySessionEventsNotificationSessionEvent
+# JourneySessionEventsNotificationSessionEvent
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **createdDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **endedDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **externalContact** | <!----><!---->[**JourneySessionEventsNotificationExternalContact**](JourneySessionEventsNotificationExternalContact.html)<!----> |  |  [optional] |
-| **customerId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **customerIdType** | <!----><!---->**String**<!----> |  |  [optional] |
-| **type** | <!----><!---->**String**<!----> |  |  [optional] |
-| **outcomeAchievements** | <!----><!---->[**List&lt;JourneySessionEventsNotificationOutcomeAchievement&gt;**](JourneySessionEventsNotificationOutcomeAchievement.html)<!----> |  |  [optional] |
-| **segmentAssignments** | <!----><!---->[**List&lt;JourneySessionEventsNotificationSegmentAssignment&gt;**](JourneySessionEventsNotificationSegmentAssignment.html)<!----> |  |  [optional] |
-| **awayDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **browser** | <!----><!---->[**JourneySessionEventsNotificationBrowser**](JourneySessionEventsNotificationBrowser.html)<!----> |  |  [optional] |
-| **device** | <!----><!---->[**JourneySessionEventsNotificationDevice**](JourneySessionEventsNotificationDevice.html)<!----> |  |  [optional] |
-| **geolocation** | <!----><!---->[**JourneySessionEventsNotificationGeoLocation**](JourneySessionEventsNotificationGeoLocation.html)<!----> |  |  [optional] |
-| **idleDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **ipAddress** | <!----><!---->**String**<!----> |  |  [optional] |
-| **ipOrganization** | <!----><!---->**String**<!----> |  |  [optional] |
-| **lastPage** | <!----><!---->[**JourneySessionEventsNotificationPage**](JourneySessionEventsNotificationPage.html)<!----> |  |  [optional] |
-| **mktCampaign** | <!----><!---->[**JourneySessionEventsNotificationMktCampaign**](JourneySessionEventsNotificationMktCampaign.html)<!----> |  |  [optional] |
-| **referrer** | <!----><!---->[**JourneySessionEventsNotificationReferrer**](JourneySessionEventsNotificationReferrer.html)<!----> |  |  [optional] |
-| **searchTerms** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **userAgentString** | <!----><!---->**String**<!----> |  |  [optional] |
-| **durationInSeconds** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **eventCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **pageviewCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **screenviewCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **lastEvent** | <!----><!---->[**JourneySessionEventsNotificationSessionLastEvent**](JourneySessionEventsNotificationSessionLastEvent.html)<!----> |  |  [optional] |
-| **conversation** | <!----><!---->[**JourneySessionEventsNotificationConversation**](JourneySessionEventsNotificationConversation.html)<!----> |  |  [optional] |
-| **originatingDirection** | [**OriginatingDirectionEnum**](#OriginatingDirectionEnum)<!----> |  |  [optional] |
-| **conversationSubject** | <!----><!---->**String**<!----> |  |  [optional] |
-| **lastUserDisposition** | <!----><!---->[**JourneySessionEventsNotificationConversationUserDisposition**](JourneySessionEventsNotificationConversationUserDisposition.html)<!----> |  |  [optional] |
-| **lastConnectedUser** | <!----><!---->[**JourneySessionEventsNotificationUser**](JourneySessionEventsNotificationUser.html)<!----> |  |  [optional] |
-| **lastConnectedQueue** | <!----><!---->[**JourneySessionEventsNotificationConnectedQueue**](JourneySessionEventsNotificationConnectedQueue.html)<!----> |  |  [optional] |
-| **conversationChannels** | <!----><!---->[**List&lt;JourneySessionEventsNotificationConversationChannel&gt;**](JourneySessionEventsNotificationConversationChannel.html)<!----> |  |  [optional] |
-| **lastUserDisconnectType** | [**LastUserDisconnectTypeEnum**](#LastUserDisconnectTypeEnum)<!----> |  |  [optional] |
-| **lastAcdOutcome** | [**LastAcdOutcomeEnum**](#LastAcdOutcomeEnum)<!----> |  |  [optional] |
-| **authenticated** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **app** | <!----><!---->[**JourneySessionEventsNotificationApp**](JourneySessionEventsNotificationApp.html)<!----> |  |  [optional] |
-| **sdkLibrary** | <!----><!---->[**JourneySessionEventsNotificationSdkLibrary**](JourneySessionEventsNotificationSdkLibrary.html)<!----> |  |  [optional] |
-| **networkConnectivity** | <!----><!---->[**JourneySessionEventsNotificationNetworkConnectivity**](JourneySessionEventsNotificationNetworkConnectivity.html)<!----> |  |  [optional] |
-| **divisionIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **selfUri** | **String** |  |  [optional] |
+| **createdDate** | [**Date**](Date) |  |  [optional] |
+| **endedDate** | [**Date**](Date) |  |  [optional] |
+| **externalContact** | [**JourneySessionEventsNotificationExternalContact**](JourneySessionEventsNotificationExternalContact) |  |  [optional] |
+| **customerId** | **String** |  |  [optional] |
+| **customerIdType** | **String** |  |  [optional] |
+| **type** | **String** |  |  [optional] |
+| **outcomeAchievements** | [**List&lt;JourneySessionEventsNotificationOutcomeAchievement&gt;**](JourneySessionEventsNotificationOutcomeAchievement) |  |  [optional] |
+| **segmentAssignments** | [**List&lt;JourneySessionEventsNotificationSegmentAssignment&gt;**](JourneySessionEventsNotificationSegmentAssignment) |  |  [optional] |
+| **awayDate** | [**Date**](Date) |  |  [optional] |
+| **browser** | [**JourneySessionEventsNotificationBrowser**](JourneySessionEventsNotificationBrowser) |  |  [optional] |
+| **device** | [**JourneySessionEventsNotificationDevice**](JourneySessionEventsNotificationDevice) |  |  [optional] |
+| **geolocation** | [**JourneySessionEventsNotificationGeoLocation**](JourneySessionEventsNotificationGeoLocation) |  |  [optional] |
+| **idleDate** | [**Date**](Date) |  |  [optional] |
+| **ipAddress** | **String** |  |  [optional] |
+| **ipOrganization** | **String** |  |  [optional] |
+| **lastPage** | [**JourneySessionEventsNotificationPage**](JourneySessionEventsNotificationPage) |  |  [optional] |
+| **mktCampaign** | [**JourneySessionEventsNotificationMktCampaign**](JourneySessionEventsNotificationMktCampaign) |  |  [optional] |
+| **referrer** | [**JourneySessionEventsNotificationReferrer**](JourneySessionEventsNotificationReferrer) |  |  [optional] |
+| **searchTerms** | **List&lt;String&gt;** |  |  [optional] |
+| **userAgentString** | **String** |  |  [optional] |
+| **durationInSeconds** | **Integer** |  |  [optional] |
+| **eventCount** | **Integer** |  |  [optional] |
+| **pageviewCount** | **Integer** |  |  [optional] |
+| **screenviewCount** | **Integer** |  |  [optional] |
+| **lastEvent** | [**JourneySessionEventsNotificationSessionLastEvent**](JourneySessionEventsNotificationSessionLastEvent) |  |  [optional] |
+| **conversation** | [**JourneySessionEventsNotificationConversation**](JourneySessionEventsNotificationConversation) |  |  [optional] |
+| **originatingDirection** | [**OriginatingDirectionEnum**](#Enum--OriginatingDirectionEnum) |  |  [optional] |
+| **conversationSubject** | **String** |  |  [optional] |
+| **lastUserDisposition** | [**JourneySessionEventsNotificationConversationUserDisposition**](JourneySessionEventsNotificationConversationUserDisposition) |  |  [optional] |
+| **lastConnectedUser** | [**JourneySessionEventsNotificationUser**](JourneySessionEventsNotificationUser) |  |  [optional] |
+| **lastConnectedQueue** | [**JourneySessionEventsNotificationConnectedQueue**](JourneySessionEventsNotificationConnectedQueue) |  |  [optional] |
+| **conversationChannels** | [**List&lt;JourneySessionEventsNotificationConversationChannel&gt;**](JourneySessionEventsNotificationConversationChannel) |  |  [optional] |
+| **lastUserDisconnectType** | [**LastUserDisconnectTypeEnum**](#Enum--LastUserDisconnectTypeEnum) |  |  [optional] |
+| **lastAcdOutcome** | [**LastAcdOutcomeEnum**](#Enum--LastAcdOutcomeEnum) |  |  [optional] |
+| **authenticated** | **Boolean** |  |  [optional] |
+| **app** | [**JourneySessionEventsNotificationApp**](JourneySessionEventsNotificationApp) |  |  [optional] |
+| **sdkLibrary** | [**JourneySessionEventsNotificationSdkLibrary**](JourneySessionEventsNotificationSdkLibrary) |  |  [optional] |
+| **networkConnectivity** | [**JourneySessionEventsNotificationNetworkConnectivity**](JourneySessionEventsNotificationNetworkConnectivity) |  |  [optional] |
+| **divisionIds** | **List&lt;String&gt;** |  |  [optional] |
 
-
-<a name="OriginatingDirectionEnum"></a>
 
 ## Enum: OriginatingDirectionEnum
 
@@ -62,10 +56,7 @@ title: JourneySessionEventsNotificationSessionEvent
 | UNKNOWN | &quot;Unknown&quot; | 
 | INBOUND | &quot;Inbound&quot; | 
 | OUTBOUND | &quot;Outbound&quot; | 
-{: class="table table-striped"}
 
-
-<a name="LastUserDisconnectTypeEnum"></a>
 
 ## Enum: LastUserDisconnectTypeEnum
 
@@ -91,10 +82,7 @@ title: JourneySessionEventsNotificationSessionEvent
 | UNCALLABLE | &quot;Uncallable&quot; | 
 | DONOTDISTURBENDPOINT | &quot;DoNotDisturbEndpoint&quot; | 
 | DONOTDISTURBTRANSFER | &quot;DoNotDisturbTransfer&quot; | 
-{: class="table table-striped"}
 
-
-<a name="LastAcdOutcomeEnum"></a>
 
 ## Enum: LastAcdOutcomeEnum
 
@@ -105,7 +93,8 @@ title: JourneySessionEventsNotificationSessionEvent
 | ABANDON | &quot;Abandon&quot; | 
 | ANSWERED | &quot;Answered&quot; | 
 | FLOWOUT | &quot;FlowOut&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

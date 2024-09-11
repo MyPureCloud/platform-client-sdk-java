@@ -1,20 +1,14 @@
----
-title: ApiUsageQueryResult
----
-## ApiUsageQueryResult
+# ApiUsageQueryResult
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **results** | <!----><!---->[**List&lt;ApiUsageRow&gt;**](ApiUsageRow.html)<!----> | Query results |  [optional] |
-| **queryStatus** | [**QueryStatusEnum**](#QueryStatusEnum)<!----> | Query status |  [optional] |
-| **cursors** | <!----><!---->[**Cursors**](Cursors.html)<!----> | Cursor tokens to be used for navigating paginated results |  [optional] |
-{: class="table table-striped"}
+| **results** | [**List&lt;ApiUsageRow&gt;**](ApiUsageRow) | Query results |  [optional] |
+| **queryStatus** | [**QueryStatusEnum**](#Enum--QueryStatusEnum) | Query status |  [optional] |
+| **cursors** | [**Cursors**](Cursors) | Cursor tokens to be used for navigating paginated results |  [optional] |
 
-
-<a name="QueryStatusEnum"></a>
 
 ## Enum: QueryStatusEnum
 
@@ -24,7 +18,8 @@ title: ApiUsageQueryResult
 | COMPLETE | &quot;Complete&quot; | 
 | FAILED | &quot;Failed&quot; | 
 | RUNNING | &quot;Running&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

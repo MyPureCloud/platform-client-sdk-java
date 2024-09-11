@@ -1,16 +1,14 @@
----
-title: StopSettings
----
-## StopSettings
+# StopSettings
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **keyword** | <!----><!---->**List&lt;String&gt;**<!----> | List of keywords for compliance |  |
-| **response** | <!----><!---->[**ComplianceResponse**](ComplianceResponse.html)<!----> | The response configuration for the keywords |  |
-{: class="table table-striped"}
+| **keyword** | **List&lt;String&gt;** | List of keywords for compliance |  |
+| **response** | [**ComplianceResponse**](ComplianceResponse) | The response configuration for the keywords |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

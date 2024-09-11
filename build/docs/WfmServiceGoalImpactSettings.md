@@ -1,17 +1,15 @@
----
-title: WfmServiceGoalImpactSettings
----
-## WfmServiceGoalImpactSettings
+# WfmServiceGoalImpactSettings
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **serviceLevel** | <!----><!---->[**WfmServiceGoalImpact**](WfmServiceGoalImpact.html)<!----> | Allowed service level percent increase and decrease |  |
-| **averageSpeedOfAnswer** | <!----><!---->[**WfmServiceGoalImpact**](WfmServiceGoalImpact.html)<!----> | Allowed average speed of answer percent increase and decrease |  |
-| **abandonRate** | <!----><!---->[**WfmServiceGoalImpact**](WfmServiceGoalImpact.html)<!----> | Allowed abandon rate percent increase and decrease |  |
-{: class="table table-striped"}
+| **serviceLevel** | [**WfmServiceGoalImpact**](WfmServiceGoalImpact) | Allowed service level percent increase and decrease |  |
+| **averageSpeedOfAnswer** | [**WfmServiceGoalImpact**](WfmServiceGoalImpact) | Allowed average speed of answer percent increase and decrease |  |
+| **abandonRate** | [**WfmServiceGoalImpact**](WfmServiceGoalImpact) | Allowed abandon rate percent increase and decrease |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

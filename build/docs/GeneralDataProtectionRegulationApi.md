@@ -1,25 +1,20 @@
----
-title: GeneralDataProtectionRegulationApi
----
-## GeneralDataProtectionRegulationApi
+# GeneralDataProtectionRegulationApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**getGdprRequest**](GeneralDataProtectionRegulationApi.html#getGdprRequest) | Get an existing GDPR request |
-| [**getGdprRequests**](GeneralDataProtectionRegulationApi.html#getGdprRequests) | Get all GDPR requests |
-| [**getGdprSubjects**](GeneralDataProtectionRegulationApi.html#getGdprSubjects) | Get GDPR subjects |
-| [**postGdprRequests**](GeneralDataProtectionRegulationApi.html#postGdprRequests) | Submit a new GDPR request |
+| [**getGdprRequest**](GeneralDataProtectionRegulationApi#getGdprRequest) | Get an existing GDPR request |
+| [**getGdprRequests**](GeneralDataProtectionRegulationApi#getGdprRequests) | Get all GDPR requests |
+| [**getGdprSubjects**](GeneralDataProtectionRegulationApi#getGdprSubjects) | Get GDPR subjects |
+| [**postGdprRequests**](GeneralDataProtectionRegulationApi#postGdprRequests) | Submit a new GDPR request |
 {: class="table-striped"}
 
-<a name="getGdprRequest"></a>
 
 # **getGdprRequest**
 
 
-
-> [GDPRRequest](GDPRRequest.html) getGdprRequest(requestId)
+> [GDPRRequest](GDPRRequest) getGdprRequest(requestId)
 
 Get an existing GDPR request
 
@@ -72,15 +67,13 @@ try {
 
 ### Return type
 
-[**GDPRRequest**](GDPRRequest.html)
+[**GDPRRequest**](GDPRRequest)
 
-<a name="getGdprRequests"></a>
 
 # **getGdprRequests**
 
 
-
-> [GDPRRequestEntityListing](GDPRRequestEntityListing.html) getGdprRequests(pageSize, pageNumber)
+> [GDPRRequestEntityListing](GDPRRequestEntityListing) getGdprRequests(pageSize, pageNumber)
 
 Get all GDPR requests
 
@@ -135,15 +128,13 @@ try {
 
 ### Return type
 
-[**GDPRRequestEntityListing**](GDPRRequestEntityListing.html)
+[**GDPRRequestEntityListing**](GDPRRequestEntityListing)
 
-<a name="getGdprSubjects"></a>
 
 # **getGdprSubjects**
 
 
-
-> [GDPRSubjectEntityListing](GDPRSubjectEntityListing.html) getGdprSubjects(searchType, searchValue)
+> [GDPRSubjectEntityListing](GDPRSubjectEntityListing) getGdprSubjects(searchType, searchValue)
 
 Get GDPR subjects
 
@@ -198,15 +189,13 @@ try {
 
 ### Return type
 
-[**GDPRSubjectEntityListing**](GDPRSubjectEntityListing.html)
+[**GDPRSubjectEntityListing**](GDPRSubjectEntityListing)
 
-<a name="postGdprRequests"></a>
 
 # **postGdprRequests**
 
 
-
-> [GDPRRequest](GDPRRequest.html) postGdprRequests(body, deleteConfirmed)
+> [GDPRRequest](GDPRRequest) postGdprRequests(body, deleteConfirmed)
 
 Submit a new GDPR request
 
@@ -254,12 +243,14 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**GDPRRequest**](GDPRRequest.html)| GDPR request | 
+| **body** | [**GDPRRequest**](GDPRRequest)| GDPR request | 
 | **deleteConfirmed** | **Boolean**| Confirm delete | [optional] [default to false] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**GDPRRequest**](GDPRRequest.html)
+[**GDPRRequest**](GDPRRequest)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

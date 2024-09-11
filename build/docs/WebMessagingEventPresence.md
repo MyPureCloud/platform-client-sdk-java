@@ -1,18 +1,12 @@
----
-title: WebMessagingEventPresence
----
-## WebMessagingEventPresence
+# WebMessagingEventPresence
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Describes the type of Presence event. |  |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Describes the type of Presence event. |  |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -23,7 +17,8 @@ title: WebMessagingEventPresence
 | DISCONNECT | &quot;Disconnect&quot; | 
 | CLEAR | &quot;Clear&quot; | 
 | SIGNIN | &quot;SignIn&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

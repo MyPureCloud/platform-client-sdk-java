@@ -1,17 +1,15 @@
----
-title: ConversationEmailEventTopicJourneyContext
----
-## ConversationEmailEventTopicJourneyContext
+# ConversationEmailEventTopicJourneyContext
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **customer** | <!----><!---->[**ConversationEmailEventTopicJourneyCustomer**](ConversationEmailEventTopicJourneyCustomer.html)<!----> |  |  [optional] |
-| **customerSession** | <!----><!---->[**ConversationEmailEventTopicJourneyCustomerSession**](ConversationEmailEventTopicJourneyCustomerSession.html)<!----> |  |  [optional] |
-| **triggeringAction** | <!----><!---->[**ConversationEmailEventTopicJourneyAction**](ConversationEmailEventTopicJourneyAction.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **customer** | [**ConversationEmailEventTopicJourneyCustomer**](ConversationEmailEventTopicJourneyCustomer) |  |  [optional] |
+| **customerSession** | [**ConversationEmailEventTopicJourneyCustomerSession**](ConversationEmailEventTopicJourneyCustomerSession) |  |  [optional] |
+| **triggeringAction** | [**ConversationEmailEventTopicJourneyAction**](ConversationEmailEventTopicJourneyAction) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

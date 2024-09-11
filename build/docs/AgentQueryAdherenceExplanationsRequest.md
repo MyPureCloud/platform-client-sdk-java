@@ -1,16 +1,14 @@
----
-title: AgentQueryAdherenceExplanationsRequest
----
-## AgentQueryAdherenceExplanationsRequest
+# AgentQueryAdherenceExplanationsRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **startDate** | <!----><!---->[**Date**](Date.html)<!----> | The start date of the range to query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
-| **endDate** | <!----><!---->[**Date**](Date.html)<!----> | The end date of the range to query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
-{: class="table table-striped"}
+| **startDate** | [**Date**](Date) | The start date of the range to query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
+| **endDate** | [**Date**](Date) | The end date of the range to query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,16 +1,14 @@
----
-title: WebDeploymentsAuthorizationResponse
----
-## WebDeploymentsAuthorizationResponse
+# WebDeploymentsAuthorizationResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **refreshToken** | <!----><!---->**String**<!----> | Refresh token used to issue a new JWT. |  [optional] |
-| **jwt** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **refreshToken** | **String** | Refresh token used to issue a new JWT. |  [optional] |
+| **jwt** | **String** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

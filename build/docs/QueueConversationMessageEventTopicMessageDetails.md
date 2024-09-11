@@ -1,25 +1,19 @@
----
-title: QueueConversationMessageEventTopicMessageDetails
----
-## QueueConversationMessageEventTopicMessageDetails
+# QueueConversationMessageEventTopicMessageDetails
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **message** | <!----><!---->[**QueueConversationMessageEventTopicUriReference**](QueueConversationMessageEventTopicUriReference.html)<!----> |  |  [optional] |
-| **messageTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **messageSegmentCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **messageStatus** | [**MessageStatusEnum**](#MessageStatusEnum)<!----> |  |  [optional] |
-| **media** | <!----><!---->[**List&lt;QueueConversationMessageEventTopicMessageMedia&gt;**](QueueConversationMessageEventTopicMessageMedia.html)<!----> |  |  [optional] |
-| **stickers** | <!----><!---->[**List&lt;QueueConversationMessageEventTopicMessageSticker&gt;**](QueueConversationMessageEventTopicMessageSticker.html)<!----> |  |  [optional] |
-| **errorInfo** | <!----><!---->[**QueueConversationMessageEventTopicErrorDetails**](QueueConversationMessageEventTopicErrorDetails.html)<!----> |  |  [optional] |
-| **messageMetadata** | <!----><!---->[**QueueConversationMessageEventTopicMessageMetadata**](QueueConversationMessageEventTopicMessageMetadata.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **message** | [**QueueConversationMessageEventTopicUriReference**](QueueConversationMessageEventTopicUriReference) |  |  [optional] |
+| **messageTime** | [**Date**](Date) |  |  [optional] |
+| **messageSegmentCount** | **Integer** |  |  [optional] |
+| **messageStatus** | [**MessageStatusEnum**](#Enum--MessageStatusEnum) |  |  [optional] |
+| **media** | [**List&lt;QueueConversationMessageEventTopicMessageMedia&gt;**](QueueConversationMessageEventTopicMessageMedia) |  |  [optional] |
+| **stickers** | [**List&lt;QueueConversationMessageEventTopicMessageSticker&gt;**](QueueConversationMessageEventTopicMessageSticker) |  |  [optional] |
+| **errorInfo** | [**QueueConversationMessageEventTopicErrorDetails**](QueueConversationMessageEventTopicErrorDetails) |  |  [optional] |
+| **messageMetadata** | [**QueueConversationMessageEventTopicMessageMetadata**](QueueConversationMessageEventTopicMessageMetadata) |  |  [optional] |
 
-
-<a name="MessageStatusEnum"></a>
 
 ## Enum: MessageStatusEnum
 
@@ -35,7 +29,8 @@ title: QueueConversationMessageEventTopicMessageDetails
 | READ | &quot;read&quot; | 
 | REMOVED | &quot;removed&quot; | 
 | PUBLISHED | &quot;published&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

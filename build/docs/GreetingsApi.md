@@ -1,34 +1,29 @@
----
-title: GreetingsApi
----
-## GreetingsApi
+# GreetingsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteGreeting**](GreetingsApi.html#deleteGreeting) | Deletes a Greeting with the given GreetingId |
-| [**getGreeting**](GreetingsApi.html#getGreeting) | Get a Greeting with the given GreetingId |
-| [**getGreetingMedia**](GreetingsApi.html#getGreetingMedia) | Get media playback URI for this greeting |
-| [**getGreetings**](GreetingsApi.html#getGreetings) | Gets an Organization's Greetings |
-| [**getGreetingsDefaults**](GreetingsApi.html#getGreetingsDefaults) | Get an Organization's DefaultGreetingList |
-| [**getGroupGreetings**](GreetingsApi.html#getGroupGreetings) | Get a list of the Group's Greetings |
-| [**getGroupGreetingsDefaults**](GreetingsApi.html#getGroupGreetingsDefaults) | Grabs the list of Default Greetings given a Group's ID |
-| [**getUserGreetings**](GreetingsApi.html#getUserGreetings) | Get a list of the User's Greetings |
-| [**getUserGreetingsDefaults**](GreetingsApi.html#getUserGreetingsDefaults) | Grabs the list of Default Greetings given a User's ID |
-| [**postGreetings**](GreetingsApi.html#postGreetings) | Create a Greeting for an Organization |
-| [**postGroupGreetings**](GreetingsApi.html#postGroupGreetings) | Creates a Greeting for a Group |
-| [**postUserGreetings**](GreetingsApi.html#postUserGreetings) | Creates a Greeting for a User |
-| [**putGreeting**](GreetingsApi.html#putGreeting) | Updates the Greeting with the given GreetingId |
-| [**putGreetingsDefaults**](GreetingsApi.html#putGreetingsDefaults) | Update an Organization's DefaultGreetingList |
-| [**putGroupGreetingsDefaults**](GreetingsApi.html#putGroupGreetingsDefaults) | Updates the DefaultGreetingList of the specified Group |
-| [**putUserGreetingsDefaults**](GreetingsApi.html#putUserGreetingsDefaults) | Updates the DefaultGreetingList of the specified User |
+| [**deleteGreeting**](GreetingsApi#deleteGreeting) | Deletes a Greeting with the given GreetingId |
+| [**getGreeting**](GreetingsApi#getGreeting) | Get a Greeting with the given GreetingId |
+| [**getGreetingMedia**](GreetingsApi#getGreetingMedia) | Get media playback URI for this greeting |
+| [**getGreetings**](GreetingsApi#getGreetings) | Gets an Organization's Greetings |
+| [**getGreetingsDefaults**](GreetingsApi#getGreetingsDefaults) | Get an Organization's DefaultGreetingList |
+| [**getGroupGreetings**](GreetingsApi#getGroupGreetings) | Get a list of the Group's Greetings |
+| [**getGroupGreetingsDefaults**](GreetingsApi#getGroupGreetingsDefaults) | Grabs the list of Default Greetings given a Group's ID |
+| [**getUserGreetings**](GreetingsApi#getUserGreetings) | Get a list of the User's Greetings |
+| [**getUserGreetingsDefaults**](GreetingsApi#getUserGreetingsDefaults) | Grabs the list of Default Greetings given a User's ID |
+| [**postGreetings**](GreetingsApi#postGreetings) | Create a Greeting for an Organization |
+| [**postGroupGreetings**](GreetingsApi#postGroupGreetings) | Creates a Greeting for a Group |
+| [**postUserGreetings**](GreetingsApi#postUserGreetings) | Creates a Greeting for a User |
+| [**putGreeting**](GreetingsApi#putGreeting) | Updates the Greeting with the given GreetingId |
+| [**putGreetingsDefaults**](GreetingsApi#putGreetingsDefaults) | Update an Organization's DefaultGreetingList |
+| [**putGroupGreetingsDefaults**](GreetingsApi#putGroupGreetingsDefaults) | Updates the DefaultGreetingList of the specified Group |
+| [**putUserGreetingsDefaults**](GreetingsApi#putUserGreetingsDefaults) | Updates the DefaultGreetingList of the specified User |
 {: class="table-striped"}
 
-<a name="deleteGreeting"></a>
 
 # **deleteGreeting**
-
 
 
 > Void deleteGreeting(greetingId)
@@ -84,13 +79,11 @@ try {
 
 null (empty response body)
 
-<a name="getGreeting"></a>
 
 # **getGreeting**
 
 
-
-> [Greeting](Greeting.html) getGreeting(greetingId)
+> [Greeting](Greeting) getGreeting(greetingId)
 
 Get a Greeting with the given GreetingId
 
@@ -142,15 +135,13 @@ try {
 
 ### Return type
 
-[**Greeting**](Greeting.html)
+[**Greeting**](Greeting)
 
-<a name="getGreetingMedia"></a>
 
 # **getGreetingMedia**
 
 
-
-> [GreetingMediaInfo](GreetingMediaInfo.html) getGreetingMedia(greetingId, formatId)
+> [GreetingMediaInfo](GreetingMediaInfo) getGreetingMedia(greetingId, formatId)
 
 Get media playback URI for this greeting
 
@@ -204,15 +195,13 @@ try {
 
 ### Return type
 
-[**GreetingMediaInfo**](GreetingMediaInfo.html)
+[**GreetingMediaInfo**](GreetingMediaInfo)
 
-<a name="getGreetings"></a>
 
 # **getGreetings**
 
 
-
-> [DomainEntityListing](DomainEntityListing.html) getGreetings(pageSize, pageNumber)
+> [DomainEntityListing](DomainEntityListing) getGreetings(pageSize, pageNumber)
 
 Gets an Organization's Greetings
 
@@ -266,15 +255,13 @@ try {
 
 ### Return type
 
-[**DomainEntityListing**](DomainEntityListing.html)
+[**DomainEntityListing**](DomainEntityListing)
 
-<a name="getGreetingsDefaults"></a>
 
 # **getGreetingsDefaults**
 
 
-
-> [DefaultGreetingList](DefaultGreetingList.html) getGreetingsDefaults()
+> [DefaultGreetingList](DefaultGreetingList) getGreetingsDefaults()
 
 Get an Organization's DefaultGreetingList
 
@@ -322,15 +309,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**DefaultGreetingList**](DefaultGreetingList.html)
+[**DefaultGreetingList**](DefaultGreetingList)
 
-<a name="getGroupGreetings"></a>
 
 # **getGroupGreetings**
 
 
-
-> [GreetingListing](GreetingListing.html) getGroupGreetings(groupId, pageSize, pageNumber)
+> [GreetingListing](GreetingListing) getGroupGreetings(groupId, pageSize, pageNumber)
 
 Get a list of the Group's Greetings
 
@@ -386,15 +371,13 @@ try {
 
 ### Return type
 
-[**GreetingListing**](GreetingListing.html)
+[**GreetingListing**](GreetingListing)
 
-<a name="getGroupGreetingsDefaults"></a>
 
 # **getGroupGreetingsDefaults**
 
 
-
-> [DefaultGreetingList](DefaultGreetingList.html) getGroupGreetingsDefaults(groupId)
+> [DefaultGreetingList](DefaultGreetingList) getGroupGreetingsDefaults(groupId)
 
 Grabs the list of Default Greetings given a Group's ID
 
@@ -446,15 +429,13 @@ try {
 
 ### Return type
 
-[**DefaultGreetingList**](DefaultGreetingList.html)
+[**DefaultGreetingList**](DefaultGreetingList)
 
-<a name="getUserGreetings"></a>
 
 # **getUserGreetings**
 
 
-
-> [DomainEntityListing](DomainEntityListing.html) getUserGreetings(userId, pageSize, pageNumber)
+> [DomainEntityListing](DomainEntityListing) getUserGreetings(userId, pageSize, pageNumber)
 
 Get a list of the User's Greetings
 
@@ -510,15 +491,13 @@ try {
 
 ### Return type
 
-[**DomainEntityListing**](DomainEntityListing.html)
+[**DomainEntityListing**](DomainEntityListing)
 
-<a name="getUserGreetingsDefaults"></a>
 
 # **getUserGreetingsDefaults**
 
 
-
-> [DefaultGreetingList](DefaultGreetingList.html) getUserGreetingsDefaults(userId)
+> [DefaultGreetingList](DefaultGreetingList) getUserGreetingsDefaults(userId)
 
 Grabs the list of Default Greetings given a User's ID
 
@@ -570,15 +549,13 @@ try {
 
 ### Return type
 
-[**DefaultGreetingList**](DefaultGreetingList.html)
+[**DefaultGreetingList**](DefaultGreetingList)
 
-<a name="postGreetings"></a>
 
 # **postGreetings**
 
 
-
-> [Greeting](Greeting.html) postGreetings(body)
+> [Greeting](Greeting) postGreetings(body)
 
 Create a Greeting for an Organization
 
@@ -624,21 +601,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Greeting**](Greeting.html)| The Greeting to create | 
+| **body** | [**Greeting**](Greeting)| The Greeting to create | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Greeting**](Greeting.html)
+[**Greeting**](Greeting)
 
-<a name="postGroupGreetings"></a>
 
 # **postGroupGreetings**
 
 
-
-> [Greeting](Greeting.html) postGroupGreetings(groupId, body)
+> [Greeting](Greeting) postGroupGreetings(groupId, body)
 
 Creates a Greeting for a Group
 
@@ -686,21 +661,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **groupId** | **String**| Group ID | 
-| **body** | [**Greeting**](Greeting.html)| The Greeting to create | 
+| **body** | [**Greeting**](Greeting)| The Greeting to create | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Greeting**](Greeting.html)
+[**Greeting**](Greeting)
 
-<a name="postUserGreetings"></a>
 
 # **postUserGreetings**
 
 
-
-> [Greeting](Greeting.html) postUserGreetings(userId, body)
+> [Greeting](Greeting) postUserGreetings(userId, body)
 
 Creates a Greeting for a User
 
@@ -748,21 +721,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | 
-| **body** | [**Greeting**](Greeting.html)| The Greeting to create | 
+| **body** | [**Greeting**](Greeting)| The Greeting to create | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Greeting**](Greeting.html)
+[**Greeting**](Greeting)
 
-<a name="putGreeting"></a>
 
 # **putGreeting**
 
 
-
-> [Greeting](Greeting.html) putGreeting(greetingId, body)
+> [Greeting](Greeting) putGreeting(greetingId, body)
 
 Updates the Greeting with the given GreetingId
 
@@ -810,21 +781,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **greetingId** | **String**| Greeting ID | 
-| **body** | [**Greeting**](Greeting.html)| The updated Greeting | 
+| **body** | [**Greeting**](Greeting)| The updated Greeting | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Greeting**](Greeting.html)
+[**Greeting**](Greeting)
 
-<a name="putGreetingsDefaults"></a>
 
 # **putGreetingsDefaults**
 
 
-
-> [DefaultGreetingList](DefaultGreetingList.html) putGreetingsDefaults(body)
+> [DefaultGreetingList](DefaultGreetingList) putGreetingsDefaults(body)
 
 Update an Organization's DefaultGreetingList
 
@@ -870,21 +839,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**DefaultGreetingList**](DefaultGreetingList.html)| The updated defaultGreetingList | 
+| **body** | [**DefaultGreetingList**](DefaultGreetingList)| The updated defaultGreetingList | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DefaultGreetingList**](DefaultGreetingList.html)
+[**DefaultGreetingList**](DefaultGreetingList)
 
-<a name="putGroupGreetingsDefaults"></a>
 
 # **putGroupGreetingsDefaults**
 
 
-
-> [DefaultGreetingList](DefaultGreetingList.html) putGroupGreetingsDefaults(groupId, body)
+> [DefaultGreetingList](DefaultGreetingList) putGroupGreetingsDefaults(groupId, body)
 
 Updates the DefaultGreetingList of the specified Group
 
@@ -932,21 +899,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **groupId** | **String**| Group ID | 
-| **body** | [**DefaultGreetingList**](DefaultGreetingList.html)| The updated defaultGreetingList | 
+| **body** | [**DefaultGreetingList**](DefaultGreetingList)| The updated defaultGreetingList | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DefaultGreetingList**](DefaultGreetingList.html)
+[**DefaultGreetingList**](DefaultGreetingList)
 
-<a name="putUserGreetingsDefaults"></a>
 
 # **putUserGreetingsDefaults**
 
 
-
-> [DefaultGreetingList](DefaultGreetingList.html) putUserGreetingsDefaults(userId, body)
+> [DefaultGreetingList](DefaultGreetingList) putUserGreetingsDefaults(userId, body)
 
 Updates the DefaultGreetingList of the specified User
 
@@ -994,11 +959,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | 
-| **body** | [**DefaultGreetingList**](DefaultGreetingList.html)| The updated defaultGreetingList | 
+| **body** | [**DefaultGreetingList**](DefaultGreetingList)| The updated defaultGreetingList | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DefaultGreetingList**](DefaultGreetingList.html)
+[**DefaultGreetingList**](DefaultGreetingList)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

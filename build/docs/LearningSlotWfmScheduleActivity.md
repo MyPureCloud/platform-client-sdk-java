@@ -1,17 +1,15 @@
----
-title: LearningSlotWfmScheduleActivity
----
-## LearningSlotWfmScheduleActivity
+# LearningSlotWfmScheduleActivity
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **user** | <!----><!---->[**UserReference**](UserReference.html)<!----> | User that the schedule is for |  [optional] |
-| **activities** | <!----><!---->[**List&lt;LearningSlotScheduleActivity&gt;**](LearningSlotScheduleActivity.html)<!----> | List of user's scheduled activities |  [optional] |
-| **fullDayTimeOffMarkers** | <!----><!---->[**List&lt;LearningSlotFullDayTimeOffMarker&gt;**](LearningSlotFullDayTimeOffMarker.html)<!----> | List of user's days off |  [optional] |
-{: class="table table-striped"}
+| **user** | [**UserReference**](UserReference) | User that the schedule is for |  [optional] |
+| **activities** | [**List&lt;LearningSlotScheduleActivity&gt;**](LearningSlotScheduleActivity) | List of user's scheduled activities |  [optional] |
+| **fullDayTimeOffMarkers** | [**List&lt;LearningSlotFullDayTimeOffMarker&gt;**](LearningSlotFullDayTimeOffMarker) | List of user's days off |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

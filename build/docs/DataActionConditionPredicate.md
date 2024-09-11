@@ -1,22 +1,16 @@
----
-title: DataActionConditionPredicate
----
-## DataActionConditionPredicate
+# DataActionConditionPredicate
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **outputField** | <!----><!---->**String**<!----> | The name of an output field from the data action's output to use for this condition |  |
-| **outputOperator** | [**OutputOperatorEnum**](#OutputOperatorEnum)<!----> | The operation with which to evaluate this condition |  |
-| **comparisonValue** | <!----><!---->**String**<!----> | The value to compare against for this condition |  |
-| **inverted** | <!----><!---->**Boolean**<!----> | If true, inverts the result of evaluating this Predicate. Default is false. |  |
-| **outputFieldMissingResolution** | <!----><!---->**Boolean**<!----> | The result of this predicate if the requested output field is missing from the data action's result |  |
-{: class="table table-striped"}
+| **outputField** | **String** | The name of an output field from the data action's output to use for this condition |  |
+| **outputOperator** | [**OutputOperatorEnum**](#Enum--OutputOperatorEnum) | The operation with which to evaluate this condition |  |
+| **comparisonValue** | **String** | The value to compare against for this condition |  |
+| **inverted** | **Boolean** | If true, inverts the result of evaluating this Predicate. Default is false. |  |
+| **outputFieldMissingResolution** | **Boolean** | The result of this predicate if the requested output field is missing from the data action's result |  |
 
-
-<a name="OutputOperatorEnum"></a>
 
 ## Enum: OutputOperatorEnum
 
@@ -33,7 +27,8 @@ title: DataActionConditionPredicate
 | ENDS_WITH | &quot;ENDS_WITH&quot; | 
 | BEFORE | &quot;BEFORE&quot; | 
 | AFTER | &quot;AFTER&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,27 +1,22 @@
----
-title: TelephonyApi
----
-## TelephonyApi
+# TelephonyApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**getTelephonyMediaregions**](TelephonyApi.html#getTelephonyMediaregions) | Retrieve the list of AWS regions media can stream through. |
-| [**getTelephonySipmessagesConversation**](TelephonyApi.html#getTelephonySipmessagesConversation) | Get a SIP message. |
-| [**getTelephonySipmessagesConversationHeaders**](TelephonyApi.html#getTelephonySipmessagesConversationHeaders) | Get SIP headers. |
-| [**getTelephonySiptraces**](TelephonyApi.html#getTelephonySiptraces) | Fetch SIP metadata |
-| [**getTelephonySiptracesDownloadDownloadId**](TelephonyApi.html#getTelephonySiptracesDownloadDownloadId) | Get signed S3 URL for a pcap download |
-| [**postTelephonySiptracesDownload**](TelephonyApi.html#postTelephonySiptracesDownload) | Request a download of a pcap file to S3 |
+| [**getTelephonyMediaregions**](TelephonyApi#getTelephonyMediaregions) | Retrieve the list of AWS regions media can stream through. |
+| [**getTelephonySipmessagesConversation**](TelephonyApi#getTelephonySipmessagesConversation) | Get a SIP message. |
+| [**getTelephonySipmessagesConversationHeaders**](TelephonyApi#getTelephonySipmessagesConversationHeaders) | Get SIP headers. |
+| [**getTelephonySiptraces**](TelephonyApi#getTelephonySiptraces) | Fetch SIP metadata |
+| [**getTelephonySiptracesDownloadDownloadId**](TelephonyApi#getTelephonySiptracesDownloadDownloadId) | Get signed S3 URL for a pcap download |
+| [**postTelephonySiptracesDownload**](TelephonyApi#postTelephonySiptracesDownload) | Request a download of a pcap file to S3 |
 {: class="table-striped"}
 
-<a name="getTelephonyMediaregions"></a>
 
 # **getTelephonyMediaregions**
 
 
-
-> [MediaRegions](MediaRegions.html) getTelephonyMediaregions()
+> [MediaRegions](MediaRegions) getTelephonyMediaregions()
 
 Retrieve the list of AWS regions media can stream through.
 
@@ -70,15 +65,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**MediaRegions**](MediaRegions.html)
+[**MediaRegions**](MediaRegions)
 
-<a name="getTelephonySipmessagesConversation"></a>
 
 # **getTelephonySipmessagesConversation**
 
 
-
-> [Callmessage](Callmessage.html) getTelephonySipmessagesConversation(conversationId)
+> [Callmessage](Callmessage) getTelephonySipmessagesConversation(conversationId)
 
 Get a SIP message.
 
@@ -133,15 +126,13 @@ try {
 
 ### Return type
 
-[**Callmessage**](Callmessage.html)
+[**Callmessage**](Callmessage)
 
-<a name="getTelephonySipmessagesConversationHeaders"></a>
 
 # **getTelephonySipmessagesConversationHeaders**
 
 
-
-> [Callheader](Callheader.html) getTelephonySipmessagesConversationHeaders(conversationId, keys)
+> [Callheader](Callheader) getTelephonySipmessagesConversationHeaders(conversationId, keys)
 
 Get SIP headers.
 
@@ -192,21 +183,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **conversationId** | **String**| Conversation id | 
-| **keys** | [**List&lt;String&gt;**](String.html)| comma-separated list of header identifiers to query. e.g. ruri,to,from | [optional] 
+| **keys** | [**List&lt;String&gt;**](String)| comma-separated list of header identifiers to query. e.g. ruri,to,from | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Callheader**](Callheader.html)
+[**Callheader**](Callheader)
 
-<a name="getTelephonySiptraces"></a>
 
 # **getTelephonySiptraces**
 
 
-
-> [SipSearchResult](SipSearchResult.html) getTelephonySiptraces(dateStart, dateEnd, callId, toUser, fromUser, conversationId)
+> [SipSearchResult](SipSearchResult) getTelephonySiptraces(dateStart, dateEnd, callId, toUser, fromUser, conversationId)
 
 Fetch SIP metadata
 
@@ -271,15 +260,13 @@ try {
 
 ### Return type
 
-[**SipSearchResult**](SipSearchResult.html)
+[**SipSearchResult**](SipSearchResult)
 
-<a name="getTelephonySiptracesDownloadDownloadId"></a>
 
 # **getTelephonySiptracesDownloadDownloadId**
 
 
-
-> [SignedUrlResponse](SignedUrlResponse.html) getTelephonySiptracesDownloadDownloadId(downloadId)
+> [SignedUrlResponse](SignedUrlResponse) getTelephonySiptracesDownloadDownloadId(downloadId)
 
 Get signed S3 URL for a pcap download
 
@@ -332,15 +319,13 @@ try {
 
 ### Return type
 
-[**SignedUrlResponse**](SignedUrlResponse.html)
+[**SignedUrlResponse**](SignedUrlResponse)
 
-<a name="postTelephonySiptracesDownload"></a>
 
 # **postTelephonySiptracesDownload**
 
 
-
-> [SipDownloadResponse](SipDownloadResponse.html) postTelephonySiptracesDownload(sIPSearchPublicRequest)
+> [SipDownloadResponse](SipDownloadResponse) postTelephonySiptracesDownload(sIPSearchPublicRequest)
 
 Request a download of a pcap file to S3
 
@@ -387,11 +372,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **sIPSearchPublicRequest** | [**SIPSearchPublicRequest**](SIPSearchPublicRequest.html)|  | 
+| **sIPSearchPublicRequest** | [**SIPSearchPublicRequest**](SIPSearchPublicRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**SipDownloadResponse**](SipDownloadResponse.html)
+[**SipDownloadResponse**](SipDownloadResponse)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,19 +1,17 @@
----
-title: GamificationScorecardChangeTopicPerformanceMetric
----
-## GamificationScorecardChangeTopicPerformanceMetric
+# GamificationScorecardChangeTopicPerformanceMetric
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **metric** | <!----><!---->[**GamificationScorecardChangeTopicMetric**](GamificationScorecardChangeTopicMetric.html)<!----> |  |  [optional] |
-| **points** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **value** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-| **punctualityEvents** | <!----><!---->[**List&lt;GamificationScorecardChangeTopicPunctualityEvent&gt;**](GamificationScorecardChangeTopicPunctualityEvent.html)<!----> |  |  [optional] |
-| **evaluationDetails** | <!----><!---->[**List&lt;GamificationScorecardChangeTopicEvaluationDetail&gt;**](GamificationScorecardChangeTopicEvaluationDetail.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **metric** | [**GamificationScorecardChangeTopicMetric**](GamificationScorecardChangeTopicMetric) |  |  [optional] |
+| **points** | **Integer** |  |  [optional] |
+| **value** | [**BigDecimal**](BigDecimal) |  |  [optional] |
+| **punctualityEvents** | [**List&lt;GamificationScorecardChangeTopicPunctualityEvent&gt;**](GamificationScorecardChangeTopicPunctualityEvent) |  |  [optional] |
+| **evaluationDetails** | [**List&lt;GamificationScorecardChangeTopicEvaluationDetail&gt;**](GamificationScorecardChangeTopicEvaluationDetail) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,20 +1,14 @@
----
-title: ResponseFilter
----
-## ResponseFilter
+# ResponseFilter
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | <!----><!---->**String**<!----> | Field to filter on. Allowed values are 'name', 'libraryId', 'text.contentType', 'messagingTemplate' and 'responseType' |  |
-| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | Filter operation: IN, EQUALS, NOTEQUALS. |  |
-| **values** | <!----><!---->**List&lt;String&gt;**<!----> | Values to filter on. If name is 'responseType' then allowed values are 'CampaignSmsTemplate', 'CampaignEmailTemplate', 'Footer' and 'Signature' |  |
-{: class="table table-striped"}
+| **name** | **String** | Field to filter on. Allowed values are 'name', 'libraryId', 'text.contentType', 'messagingTemplate' and 'responseType' |  |
+| **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | Filter operation: IN, EQUALS, NOTEQUALS. |  |
+| **values** | **List&lt;String&gt;** | Values to filter on. If name is 'responseType' then allowed values are 'CampaignSmsTemplate', 'CampaignEmailTemplate', 'Footer' and 'Signature' |  |
 
-
-<a name="OperatorEnum"></a>
 
 ## Enum: OperatorEnum
 
@@ -24,7 +18,8 @@ title: ResponseFilter
 | IN | &quot;IN&quot; | 
 | EQUALS | &quot;EQUALS&quot; | 
 | NOTEQUALS | &quot;NOTEQUALS&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

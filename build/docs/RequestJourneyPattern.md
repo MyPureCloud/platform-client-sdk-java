@@ -1,22 +1,16 @@
----
-title: RequestJourneyPattern
----
-## RequestJourneyPattern
+# RequestJourneyPattern
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **criteria** | <!----><!---->[**List&lt;RequestCriteria&gt;**](RequestCriteria.html)<!----> | A list of one or more criteria to satisfy. |  |
-| **count** | <!----><!---->**Integer**<!----> | The number of times the pattern must match. |  |
-| **streamType** | [**StreamTypeEnum**](#StreamTypeEnum)<!----> | The stream type for which this pattern can be matched on. |  |
-| **sessionType** | <!----><!---->**String**<!----> | The session type for which this pattern can be matched on. |  |
-| **eventName** | <!----><!---->**String**<!----> | The name of the event for which this pattern can be matched on. |  [optional] |
-{: class="table table-striped"}
+| **criteria** | [**List&lt;RequestCriteria&gt;**](RequestCriteria) | A list of one or more criteria to satisfy. |  |
+| **count** | **Integer** | The number of times the pattern must match. |  |
+| **streamType** | [**StreamTypeEnum**](#Enum--StreamTypeEnum) | The stream type for which this pattern can be matched on. |  |
+| **sessionType** | **String** | The session type for which this pattern can be matched on. |  |
+| **eventName** | **String** | The name of the event for which this pattern can be matched on. |  [optional] |
 
-
-<a name="StreamTypeEnum"></a>
 
 ## Enum: StreamTypeEnum
 
@@ -27,7 +21,8 @@ title: RequestJourneyPattern
 | CUSTOM | &quot;Custom&quot; | 
 | CONVERSATION | &quot;Conversation&quot; | 
 | APP | &quot;App&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

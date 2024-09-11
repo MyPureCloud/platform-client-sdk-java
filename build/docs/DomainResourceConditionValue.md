@@ -1,21 +1,15 @@
----
-title: DomainResourceConditionValue
----
-## DomainResourceConditionValue
+# DomainResourceConditionValue
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **user** | <!----><!---->[**User**](User.html)<!----> |  |  [optional] |
-| **queue** | <!----><!---->[**Queue**](Queue.html)<!----> |  |  [optional] |
-| **value** | <!----><!---->**String**<!----> |  |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **user** | [**User**](User) |  |  [optional] |
+| **queue** | [**Queue**](Queue) |  |  [optional] |
+| **value** | **String** |  |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -26,7 +20,8 @@ title: DomainResourceConditionValue
 | VARIABLE | &quot;VARIABLE&quot; | 
 | USER | &quot;USER&quot; | 
 | QUEUE | &quot;QUEUE&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

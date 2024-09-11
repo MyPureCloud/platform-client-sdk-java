@@ -1,17 +1,15 @@
----
-title: KnowledgeDocumentBulkUpdateEntity
----
-## KnowledgeDocumentBulkUpdateEntity
+# KnowledgeDocumentBulkUpdateEntity
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **categoryId** | <!----><!---->**String**<!----> | The category associated with the document. |  [optional] |
-| **labelIds** | <!----><!---->**List&lt;String&gt;**<!----> | The ids of labels associated with the document. |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **categoryId** | **String** | The category associated with the document. |  [optional] |
+| **labelIds** | **List&lt;String&gt;** | The ids of labels associated with the document. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

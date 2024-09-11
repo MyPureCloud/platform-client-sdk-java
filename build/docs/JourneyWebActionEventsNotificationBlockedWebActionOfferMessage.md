@@ -1,27 +1,21 @@
----
-title: JourneyWebActionEventsNotificationBlockedWebActionOfferMessage
----
-## JourneyWebActionEventsNotificationBlockedWebActionOfferMessage
+# JourneyWebActionEventsNotificationBlockedWebActionOfferMessage
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **action** | <!----><!---->[**JourneyWebActionEventsNotificationEventAction**](JourneyWebActionEventsNotificationEventAction.html)<!----> |  |  [optional] |
-| **actionMap** | <!----><!---->[**JourneyWebActionEventsNotificationActionMap**](JourneyWebActionEventsNotificationActionMap.html)<!----> |  |  [optional] |
-| **actionTarget** | <!----><!---->[**JourneyWebActionEventsNotificationActionTarget**](JourneyWebActionEventsNotificationActionTarget.html)<!----> |  |  [optional] |
-| **blockingReason** | [**BlockingReasonEnum**](#BlockingReasonEnum)<!----> |  |  [optional] |
-| **blockingActionMap** | <!----><!---->[**JourneyWebActionEventsNotificationActionMap**](JourneyWebActionEventsNotificationActionMap.html)<!----> |  |  [optional] |
-| **blockingAction** | <!----><!---->[**JourneyWebActionEventsNotificationEventAction**](JourneyWebActionEventsNotificationEventAction.html)<!----> |  |  [optional] |
-| **blockingFrequencyCapBehaviour** | [**BlockingFrequencyCapBehaviourEnum**](#BlockingFrequencyCapBehaviourEnum)<!----> |  |  [optional] |
-| **blockingPageUrlConditions** | <!----><!---->[**List&lt;JourneyWebActionEventsNotificationActionMapPageUrlCondition&gt;**](JourneyWebActionEventsNotificationActionMapPageUrlCondition.html)<!----> |  |  [optional] |
-| **blockingScheduleGroup** | <!----><!---->[**JourneyWebActionEventsNotificationScheduleGroup**](JourneyWebActionEventsNotificationScheduleGroup.html)<!----> |  |  [optional] |
-| **blockingEmergencyScheduleGroup** | <!----><!---->[**JourneyWebActionEventsNotificationEmergencyGroup**](JourneyWebActionEventsNotificationEmergencyGroup.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **action** | [**JourneyWebActionEventsNotificationEventAction**](JourneyWebActionEventsNotificationEventAction) |  |  [optional] |
+| **actionMap** | [**JourneyWebActionEventsNotificationActionMap**](JourneyWebActionEventsNotificationActionMap) |  |  [optional] |
+| **actionTarget** | [**JourneyWebActionEventsNotificationActionTarget**](JourneyWebActionEventsNotificationActionTarget) |  |  [optional] |
+| **blockingReason** | [**BlockingReasonEnum**](#Enum--BlockingReasonEnum) |  |  [optional] |
+| **blockingActionMap** | [**JourneyWebActionEventsNotificationActionMap**](JourneyWebActionEventsNotificationActionMap) |  |  [optional] |
+| **blockingAction** | [**JourneyWebActionEventsNotificationEventAction**](JourneyWebActionEventsNotificationEventAction) |  |  [optional] |
+| **blockingFrequencyCapBehaviour** | [**BlockingFrequencyCapBehaviourEnum**](#Enum--BlockingFrequencyCapBehaviourEnum) |  |  [optional] |
+| **blockingPageUrlConditions** | [**List&lt;JourneyWebActionEventsNotificationActionMapPageUrlCondition&gt;**](JourneyWebActionEventsNotificationActionMapPageUrlCondition) |  |  [optional] |
+| **blockingScheduleGroup** | [**JourneyWebActionEventsNotificationScheduleGroup**](JourneyWebActionEventsNotificationScheduleGroup) |  |  [optional] |
+| **blockingEmergencyScheduleGroup** | [**JourneyWebActionEventsNotificationEmergencyGroup**](JourneyWebActionEventsNotificationEmergencyGroup) |  |  [optional] |
 
-
-<a name="BlockingReasonEnum"></a>
 
 ## Enum: BlockingReasonEnum
 
@@ -37,10 +31,7 @@ title: JourneyWebActionEventsNotificationBlockedWebActionOfferMessage
 | NOAVAILABLEAGENTS | &quot;NoAvailableAgents&quot; | 
 | FREQUENCYCAPPING | &quot;FrequencyCapping&quot; | 
 | OFFEREDOUTSIDESCHEDULE | &quot;OfferedOutsideSchedule&quot; | 
-{: class="table table-striped"}
 
-
-<a name="BlockingFrequencyCapBehaviourEnum"></a>
 
 ## Enum: BlockingFrequencyCapBehaviourEnum
 
@@ -51,7 +42,8 @@ title: JourneyWebActionEventsNotificationBlockedWebActionOfferMessage
 | CAPONCEFINALIZED | &quot;CapOnceFinalized&quot; | 
 | CAPONCEREJECTED | &quot;CapOnceRejected&quot; | 
 | CAPFORPERIOD | &quot;CapForPeriod&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

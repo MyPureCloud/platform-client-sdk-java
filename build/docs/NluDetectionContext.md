@@ -1,16 +1,14 @@
----
-title: NluDetectionContext
----
-## NluDetectionContext
+# NluDetectionContext
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **intent** | <!----><!---->[**ContextIntent**](ContextIntent.html)<!----> | Restrict detection to this intent. |  [optional] |
-| **entity** | <!----><!---->[**ContextEntity**](ContextEntity.html)<!----> | Use this entity to restrict detection. |  [optional] |
-{: class="table table-striped"}
+| **intent** | [**ContextIntent**](ContextIntent) | Restrict detection to this intent. |  [optional] |
+| **entity** | [**ContextEntity**](ContextEntity) | Use this entity to restrict detection. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

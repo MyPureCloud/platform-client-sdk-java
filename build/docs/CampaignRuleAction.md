@@ -1,21 +1,15 @@
----
-title: CampaignRuleAction
----
-## CampaignRuleAction
+# CampaignRuleAction
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **parameters** | <!----><!---->[**CampaignRuleParameters**](CampaignRuleParameters.html)<!----> | The parameters for the CampaignRuleAction. Required for certain actionTypes. |  [optional] |
-| **actionType** | [**ActionTypeEnum**](#ActionTypeEnum)<!----> | The action to take on the campaignRuleActionEntities. |  |
-| **campaignRuleActionEntities** | <!----><!---->[**CampaignRuleActionEntities**](CampaignRuleActionEntities.html)<!----> | The list of entities that this action will apply to. |  |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **parameters** | [**CampaignRuleParameters**](CampaignRuleParameters) | The parameters for the CampaignRuleAction. Required for certain actionTypes. |  [optional] |
+| **actionType** | [**ActionTypeEnum**](#Enum--ActionTypeEnum) | The action to take on the campaignRuleActionEntities. |  |
+| **campaignRuleActionEntities** | [**CampaignRuleActionEntities**](CampaignRuleActionEntities) | The list of entities that this action will apply to. |  |
 
-
-<a name="ActionTypeEnum"></a>
 
 ## Enum: ActionTypeEnum
 
@@ -34,7 +28,8 @@ title: CampaignRuleAction
 | SETCAMPAIGNWEIGHT | &quot;setCampaignWeight&quot; | 
 | SETCAMPAIGNMAXCALLSPERAGENT | &quot;setCampaignMaxCallsPerAgent&quot; | 
 | CHANGECAMPAIGNQUEUE | &quot;changeCampaignQueue&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

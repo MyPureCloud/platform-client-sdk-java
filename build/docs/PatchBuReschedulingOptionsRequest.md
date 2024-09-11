@@ -1,15 +1,13 @@
----
-title: PatchBuReschedulingOptionsRequest
----
-## PatchBuReschedulingOptionsRequest
+# PatchBuReschedulingOptionsRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **managementUnits** | <!----><!---->[**List&lt;PatchBuReschedulingOptionsManagementUnitRequest&gt;**](PatchBuReschedulingOptionsManagementUnitRequest.html)<!----> | Per-management unit rescheduling options to update |  [optional] |
-{: class="table table-striped"}
+| **managementUnits** | [**List&lt;PatchBuReschedulingOptionsManagementUnitRequest&gt;**](PatchBuReschedulingOptionsManagementUnitRequest) | Per-management unit rescheduling options to update |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,25 +1,19 @@
----
-title: FacetEntry
----
-## FacetEntry
+# FacetEntry
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **attribute** | <!----><!---->[**TermAttribute**](TermAttribute.html)<!----> |  |  [optional] |
-| **statistics** | <!----><!---->[**FacetStatistics**](FacetStatistics.html)<!----> |  |  [optional] |
-| **other** | <!----><!---->**Long**<!----> |  |  [optional] |
-| **total** | <!----><!---->**Long**<!----> |  |  [optional] |
-| **missing** | <!----><!---->**Long**<!----> |  |  [optional] |
-| **termCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **termType** | [**TermTypeEnum**](#TermTypeEnum)<!----> |  |  [optional] |
-| **terms** | <!----><!---->[**List&lt;FacetTerm&gt;**](FacetTerm.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **attribute** | [**TermAttribute**](TermAttribute) |  |  [optional] |
+| **statistics** | [**FacetStatistics**](FacetStatistics) |  |  [optional] |
+| **other** | **Long** |  |  [optional] |
+| **total** | **Long** |  |  [optional] |
+| **missing** | **Long** |  |  [optional] |
+| **termCount** | **Integer** |  |  [optional] |
+| **termType** | [**TermTypeEnum**](#Enum--TermTypeEnum) |  |  [optional] |
+| **terms** | [**List&lt;FacetTerm&gt;**](FacetTerm) |  |  [optional] |
 
-
-<a name="TermTypeEnum"></a>
 
 ## Enum: TermTypeEnum
 
@@ -32,7 +26,8 @@ title: FacetEntry
 | DATERANGE | &quot;DATERANGE&quot; | 
 | DATEHISTOGRAM | &quot;DATEHISTOGRAM&quot; | 
 | ID | &quot;ID&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,16 +1,14 @@
----
-title: ActionContractInput
----
-## ActionContractInput
+# ActionContractInput
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **input** | <!----><!---->[**PostInputContract**](PostInputContract.html)<!----> | Execution input contract |  |
-| **output** | <!----><!---->[**PostOutputContract**](PostOutputContract.html)<!----> | Execution output contract |  |
-{: class="table table-striped"}
+| **input** | [**PostInputContract**](PostInputContract) | Execution input contract |  |
+| **output** | [**PostOutputContract**](PostOutputContract) | Execution output contract |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

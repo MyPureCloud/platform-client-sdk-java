@@ -1,51 +1,45 @@
----
-title: ExternalContactsContactChangedTopicContact
----
-## ExternalContactsContactChangedTopicContact
+# ExternalContactsContactChangedTopicContact
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **division** | <!----><!---->[**ExternalContactsContactChangedTopicDivision**](ExternalContactsContactChangedTopicDivision.html)<!----> |  |  [optional] |
-| **externalOrganization** | <!----><!---->[**ExternalContactsContactChangedTopicExternalOrganization**](ExternalContactsContactChangedTopicExternalOrganization.html)<!----> |  |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-| **firstName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **middleName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **lastName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **salutation** | <!----><!---->**String**<!----> |  |  [optional] |
-| **title** | <!----><!---->**String**<!----> |  |  [optional] |
-| **workPhone** | <!----><!---->[**ExternalContactsContactChangedTopicPhoneNumber**](ExternalContactsContactChangedTopicPhoneNumber.html)<!----> |  |  [optional] |
-| **cellPhone** | <!----><!---->[**ExternalContactsContactChangedTopicPhoneNumber**](ExternalContactsContactChangedTopicPhoneNumber.html)<!----> |  |  [optional] |
-| **homePhone** | <!----><!---->[**ExternalContactsContactChangedTopicPhoneNumber**](ExternalContactsContactChangedTopicPhoneNumber.html)<!----> |  |  [optional] |
-| **otherPhone** | <!----><!---->[**ExternalContactsContactChangedTopicPhoneNumber**](ExternalContactsContactChangedTopicPhoneNumber.html)<!----> |  |  [optional] |
-| **workEmail** | <!----><!---->**String**<!----> |  |  [optional] |
-| **personalEmail** | <!----><!---->**String**<!----> |  |  [optional] |
-| **otherEmail** | <!----><!---->**String**<!----> |  |  [optional] |
-| **address** | <!----><!---->[**ExternalContactsContactChangedTopicContactAddress**](ExternalContactsContactChangedTopicContactAddress.html)<!----> |  |  [optional] |
-| **surveyOptOut** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **externalSystemUrl** | <!----><!---->**String**<!----> |  |  [optional] |
-| **twitterId** | <!----><!---->[**ExternalContactsContactChangedTopicTwitterId**](ExternalContactsContactChangedTopicTwitterId.html)<!----> |  |  [optional] |
-| **lineId** | <!----><!---->[**ExternalContactsContactChangedTopicLineId**](ExternalContactsContactChangedTopicLineId.html)<!----> |  |  [optional] |
-| **whatsAppId** | <!----><!---->[**ExternalContactsContactChangedTopicWhatsAppId**](ExternalContactsContactChangedTopicWhatsAppId.html)<!----> |  |  [optional] |
-| **facebookId** | <!----><!---->[**ExternalContactsContactChangedTopicFacebookId**](ExternalContactsContactChangedTopicFacebookId.html)<!----> |  |  [optional] |
-| **instagramId** | <!----><!---->[**ExternalContactsContactChangedTopicInstagramId**](ExternalContactsContactChangedTopicInstagramId.html)<!----> |  |  [optional] |
-| **externalIds** | <!----><!---->[**List&lt;ExternalContactsContactChangedTopicExternalId&gt;**](ExternalContactsContactChangedTopicExternalId.html)<!----> |  |  [optional] |
-| **canonicalContactId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **schema** | <!----><!---->[**ExternalContactsContactChangedTopicDataSchema**](ExternalContactsContactChangedTopicDataSchema.html)<!----> |  |  [optional] |
-| **customFields** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
-| **mergeSet** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **mergedFrom** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **mergedTo** | <!----><!---->**String**<!----> |  |  [optional] |
-| **mergeOperation** | <!----><!---->[**ExternalContactsContactChangedTopicMergeOperation**](ExternalContactsContactChangedTopicMergeOperation.html)<!----> |  |  [optional] |
-| **createDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **modifyDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **division** | [**ExternalContactsContactChangedTopicDivision**](ExternalContactsContactChangedTopicDivision) |  |  [optional] |
+| **externalOrganization** | [**ExternalContactsContactChangedTopicExternalOrganization**](ExternalContactsContactChangedTopicExternalOrganization) |  |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
+| **firstName** | **String** |  |  [optional] |
+| **middleName** | **String** |  |  [optional] |
+| **lastName** | **String** |  |  [optional] |
+| **salutation** | **String** |  |  [optional] |
+| **title** | **String** |  |  [optional] |
+| **workPhone** | [**ExternalContactsContactChangedTopicPhoneNumber**](ExternalContactsContactChangedTopicPhoneNumber) |  |  [optional] |
+| **cellPhone** | [**ExternalContactsContactChangedTopicPhoneNumber**](ExternalContactsContactChangedTopicPhoneNumber) |  |  [optional] |
+| **homePhone** | [**ExternalContactsContactChangedTopicPhoneNumber**](ExternalContactsContactChangedTopicPhoneNumber) |  |  [optional] |
+| **otherPhone** | [**ExternalContactsContactChangedTopicPhoneNumber**](ExternalContactsContactChangedTopicPhoneNumber) |  |  [optional] |
+| **workEmail** | **String** |  |  [optional] |
+| **personalEmail** | **String** |  |  [optional] |
+| **otherEmail** | **String** |  |  [optional] |
+| **address** | [**ExternalContactsContactChangedTopicContactAddress**](ExternalContactsContactChangedTopicContactAddress) |  |  [optional] |
+| **surveyOptOut** | **Boolean** |  |  [optional] |
+| **externalSystemUrl** | **String** |  |  [optional] |
+| **twitterId** | [**ExternalContactsContactChangedTopicTwitterId**](ExternalContactsContactChangedTopicTwitterId) |  |  [optional] |
+| **lineId** | [**ExternalContactsContactChangedTopicLineId**](ExternalContactsContactChangedTopicLineId) |  |  [optional] |
+| **whatsAppId** | [**ExternalContactsContactChangedTopicWhatsAppId**](ExternalContactsContactChangedTopicWhatsAppId) |  |  [optional] |
+| **facebookId** | [**ExternalContactsContactChangedTopicFacebookId**](ExternalContactsContactChangedTopicFacebookId) |  |  [optional] |
+| **instagramId** | [**ExternalContactsContactChangedTopicInstagramId**](ExternalContactsContactChangedTopicInstagramId) |  |  [optional] |
+| **externalIds** | [**List&lt;ExternalContactsContactChangedTopicExternalId&gt;**](ExternalContactsContactChangedTopicExternalId) |  |  [optional] |
+| **canonicalContactId** | **String** |  |  [optional] |
+| **schema** | [**ExternalContactsContactChangedTopicDataSchema**](ExternalContactsContactChangedTopicDataSchema) |  |  [optional] |
+| **customFields** | **Map&lt;String, Object&gt;** |  |  [optional] |
+| **mergeSet** | **List&lt;String&gt;** |  |  [optional] |
+| **mergedFrom** | **List&lt;String&gt;** |  |  [optional] |
+| **mergedTo** | **String** |  |  [optional] |
+| **mergeOperation** | [**ExternalContactsContactChangedTopicMergeOperation**](ExternalContactsContactChangedTopicMergeOperation) |  |  [optional] |
+| **createDate** | [**Date**](Date) |  |  [optional] |
+| **modifyDate** | [**Date**](Date) |  |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -55,7 +49,8 @@ title: ExternalContactsContactChangedTopicContact
 | EPHEMERAL | &quot;Ephemeral&quot; | 
 | IDENTIFIED | &quot;Identified&quot; | 
 | CURATED | &quot;Curated&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

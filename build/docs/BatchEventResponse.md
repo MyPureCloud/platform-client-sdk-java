@@ -1,15 +1,13 @@
----
-title: BatchEventResponse
----
-## BatchEventResponse
+# BatchEventResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **errors** | <!----><!---->[**List&lt;EventError&gt;**](EventError.html)<!----> | A list of validation or server errors that occurred for posted events. |  [optional] |
-{: class="table table-striped"}
+| **errors** | [**List&lt;EventError&gt;**](EventError) | A list of validation or server errors that occurred for posted events. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,15 +1,13 @@
----
-title: ListWrapperFixedAvailability
----
-## ListWrapperFixedAvailability
+# ListWrapperFixedAvailability
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **values** | <!----><!---->[**List&lt;FixedAvailability&gt;**](FixedAvailability.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **values** | [**List&lt;FixedAvailability&gt;**](FixedAvailability) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

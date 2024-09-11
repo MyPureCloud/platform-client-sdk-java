@@ -1,28 +1,23 @@
----
-title: TeamsApi
----
-## TeamsApi
+# TeamsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteTeam**](TeamsApi.html#deleteTeam) | Delete team |
-| [**deleteTeamMembers**](TeamsApi.html#deleteTeamMembers) | Delete team members |
-| [**getTeam**](TeamsApi.html#getTeam) | Get team |
-| [**getTeamMembers**](TeamsApi.html#getTeamMembers) | Get team membership |
-| [**getTeams**](TeamsApi.html#getTeams) | Get Team listing |
-| [**patchTeam**](TeamsApi.html#patchTeam) | Update team |
-| [**postAnalyticsTeamsActivityQuery**](TeamsApi.html#postAnalyticsTeamsActivityQuery) | Query for team activity observations |
-| [**postTeamMembers**](TeamsApi.html#postTeamMembers) | Add team members |
-| [**postTeams**](TeamsApi.html#postTeams) | Create a team |
-| [**postTeamsSearch**](TeamsApi.html#postTeamsSearch) | Search resources. |
+| [**deleteTeam**](TeamsApi#deleteTeam) | Delete team |
+| [**deleteTeamMembers**](TeamsApi#deleteTeamMembers) | Delete team members |
+| [**getTeam**](TeamsApi#getTeam) | Get team |
+| [**getTeamMembers**](TeamsApi#getTeamMembers) | Get team membership |
+| [**getTeams**](TeamsApi#getTeams) | Get Team listing |
+| [**patchTeam**](TeamsApi#patchTeam) | Update team |
+| [**postAnalyticsTeamsActivityQuery**](TeamsApi#postAnalyticsTeamsActivityQuery) | Query for team activity observations |
+| [**postTeamMembers**](TeamsApi#postTeamMembers) | Add team members |
+| [**postTeams**](TeamsApi#postTeams) | Create a team |
+| [**postTeamsSearch**](TeamsApi#postTeamsSearch) | Search resources. |
 {: class="table-striped"}
 
-<a name="deleteTeam"></a>
 
 # **deleteTeam**
-
 
 
 > Void deleteTeam(teamId)
@@ -79,10 +74,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteTeamMembers"></a>
 
 # **deleteTeamMembers**
-
 
 
 > Void deleteTeamMembers(teamId, id)
@@ -141,13 +134,11 @@ try {
 
 null (empty response body)
 
-<a name="getTeam"></a>
 
 # **getTeam**
 
 
-
-> [Team](Team.html) getTeam(teamId)
+> [Team](Team) getTeam(teamId)
 
 Get team
 
@@ -200,15 +191,13 @@ try {
 
 ### Return type
 
-[**Team**](Team.html)
+[**Team**](Team)
 
-<a name="getTeamMembers"></a>
 
 # **getTeamMembers**
 
 
-
-> [TeamMemberEntityListing](TeamMemberEntityListing.html) getTeamMembers(teamId, pageSize, before, after, expand)
+> [TeamMemberEntityListing](TeamMemberEntityListing) getTeamMembers(teamId, pageSize, before, after, expand)
 
 Get team membership
 
@@ -269,15 +258,13 @@ try {
 
 ### Return type
 
-[**TeamMemberEntityListing**](TeamMemberEntityListing.html)
+[**TeamMemberEntityListing**](TeamMemberEntityListing)
 
-<a name="getTeams"></a>
 
 # **getTeams**
 
 
-
-> [TeamEntityListing](TeamEntityListing.html) getTeams(pageSize, name, after, before, expand)
+> [TeamEntityListing](TeamEntityListing) getTeams(pageSize, name, after, before, expand)
 
 Get Team listing
 
@@ -338,15 +325,13 @@ try {
 
 ### Return type
 
-[**TeamEntityListing**](TeamEntityListing.html)
+[**TeamEntityListing**](TeamEntityListing)
 
-<a name="patchTeam"></a>
 
 # **patchTeam**
 
 
-
-> [Team](Team.html) patchTeam(teamId, body)
+> [Team](Team) patchTeam(teamId, body)
 
 Update team
 
@@ -395,21 +380,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **teamId** | **String**| Team ID | 
-| **body** | [**Team**](Team.html)| Team | 
+| **body** | [**Team**](Team)| Team | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Team**](Team.html)
+[**Team**](Team)
 
-<a name="postAnalyticsTeamsActivityQuery"></a>
 
 # **postAnalyticsTeamsActivityQuery**
 
 
-
-> [TeamActivityResponse](TeamActivityResponse.html) postAnalyticsTeamsActivityQuery(body, pageSize, pageNumber)
+> [TeamActivityResponse](TeamActivityResponse) postAnalyticsTeamsActivityQuery(body, pageSize, pageNumber)
 
 Query for team activity observations
 
@@ -458,7 +441,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**TeamActivityQuery**](TeamActivityQuery.html)| query | 
+| **body** | [**TeamActivityQuery**](TeamActivityQuery)| query | 
 | **pageSize** | **Integer**| The desired page size | [optional] 
 | **pageNumber** | **Integer**| The desired page number | [optional] 
 {: class="table-striped"}
@@ -466,15 +449,13 @@ try {
 
 ### Return type
 
-[**TeamActivityResponse**](TeamActivityResponse.html)
+[**TeamActivityResponse**](TeamActivityResponse)
 
-<a name="postTeamMembers"></a>
 
 # **postTeamMembers**
 
 
-
-> [TeamMemberAddListingResponse](TeamMemberAddListingResponse.html) postTeamMembers(teamId, body)
+> [TeamMemberAddListingResponse](TeamMemberAddListingResponse) postTeamMembers(teamId, body)
 
 Add team members
 
@@ -523,21 +504,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **teamId** | **String**| Team ID | 
-| **body** | [**TeamMembers**](TeamMembers.html)| TeamMembers | 
+| **body** | [**TeamMembers**](TeamMembers)| TeamMembers | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**TeamMemberAddListingResponse**](TeamMemberAddListingResponse.html)
+[**TeamMemberAddListingResponse**](TeamMemberAddListingResponse)
 
-<a name="postTeams"></a>
 
 # **postTeams**
 
 
-
-> [Team](Team.html) postTeams(body)
+> [Team](Team) postTeams(body)
 
 Create a team
 
@@ -584,21 +563,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Team**](Team.html)| Team | 
+| **body** | [**Team**](Team)| Team | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Team**](Team.html)
+[**Team**](Team)
 
-<a name="postTeamsSearch"></a>
 
 # **postTeamsSearch**
 
 
-
-> [TeamsSearchResponse](TeamsSearchResponse.html) postTeamsSearch(body)
+> [TeamsSearchResponse](TeamsSearchResponse) postTeamsSearch(body)
 
 Search resources.
 
@@ -645,11 +622,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**TeamSearchRequest**](TeamSearchRequest.html)| Search request options | 
+| **body** | [**TeamSearchRequest**](TeamSearchRequest)| Search request options | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**TeamsSearchResponse**](TeamsSearchResponse.html)
+[**TeamsSearchResponse**](TeamsSearchResponse)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,26 +1,20 @@
----
-title: GetRulesQuery
----
-## GetRulesQuery
+# GetRulesQuery
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **ruleType** | [**RuleTypeEnum**](#RuleTypeEnum)<!----> | The rule type of the alerts the query will return |  |
-| **queryType** | [**QueryTypeEnum**](#QueryTypeEnum)<!----> | The type of query being performed. |  |
-| **enabledType** | [**EnabledTypeEnum**](#EnabledTypeEnum)<!----> | The state of the rule the query will return.  The accepted choices are Enabled, Disabled, or All |  [optional] |
-| **pageNumber** | <!----><!---->**Integer**<!----> | The page number of the queried response |  [optional] |
-| **pageSize** | <!----><!---->**Integer**<!----> | The number of entities to return of the queried response.  The max is 25 |  [optional] |
-| **sortBy** | [**SortByEnum**](#SortByEnum)<!----> | The field to sort responses by.  The accepted choices are Name and DateStart |  [optional] |
-| **sortOrder** | [**SortOrderEnum**](#SortOrderEnum)<!----> | The order in which response will be sorted.  The accepted choices are Asc and Desc |  [optional] |
-| **ruleName** | <!----><!---->**String**<!----> | The name of the rule being queries. |  [optional] |
-| **nameSearchType** | [**NameSearchTypeEnum**](#NameSearchTypeEnum)<!----> | Specifies how strict the name search needs to be. Expected values are Exact and Contains if querying by name. |  [optional] |
-{: class="table table-striped"}
+| **ruleType** | [**RuleTypeEnum**](#Enum--RuleTypeEnum) | The rule type of the alerts the query will return |  |
+| **queryType** | [**QueryTypeEnum**](#Enum--QueryTypeEnum) | The type of query being performed. |  |
+| **enabledType** | [**EnabledTypeEnum**](#Enum--EnabledTypeEnum) | The state of the rule the query will return.  The accepted choices are Enabled, Disabled, or All |  [optional] |
+| **pageNumber** | **Integer** | The page number of the queried response |  [optional] |
+| **pageSize** | **Integer** | The number of entities to return of the queried response.  The max is 25 |  [optional] |
+| **sortBy** | [**SortByEnum**](#Enum--SortByEnum) | The field to sort responses by.  The accepted choices are Name and DateStart |  [optional] |
+| **sortOrder** | [**SortOrderEnum**](#Enum--SortOrderEnum) | The order in which response will be sorted.  The accepted choices are Asc and Desc |  [optional] |
+| **ruleName** | **String** | The name of the rule being queries. |  [optional] |
+| **nameSearchType** | [**NameSearchTypeEnum**](#Enum--NameSearchTypeEnum) | Specifies how strict the name search needs to be. Expected values are Exact and Contains if querying by name. |  [optional] |
 
-
-<a name="RuleTypeEnum"></a>
 
 ## Enum: RuleTypeEnum
 
@@ -30,10 +24,7 @@ title: GetRulesQuery
 | CONVERSATION | &quot;Conversation&quot; | 
 | PRESENCE | &quot;Presence&quot; | 
 | ALL | &quot;All&quot; | 
-{: class="table table-striped"}
 
-
-<a name="QueryTypeEnum"></a>
 
 ## Enum: QueryTypeEnum
 
@@ -42,10 +33,7 @@ title: GetRulesQuery
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INFO | &quot;Info&quot; | 
 | COUNT | &quot;Count&quot; | 
-{: class="table table-striped"}
 
-
-<a name="EnabledTypeEnum"></a>
 
 ## Enum: EnabledTypeEnum
 
@@ -55,10 +43,7 @@ title: GetRulesQuery
 | ENABLED | &quot;Enabled&quot; | 
 | DISABLED | &quot;Disabled&quot; | 
 | ALL | &quot;All&quot; | 
-{: class="table table-striped"}
 
-
-<a name="SortByEnum"></a>
 
 ## Enum: SortByEnum
 
@@ -67,10 +52,7 @@ title: GetRulesQuery
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | NAME | &quot;Name&quot; | 
 | DATECREATED | &quot;DateCreated&quot; | 
-{: class="table table-striped"}
 
-
-<a name="SortOrderEnum"></a>
 
 ## Enum: SortOrderEnum
 
@@ -79,10 +61,7 @@ title: GetRulesQuery
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ASC | &quot;Asc&quot; | 
 | DESC | &quot;Desc&quot; | 
-{: class="table table-striped"}
 
-
-<a name="NameSearchTypeEnum"></a>
 
 ## Enum: NameSearchTypeEnum
 
@@ -92,7 +71,8 @@ title: GetRulesQuery
 | EXACT | &quot;Exact&quot; | 
 | CONTAINS | &quot;Contains&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

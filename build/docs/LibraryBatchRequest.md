@@ -1,15 +1,13 @@
----
-title: LibraryBatchRequest
----
-## LibraryBatchRequest
+# LibraryBatchRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **libraryIds** | <!----><!---->**List&lt;String&gt;**<!----> | List of Library IDs |  |
-{: class="table table-striped"}
+| **libraryIds** | **List&lt;String&gt;** | List of Library IDs |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

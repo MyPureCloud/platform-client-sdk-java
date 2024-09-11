@@ -1,19 +1,13 @@
----
-title: WorkitemWrapupUpdate
----
-## WorkitemWrapupUpdate
+# WorkitemWrapupUpdate
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **action** | [**ActionEnum**](#ActionEnum)<!----> | Action to be performed for the wrapup code. |  |
-| **wrapupCode** | <!----><!---->**String**<!----> | The wrapup code which will be added/removed. |  |
-{: class="table table-striped"}
+| **action** | [**ActionEnum**](#Enum--ActionEnum) | Action to be performed for the wrapup code. |  |
+| **wrapupCode** | **String** | The wrapup code which will be added/removed. |  |
 
-
-<a name="ActionEnum"></a>
 
 ## Enum: ActionEnum
 
@@ -22,7 +16,8 @@ title: WorkitemWrapupUpdate
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ADD | &quot;Add&quot; | 
 | REMOVE | &quot;Remove&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

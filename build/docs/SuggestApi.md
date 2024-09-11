@@ -1,25 +1,20 @@
----
-title: SuggestApi
----
-## SuggestApi
+# SuggestApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**getSearch**](SuggestApi.html#getSearch) | Search using the q64 value returned from a previous search. |
-| [**getSearchSuggest**](SuggestApi.html#getSearchSuggest) | Suggest resources using the q64 value returned from a previous suggest query. |
-| [**postSearch**](SuggestApi.html#postSearch) | Search resources. |
-| [**postSearchSuggest**](SuggestApi.html#postSearchSuggest) | Suggest resources. |
+| [**getSearch**](SuggestApi#getSearch) | Search using the q64 value returned from a previous search. |
+| [**getSearchSuggest**](SuggestApi#getSearchSuggest) | Suggest resources using the q64 value returned from a previous suggest query. |
+| [**postSearch**](SuggestApi#postSearch) | Search resources. |
+| [**postSearchSuggest**](SuggestApi#postSearchSuggest) | Suggest resources. |
 {: class="table-striped"}
 
-<a name="getSearch"></a>
 
 # **getSearch**
 
 
-
-> [JsonNodeSearchResponse](JsonNodeSearchResponse.html) getSearch(q64, expand, profile)
+> [JsonNodeSearchResponse](JsonNodeSearchResponse) getSearch(q64, expand, profile)
 
 Search using the q64 value returned from a previous search.
 
@@ -69,22 +64,20 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **q64** | **String**| q64 | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription, images, addressVerificationDetails 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription, images, addressVerificationDetails 
 | **profile** | **Boolean**| profile | [optional] [default to true] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)
+[**JsonNodeSearchResponse**](JsonNodeSearchResponse)
 
-<a name="getSearchSuggest"></a>
 
 # **getSearchSuggest**
 
 
-
-> [JsonNodeSearchResponse](JsonNodeSearchResponse.html) getSearchSuggest(q64, expand, profile)
+> [JsonNodeSearchResponse](JsonNodeSearchResponse) getSearchSuggest(q64, expand, profile)
 
 Suggest resources using the q64 value returned from a previous suggest query.
 
@@ -134,22 +127,20 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **q64** | **String**| q64 | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription, images, addressVerificationDetails 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription, images, addressVerificationDetails 
 | **profile** | **Boolean**| profile | [optional] [default to true] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)
+[**JsonNodeSearchResponse**](JsonNodeSearchResponse)
 
-<a name="postSearch"></a>
 
 # **postSearch**
 
 
-
-> [JsonNodeSearchResponse](JsonNodeSearchResponse.html) postSearch(body, profile)
+> [JsonNodeSearchResponse](JsonNodeSearchResponse) postSearch(body, profile)
 
 Search resources.
 
@@ -197,22 +188,20 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**SearchRequest**](SearchRequest.html)| Search request options | 
+| **body** | [**SearchRequest**](SearchRequest)| Search request options | 
 | **profile** | **Boolean**| profile | [optional] [default to true] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)
+[**JsonNodeSearchResponse**](JsonNodeSearchResponse)
 
-<a name="postSearchSuggest"></a>
 
 # **postSearchSuggest**
 
 
-
-> [JsonNodeSearchResponse](JsonNodeSearchResponse.html) postSearchSuggest(body, profile)
+> [JsonNodeSearchResponse](JsonNodeSearchResponse) postSearchSuggest(body, profile)
 
 Suggest resources.
 
@@ -260,12 +249,14 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**SuggestSearchRequest**](SuggestSearchRequest.html)| Search request options | 
+| **body** | [**SuggestSearchRequest**](SuggestSearchRequest)| Search request options | 
 | **profile** | **Boolean**| profile | [optional] [default to true] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)
+[**JsonNodeSearchResponse**](JsonNodeSearchResponse)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

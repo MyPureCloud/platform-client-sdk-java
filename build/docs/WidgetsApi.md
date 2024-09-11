@@ -1,23 +1,18 @@
----
-title: WidgetsApi
----
-## WidgetsApi
+# WidgetsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteWidgetsDeployment**](WidgetsApi.html#deleteWidgetsDeployment) | Delete a Widget deployment |
-| [**getWidgetsDeployment**](WidgetsApi.html#getWidgetsDeployment) | Get a Widget deployment |
-| [**getWidgetsDeployments**](WidgetsApi.html#getWidgetsDeployments) | List Widget deployments |
-| [**postWidgetsDeployments**](WidgetsApi.html#postWidgetsDeployments) | Create Widget deployment |
-| [**putWidgetsDeployment**](WidgetsApi.html#putWidgetsDeployment) | Update a Widget deployment |
+| [**deleteWidgetsDeployment**](WidgetsApi#deleteWidgetsDeployment) | Delete a Widget deployment |
+| [**getWidgetsDeployment**](WidgetsApi#getWidgetsDeployment) | Get a Widget deployment |
+| [**getWidgetsDeployments**](WidgetsApi#getWidgetsDeployments) | List Widget deployments |
+| [**postWidgetsDeployments**](WidgetsApi#postWidgetsDeployments) | Create Widget deployment |
+| [**putWidgetsDeployment**](WidgetsApi#putWidgetsDeployment) | Update a Widget deployment |
 {: class="table-striped"}
 
-<a name="deleteWidgetsDeployment"></a>
 
 # **deleteWidgetsDeployment**
-
 
 
 > Void deleteWidgetsDeployment(deploymentId)
@@ -75,13 +70,11 @@ try {
 
 null (empty response body)
 
-<a name="getWidgetsDeployment"></a>
 
 # **getWidgetsDeployment**
 
 
-
-> [WidgetDeployment](WidgetDeployment.html) getWidgetsDeployment(deploymentId)
+> [WidgetDeployment](WidgetDeployment) getWidgetsDeployment(deploymentId)
 
 Get a Widget deployment
 
@@ -135,15 +128,13 @@ try {
 
 ### Return type
 
-[**WidgetDeployment**](WidgetDeployment.html)
+[**WidgetDeployment**](WidgetDeployment)
 
-<a name="getWidgetsDeployments"></a>
 
 # **getWidgetsDeployments**
 
 
-
-> [WidgetDeploymentEntityListing](WidgetDeploymentEntityListing.html) getWidgetsDeployments()
+> [WidgetDeploymentEntityListing](WidgetDeploymentEntityListing) getWidgetsDeployments()
 
 List Widget deployments
 
@@ -193,15 +184,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**WidgetDeploymentEntityListing**](WidgetDeploymentEntityListing.html)
+[**WidgetDeploymentEntityListing**](WidgetDeploymentEntityListing)
 
-<a name="postWidgetsDeployments"></a>
 
 # **postWidgetsDeployments**
 
 
-
-> [WidgetDeployment](WidgetDeployment.html) postWidgetsDeployments(body)
+> [WidgetDeployment](WidgetDeployment) postWidgetsDeployments(body)
 
 Create Widget deployment
 
@@ -249,21 +238,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**WidgetDeployment**](WidgetDeployment.html)| Deployment | 
+| **body** | [**WidgetDeployment**](WidgetDeployment)| Deployment | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**WidgetDeployment**](WidgetDeployment.html)
+[**WidgetDeployment**](WidgetDeployment)
 
-<a name="putWidgetsDeployment"></a>
 
 # **putWidgetsDeployment**
 
 
-
-> [WidgetDeployment](WidgetDeployment.html) putWidgetsDeployment(deploymentId, body)
+> [WidgetDeployment](WidgetDeployment) putWidgetsDeployment(deploymentId, body)
 
 Update a Widget deployment
 
@@ -313,11 +300,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **deploymentId** | **String**| Widget Config Id | 
-| **body** | [**WidgetDeployment**](WidgetDeployment.html)| Deployment | 
+| **body** | [**WidgetDeployment**](WidgetDeployment)| Deployment | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**WidgetDeployment**](WidgetDeployment.html)
+[**WidgetDeployment**](WidgetDeployment)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

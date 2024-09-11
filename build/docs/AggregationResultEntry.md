@@ -1,18 +1,16 @@
----
-title: AggregationResultEntry
----
-## AggregationResultEntry
+# AggregationResultEntry
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **count** | <!----><!---->**Long**<!----> |  |  [optional] |
-| **value** | <!----><!---->**String**<!----> | For termFrequency aggregations |  [optional] |
-| **gte** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> | For numericRange aggregations |  [optional] |
-| **lt** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> | For numericRange aggregations |  [optional] |
-{: class="table table-striped"}
+| **count** | **Long** |  |  [optional] |
+| **value** | **String** | For termFrequency aggregations |  [optional] |
+| **gte** | [**BigDecimal**](BigDecimal) | For numericRange aggregations |  [optional] |
+| **lt** | [**BigDecimal**](BigDecimal) | For numericRange aggregations |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

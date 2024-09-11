@@ -1,27 +1,21 @@
----
-title: JourneyWebActionEventsNotificationWebActionEventsNotification
----
-## JourneyWebActionEventsNotificationWebActionEventsNotification
+# JourneyWebActionEventsNotificationWebActionEventsNotification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **correlationId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **externalContact** | <!----><!---->[**JourneyWebActionEventsNotificationExternalContact**](JourneyWebActionEventsNotificationExternalContact.html)<!----> |  |  [optional] |
-| **createdDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **customerId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **customerIdType** | <!----><!---->**String**<!----> |  |  [optional] |
-| **session** | <!----><!---->[**JourneyWebActionEventsNotificationSession**](JourneyWebActionEventsNotificationSession.html)<!----> |  |  [optional] |
-| **eventType** | [**EventTypeEnum**](#EventTypeEnum)<!----> |  |  [optional] |
-| **webActionEvent** | <!----><!---->[**JourneyWebActionEventsNotificationWebActionMessage**](JourneyWebActionEventsNotificationWebActionMessage.html)<!----> |  |  [optional] |
-| **blockedWebActionOfferEvent** | <!----><!---->[**JourneyWebActionEventsNotificationBlockedWebActionOfferMessage**](JourneyWebActionEventsNotificationBlockedWebActionOfferMessage.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **correlationId** | **String** |  |  [optional] |
+| **externalContact** | [**JourneyWebActionEventsNotificationExternalContact**](JourneyWebActionEventsNotificationExternalContact) |  |  [optional] |
+| **createdDate** | [**Date**](Date) |  |  [optional] |
+| **customerId** | **String** |  |  [optional] |
+| **customerIdType** | **String** |  |  [optional] |
+| **session** | [**JourneyWebActionEventsNotificationSession**](JourneyWebActionEventsNotificationSession) |  |  [optional] |
+| **eventType** | [**EventTypeEnum**](#Enum--EventTypeEnum) |  |  [optional] |
+| **webActionEvent** | [**JourneyWebActionEventsNotificationWebActionMessage**](JourneyWebActionEventsNotificationWebActionMessage) |  |  [optional] |
+| **blockedWebActionOfferEvent** | [**JourneyWebActionEventsNotificationBlockedWebActionOfferMessage**](JourneyWebActionEventsNotificationBlockedWebActionOfferMessage) |  |  [optional] |
 
-
-<a name="EventTypeEnum"></a>
 
 ## Enum: EventTypeEnum
 
@@ -30,7 +24,8 @@ title: JourneyWebActionEventsNotificationWebActionEventsNotification
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | WEBACTIONEVENT | &quot;WebActionEvent&quot; | 
 | BLOCKEDWEBACTIONOFFEREVENT | &quot;BlockedWebActionOfferEvent&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

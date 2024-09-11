@@ -1,20 +1,14 @@
----
-title: ConversationMessageMetadata
----
-## ConversationMessageMetadata
+# ConversationMessageMetadata
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Message type. |  [optional] |
-| **events** | <!----><!---->[**List&lt;ConversationMessageMetadataEvent&gt;**](ConversationMessageMetadataEvent.html)<!----> | List of events metadata |  [optional] |
-| **content** | <!----><!---->[**List&lt;ConversationMessageMetadataContent&gt;**](ConversationMessageMetadataContent.html)<!----> | List of message content |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Message type. |  [optional] |
+| **events** | [**List&lt;ConversationMessageMetadataEvent&gt;**](ConversationMessageMetadataEvent) | List of events metadata |  [optional] |
+| **content** | [**List&lt;ConversationMessageMetadataContent&gt;**](ConversationMessageMetadataContent) | List of message content |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -27,7 +21,8 @@ title: ConversationMessageMetadata
 | EVENT | &quot;Event&quot; | 
 | MESSAGE | &quot;Message&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

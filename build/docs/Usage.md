@@ -1,15 +1,13 @@
----
-title: Usage
----
-## Usage
+# Usage
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **types** | <!----><!---->[**List&lt;UsageItem&gt;**](UsageItem.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **types** | [**List&lt;UsageItem&gt;**](UsageItem) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

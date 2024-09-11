@@ -1,41 +1,35 @@
----
-title: FlowOutcomeDetailEventTopicFlowOutcomeEvent
----
-## FlowOutcomeDetailEventTopicFlowOutcomeEvent
+# FlowOutcomeDetailEventTopicFlowOutcomeEvent
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **eventTime** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **conversationId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **participantId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **sessionId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> |  |  [optional] |
-| **provider** | <!----><!---->**String**<!----> |  |  [optional] |
-| **direction** | [**DirectionEnum**](#DirectionEnum)<!----> |  |  [optional] |
-| **ani** | <!----><!---->**String**<!----> |  |  [optional] |
-| **dnis** | <!----><!---->**String**<!----> |  |  [optional] |
-| **addressTo** | <!----><!---->**String**<!----> |  |  [optional] |
-| **addressFrom** | <!----><!---->**String**<!----> |  |  [optional] |
-| **subject** | <!----><!---->**String**<!----> |  |  [optional] |
-| **messageType** | [**MessageTypeEnum**](#MessageTypeEnum)<!----> |  |  [optional] |
-| **flowType** | [**FlowTypeEnum**](#FlowTypeEnum)<!----> |  |  [optional] |
-| **flowId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **divisionId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **flowVersion** | <!----><!---->**String**<!----> |  |  [optional] |
-| **flowOutcomeId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **flowOutcomeStartTime** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **flowOutcomeEndTime** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **flowOutcomeValue** | [**FlowOutcomeValueEnum**](#FlowOutcomeValueEnum)<!----> |  |  [optional] |
-| **flowMilestones** | <!----><!---->[**List&lt;FlowOutcomeDetailEventTopicFlowMilestone&gt;**](FlowOutcomeDetailEventTopicFlowMilestone.html)<!----> |  |  [optional] |
-| **conversationExternalContactIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **conversationExternalOrganizationIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **eventTime** | **Integer** |  |  [optional] |
+| **conversationId** | **String** |  |  [optional] |
+| **participantId** | **String** |  |  [optional] |
+| **sessionId** | **String** |  |  [optional] |
+| **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) |  |  [optional] |
+| **provider** | **String** |  |  [optional] |
+| **direction** | [**DirectionEnum**](#Enum--DirectionEnum) |  |  [optional] |
+| **ani** | **String** |  |  [optional] |
+| **dnis** | **String** |  |  [optional] |
+| **addressTo** | **String** |  |  [optional] |
+| **addressFrom** | **String** |  |  [optional] |
+| **subject** | **String** |  |  [optional] |
+| **messageType** | [**MessageTypeEnum**](#Enum--MessageTypeEnum) |  |  [optional] |
+| **flowType** | [**FlowTypeEnum**](#Enum--FlowTypeEnum) |  |  [optional] |
+| **flowId** | **String** |  |  [optional] |
+| **divisionId** | **String** |  |  [optional] |
+| **flowVersion** | **String** |  |  [optional] |
+| **flowOutcomeId** | **String** |  |  [optional] |
+| **flowOutcomeStartTime** | **Integer** |  |  [optional] |
+| **flowOutcomeEndTime** | **Integer** |  |  [optional] |
+| **flowOutcomeValue** | [**FlowOutcomeValueEnum**](#Enum--FlowOutcomeValueEnum) |  |  [optional] |
+| **flowMilestones** | [**List&lt;FlowOutcomeDetailEventTopicFlowMilestone&gt;**](FlowOutcomeDetailEventTopicFlowMilestone) |  |  [optional] |
+| **conversationExternalContactIds** | **List&lt;String&gt;** |  |  [optional] |
+| **conversationExternalOrganizationIds** | **List&lt;String&gt;** |  |  [optional] |
 
-
-<a name="MediaTypeEnum"></a>
 
 ## Enum: MediaTypeEnum
 
@@ -51,10 +45,7 @@ title: FlowOutcomeDetailEventTopicFlowOutcomeEvent
 | VIDEO | &quot;VIDEO&quot; | 
 | SCREENSHARE | &quot;SCREENSHARE&quot; | 
 | MESSAGE | &quot;MESSAGE&quot; | 
-{: class="table table-striped"}
 
-
-<a name="DirectionEnum"></a>
 
 ## Enum: DirectionEnum
 
@@ -64,10 +55,7 @@ title: FlowOutcomeDetailEventTopicFlowOutcomeEvent
 | UNKNOWN | &quot;UNKNOWN&quot; | 
 | INBOUND | &quot;INBOUND&quot; | 
 | OUTBOUND | &quot;OUTBOUND&quot; | 
-{: class="table table-striped"}
 
-
-<a name="MessageTypeEnum"></a>
 
 ## Enum: MessageTypeEnum
 
@@ -84,10 +72,7 @@ title: FlowOutcomeDetailEventTopicFlowOutcomeEvent
 | OPEN | &quot;OPEN&quot; | 
 | INSTAGRAM | &quot;INSTAGRAM&quot; | 
 | APPLE | &quot;APPLE&quot; | 
-{: class="table table-striped"}
 
-
-<a name="FlowTypeEnum"></a>
 
 ## Enum: FlowTypeEnum
 
@@ -113,10 +98,7 @@ title: FlowOutcomeDetailEventTopicFlowOutcomeEvent
 | VOICEMAIL | &quot;VOICEMAIL&quot; | 
 | WORKITEM | &quot;WORKITEM&quot; | 
 | VOICESURVEY | &quot;VOICESURVEY&quot; | 
-{: class="table table-striped"}
 
-
-<a name="FlowOutcomeValueEnum"></a>
 
 ## Enum: FlowOutcomeValueEnum
 
@@ -126,7 +108,8 @@ title: FlowOutcomeDetailEventTopicFlowOutcomeEvent
 | UNKNOWN | &quot;UNKNOWN&quot; | 
 | SUCCESS | &quot;SUCCESS&quot; | 
 | FAILURE | &quot;FAILURE&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

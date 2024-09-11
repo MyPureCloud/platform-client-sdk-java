@@ -1,19 +1,13 @@
----
-title: LearningAssignmentAggregateQueryResponseMetric
----
-## LearningAssignmentAggregateQueryResponseMetric
+# LearningAssignmentAggregateQueryResponseMetric
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **metric** | [**MetricEnum**](#MetricEnum)<!----> | The metric this applies to |  [optional] |
-| **stats** | <!----><!---->[**LearningAssignmentAggregateQueryResponseStats**](LearningAssignmentAggregateQueryResponseStats.html)<!----> | The aggregated values for this metric |  [optional] |
-{: class="table table-striped"}
+| **metric** | [**MetricEnum**](#Enum--MetricEnum) | The metric this applies to |  [optional] |
+| **stats** | [**LearningAssignmentAggregateQueryResponseStats**](LearningAssignmentAggregateQueryResponseStats) | The aggregated values for this metric |  [optional] |
 
-
-<a name="MetricEnum"></a>
 
 ## Enum: MetricEnum
 
@@ -30,7 +24,8 @@ title: LearningAssignmentAggregateQueryResponseMetric
 | NFAILEDACTIVITIES | &quot;nFailedActivities&quot; | 
 | OACTIVITYSCORE | &quot;oActivityScore&quot; | 
 | NNOTCOMPLETEDACTIVITIES | &quot;nNotCompletedActivities&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

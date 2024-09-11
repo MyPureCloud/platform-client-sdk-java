@@ -1,19 +1,13 @@
----
-title: CreateShareRequestMember
----
-## CreateShareRequestMember
+# CreateShareRequestMember
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **memberType** | [**MemberTypeEnum**](#MemberTypeEnum)<!----> |  |  [optional] |
-| **member** | <!----><!---->[**MemberEntity**](MemberEntity.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **memberType** | [**MemberTypeEnum**](#Enum--MemberTypeEnum) |  |  [optional] |
+| **member** | [**MemberEntity**](MemberEntity) |  |  [optional] |
 
-
-<a name="MemberTypeEnum"></a>
 
 ## Enum: MemberTypeEnum
 
@@ -23,7 +17,8 @@ title: CreateShareRequestMember
 | USER | &quot;USER&quot; | 
 | GROUP | &quot;GROUP&quot; | 
 | PUBLIC | &quot;PUBLIC&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

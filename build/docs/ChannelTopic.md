@@ -1,21 +1,15 @@
----
-title: ChannelTopic
----
-## ChannelTopic
+# ChannelTopic
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
-| **rejectionReason** | <!----><!---->**String**<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **state** | [**StateEnum**](#Enum--StateEnum) |  |  [optional] |
+| **rejectionReason** | **String** |  |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -24,7 +18,8 @@ title: ChannelTopic
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | PERMITTED | &quot;Permitted&quot; | 
 | REJECTED | &quot;Rejected&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

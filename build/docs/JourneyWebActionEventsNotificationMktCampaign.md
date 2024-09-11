@@ -1,21 +1,19 @@
----
-title: JourneyWebActionEventsNotificationMktCampaign
----
-## JourneyWebActionEventsNotificationMktCampaign
+# JourneyWebActionEventsNotificationMktCampaign
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **content** | <!----><!---->**String**<!----> |  |  [optional] |
-| **medium** | <!----><!---->**String**<!----> |  |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **source** | <!----><!---->**String**<!----> |  |  [optional] |
-| **term** | <!----><!---->**String**<!----> |  |  [optional] |
-| **clickId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **network** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **content** | **String** |  |  [optional] |
+| **medium** | **String** |  |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **source** | **String** |  |  [optional] |
+| **term** | **String** |  |  [optional] |
+| **clickId** | **String** |  |  [optional] |
+| **network** | **String** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

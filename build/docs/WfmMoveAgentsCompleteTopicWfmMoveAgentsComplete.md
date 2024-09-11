@@ -1,17 +1,15 @@
----
-title: WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete
----
-## WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete
+# WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **requestingUser** | <!----><!---->[**WfmMoveAgentsCompleteTopicUserReference**](WfmMoveAgentsCompleteTopicUserReference.html)<!----> |  |  [optional] |
-| **destinationManagementUnit** | <!----><!---->[**WfmMoveAgentsCompleteTopicManagementUnit**](WfmMoveAgentsCompleteTopicManagementUnit.html)<!----> |  |  [optional] |
-| **results** | <!----><!---->[**List&lt;WfmMoveAgentsCompleteTopicWfmMoveAgentData&gt;**](WfmMoveAgentsCompleteTopicWfmMoveAgentData.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **requestingUser** | [**WfmMoveAgentsCompleteTopicUserReference**](WfmMoveAgentsCompleteTopicUserReference) |  |  [optional] |
+| **destinationManagementUnit** | [**WfmMoveAgentsCompleteTopicManagementUnit**](WfmMoveAgentsCompleteTopicManagementUnit) |  |  [optional] |
+| **results** | [**List&lt;WfmMoveAgentsCompleteTopicWfmMoveAgentData&gt;**](WfmMoveAgentsCompleteTopicWfmMoveAgentData) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

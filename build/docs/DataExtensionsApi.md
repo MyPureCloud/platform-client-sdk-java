@@ -1,24 +1,19 @@
----
-title: DataExtensionsApi
----
-## DataExtensionsApi
+# DataExtensionsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**getDataextensionsCoretype**](DataExtensionsApi.html#getDataextensionsCoretype) | Get a specific named core type. |
-| [**getDataextensionsCoretypes**](DataExtensionsApi.html#getDataextensionsCoretypes) | Get the core types from which all schemas are built. |
-| [**getDataextensionsLimits**](DataExtensionsApi.html#getDataextensionsLimits) | Get quantitative limits on schemas |
+| [**getDataextensionsCoretype**](DataExtensionsApi#getDataextensionsCoretype) | Get a specific named core type. |
+| [**getDataextensionsCoretypes**](DataExtensionsApi#getDataextensionsCoretypes) | Get the core types from which all schemas are built. |
+| [**getDataextensionsLimits**](DataExtensionsApi#getDataextensionsLimits) | Get quantitative limits on schemas |
 {: class="table-striped"}
 
-<a name="getDataextensionsCoretype"></a>
 
 # **getDataextensionsCoretype**
 
 
-
-> [Coretype](Coretype.html) getDataextensionsCoretype(coretypeName)
+> [Coretype](Coretype) getDataextensionsCoretype(coretypeName)
 
 Get a specific named core type.
 
@@ -71,15 +66,13 @@ try {
 
 ### Return type
 
-[**Coretype**](Coretype.html)
+[**Coretype**](Coretype)
 
-<a name="getDataextensionsCoretypes"></a>
 
 # **getDataextensionsCoretypes**
 
 
-
-> [CoretypeListing](CoretypeListing.html) getDataextensionsCoretypes()
+> [CoretypeListing](CoretypeListing) getDataextensionsCoretypes()
 
 Get the core types from which all schemas are built.
 
@@ -128,15 +121,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**CoretypeListing**](CoretypeListing.html)
+[**CoretypeListing**](CoretypeListing)
 
-<a name="getDataextensionsLimits"></a>
 
 # **getDataextensionsLimits**
 
 
-
-> [SchemaQuantityLimits](SchemaQuantityLimits.html) getDataextensionsLimits()
+> [SchemaQuantityLimits](SchemaQuantityLimits) getDataextensionsLimits()
 
 Get quantitative limits on schemas
 
@@ -185,5 +176,7 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**SchemaQuantityLimits**](SchemaQuantityLimits.html)
+[**SchemaQuantityLimits**](SchemaQuantityLimits)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

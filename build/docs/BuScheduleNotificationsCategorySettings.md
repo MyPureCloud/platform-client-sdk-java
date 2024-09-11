@@ -1,20 +1,14 @@
----
-title: BuScheduleNotificationsCategorySettings
----
-## BuScheduleNotificationsCategorySettings
+# BuScheduleNotificationsCategorySettings
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **activityCategory** | [**ActivityCategoryEnum**](#ActivityCategoryEnum)<!----> | The activity category |  |
-| **earlyReminderEnabled** | <!----><!---->**Boolean**<!----> | Indicates if agents should receive early schedule reminder notifications. |  |
-| **onTimeReminderEnabled** | <!----><!---->**Boolean**<!----> | Indicates if agents should receive out of adherence notifications. |  |
-{: class="table table-striped"}
+| **activityCategory** | [**ActivityCategoryEnum**](#Enum--ActivityCategoryEnum) | The activity category |  |
+| **earlyReminderEnabled** | **Boolean** | Indicates if agents should receive early schedule reminder notifications. |  |
+| **onTimeReminderEnabled** | **Boolean** | Indicates if agents should receive out of adherence notifications. |  |
 
-
-<a name="ActivityCategoryEnum"></a>
 
 ## Enum: ActivityCategoryEnum
 
@@ -30,7 +24,8 @@ title: BuScheduleNotificationsCategorySettings
 | TRAINING | &quot;Training&quot; | 
 | UNAVAILABLE | &quot;Unavailable&quot; | 
 | UNSCHEDULED | &quot;Unscheduled&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

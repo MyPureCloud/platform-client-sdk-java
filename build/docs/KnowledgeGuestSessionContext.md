@@ -1,16 +1,14 @@
----
-title: KnowledgeGuestSessionContext
----
-## KnowledgeGuestSessionContext
+# KnowledgeGuestSessionContext
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The context id associated with the session. |  |
-| **values** | <!----><!---->[**List&lt;Entity&gt;**](Entity.html)<!----> | The list of knowledge context values associated with the session. |  |
-{: class="table table-striped"}
+| **id** | **String** | The context id associated with the session. |  |
+| **values** | [**List&lt;Entity&gt;**](Entity) | The list of knowledge context values associated with the session. |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

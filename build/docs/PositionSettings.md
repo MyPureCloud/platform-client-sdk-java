@@ -1,20 +1,14 @@
----
-title: PositionSettings
----
-## PositionSettings
+# PositionSettings
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **alignment** | [**AlignmentEnum**](#AlignmentEnum)<!----> | The alignment for position |  [optional] |
-| **sideSpace** | <!----><!---->**Integer**<!----> | The sidespace value for position |  [optional] |
-| **bottomSpace** | <!----><!---->**Integer**<!----> | The bottomspace value for position |  [optional] |
-{: class="table table-striped"}
+| **alignment** | [**AlignmentEnum**](#Enum--AlignmentEnum) | The alignment for position |  [optional] |
+| **sideSpace** | **Integer** | The sidespace value for position |  [optional] |
+| **bottomSpace** | **Integer** | The bottomspace value for position |  [optional] |
 
-
-<a name="AlignmentEnum"></a>
 
 ## Enum: AlignmentEnum
 
@@ -24,7 +18,8 @@ title: PositionSettings
 | AUTO | &quot;Auto&quot; | 
 | LEFT | &quot;Left&quot; | 
 | RIGHT | &quot;Right&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

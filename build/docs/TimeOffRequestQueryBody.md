@@ -1,32 +1,23 @@
----
-title: TimeOffRequestQueryBody
----
-## TimeOffRequestQueryBody
+# TimeOffRequestQueryBody
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **ids** | <!----><!---->**List&lt;String&gt;**<!----> | The set of ids to filter time off requests |  [optional] |
-| **userIds** | <!----><!---->**List&lt;String&gt;**<!----> | The set of user ids to filter time off requests |  [optional] |
-| **statuses** | <!---->[**List&lt;StatusesEnum&gt;**](#StatusesEnum)<!----> | The set of statuses to filter time off requests |  [optional] |
-| **substatuses** | <!---->[**List&lt;SubstatusesEnum&gt;**](#SubstatusesEnum)<!----> | The set of substatuses to filter time off requests |  [optional] |
-| **dateRange** | <!----><!---->[**DateRange**](DateRange.html)<!----> | The inclusive range of dates to filter time off requests |  [optional] |
-{: class="table table-striped"}
+| **ids** | **List&lt;String&gt;** | The set of ids to filter time off requests |  [optional] |
+| **userIds** | **List&lt;String&gt;** | The set of user ids to filter time off requests |  [optional] |
+| **statuses** | [**List<StatusesEnum>**](#Enum--StatusesEnum) | The set of statuses to filter time off requests |  [optional] |
+| **substatuses** | [**List<SubstatusesEnum>**](#Enum--SubstatusesEnum) | The set of substatuses to filter time off requests |  [optional] |
+| **dateRange** | [**DateRange**](DateRange) | The inclusive range of dates to filter time off requests |  [optional] |
 
-
-<a name="StatusesEnum"></a>
 
 ## Enum: StatusesEnum
 
 | Name | Value |
 | ---- | ----- |
 | PENDING | &quot;PENDING&quot; |
-{: class="table table-striped"}
 
-
-<a name="SubstatusesEnum"></a>
 
 ## Enum: SubstatusesEnum
 
@@ -40,7 +31,8 @@ title: TimeOffRequestQueryBody
 | REMOVEDFROMWAITLIST | &quot;RemovedFromWaitlist&quot; |
 | WAITLISTED | &quot;Waitlisted&quot; |
 | OVERLAPSRESTRICTEDACTIVITYCODE | &quot;OverlapsRestrictedActivityCode&quot; |
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

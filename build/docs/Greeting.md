@@ -1,29 +1,23 @@
----
-title: Greeting
----
-## Greeting
+# Greeting
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Greeting type |  |
-| **ownerType** | [**OwnerTypeEnum**](#OwnerTypeEnum)<!----> | Greeting owner type |  |
-| **owner** | <!----><!---->[**DomainEntity**](DomainEntity.html)<!----> | Greeting owner |  |
-| **audioFile** | <!----><!---->[**GreetingAudioFile**](GreetingAudioFile.html)<!----> |  |  [optional] |
-| **audioTTS** | <!----><!---->**String**<!----> |  |  [optional] |
-| **createdDate** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **createdBy** | <!----><!---->**String**<!----> |  |  [optional] |
-| **modifiedDate** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **modifiedBy** | <!----><!---->**String**<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Greeting type |  |
+| **ownerType** | [**OwnerTypeEnum**](#Enum--OwnerTypeEnum) | Greeting owner type |  |
+| **owner** | [**DomainEntity**](DomainEntity) | Greeting owner |  |
+| **audioFile** | [**GreetingAudioFile**](GreetingAudioFile) |  |  [optional] |
+| **audioTTS** | **String** |  |  [optional] |
+| **createdDate** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **createdBy** | **String** |  |  [optional] |
+| **modifiedDate** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **modifiedBy** | **String** |  |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -33,10 +27,7 @@ title: Greeting
 | STATION | &quot;STATION&quot; | 
 | VOICEMAIL | &quot;VOICEMAIL&quot; | 
 | NAME | &quot;NAME&quot; | 
-{: class="table table-striped"}
 
-
-<a name="OwnerTypeEnum"></a>
 
 ## Enum: OwnerTypeEnum
 
@@ -46,7 +37,8 @@ title: Greeting
 | USER | &quot;USER&quot; | 
 | ORGANIZATION | &quot;ORGANIZATION&quot; | 
 | GROUP | &quot;GROUP&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

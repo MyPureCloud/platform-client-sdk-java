@@ -1,15 +1,13 @@
----
-title: UCI10n
----
-## UCI10n
+# UCI10n
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **name** | **String** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

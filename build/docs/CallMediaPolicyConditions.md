@@ -1,26 +1,20 @@
----
-title: CallMediaPolicyConditions
----
-## CallMediaPolicyConditions
+# CallMediaPolicyConditions
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **forUsers** | <!----><!---->[**List&lt;User&gt;**](User.html)<!----> |  |  [optional] |
-| **dateRanges** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **forQueues** | <!----><!---->[**List&lt;Queue&gt;**](Queue.html)<!----> |  |  [optional] |
-| **wrapupCodes** | <!----><!---->[**List&lt;WrapupCode&gt;**](WrapupCode.html)<!----> |  |  [optional] |
-| **languages** | <!----><!---->[**List&lt;Language&gt;**](Language.html)<!----> |  |  [optional] |
-| **timeAllowed** | <!----><!---->[**TimeAllowed**](TimeAllowed.html)<!----> |  |  [optional] |
-| **teams** | <!----><!---->[**List&lt;Team&gt;**](Team.html)<!----> | Teams to match conversations against |  [optional] |
-| **directions** | <!---->[**List&lt;DirectionsEnum&gt;**](#DirectionsEnum)<!----> |  |  [optional] |
-| **duration** | <!----><!---->[**DurationCondition**](DurationCondition.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **forUsers** | [**List&lt;User&gt;**](User) |  |  [optional] |
+| **dateRanges** | **List&lt;String&gt;** |  |  [optional] |
+| **forQueues** | [**List&lt;Queue&gt;**](Queue) |  |  [optional] |
+| **wrapupCodes** | [**List&lt;WrapupCode&gt;**](WrapupCode) |  |  [optional] |
+| **languages** | [**List&lt;Language&gt;**](Language) |  |  [optional] |
+| **timeAllowed** | [**TimeAllowed**](TimeAllowed) |  |  [optional] |
+| **teams** | [**List&lt;Team&gt;**](Team) | Teams to match conversations against |  [optional] |
+| **directions** | [**List<DirectionsEnum>**](#Enum--DirectionsEnum) |  |  [optional] |
+| **duration** | [**DurationCondition**](DurationCondition) |  |  [optional] |
 
-
-<a name="DirectionsEnum"></a>
 
 ## Enum: DirectionsEnum
 
@@ -28,7 +22,8 @@ title: CallMediaPolicyConditions
 | ---- | ----- |
 | INBOUND | &quot;INBOUND&quot; |
 | OUTBOUND | &quot;OUTBOUND&quot; |
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

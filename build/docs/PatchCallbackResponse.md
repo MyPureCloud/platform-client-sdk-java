@@ -1,16 +1,14 @@
----
-title: PatchCallbackResponse
----
-## PatchCallbackResponse
+# PatchCallbackResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **conversation** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The conversation associated with the callback |  |
-| **callbackIdentifiers** | <!----><!---->[**List&lt;CallbackIdentifier&gt;**](CallbackIdentifier.html)<!----> | The list of communication identifiers for the callback participants |  |
-{: class="table table-striped"}
+| **conversation** | [**DomainEntityRef**](DomainEntityRef) | The conversation associated with the callback |  |
+| **callbackIdentifiers** | [**List&lt;CallbackIdentifier&gt;**](CallbackIdentifier) | The list of communication identifiers for the callback participants |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

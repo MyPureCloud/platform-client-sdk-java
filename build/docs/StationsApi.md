@@ -1,21 +1,16 @@
----
-title: StationsApi
----
-## StationsApi
+# StationsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteStationAssociateduser**](StationsApi.html#deleteStationAssociateduser) | Unassigns the user assigned to this station |
-| [**getStation**](StationsApi.html#getStation) | Get station. |
-| [**getStations**](StationsApi.html#getStations) | Get the list of available stations. |
+| [**deleteStationAssociateduser**](StationsApi#deleteStationAssociateduser) | Unassigns the user assigned to this station |
+| [**getStation**](StationsApi#getStation) | Get station. |
+| [**getStations**](StationsApi#getStations) | Get the list of available stations. |
 {: class="table-striped"}
 
-<a name="deleteStationAssociateduser"></a>
 
 # **deleteStationAssociateduser**
-
 
 
 > Void deleteStationAssociateduser(stationId)
@@ -71,13 +66,11 @@ try {
 
 null (empty response body)
 
-<a name="getStation"></a>
 
 # **getStation**
 
 
-
-> [Station](Station.html) getStation(stationId)
+> [Station](Station) getStation(stationId)
 
 Get station.
 
@@ -129,15 +122,13 @@ try {
 
 ### Return type
 
-[**Station**](Station.html)
+[**Station**](Station)
 
-<a name="getStations"></a>
 
 # **getStations**
 
 
-
-> [StationEntityListing](StationEntityListing.html) getStations(pageSize, pageNumber, sortBy, name, userSelectable, webRtcUserId, id, lineAppearanceId)
+> [StationEntityListing](StationEntityListing) getStations(pageSize, pageNumber, sortBy, name, userSelectable, webRtcUserId, id, lineAppearanceId)
 
 Get the list of available stations.
 
@@ -203,5 +194,7 @@ try {
 
 ### Return type
 
-[**StationEntityListing**](StationEntityListing.html)
+[**StationEntityListing**](StationEntityListing)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

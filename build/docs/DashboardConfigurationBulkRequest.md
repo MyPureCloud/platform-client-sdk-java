@@ -1,15 +1,13 @@
----
-title: DashboardConfigurationBulkRequest
----
-## DashboardConfigurationBulkRequest
+# DashboardConfigurationBulkRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **dashboardConfigurationIds** | <!----><!---->**List&lt;String&gt;**<!----> | The user supplied dashboard configuration ids |  |
-{: class="table table-striped"}
+| **dashboardConfigurationIds** | **List&lt;String&gt;** | The user supplied dashboard configuration ids |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

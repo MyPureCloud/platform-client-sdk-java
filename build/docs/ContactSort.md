@@ -1,20 +1,14 @@
----
-title: ContactSort
----
-## ContactSort
+# ContactSort
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **fieldName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **direction** | [**DirectionEnum**](#DirectionEnum)<!----> | The direction in which to sort contacts. |  [optional] |
-| **numeric** | <!----><!---->**Boolean**<!----> | Whether or not the column contains numeric data. |  [optional] |
-{: class="table table-striped"}
+| **fieldName** | **String** |  |  [optional] |
+| **direction** | [**DirectionEnum**](#Enum--DirectionEnum) | The direction in which to sort contacts. |  [optional] |
+| **numeric** | **Boolean** | Whether or not the column contains numeric data. |  [optional] |
 
-
-<a name="DirectionEnum"></a>
 
 ## Enum: DirectionEnum
 
@@ -23,7 +17,8 @@ title: ContactSort
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ASC | &quot;ASC&quot; | 
 | DESC | &quot;DESC&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,19 +1,13 @@
----
-title: WorkitemQuerySort
----
-## WorkitemQuerySort
+# WorkitemQuerySort
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | [**NameEnum**](#NameEnum)<!----> | Specify an attribute for sorting. It's possible to use an attribute both for sorting and in the query at the same time, but these restrictions apply: Only the operators EQ, LT, LTE, GT, GTE, BETWEEN and BEGINS_WITH are supported and the attribute can't be present in more than one filter. |  [optional] |
-| **ascending** | <!----><!---->**Boolean**<!----> | Sort Ascending |  [optional] |
-{: class="table table-striped"}
+| **name** | [**NameEnum**](#Enum--NameEnum) | Specify an attribute for sorting. It's possible to use an attribute both for sorting and in the query at the same time, but these restrictions apply: Only the operators EQ, LT, LTE, GT, GTE, BETWEEN and BEGINS_WITH are supported and the attribute can't be present in more than one filter. |  [optional] |
+| **ascending** | **Boolean** | Sort Ascending |  [optional] |
 
-
-<a name="NameEnum"></a>
 
 ## Enum: NameEnum
 
@@ -22,7 +16,8 @@ title: WorkitemQuerySort
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | DATEDUE | &quot;dateDue&quot; | 
 | PRIORITY | &quot;priority&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

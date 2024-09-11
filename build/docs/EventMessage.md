@@ -1,23 +1,17 @@
----
-title: EventMessage
----
-## EventMessage
+# EventMessage
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **code** | [**CodeEnum**](#CodeEnum)<!----> |  |  [optional] |
-| **message** | <!----><!---->**String**<!----> |  |  [optional] |
-| **messageWithParams** | <!----><!---->**String**<!----> |  |  [optional] |
-| **messageParams** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
-| **documentationUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **resourceURIs** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **code** | [**CodeEnum**](#Enum--CodeEnum) |  |  [optional] |
+| **message** | **String** |  |  [optional] |
+| **messageWithParams** | **String** |  |  [optional] |
+| **messageParams** | **Map&lt;String, Object&gt;** |  |  [optional] |
+| **documentationUri** | **String** |  |  [optional] |
+| **resourceURIs** | **List&lt;String&gt;** |  |  [optional] |
 
-
-<a name="CodeEnum"></a>
 
 ## Enum: CodeEnum
 
@@ -117,7 +111,8 @@ title: EventMessage
 | RECURRING_SCHEDULE_ENDED | &quot;RECURRING_SCHEDULE_ENDED&quot; | 
 | RECURRING_SCHEDULE_MISSED_OCCURRENCES | &quot;RECURRING_SCHEDULE_MISSED_OCCURRENCES&quot; | 
 | VERSION_CONFLICT | &quot;VERSION_CONFLICT&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

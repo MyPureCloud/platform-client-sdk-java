@@ -1,21 +1,15 @@
----
-title: EvaluationSource
----
-## EvaluationSource
+# EvaluationSource
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Type of the evaluation source. |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Type of the evaluation source. |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -25,7 +19,8 @@ title: EvaluationSource
 | POLICY | &quot;Policy&quot; | 
 | USER | &quot;User&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

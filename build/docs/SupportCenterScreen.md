@@ -1,19 +1,13 @@
----
-title: SupportCenterScreen
----
-## SupportCenterScreen
+# SupportCenterScreen
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of the screen |  |
-| **moduleSettings** | <!----><!---->[**List&lt;SupportCenterModuleSetting&gt;**](SupportCenterModuleSetting.html)<!----> | Module settings for the screen, valid modules for each screenType: Home: Search, Categories, TopViewedArticles; Category: Search, Categories; SearchResults: Search, Results; Article: Search, Article; |  |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of the screen |  |
+| **moduleSettings** | [**List&lt;SupportCenterModuleSetting&gt;**](SupportCenterModuleSetting) | Module settings for the screen, valid modules for each screenType: Home: Search, Categories, TopViewedArticles; Category: Search, Categories; SearchResults: Search, Results; Article: Search, Article; |  |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -24,7 +18,8 @@ title: SupportCenterScreen
 | CATEGORY | &quot;Category&quot; | 
 | SEARCHRESULTS | &quot;SearchResults&quot; | 
 | ARTICLE | &quot;Article&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

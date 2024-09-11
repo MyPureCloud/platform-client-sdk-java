@@ -1,19 +1,13 @@
----
-title: ConversationProfile
----
-## ConversationProfile
+# ConversationProfile
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **languageCode** | [**LanguageCodeEnum**](#LanguageCodeEnum)<!----> | The language code supported by the conversation profile belonging to a particular project for Dialogflow. |  |
-| **name** | <!----><!---->**String**<!----> | The name of the conversation profile belonging to a particular project for Dialogflow |  |
-{: class="table table-striped"}
+| **languageCode** | [**LanguageCodeEnum**](#Enum--LanguageCodeEnum) | The language code supported by the conversation profile belonging to a particular project for Dialogflow. |  |
+| **name** | **String** | The name of the conversation profile belonging to a particular project for Dialogflow |  |
 
-
-<a name="LanguageCodeEnum"></a>
 
 ## Enum: LanguageCodeEnum
 
@@ -26,7 +20,8 @@ title: ConversationProfile
 | EN_GB | &quot;en-GB&quot; | 
 | EN_IN | &quot;en-IN&quot; | 
 | EN_US | &quot;en-US&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,15 +1,13 @@
----
-title: AdherenceExplanationAsyncResponse
----
-## AdherenceExplanationAsyncResponse
+# AdherenceExplanationAsyncResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **job** | <!----><!---->[**AdherenceExplanationJobReference**](AdherenceExplanationJobReference.html)<!----> | A reference to the job that was started by the request |  [optional] |
-{: class="table table-striped"}
+| **job** | [**AdherenceExplanationJobReference**](AdherenceExplanationJobReference) | A reference to the job that was started by the request |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

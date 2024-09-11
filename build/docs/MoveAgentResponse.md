@@ -1,19 +1,13 @@
----
-title: MoveAgentResponse
----
-## MoveAgentResponse
+# MoveAgentResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **user** | <!----><!---->[**UserReference**](UserReference.html)<!----> | The user associated with the move |  [optional] |
-| **result** | [**ResultEnum**](#ResultEnum)<!----> | The result of the move |  [optional] |
-{: class="table table-striped"}
+| **user** | [**UserReference**](UserReference) | The user associated with the move |  [optional] |
+| **result** | [**ResultEnum**](#Enum--ResultEnum) | The result of the move |  [optional] |
 
-
-<a name="ResultEnum"></a>
 
 ## Enum: ResultEnum
 
@@ -28,7 +22,8 @@ title: MoveAgentResponse
 | MOVINGTODIFFERENTMANAGEMENTUNIT | &quot;MovingToDifferentManagementUnit&quot; | 
 | NOTHINGTODO | &quot;NothingToDo&quot; | 
 | SOURCEMANAGEMENTUNITNOTAUTHORIZED | &quot;SourceManagementUnitNotAuthorized&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,22 +1,16 @@
----
-title: PatchEntityTypeCriteria
----
-## PatchEntityTypeCriteria
+# PatchEntityTypeCriteria
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **key** | <!----><!---->**String**<!----> | The criteria key. |  [optional] |
-| **values** | <!----><!---->**List&lt;String&gt;**<!----> | The criteria values. |  [optional] |
-| **shouldIgnoreCase** | <!----><!---->**Boolean**<!----> | Should criteria be case insensitive. |  [optional] |
-| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | The comparison operator. |  [optional] |
-| **entityType** | [**EntityTypeEnum**](#EntityTypeEnum)<!----> | The entity to match the pattern against. |  [optional] |
-{: class="table table-striped"}
+| **key** | **String** | The criteria key. |  [optional] |
+| **values** | **List&lt;String&gt;** | The criteria values. |  [optional] |
+| **shouldIgnoreCase** | **Boolean** | Should criteria be case insensitive. |  [optional] |
+| **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | The comparison operator. |  [optional] |
+| **entityType** | [**EntityTypeEnum**](#Enum--EntityTypeEnum) | The entity to match the pattern against. |  [optional] |
 
-
-<a name="OperatorEnum"></a>
 
 ## Enum: OperatorEnum
 
@@ -35,10 +29,7 @@ title: PatchEntityTypeCriteria
 | LESSTHANOREQUAL | &quot;lessThanOrEqual&quot; | 
 | STARTSWITH | &quot;startsWith&quot; | 
 | ENDSWITH | &quot;endsWith&quot; | 
-{: class="table table-striped"}
 
-
-<a name="EntityTypeEnum"></a>
 
 ## Enum: EntityTypeEnum
 
@@ -46,7 +37,8 @@ title: PatchEntityTypeCriteria
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | VISIT | &quot;visit&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

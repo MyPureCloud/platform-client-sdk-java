@@ -1,21 +1,15 @@
----
-title: V2MobiusAlertsTopicCondition
----
-## V2MobiusAlertsTopicCondition
+# V2MobiusAlertsTopicCondition
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **conditions** | <!----><!---->[**List&lt;V2MobiusAlertsTopicCondition&gt;**](V2MobiusAlertsTopicCondition.html)<!----> |  |  [optional] |
-| **predicates** | <!----><!---->[**List&lt;V2MobiusAlertsTopicConditionRulePredicate&gt;**](V2MobiusAlertsTopicConditionRulePredicate.html)<!----> |  |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **conditions** | [**List&lt;V2MobiusAlertsTopicCondition&gt;**](V2MobiusAlertsTopicCondition) |  |  [optional] |
+| **predicates** | [**List&lt;V2MobiusAlertsTopicConditionRulePredicate&gt;**](V2MobiusAlertsTopicConditionRulePredicate) |  |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -26,7 +20,8 @@ title: V2MobiusAlertsTopicCondition
 | OR | &quot;Or&quot; | 
 | NOT | &quot;Not&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

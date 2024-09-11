@@ -1,25 +1,19 @@
----
-title: DncListDivisionView
----
-## DncListDivisionView
+# DncListDivisionView
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **division** | <!----><!---->[**Division**](Division.html)<!----> | The division to which this entity belongs. |  [optional] |
-| **importStatus** | <!----><!---->[**ImportStatus**](ImportStatus.html)<!----> | The status of the import process. |  [optional] |
-| **size** | <!----><!---->**Long**<!----> | The number of contacts in the DncList. |  [optional] |
-| **dncSourceType** | [**DncSourceTypeEnum**](#DncSourceTypeEnum)<!----> | The type of the DncList. |  [optional] |
-| **contactMethod** | [**ContactMethodEnum**](#ContactMethodEnum)<!----> | The contact method. Required if dncSourceType is rds. |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **division** | [**Division**](Division) | The division to which this entity belongs. |  [optional] |
+| **importStatus** | [**ImportStatus**](ImportStatus) | The status of the import process. |  [optional] |
+| **size** | **Long** | The number of contacts in the DncList. |  [optional] |
+| **dncSourceType** | [**DncSourceTypeEnum**](#Enum--DncSourceTypeEnum) | The type of the DncList. |  [optional] |
+| **contactMethod** | [**ContactMethodEnum**](#Enum--ContactMethodEnum) | The contact method. Required if dncSourceType is rds. |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="DncSourceTypeEnum"></a>
 
 ## Enum: DncSourceTypeEnum
 
@@ -30,10 +24,7 @@ title: DncListDivisionView
 | RDS_CUSTOM | &quot;rds_custom&quot; | 
 | DNC_COM | &quot;dnc.com&quot; | 
 | GRYPHON | &quot;gryphon&quot; | 
-{: class="table table-striped"}
 
-
-<a name="ContactMethodEnum"></a>
 
 ## Enum: ContactMethodEnum
 
@@ -43,7 +34,8 @@ title: DncListDivisionView
 | EMAIL | &quot;Email&quot; | 
 | PHONE | &quot;Phone&quot; | 
 | ANY | &quot;Any&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

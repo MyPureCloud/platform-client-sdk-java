@@ -1,65 +1,59 @@
----
-title: QueueConversationCallbackEventTopicCallbackMediaParticipant
----
-## QueueConversationCallbackEventTopicCallbackMediaParticipant
+# QueueConversationCallbackEventTopicCallbackMediaParticipant
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **address** | <!----><!---->**String**<!----> |  |  [optional] |
-| **startTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **connectedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **endTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **startHoldTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **purpose** | <!----><!---->**String**<!----> |  |  [optional] |
-| **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
-| **initialState** | [**InitialStateEnum**](#InitialStateEnum)<!----> |  |  [optional] |
-| **direction** | [**DirectionEnum**](#DirectionEnum)<!----> |  |  [optional] |
-| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum)<!----> |  |  [optional] |
-| **held** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **wrapupRequired** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **wrapupPrompt** | <!----><!---->**String**<!----> |  |  [optional] |
-| **user** | <!----><!---->[**QueueConversationCallbackEventTopicUriReference**](QueueConversationCallbackEventTopicUriReference.html)<!----> |  |  [optional] |
-| **queue** | <!----><!---->[**QueueConversationCallbackEventTopicUriReference**](QueueConversationCallbackEventTopicUriReference.html)<!----> |  |  [optional] |
-| **team** | <!----><!---->[**QueueConversationCallbackEventTopicUriReference**](QueueConversationCallbackEventTopicUriReference.html)<!----> |  |  [optional] |
-| **attributes** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
-| **errorInfo** | <!----><!---->[**QueueConversationCallbackEventTopicErrorBody**](QueueConversationCallbackEventTopicErrorBody.html)<!----> |  |  [optional] |
-| **script** | <!----><!---->[**QueueConversationCallbackEventTopicUriReference**](QueueConversationCallbackEventTopicUriReference.html)<!----> |  |  [optional] |
-| **wrapupTimeoutMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **wrapupSkipped** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **alertingTimeoutMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **provider** | <!----><!---->**String**<!----> |  |  [optional] |
-| **externalContact** | <!----><!---->[**QueueConversationCallbackEventTopicUriReference**](QueueConversationCallbackEventTopicUriReference.html)<!----> |  |  [optional] |
-| **externalOrganization** | <!----><!---->[**QueueConversationCallbackEventTopicUriReference**](QueueConversationCallbackEventTopicUriReference.html)<!----> |  |  [optional] |
-| **wrapup** | <!----><!---->[**QueueConversationCallbackEventTopicWrapup**](QueueConversationCallbackEventTopicWrapup.html)<!----> |  |  [optional] |
-| **conversationRoutingData** | <!----><!---->[**QueueConversationCallbackEventTopicConversationRoutingData**](QueueConversationCallbackEventTopicConversationRoutingData.html)<!----> |  |  [optional] |
-| **peer** | <!----><!---->**String**<!----> |  |  [optional] |
-| **screenRecordingState** | <!----><!---->**String**<!----> |  |  [optional] |
-| **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum)<!----> |  |  [optional] |
-| **journeyContext** | <!----><!---->[**QueueConversationCallbackEventTopicJourneyContext**](QueueConversationCallbackEventTopicJourneyContext.html)<!----> |  |  [optional] |
-| **startAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **endAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **resumeTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **parkTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **mediaRoles** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **queueMediaSettings** | <!----><!---->[**QueueConversationCallbackEventTopicQueueMediaSettings**](QueueConversationCallbackEventTopicQueueMediaSettings.html)<!----> |  |  [optional] |
-| **outboundPreview** | <!----><!---->[**QueueConversationCallbackEventTopicDialerPreview**](QueueConversationCallbackEventTopicDialerPreview.html)<!----> |  |  [optional] |
-| **voicemail** | <!----><!---->[**QueueConversationCallbackEventTopicVoicemail**](QueueConversationCallbackEventTopicVoicemail.html)<!----> |  |  [optional] |
-| **callbackNumbers** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **callbackUserName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **skipEnabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **externalCampaign** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **timeoutSeconds** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **callbackScheduledTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **automatedCallbackConfigId** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **address** | **String** |  |  [optional] |
+| **startTime** | [**Date**](Date) |  |  [optional] |
+| **connectedTime** | [**Date**](Date) |  |  [optional] |
+| **endTime** | [**Date**](Date) |  |  [optional] |
+| **startHoldTime** | [**Date**](Date) |  |  [optional] |
+| **purpose** | **String** |  |  [optional] |
+| **state** | [**StateEnum**](#Enum--StateEnum) |  |  [optional] |
+| **initialState** | [**InitialStateEnum**](#Enum--InitialStateEnum) |  |  [optional] |
+| **direction** | [**DirectionEnum**](#Enum--DirectionEnum) |  |  [optional] |
+| **disconnectType** | [**DisconnectTypeEnum**](#Enum--DisconnectTypeEnum) |  |  [optional] |
+| **held** | **Boolean** |  |  [optional] |
+| **wrapupRequired** | **Boolean** |  |  [optional] |
+| **wrapupPrompt** | **String** |  |  [optional] |
+| **user** | [**QueueConversationCallbackEventTopicUriReference**](QueueConversationCallbackEventTopicUriReference) |  |  [optional] |
+| **queue** | [**QueueConversationCallbackEventTopicUriReference**](QueueConversationCallbackEventTopicUriReference) |  |  [optional] |
+| **team** | [**QueueConversationCallbackEventTopicUriReference**](QueueConversationCallbackEventTopicUriReference) |  |  [optional] |
+| **attributes** | **Map&lt;String, String&gt;** |  |  [optional] |
+| **errorInfo** | [**QueueConversationCallbackEventTopicErrorBody**](QueueConversationCallbackEventTopicErrorBody) |  |  [optional] |
+| **script** | [**QueueConversationCallbackEventTopicUriReference**](QueueConversationCallbackEventTopicUriReference) |  |  [optional] |
+| **wrapupTimeoutMs** | **Integer** |  |  [optional] |
+| **wrapupSkipped** | **Boolean** |  |  [optional] |
+| **alertingTimeoutMs** | **Integer** |  |  [optional] |
+| **provider** | **String** |  |  [optional] |
+| **externalContact** | [**QueueConversationCallbackEventTopicUriReference**](QueueConversationCallbackEventTopicUriReference) |  |  [optional] |
+| **externalOrganization** | [**QueueConversationCallbackEventTopicUriReference**](QueueConversationCallbackEventTopicUriReference) |  |  [optional] |
+| **wrapup** | [**QueueConversationCallbackEventTopicWrapup**](QueueConversationCallbackEventTopicWrapup) |  |  [optional] |
+| **conversationRoutingData** | [**QueueConversationCallbackEventTopicConversationRoutingData**](QueueConversationCallbackEventTopicConversationRoutingData) |  |  [optional] |
+| **peer** | **String** |  |  [optional] |
+| **screenRecordingState** | **String** |  |  [optional] |
+| **flaggedReason** | [**FlaggedReasonEnum**](#Enum--FlaggedReasonEnum) |  |  [optional] |
+| **journeyContext** | [**QueueConversationCallbackEventTopicJourneyContext**](QueueConversationCallbackEventTopicJourneyContext) |  |  [optional] |
+| **startAcwTime** | [**Date**](Date) |  |  [optional] |
+| **endAcwTime** | [**Date**](Date) |  |  [optional] |
+| **resumeTime** | [**Date**](Date) |  |  [optional] |
+| **parkTime** | [**Date**](Date) |  |  [optional] |
+| **mediaRoles** | **List&lt;String&gt;** |  |  [optional] |
+| **queueMediaSettings** | [**QueueConversationCallbackEventTopicQueueMediaSettings**](QueueConversationCallbackEventTopicQueueMediaSettings) |  |  [optional] |
+| **outboundPreview** | [**QueueConversationCallbackEventTopicDialerPreview**](QueueConversationCallbackEventTopicDialerPreview) |  |  [optional] |
+| **voicemail** | [**QueueConversationCallbackEventTopicVoicemail**](QueueConversationCallbackEventTopicVoicemail) |  |  [optional] |
+| **callbackNumbers** | **List&lt;String&gt;** |  |  [optional] |
+| **callbackUserName** | **String** |  |  [optional] |
+| **skipEnabled** | **Boolean** |  |  [optional] |
+| **externalCampaign** | **Boolean** |  |  [optional] |
+| **timeoutSeconds** | **Integer** |  |  [optional] |
+| **callbackScheduledTime** | [**Date**](Date) |  |  [optional] |
+| **automatedCallbackConfigId** | **String** |  |  [optional] |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -79,10 +73,7 @@ title: QueueConversationCallbackEventTopicCallbackMediaParticipant
 | SCHEDULED | &quot;scheduled&quot; | 
 | PARKED | &quot;parked&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
-
-<a name="InitialStateEnum"></a>
 
 ## Enum: InitialStateEnum
 
@@ -102,10 +93,7 @@ title: QueueConversationCallbackEventTopicCallbackMediaParticipant
 | SCHEDULED | &quot;scheduled&quot; | 
 | PARKED | &quot;parked&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
-
-<a name="DirectionEnum"></a>
 
 ## Enum: DirectionEnum
 
@@ -114,10 +102,7 @@ title: QueueConversationCallbackEventTopicCallbackMediaParticipant
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INBOUND | &quot;inbound&quot; | 
 | OUTBOUND | &quot;outbound&quot; | 
-{: class="table table-striped"}
 
-
-<a name="DisconnectTypeEnum"></a>
 
 ## Enum: DisconnectTypeEnum
 
@@ -142,10 +127,7 @@ title: QueueConversationCallbackEventTopicCallbackMediaParticipant
 | OTHER | &quot;other&quot; | 
 | SPAM | &quot;spam&quot; | 
 | UNCALLABLE | &quot;uncallable&quot; | 
-{: class="table table-striped"}
 
-
-<a name="FlaggedReasonEnum"></a>
 
 ## Enum: FlaggedReasonEnum
 
@@ -153,7 +135,8 @@ title: QueueConversationCallbackEventTopicCallbackMediaParticipant
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | GENERAL | &quot;general&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

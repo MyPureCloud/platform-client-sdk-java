@@ -1,50 +1,45 @@
----
-title: ChatApi
----
-## ChatApi
+# ChatApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteChatsRoomMessage**](ChatApi.html#deleteChatsRoomMessage) | Delete a message in a room |
-| [**deleteChatsRoomMessagesPin**](ChatApi.html#deleteChatsRoomMessagesPin) | Remove a pinned message from a room |
-| [**deleteChatsRoomParticipant**](ChatApi.html#deleteChatsRoomParticipant) | Remove a user from a room. |
-| [**deleteChatsUserMessage**](ChatApi.html#deleteChatsUserMessage) | Delete a message to a user |
-| [**deleteChatsUserMessagesPin**](ChatApi.html#deleteChatsUserMessagesPin) | Remove a pinned message from a 1on1 |
-| [**getChatsMessage**](ChatApi.html#getChatsMessage) | Get a message |
-| [**getChatsRoom**](ChatApi.html#getChatsRoom) | Get a room |
-| [**getChatsRoomMessage**](ChatApi.html#getChatsRoomMessage) | Get messages by id(s) from a room |
-| [**getChatsRoomMessages**](ChatApi.html#getChatsRoomMessages) | Get a room's message history |
-| [**getChatsRoomParticipant**](ChatApi.html#getChatsRoomParticipant) | Get a room participant |
-| [**getChatsRoomParticipants**](ChatApi.html#getChatsRoomParticipants) | Get room participants in a room |
-| [**getChatsSettings**](ChatApi.html#getChatsSettings) | Get Chat Settings. |
-| [**getChatsThreadMessages**](ChatApi.html#getChatsThreadMessages) | Get history by thread |
-| [**getChatsUser**](ChatApi.html#getChatsUser) | Get information for a 1on1 |
-| [**getChatsUserMessage**](ChatApi.html#getChatsUserMessage) | Get messages by id(s) from a 1on1 |
-| [**getChatsUserMessages**](ChatApi.html#getChatsUserMessages) | Get 1on1 History between a user |
-| [**getChatsUserSettings**](ChatApi.html#getChatsUserSettings) | Get a user's chat settings |
-| [**getChatsUsersMeSettings**](ChatApi.html#getChatsUsersMeSettings) | Get a user's chat settings |
-| [**patchChatsRoom**](ChatApi.html#patchChatsRoom) | Set properties for a room |
-| [**patchChatsRoomMessage**](ChatApi.html#patchChatsRoomMessage) | Edit a message in a room |
-| [**patchChatsSettings**](ChatApi.html#patchChatsSettings) | Patch Chat Settings. |
-| [**patchChatsUserMessage**](ChatApi.html#patchChatsUserMessage) | Edit a message to a user |
-| [**patchChatsUserSettings**](ChatApi.html#patchChatsUserSettings) | Update a user's chat settings |
-| [**patchChatsUsersMeSettings**](ChatApi.html#patchChatsUsersMeSettings) | Update a user's chat settings |
-| [**postChatsRoomMessages**](ChatApi.html#postChatsRoomMessages) | Send a message to a room |
-| [**postChatsRoomMessagesPins**](ChatApi.html#postChatsRoomMessagesPins) | Add pinned messages for a room, up to a maximum of 5 pinned messages |
-| [**postChatsRoomParticipant**](ChatApi.html#postChatsRoomParticipant) | Join a room |
-| [**postChatsRooms**](ChatApi.html#postChatsRooms) | Create an adhoc room |
-| [**postChatsUserMessages**](ChatApi.html#postChatsUserMessages) | Send a message to a user |
-| [**postChatsUserMessagesPins**](ChatApi.html#postChatsUserMessagesPins) | Add pinned messages for a 1on1, up to a maximum of 5 pinned messages |
-| [**putChatsMessageReactions**](ChatApi.html#putChatsMessageReactions) | Update reactions to a message |
-| [**putChatsSettings**](ChatApi.html#putChatsSettings) | Update Chat Settings. |
+| [**deleteChatsRoomMessage**](ChatApi#deleteChatsRoomMessage) | Delete a message in a room |
+| [**deleteChatsRoomMessagesPin**](ChatApi#deleteChatsRoomMessagesPin) | Remove a pinned message from a room |
+| [**deleteChatsRoomParticipant**](ChatApi#deleteChatsRoomParticipant) | Remove a user from a room. |
+| [**deleteChatsUserMessage**](ChatApi#deleteChatsUserMessage) | Delete a message to a user |
+| [**deleteChatsUserMessagesPin**](ChatApi#deleteChatsUserMessagesPin) | Remove a pinned message from a 1on1 |
+| [**getChatsMessage**](ChatApi#getChatsMessage) | Get a message |
+| [**getChatsRoom**](ChatApi#getChatsRoom) | Get a room |
+| [**getChatsRoomMessage**](ChatApi#getChatsRoomMessage) | Get messages by id(s) from a room |
+| [**getChatsRoomMessages**](ChatApi#getChatsRoomMessages) | Get a room's message history |
+| [**getChatsRoomParticipant**](ChatApi#getChatsRoomParticipant) | Get a room participant |
+| [**getChatsRoomParticipants**](ChatApi#getChatsRoomParticipants) | Get room participants in a room |
+| [**getChatsSettings**](ChatApi#getChatsSettings) | Get Chat Settings. |
+| [**getChatsThreadMessages**](ChatApi#getChatsThreadMessages) | Get history by thread |
+| [**getChatsUser**](ChatApi#getChatsUser) | Get information for a 1on1 |
+| [**getChatsUserMessage**](ChatApi#getChatsUserMessage) | Get messages by id(s) from a 1on1 |
+| [**getChatsUserMessages**](ChatApi#getChatsUserMessages) | Get 1on1 History between a user |
+| [**getChatsUserSettings**](ChatApi#getChatsUserSettings) | Get a user's chat settings |
+| [**getChatsUsersMeSettings**](ChatApi#getChatsUsersMeSettings) | Get a user's chat settings |
+| [**patchChatsRoom**](ChatApi#patchChatsRoom) | Set properties for a room |
+| [**patchChatsRoomMessage**](ChatApi#patchChatsRoomMessage) | Edit a message in a room |
+| [**patchChatsSettings**](ChatApi#patchChatsSettings) | Patch Chat Settings. |
+| [**patchChatsUserMessage**](ChatApi#patchChatsUserMessage) | Edit a message to a user |
+| [**patchChatsUserSettings**](ChatApi#patchChatsUserSettings) | Update a user's chat settings |
+| [**patchChatsUsersMeSettings**](ChatApi#patchChatsUsersMeSettings) | Update a user's chat settings |
+| [**postChatsRoomMessages**](ChatApi#postChatsRoomMessages) | Send a message to a room |
+| [**postChatsRoomMessagesPins**](ChatApi#postChatsRoomMessagesPins) | Add pinned messages for a room, up to a maximum of 5 pinned messages |
+| [**postChatsRoomParticipant**](ChatApi#postChatsRoomParticipant) | Join a room |
+| [**postChatsRooms**](ChatApi#postChatsRooms) | Create an adhoc room |
+| [**postChatsUserMessages**](ChatApi#postChatsUserMessages) | Send a message to a user |
+| [**postChatsUserMessagesPins**](ChatApi#postChatsUserMessagesPins) | Add pinned messages for a 1on1, up to a maximum of 5 pinned messages |
+| [**putChatsMessageReactions**](ChatApi#putChatsMessageReactions) | Update reactions to a message |
+| [**putChatsSettings**](ChatApi#putChatsSettings) | Update Chat Settings. |
 {: class="table-striped"}
 
-<a name="deleteChatsRoomMessage"></a>
 
 # **deleteChatsRoomMessage**
-
 
 
 > Void deleteChatsRoomMessage(roomJid, messageId)
@@ -104,10 +99,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteChatsRoomMessagesPin"></a>
 
 # **deleteChatsRoomMessagesPin**
-
 
 
 > Void deleteChatsRoomMessagesPin(roomJid, pinnedMessageId)
@@ -167,10 +160,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteChatsRoomParticipant"></a>
 
 # **deleteChatsRoomParticipant**
-
 
 
 > Void deleteChatsRoomParticipant(roomJid, userId)
@@ -230,10 +221,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteChatsUserMessage"></a>
 
 # **deleteChatsUserMessage**
-
 
 
 > Void deleteChatsUserMessage(userId, messageId)
@@ -293,10 +282,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteChatsUserMessagesPin"></a>
 
 # **deleteChatsUserMessagesPin**
-
 
 
 > Void deleteChatsUserMessagesPin(userId, pinnedMessageId)
@@ -358,13 +345,11 @@ try {
 
 null (empty response body)
 
-<a name="getChatsMessage"></a>
 
 # **getChatsMessage**
 
 
-
-> [ChatMessageResponse](ChatMessageResponse.html) getChatsMessage(messageId)
+> [ChatMessageResponse](ChatMessageResponse) getChatsMessage(messageId)
 
 Get a message
 
@@ -419,15 +404,13 @@ try {
 
 ### Return type
 
-[**ChatMessageResponse**](ChatMessageResponse.html)
+[**ChatMessageResponse**](ChatMessageResponse)
 
-<a name="getChatsRoom"></a>
 
 # **getChatsRoom**
 
 
-
-> [Room](Room.html) getChatsRoom(roomJid)
+> [Room](Room) getChatsRoom(roomJid)
 
 Get a room
 
@@ -481,15 +464,13 @@ try {
 
 ### Return type
 
-[**Room**](Room.html)
+[**Room**](Room)
 
-<a name="getChatsRoomMessage"></a>
 
 # **getChatsRoomMessage**
 
 
-
-> [ChatMessageEntityListing](ChatMessageEntityListing.html) getChatsRoomMessage(roomJid, messageIds)
+> [ChatMessageEntityListing](ChatMessageEntityListing) getChatsRoomMessage(roomJid, messageIds)
 
 Get messages by id(s) from a room
 
@@ -545,15 +526,13 @@ try {
 
 ### Return type
 
-[**ChatMessageEntityListing**](ChatMessageEntityListing.html)
+[**ChatMessageEntityListing**](ChatMessageEntityListing)
 
-<a name="getChatsRoomMessages"></a>
 
 # **getChatsRoomMessages**
 
 
-
-> [ChatMessageEntityListing](ChatMessageEntityListing.html) getChatsRoomMessages(roomJid, limit, before, after)
+> [ChatMessageEntityListing](ChatMessageEntityListing) getChatsRoomMessages(roomJid, limit, before, after)
 
 Get a room's message history
 
@@ -613,15 +592,13 @@ try {
 
 ### Return type
 
-[**ChatMessageEntityListing**](ChatMessageEntityListing.html)
+[**ChatMessageEntityListing**](ChatMessageEntityListing)
 
-<a name="getChatsRoomParticipant"></a>
 
 # **getChatsRoomParticipant**
 
 
-
-> [RoomParticipant](RoomParticipant.html) getChatsRoomParticipant(roomJid, participantJid)
+> [RoomParticipant](RoomParticipant) getChatsRoomParticipant(roomJid, participantJid)
 
 Get a room participant
 
@@ -675,15 +652,13 @@ try {
 
 ### Return type
 
-[**RoomParticipant**](RoomParticipant.html)
+[**RoomParticipant**](RoomParticipant)
 
-<a name="getChatsRoomParticipants"></a>
 
 # **getChatsRoomParticipants**
 
 
-
-> [RoomParticipantsResponse](RoomParticipantsResponse.html) getChatsRoomParticipants(roomJid)
+> [RoomParticipantsResponse](RoomParticipantsResponse) getChatsRoomParticipants(roomJid)
 
 Get room participants in a room
 
@@ -737,15 +712,13 @@ try {
 
 ### Return type
 
-[**RoomParticipantsResponse**](RoomParticipantsResponse.html)
+[**RoomParticipantsResponse**](RoomParticipantsResponse)
 
-<a name="getChatsSettings"></a>
 
 # **getChatsSettings**
 
 
-
-> [ChatSettings](ChatSettings.html) getChatsSettings()
+> [ChatSettings](ChatSettings) getChatsSettings()
 
 Get Chat Settings.
 
@@ -795,15 +768,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**ChatSettings**](ChatSettings.html)
+[**ChatSettings**](ChatSettings)
 
-<a name="getChatsThreadMessages"></a>
 
 # **getChatsThreadMessages**
 
 
-
-> [ChatMessageEntityListing](ChatMessageEntityListing.html) getChatsThreadMessages(threadId, limit, before, after)
+> [ChatMessageEntityListing](ChatMessageEntityListing) getChatsThreadMessages(threadId, limit, before, after)
 
 Get history by thread
 
@@ -863,15 +834,13 @@ try {
 
 ### Return type
 
-[**ChatMessageEntityListing**](ChatMessageEntityListing.html)
+[**ChatMessageEntityListing**](ChatMessageEntityListing)
 
-<a name="getChatsUser"></a>
 
 # **getChatsUser**
 
 
-
-> [OneOnOne](OneOnOne.html) getChatsUser(userId)
+> [OneOnOne](OneOnOne) getChatsUser(userId)
 
 Get information for a 1on1
 
@@ -927,15 +896,13 @@ try {
 
 ### Return type
 
-[**OneOnOne**](OneOnOne.html)
+[**OneOnOne**](OneOnOne)
 
-<a name="getChatsUserMessage"></a>
 
 # **getChatsUserMessage**
 
 
-
-> [ChatMessageEntityListing](ChatMessageEntityListing.html) getChatsUserMessage(userId, messageIds)
+> [ChatMessageEntityListing](ChatMessageEntityListing) getChatsUserMessage(userId, messageIds)
 
 Get messages by id(s) from a 1on1
 
@@ -991,15 +958,13 @@ try {
 
 ### Return type
 
-[**ChatMessageEntityListing**](ChatMessageEntityListing.html)
+[**ChatMessageEntityListing**](ChatMessageEntityListing)
 
-<a name="getChatsUserMessages"></a>
 
 # **getChatsUserMessages**
 
 
-
-> [ChatMessageResponse](ChatMessageResponse.html) getChatsUserMessages(userId, limit, before, after)
+> [ChatMessageResponse](ChatMessageResponse) getChatsUserMessages(userId, limit, before, after)
 
 Get 1on1 History between a user
 
@@ -1059,15 +1024,13 @@ try {
 
 ### Return type
 
-[**ChatMessageResponse**](ChatMessageResponse.html)
+[**ChatMessageResponse**](ChatMessageResponse)
 
-<a name="getChatsUserSettings"></a>
 
 # **getChatsUserSettings**
 
 
-
-> [ChatUserSettings](ChatUserSettings.html) getChatsUserSettings(userId)
+> [ChatUserSettings](ChatUserSettings) getChatsUserSettings(userId)
 
 Get a user's chat settings
 
@@ -1123,15 +1086,13 @@ try {
 
 ### Return type
 
-[**ChatUserSettings**](ChatUserSettings.html)
+[**ChatUserSettings**](ChatUserSettings)
 
-<a name="getChatsUsersMeSettings"></a>
 
 # **getChatsUsersMeSettings**
 
 
-
-> [ChatUserSettings](ChatUserSettings.html) getChatsUsersMeSettings()
+> [ChatUserSettings](ChatUserSettings) getChatsUsersMeSettings()
 
 Get a user's chat settings
 
@@ -1181,12 +1142,10 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**ChatUserSettings**](ChatUserSettings.html)
+[**ChatUserSettings**](ChatUserSettings)
 
-<a name="patchChatsRoom"></a>
 
 # **patchChatsRoom**
-
 
 
 > Void patchChatsRoom(roomJid, body)
@@ -1238,7 +1197,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **roomJid** | **String**| roomJid | 
-| **body** | [**RoomUpdateRequest**](RoomUpdateRequest.html)| Room properties | 
+| **body** | [**RoomUpdateRequest**](RoomUpdateRequest)| Room properties | 
 {: class="table-striped"}
 
 
@@ -1246,13 +1205,11 @@ try {
 
 null (empty response body)
 
-<a name="patchChatsRoomMessage"></a>
 
 # **patchChatsRoomMessage**
 
 
-
-> [ChatSendMessageResponse](ChatSendMessageResponse.html) patchChatsRoomMessage(roomJid, messageId, body)
+> [ChatSendMessageResponse](ChatSendMessageResponse) patchChatsRoomMessage(roomJid, messageId, body)
 
 Edit a message in a room
 
@@ -1304,21 +1261,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **roomJid** | **String**| roomId | 
 | **messageId** | **String**| messageId | 
-| **body** | [**SendMessageBody**](SendMessageBody.html)| messageBody | 
+| **body** | [**SendMessageBody**](SendMessageBody)| messageBody | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ChatSendMessageResponse**](ChatSendMessageResponse.html)
+[**ChatSendMessageResponse**](ChatSendMessageResponse)
 
-<a name="patchChatsSettings"></a>
 
 # **patchChatsSettings**
 
 
-
-> [ChatSettings](ChatSettings.html) patchChatsSettings(body)
+> [ChatSettings](ChatSettings) patchChatsSettings(body)
 
 Patch Chat Settings.
 
@@ -1365,21 +1320,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ChatSettings**](ChatSettings.html)| Chat | 
+| **body** | [**ChatSettings**](ChatSettings)| Chat | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ChatSettings**](ChatSettings.html)
+[**ChatSettings**](ChatSettings)
 
-<a name="patchChatsUserMessage"></a>
 
 # **patchChatsUserMessage**
 
 
-
-> [ChatSendMessageResponse](ChatSendMessageResponse.html) patchChatsUserMessage(userId, messageId, body)
+> [ChatSendMessageResponse](ChatSendMessageResponse) patchChatsUserMessage(userId, messageId, body)
 
 Edit a message to a user
 
@@ -1431,21 +1384,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| userId | 
 | **messageId** | **String**| messageId | 
-| **body** | [**SendMessageBody**](SendMessageBody.html)| message body | 
+| **body** | [**SendMessageBody**](SendMessageBody)| message body | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ChatSendMessageResponse**](ChatSendMessageResponse.html)
+[**ChatSendMessageResponse**](ChatSendMessageResponse)
 
-<a name="patchChatsUserSettings"></a>
 
 # **patchChatsUserSettings**
 
 
-
-> [ChatUserSettings](ChatUserSettings.html) patchChatsUserSettings(userId, body)
+> [ChatUserSettings](ChatUserSettings) patchChatsUserSettings(userId, body)
 
 Update a user's chat settings
 
@@ -1497,21 +1448,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | 
-| **body** | [**ChatUserSettings**](ChatUserSettings.html)|  | 
+| **body** | [**ChatUserSettings**](ChatUserSettings)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ChatUserSettings**](ChatUserSettings.html)
+[**ChatUserSettings**](ChatUserSettings)
 
-<a name="patchChatsUsersMeSettings"></a>
 
 # **patchChatsUsersMeSettings**
 
 
-
-> [ChatUserSettings](ChatUserSettings.html) patchChatsUsersMeSettings(body)
+> [ChatUserSettings](ChatUserSettings) patchChatsUsersMeSettings(body)
 
 Update a user's chat settings
 
@@ -1559,21 +1508,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ChatUserSettings**](ChatUserSettings.html)|  | 
+| **body** | [**ChatUserSettings**](ChatUserSettings)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ChatUserSettings**](ChatUserSettings.html)
+[**ChatUserSettings**](ChatUserSettings)
 
-<a name="postChatsRoomMessages"></a>
 
 # **postChatsRoomMessages**
 
 
-
-> [ChatSendMessageResponse](ChatSendMessageResponse.html) postChatsRoomMessages(roomJid, body)
+> [ChatSendMessageResponse](ChatSendMessageResponse) postChatsRoomMessages(roomJid, body)
 
 Send a message to a room
 
@@ -1623,18 +1570,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **roomJid** | **String**| roomId | 
-| **body** | [**SendMessageBody**](SendMessageBody.html)| messageBody | 
+| **body** | [**SendMessageBody**](SendMessageBody)| messageBody | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ChatSendMessageResponse**](ChatSendMessageResponse.html)
+[**ChatSendMessageResponse**](ChatSendMessageResponse)
 
-<a name="postChatsRoomMessagesPins"></a>
 
 # **postChatsRoomMessagesPins**
-
 
 
 > Void postChatsRoomMessagesPins(roomJid, body)
@@ -1686,7 +1631,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **roomJid** | **String**| roomJid | 
-| **body** | [**PinnedMessageRequest**](PinnedMessageRequest.html)| Pinned Message Ids | 
+| **body** | [**PinnedMessageRequest**](PinnedMessageRequest)| Pinned Message Ids | 
 {: class="table-striped"}
 
 
@@ -1694,10 +1639,8 @@ try {
 
 null (empty response body)
 
-<a name="postChatsRoomParticipant"></a>
 
 # **postChatsRoomParticipant**
-
 
 
 > Void postChatsRoomParticipant(roomJid, userId)
@@ -1757,13 +1700,11 @@ try {
 
 null (empty response body)
 
-<a name="postChatsRooms"></a>
 
 # **postChatsRooms**
 
 
-
-> [CreateRoomResponse](CreateRoomResponse.html) postChatsRooms(body)
+> [CreateRoomResponse](CreateRoomResponse) postChatsRooms(body)
 
 Create an adhoc room
 
@@ -1811,21 +1752,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CreateRoomRequest**](CreateRoomRequest.html)| Room properties | 
+| **body** | [**CreateRoomRequest**](CreateRoomRequest)| Room properties | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CreateRoomResponse**](CreateRoomResponse.html)
+[**CreateRoomResponse**](CreateRoomResponse)
 
-<a name="postChatsUserMessages"></a>
 
 # **postChatsUserMessages**
 
 
-
-> [ChatSendMessageResponse](ChatSendMessageResponse.html) postChatsUserMessages(userId, body)
+> [ChatSendMessageResponse](ChatSendMessageResponse) postChatsUserMessages(userId, body)
 
 Send a message to a user
 
@@ -1875,18 +1814,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| userId | 
-| **body** | [**SendMessageBody**](SendMessageBody.html)| message body | 
+| **body** | [**SendMessageBody**](SendMessageBody)| message body | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ChatSendMessageResponse**](ChatSendMessageResponse.html)
+[**ChatSendMessageResponse**](ChatSendMessageResponse)
 
-<a name="postChatsUserMessagesPins"></a>
 
 # **postChatsUserMessagesPins**
-
 
 
 > Void postChatsUserMessagesPins(userId, body)
@@ -1940,7 +1877,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| userId | 
-| **body** | [**PinnedMessageRequest**](PinnedMessageRequest.html)| Pinned Message Ids | 
+| **body** | [**PinnedMessageRequest**](PinnedMessageRequest)| Pinned Message Ids | 
 {: class="table-striped"}
 
 
@@ -1948,10 +1885,8 @@ try {
 
 null (empty response body)
 
-<a name="putChatsMessageReactions"></a>
 
 # **putChatsMessageReactions**
-
 
 
 > Void putChatsMessageReactions(messageId, body)
@@ -2003,7 +1938,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **messageId** | **String**| messageId | 
-| **body** | [**ChatReactionUpdate**](ChatReactionUpdate.html)| reactionUpdate | 
+| **body** | [**ChatReactionUpdate**](ChatReactionUpdate)| reactionUpdate | 
 {: class="table-striped"}
 
 
@@ -2011,13 +1946,11 @@ try {
 
 null (empty response body)
 
-<a name="putChatsSettings"></a>
 
 # **putChatsSettings**
 
 
-
-> [ChatSettings](ChatSettings.html) putChatsSettings(body)
+> [ChatSettings](ChatSettings) putChatsSettings(body)
 
 Update Chat Settings.
 
@@ -2064,11 +1997,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ChatSettings**](ChatSettings.html)| Chat | 
+| **body** | [**ChatSettings**](ChatSettings)| Chat | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ChatSettings**](ChatSettings.html)
+[**ChatSettings**](ChatSettings)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

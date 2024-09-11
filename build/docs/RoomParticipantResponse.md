@@ -1,16 +1,14 @@
----
-title: RoomParticipantResponse
----
-## RoomParticipantResponse
+# RoomParticipantResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **jid** | <!----><!---->**String**<!----> | jid of the participant |  [optional] |
-| **user** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | User id of the participant |  [optional] |
-{: class="table table-striped"}
+| **jid** | **String** | jid of the participant |  [optional] |
+| **user** | [**AddressableEntityRef**](AddressableEntityRef) | User id of the participant |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

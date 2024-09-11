@@ -1,16 +1,14 @@
----
-title: SurveyFormAndScoringSet
----
-## SurveyFormAndScoringSet
+# SurveyFormAndScoringSet
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **surveyForm** | <!----><!---->[**SurveyForm**](SurveyForm.html)<!----> |  |  [optional] |
-| **answers** | <!----><!---->[**SurveyScoringSet**](SurveyScoringSet.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **surveyForm** | [**SurveyForm**](SurveyForm) |  |  [optional] |
+| **answers** | [**SurveyScoringSet**](SurveyScoringSet) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

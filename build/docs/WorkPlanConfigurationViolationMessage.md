@@ -1,20 +1,14 @@
----
-title: WorkPlanConfigurationViolationMessage
----
-## WorkPlanConfigurationViolationMessage
+# WorkPlanConfigurationViolationMessage
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Type of configuration violation message for this work plan |  [optional] |
-| **arguments** | <!----><!---->[**List&lt;WorkPlanValidationMessageArgument&gt;**](WorkPlanValidationMessageArgument.html)<!----> | Arguments of the message that provide information about the misconfigured value or the threshold that is exceeded by the misconfigured value |  [optional] |
-| **severity** | [**SeverityEnum**](#SeverityEnum)<!----> | Severity of the message. A message with Error severity indicates the scheduler won't be able to produce schedules and thus the work plan is invalid. |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Type of configuration violation message for this work plan |  [optional] |
+| **arguments** | [**List&lt;WorkPlanValidationMessageArgument&gt;**](WorkPlanValidationMessageArgument) | Arguments of the message that provide information about the misconfigured value or the threshold that is exceeded by the misconfigured value |  [optional] |
+| **severity** | [**SeverityEnum**](#Enum--SeverityEnum) | Severity of the message. A message with Error severity indicates the scheduler won't be able to produce schedules and thus the work plan is invalid. |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -55,10 +49,7 @@ title: WorkPlanConfigurationViolationMessage
 | SHIFTSTOPEARLIERTHANSTART | &quot;ShiftStopEarlierThanStart&quot; | 
 | SHIFTVARIANCECANNOTBEMET | &quot;ShiftVarianceCannotBeMet&quot; | 
 | WEEKLYEXACTPAIDMINUTES | &quot;WeeklyExactPaidMinutes&quot; | 
-{: class="table table-striped"}
 
-
-<a name="SeverityEnum"></a>
 
 ## Enum: SeverityEnum
 
@@ -68,7 +59,8 @@ title: WorkPlanConfigurationViolationMessage
 | INFORMATION | &quot;Information&quot; | 
 | WARNING | &quot;Warning&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

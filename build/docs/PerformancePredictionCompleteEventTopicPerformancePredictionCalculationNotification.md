@@ -1,22 +1,16 @@
----
-title: PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNotification
----
-## PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNotification
+# PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNotification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **scheduleId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **weekDate** | <!----><!---->**String**<!----> |  |  [optional] |
-| **downloadUrl** | <!----><!---->**String**<!----> |  |  [optional] |
-| **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
-| **error** | <!----><!---->[**PerformancePredictionCompleteEventTopicErrorBody**](PerformancePredictionCompleteEventTopicErrorBody.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **scheduleId** | **String** |  |  [optional] |
+| **weekDate** | **String** |  |  [optional] |
+| **downloadUrl** | **String** |  |  [optional] |
+| **state** | [**StateEnum**](#Enum--StateEnum) |  |  [optional] |
+| **error** | [**PerformancePredictionCompleteEventTopicErrorBody**](PerformancePredictionCompleteEventTopicErrorBody) |  |  [optional] |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -27,7 +21,8 @@ title: PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNo
 | COMPLETE | &quot;Complete&quot; | 
 | CANCELED | &quot;Canceled&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

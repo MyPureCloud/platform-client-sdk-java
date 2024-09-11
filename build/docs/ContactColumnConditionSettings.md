@@ -1,21 +1,15 @@
----
-title: ContactColumnConditionSettings
----
-## ContactColumnConditionSettings
+# ContactColumnConditionSettings
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **columnName** | <!----><!---->**String**<!----> | The name of the contact list column to evaluate. |  |
-| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | The operator to use when comparing values. |  |
-| **value** | <!----><!---->**String**<!----> | The value to compare against the contact's data. |  |
-| **valueType** | [**ValueTypeEnum**](#ValueTypeEnum)<!----> | The data type the value should be treated as. |  |
-{: class="table table-striped"}
+| **columnName** | **String** | The name of the contact list column to evaluate. |  |
+| **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | The operator to use when comparing values. |  |
+| **value** | **String** | The value to compare against the contact's data. |  |
+| **valueType** | [**ValueTypeEnum**](#Enum--ValueTypeEnum) | The data type the value should be treated as. |  |
 
-
-<a name="OperatorEnum"></a>
 
 ## Enum: OperatorEnum
 
@@ -32,10 +26,7 @@ title: ContactColumnConditionSettings
 | ENDSWITH | &quot;EndsWith&quot; | 
 | BEFORE | &quot;Before&quot; | 
 | AFTER | &quot;After&quot; | 
-{: class="table table-striped"}
 
-
-<a name="ValueTypeEnum"></a>
 
 ## Enum: ValueTypeEnum
 
@@ -46,7 +37,8 @@ title: ContactColumnConditionSettings
 | NUMERIC | &quot;Numeric&quot; | 
 | PERIOD | &quot;Period&quot; | 
 | STRING | &quot;String&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

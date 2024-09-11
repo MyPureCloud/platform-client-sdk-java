@@ -1,27 +1,25 @@
----
-title: JourneyAppEventsNotificationAppMessage
----
-## JourneyAppEventsNotificationAppMessage
+# JourneyAppEventsNotificationAppMessage
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **eventName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **screenName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **app** | <!----><!---->[**JourneyAppEventsNotificationApp**](JourneyAppEventsNotificationApp.html)<!----> |  |  [optional] |
-| **device** | <!----><!---->[**JourneyAppEventsNotificationDevice**](JourneyAppEventsNotificationDevice.html)<!----> |  |  [optional] |
-| **ipAddress** | <!----><!---->**String**<!----> |  |  [optional] |
-| **ipOrganization** | <!----><!---->**String**<!----> |  |  [optional] |
-| **geolocation** | <!----><!---->[**JourneyAppEventsNotificationGeoLocation**](JourneyAppEventsNotificationGeoLocation.html)<!----> |  |  [optional] |
-| **sdkLibrary** | <!----><!---->[**JourneyAppEventsNotificationSdkLibrary**](JourneyAppEventsNotificationSdkLibrary.html)<!----> |  |  [optional] |
-| **networkConnectivity** | <!----><!---->[**JourneyAppEventsNotificationNetworkConnectivity**](JourneyAppEventsNotificationNetworkConnectivity.html)<!----> |  |  [optional] |
-| **mktCampaign** | <!----><!---->[**JourneyAppEventsNotificationMktCampaign**](JourneyAppEventsNotificationMktCampaign.html)<!----> |  |  [optional] |
-| **searchQuery** | <!----><!---->**String**<!----> |  |  [optional] |
-| **attributes** | <!----><!---->[**Map&lt;String, JourneyAppEventsNotificationCustomEventAttribute&gt;**](JourneyAppEventsNotificationCustomEventAttribute.html)<!----> |  |  [optional] |
-| **traits** | <!----><!---->[**Map&lt;String, JourneyAppEventsNotificationCustomEventAttribute&gt;**](JourneyAppEventsNotificationCustomEventAttribute.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **eventName** | **String** |  |  [optional] |
+| **screenName** | **String** |  |  [optional] |
+| **app** | [**JourneyAppEventsNotificationApp**](JourneyAppEventsNotificationApp) |  |  [optional] |
+| **device** | [**JourneyAppEventsNotificationDevice**](JourneyAppEventsNotificationDevice) |  |  [optional] |
+| **ipAddress** | **String** |  |  [optional] |
+| **ipOrganization** | **String** |  |  [optional] |
+| **geolocation** | [**JourneyAppEventsNotificationGeoLocation**](JourneyAppEventsNotificationGeoLocation) |  |  [optional] |
+| **sdkLibrary** | [**JourneyAppEventsNotificationSdkLibrary**](JourneyAppEventsNotificationSdkLibrary) |  |  [optional] |
+| **networkConnectivity** | [**JourneyAppEventsNotificationNetworkConnectivity**](JourneyAppEventsNotificationNetworkConnectivity) |  |  [optional] |
+| **mktCampaign** | [**JourneyAppEventsNotificationMktCampaign**](JourneyAppEventsNotificationMktCampaign) |  |  [optional] |
+| **searchQuery** | **String** |  |  [optional] |
+| **attributes** | [**Map&lt;String, JourneyAppEventsNotificationCustomEventAttribute&gt;**](JourneyAppEventsNotificationCustomEventAttribute) |  |  [optional] |
+| **traits** | [**Map&lt;String, JourneyAppEventsNotificationCustomEventAttribute&gt;**](JourneyAppEventsNotificationCustomEventAttribute) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,18 +1,12 @@
----
-title: LauncherButtonSettings
----
-## LauncherButtonSettings
+# LauncherButtonSettings
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **visibility** | [**VisibilityEnum**](#VisibilityEnum)<!----> | The visibility settings for the button |  [optional] |
-{: class="table table-striped"}
+| **visibility** | [**VisibilityEnum**](#Enum--VisibilityEnum) | The visibility settings for the button |  [optional] |
 
-
-<a name="VisibilityEnum"></a>
 
 ## Enum: VisibilityEnum
 
@@ -22,7 +16,8 @@ title: LauncherButtonSettings
 | ON | &quot;On&quot; | 
 | OFF | &quot;Off&quot; | 
 | ONDEMAND | &quot;OnDemand&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

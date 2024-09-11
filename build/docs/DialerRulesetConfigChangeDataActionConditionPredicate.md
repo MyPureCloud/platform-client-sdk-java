@@ -1,23 +1,17 @@
----
-title: DialerRulesetConfigChangeDataActionConditionPredicate
----
-## DialerRulesetConfigChangeDataActionConditionPredicate
+# DialerRulesetConfigChangeDataActionConditionPredicate
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **outputField** | <!----><!---->**String**<!----> | The name of an output field from the data action's output to use for this condition |  [optional] |
-| **outputOperator** | [**OutputOperatorEnum**](#OutputOperatorEnum)<!----> | The operation with which to evaluate this condition |  [optional] |
-| **comparisonValue** | <!----><!---->**String**<!----> | The value to compare against for this condition |  [optional] |
-| **outputFieldMissingResolution** | <!----><!---->**Boolean**<!----> | The result of this predicate if the requested output field is missing from the data action's result |  [optional] |
-| **inverted** | <!----><!---->**Boolean**<!----> | If true, inverts the result of evaluating this Predicate. Default is false. |  [optional] |
-| **additionalProperties** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **outputField** | **String** | The name of an output field from the data action's output to use for this condition |  [optional] |
+| **outputOperator** | [**OutputOperatorEnum**](#Enum--OutputOperatorEnum) | The operation with which to evaluate this condition |  [optional] |
+| **comparisonValue** | **String** | The value to compare against for this condition |  [optional] |
+| **outputFieldMissingResolution** | **Boolean** | The result of this predicate if the requested output field is missing from the data action's result |  [optional] |
+| **inverted** | **Boolean** | If true, inverts the result of evaluating this Predicate. Default is false. |  [optional] |
+| **additionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
-
-<a name="OutputOperatorEnum"></a>
 
 ## Enum: OutputOperatorEnum
 
@@ -34,7 +28,8 @@ title: DialerRulesetConfigChangeDataActionConditionPredicate
 | ENDS_WITH | &quot;ENDS_WITH&quot; | 
 | BEFORE | &quot;BEFORE&quot; | 
 | AFTER | &quot;AFTER&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

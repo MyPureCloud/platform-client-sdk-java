@@ -1,19 +1,13 @@
----
-title: UrlCondition
----
-## UrlCondition
+# UrlCondition
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **values** | <!----><!---->**List&lt;String&gt;**<!----> | The URL condition value. |  |
-| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | The comparison operator. |  |
-{: class="table table-striped"}
+| **values** | **List&lt;String&gt;** | The URL condition value. |  |
+| **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | The comparison operator. |  |
 
-
-<a name="OperatorEnum"></a>
 
 ## Enum: OperatorEnum
 
@@ -32,7 +26,8 @@ title: UrlCondition
 | LESSTHANOREQUAL | &quot;lessThanOrEqual&quot; | 
 | STARTSWITH | &quot;startsWith&quot; | 
 | ENDSWITH | &quot;endsWith&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

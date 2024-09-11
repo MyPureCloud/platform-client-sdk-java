@@ -1,21 +1,15 @@
----
-title: WorkitemsUserEventsNotificationDelta
----
-## WorkitemsUserEventsNotificationDelta
+# WorkitemsUserEventsNotificationDelta
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **op** | [**OpEnum**](#OpEnum)<!----> |  |  [optional] |
-| **field** | <!----><!---->**String**<!----> |  |  [optional] |
-| **oldValue** | <!----><!---->**String**<!----> |  |  [optional] |
-| **newValue** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **op** | [**OpEnum**](#Enum--OpEnum) |  |  [optional] |
+| **field** | **String** |  |  [optional] |
+| **oldValue** | **String** |  |  [optional] |
+| **newValue** | **String** |  |  [optional] |
 
-
-<a name="OpEnum"></a>
 
 ## Enum: OpEnum
 
@@ -26,7 +20,8 @@ title: WorkitemsUserEventsNotificationDelta
 | REMOVE | &quot;remove&quot; | 
 | REPLACE | &quot;replace&quot; | 
 | UNKNOWN | &quot;unknown&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

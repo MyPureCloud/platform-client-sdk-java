@@ -1,60 +1,54 @@
----
-title: ConversationSocialExpressionEventTopicSocialMediaParticipant
----
-## ConversationSocialExpressionEventTopicSocialMediaParticipant
+# ConversationSocialExpressionEventTopicSocialMediaParticipant
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **address** | <!----><!---->**String**<!----> |  |  [optional] |
-| **startTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **connectedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **endTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **startHoldTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **purpose** | <!----><!---->**String**<!----> |  |  [optional] |
-| **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
-| **initialState** | [**InitialStateEnum**](#InitialStateEnum)<!----> |  |  [optional] |
-| **direction** | [**DirectionEnum**](#DirectionEnum)<!----> |  |  [optional] |
-| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum)<!----> |  |  [optional] |
-| **held** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **wrapupRequired** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **wrapupPrompt** | <!----><!---->**String**<!----> |  |  [optional] |
-| **user** | <!----><!---->[**ConversationSocialExpressionEventTopicUriReference**](ConversationSocialExpressionEventTopicUriReference.html)<!----> |  |  [optional] |
-| **queue** | <!----><!---->[**ConversationSocialExpressionEventTopicUriReference**](ConversationSocialExpressionEventTopicUriReference.html)<!----> |  |  [optional] |
-| **team** | <!----><!---->[**ConversationSocialExpressionEventTopicUriReference**](ConversationSocialExpressionEventTopicUriReference.html)<!----> |  |  [optional] |
-| **attributes** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
-| **errorInfo** | <!----><!---->[**ConversationSocialExpressionEventTopicErrorBody**](ConversationSocialExpressionEventTopicErrorBody.html)<!----> |  |  [optional] |
-| **script** | <!----><!---->[**ConversationSocialExpressionEventTopicUriReference**](ConversationSocialExpressionEventTopicUriReference.html)<!----> |  |  [optional] |
-| **wrapupTimeoutMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **wrapupSkipped** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **alertingTimeoutMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **provider** | <!----><!---->**String**<!----> |  |  [optional] |
-| **externalContact** | <!----><!---->[**ConversationSocialExpressionEventTopicUriReference**](ConversationSocialExpressionEventTopicUriReference.html)<!----> |  |  [optional] |
-| **externalOrganization** | <!----><!---->[**ConversationSocialExpressionEventTopicUriReference**](ConversationSocialExpressionEventTopicUriReference.html)<!----> |  |  [optional] |
-| **wrapup** | <!----><!---->[**ConversationSocialExpressionEventTopicWrapup**](ConversationSocialExpressionEventTopicWrapup.html)<!----> |  |  [optional] |
-| **conversationRoutingData** | <!----><!---->[**ConversationSocialExpressionEventTopicConversationRoutingData**](ConversationSocialExpressionEventTopicConversationRoutingData.html)<!----> |  |  [optional] |
-| **peer** | <!----><!---->**String**<!----> |  |  [optional] |
-| **screenRecordingState** | <!----><!---->**String**<!----> |  |  [optional] |
-| **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum)<!----> |  |  [optional] |
-| **journeyContext** | <!----><!---->[**ConversationSocialExpressionEventTopicJourneyContext**](ConversationSocialExpressionEventTopicJourneyContext.html)<!----> |  |  [optional] |
-| **startAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **endAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **resumeTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **parkTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **mediaRoles** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **queueMediaSettings** | <!----><!---->[**ConversationSocialExpressionEventTopicQueueMediaSettings**](ConversationSocialExpressionEventTopicQueueMediaSettings.html)<!----> |  |  [optional] |
-| **socialMediaId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **socialMediaHub** | <!----><!---->**String**<!----> |  |  [optional] |
-| **socialUserName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **previewText** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **address** | **String** |  |  [optional] |
+| **startTime** | [**Date**](Date) |  |  [optional] |
+| **connectedTime** | [**Date**](Date) |  |  [optional] |
+| **endTime** | [**Date**](Date) |  |  [optional] |
+| **startHoldTime** | [**Date**](Date) |  |  [optional] |
+| **purpose** | **String** |  |  [optional] |
+| **state** | [**StateEnum**](#Enum--StateEnum) |  |  [optional] |
+| **initialState** | [**InitialStateEnum**](#Enum--InitialStateEnum) |  |  [optional] |
+| **direction** | [**DirectionEnum**](#Enum--DirectionEnum) |  |  [optional] |
+| **disconnectType** | [**DisconnectTypeEnum**](#Enum--DisconnectTypeEnum) |  |  [optional] |
+| **held** | **Boolean** |  |  [optional] |
+| **wrapupRequired** | **Boolean** |  |  [optional] |
+| **wrapupPrompt** | **String** |  |  [optional] |
+| **user** | [**ConversationSocialExpressionEventTopicUriReference**](ConversationSocialExpressionEventTopicUriReference) |  |  [optional] |
+| **queue** | [**ConversationSocialExpressionEventTopicUriReference**](ConversationSocialExpressionEventTopicUriReference) |  |  [optional] |
+| **team** | [**ConversationSocialExpressionEventTopicUriReference**](ConversationSocialExpressionEventTopicUriReference) |  |  [optional] |
+| **attributes** | **Map&lt;String, String&gt;** |  |  [optional] |
+| **errorInfo** | [**ConversationSocialExpressionEventTopicErrorBody**](ConversationSocialExpressionEventTopicErrorBody) |  |  [optional] |
+| **script** | [**ConversationSocialExpressionEventTopicUriReference**](ConversationSocialExpressionEventTopicUriReference) |  |  [optional] |
+| **wrapupTimeoutMs** | **Integer** |  |  [optional] |
+| **wrapupSkipped** | **Boolean** |  |  [optional] |
+| **alertingTimeoutMs** | **Integer** |  |  [optional] |
+| **provider** | **String** |  |  [optional] |
+| **externalContact** | [**ConversationSocialExpressionEventTopicUriReference**](ConversationSocialExpressionEventTopicUriReference) |  |  [optional] |
+| **externalOrganization** | [**ConversationSocialExpressionEventTopicUriReference**](ConversationSocialExpressionEventTopicUriReference) |  |  [optional] |
+| **wrapup** | [**ConversationSocialExpressionEventTopicWrapup**](ConversationSocialExpressionEventTopicWrapup) |  |  [optional] |
+| **conversationRoutingData** | [**ConversationSocialExpressionEventTopicConversationRoutingData**](ConversationSocialExpressionEventTopicConversationRoutingData) |  |  [optional] |
+| **peer** | **String** |  |  [optional] |
+| **screenRecordingState** | **String** |  |  [optional] |
+| **flaggedReason** | [**FlaggedReasonEnum**](#Enum--FlaggedReasonEnum) |  |  [optional] |
+| **journeyContext** | [**ConversationSocialExpressionEventTopicJourneyContext**](ConversationSocialExpressionEventTopicJourneyContext) |  |  [optional] |
+| **startAcwTime** | [**Date**](Date) |  |  [optional] |
+| **endAcwTime** | [**Date**](Date) |  |  [optional] |
+| **resumeTime** | [**Date**](Date) |  |  [optional] |
+| **parkTime** | [**Date**](Date) |  |  [optional] |
+| **mediaRoles** | **List&lt;String&gt;** |  |  [optional] |
+| **queueMediaSettings** | [**ConversationSocialExpressionEventTopicQueueMediaSettings**](ConversationSocialExpressionEventTopicQueueMediaSettings) |  |  [optional] |
+| **socialMediaId** | **String** |  |  [optional] |
+| **socialMediaHub** | **String** |  |  [optional] |
+| **socialUserName** | **String** |  |  [optional] |
+| **previewText** | **String** |  |  [optional] |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -74,10 +68,7 @@ title: ConversationSocialExpressionEventTopicSocialMediaParticipant
 | SCHEDULED | &quot;scheduled&quot; | 
 | PARKED | &quot;parked&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
-
-<a name="InitialStateEnum"></a>
 
 ## Enum: InitialStateEnum
 
@@ -97,10 +88,7 @@ title: ConversationSocialExpressionEventTopicSocialMediaParticipant
 | SCHEDULED | &quot;scheduled&quot; | 
 | PARKED | &quot;parked&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
-
-<a name="DirectionEnum"></a>
 
 ## Enum: DirectionEnum
 
@@ -109,10 +97,7 @@ title: ConversationSocialExpressionEventTopicSocialMediaParticipant
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INBOUND | &quot;inbound&quot; | 
 | OUTBOUND | &quot;outbound&quot; | 
-{: class="table table-striped"}
 
-
-<a name="DisconnectTypeEnum"></a>
 
 ## Enum: DisconnectTypeEnum
 
@@ -137,10 +122,7 @@ title: ConversationSocialExpressionEventTopicSocialMediaParticipant
 | OTHER | &quot;other&quot; | 
 | SPAM | &quot;spam&quot; | 
 | UNCALLABLE | &quot;uncallable&quot; | 
-{: class="table table-striped"}
 
-
-<a name="FlaggedReasonEnum"></a>
 
 ## Enum: FlaggedReasonEnum
 
@@ -148,7 +130,8 @@ title: ConversationSocialExpressionEventTopicSocialMediaParticipant
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | GENERAL | &quot;general&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

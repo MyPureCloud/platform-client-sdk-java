@@ -1,22 +1,16 @@
----
-title: LearningModulePreviewUpdateRequest
----
-## LearningModulePreviewUpdateRequest
+# LearningModulePreviewUpdateRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **state** | [**StateEnum**](#StateEnum)<!----> | The assignment State |  [optional] |
-| **currentStep** | <!----><!---->[**LearningModulePreviewUpdateRequestCurrentStep**](LearningModulePreviewUpdateRequestCurrentStep.html)<!----> | The assignment current step |  [optional] |
-| **steps** | <!----><!---->[**List&lt;LearningModulePreviewUpdateStep&gt;**](LearningModulePreviewUpdateStep.html)<!----> | The assignment Steps |  [optional] |
-| **assessment** | <!----><!---->[**LearningAssessment**](LearningAssessment.html)<!----> | The assessment for learning module |  [optional] |
-| **assessmentForm** | <!----><!---->[**AssessmentForm**](AssessmentForm.html)<!----> | The assessment form for learning module |  [optional] |
-{: class="table table-striped"}
+| **state** | [**StateEnum**](#Enum--StateEnum) | The assignment State |  [optional] |
+| **currentStep** | [**LearningModulePreviewUpdateRequestCurrentStep**](LearningModulePreviewUpdateRequestCurrentStep) | The assignment current step |  [optional] |
+| **steps** | [**List&lt;LearningModulePreviewUpdateStep&gt;**](LearningModulePreviewUpdateStep) | The assignment Steps |  [optional] |
+| **assessment** | [**LearningAssessment**](LearningAssessment) | The assessment for learning module |  [optional] |
+| **assessmentForm** | [**AssessmentForm**](AssessmentForm) | The assessment form for learning module |  [optional] |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -29,7 +23,8 @@ title: LearningModulePreviewUpdateRequest
 | DELETED | &quot;Deleted&quot; | 
 | NOTCOMPLETED | &quot;NotCompleted&quot; | 
 | INVALIDSCHEDULE | &quot;InvalidSchedule&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

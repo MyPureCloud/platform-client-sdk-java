@@ -1,25 +1,19 @@
----
-title: ConversationMessageEventTopicMessageDetails
----
-## ConversationMessageEventTopicMessageDetails
+# ConversationMessageEventTopicMessageDetails
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **message** | <!----><!---->[**ConversationMessageEventTopicUriReference**](ConversationMessageEventTopicUriReference.html)<!----> |  |  [optional] |
-| **messageTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **messageSegmentCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **messageStatus** | [**MessageStatusEnum**](#MessageStatusEnum)<!----> |  |  [optional] |
-| **media** | <!----><!---->[**List&lt;ConversationMessageEventTopicMessageMedia&gt;**](ConversationMessageEventTopicMessageMedia.html)<!----> |  |  [optional] |
-| **stickers** | <!----><!---->[**List&lt;ConversationMessageEventTopicMessageSticker&gt;**](ConversationMessageEventTopicMessageSticker.html)<!----> |  |  [optional] |
-| **errorInfo** | <!----><!---->[**ConversationMessageEventTopicErrorDetails**](ConversationMessageEventTopicErrorDetails.html)<!----> |  |  [optional] |
-| **messageMetadata** | <!----><!---->[**ConversationMessageEventTopicMessageMetadata**](ConversationMessageEventTopicMessageMetadata.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **message** | [**ConversationMessageEventTopicUriReference**](ConversationMessageEventTopicUriReference) |  |  [optional] |
+| **messageTime** | [**Date**](Date) |  |  [optional] |
+| **messageSegmentCount** | **Integer** |  |  [optional] |
+| **messageStatus** | [**MessageStatusEnum**](#Enum--MessageStatusEnum) |  |  [optional] |
+| **media** | [**List&lt;ConversationMessageEventTopicMessageMedia&gt;**](ConversationMessageEventTopicMessageMedia) |  |  [optional] |
+| **stickers** | [**List&lt;ConversationMessageEventTopicMessageSticker&gt;**](ConversationMessageEventTopicMessageSticker) |  |  [optional] |
+| **errorInfo** | [**ConversationMessageEventTopicErrorDetails**](ConversationMessageEventTopicErrorDetails) |  |  [optional] |
+| **messageMetadata** | [**ConversationMessageEventTopicMessageMetadata**](ConversationMessageEventTopicMessageMetadata) |  |  [optional] |
 
-
-<a name="MessageStatusEnum"></a>
 
 ## Enum: MessageStatusEnum
 
@@ -35,7 +29,8 @@ title: ConversationMessageEventTopicMessageDetails
 | READ | &quot;read&quot; | 
 | REMOVED | &quot;removed&quot; | 
 | PUBLISHED | &quot;published&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,20 +1,14 @@
----
-title: KnowledgeBaseWithDialectReference
----
-## KnowledgeBaseWithDialectReference
+# KnowledgeBaseWithDialectReference
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the knowledge base. |  |
-| **languageCode** | [**LanguageCodeEnum**](#LanguageCodeEnum)<!----> | The dialect for the knowledge base. |  |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the knowledge base. |  |
+| **languageCode** | [**LanguageCodeEnum**](#Enum--LanguageCodeEnum) | The dialect for the knowledge base. |  |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="LanguageCodeEnum"></a>
 
 ## Enum: LanguageCodeEnum
 
@@ -47,7 +41,8 @@ title: KnowledgeBaseWithDialectReference
 | ES_MX | &quot;es-MX&quot; | 
 | ES_CO | &quot;es-CO&quot; | 
 | ES_AR | &quot;es-AR&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

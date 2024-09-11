@@ -1,16 +1,14 @@
----
-title: ConversationPublicMetadata
----
-## ConversationPublicMetadata
+# ConversationPublicMetadata
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **rootId** | <!----><!---->**String**<!----> | The id of the root public message. |  [optional] |
-| **replyToId** | <!----><!---->**String**<!----> | The id of the message this public message is replying to. |  [optional] |
-{: class="table table-striped"}
+| **rootId** | **String** | The id of the root public message. |  [optional] |
+| **replyToId** | **String** | The id of the message this public message is replying to. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

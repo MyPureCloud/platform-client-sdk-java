@@ -1,18 +1,12 @@
----
-title: WfmUpdateAgentDetailsTopicWfmUpdateAgentDetailsComplete
----
-## WfmUpdateAgentDetailsTopicWfmUpdateAgentDetailsComplete
+# WfmUpdateAgentDetailsTopicWfmUpdateAgentDetailsComplete
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -23,7 +17,8 @@ title: WfmUpdateAgentDetailsTopicWfmUpdateAgentDetailsComplete
 | COMPLETE | &quot;Complete&quot; | 
 | CANCELED | &quot;Canceled&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

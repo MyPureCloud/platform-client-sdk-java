@@ -1,20 +1,14 @@
----
-title: Alteration
----
-## Alteration
+# Alteration
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Range type (Exclusion: used to exclude a specific time within the recurrence. Inclusion: used to include a specific time within the recurrence which will execute in addition to the normal recurrence. If both an exclusion and inclusion are specified, the inclusion will take precedence over the exclusion.) |  [optional] |
-| **start** | <!----><!---->**String**<!----> | The start date of an alteration range as an ISO-8601 string |  [optional] |
-| **end** | <!----><!---->**String**<!----> | The end date of an alteration range as an ISO-8601 string |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Range type (Exclusion: used to exclude a specific time within the recurrence. Inclusion: used to include a specific time within the recurrence which will execute in addition to the normal recurrence. If both an exclusion and inclusion are specified, the inclusion will take precedence over the exclusion.) |  [optional] |
+| **start** | **String** | The start date of an alteration range as an ISO-8601 string |  [optional] |
+| **end** | **String** | The end date of an alteration range as an ISO-8601 string |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -23,7 +17,8 @@ title: Alteration
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | EXCLUSION | &quot;Exclusion&quot; | 
 | INCLUSION | &quot;Inclusion&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

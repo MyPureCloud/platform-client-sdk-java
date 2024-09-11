@@ -1,27 +1,21 @@
----
-title: AnalyticsParticipantWithoutAttributes
----
-## AnalyticsParticipantWithoutAttributes
+# AnalyticsParticipantWithoutAttributes
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **externalContactId** | <!----><!---->**String**<!----> | External contact identifier |  [optional] |
-| **externalOrganizationId** | <!----><!---->**String**<!----> | External organization identifier |  [optional] |
-| **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum)<!----> | Reason for which participant flagged conversation |  [optional] |
-| **participantId** | <!----><!---->**String**<!----> | Unique identifier for the participant |  [optional] |
-| **participantName** | <!----><!---->**String**<!----> | A human readable name identifying the participant |  [optional] |
-| **purpose** | [**PurposeEnum**](#PurposeEnum)<!----> | The participant's purpose |  [optional] |
-| **screenRecording** | <!----><!---->**Boolean**<!----> | Flag determining if a screen recording was started or not |  [optional] |
-| **teamId** | <!----><!---->**String**<!----> | The team ID the user is a member of |  [optional] |
-| **userId** | <!----><!---->**String**<!----> | Unique identifier for the user |  [optional] |
-| **sessions** | <!----><!---->[**List&lt;AnalyticsSession&gt;**](AnalyticsSession.html)<!----> | List of sessions associated to this participant |  [optional] |
-{: class="table table-striped"}
+| **externalContactId** | **String** | External contact identifier |  [optional] |
+| **externalOrganizationId** | **String** | External organization identifier |  [optional] |
+| **flaggedReason** | [**FlaggedReasonEnum**](#Enum--FlaggedReasonEnum) | Reason for which participant flagged conversation |  [optional] |
+| **participantId** | **String** | Unique identifier for the participant |  [optional] |
+| **participantName** | **String** | A human readable name identifying the participant |  [optional] |
+| **purpose** | [**PurposeEnum**](#Enum--PurposeEnum) | The participant's purpose |  [optional] |
+| **screenRecording** | **Boolean** | Flag determining if a screen recording was started or not |  [optional] |
+| **teamId** | **String** | The team ID the user is a member of |  [optional] |
+| **userId** | **String** | Unique identifier for the user |  [optional] |
+| **sessions** | [**List&lt;AnalyticsSession&gt;**](AnalyticsSession) | List of sessions associated to this participant |  [optional] |
 
-
-<a name="FlaggedReasonEnum"></a>
 
 ## Enum: FlaggedReasonEnum
 
@@ -29,10 +23,7 @@ title: AnalyticsParticipantWithoutAttributes
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | GENERAL | &quot;general&quot; | 
-{: class="table table-striped"}
 
-
-<a name="PurposeEnum"></a>
 
 ## Enum: PurposeEnum
 
@@ -58,7 +49,8 @@ title: AnalyticsParticipantWithoutAttributes
 | VOICEMAIL | &quot;voicemail&quot; | 
 | VOICESURVEYFLOW | &quot;voicesurveyflow&quot; | 
 | WORKFLOW | &quot;workflow&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

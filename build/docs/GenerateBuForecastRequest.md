@@ -1,17 +1,15 @@
----
-title: GenerateBuForecastRequest
----
-## GenerateBuForecastRequest
+# GenerateBuForecastRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **description** | <!----><!---->**String**<!----> | The description for the forecast |  |
-| **weekCount** | <!----><!---->**Integer**<!----> | The number of weeks this forecast covers |  [optional] |
-| **canUseForScheduling** | <!----><!---->**Boolean**<!----> | Whether this forecast can be used for scheduling |  [optional] |
-{: class="table table-striped"}
+| **description** | **String** | The description for the forecast |  |
+| **weekCount** | **Integer** | The number of weeks this forecast covers |  [optional] |
+| **canUseForScheduling** | **Boolean** | Whether this forecast can be used for scheduling |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

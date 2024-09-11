@@ -1,15 +1,13 @@
----
-title: OutcomeRefRequest
----
-## OutcomeRefRequest
+# OutcomeRefRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | ID of outcome. |  |
-{: class="table table-striped"}
+| **id** | **String** | ID of outcome. |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

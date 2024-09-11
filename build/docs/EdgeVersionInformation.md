@@ -1,15 +1,13 @@
----
-title: EdgeVersionInformation
----
-## EdgeVersionInformation
+# EdgeVersionInformation
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **softwareVersion** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **softwareVersion** | **String** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

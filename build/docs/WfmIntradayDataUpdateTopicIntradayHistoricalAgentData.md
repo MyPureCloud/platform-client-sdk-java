@@ -1,16 +1,14 @@
----
-title: WfmIntradayDataUpdateTopicIntradayHistoricalAgentData
----
-## WfmIntradayDataUpdateTopicIntradayHistoricalAgentData
+# WfmIntradayDataUpdateTopicIntradayHistoricalAgentData
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **onQueueTimeSeconds** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-| **interactingTimeSeconds** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **onQueueTimeSeconds** | [**BigDecimal**](BigDecimal) |  |  [optional] |
+| **interactingTimeSeconds** | [**BigDecimal**](BigDecimal) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

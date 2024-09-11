@@ -1,25 +1,19 @@
----
-title: ConversationEventTopicMessageDetails
----
-## ConversationEventTopicMessageDetails
+# ConversationEventTopicMessageDetails
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **messageId** | <!----><!---->**String**<!----> | UUID identifying the message media. |  [optional] |
-| **messageTime** | <!----><!---->[**Date**](Date.html)<!----> | The time when the message was sent or received. |  [optional] |
-| **messageStatus** | [**MessageStatusEnum**](#MessageStatusEnum)<!----> | Indicates the delivery status of the message. |  [optional] |
-| **messageSegmentCount** | <!----><!---->**Integer**<!----> | The message segment count, greater than 1 if the message content was split into multiple parts for this message type, e.g. SMS character limits. |  [optional] |
-| **media** | <!----><!---->[**List&lt;ConversationEventTopicMessageMedia&gt;**](ConversationEventTopicMessageMedia.html)<!----> | The media (images, files, etc) associated with this message, if any |  [optional] |
-| **errorInfo** | <!----><!---->[**ConversationEventTopicErrorDetails**](ConversationEventTopicErrorDetails.html)<!----> | Detailed information about an error response. |  [optional] |
-| **stickers** | <!----><!---->[**List&lt;ConversationEventTopicMessageSticker&gt;**](ConversationEventTopicMessageSticker.html)<!----> | A list of stickers included in the message |  [optional] |
-| **messageMetadata** | <!----><!---->[**ConversationEventTopicMessageMetadata**](ConversationEventTopicMessageMetadata.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **messageId** | **String** | UUID identifying the message media. |  [optional] |
+| **messageTime** | [**Date**](Date) | The time when the message was sent or received. |  [optional] |
+| **messageStatus** | [**MessageStatusEnum**](#Enum--MessageStatusEnum) | Indicates the delivery status of the message. |  [optional] |
+| **messageSegmentCount** | **Integer** | The message segment count, greater than 1 if the message content was split into multiple parts for this message type, e.g. SMS character limits. |  [optional] |
+| **media** | [**List&lt;ConversationEventTopicMessageMedia&gt;**](ConversationEventTopicMessageMedia) | The media (images, files, etc) associated with this message, if any |  [optional] |
+| **errorInfo** | [**ConversationEventTopicErrorDetails**](ConversationEventTopicErrorDetails) | Detailed information about an error response. |  [optional] |
+| **stickers** | [**List&lt;ConversationEventTopicMessageSticker&gt;**](ConversationEventTopicMessageSticker) | A list of stickers included in the message |  [optional] |
+| **messageMetadata** | [**ConversationEventTopicMessageMetadata**](ConversationEventTopicMessageMetadata) |  |  [optional] |
 
-
-<a name="MessageStatusEnum"></a>
 
 ## Enum: MessageStatusEnum
 
@@ -35,7 +29,8 @@ title: ConversationEventTopicMessageDetails
 | READ | &quot;read&quot; | 
 | REMOVED | &quot;removed&quot; | 
 | PUBLISHED | &quot;published&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

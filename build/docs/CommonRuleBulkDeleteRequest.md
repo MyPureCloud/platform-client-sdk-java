@@ -1,15 +1,13 @@
----
-title: CommonRuleBulkDeleteRequest
----
-## CommonRuleBulkDeleteRequest
+# CommonRuleBulkDeleteRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **ruleIds** | <!----><!---->**List&lt;String&gt;**<!----> | The user supplied rule ids to be deleted |  |
-{: class="table table-striped"}
+| **ruleIds** | **List&lt;String&gt;** | The user supplied rule ids to be deleted |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

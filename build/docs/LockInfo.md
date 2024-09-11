@@ -1,21 +1,15 @@
----
-title: LockInfo
----
-## LockInfo
+# LockInfo
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **lockedBy** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
-| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **dateExpires** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **action** | [**ActionEnum**](#ActionEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **lockedBy** | [**DomainEntityRef**](DomainEntityRef) |  |  [optional] |
+| **dateCreated** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **dateExpires** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **action** | [**ActionEnum**](#Enum--ActionEnum) |  |  [optional] |
 
-
-<a name="ActionEnum"></a>
 
 ## Enum: ActionEnum
 
@@ -29,7 +23,8 @@ title: LockInfo
 | REPLACE | &quot;REPLACE&quot; | 
 | THUMBNAIL | &quot;THUMBNAIL&quot; | 
 | TEXT_EXTRACTION | &quot;TEXT_EXTRACTION&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,24 +1,18 @@
----
-title: WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeletionJobCompleteNotification
----
-## WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeletionJobCompleteNotification
+# WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeletionJobCompleteNotification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-| **activityPlan** | <!----><!---->[**WfmActivityPlanJobCompleteTopicActivityPlanReference**](WfmActivityPlanJobCompleteTopicActivityPlanReference.html)<!----> |  |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
-| **exceptions** | <!----><!---->[**List&lt;WfmActivityPlanJobCompleteTopicActivityPlanJobException&gt;**](WfmActivityPlanJobCompleteTopicActivityPlanJobException.html)<!----> |  |  [optional] |
-| **error** | <!----><!---->[**WfmActivityPlanJobCompleteTopicErrorBody**](WfmActivityPlanJobCompleteTopicErrorBody.html)<!----> |  |  [optional] |
-| **occurrence** | <!----><!---->[**WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference**](WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
+| **activityPlan** | [**WfmActivityPlanJobCompleteTopicActivityPlanReference**](WfmActivityPlanJobCompleteTopicActivityPlanReference) |  |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
+| **exceptions** | [**List&lt;WfmActivityPlanJobCompleteTopicActivityPlanJobException&gt;**](WfmActivityPlanJobCompleteTopicActivityPlanJobException) |  |  [optional] |
+| **error** | [**WfmActivityPlanJobCompleteTopicErrorBody**](WfmActivityPlanJobCompleteTopicErrorBody) |  |  [optional] |
+| **occurrence** | [**WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference**](WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference) |  |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -27,10 +21,7 @@ title: WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeletionJobCompleteN
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | RUNPLAN | &quot;RunPlan&quot; | 
 | DELETEOCCURRENCE | &quot;DeleteOccurrence&quot; | 
-{: class="table table-striped"}
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -40,7 +31,8 @@ title: WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeletionJobCompleteN
 | PROCESSING | &quot;Processing&quot; | 
 | COMPLETE | &quot;Complete&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

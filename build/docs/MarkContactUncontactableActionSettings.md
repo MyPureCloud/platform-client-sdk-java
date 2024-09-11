@@ -1,18 +1,12 @@
----
-title: MarkContactUncontactableActionSettings
----
-## MarkContactUncontactableActionSettings
+# MarkContactUncontactableActionSettings
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **mediaTypes** | <!---->[**List&lt;MediaTypesEnum&gt;**](#MediaTypesEnum)<!----> | A list of media types to evaluate. |  |
-{: class="table table-striped"}
+| **mediaTypes** | [**List<MediaTypesEnum>**](#Enum--MediaTypesEnum) | A list of media types to evaluate. |  |
 
-
-<a name="MediaTypesEnum"></a>
 
 ## Enum: MediaTypesEnum
 
@@ -21,7 +15,8 @@ title: MarkContactUncontactableActionSettings
 | VOICE | &quot;Voice&quot; |
 | EMAIL | &quot;Email&quot; |
 | SMS | &quot;Sms&quot; |
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

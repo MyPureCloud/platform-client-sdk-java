@@ -1,33 +1,27 @@
----
-title: OrphanRecording
----
-## OrphanRecording
+# OrphanRecording
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **createdTime** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **recoveredTime** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **providerType** | [**ProviderTypeEnum**](#ProviderTypeEnum)<!----> |  |  [optional] |
-| **mediaSizeBytes** | <!----><!---->**Long**<!----> |  |  [optional] |
-| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> |  |  [optional] |
-| **mediaSubtype** | [**MediaSubtypeEnum**](#MediaSubtypeEnum)<!----> |  |  [optional] |
-| **mediaSubject** | <!----><!---->**String**<!----> |  |  [optional] |
-| **fileState** | [**FileStateEnum**](#FileStateEnum)<!----> |  |  [optional] |
-| **providerEndpoint** | <!----><!---->[**Endpoint**](Endpoint.html)<!----> |  |  [optional] |
-| **recording** | <!----><!---->[**Recording**](Recording.html)<!----> |  |  [optional] |
-| **orphanStatus** | [**OrphanStatusEnum**](#OrphanStatusEnum)<!----> | The status of the orphaned recording's conversation. |  [optional] |
-| **sourceOrphaningId** | <!----><!---->**String**<!----> | An identifier used during recovery operations by the supplying hybrid platform to track back and determine which interaction this recording is associated with |  [optional] |
-| **region** | [**RegionEnum**](#RegionEnum)<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **createdTime** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **recoveredTime** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **providerType** | [**ProviderTypeEnum**](#Enum--ProviderTypeEnum) |  |  [optional] |
+| **mediaSizeBytes** | **Long** |  |  [optional] |
+| **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) |  |  [optional] |
+| **mediaSubtype** | [**MediaSubtypeEnum**](#Enum--MediaSubtypeEnum) |  |  [optional] |
+| **mediaSubject** | **String** |  |  [optional] |
+| **fileState** | [**FileStateEnum**](#Enum--FileStateEnum) |  |  [optional] |
+| **providerEndpoint** | [**Endpoint**](Endpoint) |  |  [optional] |
+| **recording** | [**Recording**](Recording) |  |  [optional] |
+| **orphanStatus** | [**OrphanStatusEnum**](#Enum--OrphanStatusEnum) | The status of the orphaned recording's conversation. |  [optional] |
+| **sourceOrphaningId** | **String** | An identifier used during recovery operations by the supplying hybrid platform to track back and determine which interaction this recording is associated with |  [optional] |
+| **region** | [**RegionEnum**](#Enum--RegionEnum) |  |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="ProviderTypeEnum"></a>
 
 ## Enum: ProviderTypeEnum
 
@@ -40,10 +34,7 @@ title: OrphanRecording
 | SCREEN_RECORDING | &quot;SCREEN_RECORDING&quot; | 
 | PUREENGAGE | &quot;PUREENGAGE&quot; | 
 | PURECONNECT | &quot;PURECONNECT&quot; | 
-{: class="table table-striped"}
 
-
-<a name="MediaTypeEnum"></a>
 
 ## Enum: MediaTypeEnum
 
@@ -54,10 +45,7 @@ title: OrphanRecording
 | CHAT | &quot;CHAT&quot; | 
 | EMAIL | &quot;EMAIL&quot; | 
 | SCREEN | &quot;SCREEN&quot; | 
-{: class="table table-striped"}
 
-
-<a name="MediaSubtypeEnum"></a>
 
 ## Enum: MediaSubtypeEnum
 
@@ -68,10 +56,7 @@ title: OrphanRecording
 | STATION | &quot;Station&quot; | 
 | CONSULT | &quot;Consult&quot; | 
 | SCREEN | &quot;Screen&quot; | 
-{: class="table table-striped"}
 
-
-<a name="FileStateEnum"></a>
 
 ## Enum: FileStateEnum
 
@@ -84,10 +69,7 @@ title: OrphanRecording
 | RESTORED | &quot;RESTORED&quot; | 
 | RESTORING | &quot;RESTORING&quot; | 
 | UPLOADING | &quot;UPLOADING&quot; | 
-{: class="table table-striped"}
 
-
-<a name="OrphanStatusEnum"></a>
 
 ## Enum: OrphanStatusEnum
 
@@ -99,10 +81,7 @@ title: OrphanRecording
 | CONVERSATION_NOT_COMPLETE | &quot;CONVERSATION_NOT_COMPLETE&quot; | 
 | CONVERSATION_NOT_EVALUATED | &quot;CONVERSATION_NOT_EVALUATED&quot; | 
 | EVALUATED | &quot;EVALUATED&quot; | 
-{: class="table table-striped"}
 
-
-<a name="RegionEnum"></a>
 
 ## Enum: RegionEnum
 
@@ -128,7 +107,8 @@ title: OrphanRecording
 | SA_EAST_1 | &quot;sa-east-1&quot; | 
 | US_EAST_1 | &quot;us-east-1&quot; | 
 | US_WEST_2 | &quot;us-west-2&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

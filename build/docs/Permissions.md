@@ -1,15 +1,13 @@
----
-title: Permissions
----
-## Permissions
+# Permissions
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **ids** | <!----><!---->**List&lt;String&gt;**<!----> | List of permission ids. |  |
-{: class="table table-striped"}
+| **ids** | **List&lt;String&gt;** | List of permission ids. |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

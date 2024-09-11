@@ -1,16 +1,14 @@
----
-title: NluDetectionRequest
----
-## NluDetectionRequest
+# NluDetectionRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **input** | <!----><!---->[**NluDetectionInput**](NluDetectionInput.html)<!----> | The input subject to NLU detection. |  |
-| **context** | <!----><!---->[**NluDetectionContext**](NluDetectionContext.html)<!----> | The context for the input to NLU detection. |  [optional] |
-{: class="table table-striped"}
+| **input** | [**NluDetectionInput**](NluDetectionInput) | The input subject to NLU detection. |  |
+| **context** | [**NluDetectionContext**](NluDetectionContext) | The context for the input to NLU detection. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

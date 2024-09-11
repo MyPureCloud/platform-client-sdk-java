@@ -1,15 +1,13 @@
----
-title: KnowledgeParseJobRequestPatch
----
-## KnowledgeParseJobRequestPatch
+# KnowledgeParseJobRequestPatch
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **hints** | <!----><!---->**List&lt;String&gt;**<!----> | Hinted titles for the parser. |  [optional] |
-{: class="table table-striped"}
+| **hints** | **List&lt;String&gt;** | Hinted titles for the parser. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

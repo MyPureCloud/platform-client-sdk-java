@@ -1,22 +1,16 @@
----
-title: FlowsQueryCriteriaResponse
----
-## FlowsQueryCriteriaResponse
+# FlowsQueryCriteriaResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **criteria** | <!----><!---->[**List&lt;QueryCriteria&gt;**](QueryCriteria.html)<!----> | The is a list of allowed criteria to query on. |  [optional] |
-| **flowTypes** | <!---->[**List&lt;FlowTypesEnum&gt;**](#FlowTypesEnum)<!----> | The is a list of flow types the organization has access to. |  [optional] |
-| **actionTypes** | <!---->[**List&lt;ActionTypesEnum&gt;**](#ActionTypesEnum)<!----> | The is a list of action types the organization has access to. |  [optional] |
-| **errorCodes** | <!----><!---->**List&lt;String&gt;**<!----> | The is a list of potential error codes the organization may encounter. |  [optional] |
-| **warningCodes** | <!----><!---->**List&lt;String&gt;**<!----> | The is a list of potential warning codes the organization may encounter. |  [optional] |
-{: class="table table-striped"}
+| **criteria** | [**List&lt;QueryCriteria&gt;**](QueryCriteria) | The is a list of allowed criteria to query on. |  [optional] |
+| **flowTypes** | [**List<FlowTypesEnum>**](#Enum--FlowTypesEnum) | The is a list of flow types the organization has access to. |  [optional] |
+| **actionTypes** | [**List<ActionTypesEnum>**](#Enum--ActionTypesEnum) | The is a list of action types the organization has access to. |  [optional] |
+| **errorCodes** | **List&lt;String&gt;** | The is a list of potential error codes the organization may encounter. |  [optional] |
+| **warningCodes** | **List&lt;String&gt;** | The is a list of potential warning codes the organization may encounter. |  [optional] |
 
-
-<a name="FlowTypesEnum"></a>
 
 ## Enum: FlowTypesEnum
 
@@ -40,10 +34,7 @@ title: FlowsQueryCriteriaResponse
 | VOICESURVEY | &quot;voicesurvey&quot; |
 | WORKFLOW | &quot;workflow&quot; |
 | WORKITEM | &quot;workitem&quot; |
-{: class="table table-striped"}
 
-
-<a name="ActionTypesEnum"></a>
 
 ## Enum: ActionTypesEnum
 
@@ -184,7 +175,8 @@ title: FlowsQueryCriteriaResponse
 | MENUTRANSFERFLOWSECURE | &quot;menuTransferFlowSecure&quot; |
 | MENUTRANSFERUSER | &quot;menuTransferUser&quot; |
 | MENUTRANSFERVOICEMAIL | &quot;menuTransferVoicemail&quot; |
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

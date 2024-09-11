@@ -1,15 +1,13 @@
----
-title: LearningAssignmentEntity
----
-## LearningAssignmentEntity
+# LearningAssignmentEntity
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **assignmentId** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **assignmentId** | **String** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

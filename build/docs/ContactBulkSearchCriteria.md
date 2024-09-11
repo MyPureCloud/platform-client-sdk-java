@@ -1,19 +1,13 @@
----
-title: ContactBulkSearchCriteria
----
-## ContactBulkSearchCriteria
+# ContactBulkSearchCriteria
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **clauses** | <!----><!---->[**List&lt;ContactListFilterClause&gt;**](ContactListFilterClause.html)<!----> | Groups of conditions to filter the contacts by. |  [optional] |
-| **filterType** | [**FilterTypeEnum**](#FilterTypeEnum)<!----> | How to join clauses together. |  [optional] |
-{: class="table table-striped"}
+| **clauses** | [**List&lt;ContactListFilterClause&gt;**](ContactListFilterClause) | Groups of conditions to filter the contacts by. |  [optional] |
+| **filterType** | [**FilterTypeEnum**](#Enum--FilterTypeEnum) | How to join clauses together. |  [optional] |
 
-
-<a name="FilterTypeEnum"></a>
 
 ## Enum: FilterTypeEnum
 
@@ -22,7 +16,8 @@ title: ContactBulkSearchCriteria
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | AND | &quot;AND&quot; | 
 | OR | &quot;OR&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,21 +1,15 @@
----
-title: WorkitemFilter
----
-## WorkitemFilter
+# WorkitemFilter
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | <!----><!---->**String**<!----> | Attribute name. |  |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Attribute type. |  |
-| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | Filter operator. |  |
-| **values** | <!----><!---->**List&lt;String&gt;**<!----> | List of values to be used in the filter. |  |
-{: class="table table-striped"}
+| **name** | **String** | Attribute name. |  |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Attribute type. |  |
+| **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | Filter operator. |  |
+| **values** | **List&lt;String&gt;** | List of values to be used in the filter. |  |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -24,10 +18,7 @@ title: WorkitemFilter
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | STRING | &quot;String&quot; | 
 | INT | &quot;Int&quot; | 
-{: class="table table-striped"}
 
-
-<a name="OperatorEnum"></a>
 
 ## Enum: OperatorEnum
 
@@ -44,7 +35,8 @@ title: WorkitemFilter
 | CONTAINS | &quot;CONTAINS&quot; | 
 | BETWEEN | &quot;BETWEEN&quot; | 
 | BEGINS_WITH | &quot;BEGINS_WITH&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

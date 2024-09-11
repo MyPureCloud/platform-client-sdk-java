@@ -1,18 +1,16 @@
----
-title: OutboundMessagingCampaignPostContactSmsEventTopicSMSAttributes
----
-## OutboundMessagingCampaignPostContactSmsEventTopicSMSAttributes
+# OutboundMessagingCampaignPostContactSmsEventTopicSMSAttributes
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **contactPhoneNumber** | <!----><!---->**String**<!----> |  |  [optional] |
-| **contactPhoneNumberColumnName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **configuredSenderPhoneNumber** | <!----><!---->**String**<!----> |  |  [optional] |
-| **senderPhoneNumber** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **contactPhoneNumber** | **String** |  |  [optional] |
+| **contactPhoneNumberColumnName** | **String** |  |  [optional] |
+| **configuredSenderPhoneNumber** | **String** |  |  [optional] |
+| **senderPhoneNumber** | **String** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

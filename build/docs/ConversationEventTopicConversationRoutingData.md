@@ -1,19 +1,17 @@
----
-title: ConversationEventTopicConversationRoutingData
----
-## ConversationEventTopicConversationRoutingData
+# ConversationEventTopicConversationRoutingData
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **queue** | <!----><!---->[**ConversationEventTopicUriReference**](ConversationEventTopicUriReference.html)<!----> |  |  [optional] |
-| **language** | <!----><!---->[**ConversationEventTopicUriReference**](ConversationEventTopicUriReference.html)<!----> | A UriReference for a resource |  [optional] |
-| **priority** | <!----><!---->**Integer**<!----> | The priority of the conversation to use for routing decisions |  [optional] |
-| **skills** | <!----><!---->[**List&lt;ConversationEventTopicUriReference&gt;**](ConversationEventTopicUriReference.html)<!----> | The skills to use for routing decisions |  [optional] |
-| **scoredAgents** | <!----><!---->[**List&lt;ConversationEventTopicScoredAgent&gt;**](ConversationEventTopicScoredAgent.html)<!----> | A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents |  [optional] |
-{: class="table table-striped"}
+| **queue** | [**ConversationEventTopicUriReference**](ConversationEventTopicUriReference) |  |  [optional] |
+| **language** | [**ConversationEventTopicUriReference**](ConversationEventTopicUriReference) | A UriReference for a resource |  [optional] |
+| **priority** | **Integer** | The priority of the conversation to use for routing decisions |  [optional] |
+| **skills** | [**List&lt;ConversationEventTopicUriReference&gt;**](ConversationEventTopicUriReference) | The skills to use for routing decisions |  [optional] |
+| **scoredAgents** | [**List&lt;ConversationEventTopicScoredAgent&gt;**](ConversationEventTopicScoredAgent) | A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

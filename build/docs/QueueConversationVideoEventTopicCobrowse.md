@@ -1,37 +1,31 @@
----
-title: QueueConversationVideoEventTopicCobrowse
----
-## QueueConversationVideoEventTopicCobrowse
+# QueueConversationVideoEventTopicCobrowse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
-| **initialState** | [**InitialStateEnum**](#InitialStateEnum)<!----> |  |  [optional] |
-| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum)<!----> | System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects. |  [optional] |
-| **id** | <!----><!---->**String**<!----> | A globally unique identifier for this communication. |  [optional] |
-| **self** | <!----><!---->[**QueueConversationVideoEventTopicAddress**](QueueConversationVideoEventTopicAddress.html)<!----> | Address and name data for a call endpoint. |  [optional] |
-| **roomId** | <!----><!---->**String**<!----> | The room id for the chat. |  [optional] |
-| **cobrowseSessionId** | <!----><!---->**String**<!----> | The co-browse session ID. |  [optional] |
-| **cobrowseRole** | <!----><!---->**String**<!----> | This value identifies the role of the co-browse client within the co-browse session (a client is a sharer or a viewer). |  [optional] |
-| **controlling** | <!----><!---->**List&lt;String&gt;**<!----> | ID of co-browse participants for which this client has been granted control (list is empty if this client cannot control any shared pages). |  [optional] |
-| **viewerUrl** | <!----><!---->**String**<!----> | The URL that can be used to open co-browse session in web browser. |  [optional] |
-| **provider** | <!----><!---->**String**<!----> | The source provider of the co-browse communication. |  [optional] |
-| **scriptId** | <!----><!---->**String**<!----> | The UUID of the script to use. |  [optional] |
-| **peerId** | <!----><!---->**String**<!----> | The id of the peer communication corresponding to a matching leg for this communication. |  [optional] |
-| **providerEventTime** | <!----><!---->[**Date**](Date.html)<!----> | The time when the provider event which triggered this conversation update happened in the corrected provider clock (milliseconds since 1970-01-01 00:00:00 UTC). |  [optional] |
-| **connectedTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this communication was connected in the cloud clock. |  [optional] |
-| **disconnectedTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this communication disconnected from the conversation in the provider clock. |  [optional] |
-| **wrapup** | <!----><!---->[**QueueConversationVideoEventTopicWrapup**](QueueConversationVideoEventTopicWrapup.html)<!----> | Call wrap up or disposition data. |  [optional] |
-| **afterCallWork** | <!----><!---->[**QueueConversationVideoEventTopicAfterCallWork**](QueueConversationVideoEventTopicAfterCallWork.html)<!----> | A communication's after-call work data. |  [optional] |
-| **afterCallWorkRequired** | <!----><!---->**Boolean**<!----> | Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested. |  [optional] |
-| **queueMediaSettings** | <!----><!---->[**QueueConversationVideoEventTopicQueueMediaSettings**](QueueConversationVideoEventTopicQueueMediaSettings.html)<!----> | Represents the queue setting for this media. |  [optional] |
-{: class="table table-striped"}
+| **state** | [**StateEnum**](#Enum--StateEnum) |  |  [optional] |
+| **initialState** | [**InitialStateEnum**](#Enum--InitialStateEnum) |  |  [optional] |
+| **disconnectType** | [**DisconnectTypeEnum**](#Enum--DisconnectTypeEnum) | System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects. |  [optional] |
+| **id** | **String** | A globally unique identifier for this communication. |  [optional] |
+| **self** | [**QueueConversationVideoEventTopicAddress**](QueueConversationVideoEventTopicAddress) | Address and name data for a call endpoint. |  [optional] |
+| **roomId** | **String** | The room id for the chat. |  [optional] |
+| **cobrowseSessionId** | **String** | The co-browse session ID. |  [optional] |
+| **cobrowseRole** | **String** | This value identifies the role of the co-browse client within the co-browse session (a client is a sharer or a viewer). |  [optional] |
+| **controlling** | **List&lt;String&gt;** | ID of co-browse participants for which this client has been granted control (list is empty if this client cannot control any shared pages). |  [optional] |
+| **viewerUrl** | **String** | The URL that can be used to open co-browse session in web browser. |  [optional] |
+| **provider** | **String** | The source provider of the co-browse communication. |  [optional] |
+| **scriptId** | **String** | The UUID of the script to use. |  [optional] |
+| **peerId** | **String** | The id of the peer communication corresponding to a matching leg for this communication. |  [optional] |
+| **providerEventTime** | [**Date**](Date) | The time when the provider event which triggered this conversation update happened in the corrected provider clock (milliseconds since 1970-01-01 00:00:00 UTC). |  [optional] |
+| **connectedTime** | [**Date**](Date) | The timestamp when this communication was connected in the cloud clock. |  [optional] |
+| **disconnectedTime** | [**Date**](Date) | The timestamp when this communication disconnected from the conversation in the provider clock. |  [optional] |
+| **wrapup** | [**QueueConversationVideoEventTopicWrapup**](QueueConversationVideoEventTopicWrapup) | Call wrap up or disposition data. |  [optional] |
+| **afterCallWork** | [**QueueConversationVideoEventTopicAfterCallWork**](QueueConversationVideoEventTopicAfterCallWork) | A communication's after-call work data. |  [optional] |
+| **afterCallWorkRequired** | **Boolean** | Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested. |  [optional] |
+| **queueMediaSettings** | [**QueueConversationVideoEventTopicQueueMediaSettings**](QueueConversationVideoEventTopicQueueMediaSettings) | Represents the queue setting for this media. |  [optional] |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -46,10 +40,7 @@ title: QueueConversationVideoEventTopicCobrowse
 | DISCONNECTED | &quot;disconnected&quot; | 
 | TERMINATED | &quot;terminated&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
-
-<a name="InitialStateEnum"></a>
 
 ## Enum: InitialStateEnum
 
@@ -64,10 +55,7 @@ title: QueueConversationVideoEventTopicCobrowse
 | DISCONNECTED | &quot;disconnected&quot; | 
 | TERMINATED | &quot;terminated&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
-
-<a name="DisconnectTypeEnum"></a>
 
 ## Enum: DisconnectTypeEnum
 
@@ -92,7 +80,8 @@ title: QueueConversationVideoEventTopicCobrowse
 | OTHER | &quot;other&quot; | 
 | SPAM | &quot;spam&quot; | 
 | UNCALLABLE | &quot;uncallable&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

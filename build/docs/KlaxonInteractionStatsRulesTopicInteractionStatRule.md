@@ -1,31 +1,25 @@
----
-title: KlaxonInteractionStatsRulesTopicInteractionStatRule
----
-## KlaxonInteractionStatsRulesTopicInteractionStatRule
+# KlaxonInteractionStatsRulesTopicInteractionStatRule
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **dimension** | [**DimensionEnum**](#DimensionEnum)<!----> |  |  [optional] |
-| **dimensionValue** | <!----><!---->**String**<!----> |  |  [optional] |
-| **dimensionValueName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **metric** | [**MetricEnum**](#MetricEnum)<!----> |  |  [optional] |
-| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> |  |  [optional] |
-| **numericRange** | [**NumericRangeEnum**](#NumericRangeEnum)<!----> |  |  [optional] |
-| **statistic** | [**StatisticEnum**](#StatisticEnum)<!----> |  |  [optional] |
-| **value** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-| **inAlarm** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **enabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **notificationUsers** | <!----><!---->[**List&lt;KlaxonInteractionStatsRulesTopicNotificationUser&gt;**](KlaxonInteractionStatsRulesTopicNotificationUser.html)<!----> |  |  [optional] |
-| **alertTypes** | <!---->[**List&lt;AlertTypesEnum&gt;**](#AlertTypesEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **dimension** | [**DimensionEnum**](#Enum--DimensionEnum) |  |  [optional] |
+| **dimensionValue** | **String** |  |  [optional] |
+| **dimensionValueName** | **String** |  |  [optional] |
+| **metric** | [**MetricEnum**](#Enum--MetricEnum) |  |  [optional] |
+| **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) |  |  [optional] |
+| **numericRange** | [**NumericRangeEnum**](#Enum--NumericRangeEnum) |  |  [optional] |
+| **statistic** | [**StatisticEnum**](#Enum--StatisticEnum) |  |  [optional] |
+| **value** | [**BigDecimal**](BigDecimal) |  |  [optional] |
+| **inAlarm** | **Boolean** |  |  [optional] |
+| **enabled** | **Boolean** |  |  [optional] |
+| **notificationUsers** | [**List&lt;KlaxonInteractionStatsRulesTopicNotificationUser&gt;**](KlaxonInteractionStatsRulesTopicNotificationUser) |  |  [optional] |
+| **alertTypes** | [**List<AlertTypesEnum>**](#Enum--AlertTypesEnum) |  |  [optional] |
 
-
-<a name="DimensionEnum"></a>
 
 ## Enum: DimensionEnum
 
@@ -34,10 +28,7 @@ title: KlaxonInteractionStatsRulesTopicInteractionStatRule
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | QUEUEID | &quot;queueId&quot; | 
 | USERID | &quot;userId&quot; | 
-{: class="table table-striped"}
 
-
-<a name="MetricEnum"></a>
 
 ## Enum: MetricEnum
 
@@ -54,10 +45,7 @@ title: KlaxonInteractionStatsRulesTopicInteractionStatRule
 | TWAIT | &quot;tWait&quot; | 
 | THELD | &quot;tHeld&quot; | 
 | TACW | &quot;tAcw&quot; | 
-{: class="table table-striped"}
 
-
-<a name="MediaTypeEnum"></a>
 
 ## Enum: MediaTypeEnum
 
@@ -69,10 +57,7 @@ title: KlaxonInteractionStatsRulesTopicInteractionStatRule
 | EMAIL | &quot;email&quot; | 
 | CALLBACK | &quot;callback&quot; | 
 | MESSAGE | &quot;message&quot; | 
-{: class="table table-striped"}
 
-
-<a name="NumericRangeEnum"></a>
 
 ## Enum: NumericRangeEnum
 
@@ -85,10 +70,7 @@ title: KlaxonInteractionStatsRulesTopicInteractionStatRule
 | LTE | &quot;lte&quot; | 
 | EQ | &quot;eq&quot; | 
 | NE | &quot;ne&quot; | 
-{: class="table table-striped"}
 
-
-<a name="StatisticEnum"></a>
 
 ## Enum: StatisticEnum
 
@@ -99,10 +81,7 @@ title: KlaxonInteractionStatsRulesTopicInteractionStatRule
 | MIN | &quot;min&quot; | 
 | RATIO | &quot;ratio&quot; | 
 | MAX | &quot;max&quot; | 
-{: class="table table-striped"}
 
-
-<a name="AlertTypesEnum"></a>
 
 ## Enum: AlertTypesEnum
 
@@ -111,7 +90,8 @@ title: KlaxonInteractionStatsRulesTopicInteractionStatRule
 | SMS | &quot;SMS&quot; |
 | DEVICE | &quot;DEVICE&quot; |
 | EMAIL | &quot;EMAIL&quot; |
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

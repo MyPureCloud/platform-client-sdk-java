@@ -1,21 +1,15 @@
----
-title: TransferToQueueRequest
----
-## TransferToQueueRequest
+# TransferToQueueRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **transferType** | [**TransferTypeEnum**](#TransferTypeEnum)<!----> | The type of transfer to perform. Attended, where the initiating agent maintains ownership of the conversation until the intended recipient accepts the transfer, or Unattended, where the initiating agent immediately disconnects. Default is Unattended. |  [optional] |
-| **keepInternalMessageAlive** | <!----><!---->**Boolean**<!----> | If true, the digital internal message will NOT be terminated. |  [optional] |
-| **queueId** | <!----><!---->**String**<!----> | The id of the queue. |  [optional] |
-| **queueName** | <!----><!---->**String**<!----> | The name of the queue. |  [optional] |
-{: class="table table-striped"}
+| **transferType** | [**TransferTypeEnum**](#Enum--TransferTypeEnum) | The type of transfer to perform. Attended, where the initiating agent maintains ownership of the conversation until the intended recipient accepts the transfer, or Unattended, where the initiating agent immediately disconnects. Default is Unattended. |  [optional] |
+| **keepInternalMessageAlive** | **Boolean** | If true, the digital internal message will NOT be terminated. |  [optional] |
+| **queueId** | **String** | The id of the queue. |  [optional] |
+| **queueName** | **String** | The name of the queue. |  [optional] |
 
-
-<a name="TransferTypeEnum"></a>
 
 ## Enum: TransferTypeEnum
 
@@ -24,7 +18,8 @@ title: TransferToQueueRequest
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ATTENDED | &quot;Attended&quot; | 
 | UNATTENDED | &quot;Unattended&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

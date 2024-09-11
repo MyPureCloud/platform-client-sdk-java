@@ -1,23 +1,17 @@
----
-title: DocumentBodyTableRowBlockProperties
----
-## DocumentBodyTableRowBlockProperties
+# DocumentBodyTableRowBlockProperties
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **rowType** | [**RowTypeEnum**](#RowTypeEnum)<!----> | The type of the table row. |  [optional] |
-| **alignment** | [**AlignmentEnum**](#AlignmentEnum)<!----> | The alignment for the table row. |  [optional] |
-| **height** | <!----><!---->**Float**<!----> | The height for the table row. |  [optional] |
-| **borderStyle** | [**BorderStyleEnum**](#BorderStyleEnum)<!----> | The border style for the table row. |  [optional] |
-| **borderColor** | <!----><!---->**String**<!----> | The border color for the table row. For example black color - #000000 |  [optional] |
-| **backgroundColor** | <!----><!---->**String**<!----> | The background color for the table row. For example black color - #000000 |  [optional] |
-{: class="table table-striped"}
+| **rowType** | [**RowTypeEnum**](#Enum--RowTypeEnum) | The type of the table row. |  [optional] |
+| **alignment** | [**AlignmentEnum**](#Enum--AlignmentEnum) | The alignment for the table row. |  [optional] |
+| **height** | **Float** | The height for the table row. |  [optional] |
+| **borderStyle** | [**BorderStyleEnum**](#Enum--BorderStyleEnum) | The border style for the table row. |  [optional] |
+| **borderColor** | **String** | The border color for the table row. For example black color - #000000 |  [optional] |
+| **backgroundColor** | **String** | The background color for the table row. For example black color - #000000 |  [optional] |
 
-
-<a name="RowTypeEnum"></a>
 
 ## Enum: RowTypeEnum
 
@@ -27,10 +21,7 @@ title: DocumentBodyTableRowBlockProperties
 | HEADER | &quot;Header&quot; | 
 | FOOTER | &quot;Footer&quot; | 
 | BODY | &quot;Body&quot; | 
-{: class="table table-striped"}
 
-
-<a name="AlignmentEnum"></a>
 
 ## Enum: AlignmentEnum
 
@@ -40,10 +31,7 @@ title: DocumentBodyTableRowBlockProperties
 | CENTER | &quot;Center&quot; | 
 | LEFT | &quot;Left&quot; | 
 | RIGHT | &quot;Right&quot; | 
-{: class="table table-striped"}
 
-
-<a name="BorderStyleEnum"></a>
 
 ## Enum: BorderStyleEnum
 
@@ -60,7 +48,8 @@ title: DocumentBodyTableRowBlockProperties
 | OUTSET | &quot;Outset&quot; | 
 | HIDDEN | &quot;Hidden&quot; | 
 | NONE | &quot;None&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

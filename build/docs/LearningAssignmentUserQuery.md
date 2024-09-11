@@ -1,16 +1,14 @@
----
-title: LearningAssignmentUserQuery
----
-## LearningAssignmentUserQuery
+# LearningAssignmentUserQuery
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **rule** | <!----><!---->[**LearningModuleRule**](LearningModuleRule.html)<!----> | Learning module rule object |  |
-| **searchTerm** | <!----><!---->**String**<!----> | The user name to be searched for |  [optional] |
-{: class="table table-striped"}
+| **rule** | [**LearningModuleRule**](LearningModuleRule) | Learning module rule object |  |
+| **searchTerm** | **String** | The user name to be searched for |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

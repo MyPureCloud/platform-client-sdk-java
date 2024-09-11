@@ -1,28 +1,22 @@
----
-title: WfmAgentAdherenceExplanationChangedBusinessUnitTopicAdherenceExplanationChangedNotification
----
-## WfmAgentAdherenceExplanationChangedBusinessUnitTopicAdherenceExplanationChangedNotification
+# WfmAgentAdherenceExplanationChangedBusinessUnitTopicAdherenceExplanationChangedNotification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **agent** | <!----><!---->[**WfmAgentAdherenceExplanationChangedBusinessUnitTopicUserReference**](WfmAgentAdherenceExplanationChangedBusinessUnitTopicUserReference.html)<!----> |  |  [optional] |
-| **managementUnit** | <!----><!---->[**WfmAgentAdherenceExplanationChangedBusinessUnitTopicManagementUnit**](WfmAgentAdherenceExplanationChangedBusinessUnitTopicManagementUnit.html)<!----> |  |  [optional] |
-| **businessUnit** | <!----><!---->[**WfmAgentAdherenceExplanationChangedBusinessUnitTopicBusinessUnit**](WfmAgentAdherenceExplanationChangedBusinessUnitTopicBusinessUnit.html)<!----> |  |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
-| **startDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **lengthMinutes** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **notes** | <!----><!---->**String**<!----> |  |  [optional] |
-| **reviewedBy** | <!----><!---->[**WfmAgentAdherenceExplanationChangedBusinessUnitTopicUserReference**](WfmAgentAdherenceExplanationChangedBusinessUnitTopicUserReference.html)<!----> |  |  [optional] |
-| **reviewedDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **agent** | [**WfmAgentAdherenceExplanationChangedBusinessUnitTopicUserReference**](WfmAgentAdherenceExplanationChangedBusinessUnitTopicUserReference) |  |  [optional] |
+| **managementUnit** | [**WfmAgentAdherenceExplanationChangedBusinessUnitTopicManagementUnit**](WfmAgentAdherenceExplanationChangedBusinessUnitTopicManagementUnit) |  |  [optional] |
+| **businessUnit** | [**WfmAgentAdherenceExplanationChangedBusinessUnitTopicBusinessUnit**](WfmAgentAdherenceExplanationChangedBusinessUnitTopicBusinessUnit) |  |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
+| **startDate** | [**Date**](Date) |  |  [optional] |
+| **lengthMinutes** | **Integer** |  |  [optional] |
+| **notes** | **String** |  |  [optional] |
+| **reviewedBy** | [**WfmAgentAdherenceExplanationChangedBusinessUnitTopicUserReference**](WfmAgentAdherenceExplanationChangedBusinessUnitTopicUserReference) |  |  [optional] |
+| **reviewedDate** | [**Date**](Date) |  |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -30,10 +24,7 @@ title: WfmAgentAdherenceExplanationChangedBusinessUnitTopicAdherenceExplanationC
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | LATE | &quot;Late&quot; | 
-{: class="table table-striped"}
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -43,7 +34,8 @@ title: WfmAgentAdherenceExplanationChangedBusinessUnitTopicAdherenceExplanationC
 | PENDING | &quot;Pending&quot; | 
 | APPROVED | &quot;Approved&quot; | 
 | DENIED | &quot;Denied&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,25 +1,19 @@
----
-title: FlowHealthUtterance
----
-## FlowHealthUtterance
+# FlowHealthUtterance
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **text** | <!----><!---->**String**<!----> | Utterance Text. |  [optional] |
-| **issueCount** | <!----><!---->**Long**<!----> | Number of issues found for this utterance. |  [optional] |
-| **language** | [**LanguageEnum**](#LanguageEnum)<!----> | Language provided for this utterance's health. |  [optional] |
-| **staticValidationResults** | <!---->[**List&lt;StaticValidationResultsEnum&gt;**](#StaticValidationResultsEnum)<!----> | Validation results for the utterance. |  [optional] |
-| **outlierInfo** | <!----><!---->[**OutlierInfo**](OutlierInfo.html)<!----> | Details about this utterance being an outlier or not. |  [optional] |
-| **confusionInfo** | <!----><!---->[**ConfusionDetails**](ConfusionDetails.html)<!----> | Confusion details with other utterances. |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **text** | **String** | Utterance Text. |  [optional] |
+| **issueCount** | **Long** | Number of issues found for this utterance. |  [optional] |
+| **language** | [**LanguageEnum**](#Enum--LanguageEnum) | Language provided for this utterance's health. |  [optional] |
+| **staticValidationResults** | [**List<StaticValidationResultsEnum>**](#Enum--StaticValidationResultsEnum) | Validation results for the utterance. |  [optional] |
+| **outlierInfo** | [**OutlierInfo**](OutlierInfo) | Details about this utterance being an outlier or not. |  [optional] |
+| **confusionInfo** | [**ConfusionDetails**](ConfusionDetails) | Confusion details with other utterances. |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="LanguageEnum"></a>
 
 ## Enum: LanguageEnum
 
@@ -42,10 +36,7 @@ title: FlowHealthUtterance
 | PT_BR | &quot;pt-br&quot; | 
 | PT_PT | &quot;pt-pt&quot; | 
 | NL_NL | &quot;nl-nl&quot; | 
-{: class="table table-striped"}
 
-
-<a name="StaticValidationResultsEnum"></a>
 
 ## Enum: StaticValidationResultsEnum
 
@@ -55,7 +46,8 @@ title: FlowHealthUtterance
 | TOOMANYUTTERANCES | &quot;TooManyUtterances&quot; |
 | UTTERANCETOOSHORT | &quot;UtteranceTooShort&quot; |
 | UTTERANCETOOLONG | &quot;UtteranceTooLong&quot; |
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

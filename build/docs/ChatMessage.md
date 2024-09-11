@@ -1,29 +1,23 @@
----
-title: ChatMessage
----
-## ChatMessage
+# ChatMessage
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **body** | <!----><!---->**String**<!----> | The message body |  [optional] |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **to** | <!----><!---->**String**<!----> | The message recipient |  [optional] |
-| **from** | <!----><!---->**String**<!----> | The message sender |  [optional] |
-| **utc** | <!----><!---->**String**<!----> |  |  [optional] |
-| **chat** | <!----><!---->**String**<!----> | The interaction id (if available) |  [optional] |
-| **message** | <!----><!---->**String**<!----> | The message id |  [optional] |
-| **type** | <!----><!---->**String**<!----> |  |  [optional] |
-| **bodyType** | [**BodyTypeEnum**](#BodyTypeEnum)<!----> | Type of the message body (v2 chats only) |  [optional] |
-| **senderCommunicationId** | <!----><!---->**String**<!----> | Communication of sender (v2 chats only) |  [optional] |
-| **participantPurpose** | <!----><!---->**String**<!----> | Participant purpose of sender (v2 chats only) |  [optional] |
-| **user** | <!----><!---->[**ChatMessageUser**](ChatMessageUser.html)<!----> | The user information for the sender (if available) |  [optional] |
-{: class="table table-striped"}
+| **body** | **String** | The message body |  [optional] |
+| **id** | **String** |  |  [optional] |
+| **to** | **String** | The message recipient |  [optional] |
+| **from** | **String** | The message sender |  [optional] |
+| **utc** | **String** |  |  [optional] |
+| **chat** | **String** | The interaction id (if available) |  [optional] |
+| **message** | **String** | The message id |  [optional] |
+| **type** | **String** |  |  [optional] |
+| **bodyType** | [**BodyTypeEnum**](#Enum--BodyTypeEnum) | Type of the message body (v2 chats only) |  [optional] |
+| **senderCommunicationId** | **String** | Communication of sender (v2 chats only) |  [optional] |
+| **participantPurpose** | **String** | Participant purpose of sender (v2 chats only) |  [optional] |
+| **user** | [**ChatMessageUser**](ChatMessageUser) | The user information for the sender (if available) |  [optional] |
 
-
-<a name="BodyTypeEnum"></a>
 
 ## Enum: BodyTypeEnum
 
@@ -37,7 +31,8 @@ title: ChatMessage
 | MEMBERJOIN | &quot;MEMBERJOIN&quot; | 
 | MEMBERLEAVE | &quot;MEMBERLEAVE&quot; | 
 | MEDIAREQUEST | &quot;MEDIAREQUEST&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

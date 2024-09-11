@@ -1,19 +1,13 @@
----
-title: KnowledgeExportJobFilter
----
-## KnowledgeExportJobFilter
+# KnowledgeExportJobFilter
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **documentsFilter** | <!----><!---->[**KnowledgeExportJobDocumentsFilter**](KnowledgeExportJobDocumentsFilter.html)<!----> | Filters for narrowing down which documents to export. |  [optional] |
-| **versionFilter** | [**VersionFilterEnum**](#VersionFilterEnum)<!----> | Specifies what version should be exported. |  |
-{: class="table table-striped"}
+| **documentsFilter** | [**KnowledgeExportJobDocumentsFilter**](KnowledgeExportJobDocumentsFilter) | Filters for narrowing down which documents to export. |  [optional] |
+| **versionFilter** | [**VersionFilterEnum**](#Enum--VersionFilterEnum) | Specifies what version should be exported. |  |
 
-
-<a name="VersionFilterEnum"></a>
 
 ## Enum: VersionFilterEnum
 
@@ -22,7 +16,8 @@ title: KnowledgeExportJobFilter
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ALL | &quot;All&quot; | 
 | LATEST | &quot;Latest&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

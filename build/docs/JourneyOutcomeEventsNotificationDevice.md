@@ -1,27 +1,21 @@
----
-title: JourneyOutcomeEventsNotificationDevice
----
-## JourneyOutcomeEventsNotificationDevice
+# JourneyOutcomeEventsNotificationDevice
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | <!----><!---->**String**<!----> |  |  [optional] |
-| **isMobile** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **screenHeight** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **screenWidth** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **screenDensity** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **fingerprint** | <!----><!---->**String**<!----> |  |  [optional] |
-| **osFamily** | <!----><!---->**String**<!----> |  |  [optional] |
-| **osVersion** | <!----><!---->**String**<!----> |  |  [optional] |
-| **category** | [**CategoryEnum**](#CategoryEnum)<!----> |  |  [optional] |
-| **manufacturer** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **type** | **String** |  |  [optional] |
+| **isMobile** | **Boolean** |  |  [optional] |
+| **screenHeight** | **Integer** |  |  [optional] |
+| **screenWidth** | **Integer** |  |  [optional] |
+| **screenDensity** | **Integer** |  |  [optional] |
+| **fingerprint** | **String** |  |  [optional] |
+| **osFamily** | **String** |  |  [optional] |
+| **osVersion** | **String** |  |  [optional] |
+| **category** | [**CategoryEnum**](#Enum--CategoryEnum) |  |  [optional] |
+| **manufacturer** | **String** |  |  [optional] |
 
-
-<a name="CategoryEnum"></a>
 
 ## Enum: CategoryEnum
 
@@ -32,7 +26,8 @@ title: JourneyOutcomeEventsNotificationDevice
 | MOBILE | &quot;mobile&quot; | 
 | TABLET | &quot;tablet&quot; | 
 | OTHER | &quot;other&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

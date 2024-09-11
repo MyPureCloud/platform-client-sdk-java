@@ -1,18 +1,16 @@
----
-title: TrunkMetricsTopicTrunkMetrics
----
-## TrunkMetricsTopicTrunkMetrics
+# TrunkMetricsTopicTrunkMetrics
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **calls** | <!----><!---->[**TrunkMetricsTopicTrunkMetricsCalls**](TrunkMetricsTopicTrunkMetricsCalls.html)<!----> |  |  [optional] |
-| **eventTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **qos** | <!----><!---->[**TrunkMetricsTopicTrunkMetricsQoS**](TrunkMetricsTopicTrunkMetricsQoS.html)<!----> |  |  [optional] |
-| **trunk** | <!----><!---->[**TrunkMetricsTopicUriReference**](TrunkMetricsTopicUriReference.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **calls** | [**TrunkMetricsTopicTrunkMetricsCalls**](TrunkMetricsTopicTrunkMetricsCalls) |  |  [optional] |
+| **eventTime** | [**Date**](Date) |  |  [optional] |
+| **qos** | [**TrunkMetricsTopicTrunkMetricsQoS**](TrunkMetricsTopicTrunkMetricsQoS) |  |  [optional] |
+| **trunk** | [**TrunkMetricsTopicUriReference**](TrunkMetricsTopicUriReference) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

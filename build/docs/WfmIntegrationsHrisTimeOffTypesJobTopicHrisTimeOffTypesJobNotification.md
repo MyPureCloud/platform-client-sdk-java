@@ -1,21 +1,15 @@
----
-title: WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffTypesJobNotification
----
-## WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffTypesJobNotification
+# WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffTypesJobNotification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **entities** | <!----><!---->[**List&lt;WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffType&gt;**](WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffType.html)<!----> |  |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
-| **error** | <!----><!---->[**WfmIntegrationsHrisTimeOffTypesJobTopicErrorBody**](WfmIntegrationsHrisTimeOffTypesJobTopicErrorBody.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **entities** | [**List&lt;WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffType&gt;**](WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffType) |  |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
+| **error** | [**WfmIntegrationsHrisTimeOffTypesJobTopicErrorBody**](WfmIntegrationsHrisTimeOffTypesJobTopicErrorBody) |  |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -25,7 +19,8 @@ title: WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffTypesJobNotification
 | PROCESSING | &quot;Processing&quot; | 
 | COMPLETE | &quot;Complete&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

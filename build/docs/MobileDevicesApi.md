@@ -1,23 +1,18 @@
----
-title: MobileDevicesApi
----
-## MobileDevicesApi
+# MobileDevicesApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteMobiledevice**](MobileDevicesApi.html#deleteMobiledevice) | Delete device |
-| [**getMobiledevice**](MobileDevicesApi.html#getMobiledevice) | Get device |
-| [**getMobiledevices**](MobileDevicesApi.html#getMobiledevices) | Get a list of all devices. |
-| [**postMobiledevices**](MobileDevicesApi.html#postMobiledevices) | Create User device |
-| [**putMobiledevice**](MobileDevicesApi.html#putMobiledevice) | Update device |
+| [**deleteMobiledevice**](MobileDevicesApi#deleteMobiledevice) | Delete device |
+| [**getMobiledevice**](MobileDevicesApi#getMobiledevice) | Get device |
+| [**getMobiledevices**](MobileDevicesApi#getMobiledevices) | Get a list of all devices. |
+| [**postMobiledevices**](MobileDevicesApi#postMobiledevices) | Create User device |
+| [**putMobiledevice**](MobileDevicesApi#putMobiledevice) | Update device |
 {: class="table-striped"}
 
-<a name="deleteMobiledevice"></a>
 
 # **deleteMobiledevice**
-
 
 
 > Void deleteMobiledevice(deviceId)
@@ -73,13 +68,11 @@ try {
 
 null (empty response body)
 
-<a name="getMobiledevice"></a>
 
 # **getMobiledevice**
 
 
-
-> [UserDevice](UserDevice.html) getMobiledevice(deviceId)
+> [UserDevice](UserDevice) getMobiledevice(deviceId)
 
 Get device
 
@@ -131,15 +124,13 @@ try {
 
 ### Return type
 
-[**UserDevice**](UserDevice.html)
+[**UserDevice**](UserDevice)
 
-<a name="getMobiledevices"></a>
 
 # **getMobiledevices**
 
 
-
-> [DirectoryUserDevicesListing](DirectoryUserDevicesListing.html) getMobiledevices(pageSize, pageNumber, sortOrder)
+> [DirectoryUserDevicesListing](DirectoryUserDevicesListing) getMobiledevices(pageSize, pageNumber, sortOrder)
 
 Get a list of all devices.
 
@@ -195,15 +186,13 @@ try {
 
 ### Return type
 
-[**DirectoryUserDevicesListing**](DirectoryUserDevicesListing.html)
+[**DirectoryUserDevicesListing**](DirectoryUserDevicesListing)
 
-<a name="postMobiledevices"></a>
 
 # **postMobiledevices**
 
 
-
-> [UserDevice](UserDevice.html) postMobiledevices(body)
+> [UserDevice](UserDevice) postMobiledevices(body)
 
 Create User device
 
@@ -249,21 +238,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**UserDevice**](UserDevice.html)| Device | 
+| **body** | [**UserDevice**](UserDevice)| Device | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UserDevice**](UserDevice.html)
+[**UserDevice**](UserDevice)
 
-<a name="putMobiledevice"></a>
 
 # **putMobiledevice**
 
 
-
-> [UserDevice](UserDevice.html) putMobiledevice(deviceId, body)
+> [UserDevice](UserDevice) putMobiledevice(deviceId, body)
 
 Update device
 
@@ -311,11 +298,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **deviceId** | **String**| Device ID | 
-| **body** | [**UserDevice**](UserDevice.html)| Device | [optional] 
+| **body** | [**UserDevice**](UserDevice)| Device | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UserDevice**](UserDevice.html)
+[**UserDevice**](UserDevice)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

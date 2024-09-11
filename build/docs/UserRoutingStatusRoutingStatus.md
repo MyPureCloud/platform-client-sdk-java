@@ -1,19 +1,13 @@
----
-title: UserRoutingStatusRoutingStatus
----
-## UserRoutingStatusRoutingStatus
+# UserRoutingStatusRoutingStatus
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> | Indicates the Routing State of the agent. |  [optional] |
-| **startTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when the agent went into this state. |  [optional] |
-{: class="table table-striped"}
+| **status** | [**StatusEnum**](#Enum--StatusEnum) | Indicates the Routing State of the agent. |  [optional] |
+| **startTime** | [**Date**](Date) | The timestamp when the agent went into this state. |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -25,7 +19,8 @@ title: UserRoutingStatusRoutingStatus
 | INTERACTING | &quot;INTERACTING&quot; | 
 | NOT_RESPONDING | &quot;NOT_RESPONDING&quot; | 
 | COMMUNICATING | &quot;COMMUNICATING&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

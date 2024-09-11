@@ -1,19 +1,13 @@
----
-title: EdgeChangeTopicEdge
----
-## EdgeChangeTopicEdge
+# EdgeChangeTopicEdge
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **onlineStatus** | [**OnlineStatusEnum**](#OnlineStatusEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **onlineStatus** | [**OnlineStatusEnum**](#Enum--OnlineStatusEnum) |  |  [optional] |
 
-
-<a name="OnlineStatusEnum"></a>
 
 ## Enum: OnlineStatusEnum
 
@@ -22,7 +16,8 @@ title: EdgeChangeTopicEdge
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ONLINE | &quot;ONLINE&quot; | 
 | OFFLINE | &quot;OFFLINE&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

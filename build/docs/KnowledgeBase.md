@@ -1,28 +1,22 @@
----
-title: KnowledgeBase
----
-## KnowledgeBase
+# KnowledgeBase
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **description** | <!----><!---->**String**<!----> | Knowledge base description |  [optional] |
-| **coreLanguage** | [**CoreLanguageEnum**](#CoreLanguageEnum)<!----> | Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently. However, the new DX knowledge will support all these language codes, along with 'early preview' language codes [ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA] which might have a lower accuracy. |  |
-| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Knowledge base creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | Knowledge base last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **faqCount** | <!----><!---->**Integer**<!----> | The count representing the number of documents of type FAQ in the KnowledgeBase |  [optional] |
-| **dateDocumentLastModified** | <!----><!---->[**Date**](Date.html)<!----> | The date representing when the last document is modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **articleCount** | <!----><!---->**Integer**<!----> | The count representing the number of documents of type Article in the KnowledgeBase |  [optional] |
-| **published** | <!----><!---->**Boolean**<!----> | Flag that indicates the knowledge base is published |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **description** | **String** | Knowledge base description |  [optional] |
+| **coreLanguage** | [**CoreLanguageEnum**](#Enum--CoreLanguageEnum) | Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently. However, the new DX knowledge will support all these language codes, along with 'early preview' language codes [ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA] which might have a lower accuracy. |  |
+| **dateCreated** | [**Date**](Date) | Knowledge base creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **dateModified** | [**Date**](Date) | Knowledge base last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **faqCount** | **Integer** | The count representing the number of documents of type FAQ in the KnowledgeBase |  [optional] |
+| **dateDocumentLastModified** | [**Date**](Date) | The date representing when the last document is modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **articleCount** | **Integer** | The count representing the number of documents of type Article in the KnowledgeBase |  [optional] |
+| **published** | **Boolean** | Flag that indicates the knowledge base is published |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="CoreLanguageEnum"></a>
 
 ## Enum: CoreLanguageEnum
 
@@ -75,7 +69,8 @@ title: KnowledgeBase
 | HU_HU | &quot;hu-HU&quot; | 
 | VI_VN | &quot;vi-VN&quot; | 
 | UK_UA | &quot;uk-UA&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,15 +1,13 @@
----
-title: UserDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification
----
-## UserDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification
+# UserDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **dataAvailabilityDate** | <!----><!---->[**Date**](Date.html)<!----> | Date and time before which data is guaranteed to be available in the datalake |  [optional] |
-{: class="table table-striped"}
+| **dataAvailabilityDate** | [**Date**](Date) | Date and time before which data is guaranteed to be available in the datalake |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

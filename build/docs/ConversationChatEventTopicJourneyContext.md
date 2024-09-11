@@ -1,17 +1,15 @@
----
-title: ConversationChatEventTopicJourneyContext
----
-## ConversationChatEventTopicJourneyContext
+# ConversationChatEventTopicJourneyContext
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **customer** | <!----><!---->[**ConversationChatEventTopicJourneyCustomer**](ConversationChatEventTopicJourneyCustomer.html)<!----> |  |  [optional] |
-| **customerSession** | <!----><!---->[**ConversationChatEventTopicJourneyCustomerSession**](ConversationChatEventTopicJourneyCustomerSession.html)<!----> |  |  [optional] |
-| **triggeringAction** | <!----><!---->[**ConversationChatEventTopicJourneyAction**](ConversationChatEventTopicJourneyAction.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **customer** | [**ConversationChatEventTopicJourneyCustomer**](ConversationChatEventTopicJourneyCustomer) |  |  [optional] |
+| **customerSession** | [**ConversationChatEventTopicJourneyCustomerSession**](ConversationChatEventTopicJourneyCustomerSession) |  |  [optional] |
+| **triggeringAction** | [**ConversationChatEventTopicJourneyAction**](ConversationChatEventTopicJourneyAction) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,15 +1,13 @@
----
-title: ParsedCertificate
----
-## ParsedCertificate
+# ParsedCertificate
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **certificateDetails** | <!----><!---->[**List&lt;CertificateDetails&gt;**](CertificateDetails.html)<!----> | The details of the certificates that were parsed correctly. |  [optional] |
-{: class="table table-striped"}
+| **certificateDetails** | [**List&lt;CertificateDetails&gt;**](CertificateDetails) | The details of the certificates that were parsed correctly. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

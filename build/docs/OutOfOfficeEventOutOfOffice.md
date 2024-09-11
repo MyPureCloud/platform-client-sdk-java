@@ -1,19 +1,17 @@
----
-title: OutOfOfficeEventOutOfOffice
----
-## OutOfOfficeEventOutOfOffice
+# OutOfOfficeEventOutOfOffice
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **user** | <!----><!---->[**OutOfOfficeEventUser**](OutOfOfficeEventUser.html)<!----> |  |  [optional] |
-| **active** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **indefinite** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **startDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **endDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **user** | [**OutOfOfficeEventUser**](OutOfOfficeEventUser) |  |  [optional] |
+| **active** | **Boolean** |  |  [optional] |
+| **indefinite** | **Boolean** |  |  [optional] |
+| **startDate** | [**Date**](Date) |  |  [optional] |
+| **endDate** | [**Date**](Date) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

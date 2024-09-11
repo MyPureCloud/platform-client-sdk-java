@@ -1,17 +1,15 @@
----
-title: ConversationThreadingWindow
----
-## ConversationThreadingWindow
+# ConversationThreadingWindow
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **settings** | <!----><!---->[**List&lt;ConversationThreadingWindowSetting&gt;**](ConversationThreadingWindowSetting.html)<!----> | The conversation threading window timeout (Minutes) for each messaging type |  |
-| **defaultTimeoutMinutes** | <!----><!---->**Long**<!----> | The default conversation threading window timeout (Minutes) |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **settings** | [**List&lt;ConversationThreadingWindowSetting&gt;**](ConversationThreadingWindowSetting) | The conversation threading window timeout (Minutes) for each messaging type |  |
+| **defaultTimeoutMinutes** | **Long** | The default conversation threading window timeout (Minutes) |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

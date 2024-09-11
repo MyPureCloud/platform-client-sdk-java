@@ -1,25 +1,19 @@
----
-title: GetAlertQuery
----
-## GetAlertQuery
+# GetAlertQuery
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **ruleType** | [**RuleTypeEnum**](#RuleTypeEnum)<!----> | The rule type of the alerts the query will return |  |
-| **queryType** | [**QueryTypeEnum**](#QueryTypeEnum)<!----> | The type of query being performed. |  |
-| **alertStatus** | [**AlertStatusEnum**](#AlertStatusEnum)<!----> | The status of the alerts the query will return. |  [optional] |
-| **viewedStatus** | [**ViewedStatusEnum**](#ViewedStatusEnum)<!----> | The view status of the alerts the query will return. |  [optional] |
-| **pageNumber** | <!----><!---->**Integer**<!----> | The page number of the queried response |  [optional] |
-| **pageSize** | <!----><!---->**Integer**<!----> | The number of entities to return of the queried response.  The max is 25 |  [optional] |
-| **sortBy** | [**SortByEnum**](#SortByEnum)<!----> | The field to sort responses by.  The accepted choices are Name and DateStart |  [optional] |
-| **sortOrder** | [**SortOrderEnum**](#SortOrderEnum)<!----> | The order in which response will be sorted.  The accepted choices are Asc and Desc |  [optional] |
-{: class="table table-striped"}
+| **ruleType** | [**RuleTypeEnum**](#Enum--RuleTypeEnum) | The rule type of the alerts the query will return |  |
+| **queryType** | [**QueryTypeEnum**](#Enum--QueryTypeEnum) | The type of query being performed. |  |
+| **alertStatus** | [**AlertStatusEnum**](#Enum--AlertStatusEnum) | The status of the alerts the query will return. |  [optional] |
+| **viewedStatus** | [**ViewedStatusEnum**](#Enum--ViewedStatusEnum) | The view status of the alerts the query will return. |  [optional] |
+| **pageNumber** | **Integer** | The page number of the queried response |  [optional] |
+| **pageSize** | **Integer** | The number of entities to return of the queried response.  The max is 25 |  [optional] |
+| **sortBy** | [**SortByEnum**](#Enum--SortByEnum) | The field to sort responses by.  The accepted choices are Name and DateStart |  [optional] |
+| **sortOrder** | [**SortOrderEnum**](#Enum--SortOrderEnum) | The order in which response will be sorted.  The accepted choices are Asc and Desc |  [optional] |
 
-
-<a name="RuleTypeEnum"></a>
 
 ## Enum: RuleTypeEnum
 
@@ -29,10 +23,7 @@ title: GetAlertQuery
 | CONVERSATION | &quot;Conversation&quot; | 
 | PRESENCE | &quot;Presence&quot; | 
 | ALL | &quot;All&quot; | 
-{: class="table table-striped"}
 
-
-<a name="QueryTypeEnum"></a>
 
 ## Enum: QueryTypeEnum
 
@@ -41,10 +32,7 @@ title: GetAlertQuery
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INFO | &quot;Info&quot; | 
 | COUNT | &quot;Count&quot; | 
-{: class="table table-striped"}
 
-
-<a name="AlertStatusEnum"></a>
 
 ## Enum: AlertStatusEnum
 
@@ -54,10 +42,7 @@ title: GetAlertQuery
 | ACTIVE | &quot;Active&quot; | 
 | INACTIVE | &quot;Inactive&quot; | 
 | ALL | &quot;All&quot; | 
-{: class="table table-striped"}
 
-
-<a name="ViewedStatusEnum"></a>
 
 ## Enum: ViewedStatusEnum
 
@@ -67,10 +52,7 @@ title: GetAlertQuery
 | UNREAD | &quot;Unread&quot; | 
 | READ | &quot;Read&quot; | 
 | ALL | &quot;All&quot; | 
-{: class="table table-striped"}
 
-
-<a name="SortByEnum"></a>
 
 ## Enum: SortByEnum
 
@@ -79,10 +61,7 @@ title: GetAlertQuery
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | NAME | &quot;Name&quot; | 
 | DATESTART | &quot;DateStart&quot; | 
-{: class="table table-striped"}
 
-
-<a name="SortOrderEnum"></a>
 
 ## Enum: SortOrderEnum
 
@@ -91,7 +70,8 @@ title: GetAlertQuery
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ASC | &quot;Asc&quot; | 
 | DESC | &quot;Desc&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

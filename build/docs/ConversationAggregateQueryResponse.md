@@ -1,15 +1,13 @@
----
-title: ConversationAggregateQueryResponse
----
-## ConversationAggregateQueryResponse
+# ConversationAggregateQueryResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **results** | <!----><!---->[**List&lt;ConversationAggregateDataContainer&gt;**](ConversationAggregateDataContainer.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **results** | [**List&lt;ConversationAggregateDataContainer&gt;**](ConversationAggregateDataContainer) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

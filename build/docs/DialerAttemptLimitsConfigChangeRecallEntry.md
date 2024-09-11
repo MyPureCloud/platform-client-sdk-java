@@ -1,17 +1,15 @@
----
-title: DialerAttemptLimitsConfigChangeRecallEntry
----
-## DialerAttemptLimitsConfigChangeRecallEntry
+# DialerAttemptLimitsConfigChangeRecallEntry
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **nbrAttempts** | <!----><!---->**Integer**<!----> | The number of recall attempts to make |  [optional] |
-| **minutesBetweenAttempts** | <!----><!---->**Integer**<!----> | How long to wait between recall attempts |  [optional] |
-| **additionalProperties** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **nbrAttempts** | **Integer** | The number of recall attempts to make |  [optional] |
+| **minutesBetweenAttempts** | **Integer** | How long to wait between recall attempts |  [optional] |
+| **additionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,15 +1,13 @@
----
-title: MessagingTemplate
----
-## MessagingTemplate
+# MessagingTemplate
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **whatsApp** | <!----><!---->[**WhatsAppDefinition**](WhatsAppDefinition.html)<!----> | Defines a messaging template for a WhatsApp messaging channel |  [optional] |
-{: class="table table-striped"}
+| **whatsApp** | [**WhatsAppDefinition**](WhatsAppDefinition) | Defines a messaging template for a WhatsApp messaging channel |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

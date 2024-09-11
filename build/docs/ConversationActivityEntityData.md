@@ -1,40 +1,34 @@
----
-title: ConversationActivityEntityData
----
-## ConversationActivityEntityData
+# ConversationActivityEntityData
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **activityDate** | <!----><!---->[**Date**](Date.html)<!----> | The time at which the activity was observed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
-| **metric** | [**MetricEnum**](#MetricEnum)<!----> | Activity metric |  [optional] |
-| **activeRouting** | [**ActiveRoutingEnum**](#ActiveRoutingEnum)<!----> | Active routing method |  [optional] |
-| **addressFrom** | <!----><!---->**String**<!----> | The address that initiated an action |  [optional] |
-| **addressTo** | <!----><!---->**String**<!----> | The address receiving an action |  [optional] |
-| **ani** | <!----><!---->**String**<!----> | Automatic Number Identification (caller's number) |  [optional] |
-| **conversationId** | <!----><!---->**String**<!----> | Unique identifier for the conversation |  [optional] |
-| **convertedFrom** | <!----><!---->**String**<!----> | Session media type that was converted from in case of a media type conversion |  [optional] |
-| **convertedTo** | <!----><!---->**String**<!----> | Session media type that was converted to in case of a media type conversion |  [optional] |
-| **direction** | [**DirectionEnum**](#DirectionEnum)<!----> | The direction of the communication |  [optional] |
-| **dnis** | <!----><!---->**String**<!----> | Dialed number identification service (number dialed by the calling party) |  [optional] |
-| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> | The session media type |  [optional] |
-| **participantName** | <!----><!---->**String**<!----> | A human readable name identifying the participant |  [optional] |
-| **queueId** | <!----><!---->**String**<!----> | Queue identifier |  [optional] |
-| **requestedLanguageId** | <!----><!---->**String**<!----> | Unique identifier for the language requested for an interaction |  [optional] |
-| **requestedRoutingSkillIds** | <!----><!---->**List&lt;String&gt;**<!----> | Unique identifier(s) for skill(s) requested for an interaction |  [optional] |
-| **requestedRoutings** | <!---->[**List&lt;RequestedRoutingsEnum&gt;**](#RequestedRoutingsEnum)<!----> | Routing type(s) for requested/attempted routing methods. |  [optional] |
-| **routingPriority** | <!----><!---->**Long**<!----> | Routing priority for the current interaction |  [optional] |
-| **sessionId** | <!----><!---->**String**<!----> | The unique identifier of this session |  [optional] |
-| **teamId** | <!----><!---->**String**<!----> | The team ID the user is a member of |  [optional] |
-| **usedRouting** | [**UsedRoutingEnum**](#UsedRoutingEnum)<!----> | Complete routing method |  [optional] |
-| **userId** | <!----><!---->**String**<!----> | Unique identifier for the user |  [optional] |
-| **scoredAgents** | <!----><!---->[**List&lt;ConversationActivityScoredAgent&gt;**](ConversationActivityScoredAgent.html)<!----> | Scored agents |  [optional] |
-{: class="table table-striped"}
+| **activityDate** | [**Date**](Date) | The time at which the activity was observed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
+| **metric** | [**MetricEnum**](#Enum--MetricEnum) | Activity metric |  [optional] |
+| **activeRouting** | [**ActiveRoutingEnum**](#Enum--ActiveRoutingEnum) | Active routing method |  [optional] |
+| **addressFrom** | **String** | The address that initiated an action |  [optional] |
+| **addressTo** | **String** | The address receiving an action |  [optional] |
+| **ani** | **String** | Automatic Number Identification (caller's number) |  [optional] |
+| **conversationId** | **String** | Unique identifier for the conversation |  [optional] |
+| **convertedFrom** | **String** | Session media type that was converted from in case of a media type conversion |  [optional] |
+| **convertedTo** | **String** | Session media type that was converted to in case of a media type conversion |  [optional] |
+| **direction** | [**DirectionEnum**](#Enum--DirectionEnum) | The direction of the communication |  [optional] |
+| **dnis** | **String** | Dialed number identification service (number dialed by the calling party) |  [optional] |
+| **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) | The session media type |  [optional] |
+| **participantName** | **String** | A human readable name identifying the participant |  [optional] |
+| **queueId** | **String** | Queue identifier |  [optional] |
+| **requestedLanguageId** | **String** | Unique identifier for the language requested for an interaction |  [optional] |
+| **requestedRoutingSkillIds** | **List&lt;String&gt;** | Unique identifier(s) for skill(s) requested for an interaction |  [optional] |
+| **requestedRoutings** | [**List<RequestedRoutingsEnum>**](#Enum--RequestedRoutingsEnum) | Routing type(s) for requested/attempted routing methods. |  [optional] |
+| **routingPriority** | **Long** | Routing priority for the current interaction |  [optional] |
+| **sessionId** | **String** | The unique identifier of this session |  [optional] |
+| **teamId** | **String** | The team ID the user is a member of |  [optional] |
+| **usedRouting** | [**UsedRoutingEnum**](#Enum--UsedRoutingEnum) | Complete routing method |  [optional] |
+| **userId** | **String** | Unique identifier for the user |  [optional] |
+| **scoredAgents** | [**List&lt;ConversationActivityScoredAgent&gt;**](ConversationActivityScoredAgent) | Scored agents |  [optional] |
 
-
-<a name="MetricEnum"></a>
 
 ## Enum: MetricEnum
 
@@ -44,10 +38,7 @@ title: ConversationActivityEntityData
 | OALERTING | &quot;oAlerting&quot; | 
 | OINTERACTING | &quot;oInteracting&quot; | 
 | OWAITING | &quot;oWaiting&quot; | 
-{: class="table table-striped"}
 
-
-<a name="ActiveRoutingEnum"></a>
 
 ## Enum: ActiveRoutingEnum
 
@@ -63,10 +54,7 @@ title: ConversationActivityEntityData
 | PREFERRED | &quot;Preferred&quot; | 
 | STANDARD | &quot;Standard&quot; | 
 | VIP | &quot;Vip&quot; | 
-{: class="table table-striped"}
 
-
-<a name="DirectionEnum"></a>
 
 ## Enum: DirectionEnum
 
@@ -75,10 +63,7 @@ title: ConversationActivityEntityData
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INBOUND | &quot;inbound&quot; | 
 | OUTBOUND | &quot;outbound&quot; | 
-{: class="table table-striped"}
 
-
-<a name="MediaTypeEnum"></a>
 
 ## Enum: MediaTypeEnum
 
@@ -94,10 +79,7 @@ title: ConversationActivityEntityData
 | UNKNOWN | &quot;unknown&quot; | 
 | VIDEO | &quot;video&quot; | 
 | VOICE | &quot;voice&quot; | 
-{: class="table table-striped"}
 
-
-<a name="RequestedRoutingsEnum"></a>
 
 ## Enum: RequestedRoutingsEnum
 
@@ -112,10 +94,7 @@ title: ConversationActivityEntityData
 | PREFERRED | &quot;Preferred&quot; |
 | STANDARD | &quot;Standard&quot; |
 | VIP | &quot;Vip&quot; |
-{: class="table table-striped"}
 
-
-<a name="UsedRoutingEnum"></a>
 
 ## Enum: UsedRoutingEnum
 
@@ -131,7 +110,8 @@ title: ConversationActivityEntityData
 | PREFERRED | &quot;Preferred&quot; | 
 | STANDARD | &quot;Standard&quot; | 
 | VIP | &quot;Vip&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

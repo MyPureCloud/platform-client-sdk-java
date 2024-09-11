@@ -1,16 +1,14 @@
----
-title: InitiatingAction
----
-## InitiatingAction
+# InitiatingAction
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **transactionId** | <!----><!---->**String**<!----> | Id of the audit initiating the transaction |  [optional] |
-| **actionContext** | <!----><!---->**String**<!----> | Action of the audit initiating the transaction |  [optional] |
-{: class="table table-striped"}
+| **transactionId** | **String** | Id of the audit initiating the transaction |  [optional] |
+| **actionContext** | **String** | Action of the audit initiating the transaction |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

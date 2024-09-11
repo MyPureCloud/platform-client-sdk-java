@@ -1,21 +1,15 @@
----
-title: TaskManagementAggregationView
----
-## TaskManagementAggregationView
+# TaskManagementAggregationView
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **target** | [**TargetEnum**](#TargetEnum)<!----> | Target metric name |  |
-| **name** | <!----><!---->**String**<!----> | A unique name for this view. Must be distinct from other views and built-in metric names. |  |
-| **function** | [**FunctionEnum**](#FunctionEnum)<!----> | Type of view you wish to create |  |
-| **range** | <!----><!---->[**AggregationRange**](AggregationRange.html)<!----> | Range of numbers for slicing up data |  [optional] |
-{: class="table table-striped"}
+| **target** | [**TargetEnum**](#Enum--TargetEnum) | Target metric name |  |
+| **name** | **String** | A unique name for this view. Must be distinct from other views and built-in metric names. |  |
+| **function** | [**FunctionEnum**](#Enum--FunctionEnum) | Type of view you wish to create |  |
+| **range** | [**AggregationRange**](AggregationRange) | Range of numbers for slicing up data |  [optional] |
 
-
-<a name="TargetEnum"></a>
 
 ## Enum: TargetEnum
 
@@ -54,10 +48,7 @@ title: TaskManagementAggregationView
 | TWORKITEMSPARKED | &quot;tWorkitemsParked&quot; | 
 | TWORKITEMSQUEUEANSWERED | &quot;tWorkitemsQueueAnswered&quot; | 
 | TWORKITEMSSTATUS | &quot;tWorkitemsStatus&quot; | 
-{: class="table table-striped"}
 
-
-<a name="FunctionEnum"></a>
 
 ## Enum: FunctionEnum
 
@@ -65,7 +56,8 @@ title: TaskManagementAggregationView
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | RANGEBOUND | &quot;rangeBound&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

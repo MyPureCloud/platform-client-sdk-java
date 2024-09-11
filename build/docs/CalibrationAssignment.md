@@ -1,18 +1,16 @@
----
-title: CalibrationAssignment
----
-## CalibrationAssignment
+# CalibrationAssignment
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **calibrator** | <!----><!---->[**User**](User.html)<!----> |  |  [optional] |
-| **evaluators** | <!----><!---->[**List&lt;User&gt;**](User.html)<!----> |  |  [optional] |
-| **evaluationForm** | <!----><!---->[**EvaluationForm**](EvaluationForm.html)<!----> |  |  [optional] |
-| **expertEvaluator** | <!----><!---->[**User**](User.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **calibrator** | [**User**](User) |  |  [optional] |
+| **evaluators** | [**List&lt;User&gt;**](User) |  |  [optional] |
+| **evaluationForm** | [**EvaluationForm**](EvaluationForm) |  |  [optional] |
+| **expertEvaluator** | [**User**](User) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

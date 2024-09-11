@@ -1,19 +1,13 @@
----
-title: SchedulingNoForecastOptionsRequest
----
-## SchedulingNoForecastOptionsRequest
+# SchedulingNoForecastOptionsRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **shiftLength** | [**ShiftLengthEnum**](#ShiftLengthEnum)<!----> | The shift length option to apply if no forecast is supplied |  [optional] |
-| **shiftStart** | [**ShiftStartEnum**](#ShiftStartEnum)<!----> | The shift start option to apply if no forecast is supplied |  [optional] |
-{: class="table table-striped"}
+| **shiftLength** | [**ShiftLengthEnum**](#Enum--ShiftLengthEnum) | The shift length option to apply if no forecast is supplied |  [optional] |
+| **shiftStart** | [**ShiftStartEnum**](#Enum--ShiftStartEnum) | The shift start option to apply if no forecast is supplied |  [optional] |
 
-
-<a name="ShiftLengthEnum"></a>
 
 ## Enum: ShiftLengthEnum
 
@@ -24,10 +18,7 @@ title: SchedulingNoForecastOptionsRequest
 | MEDIAN | &quot;Median&quot; | 
 | LONGEST | &quot;Longest&quot; | 
 | RANDOM | &quot;Random&quot; | 
-{: class="table table-striped"}
 
-
-<a name="ShiftStartEnum"></a>
 
 ## Enum: ShiftStartEnum
 
@@ -38,7 +29,8 @@ title: SchedulingNoForecastOptionsRequest
 | MEDIAN | &quot;Median&quot; | 
 | LATEST | &quot;Latest&quot; | 
 | RANDOM | &quot;Random&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,18 +1,12 @@
----
-title: ExecuteRecordingJobsQuery
----
-## ExecuteRecordingJobsQuery
+# ExecuteRecordingJobsQuery
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **state** | [**StateEnum**](#StateEnum)<!----> | The desired state for the job to be set to. |  |
-{: class="table table-striped"}
+| **state** | [**StateEnum**](#Enum--StateEnum) | The desired state for the job to be set to. |  |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -20,7 +14,8 @@ title: ExecuteRecordingJobsQuery
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | PROCESSING | &quot;PROCESSING&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

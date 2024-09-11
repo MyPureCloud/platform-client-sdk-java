@@ -1,51 +1,45 @@
----
-title: ExternalContactsUnresolvedContactChangedTopicContact
----
-## ExternalContactsUnresolvedContactChangedTopicContact
+# ExternalContactsUnresolvedContactChangedTopicContact
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **division** | <!----><!---->[**ExternalContactsUnresolvedContactChangedTopicDivision**](ExternalContactsUnresolvedContactChangedTopicDivision.html)<!----> |  |  [optional] |
-| **externalOrganization** | <!----><!---->[**ExternalContactsUnresolvedContactChangedTopicExternalOrganization**](ExternalContactsUnresolvedContactChangedTopicExternalOrganization.html)<!----> |  |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-| **firstName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **middleName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **lastName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **salutation** | <!----><!---->**String**<!----> |  |  [optional] |
-| **title** | <!----><!---->**String**<!----> |  |  [optional] |
-| **workPhone** | <!----><!---->[**ExternalContactsUnresolvedContactChangedTopicPhoneNumber**](ExternalContactsUnresolvedContactChangedTopicPhoneNumber.html)<!----> |  |  [optional] |
-| **cellPhone** | <!----><!---->[**ExternalContactsUnresolvedContactChangedTopicPhoneNumber**](ExternalContactsUnresolvedContactChangedTopicPhoneNumber.html)<!----> |  |  [optional] |
-| **homePhone** | <!----><!---->[**ExternalContactsUnresolvedContactChangedTopicPhoneNumber**](ExternalContactsUnresolvedContactChangedTopicPhoneNumber.html)<!----> |  |  [optional] |
-| **otherPhone** | <!----><!---->[**ExternalContactsUnresolvedContactChangedTopicPhoneNumber**](ExternalContactsUnresolvedContactChangedTopicPhoneNumber.html)<!----> |  |  [optional] |
-| **workEmail** | <!----><!---->**String**<!----> |  |  [optional] |
-| **personalEmail** | <!----><!---->**String**<!----> |  |  [optional] |
-| **otherEmail** | <!----><!---->**String**<!----> |  |  [optional] |
-| **address** | <!----><!---->[**ExternalContactsUnresolvedContactChangedTopicContactAddress**](ExternalContactsUnresolvedContactChangedTopicContactAddress.html)<!----> |  |  [optional] |
-| **surveyOptOut** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **externalSystemUrl** | <!----><!---->**String**<!----> |  |  [optional] |
-| **twitterId** | <!----><!---->[**ExternalContactsUnresolvedContactChangedTopicTwitterId**](ExternalContactsUnresolvedContactChangedTopicTwitterId.html)<!----> |  |  [optional] |
-| **lineId** | <!----><!---->[**ExternalContactsUnresolvedContactChangedTopicLineId**](ExternalContactsUnresolvedContactChangedTopicLineId.html)<!----> |  |  [optional] |
-| **whatsAppId** | <!----><!---->[**ExternalContactsUnresolvedContactChangedTopicWhatsAppId**](ExternalContactsUnresolvedContactChangedTopicWhatsAppId.html)<!----> |  |  [optional] |
-| **facebookId** | <!----><!---->[**ExternalContactsUnresolvedContactChangedTopicFacebookId**](ExternalContactsUnresolvedContactChangedTopicFacebookId.html)<!----> |  |  [optional] |
-| **instagramId** | <!----><!---->[**ExternalContactsUnresolvedContactChangedTopicInstagramId**](ExternalContactsUnresolvedContactChangedTopicInstagramId.html)<!----> |  |  [optional] |
-| **externalIds** | <!----><!---->[**List&lt;ExternalContactsUnresolvedContactChangedTopicExternalId&gt;**](ExternalContactsUnresolvedContactChangedTopicExternalId.html)<!----> |  |  [optional] |
-| **canonicalContactId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **schema** | <!----><!---->[**ExternalContactsUnresolvedContactChangedTopicDataSchema**](ExternalContactsUnresolvedContactChangedTopicDataSchema.html)<!----> |  |  [optional] |
-| **customFields** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
-| **mergeSet** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **mergedFrom** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **mergedTo** | <!----><!---->**String**<!----> |  |  [optional] |
-| **mergeOperation** | <!----><!---->[**ExternalContactsUnresolvedContactChangedTopicMergeOperation**](ExternalContactsUnresolvedContactChangedTopicMergeOperation.html)<!----> |  |  [optional] |
-| **createDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **modifyDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **division** | [**ExternalContactsUnresolvedContactChangedTopicDivision**](ExternalContactsUnresolvedContactChangedTopicDivision) |  |  [optional] |
+| **externalOrganization** | [**ExternalContactsUnresolvedContactChangedTopicExternalOrganization**](ExternalContactsUnresolvedContactChangedTopicExternalOrganization) |  |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
+| **firstName** | **String** |  |  [optional] |
+| **middleName** | **String** |  |  [optional] |
+| **lastName** | **String** |  |  [optional] |
+| **salutation** | **String** |  |  [optional] |
+| **title** | **String** |  |  [optional] |
+| **workPhone** | [**ExternalContactsUnresolvedContactChangedTopicPhoneNumber**](ExternalContactsUnresolvedContactChangedTopicPhoneNumber) |  |  [optional] |
+| **cellPhone** | [**ExternalContactsUnresolvedContactChangedTopicPhoneNumber**](ExternalContactsUnresolvedContactChangedTopicPhoneNumber) |  |  [optional] |
+| **homePhone** | [**ExternalContactsUnresolvedContactChangedTopicPhoneNumber**](ExternalContactsUnresolvedContactChangedTopicPhoneNumber) |  |  [optional] |
+| **otherPhone** | [**ExternalContactsUnresolvedContactChangedTopicPhoneNumber**](ExternalContactsUnresolvedContactChangedTopicPhoneNumber) |  |  [optional] |
+| **workEmail** | **String** |  |  [optional] |
+| **personalEmail** | **String** |  |  [optional] |
+| **otherEmail** | **String** |  |  [optional] |
+| **address** | [**ExternalContactsUnresolvedContactChangedTopicContactAddress**](ExternalContactsUnresolvedContactChangedTopicContactAddress) |  |  [optional] |
+| **surveyOptOut** | **Boolean** |  |  [optional] |
+| **externalSystemUrl** | **String** |  |  [optional] |
+| **twitterId** | [**ExternalContactsUnresolvedContactChangedTopicTwitterId**](ExternalContactsUnresolvedContactChangedTopicTwitterId) |  |  [optional] |
+| **lineId** | [**ExternalContactsUnresolvedContactChangedTopicLineId**](ExternalContactsUnresolvedContactChangedTopicLineId) |  |  [optional] |
+| **whatsAppId** | [**ExternalContactsUnresolvedContactChangedTopicWhatsAppId**](ExternalContactsUnresolvedContactChangedTopicWhatsAppId) |  |  [optional] |
+| **facebookId** | [**ExternalContactsUnresolvedContactChangedTopicFacebookId**](ExternalContactsUnresolvedContactChangedTopicFacebookId) |  |  [optional] |
+| **instagramId** | [**ExternalContactsUnresolvedContactChangedTopicInstagramId**](ExternalContactsUnresolvedContactChangedTopicInstagramId) |  |  [optional] |
+| **externalIds** | [**List&lt;ExternalContactsUnresolvedContactChangedTopicExternalId&gt;**](ExternalContactsUnresolvedContactChangedTopicExternalId) |  |  [optional] |
+| **canonicalContactId** | **String** |  |  [optional] |
+| **schema** | [**ExternalContactsUnresolvedContactChangedTopicDataSchema**](ExternalContactsUnresolvedContactChangedTopicDataSchema) |  |  [optional] |
+| **customFields** | **Map&lt;String, Object&gt;** |  |  [optional] |
+| **mergeSet** | **List&lt;String&gt;** |  |  [optional] |
+| **mergedFrom** | **List&lt;String&gt;** |  |  [optional] |
+| **mergedTo** | **String** |  |  [optional] |
+| **mergeOperation** | [**ExternalContactsUnresolvedContactChangedTopicMergeOperation**](ExternalContactsUnresolvedContactChangedTopicMergeOperation) |  |  [optional] |
+| **createDate** | [**Date**](Date) |  |  [optional] |
+| **modifyDate** | [**Date**](Date) |  |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -55,7 +49,8 @@ title: ExternalContactsUnresolvedContactChangedTopicContact
 | EPHEMERAL | &quot;Ephemeral&quot; | 
 | IDENTIFIED | &quot;Identified&quot; | 
 | CURATED | &quot;Curated&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

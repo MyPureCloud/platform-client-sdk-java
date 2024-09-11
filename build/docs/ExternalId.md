@@ -1,16 +1,14 @@
----
-title: ExternalId
----
-## ExternalId
+# ExternalId
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **externalSource** | <!----><!---->[**ExternalSource**](ExternalSource.html)<!----> |  |  [optional] |
-| **value** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **externalSource** | [**ExternalSource**](ExternalSource) |  |  [optional] |
+| **value** | **String** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,19 +1,13 @@
----
-title: GeneralProgramJobRequest
----
-## GeneralProgramJobRequest
+# GeneralProgramJobRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **dialect** | [**DialectEnum**](#DialectEnum)<!----> | The dialect of the topics to link with the general program, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard |  |
-| **mode** | [**ModeEnum**](#ModeEnum)<!----> | The mode to use for the general program job, default value is Skip |  [optional] |
-{: class="table table-striped"}
+| **dialect** | [**DialectEnum**](#Enum--DialectEnum) | The dialect of the topics to link with the general program, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard |  |
+| **mode** | [**ModeEnum**](#Enum--ModeEnum) | The mode to use for the general program job, default value is Skip |  [optional] |
 
-
-<a name="DialectEnum"></a>
 
 ## Enum: DialectEnum
 
@@ -54,10 +48,7 @@ title: GeneralProgramJobRequest
 | PT_BR | &quot;pt-BR&quot; | 
 | PT_PT | &quot;pt-PT&quot; | 
 | SV_SE | &quot;sv-SE&quot; | 
-{: class="table table-striped"}
 
-
-<a name="ModeEnum"></a>
 
 ## Enum: ModeEnum
 
@@ -67,7 +58,8 @@ title: GeneralProgramJobRequest
 | SKIP | &quot;Skip&quot; | 
 | MERGE | &quot;Merge&quot; | 
 | REPLACEMERGE | &quot;ReplaceMerge&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,23 +1,18 @@
----
-title: CarrierServicesApi
----
-## CarrierServicesApi
+# CarrierServicesApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**getCarrierservicesIntegrationsEmergencylocationsMe**](CarrierServicesApi.html#getCarrierservicesIntegrationsEmergencylocationsMe) | Get location for the logged in user |
-| [**postCarrierservicesIntegrationsEmergencylocationsMe**](CarrierServicesApi.html#postCarrierservicesIntegrationsEmergencylocationsMe) | Set current location for the logged in user |
+| [**getCarrierservicesIntegrationsEmergencylocationsMe**](CarrierServicesApi#getCarrierservicesIntegrationsEmergencylocationsMe) | Get location for the logged in user |
+| [**postCarrierservicesIntegrationsEmergencylocationsMe**](CarrierServicesApi#postCarrierservicesIntegrationsEmergencylocationsMe) | Set current location for the logged in user |
 {: class="table-striped"}
 
-<a name="getCarrierservicesIntegrationsEmergencylocationsMe"></a>
 
 # **getCarrierservicesIntegrationsEmergencylocationsMe**
 
 
-
-> [EmergencyLocation](EmergencyLocation.html) getCarrierservicesIntegrationsEmergencylocationsMe(phoneNumber)
+> [EmergencyLocation](EmergencyLocation) getCarrierservicesIntegrationsEmergencylocationsMe(phoneNumber)
 
 Get location for the logged in user
 
@@ -69,15 +64,13 @@ try {
 
 ### Return type
 
-[**EmergencyLocation**](EmergencyLocation.html)
+[**EmergencyLocation**](EmergencyLocation)
 
-<a name="postCarrierservicesIntegrationsEmergencylocationsMe"></a>
 
 # **postCarrierservicesIntegrationsEmergencylocationsMe**
 
 
-
-> [EmergencyLocation](EmergencyLocation.html) postCarrierservicesIntegrationsEmergencylocationsMe(body)
+> [EmergencyLocation](EmergencyLocation) postCarrierservicesIntegrationsEmergencylocationsMe(body)
 
 Set current location for the logged in user
 
@@ -123,11 +116,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**EmergencyLocation**](EmergencyLocation.html)|  | [optional] 
+| **body** | [**EmergencyLocation**](EmergencyLocation)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**EmergencyLocation**](EmergencyLocation.html)
+[**EmergencyLocation**](EmergencyLocation)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

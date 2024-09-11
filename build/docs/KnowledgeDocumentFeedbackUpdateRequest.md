@@ -1,21 +1,15 @@
----
-title: KnowledgeDocumentFeedbackUpdateRequest
----
-## KnowledgeDocumentFeedbackUpdateRequest
+# KnowledgeDocumentFeedbackUpdateRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **rating** | [**RatingEnum**](#RatingEnum)<!----> | Feedback rating. |  |
-| **reason** | [**ReasonEnum**](#ReasonEnum)<!----> | Feedback reason |  [optional] |
-| **comment** | <!----><!---->**String**<!----> | Feedback comment |  [optional] |
-| **state** | [**StateEnum**](#StateEnum)<!----> | Feedback state |  [optional] |
-{: class="table table-striped"}
+| **rating** | [**RatingEnum**](#Enum--RatingEnum) | Feedback rating. |  |
+| **reason** | [**ReasonEnum**](#Enum--ReasonEnum) | Feedback reason |  [optional] |
+| **comment** | **String** | Feedback comment |  [optional] |
+| **state** | [**StateEnum**](#Enum--StateEnum) | Feedback state |  [optional] |
 
-
-<a name="RatingEnum"></a>
 
 ## Enum: RatingEnum
 
@@ -24,10 +18,7 @@ title: KnowledgeDocumentFeedbackUpdateRequest
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | NEGATIVE | &quot;Negative&quot; | 
 | POSITIVE | &quot;Positive&quot; | 
-{: class="table table-striped"}
 
-
-<a name="ReasonEnum"></a>
 
 ## Enum: ReasonEnum
 
@@ -36,10 +27,7 @@ title: KnowledgeDocumentFeedbackUpdateRequest
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | DOCUMENTCONTENT | &quot;DocumentContent&quot; | 
 | SEARCHRESULTS | &quot;SearchResults&quot; | 
-{: class="table table-striped"}
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -48,7 +36,8 @@ title: KnowledgeDocumentFeedbackUpdateRequest
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | DRAFT | &quot;Draft&quot; | 
 | FINAL | &quot;Final&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

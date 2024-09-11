@@ -1,18 +1,12 @@
----
-title: WfmHistoricalDataUploadPurgeRequestStatusTopicHistoricalDataUploadPurgeRequestUpdate
----
-## WfmHistoricalDataUploadPurgeRequestStatusTopicHistoricalDataUploadPurgeRequestUpdate
+# WfmHistoricalDataUploadPurgeRequestStatusTopicHistoricalDataUploadPurgeRequestUpdate
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -22,7 +16,8 @@ title: WfmHistoricalDataUploadPurgeRequestStatusTopicHistoricalDataUploadPurgeRe
 | INPROGRESS | &quot;InProgress&quot; | 
 | SUCCESS | &quot;Success&quot; | 
 | FAILED | &quot;Failed&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

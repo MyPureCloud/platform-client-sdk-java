@@ -1,15 +1,13 @@
----
-title: WorkPlanPatternResponse
----
-## WorkPlanPatternResponse
+# WorkPlanPatternResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **workPlans** | <!----><!---->[**List&lt;WorkPlanReference&gt;**](WorkPlanReference.html)<!----> | List of work plans in order of rotation on a weekly basis |  [optional] |
-{: class="table table-striped"}
+| **workPlans** | [**List&lt;WorkPlanReference&gt;**](WorkPlanReference) | List of work plans in order of rotation on a weekly basis |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

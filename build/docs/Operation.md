@@ -1,27 +1,21 @@
----
-title: Operation
----
-## Operation
+# Operation
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **complete** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **user** | <!----><!---->[**User**](User.html)<!----> |  |  [optional] |
-| **client** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
-| **errorMessage** | <!----><!---->**String**<!----> |  |  [optional] |
-| **errorCode** | <!----><!---->**String**<!----> |  |  [optional] |
-| **errorDetails** | <!----><!---->[**List&lt;Detail&gt;**](Detail.html)<!----> |  |  [optional] |
-| **errorMessageParams** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
-| **actionName** | [**ActionNameEnum**](#ActionNameEnum)<!----> | Action name |  [optional] |
-| **actionStatus** | [**ActionStatusEnum**](#ActionStatusEnum)<!----> | Action status |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **complete** | **Boolean** |  |  [optional] |
+| **user** | [**User**](User) |  |  [optional] |
+| **client** | [**DomainEntityRef**](DomainEntityRef) |  |  [optional] |
+| **errorMessage** | **String** |  |  [optional] |
+| **errorCode** | **String** |  |  [optional] |
+| **errorDetails** | [**List&lt;Detail&gt;**](Detail) |  |  [optional] |
+| **errorMessageParams** | **Map&lt;String, String&gt;** |  |  [optional] |
+| **actionName** | [**ActionNameEnum**](#Enum--ActionNameEnum) | Action name |  [optional] |
+| **actionStatus** | [**ActionStatusEnum**](#Enum--ActionStatusEnum) | Action status |  [optional] |
 
-
-<a name="ActionNameEnum"></a>
 
 ## Enum: ActionNameEnum
 
@@ -40,10 +34,7 @@ title: Operation
 | STATE_CHANGE | &quot;STATE_CHANGE&quot; | 
 | UPDATE | &quot;UPDATE&quot; | 
 | VALIDATE | &quot;VALIDATE&quot; | 
-{: class="table table-striped"}
 
-
-<a name="ActionStatusEnum"></a>
 
 ## Enum: ActionStatusEnum
 
@@ -57,7 +48,8 @@ title: Operation
 | PENDING_BACKEND_NOTIFICATION | &quot;PENDING_BACKEND_NOTIFICATION&quot; | 
 | SUCCESS | &quot;SUCCESS&quot; | 
 | FAILURE | &quot;FAILURE&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

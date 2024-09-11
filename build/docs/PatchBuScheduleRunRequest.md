@@ -1,15 +1,13 @@
----
-title: PatchBuScheduleRunRequest
----
-## PatchBuScheduleRunRequest
+# PatchBuScheduleRunRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **reschedulingOptions** | <!----><!---->[**PatchBuReschedulingOptionsRequest**](PatchBuReschedulingOptionsRequest.html)<!----> | The rescheduling options to update |  [optional] |
-{: class="table table-striped"}
+| **reschedulingOptions** | [**PatchBuReschedulingOptionsRequest**](PatchBuReschedulingOptionsRequest) | The rescheduling options to update |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,16 +1,14 @@
----
-title: WorkitemScoredAgent
----
-## WorkitemScoredAgent
+# WorkitemScoredAgent
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **agent** | <!----><!---->[**UserReference**](UserReference.html)<!----> | The agent |  [optional] |
-| **score** | <!----><!---->**Integer**<!----> | Agent's score for the workitem, from 0 - 100, higher being better |  [optional] |
-{: class="table table-striped"}
+| **agent** | [**UserReference**](UserReference) | The agent |  [optional] |
+| **score** | **Integer** | Agent's score for the workitem, from 0 - 100, higher being better |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

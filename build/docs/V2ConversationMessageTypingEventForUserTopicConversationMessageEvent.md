@@ -1,19 +1,13 @@
----
-title: V2ConversationMessageTypingEventForUserTopicConversationMessageEvent
----
-## V2ConversationMessageTypingEventForUserTopicConversationMessageEvent
+# V2ConversationMessageTypingEventForUserTopicConversationMessageEvent
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **eventType** | [**EventTypeEnum**](#EventTypeEnum)<!----> |  |  [optional] |
-| **typing** | <!----><!---->[**V2ConversationMessageTypingEventForUserTopicConversationEventTyping**](V2ConversationMessageTypingEventForUserTopicConversationEventTyping.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **eventType** | [**EventTypeEnum**](#Enum--EventTypeEnum) |  |  [optional] |
+| **typing** | [**V2ConversationMessageTypingEventForUserTopicConversationEventTyping**](V2ConversationMessageTypingEventForUserTopicConversationEventTyping) |  |  [optional] |
 
-
-<a name="EventTypeEnum"></a>
 
 ## Enum: EventTypeEnum
 
@@ -22,7 +16,8 @@ title: V2ConversationMessageTypingEventForUserTopicConversationMessageEvent
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | COBROWSE | &quot;CoBrowse&quot; | 
 | TYPING | &quot;Typing&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

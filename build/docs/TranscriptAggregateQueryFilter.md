@@ -1,20 +1,14 @@
----
-title: TranscriptAggregateQueryFilter
----
-## TranscriptAggregateQueryFilter
+# TranscriptAggregateQueryFilter
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Boolean operation to apply to the provided predicates and clauses |  |
-| **clauses** | <!----><!---->[**List&lt;TranscriptAggregateQueryClause&gt;**](TranscriptAggregateQueryClause.html)<!----> | Boolean 'and/or' logic with up to two-levels of nesting |  [optional] |
-| **predicates** | <!----><!---->[**List&lt;TranscriptAggregateQueryPredicate&gt;**](TranscriptAggregateQueryPredicate.html)<!----> | Like a three-word sentence: (attribute-name) (operator) (target-value). |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Boolean operation to apply to the provided predicates and clauses |  |
+| **clauses** | [**List&lt;TranscriptAggregateQueryClause&gt;**](TranscriptAggregateQueryClause) | Boolean 'and/or' logic with up to two-levels of nesting |  [optional] |
+| **predicates** | [**List&lt;TranscriptAggregateQueryPredicate&gt;**](TranscriptAggregateQueryPredicate) | Like a three-word sentence: (attribute-name) (operator) (target-value). |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -23,7 +17,8 @@ title: TranscriptAggregateQueryFilter
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | AND | &quot;and&quot; | 
 | OR | &quot;or&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

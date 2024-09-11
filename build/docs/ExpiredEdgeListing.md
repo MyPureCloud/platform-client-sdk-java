@@ -1,15 +1,13 @@
----
-title: ExpiredEdgeListing
----
-## ExpiredEdgeListing
+# ExpiredEdgeListing
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | <!----><!---->[**List&lt;DomainEntityRef&gt;**](DomainEntityRef.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **entities** | [**List&lt;DomainEntityRef&gt;**](DomainEntityRef) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

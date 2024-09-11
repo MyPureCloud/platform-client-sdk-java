@@ -1,18 +1,16 @@
----
-title: DocumentThumbnail
----
-## DocumentThumbnail
+# DocumentThumbnail
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **resolution** | <!----><!---->**String**<!----> |  |  [optional] |
-| **imageUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **height** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **width** | <!----><!---->**Integer**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **resolution** | **String** |  |  [optional] |
+| **imageUri** | **String** |  |  [optional] |
+| **height** | **Integer** |  |  [optional] |
+| **width** | **Integer** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

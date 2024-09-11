@@ -1,39 +1,33 @@
----
-title: CustomerStartDetailEventTopicCustomerStartEvent
----
-## CustomerStartDetailEventTopicCustomerStartEvent
+# CustomerStartDetailEventTopicCustomerStartEvent
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **eventTime** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **conversationId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **participantId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **sessionId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> |  |  [optional] |
-| **externalOrganizationId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **externalContactId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **provider** | <!----><!---->**String**<!----> |  |  [optional] |
-| **direction** | [**DirectionEnum**](#DirectionEnum)<!----> |  |  [optional] |
-| **ani** | <!----><!---->**String**<!----> |  |  [optional] |
-| **dnis** | <!----><!---->**String**<!----> |  |  [optional] |
-| **addressTo** | <!----><!---->**String**<!----> |  |  [optional] |
-| **addressFrom** | <!----><!---->**String**<!----> |  |  [optional] |
-| **callbackUserName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **callbackNumbers** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **callbackScheduledTime** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **subject** | <!----><!---->**String**<!----> |  |  [optional] |
-| **messageType** | [**MessageTypeEnum**](#MessageTypeEnum)<!----> |  |  [optional] |
-| **conversationExternalContactIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **conversationExternalOrganizationIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **journeyContext** | <!----><!---->[**CustomerStartDetailEventTopicJourneyContext**](CustomerStartDetailEventTopicJourneyContext.html)<!----> |  |  [optional] |
-| **divisionId** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **eventTime** | **Integer** |  |  [optional] |
+| **conversationId** | **String** |  |  [optional] |
+| **participantId** | **String** |  |  [optional] |
+| **sessionId** | **String** |  |  [optional] |
+| **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) |  |  [optional] |
+| **externalOrganizationId** | **String** |  |  [optional] |
+| **externalContactId** | **String** |  |  [optional] |
+| **provider** | **String** |  |  [optional] |
+| **direction** | [**DirectionEnum**](#Enum--DirectionEnum) |  |  [optional] |
+| **ani** | **String** |  |  [optional] |
+| **dnis** | **String** |  |  [optional] |
+| **addressTo** | **String** |  |  [optional] |
+| **addressFrom** | **String** |  |  [optional] |
+| **callbackUserName** | **String** |  |  [optional] |
+| **callbackNumbers** | **List&lt;String&gt;** |  |  [optional] |
+| **callbackScheduledTime** | **Integer** |  |  [optional] |
+| **subject** | **String** |  |  [optional] |
+| **messageType** | [**MessageTypeEnum**](#Enum--MessageTypeEnum) |  |  [optional] |
+| **conversationExternalContactIds** | **List&lt;String&gt;** |  |  [optional] |
+| **conversationExternalOrganizationIds** | **List&lt;String&gt;** |  |  [optional] |
+| **journeyContext** | [**CustomerStartDetailEventTopicJourneyContext**](CustomerStartDetailEventTopicJourneyContext) |  |  [optional] |
+| **divisionId** | **String** |  |  [optional] |
 
-
-<a name="MediaTypeEnum"></a>
 
 ## Enum: MediaTypeEnum
 
@@ -49,10 +43,7 @@ title: CustomerStartDetailEventTopicCustomerStartEvent
 | VIDEO | &quot;VIDEO&quot; | 
 | SCREENSHARE | &quot;SCREENSHARE&quot; | 
 | MESSAGE | &quot;MESSAGE&quot; | 
-{: class="table table-striped"}
 
-
-<a name="DirectionEnum"></a>
 
 ## Enum: DirectionEnum
 
@@ -62,10 +53,7 @@ title: CustomerStartDetailEventTopicCustomerStartEvent
 | UNKNOWN | &quot;UNKNOWN&quot; | 
 | INBOUND | &quot;INBOUND&quot; | 
 | OUTBOUND | &quot;OUTBOUND&quot; | 
-{: class="table table-striped"}
 
-
-<a name="MessageTypeEnum"></a>
 
 ## Enum: MessageTypeEnum
 
@@ -82,7 +70,8 @@ title: CustomerStartDetailEventTopicCustomerStartEvent
 | OPEN | &quot;OPEN&quot; | 
 | INSTAGRAM | &quot;INSTAGRAM&quot; | 
 | APPLE | &quot;APPLE&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,25 +1,20 @@
----
-title: UserRecordingsApi
----
-## UserRecordingsApi
+# UserRecordingsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteUserrecording**](UserRecordingsApi.html#deleteUserrecording) | Delete a user recording. |
-| [**getUserrecording**](UserRecordingsApi.html#getUserrecording) | Get a user recording. |
-| [**getUserrecordingMedia**](UserRecordingsApi.html#getUserrecordingMedia) | Download a user recording. |
-| [**getUserrecordingTranscoding**](UserRecordingsApi.html#getUserrecordingTranscoding) | Download a user recording. |
-| [**getUserrecordings**](UserRecordingsApi.html#getUserrecordings) | Get a list of user recordings. |
-| [**getUserrecordingsSummary**](UserRecordingsApi.html#getUserrecordingsSummary) | Get user recording summary |
-| [**putUserrecording**](UserRecordingsApi.html#putUserrecording) | Update a user recording. |
+| [**deleteUserrecording**](UserRecordingsApi#deleteUserrecording) | Delete a user recording. |
+| [**getUserrecording**](UserRecordingsApi#getUserrecording) | Get a user recording. |
+| [**getUserrecordingMedia**](UserRecordingsApi#getUserrecordingMedia) | Download a user recording. |
+| [**getUserrecordingTranscoding**](UserRecordingsApi#getUserrecordingTranscoding) | Download a user recording. |
+| [**getUserrecordings**](UserRecordingsApi#getUserrecordings) | Get a list of user recordings. |
+| [**getUserrecordingsSummary**](UserRecordingsApi#getUserrecordingsSummary) | Get user recording summary |
+| [**putUserrecording**](UserRecordingsApi#putUserrecording) | Update a user recording. |
 {: class="table-striped"}
 
-<a name="deleteUserrecording"></a>
 
 # **deleteUserrecording**
-
 
 
 > Void deleteUserrecording(recordingId)
@@ -75,13 +70,11 @@ try {
 
 null (empty response body)
 
-<a name="getUserrecording"></a>
 
 # **getUserrecording**
 
 
-
-> [UserRecording](UserRecording.html) getUserrecording(recordingId, expand)
+> [UserRecording](UserRecording) getUserrecording(recordingId, expand)
 
 Get a user recording.
 
@@ -129,21 +122,22 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **recordingId** | **String**| User Recording ID | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: conversation 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand. | [optional]<br />**Values**: conversation 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UserRecording**](UserRecording.html)
+[**UserRecording**](UserRecording)
 
-<a name="getUserrecordingMedia"></a>
 
 # **getUserrecordingMedia**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [DownloadResponse](DownloadResponse.html) getUserrecordingMedia(recordingId, formatId, async)
+> [DownloadResponse](DownloadResponse) getUserrecordingMedia(recordingId, formatId, async)
 
 Download a user recording.
 
@@ -201,15 +195,13 @@ try {
 
 ### Return type
 
-[**DownloadResponse**](DownloadResponse.html)
+[**DownloadResponse**](DownloadResponse)
 
-<a name="getUserrecordingTranscoding"></a>
 
 # **getUserrecordingTranscoding**
 
 
-
-> [DownloadResponse](DownloadResponse.html) getUserrecordingTranscoding(recordingId, formatId)
+> [DownloadResponse](DownloadResponse) getUserrecordingTranscoding(recordingId, formatId)
 
 Download a user recording.
 
@@ -264,15 +256,13 @@ try {
 
 ### Return type
 
-[**DownloadResponse**](DownloadResponse.html)
+[**DownloadResponse**](DownloadResponse)
 
-<a name="getUserrecordings"></a>
 
 # **getUserrecordings**
 
 
-
-> [UserRecordingEntityListing](UserRecordingEntityListing.html) getUserrecordings(pageSize, pageNumber, expand)
+> [UserRecordingEntityListing](UserRecordingEntityListing) getUserrecordings(pageSize, pageNumber, expand)
 
 Get a list of user recordings.
 
@@ -322,21 +312,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: conversation 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand. | [optional]<br />**Values**: conversation 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UserRecordingEntityListing**](UserRecordingEntityListing.html)
+[**UserRecordingEntityListing**](UserRecordingEntityListing)
 
-<a name="getUserrecordingsSummary"></a>
 
 # **getUserrecordingsSummary**
 
 
-
-> [FaxSummary](FaxSummary.html) getUserrecordingsSummary()
+> [FaxSummary](FaxSummary) getUserrecordingsSummary()
 
 Get user recording summary
 
@@ -384,15 +372,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**FaxSummary**](FaxSummary.html)
+[**FaxSummary**](FaxSummary)
 
-<a name="putUserrecording"></a>
 
 # **putUserrecording**
 
 
-
-> [UserRecording](UserRecording.html) putUserrecording(recordingId, body, expand)
+> [UserRecording](UserRecording) putUserrecording(recordingId, body, expand)
 
 Update a user recording.
 
@@ -441,12 +427,14 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **recordingId** | **String**| User Recording ID | 
-| **body** | [**UserRecording**](UserRecording.html)| UserRecording | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: conversation 
+| **body** | [**UserRecording**](UserRecording)| UserRecording | 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand. | [optional]<br />**Values**: conversation 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UserRecording**](UserRecording.html)
+[**UserRecording**](UserRecording)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

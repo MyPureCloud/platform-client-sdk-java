@@ -1,16 +1,14 @@
----
-title: QueryResponseGroupedData
----
-## QueryResponseGroupedData
+# QueryResponseGroupedData
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **group** | <!----><!---->**Map&lt;String, String&gt;**<!----> | The group values for this data |  [optional] |
-| **data** | <!----><!---->[**List&lt;QueryResponseData&gt;**](QueryResponseData.html)<!----> | The metrics in this group |  [optional] |
-{: class="table table-striped"}
+| **group** | **Map&lt;String, String&gt;** | The group values for this data |  [optional] |
+| **data** | [**List&lt;QueryResponseData&gt;**](QueryResponseData) | The metrics in this group |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

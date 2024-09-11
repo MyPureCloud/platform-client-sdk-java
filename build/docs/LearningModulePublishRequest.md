@@ -1,15 +1,13 @@
----
-title: LearningModulePublishRequest
----
-## LearningModulePublishRequest
+# LearningModulePublishRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **termsAndConditionsAccepted** | <!----><!---->**Boolean**<!----> | Whether the terms and conditions were accepted |  [optional] |
-{: class="table table-striped"}
+| **termsAndConditionsAccepted** | **Boolean** | Whether the terms and conditions were accepted |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

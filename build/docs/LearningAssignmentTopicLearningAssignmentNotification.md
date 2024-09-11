@@ -1,32 +1,26 @@
----
-title: LearningAssignmentTopicLearningAssignmentNotification
----
-## LearningAssignmentTopicLearningAssignmentNotification
+# LearningAssignmentTopicLearningAssignmentNotification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **user** | <!----><!---->[**LearningAssignmentTopicUserReference**](LearningAssignmentTopicUserReference.html)<!----> |  |  [optional] |
-| **module** | <!----><!---->[**LearningAssignmentTopicLearningModuleReference**](LearningAssignmentTopicLearningModuleReference.html)<!----> |  |  [optional] |
-| **version** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
-| **dateRecommendedForCompletion** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **createdBy** | <!----><!---->[**LearningAssignmentTopicUserReference**](LearningAssignmentTopicUserReference.html)<!----> |  |  [optional] |
-| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **modifiedBy** | <!----><!---->[**LearningAssignmentTopicUserReference**](LearningAssignmentTopicUserReference.html)<!----> |  |  [optional] |
-| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **isOverdue** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **lengthInMinutes** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **percentageScore** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-| **isPassed** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **user** | [**LearningAssignmentTopicUserReference**](LearningAssignmentTopicUserReference) |  |  [optional] |
+| **module** | [**LearningAssignmentTopicLearningModuleReference**](LearningAssignmentTopicLearningModuleReference) |  |  [optional] |
+| **version** | **Integer** |  |  [optional] |
+| **state** | [**StateEnum**](#Enum--StateEnum) |  |  [optional] |
+| **dateRecommendedForCompletion** | [**Date**](Date) |  |  [optional] |
+| **createdBy** | [**LearningAssignmentTopicUserReference**](LearningAssignmentTopicUserReference) |  |  [optional] |
+| **dateCreated** | [**Date**](Date) |  |  [optional] |
+| **modifiedBy** | [**LearningAssignmentTopicUserReference**](LearningAssignmentTopicUserReference) |  |  [optional] |
+| **dateModified** | [**Date**](Date) |  |  [optional] |
+| **isOverdue** | **Boolean** |  |  [optional] |
+| **lengthInMinutes** | **Integer** |  |  [optional] |
+| **percentageScore** | [**BigDecimal**](BigDecimal) |  |  [optional] |
+| **isPassed** | **Boolean** |  |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -39,10 +33,7 @@ title: LearningAssignmentTopicLearningAssignmentNotification
 | DELETED | &quot;Deleted&quot; | 
 | NOTCOMPLETED | &quot;NotCompleted&quot; | 
 | INVALIDSCHEDULE | &quot;InvalidSchedule&quot; | 
-{: class="table table-striped"}
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -52,7 +43,8 @@ title: LearningAssignmentTopicLearningAssignmentNotification
 | UNKNOWN | &quot;Unknown&quot; | 
 | NATIVE | &quot;Native&quot; | 
 | EXTERNAL | &quot;External&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,16 +1,14 @@
----
-title: BuTimeOffPlanListing
----
-## BuTimeOffPlanListing
+# BuTimeOffPlanListing
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | <!----><!---->[**List&lt;BuTimeOffPlanResponse&gt;**](BuTimeOffPlanResponse.html)<!----> |  |  [optional] |
-| **downloadUrl** | <!----><!---->**String**<!----> | URL from which to fetch results for requests with a large result set. If populated, the downloaded data will conform to the same schema as would normally be returned, excepting downloaded data will never itself contain a downloadUrl |  [optional] |
-{: class="table table-striped"}
+| **entities** | [**List&lt;BuTimeOffPlanResponse&gt;**](BuTimeOffPlanResponse) |  |  [optional] |
+| **downloadUrl** | **String** | URL from which to fetch results for requests with a large result set. If populated, the downloaded data will conform to the same schema as would normally be returned, excepting downloaded data will never itself contain a downloadUrl |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

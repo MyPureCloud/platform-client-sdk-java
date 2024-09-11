@@ -1,25 +1,20 @@
----
-title: TextbotsApi
----
-## TextbotsApi
+# TextbotsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**getTextbotsBotsSearch**](TextbotsApi.html#getTextbotsBotsSearch) | Find bots using the currently configured friendly name or ID. |
-| [**postTextbotsBotflowsSessionTurns**](TextbotsApi.html#postTextbotsBotflowsSessionTurns) | Issue a bot flow turn event |
-| [**postTextbotsBotflowsSessions**](TextbotsApi.html#postTextbotsBotflowsSessions) | Create an execution instance of a bot flow definition. |
-| [**postTextbotsBotsExecute**](TextbotsApi.html#postTextbotsBotsExecute) | Send an intent to a bot to start a dialog/interact with it via text |
+| [**getTextbotsBotsSearch**](TextbotsApi#getTextbotsBotsSearch) | Find bots using the currently configured friendly name or ID. |
+| [**postTextbotsBotflowsSessionTurns**](TextbotsApi#postTextbotsBotflowsSessionTurns) | Issue a bot flow turn event |
+| [**postTextbotsBotflowsSessions**](TextbotsApi#postTextbotsBotflowsSessions) | Create an execution instance of a bot flow definition. |
+| [**postTextbotsBotsExecute**](TextbotsApi#postTextbotsBotsExecute) | Send an intent to a bot to start a dialog/interact with it via text |
 {: class="table-striped"}
 
-<a name="getTextbotsBotsSearch"></a>
 
 # **getTextbotsBotsSearch**
 
 
-
-> [BotSearchResponseEntityListing](BotSearchResponseEntityListing.html) getTextbotsBotsSearch(botType, botName, botId, pageSize)
+> [BotSearchResponseEntityListing](BotSearchResponseEntityListing) getTextbotsBotsSearch(botType, botName, botId, pageSize)
 
 Find bots using the currently configured friendly name or ID.
 
@@ -71,24 +66,22 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **botType** | [**List&lt;String&gt;**](String.html)| Bot types | [optional]<br />**Values**: GenesysBotConnector, GenesysDialogEngine, AmazonLex, GoogleDialogFlowES, GoogleDialogFlowCX, NuanceDlg, GenesysBotFlow, GenesysDigitalBotFlow, GenesysVoiceSurveyFlow 
+| **botType** | [**List&lt;String&gt;**](String)| Bot types | [optional]<br />**Values**: GenesysBotConnector, GenesysDialogEngine, AmazonLex, GoogleDialogFlowES, GoogleDialogFlowCX, NuanceDlg, GenesysBotFlow, GenesysDigitalBotFlow, GenesysVoiceSurveyFlow 
 | **botName** | **String**| Bot name | [optional] 
-| **botId** | [**List&lt;String&gt;**](String.html)| Bot IDs | [optional] 
+| **botId** | [**List&lt;String&gt;**](String)| Bot IDs | [optional] 
 | **pageSize** | **Integer**| The maximum results to return | [optional] [default to 25] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**BotSearchResponseEntityListing**](BotSearchResponseEntityListing.html)
+[**BotSearchResponseEntityListing**](BotSearchResponseEntityListing)
 
-<a name="postTextbotsBotflowsSessionTurns"></a>
 
 # **postTextbotsBotflowsSessionTurns**
 
 
-
-> [TextBotFlowTurnResponse](TextBotFlowTurnResponse.html) postTextbotsBotflowsSessionTurns(sessionId, turnRequest)
+> [TextBotFlowTurnResponse](TextBotFlowTurnResponse) postTextbotsBotflowsSessionTurns(sessionId, turnRequest)
 
 Issue a bot flow turn event
 
@@ -139,21 +132,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sessionId** | **String**| The bot flow session ID, typically obtained from &#39;POST /api/v2/textbots/botflows/sessions&#39; | 
-| **turnRequest** | [**TextBotFlowTurnRequest**](TextBotFlowTurnRequest.html)|  | 
+| **turnRequest** | [**TextBotFlowTurnRequest**](TextBotFlowTurnRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**TextBotFlowTurnResponse**](TextBotFlowTurnResponse.html)
+[**TextBotFlowTurnResponse**](TextBotFlowTurnResponse)
 
-<a name="postTextbotsBotflowsSessions"></a>
 
 # **postTextbotsBotflowsSessions**
 
 
-
-> [TextBotFlowLaunchResponse](TextBotFlowLaunchResponse.html) postTextbotsBotflowsSessions(launchRequest)
+> [TextBotFlowLaunchResponse](TextBotFlowLaunchResponse) postTextbotsBotflowsSessions(launchRequest)
 
 Create an execution instance of a bot flow definition.
 
@@ -202,21 +193,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **launchRequest** | [**TextBotFlowLaunchRequest**](TextBotFlowLaunchRequest.html)|  | 
+| **launchRequest** | [**TextBotFlowLaunchRequest**](TextBotFlowLaunchRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**TextBotFlowLaunchResponse**](TextBotFlowLaunchResponse.html)
+[**TextBotFlowLaunchResponse**](TextBotFlowLaunchResponse)
 
-<a name="postTextbotsBotsExecute"></a>
 
 # **postTextbotsBotsExecute**
 
 
-
-> [PostTextResponse](PostTextResponse.html) postTextbotsBotsExecute(postTextRequest)
+> [PostTextResponse](PostTextResponse) postTextbotsBotsExecute(postTextRequest)
 
 Send an intent to a bot to start a dialog/interact with it via text
 
@@ -265,11 +254,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **postTextRequest** | [**PostTextRequest**](PostTextRequest.html)|  | 
+| **postTextRequest** | [**PostTextRequest**](PostTextRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**PostTextResponse**](PostTextResponse.html)
+[**PostTextResponse**](PostTextResponse)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

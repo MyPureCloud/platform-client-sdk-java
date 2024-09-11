@@ -1,18 +1,12 @@
----
-title: Format
----
-## Format
+# Format
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **flags** | <!---->[**List&lt;FlagsEnum&gt;**](#FlagsEnum)<!----> | The Set of prompt segment format flags i.e. each entry is a part of describing the overall format. E.g. \"format\": { \"flags\": [StringPlayChars] } |  [optional] |
-{: class="table table-striped"}
+| **flags** | [**List<FlagsEnum>**](#Enum--FlagsEnum) | The Set of prompt segment format flags i.e. each entry is a part of describing the overall format. E.g. \"format\": { \"flags\": [StringPlayChars] } |  [optional] |
 
-
-<a name="FlagsEnum"></a>
 
 ## Enum: FlagsEnum
 
@@ -62,7 +56,8 @@ title: Format
 | GENDERFEMININE | &quot;GenderFeminine&quot; |
 | GENDERMASCULINE | &quot;GenderMasculine&quot; |
 | GENDERNEUTER | &quot;GenderNeuter&quot; |
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,16 +1,14 @@
----
-title: OrgWhitelistSettings
----
-## OrgWhitelistSettings
+# OrgWhitelistSettings
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **enableWhitelist** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **domainWhitelist** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **enableWhitelist** | **Boolean** |  |  [optional] |
+| **domainWhitelist** | **List&lt;String&gt;** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

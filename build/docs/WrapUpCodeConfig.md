@@ -1,15 +1,13 @@
----
-title: WrapUpCodeConfig
----
-## WrapUpCodeConfig
+# WrapUpCodeConfig
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **values** | <!----><!---->**List&lt;String&gt;**<!----> | A set of valid Wrap Up Code UUIDs used to optimize a KPI. |  |
-{: class="table table-striped"}
+| **values** | **List&lt;String&gt;** | A set of valid Wrap Up Code UUIDs used to optimize a KPI. |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

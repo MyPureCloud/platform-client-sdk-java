@@ -1,16 +1,14 @@
----
-title: WfmUserScheduleAdherenceUpdatedMuTopicActivityCodeReference
----
-## WfmUserScheduleAdherenceUpdatedMuTopicActivityCodeReference
+# WfmUserScheduleAdherenceUpdatedMuTopicActivityCodeReference
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **secondaryPresences** | <!----><!---->[**List&lt;WfmUserScheduleAdherenceUpdatedMuTopicSecondaryPresenceReference&gt;**](WfmUserScheduleAdherenceUpdatedMuTopicSecondaryPresenceReference.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **secondaryPresences** | [**List&lt;WfmUserScheduleAdherenceUpdatedMuTopicSecondaryPresenceReference&gt;**](WfmUserScheduleAdherenceUpdatedMuTopicSecondaryPresenceReference) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

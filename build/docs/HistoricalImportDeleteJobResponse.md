@@ -1,21 +1,15 @@
----
-title: HistoricalImportDeleteJobResponse
----
-## HistoricalImportDeleteJobResponse
+# HistoricalImportDeleteJobResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> | Property denoting the status of the delete. |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) | Property denoting the status of the delete. |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -25,7 +19,8 @@ title: HistoricalImportDeleteJobResponse
 | INPROGRESS | &quot;InProgress&quot; | 
 | SUCCESS | &quot;Success&quot; | 
 | FAILED | &quot;Failed&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

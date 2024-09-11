@@ -1,20 +1,18 @@
----
-title: ConversationCallbackEventTopicCallbackConversation
----
-## ConversationCallbackEventTopicCallbackConversation
+# ConversationCallbackEventTopicCallbackConversation
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **participants** | <!----><!---->[**List&lt;ConversationCallbackEventTopicCallbackMediaParticipant&gt;**](ConversationCallbackEventTopicCallbackMediaParticipant.html)<!----> |  |  [optional] |
-| **otherMediaUris** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **address** | <!----><!---->**String**<!----> |  |  [optional] |
-| **utilizationLabelId** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **participants** | [**List&lt;ConversationCallbackEventTopicCallbackMediaParticipant&gt;**](ConversationCallbackEventTopicCallbackMediaParticipant) |  |  [optional] |
+| **otherMediaUris** | **List&lt;String&gt;** |  |  [optional] |
+| **address** | **String** |  |  [optional] |
+| **utilizationLabelId** | **String** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

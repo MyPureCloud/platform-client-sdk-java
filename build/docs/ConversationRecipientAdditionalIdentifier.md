@@ -1,19 +1,13 @@
----
-title: ConversationRecipientAdditionalIdentifier
----
-## ConversationRecipientAdditionalIdentifier
+# ConversationRecipientAdditionalIdentifier
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Type of the Identifier |  |
-| **value** | <!----><!---->**String**<!----> | The Identifier value. |  |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Type of the Identifier |  |
+| **value** | **String** | The Identifier value. |  |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -26,7 +20,8 @@ title: ConversationRecipientAdditionalIdentifier
 | TOPIC | &quot;Topic&quot; | 
 | INGESTIONRULE | &quot;IngestionRule&quot; | 
 | INGESTIONRULEVERSION | &quot;IngestionRuleVersion&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

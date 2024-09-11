@@ -1,31 +1,25 @@
----
-title: KnowledgeImportJobResponse
----
-## KnowledgeImportJobResponse
+# KnowledgeImportJobResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | Id of the import job |  [optional] |
-| **downloadURL** | <!----><!---->**String**<!----> | The URL of the location at which the caller can download the imported file. |  [optional] |
-| **failedEntitiesURL** | <!----><!---->**String**<!----> | The URL of the location at which the caller can download the entities in json format that failed during the import. |  [optional] |
-| **uploadKey** | <!----><!---->**String**<!----> | Upload key |  |
-| **fileType** | [**FileTypeEnum**](#FileTypeEnum)<!----> | File type of the document |  |
-| **settings** | <!----><!---->[**KnowledgeImportJobSettings**](KnowledgeImportJobSettings.html)<!----> | Additional optional settings |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> | Status of the import job |  [optional] |
-| **report** | <!----><!---->[**KnowledgeImportJobReport**](KnowledgeImportJobReport.html)<!----> | Report of the import job |  [optional] |
-| **knowledgeBase** | <!----><!---->[**KnowledgeBase**](KnowledgeBase.html)<!----> | Knowledge base which document import does belong to |  [optional] |
-| **createdBy** | <!----><!---->[**UserReference**](UserReference.html)<!----> | The user who created the operation |  [optional] |
-| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Created date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | Last modified date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **skipConfirmationStep** | <!----><!---->**Boolean**<!----> | If enabled pre-validation step will be skipped. |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | Id of the import job |  [optional] |
+| **downloadURL** | **String** | The URL of the location at which the caller can download the imported file. |  [optional] |
+| **failedEntitiesURL** | **String** | The URL of the location at which the caller can download the entities in json format that failed during the import. |  [optional] |
+| **uploadKey** | **String** | Upload key |  |
+| **fileType** | [**FileTypeEnum**](#Enum--FileTypeEnum) | File type of the document |  |
+| **settings** | [**KnowledgeImportJobSettings**](KnowledgeImportJobSettings) | Additional optional settings |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) | Status of the import job |  [optional] |
+| **report** | [**KnowledgeImportJobReport**](KnowledgeImportJobReport) | Report of the import job |  [optional] |
+| **knowledgeBase** | [**KnowledgeBase**](KnowledgeBase) | Knowledge base which document import does belong to |  [optional] |
+| **createdBy** | [**UserReference**](UserReference) | The user who created the operation |  [optional] |
+| **dateCreated** | [**Date**](Date) | Created date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **dateModified** | [**Date**](Date) | Last modified date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **skipConfirmationStep** | **Boolean** | If enabled pre-validation step will be skipped. |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="FileTypeEnum"></a>
 
 ## Enum: FileTypeEnum
 
@@ -35,10 +29,7 @@ title: KnowledgeImportJobResponse
 | JSON | &quot;Json&quot; | 
 | CSV | &quot;Csv&quot; | 
 | XLSX | &quot;Xlsx&quot; | 
-{: class="table table-striped"}
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -56,7 +47,8 @@ title: KnowledgeImportJobResponse
 | FAILED | &quot;Failed&quot; | 
 | ABORTREQUESTED | &quot;AbortRequested&quot; | 
 | ABORTED | &quot;Aborted&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

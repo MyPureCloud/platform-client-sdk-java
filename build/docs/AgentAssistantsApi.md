@@ -1,30 +1,25 @@
----
-title: AgentAssistantsApi
----
-## AgentAssistantsApi
+# AgentAssistantsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteAssistant**](AgentAssistantsApi.html#deleteAssistant) | Delete an assistant. |
-| [**deleteAssistantQueue**](AgentAssistantsApi.html#deleteAssistantQueue) | Disassociate a queue from an assistant. |
-| [**deleteAssistantQueues**](AgentAssistantsApi.html#deleteAssistantQueues) | Disassociate the queues from an assistant for the given assistant ID and queue IDs. |
-| [**getAssistant**](AgentAssistantsApi.html#getAssistant) | Get an assistant. |
-| [**getAssistantQueue**](AgentAssistantsApi.html#getAssistantQueue) | Get queue Information for an assistant. |
-| [**getAssistantQueues**](AgentAssistantsApi.html#getAssistantQueues) | Get all the queues associated with an assistant. |
-| [**getAssistants**](AgentAssistantsApi.html#getAssistants) | Get all assistants. |
-| [**getAssistantsQueues**](AgentAssistantsApi.html#getAssistantsQueues) | Get all queues assigned to any assistant. |
-| [**patchAssistant**](AgentAssistantsApi.html#patchAssistant) | Update an assistant. |
-| [**patchAssistantQueues**](AgentAssistantsApi.html#patchAssistantQueues) | Update Queues for an Assistant. |
-| [**postAssistants**](AgentAssistantsApi.html#postAssistants) | Create an Assistant. |
-| [**putAssistantQueue**](AgentAssistantsApi.html#putAssistantQueue) | Create a queue assistant association. |
+| [**deleteAssistant**](AgentAssistantsApi#deleteAssistant) | Delete an assistant. |
+| [**deleteAssistantQueue**](AgentAssistantsApi#deleteAssistantQueue) | Disassociate a queue from an assistant. |
+| [**deleteAssistantQueues**](AgentAssistantsApi#deleteAssistantQueues) | Disassociate the queues from an assistant for the given assistant ID and queue IDs. |
+| [**getAssistant**](AgentAssistantsApi#getAssistant) | Get an assistant. |
+| [**getAssistantQueue**](AgentAssistantsApi#getAssistantQueue) | Get queue Information for an assistant. |
+| [**getAssistantQueues**](AgentAssistantsApi#getAssistantQueues) | Get all the queues associated with an assistant. |
+| [**getAssistants**](AgentAssistantsApi#getAssistants) | Get all assistants. |
+| [**getAssistantsQueues**](AgentAssistantsApi#getAssistantsQueues) | Get all queues assigned to any assistant. |
+| [**patchAssistant**](AgentAssistantsApi#patchAssistant) | Update an assistant. |
+| [**patchAssistantQueues**](AgentAssistantsApi#patchAssistantQueues) | Update Queues for an Assistant. |
+| [**postAssistants**](AgentAssistantsApi#postAssistants) | Create an Assistant. |
+| [**putAssistantQueue**](AgentAssistantsApi#putAssistantQueue) | Create a queue assistant association. |
 {: class="table-striped"}
 
-<a name="deleteAssistant"></a>
 
 # **deleteAssistant**
-
 
 
 > Void deleteAssistant(assistantId)
@@ -81,10 +76,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteAssistantQueue"></a>
 
 # **deleteAssistantQueue**
-
 
 
 > Void deleteAssistantQueue(assistantId, queueId)
@@ -143,10 +136,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteAssistantQueues"></a>
 
 # **deleteAssistantQueues**
-
 
 
 > Void deleteAssistantQueues(assistantId, queueIds)
@@ -205,13 +196,11 @@ try {
 
 null (empty response body)
 
-<a name="getAssistant"></a>
 
 # **getAssistant**
 
 
-
-> [Assistant](Assistant.html) getAssistant(assistantId, expand)
+> [Assistant](Assistant) getAssistant(assistantId, expand)
 
 Get an assistant.
 
@@ -266,15 +255,13 @@ try {
 
 ### Return type
 
-[**Assistant**](Assistant.html)
+[**Assistant**](Assistant)
 
-<a name="getAssistantQueue"></a>
 
 # **getAssistantQueue**
 
 
-
-> [AssistantQueue](AssistantQueue.html) getAssistantQueue(assistantId, queueId, expand)
+> [AssistantQueue](AssistantQueue) getAssistantQueue(assistantId, queueId, expand)
 
 Get queue Information for an assistant.
 
@@ -331,15 +318,13 @@ try {
 
 ### Return type
 
-[**AssistantQueue**](AssistantQueue.html)
+[**AssistantQueue**](AssistantQueue)
 
-<a name="getAssistantQueues"></a>
 
 # **getAssistantQueues**
 
 
-
-> [AssistantQueueListing](AssistantQueueListing.html) getAssistantQueues(assistantId, before, after, pageSize, expand)
+> [AssistantQueueListing](AssistantQueueListing) getAssistantQueues(assistantId, before, after, pageSize, expand)
 
 Get all the queues associated with an assistant.
 
@@ -400,15 +385,13 @@ try {
 
 ### Return type
 
-[**AssistantQueueListing**](AssistantQueueListing.html)
+[**AssistantQueueListing**](AssistantQueueListing)
 
-<a name="getAssistants"></a>
 
 # **getAssistants**
 
 
-
-> [AssistantListing](AssistantListing.html) getAssistants(before, after, limit, pageSize, name)
+> [AssistantListing](AssistantListing) getAssistants(before, after, limit, pageSize, name)
 
 Get all assistants.
 
@@ -469,15 +452,13 @@ try {
 
 ### Return type
 
-[**AssistantListing**](AssistantListing.html)
+[**AssistantListing**](AssistantListing)
 
-<a name="getAssistantsQueues"></a>
 
 # **getAssistantsQueues**
 
 
-
-> [AssistantQueueListing](AssistantQueueListing.html) getAssistantsQueues(before, after, pageSize, queueIds, expand)
+> [AssistantQueueListing](AssistantQueueListing) getAssistantsQueues(before, after, pageSize, queueIds, expand)
 
 Get all queues assigned to any assistant.
 
@@ -538,15 +519,13 @@ try {
 
 ### Return type
 
-[**AssistantQueueListing**](AssistantQueueListing.html)
+[**AssistantQueueListing**](AssistantQueueListing)
 
-<a name="patchAssistant"></a>
 
 # **patchAssistant**
 
 
-
-> [Assistant](Assistant.html) patchAssistant(assistantId, body)
+> [Assistant](Assistant) patchAssistant(assistantId, body)
 
 Update an assistant.
 
@@ -595,21 +574,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **assistantId** | **String**| Assistant ID | 
-| **body** | [**Assistant**](Assistant.html)|  | 
+| **body** | [**Assistant**](Assistant)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Assistant**](Assistant.html)
+[**Assistant**](Assistant)
 
-<a name="patchAssistantQueues"></a>
 
 # **patchAssistantQueues**
 
 
-
-> [AssistantQueueListing](AssistantQueueListing.html) patchAssistantQueues(assistantId, body)
+> [AssistantQueueListing](AssistantQueueListing) patchAssistantQueues(assistantId, body)
 
 Update Queues for an Assistant.
 
@@ -658,21 +635,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **assistantId** | **String**| Assistant ID | 
-| **body** | [**List&lt;AssistantQueue&gt;**](AssistantQueue.html)|  | 
+| **body** | [**List&lt;AssistantQueue&gt;**](AssistantQueue)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AssistantQueueListing**](AssistantQueueListing.html)
+[**AssistantQueueListing**](AssistantQueueListing)
 
-<a name="postAssistants"></a>
 
 # **postAssistants**
 
 
-
-> [Assistant](Assistant.html) postAssistants(body)
+> [Assistant](Assistant) postAssistants(body)
 
 Create an Assistant.
 
@@ -719,21 +694,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Assistant**](Assistant.html)|  | 
+| **body** | [**Assistant**](Assistant)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Assistant**](Assistant.html)
+[**Assistant**](Assistant)
 
-<a name="putAssistantQueue"></a>
 
 # **putAssistantQueue**
 
 
-
-> [AssistantQueue](AssistantQueue.html) putAssistantQueue(assistantId, queueId, body)
+> [AssistantQueue](AssistantQueue) putAssistantQueue(assistantId, queueId, body)
 
 Create a queue assistant association.
 
@@ -784,11 +757,13 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **assistantId** | **String**| Assistant ID | 
 | **queueId** | **String**| Queue ID | 
-| **body** | [**AssistantQueue**](AssistantQueue.html)|  | 
+| **body** | [**AssistantQueue**](AssistantQueue)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AssistantQueue**](AssistantQueue.html)
+[**AssistantQueue**](AssistantQueue)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

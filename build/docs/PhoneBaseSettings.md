@@ -1,17 +1,15 @@
----
-title: PhoneBaseSettings
----
-## PhoneBaseSettings
+# PhoneBaseSettings
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for this phone base settings |  |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for this phone base settings |  |
+| **name** | **String** |  |  [optional] |
+| **selfUri** | **String** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

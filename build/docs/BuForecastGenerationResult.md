@@ -1,15 +1,13 @@
----
-title: BuForecastGenerationResult
----
-## BuForecastGenerationResult
+# BuForecastGenerationResult
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **planningGroupResults** | <!----><!---->[**List&lt;BuForecastGenerationPlanningGroupResult&gt;**](BuForecastGenerationPlanningGroupResult.html)<!----> | Generation results, broken down by planning group |  [optional] |
-{: class="table table-striped"}
+| **planningGroupResults** | [**List&lt;BuForecastGenerationPlanningGroupResult&gt;**](BuForecastGenerationPlanningGroupResult) | Generation results, broken down by planning group |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,19 +1,13 @@
----
-title: WorkitemsAttributeChangeWorkitemStatusCategory
----
-## WorkitemsAttributeChangeWorkitemStatusCategory
+# WorkitemsAttributeChangeWorkitemStatusCategory
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **newValue** | [**NewValueEnum**](#NewValueEnum)<!----> | New property value |  [optional] |
-| **oldValue** | [**OldValueEnum**](#OldValueEnum)<!----> | Old property value |  [optional] |
-{: class="table table-striped"}
+| **newValue** | [**NewValueEnum**](#Enum--NewValueEnum) | New property value |  [optional] |
+| **oldValue** | [**OldValueEnum**](#Enum--OldValueEnum) | Old property value |  [optional] |
 
-
-<a name="NewValueEnum"></a>
 
 ## Enum: NewValueEnum
 
@@ -25,10 +19,7 @@ title: WorkitemsAttributeChangeWorkitemStatusCategory
 | WAITING | &quot;Waiting&quot; | 
 | CLOSED | &quot;Closed&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
-
-<a name="OldValueEnum"></a>
 
 ## Enum: OldValueEnum
 
@@ -40,7 +31,8 @@ title: WorkitemsAttributeChangeWorkitemStatusCategory
 | WAITING | &quot;Waiting&quot; | 
 | CLOSED | &quot;Closed&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,18 +1,16 @@
----
-title: BulkResponseResultExternalContactExternalContact
----
-## BulkResponseResultExternalContactExternalContact
+# BulkResponseResultExternalContactExternalContact
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **success** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **entity** | <!----><!---->[**ExternalContact**](ExternalContact.html)<!----> |  |  [optional] |
-| **error** | <!----><!---->[**BulkErrorExternalContact**](BulkErrorExternalContact.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **success** | **Boolean** |  |  [optional] |
+| **entity** | [**ExternalContact**](ExternalContact) |  |  [optional] |
+| **error** | [**BulkErrorExternalContact**](BulkErrorExternalContact) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,19 +1,17 @@
----
-title: TrunkInstanceTopicTrunk
----
-## TrunkInstanceTopicTrunk
+# TrunkInstanceTopicTrunk
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **connectedStatus** | <!----><!---->[**TrunkInstanceTopicTrunkConnectedStatus**](TrunkInstanceTopicTrunkConnectedStatus.html)<!----> |  |  [optional] |
-| **optionsStatus** | <!----><!---->[**List&lt;TrunkInstanceTopicTrunkMetricsOptions&gt;**](TrunkInstanceTopicTrunkMetricsOptions.html)<!----> |  |  [optional] |
-| **registersStatus** | <!----><!---->[**List&lt;TrunkInstanceTopicTrunkMetricsRegisters&gt;**](TrunkInstanceTopicTrunkMetricsRegisters.html)<!----> |  |  [optional] |
-| **ipStatus** | <!----><!---->[**TrunkInstanceTopicTrunkMetricsNetworkTypeIp**](TrunkInstanceTopicTrunkMetricsNetworkTypeIp.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **connectedStatus** | [**TrunkInstanceTopicTrunkConnectedStatus**](TrunkInstanceTopicTrunkConnectedStatus) |  |  [optional] |
+| **optionsStatus** | [**List&lt;TrunkInstanceTopicTrunkMetricsOptions&gt;**](TrunkInstanceTopicTrunkMetricsOptions) |  |  [optional] |
+| **registersStatus** | [**List&lt;TrunkInstanceTopicTrunkMetricsRegisters&gt;**](TrunkInstanceTopicTrunkMetricsRegisters) |  |  [optional] |
+| **ipStatus** | [**TrunkInstanceTopicTrunkMetricsNetworkTypeIp**](TrunkInstanceTopicTrunkMetricsNetworkTypeIp) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

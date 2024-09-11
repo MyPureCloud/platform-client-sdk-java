@@ -1,16 +1,14 @@
----
-title: LabelUtilizationRequest
----
-## LabelUtilizationRequest
+# LabelUtilizationRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **maximumCapacity** | <!----><!---->**Integer**<!----> | Defines the maximum number of interactions with this label that an agent can handle at one time. |  [optional] |
-| **interruptingLabelIds** | <!----><!---->**List&lt;String&gt;**<!----> | Defines other labels that can interrupt an interaction with this label. |  [optional] |
-{: class="table table-striped"}
+| **maximumCapacity** | **Integer** | Defines the maximum number of interactions with this label that an agent can handle at one time. |  [optional] |
+| **interruptingLabelIds** | **List&lt;String&gt;** | Defines other labels that can interrupt an interaction with this label. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

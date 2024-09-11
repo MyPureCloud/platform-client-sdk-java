@@ -1,21 +1,15 @@
----
-title: UserState
----
-## UserState
+# UserState
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **state** | [**StateEnum**](#StateEnum)<!----> | User's current state. |  [optional] |
-| **version** | <!----><!---->**Integer**<!----> | Version of this user. |  [optional] |
-| **stateChangeReason** | [**StateChangeReasonEnum**](#StateChangeReasonEnum)<!----> | Reason for a change in the user's state. |  [optional] |
-| **stateChangeDate** | <!----><!---->[**Date**](Date.html)<!----> | Date that the state was last changed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-{: class="table table-striped"}
+| **state** | [**StateEnum**](#Enum--StateEnum) | User's current state. |  [optional] |
+| **version** | **Integer** | Version of this user. |  [optional] |
+| **stateChangeReason** | [**StateChangeReasonEnum**](#Enum--StateChangeReasonEnum) | Reason for a change in the user's state. |  [optional] |
+| **stateChangeDate** | [**Date**](Date) | Date that the state was last changed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -25,10 +19,7 @@ title: UserState
 | ACTIVE | &quot;active&quot; | 
 | INACTIVE | &quot;inactive&quot; | 
 | DELETED | &quot;deleted&quot; | 
-{: class="table table-striped"}
 
-
-<a name="StateChangeReasonEnum"></a>
 
 ## Enum: StateChangeReasonEnum
 
@@ -41,7 +32,8 @@ title: UserState
 | PERFORMANCE | &quot;Performance&quot; | 
 | CONDUCT | &quot;Conduct&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

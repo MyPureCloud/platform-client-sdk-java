@@ -1,19 +1,13 @@
----
-title: ExternalDataSource
----
-## ExternalDataSource
+# ExternalDataSource
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **platform** | [**PlatformEnum**](#PlatformEnum)<!----> | The platform that was the source of the data.  Example: a CRM like SALESFORCE. |  [optional] |
-| **url** | <!----><!---->**String**<!----> | An URL that links to the source record that contributed data to the associated entity. |  [optional] |
-{: class="table table-striped"}
+| **platform** | [**PlatformEnum**](#Enum--PlatformEnum) | The platform that was the source of the data.  Example: a CRM like SALESFORCE. |  [optional] |
+| **url** | **String** | An URL that links to the source record that contributed data to the associated entity. |  [optional] |
 
-
-<a name="PlatformEnum"></a>
 
 ## Enum: PlatformEnum
 
@@ -21,7 +15,8 @@ title: ExternalDataSource
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | SALESFORCE | &quot;SALESFORCE&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

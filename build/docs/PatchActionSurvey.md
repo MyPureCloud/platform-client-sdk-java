@@ -1,15 +1,13 @@
----
-title: PatchActionSurvey
----
-## PatchActionSurvey
+# PatchActionSurvey
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **questions** | <!----><!---->[**List&lt;PatchSurveyQuestion&gt;**](PatchSurveyQuestion.html)<!----> | Questions shown to the user. |  |
-{: class="table table-striped"}
+| **questions** | [**List&lt;PatchSurveyQuestion&gt;**](PatchSurveyQuestion) | Questions shown to the user. |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

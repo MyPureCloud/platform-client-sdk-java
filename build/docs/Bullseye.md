@@ -1,15 +1,13 @@
----
-title: Bullseye
----
-## Bullseye
+# Bullseye
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **rings** | <!----><!---->[**List&lt;Ring&gt;**](Ring.html)<!----> | The bullseye rings configured for this queue. |  [optional] |
-{: class="table table-striped"}
+| **rings** | [**List&lt;Ring&gt;**](Ring) | The bullseye rings configured for this queue. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

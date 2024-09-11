@@ -1,22 +1,16 @@
----
-title: WfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer
----
-## WfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer
+# WfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **dayOfWeek** | [**DayOfWeekEnum**](#DayOfWeekEnum)<!----> |  |  [optional] |
-| **weight** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **date** | <!----><!---->**String**<!----> |  |  [optional] |
-| **fileName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **dataKey** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **dayOfWeek** | [**DayOfWeekEnum**](#Enum--DayOfWeekEnum) |  |  [optional] |
+| **weight** | **Integer** |  |  [optional] |
+| **date** | **String** |  |  [optional] |
+| **fileName** | **String** |  |  [optional] |
+| **dataKey** | **String** |  |  [optional] |
 
-
-<a name="DayOfWeekEnum"></a>
 
 ## Enum: DayOfWeekEnum
 
@@ -31,7 +25,8 @@ title: WfmBuShortTermForecastImportCompleteTopicForecastSourceDayPointer
 | FRIDAY | &quot;Friday&quot; | 
 | SATURDAY | &quot;Saturday&quot; | 
 | EIGHTHDAY | &quot;EighthDay&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

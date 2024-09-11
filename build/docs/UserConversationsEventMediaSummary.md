@@ -1,16 +1,14 @@
----
-title: UserConversationsEventMediaSummary
----
-## UserConversationsEventMediaSummary
+# UserConversationsEventMediaSummary
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **contactCenter** | <!----><!---->[**UserConversationsEventMediaSummaryDetail**](UserConversationsEventMediaSummaryDetail.html)<!----> |  |  [optional] |
-| **enterprise** | <!----><!---->[**UserConversationsEventMediaSummaryDetail**](UserConversationsEventMediaSummaryDetail.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **contactCenter** | [**UserConversationsEventMediaSummaryDetail**](UserConversationsEventMediaSummaryDetail) |  |  [optional] |
+| **enterprise** | [**UserConversationsEventMediaSummaryDetail**](UserConversationsEventMediaSummaryDetail) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

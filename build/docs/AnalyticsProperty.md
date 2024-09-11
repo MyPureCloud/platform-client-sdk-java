@@ -1,20 +1,14 @@
----
-title: AnalyticsProperty
----
-## AnalyticsProperty
+# AnalyticsProperty
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **property** | <!----><!---->**String**<!----> | User-defined rather than intrinsic system-observed values. These are tagged onto segments by other components within PureCloud or by API users directly.  This is the name of the user-defined property. |  [optional] |
-| **propertyType** | [**PropertyTypeEnum**](#PropertyTypeEnum)<!----> | Indicates what the data type is (e.g. integer vs string) and therefore how to evaluate what would constitute a match |  [optional] |
-| **value** | <!----><!---->**String**<!----> | What property value to match against |  [optional] |
-{: class="table table-striped"}
+| **property** | **String** | User-defined rather than intrinsic system-observed values. These are tagged onto segments by other components within PureCloud or by API users directly.  This is the name of the user-defined property. |  [optional] |
+| **propertyType** | [**PropertyTypeEnum**](#Enum--PropertyTypeEnum) | Indicates what the data type is (e.g. integer vs string) and therefore how to evaluate what would constitute a match |  [optional] |
+| **value** | **String** | What property value to match against |  [optional] |
 
-
-<a name="PropertyTypeEnum"></a>
 
 ## Enum: PropertyTypeEnum
 
@@ -27,7 +21,8 @@ title: AnalyticsProperty
 | DATE | &quot;date&quot; | 
 | STRING | &quot;string&quot; | 
 | UUID | &quot;uuid&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

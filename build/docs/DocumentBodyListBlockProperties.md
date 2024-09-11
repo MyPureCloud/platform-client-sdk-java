@@ -1,19 +1,13 @@
----
-title: DocumentBodyListBlockProperties
----
-## DocumentBodyListBlockProperties
+# DocumentBodyListBlockProperties
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **unorderedType** | [**UnorderedTypeEnum**](#UnorderedTypeEnum)<!----> | The type of icon for the unordered list. |  [optional] |
-| **orderedType** | [**OrderedTypeEnum**](#OrderedTypeEnum)<!----> | The type of icon for the ordered list. |  [optional] |
-{: class="table table-striped"}
+| **unorderedType** | [**UnorderedTypeEnum**](#Enum--UnorderedTypeEnum) | The type of icon for the unordered list. |  [optional] |
+| **orderedType** | [**OrderedTypeEnum**](#Enum--OrderedTypeEnum) | The type of icon for the ordered list. |  [optional] |
 
-
-<a name="UnorderedTypeEnum"></a>
 
 ## Enum: UnorderedTypeEnum
 
@@ -24,10 +18,7 @@ title: DocumentBodyListBlockProperties
 | SQUARE | &quot;Square&quot; | 
 | CIRCLE | &quot;Circle&quot; | 
 | NONE | &quot;None&quot; | 
-{: class="table table-striped"}
 
-
-<a name="OrderedTypeEnum"></a>
 
 ## Enum: OrderedTypeEnum
 
@@ -41,7 +32,8 @@ title: DocumentBodyListBlockProperties
 | UPPERALPHA | &quot;UpperAlpha&quot; | 
 | UPPERROMAN | &quot;UpperRoman&quot; | 
 | NONE | &quot;None&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,22 +1,16 @@
----
-title: AvailableTime
----
-## AvailableTime
+# AvailableTime
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **dateStart** | <!----><!---->[**Date**](Date.html)<!----> | Start of the availability period. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **lengthInMinutes** | <!----><!---->**Integer**<!----> | Length of availability period in minutes |  [optional] |
-| **isPaid** | <!----><!---->**Boolean**<!----> | Indicates if this availability period is paid in Workforce Management schedule |  [optional] |
-| **activityCategory** | [**ActivityCategoryEnum**](#ActivityCategoryEnum)<!----> | Workforce Management activity category for this availability period |  [optional] |
-| **wfmSchedule** | <!----><!---->[**WfmScheduleReference**](WfmScheduleReference.html)<!----> | Workforce Management schedule information associated with the available time |  [optional] |
-{: class="table table-striped"}
+| **dateStart** | [**Date**](Date) | Start of the availability period. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **lengthInMinutes** | **Integer** | Length of availability period in minutes |  [optional] |
+| **isPaid** | **Boolean** | Indicates if this availability period is paid in Workforce Management schedule |  [optional] |
+| **activityCategory** | [**ActivityCategoryEnum**](#Enum--ActivityCategoryEnum) | Workforce Management activity category for this availability period |  [optional] |
+| **wfmSchedule** | [**WfmScheduleReference**](WfmScheduleReference) | Workforce Management schedule information associated with the available time |  [optional] |
 
-
-<a name="ActivityCategoryEnum"></a>
 
 ## Enum: ActivityCategoryEnum
 
@@ -31,7 +25,8 @@ title: AvailableTime
 | TIMEOFF | &quot;TimeOff&quot; | 
 | TRAINING | &quot;Training&quot; | 
 | UNAVAILABLE | &quot;Unavailable&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

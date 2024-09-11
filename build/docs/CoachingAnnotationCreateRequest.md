@@ -1,19 +1,13 @@
----
-title: CoachingAnnotationCreateRequest
----
-## CoachingAnnotationCreateRequest
+# CoachingAnnotationCreateRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **text** | <!----><!---->**String**<!----> | The text of the annotation. |  |
-| **accessType** | [**AccessTypeEnum**](#AccessTypeEnum)<!----> | Determines the permissions required to view this item. |  |
-{: class="table table-striped"}
+| **text** | **String** | The text of the annotation. |  |
+| **accessType** | [**AccessTypeEnum**](#Enum--AccessTypeEnum) | Determines the permissions required to view this item. |  |
 
-
-<a name="AccessTypeEnum"></a>
 
 ## Enum: AccessTypeEnum
 
@@ -22,7 +16,8 @@ title: CoachingAnnotationCreateRequest
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | PUBLIC | &quot;Public&quot; | 
 | PRIVATE | &quot;Private&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

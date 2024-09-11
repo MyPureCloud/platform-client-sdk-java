@@ -1,19 +1,13 @@
----
-title: FlowLogLevel
----
-## FlowLogLevel
+# FlowLogLevel
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **level** | [**LevelEnum**](#LevelEnum)<!----> | The logLevel for this characteristics set |  [optional] |
-| **characteristics** | <!----><!---->[**FlowCharacteristics**](FlowCharacteristics.html)<!----> | Shows what characteristics are enabled for this log level |  [optional] |
-{: class="table table-striped"}
+| **level** | [**LevelEnum**](#Enum--LevelEnum) | The logLevel for this characteristics set |  [optional] |
+| **characteristics** | [**FlowCharacteristics**](FlowCharacteristics) | Shows what characteristics are enabled for this log level |  [optional] |
 
-
-<a name="LevelEnum"></a>
 
 ## Enum: LevelEnum
 
@@ -26,7 +20,8 @@ title: FlowLogLevel
 | NOTES | &quot;Notes&quot; | 
 | VERBOSENOTES | &quot;VerboseNotes&quot; | 
 | ALL | &quot;All&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

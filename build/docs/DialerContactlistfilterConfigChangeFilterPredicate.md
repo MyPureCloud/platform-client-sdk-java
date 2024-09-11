@@ -1,24 +1,18 @@
----
-title: DialerContactlistfilterConfigChangeFilterPredicate
----
-## DialerContactlistfilterConfigChangeFilterPredicate
+# DialerContactlistfilterConfigChangeFilterPredicate
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **column** | <!----><!---->**String**<!----> | The contact list column |  [optional] |
-| **columnType** | [**ColumnTypeEnum**](#ColumnTypeEnum)<!----> | Whether a contact column is numeric or alphabetic |  [optional] |
-| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | The comparison operator |  [optional] |
-| **value** | <!----><!---->**String**<!----> | The value the predicate applies to |  [optional] |
-| **range** | <!----><!---->[**DialerContactlistfilterConfigChangeRange**](DialerContactlistfilterConfigChangeRange.html)<!----> |  |  [optional] |
-| **inverted** | <!----><!---->**Boolean**<!----> | Whether or not to invert to result of evaluating the predicate |  [optional] |
-| **additionalProperties** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **column** | **String** | The contact list column |  [optional] |
+| **columnType** | [**ColumnTypeEnum**](#Enum--ColumnTypeEnum) | Whether a contact column is numeric or alphabetic |  [optional] |
+| **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | The comparison operator |  [optional] |
+| **value** | **String** | The value the predicate applies to |  [optional] |
+| **range** | [**DialerContactlistfilterConfigChangeRange**](DialerContactlistfilterConfigChangeRange) |  |  [optional] |
+| **inverted** | **Boolean** | Whether or not to invert to result of evaluating the predicate |  [optional] |
+| **additionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
-
-<a name="ColumnTypeEnum"></a>
 
 ## Enum: ColumnTypeEnum
 
@@ -27,10 +21,7 @@ title: DialerContactlistfilterConfigChangeFilterPredicate
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | NUMERIC | &quot;numeric&quot; | 
 | ALPHABETIC | &quot;alphabetic&quot; | 
-{: class="table table-striped"}
 
-
-<a name="OperatorEnum"></a>
 
 ## Enum: OperatorEnum
 
@@ -49,7 +40,8 @@ title: DialerContactlistfilterConfigChangeFilterPredicate
 | AFTER | &quot;AFTER&quot; | 
 | BETWEEN | &quot;BETWEEN&quot; | 
 | IN | &quot;IN&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

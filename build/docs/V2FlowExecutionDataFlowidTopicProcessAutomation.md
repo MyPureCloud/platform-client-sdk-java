@@ -1,16 +1,14 @@
----
-title: V2FlowExecutionDataFlowidTopicProcessAutomation
----
-## V2FlowExecutionDataFlowidTopicProcessAutomation
+# V2FlowExecutionDataFlowidTopicProcessAutomation
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **triggerId** | <!----><!---->**String**<!----> | The identifier of the process automation trigger that invoked this flow. |  [optional] |
-| **triggerName** | <!----><!---->**String**<!----> | The name of the process automation trigger that invoked this flow. |  [optional] |
-{: class="table table-striped"}
+| **triggerId** | **String** | The identifier of the process automation trigger that invoked this flow. |  [optional] |
+| **triggerName** | **String** | The name of the process automation trigger that invoked this flow. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

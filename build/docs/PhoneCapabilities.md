@@ -1,26 +1,20 @@
----
-title: PhoneCapabilities
----
-## PhoneCapabilities
+# PhoneCapabilities
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **provisions** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **registers** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **dualRegisters** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **hardwareIdType** | <!----><!---->**String**<!----> |  |  [optional] |
-| **allowReboot** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **noRebalance** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **noCloudProvisioning** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **mediaCodecs** | <!---->[**List&lt;MediaCodecsEnum&gt;**](#MediaCodecsEnum)<!----> |  |  [optional] |
-| **cdm** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **provisions** | **Boolean** |  |  [optional] |
+| **registers** | **Boolean** |  |  [optional] |
+| **dualRegisters** | **Boolean** |  |  [optional] |
+| **hardwareIdType** | **String** |  |  [optional] |
+| **allowReboot** | **Boolean** |  |  [optional] |
+| **noRebalance** | **Boolean** |  |  [optional] |
+| **noCloudProvisioning** | **Boolean** |  |  [optional] |
+| **mediaCodecs** | [**List<MediaCodecsEnum>**](#Enum--MediaCodecsEnum) |  |  [optional] |
+| **cdm** | **Boolean** |  |  [optional] |
 
-
-<a name="MediaCodecsEnum"></a>
 
 ## Enum: MediaCodecsEnum
 
@@ -31,7 +25,8 @@ title: PhoneCapabilities
 | AUDIO_PCMA | &quot;audio/pcma&quot; |
 | AUDIO_G729 | &quot;audio/g729&quot; |
 | AUDIO_G722 | &quot;audio/g722&quot; |
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,17 +1,15 @@
----
-title: NamedEntityTypeDefinition
----
-## NamedEntityTypeDefinition
+# NamedEntityTypeDefinition
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | <!----><!---->**String**<!----> | The name of the entity type. |  |
-| **description** | <!----><!---->**String**<!----> | Description of the of the named entity type. |  [optional] |
-| **mechanism** | <!----><!---->[**NamedEntityTypeMechanism**](NamedEntityTypeMechanism.html)<!----> | The mechanism enabling detection of the named entity type. |  |
-{: class="table table-striped"}
+| **name** | **String** | The name of the entity type. |  |
+| **description** | **String** | Description of the of the named entity type. |  [optional] |
+| **mechanism** | [**NamedEntityTypeMechanism**](NamedEntityTypeMechanism) | The mechanism enabling detection of the named entity type. |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

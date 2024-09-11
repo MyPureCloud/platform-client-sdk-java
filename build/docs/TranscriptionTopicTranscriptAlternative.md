@@ -1,21 +1,19 @@
----
-title: TranscriptionTopicTranscriptAlternative
----
-## TranscriptionTopicTranscriptAlternative
+# TranscriptionTopicTranscriptAlternative
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **confidence** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-| **offsetMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **durationMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **transcript** | <!----><!---->**String**<!----> |  |  [optional] |
-| **words** | <!----><!---->[**List&lt;TranscriptionTopicTranscriptWord&gt;**](TranscriptionTopicTranscriptWord.html)<!----> |  |  [optional] |
-| **decoratedTranscript** | <!----><!---->**String**<!----> |  |  [optional] |
-| **decoratedWords** | <!----><!---->[**List&lt;TranscriptionTopicTranscriptWord&gt;**](TranscriptionTopicTranscriptWord.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **confidence** | [**BigDecimal**](BigDecimal) |  |  [optional] |
+| **offsetMs** | **Integer** |  |  [optional] |
+| **durationMs** | **Integer** |  |  [optional] |
+| **transcript** | **String** |  |  [optional] |
+| **words** | [**List&lt;TranscriptionTopicTranscriptWord&gt;**](TranscriptionTopicTranscriptWord) |  |  [optional] |
+| **decoratedTranscript** | **String** |  |  [optional] |
+| **decoratedWords** | [**List&lt;TranscriptionTopicTranscriptWord&gt;**](TranscriptionTopicTranscriptWord) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,16 +1,14 @@
----
-title: FileUploadSettings
----
-## FileUploadSettings
+# FileUploadSettings
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **enableAttachments** | <!----><!---->**Boolean**<!----> | whether or not attachments are enabled |  [optional] |
-| **modes** | <!----><!---->[**List&lt;FileUploadMode&gt;**](FileUploadMode.html)<!----> | The list of supported file upload modes |  [optional] |
-{: class="table table-striped"}
+| **enableAttachments** | **Boolean** | whether or not attachments are enabled |  [optional] |
+| **modes** | [**List&lt;FileUploadMode&gt;**](FileUploadMode) | The list of supported file upload modes |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

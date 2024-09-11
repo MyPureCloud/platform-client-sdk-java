@@ -1,24 +1,18 @@
----
-title: MessengerSettings
----
-## MessengerSettings
+# MessengerSettings
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **enabled** | <!----><!---->**Boolean**<!----> | Whether or not messenger is enabled |  [optional] |
-| **styles** | <!----><!---->[**MessengerStyles**](MessengerStyles.html)<!----> | The style settings for messenger |  [optional] |
-| **launcherButton** | <!----><!---->[**LauncherButtonSettings**](LauncherButtonSettings.html)<!----> | The launcher button settings for messenger |  [optional] |
-| **fileUpload** | <!----><!---->[**FileUploadSettings**](FileUploadSettings.html)<!----> | The file upload settings for messenger |  [optional] |
-| **apps** | <!----><!---->[**MessengerApps**](MessengerApps.html)<!----> | The apps embedded in the messenger |  [optional] |
-| **homeScreen** | <!----><!---->[**MessengerHomeScreen**](MessengerHomeScreen.html)<!----> | The homescreen settings for messenger |  [optional] |
-| **sessionPersistenceType** | [**SessionPersistenceTypeEnum**](#SessionPersistenceTypeEnum)<!----> | The session persistence type for messenger |  [optional] |
-{: class="table table-striped"}
+| **enabled** | **Boolean** | Whether or not messenger is enabled |  [optional] |
+| **styles** | [**MessengerStyles**](MessengerStyles) | The style settings for messenger |  [optional] |
+| **launcherButton** | [**LauncherButtonSettings**](LauncherButtonSettings) | The launcher button settings for messenger |  [optional] |
+| **fileUpload** | [**FileUploadSettings**](FileUploadSettings) | The file upload settings for messenger |  [optional] |
+| **apps** | [**MessengerApps**](MessengerApps) | The apps embedded in the messenger |  [optional] |
+| **homeScreen** | [**MessengerHomeScreen**](MessengerHomeScreen) | The homescreen settings for messenger |  [optional] |
+| **sessionPersistenceType** | [**SessionPersistenceTypeEnum**](#Enum--SessionPersistenceTypeEnum) | The session persistence type for messenger |  [optional] |
 
-
-<a name="SessionPersistenceTypeEnum"></a>
 
 ## Enum: SessionPersistenceTypeEnum
 
@@ -27,7 +21,8 @@ title: MessengerSettings
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ACROSSSUBDOMAINS | &quot;AcrossSubdomains&quot; | 
 | DOMAINORSUBDOMAINONLY | &quot;DomainOrSubdomainOnly&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

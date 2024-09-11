@@ -1,23 +1,17 @@
----
-title: WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult
----
-## WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult
+# WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResult
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
-| **reviewedBy** | <!----><!---->[**WfmBulkShiftTradeStateUpdateNotificationTopicUserReference**](WfmBulkShiftTradeStateUpdateNotificationTopicUserReference.html)<!----> |  |  [optional] |
-| **reviewedDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **failureReason** | [**FailureReasonEnum**](#FailureReasonEnum)<!----> |  |  [optional] |
-| **metadata** | <!----><!---->[**WfmBulkShiftTradeStateUpdateNotificationTopicWfmVersionedEntityMetadata**](WfmBulkShiftTradeStateUpdateNotificationTopicWfmVersionedEntityMetadata.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **state** | [**StateEnum**](#Enum--StateEnum) |  |  [optional] |
+| **reviewedBy** | [**WfmBulkShiftTradeStateUpdateNotificationTopicUserReference**](WfmBulkShiftTradeStateUpdateNotificationTopicUserReference) |  |  [optional] |
+| **reviewedDate** | [**Date**](Date) |  |  [optional] |
+| **failureReason** | [**FailureReasonEnum**](#Enum--FailureReasonEnum) |  |  [optional] |
+| **metadata** | [**WfmBulkShiftTradeStateUpdateNotificationTopicWfmVersionedEntityMetadata**](WfmBulkShiftTradeStateUpdateNotificationTopicWfmVersionedEntityMetadata) |  |  [optional] |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -30,10 +24,7 @@ title: WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateRes
 | DENIED | &quot;Denied&quot; | 
 | EXPIRED | &quot;Expired&quot; | 
 | CANCELED | &quot;Canceled&quot; | 
-{: class="table table-striped"}
 
-
-<a name="FailureReasonEnum"></a>
 
 ## Enum: FailureReasonEnum
 
@@ -47,7 +38,8 @@ title: WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateRes
 | RECEIVINGAGENTSHIFTNOTFOUND | &quot;ReceivingAgentShiftNotFound&quot; | 
 | SCHEDULENOTPUBLISHED | &quot;ScheduleNotPublished&quot; | 
 | TRANSITIONNOTALLOWED | &quot;TransitionNotAllowed&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

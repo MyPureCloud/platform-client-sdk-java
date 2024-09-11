@@ -1,22 +1,16 @@
----
-title: ResponseAssetSearchRequest
----
-## ResponseAssetSearchRequest
+# ResponseAssetSearchRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **pageSize** | <!----><!---->**Integer**<!----> | The number of results per page. Default: 25, Maximum: 100. |  [optional] |
-| **pageNumber** | <!----><!---->**Integer**<!----> | The page of resources you want to retrieve |  [optional] |
-| **sortOrder** | [**SortOrderEnum**](#SortOrderEnum)<!----> | The sort order for results |  [optional] |
-| **sortBy** | <!----><!---->**String**<!----> | The field in the resource that you want to sort the results by |  [optional] |
-| **query** | <!----><!---->[**List&lt;ResponseAssetFilter&gt;**](ResponseAssetFilter.html)<!----> | Filter the query results. |  |
-{: class="table table-striped"}
+| **pageSize** | **Integer** | The number of results per page. Default: 25, Maximum: 100. |  [optional] |
+| **pageNumber** | **Integer** | The page of resources you want to retrieve |  [optional] |
+| **sortOrder** | [**SortOrderEnum**](#Enum--SortOrderEnum) | The sort order for results |  [optional] |
+| **sortBy** | **String** | The field in the resource that you want to sort the results by |  [optional] |
+| **query** | [**List&lt;ResponseAssetFilter&gt;**](ResponseAssetFilter) | Filter the query results. |  |
 
-
-<a name="SortOrderEnum"></a>
 
 ## Enum: SortOrderEnum
 
@@ -25,7 +19,8 @@ title: ResponseAssetSearchRequest
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ASC | &quot;ASC&quot; | 
 | DESC | &quot;DESC&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

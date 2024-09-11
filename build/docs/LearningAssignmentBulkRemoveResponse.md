@@ -1,16 +1,14 @@
----
-title: LearningAssignmentBulkRemoveResponse
----
-## LearningAssignmentBulkRemoveResponse
+# LearningAssignmentBulkRemoveResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | <!----><!---->[**List&lt;LearningAssignmentEntity&gt;**](LearningAssignmentEntity.html)<!----> | The learning assignments that were removed successfully |  [optional] |
-| **disallowedEntities** | <!----><!---->[**List&lt;DisallowedEntityLearningAssignmentReference&gt;**](DisallowedEntityLearningAssignmentReference.html)<!----> | The learning assignments that were not removed due to missing permissions |  [optional] |
-{: class="table table-striped"}
+| **entities** | [**List&lt;LearningAssignmentEntity&gt;**](LearningAssignmentEntity) | The learning assignments that were removed successfully |  [optional] |
+| **disallowedEntities** | [**List&lt;DisallowedEntityLearningAssignmentReference&gt;**](DisallowedEntityLearningAssignmentReference) | The learning assignments that were not removed due to missing permissions |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

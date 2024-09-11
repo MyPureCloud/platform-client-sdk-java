@@ -1,19 +1,13 @@
----
-title: SocialHandle
----
-## SocialHandle
+# SocialHandle
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-| **value** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
+| **value** | **String** |  |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -21,7 +15,8 @@ title: SocialHandle
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | TWITTER | &quot;TWITTER&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

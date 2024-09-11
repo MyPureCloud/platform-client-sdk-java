@@ -1,21 +1,15 @@
----
-title: BotChannel
----
-## BotChannel
+# BotChannel
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | [**NameEnum**](#NameEnum)<!----> | The name of the channel. |  |
-| **inputModes** | <!---->[**List&lt;InputModesEnum&gt;**](#InputModesEnum)<!----> | The input modes for the channel. |  |
-| **outputModes** | <!---->[**List&lt;OutputModesEnum&gt;**](#OutputModesEnum)<!----> | The output modes for the channel. |  |
-| **userAgent** | <!----><!---->[**TextBotUserAgent**](TextBotUserAgent.html)<!----> | Information about the end user agent calling the bot flow. |  |
-{: class="table table-striped"}
+| **name** | [**NameEnum**](#Enum--NameEnum) | The name of the channel. |  |
+| **inputModes** | [**List<InputModesEnum>**](#Enum--InputModesEnum) | The input modes for the channel. |  |
+| **outputModes** | [**List<OutputModesEnum>**](#Enum--OutputModesEnum) | The output modes for the channel. |  |
+| **userAgent** | [**TextBotUserAgent**](TextBotUserAgent) | Information about the end user agent calling the bot flow. |  |
 
-
-<a name="NameEnum"></a>
 
 ## Enum: NameEnum
 
@@ -25,10 +19,7 @@ title: BotChannel
 | CHAT | &quot;Chat&quot; | 
 | CALL | &quot;Call&quot; | 
 | MESSAGING | &quot;Messaging&quot; | 
-{: class="table table-striped"}
 
-
-<a name="InputModesEnum"></a>
 
 ## Enum: InputModesEnum
 
@@ -37,10 +28,7 @@ title: BotChannel
 | TEXT | &quot;Text&quot; |
 | VOICE | &quot;Voice&quot; |
 | DTMF | &quot;DTMF&quot; |
-{: class="table table-striped"}
 
-
-<a name="OutputModesEnum"></a>
 
 ## Enum: OutputModesEnum
 
@@ -48,7 +36,8 @@ title: BotChannel
 | ---- | ----- |
 | TEXT | &quot;Text&quot; |
 | VOICE | &quot;Voice&quot; |
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

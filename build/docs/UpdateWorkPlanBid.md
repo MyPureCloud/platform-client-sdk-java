@@ -1,26 +1,20 @@
----
-title: UpdateWorkPlanBid
----
-## UpdateWorkPlanBid
+# UpdateWorkPlanBid
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | <!----><!---->**String**<!----> | The name of the work plan bid |  [optional] |
-| **forecast** | <!----><!---->[**BuShortTermForecastWeekReference**](BuShortTermForecastWeekReference.html)<!----> | The selected forecast in this work plan bid |  [optional] |
-| **bidWindowStartDate** | <!----><!---->[**LocalDate**](LocalDate.html)<!----> | The bid start date where agents start participate in work plan bidding in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
-| **bidWindowEndDate** | <!----><!---->[**LocalDate**](LocalDate.html)<!----> | The bid end date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
-| **effectiveDate** | <!----><!---->[**LocalDate**](LocalDate.html)<!----> | The date when agents will be assigned to the new work plan in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
-| **agentRankingType** | [**AgentRankingTypeEnum**](#AgentRankingTypeEnum)<!----> | The type of agent ranking selected for this bid |  [optional] |
-| **rankingTiebreakerType** | [**RankingTiebreakerTypeEnum**](#RankingTiebreakerTypeEnum)<!----> | Ranking tiebreaker |  [optional] |
-| **workPlanFieldsVisibleToAgents** | <!----><!---->[**ListWrapperAgentWorkPlanField**](ListWrapperAgentWorkPlanField.html)<!----> | The work plan fields visible to agents whenever work plan preferences are made |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> | The state of the bid |  [optional] |
-{: class="table table-striped"}
+| **name** | **String** | The name of the work plan bid |  [optional] |
+| **forecast** | [**BuShortTermForecastWeekReference**](BuShortTermForecastWeekReference) | The selected forecast in this work plan bid |  [optional] |
+| **bidWindowStartDate** | [**LocalDate**](LocalDate) | The bid start date where agents start participate in work plan bidding in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
+| **bidWindowEndDate** | [**LocalDate**](LocalDate) | The bid end date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
+| **effectiveDate** | [**LocalDate**](LocalDate) | The date when agents will be assigned to the new work plan in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
+| **agentRankingType** | [**AgentRankingTypeEnum**](#Enum--AgentRankingTypeEnum) | The type of agent ranking selected for this bid |  [optional] |
+| **rankingTiebreakerType** | [**RankingTiebreakerTypeEnum**](#Enum--RankingTiebreakerTypeEnum) | Ranking tiebreaker |  [optional] |
+| **workPlanFieldsVisibleToAgents** | [**ListWrapperAgentWorkPlanField**](ListWrapperAgentWorkPlanField) | The work plan fields visible to agents whenever work plan preferences are made |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) | The state of the bid |  [optional] |
 
-
-<a name="AgentRankingTypeEnum"></a>
 
 ## Enum: AgentRankingTypeEnum
 
@@ -29,10 +23,7 @@ title: UpdateWorkPlanBid
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | HIREDATE | &quot;HireDate&quot; | 
 | PERFORMANCE | &quot;Performance&quot; | 
-{: class="table table-striped"}
 
-
-<a name="RankingTiebreakerTypeEnum"></a>
 
 ## Enum: RankingTiebreakerTypeEnum
 
@@ -43,10 +34,7 @@ title: UpdateWorkPlanBid
 | PERFORMANCE | &quot;Performance&quot; | 
 | CUSTOM | &quot;Custom&quot; | 
 | RANDOMLYASSIGN | &quot;RandomlyAssign&quot; | 
-{: class="table table-striped"}
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -61,7 +49,8 @@ title: UpdateWorkPlanBid
 | CLOSED | &quot;Closed&quot; | 
 | PROCESSED | &quot;Processed&quot; | 
 | PUBLISHED | &quot;Published&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

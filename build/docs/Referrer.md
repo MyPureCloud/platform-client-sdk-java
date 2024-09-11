@@ -1,26 +1,20 @@
----
-title: Referrer
----
-## Referrer
+# Referrer
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **url** | <!----><!---->**String**<!----> | Referrer URL. |  |
-| **domain** | <!----><!---->**String**<!----> | Referrer URL domain. |  |
-| **hostname** | <!----><!---->**String**<!----> | Referrer URL hostname. |  |
-| **keywords** | <!----><!---->**String**<!----> | Referrer keywords. |  [optional] |
-| **pathname** | <!----><!---->**String**<!----> | Referrer URL pathname. |  |
-| **queryString** | <!----><!---->**String**<!----> | Referrer URL querystring. |  [optional] |
-| **fragment** | <!----><!---->**String**<!----> | Referrer URL fragment. |  [optional] |
-| **name** | <!----><!---->**String**<!----> | Name of referrer (e.g. Yahoo!, Google, InfoSpace). |  [optional] |
-| **medium** | [**MediumEnum**](#MediumEnum)<!----> | Type of referrer (e.g. search, social). |  |
-{: class="table table-striped"}
+| **url** | **String** | Referrer URL. |  |
+| **domain** | **String** | Referrer URL domain. |  |
+| **hostname** | **String** | Referrer URL hostname. |  |
+| **keywords** | **String** | Referrer keywords. |  [optional] |
+| **pathname** | **String** | Referrer URL pathname. |  |
+| **queryString** | **String** | Referrer URL querystring. |  [optional] |
+| **fragment** | **String** | Referrer URL fragment. |  [optional] |
+| **name** | **String** | Name of referrer (e.g. Yahoo!, Google, InfoSpace). |  [optional] |
+| **medium** | [**MediumEnum**](#Enum--MediumEnum) | Type of referrer (e.g. search, social). |  |
 
-
-<a name="MediumEnum"></a>
 
 ## Enum: MediumEnum
 
@@ -33,7 +27,8 @@ title: Referrer
 | EMAIL | &quot;email&quot; | 
 | UNKNOWN | &quot;unknown&quot; | 
 | PAID | &quot;paid&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

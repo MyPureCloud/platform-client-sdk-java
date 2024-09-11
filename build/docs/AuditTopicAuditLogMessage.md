@@ -1,33 +1,27 @@
----
-title: AuditTopicAuditLogMessage
----
-## AuditTopicAuditLogMessage
+# AuditTopicAuditLogMessage
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **userId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **userHomeOrgId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **username** | <!----><!---->[**AuditTopicDomainEntityRef**](AuditTopicDomainEntityRef.html)<!----> |  |  [optional] |
-| **userDisplay** | <!----><!---->**String**<!----> |  |  [optional] |
-| **clientId** | <!----><!---->[**AuditTopicAddressableEntityRef**](AuditTopicAddressableEntityRef.html)<!----> |  |  [optional] |
-| **remoteIp** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **serviceName** | [**ServiceNameEnum**](#ServiceNameEnum)<!----> |  |  [optional] |
-| **level** | <!----><!---->**String**<!----> |  |  [optional] |
-| **eventTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **message** | <!----><!---->[**AuditTopicMessageInfo**](AuditTopicMessageInfo.html)<!----> |  |  [optional] |
-| **action** | [**ActionEnum**](#ActionEnum)<!----> |  |  [optional] |
-| **entityType** | [**EntityTypeEnum**](#EntityTypeEnum)<!----> |  |  [optional] |
-| **entity** | <!----><!---->[**AuditTopicDomainEntityRef**](AuditTopicDomainEntityRef.html)<!----> |  |  [optional] |
-| **propertyChanges** | <!----><!---->[**List&lt;AuditTopicPropertyChange&gt;**](AuditTopicPropertyChange.html)<!----> |  |  [optional] |
-| **context** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **userId** | **String** |  |  [optional] |
+| **userHomeOrgId** | **String** |  |  [optional] |
+| **username** | [**AuditTopicDomainEntityRef**](AuditTopicDomainEntityRef) |  |  [optional] |
+| **userDisplay** | **String** |  |  [optional] |
+| **clientId** | [**AuditTopicAddressableEntityRef**](AuditTopicAddressableEntityRef) |  |  [optional] |
+| **remoteIp** | **List&lt;String&gt;** |  |  [optional] |
+| **serviceName** | [**ServiceNameEnum**](#Enum--ServiceNameEnum) |  |  [optional] |
+| **level** | **String** |  |  [optional] |
+| **eventTime** | [**Date**](Date) |  |  [optional] |
+| **message** | [**AuditTopicMessageInfo**](AuditTopicMessageInfo) |  |  [optional] |
+| **action** | [**ActionEnum**](#Enum--ActionEnum) |  |  [optional] |
+| **entityType** | [**EntityTypeEnum**](#Enum--EntityTypeEnum) |  |  [optional] |
+| **entity** | [**AuditTopicDomainEntityRef**](AuditTopicDomainEntityRef) |  |  [optional] |
+| **propertyChanges** | [**List&lt;AuditTopicPropertyChange&gt;**](AuditTopicPropertyChange) |  |  [optional] |
+| **context** | **Map&lt;String, String&gt;** |  |  [optional] |
 
-
-<a name="ServiceNameEnum"></a>
 
 ## Enum: ServiceNameEnum
 
@@ -82,10 +76,7 @@ title: AuditTopicAuditLogMessage
 | NERSERVICE | &quot;NerService&quot; | 
 | ONBOARDING | &quot;Onboarding&quot; | 
 | SOCIALLISTENING | &quot;SocialListening&quot; | 
-{: class="table table-striped"}
 
-
-<a name="ActionEnum"></a>
 
 ## Enum: ActionEnum
 
@@ -207,10 +198,7 @@ title: AuditTopicAuditLogMessage
 | INITIATE | &quot;Initiate&quot; | 
 | REVERSEMANUALLY | &quot;ReverseManually&quot; | 
 | PROVISIONED | &quot;Provisioned&quot; | 
-{: class="table table-striped"}
 
-
-<a name="EntityTypeEnum"></a>
 
 ## Enum: EntityTypeEnum
 
@@ -433,7 +421,8 @@ title: AuditTopicAuditLogMessage
 | JOURNEYVIEW | &quot;JourneyView&quot; | 
 | CUSTOMENTITY | &quot;CustomEntity&quot; | 
 | DIRECTORYFEATURE | &quot;DirectoryFeature&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,15 +1,13 @@
----
-title: CreateUploadSourceUrlJobRequest
----
-## CreateUploadSourceUrlJobRequest
+# CreateUploadSourceUrlJobRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **uploadUrl** | <!----><!---->**String**<!----> | The URL of the content to upload. |  |
-{: class="table table-striped"}
+| **uploadUrl** | **String** | The URL of the content to upload. |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

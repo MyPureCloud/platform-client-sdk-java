@@ -1,16 +1,14 @@
----
-title: MetadataDocumentation
----
-## MetadataDocumentation
+# MetadataDocumentation
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **description** | <!----><!---->**String**<!----> | description of the documentation |  [optional] |
-| **location** | <!----><!---->**String**<!----> | location where the documentation can be accessed |  [optional] |
-{: class="table table-striped"}
+| **description** | **String** | description of the documentation |  [optional] |
+| **location** | **String** | location where the documentation can be accessed |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

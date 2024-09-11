@@ -1,21 +1,15 @@
----
-title: WfmHistoricalShrinkageResponse
----
-## WfmHistoricalShrinkageResponse
+# WfmHistoricalShrinkageResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **operationId** | <!----><!---->**String**<!----> | The operationId for which to listen |  [optional] |
-| **downloadUrls** | <!----><!---->**List&lt;String&gt;**<!----> | The url list to GET the results of the Historical Shrinkage query. This field is populated only if query state is Complete |  [optional] |
-| **downloadResult** | <!----><!---->[**HistoricalShrinkageResultListing**](HistoricalShrinkageResultListing.html)<!----> | Result will always come via downloadUrls; however the schema is included for documentation |  [optional] |
-| **state** | [**StateEnum**](#StateEnum)<!----> | The state of the shrinkage query |  [optional] |
-{: class="table table-striped"}
+| **operationId** | **String** | The operationId for which to listen |  [optional] |
+| **downloadUrls** | **List&lt;String&gt;** | The url list to GET the results of the Historical Shrinkage query. This field is populated only if query state is Complete |  [optional] |
+| **downloadResult** | [**HistoricalShrinkageResultListing**](HistoricalShrinkageResultListing) | Result will always come via downloadUrls; however the schema is included for documentation |  [optional] |
+| **state** | [**StateEnum**](#Enum--StateEnum) | The state of the shrinkage query |  [optional] |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -25,7 +19,8 @@ title: WfmHistoricalShrinkageResponse
 | PROCESSING | &quot;Processing&quot; | 
 | COMPLETE | &quot;Complete&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,20 +1,14 @@
----
-title: AdminBulkUpdateAlternativeShiftTradeState
----
-## AdminBulkUpdateAlternativeShiftTradeState
+# AdminBulkUpdateAlternativeShiftTradeState
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **tradeId** | <!----><!---->**String**<!----> | The ID of the trade for this alternative shift trade |  |
-| **state** | [**StateEnum**](#StateEnum)<!----> | The new alternative shift trade state |  |
-| **metadata** | <!----><!---->[**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata.html)<!----> | Version metadata for this alternative shift trade |  |
-{: class="table table-striped"}
+| **tradeId** | **String** | The ID of the trade for this alternative shift trade |  |
+| **state** | [**StateEnum**](#Enum--StateEnum) | The new alternative shift trade state |  |
+| **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Version metadata for this alternative shift trade |  |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -23,7 +17,8 @@ title: AdminBulkUpdateAlternativeShiftTradeState
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | APPROVED | &quot;Approved&quot; | 
 | DENIED | &quot;Denied&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

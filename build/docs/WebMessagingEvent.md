@@ -1,20 +1,14 @@
----
-title: WebMessagingEvent
----
-## WebMessagingEvent
+# WebMessagingEvent
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **eventType** | [**EventTypeEnum**](#EventTypeEnum)<!----> | Type of this event element |  |
-| **coBrowse** | <!----><!---->[**WebMessagingEventCoBrowse**](WebMessagingEventCoBrowse.html)<!----> | Cobrowse event. |  [optional] |
-| **presence** | <!----><!---->[**WebMessagingEventPresence**](WebMessagingEventPresence.html)<!----> | Presence event. |  [optional] |
-{: class="table table-striped"}
+| **eventType** | [**EventTypeEnum**](#Enum--EventTypeEnum) | Type of this event element |  |
+| **coBrowse** | [**WebMessagingEventCoBrowse**](WebMessagingEventCoBrowse) | Cobrowse event. |  [optional] |
+| **presence** | [**WebMessagingEventPresence**](WebMessagingEventPresence) | Presence event. |  [optional] |
 
-
-<a name="EventTypeEnum"></a>
 
 ## Enum: EventTypeEnum
 
@@ -23,7 +17,8 @@ title: WebMessagingEvent
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | COBROWSE | &quot;CoBrowse&quot; | 
 | PRESENCE | &quot;Presence&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

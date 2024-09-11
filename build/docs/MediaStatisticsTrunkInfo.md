@@ -1,20 +1,14 @@
----
-title: MediaStatisticsTrunkInfo
----
-## MediaStatisticsTrunkInfo
+# MediaStatisticsTrunkInfo
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -33,7 +27,8 @@ title: MediaStatisticsTrunkInfo
 | STATION | &quot;station&quot; | 
 | STATION_CDM | &quot;station.cdm&quot; | 
 | STATION_CDM_WEBRTC | &quot;station.cdm.webrtc&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

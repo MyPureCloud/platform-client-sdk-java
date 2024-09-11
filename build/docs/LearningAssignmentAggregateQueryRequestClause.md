@@ -1,19 +1,13 @@
----
-title: LearningAssignmentAggregateQueryRequestClause
----
-## LearningAssignmentAggregateQueryRequestClause
+# LearningAssignmentAggregateQueryRequestClause
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | The logic used to combine the predicates |  |
-| **predicates** | <!----><!---->[**List&lt;LearningAssignmentAggregateQueryRequestPredicate&gt;**](LearningAssignmentAggregateQueryRequestPredicate.html)<!----> | The list of predicates used to filter the data |  |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | The logic used to combine the predicates |  |
+| **predicates** | [**List&lt;LearningAssignmentAggregateQueryRequestPredicate&gt;**](LearningAssignmentAggregateQueryRequestPredicate) | The list of predicates used to filter the data |  |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -22,7 +16,8 @@ title: LearningAssignmentAggregateQueryRequestClause
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | AND | &quot;And&quot; | 
 | OR | &quot;Or&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,22 +1,17 @@
----
-title: DownloadsApi
----
-## DownloadsApi
+# DownloadsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**getDownload**](DownloadsApi.html#getDownload) | Issues a redirect to a signed secure download URL for specified download |
+| [**getDownload**](DownloadsApi#getDownload) | Issues a redirect to a signed secure download URL for specified download |
 {: class="table-striped"}
 
-<a name="getDownload"></a>
 
 # **getDownload**
 
 
-
-> [UrlResponse](UrlResponse.html) getDownload(downloadId, contentDisposition, issueRedirect, redirectToAuth)
+> [UrlResponse](UrlResponse) getDownload(downloadId, contentDisposition, issueRedirect, redirectToAuth)
 
 Issues a redirect to a signed secure download URL for specified download
 
@@ -76,5 +71,7 @@ try {
 
 ### Return type
 
-[**UrlResponse**](UrlResponse.html)
+[**UrlResponse**](UrlResponse)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

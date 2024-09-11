@@ -1,26 +1,21 @@
----
-title: InfrastructureAsCodeApi
----
-## InfrastructureAsCodeApi
+# InfrastructureAsCodeApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**getInfrastructureascodeAccelerator**](InfrastructureAsCodeApi.html#getInfrastructureascodeAccelerator) | Get information about an accelerator |
-| [**getInfrastructureascodeAccelerators**](InfrastructureAsCodeApi.html#getInfrastructureascodeAccelerators) | Get a list of available accelerators |
-| [**getInfrastructureascodeJob**](InfrastructureAsCodeApi.html#getInfrastructureascodeJob) | Get job status and results |
-| [**getInfrastructureascodeJobs**](InfrastructureAsCodeApi.html#getInfrastructureascodeJobs) | Get job history |
-| [**postInfrastructureascodeJobs**](InfrastructureAsCodeApi.html#postInfrastructureascodeJobs) | Create a Job |
+| [**getInfrastructureascodeAccelerator**](InfrastructureAsCodeApi#getInfrastructureascodeAccelerator) | Get information about an accelerator |
+| [**getInfrastructureascodeAccelerators**](InfrastructureAsCodeApi#getInfrastructureascodeAccelerators) | Get a list of available accelerators |
+| [**getInfrastructureascodeJob**](InfrastructureAsCodeApi#getInfrastructureascodeJob) | Get job status and results |
+| [**getInfrastructureascodeJobs**](InfrastructureAsCodeApi#getInfrastructureascodeJobs) | Get job history |
+| [**postInfrastructureascodeJobs**](InfrastructureAsCodeApi#postInfrastructureascodeJobs) | Create a Job |
 {: class="table-striped"}
 
-<a name="getInfrastructureascodeAccelerator"></a>
 
 # **getInfrastructureascodeAccelerator**
 
 
-
-> [AcceleratorSpecification](AcceleratorSpecification.html) getInfrastructureascodeAccelerator(acceleratorId, preferredLanguage)
+> [AcceleratorSpecification](AcceleratorSpecification) getInfrastructureascodeAccelerator(acceleratorId, preferredLanguage)
 
 Get information about an accelerator
 
@@ -77,15 +72,13 @@ try {
 
 ### Return type
 
-[**AcceleratorSpecification**](AcceleratorSpecification.html)
+[**AcceleratorSpecification**](AcceleratorSpecification)
 
-<a name="getInfrastructureascodeAccelerators"></a>
 
 # **getInfrastructureascodeAccelerators**
 
 
-
-> [AcceleratorList](AcceleratorList.html) getInfrastructureascodeAccelerators(pageSize, pageNumber, sortBy, sortOrder, name, description, origin, type, classification, tags)
+> [AcceleratorList](AcceleratorList) getInfrastructureascodeAccelerators(pageSize, pageNumber, sortBy, sortOrder, name, description, origin, type, classification, tags)
 
 Get a list of available accelerators
 
@@ -158,15 +151,13 @@ try {
 
 ### Return type
 
-[**AcceleratorList**](AcceleratorList.html)
+[**AcceleratorList**](AcceleratorList)
 
-<a name="getInfrastructureascodeJob"></a>
 
 # **getInfrastructureascodeJob**
 
 
-
-> [InfrastructureascodeJob](InfrastructureascodeJob.html) getInfrastructureascodeJob(jobId, details)
+> [InfrastructureascodeJob](InfrastructureascodeJob) getInfrastructureascodeJob(jobId, details)
 
 Get job status and results
 
@@ -223,15 +214,13 @@ try {
 
 ### Return type
 
-[**InfrastructureascodeJob**](InfrastructureascodeJob.html)
+[**InfrastructureascodeJob**](InfrastructureascodeJob)
 
-<a name="getInfrastructureascodeJobs"></a>
 
 # **getInfrastructureascodeJobs**
 
 
-
-> [InfrastructureascodeJob](InfrastructureascodeJob.html) getInfrastructureascodeJobs(maxResults, includeErrors, sortBy, sortOrder, acceleratorId, submittedBy, status)
+> [InfrastructureascodeJob](InfrastructureascodeJob) getInfrastructureascodeJobs(maxResults, includeErrors, sortBy, sortOrder, acceleratorId, submittedBy, status)
 
 Get job history
 
@@ -298,15 +287,13 @@ try {
 
 ### Return type
 
-[**InfrastructureascodeJob**](InfrastructureascodeJob.html)
+[**InfrastructureascodeJob**](InfrastructureascodeJob)
 
-<a name="postInfrastructureascodeJobs"></a>
 
 # **postInfrastructureascodeJobs**
 
 
-
-> [InfrastructureascodeJob](InfrastructureascodeJob.html) postInfrastructureascodeJobs(body)
+> [InfrastructureascodeJob](InfrastructureascodeJob) postInfrastructureascodeJobs(body)
 
 Create a Job
 
@@ -355,11 +342,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**AcceleratorInput**](AcceleratorInput.html)|  | 
+| **body** | [**AcceleratorInput**](AcceleratorInput)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**InfrastructureascodeJob**](InfrastructureascodeJob.html)
+[**InfrastructureascodeJob**](InfrastructureascodeJob)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

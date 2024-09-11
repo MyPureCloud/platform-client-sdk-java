@@ -1,17 +1,15 @@
----
-title: QueueMessagingAddresses
----
-## QueueMessagingAddresses
+# QueueMessagingAddresses
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **smsAddress** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
-| **openMessagingRecipient** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
-| **whatsAppRecipient** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **smsAddress** | [**DomainEntityRef**](DomainEntityRef) |  |  [optional] |
+| **openMessagingRecipient** | [**DomainEntityRef**](DomainEntityRef) |  |  [optional] |
+| **whatsAppRecipient** | [**DomainEntityRef**](DomainEntityRef) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

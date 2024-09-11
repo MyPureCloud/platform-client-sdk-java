@@ -1,19 +1,13 @@
----
-title: BotAggregateQueryClause
----
-## BotAggregateQueryClause
+# BotAggregateQueryClause
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Boolean operation to apply to the provided predicates |  |
-| **predicates** | <!----><!---->[**List&lt;BotAggregateQueryPredicate&gt;**](BotAggregateQueryPredicate.html)<!----> | Like a three-word sentence: (attribute-name) (operator) (target-value). |  |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Boolean operation to apply to the provided predicates |  |
+| **predicates** | [**List&lt;BotAggregateQueryPredicate&gt;**](BotAggregateQueryPredicate) | Like a three-word sentence: (attribute-name) (operator) (target-value). |  |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -22,7 +16,8 @@ title: BotAggregateQueryClause
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | AND | &quot;and&quot; | 
 | OR | &quot;or&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

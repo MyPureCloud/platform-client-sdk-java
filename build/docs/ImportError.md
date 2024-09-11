@@ -1,16 +1,14 @@
----
-title: ImportError
----
-## ImportError
+# ImportError
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **message** | <!----><!---->**String**<!----> |  |  [optional] |
-| **line** | <!----><!---->**Integer**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **message** | **String** |  |  [optional] |
+| **line** | **Integer** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

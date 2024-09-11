@@ -1,23 +1,17 @@
----
-title: PhoneChangeTopicPhoneStatus
----
-## PhoneChangeTopicPhoneStatus
+# PhoneChangeTopicPhoneStatus
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **operationalStatus** | [**OperationalStatusEnum**](#OperationalStatusEnum)<!----> |  |  [optional] |
-| **edge** | <!----><!---->[**PhoneChangeTopicEdgeReference**](PhoneChangeTopicEdgeReference.html)<!----> |  |  [optional] |
-| **provision** | <!----><!---->[**PhoneChangeTopicProvisionInfo**](PhoneChangeTopicProvisionInfo.html)<!----> |  |  [optional] |
-| **lineStatuses** | <!----><!---->[**List&lt;PhoneChangeTopicLineStatus&gt;**](PhoneChangeTopicLineStatus.html)<!----> |  |  [optional] |
-| **eventCreationTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **operationalStatus** | [**OperationalStatusEnum**](#Enum--OperationalStatusEnum) |  |  [optional] |
+| **edge** | [**PhoneChangeTopicEdgeReference**](PhoneChangeTopicEdgeReference) |  |  [optional] |
+| **provision** | [**PhoneChangeTopicProvisionInfo**](PhoneChangeTopicProvisionInfo) |  |  [optional] |
+| **lineStatuses** | [**List&lt;PhoneChangeTopicLineStatus&gt;**](PhoneChangeTopicLineStatus) |  |  [optional] |
+| **eventCreationTime** | [**Date**](Date) |  |  [optional] |
 
-
-<a name="OperationalStatusEnum"></a>
 
 ## Enum: OperationalStatusEnum
 
@@ -27,7 +21,8 @@ title: PhoneChangeTopicPhoneStatus
 | OPERATIONAL | &quot;OPERATIONAL&quot; | 
 | DEGRADED | &quot;DEGRADED&quot; | 
 | OFFLINE | &quot;OFFLINE&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

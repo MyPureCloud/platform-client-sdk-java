@@ -1,19 +1,13 @@
----
-title: DocumentQueryClause
----
-## DocumentQueryClause
+# DocumentQueryClause
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | Specifies how the predicates will be applied together. |  |
-| **predicates** | <!----><!---->[**List&lt;DocumentQueryPredicate&gt;**](DocumentQueryPredicate.html)<!----> | To apply multiple conditions. Limit of 10 predicates across all clauses. |  |
-{: class="table table-striped"}
+| **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | Specifies how the predicates will be applied together. |  |
+| **predicates** | [**List&lt;DocumentQueryPredicate&gt;**](DocumentQueryPredicate) | To apply multiple conditions. Limit of 10 predicates across all clauses. |  |
 
-
-<a name="OperatorEnum"></a>
 
 ## Enum: OperatorEnum
 
@@ -22,7 +16,8 @@ title: DocumentQueryClause
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | OR | &quot;Or&quot; | 
 | AND | &quot;And&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

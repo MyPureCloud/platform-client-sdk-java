@@ -1,22 +1,16 @@
----
-title: EmailOutboundDomainResult
----
-## EmailOutboundDomainResult
+# EmailOutboundDomainResult
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **dnsCnameBounceRecord** | <!----><!---->[**DnsRecordEntry**](DnsRecordEntry.html)<!----> |  |  [optional] |
-| **dnsTxtSendingRecord** | <!----><!---->[**DnsRecordEntry**](DnsRecordEntry.html)<!----> |  |  [optional] |
-| **domainName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **senderStatus** | [**SenderStatusEnum**](#SenderStatusEnum)<!----> |  |  [optional] |
-| **senderType** | [**SenderTypeEnum**](#SenderTypeEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **dnsCnameBounceRecord** | [**DnsRecordEntry**](DnsRecordEntry) |  |  [optional] |
+| **dnsTxtSendingRecord** | [**DnsRecordEntry**](DnsRecordEntry) |  |  [optional] |
+| **domainName** | **String** |  |  [optional] |
+| **senderStatus** | [**SenderStatusEnum**](#Enum--SenderStatusEnum) |  |  [optional] |
+| **senderType** | [**SenderTypeEnum**](#Enum--SenderTypeEnum) |  |  [optional] |
 
-
-<a name="SenderStatusEnum"></a>
 
 ## Enum: SenderStatusEnum
 
@@ -28,10 +22,7 @@ title: EmailOutboundDomainResult
 | PROVISIONED | &quot;Provisioned&quot; | 
 | ERROR | &quot;Error&quot; | 
 | DEPROVISIONED | &quot;Deprovisioned&quot; | 
-{: class="table table-striped"}
 
-
-<a name="SenderTypeEnum"></a>
 
 ## Enum: SenderTypeEnum
 
@@ -41,7 +32,8 @@ title: EmailOutboundDomainResult
 | UNKNOWN | &quot;Unknown&quot; | 
 | EMAILDOMAIN | &quot;EmailDomain&quot; | 
 | MOCKEMAILDOMAIN | &quot;MockEmailDomain&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

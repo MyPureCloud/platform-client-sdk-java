@@ -1,21 +1,15 @@
----
-title: FlowActivityQueryPredicate
----
-## FlowActivityQueryPredicate
+# FlowActivityQueryPredicate
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Optional type, can usually be inferred |  [optional] |
-| **dimension** | [**DimensionEnum**](#DimensionEnum)<!----> | Left hand side for dimension predicates |  [optional] |
-| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | Optional operator, default is matches |  [optional] |
-| **value** | <!----><!---->**String**<!----> | Right hand side for dimension predicates |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Optional type, can usually be inferred |  [optional] |
+| **dimension** | [**DimensionEnum**](#Enum--DimensionEnum) | Left hand side for dimension predicates |  [optional] |
+| **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | Optional operator, default is matches |  [optional] |
+| **value** | **String** | Right hand side for dimension predicates |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -25,10 +19,7 @@ title: FlowActivityQueryPredicate
 | DIMENSION | &quot;dimension&quot; | 
 | PROPERTY | &quot;property&quot; | 
 | METRIC | &quot;metric&quot; | 
-{: class="table table-striped"}
 
-
-<a name="DimensionEnum"></a>
 
 ## Enum: DimensionEnum
 
@@ -59,10 +50,7 @@ title: FlowActivityQueryPredicate
 | TEAMID | &quot;teamId&quot; | 
 | USEDROUTING | &quot;usedRouting&quot; | 
 | USERID | &quot;userId&quot; | 
-{: class="table table-striped"}
 
-
-<a name="OperatorEnum"></a>
 
 ## Enum: OperatorEnum
 
@@ -72,7 +60,8 @@ title: FlowActivityQueryPredicate
 | MATCHES | &quot;matches&quot; | 
 | EXISTS | &quot;exists&quot; | 
 | NOTEXISTS | &quot;notExists&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

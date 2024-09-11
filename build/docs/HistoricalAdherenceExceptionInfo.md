@@ -1,28 +1,22 @@
----
-title: HistoricalAdherenceExceptionInfo
----
-## HistoricalAdherenceExceptionInfo
+# HistoricalAdherenceExceptionInfo
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **startOffsetSeconds** | <!----><!---->**Integer**<!----> | Exception start offset in seconds relative to query start time |  [optional] |
-| **endOffsetSeconds** | <!----><!---->**Integer**<!----> | Exception end offset in seconds relative to query start time |  [optional] |
-| **scheduledActivityCodeId** | <!----><!---->**String**<!----> | The ID of the scheduled activity code for this user |  [optional] |
-| **scheduledActivityCategory** | [**ScheduledActivityCategoryEnum**](#ScheduledActivityCategoryEnum)<!----> | Activity for which the user is scheduled |  [optional] |
-| **scheduledSecondaryPresenceLookupIds** | <!----><!---->**List&lt;String&gt;**<!----> | The lookup IDs used to retrieve the scheduled secondary statuses from map of lookup ID to corresponding secondary presence ID |  [optional] |
-| **actualActivityCodeId** | <!----><!---->**String**<!----> | The ID of the actual activity code for this user |  [optional] |
-| **actualActivityCategory** | [**ActualActivityCategoryEnum**](#ActualActivityCategoryEnum)<!----> | Activity for which the user is actually engaged |  [optional] |
-| **systemPresence** | [**SystemPresenceEnum**](#SystemPresenceEnum)<!----> | Actual underlying system presence value |  [optional] |
-| **routingStatus** | [**RoutingStatusEnum**](#RoutingStatusEnum)<!----> | Actual underlying routing status, used to determine whether a user is actually in adherence when OnQueue |  [optional] |
-| **impact** | [**ImpactEnum**](#ImpactEnum)<!----> | The impact of the current adherence state for this user |  [optional] |
-| **secondaryPresenceLookupId** | <!----><!---->**String**<!----> | The lookup ID used to retrieve the actual secondary status from map of lookup ID to corresponding secondary presence ID |  [optional] |
-{: class="table table-striped"}
+| **startOffsetSeconds** | **Integer** | Exception start offset in seconds relative to query start time |  [optional] |
+| **endOffsetSeconds** | **Integer** | Exception end offset in seconds relative to query start time |  [optional] |
+| **scheduledActivityCodeId** | **String** | The ID of the scheduled activity code for this user |  [optional] |
+| **scheduledActivityCategory** | [**ScheduledActivityCategoryEnum**](#Enum--ScheduledActivityCategoryEnum) | Activity for which the user is scheduled |  [optional] |
+| **scheduledSecondaryPresenceLookupIds** | **List&lt;String&gt;** | The lookup IDs used to retrieve the scheduled secondary statuses from map of lookup ID to corresponding secondary presence ID |  [optional] |
+| **actualActivityCodeId** | **String** | The ID of the actual activity code for this user |  [optional] |
+| **actualActivityCategory** | [**ActualActivityCategoryEnum**](#Enum--ActualActivityCategoryEnum) | Activity for which the user is actually engaged |  [optional] |
+| **systemPresence** | [**SystemPresenceEnum**](#Enum--SystemPresenceEnum) | Actual underlying system presence value |  [optional] |
+| **routingStatus** | [**RoutingStatusEnum**](#Enum--RoutingStatusEnum) | Actual underlying routing status, used to determine whether a user is actually in adherence when OnQueue |  [optional] |
+| **impact** | [**ImpactEnum**](#Enum--ImpactEnum) | The impact of the current adherence state for this user |  [optional] |
+| **secondaryPresenceLookupId** | **String** | The lookup ID used to retrieve the actual secondary status from map of lookup ID to corresponding secondary presence ID |  [optional] |
 
-
-<a name="ScheduledActivityCategoryEnum"></a>
 
 ## Enum: ScheduledActivityCategoryEnum
 
@@ -38,10 +32,7 @@ title: HistoricalAdherenceExceptionInfo
 | TRAINING | &quot;Training&quot; | 
 | UNAVAILABLE | &quot;Unavailable&quot; | 
 | UNSCHEDULED | &quot;Unscheduled&quot; | 
-{: class="table table-striped"}
 
-
-<a name="ActualActivityCategoryEnum"></a>
 
 ## Enum: ActualActivityCategoryEnum
 
@@ -57,10 +48,7 @@ title: HistoricalAdherenceExceptionInfo
 | TRAINING | &quot;Training&quot; | 
 | UNAVAILABLE | &quot;Unavailable&quot; | 
 | UNSCHEDULED | &quot;Unscheduled&quot; | 
-{: class="table table-striped"}
 
-
-<a name="SystemPresenceEnum"></a>
 
 ## Enum: SystemPresenceEnum
 
@@ -77,10 +65,7 @@ title: HistoricalAdherenceExceptionInfo
 | TRAINING | &quot;Training&quot; | 
 | MEETING | &quot;Meeting&quot; | 
 | BREAK | &quot;Break&quot; | 
-{: class="table table-striped"}
 
-
-<a name="RoutingStatusEnum"></a>
 
 ## Enum: RoutingStatusEnum
 
@@ -92,10 +77,7 @@ title: HistoricalAdherenceExceptionInfo
 | INTERACTING | &quot;INTERACTING&quot; | 
 | NOT_RESPONDING | &quot;NOT_RESPONDING&quot; | 
 | COMMUNICATING | &quot;COMMUNICATING&quot; | 
-{: class="table table-striped"}
 
-
-<a name="ImpactEnum"></a>
 
 ## Enum: ImpactEnum
 
@@ -106,7 +88,8 @@ title: HistoricalAdherenceExceptionInfo
 | NEGATIVE | &quot;Negative&quot; | 
 | NEUTRAL | &quot;Neutral&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

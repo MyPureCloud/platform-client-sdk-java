@@ -1,26 +1,20 @@
----
-title: WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate
----
-## WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate
+# WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **requestId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **dateImportStarted** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **dateImportEnded** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
-| **error** | <!----><!---->**String**<!----> |  |  [optional] |
-| **active** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **requestId** | **String** |  |  [optional] |
+| **dateImportStarted** | [**Date**](Date) |  |  [optional] |
+| **dateImportEnded** | [**Date**](Date) |  |  [optional] |
+| **dateCreated** | [**Date**](Date) |  |  [optional] |
+| **dateModified** | [**Date**](Date) |  |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
+| **error** | **String** |  |  [optional] |
+| **active** | **Boolean** |  |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -35,10 +29,7 @@ title: WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdat
 | CANCELLED | &quot;Cancelled&quot; | 
 | PURGED | &quot;Purged&quot; | 
 | PURGEPENDING | &quot;PurgePending&quot; | 
-{: class="table table-striped"}
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -47,7 +38,8 @@ title: WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdat
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | CSV | &quot;Csv&quot; | 
 | JSON | &quot;Json&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

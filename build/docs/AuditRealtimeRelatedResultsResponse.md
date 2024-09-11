@@ -1,15 +1,13 @@
----
-title: AuditRealtimeRelatedResultsResponse
----
-## AuditRealtimeRelatedResultsResponse
+# AuditRealtimeRelatedResultsResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | <!----><!---->[**List&lt;AuditLogMessage&gt;**](AuditLogMessage.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **entities** | [**List&lt;AuditLogMessage&gt;**](AuditLogMessage) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

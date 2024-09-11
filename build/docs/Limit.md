@@ -1,20 +1,14 @@
----
-title: Limit
----
-## Limit
+# Limit
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **key** | <!----><!---->**String**<!----> |  |  [optional] |
-| **namespace** | [**NamespaceEnum**](#NamespaceEnum)<!----> |  |  [optional] |
-| **value** | <!----><!---->**Long**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **key** | **String** |  |  [optional] |
+| **namespace** | [**NamespaceEnum**](#Enum--NamespaceEnum) |  |  [optional] |
+| **value** | **Long** |  |  [optional] |
 
-
-<a name="NamespaceEnum"></a>
 
 ## Enum: NamespaceEnum
 
@@ -90,7 +84,8 @@ title: Limit
 | WORKFORCE_MANAGEMENT_FORECAST | &quot;workforce.management.forecast&quot; | 
 | WORKFORCE_MANAGEMENT | &quot;workforce.management&quot; | 
 | SYSTEM | &quot;system&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

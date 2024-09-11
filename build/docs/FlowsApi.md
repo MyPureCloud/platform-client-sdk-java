@@ -1,27 +1,22 @@
----
-title: FlowsApi
----
-## FlowsApi
+# FlowsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**getAnalyticsFlowsAggregatesJob**](FlowsApi.html#getAnalyticsFlowsAggregatesJob) | Get status for async query for Flow aggregates |
-| [**getAnalyticsFlowsAggregatesJobResults**](FlowsApi.html#getAnalyticsFlowsAggregatesJobResults) | Fetch a page of results for an async aggregates query |
-| [**postAnalyticsFlowsActivityQuery**](FlowsApi.html#postAnalyticsFlowsActivityQuery) | Query for flow activity observations |
-| [**postAnalyticsFlowsAggregatesJobs**](FlowsApi.html#postAnalyticsFlowsAggregatesJobs) | Query for flow aggregates asynchronously |
-| [**postAnalyticsFlowsAggregatesQuery**](FlowsApi.html#postAnalyticsFlowsAggregatesQuery) | Query for flow aggregates |
-| [**postAnalyticsFlowsObservationsQuery**](FlowsApi.html#postAnalyticsFlowsObservationsQuery) | Query for flow observations |
+| [**getAnalyticsFlowsAggregatesJob**](FlowsApi#getAnalyticsFlowsAggregatesJob) | Get status for async query for Flow aggregates |
+| [**getAnalyticsFlowsAggregatesJobResults**](FlowsApi#getAnalyticsFlowsAggregatesJobResults) | Fetch a page of results for an async aggregates query |
+| [**postAnalyticsFlowsActivityQuery**](FlowsApi#postAnalyticsFlowsActivityQuery) | Query for flow activity observations |
+| [**postAnalyticsFlowsAggregatesJobs**](FlowsApi#postAnalyticsFlowsAggregatesJobs) | Query for flow aggregates asynchronously |
+| [**postAnalyticsFlowsAggregatesQuery**](FlowsApi#postAnalyticsFlowsAggregatesQuery) | Query for flow aggregates |
+| [**postAnalyticsFlowsObservationsQuery**](FlowsApi#postAnalyticsFlowsObservationsQuery) | Query for flow observations |
 {: class="table-striped"}
 
-<a name="getAnalyticsFlowsAggregatesJob"></a>
 
 # **getAnalyticsFlowsAggregatesJob**
 
 
-
-> [AsyncQueryStatus](AsyncQueryStatus.html) getAnalyticsFlowsAggregatesJob(jobId)
+> [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsFlowsAggregatesJob(jobId)
 
 Get status for async query for Flow aggregates
 
@@ -76,15 +71,13 @@ try {
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
-<a name="getAnalyticsFlowsAggregatesJobResults"></a>
 
 # **getAnalyticsFlowsAggregatesJobResults**
 
 
-
-> [FlowAsyncAggregateQueryResponse](FlowAsyncAggregateQueryResponse.html) getAnalyticsFlowsAggregatesJobResults(jobId, cursor)
+> [FlowAsyncAggregateQueryResponse](FlowAsyncAggregateQueryResponse) getAnalyticsFlowsAggregatesJobResults(jobId, cursor)
 
 Fetch a page of results for an async aggregates query
 
@@ -141,15 +134,13 @@ try {
 
 ### Return type
 
-[**FlowAsyncAggregateQueryResponse**](FlowAsyncAggregateQueryResponse.html)
+[**FlowAsyncAggregateQueryResponse**](FlowAsyncAggregateQueryResponse)
 
-<a name="postAnalyticsFlowsActivityQuery"></a>
 
 # **postAnalyticsFlowsActivityQuery**
 
 
-
-> [FlowActivityResponse](FlowActivityResponse.html) postAnalyticsFlowsActivityQuery(body, pageSize, pageNumber)
+> [FlowActivityResponse](FlowActivityResponse) postAnalyticsFlowsActivityQuery(body, pageSize, pageNumber)
 
 Query for flow activity observations
 
@@ -198,7 +189,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**FlowActivityQuery**](FlowActivityQuery.html)| query | 
+| **body** | [**FlowActivityQuery**](FlowActivityQuery)| query | 
 | **pageSize** | **Integer**| The desired page size | [optional] 
 | **pageNumber** | **Integer**| The desired page number | [optional] 
 {: class="table-striped"}
@@ -206,15 +197,13 @@ try {
 
 ### Return type
 
-[**FlowActivityResponse**](FlowActivityResponse.html)
+[**FlowActivityResponse**](FlowActivityResponse)
 
-<a name="postAnalyticsFlowsAggregatesJobs"></a>
 
 # **postAnalyticsFlowsAggregatesJobs**
 
 
-
-> [AsyncQueryResponse](AsyncQueryResponse.html) postAnalyticsFlowsAggregatesJobs(body)
+> [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsFlowsAggregatesJobs(body)
 
 Query for flow aggregates asynchronously
 
@@ -263,21 +252,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**FlowAsyncAggregationQuery**](FlowAsyncAggregationQuery.html)| query | 
+| **body** | [**FlowAsyncAggregationQuery**](FlowAsyncAggregationQuery)| query | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
-<a name="postAnalyticsFlowsAggregatesQuery"></a>
 
 # **postAnalyticsFlowsAggregatesQuery**
 
 
-
-> [FlowAggregateQueryResponse](FlowAggregateQueryResponse.html) postAnalyticsFlowsAggregatesQuery(body)
+> [FlowAggregateQueryResponse](FlowAggregateQueryResponse) postAnalyticsFlowsAggregatesQuery(body)
 
 Query for flow aggregates
 
@@ -324,21 +311,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**FlowAggregationQuery**](FlowAggregationQuery.html)| query | 
+| **body** | [**FlowAggregationQuery**](FlowAggregationQuery)| query | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**FlowAggregateQueryResponse**](FlowAggregateQueryResponse.html)
+[**FlowAggregateQueryResponse**](FlowAggregateQueryResponse)
 
-<a name="postAnalyticsFlowsObservationsQuery"></a>
 
 # **postAnalyticsFlowsObservationsQuery**
 
 
-
-> [FlowObservationQueryResponse](FlowObservationQueryResponse.html) postAnalyticsFlowsObservationsQuery(body)
+> [FlowObservationQueryResponse](FlowObservationQueryResponse) postAnalyticsFlowsObservationsQuery(body)
 
 Query for flow observations
 
@@ -385,11 +370,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**FlowObservationQuery**](FlowObservationQuery.html)| query | 
+| **body** | [**FlowObservationQuery**](FlowObservationQuery)| query | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**FlowObservationQueryResponse**](FlowObservationQueryResponse.html)
+[**FlowObservationQueryResponse**](FlowObservationQueryResponse)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

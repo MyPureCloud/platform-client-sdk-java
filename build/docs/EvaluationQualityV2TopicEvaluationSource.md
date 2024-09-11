@@ -1,17 +1,15 @@
----
-title: EvaluationQualityV2TopicEvaluationSource
----
-## EvaluationQualityV2TopicEvaluationSource
+# EvaluationQualityV2TopicEvaluationSource
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **evaluationSourceType** | <!----><!---->**String**<!----> |  |  [optional] |
-| **evaluationSourceId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **evaluationSourceName** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **evaluationSourceType** | **String** |  |  [optional] |
+| **evaluationSourceId** | **String** |  |  [optional] |
+| **evaluationSourceName** | **String** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

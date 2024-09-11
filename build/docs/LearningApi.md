@@ -1,53 +1,48 @@
----
-title: LearningApi
----
-## LearningApi
+# LearningApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteLearningAssignment**](LearningApi.html#deleteLearningAssignment) | Delete a learning assignment |
-| [**deleteLearningModule**](LearningApi.html#deleteLearningModule) | Delete a learning module |
-| [**getLearningAssignment**](LearningApi.html#getLearningAssignment) | Get Learning Assignment |
-| [**getLearningAssignmentStep**](LearningApi.html#getLearningAssignmentStep) | Get Learning Assignment Step |
-| [**getLearningAssignments**](LearningApi.html#getLearningAssignments) | List of Learning module Assignments |
-| [**getLearningAssignmentsMe**](LearningApi.html#getLearningAssignmentsMe) | List of Learning Assignments assigned to current user |
-| [**getLearningModule**](LearningApi.html#getLearningModule) | Get a learning module |
-| [**getLearningModuleJob**](LearningApi.html#getLearningModuleJob) | Get a specific Learning Module job status |
-| [**getLearningModulePreview**](LearningApi.html#getLearningModulePreview) | Get a learning module preview |
-| [**getLearningModuleRule**](LearningApi.html#getLearningModuleRule) | Get a learning module rule |
-| [**getLearningModuleVersion**](LearningApi.html#getLearningModuleVersion) | Get specific version of a published module |
-| [**getLearningModules**](LearningApi.html#getLearningModules) | Get all learning modules of an organization |
-| [**getLearningModulesAssignments**](LearningApi.html#getLearningModulesAssignments) | Get all learning modules of an organization including assignments for a specific user |
-| [**getLearningModulesCoverartCoverArtId**](LearningApi.html#getLearningModulesCoverartCoverArtId) | Get a specific Learning Module cover art using ID |
-| [**getLearningScormScormId**](LearningApi.html#getLearningScormScormId) | Get Learning SCORM Result |
-| [**patchLearningAssignment**](LearningApi.html#patchLearningAssignment) | Update Learning Assignment |
-| [**patchLearningAssignmentReschedule**](LearningApi.html#patchLearningAssignmentReschedule) | Reschedule Learning Assignment |
-| [**patchLearningAssignmentStep**](LearningApi.html#patchLearningAssignmentStep) | Update Learning Assignment Step |
-| [**patchLearningModuleUserAssignments**](LearningApi.html#patchLearningModuleUserAssignments) | Update an external assignment for a specific user |
-| [**postLearningAssessmentsScoring**](LearningApi.html#postLearningAssessmentsScoring) | Score learning assessment for preview |
-| [**postLearningAssignmentReassign**](LearningApi.html#postLearningAssignmentReassign) | Reassign Learning Assignment |
-| [**postLearningAssignmentReset**](LearningApi.html#postLearningAssignmentReset) | Reset Learning Assignment |
-| [**postLearningAssignments**](LearningApi.html#postLearningAssignments) | Create Learning Assignment |
-| [**postLearningAssignmentsAggregatesQuery**](LearningApi.html#postLearningAssignmentsAggregatesQuery) | Retrieve aggregated assignment data |
-| [**postLearningAssignmentsBulkadd**](LearningApi.html#postLearningAssignmentsBulkadd) | Add multiple learning assignments |
-| [**postLearningAssignmentsBulkremove**](LearningApi.html#postLearningAssignmentsBulkremove) | Remove multiple Learning Assignments |
-| [**postLearningModuleJobs**](LearningApi.html#postLearningModuleJobs) | Starts a specified operation on learning module |
-| [**postLearningModulePublish**](LearningApi.html#postLearningModulePublish) | Publish a Learning module |
-| [**postLearningModules**](LearningApi.html#postLearningModules) | Create a new learning module |
-| [**postLearningRulesQuery**](LearningApi.html#postLearningRulesQuery) | Get users for learning module rule |
-| [**postLearningScheduleslotsQuery**](LearningApi.html#postLearningScheduleslotsQuery) | Get list of possible slots where a learning activity can be scheduled. |
-| [**postLearningScorm**](LearningApi.html#postLearningScorm) | Create a SCORM package upload request |
-| [**putLearningModule**](LearningApi.html#putLearningModule) | Update a learning module |
-| [**putLearningModulePreview**](LearningApi.html#putLearningModulePreview) | Update a learning module preview |
-| [**putLearningModuleRule**](LearningApi.html#putLearningModuleRule) | Update a learning module rule |
+| [**deleteLearningAssignment**](LearningApi#deleteLearningAssignment) | Delete a learning assignment |
+| [**deleteLearningModule**](LearningApi#deleteLearningModule) | Delete a learning module |
+| [**getLearningAssignment**](LearningApi#getLearningAssignment) | Get Learning Assignment |
+| [**getLearningAssignmentStep**](LearningApi#getLearningAssignmentStep) | Get Learning Assignment Step |
+| [**getLearningAssignments**](LearningApi#getLearningAssignments) | List of Learning module Assignments |
+| [**getLearningAssignmentsMe**](LearningApi#getLearningAssignmentsMe) | List of Learning Assignments assigned to current user |
+| [**getLearningModule**](LearningApi#getLearningModule) | Get a learning module |
+| [**getLearningModuleJob**](LearningApi#getLearningModuleJob) | Get a specific Learning Module job status |
+| [**getLearningModulePreview**](LearningApi#getLearningModulePreview) | Get a learning module preview |
+| [**getLearningModuleRule**](LearningApi#getLearningModuleRule) | Get a learning module rule |
+| [**getLearningModuleVersion**](LearningApi#getLearningModuleVersion) | Get specific version of a published module |
+| [**getLearningModules**](LearningApi#getLearningModules) | Get all learning modules of an organization |
+| [**getLearningModulesAssignments**](LearningApi#getLearningModulesAssignments) | Get all learning modules of an organization including assignments for a specific user |
+| [**getLearningModulesCoverartCoverArtId**](LearningApi#getLearningModulesCoverartCoverArtId) | Get a specific Learning Module cover art using ID |
+| [**getLearningScormScormId**](LearningApi#getLearningScormScormId) | Get Learning SCORM Result |
+| [**patchLearningAssignment**](LearningApi#patchLearningAssignment) | Update Learning Assignment |
+| [**patchLearningAssignmentReschedule**](LearningApi#patchLearningAssignmentReschedule) | Reschedule Learning Assignment |
+| [**patchLearningAssignmentStep**](LearningApi#patchLearningAssignmentStep) | Update Learning Assignment Step |
+| [**patchLearningModuleUserAssignments**](LearningApi#patchLearningModuleUserAssignments) | Update an external assignment for a specific user |
+| [**postLearningAssessmentsScoring**](LearningApi#postLearningAssessmentsScoring) | Score learning assessment for preview |
+| [**postLearningAssignmentReassign**](LearningApi#postLearningAssignmentReassign) | Reassign Learning Assignment |
+| [**postLearningAssignmentReset**](LearningApi#postLearningAssignmentReset) | Reset Learning Assignment |
+| [**postLearningAssignments**](LearningApi#postLearningAssignments) | Create Learning Assignment |
+| [**postLearningAssignmentsAggregatesQuery**](LearningApi#postLearningAssignmentsAggregatesQuery) | Retrieve aggregated assignment data |
+| [**postLearningAssignmentsBulkadd**](LearningApi#postLearningAssignmentsBulkadd) | Add multiple learning assignments |
+| [**postLearningAssignmentsBulkremove**](LearningApi#postLearningAssignmentsBulkremove) | Remove multiple Learning Assignments |
+| [**postLearningModuleJobs**](LearningApi#postLearningModuleJobs) | Starts a specified operation on learning module |
+| [**postLearningModulePublish**](LearningApi#postLearningModulePublish) | Publish a Learning module |
+| [**postLearningModules**](LearningApi#postLearningModules) | Create a new learning module |
+| [**postLearningRulesQuery**](LearningApi#postLearningRulesQuery) | Get users for learning module rule |
+| [**postLearningScheduleslotsQuery**](LearningApi#postLearningScheduleslotsQuery) | Get list of possible slots where a learning activity can be scheduled. |
+| [**postLearningScorm**](LearningApi#postLearningScorm) | Create a SCORM package upload request |
+| [**putLearningModule**](LearningApi#putLearningModule) | Update a learning module |
+| [**putLearningModulePreview**](LearningApi#putLearningModulePreview) | Update a learning module preview |
+| [**putLearningModuleRule**](LearningApi#putLearningModuleRule) | Update a learning module rule |
 {: class="table-striped"}
 
-<a name="deleteLearningAssignment"></a>
 
 # **deleteLearningAssignment**
-
 
 
 > Void deleteLearningAssignment(assignmentId)
@@ -104,10 +99,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteLearningModule"></a>
 
 # **deleteLearningModule**
-
 
 
 > Void deleteLearningModule(moduleId)
@@ -166,13 +159,11 @@ try {
 
 null (empty response body)
 
-<a name="getLearningAssignment"></a>
 
 # **getLearningAssignment**
 
 
-
-> [LearningAssignment](LearningAssignment.html) getLearningAssignment(assignmentId, expand)
+> [LearningAssignment](LearningAssignment) getLearningAssignment(assignmentId, expand)
 
 Get Learning Assignment
 
@@ -223,21 +214,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **assignmentId** | **String**| The ID of Learning Assignment | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in response | [optional]<br />**Values**: module, assessment, assessmentForm, module.coverArt, step, step.moduleStep 
+| **expand** | [**List&lt;String&gt;**](String)| Fields to expand in response | [optional]<br />**Values**: module, assessment, assessmentForm, module.coverArt, step, step.moduleStep 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LearningAssignment**](LearningAssignment.html)
+[**LearningAssignment**](LearningAssignment)
 
-<a name="getLearningAssignmentStep"></a>
 
 # **getLearningAssignmentStep**
 
 
-
-> [LearningAssignmentStep](LearningAssignmentStep.html) getLearningAssignmentStep(assignmentId, stepId, shareableContentObjectId, defaultShareableContentObject, expand)
+> [LearningAssignmentStep](LearningAssignmentStep) getLearningAssignmentStep(assignmentId, stepId, shareableContentObjectId, defaultShareableContentObject, expand)
 
 Get Learning Assignment Step
 
@@ -294,21 +283,19 @@ try {
 | **stepId** | **String**| The ID of Learning Assignment Step | 
 | **shareableContentObjectId** | **String**| The ID of SCO to load | [optional] 
 | **defaultShareableContentObject** | **String**| The default SCO to retrieve | [optional]<br />**Values**: First, Last, Next 
-| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in response | [optional]<br />**Values**: moduleStep 
+| **expand** | [**List&lt;String&gt;**](String)| Fields to expand in response | [optional]<br />**Values**: moduleStep 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LearningAssignmentStep**](LearningAssignmentStep.html)
+[**LearningAssignmentStep**](LearningAssignmentStep)
 
-<a name="getLearningAssignments"></a>
 
 # **getLearningAssignments**
 
 
-
-> [LearningAssignmentsDomainEntity](LearningAssignmentsDomainEntity.html) getLearningAssignments(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, pass, minPercentageScore, maxPercentageScore, sortOrder, sortBy, userId, types, states, expand)
+> [LearningAssignmentsDomainEntity](LearningAssignmentsDomainEntity) getLearningAssignments(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, pass, minPercentageScore, maxPercentageScore, sortOrder, sortBy, userId, types, states, expand)
 
 List of Learning module Assignments
 
@@ -382,24 +369,22 @@ try {
 | **maxPercentageScore** | **Float**| The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional] 
 | **sortOrder** | **String**| Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc 
 | **sortBy** | **String**| Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional]<br />**Values**: RecommendedCompletionDate, DateModified 
-| **userId** | [**List&lt;String&gt;**](String.html)| Specifies the list of user IDs to be queried, up to 100 user IDs. | [optional] 
-| **types** | [**List&lt;String&gt;**](String.html)| Specifies the module types to filter by. Informational, AssessedContent and Assessment are deprecated | [optional]<br />**Values**: Informational, AssessedContent, Assessment, External, Native 
-| **states** | [**List&lt;String&gt;**](String.html)| Specifies the assignment states to filter by | [optional]<br />**Values**: Assigned, InProgress, Completed, NotCompleted, InvalidSchedule 
-| **expand** | [**List&lt;String&gt;**](String.html)| Specifies the expand option for returning additional information | [optional]<br />**Values**: ModuleSummary 
+| **userId** | [**List&lt;String&gt;**](String)| Specifies the list of user IDs to be queried, up to 100 user IDs. | [optional] 
+| **types** | [**List&lt;String&gt;**](String)| Specifies the module types to filter by. Informational, AssessedContent and Assessment are deprecated | [optional]<br />**Values**: Informational, AssessedContent, Assessment, External, Native 
+| **states** | [**List&lt;String&gt;**](String)| Specifies the assignment states to filter by | [optional]<br />**Values**: Assigned, InProgress, Completed, NotCompleted, InvalidSchedule 
+| **expand** | [**List&lt;String&gt;**](String)| Specifies the expand option for returning additional information | [optional]<br />**Values**: ModuleSummary 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LearningAssignmentsDomainEntity**](LearningAssignmentsDomainEntity.html)
+[**LearningAssignmentsDomainEntity**](LearningAssignmentsDomainEntity)
 
-<a name="getLearningAssignmentsMe"></a>
 
 # **getLearningAssignmentsMe**
 
 
-
-> [LearningAssignmentsDomainEntity](LearningAssignmentsDomainEntity.html) getLearningAssignmentsMe(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, pass, minPercentageScore, maxPercentageScore, sortOrder, sortBy, types, states, expand)
+> [LearningAssignmentsDomainEntity](LearningAssignmentsDomainEntity) getLearningAssignmentsMe(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, pass, minPercentageScore, maxPercentageScore, sortOrder, sortBy, types, states, expand)
 
 List of Learning Assignments assigned to current user
 
@@ -469,23 +454,21 @@ try {
 | **maxPercentageScore** | **Float**| The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional] 
 | **sortOrder** | **String**| Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc 
 | **sortBy** | **String**| Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional]<br />**Values**: RecommendedCompletionDate, DateModified 
-| **types** | [**List&lt;String&gt;**](String.html)| Specifies the module types to filter by. Informational, AssessedContent and Assessment are deprecated | [optional]<br />**Values**: Informational, AssessedContent, Assessment, External, Native 
-| **states** | [**List&lt;String&gt;**](String.html)| Specifies the assignment states to filter by | [optional]<br />**Values**: Assigned, InProgress, Completed, NotCompleted, InvalidSchedule 
-| **expand** | [**List&lt;String&gt;**](String.html)| Specifies the expand option for returning additional information | [optional]<br />**Values**: ModuleSummary 
+| **types** | [**List&lt;String&gt;**](String)| Specifies the module types to filter by. Informational, AssessedContent and Assessment are deprecated | [optional]<br />**Values**: Informational, AssessedContent, Assessment, External, Native 
+| **states** | [**List&lt;String&gt;**](String)| Specifies the assignment states to filter by | [optional]<br />**Values**: Assigned, InProgress, Completed, NotCompleted, InvalidSchedule 
+| **expand** | [**List&lt;String&gt;**](String)| Specifies the expand option for returning additional information | [optional]<br />**Values**: ModuleSummary 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LearningAssignmentsDomainEntity**](LearningAssignmentsDomainEntity.html)
+[**LearningAssignmentsDomainEntity**](LearningAssignmentsDomainEntity)
 
-<a name="getLearningModule"></a>
 
 # **getLearningModule**
 
 
-
-> [LearningModule](LearningModule.html) getLearningModule(moduleId, expand)
+> [LearningModule](LearningModule) getLearningModule(moduleId, expand)
 
 Get a learning module
 
@@ -534,21 +517,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **moduleId** | **String**| The ID of the learning module | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in response(case insensitive) | [optional]<br />**Values**: assessmentForm, coverArt 
+| **expand** | [**List&lt;String&gt;**](String)| Fields to expand in response(case insensitive) | [optional]<br />**Values**: assessmentForm, coverArt 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LearningModule**](LearningModule.html)
+[**LearningModule**](LearningModule)
 
-<a name="getLearningModuleJob"></a>
 
 # **getLearningModuleJob**
 
 
-
-> [LearningModuleJobResponse](LearningModuleJobResponse.html) getLearningModuleJob(moduleId, jobId)
+> [LearningModuleJobResponse](LearningModuleJobResponse) getLearningModuleJob(moduleId, jobId)
 
 Get a specific Learning Module job status
 
@@ -603,15 +584,13 @@ try {
 
 ### Return type
 
-[**LearningModuleJobResponse**](LearningModuleJobResponse.html)
+[**LearningModuleJobResponse**](LearningModuleJobResponse)
 
-<a name="getLearningModulePreview"></a>
 
 # **getLearningModulePreview**
 
 
-
-> [LearningModulePreviewGetResponse](LearningModulePreviewGetResponse.html) getLearningModulePreview(moduleId)
+> [LearningModulePreviewGetResponse](LearningModulePreviewGetResponse) getLearningModulePreview(moduleId)
 
 Get a learning module preview
 
@@ -664,15 +643,13 @@ try {
 
 ### Return type
 
-[**LearningModulePreviewGetResponse**](LearningModulePreviewGetResponse.html)
+[**LearningModulePreviewGetResponse**](LearningModulePreviewGetResponse)
 
-<a name="getLearningModuleRule"></a>
 
 # **getLearningModuleRule**
 
 
-
-> [LearningModuleRule](LearningModuleRule.html) getLearningModuleRule(moduleId)
+> [LearningModuleRule](LearningModuleRule) getLearningModuleRule(moduleId)
 
 Get a learning module rule
 
@@ -725,15 +702,13 @@ try {
 
 ### Return type
 
-[**LearningModuleRule**](LearningModuleRule.html)
+[**LearningModuleRule**](LearningModuleRule)
 
-<a name="getLearningModuleVersion"></a>
 
 # **getLearningModuleVersion**
 
 
-
-> [LearningModule](LearningModule.html) getLearningModuleVersion(moduleId, versionId, expand)
+> [LearningModule](LearningModule) getLearningModuleVersion(moduleId, versionId, expand)
 
 Get specific version of a published module
 
@@ -784,21 +759,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **moduleId** | **String**| The ID of the learning module | 
 | **versionId** | **String**| The version of learning module | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in response(case insensitive) | [optional]<br />**Values**: assessmentForm, coverArt 
+| **expand** | [**List&lt;String&gt;**](String)| Fields to expand in response(case insensitive) | [optional]<br />**Values**: assessmentForm, coverArt 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LearningModule**](LearningModule.html)
+[**LearningModule**](LearningModule)
 
-<a name="getLearningModules"></a>
 
 # **getLearningModules**
 
 
-
-> [LearningModulesDomainEntityListing](LearningModulesDomainEntityListing.html) getLearningModules(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses, externalIds)
+> [LearningModulesDomainEntityListing](LearningModulesDomainEntityListing) getLearningModules(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses, externalIds)
 
 Get all learning modules of an organization
 
@@ -856,30 +829,28 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **isArchived** | **Boolean**| Archive status | [optional] [default to false] 
-| **types** | [**List&lt;String&gt;**](String.html)| Specifies the module types. Informational, AssessedContent and Assessment are deprecated | [optional]<br />**Values**: Informational, AssessedContent, Assessment, External, Native 
+| **types** | [**List&lt;String&gt;**](String)| Specifies the module types. Informational, AssessedContent and Assessment are deprecated | [optional]<br />**Values**: Informational, AssessedContent, Assessment, External, Native 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **sortOrder** | **String**| Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending 
 | **sortBy** | **String**| Sort by | [optional] [default to name]<br />**Values**: name, createddate, percentpassed, averagescore 
 | **searchTerm** | **String**| Search Term (searchable by name) | [optional] 
-| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in response(case insensitive) | [optional]<br />**Values**: rule, summaryData 
+| **expand** | [**List&lt;String&gt;**](String)| Fields to expand in response(case insensitive) | [optional]<br />**Values**: rule, summaryData 
 | **isPublished** | **String**| Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned | [optional] [default to Any]<br />**Values**: True, False, Any 
-| **statuses** | [**List&lt;String&gt;**](String.html)| Specifies the module statuses to filter by | [optional]<br />**Values**: Unpublished, Published, Archived 
-| **externalIds** | [**List&lt;String&gt;**](String.html)| Specifies the module external IDs to filter by. Only one ID is allowed | [optional] 
+| **statuses** | [**List&lt;String&gt;**](String)| Specifies the module statuses to filter by | [optional]<br />**Values**: Unpublished, Published, Archived 
+| **externalIds** | [**List&lt;String&gt;**](String)| Specifies the module external IDs to filter by. Only one ID is allowed | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LearningModulesDomainEntityListing**](LearningModulesDomainEntityListing.html)
+[**LearningModulesDomainEntityListing**](LearningModulesDomainEntityListing)
 
-<a name="getLearningModulesAssignments"></a>
 
 # **getLearningModulesAssignments**
 
 
-
-> [AssignedLearningModuleDomainEntityListing](AssignedLearningModuleDomainEntityListing.html) getLearningModulesAssignments(userIds, pageSize, pageNumber, searchTerm, overdue, assignmentStates, expand)
+> [AssignedLearningModuleDomainEntityListing](AssignedLearningModuleDomainEntityListing) getLearningModulesAssignments(userIds, pageSize, pageNumber, searchTerm, overdue, assignmentStates, expand)
 
 Get all learning modules of an organization including assignments for a specific user
 
@@ -933,27 +904,25 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userIds** | [**List&lt;String&gt;**](String.html)| The IDs of the users to include | 
+| **userIds** | [**List&lt;String&gt;**](String)| The IDs of the users to include | 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **searchTerm** | **String**| Search Term (searches by name and description) | [optional] 
 | **overdue** | **String**| Specifies if only modules with overdue/not overdue (overdue is \&quot;True\&quot; or \&quot;False\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or omitted, both are returned and can including modules that are unassigned. | [optional] [default to Any]<br />**Values**: True, False, Any 
-| **assignmentStates** | [**List&lt;String&gt;**](String.html)| Specifies the assignment states to return. | [optional]<br />**Values**: NotAssigned, Assigned, InProgress, Completed, InvalidSchedule 
-| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in response(case insensitive) | [optional]<br />**Values**: coverArt 
+| **assignmentStates** | [**List&lt;String&gt;**](String)| Specifies the assignment states to return. | [optional]<br />**Values**: NotAssigned, Assigned, InProgress, Completed, InvalidSchedule 
+| **expand** | [**List&lt;String&gt;**](String)| Fields to expand in response(case insensitive) | [optional]<br />**Values**: coverArt 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AssignedLearningModuleDomainEntityListing**](AssignedLearningModuleDomainEntityListing.html)
+[**AssignedLearningModuleDomainEntityListing**](AssignedLearningModuleDomainEntityListing)
 
-<a name="getLearningModulesCoverartCoverArtId"></a>
 
 # **getLearningModulesCoverartCoverArtId**
 
 
-
-> [LearningModuleCoverArtResponse](LearningModuleCoverArtResponse.html) getLearningModulesCoverartCoverArtId(coverArtId)
+> [LearningModuleCoverArtResponse](LearningModuleCoverArtResponse) getLearningModulesCoverartCoverArtId(coverArtId)
 
 Get a specific Learning Module cover art using ID
 
@@ -1006,15 +975,13 @@ try {
 
 ### Return type
 
-[**LearningModuleCoverArtResponse**](LearningModuleCoverArtResponse.html)
+[**LearningModuleCoverArtResponse**](LearningModuleCoverArtResponse)
 
-<a name="getLearningScormScormId"></a>
 
 # **getLearningScormScormId**
 
 
-
-> [LearningScormResponse](LearningScormResponse.html) getLearningScormScormId(scormId)
+> [LearningScormResponse](LearningScormResponse) getLearningScormScormId(scormId)
 
 Get Learning SCORM Result
 
@@ -1067,15 +1034,13 @@ try {
 
 ### Return type
 
-[**LearningScormResponse**](LearningScormResponse.html)
+[**LearningScormResponse**](LearningScormResponse)
 
-<a name="patchLearningAssignment"></a>
 
 # **patchLearningAssignment**
 
 
-
-> [LearningAssignment](LearningAssignment.html) patchLearningAssignment(assignmentId, body)
+> [LearningAssignment](LearningAssignment) patchLearningAssignment(assignmentId, body)
 
 Update Learning Assignment
 
@@ -1123,21 +1088,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **assignmentId** | **String**| The ID of Learning Assignment | 
-| **body** | [**LearningAssignmentUpdate**](LearningAssignmentUpdate.html)| The Learning Assignment to be updated | [optional] 
+| **body** | [**LearningAssignmentUpdate**](LearningAssignmentUpdate)| The Learning Assignment to be updated | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LearningAssignment**](LearningAssignment.html)
+[**LearningAssignment**](LearningAssignment)
 
-<a name="patchLearningAssignmentReschedule"></a>
 
 # **patchLearningAssignmentReschedule**
 
 
-
-> [LearningAssignment](LearningAssignment.html) patchLearningAssignmentReschedule(assignmentId, body)
+> [LearningAssignment](LearningAssignment) patchLearningAssignmentReschedule(assignmentId, body)
 
 Reschedule Learning Assignment
 
@@ -1186,21 +1149,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **assignmentId** | **String**| The ID of Learning Assignment | 
-| **body** | [**LearningAssignmentReschedule**](LearningAssignmentReschedule.html)| The Learning assignment reschedule model | [optional] 
+| **body** | [**LearningAssignmentReschedule**](LearningAssignmentReschedule)| The Learning assignment reschedule model | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LearningAssignment**](LearningAssignment.html)
+[**LearningAssignment**](LearningAssignment)
 
-<a name="patchLearningAssignmentStep"></a>
 
 # **patchLearningAssignmentStep**
 
 
-
-> [LearningAssignmentStep](LearningAssignmentStep.html) patchLearningAssignmentStep(assignmentId, stepId, body)
+> [LearningAssignmentStep](LearningAssignmentStep) patchLearningAssignmentStep(assignmentId, stepId, body)
 
 Update Learning Assignment Step
 
@@ -1253,21 +1214,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **assignmentId** | **String**| The ID of Learning Assignment | 
 | **stepId** | **String**| The ID of Learning Assignment Step | 
-| **body** | [**LearningAssignmentStep**](LearningAssignmentStep.html)| The Learning Assignment Step to be updated | [optional] 
+| **body** | [**LearningAssignmentStep**](LearningAssignmentStep)| The Learning Assignment Step to be updated | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LearningAssignmentStep**](LearningAssignmentStep.html)
+[**LearningAssignmentStep**](LearningAssignmentStep)
 
-<a name="patchLearningModuleUserAssignments"></a>
 
 # **patchLearningModuleUserAssignments**
 
 
-
-> [LearningAssignment](LearningAssignment.html) patchLearningModuleUserAssignments(moduleId, userId, body)
+> [LearningAssignment](LearningAssignment) patchLearningModuleUserAssignments(moduleId, userId, body)
 
 Update an external assignment for a specific user
 
@@ -1318,21 +1277,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **moduleId** | **String**| Key identifier for the module | 
 | **userId** | **String**| Key identifier for the user | 
-| **body** | [**LearningAssignmentExternalUpdate**](LearningAssignmentExternalUpdate.html)| The learning request for updating the assignment | 
+| **body** | [**LearningAssignmentExternalUpdate**](LearningAssignmentExternalUpdate)| The learning request for updating the assignment | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LearningAssignment**](LearningAssignment.html)
+[**LearningAssignment**](LearningAssignment)
 
-<a name="postLearningAssessmentsScoring"></a>
 
 # **postLearningAssessmentsScoring**
 
 
-
-> [AssessmentScoringSet](AssessmentScoringSet.html) postLearningAssessmentsScoring(body)
+> [AssessmentScoringSet](AssessmentScoringSet) postLearningAssessmentsScoring(body)
 
 Score learning assessment for preview
 
@@ -1381,21 +1338,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**LearningAssessmentScoringRequest**](LearningAssessmentScoringRequest.html)| Assessment form and answers to score | 
+| **body** | [**LearningAssessmentScoringRequest**](LearningAssessmentScoringRequest)| Assessment form and answers to score | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AssessmentScoringSet**](AssessmentScoringSet.html)
+[**AssessmentScoringSet**](AssessmentScoringSet)
 
-<a name="postLearningAssignmentReassign"></a>
 
 # **postLearningAssignmentReassign**
 
 
-
-> [LearningAssignment](LearningAssignment.html) postLearningAssignmentReassign(assignmentId)
+> [LearningAssignment](LearningAssignment) postLearningAssignmentReassign(assignmentId)
 
 Reassign Learning Assignment
 
@@ -1450,15 +1405,13 @@ try {
 
 ### Return type
 
-[**LearningAssignment**](LearningAssignment.html)
+[**LearningAssignment**](LearningAssignment)
 
-<a name="postLearningAssignmentReset"></a>
 
 # **postLearningAssignmentReset**
 
 
-
-> [LearningAssignment](LearningAssignment.html) postLearningAssignmentReset(assignmentId)
+> [LearningAssignment](LearningAssignment) postLearningAssignmentReset(assignmentId)
 
 Reset Learning Assignment
 
@@ -1513,15 +1466,13 @@ try {
 
 ### Return type
 
-[**LearningAssignment**](LearningAssignment.html)
+[**LearningAssignment**](LearningAssignment)
 
-<a name="postLearningAssignments"></a>
 
 # **postLearningAssignments**
 
 
-
-> [LearningAssignment](LearningAssignment.html) postLearningAssignments(body)
+> [LearningAssignment](LearningAssignment) postLearningAssignments(body)
 
 Create Learning Assignment
 
@@ -1568,21 +1519,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**LearningAssignmentCreate**](LearningAssignmentCreate.html)| The Learning Assignment to be created | [optional] 
+| **body** | [**LearningAssignmentCreate**](LearningAssignmentCreate)| The Learning Assignment to be created | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LearningAssignment**](LearningAssignment.html)
+[**LearningAssignment**](LearningAssignment)
 
-<a name="postLearningAssignmentsAggregatesQuery"></a>
 
 # **postLearningAssignmentsAggregatesQuery**
 
 
-
-> [LearningAssignmentAggregateResponse](LearningAssignmentAggregateResponse.html) postLearningAssignmentsAggregatesQuery(body)
+> [LearningAssignmentAggregateResponse](LearningAssignmentAggregateResponse) postLearningAssignmentsAggregatesQuery(body)
 
 Retrieve aggregated assignment data
 
@@ -1629,21 +1578,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**LearningAssignmentAggregateParam**](LearningAssignmentAggregateParam.html)| Aggregate Request | 
+| **body** | [**LearningAssignmentAggregateParam**](LearningAssignmentAggregateParam)| Aggregate Request | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LearningAssignmentAggregateResponse**](LearningAssignmentAggregateResponse.html)
+[**LearningAssignmentAggregateResponse**](LearningAssignmentAggregateResponse)
 
-<a name="postLearningAssignmentsBulkadd"></a>
 
 # **postLearningAssignmentsBulkadd**
 
 
-
-> [LearningAssignmentBulkAddResponse](LearningAssignmentBulkAddResponse.html) postLearningAssignmentsBulkadd(body)
+> [LearningAssignmentBulkAddResponse](LearningAssignmentBulkAddResponse) postLearningAssignmentsBulkadd(body)
 
 Add multiple learning assignments
 
@@ -1690,21 +1637,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**List&lt;LearningAssignmentItem&gt;**](LearningAssignmentItem.html)| The learning assignments to be created | [optional] 
+| **body** | [**List&lt;LearningAssignmentItem&gt;**](LearningAssignmentItem)| The learning assignments to be created | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LearningAssignmentBulkAddResponse**](LearningAssignmentBulkAddResponse.html)
+[**LearningAssignmentBulkAddResponse**](LearningAssignmentBulkAddResponse)
 
-<a name="postLearningAssignmentsBulkremove"></a>
 
 # **postLearningAssignmentsBulkremove**
 
 
-
-> [LearningAssignmentBulkRemoveResponse](LearningAssignmentBulkRemoveResponse.html) postLearningAssignmentsBulkremove(body)
+> [LearningAssignmentBulkRemoveResponse](LearningAssignmentBulkRemoveResponse) postLearningAssignmentsBulkremove(body)
 
 Remove multiple Learning Assignments
 
@@ -1751,21 +1696,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**List&lt;String&gt;**](String.html)| The IDs of the learning assignments to be removed | [optional] 
+| **body** | [**List&lt;String&gt;**](String)| The IDs of the learning assignments to be removed | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LearningAssignmentBulkRemoveResponse**](LearningAssignmentBulkRemoveResponse.html)
+[**LearningAssignmentBulkRemoveResponse**](LearningAssignmentBulkRemoveResponse)
 
-<a name="postLearningModuleJobs"></a>
 
 # **postLearningModuleJobs**
 
 
-
-> [LearningModuleJobResponse](LearningModuleJobResponse.html) postLearningModuleJobs(moduleId, body)
+> [LearningModuleJobResponse](LearningModuleJobResponse) postLearningModuleJobs(moduleId, body)
 
 Starts a specified operation on learning module
 
@@ -1816,21 +1759,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **moduleId** | **String**| The ID of the learning module | 
-| **body** | [**LearningModuleJobRequest**](LearningModuleJobRequest.html)| The learning module job request | 
+| **body** | [**LearningModuleJobRequest**](LearningModuleJobRequest)| The learning module job request | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LearningModuleJobResponse**](LearningModuleJobResponse.html)
+[**LearningModuleJobResponse**](LearningModuleJobResponse)
 
-<a name="postLearningModulePublish"></a>
 
 # **postLearningModulePublish**
 
 
-
-> [LearningModulePublishResponse](LearningModulePublishResponse.html) postLearningModulePublish(moduleId, body)
+> [LearningModulePublishResponse](LearningModulePublishResponse) postLearningModulePublish(moduleId, body)
 
 Publish a Learning module
 
@@ -1879,21 +1820,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **moduleId** | **String**| The ID of the learning module | 
-| **body** | [**LearningModulePublishRequest**](LearningModulePublishRequest.html)| The request body | [optional] 
+| **body** | [**LearningModulePublishRequest**](LearningModulePublishRequest)| The request body | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LearningModulePublishResponse**](LearningModulePublishResponse.html)
+[**LearningModulePublishResponse**](LearningModulePublishResponse)
 
-<a name="postLearningModules"></a>
 
 # **postLearningModules**
 
 
-
-> [LearningModule](LearningModule.html) postLearningModules(body)
+> [LearningModule](LearningModule) postLearningModules(body)
 
 Create a new learning module
 
@@ -1942,21 +1881,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**LearningModuleRequest**](LearningModuleRequest.html)| The learning module to be created | 
+| **body** | [**LearningModuleRequest**](LearningModuleRequest)| The learning module to be created | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LearningModule**](LearningModule.html)
+[**LearningModule**](LearningModule)
 
-<a name="postLearningRulesQuery"></a>
 
 # **postLearningRulesQuery**
 
 
-
-> [LearningAssignmentUserListing](LearningAssignmentUserListing.html) postLearningRulesQuery(pageSize, pageNumber, body)
+> [LearningAssignmentUserListing](LearningAssignmentUserListing) postLearningRulesQuery(pageSize, pageNumber, body)
 
 Get users for learning module rule
 
@@ -2009,21 +1946,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size | [default to 50] 
 | **pageNumber** | **Integer**| Page number | [default to 1] 
-| **body** | [**LearningAssignmentUserQuery**](LearningAssignmentUserQuery.html)| The learning module rule to fetch users | 
+| **body** | [**LearningAssignmentUserQuery**](LearningAssignmentUserQuery)| The learning module rule to fetch users | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LearningAssignmentUserListing**](LearningAssignmentUserListing.html)
+[**LearningAssignmentUserListing**](LearningAssignmentUserListing)
 
-<a name="postLearningScheduleslotsQuery"></a>
 
 # **postLearningScheduleslotsQuery**
 
 
-
-> [LearningScheduleSlotsQueryResponse](LearningScheduleSlotsQueryResponse.html) postLearningScheduleslotsQuery(body)
+> [LearningScheduleSlotsQueryResponse](LearningScheduleSlotsQueryResponse) postLearningScheduleslotsQuery(body)
 
 Get list of possible slots where a learning activity can be scheduled.
 
@@ -2070,21 +2005,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**LearningScheduleSlotsQueryRequest**](LearningScheduleSlotsQueryRequest.html)| The slot search request | 
+| **body** | [**LearningScheduleSlotsQueryRequest**](LearningScheduleSlotsQueryRequest)| The slot search request | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LearningScheduleSlotsQueryResponse**](LearningScheduleSlotsQueryResponse.html)
+[**LearningScheduleSlotsQueryResponse**](LearningScheduleSlotsQueryResponse)
 
-<a name="postLearningScorm"></a>
 
 # **postLearningScorm**
 
 
-
-> [LearningScormUploadResponse](LearningScormUploadResponse.html) postLearningScorm(body)
+> [LearningScormUploadResponse](LearningScormUploadResponse) postLearningScorm(body)
 
 Create a SCORM package upload request
 
@@ -2131,21 +2064,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**LearningScormUploadRequest**](LearningScormUploadRequest.html)| The SCORM package to be uploaded | [optional] 
+| **body** | [**LearningScormUploadRequest**](LearningScormUploadRequest)| The SCORM package to be uploaded | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LearningScormUploadResponse**](LearningScormUploadResponse.html)
+[**LearningScormUploadResponse**](LearningScormUploadResponse)
 
-<a name="putLearningModule"></a>
 
 # **putLearningModule**
 
 
-
-> [LearningModule](LearningModule.html) putLearningModule(moduleId, body)
+> [LearningModule](LearningModule) putLearningModule(moduleId, body)
 
 Update a learning module
 
@@ -2196,21 +2127,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **moduleId** | **String**| The ID of the learning module | 
-| **body** | [**LearningModuleRequest**](LearningModuleRequest.html)| The learning module to be updated | 
+| **body** | [**LearningModuleRequest**](LearningModuleRequest)| The learning module to be updated | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LearningModule**](LearningModule.html)
+[**LearningModule**](LearningModule)
 
-<a name="putLearningModulePreview"></a>
 
 # **putLearningModulePreview**
 
 
-
-> [LearningModulePreviewUpdateResponse](LearningModulePreviewUpdateResponse.html) putLearningModulePreview(moduleId, body)
+> [LearningModulePreviewUpdateResponse](LearningModulePreviewUpdateResponse) putLearningModulePreview(moduleId, body)
 
 Update a learning module preview
 
@@ -2261,21 +2190,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **moduleId** | **String**| The ID of the learning module | 
-| **body** | [**LearningModulePreviewUpdateRequest**](LearningModulePreviewUpdateRequest.html)| The learning module to be updated | 
+| **body** | [**LearningModulePreviewUpdateRequest**](LearningModulePreviewUpdateRequest)| The learning module to be updated | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LearningModulePreviewUpdateResponse**](LearningModulePreviewUpdateResponse.html)
+[**LearningModulePreviewUpdateResponse**](LearningModulePreviewUpdateResponse)
 
-<a name="putLearningModuleRule"></a>
 
 # **putLearningModuleRule**
 
 
-
-> [LearningModuleRule](LearningModuleRule.html) putLearningModuleRule(moduleId, body)
+> [LearningModuleRule](LearningModuleRule) putLearningModuleRule(moduleId, body)
 
 Update a learning module rule
 
@@ -2326,11 +2253,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **moduleId** | **String**| The ID of the learning module | 
-| **body** | [**LearningModuleRule**](LearningModuleRule.html)| The learning module rule to be updated | 
+| **body** | [**LearningModuleRule**](LearningModuleRule)| The learning module rule to be updated | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LearningModuleRule**](LearningModuleRule.html)
+[**LearningModuleRule**](LearningModuleRule)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

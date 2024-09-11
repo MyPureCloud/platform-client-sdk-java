@@ -1,26 +1,20 @@
----
-title: WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification
----
-## WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification
+# WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **buId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
-| **bidWindowStartDate** | <!----><!---->**String**<!----> |  |  [optional] |
-| **bidWindowEndDate** | <!----><!---->**String**<!----> |  |  [optional] |
-| **effectiveDate** | <!----><!---->**String**<!----> |  |  [optional] |
-| **agentRankingType** | [**AgentRankingTypeEnum**](#AgentRankingTypeEnum)<!----> |  |  [optional] |
-| **rankingTiebreakerType** | [**RankingTiebreakerTypeEnum**](#RankingTiebreakerTypeEnum)<!----> |  |  [optional] |
-| **workPlanFieldsVisibleToAgents** | <!---->[**List&lt;WorkPlanFieldsVisibleToAgentsEnum&gt;**](#WorkPlanFieldsVisibleToAgentsEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **buId** | **String** |  |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
+| **bidWindowStartDate** | **String** |  |  [optional] |
+| **bidWindowEndDate** | **String** |  |  [optional] |
+| **effectiveDate** | **String** |  |  [optional] |
+| **agentRankingType** | [**AgentRankingTypeEnum**](#Enum--AgentRankingTypeEnum) |  |  [optional] |
+| **rankingTiebreakerType** | [**RankingTiebreakerTypeEnum**](#Enum--RankingTiebreakerTypeEnum) |  |  [optional] |
+| **workPlanFieldsVisibleToAgents** | [**List<WorkPlanFieldsVisibleToAgentsEnum>**](#Enum--WorkPlanFieldsVisibleToAgentsEnum) |  |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -36,10 +30,7 @@ title: WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification
 | CLOSED | &quot;Closed&quot; | 
 | PROCESSED | &quot;Processed&quot; | 
 | PUBLISHED | &quot;Published&quot; | 
-{: class="table table-striped"}
 
-
-<a name="AgentRankingTypeEnum"></a>
 
 ## Enum: AgentRankingTypeEnum
 
@@ -49,10 +40,7 @@ title: WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification
 | UNKNOWN | &quot;Unknown&quot; | 
 | HIREDATE | &quot;HireDate&quot; | 
 | PERFORMANCE | &quot;Performance&quot; | 
-{: class="table table-striped"}
 
-
-<a name="RankingTiebreakerTypeEnum"></a>
 
 ## Enum: RankingTiebreakerTypeEnum
 
@@ -64,10 +52,7 @@ title: WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification
 | PERFORMANCE | &quot;Performance&quot; | 
 | CUSTOM | &quot;Custom&quot; | 
 | RANDOMLYASSIGN | &quot;RandomlyAssign&quot; | 
-{: class="table table-striped"}
 
-
-<a name="WorkPlanFieldsVisibleToAgentsEnum"></a>
 
 ## Enum: WorkPlanFieldsVisibleToAgentsEnum
 
@@ -76,7 +61,8 @@ title: WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification
 | UNKNOWN | &quot;Unknown&quot; |
 | NAME | &quot;Name&quot; |
 | PAIDHOURS | &quot;PaidHours&quot; |
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,20 +1,14 @@
----
-title: BulkUpdateShiftTradeStateRequestItem
----
-## BulkUpdateShiftTradeStateRequestItem
+# BulkUpdateShiftTradeStateRequestItem
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **state** | [**StateEnum**](#StateEnum)<!----> | The new state to set on the shift trade |  |
-| **metadata** | <!----><!---->[**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata.html)<!----> | Version metadata for the shift trade |  |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **state** | [**StateEnum**](#Enum--StateEnum) | The new state to set on the shift trade |  |
+| **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Version metadata for the shift trade |  |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -27,7 +21,8 @@ title: BulkUpdateShiftTradeStateRequestItem
 | DENIED | &quot;Denied&quot; | 
 | EXPIRED | &quot;Expired&quot; | 
 | CANCELED | &quot;Canceled&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

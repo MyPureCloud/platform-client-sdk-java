@@ -1,37 +1,31 @@
----
-title: ReportingExportJobRequest
----
-## ReportingExportJobRequest
+# ReportingExportJobRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | <!----><!---->**String**<!----> | The user supplied name of the export request |  |
-| **timeZone** | <!----><!---->**String**<!----> | The requested timezone of the exported data. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London |  |
-| **exportFormat** | [**ExportFormatEnum**](#ExportFormatEnum)<!----> | The requested format of the exported data |  |
-| **interval** | <!----><!---->**String**<!----> | The time period used to limit the the exported data. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss |  |
-| **period** | <!----><!---->**String**<!----> | The Period of the request in which to break down the intervals. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H |  |
-| **viewType** | [**ViewTypeEnum**](#ViewTypeEnum)<!----> | The type of view export job to be created |  |
-| **filter** | <!----><!---->[**ViewFilter**](ViewFilter.html)<!----> | Filters to apply to create the view |  |
-| **read** | <!----><!---->**Boolean**<!----> | Indicates if the request has been marked as read |  [optional] |
-| **locale** | <!----><!---->**String**<!----> | The locale used for localization of the exported data, i.e. en-US, es |  |
-| **hasFormatDurations** | <!----><!---->**Boolean**<!----> | Indicates if durations are formatted in hh:mm:ss format instead of ms |  [optional] |
-| **hasSplitFilters** | <!----><!---->**Boolean**<!----> | Indicates if filters will be split in aggregate detail exports |  [optional] |
-| **excludeEmptyRows** | <!----><!---->**Boolean**<!----> | Excludes empty rows from the exports |  [optional] |
-| **hasSplitByMedia** | <!----><!---->**Boolean**<!----> | Indicates if media type will be split in aggregate detail exports |  [optional] |
-| **hasSummaryRow** | <!----><!---->**Boolean**<!----> | Indicates if summary row needs to be present in exports |  [optional] |
-| **csvDelimiter** | [**CsvDelimiterEnum**](#CsvDelimiterEnum)<!----> | The user supplied csv delimiter string value either of type 'comma' or 'semicolon' permitted for the export request |  [optional] |
-| **selectedColumns** | <!----><!---->[**List&lt;SelectedColumns&gt;**](SelectedColumns.html)<!----> | The list of ordered selected columns from the export view by the user |  [optional] |
-| **hasCustomParticipantAttributes** | <!----><!---->**Boolean**<!----> | Indicates if custom participant attributes will be exported |  [optional] |
-| **recipientEmails** | <!----><!---->**List&lt;String&gt;**<!----> | The list of email recipients for the exports |  [optional] |
-| **includeDurationFormatInHeader** | <!----><!---->**Boolean**<!----> | Indicates whether to include selected duration format to the column headers |  [optional] |
-| **durationFormat** | [**DurationFormatEnum**](#DurationFormatEnum)<!----> | Indicates the duration format for the exports |  [optional] |
-{: class="table table-striped"}
+| **name** | **String** | The user supplied name of the export request |  |
+| **timeZone** | **String** | The requested timezone of the exported data. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London |  |
+| **exportFormat** | [**ExportFormatEnum**](#Enum--ExportFormatEnum) | The requested format of the exported data |  |
+| **interval** | **String** | The time period used to limit the the exported data. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss |  |
+| **period** | **String** | The Period of the request in which to break down the intervals. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H |  |
+| **viewType** | [**ViewTypeEnum**](#Enum--ViewTypeEnum) | The type of view export job to be created |  |
+| **filter** | [**ViewFilter**](ViewFilter) | Filters to apply to create the view |  |
+| **read** | **Boolean** | Indicates if the request has been marked as read |  [optional] |
+| **locale** | **String** | The locale used for localization of the exported data, i.e. en-US, es |  |
+| **hasFormatDurations** | **Boolean** | Indicates if durations are formatted in hh:mm:ss format instead of ms |  [optional] |
+| **hasSplitFilters** | **Boolean** | Indicates if filters will be split in aggregate detail exports |  [optional] |
+| **excludeEmptyRows** | **Boolean** | Excludes empty rows from the exports |  [optional] |
+| **hasSplitByMedia** | **Boolean** | Indicates if media type will be split in aggregate detail exports |  [optional] |
+| **hasSummaryRow** | **Boolean** | Indicates if summary row needs to be present in exports |  [optional] |
+| **csvDelimiter** | [**CsvDelimiterEnum**](#Enum--CsvDelimiterEnum) | The user supplied csv delimiter string value either of type 'comma' or 'semicolon' permitted for the export request |  [optional] |
+| **selectedColumns** | [**List&lt;SelectedColumns&gt;**](SelectedColumns) | The list of ordered selected columns from the export view by the user |  [optional] |
+| **hasCustomParticipantAttributes** | **Boolean** | Indicates if custom participant attributes will be exported |  [optional] |
+| **recipientEmails** | **List&lt;String&gt;** | The list of email recipients for the exports |  [optional] |
+| **includeDurationFormatInHeader** | **Boolean** | Indicates whether to include selected duration format to the column headers |  [optional] |
+| **durationFormat** | [**DurationFormatEnum**](#Enum--DurationFormatEnum) | Indicates the duration format for the exports |  [optional] |
 
-
-<a name="ExportFormatEnum"></a>
 
 ## Enum: ExportFormatEnum
 
@@ -40,10 +34,7 @@ title: ReportingExportJobRequest
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | CSV | &quot;CSV&quot; | 
 | PDF | &quot;PDF&quot; | 
-{: class="table table-striped"}
 
-
-<a name="ViewTypeEnum"></a>
 
 ## Enum: ViewTypeEnum
 
@@ -166,10 +157,7 @@ title: ReportingExportJobRequest
 | SOCIAL_LISTENING_VIEW | &quot;SOCIAL_LISTENING_VIEW&quot; | 
 | SOCIAL_LISTENING_POSTS_VIEW | &quot;SOCIAL_LISTENING_POSTS_VIEW&quot; | 
 | AGENT_PERFORMANCE_TIMELINE_DETAIL_VIEW | &quot;AGENT_PERFORMANCE_TIMELINE_DETAIL_VIEW&quot; | 
-{: class="table table-striped"}
 
-
-<a name="CsvDelimiterEnum"></a>
 
 ## Enum: CsvDelimiterEnum
 
@@ -178,10 +166,7 @@ title: ReportingExportJobRequest
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | SEMICOLON | &quot;SEMICOLON&quot; | 
 | COMMA | &quot;COMMA&quot; | 
-{: class="table table-striped"}
 
-
-<a name="DurationFormatEnum"></a>
 
 ## Enum: DurationFormatEnum
 
@@ -192,7 +177,8 @@ title: ReportingExportJobRequest
 | MILLISECONDS | &quot;Milliseconds&quot; | 
 | HHMMSS | &quot;Hhmmss&quot; | 
 | HMS | &quot;Hms&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

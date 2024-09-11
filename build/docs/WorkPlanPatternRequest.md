@@ -1,15 +1,13 @@
----
-title: WorkPlanPatternRequest
----
-## WorkPlanPatternRequest
+# WorkPlanPatternRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **workPlanIds** | <!----><!---->**List&lt;String&gt;**<!----> | List of work plan IDs in order of rotation on a weekly basis. Values in the list cannot be null or empty |  |
-{: class="table table-striped"}
+| **workPlanIds** | **List&lt;String&gt;** | List of work plan IDs in order of rotation on a weekly basis. Values in the list cannot be null or empty |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

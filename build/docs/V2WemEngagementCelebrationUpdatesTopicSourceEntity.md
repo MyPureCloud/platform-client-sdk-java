@@ -1,19 +1,13 @@
----
-title: V2WemEngagementCelebrationUpdatesTopicSourceEntity
----
-## V2WemEngagementCelebrationUpdatesTopicSourceEntity
+# V2WemEngagementCelebrationUpdatesTopicSourceEntity
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -25,7 +19,8 @@ title: V2WemEngagementCelebrationUpdatesTopicSourceEntity
 | CONGRATULATIONS | &quot;CONGRATULATIONS&quot; | 
 | HIGH_PERFORMANCE | &quot;HIGH_PERFORMANCE&quot; | 
 | COMPANY_VALUES | &quot;COMPANY_VALUES&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

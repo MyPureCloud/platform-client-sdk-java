@@ -1,15 +1,13 @@
----
-title: UpdateUtilizationLabelRequest
----
-## UpdateUtilizationLabelRequest
+# UpdateUtilizationLabelRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | <!----><!---->**String**<!----> | The utilization label name. |  |
-{: class="table table-striped"}
+| **name** | **String** | The utilization label name. |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

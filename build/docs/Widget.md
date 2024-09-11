@@ -1,45 +1,39 @@
----
-title: Widget
----
-## Widget
+# Widget
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **row** | <!----><!---->**Integer**<!----> | The row number for the specific dashboard widget configuration. |  [optional] |
-| **column** | <!----><!---->**Integer**<!----> | The column number for the specific dashboard widget configuration. |  [optional] |
-| **title** | <!----><!---->**String**<!----> | The title for the dashboard widget configuration. |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of dashboard widget configuration. |  |
-| **metrics** | <!---->[**List&lt;MetricsEnum&gt;**](#MetricsEnum)<!----> | The list of metrics for the dashboard widget configuration. |  [optional] |
-| **displayText** | <!----><!---->**String**<!----> | The display text for the dashboard widget configuration. |  [optional] |
-| **displayTextColor** | <!----><!---->**String**<!----> | The color of the display text for the dashboard widget configuration in RGB hexadecimal format (for example \"#FF0000\" represents red). |  [optional] |
-| **webContentUrl** | <!----><!---->**String**<!----> | The external web URL for the dashboard widget configuration. |  [optional] |
-| **splitFilters** | <!----><!---->**Boolean**<!----> | Indicates each filter to be displayed individually. |  [optional] |
-| **splitByMediaType** | <!----><!---->**Boolean**<!----> | Indicates that data for each media type should be shown individually. |  [optional] |
-| **showLongest** | <!----><!---->**Boolean**<!----> | Indicates the display be the longest time. |  [optional] |
-| **displayAsTable** | <!----><!---->**Boolean**<!----> | Indicates the widget to be displayed as table. |  [optional] |
-| **showDuration** | <!----><!---->**Boolean**<!----> | Indicates the display to include duration. |  [optional] |
-| **sortOrder** | [**SortOrderEnum**](#SortOrderEnum)<!----> | The sort order of the table. |  [optional] |
-| **sortKey** | [**SortKeyEnum**](#SortKeyEnum)<!----> | The sort key of the table. |  [optional] |
-| **entityLimit** | <!----><!---->**Integer**<!----> | Indicates the limit of displayed entities. |  [optional] |
-| **displayAggregates** | <!----><!---->**Boolean**<!----> | Indicates whether to display aggregate across all entity and media type combination. |  [optional] |
-| **isFullWidth** | <!----><!---->**Boolean**<!----> | Indicates whether a widget should take the full width of a dashboard or be shown only in a single slot. |  [optional] |
-| **showPercentageChange** | <!----><!---->**Boolean**<!----> | Indicates whether a widget should show the percentage diff between two values. |  [optional] |
-| **showProfilePicture** | <!----><!---->**Boolean**<!----> | Indicates whether a widget should show the profile picture of an agent. |  [optional] |
-| **filter** | <!----><!---->[**ViewFilter**](ViewFilter.html)<!----> | The filters to be applied for dashboard widget configuration |  [optional] |
-| **periods** | <!---->[**List&lt;PeriodsEnum&gt;**](#PeriodsEnum)<!----> | The list of periods for the dashboard widget configuration |  [optional] |
-| **mediaTypes** | <!---->[**List&lt;MediaTypesEnum&gt;**](#MediaTypesEnum)<!----> | The list of media types for the dashboard widget configuration |  [optional] |
-| **warnings** | <!----><!---->[**List&lt;Warning&gt;**](Warning.html)<!----> | List of warnings for dashboard widget configuration |  [optional] |
-| **showTimeInStatus** | <!----><!---->**Boolean**<!----> | Indicates the show time in status of a widget configuration. |  [optional] |
-| **showOfflineAgents** | <!----><!---->**Boolean**<!----> | Indicates to show offline agent widget. |  [optional] |
-| **selectedStatuses** | <!---->[**List&lt;SelectedStatusesEnum&gt;**](#SelectedStatusesEnum)<!----> | Indicates the selected statuses used to filter the agent widget in the dashboard. |  [optional] |
-| **agentInteractionSortOrder** | [**AgentInteractionSortOrderEnum**](#AgentInteractionSortOrderEnum)<!----> | The sort order of the interactions in the agent status widget. |  [optional] |
-{: class="table table-striped"}
+| **row** | **Integer** | The row number for the specific dashboard widget configuration. |  [optional] |
+| **column** | **Integer** | The column number for the specific dashboard widget configuration. |  [optional] |
+| **title** | **String** | The title for the dashboard widget configuration. |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of dashboard widget configuration. |  |
+| **metrics** | [**List<MetricsEnum>**](#Enum--MetricsEnum) | The list of metrics for the dashboard widget configuration. |  [optional] |
+| **displayText** | **String** | The display text for the dashboard widget configuration. |  [optional] |
+| **displayTextColor** | **String** | The color of the display text for the dashboard widget configuration in RGB hexadecimal format (for example \"#FF0000\" represents red). |  [optional] |
+| **webContentUrl** | **String** | The external web URL for the dashboard widget configuration. |  [optional] |
+| **splitFilters** | **Boolean** | Indicates each filter to be displayed individually. |  [optional] |
+| **splitByMediaType** | **Boolean** | Indicates that data for each media type should be shown individually. |  [optional] |
+| **showLongest** | **Boolean** | Indicates the display be the longest time. |  [optional] |
+| **displayAsTable** | **Boolean** | Indicates the widget to be displayed as table. |  [optional] |
+| **showDuration** | **Boolean** | Indicates the display to include duration. |  [optional] |
+| **sortOrder** | [**SortOrderEnum**](#Enum--SortOrderEnum) | The sort order of the table. |  [optional] |
+| **sortKey** | [**SortKeyEnum**](#Enum--SortKeyEnum) | The sort key of the table. |  [optional] |
+| **entityLimit** | **Integer** | Indicates the limit of displayed entities. |  [optional] |
+| **displayAggregates** | **Boolean** | Indicates whether to display aggregate across all entity and media type combination. |  [optional] |
+| **isFullWidth** | **Boolean** | Indicates whether a widget should take the full width of a dashboard or be shown only in a single slot. |  [optional] |
+| **showPercentageChange** | **Boolean** | Indicates whether a widget should show the percentage diff between two values. |  [optional] |
+| **showProfilePicture** | **Boolean** | Indicates whether a widget should show the profile picture of an agent. |  [optional] |
+| **filter** | [**ViewFilter**](ViewFilter) | The filters to be applied for dashboard widget configuration |  [optional] |
+| **periods** | [**List<PeriodsEnum>**](#Enum--PeriodsEnum) | The list of periods for the dashboard widget configuration |  [optional] |
+| **mediaTypes** | [**List<MediaTypesEnum>**](#Enum--MediaTypesEnum) | The list of media types for the dashboard widget configuration |  [optional] |
+| **warnings** | [**List&lt;Warning&gt;**](Warning) | List of warnings for dashboard widget configuration |  [optional] |
+| **showTimeInStatus** | **Boolean** | Indicates the show time in status of a widget configuration. |  [optional] |
+| **showOfflineAgents** | **Boolean** | Indicates to show offline agent widget. |  [optional] |
+| **selectedStatuses** | [**List<SelectedStatusesEnum>**](#Enum--SelectedStatusesEnum) | Indicates the selected statuses used to filter the agent widget in the dashboard. |  [optional] |
+| **agentInteractionSortOrder** | [**AgentInteractionSortOrderEnum**](#Enum--AgentInteractionSortOrderEnum) | The sort order of the interactions in the agent status widget. |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -54,10 +48,7 @@ title: Widget
 | AGENT_STATUS | &quot;AGENT_STATUS&quot; | 
 | REALTIME_ADHERENCE | &quot;REALTIME_ADHERENCE&quot; | 
 | WEB_CONTENT_URL | &quot;WEB_CONTENT_URL&quot; | 
-{: class="table table-striped"}
 
-
-<a name="MetricsEnum"></a>
 
 ## Enum: MetricsEnum
 
@@ -283,10 +274,7 @@ title: Widget
 | TOTAL_PARK_TIME | &quot;TOTAL_PARK_TIME&quot; |
 | MIN_PARK_TIME | &quot;MIN_PARK_TIME&quot; |
 | MAX_PARK_TIME | &quot;MAX_PARK_TIME&quot; |
-{: class="table table-striped"}
 
-
-<a name="SortOrderEnum"></a>
 
 ## Enum: SortOrderEnum
 
@@ -295,10 +283,7 @@ title: Widget
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ASCENDING | &quot;ascending&quot; | 
 | DESCENDING | &quot;descending&quot; | 
-{: class="table table-striped"}
 
-
-<a name="SortKeyEnum"></a>
 
 ## Enum: SortKeyEnum
 
@@ -307,10 +292,7 @@ title: Widget
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | NAME | &quot;Name&quot; | 
 | DURATION | &quot;Duration&quot; | 
-{: class="table table-striped"}
 
-
-<a name="PeriodsEnum"></a>
 
 ## Enum: PeriodsEnum
 
@@ -329,10 +311,7 @@ title: Widget
 | PRIOR_30_DAYS | &quot;PRIOR_30_DAYS&quot; |
 | PAST_30_DAYS_TO_DATE | &quot;PAST_30_DAYS_TO_DATE&quot; |
 | PRIOR_3_MONTHS | &quot;PRIOR_3_MONTHS&quot; |
-{: class="table table-striped"}
 
-
-<a name="MediaTypesEnum"></a>
 
 ## Enum: MediaTypesEnum
 
@@ -347,10 +326,7 @@ title: Widget
 | UNKNOWN | &quot;unknown&quot; |
 | VIDEO | &quot;video&quot; |
 | VOICE | &quot;voice&quot; |
-{: class="table table-striped"}
 
-
-<a name="SelectedStatusesEnum"></a>
 
 ## Enum: SelectedStatusesEnum
 
@@ -372,10 +348,7 @@ title: Widget
 | OFFQUEUE | &quot;OffQueue&quot; |
 | ONLINE | &quot;Online&quot; |
 | OFFLINE | &quot;Offline&quot; |
-{: class="table table-striped"}
 
-
-<a name="AgentInteractionSortOrderEnum"></a>
 
 ## Enum: AgentInteractionSortOrderEnum
 
@@ -384,7 +357,8 @@ title: Widget
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ASCENDING | &quot;ascending&quot; | 
 | DESCENDING | &quot;descending&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

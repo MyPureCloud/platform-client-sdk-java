@@ -1,19 +1,17 @@
----
-title: CursorExternalSourceListing
----
-## CursorExternalSourceListing
+# CursorExternalSourceListing
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | <!----><!---->[**List&lt;ExternalSource&gt;**](ExternalSource.html)<!----> |  |  [optional] |
-| **nextUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **previousUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **cursors** | <!----><!---->[**Cursors**](Cursors.html)<!----> | The cursor that points to the next set of entities being returned. |  [optional] |
-{: class="table table-striped"}
+| **entities** | [**List&lt;ExternalSource&gt;**](ExternalSource) |  |  [optional] |
+| **nextUri** | **String** |  |  [optional] |
+| **selfUri** | **String** |  |  [optional] |
+| **previousUri** | **String** |  |  [optional] |
+| **cursors** | [**Cursors**](Cursors) | The cursor that points to the next set of entities being returned. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

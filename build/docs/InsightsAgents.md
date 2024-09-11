@@ -1,23 +1,17 @@
----
-title: InsightsAgents
----
-## InsightsAgents
+# InsightsAgents
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **performanceProfile** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | The performance profile |  [optional] |
-| **division** | <!----><!---->[**DivisionReference**](DivisionReference.html)<!----> | The division |  [optional] |
-| **granularity** | [**GranularityEnum**](#GranularityEnum)<!----> | Granularity |  [optional] |
-| **dateStartWorkday** | <!----><!---->[**LocalDate**](LocalDate.html)<!----> | Start workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
-| **dateEndWorkday** | <!----><!---->[**LocalDate**](LocalDate.html)<!----> | End workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
-| **entities** | <!----><!---->[**List&lt;InsightsAgentItem&gt;**](InsightsAgentItem.html)<!----> | The list of insights agents |  [optional] |
-{: class="table table-striped"}
+| **performanceProfile** | [**AddressableEntityRef**](AddressableEntityRef) | The performance profile |  [optional] |
+| **division** | [**DivisionReference**](DivisionReference) | The division |  [optional] |
+| **granularity** | [**GranularityEnum**](#Enum--GranularityEnum) | Granularity |  [optional] |
+| **dateStartWorkday** | [**LocalDate**](LocalDate) | Start workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
+| **dateEndWorkday** | [**LocalDate**](LocalDate) | End workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
+| **entities** | [**List&lt;InsightsAgentItem&gt;**](InsightsAgentItem) | The list of insights agents |  [optional] |
 
-
-<a name="GranularityEnum"></a>
 
 ## Enum: GranularityEnum
 
@@ -27,7 +21,8 @@ title: InsightsAgents
 | DAILY | &quot;Daily&quot; | 
 | WEEKLY | &quot;Weekly&quot; | 
 | MONTHLY | &quot;Monthly&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

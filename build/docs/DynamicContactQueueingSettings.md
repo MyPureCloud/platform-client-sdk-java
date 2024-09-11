@@ -1,16 +1,14 @@
----
-title: DynamicContactQueueingSettings
----
-## DynamicContactQueueingSettings
+# DynamicContactQueueingSettings
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **sort** | <!----><!---->**Boolean**<!----> | Whether to sort contacts dynamically |  [optional] |
-| **filter** | <!----><!---->**Boolean**<!----> | Whether to filter contacts dynamically |  [optional] |
-{: class="table table-striped"}
+| **sort** | **Boolean** | Whether to sort contacts dynamically |  [optional] |
+| **filter** | **Boolean** | Whether to filter contacts dynamically |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

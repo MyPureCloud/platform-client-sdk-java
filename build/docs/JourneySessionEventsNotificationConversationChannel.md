@@ -1,20 +1,14 @@
----
-title: JourneySessionEventsNotificationConversationChannel
----
-## JourneySessionEventsNotificationConversationChannel
+# JourneySessionEventsNotificationConversationChannel
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-| **messageType** | [**MessageTypeEnum**](#MessageTypeEnum)<!----> |  |  [optional] |
-| **platform** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
+| **messageType** | [**MessageTypeEnum**](#Enum--MessageTypeEnum) |  |  [optional] |
+| **platform** | **String** |  |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -30,10 +24,7 @@ title: JourneySessionEventsNotificationConversationChannel
 | VIDEO | &quot;Video&quot; | 
 | SCREENSHARE | &quot;Screenshare&quot; | 
 | MESSAGE | &quot;Message&quot; | 
-{: class="table table-striped"}
 
-
-<a name="MessageTypeEnum"></a>
 
 ## Enum: MessageTypeEnum
 
@@ -49,7 +40,8 @@ title: JourneySessionEventsNotificationConversationChannel
 | WEBMESSAGING | &quot;WebMessaging&quot; | 
 | OPEN | &quot;Open&quot; | 
 | INSTAGRAM | &quot;Instagram&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

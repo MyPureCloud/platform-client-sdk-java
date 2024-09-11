@@ -1,27 +1,21 @@
----
-title: DefaultGreetingList
----
-## DefaultGreetingList
+# DefaultGreetingList
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **owner** | <!----><!---->[**GreetingOwner**](GreetingOwner.html)<!----> |  |  [optional] |
-| **ownerType** | [**OwnerTypeEnum**](#OwnerTypeEnum)<!----> |  |  [optional] |
-| **greetings** | <!----><!---->[**Map&lt;String, Greeting&gt;**](Greeting.html)<!----> |  |  [optional] |
-| **createdDate** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **createdBy** | <!----><!---->**String**<!----> |  |  [optional] |
-| **modifiedDate** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **modifiedBy** | <!----><!---->**String**<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **owner** | [**GreetingOwner**](GreetingOwner) |  |  [optional] |
+| **ownerType** | [**OwnerTypeEnum**](#Enum--OwnerTypeEnum) |  |  [optional] |
+| **greetings** | [**Map&lt;String, Greeting&gt;**](Greeting) |  |  [optional] |
+| **createdDate** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **createdBy** | **String** |  |  [optional] |
+| **modifiedDate** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **modifiedBy** | **String** |  |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="OwnerTypeEnum"></a>
 
 ## Enum: OwnerTypeEnum
 
@@ -31,7 +25,8 @@ title: DefaultGreetingList
 | USER | &quot;USER&quot; | 
 | ORGANIZATION | &quot;ORGANIZATION&quot; | 
 | GROUP | &quot;GROUP&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

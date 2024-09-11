@@ -1,19 +1,13 @@
----
-title: SettingDirection
----
-## SettingDirection
+# SettingDirection
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **inbound** | [**InboundEnum**](#InboundEnum)<!----> | Status for the Inbound Direction |  [optional] |
-| **outbound** | [**OutboundEnum**](#OutboundEnum)<!----> | Status for the Outbound Direction |  [optional] |
-{: class="table table-striped"}
+| **inbound** | [**InboundEnum**](#Enum--InboundEnum) | Status for the Inbound Direction |  [optional] |
+| **outbound** | [**OutboundEnum**](#Enum--OutboundEnum) | Status for the Outbound Direction |  [optional] |
 
-
-<a name="InboundEnum"></a>
 
 ## Enum: InboundEnum
 
@@ -22,10 +16,7 @@ title: SettingDirection
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ENABLED | &quot;Enabled&quot; | 
 | DISABLED | &quot;Disabled&quot; | 
-{: class="table table-striped"}
 
-
-<a name="OutboundEnum"></a>
 
 ## Enum: OutboundEnum
 
@@ -34,7 +25,8 @@ title: SettingDirection
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ENABLED | &quot;Enabled&quot; | 
 | DISABLED | &quot;Disabled&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

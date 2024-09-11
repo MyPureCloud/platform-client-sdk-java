@@ -1,17 +1,15 @@
----
-title: GreetingAudioFile
----
-## GreetingAudioFile
+# GreetingAudioFile
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **durationMilliseconds** | <!----><!---->**Long**<!----> |  |  [optional] |
-| **sizeBytes** | <!----><!---->**Long**<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **durationMilliseconds** | **Long** |  |  [optional] |
+| **sizeBytes** | **Long** |  |  [optional] |
+| **selfUri** | **String** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

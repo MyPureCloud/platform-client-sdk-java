@@ -1,17 +1,15 @@
----
-title: WfmScheduleActivity
----
-## WfmScheduleActivity
+# WfmScheduleActivity
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **userReference** | <!----><!---->[**UserReference**](UserReference.html)<!----> | ID of user that the schedule is for |  [optional] |
-| **activities** | <!----><!---->[**List&lt;ScheduleActivity&gt;**](ScheduleActivity.html)<!----> | List of user's scheduled activities |  [optional] |
-| **fullDayTimeOffMarkers** | <!----><!---->[**List&lt;FullDayTimeOffMarker&gt;**](FullDayTimeOffMarker.html)<!----> | List of user's days off |  [optional] |
-{: class="table table-striped"}
+| **userReference** | [**UserReference**](UserReference) | ID of user that the schedule is for |  [optional] |
+| **activities** | [**List&lt;ScheduleActivity&gt;**](ScheduleActivity) | List of user's scheduled activities |  [optional] |
+| **fullDayTimeOffMarkers** | [**List&lt;FullDayTimeOffMarker&gt;**](FullDayTimeOffMarker) | List of user's days off |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

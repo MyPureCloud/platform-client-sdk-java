@@ -1,15 +1,13 @@
----
-title: MessagingSettingDefaultRequest
----
-## MessagingSettingDefaultRequest
+# MessagingSettingDefaultRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **settingId** | <!----><!---->**String**<!----> | Messaging Setting ID to be used as the default for this Organization. |  |
-{: class="table table-striped"}
+| **settingId** | **String** | Messaging Setting ID to be used as the default for this Organization. |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

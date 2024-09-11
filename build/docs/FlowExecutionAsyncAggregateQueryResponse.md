@@ -1,16 +1,14 @@
----
-title: FlowExecutionAsyncAggregateQueryResponse
----
-## FlowExecutionAsyncAggregateQueryResponse
+# FlowExecutionAsyncAggregateQueryResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **results** | <!----><!---->[**List&lt;FlowExecutionAggregateDataContainer&gt;**](FlowExecutionAggregateDataContainer.html)<!----> |  |  [optional] |
-| **cursor** | <!----><!---->**String**<!----> | Cursor token to retrieve next page |  [optional] |
-{: class="table table-striped"}
+| **results** | [**List&lt;FlowExecutionAggregateDataContainer&gt;**](FlowExecutionAggregateDataContainer) |  |  [optional] |
+| **cursor** | **String** | Cursor token to retrieve next page |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

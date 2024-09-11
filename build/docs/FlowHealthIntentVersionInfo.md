@@ -1,17 +1,15 @@
----
-title: FlowHealthIntentVersionInfo
----
-## FlowHealthIntentVersionInfo
+# FlowHealthIntentVersionInfo
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **nluVersion** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | NLU Version Info for this flow version. |  [optional] |
-| **flowVersion** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | Given flow's Version Info. |  [optional] |
-| **nluDomain** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | NLU Domain Info for this flow version. |  [optional] |
-{: class="table table-striped"}
+| **nluVersion** | [**AddressableEntityRef**](AddressableEntityRef) | NLU Version Info for this flow version. |  [optional] |
+| **flowVersion** | [**AddressableEntityRef**](AddressableEntityRef) | Given flow's Version Info. |  [optional] |
+| **nluDomain** | [**AddressableEntityRef**](AddressableEntityRef) | NLU Domain Info for this flow version. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

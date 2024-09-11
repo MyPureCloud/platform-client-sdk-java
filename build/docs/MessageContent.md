@@ -1,33 +1,27 @@
----
-title: MessageContent
----
-## MessageContent
+# MessageContent
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **contentType** | [**ContentTypeEnum**](#ContentTypeEnum)<!----> | Type of this content element. |  |
-| **location** | <!----><!---->[**ContentLocation**](ContentLocation.html)<!----> | Location content. |  [optional] |
-| **attachment** | <!----><!---->[**ContentAttachment**](ContentAttachment.html)<!----> | Attachment content. |  [optional] |
-| **quickReply** | <!----><!---->[**ContentQuickReply**](ContentQuickReply.html)<!----> | Quick reply content. |  [optional] |
-| **buttonResponse** | <!----><!---->[**ContentButtonResponse**](ContentButtonResponse.html)<!----> | Button response content. |  [optional] |
-| **generic** | <!----><!---->[**ContentGeneric**](ContentGeneric.html)<!----> | Generic content (Deprecated). |  [optional] |
-| **list** | <!----><!---->[**ContentList**](ContentList.html)<!----> | List content (Deprecated). |  [optional] |
-| **template** | <!----><!---->[**ContentNotificationTemplate**](ContentNotificationTemplate.html)<!----> | Template notification content. |  [optional] |
-| **reactions** | <!----><!---->[**List&lt;ContentReaction&gt;**](ContentReaction.html)<!----> | A set of reactions to a message. |  [optional] |
-| **mention** | <!----><!---->[**MessagingRecipient**](MessagingRecipient.html)<!----> | Mention content. |  [optional] |
-| **postback** | <!----><!---->[**ContentPostback**](ContentPostback.html)<!----> | Structured message postback (Deprecated). |  [optional] |
-| **story** | <!----><!---->[**ContentStory**](ContentStory.html)<!----> | Ephemeral story content. |  [optional] |
-| **card** | <!----><!---->[**ContentCard**](ContentCard.html)<!----> | Card content |  [optional] |
-| **carousel** | <!----><!---->[**ContentCarousel**](ContentCarousel.html)<!----> | Carousel content |  [optional] |
-| **text** | <!----><!---->[**ContentText**](ContentText.html)<!----> | Text content. |  [optional] |
-| **quickReplyV2** | <!----><!---->[**ContentQuickReplyV2**](ContentQuickReplyV2.html)<!----> | Quick reply V2 content. |  [optional] |
-{: class="table table-striped"}
+| **contentType** | [**ContentTypeEnum**](#Enum--ContentTypeEnum) | Type of this content element. |  |
+| **location** | [**ContentLocation**](ContentLocation) | Location content. |  [optional] |
+| **attachment** | [**ContentAttachment**](ContentAttachment) | Attachment content. |  [optional] |
+| **quickReply** | [**ContentQuickReply**](ContentQuickReply) | Quick reply content. |  [optional] |
+| **buttonResponse** | [**ContentButtonResponse**](ContentButtonResponse) | Button response content. |  [optional] |
+| **generic** | [**ContentGeneric**](ContentGeneric) | Generic content (Deprecated). |  [optional] |
+| **list** | [**ContentList**](ContentList) | List content (Deprecated). |  [optional] |
+| **template** | [**ContentNotificationTemplate**](ContentNotificationTemplate) | Template notification content. |  [optional] |
+| **reactions** | [**List&lt;ContentReaction&gt;**](ContentReaction) | A set of reactions to a message. |  [optional] |
+| **mention** | [**MessagingRecipient**](MessagingRecipient) | Mention content. |  [optional] |
+| **postback** | [**ContentPostback**](ContentPostback) | Structured message postback (Deprecated). |  [optional] |
+| **story** | [**ContentStory**](ContentStory) | Ephemeral story content. |  [optional] |
+| **card** | [**ContentCard**](ContentCard) | Card content |  [optional] |
+| **carousel** | [**ContentCarousel**](ContentCarousel) | Carousel content |  [optional] |
+| **text** | [**ContentText**](ContentText) | Text content. |  [optional] |
+| **quickReplyV2** | [**ContentQuickReplyV2**](ContentQuickReplyV2) | Quick reply V2 content. |  [optional] |
 
-
-<a name="ContentTypeEnum"></a>
 
 ## Enum: ContentTypeEnum
 
@@ -49,7 +43,8 @@ title: MessageContent
 | CAROUSEL | &quot;Carousel&quot; | 
 | TEXT | &quot;Text&quot; | 
 | QUICKREPLYV2 | &quot;QuickReplyV2&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

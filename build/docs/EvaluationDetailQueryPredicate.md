@@ -1,23 +1,17 @@
----
-title: EvaluationDetailQueryPredicate
----
-## EvaluationDetailQueryPredicate
+# EvaluationDetailQueryPredicate
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Optional type, can usually be inferred |  [optional] |
-| **dimension** | [**DimensionEnum**](#DimensionEnum)<!----> | Left hand side for dimension predicates |  [optional] |
-| **metric** | [**MetricEnum**](#MetricEnum)<!----> | Left hand side for metric predicates |  [optional] |
-| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | Optional operator, default is matches |  [optional] |
-| **value** | <!----><!---->**String**<!----> | Right hand side for dimension or metric predicates |  [optional] |
-| **range** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | Right hand side for dimension or metric predicates |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Optional type, can usually be inferred |  [optional] |
+| **dimension** | [**DimensionEnum**](#Enum--DimensionEnum) | Left hand side for dimension predicates |  [optional] |
+| **metric** | [**MetricEnum**](#Enum--MetricEnum) | Left hand side for metric predicates |  [optional] |
+| **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | Optional operator, default is matches |  [optional] |
+| **value** | **String** | Right hand side for dimension or metric predicates |  [optional] |
+| **range** | [**NumericRange**](NumericRange) | Right hand side for dimension or metric predicates |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -27,10 +21,7 @@ title: EvaluationDetailQueryPredicate
 | DIMENSION | &quot;dimension&quot; | 
 | PROPERTY | &quot;property&quot; | 
 | METRIC | &quot;metric&quot; | 
-{: class="table table-striped"}
 
-
-<a name="DimensionEnum"></a>
 
 ## Enum: DimensionEnum
 
@@ -52,10 +43,7 @@ title: EvaluationDetailQueryPredicate
 | RELEASED | &quot;released&quot; | 
 | RESCORED | &quot;rescored&quot; | 
 | USERID | &quot;userId&quot; | 
-{: class="table table-striped"}
 
-
-<a name="MetricEnum"></a>
 
 ## Enum: MetricEnum
 
@@ -64,10 +52,7 @@ title: EvaluationDetailQueryPredicate
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | OTOTALCRITICALSCORE | &quot;oTotalCriticalScore&quot; | 
 | OTOTALSCORE | &quot;oTotalScore&quot; | 
-{: class="table table-striped"}
 
-
-<a name="OperatorEnum"></a>
 
 ## Enum: OperatorEnum
 
@@ -77,7 +62,8 @@ title: EvaluationDetailQueryPredicate
 | MATCHES | &quot;matches&quot; | 
 | EXISTS | &quot;exists&quot; | 
 | NOTEXISTS | &quot;notExists&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,22 +1,16 @@
----
-title: WfmScheduleTopicWfmScheduleNotification
----
-## WfmScheduleTopicWfmScheduleNotification
+# WfmScheduleTopicWfmScheduleNotification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
-| **operationId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **downloadUrl** | <!----><!---->**String**<!----> |  |  [optional] |
-| **percentComplete** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **eventType** | [**EventTypeEnum**](#EventTypeEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
+| **operationId** | **String** |  |  [optional] |
+| **downloadUrl** | **String** |  |  [optional] |
+| **percentComplete** | **Integer** |  |  [optional] |
+| **eventType** | [**EventTypeEnum**](#Enum--EventTypeEnum) |  |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -27,10 +21,7 @@ title: WfmScheduleTopicWfmScheduleNotification
 | COMPLETE | &quot;Complete&quot; | 
 | CANCELED | &quot;Canceled&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
-
-<a name="EventTypeEnum"></a>
 
 ## Enum: EventTypeEnum
 
@@ -42,7 +33,8 @@ title: WfmScheduleTopicWfmScheduleNotification
 | COPY | &quot;Copy&quot; | 
 | GENERATE | &quot;Generate&quot; | 
 | RESCHEDULE | &quot;Reschedule&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

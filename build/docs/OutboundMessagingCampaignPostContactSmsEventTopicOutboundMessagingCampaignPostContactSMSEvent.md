@@ -1,28 +1,22 @@
----
-title: OutboundMessagingCampaignPostContactSmsEventTopicOutboundMessagingCampaignPostContactSMSEvent
----
-## OutboundMessagingCampaignPostContactSmsEventTopicOutboundMessagingCampaignPostContactSMSEvent
+# OutboundMessagingCampaignPostContactSmsEventTopicOutboundMessagingCampaignPostContactSMSEvent
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **eventTime** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **conversationId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **outboundCampaignType** | [**OutboundCampaignTypeEnum**](#OutboundCampaignTypeEnum)<!----> |  |  [optional] |
-| **smsAttributes** | <!----><!---->[**OutboundMessagingCampaignPostContactSmsEventTopicSMSAttributes**](OutboundMessagingCampaignPostContactSmsEventTopicSMSAttributes.html)<!----> |  |  [optional] |
-| **wrapupCode** | [**WrapupCodeEnum**](#WrapupCodeEnum)<!----> |  |  [optional] |
-| **outboundCampaignId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **divisionId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **contentTemplateId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **outboundContactListId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **outboundContactId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **isCampaignAlwaysRunning** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **eventTime** | **Integer** |  |  [optional] |
+| **conversationId** | **String** |  |  [optional] |
+| **outboundCampaignType** | [**OutboundCampaignTypeEnum**](#Enum--OutboundCampaignTypeEnum) |  |  [optional] |
+| **smsAttributes** | [**OutboundMessagingCampaignPostContactSmsEventTopicSMSAttributes**](OutboundMessagingCampaignPostContactSmsEventTopicSMSAttributes) |  |  [optional] |
+| **wrapupCode** | [**WrapupCodeEnum**](#Enum--WrapupCodeEnum) |  |  [optional] |
+| **outboundCampaignId** | **String** |  |  [optional] |
+| **divisionId** | **String** |  |  [optional] |
+| **contentTemplateId** | **String** |  |  [optional] |
+| **outboundContactListId** | **String** |  |  [optional] |
+| **outboundContactId** | **String** |  |  [optional] |
+| **isCampaignAlwaysRunning** | **Boolean** |  |  [optional] |
 
-
-<a name="OutboundCampaignTypeEnum"></a>
 
 ## Enum: OutboundCampaignTypeEnum
 
@@ -32,10 +26,7 @@ title: OutboundMessagingCampaignPostContactSmsEventTopicOutboundMessagingCampaig
 | UNKNOWN | &quot;UNKNOWN&quot; | 
 | EMAIL | &quot;EMAIL&quot; | 
 | SMS | &quot;SMS&quot; | 
-{: class="table table-striped"}
 
-
-<a name="WrapupCodeEnum"></a>
 
 ## Enum: WrapupCodeEnum
 
@@ -46,7 +37,8 @@ title: OutboundMessagingCampaignPostContactSmsEventTopicOutboundMessagingCampaig
 | OUTBOUND_MESSAGE_SENT | &quot;OUTBOUND_MESSAGE_SENT&quot; | 
 | OUTBOUND_MESSAGE_FAILED | &quot;OUTBOUND_MESSAGE_FAILED&quot; | 
 | OUTBOUND_MESSAGE_THROTTLED | &quot;OUTBOUND_MESSAGE_THROTTLED&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

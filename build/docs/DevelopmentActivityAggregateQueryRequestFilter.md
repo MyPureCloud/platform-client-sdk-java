@@ -1,19 +1,13 @@
----
-title: DevelopmentActivityAggregateQueryRequestFilter
----
-## DevelopmentActivityAggregateQueryRequestFilter
+# DevelopmentActivityAggregateQueryRequestFilter
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | The logic used to combine the clauses |  |
-| **clauses** | <!----><!---->[**List&lt;DevelopmentActivityAggregateQueryRequestClause&gt;**](DevelopmentActivityAggregateQueryRequestClause.html)<!----> | The list of clauses used to filter the data. Note that clauses must filter by attendeeId and a maximum of 100 user IDs are allowed |  |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | The logic used to combine the clauses |  |
+| **clauses** | [**List&lt;DevelopmentActivityAggregateQueryRequestClause&gt;**](DevelopmentActivityAggregateQueryRequestClause) | The list of clauses used to filter the data. Note that clauses must filter by attendeeId and a maximum of 100 user IDs are allowed |  |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -22,7 +16,8 @@ title: DevelopmentActivityAggregateQueryRequestFilter
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | AND | &quot;And&quot; | 
 | OR | &quot;Or&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

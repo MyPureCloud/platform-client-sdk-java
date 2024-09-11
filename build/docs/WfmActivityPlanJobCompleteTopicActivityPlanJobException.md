@@ -1,19 +1,13 @@
----
-title: WfmActivityPlanJobCompleteTopicActivityPlanJobException
----
-## WfmActivityPlanJobCompleteTopicActivityPlanJobException
+# WfmActivityPlanJobCompleteTopicActivityPlanJobException
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **exceptionType** | [**ExceptionTypeEnum**](#ExceptionTypeEnum)<!----> |  |  [optional] |
-| **occurrences** | <!----><!---->[**List&lt;WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference&gt;**](WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **exceptionType** | [**ExceptionTypeEnum**](#Enum--ExceptionTypeEnum) |  |  [optional] |
+| **occurrences** | [**List&lt;WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference&gt;**](WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference) |  |  [optional] |
 
-
-<a name="ExceptionTypeEnum"></a>
 
 ## Enum: ExceptionTypeEnum
 
@@ -22,7 +16,8 @@ title: WfmActivityPlanJobCompleteTopicActivityPlanJobException
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | UNSCHEDULEDATTENDEES | &quot;UnscheduledAttendees&quot; | 
 | SESSIONSNOTDELETED | &quot;SessionsNotDeleted&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

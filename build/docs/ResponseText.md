@@ -1,20 +1,14 @@
----
-title: ResponseText
----
-## ResponseText
+# ResponseText
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **content** | <!----><!---->**String**<!----> | Response text content. |  |
-| **contentType** | [**ContentTypeEnum**](#ContentTypeEnum)<!----> | Response text content type. |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Response text type. |  [optional] |
-{: class="table table-striped"}
+| **content** | **String** | Response text content. |  |
+| **contentType** | [**ContentTypeEnum**](#Enum--ContentTypeEnum) | Response text content type. |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Response text type. |  [optional] |
 
-
-<a name="ContentTypeEnum"></a>
 
 ## Enum: ContentTypeEnum
 
@@ -23,10 +17,7 @@ title: ResponseText
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | TEXT_PLAIN | &quot;text/plain&quot; | 
 | TEXT_HTML | &quot;text/html&quot; | 
-{: class="table table-striped"}
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -35,7 +26,8 @@ title: ResponseText
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | BODY | &quot;body&quot; | 
 | SUBJECT | &quot;subject&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,22 +1,16 @@
----
-title: MessageMediaAttachment
----
-## MessageMediaAttachment
+# MessageMediaAttachment
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **url** | <!----><!---->**String**<!----> | The location of the media, useful for retrieving it |  [optional] |
-| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> | The optional internet media type of the the media object.If null then the media type should be dictated by the url. |  [optional] |
-| **contentLength** | <!----><!---->**Long**<!----> | The optional content length of the the media object, in bytes. |  [optional] |
-| **name** | <!----><!---->**String**<!----> | The name of the media object. |  [optional] |
-| **id** | <!----><!---->**String**<!----> | A globally unique identifier for the media object. |  [optional] |
-{: class="table table-striped"}
+| **url** | **String** | The location of the media, useful for retrieving it |  [optional] |
+| **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) | The optional internet media type of the the media object.If null then the media type should be dictated by the url. |  [optional] |
+| **contentLength** | **Long** | The optional content length of the the media object, in bytes. |  [optional] |
+| **name** | **String** | The name of the media object. |  [optional] |
+| **id** | **String** | A globally unique identifier for the media object. |  [optional] |
 
-
-<a name="MediaTypeEnum"></a>
 
 ## Enum: MediaTypeEnum
 
@@ -26,7 +20,8 @@ title: MessageMediaAttachment
 | IMAGE_PNG | &quot;image/png&quot; | 
 | IMAGE_JPEG | &quot;image/jpeg&quot; | 
 | IMAGE_GIF | &quot;image/gif&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

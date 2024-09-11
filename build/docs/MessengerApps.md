@@ -1,16 +1,14 @@
----
-title: MessengerApps
----
-## MessengerApps
+# MessengerApps
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **conversations** | <!----><!---->[**ConversationAppSettings**](ConversationAppSettings.html)<!----> | The conversation settings that handles chats within the messenger |  [optional] |
-| **knowledge** | <!----><!---->[**Knowledge**](Knowledge.html)<!----> | The knowledge base config for messenger |  [optional] |
-{: class="table table-striped"}
+| **conversations** | [**ConversationAppSettings**](ConversationAppSettings) | The conversation settings that handles chats within the messenger |  [optional] |
+| **knowledge** | [**Knowledge**](Knowledge) | The knowledge base config for messenger |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

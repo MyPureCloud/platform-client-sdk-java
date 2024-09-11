@@ -1,15 +1,13 @@
----
-title: PatchJourney
----
-## PatchJourney
+# PatchJourney
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **patterns** | <!----><!---->[**List&lt;PatchJourneyPattern&gt;**](PatchJourneyPattern.html)<!----> | A list of zero or more patterns to match. |  [optional] |
-{: class="table table-striped"}
+| **patterns** | [**List&lt;PatchJourneyPattern&gt;**](PatchJourneyPattern) | A list of zero or more patterns to match. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

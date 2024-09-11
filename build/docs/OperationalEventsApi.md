@@ -1,23 +1,18 @@
----
-title: OperationalEventsApi
----
-## OperationalEventsApi
+# OperationalEventsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**getUsageEventsDefinition**](OperationalEventsApi.html#getUsageEventsDefinition) | Get an operational event definition by its id |
-| [**getUsageEventsDefinitions**](OperationalEventsApi.html#getUsageEventsDefinitions) | Get all operational event definitions |
+| [**getUsageEventsDefinition**](OperationalEventsApi#getUsageEventsDefinition) | Get an operational event definition by its id |
+| [**getUsageEventsDefinitions**](OperationalEventsApi#getUsageEventsDefinitions) | Get all operational event definitions |
 {: class="table-striped"}
 
-<a name="getUsageEventsDefinition"></a>
 
 # **getUsageEventsDefinition**
 
 
-
-> [EventDefinition](EventDefinition.html) getUsageEventsDefinition(eventDefinitionId)
+> [EventDefinition](EventDefinition) getUsageEventsDefinition(eventDefinitionId)
 
 Get an operational event definition by its id
 
@@ -70,15 +65,13 @@ try {
 
 ### Return type
 
-[**EventDefinition**](EventDefinition.html)
+[**EventDefinition**](EventDefinition)
 
-<a name="getUsageEventsDefinitions"></a>
 
 # **getUsageEventsDefinitions**
 
 
-
-> [EventDefinitionListing](EventDefinitionListing.html) getUsageEventsDefinitions()
+> [EventDefinitionListing](EventDefinitionListing) getUsageEventsDefinitions()
 
 Get all operational event definitions
 
@@ -127,5 +120,7 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**EventDefinitionListing**](EventDefinitionListing.html)
+[**EventDefinitionListing**](EventDefinitionListing)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

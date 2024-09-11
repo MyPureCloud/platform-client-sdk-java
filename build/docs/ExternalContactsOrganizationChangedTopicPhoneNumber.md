@@ -1,21 +1,19 @@
----
-title: ExternalContactsOrganizationChangedTopicPhoneNumber
----
-## ExternalContactsOrganizationChangedTopicPhoneNumber
+# ExternalContactsOrganizationChangedTopicPhoneNumber
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **display** | <!----><!---->**String**<!----> |  |  [optional] |
-| **extension** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **acceptsSMS** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **userInput** | <!----><!---->**String**<!----> |  |  [optional] |
-| **e164** | <!----><!---->**String**<!----> |  |  [optional] |
-| **countryCode** | <!----><!---->**String**<!----> |  |  [optional] |
-| **normalizationCountryCode** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **display** | **String** |  |  [optional] |
+| **extension** | **Integer** |  |  [optional] |
+| **acceptsSMS** | **Boolean** |  |  [optional] |
+| **userInput** | **String** |  |  [optional] |
+| **e164** | **String** |  |  [optional] |
+| **countryCode** | **String** |  |  [optional] |
+| **normalizationCountryCode** | **String** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

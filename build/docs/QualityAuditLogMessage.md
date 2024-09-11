@@ -1,33 +1,27 @@
----
-title: QualityAuditLogMessage
----
-## QualityAuditLogMessage
+# QualityAuditLogMessage
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | Id of the audit message. |  [optional] |
-| **userHomeOrgId** | <!----><!---->**String**<!----> | Home Organization Id associated with this audit message. |  [optional] |
-| **userTrusteeOrgId** | <!----><!---->**String**<!----> | Trustee Organization Id if this audit message is from trustee access. |  [optional] |
-| **user** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | User associated with this audit message. |  [optional] |
-| **client** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | Client associated with this audit message. |  [optional] |
-| **remoteIps** | <!----><!---->**List&lt;String&gt;**<!----> | List of IP addresses of systems that originated or handled the request. |  [optional] |
-| **serviceName** | [**ServiceNameEnum**](#ServiceNameEnum)<!----> | Name of the service that logged this audit message. |  [optional] |
-| **level** | [**LevelEnum**](#LevelEnum)<!----> | The level of this audit message. |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> | The status of the action of this audit message. |  [optional] |
-| **eventDate** | <!----><!---->[**Date**](Date.html)<!----> | Date and time of when the audit message was logged. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **messageInfo** | <!----><!---->[**MessageInfo**](MessageInfo.html)<!----> | Message describing the event being audited. |  [optional] |
-| **action** | [**ActionEnum**](#ActionEnum)<!----> | Action that took place. |  [optional] |
-| **entity** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | Entity that was impacted. |  [optional] |
-| **entityType** | [**EntityTypeEnum**](#EntityTypeEnum)<!----> | Type of the entity that was impacted. |  [optional] |
-| **propertyChanges** | <!----><!---->[**List&lt;PropertyChange&gt;**](PropertyChange.html)<!----> | List of properties that were changed and changes made to those properties. |  [optional] |
-| **context** | <!----><!---->**Map&lt;String, String&gt;**<!----> | Additional context for this message. |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | Id of the audit message. |  [optional] |
+| **userHomeOrgId** | **String** | Home Organization Id associated with this audit message. |  [optional] |
+| **userTrusteeOrgId** | **String** | Trustee Organization Id if this audit message is from trustee access. |  [optional] |
+| **user** | [**DomainEntityRef**](DomainEntityRef) | User associated with this audit message. |  [optional] |
+| **client** | [**AddressableEntityRef**](AddressableEntityRef) | Client associated with this audit message. |  [optional] |
+| **remoteIps** | **List&lt;String&gt;** | List of IP addresses of systems that originated or handled the request. |  [optional] |
+| **serviceName** | [**ServiceNameEnum**](#Enum--ServiceNameEnum) | Name of the service that logged this audit message. |  [optional] |
+| **level** | [**LevelEnum**](#Enum--LevelEnum) | The level of this audit message. |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the action of this audit message. |  [optional] |
+| **eventDate** | [**Date**](Date) | Date and time of when the audit message was logged. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **messageInfo** | [**MessageInfo**](MessageInfo) | Message describing the event being audited. |  [optional] |
+| **action** | [**ActionEnum**](#Enum--ActionEnum) | Action that took place. |  [optional] |
+| **entity** | [**DomainEntityRef**](DomainEntityRef) | Entity that was impacted. |  [optional] |
+| **entityType** | [**EntityTypeEnum**](#Enum--EntityTypeEnum) | Type of the entity that was impacted. |  [optional] |
+| **propertyChanges** | [**List&lt;PropertyChange&gt;**](PropertyChange) | List of properties that were changed and changes made to those properties. |  [optional] |
+| **context** | **Map&lt;String, String&gt;** | Additional context for this message. |  [optional] |
 
-
-<a name="ServiceNameEnum"></a>
 
 ## Enum: ServiceNameEnum
 
@@ -37,10 +31,7 @@ title: QualityAuditLogMessage
 | RECORDINGSERVICE | &quot;RecordingService&quot; | 
 | RECORDINGPLAYBACKSERVICE | &quot;RecordingPlaybackService&quot; | 
 | QUALITYSERVICE | &quot;QualityService&quot; | 
-{: class="table table-striped"}
 
-
-<a name="LevelEnum"></a>
 
 ## Enum: LevelEnum
 
@@ -50,10 +41,7 @@ title: QualityAuditLogMessage
 | USER | &quot;User&quot; | 
 | SYSTEM | &quot;System&quot; | 
 | GENESYS_INTERNAL | &quot;GENESYS_INTERNAL&quot; | 
-{: class="table table-striped"}
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -63,10 +51,7 @@ title: QualityAuditLogMessage
 | SUCCESS | &quot;Success&quot; | 
 | FAILURE | &quot;Failure&quot; | 
 | WARNING | &quot;Warning&quot; | 
-{: class="table table-striped"}
 
-
-<a name="ActionEnum"></a>
 
 ## Enum: ActionEnum
 
@@ -86,10 +71,7 @@ title: QualityAuditLogMessage
 | APPLYPROTECTION | &quot;ApplyProtection&quot; | 
 | REVOKEPROTECTION | &quot;RevokeProtection&quot; | 
 | UPDATERETENTION | &quot;UpdateRetention&quot; | 
-{: class="table table-striped"}
 
-
-<a name="EntityTypeEnum"></a>
 
 ## Enum: EntityTypeEnum
 
@@ -102,7 +84,8 @@ title: QualityAuditLogMessage
 | ANNOTATION | &quot;Annotation&quot; | 
 | SCREENRECORDING | &quot;ScreenRecording&quot; | 
 | SURVEY | &quot;Survey&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

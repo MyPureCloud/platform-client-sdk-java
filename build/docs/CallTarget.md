@@ -1,19 +1,13 @@
----
-title: CallTarget
----
-## CallTarget
+# CallTarget
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of call |  [optional] |
-| **value** | <!----><!---->**String**<!----> | The id of the station or an E.164 formatted phone number |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of call |  [optional] |
+| **value** | **String** | The id of the station or an E.164 formatted phone number |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -22,7 +16,8 @@ title: CallTarget
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | STATION | &quot;STATION&quot; | 
 | PHONENUMBER | &quot;PHONENUMBER&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

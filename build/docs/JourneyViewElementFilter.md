@@ -1,19 +1,13 @@
----
-title: JourneyViewElementFilter
----
-## JourneyViewElementFilter
+# JourneyViewElementFilter
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Boolean operation to apply to the provided predicates and clauses. Valid values: And |  |
-| **predicates** | <!----><!---->[**List&lt;JourneyViewElementFilterPredicate&gt;**](JourneyViewElementFilterPredicate.html)<!----> | predicates |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Boolean operation to apply to the provided predicates and clauses. Valid values: And |  |
+| **predicates** | [**List&lt;JourneyViewElementFilterPredicate&gt;**](JourneyViewElementFilterPredicate) | predicates |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -21,7 +15,8 @@ title: JourneyViewElementFilter
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | AND | &quot;And&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

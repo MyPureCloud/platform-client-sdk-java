@@ -1,17 +1,15 @@
----
-title: WfmIntradayDataUpdateTopicIntradayForecastData
----
-## WfmIntradayDataUpdateTopicIntradayForecastData
+# WfmIntradayDataUpdateTopicIntradayForecastData
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **offered** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-| **averageTalkTimeSeconds** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-| **averageAfterCallWorkSeconds** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **offered** | [**BigDecimal**](BigDecimal) |  |  [optional] |
+| **averageTalkTimeSeconds** | [**BigDecimal**](BigDecimal) |  |  [optional] |
+| **averageAfterCallWorkSeconds** | [**BigDecimal**](BigDecimal) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

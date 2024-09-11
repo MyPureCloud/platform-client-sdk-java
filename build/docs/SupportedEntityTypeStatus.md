@@ -1,18 +1,12 @@
----
-title: SupportedEntityTypeStatus
----
-## SupportedEntityTypeStatus
+# SupportedEntityTypeStatus
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **listSlotType** | [**ListSlotTypeEnum**](#ListSlotTypeEnum)<!----> | The configuration status of restricted lists |  [optional] |
-{: class="table table-striped"}
+| **listSlotType** | [**ListSlotTypeEnum**](#Enum--ListSlotTypeEnum) | The configuration status of restricted lists |  [optional] |
 
-
-<a name="ListSlotTypeEnum"></a>
 
 ## Enum: ListSlotTypeEnum
 
@@ -22,7 +16,8 @@ title: SupportedEntityTypeStatus
 | ALL | &quot;All&quot; | 
 | RESTRICTED | &quot;Restricted&quot; | 
 | UNRESTRICTED | &quot;Unrestricted&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

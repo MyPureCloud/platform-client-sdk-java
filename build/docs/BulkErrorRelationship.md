@@ -1,20 +1,18 @@
----
-title: BulkErrorRelationship
----
-## BulkErrorRelationship
+# BulkErrorRelationship
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **code** | <!----><!---->**String**<!----> |  |  [optional] |
-| **message** | <!----><!---->**String**<!----> |  |  [optional] |
-| **status** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **retryable** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **entity** | <!----><!---->[**Relationship**](Relationship.html)<!----> |  |  [optional] |
-| **details** | <!----><!---->[**List&lt;BulkErrorDetail&gt;**](BulkErrorDetail.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **code** | **String** |  |  [optional] |
+| **message** | **String** |  |  [optional] |
+| **status** | **Integer** |  |  [optional] |
+| **retryable** | **Boolean** |  |  [optional] |
+| **entity** | [**Relationship**](Relationship) |  |  [optional] |
+| **details** | [**List&lt;BulkErrorDetail&gt;**](BulkErrorDetail) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

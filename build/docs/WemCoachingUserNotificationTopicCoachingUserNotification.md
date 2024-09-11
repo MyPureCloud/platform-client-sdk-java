@@ -1,26 +1,20 @@
----
-title: WemCoachingUserNotificationTopicCoachingUserNotification
----
-## WemCoachingUserNotificationTopicCoachingUserNotification
+# WemCoachingUserNotificationTopicCoachingUserNotification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **markedAsRead** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **actionType** | [**ActionTypeEnum**](#ActionTypeEnum)<!----> |  |  [optional] |
-| **relationship** | [**RelationshipEnum**](#RelationshipEnum)<!----> |  |  [optional] |
-| **appointment** | <!----><!---->[**WemCoachingUserNotificationTopicCoachingAppointmentReference**](WemCoachingUserNotificationTopicCoachingAppointmentReference.html)<!----> |  |  [optional] |
-| **dateStart** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **lengthInMinutes** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **markedAsRead** | **Boolean** |  |  [optional] |
+| **actionType** | [**ActionTypeEnum**](#Enum--ActionTypeEnum) |  |  [optional] |
+| **relationship** | [**RelationshipEnum**](#Enum--RelationshipEnum) |  |  [optional] |
+| **appointment** | [**WemCoachingUserNotificationTopicCoachingAppointmentReference**](WemCoachingUserNotificationTopicCoachingAppointmentReference) |  |  [optional] |
+| **dateStart** | [**Date**](Date) |  |  [optional] |
+| **lengthInMinutes** | **Integer** |  |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
 
-
-<a name="ActionTypeEnum"></a>
 
 ## Enum: ActionTypeEnum
 
@@ -31,10 +25,7 @@ title: WemCoachingUserNotificationTopicCoachingUserNotification
 | UPDATE | &quot;Update&quot; | 
 | DELETE | &quot;Delete&quot; | 
 | STATUSCHANGE | &quot;StatusChange&quot; | 
-{: class="table table-striped"}
 
-
-<a name="RelationshipEnum"></a>
 
 ## Enum: RelationshipEnum
 
@@ -44,10 +35,7 @@ title: WemCoachingUserNotificationTopicCoachingUserNotification
 | ATTENDEE | &quot;Attendee&quot; | 
 | FACILITATOR | &quot;Facilitator&quot; | 
 | CREATOR | &quot;Creator&quot; | 
-{: class="table table-striped"}
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -58,7 +46,8 @@ title: WemCoachingUserNotificationTopicCoachingUserNotification
 | INPROGRESS | &quot;InProgress&quot; | 
 | COMPLETED | &quot;Completed&quot; | 
 | INVALIDSCHEDULE | &quot;InvalidSchedule&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

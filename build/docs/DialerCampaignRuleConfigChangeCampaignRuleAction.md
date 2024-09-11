@@ -1,22 +1,16 @@
----
-title: DialerCampaignRuleConfigChangeCampaignRuleAction
----
-## DialerCampaignRuleConfigChangeCampaignRuleAction
+# DialerCampaignRuleConfigChangeCampaignRuleAction
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the action |  [optional] |
-| **parameters** | <!----><!---->**Map&lt;String, String&gt;**<!----> | The parameters to match this action |  [optional] |
-| **actionType** | [**ActionTypeEnum**](#ActionTypeEnum)<!----> | The type of this action |  [optional] |
-| **campaignRuleActionEntities** | <!----><!---->[**DialerCampaignRuleConfigChangeCampaignRuleActionEntities**](DialerCampaignRuleConfigChangeCampaignRuleActionEntities.html)<!----> |  |  [optional] |
-| **additionalProperties** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the action |  [optional] |
+| **parameters** | **Map&lt;String, String&gt;** | The parameters to match this action |  [optional] |
+| **actionType** | [**ActionTypeEnum**](#Enum--ActionTypeEnum) | The type of this action |  [optional] |
+| **campaignRuleActionEntities** | [**DialerCampaignRuleConfigChangeCampaignRuleActionEntities**](DialerCampaignRuleConfigChangeCampaignRuleActionEntities) |  |  [optional] |
+| **additionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
-
-<a name="ActionTypeEnum"></a>
 
 ## Enum: ActionTypeEnum
 
@@ -29,7 +23,8 @@ title: DialerCampaignRuleConfigChangeCampaignRuleAction
 | TURNOFFSEQUENCE | &quot;turnOffSequence&quot; | 
 | SETCAMPAIGNPRIORITY | &quot;setCampaignPriority&quot; | 
 | RECYCLECAMPAIGN | &quot;recycleCampaign&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

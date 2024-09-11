@@ -1,45 +1,40 @@
----
-title: PresenceApi
----
-## PresenceApi
+# PresenceApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deletePresenceDefinition0**](PresenceApi.html#deletePresenceDefinition0) | Delete a Presence Definition |
-| [**deletePresenceSource**](PresenceApi.html#deletePresenceSource) | Delete a Presence Source |
-| [**deletePresencedefinition**](PresenceApi.html#deletePresencedefinition) | Delete a Presence Definition. Apps should migrate to use DELETE /api/v2/presence/definitions/{definitionId} instead |
-| [**getPresenceDefinition0**](PresenceApi.html#getPresenceDefinition0) | Get a Presence Definition |
-| [**getPresenceDefinitions0**](PresenceApi.html#getPresenceDefinitions0) | Get a list of Presence Definitions |
-| [**getPresenceSettings**](PresenceApi.html#getPresenceSettings) | Get the presence settings |
-| [**getPresenceSource**](PresenceApi.html#getPresenceSource) | Get a Presence Source |
-| [**getPresenceSources**](PresenceApi.html#getPresenceSources) | Get a list of Presence Sources |
-| [**getPresenceUserPrimarysource**](PresenceApi.html#getPresenceUserPrimarysource) | Get a user's Primary Presence Source |
-| [**getPresencedefinition**](PresenceApi.html#getPresencedefinition) | Get a Presence Definition. Apps should migrate to use GET /api/v2/presence/definitions/{definitionId} instead |
-| [**getPresencedefinitions**](PresenceApi.html#getPresencedefinitions) | Get an Organization's list of Presence Definitions. Apps should migrate to use GET /api/v2/presence/definitions instead |
-| [**getSystempresences**](PresenceApi.html#getSystempresences) | Get the list of SystemPresences |
-| [**getUserPresence**](PresenceApi.html#getUserPresence) | Get a user's Presence |
-| [**getUserPresencesPurecloud**](PresenceApi.html#getUserPresencesPurecloud) | Get a user's Genesys Cloud presence. |
-| [**getUsersPresenceBulk**](PresenceApi.html#getUsersPresenceBulk) | Get bulk user presences for a single presence source |
-| [**getUsersPresencesPurecloudBulk**](PresenceApi.html#getUsersPresencesPurecloudBulk) | Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source |
-| [**patchUserPresence**](PresenceApi.html#patchUserPresence) | Patch a user's Presence |
-| [**patchUserPresencesPurecloud**](PresenceApi.html#patchUserPresencesPurecloud) | Patch a Genesys Cloud user's presence |
-| [**postPresenceDefinitions0**](PresenceApi.html#postPresenceDefinitions0) | Create a Presence Definition |
-| [**postPresenceSources**](PresenceApi.html#postPresenceSources) | Create a Presence Source |
-| [**postPresencedefinitions**](PresenceApi.html#postPresencedefinitions) | Create a Presence Definition. Apps should migrate to use POST /api/v2/presence/definitions instead |
-| [**putPresenceDefinition0**](PresenceApi.html#putPresenceDefinition0) | Update a Presence Definition |
-| [**putPresenceSettings**](PresenceApi.html#putPresenceSettings) | Update the presence settings |
-| [**putPresenceSource**](PresenceApi.html#putPresenceSource) | Update a Presence Source |
-| [**putPresenceUserPrimarysource**](PresenceApi.html#putPresenceUserPrimarysource) | Update a user's Primary Presence Source |
-| [**putPresencedefinition**](PresenceApi.html#putPresencedefinition) | Update a Presence Definition. Apps should migrate to use PUT /api/v2/presence/definitions/{definitionId} instead) |
-| [**putUsersPresencesBulk**](PresenceApi.html#putUsersPresencesBulk) | Update bulk user Presences |
+| [**deletePresenceDefinition0**](PresenceApi#deletePresenceDefinition0) | Delete a Presence Definition |
+| [**deletePresenceSource**](PresenceApi#deletePresenceSource) | Delete a Presence Source |
+| [**deletePresencedefinition**](PresenceApi#deletePresencedefinition) | Delete a Presence Definition. Apps should migrate to use DELETE /api/v2/presence/definitions/{definitionId} instead |
+| [**getPresenceDefinition0**](PresenceApi#getPresenceDefinition0) | Get a Presence Definition |
+| [**getPresenceDefinitions0**](PresenceApi#getPresenceDefinitions0) | Get a list of Presence Definitions |
+| [**getPresenceSettings**](PresenceApi#getPresenceSettings) | Get the presence settings |
+| [**getPresenceSource**](PresenceApi#getPresenceSource) | Get a Presence Source |
+| [**getPresenceSources**](PresenceApi#getPresenceSources) | Get a list of Presence Sources |
+| [**getPresenceUserPrimarysource**](PresenceApi#getPresenceUserPrimarysource) | Get a user's Primary Presence Source |
+| [**getPresencedefinition**](PresenceApi#getPresencedefinition) | Get a Presence Definition. Apps should migrate to use GET /api/v2/presence/definitions/{definitionId} instead |
+| [**getPresencedefinitions**](PresenceApi#getPresencedefinitions) | Get an Organization's list of Presence Definitions. Apps should migrate to use GET /api/v2/presence/definitions instead |
+| [**getSystempresences**](PresenceApi#getSystempresences) | Get the list of SystemPresences |
+| [**getUserPresence**](PresenceApi#getUserPresence) | Get a user's Presence |
+| [**getUserPresencesPurecloud**](PresenceApi#getUserPresencesPurecloud) | Get a user's Genesys Cloud presence. |
+| [**getUsersPresenceBulk**](PresenceApi#getUsersPresenceBulk) | Get bulk user presences for a single presence source |
+| [**getUsersPresencesPurecloudBulk**](PresenceApi#getUsersPresencesPurecloudBulk) | Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source |
+| [**patchUserPresence**](PresenceApi#patchUserPresence) | Patch a user's Presence |
+| [**patchUserPresencesPurecloud**](PresenceApi#patchUserPresencesPurecloud) | Patch a Genesys Cloud user's presence |
+| [**postPresenceDefinitions0**](PresenceApi#postPresenceDefinitions0) | Create a Presence Definition |
+| [**postPresenceSources**](PresenceApi#postPresenceSources) | Create a Presence Source |
+| [**postPresencedefinitions**](PresenceApi#postPresencedefinitions) | Create a Presence Definition. Apps should migrate to use POST /api/v2/presence/definitions instead |
+| [**putPresenceDefinition0**](PresenceApi#putPresenceDefinition0) | Update a Presence Definition |
+| [**putPresenceSettings**](PresenceApi#putPresenceSettings) | Update the presence settings |
+| [**putPresenceSource**](PresenceApi#putPresenceSource) | Update a Presence Source |
+| [**putPresenceUserPrimarysource**](PresenceApi#putPresenceUserPrimarysource) | Update a user's Primary Presence Source |
+| [**putPresencedefinition**](PresenceApi#putPresencedefinition) | Update a Presence Definition. Apps should migrate to use PUT /api/v2/presence/definitions/{definitionId} instead) |
+| [**putUsersPresencesBulk**](PresenceApi#putUsersPresencesBulk) | Update bulk user Presences |
 {: class="table-striped"}
 
-<a name="deletePresenceDefinition0"></a>
 
 # **deletePresenceDefinition0**
-
 
 
 > Void deletePresenceDefinition0(definitionId)
@@ -97,10 +92,8 @@ try {
 
 null (empty response body)
 
-<a name="deletePresenceSource"></a>
 
 # **deletePresenceSource**
-
 
 
 > Void deletePresenceSource(sourceId)
@@ -158,11 +151,12 @@ try {
 
 null (empty response body)
 
-<a name="deletePresencedefinition"></a>
 
 # **deletePresencedefinition**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Void deletePresencedefinition(presenceId)
 
@@ -218,13 +212,11 @@ try {
 
 null (empty response body)
 
-<a name="getPresenceDefinition0"></a>
 
 # **getPresenceDefinition0**
 
 
-
-> [OrganizationPresenceDefinition](OrganizationPresenceDefinition.html) getPresenceDefinition0(definitionId, localeCode)
+> [OrganizationPresenceDefinition](OrganizationPresenceDefinition) getPresenceDefinition0(definitionId, localeCode)
 
 Get a Presence Definition
 
@@ -279,15 +271,13 @@ try {
 
 ### Return type
 
-[**OrganizationPresenceDefinition**](OrganizationPresenceDefinition.html)
+[**OrganizationPresenceDefinition**](OrganizationPresenceDefinition)
 
-<a name="getPresenceDefinitions0"></a>
 
 # **getPresenceDefinitions0**
 
 
-
-> [OrganizationPresenceDefinitionEntityListing](OrganizationPresenceDefinitionEntityListing.html) getPresenceDefinitions0(deactivated, divisionId, localeCode)
+> [OrganizationPresenceDefinitionEntityListing](OrganizationPresenceDefinitionEntityListing) getPresenceDefinitions0(deactivated, divisionId, localeCode)
 
 Get a list of Presence Definitions
 
@@ -337,22 +327,20 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **deactivated** | **String**| Deactivated query can be TRUE or FALSE | [optional] [default to false] 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned. | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String)| One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned. | [optional] 
 | **localeCode** | **String**| The locale code to fetch for the presence definition. Use ALL to fetch everything. | [optional]<br />**Values**: ALL, he, fr, en_US, da, de, it, cs, es, fi, ar, ja, ko, nl, no, pl, pt_BR, pt_PT, ru, sv, th, tr, uk, zh_CN, zh_TW 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**OrganizationPresenceDefinitionEntityListing**](OrganizationPresenceDefinitionEntityListing.html)
+[**OrganizationPresenceDefinitionEntityListing**](OrganizationPresenceDefinitionEntityListing)
 
-<a name="getPresenceSettings"></a>
 
 # **getPresenceSettings**
 
 
-
-> [PresenceSettings](PresenceSettings.html) getPresenceSettings()
+> [PresenceSettings](PresenceSettings) getPresenceSettings()
 
 Get the presence settings
 
@@ -401,15 +389,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**PresenceSettings**](PresenceSettings.html)
+[**PresenceSettings**](PresenceSettings)
 
-<a name="getPresenceSource"></a>
 
 # **getPresenceSource**
 
 
-
-> [Source](Source.html) getPresenceSource(sourceId)
+> [Source](Source) getPresenceSource(sourceId)
 
 Get a Presence Source
 
@@ -462,15 +448,13 @@ try {
 
 ### Return type
 
-[**Source**](Source.html)
+[**Source**](Source)
 
-<a name="getPresenceSources"></a>
 
 # **getPresenceSources**
 
 
-
-> [SourceEntityListing](SourceEntityListing.html) getPresenceSources(deactivated)
+> [SourceEntityListing](SourceEntityListing) getPresenceSources(deactivated)
 
 Get a list of Presence Sources
 
@@ -523,15 +507,13 @@ try {
 
 ### Return type
 
-[**SourceEntityListing**](SourceEntityListing.html)
+[**SourceEntityListing**](SourceEntityListing)
 
-<a name="getPresenceUserPrimarysource"></a>
 
 # **getPresenceUserPrimarysource**
 
 
-
-> [UserPrimarySource](UserPrimarySource.html) getPresenceUserPrimarysource(userId)
+> [UserPrimarySource](UserPrimarySource) getPresenceUserPrimarysource(userId)
 
 Get a user's Primary Presence Source
 
@@ -584,15 +566,16 @@ try {
 
 ### Return type
 
-[**UserPrimarySource**](UserPrimarySource.html)
+[**UserPrimarySource**](UserPrimarySource)
 
-<a name="getPresencedefinition"></a>
 
 # **getPresencedefinition**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [OrganizationPresence](OrganizationPresence.html) getPresencedefinition(presenceId, localeCode)
+> [OrganizationPresence](OrganizationPresence) getPresencedefinition(presenceId, localeCode)
 
 Get a Presence Definition. Apps should migrate to use GET /api/v2/presence/definitions/{definitionId} instead
 
@@ -647,15 +630,16 @@ try {
 
 ### Return type
 
-[**OrganizationPresence**](OrganizationPresence.html)
+[**OrganizationPresence**](OrganizationPresence)
 
-<a name="getPresencedefinitions"></a>
 
 # **getPresencedefinitions**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [OrganizationPresenceEntityListing](OrganizationPresenceEntityListing.html) getPresencedefinitions(pageNumber, pageSize, deleted, localeCode)
+> [OrganizationPresenceEntityListing](OrganizationPresenceEntityListing) getPresencedefinitions(pageNumber, pageSize, deleted, localeCode)
 
 Get an Organization's list of Presence Definitions. Apps should migrate to use GET /api/v2/presence/definitions instead
 
@@ -713,15 +697,13 @@ try {
 
 ### Return type
 
-[**OrganizationPresenceEntityListing**](OrganizationPresenceEntityListing.html)
+[**OrganizationPresenceEntityListing**](OrganizationPresenceEntityListing)
 
-<a name="getSystempresences"></a>
 
 # **getSystempresences**
 
 
-
-> [List&lt;SystemPresence&gt;](SystemPresence.html) getSystempresences()
+> [List&lt;SystemPresence&gt;](SystemPresence) getSystempresences()
 
 Get the list of SystemPresences
 
@@ -769,15 +751,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**List&lt;SystemPresence&gt;**](SystemPresence.html)
+[**List&lt;SystemPresence&gt;**](SystemPresence)
 
-<a name="getUserPresence"></a>
 
 # **getUserPresence**
 
 
-
-> [UserPresence](UserPresence.html) getUserPresence(userId, sourceId)
+> [UserPresence](UserPresence) getUserPresence(userId, sourceId)
 
 Get a user's Presence
 
@@ -833,15 +813,13 @@ try {
 
 ### Return type
 
-[**UserPresence**](UserPresence.html)
+[**UserPresence**](UserPresence)
 
-<a name="getUserPresencesPurecloud"></a>
 
 # **getUserPresencesPurecloud**
 
 
-
-> [UserPresence](UserPresence.html) getUserPresencesPurecloud(userId)
+> [UserPresence](UserPresence) getUserPresencesPurecloud(userId)
 
 Get a user's Genesys Cloud presence.
 
@@ -895,15 +873,13 @@ try {
 
 ### Return type
 
-[**UserPresence**](UserPresence.html)
+[**UserPresence**](UserPresence)
 
-<a name="getUsersPresenceBulk"></a>
 
 # **getUsersPresenceBulk**
 
 
-
-> [List&lt;UcUserPresence&gt;](UcUserPresence.html) getUsersPresenceBulk(sourceId, id)
+> [List&lt;UcUserPresence&gt;](UcUserPresence) getUsersPresenceBulk(sourceId, id)
 
 Get bulk user presences for a single presence source
 
@@ -951,21 +927,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sourceId** | **String**| The requested presence source ID. | 
-| **id** | [**List&lt;String&gt;**](String.html)| A comma separated list of user IDs to fetch their presence status in bulk. Limit 50. | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| A comma separated list of user IDs to fetch their presence status in bulk. Limit 50. | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**List&lt;UcUserPresence&gt;**](UcUserPresence.html)
+[**List&lt;UcUserPresence&gt;**](UcUserPresence)
 
-<a name="getUsersPresencesPurecloudBulk"></a>
 
 # **getUsersPresencesPurecloudBulk**
 
 
-
-> [List&lt;UcUserPresence&gt;](UcUserPresence.html) getUsersPresencesPurecloudBulk(id)
+> [List&lt;UcUserPresence&gt;](UcUserPresence) getUsersPresencesPurecloudBulk(id)
 
 Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source
 
@@ -1011,21 +985,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**List&lt;String&gt;**](String.html)| A comma separated list of user IDs to fetch their presence status in bulk. Limit 50. | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| A comma separated list of user IDs to fetch their presence status in bulk. Limit 50. | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**List&lt;UcUserPresence&gt;**](UcUserPresence.html)
+[**List&lt;UcUserPresence&gt;**](UcUserPresence)
 
-<a name="patchUserPresence"></a>
 
 # **patchUserPresence**
 
 
-
-> [UserPresence](UserPresence.html) patchUserPresence(userId, sourceId, body)
+> [UserPresence](UserPresence) patchUserPresence(userId, sourceId, body)
 
 Patch a user's Presence
 
@@ -1077,21 +1049,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| user Id | 
 | **sourceId** | **String**| Presence source ID | 
-| **body** | [**UserPresence**](UserPresence.html)| User presence | 
+| **body** | [**UserPresence**](UserPresence)| User presence | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UserPresence**](UserPresence.html)
+[**UserPresence**](UserPresence)
 
-<a name="patchUserPresencesPurecloud"></a>
 
 # **patchUserPresencesPurecloud**
 
 
-
-> [UserPresence](UserPresence.html) patchUserPresencesPurecloud(userId, body)
+> [UserPresence](UserPresence) patchUserPresencesPurecloud(userId, body)
 
 Patch a Genesys Cloud user's presence
 
@@ -1141,21 +1111,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| user Id | 
-| **body** | [**UserPresence**](UserPresence.html)| User presence | 
+| **body** | [**UserPresence**](UserPresence)| User presence | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UserPresence**](UserPresence.html)
+[**UserPresence**](UserPresence)
 
-<a name="postPresenceDefinitions0"></a>
 
 # **postPresenceDefinitions0**
 
 
-
-> [OrganizationPresenceDefinition](OrganizationPresenceDefinition.html) postPresenceDefinitions0(body)
+> [OrganizationPresenceDefinition](OrganizationPresenceDefinition) postPresenceDefinitions0(body)
 
 Create a Presence Definition
 
@@ -1202,21 +1170,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**OrganizationPresenceDefinition**](OrganizationPresenceDefinition.html)| The Presence Definition to create | 
+| **body** | [**OrganizationPresenceDefinition**](OrganizationPresenceDefinition)| The Presence Definition to create | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**OrganizationPresenceDefinition**](OrganizationPresenceDefinition.html)
+[**OrganizationPresenceDefinition**](OrganizationPresenceDefinition)
 
-<a name="postPresenceSources"></a>
 
 # **postPresenceSources**
 
 
-
-> [Source](Source.html) postPresenceSources(body)
+> [Source](Source) postPresenceSources(body)
 
 Create a Presence Source
 
@@ -1263,21 +1229,22 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Source**](Source.html)| The Presence Source to create | 
+| **body** | [**Source**](Source)| The Presence Source to create | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Source**](Source.html)
+[**Source**](Source)
 
-<a name="postPresencedefinitions"></a>
 
 # **postPresencedefinitions**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [OrganizationPresence](OrganizationPresence.html) postPresencedefinitions(body)
+> [OrganizationPresence](OrganizationPresence) postPresencedefinitions(body)
 
 Create a Presence Definition. Apps should migrate to use POST /api/v2/presence/definitions instead
 
@@ -1324,21 +1291,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**OrganizationPresence**](OrganizationPresence.html)| The Presence Definition to create | 
+| **body** | [**OrganizationPresence**](OrganizationPresence)| The Presence Definition to create | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**OrganizationPresence**](OrganizationPresence.html)
+[**OrganizationPresence**](OrganizationPresence)
 
-<a name="putPresenceDefinition0"></a>
 
 # **putPresenceDefinition0**
 
 
-
-> [OrganizationPresenceDefinition](OrganizationPresenceDefinition.html) putPresenceDefinition0(definitionId, body)
+> [OrganizationPresenceDefinition](OrganizationPresenceDefinition) putPresenceDefinition0(definitionId, body)
 
 Update a Presence Definition
 
@@ -1387,21 +1352,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **definitionId** | **String**| Presence Definition ID | 
-| **body** | [**OrganizationPresenceDefinition**](OrganizationPresenceDefinition.html)| The updated Presence Definition | 
+| **body** | [**OrganizationPresenceDefinition**](OrganizationPresenceDefinition)| The updated Presence Definition | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**OrganizationPresenceDefinition**](OrganizationPresenceDefinition.html)
+[**OrganizationPresenceDefinition**](OrganizationPresenceDefinition)
 
-<a name="putPresenceSettings"></a>
 
 # **putPresenceSettings**
 
 
-
-> [PresenceSettings](PresenceSettings.html) putPresenceSettings(body)
+> [PresenceSettings](PresenceSettings) putPresenceSettings(body)
 
 Update the presence settings
 
@@ -1448,21 +1411,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**PresenceSettings**](PresenceSettings.html)| Presence Settings | 
+| **body** | [**PresenceSettings**](PresenceSettings)| Presence Settings | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**PresenceSettings**](PresenceSettings.html)
+[**PresenceSettings**](PresenceSettings)
 
-<a name="putPresenceSource"></a>
 
 # **putPresenceSource**
 
 
-
-> [Source](Source.html) putPresenceSource(sourceId, body)
+> [Source](Source) putPresenceSource(sourceId, body)
 
 Update a Presence Source
 
@@ -1511,21 +1472,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sourceId** | **String**| Presence Source ID | 
-| **body** | [**Source**](Source.html)| The updated Presence Source | 
+| **body** | [**Source**](Source)| The updated Presence Source | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Source**](Source.html)
+[**Source**](Source)
 
-<a name="putPresenceUserPrimarysource"></a>
 
 # **putPresenceUserPrimarysource**
 
 
-
-> [UserPrimarySource](UserPrimarySource.html) putPresenceUserPrimarysource(userId, body)
+> [UserPrimarySource](UserPrimarySource) putPresenceUserPrimarysource(userId, body)
 
 Update a user's Primary Presence Source
 
@@ -1574,21 +1533,22 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| user ID | 
-| **body** | [**UserPrimarySource**](UserPrimarySource.html)| Primary Source | 
+| **body** | [**UserPrimarySource**](UserPrimarySource)| Primary Source | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UserPrimarySource**](UserPrimarySource.html)
+[**UserPrimarySource**](UserPrimarySource)
 
-<a name="putPresencedefinition"></a>
 
 # **putPresencedefinition**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [OrganizationPresence](OrganizationPresence.html) putPresencedefinition(presenceId, body)
+> [OrganizationPresence](OrganizationPresence) putPresencedefinition(presenceId, body)
 
 Update a Presence Definition. Apps should migrate to use PUT /api/v2/presence/definitions/{definitionId} instead)
 
@@ -1637,21 +1597,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **presenceId** | **String**| Organization Presence ID | 
-| **body** | [**OrganizationPresence**](OrganizationPresence.html)| The OrganizationPresence to update | 
+| **body** | [**OrganizationPresence**](OrganizationPresence)| The OrganizationPresence to update | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**OrganizationPresence**](OrganizationPresence.html)
+[**OrganizationPresence**](OrganizationPresence)
 
-<a name="putUsersPresencesBulk"></a>
 
 # **putUsersPresencesBulk**
 
 
-
-> [List&lt;UserPresence&gt;](UserPresence.html) putUsersPresencesBulk(body)
+> [List&lt;UserPresence&gt;](UserPresence) putUsersPresencesBulk(body)
 
 Update bulk user Presences
 
@@ -1698,11 +1656,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**List&lt;MutableUserPresence&gt;**](MutableUserPresence.html)| List of User presences | 
+| **body** | [**List&lt;MutableUserPresence&gt;**](MutableUserPresence)| List of User presences | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**List&lt;UserPresence&gt;**](UserPresence.html)
+[**List&lt;UserPresence&gt;**](UserPresence)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

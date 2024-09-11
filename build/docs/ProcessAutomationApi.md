@@ -1,26 +1,21 @@
----
-title: ProcessAutomationApi
----
-## ProcessAutomationApi
+# ProcessAutomationApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteProcessautomationTrigger**](ProcessAutomationApi.html#deleteProcessautomationTrigger) | Delete a Trigger |
-| [**getProcessautomationTrigger**](ProcessAutomationApi.html#getProcessautomationTrigger) | Retrieve a single Trigger matching id |
-| [**getProcessautomationTriggers**](ProcessAutomationApi.html#getProcessautomationTriggers) | Retrieves all triggers, optionally filtered by query parameters. |
-| [**getProcessautomationTriggersTopics**](ProcessAutomationApi.html#getProcessautomationTriggersTopics) | Get topics available for organization |
-| [**postProcessautomationTriggerTest**](ProcessAutomationApi.html#postProcessautomationTriggerTest) | Test the matching of a Trigger based on provided event body |
-| [**postProcessautomationTriggers**](ProcessAutomationApi.html#postProcessautomationTriggers) | Create a Trigger |
-| [**postProcessautomationTriggersTopicTest**](ProcessAutomationApi.html#postProcessautomationTriggersTopicTest) | Test the matching of all organization Triggers on given topic using provided event body |
-| [**putProcessautomationTrigger**](ProcessAutomationApi.html#putProcessautomationTrigger) | Update a Trigger |
+| [**deleteProcessautomationTrigger**](ProcessAutomationApi#deleteProcessautomationTrigger) | Delete a Trigger |
+| [**getProcessautomationTrigger**](ProcessAutomationApi#getProcessautomationTrigger) | Retrieve a single Trigger matching id |
+| [**getProcessautomationTriggers**](ProcessAutomationApi#getProcessautomationTriggers) | Retrieves all triggers, optionally filtered by query parameters. |
+| [**getProcessautomationTriggersTopics**](ProcessAutomationApi#getProcessautomationTriggersTopics) | Get topics available for organization |
+| [**postProcessautomationTriggerTest**](ProcessAutomationApi#postProcessautomationTriggerTest) | Test the matching of a Trigger based on provided event body |
+| [**postProcessautomationTriggers**](ProcessAutomationApi#postProcessautomationTriggers) | Create a Trigger |
+| [**postProcessautomationTriggersTopicTest**](ProcessAutomationApi#postProcessautomationTriggersTopicTest) | Test the matching of all organization Triggers on given topic using provided event body |
+| [**putProcessautomationTrigger**](ProcessAutomationApi#putProcessautomationTrigger) | Update a Trigger |
 {: class="table-striped"}
 
-<a name="deleteProcessautomationTrigger"></a>
 
 # **deleteProcessautomationTrigger**
-
 
 
 > Void deleteProcessautomationTrigger(triggerId)
@@ -77,13 +72,11 @@ try {
 
 null (empty response body)
 
-<a name="getProcessautomationTrigger"></a>
 
 # **getProcessautomationTrigger**
 
 
-
-> [Trigger](Trigger.html) getProcessautomationTrigger(triggerId)
+> [Trigger](Trigger) getProcessautomationTrigger(triggerId)
 
 Retrieve a single Trigger matching id
 
@@ -137,15 +130,13 @@ try {
 
 ### Return type
 
-[**Trigger**](Trigger.html)
+[**Trigger**](Trigger)
 
-<a name="getProcessautomationTriggers"></a>
 
 # **getProcessautomationTriggers**
 
 
-
-> [TriggerEntityListing](TriggerEntityListing.html) getProcessautomationTriggers(before, after, pageSize, topicName, enabled, hasDelayBy)
+> [TriggerEntityListing](TriggerEntityListing) getProcessautomationTriggers(before, after, pageSize, topicName, enabled, hasDelayBy)
 
 Retrieves all triggers, optionally filtered by query parameters.
 
@@ -209,15 +200,13 @@ try {
 
 ### Return type
 
-[**TriggerEntityListing**](TriggerEntityListing.html)
+[**TriggerEntityListing**](TriggerEntityListing)
 
-<a name="getProcessautomationTriggersTopics"></a>
 
 # **getProcessautomationTriggersTopics**
 
 
-
-> [TopicCursorEntityListing](TopicCursorEntityListing.html) getProcessautomationTriggersTopics(before, after, pageSize)
+> [TopicCursorEntityListing](TopicCursorEntityListing) getProcessautomationTriggersTopics(before, after, pageSize)
 
 Get topics available for organization
 
@@ -275,15 +264,13 @@ try {
 
 ### Return type
 
-[**TopicCursorEntityListing**](TopicCursorEntityListing.html)
+[**TopicCursorEntityListing**](TopicCursorEntityListing)
 
-<a name="postProcessautomationTriggerTest"></a>
 
 # **postProcessautomationTriggerTest**
 
 
-
-> [TestModeResults](TestModeResults.html) postProcessautomationTriggerTest(triggerId, body)
+> [TestModeResults](TestModeResults) postProcessautomationTriggerTest(triggerId, body)
 
 Test the matching of a Trigger based on provided event body
 
@@ -338,15 +325,13 @@ try {
 
 ### Return type
 
-[**TestModeResults**](TestModeResults.html)
+[**TestModeResults**](TestModeResults)
 
-<a name="postProcessautomationTriggers"></a>
 
 # **postProcessautomationTriggers**
 
 
-
-> [Trigger](Trigger.html) postProcessautomationTriggers(body)
+> [Trigger](Trigger) postProcessautomationTriggers(body)
 
 Create a Trigger
 
@@ -393,21 +378,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CreateTriggerRequest**](CreateTriggerRequest.html)| Input used to create a Trigger. | 
+| **body** | [**CreateTriggerRequest**](CreateTriggerRequest)| Input used to create a Trigger. | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Trigger**](Trigger.html)
+[**Trigger**](Trigger)
 
-<a name="postProcessautomationTriggersTopicTest"></a>
 
 # **postProcessautomationTriggersTopicTest**
 
 
-
-> [TestModeEventResults](TestModeEventResults.html) postProcessautomationTriggersTopicTest(topicName, body)
+> [TestModeEventResults](TestModeEventResults) postProcessautomationTriggersTopicTest(topicName, body)
 
 Test the matching of all organization Triggers on given topic using provided event body
 
@@ -462,15 +445,13 @@ try {
 
 ### Return type
 
-[**TestModeEventResults**](TestModeEventResults.html)
+[**TestModeEventResults**](TestModeEventResults)
 
-<a name="putProcessautomationTrigger"></a>
 
 # **putProcessautomationTrigger**
 
 
-
-> [Trigger](Trigger.html) putProcessautomationTrigger(triggerId, body)
+> [Trigger](Trigger) putProcessautomationTrigger(triggerId, body)
 
 Update a Trigger
 
@@ -519,11 +500,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **triggerId** | **String**| triggerId | 
-| **body** | [**UpdateTriggerRequest**](UpdateTriggerRequest.html)| Input to update Trigger. (topicName cannot be updated, a new trigger must be created to use a new topicName) | 
+| **body** | [**UpdateTriggerRequest**](UpdateTriggerRequest)| Input to update Trigger. (topicName cannot be updated, a new trigger must be created to use a new topicName) | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Trigger**](Trigger.html)
+[**Trigger**](Trigger)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

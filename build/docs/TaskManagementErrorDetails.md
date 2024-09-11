@@ -1,16 +1,14 @@
----
-title: TaskManagementErrorDetails
----
-## TaskManagementErrorDetails
+# TaskManagementErrorDetails
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **code** | <!----><!---->**String**<!----> | System defined error code for the error. |  [optional] |
-| **message** | <!----><!---->**String**<!----> | Error message. |  [optional] |
-{: class="table table-striped"}
+| **code** | **String** | System defined error code for the error. |  [optional] |
+| **message** | **String** | Error message. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

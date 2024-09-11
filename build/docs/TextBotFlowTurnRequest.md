@@ -1,21 +1,15 @@
----
-title: TextBotFlowTurnRequest
----
-## TextBotFlowTurnRequest
+# TextBotFlowTurnRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **previousTurn** | <!----><!---->[**TextBotTurnReference**](TextBotTurnReference.html)<!----> | The reference to a previous turn if appropriate, used to avoid race conditions. |  [optional] |
-| **inputEventType** | [**InputEventTypeEnum**](#InputEventTypeEnum)<!----> | Indicates the type of input event being requested. If appropriate, fill out the matching user input object details on this request. |  |
-| **inputEventUserInput** | <!----><!---->[**TextBotUserInputEvent**](TextBotUserInputEvent.html)<!----> | The data for the input event of this turn if it is a user input event. Only one inputEvent may be set. |  [optional] |
-| **inputEventError** | <!----><!---->[**TextBotErrorInputEvent**](TextBotErrorInputEvent.html)<!----> | The data for the input event of this turn if it is an error event. Only one inputEvent may be set. |  [optional] |
-{: class="table table-striped"}
+| **previousTurn** | [**TextBotTurnReference**](TextBotTurnReference) | The reference to a previous turn if appropriate, used to avoid race conditions. |  [optional] |
+| **inputEventType** | [**InputEventTypeEnum**](#Enum--InputEventTypeEnum) | Indicates the type of input event being requested. If appropriate, fill out the matching user input object details on this request. |  |
+| **inputEventUserInput** | [**TextBotUserInputEvent**](TextBotUserInputEvent) | The data for the input event of this turn if it is a user input event. Only one inputEvent may be set. |  [optional] |
+| **inputEventError** | [**TextBotErrorInputEvent**](TextBotErrorInputEvent) | The data for the input event of this turn if it is an error event. Only one inputEvent may be set. |  [optional] |
 
-
-<a name="InputEventTypeEnum"></a>
 
 ## Enum: InputEventTypeEnum
 
@@ -29,7 +23,8 @@ title: TextBotFlowTurnRequest
 | NOINPUT | &quot;NoInput&quot; | 
 | USERDISCONNECT | &quot;UserDisconnect&quot; | 
 | CLIENTSESSIONEXPIRED | &quot;ClientSessionExpired&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

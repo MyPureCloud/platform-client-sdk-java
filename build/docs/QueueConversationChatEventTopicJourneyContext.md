@@ -1,17 +1,15 @@
----
-title: QueueConversationChatEventTopicJourneyContext
----
-## QueueConversationChatEventTopicJourneyContext
+# QueueConversationChatEventTopicJourneyContext
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **customer** | <!----><!---->[**QueueConversationChatEventTopicJourneyCustomer**](QueueConversationChatEventTopicJourneyCustomer.html)<!----> |  |  [optional] |
-| **customerSession** | <!----><!---->[**QueueConversationChatEventTopicJourneyCustomerSession**](QueueConversationChatEventTopicJourneyCustomerSession.html)<!----> |  |  [optional] |
-| **triggeringAction** | <!----><!---->[**QueueConversationChatEventTopicJourneyAction**](QueueConversationChatEventTopicJourneyAction.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **customer** | [**QueueConversationChatEventTopicJourneyCustomer**](QueueConversationChatEventTopicJourneyCustomer) |  |  [optional] |
+| **customerSession** | [**QueueConversationChatEventTopicJourneyCustomerSession**](QueueConversationChatEventTopicJourneyCustomerSession) |  |  [optional] |
+| **triggeringAction** | [**QueueConversationChatEventTopicJourneyAction**](QueueConversationChatEventTopicJourneyAction) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

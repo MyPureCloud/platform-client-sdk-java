@@ -1,17 +1,15 @@
----
-title: NluDetectionResponse
----
-## NluDetectionResponse
+# NluDetectionResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **version** | <!----><!---->[**NluDomainVersion**](NluDomainVersion.html)<!----> | The NLU domain version which performed the detection. |  [optional] |
-| **output** | <!----><!---->[**NluDetectionOutput**](NluDetectionOutput.html)<!----> |  |  [optional] |
-| **input** | <!----><!---->[**NluDetectionInput**](NluDetectionInput.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **version** | [**NluDomainVersion**](NluDomainVersion) | The NLU domain version which performed the detection. |  [optional] |
+| **output** | [**NluDetectionOutput**](NluDetectionOutput) |  |  [optional] |
+| **input** | [**NluDetectionInput**](NluDetectionInput) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

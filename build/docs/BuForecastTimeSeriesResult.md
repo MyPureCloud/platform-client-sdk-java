@@ -1,20 +1,14 @@
----
-title: BuForecastTimeSeriesResult
----
-## BuForecastTimeSeriesResult
+# BuForecastTimeSeriesResult
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **metric** | [**MetricEnum**](#MetricEnum)<!----> | The metric this result applies to |  [optional] |
-| **forecastingMethod** | [**ForecastingMethodEnum**](#ForecastingMethodEnum)<!----> | The forecasting method that was used for this metric |  [optional] |
-| **forecastType** | [**ForecastTypeEnum**](#ForecastTypeEnum)<!----> | The forecasting type in this forecast result |  [optional] |
-{: class="table table-striped"}
+| **metric** | [**MetricEnum**](#Enum--MetricEnum) | The metric this result applies to |  [optional] |
+| **forecastingMethod** | [**ForecastingMethodEnum**](#Enum--ForecastingMethodEnum) | The forecasting method that was used for this metric |  [optional] |
+| **forecastType** | [**ForecastTypeEnum**](#Enum--ForecastTypeEnum) | The forecasting type in this forecast result |  [optional] |
 
-
-<a name="MetricEnum"></a>
 
 ## Enum: MetricEnum
 
@@ -23,10 +17,7 @@ title: BuForecastTimeSeriesResult
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | OFFERED | &quot;Offered&quot; | 
 | AVERAGEHANDLETIMESECONDS | &quot;AverageHandleTimeSeconds&quot; | 
-{: class="table table-striped"}
 
-
-<a name="ForecastingMethodEnum"></a>
 
 ## Enum: ForecastingMethodEnum
 
@@ -59,10 +50,7 @@ title: BuForecastTimeSeriesResult
 | THETA | &quot;Theta&quot; | 
 | ENSEMBLE | &quot;Ensemble&quot; | 
 | OTHER | &quot;Other&quot; | 
-{: class="table table-striped"}
 
-
-<a name="ForecastTypeEnum"></a>
 
 ## Enum: ForecastTypeEnum
 
@@ -71,7 +59,8 @@ title: BuForecastTimeSeriesResult
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | LONGTERM | &quot;LongTerm&quot; | 
 | SHORTTERM | &quot;ShortTerm&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

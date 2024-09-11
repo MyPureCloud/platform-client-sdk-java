@@ -1,16 +1,14 @@
----
-title: ActivityCodeContainer
----
-## ActivityCodeContainer
+# ActivityCodeContainer
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **activityCodes** | <!----><!---->[**Map&lt;String, ActivityCode&gt;**](ActivityCode.html)<!----> | Map of activity code id to activity code |  [optional] |
-| **metadata** | <!----><!---->[**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata.html)<!----> | Version metadata for the associated management unit's list of activity codes |  |
-{: class="table table-striped"}
+| **activityCodes** | [**Map&lt;String, ActivityCode&gt;**](ActivityCode) | Map of activity code id to activity code |  [optional] |
+| **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Version metadata for the associated management unit's list of activity codes |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

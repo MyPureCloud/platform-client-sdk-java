@@ -1,42 +1,37 @@
----
-title: AlertingApi
----
-## AlertingApi
+# AlertingApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteAlertingAlert**](AlertingApi.html#deleteAlertingAlert) | Delete an alert |
-| [**deleteAlertingInteractionstatsAlert**](AlertingApi.html#deleteAlertingInteractionstatsAlert) | Delete an interaction stats alert |
-| [**deleteAlertingInteractionstatsRule**](AlertingApi.html#deleteAlertingInteractionstatsRule) | Delete an interaction stats rule |
-| [**deleteAlertingRule**](AlertingApi.html#deleteAlertingRule) | Delete a rule. |
-| [**getAlertingAlert**](AlertingApi.html#getAlertingAlert) | Get an alert |
-| [**getAlertingAlertsActive**](AlertingApi.html#getAlertingAlertsActive) | Gets active alert count for a user |
-| [**getAlertingInteractionstatsAlert**](AlertingApi.html#getAlertingInteractionstatsAlert) | Get an interaction stats alert |
-| [**getAlertingInteractionstatsAlerts**](AlertingApi.html#getAlertingInteractionstatsAlerts) | Get interaction stats alert list |
-| [**getAlertingInteractionstatsAlertsUnread**](AlertingApi.html#getAlertingInteractionstatsAlertsUnread) | Gets user unread count of interaction stats alerts |
-| [**getAlertingInteractionstatsRule**](AlertingApi.html#getAlertingInteractionstatsRule) | Get an interaction stats rule |
-| [**getAlertingInteractionstatsRules**](AlertingApi.html#getAlertingInteractionstatsRules) | Get an interaction stats rule list |
-| [**getAlertingRule**](AlertingApi.html#getAlertingRule) | Get a rule. |
-| [**patchAlertingAlert**](AlertingApi.html#patchAlertingAlert) | Allows an entity to mute/snooze an alert or update the unread status of the alert. |
-| [**patchAlertingAlertsBulk**](AlertingApi.html#patchAlertingAlertsBulk) | Bulk alert updates |
-| [**patchAlertingRulesBulk**](AlertingApi.html#patchAlertingRulesBulk) | Bulk update of notification lists |
-| [**postAlertingAlertsQuery**](AlertingApi.html#postAlertingAlertsQuery) | Gets a paged list of alerts. The max page size is 50 |
-| [**postAlertingInteractionstatsRules**](AlertingApi.html#postAlertingInteractionstatsRules) | Create an interaction stats rule |
-| [**postAlertingRules**](AlertingApi.html#postAlertingRules) | Create a Rule. |
-| [**postAlertingRulesBulkRemove**](AlertingApi.html#postAlertingRulesBulkRemove) | Bulk remove rules |
-| [**postAlertingRulesQuery**](AlertingApi.html#postAlertingRulesQuery) | Get a paged list of rules.  The max size of the page is 50 items. |
-| [**putAlertingAlert**](AlertingApi.html#putAlertingAlert) | Update an alert read status |
-| [**putAlertingInteractionstatsAlert**](AlertingApi.html#putAlertingInteractionstatsAlert) | Update an interaction stats alert read status |
-| [**putAlertingInteractionstatsRule**](AlertingApi.html#putAlertingInteractionstatsRule) | Update an interaction stats rule |
-| [**putAlertingRule**](AlertingApi.html#putAlertingRule) | Update a rule |
+| [**deleteAlertingAlert**](AlertingApi#deleteAlertingAlert) | Delete an alert |
+| [**deleteAlertingInteractionstatsAlert**](AlertingApi#deleteAlertingInteractionstatsAlert) | Delete an interaction stats alert |
+| [**deleteAlertingInteractionstatsRule**](AlertingApi#deleteAlertingInteractionstatsRule) | Delete an interaction stats rule |
+| [**deleteAlertingRule**](AlertingApi#deleteAlertingRule) | Delete a rule. |
+| [**getAlertingAlert**](AlertingApi#getAlertingAlert) | Get an alert |
+| [**getAlertingAlertsActive**](AlertingApi#getAlertingAlertsActive) | Gets active alert count for a user |
+| [**getAlertingInteractionstatsAlert**](AlertingApi#getAlertingInteractionstatsAlert) | Get an interaction stats alert |
+| [**getAlertingInteractionstatsAlerts**](AlertingApi#getAlertingInteractionstatsAlerts) | Get interaction stats alert list |
+| [**getAlertingInteractionstatsAlertsUnread**](AlertingApi#getAlertingInteractionstatsAlertsUnread) | Gets user unread count of interaction stats alerts |
+| [**getAlertingInteractionstatsRule**](AlertingApi#getAlertingInteractionstatsRule) | Get an interaction stats rule |
+| [**getAlertingInteractionstatsRules**](AlertingApi#getAlertingInteractionstatsRules) | Get an interaction stats rule list |
+| [**getAlertingRule**](AlertingApi#getAlertingRule) | Get a rule. |
+| [**patchAlertingAlert**](AlertingApi#patchAlertingAlert) | Allows an entity to mute/snooze an alert or update the unread status of the alert. |
+| [**patchAlertingAlertsBulk**](AlertingApi#patchAlertingAlertsBulk) | Bulk alert updates |
+| [**patchAlertingRulesBulk**](AlertingApi#patchAlertingRulesBulk) | Bulk update of notification lists |
+| [**postAlertingAlertsQuery**](AlertingApi#postAlertingAlertsQuery) | Gets a paged list of alerts. The max page size is 50 |
+| [**postAlertingInteractionstatsRules**](AlertingApi#postAlertingInteractionstatsRules) | Create an interaction stats rule |
+| [**postAlertingRules**](AlertingApi#postAlertingRules) | Create a Rule. |
+| [**postAlertingRulesBulkRemove**](AlertingApi#postAlertingRulesBulkRemove) | Bulk remove rules |
+| [**postAlertingRulesQuery**](AlertingApi#postAlertingRulesQuery) | Get a paged list of rules.  The max size of the page is 50 items. |
+| [**putAlertingAlert**](AlertingApi#putAlertingAlert) | Update an alert read status |
+| [**putAlertingInteractionstatsAlert**](AlertingApi#putAlertingInteractionstatsAlert) | Update an interaction stats alert read status |
+| [**putAlertingInteractionstatsRule**](AlertingApi#putAlertingInteractionstatsRule) | Update an interaction stats rule |
+| [**putAlertingRule**](AlertingApi#putAlertingRule) | Update a rule |
 {: class="table-striped"}
 
-<a name="deleteAlertingAlert"></a>
 
 # **deleteAlertingAlert**
-
 
 
 > Void deleteAlertingAlert(alertId)
@@ -93,11 +88,12 @@ try {
 
 null (empty response body)
 
-<a name="deleteAlertingInteractionstatsAlert"></a>
 
 # **deleteAlertingInteractionstatsAlert**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Void deleteAlertingInteractionstatsAlert(alertId)
 
@@ -155,11 +151,12 @@ try {
 
 null (empty response body)
 
-<a name="deleteAlertingInteractionstatsRule"></a>
 
 # **deleteAlertingInteractionstatsRule**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Void deleteAlertingInteractionstatsRule(ruleId)
 
@@ -217,10 +214,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteAlertingRule"></a>
 
 # **deleteAlertingRule**
-
 
 
 > Void deleteAlertingRule(ruleId)
@@ -277,13 +272,11 @@ try {
 
 null (empty response body)
 
-<a name="getAlertingAlert"></a>
 
 # **getAlertingAlert**
 
 
-
-> [CommonAlert](CommonAlert.html) getAlertingAlert(alertId)
+> [CommonAlert](CommonAlert) getAlertingAlert(alertId)
 
 Get an alert
 
@@ -336,15 +329,16 @@ try {
 
 ### Return type
 
-[**CommonAlert**](CommonAlert.html)
+[**CommonAlert**](CommonAlert)
 
-<a name="getAlertingAlertsActive"></a>
 
 # **getAlertingAlertsActive**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [ActiveAlertCount](ActiveAlertCount.html) getAlertingAlertsActive()
+> [ActiveAlertCount](ActiveAlertCount) getAlertingAlertsActive()
 
 Gets active alert count for a user
 
@@ -394,15 +388,16 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**ActiveAlertCount**](ActiveAlertCount.html)
+[**ActiveAlertCount**](ActiveAlertCount)
 
-<a name="getAlertingInteractionstatsAlert"></a>
 
 # **getAlertingInteractionstatsAlert**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [InteractionStatsAlert](InteractionStatsAlert.html) getAlertingInteractionstatsAlert(alertId, expand)
+> [InteractionStatsAlert](InteractionStatsAlert) getAlertingInteractionstatsAlert(alertId, expand)
 
 Get an interaction stats alert
 
@@ -453,21 +448,22 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **alertId** | **String**| Alert ID | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**InteractionStatsAlert**](InteractionStatsAlert.html)
+[**InteractionStatsAlert**](InteractionStatsAlert)
 
-<a name="getAlertingInteractionstatsAlerts"></a>
 
 # **getAlertingInteractionstatsAlerts**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [InteractionStatsAlertContainer](InteractionStatsAlertContainer.html) getAlertingInteractionstatsAlerts(expand)
+> [InteractionStatsAlertContainer](InteractionStatsAlertContainer) getAlertingInteractionstatsAlerts(expand)
 
 Get interaction stats alert list
 
@@ -516,21 +512,22 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**InteractionStatsAlertContainer**](InteractionStatsAlertContainer.html)
+[**InteractionStatsAlertContainer**](InteractionStatsAlertContainer)
 
-<a name="getAlertingInteractionstatsAlertsUnread"></a>
 
 # **getAlertingInteractionstatsAlertsUnread**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [UnreadMetric](UnreadMetric.html) getAlertingInteractionstatsAlertsUnread()
+> [UnreadMetric](UnreadMetric) getAlertingInteractionstatsAlertsUnread()
 
 Gets user unread count of interaction stats alerts
 
@@ -580,15 +577,16 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**UnreadMetric**](UnreadMetric.html)
+[**UnreadMetric**](UnreadMetric)
 
-<a name="getAlertingInteractionstatsRule"></a>
 
 # **getAlertingInteractionstatsRule**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [InteractionStatsRule](InteractionStatsRule.html) getAlertingInteractionstatsRule(ruleId, expand)
+> [InteractionStatsRule](InteractionStatsRule) getAlertingInteractionstatsRule(ruleId, expand)
 
 Get an interaction stats rule
 
@@ -639,21 +637,22 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **ruleId** | **String**| Rule ID | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**InteractionStatsRule**](InteractionStatsRule.html)
+[**InteractionStatsRule**](InteractionStatsRule)
 
-<a name="getAlertingInteractionstatsRules"></a>
 
 # **getAlertingInteractionstatsRules**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [InteractionStatsRuleContainer](InteractionStatsRuleContainer.html) getAlertingInteractionstatsRules(expand)
+> [InteractionStatsRuleContainer](InteractionStatsRuleContainer) getAlertingInteractionstatsRules(expand)
 
 Get an interaction stats rule list
 
@@ -702,21 +701,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**InteractionStatsRuleContainer**](InteractionStatsRuleContainer.html)
+[**InteractionStatsRuleContainer**](InteractionStatsRuleContainer)
 
-<a name="getAlertingRule"></a>
 
 # **getAlertingRule**
 
 
-
-> [CommonRule](CommonRule.html) getAlertingRule(ruleId)
+> [CommonRule](CommonRule) getAlertingRule(ruleId)
 
 Get a rule.
 
@@ -769,15 +766,13 @@ try {
 
 ### Return type
 
-[**CommonRule**](CommonRule.html)
+[**CommonRule**](CommonRule)
 
-<a name="patchAlertingAlert"></a>
 
 # **patchAlertingAlert**
 
 
-
-> [CommonAlert](CommonAlert.html) patchAlertingAlert(alertId, body)
+> [CommonAlert](CommonAlert) patchAlertingAlert(alertId, body)
 
 Allows an entity to mute/snooze an alert or update the unread status of the alert.
 
@@ -828,21 +823,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **alertId** | **String**| Alert ID | 
-| **body** | [**AlertRequest**](AlertRequest.html)|  | [optional] 
+| **body** | [**AlertRequest**](AlertRequest)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CommonAlert**](CommonAlert.html)
+[**CommonAlert**](CommonAlert)
 
-<a name="patchAlertingAlertsBulk"></a>
 
 # **patchAlertingAlertsBulk**
 
 
-
-> [BulkResponse](BulkResponse.html) patchAlertingAlertsBulk(body)
+> [BulkResponse](BulkResponse) patchAlertingAlertsBulk(body)
 
 Bulk alert updates
 
@@ -889,21 +882,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CommonAlertBulkUpdateRequest**](CommonAlertBulkUpdateRequest.html)|  | 
+| **body** | [**CommonAlertBulkUpdateRequest**](CommonAlertBulkUpdateRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**BulkResponse**](BulkResponse.html)
+[**BulkResponse**](BulkResponse)
 
-<a name="patchAlertingRulesBulk"></a>
 
 # **patchAlertingRulesBulk**
 
 
-
-> [BulkResponse](BulkResponse.html) patchAlertingRulesBulk(body)
+> [BulkResponse](BulkResponse) patchAlertingRulesBulk(body)
 
 Bulk update of notification lists
 
@@ -950,21 +941,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CommonRuleBulkUpdateNotificationsRequest**](CommonRuleBulkUpdateNotificationsRequest.html)|  | 
+| **body** | [**CommonRuleBulkUpdateNotificationsRequest**](CommonRuleBulkUpdateNotificationsRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**BulkResponse**](BulkResponse.html)
+[**BulkResponse**](BulkResponse)
 
-<a name="postAlertingAlertsQuery"></a>
 
 # **postAlertingAlertsQuery**
 
 
-
-> [AlertListing](AlertListing.html) postAlertingAlertsQuery(body)
+> [AlertListing](AlertListing) postAlertingAlertsQuery(body)
 
 Gets a paged list of alerts. The max page size is 50
 
@@ -1011,21 +1000,22 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**GetAlertQuery**](GetAlertQuery.html)|  | [optional] 
+| **body** | [**GetAlertQuery**](GetAlertQuery)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AlertListing**](AlertListing.html)
+[**AlertListing**](AlertListing)
 
-<a name="postAlertingInteractionstatsRules"></a>
 
 # **postAlertingInteractionstatsRules**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [InteractionStatsRule](InteractionStatsRule.html) postAlertingInteractionstatsRules(body, expand)
+> [InteractionStatsRule](InteractionStatsRule) postAlertingInteractionstatsRules(body, expand)
 
 Create an interaction stats rule
 
@@ -1075,22 +1065,20 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**InteractionStatsRule**](InteractionStatsRule.html)| AlertingRule | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers 
+| **body** | [**InteractionStatsRule**](InteractionStatsRule)| AlertingRule | 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**InteractionStatsRule**](InteractionStatsRule.html)
+[**InteractionStatsRule**](InteractionStatsRule)
 
-<a name="postAlertingRules"></a>
 
 # **postAlertingRules**
 
 
-
-> [CommonRule](CommonRule.html) postAlertingRules(body)
+> [CommonRule](CommonRule) postAlertingRules(body)
 
 Create a Rule.
 
@@ -1137,21 +1125,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CommonRule**](CommonRule.html)| rule to be created | 
+| **body** | [**CommonRule**](CommonRule)| rule to be created | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CommonRule**](CommonRule.html)
+[**CommonRule**](CommonRule)
 
-<a name="postAlertingRulesBulkRemove"></a>
 
 # **postAlertingRulesBulkRemove**
 
 
-
-> [BulkResponse](BulkResponse.html) postAlertingRulesBulkRemove(body)
+> [BulkResponse](BulkResponse) postAlertingRulesBulkRemove(body)
 
 Bulk remove rules
 
@@ -1198,21 +1184,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CommonRuleBulkDeleteRequest**](CommonRuleBulkDeleteRequest.html)|  | 
+| **body** | [**CommonRuleBulkDeleteRequest**](CommonRuleBulkDeleteRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**BulkResponse**](BulkResponse.html)
+[**BulkResponse**](BulkResponse)
 
-<a name="postAlertingRulesQuery"></a>
 
 # **postAlertingRulesQuery**
 
 
-
-> [CommonRuleContainer](CommonRuleContainer.html) postAlertingRulesQuery(body)
+> [CommonRuleContainer](CommonRuleContainer) postAlertingRulesQuery(body)
 
 Get a paged list of rules.  The max size of the page is 50 items.
 
@@ -1259,21 +1243,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**GetRulesQuery**](GetRulesQuery.html)|  | [optional] 
+| **body** | [**GetRulesQuery**](GetRulesQuery)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CommonRuleContainer**](CommonRuleContainer.html)
+[**CommonRuleContainer**](CommonRuleContainer)
 
-<a name="putAlertingAlert"></a>
 
 # **putAlertingAlert**
 
 
-
-> [UnreadStatus](UnreadStatus.html) putAlertingAlert(alertId, body)
+> [UnreadStatus](UnreadStatus) putAlertingAlert(alertId, body)
 
 Update an alert read status
 
@@ -1322,21 +1304,22 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **alertId** | **String**| Alert ID | 
-| **body** | [**AlertingUnreadStatus**](AlertingUnreadStatus.html)|  | [optional] 
+| **body** | [**AlertingUnreadStatus**](AlertingUnreadStatus)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UnreadStatus**](UnreadStatus.html)
+[**UnreadStatus**](UnreadStatus)
 
-<a name="putAlertingInteractionstatsAlert"></a>
 
 # **putAlertingInteractionstatsAlert**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [UnreadStatus](UnreadStatus.html) putAlertingInteractionstatsAlert(alertId, body, expand)
+> [UnreadStatus](UnreadStatus) putAlertingInteractionstatsAlert(alertId, body, expand)
 
 Update an interaction stats alert read status
 
@@ -1388,22 +1371,23 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **alertId** | **String**| Alert ID | 
-| **body** | [**UnreadStatus**](UnreadStatus.html)| InteractionStatsAlert | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers 
+| **body** | [**UnreadStatus**](UnreadStatus)| InteractionStatsAlert | 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UnreadStatus**](UnreadStatus.html)
+[**UnreadStatus**](UnreadStatus)
 
-<a name="putAlertingInteractionstatsRule"></a>
 
 # **putAlertingInteractionstatsRule**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [InteractionStatsRule](InteractionStatsRule.html) putAlertingInteractionstatsRule(ruleId, body, expand)
+> [InteractionStatsRule](InteractionStatsRule) putAlertingInteractionstatsRule(ruleId, body, expand)
 
 Update an interaction stats rule
 
@@ -1455,22 +1439,20 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **ruleId** | **String**| Rule ID | 
-| **body** | [**InteractionStatsRule**](InteractionStatsRule.html)| AlertingRule | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers 
+| **body** | [**InteractionStatsRule**](InteractionStatsRule)| AlertingRule | 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**InteractionStatsRule**](InteractionStatsRule.html)
+[**InteractionStatsRule**](InteractionStatsRule)
 
-<a name="putAlertingRule"></a>
 
 # **putAlertingRule**
 
 
-
-> [CommonRule](CommonRule.html) putAlertingRule(ruleId, body)
+> [CommonRule](CommonRule) putAlertingRule(ruleId, body)
 
 Update a rule
 
@@ -1519,11 +1501,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **ruleId** | **String**| Rule Id | 
-| **body** | [**ModifiableRuleProperties**](ModifiableRuleProperties.html)| rule to be updated | 
+| **body** | [**ModifiableRuleProperties**](ModifiableRuleProperties)| rule to be updated | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CommonRule**](CommonRule.html)
+[**CommonRule**](CommonRule)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

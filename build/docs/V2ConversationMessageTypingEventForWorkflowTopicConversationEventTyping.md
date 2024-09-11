@@ -1,19 +1,13 @@
----
-title: V2ConversationMessageTypingEventForWorkflowTopicConversationEventTyping
----
-## V2ConversationMessageTypingEventForWorkflowTopicConversationEventTyping
+# V2ConversationMessageTypingEventForWorkflowTopicConversationEventTyping
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-| **duration** | <!----><!---->**Integer**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
+| **duration** | **Integer** |  |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -21,7 +15,8 @@ title: V2ConversationMessageTypingEventForWorkflowTopicConversationEventTyping
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ON | &quot;On&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

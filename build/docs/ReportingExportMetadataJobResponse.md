@@ -1,27 +1,21 @@
----
-title: ReportingExportMetadataJobResponse
----
-## ReportingExportMetadataJobResponse
+# ReportingExportMetadataJobResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **viewType** | [**ViewTypeEnum**](#ViewTypeEnum)<!----> | The view type of the export metadata |  [optional] |
-| **dateLimitations** | <!----><!---->**String**<!----> | The date limitations of the export metadata |  [optional] |
-| **requiredFilters** | <!----><!---->**List&lt;String&gt;**<!----> | The list of required filters for the export metadata |  [optional] |
-| **supportedFilters** | <!----><!---->**List&lt;String&gt;**<!----> | The list of supported filters for the export metadata |  [optional] |
-| **requiredColumnIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of required column ids for the export metadata |  [optional] |
-| **dependentColumnIds** | <!----><!---->[**Map&lt;String, List&lt;String&gt;&gt;**](List.html)<!----> | The list of dependent column ids for the export metadata |  [optional] |
-| **availableColumnIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of available column ids for the export metadata |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **viewType** | [**ViewTypeEnum**](#Enum--ViewTypeEnum) | The view type of the export metadata |  [optional] |
+| **dateLimitations** | **String** | The date limitations of the export metadata |  [optional] |
+| **requiredFilters** | **List&lt;String&gt;** | The list of required filters for the export metadata |  [optional] |
+| **supportedFilters** | **List&lt;String&gt;** | The list of supported filters for the export metadata |  [optional] |
+| **requiredColumnIds** | **List&lt;String&gt;** | The list of required column ids for the export metadata |  [optional] |
+| **dependentColumnIds** | [**Map&lt;String, List&lt;String&gt;&gt;**](List) | The list of dependent column ids for the export metadata |  [optional] |
+| **availableColumnIds** | **List&lt;String&gt;** | The list of available column ids for the export metadata |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="ViewTypeEnum"></a>
 
 ## Enum: ViewTypeEnum
 
@@ -144,7 +138,8 @@ title: ReportingExportMetadataJobResponse
 | SOCIAL_LISTENING_VIEW | &quot;SOCIAL_LISTENING_VIEW&quot; | 
 | SOCIAL_LISTENING_POSTS_VIEW | &quot;SOCIAL_LISTENING_POSTS_VIEW&quot; | 
 | AGENT_PERFORMANCE_TIMELINE_DETAIL_VIEW | &quot;AGENT_PERFORMANCE_TIMELINE_DETAIL_VIEW&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

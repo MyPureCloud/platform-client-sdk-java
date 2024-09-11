@@ -1,15 +1,13 @@
----
-title: ActivityPlanAbandonRateImpactOverride
----
-## ActivityPlanAbandonRateImpactOverride
+# ActivityPlanAbandonRateImpactOverride
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **increaseByPercent** | <!----><!---->**Double**<!----> | Allowed abandon rate increase percent, from 0.0 to 100.0 |  |
-{: class="table table-striped"}
+| **increaseByPercent** | **Double** | Allowed abandon rate increase percent, from 0.0 to 100.0 |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

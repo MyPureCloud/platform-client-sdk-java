@@ -1,18 +1,16 @@
----
-title: PhoneChangeTopicPhone
----
-## PhoneChangeTopicPhone
+# PhoneChangeTopicPhone
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **userAgentInfo** | <!----><!---->[**PhoneChangeTopicUserAgentInfo**](PhoneChangeTopicUserAgentInfo.html)<!----> |  |  [optional] |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **status** | <!----><!---->[**PhoneChangeTopicPhoneStatus**](PhoneChangeTopicPhoneStatus.html)<!----> |  |  [optional] |
-| **secondaryStatus** | <!----><!---->[**PhoneChangeTopicPhoneStatus**](PhoneChangeTopicPhoneStatus.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **userAgentInfo** | [**PhoneChangeTopicUserAgentInfo**](PhoneChangeTopicUserAgentInfo) |  |  [optional] |
+| **id** | **String** |  |  [optional] |
+| **status** | [**PhoneChangeTopicPhoneStatus**](PhoneChangeTopicPhoneStatus) |  |  [optional] |
+| **secondaryStatus** | [**PhoneChangeTopicPhoneStatus**](PhoneChangeTopicPhoneStatus) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

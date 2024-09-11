@@ -1,15 +1,13 @@
----
-title: EdgeLogsJobUploadRequest
----
-## EdgeLogsJobUploadRequest
+# EdgeLogsJobUploadRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **fileIds** | <!----><!---->**List&lt;String&gt;**<!----> | A list of file ids to upload. |  |
-{: class="table table-striped"}
+| **fileIds** | **List&lt;String&gt;** | A list of file ids to upload. |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

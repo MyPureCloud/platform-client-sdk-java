@@ -1,18 +1,16 @@
----
-title: OutboundMessagingMessagingCampaignConfigChangeSmsConfig
----
-## OutboundMessagingMessagingCampaignConfigChangeSmsConfig
+# OutboundMessagingMessagingCampaignConfigChangeSmsConfig
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **messageColumn** | <!----><!---->**String**<!----> | The Contact List column specifying the message to send to the contact. |  [optional] |
-| **phoneColumn** | <!----><!---->**String**<!----> | The Contact List column specifying the phone number to send a message to. |  [optional] |
-| **senderSmsPhoneNumber** | <!----><!---->[**OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumberRef**](OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumberRef.html)<!----> |  |  [optional] |
-| **contentTemplate** | <!----><!---->[**OutboundMessagingMessagingCampaignConfigChangeResponseRef**](OutboundMessagingMessagingCampaignConfigChangeResponseRef.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **messageColumn** | **String** | The Contact List column specifying the message to send to the contact. |  [optional] |
+| **phoneColumn** | **String** | The Contact List column specifying the phone number to send a message to. |  [optional] |
+| **senderSmsPhoneNumber** | [**OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumberRef**](OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumberRef) |  |  [optional] |
+| **contentTemplate** | [**OutboundMessagingMessagingCampaignConfigChangeResponseRef**](OutboundMessagingMessagingCampaignConfigChangeResponseRef) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

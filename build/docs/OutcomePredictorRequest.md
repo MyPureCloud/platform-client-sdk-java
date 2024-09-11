@@ -1,15 +1,13 @@
----
-title: OutcomePredictorRequest
----
-## OutcomePredictorRequest
+# OutcomePredictorRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **outcome** | <!----><!---->[**OutcomeRefRequest**](OutcomeRefRequest.html)<!----> | The outcome for which this predictor will provide predictions. |  |
-{: class="table table-striped"}
+| **outcome** | [**OutcomeRefRequest**](OutcomeRefRequest) | The outcome for which this predictor will provide predictions. |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

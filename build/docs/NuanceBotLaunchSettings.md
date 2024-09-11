@@ -1,15 +1,13 @@
----
-title: NuanceBotLaunchSettings
----
-## NuanceBotLaunchSettings
+# NuanceBotLaunchSettings
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **botExecutionConfigurations** | <!----><!---->[**List&lt;BotExecutionConfiguration&gt;**](BotExecutionConfiguration.html)<!----> | The list of Nuance bots that are configured as available to the Genesys Cloud system |  |
-{: class="table table-striped"}
+| **botExecutionConfigurations** | [**List&lt;BotExecutionConfiguration&gt;**](BotExecutionConfiguration) | The list of Nuance bots that are configured as available to the Genesys Cloud system |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

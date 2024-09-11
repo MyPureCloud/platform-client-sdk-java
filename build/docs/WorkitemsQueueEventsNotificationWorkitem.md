@@ -1,50 +1,44 @@
----
-title: WorkitemsQueueEventsNotificationWorkitem
----
-## WorkitemsQueueEventsNotificationWorkitem
+# WorkitemsQueueEventsNotificationWorkitem
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **typeId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **description** | <!----><!---->**String**<!----> |  |  [optional] |
-| **languageId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **priority** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **dateCreated** | <!----><!---->**String**<!----> |  |  [optional] |
-| **dateModified** | <!----><!---->**String**<!----> |  |  [optional] |
-| **dateDue** | <!----><!---->**String**<!----> |  |  [optional] |
-| **dateExpires** | <!----><!---->**String**<!----> |  |  [optional] |
-| **dateAssignmentStateChanged** | <!----><!---->**String**<!----> |  |  [optional] |
-| **durationSeconds** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **ttl** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **statusId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **statusCategory** | [**StatusCategoryEnum**](#StatusCategoryEnum)<!----> |  |  [optional] |
-| **dateClosed** | <!----><!---->**String**<!----> |  |  [optional] |
-| **workbinId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **reporterId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **assigneeId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **externalContactId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **externalTag** | <!----><!---->**String**<!----> |  |  [optional] |
-| **wrapupId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **modifiedBy** | <!----><!---->**String**<!----> |  |  [optional] |
-| **operation** | [**OperationEnum**](#OperationEnum)<!----> |  |  [optional] |
-| **changes** | <!----><!---->[**List&lt;WorkitemsQueueEventsNotificationDelta&gt;**](WorkitemsQueueEventsNotificationDelta.html)<!----> |  |  [optional] |
-| **assignmentState** | [**AssignmentStateEnum**](#AssignmentStateEnum)<!----> |  |  [optional] |
-| **assignmentId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **alertTimeoutSeconds** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **queueId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **customFields** | <!----><!---->[**Map&lt;String, WorkitemsQueueEventsNotificationCustomAttribute&gt;**](WorkitemsQueueEventsNotificationCustomAttribute.html)<!----> |  |  [optional] |
-| **wrapup** | <!----><!---->[**WorkitemsQueueEventsNotificationWrapup**](WorkitemsQueueEventsNotificationWrapup.html)<!----> |  |  [optional] |
-| **sessions** | <!----><!---->[**List&lt;WorkitemsQueueEventsNotificationSession&gt;**](WorkitemsQueueEventsNotificationSession.html)<!----> |  |  [optional] |
-| **skillIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **typeId** | **String** |  |  [optional] |
+| **description** | **String** |  |  [optional] |
+| **languageId** | **String** |  |  [optional] |
+| **priority** | **Integer** |  |  [optional] |
+| **dateCreated** | **String** |  |  [optional] |
+| **dateModified** | **String** |  |  [optional] |
+| **dateDue** | **String** |  |  [optional] |
+| **dateExpires** | **String** |  |  [optional] |
+| **dateAssignmentStateChanged** | **String** |  |  [optional] |
+| **durationSeconds** | **Integer** |  |  [optional] |
+| **ttl** | **Integer** |  |  [optional] |
+| **statusId** | **String** |  |  [optional] |
+| **statusCategory** | [**StatusCategoryEnum**](#Enum--StatusCategoryEnum) |  |  [optional] |
+| **dateClosed** | **String** |  |  [optional] |
+| **workbinId** | **String** |  |  [optional] |
+| **reporterId** | **String** |  |  [optional] |
+| **assigneeId** | **String** |  |  [optional] |
+| **externalContactId** | **String** |  |  [optional] |
+| **externalTag** | **String** |  |  [optional] |
+| **wrapupId** | **String** |  |  [optional] |
+| **modifiedBy** | **String** |  |  [optional] |
+| **operation** | [**OperationEnum**](#Enum--OperationEnum) |  |  [optional] |
+| **changes** | [**List&lt;WorkitemsQueueEventsNotificationDelta&gt;**](WorkitemsQueueEventsNotificationDelta) |  |  [optional] |
+| **assignmentState** | [**AssignmentStateEnum**](#Enum--AssignmentStateEnum) |  |  [optional] |
+| **assignmentId** | **String** |  |  [optional] |
+| **alertTimeoutSeconds** | **Integer** |  |  [optional] |
+| **queueId** | **String** |  |  [optional] |
+| **customFields** | [**Map&lt;String, WorkitemsQueueEventsNotificationCustomAttribute&gt;**](WorkitemsQueueEventsNotificationCustomAttribute) |  |  [optional] |
+| **wrapup** | [**WorkitemsQueueEventsNotificationWrapup**](WorkitemsQueueEventsNotificationWrapup) |  |  [optional] |
+| **sessions** | [**List&lt;WorkitemsQueueEventsNotificationSession&gt;**](WorkitemsQueueEventsNotificationSession) |  |  [optional] |
+| **skillIds** | **List&lt;String&gt;** |  |  [optional] |
 
-
-<a name="StatusCategoryEnum"></a>
 
 ## Enum: StatusCategoryEnum
 
@@ -56,10 +50,7 @@ title: WorkitemsQueueEventsNotificationWorkitem
 | INPROGRESS | &quot;InProgress&quot; | 
 | WAITING | &quot;Waiting&quot; | 
 | CLOSED | &quot;Closed&quot; | 
-{: class="table table-striped"}
 
-
-<a name="OperationEnum"></a>
 
 ## Enum: OperationEnum
 
@@ -86,10 +77,7 @@ title: WorkitemsQueueEventsNotificationWorkitem
 | ARCHIVE | &quot;archive&quot; | 
 | UNARCHIVE | &quot;unarchive&quot; | 
 | RESCHEDULE | &quot;reschedule&quot; | 
-{: class="table table-striped"}
 
-
-<a name="AssignmentStateEnum"></a>
 
 ## Enum: AssignmentStateEnum
 
@@ -109,7 +97,8 @@ title: WorkitemsQueueEventsNotificationWorkitem
 | ACDCANCELLED | &quot;AcdCancelled&quot; | 
 | TERMINATED | &quot;Terminated&quot; | 
 | ACDEXPIRED | &quot;AcdExpired&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

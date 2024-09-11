@@ -1,15 +1,13 @@
----
-title: ContentCarousel
----
-## ContentCarousel
+# ContentCarousel
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **cards** | <!----><!---->[**List&lt;ContentCard&gt;**](ContentCard.html)<!----> | An array of card objects. |  |
-{: class="table table-striped"}
+| **cards** | [**List&lt;ContentCard&gt;**](ContentCard) | An array of card objects. |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

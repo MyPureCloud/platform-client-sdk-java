@@ -1,29 +1,23 @@
----
-title: V2MobiusRulesTopicRule
----
-## V2MobiusRulesTopicRule
+# V2MobiusRulesTopicRule
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **userId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-| **notifications** | <!----><!---->[**List&lt;V2MobiusRulesTopicAlertNotification&gt;**](V2MobiusRulesTopicAlertNotification.html)<!----> |  |  [optional] |
-| **conditions** | <!----><!---->[**V2MobiusRulesTopicCondition**](V2MobiusRulesTopicCondition.html)<!----> |  |  [optional] |
-| **enabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **inAlarm** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **action** | [**ActionEnum**](#ActionEnum)<!----> |  |  [optional] |
-| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **sendExitingAlarmNotification** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **waitBetweenNotificationMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **userId** | **String** |  |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
+| **notifications** | [**List&lt;V2MobiusRulesTopicAlertNotification&gt;**](V2MobiusRulesTopicAlertNotification) |  |  [optional] |
+| **conditions** | [**V2MobiusRulesTopicCondition**](V2MobiusRulesTopicCondition) |  |  [optional] |
+| **enabled** | **Boolean** |  |  [optional] |
+| **inAlarm** | **Boolean** |  |  [optional] |
+| **action** | [**ActionEnum**](#Enum--ActionEnum) |  |  [optional] |
+| **dateCreated** | [**Date**](Date) |  |  [optional] |
+| **sendExitingAlarmNotification** | **Boolean** |  |  [optional] |
+| **waitBetweenNotificationMs** | **Integer** |  |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -34,10 +28,7 @@ title: V2MobiusRulesTopicRule
 | USERPRESENCE | &quot;UserPresence&quot; | 
 | WORKFORCEMANAGEMENT | &quot;WorkforceManagement&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
-
-<a name="ActionEnum"></a>
 
 ## Enum: ActionEnum
 
@@ -48,7 +39,8 @@ title: V2MobiusRulesTopicRule
 | CREATE | &quot;CREATE&quot; | 
 | UPDATE | &quot;UPDATE&quot; | 
 | DELETE | &quot;DELETE&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

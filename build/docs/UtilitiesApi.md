@@ -1,25 +1,20 @@
----
-title: UtilitiesApi
----
-## UtilitiesApi
+# UtilitiesApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**getDate**](UtilitiesApi.html#getDate) | Get the current system date/time |
-| [**getIpranges**](UtilitiesApi.html#getIpranges) | Get public ip address ranges for Genesys Cloud |
-| [**getTimezones**](UtilitiesApi.html#getTimezones) | Get time zones list |
-| [**postCertificateDetails**](UtilitiesApi.html#postCertificateDetails) | Returns the information about an X509 PEM encoded certificate or certificate chain. |
+| [**getDate**](UtilitiesApi#getDate) | Get the current system date/time |
+| [**getIpranges**](UtilitiesApi#getIpranges) | Get public ip address ranges for Genesys Cloud |
+| [**getTimezones**](UtilitiesApi#getTimezones) | Get time zones list |
+| [**postCertificateDetails**](UtilitiesApi#postCertificateDetails) | Returns the information about an X509 PEM encoded certificate or certificate chain. |
 {: class="table-striped"}
 
-<a name="getDate"></a>
 
 # **getDate**
 
 
-
-> [ServerDate](ServerDate.html) getDate()
+> [ServerDate](ServerDate) getDate()
 
 Get the current system date/time
 
@@ -67,15 +62,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**ServerDate**](ServerDate.html)
+[**ServerDate**](ServerDate)
 
-<a name="getIpranges"></a>
 
 # **getIpranges**
 
 
-
-> [IpAddressRangeListing](IpAddressRangeListing.html) getIpranges()
+> [IpAddressRangeListing](IpAddressRangeListing) getIpranges()
 
 Get public ip address ranges for Genesys Cloud
 
@@ -123,15 +116,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**IpAddressRangeListing**](IpAddressRangeListing.html)
+[**IpAddressRangeListing**](IpAddressRangeListing)
 
-<a name="getTimezones"></a>
 
 # **getTimezones**
 
 
-
-> [TimeZoneEntityListing](TimeZoneEntityListing.html) getTimezones(pageSize, pageNumber)
+> [TimeZoneEntityListing](TimeZoneEntityListing) getTimezones(pageSize, pageNumber)
 
 Get time zones list
 
@@ -185,15 +176,13 @@ try {
 
 ### Return type
 
-[**TimeZoneEntityListing**](TimeZoneEntityListing.html)
+[**TimeZoneEntityListing**](TimeZoneEntityListing)
 
-<a name="postCertificateDetails"></a>
 
 # **postCertificateDetails**
 
 
-
-> [ParsedCertificate](ParsedCertificate.html) postCertificateDetails(body)
+> [ParsedCertificate](ParsedCertificate) postCertificateDetails(body)
 
 Returns the information about an X509 PEM encoded certificate or certificate chain.
 
@@ -239,11 +228,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Certificate**](Certificate.html)| Certificate | 
+| **body** | [**Certificate**](Certificate)| Certificate | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ParsedCertificate**](ParsedCertificate.html)
+[**ParsedCertificate**](ParsedCertificate)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

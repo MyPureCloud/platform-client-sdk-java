@@ -1,15 +1,13 @@
----
-title: ConfusionDetails
----
-## ConfusionDetails
+# ConfusionDetails
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **intents** | <!----><!---->[**List&lt;ConfusionIntentDetails&gt;**](ConfusionIntentDetails.html)<!----> | Confusion details between this utterance and other intents. |  [optional] |
-{: class="table table-striped"}
+| **intents** | [**List&lt;ConfusionIntentDetails&gt;**](ConfusionIntentDetails) | Confusion details between this utterance and other intents. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

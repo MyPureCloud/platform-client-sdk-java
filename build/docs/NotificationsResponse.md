@@ -1,15 +1,13 @@
----
-title: NotificationsResponse
----
-## NotificationsResponse
+# NotificationsResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | <!----><!---->[**List&lt;WfmUserNotification&gt;**](WfmUserNotification.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **entities** | [**List&lt;WfmUserNotification&gt;**](WfmUserNotification) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

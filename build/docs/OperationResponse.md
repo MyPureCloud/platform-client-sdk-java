@@ -1,25 +1,19 @@
----
-title: OperationResponse
----
-## OperationResponse
+# OperationResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **status** | <!----><!---->**String**<!----> | Status of the operation. |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Type of the operation. |  [optional] |
-| **createdBy** | <!----><!---->[**UserReference**](UserReference.html)<!----> | The user who created the operation. |  [optional] |
-| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Operation creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | Operation last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **source** | <!----><!---->[**KnowledgeOperationSource**](KnowledgeOperationSource.html)<!----> | Source of the operation. |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **status** | **String** | Status of the operation. |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Type of the operation. |  [optional] |
+| **createdBy** | [**UserReference**](UserReference) | The user who created the operation. |  [optional] |
+| **dateCreated** | [**Date**](Date) | Operation creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **dateModified** | [**Date**](Date) | Operation last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **source** | [**KnowledgeOperationSource**](KnowledgeOperationSource) | Source of the operation. |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -30,7 +24,8 @@ title: OperationResponse
 | EXPORT | &quot;Export&quot; | 
 | PARSE | &quot;Parse&quot; | 
 | SYNC | &quot;Sync&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

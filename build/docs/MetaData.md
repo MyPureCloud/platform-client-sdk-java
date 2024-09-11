@@ -1,17 +1,15 @@
----
-title: MetaData
----
-## MetaData
+# MetaData
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **pairingToken** | <!----><!---->**String**<!----> |  |  [optional] |
-| **pairingTrust** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **pairingUrl** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **pairingToken** | **String** |  |  [optional] |
+| **pairingTrust** | **List&lt;String&gt;** |  |  [optional] |
+| **pairingUrl** | **String** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

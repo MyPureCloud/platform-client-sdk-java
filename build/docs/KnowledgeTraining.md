@@ -1,27 +1,21 @@
----
-title: KnowledgeTraining
----
-## KnowledgeTraining
+# KnowledgeTraining
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **dateTriggered** | <!----><!---->[**Date**](Date.html)<!----> | Trigger date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **dateCompleted** | <!----><!---->[**Date**](Date.html)<!----> | Training completed date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> | Training status. |  [optional] |
-| **languageCode** | <!----><!---->**String**<!----> | Language of the documents that are trained. |  [optional] |
-| **knowledgeBase** | <!----><!---->[**KnowledgeBase**](KnowledgeBase.html)<!----> | Knowledge Base that the training belongs to. |  [optional] |
-| **errorMessage** | <!----><!---->**String**<!----> | Any error message during the Training or Promote action. |  [optional] |
-| **knowledgeDocumentsState** | [**KnowledgeDocumentsStateEnum**](#KnowledgeDocumentsStateEnum)<!----> | State of the Trained Documents, which can be one of these Draft, Active, Discarded, Archived. |  [optional] |
-| **datePromoted** | <!----><!---->[**Date**](Date.html)<!----> | Trained Documents Promoted date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **dateTriggered** | [**Date**](Date) | Trigger date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **dateCompleted** | [**Date**](Date) | Training completed date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) | Training status. |  [optional] |
+| **languageCode** | **String** | Language of the documents that are trained. |  [optional] |
+| **knowledgeBase** | [**KnowledgeBase**](KnowledgeBase) | Knowledge Base that the training belongs to. |  [optional] |
+| **errorMessage** | **String** | Any error message during the Training or Promote action. |  [optional] |
+| **knowledgeDocumentsState** | [**KnowledgeDocumentsStateEnum**](#Enum--KnowledgeDocumentsStateEnum) | State of the Trained Documents, which can be one of these Draft, Active, Discarded, Archived. |  [optional] |
+| **datePromoted** | [**Date**](Date) | Trained Documents Promoted date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -32,10 +26,7 @@ title: KnowledgeTraining
 | INPROGRESS | &quot;InProgress&quot; | 
 | SUCCEEDED | &quot;Succeeded&quot; | 
 | FAILED | &quot;Failed&quot; | 
-{: class="table table-striped"}
 
-
-<a name="KnowledgeDocumentsStateEnum"></a>
 
 ## Enum: KnowledgeDocumentsStateEnum
 
@@ -46,7 +37,8 @@ title: KnowledgeTraining
 | ACTIVE | &quot;Active&quot; | 
 | DISCARDED | &quot;Discarded&quot; | 
 | ARCHIVED | &quot;Archived&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

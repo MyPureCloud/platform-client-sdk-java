@@ -1,16 +1,14 @@
----
-title: NluOrganization
----
-## NluOrganization
+# NluOrganization
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **limits** | <!----><!---->**Map&lt;String, Integer&gt;**<!----> | The NLU limits defined for this Organization |  [optional] |
-| **supportedLanguagesInfo** | <!----><!---->[**List&lt;SupportedLanguagesInfoDefinition&gt;**](SupportedLanguagesInfoDefinition.html)<!----> | The list of Supported features for each languages for this Organization |  [optional] |
-{: class="table table-striped"}
+| **limits** | **Map&lt;String, Integer&gt;** | The NLU limits defined for this Organization |  [optional] |
+| **supportedLanguagesInfo** | [**List&lt;SupportedLanguagesInfoDefinition&gt;**](SupportedLanguagesInfoDefinition) | The list of Supported features for each languages for this Organization |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

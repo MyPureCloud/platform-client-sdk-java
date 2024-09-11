@@ -1,25 +1,19 @@
----
-title: ScheduleActivity
----
-## ScheduleActivity
+# ScheduleActivity
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **dateStart** | <!----><!---->[**Date**](Date.html)<!----> | The start date/time of this activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **lengthMinutes** | <!----><!---->**Integer**<!----> | The length of this activity in minutes |  [optional] |
-| **description** | <!----><!---->**String**<!----> | The description of this activity |  [optional] |
-| **activityCodeId** | <!----><!---->**String**<!----> | The ID of the activity code associated with this activity |  [optional] |
-| **paid** | <!----><!---->**Boolean**<!----> | Whether this activity is paid |  [optional] |
-| **timeOffRequestId** | <!----><!---->**String**<!----> | The ID of the time off request associated with this activity, if applicable |  [optional] |
-| **externalActivityId** | <!----><!---->**String**<!----> | The ID of the external activity associated with this activity, if applicable |  [optional] |
-| **externalActivityType** | [**ExternalActivityTypeEnum**](#ExternalActivityTypeEnum)<!----> | The type of the external activity associated with this activity, if applicable |  [optional] |
-{: class="table table-striped"}
+| **dateStart** | [**Date**](Date) | The start date/time of this activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **lengthMinutes** | **Integer** | The length of this activity in minutes |  [optional] |
+| **description** | **String** | The description of this activity |  [optional] |
+| **activityCodeId** | **String** | The ID of the activity code associated with this activity |  [optional] |
+| **paid** | **Boolean** | Whether this activity is paid |  [optional] |
+| **timeOffRequestId** | **String** | The ID of the time off request associated with this activity, if applicable |  [optional] |
+| **externalActivityId** | **String** | The ID of the external activity associated with this activity, if applicable |  [optional] |
+| **externalActivityType** | [**ExternalActivityTypeEnum**](#Enum--ExternalActivityTypeEnum) | The type of the external activity associated with this activity, if applicable |  [optional] |
 
-
-<a name="ExternalActivityTypeEnum"></a>
 
 ## Enum: ExternalActivityTypeEnum
 
@@ -29,7 +23,8 @@ title: ScheduleActivity
 | ACTIVITYPLAN | &quot;ActivityPlan&quot; | 
 | COACHING | &quot;Coaching&quot; | 
 | LEARNING | &quot;Learning&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,19 +1,13 @@
----
-title: RecordingUploadReportRequest
----
-## RecordingUploadReportRequest
+# RecordingUploadReportRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **dateSince** | <!----><!---->[**Date**](Date.html)<!----> | Report will include uploads since this date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
-| **uploadStatus** | [**UploadStatusEnum**](#UploadStatusEnum)<!----> | Report will include uploads with this status |  [optional] |
-{: class="table table-striped"}
+| **dateSince** | [**Date**](Date) | Report will include uploads since this date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
+| **uploadStatus** | [**UploadStatusEnum**](#Enum--UploadStatusEnum) | Report will include uploads with this status |  [optional] |
 
-
-<a name="UploadStatusEnum"></a>
 
 ## Enum: UploadStatusEnum
 
@@ -24,7 +18,8 @@ title: RecordingUploadReportRequest
 | SUCCESS | &quot;Success&quot; | 
 | FAILURE | &quot;Failure&quot; | 
 | WAITFORCONVERSATION | &quot;WaitForConversation&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

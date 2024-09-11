@@ -1,15 +1,13 @@
----
-title: ScimUserRole
----
-## ScimUserRole
+# ScimUserRole
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **value** | <!----><!---->**String**<!----> | The role of the Genesys Cloud user. |  [optional] |
-{: class="table table-striped"}
+| **value** | **String** | The role of the Genesys Cloud user. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,25 +1,20 @@
----
-title: GeolocationApi
----
-## GeolocationApi
+# GeolocationApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**getGeolocationsSettings**](GeolocationApi.html#getGeolocationsSettings) | Get a organization's GeolocationSettings |
-| [**getUserGeolocation**](GeolocationApi.html#getUserGeolocation) | Get a user's Geolocation |
-| [**patchGeolocationsSettings**](GeolocationApi.html#patchGeolocationsSettings) | Patch a organization's GeolocationSettings |
-| [**patchUserGeolocation**](GeolocationApi.html#patchUserGeolocation) | Patch a user's Geolocation |
+| [**getGeolocationsSettings**](GeolocationApi#getGeolocationsSettings) | Get a organization's GeolocationSettings |
+| [**getUserGeolocation**](GeolocationApi#getUserGeolocation) | Get a user's Geolocation |
+| [**patchGeolocationsSettings**](GeolocationApi#patchGeolocationsSettings) | Patch a organization's GeolocationSettings |
+| [**patchUserGeolocation**](GeolocationApi#patchUserGeolocation) | Patch a user's Geolocation |
 {: class="table-striped"}
 
-<a name="getGeolocationsSettings"></a>
 
 # **getGeolocationsSettings**
 
 
-
-> [GeolocationSettings](GeolocationSettings.html) getGeolocationsSettings()
+> [GeolocationSettings](GeolocationSettings) getGeolocationsSettings()
 
 Get a organization's GeolocationSettings
 
@@ -67,15 +62,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**GeolocationSettings**](GeolocationSettings.html)
+[**GeolocationSettings**](GeolocationSettings)
 
-<a name="getUserGeolocation"></a>
 
 # **getUserGeolocation**
 
 
-
-> [Geolocation](Geolocation.html) getUserGeolocation(userId, clientId)
+> [Geolocation](Geolocation) getUserGeolocation(userId, clientId)
 
 Get a user's Geolocation
 
@@ -129,15 +122,13 @@ try {
 
 ### Return type
 
-[**Geolocation**](Geolocation.html)
+[**Geolocation**](Geolocation)
 
-<a name="patchGeolocationsSettings"></a>
 
 # **patchGeolocationsSettings**
 
 
-
-> [GeolocationSettings](GeolocationSettings.html) patchGeolocationsSettings(body)
+> [GeolocationSettings](GeolocationSettings) patchGeolocationsSettings(body)
 
 Patch a organization's GeolocationSettings
 
@@ -184,21 +175,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**GeolocationSettings**](GeolocationSettings.html)| Geolocation settings | 
+| **body** | [**GeolocationSettings**](GeolocationSettings)| Geolocation settings | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**GeolocationSettings**](GeolocationSettings.html)
+[**GeolocationSettings**](GeolocationSettings)
 
-<a name="patchUserGeolocation"></a>
 
 # **patchUserGeolocation**
 
 
-
-> [Geolocation](Geolocation.html) patchUserGeolocation(userId, clientId, body)
+> [Geolocation](Geolocation) patchUserGeolocation(userId, clientId, body)
 
 Patch a user's Geolocation
 
@@ -250,11 +239,13 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| user Id | 
 | **clientId** | **String**| client Id | 
-| **body** | [**Geolocation**](Geolocation.html)| Geolocation | 
+| **body** | [**Geolocation**](Geolocation)| Geolocation | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Geolocation**](Geolocation.html)
+[**Geolocation**](Geolocation)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

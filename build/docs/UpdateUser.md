@@ -1,39 +1,33 @@
----
-title: UpdateUser
----
-## UpdateUser
+# UpdateUser
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **chat** | <!----><!---->[**Chat**](Chat.html)<!----> |  |  [optional] |
-| **department** | <!----><!---->**String**<!----> |  |  [optional] |
-| **email** | <!----><!---->**String**<!----> |  |  [optional] |
-| **primaryContactInfo** | <!----><!---->[**List&lt;Contact&gt;**](Contact.html)<!----> | The address(s) used for primary contact. Updates to the corresponding address in the addresses list will be reflected here. |  [optional] |
-| **addresses** | <!----><!---->[**List&lt;Contact&gt;**](Contact.html)<!----> | Email address, phone number, and/or extension for this user. One entry is allowed per media type |  [optional] |
-| **title** | <!----><!---->**String**<!----> |  |  [optional] |
-| **username** | <!----><!---->**String**<!----> |  |  [optional] |
-| **preferredName** | <!----><!---->**String**<!----> | Preferred full name of agent |  [optional] |
-| **manager** | <!----><!---->**String**<!----> |  |  [optional] |
-| **images** | <!----><!---->[**List&lt;UserImage&gt;**](UserImage.html)<!----> |  |  [optional] |
-| **version** | <!----><!---->**Integer**<!----> | This value should be the current version of the user. The current version can be obtained with a GET on the user before doing a PATCH. |  |
-| **profileSkills** | <!----><!---->**List&lt;String&gt;**<!----> | Profile skills possessed by the user |  [optional] |
-| **locations** | <!----><!---->[**List&lt;Location&gt;**](Location.html)<!----> | The user placement at each site location. |  [optional] |
-| **groups** | <!----><!---->[**List&lt;Group&gt;**](Group.html)<!----> | The groups the user is a member of |  [optional] |
-| **state** | [**StateEnum**](#StateEnum)<!----> | The state of the user. This property can be used to restore a deleted user or transition between active and inactive. If specified, it is the only modifiable field. |  [optional] |
-| **acdAutoAnswer** | <!----><!---->**Boolean**<!----> | The value that denotes if acdAutoAnswer is set on the user |  [optional] |
-| **certifications** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **biography** | <!----><!---->[**Biography**](Biography.html)<!----> |  |  [optional] |
-| **employerInfo** | <!----><!---->[**EmployerInfo**](EmployerInfo.html)<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **chat** | [**Chat**](Chat) |  |  [optional] |
+| **department** | **String** |  |  [optional] |
+| **email** | **String** |  |  [optional] |
+| **primaryContactInfo** | [**List&lt;Contact&gt;**](Contact) | The address(s) used for primary contact. Updates to the corresponding address in the addresses list will be reflected here. |  [optional] |
+| **addresses** | [**List&lt;Contact&gt;**](Contact) | Email address, phone number, and/or extension for this user. One entry is allowed per media type |  [optional] |
+| **title** | **String** |  |  [optional] |
+| **username** | **String** |  |  [optional] |
+| **preferredName** | **String** | Preferred full name of agent |  [optional] |
+| **manager** | **String** |  |  [optional] |
+| **images** | [**List&lt;UserImage&gt;**](UserImage) |  |  [optional] |
+| **version** | **Integer** | This value should be the current version of the user. The current version can be obtained with a GET on the user before doing a PATCH. |  |
+| **profileSkills** | **List&lt;String&gt;** | Profile skills possessed by the user |  [optional] |
+| **locations** | [**List&lt;Location&gt;**](Location) | The user placement at each site location. |  [optional] |
+| **groups** | [**List&lt;Group&gt;**](Group) | The groups the user is a member of |  [optional] |
+| **state** | [**StateEnum**](#Enum--StateEnum) | The state of the user. This property can be used to restore a deleted user or transition between active and inactive. If specified, it is the only modifiable field. |  [optional] |
+| **acdAutoAnswer** | **Boolean** | The value that denotes if acdAutoAnswer is set on the user |  [optional] |
+| **certifications** | **List&lt;String&gt;** |  |  [optional] |
+| **biography** | [**Biography**](Biography) |  |  [optional] |
+| **employerInfo** | [**EmployerInfo**](EmployerInfo) |  |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -43,7 +37,8 @@ title: UpdateUser
 | ACTIVE | &quot;active&quot; | 
 | INACTIVE | &quot;inactive&quot; | 
 | DELETED | &quot;deleted&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

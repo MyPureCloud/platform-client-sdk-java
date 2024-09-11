@@ -1,34 +1,28 @@
----
-title: AnalyticsConversation
----
-## AnalyticsConversation
+# AnalyticsConversation
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **conferenceStart** | <!----><!---->[**Date**](Date.html)<!----> | The start time of a conference call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **conversationEnd** | <!----><!---->[**Date**](Date.html)<!----> | The end time of a conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **conversationId** | <!----><!---->**String**<!----> | Unique identifier for the conversation |  [optional] |
-| **conversationInitiator** | [**ConversationInitiatorEnum**](#ConversationInitiatorEnum)<!----> | Indicates the participant purpose of the participant initiating a message conversation |  [optional] |
-| **conversationStart** | <!----><!---->[**Date**](Date.html)<!----> | The start time of a conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **customerParticipation** | <!----><!---->**Boolean**<!----> | Indicates a messaging conversation in which the customer participated by sending at least one message |  [optional] |
-| **divisionIds** | <!----><!---->**List&lt;String&gt;**<!----> | Identifier(s) of division(s) associated with a conversation |  [optional] |
-| **externalTag** | <!----><!---->**String**<!----> | External tag for the conversation |  [optional] |
-| **knowledgeBaseIds** | <!----><!---->**List&lt;String&gt;**<!----> | The unique identifier(s) of the knowledge base(s) used |  [optional] |
-| **mediaStatsMinConversationMos** | <!----><!---->**Double**<!----> | The lowest estimated average MOS among all the audio streams belonging to this conversation |  [optional] |
-| **mediaStatsMinConversationRFactor** | <!----><!---->**Double**<!----> | The lowest R-factor value among all of the audio streams belonging to this conversation |  [optional] |
-| **originatingDirection** | [**OriginatingDirectionEnum**](#OriginatingDirectionEnum)<!----> | The original direction of the conversation |  [optional] |
-| **selfServed** | <!----><!---->**Boolean**<!----> | Indicates whether all flow sessions were self serviced |  [optional] |
-| **evaluations** | <!----><!---->[**List&lt;AnalyticsEvaluation&gt;**](AnalyticsEvaluation.html)<!----> | Evaluations associated with this conversation |  [optional] |
-| **surveys** | <!----><!---->[**List&lt;AnalyticsSurvey&gt;**](AnalyticsSurvey.html)<!----> | Surveys associated with this conversation |  [optional] |
-| **resolutions** | <!----><!---->[**List&lt;AnalyticsResolution&gt;**](AnalyticsResolution.html)<!----> | Resolutions associated with this conversation |  [optional] |
-| **participants** | <!----><!---->[**List&lt;AnalyticsParticipant&gt;**](AnalyticsParticipant.html)<!----> | Participants in the conversation |  [optional] |
-{: class="table table-striped"}
+| **conferenceStart** | [**Date**](Date) | The start time of a conference call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **conversationEnd** | [**Date**](Date) | The end time of a conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **conversationId** | **String** | Unique identifier for the conversation |  [optional] |
+| **conversationInitiator** | [**ConversationInitiatorEnum**](#Enum--ConversationInitiatorEnum) | Indicates the participant purpose of the participant initiating a message conversation |  [optional] |
+| **conversationStart** | [**Date**](Date) | The start time of a conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **customerParticipation** | **Boolean** | Indicates a messaging conversation in which the customer participated by sending at least one message |  [optional] |
+| **divisionIds** | **List&lt;String&gt;** | Identifier(s) of division(s) associated with a conversation |  [optional] |
+| **externalTag** | **String** | External tag for the conversation |  [optional] |
+| **knowledgeBaseIds** | **List&lt;String&gt;** | The unique identifier(s) of the knowledge base(s) used |  [optional] |
+| **mediaStatsMinConversationMos** | **Double** | The lowest estimated average MOS among all the audio streams belonging to this conversation |  [optional] |
+| **mediaStatsMinConversationRFactor** | **Double** | The lowest R-factor value among all of the audio streams belonging to this conversation |  [optional] |
+| **originatingDirection** | [**OriginatingDirectionEnum**](#Enum--OriginatingDirectionEnum) | The original direction of the conversation |  [optional] |
+| **selfServed** | **Boolean** | Indicates whether all flow sessions were self serviced |  [optional] |
+| **evaluations** | [**List&lt;AnalyticsEvaluation&gt;**](AnalyticsEvaluation) | Evaluations associated with this conversation |  [optional] |
+| **surveys** | [**List&lt;AnalyticsSurvey&gt;**](AnalyticsSurvey) | Surveys associated with this conversation |  [optional] |
+| **resolutions** | [**List&lt;AnalyticsResolution&gt;**](AnalyticsResolution) | Resolutions associated with this conversation |  [optional] |
+| **participants** | [**List&lt;AnalyticsParticipant&gt;**](AnalyticsParticipant) | Participants in the conversation |  [optional] |
 
-
-<a name="ConversationInitiatorEnum"></a>
 
 ## Enum: ConversationInitiatorEnum
 
@@ -54,10 +48,7 @@ title: AnalyticsConversation
 | VOICEMAIL | &quot;voicemail&quot; | 
 | VOICESURVEYFLOW | &quot;voicesurveyflow&quot; | 
 | WORKFLOW | &quot;workflow&quot; | 
-{: class="table table-striped"}
 
-
-<a name="OriginatingDirectionEnum"></a>
 
 ## Enum: OriginatingDirectionEnum
 
@@ -66,7 +57,8 @@ title: AnalyticsConversation
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INBOUND | &quot;inbound&quot; | 
 | OUTBOUND | &quot;outbound&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

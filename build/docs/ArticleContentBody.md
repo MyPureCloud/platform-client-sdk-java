@@ -1,15 +1,13 @@
----
-title: ArticleContentBody
----
-## ArticleContentBody
+# ArticleContentBody
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **locationUrl** | <!----><!---->**String**<!----> | Presigned URL to retrieve the document content. |  [optional] |
-{: class="table table-striped"}
+| **locationUrl** | **String** | Presigned URL to retrieve the document content. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

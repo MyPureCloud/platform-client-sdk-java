@@ -1,21 +1,15 @@
----
-title: CommonRuleConditions
----
-## CommonRuleConditions
+# CommonRuleConditions
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **clauses** | <!----><!---->[**List&lt;CommonRuleConditions&gt;**](CommonRuleConditions.html)<!----> | The list of predicates groups to be evaluated |  [optional] |
-| **predicates** | <!----><!---->[**List&lt;CommonRulePredicate&gt;**](CommonRulePredicate.html)<!----> | The list of rule metric predicates to be evaluated. |  |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | the logic operator performed. |  |
-| **id** | <!----><!---->**String**<!----> | The id. |  [optional] |
-{: class="table table-striped"}
+| **clauses** | [**List&lt;CommonRuleConditions&gt;**](CommonRuleConditions) | The list of predicates groups to be evaluated |  [optional] |
+| **predicates** | [**List&lt;CommonRulePredicate&gt;**](CommonRulePredicate) | The list of rule metric predicates to be evaluated. |  |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | the logic operator performed. |  |
+| **id** | **String** | The id. |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -25,7 +19,8 @@ title: CommonRuleConditions
 | AND | &quot;And&quot; | 
 | OR | &quot;Or&quot; | 
 | NOT | &quot;Not&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

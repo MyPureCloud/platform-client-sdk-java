@@ -1,19 +1,13 @@
----
-title: UserActivityResponse
----
-## UserActivityResponse
+# UserActivityResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **results** | <!----><!---->[**List&lt;UserActivityData&gt;**](UserActivityData.html)<!----> | Query results |  [optional] |
-| **entityIdDimension** | [**EntityIdDimensionEnum**](#EntityIdDimensionEnum)<!----> | Dimension that is used as an entityId |  [optional] |
-{: class="table table-striped"}
+| **results** | [**List&lt;UserActivityData&gt;**](UserActivityData) | Query results |  [optional] |
+| **entityIdDimension** | [**EntityIdDimensionEnum**](#Enum--EntityIdDimensionEnum) | Dimension that is used as an entityId |  [optional] |
 
-
-<a name="EntityIdDimensionEnum"></a>
 
 ## Enum: EntityIdDimensionEnum
 
@@ -29,7 +23,8 @@ title: UserActivityResponse
 | SYSTEMPRESENCE | &quot;systemPresence&quot; | 
 | TEAMID | &quot;teamId&quot; | 
 | USERID | &quot;userId&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

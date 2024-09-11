@@ -1,20 +1,14 @@
----
-title: SupportedDialectsTranscriptionEngine
----
-## SupportedDialectsTranscriptionEngine
+# SupportedDialectsTranscriptionEngine
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **engine** | [**EngineEnum**](#EngineEnum)<!----> |  |  [optional] |
-| **dialects** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **engineIntegration** | <!----><!---->[**EngineIntegration**](EngineIntegration.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **engine** | [**EngineEnum**](#Enum--EngineEnum) |  |  [optional] |
+| **dialects** | **List&lt;String&gt;** |  |  [optional] |
+| **engineIntegration** | [**EngineIntegration**](EngineIntegration) |  |  [optional] |
 
-
-<a name="EngineEnum"></a>
 
 ## Enum: EngineEnum
 
@@ -24,7 +18,8 @@ title: SupportedDialectsTranscriptionEngine
 | GENESYS | &quot;Genesys&quot; | 
 | GENESYSEXTENDED | &quot;GenesysExtended&quot; | 
 | TRANSCRIPTIONCONNECTOR | &quot;TranscriptionConnector&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

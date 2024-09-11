@@ -1,19 +1,17 @@
----
-title: SharedResponse
----
-## SharedResponse
+# SharedResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **downloadUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **viewUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **document** | <!----><!---->[**Document**](Document.html)<!----> |  |  [optional] |
-| **share** | <!----><!---->[**Share**](Share.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **downloadUri** | **String** |  |  [optional] |
+| **viewUri** | **String** |  |  [optional] |
+| **document** | [**Document**](Document) |  |  [optional] |
+| **share** | [**Share**](Share) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

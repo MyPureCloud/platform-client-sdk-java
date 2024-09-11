@@ -1,18 +1,16 @@
----
-title: FreeTrialLimit
----
-## FreeTrialLimit
+# FreeTrialLimit
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **key** | <!----><!---->**String**<!----> |  |  [optional] |
-| **defaultValue** | <!----><!---->**Long**<!----> |  |  [optional] |
-| **description** | <!----><!---->**String**<!----> |  |  [optional] |
-| **resource** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **key** | **String** |  |  [optional] |
+| **defaultValue** | **Long** |  |  [optional] |
+| **description** | **String** |  |  [optional] |
+| **resource** | **String** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

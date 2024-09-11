@@ -1,28 +1,23 @@
----
-title: UsageApi
----
-## UsageApi
+# UsageApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**getOauthClientUsageQueryResult**](UsageApi.html#getOauthClientUsageQueryResult) | Get the results of a usage query |
-| [**getOauthClientUsageSummary**](UsageApi.html#getOauthClientUsageSummary) | Get a summary of OAuth client API usage |
-| [**getUsageQueryExecutionIdResults**](UsageApi.html#getUsageQueryExecutionIdResults) | Get the results of a usage query |
-| [**getUsageSimplesearchExecutionIdResults**](UsageApi.html#getUsageSimplesearchExecutionIdResults) | Get the results of a usage search. Number of records to be returned is limited to 20,000 results. |
-| [**postOauthClientUsageQuery**](UsageApi.html#postOauthClientUsageQuery) | Query for OAuth client API usage |
-| [**postUsageQuery**](UsageApi.html#postUsageQuery) | Query organization API Usage -  |
-| [**postUsageSimplesearch**](UsageApi.html#postUsageSimplesearch) | Search organization API Usage |
+| [**getOauthClientUsageQueryResult**](UsageApi#getOauthClientUsageQueryResult) | Get the results of a usage query |
+| [**getOauthClientUsageSummary**](UsageApi#getOauthClientUsageSummary) | Get a summary of OAuth client API usage |
+| [**getUsageQueryExecutionIdResults**](UsageApi#getUsageQueryExecutionIdResults) | Get the results of a usage query |
+| [**getUsageSimplesearchExecutionIdResults**](UsageApi#getUsageSimplesearchExecutionIdResults) | Get the results of a usage search. Number of records to be returned is limited to 20,000 results. |
+| [**postOauthClientUsageQuery**](UsageApi#postOauthClientUsageQuery) | Query for OAuth client API usage |
+| [**postUsageQuery**](UsageApi#postUsageQuery) | Query organization API Usage -  |
+| [**postUsageSimplesearch**](UsageApi#postUsageSimplesearch) | Search organization API Usage |
 {: class="table-striped"}
 
-<a name="getOauthClientUsageQueryResult"></a>
 
 # **getOauthClientUsageQueryResult**
 
 
-
-> [ApiUsageQueryResult](ApiUsageQueryResult.html) getOauthClientUsageQueryResult(executionId, clientId)
+> [ApiUsageQueryResult](ApiUsageQueryResult) getOauthClientUsageQueryResult(executionId, clientId)
 
 Get the results of a usage query
 
@@ -78,15 +73,13 @@ try {
 
 ### Return type
 
-[**ApiUsageQueryResult**](ApiUsageQueryResult.html)
+[**ApiUsageQueryResult**](ApiUsageQueryResult)
 
-<a name="getOauthClientUsageSummary"></a>
 
 # **getOauthClientUsageSummary**
 
 
-
-> [UsageExecutionResult](UsageExecutionResult.html) getOauthClientUsageSummary(clientId, days)
+> [UsageExecutionResult](UsageExecutionResult) getOauthClientUsageSummary(clientId, days)
 
 Get a summary of OAuth client API usage
 
@@ -144,15 +137,13 @@ try {
 
 ### Return type
 
-[**UsageExecutionResult**](UsageExecutionResult.html)
+[**UsageExecutionResult**](UsageExecutionResult)
 
-<a name="getUsageQueryExecutionIdResults"></a>
 
 # **getUsageQueryExecutionIdResults**
 
 
-
-> [ApiUsageQueryResult](ApiUsageQueryResult.html) getUsageQueryExecutionIdResults(executionId)
+> [ApiUsageQueryResult](ApiUsageQueryResult) getUsageQueryExecutionIdResults(executionId)
 
 Get the results of a usage query
 
@@ -206,15 +197,13 @@ try {
 
 ### Return type
 
-[**ApiUsageQueryResult**](ApiUsageQueryResult.html)
+[**ApiUsageQueryResult**](ApiUsageQueryResult)
 
-<a name="getUsageSimplesearchExecutionIdResults"></a>
 
 # **getUsageSimplesearchExecutionIdResults**
 
 
-
-> [ApiUsageQueryResult](ApiUsageQueryResult.html) getUsageSimplesearchExecutionIdResults(executionId, after, pageSize)
+> [ApiUsageQueryResult](ApiUsageQueryResult) getUsageSimplesearchExecutionIdResults(executionId, after, pageSize)
 
 Get the results of a usage search. Number of records to be returned is limited to 20,000 results.
 
@@ -272,15 +261,13 @@ try {
 
 ### Return type
 
-[**ApiUsageQueryResult**](ApiUsageQueryResult.html)
+[**ApiUsageQueryResult**](ApiUsageQueryResult)
 
-<a name="postOauthClientUsageQuery"></a>
 
 # **postOauthClientUsageQuery**
 
 
-
-> [UsageExecutionResult](UsageExecutionResult.html) postOauthClientUsageQuery(clientId, body)
+> [UsageExecutionResult](UsageExecutionResult) postOauthClientUsageQuery(clientId, body)
 
 Query for OAuth client API usage
 
@@ -332,21 +319,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **clientId** | **String**| Client ID | 
-| **body** | [**ApiUsageClientQuery**](ApiUsageClientQuery.html)| Query | 
+| **body** | [**ApiUsageClientQuery**](ApiUsageClientQuery)| Query | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UsageExecutionResult**](UsageExecutionResult.html)
+[**UsageExecutionResult**](UsageExecutionResult)
 
-<a name="postUsageQuery"></a>
 
 # **postUsageQuery**
 
 
-
-> [UsageExecutionResult](UsageExecutionResult.html) postUsageQuery(body)
+> [UsageExecutionResult](UsageExecutionResult) postUsageQuery(body)
 
 Query organization API Usage - 
 
@@ -396,21 +381,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ApiUsageOrganizationQuery**](ApiUsageOrganizationQuery.html)| Query | 
+| **body** | [**ApiUsageOrganizationQuery**](ApiUsageOrganizationQuery)| Query | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UsageExecutionResult**](UsageExecutionResult.html)
+[**UsageExecutionResult**](UsageExecutionResult)
 
-<a name="postUsageSimplesearch"></a>
 
 # **postUsageSimplesearch**
 
 
-
-> [UsageExecutionResult](UsageExecutionResult.html) postUsageSimplesearch(body)
+> [UsageExecutionResult](UsageExecutionResult) postUsageSimplesearch(body)
 
 Search organization API Usage
 
@@ -460,11 +443,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ApiUsageSimpleSearch**](ApiUsageSimpleSearch.html)| SimpleSearch | 
+| **body** | [**ApiUsageSimpleSearch**](ApiUsageSimpleSearch)| SimpleSearch | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UsageExecutionResult**](UsageExecutionResult.html)
+[**UsageExecutionResult**](UsageExecutionResult)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,18 +1,12 @@
----
-title: GrammarFileUploadRequest
----
-## GrammarFileUploadRequest
+# GrammarFileUploadRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **fileType** | [**FileTypeEnum**](#FileTypeEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **fileType** | [**FileTypeEnum**](#Enum--FileTypeEnum) |  |  [optional] |
 
-
-<a name="FileTypeEnum"></a>
 
 ## Enum: FileTypeEnum
 
@@ -21,7 +15,8 @@ title: GrammarFileUploadRequest
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | GRAM | &quot;gram&quot; | 
 | GRXML | &quot;grxml&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

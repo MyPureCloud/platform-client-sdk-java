@@ -1,15 +1,13 @@
----
-title: AgentsIntegrationsListing
----
-## AgentsIntegrationsListing
+# AgentsIntegrationsListing
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | <!----><!---->[**List&lt;AgentIntegrationsResponse&gt;**](AgentIntegrationsResponse.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **entities** | [**List&lt;AgentIntegrationsResponse&gt;**](AgentIntegrationsResponse) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

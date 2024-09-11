@@ -1,20 +1,14 @@
----
-title: ScimPhoneNumber
----
-## ScimPhoneNumber
+# ScimPhoneNumber
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **value** | <!----><!---->**String**<!----> | The phone number in E.164 or tel URI format, for example, tel:+nnnnnnnn; ext=xxxxx. |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of phone number. |  [optional] |
-| **primary** | <!----><!---->**Boolean**<!----> | Indicates whether the phone number is the primary phone number. |  [optional] |
-{: class="table table-striped"}
+| **value** | **String** | The phone number in E.164 or tel URI format, for example, tel:+nnnnnnnn; ext=xxxxx. |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of phone number. |  [optional] |
+| **primary** | **Boolean** | Indicates whether the phone number is the primary phone number. |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -31,7 +25,8 @@ title: ScimPhoneNumber
 | MICROSOFTTEAMS | &quot;microsoftteams&quot; | 
 | ZOOMPHONE | &quot;zoomphone&quot; | 
 | EIGHTBYEIGHT | &quot;eightbyeight&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

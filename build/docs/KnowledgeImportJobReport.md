@@ -1,16 +1,14 @@
----
-title: KnowledgeImportJobReport
----
-## KnowledgeImportJobReport
+# KnowledgeImportJobReport
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **errors** | <!----><!---->[**List&lt;KnowledgeImportJobError&gt;**](KnowledgeImportJobError.html)<!----> | List of errors occurred during processing import. |  [optional] |
-| **statistics** | <!----><!---->[**KnowledgeImportJobStatistics**](KnowledgeImportJobStatistics.html)<!----> | Statistics related to the import job. |  [optional] |
-{: class="table table-striped"}
+| **errors** | [**List&lt;KnowledgeImportJobError&gt;**](KnowledgeImportJobError) | List of errors occurred during processing import. |  [optional] |
+| **statistics** | [**KnowledgeImportJobStatistics**](KnowledgeImportJobStatistics) | Statistics related to the import job. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

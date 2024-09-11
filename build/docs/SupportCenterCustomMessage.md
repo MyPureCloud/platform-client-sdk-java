@@ -1,19 +1,13 @@
----
-title: SupportCenterCustomMessage
----
-## SupportCenterCustomMessage
+# SupportCenterCustomMessage
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **defaultValue** | <!----><!---->**String**<!----> | Default value for the message |  |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Type of the message |  |
-{: class="table table-striped"}
+| **defaultValue** | **String** | Default value for the message |  |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Type of the message |  |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -22,7 +16,8 @@ title: SupportCenterCustomMessage
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | WELCOME | &quot;Welcome&quot; | 
 | FALLBACK | &quot;Fallback&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

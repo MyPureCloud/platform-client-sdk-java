@@ -1,22 +1,16 @@
----
-title: BotSearchResponse
----
-## BotSearchResponse
+# BotSearchResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The id of the bot |  |
-| **name** | <!----><!---->**String**<!----> | The name of the bot |  |
-| **botType** | [**BotTypeEnum**](#BotTypeEnum)<!----> | The provider of the bot |  |
-| **description** | <!----><!---->**String**<!----> | The description of the bot |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The id of the bot |  |
+| **name** | **String** | The name of the bot |  |
+| **botType** | [**BotTypeEnum**](#Enum--BotTypeEnum) | The provider of the bot |  |
+| **description** | **String** | The description of the bot |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="BotTypeEnum"></a>
 
 ## Enum: BotTypeEnum
 
@@ -32,7 +26,8 @@ title: BotSearchResponse
 | GENESYSBOTFLOW | &quot;GenesysBotFlow&quot; | 
 | GENESYSDIGITALBOTFLOW | &quot;GenesysDigitalBotFlow&quot; | 
 | GENESYSVOICESURVEYFLOW | &quot;GenesysVoiceSurveyFlow&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,20 +1,14 @@
----
-title: UserSearchRulePart
----
-## UserSearchRulePart
+# UserSearchRulePart
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **operation** | [**OperationEnum**](#OperationEnum)<!----> | The operation for this part |  |
-| **selector** | [**SelectorEnum**](#SelectorEnum)<!----> | The type of item being selected by this part |  |
-| **ids** | <!----><!---->**List&lt;String&gt;**<!----> | The ids for the selector; the results of these are ORed together |  |
-{: class="table table-striped"}
+| **operation** | [**OperationEnum**](#Enum--OperationEnum) | The operation for this part |  |
+| **selector** | [**SelectorEnum**](#Enum--SelectorEnum) | The type of item being selected by this part |  |
+| **ids** | **List&lt;String&gt;** | The ids for the selector; the results of these are ORed together |  |
 
-
-<a name="OperationEnum"></a>
 
 ## Enum: OperationEnum
 
@@ -23,10 +17,7 @@ title: UserSearchRulePart
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INCLUDE | &quot;Include&quot; | 
 | EXCLUDE | &quot;Exclude&quot; | 
-{: class="table table-striped"}
 
-
-<a name="SelectorEnum"></a>
 
 ## Enum: SelectorEnum
 
@@ -39,7 +30,8 @@ title: UserSearchRulePart
 | QUEUE | &quot;Queue&quot; | 
 | DIVISION | &quot;Division&quot; | 
 | MANAGEMENTUNIT | &quot;ManagementUnit&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

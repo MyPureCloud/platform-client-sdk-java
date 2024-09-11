@@ -1,18 +1,16 @@
----
-title: AssistantListing
----
-## AssistantListing
+# AssistantListing
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | <!----><!---->[**List&lt;Assistant&gt;**](Assistant.html)<!----> |  |  [optional] |
-| **nextUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **previousUri** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **entities** | [**List&lt;Assistant&gt;**](Assistant) |  |  [optional] |
+| **nextUri** | **String** |  |  [optional] |
+| **selfUri** | **String** |  |  [optional] |
+| **previousUri** | **String** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

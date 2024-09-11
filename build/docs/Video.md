@@ -1,36 +1,30 @@
----
-title: Video
----
-## Video
+# Video
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **state** | [**StateEnum**](#StateEnum)<!----> | The connection state of this communication. |  [optional] |
-| **initialState** | [**InitialStateEnum**](#InitialStateEnum)<!----> | The initial connection state of this communication. |  [optional] |
-| **id** | <!----><!---->**String**<!----> | A globally unique identifier for this communication. |  [optional] |
-| **context** | <!----><!---->**String**<!----> | The room id context (xmpp jid) for the conference session. |  [optional] |
-| **audioMuted** | <!----><!---->**Boolean**<!----> | Indicates whether this participant has muted their outgoing audio. |  [optional] |
-| **videoMuted** | <!----><!---->**Boolean**<!----> | Indicates whether this participant has muted/paused their outgoing video. |  [optional] |
-| **sharingScreen** | <!----><!---->**Boolean**<!----> | Indicates whether this participant is sharing their screen to the session. |  [optional] |
-| **peerCount** | <!----><!---->**Integer**<!----> | The number of peer participants from the perspective of the participant in the conference. |  [optional] |
-| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum)<!----> | System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects. |  [optional] |
-| **startAlertingTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **connectedTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **disconnectedTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **provider** | <!----><!---->**String**<!----> | The source provider for the video. |  [optional] |
-| **peerId** | <!----><!---->**String**<!----> | The id of the peer communication corresponding to a matching leg for this communication. |  [optional] |
-| **msids** | <!----><!---->**List&lt;String&gt;**<!----> | List of media stream ids |  [optional] |
-| **self** | <!----><!---->[**Address**](Address.html)<!----> | Address and name data for a call endpoint. |  [optional] |
-| **wrapup** | <!----><!---->[**Wrapup**](Wrapup.html)<!----> | Call wrap up or disposition data. |  [optional] |
-| **afterCallWork** | <!----><!---->[**AfterCallWork**](AfterCallWork.html)<!----> | After-call work for the communication. |  [optional] |
-| **afterCallWorkRequired** | <!----><!---->**Boolean**<!----> | Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested. |  [optional] |
-{: class="table table-striped"}
+| **state** | [**StateEnum**](#Enum--StateEnum) | The connection state of this communication. |  [optional] |
+| **initialState** | [**InitialStateEnum**](#Enum--InitialStateEnum) | The initial connection state of this communication. |  [optional] |
+| **id** | **String** | A globally unique identifier for this communication. |  [optional] |
+| **context** | **String** | The room id context (xmpp jid) for the conference session. |  [optional] |
+| **audioMuted** | **Boolean** | Indicates whether this participant has muted their outgoing audio. |  [optional] |
+| **videoMuted** | **Boolean** | Indicates whether this participant has muted/paused their outgoing video. |  [optional] |
+| **sharingScreen** | **Boolean** | Indicates whether this participant is sharing their screen to the session. |  [optional] |
+| **peerCount** | **Integer** | The number of peer participants from the perspective of the participant in the conference. |  [optional] |
+| **disconnectType** | [**DisconnectTypeEnum**](#Enum--DisconnectTypeEnum) | System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects. |  [optional] |
+| **startAlertingTime** | [**Date**](Date) | The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **connectedTime** | [**Date**](Date) | The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **disconnectedTime** | [**Date**](Date) | The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **provider** | **String** | The source provider for the video. |  [optional] |
+| **peerId** | **String** | The id of the peer communication corresponding to a matching leg for this communication. |  [optional] |
+| **msids** | **List&lt;String&gt;** | List of media stream ids |  [optional] |
+| **self** | [**Address**](Address) | Address and name data for a call endpoint. |  [optional] |
+| **wrapup** | [**Wrapup**](Wrapup) | Call wrap up or disposition data. |  [optional] |
+| **afterCallWork** | [**AfterCallWork**](AfterCallWork) | After-call work for the communication. |  [optional] |
+| **afterCallWorkRequired** | **Boolean** | Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested. |  [optional] |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -45,10 +39,7 @@ title: Video
 | DISCONNECTED | &quot;disconnected&quot; | 
 | TERMINATED | &quot;terminated&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
-
-<a name="InitialStateEnum"></a>
 
 ## Enum: InitialStateEnum
 
@@ -63,10 +54,7 @@ title: Video
 | DISCONNECTED | &quot;disconnected&quot; | 
 | TERMINATED | &quot;terminated&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
-
-<a name="DisconnectTypeEnum"></a>
 
 ## Enum: DisconnectTypeEnum
 
@@ -89,7 +77,8 @@ title: Video
 | OTHER | &quot;other&quot; | 
 | SPAM | &quot;spam&quot; | 
 | UNCALLABLE | &quot;uncallable&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,22 +1,16 @@
----
-title: V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel
----
-## V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel
+# V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **platform** | [**PlatformEnum**](#PlatformEnum)<!----> |  |  [optional] |
-| **to** | <!----><!---->[**V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient**](V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient.html)<!----> |  |  [optional] |
-| **from** | <!----><!---->[**V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingFromRecipient**](V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingFromRecipient.html)<!----> |  |  [optional] |
-| **time** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **platform** | [**PlatformEnum**](#Enum--PlatformEnum) |  |  [optional] |
+| **to** | [**V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient**](V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient) |  |  [optional] |
+| **from** | [**V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingFromRecipient**](V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingFromRecipient) |  |  [optional] |
+| **time** | [**Date**](Date) |  |  [optional] |
 
-
-<a name="PlatformEnum"></a>
 
 ## Enum: PlatformEnum
 
@@ -31,7 +25,8 @@ title: V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChan
 | WEBMESSAGING | &quot;WebMessaging&quot; | 
 | OPEN | &quot;Open&quot; | 
 | SMS | &quot;Sms&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,19 +1,13 @@
----
-title: ActivityPlanJobException
----
-## ActivityPlanJobException
+# ActivityPlanJobException
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **exceptionType** | [**ExceptionTypeEnum**](#ExceptionTypeEnum)<!----> | The type of error |  |
-| **occurrences** | <!----><!---->[**List&lt;ActivityPlanOccurrenceReference&gt;**](ActivityPlanOccurrenceReference.html)<!----> | The occurrences in which this error occurred |  |
-{: class="table table-striped"}
+| **exceptionType** | [**ExceptionTypeEnum**](#Enum--ExceptionTypeEnum) | The type of error |  |
+| **occurrences** | [**List&lt;ActivityPlanOccurrenceReference&gt;**](ActivityPlanOccurrenceReference) | The occurrences in which this error occurred |  |
 
-
-<a name="ExceptionTypeEnum"></a>
 
 ## Enum: ExceptionTypeEnum
 
@@ -22,7 +16,8 @@ title: ActivityPlanJobException
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | UNSCHEDULEDATTENDEES | &quot;UnscheduledAttendees&quot; | 
 | SESSIONSNOTDELETED | &quot;SessionsNotDeleted&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

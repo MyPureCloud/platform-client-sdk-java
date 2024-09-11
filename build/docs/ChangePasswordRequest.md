@@ -1,15 +1,13 @@
----
-title: ChangePasswordRequest
----
-## ChangePasswordRequest
+# ChangePasswordRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **newPassword** | <!----><!---->**String**<!----> | The new password |  |
-{: class="table table-striped"}
+| **newPassword** | **String** | The new password |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

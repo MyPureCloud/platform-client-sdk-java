@@ -1,25 +1,19 @@
----
-title: AcceleratorMetadata
----
-## AcceleratorMetadata
+# AcceleratorMetadata
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> | name of this accelerator |  [optional] |
-| **description** | <!----><!---->**String**<!----> | a description of the general purpose of this accelerator |  [optional] |
-| **origin** | [**OriginEnum**](#OriginEnum)<!----> | where the accelerator originated |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | type of the artifact |  [optional] |
-| **classification** | <!----><!---->**String**<!----> | architectural classification into which the accelerator belongs |  [optional] |
-| **tags** | <!----><!---->**List&lt;String&gt;**<!----> | tags |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** | name of this accelerator |  [optional] |
+| **description** | **String** | a description of the general purpose of this accelerator |  [optional] |
+| **origin** | [**OriginEnum**](#Enum--OriginEnum) | where the accelerator originated |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | type of the artifact |  [optional] |
+| **classification** | **String** | architectural classification into which the accelerator belongs |  [optional] |
+| **tags** | **List&lt;String&gt;** | tags |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="OriginEnum"></a>
 
 ## Enum: OriginEnum
 
@@ -29,10 +23,7 @@ title: AcceleratorMetadata
 | COMMUNITY | &quot;Community&quot; | 
 | PARTNER | &quot;Partner&quot; | 
 | GENESYS | &quot;Genesys&quot; | 
-{: class="table table-striped"}
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -42,7 +33,8 @@ title: AcceleratorMetadata
 | MODULE | &quot;Module&quot; | 
 | ACCELERATOR | &quot;Accelerator&quot; | 
 | BLUEPRINT | &quot;Blueprint&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

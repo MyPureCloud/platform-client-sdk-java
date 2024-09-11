@@ -1,15 +1,13 @@
----
-title: ResponseQueryResults
----
-## ResponseQueryResults
+# ResponseQueryResults
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **results** | <!----><!---->[**ResponseEntityList**](ResponseEntityList.html)<!----> | Contains the query results |  |
-{: class="table table-striped"}
+| **results** | [**ResponseEntityList**](ResponseEntityList) | Contains the query results |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

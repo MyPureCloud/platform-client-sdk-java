@@ -1,21 +1,15 @@
----
-title: PatchTextStyleProperties
----
-## PatchTextStyleProperties
+# PatchTextStyleProperties
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **color** | <!----><!---->**String**<!----> | Color of the text. (eg. #FFFFFF) |  [optional] |
-| **font** | <!----><!---->**String**<!----> | Font of the text. (eg. Helvetica) |  [optional] |
-| **fontSize** | <!----><!---->**String**<!----> | Font size of the text. (eg. '12') |  [optional] |
-| **textAlign** | [**TextAlignEnum**](#TextAlignEnum)<!----> | Text alignment. |  [optional] |
-{: class="table table-striped"}
+| **color** | **String** | Color of the text. (eg. #FFFFFF) |  [optional] |
+| **font** | **String** | Font of the text. (eg. Helvetica) |  [optional] |
+| **fontSize** | **String** | Font size of the text. (eg. '12') |  [optional] |
+| **textAlign** | [**TextAlignEnum**](#Enum--TextAlignEnum) | Text alignment. |  [optional] |
 
-
-<a name="TextAlignEnum"></a>
 
 ## Enum: TextAlignEnum
 
@@ -25,7 +19,8 @@ title: PatchTextStyleProperties
 | LEFT | &quot;Left&quot; | 
 | RIGHT | &quot;Right&quot; | 
 | CENTER | &quot;Center&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

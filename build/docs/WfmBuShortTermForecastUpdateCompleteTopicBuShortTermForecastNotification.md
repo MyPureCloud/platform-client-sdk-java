@@ -1,20 +1,14 @@
----
-title: WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecastNotification
----
-## WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecastNotification
+# WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecastNotification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
-| **result** | <!----><!---->[**WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast**](WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast.html)<!----> |  |  [optional] |
-| **operationId** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
+| **result** | [**WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast**](WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast) |  |  [optional] |
+| **operationId** | **String** |  |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -25,7 +19,8 @@ title: WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecastNotification
 | COMPLETE | &quot;Complete&quot; | 
 | CANCELED | &quot;Canceled&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

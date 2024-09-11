@@ -1,23 +1,17 @@
----
-title: EventCondition
----
-## EventCondition
+# EventCondition
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **key** | <!----><!---->**String**<!----> | The event key. |  |
-| **values** | <!----><!---->**List&lt;String&gt;**<!----> | The event values. |  |
-| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | The comparison operator. |  [optional] |
-| **streamType** | [**StreamTypeEnum**](#StreamTypeEnum)<!----> | The stream type for which this condition can be satisfied. |  |
-| **sessionType** | <!----><!---->**String**<!----> | The session type for which this condition can be satisfied. |  |
-| **eventName** | <!----><!---->**String**<!----> | The name of the event for which this condition can be satisfied. |  [optional] |
-{: class="table table-striped"}
+| **key** | **String** | The event key. |  |
+| **values** | **List&lt;String&gt;** | The event values. |  |
+| **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | The comparison operator. |  [optional] |
+| **streamType** | [**StreamTypeEnum**](#Enum--StreamTypeEnum) | The stream type for which this condition can be satisfied. |  |
+| **sessionType** | **String** | The session type for which this condition can be satisfied. |  |
+| **eventName** | **String** | The name of the event for which this condition can be satisfied. |  [optional] |
 
-
-<a name="OperatorEnum"></a>
 
 ## Enum: OperatorEnum
 
@@ -36,10 +30,7 @@ title: EventCondition
 | LESSTHANOREQUAL | &quot;lessThanOrEqual&quot; | 
 | STARTSWITH | &quot;startsWith&quot; | 
 | ENDSWITH | &quot;endsWith&quot; | 
-{: class="table table-striped"}
 
-
-<a name="StreamTypeEnum"></a>
 
 ## Enum: StreamTypeEnum
 
@@ -50,7 +41,8 @@ title: EventCondition
 | CUSTOM | &quot;Custom&quot; | 
 | CONVERSATION | &quot;Conversation&quot; | 
 | APP | &quot;App&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

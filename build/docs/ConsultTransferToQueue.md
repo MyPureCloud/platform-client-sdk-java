@@ -1,21 +1,15 @@
----
-title: ConsultTransferToQueue
----
-## ConsultTransferToQueue
+# ConsultTransferToQueue
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **speakTo** | [**SpeakToEnum**](#SpeakToEnum)<!----> | Determines to whom the initiating participant is speaking. Defaults to DESTINATION |  |
-| **consultingUserId** | <!----><!---->**String**<!----> | The user ID of the person who wants to talk before completing the transfer. Could be the same of the context user ID |  [optional] |
-| **queueId** | <!----><!---->**String**<!----> | The id of the queue. |  [optional] |
-| **queueName** | <!----><!---->**String**<!----> | The name of the queue. |  [optional] |
-{: class="table table-striped"}
+| **speakTo** | [**SpeakToEnum**](#Enum--SpeakToEnum) | Determines to whom the initiating participant is speaking. Defaults to DESTINATION |  |
+| **consultingUserId** | **String** | The user ID of the person who wants to talk before completing the transfer. Could be the same of the context user ID |  [optional] |
+| **queueId** | **String** | The id of the queue. |  [optional] |
+| **queueName** | **String** | The name of the queue. |  [optional] |
 
-
-<a name="SpeakToEnum"></a>
 
 ## Enum: SpeakToEnum
 
@@ -26,7 +20,8 @@ title: ConsultTransferToQueue
 | OBJECT | &quot;OBJECT&quot; | 
 | BOTH | &quot;BOTH&quot; | 
 | CONFERENCE | &quot;CONFERENCE&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

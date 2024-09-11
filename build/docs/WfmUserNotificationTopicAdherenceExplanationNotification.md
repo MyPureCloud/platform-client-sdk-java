@@ -1,26 +1,20 @@
----
-title: WfmUserNotificationTopicAdherenceExplanationNotification
----
-## WfmUserNotificationTopicAdherenceExplanationNotification
+# WfmUserNotificationTopicAdherenceExplanationNotification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **agent** | <!----><!---->[**WfmUserNotificationTopicUserReference**](WfmUserNotificationTopicUserReference.html)<!----> |  |  [optional] |
-| **managementUnit** | <!----><!---->[**WfmUserNotificationTopicManagementUnit**](WfmUserNotificationTopicManagementUnit.html)<!----> |  |  [optional] |
-| **businessUnit** | <!----><!---->[**WfmUserNotificationTopicBusinessUnit**](WfmUserNotificationTopicBusinessUnit.html)<!----> |  |  [optional] |
-| **startDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **lengthMinutes** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-| **notes** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **agent** | [**WfmUserNotificationTopicUserReference**](WfmUserNotificationTopicUserReference) |  |  [optional] |
+| **managementUnit** | [**WfmUserNotificationTopicManagementUnit**](WfmUserNotificationTopicManagementUnit) |  |  [optional] |
+| **businessUnit** | [**WfmUserNotificationTopicBusinessUnit**](WfmUserNotificationTopicBusinessUnit) |  |  [optional] |
+| **startDate** | [**Date**](Date) |  |  [optional] |
+| **lengthMinutes** | **Integer** |  |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
+| **notes** | **String** |  |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -30,10 +24,7 @@ title: WfmUserNotificationTopicAdherenceExplanationNotification
 | PENDING | &quot;Pending&quot; | 
 | APPROVED | &quot;Approved&quot; | 
 | DENIED | &quot;Denied&quot; | 
-{: class="table table-striped"}
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -41,7 +32,8 @@ title: WfmUserNotificationTopicAdherenceExplanationNotification
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | LATE | &quot;Late&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,18 +1,12 @@
----
-title: CoachingAppointmentStatusRequest
----
-## CoachingAppointmentStatusRequest
+# CoachingAppointmentStatusRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> | The status of the coaching appointment |  |
-{: class="table table-striped"}
+| **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the coaching appointment |  |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -22,7 +16,8 @@ title: CoachingAppointmentStatusRequest
 | SCHEDULED | &quot;Scheduled&quot; | 
 | INPROGRESS | &quot;InProgress&quot; | 
 | COMPLETED | &quot;Completed&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

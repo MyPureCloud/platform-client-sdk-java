@@ -1,22 +1,16 @@
----
-title: AggregationResult
----
-## AggregationResult
+# AggregationResult
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-| **dimension** | <!----><!---->**String**<!----> | For termFrequency aggregations |  [optional] |
-| **metric** | <!----><!---->**String**<!----> | For numericRange aggregations |  [optional] |
-| **count** | <!----><!---->**Long**<!----> |  |  [optional] |
-| **results** | <!----><!---->[**List&lt;AggregationResultEntry&gt;**](AggregationResultEntry.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
+| **dimension** | **String** | For termFrequency aggregations |  [optional] |
+| **metric** | **String** | For numericRange aggregations |  [optional] |
+| **count** | **Long** |  |  [optional] |
+| **results** | [**List&lt;AggregationResultEntry&gt;**](AggregationResultEntry) |  |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -25,7 +19,8 @@ title: AggregationResult
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | TERMFREQUENCY | &quot;termFrequency&quot; | 
 | NUMERICRANGE | &quot;numericRange&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

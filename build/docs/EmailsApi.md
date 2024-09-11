@@ -1,23 +1,18 @@
----
-title: EmailsApi
----
-## EmailsApi
+# EmailsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**getEmailsSettings**](EmailsApi.html#getEmailsSettings) | Get email Contact Center settings |
-| [**patchEmailsSettings**](EmailsApi.html#patchEmailsSettings) | Patch email Contact Center settings |
+| [**getEmailsSettings**](EmailsApi#getEmailsSettings) | Get email Contact Center settings |
+| [**patchEmailsSettings**](EmailsApi#patchEmailsSettings) | Patch email Contact Center settings |
 {: class="table-striped"}
 
-<a name="getEmailsSettings"></a>
 
 # **getEmailsSettings**
 
 
-
-> [EmailSettings](EmailSettings.html) getEmailsSettings()
+> [EmailSettings](EmailSettings) getEmailsSettings()
 
 Get email Contact Center settings
 
@@ -66,15 +61,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**EmailSettings**](EmailSettings.html)
+[**EmailSettings**](EmailSettings)
 
-<a name="patchEmailsSettings"></a>
 
 # **patchEmailsSettings**
 
 
-
-> [EmailSettings](EmailSettings.html) patchEmailsSettings(body)
+> [EmailSettings](EmailSettings) patchEmailsSettings(body)
 
 Patch email Contact Center settings
 
@@ -121,11 +114,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**EmailSettings**](EmailSettings.html)|  | [optional] 
+| **body** | [**EmailSettings**](EmailSettings)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**EmailSettings**](EmailSettings.html)
+[**EmailSettings**](EmailSettings)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

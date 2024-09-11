@@ -1,22 +1,17 @@
----
-title: ScreenRecordingApi
----
-## ScreenRecordingApi
+# ScreenRecordingApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**postScreenrecordingToken**](ScreenRecordingApi.html#postScreenrecordingToken) | Sign identifying information for screen recording |
+| [**postScreenrecordingToken**](ScreenRecordingApi#postScreenrecordingToken) | Sign identifying information for screen recording |
 {: class="table-striped"}
 
-<a name="postScreenrecordingToken"></a>
 
 # **postScreenrecordingToken**
 
 
-
-> [SignedData](SignedData.html) postScreenrecordingToken(body)
+> [SignedData](SignedData) postScreenrecordingToken(body)
 
 Sign identifying information for screen recording
 
@@ -62,11 +57,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ScreenRecordingUserAuthenticatedInfo**](ScreenRecordingUserAuthenticatedInfo.html)|  | [optional] 
+| **body** | [**ScreenRecordingUserAuthenticatedInfo**](ScreenRecordingUserAuthenticatedInfo)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**SignedData**](SignedData.html)
+[**SignedData**](SignedData)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,18 +1,12 @@
----
-title: SetRecordingState
----
-## SetRecordingState
+# SetRecordingState
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **recordingState** | [**RecordingStateEnum**](#RecordingStateEnum)<!----> | On update, 'paused' initiates a secure pause, 'active' resumes any paused recordings. |  [optional] |
-{: class="table table-striped"}
+| **recordingState** | [**RecordingStateEnum**](#Enum--RecordingStateEnum) | On update, 'paused' initiates a secure pause, 'active' resumes any paused recordings. |  [optional] |
 
-
-<a name="RecordingStateEnum"></a>
 
 ## Enum: RecordingStateEnum
 
@@ -22,7 +16,8 @@ title: SetRecordingState
 | ACTIVE | &quot;ACTIVE&quot; | 
 | PAUSED | &quot;PAUSED&quot; | 
 | NONE | &quot;NONE&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

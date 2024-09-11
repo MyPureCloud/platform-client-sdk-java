@@ -1,23 +1,17 @@
----
-title: ConversationDetailQueryPredicate
----
-## ConversationDetailQueryPredicate
+# ConversationDetailQueryPredicate
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Optional type, can usually be inferred |  [optional] |
-| **dimension** | [**DimensionEnum**](#DimensionEnum)<!----> | Left hand side for dimension predicates |  [optional] |
-| **metric** | [**MetricEnum**](#MetricEnum)<!----> | Left hand side for metric predicates |  [optional] |
-| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | Optional operator, default is matches |  [optional] |
-| **value** | <!----><!---->**String**<!----> | Right hand side for dimension or metric predicates |  [optional] |
-| **range** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | Right hand side for dimension or metric predicates |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Optional type, can usually be inferred |  [optional] |
+| **dimension** | [**DimensionEnum**](#Enum--DimensionEnum) | Left hand side for dimension predicates |  [optional] |
+| **metric** | [**MetricEnum**](#Enum--MetricEnum) | Left hand side for metric predicates |  [optional] |
+| **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | Optional operator, default is matches |  [optional] |
+| **value** | **String** | Right hand side for dimension or metric predicates |  [optional] |
+| **range** | [**NumericRange**](NumericRange) | Right hand side for dimension or metric predicates |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -27,10 +21,7 @@ title: ConversationDetailQueryPredicate
 | DIMENSION | &quot;dimension&quot; | 
 | PROPERTY | &quot;property&quot; | 
 | METRIC | &quot;metric&quot; | 
-{: class="table table-striped"}
 
-
-<a name="DimensionEnum"></a>
 
 ## Enum: DimensionEnum
 
@@ -46,10 +37,7 @@ title: ConversationDetailQueryPredicate
 | EXTERNALTAG | &quot;externalTag&quot; | 
 | MEDIASTATSMINCONVERSATIONMOS | &quot;mediaStatsMinConversationMos&quot; | 
 | ORIGINATINGDIRECTION | &quot;originatingDirection&quot; | 
-{: class="table table-striped"}
 
-
-<a name="MetricEnum"></a>
 
 ## Enum: MetricEnum
 
@@ -117,10 +105,7 @@ title: ConversationDetailQueryPredicate
 | TTALKCOMPLETE | &quot;tTalkComplete&quot; | 
 | TUSERRESPONSETIME | &quot;tUserResponseTime&quot; | 
 | TVOICEMAIL | &quot;tVoicemail&quot; | 
-{: class="table table-striped"}
 
-
-<a name="OperatorEnum"></a>
 
 ## Enum: OperatorEnum
 
@@ -130,7 +115,8 @@ title: ConversationDetailQueryPredicate
 | MATCHES | &quot;matches&quot; | 
 | EXISTS | &quot;exists&quot; | 
 | NOTEXISTS | &quot;notExists&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

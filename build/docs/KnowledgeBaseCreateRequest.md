@@ -1,20 +1,14 @@
----
-title: KnowledgeBaseCreateRequest
----
-## KnowledgeBaseCreateRequest
+# KnowledgeBaseCreateRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | <!----><!---->**String**<!----> | Knowledge base name |  |
-| **description** | <!----><!---->**String**<!----> | Knowledge base description |  [optional] |
-| **coreLanguage** | [**CoreLanguageEnum**](#CoreLanguageEnum)<!----> | Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently. However, the new DX knowledge will support all these language codes, along with 'early preview' language codes [ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA] which might have a lower accuracy. |  |
-{: class="table table-striped"}
+| **name** | **String** | Knowledge base name |  |
+| **description** | **String** | Knowledge base description |  [optional] |
+| **coreLanguage** | [**CoreLanguageEnum**](#Enum--CoreLanguageEnum) | Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently. However, the new DX knowledge will support all these language codes, along with 'early preview' language codes [ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA] which might have a lower accuracy. |  |
 
-
-<a name="CoreLanguageEnum"></a>
 
 ## Enum: CoreLanguageEnum
 
@@ -67,7 +61,8 @@ title: KnowledgeBaseCreateRequest
 | HU_HU | &quot;hu-HU&quot; | 
 | VI_VN | &quot;vi-VN&quot; | 
 | UK_UA | &quot;uk-UA&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

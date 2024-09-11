@@ -1,19 +1,13 @@
----
-title: SchedulerMessageArgument
----
-## SchedulerMessageArgument
+# SchedulerMessageArgument
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of this message parameter |  [optional] |
-| **value** | <!----><!---->**String**<!----> | The value of this message parameter |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of this message parameter |  [optional] |
+| **value** | **String** | The value of this message parameter |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -22,7 +16,8 @@ title: SchedulerMessageArgument
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | AGENTID | &quot;AgentId&quot; | 
 | DATE | &quot;Date&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

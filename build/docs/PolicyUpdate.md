@@ -1,15 +1,13 @@
----
-title: PolicyUpdate
----
-## PolicyUpdate
+# PolicyUpdate
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **enabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **enabled** | **Boolean** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

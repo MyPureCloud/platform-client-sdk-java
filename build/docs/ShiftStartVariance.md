@@ -1,19 +1,13 @@
----
-title: ShiftStartVariance
----
-## ShiftStartVariance
+# ShiftStartVariance
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **applicableDays** | <!---->[**List&lt;ApplicableDaysEnum&gt;**](#ApplicableDaysEnum)<!----> | Days for which shift start variance is configured |  |
-| **maxShiftStartVarianceMinutes** | <!----><!---->**Integer**<!----> | Maximum variance in minutes across shift starts |  |
-{: class="table table-striped"}
+| **applicableDays** | [**List<ApplicableDaysEnum>**](#Enum--ApplicableDaysEnum) | Days for which shift start variance is configured |  |
+| **maxShiftStartVarianceMinutes** | **Integer** | Maximum variance in minutes across shift starts |  |
 
-
-<a name="ApplicableDaysEnum"></a>
 
 ## Enum: ApplicableDaysEnum
 
@@ -26,7 +20,8 @@ title: ShiftStartVariance
 | THURSDAY | &quot;Thursday&quot; |
 | FRIDAY | &quot;Friday&quot; |
 | SATURDAY | &quot;Saturday&quot; |
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

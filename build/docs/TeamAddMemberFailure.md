@@ -1,19 +1,13 @@
----
-title: TeamAddMemberFailure
----
-## TeamAddMemberFailure
+# TeamAddMemberFailure
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **reason** | [**ReasonEnum**](#ReasonEnum)<!----> | Specific reason the member could not be added. |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **reason** | [**ReasonEnum**](#Enum--ReasonEnum) | Specific reason the member could not be added. |  [optional] |
 
-
-<a name="ReasonEnum"></a>
 
 ## Enum: ReasonEnum
 
@@ -23,7 +17,8 @@ title: TeamAddMemberFailure
 | USERNOTFOUND | &quot;UserNotFound&quot; | 
 | USERGROUPLIMITEXCEEDED | &quot;UserGroupLimitExceeded&quot; | 
 | USERGROUPDIVISIONMISMATCH | &quot;UserGroupDivisionMismatch&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

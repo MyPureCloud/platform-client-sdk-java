@@ -1,213 +1,207 @@
----
-title: ViewFilter
----
-## ViewFilter
+# ViewFilter
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **mediaTypes** | <!---->[**List&lt;MediaTypesEnum&gt;**](#MediaTypesEnum)<!----> | The media types are used to filter the view |  [optional] |
-| **queueIds** | <!----><!---->**List&lt;String&gt;**<!----> | The queue ids are used to filter the view |  [optional] |
-| **skillIds** | <!----><!---->**List&lt;String&gt;**<!----> | The skill ids are used to filter the view |  [optional] |
-| **skillGroups** | <!----><!---->**List&lt;String&gt;**<!----> | The skill groups used to filter the view |  [optional] |
-| **languageIds** | <!----><!---->**List&lt;String&gt;**<!----> | The language ids are used to filter the view |  [optional] |
-| **languageGroups** | <!----><!---->**List&lt;String&gt;**<!----> | The language groups used to filter the view |  [optional] |
-| **directions** | <!---->[**List&lt;DirectionsEnum&gt;**](#DirectionsEnum)<!----> | The directions are used to filter the view |  [optional] |
-| **originatingDirections** | <!---->[**List&lt;OriginatingDirectionsEnum&gt;**](#OriginatingDirectionsEnum)<!----> | The list of orginating directions used to filter the view |  [optional] |
-| **wrapUpCodes** | <!----><!---->**List&lt;String&gt;**<!----> | The wrap up codes are used to filter the view |  [optional] |
-| **dnisList** | <!----><!---->**List&lt;String&gt;**<!----> | The dnis list is used to filter the view |  [optional] |
-| **sessionDnisList** | <!----><!---->**List&lt;String&gt;**<!----> | The list of session dnis used to filter the view |  [optional] |
-| **filterQueuesByUserIds** | <!----><!---->**List&lt;String&gt;**<!----> | The user ids are used to fetch associated queues for the view |  [optional] |
-| **filterUsersByQueueIds** | <!----><!---->**List&lt;String&gt;**<!----> | The queue ids are used to fetch associated users for the view |  [optional] |
-| **userIds** | <!----><!---->**List&lt;String&gt;**<!----> | The user ids are used to filter the view |  [optional] |
-| **managementUnitIds** | <!----><!---->**List&lt;String&gt;**<!----> | The management unit ids are used to filter the view |  [optional] |
-| **addressTos** | <!----><!---->**List&lt;String&gt;**<!----> | The address To values are used to filter the view |  [optional] |
-| **addressFroms** | <!----><!---->**List&lt;String&gt;**<!----> | The address from values are used to filter the view |  [optional] |
-| **outboundCampaignIds** | <!----><!---->**List&lt;String&gt;**<!----> | The outbound campaign ids are used to filter the view |  [optional] |
-| **outboundContactListIds** | <!----><!---->**List&lt;String&gt;**<!----> | The outbound contact list ids are used to filter the view |  [optional] |
-| **contactIds** | <!----><!---->**List&lt;String&gt;**<!----> | The contact ids are used to filter the view |  [optional] |
-| **externalContactIds** | <!----><!---->**List&lt;String&gt;**<!----> | The external contact ids are used to filter the view |  [optional] |
-| **externalOrgIds** | <!----><!---->**List&lt;String&gt;**<!----> | The external org ids are used to filter the view |  [optional] |
-| **aniList** | <!----><!---->**List&lt;String&gt;**<!----> | The ani list ids are used to filter the view |  [optional] |
-| **durationsMilliseconds** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The durations in milliseconds used to filter the view |  [optional] |
-| **acdDurationsMilliseconds** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The acd durations in milliseconds used to filter the view |  [optional] |
-| **talkDurationsMilliseconds** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The talk durations in milliseconds used to filter the view |  [optional] |
-| **acwDurationsMilliseconds** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The acw durations in milliseconds used to filter the view |  [optional] |
-| **handleDurationsMilliseconds** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The handle durations in milliseconds used to filter the view |  [optional] |
-| **holdDurationsMilliseconds** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The hold durations in milliseconds used to filter the view |  [optional] |
-| **abandonDurationsMilliseconds** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The abandon durations in milliseconds used to filter the view |  [optional] |
-| **evaluationScore** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The evaluationScore is used to filter the view |  [optional] |
-| **evaluationCriticalScore** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The evaluationCriticalScore is used to filter the view |  [optional] |
-| **evaluationFormIds** | <!----><!---->**List&lt;String&gt;**<!----> | The evaluation form ids are used to filter the view |  [optional] |
-| **evaluatedAgentIds** | <!----><!---->**List&lt;String&gt;**<!----> | The evaluated agent ids are used to filter the view |  [optional] |
-| **evaluatorIds** | <!----><!---->**List&lt;String&gt;**<!----> | The evaluator ids are used to filter the view |  [optional] |
-| **transferred** | <!----><!---->**Boolean**<!----> | Indicates filtering for transfers |  [optional] |
-| **abandoned** | <!----><!---->**Boolean**<!----> | Indicates filtering for abandons |  [optional] |
-| **answered** | <!----><!---->**Boolean**<!----> | Indicates filtering for answered interactions |  [optional] |
-| **messageTypes** | <!---->[**List&lt;MessageTypesEnum&gt;**](#MessageTypesEnum)<!----> | The message media types used to filter the view |  [optional] |
-| **divisionIds** | <!----><!---->**List&lt;String&gt;**<!----> | The divison Ids used to filter the view |  [optional] |
-| **surveyFormIds** | <!----><!---->**List&lt;String&gt;**<!----> | The survey form ids used to filter the view |  [optional] |
-| **surveyTotalScore** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The survey total score used to filter the view |  [optional] |
-| **surveyNpsScore** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The survey NPS score used to filter the view |  [optional] |
-| **mos** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The desired range for mos values |  [optional] |
-| **surveyQuestionGroupScore** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The survey question group score used to filter the view |  [optional] |
-| **surveyPromoterScore** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The survey promoter score used to filter the view |  [optional] |
-| **surveyFormContextIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of survey form context ids used to filter the view |  [optional] |
-| **conversationIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of conversation ids used to filter the view |  [optional] |
-| **sipCallIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of SIP call ids used to filter the view |  [optional] |
-| **isEnded** | <!----><!---->**Boolean**<!----> | Indicates filtering for ended |  [optional] |
-| **isSurveyed** | <!----><!---->**Boolean**<!----> | Indicates filtering for survey |  [optional] |
-| **surveyScores** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The list of survey score ranges used to filter the view |  [optional] |
-| **promoterScores** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The list of promoter score ranges used to filter the view |  [optional] |
-| **isCampaign** | <!----><!---->**Boolean**<!----> | Indicates filtering for campaign |  [optional] |
-| **surveyStatuses** | <!----><!---->**List&lt;String&gt;**<!----> | The list of survey statuses used to filter the view |  [optional] |
-| **conversationProperties** | <!----><!---->[**ConversationProperties**](ConversationProperties.html)<!----> | A grouping of conversation level filters |  [optional] |
-| **isBlindTransferred** | <!----><!---->**Boolean**<!----> | Indicates filtering for blind transferred |  [optional] |
-| **isConsulted** | <!----><!---->**Boolean**<!----> | Indicates filtering for consulted |  [optional] |
-| **isConsultTransferred** | <!----><!---->**Boolean**<!----> | Indicates filtering for consult transferred |  [optional] |
-| **remoteParticipants** | <!----><!---->**List&lt;String&gt;**<!----> | The list of remote participants used to filter the view |  [optional] |
-| **flowIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of flow Ids |  [optional] |
-| **flowOutcomeIds** | <!----><!---->**List&lt;String&gt;**<!----> | A list of outcome ids of the flow |  [optional] |
-| **flowOutcomeValues** | <!---->[**List&lt;FlowOutcomeValuesEnum&gt;**](#FlowOutcomeValuesEnum)<!----> | A list of outcome values of the flow |  [optional] |
-| **flowDestinationTypes** | <!---->[**List&lt;FlowDestinationTypesEnum&gt;**](#FlowDestinationTypesEnum)<!----> | The list of destination types of the flow |  [optional] |
-| **flowDisconnectReasons** | <!---->[**List&lt;FlowDisconnectReasonsEnum&gt;**](#FlowDisconnectReasonsEnum)<!----> | The list of reasons for the flow to disconnect |  [optional] |
-| **flowTypes** | <!---->[**List&lt;FlowTypesEnum&gt;**](#FlowTypesEnum)<!----> | A list of types of the flow |  [optional] |
-| **flowEntryTypes** | <!---->[**List&lt;FlowEntryTypesEnum&gt;**](#FlowEntryTypesEnum)<!----> | A list of types of the flow entry |  [optional] |
-| **flowEntryReasons** | <!----><!---->**List&lt;String&gt;**<!----> | A list of reasons of flow entry |  [optional] |
-| **flowVersions** | <!----><!---->**List&lt;String&gt;**<!----> | A list of versions of a flow |  [optional] |
-| **groupIds** | <!----><!---->**List&lt;String&gt;**<!----> | A list of directory group ids |  [optional] |
-| **hasJourneyCustomerId** | <!----><!---->**Boolean**<!----> | Indicates filtering for journey customer id |  [optional] |
-| **hasJourneyActionMapId** | <!----><!---->**Boolean**<!----> | Indicates filtering for Journey action map id |  [optional] |
-| **hasJourneyVisitId** | <!----><!---->**Boolean**<!----> | Indicates filtering for Journey visit id |  [optional] |
-| **hasMedia** | <!----><!---->**Boolean**<!----> | Indicates filtering for presence of MMS media |  [optional] |
-| **roleIds** | <!----><!---->**List&lt;String&gt;**<!----> | The role Ids used to filter the view |  [optional] |
-| **reportsTos** | <!----><!---->**List&lt;String&gt;**<!----> | The report to user IDs used to filter the view |  [optional] |
-| **locationIds** | <!----><!---->**List&lt;String&gt;**<!----> | The location Ids used to filter the view |  [optional] |
-| **flowOutTypes** | <!----><!---->**List&lt;String&gt;**<!----> | A list of flow out types |  [optional] |
-| **providerList** | <!----><!---->**List&lt;String&gt;**<!----> | A list of providers |  [optional] |
-| **callbackNumberList** | <!----><!---->**List&lt;String&gt;**<!----> | A list of callback numbers or substrings of numbers (ex: [\"317\", \"13172222222\"]) |  [optional] |
-| **callbackInterval** | <!----><!---->**String**<!----> | An interval of time to filter for scheduled callbacks. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss |  [optional] |
-| **usedRoutingTypes** | <!---->[**List&lt;UsedRoutingTypesEnum&gt;**](#UsedRoutingTypesEnum)<!----> | A list of routing types used |  [optional] |
-| **requestedRoutingTypes** | <!---->[**List&lt;RequestedRoutingTypesEnum&gt;**](#RequestedRoutingTypesEnum)<!----> | A list of routing types requested |  [optional] |
-| **hasAgentAssistId** | <!----><!---->**Boolean**<!----> | Indicates filtering for agent assist id |  [optional] |
-| **transcripts** | <!----><!---->[**List&lt;Transcripts&gt;**](Transcripts.html)<!----> | A list of transcript contents requested |  [optional] |
-| **transcriptLanguages** | <!----><!---->**List&lt;String&gt;**<!----> | A list of transcript languages requested |  [optional] |
-| **participantPurposes** | <!---->[**List&lt;ParticipantPurposesEnum&gt;**](#ParticipantPurposesEnum)<!----> | A list of participant purpose requested |  [optional] |
-| **showFirstQueue** | <!----><!---->**Boolean**<!----> | Indicates filtering for first queue data |  [optional] |
-| **teamIds** | <!----><!---->**List&lt;String&gt;**<!----> | The team ids used to filter the view data |  [optional] |
-| **filterUsersByTeamIds** | <!----><!---->**List&lt;String&gt;**<!----> | The team ids are used to fetch associated users for the view |  [optional] |
-| **journeyActionMapIds** | <!----><!---->**List&lt;String&gt;**<!----> | The journey action map ids are used to fetch action maps for the associated view |  [optional] |
-| **journeyOutcomeIds** | <!----><!---->**List&lt;String&gt;**<!----> | The journey outcome ids are used to fetch outcomes for the associated view |  [optional] |
-| **journeySegmentIds** | <!----><!---->**List&lt;String&gt;**<!----> | The journey segment ids are used to fetch segments for the associated view |  [optional] |
-| **journeyActionMapTypes** | <!---->[**List&lt;JourneyActionMapTypesEnum&gt;**](#JourneyActionMapTypesEnum)<!----> | The journey action map types are used to filter action map data for the associated view |  [optional] |
-| **developmentRoleList** | <!---->[**List&lt;DevelopmentRoleListEnum&gt;**](#DevelopmentRoleListEnum)<!----> | The list of development roles used to filter agent development view |  [optional] |
-| **developmentTypeList** | <!---->[**List&lt;DevelopmentTypeListEnum&gt;**](#DevelopmentTypeListEnum)<!----> | The list of development types used to filter agent development view |  [optional] |
-| **developmentStatusList** | <!---->[**List&lt;DevelopmentStatusListEnum&gt;**](#DevelopmentStatusListEnum)<!----> | The list of development status used to filter agent development view |  [optional] |
-| **developmentModuleIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of development moduleIds used to filter agent development view |  [optional] |
-| **developmentActivityOverdue** | <!----><!---->**Boolean**<!----> | Indicates filtering for development activities |  [optional] |
-| **customerSentimentScore** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The customer sentiment score used to filter the view |  [optional] |
-| **customerSentimentTrend** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The customer sentiment trend used to filter the view |  [optional] |
-| **flowTransferTargets** | <!----><!---->**List&lt;String&gt;**<!----> | The list of transfer targets used to filter flow data |  [optional] |
-| **developmentName** | <!----><!---->**String**<!----> | Filter for development name |  [optional] |
-| **topicIds** | <!----><!---->**List&lt;String&gt;**<!----> | Represents the topics detected in the transcript |  [optional] |
-| **externalTags** | <!----><!---->**List&lt;String&gt;**<!----> | The list of external Tags used to filter conversation data |  [optional] |
-| **isNotResponding** | <!----><!---->**Boolean**<!----> | Indicates filtering for not responding users |  [optional] |
-| **isAuthenticated** | <!----><!---->**Boolean**<!----> | Indicates filtering for the authenticated chat |  [optional] |
-| **botIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of bot IDs used to filter bot views |  [optional] |
-| **botVersions** | <!----><!---->**List&lt;String&gt;**<!----> | The list of bot versions used to filter bot views |  [optional] |
-| **botMessageTypes** | <!---->[**List&lt;BotMessageTypesEnum&gt;**](#BotMessageTypesEnum)<!----> | The list of bot message types used to filter bot views |  [optional] |
-| **botProviderList** | <!---->[**List&lt;BotProviderListEnum&gt;**](#BotProviderListEnum)<!----> | The list of bot providers used to filter bot views |  [optional] |
-| **botProductList** | <!---->[**List&lt;BotProductListEnum&gt;**](#BotProductListEnum)<!----> | The list of bot products used to filter bot views |  [optional] |
-| **botRecognitionFailureReasonList** | <!---->[**List&lt;BotRecognitionFailureReasonListEnum&gt;**](#BotRecognitionFailureReasonListEnum)<!----> | The list of bot recognition failure reasons used to filter bot views |  [optional] |
-| **botIntentList** | <!----><!---->**List&lt;String&gt;**<!----> | The list of bot intents used to filter bot views |  [optional] |
-| **botFinalIntentList** | <!----><!---->**List&lt;String&gt;**<!----> | The list of bot final intents used to filter bot views |  [optional] |
-| **botSlotList** | <!----><!---->**List&lt;String&gt;**<!----> | The list of bot slots used to filter bot views |  [optional] |
-| **botResultList** | <!---->[**List&lt;BotResultListEnum&gt;**](#BotResultListEnum)<!----> | The list of bot results used to filter bot views |  [optional] |
-| **blockedReasons** | <!---->[**List&lt;BlockedReasonsEnum&gt;**](#BlockedReasonsEnum)<!----> | The list of blocked reason used to filter action map constraints views |  [optional] |
-| **isRecorded** | <!----><!---->**Boolean**<!----> | Indicates filtering for recorded |  [optional] |
-| **hasEvaluation** | <!----><!---->**Boolean**<!----> | Indicates filtering for evaluation |  [optional] |
-| **hasScoredEvaluation** | <!----><!---->**Boolean**<!----> | Indicates filtering for scored evaluation |  [optional] |
-| **emailDeliveryStatusList** | <!---->[**List&lt;EmailDeliveryStatusListEnum&gt;**](#EmailDeliveryStatusListEnum)<!----> | The list of email delivery statuses used to filter views |  [optional] |
-| **isAgentOwnedCallback** | <!----><!---->**Boolean**<!----> | Indicates filtering for agent owned callback interactions |  [optional] |
-| **agentCallbackOwnerIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of callback owners used to filter interactions |  [optional] |
-| **transcriptTopics** | <!----><!---->[**List&lt;TranscriptTopics&gt;**](TranscriptTopics.html)<!----> | The list of transcript topics requested in filter |  [optional] |
-| **journeyFrequencyCapReasons** | <!----><!---->**List&lt;String&gt;**<!----> | The list of frequency cap reasons to filter offer constraints |  [optional] |
-| **journeyBlockingActionMapIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of blocking action maps to filter offer constraints |  [optional] |
-| **journeyActionTargetIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of action targets to filter offer constraints |  [optional] |
-| **journeyBlockingScheduleGroupIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of blocking schedule groups to filter offer constraints |  [optional] |
-| **journeyBlockingEmergencyScheduleGroupIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of emergency schedule groups to filter offer constraints |  [optional] |
-| **journeyUrlEqualConditions** | <!----><!---->**List&lt;String&gt;**<!----> | The list of url equal conditions to filter offer constraints |  [optional] |
-| **journeyUrlNotEqualConditions** | <!----><!---->**List&lt;String&gt;**<!----> | The list of url not equal conditions to filter offer constraints |  [optional] |
-| **journeyUrlStartsWithConditions** | <!----><!---->**List&lt;String&gt;**<!----> | The list of url starts with conditions to filter offer constraints |  [optional] |
-| **journeyUrlEndsWithConditions** | <!----><!---->**List&lt;String&gt;**<!----> | The list of url ends with conditions to filter offer constraints |  [optional] |
-| **journeyUrlContainsAnyConditions** | <!----><!---->**List&lt;String&gt;**<!----> | The list of url contains any conditions to filter offer constraints |  [optional] |
-| **journeyUrlNotContainsAnyConditions** | <!----><!---->**List&lt;String&gt;**<!----> | The list of url not contains any conditions to filter offer constraints |  [optional] |
-| **journeyUrlContainsAllConditions** | <!----><!---->**List&lt;String&gt;**<!----> | The list of url contains all conditions to filter offer constraints |  [optional] |
-| **journeyUrlNotContainsAllConditions** | <!----><!---->**List&lt;String&gt;**<!----> | The list of url not contains all conditions to filter offer constraints |  [optional] |
-| **flowMilestoneIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of flow milestones to filter exports |  [optional] |
-| **isAssessmentPassed** | <!----><!---->**Boolean**<!----> | Filter to indicate if Agent passed assessment or not |  [optional] |
-| **conversationInitiators** | <!----><!---->**List&lt;String&gt;**<!----> | The list to filter based on Brands (Bot/User/Agent) or End User who initiated the first message in the conversation |  [optional] |
-| **hasCustomerParticipated** | <!----><!---->**Boolean**<!----> | Indicates if the customer has participated in an initiated conversation |  [optional] |
-| **isAcdInteraction** | <!----><!---->**Boolean**<!----> | Filter to indicate if interaction was ACD or non-ACD |  [optional] |
-| **hasFax** | <!----><!---->**Boolean**<!----> | Filters to indicate if interaction has FAX |  [optional] |
-| **dataActionIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of Data Action IDs  |  [optional] |
-| **actionCategoryName** | <!----><!---->**String**<!----> | Deprecated - Please use integrationIds instead |  [optional] |
-| **integrationIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of integration IDs for Data Action |  [optional] |
-| **responseStatuses** | <!----><!---->**List&lt;String&gt;**<!----> | The list of Response codes for Data Action |  [optional] |
-| **availableDashboard** | [**AvailableDashboardEnum**](#AvailableDashboardEnum)<!----> | Filter to indicate the availability of the dashboard is public or private. |  [optional] |
-| **favouriteDashboard** | <!----><!---->**Boolean**<!----> | Filter to indicate whether the dashboard is favorite or unfavorite. |  [optional] |
-| **myDashboard** | <!----><!---->**Boolean**<!----> | Filter to indicate the dashboard owned by the user. |  [optional] |
-| **stationErrors** | <!----><!---->**List&lt;String&gt;**<!----> | The list of agent errors that are related to station |  [optional] |
-| **canonicalContactIds** | <!----><!---->**List&lt;String&gt;**<!----> | The canonical contact ids are used to filter the view |  [optional] |
-| **alertRuleIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of Alert Rule IDs |  [optional] |
-| **evaluationFormContextIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of Evaluation Form Context IDs |  [optional] |
-| **evaluationStatuses** | <!---->[**List&lt;EvaluationStatusesEnum&gt;**](#EvaluationStatusesEnum)<!----> | The evaluation statuses that are used to filter the view |  [optional] |
-| **workbinIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of Workbin IDs |  [optional] |
-| **worktypeIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of Worktype IDs |  [optional] |
-| **workitemIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of Workitem IDs |  [optional] |
-| **workitemAssigneeIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of Workitem Assignee IDs |  [optional] |
-| **workitemStatuses** | <!----><!---->**List&lt;String&gt;**<!----> | The list of Workitem Statuses IDs |  [optional] |
-| **isAnalyzedForSensitiveData** | <!----><!---->**Boolean**<!----> | Deprecated - Use hasPciData or hasPiiData instead. |  [optional] |
-| **hasSensitiveData** | <!----><!---->**Boolean**<!----> | Deprecated. Use hasPciData or hasPiiData instead. |  [optional] |
-| **hasPciData** | <!----><!---->**Boolean**<!----> | Filter to indicate the transcript contains Pci data. |  [optional] |
-| **hasPiiData** | <!----><!---->**Boolean**<!----> | Filter to indicate the transcript contains Pii data. |  [optional] |
-| **subPath** | <!----><!---->**String**<!----> | Filter for Sub Path |  [optional] |
-| **userState** | [**UserStateEnum**](#UserStateEnum)<!----> | The user supplied state value in the view |  [optional] |
-| **isClearedByCustomer** | <!----><!---->**Boolean**<!----> | Filter to indicate if the customer cleared the conversation. |  [optional] |
-| **evaluationAssigneeIds** | <!----><!---->**List&lt;String&gt;**<!----> | The evaluation assignee ids that are used to filter the view. |  [optional] |
-| **evaluationAssigned** | <!----><!---->**Boolean**<!----> | Filter to indicate that the user has no assigned evaluation. |  [optional] |
-| **assistantIds** | <!----><!---->**List&lt;String&gt;**<!----> | The assistant ids that are used to filter the view. |  [optional] |
-| **knowledgeBaseIds** | <!----><!---->**List&lt;String&gt;**<!----> | The knowledge base ids that are used to filter the view. |  [optional] |
-| **isParked** | <!----><!---->**Boolean**<!----> | Filter to indicate if the interactions are parked. |  [optional] |
-| **agentEmpathyScore** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The agentEmpathyScore is used to filter the view |  [optional] |
-| **surveyTypes** | <!---->[**List&lt;SurveyTypesEnum&gt;**](#SurveyTypesEnum)<!----> | The surveyTypes is used to filter the view |  [optional] |
-| **surveyResponseStatuses** | <!---->[**List&lt;SurveyResponseStatusesEnum&gt;**](#SurveyResponseStatusesEnum)<!----> | The list of Survey Response Status |  [optional] |
-| **botFlowTypes** | <!---->[**List&lt;BotFlowTypesEnum&gt;**](#BotFlowTypesEnum)<!----> | The botFlowTypes is used to filter the view |  [optional] |
-| **agentTalkDurationMilliseconds** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The agent talk durations in milliseconds used to filter the view |  [optional] |
-| **customerTalkDurationMilliseconds** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The customer talk durations in milliseconds used to filter the view |  [optional] |
-| **overtalkDurationMilliseconds** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The overtalk durations in milliseconds used to filter the view |  [optional] |
-| **silenceDurationMilliseconds** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The silence durations in milliseconds used to filter the view |  [optional] |
-| **acdDurationMilliseconds** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The acd durations in milliseconds used to filter the view |  [optional] |
-| **ivrDurationMilliseconds** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The ivr durations in milliseconds used to filter the view |  [optional] |
-| **otherDurationMilliseconds** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The other (hold/music) durations in milliseconds used to filter the view |  [optional] |
-| **agentTalkPercentage** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The agent talk percentage used to filter the view |  [optional] |
-| **customerTalkPercentage** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The customer talk percentage used to filter the view |  [optional] |
-| **overtalkPercentage** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The overtalk percentage used to filter the view |  [optional] |
-| **silencePercentage** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The silence percentage used to filter the view |  [optional] |
-| **acdPercentage** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The acd percentage used to filter the view |  [optional] |
-| **ivrPercentage** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The ivr percentage used to filter the view |  [optional] |
-| **otherPercentage** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The other (hold/music percentage used to filter the view |  [optional] |
-| **overtalkInstances** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The overtalk instance range used to filter the view |  [optional] |
-| **isScreenRecorded** | <!----><!---->**Boolean**<!----> | Filter to indicate if the screen is recorded |  [optional] |
-| **screenMonitorUserIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of Screen Monitor User Ids |  [optional] |
-| **dashboardType** | [**DashboardTypeEnum**](#DashboardTypeEnum)<!----> | The type of dashboard being filtered |  [optional] |
-| **dashboardAccessFilter** | [**DashboardAccessFilterEnum**](#DashboardAccessFilterEnum)<!----> | The type of dashboard access being filtered |  [optional] |
-{: class="table table-striped"}
+| **mediaTypes** | [**List<MediaTypesEnum>**](#Enum--MediaTypesEnum) | The media types are used to filter the view |  [optional] |
+| **queueIds** | **List&lt;String&gt;** | The queue ids are used to filter the view |  [optional] |
+| **skillIds** | **List&lt;String&gt;** | The skill ids are used to filter the view |  [optional] |
+| **skillGroups** | **List&lt;String&gt;** | The skill groups used to filter the view |  [optional] |
+| **languageIds** | **List&lt;String&gt;** | The language ids are used to filter the view |  [optional] |
+| **languageGroups** | **List&lt;String&gt;** | The language groups used to filter the view |  [optional] |
+| **directions** | [**List<DirectionsEnum>**](#Enum--DirectionsEnum) | The directions are used to filter the view |  [optional] |
+| **originatingDirections** | [**List<OriginatingDirectionsEnum>**](#Enum--OriginatingDirectionsEnum) | The list of orginating directions used to filter the view |  [optional] |
+| **wrapUpCodes** | **List&lt;String&gt;** | The wrap up codes are used to filter the view |  [optional] |
+| **dnisList** | **List&lt;String&gt;** | The dnis list is used to filter the view |  [optional] |
+| **sessionDnisList** | **List&lt;String&gt;** | The list of session dnis used to filter the view |  [optional] |
+| **filterQueuesByUserIds** | **List&lt;String&gt;** | The user ids are used to fetch associated queues for the view |  [optional] |
+| **filterUsersByQueueIds** | **List&lt;String&gt;** | The queue ids are used to fetch associated users for the view |  [optional] |
+| **userIds** | **List&lt;String&gt;** | The user ids are used to filter the view |  [optional] |
+| **managementUnitIds** | **List&lt;String&gt;** | The management unit ids are used to filter the view |  [optional] |
+| **addressTos** | **List&lt;String&gt;** | The address To values are used to filter the view |  [optional] |
+| **addressFroms** | **List&lt;String&gt;** | The address from values are used to filter the view |  [optional] |
+| **outboundCampaignIds** | **List&lt;String&gt;** | The outbound campaign ids are used to filter the view |  [optional] |
+| **outboundContactListIds** | **List&lt;String&gt;** | The outbound contact list ids are used to filter the view |  [optional] |
+| **contactIds** | **List&lt;String&gt;** | The contact ids are used to filter the view |  [optional] |
+| **externalContactIds** | **List&lt;String&gt;** | The external contact ids are used to filter the view |  [optional] |
+| **externalOrgIds** | **List&lt;String&gt;** | The external org ids are used to filter the view |  [optional] |
+| **aniList** | **List&lt;String&gt;** | The ani list ids are used to filter the view |  [optional] |
+| **durationsMilliseconds** | [**List&lt;NumericRange&gt;**](NumericRange) | The durations in milliseconds used to filter the view |  [optional] |
+| **acdDurationsMilliseconds** | [**List&lt;NumericRange&gt;**](NumericRange) | The acd durations in milliseconds used to filter the view |  [optional] |
+| **talkDurationsMilliseconds** | [**List&lt;NumericRange&gt;**](NumericRange) | The talk durations in milliseconds used to filter the view |  [optional] |
+| **acwDurationsMilliseconds** | [**List&lt;NumericRange&gt;**](NumericRange) | The acw durations in milliseconds used to filter the view |  [optional] |
+| **handleDurationsMilliseconds** | [**List&lt;NumericRange&gt;**](NumericRange) | The handle durations in milliseconds used to filter the view |  [optional] |
+| **holdDurationsMilliseconds** | [**List&lt;NumericRange&gt;**](NumericRange) | The hold durations in milliseconds used to filter the view |  [optional] |
+| **abandonDurationsMilliseconds** | [**List&lt;NumericRange&gt;**](NumericRange) | The abandon durations in milliseconds used to filter the view |  [optional] |
+| **evaluationScore** | [**NumericRange**](NumericRange) | The evaluationScore is used to filter the view |  [optional] |
+| **evaluationCriticalScore** | [**NumericRange**](NumericRange) | The evaluationCriticalScore is used to filter the view |  [optional] |
+| **evaluationFormIds** | **List&lt;String&gt;** | The evaluation form ids are used to filter the view |  [optional] |
+| **evaluatedAgentIds** | **List&lt;String&gt;** | The evaluated agent ids are used to filter the view |  [optional] |
+| **evaluatorIds** | **List&lt;String&gt;** | The evaluator ids are used to filter the view |  [optional] |
+| **transferred** | **Boolean** | Indicates filtering for transfers |  [optional] |
+| **abandoned** | **Boolean** | Indicates filtering for abandons |  [optional] |
+| **answered** | **Boolean** | Indicates filtering for answered interactions |  [optional] |
+| **messageTypes** | [**List<MessageTypesEnum>**](#Enum--MessageTypesEnum) | The message media types used to filter the view |  [optional] |
+| **divisionIds** | **List&lt;String&gt;** | The divison Ids used to filter the view |  [optional] |
+| **surveyFormIds** | **List&lt;String&gt;** | The survey form ids used to filter the view |  [optional] |
+| **surveyTotalScore** | [**NumericRange**](NumericRange) | The survey total score used to filter the view |  [optional] |
+| **surveyNpsScore** | [**NumericRange**](NumericRange) | The survey NPS score used to filter the view |  [optional] |
+| **mos** | [**NumericRange**](NumericRange) | The desired range for mos values |  [optional] |
+| **surveyQuestionGroupScore** | [**NumericRange**](NumericRange) | The survey question group score used to filter the view |  [optional] |
+| **surveyPromoterScore** | [**NumericRange**](NumericRange) | The survey promoter score used to filter the view |  [optional] |
+| **surveyFormContextIds** | **List&lt;String&gt;** | The list of survey form context ids used to filter the view |  [optional] |
+| **conversationIds** | **List&lt;String&gt;** | The list of conversation ids used to filter the view |  [optional] |
+| **sipCallIds** | **List&lt;String&gt;** | The list of SIP call ids used to filter the view |  [optional] |
+| **isEnded** | **Boolean** | Indicates filtering for ended |  [optional] |
+| **isSurveyed** | **Boolean** | Indicates filtering for survey |  [optional] |
+| **surveyScores** | [**List&lt;NumericRange&gt;**](NumericRange) | The list of survey score ranges used to filter the view |  [optional] |
+| **promoterScores** | [**List&lt;NumericRange&gt;**](NumericRange) | The list of promoter score ranges used to filter the view |  [optional] |
+| **isCampaign** | **Boolean** | Indicates filtering for campaign |  [optional] |
+| **surveyStatuses** | **List&lt;String&gt;** | The list of survey statuses used to filter the view |  [optional] |
+| **conversationProperties** | [**ConversationProperties**](ConversationProperties) | A grouping of conversation level filters |  [optional] |
+| **isBlindTransferred** | **Boolean** | Indicates filtering for blind transferred |  [optional] |
+| **isConsulted** | **Boolean** | Indicates filtering for consulted |  [optional] |
+| **isConsultTransferred** | **Boolean** | Indicates filtering for consult transferred |  [optional] |
+| **remoteParticipants** | **List&lt;String&gt;** | The list of remote participants used to filter the view |  [optional] |
+| **flowIds** | **List&lt;String&gt;** | The list of flow Ids |  [optional] |
+| **flowOutcomeIds** | **List&lt;String&gt;** | A list of outcome ids of the flow |  [optional] |
+| **flowOutcomeValues** | [**List<FlowOutcomeValuesEnum>**](#Enum--FlowOutcomeValuesEnum) | A list of outcome values of the flow |  [optional] |
+| **flowDestinationTypes** | [**List<FlowDestinationTypesEnum>**](#Enum--FlowDestinationTypesEnum) | The list of destination types of the flow |  [optional] |
+| **flowDisconnectReasons** | [**List<FlowDisconnectReasonsEnum>**](#Enum--FlowDisconnectReasonsEnum) | The list of reasons for the flow to disconnect |  [optional] |
+| **flowTypes** | [**List<FlowTypesEnum>**](#Enum--FlowTypesEnum) | A list of types of the flow |  [optional] |
+| **flowEntryTypes** | [**List<FlowEntryTypesEnum>**](#Enum--FlowEntryTypesEnum) | A list of types of the flow entry |  [optional] |
+| **flowEntryReasons** | **List&lt;String&gt;** | A list of reasons of flow entry |  [optional] |
+| **flowVersions** | **List&lt;String&gt;** | A list of versions of a flow |  [optional] |
+| **groupIds** | **List&lt;String&gt;** | A list of directory group ids |  [optional] |
+| **hasJourneyCustomerId** | **Boolean** | Indicates filtering for journey customer id |  [optional] |
+| **hasJourneyActionMapId** | **Boolean** | Indicates filtering for Journey action map id |  [optional] |
+| **hasJourneyVisitId** | **Boolean** | Indicates filtering for Journey visit id |  [optional] |
+| **hasMedia** | **Boolean** | Indicates filtering for presence of MMS media |  [optional] |
+| **roleIds** | **List&lt;String&gt;** | The role Ids used to filter the view |  [optional] |
+| **reportsTos** | **List&lt;String&gt;** | The report to user IDs used to filter the view |  [optional] |
+| **locationIds** | **List&lt;String&gt;** | The location Ids used to filter the view |  [optional] |
+| **flowOutTypes** | **List&lt;String&gt;** | A list of flow out types |  [optional] |
+| **providerList** | **List&lt;String&gt;** | A list of providers |  [optional] |
+| **callbackNumberList** | **List&lt;String&gt;** | A list of callback numbers or substrings of numbers (ex: [\"317\", \"13172222222\"]) |  [optional] |
+| **callbackInterval** | **String** | An interval of time to filter for scheduled callbacks. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss |  [optional] |
+| **usedRoutingTypes** | [**List<UsedRoutingTypesEnum>**](#Enum--UsedRoutingTypesEnum) | A list of routing types used |  [optional] |
+| **requestedRoutingTypes** | [**List<RequestedRoutingTypesEnum>**](#Enum--RequestedRoutingTypesEnum) | A list of routing types requested |  [optional] |
+| **hasAgentAssistId** | **Boolean** | Indicates filtering for agent assist id |  [optional] |
+| **transcripts** | [**List&lt;Transcripts&gt;**](Transcripts) | A list of transcript contents requested |  [optional] |
+| **transcriptLanguages** | **List&lt;String&gt;** | A list of transcript languages requested |  [optional] |
+| **participantPurposes** | [**List<ParticipantPurposesEnum>**](#Enum--ParticipantPurposesEnum) | A list of participant purpose requested |  [optional] |
+| **showFirstQueue** | **Boolean** | Indicates filtering for first queue data |  [optional] |
+| **teamIds** | **List&lt;String&gt;** | The team ids used to filter the view data |  [optional] |
+| **filterUsersByTeamIds** | **List&lt;String&gt;** | The team ids are used to fetch associated users for the view |  [optional] |
+| **journeyActionMapIds** | **List&lt;String&gt;** | The journey action map ids are used to fetch action maps for the associated view |  [optional] |
+| **journeyOutcomeIds** | **List&lt;String&gt;** | The journey outcome ids are used to fetch outcomes for the associated view |  [optional] |
+| **journeySegmentIds** | **List&lt;String&gt;** | The journey segment ids are used to fetch segments for the associated view |  [optional] |
+| **journeyActionMapTypes** | [**List<JourneyActionMapTypesEnum>**](#Enum--JourneyActionMapTypesEnum) | The journey action map types are used to filter action map data for the associated view |  [optional] |
+| **developmentRoleList** | [**List<DevelopmentRoleListEnum>**](#Enum--DevelopmentRoleListEnum) | The list of development roles used to filter agent development view |  [optional] |
+| **developmentTypeList** | [**List<DevelopmentTypeListEnum>**](#Enum--DevelopmentTypeListEnum) | The list of development types used to filter agent development view |  [optional] |
+| **developmentStatusList** | [**List<DevelopmentStatusListEnum>**](#Enum--DevelopmentStatusListEnum) | The list of development status used to filter agent development view |  [optional] |
+| **developmentModuleIds** | **List&lt;String&gt;** | The list of development moduleIds used to filter agent development view |  [optional] |
+| **developmentActivityOverdue** | **Boolean** | Indicates filtering for development activities |  [optional] |
+| **customerSentimentScore** | [**NumericRange**](NumericRange) | The customer sentiment score used to filter the view |  [optional] |
+| **customerSentimentTrend** | [**NumericRange**](NumericRange) | The customer sentiment trend used to filter the view |  [optional] |
+| **flowTransferTargets** | **List&lt;String&gt;** | The list of transfer targets used to filter flow data |  [optional] |
+| **developmentName** | **String** | Filter for development name |  [optional] |
+| **topicIds** | **List&lt;String&gt;** | Represents the topics detected in the transcript |  [optional] |
+| **externalTags** | **List&lt;String&gt;** | The list of external Tags used to filter conversation data |  [optional] |
+| **isNotResponding** | **Boolean** | Indicates filtering for not responding users |  [optional] |
+| **isAuthenticated** | **Boolean** | Indicates filtering for the authenticated chat |  [optional] |
+| **botIds** | **List&lt;String&gt;** | The list of bot IDs used to filter bot views |  [optional] |
+| **botVersions** | **List&lt;String&gt;** | The list of bot versions used to filter bot views |  [optional] |
+| **botMessageTypes** | [**List<BotMessageTypesEnum>**](#Enum--BotMessageTypesEnum) | The list of bot message types used to filter bot views |  [optional] |
+| **botProviderList** | [**List<BotProviderListEnum>**](#Enum--BotProviderListEnum) | The list of bot providers used to filter bot views |  [optional] |
+| **botProductList** | [**List<BotProductListEnum>**](#Enum--BotProductListEnum) | The list of bot products used to filter bot views |  [optional] |
+| **botRecognitionFailureReasonList** | [**List<BotRecognitionFailureReasonListEnum>**](#Enum--BotRecognitionFailureReasonListEnum) | The list of bot recognition failure reasons used to filter bot views |  [optional] |
+| **botIntentList** | **List&lt;String&gt;** | The list of bot intents used to filter bot views |  [optional] |
+| **botFinalIntentList** | **List&lt;String&gt;** | The list of bot final intents used to filter bot views |  [optional] |
+| **botSlotList** | **List&lt;String&gt;** | The list of bot slots used to filter bot views |  [optional] |
+| **botResultList** | [**List<BotResultListEnum>**](#Enum--BotResultListEnum) | The list of bot results used to filter bot views |  [optional] |
+| **blockedReasons** | [**List<BlockedReasonsEnum>**](#Enum--BlockedReasonsEnum) | The list of blocked reason used to filter action map constraints views |  [optional] |
+| **isRecorded** | **Boolean** | Indicates filtering for recorded |  [optional] |
+| **hasEvaluation** | **Boolean** | Indicates filtering for evaluation |  [optional] |
+| **hasScoredEvaluation** | **Boolean** | Indicates filtering for scored evaluation |  [optional] |
+| **emailDeliveryStatusList** | [**List<EmailDeliveryStatusListEnum>**](#Enum--EmailDeliveryStatusListEnum) | The list of email delivery statuses used to filter views |  [optional] |
+| **isAgentOwnedCallback** | **Boolean** | Indicates filtering for agent owned callback interactions |  [optional] |
+| **agentCallbackOwnerIds** | **List&lt;String&gt;** | The list of callback owners used to filter interactions |  [optional] |
+| **transcriptTopics** | [**List&lt;TranscriptTopics&gt;**](TranscriptTopics) | The list of transcript topics requested in filter |  [optional] |
+| **journeyFrequencyCapReasons** | **List&lt;String&gt;** | The list of frequency cap reasons to filter offer constraints |  [optional] |
+| **journeyBlockingActionMapIds** | **List&lt;String&gt;** | The list of blocking action maps to filter offer constraints |  [optional] |
+| **journeyActionTargetIds** | **List&lt;String&gt;** | The list of action targets to filter offer constraints |  [optional] |
+| **journeyBlockingScheduleGroupIds** | **List&lt;String&gt;** | The list of blocking schedule groups to filter offer constraints |  [optional] |
+| **journeyBlockingEmergencyScheduleGroupIds** | **List&lt;String&gt;** | The list of emergency schedule groups to filter offer constraints |  [optional] |
+| **journeyUrlEqualConditions** | **List&lt;String&gt;** | The list of url equal conditions to filter offer constraints |  [optional] |
+| **journeyUrlNotEqualConditions** | **List&lt;String&gt;** | The list of url not equal conditions to filter offer constraints |  [optional] |
+| **journeyUrlStartsWithConditions** | **List&lt;String&gt;** | The list of url starts with conditions to filter offer constraints |  [optional] |
+| **journeyUrlEndsWithConditions** | **List&lt;String&gt;** | The list of url ends with conditions to filter offer constraints |  [optional] |
+| **journeyUrlContainsAnyConditions** | **List&lt;String&gt;** | The list of url contains any conditions to filter offer constraints |  [optional] |
+| **journeyUrlNotContainsAnyConditions** | **List&lt;String&gt;** | The list of url not contains any conditions to filter offer constraints |  [optional] |
+| **journeyUrlContainsAllConditions** | **List&lt;String&gt;** | The list of url contains all conditions to filter offer constraints |  [optional] |
+| **journeyUrlNotContainsAllConditions** | **List&lt;String&gt;** | The list of url not contains all conditions to filter offer constraints |  [optional] |
+| **flowMilestoneIds** | **List&lt;String&gt;** | The list of flow milestones to filter exports |  [optional] |
+| **isAssessmentPassed** | **Boolean** | Filter to indicate if Agent passed assessment or not |  [optional] |
+| **conversationInitiators** | **List&lt;String&gt;** | The list to filter based on Brands (Bot/User/Agent) or End User who initiated the first message in the conversation |  [optional] |
+| **hasCustomerParticipated** | **Boolean** | Indicates if the customer has participated in an initiated conversation |  [optional] |
+| **isAcdInteraction** | **Boolean** | Filter to indicate if interaction was ACD or non-ACD |  [optional] |
+| **hasFax** | **Boolean** | Filters to indicate if interaction has FAX |  [optional] |
+| **dataActionIds** | **List&lt;String&gt;** | The list of Data Action IDs  |  [optional] |
+| **actionCategoryName** | **String** | Deprecated - Please use integrationIds instead |  [optional] |
+| **integrationIds** | **List&lt;String&gt;** | The list of integration IDs for Data Action |  [optional] |
+| **responseStatuses** | **List&lt;String&gt;** | The list of Response codes for Data Action |  [optional] |
+| **availableDashboard** | [**AvailableDashboardEnum**](#Enum--AvailableDashboardEnum) | Filter to indicate the availability of the dashboard is public or private. |  [optional] |
+| **favouriteDashboard** | **Boolean** | Filter to indicate whether the dashboard is favorite or unfavorite. |  [optional] |
+| **myDashboard** | **Boolean** | Filter to indicate the dashboard owned by the user. |  [optional] |
+| **stationErrors** | **List&lt;String&gt;** | The list of agent errors that are related to station |  [optional] |
+| **canonicalContactIds** | **List&lt;String&gt;** | The canonical contact ids are used to filter the view |  [optional] |
+| **alertRuleIds** | **List&lt;String&gt;** | The list of Alert Rule IDs |  [optional] |
+| **evaluationFormContextIds** | **List&lt;String&gt;** | The list of Evaluation Form Context IDs |  [optional] |
+| **evaluationStatuses** | [**List<EvaluationStatusesEnum>**](#Enum--EvaluationStatusesEnum) | The evaluation statuses that are used to filter the view |  [optional] |
+| **workbinIds** | **List&lt;String&gt;** | The list of Workbin IDs |  [optional] |
+| **worktypeIds** | **List&lt;String&gt;** | The list of Worktype IDs |  [optional] |
+| **workitemIds** | **List&lt;String&gt;** | The list of Workitem IDs |  [optional] |
+| **workitemAssigneeIds** | **List&lt;String&gt;** | The list of Workitem Assignee IDs |  [optional] |
+| **workitemStatuses** | **List&lt;String&gt;** | The list of Workitem Statuses IDs |  [optional] |
+| **isAnalyzedForSensitiveData** | **Boolean** | Deprecated - Use hasPciData or hasPiiData instead. |  [optional] |
+| **hasSensitiveData** | **Boolean** | Deprecated. Use hasPciData or hasPiiData instead. |  [optional] |
+| **hasPciData** | **Boolean** | Filter to indicate the transcript contains Pci data. |  [optional] |
+| **hasPiiData** | **Boolean** | Filter to indicate the transcript contains Pii data. |  [optional] |
+| **subPath** | **String** | Filter for Sub Path |  [optional] |
+| **userState** | [**UserStateEnum**](#Enum--UserStateEnum) | The user supplied state value in the view |  [optional] |
+| **isClearedByCustomer** | **Boolean** | Filter to indicate if the customer cleared the conversation. |  [optional] |
+| **evaluationAssigneeIds** | **List&lt;String&gt;** | The evaluation assignee ids that are used to filter the view. |  [optional] |
+| **evaluationAssigned** | **Boolean** | Filter to indicate that the user has no assigned evaluation. |  [optional] |
+| **assistantIds** | **List&lt;String&gt;** | The assistant ids that are used to filter the view. |  [optional] |
+| **knowledgeBaseIds** | **List&lt;String&gt;** | The knowledge base ids that are used to filter the view. |  [optional] |
+| **isParked** | **Boolean** | Filter to indicate if the interactions are parked. |  [optional] |
+| **agentEmpathyScore** | [**NumericRange**](NumericRange) | The agentEmpathyScore is used to filter the view |  [optional] |
+| **surveyTypes** | [**List<SurveyTypesEnum>**](#Enum--SurveyTypesEnum) | The surveyTypes is used to filter the view |  [optional] |
+| **surveyResponseStatuses** | [**List<SurveyResponseStatusesEnum>**](#Enum--SurveyResponseStatusesEnum) | The list of Survey Response Status |  [optional] |
+| **botFlowTypes** | [**List<BotFlowTypesEnum>**](#Enum--BotFlowTypesEnum) | The botFlowTypes is used to filter the view |  [optional] |
+| **agentTalkDurationMilliseconds** | [**List&lt;NumericRange&gt;**](NumericRange) | The agent talk durations in milliseconds used to filter the view |  [optional] |
+| **customerTalkDurationMilliseconds** | [**List&lt;NumericRange&gt;**](NumericRange) | The customer talk durations in milliseconds used to filter the view |  [optional] |
+| **overtalkDurationMilliseconds** | [**List&lt;NumericRange&gt;**](NumericRange) | The overtalk durations in milliseconds used to filter the view |  [optional] |
+| **silenceDurationMilliseconds** | [**List&lt;NumericRange&gt;**](NumericRange) | The silence durations in milliseconds used to filter the view |  [optional] |
+| **acdDurationMilliseconds** | [**List&lt;NumericRange&gt;**](NumericRange) | The acd durations in milliseconds used to filter the view |  [optional] |
+| **ivrDurationMilliseconds** | [**List&lt;NumericRange&gt;**](NumericRange) | The ivr durations in milliseconds used to filter the view |  [optional] |
+| **otherDurationMilliseconds** | [**List&lt;NumericRange&gt;**](NumericRange) | The other (hold/music) durations in milliseconds used to filter the view |  [optional] |
+| **agentTalkPercentage** | [**NumericRange**](NumericRange) | The agent talk percentage used to filter the view |  [optional] |
+| **customerTalkPercentage** | [**NumericRange**](NumericRange) | The customer talk percentage used to filter the view |  [optional] |
+| **overtalkPercentage** | [**NumericRange**](NumericRange) | The overtalk percentage used to filter the view |  [optional] |
+| **silencePercentage** | [**NumericRange**](NumericRange) | The silence percentage used to filter the view |  [optional] |
+| **acdPercentage** | [**NumericRange**](NumericRange) | The acd percentage used to filter the view |  [optional] |
+| **ivrPercentage** | [**NumericRange**](NumericRange) | The ivr percentage used to filter the view |  [optional] |
+| **otherPercentage** | [**NumericRange**](NumericRange) | The other (hold/music percentage used to filter the view |  [optional] |
+| **overtalkInstances** | [**NumericRange**](NumericRange) | The overtalk instance range used to filter the view |  [optional] |
+| **isScreenRecorded** | **Boolean** | Filter to indicate if the screen is recorded |  [optional] |
+| **screenMonitorUserIds** | **List&lt;String&gt;** | The list of Screen Monitor User Ids |  [optional] |
+| **dashboardType** | [**DashboardTypeEnum**](#Enum--DashboardTypeEnum) | The type of dashboard being filtered |  [optional] |
+| **dashboardAccessFilter** | [**DashboardAccessFilterEnum**](#Enum--DashboardAccessFilterEnum) | The type of dashboard access being filtered |  [optional] |
 
-
-<a name="MediaTypesEnum"></a>
 
 ## Enum: MediaTypesEnum
 
@@ -222,10 +216,7 @@ title: ViewFilter
 | UNKNOWN | &quot;unknown&quot; |
 | VIDEO | &quot;video&quot; |
 | VOICE | &quot;voice&quot; |
-{: class="table table-striped"}
 
-
-<a name="DirectionsEnum"></a>
 
 ## Enum: DirectionsEnum
 
@@ -233,10 +224,7 @@ title: ViewFilter
 | ---- | ----- |
 | INBOUND | &quot;inbound&quot; |
 | OUTBOUND | &quot;outbound&quot; |
-{: class="table table-striped"}
 
-
-<a name="OriginatingDirectionsEnum"></a>
 
 ## Enum: OriginatingDirectionsEnum
 
@@ -244,10 +232,7 @@ title: ViewFilter
 | ---- | ----- |
 | INBOUND | &quot;inbound&quot; |
 | OUTBOUND | &quot;outbound&quot; |
-{: class="table table-striped"}
 
-
-<a name="MessageTypesEnum"></a>
 
 ## Enum: MessageTypesEnum
 
@@ -261,10 +246,7 @@ title: ViewFilter
 | WEBMESSAGING | &quot;webmessaging&quot; |
 | OPEN | &quot;open&quot; |
 | INSTAGRAM | &quot;instagram&quot; |
-{: class="table table-striped"}
 
-
-<a name="FlowOutcomeValuesEnum"></a>
 
 ## Enum: FlowOutcomeValuesEnum
 
@@ -272,10 +254,7 @@ title: ViewFilter
 | ---- | ----- |
 | SUCCESS | &quot;SUCCESS&quot; |
 | FAILURE | &quot;FAILURE&quot; |
-{: class="table table-striped"}
 
-
-<a name="FlowDestinationTypesEnum"></a>
 
 ## Enum: FlowDestinationTypesEnum
 
@@ -291,10 +270,7 @@ title: ViewFilter
 | USER_VOICEMAIL | &quot;USER_VOICEMAIL&quot; |
 | GROUP_VOICEMAIL | &quot;GROUP_VOICEMAIL&quot; |
 | RETURN_TO_AGENT | &quot;RETURN_TO_AGENT&quot; |
-{: class="table table-striped"}
 
-
-<a name="FlowDisconnectReasonsEnum"></a>
 
 ## Enum: FlowDisconnectReasonsEnum
 
@@ -303,10 +279,7 @@ title: ViewFilter
 | FLOW_DISCONNECT | &quot;FLOW_DISCONNECT&quot; |
 | FLOW_ERROR_DISCONNECT | &quot;FLOW_ERROR_DISCONNECT&quot; |
 | DISCONNECT | &quot;DISCONNECT&quot; |
-{: class="table table-striped"}
 
-
-<a name="FlowTypesEnum"></a>
 
 ## Enum: FlowTypesEnum
 
@@ -330,10 +303,7 @@ title: ViewFilter
 | VOICESURVEY | &quot;voicesurvey&quot; |
 | WORKFLOW | &quot;workflow&quot; |
 | WORKITEM | &quot;workitem&quot; |
-{: class="table table-striped"}
 
-
-<a name="FlowEntryTypesEnum"></a>
 
 ## Enum: FlowEntryTypesEnum
 
@@ -344,10 +314,7 @@ title: ViewFilter
 | DNIS | &quot;dnis&quot; |
 | FLOW | &quot;flow&quot; |
 | OUTBOUND | &quot;outbound&quot; |
-{: class="table table-striped"}
 
-
-<a name="UsedRoutingTypesEnum"></a>
 
 ## Enum: UsedRoutingTypesEnum
 
@@ -362,10 +329,7 @@ title: ViewFilter
 | PREFERRED | &quot;Preferred&quot; |
 | STANDARD | &quot;Standard&quot; |
 | VIP | &quot;Vip&quot; |
-{: class="table table-striped"}
 
-
-<a name="RequestedRoutingTypesEnum"></a>
 
 ## Enum: RequestedRoutingTypesEnum
 
@@ -380,10 +344,7 @@ title: ViewFilter
 | PREFERRED | &quot;Preferred&quot; |
 | STANDARD | &quot;Standard&quot; |
 | VIP | &quot;Vip&quot; |
-{: class="table table-striped"}
 
-
-<a name="ParticipantPurposesEnum"></a>
 
 ## Enum: ParticipantPurposesEnum
 
@@ -391,10 +352,7 @@ title: ViewFilter
 | ---- | ----- |
 | INTERNAL | &quot;internal&quot; |
 | EXTERNAL | &quot;external&quot; |
-{: class="table table-striped"}
 
-
-<a name="JourneyActionMapTypesEnum"></a>
 
 ## Enum: JourneyActionMapTypesEnum
 
@@ -406,10 +364,7 @@ title: ViewFilter
 | INTEGRATIONACTION | &quot;integrationAction&quot; |
 | ARCHITECTFLOW | &quot;architectFlow&quot; |
 | OPENACTION | &quot;openAction&quot; |
-{: class="table table-striped"}
 
-
-<a name="DevelopmentRoleListEnum"></a>
 
 ## Enum: DevelopmentRoleListEnum
 
@@ -418,10 +373,7 @@ title: ViewFilter
 | CREATOR | &quot;Creator&quot; |
 | FACILITATOR | &quot;Facilitator&quot; |
 | ATTENDEE | &quot;Attendee&quot; |
-{: class="table table-striped"}
 
-
-<a name="DevelopmentTypeListEnum"></a>
 
 ## Enum: DevelopmentTypeListEnum
 
@@ -433,10 +385,7 @@ title: ViewFilter
 | ASSESSEDCONTENT | &quot;AssessedContent&quot; |
 | EXTERNAL | &quot;External&quot; |
 | NATIVE | &quot;Native&quot; |
-{: class="table table-striped"}
 
-
-<a name="DevelopmentStatusListEnum"></a>
 
 ## Enum: DevelopmentStatusListEnum
 
@@ -448,10 +397,7 @@ title: ViewFilter
 | INPROGRESS | &quot;InProgress&quot; |
 | COMPLETED | &quot;Completed&quot; |
 | NOTCOMPLETED | &quot;NotCompleted&quot; |
-{: class="table table-striped"}
 
-
-<a name="BotMessageTypesEnum"></a>
 
 ## Enum: BotMessageTypesEnum
 
@@ -472,10 +418,7 @@ title: ViewFilter
 | DISCORD | &quot;Discord&quot; |
 | TWITTERDIRECTMESSAGE | &quot;TwitterDirectMessage&quot; |
 | OTHER | &quot;Other&quot; |
-{: class="table table-striped"}
 
-
-<a name="BotProviderListEnum"></a>
 
 ## Enum: BotProviderListEnum
 
@@ -486,10 +429,7 @@ title: ViewFilter
 | AMAZON | &quot;Amazon&quot; |
 | GOOGLE | &quot;Google&quot; |
 | NUANCE | &quot;Nuance&quot; |
-{: class="table table-striped"}
 
-
-<a name="BotProductListEnum"></a>
 
 ## Enum: BotProductListEnum
 
@@ -508,10 +448,7 @@ title: ViewFilter
 | GOOGLEDIALOGFLOWCXRESELL | &quot;GoogleDialogFlowCxResell&quot; |
 | GOOGLESTTBOTFLOW | &quot;GoogleSttBotFlow&quot; |
 | MICROSOFTSTTBOTFLOW | &quot;MicrosoftSttBotFlow&quot; |
-{: class="table table-striped"}
 
-
-<a name="BotRecognitionFailureReasonListEnum"></a>
 
 ## Enum: BotRecognitionFailureReasonListEnum
 
@@ -525,10 +462,7 @@ title: ViewFilter
 | NOMATCHCONFIRMATION | &quot;NoMatchConfirmation&quot; |
 | NOMATCHDISAMBIGUATION | &quot;NoMatchDisambiguation&quot; |
 | MAXWRONGMATCH | &quot;MaxWrongMatch&quot; |
-{: class="table table-striped"}
 
-
-<a name="BotResultListEnum"></a>
 
 ## Enum: BotResultListEnum
 
@@ -545,10 +479,7 @@ title: ViewFilter
 | DISCONNECTERROR | &quot;DisconnectError&quot; |
 | DISCONNECTRECOGNITIONFAILURE | &quot;DisconnectRecognitionFailure&quot; |
 | TRANSFERTOACD | &quot;TransferToACD&quot; |
-{: class="table table-striped"}
 
-
-<a name="BlockedReasonsEnum"></a>
 
 ## Enum: BlockedReasonsEnum
 
@@ -562,10 +493,7 @@ title: ViewFilter
 | OFFEREDOUTSIDESCHEDULE | &quot;OfferedOutsideSchedule&quot; |
 | SERVICELEVELTHROTTLING | &quot;ServiceLevelThrottling&quot; |
 | NOAVAILABLEAGENTS | &quot;NoAvailableAgents&quot; |
-{: class="table table-striped"}
 
-
-<a name="EmailDeliveryStatusListEnum"></a>
 
 ## Enum: EmailDeliveryStatusListEnum
 
@@ -579,10 +507,7 @@ title: ViewFilter
 | READ | &quot;Read&quot; |
 | RECEIVED | &quot;Received&quot; |
 | SENT | &quot;Sent&quot; |
-{: class="table table-striped"}
 
-
-<a name="AvailableDashboardEnum"></a>
 
 ## Enum: AvailableDashboardEnum
 
@@ -591,10 +516,7 @@ title: ViewFilter
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | PUBLIC | &quot;Public&quot; | 
 | PRIVATE | &quot;Private&quot; | 
-{: class="table table-striped"}
 
-
-<a name="EvaluationStatusesEnum"></a>
 
 ## Enum: EvaluationStatusesEnum
 
@@ -605,10 +527,7 @@ title: ViewFilter
 | INREVIEW | &quot;InReview&quot; |
 | PENDING | &quot;Pending&quot; |
 | RETRACTED | &quot;Retracted&quot; |
-{: class="table table-striped"}
 
-
-<a name="UserStateEnum"></a>
 
 ## Enum: UserStateEnum
 
@@ -619,10 +538,7 @@ title: ViewFilter
 | ACTIVE | &quot;Active&quot; | 
 | INACTIVE | &quot;Inactive&quot; | 
 | DELETED | &quot;Deleted&quot; | 
-{: class="table table-striped"}
 
-
-<a name="SurveyTypesEnum"></a>
 
 ## Enum: SurveyTypesEnum
 
@@ -630,10 +546,7 @@ title: ViewFilter
 | ---- | ----- |
 | WEB | &quot;Web&quot; |
 | VOICE | &quot;Voice&quot; |
-{: class="table table-striped"}
 
-
-<a name="SurveyResponseStatusesEnum"></a>
 
 ## Enum: SurveyResponseStatusesEnum
 
@@ -642,10 +555,7 @@ title: ViewFilter
 | UNKNOWN | &quot;Unknown&quot; |
 | FULLRESPONSE | &quot;FullResponse&quot; |
 | PARTIALRESPONSE | &quot;PartialResponse&quot; |
-{: class="table table-striped"}
 
-
-<a name="BotFlowTypesEnum"></a>
 
 ## Enum: BotFlowTypesEnum
 
@@ -655,10 +565,7 @@ title: ViewFilter
 | BOT | &quot;Bot&quot; |
 | DIGITALBOT | &quot;DigitalBot&quot; |
 | VOICESURVEY | &quot;VoiceSurvey&quot; |
-{: class="table table-striped"}
 
-
-<a name="DashboardTypeEnum"></a>
 
 ## Enum: DashboardTypeEnum
 
@@ -670,10 +577,7 @@ title: ViewFilter
 | PRIVATE | &quot;Private&quot; | 
 | SHARED | &quot;Shared&quot; | 
 | FAVORITES | &quot;Favorites&quot; | 
-{: class="table table-striped"}
 
-
-<a name="DashboardAccessFilterEnum"></a>
 
 ## Enum: DashboardAccessFilterEnum
 
@@ -683,7 +587,8 @@ title: ViewFilter
 | OWNEDBYME | &quot;OwnedByMe&quot; | 
 | OWNEDBYANYONE | &quot;OwnedByAnyone&quot; | 
 | NOTOWNEDBYME | &quot;NotOwnedByMe&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

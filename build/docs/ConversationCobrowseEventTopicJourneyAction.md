@@ -1,16 +1,14 @@
----
-title: ConversationCobrowseEventTopicJourneyAction
----
-## ConversationCobrowseEventTopicJourneyAction
+# ConversationCobrowseEventTopicJourneyAction
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The ID of an action from the Journey System (an action is spawned from an actionMap) |  [optional] |
-| **actionMap** | <!----><!---->[**ConversationCobrowseEventTopicJourneyActionMap**](ConversationCobrowseEventTopicJourneyActionMap.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The ID of an action from the Journey System (an action is spawned from an actionMap) |  [optional] |
+| **actionMap** | [**ConversationCobrowseEventTopicJourneyActionMap**](ConversationCobrowseEventTopicJourneyActionMap) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

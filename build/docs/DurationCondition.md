@@ -1,21 +1,15 @@
----
-title: DurationCondition
----
-## DurationCondition
+# DurationCondition
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **durationTarget** | [**DurationTargetEnum**](#DurationTargetEnum)<!----> |  |  [optional] |
-| **durationOperator** | <!----><!---->**String**<!----> |  |  [optional] |
-| **durationRange** | <!----><!---->**String**<!----> |  |  [optional] |
-| **durationMode** | [**DurationModeEnum**](#DurationModeEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **durationTarget** | [**DurationTargetEnum**](#Enum--DurationTargetEnum) |  |  [optional] |
+| **durationOperator** | **String** |  |  [optional] |
+| **durationRange** | **String** |  |  [optional] |
+| **durationMode** | [**DurationModeEnum**](#Enum--DurationModeEnum) |  |  [optional] |
 
-
-<a name="DurationTargetEnum"></a>
 
 ## Enum: DurationTargetEnum
 
@@ -24,10 +18,7 @@ title: DurationCondition
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | DURATION | &quot;DURATION&quot; | 
 | DURATION_RANGE | &quot;DURATION_RANGE&quot; | 
-{: class="table table-striped"}
 
-
-<a name="DurationModeEnum"></a>
 
 ## Enum: DurationModeEnum
 
@@ -37,7 +28,8 @@ title: DurationCondition
 | BETWEEN | &quot;Between&quot; | 
 | OVER | &quot;Over&quot; | 
 | UNDER | &quot;Under&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

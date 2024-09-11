@@ -1,20 +1,14 @@
----
-title: V2MobiusRulesTopicAlertNotification
----
-## V2MobiusRulesTopicAlertNotification
+# V2MobiusRulesTopicAlertNotification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **recipient** | <!----><!---->[**V2MobiusRulesTopicAlertNotificationRecipient**](V2MobiusRulesTopicAlertNotificationRecipient.html)<!----> |  |  [optional] |
-| **notificationTypes** | <!---->[**List&lt;NotificationTypesEnum&gt;**](#NotificationTypesEnum)<!----> |  |  [optional] |
-| **locale** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **recipient** | [**V2MobiusRulesTopicAlertNotificationRecipient**](V2MobiusRulesTopicAlertNotificationRecipient) |  |  [optional] |
+| **notificationTypes** | [**List<NotificationTypesEnum>**](#Enum--NotificationTypesEnum) |  |  [optional] |
+| **locale** | **String** |  |  [optional] |
 
-
-<a name="NotificationTypesEnum"></a>
 
 ## Enum: NotificationTypesEnum
 
@@ -25,7 +19,8 @@ title: V2MobiusRulesTopicAlertNotification
 | SMS | &quot;Sms&quot; |
 | PUSH | &quot;Push&quot; |
 | UNKNOWN | &quot;Unknown&quot; |
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

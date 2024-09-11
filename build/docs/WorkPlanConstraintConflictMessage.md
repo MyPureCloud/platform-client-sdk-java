@@ -1,19 +1,13 @@
----
-title: WorkPlanConstraintConflictMessage
----
-## WorkPlanConstraintConflictMessage
+# WorkPlanConstraintConflictMessage
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Type of constraint conflict that can be resolved by clients in order to generate agent schedules |  [optional] |
-| **arguments** | <!----><!---->[**List&lt;WorkPlanValidationMessageArgument&gt;**](WorkPlanValidationMessageArgument.html)<!----> | The arguments to the type of the message that can help clients resolve validation issues |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Type of constraint conflict that can be resolved by clients in order to generate agent schedules |  [optional] |
+| **arguments** | [**List&lt;WorkPlanValidationMessageArgument&gt;**](WorkPlanValidationMessageArgument) | The arguments to the type of the message that can help clients resolve validation issues |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -22,7 +16,8 @@ title: WorkPlanConstraintConflictMessage
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | UNKNOWNFIX | &quot;UnknownFix&quot; | 
 | WITHPOTENTIALFIXES | &quot;WithPotentialFixes&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

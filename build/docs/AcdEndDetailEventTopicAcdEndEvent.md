@@ -1,49 +1,43 @@
----
-title: AcdEndDetailEventTopicAcdEndEvent
----
-## AcdEndDetailEventTopicAcdEndEvent
+# AcdEndDetailEventTopicAcdEndEvent
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **eventTime** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **conversationId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **participantId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **sessionId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum)<!----> |  |  [optional] |
-| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> |  |  [optional] |
-| **provider** | <!----><!---->**String**<!----> |  |  [optional] |
-| **direction** | [**DirectionEnum**](#DirectionEnum)<!----> |  |  [optional] |
-| **ani** | <!----><!---->**String**<!----> |  |  [optional] |
-| **dnis** | <!----><!---->**String**<!----> |  |  [optional] |
-| **addressTo** | <!----><!---->**String**<!----> |  |  [optional] |
-| **addressFrom** | <!----><!---->**String**<!----> |  |  [optional] |
-| **callbackUserName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **callbackNumbers** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **callbackScheduledTime** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **subject** | <!----><!---->**String**<!----> |  |  [optional] |
-| **messageType** | [**MessageTypeEnum**](#MessageTypeEnum)<!----> |  |  [optional] |
-| **queueId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **divisionId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **acdOutcome** | [**AcdOutcomeEnum**](#AcdOutcomeEnum)<!----> |  |  [optional] |
-| **answeredUserId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **requestedRoutings** | <!---->[**List&lt;RequestedRoutingsEnum&gt;**](#RequestedRoutingsEnum)<!----> |  |  [optional] |
-| **usedRouting** | [**UsedRoutingEnum**](#UsedRoutingEnum)<!----> |  |  [optional] |
-| **requestedRoutingSkillIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **requestedLanguageId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **requestedRoutingUserIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **routingPriority** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **connectedDurationMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **conversationExternalContactIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **conversationExternalOrganizationIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **utilizationLabel** | <!----><!---->**String**<!----> |  |  [optional] |
-| **flowType** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **eventTime** | **Integer** |  |  [optional] |
+| **conversationId** | **String** |  |  [optional] |
+| **participantId** | **String** |  |  [optional] |
+| **sessionId** | **String** |  |  [optional] |
+| **disconnectType** | [**DisconnectTypeEnum**](#Enum--DisconnectTypeEnum) |  |  [optional] |
+| **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) |  |  [optional] |
+| **provider** | **String** |  |  [optional] |
+| **direction** | [**DirectionEnum**](#Enum--DirectionEnum) |  |  [optional] |
+| **ani** | **String** |  |  [optional] |
+| **dnis** | **String** |  |  [optional] |
+| **addressTo** | **String** |  |  [optional] |
+| **addressFrom** | **String** |  |  [optional] |
+| **callbackUserName** | **String** |  |  [optional] |
+| **callbackNumbers** | **List&lt;String&gt;** |  |  [optional] |
+| **callbackScheduledTime** | **Integer** |  |  [optional] |
+| **subject** | **String** |  |  [optional] |
+| **messageType** | [**MessageTypeEnum**](#Enum--MessageTypeEnum) |  |  [optional] |
+| **queueId** | **String** |  |  [optional] |
+| **divisionId** | **String** |  |  [optional] |
+| **acdOutcome** | [**AcdOutcomeEnum**](#Enum--AcdOutcomeEnum) |  |  [optional] |
+| **answeredUserId** | **String** |  |  [optional] |
+| **requestedRoutings** | [**List<RequestedRoutingsEnum>**](#Enum--RequestedRoutingsEnum) |  |  [optional] |
+| **usedRouting** | [**UsedRoutingEnum**](#Enum--UsedRoutingEnum) |  |  [optional] |
+| **requestedRoutingSkillIds** | **List&lt;String&gt;** |  |  [optional] |
+| **requestedLanguageId** | **String** |  |  [optional] |
+| **requestedRoutingUserIds** | **List&lt;String&gt;** |  |  [optional] |
+| **routingPriority** | **Integer** |  |  [optional] |
+| **connectedDurationMs** | **Integer** |  |  [optional] |
+| **conversationExternalContactIds** | **List&lt;String&gt;** |  |  [optional] |
+| **conversationExternalOrganizationIds** | **List&lt;String&gt;** |  |  [optional] |
+| **utilizationLabel** | **String** |  |  [optional] |
+| **flowType** | **String** |  |  [optional] |
 
-
-<a name="DisconnectTypeEnum"></a>
 
 ## Enum: DisconnectTypeEnum
 
@@ -69,10 +63,7 @@ title: AcdEndDetailEventTopicAcdEndEvent
 | UNCALLABLE | &quot;UNCALLABLE&quot; | 
 | DND_ENDPOINT | &quot;DND_ENDPOINT&quot; | 
 | DND_TRANSFER | &quot;DND_TRANSFER&quot; | 
-{: class="table table-striped"}
 
-
-<a name="MediaTypeEnum"></a>
 
 ## Enum: MediaTypeEnum
 
@@ -88,10 +79,7 @@ title: AcdEndDetailEventTopicAcdEndEvent
 | VIDEO | &quot;VIDEO&quot; | 
 | SCREENSHARE | &quot;SCREENSHARE&quot; | 
 | MESSAGE | &quot;MESSAGE&quot; | 
-{: class="table table-striped"}
 
-
-<a name="DirectionEnum"></a>
 
 ## Enum: DirectionEnum
 
@@ -101,10 +89,7 @@ title: AcdEndDetailEventTopicAcdEndEvent
 | UNKNOWN | &quot;UNKNOWN&quot; | 
 | INBOUND | &quot;INBOUND&quot; | 
 | OUTBOUND | &quot;OUTBOUND&quot; | 
-{: class="table table-striped"}
 
-
-<a name="MessageTypeEnum"></a>
 
 ## Enum: MessageTypeEnum
 
@@ -121,10 +106,7 @@ title: AcdEndDetailEventTopicAcdEndEvent
 | OPEN | &quot;OPEN&quot; | 
 | INSTAGRAM | &quot;INSTAGRAM&quot; | 
 | APPLE | &quot;APPLE&quot; | 
-{: class="table table-striped"}
 
-
-<a name="AcdOutcomeEnum"></a>
 
 ## Enum: AcdOutcomeEnum
 
@@ -135,10 +117,7 @@ title: AcdEndDetailEventTopicAcdEndEvent
 | ABANDON | &quot;ABANDON&quot; | 
 | ANSWERED | &quot;ANSWERED&quot; | 
 | FLOW_OUT | &quot;FLOW_OUT&quot; | 
-{: class="table table-striped"}
 
-
-<a name="RequestedRoutingsEnum"></a>
 
 ## Enum: RequestedRoutingsEnum
 
@@ -154,10 +133,7 @@ title: AcdEndDetailEventTopicAcdEndEvent
 | OTHER | &quot;OTHER&quot; |
 | CONDITIONAL | &quot;CONDITIONAL&quot; |
 | VIP | &quot;VIP&quot; |
-{: class="table table-striped"}
 
-
-<a name="UsedRoutingEnum"></a>
 
 ## Enum: UsedRoutingEnum
 
@@ -174,7 +150,8 @@ title: AcdEndDetailEventTopicAcdEndEvent
 | OTHER | &quot;OTHER&quot; | 
 | CONDITIONAL | &quot;CONDITIONAL&quot; | 
 | VIP | &quot;VIP&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

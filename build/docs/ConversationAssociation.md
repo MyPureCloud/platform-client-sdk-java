@@ -1,21 +1,15 @@
----
-title: ConversationAssociation
----
-## ConversationAssociation
+# ConversationAssociation
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **externalContactId** | <!----><!---->**String**<!----> | An external contact ID.  If not supplied, implies the conversation should be disassociated with any external contact. |  [optional] |
-| **conversationId** | <!----><!---->**String**<!----> | Conversation ID |  |
-| **communicationId** | <!----><!---->**String**<!----> | Communication ID |  |
-| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> | Media type |  |
-{: class="table table-striped"}
+| **externalContactId** | **String** | An external contact ID.  If not supplied, implies the conversation should be disassociated with any external contact. |  [optional] |
+| **conversationId** | **String** | Conversation ID |  |
+| **communicationId** | **String** | Communication ID |  |
+| **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) | Media type |  |
 
-
-<a name="MediaTypeEnum"></a>
 
 ## Enum: MediaTypeEnum
 
@@ -31,7 +25,8 @@ title: ConversationAssociation
 | SOCIAL_EXPRESSION | &quot;SOCIAL_EXPRESSION&quot; | 
 | VIDEO | &quot;VIDEO&quot; | 
 | SCREENSHARE | &quot;SCREENSHARE&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

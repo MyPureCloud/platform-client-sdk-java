@@ -1,27 +1,21 @@
----
-title: PolicyConditions
----
-## PolicyConditions
+# PolicyConditions
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **forUsers** | <!----><!---->[**List&lt;User&gt;**](User.html)<!----> |  |  [optional] |
-| **directions** | <!---->[**List&lt;DirectionsEnum&gt;**](#DirectionsEnum)<!----> |  |  [optional] |
-| **dateRanges** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **mediaTypes** | <!---->[**List&lt;MediaTypesEnum&gt;**](#MediaTypesEnum)<!----> |  |  [optional] |
-| **forQueues** | <!----><!---->[**List&lt;Queue&gt;**](Queue.html)<!----> |  |  [optional] |
-| **duration** | <!----><!---->[**DurationCondition**](DurationCondition.html)<!----> |  |  [optional] |
-| **wrapupCodes** | <!----><!---->[**List&lt;WrapupCode&gt;**](WrapupCode.html)<!----> |  |  [optional] |
-| **timeAllowed** | <!----><!---->[**TimeAllowed**](TimeAllowed.html)<!----> |  |  [optional] |
-| **teams** | <!----><!---->[**List&lt;Team&gt;**](Team.html)<!----> | Teams to match conversations against |  [optional] |
-| **customerParticipation** | [**CustomerParticipationEnum**](#CustomerParticipationEnum)<!----> | This condition is to filter out conversation with and without customer participation. |  [optional] |
-{: class="table table-striped"}
+| **forUsers** | [**List&lt;User&gt;**](User) |  |  [optional] |
+| **directions** | [**List<DirectionsEnum>**](#Enum--DirectionsEnum) |  |  [optional] |
+| **dateRanges** | **List&lt;String&gt;** |  |  [optional] |
+| **mediaTypes** | [**List<MediaTypesEnum>**](#Enum--MediaTypesEnum) |  |  [optional] |
+| **forQueues** | [**List&lt;Queue&gt;**](Queue) |  |  [optional] |
+| **duration** | [**DurationCondition**](DurationCondition) |  |  [optional] |
+| **wrapupCodes** | [**List&lt;WrapupCode&gt;**](WrapupCode) |  |  [optional] |
+| **timeAllowed** | [**TimeAllowed**](TimeAllowed) |  |  [optional] |
+| **teams** | [**List&lt;Team&gt;**](Team) | Teams to match conversations against |  [optional] |
+| **customerParticipation** | [**CustomerParticipationEnum**](#Enum--CustomerParticipationEnum) | This condition is to filter out conversation with and without customer participation. |  [optional] |
 
-
-<a name="DirectionsEnum"></a>
 
 ## Enum: DirectionsEnum
 
@@ -29,10 +23,7 @@ title: PolicyConditions
 | ---- | ----- |
 | INBOUND | &quot;INBOUND&quot; |
 | OUTBOUND | &quot;OUTBOUND&quot; |
-{: class="table table-striped"}
 
-
-<a name="MediaTypesEnum"></a>
 
 ## Enum: MediaTypesEnum
 
@@ -40,10 +31,7 @@ title: PolicyConditions
 | ---- | ----- |
 | CALL | &quot;CALL&quot; |
 | CHAT | &quot;CHAT&quot; |
-{: class="table table-striped"}
 
-
-<a name="CustomerParticipationEnum"></a>
 
 ## Enum: CustomerParticipationEnum
 
@@ -52,7 +40,8 @@ title: PolicyConditions
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | YES | &quot;YES&quot; | 
 | NO | &quot;NO&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

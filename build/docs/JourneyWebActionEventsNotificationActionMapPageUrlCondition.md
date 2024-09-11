@@ -1,19 +1,13 @@
----
-title: JourneyWebActionEventsNotificationActionMapPageUrlCondition
----
-## JourneyWebActionEventsNotificationActionMapPageUrlCondition
+# JourneyWebActionEventsNotificationActionMapPageUrlCondition
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **values** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **values** | **List&lt;String&gt;** |  |  [optional] |
+| **operator** | [**OperatorEnum**](#Enum--OperatorEnum) |  |  [optional] |
 
-
-<a name="OperatorEnum"></a>
 
 ## Enum: OperatorEnum
 
@@ -35,7 +29,8 @@ title: JourneyWebActionEventsNotificationActionMapPageUrlCondition
 | NOTCONTAINSANY | &quot;notContainsAny&quot; | 
 | CONTAINSALL | &quot;containsAll&quot; | 
 | NOTCONTAINSAL | &quot;notContainsAl&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

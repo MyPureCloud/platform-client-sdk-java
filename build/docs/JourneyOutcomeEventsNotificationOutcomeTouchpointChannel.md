@@ -1,18 +1,12 @@
----
-title: JourneyOutcomeEventsNotificationOutcomeTouchpointChannel
----
-## JourneyOutcomeEventsNotificationOutcomeTouchpointChannel
+# JourneyOutcomeEventsNotificationOutcomeTouchpointChannel
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -22,7 +16,8 @@ title: JourneyOutcomeEventsNotificationOutcomeTouchpointChannel
 | UNKNOWN | &quot;Unknown&quot; | 
 | CONTENTOFFER | &quot;ContentOffer&quot; | 
 | WEBCHAT | &quot;Webchat&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

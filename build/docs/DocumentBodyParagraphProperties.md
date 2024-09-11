@@ -1,23 +1,17 @@
----
-title: DocumentBodyParagraphProperties
----
-## DocumentBodyParagraphProperties
+# DocumentBodyParagraphProperties
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **fontSize** | [**FontSizeEnum**](#FontSizeEnum)<!----> | The font size for the paragraph. The valid values in 'em'. |  [optional] |
-| **fontType** | [**FontTypeEnum**](#FontTypeEnum)<!----> | The font type for the paragraph. |  [optional] |
-| **textColor** | <!----><!---->**String**<!----> | The text color for the paragraph. The valid values in hex color code representation. For example black color - #000000 |  [optional] |
-| **backgroundColor** | <!----><!---->**String**<!----> | The background color for the paragraph. The valid values in hex color code representation. For example black color - #000000 |  [optional] |
-| **align** | [**AlignEnum**](#AlignEnum)<!----> | The align type for the paragraph. |  [optional] |
-| **indentation** | <!----><!---->**Float**<!----> | The indentation color for the paragraph. The valid values in 'em'. |  [optional] |
-{: class="table table-striped"}
+| **fontSize** | [**FontSizeEnum**](#Enum--FontSizeEnum) | The font size for the paragraph. The valid values in 'em'. |  [optional] |
+| **fontType** | [**FontTypeEnum**](#Enum--FontTypeEnum) | The font type for the paragraph. |  [optional] |
+| **textColor** | **String** | The text color for the paragraph. The valid values in hex color code representation. For example black color - #000000 |  [optional] |
+| **backgroundColor** | **String** | The background color for the paragraph. The valid values in hex color code representation. For example black color - #000000 |  [optional] |
+| **align** | [**AlignEnum**](#Enum--AlignEnum) | The align type for the paragraph. |  [optional] |
+| **indentation** | **Float** | The indentation color for the paragraph. The valid values in 'em'. |  [optional] |
 
-
-<a name="FontSizeEnum"></a>
 
 ## Enum: FontSizeEnum
 
@@ -32,10 +26,7 @@ title: DocumentBodyParagraphProperties
 | XLARGE | &quot;XLarge&quot; | 
 | XXLARGE | &quot;XxLarge&quot; | 
 | XXXLARGE | &quot;XxxLarge&quot; | 
-{: class="table table-striped"}
 
-
-<a name="FontTypeEnum"></a>
 
 ## Enum: FontTypeEnum
 
@@ -50,10 +41,7 @@ title: DocumentBodyParagraphProperties
 | HEADING5 | &quot;Heading5&quot; | 
 | HEADING6 | &quot;Heading6&quot; | 
 | PREFORMATTED | &quot;Preformatted&quot; | 
-{: class="table table-striped"}
 
-
-<a name="AlignEnum"></a>
 
 ## Enum: AlignEnum
 
@@ -64,7 +52,8 @@ title: DocumentBodyParagraphProperties
 | LEFT | &quot;Left&quot; | 
 | RIGHT | &quot;Right&quot; | 
 | JUSTIFY | &quot;Justify&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

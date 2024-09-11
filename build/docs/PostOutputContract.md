@@ -1,15 +1,13 @@
----
-title: PostOutputContract
----
-## PostOutputContract
+# PostOutputContract
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **successSchema** | <!----><!---->[**JsonSchemaDocument**](JsonSchemaDocument.html)<!----> | JSON schema that defines the transformed, successful result that will be sent back to the caller. |  |
-{: class="table table-striped"}
+| **successSchema** | [**JsonSchemaDocument**](JsonSchemaDocument) | JSON schema that defines the transformed, successful result that will be sent back to the caller. |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

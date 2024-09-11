@@ -1,15 +1,13 @@
----
-title: PhoneNumberStatus
----
-## PhoneNumberStatus
+# PhoneNumberStatus
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **callable** | <!----><!---->**Boolean**<!----> | Indicates whether or not a phone number is callable. |  [optional] |
-{: class="table table-striped"}
+| **callable** | **Boolean** | Indicates whether or not a phone number is callable. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,16 +1,14 @@
----
-title: DialerOutboundSettingsConfigChangeCallableWindow
----
-## DialerOutboundSettingsConfigChangeCallableWindow
+# DialerOutboundSettingsConfigChangeCallableWindow
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **mapped** | <!----><!---->[**DialerOutboundSettingsConfigChangeAtzmTimeSlot**](DialerOutboundSettingsConfigChangeAtzmTimeSlot.html)<!----> |  |  [optional] |
-| **unmapped** | <!----><!---->[**DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone**](DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **mapped** | [**DialerOutboundSettingsConfigChangeAtzmTimeSlot**](DialerOutboundSettingsConfigChangeAtzmTimeSlot) |  |  [optional] |
+| **unmapped** | [**DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone**](DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

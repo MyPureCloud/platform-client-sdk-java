@@ -1,19 +1,13 @@
----
-title: UnifiedGeneralTopic
----
-## UnifiedGeneralTopic
+# UnifiedGeneralTopic
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **name** | **String** |  |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -26,7 +20,8 @@ title: UnifiedGeneralTopic
 | UPTODATE | &quot;UpToDate&quot; | 
 | TOBECREATED | &quot;ToBeCreated&quot; | 
 | CREATEDBYUSER | &quot;CreatedByUser&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

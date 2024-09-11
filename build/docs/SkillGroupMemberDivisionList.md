@@ -1,15 +1,13 @@
----
-title: SkillGroupMemberDivisionList
----
-## SkillGroupMemberDivisionList
+# SkillGroupMemberDivisionList
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | <!----><!---->[**List&lt;Division&gt;**](Division.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **entities** | [**List&lt;Division&gt;**](Division) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

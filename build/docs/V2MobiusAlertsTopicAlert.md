@@ -1,34 +1,28 @@
----
-title: V2MobiusAlertsTopicAlert
----
-## V2MobiusAlertsTopicAlert
+# V2MobiusAlertsTopicAlert
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **rule** | <!----><!---->[**V2MobiusAlertsTopicAlertRuleProperties**](V2MobiusAlertsTopicAlertRuleProperties.html)<!----> |  |  [optional] |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **userId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **notifications** | <!----><!---->[**List&lt;V2MobiusAlertsTopicAlertNotification&gt;**](V2MobiusAlertsTopicAlertNotification.html)<!----> |  |  [optional] |
-| **dateStart** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **dateEnd** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **conditions** | <!----><!---->[**V2MobiusAlertsTopicCondition**](V2MobiusAlertsTopicCondition.html)<!----> |  |  [optional] |
-| **additionalProperties** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
-| **active** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **unread** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **muted** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **snoozed** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **dateMutedUntil** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **dateSnoozedUntil** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **action** | [**ActionEnum**](#ActionEnum)<!----> |  |  [optional] |
-| **alertSummary** | <!----><!---->[**V2MobiusAlertsTopicAlertSummary**](V2MobiusAlertsTopicAlertSummary.html)<!----> |  |  [optional] |
-| **sendExitingAlarmNotification** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **rule** | [**V2MobiusAlertsTopicAlertRuleProperties**](V2MobiusAlertsTopicAlertRuleProperties) |  |  [optional] |
+| **id** | **String** |  |  [optional] |
+| **userId** | **String** |  |  [optional] |
+| **notifications** | [**List&lt;V2MobiusAlertsTopicAlertNotification&gt;**](V2MobiusAlertsTopicAlertNotification) |  |  [optional] |
+| **dateStart** | [**Date**](Date) |  |  [optional] |
+| **dateEnd** | [**Date**](Date) |  |  [optional] |
+| **conditions** | [**V2MobiusAlertsTopicCondition**](V2MobiusAlertsTopicCondition) |  |  [optional] |
+| **additionalProperties** | **Map&lt;String, String&gt;** |  |  [optional] |
+| **active** | **Boolean** |  |  [optional] |
+| **unread** | **Boolean** |  |  [optional] |
+| **muted** | **Boolean** |  |  [optional] |
+| **snoozed** | **Boolean** |  |  [optional] |
+| **dateMutedUntil** | [**Date**](Date) |  |  [optional] |
+| **dateSnoozedUntil** | [**Date**](Date) |  |  [optional] |
+| **action** | [**ActionEnum**](#Enum--ActionEnum) |  |  [optional] |
+| **alertSummary** | [**V2MobiusAlertsTopicAlertSummary**](V2MobiusAlertsTopicAlertSummary) |  |  [optional] |
+| **sendExitingAlarmNotification** | **Boolean** |  |  [optional] |
 
-
-<a name="ActionEnum"></a>
 
 ## Enum: ActionEnum
 
@@ -44,7 +38,8 @@ title: V2MobiusAlertsTopicAlert
 | BULK_DELETE | &quot;BULK_DELETE&quot; | 
 | BULK_UPDATE | &quot;BULK_UPDATE&quot; | 
 | UNREAD_COUNT_UPDATE | &quot;UNREAD_COUNT_UPDATE&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

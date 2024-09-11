@@ -1,22 +1,16 @@
----
-title: V2MobiusAlertsTopicEntityProperties
----
-## V2MobiusAlertsTopicEntityProperties
+# V2MobiusAlertsTopicEntityProperties
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entityType** | [**EntityTypeEnum**](#EntityTypeEnum)<!----> |  |  [optional] |
-| **user** | <!----><!---->[**V2MobiusAlertsTopicAlertingAddressableEntityRef**](V2MobiusAlertsTopicAlertingAddressableEntityRef.html)<!----> |  |  [optional] |
-| **group** | <!----><!---->[**V2MobiusAlertsTopicAlertingAddressableEntityRef**](V2MobiusAlertsTopicAlertingAddressableEntityRef.html)<!----> |  |  [optional] |
-| **queue** | <!----><!---->[**V2MobiusAlertsTopicAlertingAddressableEntityRef**](V2MobiusAlertsTopicAlertingAddressableEntityRef.html)<!----> |  |  [optional] |
-| **team** | <!----><!---->[**V2MobiusAlertsTopicAlertingAddressableEntityRef**](V2MobiusAlertsTopicAlertingAddressableEntityRef.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **entityType** | [**EntityTypeEnum**](#Enum--EntityTypeEnum) |  |  [optional] |
+| **user** | [**V2MobiusAlertsTopicAlertingAddressableEntityRef**](V2MobiusAlertsTopicAlertingAddressableEntityRef) |  |  [optional] |
+| **group** | [**V2MobiusAlertsTopicAlertingAddressableEntityRef**](V2MobiusAlertsTopicAlertingAddressableEntityRef) |  |  [optional] |
+| **queue** | [**V2MobiusAlertsTopicAlertingAddressableEntityRef**](V2MobiusAlertsTopicAlertingAddressableEntityRef) |  |  [optional] |
+| **team** | [**V2MobiusAlertsTopicAlertingAddressableEntityRef**](V2MobiusAlertsTopicAlertingAddressableEntityRef) |  |  [optional] |
 
-
-<a name="EntityTypeEnum"></a>
 
 ## Enum: EntityTypeEnum
 
@@ -30,7 +24,8 @@ title: V2MobiusAlertsTopicEntityProperties
 | EDGE | &quot;Edge&quot; | 
 | TEAM | &quot;Team&quot; | 
 | TEAMMEMBERS | &quot;TeamMembers&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

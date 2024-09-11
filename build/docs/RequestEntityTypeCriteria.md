@@ -1,22 +1,16 @@
----
-title: RequestEntityTypeCriteria
----
-## RequestEntityTypeCriteria
+# RequestEntityTypeCriteria
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **key** | <!----><!---->**String**<!----> | The criteria key. |  |
-| **values** | <!----><!---->**List&lt;String&gt;**<!----> | The criteria values. |  |
-| **shouldIgnoreCase** | <!----><!---->**Boolean**<!----> | Should criteria be case insensitive. |  [optional] |
-| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | The comparison operator. |  [optional] |
-| **entityType** | [**EntityTypeEnum**](#EntityTypeEnum)<!----> | The entity to match the pattern against. |  |
-{: class="table table-striped"}
+| **key** | **String** | The criteria key. |  |
+| **values** | **List&lt;String&gt;** | The criteria values. |  |
+| **shouldIgnoreCase** | **Boolean** | Should criteria be case insensitive. |  [optional] |
+| **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | The comparison operator. |  [optional] |
+| **entityType** | [**EntityTypeEnum**](#Enum--EntityTypeEnum) | The entity to match the pattern against. |  |
 
-
-<a name="OperatorEnum"></a>
 
 ## Enum: OperatorEnum
 
@@ -35,10 +29,7 @@ title: RequestEntityTypeCriteria
 | LESSTHANOREQUAL | &quot;lessThanOrEqual&quot; | 
 | STARTSWITH | &quot;startsWith&quot; | 
 | ENDSWITH | &quot;endsWith&quot; | 
-{: class="table table-striped"}
 
-
-<a name="EntityTypeEnum"></a>
 
 ## Enum: EntityTypeEnum
 
@@ -46,7 +37,8 @@ title: RequestEntityTypeCriteria
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | VISIT | &quot;visit&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

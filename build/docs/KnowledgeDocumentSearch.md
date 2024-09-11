@@ -1,29 +1,23 @@
----
-title: KnowledgeDocumentSearch
----
-## KnowledgeDocumentSearch
+# KnowledgeDocumentSearch
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **query** | <!----><!---->**String**<!----> | Query to search content in the knowledge base. Maximum of 30 records per query can be fetched. |  |
-| **pageSize** | <!----><!---->**Integer**<!----> | Page size of the returned results. |  [optional] |
-| **pageNumber** | <!----><!---->**Integer**<!----> | Page number of the returned results. |  [optional] |
-| **searchId** | <!----><!---->**String**<!----> | The globally unique identifier for the search. |  [optional] |
-| **total** | <!----><!---->**Integer**<!----> | The total number of documents matching the query. |  [optional] |
-| **pageCount** | <!----><!---->**Integer**<!----> | Number of pages returned in the result calculated according to the pageSize and the total |  [optional] |
-| **queryType** | [**QueryTypeEnum**](#QueryTypeEnum)<!----> | The type of the query that initiates the search. |  [optional] |
-| **results** | <!----><!---->[**List&lt;KnowledgeDocumentSearchResult&gt;**](KnowledgeDocumentSearchResult.html)<!----> | Documents matching the search query. |  [optional] |
-| **application** | <!----><!---->[**KnowledgeSearchClientApplication**](KnowledgeSearchClientApplication.html)<!----> | The client application details from which search happened. |  [optional] |
-| **conversationContext** | <!----><!---->[**KnowledgeConversationContextResponse**](KnowledgeConversationContextResponse.html)<!----> | Conversation context information if the search is initiated in the context of a conversation. |  [optional] |
-| **confidenceThreshold** | <!----><!---->**Float**<!----> | The confidence threshold for the search results. If applied, the returned results will have an equal or higher confidence than the threshold. |  [optional] |
-| **answerGeneration** | <!----><!---->[**KnowledgeAnswerGenerationResponse**](KnowledgeAnswerGenerationResponse.html)<!----> | The results with AI-generated answer if the answerMode request property contains \"AnswerGeneration\". |  [optional] |
-{: class="table table-striped"}
+| **query** | **String** | Query to search content in the knowledge base. Maximum of 30 records per query can be fetched. |  |
+| **pageSize** | **Integer** | Page size of the returned results. |  [optional] |
+| **pageNumber** | **Integer** | Page number of the returned results. |  [optional] |
+| **searchId** | **String** | The globally unique identifier for the search. |  [optional] |
+| **total** | **Integer** | The total number of documents matching the query. |  [optional] |
+| **pageCount** | **Integer** | Number of pages returned in the result calculated according to the pageSize and the total |  [optional] |
+| **queryType** | [**QueryTypeEnum**](#Enum--QueryTypeEnum) | The type of the query that initiates the search. |  [optional] |
+| **results** | [**List&lt;KnowledgeDocumentSearchResult&gt;**](KnowledgeDocumentSearchResult) | Documents matching the search query. |  [optional] |
+| **application** | [**KnowledgeSearchClientApplication**](KnowledgeSearchClientApplication) | The client application details from which search happened. |  [optional] |
+| **conversationContext** | [**KnowledgeConversationContextResponse**](KnowledgeConversationContextResponse) | Conversation context information if the search is initiated in the context of a conversation. |  [optional] |
+| **confidenceThreshold** | **Float** | The confidence threshold for the search results. If applied, the returned results will have an equal or higher confidence than the threshold. |  [optional] |
+| **answerGeneration** | [**KnowledgeAnswerGenerationResponse**](KnowledgeAnswerGenerationResponse) | The results with AI-generated answer if the answerMode request property contains \"AnswerGeneration\". |  [optional] |
 
-
-<a name="QueryTypeEnum"></a>
 
 ## Enum: QueryTypeEnum
 
@@ -33,7 +27,8 @@ title: KnowledgeDocumentSearch
 | AUTOSEARCH | &quot;AutoSearch&quot; | 
 | MANUALSEARCH | &quot;ManualSearch&quot; | 
 | SUGGESTION | &quot;Suggestion&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

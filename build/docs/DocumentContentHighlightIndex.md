@@ -1,16 +1,14 @@
----
-title: DocumentContentHighlightIndex
----
-## DocumentContentHighlightIndex
+# DocumentContentHighlightIndex
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **startIndex** | <!----><!---->**Integer**<!----> | Highlight text start index. |  [optional] |
-| **endIndex** | <!----><!---->**Integer**<!----> | Highlight text end index. |  [optional] |
-{: class="table table-striped"}
+| **startIndex** | **Integer** | Highlight text start index. |  [optional] |
+| **endIndex** | **Integer** | Highlight text end index. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

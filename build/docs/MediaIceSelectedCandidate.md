@@ -1,19 +1,13 @@
----
-title: MediaIceSelectedCandidate
----
-## MediaIceSelectedCandidate
+# MediaIceSelectedCandidate
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **address** | <!----><!---->**String**<!----> | IP address and port of the candidate |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Type of the selected candidate |  [optional] |
-{: class="table table-striped"}
+| **address** | **String** | IP address and port of the candidate |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Type of the selected candidate |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -24,7 +18,8 @@ title: MediaIceSelectedCandidate
 | SRFLX | &quot;srflx&quot; | 
 | PRFLX | &quot;prflx&quot; | 
 | RELAY | &quot;relay&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

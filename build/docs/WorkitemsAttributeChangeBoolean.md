@@ -1,16 +1,14 @@
----
-title: WorkitemsAttributeChangeBoolean
----
-## WorkitemsAttributeChangeBoolean
+# WorkitemsAttributeChangeBoolean
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **newValue** | <!----><!---->**Boolean**<!----> | New property value |  [optional] |
-| **oldValue** | <!----><!---->**Boolean**<!----> | Old property value |  [optional] |
-{: class="table table-striped"}
+| **newValue** | **Boolean** | New property value |  [optional] |
+| **oldValue** | **Boolean** | Old property value |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

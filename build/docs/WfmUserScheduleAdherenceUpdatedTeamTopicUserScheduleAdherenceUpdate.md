@@ -1,35 +1,29 @@
----
-title: WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate
----
-## WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate
+# WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **user** | <!----><!---->[**WfmUserScheduleAdherenceUpdatedTeamTopicUserReference**](WfmUserScheduleAdherenceUpdatedTeamTopicUserReference.html)<!----> |  |  [optional] |
-| **managementUnitId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **team** | <!----><!---->[**WfmUserScheduleAdherenceUpdatedTeamTopicUriReference**](WfmUserScheduleAdherenceUpdatedTeamTopicUriReference.html)<!----> |  |  [optional] |
-| **scheduledActivityCategory** | <!----><!---->**String**<!----> |  |  [optional] |
-| **scheduledActivityCode** | <!----><!---->[**WfmUserScheduleAdherenceUpdatedTeamTopicActivityCodeReference**](WfmUserScheduleAdherenceUpdatedTeamTopicActivityCodeReference.html)<!----> |  |  [optional] |
-| **systemPresence** | <!----><!---->**String**<!----> |  |  [optional] |
-| **organizationSecondaryPresenceId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **routingStatus** | [**RoutingStatusEnum**](#RoutingStatusEnum)<!----> |  |  [optional] |
-| **actualActivityCategory** | <!----><!---->**String**<!----> |  |  [optional] |
-| **isOutOfOffice** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **adherenceState** | [**AdherenceStateEnum**](#AdherenceStateEnum)<!----> |  |  [optional] |
-| **impact** | <!----><!---->**String**<!----> |  |  [optional] |
-| **adherenceExplanation** | <!----><!---->[**WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation**](WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation.html)<!----> |  |  [optional] |
-| **adherenceChangeTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **presenceUpdateTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **activeQueues** | <!----><!---->[**List&lt;WfmUserScheduleAdherenceUpdatedTeamTopicQueueReference&gt;**](WfmUserScheduleAdherenceUpdatedTeamTopicQueueReference.html)<!----> |  |  [optional] |
-| **activeQueuesModifiedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **removedFromManagementUnit** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **user** | [**WfmUserScheduleAdherenceUpdatedTeamTopicUserReference**](WfmUserScheduleAdherenceUpdatedTeamTopicUserReference) |  |  [optional] |
+| **managementUnitId** | **String** |  |  [optional] |
+| **team** | [**WfmUserScheduleAdherenceUpdatedTeamTopicUriReference**](WfmUserScheduleAdherenceUpdatedTeamTopicUriReference) |  |  [optional] |
+| **scheduledActivityCategory** | **String** |  |  [optional] |
+| **scheduledActivityCode** | [**WfmUserScheduleAdherenceUpdatedTeamTopicActivityCodeReference**](WfmUserScheduleAdherenceUpdatedTeamTopicActivityCodeReference) |  |  [optional] |
+| **systemPresence** | **String** |  |  [optional] |
+| **organizationSecondaryPresenceId** | **String** |  |  [optional] |
+| **routingStatus** | [**RoutingStatusEnum**](#Enum--RoutingStatusEnum) |  |  [optional] |
+| **actualActivityCategory** | **String** |  |  [optional] |
+| **isOutOfOffice** | **Boolean** |  |  [optional] |
+| **adherenceState** | [**AdherenceStateEnum**](#Enum--AdherenceStateEnum) |  |  [optional] |
+| **impact** | **String** |  |  [optional] |
+| **adherenceExplanation** | [**WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation**](WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation) |  |  [optional] |
+| **adherenceChangeTime** | [**Date**](Date) |  |  [optional] |
+| **presenceUpdateTime** | [**Date**](Date) |  |  [optional] |
+| **activeQueues** | [**List&lt;WfmUserScheduleAdherenceUpdatedTeamTopicQueueReference&gt;**](WfmUserScheduleAdherenceUpdatedTeamTopicQueueReference) |  |  [optional] |
+| **activeQueuesModifiedTime** | [**Date**](Date) |  |  [optional] |
+| **removedFromManagementUnit** | **Boolean** |  |  [optional] |
 
-
-<a name="RoutingStatusEnum"></a>
 
 ## Enum: RoutingStatusEnum
 
@@ -43,10 +37,7 @@ title: WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate
 | NOT_RESPONDING | &quot;NOT_RESPONDING&quot; | 
 | COMMUNICATING | &quot;COMMUNICATING&quot; | 
 | OFFLINE | &quot;OFFLINE&quot; | 
-{: class="table table-striped"}
 
-
-<a name="AdherenceStateEnum"></a>
 
 ## Enum: AdherenceStateEnum
 
@@ -59,7 +50,8 @@ title: WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate
 | UNKNOWN | &quot;Unknown&quot; | 
 | IGNORED | &quot;Ignored&quot; | 
 | EXPLAINED | &quot;Explained&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

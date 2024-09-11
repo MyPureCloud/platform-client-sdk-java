@@ -1,25 +1,19 @@
----
-title: CreateWorkPlanBid
----
-## CreateWorkPlanBid
+# CreateWorkPlanBid
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | <!----><!---->**String**<!----> | The name of the work plan bid |  |
-| **forecast** | <!----><!---->[**BuShortTermForecastWeekReference**](BuShortTermForecastWeekReference.html)<!----> | The selected forecast in this work plan bid |  [optional] |
-| **bidWindowStartDate** | <!----><!---->[**LocalDate**](LocalDate.html)<!----> | The bid start date where agents start participate in work plan bidding in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **bidWindowEndDate** | <!----><!---->[**LocalDate**](LocalDate.html)<!----> | The bid end date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **effectiveDate** | <!----><!---->[**LocalDate**](LocalDate.html)<!----> | The date when agents will be assigned to the new work plan in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **agentRankingType** | [**AgentRankingTypeEnum**](#AgentRankingTypeEnum)<!----> | The type of agent ranking selected for this bid |  |
-| **rankingTiebreakerType** | [**RankingTiebreakerTypeEnum**](#RankingTiebreakerTypeEnum)<!----> | Ranking tiebreaker to be used |  |
-| **workPlanFieldsVisibleToAgents** | <!---->[**List&lt;WorkPlanFieldsVisibleToAgentsEnum&gt;**](#WorkPlanFieldsVisibleToAgentsEnum)<!----> | The work plan fields visible to agents whenever work plan preferences are made |  |
-{: class="table table-striped"}
+| **name** | **String** | The name of the work plan bid |  |
+| **forecast** | [**BuShortTermForecastWeekReference**](BuShortTermForecastWeekReference) | The selected forecast in this work plan bid |  [optional] |
+| **bidWindowStartDate** | [**LocalDate**](LocalDate) | The bid start date where agents start participate in work plan bidding in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **bidWindowEndDate** | [**LocalDate**](LocalDate) | The bid end date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **effectiveDate** | [**LocalDate**](LocalDate) | The date when agents will be assigned to the new work plan in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **agentRankingType** | [**AgentRankingTypeEnum**](#Enum--AgentRankingTypeEnum) | The type of agent ranking selected for this bid |  |
+| **rankingTiebreakerType** | [**RankingTiebreakerTypeEnum**](#Enum--RankingTiebreakerTypeEnum) | Ranking tiebreaker to be used |  |
+| **workPlanFieldsVisibleToAgents** | [**List<WorkPlanFieldsVisibleToAgentsEnum>**](#Enum--WorkPlanFieldsVisibleToAgentsEnum) | The work plan fields visible to agents whenever work plan preferences are made |  |
 
-
-<a name="AgentRankingTypeEnum"></a>
 
 ## Enum: AgentRankingTypeEnum
 
@@ -28,10 +22,7 @@ title: CreateWorkPlanBid
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | HIREDATE | &quot;HireDate&quot; | 
 | PERFORMANCE | &quot;Performance&quot; | 
-{: class="table table-striped"}
 
-
-<a name="RankingTiebreakerTypeEnum"></a>
 
 ## Enum: RankingTiebreakerTypeEnum
 
@@ -42,10 +33,7 @@ title: CreateWorkPlanBid
 | PERFORMANCE | &quot;Performance&quot; | 
 | CUSTOM | &quot;Custom&quot; | 
 | RANDOMLYASSIGN | &quot;RandomlyAssign&quot; | 
-{: class="table table-striped"}
 
-
-<a name="WorkPlanFieldsVisibleToAgentsEnum"></a>
 
 ## Enum: WorkPlanFieldsVisibleToAgentsEnum
 
@@ -53,7 +41,8 @@ title: CreateWorkPlanBid
 | ---- | ----- |
 | NAME | &quot;Name&quot; |
 | PAIDHOURS | &quot;PaidHours&quot; |
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

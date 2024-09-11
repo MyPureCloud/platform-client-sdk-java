@@ -1,19 +1,13 @@
----
-title: UserActivityMetricValue
----
-## UserActivityMetricValue
+# UserActivityMetricValue
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **metric** | [**MetricEnum**](#MetricEnum)<!----> | metric |  [optional] |
-| **count** | <!----><!---->**Integer**<!----> | metric count |  [optional] |
-{: class="table table-striped"}
+| **metric** | [**MetricEnum**](#Enum--MetricEnum) | metric |  [optional] |
+| **count** | **Integer** | metric count |  [optional] |
 
-
-<a name="MetricEnum"></a>
 
 ## Enum: MetricEnum
 
@@ -22,7 +16,8 @@ title: UserActivityMetricValue
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | OACTIVEQUEUES | &quot;oActiveQueues&quot; | 
 | OMEMBERQUEUES | &quot;oMemberQueues&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

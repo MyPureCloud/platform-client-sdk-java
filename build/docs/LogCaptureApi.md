@@ -1,25 +1,20 @@
----
-title: LogCaptureApi
----
-## LogCaptureApi
+# LogCaptureApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteDiagnosticsLogcaptureBrowserUser**](LogCaptureApi.html#deleteDiagnosticsLogcaptureBrowserUser) | Disable browser log capture for the user |
-| [**getDiagnosticsLogcaptureBrowserEntriesDownloadJob**](LogCaptureApi.html#getDiagnosticsLogcaptureBrowserEntriesDownloadJob) | Gets status of async download execution |
-| [**getDiagnosticsLogcaptureBrowserUser**](LogCaptureApi.html#getDiagnosticsLogcaptureBrowserUser) | Get log capture configuration for the user |
-| [**getDiagnosticsLogcaptureBrowserUsers**](LogCaptureApi.html#getDiagnosticsLogcaptureBrowserUsers) | Get all log capture enabled users for an org |
-| [**postDiagnosticsLogcaptureBrowserEntriesDownloadJobs**](LogCaptureApi.html#postDiagnosticsLogcaptureBrowserEntriesDownloadJobs) | Creates an async download execution |
-| [**postDiagnosticsLogcaptureBrowserEntriesQuery**](LogCaptureApi.html#postDiagnosticsLogcaptureBrowserEntriesQuery) | Query collected log entries. It returns a limited amount of records, to get all records use download endpoint. |
-| [**postDiagnosticsLogcaptureBrowserUser**](LogCaptureApi.html#postDiagnosticsLogcaptureBrowserUser) | Enable log capture for a user or update expiration |
+| [**deleteDiagnosticsLogcaptureBrowserUser**](LogCaptureApi#deleteDiagnosticsLogcaptureBrowserUser) | Disable browser log capture for the user |
+| [**getDiagnosticsLogcaptureBrowserEntriesDownloadJob**](LogCaptureApi#getDiagnosticsLogcaptureBrowserEntriesDownloadJob) | Gets status of async download execution |
+| [**getDiagnosticsLogcaptureBrowserUser**](LogCaptureApi#getDiagnosticsLogcaptureBrowserUser) | Get log capture configuration for the user |
+| [**getDiagnosticsLogcaptureBrowserUsers**](LogCaptureApi#getDiagnosticsLogcaptureBrowserUsers) | Get all log capture enabled users for an org |
+| [**postDiagnosticsLogcaptureBrowserEntriesDownloadJobs**](LogCaptureApi#postDiagnosticsLogcaptureBrowserEntriesDownloadJobs) | Creates an async download execution |
+| [**postDiagnosticsLogcaptureBrowserEntriesQuery**](LogCaptureApi#postDiagnosticsLogcaptureBrowserEntriesQuery) | Query collected log entries. It returns a limited amount of records, to get all records use download endpoint. |
+| [**postDiagnosticsLogcaptureBrowserUser**](LogCaptureApi#postDiagnosticsLogcaptureBrowserUser) | Enable log capture for a user or update expiration |
 {: class="table-striped"}
 
-<a name="deleteDiagnosticsLogcaptureBrowserUser"></a>
 
 # **deleteDiagnosticsLogcaptureBrowserUser**
-
 
 
 > Void deleteDiagnosticsLogcaptureBrowserUser(userId)
@@ -76,13 +71,11 @@ try {
 
 null (empty response body)
 
-<a name="getDiagnosticsLogcaptureBrowserEntriesDownloadJob"></a>
 
 # **getDiagnosticsLogcaptureBrowserEntriesDownloadJob**
 
 
-
-> [LogCaptureDownloadExecutionResponse](LogCaptureDownloadExecutionResponse.html) getDiagnosticsLogcaptureBrowserEntriesDownloadJob(jobId)
+> [LogCaptureDownloadExecutionResponse](LogCaptureDownloadExecutionResponse) getDiagnosticsLogcaptureBrowserEntriesDownloadJob(jobId)
 
 Gets status of async download execution
 
@@ -135,15 +128,13 @@ try {
 
 ### Return type
 
-[**LogCaptureDownloadExecutionResponse**](LogCaptureDownloadExecutionResponse.html)
+[**LogCaptureDownloadExecutionResponse**](LogCaptureDownloadExecutionResponse)
 
-<a name="getDiagnosticsLogcaptureBrowserUser"></a>
 
 # **getDiagnosticsLogcaptureBrowserUser**
 
 
-
-> [LogCaptureUserConfiguration](LogCaptureUserConfiguration.html) getDiagnosticsLogcaptureBrowserUser(userId)
+> [LogCaptureUserConfiguration](LogCaptureUserConfiguration) getDiagnosticsLogcaptureBrowserUser(userId)
 
 Get log capture configuration for the user
 
@@ -196,15 +187,13 @@ try {
 
 ### Return type
 
-[**LogCaptureUserConfiguration**](LogCaptureUserConfiguration.html)
+[**LogCaptureUserConfiguration**](LogCaptureUserConfiguration)
 
-<a name="getDiagnosticsLogcaptureBrowserUsers"></a>
 
 # **getDiagnosticsLogcaptureBrowserUsers**
 
 
-
-> [PagelessEntityListing](PagelessEntityListing.html) getDiagnosticsLogcaptureBrowserUsers(includeExpired)
+> [PagelessEntityListing](PagelessEntityListing) getDiagnosticsLogcaptureBrowserUsers(includeExpired)
 
 Get all log capture enabled users for an org
 
@@ -257,15 +246,13 @@ try {
 
 ### Return type
 
-[**PagelessEntityListing**](PagelessEntityListing.html)
+[**PagelessEntityListing**](PagelessEntityListing)
 
-<a name="postDiagnosticsLogcaptureBrowserEntriesDownloadJobs"></a>
 
 # **postDiagnosticsLogcaptureBrowserEntriesDownloadJobs**
 
 
-
-> [LogCaptureDownloadExecutionResponse](LogCaptureDownloadExecutionResponse.html) postDiagnosticsLogcaptureBrowserEntriesDownloadJobs(body)
+> [LogCaptureDownloadExecutionResponse](LogCaptureDownloadExecutionResponse) postDiagnosticsLogcaptureBrowserEntriesDownloadJobs(body)
 
 Creates an async download execution
 
@@ -312,21 +299,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**LogCaptureQueryRequest**](LogCaptureQueryRequest.html)|  | [optional] 
+| **body** | [**LogCaptureQueryRequest**](LogCaptureQueryRequest)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LogCaptureDownloadExecutionResponse**](LogCaptureDownloadExecutionResponse.html)
+[**LogCaptureDownloadExecutionResponse**](LogCaptureDownloadExecutionResponse)
 
-<a name="postDiagnosticsLogcaptureBrowserEntriesQuery"></a>
 
 # **postDiagnosticsLogcaptureBrowserEntriesQuery**
 
 
-
-> [LogCaptureQueryResponse](LogCaptureQueryResponse.html) postDiagnosticsLogcaptureBrowserEntriesQuery(before, after, pageSize, body)
+> [LogCaptureQueryResponse](LogCaptureQueryResponse) postDiagnosticsLogcaptureBrowserEntriesQuery(before, after, pageSize, body)
 
 Query collected log entries. It returns a limited amount of records, to get all records use download endpoint.
 
@@ -379,21 +364,19 @@ try {
 | **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
-| **body** | [**LogCaptureQueryRequest**](LogCaptureQueryRequest.html)|  | [optional] 
+| **body** | [**LogCaptureQueryRequest**](LogCaptureQueryRequest)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LogCaptureQueryResponse**](LogCaptureQueryResponse.html)
+[**LogCaptureQueryResponse**](LogCaptureQueryResponse)
 
-<a name="postDiagnosticsLogcaptureBrowserUser"></a>
 
 # **postDiagnosticsLogcaptureBrowserUser**
 
 
-
-> [LogCaptureUserConfiguration](LogCaptureUserConfiguration.html) postDiagnosticsLogcaptureBrowserUser(userId, body)
+> [LogCaptureUserConfiguration](LogCaptureUserConfiguration) postDiagnosticsLogcaptureBrowserUser(userId, body)
 
 Enable log capture for a user or update expiration
 
@@ -442,11 +425,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| The id of the user to enable browser log capture | 
-| **body** | [**LogCaptureUserConfiguration**](LogCaptureUserConfiguration.html)|  | [optional] 
+| **body** | [**LogCaptureUserConfiguration**](LogCaptureUserConfiguration)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LogCaptureUserConfiguration**](LogCaptureUserConfiguration.html)
+[**LogCaptureUserConfiguration**](LogCaptureUserConfiguration)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

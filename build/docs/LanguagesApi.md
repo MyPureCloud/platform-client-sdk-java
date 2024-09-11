@@ -1,27 +1,25 @@
----
-title: LanguagesApi
----
-## LanguagesApi
+# LanguagesApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteLanguage**](LanguagesApi.html#deleteLanguage) | Delete Language (Deprecated) |
-| [**getLanguage**](LanguagesApi.html#getLanguage) | Get Language (Deprecated) |
-| [**getLanguages**](LanguagesApi.html#getLanguages) | Get the list of supported languages. (Deprecated) |
-| [**getLanguagesTranslations**](LanguagesApi.html#getLanguagesTranslations) | Get all available languages for translation |
-| [**getLanguagesTranslationsBuiltin**](LanguagesApi.html#getLanguagesTranslationsBuiltin) | Get the builtin translation for a language |
-| [**getLanguagesTranslationsOrganization**](LanguagesApi.html#getLanguagesTranslationsOrganization) | Get effective translation for an organization by language |
-| [**getLanguagesTranslationsUser**](LanguagesApi.html#getLanguagesTranslationsUser) | Get effective language translation for a user |
-| [**postLanguages**](LanguagesApi.html#postLanguages) | Create Language (Deprecated) |
+| [**deleteLanguage**](LanguagesApi#deleteLanguage) | Delete Language (Deprecated) |
+| [**getLanguage**](LanguagesApi#getLanguage) | Get Language (Deprecated) |
+| [**getLanguages**](LanguagesApi#getLanguages) | Get the list of supported languages. (Deprecated) |
+| [**getLanguagesTranslations**](LanguagesApi#getLanguagesTranslations) | Get all available languages for translation |
+| [**getLanguagesTranslationsBuiltin**](LanguagesApi#getLanguagesTranslationsBuiltin) | Get the builtin translation for a language |
+| [**getLanguagesTranslationsOrganization**](LanguagesApi#getLanguagesTranslationsOrganization) | Get effective translation for an organization by language |
+| [**getLanguagesTranslationsUser**](LanguagesApi#getLanguagesTranslationsUser) | Get effective language translation for a user |
+| [**postLanguages**](LanguagesApi#postLanguages) | Create Language (Deprecated) |
 {: class="table-striped"}
 
-<a name="deleteLanguage"></a>
 
 # **deleteLanguage**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Void deleteLanguage(languageId)
 
@@ -79,13 +77,14 @@ try {
 
 null (empty response body)
 
-<a name="getLanguage"></a>
 
 # **getLanguage**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [Language](Language.html) getLanguage(languageId)
+> [Language](Language) getLanguage(languageId)
 
 Get Language (Deprecated)
 
@@ -140,15 +139,16 @@ try {
 
 ### Return type
 
-[**Language**](Language.html)
+[**Language**](Language)
 
-<a name="getLanguages"></a>
 
 # **getLanguages**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [LanguageEntityListing](LanguageEntityListing.html) getLanguages(pageSize, pageNumber, sortOrder, name)
+> [LanguageEntityListing](LanguageEntityListing) getLanguages(pageSize, pageNumber, sortOrder, name)
 
 Get the list of supported languages. (Deprecated)
 
@@ -209,15 +209,13 @@ try {
 
 ### Return type
 
-[**LanguageEntityListing**](LanguageEntityListing.html)
+[**LanguageEntityListing**](LanguageEntityListing)
 
-<a name="getLanguagesTranslations"></a>
 
 # **getLanguagesTranslations**
 
 
-
-> [AvailableTranslations](AvailableTranslations.html) getLanguagesTranslations()
+> [AvailableTranslations](AvailableTranslations) getLanguagesTranslations()
 
 Get all available languages for translation
 
@@ -265,12 +263,10 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**AvailableTranslations**](AvailableTranslations.html)
+[**AvailableTranslations**](AvailableTranslations)
 
-<a name="getLanguagesTranslationsBuiltin"></a>
 
 # **getLanguagesTranslationsBuiltin**
-
 
 
 > Map&lt;String, Object&gt; getLanguagesTranslationsBuiltin(language)
@@ -327,10 +323,8 @@ try {
 
 **Map&lt;String, Object&gt;**
 
-<a name="getLanguagesTranslationsOrganization"></a>
 
 # **getLanguagesTranslationsOrganization**
-
 
 
 > Map&lt;String, Object&gt; getLanguagesTranslationsOrganization(language)
@@ -387,10 +381,8 @@ try {
 
 **Map&lt;String, Object&gt;**
 
-<a name="getLanguagesTranslationsUser"></a>
 
 # **getLanguagesTranslationsUser**
-
 
 
 > Map&lt;String, Object&gt; getLanguagesTranslationsUser(userId)
@@ -447,13 +439,14 @@ try {
 
 **Map&lt;String, Object&gt;**
 
-<a name="postLanguages"></a>
 
 # **postLanguages**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [Language](Language.html) postLanguages(body)
+> [Language](Language) postLanguages(body)
 
 Create Language (Deprecated)
 
@@ -502,11 +495,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Language**](Language.html)| Language | 
+| **body** | [**Language**](Language)| Language | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Language**](Language.html)
+[**Language**](Language)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

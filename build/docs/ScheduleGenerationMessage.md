@@ -1,19 +1,13 @@
----
-title: ScheduleGenerationMessage
----
-## ScheduleGenerationMessage
+# ScheduleGenerationMessage
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of the message |  [optional] |
-| **arguments** | <!----><!---->[**List&lt;SchedulerMessageArgument&gt;**](SchedulerMessageArgument.html)<!----> | The arguments describing the message |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of the message |  [optional] |
+| **arguments** | [**List&lt;SchedulerMessageArgument&gt;**](SchedulerMessageArgument) | The arguments describing the message |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -65,7 +59,8 @@ title: ScheduleGenerationMessage
 | UNABLETOSCHEDULEPLANNINGPERIODMINPAIDTIME | &quot;UnableToSchedulePlanningPeriodMinPaidTime&quot; | 
 | UNABLETOSCHEDULESHIFTVARIANCE | &quot;UnableToScheduleShiftVariance&quot; | 
 | UNABLETOSCHEDULEWORKDAY | &quot;UnableToScheduleWorkDay&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

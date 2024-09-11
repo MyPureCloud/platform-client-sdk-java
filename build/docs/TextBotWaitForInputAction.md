@@ -1,15 +1,13 @@
----
-title: TextBotWaitForInputAction
----
-## TextBotWaitForInputAction
+# TextBotWaitForInputAction
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **modeConstraints** | <!----><!---->[**TextBotModeConstraints**](TextBotModeConstraints.html)<!----> | The mode constraints for the user input. |  |
-{: class="table table-striped"}
+| **modeConstraints** | [**TextBotModeConstraints**](TextBotModeConstraints) | The mode constraints for the user input. |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,15 +1,13 @@
----
-title: AvailableTopicEntityListing
----
-## AvailableTopicEntityListing
+# AvailableTopicEntityListing
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | <!----><!---->[**List&lt;AvailableTopic&gt;**](AvailableTopic.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **entities** | [**List&lt;AvailableTopic&gt;**](AvailableTopic) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

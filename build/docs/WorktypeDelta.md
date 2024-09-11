@@ -1,33 +1,31 @@
----
-title: WorktypeDelta
----
-## WorktypeDelta
+# WorktypeDelta
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
-| **description** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
-| **statuses** | <!----><!---->[**WorkitemsAttributeChangeList**](WorkitemsAttributeChangeList.html)<!----> |  |  [optional] |
-| **defaultWorkbinId** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
-| **defaultDurationSeconds** | <!----><!---->[**WorkitemsAttributeChangeInteger**](WorkitemsAttributeChangeInteger.html)<!----> |  |  [optional] |
-| **defaultExpirationSeconds** | <!----><!---->[**WorkitemsAttributeChangeInteger**](WorkitemsAttributeChangeInteger.html)<!----> |  |  [optional] |
-| **defaultDueDurationSeconds** | <!----><!---->[**WorkitemsAttributeChangeInteger**](WorkitemsAttributeChangeInteger.html)<!----> |  |  [optional] |
-| **defaultPriority** | <!----><!---->[**WorkitemsAttributeChangeInteger**](WorkitemsAttributeChangeInteger.html)<!----> |  |  [optional] |
-| **defaultSkillIds** | <!----><!---->[**WorkitemsAttributeChangeList**](WorkitemsAttributeChangeList.html)<!----> |  |  [optional] |
-| **defaultStatusId** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
-| **defaultLanguageId** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
-| **defaultTtlSeconds** | <!----><!---->[**WorkitemsAttributeChangeInteger**](WorkitemsAttributeChangeInteger.html)<!----> |  |  [optional] |
-| **assignmentEnabled** | <!----><!---->[**WorkitemsAttributeChangeBoolean**](WorkitemsAttributeChangeBoolean.html)<!----> |  |  [optional] |
-| **defaultQueueId** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
-| **schemaId** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
-| **schemaVersion** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
-| **serviceLevelTarget** | <!----><!---->[**WorkitemsAttributeChangeInteger**](WorkitemsAttributeChangeInteger.html)<!----> |  |  [optional] |
-| **dateModified** | <!----><!---->[**WorkitemsAttributeChangeInstant**](WorkitemsAttributeChangeInstant.html)<!----> |  |  [optional] |
-| **modifiedBy** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **name** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
+| **description** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
+| **statuses** | [**WorkitemsAttributeChangeList**](WorkitemsAttributeChangeList) |  |  [optional] |
+| **defaultWorkbinId** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
+| **defaultDurationSeconds** | [**WorkitemsAttributeChangeInteger**](WorkitemsAttributeChangeInteger) |  |  [optional] |
+| **defaultExpirationSeconds** | [**WorkitemsAttributeChangeInteger**](WorkitemsAttributeChangeInteger) |  |  [optional] |
+| **defaultDueDurationSeconds** | [**WorkitemsAttributeChangeInteger**](WorkitemsAttributeChangeInteger) |  |  [optional] |
+| **defaultPriority** | [**WorkitemsAttributeChangeInteger**](WorkitemsAttributeChangeInteger) |  |  [optional] |
+| **defaultSkillIds** | [**WorkitemsAttributeChangeList**](WorkitemsAttributeChangeList) |  |  [optional] |
+| **defaultStatusId** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
+| **defaultLanguageId** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
+| **defaultTtlSeconds** | [**WorkitemsAttributeChangeInteger**](WorkitemsAttributeChangeInteger) |  |  [optional] |
+| **assignmentEnabled** | [**WorkitemsAttributeChangeBoolean**](WorkitemsAttributeChangeBoolean) |  |  [optional] |
+| **defaultQueueId** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
+| **schemaId** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
+| **schemaVersion** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
+| **serviceLevelTarget** | [**WorkitemsAttributeChangeInteger**](WorkitemsAttributeChangeInteger) |  |  [optional] |
+| **dateModified** | [**WorkitemsAttributeChangeInstant**](WorkitemsAttributeChangeInstant) |  |  [optional] |
+| **modifiedBy** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

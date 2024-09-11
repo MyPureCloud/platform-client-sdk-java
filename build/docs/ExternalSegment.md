@@ -1,20 +1,14 @@
----
-title: ExternalSegment
----
-## ExternalSegment
+# ExternalSegment
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | Identifier for the external segment in the system where it originates from. |  |
-| **name** | <!----><!---->**String**<!----> | Name for the external segment in the system where it originates from. |  |
-| **source** | [**SourceEnum**](#SourceEnum)<!----> | The external system where the segment originates from. |  |
-{: class="table table-striped"}
+| **id** | **String** | Identifier for the external segment in the system where it originates from. |  |
+| **name** | **String** | Name for the external segment in the system where it originates from. |  |
+| **source** | [**SourceEnum**](#Enum--SourceEnum) | The external system where the segment originates from. |  |
 
-
-<a name="SourceEnum"></a>
 
 ## Enum: SourceEnum
 
@@ -23,7 +17,8 @@ title: ExternalSegment
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ADOBEEXPERIENCEPLATFORM | &quot;AdobeExperiencePlatform&quot; | 
 | CUSTOM | &quot;Custom&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

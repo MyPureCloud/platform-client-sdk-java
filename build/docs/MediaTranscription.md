@@ -1,20 +1,14 @@
----
-title: MediaTranscription
----
-## MediaTranscription
+# MediaTranscription
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **displayName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **transcriptionProvider** | [**TranscriptionProviderEnum**](#TranscriptionProviderEnum)<!----> |  |  [optional] |
-| **integrationId** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **displayName** | **String** |  |  [optional] |
+| **transcriptionProvider** | [**TranscriptionProviderEnum**](#Enum--TranscriptionProviderEnum) |  |  [optional] |
+| **integrationId** | **String** |  |  [optional] |
 
-
-<a name="TranscriptionProviderEnum"></a>
 
 ## Enum: TranscriptionProviderEnum
 
@@ -23,7 +17,8 @@ title: MediaTranscription
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | VOCI | &quot;VOCI&quot; | 
 | CALLJOURNEY | &quot;CALLJOURNEY&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

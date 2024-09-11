@@ -1,16 +1,14 @@
----
-title: KnowledgeDocumentSuggestionResult
----
-## KnowledgeDocumentSuggestionResult
+# KnowledgeDocumentSuggestionResult
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **matchedPhrase** | <!----><!---->**String**<!----> | Matched phrase to the autocomplete suggestions query. |  [optional] |
-| **document** | <!----><!---->[**KnowledgeDocumentSuggestionResultDocument**](KnowledgeDocumentSuggestionResultDocument.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **matchedPhrase** | **String** | Matched phrase to the autocomplete suggestions query. |  [optional] |
+| **document** | [**KnowledgeDocumentSuggestionResultDocument**](KnowledgeDocumentSuggestionResultDocument) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

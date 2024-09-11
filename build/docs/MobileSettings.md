@@ -1,15 +1,13 @@
----
-title: MobileSettings
----
-## MobileSettings
+# MobileSettings
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **notifications** | <!----><!---->[**MobileNotificationSettings**](MobileNotificationSettings.html)<!----> | Settings for a user's mobile notifications |  |
-{: class="table table-striped"}
+| **notifications** | [**MobileNotificationSettings**](MobileNotificationSettings) | Settings for a user's mobile notifications |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

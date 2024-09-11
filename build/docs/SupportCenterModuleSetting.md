@@ -1,21 +1,15 @@
----
-title: SupportCenterModuleSetting
----
-## SupportCenterModuleSetting
+# SupportCenterModuleSetting
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Screen module type |  |
-| **enabled** | <!----><!---->**Boolean**<!----> | Whether or not knowledge portal (previously support center) screen module is enabled |  |
-| **compactCategoryModuleTemplate** | <!----><!---->[**SupportCenterCompactCategoryModuleTemplate**](SupportCenterCompactCategoryModuleTemplate.html)<!----> | Compact category module template |  [optional] |
-| **detailedCategoryModuleTemplate** | <!----><!---->[**SupportCenterDetailedCategoryModuleTemplate**](SupportCenterDetailedCategoryModuleTemplate.html)<!----> | Detailed category module template |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Screen module type |  |
+| **enabled** | **Boolean** | Whether or not knowledge portal (previously support center) screen module is enabled |  |
+| **compactCategoryModuleTemplate** | [**SupportCenterCompactCategoryModuleTemplate**](SupportCenterCompactCategoryModuleTemplate) | Compact category module template |  [optional] |
+| **detailedCategoryModuleTemplate** | [**SupportCenterDetailedCategoryModuleTemplate**](SupportCenterDetailedCategoryModuleTemplate) | Detailed category module template |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -29,7 +23,8 @@ title: SupportCenterModuleSetting
 | RESULTS | &quot;Results&quot; | 
 | ARTICLE | &quot;Article&quot; | 
 | TOPVIEWEDARTICLES | &quot;TopViewedArticles&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

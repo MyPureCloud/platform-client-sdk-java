@@ -1,20 +1,14 @@
----
-title: DialerContactlistfilterConfigChangeFilterClause
----
-## DialerContactlistfilterConfigChangeFilterClause
+# DialerContactlistfilterConfigChangeFilterClause
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **filterType** | [**FilterTypeEnum**](#FilterTypeEnum)<!----> | Contact list filter type |  [optional] |
-| **predicates** | <!----><!---->[**List&lt;DialerContactlistfilterConfigChangeFilterPredicate&gt;**](DialerContactlistfilterConfigChangeFilterPredicate.html)<!----> | The list of predicates in that clause |  [optional] |
-| **additionalProperties** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **filterType** | [**FilterTypeEnum**](#Enum--FilterTypeEnum) | Contact list filter type |  [optional] |
+| **predicates** | [**List&lt;DialerContactlistfilterConfigChangeFilterPredicate&gt;**](DialerContactlistfilterConfigChangeFilterPredicate) | The list of predicates in that clause |  [optional] |
+| **additionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
-
-<a name="FilterTypeEnum"></a>
 
 ## Enum: FilterTypeEnum
 
@@ -23,7 +17,8 @@ title: DialerContactlistfilterConfigChangeFilterClause
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | AND | &quot;AND&quot; | 
 | OR | &quot;OR&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

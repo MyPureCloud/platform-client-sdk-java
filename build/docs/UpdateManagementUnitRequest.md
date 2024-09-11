@@ -1,17 +1,15 @@
----
-title: UpdateManagementUnitRequest
----
-## UpdateManagementUnitRequest
+# UpdateManagementUnitRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | <!----><!---->**String**<!----> | The new name of the management unit |  [optional] |
-| **divisionId** | <!----><!---->**String**<!----> | The new division id for the management unit |  [optional] |
-| **settings** | <!----><!---->[**ManagementUnitSettingsRequest**](ManagementUnitSettingsRequest.html)<!----> | Updated settings for the management unit |  [optional] |
-{: class="table table-striped"}
+| **name** | **String** | The new name of the management unit |  [optional] |
+| **divisionId** | **String** | The new division id for the management unit |  [optional] |
+| **settings** | [**ManagementUnitSettingsRequest**](ManagementUnitSettingsRequest) | Updated settings for the management unit |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

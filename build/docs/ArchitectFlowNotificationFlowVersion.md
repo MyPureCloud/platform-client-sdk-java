@@ -1,15 +1,13 @@
----
-title: ArchitectFlowNotificationFlowVersion
----
-## ArchitectFlowNotificationFlowVersion
+# ArchitectFlowNotificationFlowVersion
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The version ID |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The version ID |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

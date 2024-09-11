@@ -1,15 +1,13 @@
----
-title: RateLimitAggregateQueryResponse
----
-## RateLimitAggregateQueryResponse
+# RateLimitAggregateQueryResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **results** | <!----><!---->[**List&lt;RateLimitAggregateDataContainer&gt;**](RateLimitAggregateDataContainer.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **results** | [**List&lt;RateLimitAggregateDataContainer&gt;**](RateLimitAggregateDataContainer) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

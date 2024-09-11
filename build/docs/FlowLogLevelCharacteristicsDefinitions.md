@@ -1,16 +1,14 @@
----
-title: FlowLogLevelCharacteristicsDefinitions
----
-## FlowLogLevelCharacteristicsDefinitions
+# FlowLogLevelCharacteristicsDefinitions
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **logLevels** | <!----><!---->[**List&lt;FlowLogLevel&gt;**](FlowLogLevel.html)<!----> | A list of flow log levels available to the organization. |  [optional] |
-| **characteristics** | <!----><!---->[**List&lt;FlowLogLevelCharacteristicsDefinition&gt;**](FlowLogLevelCharacteristicsDefinition.html)<!----> | A list of characteristics that the loglevels will have that are available to the organization.. |  [optional] |
-{: class="table table-striped"}
+| **logLevels** | [**List&lt;FlowLogLevel&gt;**](FlowLogLevel) | A list of flow log levels available to the organization. |  [optional] |
+| **characteristics** | [**List&lt;FlowLogLevelCharacteristicsDefinition&gt;**](FlowLogLevelCharacteristicsDefinition) | A list of characteristics that the loglevels will have that are available to the organization.. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

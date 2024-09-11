@@ -1,36 +1,31 @@
----
-title: GroupsApi
----
-## GroupsApi
+# GroupsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteGroup**](GroupsApi.html#deleteGroup) | Delete group |
-| [**deleteGroupDynamicsettings**](GroupsApi.html#deleteGroupDynamicsettings) | Remove dynamic group definition |
-| [**deleteGroupMembers**](GroupsApi.html#deleteGroupMembers) | Remove members |
-| [**getFieldconfig**](GroupsApi.html#getFieldconfig) | Fetch field config for an entity type |
-| [**getGroup**](GroupsApi.html#getGroup) | Get group |
-| [**getGroupDynamicsettings**](GroupsApi.html#getGroupDynamicsettings) | Get dynamic group definition |
-| [**getGroupIndividuals**](GroupsApi.html#getGroupIndividuals) | Get all individuals associated with the group |
-| [**getGroupMembers**](GroupsApi.html#getGroupMembers) | Get group members, includes individuals, owners, and dynamically included people |
-| [**getGroupProfile**](GroupsApi.html#getGroupProfile) | Get group profile |
-| [**getGroups**](GroupsApi.html#getGroups) | Get a group list |
-| [**getGroupsSearch**](GroupsApi.html#getGroupsSearch) | Search groups using the q64 value returned from a previous search |
-| [**getProfilesGroups**](GroupsApi.html#getProfilesGroups) | Get group profile listing |
-| [**postGroupMembers**](GroupsApi.html#postGroupMembers) | Add members |
-| [**postGroups**](GroupsApi.html#postGroups) | Create a group |
-| [**postGroupsDynamicsettingsPreview**](GroupsApi.html#postGroupsDynamicsettingsPreview) | Preview the number of users selected for a dynamic group definition query |
-| [**postGroupsSearch**](GroupsApi.html#postGroupsSearch) | Search groups |
-| [**putGroup**](GroupsApi.html#putGroup) | Update group |
-| [**putGroupDynamicsettings**](GroupsApi.html#putGroupDynamicsettings) | Create / Update dynamic group definition |
+| [**deleteGroup**](GroupsApi#deleteGroup) | Delete group |
+| [**deleteGroupDynamicsettings**](GroupsApi#deleteGroupDynamicsettings) | Remove dynamic group definition |
+| [**deleteGroupMembers**](GroupsApi#deleteGroupMembers) | Remove members |
+| [**getFieldconfig**](GroupsApi#getFieldconfig) | Fetch field config for an entity type |
+| [**getGroup**](GroupsApi#getGroup) | Get group |
+| [**getGroupDynamicsettings**](GroupsApi#getGroupDynamicsettings) | Get dynamic group definition |
+| [**getGroupIndividuals**](GroupsApi#getGroupIndividuals) | Get all individuals associated with the group |
+| [**getGroupMembers**](GroupsApi#getGroupMembers) | Get group members, includes individuals, owners, and dynamically included people |
+| [**getGroupProfile**](GroupsApi#getGroupProfile) | Get group profile |
+| [**getGroups**](GroupsApi#getGroups) | Get a group list |
+| [**getGroupsSearch**](GroupsApi#getGroupsSearch) | Search groups using the q64 value returned from a previous search |
+| [**getProfilesGroups**](GroupsApi#getProfilesGroups) | Get group profile listing |
+| [**postGroupMembers**](GroupsApi#postGroupMembers) | Add members |
+| [**postGroups**](GroupsApi#postGroups) | Create a group |
+| [**postGroupsDynamicsettingsPreview**](GroupsApi#postGroupsDynamicsettingsPreview) | Preview the number of users selected for a dynamic group definition query |
+| [**postGroupsSearch**](GroupsApi#postGroupsSearch) | Search groups |
+| [**putGroup**](GroupsApi#putGroup) | Update group |
+| [**putGroupDynamicsettings**](GroupsApi#putGroupDynamicsettings) | Create / Update dynamic group definition |
 {: class="table-striped"}
 
-<a name="deleteGroup"></a>
 
 # **deleteGroup**
-
 
 
 > Void deleteGroup(groupId)
@@ -87,10 +82,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteGroupDynamicsettings"></a>
 
 # **deleteGroupDynamicsettings**
-
 
 
 > Void deleteGroupDynamicsettings(groupId)
@@ -149,10 +142,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteGroupMembers"></a>
 
 # **deleteGroupMembers**
-
 
 
 > Empty deleteGroupMembers(groupId, ids)
@@ -211,13 +202,14 @@ try {
 
 **Empty**
 
-<a name="getFieldconfig"></a>
 
 # **getFieldconfig**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [FieldConfig](FieldConfig.html) getFieldconfig(type)
+> [FieldConfig](FieldConfig) getFieldconfig(type)
 
 Fetch field config for an entity type
 
@@ -269,15 +261,13 @@ try {
 
 ### Return type
 
-[**FieldConfig**](FieldConfig.html)
+[**FieldConfig**](FieldConfig)
 
-<a name="getGroup"></a>
 
 # **getGroup**
 
 
-
-> [Group](Group.html) getGroup(groupId)
+> [Group](Group) getGroup(groupId)
 
 Get group
 
@@ -329,15 +319,13 @@ try {
 
 ### Return type
 
-[**Group**](Group.html)
+[**Group**](Group)
 
-<a name="getGroupDynamicsettings"></a>
 
 # **getGroupDynamicsettings**
 
 
-
-> [DynamicGroupDefinition](DynamicGroupDefinition.html) getGroupDynamicsettings(groupId)
+> [DynamicGroupDefinition](DynamicGroupDefinition) getGroupDynamicsettings(groupId)
 
 Get dynamic group definition
 
@@ -392,15 +380,13 @@ try {
 
 ### Return type
 
-[**DynamicGroupDefinition**](DynamicGroupDefinition.html)
+[**DynamicGroupDefinition**](DynamicGroupDefinition)
 
-<a name="getGroupIndividuals"></a>
 
 # **getGroupIndividuals**
 
 
-
-> [UserEntityListing](UserEntityListing.html) getGroupIndividuals(groupId)
+> [UserEntityListing](UserEntityListing) getGroupIndividuals(groupId)
 
 Get all individuals associated with the group
 
@@ -452,15 +438,13 @@ try {
 
 ### Return type
 
-[**UserEntityListing**](UserEntityListing.html)
+[**UserEntityListing**](UserEntityListing)
 
-<a name="getGroupMembers"></a>
 
 # **getGroupMembers**
 
 
-
-> [UserEntityListing](UserEntityListing.html) getGroupMembers(groupId, pageSize, pageNumber, sortOrder, expand)
+> [UserEntityListing](UserEntityListing) getGroupMembers(groupId, pageSize, pageNumber, sortOrder, expand)
 
 Get group members, includes individuals, owners, and dynamically included people
 
@@ -514,21 +498,22 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UserEntityListing**](UserEntityListing.html)
+[**UserEntityListing**](UserEntityListing)
 
-<a name="getGroupProfile"></a>
 
 # **getGroupProfile**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [GroupProfile](GroupProfile.html) getGroupProfile(groupId, fields)
+> [GroupProfile](GroupProfile) getGroupProfile(groupId, fields)
 
 Get group profile
 
@@ -584,15 +569,13 @@ try {
 
 ### Return type
 
-[**GroupProfile**](GroupProfile.html)
+[**GroupProfile**](GroupProfile)
 
-<a name="getGroups"></a>
 
 # **getGroups**
 
 
-
-> [GroupEntityListing](GroupEntityListing.html) getGroups(pageSize, pageNumber, id, jabberId, sortOrder)
+> [GroupEntityListing](GroupEntityListing) getGroups(pageSize, pageNumber, id, jabberId, sortOrder)
 
 Get a group list
 
@@ -644,23 +627,21 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] 
-| **jabberId** | [**List&lt;String&gt;**](String.html)| A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| id | [optional] 
+| **jabberId** | [**List&lt;String&gt;**](String)| A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional] 
 | **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**GroupEntityListing**](GroupEntityListing.html)
+[**GroupEntityListing**](GroupEntityListing)
 
-<a name="getGroupsSearch"></a>
 
 # **getGroupsSearch**
 
 
-
-> [GroupsSearchResponse](GroupsSearchResponse.html) getGroupsSearch(q64, expand)
+> [GroupsSearchResponse](GroupsSearchResponse) getGroupsSearch(q64, expand)
 
 Search groups using the q64 value returned from a previous search
 
@@ -708,21 +689,22 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **q64** | **String**| q64 | 
-| **expand** | [**List&lt;String&gt;**](String.html)| expand | [optional] 
+| **expand** | [**List&lt;String&gt;**](String)| expand | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**GroupsSearchResponse**](GroupsSearchResponse.html)
+[**GroupsSearchResponse**](GroupsSearchResponse)
 
-<a name="getProfilesGroups"></a>
 
 # **getProfilesGroups**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [GroupProfileEntityListing](GroupProfileEntityListing.html) getProfilesGroups(pageSize, pageNumber, id, jabberId, sortOrder)
+> [GroupProfileEntityListing](GroupProfileEntityListing) getProfilesGroups(pageSize, pageNumber, id, jabberId, sortOrder)
 
 Get group profile listing
 
@@ -776,20 +758,18 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] 
-| **jabberId** | [**List&lt;String&gt;**](String.html)| A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| id | [optional] 
+| **jabberId** | [**List&lt;String&gt;**](String)| A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional] 
 | **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**GroupProfileEntityListing**](GroupProfileEntityListing.html)
+[**GroupProfileEntityListing**](GroupProfileEntityListing)
 
-<a name="postGroupMembers"></a>
 
 # **postGroupMembers**
-
 
 
 > Empty postGroupMembers(groupId, body)
@@ -840,7 +820,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **groupId** | **String**| Group ID | 
-| **body** | [**GroupMembersUpdate**](GroupMembersUpdate.html)| Add members | 
+| **body** | [**GroupMembersUpdate**](GroupMembersUpdate)| Add members | 
 {: class="table-striped"}
 
 
@@ -848,13 +828,11 @@ try {
 
 **Empty**
 
-<a name="postGroups"></a>
 
 # **postGroups**
 
 
-
-> [Group](Group.html) postGroups(body)
+> [Group](Group) postGroups(body)
 
 Create a group
 
@@ -901,21 +879,22 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**GroupCreate**](GroupCreate.html)| Group | 
+| **body** | [**GroupCreate**](GroupCreate)| Group | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Group**](Group.html)
+[**Group**](Group)
 
-<a name="postGroupsDynamicsettingsPreview"></a>
 
 # **postGroupsDynamicsettingsPreview**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [DynamicGroupQueryPreview](DynamicGroupQueryPreview.html) postGroupsDynamicsettingsPreview(body)
+> [DynamicGroupQueryPreview](DynamicGroupQueryPreview) postGroupsDynamicsettingsPreview(body)
 
 Preview the number of users selected for a dynamic group definition query
 
@@ -964,21 +943,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**DynamicGroupQuery**](DynamicGroupQuery.html)| Group query to preview | 
+| **body** | [**DynamicGroupQuery**](DynamicGroupQuery)| Group query to preview | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DynamicGroupQueryPreview**](DynamicGroupQueryPreview.html)
+[**DynamicGroupQueryPreview**](DynamicGroupQueryPreview)
 
-<a name="postGroupsSearch"></a>
 
 # **postGroupsSearch**
 
 
-
-> [GroupsSearchResponse](GroupsSearchResponse.html) postGroupsSearch(body)
+> [GroupsSearchResponse](GroupsSearchResponse) postGroupsSearch(body)
 
 Search groups
 
@@ -1024,21 +1001,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**GroupSearchRequest**](GroupSearchRequest.html)| Search request options | 
+| **body** | [**GroupSearchRequest**](GroupSearchRequest)| Search request options | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**GroupsSearchResponse**](GroupsSearchResponse.html)
+[**GroupsSearchResponse**](GroupsSearchResponse)
 
-<a name="putGroup"></a>
 
 # **putGroup**
 
 
-
-> [Group](Group.html) putGroup(groupId, body)
+> [Group](Group) putGroup(groupId, body)
 
 Update group
 
@@ -1087,18 +1062,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **groupId** | **String**| Group ID | 
-| **body** | [**GroupUpdate**](GroupUpdate.html)| Group | [optional] 
+| **body** | [**GroupUpdate**](GroupUpdate)| Group | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Group**](Group.html)
+[**Group**](Group)
 
-<a name="putGroupDynamicsettings"></a>
 
 # **putGroupDynamicsettings**
-
 
 
 > Void putGroupDynamicsettings(groupId, body)
@@ -1151,7 +1124,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **groupId** | **String**| Group ID | 
-| **body** | [**DynamicGroupQuery**](DynamicGroupQuery.html)| Create/Update dynamic groups | 
+| **body** | [**DynamicGroupQuery**](DynamicGroupQuery)| Create/Update dynamic groups | 
 {: class="table-striped"}
 
 
@@ -1159,3 +1132,5 @@ try {
 
 null (empty response body)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

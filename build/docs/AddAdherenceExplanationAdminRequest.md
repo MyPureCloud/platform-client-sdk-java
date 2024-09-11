@@ -1,22 +1,16 @@
----
-title: AddAdherenceExplanationAdminRequest
----
-## AddAdherenceExplanationAdminRequest
+# AddAdherenceExplanationAdminRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of the adherence explanation |  |
-| **startDate** | <!----><!---->[**Date**](Date.html)<!----> | The start timestamp of the adherence explanation in ISO-8601 format |  |
-| **lengthMinutes** | <!----><!---->**Integer**<!----> | The length of the adherence explanation in minutes |  |
-| **notes** | <!----><!---->**String**<!----> | Notes about the adherence explanation |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> | The status of the adherence explanation |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of the adherence explanation |  |
+| **startDate** | [**Date**](Date) | The start timestamp of the adherence explanation in ISO-8601 format |  |
+| **lengthMinutes** | **Integer** | The length of the adherence explanation in minutes |  |
+| **notes** | **String** | Notes about the adherence explanation |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the adherence explanation |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -24,10 +18,7 @@ title: AddAdherenceExplanationAdminRequest
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | LATE | &quot;Late&quot; | 
-{: class="table table-striped"}
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -37,7 +28,8 @@ title: AddAdherenceExplanationAdminRequest
 | PENDING | &quot;Pending&quot; | 
 | APPROVED | &quot;Approved&quot; | 
 | DENIED | &quot;Denied&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

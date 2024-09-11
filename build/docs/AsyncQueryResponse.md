@@ -1,15 +1,13 @@
----
-title: AsyncQueryResponse
----
-## AsyncQueryResponse
+# AsyncQueryResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **jobId** | <!----><!---->**String**<!----> | Unique identifier for the async query execution. Can be used to check the status of the query and retrieve results. |  [optional] |
-{: class="table table-striped"}
+| **jobId** | **String** | Unique identifier for the async query execution. Can be used to check the status of the query and retrieve results. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

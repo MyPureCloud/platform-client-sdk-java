@@ -1,31 +1,25 @@
----
-title: LimitChangeRequestDetails
----
-## LimitChangeRequestDetails
+# LimitChangeRequestDetails
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **key** | <!----><!---->**String**<!----> | Limit key to be overridden (see https://developer.mypurecloud.com/api/rest/v2/organization/limits.html#available_limits) |  |
-| **namespace** | [**NamespaceEnum**](#NamespaceEnum)<!----> | Namespace the key belongs to (see https://developer.mypurecloud.com/api/rest/v2/organization/limits.html#available_limits) |  |
-| **requestedValue** | <!----><!---->**Double**<!----> | Requested limit value for a given key |  |
-| **description** | <!----><!---->**String**<!----> | Description of the need for the limit change request |  |
-| **supportCaseUrl** | <!----><!---->**String**<!----> | The support case url created by Care |  |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> | Current status of the limit change request |  [optional] |
-| **currentValue** | <!----><!---->**Double**<!----> | Current limit value for a given key |  [optional] |
-| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | The date of the limit change request creation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **statusHistory** | <!----><!---->[**List&lt;StatusChange&gt;**](StatusChange.html)<!----> | List of statuses that a limit change request has gone through |  [optional] |
-| **dateCompleted** | <!----><!---->[**Date**](Date.html)<!----> | The date of the limit change request completion (ChangeImplemented, Rejected, or RollbackImplemented. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **rejectReason** | [**RejectReasonEnum**](#RejectReasonEnum)<!----> | The reason for rejecting the limit override request |  [optional] |
-| **approvalNamespaces** | <!----><!---->[**List&lt;ApprovalNamespace&gt;**](ApprovalNamespace.html)<!----> | The approval breakdown for this override request. |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **key** | **String** | Limit key to be overridden (see https://developer.mypurecloud.com/api/rest/v2/organization/limits.html#available_limits) |  |
+| **namespace** | [**NamespaceEnum**](#Enum--NamespaceEnum) | Namespace the key belongs to (see https://developer.mypurecloud.com/api/rest/v2/organization/limits.html#available_limits) |  |
+| **requestedValue** | **Double** | Requested limit value for a given key |  |
+| **description** | **String** | Description of the need for the limit change request |  |
+| **supportCaseUrl** | **String** | The support case url created by Care |  |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) | Current status of the limit change request |  [optional] |
+| **currentValue** | **Double** | Current limit value for a given key |  [optional] |
+| **dateCreated** | [**Date**](Date) | The date of the limit change request creation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **statusHistory** | [**List&lt;StatusChange&gt;**](StatusChange) | List of statuses that a limit change request has gone through |  [optional] |
+| **dateCompleted** | [**Date**](Date) | The date of the limit change request completion (ChangeImplemented, Rejected, or RollbackImplemented. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **rejectReason** | [**RejectReasonEnum**](#Enum--RejectReasonEnum) | The reason for rejecting the limit override request |  [optional] |
+| **approvalNamespaces** | [**List&lt;ApprovalNamespace&gt;**](ApprovalNamespace) | The approval breakdown for this override request. |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="NamespaceEnum"></a>
 
 ## Enum: NamespaceEnum
 
@@ -101,10 +95,7 @@ title: LimitChangeRequestDetails
 | WORKFORCE_MANAGEMENT_FORECAST | &quot;workforce.management.forecast&quot; | 
 | WORKFORCE_MANAGEMENT | &quot;workforce.management&quot; | 
 | SYSTEM | &quot;system&quot; | 
-{: class="table table-striped"}
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -124,10 +115,7 @@ title: LimitChangeRequestDetails
 | CHANGEIMPLEMENTED | &quot;ChangeImplemented&quot; | 
 | IMPLEMENTINGROLLBACK | &quot;ImplementingRollback&quot; | 
 | ROLLBACKIMPLEMENTED | &quot;RollbackImplemented&quot; | 
-{: class="table table-striped"}
 
-
-<a name="RejectReasonEnum"></a>
 
 ## Enum: RejectReasonEnum
 
@@ -139,7 +127,8 @@ title: LimitChangeRequestDetails
 | PLATFORMMISUSE | &quot;PlatformMisuse&quot; | 
 | PLATFORMSTABILITY | &quot;PlatformStability&quot; | 
 | OTHERREASON | &quot;OtherReason&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

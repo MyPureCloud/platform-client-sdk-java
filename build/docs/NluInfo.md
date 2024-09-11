@@ -1,19 +1,17 @@
----
-title: NluInfo
----
-## NluInfo
+# NluInfo
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **domain** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> |  |  [optional] |
-| **version** | <!----><!---->[**NluDomainVersion**](NluDomainVersion.html)<!----> |  |  [optional] |
-| **intents** | <!----><!---->[**List&lt;Intent&gt;**](Intent.html)<!----> |  |  [optional] |
-| **engineVersion** | <!----><!---->**String**<!----> |  |  [optional] |
-| **nluData** | <!----><!---->[**NluDomainVersion**](NluDomainVersion.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **domain** | [**AddressableEntityRef**](AddressableEntityRef) |  |  [optional] |
+| **version** | [**NluDomainVersion**](NluDomainVersion) |  |  [optional] |
+| **intents** | [**List&lt;Intent&gt;**](Intent) |  |  [optional] |
+| **engineVersion** | **String** |  |  [optional] |
+| **nluData** | [**NluDomainVersion**](NluDomainVersion) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

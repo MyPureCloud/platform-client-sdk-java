@@ -1,18 +1,12 @@
----
-title: SetTimeOffIntegrationStatusRequest
----
-## SetTimeOffIntegrationStatusRequest
+# SetTimeOffIntegrationStatusRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **integrationStatus** | [**IntegrationStatusEnum**](#IntegrationStatusEnum)<!----> | The integration status value for the time off request |  |
-{: class="table table-striped"}
+| **integrationStatus** | [**IntegrationStatusEnum**](#Enum--IntegrationStatusEnum) | The integration status value for the time off request |  |
 
-
-<a name="IntegrationStatusEnum"></a>
 
 ## Enum: IntegrationStatusEnum
 
@@ -23,7 +17,8 @@ title: SetTimeOffIntegrationStatusRequest
 | ERROR | &quot;Error&quot; | 
 | AUTOMATICALLYCOMPLETE | &quot;AutomaticallyComplete&quot; | 
 | MANUALLYCOMPLETE | &quot;ManuallyComplete&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

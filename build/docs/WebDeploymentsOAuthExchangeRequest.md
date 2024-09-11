@@ -1,17 +1,15 @@
----
-title: WebDeploymentsOAuthExchangeRequest
----
-## WebDeploymentsOAuthExchangeRequest
+# WebDeploymentsOAuthExchangeRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **deploymentId** | <!----><!---->**String**<!----> | The WebDeployment ID |  |
-| **journeyContext** | <!----><!---->[**WebDeploymentsJourneyContext**](WebDeploymentsJourneyContext.html)<!----> | A Customer journey context. |  [optional] |
-| **oauth** | <!----><!---->[**WebDeploymentsOAuthRequestParameters**](WebDeploymentsOAuthRequestParameters.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **deploymentId** | **String** | The WebDeployment ID |  |
+| **journeyContext** | [**WebDeploymentsJourneyContext**](WebDeploymentsJourneyContext) | A Customer journey context. |  [optional] |
+| **oauth** | [**WebDeploymentsOAuthRequestParameters**](WebDeploymentsOAuthRequestParameters) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

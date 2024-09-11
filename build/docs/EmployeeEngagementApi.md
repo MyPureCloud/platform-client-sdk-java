@@ -1,23 +1,18 @@
----
-title: EmployeeEngagementApi
----
-## EmployeeEngagementApi
+# EmployeeEngagementApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteEmployeeengagementCelebration**](EmployeeEngagementApi.html#deleteEmployeeengagementCelebration) | Deletes a celebration |
-| [**getEmployeeengagementCelebrations**](EmployeeEngagementApi.html#getEmployeeengagementCelebrations) | Get all celebrations |
-| [**getEmployeeengagementRecognition**](EmployeeEngagementApi.html#getEmployeeengagementRecognition) | Gets a single recognition |
-| [**patchEmployeeengagementCelebration**](EmployeeEngagementApi.html#patchEmployeeengagementCelebration) | Set a state for a celebration |
-| [**postEmployeeengagementRecognitions**](EmployeeEngagementApi.html#postEmployeeengagementRecognitions) | Creates a recognition |
+| [**deleteEmployeeengagementCelebration**](EmployeeEngagementApi#deleteEmployeeengagementCelebration) | Deletes a celebration |
+| [**getEmployeeengagementCelebrations**](EmployeeEngagementApi#getEmployeeengagementCelebrations) | Get all celebrations |
+| [**getEmployeeengagementRecognition**](EmployeeEngagementApi#getEmployeeengagementRecognition) | Gets a single recognition |
+| [**patchEmployeeengagementCelebration**](EmployeeEngagementApi#patchEmployeeengagementCelebration) | Set a state for a celebration |
+| [**postEmployeeengagementRecognitions**](EmployeeEngagementApi#postEmployeeengagementRecognitions) | Creates a recognition |
 {: class="table-striped"}
 
-<a name="deleteEmployeeengagementCelebration"></a>
 
 # **deleteEmployeeengagementCelebration**
-
 
 
 > Void deleteEmployeeengagementCelebration(celebrationId)
@@ -74,13 +69,11 @@ try {
 
 null (empty response body)
 
-<a name="getEmployeeengagementCelebrations"></a>
 
 # **getEmployeeengagementCelebrations**
 
 
-
-> [GetCelebrationListing](GetCelebrationListing.html) getEmployeeengagementCelebrations(pageNumber, pageSize)
+> [GetCelebrationListing](GetCelebrationListing) getEmployeeengagementCelebrations(pageNumber, pageSize)
 
 Get all celebrations
 
@@ -135,15 +128,13 @@ try {
 
 ### Return type
 
-[**GetCelebrationListing**](GetCelebrationListing.html)
+[**GetCelebrationListing**](GetCelebrationListing)
 
-<a name="getEmployeeengagementRecognition"></a>
 
 # **getEmployeeengagementRecognition**
 
 
-
-> [Recognition](Recognition.html) getEmployeeengagementRecognition(recognitionId)
+> [Recognition](Recognition) getEmployeeengagementRecognition(recognitionId)
 
 Gets a single recognition
 
@@ -196,12 +187,10 @@ try {
 
 ### Return type
 
-[**Recognition**](Recognition.html)
+[**Recognition**](Recognition)
 
-<a name="patchEmployeeengagementCelebration"></a>
 
 # **patchEmployeeengagementCelebration**
-
 
 
 > Void patchEmployeeengagementCelebration(celebrationId, body)
@@ -252,7 +241,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **celebrationId** | **String**| The ID of the celebration | 
-| **body** | [**CelebrationStateParam**](CelebrationStateParam.html)| Patch Celebration state | 
+| **body** | [**CelebrationStateParam**](CelebrationStateParam)| Patch Celebration state | 
 {: class="table-striped"}
 
 
@@ -260,13 +249,11 @@ try {
 
 null (empty response body)
 
-<a name="postEmployeeengagementRecognitions"></a>
 
 # **postEmployeeengagementRecognitions**
 
 
-
-> [RecognitionBase](RecognitionBase.html) postEmployeeengagementRecognitions(body)
+> [RecognitionBase](RecognitionBase) postEmployeeengagementRecognitions(body)
 
 Creates a recognition
 
@@ -313,11 +300,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CreateRecognition**](CreateRecognition.html)| Create Recognition | 
+| **body** | [**CreateRecognition**](CreateRecognition)| Create Recognition | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**RecognitionBase**](RecognitionBase.html)
+[**RecognitionBase**](RecognitionBase)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

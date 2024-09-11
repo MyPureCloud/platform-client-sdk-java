@@ -1,25 +1,19 @@
----
-title: CommonRulePredicate
----
-## CommonRulePredicate
+# CommonRulePredicate
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **metricType** | [**MetricTypeEnum**](#MetricTypeEnum)<!----> | The type of metric being evaluated. |  |
-| **metricValueType** | [**MetricValueTypeEnum**](#MetricValueTypeEnum)<!----> | The type of metric value being evaluated. |  |
-| **comparisonOperator** | [**ComparisonOperatorEnum**](#ComparisonOperatorEnum)<!----> | The comparison operator being performed on the metric. |  |
-| **value** | <!----><!---->**Double**<!----> | The value the metric will be compared to. |  |
-| **status** | <!----><!---->**String**<!----> | The status of the entity corresponding to the metric. |  [optional] |
-| **entity** | <!----><!---->[**CommonRulePredicateEntity**](CommonRulePredicateEntity.html)<!----> | The entity whose metric is being represented. |  |
-| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> | The media type of the conversation the metric describes. |  [optional] |
-| **metric** | [**MetricEnum**](#MetricEnum)<!----> | The metric being evaluated. |  |
-{: class="table table-striped"}
+| **metricType** | [**MetricTypeEnum**](#Enum--MetricTypeEnum) | The type of metric being evaluated. |  |
+| **metricValueType** | [**MetricValueTypeEnum**](#Enum--MetricValueTypeEnum) | The type of metric value being evaluated. |  |
+| **comparisonOperator** | [**ComparisonOperatorEnum**](#Enum--ComparisonOperatorEnum) | The comparison operator being performed on the metric. |  |
+| **value** | **Double** | The value the metric will be compared to. |  |
+| **status** | **String** | The status of the entity corresponding to the metric. |  [optional] |
+| **entity** | [**CommonRulePredicateEntity**](CommonRulePredicateEntity) | The entity whose metric is being represented. |  |
+| **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) | The media type of the conversation the metric describes. |  [optional] |
+| **metric** | [**MetricEnum**](#Enum--MetricEnum) | The metric being evaluated. |  |
 
-
-<a name="MetricTypeEnum"></a>
 
 ## Enum: MetricTypeEnum
 
@@ -28,10 +22,7 @@ title: CommonRulePredicate
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INTERVAL | &quot;Interval&quot; | 
 | INSTANCE | &quot;Instance&quot; | 
-{: class="table table-striped"}
 
-
-<a name="MetricValueTypeEnum"></a>
 
 ## Enum: MetricValueTypeEnum
 
@@ -45,10 +36,7 @@ title: CommonRulePredicate
 | PERCENTAGE | &quot;Percentage&quot; | 
 | AVERAGE | &quot;Average&quot; | 
 | OBSERVATION | &quot;Observation&quot; | 
-{: class="table table-striped"}
 
-
-<a name="ComparisonOperatorEnum"></a>
 
 ## Enum: ComparisonOperatorEnum
 
@@ -61,10 +49,7 @@ title: CommonRulePredicate
 | LTE | &quot;Lte&quot; | 
 | EQ | &quot;Eq&quot; | 
 | NE | &quot;Ne&quot; | 
-{: class="table table-striped"}
 
-
-<a name="MediaTypeEnum"></a>
 
 ## Enum: MediaTypeEnum
 
@@ -76,10 +61,7 @@ title: CommonRulePredicate
 | EMAIL | &quot;Email&quot; | 
 | CALLBACK | &quot;Callback&quot; | 
 | MESSAGE | &quot;Message&quot; | 
-{: class="table table-striped"}
 
-
-<a name="MetricEnum"></a>
 
 ## Enum: MetricEnum
 
@@ -113,7 +95,8 @@ title: CommonRulePredicate
 | OINTERACTING | &quot;oInteracting&quot; | 
 | TFLOWOUT | &quot;tFlowOut&quot; | 
 | TADHERENCESTATUS | &quot;tAdherenceStatus&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

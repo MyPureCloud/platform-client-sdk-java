@@ -1,20 +1,14 @@
----
-title: MailFromResult
----
-## MailFromResult
+# MailFromResult
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> | The verification status. |  [optional] |
-| **records** | <!----><!---->[**List&lt;Record&gt;**](Record.html)<!----> | The list of DNS records that pertain that need to exist for verification. |  [optional] |
-| **mailFromDomain** | <!----><!---->**String**<!----> | The custom MAIL FROM domain. |  |
-{: class="table table-striped"}
+| **status** | [**StatusEnum**](#Enum--StatusEnum) | The verification status. |  [optional] |
+| **records** | [**List&lt;Record&gt;**](Record) | The list of DNS records that pertain that need to exist for verification. |  [optional] |
+| **mailFromDomain** | **String** | The custom MAIL FROM domain. |  |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -25,7 +19,8 @@ title: MailFromResult
 | PENDING | &quot;PENDING&quot; | 
 | VERIFIED | &quot;VERIFIED&quot; | 
 | UNKNOWN | &quot;UNKNOWN&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

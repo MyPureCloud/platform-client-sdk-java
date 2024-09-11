@@ -1,20 +1,14 @@
----
-title: WorkitemsUserEventsNotificationAssignmentSegment
----
-## WorkitemsUserEventsNotificationAssignmentSegment
+# WorkitemsUserEventsNotificationAssignmentSegment
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **startState** | [**StartStateEnum**](#StartStateEnum)<!----> |  |  [optional] |
-| **endState** | [**EndStateEnum**](#EndStateEnum)<!----> |  |  [optional] |
-| **durationMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **startState** | [**StartStateEnum**](#Enum--StartStateEnum) |  |  [optional] |
+| **endState** | [**EndStateEnum**](#Enum--EndStateEnum) |  |  [optional] |
+| **durationMs** | **Integer** |  |  [optional] |
 
-
-<a name="StartStateEnum"></a>
 
 ## Enum: StartStateEnum
 
@@ -34,10 +28,7 @@ title: WorkitemsUserEventsNotificationAssignmentSegment
 | ACDCANCELLED | &quot;AcdCancelled&quot; | 
 | TERMINATED | &quot;Terminated&quot; | 
 | ACDEXPIRED | &quot;AcdExpired&quot; | 
-{: class="table table-striped"}
 
-
-<a name="EndStateEnum"></a>
 
 ## Enum: EndStateEnum
 
@@ -57,7 +48,8 @@ title: WorkitemsUserEventsNotificationAssignmentSegment
 | ACDCANCELLED | &quot;AcdCancelled&quot; | 
 | TERMINATED | &quot;Terminated&quot; | 
 | ACDEXPIRED | &quot;AcdExpired&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

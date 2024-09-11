@@ -1,27 +1,21 @@
----
-title: KlaxonHeartBeatAlertsTopicHeartBeatAlert
----
-## KlaxonHeartBeatAlertsTopicHeartBeatAlert
+# KlaxonHeartBeatAlertsTopicHeartBeatAlert
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **senderId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **heartBeatTimeoutInMinutes** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-| **ruleId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **startDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **endDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **notificationUsers** | <!----><!---->[**List&lt;KlaxonHeartBeatAlertsTopicNotificationUser&gt;**](KlaxonHeartBeatAlertsTopicNotificationUser.html)<!----> |  |  [optional] |
-| **alertTypes** | <!---->[**List&lt;AlertTypesEnum&gt;**](#AlertTypesEnum)<!----> |  |  [optional] |
-| **ruleType** | [**RuleTypeEnum**](#RuleTypeEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **senderId** | **String** |  |  [optional] |
+| **heartBeatTimeoutInMinutes** | [**BigDecimal**](BigDecimal) |  |  [optional] |
+| **ruleId** | **String** |  |  [optional] |
+| **startDate** | [**Date**](Date) |  |  [optional] |
+| **endDate** | [**Date**](Date) |  |  [optional] |
+| **notificationUsers** | [**List&lt;KlaxonHeartBeatAlertsTopicNotificationUser&gt;**](KlaxonHeartBeatAlertsTopicNotificationUser) |  |  [optional] |
+| **alertTypes** | [**List<AlertTypesEnum>**](#Enum--AlertTypesEnum) |  |  [optional] |
+| **ruleType** | [**RuleTypeEnum**](#Enum--RuleTypeEnum) |  |  [optional] |
 
-
-<a name="AlertTypesEnum"></a>
 
 ## Enum: AlertTypesEnum
 
@@ -30,10 +24,7 @@ title: KlaxonHeartBeatAlertsTopicHeartBeatAlert
 | SMS | &quot;SMS&quot; |
 | DEVICE | &quot;DEVICE&quot; |
 | EMAIL | &quot;EMAIL&quot; |
-{: class="table table-striped"}
 
-
-<a name="RuleTypeEnum"></a>
 
 ## Enum: RuleTypeEnum
 
@@ -41,7 +32,8 @@ title: KlaxonHeartBeatAlertsTopicHeartBeatAlert
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | EDGE | &quot;EDGE&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,21 +1,15 @@
----
-title: CreateBusinessUnitSettingsRequest
----
-## CreateBusinessUnitSettingsRequest
+# CreateBusinessUnitSettingsRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **startDayOfWeek** | [**StartDayOfWeekEnum**](#StartDayOfWeekEnum)<!----> | The start day of week for this business unit |  |
-| **timeZone** | <!----><!---->**String**<!----> | The time zone for this business unit, using the Olsen tz database format |  |
-| **shortTermForecasting** | <!----><!---->[**BuShortTermForecastingSettings**](BuShortTermForecastingSettings.html)<!----> | Short term forecasting settings |  [optional] |
-| **scheduling** | <!----><!---->[**BuSchedulingSettingsRequest**](BuSchedulingSettingsRequest.html)<!----> | Scheduling settings |  [optional] |
-{: class="table table-striped"}
+| **startDayOfWeek** | [**StartDayOfWeekEnum**](#Enum--StartDayOfWeekEnum) | The start day of week for this business unit |  |
+| **timeZone** | **String** | The time zone for this business unit, using the Olsen tz database format |  |
+| **shortTermForecasting** | [**BuShortTermForecastingSettings**](BuShortTermForecastingSettings) | Short term forecasting settings |  [optional] |
+| **scheduling** | [**BuSchedulingSettingsRequest**](BuSchedulingSettingsRequest) | Scheduling settings |  [optional] |
 
-
-<a name="StartDayOfWeekEnum"></a>
 
 ## Enum: StartDayOfWeekEnum
 
@@ -29,7 +23,8 @@ title: CreateBusinessUnitSettingsRequest
 | THURSDAY | &quot;Thursday&quot; | 
 | FRIDAY | &quot;Friday&quot; | 
 | SATURDAY | &quot;Saturday&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

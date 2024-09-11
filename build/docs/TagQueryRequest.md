@@ -1,17 +1,15 @@
----
-title: TagQueryRequest
----
-## TagQueryRequest
+# TagQueryRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **query** | <!----><!---->**String**<!----> |  |  [optional] |
-| **pageNumber** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **pageSize** | <!----><!---->**Integer**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **query** | **String** |  |  [optional] |
+| **pageNumber** | **Integer** |  |  [optional] |
+| **pageSize** | **Integer** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

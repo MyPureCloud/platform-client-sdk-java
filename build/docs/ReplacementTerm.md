@@ -1,20 +1,14 @@
----
-title: ReplacementTerm
----
-## ReplacementTerm
+# ReplacementTerm
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-| **existingValue** | <!----><!---->**String**<!----> |  |  [optional] |
-| **updatedValue** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
+| **existingValue** | **String** |  |  [optional] |
+| **updatedValue** | **String** |  |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -26,7 +20,8 @@ title: ReplacementTerm
 | PHONE | &quot;PHONE&quot; | 
 | EMAIL | &quot;EMAIL&quot; | 
 | TWITTER | &quot;TWITTER&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

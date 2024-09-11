@@ -1,15 +1,13 @@
----
-title: MetadataResults
----
-## MetadataResults
+# MetadataResults
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | <!----><!---->[**List&lt;MetadataResultEntity&gt;**](MetadataResultEntity.html)<!----> | list of resources |  [optional] |
-{: class="table table-striped"}
+| **entities** | [**List&lt;MetadataResultEntity&gt;**](MetadataResultEntity) | list of resources |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

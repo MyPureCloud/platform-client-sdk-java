@@ -1,15 +1,13 @@
----
-title: SupportCenterImage
----
-## SupportCenterImage
+# SupportCenterImage
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **source** | <!----><!---->[**SupportCenterImageSource**](SupportCenterImageSource.html)<!----> | Source URLs for image |  |
-{: class="table table-striped"}
+| **source** | [**SupportCenterImageSource**](SupportCenterImageSource) | Source URLs for image |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

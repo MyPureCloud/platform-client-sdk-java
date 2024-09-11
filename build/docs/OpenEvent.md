@@ -1,18 +1,12 @@
----
-title: OpenEvent
----
-## OpenEvent
+# OpenEvent
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **eventType** | [**EventTypeEnum**](#EventTypeEnum)<!----> | Type of this event element |  |
-{: class="table table-striped"}
+| **eventType** | [**EventTypeEnum**](#Enum--EventTypeEnum) | Type of this event element |  |
 
-
-<a name="EventTypeEnum"></a>
 
 ## Enum: EventTypeEnum
 
@@ -20,7 +14,8 @@ title: OpenEvent
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | TYPING | &quot;Typing&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,20 +1,14 @@
----
-title: AttributeFilterItem
----
-## AttributeFilterItem
+# AttributeFilterItem
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> |  |  [optional] |
-| **values** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **operator** | [**OperatorEnum**](#Enum--OperatorEnum) |  |  [optional] |
+| **values** | **List&lt;String&gt;** |  |  [optional] |
 
-
-<a name="OperatorEnum"></a>
 
 ## Enum: OperatorEnum
 
@@ -30,7 +24,8 @@ title: AttributeFilterItem
 | GREATERTHAN | &quot;GREATERTHAN&quot; | 
 | GREATERTHANEQUALS | &quot;GREATERTHANEQUALS&quot; | 
 | CONTAINS | &quot;CONTAINS&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

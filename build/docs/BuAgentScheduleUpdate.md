@@ -1,19 +1,13 @@
----
-title: BuAgentScheduleUpdate
----
-## BuAgentScheduleUpdate
+# BuAgentScheduleUpdate
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of update |  [optional] |
-| **shiftStartDates** | <!----><!---->[**List&lt;Date&gt;**](Date.html)<!----> | The start date for the affected shifts |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of update |  [optional] |
+| **shiftStartDates** | [**List&lt;Date&gt;**](Date) | The start date for the affected shifts |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -23,7 +17,8 @@ title: BuAgentScheduleUpdate
 | ADDED | &quot;Added&quot; | 
 | EDITED | &quot;Edited&quot; | 
 | DELETED | &quot;Deleted&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,28 +1,22 @@
----
-title: Share
----
-## Share
+# Share
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **sharedEntityType** | [**SharedEntityTypeEnum**](#SharedEntityTypeEnum)<!----> |  |  [optional] |
-| **sharedEntity** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
-| **memberType** | [**MemberTypeEnum**](#MemberTypeEnum)<!----> |  |  [optional] |
-| **member** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
-| **sharedBy** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
-| **workspace** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
-| **user** | <!----><!---->[**User**](User.html)<!----> |  |  [optional] |
-| **group** | <!----><!---->[**Group**](Group.html)<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **sharedEntityType** | [**SharedEntityTypeEnum**](#Enum--SharedEntityTypeEnum) |  |  [optional] |
+| **sharedEntity** | [**DomainEntityRef**](DomainEntityRef) |  |  [optional] |
+| **memberType** | [**MemberTypeEnum**](#Enum--MemberTypeEnum) |  |  [optional] |
+| **member** | [**DomainEntityRef**](DomainEntityRef) |  |  [optional] |
+| **sharedBy** | [**DomainEntityRef**](DomainEntityRef) |  |  [optional] |
+| **workspace** | [**DomainEntityRef**](DomainEntityRef) |  |  [optional] |
+| **user** | [**User**](User) |  |  [optional] |
+| **group** | [**Group**](Group) |  |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="SharedEntityTypeEnum"></a>
 
 ## Enum: SharedEntityTypeEnum
 
@@ -30,10 +24,7 @@ title: Share
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | DOCUMENT | &quot;DOCUMENT&quot; | 
-{: class="table table-striped"}
 
-
-<a name="MemberTypeEnum"></a>
 
 ## Enum: MemberTypeEnum
 
@@ -43,7 +34,8 @@ title: Share
 | USER | &quot;USER&quot; | 
 | GROUP | &quot;GROUP&quot; | 
 | PUBLIC | &quot;PUBLIC&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

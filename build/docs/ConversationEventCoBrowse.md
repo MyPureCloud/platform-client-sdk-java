@@ -1,20 +1,14 @@
----
-title: ConversationEventCoBrowse
----
-## ConversationEventCoBrowse
+# ConversationEventCoBrowse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Describes the type of CoBrowse event. |  |
-| **sessionId** | <!----><!---->**String**<!----> | The CoBrowse session ID. |  [optional] |
-| **sessionJoinToken** | <!----><!---->**String**<!----> | The CoBrowse session join token. |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Describes the type of CoBrowse event. |  |
+| **sessionId** | **String** | The CoBrowse session ID. |  [optional] |
+| **sessionJoinToken** | **String** | The CoBrowse session join token. |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -25,7 +19,8 @@ title: ConversationEventCoBrowse
 | OFFERINGEXPIRED | &quot;OfferingExpired&quot; | 
 | OFFERINGACCEPTED | &quot;OfferingAccepted&quot; | 
 | OFFERINGREJECTED | &quot;OfferingRejected&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

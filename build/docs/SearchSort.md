@@ -1,19 +1,13 @@
----
-title: SearchSort
----
-## SearchSort
+# SearchSort
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **sortOrder** | [**SortOrderEnum**](#SortOrderEnum)<!----> | The sort order for results |  [optional] |
-| **sortBy** | <!----><!---->**String**<!----> | The field in the resource that you want to sort the results by |  [optional] |
-{: class="table table-striped"}
+| **sortOrder** | [**SortOrderEnum**](#Enum--SortOrderEnum) | The sort order for results |  [optional] |
+| **sortBy** | **String** | The field in the resource that you want to sort the results by |  [optional] |
 
-
-<a name="SortOrderEnum"></a>
 
 ## Enum: SortOrderEnum
 
@@ -23,7 +17,8 @@ title: SearchSort
 | ASC | &quot;ASC&quot; | 
 | DESC | &quot;DESC&quot; | 
 | SCORE | &quot;SCORE&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

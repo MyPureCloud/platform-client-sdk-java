@@ -1,21 +1,15 @@
----
-title: CommonAlertBulkUpdateRequest
----
-## CommonAlertBulkUpdateRequest
+# CommonAlertBulkUpdateRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | The action to take |  |
-| **alertIds** | <!----><!---->**List&lt;String&gt;**<!----> | The user supplied alert ids to be muted |  |
-| **muteSnooze** | <!----><!---->[**MuteSnoozeFields**](MuteSnoozeFields.html)<!----> | The fields need for a mute or snooze requests |  [optional] |
-| **unread** | <!----><!---->[**UnreadFields**](UnreadFields.html)<!----> | The fields need for an unread update requests |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | The action to take |  |
+| **alertIds** | **List&lt;String&gt;** | The user supplied alert ids to be muted |  |
+| **muteSnooze** | [**MuteSnoozeFields**](MuteSnoozeFields) | The fields need for a mute or snooze requests |  [optional] |
+| **unread** | [**UnreadFields**](UnreadFields) | The fields need for an unread update requests |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -25,7 +19,8 @@ title: CommonAlertBulkUpdateRequest
 | MUTE | &quot;Mute&quot; | 
 | SNOOZE | &quot;Snooze&quot; | 
 | UNREAD | &quot;Unread&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

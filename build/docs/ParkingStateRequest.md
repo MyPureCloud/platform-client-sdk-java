@@ -1,18 +1,12 @@
----
-title: ParkingStateRequest
----
-## ParkingStateRequest
+# ParkingStateRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **state** | [**StateEnum**](#StateEnum)<!----> | State to set the participant. |  |
-{: class="table table-striped"}
+| **state** | [**StateEnum**](#Enum--StateEnum) | State to set the participant. |  |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -31,7 +25,8 @@ title: ParkingStateRequest
 | TRANSMITTING | &quot;transmitting&quot; | 
 | PARKED | &quot;parked&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

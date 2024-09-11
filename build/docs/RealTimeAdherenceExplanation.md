@@ -1,22 +1,16 @@
----
-title: RealTimeAdherenceExplanation
----
-## RealTimeAdherenceExplanation
+# RealTimeAdherenceExplanation
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **startDate** | <!----><!---->[**Date**](Date.html)<!----> | The start timestamp of the adherence explanation in ISO-8601 format |  [optional] |
-| **lengthMinutes** | <!----><!---->**Integer**<!----> | The length of the adherence explanation in minutes |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> | The status of the adherence explanation |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **startDate** | [**Date**](Date) | The start timestamp of the adherence explanation in ISO-8601 format |  [optional] |
+| **lengthMinutes** | **Integer** | The length of the adherence explanation in minutes |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the adherence explanation |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -26,7 +20,8 @@ title: RealTimeAdherenceExplanation
 | PENDING | &quot;Pending&quot; | 
 | APPROVED | &quot;Approved&quot; | 
 | DENIED | &quot;Denied&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

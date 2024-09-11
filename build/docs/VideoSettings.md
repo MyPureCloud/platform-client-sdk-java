@@ -1,17 +1,15 @@
----
-title: VideoSettings
----
-## VideoSettings
+# VideoSettings
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **enabled** | <!----><!---->**Boolean**<!----> | whether or not video is enabled |  [optional] |
-| **agent** | <!----><!---->[**AgentVideoSettings**](AgentVideoSettings.html)<!----> | Video Settings for agent |  [optional] |
-| **user** | <!----><!---->[**UserVideoSettings**](UserVideoSettings.html)<!----> | Video Settings for user |  [optional] |
-{: class="table table-striped"}
+| **enabled** | **Boolean** | whether or not video is enabled |  [optional] |
+| **agent** | [**AgentVideoSettings**](AgentVideoSettings) | Video Settings for agent |  [optional] |
+| **user** | [**UserVideoSettings**](UserVideoSettings) | Video Settings for user |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

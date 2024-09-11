@@ -1,18 +1,16 @@
----
-title: ForecastServiceGoalTemplateResponse
----
-## ForecastServiceGoalTemplateResponse
+# ForecastServiceGoalTemplateResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **serviceLevel** | <!----><!---->[**ForecastServiceLevelResponse**](ForecastServiceLevelResponse.html)<!----> | The service level goal for this forecast |  [optional] |
-| **averageSpeedOfAnswer** | <!----><!---->[**ForecastAverageSpeedOfAnswerResponse**](ForecastAverageSpeedOfAnswerResponse.html)<!----> | The average speed of answer goal for this forecast |  [optional] |
-| **abandonRate** | <!----><!---->[**ForecastAbandonRateResponse**](ForecastAbandonRateResponse.html)<!----> | The abandon rate goal for this forecast |  [optional] |
-| **impactOverride** | <!----><!---->[**ForecastServiceGoalTemplateImpactOverrideResponse**](ForecastServiceGoalTemplateImpactOverrideResponse.html)<!----> | The service goal impact overrides for this forecast |  [optional] |
-{: class="table table-striped"}
+| **serviceLevel** | [**ForecastServiceLevelResponse**](ForecastServiceLevelResponse) | The service level goal for this forecast |  [optional] |
+| **averageSpeedOfAnswer** | [**ForecastAverageSpeedOfAnswerResponse**](ForecastAverageSpeedOfAnswerResponse) | The average speed of answer goal for this forecast |  [optional] |
+| **abandonRate** | [**ForecastAbandonRateResponse**](ForecastAbandonRateResponse) | The abandon rate goal for this forecast |  [optional] |
+| **impactOverride** | [**ForecastServiceGoalTemplateImpactOverrideResponse**](ForecastServiceGoalTemplateImpactOverrideResponse) | The service goal impact overrides for this forecast |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

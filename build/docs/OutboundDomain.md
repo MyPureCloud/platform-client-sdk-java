@@ -1,23 +1,17 @@
----
-title: OutboundDomain
----
-## OutboundDomain
+# OutboundDomain
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | Unique Id of the domain such as: example.com |  |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **cnameVerificationResult** | <!----><!---->[**VerificationResult**](VerificationResult.html)<!----> | CNAME registration Status |  [optional] |
-| **dkimVerificationResult** | <!----><!---->[**VerificationResult**](VerificationResult.html)<!----> | DKIM registration Status |  [optional] |
-| **senderType** | [**SenderTypeEnum**](#SenderTypeEnum)<!----> | Sender Type |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | Unique Id of the domain such as: example.com |  |
+| **name** | **String** |  |  [optional] |
+| **cnameVerificationResult** | [**VerificationResult**](VerificationResult) | CNAME registration Status |  [optional] |
+| **dkimVerificationResult** | [**VerificationResult**](VerificationResult) | DKIM registration Status |  [optional] |
+| **senderType** | [**SenderTypeEnum**](#Enum--SenderTypeEnum) | Sender Type |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="SenderTypeEnum"></a>
 
 ## Enum: SenderTypeEnum
 
@@ -27,7 +21,8 @@ title: OutboundDomain
 | UNKNOWN | &quot;Unknown&quot; | 
 | EMAILDOMAIN | &quot;EmailDomain&quot; | 
 | MOCKEMAILDOMAIN | &quot;MockEmailDomain&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

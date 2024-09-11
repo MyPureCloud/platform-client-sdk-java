@@ -1,21 +1,15 @@
----
-title: SmsProvisioningStatus
----
-## SmsProvisioningStatus
+# SmsProvisioningStatus
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **action** | [**ActionEnum**](#ActionEnum)<!----> | Provisioning action |  [optional] |
-| **state** | [**StateEnum**](#StateEnum)<!----> | Provisioning state |  [optional] |
-| **error** | <!----><!---->[**ErrorBody**](ErrorBody.html)<!----> | Any error associated with a Failed state |  [optional] |
-| **version** | <!----><!---->**Long**<!----> | The phone number version associated with the provisioning action |  [optional] |
-{: class="table table-striped"}
+| **action** | [**ActionEnum**](#Enum--ActionEnum) | Provisioning action |  [optional] |
+| **state** | [**StateEnum**](#Enum--StateEnum) | Provisioning state |  [optional] |
+| **error** | [**ErrorBody**](ErrorBody) | Any error associated with a Failed state |  [optional] |
+| **version** | **Long** | The phone number version associated with the provisioning action |  [optional] |
 
-
-<a name="ActionEnum"></a>
 
 ## Enum: ActionEnum
 
@@ -26,10 +20,7 @@ title: SmsProvisioningStatus
 | CREATE | &quot;Create&quot; | 
 | UPDATE | &quot;Update&quot; | 
 | DELETE | &quot;Delete&quot; | 
-{: class="table table-striped"}
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -39,7 +30,8 @@ title: SmsProvisioningStatus
 | RUNNING | &quot;Running&quot; | 
 | COMPLETED | &quot;Completed&quot; | 
 | FAILED | &quot;Failed&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

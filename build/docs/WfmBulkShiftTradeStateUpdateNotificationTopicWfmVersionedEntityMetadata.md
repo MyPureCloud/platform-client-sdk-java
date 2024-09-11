@@ -1,17 +1,15 @@
----
-title: WfmBulkShiftTradeStateUpdateNotificationTopicWfmVersionedEntityMetadata
----
-## WfmBulkShiftTradeStateUpdateNotificationTopicWfmVersionedEntityMetadata
+# WfmBulkShiftTradeStateUpdateNotificationTopicWfmVersionedEntityMetadata
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **version** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **modifiedBy** | <!----><!---->[**WfmBulkShiftTradeStateUpdateNotificationTopicUserReference**](WfmBulkShiftTradeStateUpdateNotificationTopicUserReference.html)<!----> |  |  [optional] |
-| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **version** | **Integer** |  |  [optional] |
+| **modifiedBy** | [**WfmBulkShiftTradeStateUpdateNotificationTopicUserReference**](WfmBulkShiftTradeStateUpdateNotificationTopicUserReference) |  |  [optional] |
+| **dateModified** | [**Date**](Date) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

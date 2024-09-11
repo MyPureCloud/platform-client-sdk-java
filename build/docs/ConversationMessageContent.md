@@ -1,28 +1,22 @@
----
-title: ConversationMessageContent
----
-## ConversationMessageContent
+# ConversationMessageContent
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **contentType** | [**ContentTypeEnum**](#ContentTypeEnum)<!----> | Type of this content element. |  |
-| **location** | <!----><!---->[**ConversationContentLocation**](ConversationContentLocation.html)<!----> | Location content. |  [optional] |
-| **attachment** | <!----><!---->[**ConversationContentAttachment**](ConversationContentAttachment.html)<!----> | Attachment content. |  [optional] |
-| **quickReply** | <!----><!---->[**ConversationContentQuickReply**](ConversationContentQuickReply.html)<!----> | Quick reply content. |  [optional] |
-| **buttonResponse** | <!----><!---->[**ConversationContentButtonResponse**](ConversationContentButtonResponse.html)<!----> | Button response content. |  [optional] |
-| **template** | <!----><!---->[**ConversationContentNotificationTemplate**](ConversationContentNotificationTemplate.html)<!----> | Template notification content. |  [optional] |
-| **story** | <!----><!---->[**ConversationContentStory**](ConversationContentStory.html)<!----> | Ephemeral story content. |  [optional] |
-| **card** | <!----><!---->[**ConversationContentCard**](ConversationContentCard.html)<!----> | Card content |  [optional] |
-| **carousel** | <!----><!---->[**ConversationContentCarousel**](ConversationContentCarousel.html)<!----> | Carousel content |  [optional] |
-| **text** | <!----><!---->[**ConversationContentText**](ConversationContentText.html)<!----> | Text content. |  [optional] |
-| **quickReplyV2** | <!----><!---->[**ConversationContentQuickReplyV2**](ConversationContentQuickReplyV2.html)<!----> | Quick reply V2 content. |  [optional] |
-{: class="table table-striped"}
+| **contentType** | [**ContentTypeEnum**](#Enum--ContentTypeEnum) | Type of this content element. |  |
+| **location** | [**ConversationContentLocation**](ConversationContentLocation) | Location content. |  [optional] |
+| **attachment** | [**ConversationContentAttachment**](ConversationContentAttachment) | Attachment content. |  [optional] |
+| **quickReply** | [**ConversationContentQuickReply**](ConversationContentQuickReply) | Quick reply content. |  [optional] |
+| **buttonResponse** | [**ConversationContentButtonResponse**](ConversationContentButtonResponse) | Button response content. |  [optional] |
+| **template** | [**ConversationContentNotificationTemplate**](ConversationContentNotificationTemplate) | Template notification content. |  [optional] |
+| **story** | [**ConversationContentStory**](ConversationContentStory) | Ephemeral story content. |  [optional] |
+| **card** | [**ConversationContentCard**](ConversationContentCard) | Card content |  [optional] |
+| **carousel** | [**ConversationContentCarousel**](ConversationContentCarousel) | Carousel content |  [optional] |
+| **text** | [**ConversationContentText**](ConversationContentText) | Text content. |  [optional] |
+| **quickReplyV2** | [**ConversationContentQuickReplyV2**](ConversationContentQuickReplyV2) | Quick reply V2 content. |  [optional] |
 
-
-<a name="ContentTypeEnum"></a>
 
 ## Enum: ContentTypeEnum
 
@@ -41,7 +35,8 @@ title: ConversationMessageContent
 | TEXT | &quot;Text&quot; | 
 | QUICKREPLYV2 | &quot;QuickReplyV2&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

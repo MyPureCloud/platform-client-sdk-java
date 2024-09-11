@@ -1,16 +1,14 @@
----
-title: LicenseOrgToggle
----
-## LicenseOrgToggle
+# LicenseOrgToggle
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **featureName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **enabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **featureName** | **String** |  |  [optional] |
+| **enabled** | **Boolean** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

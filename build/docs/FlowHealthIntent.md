@@ -1,23 +1,17 @@
----
-title: FlowHealthIntent
----
-## FlowHealthIntent
+# FlowHealthIntent
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **flowVersionInfo** | <!----><!---->[**FlowHealthIntentVersionInfo**](FlowHealthIntentVersionInfo.html)<!----> | Info about given flow version. |  [optional] |
-| **language** | [**LanguageEnum**](#LanguageEnum)<!----> | Language provided for this intent's health. |  [optional] |
-| **health** | <!----><!---->[**HealthInfo**](HealthInfo.html)<!----> | Health computation details for given language. |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **flowVersionInfo** | [**FlowHealthIntentVersionInfo**](FlowHealthIntentVersionInfo) | Info about given flow version. |  [optional] |
+| **language** | [**LanguageEnum**](#Enum--LanguageEnum) | Language provided for this intent's health. |  [optional] |
+| **health** | [**HealthInfo**](HealthInfo) | Health computation details for given language. |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="LanguageEnum"></a>
 
 ## Enum: LanguageEnum
 
@@ -40,7 +34,8 @@ title: FlowHealthIntent
 | PT_BR | &quot;pt-br&quot; | 
 | PT_PT | &quot;pt-pt&quot; | 
 | NL_NL | &quot;nl-nl&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

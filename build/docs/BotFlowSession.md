@@ -1,27 +1,21 @@
----
-title: BotFlowSession
----
-## BotFlowSession
+# BotFlowSession
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The ID of the bot session. |  [optional] |
-| **flow** | <!----><!---->[**Entity**](Entity.html)<!----> | The flow associated to this bot session. |  [optional] |
-| **channel** | <!----><!---->[**BotChannel**](BotChannel.html)<!----> | Channel-specific information that describes the message channel/provider. |  [optional] |
-| **language** | <!----><!---->**String**<!----> | The initial language of operation for the session. |  [optional] |
-| **endLanguage** | <!----><!---->**String**<!----> | The language of the session at the time the session ended |  [optional] |
-| **botResult** | [**BotResultEnum**](#BotResultEnum)<!----> | The reason for session termination. |  [optional] |
-| **botResultCategory** | [**BotResultCategoryEnum**](#BotResultCategoryEnum)<!----> | The category of result for the session. |  [optional] |
-| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Timestamp indicating when the session was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **dateCompleted** | <!----><!---->[**Date**](Date.html)<!----> | Timestamp indicating when the session was completed. Note: The 'interval' query param uses this timestamp to filter the output. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **conversation** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | The conversation details, across potentially multiple Bot Flow sessions. |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The ID of the bot session. |  [optional] |
+| **flow** | [**Entity**](Entity) | The flow associated to this bot session. |  [optional] |
+| **channel** | [**BotChannel**](BotChannel) | Channel-specific information that describes the message channel/provider. |  [optional] |
+| **language** | **String** | The initial language of operation for the session. |  [optional] |
+| **endLanguage** | **String** | The language of the session at the time the session ended |  [optional] |
+| **botResult** | [**BotResultEnum**](#Enum--BotResultEnum) | The reason for session termination. |  [optional] |
+| **botResultCategory** | [**BotResultCategoryEnum**](#Enum--BotResultCategoryEnum) | The category of result for the session. |  [optional] |
+| **dateCreated** | [**Date**](Date) | Timestamp indicating when the session was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **dateCompleted** | [**Date**](Date) | Timestamp indicating when the session was completed. Note: The 'interval' query param uses this timestamp to filter the output. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **conversation** | [**AddressableEntityRef**](AddressableEntityRef) | The conversation details, across potentially multiple Bot Flow sessions. |  [optional] |
 
-
-<a name="BotResultEnum"></a>
 
 ## Enum: BotResultEnum
 
@@ -39,10 +33,7 @@ title: BotFlowSession
 | DISCONNECTERROR | &quot;DisconnectError&quot; | 
 | DISCONNECTRECOGNITIONFAILURE | &quot;DisconnectRecognitionFailure&quot; | 
 | TRANSFERTOACD | &quot;TransferToACD&quot; | 
-{: class="table table-striped"}
 
-
-<a name="BotResultCategoryEnum"></a>
 
 ## Enum: BotResultCategoryEnum
 
@@ -58,7 +49,8 @@ title: BotFlowSession
 | BOTDISCONNECT | &quot;BotDisconnect&quot; | 
 | SESSIONEXPIRED | &quot;SessionExpired&quot; | 
 | TRANSFER | &quot;Transfer&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,17 +1,15 @@
----
-title: PhoneChangeTopicUserAgentInfo
----
-## PhoneChangeTopicUserAgentInfo
+# PhoneChangeTopicUserAgentInfo
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **firmwareVersion** | <!----><!---->**String**<!----> |  |  [optional] |
-| **manufacturer** | <!----><!---->**String**<!----> |  |  [optional] |
-| **model** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **firmwareVersion** | **String** |  |  [optional] |
+| **manufacturer** | **String** |  |  [optional] |
+| **model** | **String** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

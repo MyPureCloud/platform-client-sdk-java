@@ -1,20 +1,14 @@
----
-title: DocumentBodyImageProperties
----
-## DocumentBodyImageProperties
+# DocumentBodyImageProperties
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **backgroundColor** | <!----><!---->**String**<!----> | The background color property for the image. The valid values in hex color code representation. For example black color - #000000 |  [optional] |
-| **align** | [**AlignEnum**](#AlignEnum)<!----> | The align property for the image. |  [optional] |
-| **indentation** | <!----><!---->**Float**<!----> | The indentation property for the image. The valid values in 'em'. |  [optional] |
-{: class="table table-striped"}
+| **backgroundColor** | **String** | The background color property for the image. The valid values in hex color code representation. For example black color - #000000 |  [optional] |
+| **align** | [**AlignEnum**](#Enum--AlignEnum) | The align property for the image. |  [optional] |
+| **indentation** | **Float** | The indentation property for the image. The valid values in 'em'. |  [optional] |
 
-
-<a name="AlignEnum"></a>
 
 ## Enum: AlignEnum
 
@@ -25,7 +19,8 @@ title: DocumentBodyImageProperties
 | LEFT | &quot;Left&quot; | 
 | RIGHT | &quot;Right&quot; | 
 | JUSTIFY | &quot;Justify&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,20 +1,14 @@
----
-title: ImapSettings
----
-## ImapSettings
+# ImapSettings
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **integration** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The IMAP server integration to use for ingesting emails. |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> | Imap Server Status |  [optional] |
-| **errorInfo** | <!----><!---->[**EmailErrorInfo**](EmailErrorInfo.html)<!----> | Additional Imap Server error information |  [optional] |
-{: class="table table-striped"}
+| **integration** | [**DomainEntityRef**](DomainEntityRef) | The IMAP server integration to use for ingesting emails. |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) | Imap Server Status |  [optional] |
+| **errorInfo** | [**EmailErrorInfo**](EmailErrorInfo) | Additional Imap Server error information |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -27,7 +21,8 @@ title: ImapSettings
 | INACTIVE | &quot;Inactive&quot; | 
 | INTEGRATIONDELETED | &quot;IntegrationDeleted&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

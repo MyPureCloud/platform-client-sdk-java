@@ -1,17 +1,15 @@
----
-title: AnalyticsUserDetail
----
-## AnalyticsUserDetail
+# AnalyticsUserDetail
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **userId** | <!----><!---->**String**<!----> | The identifier for the user |  [optional] |
-| **primaryPresence** | <!----><!---->[**List&lt;AnalyticsUserPresenceRecord&gt;**](AnalyticsUserPresenceRecord.html)<!----> | The presence records for the user |  [optional] |
-| **routingStatus** | <!----><!---->[**List&lt;AnalyticsRoutingStatusRecord&gt;**](AnalyticsRoutingStatusRecord.html)<!----> | The ACD routing status records for the user |  [optional] |
-{: class="table table-striped"}
+| **userId** | **String** | The identifier for the user |  [optional] |
+| **primaryPresence** | [**List&lt;AnalyticsUserPresenceRecord&gt;**](AnalyticsUserPresenceRecord) | The presence records for the user |  [optional] |
+| **routingStatus** | [**List&lt;AnalyticsRoutingStatusRecord&gt;**](AnalyticsRoutingStatusRecord) | The ACD routing status records for the user |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

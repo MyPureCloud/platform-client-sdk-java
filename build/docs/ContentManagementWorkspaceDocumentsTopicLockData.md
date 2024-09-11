@@ -1,17 +1,15 @@
----
-title: ContentManagementWorkspaceDocumentsTopicLockData
----
-## ContentManagementWorkspaceDocumentsTopicLockData
+# ContentManagementWorkspaceDocumentsTopicLockData
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **lockedBy** | <!----><!---->[**ContentManagementWorkspaceDocumentsTopicUserData**](ContentManagementWorkspaceDocumentsTopicUserData.html)<!----> |  |  [optional] |
-| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **dateExpires** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **lockedBy** | [**ContentManagementWorkspaceDocumentsTopicUserData**](ContentManagementWorkspaceDocumentsTopicUserData) |  |  [optional] |
+| **dateCreated** | [**Date**](Date) |  |  [optional] |
+| **dateExpires** | [**Date**](Date) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,19 +1,13 @@
----
-title: PauseCriteria
----
-## PauseCriteria
+# PauseCriteria
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **urlFragment** | <!----><!---->**String**<!----> |  |  [optional] |
-| **condition** | [**ConditionEnum**](#ConditionEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **urlFragment** | **String** |  |  [optional] |
+| **condition** | [**ConditionEnum**](#Enum--ConditionEnum) |  |  [optional] |
 
-
-<a name="ConditionEnum"></a>
 
 ## Enum: ConditionEnum
 
@@ -25,7 +19,8 @@ title: PauseCriteria
 | STARTSWITH | &quot;StartsWith&quot; | 
 | ENDSWITH | &quot;EndsWith&quot; | 
 | EQUALS | &quot;Equals&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

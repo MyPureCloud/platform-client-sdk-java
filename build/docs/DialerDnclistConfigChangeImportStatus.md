@@ -1,25 +1,19 @@
----
-title: DialerDnclistConfigChangeImportStatus
----
-## DialerDnclistConfigChangeImportStatus
+# DialerDnclistConfigChangeImportStatus
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **importState** | [**ImportStateEnum**](#ImportStateEnum)<!----> | current status of the import |  [optional] |
-| **totalRecords** | <!----><!---->**Integer**<!----> | total number of records to be imported |  [optional] |
-| **completedRecords** | <!----><!---->**Integer**<!----> | number of records finished importing |  [optional] |
-| **percentageComplete** | <!----><!---->**Integer**<!----> | percentage of records finished importing |  [optional] |
-| **failureReason** | <!----><!---->**String**<!----> | if the import has failed, the reason for the failure |  [optional] |
-| **targetContactListIds** | <!----><!---->**List&lt;String&gt;**<!----> | The ids for target contact lists |  [optional] |
-| **listNamePrefix** | <!----><!---->**String**<!----> | The prefix used for target contact list names |  [optional] |
-| **additionalProperties** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **importState** | [**ImportStateEnum**](#Enum--ImportStateEnum) | current status of the import |  [optional] |
+| **totalRecords** | **Integer** | total number of records to be imported |  [optional] |
+| **completedRecords** | **Integer** | number of records finished importing |  [optional] |
+| **percentageComplete** | **Integer** | percentage of records finished importing |  [optional] |
+| **failureReason** | **String** | if the import has failed, the reason for the failure |  [optional] |
+| **targetContactListIds** | **List&lt;String&gt;** | The ids for target contact lists |  [optional] |
+| **listNamePrefix** | **String** | The prefix used for target contact list names |  [optional] |
+| **additionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
-
-<a name="ImportStateEnum"></a>
 
 ## Enum: ImportStateEnum
 
@@ -28,7 +22,8 @@ title: DialerDnclistConfigChangeImportStatus
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | IN_PROGRESS | &quot;IN_PROGRESS&quot; | 
 | FAILED | &quot;FAILED&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

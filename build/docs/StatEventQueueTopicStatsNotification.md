@@ -1,16 +1,14 @@
----
-title: StatEventQueueTopicStatsNotification
----
-## StatEventQueueTopicStatsNotification
+# StatEventQueueTopicStatsNotification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **group** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
-| **data** | <!----><!---->[**List&lt;StatEventQueueTopicIntervalMetrics&gt;**](StatEventQueueTopicIntervalMetrics.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **group** | **Map&lt;String, String&gt;** |  |  [optional] |
+| **data** | [**List&lt;StatEventQueueTopicIntervalMetrics&gt;**](StatEventQueueTopicIntervalMetrics) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

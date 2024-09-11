@@ -1,20 +1,14 @@
----
-title: V2MobiusAlertsTopicAlertRuleProperties
----
-## V2MobiusAlertsTopicAlertRuleProperties
+# V2MobiusAlertsTopicAlertRuleProperties
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -25,7 +19,8 @@ title: V2MobiusAlertsTopicAlertRuleProperties
 | USERPRESENCE | &quot;UserPresence&quot; | 
 | WORKFORCEMANAGEMENT | &quot;WorkforceManagement&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

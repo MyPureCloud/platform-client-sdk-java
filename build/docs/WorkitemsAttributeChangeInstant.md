@@ -1,16 +1,14 @@
----
-title: WorkitemsAttributeChangeInstant
----
-## WorkitemsAttributeChangeInstant
+# WorkitemsAttributeChangeInstant
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **newValue** | <!----><!---->[**Date**](Date.html)<!----> | New property value. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **oldValue** | <!----><!---->[**Date**](Date.html)<!----> | Old property value. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-{: class="table table-striped"}
+| **newValue** | [**Date**](Date) | New property value. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **oldValue** | [**Date**](Date) | Old property value. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

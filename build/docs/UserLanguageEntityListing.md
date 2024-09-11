@@ -1,24 +1,22 @@
----
-title: UserLanguageEntityListing
----
-## UserLanguageEntityListing
+# UserLanguageEntityListing
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | <!----><!---->[**List&lt;UserRoutingLanguage&gt;**](UserRoutingLanguage.html)<!----> |  |  [optional] |
-| **pageSize** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **pageNumber** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **total** | <!----><!---->**Long**<!----> |  |  [optional] |
-| **firstUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **lastUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **nextUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **previousUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **pageCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **entities** | [**List&lt;UserRoutingLanguage&gt;**](UserRoutingLanguage) |  |  [optional] |
+| **pageSize** | **Integer** |  |  [optional] |
+| **pageNumber** | **Integer** |  |  [optional] |
+| **total** | **Long** |  |  [optional] |
+| **firstUri** | **String** |  |  [optional] |
+| **lastUri** | **String** |  |  [optional] |
+| **selfUri** | **String** |  |  [optional] |
+| **nextUri** | **String** |  |  [optional] |
+| **previousUri** | **String** |  |  [optional] |
+| **pageCount** | **Integer** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

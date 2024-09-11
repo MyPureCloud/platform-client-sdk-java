@@ -1,25 +1,19 @@
----
-title: CommandStatus
----
-## CommandStatus
+# CommandStatus
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **expiration** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **userId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **statusCode** | [**StatusCodeEnum**](#StatusCodeEnum)<!----> |  |  [optional] |
-| **commandType** | [**CommandTypeEnum**](#CommandTypeEnum)<!----> |  |  [optional] |
-| **document** | <!----><!---->[**Document**](Document.html)<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **expiration** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **userId** | **String** |  |  [optional] |
+| **statusCode** | [**StatusCodeEnum**](#Enum--StatusCodeEnum) |  |  [optional] |
+| **commandType** | [**CommandTypeEnum**](#Enum--CommandTypeEnum) |  |  [optional] |
+| **document** | [**Document**](Document) |  |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="StatusCodeEnum"></a>
 
 ## Enum: StatusCodeEnum
 
@@ -31,10 +25,7 @@ title: CommandStatus
 | ERROR | &quot;ERROR&quot; | 
 | CANCELING | &quot;CANCELING&quot; | 
 | CANCELED | &quot;CANCELED&quot; | 
-{: class="table table-striped"}
 
-
-<a name="CommandTypeEnum"></a>
 
 ## Enum: CommandTypeEnum
 
@@ -51,7 +42,8 @@ title: CommandStatus
 | REINDEX | &quot;REINDEX&quot; | 
 | CLEANUP | &quot;CLEANUP&quot; | 
 | REPLACEDOCUMENT | &quot;REPLACEDOCUMENT&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,17 +1,15 @@
----
-title: WebChatDeploymentEntityListing
----
-## WebChatDeploymentEntityListing
+# WebChatDeploymentEntityListing
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **total** | <!----><!---->**Long**<!----> |  |  [optional] |
-| **entities** | <!----><!---->[**List&lt;WebChatDeployment&gt;**](WebChatDeployment.html)<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **total** | **Long** |  |  [optional] |
+| **entities** | [**List&lt;WebChatDeployment&gt;**](WebChatDeployment) |  |  [optional] |
+| **selfUri** | **String** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

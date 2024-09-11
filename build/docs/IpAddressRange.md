@@ -1,20 +1,14 @@
----
-title: IpAddressRange
----
-## IpAddressRange
+# IpAddressRange
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **cidr** | <!----><!---->**String**<!----> |  |  [optional] |
-| **service** | [**ServiceEnum**](#ServiceEnum)<!----> |  |  [optional] |
-| **region** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **cidr** | **String** |  |  [optional] |
+| **service** | [**ServiceEnum**](#Enum--ServiceEnum) |  |  [optional] |
+| **region** | **String** |  |  [optional] |
 
-
-<a name="ServiceEnum"></a>
 
 ## Enum: ServiceEnum
 
@@ -27,7 +21,8 @@ title: IpAddressRange
 | OPEN_MESSAGING | &quot;open-messaging&quot; | 
 | API | &quot;api&quot; | 
 | AUDIO_CONNECTOR | &quot;audio-connector&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

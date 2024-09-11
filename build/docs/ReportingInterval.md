@@ -1,19 +1,13 @@
----
-title: ReportingInterval
----
-## ReportingInterval
+# ReportingInterval
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **intervalType** | [**IntervalTypeEnum**](#IntervalTypeEnum)<!----> | The granularity of the reporting interval period |  |
-| **intervalValue** | <!----><!---->**Integer**<!----> | The value of the reporting interval period for a given interval type |  |
-{: class="table table-striped"}
+| **intervalType** | [**IntervalTypeEnum**](#Enum--IntervalTypeEnum) | The granularity of the reporting interval period |  |
+| **intervalValue** | **Integer** | The value of the reporting interval period for a given interval type |  |
 
-
-<a name="IntervalTypeEnum"></a>
 
 ## Enum: IntervalTypeEnum
 
@@ -23,7 +17,8 @@ title: ReportingInterval
 | DAY | &quot;Day&quot; | 
 | WEEK | &quot;Week&quot; | 
 | MONTH | &quot;Month&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

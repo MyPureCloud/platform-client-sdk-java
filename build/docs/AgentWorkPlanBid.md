@@ -1,25 +1,19 @@
----
-title: AgentWorkPlanBid
----
-## AgentWorkPlanBid
+# AgentWorkPlanBid
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The ID of the work plan bid |  |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **bidWindowStartDate** | <!----><!---->[**LocalDate**](LocalDate.html)<!----> | The date when agents can start participating in work plan bidding. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **bidWindowEndDate** | <!----><!---->[**LocalDate**](LocalDate.html)<!----> | The inclusive end date of a bid window. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **effectiveDate** | <!----><!---->[**LocalDate**](LocalDate.html)<!----> | The date when agents will be assigned to the new work plan. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> | The state of the bid |  |
-| **workPlanFieldsVisibleToAgents** | <!---->[**List&lt;WorkPlanFieldsVisibleToAgentsEnum&gt;**](#WorkPlanFieldsVisibleToAgentsEnum)<!----> | The work plan fields visible to agents whenever work plan preferences are made |  |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The ID of the work plan bid |  |
+| **name** | **String** |  |  [optional] |
+| **bidWindowStartDate** | [**LocalDate**](LocalDate) | The date when agents can start participating in work plan bidding. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **bidWindowEndDate** | [**LocalDate**](LocalDate) | The inclusive end date of a bid window. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **effectiveDate** | [**LocalDate**](LocalDate) | The date when agents will be assigned to the new work plan. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) | The state of the bid |  |
+| **workPlanFieldsVisibleToAgents** | [**List<WorkPlanFieldsVisibleToAgentsEnum>**](#Enum--WorkPlanFieldsVisibleToAgentsEnum) | The work plan fields visible to agents whenever work plan preferences are made |  |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -34,10 +28,7 @@ title: AgentWorkPlanBid
 | CLOSED | &quot;Closed&quot; | 
 | PROCESSED | &quot;Processed&quot; | 
 | PUBLISHED | &quot;Published&quot; | 
-{: class="table table-striped"}
 
-
-<a name="WorkPlanFieldsVisibleToAgentsEnum"></a>
 
 ## Enum: WorkPlanFieldsVisibleToAgentsEnum
 
@@ -45,7 +36,8 @@ title: AgentWorkPlanBid
 | ---- | ----- |
 | NAME | &quot;Name&quot; |
 | PAIDHOURS | &quot;PaidHours&quot; |
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

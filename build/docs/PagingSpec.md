@@ -1,16 +1,14 @@
----
-title: PagingSpec
----
-## PagingSpec
+# PagingSpec
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **pageSize** | <!----><!---->**Integer**<!----> | How many results per page |  |
-| **pageNumber** | <!----><!---->**Integer**<!----> | How many pages in |  |
-{: class="table table-striped"}
+| **pageSize** | **Integer** | How many results per page |  |
+| **pageNumber** | **Integer** | How many pages in |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

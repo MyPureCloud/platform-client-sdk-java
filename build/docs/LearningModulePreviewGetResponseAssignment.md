@@ -1,24 +1,18 @@
----
-title: LearningModulePreviewGetResponseAssignment
----
-## LearningModulePreviewGetResponseAssignment
+# LearningModulePreviewGetResponseAssignment
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **state** | [**StateEnum**](#StateEnum)<!----> | The Learning Assignment state |  [optional] |
-| **percentageScore** | <!----><!---->**Float**<!----> | The user's percentage score for this assignment |  [optional] |
-| **assessmentPercentageScore** | <!----><!---->**Float**<!----> | The user's percentage score for this assignment's assessment |  [optional] |
-| **isPassed** | <!----><!---->**Boolean**<!----> | True if the assessment was passed |  [optional] |
-| **assessmentCompletionPercentage** | <!----><!---->**Float**<!----> | The assessment completion percentage of assignment |  [optional] |
-| **completionPercentage** | <!----><!---->**Float**<!----> | The overall completion percentage of assignment |  [optional] |
-| **steps** | <!----><!---->[**List&lt;LearningModulePreviewGetResponseStep&gt;**](LearningModulePreviewGetResponseStep.html)<!----> | List of assignment steps |  [optional] |
-{: class="table table-striped"}
+| **state** | [**StateEnum**](#Enum--StateEnum) | The Learning Assignment state |  [optional] |
+| **percentageScore** | **Float** | The user's percentage score for this assignment |  [optional] |
+| **assessmentPercentageScore** | **Float** | The user's percentage score for this assignment's assessment |  [optional] |
+| **isPassed** | **Boolean** | True if the assessment was passed |  [optional] |
+| **assessmentCompletionPercentage** | **Float** | The assessment completion percentage of assignment |  [optional] |
+| **completionPercentage** | **Float** | The overall completion percentage of assignment |  [optional] |
+| **steps** | [**List&lt;LearningModulePreviewGetResponseStep&gt;**](LearningModulePreviewGetResponseStep) | List of assignment steps |  [optional] |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -31,7 +25,8 @@ title: LearningModulePreviewGetResponseAssignment
 | DELETED | &quot;Deleted&quot; | 
 | NOTCOMPLETED | &quot;NotCompleted&quot; | 
 | INVALIDSCHEDULE | &quot;InvalidSchedule&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

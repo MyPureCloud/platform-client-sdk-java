@@ -1,15 +1,13 @@
----
-title: Context
----
-## Context
+# Context
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **patterns** | <!----><!---->[**List&lt;ContextPattern&gt;**](ContextPattern.html)<!----> | A list of one or more patterns to match. |  |
-{: class="table table-striped"}
+| **patterns** | [**List&lt;ContextPattern&gt;**](ContextPattern) | A list of one or more patterns to match. |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

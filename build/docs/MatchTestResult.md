@@ -1,16 +1,14 @@
----
-title: MatchTestResult
----
-## MatchTestResult
+# MatchTestResult
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **value** | <!----><!---->[**JsonNode**](JsonNode.html)<!----> | The value of the field being matched |  [optional] |
-| **path** | <!----><!---->**String**<!----> | The json path to the json node being matched on. ex: $['things'][1] |  [optional] |
-{: class="table table-striped"}
+| **value** | [**JsonNode**](JsonNode) | The value of the field being matched |  [optional] |
+| **path** | **String** | The json path to the json node being matched on. ex: $['things'][1] |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

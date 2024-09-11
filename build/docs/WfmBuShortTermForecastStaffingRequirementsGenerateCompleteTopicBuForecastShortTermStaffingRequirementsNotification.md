@@ -1,24 +1,18 @@
----
-title: WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsNotification
----
-## WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsNotification
+# WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsNotification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **businessUnitId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
-| **forecast** | <!----><!---->[**WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuShortTermForecastReference**](WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuShortTermForecastReference.html)<!----> |  |  [optional] |
-| **weekCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **intervalLengthMinutes** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **referenceStartDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **results** | <!----><!---->[**List&lt;WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsResults&gt;**](WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsResults.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **businessUnitId** | **String** |  |  [optional] |
+| **state** | [**StateEnum**](#Enum--StateEnum) |  |  [optional] |
+| **forecast** | [**WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuShortTermForecastReference**](WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuShortTermForecastReference) |  |  [optional] |
+| **weekCount** | **Integer** |  |  [optional] |
+| **intervalLengthMinutes** | **Integer** |  |  [optional] |
+| **referenceStartDate** | [**Date**](Date) |  |  [optional] |
+| **results** | [**List&lt;WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsResults&gt;**](WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsResults) |  |  [optional] |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -29,7 +23,8 @@ title: WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecast
 | COMPLETE | &quot;Complete&quot; | 
 | CANCELED | &quot;Canceled&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

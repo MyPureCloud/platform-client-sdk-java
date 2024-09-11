@@ -1,15 +1,13 @@
----
-title: PredictorModelFeatureListing
----
-## PredictorModelFeatureListing
+# PredictorModelFeatureListing
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | <!----><!---->[**List&lt;PredictorModelFeature&gt;**](PredictorModelFeature.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **entities** | [**List&lt;PredictorModelFeature&gt;**](PredictorModelFeature) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

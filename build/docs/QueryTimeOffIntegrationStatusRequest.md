@@ -1,15 +1,13 @@
----
-title: QueryTimeOffIntegrationStatusRequest
----
-## QueryTimeOffIntegrationStatusRequest
+# QueryTimeOffIntegrationStatusRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **timeOffRequestLookups** | <!----><!---->[**List&lt;TimeOffRequestLookup&gt;**](TimeOffRequestLookup.html)<!----> | A list of time off request lookups |  |
-{: class="table table-striped"}
+| **timeOffRequestLookups** | [**List&lt;TimeOffRequestLookup&gt;**](TimeOffRequestLookup) | A list of time off request lookups |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

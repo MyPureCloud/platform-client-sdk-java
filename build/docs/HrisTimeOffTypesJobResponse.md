@@ -1,19 +1,13 @@
----
-title: HrisTimeOffTypesJobResponse
----
-## HrisTimeOffTypesJobResponse
+# HrisTimeOffTypesJobResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | <!----><!---->[**List&lt;HrisTimeOffTypeResponse&gt;**](HrisTimeOffTypeResponse.html)<!----> |  |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> | The status of the time off types job |  [optional] |
-{: class="table table-striped"}
+| **entities** | [**List&lt;HrisTimeOffTypeResponse&gt;**](HrisTimeOffTypeResponse) |  |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the time off types job |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -23,7 +17,8 @@ title: HrisTimeOffTypesJobResponse
 | PROCESSING | &quot;Processing&quot; | 
 | COMPLETE | &quot;Complete&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

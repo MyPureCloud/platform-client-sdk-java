@@ -1,34 +1,28 @@
----
-title: DID
----
-## DID
+# DID
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> | The name of the entity. |  |
-| **division** | <!----><!---->[**Division**](Division.html)<!----> | The division to which this entity belongs. |  [optional] |
-| **description** | <!----><!---->**String**<!----> | The resource's description. |  [optional] |
-| **version** | <!----><!---->**Integer**<!----> | The current version of the resource. |  [optional] |
-| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **modifiedBy** | <!----><!---->**String**<!----> | The ID of the user that last modified the resource. |  [optional] |
-| **createdBy** | <!----><!---->**String**<!----> | The ID of the user that created the resource. |  [optional] |
-| **state** | [**StateEnum**](#StateEnum)<!----> | Indicates if the resource is active, inactive, or deleted. |  [optional] |
-| **modifiedByApp** | <!----><!---->**String**<!----> | The application that last modified the resource. |  [optional] |
-| **createdByApp** | <!----><!---->**String**<!----> | The application that created the resource. |  [optional] |
-| **phoneNumber** | <!----><!---->**String**<!----> |  |  [optional] |
-| **didPool** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
-| **owner** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | A Uri reference to the owner of this DID, which is either a User or an IVR |  [optional] |
-| **ownerType** | [**OwnerTypeEnum**](#OwnerTypeEnum)<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** | The name of the entity. |  |
+| **division** | [**Division**](Division) | The division to which this entity belongs. |  [optional] |
+| **description** | **String** | The resource's description. |  [optional] |
+| **version** | **Integer** | The current version of the resource. |  [optional] |
+| **dateCreated** | [**Date**](Date) | The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **dateModified** | [**Date**](Date) | The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **modifiedBy** | **String** | The ID of the user that last modified the resource. |  [optional] |
+| **createdBy** | **String** | The ID of the user that created the resource. |  [optional] |
+| **state** | [**StateEnum**](#Enum--StateEnum) | Indicates if the resource is active, inactive, or deleted. |  [optional] |
+| **modifiedByApp** | **String** | The application that last modified the resource. |  [optional] |
+| **createdByApp** | **String** | The application that created the resource. |  [optional] |
+| **phoneNumber** | **String** |  |  [optional] |
+| **didPool** | [**DomainEntityRef**](DomainEntityRef) |  |  [optional] |
+| **owner** | [**DomainEntityRef**](DomainEntityRef) | A Uri reference to the owner of this DID, which is either a User or an IVR |  [optional] |
+| **ownerType** | [**OwnerTypeEnum**](#Enum--OwnerTypeEnum) |  |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -38,10 +32,7 @@ title: DID
 | ACTIVE | &quot;active&quot; | 
 | INACTIVE | &quot;inactive&quot; | 
 | DELETED | &quot;deleted&quot; | 
-{: class="table table-striped"}
 
-
-<a name="OwnerTypeEnum"></a>
 
 ## Enum: OwnerTypeEnum
 
@@ -52,7 +43,8 @@ title: DID
 | PHONE | &quot;PHONE&quot; | 
 | IVR_CONFIG | &quot;IVR_CONFIG&quot; | 
 | GROUP | &quot;GROUP&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

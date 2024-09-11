@@ -1,21 +1,15 @@
----
-title: AgentCopilotAggregationView
----
-## AgentCopilotAggregationView
+# AgentCopilotAggregationView
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **target** | [**TargetEnum**](#TargetEnum)<!----> | Target metric name |  |
-| **name** | <!----><!---->**String**<!----> | A unique name for this view. Must be distinct from other views and built-in metric names. |  |
-| **function** | [**FunctionEnum**](#FunctionEnum)<!----> | Type of view you wish to create |  |
-| **range** | <!----><!---->[**AggregationRange**](AggregationRange.html)<!----> | Range of numbers for slicing up data |  [optional] |
-{: class="table table-striped"}
+| **target** | [**TargetEnum**](#Enum--TargetEnum) | Target metric name |  |
+| **name** | **String** | A unique name for this view. Must be distinct from other views and built-in metric names. |  |
+| **function** | [**FunctionEnum**](#Enum--FunctionEnum) | Type of view you wish to create |  |
+| **range** | [**AggregationRange**](AggregationRange) | Range of numbers for slicing up data |  [optional] |
 
-
-<a name="TargetEnum"></a>
 
 ## Enum: TargetEnum
 
@@ -27,10 +21,7 @@ title: AgentCopilotAggregationView
 | NKNOWLEDGEARTICLESUGGESTIONS | &quot;nKnowledgeArticleSuggestions&quot; | 
 | NKNOWLEDGESEARCHSUGGESTIONS | &quot;nKnowledgeSearchSuggestions&quot; | 
 | NSCRIPTSUGGESTIONS | &quot;nScriptSuggestions&quot; | 
-{: class="table table-striped"}
 
-
-<a name="FunctionEnum"></a>
 
 ## Enum: FunctionEnum
 
@@ -38,7 +29,8 @@ title: AgentCopilotAggregationView
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | RANGEBOUND | &quot;rangeBound&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

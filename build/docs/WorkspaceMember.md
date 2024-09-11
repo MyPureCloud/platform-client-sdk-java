@@ -1,26 +1,20 @@
----
-title: WorkspaceMember
----
-## WorkspaceMember
+# WorkspaceMember
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **workspace** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
-| **memberType** | [**MemberTypeEnum**](#MemberTypeEnum)<!----> | The workspace member type. |  |
-| **member** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
-| **user** | <!----><!---->[**User**](User.html)<!----> |  |  [optional] |
-| **group** | <!----><!---->[**Group**](Group.html)<!----> |  |  [optional] |
-| **securityProfile** | <!----><!---->[**SecurityProfile**](SecurityProfile.html)<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **workspace** | [**DomainEntityRef**](DomainEntityRef) |  |  [optional] |
+| **memberType** | [**MemberTypeEnum**](#Enum--MemberTypeEnum) | The workspace member type. |  |
+| **member** | [**DomainEntityRef**](DomainEntityRef) |  |  [optional] |
+| **user** | [**User**](User) |  |  [optional] |
+| **group** | [**Group**](Group) |  |  [optional] |
+| **securityProfile** | [**SecurityProfile**](SecurityProfile) |  |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="MemberTypeEnum"></a>
 
 ## Enum: MemberTypeEnum
 
@@ -29,7 +23,8 @@ title: WorkspaceMember
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | USER | &quot;USER&quot; | 
 | GROUP | &quot;GROUP&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

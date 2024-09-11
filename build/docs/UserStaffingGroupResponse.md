@@ -1,16 +1,14 @@
----
-title: UserStaffingGroupResponse
----
-## UserStaffingGroupResponse
+# UserStaffingGroupResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **user** | <!----><!---->[**UserReference**](UserReference.html)<!----> | The user associated with the staffing group |  [optional] |
-| **staffingGroup** | <!----><!---->[**StaffingGroupReference**](StaffingGroupReference.html)<!----> | The staffing group |  [optional] |
-{: class="table table-striped"}
+| **user** | [**UserReference**](UserReference) | The user associated with the staffing group |  [optional] |
+| **staffingGroup** | [**StaffingGroupReference**](StaffingGroupReference) | The staffing group |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,17 +1,15 @@
----
-title: QueueConversationSocialExpressionEventTopicJourneyContext
----
-## QueueConversationSocialExpressionEventTopicJourneyContext
+# QueueConversationSocialExpressionEventTopicJourneyContext
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **customer** | <!----><!---->[**QueueConversationSocialExpressionEventTopicJourneyCustomer**](QueueConversationSocialExpressionEventTopicJourneyCustomer.html)<!----> |  |  [optional] |
-| **customerSession** | <!----><!---->[**QueueConversationSocialExpressionEventTopicJourneyCustomerSession**](QueueConversationSocialExpressionEventTopicJourneyCustomerSession.html)<!----> |  |  [optional] |
-| **triggeringAction** | <!----><!---->[**QueueConversationSocialExpressionEventTopicJourneyAction**](QueueConversationSocialExpressionEventTopicJourneyAction.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **customer** | [**QueueConversationSocialExpressionEventTopicJourneyCustomer**](QueueConversationSocialExpressionEventTopicJourneyCustomer) |  |  [optional] |
+| **customerSession** | [**QueueConversationSocialExpressionEventTopicJourneyCustomerSession**](QueueConversationSocialExpressionEventTopicJourneyCustomerSession) |  |  [optional] |
+| **triggeringAction** | [**QueueConversationSocialExpressionEventTopicJourneyAction**](QueueConversationSocialExpressionEventTopicJourneyAction) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

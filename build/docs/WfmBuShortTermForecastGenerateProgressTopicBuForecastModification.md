@@ -1,30 +1,24 @@
----
-title: WfmBuShortTermForecastGenerateProgressTopicBuForecastModification
----
-## WfmBuShortTermForecastGenerateProgressTopicBuForecastModification
+# WfmBuShortTermForecastGenerateProgressTopicBuForecastModification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-| **startIntervalIndex** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **endIntervalIndex** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **metric** | [**MetricEnum**](#MetricEnum)<!----> |  |  [optional] |
-| **legacyMetric** | [**LegacyMetricEnum**](#LegacyMetricEnum)<!----> |  |  [optional] |
-| **value** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-| **values** | <!----><!---->[**List&lt;WfmBuShortTermForecastGenerateProgressTopicModificationIntervalOffsetValue&gt;**](WfmBuShortTermForecastGenerateProgressTopicModificationIntervalOffsetValue.html)<!----> |  |  [optional] |
-| **secondaryValues** | <!----><!---->[**List&lt;WfmBuShortTermForecastGenerateProgressTopicModificationIntervalOffsetValue&gt;**](WfmBuShortTermForecastGenerateProgressTopicModificationIntervalOffsetValue.html)<!----> |  |  [optional] |
-| **enabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **granularity** | <!----><!---->**String**<!----> |  |  [optional] |
-| **secondaryGranularity** | <!----><!---->**String**<!----> |  |  [optional] |
-| **displayGranularity** | <!----><!---->**String**<!----> |  |  [optional] |
-| **planningGroupIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
+| **startIntervalIndex** | **Integer** |  |  [optional] |
+| **endIntervalIndex** | **Integer** |  |  [optional] |
+| **metric** | [**MetricEnum**](#Enum--MetricEnum) |  |  [optional] |
+| **legacyMetric** | [**LegacyMetricEnum**](#Enum--LegacyMetricEnum) |  |  [optional] |
+| **value** | [**BigDecimal**](BigDecimal) |  |  [optional] |
+| **values** | [**List&lt;WfmBuShortTermForecastGenerateProgressTopicModificationIntervalOffsetValue&gt;**](WfmBuShortTermForecastGenerateProgressTopicModificationIntervalOffsetValue) |  |  [optional] |
+| **secondaryValues** | [**List&lt;WfmBuShortTermForecastGenerateProgressTopicModificationIntervalOffsetValue&gt;**](WfmBuShortTermForecastGenerateProgressTopicModificationIntervalOffsetValue) |  |  [optional] |
+| **enabled** | **Boolean** |  |  [optional] |
+| **granularity** | **String** |  |  [optional] |
+| **secondaryGranularity** | **String** |  |  [optional] |
+| **displayGranularity** | **String** |  |  [optional] |
+| **planningGroupIds** | **List&lt;String&gt;** |  |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -40,10 +34,7 @@ title: WfmBuShortTermForecastGenerateProgressTopicBuForecastModification
 | CHANGEVALUEOVERRANGE | &quot;ChangeValueOverRange&quot; | 
 | SETVALUESFORINTERVALSET | &quot;SetValuesForIntervalSet&quot; | 
 | SETMULTIGRANULARITYVALUESFORINTERVALSET | &quot;SetMultiGranularityValuesForIntervalSet&quot; | 
-{: class="table table-striped"}
 
-
-<a name="MetricEnum"></a>
 
 ## Enum: MetricEnum
 
@@ -52,10 +43,7 @@ title: WfmBuShortTermForecastGenerateProgressTopicBuForecastModification
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | OFFERED | &quot;Offered&quot; | 
 | AVERAGEHANDLETIMESECONDS | &quot;AverageHandleTimeSeconds&quot; | 
-{: class="table table-striped"}
 
-
-<a name="LegacyMetricEnum"></a>
 
 ## Enum: LegacyMetricEnum
 
@@ -66,7 +54,8 @@ title: WfmBuShortTermForecastGenerateProgressTopicBuForecastModification
 | AVERAGEHANDLETIMESECONDS | &quot;AverageHandleTimeSeconds&quot; | 
 | AVERAGETALKTIMESECONDS | &quot;AverageTalkTimeSeconds&quot; | 
 | OFFERED | &quot;Offered&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

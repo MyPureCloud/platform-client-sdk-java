@@ -1,15 +1,13 @@
----
-title: RoomParticipantsResponse
----
-## RoomParticipantsResponse
+# RoomParticipantsResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **participants** | <!----><!---->[**List&lt;RoomParticipantResponse&gt;**](RoomParticipantResponse.html)<!----> | list of room participants |  [optional] |
-{: class="table table-striped"}
+| **participants** | [**List&lt;RoomParticipantResponse&gt;**](RoomParticipantResponse) | list of room participants |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

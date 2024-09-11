@@ -1,24 +1,18 @@
----
-title: WebChatGuestMediaRequest
----
-## WebChatGuestMediaRequest
+# WebChatGuestMediaRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **types** | <!---->[**List&lt;TypesEnum&gt;**](#TypesEnum)<!----> | The types of media being requested. |  |
-| **state** | [**StateEnum**](#StateEnum)<!----> | The state of the media request, one of PENDING|ACCEPTED|DECLINED|TIMEDOUT|CANCELLED|ERRORED. |  |
-| **communicationId** | <!----><!---->**String**<!----> | The ID of the new media communication, if applicable. |  [optional] |
-| **securityKey** | <!----><!---->**String**<!----> | The security information related to a media request. |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **types** | [**List<TypesEnum>**](#Enum--TypesEnum) | The types of media being requested. |  |
+| **state** | [**StateEnum**](#Enum--StateEnum) | The state of the media request, one of PENDING|ACCEPTED|DECLINED|TIMEDOUT|CANCELLED|ERRORED. |  |
+| **communicationId** | **String** | The ID of the new media communication, if applicable. |  [optional] |
+| **securityKey** | **String** | The security information related to a media request. |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="TypesEnum"></a>
 
 ## Enum: TypesEnum
 
@@ -26,10 +20,7 @@ title: WebChatGuestMediaRequest
 | ---- | ----- |
 | COBROWSE | &quot;COBROWSE&quot; |
 | SCREENSHARE | &quot;SCREENSHARE&quot; |
-{: class="table table-striped"}
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -42,7 +33,8 @@ title: WebChatGuestMediaRequest
 | TIMEDOUT | &quot;TIMEDOUT&quot; | 
 | CANCELLED | &quot;CANCELLED&quot; | 
 | ERRORED | &quot;ERRORED&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

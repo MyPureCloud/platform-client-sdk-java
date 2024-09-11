@@ -1,20 +1,14 @@
----
-title: HistoricalShrinkageActivityCategoryResponse
----
-## HistoricalShrinkageActivityCategoryResponse
+# HistoricalShrinkageActivityCategoryResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **activityCategory** | [**ActivityCategoryEnum**](#ActivityCategoryEnum)<!----> | Activity category for which shrinkage data is provided |  [optional] |
-| **shrinkageForActivityCategory** | <!----><!---->[**HistoricalShrinkageAggregateResponse**](HistoricalShrinkageAggregateResponse.html)<!----> | Aggregated shrinkage data for the activity category |  [optional] |
-| **shrinkageForActivityCodes** | <!----><!---->[**List&lt;HistoricalShrinkageActivityCodeResponse&gt;**](HistoricalShrinkageActivityCodeResponse.html)<!----> | Shrinkage for the activity codes under this activity category |  [optional] |
-{: class="table table-striped"}
+| **activityCategory** | [**ActivityCategoryEnum**](#Enum--ActivityCategoryEnum) | Activity category for which shrinkage data is provided |  [optional] |
+| **shrinkageForActivityCategory** | [**HistoricalShrinkageAggregateResponse**](HistoricalShrinkageAggregateResponse) | Aggregated shrinkage data for the activity category |  [optional] |
+| **shrinkageForActivityCodes** | [**List&lt;HistoricalShrinkageActivityCodeResponse&gt;**](HistoricalShrinkageActivityCodeResponse) | Shrinkage for the activity codes under this activity category |  [optional] |
 
-
-<a name="ActivityCategoryEnum"></a>
 
 ## Enum: ActivityCategoryEnum
 
@@ -30,7 +24,8 @@ title: HistoricalShrinkageActivityCategoryResponse
 | TRAINING | &quot;Training&quot; | 
 | UNAVAILABLE | &quot;Unavailable&quot; | 
 | UNSCHEDULED | &quot;Unscheduled&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

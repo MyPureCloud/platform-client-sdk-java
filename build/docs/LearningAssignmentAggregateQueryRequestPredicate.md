@@ -1,19 +1,13 @@
----
-title: LearningAssignmentAggregateQueryRequestPredicate
----
-## LearningAssignmentAggregateQueryRequestPredicate
+# LearningAssignmentAggregateQueryRequestPredicate
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **dimension** | [**DimensionEnum**](#DimensionEnum)<!----> | Each predicates specifies a dimension. |  |
-| **value** | <!----><!---->**String**<!----> | Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational (deprecated), AssessedContent (deprecated), Assessment (deprecated), External, Native |  |
-{: class="table table-striped"}
+| **dimension** | [**DimensionEnum**](#Enum--DimensionEnum) | Each predicates specifies a dimension. |  |
+| **value** | **String** | Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational (deprecated), AssessedContent (deprecated), Assessment (deprecated), External, Native |  |
 
-
-<a name="DimensionEnum"></a>
 
 ## Enum: DimensionEnum
 
@@ -24,7 +18,8 @@ title: LearningAssignmentAggregateQueryRequestPredicate
 | TYPE | &quot;type&quot; | 
 | MODULEID | &quot;moduleId&quot; | 
 | ISPASSED | &quot;isPassed&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

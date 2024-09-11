@@ -1,25 +1,20 @@
----
-title: ListWrapperAlternativeShiftBuSettingsGranularity
----
-## ListWrapperAlternativeShiftBuSettingsGranularity
+# ListWrapperAlternativeShiftBuSettingsGranularity
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **values** | <!---->[**List&lt;ValuesEnum&gt;**](#ValuesEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **values** | [**List<ValuesEnum>**](#Enum--ValuesEnum) |  |  [optional] |
 
-
-<a name="ValuesEnum"></a>
 
 ## Enum: ValuesEnum
 
 | Name | Value |
 | ---- | ----- |
 | DAILY | &quot;Daily&quot; |
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

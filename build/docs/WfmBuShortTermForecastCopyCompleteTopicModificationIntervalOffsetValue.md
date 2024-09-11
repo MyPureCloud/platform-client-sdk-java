@@ -1,16 +1,14 @@
----
-title: WfmBuShortTermForecastCopyCompleteTopicModificationIntervalOffsetValue
----
-## WfmBuShortTermForecastCopyCompleteTopicModificationIntervalOffsetValue
+# WfmBuShortTermForecastCopyCompleteTopicModificationIntervalOffsetValue
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **intervalIndex** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **value** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **intervalIndex** | **Integer** |  |  [optional] |
+| **value** | [**BigDecimal**](BigDecimal) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

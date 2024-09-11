@@ -1,34 +1,28 @@
----
-title: ReportingDataExportTopicDataExportNotification
----
-## ReportingDataExportTopicDataExportNotification
+# ReportingDataExportTopicDataExportNotification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **runId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
-| **exportFormat** | [**ExportFormatEnum**](#ExportFormatEnum)<!----> |  |  [optional] |
-| **downloadUrl** | <!----><!---->**String**<!----> |  |  [optional] |
-| **viewType** | [**ViewTypeEnum**](#ViewTypeEnum)<!----> |  |  [optional] |
-| **exportErrorMessagesType** | [**ExportErrorMessagesTypeEnum**](#ExportErrorMessagesTypeEnum)<!----> |  |  [optional] |
-| **read** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **createdDateTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **modifiedDateTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **percentageComplete** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-| **emailStatuses** | <!---->[**Map&lt;String, InnerEnum&gt;**](#InnerEnum)<!----> |  |  [optional] |
-| **emailErrorDescription** | <!----><!---->**String**<!----> |  |  [optional] |
-| **scheduleExpression** | <!----><!---->**String**<!----> |  |  [optional] |
-| **scheduleStaticLinkUrl** | <!----><!---->**String**<!----> |  |  [optional] |
-| **exportAllowedToRerun** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **runId** | **String** |  |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
+| **exportFormat** | [**ExportFormatEnum**](#Enum--ExportFormatEnum) |  |  [optional] |
+| **downloadUrl** | **String** |  |  [optional] |
+| **viewType** | [**ViewTypeEnum**](#Enum--ViewTypeEnum) |  |  [optional] |
+| **exportErrorMessagesType** | [**ExportErrorMessagesTypeEnum**](#Enum--ExportErrorMessagesTypeEnum) |  |  [optional] |
+| **read** | **Boolean** |  |  [optional] |
+| **createdDateTime** | [**Date**](Date) |  |  [optional] |
+| **modifiedDateTime** | [**Date**](Date) |  |  [optional] |
+| **percentageComplete** | [**BigDecimal**](BigDecimal) |  |  [optional] |
+| **emailStatuses** | [**Map<String, InnerEnum>**](#Enum--InnerEnum) |  |  [optional] |
+| **emailErrorDescription** | **String** |  |  [optional] |
+| **scheduleExpression** | **String** |  |  [optional] |
+| **scheduleStaticLinkUrl** | **String** |  |  [optional] |
+| **exportAllowedToRerun** | **Boolean** |  |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -42,10 +36,7 @@ title: ReportingDataExportTopicDataExportNotification
 | COMPLETED | &quot;COMPLETED&quot; | 
 | COMPLETED_WITH_PARTIAL_RESULTS | &quot;COMPLETED_WITH_PARTIAL_RESULTS&quot; | 
 | FAILED | &quot;FAILED&quot; | 
-{: class="table table-striped"}
 
-
-<a name="ExportFormatEnum"></a>
 
 ## Enum: ExportFormatEnum
 
@@ -54,10 +45,7 @@ title: ReportingDataExportTopicDataExportNotification
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | CSV | &quot;CSV&quot; | 
 | PDF | &quot;PDF&quot; | 
-{: class="table table-striped"}
 
-
-<a name="ViewTypeEnum"></a>
 
 ## Enum: ViewTypeEnum
 
@@ -155,10 +143,7 @@ title: ReportingDataExportTopicDataExportNotification
 | EMAIL_QUEUE_PERFORMANCE_DETAIL_VIEW | &quot;EMAIL_QUEUE_PERFORMANCE_DETAIL_VIEW&quot; | 
 | MESSAGING_QUEUE_PERFORMANCE_SUMMARY_VIEW | &quot;MESSAGING_QUEUE_PERFORMANCE_SUMMARY_VIEW&quot; | 
 | MESSAGING_QUEUE_PERFORMANCE_DETAIL_VIEW | &quot;MESSAGING_QUEUE_PERFORMANCE_DETAIL_VIEW&quot; | 
-{: class="table table-striped"}
 
-
-<a name="ExportErrorMessagesTypeEnum"></a>
 
 ## Enum: ExportErrorMessagesTypeEnum
 
@@ -183,10 +168,7 @@ title: ReportingDataExportTopicDataExportNotification
 | SEARCH_CRITERIA_VALUES_EXCEED_LIMIT | &quot;SEARCH_CRITERIA_VALUES_EXCEED_LIMIT&quot; | 
 | EXPORT_EMAIL_FILE_SIZE_EXCEEDED_LIMIT | &quot;EXPORT_EMAIL_FILE_SIZE_EXCEEDED_LIMIT&quot; | 
 | CIRCUIT_BREAKER_OPEN_FOR_VIEW_TYPE | &quot;CIRCUIT_BREAKER_OPEN_FOR_VIEW_TYPE&quot; | 
-{: class="table table-striped"}
 
-
-<a name="InnerEnum"></a>
 
 ## Enum: InnerEnum
 
@@ -195,7 +177,8 @@ title: ReportingDataExportTopicDataExportNotification
 | SENT | &quot;Sent&quot; |
 | PENDING | &quot;Pending&quot; |
 | FAILED | &quot;Failed&quot; |
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

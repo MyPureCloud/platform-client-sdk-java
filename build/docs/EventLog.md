@@ -1,27 +1,21 @@
----
-title: EventLog
----
-## EventLog
+# EventLog
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **errorEntity** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
-| **relatedEntity** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
-| **timestamp** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **level** | [**LevelEnum**](#LevelEnum)<!----> |  |  [optional] |
-| **category** | [**CategoryEnum**](#CategoryEnum)<!----> |  |  [optional] |
-| **correlationId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **eventMessage** | <!----><!---->[**EventMessage**](EventMessage.html)<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **errorEntity** | [**DomainEntityRef**](DomainEntityRef) |  |  [optional] |
+| **relatedEntity** | [**DomainEntityRef**](DomainEntityRef) |  |  [optional] |
+| **timestamp** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **level** | [**LevelEnum**](#Enum--LevelEnum) |  |  [optional] |
+| **category** | [**CategoryEnum**](#Enum--CategoryEnum) |  |  [optional] |
+| **correlationId** | **String** |  |  [optional] |
+| **eventMessage** | [**EventMessage**](EventMessage) |  |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="LevelEnum"></a>
 
 ## Enum: LevelEnum
 
@@ -31,10 +25,7 @@ title: EventLog
 | INFO | &quot;INFO&quot; | 
 | WARNING | &quot;WARNING&quot; | 
 | ERROR | &quot;ERROR&quot; | 
-{: class="table table-striped"}
 
-
-<a name="CategoryEnum"></a>
 
 ## Enum: CategoryEnum
 
@@ -59,7 +50,8 @@ title: EventLog
 | SCHEDULE | &quot;SCHEDULE&quot; | 
 | MESSAGING_CAMPAIGN_SCHEDULE | &quot;MESSAGING_CAMPAIGN_SCHEDULE&quot; | 
 | EMAIL_CAMPAIGN_SCHEDULE | &quot;EMAIL_CAMPAIGN_SCHEDULE&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

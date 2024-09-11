@@ -1,16 +1,14 @@
----
-title: Subscription
----
-## Subscription
+# Subscription
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The subscription id |  [optional] |
-| **topic** | <!----><!---->**String**<!----> | Notification topic |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The subscription id |  [optional] |
+| **topic** | **String** | Notification topic |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,17 +1,15 @@
----
-title: AnalyticsConversationQueryResponse
----
-## AnalyticsConversationQueryResponse
+# AnalyticsConversationQueryResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **conversations** | <!----><!---->[**List&lt;AnalyticsConversationWithoutAttributes&gt;**](AnalyticsConversationWithoutAttributes.html)<!----> |  |  [optional] |
-| **aggregations** | <!----><!---->[**List&lt;AggregationResult&gt;**](AggregationResult.html)<!----> |  |  [optional] |
-| **totalHits** | <!----><!---->**Integer**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **conversations** | [**List&lt;AnalyticsConversationWithoutAttributes&gt;**](AnalyticsConversationWithoutAttributes) |  |  [optional] |
+| **aggregations** | [**List&lt;AggregationResult&gt;**](AggregationResult) |  |  [optional] |
+| **totalHits** | **Integer** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

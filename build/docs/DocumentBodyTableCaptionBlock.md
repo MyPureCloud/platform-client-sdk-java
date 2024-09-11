@@ -1,15 +1,13 @@
----
-title: DocumentBodyTableCaptionBlock
----
-## DocumentBodyTableCaptionBlock
+# DocumentBodyTableCaptionBlock
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **blocks** | <!----><!---->[**List&lt;DocumentBodyTableCaptionItem&gt;**](DocumentBodyTableCaptionItem.html)<!----> | The list of building blocks for the caption property. |  |
-{: class="table table-striped"}
+| **blocks** | [**List&lt;DocumentBodyTableCaptionItem&gt;**](DocumentBodyTableCaptionItem) | The list of building blocks for the caption property. |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

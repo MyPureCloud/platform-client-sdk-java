@@ -1,16 +1,14 @@
----
-title: ActionContract
----
-## ActionContract
+# ActionContract
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **output** | <!----><!---->[**ActionOutput**](ActionOutput.html)<!----> | The output to expect when executing this action. |  [optional] |
-| **input** | <!----><!---->[**ActionInput**](ActionInput.html)<!----> | The input required when executing this action. |  [optional] |
-{: class="table table-striped"}
+| **output** | [**ActionOutput**](ActionOutput) | The output to expect when executing this action. |  [optional] |
+| **input** | [**ActionInput**](ActionInput) | The input required when executing this action. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

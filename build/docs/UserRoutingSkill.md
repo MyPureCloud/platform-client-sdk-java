@@ -1,23 +1,17 @@
----
-title: UserRoutingSkill
----
-## UserRoutingSkill
+# UserRoutingSkill
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **proficiency** | <!----><!---->**Double**<!----> | A rating from 0.0 to 5.0 that indicates how adept an agent is at a particular skill. When \"Best available skills\" is enabled for a queue in Genesys Cloud, ACD interactions in that queue are routed to agents with higher proficiency ratings. |  [optional] |
-| **state** | [**StateEnum**](#StateEnum)<!----> | Activate or deactivate this routing skill. |  [optional] |
-| **skillUri** | <!----><!---->**String**<!----> | URI to the organization skill used by this user skill. |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **proficiency** | **Double** | A rating from 0.0 to 5.0 that indicates how adept an agent is at a particular skill. When \"Best available skills\" is enabled for a queue in Genesys Cloud, ACD interactions in that queue are routed to agents with higher proficiency ratings. |  [optional] |
+| **state** | [**StateEnum**](#Enum--StateEnum) | Activate or deactivate this routing skill. |  [optional] |
+| **skillUri** | **String** | URI to the organization skill used by this user skill. |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -27,7 +21,8 @@ title: UserRoutingSkill
 | ACTIVE | &quot;active&quot; | 
 | INACTIVE | &quot;inactive&quot; | 
 | DELETED | &quot;deleted&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

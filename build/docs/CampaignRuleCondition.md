@@ -1,20 +1,14 @@
----
-title: CampaignRuleCondition
----
-## CampaignRuleCondition
+# CampaignRuleCondition
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **parameters** | <!----><!---->[**CampaignRuleParameters**](CampaignRuleParameters.html)<!----> | The parameters for the CampaignRuleCondition. |  |
-| **conditionType** | [**ConditionTypeEnum**](#ConditionTypeEnum)<!----> | The type of condition to evaluate. |  |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **parameters** | [**CampaignRuleParameters**](CampaignRuleParameters) | The parameters for the CampaignRuleCondition. |  |
+| **conditionType** | [**ConditionTypeEnum**](#Enum--ConditionTypeEnum) | The type of condition to evaluate. |  |
 
-
-<a name="ConditionTypeEnum"></a>
 
 ## Enum: ConditionTypeEnum
 
@@ -29,7 +23,8 @@ title: CampaignRuleCondition
 | CAMPAIGNBUSINESSNEUTRAL | &quot;campaignBusinessNeutral&quot; | 
 | CAMPAIGNVALIDATTEMPTS | &quot;campaignValidAttempts&quot; | 
 | CAMPAIGNRIGHTPARTYCONTACTS | &quot;campaignRightPartyContacts&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,27 +1,21 @@
----
-title: DocumentBodyTableProperties
----
-## DocumentBodyTableProperties
+# DocumentBodyTableProperties
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **width** | <!----><!---->**Float**<!----> | The width of the table converted to em unit. |  [optional] |
-| **height** | <!----><!---->**Float**<!----> | The height for the table. |  [optional] |
-| **cellSpacing** | <!----><!---->**Float**<!----> | The cell spacing for the table. The valid values in 'em'. |  [optional] |
-| **cellPadding** | <!----><!---->**Float**<!----> | The cell padding for the table. The valid values in 'em'. |  [optional] |
-| **borderWidth** | <!----><!---->**Float**<!----> | The border width for the table. The valid values in 'em' |  [optional] |
-| **alignment** | [**AlignmentEnum**](#AlignmentEnum)<!----> | The alignment for the table. |  [optional] |
-| **borderStyle** | [**BorderStyleEnum**](#BorderStyleEnum)<!----> | The border style for the table. |  [optional] |
-| **borderColor** | <!----><!---->**String**<!----> | The border color for the table. The valid values in hex color code representation. For example black color - #000000 |  [optional] |
-| **backgroundColor** | <!----><!---->**String**<!----> | The background color for the table. The valid values in hex color code representation. For example black color - #000000 |  [optional] |
-| **caption** | <!----><!---->[**DocumentBodyTableCaptionBlock**](DocumentBodyTableCaptionBlock.html)<!----> | The caption for the table. The valid values in hex color code representation. For example black color - #000000 |  [optional] |
-{: class="table table-striped"}
+| **width** | **Float** | The width of the table converted to em unit. |  [optional] |
+| **height** | **Float** | The height for the table. |  [optional] |
+| **cellSpacing** | **Float** | The cell spacing for the table. The valid values in 'em'. |  [optional] |
+| **cellPadding** | **Float** | The cell padding for the table. The valid values in 'em'. |  [optional] |
+| **borderWidth** | **Float** | The border width for the table. The valid values in 'em' |  [optional] |
+| **alignment** | [**AlignmentEnum**](#Enum--AlignmentEnum) | The alignment for the table. |  [optional] |
+| **borderStyle** | [**BorderStyleEnum**](#Enum--BorderStyleEnum) | The border style for the table. |  [optional] |
+| **borderColor** | **String** | The border color for the table. The valid values in hex color code representation. For example black color - #000000 |  [optional] |
+| **backgroundColor** | **String** | The background color for the table. The valid values in hex color code representation. For example black color - #000000 |  [optional] |
+| **caption** | [**DocumentBodyTableCaptionBlock**](DocumentBodyTableCaptionBlock) | The caption for the table. The valid values in hex color code representation. For example black color - #000000 |  [optional] |
 
-
-<a name="AlignmentEnum"></a>
 
 ## Enum: AlignmentEnum
 
@@ -31,10 +25,7 @@ title: DocumentBodyTableProperties
 | CENTER | &quot;Center&quot; | 
 | LEFT | &quot;Left&quot; | 
 | RIGHT | &quot;Right&quot; | 
-{: class="table table-striped"}
 
-
-<a name="BorderStyleEnum"></a>
 
 ## Enum: BorderStyleEnum
 
@@ -51,7 +42,8 @@ title: DocumentBodyTableProperties
 | OUTSET | &quot;Outset&quot; | 
 | HIDDEN | &quot;Hidden&quot; | 
 | NONE | &quot;None&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

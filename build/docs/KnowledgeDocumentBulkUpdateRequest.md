@@ -1,15 +1,13 @@
----
-title: KnowledgeDocumentBulkUpdateRequest
----
-## KnowledgeDocumentBulkUpdateRequest
+# KnowledgeDocumentBulkUpdateRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | <!----><!---->[**List&lt;KnowledgeDocumentBulkUpdateEntity&gt;**](KnowledgeDocumentBulkUpdateEntity.html)<!----> | List of unique identifiers referencing documents that are to be updated |  |
-{: class="table table-striped"}
+| **entities** | [**List&lt;KnowledgeDocumentBulkUpdateEntity&gt;**](KnowledgeDocumentBulkUpdateEntity) | List of unique identifiers referencing documents that are to be updated |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

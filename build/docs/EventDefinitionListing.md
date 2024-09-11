@@ -1,15 +1,13 @@
----
-title: EventDefinitionListing
----
-## EventDefinitionListing
+# EventDefinitionListing
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | <!----><!---->[**List&lt;EventDefinition&gt;**](EventDefinition.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **entities** | [**List&lt;EventDefinition&gt;**](EventDefinition) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

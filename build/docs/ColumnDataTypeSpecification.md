@@ -1,22 +1,16 @@
----
-title: ColumnDataTypeSpecification
----
-## ColumnDataTypeSpecification
+# ColumnDataTypeSpecification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **columnName** | <!----><!---->**String**<!----> | The column name of a column selected for dynamic queueing |  [optional] |
-| **columnDataType** | [**ColumnDataTypeEnum**](#ColumnDataTypeEnum)<!----> | The data type of the column selected for dynamic queueing (TEXT, NUMERIC or TIMESTAMP) |  [optional] |
-| **min** | <!----><!---->**Integer**<!----> | The minimum length of the numeric column selected for dynamic queueing |  [optional] |
-| **max** | <!----><!---->**Integer**<!----> | The maximum length of the numeric column selected for dynamic queueing |  [optional] |
-| **maxLength** | <!----><!---->**Integer**<!----> | The maximum length of the text column selected for dynamic queueing |  [optional] |
-{: class="table table-striped"}
+| **columnName** | **String** | The column name of a column selected for dynamic queueing |  [optional] |
+| **columnDataType** | [**ColumnDataTypeEnum**](#Enum--ColumnDataTypeEnum) | The data type of the column selected for dynamic queueing (TEXT, NUMERIC or TIMESTAMP) |  [optional] |
+| **min** | **Integer** | The minimum length of the numeric column selected for dynamic queueing |  [optional] |
+| **max** | **Integer** | The maximum length of the numeric column selected for dynamic queueing |  [optional] |
+| **maxLength** | **Integer** | The maximum length of the text column selected for dynamic queueing |  [optional] |
 
-
-<a name="ColumnDataTypeEnum"></a>
 
 ## Enum: ColumnDataTypeEnum
 
@@ -26,7 +20,8 @@ title: ColumnDataTypeSpecification
 | NUMERIC | &quot;NUMERIC&quot; | 
 | TEXT | &quot;TEXT&quot; | 
 | TIMESTAMP | &quot;TIMESTAMP&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

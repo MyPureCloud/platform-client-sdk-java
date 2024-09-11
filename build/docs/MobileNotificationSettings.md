@@ -1,18 +1,12 @@
----
-title: MobileNotificationSettings
----
-## MobileNotificationSettings
+# MobileNotificationSettings
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **when** | [**WhenEnum**](#WhenEnum)<!----> | When the user should receive notifications |  |
-{: class="table table-striped"}
+| **when** | [**WhenEnum**](#Enum--WhenEnum) | When the user should receive notifications |  |
 
-
-<a name="WhenEnum"></a>
 
 ## Enum: WhenEnum
 
@@ -21,7 +15,8 @@ title: MobileNotificationSettings
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ALWAYS | &quot;Always&quot; | 
 | ONLYWHENINACTIVE | &quot;OnlyWhenInactive&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

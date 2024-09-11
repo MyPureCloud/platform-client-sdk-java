@@ -1,20 +1,18 @@
----
-title: QueueConversationCobrowseEventTopicCobrowseConversation
----
-## QueueConversationCobrowseEventTopicCobrowseConversation
+# QueueConversationCobrowseEventTopicCobrowseConversation
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **participants** | <!----><!---->[**List&lt;QueueConversationCobrowseEventTopicCobrowseMediaParticipant&gt;**](QueueConversationCobrowseEventTopicCobrowseMediaParticipant.html)<!----> |  |  [optional] |
-| **otherMediaUris** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **address** | <!----><!---->**String**<!----> |  |  [optional] |
-| **utilizationLabelId** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **participants** | [**List&lt;QueueConversationCobrowseEventTopicCobrowseMediaParticipant&gt;**](QueueConversationCobrowseEventTopicCobrowseMediaParticipant) |  |  [optional] |
+| **otherMediaUris** | **List&lt;String&gt;** |  |  [optional] |
+| **address** | **String** |  |  [optional] |
+| **utilizationLabelId** | **String** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

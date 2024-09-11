@@ -1,20 +1,14 @@
----
-title: ScimEmail
----
-## ScimEmail
+# ScimEmail
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **value** | <!----><!---->**String**<!----> | The email address. Is immutable if \"type\" is set to \"other\". |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of email address. \"value\" is immutable if \"type\" is set to \"other\". |  [optional] |
-| **primary** | <!----><!---->**Boolean**<!----> | Indicates whether the email address is the primary email address. |  [optional] |
-{: class="table table-striped"}
+| **value** | **String** | The email address. Is immutable if \"type\" is set to \"other\". |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of email address. \"value\" is immutable if \"type\" is set to \"other\". |  [optional] |
+| **primary** | **Boolean** | Indicates whether the email address is the primary email address. |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -23,7 +17,8 @@ title: ScimEmail
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | WORK | &quot;work&quot; | 
 | OTHER | &quot;other&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

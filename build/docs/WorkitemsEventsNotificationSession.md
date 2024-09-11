@@ -1,23 +1,17 @@
----
-title: WorkitemsEventsNotificationSession
----
-## WorkitemsEventsNotificationSession
+# WorkitemsEventsNotificationSession
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
-| **dateSessionStart** | <!----><!---->**String**<!----> |  |  [optional] |
-| **dateSessionEnd** | <!----><!---->**String**<!----> |  |  [optional] |
-| **assignmentSegments** | <!----><!---->[**List&lt;WorkitemsEventsNotificationAssignmentSegment&gt;**](WorkitemsEventsNotificationAssignmentSegment.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
+| **id** | **String** |  |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
+| **dateSessionStart** | **String** |  |  [optional] |
+| **dateSessionEnd** | **String** |  |  [optional] |
+| **assignmentSegments** | [**List&lt;WorkitemsEventsNotificationAssignmentSegment&gt;**](WorkitemsEventsNotificationAssignmentSegment) |  |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -29,10 +23,7 @@ title: WorkitemsEventsNotificationSession
 | QUEUEASSIGNMENT | &quot;QueueAssignment&quot; | 
 | DIRECTASSIGNMENT | &quot;DirectAssignment&quot; | 
 | AGENTCOMPLETE | &quot;AgentComplete&quot; | 
-{: class="table table-striped"}
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -42,7 +33,8 @@ title: WorkitemsEventsNotificationSession
 | UNKNOWN | &quot;Unknown&quot; | 
 | ACTIVE | &quot;Active&quot; | 
 | COMPLETED | &quot;Completed&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

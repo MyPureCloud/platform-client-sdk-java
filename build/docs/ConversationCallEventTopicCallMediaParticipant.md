@@ -1,71 +1,65 @@
----
-title: ConversationCallEventTopicCallMediaParticipant
----
-## ConversationCallEventTopicCallMediaParticipant
+# ConversationCallEventTopicCallMediaParticipant
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **address** | <!----><!---->**String**<!----> |  |  [optional] |
-| **startTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **connectedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **endTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **startHoldTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **purpose** | <!----><!---->**String**<!----> |  |  [optional] |
-| **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
-| **initialState** | [**InitialStateEnum**](#InitialStateEnum)<!----> |  |  [optional] |
-| **direction** | [**DirectionEnum**](#DirectionEnum)<!----> |  |  [optional] |
-| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum)<!----> |  |  [optional] |
-| **held** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **wrapupRequired** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **wrapupPrompt** | <!----><!---->**String**<!----> |  |  [optional] |
-| **user** | <!----><!---->[**ConversationCallEventTopicUriReference**](ConversationCallEventTopicUriReference.html)<!----> |  |  [optional] |
-| **queue** | <!----><!---->[**ConversationCallEventTopicUriReference**](ConversationCallEventTopicUriReference.html)<!----> |  |  [optional] |
-| **team** | <!----><!---->[**ConversationCallEventTopicUriReference**](ConversationCallEventTopicUriReference.html)<!----> |  |  [optional] |
-| **attributes** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
-| **errorInfo** | <!----><!---->[**ConversationCallEventTopicErrorBody**](ConversationCallEventTopicErrorBody.html)<!----> |  |  [optional] |
-| **script** | <!----><!---->[**ConversationCallEventTopicUriReference**](ConversationCallEventTopicUriReference.html)<!----> |  |  [optional] |
-| **wrapupTimeoutMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **wrapupSkipped** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **alertingTimeoutMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **provider** | <!----><!---->**String**<!----> |  |  [optional] |
-| **externalContact** | <!----><!---->[**ConversationCallEventTopicUriReference**](ConversationCallEventTopicUriReference.html)<!----> |  |  [optional] |
-| **externalOrganization** | <!----><!---->[**ConversationCallEventTopicUriReference**](ConversationCallEventTopicUriReference.html)<!----> |  |  [optional] |
-| **wrapup** | <!----><!---->[**ConversationCallEventTopicWrapup**](ConversationCallEventTopicWrapup.html)<!----> |  |  [optional] |
-| **conversationRoutingData** | <!----><!---->[**ConversationCallEventTopicConversationRoutingData**](ConversationCallEventTopicConversationRoutingData.html)<!----> |  |  [optional] |
-| **peer** | <!----><!---->**String**<!----> |  |  [optional] |
-| **screenRecordingState** | <!----><!---->**String**<!----> |  |  [optional] |
-| **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum)<!----> |  |  [optional] |
-| **journeyContext** | <!----><!---->[**ConversationCallEventTopicJourneyContext**](ConversationCallEventTopicJourneyContext.html)<!----> |  |  [optional] |
-| **startAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **endAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **resumeTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **parkTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **mediaRoles** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **queueMediaSettings** | <!----><!---->[**ConversationCallEventTopicQueueMediaSettings**](ConversationCallEventTopicQueueMediaSettings.html)<!----> |  |  [optional] |
-| **muted** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **confined** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **recording** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **recordingState** | [**RecordingStateEnum**](#RecordingStateEnum)<!----> |  |  [optional] |
-| **securePause** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **group** | <!----><!---->[**ConversationCallEventTopicUriReference**](ConversationCallEventTopicUriReference.html)<!----> |  |  [optional] |
-| **ani** | <!----><!---->**String**<!----> |  |  [optional] |
-| **dnis** | <!----><!---->**String**<!----> |  |  [optional] |
-| **documentId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **monitoredParticipantId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **coachedParticipantId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **bargedParticipantId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **bargedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **consultParticipantId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **faxStatus** | <!----><!---->[**ConversationCallEventTopicFaxStatus**](ConversationCallEventTopicFaxStatus.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **address** | **String** |  |  [optional] |
+| **startTime** | [**Date**](Date) |  |  [optional] |
+| **connectedTime** | [**Date**](Date) |  |  [optional] |
+| **endTime** | [**Date**](Date) |  |  [optional] |
+| **startHoldTime** | [**Date**](Date) |  |  [optional] |
+| **purpose** | **String** |  |  [optional] |
+| **state** | [**StateEnum**](#Enum--StateEnum) |  |  [optional] |
+| **initialState** | [**InitialStateEnum**](#Enum--InitialStateEnum) |  |  [optional] |
+| **direction** | [**DirectionEnum**](#Enum--DirectionEnum) |  |  [optional] |
+| **disconnectType** | [**DisconnectTypeEnum**](#Enum--DisconnectTypeEnum) |  |  [optional] |
+| **held** | **Boolean** |  |  [optional] |
+| **wrapupRequired** | **Boolean** |  |  [optional] |
+| **wrapupPrompt** | **String** |  |  [optional] |
+| **user** | [**ConversationCallEventTopicUriReference**](ConversationCallEventTopicUriReference) |  |  [optional] |
+| **queue** | [**ConversationCallEventTopicUriReference**](ConversationCallEventTopicUriReference) |  |  [optional] |
+| **team** | [**ConversationCallEventTopicUriReference**](ConversationCallEventTopicUriReference) |  |  [optional] |
+| **attributes** | **Map&lt;String, String&gt;** |  |  [optional] |
+| **errorInfo** | [**ConversationCallEventTopicErrorBody**](ConversationCallEventTopicErrorBody) |  |  [optional] |
+| **script** | [**ConversationCallEventTopicUriReference**](ConversationCallEventTopicUriReference) |  |  [optional] |
+| **wrapupTimeoutMs** | **Integer** |  |  [optional] |
+| **wrapupSkipped** | **Boolean** |  |  [optional] |
+| **alertingTimeoutMs** | **Integer** |  |  [optional] |
+| **provider** | **String** |  |  [optional] |
+| **externalContact** | [**ConversationCallEventTopicUriReference**](ConversationCallEventTopicUriReference) |  |  [optional] |
+| **externalOrganization** | [**ConversationCallEventTopicUriReference**](ConversationCallEventTopicUriReference) |  |  [optional] |
+| **wrapup** | [**ConversationCallEventTopicWrapup**](ConversationCallEventTopicWrapup) |  |  [optional] |
+| **conversationRoutingData** | [**ConversationCallEventTopicConversationRoutingData**](ConversationCallEventTopicConversationRoutingData) |  |  [optional] |
+| **peer** | **String** |  |  [optional] |
+| **screenRecordingState** | **String** |  |  [optional] |
+| **flaggedReason** | [**FlaggedReasonEnum**](#Enum--FlaggedReasonEnum) |  |  [optional] |
+| **journeyContext** | [**ConversationCallEventTopicJourneyContext**](ConversationCallEventTopicJourneyContext) |  |  [optional] |
+| **startAcwTime** | [**Date**](Date) |  |  [optional] |
+| **endAcwTime** | [**Date**](Date) |  |  [optional] |
+| **resumeTime** | [**Date**](Date) |  |  [optional] |
+| **parkTime** | [**Date**](Date) |  |  [optional] |
+| **mediaRoles** | **List&lt;String&gt;** |  |  [optional] |
+| **queueMediaSettings** | [**ConversationCallEventTopicQueueMediaSettings**](ConversationCallEventTopicQueueMediaSettings) |  |  [optional] |
+| **muted** | **Boolean** |  |  [optional] |
+| **confined** | **Boolean** |  |  [optional] |
+| **recording** | **Boolean** |  |  [optional] |
+| **recordingState** | [**RecordingStateEnum**](#Enum--RecordingStateEnum) |  |  [optional] |
+| **securePause** | **Boolean** |  |  [optional] |
+| **group** | [**ConversationCallEventTopicUriReference**](ConversationCallEventTopicUriReference) |  |  [optional] |
+| **ani** | **String** |  |  [optional] |
+| **dnis** | **String** |  |  [optional] |
+| **documentId** | **String** |  |  [optional] |
+| **monitoredParticipantId** | **String** |  |  [optional] |
+| **coachedParticipantId** | **String** |  |  [optional] |
+| **bargedParticipantId** | **String** |  |  [optional] |
+| **bargedTime** | [**Date**](Date) |  |  [optional] |
+| **consultParticipantId** | **String** |  |  [optional] |
+| **faxStatus** | [**ConversationCallEventTopicFaxStatus**](ConversationCallEventTopicFaxStatus) |  |  [optional] |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -85,10 +79,7 @@ title: ConversationCallEventTopicCallMediaParticipant
 | SCHEDULED | &quot;scheduled&quot; | 
 | PARKED | &quot;parked&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
-
-<a name="InitialStateEnum"></a>
 
 ## Enum: InitialStateEnum
 
@@ -108,10 +99,7 @@ title: ConversationCallEventTopicCallMediaParticipant
 | SCHEDULED | &quot;scheduled&quot; | 
 | PARKED | &quot;parked&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
-
-<a name="DirectionEnum"></a>
 
 ## Enum: DirectionEnum
 
@@ -120,10 +108,7 @@ title: ConversationCallEventTopicCallMediaParticipant
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INBOUND | &quot;inbound&quot; | 
 | OUTBOUND | &quot;outbound&quot; | 
-{: class="table table-striped"}
 
-
-<a name="DisconnectTypeEnum"></a>
 
 ## Enum: DisconnectTypeEnum
 
@@ -148,10 +133,7 @@ title: ConversationCallEventTopicCallMediaParticipant
 | OTHER | &quot;other&quot; | 
 | SPAM | &quot;spam&quot; | 
 | UNCALLABLE | &quot;uncallable&quot; | 
-{: class="table table-striped"}
 
-
-<a name="FlaggedReasonEnum"></a>
 
 ## Enum: FlaggedReasonEnum
 
@@ -159,10 +141,7 @@ title: ConversationCallEventTopicCallMediaParticipant
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | GENERAL | &quot;general&quot; | 
-{: class="table table-striped"}
 
-
-<a name="RecordingStateEnum"></a>
 
 ## Enum: RecordingStateEnum
 
@@ -172,7 +151,8 @@ title: ConversationCallEventTopicCallMediaParticipant
 | NONE | &quot;none&quot; | 
 | ACTIVE | &quot;active&quot; | 
 | PAUSED | &quot;paused&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

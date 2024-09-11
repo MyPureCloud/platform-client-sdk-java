@@ -1,20 +1,18 @@
----
-title: MeteredEvaluationAssignment
----
-## MeteredEvaluationAssignment
+# MeteredEvaluationAssignment
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **evaluationContextId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **evaluators** | <!----><!---->[**List&lt;User&gt;**](User.html)<!----> |  |  [optional] |
-| **maxNumberEvaluations** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **evaluationForm** | <!----><!---->[**EvaluationForm**](EvaluationForm.html)<!----> |  |  [optional] |
-| **assignToActiveUser** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **timeInterval** | <!----><!---->[**TimeInterval**](TimeInterval.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **evaluationContextId** | **String** |  |  [optional] |
+| **evaluators** | [**List&lt;User&gt;**](User) |  |  [optional] |
+| **maxNumberEvaluations** | **Integer** |  |  [optional] |
+| **evaluationForm** | [**EvaluationForm**](EvaluationForm) |  |  [optional] |
+| **assignToActiveUser** | **Boolean** |  |  [optional] |
+| **timeInterval** | [**TimeInterval**](TimeInterval) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

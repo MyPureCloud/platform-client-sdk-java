@@ -1,16 +1,14 @@
----
-title: EdgeLogicalInterfacesChangeTopicDomainLogicalInterfaceChange
----
-## EdgeLogicalInterfacesChangeTopicDomainLogicalInterfaceChange
+# EdgeLogicalInterfacesChangeTopicDomainLogicalInterfaceChange
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **errorInfo** | <!----><!---->[**EdgeLogicalInterfacesChangeTopicErrorInfo**](EdgeLogicalInterfacesChangeTopicErrorInfo.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **errorInfo** | [**EdgeLogicalInterfacesChangeTopicErrorInfo**](EdgeLogicalInterfacesChangeTopicErrorInfo) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,15 +1,13 @@
----
-title: ImportStatusRequest
----
-## ImportStatusRequest
+# ImportStatusRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **status** | <!----><!---->**String**<!----> | New status for existing import operation |  |
-{: class="table table-striped"}
+| **status** | **String** | New status for existing import operation |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

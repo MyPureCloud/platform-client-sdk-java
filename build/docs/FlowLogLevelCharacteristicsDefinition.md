@@ -1,20 +1,14 @@
----
-title: FlowLogLevelCharacteristicsDefinition
----
-## FlowLogLevelCharacteristicsDefinition
+# FlowLogLevelCharacteristicsDefinition
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **minimumLevel** | [**MinimumLevelEnum**](#MinimumLevelEnum)<!----> | The minimum level required for this characteristic to be enabled. |  [optional] |
-| **dependsOn** | <!----><!---->[**FlowCharacteristics**](FlowCharacteristics.html)<!----> | If set, this is the id of the characteristic that this one depends on and it must be enabled for this to be enabled. |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **minimumLevel** | [**MinimumLevelEnum**](#Enum--MinimumLevelEnum) | The minimum level required for this characteristic to be enabled. |  [optional] |
+| **dependsOn** | [**FlowCharacteristics**](FlowCharacteristics) | If set, this is the id of the characteristic that this one depends on and it must be enabled for this to be enabled. |  [optional] |
 
-
-<a name="MinimumLevelEnum"></a>
 
 ## Enum: MinimumLevelEnum
 
@@ -27,7 +21,8 @@ title: FlowLogLevelCharacteristicsDefinition
 | NOTES | &quot;Notes&quot; | 
 | VERBOSENOTES | &quot;VerboseNotes&quot; | 
 | ALL | &quot;All&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

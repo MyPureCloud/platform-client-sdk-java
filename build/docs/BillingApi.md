@@ -1,23 +1,18 @@
----
-title: BillingApi
----
-## BillingApi
+# BillingApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**getBillingReportsBillableusage**](BillingApi.html#getBillingReportsBillableusage) | Get a report of the billable license usages |
-| [**getBillingTrusteebillingoverviewTrustorOrgId**](BillingApi.html#getBillingTrusteebillingoverviewTrustorOrgId) | Get the billing overview for an organization that is managed by a partner. |
+| [**getBillingReportsBillableusage**](BillingApi#getBillingReportsBillableusage) | Get a report of the billable license usages |
+| [**getBillingTrusteebillingoverviewTrustorOrgId**](BillingApi#getBillingTrusteebillingoverviewTrustorOrgId) | Get the billing overview for an organization that is managed by a partner. |
 {: class="table-striped"}
 
-<a name="getBillingReportsBillableusage"></a>
 
 # **getBillingReportsBillableusage**
 
 
-
-> [BillingUsageReport](BillingUsageReport.html) getBillingReportsBillableusage(startDate, endDate)
+> [BillingUsageReport](BillingUsageReport) getBillingReportsBillableusage(startDate, endDate)
 
 Get a report of the billable license usages
 
@@ -75,15 +70,13 @@ try {
 
 ### Return type
 
-[**BillingUsageReport**](BillingUsageReport.html)
+[**BillingUsageReport**](BillingUsageReport)
 
-<a name="getBillingTrusteebillingoverviewTrustorOrgId"></a>
 
 # **getBillingTrusteebillingoverviewTrustorOrgId**
 
 
-
-> [TrusteeBillingOverview](TrusteeBillingOverview.html) getBillingTrusteebillingoverviewTrustorOrgId(trustorOrgId, billingPeriodIndex)
+> [TrusteeBillingOverview](TrusteeBillingOverview) getBillingTrusteebillingoverviewTrustorOrgId(trustorOrgId, billingPeriodIndex)
 
 Get the billing overview for an organization that is managed by a partner.
 
@@ -140,5 +133,7 @@ try {
 
 ### Return type
 
-[**TrusteeBillingOverview**](TrusteeBillingOverview.html)
+[**TrusteeBillingOverview**](TrusteeBillingOverview)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

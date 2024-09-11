@@ -1,30 +1,28 @@
----
-title: Calibration
----
-## Calibration
+# Calibration
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **calibrator** | <!----><!---->[**User**](User.html)<!----> |  |  [optional] |
-| **agent** | <!----><!---->[**User**](User.html)<!----> |  |  [optional] |
-| **conversation** | <!----><!---->[**ConversationReference**](ConversationReference.html)<!----> |  |  [optional] |
-| **evaluationForm** | <!----><!---->[**EvaluationForm**](EvaluationForm.html)<!----> |  |  [optional] |
-| **contextId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **averageScore** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **highScore** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **lowScore** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **createdDate** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **evaluations** | <!----><!---->[**List&lt;Evaluation&gt;**](Evaluation.html)<!----> |  |  [optional] |
-| **evaluators** | <!----><!---->[**List&lt;User&gt;**](User.html)<!----> |  |  [optional] |
-| **scoringIndex** | <!----><!---->[**Evaluation**](Evaluation.html)<!----> |  |  [optional] |
-| **expertEvaluator** | <!----><!---->[**User**](User.html)<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **calibrator** | [**User**](User) |  |  [optional] |
+| **agent** | [**User**](User) |  |  [optional] |
+| **conversation** | [**ConversationReference**](ConversationReference) |  |  [optional] |
+| **evaluationForm** | [**EvaluationForm**](EvaluationForm) |  |  [optional] |
+| **contextId** | **String** |  |  [optional] |
+| **averageScore** | **Integer** |  |  [optional] |
+| **highScore** | **Integer** |  |  [optional] |
+| **lowScore** | **Integer** |  |  [optional] |
+| **createdDate** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **evaluations** | [**List&lt;Evaluation&gt;**](Evaluation) |  |  [optional] |
+| **evaluators** | [**List&lt;User&gt;**](User) |  |  [optional] |
+| **scoringIndex** | [**Evaluation**](Evaluation) |  |  [optional] |
+| **expertEvaluator** | [**User**](User) |  |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

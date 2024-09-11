@@ -1,41 +1,35 @@
----
-title: Flow
----
-## Flow
+# Flow
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The flow identifier |  [optional] |
-| **name** | <!----><!---->**String**<!----> | The flow name |  |
-| **division** | <!----><!---->[**WritableDivision**](WritableDivision.html)<!----> | The division to which this entity belongs. |  [optional] |
-| **description** | <!----><!---->**String**<!----> |  |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-| **lockedUser** | <!----><!---->[**User**](User.html)<!----> | User that has the flow locked. |  [optional] |
-| **lockedClient** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | OAuth client that has the flow locked. |  [optional] |
-| **active** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **system** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **deleted** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **publishedVersion** | <!----><!---->[**FlowVersion**](FlowVersion.html)<!----> |  |  [optional] |
-| **savedVersion** | <!----><!---->[**FlowVersion**](FlowVersion.html)<!----> |  |  [optional] |
-| **inputSchema** | <!----><!---->**Object**<!----> | json schema describing the inputs for the flow |  [optional] |
-| **outputSchema** | <!----><!---->**Object**<!----> | json schema describing the outputs for the flow |  [optional] |
-| **checkedInVersion** | <!----><!---->[**FlowVersion**](FlowVersion.html)<!----> |  |  [optional] |
-| **debugVersion** | <!----><!---->[**FlowVersion**](FlowVersion.html)<!----> |  |  [optional] |
-| **publishedBy** | <!----><!---->[**User**](User.html)<!----> |  |  [optional] |
-| **currentOperation** | <!----><!---->[**Operation**](Operation.html)<!----> |  |  [optional] |
-| **nluInfo** | <!----><!---->[**NluInfo**](NluInfo.html)<!----> | Information about the natural language understanding configuration for the published version of the flow |  [optional] |
-| **supportedLanguages** | <!----><!---->[**List&lt;SupportedLanguage&gt;**](SupportedLanguage.html)<!----> | List of supported languages for the published version of the flow. |  [optional] |
-| **compatibleFlowTypes** | <!---->[**List&lt;CompatibleFlowTypesEnum&gt;**](#CompatibleFlowTypesEnum)<!----> | Compatible flow types designate which flow types are allowed to embed a flow’s configuration within their own flow configuration.  Currently the only flows that can be embedded are Common Module flows and the embedding flow can invoke them using the Call Common Module action. |  [optional] |
-| **worktypeId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **virtualAgentEnabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The flow identifier |  [optional] |
+| **name** | **String** | The flow name |  |
+| **division** | [**WritableDivision**](WritableDivision) | The division to which this entity belongs. |  [optional] |
+| **description** | **String** |  |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
+| **lockedUser** | [**User**](User) | User that has the flow locked. |  [optional] |
+| **lockedClient** | [**DomainEntityRef**](DomainEntityRef) | OAuth client that has the flow locked. |  [optional] |
+| **active** | **Boolean** |  |  [optional] |
+| **system** | **Boolean** |  |  [optional] |
+| **deleted** | **Boolean** |  |  [optional] |
+| **publishedVersion** | [**FlowVersion**](FlowVersion) |  |  [optional] |
+| **savedVersion** | [**FlowVersion**](FlowVersion) |  |  [optional] |
+| **inputSchema** | **Object** | json schema describing the inputs for the flow |  [optional] |
+| **outputSchema** | **Object** | json schema describing the outputs for the flow |  [optional] |
+| **checkedInVersion** | [**FlowVersion**](FlowVersion) |  |  [optional] |
+| **debugVersion** | [**FlowVersion**](FlowVersion) |  |  [optional] |
+| **publishedBy** | [**User**](User) |  |  [optional] |
+| **currentOperation** | [**Operation**](Operation) |  |  [optional] |
+| **nluInfo** | [**NluInfo**](NluInfo) | Information about the natural language understanding configuration for the published version of the flow |  [optional] |
+| **supportedLanguages** | [**List&lt;SupportedLanguage&gt;**](SupportedLanguage) | List of supported languages for the published version of the flow. |  [optional] |
+| **compatibleFlowTypes** | [**List<CompatibleFlowTypesEnum>**](#Enum--CompatibleFlowTypesEnum) | Compatible flow types designate which flow types are allowed to embed a flow’s configuration within their own flow configuration.  Currently the only flows that can be embedded are Common Module flows and the embedding flow can invoke them using the Call Common Module action. |  [optional] |
+| **worktypeId** | **String** |  |  [optional] |
+| **virtualAgentEnabled** | **Boolean** |  |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -61,10 +55,7 @@ title: Flow
 | VOICESURVEY | &quot;VOICESURVEY&quot; | 
 | WORKFLOW | &quot;WORKFLOW&quot; | 
 | WORKITEM | &quot;WORKITEM&quot; | 
-{: class="table table-striped"}
 
-
-<a name="CompatibleFlowTypesEnum"></a>
 
 ## Enum: CompatibleFlowTypesEnum
 
@@ -89,7 +80,8 @@ title: Flow
 | VOICESURVEY | &quot;VOICESURVEY&quot; |
 | WORKFLOW | &quot;WORKFLOW&quot; |
 | WORKITEM | &quot;WORKITEM&quot; |
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

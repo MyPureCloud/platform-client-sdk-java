@@ -1,48 +1,42 @@
----
-title: Document
----
-## Document
+# Document
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **changeNumber** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **dateUploaded** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **contentUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **workspace** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
-| **createdBy** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
-| **uploadedBy** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
-| **sharingUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **contentType** | <!----><!---->**String**<!----> |  |  [optional] |
-| **contentLength** | <!----><!---->**Long**<!----> |  |  [optional] |
-| **systemType** | [**SystemTypeEnum**](#SystemTypeEnum)<!----> |  |  [optional] |
-| **filename** | <!----><!---->**String**<!----> |  |  [optional] |
-| **pageCount** | <!----><!---->**Long**<!----> |  |  [optional] |
-| **read** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **callerAddress** | <!----><!---->**String**<!----> |  |  [optional] |
-| **receiverAddress** | <!----><!---->**String**<!----> |  |  [optional] |
-| **tags** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **tagValues** | <!----><!---->[**List&lt;TagValue&gt;**](TagValue.html)<!----> |  |  [optional] |
-| **attributes** | <!----><!---->[**List&lt;DocumentAttribute&gt;**](DocumentAttribute.html)<!----> |  |  [optional] |
-| **thumbnails** | <!----><!---->[**List&lt;DocumentThumbnail&gt;**](DocumentThumbnail.html)<!----> |  |  [optional] |
-| **uploadStatus** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
-| **uploadDestinationUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **uploadMethod** | [**UploadMethodEnum**](#UploadMethodEnum)<!----> |  |  [optional] |
-| **lockInfo** | <!----><!---->[**LockInfo**](LockInfo.html)<!----> |  |  [optional] |
-| **acl** | <!----><!---->**List&lt;String&gt;**<!----> | A list of permitted action rights for the user making the request |  [optional] |
-| **sharingStatus** | [**SharingStatusEnum**](#SharingStatusEnum)<!----> |  |  [optional] |
-| **downloadSharingUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **changeNumber** | **Integer** |  |  [optional] |
+| **dateCreated** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **dateModified** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **dateUploaded** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **contentUri** | **String** |  |  [optional] |
+| **workspace** | [**DomainEntityRef**](DomainEntityRef) |  |  [optional] |
+| **createdBy** | [**DomainEntityRef**](DomainEntityRef) |  |  [optional] |
+| **uploadedBy** | [**DomainEntityRef**](DomainEntityRef) |  |  [optional] |
+| **sharingUri** | **String** |  |  [optional] |
+| **contentType** | **String** |  |  [optional] |
+| **contentLength** | **Long** |  |  [optional] |
+| **systemType** | [**SystemTypeEnum**](#Enum--SystemTypeEnum) |  |  [optional] |
+| **filename** | **String** |  |  [optional] |
+| **pageCount** | **Long** |  |  [optional] |
+| **read** | **Boolean** |  |  [optional] |
+| **callerAddress** | **String** |  |  [optional] |
+| **receiverAddress** | **String** |  |  [optional] |
+| **tags** | **List&lt;String&gt;** |  |  [optional] |
+| **tagValues** | [**List&lt;TagValue&gt;**](TagValue) |  |  [optional] |
+| **attributes** | [**List&lt;DocumentAttribute&gt;**](DocumentAttribute) |  |  [optional] |
+| **thumbnails** | [**List&lt;DocumentThumbnail&gt;**](DocumentThumbnail) |  |  [optional] |
+| **uploadStatus** | [**DomainEntityRef**](DomainEntityRef) |  |  [optional] |
+| **uploadDestinationUri** | **String** |  |  [optional] |
+| **uploadMethod** | [**UploadMethodEnum**](#Enum--UploadMethodEnum) |  |  [optional] |
+| **lockInfo** | [**LockInfo**](LockInfo) |  |  [optional] |
+| **acl** | **List&lt;String&gt;** | A list of permitted action rights for the user making the request |  [optional] |
+| **sharingStatus** | [**SharingStatusEnum**](#Enum--SharingStatusEnum) |  |  [optional] |
+| **downloadSharingUri** | **String** |  |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="SystemTypeEnum"></a>
 
 ## Enum: SystemTypeEnum
 
@@ -52,10 +46,7 @@ title: Document
 | DOCUMENT | &quot;DOCUMENT&quot; | 
 | FAX | &quot;FAX&quot; | 
 | RECORDING | &quot;RECORDING&quot; | 
-{: class="table table-striped"}
 
-
-<a name="UploadMethodEnum"></a>
 
 ## Enum: UploadMethodEnum
 
@@ -64,10 +55,7 @@ title: Document
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | SINGLE_PUT | &quot;SINGLE_PUT&quot; | 
 | MULTIPART_POST | &quot;MULTIPART_POST&quot; | 
-{: class="table table-striped"}
 
-
-<a name="SharingStatusEnum"></a>
 
 ## Enum: SharingStatusEnum
 
@@ -77,7 +65,8 @@ title: Document
 | NONE | &quot;NONE&quot; | 
 | LIMITED | &quot;LIMITED&quot; | 
 | PUBLIC | &quot;PUBLIC&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

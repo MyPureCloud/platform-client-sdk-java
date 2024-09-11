@@ -1,26 +1,20 @@
----
-title: CampaignRuleParameters
----
-## CampaignRuleParameters
+# CampaignRuleParameters
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | The operator for comparison. Required for a CampaignRuleCondition. |  [optional] |
-| **value** | <!----><!---->**String**<!----> | The value for comparison. Required for a CampaignRuleCondition. |  [optional] |
-| **priority** | [**PriorityEnum**](#PriorityEnum)<!----> | The priority to set a campaign to. Required for the 'setCampaignPriority' action. |  [optional] |
-| **dialingMode** | [**DialingModeEnum**](#DialingModeEnum)<!----> | The dialing mode to set a campaign to. Required for the 'setCampaignDialingMode' action. |  [optional] |
-| **abandonRate** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> | The abandon rate to set a campaign to. Required for the 'setCampaignAbandonRate' action. |  [optional] |
-| **outboundLineCount** | <!----><!---->**Integer**<!----> | The  number of outbound lines to set a campaign to. Required for the 'setCampaignNumberOfLines' action. |  [optional] |
-| **relativeWeight** | <!----><!---->**Integer**<!----> | The relative weight to set a campaign to. Required for the 'setCampaignWeight' action. |  [optional] |
-| **maxCallsPerAgent** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> | The maximum number of calls per agent to set a campaign to. Required for the 'setCampaignMaxCallsPerAgent' action. |  [optional] |
-| **queue** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The queue a campaign to. Required for the 'changeCampaignQueue' action. |  [optional] |
-{: class="table table-striped"}
+| **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | The operator for comparison. Required for a CampaignRuleCondition. |  [optional] |
+| **value** | **String** | The value for comparison. Required for a CampaignRuleCondition. |  [optional] |
+| **priority** | [**PriorityEnum**](#Enum--PriorityEnum) | The priority to set a campaign to. Required for the 'setCampaignPriority' action. |  [optional] |
+| **dialingMode** | [**DialingModeEnum**](#Enum--DialingModeEnum) | The dialing mode to set a campaign to. Required for the 'setCampaignDialingMode' action. |  [optional] |
+| **abandonRate** | [**BigDecimal**](BigDecimal) | The abandon rate to set a campaign to. Required for the 'setCampaignAbandonRate' action. |  [optional] |
+| **outboundLineCount** | **Integer** | The  number of outbound lines to set a campaign to. Required for the 'setCampaignNumberOfLines' action. |  [optional] |
+| **relativeWeight** | **Integer** | The relative weight to set a campaign to. Required for the 'setCampaignWeight' action. |  [optional] |
+| **maxCallsPerAgent** | [**BigDecimal**](BigDecimal) | The maximum number of calls per agent to set a campaign to. Required for the 'setCampaignMaxCallsPerAgent' action. |  [optional] |
+| **queue** | [**DomainEntityRef**](DomainEntityRef) | The queue a campaign to. Required for the 'changeCampaignQueue' action. |  [optional] |
 
-
-<a name="OperatorEnum"></a>
 
 ## Enum: OperatorEnum
 
@@ -32,10 +26,7 @@ title: CampaignRuleParameters
 | GREATERTHANEQUALTO | &quot;greaterThanEqualTo&quot; | 
 | LESSTHAN | &quot;lessThan&quot; | 
 | LESSTHANEQUALTO | &quot;lessThanEqualTo&quot; | 
-{: class="table table-striped"}
 
-
-<a name="PriorityEnum"></a>
 
 ## Enum: PriorityEnum
 
@@ -47,10 +38,7 @@ title: CampaignRuleParameters
 | _3 | &quot;3&quot; | 
 | _4 | &quot;4&quot; | 
 | _5 | &quot;5&quot; | 
-{: class="table table-striped"}
 
-
-<a name="DialingModeEnum"></a>
 
 ## Enum: DialingModeEnum
 
@@ -63,7 +51,8 @@ title: CampaignRuleParameters
 | PREDICTIVE | &quot;predictive&quot; | 
 | PROGRESSIVE | &quot;progressive&quot; | 
 | EXTERNAL | &quot;external&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

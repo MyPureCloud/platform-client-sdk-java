@@ -1,17 +1,15 @@
----
-title: SupportCenterCategory
----
-## SupportCenterCategory
+# SupportCenterCategory
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **image** | <!----><!---->[**SupportCenterImage**](SupportCenterImage.html)<!----> | Image attributes for a featured category |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **selfUri** | **String** |  |  [optional] |
+| **image** | [**SupportCenterImage**](SupportCenterImage) | Image attributes for a featured category |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

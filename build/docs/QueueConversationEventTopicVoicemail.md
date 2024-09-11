@@ -1,19 +1,13 @@
----
-title: QueueConversationEventTopicVoicemail
----
-## QueueConversationEventTopicVoicemail
+# QueueConversationEventTopicVoicemail
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The voicemail id |  [optional] |
-| **uploadStatus** | [**UploadStatusEnum**](#UploadStatusEnum)<!----> | current state of the voicemail upload |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The voicemail id |  [optional] |
+| **uploadStatus** | [**UploadStatusEnum**](#Enum--UploadStatusEnum) | current state of the voicemail upload |  [optional] |
 
-
-<a name="UploadStatusEnum"></a>
 
 ## Enum: UploadStatusEnum
 
@@ -25,7 +19,8 @@ title: QueueConversationEventTopicVoicemail
 | FAILED | &quot;failed&quot; | 
 | TIMEOUT | &quot;timeout&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,16 +1,14 @@
----
-title: UserGreetingEventGreetingAudioFile
----
-## UserGreetingEventGreetingAudioFile
+# UserGreetingEventGreetingAudioFile
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **durationMilliseconds** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **sizeBytes** | <!----><!---->**Integer**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **durationMilliseconds** | **Integer** |  |  [optional] |
+| **sizeBytes** | **Integer** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

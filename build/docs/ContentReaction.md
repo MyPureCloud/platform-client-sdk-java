@@ -1,19 +1,13 @@
----
-title: ContentReaction
----
-## ContentReaction
+# ContentReaction
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **reactionType** | [**ReactionTypeEnum**](#ReactionTypeEnum)<!----> | Type of reaction. |  |
-| **count** | <!----><!---->**Integer**<!----> | Number of users that reacted this way to the message. |  |
-{: class="table table-striped"}
+| **reactionType** | [**ReactionTypeEnum**](#Enum--ReactionTypeEnum) | Type of reaction. |  |
+| **count** | **Integer** | Number of users that reacted this way to the message. |  |
 
-
-<a name="ReactionTypeEnum"></a>
 
 ## Enum: ReactionTypeEnum
 
@@ -32,7 +26,8 @@ title: ContentReaction
 | SHARE | &quot;Share&quot; | 
 | COMMENT | &quot;Comment&quot; | 
 | VIEW | &quot;View&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

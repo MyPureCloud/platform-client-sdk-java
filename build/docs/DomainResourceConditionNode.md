@@ -1,22 +1,16 @@
----
-title: DomainResourceConditionNode
----
-## DomainResourceConditionNode
+# DomainResourceConditionNode
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **variableName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> |  |  [optional] |
-| **operands** | <!----><!---->[**List&lt;DomainResourceConditionValue&gt;**](DomainResourceConditionValue.html)<!----> |  |  [optional] |
-| **conjunction** | [**ConjunctionEnum**](#ConjunctionEnum)<!----> |  |  [optional] |
-| **terms** | <!----><!---->[**List&lt;DomainResourceConditionNode&gt;**](DomainResourceConditionNode.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **variableName** | **String** |  |  [optional] |
+| **operator** | [**OperatorEnum**](#Enum--OperatorEnum) |  |  [optional] |
+| **operands** | [**List&lt;DomainResourceConditionValue&gt;**](DomainResourceConditionValue) |  |  [optional] |
+| **conjunction** | [**ConjunctionEnum**](#Enum--ConjunctionEnum) |  |  [optional] |
+| **terms** | [**List&lt;DomainResourceConditionNode&gt;**](DomainResourceConditionNode) |  |  [optional] |
 
-
-<a name="OperatorEnum"></a>
 
 ## Enum: OperatorEnum
 
@@ -29,10 +23,7 @@ title: DomainResourceConditionNode
 | GT | &quot;GT&quot; | 
 | LE | &quot;LE&quot; | 
 | LT | &quot;LT&quot; | 
-{: class="table table-striped"}
 
-
-<a name="ConjunctionEnum"></a>
 
 ## Enum: ConjunctionEnum
 
@@ -41,7 +32,8 @@ title: DomainResourceConditionNode
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | AND | &quot;AND&quot; | 
 | OR | &quot;OR&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

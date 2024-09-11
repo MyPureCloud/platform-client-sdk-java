@@ -1,16 +1,14 @@
----
-title: ReverseWhitepagesLookupResult
----
-## ReverseWhitepagesLookupResult
+# ReverseWhitepagesLookupResult
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **contacts** | <!----><!---->[**List&lt;ExternalContact&gt;**](ExternalContact.html)<!----> |  |  [optional] |
-| **externalOrganizations** | <!----><!---->[**List&lt;ExternalOrganization&gt;**](ExternalOrganization.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **contacts** | [**List&lt;ExternalContact&gt;**](ExternalContact) |  |  [optional] |
+| **externalOrganizations** | [**List&lt;ExternalOrganization&gt;**](ExternalOrganization) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

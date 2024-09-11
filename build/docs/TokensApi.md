@@ -1,24 +1,19 @@
----
-title: TokensApi
----
-## TokensApi
+# TokensApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteToken**](TokensApi.html#deleteToken) | Delete all auth tokens for the specified user. |
-| [**deleteTokensMe**](TokensApi.html#deleteTokensMe) | Delete auth token used to make the request. |
-| [**getTokensMe**](TokensApi.html#getTokensMe) | Fetch information about the current token |
-| [**getTokensTimeout**](TokensApi.html#getTokensTimeout) | Get the current Idle Token Timeout Value |
-| [**headTokensMe**](TokensApi.html#headTokensMe) | Verify user token |
-| [**putTokensTimeout**](TokensApi.html#putTokensTimeout) | Update or Enable/Disable the Idle Token Timeout |
+| [**deleteToken**](TokensApi#deleteToken) | Delete all auth tokens for the specified user. |
+| [**deleteTokensMe**](TokensApi#deleteTokensMe) | Delete auth token used to make the request. |
+| [**getTokensMe**](TokensApi#getTokensMe) | Fetch information about the current token |
+| [**getTokensTimeout**](TokensApi#getTokensTimeout) | Get the current Idle Token Timeout Value |
+| [**headTokensMe**](TokensApi#headTokensMe) | Verify user token |
+| [**putTokensTimeout**](TokensApi#putTokensTimeout) | Update or Enable/Disable the Idle Token Timeout |
 {: class="table-striped"}
 
-<a name="deleteToken"></a>
 
 # **deleteToken**
-
 
 
 > Void deleteToken(userId)
@@ -75,10 +70,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteTokensMe"></a>
 
 # **deleteTokensMe**
-
 
 
 > Void deleteTokensMe()
@@ -130,13 +123,11 @@ This endpoint does not require any parameters.
 
 null (empty response body)
 
-<a name="getTokensMe"></a>
 
 # **getTokensMe**
 
 
-
-> [TokenInfo](TokenInfo.html) getTokensMe(preserveIdleTTL)
+> [TokenInfo](TokenInfo) getTokensMe(preserveIdleTTL)
 
 Fetch information about the current token
 
@@ -188,15 +179,13 @@ try {
 
 ### Return type
 
-[**TokenInfo**](TokenInfo.html)
+[**TokenInfo**](TokenInfo)
 
-<a name="getTokensTimeout"></a>
 
 # **getTokensTimeout**
 
 
-
-> [IdleTokenTimeout](IdleTokenTimeout.html) getTokensTimeout()
+> [IdleTokenTimeout](IdleTokenTimeout) getTokensTimeout()
 
 Get the current Idle Token Timeout Value
 
@@ -245,12 +234,10 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**IdleTokenTimeout**](IdleTokenTimeout.html)
+[**IdleTokenTimeout**](IdleTokenTimeout)
 
-<a name="headTokensMe"></a>
 
 # **headTokensMe**
-
 
 
 > Void headTokensMe()
@@ -302,13 +289,11 @@ This endpoint does not require any parameters.
 
 null (empty response body)
 
-<a name="putTokensTimeout"></a>
 
 # **putTokensTimeout**
 
 
-
-> [IdleTokenTimeout](IdleTokenTimeout.html) putTokensTimeout(body)
+> [IdleTokenTimeout](IdleTokenTimeout) putTokensTimeout(body)
 
 Update or Enable/Disable the Idle Token Timeout
 
@@ -355,11 +340,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**IdleTokenTimeout**](IdleTokenTimeout.html)|  | [optional] 
+| **body** | [**IdleTokenTimeout**](IdleTokenTimeout)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**IdleTokenTimeout**](IdleTokenTimeout.html)
+[**IdleTokenTimeout**](IdleTokenTimeout)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

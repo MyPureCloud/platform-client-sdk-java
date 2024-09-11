@@ -1,15 +1,13 @@
----
-title: EventSetting
----
-## EventSetting
+# EventSetting
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **typing** | <!----><!---->[**TypingSetting**](TypingSetting.html)<!----> | Settings regarding typing events |  [optional] |
-{: class="table table-striped"}
+| **typing** | [**TypingSetting**](TypingSetting) | Settings regarding typing events |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

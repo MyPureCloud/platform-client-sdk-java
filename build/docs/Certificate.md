@@ -1,15 +1,13 @@
----
-title: Certificate
----
-## Certificate
+# Certificate
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **certificate** | <!----><!---->**String**<!----> | The certificate to parse. |  |
-{: class="table table-striped"}
+| **certificate** | **String** | The certificate to parse. |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,15 +1,13 @@
----
-title: ArticleContent
----
-## ArticleContent
+# ArticleContent
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **body** | <!----><!---->[**ArticleContentBody**](ArticleContentBody.html)<!----> | Body of the article content. |  [optional] |
-{: class="table table-striped"}
+| **body** | [**ArticleContentBody**](ArticleContentBody) | Body of the article content. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

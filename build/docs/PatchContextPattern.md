@@ -1,15 +1,13 @@
----
-title: PatchContextPattern
----
-## PatchContextPattern
+# PatchContextPattern
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **criteria** | <!----><!---->[**List&lt;PatchEntityTypeCriteria&gt;**](PatchEntityTypeCriteria.html)<!----> | A list of one or more criteria to satisfy. |  [optional] |
-{: class="table table-striped"}
+| **criteria** | [**List&lt;PatchEntityTypeCriteria&gt;**](PatchEntityTypeCriteria) | A list of one or more criteria to satisfy. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

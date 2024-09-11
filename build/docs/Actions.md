@@ -1,15 +1,13 @@
----
-title: Actions
----
-## Actions
+# Actions
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **skillsToRemove** | <!----><!---->[**List&lt;SkillsToRemove&gt;**](SkillsToRemove.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **skillsToRemove** | [**List&lt;SkillsToRemove&gt;**](SkillsToRemove) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

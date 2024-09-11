@@ -1,23 +1,17 @@
----
-title: ScimServiceProviderConfigAuthenticationScheme
----
-## ScimServiceProviderConfigAuthenticationScheme
+# ScimServiceProviderConfigAuthenticationScheme
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | <!----><!---->**String**<!----> | The name of the authentication scheme, for example, HTTP Basic. |  |
-| **description** | <!----><!---->**String**<!----> | The description of the authentication scheme. |  |
-| **specUri** | <!----><!---->**String**<!----> | The HTTP-addressable URL that points to the authentication scheme's specification. |  [optional] |
-| **documentationUri** | <!----><!---->**String**<!----> | The HTTP-addressable URL that points to the authentication scheme's usage documentation. |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of authentication scheme. |  |
-| **primary** | <!----><!---->**Boolean**<!----> | Indicates whether this authentication scheme is the primary method of authentication. |  [optional] |
-{: class="table table-striped"}
+| **name** | **String** | The name of the authentication scheme, for example, HTTP Basic. |  |
+| **description** | **String** | The description of the authentication scheme. |  |
+| **specUri** | **String** | The HTTP-addressable URL that points to the authentication scheme's specification. |  [optional] |
+| **documentationUri** | **String** | The HTTP-addressable URL that points to the authentication scheme's usage documentation. |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of authentication scheme. |  |
+| **primary** | **Boolean** | Indicates whether this authentication scheme is the primary method of authentication. |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -29,7 +23,8 @@ title: ScimServiceProviderConfigAuthenticationScheme
 | OAUTHBEARERTOKEN | &quot;oauthbearertoken&quot; | 
 | HTTPBASIC | &quot;httpbasic&quot; | 
 | HTTPDIGEST | &quot;httpdigest&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

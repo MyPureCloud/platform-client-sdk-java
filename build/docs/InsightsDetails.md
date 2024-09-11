@@ -1,25 +1,19 @@
----
-title: InsightsDetails
----
-## InsightsDetails
+# InsightsDetails
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **performanceProfile** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | The performance profile |  [optional] |
-| **division** | <!----><!---->[**DivisionReference**](DivisionReference.html)<!----> | The division |  [optional] |
-| **granularity** | [**GranularityEnum**](#GranularityEnum)<!----> | Granularity |  [optional] |
-| **comparativePeriod** | <!----><!---->[**WorkdayPeriod**](WorkdayPeriod.html)<!----> | The comparative period work day date range |  [optional] |
-| **primaryPeriod** | <!----><!---->[**WorkdayPeriod**](WorkdayPeriod.html)<!----> | The primary period work day date range |  [optional] |
-| **user** | <!----><!---->[**UserReference**](UserReference.html)<!----> | The query user |  [optional] |
-| **metricData** | <!----><!---->[**List&lt;InsightsDetailsMetricItem&gt;**](InsightsDetailsMetricItem.html)<!----> | The list of insights data for each metric of the user |  [optional] |
-| **overallData** | <!----><!---->[**InsightsDetailsOverallItem**](InsightsDetailsOverallItem.html)<!----> | Overall insights data of the user |  [optional] |
-{: class="table table-striped"}
+| **performanceProfile** | [**AddressableEntityRef**](AddressableEntityRef) | The performance profile |  [optional] |
+| **division** | [**DivisionReference**](DivisionReference) | The division |  [optional] |
+| **granularity** | [**GranularityEnum**](#Enum--GranularityEnum) | Granularity |  [optional] |
+| **comparativePeriod** | [**WorkdayPeriod**](WorkdayPeriod) | The comparative period work day date range |  [optional] |
+| **primaryPeriod** | [**WorkdayPeriod**](WorkdayPeriod) | The primary period work day date range |  [optional] |
+| **user** | [**UserReference**](UserReference) | The query user |  [optional] |
+| **metricData** | [**List&lt;InsightsDetailsMetricItem&gt;**](InsightsDetailsMetricItem) | The list of insights data for each metric of the user |  [optional] |
+| **overallData** | [**InsightsDetailsOverallItem**](InsightsDetailsOverallItem) | Overall insights data of the user |  [optional] |
 
-
-<a name="GranularityEnum"></a>
 
 ## Enum: GranularityEnum
 
@@ -29,7 +23,8 @@ title: InsightsDetails
 | DAILY | &quot;Daily&quot; | 
 | WEEKLY | &quot;Weekly&quot; | 
 | MONTHLY | &quot;Monthly&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

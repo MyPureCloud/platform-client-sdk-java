@@ -1,16 +1,14 @@
----
-title: ServiceGoalTemplateList
----
-## ServiceGoalTemplateList
+# ServiceGoalTemplateList
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | <!----><!---->[**List&lt;ServiceGoalTemplate&gt;**](ServiceGoalTemplate.html)<!----> |  |  [optional] |
-| **metadata** | <!----><!---->[**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata.html)<!----> | Version metadata for the service goal templates |  [optional] |
-{: class="table table-striped"}
+| **entities** | [**List&lt;ServiceGoalTemplate&gt;**](ServiceGoalTemplate) |  |  [optional] |
+| **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Version metadata for the service goal templates |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,21 +1,15 @@
----
-title: WfmTimeOffBalanceJobTopicTimeOffBalanceJobNotification
----
-## WfmTimeOffBalanceJobTopicTimeOffBalanceJobNotification
+# WfmTimeOffBalanceJobTopicTimeOffBalanceJobNotification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **entities** | <!----><!---->[**List&lt;WfmTimeOffBalanceJobTopicTimeOffBalance&gt;**](WfmTimeOffBalanceJobTopicTimeOffBalance.html)<!----> |  |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
-| **error** | <!----><!---->[**WfmTimeOffBalanceJobTopicErrorBody**](WfmTimeOffBalanceJobTopicErrorBody.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **entities** | [**List&lt;WfmTimeOffBalanceJobTopicTimeOffBalance&gt;**](WfmTimeOffBalanceJobTopicTimeOffBalance) |  |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
+| **error** | [**WfmTimeOffBalanceJobTopicErrorBody**](WfmTimeOffBalanceJobTopicErrorBody) |  |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -25,7 +19,8 @@ title: WfmTimeOffBalanceJobTopicTimeOffBalanceJobNotification
 | PROCESSING | &quot;Processing&quot; | 
 | COMPLETE | &quot;Complete&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,20 +1,18 @@
----
-title: ExternalContactsUnresolvedContactChangedTopicContactAddress
----
-## ExternalContactsUnresolvedContactChangedTopicContactAddress
+# ExternalContactsUnresolvedContactChangedTopicContactAddress
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **address1** | <!----><!---->**String**<!----> |  |  [optional] |
-| **address2** | <!----><!---->**String**<!----> |  |  [optional] |
-| **city** | <!----><!---->**String**<!----> |  |  [optional] |
-| **state** | <!----><!---->**String**<!----> |  |  [optional] |
-| **postalCode** | <!----><!---->**String**<!----> |  |  [optional] |
-| **countryCode** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **address1** | **String** |  |  [optional] |
+| **address2** | **String** |  |  [optional] |
+| **city** | **String** |  |  [optional] |
+| **state** | **String** |  |  [optional] |
+| **postalCode** | **String** |  |  [optional] |
+| **countryCode** | **String** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

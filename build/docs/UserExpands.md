@@ -1,22 +1,20 @@
----
-title: UserExpands
----
-## UserExpands
+# UserExpands
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **routingStatus** | <!----><!---->[**RoutingStatus**](RoutingStatus.html)<!----> | ACD routing status |  [optional] |
-| **presence** | <!----><!---->[**UserPresence**](UserPresence.html)<!----> | Active presence |  [optional] |
-| **integrationPresence** | <!----><!---->[**UserPresence**](UserPresence.html)<!----> | Active 3rd party presence |  [optional] |
-| **conversationSummary** | <!----><!---->[**UserConversationSummary**](UserConversationSummary.html)<!----> | Summary of conversion statistics for conversation types. |  [optional] |
-| **outOfOffice** | <!----><!---->[**OutOfOffice**](OutOfOffice.html)<!----> | Determine if out of office is enabled |  [optional] |
-| **geolocation** | <!----><!---->[**Geolocation**](Geolocation.html)<!----> | Current geolocation position |  [optional] |
-| **station** | <!----><!---->[**UserStations**](UserStations.html)<!----> | Effective, default, and last station information |  [optional] |
-| **authorization** | <!----><!---->[**UserAuthorization**](UserAuthorization.html)<!----> | Roles and permissions assigned to the user |  [optional] |
-{: class="table table-striped"}
+| **routingStatus** | [**RoutingStatus**](RoutingStatus) | ACD routing status |  [optional] |
+| **presence** | [**UserPresence**](UserPresence) | Active presence |  [optional] |
+| **integrationPresence** | [**UserPresence**](UserPresence) | Active 3rd party presence |  [optional] |
+| **conversationSummary** | [**UserConversationSummary**](UserConversationSummary) | Summary of conversion statistics for conversation types. |  [optional] |
+| **outOfOffice** | [**OutOfOffice**](OutOfOffice) | Determine if out of office is enabled |  [optional] |
+| **geolocation** | [**Geolocation**](Geolocation) | Current geolocation position |  [optional] |
+| **station** | [**UserStations**](UserStations) | Effective, default, and last station information |  [optional] |
+| **authorization** | [**UserAuthorization**](UserAuthorization) | Roles and permissions assigned to the user |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

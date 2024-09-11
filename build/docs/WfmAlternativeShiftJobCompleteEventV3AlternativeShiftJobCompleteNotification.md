@@ -1,22 +1,16 @@
----
-title: WfmAlternativeShiftJobCompleteEventV3AlternativeShiftJobCompleteNotification
----
-## WfmAlternativeShiftJobCompleteEventV3AlternativeShiftJobCompleteNotification
+# WfmAlternativeShiftJobCompleteEventV3AlternativeShiftJobCompleteNotification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
-| **downloadUrl** | <!----><!---->**String**<!----> |  |  [optional] |
-| **error** | <!----><!---->[**WfmAlternativeShiftJobCompleteEventV3ErrorBody**](WfmAlternativeShiftJobCompleteEventV3ErrorBody.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
+| **downloadUrl** | **String** |  |  [optional] |
+| **error** | [**WfmAlternativeShiftJobCompleteEventV3ErrorBody**](WfmAlternativeShiftJobCompleteEventV3ErrorBody) |  |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -28,10 +22,7 @@ title: WfmAlternativeShiftJobCompleteEventV3AlternativeShiftJobCompleteNotificat
 | LISTUSERTRADES | &quot;ListUserTrades&quot; | 
 | SEARCHTRADES | &quot;SearchTrades&quot; | 
 | BULKUPDATETRADES | &quot;BulkUpdateTrades&quot; | 
-{: class="table table-striped"}
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -41,7 +32,8 @@ title: WfmAlternativeShiftJobCompleteEventV3AlternativeShiftJobCompleteNotificat
 | PROCESSING | &quot;Processing&quot; | 
 | COMPLETE | &quot;Complete&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

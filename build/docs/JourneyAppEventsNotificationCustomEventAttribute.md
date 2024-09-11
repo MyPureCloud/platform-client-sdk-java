@@ -1,19 +1,13 @@
----
-title: JourneyAppEventsNotificationCustomEventAttribute
----
-## JourneyAppEventsNotificationCustomEventAttribute
+# JourneyAppEventsNotificationCustomEventAttribute
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **value** | <!----><!---->**String**<!----> |  |  [optional] |
-| **dataType** | [**DataTypeEnum**](#DataTypeEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **value** | **String** |  |  [optional] |
+| **dataType** | [**DataTypeEnum**](#Enum--DataTypeEnum) |  |  [optional] |
 
-
-<a name="DataTypeEnum"></a>
 
 ## Enum: DataTypeEnum
 
@@ -23,7 +17,8 @@ title: JourneyAppEventsNotificationCustomEventAttribute
 | STRING | &quot;STRING&quot; | 
 | BOOLEAN | &quot;BOOLEAN&quot; | 
 | NUMBER | &quot;NUMBER&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

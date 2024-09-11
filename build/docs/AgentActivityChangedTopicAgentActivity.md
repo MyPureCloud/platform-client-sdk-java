@@ -1,20 +1,18 @@
----
-title: AgentActivityChangedTopicAgentActivity
----
-## AgentActivityChangedTopicAgentActivity
+# AgentActivityChangedTopicAgentActivity
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **routingStatus** | <!----><!---->[**AgentActivityChangedTopicRoutingStatus**](AgentActivityChangedTopicRoutingStatus.html)<!----> |  |  [optional] |
-| **presence** | <!----><!---->[**AgentActivityChangedTopicPresence**](AgentActivityChangedTopicPresence.html)<!----> |  |  [optional] |
-| **outOfOffice** | <!----><!---->[**AgentActivityChangedTopicOutOfOffice**](AgentActivityChangedTopicOutOfOffice.html)<!----> |  |  [optional] |
-| **activeQueueIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **dateActiveQueuesChanged** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **routingStatus** | [**AgentActivityChangedTopicRoutingStatus**](AgentActivityChangedTopicRoutingStatus) |  |  [optional] |
+| **presence** | [**AgentActivityChangedTopicPresence**](AgentActivityChangedTopicPresence) |  |  [optional] |
+| **outOfOffice** | [**AgentActivityChangedTopicOutOfOffice**](AgentActivityChangedTopicOutOfOffice) |  |  [optional] |
+| **activeQueueIds** | **List&lt;String&gt;** |  |  [optional] |
+| **dateActiveQueuesChanged** | [**Date**](Date) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

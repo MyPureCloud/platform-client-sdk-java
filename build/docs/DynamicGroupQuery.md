@@ -1,15 +1,13 @@
----
-title: DynamicGroupQuery
----
-## DynamicGroupQuery
+# DynamicGroupQuery
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **skillConditions** | <!----><!---->[**List&lt;DynamicGroupSkillCondition&gt;**](DynamicGroupSkillCondition.html)<!----> | The skill conditions that need to be used for this dynamic group |  |
-{: class="table table-striped"}
+| **skillConditions** | [**List&lt;DynamicGroupSkillCondition&gt;**](DynamicGroupSkillCondition) | The skill conditions that need to be used for this dynamic group |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

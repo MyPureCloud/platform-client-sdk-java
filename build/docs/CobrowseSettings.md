@@ -1,24 +1,18 @@
----
-title: CobrowseSettings
----
-## CobrowseSettings
+# CobrowseSettings
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **enabled** | <!----><!---->**Boolean**<!----> | Whether or not cobrowse is enabled |  [optional] |
-| **allowAgentControl** | <!----><!---->**Boolean**<!----> | Whether the viewer should have option to request control |  [optional] |
-| **allowAgentNavigation** | <!----><!---->**Boolean**<!----> | Whether the viewer should have option to request navigation |  [optional] |
-| **maskSelectors** | <!----><!---->**List&lt;String&gt;**<!----> | Mask patterns that will apply to pages being shared |  [optional] |
-| **channels** | <!---->[**List&lt;ChannelsEnum&gt;**](#ChannelsEnum)<!----> | Cobrowse channels for web messenger |  [optional] |
-| **readonlySelectors** | <!----><!---->**List&lt;String&gt;**<!----> | Readonly patterns that will apply to pages being shared |  [optional] |
-| **pauseCriteria** | <!----><!---->[**List&lt;PauseCriteria&gt;**](PauseCriteria.html)<!----> | Pause criteria that will pause cobrowse if some of them are met in the user's URL |  [optional] |
-{: class="table table-striped"}
+| **enabled** | **Boolean** | Whether or not cobrowse is enabled |  [optional] |
+| **allowAgentControl** | **Boolean** | Whether the viewer should have option to request control |  [optional] |
+| **allowAgentNavigation** | **Boolean** | Whether the viewer should have option to request navigation |  [optional] |
+| **maskSelectors** | **List&lt;String&gt;** | Mask patterns that will apply to pages being shared |  [optional] |
+| **channels** | [**List<ChannelsEnum>**](#Enum--ChannelsEnum) | Cobrowse channels for web messenger |  [optional] |
+| **readonlySelectors** | **List&lt;String&gt;** | Readonly patterns that will apply to pages being shared |  [optional] |
+| **pauseCriteria** | [**List&lt;PauseCriteria&gt;**](PauseCriteria) | Pause criteria that will pause cobrowse if some of them are met in the user's URL |  [optional] |
 
-
-<a name="ChannelsEnum"></a>
 
 ## Enum: ChannelsEnum
 
@@ -26,7 +20,8 @@ title: CobrowseSettings
 | ---- | ----- |
 | WEBMESSAGING | &quot;Webmessaging&quot; |
 | VOICE | &quot;Voice&quot; |
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

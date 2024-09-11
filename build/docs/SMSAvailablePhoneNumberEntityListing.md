@@ -1,15 +1,13 @@
----
-title: SMSAvailablePhoneNumberEntityListing
----
-## SMSAvailablePhoneNumberEntityListing
+# SMSAvailablePhoneNumberEntityListing
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | <!----><!---->[**List&lt;SmsAvailablePhoneNumber&gt;**](SmsAvailablePhoneNumber.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **entities** | [**List&lt;SmsAvailablePhoneNumber&gt;**](SmsAvailablePhoneNumber) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

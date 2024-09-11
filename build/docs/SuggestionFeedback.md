@@ -1,18 +1,12 @@
----
-title: SuggestionFeedback
----
-## SuggestionFeedback
+# SuggestionFeedback
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **rating** | [**RatingEnum**](#RatingEnum)<!----> | The rating value of the suggestion feedback. |  |
-{: class="table table-striped"}
+| **rating** | [**RatingEnum**](#Enum--RatingEnum) | The rating value of the suggestion feedback. |  |
 
-
-<a name="RatingEnum"></a>
 
 ## Enum: RatingEnum
 
@@ -21,7 +15,8 @@ title: SuggestionFeedback
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | NEGATIVE | &quot;Negative&quot; | 
 | POSITIVE | &quot;Positive&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,15 +1,13 @@
----
-title: SupportCenterDetailedCategoryModuleSidebar
----
-## SupportCenterDetailedCategoryModuleSidebar
+# SupportCenterDetailedCategoryModuleSidebar
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **enabled** | <!----><!---->**Boolean**<!----> | Whether sidebar is enabled or not |  |
-{: class="table table-striped"}
+| **enabled** | **Boolean** | Whether sidebar is enabled or not |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

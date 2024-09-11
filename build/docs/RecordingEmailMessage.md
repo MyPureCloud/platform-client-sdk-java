@@ -1,24 +1,22 @@
----
-title: RecordingEmailMessage
----
-## RecordingEmailMessage
+# RecordingEmailMessage
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **htmlBody** | <!----><!---->**String**<!----> |  |  [optional] |
-| **textBody** | <!----><!---->**String**<!----> |  |  [optional] |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **to** | <!----><!---->[**List&lt;EmailAddress&gt;**](EmailAddress.html)<!----> |  |  [optional] |
-| **cc** | <!----><!---->[**List&lt;EmailAddress&gt;**](EmailAddress.html)<!----> |  |  [optional] |
-| **bcc** | <!----><!---->[**List&lt;EmailAddress&gt;**](EmailAddress.html)<!----> |  |  [optional] |
-| **from** | <!----><!---->[**EmailAddress**](EmailAddress.html)<!----> |  |  [optional] |
-| **subject** | <!----><!---->**String**<!----> |  |  [optional] |
-| **attachments** | <!----><!---->[**List&lt;EmailAttachment&gt;**](EmailAttachment.html)<!----> |  |  [optional] |
-| **time** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-{: class="table table-striped"}
+| **htmlBody** | **String** |  |  [optional] |
+| **textBody** | **String** |  |  [optional] |
+| **id** | **String** |  |  [optional] |
+| **to** | [**List&lt;EmailAddress&gt;**](EmailAddress) |  |  [optional] |
+| **cc** | [**List&lt;EmailAddress&gt;**](EmailAddress) |  |  [optional] |
+| **bcc** | [**List&lt;EmailAddress&gt;**](EmailAddress) |  |  [optional] |
+| **from** | [**EmailAddress**](EmailAddress) |  |  [optional] |
+| **subject** | **String** |  |  [optional] |
+| **attachments** | [**List&lt;EmailAttachment&gt;**](EmailAttachment) |  |  [optional] |
+| **time** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

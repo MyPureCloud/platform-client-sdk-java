@@ -1,22 +1,16 @@
----
-title: SubjectDivisionGrants
----
-## SubjectDivisionGrants
+# SubjectDivisionGrants
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **divisions** | <!----><!---->[**List&lt;Division&gt;**](Division.html)<!----> |  |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **divisions** | [**List&lt;Division&gt;**](Division) |  |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -29,7 +23,8 @@ title: SubjectDivisionGrants
 | PC_TRUSTEE_USER | &quot;PC_TRUSTEE_USER&quot; | 
 | PC_TRUSTEE_GROUP | &quot;PC_TRUSTEE_GROUP&quot; | 
 | UNKNOWN | &quot;UNKNOWN&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

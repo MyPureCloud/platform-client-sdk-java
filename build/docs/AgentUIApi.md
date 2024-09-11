@@ -1,22 +1,17 @@
----
-title: AgentUIApi
----
-## AgentUIApi
+# AgentUIApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteUsersAgentuiAgentsAutoanswerAgentIdSettings**](AgentUIApi.html#deleteUsersAgentuiAgentsAutoanswerAgentIdSettings) | Delete agent auto answer settings |
-| [**getUsersAgentuiAgentsAutoanswerAgentIdSettings**](AgentUIApi.html#getUsersAgentuiAgentsAutoanswerAgentIdSettings) | Get agent auto answer settings |
-| [**patchUsersAgentuiAgentsAutoanswerAgentIdSettings**](AgentUIApi.html#patchUsersAgentuiAgentsAutoanswerAgentIdSettings) | Update agent auto answer settings |
-| [**putUsersAgentuiAgentsAutoanswerAgentIdSettings**](AgentUIApi.html#putUsersAgentuiAgentsAutoanswerAgentIdSettings) | Set agent auto answer settings |
+| [**deleteUsersAgentuiAgentsAutoanswerAgentIdSettings**](AgentUIApi#deleteUsersAgentuiAgentsAutoanswerAgentIdSettings) | Delete agent auto answer settings |
+| [**getUsersAgentuiAgentsAutoanswerAgentIdSettings**](AgentUIApi#getUsersAgentuiAgentsAutoanswerAgentIdSettings) | Get agent auto answer settings |
+| [**patchUsersAgentuiAgentsAutoanswerAgentIdSettings**](AgentUIApi#patchUsersAgentuiAgentsAutoanswerAgentIdSettings) | Update agent auto answer settings |
+| [**putUsersAgentuiAgentsAutoanswerAgentIdSettings**](AgentUIApi#putUsersAgentuiAgentsAutoanswerAgentIdSettings) | Set agent auto answer settings |
 {: class="table-striped"}
 
-<a name="deleteUsersAgentuiAgentsAutoanswerAgentIdSettings"></a>
 
 # **deleteUsersAgentuiAgentsAutoanswerAgentIdSettings**
-
 
 
 > Void deleteUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId)
@@ -73,13 +68,11 @@ try {
 
 null (empty response body)
 
-<a name="getUsersAgentuiAgentsAutoanswerAgentIdSettings"></a>
 
 # **getUsersAgentuiAgentsAutoanswerAgentIdSettings**
 
 
-
-> [AutoAnswerSettings](AutoAnswerSettings.html) getUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId)
+> [AutoAnswerSettings](AutoAnswerSettings) getUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId)
 
 Get agent auto answer settings
 
@@ -132,15 +125,13 @@ try {
 
 ### Return type
 
-[**AutoAnswerSettings**](AutoAnswerSettings.html)
+[**AutoAnswerSettings**](AutoAnswerSettings)
 
-<a name="patchUsersAgentuiAgentsAutoanswerAgentIdSettings"></a>
 
 # **patchUsersAgentuiAgentsAutoanswerAgentIdSettings**
 
 
-
-> [AutoAnswerSettings](AutoAnswerSettings.html) patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
+> [AutoAnswerSettings](AutoAnswerSettings) patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
 
 Update agent auto answer settings
 
@@ -189,21 +180,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **agentId** | **String**| The agent to apply the auto answer settings to | 
-| **body** | [**AutoAnswerSettings**](AutoAnswerSettings.html)| AutoAnswerSettings | 
+| **body** | [**AutoAnswerSettings**](AutoAnswerSettings)| AutoAnswerSettings | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AutoAnswerSettings**](AutoAnswerSettings.html)
+[**AutoAnswerSettings**](AutoAnswerSettings)
 
-<a name="putUsersAgentuiAgentsAutoanswerAgentIdSettings"></a>
 
 # **putUsersAgentuiAgentsAutoanswerAgentIdSettings**
 
 
-
-> [AutoAnswerSettings](AutoAnswerSettings.html) putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
+> [AutoAnswerSettings](AutoAnswerSettings) putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
 
 Set agent auto answer settings
 
@@ -252,11 +241,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **agentId** | **String**| The agent to apply the auto answer settings to | 
-| **body** | [**AutoAnswerSettings**](AutoAnswerSettings.html)| AutoAnswerSettings | 
+| **body** | [**AutoAnswerSettings**](AutoAnswerSettings)| AutoAnswerSettings | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AutoAnswerSettings**](AutoAnswerSettings.html)
+[**AutoAnswerSettings**](AutoAnswerSettings)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

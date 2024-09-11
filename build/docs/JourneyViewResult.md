@@ -1,15 +1,13 @@
----
-title: JourneyViewResult
----
-## JourneyViewResult
+# JourneyViewResult
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **elements** | <!----><!---->[**List&lt;JourneyViewResultElement&gt;**](JourneyViewResultElement.html)<!----> | The elements within the journey view result |  [optional] |
-{: class="table table-striped"}
+| **elements** | [**List&lt;JourneyViewResultElement&gt;**](JourneyViewResultElement) | The elements within the journey view result |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

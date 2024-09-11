@@ -1,17 +1,15 @@
----
-title: NluDomainVersionQualityReport
----
-## NluDomainVersionQualityReport
+# NluDomainVersionQualityReport
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **version** | <!----><!---->[**NluDomainVersion**](NluDomainVersion.html)<!----> | The domain and version details of the quality report |  |
-| **confusionMatrix** | <!----><!---->[**List&lt;NluConfusionMatrixRow&gt;**](NluConfusionMatrixRow.html)<!----> | The confusion matrix for the Domain Version |  |
-| **summary** | <!----><!---->[**NluQualityReportSummary**](NluQualityReportSummary.html)<!----> | The quality report summary for the Domain Version |  |
-{: class="table table-striped"}
+| **version** | [**NluDomainVersion**](NluDomainVersion) | The domain and version details of the quality report |  |
+| **confusionMatrix** | [**List&lt;NluConfusionMatrixRow&gt;**](NluConfusionMatrixRow) | The confusion matrix for the Domain Version |  |
+| **summary** | [**NluQualityReportSummary**](NluQualityReportSummary) | The quality report summary for the Domain Version |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

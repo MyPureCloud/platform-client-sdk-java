@@ -1,30 +1,24 @@
----
-title: WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast
----
-## WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast
+# WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **weekDate** | <!----><!---->**String**<!----> |  |  [optional] |
-| **creationMethod** | [**CreationMethodEnum**](#CreationMethodEnum)<!----> |  |  [optional] |
-| **description** | <!----><!---->**String**<!----> |  |  [optional] |
-| **legacy** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **referenceStartDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **sourceDays** | <!----><!---->[**List&lt;WfmBuShortTermForecastUpdateCompleteTopicForecastSourceDayPointer&gt;**](WfmBuShortTermForecastUpdateCompleteTopicForecastSourceDayPointer.html)<!----> |  |  [optional] |
-| **modifications** | <!----><!---->[**List&lt;WfmBuShortTermForecastUpdateCompleteTopicBuForecastModification&gt;**](WfmBuShortTermForecastUpdateCompleteTopicBuForecastModification.html)<!----> |  |  [optional] |
-| **timeZone** | <!----><!---->**String**<!----> |  |  [optional] |
-| **planningGroupsVersion** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **weekCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **metadata** | <!----><!---->[**WfmBuShortTermForecastUpdateCompleteTopicWfmVersionedEntityMetadata**](WfmBuShortTermForecastUpdateCompleteTopicWfmVersionedEntityMetadata.html)<!----> |  |  [optional] |
-| **canUseForScheduling** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **weekDate** | **String** |  |  [optional] |
+| **creationMethod** | [**CreationMethodEnum**](#Enum--CreationMethodEnum) |  |  [optional] |
+| **description** | **String** |  |  [optional] |
+| **legacy** | **Boolean** |  |  [optional] |
+| **referenceStartDate** | [**Date**](Date) |  |  [optional] |
+| **sourceDays** | [**List&lt;WfmBuShortTermForecastUpdateCompleteTopicForecastSourceDayPointer&gt;**](WfmBuShortTermForecastUpdateCompleteTopicForecastSourceDayPointer) |  |  [optional] |
+| **modifications** | [**List&lt;WfmBuShortTermForecastUpdateCompleteTopicBuForecastModification&gt;**](WfmBuShortTermForecastUpdateCompleteTopicBuForecastModification) |  |  [optional] |
+| **timeZone** | **String** |  |  [optional] |
+| **planningGroupsVersion** | **Integer** |  |  [optional] |
+| **weekCount** | **Integer** |  |  [optional] |
+| **metadata** | [**WfmBuShortTermForecastUpdateCompleteTopicWfmVersionedEntityMetadata**](WfmBuShortTermForecastUpdateCompleteTopicWfmVersionedEntityMetadata) |  |  [optional] |
+| **canUseForScheduling** | **Boolean** |  |  [optional] |
 
-
-<a name="CreationMethodEnum"></a>
 
 ## Enum: CreationMethodEnum
 
@@ -35,7 +29,8 @@ title: WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast
 | IMPORTEDHISTORICALWEIGHTEDAVERAGE | &quot;ImportedHistoricalWeightedAverage&quot; | 
 | HISTORICALWEIGHTEDAVERAGE | &quot;HistoricalWeightedAverage&quot; | 
 | ADVANCED | &quot;Advanced&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

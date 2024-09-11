@@ -1,20 +1,14 @@
----
-title: PredictorModelRetrainingError
----
-## PredictorModelRetrainingError
+# PredictorModelRetrainingError
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **errorCode** | [**ErrorCodeEnum**](#ErrorCodeEnum)<!----> | Error code describing model training failure. |  |
-| **dateOfFirstOccurrence** | <!----><!---->[**Date**](Date.html)<!----> | Date when the first retraining failure happened. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **errorCode** | [**ErrorCodeEnum**](#Enum--ErrorCodeEnum) | Error code describing model training failure. |  |
+| **dateOfFirstOccurrence** | [**Date**](Date) | Date when the first retraining failure happened. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
 
-
-<a name="ErrorCodeEnum"></a>
 
 ## Enum: ErrorCodeEnum
 
@@ -24,7 +18,8 @@ title: PredictorModelRetrainingError
 | NOTENOUGHDATA | &quot;NotEnoughData&quot; | 
 | SERVICEERROR | &quot;ServiceError&quot; | 
 | UNKNOWNERROR | &quot;UnknownError&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

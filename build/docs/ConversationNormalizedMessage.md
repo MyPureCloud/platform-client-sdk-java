@@ -1,30 +1,24 @@
----
-title: ConversationNormalizedMessage
----
-## ConversationNormalizedMessage
+# ConversationNormalizedMessage
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | Unique ID of the message. Message receipts will have the same ID as the message they reference. |  [optional] |
-| **channel** | <!----><!---->[**ConversationMessagingChannel**](ConversationMessagingChannel.html)<!----> | Channel-specific information that describes the message and the message channel/provider. |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Message type. |  |
-| **text** | <!----><!---->**String**<!----> | Message text. |  [optional] |
-| **content** | <!----><!---->[**List&lt;ConversationMessageContent&gt;**](ConversationMessageContent.html)<!----> | List of content elements. |  [optional] |
-| **events** | <!----><!---->[**List&lt;ConversationMessageEvent&gt;**](ConversationMessageEvent.html)<!----> | List of event elements. |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> | Message receipt status, only used with type Receipt. |  [optional] |
-| **reasons** | <!----><!---->[**List&lt;ConversationReason&gt;**](ConversationReason.html)<!----> | List of reasons for a message receipt that indicates the message has failed. Only used with Failed status. |  [optional] |
-| **originatingEntity** | [**OriginatingEntityEnum**](#OriginatingEntityEnum)<!----> | Specifies if this message was sent by a human agent or bot. The platform may use this to apply appropriate provider policies. |  [optional] |
-| **isFinalReceipt** | <!----><!---->**Boolean**<!----> | Indicates if this is the last message receipt for this message, or if another message receipt can be expected. |  [optional] |
-| **direction** | [**DirectionEnum**](#DirectionEnum)<!----> | The direction of the message. |  [optional] |
-| **metadata** | <!----><!---->**Map&lt;String, String&gt;**<!----> | Additional metadata about this message. |  [optional] |
-| **byoSmsIntegrationId** | <!----><!---->**String**<!----> | The internal id representing the customer supplied sms integration message. |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | Unique ID of the message. Message receipts will have the same ID as the message they reference. |  [optional] |
+| **channel** | [**ConversationMessagingChannel**](ConversationMessagingChannel) | Channel-specific information that describes the message and the message channel/provider. |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Message type. |  |
+| **text** | **String** | Message text. |  [optional] |
+| **content** | [**List&lt;ConversationMessageContent&gt;**](ConversationMessageContent) | List of content elements. |  [optional] |
+| **events** | [**List&lt;ConversationMessageEvent&gt;**](ConversationMessageEvent) | List of event elements. |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) | Message receipt status, only used with type Receipt. |  [optional] |
+| **reasons** | [**List&lt;ConversationReason&gt;**](ConversationReason) | List of reasons for a message receipt that indicates the message has failed. Only used with Failed status. |  [optional] |
+| **originatingEntity** | [**OriginatingEntityEnum**](#Enum--OriginatingEntityEnum) | Specifies if this message was sent by a human agent or bot. The platform may use this to apply appropriate provider policies. |  [optional] |
+| **isFinalReceipt** | **Boolean** | Indicates if this is the last message receipt for this message, or if another message receipt can be expected. |  [optional] |
+| **direction** | [**DirectionEnum**](#Enum--DirectionEnum) | The direction of the message. |  [optional] |
+| **metadata** | **Map&lt;String, String&gt;** | Additional metadata about this message. |  [optional] |
+| **byoSmsIntegrationId** | **String** | The internal id representing the customer supplied sms integration message. |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -37,10 +31,7 @@ title: ConversationNormalizedMessage
 | EVENT | &quot;Event&quot; | 
 | MESSAGE | &quot;Message&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -53,10 +44,7 @@ title: ConversationNormalizedMessage
 | FAILED | &quot;Failed&quot; | 
 | PUBLISHED | &quot;Published&quot; | 
 | REMOVED | &quot;Removed&quot; | 
-{: class="table table-striped"}
 
-
-<a name="OriginatingEntityEnum"></a>
 
 ## Enum: OriginatingEntityEnum
 
@@ -65,10 +53,7 @@ title: ConversationNormalizedMessage
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | HUMAN | &quot;Human&quot; | 
 | BOT | &quot;Bot&quot; | 
-{: class="table table-striped"}
 
-
-<a name="DirectionEnum"></a>
 
 ## Enum: DirectionEnum
 
@@ -77,7 +62,8 @@ title: ConversationNormalizedMessage
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INBOUND | &quot;Inbound&quot; | 
 | OUTBOUND | &quot;Outbound&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

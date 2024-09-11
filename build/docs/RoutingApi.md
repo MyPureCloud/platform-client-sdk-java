@@ -1,168 +1,163 @@
----
-title: RoutingApi
----
-## RoutingApi
+# RoutingApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteRoutingAssessment**](RoutingApi.html#deleteRoutingAssessment) | Delete single benefit assessment. |
-| [**deleteRoutingDirectroutingbackupSettingsMe**](RoutingApi.html#deleteRoutingDirectroutingbackupSettingsMe) | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default. |
-| [**deleteRoutingEmailDomain**](RoutingApi.html#deleteRoutingEmailDomain) | Delete a domain |
-| [**deleteRoutingEmailDomainRoute**](RoutingApi.html#deleteRoutingEmailDomainRoute) | Delete a route |
-| [**deleteRoutingEmailOutboundDomain**](RoutingApi.html#deleteRoutingEmailOutboundDomain) | Delete an outbound domain |
-| [**deleteRoutingLanguage**](RoutingApi.html#deleteRoutingLanguage) | Delete a routing language |
-| [**deleteRoutingPredictor**](RoutingApi.html#deleteRoutingPredictor) | Delete single predictor. |
-| [**deleteRoutingQueue**](RoutingApi.html#deleteRoutingQueue) | Delete a queue |
-| [**deleteRoutingQueueMember**](RoutingApi.html#deleteRoutingQueueMember) | Delete a queue member. |
-| [**deleteRoutingQueueUser**](RoutingApi.html#deleteRoutingQueueUser) | DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member. |
-| [**deleteRoutingQueueWrapupcode**](RoutingApi.html#deleteRoutingQueueWrapupcode) | Delete a wrap-up code from a queue |
-| [**deleteRoutingSettings**](RoutingApi.html#deleteRoutingSettings) | Delete an organization's routing settings |
-| [**deleteRoutingSkill**](RoutingApi.html#deleteRoutingSkill) | Delete Routing Skill |
-| [**deleteRoutingSkillgroup**](RoutingApi.html#deleteRoutingSkillgroup) | Remove skill group definition |
-| [**deleteRoutingSmsAddress**](RoutingApi.html#deleteRoutingSmsAddress) | Delete an Address by Id for SMS |
-| [**deleteRoutingSmsPhonenumber**](RoutingApi.html#deleteRoutingSmsPhonenumber) | Delete a phone number provisioned for SMS. |
-| [**deleteRoutingUserDirectroutingbackupSettings**](RoutingApi.html#deleteRoutingUserDirectroutingbackupSettings) | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default. |
-| [**deleteRoutingUserUtilization**](RoutingApi.html#deleteRoutingUserUtilization) | Delete the user's max utilization settings and revert to the organization-wide default. |
-| [**deleteRoutingUtilization**](RoutingApi.html#deleteRoutingUtilization) | Delete the organization-wide max utilization settings and revert to the system default. |
-| [**deleteRoutingUtilizationLabel**](RoutingApi.html#deleteRoutingUtilizationLabel) | Delete a utilization label |
-| [**deleteRoutingUtilizationTag**](RoutingApi.html#deleteRoutingUtilizationTag) | Delete an utilization tag |
-| [**deleteRoutingWrapupcode**](RoutingApi.html#deleteRoutingWrapupcode) | Delete wrap-up code |
-| [**deleteUserRoutinglanguage**](RoutingApi.html#deleteUserRoutinglanguage) | Remove routing language from user |
-| [**deleteUserRoutingskill**](RoutingApi.html#deleteUserRoutingskill) | Remove routing skill from user |
-| [**getRoutingAssessment**](RoutingApi.html#getRoutingAssessment) | Retrieve a single benefit assessment. |
-| [**getRoutingAssessments**](RoutingApi.html#getRoutingAssessments) | Retrieve all benefit assessments. |
-| [**getRoutingAssessmentsJob**](RoutingApi.html#getRoutingAssessmentsJob) | Retrieve a single benefit assessments job. |
-| [**getRoutingAssessmentsJobs**](RoutingApi.html#getRoutingAssessmentsJobs) | Retrieve all benefit assessment jobs. |
-| [**getRoutingAvailablemediatypes**](RoutingApi.html#getRoutingAvailablemediatypes) | Get available media types |
-| [**getRoutingDirectroutingbackupSettingsMe**](RoutingApi.html#getRoutingDirectroutingbackupSettingsMe) | Get the user's Direct Routing Backup settings. |
-| [**getRoutingEmailDomain**](RoutingApi.html#getRoutingEmailDomain) | Get domain |
-| [**getRoutingEmailDomainRoute**](RoutingApi.html#getRoutingEmailDomainRoute) | Get a route |
-| [**getRoutingEmailDomainRoutes**](RoutingApi.html#getRoutingEmailDomainRoutes) | Get routes |
-| [**getRoutingEmailDomains**](RoutingApi.html#getRoutingEmailDomains) | Get domains |
-| [**getRoutingEmailOutboundDomain**](RoutingApi.html#getRoutingEmailOutboundDomain) | Get domain |
-| [**getRoutingEmailOutboundDomainActivation**](RoutingApi.html#getRoutingEmailOutboundDomainActivation) | Get activation status (cname + dkim) of an outbound domain |
-| [**getRoutingEmailOutboundDomainSearch**](RoutingApi.html#getRoutingEmailOutboundDomainSearch) | Search a domain across organizations |
-| [**getRoutingEmailOutboundDomains**](RoutingApi.html#getRoutingEmailOutboundDomains) | Get outbound domains |
-| [**getRoutingEmailSetup**](RoutingApi.html#getRoutingEmailSetup) | Get email setup |
-| [**getRoutingLanguage**](RoutingApi.html#getRoutingLanguage) | Get a routing language |
-| [**getRoutingLanguages**](RoutingApi.html#getRoutingLanguages) | Get the list of supported languages. |
-| [**getRoutingMessageRecipient**](RoutingApi.html#getRoutingMessageRecipient) | Get a recipient |
-| [**getRoutingMessageRecipients**](RoutingApi.html#getRoutingMessageRecipients) | Get recipients |
-| [**getRoutingPredictor**](RoutingApi.html#getRoutingPredictor) | Retrieve a single predictor. |
-| [**getRoutingPredictorModelFeatures**](RoutingApi.html#getRoutingPredictorModelFeatures) | Retrieve Predictor Model Features. |
-| [**getRoutingPredictorModels**](RoutingApi.html#getRoutingPredictorModels) | Retrieve Predictor Models and Top Features. |
-| [**getRoutingPredictors**](RoutingApi.html#getRoutingPredictors) | Retrieve all predictors. |
-| [**getRoutingPredictorsKeyperformanceindicators**](RoutingApi.html#getRoutingPredictorsKeyperformanceindicators) | Get a list of Key Performance Indicators |
-| [**getRoutingQueue**](RoutingApi.html#getRoutingQueue) | Get details about this queue. |
-| [**getRoutingQueueAssistant**](RoutingApi.html#getRoutingQueueAssistant) | Get an assistant associated with a queue. |
-| [**getRoutingQueueComparisonperiod**](RoutingApi.html#getRoutingQueueComparisonperiod) | Get a Comparison Period. |
-| [**getRoutingQueueComparisonperiods**](RoutingApi.html#getRoutingQueueComparisonperiods) | Get list of comparison periods |
-| [**getRoutingQueueEstimatedwaittime**](RoutingApi.html#getRoutingQueueEstimatedwaittime) | Get Estimated Wait Time |
-| [**getRoutingQueueMediatypeEstimatedwaittime**](RoutingApi.html#getRoutingQueueMediatypeEstimatedwaittime) | Get Estimated Wait Time |
-| [**getRoutingQueueMembers**](RoutingApi.html#getRoutingQueueMembers) | Get the members of this queue. |
-| [**getRoutingQueueUsers**](RoutingApi.html#getRoutingQueueUsers) | DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue. |
-| [**getRoutingQueueWrapupcodes**](RoutingApi.html#getRoutingQueueWrapupcodes) | Get the wrap-up codes for a queue |
-| [**getRoutingQueues**](RoutingApi.html#getRoutingQueues) | Get list of queues. |
-| [**getRoutingQueuesDivisionviews**](RoutingApi.html#getRoutingQueuesDivisionviews) | Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s). |
-| [**getRoutingQueuesDivisionviewsAll**](RoutingApi.html#getRoutingQueuesDivisionviewsAll) | Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization. |
-| [**getRoutingQueuesMe**](RoutingApi.html#getRoutingQueuesMe) | Get a paged listing of queues the user is a member of. |
-| [**getRoutingSettings**](RoutingApi.html#getRoutingSettings) | Get an organization's routing settings |
-| [**getRoutingSettingsContactcenter**](RoutingApi.html#getRoutingSettingsContactcenter) | Get Contact Center Settings |
-| [**getRoutingSettingsTranscription**](RoutingApi.html#getRoutingSettingsTranscription) | Get Transcription Settings |
-| [**getRoutingSkill**](RoutingApi.html#getRoutingSkill) | Get Routing Skill |
-| [**getRoutingSkillgroup**](RoutingApi.html#getRoutingSkillgroup) | Get skill group |
-| [**getRoutingSkillgroupMembers**](RoutingApi.html#getRoutingSkillgroupMembers) | Get skill group members |
-| [**getRoutingSkillgroupMembersDivisions**](RoutingApi.html#getRoutingSkillgroupMembersDivisions) | Get list of member divisions for this skill group. |
-| [**getRoutingSkillgroups**](RoutingApi.html#getRoutingSkillgroups) | Get skill group listing |
-| [**getRoutingSkills**](RoutingApi.html#getRoutingSkills) | Get the list of routing skills. |
-| [**getRoutingSmsAddress**](RoutingApi.html#getRoutingSmsAddress) | Get an Address by Id for SMS |
-| [**getRoutingSmsAddresses**](RoutingApi.html#getRoutingSmsAddresses) | Get a list of Addresses for SMS |
-| [**getRoutingSmsAvailablephonenumbers**](RoutingApi.html#getRoutingSmsAvailablephonenumbers) | Get a list of available phone numbers for SMS provisioning. |
-| [**getRoutingSmsPhonenumber**](RoutingApi.html#getRoutingSmsPhonenumber) | Get a phone number provisioned for SMS. |
-| [**getRoutingSmsPhonenumbers**](RoutingApi.html#getRoutingSmsPhonenumbers) | Get a list of provisioned phone numbers. |
-| [**getRoutingUserDirectroutingbackupSettings**](RoutingApi.html#getRoutingUserDirectroutingbackupSettings) | Get the user's Direct Routing Backup settings. |
-| [**getRoutingUserUtilization**](RoutingApi.html#getRoutingUserUtilization) | Get the user's max utilization settings.  If not configured, the organization-wide default is returned. |
-| [**getRoutingUtilization**](RoutingApi.html#getRoutingUtilization) | Get the organization-wide max utilization settings. |
-| [**getRoutingUtilizationLabel**](RoutingApi.html#getRoutingUtilizationLabel) | Get details about this utilization label |
-| [**getRoutingUtilizationLabelAgents**](RoutingApi.html#getRoutingUtilizationLabelAgents) | Get list of agent ids associated with a utilization label |
-| [**getRoutingUtilizationLabels**](RoutingApi.html#getRoutingUtilizationLabels) | Get list of utilization labels |
-| [**getRoutingUtilizationTag**](RoutingApi.html#getRoutingUtilizationTag) | Get details about this utilization tag |
-| [**getRoutingUtilizationTagAgents**](RoutingApi.html#getRoutingUtilizationTagAgents) | Get list of agent ids associated with a utilization tag |
-| [**getRoutingUtilizationTags**](RoutingApi.html#getRoutingUtilizationTags) | Get list of utilization tags |
-| [**getRoutingWrapupcode**](RoutingApi.html#getRoutingWrapupcode) | Get details about this wrap-up code. |
-| [**getRoutingWrapupcodes**](RoutingApi.html#getRoutingWrapupcodes) | Get list of wrapup codes. |
-| [**getRoutingWrapupcodesDivisionview**](RoutingApi.html#getRoutingWrapupcodesDivisionview) | Get a simplified wrap-up code. |
-| [**getRoutingWrapupcodesDivisionviews**](RoutingApi.html#getRoutingWrapupcodesDivisionviews) | Get a paged listing of simplified wrapup code objects, filterable by name, wrapup code ID(s), or division ID(s). |
-| [**getUserQueues**](RoutingApi.html#getUserQueues) | Get queues for user |
-| [**getUserRoutinglanguages**](RoutingApi.html#getUserRoutinglanguages) | List routing language for user |
-| [**getUserRoutingskills**](RoutingApi.html#getUserRoutingskills) | List routing skills for user |
-| [**getUserSkillgroups**](RoutingApi.html#getUserSkillgroups) | Get skill groups for a user |
-| [**patchRoutingConversation**](RoutingApi.html#patchRoutingConversation) | Update attributes of an in-queue conversation |
-| [**patchRoutingEmailDomain**](RoutingApi.html#patchRoutingEmailDomain) | Update domain settings |
-| [**patchRoutingEmailDomainValidate**](RoutingApi.html#patchRoutingEmailDomainValidate) | Validate domain settings |
-| [**patchRoutingPredictor**](RoutingApi.html#patchRoutingPredictor) | Update single predictor. |
-| [**patchRoutingQueueMember**](RoutingApi.html#patchRoutingQueueMember) | Update the ring number OR joined status for a queue member. |
-| [**patchRoutingQueueMembers**](RoutingApi.html#patchRoutingQueueMembers) | Join or unjoin a set of users for a queue |
-| [**patchRoutingQueueUser**](RoutingApi.html#patchRoutingQueueUser) | DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue. |
-| [**patchRoutingQueueUsers**](RoutingApi.html#patchRoutingQueueUsers) | DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue. |
-| [**patchRoutingSettingsContactcenter**](RoutingApi.html#patchRoutingSettingsContactcenter) | Update Contact Center Settings |
-| [**patchRoutingSettingsTranscription**](RoutingApi.html#patchRoutingSettingsTranscription) | Patch Transcription Settings |
-| [**patchRoutingSkillgroup**](RoutingApi.html#patchRoutingSkillgroup) | Update skill group definition |
-| [**patchUserQueue**](RoutingApi.html#patchUserQueue) | Join or unjoin a queue for a user |
-| [**patchUserQueues**](RoutingApi.html#patchUserQueues) | Join or unjoin a set of queues for a user |
-| [**patchUserRoutinglanguage**](RoutingApi.html#patchUserRoutinglanguage) | Update routing language proficiency or state. |
-| [**patchUserRoutinglanguagesBulk**](RoutingApi.html#patchUserRoutinglanguagesBulk) | Add bulk routing language to user. Max limit 50 languages |
-| [**patchUserRoutingskillsBulk**](RoutingApi.html#patchUserRoutingskillsBulk) | Bulk add routing skills to user |
-| [**postAnalyticsQueuesObservationsQuery**](RoutingApi.html#postAnalyticsQueuesObservationsQuery) | Query for queue observations |
-| [**postAnalyticsRoutingActivityQuery**](RoutingApi.html#postAnalyticsRoutingActivityQuery) | Query for user activity observations |
-| [**postRoutingAssessments**](RoutingApi.html#postRoutingAssessments) | Create a benefit assessment. |
-| [**postRoutingAssessmentsJobs**](RoutingApi.html#postRoutingAssessmentsJobs) | Create a benefit assessment job. |
-| [**postRoutingEmailDomainRoutes**](RoutingApi.html#postRoutingEmailDomainRoutes) | Create a route |
-| [**postRoutingEmailDomainTestconnection**](RoutingApi.html#postRoutingEmailDomainTestconnection) | Tests the custom SMTP server integration connection set on this domain |
-| [**postRoutingEmailDomains**](RoutingApi.html#postRoutingEmailDomains) | Create a domain |
-| [**postRoutingEmailOutboundDomains**](RoutingApi.html#postRoutingEmailOutboundDomains) | Create a domain |
-| [**postRoutingEmailOutboundDomainsSimulated**](RoutingApi.html#postRoutingEmailOutboundDomainsSimulated) | Create a simulated domain |
-| [**postRoutingLanguages**](RoutingApi.html#postRoutingLanguages) | Create Language |
-| [**postRoutingPredictors**](RoutingApi.html#postRoutingPredictors) | Create a predictor. |
-| [**postRoutingQueueMembers**](RoutingApi.html#postRoutingQueueMembers) | Bulk add or delete up to 100 queue members |
-| [**postRoutingQueueUsers**](RoutingApi.html#postRoutingQueueUsers) | DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members. |
-| [**postRoutingQueueWrapupcodes**](RoutingApi.html#postRoutingQueueWrapupcodes) | Add up to 100 wrap-up codes to a queue |
-| [**postRoutingQueues**](RoutingApi.html#postRoutingQueues) | Create a queue |
-| [**postRoutingSkillgroupMembersDivisions**](RoutingApi.html#postRoutingSkillgroupMembersDivisions) | Add or remove member divisions for this skill group. |
-| [**postRoutingSkillgroups**](RoutingApi.html#postRoutingSkillgroups) | Create a skill group |
-| [**postRoutingSkills**](RoutingApi.html#postRoutingSkills) | Create Skill |
-| [**postRoutingSmsAddresses**](RoutingApi.html#postRoutingSmsAddresses) | Provision an Address for SMS |
-| [**postRoutingSmsPhonenumbers**](RoutingApi.html#postRoutingSmsPhonenumbers) | Provision a phone number for SMS |
-| [**postRoutingSmsPhonenumbersAlphanumeric**](RoutingApi.html#postRoutingSmsPhonenumbersAlphanumeric) | Provision an alphanumeric number for SMS |
-| [**postRoutingSmsPhonenumbersImport**](RoutingApi.html#postRoutingSmsPhonenumbersImport) | Imports a phone number for SMS |
-| [**postRoutingUtilizationLabels**](RoutingApi.html#postRoutingUtilizationLabels) | Create a utilization label |
-| [**postRoutingUtilizationTags**](RoutingApi.html#postRoutingUtilizationTags) | Create an utilization tag |
-| [**postRoutingWrapupcodes**](RoutingApi.html#postRoutingWrapupcodes) | Create a wrap-up code |
-| [**postUserRoutinglanguages**](RoutingApi.html#postUserRoutinglanguages) | Add routing language to user |
-| [**postUserRoutingskills**](RoutingApi.html#postUserRoutingskills) | Add routing skill to user |
-| [**putRoutingDirectroutingbackupSettingsMe**](RoutingApi.html#putRoutingDirectroutingbackupSettingsMe) | Update the user's Direct Routing Backup settings. |
-| [**putRoutingEmailDomainRoute**](RoutingApi.html#putRoutingEmailDomainRoute) | Update a route |
-| [**putRoutingEmailOutboundDomainActivation**](RoutingApi.html#putRoutingEmailOutboundDomainActivation) | Request an activation status (cname + dkim) update of an outbound domain |
-| [**putRoutingMessageRecipient**](RoutingApi.html#putRoutingMessageRecipient) | Update a recipient |
-| [**putRoutingQueue**](RoutingApi.html#putRoutingQueue) | Update a queue |
-| [**putRoutingSettings**](RoutingApi.html#putRoutingSettings) | Update an organization's routing settings |
-| [**putRoutingSettingsTranscription**](RoutingApi.html#putRoutingSettingsTranscription) | Update Transcription Settings |
-| [**putRoutingSmsPhonenumber**](RoutingApi.html#putRoutingSmsPhonenumber) | Update a phone number provisioned for SMS. |
-| [**putRoutingUserDirectroutingbackupSettings**](RoutingApi.html#putRoutingUserDirectroutingbackupSettings) | Update the user's Direct Routing Backup settings. |
-| [**putRoutingUserUtilization**](RoutingApi.html#putRoutingUserUtilization) | Update the user's max utilization settings.  Include only those media types requiring custom configuration. |
-| [**putRoutingUtilization**](RoutingApi.html#putRoutingUtilization) | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. |
-| [**putRoutingUtilizationLabel**](RoutingApi.html#putRoutingUtilizationLabel) | Update a utilization label |
-| [**putRoutingWrapupcode**](RoutingApi.html#putRoutingWrapupcode) | Update wrap-up code |
-| [**putUserRoutingskill**](RoutingApi.html#putUserRoutingskill) | Update routing skill proficiency or state. |
-| [**putUserRoutingskillsBulk**](RoutingApi.html#putUserRoutingskillsBulk) | Replace all routing skills assigned to a user |
+| [**deleteRoutingAssessment**](RoutingApi#deleteRoutingAssessment) | Delete single benefit assessment. |
+| [**deleteRoutingDirectroutingbackupSettingsMe**](RoutingApi#deleteRoutingDirectroutingbackupSettingsMe) | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default. |
+| [**deleteRoutingEmailDomain**](RoutingApi#deleteRoutingEmailDomain) | Delete a domain |
+| [**deleteRoutingEmailDomainRoute**](RoutingApi#deleteRoutingEmailDomainRoute) | Delete a route |
+| [**deleteRoutingEmailOutboundDomain**](RoutingApi#deleteRoutingEmailOutboundDomain) | Delete an outbound domain |
+| [**deleteRoutingLanguage**](RoutingApi#deleteRoutingLanguage) | Delete a routing language |
+| [**deleteRoutingPredictor**](RoutingApi#deleteRoutingPredictor) | Delete single predictor. |
+| [**deleteRoutingQueue**](RoutingApi#deleteRoutingQueue) | Delete a queue |
+| [**deleteRoutingQueueMember**](RoutingApi#deleteRoutingQueueMember) | Delete a queue member. |
+| [**deleteRoutingQueueUser**](RoutingApi#deleteRoutingQueueUser) | DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member. |
+| [**deleteRoutingQueueWrapupcode**](RoutingApi#deleteRoutingQueueWrapupcode) | Delete a wrap-up code from a queue |
+| [**deleteRoutingSettings**](RoutingApi#deleteRoutingSettings) | Delete an organization's routing settings |
+| [**deleteRoutingSkill**](RoutingApi#deleteRoutingSkill) | Delete Routing Skill |
+| [**deleteRoutingSkillgroup**](RoutingApi#deleteRoutingSkillgroup) | Remove skill group definition |
+| [**deleteRoutingSmsAddress**](RoutingApi#deleteRoutingSmsAddress) | Delete an Address by Id for SMS |
+| [**deleteRoutingSmsPhonenumber**](RoutingApi#deleteRoutingSmsPhonenumber) | Delete a phone number provisioned for SMS. |
+| [**deleteRoutingUserDirectroutingbackupSettings**](RoutingApi#deleteRoutingUserDirectroutingbackupSettings) | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default. |
+| [**deleteRoutingUserUtilization**](RoutingApi#deleteRoutingUserUtilization) | Delete the user's max utilization settings and revert to the organization-wide default. |
+| [**deleteRoutingUtilization**](RoutingApi#deleteRoutingUtilization) | Delete the organization-wide max utilization settings and revert to the system default. |
+| [**deleteRoutingUtilizationLabel**](RoutingApi#deleteRoutingUtilizationLabel) | Delete a utilization label |
+| [**deleteRoutingUtilizationTag**](RoutingApi#deleteRoutingUtilizationTag) | Delete an utilization tag |
+| [**deleteRoutingWrapupcode**](RoutingApi#deleteRoutingWrapupcode) | Delete wrap-up code |
+| [**deleteUserRoutinglanguage**](RoutingApi#deleteUserRoutinglanguage) | Remove routing language from user |
+| [**deleteUserRoutingskill**](RoutingApi#deleteUserRoutingskill) | Remove routing skill from user |
+| [**getRoutingAssessment**](RoutingApi#getRoutingAssessment) | Retrieve a single benefit assessment. |
+| [**getRoutingAssessments**](RoutingApi#getRoutingAssessments) | Retrieve all benefit assessments. |
+| [**getRoutingAssessmentsJob**](RoutingApi#getRoutingAssessmentsJob) | Retrieve a single benefit assessments job. |
+| [**getRoutingAssessmentsJobs**](RoutingApi#getRoutingAssessmentsJobs) | Retrieve all benefit assessment jobs. |
+| [**getRoutingAvailablemediatypes**](RoutingApi#getRoutingAvailablemediatypes) | Get available media types |
+| [**getRoutingDirectroutingbackupSettingsMe**](RoutingApi#getRoutingDirectroutingbackupSettingsMe) | Get the user's Direct Routing Backup settings. |
+| [**getRoutingEmailDomain**](RoutingApi#getRoutingEmailDomain) | Get domain |
+| [**getRoutingEmailDomainRoute**](RoutingApi#getRoutingEmailDomainRoute) | Get a route |
+| [**getRoutingEmailDomainRoutes**](RoutingApi#getRoutingEmailDomainRoutes) | Get routes |
+| [**getRoutingEmailDomains**](RoutingApi#getRoutingEmailDomains) | Get domains |
+| [**getRoutingEmailOutboundDomain**](RoutingApi#getRoutingEmailOutboundDomain) | Get domain |
+| [**getRoutingEmailOutboundDomainActivation**](RoutingApi#getRoutingEmailOutboundDomainActivation) | Get activation status (cname + dkim) of an outbound domain |
+| [**getRoutingEmailOutboundDomainSearch**](RoutingApi#getRoutingEmailOutboundDomainSearch) | Search a domain across organizations |
+| [**getRoutingEmailOutboundDomains**](RoutingApi#getRoutingEmailOutboundDomains) | Get outbound domains |
+| [**getRoutingEmailSetup**](RoutingApi#getRoutingEmailSetup) | Get email setup |
+| [**getRoutingLanguage**](RoutingApi#getRoutingLanguage) | Get a routing language |
+| [**getRoutingLanguages**](RoutingApi#getRoutingLanguages) | Get the list of supported languages. |
+| [**getRoutingMessageRecipient**](RoutingApi#getRoutingMessageRecipient) | Get a recipient |
+| [**getRoutingMessageRecipients**](RoutingApi#getRoutingMessageRecipients) | Get recipients |
+| [**getRoutingPredictor**](RoutingApi#getRoutingPredictor) | Retrieve a single predictor. |
+| [**getRoutingPredictorModelFeatures**](RoutingApi#getRoutingPredictorModelFeatures) | Retrieve Predictor Model Features. |
+| [**getRoutingPredictorModels**](RoutingApi#getRoutingPredictorModels) | Retrieve Predictor Models and Top Features. |
+| [**getRoutingPredictors**](RoutingApi#getRoutingPredictors) | Retrieve all predictors. |
+| [**getRoutingPredictorsKeyperformanceindicators**](RoutingApi#getRoutingPredictorsKeyperformanceindicators) | Get a list of Key Performance Indicators |
+| [**getRoutingQueue**](RoutingApi#getRoutingQueue) | Get details about this queue. |
+| [**getRoutingQueueAssistant**](RoutingApi#getRoutingQueueAssistant) | Get an assistant associated with a queue. |
+| [**getRoutingQueueComparisonperiod**](RoutingApi#getRoutingQueueComparisonperiod) | Get a Comparison Period. |
+| [**getRoutingQueueComparisonperiods**](RoutingApi#getRoutingQueueComparisonperiods) | Get list of comparison periods |
+| [**getRoutingQueueEstimatedwaittime**](RoutingApi#getRoutingQueueEstimatedwaittime) | Get Estimated Wait Time |
+| [**getRoutingQueueMediatypeEstimatedwaittime**](RoutingApi#getRoutingQueueMediatypeEstimatedwaittime) | Get Estimated Wait Time |
+| [**getRoutingQueueMembers**](RoutingApi#getRoutingQueueMembers) | Get the members of this queue. |
+| [**getRoutingQueueUsers**](RoutingApi#getRoutingQueueUsers) | DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue. |
+| [**getRoutingQueueWrapupcodes**](RoutingApi#getRoutingQueueWrapupcodes) | Get the wrap-up codes for a queue |
+| [**getRoutingQueues**](RoutingApi#getRoutingQueues) | Get list of queues. |
+| [**getRoutingQueuesDivisionviews**](RoutingApi#getRoutingQueuesDivisionviews) | Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s). |
+| [**getRoutingQueuesDivisionviewsAll**](RoutingApi#getRoutingQueuesDivisionviewsAll) | Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization. |
+| [**getRoutingQueuesMe**](RoutingApi#getRoutingQueuesMe) | Get a paged listing of queues the user is a member of. |
+| [**getRoutingSettings**](RoutingApi#getRoutingSettings) | Get an organization's routing settings |
+| [**getRoutingSettingsContactcenter**](RoutingApi#getRoutingSettingsContactcenter) | Get Contact Center Settings |
+| [**getRoutingSettingsTranscription**](RoutingApi#getRoutingSettingsTranscription) | Get Transcription Settings |
+| [**getRoutingSkill**](RoutingApi#getRoutingSkill) | Get Routing Skill |
+| [**getRoutingSkillgroup**](RoutingApi#getRoutingSkillgroup) | Get skill group |
+| [**getRoutingSkillgroupMembers**](RoutingApi#getRoutingSkillgroupMembers) | Get skill group members |
+| [**getRoutingSkillgroupMembersDivisions**](RoutingApi#getRoutingSkillgroupMembersDivisions) | Get list of member divisions for this skill group. |
+| [**getRoutingSkillgroups**](RoutingApi#getRoutingSkillgroups) | Get skill group listing |
+| [**getRoutingSkills**](RoutingApi#getRoutingSkills) | Get the list of routing skills. |
+| [**getRoutingSmsAddress**](RoutingApi#getRoutingSmsAddress) | Get an Address by Id for SMS |
+| [**getRoutingSmsAddresses**](RoutingApi#getRoutingSmsAddresses) | Get a list of Addresses for SMS |
+| [**getRoutingSmsAvailablephonenumbers**](RoutingApi#getRoutingSmsAvailablephonenumbers) | Get a list of available phone numbers for SMS provisioning. |
+| [**getRoutingSmsPhonenumber**](RoutingApi#getRoutingSmsPhonenumber) | Get a phone number provisioned for SMS. |
+| [**getRoutingSmsPhonenumbers**](RoutingApi#getRoutingSmsPhonenumbers) | Get a list of provisioned phone numbers. |
+| [**getRoutingUserDirectroutingbackupSettings**](RoutingApi#getRoutingUserDirectroutingbackupSettings) | Get the user's Direct Routing Backup settings. |
+| [**getRoutingUserUtilization**](RoutingApi#getRoutingUserUtilization) | Get the user's max utilization settings.  If not configured, the organization-wide default is returned. |
+| [**getRoutingUtilization**](RoutingApi#getRoutingUtilization) | Get the organization-wide max utilization settings. |
+| [**getRoutingUtilizationLabel**](RoutingApi#getRoutingUtilizationLabel) | Get details about this utilization label |
+| [**getRoutingUtilizationLabelAgents**](RoutingApi#getRoutingUtilizationLabelAgents) | Get list of agent ids associated with a utilization label |
+| [**getRoutingUtilizationLabels**](RoutingApi#getRoutingUtilizationLabels) | Get list of utilization labels |
+| [**getRoutingUtilizationTag**](RoutingApi#getRoutingUtilizationTag) | Get details about this utilization tag |
+| [**getRoutingUtilizationTagAgents**](RoutingApi#getRoutingUtilizationTagAgents) | Get list of agent ids associated with a utilization tag |
+| [**getRoutingUtilizationTags**](RoutingApi#getRoutingUtilizationTags) | Get list of utilization tags |
+| [**getRoutingWrapupcode**](RoutingApi#getRoutingWrapupcode) | Get details about this wrap-up code. |
+| [**getRoutingWrapupcodes**](RoutingApi#getRoutingWrapupcodes) | Get list of wrapup codes. |
+| [**getRoutingWrapupcodesDivisionview**](RoutingApi#getRoutingWrapupcodesDivisionview) | Get a simplified wrap-up code. |
+| [**getRoutingWrapupcodesDivisionviews**](RoutingApi#getRoutingWrapupcodesDivisionviews) | Get a paged listing of simplified wrapup code objects, filterable by name, wrapup code ID(s), or division ID(s). |
+| [**getUserQueues**](RoutingApi#getUserQueues) | Get queues for user |
+| [**getUserRoutinglanguages**](RoutingApi#getUserRoutinglanguages) | List routing language for user |
+| [**getUserRoutingskills**](RoutingApi#getUserRoutingskills) | List routing skills for user |
+| [**getUserSkillgroups**](RoutingApi#getUserSkillgroups) | Get skill groups for a user |
+| [**patchRoutingConversation**](RoutingApi#patchRoutingConversation) | Update attributes of an in-queue conversation |
+| [**patchRoutingEmailDomain**](RoutingApi#patchRoutingEmailDomain) | Update domain settings |
+| [**patchRoutingEmailDomainValidate**](RoutingApi#patchRoutingEmailDomainValidate) | Validate domain settings |
+| [**patchRoutingPredictor**](RoutingApi#patchRoutingPredictor) | Update single predictor. |
+| [**patchRoutingQueueMember**](RoutingApi#patchRoutingQueueMember) | Update the ring number OR joined status for a queue member. |
+| [**patchRoutingQueueMembers**](RoutingApi#patchRoutingQueueMembers) | Join or unjoin a set of users for a queue |
+| [**patchRoutingQueueUser**](RoutingApi#patchRoutingQueueUser) | DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue. |
+| [**patchRoutingQueueUsers**](RoutingApi#patchRoutingQueueUsers) | DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue. |
+| [**patchRoutingSettingsContactcenter**](RoutingApi#patchRoutingSettingsContactcenter) | Update Contact Center Settings |
+| [**patchRoutingSettingsTranscription**](RoutingApi#patchRoutingSettingsTranscription) | Patch Transcription Settings |
+| [**patchRoutingSkillgroup**](RoutingApi#patchRoutingSkillgroup) | Update skill group definition |
+| [**patchUserQueue**](RoutingApi#patchUserQueue) | Join or unjoin a queue for a user |
+| [**patchUserQueues**](RoutingApi#patchUserQueues) | Join or unjoin a set of queues for a user |
+| [**patchUserRoutinglanguage**](RoutingApi#patchUserRoutinglanguage) | Update routing language proficiency or state. |
+| [**patchUserRoutinglanguagesBulk**](RoutingApi#patchUserRoutinglanguagesBulk) | Add bulk routing language to user. Max limit 50 languages |
+| [**patchUserRoutingskillsBulk**](RoutingApi#patchUserRoutingskillsBulk) | Bulk add routing skills to user |
+| [**postAnalyticsQueuesObservationsQuery**](RoutingApi#postAnalyticsQueuesObservationsQuery) | Query for queue observations |
+| [**postAnalyticsRoutingActivityQuery**](RoutingApi#postAnalyticsRoutingActivityQuery) | Query for user activity observations |
+| [**postRoutingAssessments**](RoutingApi#postRoutingAssessments) | Create a benefit assessment. |
+| [**postRoutingAssessmentsJobs**](RoutingApi#postRoutingAssessmentsJobs) | Create a benefit assessment job. |
+| [**postRoutingEmailDomainRoutes**](RoutingApi#postRoutingEmailDomainRoutes) | Create a route |
+| [**postRoutingEmailDomainTestconnection**](RoutingApi#postRoutingEmailDomainTestconnection) | Tests the custom SMTP server integration connection set on this domain |
+| [**postRoutingEmailDomains**](RoutingApi#postRoutingEmailDomains) | Create a domain |
+| [**postRoutingEmailOutboundDomains**](RoutingApi#postRoutingEmailOutboundDomains) | Create a domain |
+| [**postRoutingEmailOutboundDomainsSimulated**](RoutingApi#postRoutingEmailOutboundDomainsSimulated) | Create a simulated domain |
+| [**postRoutingLanguages**](RoutingApi#postRoutingLanguages) | Create Language |
+| [**postRoutingPredictors**](RoutingApi#postRoutingPredictors) | Create a predictor. |
+| [**postRoutingQueueMembers**](RoutingApi#postRoutingQueueMembers) | Bulk add or delete up to 100 queue members |
+| [**postRoutingQueueUsers**](RoutingApi#postRoutingQueueUsers) | DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members. |
+| [**postRoutingQueueWrapupcodes**](RoutingApi#postRoutingQueueWrapupcodes) | Add up to 100 wrap-up codes to a queue |
+| [**postRoutingQueues**](RoutingApi#postRoutingQueues) | Create a queue |
+| [**postRoutingSkillgroupMembersDivisions**](RoutingApi#postRoutingSkillgroupMembersDivisions) | Add or remove member divisions for this skill group. |
+| [**postRoutingSkillgroups**](RoutingApi#postRoutingSkillgroups) | Create a skill group |
+| [**postRoutingSkills**](RoutingApi#postRoutingSkills) | Create Skill |
+| [**postRoutingSmsAddresses**](RoutingApi#postRoutingSmsAddresses) | Provision an Address for SMS |
+| [**postRoutingSmsPhonenumbers**](RoutingApi#postRoutingSmsPhonenumbers) | Provision a phone number for SMS |
+| [**postRoutingSmsPhonenumbersAlphanumeric**](RoutingApi#postRoutingSmsPhonenumbersAlphanumeric) | Provision an alphanumeric number for SMS |
+| [**postRoutingSmsPhonenumbersImport**](RoutingApi#postRoutingSmsPhonenumbersImport) | Imports a phone number for SMS |
+| [**postRoutingUtilizationLabels**](RoutingApi#postRoutingUtilizationLabels) | Create a utilization label |
+| [**postRoutingUtilizationTags**](RoutingApi#postRoutingUtilizationTags) | Create an utilization tag |
+| [**postRoutingWrapupcodes**](RoutingApi#postRoutingWrapupcodes) | Create a wrap-up code |
+| [**postUserRoutinglanguages**](RoutingApi#postUserRoutinglanguages) | Add routing language to user |
+| [**postUserRoutingskills**](RoutingApi#postUserRoutingskills) | Add routing skill to user |
+| [**putRoutingDirectroutingbackupSettingsMe**](RoutingApi#putRoutingDirectroutingbackupSettingsMe) | Update the user's Direct Routing Backup settings. |
+| [**putRoutingEmailDomainRoute**](RoutingApi#putRoutingEmailDomainRoute) | Update a route |
+| [**putRoutingEmailOutboundDomainActivation**](RoutingApi#putRoutingEmailOutboundDomainActivation) | Request an activation status (cname + dkim) update of an outbound domain |
+| [**putRoutingMessageRecipient**](RoutingApi#putRoutingMessageRecipient) | Update a recipient |
+| [**putRoutingQueue**](RoutingApi#putRoutingQueue) | Update a queue |
+| [**putRoutingSettings**](RoutingApi#putRoutingSettings) | Update an organization's routing settings |
+| [**putRoutingSettingsTranscription**](RoutingApi#putRoutingSettingsTranscription) | Update Transcription Settings |
+| [**putRoutingSmsPhonenumber**](RoutingApi#putRoutingSmsPhonenumber) | Update a phone number provisioned for SMS. |
+| [**putRoutingUserDirectroutingbackupSettings**](RoutingApi#putRoutingUserDirectroutingbackupSettings) | Update the user's Direct Routing Backup settings. |
+| [**putRoutingUserUtilization**](RoutingApi#putRoutingUserUtilization) | Update the user's max utilization settings.  Include only those media types requiring custom configuration. |
+| [**putRoutingUtilization**](RoutingApi#putRoutingUtilization) | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. |
+| [**putRoutingUtilizationLabel**](RoutingApi#putRoutingUtilizationLabel) | Update a utilization label |
+| [**putRoutingWrapupcode**](RoutingApi#putRoutingWrapupcode) | Update wrap-up code |
+| [**putUserRoutingskill**](RoutingApi#putUserRoutingskill) | Update routing skill proficiency or state. |
+| [**putUserRoutingskillsBulk**](RoutingApi#putUserRoutingskillsBulk) | Replace all routing skills assigned to a user |
 {: class="table-striped"}
 
-<a name="deleteRoutingAssessment"></a>
 
 # **deleteRoutingAssessment**
-
 
 
 > Void deleteRoutingAssessment(assessmentId)
@@ -219,10 +214,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteRoutingDirectroutingbackupSettingsMe"></a>
 
 # **deleteRoutingDirectroutingbackupSettingsMe**
-
 
 
 > Void deleteRoutingDirectroutingbackupSettingsMe()
@@ -275,10 +268,8 @@ This endpoint does not require any parameters.
 
 null (empty response body)
 
-<a name="deleteRoutingEmailDomain"></a>
 
 # **deleteRoutingEmailDomain**
-
 
 
 > Void deleteRoutingEmailDomain(domainId)
@@ -335,10 +326,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteRoutingEmailDomainRoute"></a>
 
 # **deleteRoutingEmailDomainRoute**
-
 
 
 > Void deleteRoutingEmailDomainRoute(domainName, routeId)
@@ -397,10 +386,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteRoutingEmailOutboundDomain"></a>
 
 # **deleteRoutingEmailOutboundDomain**
-
 
 
 > Void deleteRoutingEmailOutboundDomain(domainId)
@@ -457,10 +444,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteRoutingLanguage"></a>
 
 # **deleteRoutingLanguage**
-
 
 
 > Void deleteRoutingLanguage(languageId)
@@ -517,10 +502,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteRoutingPredictor"></a>
 
 # **deleteRoutingPredictor**
-
 
 
 > Void deleteRoutingPredictor(predictorId)
@@ -578,10 +561,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteRoutingQueue"></a>
 
 # **deleteRoutingQueue**
-
 
 
 > Void deleteRoutingQueue(queueId, forceDelete)
@@ -640,10 +621,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteRoutingQueueMember"></a>
 
 # **deleteRoutingQueueMember**
-
 
 
 > Void deleteRoutingQueueMember(queueId, memberId)
@@ -703,11 +682,12 @@ try {
 
 null (empty response body)
 
-<a name="deleteRoutingQueueUser"></a>
 
 # **deleteRoutingQueueUser**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Void deleteRoutingQueueUser(queueId, memberId)
 
@@ -766,10 +746,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteRoutingQueueWrapupcode"></a>
 
 # **deleteRoutingQueueWrapupcode**
-
 
 
 > Void deleteRoutingQueueWrapupcode(queueId, codeId)
@@ -828,10 +806,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteRoutingSettings"></a>
 
 # **deleteRoutingSettings**
-
 
 
 > Void deleteRoutingSettings()
@@ -884,10 +860,8 @@ This endpoint does not require any parameters.
 
 null (empty response body)
 
-<a name="deleteRoutingSkill"></a>
 
 # **deleteRoutingSkill**
-
 
 
 > Void deleteRoutingSkill(skillId)
@@ -944,10 +918,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteRoutingSkillgroup"></a>
 
 # **deleteRoutingSkillgroup**
-
 
 
 > Void deleteRoutingSkillgroup(skillGroupId)
@@ -1004,10 +976,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteRoutingSmsAddress"></a>
 
 # **deleteRoutingSmsAddress**
-
 
 
 > Void deleteRoutingSmsAddress(addressId)
@@ -1064,10 +1034,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteRoutingSmsPhonenumber"></a>
 
 # **deleteRoutingSmsPhonenumber**
-
 
 
 > Void deleteRoutingSmsPhonenumber(addressId)
@@ -1124,10 +1092,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteRoutingUserDirectroutingbackupSettings"></a>
 
 # **deleteRoutingUserDirectroutingbackupSettings**
-
 
 
 > Void deleteRoutingUserDirectroutingbackupSettings(userId)
@@ -1184,10 +1150,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteRoutingUserUtilization"></a>
 
 # **deleteRoutingUserUtilization**
-
 
 
 > Void deleteRoutingUserUtilization(userId)
@@ -1244,10 +1208,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteRoutingUtilization"></a>
 
 # **deleteRoutingUtilization**
-
 
 
 > Void deleteRoutingUtilization()
@@ -1300,10 +1262,8 @@ This endpoint does not require any parameters.
 
 null (empty response body)
 
-<a name="deleteRoutingUtilizationLabel"></a>
 
 # **deleteRoutingUtilizationLabel**
-
 
 
 > Void deleteRoutingUtilizationLabel(labelId, forceDelete)
@@ -1362,10 +1322,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteRoutingUtilizationTag"></a>
 
 # **deleteRoutingUtilizationTag**
-
 
 
 > Void deleteRoutingUtilizationTag(tagId, forceDelete)
@@ -1426,10 +1384,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteRoutingWrapupcode"></a>
 
 # **deleteRoutingWrapupcode**
-
 
 
 > Void deleteRoutingWrapupcode(codeId)
@@ -1486,10 +1442,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteUserRoutinglanguage"></a>
 
 # **deleteUserRoutinglanguage**
-
 
 
 > Void deleteUserRoutinglanguage(userId, languageId)
@@ -1549,10 +1503,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteUserRoutingskill"></a>
 
 # **deleteUserRoutingskill**
-
 
 
 > Void deleteUserRoutingskill(userId, skillId)
@@ -1611,13 +1563,11 @@ try {
 
 null (empty response body)
 
-<a name="getRoutingAssessment"></a>
 
 # **getRoutingAssessment**
 
 
-
-> [BenefitAssessment](BenefitAssessment.html) getRoutingAssessment(assessmentId)
+> [BenefitAssessment](BenefitAssessment) getRoutingAssessment(assessmentId)
 
 Retrieve a single benefit assessment.
 
@@ -1670,15 +1620,13 @@ try {
 
 ### Return type
 
-[**BenefitAssessment**](BenefitAssessment.html)
+[**BenefitAssessment**](BenefitAssessment)
 
-<a name="getRoutingAssessments"></a>
 
 # **getRoutingAssessments**
 
 
-
-> [AssessmentListing](AssessmentListing.html) getRoutingAssessments(before, after, limit, pageSize, queueId)
+> [AssessmentListing](AssessmentListing) getRoutingAssessments(before, after, limit, pageSize, queueId)
 
 Retrieve all benefit assessments.
 
@@ -1734,21 +1682,19 @@ try {
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
-| **queueId** | [**List&lt;String&gt;**](String.html)| Queue ID(s) to filter assessments by. | [optional] 
+| **queueId** | [**List&lt;String&gt;**](String)| Queue ID(s) to filter assessments by. | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AssessmentListing**](AssessmentListing.html)
+[**AssessmentListing**](AssessmentListing)
 
-<a name="getRoutingAssessmentsJob"></a>
 
 # **getRoutingAssessmentsJob**
 
 
-
-> [BenefitAssessmentJob](BenefitAssessmentJob.html) getRoutingAssessmentsJob(jobId)
+> [BenefitAssessmentJob](BenefitAssessmentJob) getRoutingAssessmentsJob(jobId)
 
 Retrieve a single benefit assessments job.
 
@@ -1801,15 +1747,13 @@ try {
 
 ### Return type
 
-[**BenefitAssessmentJob**](BenefitAssessmentJob.html)
+[**BenefitAssessmentJob**](BenefitAssessmentJob)
 
-<a name="getRoutingAssessmentsJobs"></a>
 
 # **getRoutingAssessmentsJobs**
 
 
-
-> [AssessmentJobListing](AssessmentJobListing.html) getRoutingAssessmentsJobs(divisionId)
+> [AssessmentJobListing](AssessmentJobListing) getRoutingAssessmentsJobs(divisionId)
 
 Retrieve all benefit assessment jobs.
 
@@ -1856,21 +1800,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) to filter assessment jobs by. | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String)| Division ID(s) to filter assessment jobs by. | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AssessmentJobListing**](AssessmentJobListing.html)
+[**AssessmentJobListing**](AssessmentJobListing)
 
-<a name="getRoutingAvailablemediatypes"></a>
 
 # **getRoutingAvailablemediatypes**
 
 
-
-> [AvailableMediaTypeEntityListing](AvailableMediaTypeEntityListing.html) getRoutingAvailablemediatypes()
+> [AvailableMediaTypeEntityListing](AvailableMediaTypeEntityListing) getRoutingAvailablemediatypes()
 
 Get available media types
 
@@ -1918,15 +1860,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**AvailableMediaTypeEntityListing**](AvailableMediaTypeEntityListing.html)
+[**AvailableMediaTypeEntityListing**](AvailableMediaTypeEntityListing)
 
-<a name="getRoutingDirectroutingbackupSettingsMe"></a>
 
 # **getRoutingDirectroutingbackupSettingsMe**
 
 
-
-> [AgentDirectRoutingBackupSettings](AgentDirectRoutingBackupSettings.html) getRoutingDirectroutingbackupSettingsMe()
+> [AgentDirectRoutingBackupSettings](AgentDirectRoutingBackupSettings) getRoutingDirectroutingbackupSettingsMe()
 
 Get the user's Direct Routing Backup settings.
 
@@ -1975,15 +1915,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)
+[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings)
 
-<a name="getRoutingEmailDomain"></a>
 
 # **getRoutingEmailDomain**
 
 
-
-> [InboundDomain](InboundDomain.html) getRoutingEmailDomain(domainId)
+> [InboundDomain](InboundDomain) getRoutingEmailDomain(domainId)
 
 Get domain
 
@@ -2036,15 +1974,13 @@ try {
 
 ### Return type
 
-[**InboundDomain**](InboundDomain.html)
+[**InboundDomain**](InboundDomain)
 
-<a name="getRoutingEmailDomainRoute"></a>
 
 # **getRoutingEmailDomainRoute**
 
 
-
-> [InboundRoute](InboundRoute.html) getRoutingEmailDomainRoute(domainName, routeId)
+> [InboundRoute](InboundRoute) getRoutingEmailDomainRoute(domainName, routeId)
 
 Get a route
 
@@ -2099,15 +2035,13 @@ try {
 
 ### Return type
 
-[**InboundRoute**](InboundRoute.html)
+[**InboundRoute**](InboundRoute)
 
-<a name="getRoutingEmailDomainRoutes"></a>
 
 # **getRoutingEmailDomainRoutes**
 
 
-
-> [InboundRouteEntityListing](InboundRouteEntityListing.html) getRoutingEmailDomainRoutes(domainName, pageSize, pageNumber, pattern)
+> [InboundRouteEntityListing](InboundRouteEntityListing) getRoutingEmailDomainRoutes(domainName, pageSize, pageNumber, pattern)
 
 Get routes
 
@@ -2166,15 +2100,13 @@ try {
 
 ### Return type
 
-[**InboundRouteEntityListing**](InboundRouteEntityListing.html)
+[**InboundRouteEntityListing**](InboundRouteEntityListing)
 
-<a name="getRoutingEmailDomains"></a>
 
 # **getRoutingEmailDomains**
 
 
-
-> [InboundDomainEntityListing](InboundDomainEntityListing.html) getRoutingEmailDomains(pageSize, pageNumber, excludeStatus, filter)
+> [InboundDomainEntityListing](InboundDomainEntityListing) getRoutingEmailDomains(pageSize, pageNumber, excludeStatus, filter)
 
 Get domains
 
@@ -2233,15 +2165,13 @@ try {
 
 ### Return type
 
-[**InboundDomainEntityListing**](InboundDomainEntityListing.html)
+[**InboundDomainEntityListing**](InboundDomainEntityListing)
 
-<a name="getRoutingEmailOutboundDomain"></a>
 
 # **getRoutingEmailOutboundDomain**
 
 
-
-> [OutboundDomain](OutboundDomain.html) getRoutingEmailOutboundDomain(domainId)
+> [OutboundDomain](OutboundDomain) getRoutingEmailOutboundDomain(domainId)
 
 Get domain
 
@@ -2294,15 +2224,13 @@ try {
 
 ### Return type
 
-[**OutboundDomain**](OutboundDomain.html)
+[**OutboundDomain**](OutboundDomain)
 
-<a name="getRoutingEmailOutboundDomainActivation"></a>
 
 # **getRoutingEmailOutboundDomainActivation**
 
 
-
-> [EmailOutboundDomainResult](EmailOutboundDomainResult.html) getRoutingEmailOutboundDomainActivation(domainId)
+> [EmailOutboundDomainResult](EmailOutboundDomainResult) getRoutingEmailOutboundDomainActivation(domainId)
 
 Get activation status (cname + dkim) of an outbound domain
 
@@ -2355,15 +2283,13 @@ try {
 
 ### Return type
 
-[**EmailOutboundDomainResult**](EmailOutboundDomainResult.html)
+[**EmailOutboundDomainResult**](EmailOutboundDomainResult)
 
-<a name="getRoutingEmailOutboundDomainSearch"></a>
 
 # **getRoutingEmailOutboundDomainSearch**
 
 
-
-> [OutboundDomain](OutboundDomain.html) getRoutingEmailOutboundDomainSearch(domainId)
+> [OutboundDomain](OutboundDomain) getRoutingEmailOutboundDomainSearch(domainId)
 
 Search a domain across organizations
 
@@ -2416,15 +2342,13 @@ try {
 
 ### Return type
 
-[**OutboundDomain**](OutboundDomain.html)
+[**OutboundDomain**](OutboundDomain)
 
-<a name="getRoutingEmailOutboundDomains"></a>
 
 # **getRoutingEmailOutboundDomains**
 
 
-
-> [OutboundDomainEntityListing](OutboundDomainEntityListing.html) getRoutingEmailOutboundDomains(filter)
+> [OutboundDomainEntityListing](OutboundDomainEntityListing) getRoutingEmailOutboundDomains(filter)
 
 Get outbound domains
 
@@ -2477,15 +2401,13 @@ try {
 
 ### Return type
 
-[**OutboundDomainEntityListing**](OutboundDomainEntityListing.html)
+[**OutboundDomainEntityListing**](OutboundDomainEntityListing)
 
-<a name="getRoutingEmailSetup"></a>
 
 # **getRoutingEmailSetup**
 
 
-
-> [EmailSetup](EmailSetup.html) getRoutingEmailSetup()
+> [EmailSetup](EmailSetup) getRoutingEmailSetup()
 
 Get email setup
 
@@ -2534,15 +2456,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**EmailSetup**](EmailSetup.html)
+[**EmailSetup**](EmailSetup)
 
-<a name="getRoutingLanguage"></a>
 
 # **getRoutingLanguage**
 
 
-
-> [Language](Language.html) getRoutingLanguage(languageId)
+> [Language](Language) getRoutingLanguage(languageId)
 
 Get a routing language
 
@@ -2594,15 +2514,13 @@ try {
 
 ### Return type
 
-[**Language**](Language.html)
+[**Language**](Language)
 
-<a name="getRoutingLanguages"></a>
 
 # **getRoutingLanguages**
 
 
-
-> [LanguageEntityListing](LanguageEntityListing.html) getRoutingLanguages(pageSize, pageNumber, sortOrder, name, id)
+> [LanguageEntityListing](LanguageEntityListing) getRoutingLanguages(pageSize, pageNumber, sortOrder, name, id)
 
 Get the list of supported languages.
 
@@ -2656,21 +2574,19 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending 
 | **name** | **String**| Name | [optional] 
-| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| id | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LanguageEntityListing**](LanguageEntityListing.html)
+[**LanguageEntityListing**](LanguageEntityListing)
 
-<a name="getRoutingMessageRecipient"></a>
 
 # **getRoutingMessageRecipient**
 
 
-
-> [Recipient](Recipient.html) getRoutingMessageRecipient(recipientId)
+> [Recipient](Recipient) getRoutingMessageRecipient(recipientId)
 
 Get a recipient
 
@@ -2723,15 +2639,13 @@ try {
 
 ### Return type
 
-[**Recipient**](Recipient.html)
+[**Recipient**](Recipient)
 
-<a name="getRoutingMessageRecipients"></a>
 
 # **getRoutingMessageRecipients**
 
 
-
-> [RecipientListing](RecipientListing.html) getRoutingMessageRecipients(messengerType, name, pageSize, pageNumber)
+> [RecipientListing](RecipientListing) getRoutingMessageRecipients(messengerType, name, pageSize, pageNumber)
 
 Get recipients
 
@@ -2790,15 +2704,13 @@ try {
 
 ### Return type
 
-[**RecipientListing**](RecipientListing.html)
+[**RecipientListing**](RecipientListing)
 
-<a name="getRoutingPredictor"></a>
 
 # **getRoutingPredictor**
 
 
-
-> [Predictor](Predictor.html) getRoutingPredictor(predictorId)
+> [Predictor](Predictor) getRoutingPredictor(predictorId)
 
 Retrieve a single predictor.
 
@@ -2851,15 +2763,13 @@ try {
 
 ### Return type
 
-[**Predictor**](Predictor.html)
+[**Predictor**](Predictor)
 
-<a name="getRoutingPredictorModelFeatures"></a>
 
 # **getRoutingPredictorModelFeatures**
 
 
-
-> [PredictorModelFeatureListing](PredictorModelFeatureListing.html) getRoutingPredictorModelFeatures(predictorId, modelId)
+> [PredictorModelFeatureListing](PredictorModelFeatureListing) getRoutingPredictorModelFeatures(predictorId, modelId)
 
 Retrieve Predictor Model Features.
 
@@ -2914,15 +2824,13 @@ try {
 
 ### Return type
 
-[**PredictorModelFeatureListing**](PredictorModelFeatureListing.html)
+[**PredictorModelFeatureListing**](PredictorModelFeatureListing)
 
-<a name="getRoutingPredictorModels"></a>
 
 # **getRoutingPredictorModels**
 
 
-
-> [PredictorModels](PredictorModels.html) getRoutingPredictorModels(predictorId)
+> [PredictorModels](PredictorModels) getRoutingPredictorModels(predictorId)
 
 Retrieve Predictor Models and Top Features.
 
@@ -2975,15 +2883,13 @@ try {
 
 ### Return type
 
-[**PredictorModels**](PredictorModels.html)
+[**PredictorModels**](PredictorModels)
 
-<a name="getRoutingPredictors"></a>
 
 # **getRoutingPredictors**
 
 
-
-> [PredictorListing](PredictorListing.html) getRoutingPredictors(before, after, limit, pageSize, queueId)
+> [PredictorListing](PredictorListing) getRoutingPredictors(before, after, limit, pageSize, queueId)
 
 Retrieve all predictors.
 
@@ -3039,21 +2945,19 @@ try {
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
-| **queueId** | [**List&lt;String&gt;**](String.html)| Comma-separated list of queue Ids to filter by. | [optional] 
+| **queueId** | [**List&lt;String&gt;**](String)| Comma-separated list of queue Ids to filter by. | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**PredictorListing**](PredictorListing.html)
+[**PredictorListing**](PredictorListing)
 
-<a name="getRoutingPredictorsKeyperformanceindicators"></a>
 
 # **getRoutingPredictorsKeyperformanceindicators**
 
 
-
-> [List&lt;KeyPerformanceIndicator&gt;](KeyPerformanceIndicator.html) getRoutingPredictorsKeyperformanceindicators(kpiGroup, expand)
+> [List&lt;KeyPerformanceIndicator&gt;](KeyPerformanceIndicator) getRoutingPredictorsKeyperformanceindicators(kpiGroup, expand)
 
 Get a list of Key Performance Indicators
 
@@ -3102,21 +3006,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **kpiGroup** | **String**| The Group of Key Performance Indicators to return | [optional]<br />**Values**: Standard, Custom 
-| **expand** | [**List&lt;String&gt;**](String.html)| Parameter to request additional data to return in KPI payload | [optional]<br />**Values**: queues 
+| **expand** | [**List&lt;String&gt;**](String)| Parameter to request additional data to return in KPI payload | [optional]<br />**Values**: queues 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**List&lt;KeyPerformanceIndicator&gt;**](KeyPerformanceIndicator.html)
+[**List&lt;KeyPerformanceIndicator&gt;**](KeyPerformanceIndicator)
 
-<a name="getRoutingQueue"></a>
 
 # **getRoutingQueue**
 
 
-
-> [Queue](Queue.html) getRoutingQueue(queueId)
+> [Queue](Queue) getRoutingQueue(queueId)
 
 Get details about this queue.
 
@@ -3169,15 +3071,13 @@ try {
 
 ### Return type
 
-[**Queue**](Queue.html)
+[**Queue**](Queue)
 
-<a name="getRoutingQueueAssistant"></a>
 
 # **getRoutingQueueAssistant**
 
 
-
-> [AssistantQueue](AssistantQueue.html) getRoutingQueueAssistant(queueId, expand)
+> [AssistantQueue](AssistantQueue) getRoutingQueueAssistant(queueId, expand)
 
 Get an assistant associated with a queue.
 
@@ -3232,15 +3132,13 @@ try {
 
 ### Return type
 
-[**AssistantQueue**](AssistantQueue.html)
+[**AssistantQueue**](AssistantQueue)
 
-<a name="getRoutingQueueComparisonperiod"></a>
 
 # **getRoutingQueueComparisonperiod**
 
 
-
-> [ComparisonPeriod](ComparisonPeriod.html) getRoutingQueueComparisonperiod(queueId, comparisonPeriodId)
+> [ComparisonPeriod](ComparisonPeriod) getRoutingQueueComparisonperiod(queueId, comparisonPeriodId)
 
 Get a Comparison Period.
 
@@ -3296,15 +3194,13 @@ try {
 
 ### Return type
 
-[**ComparisonPeriod**](ComparisonPeriod.html)
+[**ComparisonPeriod**](ComparisonPeriod)
 
-<a name="getRoutingQueueComparisonperiods"></a>
 
 # **getRoutingQueueComparisonperiods**
 
 
-
-> [ComparisonPeriodListing](ComparisonPeriodListing.html) getRoutingQueueComparisonperiods(queueId)
+> [ComparisonPeriodListing](ComparisonPeriodListing) getRoutingQueueComparisonperiods(queueId)
 
 Get list of comparison periods
 
@@ -3358,15 +3254,13 @@ try {
 
 ### Return type
 
-[**ComparisonPeriodListing**](ComparisonPeriodListing.html)
+[**ComparisonPeriodListing**](ComparisonPeriodListing)
 
-<a name="getRoutingQueueEstimatedwaittime"></a>
 
 # **getRoutingQueueEstimatedwaittime**
 
 
-
-> [EstimatedWaitTimePredictions](EstimatedWaitTimePredictions.html) getRoutingQueueEstimatedwaittime(queueId, conversationId)
+> [EstimatedWaitTimePredictions](EstimatedWaitTimePredictions) getRoutingQueueEstimatedwaittime(queueId, conversationId)
 
 Get Estimated Wait Time
 
@@ -3421,15 +3315,13 @@ try {
 
 ### Return type
 
-[**EstimatedWaitTimePredictions**](EstimatedWaitTimePredictions.html)
+[**EstimatedWaitTimePredictions**](EstimatedWaitTimePredictions)
 
-<a name="getRoutingQueueMediatypeEstimatedwaittime"></a>
 
 # **getRoutingQueueMediatypeEstimatedwaittime**
 
 
-
-> [EstimatedWaitTimePredictions](EstimatedWaitTimePredictions.html) getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType)
+> [EstimatedWaitTimePredictions](EstimatedWaitTimePredictions) getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType)
 
 Get Estimated Wait Time
 
@@ -3484,15 +3376,13 @@ try {
 
 ### Return type
 
-[**EstimatedWaitTimePredictions**](EstimatedWaitTimePredictions.html)
+[**EstimatedWaitTimePredictions**](EstimatedWaitTimePredictions)
 
-<a name="getRoutingQueueMembers"></a>
 
 # **getRoutingQueueMembers**
 
 
-
-> [QueueMemberEntityListing](QueueMemberEntityListing.html) getRoutingQueueMembers(queueId, pageNumber, pageSize, sortOrder, expand, name, profileSkills, skills, languages, routingStatus, presence, memberBy, joined)
+> [QueueMemberEntityListing](QueueMemberEntityListing) getRoutingQueueMembers(queueId, pageNumber, pageSize, sortOrder, expand, name, profileSkills, skills, languages, routingStatus, presence, memberBy, joined)
 
 Get the members of this queue.
 
@@ -3558,13 +3448,13 @@ try {
 | **pageNumber** | **Integer**|  | [optional] [default to 1] 
 | **pageSize** | **Integer**| Max value is 100 | [optional] [default to 25] 
 | **sortOrder** | **String**| Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin 
 | **name** | **String**| Filter by queue member name (contains-style search) | [optional] 
-| **profileSkills** | [**List&lt;String&gt;**](String.html)| Filter by profile skill (contains-style search) | [optional] 
-| **skills** | [**List&lt;String&gt;**](String.html)| Filter by skill (contains-style search) | [optional] 
-| **languages** | [**List&lt;String&gt;**](String.html)| Filter by language (contains-style search) | [optional] 
-| **routingStatus** | [**List&lt;String&gt;**](String.html)| Filter by routing status | [optional] 
-| **presence** | [**List&lt;String&gt;**](String.html)| Filter by presence | [optional] 
+| **profileSkills** | [**List&lt;String&gt;**](String)| Filter by profile skill (contains-style search) | [optional] 
+| **skills** | [**List&lt;String&gt;**](String)| Filter by skill (contains-style search) | [optional] 
+| **languages** | [**List&lt;String&gt;**](String)| Filter by language (contains-style search) | [optional] 
+| **routingStatus** | [**List&lt;String&gt;**](String)| Filter by routing status | [optional] 
+| **presence** | [**List&lt;String&gt;**](String)| Filter by presence | [optional] 
 | **memberBy** | **String**| Filter by member type | [optional]<br />**Values**: user, group 
 | **joined** | **Boolean**| Filter by joined status | [optional]<br />**Values**: true, false 
 {: class="table-striped"}
@@ -3572,15 +3462,16 @@ try {
 
 ### Return type
 
-[**QueueMemberEntityListing**](QueueMemberEntityListing.html)
+[**QueueMemberEntityListing**](QueueMemberEntityListing)
 
-<a name="getRoutingQueueUsers"></a>
 
 # **getRoutingQueueUsers**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [QueueMemberEntityListingV1](QueueMemberEntityListingV1.html) getRoutingQueueUsers(queueId, pageNumber, pageSize, sortOrder, expand, joined, name, profileSkills, skills, languages, routingStatus, presence)
+> [QueueMemberEntityListingV1](QueueMemberEntityListingV1) getRoutingQueueUsers(queueId, pageNumber, pageSize, sortOrder, expand, joined, name, profileSkills, skills, languages, routingStatus, presence)
 
 DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.
 
@@ -3643,28 +3534,26 @@ try {
 | **pageNumber** | **Integer**|  | [optional] [default to 1] 
 | **pageSize** | **Integer**| Max value is 100 | [optional] [default to 25] 
 | **sortOrder** | **String**| Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin 
 | **joined** | **Boolean**| Filter by joined status | [optional] 
 | **name** | **String**| Filter by queue member name | [optional] 
-| **profileSkills** | [**List&lt;String&gt;**](String.html)| Filter by profile skill | [optional] 
-| **skills** | [**List&lt;String&gt;**](String.html)| Filter by skill | [optional] 
-| **languages** | [**List&lt;String&gt;**](String.html)| Filter by language | [optional] 
-| **routingStatus** | [**List&lt;String&gt;**](String.html)| Filter by routing status | [optional] 
-| **presence** | [**List&lt;String&gt;**](String.html)| Filter by presence | [optional] 
+| **profileSkills** | [**List&lt;String&gt;**](String)| Filter by profile skill | [optional] 
+| **skills** | [**List&lt;String&gt;**](String)| Filter by skill | [optional] 
+| **languages** | [**List&lt;String&gt;**](String)| Filter by language | [optional] 
+| **routingStatus** | [**List&lt;String&gt;**](String)| Filter by routing status | [optional] 
+| **presence** | [**List&lt;String&gt;**](String)| Filter by presence | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**QueueMemberEntityListingV1**](QueueMemberEntityListingV1.html)
+[**QueueMemberEntityListingV1**](QueueMemberEntityListingV1)
 
-<a name="getRoutingQueueWrapupcodes"></a>
 
 # **getRoutingQueueWrapupcodes**
 
 
-
-> [WrapupCodeEntityListing](WrapupCodeEntityListing.html) getRoutingQueueWrapupcodes(queueId, pageSize, pageNumber)
+> [WrapupCodeEntityListing](WrapupCodeEntityListing) getRoutingQueueWrapupcodes(queueId, pageSize, pageNumber)
 
 Get the wrap-up codes for a queue
 
@@ -3721,15 +3610,13 @@ try {
 
 ### Return type
 
-[**WrapupCodeEntityListing**](WrapupCodeEntityListing.html)
+[**WrapupCodeEntityListing**](WrapupCodeEntityListing)
 
-<a name="getRoutingQueues"></a>
 
 # **getRoutingQueues**
 
 
-
-> [QueueEntityListing](QueueEntityListing.html) getRoutingQueues(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, cannedResponseLibraryId, hasPeer)
+> [QueueEntityListing](QueueEntityListing) getRoutingQueues(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, cannedResponseLibraryId, hasPeer)
 
 Get list of queues.
 
@@ -3788,9 +3675,9 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **sortOrder** | **String**| Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc 
 | **name** | **String**| Include only queues with the given name (leading and trailing asterisks allowed) | [optional] 
-| **id** | [**List&lt;String&gt;**](String.html)| Include only queues with the specified ID(s) | [optional] 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| Include only queues in the specified division ID(s) | [optional] 
-| **peerId** | [**List&lt;String&gt;**](String.html)| Include only queues with the specified peer ID(s) | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| Include only queues with the specified ID(s) | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String)| Include only queues in the specified division ID(s) | [optional] 
+| **peerId** | [**List&lt;String&gt;**](String)| Include only queues with the specified peer ID(s) | [optional] 
 | **cannedResponseLibraryId** | **String**| Include only queues explicitly associated with the specified canned response library ID | [optional] 
 | **hasPeer** | **Boolean**| Include only queues with a peer ID | [optional] 
 {: class="table-striped"}
@@ -3798,15 +3685,13 @@ try {
 
 ### Return type
 
-[**QueueEntityListing**](QueueEntityListing.html)
+[**QueueEntityListing**](QueueEntityListing)
 
-<a name="getRoutingQueuesDivisionviews"></a>
 
 # **getRoutingQueuesDivisionviews**
 
 
-
-> [QueueEntityListing](QueueEntityListing.html) getRoutingQueuesDivisionviews(pageSize, pageNumber, sortBy, sortOrder, name, id, divisionId)
+> [QueueEntityListing](QueueEntityListing) getRoutingQueuesDivisionviews(pageSize, pageNumber, sortBy, sortOrder, name, id, divisionId)
 
 Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
 
@@ -3864,22 +3749,20 @@ try {
 | **sortBy** | **String**| Sort by | [optional] [default to name]<br />**Values**: name, id, divisionId 
 | **sortOrder** | **String**| Sort order | [optional] [default to asc]<br />**Values**: asc, desc 
 | **name** | **String**| Name | [optional] 
-| **id** | [**List&lt;String&gt;**](String.html)| Queue ID(s) | [optional] 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| Queue ID(s) | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String)| Division ID(s) | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**QueueEntityListing**](QueueEntityListing.html)
+[**QueueEntityListing**](QueueEntityListing)
 
-<a name="getRoutingQueuesDivisionviewsAll"></a>
 
 # **getRoutingQueuesDivisionviewsAll**
 
 
-
-> [QueueEntityListing](QueueEntityListing.html) getRoutingQueuesDivisionviewsAll(pageSize, pageNumber, sortOrder)
+> [QueueEntityListing](QueueEntityListing) getRoutingQueuesDivisionviewsAll(pageSize, pageNumber, sortOrder)
 
 Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization.
 
@@ -3936,15 +3819,13 @@ try {
 
 ### Return type
 
-[**QueueEntityListing**](QueueEntityListing.html)
+[**QueueEntityListing**](QueueEntityListing)
 
-<a name="getRoutingQueuesMe"></a>
 
 # **getRoutingQueuesMe**
 
 
-
-> [UserQueueEntityListing](UserQueueEntityListing.html) getRoutingQueuesMe(pageNumber, pageSize, joined, sortOrder)
+> [UserQueueEntityListing](UserQueueEntityListing) getRoutingQueuesMe(pageNumber, pageSize, joined, sortOrder)
 
 Get a paged listing of queues the user is a member of.
 
@@ -4002,15 +3883,13 @@ try {
 
 ### Return type
 
-[**UserQueueEntityListing**](UserQueueEntityListing.html)
+[**UserQueueEntityListing**](UserQueueEntityListing)
 
-<a name="getRoutingSettings"></a>
 
 # **getRoutingSettings**
 
 
-
-> [RoutingSettings](RoutingSettings.html) getRoutingSettings()
+> [RoutingSettings](RoutingSettings) getRoutingSettings()
 
 Get an organization's routing settings
 
@@ -4058,15 +3937,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**RoutingSettings**](RoutingSettings.html)
+[**RoutingSettings**](RoutingSettings)
 
-<a name="getRoutingSettingsContactcenter"></a>
 
 # **getRoutingSettingsContactcenter**
 
 
-
-> [ContactCenterSettings](ContactCenterSettings.html) getRoutingSettingsContactcenter()
+> [ContactCenterSettings](ContactCenterSettings) getRoutingSettingsContactcenter()
 
 Get Contact Center Settings
 
@@ -4114,15 +3991,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**ContactCenterSettings**](ContactCenterSettings.html)
+[**ContactCenterSettings**](ContactCenterSettings)
 
-<a name="getRoutingSettingsTranscription"></a>
 
 # **getRoutingSettingsTranscription**
 
 
-
-> [TranscriptionSettings](TranscriptionSettings.html) getRoutingSettingsTranscription()
+> [TranscriptionSettings](TranscriptionSettings) getRoutingSettingsTranscription()
 
 Get Transcription Settings
 
@@ -4171,15 +4046,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**TranscriptionSettings**](TranscriptionSettings.html)
+[**TranscriptionSettings**](TranscriptionSettings)
 
-<a name="getRoutingSkill"></a>
 
 # **getRoutingSkill**
 
 
-
-> [RoutingSkill](RoutingSkill.html) getRoutingSkill(skillId)
+> [RoutingSkill](RoutingSkill) getRoutingSkill(skillId)
 
 Get Routing Skill
 
@@ -4231,15 +4104,13 @@ try {
 
 ### Return type
 
-[**RoutingSkill**](RoutingSkill.html)
+[**RoutingSkill**](RoutingSkill)
 
-<a name="getRoutingSkillgroup"></a>
 
 # **getRoutingSkillgroup**
 
 
-
-> [SkillGroup](SkillGroup.html) getRoutingSkillgroup(skillGroupId)
+> [SkillGroup](SkillGroup) getRoutingSkillgroup(skillGroupId)
 
 Get skill group
 
@@ -4292,15 +4163,13 @@ try {
 
 ### Return type
 
-[**SkillGroup**](SkillGroup.html)
+[**SkillGroup**](SkillGroup)
 
-<a name="getRoutingSkillgroupMembers"></a>
 
 # **getRoutingSkillgroupMembers**
 
 
-
-> [SkillGroupMemberEntityListing](SkillGroupMemberEntityListing.html) getRoutingSkillgroupMembers(skillGroupId, pageSize, after, before, expand)
+> [SkillGroupMemberEntityListing](SkillGroupMemberEntityListing) getRoutingSkillgroupMembers(skillGroupId, pageSize, after, before, expand)
 
 Get skill group members
 
@@ -4361,15 +4230,13 @@ try {
 
 ### Return type
 
-[**SkillGroupMemberEntityListing**](SkillGroupMemberEntityListing.html)
+[**SkillGroupMemberEntityListing**](SkillGroupMemberEntityListing)
 
-<a name="getRoutingSkillgroupMembersDivisions"></a>
 
 # **getRoutingSkillgroupMembersDivisions**
 
 
-
-> [SkillGroupMemberDivisionList](SkillGroupMemberDivisionList.html) getRoutingSkillgroupMembersDivisions(skillGroupId, expand)
+> [SkillGroupMemberDivisionList](SkillGroupMemberDivisionList) getRoutingSkillgroupMembersDivisions(skillGroupId, expand)
 
 Get list of member divisions for this skill group.
 
@@ -4424,15 +4291,13 @@ try {
 
 ### Return type
 
-[**SkillGroupMemberDivisionList**](SkillGroupMemberDivisionList.html)
+[**SkillGroupMemberDivisionList**](SkillGroupMemberDivisionList)
 
-<a name="getRoutingSkillgroups"></a>
 
 # **getRoutingSkillgroups**
 
 
-
-> [SkillGroupEntityListing](SkillGroupEntityListing.html) getRoutingSkillgroups(pageSize, name, after, before)
+> [SkillGroupEntityListing](SkillGroupEntityListing) getRoutingSkillgroups(pageSize, name, after, before)
 
 Get skill group listing
 
@@ -4491,15 +4356,13 @@ try {
 
 ### Return type
 
-[**SkillGroupEntityListing**](SkillGroupEntityListing.html)
+[**SkillGroupEntityListing**](SkillGroupEntityListing)
 
-<a name="getRoutingSkills"></a>
 
 # **getRoutingSkills**
 
 
-
-> [SkillEntityListing](SkillEntityListing.html) getRoutingSkills(pageSize, pageNumber, name, id)
+> [SkillEntityListing](SkillEntityListing) getRoutingSkills(pageSize, pageNumber, name, id)
 
 Get the list of routing skills.
 
@@ -4551,21 +4414,19 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **name** | **String**| Filter for results that start with this value | [optional] 
-| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| id | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**SkillEntityListing**](SkillEntityListing.html)
+[**SkillEntityListing**](SkillEntityListing)
 
-<a name="getRoutingSmsAddress"></a>
 
 # **getRoutingSmsAddress**
 
 
-
-> [SmsAddress](SmsAddress.html) getRoutingSmsAddress(addressId)
+> [SmsAddress](SmsAddress) getRoutingSmsAddress(addressId)
 
 Get an Address by Id for SMS
 
@@ -4618,15 +4479,13 @@ try {
 
 ### Return type
 
-[**SmsAddress**](SmsAddress.html)
+[**SmsAddress**](SmsAddress)
 
-<a name="getRoutingSmsAddresses"></a>
 
 # **getRoutingSmsAddresses**
 
 
-
-> [SmsAddressEntityListing](SmsAddressEntityListing.html) getRoutingSmsAddresses(pageSize, pageNumber)
+> [SmsAddressEntityListing](SmsAddressEntityListing) getRoutingSmsAddresses(pageSize, pageNumber)
 
 Get a list of Addresses for SMS
 
@@ -4681,15 +4540,13 @@ try {
 
 ### Return type
 
-[**SmsAddressEntityListing**](SmsAddressEntityListing.html)
+[**SmsAddressEntityListing**](SmsAddressEntityListing)
 
-<a name="getRoutingSmsAvailablephonenumbers"></a>
 
 # **getRoutingSmsAvailablephonenumbers**
 
 
-
-> [SMSAvailablePhoneNumberEntityListing](SMSAvailablePhoneNumberEntityListing.html) getRoutingSmsAvailablephonenumbers(countryCode, phoneNumberType, region, city, areaCode, pattern, addressRequirement)
+> [SMSAvailablePhoneNumberEntityListing](SMSAvailablePhoneNumberEntityListing) getRoutingSmsAvailablephonenumbers(countryCode, phoneNumberType, region, city, areaCode, pattern, addressRequirement)
 
 Get a list of available phone numbers for SMS provisioning.
 
@@ -4756,15 +4613,13 @@ try {
 
 ### Return type
 
-[**SMSAvailablePhoneNumberEntityListing**](SMSAvailablePhoneNumberEntityListing.html)
+[**SMSAvailablePhoneNumberEntityListing**](SMSAvailablePhoneNumberEntityListing)
 
-<a name="getRoutingSmsPhonenumber"></a>
 
 # **getRoutingSmsPhonenumber**
 
 
-
-> [SmsPhoneNumber](SmsPhoneNumber.html) getRoutingSmsPhonenumber(addressId, expand)
+> [SmsPhoneNumber](SmsPhoneNumber) getRoutingSmsPhonenumber(addressId, expand)
 
 Get a phone number provisioned for SMS.
 
@@ -4819,15 +4674,13 @@ try {
 
 ### Return type
 
-[**SmsPhoneNumber**](SmsPhoneNumber.html)
+[**SmsPhoneNumber**](SmsPhoneNumber)
 
-<a name="getRoutingSmsPhonenumbers"></a>
 
 # **getRoutingSmsPhonenumbers**
 
 
-
-> [SmsPhoneNumberEntityListing](SmsPhoneNumberEntityListing.html) getRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId, supportedContentId)
+> [SmsPhoneNumberEntityListing](SmsPhoneNumberEntityListing) getRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId, supportedContentId)
 
 Get a list of provisioned phone numbers.
 
@@ -4885,9 +4738,9 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **phoneNumber** | **String**| Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used. | [optional] 
-| **phoneNumberType** | [**List&lt;String&gt;**](String.html)| Filter on phone number type | [optional]<br />**Values**: local, mobile, tollfree, shortcode, alphanumeric 
-| **phoneNumberStatus** | [**List&lt;String&gt;**](String.html)| Filter on phone number status | [optional]<br />**Values**: active, invalid, initiated, porting, pending, pending-cancellation 
-| **countryCode** | [**List&lt;String&gt;**](String.html)| Filter on country code | [optional] 
+| **phoneNumberType** | [**List&lt;String&gt;**](String)| Filter on phone number type | [optional]<br />**Values**: local, mobile, tollfree, shortcode, alphanumeric 
+| **phoneNumberStatus** | [**List&lt;String&gt;**](String)| Filter on phone number status | [optional]<br />**Values**: active, invalid, initiated, porting, pending, pending-cancellation 
+| **countryCode** | [**List&lt;String&gt;**](String)| Filter on country code | [optional] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **sortBy** | **String**| Optional field to sort results | [optional]<br />**Values**: phoneNumber, countryCode, country, dateCreated, dateModified, phoneNumberStatus, phoneNumberType, purchaseDate, supportsMms, supportsSms, supportsVoice 
@@ -4900,15 +4753,13 @@ try {
 
 ### Return type
 
-[**SmsPhoneNumberEntityListing**](SmsPhoneNumberEntityListing.html)
+[**SmsPhoneNumberEntityListing**](SmsPhoneNumberEntityListing)
 
-<a name="getRoutingUserDirectroutingbackupSettings"></a>
 
 # **getRoutingUserDirectroutingbackupSettings**
 
 
-
-> [AgentDirectRoutingBackupSettings](AgentDirectRoutingBackupSettings.html) getRoutingUserDirectroutingbackupSettings(userId)
+> [AgentDirectRoutingBackupSettings](AgentDirectRoutingBackupSettings) getRoutingUserDirectroutingbackupSettings(userId)
 
 Get the user's Direct Routing Backup settings.
 
@@ -4961,15 +4812,13 @@ try {
 
 ### Return type
 
-[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)
+[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings)
 
-<a name="getRoutingUserUtilization"></a>
 
 # **getRoutingUserUtilization**
 
 
-
-> [AgentMaxUtilizationResponse](AgentMaxUtilizationResponse.html) getRoutingUserUtilization(userId)
+> [AgentMaxUtilizationResponse](AgentMaxUtilizationResponse) getRoutingUserUtilization(userId)
 
 Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
 
@@ -5023,15 +4872,13 @@ try {
 
 ### Return type
 
-[**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse.html)
+[**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse)
 
-<a name="getRoutingUtilization"></a>
 
 # **getRoutingUtilization**
 
 
-
-> [UtilizationResponse](UtilizationResponse.html) getRoutingUtilization()
+> [UtilizationResponse](UtilizationResponse) getRoutingUtilization()
 
 Get the organization-wide max utilization settings.
 
@@ -5081,15 +4928,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**UtilizationResponse**](UtilizationResponse.html)
+[**UtilizationResponse**](UtilizationResponse)
 
-<a name="getRoutingUtilizationLabel"></a>
 
 # **getRoutingUtilizationLabel**
 
 
-
-> [UtilizationLabel](UtilizationLabel.html) getRoutingUtilizationLabel(labelId)
+> [UtilizationLabel](UtilizationLabel) getRoutingUtilizationLabel(labelId)
 
 Get details about this utilization label
 
@@ -5142,12 +4987,10 @@ try {
 
 ### Return type
 
-[**UtilizationLabel**](UtilizationLabel.html)
+[**UtilizationLabel**](UtilizationLabel)
 
-<a name="getRoutingUtilizationLabelAgents"></a>
 
 # **getRoutingUtilizationLabelAgents**
-
 
 
 > List&lt;Object&gt; getRoutingUtilizationLabelAgents(labelId)
@@ -5205,13 +5048,11 @@ try {
 
 **List&lt;Object&gt;**
 
-<a name="getRoutingUtilizationLabels"></a>
 
 # **getRoutingUtilizationLabels**
 
 
-
-> [UtilizationLabelEntityListing](UtilizationLabelEntityListing.html) getRoutingUtilizationLabels(pageSize, pageNumber, sortOrder, name)
+> [UtilizationLabelEntityListing](UtilizationLabelEntityListing) getRoutingUtilizationLabels(pageSize, pageNumber, sortOrder, name)
 
 Get list of utilization labels
 
@@ -5270,15 +5111,13 @@ try {
 
 ### Return type
 
-[**UtilizationLabelEntityListing**](UtilizationLabelEntityListing.html)
+[**UtilizationLabelEntityListing**](UtilizationLabelEntityListing)
 
-<a name="getRoutingUtilizationTag"></a>
 
 # **getRoutingUtilizationTag**
 
 
-
-> [UtilizationTag](UtilizationTag.html) getRoutingUtilizationTag(tagId)
+> [UtilizationTag](UtilizationTag) getRoutingUtilizationTag(tagId)
 
 Get details about this utilization tag
 
@@ -5333,12 +5172,10 @@ try {
 
 ### Return type
 
-[**UtilizationTag**](UtilizationTag.html)
+[**UtilizationTag**](UtilizationTag)
 
-<a name="getRoutingUtilizationTagAgents"></a>
 
 # **getRoutingUtilizationTagAgents**
-
 
 
 > List&lt;Object&gt; getRoutingUtilizationTagAgents(tagId)
@@ -5398,13 +5235,11 @@ try {
 
 **List&lt;Object&gt;**
 
-<a name="getRoutingUtilizationTags"></a>
 
 # **getRoutingUtilizationTags**
 
 
-
-> [UtilizationTagEntityListing](UtilizationTagEntityListing.html) getRoutingUtilizationTags(pageSize, pageNumber, sortOrder, name)
+> [UtilizationTagEntityListing](UtilizationTagEntityListing) getRoutingUtilizationTags(pageSize, pageNumber, sortOrder, name)
 
 Get list of utilization tags
 
@@ -5465,15 +5300,13 @@ try {
 
 ### Return type
 
-[**UtilizationTagEntityListing**](UtilizationTagEntityListing.html)
+[**UtilizationTagEntityListing**](UtilizationTagEntityListing)
 
-<a name="getRoutingWrapupcode"></a>
 
 # **getRoutingWrapupcode**
 
 
-
-> [WrapupCode](WrapupCode.html) getRoutingWrapupcode(codeId)
+> [WrapupCode](WrapupCode) getRoutingWrapupcode(codeId)
 
 Get details about this wrap-up code.
 
@@ -5526,15 +5359,13 @@ try {
 
 ### Return type
 
-[**WrapupCode**](WrapupCode.html)
+[**WrapupCode**](WrapupCode)
 
-<a name="getRoutingWrapupcodes"></a>
 
 # **getRoutingWrapupcodes**
 
 
-
-> [WrapupCodeEntityListing](WrapupCodeEntityListing.html) getRoutingWrapupcodes(pageSize, pageNumber, sortBy, sortOrder, name, id, divisionId)
+> [WrapupCodeEntityListing](WrapupCodeEntityListing) getRoutingWrapupcodes(pageSize, pageNumber, sortBy, sortOrder, name, id, divisionId)
 
 Get list of wrapup codes.
 
@@ -5592,22 +5423,20 @@ try {
 | **sortBy** | **String**| Sort by | [optional] [default to name]<br />**Values**: name, id 
 | **sortOrder** | **String**| Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending 
 | **name** | **String**| Wrapup code&#39;s name (&#39;Sort by&#39; param is ignored unless this field is provided) | [optional] 
-| **id** | [**List&lt;String&gt;**](String.html)| Filter by wrapup code ID(s) | [optional] 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| Filter by division ID(s) | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| Filter by wrapup code ID(s) | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String)| Filter by division ID(s) | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**WrapupCodeEntityListing**](WrapupCodeEntityListing.html)
+[**WrapupCodeEntityListing**](WrapupCodeEntityListing)
 
-<a name="getRoutingWrapupcodesDivisionview"></a>
 
 # **getRoutingWrapupcodesDivisionview**
 
 
-
-> [WrapupCode](WrapupCode.html) getRoutingWrapupcodesDivisionview(codeId)
+> [WrapupCode](WrapupCode) getRoutingWrapupcodesDivisionview(codeId)
 
 Get a simplified wrap-up code.
 
@@ -5660,15 +5489,13 @@ try {
 
 ### Return type
 
-[**WrapupCode**](WrapupCode.html)
+[**WrapupCode**](WrapupCode)
 
-<a name="getRoutingWrapupcodesDivisionviews"></a>
 
 # **getRoutingWrapupcodesDivisionviews**
 
 
-
-> [WrapupCodeEntityListing](WrapupCodeEntityListing.html) getRoutingWrapupcodesDivisionviews(pageSize, pageNumber, name, id, divisionId, includeState)
+> [WrapupCodeEntityListing](WrapupCodeEntityListing) getRoutingWrapupcodesDivisionviews(pageSize, pageNumber, name, id, divisionId, includeState)
 
 Get a paged listing of simplified wrapup code objects, filterable by name, wrapup code ID(s), or division ID(s).
 
@@ -5725,23 +5552,21 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **name** | **String**| Name (trailing asterisks allowed) | [optional] 
-| **id** | [**List&lt;String&gt;**](String.html)| Wrapup code ID(s) | [optional] 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| Wrapup code ID(s) | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String)| Division ID(s) | [optional] 
 | **includeState** | **String**| Wrapup code state(s) to include | [optional]<br />**Values**: Active, Deleted, ActiveAndDeleted 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**WrapupCodeEntityListing**](WrapupCodeEntityListing.html)
+[**WrapupCodeEntityListing**](WrapupCodeEntityListing)
 
-<a name="getUserQueues"></a>
 
 # **getUserQueues**
 
 
-
-> [UserQueueEntityListing](UserQueueEntityListing.html) getUserQueues(userId, pageSize, pageNumber, joined, divisionId)
+> [UserQueueEntityListing](UserQueueEntityListing) getUserQueues(userId, pageSize, pageNumber, joined, divisionId)
 
 Get queues for user
 
@@ -5798,21 +5623,19 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **joined** | **Boolean**| Is joined to the queue | [optional] [default to true] 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String)| Division ID(s) | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UserQueueEntityListing**](UserQueueEntityListing.html)
+[**UserQueueEntityListing**](UserQueueEntityListing)
 
-<a name="getUserRoutinglanguages"></a>
 
 # **getUserRoutinglanguages**
 
 
-
-> [UserLanguageEntityListing](UserLanguageEntityListing.html) getUserRoutinglanguages(userId, pageSize, pageNumber, sortOrder)
+> [UserLanguageEntityListing](UserLanguageEntityListing) getUserRoutinglanguages(userId, pageSize, pageNumber, sortOrder)
 
 List routing language for user
 
@@ -5870,15 +5693,13 @@ try {
 
 ### Return type
 
-[**UserLanguageEntityListing**](UserLanguageEntityListing.html)
+[**UserLanguageEntityListing**](UserLanguageEntityListing)
 
-<a name="getUserRoutingskills"></a>
 
 # **getUserRoutingskills**
 
 
-
-> [UserSkillEntityListing](UserSkillEntityListing.html) getUserRoutingskills(userId, pageSize, pageNumber, sortOrder)
+> [UserSkillEntityListing](UserSkillEntityListing) getUserRoutingskills(userId, pageSize, pageNumber, sortOrder)
 
 List routing skills for user
 
@@ -5936,15 +5757,13 @@ try {
 
 ### Return type
 
-[**UserSkillEntityListing**](UserSkillEntityListing.html)
+[**UserSkillEntityListing**](UserSkillEntityListing)
 
-<a name="getUserSkillgroups"></a>
 
 # **getUserSkillgroups**
 
 
-
-> [UserSkillGroupEntityListing](UserSkillGroupEntityListing.html) getUserSkillgroups(userId, pageSize, after, before)
+> [UserSkillGroupEntityListing](UserSkillGroupEntityListing) getUserSkillgroups(userId, pageSize, after, before)
 
 Get skill groups for a user
 
@@ -6003,15 +5822,13 @@ try {
 
 ### Return type
 
-[**UserSkillGroupEntityListing**](UserSkillGroupEntityListing.html)
+[**UserSkillGroupEntityListing**](UserSkillGroupEntityListing)
 
-<a name="patchRoutingConversation"></a>
 
 # **patchRoutingConversation**
 
 
-
-> [RoutingConversationAttributesResponse](RoutingConversationAttributesResponse.html) patchRoutingConversation(conversationId, body)
+> [RoutingConversationAttributesResponse](RoutingConversationAttributesResponse) patchRoutingConversation(conversationId, body)
 
 Update attributes of an in-queue conversation
 
@@ -6062,21 +5879,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **conversationId** | **String**| Conversation ID | 
-| **body** | [**RoutingConversationAttributesRequest**](RoutingConversationAttributesRequest.html)| Conversation Attributes | 
+| **body** | [**RoutingConversationAttributesRequest**](RoutingConversationAttributesRequest)| Conversation Attributes | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**RoutingConversationAttributesResponse**](RoutingConversationAttributesResponse.html)
+[**RoutingConversationAttributesResponse**](RoutingConversationAttributesResponse)
 
-<a name="patchRoutingEmailDomain"></a>
 
 # **patchRoutingEmailDomain**
 
 
-
-> [InboundDomain](InboundDomain.html) patchRoutingEmailDomain(domainId, body)
+> [InboundDomain](InboundDomain) patchRoutingEmailDomain(domainId, body)
 
 Update domain settings
 
@@ -6125,21 +5940,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **domainId** | **String**| domain ID | 
-| **body** | [**InboundDomainPatchRequest**](InboundDomainPatchRequest.html)| Domain settings | 
+| **body** | [**InboundDomainPatchRequest**](InboundDomainPatchRequest)| Domain settings | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**InboundDomain**](InboundDomain.html)
+[**InboundDomain**](InboundDomain)
 
-<a name="patchRoutingEmailDomainValidate"></a>
 
 # **patchRoutingEmailDomainValidate**
 
 
-
-> [InboundDomain](InboundDomain.html) patchRoutingEmailDomainValidate(domainId, body)
+> [InboundDomain](InboundDomain) patchRoutingEmailDomainValidate(domainId, body)
 
 Validate domain settings
 
@@ -6188,21 +6001,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **domainId** | **String**| domain ID | 
-| **body** | [**InboundDomainPatchRequest**](InboundDomainPatchRequest.html)| Domain settings | 
+| **body** | [**InboundDomainPatchRequest**](InboundDomainPatchRequest)| Domain settings | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**InboundDomain**](InboundDomain.html)
+[**InboundDomain**](InboundDomain)
 
-<a name="patchRoutingPredictor"></a>
 
 # **patchRoutingPredictor**
 
 
-
-> [Predictor](Predictor.html) patchRoutingPredictor(predictorId, body)
+> [Predictor](Predictor) patchRoutingPredictor(predictorId, body)
 
 Update single predictor.
 
@@ -6252,18 +6063,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **predictorId** | **String**| Predictor ID | 
-| **body** | [**PatchPredictorRequest**](PatchPredictorRequest.html)|  | [optional] 
+| **body** | [**PatchPredictorRequest**](PatchPredictorRequest)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Predictor**](Predictor.html)
+[**Predictor**](Predictor)
 
-<a name="patchRoutingQueueMember"></a>
 
 # **patchRoutingQueueMember**
-
 
 
 > Void patchRoutingQueueMember(queueId, memberId, body)
@@ -6317,7 +6126,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **queueId** | **String**| Queue ID | 
 | **memberId** | **String**| Member ID | 
-| **body** | [**QueueMember**](QueueMember.html)| Queue Member | 
+| **body** | [**QueueMember**](QueueMember)| Queue Member | 
 {: class="table-striped"}
 
 
@@ -6325,13 +6134,11 @@ try {
 
 null (empty response body)
 
-<a name="patchRoutingQueueMembers"></a>
 
 # **patchRoutingQueueMembers**
 
 
-
-> [QueueMemberEntityListing](QueueMemberEntityListing.html) patchRoutingQueueMembers(queueId, body)
+> [QueueMemberEntityListing](QueueMemberEntityListing) patchRoutingQueueMembers(queueId, body)
 
 Join or unjoin a set of users for a queue
 
@@ -6381,19 +6188,20 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **queueId** | **String**| Queue ID | 
-| **body** | [**List&lt;QueueMember&gt;**](QueueMember.html)| Queue Members | 
+| **body** | [**List&lt;QueueMember&gt;**](QueueMember)| Queue Members | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**QueueMemberEntityListing**](QueueMemberEntityListing.html)
+[**QueueMemberEntityListing**](QueueMemberEntityListing)
 
-<a name="patchRoutingQueueUser"></a>
 
 # **patchRoutingQueueUser**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Void patchRoutingQueueUser(queueId, memberId, body)
 
@@ -6446,7 +6254,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **queueId** | **String**| Queue ID | 
 | **memberId** | **String**| Member ID | 
-| **body** | [**QueueMember**](QueueMember.html)| Queue Member | 
+| **body** | [**QueueMember**](QueueMember)| Queue Member | 
 {: class="table-striped"}
 
 
@@ -6454,13 +6262,14 @@ try {
 
 null (empty response body)
 
-<a name="patchRoutingQueueUsers"></a>
 
 # **patchRoutingQueueUsers**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [QueueMemberEntityListingV1](QueueMemberEntityListingV1.html) patchRoutingQueueUsers(queueId, body)
+> [QueueMemberEntityListingV1](QueueMemberEntityListingV1) patchRoutingQueueUsers(queueId, body)
 
 DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.
 
@@ -6510,18 +6319,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **queueId** | **String**| Queue ID | 
-| **body** | [**List&lt;QueueMember&gt;**](QueueMember.html)| Queue Members | 
+| **body** | [**List&lt;QueueMember&gt;**](QueueMember)| Queue Members | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**QueueMemberEntityListingV1**](QueueMemberEntityListingV1.html)
+[**QueueMemberEntityListingV1**](QueueMemberEntityListingV1)
 
-<a name="patchRoutingSettingsContactcenter"></a>
 
 # **patchRoutingSettingsContactcenter**
-
 
 
 > Void patchRoutingSettingsContactcenter(body)
@@ -6570,7 +6377,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ContactCenterSettings**](ContactCenterSettings.html)| Contact Center Settings | 
+| **body** | [**ContactCenterSettings**](ContactCenterSettings)| Contact Center Settings | 
 {: class="table-striped"}
 
 
@@ -6578,13 +6385,11 @@ try {
 
 null (empty response body)
 
-<a name="patchRoutingSettingsTranscription"></a>
 
 # **patchRoutingSettingsTranscription**
 
 
-
-> [TranscriptionSettings](TranscriptionSettings.html) patchRoutingSettingsTranscription(body)
+> [TranscriptionSettings](TranscriptionSettings) patchRoutingSettingsTranscription(body)
 
 Patch Transcription Settings
 
@@ -6631,21 +6436,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**TranscriptionSettings**](TranscriptionSettings.html)| Organization Settings | 
+| **body** | [**TranscriptionSettings**](TranscriptionSettings)| Organization Settings | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**TranscriptionSettings**](TranscriptionSettings.html)
+[**TranscriptionSettings**](TranscriptionSettings)
 
-<a name="patchRoutingSkillgroup"></a>
 
 # **patchRoutingSkillgroup**
 
 
-
-> [SkillGroup](SkillGroup.html) patchRoutingSkillgroup(skillGroupId, body)
+> [SkillGroup](SkillGroup) patchRoutingSkillgroup(skillGroupId, body)
 
 Update skill group definition
 
@@ -6694,21 +6497,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **skillGroupId** | **String**| Skill Group ID | 
-| **body** | [**SkillGroup**](SkillGroup.html)| Update skill groups | 
+| **body** | [**SkillGroup**](SkillGroup)| Update skill groups | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**SkillGroup**](SkillGroup.html)
+[**SkillGroup**](SkillGroup)
 
-<a name="patchUserQueue"></a>
 
 # **patchUserQueue**
 
 
-
-> [UserQueue](UserQueue.html) patchUserQueue(queueId, userId, body)
+> [UserQueue](UserQueue) patchUserQueue(queueId, userId, body)
 
 Join or unjoin a queue for a user
 
@@ -6760,21 +6561,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **queueId** | **String**| Queue ID | 
 | **userId** | **String**| User ID | 
-| **body** | [**UserQueue**](UserQueue.html)| Queue Member | 
+| **body** | [**UserQueue**](UserQueue)| Queue Member | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UserQueue**](UserQueue.html)
+[**UserQueue**](UserQueue)
 
-<a name="patchUserQueues"></a>
 
 # **patchUserQueues**
 
 
-
-> [UserQueueEntityListing](UserQueueEntityListing.html) patchUserQueues(userId, body, divisionId)
+> [UserQueueEntityListing](UserQueueEntityListing) patchUserQueues(userId, body, divisionId)
 
 Join or unjoin a set of queues for a user
 
@@ -6825,22 +6624,20 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | 
-| **body** | [**List&lt;UserQueue&gt;**](UserQueue.html)| User Queues | 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] 
+| **body** | [**List&lt;UserQueue&gt;**](UserQueue)| User Queues | 
+| **divisionId** | [**List&lt;String&gt;**](String)| Division ID(s) | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UserQueueEntityListing**](UserQueueEntityListing.html)
+[**UserQueueEntityListing**](UserQueueEntityListing)
 
-<a name="patchUserRoutinglanguage"></a>
 
 # **patchUserRoutinglanguage**
 
 
-
-> [UserRoutingLanguage](UserRoutingLanguage.html) patchUserRoutinglanguage(userId, languageId, body)
+> [UserRoutingLanguage](UserRoutingLanguage) patchUserRoutinglanguage(userId, languageId, body)
 
 Update routing language proficiency or state.
 
@@ -6892,21 +6689,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | 
 | **languageId** | **String**| languageId | 
-| **body** | [**UserRoutingLanguage**](UserRoutingLanguage.html)| Language | 
+| **body** | [**UserRoutingLanguage**](UserRoutingLanguage)| Language | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UserRoutingLanguage**](UserRoutingLanguage.html)
+[**UserRoutingLanguage**](UserRoutingLanguage)
 
-<a name="patchUserRoutinglanguagesBulk"></a>
 
 # **patchUserRoutinglanguagesBulk**
 
 
-
-> [UserLanguageEntityListing](UserLanguageEntityListing.html) patchUserRoutinglanguagesBulk(userId, body)
+> [UserLanguageEntityListing](UserLanguageEntityListing) patchUserRoutinglanguagesBulk(userId, body)
 
 Add bulk routing language to user. Max limit 50 languages
 
@@ -6956,21 +6751,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | 
-| **body** | [**List&lt;UserRoutingLanguagePost&gt;**](UserRoutingLanguagePost.html)| Language | 
+| **body** | [**List&lt;UserRoutingLanguagePost&gt;**](UserRoutingLanguagePost)| Language | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UserLanguageEntityListing**](UserLanguageEntityListing.html)
+[**UserLanguageEntityListing**](UserLanguageEntityListing)
 
-<a name="patchUserRoutingskillsBulk"></a>
 
 # **patchUserRoutingskillsBulk**
 
 
-
-> [UserSkillEntityListing](UserSkillEntityListing.html) patchUserRoutingskillsBulk(userId, body)
+> [UserSkillEntityListing](UserSkillEntityListing) patchUserRoutingskillsBulk(userId, body)
 
 Bulk add routing skills to user
 
@@ -7019,21 +6812,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | 
-| **body** | [**List&lt;UserRoutingSkillPost&gt;**](UserRoutingSkillPost.html)| Skill | 
+| **body** | [**List&lt;UserRoutingSkillPost&gt;**](UserRoutingSkillPost)| Skill | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UserSkillEntityListing**](UserSkillEntityListing.html)
+[**UserSkillEntityListing**](UserSkillEntityListing)
 
-<a name="postAnalyticsQueuesObservationsQuery"></a>
 
 # **postAnalyticsQueuesObservationsQuery**
 
 
-
-> [QueueObservationQueryResponse](QueueObservationQueryResponse.html) postAnalyticsQueuesObservationsQuery(body)
+> [QueueObservationQueryResponse](QueueObservationQueryResponse) postAnalyticsQueuesObservationsQuery(body)
 
 Query for queue observations
 
@@ -7080,21 +6871,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**QueueObservationQuery**](QueueObservationQuery.html)| query | 
+| **body** | [**QueueObservationQuery**](QueueObservationQuery)| query | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**QueueObservationQueryResponse**](QueueObservationQueryResponse.html)
+[**QueueObservationQueryResponse**](QueueObservationQueryResponse)
 
-<a name="postAnalyticsRoutingActivityQuery"></a>
 
 # **postAnalyticsRoutingActivityQuery**
 
 
-
-> [RoutingActivityResponse](RoutingActivityResponse.html) postAnalyticsRoutingActivityQuery(body, pageSize, pageNumber)
+> [RoutingActivityResponse](RoutingActivityResponse) postAnalyticsRoutingActivityQuery(body, pageSize, pageNumber)
 
 Query for user activity observations
 
@@ -7143,7 +6932,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**RoutingActivityQuery**](RoutingActivityQuery.html)| query | 
+| **body** | [**RoutingActivityQuery**](RoutingActivityQuery)| query | 
 | **pageSize** | **Integer**| The desired page size | [optional] 
 | **pageNumber** | **Integer**| The desired page number | [optional] 
 {: class="table-striped"}
@@ -7151,15 +6940,13 @@ try {
 
 ### Return type
 
-[**RoutingActivityResponse**](RoutingActivityResponse.html)
+[**RoutingActivityResponse**](RoutingActivityResponse)
 
-<a name="postRoutingAssessments"></a>
 
 # **postRoutingAssessments**
 
 
-
-> [BenefitAssessment](BenefitAssessment.html) postRoutingAssessments(body)
+> [BenefitAssessment](BenefitAssessment) postRoutingAssessments(body)
 
 Create a benefit assessment.
 
@@ -7207,21 +6994,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CreateBenefitAssessmentRequest**](CreateBenefitAssessmentRequest.html)|  | [optional] 
+| **body** | [**CreateBenefitAssessmentRequest**](CreateBenefitAssessmentRequest)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**BenefitAssessment**](BenefitAssessment.html)
+[**BenefitAssessment**](BenefitAssessment)
 
-<a name="postRoutingAssessmentsJobs"></a>
 
 # **postRoutingAssessmentsJobs**
 
 
-
-> [BenefitAssessmentJob](BenefitAssessmentJob.html) postRoutingAssessmentsJobs(body)
+> [BenefitAssessmentJob](BenefitAssessmentJob) postRoutingAssessmentsJobs(body)
 
 Create a benefit assessment job.
 
@@ -7268,21 +7053,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CreateBenefitAssessmentJobRequest**](CreateBenefitAssessmentJobRequest.html)|  | [optional] 
+| **body** | [**CreateBenefitAssessmentJobRequest**](CreateBenefitAssessmentJobRequest)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**BenefitAssessmentJob**](BenefitAssessmentJob.html)
+[**BenefitAssessmentJob**](BenefitAssessmentJob)
 
-<a name="postRoutingEmailDomainRoutes"></a>
 
 # **postRoutingEmailDomainRoutes**
 
 
-
-> [InboundRoute](InboundRoute.html) postRoutingEmailDomainRoutes(domainName, body)
+> [InboundRoute](InboundRoute) postRoutingEmailDomainRoutes(domainName, body)
 
 Create a route
 
@@ -7331,21 +7114,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **domainName** | **String**| email domain | 
-| **body** | [**InboundRoute**](InboundRoute.html)| Route | 
+| **body** | [**InboundRoute**](InboundRoute)| Route | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**InboundRoute**](InboundRoute.html)
+[**InboundRoute**](InboundRoute)
 
-<a name="postRoutingEmailDomainTestconnection"></a>
 
 # **postRoutingEmailDomainTestconnection**
 
 
-
-> [TestMessage](TestMessage.html) postRoutingEmailDomainTestconnection(domainId, body)
+> [TestMessage](TestMessage) postRoutingEmailDomainTestconnection(domainId, body)
 
 Tests the custom SMTP server integration connection set on this domain
 
@@ -7396,21 +7177,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **domainId** | **String**| domain ID | 
-| **body** | [**TestMessage**](TestMessage.html)| TestMessage | [optional] 
+| **body** | [**TestMessage**](TestMessage)| TestMessage | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**TestMessage**](TestMessage.html)
+[**TestMessage**](TestMessage)
 
-<a name="postRoutingEmailDomains"></a>
 
 # **postRoutingEmailDomains**
 
 
-
-> [InboundDomain](InboundDomain.html) postRoutingEmailDomains(body)
+> [InboundDomain](InboundDomain) postRoutingEmailDomains(body)
 
 Create a domain
 
@@ -7457,21 +7236,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**InboundDomain**](InboundDomain.html)| Domain | 
+| **body** | [**InboundDomain**](InboundDomain)| Domain | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**InboundDomain**](InboundDomain.html)
+[**InboundDomain**](InboundDomain)
 
-<a name="postRoutingEmailOutboundDomains"></a>
 
 # **postRoutingEmailOutboundDomains**
 
 
-
-> [EmailOutboundDomainResult](EmailOutboundDomainResult.html) postRoutingEmailOutboundDomains(body)
+> [EmailOutboundDomainResult](EmailOutboundDomainResult) postRoutingEmailOutboundDomains(body)
 
 Create a domain
 
@@ -7518,21 +7295,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**OutboundDomain**](OutboundDomain.html)| Domain | 
+| **body** | [**OutboundDomain**](OutboundDomain)| Domain | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**EmailOutboundDomainResult**](EmailOutboundDomainResult.html)
+[**EmailOutboundDomainResult**](EmailOutboundDomainResult)
 
-<a name="postRoutingEmailOutboundDomainsSimulated"></a>
 
 # **postRoutingEmailOutboundDomainsSimulated**
 
 
-
-> [EmailOutboundDomainResult](EmailOutboundDomainResult.html) postRoutingEmailOutboundDomainsSimulated(body)
+> [EmailOutboundDomainResult](EmailOutboundDomainResult) postRoutingEmailOutboundDomainsSimulated(body)
 
 Create a simulated domain
 
@@ -7579,21 +7354,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**OutboundDomain**](OutboundDomain.html)| Domain | 
+| **body** | [**OutboundDomain**](OutboundDomain)| Domain | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**EmailOutboundDomainResult**](EmailOutboundDomainResult.html)
+[**EmailOutboundDomainResult**](EmailOutboundDomainResult)
 
-<a name="postRoutingLanguages"></a>
 
 # **postRoutingLanguages**
 
 
-
-> [Language](Language.html) postRoutingLanguages(body)
+> [Language](Language) postRoutingLanguages(body)
 
 Create Language
 
@@ -7640,21 +7413,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Language**](Language.html)| Language | 
+| **body** | [**Language**](Language)| Language | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Language**](Language.html)
+[**Language**](Language)
 
-<a name="postRoutingPredictors"></a>
 
 # **postRoutingPredictors**
 
 
-
-> [Predictor](Predictor.html) postRoutingPredictors(body)
+> [Predictor](Predictor) postRoutingPredictors(body)
 
 Create a predictor.
 
@@ -7702,18 +7473,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CreatePredictorRequest**](CreatePredictorRequest.html)|  | [optional] 
+| **body** | [**CreatePredictorRequest**](CreatePredictorRequest)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Predictor**](Predictor.html)
+[**Predictor**](Predictor)
 
-<a name="postRoutingQueueMembers"></a>
 
 # **postRoutingQueueMembers**
-
 
 
 > Void postRoutingQueueMembers(queueId, body, delete)
@@ -7766,7 +7535,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **queueId** | **String**| Queue ID | 
-| **body** | [**List&lt;WritableEntity&gt;**](WritableEntity.html)| Queue Members | 
+| **body** | [**List&lt;WritableEntity&gt;**](WritableEntity)| Queue Members | 
 | **delete** | **Boolean**| True to delete queue members | [optional] [default to false] 
 {: class="table-striped"}
 
@@ -7775,11 +7544,12 @@ try {
 
 null (empty response body)
 
-<a name="postRoutingQueueUsers"></a>
 
 # **postRoutingQueueUsers**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Void postRoutingQueueUsers(queueId, body, delete)
 
@@ -7831,7 +7601,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **queueId** | **String**| Queue ID | 
-| **body** | [**List&lt;WritableEntity&gt;**](WritableEntity.html)| Queue Members | 
+| **body** | [**List&lt;WritableEntity&gt;**](WritableEntity)| Queue Members | 
 | **delete** | **Boolean**| True to delete queue members | [optional] [default to false] 
 {: class="table-striped"}
 
@@ -7840,13 +7610,11 @@ try {
 
 null (empty response body)
 
-<a name="postRoutingQueueWrapupcodes"></a>
 
 # **postRoutingQueueWrapupcodes**
 
 
-
-> [List&lt;WrapupCode&gt;](WrapupCode.html) postRoutingQueueWrapupcodes(queueId, body)
+> [List&lt;WrapupCode&gt;](WrapupCode) postRoutingQueueWrapupcodes(queueId, body)
 
 Add up to 100 wrap-up codes to a queue
 
@@ -7895,21 +7663,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **queueId** | **String**| Queue ID | 
-| **body** | [**List&lt;WrapUpCodeReference&gt;**](WrapUpCodeReference.html)| List of wrapup codes | 
+| **body** | [**List&lt;WrapUpCodeReference&gt;**](WrapUpCodeReference)| List of wrapup codes | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**List&lt;WrapupCode&gt;**](WrapupCode.html)
+[**List&lt;WrapupCode&gt;**](WrapupCode)
 
-<a name="postRoutingQueues"></a>
 
 # **postRoutingQueues**
 
 
-
-> [Queue](Queue.html) postRoutingQueues(body)
+> [Queue](Queue) postRoutingQueues(body)
 
 Create a queue
 
@@ -7956,18 +7722,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CreateQueueRequest**](CreateQueueRequest.html)| Queue | 
+| **body** | [**CreateQueueRequest**](CreateQueueRequest)| Queue | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Queue**](Queue.html)
+[**Queue**](Queue)
 
-<a name="postRoutingSkillgroupMembersDivisions"></a>
 
 # **postRoutingSkillgroupMembersDivisions**
-
 
 
 > Void postRoutingSkillgroupMembersDivisions(skillGroupId, body)
@@ -8018,7 +7782,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **skillGroupId** | **String**| Skill Group ID | 
-| **body** | [**SkillGroupMemberDivisions**](SkillGroupMemberDivisions.html)|  | [optional] 
+| **body** | [**SkillGroupMemberDivisions**](SkillGroupMemberDivisions)|  | [optional] 
 {: class="table-striped"}
 
 
@@ -8026,13 +7790,11 @@ try {
 
 null (empty response body)
 
-<a name="postRoutingSkillgroups"></a>
 
 # **postRoutingSkillgroups**
 
 
-
-> [SkillGroupWithMemberDivisions](SkillGroupWithMemberDivisions.html) postRoutingSkillgroups(body)
+> [SkillGroupWithMemberDivisions](SkillGroupWithMemberDivisions) postRoutingSkillgroups(body)
 
 Create a skill group
 
@@ -8079,21 +7841,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**SkillGroupWithMemberDivisions**](SkillGroupWithMemberDivisions.html)| Create skill group | 
+| **body** | [**SkillGroupWithMemberDivisions**](SkillGroupWithMemberDivisions)| Create skill group | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**SkillGroupWithMemberDivisions**](SkillGroupWithMemberDivisions.html)
+[**SkillGroupWithMemberDivisions**](SkillGroupWithMemberDivisions)
 
-<a name="postRoutingSkills"></a>
 
 # **postRoutingSkills**
 
 
-
-> [RoutingSkill](RoutingSkill.html) postRoutingSkills(body)
+> [RoutingSkill](RoutingSkill) postRoutingSkills(body)
 
 Create Skill
 
@@ -8140,21 +7900,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**RoutingSkill**](RoutingSkill.html)| Skill | 
+| **body** | [**RoutingSkill**](RoutingSkill)| Skill | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**RoutingSkill**](RoutingSkill.html)
+[**RoutingSkill**](RoutingSkill)
 
-<a name="postRoutingSmsAddresses"></a>
 
 # **postRoutingSmsAddresses**
 
 
-
-> [SmsAddress](SmsAddress.html) postRoutingSmsAddresses(body)
+> [SmsAddress](SmsAddress) postRoutingSmsAddresses(body)
 
 Provision an Address for SMS
 
@@ -8201,21 +7959,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**SmsAddressProvision**](SmsAddressProvision.html)| SmsAddress | 
+| **body** | [**SmsAddressProvision**](SmsAddressProvision)| SmsAddress | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**SmsAddress**](SmsAddress.html)
+[**SmsAddress**](SmsAddress)
 
-<a name="postRoutingSmsPhonenumbers"></a>
 
 # **postRoutingSmsPhonenumbers**
 
 
-
-> [SmsPhoneNumber](SmsPhoneNumber.html) postRoutingSmsPhonenumbers(body)
+> [SmsPhoneNumber](SmsPhoneNumber) postRoutingSmsPhonenumbers(body)
 
 Provision a phone number for SMS
 
@@ -8262,21 +8018,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**SmsPhoneNumberProvision**](SmsPhoneNumberProvision.html)| SmsPhoneNumber | 
+| **body** | [**SmsPhoneNumberProvision**](SmsPhoneNumberProvision)| SmsPhoneNumber | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**SmsPhoneNumber**](SmsPhoneNumber.html)
+[**SmsPhoneNumber**](SmsPhoneNumber)
 
-<a name="postRoutingSmsPhonenumbersAlphanumeric"></a>
 
 # **postRoutingSmsPhonenumbersAlphanumeric**
 
 
-
-> [SmsPhoneNumber](SmsPhoneNumber.html) postRoutingSmsPhonenumbersAlphanumeric(body)
+> [SmsPhoneNumber](SmsPhoneNumber) postRoutingSmsPhonenumbersAlphanumeric(body)
 
 Provision an alphanumeric number for SMS
 
@@ -8325,21 +8079,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**SmsAlphanumericProvision**](SmsAlphanumericProvision.html)| SmsPhoneNumber | 
+| **body** | [**SmsAlphanumericProvision**](SmsAlphanumericProvision)| SmsPhoneNumber | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**SmsPhoneNumber**](SmsPhoneNumber.html)
+[**SmsPhoneNumber**](SmsPhoneNumber)
 
-<a name="postRoutingSmsPhonenumbersImport"></a>
 
 # **postRoutingSmsPhonenumbersImport**
 
 
-
-> [SmsPhoneNumber](SmsPhoneNumber.html) postRoutingSmsPhonenumbersImport(body)
+> [SmsPhoneNumber](SmsPhoneNumber) postRoutingSmsPhonenumbersImport(body)
 
 Imports a phone number for SMS
 
@@ -8386,21 +8138,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**SmsPhoneNumberImport**](SmsPhoneNumberImport.html)| SmsPhoneNumber | 
+| **body** | [**SmsPhoneNumberImport**](SmsPhoneNumberImport)| SmsPhoneNumber | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**SmsPhoneNumber**](SmsPhoneNumber.html)
+[**SmsPhoneNumber**](SmsPhoneNumber)
 
-<a name="postRoutingUtilizationLabels"></a>
 
 # **postRoutingUtilizationLabels**
 
 
-
-> [UtilizationLabel](UtilizationLabel.html) postRoutingUtilizationLabels(body)
+> [UtilizationLabel](UtilizationLabel) postRoutingUtilizationLabels(body)
 
 Create a utilization label
 
@@ -8447,21 +8197,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CreateUtilizationLabelRequest**](CreateUtilizationLabelRequest.html)| UtilizationLabel | 
+| **body** | [**CreateUtilizationLabelRequest**](CreateUtilizationLabelRequest)| UtilizationLabel | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UtilizationLabel**](UtilizationLabel.html)
+[**UtilizationLabel**](UtilizationLabel)
 
-<a name="postRoutingUtilizationTags"></a>
 
 # **postRoutingUtilizationTags**
 
 
-
-> [UtilizationTag](UtilizationTag.html) postRoutingUtilizationTags(body)
+> [UtilizationTag](UtilizationTag) postRoutingUtilizationTags(body)
 
 Create an utilization tag
 
@@ -8510,21 +8258,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CreateUtilizationTagRequest**](CreateUtilizationTagRequest.html)| UtilizationTag | 
+| **body** | [**CreateUtilizationTagRequest**](CreateUtilizationTagRequest)| UtilizationTag | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UtilizationTag**](UtilizationTag.html)
+[**UtilizationTag**](UtilizationTag)
 
-<a name="postRoutingWrapupcodes"></a>
 
 # **postRoutingWrapupcodes**
 
 
-
-> [WrapupCode](WrapupCode.html) postRoutingWrapupcodes(body)
+> [WrapupCode](WrapupCode) postRoutingWrapupcodes(body)
 
 Create a wrap-up code
 
@@ -8571,21 +8317,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**WrapupCodeRequest**](WrapupCodeRequest.html)| WrapupCode | 
+| **body** | [**WrapupCodeRequest**](WrapupCodeRequest)| WrapupCode | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**WrapupCode**](WrapupCode.html)
+[**WrapupCode**](WrapupCode)
 
-<a name="postUserRoutinglanguages"></a>
 
 # **postUserRoutinglanguages**
 
 
-
-> [UserRoutingLanguage](UserRoutingLanguage.html) postUserRoutinglanguages(userId, body)
+> [UserRoutingLanguage](UserRoutingLanguage) postUserRoutinglanguages(userId, body)
 
 Add routing language to user
 
@@ -8635,21 +8379,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | 
-| **body** | [**UserRoutingLanguagePost**](UserRoutingLanguagePost.html)| Language | 
+| **body** | [**UserRoutingLanguagePost**](UserRoutingLanguagePost)| Language | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UserRoutingLanguage**](UserRoutingLanguage.html)
+[**UserRoutingLanguage**](UserRoutingLanguage)
 
-<a name="postUserRoutingskills"></a>
 
 # **postUserRoutingskills**
 
 
-
-> [UserRoutingSkill](UserRoutingSkill.html) postUserRoutingskills(userId, body)
+> [UserRoutingSkill](UserRoutingSkill) postUserRoutingskills(userId, body)
 
 Add routing skill to user
 
@@ -8698,21 +8440,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | 
-| **body** | [**UserRoutingSkillPost**](UserRoutingSkillPost.html)| Skill | 
+| **body** | [**UserRoutingSkillPost**](UserRoutingSkillPost)| Skill | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UserRoutingSkill**](UserRoutingSkill.html)
+[**UserRoutingSkill**](UserRoutingSkill)
 
-<a name="putRoutingDirectroutingbackupSettingsMe"></a>
 
 # **putRoutingDirectroutingbackupSettingsMe**
 
 
-
-> [AgentDirectRoutingBackupSettings](AgentDirectRoutingBackupSettings.html) putRoutingDirectroutingbackupSettingsMe(body)
+> [AgentDirectRoutingBackupSettings](AgentDirectRoutingBackupSettings) putRoutingDirectroutingbackupSettingsMe(body)
 
 Update the user's Direct Routing Backup settings.
 
@@ -8759,21 +8499,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)| directRoutingBackup | 
+| **body** | [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings)| directRoutingBackup | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)
+[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings)
 
-<a name="putRoutingEmailDomainRoute"></a>
 
 # **putRoutingEmailDomainRoute**
 
 
-
-> [InboundRoute](InboundRoute.html) putRoutingEmailDomainRoute(domainName, routeId, body)
+> [InboundRoute](InboundRoute) putRoutingEmailDomainRoute(domainName, routeId, body)
 
 Update a route
 
@@ -8824,21 +8562,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **domainName** | **String**| email domain | 
 | **routeId** | **String**| route ID | 
-| **body** | [**InboundRoute**](InboundRoute.html)| Route | 
+| **body** | [**InboundRoute**](InboundRoute)| Route | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**InboundRoute**](InboundRoute.html)
+[**InboundRoute**](InboundRoute)
 
-<a name="putRoutingEmailOutboundDomainActivation"></a>
 
 # **putRoutingEmailOutboundDomainActivation**
 
 
-
-> [EmailOutboundDomainResult](EmailOutboundDomainResult.html) putRoutingEmailOutboundDomainActivation(domainId)
+> [EmailOutboundDomainResult](EmailOutboundDomainResult) putRoutingEmailOutboundDomainActivation(domainId)
 
 Request an activation status (cname + dkim) update of an outbound domain
 
@@ -8891,15 +8627,13 @@ try {
 
 ### Return type
 
-[**EmailOutboundDomainResult**](EmailOutboundDomainResult.html)
+[**EmailOutboundDomainResult**](EmailOutboundDomainResult)
 
-<a name="putRoutingMessageRecipient"></a>
 
 # **putRoutingMessageRecipient**
 
 
-
-> [Recipient](Recipient.html) putRoutingMessageRecipient(recipientId, body)
+> [Recipient](Recipient) putRoutingMessageRecipient(recipientId, body)
 
 Update a recipient
 
@@ -8948,21 +8682,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **recipientId** | **String**| Recipient ID | 
-| **body** | [**RecipientRequest**](RecipientRequest.html)| Recipient | 
+| **body** | [**RecipientRequest**](RecipientRequest)| Recipient | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Recipient**](Recipient.html)
+[**Recipient**](Recipient)
 
-<a name="putRoutingQueue"></a>
 
 # **putRoutingQueue**
 
 
-
-> [Queue](Queue.html) putRoutingQueue(queueId, body)
+> [Queue](Queue) putRoutingQueue(queueId, body)
 
 Update a queue
 
@@ -9011,21 +8743,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **queueId** | **String**| Queue ID | 
-| **body** | [**QueueRequest**](QueueRequest.html)| Queue | 
+| **body** | [**QueueRequest**](QueueRequest)| Queue | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Queue**](Queue.html)
+[**Queue**](Queue)
 
-<a name="putRoutingSettings"></a>
 
 # **putRoutingSettings**
 
 
-
-> [RoutingSettings](RoutingSettings.html) putRoutingSettings(body)
+> [RoutingSettings](RoutingSettings) putRoutingSettings(body)
 
 Update an organization's routing settings
 
@@ -9072,21 +8802,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**RoutingSettings**](RoutingSettings.html)| Organization Settings | 
+| **body** | [**RoutingSettings**](RoutingSettings)| Organization Settings | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**RoutingSettings**](RoutingSettings.html)
+[**RoutingSettings**](RoutingSettings)
 
-<a name="putRoutingSettingsTranscription"></a>
 
 # **putRoutingSettingsTranscription**
 
 
-
-> [TranscriptionSettings](TranscriptionSettings.html) putRoutingSettingsTranscription(body)
+> [TranscriptionSettings](TranscriptionSettings) putRoutingSettingsTranscription(body)
 
 Update Transcription Settings
 
@@ -9133,21 +8861,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**TranscriptionSettings**](TranscriptionSettings.html)| Organization Settings | 
+| **body** | [**TranscriptionSettings**](TranscriptionSettings)| Organization Settings | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**TranscriptionSettings**](TranscriptionSettings.html)
+[**TranscriptionSettings**](TranscriptionSettings)
 
-<a name="putRoutingSmsPhonenumber"></a>
 
 # **putRoutingSmsPhonenumber**
 
 
-
-> [SmsPhoneNumber](SmsPhoneNumber.html) putRoutingSmsPhonenumber(addressId, body)
+> [SmsPhoneNumber](SmsPhoneNumber) putRoutingSmsPhonenumber(addressId, body)
 
 Update a phone number provisioned for SMS.
 
@@ -9196,21 +8922,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **addressId** | **String**| Address ID | 
-| **body** | [**SmsPhoneNumber**](SmsPhoneNumber.html)| SmsPhoneNumber | 
+| **body** | [**SmsPhoneNumber**](SmsPhoneNumber)| SmsPhoneNumber | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**SmsPhoneNumber**](SmsPhoneNumber.html)
+[**SmsPhoneNumber**](SmsPhoneNumber)
 
-<a name="putRoutingUserDirectroutingbackupSettings"></a>
 
 # **putRoutingUserDirectroutingbackupSettings**
 
 
-
-> [AgentDirectRoutingBackupSettings](AgentDirectRoutingBackupSettings.html) putRoutingUserDirectroutingbackupSettings(userId, body)
+> [AgentDirectRoutingBackupSettings](AgentDirectRoutingBackupSettings) putRoutingUserDirectroutingbackupSettings(userId, body)
 
 Update the user's Direct Routing Backup settings.
 
@@ -9259,21 +8983,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | 
-| **body** | [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)| directRoutingBackup | 
+| **body** | [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings)| directRoutingBackup | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)
+[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings)
 
-<a name="putRoutingUserUtilization"></a>
 
 # **putRoutingUserUtilization**
 
 
-
-> [AgentMaxUtilizationResponse](AgentMaxUtilizationResponse.html) putRoutingUserUtilization(userId, body)
+> [AgentMaxUtilizationResponse](AgentMaxUtilizationResponse) putRoutingUserUtilization(userId, body)
 
 Update the user's max utilization settings.  Include only those media types requiring custom configuration.
 
@@ -9322,21 +9044,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | 
-| **body** | [**UtilizationRequest**](UtilizationRequest.html)| utilization | 
+| **body** | [**UtilizationRequest**](UtilizationRequest)| utilization | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse.html)
+[**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse)
 
-<a name="putRoutingUtilization"></a>
 
 # **putRoutingUtilization**
 
 
-
-> [UtilizationResponse](UtilizationResponse.html) putRoutingUtilization(body)
+> [UtilizationResponse](UtilizationResponse) putRoutingUtilization(body)
 
 Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
 
@@ -9383,21 +9103,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**UtilizationRequest**](UtilizationRequest.html)| utilization | 
+| **body** | [**UtilizationRequest**](UtilizationRequest)| utilization | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UtilizationResponse**](UtilizationResponse.html)
+[**UtilizationResponse**](UtilizationResponse)
 
-<a name="putRoutingUtilizationLabel"></a>
 
 # **putRoutingUtilizationLabel**
 
 
-
-> [UtilizationLabel](UtilizationLabel.html) putRoutingUtilizationLabel(labelId, body)
+> [UtilizationLabel](UtilizationLabel) putRoutingUtilizationLabel(labelId, body)
 
 Update a utilization label
 
@@ -9446,21 +9164,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **labelId** | **String**| Utilization Label ID | 
-| **body** | [**UpdateUtilizationLabelRequest**](UpdateUtilizationLabelRequest.html)| UtilizationLabel | 
+| **body** | [**UpdateUtilizationLabelRequest**](UpdateUtilizationLabelRequest)| UtilizationLabel | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UtilizationLabel**](UtilizationLabel.html)
+[**UtilizationLabel**](UtilizationLabel)
 
-<a name="putRoutingWrapupcode"></a>
 
 # **putRoutingWrapupcode**
 
 
-
-> [WrapupCode](WrapupCode.html) putRoutingWrapupcode(codeId, body)
+> [WrapupCode](WrapupCode) putRoutingWrapupcode(codeId, body)
 
 Update wrap-up code
 
@@ -9509,21 +9225,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **codeId** | **String**| Wrapup Code ID | 
-| **body** | [**WrapupCodeRequest**](WrapupCodeRequest.html)| WrapupCode | 
+| **body** | [**WrapupCodeRequest**](WrapupCodeRequest)| WrapupCode | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**WrapupCode**](WrapupCode.html)
+[**WrapupCode**](WrapupCode)
 
-<a name="putUserRoutingskill"></a>
 
 # **putUserRoutingskill**
 
 
-
-> [UserRoutingSkill](UserRoutingSkill.html) putUserRoutingskill(userId, skillId, body)
+> [UserRoutingSkill](UserRoutingSkill) putUserRoutingskill(userId, skillId, body)
 
 Update routing skill proficiency or state.
 
@@ -9574,21 +9288,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | 
 | **skillId** | **String**| skillId | 
-| **body** | [**UserRoutingSkill**](UserRoutingSkill.html)| Skill | 
+| **body** | [**UserRoutingSkill**](UserRoutingSkill)| Skill | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UserRoutingSkill**](UserRoutingSkill.html)
+[**UserRoutingSkill**](UserRoutingSkill)
 
-<a name="putUserRoutingskillsBulk"></a>
 
 # **putUserRoutingskillsBulk**
 
 
-
-> [UserSkillEntityListing](UserSkillEntityListing.html) putUserRoutingskillsBulk(userId, body)
+> [UserSkillEntityListing](UserSkillEntityListing) putUserRoutingskillsBulk(userId, body)
 
 Replace all routing skills assigned to a user
 
@@ -9637,11 +9349,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | 
-| **body** | [**List&lt;UserRoutingSkillPost&gt;**](UserRoutingSkillPost.html)| Skill | 
+| **body** | [**List&lt;UserRoutingSkillPost&gt;**](UserRoutingSkillPost)| Skill | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UserSkillEntityListing**](UserSkillEntityListing.html)
+[**UserSkillEntityListing**](UserSkillEntityListing)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

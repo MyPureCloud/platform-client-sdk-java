@@ -1,20 +1,14 @@
----
-title: UsageItem
----
-## UsageItem
+# UsageItem
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-| **totalDocumentByteCount** | <!----><!---->**Long**<!----> |  |  [optional] |
-| **totalDocumentCount** | <!----><!---->**Long**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
+| **totalDocumentByteCount** | **Long** |  |  [optional] |
+| **totalDocumentCount** | **Long** |  |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -25,7 +19,8 @@ title: UsageItem
 | FAX | &quot;FAX&quot; | 
 | DOCUMENT | &quot;DOCUMENT&quot; | 
 | ALL | &quot;ALL&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

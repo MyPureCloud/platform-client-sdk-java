@@ -1,21 +1,15 @@
----
-title: PermissionDetails
----
-## PermissionDetails
+# PermissionDetails
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of permission requirement |  [optional] |
-| **permissions** | <!----><!---->**List&lt;String&gt;**<!----> | List of required permissions |  [optional] |
-| **allowsCurrentUser** | <!----><!---->**Boolean**<!----> | Whether the current user can subscribe, when division permissions are otherwise required |  [optional] |
-| **enforced** | <!----><!---->**Boolean**<!----> | Whether or not this permission requirement is enforced |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of permission requirement |  [optional] |
+| **permissions** | **List&lt;String&gt;** | List of required permissions |  [optional] |
+| **allowsCurrentUser** | **Boolean** | Whether the current user can subscribe, when division permissions are otherwise required |  [optional] |
+| **enforced** | **Boolean** | Whether or not this permission requirement is enforced |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -27,7 +21,8 @@ title: PermissionDetails
 | REQUIRESDIVISIONPERMISSIONS | &quot;requiresDivisionPermissions&quot; | 
 | REQUIRESANYDIVISIONPERMISSIONS | &quot;requiresAnyDivisionPermissions&quot; | 
 | REQUIRESUSERBECONVERSATIONPARTICIPANT | &quot;requiresUserBeConversationParticipant&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

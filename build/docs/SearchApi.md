@@ -1,46 +1,41 @@
----
-title: SearchApi
----
-## SearchApi
+# SearchApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**getDocumentationGknSearch**](SearchApi.html#getDocumentationGknSearch) | Search gkn documentation using the q64 value returned from a previous search |
-| [**getDocumentationSearch**](SearchApi.html#getDocumentationSearch) | Search documentation using the q64 value returned from a previous search |
-| [**getGroupsSearch**](SearchApi.html#getGroupsSearch) | Search groups using the q64 value returned from a previous search |
-| [**getLocationsSearch**](SearchApi.html#getLocationsSearch) | Search locations using the q64 value returned from a previous search |
-| [**getSearch**](SearchApi.html#getSearch) | Search using the q64 value returned from a previous search. |
-| [**getSearchSuggest**](SearchApi.html#getSearchSuggest) | Suggest resources using the q64 value returned from a previous suggest query. |
-| [**getUsersSearch**](SearchApi.html#getUsersSearch) | Search users using the q64 value returned from a previous search |
-| [**getVoicemailSearch**](SearchApi.html#getVoicemailSearch) | Search voicemails using the q64 value returned from a previous search |
-| [**postAnalyticsConversationsTranscriptsQuery**](SearchApi.html#postAnalyticsConversationsTranscriptsQuery) | Search resources. |
-| [**postConversationsParticipantsAttributesSearch**](SearchApi.html#postConversationsParticipantsAttributesSearch) | Search conversations |
-| [**postDocumentationAllSearch**](SearchApi.html#postDocumentationAllSearch) | Search all documents |
-| [**postDocumentationGknSearch**](SearchApi.html#postDocumentationGknSearch) | Search gkn documentation |
-| [**postDocumentationSearch**](SearchApi.html#postDocumentationSearch) | Search documentation |
-| [**postGroupsSearch**](SearchApi.html#postGroupsSearch) | Search groups |
-| [**postKnowledgeKnowledgebaseSearch**](SearchApi.html#postKnowledgeKnowledgebaseSearch) | Search Documents |
-| [**postLocationsSearch**](SearchApi.html#postLocationsSearch) | Search locations |
-| [**postSearch**](SearchApi.html#postSearch) | Search resources. |
-| [**postSearchSuggest**](SearchApi.html#postSearchSuggest) | Suggest resources. |
-| [**postSpeechandtextanalyticsTranscriptsSearch**](SearchApi.html#postSpeechandtextanalyticsTranscriptsSearch) | Search resources. |
-| [**postTeamsSearch**](SearchApi.html#postTeamsSearch) | Search resources. |
-| [**postUsersSearch**](SearchApi.html#postUsersSearch) | Search users |
-| [**postUsersSearchConversationTarget**](SearchApi.html#postUsersSearchConversationTarget) | Search users as conversation targets |
-| [**postUsersSearchQueuemembersManage**](SearchApi.html#postUsersSearchQueuemembersManage) | Search manage queue member |
-| [**postUsersSearchTeamsAssign**](SearchApi.html#postUsersSearchTeamsAssign) | Search users assigned to teams |
-| [**postVoicemailSearch**](SearchApi.html#postVoicemailSearch) | Search voicemails |
+| [**getDocumentationGknSearch**](SearchApi#getDocumentationGknSearch) | Search gkn documentation using the q64 value returned from a previous search |
+| [**getDocumentationSearch**](SearchApi#getDocumentationSearch) | Search documentation using the q64 value returned from a previous search |
+| [**getGroupsSearch**](SearchApi#getGroupsSearch) | Search groups using the q64 value returned from a previous search |
+| [**getLocationsSearch**](SearchApi#getLocationsSearch) | Search locations using the q64 value returned from a previous search |
+| [**getSearch**](SearchApi#getSearch) | Search using the q64 value returned from a previous search. |
+| [**getSearchSuggest**](SearchApi#getSearchSuggest) | Suggest resources using the q64 value returned from a previous suggest query. |
+| [**getUsersSearch**](SearchApi#getUsersSearch) | Search users using the q64 value returned from a previous search |
+| [**getVoicemailSearch**](SearchApi#getVoicemailSearch) | Search voicemails using the q64 value returned from a previous search |
+| [**postAnalyticsConversationsTranscriptsQuery**](SearchApi#postAnalyticsConversationsTranscriptsQuery) | Search resources. |
+| [**postConversationsParticipantsAttributesSearch**](SearchApi#postConversationsParticipantsAttributesSearch) | Search conversations |
+| [**postDocumentationAllSearch**](SearchApi#postDocumentationAllSearch) | Search all documents |
+| [**postDocumentationGknSearch**](SearchApi#postDocumentationGknSearch) | Search gkn documentation |
+| [**postDocumentationSearch**](SearchApi#postDocumentationSearch) | Search documentation |
+| [**postGroupsSearch**](SearchApi#postGroupsSearch) | Search groups |
+| [**postKnowledgeKnowledgebaseSearch**](SearchApi#postKnowledgeKnowledgebaseSearch) | Search Documents |
+| [**postLocationsSearch**](SearchApi#postLocationsSearch) | Search locations |
+| [**postSearch**](SearchApi#postSearch) | Search resources. |
+| [**postSearchSuggest**](SearchApi#postSearchSuggest) | Suggest resources. |
+| [**postSpeechandtextanalyticsTranscriptsSearch**](SearchApi#postSpeechandtextanalyticsTranscriptsSearch) | Search resources. |
+| [**postTeamsSearch**](SearchApi#postTeamsSearch) | Search resources. |
+| [**postUsersSearch**](SearchApi#postUsersSearch) | Search users |
+| [**postUsersSearchConversationTarget**](SearchApi#postUsersSearchConversationTarget) | Search users as conversation targets |
+| [**postUsersSearchQueuemembersManage**](SearchApi#postUsersSearchQueuemembersManage) | Search manage queue member |
+| [**postUsersSearchTeamsAssign**](SearchApi#postUsersSearchTeamsAssign) | Search users assigned to teams |
+| [**postVoicemailSearch**](SearchApi#postVoicemailSearch) | Search voicemails |
 {: class="table-striped"}
 
-<a name="getDocumentationGknSearch"></a>
 
 # **getDocumentationGknSearch**
 
 
-
-> [GKNDocumentationSearchResponse](GKNDocumentationSearchResponse.html) getDocumentationGknSearch(q64)
+> [GKNDocumentationSearchResponse](GKNDocumentationSearchResponse) getDocumentationGknSearch(q64)
 
 Search gkn documentation using the q64 value returned from a previous search
 
@@ -79,15 +74,13 @@ try {
 
 ### Return type
 
-[**GKNDocumentationSearchResponse**](GKNDocumentationSearchResponse.html)
+[**GKNDocumentationSearchResponse**](GKNDocumentationSearchResponse)
 
-<a name="getDocumentationSearch"></a>
 
 # **getDocumentationSearch**
 
 
-
-> [DocumentationSearchResponse](DocumentationSearchResponse.html) getDocumentationSearch(q64)
+> [DocumentationSearchResponse](DocumentationSearchResponse) getDocumentationSearch(q64)
 
 Search documentation using the q64 value returned from a previous search
 
@@ -126,15 +119,13 @@ try {
 
 ### Return type
 
-[**DocumentationSearchResponse**](DocumentationSearchResponse.html)
+[**DocumentationSearchResponse**](DocumentationSearchResponse)
 
-<a name="getGroupsSearch"></a>
 
 # **getGroupsSearch**
 
 
-
-> [GroupsSearchResponse](GroupsSearchResponse.html) getGroupsSearch(q64, expand)
+> [GroupsSearchResponse](GroupsSearchResponse) getGroupsSearch(q64, expand)
 
 Search groups using the q64 value returned from a previous search
 
@@ -182,21 +173,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **q64** | **String**| q64 | 
-| **expand** | [**List&lt;String&gt;**](String.html)| expand | [optional] 
+| **expand** | [**List&lt;String&gt;**](String)| expand | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**GroupsSearchResponse**](GroupsSearchResponse.html)
+[**GroupsSearchResponse**](GroupsSearchResponse)
 
-<a name="getLocationsSearch"></a>
 
 # **getLocationsSearch**
 
 
-
-> [LocationsSearchResponse](LocationsSearchResponse.html) getLocationsSearch(q64, expand)
+> [LocationsSearchResponse](LocationsSearchResponse) getLocationsSearch(q64, expand)
 
 Search locations using the q64 value returned from a previous search
 
@@ -244,21 +233,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **q64** | **String**| q64 | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Provides more details about a specified resource | [optional]<br />**Values**: images, addressVerificationDetails 
+| **expand** | [**List&lt;String&gt;**](String)| Provides more details about a specified resource | [optional]<br />**Values**: images, addressVerificationDetails 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LocationsSearchResponse**](LocationsSearchResponse.html)
+[**LocationsSearchResponse**](LocationsSearchResponse)
 
-<a name="getSearch"></a>
 
 # **getSearch**
 
 
-
-> [JsonNodeSearchResponse](JsonNodeSearchResponse.html) getSearch(q64, expand, profile)
+> [JsonNodeSearchResponse](JsonNodeSearchResponse) getSearch(q64, expand, profile)
 
 Search using the q64 value returned from a previous search.
 
@@ -308,22 +295,20 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **q64** | **String**| q64 | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription, images, addressVerificationDetails 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription, images, addressVerificationDetails 
 | **profile** | **Boolean**| profile | [optional] [default to true] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)
+[**JsonNodeSearchResponse**](JsonNodeSearchResponse)
 
-<a name="getSearchSuggest"></a>
 
 # **getSearchSuggest**
 
 
-
-> [JsonNodeSearchResponse](JsonNodeSearchResponse.html) getSearchSuggest(q64, expand, profile)
+> [JsonNodeSearchResponse](JsonNodeSearchResponse) getSearchSuggest(q64, expand, profile)
 
 Suggest resources using the q64 value returned from a previous suggest query.
 
@@ -373,22 +358,20 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **q64** | **String**| q64 | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription, images, addressVerificationDetails 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription, images, addressVerificationDetails 
 | **profile** | **Boolean**| profile | [optional] [default to true] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)
+[**JsonNodeSearchResponse**](JsonNodeSearchResponse)
 
-<a name="getUsersSearch"></a>
 
 # **getUsersSearch**
 
 
-
-> [UsersSearchResponse](UsersSearchResponse.html) getUsersSearch(q64, expand, integrationPresenceSource)
+> [UsersSearchResponse](UsersSearchResponse) getUsersSearch(q64, expand, integrationPresenceSource)
 
 Search users using the q64 value returned from a previous search
 
@@ -438,22 +421,20 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **q64** | **String**| q64 | 
-| **expand** | [**List&lt;String&gt;**](String.html)| expand | [optional] 
+| **expand** | [**List&lt;String&gt;**](String)| expand | [optional] 
 | **integrationPresenceSource** | **String**| integrationPresenceSource | [optional]<br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UsersSearchResponse**](UsersSearchResponse.html)
+[**UsersSearchResponse**](UsersSearchResponse)
 
-<a name="getVoicemailSearch"></a>
 
 # **getVoicemailSearch**
 
 
-
-> [VoicemailsSearchResponse](VoicemailsSearchResponse.html) getVoicemailSearch(q64, expand)
+> [VoicemailsSearchResponse](VoicemailsSearchResponse) getVoicemailSearch(q64, expand)
 
 Search voicemails using the q64 value returned from a previous search
 
@@ -501,21 +482,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **q64** | **String**| q64 | 
-| **expand** | [**List&lt;String&gt;**](String.html)| expand | [optional] 
+| **expand** | [**List&lt;String&gt;**](String)| expand | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**VoicemailsSearchResponse**](VoicemailsSearchResponse.html)
+[**VoicemailsSearchResponse**](VoicemailsSearchResponse)
 
-<a name="postAnalyticsConversationsTranscriptsQuery"></a>
 
 # **postAnalyticsConversationsTranscriptsQuery**
 
 
-
-> [AnalyticsConversationWithoutAttributesMultiGetResponse](AnalyticsConversationWithoutAttributesMultiGetResponse.html) postAnalyticsConversationsTranscriptsQuery(body)
+> [AnalyticsConversationWithoutAttributesMultiGetResponse](AnalyticsConversationWithoutAttributesMultiGetResponse) postAnalyticsConversationsTranscriptsQuery(body)
 
 Search resources.
 
@@ -562,21 +541,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**TranscriptConversationDetailSearchRequest**](TranscriptConversationDetailSearchRequest.html)| Search request options | 
+| **body** | [**TranscriptConversationDetailSearchRequest**](TranscriptConversationDetailSearchRequest)| Search request options | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse.html)
+[**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse)
 
-<a name="postConversationsParticipantsAttributesSearch"></a>
 
 # **postConversationsParticipantsAttributesSearch**
 
 
-
-> [JsonCursorSearchResponse](JsonCursorSearchResponse.html) postConversationsParticipantsAttributesSearch(body)
+> [JsonCursorSearchResponse](JsonCursorSearchResponse) postConversationsParticipantsAttributesSearch(body)
 
 Search conversations
 
@@ -623,21 +600,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ConversationParticipantSearchRequest**](ConversationParticipantSearchRequest.html)| Search request options | 
+| **body** | [**ConversationParticipantSearchRequest**](ConversationParticipantSearchRequest)| Search request options | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**JsonCursorSearchResponse**](JsonCursorSearchResponse.html)
+[**JsonCursorSearchResponse**](JsonCursorSearchResponse)
 
-<a name="postDocumentationAllSearch"></a>
 
 # **postDocumentationAllSearch**
 
 
-
-> [JsonNodeSearchResponse](JsonNodeSearchResponse.html) postDocumentationAllSearch(body)
+> [JsonNodeSearchResponse](JsonNodeSearchResponse) postDocumentationAllSearch(body)
 
 Search all documents
 
@@ -672,21 +647,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**DocumentationV2SearchRequest**](DocumentationV2SearchRequest.html)| Search request options | 
+| **body** | [**DocumentationV2SearchRequest**](DocumentationV2SearchRequest)| Search request options | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)
+[**JsonNodeSearchResponse**](JsonNodeSearchResponse)
 
-<a name="postDocumentationGknSearch"></a>
 
 # **postDocumentationGknSearch**
 
 
-
-> [GKNDocumentationSearchResponse](GKNDocumentationSearchResponse.html) postDocumentationGknSearch(body)
+> [GKNDocumentationSearchResponse](GKNDocumentationSearchResponse) postDocumentationGknSearch(body)
 
 Search gkn documentation
 
@@ -719,21 +692,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**GKNDocumentationSearchRequest**](GKNDocumentationSearchRequest.html)| Search request options | 
+| **body** | [**GKNDocumentationSearchRequest**](GKNDocumentationSearchRequest)| Search request options | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**GKNDocumentationSearchResponse**](GKNDocumentationSearchResponse.html)
+[**GKNDocumentationSearchResponse**](GKNDocumentationSearchResponse)
 
-<a name="postDocumentationSearch"></a>
 
 # **postDocumentationSearch**
 
 
-
-> [DocumentationSearchResponse](DocumentationSearchResponse.html) postDocumentationSearch(body)
+> [DocumentationSearchResponse](DocumentationSearchResponse) postDocumentationSearch(body)
 
 Search documentation
 
@@ -766,21 +737,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**DocumentationSearchRequest**](DocumentationSearchRequest.html)| Search request options | 
+| **body** | [**DocumentationSearchRequest**](DocumentationSearchRequest)| Search request options | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DocumentationSearchResponse**](DocumentationSearchResponse.html)
+[**DocumentationSearchResponse**](DocumentationSearchResponse)
 
-<a name="postGroupsSearch"></a>
 
 # **postGroupsSearch**
 
 
-
-> [GroupsSearchResponse](GroupsSearchResponse.html) postGroupsSearch(body)
+> [GroupsSearchResponse](GroupsSearchResponse) postGroupsSearch(body)
 
 Search groups
 
@@ -826,21 +795,22 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**GroupSearchRequest**](GroupSearchRequest.html)| Search request options | 
+| **body** | [**GroupSearchRequest**](GroupSearchRequest)| Search request options | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**GroupsSearchResponse**](GroupsSearchResponse.html)
+[**GroupsSearchResponse**](GroupsSearchResponse)
 
-<a name="postKnowledgeKnowledgebaseSearch"></a>
 
 # **postKnowledgeKnowledgebaseSearch**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [KnowledgeSearchResponse](KnowledgeSearchResponse.html) postKnowledgeKnowledgebaseSearch(knowledgeBaseId, body)
+> [KnowledgeSearchResponse](KnowledgeSearchResponse) postKnowledgeKnowledgebaseSearch(knowledgeBaseId, body)
 
 Search Documents
 
@@ -889,21 +859,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **body** | [**KnowledgeSearchRequest**](KnowledgeSearchRequest.html)|  | [optional] 
+| **body** | [**KnowledgeSearchRequest**](KnowledgeSearchRequest)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeSearchResponse**](KnowledgeSearchResponse.html)
+[**KnowledgeSearchResponse**](KnowledgeSearchResponse)
 
-<a name="postLocationsSearch"></a>
 
 # **postLocationsSearch**
 
 
-
-> [LocationsSearchResponse](LocationsSearchResponse.html) postLocationsSearch(body)
+> [LocationsSearchResponse](LocationsSearchResponse) postLocationsSearch(body)
 
 Search locations
 
@@ -949,21 +917,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**LocationSearchRequest**](LocationSearchRequest.html)| Search request options | 
+| **body** | [**LocationSearchRequest**](LocationSearchRequest)| Search request options | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LocationsSearchResponse**](LocationsSearchResponse.html)
+[**LocationsSearchResponse**](LocationsSearchResponse)
 
-<a name="postSearch"></a>
 
 # **postSearch**
 
 
-
-> [JsonNodeSearchResponse](JsonNodeSearchResponse.html) postSearch(body, profile)
+> [JsonNodeSearchResponse](JsonNodeSearchResponse) postSearch(body, profile)
 
 Search resources.
 
@@ -1011,22 +977,20 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**SearchRequest**](SearchRequest.html)| Search request options | 
+| **body** | [**SearchRequest**](SearchRequest)| Search request options | 
 | **profile** | **Boolean**| profile | [optional] [default to true] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)
+[**JsonNodeSearchResponse**](JsonNodeSearchResponse)
 
-<a name="postSearchSuggest"></a>
 
 # **postSearchSuggest**
 
 
-
-> [JsonNodeSearchResponse](JsonNodeSearchResponse.html) postSearchSuggest(body, profile)
+> [JsonNodeSearchResponse](JsonNodeSearchResponse) postSearchSuggest(body, profile)
 
 Suggest resources.
 
@@ -1074,22 +1038,20 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**SuggestSearchRequest**](SuggestSearchRequest.html)| Search request options | 
+| **body** | [**SuggestSearchRequest**](SuggestSearchRequest)| Search request options | 
 | **profile** | **Boolean**| profile | [optional] [default to true] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)
+[**JsonNodeSearchResponse**](JsonNodeSearchResponse)
 
-<a name="postSpeechandtextanalyticsTranscriptsSearch"></a>
 
 # **postSpeechandtextanalyticsTranscriptsSearch**
 
 
-
-> [JsonSearchResponse](JsonSearchResponse.html) postSpeechandtextanalyticsTranscriptsSearch(body)
+> [JsonSearchResponse](JsonSearchResponse) postSpeechandtextanalyticsTranscriptsSearch(body)
 
 Search resources.
 
@@ -1137,21 +1099,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**TranscriptSearchRequest**](TranscriptSearchRequest.html)| Search request options | 
+| **body** | [**TranscriptSearchRequest**](TranscriptSearchRequest)| Search request options | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**JsonSearchResponse**](JsonSearchResponse.html)
+[**JsonSearchResponse**](JsonSearchResponse)
 
-<a name="postTeamsSearch"></a>
 
 # **postTeamsSearch**
 
 
-
-> [TeamsSearchResponse](TeamsSearchResponse.html) postTeamsSearch(body)
+> [TeamsSearchResponse](TeamsSearchResponse) postTeamsSearch(body)
 
 Search resources.
 
@@ -1198,21 +1158,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**TeamSearchRequest**](TeamSearchRequest.html)| Search request options | 
+| **body** | [**TeamSearchRequest**](TeamSearchRequest)| Search request options | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**TeamsSearchResponse**](TeamsSearchResponse.html)
+[**TeamsSearchResponse**](TeamsSearchResponse)
 
-<a name="postUsersSearch"></a>
 
 # **postUsersSearch**
 
 
-
-> [UsersSearchResponse](UsersSearchResponse.html) postUsersSearch(body)
+> [UsersSearchResponse](UsersSearchResponse) postUsersSearch(body)
 
 Search users
 
@@ -1259,21 +1217,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options | 
+| **body** | [**UserSearchRequest**](UserSearchRequest)| Search request options | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UsersSearchResponse**](UsersSearchResponse.html)
+[**UsersSearchResponse**](UsersSearchResponse)
 
-<a name="postUsersSearchConversationTarget"></a>
 
 # **postUsersSearchConversationTarget**
 
 
-
-> [UsersSearchResponse](UsersSearchResponse.html) postUsersSearchConversationTarget(body)
+> [UsersSearchResponse](UsersSearchResponse) postUsersSearchConversationTarget(body)
 
 Search users as conversation targets
 
@@ -1322,21 +1278,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options | 
+| **body** | [**UserSearchRequest**](UserSearchRequest)| Search request options | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UsersSearchResponse**](UsersSearchResponse.html)
+[**UsersSearchResponse**](UsersSearchResponse)
 
-<a name="postUsersSearchQueuemembersManage"></a>
 
 # **postUsersSearchQueuemembersManage**
 
 
-
-> [UsersSearchResponse](UsersSearchResponse.html) postUsersSearchQueuemembersManage(body)
+> [UsersSearchResponse](UsersSearchResponse) postUsersSearchQueuemembersManage(body)
 
 Search manage queue member
 
@@ -1386,21 +1340,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options | 
+| **body** | [**UserSearchRequest**](UserSearchRequest)| Search request options | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UsersSearchResponse**](UsersSearchResponse.html)
+[**UsersSearchResponse**](UsersSearchResponse)
 
-<a name="postUsersSearchTeamsAssign"></a>
 
 # **postUsersSearchTeamsAssign**
 
 
-
-> [UsersSearchResponse](UsersSearchResponse.html) postUsersSearchTeamsAssign(body)
+> [UsersSearchResponse](UsersSearchResponse) postUsersSearchTeamsAssign(body)
 
 Search users assigned to teams
 
@@ -1447,21 +1399,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options | 
+| **body** | [**UserSearchRequest**](UserSearchRequest)| Search request options | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UsersSearchResponse**](UsersSearchResponse.html)
+[**UsersSearchResponse**](UsersSearchResponse)
 
-<a name="postVoicemailSearch"></a>
 
 # **postVoicemailSearch**
 
 
-
-> [VoicemailsSearchResponse](VoicemailsSearchResponse.html) postVoicemailSearch(body)
+> [VoicemailsSearchResponse](VoicemailsSearchResponse) postVoicemailSearch(body)
 
 Search voicemails
 
@@ -1507,11 +1457,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**VoicemailSearchRequest**](VoicemailSearchRequest.html)| Search request options | 
+| **body** | [**VoicemailSearchRequest**](VoicemailSearchRequest)| Search request options | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**VoicemailsSearchResponse**](VoicemailsSearchResponse.html)
+[**VoicemailsSearchResponse**](VoicemailsSearchResponse)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

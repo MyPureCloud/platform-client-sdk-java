@@ -1,19 +1,17 @@
----
-title: TagValue
----
-## TagValue
+# TagValue
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> | The workspace tag name. |  |
-| **inUse** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **acl** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** | The workspace tag name. |  |
+| **inUse** | **Boolean** |  |  [optional] |
+| **acl** | **List&lt;String&gt;** |  |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,19 +1,13 @@
----
-title: AssociatedValueField
----
-## AssociatedValueField
+# AssociatedValueField
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **dataType** | [**DataTypeEnum**](#DataTypeEnum)<!----> | The data type of the value field. |  |
-| **name** | <!----><!---->**String**<!----> | The field name for extracting value from event. |  |
-{: class="table table-striped"}
+| **dataType** | [**DataTypeEnum**](#Enum--DataTypeEnum) | The data type of the value field. |  |
+| **name** | **String** | The field name for extracting value from event. |  |
 
-
-<a name="DataTypeEnum"></a>
 
 ## Enum: DataTypeEnum
 
@@ -22,7 +16,8 @@ title: AssociatedValueField
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | NUMBER | &quot;Number&quot; | 
 | INTEGER | &quot;Integer&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

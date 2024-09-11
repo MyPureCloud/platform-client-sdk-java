@@ -1,33 +1,27 @@
----
-title: TrustGroup
----
-## TrustGroup
+# TrustGroup
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> | The group name. |  |
-| **description** | <!----><!---->**String**<!----> |  |  [optional] |
-| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | Last modified date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **memberCount** | <!----><!---->**Long**<!----> | Number of members. |  [optional] |
-| **state** | [**StateEnum**](#StateEnum)<!----> | Active, inactive, or deleted state. |  [optional] |
-| **version** | <!----><!---->**Integer**<!----> | Current version for this resource. |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Type of group. |  |
-| **images** | <!----><!---->[**List&lt;UserImage&gt;**](UserImage.html)<!----> |  |  [optional] |
-| **addresses** | <!----><!---->[**List&lt;GroupContact&gt;**](GroupContact.html)<!----> |  |  [optional] |
-| **rulesVisible** | <!----><!---->**Boolean**<!----> | Are membership rules visible to the person requesting to view the group |  |
-| **visibility** | [**VisibilityEnum**](#VisibilityEnum)<!----> | Who can view this group |  |
-| **rolesEnabled** | <!----><!---->**Boolean**<!----> | Allow roles to be assigned to this group |  [optional] |
-| **owners** | <!----><!---->[**List&lt;User&gt;**](User.html)<!----> | Owners of the group |  [optional] |
-| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | The date on which the trusted group was added. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **createdBy** | <!----><!---->[**OrgUser**](OrgUser.html)<!----> | The user that added trusted group. |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** | The group name. |  |
+| **description** | **String** |  |  [optional] |
+| **dateModified** | [**Date**](Date) | Last modified date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **memberCount** | **Long** | Number of members. |  [optional] |
+| **state** | [**StateEnum**](#Enum--StateEnum) | Active, inactive, or deleted state. |  [optional] |
+| **version** | **Integer** | Current version for this resource. |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Type of group. |  |
+| **images** | [**List&lt;UserImage&gt;**](UserImage) |  |  [optional] |
+| **addresses** | [**List&lt;GroupContact&gt;**](GroupContact) |  |  [optional] |
+| **rulesVisible** | **Boolean** | Are membership rules visible to the person requesting to view the group |  |
+| **visibility** | [**VisibilityEnum**](#Enum--VisibilityEnum) | Who can view this group |  |
+| **rolesEnabled** | **Boolean** | Allow roles to be assigned to this group |  [optional] |
+| **owners** | [**List&lt;User&gt;**](User) | Owners of the group |  [optional] |
+| **dateCreated** | [**Date**](Date) | The date on which the trusted group was added. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **createdBy** | [**OrgUser**](OrgUser) | The user that added trusted group. |  [optional] |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -37,10 +31,7 @@ title: TrustGroup
 | ACTIVE | &quot;active&quot; | 
 | INACTIVE | &quot;inactive&quot; | 
 | DELETED | &quot;deleted&quot; | 
-{: class="table table-striped"}
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -49,10 +40,7 @@ title: TrustGroup
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | OFFICIAL | &quot;official&quot; | 
 | SOCIAL | &quot;social&quot; | 
-{: class="table table-striped"}
 
-
-<a name="VisibilityEnum"></a>
 
 ## Enum: VisibilityEnum
 
@@ -62,7 +50,8 @@ title: TrustGroup
 | PUBLIC | &quot;public&quot; | 
 | OWNERS | &quot;owners&quot; | 
 | MEMBERS | &quot;members&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

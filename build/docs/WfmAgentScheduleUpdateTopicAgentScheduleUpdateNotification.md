@@ -1,18 +1,16 @@
----
-title: WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification
----
-## WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification
+# WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **user** | <!----><!---->[**WfmAgentScheduleUpdateTopicUserReference**](WfmAgentScheduleUpdateTopicUserReference.html)<!----> |  |  [optional] |
-| **startDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **endDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **updates** | <!----><!---->[**List&lt;WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate&gt;**](WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **user** | [**WfmAgentScheduleUpdateTopicUserReference**](WfmAgentScheduleUpdateTopicUserReference) |  |  [optional] |
+| **startDate** | [**Date**](Date) |  |  [optional] |
+| **endDate** | [**Date**](Date) |  |  [optional] |
+| **updates** | [**List&lt;WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate&gt;**](WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

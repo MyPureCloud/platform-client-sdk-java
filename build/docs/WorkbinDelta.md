@@ -1,18 +1,16 @@
----
-title: WorkbinDelta
----
-## WorkbinDelta
+# WorkbinDelta
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
-| **description** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
-| **dateModified** | <!----><!---->[**WorkitemsAttributeChangeInstant**](WorkitemsAttributeChangeInstant.html)<!----> |  |  [optional] |
-| **modifiedBy** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **name** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
+| **description** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
+| **dateModified** | [**WorkitemsAttributeChangeInstant**](WorkitemsAttributeChangeInstant) |  |  [optional] |
+| **modifiedBy** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

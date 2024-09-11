@@ -1,56 +1,51 @@
----
-title: IdentityProviderApi
----
-## IdentityProviderApi
+# IdentityProviderApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteIdentityprovider**](IdentityProviderApi.html#deleteIdentityprovider) | Delete Identity Provider |
-| [**deleteIdentityprovidersAdfs**](IdentityProviderApi.html#deleteIdentityprovidersAdfs) | Delete ADFS Identity Provider |
-| [**deleteIdentityprovidersCic**](IdentityProviderApi.html#deleteIdentityprovidersCic) | Delete Customer Interaction Center (CIC) Identity Provider |
-| [**deleteIdentityprovidersGeneric**](IdentityProviderApi.html#deleteIdentityprovidersGeneric) | Delete Generic SAML Identity Provider |
-| [**deleteIdentityprovidersGsuite**](IdentityProviderApi.html#deleteIdentityprovidersGsuite) | Delete G Suite Identity Provider |
-| [**deleteIdentityprovidersIdentitynow**](IdentityProviderApi.html#deleteIdentityprovidersIdentitynow) | Delete IdentityNow Provider |
-| [**deleteIdentityprovidersOkta**](IdentityProviderApi.html#deleteIdentityprovidersOkta) | Delete Okta Identity Provider |
-| [**deleteIdentityprovidersOnelogin**](IdentityProviderApi.html#deleteIdentityprovidersOnelogin) | Delete OneLogin Identity Provider |
-| [**deleteIdentityprovidersPing**](IdentityProviderApi.html#deleteIdentityprovidersPing) | Delete Ping Identity Provider |
-| [**deleteIdentityprovidersPurecloud**](IdentityProviderApi.html#deleteIdentityprovidersPurecloud) | Delete PureCloud Identity Provider |
-| [**deleteIdentityprovidersPureengage**](IdentityProviderApi.html#deleteIdentityprovidersPureengage) | Delete PureEngage Identity Provider |
-| [**deleteIdentityprovidersSalesforce**](IdentityProviderApi.html#deleteIdentityprovidersSalesforce) | Delete Salesforce Identity Provider |
-| [**getIdentityprovider**](IdentityProviderApi.html#getIdentityprovider) | Get Identity Provider |
-| [**getIdentityproviders**](IdentityProviderApi.html#getIdentityproviders) | The list of identity providers |
-| [**getIdentityprovidersAdfs**](IdentityProviderApi.html#getIdentityprovidersAdfs) | Get ADFS Identity Provider |
-| [**getIdentityprovidersCic**](IdentityProviderApi.html#getIdentityprovidersCic) | Get Customer Interaction Center (CIC) Identity Provider |
-| [**getIdentityprovidersGeneric**](IdentityProviderApi.html#getIdentityprovidersGeneric) | Get Generic SAML Identity Provider |
-| [**getIdentityprovidersGsuite**](IdentityProviderApi.html#getIdentityprovidersGsuite) | Get G Suite Identity Provider |
-| [**getIdentityprovidersIdentitynow**](IdentityProviderApi.html#getIdentityprovidersIdentitynow) | Get IdentityNow Provider |
-| [**getIdentityprovidersOkta**](IdentityProviderApi.html#getIdentityprovidersOkta) | Get Okta Identity Provider |
-| [**getIdentityprovidersOnelogin**](IdentityProviderApi.html#getIdentityprovidersOnelogin) | Get OneLogin Identity Provider |
-| [**getIdentityprovidersPing**](IdentityProviderApi.html#getIdentityprovidersPing) | Get Ping Identity Provider |
-| [**getIdentityprovidersPurecloud**](IdentityProviderApi.html#getIdentityprovidersPurecloud) | Get PureCloud Identity Provider |
-| [**getIdentityprovidersPureengage**](IdentityProviderApi.html#getIdentityprovidersPureengage) | Get PureEngage Identity Provider |
-| [**getIdentityprovidersSalesforce**](IdentityProviderApi.html#getIdentityprovidersSalesforce) | Get Salesforce Identity Provider |
-| [**postIdentityproviders**](IdentityProviderApi.html#postIdentityproviders) | Create Identity Provider |
-| [**putIdentityprovider**](IdentityProviderApi.html#putIdentityprovider) | Update Identity Provider |
-| [**putIdentityprovidersAdfs**](IdentityProviderApi.html#putIdentityprovidersAdfs) | Update/Create ADFS Identity Provider |
-| [**putIdentityprovidersCic**](IdentityProviderApi.html#putIdentityprovidersCic) | Update/Create Customer Interaction Center (CIC) Identity Provider |
-| [**putIdentityprovidersGeneric**](IdentityProviderApi.html#putIdentityprovidersGeneric) | Update/Create Generic SAML Identity Provider |
-| [**putIdentityprovidersGsuite**](IdentityProviderApi.html#putIdentityprovidersGsuite) | Update/Create G Suite Identity Provider |
-| [**putIdentityprovidersIdentitynow**](IdentityProviderApi.html#putIdentityprovidersIdentitynow) | Update/Create IdentityNow Provider |
-| [**putIdentityprovidersOkta**](IdentityProviderApi.html#putIdentityprovidersOkta) | Update/Create Okta Identity Provider |
-| [**putIdentityprovidersOnelogin**](IdentityProviderApi.html#putIdentityprovidersOnelogin) | Update/Create OneLogin Identity Provider |
-| [**putIdentityprovidersPing**](IdentityProviderApi.html#putIdentityprovidersPing) | Update/Create Ping Identity Provider |
-| [**putIdentityprovidersPurecloud**](IdentityProviderApi.html#putIdentityprovidersPurecloud) | Update/Create PureCloud Identity Provider |
-| [**putIdentityprovidersPureengage**](IdentityProviderApi.html#putIdentityprovidersPureengage) | Update/Create PureEngage Identity Provider |
-| [**putIdentityprovidersSalesforce**](IdentityProviderApi.html#putIdentityprovidersSalesforce) | Update/Create Salesforce Identity Provider |
+| [**deleteIdentityprovider**](IdentityProviderApi#deleteIdentityprovider) | Delete Identity Provider |
+| [**deleteIdentityprovidersAdfs**](IdentityProviderApi#deleteIdentityprovidersAdfs) | Delete ADFS Identity Provider |
+| [**deleteIdentityprovidersCic**](IdentityProviderApi#deleteIdentityprovidersCic) | Delete Customer Interaction Center (CIC) Identity Provider |
+| [**deleteIdentityprovidersGeneric**](IdentityProviderApi#deleteIdentityprovidersGeneric) | Delete Generic SAML Identity Provider |
+| [**deleteIdentityprovidersGsuite**](IdentityProviderApi#deleteIdentityprovidersGsuite) | Delete G Suite Identity Provider |
+| [**deleteIdentityprovidersIdentitynow**](IdentityProviderApi#deleteIdentityprovidersIdentitynow) | Delete IdentityNow Provider |
+| [**deleteIdentityprovidersOkta**](IdentityProviderApi#deleteIdentityprovidersOkta) | Delete Okta Identity Provider |
+| [**deleteIdentityprovidersOnelogin**](IdentityProviderApi#deleteIdentityprovidersOnelogin) | Delete OneLogin Identity Provider |
+| [**deleteIdentityprovidersPing**](IdentityProviderApi#deleteIdentityprovidersPing) | Delete Ping Identity Provider |
+| [**deleteIdentityprovidersPurecloud**](IdentityProviderApi#deleteIdentityprovidersPurecloud) | Delete PureCloud Identity Provider |
+| [**deleteIdentityprovidersPureengage**](IdentityProviderApi#deleteIdentityprovidersPureengage) | Delete PureEngage Identity Provider |
+| [**deleteIdentityprovidersSalesforce**](IdentityProviderApi#deleteIdentityprovidersSalesforce) | Delete Salesforce Identity Provider |
+| [**getIdentityprovider**](IdentityProviderApi#getIdentityprovider) | Get Identity Provider |
+| [**getIdentityproviders**](IdentityProviderApi#getIdentityproviders) | The list of identity providers |
+| [**getIdentityprovidersAdfs**](IdentityProviderApi#getIdentityprovidersAdfs) | Get ADFS Identity Provider |
+| [**getIdentityprovidersCic**](IdentityProviderApi#getIdentityprovidersCic) | Get Customer Interaction Center (CIC) Identity Provider |
+| [**getIdentityprovidersGeneric**](IdentityProviderApi#getIdentityprovidersGeneric) | Get Generic SAML Identity Provider |
+| [**getIdentityprovidersGsuite**](IdentityProviderApi#getIdentityprovidersGsuite) | Get G Suite Identity Provider |
+| [**getIdentityprovidersIdentitynow**](IdentityProviderApi#getIdentityprovidersIdentitynow) | Get IdentityNow Provider |
+| [**getIdentityprovidersOkta**](IdentityProviderApi#getIdentityprovidersOkta) | Get Okta Identity Provider |
+| [**getIdentityprovidersOnelogin**](IdentityProviderApi#getIdentityprovidersOnelogin) | Get OneLogin Identity Provider |
+| [**getIdentityprovidersPing**](IdentityProviderApi#getIdentityprovidersPing) | Get Ping Identity Provider |
+| [**getIdentityprovidersPurecloud**](IdentityProviderApi#getIdentityprovidersPurecloud) | Get PureCloud Identity Provider |
+| [**getIdentityprovidersPureengage**](IdentityProviderApi#getIdentityprovidersPureengage) | Get PureEngage Identity Provider |
+| [**getIdentityprovidersSalesforce**](IdentityProviderApi#getIdentityprovidersSalesforce) | Get Salesforce Identity Provider |
+| [**postIdentityproviders**](IdentityProviderApi#postIdentityproviders) | Create Identity Provider |
+| [**putIdentityprovider**](IdentityProviderApi#putIdentityprovider) | Update Identity Provider |
+| [**putIdentityprovidersAdfs**](IdentityProviderApi#putIdentityprovidersAdfs) | Update/Create ADFS Identity Provider |
+| [**putIdentityprovidersCic**](IdentityProviderApi#putIdentityprovidersCic) | Update/Create Customer Interaction Center (CIC) Identity Provider |
+| [**putIdentityprovidersGeneric**](IdentityProviderApi#putIdentityprovidersGeneric) | Update/Create Generic SAML Identity Provider |
+| [**putIdentityprovidersGsuite**](IdentityProviderApi#putIdentityprovidersGsuite) | Update/Create G Suite Identity Provider |
+| [**putIdentityprovidersIdentitynow**](IdentityProviderApi#putIdentityprovidersIdentitynow) | Update/Create IdentityNow Provider |
+| [**putIdentityprovidersOkta**](IdentityProviderApi#putIdentityprovidersOkta) | Update/Create Okta Identity Provider |
+| [**putIdentityprovidersOnelogin**](IdentityProviderApi#putIdentityprovidersOnelogin) | Update/Create OneLogin Identity Provider |
+| [**putIdentityprovidersPing**](IdentityProviderApi#putIdentityprovidersPing) | Update/Create Ping Identity Provider |
+| [**putIdentityprovidersPurecloud**](IdentityProviderApi#putIdentityprovidersPurecloud) | Update/Create PureCloud Identity Provider |
+| [**putIdentityprovidersPureengage**](IdentityProviderApi#putIdentityprovidersPureengage) | Update/Create PureEngage Identity Provider |
+| [**putIdentityprovidersSalesforce**](IdentityProviderApi#putIdentityprovidersSalesforce) | Update/Create Salesforce Identity Provider |
 {: class="table-striped"}
 
-<a name="deleteIdentityprovider"></a>
 
 # **deleteIdentityprovider**
-
 
 
 > Void deleteIdentityprovider(providerId)
@@ -107,10 +102,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteIdentityprovidersAdfs"></a>
 
 # **deleteIdentityprovidersAdfs**
-
 
 
 > Empty deleteIdentityprovidersAdfs()
@@ -164,10 +157,8 @@ This endpoint does not require any parameters.
 
 **Empty**
 
-<a name="deleteIdentityprovidersCic"></a>
 
 # **deleteIdentityprovidersCic**
-
 
 
 > Empty deleteIdentityprovidersCic()
@@ -221,10 +212,8 @@ This endpoint does not require any parameters.
 
 **Empty**
 
-<a name="deleteIdentityprovidersGeneric"></a>
 
 # **deleteIdentityprovidersGeneric**
-
 
 
 > Empty deleteIdentityprovidersGeneric()
@@ -278,10 +267,8 @@ This endpoint does not require any parameters.
 
 **Empty**
 
-<a name="deleteIdentityprovidersGsuite"></a>
 
 # **deleteIdentityprovidersGsuite**
-
 
 
 > Empty deleteIdentityprovidersGsuite()
@@ -335,10 +322,8 @@ This endpoint does not require any parameters.
 
 **Empty**
 
-<a name="deleteIdentityprovidersIdentitynow"></a>
 
 # **deleteIdentityprovidersIdentitynow**
-
 
 
 > Empty deleteIdentityprovidersIdentitynow()
@@ -392,10 +377,8 @@ This endpoint does not require any parameters.
 
 **Empty**
 
-<a name="deleteIdentityprovidersOkta"></a>
 
 # **deleteIdentityprovidersOkta**
-
 
 
 > Empty deleteIdentityprovidersOkta()
@@ -449,10 +432,8 @@ This endpoint does not require any parameters.
 
 **Empty**
 
-<a name="deleteIdentityprovidersOnelogin"></a>
 
 # **deleteIdentityprovidersOnelogin**
-
 
 
 > Empty deleteIdentityprovidersOnelogin()
@@ -506,10 +487,8 @@ This endpoint does not require any parameters.
 
 **Empty**
 
-<a name="deleteIdentityprovidersPing"></a>
 
 # **deleteIdentityprovidersPing**
-
 
 
 > Empty deleteIdentityprovidersPing()
@@ -563,10 +542,8 @@ This endpoint does not require any parameters.
 
 **Empty**
 
-<a name="deleteIdentityprovidersPurecloud"></a>
 
 # **deleteIdentityprovidersPurecloud**
-
 
 
 > Empty deleteIdentityprovidersPurecloud()
@@ -620,10 +597,8 @@ This endpoint does not require any parameters.
 
 **Empty**
 
-<a name="deleteIdentityprovidersPureengage"></a>
 
 # **deleteIdentityprovidersPureengage**
-
 
 
 > Empty deleteIdentityprovidersPureengage()
@@ -677,10 +652,8 @@ This endpoint does not require any parameters.
 
 **Empty**
 
-<a name="deleteIdentityprovidersSalesforce"></a>
 
 # **deleteIdentityprovidersSalesforce**
-
 
 
 > Empty deleteIdentityprovidersSalesforce()
@@ -734,13 +707,11 @@ This endpoint does not require any parameters.
 
 **Empty**
 
-<a name="getIdentityprovider"></a>
 
 # **getIdentityprovider**
 
 
-
-> [CustomProvider](CustomProvider.html) getIdentityprovider(providerId)
+> [CustomProvider](CustomProvider) getIdentityprovider(providerId)
 
 Get Identity Provider
 
@@ -793,15 +764,13 @@ try {
 
 ### Return type
 
-[**CustomProvider**](CustomProvider.html)
+[**CustomProvider**](CustomProvider)
 
-<a name="getIdentityproviders"></a>
 
 # **getIdentityproviders**
 
 
-
-> [IdentityProviderEntityListing](IdentityProviderEntityListing.html) getIdentityproviders()
+> [IdentityProviderEntityListing](IdentityProviderEntityListing) getIdentityproviders()
 
 The list of identity providers
 
@@ -850,15 +819,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**IdentityProviderEntityListing**](IdentityProviderEntityListing.html)
+[**IdentityProviderEntityListing**](IdentityProviderEntityListing)
 
-<a name="getIdentityprovidersAdfs"></a>
 
 # **getIdentityprovidersAdfs**
 
 
-
-> [ADFS](ADFS.html) getIdentityprovidersAdfs()
+> [ADFS](ADFS) getIdentityprovidersAdfs()
 
 Get ADFS Identity Provider
 
@@ -907,15 +874,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**ADFS**](ADFS.html)
+[**ADFS**](ADFS)
 
-<a name="getIdentityprovidersCic"></a>
 
 # **getIdentityprovidersCic**
 
 
-
-> [CustomerInteractionCenter](CustomerInteractionCenter.html) getIdentityprovidersCic()
+> [CustomerInteractionCenter](CustomerInteractionCenter) getIdentityprovidersCic()
 
 Get Customer Interaction Center (CIC) Identity Provider
 
@@ -964,15 +929,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**CustomerInteractionCenter**](CustomerInteractionCenter.html)
+[**CustomerInteractionCenter**](CustomerInteractionCenter)
 
-<a name="getIdentityprovidersGeneric"></a>
 
 # **getIdentityprovidersGeneric**
 
 
-
-> [GenericSAML](GenericSAML.html) getIdentityprovidersGeneric()
+> [GenericSAML](GenericSAML) getIdentityprovidersGeneric()
 
 Get Generic SAML Identity Provider
 
@@ -1021,15 +984,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**GenericSAML**](GenericSAML.html)
+[**GenericSAML**](GenericSAML)
 
-<a name="getIdentityprovidersGsuite"></a>
 
 # **getIdentityprovidersGsuite**
 
 
-
-> [GSuite](GSuite.html) getIdentityprovidersGsuite()
+> [GSuite](GSuite) getIdentityprovidersGsuite()
 
 Get G Suite Identity Provider
 
@@ -1078,15 +1039,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**GSuite**](GSuite.html)
+[**GSuite**](GSuite)
 
-<a name="getIdentityprovidersIdentitynow"></a>
 
 # **getIdentityprovidersIdentitynow**
 
 
-
-> [IdentityNow](IdentityNow.html) getIdentityprovidersIdentitynow()
+> [IdentityNow](IdentityNow) getIdentityprovidersIdentitynow()
 
 Get IdentityNow Provider
 
@@ -1135,15 +1094,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**IdentityNow**](IdentityNow.html)
+[**IdentityNow**](IdentityNow)
 
-<a name="getIdentityprovidersOkta"></a>
 
 # **getIdentityprovidersOkta**
 
 
-
-> [Okta](Okta.html) getIdentityprovidersOkta()
+> [Okta](Okta) getIdentityprovidersOkta()
 
 Get Okta Identity Provider
 
@@ -1192,15 +1149,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**Okta**](Okta.html)
+[**Okta**](Okta)
 
-<a name="getIdentityprovidersOnelogin"></a>
 
 # **getIdentityprovidersOnelogin**
 
 
-
-> [OneLogin](OneLogin.html) getIdentityprovidersOnelogin()
+> [OneLogin](OneLogin) getIdentityprovidersOnelogin()
 
 Get OneLogin Identity Provider
 
@@ -1249,15 +1204,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**OneLogin**](OneLogin.html)
+[**OneLogin**](OneLogin)
 
-<a name="getIdentityprovidersPing"></a>
 
 # **getIdentityprovidersPing**
 
 
-
-> [PingIdentity](PingIdentity.html) getIdentityprovidersPing()
+> [PingIdentity](PingIdentity) getIdentityprovidersPing()
 
 Get Ping Identity Provider
 
@@ -1306,15 +1259,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**PingIdentity**](PingIdentity.html)
+[**PingIdentity**](PingIdentity)
 
-<a name="getIdentityprovidersPurecloud"></a>
 
 # **getIdentityprovidersPurecloud**
 
 
-
-> [PureCloud](PureCloud.html) getIdentityprovidersPurecloud()
+> [PureCloud](PureCloud) getIdentityprovidersPurecloud()
 
 Get PureCloud Identity Provider
 
@@ -1363,15 +1314,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**PureCloud**](PureCloud.html)
+[**PureCloud**](PureCloud)
 
-<a name="getIdentityprovidersPureengage"></a>
 
 # **getIdentityprovidersPureengage**
 
 
-
-> [PureEngage](PureEngage.html) getIdentityprovidersPureengage()
+> [PureEngage](PureEngage) getIdentityprovidersPureengage()
 
 Get PureEngage Identity Provider
 
@@ -1420,15 +1369,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**PureEngage**](PureEngage.html)
+[**PureEngage**](PureEngage)
 
-<a name="getIdentityprovidersSalesforce"></a>
 
 # **getIdentityprovidersSalesforce**
 
 
-
-> [Salesforce](Salesforce.html) getIdentityprovidersSalesforce()
+> [Salesforce](Salesforce) getIdentityprovidersSalesforce()
 
 Get Salesforce Identity Provider
 
@@ -1477,15 +1424,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**Salesforce**](Salesforce.html)
+[**Salesforce**](Salesforce)
 
-<a name="postIdentityproviders"></a>
 
 # **postIdentityproviders**
 
 
-
-> [CustomProvider](CustomProvider.html) postIdentityproviders(body)
+> [CustomProvider](CustomProvider) postIdentityproviders(body)
 
 Create Identity Provider
 
@@ -1532,21 +1477,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CustomProvider**](CustomProvider.html)| Provider | 
+| **body** | [**CustomProvider**](CustomProvider)| Provider | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CustomProvider**](CustomProvider.html)
+[**CustomProvider**](CustomProvider)
 
-<a name="putIdentityprovider"></a>
 
 # **putIdentityprovider**
 
 
-
-> [CustomProvider](CustomProvider.html) putIdentityprovider(providerId, body)
+> [CustomProvider](CustomProvider) putIdentityprovider(providerId, body)
 
 Update Identity Provider
 
@@ -1595,21 +1538,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **providerId** | **String**| Provider ID | 
-| **body** | [**CustomProvider**](CustomProvider.html)| Provider | 
+| **body** | [**CustomProvider**](CustomProvider)| Provider | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CustomProvider**](CustomProvider.html)
+[**CustomProvider**](CustomProvider)
 
-<a name="putIdentityprovidersAdfs"></a>
 
 # **putIdentityprovidersAdfs**
 
 
-
-> [IdentityProvider](IdentityProvider.html) putIdentityprovidersAdfs(body)
+> [IdentityProvider](IdentityProvider) putIdentityprovidersAdfs(body)
 
 Update/Create ADFS Identity Provider
 
@@ -1657,21 +1598,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ADFS**](ADFS.html)| Provider | 
+| **body** | [**ADFS**](ADFS)| Provider | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**IdentityProvider**](IdentityProvider.html)
+[**IdentityProvider**](IdentityProvider)
 
-<a name="putIdentityprovidersCic"></a>
 
 # **putIdentityprovidersCic**
 
 
-
-> [IdentityProvider](IdentityProvider.html) putIdentityprovidersCic(body)
+> [IdentityProvider](IdentityProvider) putIdentityprovidersCic(body)
 
 Update/Create Customer Interaction Center (CIC) Identity Provider
 
@@ -1719,21 +1658,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CustomerInteractionCenter**](CustomerInteractionCenter.html)| Provider | 
+| **body** | [**CustomerInteractionCenter**](CustomerInteractionCenter)| Provider | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**IdentityProvider**](IdentityProvider.html)
+[**IdentityProvider**](IdentityProvider)
 
-<a name="putIdentityprovidersGeneric"></a>
 
 # **putIdentityprovidersGeneric**
 
 
-
-> [IdentityProvider](IdentityProvider.html) putIdentityprovidersGeneric(body)
+> [IdentityProvider](IdentityProvider) putIdentityprovidersGeneric(body)
 
 Update/Create Generic SAML Identity Provider
 
@@ -1781,21 +1718,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**GenericSAML**](GenericSAML.html)| Provider | 
+| **body** | [**GenericSAML**](GenericSAML)| Provider | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**IdentityProvider**](IdentityProvider.html)
+[**IdentityProvider**](IdentityProvider)
 
-<a name="putIdentityprovidersGsuite"></a>
 
 # **putIdentityprovidersGsuite**
 
 
-
-> [IdentityProvider](IdentityProvider.html) putIdentityprovidersGsuite(body)
+> [IdentityProvider](IdentityProvider) putIdentityprovidersGsuite(body)
 
 Update/Create G Suite Identity Provider
 
@@ -1843,21 +1778,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**GSuite**](GSuite.html)| Provider | 
+| **body** | [**GSuite**](GSuite)| Provider | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**IdentityProvider**](IdentityProvider.html)
+[**IdentityProvider**](IdentityProvider)
 
-<a name="putIdentityprovidersIdentitynow"></a>
 
 # **putIdentityprovidersIdentitynow**
 
 
-
-> [IdentityNow](IdentityNow.html) putIdentityprovidersIdentitynow(body)
+> [IdentityNow](IdentityNow) putIdentityprovidersIdentitynow(body)
 
 Update/Create IdentityNow Provider
 
@@ -1905,21 +1838,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**IdentityNow**](IdentityNow.html)| Provider | 
+| **body** | [**IdentityNow**](IdentityNow)| Provider | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**IdentityNow**](IdentityNow.html)
+[**IdentityNow**](IdentityNow)
 
-<a name="putIdentityprovidersOkta"></a>
 
 # **putIdentityprovidersOkta**
 
 
-
-> [IdentityProvider](IdentityProvider.html) putIdentityprovidersOkta(body)
+> [IdentityProvider](IdentityProvider) putIdentityprovidersOkta(body)
 
 Update/Create Okta Identity Provider
 
@@ -1967,21 +1898,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Okta**](Okta.html)| Provider | 
+| **body** | [**Okta**](Okta)| Provider | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**IdentityProvider**](IdentityProvider.html)
+[**IdentityProvider**](IdentityProvider)
 
-<a name="putIdentityprovidersOnelogin"></a>
 
 # **putIdentityprovidersOnelogin**
 
 
-
-> [IdentityProvider](IdentityProvider.html) putIdentityprovidersOnelogin(body)
+> [IdentityProvider](IdentityProvider) putIdentityprovidersOnelogin(body)
 
 Update/Create OneLogin Identity Provider
 
@@ -2029,21 +1958,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**OneLogin**](OneLogin.html)| Provider | 
+| **body** | [**OneLogin**](OneLogin)| Provider | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**IdentityProvider**](IdentityProvider.html)
+[**IdentityProvider**](IdentityProvider)
 
-<a name="putIdentityprovidersPing"></a>
 
 # **putIdentityprovidersPing**
 
 
-
-> [IdentityProvider](IdentityProvider.html) putIdentityprovidersPing(body)
+> [IdentityProvider](IdentityProvider) putIdentityprovidersPing(body)
 
 Update/Create Ping Identity Provider
 
@@ -2091,21 +2018,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**PingIdentity**](PingIdentity.html)| Provider | 
+| **body** | [**PingIdentity**](PingIdentity)| Provider | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**IdentityProvider**](IdentityProvider.html)
+[**IdentityProvider**](IdentityProvider)
 
-<a name="putIdentityprovidersPurecloud"></a>
 
 # **putIdentityprovidersPurecloud**
 
 
-
-> [IdentityProvider](IdentityProvider.html) putIdentityprovidersPurecloud(body)
+> [IdentityProvider](IdentityProvider) putIdentityprovidersPurecloud(body)
 
 Update/Create PureCloud Identity Provider
 
@@ -2153,21 +2078,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**PureCloud**](PureCloud.html)| Provider | 
+| **body** | [**PureCloud**](PureCloud)| Provider | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**IdentityProvider**](IdentityProvider.html)
+[**IdentityProvider**](IdentityProvider)
 
-<a name="putIdentityprovidersPureengage"></a>
 
 # **putIdentityprovidersPureengage**
 
 
-
-> [IdentityProvider](IdentityProvider.html) putIdentityprovidersPureengage(body)
+> [IdentityProvider](IdentityProvider) putIdentityprovidersPureengage(body)
 
 Update/Create PureEngage Identity Provider
 
@@ -2215,21 +2138,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**PureEngage**](PureEngage.html)| Provider | 
+| **body** | [**PureEngage**](PureEngage)| Provider | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**IdentityProvider**](IdentityProvider.html)
+[**IdentityProvider**](IdentityProvider)
 
-<a name="putIdentityprovidersSalesforce"></a>
 
 # **putIdentityprovidersSalesforce**
 
 
-
-> [IdentityProvider](IdentityProvider.html) putIdentityprovidersSalesforce(body)
+> [IdentityProvider](IdentityProvider) putIdentityprovidersSalesforce(body)
 
 Update/Create Salesforce Identity Provider
 
@@ -2277,11 +2198,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Salesforce**](Salesforce.html)| Provider | 
+| **body** | [**Salesforce**](Salesforce)| Provider | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**IdentityProvider**](IdentityProvider.html)
+[**IdentityProvider**](IdentityProvider)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,19 +1,13 @@
----
-title: AuditQuerySort
----
-## AuditQuerySort
+# AuditQuerySort
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | [**NameEnum**](#NameEnum)<!----> | Name of the property to sort. |  |
-| **sortOrder** | [**SortOrderEnum**](#SortOrderEnum)<!----> | Sort Order |  |
-{: class="table table-striped"}
+| **name** | [**NameEnum**](#Enum--NameEnum) | Name of the property to sort. |  |
+| **sortOrder** | [**SortOrderEnum**](#Enum--SortOrderEnum) | Sort Order |  |
 
-
-<a name="NameEnum"></a>
 
 ## Enum: NameEnum
 
@@ -21,10 +15,7 @@ title: AuditQuerySort
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | TIMESTAMP | &quot;Timestamp&quot; | 
-{: class="table table-striped"}
 
-
-<a name="SortOrderEnum"></a>
 
 ## Enum: SortOrderEnum
 
@@ -33,7 +24,8 @@ title: AuditQuerySort
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ASCENDING | &quot;ascending&quot; | 
 | DESCENDING | &quot;descending&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

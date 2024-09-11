@@ -1,19 +1,13 @@
----
-title: JourneyOutcomeEventsNotificationAssociatedValue
----
-## JourneyOutcomeEventsNotificationAssociatedValue
+# JourneyOutcomeEventsNotificationAssociatedValue
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **dataType** | [**DataTypeEnum**](#DataTypeEnum)<!----> |  |  [optional] |
-| **value** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **dataType** | [**DataTypeEnum**](#Enum--DataTypeEnum) |  |  [optional] |
+| **value** | [**BigDecimal**](BigDecimal) |  |  [optional] |
 
-
-<a name="DataTypeEnum"></a>
 
 ## Enum: DataTypeEnum
 
@@ -22,7 +16,8 @@ title: JourneyOutcomeEventsNotificationAssociatedValue
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | NUMBER | &quot;Number&quot; | 
 | INTEGER | &quot;Integer&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

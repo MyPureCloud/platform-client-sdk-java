@@ -1,16 +1,14 @@
----
-title: CallableTime
----
-## CallableTime
+# CallableTime
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **timeSlots** | <!----><!---->[**List&lt;CampaignTimeSlot&gt;**](CampaignTimeSlot.html)<!----> | The time intervals for which it is acceptable to place outbound calls. |  |
-| **timeZoneId** | <!----><!---->**String**<!----> | The time zone for the time slots; for example, Africa/Abidjan |  |
-{: class="table table-striped"}
+| **timeSlots** | [**List&lt;CampaignTimeSlot&gt;**](CampaignTimeSlot) | The time intervals for which it is acceptable to place outbound calls. |  |
+| **timeZoneId** | **String** | The time zone for the time slots; for example, Africa/Abidjan |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

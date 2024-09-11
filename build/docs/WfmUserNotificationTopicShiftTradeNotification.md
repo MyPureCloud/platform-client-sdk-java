@@ -1,25 +1,19 @@
----
-title: WfmUserNotificationTopicShiftTradeNotification
----
-## WfmUserNotificationTopicShiftTradeNotification
+# WfmUserNotificationTopicShiftTradeNotification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **weekDate** | <!----><!---->**String**<!----> |  |  [optional] |
-| **tradeId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **oneSided** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **newState** | [**NewStateEnum**](#NewStateEnum)<!----> |  |  [optional] |
-| **initiatingUser** | <!----><!---->[**WfmUserNotificationTopicUserReference**](WfmUserNotificationTopicUserReference.html)<!----> |  |  [optional] |
-| **initiatingShiftDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **receivingUser** | <!----><!---->[**WfmUserNotificationTopicUserReference**](WfmUserNotificationTopicUserReference.html)<!----> |  |  [optional] |
-| **receivingShiftDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **weekDate** | **String** |  |  [optional] |
+| **tradeId** | **String** |  |  [optional] |
+| **oneSided** | **Boolean** |  |  [optional] |
+| **newState** | [**NewStateEnum**](#Enum--NewStateEnum) |  |  [optional] |
+| **initiatingUser** | [**WfmUserNotificationTopicUserReference**](WfmUserNotificationTopicUserReference) |  |  [optional] |
+| **initiatingShiftDate** | [**Date**](Date) |  |  [optional] |
+| **receivingUser** | [**WfmUserNotificationTopicUserReference**](WfmUserNotificationTopicUserReference) |  |  [optional] |
+| **receivingShiftDate** | [**Date**](Date) |  |  [optional] |
 
-
-<a name="NewStateEnum"></a>
 
 ## Enum: NewStateEnum
 
@@ -32,7 +26,8 @@ title: WfmUserNotificationTopicShiftTradeNotification
 | DENIED | &quot;Denied&quot; | 
 | EXPIRED | &quot;Expired&quot; | 
 | CANCELED | &quot;Canceled&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

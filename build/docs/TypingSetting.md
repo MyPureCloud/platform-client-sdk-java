@@ -1,15 +1,13 @@
----
-title: TypingSetting
----
-## TypingSetting
+# TypingSetting
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **on** | <!----><!---->[**SettingDirection**](SettingDirection.html)<!----> | Should typing indication Events be sent |  [optional] |
-{: class="table table-striped"}
+| **on** | [**SettingDirection**](SettingDirection) | Should typing indication Events be sent |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

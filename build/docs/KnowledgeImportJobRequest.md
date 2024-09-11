@@ -1,21 +1,15 @@
----
-title: KnowledgeImportJobRequest
----
-## KnowledgeImportJobRequest
+# KnowledgeImportJobRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **uploadKey** | <!----><!---->**String**<!----> | Upload key |  |
-| **fileType** | [**FileTypeEnum**](#FileTypeEnum)<!----> | File type of the document |  |
-| **settings** | <!----><!---->[**KnowledgeImportJobSettings**](KnowledgeImportJobSettings.html)<!----> | Additional optional settings |  [optional] |
-| **skipConfirmationStep** | <!----><!---->**Boolean**<!----> | If enabled pre-validation step will be skipped. |  [optional] |
-{: class="table table-striped"}
+| **uploadKey** | **String** | Upload key |  |
+| **fileType** | [**FileTypeEnum**](#Enum--FileTypeEnum) | File type of the document |  |
+| **settings** | [**KnowledgeImportJobSettings**](KnowledgeImportJobSettings) | Additional optional settings |  [optional] |
+| **skipConfirmationStep** | **Boolean** | If enabled pre-validation step will be skipped. |  [optional] |
 
-
-<a name="FileTypeEnum"></a>
 
 ## Enum: FileTypeEnum
 
@@ -25,7 +19,8 @@ title: KnowledgeImportJobRequest
 | JSON | &quot;Json&quot; | 
 | CSV | &quot;Csv&quot; | 
 | XLSX | &quot;Xlsx&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

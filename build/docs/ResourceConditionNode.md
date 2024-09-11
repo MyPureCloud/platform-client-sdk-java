@@ -1,22 +1,16 @@
----
-title: ResourceConditionNode
----
-## ResourceConditionNode
+# ResourceConditionNode
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **variableName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **conjunction** | [**ConjunctionEnum**](#ConjunctionEnum)<!----> |  |  [optional] |
-| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> |  |  [optional] |
-| **operands** | <!----><!---->[**List&lt;ResourceConditionValue&gt;**](ResourceConditionValue.html)<!----> |  |  [optional] |
-| **terms** | <!----><!---->[**List&lt;ResourceConditionNode&gt;**](ResourceConditionNode.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **variableName** | **String** |  |  [optional] |
+| **conjunction** | [**ConjunctionEnum**](#Enum--ConjunctionEnum) |  |  [optional] |
+| **operator** | [**OperatorEnum**](#Enum--OperatorEnum) |  |  [optional] |
+| **operands** | [**List&lt;ResourceConditionValue&gt;**](ResourceConditionValue) |  |  [optional] |
+| **terms** | [**List&lt;ResourceConditionNode&gt;**](ResourceConditionNode) |  |  [optional] |
 
-
-<a name="ConjunctionEnum"></a>
 
 ## Enum: ConjunctionEnum
 
@@ -25,10 +19,7 @@ title: ResourceConditionNode
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | AND | &quot;AND&quot; | 
 | OR | &quot;OR&quot; | 
-{: class="table table-striped"}
 
-
-<a name="OperatorEnum"></a>
 
 ## Enum: OperatorEnum
 
@@ -41,7 +32,8 @@ title: ResourceConditionNode
 | GT | &quot;GT&quot; | 
 | LE | &quot;LE&quot; | 
 | LT | &quot;LT&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

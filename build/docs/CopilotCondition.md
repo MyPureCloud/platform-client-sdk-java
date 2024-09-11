@@ -1,19 +1,13 @@
----
-title: CopilotCondition
----
-## CopilotCondition
+# CopilotCondition
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **conditionType** | [**ConditionTypeEnum**](#ConditionTypeEnum)<!----> | Type of condition. |  |
-| **conditionValues** | <!----><!---->**List&lt;String&gt;**<!----> | Condition values. |  |
-{: class="table table-striped"}
+| **conditionType** | [**ConditionTypeEnum**](#Enum--ConditionTypeEnum) | Type of condition. |  |
+| **conditionValues** | **List&lt;String&gt;** | Condition values. |  |
 
-
-<a name="ConditionTypeEnum"></a>
 
 ## Enum: ConditionTypeEnum
 
@@ -24,7 +18,8 @@ title: CopilotCondition
 | CONVERSATIONSTART | &quot;ConversationStart&quot; | 
 | CONVERSATIONTRANSFER | &quot;ConversationTransfer&quot; | 
 | CONVERSATIONEND | &quot;ConversationEnd&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

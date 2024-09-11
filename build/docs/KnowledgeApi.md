@@ -1,120 +1,115 @@
----
-title: KnowledgeApi
----
-## KnowledgeApi
+# KnowledgeApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteKnowledgeKnowledgebase**](KnowledgeApi.html#deleteKnowledgeKnowledgebase) | Delete knowledge base |
-| [**deleteKnowledgeKnowledgebaseCategory**](KnowledgeApi.html#deleteKnowledgeKnowledgebaseCategory) | Delete category |
-| [**deleteKnowledgeKnowledgebaseDocument**](KnowledgeApi.html#deleteKnowledgeKnowledgebaseDocument) | Delete document. |
-| [**deleteKnowledgeKnowledgebaseDocumentVariation**](KnowledgeApi.html#deleteKnowledgeKnowledgebaseDocumentVariation) | Delete a variation for a document. |
-| [**deleteKnowledgeKnowledgebaseExportJob**](KnowledgeApi.html#deleteKnowledgeKnowledgebaseExportJob) | Delete export job |
-| [**deleteKnowledgeKnowledgebaseImportJob**](KnowledgeApi.html#deleteKnowledgeKnowledgebaseImportJob) | Delete import job |
-| [**deleteKnowledgeKnowledgebaseLabel**](KnowledgeApi.html#deleteKnowledgeKnowledgebaseLabel) | Delete label |
-| [**deleteKnowledgeKnowledgebaseLanguageCategory**](KnowledgeApi.html#deleteKnowledgeKnowledgebaseLanguageCategory) | Delete category |
-| [**deleteKnowledgeKnowledgebaseLanguageDocument**](KnowledgeApi.html#deleteKnowledgeKnowledgebaseLanguageDocument) | Delete document |
-| [**deleteKnowledgeKnowledgebaseLanguageDocumentsImport**](KnowledgeApi.html#deleteKnowledgeKnowledgebaseLanguageDocumentsImport) | Delete import operation |
-| [**getKnowledgeGuestSessionCategories**](KnowledgeApi.html#getKnowledgeGuestSessionCategories) | Get categories |
-| [**getKnowledgeGuestSessionDocument**](KnowledgeApi.html#getKnowledgeGuestSessionDocument) | Get a knowledge document by ID. |
-| [**getKnowledgeGuestSessionDocuments**](KnowledgeApi.html#getKnowledgeGuestSessionDocuments) | Get documents. |
-| [**getKnowledgeKnowledgebase**](KnowledgeApi.html#getKnowledgeKnowledgebase) | Get knowledge base |
-| [**getKnowledgeKnowledgebaseCategories**](KnowledgeApi.html#getKnowledgeKnowledgebaseCategories) | Get categories |
-| [**getKnowledgeKnowledgebaseCategory**](KnowledgeApi.html#getKnowledgeKnowledgebaseCategory) | Get category |
-| [**getKnowledgeKnowledgebaseDocument**](KnowledgeApi.html#getKnowledgeKnowledgebaseDocument) | Get document. |
-| [**getKnowledgeKnowledgebaseDocumentFeedback**](KnowledgeApi.html#getKnowledgeKnowledgebaseDocumentFeedback) | Get a list of feedback records given on a document |
-| [**getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId**](KnowledgeApi.html#getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId) | Get a single feedback record given on a document |
-| [**getKnowledgeKnowledgebaseDocumentVariation**](KnowledgeApi.html#getKnowledgeKnowledgebaseDocumentVariation) | Get a variation for a document. |
-| [**getKnowledgeKnowledgebaseDocumentVariations**](KnowledgeApi.html#getKnowledgeKnowledgebaseDocumentVariations) | Get variations for a document. |
-| [**getKnowledgeKnowledgebaseDocumentVersion**](KnowledgeApi.html#getKnowledgeKnowledgebaseDocumentVersion) | Get document version. |
-| [**getKnowledgeKnowledgebaseDocumentVersionVariation**](KnowledgeApi.html#getKnowledgeKnowledgebaseDocumentVersionVariation) | Get variation for the given document version. |
-| [**getKnowledgeKnowledgebaseDocumentVersionVariations**](KnowledgeApi.html#getKnowledgeKnowledgebaseDocumentVersionVariations) | Get variations for the given document version. |
-| [**getKnowledgeKnowledgebaseDocumentVersions**](KnowledgeApi.html#getKnowledgeKnowledgebaseDocumentVersions) | Get document versions. |
-| [**getKnowledgeKnowledgebaseDocuments**](KnowledgeApi.html#getKnowledgeKnowledgebaseDocuments) | Get documents. |
-| [**getKnowledgeKnowledgebaseExportJob**](KnowledgeApi.html#getKnowledgeKnowledgebaseExportJob) | Get export job report |
-| [**getKnowledgeKnowledgebaseImportJob**](KnowledgeApi.html#getKnowledgeKnowledgebaseImportJob) | Get import job report |
-| [**getKnowledgeKnowledgebaseLabel**](KnowledgeApi.html#getKnowledgeKnowledgebaseLabel) | Get label |
-| [**getKnowledgeKnowledgebaseLabels**](KnowledgeApi.html#getKnowledgeKnowledgebaseLabels) | Get labels |
-| [**getKnowledgeKnowledgebaseLanguageCategories**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageCategories) | Get categories |
-| [**getKnowledgeKnowledgebaseLanguageCategory**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageCategory) | Get category |
-| [**getKnowledgeKnowledgebaseLanguageDocument**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageDocument) | Get document |
-| [**getKnowledgeKnowledgebaseLanguageDocumentUpload**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageDocumentUpload) | Get document content upload status |
-| [**getKnowledgeKnowledgebaseLanguageDocuments**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageDocuments) | Get documents |
-| [**getKnowledgeKnowledgebaseLanguageDocumentsImport**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageDocumentsImport) | Get import operation report |
-| [**getKnowledgeKnowledgebaseLanguageTraining**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageTraining) | Get training detail |
-| [**getKnowledgeKnowledgebaseLanguageTrainings**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageTrainings) | Get all trainings information for a knowledgebase |
-| [**getKnowledgeKnowledgebaseOperations**](KnowledgeApi.html#getKnowledgeKnowledgebaseOperations) | Get operations |
-| [**getKnowledgeKnowledgebaseOperationsUsersQuery**](KnowledgeApi.html#getKnowledgeKnowledgebaseOperationsUsersQuery) | Get ids of operation creator users and oauth clients |
-| [**getKnowledgeKnowledgebaseParseJob**](KnowledgeApi.html#getKnowledgeKnowledgebaseParseJob) | Get parse job report |
-| [**getKnowledgeKnowledgebaseUnansweredGroup**](KnowledgeApi.html#getKnowledgeKnowledgebaseUnansweredGroup) | Get knowledge base unanswered group for a particular groupId |
-| [**getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup**](KnowledgeApi.html#getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup) | Get knowledge base unanswered phrase group for a particular phraseGroupId |
-| [**getKnowledgeKnowledgebaseUnansweredGroups**](KnowledgeApi.html#getKnowledgeKnowledgebaseUnansweredGroups) | Get knowledge base unanswered groups |
-| [**getKnowledgeKnowledgebaseUploadsUrlsJob**](KnowledgeApi.html#getKnowledgeKnowledgebaseUploadsUrlsJob) | Get content upload from URL job status |
-| [**getKnowledgeKnowledgebases**](KnowledgeApi.html#getKnowledgeKnowledgebases) | Get knowledge bases |
-| [**patchKnowledgeGuestSessionDocumentsSearchSearchId**](KnowledgeApi.html#patchKnowledgeGuestSessionDocumentsSearchSearchId) | Update search result. |
-| [**patchKnowledgeKnowledgebase**](KnowledgeApi.html#patchKnowledgeKnowledgebase) | Update knowledge base |
-| [**patchKnowledgeKnowledgebaseCategory**](KnowledgeApi.html#patchKnowledgeKnowledgebaseCategory) | Update category |
-| [**patchKnowledgeKnowledgebaseDocument**](KnowledgeApi.html#patchKnowledgeKnowledgebaseDocument) | Update document. |
-| [**patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId**](KnowledgeApi.html#patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId) | Update feedback on a document |
-| [**patchKnowledgeKnowledgebaseDocumentVariation**](KnowledgeApi.html#patchKnowledgeKnowledgebaseDocumentVariation) | Update a variation for a document. |
-| [**patchKnowledgeKnowledgebaseDocumentsSearchSearchId**](KnowledgeApi.html#patchKnowledgeKnowledgebaseDocumentsSearchSearchId) | Update search result. |
-| [**patchKnowledgeKnowledgebaseImportJob**](KnowledgeApi.html#patchKnowledgeKnowledgebaseImportJob) | Start import job |
-| [**patchKnowledgeKnowledgebaseLabel**](KnowledgeApi.html#patchKnowledgeKnowledgebaseLabel) | Update label |
-| [**patchKnowledgeKnowledgebaseLanguageCategory**](KnowledgeApi.html#patchKnowledgeKnowledgebaseLanguageCategory) | Update category |
-| [**patchKnowledgeKnowledgebaseLanguageDocument**](KnowledgeApi.html#patchKnowledgeKnowledgebaseLanguageDocument) | Update document |
-| [**patchKnowledgeKnowledgebaseLanguageDocuments**](KnowledgeApi.html#patchKnowledgeKnowledgebaseLanguageDocuments) | Update documents collection |
-| [**patchKnowledgeKnowledgebaseLanguageDocumentsImport**](KnowledgeApi.html#patchKnowledgeKnowledgebaseLanguageDocumentsImport) | Start import operation |
-| [**patchKnowledgeKnowledgebaseParseJob**](KnowledgeApi.html#patchKnowledgeKnowledgebaseParseJob) | Send update to the parse operation |
-| [**patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup**](KnowledgeApi.html#patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup) | Update a Knowledge base unanswered phrase group |
-| [**postKnowledgeDocumentuploads**](KnowledgeApi.html#postKnowledgeDocumentuploads) | Creates a presigned URL for uploading a knowledge import file with a set of documents |
-| [**postKnowledgeGuestSessionDocumentCopies**](KnowledgeApi.html#postKnowledgeGuestSessionDocumentCopies) | Indicate that the document was copied by the user. |
-| [**postKnowledgeGuestSessionDocumentFeedback**](KnowledgeApi.html#postKnowledgeGuestSessionDocumentFeedback) | Give feedback on a document |
-| [**postKnowledgeGuestSessionDocumentViews**](KnowledgeApi.html#postKnowledgeGuestSessionDocumentViews) | Create view event for a document. |
-| [**postKnowledgeGuestSessionDocumentsAnswers**](KnowledgeApi.html#postKnowledgeGuestSessionDocumentsAnswers) | Answer documents. |
-| [**postKnowledgeGuestSessionDocumentsPresentations**](KnowledgeApi.html#postKnowledgeGuestSessionDocumentsPresentations) | Indicate that documents were presented to the user. |
-| [**postKnowledgeGuestSessionDocumentsSearch**](KnowledgeApi.html#postKnowledgeGuestSessionDocumentsSearch) | Search the documents in a guest session. |
-| [**postKnowledgeGuestSessionDocumentsSearchSuggestions**](KnowledgeApi.html#postKnowledgeGuestSessionDocumentsSearchSuggestions) | Query the knowledge documents to provide suggestions for auto completion. |
-| [**postKnowledgeGuestSessions**](KnowledgeApi.html#postKnowledgeGuestSessions) | Create guest session |
-| [**postKnowledgeKnowledgebaseCategories**](KnowledgeApi.html#postKnowledgeKnowledgebaseCategories) | Create new category |
-| [**postKnowledgeKnowledgebaseDocumentCopies**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentCopies) | Indicate that the document was copied by the user. |
-| [**postKnowledgeKnowledgebaseDocumentFeedback**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentFeedback) | Give feedback on a document |
-| [**postKnowledgeKnowledgebaseDocumentVariations**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentVariations) | Create a variation for a document. |
-| [**postKnowledgeKnowledgebaseDocumentVersions**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentVersions) | Creates or restores a document version. |
-| [**postKnowledgeKnowledgebaseDocumentViews**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentViews) | Create view for a document. |
-| [**postKnowledgeKnowledgebaseDocuments**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocuments) | Create document. |
-| [**postKnowledgeKnowledgebaseDocumentsAnswers**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsAnswers) | Answer documents. |
-| [**postKnowledgeKnowledgebaseDocumentsBulkRemove**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsBulkRemove) | Bulk remove documents. |
-| [**postKnowledgeKnowledgebaseDocumentsBulkUpdate**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsBulkUpdate) | Bulk update documents. |
-| [**postKnowledgeKnowledgebaseDocumentsPresentations**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsPresentations) | Indicate that documents were presented to the user. |
-| [**postKnowledgeKnowledgebaseDocumentsQuery**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsQuery) | Query for knowledge documents. |
-| [**postKnowledgeKnowledgebaseDocumentsSearch**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsSearch) | Search the documents in a knowledge base. |
-| [**postKnowledgeKnowledgebaseDocumentsSearchSuggestions**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsSearchSuggestions) | Query the knowledge documents to provide suggestions for auto completion. |
-| [**postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd**](KnowledgeApi.html#postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd) | Bulk add document versions. |
-| [**postKnowledgeKnowledgebaseExportJobs**](KnowledgeApi.html#postKnowledgeKnowledgebaseExportJobs) | Create export job |
-| [**postKnowledgeKnowledgebaseImportJobs**](KnowledgeApi.html#postKnowledgeKnowledgebaseImportJobs) | Create import job |
-| [**postKnowledgeKnowledgebaseLabels**](KnowledgeApi.html#postKnowledgeKnowledgebaseLabels) | Create new label |
-| [**postKnowledgeKnowledgebaseLanguageCategories**](KnowledgeApi.html#postKnowledgeKnowledgebaseLanguageCategories) | Create new category |
-| [**postKnowledgeKnowledgebaseLanguageDocumentUploads**](KnowledgeApi.html#postKnowledgeKnowledgebaseLanguageDocumentUploads) | Upload Article Content |
-| [**postKnowledgeKnowledgebaseLanguageDocuments**](KnowledgeApi.html#postKnowledgeKnowledgebaseLanguageDocuments) | Create document |
-| [**postKnowledgeKnowledgebaseLanguageDocumentsImports**](KnowledgeApi.html#postKnowledgeKnowledgebaseLanguageDocumentsImports) | Create import operation |
-| [**postKnowledgeKnowledgebaseLanguageTrainingPromote**](KnowledgeApi.html#postKnowledgeKnowledgebaseLanguageTrainingPromote) | Promote trained documents from draft state to active. |
-| [**postKnowledgeKnowledgebaseLanguageTrainings**](KnowledgeApi.html#postKnowledgeKnowledgebaseLanguageTrainings) | Trigger training |
-| [**postKnowledgeKnowledgebaseParseJobImport**](KnowledgeApi.html#postKnowledgeKnowledgebaseParseJobImport) | Import the parsed articles |
-| [**postKnowledgeKnowledgebaseParseJobs**](KnowledgeApi.html#postKnowledgeKnowledgebaseParseJobs) | Create parse job |
-| [**postKnowledgeKnowledgebaseSearch**](KnowledgeApi.html#postKnowledgeKnowledgebaseSearch) | Search Documents |
-| [**postKnowledgeKnowledgebaseUploadsUrlsJobs**](KnowledgeApi.html#postKnowledgeKnowledgebaseUploadsUrlsJobs) | Create content upload from URL job |
-| [**postKnowledgeKnowledgebases**](KnowledgeApi.html#postKnowledgeKnowledgebases) | Create new knowledge base |
+| [**deleteKnowledgeKnowledgebase**](KnowledgeApi#deleteKnowledgeKnowledgebase) | Delete knowledge base |
+| [**deleteKnowledgeKnowledgebaseCategory**](KnowledgeApi#deleteKnowledgeKnowledgebaseCategory) | Delete category |
+| [**deleteKnowledgeKnowledgebaseDocument**](KnowledgeApi#deleteKnowledgeKnowledgebaseDocument) | Delete document. |
+| [**deleteKnowledgeKnowledgebaseDocumentVariation**](KnowledgeApi#deleteKnowledgeKnowledgebaseDocumentVariation) | Delete a variation for a document. |
+| [**deleteKnowledgeKnowledgebaseExportJob**](KnowledgeApi#deleteKnowledgeKnowledgebaseExportJob) | Delete export job |
+| [**deleteKnowledgeKnowledgebaseImportJob**](KnowledgeApi#deleteKnowledgeKnowledgebaseImportJob) | Delete import job |
+| [**deleteKnowledgeKnowledgebaseLabel**](KnowledgeApi#deleteKnowledgeKnowledgebaseLabel) | Delete label |
+| [**deleteKnowledgeKnowledgebaseLanguageCategory**](KnowledgeApi#deleteKnowledgeKnowledgebaseLanguageCategory) | Delete category |
+| [**deleteKnowledgeKnowledgebaseLanguageDocument**](KnowledgeApi#deleteKnowledgeKnowledgebaseLanguageDocument) | Delete document |
+| [**deleteKnowledgeKnowledgebaseLanguageDocumentsImport**](KnowledgeApi#deleteKnowledgeKnowledgebaseLanguageDocumentsImport) | Delete import operation |
+| [**getKnowledgeGuestSessionCategories**](KnowledgeApi#getKnowledgeGuestSessionCategories) | Get categories |
+| [**getKnowledgeGuestSessionDocument**](KnowledgeApi#getKnowledgeGuestSessionDocument) | Get a knowledge document by ID. |
+| [**getKnowledgeGuestSessionDocuments**](KnowledgeApi#getKnowledgeGuestSessionDocuments) | Get documents. |
+| [**getKnowledgeKnowledgebase**](KnowledgeApi#getKnowledgeKnowledgebase) | Get knowledge base |
+| [**getKnowledgeKnowledgebaseCategories**](KnowledgeApi#getKnowledgeKnowledgebaseCategories) | Get categories |
+| [**getKnowledgeKnowledgebaseCategory**](KnowledgeApi#getKnowledgeKnowledgebaseCategory) | Get category |
+| [**getKnowledgeKnowledgebaseDocument**](KnowledgeApi#getKnowledgeKnowledgebaseDocument) | Get document. |
+| [**getKnowledgeKnowledgebaseDocumentFeedback**](KnowledgeApi#getKnowledgeKnowledgebaseDocumentFeedback) | Get a list of feedback records given on a document |
+| [**getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId**](KnowledgeApi#getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId) | Get a single feedback record given on a document |
+| [**getKnowledgeKnowledgebaseDocumentVariation**](KnowledgeApi#getKnowledgeKnowledgebaseDocumentVariation) | Get a variation for a document. |
+| [**getKnowledgeKnowledgebaseDocumentVariations**](KnowledgeApi#getKnowledgeKnowledgebaseDocumentVariations) | Get variations for a document. |
+| [**getKnowledgeKnowledgebaseDocumentVersion**](KnowledgeApi#getKnowledgeKnowledgebaseDocumentVersion) | Get document version. |
+| [**getKnowledgeKnowledgebaseDocumentVersionVariation**](KnowledgeApi#getKnowledgeKnowledgebaseDocumentVersionVariation) | Get variation for the given document version. |
+| [**getKnowledgeKnowledgebaseDocumentVersionVariations**](KnowledgeApi#getKnowledgeKnowledgebaseDocumentVersionVariations) | Get variations for the given document version. |
+| [**getKnowledgeKnowledgebaseDocumentVersions**](KnowledgeApi#getKnowledgeKnowledgebaseDocumentVersions) | Get document versions. |
+| [**getKnowledgeKnowledgebaseDocuments**](KnowledgeApi#getKnowledgeKnowledgebaseDocuments) | Get documents. |
+| [**getKnowledgeKnowledgebaseExportJob**](KnowledgeApi#getKnowledgeKnowledgebaseExportJob) | Get export job report |
+| [**getKnowledgeKnowledgebaseImportJob**](KnowledgeApi#getKnowledgeKnowledgebaseImportJob) | Get import job report |
+| [**getKnowledgeKnowledgebaseLabel**](KnowledgeApi#getKnowledgeKnowledgebaseLabel) | Get label |
+| [**getKnowledgeKnowledgebaseLabels**](KnowledgeApi#getKnowledgeKnowledgebaseLabels) | Get labels |
+| [**getKnowledgeKnowledgebaseLanguageCategories**](KnowledgeApi#getKnowledgeKnowledgebaseLanguageCategories) | Get categories |
+| [**getKnowledgeKnowledgebaseLanguageCategory**](KnowledgeApi#getKnowledgeKnowledgebaseLanguageCategory) | Get category |
+| [**getKnowledgeKnowledgebaseLanguageDocument**](KnowledgeApi#getKnowledgeKnowledgebaseLanguageDocument) | Get document |
+| [**getKnowledgeKnowledgebaseLanguageDocumentUpload**](KnowledgeApi#getKnowledgeKnowledgebaseLanguageDocumentUpload) | Get document content upload status |
+| [**getKnowledgeKnowledgebaseLanguageDocuments**](KnowledgeApi#getKnowledgeKnowledgebaseLanguageDocuments) | Get documents |
+| [**getKnowledgeKnowledgebaseLanguageDocumentsImport**](KnowledgeApi#getKnowledgeKnowledgebaseLanguageDocumentsImport) | Get import operation report |
+| [**getKnowledgeKnowledgebaseLanguageTraining**](KnowledgeApi#getKnowledgeKnowledgebaseLanguageTraining) | Get training detail |
+| [**getKnowledgeKnowledgebaseLanguageTrainings**](KnowledgeApi#getKnowledgeKnowledgebaseLanguageTrainings) | Get all trainings information for a knowledgebase |
+| [**getKnowledgeKnowledgebaseOperations**](KnowledgeApi#getKnowledgeKnowledgebaseOperations) | Get operations |
+| [**getKnowledgeKnowledgebaseOperationsUsersQuery**](KnowledgeApi#getKnowledgeKnowledgebaseOperationsUsersQuery) | Get ids of operation creator users and oauth clients |
+| [**getKnowledgeKnowledgebaseParseJob**](KnowledgeApi#getKnowledgeKnowledgebaseParseJob) | Get parse job report |
+| [**getKnowledgeKnowledgebaseUnansweredGroup**](KnowledgeApi#getKnowledgeKnowledgebaseUnansweredGroup) | Get knowledge base unanswered group for a particular groupId |
+| [**getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup**](KnowledgeApi#getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup) | Get knowledge base unanswered phrase group for a particular phraseGroupId |
+| [**getKnowledgeKnowledgebaseUnansweredGroups**](KnowledgeApi#getKnowledgeKnowledgebaseUnansweredGroups) | Get knowledge base unanswered groups |
+| [**getKnowledgeKnowledgebaseUploadsUrlsJob**](KnowledgeApi#getKnowledgeKnowledgebaseUploadsUrlsJob) | Get content upload from URL job status |
+| [**getKnowledgeKnowledgebases**](KnowledgeApi#getKnowledgeKnowledgebases) | Get knowledge bases |
+| [**patchKnowledgeGuestSessionDocumentsSearchSearchId**](KnowledgeApi#patchKnowledgeGuestSessionDocumentsSearchSearchId) | Update search result. |
+| [**patchKnowledgeKnowledgebase**](KnowledgeApi#patchKnowledgeKnowledgebase) | Update knowledge base |
+| [**patchKnowledgeKnowledgebaseCategory**](KnowledgeApi#patchKnowledgeKnowledgebaseCategory) | Update category |
+| [**patchKnowledgeKnowledgebaseDocument**](KnowledgeApi#patchKnowledgeKnowledgebaseDocument) | Update document. |
+| [**patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId**](KnowledgeApi#patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId) | Update feedback on a document |
+| [**patchKnowledgeKnowledgebaseDocumentVariation**](KnowledgeApi#patchKnowledgeKnowledgebaseDocumentVariation) | Update a variation for a document. |
+| [**patchKnowledgeKnowledgebaseDocumentsSearchSearchId**](KnowledgeApi#patchKnowledgeKnowledgebaseDocumentsSearchSearchId) | Update search result. |
+| [**patchKnowledgeKnowledgebaseImportJob**](KnowledgeApi#patchKnowledgeKnowledgebaseImportJob) | Start import job |
+| [**patchKnowledgeKnowledgebaseLabel**](KnowledgeApi#patchKnowledgeKnowledgebaseLabel) | Update label |
+| [**patchKnowledgeKnowledgebaseLanguageCategory**](KnowledgeApi#patchKnowledgeKnowledgebaseLanguageCategory) | Update category |
+| [**patchKnowledgeKnowledgebaseLanguageDocument**](KnowledgeApi#patchKnowledgeKnowledgebaseLanguageDocument) | Update document |
+| [**patchKnowledgeKnowledgebaseLanguageDocuments**](KnowledgeApi#patchKnowledgeKnowledgebaseLanguageDocuments) | Update documents collection |
+| [**patchKnowledgeKnowledgebaseLanguageDocumentsImport**](KnowledgeApi#patchKnowledgeKnowledgebaseLanguageDocumentsImport) | Start import operation |
+| [**patchKnowledgeKnowledgebaseParseJob**](KnowledgeApi#patchKnowledgeKnowledgebaseParseJob) | Send update to the parse operation |
+| [**patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup**](KnowledgeApi#patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup) | Update a Knowledge base unanswered phrase group |
+| [**postKnowledgeDocumentuploads**](KnowledgeApi#postKnowledgeDocumentuploads) | Creates a presigned URL for uploading a knowledge import file with a set of documents |
+| [**postKnowledgeGuestSessionDocumentCopies**](KnowledgeApi#postKnowledgeGuestSessionDocumentCopies) | Indicate that the document was copied by the user. |
+| [**postKnowledgeGuestSessionDocumentFeedback**](KnowledgeApi#postKnowledgeGuestSessionDocumentFeedback) | Give feedback on a document |
+| [**postKnowledgeGuestSessionDocumentViews**](KnowledgeApi#postKnowledgeGuestSessionDocumentViews) | Create view event for a document. |
+| [**postKnowledgeGuestSessionDocumentsAnswers**](KnowledgeApi#postKnowledgeGuestSessionDocumentsAnswers) | Answer documents. |
+| [**postKnowledgeGuestSessionDocumentsPresentations**](KnowledgeApi#postKnowledgeGuestSessionDocumentsPresentations) | Indicate that documents were presented to the user. |
+| [**postKnowledgeGuestSessionDocumentsSearch**](KnowledgeApi#postKnowledgeGuestSessionDocumentsSearch) | Search the documents in a guest session. |
+| [**postKnowledgeGuestSessionDocumentsSearchSuggestions**](KnowledgeApi#postKnowledgeGuestSessionDocumentsSearchSuggestions) | Query the knowledge documents to provide suggestions for auto completion. |
+| [**postKnowledgeGuestSessions**](KnowledgeApi#postKnowledgeGuestSessions) | Create guest session |
+| [**postKnowledgeKnowledgebaseCategories**](KnowledgeApi#postKnowledgeKnowledgebaseCategories) | Create new category |
+| [**postKnowledgeKnowledgebaseDocumentCopies**](KnowledgeApi#postKnowledgeKnowledgebaseDocumentCopies) | Indicate that the document was copied by the user. |
+| [**postKnowledgeKnowledgebaseDocumentFeedback**](KnowledgeApi#postKnowledgeKnowledgebaseDocumentFeedback) | Give feedback on a document |
+| [**postKnowledgeKnowledgebaseDocumentVariations**](KnowledgeApi#postKnowledgeKnowledgebaseDocumentVariations) | Create a variation for a document. |
+| [**postKnowledgeKnowledgebaseDocumentVersions**](KnowledgeApi#postKnowledgeKnowledgebaseDocumentVersions) | Creates or restores a document version. |
+| [**postKnowledgeKnowledgebaseDocumentViews**](KnowledgeApi#postKnowledgeKnowledgebaseDocumentViews) | Create view for a document. |
+| [**postKnowledgeKnowledgebaseDocuments**](KnowledgeApi#postKnowledgeKnowledgebaseDocuments) | Create document. |
+| [**postKnowledgeKnowledgebaseDocumentsAnswers**](KnowledgeApi#postKnowledgeKnowledgebaseDocumentsAnswers) | Answer documents. |
+| [**postKnowledgeKnowledgebaseDocumentsBulkRemove**](KnowledgeApi#postKnowledgeKnowledgebaseDocumentsBulkRemove) | Bulk remove documents. |
+| [**postKnowledgeKnowledgebaseDocumentsBulkUpdate**](KnowledgeApi#postKnowledgeKnowledgebaseDocumentsBulkUpdate) | Bulk update documents. |
+| [**postKnowledgeKnowledgebaseDocumentsPresentations**](KnowledgeApi#postKnowledgeKnowledgebaseDocumentsPresentations) | Indicate that documents were presented to the user. |
+| [**postKnowledgeKnowledgebaseDocumentsQuery**](KnowledgeApi#postKnowledgeKnowledgebaseDocumentsQuery) | Query for knowledge documents. |
+| [**postKnowledgeKnowledgebaseDocumentsSearch**](KnowledgeApi#postKnowledgeKnowledgebaseDocumentsSearch) | Search the documents in a knowledge base. |
+| [**postKnowledgeKnowledgebaseDocumentsSearchSuggestions**](KnowledgeApi#postKnowledgeKnowledgebaseDocumentsSearchSuggestions) | Query the knowledge documents to provide suggestions for auto completion. |
+| [**postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd**](KnowledgeApi#postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd) | Bulk add document versions. |
+| [**postKnowledgeKnowledgebaseExportJobs**](KnowledgeApi#postKnowledgeKnowledgebaseExportJobs) | Create export job |
+| [**postKnowledgeKnowledgebaseImportJobs**](KnowledgeApi#postKnowledgeKnowledgebaseImportJobs) | Create import job |
+| [**postKnowledgeKnowledgebaseLabels**](KnowledgeApi#postKnowledgeKnowledgebaseLabels) | Create new label |
+| [**postKnowledgeKnowledgebaseLanguageCategories**](KnowledgeApi#postKnowledgeKnowledgebaseLanguageCategories) | Create new category |
+| [**postKnowledgeKnowledgebaseLanguageDocumentUploads**](KnowledgeApi#postKnowledgeKnowledgebaseLanguageDocumentUploads) | Upload Article Content |
+| [**postKnowledgeKnowledgebaseLanguageDocuments**](KnowledgeApi#postKnowledgeKnowledgebaseLanguageDocuments) | Create document |
+| [**postKnowledgeKnowledgebaseLanguageDocumentsImports**](KnowledgeApi#postKnowledgeKnowledgebaseLanguageDocumentsImports) | Create import operation |
+| [**postKnowledgeKnowledgebaseLanguageTrainingPromote**](KnowledgeApi#postKnowledgeKnowledgebaseLanguageTrainingPromote) | Promote trained documents from draft state to active. |
+| [**postKnowledgeKnowledgebaseLanguageTrainings**](KnowledgeApi#postKnowledgeKnowledgebaseLanguageTrainings) | Trigger training |
+| [**postKnowledgeKnowledgebaseParseJobImport**](KnowledgeApi#postKnowledgeKnowledgebaseParseJobImport) | Import the parsed articles |
+| [**postKnowledgeKnowledgebaseParseJobs**](KnowledgeApi#postKnowledgeKnowledgebaseParseJobs) | Create parse job |
+| [**postKnowledgeKnowledgebaseSearch**](KnowledgeApi#postKnowledgeKnowledgebaseSearch) | Search Documents |
+| [**postKnowledgeKnowledgebaseUploadsUrlsJobs**](KnowledgeApi#postKnowledgeKnowledgebaseUploadsUrlsJobs) | Create content upload from URL job |
+| [**postKnowledgeKnowledgebases**](KnowledgeApi#postKnowledgeKnowledgebases) | Create new knowledge base |
 {: class="table-striped"}
 
-<a name="deleteKnowledgeKnowledgebase"></a>
 
 # **deleteKnowledgeKnowledgebase**
 
 
-
-> [KnowledgeBase](KnowledgeBase.html) deleteKnowledgeKnowledgebase(knowledgeBaseId)
+> [KnowledgeBase](KnowledgeBase) deleteKnowledgeKnowledgebase(knowledgeBaseId)
 
 Delete knowledge base
 
@@ -167,15 +162,13 @@ try {
 
 ### Return type
 
-[**KnowledgeBase**](KnowledgeBase.html)
+[**KnowledgeBase**](KnowledgeBase)
 
-<a name="deleteKnowledgeKnowledgebaseCategory"></a>
 
 # **deleteKnowledgeKnowledgebaseCategory**
 
 
-
-> [CategoryResponse](CategoryResponse.html) deleteKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId)
+> [CategoryResponse](CategoryResponse) deleteKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId)
 
 Delete category
 
@@ -230,12 +223,10 @@ try {
 
 ### Return type
 
-[**CategoryResponse**](CategoryResponse.html)
+[**CategoryResponse**](CategoryResponse)
 
-<a name="deleteKnowledgeKnowledgebaseDocument"></a>
 
 # **deleteKnowledgeKnowledgebaseDocument**
-
 
 
 > Void deleteKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId)
@@ -294,10 +285,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteKnowledgeKnowledgebaseDocumentVariation"></a>
 
 # **deleteKnowledgeKnowledgebaseDocumentVariation**
-
 
 
 > Void deleteKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId)
@@ -359,10 +348,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteKnowledgeKnowledgebaseExportJob"></a>
 
 # **deleteKnowledgeKnowledgebaseExportJob**
-
 
 
 > Void deleteKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId)
@@ -421,10 +408,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteKnowledgeKnowledgebaseImportJob"></a>
 
 # **deleteKnowledgeKnowledgebaseImportJob**
-
 
 
 > Void deleteKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId)
@@ -483,13 +468,11 @@ try {
 
 null (empty response body)
 
-<a name="deleteKnowledgeKnowledgebaseLabel"></a>
 
 # **deleteKnowledgeKnowledgebaseLabel**
 
 
-
-> [LabelResponse](LabelResponse.html) deleteKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId)
+> [LabelResponse](LabelResponse) deleteKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId)
 
 Delete label
 
@@ -544,15 +527,16 @@ try {
 
 ### Return type
 
-[**LabelResponse**](LabelResponse.html)
+[**LabelResponse**](LabelResponse)
 
-<a name="deleteKnowledgeKnowledgebaseLanguageCategory"></a>
 
 # **deleteKnowledgeKnowledgebaseLanguageCategory**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [KnowledgeCategory](KnowledgeCategory.html) deleteKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode)
+> [KnowledgeCategory](KnowledgeCategory) deleteKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode)
 
 Delete category
 
@@ -609,15 +593,16 @@ try {
 
 ### Return type
 
-[**KnowledgeCategory**](KnowledgeCategory.html)
+[**KnowledgeCategory**](KnowledgeCategory)
 
-<a name="deleteKnowledgeKnowledgebaseLanguageDocument"></a>
 
 # **deleteKnowledgeKnowledgebaseLanguageDocument**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [KnowledgeDocument](KnowledgeDocument.html) deleteKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode)
+> [KnowledgeDocument](KnowledgeDocument) deleteKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode)
 
 Delete document
 
@@ -674,13 +659,14 @@ try {
 
 ### Return type
 
-[**KnowledgeDocument**](KnowledgeDocument.html)
+[**KnowledgeDocument**](KnowledgeDocument)
 
-<a name="deleteKnowledgeKnowledgebaseLanguageDocumentsImport"></a>
 
 # **deleteKnowledgeKnowledgebaseLanguageDocumentsImport**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Void deleteKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId)
 
@@ -740,13 +726,11 @@ try {
 
 null (empty response body)
 
-<a name="getKnowledgeGuestSessionCategories"></a>
 
 # **getKnowledgeGuestSessionCategories**
 
 
-
-> [GuestCategoryResponseListing](GuestCategoryResponseListing.html) getKnowledgeGuestSessionCategories(sessionId, before, after, pageSize, parentId, isRoot, name, sortBy, expand, includeDocumentCount)
+> [GuestCategoryResponseListing](GuestCategoryResponseListing) getKnowledgeGuestSessionCategories(sessionId, before, after, pageSize, parentId, isRoot, name, sortBy, expand, includeDocumentCount)
 
 Get categories
 
@@ -803,15 +787,13 @@ try {
 
 ### Return type
 
-[**GuestCategoryResponseListing**](GuestCategoryResponseListing.html)
+[**GuestCategoryResponseListing**](GuestCategoryResponseListing)
 
-<a name="getKnowledgeGuestSessionDocument"></a>
 
 # **getKnowledgeGuestSessionDocument**
 
 
-
-> [KnowledgeGuestDocumentResponse](KnowledgeGuestDocumentResponse.html) getKnowledgeGuestSessionDocument(sessionId, documentId)
+> [KnowledgeGuestDocumentResponse](KnowledgeGuestDocumentResponse) getKnowledgeGuestSessionDocument(sessionId, documentId)
 
 Get a knowledge document by ID.
 
@@ -852,15 +834,13 @@ try {
 
 ### Return type
 
-[**KnowledgeGuestDocumentResponse**](KnowledgeGuestDocumentResponse.html)
+[**KnowledgeGuestDocumentResponse**](KnowledgeGuestDocumentResponse)
 
-<a name="getKnowledgeGuestSessionDocuments"></a>
 
 # **getKnowledgeGuestSessionDocuments**
 
 
-
-> [KnowledgeGuestDocumentResponseListing](KnowledgeGuestDocumentResponseListing.html) getKnowledgeGuestSessionDocuments(sessionId, categoryId, pageSize)
+> [KnowledgeGuestDocumentResponseListing](KnowledgeGuestDocumentResponseListing) getKnowledgeGuestSessionDocuments(sessionId, categoryId, pageSize)
 
 Get documents.
 
@@ -896,22 +876,20 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sessionId** | **String**| Knowledge guest session ID. | 
-| **categoryId** | [**List&lt;String&gt;**](String.html)| If specified, retrieves documents associated with category ids, comma separated values expected. | [optional] 
+| **categoryId** | [**List&lt;String&gt;**](String)| If specified, retrieves documents associated with category ids, comma separated values expected. | [optional] 
 | **pageSize** | **Integer**| Number of entities to return. Maximum of 200. | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeGuestDocumentResponseListing**](KnowledgeGuestDocumentResponseListing.html)
+[**KnowledgeGuestDocumentResponseListing**](KnowledgeGuestDocumentResponseListing)
 
-<a name="getKnowledgeKnowledgebase"></a>
 
 # **getKnowledgeKnowledgebase**
 
 
-
-> [KnowledgeBase](KnowledgeBase.html) getKnowledgeKnowledgebase(knowledgeBaseId)
+> [KnowledgeBase](KnowledgeBase) getKnowledgeKnowledgebase(knowledgeBaseId)
 
 Get knowledge base
 
@@ -964,15 +942,13 @@ try {
 
 ### Return type
 
-[**KnowledgeBase**](KnowledgeBase.html)
+[**KnowledgeBase**](KnowledgeBase)
 
-<a name="getKnowledgeKnowledgebaseCategories"></a>
 
 # **getKnowledgeKnowledgebaseCategories**
 
 
-
-> [CategoryResponseListing](CategoryResponseListing.html) getKnowledgeKnowledgebaseCategories(knowledgeBaseId, before, after, pageSize, parentId, isRoot, name, sortBy, expand, includeDocumentCount)
+> [CategoryResponseListing](CategoryResponseListing) getKnowledgeKnowledgebaseCategories(knowledgeBaseId, before, after, pageSize, parentId, isRoot, name, sortBy, expand, includeDocumentCount)
 
 Get categories
 
@@ -1043,15 +1019,13 @@ try {
 
 ### Return type
 
-[**CategoryResponseListing**](CategoryResponseListing.html)
+[**CategoryResponseListing**](CategoryResponseListing)
 
-<a name="getKnowledgeKnowledgebaseCategory"></a>
 
 # **getKnowledgeKnowledgebaseCategory**
 
 
-
-> [CategoryResponse](CategoryResponse.html) getKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId)
+> [CategoryResponse](CategoryResponse) getKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId)
 
 Get category
 
@@ -1106,15 +1080,13 @@ try {
 
 ### Return type
 
-[**CategoryResponse**](CategoryResponse.html)
+[**CategoryResponse**](CategoryResponse)
 
-<a name="getKnowledgeKnowledgebaseDocument"></a>
 
 # **getKnowledgeKnowledgebaseDocument**
 
 
-
-> [KnowledgeDocumentResponse](KnowledgeDocumentResponse.html) getKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, expand, state)
+> [KnowledgeDocumentResponse](KnowledgeDocumentResponse) getKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, expand, state)
 
 Get document.
 
@@ -1166,22 +1138,20 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID. | 
 | **documentId** | **String**| Document ID. | 
-| **expand** | [**List&lt;String&gt;**](String.html)| The specified entity attributes will be filled. Comma separated values expected. Max No. of variations that can be returned on expand is 20. | [optional]<br />**Values**: category, labels, variations 
+| **expand** | [**List&lt;String&gt;**](String)| The specified entity attributes will be filled. Comma separated values expected. Max No. of variations that can be returned on expand is 20. | [optional]<br />**Values**: category, labels, variations 
 | **state** | **String**| \&quot;when state is \&quot;Draft\&quot;, draft version of the document is returned,otherwise by default published version is returned in the response. | [optional]<br />**Values**: Draft, Published 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeDocumentResponse**](KnowledgeDocumentResponse.html)
+[**KnowledgeDocumentResponse**](KnowledgeDocumentResponse)
 
-<a name="getKnowledgeKnowledgebaseDocumentFeedback"></a>
 
 # **getKnowledgeKnowledgebaseDocumentFeedback**
 
 
-
-> [KnowledgeDocumentFeedbackResponseListing](KnowledgeDocumentFeedbackResponseListing.html) getKnowledgeKnowledgebaseDocumentFeedback(knowledgeBaseId, documentId, before, after, pageSize, onlyCommented, documentVersionId, documentVariationId, appType, queryType, userId, queueId, state)
+> [KnowledgeDocumentFeedbackResponseListing](KnowledgeDocumentFeedbackResponseListing) getKnowledgeKnowledgebaseDocumentFeedback(knowledgeBaseId, documentId, before, after, pageSize, onlyCommented, documentVersionId, documentVariationId, appType, queryType, userId, queueId, state)
 
 Get a list of feedback records given on a document
 
@@ -1258,15 +1228,13 @@ try {
 
 ### Return type
 
-[**KnowledgeDocumentFeedbackResponseListing**](KnowledgeDocumentFeedbackResponseListing.html)
+[**KnowledgeDocumentFeedbackResponseListing**](KnowledgeDocumentFeedbackResponseListing)
 
-<a name="getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId"></a>
 
 # **getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId**
 
 
-
-> [KnowledgeDocumentFeedbackResponse](KnowledgeDocumentFeedbackResponse.html) getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId, documentId, feedbackId)
+> [KnowledgeDocumentFeedbackResponse](KnowledgeDocumentFeedbackResponse) getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId, documentId, feedbackId)
 
 Get a single feedback record given on a document
 
@@ -1323,15 +1291,13 @@ try {
 
 ### Return type
 
-[**KnowledgeDocumentFeedbackResponse**](KnowledgeDocumentFeedbackResponse.html)
+[**KnowledgeDocumentFeedbackResponse**](KnowledgeDocumentFeedbackResponse)
 
-<a name="getKnowledgeKnowledgebaseDocumentVariation"></a>
 
 # **getKnowledgeKnowledgebaseDocumentVariation**
 
 
-
-> [DocumentVariation](DocumentVariation.html) getKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, documentState)
+> [DocumentVariation](DocumentVariation) getKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, documentState)
 
 Get a variation for a document.
 
@@ -1390,15 +1356,13 @@ try {
 
 ### Return type
 
-[**DocumentVariation**](DocumentVariation.html)
+[**DocumentVariation**](DocumentVariation)
 
-<a name="getKnowledgeKnowledgebaseDocumentVariations"></a>
 
 # **getKnowledgeKnowledgebaseDocumentVariations**
 
 
-
-> [DocumentVariationListing](DocumentVariationListing.html) getKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, before, after, pageSize, documentState)
+> [DocumentVariationListing](DocumentVariationListing) getKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, before, after, pageSize, documentState)
 
 Get variations for a document.
 
@@ -1461,15 +1425,13 @@ try {
 
 ### Return type
 
-[**DocumentVariationListing**](DocumentVariationListing.html)
+[**DocumentVariationListing**](DocumentVariationListing)
 
-<a name="getKnowledgeKnowledgebaseDocumentVersion"></a>
 
 # **getKnowledgeKnowledgebaseDocumentVersion**
 
 
-
-> [KnowledgeDocumentVersion](KnowledgeDocumentVersion.html) getKnowledgeKnowledgebaseDocumentVersion(knowledgeBaseId, documentId, versionId, expand)
+> [KnowledgeDocumentVersion](KnowledgeDocumentVersion) getKnowledgeKnowledgebaseDocumentVersion(knowledgeBaseId, documentId, versionId, expand)
 
 Get document version.
 
@@ -1522,21 +1484,19 @@ try {
 | **knowledgeBaseId** | **String**| Globally unique identifier for the knowledge base. | 
 | **documentId** | **String**| Globally unique identifier for the document. | 
 | **versionId** | **String**| Globally unique identifier for the document version. | 
-| **expand** | [**List&lt;String&gt;**](String.html)| The specified entity attributes will be filled. Comma separated values expected. | [optional]<br />**Values**: category, labels 
+| **expand** | [**List&lt;String&gt;**](String)| The specified entity attributes will be filled. Comma separated values expected. | [optional]<br />**Values**: category, labels 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeDocumentVersion**](KnowledgeDocumentVersion.html)
+[**KnowledgeDocumentVersion**](KnowledgeDocumentVersion)
 
-<a name="getKnowledgeKnowledgebaseDocumentVersionVariation"></a>
 
 # **getKnowledgeKnowledgebaseDocumentVersionVariation**
 
 
-
-> [KnowledgeDocumentVersionVariation](KnowledgeDocumentVersionVariation.html) getKnowledgeKnowledgebaseDocumentVersionVariation(knowledgeBaseId, documentId, versionId, variationId)
+> [KnowledgeDocumentVersionVariation](KnowledgeDocumentVersionVariation) getKnowledgeKnowledgebaseDocumentVersionVariation(knowledgeBaseId, documentId, versionId, variationId)
 
 Get variation for the given document version.
 
@@ -1595,15 +1555,13 @@ try {
 
 ### Return type
 
-[**KnowledgeDocumentVersionVariation**](KnowledgeDocumentVersionVariation.html)
+[**KnowledgeDocumentVersionVariation**](KnowledgeDocumentVersionVariation)
 
-<a name="getKnowledgeKnowledgebaseDocumentVersionVariations"></a>
 
 # **getKnowledgeKnowledgebaseDocumentVersionVariations**
 
 
-
-> [KnowledgeDocumentVersionVariationListing](KnowledgeDocumentVersionVariationListing.html) getKnowledgeKnowledgebaseDocumentVersionVariations(knowledgeBaseId, documentId, versionId, before, after, pageSize)
+> [KnowledgeDocumentVersionVariationListing](KnowledgeDocumentVersionVariationListing) getKnowledgeKnowledgebaseDocumentVersionVariations(knowledgeBaseId, documentId, versionId, before, after, pageSize)
 
 Get variations for the given document version.
 
@@ -1666,15 +1624,13 @@ try {
 
 ### Return type
 
-[**KnowledgeDocumentVersionVariationListing**](KnowledgeDocumentVersionVariationListing.html)
+[**KnowledgeDocumentVersionVariationListing**](KnowledgeDocumentVersionVariationListing)
 
-<a name="getKnowledgeKnowledgebaseDocumentVersions"></a>
 
 # **getKnowledgeKnowledgebaseDocumentVersions**
 
 
-
-> [KnowledgeDocumentVersionListing](KnowledgeDocumentVersionListing.html) getKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId, documentId, before, after, pageSize, expand)
+> [KnowledgeDocumentVersionListing](KnowledgeDocumentVersionListing) getKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId, documentId, before, after, pageSize, expand)
 
 Get document versions.
 
@@ -1731,21 +1687,19 @@ try {
 | **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
-| **expand** | [**List&lt;String&gt;**](String.html)| The specified entity attributes will be filled. Comma separated values expected. | [optional]<br />**Values**: category, labels 
+| **expand** | [**List&lt;String&gt;**](String)| The specified entity attributes will be filled. Comma separated values expected. | [optional]<br />**Values**: category, labels 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeDocumentVersionListing**](KnowledgeDocumentVersionListing.html)
+[**KnowledgeDocumentVersionListing**](KnowledgeDocumentVersionListing)
 
-<a name="getKnowledgeKnowledgebaseDocuments"></a>
 
 # **getKnowledgeKnowledgebaseDocuments**
 
 
-
-> [KnowledgeDocumentResponseListing](KnowledgeDocumentResponseListing.html) getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, before, after, pageSize, interval, documentId, categoryId, includeSubcategories, includeDrafts, labelIds, expand, externalIds)
+> [KnowledgeDocumentResponseListing](KnowledgeDocumentResponseListing) getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, before, after, pageSize, interval, documentId, categoryId, includeSubcategories, includeDrafts, labelIds, expand, externalIds)
 
 Get documents.
 
@@ -1808,27 +1762,25 @@ try {
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
 | **interval** | **String**| Retrieves the documents modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ | [optional] 
-| **documentId** | [**List&lt;String&gt;**](String.html)| Retrieves the specified documents, comma separated values expected. | [optional] 
-| **categoryId** | [**List&lt;String&gt;**](String.html)| If specified, retrieves documents associated with category ids, comma separated values expected. | [optional] 
+| **documentId** | [**List&lt;String&gt;**](String)| Retrieves the specified documents, comma separated values expected. | [optional] 
+| **categoryId** | [**List&lt;String&gt;**](String)| If specified, retrieves documents associated with category ids, comma separated values expected. | [optional] 
 | **includeSubcategories** | **Boolean**| Works along with &#39;categoryId&#39; query parameter. If specified, retrieves documents associated with category ids and its children categories. | [optional] 
 | **includeDrafts** | **Boolean**| If includeDrafts is true, Documents in the draft state are also returned in the response. | [optional] 
-| **labelIds** | [**List&lt;String&gt;**](String.html)| If specified, retrieves documents associated with label ids, comma separated values expected. | [optional] 
-| **expand** | [**List&lt;String&gt;**](String.html)| The specified entity attributes will be filled. Comma separated values expected. | [optional]<br />**Values**: category, labels, variations 
-| **externalIds** | [**List&lt;String&gt;**](String.html)| If specified, retrieves documents associated with external ids, comma separated values expected. | [optional] 
+| **labelIds** | [**List&lt;String&gt;**](String)| If specified, retrieves documents associated with label ids, comma separated values expected. | [optional] 
+| **expand** | [**List&lt;String&gt;**](String)| The specified entity attributes will be filled. Comma separated values expected. | [optional]<br />**Values**: category, labels, variations 
+| **externalIds** | [**List&lt;String&gt;**](String)| If specified, retrieves documents associated with external ids, comma separated values expected. | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeDocumentResponseListing**](KnowledgeDocumentResponseListing.html)
+[**KnowledgeDocumentResponseListing**](KnowledgeDocumentResponseListing)
 
-<a name="getKnowledgeKnowledgebaseExportJob"></a>
 
 # **getKnowledgeKnowledgebaseExportJob**
 
 
-
-> [KnowledgeExportJobResponse](KnowledgeExportJobResponse.html) getKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId)
+> [KnowledgeExportJobResponse](KnowledgeExportJobResponse) getKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId)
 
 Get export job report
 
@@ -1883,15 +1835,13 @@ try {
 
 ### Return type
 
-[**KnowledgeExportJobResponse**](KnowledgeExportJobResponse.html)
+[**KnowledgeExportJobResponse**](KnowledgeExportJobResponse)
 
-<a name="getKnowledgeKnowledgebaseImportJob"></a>
 
 # **getKnowledgeKnowledgebaseImportJob**
 
 
-
-> [KnowledgeImportJobResponse](KnowledgeImportJobResponse.html) getKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, expand)
+> [KnowledgeImportJobResponse](KnowledgeImportJobResponse) getKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, expand)
 
 Get import job report
 
@@ -1942,21 +1892,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
 | **importJobId** | **String**| Import job ID | 
-| **expand** | [**List&lt;String&gt;**](String.html)| If expand contains &#39;urls&#39; downloadURL and failedEntitiesURL will be filled. | [optional]<br />**Values**: urls 
+| **expand** | [**List&lt;String&gt;**](String)| If expand contains &#39;urls&#39; downloadURL and failedEntitiesURL will be filled. | [optional]<br />**Values**: urls 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeImportJobResponse**](KnowledgeImportJobResponse.html)
+[**KnowledgeImportJobResponse**](KnowledgeImportJobResponse)
 
-<a name="getKnowledgeKnowledgebaseLabel"></a>
 
 # **getKnowledgeKnowledgebaseLabel**
 
 
-
-> [LabelResponse](LabelResponse.html) getKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId)
+> [LabelResponse](LabelResponse) getKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId)
 
 Get label
 
@@ -2011,15 +1959,13 @@ try {
 
 ### Return type
 
-[**LabelResponse**](LabelResponse.html)
+[**LabelResponse**](LabelResponse)
 
-<a name="getKnowledgeKnowledgebaseLabels"></a>
 
 # **getKnowledgeKnowledgebaseLabels**
 
 
-
-> [LabelListing](LabelListing.html) getKnowledgeKnowledgebaseLabels(knowledgeBaseId, before, after, pageSize, name, includeDocumentCount)
+> [LabelListing](LabelListing) getKnowledgeKnowledgebaseLabels(knowledgeBaseId, before, after, pageSize, name, includeDocumentCount)
 
 Get labels
 
@@ -2082,15 +2028,16 @@ try {
 
 ### Return type
 
-[**LabelListing**](LabelListing.html)
+[**LabelListing**](LabelListing)
 
-<a name="getKnowledgeKnowledgebaseLanguageCategories"></a>
 
 # **getKnowledgeKnowledgebaseLanguageCategories**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [CategoryListing](CategoryListing.html) getKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, before, after, limit, pageSize, name)
+> [CategoryListing](CategoryListing) getKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, before, after, limit, pageSize, name)
 
 Get categories
 
@@ -2155,15 +2102,16 @@ try {
 
 ### Return type
 
-[**CategoryListing**](CategoryListing.html)
+[**CategoryListing**](CategoryListing)
 
-<a name="getKnowledgeKnowledgebaseLanguageCategory"></a>
 
 # **getKnowledgeKnowledgebaseLanguageCategory**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [KnowledgeExtendedCategory](KnowledgeExtendedCategory.html) getKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode)
+> [KnowledgeExtendedCategory](KnowledgeExtendedCategory) getKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode)
 
 Get category
 
@@ -2220,15 +2168,16 @@ try {
 
 ### Return type
 
-[**KnowledgeExtendedCategory**](KnowledgeExtendedCategory.html)
+[**KnowledgeExtendedCategory**](KnowledgeExtendedCategory)
 
-<a name="getKnowledgeKnowledgebaseLanguageDocument"></a>
 
 # **getKnowledgeKnowledgebaseLanguageDocument**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [KnowledgeDocument](KnowledgeDocument.html) getKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode)
+> [KnowledgeDocument](KnowledgeDocument) getKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode)
 
 Get document
 
@@ -2285,15 +2234,16 @@ try {
 
 ### Return type
 
-[**KnowledgeDocument**](KnowledgeDocument.html)
+[**KnowledgeDocument**](KnowledgeDocument)
 
-<a name="getKnowledgeKnowledgebaseLanguageDocumentUpload"></a>
 
 # **getKnowledgeKnowledgebaseLanguageDocumentUpload**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [KnowledgeDocumentContentUpload](KnowledgeDocumentContentUpload.html) getKnowledgeKnowledgebaseLanguageDocumentUpload(documentId, knowledgeBaseId, languageCode, uploadId)
+> [KnowledgeDocumentContentUpload](KnowledgeDocumentContentUpload) getKnowledgeKnowledgebaseLanguageDocumentUpload(documentId, knowledgeBaseId, languageCode, uploadId)
 
 Get document content upload status
 
@@ -2354,15 +2304,16 @@ try {
 
 ### Return type
 
-[**KnowledgeDocumentContentUpload**](KnowledgeDocumentContentUpload.html)
+[**KnowledgeDocumentContentUpload**](KnowledgeDocumentContentUpload)
 
-<a name="getKnowledgeKnowledgebaseLanguageDocuments"></a>
 
 # **getKnowledgeKnowledgebaseLanguageDocuments**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [DocumentListing](DocumentListing.html) getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, before, after, limit, pageSize, categories, title, sortBy, sortOrder, documentIds)
+> [DocumentListing](DocumentListing) getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, before, after, limit, pageSize, categories, title, sortBy, sortOrder, documentIds)
 
 Get documents
 
@@ -2429,21 +2380,22 @@ try {
 | **title** | **String**| Filter by document title. | [optional] 
 | **sortBy** | **String**| Sort by. | [optional]<br />**Values**: Title, Date 
 | **sortOrder** | **String**| Sort Order. | [optional]<br />**Values**: ASC, ascending, DESC, descending 
-| **documentIds** | [**List&lt;String&gt;**](String.html)| Comma-separated list of document identifiers to fetch by. | [optional] 
+| **documentIds** | [**List&lt;String&gt;**](String)| Comma-separated list of document identifiers to fetch by. | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DocumentListing**](DocumentListing.html)
+[**DocumentListing**](DocumentListing)
 
-<a name="getKnowledgeKnowledgebaseLanguageDocumentsImport"></a>
 
 # **getKnowledgeKnowledgebaseLanguageDocumentsImport**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [KnowledgeImport](KnowledgeImport.html) getKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId)
+> [KnowledgeImport](KnowledgeImport) getKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId)
 
 Get import operation report
 
@@ -2500,15 +2452,16 @@ try {
 
 ### Return type
 
-[**KnowledgeImport**](KnowledgeImport.html)
+[**KnowledgeImport**](KnowledgeImport)
 
-<a name="getKnowledgeKnowledgebaseLanguageTraining"></a>
 
 # **getKnowledgeKnowledgebaseLanguageTraining**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [KnowledgeTraining](KnowledgeTraining.html) getKnowledgeKnowledgebaseLanguageTraining(knowledgeBaseId, languageCode, trainingId)
+> [KnowledgeTraining](KnowledgeTraining) getKnowledgeKnowledgebaseLanguageTraining(knowledgeBaseId, languageCode, trainingId)
 
 Get training detail
 
@@ -2565,15 +2518,16 @@ try {
 
 ### Return type
 
-[**KnowledgeTraining**](KnowledgeTraining.html)
+[**KnowledgeTraining**](KnowledgeTraining)
 
-<a name="getKnowledgeKnowledgebaseLanguageTrainings"></a>
 
 # **getKnowledgeKnowledgebaseLanguageTrainings**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [TrainingListing](TrainingListing.html) getKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode, before, after, limit, pageSize, knowledgeDocumentsState)
+> [TrainingListing](TrainingListing) getKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode, before, after, limit, pageSize, knowledgeDocumentsState)
 
 Get all trainings information for a knowledgebase
 
@@ -2638,15 +2592,13 @@ try {
 
 ### Return type
 
-[**TrainingListing**](TrainingListing.html)
+[**TrainingListing**](TrainingListing)
 
-<a name="getKnowledgeKnowledgebaseOperations"></a>
 
 # **getKnowledgeKnowledgebaseOperations**
 
 
-
-> [OperationListing](OperationListing.html) getKnowledgeKnowledgebaseOperations(knowledgeBaseId, before, after, pageSize, userId, type, status, interval, sourceId)
+> [OperationListing](OperationListing) getKnowledgeKnowledgebaseOperations(knowledgeBaseId, before, after, pageSize, userId, type, status, interval, sourceId)
 
 Get operations
 
@@ -2707,25 +2659,23 @@ try {
 | **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
-| **userId** | [**List&lt;String&gt;**](String.html)| If specified, retrieves operations associated with user ids, comma separated values expected. | [optional] 
-| **type** | [**List&lt;String&gt;**](String.html)| If specified, retrieves operations with specified operation type, comma separated values expected. | [optional]<br />**Values**: Export, Import, Parse, Sync 
-| **status** | [**List&lt;String&gt;**](String.html)| If specified, retrieves operations with specified operation status, comma separated values expected. | [optional] 
+| **userId** | [**List&lt;String&gt;**](String)| If specified, retrieves operations associated with user ids, comma separated values expected. | [optional] 
+| **type** | [**List&lt;String&gt;**](String)| If specified, retrieves operations with specified operation type, comma separated values expected. | [optional]<br />**Values**: Export, Import, Parse, Sync 
+| **status** | [**List&lt;String&gt;**](String)| If specified, retrieves operations with specified operation status, comma separated values expected. | [optional] 
 | **interval** | **String**| Retrieves the operations modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ | [optional] 
-| **sourceId** | [**List&lt;String&gt;**](String.html)| If specified, retrieves operations associated with source ids, comma separated values expected. | [optional] 
+| **sourceId** | [**List&lt;String&gt;**](String)| If specified, retrieves operations associated with source ids, comma separated values expected. | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**OperationListing**](OperationListing.html)
+[**OperationListing**](OperationListing)
 
-<a name="getKnowledgeKnowledgebaseOperationsUsersQuery"></a>
 
 # **getKnowledgeKnowledgebaseOperationsUsersQuery**
 
 
-
-> [OperationCreatorUserResponse](OperationCreatorUserResponse.html) getKnowledgeKnowledgebaseOperationsUsersQuery(knowledgeBaseId)
+> [OperationCreatorUserResponse](OperationCreatorUserResponse) getKnowledgeKnowledgebaseOperationsUsersQuery(knowledgeBaseId)
 
 Get ids of operation creator users and oauth clients
 
@@ -2780,15 +2730,13 @@ try {
 
 ### Return type
 
-[**OperationCreatorUserResponse**](OperationCreatorUserResponse.html)
+[**OperationCreatorUserResponse**](OperationCreatorUserResponse)
 
-<a name="getKnowledgeKnowledgebaseParseJob"></a>
 
 # **getKnowledgeKnowledgebaseParseJob**
 
 
-
-> [KnowledgeParseJobResponse](KnowledgeParseJobResponse.html) getKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, expand)
+> [KnowledgeParseJobResponse](KnowledgeParseJobResponse) getKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, expand)
 
 Get parse job report
 
@@ -2841,21 +2789,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
 | **parseJobId** | **String**| Parse job ID | 
-| **expand** | [**List&lt;String&gt;**](String.html)| If expand contains &#39;urls&#39; downloadURL and failedEntitiesURL will be filled. | [optional]<br />**Values**: urls 
+| **expand** | [**List&lt;String&gt;**](String)| If expand contains &#39;urls&#39; downloadURL and failedEntitiesURL will be filled. | [optional]<br />**Values**: urls 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeParseJobResponse**](KnowledgeParseJobResponse.html)
+[**KnowledgeParseJobResponse**](KnowledgeParseJobResponse)
 
-<a name="getKnowledgeKnowledgebaseUnansweredGroup"></a>
 
 # **getKnowledgeKnowledgebaseUnansweredGroup**
 
 
-
-> [UnansweredGroup](UnansweredGroup.html) getKnowledgeKnowledgebaseUnansweredGroup(knowledgeBaseId, groupId, app, dateStart, dateEnd)
+> [UnansweredGroup](UnansweredGroup) getKnowledgeKnowledgebaseUnansweredGroup(knowledgeBaseId, groupId, app, dateStart, dateEnd)
 
 Get knowledge base unanswered group for a particular groupId
 
@@ -2916,15 +2862,13 @@ try {
 
 ### Return type
 
-[**UnansweredGroup**](UnansweredGroup.html)
+[**UnansweredGroup**](UnansweredGroup)
 
-<a name="getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup"></a>
 
 # **getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup**
 
 
-
-> [UnansweredPhraseGroup](UnansweredPhraseGroup.html) getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, app, dateStart, dateEnd)
+> [UnansweredPhraseGroup](UnansweredPhraseGroup) getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, app, dateStart, dateEnd)
 
 Get knowledge base unanswered phrase group for a particular phraseGroupId
 
@@ -2987,15 +2931,13 @@ try {
 
 ### Return type
 
-[**UnansweredPhraseGroup**](UnansweredPhraseGroup.html)
+[**UnansweredPhraseGroup**](UnansweredPhraseGroup)
 
-<a name="getKnowledgeKnowledgebaseUnansweredGroups"></a>
 
 # **getKnowledgeKnowledgebaseUnansweredGroups**
 
 
-
-> [UnansweredGroups](UnansweredGroups.html) getKnowledgeKnowledgebaseUnansweredGroups(knowledgeBaseId, app, dateStart, dateEnd)
+> [UnansweredGroups](UnansweredGroups) getKnowledgeKnowledgebaseUnansweredGroups(knowledgeBaseId, app, dateStart, dateEnd)
 
 Get knowledge base unanswered groups
 
@@ -3054,15 +2996,13 @@ try {
 
 ### Return type
 
-[**UnansweredGroups**](UnansweredGroups.html)
+[**UnansweredGroups**](UnansweredGroups)
 
-<a name="getKnowledgeKnowledgebaseUploadsUrlsJob"></a>
 
 # **getKnowledgeKnowledgebaseUploadsUrlsJob**
 
 
-
-> [GetUploadSourceUrlJobStatusResponse](GetUploadSourceUrlJobStatusResponse.html) getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId)
+> [GetUploadSourceUrlJobStatusResponse](GetUploadSourceUrlJobStatusResponse) getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId)
 
 Get content upload from URL job status
 
@@ -3119,15 +3059,13 @@ try {
 
 ### Return type
 
-[**GetUploadSourceUrlJobStatusResponse**](GetUploadSourceUrlJobStatusResponse.html)
+[**GetUploadSourceUrlJobStatusResponse**](GetUploadSourceUrlJobStatusResponse)
 
-<a name="getKnowledgeKnowledgebases"></a>
 
 # **getKnowledgeKnowledgebases**
 
 
-
-> [KnowledgeBaseListing](KnowledgeBaseListing.html) getKnowledgeKnowledgebases(before, after, limit, pageSize, name, coreLanguage, published, sortBy, sortOrder)
+> [KnowledgeBaseListing](KnowledgeBaseListing) getKnowledgeKnowledgebases(before, after, limit, pageSize, name, coreLanguage, published, sortBy, sortOrder)
 
 Get knowledge bases
 
@@ -3196,12 +3134,10 @@ try {
 
 ### Return type
 
-[**KnowledgeBaseListing**](KnowledgeBaseListing.html)
+[**KnowledgeBaseListing**](KnowledgeBaseListing)
 
-<a name="patchKnowledgeGuestSessionDocumentsSearchSearchId"></a>
 
 # **patchKnowledgeGuestSessionDocumentsSearchSearchId**
-
 
 
 > Void patchKnowledgeGuestSessionDocumentsSearchSearchId(sessionId, searchId, body)
@@ -3240,7 +3176,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **sessionId** | **String**| Knowledge guest session ID. | 
 | **searchId** | **String**| Search Result ID | 
-| **body** | [**SearchUpdateRequest**](SearchUpdateRequest.html)|  | 
+| **body** | [**SearchUpdateRequest**](SearchUpdateRequest)|  | 
 {: class="table-striped"}
 
 
@@ -3248,13 +3184,11 @@ try {
 
 null (empty response body)
 
-<a name="patchKnowledgeKnowledgebase"></a>
 
 # **patchKnowledgeKnowledgebase**
 
 
-
-> [KnowledgeBase](KnowledgeBase.html) patchKnowledgeKnowledgebase(knowledgeBaseId, body)
+> [KnowledgeBase](KnowledgeBase) patchKnowledgeKnowledgebase(knowledgeBaseId, body)
 
 Update knowledge base
 
@@ -3303,21 +3237,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **body** | [**KnowledgeBaseUpdateRequest**](KnowledgeBaseUpdateRequest.html)|  | 
+| **body** | [**KnowledgeBaseUpdateRequest**](KnowledgeBaseUpdateRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeBase**](KnowledgeBase.html)
+[**KnowledgeBase**](KnowledgeBase)
 
-<a name="patchKnowledgeKnowledgebaseCategory"></a>
 
 # **patchKnowledgeKnowledgebaseCategory**
 
 
-
-> [CategoryResponse](CategoryResponse.html) patchKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId, body)
+> [CategoryResponse](CategoryResponse) patchKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId, body)
 
 Update category
 
@@ -3368,21 +3300,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
 | **categoryId** | **String**| Category ID | 
-| **body** | [**CategoryUpdateRequest**](CategoryUpdateRequest.html)|  | 
+| **body** | [**CategoryUpdateRequest**](CategoryUpdateRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CategoryResponse**](CategoryResponse.html)
+[**CategoryResponse**](CategoryResponse)
 
-<a name="patchKnowledgeKnowledgebaseDocument"></a>
 
 # **patchKnowledgeKnowledgebaseDocument**
 
 
-
-> [KnowledgeDocumentResponse](KnowledgeDocumentResponse.html) patchKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, body)
+> [KnowledgeDocumentResponse](KnowledgeDocumentResponse) patchKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, body)
 
 Update document.
 
@@ -3433,21 +3363,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID. | 
 | **documentId** | **String**| Document ID. | 
-| **body** | [**KnowledgeDocumentReq**](KnowledgeDocumentReq.html)|  | 
+| **body** | [**KnowledgeDocumentReq**](KnowledgeDocumentReq)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeDocumentResponse**](KnowledgeDocumentResponse.html)
+[**KnowledgeDocumentResponse**](KnowledgeDocumentResponse)
 
-<a name="patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId"></a>
 
 # **patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId**
 
 
-
-> [KnowledgeDocumentFeedbackResponse](KnowledgeDocumentFeedbackResponse.html) patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId, documentId, feedbackId, body)
+> [KnowledgeDocumentFeedbackResponse](KnowledgeDocumentFeedbackResponse) patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId, documentId, feedbackId, body)
 
 Update feedback on a document
 
@@ -3500,21 +3428,19 @@ try {
 | **knowledgeBaseId** | **String**| Knowledge base ID. | 
 | **documentId** | **String**| Document ID. | 
 | **feedbackId** | **String**| Feedback ID. | 
-| **body** | [**KnowledgeDocumentFeedbackUpdateRequest**](KnowledgeDocumentFeedbackUpdateRequest.html)|  | [optional] 
+| **body** | [**KnowledgeDocumentFeedbackUpdateRequest**](KnowledgeDocumentFeedbackUpdateRequest)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeDocumentFeedbackResponse**](KnowledgeDocumentFeedbackResponse.html)
+[**KnowledgeDocumentFeedbackResponse**](KnowledgeDocumentFeedbackResponse)
 
-<a name="patchKnowledgeKnowledgebaseDocumentVariation"></a>
 
 # **patchKnowledgeKnowledgebaseDocumentVariation**
 
 
-
-> [DocumentVariation](DocumentVariation.html) patchKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, body)
+> [DocumentVariation](DocumentVariation) patchKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, body)
 
 Update a variation for a document.
 
@@ -3567,18 +3493,16 @@ try {
 | **documentVariationId** | **String**| Globally unique identifier for a document variation. | 
 | **documentId** | **String**| Globally unique identifier for a document. | 
 | **knowledgeBaseId** | **String**| Globally unique identifier for a knowledge base. | 
-| **body** | [**DocumentVariation**](DocumentVariation.html)|  | 
+| **body** | [**DocumentVariation**](DocumentVariation)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DocumentVariation**](DocumentVariation.html)
+[**DocumentVariation**](DocumentVariation)
 
-<a name="patchKnowledgeKnowledgebaseDocumentsSearchSearchId"></a>
 
 # **patchKnowledgeKnowledgebaseDocumentsSearchSearchId**
-
 
 
 > Void patchKnowledgeKnowledgebaseDocumentsSearchSearchId(knowledgeBaseId, searchId, body)
@@ -3631,7 +3555,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| The ID of knowledge base containing the documents to query. | 
 | **searchId** | **String**| Search Result ID | 
-| **body** | [**SearchUpdateRequest**](SearchUpdateRequest.html)|  | [optional] 
+| **body** | [**SearchUpdateRequest**](SearchUpdateRequest)|  | [optional] 
 {: class="table-striped"}
 
 
@@ -3639,13 +3563,11 @@ try {
 
 null (empty response body)
 
-<a name="patchKnowledgeKnowledgebaseImportJob"></a>
 
 # **patchKnowledgeKnowledgebaseImportJob**
 
 
-
-> [KnowledgeImportJobResponse](KnowledgeImportJobResponse.html) patchKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, body)
+> [KnowledgeImportJobResponse](KnowledgeImportJobResponse) patchKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, body)
 
 Start import job
 
@@ -3696,21 +3618,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
 | **importJobId** | **String**| Import job ID | 
-| **body** | [**ImportStatusRequest**](ImportStatusRequest.html)|  | 
+| **body** | [**ImportStatusRequest**](ImportStatusRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeImportJobResponse**](KnowledgeImportJobResponse.html)
+[**KnowledgeImportJobResponse**](KnowledgeImportJobResponse)
 
-<a name="patchKnowledgeKnowledgebaseLabel"></a>
 
 # **patchKnowledgeKnowledgebaseLabel**
 
 
-
-> [LabelResponse](LabelResponse.html) patchKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId, body)
+> [LabelResponse](LabelResponse) patchKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId, body)
 
 Update label
 
@@ -3761,21 +3681,22 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
 | **labelId** | **String**| Label ID | 
-| **body** | [**LabelUpdateRequest**](LabelUpdateRequest.html)|  | 
+| **body** | [**LabelUpdateRequest**](LabelUpdateRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LabelResponse**](LabelResponse.html)
+[**LabelResponse**](LabelResponse)
 
-<a name="patchKnowledgeKnowledgebaseLanguageCategory"></a>
 
 # **patchKnowledgeKnowledgebaseLanguageCategory**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [KnowledgeExtendedCategory](KnowledgeExtendedCategory.html) patchKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode, body)
+> [KnowledgeExtendedCategory](KnowledgeExtendedCategory) patchKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode, body)
 
 Update category
 
@@ -3828,21 +3749,22 @@ try {
 | **categoryId** | **String**| Category ID | 
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
 | **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA 
-| **body** | [**KnowledgeCategoryRequest**](KnowledgeCategoryRequest.html)|  | 
+| **body** | [**KnowledgeCategoryRequest**](KnowledgeCategoryRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeExtendedCategory**](KnowledgeExtendedCategory.html)
+[**KnowledgeExtendedCategory**](KnowledgeExtendedCategory)
 
-<a name="patchKnowledgeKnowledgebaseLanguageDocument"></a>
 
 # **patchKnowledgeKnowledgebaseLanguageDocument**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [KnowledgeDocument](KnowledgeDocument.html) patchKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode, body)
+> [KnowledgeDocument](KnowledgeDocument) patchKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode, body)
 
 Update document
 
@@ -3895,21 +3817,22 @@ try {
 | **documentId** | **String**| Document ID | 
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
 | **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA 
-| **body** | [**KnowledgeDocumentRequest**](KnowledgeDocumentRequest.html)|  | 
+| **body** | [**KnowledgeDocumentRequest**](KnowledgeDocumentRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeDocument**](KnowledgeDocument.html)
+[**KnowledgeDocument**](KnowledgeDocument)
 
-<a name="patchKnowledgeKnowledgebaseLanguageDocuments"></a>
 
 # **patchKnowledgeKnowledgebaseLanguageDocuments**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [DocumentListing](DocumentListing.html) patchKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body)
+> [DocumentListing](DocumentListing) patchKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body)
 
 Update documents collection
 
@@ -3960,21 +3883,22 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
 | **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA 
-| **body** | [**List&lt;KnowledgeDocumentBulkRequest&gt;**](KnowledgeDocumentBulkRequest.html)|  | 
+| **body** | [**List&lt;KnowledgeDocumentBulkRequest&gt;**](KnowledgeDocumentBulkRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DocumentListing**](DocumentListing.html)
+[**DocumentListing**](DocumentListing)
 
-<a name="patchKnowledgeKnowledgebaseLanguageDocumentsImport"></a>
 
 # **patchKnowledgeKnowledgebaseLanguageDocumentsImport**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [KnowledgeImport](KnowledgeImport.html) patchKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId, body)
+> [KnowledgeImport](KnowledgeImport) patchKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId, body)
 
 Start import operation
 
@@ -4028,18 +3952,16 @@ try {
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
 | **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA 
 | **importId** | **String**| Import ID | 
-| **body** | [**ImportStatusRequest**](ImportStatusRequest.html)|  | 
+| **body** | [**ImportStatusRequest**](ImportStatusRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeImport**](KnowledgeImport.html)
+[**KnowledgeImport**](KnowledgeImport)
 
-<a name="patchKnowledgeKnowledgebaseParseJob"></a>
 
 # **patchKnowledgeKnowledgebaseParseJob**
-
 
 
 > Void patchKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, body)
@@ -4094,7 +4016,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
 | **parseJobId** | **String**| Parse job ID | 
-| **body** | [**KnowledgeParseJobRequestPatch**](KnowledgeParseJobRequestPatch.html)|  | 
+| **body** | [**KnowledgeParseJobRequestPatch**](KnowledgeParseJobRequestPatch)|  | 
 {: class="table-striped"}
 
 
@@ -4102,13 +4024,11 @@ try {
 
 null (empty response body)
 
-<a name="patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup"></a>
 
 # **patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup**
 
 
-
-> [UnansweredPhraseGroupUpdateResponse](UnansweredPhraseGroupUpdateResponse.html) patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, body)
+> [UnansweredPhraseGroupUpdateResponse](UnansweredPhraseGroupUpdateResponse) patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, body)
 
 Update a Knowledge base unanswered phrase group
 
@@ -4162,21 +4082,19 @@ try {
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
 | **groupId** | **String**| The ID of the group to be updated. | 
 | **phraseGroupId** | **String**| The ID of the phraseGroup to be updated. | 
-| **body** | [**UnansweredPhraseGroupPatchRequestBody**](UnansweredPhraseGroupPatchRequestBody.html)| Request body of the update unanswered group endpoint. | 
+| **body** | [**UnansweredPhraseGroupPatchRequestBody**](UnansweredPhraseGroupPatchRequestBody)| Request body of the update unanswered group endpoint. | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UnansweredPhraseGroupUpdateResponse**](UnansweredPhraseGroupUpdateResponse.html)
+[**UnansweredPhraseGroupUpdateResponse**](UnansweredPhraseGroupUpdateResponse)
 
-<a name="postKnowledgeDocumentuploads"></a>
 
 # **postKnowledgeDocumentuploads**
 
 
-
-> [UploadUrlResponse](UploadUrlResponse.html) postKnowledgeDocumentuploads(body)
+> [UploadUrlResponse](UploadUrlResponse) postKnowledgeDocumentuploads(body)
 
 Creates a presigned URL for uploading a knowledge import file with a set of documents
 
@@ -4223,18 +4141,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**UploadUrlRequest**](UploadUrlRequest.html)| query | 
+| **body** | [**UploadUrlRequest**](UploadUrlRequest)| query | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UploadUrlResponse**](UploadUrlResponse.html)
+[**UploadUrlResponse**](UploadUrlResponse)
 
-<a name="postKnowledgeGuestSessionDocumentCopies"></a>
 
 # **postKnowledgeGuestSessionDocumentCopies**
-
 
 
 > Void postKnowledgeGuestSessionDocumentCopies(sessionId, documentId, body)
@@ -4273,7 +4189,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **sessionId** | **String**| Knowledge guest session ID. | 
 | **documentId** | **String**| Document ID | 
-| **body** | [**KnowledgeGuestDocumentCopy**](KnowledgeGuestDocumentCopy.html)|  | [optional] 
+| **body** | [**KnowledgeGuestDocumentCopy**](KnowledgeGuestDocumentCopy)|  | [optional] 
 {: class="table-striped"}
 
 
@@ -4281,13 +4197,11 @@ try {
 
 null (empty response body)
 
-<a name="postKnowledgeGuestSessionDocumentFeedback"></a>
 
 # **postKnowledgeGuestSessionDocumentFeedback**
 
 
-
-> [KnowledgeGuestDocumentFeedback](KnowledgeGuestDocumentFeedback.html) postKnowledgeGuestSessionDocumentFeedback(sessionId, documentId, body)
+> [KnowledgeGuestDocumentFeedback](KnowledgeGuestDocumentFeedback) postKnowledgeGuestSessionDocumentFeedback(sessionId, documentId, body)
 
 Give feedback on a document
 
@@ -4324,18 +4238,16 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **sessionId** | **String**| Knowledge guest session ID. | 
 | **documentId** | **String**| Document ID. | 
-| **body** | [**KnowledgeGuestDocumentFeedback**](KnowledgeGuestDocumentFeedback.html)|  | [optional] 
+| **body** | [**KnowledgeGuestDocumentFeedback**](KnowledgeGuestDocumentFeedback)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeGuestDocumentFeedback**](KnowledgeGuestDocumentFeedback.html)
+[**KnowledgeGuestDocumentFeedback**](KnowledgeGuestDocumentFeedback)
 
-<a name="postKnowledgeGuestSessionDocumentViews"></a>
 
 # **postKnowledgeGuestSessionDocumentViews**
-
 
 
 > Void postKnowledgeGuestSessionDocumentViews(sessionId, documentId, body)
@@ -4374,7 +4286,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **sessionId** | **String**| Knowledge guest session ID. | 
 | **documentId** | **String**| Document ID | 
-| **body** | [**KnowledgeGuestDocumentView**](KnowledgeGuestDocumentView.html)|  | [optional] 
+| **body** | [**KnowledgeGuestDocumentView**](KnowledgeGuestDocumentView)|  | [optional] 
 {: class="table-striped"}
 
 
@@ -4382,13 +4294,11 @@ try {
 
 null (empty response body)
 
-<a name="postKnowledgeGuestSessionDocumentsAnswers"></a>
 
 # **postKnowledgeGuestSessionDocumentsAnswers**
 
 
-
-> [KnowledgeGuestAnswerDocumentsResponse](KnowledgeGuestAnswerDocumentsResponse.html) postKnowledgeGuestSessionDocumentsAnswers(sessionId, body)
+> [KnowledgeGuestAnswerDocumentsResponse](KnowledgeGuestAnswerDocumentsResponse) postKnowledgeGuestSessionDocumentsAnswers(sessionId, body)
 
 Answer documents.
 
@@ -4423,18 +4333,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sessionId** | **String**| Knowledge guest session ID. | 
-| **body** | [**KnowledgeDocumentsAnswerFilter**](KnowledgeDocumentsAnswerFilter.html)|  | 
+| **body** | [**KnowledgeDocumentsAnswerFilter**](KnowledgeDocumentsAnswerFilter)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeGuestAnswerDocumentsResponse**](KnowledgeGuestAnswerDocumentsResponse.html)
+[**KnowledgeGuestAnswerDocumentsResponse**](KnowledgeGuestAnswerDocumentsResponse)
 
-<a name="postKnowledgeGuestSessionDocumentsPresentations"></a>
 
 # **postKnowledgeGuestSessionDocumentsPresentations**
-
 
 
 > Void postKnowledgeGuestSessionDocumentsPresentations(sessionId, body)
@@ -4471,7 +4379,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sessionId** | **String**| Knowledge guest session ID. | 
-| **body** | [**KnowledgeGuestDocumentPresentation**](KnowledgeGuestDocumentPresentation.html)|  | [optional] 
+| **body** | [**KnowledgeGuestDocumentPresentation**](KnowledgeGuestDocumentPresentation)|  | [optional] 
 {: class="table-striped"}
 
 
@@ -4479,13 +4387,11 @@ try {
 
 null (empty response body)
 
-<a name="postKnowledgeGuestSessionDocumentsSearch"></a>
 
 # **postKnowledgeGuestSessionDocumentsSearch**
 
 
-
-> [KnowledgeDocumentGuestSearch](KnowledgeDocumentGuestSearch.html) postKnowledgeGuestSessionDocumentsSearch(sessionId, expand, body)
+> [KnowledgeDocumentGuestSearch](KnowledgeDocumentGuestSearch) postKnowledgeGuestSessionDocumentsSearch(sessionId, expand, body)
 
 Search the documents in a guest session.
 
@@ -4521,22 +4427,20 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sessionId** | **String**| Knowledge guest session ID. | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Fields, if any, to expand for each document in the search result matching the query. | [optional]<br />**Values**: documentVariations, documentAlternatives, knowledgeBaseLanguageCode 
-| **body** | [**KnowledgeDocumentGuestSearchRequest**](KnowledgeDocumentGuestSearchRequest.html)|  | [optional] 
+| **expand** | [**List&lt;String&gt;**](String)| Fields, if any, to expand for each document in the search result matching the query. | [optional]<br />**Values**: documentVariations, documentAlternatives, knowledgeBaseLanguageCode 
+| **body** | [**KnowledgeDocumentGuestSearchRequest**](KnowledgeDocumentGuestSearchRequest)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeDocumentGuestSearch**](KnowledgeDocumentGuestSearch.html)
+[**KnowledgeDocumentGuestSearch**](KnowledgeDocumentGuestSearch)
 
-<a name="postKnowledgeGuestSessionDocumentsSearchSuggestions"></a>
 
 # **postKnowledgeGuestSessionDocumentsSearchSuggestions**
 
 
-
-> [KnowledgeGuestDocumentSuggestion](KnowledgeGuestDocumentSuggestion.html) postKnowledgeGuestSessionDocumentsSearchSuggestions(sessionId, body)
+> [KnowledgeGuestDocumentSuggestion](KnowledgeGuestDocumentSuggestion) postKnowledgeGuestSessionDocumentsSearchSuggestions(sessionId, body)
 
 Query the knowledge documents to provide suggestions for auto completion.
 
@@ -4571,21 +4475,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sessionId** | **String**| Knowledge guest session ID. | 
-| **body** | [**KnowledgeGuestDocumentSuggestionRequest**](KnowledgeGuestDocumentSuggestionRequest.html)|  | [optional] 
+| **body** | [**KnowledgeGuestDocumentSuggestionRequest**](KnowledgeGuestDocumentSuggestionRequest)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeGuestDocumentSuggestion**](KnowledgeGuestDocumentSuggestion.html)
+[**KnowledgeGuestDocumentSuggestion**](KnowledgeGuestDocumentSuggestion)
 
-<a name="postKnowledgeGuestSessions"></a>
 
 # **postKnowledgeGuestSessions**
 
 
-
-> [KnowledgeGuestSession](KnowledgeGuestSession.html) postKnowledgeGuestSessions(body)
+> [KnowledgeGuestSession](KnowledgeGuestSession) postKnowledgeGuestSessions(body)
 
 Create guest session
 
@@ -4618,21 +4520,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**KnowledgeGuestSession**](KnowledgeGuestSession.html)|  | 
+| **body** | [**KnowledgeGuestSession**](KnowledgeGuestSession)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeGuestSession**](KnowledgeGuestSession.html)
+[**KnowledgeGuestSession**](KnowledgeGuestSession)
 
-<a name="postKnowledgeKnowledgebaseCategories"></a>
 
 # **postKnowledgeKnowledgebaseCategories**
 
 
-
-> [CategoryResponse](CategoryResponse.html) postKnowledgeKnowledgebaseCategories(knowledgeBaseId, body)
+> [CategoryResponse](CategoryResponse) postKnowledgeKnowledgebaseCategories(knowledgeBaseId, body)
 
 Create new category
 
@@ -4681,18 +4581,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **body** | [**CategoryCreateRequest**](CategoryCreateRequest.html)|  | 
+| **body** | [**CategoryCreateRequest**](CategoryCreateRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CategoryResponse**](CategoryResponse.html)
+[**CategoryResponse**](CategoryResponse)
 
-<a name="postKnowledgeKnowledgebaseDocumentCopies"></a>
 
 # **postKnowledgeKnowledgebaseDocumentCopies**
-
 
 
 > Void postKnowledgeKnowledgebaseDocumentCopies(knowledgeBaseId, documentId, body)
@@ -4745,7 +4643,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID. | 
 | **documentId** | **String**| Document ID. | 
-| **body** | [**KnowledgeDocumentCopy**](KnowledgeDocumentCopy.html)|  | [optional] 
+| **body** | [**KnowledgeDocumentCopy**](KnowledgeDocumentCopy)|  | [optional] 
 {: class="table-striped"}
 
 
@@ -4753,13 +4651,11 @@ try {
 
 null (empty response body)
 
-<a name="postKnowledgeKnowledgebaseDocumentFeedback"></a>
 
 # **postKnowledgeKnowledgebaseDocumentFeedback**
 
 
-
-> [KnowledgeDocumentFeedbackResponse](KnowledgeDocumentFeedbackResponse.html) postKnowledgeKnowledgebaseDocumentFeedback(knowledgeBaseId, documentId, body)
+> [KnowledgeDocumentFeedbackResponse](KnowledgeDocumentFeedbackResponse) postKnowledgeKnowledgebaseDocumentFeedback(knowledgeBaseId, documentId, body)
 
 Give feedback on a document
 
@@ -4810,21 +4706,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID. | 
 | **documentId** | **String**| Document ID. | 
-| **body** | [**KnowledgeDocumentFeedback**](KnowledgeDocumentFeedback.html)|  | [optional] 
+| **body** | [**KnowledgeDocumentFeedback**](KnowledgeDocumentFeedback)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeDocumentFeedbackResponse**](KnowledgeDocumentFeedbackResponse.html)
+[**KnowledgeDocumentFeedbackResponse**](KnowledgeDocumentFeedbackResponse)
 
-<a name="postKnowledgeKnowledgebaseDocumentVariations"></a>
 
 # **postKnowledgeKnowledgebaseDocumentVariations**
 
 
-
-> [DocumentVariation](DocumentVariation.html) postKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, body)
+> [DocumentVariation](DocumentVariation) postKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, body)
 
 Create a variation for a document.
 
@@ -4876,21 +4770,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Globally unique identifier for the knowledge base. | 
 | **documentId** | **String**| Globally unique identifier for the document. | 
-| **body** | [**DocumentVariation**](DocumentVariation.html)|  | 
+| **body** | [**DocumentVariation**](DocumentVariation)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DocumentVariation**](DocumentVariation.html)
+[**DocumentVariation**](DocumentVariation)
 
-<a name="postKnowledgeKnowledgebaseDocumentVersions"></a>
 
 # **postKnowledgeKnowledgebaseDocumentVersions**
 
 
-
-> [KnowledgeDocumentVersion](KnowledgeDocumentVersion.html) postKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId, documentId, body)
+> [KnowledgeDocumentVersion](KnowledgeDocumentVersion) postKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId, documentId, body)
 
 Creates or restores a document version.
 
@@ -4941,18 +4833,16 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Globally unique identifier for the knowledge base. | 
 | **documentId** | **String**| Globally unique identifier for the document. | 
-| **body** | [**KnowledgeDocumentVersion**](KnowledgeDocumentVersion.html)|  | 
+| **body** | [**KnowledgeDocumentVersion**](KnowledgeDocumentVersion)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeDocumentVersion**](KnowledgeDocumentVersion.html)
+[**KnowledgeDocumentVersion**](KnowledgeDocumentVersion)
 
-<a name="postKnowledgeKnowledgebaseDocumentViews"></a>
 
 # **postKnowledgeKnowledgebaseDocumentViews**
-
 
 
 > Void postKnowledgeKnowledgebaseDocumentViews(knowledgeBaseId, documentId, body)
@@ -5005,7 +4895,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID. | 
 | **documentId** | **String**| Document ID. | 
-| **body** | [**KnowledgeDocumentView**](KnowledgeDocumentView.html)|  | [optional] 
+| **body** | [**KnowledgeDocumentView**](KnowledgeDocumentView)|  | [optional] 
 {: class="table-striped"}
 
 
@@ -5013,13 +4903,11 @@ try {
 
 null (empty response body)
 
-<a name="postKnowledgeKnowledgebaseDocuments"></a>
 
 # **postKnowledgeKnowledgebaseDocuments**
 
 
-
-> [KnowledgeDocumentResponse](KnowledgeDocumentResponse.html) postKnowledgeKnowledgebaseDocuments(knowledgeBaseId, body)
+> [KnowledgeDocumentResponse](KnowledgeDocumentResponse) postKnowledgeKnowledgebaseDocuments(knowledgeBaseId, body)
 
 Create document.
 
@@ -5068,21 +4956,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **body** | [**KnowledgeDocumentReq**](KnowledgeDocumentReq.html)|  | 
+| **body** | [**KnowledgeDocumentReq**](KnowledgeDocumentReq)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeDocumentResponse**](KnowledgeDocumentResponse.html)
+[**KnowledgeDocumentResponse**](KnowledgeDocumentResponse)
 
-<a name="postKnowledgeKnowledgebaseDocumentsAnswers"></a>
 
 # **postKnowledgeKnowledgebaseDocumentsAnswers**
 
 
-
-> [KnowledgeAnswerDocumentsResponse](KnowledgeAnswerDocumentsResponse.html) postKnowledgeKnowledgebaseDocumentsAnswers(knowledgeBaseId, body)
+> [KnowledgeAnswerDocumentsResponse](KnowledgeAnswerDocumentsResponse) postKnowledgeKnowledgebaseDocumentsAnswers(knowledgeBaseId, body)
 
 Answer documents.
 
@@ -5132,21 +5018,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **body** | [**KnowledgeDocumentsAnswerFilter**](KnowledgeDocumentsAnswerFilter.html)|  | 
+| **body** | [**KnowledgeDocumentsAnswerFilter**](KnowledgeDocumentsAnswerFilter)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeAnswerDocumentsResponse**](KnowledgeAnswerDocumentsResponse.html)
+[**KnowledgeAnswerDocumentsResponse**](KnowledgeAnswerDocumentsResponse)
 
-<a name="postKnowledgeKnowledgebaseDocumentsBulkRemove"></a>
 
 # **postKnowledgeKnowledgebaseDocumentsBulkRemove**
 
 
-
-> [BulkResponse](BulkResponse.html) postKnowledgeKnowledgebaseDocumentsBulkRemove(knowledgeBaseId, body)
+> [BulkResponse](BulkResponse) postKnowledgeKnowledgebaseDocumentsBulkRemove(knowledgeBaseId, body)
 
 Bulk remove documents.
 
@@ -5197,21 +5081,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **body** | [**KnowledgeDocumentBulkRemoveRequest**](KnowledgeDocumentBulkRemoveRequest.html)|  | 
+| **body** | [**KnowledgeDocumentBulkRemoveRequest**](KnowledgeDocumentBulkRemoveRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**BulkResponse**](BulkResponse.html)
+[**BulkResponse**](BulkResponse)
 
-<a name="postKnowledgeKnowledgebaseDocumentsBulkUpdate"></a>
 
 # **postKnowledgeKnowledgebaseDocumentsBulkUpdate**
 
 
-
-> [BulkResponse](BulkResponse.html) postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId, body)
+> [BulkResponse](BulkResponse) postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId, body)
 
 Bulk update documents.
 
@@ -5262,18 +5144,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **body** | [**KnowledgeDocumentBulkUpdateRequest**](KnowledgeDocumentBulkUpdateRequest.html)|  | 
+| **body** | [**KnowledgeDocumentBulkUpdateRequest**](KnowledgeDocumentBulkUpdateRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**BulkResponse**](BulkResponse.html)
+[**BulkResponse**](BulkResponse)
 
-<a name="postKnowledgeKnowledgebaseDocumentsPresentations"></a>
 
 # **postKnowledgeKnowledgebaseDocumentsPresentations**
-
 
 
 > Void postKnowledgeKnowledgebaseDocumentsPresentations(knowledgeBaseId, body)
@@ -5324,7 +5204,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID. | 
-| **body** | [**KnowledgeDocumentPresentation**](KnowledgeDocumentPresentation.html)|  | [optional] 
+| **body** | [**KnowledgeDocumentPresentation**](KnowledgeDocumentPresentation)|  | [optional] 
 {: class="table-striped"}
 
 
@@ -5332,13 +5212,11 @@ try {
 
 null (empty response body)
 
-<a name="postKnowledgeKnowledgebaseDocumentsQuery"></a>
 
 # **postKnowledgeKnowledgebaseDocumentsQuery**
 
 
-
-> [KnowledgeDocumentQueryResponse](KnowledgeDocumentQueryResponse.html) postKnowledgeKnowledgebaseDocumentsQuery(knowledgeBaseId, expand, body)
+> [KnowledgeDocumentQueryResponse](KnowledgeDocumentQueryResponse) postKnowledgeKnowledgebaseDocumentsQuery(knowledgeBaseId, expand, body)
 
 Query for knowledge documents.
 
@@ -5388,22 +5266,20 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge Base ID | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Fields, if any, to expand for each document in the search result matching the query. | [optional]<br />**Values**: documentVariations, documentAlternatives, knowledgeBaseLanguageCode 
-| **body** | [**KnowledgeDocumentQuery**](KnowledgeDocumentQuery.html)|  | [optional] 
+| **expand** | [**List&lt;String&gt;**](String)| Fields, if any, to expand for each document in the search result matching the query. | [optional]<br />**Values**: documentVariations, documentAlternatives, knowledgeBaseLanguageCode 
+| **body** | [**KnowledgeDocumentQuery**](KnowledgeDocumentQuery)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeDocumentQueryResponse**](KnowledgeDocumentQueryResponse.html)
+[**KnowledgeDocumentQueryResponse**](KnowledgeDocumentQueryResponse)
 
-<a name="postKnowledgeKnowledgebaseDocumentsSearch"></a>
 
 # **postKnowledgeKnowledgebaseDocumentsSearch**
 
 
-
-> [KnowledgeDocumentSearch](KnowledgeDocumentSearch.html) postKnowledgeKnowledgebaseDocumentsSearch(knowledgeBaseId, expand, body)
+> [KnowledgeDocumentSearch](KnowledgeDocumentSearch) postKnowledgeKnowledgebaseDocumentsSearch(knowledgeBaseId, expand, body)
 
 Search the documents in a knowledge base.
 
@@ -5453,22 +5329,20 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| The ID of knowledge base containing the documents to query. | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Fields, if any, to expand for each document in the search result matching the query. | [optional]<br />**Values**: documentVariations, documentAlternatives, knowledgeBaseLanguageCode 
-| **body** | [**KnowledgeDocumentSearchRequest**](KnowledgeDocumentSearchRequest.html)|  | [optional] 
+| **expand** | [**List&lt;String&gt;**](String)| Fields, if any, to expand for each document in the search result matching the query. | [optional]<br />**Values**: documentVariations, documentAlternatives, knowledgeBaseLanguageCode 
+| **body** | [**KnowledgeDocumentSearchRequest**](KnowledgeDocumentSearchRequest)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeDocumentSearch**](KnowledgeDocumentSearch.html)
+[**KnowledgeDocumentSearch**](KnowledgeDocumentSearch)
 
-<a name="postKnowledgeKnowledgebaseDocumentsSearchSuggestions"></a>
 
 # **postKnowledgeKnowledgebaseDocumentsSearchSuggestions**
 
 
-
-> [KnowledgeDocumentSuggestion](KnowledgeDocumentSuggestion.html) postKnowledgeKnowledgebaseDocumentsSearchSuggestions(knowledgeBaseId, body)
+> [KnowledgeDocumentSuggestion](KnowledgeDocumentSuggestion) postKnowledgeKnowledgebaseDocumentsSearchSuggestions(knowledgeBaseId, body)
 
 Query the knowledge documents to provide suggestions for auto completion.
 
@@ -5517,21 +5391,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| The ID of knowledge base containing the documents to query. | 
-| **body** | [**KnowledgeDocumentSuggestionRequest**](KnowledgeDocumentSuggestionRequest.html)|  | [optional] 
+| **body** | [**KnowledgeDocumentSuggestionRequest**](KnowledgeDocumentSuggestionRequest)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeDocumentSuggestion**](KnowledgeDocumentSuggestion.html)
+[**KnowledgeDocumentSuggestion**](KnowledgeDocumentSuggestion)
 
-<a name="postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd"></a>
 
 # **postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd**
 
 
-
-> [BulkResponse](BulkResponse.html) postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(knowledgeBaseId, body)
+> [BulkResponse](BulkResponse) postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(knowledgeBaseId, body)
 
 Bulk add document versions.
 
@@ -5582,21 +5454,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **body** | [**KnowledgeDocumentBulkVersionAddRequest**](KnowledgeDocumentBulkVersionAddRequest.html)|  | 
+| **body** | [**KnowledgeDocumentBulkVersionAddRequest**](KnowledgeDocumentBulkVersionAddRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**BulkResponse**](BulkResponse.html)
+[**BulkResponse**](BulkResponse)
 
-<a name="postKnowledgeKnowledgebaseExportJobs"></a>
 
 # **postKnowledgeKnowledgebaseExportJobs**
 
 
-
-> [KnowledgeExportJobResponse](KnowledgeExportJobResponse.html) postKnowledgeKnowledgebaseExportJobs(knowledgeBaseId, body)
+> [KnowledgeExportJobResponse](KnowledgeExportJobResponse) postKnowledgeKnowledgebaseExportJobs(knowledgeBaseId, body)
 
 Create export job
 
@@ -5645,21 +5515,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **body** | [**KnowledgeExportJobRequest**](KnowledgeExportJobRequest.html)|  | 
+| **body** | [**KnowledgeExportJobRequest**](KnowledgeExportJobRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeExportJobResponse**](KnowledgeExportJobResponse.html)
+[**KnowledgeExportJobResponse**](KnowledgeExportJobResponse)
 
-<a name="postKnowledgeKnowledgebaseImportJobs"></a>
 
 # **postKnowledgeKnowledgebaseImportJobs**
 
 
-
-> [KnowledgeImportJobResponse](KnowledgeImportJobResponse.html) postKnowledgeKnowledgebaseImportJobs(knowledgeBaseId, body)
+> [KnowledgeImportJobResponse](KnowledgeImportJobResponse) postKnowledgeKnowledgebaseImportJobs(knowledgeBaseId, body)
 
 Create import job
 
@@ -5708,21 +5576,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **body** | [**KnowledgeImportJobRequest**](KnowledgeImportJobRequest.html)|  | 
+| **body** | [**KnowledgeImportJobRequest**](KnowledgeImportJobRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeImportJobResponse**](KnowledgeImportJobResponse.html)
+[**KnowledgeImportJobResponse**](KnowledgeImportJobResponse)
 
-<a name="postKnowledgeKnowledgebaseLabels"></a>
 
 # **postKnowledgeKnowledgebaseLabels**
 
 
-
-> [LabelResponse](LabelResponse.html) postKnowledgeKnowledgebaseLabels(knowledgeBaseId, body)
+> [LabelResponse](LabelResponse) postKnowledgeKnowledgebaseLabels(knowledgeBaseId, body)
 
 Create new label
 
@@ -5771,21 +5637,22 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **body** | [**LabelCreateRequest**](LabelCreateRequest.html)|  | 
+| **body** | [**LabelCreateRequest**](LabelCreateRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**LabelResponse**](LabelResponse.html)
+[**LabelResponse**](LabelResponse)
 
-<a name="postKnowledgeKnowledgebaseLanguageCategories"></a>
 
 # **postKnowledgeKnowledgebaseLanguageCategories**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [KnowledgeExtendedCategory](KnowledgeExtendedCategory.html) postKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, body)
+> [KnowledgeExtendedCategory](KnowledgeExtendedCategory) postKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, body)
 
 Create new category
 
@@ -5836,21 +5703,22 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
 | **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA 
-| **body** | [**KnowledgeCategoryRequest**](KnowledgeCategoryRequest.html)|  | 
+| **body** | [**KnowledgeCategoryRequest**](KnowledgeCategoryRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeExtendedCategory**](KnowledgeExtendedCategory.html)
+[**KnowledgeExtendedCategory**](KnowledgeExtendedCategory)
 
-<a name="postKnowledgeKnowledgebaseLanguageDocumentUploads"></a>
 
 # **postKnowledgeKnowledgebaseLanguageDocumentUploads**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [KnowledgeDocumentContentUpload](KnowledgeDocumentContentUpload.html) postKnowledgeKnowledgebaseLanguageDocumentUploads(documentId, knowledgeBaseId, languageCode, body)
+> [KnowledgeDocumentContentUpload](KnowledgeDocumentContentUpload) postKnowledgeKnowledgebaseLanguageDocumentUploads(documentId, knowledgeBaseId, languageCode, body)
 
 Upload Article Content
 
@@ -5905,21 +5773,22 @@ try {
 | **documentId** | **String**| Document ID | 
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
 | **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA 
-| **body** | [**KnowledgeDocumentContentUpload**](KnowledgeDocumentContentUpload.html)|  | 
+| **body** | [**KnowledgeDocumentContentUpload**](KnowledgeDocumentContentUpload)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeDocumentContentUpload**](KnowledgeDocumentContentUpload.html)
+[**KnowledgeDocumentContentUpload**](KnowledgeDocumentContentUpload)
 
-<a name="postKnowledgeKnowledgebaseLanguageDocuments"></a>
 
 # **postKnowledgeKnowledgebaseLanguageDocuments**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [KnowledgeDocument](KnowledgeDocument.html) postKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body)
+> [KnowledgeDocument](KnowledgeDocument) postKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body)
 
 Create document
 
@@ -5970,21 +5839,22 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
 | **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA 
-| **body** | [**KnowledgeDocumentRequest**](KnowledgeDocumentRequest.html)|  | 
+| **body** | [**KnowledgeDocumentRequest**](KnowledgeDocumentRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeDocument**](KnowledgeDocument.html)
+[**KnowledgeDocument**](KnowledgeDocument)
 
-<a name="postKnowledgeKnowledgebaseLanguageDocumentsImports"></a>
 
 # **postKnowledgeKnowledgebaseLanguageDocumentsImports**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [KnowledgeImport](KnowledgeImport.html) postKnowledgeKnowledgebaseLanguageDocumentsImports(knowledgeBaseId, languageCode, body)
+> [KnowledgeImport](KnowledgeImport) postKnowledgeKnowledgebaseLanguageDocumentsImports(knowledgeBaseId, languageCode, body)
 
 Create import operation
 
@@ -6035,21 +5905,22 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
 | **languageCode** | **String**| Language code, format: iso2-LOCALE | [default to null]<br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA 
-| **body** | [**KnowledgeImport**](KnowledgeImport.html)|  | 
+| **body** | [**KnowledgeImport**](KnowledgeImport)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeImport**](KnowledgeImport.html)
+[**KnowledgeImport**](KnowledgeImport)
 
-<a name="postKnowledgeKnowledgebaseLanguageTrainingPromote"></a>
 
 # **postKnowledgeKnowledgebaseLanguageTrainingPromote**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [KnowledgeTraining](KnowledgeTraining.html) postKnowledgeKnowledgebaseLanguageTrainingPromote(knowledgeBaseId, languageCode, trainingId)
+> [KnowledgeTraining](KnowledgeTraining) postKnowledgeKnowledgebaseLanguageTrainingPromote(knowledgeBaseId, languageCode, trainingId)
 
 Promote trained documents from draft state to active.
 
@@ -6106,15 +5977,16 @@ try {
 
 ### Return type
 
-[**KnowledgeTraining**](KnowledgeTraining.html)
+[**KnowledgeTraining**](KnowledgeTraining)
 
-<a name="postKnowledgeKnowledgebaseLanguageTrainings"></a>
 
 # **postKnowledgeKnowledgebaseLanguageTrainings**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [KnowledgeTraining](KnowledgeTraining.html) postKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode)
+> [KnowledgeTraining](KnowledgeTraining) postKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode)
 
 Trigger training
 
@@ -6169,12 +6041,10 @@ try {
 
 ### Return type
 
-[**KnowledgeTraining**](KnowledgeTraining.html)
+[**KnowledgeTraining**](KnowledgeTraining)
 
-<a name="postKnowledgeKnowledgebaseParseJobImport"></a>
 
 # **postKnowledgeKnowledgebaseParseJobImport**
-
 
 
 > Void postKnowledgeKnowledgebaseParseJobImport(knowledgeBaseId, parseJobId, body)
@@ -6229,7 +6099,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
 | **parseJobId** | **String**| Parse job ID | 
-| **body** | [**KnowledgeParseJobRequestImport**](KnowledgeParseJobRequestImport.html)|  | 
+| **body** | [**KnowledgeParseJobRequestImport**](KnowledgeParseJobRequestImport)|  | 
 {: class="table-striped"}
 
 
@@ -6237,13 +6107,11 @@ try {
 
 null (empty response body)
 
-<a name="postKnowledgeKnowledgebaseParseJobs"></a>
 
 # **postKnowledgeKnowledgebaseParseJobs**
 
 
-
-> [KnowledgeParseJobResponse](KnowledgeParseJobResponse.html) postKnowledgeKnowledgebaseParseJobs(knowledgeBaseId, body)
+> [KnowledgeParseJobResponse](KnowledgeParseJobResponse) postKnowledgeKnowledgebaseParseJobs(knowledgeBaseId, body)
 
 Create parse job
 
@@ -6294,21 +6162,22 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **body** | [**KnowledgeParseJobRequest**](KnowledgeParseJobRequest.html)|  | 
+| **body** | [**KnowledgeParseJobRequest**](KnowledgeParseJobRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeParseJobResponse**](KnowledgeParseJobResponse.html)
+[**KnowledgeParseJobResponse**](KnowledgeParseJobResponse)
 
-<a name="postKnowledgeKnowledgebaseSearch"></a>
 
 # **postKnowledgeKnowledgebaseSearch**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [KnowledgeSearchResponse](KnowledgeSearchResponse.html) postKnowledgeKnowledgebaseSearch(knowledgeBaseId, body)
+> [KnowledgeSearchResponse](KnowledgeSearchResponse) postKnowledgeKnowledgebaseSearch(knowledgeBaseId, body)
 
 Search Documents
 
@@ -6357,21 +6226,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **body** | [**KnowledgeSearchRequest**](KnowledgeSearchRequest.html)|  | [optional] 
+| **body** | [**KnowledgeSearchRequest**](KnowledgeSearchRequest)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeSearchResponse**](KnowledgeSearchResponse.html)
+[**KnowledgeSearchResponse**](KnowledgeSearchResponse)
 
-<a name="postKnowledgeKnowledgebaseUploadsUrlsJobs"></a>
 
 # **postKnowledgeKnowledgebaseUploadsUrlsJobs**
 
 
-
-> [CreateUploadSourceUrlJobResponse](CreateUploadSourceUrlJobResponse.html) postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body)
+> [CreateUploadSourceUrlJobResponse](CreateUploadSourceUrlJobResponse) postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body)
 
 Create content upload from URL job
 
@@ -6422,21 +6289,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **body** | [**CreateUploadSourceUrlJobRequest**](CreateUploadSourceUrlJobRequest.html)| uploadRequest | 
+| **body** | [**CreateUploadSourceUrlJobRequest**](CreateUploadSourceUrlJobRequest)| uploadRequest | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CreateUploadSourceUrlJobResponse**](CreateUploadSourceUrlJobResponse.html)
+[**CreateUploadSourceUrlJobResponse**](CreateUploadSourceUrlJobResponse)
 
-<a name="postKnowledgeKnowledgebases"></a>
 
 # **postKnowledgeKnowledgebases**
 
 
-
-> [KnowledgeBase](KnowledgeBase.html) postKnowledgeKnowledgebases(body)
+> [KnowledgeBase](KnowledgeBase) postKnowledgeKnowledgebases(body)
 
 Create new knowledge base
 
@@ -6483,11 +6348,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**KnowledgeBaseCreateRequest**](KnowledgeBaseCreateRequest.html)|  | 
+| **body** | [**KnowledgeBaseCreateRequest**](KnowledgeBaseCreateRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**KnowledgeBase**](KnowledgeBase.html)
+[**KnowledgeBase**](KnowledgeBase)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

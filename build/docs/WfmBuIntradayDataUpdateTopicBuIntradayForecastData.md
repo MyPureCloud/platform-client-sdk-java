@@ -1,16 +1,14 @@
----
-title: WfmBuIntradayDataUpdateTopicBuIntradayForecastData
----
-## WfmBuIntradayDataUpdateTopicBuIntradayForecastData
+# WfmBuIntradayDataUpdateTopicBuIntradayForecastData
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **offered** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-| **averageHandleTimeSeconds** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **offered** | [**BigDecimal**](BigDecimal) |  |  [optional] |
+| **averageHandleTimeSeconds** | [**BigDecimal**](BigDecimal) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

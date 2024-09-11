@@ -1,24 +1,18 @@
----
-title: QueueConversationVideoEventTopicRecentTransfer
----
-## QueueConversationVideoEventTopicRecentTransfer
+# QueueConversationVideoEventTopicRecentTransfer
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The id of the command. |  [optional] |
-| **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
-| **dateIssued** | <!----><!---->[**Date**](Date.html)<!----> | The date/time that this command was issued. |  [optional] |
-| **initiator** | <!----><!---->[**QueueConversationVideoEventTopicInitiator**](QueueConversationVideoEventTopicInitiator.html)<!----> |  |  [optional] |
-| **modifiedBy** | <!----><!---->[**QueueConversationVideoEventTopicModifiedBy**](QueueConversationVideoEventTopicModifiedBy.html)<!----> |  |  [optional] |
-| **destination** | <!----><!---->[**QueueConversationVideoEventTopicDestination**](QueueConversationVideoEventTopicDestination.html)<!----> |  |  [optional] |
-| **transferType** | [**TransferTypeEnum**](#TransferTypeEnum)<!----> | The type of transfer to perform. |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The id of the command. |  [optional] |
+| **state** | [**StateEnum**](#Enum--StateEnum) |  |  [optional] |
+| **dateIssued** | [**Date**](Date) | The date/time that this command was issued. |  [optional] |
+| **initiator** | [**QueueConversationVideoEventTopicInitiator**](QueueConversationVideoEventTopicInitiator) |  |  [optional] |
+| **modifiedBy** | [**QueueConversationVideoEventTopicModifiedBy**](QueueConversationVideoEventTopicModifiedBy) |  |  [optional] |
+| **destination** | [**QueueConversationVideoEventTopicDestination**](QueueConversationVideoEventTopicDestination) |  |  [optional] |
+| **transferType** | [**TransferTypeEnum**](#Enum--TransferTypeEnum) | The type of transfer to perform. |  [optional] |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -32,10 +26,7 @@ title: QueueConversationVideoEventTopicRecentTransfer
 | FAILED | &quot;failed&quot; | 
 | TIMEOUT | &quot;timeout&quot; | 
 | UNKNOWN | &quot;unknown&quot; | 
-{: class="table table-striped"}
 
-
-<a name="TransferTypeEnum"></a>
 
 ## Enum: TransferTypeEnum
 
@@ -44,7 +35,8 @@ title: QueueConversationVideoEventTopicRecentTransfer
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ATTENDED | &quot;attended&quot; | 
 | UNATTENDED | &quot;unattended&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

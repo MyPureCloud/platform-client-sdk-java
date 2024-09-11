@@ -1,20 +1,14 @@
----
-title: ConversationEventVideo
----
-## ConversationEventVideo
+# ConversationEventVideo
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Describes the type of Video event. |  |
-| **offeringId** | <!----><!---->**String**<!----> | The Video offering ID. |  [optional] |
-| **jwt** | <!----><!---->**String**<!----> | The Video offering JWT token. |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Describes the type of Video event. |  |
+| **offeringId** | **String** | The Video offering ID. |  [optional] |
+| **jwt** | **String** | The Video offering JWT token. |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -25,7 +19,8 @@ title: ConversationEventVideo
 | OFFERINGEXPIRED | &quot;OfferingExpired&quot; | 
 | OFFERINGACCEPTED | &quot;OfferingAccepted&quot; | 
 | OFFERINGREJECTED | &quot;OfferingRejected&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

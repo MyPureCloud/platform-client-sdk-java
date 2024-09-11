@@ -1,16 +1,14 @@
----
-title: AtzmTimeSlot
----
-## AtzmTimeSlot
+# AtzmTimeSlot
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **earliestCallableTime** | <!----><!---->**String**<!----> | The earliest time to dial a contact. Valid format is HH:mm |  [optional] |
-| **latestCallableTime** | <!----><!---->**String**<!----> | The latest time to dial a contact. Valid format is HH:mm |  [optional] |
-{: class="table table-striped"}
+| **earliestCallableTime** | **String** | The earliest time to dial a contact. Valid format is HH:mm |  [optional] |
+| **latestCallableTime** | **String** | The latest time to dial a contact. Valid format is HH:mm |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

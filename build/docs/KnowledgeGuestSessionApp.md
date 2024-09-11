@@ -1,19 +1,13 @@
----
-title: KnowledgeGuestSessionApp
----
-## KnowledgeGuestSessionApp
+# KnowledgeGuestSessionApp
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **deploymentId** | <!----><!---->**String**<!----> | App deployment ID. |  |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | App type. |  |
-{: class="table table-striped"}
+| **deploymentId** | **String** | App deployment ID. |  |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | App type. |  |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -22,7 +16,8 @@ title: KnowledgeGuestSessionApp
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | MESSENGERKNOWLEDGEAPP | &quot;MessengerKnowledgeApp&quot; | 
 | SUPPORTCENTER | &quot;SupportCenter&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

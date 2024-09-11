@@ -1,15 +1,13 @@
----
-title: AgentCopilotAggregateQueryResponse
----
-## AgentCopilotAggregateQueryResponse
+# AgentCopilotAggregateQueryResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **results** | <!----><!---->[**List&lt;AgentCopilotAggregateDataContainer&gt;**](AgentCopilotAggregateDataContainer.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **results** | [**List&lt;AgentCopilotAggregateDataContainer&gt;**](AgentCopilotAggregateDataContainer) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

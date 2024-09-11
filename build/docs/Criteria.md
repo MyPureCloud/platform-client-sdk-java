@@ -1,21 +1,15 @@
----
-title: Criteria
----
-## Criteria
+# Criteria
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **key** | <!----><!---->**String**<!----> | The criteria key. |  |
-| **values** | <!----><!---->**List&lt;String&gt;**<!----> | The criteria values. |  |
-| **shouldIgnoreCase** | <!----><!---->**Boolean**<!----> | Should criteria be case insensitive. |  |
-| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | The comparison operator. |  |
-{: class="table table-striped"}
+| **key** | **String** | The criteria key. |  |
+| **values** | **List&lt;String&gt;** | The criteria values. |  |
+| **shouldIgnoreCase** | **Boolean** | Should criteria be case insensitive. |  |
+| **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | The comparison operator. |  |
 
-
-<a name="OperatorEnum"></a>
 
 ## Enum: OperatorEnum
 
@@ -34,7 +28,8 @@ title: Criteria
 | LESSTHANOREQUAL | &quot;lessThanOrEqual&quot; | 
 | STARTSWITH | &quot;startsWith&quot; | 
 | ENDSWITH | &quot;endsWith&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

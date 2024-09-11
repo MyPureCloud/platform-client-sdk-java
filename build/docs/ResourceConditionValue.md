@@ -1,19 +1,13 @@
----
-title: ResourceConditionValue
----
-## ResourceConditionValue
+# ResourceConditionValue
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-| **value** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
+| **value** | **String** |  |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -24,7 +18,8 @@ title: ResourceConditionValue
 | VARIABLE | &quot;VARIABLE&quot; | 
 | USER | &quot;USER&quot; | 
 | QUEUE | &quot;QUEUE&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

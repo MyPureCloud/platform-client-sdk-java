@@ -1,19 +1,13 @@
----
-title: CallbackIdentifier
----
-## CallbackIdentifier
+# CallbackIdentifier
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of the associated callback participant |  |
-| **id** | <!----><!---->**String**<!----> | The identifier of the callback |  |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of the associated callback participant |  |
+| **id** | **String** | The identifier of the callback |  |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -22,7 +16,8 @@ title: CallbackIdentifier
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ACD | &quot;ACD&quot; | 
 | EXTERNAL | &quot;EXTERNAL&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

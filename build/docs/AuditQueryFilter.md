@@ -1,19 +1,13 @@
----
-title: AuditQueryFilter
----
-## AuditQueryFilter
+# AuditQueryFilter
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **property** | [**PropertyEnum**](#PropertyEnum)<!----> | Name of the property to filter. |  |
-| **value** | <!----><!---->**String**<!----> | Value of the property to filter. |  |
-{: class="table table-striped"}
+| **property** | [**PropertyEnum**](#Enum--PropertyEnum) | Name of the property to filter. |  |
+| **value** | **String** | Value of the property to filter. |  |
 
-
-<a name="PropertyEnum"></a>
 
 ## Enum: PropertyEnum
 
@@ -26,7 +20,8 @@ title: AuditQueryFilter
 | ACTION | &quot;Action&quot; | 
 | ENTITYTYPE | &quot;EntityType&quot; | 
 | ENTITYID | &quot;EntityId&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,16 +1,14 @@
----
-title: ExternalContactsContactChangedTopicTicker
----
-## ExternalContactsContactChangedTopicTicker
+# ExternalContactsContactChangedTopicTicker
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **symbol** | <!----><!---->**String**<!----> |  |  [optional] |
-| **exchange** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **symbol** | **String** |  |  [optional] |
+| **exchange** | **String** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

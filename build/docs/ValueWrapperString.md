@@ -1,15 +1,13 @@
----
-title: ValueWrapperString
----
-## ValueWrapperString
+# ValueWrapperString
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **value** | <!----><!---->**String**<!----> | The value for the associated field |  [optional] |
-{: class="table table-striped"}
+| **value** | **String** | The value for the associated field |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

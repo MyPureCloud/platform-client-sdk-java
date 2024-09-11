@@ -1,19 +1,13 @@
----
-title: ConversationReason
----
-## ConversationReason
+# ConversationReason
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **code** | [**CodeEnum**](#CodeEnum)<!----> | The reason code for the failed message receipt. |  [optional] |
-| **message** | <!----><!---->**String**<!----> | Description of the reason for the failed message receipt. |  |
-{: class="table table-striped"}
+| **code** | [**CodeEnum**](#Enum--CodeEnum) | The reason code for the failed message receipt. |  [optional] |
+| **message** | **String** | Description of the reason for the failed message receipt. |  |
 
-
-<a name="CodeEnum"></a>
 
 ## Enum: CodeEnum
 
@@ -32,7 +26,8 @@ title: ConversationReason
 | MEDIATYPENOTALLOWED | &quot;MediaTypeNotAllowed&quot; | 
 | INVALIDMEDIACONTENTLENGTH | &quot;InvalidMediaContentLength&quot; | 
 | RECIPIENTOPTEDOUT | &quot;RecipientOptedOut&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

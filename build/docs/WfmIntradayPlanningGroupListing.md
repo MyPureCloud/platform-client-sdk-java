@@ -1,19 +1,13 @@
----
-title: WfmIntradayPlanningGroupListing
----
-## WfmIntradayPlanningGroupListing
+# WfmIntradayPlanningGroupListing
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | <!----><!---->[**List&lt;ForecastPlanningGroupResponse&gt;**](ForecastPlanningGroupResponse.html)<!----> |  |  [optional] |
-| **noDataReason** | [**NoDataReasonEnum**](#NoDataReasonEnum)<!----> | The reason there was no data for the request |  [optional] |
-{: class="table table-striped"}
+| **entities** | [**List&lt;ForecastPlanningGroupResponse&gt;**](ForecastPlanningGroupResponse) |  |  [optional] |
+| **noDataReason** | [**NoDataReasonEnum**](#Enum--NoDataReasonEnum) | The reason there was no data for the request |  [optional] |
 
-
-<a name="NoDataReasonEnum"></a>
 
 ## Enum: NoDataReasonEnum
 
@@ -22,7 +16,8 @@ title: WfmIntradayPlanningGroupListing
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | NOPUBLISHEDSCHEDULE | &quot;NoPublishedSchedule&quot; | 
 | NOSOURCEFORECAST | &quot;NoSourceForecast&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

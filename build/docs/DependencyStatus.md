@@ -1,27 +1,21 @@
----
-title: DependencyStatus
----
-## DependencyStatus
+# DependencyStatus
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **user** | <!----><!---->[**User**](User.html)<!----> | User that initiated the build. |  [optional] |
-| **client** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | OAuth client that initiated the build. |  [optional] |
-| **buildId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **dateStarted** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **dateCompleted** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
-| **failedObjects** | <!----><!---->[**List&lt;FailedObject&gt;**](FailedObject.html)<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **user** | [**User**](User) | User that initiated the build. |  [optional] |
+| **client** | [**DomainEntityRef**](DomainEntityRef) | OAuth client that initiated the build. |  [optional] |
+| **buildId** | **String** |  |  [optional] |
+| **dateStarted** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **dateCompleted** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
+| **failedObjects** | [**List&lt;FailedObject&gt;**](FailedObject) |  |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -33,7 +27,8 @@ title: DependencyStatus
 | NOTBUILT | &quot;NOTBUILT&quot; | 
 | OPERATIONAL | &quot;OPERATIONAL&quot; | 
 | OPERATIONALNEEDSREBUILD | &quot;OPERATIONALNEEDSREBUILD&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

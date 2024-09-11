@@ -1,32 +1,26 @@
----
-title: KeyPerformanceIndicator
----
-## KeyPerformanceIndicator
+# KeyPerformanceIndicator
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> | The name of the Key Performance Indicator. |  [optional] |
-| **optimizationType** | [**OptimizationTypeEnum**](#OptimizationTypeEnum)<!----> | The optimization type of the Key Performance Indicator. |  [optional] |
-| **problemType** | [**ProblemTypeEnum**](#ProblemTypeEnum)<!----> | The problem type of the Key Performance Indicator. |  [optional] |
-| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | DateTime indicating when the Key Performance Indicator was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | DateTime indicating when the Key Performance Indicator was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **description** | <!----><!---->**String**<!----> | The description of the Key Performance Indicator. |  [optional] |
-| **kpiType** | [**KpiTypeEnum**](#KpiTypeEnum)<!----> | The type of Key Performance Indicator. |  [optional] |
-| **source** | [**SourceEnum**](#SourceEnum)<!----> | Source of values for Key Performance Indicator. |  [optional] |
-| **wrapUpCodeConfig** | <!----><!---->[**WrapUpCodeConfig**](WrapUpCodeConfig.html)<!----> | Defines what wrap up codes are mapped to Key Performance Indicator. |  [optional] |
-| **outcomeConfig** | <!----><!---->[**OutcomeConfig**](OutcomeConfig.html)<!----> | Defines what outcome ids are mapped to Key Performance Indicator. |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> | The status of the Key Performance Indicator. |  [optional] |
-| **kpiGroup** | [**KpiGroupEnum**](#KpiGroupEnum)<!----> | The group the Key Performance Indicator belongs to. |  [optional] |
-| **queues** | <!----><!---->**List&lt;String&gt;**<!----> | Queue IDs on which KPI specification is used. |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** | The name of the Key Performance Indicator. |  [optional] |
+| **optimizationType** | [**OptimizationTypeEnum**](#Enum--OptimizationTypeEnum) | The optimization type of the Key Performance Indicator. |  [optional] |
+| **problemType** | [**ProblemTypeEnum**](#Enum--ProblemTypeEnum) | The problem type of the Key Performance Indicator. |  [optional] |
+| **dateCreated** | [**Date**](Date) | DateTime indicating when the Key Performance Indicator was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **dateModified** | [**Date**](Date) | DateTime indicating when the Key Performance Indicator was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **description** | **String** | The description of the Key Performance Indicator. |  [optional] |
+| **kpiType** | [**KpiTypeEnum**](#Enum--KpiTypeEnum) | The type of Key Performance Indicator. |  [optional] |
+| **source** | [**SourceEnum**](#Enum--SourceEnum) | Source of values for Key Performance Indicator. |  [optional] |
+| **wrapUpCodeConfig** | [**WrapUpCodeConfig**](WrapUpCodeConfig) | Defines what wrap up codes are mapped to Key Performance Indicator. |  [optional] |
+| **outcomeConfig** | [**OutcomeConfig**](OutcomeConfig) | Defines what outcome ids are mapped to Key Performance Indicator. |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the Key Performance Indicator. |  [optional] |
+| **kpiGroup** | [**KpiGroupEnum**](#Enum--KpiGroupEnum) | The group the Key Performance Indicator belongs to. |  [optional] |
+| **queues** | **List&lt;String&gt;** | Queue IDs on which KPI specification is used. |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="OptimizationTypeEnum"></a>
 
 ## Enum: OptimizationTypeEnum
 
@@ -35,10 +29,7 @@ title: KeyPerformanceIndicator
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | MAXIMIZATION | &quot;Maximization&quot; | 
 | MINIMIZATION | &quot;Minimization&quot; | 
-{: class="table table-striped"}
 
-
-<a name="ProblemTypeEnum"></a>
 
 ## Enum: ProblemTypeEnum
 
@@ -47,10 +38,7 @@ title: KeyPerformanceIndicator
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | CLASSIFICATION | &quot;Classification&quot; | 
 | REGRESSION | &quot;Regression&quot; | 
-{: class="table table-striped"}
 
-
-<a name="KpiTypeEnum"></a>
 
 ## Enum: KpiTypeEnum
 
@@ -62,10 +50,7 @@ title: KeyPerformanceIndicator
 | RETENTION | &quot;Retention&quot; | 
 | SALESVALUE | &quot;SalesValue&quot; | 
 | HANDLETIME | &quot;HandleTime&quot; | 
-{: class="table table-striped"}
 
-
-<a name="SourceEnum"></a>
 
 ## Enum: SourceEnum
 
@@ -75,10 +60,7 @@ title: KeyPerformanceIndicator
 | WRAPUPCODE | &quot;WrapUpCode&quot; | 
 | OUTCOME | &quot;Outcome&quot; | 
 | NONE | &quot;None&quot; | 
-{: class="table table-striped"}
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -87,10 +69,7 @@ title: KeyPerformanceIndicator
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ENABLED | &quot;Enabled&quot; | 
 | DISABLED | &quot;Disabled&quot; | 
-{: class="table table-striped"}
 
-
-<a name="KpiGroupEnum"></a>
 
 ## Enum: KpiGroupEnum
 
@@ -99,7 +78,8 @@ title: KeyPerformanceIndicator
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | STANDARD | &quot;Standard&quot; | 
 | CUSTOM | &quot;Custom&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

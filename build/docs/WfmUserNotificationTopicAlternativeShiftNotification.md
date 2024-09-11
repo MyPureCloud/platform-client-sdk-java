@@ -1,25 +1,19 @@
----
-title: WfmUserNotificationTopicAlternativeShiftNotification
----
-## WfmUserNotificationTopicAlternativeShiftNotification
+# WfmUserNotificationTopicAlternativeShiftNotification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **weekDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **granularity** | [**GranularityEnum**](#GranularityEnum)<!----> |  |  [optional] |
-| **newState** | [**NewStateEnum**](#NewStateEnum)<!----> |  |  [optional] |
-| **initiatingUser** | <!----><!---->[**WfmUserNotificationTopicUserReference**](WfmUserNotificationTopicUserReference.html)<!----> |  |  [optional] |
-| **initiatingShiftDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **receivingUser** | <!----><!---->[**WfmUserNotificationTopicUserReference**](WfmUserNotificationTopicUserReference.html)<!----> |  |  [optional] |
-| **receivingShiftDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **weekDate** | [**Date**](Date) |  |  [optional] |
+| **granularity** | [**GranularityEnum**](#Enum--GranularityEnum) |  |  [optional] |
+| **newState** | [**NewStateEnum**](#Enum--NewStateEnum) |  |  [optional] |
+| **initiatingUser** | [**WfmUserNotificationTopicUserReference**](WfmUserNotificationTopicUserReference) |  |  [optional] |
+| **initiatingShiftDate** | [**Date**](Date) |  |  [optional] |
+| **receivingUser** | [**WfmUserNotificationTopicUserReference**](WfmUserNotificationTopicUserReference) |  |  [optional] |
+| **receivingShiftDate** | [**Date**](Date) |  |  [optional] |
 
-
-<a name="GranularityEnum"></a>
 
 ## Enum: GranularityEnum
 
@@ -28,10 +22,7 @@ title: WfmUserNotificationTopicAlternativeShiftNotification
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | DAILY | &quot;Daily&quot; | 
 | WEEKLY | &quot;Weekly&quot; | 
-{: class="table table-striped"}
 
-
-<a name="NewStateEnum"></a>
 
 ## Enum: NewStateEnum
 
@@ -43,7 +34,8 @@ title: WfmUserNotificationTopicAlternativeShiftNotification
 | APPROVED | &quot;Approved&quot; | 
 | DENIED | &quot;Denied&quot; | 
 | CANCELED | &quot;Canceled&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

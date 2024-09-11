@@ -1,23 +1,17 @@
----
-title: WfmUserNotificationTopicTimeOffRequestNotification
----
-## WfmUserNotificationTopicTimeOffRequestNotification
+# WfmUserNotificationTopicTimeOffRequestNotification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **timeOffRequestId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **user** | <!----><!---->[**WfmUserNotificationTopicUserReference**](WfmUserNotificationTopicUserReference.html)<!----> |  |  [optional] |
-| **isFullDayRequest** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
-| **partialDayStartDateTimes** | <!----><!---->[**List&lt;Date&gt;**](Date.html)<!----> |  |  [optional] |
-| **fullDayManagementUnitDates** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **timeOffRequestId** | **String** |  |  [optional] |
+| **user** | [**WfmUserNotificationTopicUserReference**](WfmUserNotificationTopicUserReference) |  |  [optional] |
+| **isFullDayRequest** | **Boolean** |  |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
+| **partialDayStartDateTimes** | [**List&lt;Date&gt;**](Date) |  |  [optional] |
+| **fullDayManagementUnitDates** | **List&lt;String&gt;** |  |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -28,7 +22,8 @@ title: WfmUserNotificationTopicTimeOffRequestNotification
 | APPROVED | &quot;APPROVED&quot; | 
 | DENIED | &quot;DENIED&quot; | 
 | CANCELED | &quot;CANCELED&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

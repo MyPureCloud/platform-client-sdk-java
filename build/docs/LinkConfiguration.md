@@ -1,15 +1,13 @@
----
-title: LinkConfiguration
----
-## LinkConfiguration
+# LinkConfiguration
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **uriTemplate** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **uriTemplate** | **String** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,19 +1,13 @@
----
-title: WorkPlanValidationMessageArgument
----
-## WorkPlanValidationMessageArgument
+# WorkPlanValidationMessageArgument
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of the argument associated with violation messages |  [optional] |
-| **value** | <!----><!---->**String**<!----> | The value of the argument |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of the argument associated with violation messages |  [optional] |
+| **value** | **String** | The value of the argument |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -42,7 +36,8 @@ title: WorkPlanValidationMessageArgument
 | WEEKLYPAIDTIMEMINUTES | &quot;WeeklyPaidTimeMinutes&quot; | 
 | WEEKS | &quot;Weeks&quot; | 
 | WORKTIMEMINUTES | &quot;WorkTimeMinutes&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

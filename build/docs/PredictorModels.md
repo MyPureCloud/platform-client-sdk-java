@@ -1,16 +1,14 @@
----
-title: PredictorModels
----
-## PredictorModels
+# PredictorModels
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | <!----><!---->[**List&lt;PredictorModel&gt;**](PredictorModel.html)<!----> |  |  [optional] |
-| **predictorModels** | <!----><!---->[**List&lt;PredictorModel&gt;**](PredictorModel.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **entities** | [**List&lt;PredictorModel&gt;**](PredictorModel) |  |  [optional] |
+| **predictorModels** | [**List&lt;PredictorModel&gt;**](PredictorModel) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

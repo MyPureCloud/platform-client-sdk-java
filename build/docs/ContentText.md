@@ -1,19 +1,13 @@
----
-title: ContentText
----
-## ContentText
+# ContentText
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Type of text content. |  [optional] |
-| **body** | <!----><!---->**String**<!----> | Text to be shown for this content element. |  |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Type of text content. |  [optional] |
+| **body** | **String** | Text to be shown for this content element. |  |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -21,7 +15,8 @@ title: ContentText
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | TEXT | &quot;Text&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

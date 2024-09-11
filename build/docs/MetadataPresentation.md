@@ -1,16 +1,14 @@
----
-title: MetadataPresentation
----
-## MetadataPresentation
+# MetadataPresentation
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **title** | <!----><!---->**String**<!----> | title for a set of data to be gathered |  [optional] |
-| **schema** | <!----><!---->[**MetadataSchema**](MetadataSchema.html)<!----> | description of the contents of the data gathering interface |  [optional] |
-{: class="table table-striped"}
+| **title** | **String** | title for a set of data to be gathered |  [optional] |
+| **schema** | [**MetadataSchema**](MetadataSchema) | description of the contents of the data gathering interface |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

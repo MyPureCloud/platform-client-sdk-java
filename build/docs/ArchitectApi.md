@@ -1,159 +1,154 @@
----
-title: ArchitectApi
----
-## ArchitectApi
+# ArchitectApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteArchitectEmergencygroup**](ArchitectApi.html#deleteArchitectEmergencygroup) | Deletes a emergency group by ID |
-| [**deleteArchitectGrammar**](ArchitectApi.html#deleteArchitectGrammar) | Delete a grammar. |
-| [**deleteArchitectGrammarLanguage**](ArchitectApi.html#deleteArchitectGrammarLanguage) | Delete specified grammar language |
-| [**deleteArchitectGrammarLanguageFilesDtmf**](ArchitectApi.html#deleteArchitectGrammarLanguageFilesDtmf) | Clear the DTMF mode file for the grammar language if there is one |
-| [**deleteArchitectGrammarLanguageFilesVoice**](ArchitectApi.html#deleteArchitectGrammarLanguageFilesVoice) | Clear the voice mode file for the grammar language if there is one |
-| [**deleteArchitectIvr**](ArchitectApi.html#deleteArchitectIvr) | Delete an IVR Config. |
-| [**deleteArchitectPrompt**](ArchitectApi.html#deleteArchitectPrompt) | Delete specified user prompt |
-| [**deleteArchitectPromptResource**](ArchitectApi.html#deleteArchitectPromptResource) | Delete specified user prompt resource |
-| [**deleteArchitectPromptResourceAudio**](ArchitectApi.html#deleteArchitectPromptResourceAudio) | Delete specified user prompt resource audio |
-| [**deleteArchitectPrompts**](ArchitectApi.html#deleteArchitectPrompts) | Batch-delete a list of prompts |
-| [**deleteArchitectSchedule**](ArchitectApi.html#deleteArchitectSchedule) | Delete a schedule by id |
-| [**deleteArchitectSchedulegroup**](ArchitectApi.html#deleteArchitectSchedulegroup) | Deletes a schedule group by ID |
-| [**deleteArchitectSystempromptResource**](ArchitectApi.html#deleteArchitectSystempromptResource) | Delete a system prompt resource override. |
-| [**deleteFlow**](ArchitectApi.html#deleteFlow) | Delete flow |
-| [**deleteFlowInstancesSettingsLoglevels**](ArchitectApi.html#deleteFlowInstancesSettingsLoglevels) | Deletes a log level for a flow by flow id. |
-| [**deleteFlows**](ArchitectApi.html#deleteFlows) | Batch-delete a list of flows |
-| [**deleteFlowsDatatable**](ArchitectApi.html#deleteFlowsDatatable) | deletes a specific datatable by id |
-| [**deleteFlowsDatatableRow**](ArchitectApi.html#deleteFlowsDatatableRow) | Delete a row entry |
-| [**deleteFlowsInstancesSettingsLoglevelsDefault**](ArchitectApi.html#deleteFlowsInstancesSettingsLoglevelsDefault) | Resets the org log level to default, base |
-| [**deleteFlowsMilestone**](ArchitectApi.html#deleteFlowsMilestone) | Delete a flow milestone. |
-| [**getArchitectDependencytracking**](ArchitectApi.html#getArchitectDependencytracking) | Get Dependency Tracking objects that have a given display name |
-| [**getArchitectDependencytrackingBuild**](ArchitectApi.html#getArchitectDependencytrackingBuild) | Get Dependency Tracking build status for an organization |
-| [**getArchitectDependencytrackingConsumedresources**](ArchitectApi.html#getArchitectDependencytrackingConsumedresources) | Get resources that are consumed by a given Dependency Tracking object |
-| [**getArchitectDependencytrackingConsumingresources**](ArchitectApi.html#getArchitectDependencytrackingConsumingresources) | Get resources that consume a given Dependency Tracking object |
-| [**getArchitectDependencytrackingDeletedresourceconsumers**](ArchitectApi.html#getArchitectDependencytrackingDeletedresourceconsumers) | Get Dependency Tracking objects that consume deleted resources |
-| [**getArchitectDependencytrackingObject**](ArchitectApi.html#getArchitectDependencytrackingObject) | Get a Dependency Tracking object |
-| [**getArchitectDependencytrackingType**](ArchitectApi.html#getArchitectDependencytrackingType) | Get a Dependency Tracking type. |
-| [**getArchitectDependencytrackingTypes**](ArchitectApi.html#getArchitectDependencytrackingTypes) | Get Dependency Tracking types. |
-| [**getArchitectDependencytrackingUpdatedresourceconsumers**](ArchitectApi.html#getArchitectDependencytrackingUpdatedresourceconsumers) | Get Dependency Tracking objects that depend on updated resources |
-| [**getArchitectEmergencygroup**](ArchitectApi.html#getArchitectEmergencygroup) | Gets a emergency group by ID |
-| [**getArchitectEmergencygroups**](ArchitectApi.html#getArchitectEmergencygroups) | Get a list of emergency groups. |
-| [**getArchitectEmergencygroupsDivisionviews**](ArchitectApi.html#getArchitectEmergencygroupsDivisionviews) | Get a pageable list of basic emergency group objects filterable by query parameters. |
-| [**getArchitectGrammar**](ArchitectApi.html#getArchitectGrammar) | Get a grammar |
-| [**getArchitectGrammarLanguage**](ArchitectApi.html#getArchitectGrammarLanguage) | Get a grammar language. |
-| [**getArchitectGrammars**](ArchitectApi.html#getArchitectGrammars) | Get a pageable list of grammars, filtered by query parameters |
-| [**getArchitectIvr**](ArchitectApi.html#getArchitectIvr) | Get an IVR config. |
-| [**getArchitectIvrs**](ArchitectApi.html#getArchitectIvrs) | Get IVR configs. |
-| [**getArchitectIvrsDivisionviews**](ArchitectApi.html#getArchitectIvrsDivisionviews) | Get a pageable list of basic ivr configuration information objects filterable by query parameters. |
-| [**getArchitectPrompt**](ArchitectApi.html#getArchitectPrompt) | Get specified user prompt |
-| [**getArchitectPromptHistoryHistoryId**](ArchitectApi.html#getArchitectPromptHistoryHistoryId) | Get generated prompt history |
-| [**getArchitectPromptResource**](ArchitectApi.html#getArchitectPromptResource) | Get specified user prompt resource |
-| [**getArchitectPromptResources**](ArchitectApi.html#getArchitectPromptResources) | Get a pageable list of user prompt resources |
-| [**getArchitectPrompts**](ArchitectApi.html#getArchitectPrompts) | Get a pageable list of user prompts |
-| [**getArchitectSchedule**](ArchitectApi.html#getArchitectSchedule) | Get a schedule by ID |
-| [**getArchitectSchedulegroup**](ArchitectApi.html#getArchitectSchedulegroup) | Gets a schedule group by ID |
-| [**getArchitectSchedulegroups**](ArchitectApi.html#getArchitectSchedulegroups) | Get a list of schedule groups. |
-| [**getArchitectSchedulegroupsDivisionviews**](ArchitectApi.html#getArchitectSchedulegroupsDivisionviews) | Get a pageable list of basic schedule group configuration information objects filterable by query parameters. |
-| [**getArchitectSchedules**](ArchitectApi.html#getArchitectSchedules) | Get a list of schedules. |
-| [**getArchitectSchedulesDivisionviews**](ArchitectApi.html#getArchitectSchedulesDivisionviews) | Get a pageable list of basic schedule configuration information objects filterable by query parameters. |
-| [**getArchitectSystemprompt**](ArchitectApi.html#getArchitectSystemprompt) | Get a system prompt |
-| [**getArchitectSystempromptHistoryHistoryId**](ArchitectApi.html#getArchitectSystempromptHistoryHistoryId) | Get generated prompt history |
-| [**getArchitectSystempromptResource**](ArchitectApi.html#getArchitectSystempromptResource) | Get a system prompt resource. |
-| [**getArchitectSystempromptResources**](ArchitectApi.html#getArchitectSystempromptResources) | Get system prompt resources. |
-| [**getArchitectSystemprompts**](ArchitectApi.html#getArchitectSystemprompts) | Get System Prompts |
-| [**getFlow**](ArchitectApi.html#getFlow) | Get flow |
-| [**getFlowHistoryHistoryId**](ArchitectApi.html#getFlowHistoryHistoryId) | Get generated flow history |
-| [**getFlowInstancesSettingsLoglevels**](ArchitectApi.html#getFlowInstancesSettingsLoglevels) | Retrieves the log level for a flow by flow id. |
-| [**getFlowLatestconfiguration**](ArchitectApi.html#getFlowLatestconfiguration) | Get the latest configuration for flow |
-| [**getFlowVersion**](ArchitectApi.html#getFlowVersion) | Get flow version |
-| [**getFlowVersionConfiguration**](ArchitectApi.html#getFlowVersionConfiguration) | Create flow version configuration |
-| [**getFlowVersionHealth**](ArchitectApi.html#getFlowVersionHealth) | Get overall health scores for all intents present in the NLU domain version associated with the bot flow version. |
-| [**getFlowVersionIntentHealth**](ArchitectApi.html#getFlowVersionIntentHealth) | Get health scores and other health metrics for a specific intent. This includes the health metrics for each utterance in an intent. |
-| [**getFlowVersionIntentUtteranceHealth**](ArchitectApi.html#getFlowVersionIntentUtteranceHealth) | Get health metrics associated with a specific utterance of an intent. |
-| [**getFlowVersions**](ArchitectApi.html#getFlowVersions) | Get flow version list |
-| [**getFlows**](ArchitectApi.html#getFlows) | Get a pageable list of flows, filtered by query parameters |
-| [**getFlowsDatatable**](ArchitectApi.html#getFlowsDatatable) | Returns a specific datatable by id |
-| [**getFlowsDatatableExportJob**](ArchitectApi.html#getFlowsDatatableExportJob) | Returns the state information about an export job |
-| [**getFlowsDatatableImportJob**](ArchitectApi.html#getFlowsDatatableImportJob) | Returns the state information about an import job |
-| [**getFlowsDatatableImportJobs**](ArchitectApi.html#getFlowsDatatableImportJobs) | Get all recent import jobs |
-| [**getFlowsDatatableRow**](ArchitectApi.html#getFlowsDatatableRow) | Returns a specific row for the datatable |
-| [**getFlowsDatatableRows**](ArchitectApi.html#getFlowsDatatableRows) | Returns the rows for the datatable with the given id |
-| [**getFlowsDatatables**](ArchitectApi.html#getFlowsDatatables) | Retrieve a list of datatables for the org |
-| [**getFlowsDatatablesDivisionview**](ArchitectApi.html#getFlowsDatatablesDivisionview) | Returns a specific datatable by id |
-| [**getFlowsDatatablesDivisionviews**](ArchitectApi.html#getFlowsDatatablesDivisionviews) | Retrieve a list of datatables for the org |
-| [**getFlowsDivisionviews**](ArchitectApi.html#getFlowsDivisionviews) | Get a pageable list of basic flow information objects filterable by query parameters. |
-| [**getFlowsExecution**](ArchitectApi.html#getFlowsExecution) | Get a flow execution's details. Flow execution details are available for several days after the flow is started. |
-| [**getFlowsInstance**](ArchitectApi.html#getFlowsInstance) | Start a process (job) to prepare a download of a singular flow execution data instance by Id |
-| [**getFlowsInstancesJob**](ArchitectApi.html#getFlowsInstancesJob) | Get the status and/or results of an asynchronous flow execution data retrieval job |
-| [**getFlowsInstancesQuerycapabilities**](ArchitectApi.html#getFlowsInstancesQuerycapabilities) | Retrieve a list of capabilities that the org can use to query for execution data |
-| [**getFlowsInstancesSettingsExecutiondata**](ArchitectApi.html#getFlowsInstancesSettingsExecutiondata) | Get the execution history enabled setting. |
-| [**getFlowsInstancesSettingsLoglevels**](ArchitectApi.html#getFlowsInstancesSettingsLoglevels) | Retrieve a list of LogLevels for the organization. |
-| [**getFlowsInstancesSettingsLoglevelsCharacteristics**](ArchitectApi.html#getFlowsInstancesSettingsLoglevelsCharacteristics) | Gets the available flow log level characteristics for this organization. |
-| [**getFlowsInstancesSettingsLoglevelsDefault**](ArchitectApi.html#getFlowsInstancesSettingsLoglevelsDefault) | Returns the flow default log level. |
-| [**getFlowsJob**](ArchitectApi.html#getFlowsJob) | Fetch Architect Job Status |
-| [**getFlowsMilestone**](ArchitectApi.html#getFlowsMilestone) | Get a flow milestone |
-| [**getFlowsMilestones**](ArchitectApi.html#getFlowsMilestones) | Get a pageable list of flow milestones, filtered by query parameters |
-| [**getFlowsMilestonesDivisionviews**](ArchitectApi.html#getFlowsMilestonesDivisionviews) | Get a pageable list of basic flow milestone information objects filterable by query parameters. |
-| [**getFlowsOutcome**](ArchitectApi.html#getFlowsOutcome) | Get a flow outcome |
-| [**getFlowsOutcomes**](ArchitectApi.html#getFlowsOutcomes) | Get a pageable list of flow outcomes, filtered by query parameters |
-| [**getFlowsOutcomesDivisionviews**](ArchitectApi.html#getFlowsOutcomesDivisionviews) | Get a pageable list of basic flow outcome information objects filterable by query parameters. |
-| [**patchArchitectGrammar**](ArchitectApi.html#patchArchitectGrammar) | Updates a grammar |
-| [**patchArchitectGrammarLanguage**](ArchitectApi.html#patchArchitectGrammarLanguage) | Updates a grammar language |
-| [**patchFlowsInstancesSettingsExecutiondata**](ArchitectApi.html#patchFlowsInstancesSettingsExecutiondata) | Edit the execution history enabled setting. |
-| [**postArchitectDependencytrackingBuild**](ArchitectApi.html#postArchitectDependencytrackingBuild) | Rebuild Dependency Tracking data for an organization |
-| [**postArchitectEmergencygroups**](ArchitectApi.html#postArchitectEmergencygroups) | Creates a new emergency group |
-| [**postArchitectGrammarLanguageFilesDtmf**](ArchitectApi.html#postArchitectGrammarLanguageFilesDtmf) | Creates a presigned URL for uploading a grammar DTMF mode file |
-| [**postArchitectGrammarLanguageFilesVoice**](ArchitectApi.html#postArchitectGrammarLanguageFilesVoice) | Creates a presigned URL for uploading a grammar voice mode file |
-| [**postArchitectGrammarLanguages**](ArchitectApi.html#postArchitectGrammarLanguages) | Create a new language for a given grammar |
-| [**postArchitectGrammars**](ArchitectApi.html#postArchitectGrammars) | Create a new grammar |
-| [**postArchitectIvrs**](ArchitectApi.html#postArchitectIvrs) | Create IVR config. |
-| [**postArchitectPromptHistory**](ArchitectApi.html#postArchitectPromptHistory) | Generate prompt history |
-| [**postArchitectPromptResources**](ArchitectApi.html#postArchitectPromptResources) | Create a new user prompt resource |
-| [**postArchitectPrompts**](ArchitectApi.html#postArchitectPrompts) | Create a new user prompt |
-| [**postArchitectSchedulegroups**](ArchitectApi.html#postArchitectSchedulegroups) | Creates a new schedule group |
-| [**postArchitectSchedules**](ArchitectApi.html#postArchitectSchedules) | Create a new schedule. |
-| [**postArchitectSystempromptHistory**](ArchitectApi.html#postArchitectSystempromptHistory) | Generate system prompt history |
-| [**postArchitectSystempromptResources**](ArchitectApi.html#postArchitectSystempromptResources) | Create system prompt resource override. |
-| [**postFlowHistory**](ArchitectApi.html#postFlowHistory) | Generate flow history |
-| [**postFlowInstancesSettingsLoglevels**](ArchitectApi.html#postFlowInstancesSettingsLoglevels) | Set the logLevel for a particular flow id |
-| [**postFlowVersions**](ArchitectApi.html#postFlowVersions) | Create flow version |
-| [**postFlows**](ArchitectApi.html#postFlows) | Create flow |
-| [**postFlowsActionsCheckin**](ArchitectApi.html#postFlowsActionsCheckin) | Check-in flow |
-| [**postFlowsActionsCheckout**](ArchitectApi.html#postFlowsActionsCheckout) | Check-out flow |
-| [**postFlowsActionsDeactivate**](ArchitectApi.html#postFlowsActionsDeactivate) | Deactivate flow |
-| [**postFlowsActionsPublish**](ArchitectApi.html#postFlowsActionsPublish) | Publish flow |
-| [**postFlowsActionsRevert**](ArchitectApi.html#postFlowsActionsRevert) | Revert flow |
-| [**postFlowsActionsUnlock**](ArchitectApi.html#postFlowsActionsUnlock) | Unlock flow |
-| [**postFlowsDatatableExportJobs**](ArchitectApi.html#postFlowsDatatableExportJobs) | Begin an export process for exporting all rows from a datatable |
-| [**postFlowsDatatableImportJobs**](ArchitectApi.html#postFlowsDatatableImportJobs) | Begin an import process for importing rows into a datatable |
-| [**postFlowsDatatableRows**](ArchitectApi.html#postFlowsDatatableRows) | Create a new row entry for the datatable. |
-| [**postFlowsDatatables**](ArchitectApi.html#postFlowsDatatables) | Create a new datatable with the specified json-schema definition |
-| [**postFlowsExecutions**](ArchitectApi.html#postFlowsExecutions) | Launch an instance of a flow definition, for flow types that support it such as the 'workflow' type. |
-| [**postFlowsInstancesJobs**](ArchitectApi.html#postFlowsInstancesJobs) | Start a process (job) that will prepare a list of execution data IDs for download. |
-| [**postFlowsInstancesQuery**](ArchitectApi.html#postFlowsInstancesQuery) | Query the database of existing flow histories to look for particular flow criteria |
-| [**postFlowsJobs**](ArchitectApi.html#postFlowsJobs) | Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job. |
-| [**postFlowsMilestones**](ArchitectApi.html#postFlowsMilestones) | Create a flow milestone |
-| [**postFlowsOutcomes**](ArchitectApi.html#postFlowsOutcomes) | Create a flow outcome |
-| [**putArchitectEmergencygroup**](ArchitectApi.html#putArchitectEmergencygroup) | Updates a emergency group by ID |
-| [**putArchitectIvr**](ArchitectApi.html#putArchitectIvr) | Update an IVR Config. |
-| [**putArchitectPrompt**](ArchitectApi.html#putArchitectPrompt) | Update specified user prompt |
-| [**putArchitectPromptResource**](ArchitectApi.html#putArchitectPromptResource) | Update specified user prompt resource |
-| [**putArchitectSchedule**](ArchitectApi.html#putArchitectSchedule) | Update schedule by ID |
-| [**putArchitectSchedulegroup**](ArchitectApi.html#putArchitectSchedulegroup) | Updates a schedule group by ID |
-| [**putArchitectSystempromptResource**](ArchitectApi.html#putArchitectSystempromptResource) | Updates a system prompt resource override. |
-| [**putFlow**](ArchitectApi.html#putFlow) | Update flow |
-| [**putFlowInstancesSettingsLoglevels**](ArchitectApi.html#putFlowInstancesSettingsLoglevels) | Edit the logLevel for a particular flow id |
-| [**putFlowsDatatable**](ArchitectApi.html#putFlowsDatatable) | Updates a specific datatable by id |
-| [**putFlowsDatatableRow**](ArchitectApi.html#putFlowsDatatableRow) | Update a row entry |
-| [**putFlowsInstancesSettingsLoglevelsDefault**](ArchitectApi.html#putFlowsInstancesSettingsLoglevelsDefault) | Edit the flow default log level. |
-| [**putFlowsMilestone**](ArchitectApi.html#putFlowsMilestone) | Updates a flow milestone |
-| [**putFlowsOutcome**](ArchitectApi.html#putFlowsOutcome) | Updates a flow outcome |
+| [**deleteArchitectEmergencygroup**](ArchitectApi#deleteArchitectEmergencygroup) | Deletes a emergency group by ID |
+| [**deleteArchitectGrammar**](ArchitectApi#deleteArchitectGrammar) | Delete a grammar. |
+| [**deleteArchitectGrammarLanguage**](ArchitectApi#deleteArchitectGrammarLanguage) | Delete specified grammar language |
+| [**deleteArchitectGrammarLanguageFilesDtmf**](ArchitectApi#deleteArchitectGrammarLanguageFilesDtmf) | Clear the DTMF mode file for the grammar language if there is one |
+| [**deleteArchitectGrammarLanguageFilesVoice**](ArchitectApi#deleteArchitectGrammarLanguageFilesVoice) | Clear the voice mode file for the grammar language if there is one |
+| [**deleteArchitectIvr**](ArchitectApi#deleteArchitectIvr) | Delete an IVR Config. |
+| [**deleteArchitectPrompt**](ArchitectApi#deleteArchitectPrompt) | Delete specified user prompt |
+| [**deleteArchitectPromptResource**](ArchitectApi#deleteArchitectPromptResource) | Delete specified user prompt resource |
+| [**deleteArchitectPromptResourceAudio**](ArchitectApi#deleteArchitectPromptResourceAudio) | Delete specified user prompt resource audio |
+| [**deleteArchitectPrompts**](ArchitectApi#deleteArchitectPrompts) | Batch-delete a list of prompts |
+| [**deleteArchitectSchedule**](ArchitectApi#deleteArchitectSchedule) | Delete a schedule by id |
+| [**deleteArchitectSchedulegroup**](ArchitectApi#deleteArchitectSchedulegroup) | Deletes a schedule group by ID |
+| [**deleteArchitectSystempromptResource**](ArchitectApi#deleteArchitectSystempromptResource) | Delete a system prompt resource override. |
+| [**deleteFlow**](ArchitectApi#deleteFlow) | Delete flow |
+| [**deleteFlowInstancesSettingsLoglevels**](ArchitectApi#deleteFlowInstancesSettingsLoglevels) | Deletes a log level for a flow by flow id. |
+| [**deleteFlows**](ArchitectApi#deleteFlows) | Batch-delete a list of flows |
+| [**deleteFlowsDatatable**](ArchitectApi#deleteFlowsDatatable) | deletes a specific datatable by id |
+| [**deleteFlowsDatatableRow**](ArchitectApi#deleteFlowsDatatableRow) | Delete a row entry |
+| [**deleteFlowsInstancesSettingsLoglevelsDefault**](ArchitectApi#deleteFlowsInstancesSettingsLoglevelsDefault) | Resets the org log level to default, base |
+| [**deleteFlowsMilestone**](ArchitectApi#deleteFlowsMilestone) | Delete a flow milestone. |
+| [**getArchitectDependencytracking**](ArchitectApi#getArchitectDependencytracking) | Get Dependency Tracking objects that have a given display name |
+| [**getArchitectDependencytrackingBuild**](ArchitectApi#getArchitectDependencytrackingBuild) | Get Dependency Tracking build status for an organization |
+| [**getArchitectDependencytrackingConsumedresources**](ArchitectApi#getArchitectDependencytrackingConsumedresources) | Get resources that are consumed by a given Dependency Tracking object |
+| [**getArchitectDependencytrackingConsumingresources**](ArchitectApi#getArchitectDependencytrackingConsumingresources) | Get resources that consume a given Dependency Tracking object |
+| [**getArchitectDependencytrackingDeletedresourceconsumers**](ArchitectApi#getArchitectDependencytrackingDeletedresourceconsumers) | Get Dependency Tracking objects that consume deleted resources |
+| [**getArchitectDependencytrackingObject**](ArchitectApi#getArchitectDependencytrackingObject) | Get a Dependency Tracking object |
+| [**getArchitectDependencytrackingType**](ArchitectApi#getArchitectDependencytrackingType) | Get a Dependency Tracking type. |
+| [**getArchitectDependencytrackingTypes**](ArchitectApi#getArchitectDependencytrackingTypes) | Get Dependency Tracking types. |
+| [**getArchitectDependencytrackingUpdatedresourceconsumers**](ArchitectApi#getArchitectDependencytrackingUpdatedresourceconsumers) | Get Dependency Tracking objects that depend on updated resources |
+| [**getArchitectEmergencygroup**](ArchitectApi#getArchitectEmergencygroup) | Gets a emergency group by ID |
+| [**getArchitectEmergencygroups**](ArchitectApi#getArchitectEmergencygroups) | Get a list of emergency groups. |
+| [**getArchitectEmergencygroupsDivisionviews**](ArchitectApi#getArchitectEmergencygroupsDivisionviews) | Get a pageable list of basic emergency group objects filterable by query parameters. |
+| [**getArchitectGrammar**](ArchitectApi#getArchitectGrammar) | Get a grammar |
+| [**getArchitectGrammarLanguage**](ArchitectApi#getArchitectGrammarLanguage) | Get a grammar language. |
+| [**getArchitectGrammars**](ArchitectApi#getArchitectGrammars) | Get a pageable list of grammars, filtered by query parameters |
+| [**getArchitectIvr**](ArchitectApi#getArchitectIvr) | Get an IVR config. |
+| [**getArchitectIvrs**](ArchitectApi#getArchitectIvrs) | Get IVR configs. |
+| [**getArchitectIvrsDivisionviews**](ArchitectApi#getArchitectIvrsDivisionviews) | Get a pageable list of basic ivr configuration information objects filterable by query parameters. |
+| [**getArchitectPrompt**](ArchitectApi#getArchitectPrompt) | Get specified user prompt |
+| [**getArchitectPromptHistoryHistoryId**](ArchitectApi#getArchitectPromptHistoryHistoryId) | Get generated prompt history |
+| [**getArchitectPromptResource**](ArchitectApi#getArchitectPromptResource) | Get specified user prompt resource |
+| [**getArchitectPromptResources**](ArchitectApi#getArchitectPromptResources) | Get a pageable list of user prompt resources |
+| [**getArchitectPrompts**](ArchitectApi#getArchitectPrompts) | Get a pageable list of user prompts |
+| [**getArchitectSchedule**](ArchitectApi#getArchitectSchedule) | Get a schedule by ID |
+| [**getArchitectSchedulegroup**](ArchitectApi#getArchitectSchedulegroup) | Gets a schedule group by ID |
+| [**getArchitectSchedulegroups**](ArchitectApi#getArchitectSchedulegroups) | Get a list of schedule groups. |
+| [**getArchitectSchedulegroupsDivisionviews**](ArchitectApi#getArchitectSchedulegroupsDivisionviews) | Get a pageable list of basic schedule group configuration information objects filterable by query parameters. |
+| [**getArchitectSchedules**](ArchitectApi#getArchitectSchedules) | Get a list of schedules. |
+| [**getArchitectSchedulesDivisionviews**](ArchitectApi#getArchitectSchedulesDivisionviews) | Get a pageable list of basic schedule configuration information objects filterable by query parameters. |
+| [**getArchitectSystemprompt**](ArchitectApi#getArchitectSystemprompt) | Get a system prompt |
+| [**getArchitectSystempromptHistoryHistoryId**](ArchitectApi#getArchitectSystempromptHistoryHistoryId) | Get generated prompt history |
+| [**getArchitectSystempromptResource**](ArchitectApi#getArchitectSystempromptResource) | Get a system prompt resource. |
+| [**getArchitectSystempromptResources**](ArchitectApi#getArchitectSystempromptResources) | Get system prompt resources. |
+| [**getArchitectSystemprompts**](ArchitectApi#getArchitectSystemprompts) | Get System Prompts |
+| [**getFlow**](ArchitectApi#getFlow) | Get flow |
+| [**getFlowHistoryHistoryId**](ArchitectApi#getFlowHistoryHistoryId) | Get generated flow history |
+| [**getFlowInstancesSettingsLoglevels**](ArchitectApi#getFlowInstancesSettingsLoglevels) | Retrieves the log level for a flow by flow id. |
+| [**getFlowLatestconfiguration**](ArchitectApi#getFlowLatestconfiguration) | Get the latest configuration for flow |
+| [**getFlowVersion**](ArchitectApi#getFlowVersion) | Get flow version |
+| [**getFlowVersionConfiguration**](ArchitectApi#getFlowVersionConfiguration) | Create flow version configuration |
+| [**getFlowVersionHealth**](ArchitectApi#getFlowVersionHealth) | Get overall health scores for all intents present in the NLU domain version associated with the bot flow version. |
+| [**getFlowVersionIntentHealth**](ArchitectApi#getFlowVersionIntentHealth) | Get health scores and other health metrics for a specific intent. This includes the health metrics for each utterance in an intent. |
+| [**getFlowVersionIntentUtteranceHealth**](ArchitectApi#getFlowVersionIntentUtteranceHealth) | Get health metrics associated with a specific utterance of an intent. |
+| [**getFlowVersions**](ArchitectApi#getFlowVersions) | Get flow version list |
+| [**getFlows**](ArchitectApi#getFlows) | Get a pageable list of flows, filtered by query parameters |
+| [**getFlowsDatatable**](ArchitectApi#getFlowsDatatable) | Returns a specific datatable by id |
+| [**getFlowsDatatableExportJob**](ArchitectApi#getFlowsDatatableExportJob) | Returns the state information about an export job |
+| [**getFlowsDatatableImportJob**](ArchitectApi#getFlowsDatatableImportJob) | Returns the state information about an import job |
+| [**getFlowsDatatableImportJobs**](ArchitectApi#getFlowsDatatableImportJobs) | Get all recent import jobs |
+| [**getFlowsDatatableRow**](ArchitectApi#getFlowsDatatableRow) | Returns a specific row for the datatable |
+| [**getFlowsDatatableRows**](ArchitectApi#getFlowsDatatableRows) | Returns the rows for the datatable with the given id |
+| [**getFlowsDatatables**](ArchitectApi#getFlowsDatatables) | Retrieve a list of datatables for the org |
+| [**getFlowsDatatablesDivisionview**](ArchitectApi#getFlowsDatatablesDivisionview) | Returns a specific datatable by id |
+| [**getFlowsDatatablesDivisionviews**](ArchitectApi#getFlowsDatatablesDivisionviews) | Retrieve a list of datatables for the org |
+| [**getFlowsDivisionviews**](ArchitectApi#getFlowsDivisionviews) | Get a pageable list of basic flow information objects filterable by query parameters. |
+| [**getFlowsExecution**](ArchitectApi#getFlowsExecution) | Get a flow execution's details. Flow execution details are available for several days after the flow is started. |
+| [**getFlowsInstance**](ArchitectApi#getFlowsInstance) | Start a process (job) to prepare a download of a singular flow execution data instance by Id |
+| [**getFlowsInstancesJob**](ArchitectApi#getFlowsInstancesJob) | Get the status and/or results of an asynchronous flow execution data retrieval job |
+| [**getFlowsInstancesQuerycapabilities**](ArchitectApi#getFlowsInstancesQuerycapabilities) | Retrieve a list of capabilities that the org can use to query for execution data |
+| [**getFlowsInstancesSettingsExecutiondata**](ArchitectApi#getFlowsInstancesSettingsExecutiondata) | Get the execution history enabled setting. |
+| [**getFlowsInstancesSettingsLoglevels**](ArchitectApi#getFlowsInstancesSettingsLoglevels) | Retrieve a list of LogLevels for the organization. |
+| [**getFlowsInstancesSettingsLoglevelsCharacteristics**](ArchitectApi#getFlowsInstancesSettingsLoglevelsCharacteristics) | Gets the available flow log level characteristics for this organization. |
+| [**getFlowsInstancesSettingsLoglevelsDefault**](ArchitectApi#getFlowsInstancesSettingsLoglevelsDefault) | Returns the flow default log level. |
+| [**getFlowsJob**](ArchitectApi#getFlowsJob) | Fetch Architect Job Status |
+| [**getFlowsMilestone**](ArchitectApi#getFlowsMilestone) | Get a flow milestone |
+| [**getFlowsMilestones**](ArchitectApi#getFlowsMilestones) | Get a pageable list of flow milestones, filtered by query parameters |
+| [**getFlowsMilestonesDivisionviews**](ArchitectApi#getFlowsMilestonesDivisionviews) | Get a pageable list of basic flow milestone information objects filterable by query parameters. |
+| [**getFlowsOutcome**](ArchitectApi#getFlowsOutcome) | Get a flow outcome |
+| [**getFlowsOutcomes**](ArchitectApi#getFlowsOutcomes) | Get a pageable list of flow outcomes, filtered by query parameters |
+| [**getFlowsOutcomesDivisionviews**](ArchitectApi#getFlowsOutcomesDivisionviews) | Get a pageable list of basic flow outcome information objects filterable by query parameters. |
+| [**patchArchitectGrammar**](ArchitectApi#patchArchitectGrammar) | Updates a grammar |
+| [**patchArchitectGrammarLanguage**](ArchitectApi#patchArchitectGrammarLanguage) | Updates a grammar language |
+| [**patchFlowsInstancesSettingsExecutiondata**](ArchitectApi#patchFlowsInstancesSettingsExecutiondata) | Edit the execution history enabled setting. |
+| [**postArchitectDependencytrackingBuild**](ArchitectApi#postArchitectDependencytrackingBuild) | Rebuild Dependency Tracking data for an organization |
+| [**postArchitectEmergencygroups**](ArchitectApi#postArchitectEmergencygroups) | Creates a new emergency group |
+| [**postArchitectGrammarLanguageFilesDtmf**](ArchitectApi#postArchitectGrammarLanguageFilesDtmf) | Creates a presigned URL for uploading a grammar DTMF mode file |
+| [**postArchitectGrammarLanguageFilesVoice**](ArchitectApi#postArchitectGrammarLanguageFilesVoice) | Creates a presigned URL for uploading a grammar voice mode file |
+| [**postArchitectGrammarLanguages**](ArchitectApi#postArchitectGrammarLanguages) | Create a new language for a given grammar |
+| [**postArchitectGrammars**](ArchitectApi#postArchitectGrammars) | Create a new grammar |
+| [**postArchitectIvrs**](ArchitectApi#postArchitectIvrs) | Create IVR config. |
+| [**postArchitectPromptHistory**](ArchitectApi#postArchitectPromptHistory) | Generate prompt history |
+| [**postArchitectPromptResources**](ArchitectApi#postArchitectPromptResources) | Create a new user prompt resource |
+| [**postArchitectPrompts**](ArchitectApi#postArchitectPrompts) | Create a new user prompt |
+| [**postArchitectSchedulegroups**](ArchitectApi#postArchitectSchedulegroups) | Creates a new schedule group |
+| [**postArchitectSchedules**](ArchitectApi#postArchitectSchedules) | Create a new schedule. |
+| [**postArchitectSystempromptHistory**](ArchitectApi#postArchitectSystempromptHistory) | Generate system prompt history |
+| [**postArchitectSystempromptResources**](ArchitectApi#postArchitectSystempromptResources) | Create system prompt resource override. |
+| [**postFlowHistory**](ArchitectApi#postFlowHistory) | Generate flow history |
+| [**postFlowInstancesSettingsLoglevels**](ArchitectApi#postFlowInstancesSettingsLoglevels) | Set the logLevel for a particular flow id |
+| [**postFlowVersions**](ArchitectApi#postFlowVersions) | Create flow version |
+| [**postFlows**](ArchitectApi#postFlows) | Create flow |
+| [**postFlowsActionsCheckin**](ArchitectApi#postFlowsActionsCheckin) | Check-in flow |
+| [**postFlowsActionsCheckout**](ArchitectApi#postFlowsActionsCheckout) | Check-out flow |
+| [**postFlowsActionsDeactivate**](ArchitectApi#postFlowsActionsDeactivate) | Deactivate flow |
+| [**postFlowsActionsPublish**](ArchitectApi#postFlowsActionsPublish) | Publish flow |
+| [**postFlowsActionsRevert**](ArchitectApi#postFlowsActionsRevert) | Revert flow |
+| [**postFlowsActionsUnlock**](ArchitectApi#postFlowsActionsUnlock) | Unlock flow |
+| [**postFlowsDatatableExportJobs**](ArchitectApi#postFlowsDatatableExportJobs) | Begin an export process for exporting all rows from a datatable |
+| [**postFlowsDatatableImportJobs**](ArchitectApi#postFlowsDatatableImportJobs) | Begin an import process for importing rows into a datatable |
+| [**postFlowsDatatableRows**](ArchitectApi#postFlowsDatatableRows) | Create a new row entry for the datatable. |
+| [**postFlowsDatatables**](ArchitectApi#postFlowsDatatables) | Create a new datatable with the specified json-schema definition |
+| [**postFlowsExecutions**](ArchitectApi#postFlowsExecutions) | Launch an instance of a flow definition, for flow types that support it such as the 'workflow' type. |
+| [**postFlowsInstancesJobs**](ArchitectApi#postFlowsInstancesJobs) | Start a process (job) that will prepare a list of execution data IDs for download. |
+| [**postFlowsInstancesQuery**](ArchitectApi#postFlowsInstancesQuery) | Query the database of existing flow histories to look for particular flow criteria |
+| [**postFlowsJobs**](ArchitectApi#postFlowsJobs) | Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job. |
+| [**postFlowsMilestones**](ArchitectApi#postFlowsMilestones) | Create a flow milestone |
+| [**postFlowsOutcomes**](ArchitectApi#postFlowsOutcomes) | Create a flow outcome |
+| [**putArchitectEmergencygroup**](ArchitectApi#putArchitectEmergencygroup) | Updates a emergency group by ID |
+| [**putArchitectIvr**](ArchitectApi#putArchitectIvr) | Update an IVR Config. |
+| [**putArchitectPrompt**](ArchitectApi#putArchitectPrompt) | Update specified user prompt |
+| [**putArchitectPromptResource**](ArchitectApi#putArchitectPromptResource) | Update specified user prompt resource |
+| [**putArchitectSchedule**](ArchitectApi#putArchitectSchedule) | Update schedule by ID |
+| [**putArchitectSchedulegroup**](ArchitectApi#putArchitectSchedulegroup) | Updates a schedule group by ID |
+| [**putArchitectSystempromptResource**](ArchitectApi#putArchitectSystempromptResource) | Updates a system prompt resource override. |
+| [**putFlow**](ArchitectApi#putFlow) | Update flow |
+| [**putFlowInstancesSettingsLoglevels**](ArchitectApi#putFlowInstancesSettingsLoglevels) | Edit the logLevel for a particular flow id |
+| [**putFlowsDatatable**](ArchitectApi#putFlowsDatatable) | Updates a specific datatable by id |
+| [**putFlowsDatatableRow**](ArchitectApi#putFlowsDatatableRow) | Update a row entry |
+| [**putFlowsInstancesSettingsLoglevelsDefault**](ArchitectApi#putFlowsInstancesSettingsLoglevelsDefault) | Edit the flow default log level. |
+| [**putFlowsMilestone**](ArchitectApi#putFlowsMilestone) | Updates a flow milestone |
+| [**putFlowsOutcome**](ArchitectApi#putFlowsOutcome) | Updates a flow outcome |
 {: class="table-striped"}
 
-<a name="deleteArchitectEmergencygroup"></a>
 
 # **deleteArchitectEmergencygroup**
-
 
 
 > Void deleteArchitectEmergencygroup(emergencyGroupId)
@@ -210,10 +205,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteArchitectGrammar"></a>
 
 # **deleteArchitectGrammar**
-
 
 
 > Empty deleteArchitectGrammar(grammarId)
@@ -273,10 +266,8 @@ try {
 
 **Empty**
 
-<a name="deleteArchitectGrammarLanguage"></a>
 
 # **deleteArchitectGrammarLanguage**
-
 
 
 > Void deleteArchitectGrammarLanguage(grammarId, languageCode)
@@ -337,10 +328,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteArchitectGrammarLanguageFilesDtmf"></a>
 
 # **deleteArchitectGrammarLanguageFilesDtmf**
-
 
 
 > Void deleteArchitectGrammarLanguageFilesDtmf(grammarId, languageCode)
@@ -401,10 +390,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteArchitectGrammarLanguageFilesVoice"></a>
 
 # **deleteArchitectGrammarLanguageFilesVoice**
-
 
 
 > Void deleteArchitectGrammarLanguageFilesVoice(grammarId, languageCode)
@@ -465,10 +452,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteArchitectIvr"></a>
 
 # **deleteArchitectIvr**
-
 
 
 > Void deleteArchitectIvr(ivrId)
@@ -525,10 +510,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteArchitectPrompt"></a>
 
 # **deleteArchitectPrompt**
-
 
 
 > Void deleteArchitectPrompt(promptId, allResources)
@@ -587,10 +570,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteArchitectPromptResource"></a>
 
 # **deleteArchitectPromptResource**
-
 
 
 > Void deleteArchitectPromptResource(promptId, languageCode)
@@ -649,10 +630,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteArchitectPromptResourceAudio"></a>
 
 # **deleteArchitectPromptResourceAudio**
-
 
 
 > Void deleteArchitectPromptResourceAudio(promptId, languageCode)
@@ -711,13 +690,11 @@ try {
 
 null (empty response body)
 
-<a name="deleteArchitectPrompts"></a>
 
 # **deleteArchitectPrompts**
 
 
-
-> [Operation](Operation.html) deleteArchitectPrompts(id)
+> [Operation](Operation) deleteArchitectPrompts(id)
 
 Batch-delete a list of prompts
 
@@ -766,18 +743,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**List&lt;String&gt;**](String.html)| List of Prompt IDs | 
+| **id** | [**List&lt;String&gt;**](String)| List of Prompt IDs | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Operation**](Operation.html)
+[**Operation**](Operation)
 
-<a name="deleteArchitectSchedule"></a>
 
 # **deleteArchitectSchedule**
-
 
 
 > Void deleteArchitectSchedule(scheduleId)
@@ -834,10 +809,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteArchitectSchedulegroup"></a>
 
 # **deleteArchitectSchedulegroup**
-
 
 
 > Void deleteArchitectSchedulegroup(scheduleGroupId)
@@ -894,10 +867,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteArchitectSystempromptResource"></a>
 
 # **deleteArchitectSystempromptResource**
-
 
 
 > Void deleteArchitectSystempromptResource(promptId, languageCode)
@@ -956,10 +927,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteFlow"></a>
 
 # **deleteFlow**
-
 
 
 > Void deleteFlow(flowId)
@@ -1016,10 +985,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteFlowInstancesSettingsLoglevels"></a>
 
 # **deleteFlowInstancesSettingsLoglevels**
-
 
 
 > Void deleteFlowInstancesSettingsLoglevels(flowId)
@@ -1078,13 +1045,11 @@ try {
 
 null (empty response body)
 
-<a name="deleteFlows"></a>
 
 # **deleteFlows**
 
 
-
-> [Operation](Operation.html) deleteFlows(id)
+> [Operation](Operation) deleteFlows(id)
 
 Batch-delete a list of flows
 
@@ -1133,18 +1098,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**List&lt;String&gt;**](String.html)| List of Flow IDs | 
+| **id** | [**List&lt;String&gt;**](String)| List of Flow IDs | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Operation**](Operation.html)
+[**Operation**](Operation)
 
-<a name="deleteFlowsDatatable"></a>
 
 # **deleteFlowsDatatable**
-
 
 
 > Void deleteFlowsDatatable(datatableId, force)
@@ -1205,10 +1168,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteFlowsDatatableRow"></a>
 
 # **deleteFlowsDatatableRow**
-
 
 
 > Void deleteFlowsDatatableRow(datatableId, rowId)
@@ -1270,10 +1231,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteFlowsInstancesSettingsLoglevelsDefault"></a>
 
 # **deleteFlowsInstancesSettingsLoglevelsDefault**
-
 
 
 > Void deleteFlowsInstancesSettingsLoglevelsDefault()
@@ -1328,10 +1287,8 @@ This endpoint does not require any parameters.
 
 null (empty response body)
 
-<a name="deleteFlowsMilestone"></a>
 
 # **deleteFlowsMilestone**
-
 
 
 > Empty deleteFlowsMilestone(milestoneId)
@@ -1389,13 +1346,11 @@ try {
 
 **Empty**
 
-<a name="getArchitectDependencytracking"></a>
 
 # **getArchitectDependencytracking**
 
 
-
-> [DependencyObjectEntityListing](DependencyObjectEntityListing.html) getArchitectDependencytracking(name, pageNumber, pageSize, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType)
+> [DependencyObjectEntityListing](DependencyObjectEntityListing) getArchitectDependencytracking(name, pageNumber, pageSize, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType)
 
 Get Dependency Tracking objects that have a given display name
 
@@ -1452,25 +1407,23 @@ try {
 | **name** | **String**| Object name to search for | 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
-| **objectType** | [**List&lt;String&gt;**](String.html)| Object type(s) to search for | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE 
+| **objectType** | [**List&lt;String&gt;**](String)| Object type(s) to search for | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE 
 | **consumedResources** | **Boolean**| Include resources each result item consumes | [optional] 
 | **consumingResources** | **Boolean**| Include resources that consume each result item | [optional] 
-| **consumedResourceType** | [**List&lt;String&gt;**](String.html)| Types of consumed resources to return, if consumed resources are requested | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE 
-| **consumingResourceType** | [**List&lt;String&gt;**](String.html)| Types of consuming resources to return, if consuming resources are requested | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE 
+| **consumedResourceType** | [**List&lt;String&gt;**](String)| Types of consumed resources to return, if consumed resources are requested | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE 
+| **consumingResourceType** | [**List&lt;String&gt;**](String)| Types of consuming resources to return, if consuming resources are requested | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DependencyObjectEntityListing**](DependencyObjectEntityListing.html)
+[**DependencyObjectEntityListing**](DependencyObjectEntityListing)
 
-<a name="getArchitectDependencytrackingBuild"></a>
 
 # **getArchitectDependencytrackingBuild**
 
 
-
-> [DependencyStatus](DependencyStatus.html) getArchitectDependencytrackingBuild()
+> [DependencyStatus](DependencyStatus) getArchitectDependencytrackingBuild()
 
 Get Dependency Tracking build status for an organization
 
@@ -1519,15 +1472,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**DependencyStatus**](DependencyStatus.html)
+[**DependencyStatus**](DependencyStatus)
 
-<a name="getArchitectDependencytrackingConsumedresources"></a>
 
 # **getArchitectDependencytrackingConsumedresources**
 
 
-
-> [ConsumedResourcesEntityListing](ConsumedResourcesEntityListing.html) getArchitectDependencytrackingConsumedresources(id, version, objectType, resourceType, pageNumber, pageSize)
+> [ConsumedResourcesEntityListing](ConsumedResourcesEntityListing) getArchitectDependencytrackingConsumedresources(id, version, objectType, resourceType, pageNumber, pageSize)
 
 Get resources that are consumed by a given Dependency Tracking object
 
@@ -1582,7 +1533,7 @@ try {
 | **id** | **String**| Consuming object ID | 
 | **version** | **String**| Consuming object version | 
 | **objectType** | **String**| Consuming object type.  Only versioned types are allowed here. |<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE 
-| **resourceType** | [**List&lt;String&gt;**](String.html)| Types of consumed resources to show | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE 
+| **resourceType** | [**List&lt;String&gt;**](String)| Types of consumed resources to show | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 {: class="table-striped"}
@@ -1590,15 +1541,13 @@ try {
 
 ### Return type
 
-[**ConsumedResourcesEntityListing**](ConsumedResourcesEntityListing.html)
+[**ConsumedResourcesEntityListing**](ConsumedResourcesEntityListing)
 
-<a name="getArchitectDependencytrackingConsumingresources"></a>
 
 # **getArchitectDependencytrackingConsumingresources**
 
 
-
-> [ConsumingResourcesEntityListing](ConsumingResourcesEntityListing.html) getArchitectDependencytrackingConsumingresources(id, objectType, resourceType, version, pageNumber, pageSize, flowFilter)
+> [ConsumingResourcesEntityListing](ConsumingResourcesEntityListing) getArchitectDependencytrackingConsumingresources(id, objectType, resourceType, version, pageNumber, pageSize, flowFilter)
 
 Get resources that consume a given Dependency Tracking object
 
@@ -1653,7 +1602,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **String**| Consumed object ID | 
 | **objectType** | **String**| Consumed object type |<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE 
-| **resourceType** | [**List&lt;String&gt;**](String.html)| Types of consuming resources to show.  Only versioned types are allowed here. | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE 
+| **resourceType** | [**List&lt;String&gt;**](String)| Types of consuming resources to show.  Only versioned types are allowed here. | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE 
 | **version** | **String**| Object version | [optional] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
@@ -1663,15 +1612,13 @@ try {
 
 ### Return type
 
-[**ConsumingResourcesEntityListing**](ConsumingResourcesEntityListing.html)
+[**ConsumingResourcesEntityListing**](ConsumingResourcesEntityListing)
 
-<a name="getArchitectDependencytrackingDeletedresourceconsumers"></a>
 
 # **getArchitectDependencytrackingDeletedresourceconsumers**
 
 
-
-> [DependencyObjectEntityListing](DependencyObjectEntityListing.html) getArchitectDependencytrackingDeletedresourceconsumers(name, objectType, flowFilter, consumedResources, consumedResourceType, pageNumber, pageSize)
+> [DependencyObjectEntityListing](DependencyObjectEntityListing) getArchitectDependencytrackingDeletedresourceconsumers(name, objectType, flowFilter, consumedResources, consumedResourceType, pageNumber, pageSize)
 
 Get Dependency Tracking objects that consume deleted resources
 
@@ -1725,10 +1672,10 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **name** | **String**| Name to search for | [optional] 
-| **objectType** | [**List&lt;String&gt;**](String.html)| Object type(s) to search for | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE 
+| **objectType** | [**List&lt;String&gt;**](String)| Object type(s) to search for | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE 
 | **flowFilter** | **String**| Show only checkedIn or published flows | [optional]<br />**Values**: checkedIn, published 
 | **consumedResources** | **Boolean**| Return consumed resources? | [optional] [default to false] 
-| **consumedResourceType** | [**List&lt;String&gt;**](String.html)| Resource type(s) to return | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE 
+| **consumedResourceType** | [**List&lt;String&gt;**](String)| Resource type(s) to return | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 {: class="table-striped"}
@@ -1736,15 +1683,13 @@ try {
 
 ### Return type
 
-[**DependencyObjectEntityListing**](DependencyObjectEntityListing.html)
+[**DependencyObjectEntityListing**](DependencyObjectEntityListing)
 
-<a name="getArchitectDependencytrackingObject"></a>
 
 # **getArchitectDependencytrackingObject**
 
 
-
-> [DependencyObject](DependencyObject.html) getArchitectDependencytrackingObject(id, version, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType, consumedResourceRequest)
+> [DependencyObject](DependencyObject) getArchitectDependencytrackingObject(id, version, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType, consumedResourceRequest)
 
 Get a Dependency Tracking object
 
@@ -1803,23 +1748,21 @@ try {
 | **objectType** | **String**| Object type | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE 
 | **consumedResources** | **Boolean**| Include resources this item consumes | [optional] 
 | **consumingResources** | **Boolean**| Include resources that consume this item | [optional] 
-| **consumedResourceType** | [**List&lt;String&gt;**](String.html)| Types of consumed resources to return, if consumed resources are requested | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE 
-| **consumingResourceType** | [**List&lt;String&gt;**](String.html)| Types of consuming resources to return, if consuming resources are requested | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE 
+| **consumedResourceType** | [**List&lt;String&gt;**](String)| Types of consumed resources to return, if consumed resources are requested | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE 
+| **consumingResourceType** | [**List&lt;String&gt;**](String)| Types of consuming resources to return, if consuming resources are requested | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE 
 | **consumedResourceRequest** | **Boolean**| Indicate that this is going to look up a consumed resource object | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DependencyObject**](DependencyObject.html)
+[**DependencyObject**](DependencyObject)
 
-<a name="getArchitectDependencytrackingType"></a>
 
 # **getArchitectDependencytrackingType**
 
 
-
-> [DependencyType](DependencyType.html) getArchitectDependencytrackingType(typeId)
+> [DependencyType](DependencyType) getArchitectDependencytrackingType(typeId)
 
 Get a Dependency Tracking type.
 
@@ -1872,15 +1815,13 @@ try {
 
 ### Return type
 
-[**DependencyType**](DependencyType.html)
+[**DependencyType**](DependencyType)
 
-<a name="getArchitectDependencytrackingTypes"></a>
 
 # **getArchitectDependencytrackingTypes**
 
 
-
-> [DependencyTypeEntityListing](DependencyTypeEntityListing.html) getArchitectDependencytrackingTypes(pageNumber, pageSize)
+> [DependencyTypeEntityListing](DependencyTypeEntityListing) getArchitectDependencytrackingTypes(pageNumber, pageSize)
 
 Get Dependency Tracking types.
 
@@ -1935,15 +1876,13 @@ try {
 
 ### Return type
 
-[**DependencyTypeEntityListing**](DependencyTypeEntityListing.html)
+[**DependencyTypeEntityListing**](DependencyTypeEntityListing)
 
-<a name="getArchitectDependencytrackingUpdatedresourceconsumers"></a>
 
 # **getArchitectDependencytrackingUpdatedresourceconsumers**
 
 
-
-> [DependencyObjectEntityListing](DependencyObjectEntityListing.html) getArchitectDependencytrackingUpdatedresourceconsumers(name, objectType, consumedResources, consumedResourceType, pageNumber, pageSize)
+> [DependencyObjectEntityListing](DependencyObjectEntityListing) getArchitectDependencytrackingUpdatedresourceconsumers(name, objectType, consumedResources, consumedResourceType, pageNumber, pageSize)
 
 Get Dependency Tracking objects that depend on updated resources
 
@@ -1996,9 +1935,9 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **name** | **String**| Name to search for | [optional] 
-| **objectType** | [**List&lt;String&gt;**](String.html)| Object type(s) to search for | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE 
+| **objectType** | [**List&lt;String&gt;**](String)| Object type(s) to search for | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE 
 | **consumedResources** | **Boolean**| Return consumed resources? | [optional] [default to false] 
-| **consumedResourceType** | [**List&lt;String&gt;**](String.html)| Resource type(s) to return | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE 
+| **consumedResourceType** | [**List&lt;String&gt;**](String)| Resource type(s) to return | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTFLOW, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 {: class="table-striped"}
@@ -2006,15 +1945,13 @@ try {
 
 ### Return type
 
-[**DependencyObjectEntityListing**](DependencyObjectEntityListing.html)
+[**DependencyObjectEntityListing**](DependencyObjectEntityListing)
 
-<a name="getArchitectEmergencygroup"></a>
 
 # **getArchitectEmergencygroup**
 
 
-
-> [EmergencyGroup](EmergencyGroup.html) getArchitectEmergencygroup(emergencyGroupId)
+> [EmergencyGroup](EmergencyGroup) getArchitectEmergencygroup(emergencyGroupId)
 
 Gets a emergency group by ID
 
@@ -2067,15 +2004,13 @@ try {
 
 ### Return type
 
-[**EmergencyGroup**](EmergencyGroup.html)
+[**EmergencyGroup**](EmergencyGroup)
 
-<a name="getArchitectEmergencygroups"></a>
 
 # **getArchitectEmergencygroups**
 
 
-
-> [EmergencyGroupListing](EmergencyGroupListing.html) getArchitectEmergencygroups(pageNumber, pageSize, sortBy, sortOrder, name)
+> [EmergencyGroupListing](EmergencyGroupListing) getArchitectEmergencygroups(pageNumber, pageSize, sortBy, sortOrder, name)
 
 Get a list of emergency groups.
 
@@ -2136,15 +2071,13 @@ try {
 
 ### Return type
 
-[**EmergencyGroupListing**](EmergencyGroupListing.html)
+[**EmergencyGroupListing**](EmergencyGroupListing)
 
-<a name="getArchitectEmergencygroupsDivisionviews"></a>
 
 # **getArchitectEmergencygroupsDivisionviews**
 
 
-
-> [EmergencyGroupDivisionViewEntityListing](EmergencyGroupDivisionViewEntityListing.html) getArchitectEmergencygroupsDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId)
+> [EmergencyGroupDivisionViewEntityListing](EmergencyGroupDivisionViewEntityListing) getArchitectEmergencygroupsDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId)
 
 Get a pageable list of basic emergency group objects filterable by query parameters.
 
@@ -2203,23 +2136,21 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **sortBy** | **String**| Sort by | [optional] [default to name] 
 | **sortOrder** | **String**| Sort order | [optional] [default to ASC] 
-| **id** | [**List&lt;String&gt;**](String.html)| ID of the Emergency Groups to filter by. | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| ID of the Emergency Groups to filter by. | [optional] 
 | **name** | **String**| Name of the Emergency Group to filter by. | [optional] 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| List of divisionIds on which to filter. | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String)| List of divisionIds on which to filter. | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**EmergencyGroupDivisionViewEntityListing**](EmergencyGroupDivisionViewEntityListing.html)
+[**EmergencyGroupDivisionViewEntityListing**](EmergencyGroupDivisionViewEntityListing)
 
-<a name="getArchitectGrammar"></a>
 
 # **getArchitectGrammar**
 
 
-
-> [Grammar](Grammar.html) getArchitectGrammar(grammarId, includeFileUrls)
+> [Grammar](Grammar) getArchitectGrammar(grammarId, includeFileUrls)
 
 Get a grammar
 
@@ -2278,15 +2209,13 @@ try {
 
 ### Return type
 
-[**Grammar**](Grammar.html)
+[**Grammar**](Grammar)
 
-<a name="getArchitectGrammarLanguage"></a>
 
 # **getArchitectGrammarLanguage**
 
 
-
-> [GrammarLanguage](GrammarLanguage.html) getArchitectGrammarLanguage(grammarId, languageCode)
+> [GrammarLanguage](GrammarLanguage) getArchitectGrammarLanguage(grammarId, languageCode)
 
 Get a grammar language.
 
@@ -2343,15 +2272,13 @@ try {
 
 ### Return type
 
-[**GrammarLanguage**](GrammarLanguage.html)
+[**GrammarLanguage**](GrammarLanguage)
 
-<a name="getArchitectGrammars"></a>
 
 # **getArchitectGrammars**
 
 
-
-> [GrammarListing](GrammarListing.html) getArchitectGrammars(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, includeFileUrls)
+> [GrammarListing](GrammarListing) getArchitectGrammars(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, includeFileUrls)
 
 Get a pageable list of grammars, filtered by query parameters
 
@@ -2414,7 +2341,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **sortBy** | **String**| Sort by | [optional] [default to id]<br />**Values**: description, id, name 
 | **sortOrder** | **String**| Sort order | [optional] [default to asc]<br />**Values**: asc, desc 
-| **id** | [**List&lt;String&gt;**](String.html)| ID | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| ID | [optional] 
 | **name** | **String**| Name | [optional] 
 | **description** | **String**| Description | [optional] 
 | **nameOrDescription** | **String**| Name or description | [optional] 
@@ -2424,15 +2351,13 @@ try {
 
 ### Return type
 
-[**GrammarListing**](GrammarListing.html)
+[**GrammarListing**](GrammarListing)
 
-<a name="getArchitectIvr"></a>
 
 # **getArchitectIvr**
 
 
-
-> [IVR](IVR.html) getArchitectIvr(ivrId)
+> [IVR](IVR) getArchitectIvr(ivrId)
 
 Get an IVR config.
 
@@ -2485,15 +2410,13 @@ try {
 
 ### Return type
 
-[**IVR**](IVR.html)
+[**IVR**](IVR)
 
-<a name="getArchitectIvrs"></a>
 
 # **getArchitectIvrs**
 
 
-
-> [IVREntityListing](IVREntityListing.html) getArchitectIvrs(pageNumber, pageSize, sortBy, sortOrder, name, dnis, scheduleGroup)
+> [IVREntityListing](IVREntityListing) getArchitectIvrs(pageNumber, pageSize, sortBy, sortOrder, name, dnis, scheduleGroup)
 
 Get IVR configs.
 
@@ -2558,15 +2481,13 @@ try {
 
 ### Return type
 
-[**IVREntityListing**](IVREntityListing.html)
+[**IVREntityListing**](IVREntityListing)
 
-<a name="getArchitectIvrsDivisionviews"></a>
 
 # **getArchitectIvrsDivisionviews**
 
 
-
-> [IVRDivisionViewEntityListing](IVRDivisionViewEntityListing.html) getArchitectIvrsDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId)
+> [IVRDivisionViewEntityListing](IVRDivisionViewEntityListing) getArchitectIvrsDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId)
 
 Get a pageable list of basic ivr configuration information objects filterable by query parameters.
 
@@ -2623,23 +2544,21 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **sortBy** | **String**| Sort by | [optional] [default to name] 
 | **sortOrder** | **String**| Sort order | [optional] [default to ASC] 
-| **id** | [**List&lt;String&gt;**](String.html)| ID of the IVR to filter by. | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| ID of the IVR to filter by. | [optional] 
 | **name** | **String**| Name of the IVR to filter by. | [optional] 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| List of divisionIds on which to filter. | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String)| List of divisionIds on which to filter. | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**IVRDivisionViewEntityListing**](IVRDivisionViewEntityListing.html)
+[**IVRDivisionViewEntityListing**](IVRDivisionViewEntityListing)
 
-<a name="getArchitectPrompt"></a>
 
 # **getArchitectPrompt**
 
 
-
-> [Prompt](Prompt.html) getArchitectPrompt(promptId, includeMediaUris, includeResources, language)
+> [Prompt](Prompt) getArchitectPrompt(promptId, includeMediaUris, includeResources, language)
 
 Get specified user prompt
 
@@ -2692,21 +2611,19 @@ try {
 | **promptId** | **String**| Prompt ID | 
 | **includeMediaUris** | **Boolean**| Include the media URIs for each resource | [optional] [default to true] 
 | **includeResources** | **Boolean**| Include the resources for each system prompt | [optional] [default to true] 
-| **language** | [**List&lt;String&gt;**](String.html)| Filter the resources down to the provided languages | [optional] 
+| **language** | [**List&lt;String&gt;**](String)| Filter the resources down to the provided languages | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Prompt**](Prompt.html)
+[**Prompt**](Prompt)
 
-<a name="getArchitectPromptHistoryHistoryId"></a>
 
 # **getArchitectPromptHistoryHistoryId**
 
 
-
-> [HistoryListing](HistoryListing.html) getArchitectPromptHistoryHistoryId(promptId, historyId, pageNumber, pageSize, sortOrder, sortBy, action)
+> [HistoryListing](HistoryListing) getArchitectPromptHistoryHistoryId(promptId, historyId, pageNumber, pageSize, sortOrder, sortBy, action)
 
 Get generated prompt history
 
@@ -2765,21 +2682,19 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **sortOrder** | **String**| Sort order | [optional] [default to desc] 
 | **sortBy** | **String**| Sort by | [optional] [default to timestamp]<br />**Values**: action, timestamp, user 
-| **action** | [**List&lt;String&gt;**](String.html)| Flow actions to include (omit to include all) | [optional]<br />**Values**: checkin, checkout, create, deactivate, debug, delete, publish, revert, save 
+| **action** | [**List&lt;String&gt;**](String)| Flow actions to include (omit to include all) | [optional]<br />**Values**: checkin, checkout, create, deactivate, debug, delete, publish, revert, save 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**HistoryListing**](HistoryListing.html)
+[**HistoryListing**](HistoryListing)
 
-<a name="getArchitectPromptResource"></a>
 
 # **getArchitectPromptResource**
 
 
-
-> [PromptAsset](PromptAsset.html) getArchitectPromptResource(promptId, languageCode)
+> [PromptAsset](PromptAsset) getArchitectPromptResource(promptId, languageCode)
 
 Get specified user prompt resource
 
@@ -2834,15 +2749,13 @@ try {
 
 ### Return type
 
-[**PromptAsset**](PromptAsset.html)
+[**PromptAsset**](PromptAsset)
 
-<a name="getArchitectPromptResources"></a>
 
 # **getArchitectPromptResources**
 
 
-
-> [PromptAssetEntityListing](PromptAssetEntityListing.html) getArchitectPromptResources(promptId, pageNumber, pageSize)
+> [PromptAssetEntityListing](PromptAssetEntityListing) getArchitectPromptResources(promptId, pageNumber, pageSize)
 
 Get a pageable list of user prompt resources
 
@@ -2901,15 +2814,13 @@ try {
 
 ### Return type
 
-[**PromptAssetEntityListing**](PromptAssetEntityListing.html)
+[**PromptAssetEntityListing**](PromptAssetEntityListing)
 
-<a name="getArchitectPrompts"></a>
 
 # **getArchitectPrompts**
 
 
-
-> [PromptEntityListing](PromptEntityListing.html) getArchitectPrompts(pageNumber, pageSize, name, description, nameOrDescription, sortBy, sortOrder, includeMediaUris, includeResources, language)
+> [PromptEntityListing](PromptEntityListing) getArchitectPrompts(pageNumber, pageSize, name, description, nameOrDescription, sortBy, sortOrder, includeMediaUris, includeResources, language)
 
 Get a pageable list of user prompts
 
@@ -2969,28 +2880,26 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
-| **name** | [**List&lt;String&gt;**](String.html)| Name | [optional] 
+| **name** | [**List&lt;String&gt;**](String)| Name | [optional] 
 | **description** | **String**| Description | [optional] 
 | **nameOrDescription** | **String**| Name or description | [optional] 
 | **sortBy** | **String**| Sort by | [optional] [default to id] 
 | **sortOrder** | **String**| Sort order | [optional] [default to asc] 
 | **includeMediaUris** | **Boolean**| Include the media URIs for each resource | [optional] [default to true] 
 | **includeResources** | **Boolean**| Include the resources for each system prompt | [optional] [default to true] 
-| **language** | [**List&lt;String&gt;**](String.html)| Filter the resources down to the provided languages | [optional] 
+| **language** | [**List&lt;String&gt;**](String)| Filter the resources down to the provided languages | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**PromptEntityListing**](PromptEntityListing.html)
+[**PromptEntityListing**](PromptEntityListing)
 
-<a name="getArchitectSchedule"></a>
 
 # **getArchitectSchedule**
 
 
-
-> [Schedule](Schedule.html) getArchitectSchedule(scheduleId)
+> [Schedule](Schedule) getArchitectSchedule(scheduleId)
 
 Get a schedule by ID
 
@@ -3043,15 +2952,13 @@ try {
 
 ### Return type
 
-[**Schedule**](Schedule.html)
+[**Schedule**](Schedule)
 
-<a name="getArchitectSchedulegroup"></a>
 
 # **getArchitectSchedulegroup**
 
 
-
-> [ScheduleGroup](ScheduleGroup.html) getArchitectSchedulegroup(scheduleGroupId)
+> [ScheduleGroup](ScheduleGroup) getArchitectSchedulegroup(scheduleGroupId)
 
 Gets a schedule group by ID
 
@@ -3104,15 +3011,13 @@ try {
 
 ### Return type
 
-[**ScheduleGroup**](ScheduleGroup.html)
+[**ScheduleGroup**](ScheduleGroup)
 
-<a name="getArchitectSchedulegroups"></a>
 
 # **getArchitectSchedulegroups**
 
 
-
-> [ScheduleGroupEntityListing](ScheduleGroupEntityListing.html) getArchitectSchedulegroups(pageNumber, pageSize, sortBy, sortOrder, name, scheduleIds, divisionId)
+> [ScheduleGroupEntityListing](ScheduleGroupEntityListing) getArchitectSchedulegroups(pageNumber, pageSize, sortBy, sortOrder, name, scheduleIds, divisionId)
 
 Get a list of schedule groups.
 
@@ -3171,21 +3076,19 @@ try {
 | **sortOrder** | **String**| Sort order | [optional] [default to ASC] 
 | **name** | **String**| Name of the Schedule Group to filter by. | [optional] 
 | **scheduleIds** | **String**| A comma-delimited list of Schedule IDs to filter by. | [optional] 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| List of divisionIds on which to filter. | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String)| List of divisionIds on which to filter. | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ScheduleGroupEntityListing**](ScheduleGroupEntityListing.html)
+[**ScheduleGroupEntityListing**](ScheduleGroupEntityListing)
 
-<a name="getArchitectSchedulegroupsDivisionviews"></a>
 
 # **getArchitectSchedulegroupsDivisionviews**
 
 
-
-> [ScheduleGroupDivisionViewEntityListing](ScheduleGroupDivisionViewEntityListing.html) getArchitectSchedulegroupsDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId)
+> [ScheduleGroupDivisionViewEntityListing](ScheduleGroupDivisionViewEntityListing) getArchitectSchedulegroupsDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId)
 
 Get a pageable list of basic schedule group configuration information objects filterable by query parameters.
 
@@ -3242,23 +3145,21 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **sortBy** | **String**| Sort by | [optional] [default to name] 
 | **sortOrder** | **String**| Sort order | [optional] [default to ASC] 
-| **id** | [**List&lt;String&gt;**](String.html)| ID of the schedule group to filter by. | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| ID of the schedule group to filter by. | [optional] 
 | **name** | **String**| Name of the schedule group to filter by. | [optional] 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| List of divisionIds on which to filter. | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String)| List of divisionIds on which to filter. | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ScheduleGroupDivisionViewEntityListing**](ScheduleGroupDivisionViewEntityListing.html)
+[**ScheduleGroupDivisionViewEntityListing**](ScheduleGroupDivisionViewEntityListing)
 
-<a name="getArchitectSchedules"></a>
 
 # **getArchitectSchedules**
 
 
-
-> [ScheduleEntityListing](ScheduleEntityListing.html) getArchitectSchedules(pageNumber, pageSize, sortBy, sortOrder, name, divisionId)
+> [ScheduleEntityListing](ScheduleEntityListing) getArchitectSchedules(pageNumber, pageSize, sortBy, sortOrder, name, divisionId)
 
 Get a list of schedules.
 
@@ -3315,21 +3216,19 @@ try {
 | **sortBy** | **String**| Sort by | [optional] [default to name] 
 | **sortOrder** | **String**| Sort order | [optional] [default to ASC] 
 | **name** | **String**| Name of the Schedule to filter by. | [optional] 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| List of divisionIds on which to filter. | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String)| List of divisionIds on which to filter. | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ScheduleEntityListing**](ScheduleEntityListing.html)
+[**ScheduleEntityListing**](ScheduleEntityListing)
 
-<a name="getArchitectSchedulesDivisionviews"></a>
 
 # **getArchitectSchedulesDivisionviews**
 
 
-
-> [ScheduleDivisionViewEntityListing](ScheduleDivisionViewEntityListing.html) getArchitectSchedulesDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId)
+> [ScheduleDivisionViewEntityListing](ScheduleDivisionViewEntityListing) getArchitectSchedulesDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId)
 
 Get a pageable list of basic schedule configuration information objects filterable by query parameters.
 
@@ -3386,23 +3285,21 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **sortBy** | **String**| Sort by | [optional] [default to name] 
 | **sortOrder** | **String**| Sort order | [optional] [default to ASC] 
-| **id** | [**List&lt;String&gt;**](String.html)| ID of the schedule group to filter by. | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| ID of the schedule group to filter by. | [optional] 
 | **name** | **String**| Name of the schedule group to filter by. | [optional] 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| List of divisionIds on which to filter. | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String)| List of divisionIds on which to filter. | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ScheduleDivisionViewEntityListing**](ScheduleDivisionViewEntityListing.html)
+[**ScheduleDivisionViewEntityListing**](ScheduleDivisionViewEntityListing)
 
-<a name="getArchitectSystemprompt"></a>
 
 # **getArchitectSystemprompt**
 
 
-
-> [SystemPrompt](SystemPrompt.html) getArchitectSystemprompt(promptId, includeMediaUris, includeResources, language)
+> [SystemPrompt](SystemPrompt) getArchitectSystemprompt(promptId, includeMediaUris, includeResources, language)
 
 Get a system prompt
 
@@ -3455,21 +3352,19 @@ try {
 | **promptId** | **String**| promptId | 
 | **includeMediaUris** | **Boolean**| Include the media URIs for each resource | [optional] [default to true] 
 | **includeResources** | **Boolean**| Include the resources for each system prompt | [optional] [default to true] 
-| **language** | [**List&lt;String&gt;**](String.html)| Filter the resources down to the provided languages | [optional] 
+| **language** | [**List&lt;String&gt;**](String)| Filter the resources down to the provided languages | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**SystemPrompt**](SystemPrompt.html)
+[**SystemPrompt**](SystemPrompt)
 
-<a name="getArchitectSystempromptHistoryHistoryId"></a>
 
 # **getArchitectSystempromptHistoryHistoryId**
 
 
-
-> [HistoryListing](HistoryListing.html) getArchitectSystempromptHistoryHistoryId(promptId, historyId, pageNumber, pageSize, sortOrder, sortBy, action)
+> [HistoryListing](HistoryListing) getArchitectSystempromptHistoryHistoryId(promptId, historyId, pageNumber, pageSize, sortOrder, sortBy, action)
 
 Get generated prompt history
 
@@ -3528,21 +3423,19 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **sortOrder** | **String**| Sort order | [optional] [default to desc] 
 | **sortBy** | **String**| Sort by | [optional] [default to timestamp]<br />**Values**: action, timestamp, user 
-| **action** | [**List&lt;String&gt;**](String.html)| Flow actions to include (omit to include all) | [optional]<br />**Values**: checkin, checkout, create, deactivate, debug, delete, publish, revert, save 
+| **action** | [**List&lt;String&gt;**](String)| Flow actions to include (omit to include all) | [optional]<br />**Values**: checkin, checkout, create, deactivate, debug, delete, publish, revert, save 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**HistoryListing**](HistoryListing.html)
+[**HistoryListing**](HistoryListing)
 
-<a name="getArchitectSystempromptResource"></a>
 
 # **getArchitectSystempromptResource**
 
 
-
-> [SystemPromptAsset](SystemPromptAsset.html) getArchitectSystempromptResource(promptId, languageCode)
+> [SystemPromptAsset](SystemPromptAsset) getArchitectSystempromptResource(promptId, languageCode)
 
 Get a system prompt resource.
 
@@ -3597,15 +3490,13 @@ try {
 
 ### Return type
 
-[**SystemPromptAsset**](SystemPromptAsset.html)
+[**SystemPromptAsset**](SystemPromptAsset)
 
-<a name="getArchitectSystempromptResources"></a>
 
 # **getArchitectSystempromptResources**
 
 
-
-> [SystemPromptAssetEntityListing](SystemPromptAssetEntityListing.html) getArchitectSystempromptResources(promptId, pageNumber, pageSize, sortBy, sortOrder)
+> [SystemPromptAssetEntityListing](SystemPromptAssetEntityListing) getArchitectSystempromptResources(promptId, pageNumber, pageSize, sortBy, sortOrder)
 
 Get system prompt resources.
 
@@ -3666,15 +3557,13 @@ try {
 
 ### Return type
 
-[**SystemPromptAssetEntityListing**](SystemPromptAssetEntityListing.html)
+[**SystemPromptAssetEntityListing**](SystemPromptAssetEntityListing)
 
-<a name="getArchitectSystemprompts"></a>
 
 # **getArchitectSystemprompts**
 
 
-
-> [SystemPromptEntityListing](SystemPromptEntityListing.html) getArchitectSystemprompts(pageNumber, pageSize, sortBy, sortOrder, name, description, nameOrDescription, includeMediaUris, includeResources, language)
+> [SystemPromptEntityListing](SystemPromptEntityListing) getArchitectSystemprompts(pageNumber, pageSize, sortBy, sortOrder, name, description, nameOrDescription, includeMediaUris, includeResources, language)
 
 Get System Prompts
 
@@ -3739,21 +3628,19 @@ try {
 | **nameOrDescription** | **String**| Name or description | [optional] 
 | **includeMediaUris** | **Boolean**| Include the media URIs for each resource | [optional] [default to true] 
 | **includeResources** | **Boolean**| Include the resources for each system prompt | [optional] [default to true] 
-| **language** | [**List&lt;String&gt;**](String.html)| Filter the resources down to the provided languages | [optional] 
+| **language** | [**List&lt;String&gt;**](String)| Filter the resources down to the provided languages | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**SystemPromptEntityListing**](SystemPromptEntityListing.html)
+[**SystemPromptEntityListing**](SystemPromptEntityListing)
 
-<a name="getFlow"></a>
 
 # **getFlow**
 
 
-
-> [Flow](Flow.html) getFlow(flowId, deleted)
+> [Flow](Flow) getFlow(flowId, deleted)
 
 Get flow
 
@@ -3808,15 +3695,13 @@ try {
 
 ### Return type
 
-[**Flow**](Flow.html)
+[**Flow**](Flow)
 
-<a name="getFlowHistoryHistoryId"></a>
 
 # **getFlowHistoryHistoryId**
 
 
-
-> [HistoryListing](HistoryListing.html) getFlowHistoryHistoryId(flowId, historyId, pageNumber, pageSize, sortOrder, sortBy, action)
+> [HistoryListing](HistoryListing) getFlowHistoryHistoryId(flowId, historyId, pageNumber, pageSize, sortOrder, sortBy, action)
 
 Get generated flow history
 
@@ -3875,21 +3760,19 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **sortOrder** | **String**| Sort order | [optional] [default to desc] 
 | **sortBy** | **String**| Sort by | [optional] [default to timestamp]<br />**Values**: action, timestamp, user 
-| **action** | [**List&lt;String&gt;**](String.html)| Flow actions to include (omit to include all) | [optional]<br />**Values**: checkin, checkout, create, deactivate, debug, delete, publish, revert, save 
+| **action** | [**List&lt;String&gt;**](String)| Flow actions to include (omit to include all) | [optional]<br />**Values**: checkin, checkout, create, deactivate, debug, delete, publish, revert, save 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**HistoryListing**](HistoryListing.html)
+[**HistoryListing**](HistoryListing)
 
-<a name="getFlowInstancesSettingsLoglevels"></a>
 
 # **getFlowInstancesSettingsLoglevels**
 
 
-
-> [FlowSettingsResponse](FlowSettingsResponse.html) getFlowInstancesSettingsLoglevels(flowId, expand)
+> [FlowSettingsResponse](FlowSettingsResponse) getFlowInstancesSettingsLoglevels(flowId, expand)
 
 Retrieves the log level for a flow by flow id.
 
@@ -3940,18 +3823,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **flowId** | **String**| The flow id to get the loglevel for | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Expand instructions for the result | [optional]<br />**Values**: name, type, logLevelCharacteristics.characteristics 
+| **expand** | [**List&lt;String&gt;**](String)| Expand instructions for the result | [optional]<br />**Values**: name, type, logLevelCharacteristics.characteristics 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**FlowSettingsResponse**](FlowSettingsResponse.html)
+[**FlowSettingsResponse**](FlowSettingsResponse)
 
-<a name="getFlowLatestconfiguration"></a>
 
 # **getFlowLatestconfiguration**
-
 
 
 > Object getFlowLatestconfiguration(flowId, deleted)
@@ -4011,13 +3892,11 @@ try {
 
 **Object**
 
-<a name="getFlowVersion"></a>
 
 # **getFlowVersion**
 
 
-
-> [FlowVersion](FlowVersion.html) getFlowVersion(flowId, versionId, deleted)
+> [FlowVersion](FlowVersion) getFlowVersion(flowId, versionId, deleted)
 
 Get flow version
 
@@ -4074,12 +3953,10 @@ try {
 
 ### Return type
 
-[**FlowVersion**](FlowVersion.html)
+[**FlowVersion**](FlowVersion)
 
-<a name="getFlowVersionConfiguration"></a>
 
 # **getFlowVersionConfiguration**
-
 
 
 > Object getFlowVersionConfiguration(flowId, versionId, deleted)
@@ -4141,13 +4018,11 @@ try {
 
 **Object**
 
-<a name="getFlowVersionHealth"></a>
 
 # **getFlowVersionHealth**
 
 
-
-> [FlowHealth](FlowHealth.html) getFlowVersionHealth(flowId, versionId, language)
+> [FlowHealth](FlowHealth) getFlowVersionHealth(flowId, versionId, language)
 
 Get overall health scores for all intents present in the NLU domain version associated with the bot flow version.
 
@@ -4204,15 +4079,13 @@ try {
 
 ### Return type
 
-[**FlowHealth**](FlowHealth.html)
+[**FlowHealth**](FlowHealth)
 
-<a name="getFlowVersionIntentHealth"></a>
 
 # **getFlowVersionIntentHealth**
 
 
-
-> [FlowHealthIntent](FlowHealthIntent.html) getFlowVersionIntentHealth(flowId, versionId, intentId, language)
+> [FlowHealthIntent](FlowHealthIntent) getFlowVersionIntentHealth(flowId, versionId, intentId, language)
 
 Get health scores and other health metrics for a specific intent. This includes the health metrics for each utterance in an intent.
 
@@ -4271,15 +4144,13 @@ try {
 
 ### Return type
 
-[**FlowHealthIntent**](FlowHealthIntent.html)
+[**FlowHealthIntent**](FlowHealthIntent)
 
-<a name="getFlowVersionIntentUtteranceHealth"></a>
 
 # **getFlowVersionIntentUtteranceHealth**
 
 
-
-> [FlowHealthUtterance](FlowHealthUtterance.html) getFlowVersionIntentUtteranceHealth(flowId, versionId, intentId, utteranceId, language)
+> [FlowHealthUtterance](FlowHealthUtterance) getFlowVersionIntentUtteranceHealth(flowId, versionId, intentId, utteranceId, language)
 
 Get health metrics associated with a specific utterance of an intent.
 
@@ -4340,15 +4211,13 @@ try {
 
 ### Return type
 
-[**FlowHealthUtterance**](FlowHealthUtterance.html)
+[**FlowHealthUtterance**](FlowHealthUtterance)
 
-<a name="getFlowVersions"></a>
 
 # **getFlowVersions**
 
 
-
-> [FlowVersionEntityListing](FlowVersionEntityListing.html) getFlowVersions(flowId, pageNumber, pageSize, deleted)
+> [FlowVersionEntityListing](FlowVersionEntityListing) getFlowVersions(flowId, pageNumber, pageSize, deleted)
 
 Get flow version list
 
@@ -4407,15 +4276,13 @@ try {
 
 ### Return type
 
-[**FlowVersionEntityListing**](FlowVersionEntityListing.html)
+[**FlowVersionEntityListing**](FlowVersionEntityListing)
 
-<a name="getFlows"></a>
 
 # **getFlows**
 
 
-
-> [FlowEntityListing](FlowEntityListing.html) getFlows(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, lockedByClientId, secure, deleted, includeSchemas, publishedAfter, publishedBefore, divisionId)
+> [FlowEntityListing](FlowEntityListing) getFlows(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, lockedByClientId, secure, deleted, includeSchemas, publishedAfter, publishedBefore, divisionId)
 
 Get a pageable list of flows, filtered by query parameters
 
@@ -4482,12 +4349,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **type** | [**List&lt;String&gt;**](String.html)| Type | [optional]<br />**Values**: bot, commonmodule, digitalbot, inboundcall, inboundchat, inboundemail, inboundshortmessage, outboundcall, inqueuecall, inqueueemail, inqueueshortmessage, speech, securecall, surveyinvite, voice, voicemail, voicesurvey, workflow, workitem 
+| **type** | [**List&lt;String&gt;**](String)| Type | [optional]<br />**Values**: bot, commonmodule, digitalbot, inboundcall, inboundchat, inboundemail, inboundshortmessage, outboundcall, inqueuecall, inqueueemail, inqueueshortmessage, speech, securecall, surveyinvite, voice, voicemail, voicesurvey, workflow, workitem 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **sortBy** | **String**| Sort by | [optional] [default to id] 
 | **sortOrder** | **String**| Sort order | [optional] [default to asc] 
-| **id** | [**List&lt;String&gt;**](String.html)| ID | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| ID | [optional] 
 | **name** | **String**| Name | [optional] 
 | **description** | **String**| Description | [optional] 
 | **nameOrDescription** | **String**| Name or description | [optional] 
@@ -4500,21 +4367,19 @@ try {
 | **includeSchemas** | **Boolean**| Include variable schemas | [optional] [default to false] 
 | **publishedAfter** | **String**| Published after | [optional] [default to null] 
 | **publishedBefore** | **String**| Published before | [optional] [default to null] 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| division ID(s) | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String)| division ID(s) | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**FlowEntityListing**](FlowEntityListing.html)
+[**FlowEntityListing**](FlowEntityListing)
 
-<a name="getFlowsDatatable"></a>
 
 # **getFlowsDatatable**
 
 
-
-> [DataTable](DataTable.html) getFlowsDatatable(datatableId, expand)
+> [DataTable](DataTable) getFlowsDatatable(datatableId, expand)
 
 Returns a specific datatable by id
 
@@ -4571,15 +4436,13 @@ try {
 
 ### Return type
 
-[**DataTable**](DataTable.html)
+[**DataTable**](DataTable)
 
-<a name="getFlowsDatatableExportJob"></a>
 
 # **getFlowsDatatableExportJob**
 
 
-
-> [DataTableExportJob](DataTableExportJob.html) getFlowsDatatableExportJob(datatableId, exportJobId)
+> [DataTableExportJob](DataTableExportJob) getFlowsDatatableExportJob(datatableId, exportJobId)
 
 Returns the state information about an export job
 
@@ -4637,15 +4500,13 @@ try {
 
 ### Return type
 
-[**DataTableExportJob**](DataTableExportJob.html)
+[**DataTableExportJob**](DataTableExportJob)
 
-<a name="getFlowsDatatableImportJob"></a>
 
 # **getFlowsDatatableImportJob**
 
 
-
-> [DataTableImportJob](DataTableImportJob.html) getFlowsDatatableImportJob(datatableId, importJobId)
+> [DataTableImportJob](DataTableImportJob) getFlowsDatatableImportJob(datatableId, importJobId)
 
 Returns the state information about an import job
 
@@ -4703,15 +4564,13 @@ try {
 
 ### Return type
 
-[**DataTableImportJob**](DataTableImportJob.html)
+[**DataTableImportJob**](DataTableImportJob)
 
-<a name="getFlowsDatatableImportJobs"></a>
 
 # **getFlowsDatatableImportJobs**
 
 
-
-> [DataTableImportEntityListing](DataTableImportEntityListing.html) getFlowsDatatableImportJobs(datatableId, pageNumber, pageSize)
+> [DataTableImportEntityListing](DataTableImportEntityListing) getFlowsDatatableImportJobs(datatableId, pageNumber, pageSize)
 
 Get all recent import jobs
 
@@ -4771,12 +4630,10 @@ try {
 
 ### Return type
 
-[**DataTableImportEntityListing**](DataTableImportEntityListing.html)
+[**DataTableImportEntityListing**](DataTableImportEntityListing)
 
-<a name="getFlowsDatatableRow"></a>
 
 # **getFlowsDatatableRow**
-
 
 
 > Map&lt;String, Object&gt; getFlowsDatatableRow(datatableId, rowId, showbrief)
@@ -4841,13 +4698,11 @@ try {
 
 **Map&lt;String, Object&gt;**
 
-<a name="getFlowsDatatableRows"></a>
 
 # **getFlowsDatatableRows**
 
 
-
-> [DataTableRowEntityListing](DataTableRowEntityListing.html) getFlowsDatatableRows(datatableId, pageNumber, pageSize, showbrief, sortOrder)
+> [DataTableRowEntityListing](DataTableRowEntityListing) getFlowsDatatableRows(datatableId, pageNumber, pageSize, showbrief, sortOrder)
 
 Returns the rows for the datatable with the given id
 
@@ -4911,15 +4766,13 @@ try {
 
 ### Return type
 
-[**DataTableRowEntityListing**](DataTableRowEntityListing.html)
+[**DataTableRowEntityListing**](DataTableRowEntityListing)
 
-<a name="getFlowsDatatables"></a>
 
 # **getFlowsDatatables**
 
 
-
-> [DataTablesDomainEntityListing](DataTablesDomainEntityListing.html) getFlowsDatatables(expand, pageNumber, pageSize, sortBy, sortOrder, divisionId, name)
+> [DataTablesDomainEntityListing](DataTablesDomainEntityListing) getFlowsDatatables(expand, pageNumber, pageSize, sortBy, sortOrder, divisionId, name)
 
 Retrieve a list of datatables for the org
 
@@ -4979,22 +4832,20 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **sortBy** | **String**| Sort by | [optional] [default to id]<br />**Values**: id, name 
 | **sortOrder** | **String**| Sort order | [optional] [default to ascending] 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| division ID(s) | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String)| division ID(s) | [optional] 
 | **name** | **String**| Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive. | [optional] [default to null] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DataTablesDomainEntityListing**](DataTablesDomainEntityListing.html)
+[**DataTablesDomainEntityListing**](DataTablesDomainEntityListing)
 
-<a name="getFlowsDatatablesDivisionview"></a>
 
 # **getFlowsDatatablesDivisionview**
 
 
-
-> [DataTable](DataTable.html) getFlowsDatatablesDivisionview(datatableId, expand)
+> [DataTable](DataTable) getFlowsDatatablesDivisionview(datatableId, expand)
 
 Returns a specific datatable by id
 
@@ -5051,15 +4902,13 @@ try {
 
 ### Return type
 
-[**DataTable**](DataTable.html)
+[**DataTable**](DataTable)
 
-<a name="getFlowsDatatablesDivisionviews"></a>
 
 # **getFlowsDatatablesDivisionviews**
 
 
-
-> [DataTablesDomainEntityListing](DataTablesDomainEntityListing.html) getFlowsDatatablesDivisionviews(expand, pageNumber, pageSize, sortBy, sortOrder, divisionId, name)
+> [DataTablesDomainEntityListing](DataTablesDomainEntityListing) getFlowsDatatablesDivisionviews(expand, pageNumber, pageSize, sortBy, sortOrder, divisionId, name)
 
 Retrieve a list of datatables for the org
 
@@ -5119,22 +4968,20 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **sortBy** | **String**| Sort by | [optional] [default to id]<br />**Values**: id, name 
 | **sortOrder** | **String**| Sort order | [optional] [default to ascending] 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| division ID(s) | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String)| division ID(s) | [optional] 
 | **name** | **String**| Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive. | [optional] [default to null] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DataTablesDomainEntityListing**](DataTablesDomainEntityListing.html)
+[**DataTablesDomainEntityListing**](DataTablesDomainEntityListing)
 
-<a name="getFlowsDivisionviews"></a>
 
 # **getFlowsDivisionviews**
 
 
-
-> [FlowDivisionViewEntityListing](FlowDivisionViewEntityListing.html) getFlowsDivisionviews(type, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore, divisionId, includeSchemas)
+> [FlowDivisionViewEntityListing](FlowDivisionViewEntityListing) getFlowsDivisionviews(type, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore, divisionId, includeSchemas)
 
 Get a pageable list of basic flow information objects filterable by query parameters.
 
@@ -5194,32 +5041,30 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **type** | [**List&lt;String&gt;**](String.html)| Type | [optional]<br />**Values**: bot, commonmodule, digitalbot, inboundcall, inboundchat, inboundemail, inboundshortmessage, outboundcall, inqueuecall, inqueueemail, inqueueshortmessage, speech, securecall, surveyinvite, voice, voicemail, voicesurvey, workflow, workitem 
+| **type** | [**List&lt;String&gt;**](String)| Type | [optional]<br />**Values**: bot, commonmodule, digitalbot, inboundcall, inboundchat, inboundemail, inboundshortmessage, outboundcall, inqueuecall, inqueueemail, inqueueshortmessage, speech, securecall, surveyinvite, voice, voicemail, voicesurvey, workflow, workitem 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **sortBy** | **String**| Sort by | [optional] [default to id] 
 | **sortOrder** | **String**| Sort order | [optional] [default to asc] 
-| **id** | [**List&lt;String&gt;**](String.html)| ID | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| ID | [optional] 
 | **name** | **String**| Name | [optional] 
 | **publishVersionId** | **String**| Publish version ID | [optional] 
 | **publishedAfter** | **String**| Published after | [optional] [default to null] 
 | **publishedBefore** | **String**| Published before | [optional] [default to null] 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| division ID(s) | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String)| division ID(s) | [optional] 
 | **includeSchemas** | **Boolean**| Include variable schemas | [optional] [default to false] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**FlowDivisionViewEntityListing**](FlowDivisionViewEntityListing.html)
+[**FlowDivisionViewEntityListing**](FlowDivisionViewEntityListing)
 
-<a name="getFlowsExecution"></a>
 
 # **getFlowsExecution**
 
 
-
-> [FlowRuntimeExecution](FlowRuntimeExecution.html) getFlowsExecution(flowExecutionId)
+> [FlowRuntimeExecution](FlowRuntimeExecution) getFlowsExecution(flowExecutionId)
 
 Get a flow execution's details. Flow execution details are available for several days after the flow is started.
 
@@ -5272,15 +5117,13 @@ try {
 
 ### Return type
 
-[**FlowRuntimeExecution**](FlowRuntimeExecution.html)
+[**FlowRuntimeExecution**](FlowRuntimeExecution)
 
-<a name="getFlowsInstance"></a>
 
 # **getFlowsInstance**
 
 
-
-> [GetFlowExecutionDataJobResult](GetFlowExecutionDataJobResult.html) getFlowsInstance(instanceId, expand)
+> [GetFlowExecutionDataJobResult](GetFlowExecutionDataJobResult) getFlowsInstance(instanceId, expand)
 
 Start a process (job) to prepare a download of a singular flow execution data instance by Id
 
@@ -5337,15 +5180,13 @@ try {
 
 ### Return type
 
-[**GetFlowExecutionDataJobResult**](GetFlowExecutionDataJobResult.html)
+[**GetFlowExecutionDataJobResult**](GetFlowExecutionDataJobResult)
 
-<a name="getFlowsInstancesJob"></a>
 
 # **getFlowsInstancesJob**
 
 
-
-> [GetFlowExecutionDataJobResult](GetFlowExecutionDataJobResult.html) getFlowsInstancesJob(jobId)
+> [GetFlowExecutionDataJobResult](GetFlowExecutionDataJobResult) getFlowsInstancesJob(jobId)
 
 Get the status and/or results of an asynchronous flow execution data retrieval job
 
@@ -5398,15 +5239,13 @@ try {
 
 ### Return type
 
-[**GetFlowExecutionDataJobResult**](GetFlowExecutionDataJobResult.html)
+[**GetFlowExecutionDataJobResult**](GetFlowExecutionDataJobResult)
 
-<a name="getFlowsInstancesQuerycapabilities"></a>
 
 # **getFlowsInstancesQuerycapabilities**
 
 
-
-> [FlowsQueryCriteriaResponse](FlowsQueryCriteriaResponse.html) getFlowsInstancesQuerycapabilities(expand)
+> [FlowsQueryCriteriaResponse](FlowsQueryCriteriaResponse) getFlowsInstancesQuerycapabilities(expand)
 
 Retrieve a list of capabilities that the org can use to query for execution data
 
@@ -5461,15 +5300,13 @@ try {
 
 ### Return type
 
-[**FlowsQueryCriteriaResponse**](FlowsQueryCriteriaResponse.html)
+[**FlowsQueryCriteriaResponse**](FlowsQueryCriteriaResponse)
 
-<a name="getFlowsInstancesSettingsExecutiondata"></a>
 
 # **getFlowsInstancesSettingsExecutiondata**
 
 
-
-> [ExecutionDataFlowSettingsResponse](ExecutionDataFlowSettingsResponse.html) getFlowsInstancesSettingsExecutiondata()
+> [ExecutionDataFlowSettingsResponse](ExecutionDataFlowSettingsResponse) getFlowsInstancesSettingsExecutiondata()
 
 Get the execution history enabled setting.
 
@@ -5520,15 +5357,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**ExecutionDataFlowSettingsResponse**](ExecutionDataFlowSettingsResponse.html)
+[**ExecutionDataFlowSettingsResponse**](ExecutionDataFlowSettingsResponse)
 
-<a name="getFlowsInstancesSettingsLoglevels"></a>
 
 # **getFlowsInstancesSettingsLoglevels**
 
 
-
-> [FlowSettingsResponseEntityListing](FlowSettingsResponseEntityListing.html) getFlowsInstancesSettingsLoglevels(expand, pageNumber, pageSize)
+> [FlowSettingsResponseEntityListing](FlowSettingsResponseEntityListing) getFlowsInstancesSettingsLoglevels(expand, pageNumber, pageSize)
 
 Retrieve a list of LogLevels for the organization.
 
@@ -5580,7 +5415,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **expand** | [**List&lt;String&gt;**](String.html)| Expand instructions for the result | [optional]<br />**Values**: name, type, logLevelCharacteristics.characteristics 
+| **expand** | [**List&lt;String&gt;**](String)| Expand instructions for the result | [optional]<br />**Values**: name, type, logLevelCharacteristics.characteristics 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Number of entities to return. Maximum of 200. | [optional] [default to 25] 
 {: class="table-striped"}
@@ -5588,15 +5423,13 @@ try {
 
 ### Return type
 
-[**FlowSettingsResponseEntityListing**](FlowSettingsResponseEntityListing.html)
+[**FlowSettingsResponseEntityListing**](FlowSettingsResponseEntityListing)
 
-<a name="getFlowsInstancesSettingsLoglevelsCharacteristics"></a>
 
 # **getFlowsInstancesSettingsLoglevelsCharacteristics**
 
 
-
-> [FlowLogLevelCharacteristicsDefinitions](FlowLogLevelCharacteristicsDefinitions.html) getFlowsInstancesSettingsLoglevelsCharacteristics()
+> [FlowLogLevelCharacteristicsDefinitions](FlowLogLevelCharacteristicsDefinitions) getFlowsInstancesSettingsLoglevelsCharacteristics()
 
 Gets the available flow log level characteristics for this organization.
 
@@ -5648,15 +5481,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**FlowLogLevelCharacteristicsDefinitions**](FlowLogLevelCharacteristicsDefinitions.html)
+[**FlowLogLevelCharacteristicsDefinitions**](FlowLogLevelCharacteristicsDefinitions)
 
-<a name="getFlowsInstancesSettingsLoglevelsDefault"></a>
 
 # **getFlowsInstancesSettingsLoglevelsDefault**
 
 
-
-> [FlowSettingsResponse](FlowSettingsResponse.html) getFlowsInstancesSettingsLoglevelsDefault(expand)
+> [FlowSettingsResponse](FlowSettingsResponse) getFlowsInstancesSettingsLoglevelsDefault(expand)
 
 Returns the flow default log level.
 
@@ -5705,21 +5536,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **expand** | [**List&lt;String&gt;**](String.html)| Expand instructions for the result | [optional]<br />**Values**: logLevelCharacteristics.characteristics 
+| **expand** | [**List&lt;String&gt;**](String)| Expand instructions for the result | [optional]<br />**Values**: logLevelCharacteristics.characteristics 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**FlowSettingsResponse**](FlowSettingsResponse.html)
+[**FlowSettingsResponse**](FlowSettingsResponse)
 
-<a name="getFlowsJob"></a>
 
 # **getFlowsJob**
 
 
-
-> [ArchitectJobStateResponse](ArchitectJobStateResponse.html) getFlowsJob(jobId, expand)
+> [ArchitectJobStateResponse](ArchitectJobStateResponse) getFlowsJob(jobId, expand)
 
 Fetch Architect Job Status
 
@@ -5768,21 +5597,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **jobId** | **String**| Job ID | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: messages 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand. | [optional]<br />**Values**: messages 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ArchitectJobStateResponse**](ArchitectJobStateResponse.html)
+[**ArchitectJobStateResponse**](ArchitectJobStateResponse)
 
-<a name="getFlowsMilestone"></a>
 
 # **getFlowsMilestone**
 
 
-
-> [FlowMilestone](FlowMilestone.html) getFlowsMilestone(milestoneId)
+> [FlowMilestone](FlowMilestone) getFlowsMilestone(milestoneId)
 
 Get a flow milestone
 
@@ -5837,15 +5664,13 @@ try {
 
 ### Return type
 
-[**FlowMilestone**](FlowMilestone.html)
+[**FlowMilestone**](FlowMilestone)
 
-<a name="getFlowsMilestones"></a>
 
 # **getFlowsMilestones**
 
 
-
-> [FlowMilestoneListing](FlowMilestoneListing.html) getFlowsMilestones(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, divisionId)
+> [FlowMilestoneListing](FlowMilestoneListing) getFlowsMilestones(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, divisionId)
 
 Get a pageable list of flow milestones, filtered by query parameters
 
@@ -5906,25 +5731,23 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **sortBy** | **String**| Sort by | [optional] [default to id] 
 | **sortOrder** | **String**| Sort order | [optional] [default to asc] 
-| **id** | [**List&lt;String&gt;**](String.html)| ID | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| ID | [optional] 
 | **name** | **String**| Name | [optional] 
 | **description** | **String**| Description | [optional] 
 | **nameOrDescription** | **String**| Name or description | [optional] 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| division ID(s) | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String)| division ID(s) | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**FlowMilestoneListing**](FlowMilestoneListing.html)
+[**FlowMilestoneListing**](FlowMilestoneListing)
 
-<a name="getFlowsMilestonesDivisionviews"></a>
 
 # **getFlowsMilestonesDivisionviews**
 
 
-
-> [FlowMilestoneDivisionViewEntityListing](FlowMilestoneDivisionViewEntityListing.html) getFlowsMilestonesDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId)
+> [FlowMilestoneDivisionViewEntityListing](FlowMilestoneDivisionViewEntityListing) getFlowsMilestonesDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId)
 
 Get a pageable list of basic flow milestone information objects filterable by query parameters.
 
@@ -5983,23 +5806,21 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **sortBy** | **String**| Sort by | [optional] [default to id] 
 | **sortOrder** | **String**| Sort order | [optional] [default to asc] 
-| **id** | [**List&lt;String&gt;**](String.html)| ID | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| ID | [optional] 
 | **name** | **String**| Name | [optional] 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| division ID(s) | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String)| division ID(s) | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**FlowMilestoneDivisionViewEntityListing**](FlowMilestoneDivisionViewEntityListing.html)
+[**FlowMilestoneDivisionViewEntityListing**](FlowMilestoneDivisionViewEntityListing)
 
-<a name="getFlowsOutcome"></a>
 
 # **getFlowsOutcome**
 
 
-
-> [FlowOutcome](FlowOutcome.html) getFlowsOutcome(flowOutcomeId)
+> [FlowOutcome](FlowOutcome) getFlowsOutcome(flowOutcomeId)
 
 Get a flow outcome
 
@@ -6054,15 +5875,13 @@ try {
 
 ### Return type
 
-[**FlowOutcome**](FlowOutcome.html)
+[**FlowOutcome**](FlowOutcome)
 
-<a name="getFlowsOutcomes"></a>
 
 # **getFlowsOutcomes**
 
 
-
-> [FlowOutcomeListing](FlowOutcomeListing.html) getFlowsOutcomes(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, divisionId)
+> [FlowOutcomeListing](FlowOutcomeListing) getFlowsOutcomes(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, divisionId)
 
 Get a pageable list of flow outcomes, filtered by query parameters
 
@@ -6123,25 +5942,23 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **sortBy** | **String**| Sort by | [optional] [default to id] 
 | **sortOrder** | **String**| Sort order | [optional] [default to asc] 
-| **id** | [**List&lt;String&gt;**](String.html)| ID | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| ID | [optional] 
 | **name** | **String**| Name | [optional] 
 | **description** | **String**| Description | [optional] 
 | **nameOrDescription** | **String**| Name or description | [optional] 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| division ID(s) | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String)| division ID(s) | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**FlowOutcomeListing**](FlowOutcomeListing.html)
+[**FlowOutcomeListing**](FlowOutcomeListing)
 
-<a name="getFlowsOutcomesDivisionviews"></a>
 
 # **getFlowsOutcomesDivisionviews**
 
 
-
-> [FlowOutcomeDivisionViewEntityListing](FlowOutcomeDivisionViewEntityListing.html) getFlowsOutcomesDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId)
+> [FlowOutcomeDivisionViewEntityListing](FlowOutcomeDivisionViewEntityListing) getFlowsOutcomesDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId)
 
 Get a pageable list of basic flow outcome information objects filterable by query parameters.
 
@@ -6200,23 +6017,21 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **sortBy** | **String**| Sort by | [optional] [default to id] 
 | **sortOrder** | **String**| Sort order | [optional] [default to asc] 
-| **id** | [**List&lt;String&gt;**](String.html)| ID | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| ID | [optional] 
 | **name** | **String**| Name | [optional] 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| division ID(s) | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String)| division ID(s) | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**FlowOutcomeDivisionViewEntityListing**](FlowOutcomeDivisionViewEntityListing.html)
+[**FlowOutcomeDivisionViewEntityListing**](FlowOutcomeDivisionViewEntityListing)
 
-<a name="patchArchitectGrammar"></a>
 
 # **patchArchitectGrammar**
 
 
-
-> [Grammar](Grammar.html) patchArchitectGrammar(grammarId, body)
+> [Grammar](Grammar) patchArchitectGrammar(grammarId, body)
 
 Updates a grammar
 
@@ -6267,21 +6082,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **grammarId** | **String**| grammar ID | 
-| **body** | [**Grammar**](Grammar.html)|  | [optional] 
+| **body** | [**Grammar**](Grammar)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Grammar**](Grammar.html)
+[**Grammar**](Grammar)
 
-<a name="patchArchitectGrammarLanguage"></a>
 
 # **patchArchitectGrammarLanguage**
 
 
-
-> [GrammarLanguage](GrammarLanguage.html) patchArchitectGrammarLanguage(grammarId, languageCode, body)
+> [GrammarLanguage](GrammarLanguage) patchArchitectGrammarLanguage(grammarId, languageCode, body)
 
 Updates a grammar language
 
@@ -6334,21 +6147,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **grammarId** | **String**| Grammar ID | 
 | **languageCode** | **String**| Language | 
-| **body** | [**GrammarLanguageUpdate**](GrammarLanguageUpdate.html)|  | [optional] 
+| **body** | [**GrammarLanguageUpdate**](GrammarLanguageUpdate)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**GrammarLanguage**](GrammarLanguage.html)
+[**GrammarLanguage**](GrammarLanguage)
 
-<a name="patchFlowsInstancesSettingsExecutiondata"></a>
 
 # **patchFlowsInstancesSettingsExecutiondata**
 
 
-
-> [ExecutionDataFlowSettingsResponse](ExecutionDataFlowSettingsResponse.html) patchFlowsInstancesSettingsExecutiondata(body)
+> [ExecutionDataFlowSettingsResponse](ExecutionDataFlowSettingsResponse) patchFlowsInstancesSettingsExecutiondata(body)
 
 Edit the execution history enabled setting.
 
@@ -6397,18 +6208,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ExecutionDataSettingsRequest**](ExecutionDataSettingsRequest.html)| New Execution Data Setting | 
+| **body** | [**ExecutionDataSettingsRequest**](ExecutionDataSettingsRequest)| New Execution Data Setting | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ExecutionDataFlowSettingsResponse**](ExecutionDataFlowSettingsResponse.html)
+[**ExecutionDataFlowSettingsResponse**](ExecutionDataFlowSettingsResponse)
 
-<a name="postArchitectDependencytrackingBuild"></a>
 
 # **postArchitectDependencytrackingBuild**
-
 
 
 > Void postArchitectDependencytrackingBuild()
@@ -6463,13 +6272,11 @@ This endpoint does not require any parameters.
 
 null (empty response body)
 
-<a name="postArchitectEmergencygroups"></a>
 
 # **postArchitectEmergencygroups**
 
 
-
-> [EmergencyGroup](EmergencyGroup.html) postArchitectEmergencygroups(body)
+> [EmergencyGroup](EmergencyGroup) postArchitectEmergencygroups(body)
 
 Creates a new emergency group
 
@@ -6516,21 +6323,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**EmergencyGroup**](EmergencyGroup.html)|  | 
+| **body** | [**EmergencyGroup**](EmergencyGroup)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**EmergencyGroup**](EmergencyGroup.html)
+[**EmergencyGroup**](EmergencyGroup)
 
-<a name="postArchitectGrammarLanguageFilesDtmf"></a>
 
 # **postArchitectGrammarLanguageFilesDtmf**
 
 
-
-> [UploadUrlResponse](UploadUrlResponse.html) postArchitectGrammarLanguageFilesDtmf(grammarId, languageCode, body)
+> [UploadUrlResponse](UploadUrlResponse) postArchitectGrammarLanguageFilesDtmf(grammarId, languageCode, body)
 
 Creates a presigned URL for uploading a grammar DTMF mode file
 
@@ -6583,21 +6388,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **grammarId** | **String**| Grammar ID | 
 | **languageCode** | **String**| Language | 
-| **body** | [**GrammarFileUploadRequest**](GrammarFileUploadRequest.html)| query | 
+| **body** | [**GrammarFileUploadRequest**](GrammarFileUploadRequest)| query | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UploadUrlResponse**](UploadUrlResponse.html)
+[**UploadUrlResponse**](UploadUrlResponse)
 
-<a name="postArchitectGrammarLanguageFilesVoice"></a>
 
 # **postArchitectGrammarLanguageFilesVoice**
 
 
-
-> [UploadUrlResponse](UploadUrlResponse.html) postArchitectGrammarLanguageFilesVoice(grammarId, languageCode, body)
+> [UploadUrlResponse](UploadUrlResponse) postArchitectGrammarLanguageFilesVoice(grammarId, languageCode, body)
 
 Creates a presigned URL for uploading a grammar voice mode file
 
@@ -6650,21 +6453,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **grammarId** | **String**| Grammar ID | 
 | **languageCode** | **String**| Language | 
-| **body** | [**GrammarFileUploadRequest**](GrammarFileUploadRequest.html)| query | 
+| **body** | [**GrammarFileUploadRequest**](GrammarFileUploadRequest)| query | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UploadUrlResponse**](UploadUrlResponse.html)
+[**UploadUrlResponse**](UploadUrlResponse)
 
-<a name="postArchitectGrammarLanguages"></a>
 
 # **postArchitectGrammarLanguages**
 
 
-
-> [GrammarLanguage](GrammarLanguage.html) postArchitectGrammarLanguages(grammarId, body)
+> [GrammarLanguage](GrammarLanguage) postArchitectGrammarLanguages(grammarId, body)
 
 Create a new language for a given grammar
 
@@ -6715,21 +6516,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **grammarId** | **String**| Grammar ID | 
-| **body** | [**GrammarLanguage**](GrammarLanguage.html)|  | 
+| **body** | [**GrammarLanguage**](GrammarLanguage)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**GrammarLanguage**](GrammarLanguage.html)
+[**GrammarLanguage**](GrammarLanguage)
 
-<a name="postArchitectGrammars"></a>
 
 # **postArchitectGrammars**
 
 
-
-> [Grammar](Grammar.html) postArchitectGrammars(body)
+> [Grammar](Grammar) postArchitectGrammars(body)
 
 Create a new grammar
 
@@ -6778,21 +6577,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Grammar**](Grammar.html)|  | 
+| **body** | [**Grammar**](Grammar)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Grammar**](Grammar.html)
+[**Grammar**](Grammar)
 
-<a name="postArchitectIvrs"></a>
 
 # **postArchitectIvrs**
 
 
-
-> [IVR](IVR.html) postArchitectIvrs(body)
+> [IVR](IVR) postArchitectIvrs(body)
 
 Create IVR config.
 
@@ -6839,21 +6636,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**IVR**](IVR.html)|  | 
+| **body** | [**IVR**](IVR)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**IVR**](IVR.html)
+[**IVR**](IVR)
 
-<a name="postArchitectPromptHistory"></a>
 
 # **postArchitectPromptHistory**
 
 
-
-> [Operation](Operation.html) postArchitectPromptHistory(promptId)
+> [Operation](Operation) postArchitectPromptHistory(promptId)
 
 Generate prompt history
 
@@ -6908,15 +6703,13 @@ try {
 
 ### Return type
 
-[**Operation**](Operation.html)
+[**Operation**](Operation)
 
-<a name="postArchitectPromptResources"></a>
 
 # **postArchitectPromptResources**
 
 
-
-> [PromptAsset](PromptAsset.html) postArchitectPromptResources(promptId, body)
+> [PromptAsset](PromptAsset) postArchitectPromptResources(promptId, body)
 
 Create a new user prompt resource
 
@@ -6965,21 +6758,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **promptId** | **String**| Prompt ID | 
-| **body** | [**PromptAssetCreate**](PromptAssetCreate.html)|  | 
+| **body** | [**PromptAssetCreate**](PromptAssetCreate)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**PromptAsset**](PromptAsset.html)
+[**PromptAsset**](PromptAsset)
 
-<a name="postArchitectPrompts"></a>
 
 # **postArchitectPrompts**
 
 
-
-> [Prompt](Prompt.html) postArchitectPrompts(body)
+> [Prompt](Prompt) postArchitectPrompts(body)
 
 Create a new user prompt
 
@@ -7026,21 +6817,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Prompt**](Prompt.html)|  | 
+| **body** | [**Prompt**](Prompt)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Prompt**](Prompt.html)
+[**Prompt**](Prompt)
 
-<a name="postArchitectSchedulegroups"></a>
 
 # **postArchitectSchedulegroups**
 
 
-
-> [ScheduleGroup](ScheduleGroup.html) postArchitectSchedulegroups(body)
+> [ScheduleGroup](ScheduleGroup) postArchitectSchedulegroups(body)
 
 Creates a new schedule group
 
@@ -7087,21 +6876,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ScheduleGroup**](ScheduleGroup.html)|  | 
+| **body** | [**ScheduleGroup**](ScheduleGroup)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ScheduleGroup**](ScheduleGroup.html)
+[**ScheduleGroup**](ScheduleGroup)
 
-<a name="postArchitectSchedules"></a>
 
 # **postArchitectSchedules**
 
 
-
-> [Schedule](Schedule.html) postArchitectSchedules(body)
+> [Schedule](Schedule) postArchitectSchedules(body)
 
 Create a new schedule.
 
@@ -7148,21 +6935,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Schedule**](Schedule.html)|  | 
+| **body** | [**Schedule**](Schedule)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Schedule**](Schedule.html)
+[**Schedule**](Schedule)
 
-<a name="postArchitectSystempromptHistory"></a>
 
 # **postArchitectSystempromptHistory**
 
 
-
-> [Operation](Operation.html) postArchitectSystempromptHistory(promptId)
+> [Operation](Operation) postArchitectSystempromptHistory(promptId)
 
 Generate system prompt history
 
@@ -7217,15 +7002,13 @@ try {
 
 ### Return type
 
-[**Operation**](Operation.html)
+[**Operation**](Operation)
 
-<a name="postArchitectSystempromptResources"></a>
 
 # **postArchitectSystempromptResources**
 
 
-
-> [SystemPromptAsset](SystemPromptAsset.html) postArchitectSystempromptResources(promptId, body)
+> [SystemPromptAsset](SystemPromptAsset) postArchitectSystempromptResources(promptId, body)
 
 Create system prompt resource override.
 
@@ -7274,21 +7057,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **promptId** | **String**| Prompt ID | 
-| **body** | [**SystemPromptAsset**](SystemPromptAsset.html)|  | 
+| **body** | [**SystemPromptAsset**](SystemPromptAsset)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**SystemPromptAsset**](SystemPromptAsset.html)
+[**SystemPromptAsset**](SystemPromptAsset)
 
-<a name="postFlowHistory"></a>
 
 # **postFlowHistory**
 
 
-
-> [Operation](Operation.html) postFlowHistory(flowId)
+> [Operation](Operation) postFlowHistory(flowId)
 
 Generate flow history
 
@@ -7343,15 +7124,13 @@ try {
 
 ### Return type
 
-[**Operation**](Operation.html)
+[**Operation**](Operation)
 
-<a name="postFlowInstancesSettingsLoglevels"></a>
 
 # **postFlowInstancesSettingsLoglevels**
 
 
-
-> [FlowSettingsResponse](FlowSettingsResponse.html) postFlowInstancesSettingsLoglevels(flowId, body, expand)
+> [FlowSettingsResponse](FlowSettingsResponse) postFlowInstancesSettingsLoglevels(flowId, body, expand)
 
 Set the logLevel for a particular flow id
 
@@ -7403,22 +7182,20 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **flowId** | **String**| The flow id to set the loglevel for | 
-| **body** | [**FlowLogLevelRequest**](FlowLogLevelRequest.html)| New LogLevel settings | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Expand instructions for the result | [optional]<br />**Values**: name, type, logLevelCharacteristics.characteristics 
+| **body** | [**FlowLogLevelRequest**](FlowLogLevelRequest)| New LogLevel settings | 
+| **expand** | [**List&lt;String&gt;**](String)| Expand instructions for the result | [optional]<br />**Values**: name, type, logLevelCharacteristics.characteristics 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**FlowSettingsResponse**](FlowSettingsResponse.html)
+[**FlowSettingsResponse**](FlowSettingsResponse)
 
-<a name="postFlowVersions"></a>
 
 # **postFlowVersions**
 
 
-
-> [FlowVersion](FlowVersion.html) postFlowVersions(flowId, body)
+> [FlowVersion](FlowVersion) postFlowVersions(flowId, body)
 
 Create flow version
 
@@ -7467,21 +7244,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **flowId** | **String**| Flow ID | 
-| **body** | [**Object**](Object.html)|  | 
+| **body** | [**Object**](Object)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**FlowVersion**](FlowVersion.html)
+[**FlowVersion**](FlowVersion)
 
-<a name="postFlows"></a>
 
 # **postFlows**
 
 
-
-> [Flow](Flow.html) postFlows(body, language)
+> [Flow](Flow) postFlows(body, language)
 
 Create flow
 
@@ -7529,22 +7304,20 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Flow**](Flow.html)|  | 
+| **body** | [**Flow**](Flow)|  | 
 | **language** | **String**| Language | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Flow**](Flow.html)
+[**Flow**](Flow)
 
-<a name="postFlowsActionsCheckin"></a>
 
 # **postFlowsActionsCheckin**
 
 
-
-> [Operation](Operation.html) postFlowsActionsCheckin(flow)
+> [Operation](Operation) postFlowsActionsCheckin(flow)
 
 Check-in flow
 
@@ -7600,15 +7373,13 @@ try {
 
 ### Return type
 
-[**Operation**](Operation.html)
+[**Operation**](Operation)
 
-<a name="postFlowsActionsCheckout"></a>
 
 # **postFlowsActionsCheckout**
 
 
-
-> [Flow](Flow.html) postFlowsActionsCheckout(flow)
+> [Flow](Flow) postFlowsActionsCheckout(flow)
 
 Check-out flow
 
@@ -7661,15 +7432,13 @@ try {
 
 ### Return type
 
-[**Flow**](Flow.html)
+[**Flow**](Flow)
 
-<a name="postFlowsActionsDeactivate"></a>
 
 # **postFlowsActionsDeactivate**
 
 
-
-> [Flow](Flow.html) postFlowsActionsDeactivate(flow)
+> [Flow](Flow) postFlowsActionsDeactivate(flow)
 
 Deactivate flow
 
@@ -7722,15 +7491,13 @@ try {
 
 ### Return type
 
-[**Flow**](Flow.html)
+[**Flow**](Flow)
 
-<a name="postFlowsActionsPublish"></a>
 
 # **postFlowsActionsPublish**
 
 
-
-> [Operation](Operation.html) postFlowsActionsPublish(flow, version)
+> [Operation](Operation) postFlowsActionsPublish(flow, version)
 
 Publish flow
 
@@ -7788,15 +7555,13 @@ try {
 
 ### Return type
 
-[**Operation**](Operation.html)
+[**Operation**](Operation)
 
-<a name="postFlowsActionsRevert"></a>
 
 # **postFlowsActionsRevert**
 
 
-
-> [Flow](Flow.html) postFlowsActionsRevert(flow)
+> [Flow](Flow) postFlowsActionsRevert(flow)
 
 Revert flow
 
@@ -7849,15 +7614,13 @@ try {
 
 ### Return type
 
-[**Flow**](Flow.html)
+[**Flow**](Flow)
 
-<a name="postFlowsActionsUnlock"></a>
 
 # **postFlowsActionsUnlock**
 
 
-
-> [Flow](Flow.html) postFlowsActionsUnlock(flow)
+> [Flow](Flow) postFlowsActionsUnlock(flow)
 
 Unlock flow
 
@@ -7912,15 +7675,13 @@ try {
 
 ### Return type
 
-[**Flow**](Flow.html)
+[**Flow**](Flow)
 
-<a name="postFlowsDatatableExportJobs"></a>
 
 # **postFlowsDatatableExportJobs**
 
 
-
-> [DataTableExportJob](DataTableExportJob.html) postFlowsDatatableExportJobs(datatableId)
+> [DataTableExportJob](DataTableExportJob) postFlowsDatatableExportJobs(datatableId)
 
 Begin an export process for exporting all rows from a datatable
 
@@ -7976,15 +7737,13 @@ try {
 
 ### Return type
 
-[**DataTableExportJob**](DataTableExportJob.html)
+[**DataTableExportJob**](DataTableExportJob)
 
-<a name="postFlowsDatatableImportJobs"></a>
 
 # **postFlowsDatatableImportJobs**
 
 
-
-> [DataTableImportJob](DataTableImportJob.html) postFlowsDatatableImportJobs(datatableId, body)
+> [DataTableImportJob](DataTableImportJob) postFlowsDatatableImportJobs(datatableId, body)
 
 Begin an import process for importing rows into a datatable
 
@@ -8036,18 +7795,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **datatableId** | **String**| id of datatable | 
-| **body** | [**DataTableImportJob**](DataTableImportJob.html)| import job information | 
+| **body** | [**DataTableImportJob**](DataTableImportJob)| import job information | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DataTableImportJob**](DataTableImportJob.html)
+[**DataTableImportJob**](DataTableImportJob)
 
-<a name="postFlowsDatatableRows"></a>
 
 # **postFlowsDatatableRows**
-
 
 
 > Map&lt;String, Object&gt; postFlowsDatatableRows(datatableId, dataTableRow)
@@ -8102,7 +7859,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **datatableId** | **String**| id of datatable | 
-| **dataTableRow** | [**Object**](Object.html)|  | 
+| **dataTableRow** | [**Object**](Object)|  | 
 {: class="table-striped"}
 
 
@@ -8110,13 +7867,11 @@ try {
 
 **Map&lt;String, Object&gt;**
 
-<a name="postFlowsDatatables"></a>
 
 # **postFlowsDatatables**
 
 
-
-> [DataTable](DataTable.html) postFlowsDatatables(body)
+> [DataTable](DataTable) postFlowsDatatables(body)
 
 Create a new datatable with the specified json-schema definition
 
@@ -8165,21 +7920,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**DataTable**](DataTable.html)| datatable json-schema | 
+| **body** | [**DataTable**](DataTable)| datatable json-schema | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DataTable**](DataTable.html)
+[**DataTable**](DataTable)
 
-<a name="postFlowsExecutions"></a>
 
 # **postFlowsExecutions**
 
 
-
-> [FlowExecutionLaunchResponse](FlowExecutionLaunchResponse.html) postFlowsExecutions(flowLaunchRequest)
+> [FlowExecutionLaunchResponse](FlowExecutionLaunchResponse) postFlowsExecutions(flowLaunchRequest)
 
 Launch an instance of a flow definition, for flow types that support it such as the 'workflow' type.
 
@@ -8228,21 +7981,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **flowLaunchRequest** | [**FlowExecutionLaunchRequest**](FlowExecutionLaunchRequest.html)|  | 
+| **flowLaunchRequest** | [**FlowExecutionLaunchRequest**](FlowExecutionLaunchRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**FlowExecutionLaunchResponse**](FlowExecutionLaunchResponse.html)
+[**FlowExecutionLaunchResponse**](FlowExecutionLaunchResponse)
 
-<a name="postFlowsInstancesJobs"></a>
 
 # **postFlowsInstancesJobs**
 
 
-
-> [GetFlowExecutionDataJobResult](GetFlowExecutionDataJobResult.html) postFlowsInstancesJobs(body, expand)
+> [GetFlowExecutionDataJobResult](GetFlowExecutionDataJobResult) postFlowsInstancesJobs(body, expand)
 
 Start a process (job) that will prepare a list of execution data IDs for download.
 
@@ -8292,22 +8043,20 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ExecutionDataRequest**](ExecutionDataRequest.html)| Requested Flow Ids | 
+| **body** | [**ExecutionDataRequest**](ExecutionDataRequest)| Requested Flow Ids | 
 | **expand** | **String**| Expand various query types. | [optional]<br />**Values**: bots, dataActions 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**GetFlowExecutionDataJobResult**](GetFlowExecutionDataJobResult.html)
+[**GetFlowExecutionDataJobResult**](GetFlowExecutionDataJobResult)
 
-<a name="postFlowsInstancesQuery"></a>
 
 # **postFlowsInstancesQuery**
 
 
-
-> [FlowResultEntityListing](FlowResultEntityListing.html) postFlowsInstancesQuery(body, indexOnly, pageSize)
+> [FlowResultEntityListing](FlowResultEntityListing) postFlowsInstancesQuery(body, indexOnly, pageSize)
 
 Query the database of existing flow histories to look for particular flow criteria
 
@@ -8358,7 +8107,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CriteriaQuery**](CriteriaQuery.html)| query | 
+| **body** | [**CriteriaQuery**](CriteriaQuery)| query | 
 | **indexOnly** | **Boolean**| indexes only | [optional] 
 | **pageSize** | **Integer**| number of results to return | [optional] [default to 50] 
 {: class="table-striped"}
@@ -8366,15 +8115,13 @@ try {
 
 ### Return type
 
-[**FlowResultEntityListing**](FlowResultEntityListing.html)
+[**FlowResultEntityListing**](FlowResultEntityListing)
 
-<a name="postFlowsJobs"></a>
 
 # **postFlowsJobs**
 
 
-
-> [RegisterArchitectJobResponse](RegisterArchitectJobResponse.html) postFlowsJobs()
+> [RegisterArchitectJobResponse](RegisterArchitectJobResponse) postFlowsJobs()
 
 Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
 
@@ -8423,15 +8170,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**RegisterArchitectJobResponse**](RegisterArchitectJobResponse.html)
+[**RegisterArchitectJobResponse**](RegisterArchitectJobResponse)
 
-<a name="postFlowsMilestones"></a>
 
 # **postFlowsMilestones**
 
 
-
-> [FlowMilestone](FlowMilestone.html) postFlowsMilestones(body)
+> [FlowMilestone](FlowMilestone) postFlowsMilestones(body)
 
 Create a flow milestone
 
@@ -8478,21 +8223,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**FlowMilestone**](FlowMilestone.html)|  | [optional] 
+| **body** | [**FlowMilestone**](FlowMilestone)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**FlowMilestone**](FlowMilestone.html)
+[**FlowMilestone**](FlowMilestone)
 
-<a name="postFlowsOutcomes"></a>
 
 # **postFlowsOutcomes**
 
 
-
-> [FlowOutcome](FlowOutcome.html) postFlowsOutcomes(body)
+> [FlowOutcome](FlowOutcome) postFlowsOutcomes(body)
 
 Create a flow outcome
 
@@ -8541,21 +8284,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**FlowOutcome**](FlowOutcome.html)|  | [optional] 
+| **body** | [**FlowOutcome**](FlowOutcome)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**FlowOutcome**](FlowOutcome.html)
+[**FlowOutcome**](FlowOutcome)
 
-<a name="putArchitectEmergencygroup"></a>
 
 # **putArchitectEmergencygroup**
 
 
-
-> [EmergencyGroup](EmergencyGroup.html) putArchitectEmergencygroup(emergencyGroupId, body)
+> [EmergencyGroup](EmergencyGroup) putArchitectEmergencygroup(emergencyGroupId, body)
 
 Updates a emergency group by ID
 
@@ -8604,21 +8345,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **emergencyGroupId** | **String**| Emergency group ID | 
-| **body** | [**EmergencyGroup**](EmergencyGroup.html)|  | 
+| **body** | [**EmergencyGroup**](EmergencyGroup)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**EmergencyGroup**](EmergencyGroup.html)
+[**EmergencyGroup**](EmergencyGroup)
 
-<a name="putArchitectIvr"></a>
 
 # **putArchitectIvr**
 
 
-
-> [IVR](IVR.html) putArchitectIvr(ivrId, body)
+> [IVR](IVR) putArchitectIvr(ivrId, body)
 
 Update an IVR Config.
 
@@ -8667,21 +8406,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **ivrId** | **String**| IVR id | 
-| **body** | [**IVR**](IVR.html)|  | 
+| **body** | [**IVR**](IVR)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**IVR**](IVR.html)
+[**IVR**](IVR)
 
-<a name="putArchitectPrompt"></a>
 
 # **putArchitectPrompt**
 
 
-
-> [Prompt](Prompt.html) putArchitectPrompt(promptId, body)
+> [Prompt](Prompt) putArchitectPrompt(promptId, body)
 
 Update specified user prompt
 
@@ -8730,21 +8467,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **promptId** | **String**| Prompt ID | 
-| **body** | [**Prompt**](Prompt.html)|  | 
+| **body** | [**Prompt**](Prompt)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Prompt**](Prompt.html)
+[**Prompt**](Prompt)
 
-<a name="putArchitectPromptResource"></a>
 
 # **putArchitectPromptResource**
 
 
-
-> [PromptAsset](PromptAsset.html) putArchitectPromptResource(promptId, languageCode, body)
+> [PromptAsset](PromptAsset) putArchitectPromptResource(promptId, languageCode, body)
 
 Update specified user prompt resource
 
@@ -8795,21 +8530,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **promptId** | **String**| Prompt ID | 
 | **languageCode** | **String**| Language | 
-| **body** | [**PromptAsset**](PromptAsset.html)|  | 
+| **body** | [**PromptAsset**](PromptAsset)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**PromptAsset**](PromptAsset.html)
+[**PromptAsset**](PromptAsset)
 
-<a name="putArchitectSchedule"></a>
 
 # **putArchitectSchedule**
 
 
-
-> [Schedule](Schedule.html) putArchitectSchedule(scheduleId, body)
+> [Schedule](Schedule) putArchitectSchedule(scheduleId, body)
 
 Update schedule by ID
 
@@ -8858,21 +8591,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **scheduleId** | **String**| Schedule ID | 
-| **body** | [**Schedule**](Schedule.html)|  | 
+| **body** | [**Schedule**](Schedule)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Schedule**](Schedule.html)
+[**Schedule**](Schedule)
 
-<a name="putArchitectSchedulegroup"></a>
 
 # **putArchitectSchedulegroup**
 
 
-
-> [ScheduleGroup](ScheduleGroup.html) putArchitectSchedulegroup(scheduleGroupId, body)
+> [ScheduleGroup](ScheduleGroup) putArchitectSchedulegroup(scheduleGroupId, body)
 
 Updates a schedule group by ID
 
@@ -8921,21 +8652,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **scheduleGroupId** | **String**| Schedule group ID | 
-| **body** | [**ScheduleGroup**](ScheduleGroup.html)|  | 
+| **body** | [**ScheduleGroup**](ScheduleGroup)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ScheduleGroup**](ScheduleGroup.html)
+[**ScheduleGroup**](ScheduleGroup)
 
-<a name="putArchitectSystempromptResource"></a>
 
 # **putArchitectSystempromptResource**
 
 
-
-> [SystemPromptAsset](SystemPromptAsset.html) putArchitectSystempromptResource(promptId, languageCode, body)
+> [SystemPromptAsset](SystemPromptAsset) putArchitectSystempromptResource(promptId, languageCode, body)
 
 Updates a system prompt resource override.
 
@@ -8986,21 +8715,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **promptId** | **String**| Prompt ID | 
 | **languageCode** | **String**| Language | 
-| **body** | [**SystemPromptAsset**](SystemPromptAsset.html)|  | 
+| **body** | [**SystemPromptAsset**](SystemPromptAsset)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**SystemPromptAsset**](SystemPromptAsset.html)
+[**SystemPromptAsset**](SystemPromptAsset)
 
-<a name="putFlow"></a>
 
 # **putFlow**
 
 
-
-> [Flow](Flow.html) putFlow(flowId, body)
+> [Flow](Flow) putFlow(flowId, body)
 
 Update flow
 
@@ -9049,21 +8776,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **flowId** | **String**| Flow ID | 
-| **body** | [**Flow**](Flow.html)|  | 
+| **body** | [**Flow**](Flow)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Flow**](Flow.html)
+[**Flow**](Flow)
 
-<a name="putFlowInstancesSettingsLoglevels"></a>
 
 # **putFlowInstancesSettingsLoglevels**
 
 
-
-> [FlowSettingsResponse](FlowSettingsResponse.html) putFlowInstancesSettingsLoglevels(flowId, body, expand)
+> [FlowSettingsResponse](FlowSettingsResponse) putFlowInstancesSettingsLoglevels(flowId, body, expand)
 
 Edit the logLevel for a particular flow id
 
@@ -9115,22 +8840,20 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **flowId** | **String**| The flow id to edit the loglevel for | 
-| **body** | [**FlowLogLevelRequest**](FlowLogLevelRequest.html)| New LogLevel settings | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Expand instructions for the result | [optional]<br />**Values**: name, type, logLevelCharacteristics.characteristics 
+| **body** | [**FlowLogLevelRequest**](FlowLogLevelRequest)| New LogLevel settings | 
+| **expand** | [**List&lt;String&gt;**](String)| Expand instructions for the result | [optional]<br />**Values**: name, type, logLevelCharacteristics.characteristics 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**FlowSettingsResponse**](FlowSettingsResponse.html)
+[**FlowSettingsResponse**](FlowSettingsResponse)
 
-<a name="putFlowsDatatable"></a>
 
 # **putFlowsDatatable**
 
 
-
-> [DataTable](DataTable.html) putFlowsDatatable(datatableId, body, expand)
+> [DataTable](DataTable) putFlowsDatatable(datatableId, body, expand)
 
 Updates a specific datatable by id
 
@@ -9182,19 +8905,17 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **datatableId** | **String**| id of datatable | 
-| **body** | [**DataTable**](DataTable.html)| datatable json-schema | 
+| **body** | [**DataTable**](DataTable)| datatable json-schema | 
 | **expand** | **String**| Expand instructions for the result | [optional]<br />**Values**: schema 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DataTable**](DataTable.html)
+[**DataTable**](DataTable)
 
-<a name="putFlowsDatatableRow"></a>
 
 # **putFlowsDatatableRow**
-
 
 
 > Map&lt;String, Object&gt; putFlowsDatatableRow(datatableId, rowId, body)
@@ -9251,7 +8972,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **datatableId** | **String**| id of datatable | 
 | **rowId** | **String**| the key for the row | 
-| **body** | [**Object**](Object.html)| datatable row | [optional] 
+| **body** | [**Object**](Object)| datatable row | [optional] 
 {: class="table-striped"}
 
 
@@ -9259,13 +8980,11 @@ try {
 
 **Map&lt;String, Object&gt;**
 
-<a name="putFlowsInstancesSettingsLoglevelsDefault"></a>
 
 # **putFlowsInstancesSettingsLoglevelsDefault**
 
 
-
-> [FlowSettingsResponse](FlowSettingsResponse.html) putFlowsInstancesSettingsLoglevelsDefault(body, expand)
+> [FlowSettingsResponse](FlowSettingsResponse) putFlowsInstancesSettingsLoglevelsDefault(body, expand)
 
 Edit the flow default log level.
 
@@ -9315,22 +9034,20 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**FlowLogLevelRequest**](FlowLogLevelRequest.html)| New LogLevel settings | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Expand instructions for the result | [optional]<br />**Values**: logLevelCharacteristics.characteristics 
+| **body** | [**FlowLogLevelRequest**](FlowLogLevelRequest)| New LogLevel settings | 
+| **expand** | [**List&lt;String&gt;**](String)| Expand instructions for the result | [optional]<br />**Values**: logLevelCharacteristics.characteristics 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**FlowSettingsResponse**](FlowSettingsResponse.html)
+[**FlowSettingsResponse**](FlowSettingsResponse)
 
-<a name="putFlowsMilestone"></a>
 
 # **putFlowsMilestone**
 
 
-
-> [FlowMilestone](FlowMilestone.html) putFlowsMilestone(milestoneId, body)
+> [FlowMilestone](FlowMilestone) putFlowsMilestone(milestoneId, body)
 
 Updates a flow milestone
 
@@ -9379,21 +9096,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **milestoneId** | **String**| flow milestone ID | 
-| **body** | [**FlowMilestone**](FlowMilestone.html)|  | [optional] 
+| **body** | [**FlowMilestone**](FlowMilestone)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**FlowMilestone**](FlowMilestone.html)
+[**FlowMilestone**](FlowMilestone)
 
-<a name="putFlowsOutcome"></a>
 
 # **putFlowsOutcome**
 
 
-
-> [Operation](Operation.html) putFlowsOutcome(flowOutcomeId, body)
+> [Operation](Operation) putFlowsOutcome(flowOutcomeId, body)
 
 Updates a flow outcome
 
@@ -9444,11 +9159,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **flowOutcomeId** | **String**| flow outcome ID | 
-| **body** | [**FlowOutcome**](FlowOutcome.html)|  | [optional] 
+| **body** | [**FlowOutcome**](FlowOutcome)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Operation**](Operation.html)
+[**Operation**](Operation)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

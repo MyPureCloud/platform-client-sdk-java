@@ -1,18 +1,12 @@
----
-title: ListWrapperAgentWorkPlanField
----
-## ListWrapperAgentWorkPlanField
+# ListWrapperAgentWorkPlanField
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **values** | <!---->[**List&lt;ValuesEnum&gt;**](#ValuesEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **values** | [**List<ValuesEnum>**](#Enum--ValuesEnum) |  |  [optional] |
 
-
-<a name="ValuesEnum"></a>
 
 ## Enum: ValuesEnum
 
@@ -20,7 +14,8 @@ title: ListWrapperAgentWorkPlanField
 | ---- | ----- |
 | NAME | &quot;Name&quot; |
 | PAIDHOURS | &quot;PaidHours&quot; |
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

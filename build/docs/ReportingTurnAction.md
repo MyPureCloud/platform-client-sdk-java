@@ -1,21 +1,15 @@
----
-title: ReportingTurnAction
----
-## ReportingTurnAction
+# ReportingTurnAction
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **actionId** | <!----><!---->**String**<!----> | The ID of the action in the bot flow. |  [optional] |
-| **actionName** | <!----><!---->**String**<!----> | The name of the action in the bot flow. |  [optional] |
-| **actionNumber** | <!----><!---->**Integer**<!----> | The number of the action in the bot flow. |  [optional] |
-| **actionType** | [**ActionTypeEnum**](#ActionTypeEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **actionId** | **String** | The ID of the action in the bot flow. |  [optional] |
+| **actionName** | **String** | The name of the action in the bot flow. |  [optional] |
+| **actionNumber** | **Integer** | The number of the action in the bot flow. |  [optional] |
+| **actionType** | [**ActionTypeEnum**](#Enum--ActionTypeEnum) |  |  [optional] |
 
-
-<a name="ActionTypeEnum"></a>
 
 ## Enum: ActionTypeEnum
 
@@ -86,7 +80,8 @@ title: ReportingTurnAction
 | GETATTRIBUTESACTION | &quot;GetAttributesAction&quot; | 
 | SETATTRIBUTESACTION | &quot;SetAttributesAction&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

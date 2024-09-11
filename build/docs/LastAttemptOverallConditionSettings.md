@@ -1,20 +1,14 @@
----
-title: LastAttemptOverallConditionSettings
----
-## LastAttemptOverallConditionSettings
+# LastAttemptOverallConditionSettings
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **mediaTypes** | <!---->[**List&lt;MediaTypesEnum&gt;**](#MediaTypesEnum)<!----> | A list of media types to evaluate. |  |
-| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | The operator to use when comparing values. |  |
-| **value** | <!----><!---->**String**<!----> | The period value to compare against the contact's data. |  |
-{: class="table table-striped"}
+| **mediaTypes** | [**List<MediaTypesEnum>**](#Enum--MediaTypesEnum) | A list of media types to evaluate. |  |
+| **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | The operator to use when comparing values. |  |
+| **value** | **String** | The period value to compare against the contact's data. |  |
 
-
-<a name="MediaTypesEnum"></a>
 
 ## Enum: MediaTypesEnum
 
@@ -23,10 +17,7 @@ title: LastAttemptOverallConditionSettings
 | VOICE | &quot;Voice&quot; |
 | EMAIL | &quot;Email&quot; |
 | SMS | &quot;Sms&quot; |
-{: class="table table-striped"}
 
-
-<a name="OperatorEnum"></a>
 
 ## Enum: OperatorEnum
 
@@ -35,7 +26,8 @@ title: LastAttemptOverallConditionSettings
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | BEFORE | &quot;Before&quot; | 
 | AFTER | &quot;After&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

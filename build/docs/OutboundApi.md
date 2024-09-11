@@ -1,179 +1,174 @@
----
-title: OutboundApi
----
-## OutboundApi
+# OutboundApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteOutboundAttemptlimit**](OutboundApi.html#deleteOutboundAttemptlimit) | Delete attempt limits |
-| [**deleteOutboundCallabletimeset**](OutboundApi.html#deleteOutboundCallabletimeset) | Delete callable time set |
-| [**deleteOutboundCallanalysisresponseset**](OutboundApi.html#deleteOutboundCallanalysisresponseset) | Delete a dialer call analysis response set. |
-| [**deleteOutboundCampaign**](OutboundApi.html#deleteOutboundCampaign) | Delete a campaign. |
-| [**deleteOutboundCampaignProgress**](OutboundApi.html#deleteOutboundCampaignProgress) | Reset campaign progress and recycle the campaign |
-| [**deleteOutboundCampaignrule**](OutboundApi.html#deleteOutboundCampaignrule) | Delete Campaign Rule |
-| [**deleteOutboundContactlist**](OutboundApi.html#deleteOutboundContactlist) | Delete a contact list. |
-| [**deleteOutboundContactlistContact**](OutboundApi.html#deleteOutboundContactlistContact) | Delete a contact. |
-| [**deleteOutboundContactlistContacts**](OutboundApi.html#deleteOutboundContactlistContacts) | Delete contacts from a contact list. |
-| [**deleteOutboundContactlistfilter**](OutboundApi.html#deleteOutboundContactlistfilter) | Delete Contact List Filter |
-| [**deleteOutboundContactlists**](OutboundApi.html#deleteOutboundContactlists) | Delete multiple contact lists. |
-| [**deleteOutboundContactlisttemplate**](OutboundApi.html#deleteOutboundContactlisttemplate) | Delete Contact List Template |
-| [**deleteOutboundContactlisttemplates**](OutboundApi.html#deleteOutboundContactlisttemplates) | Delete multiple contact list templates. |
-| [**deleteOutboundDigitalruleset**](OutboundApi.html#deleteOutboundDigitalruleset) | Delete an Outbound Digital Rule Set |
-| [**deleteOutboundDnclist**](OutboundApi.html#deleteOutboundDnclist) | Delete dialer DNC list |
-| [**deleteOutboundDnclistCustomexclusioncolumns**](OutboundApi.html#deleteOutboundDnclistCustomexclusioncolumns) | Deletes all or expired custom exclusion column entries from a DNC list. |
-| [**deleteOutboundDnclistEmailaddresses**](OutboundApi.html#deleteOutboundDnclistEmailaddresses) | Deletes all or expired email addresses from a DNC list. |
-| [**deleteOutboundDnclistPhonenumbers**](OutboundApi.html#deleteOutboundDnclistPhonenumbers) | Deletes all or expired phone numbers from a DNC list. |
-| [**deleteOutboundFilespecificationtemplate**](OutboundApi.html#deleteOutboundFilespecificationtemplate) | Delete File Specification Template |
-| [**deleteOutboundFilespecificationtemplatesBulk**](OutboundApi.html#deleteOutboundFilespecificationtemplatesBulk) | Delete multiple file specification templates. |
-| [**deleteOutboundImporttemplate**](OutboundApi.html#deleteOutboundImporttemplate) | Delete Import Template |
-| [**deleteOutboundImporttemplates**](OutboundApi.html#deleteOutboundImporttemplates) | Delete multiple import templates. |
-| [**deleteOutboundMessagingcampaign**](OutboundApi.html#deleteOutboundMessagingcampaign) | Delete an Outbound Messaging Campaign |
-| [**deleteOutboundMessagingcampaignProgress**](OutboundApi.html#deleteOutboundMessagingcampaignProgress) | Reset messaging campaign progress and recycle the messaging campaign |
-| [**deleteOutboundRuleset**](OutboundApi.html#deleteOutboundRuleset) | Delete a Rule Set. |
-| [**deleteOutboundSchedulesCampaign**](OutboundApi.html#deleteOutboundSchedulesCampaign) | Delete a dialer campaign schedule. |
-| [**deleteOutboundSchedulesEmailcampaign**](OutboundApi.html#deleteOutboundSchedulesEmailcampaign) | Delete an email campaign schedule. |
-| [**deleteOutboundSchedulesMessagingcampaign**](OutboundApi.html#deleteOutboundSchedulesMessagingcampaign) | Delete a messaging campaign schedule. |
-| [**deleteOutboundSchedulesSequence**](OutboundApi.html#deleteOutboundSchedulesSequence) | Delete a dialer sequence schedule. |
-| [**deleteOutboundSequence**](OutboundApi.html#deleteOutboundSequence) | Delete a dialer campaign sequence. |
-| [**getOutboundAttemptlimit**](OutboundApi.html#getOutboundAttemptlimit) | Get attempt limits |
-| [**getOutboundAttemptlimits**](OutboundApi.html#getOutboundAttemptlimits) | Query attempt limits list |
-| [**getOutboundCallabletimeset**](OutboundApi.html#getOutboundCallabletimeset) | Get callable time set |
-| [**getOutboundCallabletimesets**](OutboundApi.html#getOutboundCallabletimesets) | Query callable time set list |
-| [**getOutboundCallanalysisresponseset**](OutboundApi.html#getOutboundCallanalysisresponseset) | Get a dialer call analysis response set. |
-| [**getOutboundCallanalysisresponsesets**](OutboundApi.html#getOutboundCallanalysisresponsesets) | Query a list of dialer call analysis response sets. |
-| [**getOutboundCampaign**](OutboundApi.html#getOutboundCampaign) | Get dialer campaign. |
-| [**getOutboundCampaignAgentownedmappingpreviewResults**](OutboundApi.html#getOutboundCampaignAgentownedmappingpreviewResults) | Get a preview of how agents will be mapped to this campaign's contact list. |
-| [**getOutboundCampaignDiagnostics**](OutboundApi.html#getOutboundCampaignDiagnostics) | Get campaign diagnostics |
-| [**getOutboundCampaignInteractions**](OutboundApi.html#getOutboundCampaignInteractions) | Get dialer campaign interactions. |
-| [**getOutboundCampaignLinedistribution**](OutboundApi.html#getOutboundCampaignLinedistribution) | Get line distribution information for campaigns using same Edge Group or Site as given campaign |
-| [**getOutboundCampaignProgress**](OutboundApi.html#getOutboundCampaignProgress) | Get campaign progress |
-| [**getOutboundCampaignStats**](OutboundApi.html#getOutboundCampaignStats) | Get statistics about a Dialer Campaign |
-| [**getOutboundCampaignrule**](OutboundApi.html#getOutboundCampaignrule) | Get Campaign Rule |
-| [**getOutboundCampaignrules**](OutboundApi.html#getOutboundCampaignrules) | Query Campaign Rule list |
-| [**getOutboundCampaigns**](OutboundApi.html#getOutboundCampaigns) | Query a list of dialer campaigns. |
-| [**getOutboundCampaignsAll**](OutboundApi.html#getOutboundCampaignsAll) | Query across all types of campaigns by division |
-| [**getOutboundCampaignsAllDivisionviews**](OutboundApi.html#getOutboundCampaignsAllDivisionviews) | Query across all types of campaigns |
-| [**getOutboundCampaignsDivisionview**](OutboundApi.html#getOutboundCampaignsDivisionview) | Get a basic Campaign information object |
-| [**getOutboundCampaignsDivisionviews**](OutboundApi.html#getOutboundCampaignsDivisionviews) | Query a list of basic Campaign information objects |
-| [**getOutboundContactlist**](OutboundApi.html#getOutboundContactlist) | Get a dialer contact list. |
-| [**getOutboundContactlistContact**](OutboundApi.html#getOutboundContactlistContact) | Get a contact. |
-| [**getOutboundContactlistContactsBulkJob**](OutboundApi.html#getOutboundContactlistContactsBulkJob) | Get bulk operation job. |
-| [**getOutboundContactlistContactsBulkJobs**](OutboundApi.html#getOutboundContactlistContactsBulkJobs) | Get 10 most recent bulk operation jobs associated with contact list. |
-| [**getOutboundContactlistExport**](OutboundApi.html#getOutboundContactlistExport) | Get the URI of a contact list export. |
-| [**getOutboundContactlistImportstatus**](OutboundApi.html#getOutboundContactlistImportstatus) | Get dialer contactList import status. |
-| [**getOutboundContactlistTimezonemappingpreview**](OutboundApi.html#getOutboundContactlistTimezonemappingpreview) | Preview the result of applying Automatic Time Zone Mapping to a contact list |
-| [**getOutboundContactlistfilter**](OutboundApi.html#getOutboundContactlistfilter) | Get Contact list filter |
-| [**getOutboundContactlistfilters**](OutboundApi.html#getOutboundContactlistfilters) | Query Contact list filters |
-| [**getOutboundContactlists**](OutboundApi.html#getOutboundContactlists) | Query a list of contact lists. |
-| [**getOutboundContactlistsDivisionview**](OutboundApi.html#getOutboundContactlistsDivisionview) | Get a basic ContactList information object |
-| [**getOutboundContactlistsDivisionviews**](OutboundApi.html#getOutboundContactlistsDivisionviews) | Query a list of simplified contact list objects. |
-| [**getOutboundContactlisttemplate**](OutboundApi.html#getOutboundContactlisttemplate) | Get Contact List Template |
-| [**getOutboundContactlisttemplates**](OutboundApi.html#getOutboundContactlisttemplates) | Query a list of contact list templates |
-| [**getOutboundDigitalruleset**](OutboundApi.html#getOutboundDigitalruleset) | Get an Outbound Digital Rule Set |
-| [**getOutboundDigitalrulesets**](OutboundApi.html#getOutboundDigitalrulesets) | Query a list of Outbound Digital Rule Sets |
-| [**getOutboundDnclist**](OutboundApi.html#getOutboundDnclist) | Get dialer DNC list |
-| [**getOutboundDnclistExport**](OutboundApi.html#getOutboundDnclistExport) | Get the URI of a DNC list export. |
-| [**getOutboundDnclistImportstatus**](OutboundApi.html#getOutboundDnclistImportstatus) | Get dialer dncList import status. |
-| [**getOutboundDnclists**](OutboundApi.html#getOutboundDnclists) | Query dialer DNC lists |
-| [**getOutboundDnclistsDivisionview**](OutboundApi.html#getOutboundDnclistsDivisionview) | Get a basic DncList information object |
-| [**getOutboundDnclistsDivisionviews**](OutboundApi.html#getOutboundDnclistsDivisionviews) | Query a list of simplified dnc list objects. |
-| [**getOutboundEvent**](OutboundApi.html#getOutboundEvent) | Get Dialer Event |
-| [**getOutboundEvents**](OutboundApi.html#getOutboundEvents) | Query Event Logs |
-| [**getOutboundFilespecificationtemplate**](OutboundApi.html#getOutboundFilespecificationtemplate) | Get File Specification Template |
-| [**getOutboundFilespecificationtemplates**](OutboundApi.html#getOutboundFilespecificationtemplates) | Query File Specification Templates |
-| [**getOutboundImporttemplate**](OutboundApi.html#getOutboundImporttemplate) | Get Import Template |
-| [**getOutboundImporttemplateImportstatus**](OutboundApi.html#getOutboundImporttemplateImportstatus) | Get the import status for an import template. |
-| [**getOutboundImporttemplates**](OutboundApi.html#getOutboundImporttemplates) | Query Import Templates |
-| [**getOutboundMessagingcampaign**](OutboundApi.html#getOutboundMessagingcampaign) | Get an Outbound Messaging Campaign |
-| [**getOutboundMessagingcampaignDiagnostics**](OutboundApi.html#getOutboundMessagingcampaignDiagnostics) | Get messaging campaign diagnostics |
-| [**getOutboundMessagingcampaignProgress**](OutboundApi.html#getOutboundMessagingcampaignProgress) | Get messaging campaign's progress |
-| [**getOutboundMessagingcampaigns**](OutboundApi.html#getOutboundMessagingcampaigns) | Query a list of Messaging Campaigns |
-| [**getOutboundMessagingcampaignsDivisionview**](OutboundApi.html#getOutboundMessagingcampaignsDivisionview) | Get a basic Messaging Campaign information object |
-| [**getOutboundMessagingcampaignsDivisionviews**](OutboundApi.html#getOutboundMessagingcampaignsDivisionviews) | Query a list of basic Messaging Campaign information objects |
-| [**getOutboundRuleset**](OutboundApi.html#getOutboundRuleset) | Get a Rule Set by ID. |
-| [**getOutboundRulesets**](OutboundApi.html#getOutboundRulesets) | Query a list of Rule Sets. |
-| [**getOutboundSchedulesCampaign**](OutboundApi.html#getOutboundSchedulesCampaign) | Get a dialer campaign schedule. |
-| [**getOutboundSchedulesCampaigns**](OutboundApi.html#getOutboundSchedulesCampaigns) | Query for a list of dialer campaign schedules. |
-| [**getOutboundSchedulesEmailcampaign**](OutboundApi.html#getOutboundSchedulesEmailcampaign) | Get an email campaign schedule. |
-| [**getOutboundSchedulesEmailcampaigns**](OutboundApi.html#getOutboundSchedulesEmailcampaigns) | Query for a list of email campaign schedules. |
-| [**getOutboundSchedulesMessagingcampaign**](OutboundApi.html#getOutboundSchedulesMessagingcampaign) | Get a messaging campaign schedule. |
-| [**getOutboundSchedulesMessagingcampaigns**](OutboundApi.html#getOutboundSchedulesMessagingcampaigns) | Query for a list of messaging campaign schedules. |
-| [**getOutboundSchedulesSequence**](OutboundApi.html#getOutboundSchedulesSequence) | Get a dialer sequence schedule. |
-| [**getOutboundSchedulesSequences**](OutboundApi.html#getOutboundSchedulesSequences) | Query for a list of dialer sequence schedules. |
-| [**getOutboundSequence**](OutboundApi.html#getOutboundSequence) | Get a dialer campaign sequence. |
-| [**getOutboundSequences**](OutboundApi.html#getOutboundSequences) | Query a list of dialer campaign sequences. |
-| [**getOutboundSettings**](OutboundApi.html#getOutboundSettings) | Get the outbound settings for this organization |
-| [**getOutboundWrapupcodemappings**](OutboundApi.html#getOutboundWrapupcodemappings) | Get the Dialer wrap up code mapping. |
-| [**patchOutboundCampaign**](OutboundApi.html#patchOutboundCampaign) | Update a campaign. |
-| [**patchOutboundDnclistCustomexclusioncolumns**](OutboundApi.html#patchOutboundDnclistCustomexclusioncolumns) | Add entries to or delete entries from a DNC list. |
-| [**patchOutboundDnclistEmailaddresses**](OutboundApi.html#patchOutboundDnclistEmailaddresses) | Add emails to or Delete emails from a DNC list. |
-| [**patchOutboundDnclistPhonenumbers**](OutboundApi.html#patchOutboundDnclistPhonenumbers) | Add numbers to or delete numbers from a DNC list. |
-| [**patchOutboundSettings**](OutboundApi.html#patchOutboundSettings) | Update the outbound settings for this organization |
-| [**postOutboundAttemptlimits**](OutboundApi.html#postOutboundAttemptlimits) | Create attempt limits |
-| [**postOutboundCallabletimesets**](OutboundApi.html#postOutboundCallabletimesets) | Create callable time set |
-| [**postOutboundCallanalysisresponsesets**](OutboundApi.html#postOutboundCallanalysisresponsesets) | Create a dialer call analysis response set. |
-| [**postOutboundCampaignAgentownedmappingpreview**](OutboundApi.html#postOutboundCampaignAgentownedmappingpreview) | Initiate request for a preview of how agents will be mapped to this campaign's contact list. |
-| [**postOutboundCampaignCallbackSchedule**](OutboundApi.html#postOutboundCampaignCallbackSchedule) | Schedule a Callback for a Dialer Campaign (Deprecated) |
-| [**postOutboundCampaignrules**](OutboundApi.html#postOutboundCampaignrules) | Create Campaign Rule |
-| [**postOutboundCampaigns**](OutboundApi.html#postOutboundCampaigns) | Create a campaign. |
-| [**postOutboundCampaignsProgress**](OutboundApi.html#postOutboundCampaignsProgress) | Get progress for a list of campaigns |
-| [**postOutboundContactlistClear**](OutboundApi.html#postOutboundContactlistClear) | Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled. |
-| [**postOutboundContactlistContacts**](OutboundApi.html#postOutboundContactlistContacts) | Add contacts to a contact list. |
-| [**postOutboundContactlistContactsBulk**](OutboundApi.html#postOutboundContactlistContactsBulk) | Get contacts from a contact list. |
-| [**postOutboundContactlistContactsBulkRemove**](OutboundApi.html#postOutboundContactlistContactsBulkRemove) | Start an async job to delete contacts using a filter. |
-| [**postOutboundContactlistContactsBulkUpdate**](OutboundApi.html#postOutboundContactlistContactsBulkUpdate) | Start an async job to bulk edit contacts. |
-| [**postOutboundContactlistContactsSearch**](OutboundApi.html#postOutboundContactlistContactsSearch) | Query contacts from a contact list. |
-| [**postOutboundContactlistExport**](OutboundApi.html#postOutboundContactlistExport) | Initiate the export of a contact list. |
-| [**postOutboundContactlistfilters**](OutboundApi.html#postOutboundContactlistfilters) | Create Contact List Filter |
-| [**postOutboundContactlistfiltersBulkRetrieve**](OutboundApi.html#postOutboundContactlistfiltersBulkRetrieve) | Retrieve multiple contact list filters |
-| [**postOutboundContactlistfiltersPreview**](OutboundApi.html#postOutboundContactlistfiltersPreview) | Get a preview of the output of a contact list filter |
-| [**postOutboundContactlists**](OutboundApi.html#postOutboundContactlists) | Create a contact List. |
-| [**postOutboundContactlisttemplates**](OutboundApi.html#postOutboundContactlisttemplates) | Create Contact List Template |
-| [**postOutboundContactlisttemplatesBulkAdd**](OutboundApi.html#postOutboundContactlisttemplatesBulkAdd) | Add multiple contact list templates |
-| [**postOutboundContactlisttemplatesBulkRetrieve**](OutboundApi.html#postOutboundContactlisttemplatesBulkRetrieve) | Get multiple contact list templates |
-| [**postOutboundConversationDnc**](OutboundApi.html#postOutboundConversationDnc) | Add phone numbers to a Dialer DNC list. |
-| [**postOutboundDigitalrulesets**](OutboundApi.html#postOutboundDigitalrulesets) | Create an Outbound Digital Rule Set |
-| [**postOutboundDnclistEmailaddresses**](OutboundApi.html#postOutboundDnclistEmailaddresses) | Add email addresses to a DNC list. |
-| [**postOutboundDnclistExport**](OutboundApi.html#postOutboundDnclistExport) | Initiate the export of a dnc list. |
-| [**postOutboundDnclistPhonenumbers**](OutboundApi.html#postOutboundDnclistPhonenumbers) | Add phone numbers to a DNC list. |
-| [**postOutboundDnclists**](OutboundApi.html#postOutboundDnclists) | Create dialer DNC list |
-| [**postOutboundFilespecificationtemplates**](OutboundApi.html#postOutboundFilespecificationtemplates) | Create File Specification Template |
-| [**postOutboundImporttemplates**](OutboundApi.html#postOutboundImporttemplates) | Create Import Template |
-| [**postOutboundImporttemplatesBulkAdd**](OutboundApi.html#postOutboundImporttemplatesBulkAdd) | Add multiple import templates |
-| [**postOutboundMessagingcampaigns**](OutboundApi.html#postOutboundMessagingcampaigns) | Create a Messaging Campaign |
-| [**postOutboundMessagingcampaignsProgress**](OutboundApi.html#postOutboundMessagingcampaignsProgress) | Get progress for a list of messaging campaigns |
-| [**postOutboundRulesets**](OutboundApi.html#postOutboundRulesets) | Create a Rule Set. |
-| [**postOutboundSequences**](OutboundApi.html#postOutboundSequences) | Create a new campaign sequence. |
-| [**putOutboundAttemptlimit**](OutboundApi.html#putOutboundAttemptlimit) | Update attempt limits |
-| [**putOutboundCallabletimeset**](OutboundApi.html#putOutboundCallabletimeset) | Update callable time set |
-| [**putOutboundCallanalysisresponseset**](OutboundApi.html#putOutboundCallanalysisresponseset) | Update a dialer call analysis response set. |
-| [**putOutboundCampaign**](OutboundApi.html#putOutboundCampaign) | Update a campaign. |
-| [**putOutboundCampaignAgent**](OutboundApi.html#putOutboundCampaignAgent) | Send notification that an agent's state changed  |
-| [**putOutboundCampaignrule**](OutboundApi.html#putOutboundCampaignrule) | Update Campaign Rule |
-| [**putOutboundContactlist**](OutboundApi.html#putOutboundContactlist) | Update a contact list. |
-| [**putOutboundContactlistContact**](OutboundApi.html#putOutboundContactlistContact) | Update a contact. |
-| [**putOutboundContactlistfilter**](OutboundApi.html#putOutboundContactlistfilter) | Update Contact List Filter |
-| [**putOutboundContactlisttemplate**](OutboundApi.html#putOutboundContactlisttemplate) | Update a contact list template. |
-| [**putOutboundDigitalruleset**](OutboundApi.html#putOutboundDigitalruleset) | Update an Outbound Digital Rule Set |
-| [**putOutboundDnclist**](OutboundApi.html#putOutboundDnclist) | Update dialer DNC list |
-| [**putOutboundFilespecificationtemplate**](OutboundApi.html#putOutboundFilespecificationtemplate) | Update File Specification Template |
-| [**putOutboundImporttemplate**](OutboundApi.html#putOutboundImporttemplate) | Update Import Template |
-| [**putOutboundMessagingcampaign**](OutboundApi.html#putOutboundMessagingcampaign) | Update an Outbound Messaging Campaign |
-| [**putOutboundRuleset**](OutboundApi.html#putOutboundRuleset) | Update a Rule Set. |
-| [**putOutboundSchedulesCampaign**](OutboundApi.html#putOutboundSchedulesCampaign) | Update a new campaign schedule. |
-| [**putOutboundSchedulesEmailcampaign**](OutboundApi.html#putOutboundSchedulesEmailcampaign) | Update an email campaign schedule. |
-| [**putOutboundSchedulesMessagingcampaign**](OutboundApi.html#putOutboundSchedulesMessagingcampaign) | Update a new messaging campaign schedule. |
-| [**putOutboundSchedulesSequence**](OutboundApi.html#putOutboundSchedulesSequence) | Update a new sequence schedule. |
-| [**putOutboundSequence**](OutboundApi.html#putOutboundSequence) | Update a new campaign sequence. |
-| [**putOutboundWrapupcodemappings**](OutboundApi.html#putOutboundWrapupcodemappings) | Update the Dialer wrap up code mapping. |
+| [**deleteOutboundAttemptlimit**](OutboundApi#deleteOutboundAttemptlimit) | Delete attempt limits |
+| [**deleteOutboundCallabletimeset**](OutboundApi#deleteOutboundCallabletimeset) | Delete callable time set |
+| [**deleteOutboundCallanalysisresponseset**](OutboundApi#deleteOutboundCallanalysisresponseset) | Delete a dialer call analysis response set. |
+| [**deleteOutboundCampaign**](OutboundApi#deleteOutboundCampaign) | Delete a campaign. |
+| [**deleteOutboundCampaignProgress**](OutboundApi#deleteOutboundCampaignProgress) | Reset campaign progress and recycle the campaign |
+| [**deleteOutboundCampaignrule**](OutboundApi#deleteOutboundCampaignrule) | Delete Campaign Rule |
+| [**deleteOutboundContactlist**](OutboundApi#deleteOutboundContactlist) | Delete a contact list. |
+| [**deleteOutboundContactlistContact**](OutboundApi#deleteOutboundContactlistContact) | Delete a contact. |
+| [**deleteOutboundContactlistContacts**](OutboundApi#deleteOutboundContactlistContacts) | Delete contacts from a contact list. |
+| [**deleteOutboundContactlistfilter**](OutboundApi#deleteOutboundContactlistfilter) | Delete Contact List Filter |
+| [**deleteOutboundContactlists**](OutboundApi#deleteOutboundContactlists) | Delete multiple contact lists. |
+| [**deleteOutboundContactlisttemplate**](OutboundApi#deleteOutboundContactlisttemplate) | Delete Contact List Template |
+| [**deleteOutboundContactlisttemplates**](OutboundApi#deleteOutboundContactlisttemplates) | Delete multiple contact list templates. |
+| [**deleteOutboundDigitalruleset**](OutboundApi#deleteOutboundDigitalruleset) | Delete an Outbound Digital Rule Set |
+| [**deleteOutboundDnclist**](OutboundApi#deleteOutboundDnclist) | Delete dialer DNC list |
+| [**deleteOutboundDnclistCustomexclusioncolumns**](OutboundApi#deleteOutboundDnclistCustomexclusioncolumns) | Deletes all or expired custom exclusion column entries from a DNC list. |
+| [**deleteOutboundDnclistEmailaddresses**](OutboundApi#deleteOutboundDnclistEmailaddresses) | Deletes all or expired email addresses from a DNC list. |
+| [**deleteOutboundDnclistPhonenumbers**](OutboundApi#deleteOutboundDnclistPhonenumbers) | Deletes all or expired phone numbers from a DNC list. |
+| [**deleteOutboundFilespecificationtemplate**](OutboundApi#deleteOutboundFilespecificationtemplate) | Delete File Specification Template |
+| [**deleteOutboundFilespecificationtemplatesBulk**](OutboundApi#deleteOutboundFilespecificationtemplatesBulk) | Delete multiple file specification templates. |
+| [**deleteOutboundImporttemplate**](OutboundApi#deleteOutboundImporttemplate) | Delete Import Template |
+| [**deleteOutboundImporttemplates**](OutboundApi#deleteOutboundImporttemplates) | Delete multiple import templates. |
+| [**deleteOutboundMessagingcampaign**](OutboundApi#deleteOutboundMessagingcampaign) | Delete an Outbound Messaging Campaign |
+| [**deleteOutboundMessagingcampaignProgress**](OutboundApi#deleteOutboundMessagingcampaignProgress) | Reset messaging campaign progress and recycle the messaging campaign |
+| [**deleteOutboundRuleset**](OutboundApi#deleteOutboundRuleset) | Delete a Rule Set. |
+| [**deleteOutboundSchedulesCampaign**](OutboundApi#deleteOutboundSchedulesCampaign) | Delete a dialer campaign schedule. |
+| [**deleteOutboundSchedulesEmailcampaign**](OutboundApi#deleteOutboundSchedulesEmailcampaign) | Delete an email campaign schedule. |
+| [**deleteOutboundSchedulesMessagingcampaign**](OutboundApi#deleteOutboundSchedulesMessagingcampaign) | Delete a messaging campaign schedule. |
+| [**deleteOutboundSchedulesSequence**](OutboundApi#deleteOutboundSchedulesSequence) | Delete a dialer sequence schedule. |
+| [**deleteOutboundSequence**](OutboundApi#deleteOutboundSequence) | Delete a dialer campaign sequence. |
+| [**getOutboundAttemptlimit**](OutboundApi#getOutboundAttemptlimit) | Get attempt limits |
+| [**getOutboundAttemptlimits**](OutboundApi#getOutboundAttemptlimits) | Query attempt limits list |
+| [**getOutboundCallabletimeset**](OutboundApi#getOutboundCallabletimeset) | Get callable time set |
+| [**getOutboundCallabletimesets**](OutboundApi#getOutboundCallabletimesets) | Query callable time set list |
+| [**getOutboundCallanalysisresponseset**](OutboundApi#getOutboundCallanalysisresponseset) | Get a dialer call analysis response set. |
+| [**getOutboundCallanalysisresponsesets**](OutboundApi#getOutboundCallanalysisresponsesets) | Query a list of dialer call analysis response sets. |
+| [**getOutboundCampaign**](OutboundApi#getOutboundCampaign) | Get dialer campaign. |
+| [**getOutboundCampaignAgentownedmappingpreviewResults**](OutboundApi#getOutboundCampaignAgentownedmappingpreviewResults) | Get a preview of how agents will be mapped to this campaign's contact list. |
+| [**getOutboundCampaignDiagnostics**](OutboundApi#getOutboundCampaignDiagnostics) | Get campaign diagnostics |
+| [**getOutboundCampaignInteractions**](OutboundApi#getOutboundCampaignInteractions) | Get dialer campaign interactions. |
+| [**getOutboundCampaignLinedistribution**](OutboundApi#getOutboundCampaignLinedistribution) | Get line distribution information for campaigns using same Edge Group or Site as given campaign |
+| [**getOutboundCampaignProgress**](OutboundApi#getOutboundCampaignProgress) | Get campaign progress |
+| [**getOutboundCampaignStats**](OutboundApi#getOutboundCampaignStats) | Get statistics about a Dialer Campaign |
+| [**getOutboundCampaignrule**](OutboundApi#getOutboundCampaignrule) | Get Campaign Rule |
+| [**getOutboundCampaignrules**](OutboundApi#getOutboundCampaignrules) | Query Campaign Rule list |
+| [**getOutboundCampaigns**](OutboundApi#getOutboundCampaigns) | Query a list of dialer campaigns. |
+| [**getOutboundCampaignsAll**](OutboundApi#getOutboundCampaignsAll) | Query across all types of campaigns by division |
+| [**getOutboundCampaignsAllDivisionviews**](OutboundApi#getOutboundCampaignsAllDivisionviews) | Query across all types of campaigns |
+| [**getOutboundCampaignsDivisionview**](OutboundApi#getOutboundCampaignsDivisionview) | Get a basic Campaign information object |
+| [**getOutboundCampaignsDivisionviews**](OutboundApi#getOutboundCampaignsDivisionviews) | Query a list of basic Campaign information objects |
+| [**getOutboundContactlist**](OutboundApi#getOutboundContactlist) | Get a dialer contact list. |
+| [**getOutboundContactlistContact**](OutboundApi#getOutboundContactlistContact) | Get a contact. |
+| [**getOutboundContactlistContactsBulkJob**](OutboundApi#getOutboundContactlistContactsBulkJob) | Get bulk operation job. |
+| [**getOutboundContactlistContactsBulkJobs**](OutboundApi#getOutboundContactlistContactsBulkJobs) | Get 10 most recent bulk operation jobs associated with contact list. |
+| [**getOutboundContactlistExport**](OutboundApi#getOutboundContactlistExport) | Get the URI of a contact list export. |
+| [**getOutboundContactlistImportstatus**](OutboundApi#getOutboundContactlistImportstatus) | Get dialer contactList import status. |
+| [**getOutboundContactlistTimezonemappingpreview**](OutboundApi#getOutboundContactlistTimezonemappingpreview) | Preview the result of applying Automatic Time Zone Mapping to a contact list |
+| [**getOutboundContactlistfilter**](OutboundApi#getOutboundContactlistfilter) | Get Contact list filter |
+| [**getOutboundContactlistfilters**](OutboundApi#getOutboundContactlistfilters) | Query Contact list filters |
+| [**getOutboundContactlists**](OutboundApi#getOutboundContactlists) | Query a list of contact lists. |
+| [**getOutboundContactlistsDivisionview**](OutboundApi#getOutboundContactlistsDivisionview) | Get a basic ContactList information object |
+| [**getOutboundContactlistsDivisionviews**](OutboundApi#getOutboundContactlistsDivisionviews) | Query a list of simplified contact list objects. |
+| [**getOutboundContactlisttemplate**](OutboundApi#getOutboundContactlisttemplate) | Get Contact List Template |
+| [**getOutboundContactlisttemplates**](OutboundApi#getOutboundContactlisttemplates) | Query a list of contact list templates |
+| [**getOutboundDigitalruleset**](OutboundApi#getOutboundDigitalruleset) | Get an Outbound Digital Rule Set |
+| [**getOutboundDigitalrulesets**](OutboundApi#getOutboundDigitalrulesets) | Query a list of Outbound Digital Rule Sets |
+| [**getOutboundDnclist**](OutboundApi#getOutboundDnclist) | Get dialer DNC list |
+| [**getOutboundDnclistExport**](OutboundApi#getOutboundDnclistExport) | Get the URI of a DNC list export. |
+| [**getOutboundDnclistImportstatus**](OutboundApi#getOutboundDnclistImportstatus) | Get dialer dncList import status. |
+| [**getOutboundDnclists**](OutboundApi#getOutboundDnclists) | Query dialer DNC lists |
+| [**getOutboundDnclistsDivisionview**](OutboundApi#getOutboundDnclistsDivisionview) | Get a basic DncList information object |
+| [**getOutboundDnclistsDivisionviews**](OutboundApi#getOutboundDnclistsDivisionviews) | Query a list of simplified dnc list objects. |
+| [**getOutboundEvent**](OutboundApi#getOutboundEvent) | Get Dialer Event |
+| [**getOutboundEvents**](OutboundApi#getOutboundEvents) | Query Event Logs |
+| [**getOutboundFilespecificationtemplate**](OutboundApi#getOutboundFilespecificationtemplate) | Get File Specification Template |
+| [**getOutboundFilespecificationtemplates**](OutboundApi#getOutboundFilespecificationtemplates) | Query File Specification Templates |
+| [**getOutboundImporttemplate**](OutboundApi#getOutboundImporttemplate) | Get Import Template |
+| [**getOutboundImporttemplateImportstatus**](OutboundApi#getOutboundImporttemplateImportstatus) | Get the import status for an import template. |
+| [**getOutboundImporttemplates**](OutboundApi#getOutboundImporttemplates) | Query Import Templates |
+| [**getOutboundMessagingcampaign**](OutboundApi#getOutboundMessagingcampaign) | Get an Outbound Messaging Campaign |
+| [**getOutboundMessagingcampaignDiagnostics**](OutboundApi#getOutboundMessagingcampaignDiagnostics) | Get messaging campaign diagnostics |
+| [**getOutboundMessagingcampaignProgress**](OutboundApi#getOutboundMessagingcampaignProgress) | Get messaging campaign's progress |
+| [**getOutboundMessagingcampaigns**](OutboundApi#getOutboundMessagingcampaigns) | Query a list of Messaging Campaigns |
+| [**getOutboundMessagingcampaignsDivisionview**](OutboundApi#getOutboundMessagingcampaignsDivisionview) | Get a basic Messaging Campaign information object |
+| [**getOutboundMessagingcampaignsDivisionviews**](OutboundApi#getOutboundMessagingcampaignsDivisionviews) | Query a list of basic Messaging Campaign information objects |
+| [**getOutboundRuleset**](OutboundApi#getOutboundRuleset) | Get a Rule Set by ID. |
+| [**getOutboundRulesets**](OutboundApi#getOutboundRulesets) | Query a list of Rule Sets. |
+| [**getOutboundSchedulesCampaign**](OutboundApi#getOutboundSchedulesCampaign) | Get a dialer campaign schedule. |
+| [**getOutboundSchedulesCampaigns**](OutboundApi#getOutboundSchedulesCampaigns) | Query for a list of dialer campaign schedules. |
+| [**getOutboundSchedulesEmailcampaign**](OutboundApi#getOutboundSchedulesEmailcampaign) | Get an email campaign schedule. |
+| [**getOutboundSchedulesEmailcampaigns**](OutboundApi#getOutboundSchedulesEmailcampaigns) | Query for a list of email campaign schedules. |
+| [**getOutboundSchedulesMessagingcampaign**](OutboundApi#getOutboundSchedulesMessagingcampaign) | Get a messaging campaign schedule. |
+| [**getOutboundSchedulesMessagingcampaigns**](OutboundApi#getOutboundSchedulesMessagingcampaigns) | Query for a list of messaging campaign schedules. |
+| [**getOutboundSchedulesSequence**](OutboundApi#getOutboundSchedulesSequence) | Get a dialer sequence schedule. |
+| [**getOutboundSchedulesSequences**](OutboundApi#getOutboundSchedulesSequences) | Query for a list of dialer sequence schedules. |
+| [**getOutboundSequence**](OutboundApi#getOutboundSequence) | Get a dialer campaign sequence. |
+| [**getOutboundSequences**](OutboundApi#getOutboundSequences) | Query a list of dialer campaign sequences. |
+| [**getOutboundSettings**](OutboundApi#getOutboundSettings) | Get the outbound settings for this organization |
+| [**getOutboundWrapupcodemappings**](OutboundApi#getOutboundWrapupcodemappings) | Get the Dialer wrap up code mapping. |
+| [**patchOutboundCampaign**](OutboundApi#patchOutboundCampaign) | Update a campaign. |
+| [**patchOutboundDnclistCustomexclusioncolumns**](OutboundApi#patchOutboundDnclistCustomexclusioncolumns) | Add entries to or delete entries from a DNC list. |
+| [**patchOutboundDnclistEmailaddresses**](OutboundApi#patchOutboundDnclistEmailaddresses) | Add emails to or Delete emails from a DNC list. |
+| [**patchOutboundDnclistPhonenumbers**](OutboundApi#patchOutboundDnclistPhonenumbers) | Add numbers to or delete numbers from a DNC list. |
+| [**patchOutboundSettings**](OutboundApi#patchOutboundSettings) | Update the outbound settings for this organization |
+| [**postOutboundAttemptlimits**](OutboundApi#postOutboundAttemptlimits) | Create attempt limits |
+| [**postOutboundCallabletimesets**](OutboundApi#postOutboundCallabletimesets) | Create callable time set |
+| [**postOutboundCallanalysisresponsesets**](OutboundApi#postOutboundCallanalysisresponsesets) | Create a dialer call analysis response set. |
+| [**postOutboundCampaignAgentownedmappingpreview**](OutboundApi#postOutboundCampaignAgentownedmappingpreview) | Initiate request for a preview of how agents will be mapped to this campaign's contact list. |
+| [**postOutboundCampaignCallbackSchedule**](OutboundApi#postOutboundCampaignCallbackSchedule) | Schedule a Callback for a Dialer Campaign (Deprecated) |
+| [**postOutboundCampaignrules**](OutboundApi#postOutboundCampaignrules) | Create Campaign Rule |
+| [**postOutboundCampaigns**](OutboundApi#postOutboundCampaigns) | Create a campaign. |
+| [**postOutboundCampaignsProgress**](OutboundApi#postOutboundCampaignsProgress) | Get progress for a list of campaigns |
+| [**postOutboundContactlistClear**](OutboundApi#postOutboundContactlistClear) | Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled. |
+| [**postOutboundContactlistContacts**](OutboundApi#postOutboundContactlistContacts) | Add contacts to a contact list. |
+| [**postOutboundContactlistContactsBulk**](OutboundApi#postOutboundContactlistContactsBulk) | Get contacts from a contact list. |
+| [**postOutboundContactlistContactsBulkRemove**](OutboundApi#postOutboundContactlistContactsBulkRemove) | Start an async job to delete contacts using a filter. |
+| [**postOutboundContactlistContactsBulkUpdate**](OutboundApi#postOutboundContactlistContactsBulkUpdate) | Start an async job to bulk edit contacts. |
+| [**postOutboundContactlistContactsSearch**](OutboundApi#postOutboundContactlistContactsSearch) | Query contacts from a contact list. |
+| [**postOutboundContactlistExport**](OutboundApi#postOutboundContactlistExport) | Initiate the export of a contact list. |
+| [**postOutboundContactlistfilters**](OutboundApi#postOutboundContactlistfilters) | Create Contact List Filter |
+| [**postOutboundContactlistfiltersBulkRetrieve**](OutboundApi#postOutboundContactlistfiltersBulkRetrieve) | Retrieve multiple contact list filters |
+| [**postOutboundContactlistfiltersPreview**](OutboundApi#postOutboundContactlistfiltersPreview) | Get a preview of the output of a contact list filter |
+| [**postOutboundContactlists**](OutboundApi#postOutboundContactlists) | Create a contact List. |
+| [**postOutboundContactlisttemplates**](OutboundApi#postOutboundContactlisttemplates) | Create Contact List Template |
+| [**postOutboundContactlisttemplatesBulkAdd**](OutboundApi#postOutboundContactlisttemplatesBulkAdd) | Add multiple contact list templates |
+| [**postOutboundContactlisttemplatesBulkRetrieve**](OutboundApi#postOutboundContactlisttemplatesBulkRetrieve) | Get multiple contact list templates |
+| [**postOutboundConversationDnc**](OutboundApi#postOutboundConversationDnc) | Add phone numbers to a Dialer DNC list. |
+| [**postOutboundDigitalrulesets**](OutboundApi#postOutboundDigitalrulesets) | Create an Outbound Digital Rule Set |
+| [**postOutboundDnclistEmailaddresses**](OutboundApi#postOutboundDnclistEmailaddresses) | Add email addresses to a DNC list. |
+| [**postOutboundDnclistExport**](OutboundApi#postOutboundDnclistExport) | Initiate the export of a dnc list. |
+| [**postOutboundDnclistPhonenumbers**](OutboundApi#postOutboundDnclistPhonenumbers) | Add phone numbers to a DNC list. |
+| [**postOutboundDnclists**](OutboundApi#postOutboundDnclists) | Create dialer DNC list |
+| [**postOutboundFilespecificationtemplates**](OutboundApi#postOutboundFilespecificationtemplates) | Create File Specification Template |
+| [**postOutboundImporttemplates**](OutboundApi#postOutboundImporttemplates) | Create Import Template |
+| [**postOutboundImporttemplatesBulkAdd**](OutboundApi#postOutboundImporttemplatesBulkAdd) | Add multiple import templates |
+| [**postOutboundMessagingcampaigns**](OutboundApi#postOutboundMessagingcampaigns) | Create a Messaging Campaign |
+| [**postOutboundMessagingcampaignsProgress**](OutboundApi#postOutboundMessagingcampaignsProgress) | Get progress for a list of messaging campaigns |
+| [**postOutboundRulesets**](OutboundApi#postOutboundRulesets) | Create a Rule Set. |
+| [**postOutboundSequences**](OutboundApi#postOutboundSequences) | Create a new campaign sequence. |
+| [**putOutboundAttemptlimit**](OutboundApi#putOutboundAttemptlimit) | Update attempt limits |
+| [**putOutboundCallabletimeset**](OutboundApi#putOutboundCallabletimeset) | Update callable time set |
+| [**putOutboundCallanalysisresponseset**](OutboundApi#putOutboundCallanalysisresponseset) | Update a dialer call analysis response set. |
+| [**putOutboundCampaign**](OutboundApi#putOutboundCampaign) | Update a campaign. |
+| [**putOutboundCampaignAgent**](OutboundApi#putOutboundCampaignAgent) | Send notification that an agent's state changed  |
+| [**putOutboundCampaignrule**](OutboundApi#putOutboundCampaignrule) | Update Campaign Rule |
+| [**putOutboundContactlist**](OutboundApi#putOutboundContactlist) | Update a contact list. |
+| [**putOutboundContactlistContact**](OutboundApi#putOutboundContactlistContact) | Update a contact. |
+| [**putOutboundContactlistfilter**](OutboundApi#putOutboundContactlistfilter) | Update Contact List Filter |
+| [**putOutboundContactlisttemplate**](OutboundApi#putOutboundContactlisttemplate) | Update a contact list template. |
+| [**putOutboundDigitalruleset**](OutboundApi#putOutboundDigitalruleset) | Update an Outbound Digital Rule Set |
+| [**putOutboundDnclist**](OutboundApi#putOutboundDnclist) | Update dialer DNC list |
+| [**putOutboundFilespecificationtemplate**](OutboundApi#putOutboundFilespecificationtemplate) | Update File Specification Template |
+| [**putOutboundImporttemplate**](OutboundApi#putOutboundImporttemplate) | Update Import Template |
+| [**putOutboundMessagingcampaign**](OutboundApi#putOutboundMessagingcampaign) | Update an Outbound Messaging Campaign |
+| [**putOutboundRuleset**](OutboundApi#putOutboundRuleset) | Update a Rule Set. |
+| [**putOutboundSchedulesCampaign**](OutboundApi#putOutboundSchedulesCampaign) | Update a new campaign schedule. |
+| [**putOutboundSchedulesEmailcampaign**](OutboundApi#putOutboundSchedulesEmailcampaign) | Update an email campaign schedule. |
+| [**putOutboundSchedulesMessagingcampaign**](OutboundApi#putOutboundSchedulesMessagingcampaign) | Update a new messaging campaign schedule. |
+| [**putOutboundSchedulesSequence**](OutboundApi#putOutboundSchedulesSequence) | Update a new sequence schedule. |
+| [**putOutboundSequence**](OutboundApi#putOutboundSequence) | Update a new campaign sequence. |
+| [**putOutboundWrapupcodemappings**](OutboundApi#putOutboundWrapupcodemappings) | Update the Dialer wrap up code mapping. |
 {: class="table-striped"}
 
-<a name="deleteOutboundAttemptlimit"></a>
 
 # **deleteOutboundAttemptlimit**
-
 
 
 > Void deleteOutboundAttemptlimit(attemptLimitsId)
@@ -230,10 +225,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteOutboundCallabletimeset"></a>
 
 # **deleteOutboundCallabletimeset**
-
 
 
 > Void deleteOutboundCallabletimeset(callableTimeSetId)
@@ -290,10 +283,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteOutboundCallanalysisresponseset"></a>
 
 # **deleteOutboundCallanalysisresponseset**
-
 
 
 > Void deleteOutboundCallanalysisresponseset(callAnalysisSetId)
@@ -350,13 +341,11 @@ try {
 
 null (empty response body)
 
-<a name="deleteOutboundCampaign"></a>
 
 # **deleteOutboundCampaign**
 
 
-
-> [Campaign](Campaign.html) deleteOutboundCampaign(campaignId)
+> [Campaign](Campaign) deleteOutboundCampaign(campaignId)
 
 Delete a campaign.
 
@@ -409,12 +398,10 @@ try {
 
 ### Return type
 
-[**Campaign**](Campaign.html)
+[**Campaign**](Campaign)
 
-<a name="deleteOutboundCampaignProgress"></a>
 
 # **deleteOutboundCampaignProgress**
-
 
 
 > Void deleteOutboundCampaignProgress(campaignId)
@@ -472,10 +459,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteOutboundCampaignrule"></a>
 
 # **deleteOutboundCampaignrule**
-
 
 
 > Void deleteOutboundCampaignrule(campaignRuleId)
@@ -532,10 +517,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteOutboundContactlist"></a>
 
 # **deleteOutboundContactlist**
-
 
 
 > Void deleteOutboundContactlist(contactListId)
@@ -592,10 +575,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteOutboundContactlistContact"></a>
 
 # **deleteOutboundContactlistContact**
-
 
 
 > Void deleteOutboundContactlistContact(contactListId, contactId)
@@ -654,10 +635,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteOutboundContactlistContacts"></a>
 
 # **deleteOutboundContactlistContacts**
-
 
 
 > Void deleteOutboundContactlistContacts(contactListId, contactIds)
@@ -708,7 +687,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **contactListId** | **String**| Contact List ID | 
-| **contactIds** | [**List&lt;String&gt;**](String.html)| ContactIds to delete. | 
+| **contactIds** | [**List&lt;String&gt;**](String)| ContactIds to delete. | 
 {: class="table-striped"}
 
 
@@ -716,10 +695,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteOutboundContactlistfilter"></a>
 
 # **deleteOutboundContactlistfilter**
-
 
 
 > Void deleteOutboundContactlistfilter(contactListFilterId)
@@ -776,10 +753,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteOutboundContactlists"></a>
 
 # **deleteOutboundContactlists**
-
 
 
 > Void deleteOutboundContactlists(id)
@@ -828,7 +803,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**List&lt;String&gt;**](String.html)| contact list id(s) to delete | 
+| **id** | [**List&lt;String&gt;**](String)| contact list id(s) to delete | 
 {: class="table-striped"}
 
 
@@ -836,10 +811,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteOutboundContactlisttemplate"></a>
 
 # **deleteOutboundContactlisttemplate**
-
 
 
 > Void deleteOutboundContactlisttemplate(contactListTemplateId)
@@ -896,10 +869,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteOutboundContactlisttemplates"></a>
 
 # **deleteOutboundContactlisttemplates**
-
 
 
 > Void deleteOutboundContactlisttemplates(id)
@@ -948,7 +919,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**List&lt;String&gt;**](String.html)| contact list template id(s) to delete | 
+| **id** | [**List&lt;String&gt;**](String)| contact list template id(s) to delete | 
 {: class="table-striped"}
 
 
@@ -956,10 +927,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteOutboundDigitalruleset"></a>
 
 # **deleteOutboundDigitalruleset**
-
 
 
 > Void deleteOutboundDigitalruleset(digitalRuleSetId)
@@ -1016,10 +985,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteOutboundDnclist"></a>
 
 # **deleteOutboundDnclist**
-
 
 
 > Void deleteOutboundDnclist(dncListId)
@@ -1076,10 +1043,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteOutboundDnclistCustomexclusioncolumns"></a>
 
 # **deleteOutboundDnclistCustomexclusioncolumns**
-
 
 
 > Void deleteOutboundDnclistCustomexclusioncolumns(dncListId, expiredOnly)
@@ -1140,10 +1105,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteOutboundDnclistEmailaddresses"></a>
 
 # **deleteOutboundDnclistEmailaddresses**
-
 
 
 > Void deleteOutboundDnclistEmailaddresses(dncListId, expiredOnly)
@@ -1204,10 +1167,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteOutboundDnclistPhonenumbers"></a>
 
 # **deleteOutboundDnclistPhonenumbers**
-
 
 
 > Void deleteOutboundDnclistPhonenumbers(dncListId, expiredOnly)
@@ -1268,10 +1229,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteOutboundFilespecificationtemplate"></a>
 
 # **deleteOutboundFilespecificationtemplate**
-
 
 
 > Void deleteOutboundFilespecificationtemplate(fileSpecificationTemplateId)
@@ -1328,10 +1287,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteOutboundFilespecificationtemplatesBulk"></a>
 
 # **deleteOutboundFilespecificationtemplatesBulk**
-
 
 
 > Void deleteOutboundFilespecificationtemplatesBulk(id)
@@ -1380,7 +1337,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**List&lt;String&gt;**](String.html)| File Specification template id(s) to delete | 
+| **id** | [**List&lt;String&gt;**](String)| File Specification template id(s) to delete | 
 {: class="table-striped"}
 
 
@@ -1388,10 +1345,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteOutboundImporttemplate"></a>
 
 # **deleteOutboundImporttemplate**
-
 
 
 > Void deleteOutboundImporttemplate(importTemplateId)
@@ -1448,10 +1403,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteOutboundImporttemplates"></a>
 
 # **deleteOutboundImporttemplates**
-
 
 
 > Void deleteOutboundImporttemplates(id)
@@ -1500,7 +1453,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**List&lt;String&gt;**](String.html)| import template id(s) to delete | 
+| **id** | [**List&lt;String&gt;**](String)| import template id(s) to delete | 
 {: class="table-striped"}
 
 
@@ -1508,13 +1461,11 @@ try {
 
 null (empty response body)
 
-<a name="deleteOutboundMessagingcampaign"></a>
 
 # **deleteOutboundMessagingcampaign**
 
 
-
-> [MessagingCampaign](MessagingCampaign.html) deleteOutboundMessagingcampaign(messagingCampaignId)
+> [MessagingCampaign](MessagingCampaign) deleteOutboundMessagingcampaign(messagingCampaignId)
 
 Delete an Outbound Messaging Campaign
 
@@ -1568,12 +1519,10 @@ try {
 
 ### Return type
 
-[**MessagingCampaign**](MessagingCampaign.html)
+[**MessagingCampaign**](MessagingCampaign)
 
-<a name="deleteOutboundMessagingcampaignProgress"></a>
 
 # **deleteOutboundMessagingcampaignProgress**
-
 
 
 > Void deleteOutboundMessagingcampaignProgress(messagingCampaignId)
@@ -1635,10 +1584,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteOutboundRuleset"></a>
 
 # **deleteOutboundRuleset**
-
 
 
 > Void deleteOutboundRuleset(ruleSetId)
@@ -1695,10 +1642,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteOutboundSchedulesCampaign"></a>
 
 # **deleteOutboundSchedulesCampaign**
-
 
 
 > Void deleteOutboundSchedulesCampaign(campaignId)
@@ -1755,10 +1700,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteOutboundSchedulesEmailcampaign"></a>
 
 # **deleteOutboundSchedulesEmailcampaign**
-
 
 
 > Void deleteOutboundSchedulesEmailcampaign(emailCampaignId)
@@ -1815,10 +1758,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteOutboundSchedulesMessagingcampaign"></a>
 
 # **deleteOutboundSchedulesMessagingcampaign**
-
 
 
 > Void deleteOutboundSchedulesMessagingcampaign(messagingCampaignId)
@@ -1875,10 +1816,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteOutboundSchedulesSequence"></a>
 
 # **deleteOutboundSchedulesSequence**
-
 
 
 > Void deleteOutboundSchedulesSequence(sequenceId)
@@ -1935,10 +1874,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteOutboundSequence"></a>
 
 # **deleteOutboundSequence**
-
 
 
 > Void deleteOutboundSequence(sequenceId)
@@ -1995,13 +1932,11 @@ try {
 
 null (empty response body)
 
-<a name="getOutboundAttemptlimit"></a>
 
 # **getOutboundAttemptlimit**
 
 
-
-> [AttemptLimits](AttemptLimits.html) getOutboundAttemptlimit(attemptLimitsId)
+> [AttemptLimits](AttemptLimits) getOutboundAttemptlimit(attemptLimitsId)
 
 Get attempt limits
 
@@ -2054,15 +1989,13 @@ try {
 
 ### Return type
 
-[**AttemptLimits**](AttemptLimits.html)
+[**AttemptLimits**](AttemptLimits)
 
-<a name="getOutboundAttemptlimits"></a>
 
 # **getOutboundAttemptlimits**
 
 
-
-> [AttemptLimitsEntityListing](AttemptLimitsEntityListing.html) getOutboundAttemptlimits(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
+> [AttemptLimitsEntityListing](AttemptLimitsEntityListing) getOutboundAttemptlimits(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
 
 Query attempt limits list
 
@@ -2127,15 +2060,13 @@ try {
 
 ### Return type
 
-[**AttemptLimitsEntityListing**](AttemptLimitsEntityListing.html)
+[**AttemptLimitsEntityListing**](AttemptLimitsEntityListing)
 
-<a name="getOutboundCallabletimeset"></a>
 
 # **getOutboundCallabletimeset**
 
 
-
-> [CallableTimeSet](CallableTimeSet.html) getOutboundCallabletimeset(callableTimeSetId)
+> [CallableTimeSet](CallableTimeSet) getOutboundCallabletimeset(callableTimeSetId)
 
 Get callable time set
 
@@ -2188,15 +2119,13 @@ try {
 
 ### Return type
 
-[**CallableTimeSet**](CallableTimeSet.html)
+[**CallableTimeSet**](CallableTimeSet)
 
-<a name="getOutboundCallabletimesets"></a>
 
 # **getOutboundCallabletimesets**
 
 
-
-> [CallableTimeSetEntityListing](CallableTimeSetEntityListing.html) getOutboundCallabletimesets(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
+> [CallableTimeSetEntityListing](CallableTimeSetEntityListing) getOutboundCallabletimesets(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
 
 Query callable time set list
 
@@ -2261,15 +2190,13 @@ try {
 
 ### Return type
 
-[**CallableTimeSetEntityListing**](CallableTimeSetEntityListing.html)
+[**CallableTimeSetEntityListing**](CallableTimeSetEntityListing)
 
-<a name="getOutboundCallanalysisresponseset"></a>
 
 # **getOutboundCallanalysisresponseset**
 
 
-
-> [ResponseSet](ResponseSet.html) getOutboundCallanalysisresponseset(callAnalysisSetId)
+> [ResponseSet](ResponseSet) getOutboundCallanalysisresponseset(callAnalysisSetId)
 
 Get a dialer call analysis response set.
 
@@ -2322,15 +2249,13 @@ try {
 
 ### Return type
 
-[**ResponseSet**](ResponseSet.html)
+[**ResponseSet**](ResponseSet)
 
-<a name="getOutboundCallanalysisresponsesets"></a>
 
 # **getOutboundCallanalysisresponsesets**
 
 
-
-> [ResponseSetEntityListing](ResponseSetEntityListing.html) getOutboundCallanalysisresponsesets(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
+> [ResponseSetEntityListing](ResponseSetEntityListing) getOutboundCallanalysisresponsesets(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
 
 Query a list of dialer call analysis response sets.
 
@@ -2395,15 +2320,13 @@ try {
 
 ### Return type
 
-[**ResponseSetEntityListing**](ResponseSetEntityListing.html)
+[**ResponseSetEntityListing**](ResponseSetEntityListing)
 
-<a name="getOutboundCampaign"></a>
 
 # **getOutboundCampaign**
 
 
-
-> [Campaign](Campaign.html) getOutboundCampaign(campaignId)
+> [Campaign](Campaign) getOutboundCampaign(campaignId)
 
 Get dialer campaign.
 
@@ -2456,15 +2379,13 @@ try {
 
 ### Return type
 
-[**Campaign**](Campaign.html)
+[**Campaign**](Campaign)
 
-<a name="getOutboundCampaignAgentownedmappingpreviewResults"></a>
 
 # **getOutboundCampaignAgentownedmappingpreviewResults**
 
 
-
-> [AgentOwnedMappingPreviewListing](AgentOwnedMappingPreviewListing.html) getOutboundCampaignAgentownedmappingpreviewResults(campaignId)
+> [AgentOwnedMappingPreviewListing](AgentOwnedMappingPreviewListing) getOutboundCampaignAgentownedmappingpreviewResults(campaignId)
 
 Get a preview of how agents will be mapped to this campaign's contact list.
 
@@ -2519,15 +2440,13 @@ try {
 
 ### Return type
 
-[**AgentOwnedMappingPreviewListing**](AgentOwnedMappingPreviewListing.html)
+[**AgentOwnedMappingPreviewListing**](AgentOwnedMappingPreviewListing)
 
-<a name="getOutboundCampaignDiagnostics"></a>
 
 # **getOutboundCampaignDiagnostics**
 
 
-
-> [CampaignDiagnostics](CampaignDiagnostics.html) getOutboundCampaignDiagnostics(campaignId)
+> [CampaignDiagnostics](CampaignDiagnostics) getOutboundCampaignDiagnostics(campaignId)
 
 Get campaign diagnostics
 
@@ -2580,15 +2499,13 @@ try {
 
 ### Return type
 
-[**CampaignDiagnostics**](CampaignDiagnostics.html)
+[**CampaignDiagnostics**](CampaignDiagnostics)
 
-<a name="getOutboundCampaignInteractions"></a>
 
 # **getOutboundCampaignInteractions**
 
 
-
-> [CampaignInteractions](CampaignInteractions.html) getOutboundCampaignInteractions(campaignId)
+> [CampaignInteractions](CampaignInteractions) getOutboundCampaignInteractions(campaignId)
 
 Get dialer campaign interactions.
 
@@ -2641,15 +2558,13 @@ try {
 
 ### Return type
 
-[**CampaignInteractions**](CampaignInteractions.html)
+[**CampaignInteractions**](CampaignInteractions)
 
-<a name="getOutboundCampaignLinedistribution"></a>
 
 # **getOutboundCampaignLinedistribution**
 
 
-
-> [CampaignOutboundLinesDistribution](CampaignOutboundLinesDistribution.html) getOutboundCampaignLinedistribution(campaignId, includeOnlyActiveCampaigns, edgeGroupId, siteId, useWeight, relativeWeight, outboundLineCount)
+> [CampaignOutboundLinesDistribution](CampaignOutboundLinesDistribution) getOutboundCampaignLinedistribution(campaignId, includeOnlyActiveCampaigns, edgeGroupId, siteId, useWeight, relativeWeight, outboundLineCount)
 
 Get line distribution information for campaigns using same Edge Group or Site as given campaign
 
@@ -2714,15 +2629,13 @@ try {
 
 ### Return type
 
-[**CampaignOutboundLinesDistribution**](CampaignOutboundLinesDistribution.html)
+[**CampaignOutboundLinesDistribution**](CampaignOutboundLinesDistribution)
 
-<a name="getOutboundCampaignProgress"></a>
 
 # **getOutboundCampaignProgress**
 
 
-
-> [CampaignProgress](CampaignProgress.html) getOutboundCampaignProgress(campaignId)
+> [CampaignProgress](CampaignProgress) getOutboundCampaignProgress(campaignId)
 
 Get campaign progress
 
@@ -2775,15 +2688,13 @@ try {
 
 ### Return type
 
-[**CampaignProgress**](CampaignProgress.html)
+[**CampaignProgress**](CampaignProgress)
 
-<a name="getOutboundCampaignStats"></a>
 
 # **getOutboundCampaignStats**
 
 
-
-> [CampaignStats](CampaignStats.html) getOutboundCampaignStats(campaignId)
+> [CampaignStats](CampaignStats) getOutboundCampaignStats(campaignId)
 
 Get statistics about a Dialer Campaign
 
@@ -2836,15 +2747,13 @@ try {
 
 ### Return type
 
-[**CampaignStats**](CampaignStats.html)
+[**CampaignStats**](CampaignStats)
 
-<a name="getOutboundCampaignrule"></a>
 
 # **getOutboundCampaignrule**
 
 
-
-> [CampaignRule](CampaignRule.html) getOutboundCampaignrule(campaignRuleId)
+> [CampaignRule](CampaignRule) getOutboundCampaignrule(campaignRuleId)
 
 Get Campaign Rule
 
@@ -2897,15 +2806,13 @@ try {
 
 ### Return type
 
-[**CampaignRule**](CampaignRule.html)
+[**CampaignRule**](CampaignRule)
 
-<a name="getOutboundCampaignrules"></a>
 
 # **getOutboundCampaignrules**
 
 
-
-> [CampaignRuleEntityListing](CampaignRuleEntityListing.html) getOutboundCampaignrules(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
+> [CampaignRuleEntityListing](CampaignRuleEntityListing) getOutboundCampaignrules(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
 
 Query Campaign Rule list
 
@@ -2970,15 +2877,13 @@ try {
 
 ### Return type
 
-[**CampaignRuleEntityListing**](CampaignRuleEntityListing.html)
+[**CampaignRuleEntityListing**](CampaignRuleEntityListing)
 
-<a name="getOutboundCampaigns"></a>
 
 # **getOutboundCampaigns**
 
 
-
-> [CampaignEntityListing](CampaignEntityListing.html) getOutboundCampaigns(pageSize, pageNumber, filterType, name, id, contactListId, dncListIds, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, divisionId, sortBy, sortOrder)
+> [CampaignEntityListing](CampaignEntityListing) getOutboundCampaigns(pageSize, pageNumber, filterType, name, id, contactListId, dncListIds, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, divisionId, sortBy, sortOrder)
 
 Query a list of dialer campaigns.
 
@@ -3041,13 +2946,13 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith 
 | **name** | **String**| Name | [optional] 
-| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| id | [optional] 
 | **contactListId** | **String**| Contact List ID | [optional] 
 | **dncListIds** | **String**| DNC list ID | [optional] 
 | **distributionQueueId** | **String**| Distribution queue ID | [optional] 
 | **edgeGroupId** | **String**| Edge group ID | [optional] 
 | **callAnalysisResponseSetId** | **String**| Call analysis response set ID | [optional] 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String)| Division ID(s) | [optional] 
 | **sortBy** | **String**| Sort by | [optional] 
 | **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending 
 {: class="table-striped"}
@@ -3055,15 +2960,13 @@ try {
 
 ### Return type
 
-[**CampaignEntityListing**](CampaignEntityListing.html)
+[**CampaignEntityListing**](CampaignEntityListing)
 
-<a name="getOutboundCampaignsAll"></a>
 
 # **getOutboundCampaignsAll**
 
 
-
-> [CommonCampaignEntityListing](CommonCampaignEntityListing.html) getOutboundCampaignsAll(pageSize, pageNumber, id, name, divisionId, mediaType, sortOrder)
+> [CommonCampaignEntityListing](CommonCampaignEntityListing) getOutboundCampaignsAll(pageSize, pageNumber, id, name, divisionId, mediaType, sortOrder)
 
 Query across all types of campaigns by division
 
@@ -3120,25 +3023,23 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **id** | [**List&lt;String&gt;**](String.html)| Campaign ID(s) | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| Campaign ID(s) | [optional] 
 | **name** | **String**| Campaign name(s) | [optional] 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] 
-| **mediaType** | [**List&lt;String&gt;**](String.html)| Media type(s) | [optional]<br />**Values**: email, sms, voice 
+| **divisionId** | [**List&lt;String&gt;**](String)| Division ID(s) | [optional] 
+| **mediaType** | [**List&lt;String&gt;**](String)| Media type(s) | [optional]<br />**Values**: email, sms, voice 
 | **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CommonCampaignEntityListing**](CommonCampaignEntityListing.html)
+[**CommonCampaignEntityListing**](CommonCampaignEntityListing)
 
-<a name="getOutboundCampaignsAllDivisionviews"></a>
 
 # **getOutboundCampaignsAllDivisionviews**
 
 
-
-> [CommonCampaignDivisionViewEntityListing](CommonCampaignDivisionViewEntityListing.html) getOutboundCampaignsAllDivisionviews(pageSize, pageNumber, id, name, divisionId, mediaType, sortOrder)
+> [CommonCampaignDivisionViewEntityListing](CommonCampaignDivisionViewEntityListing) getOutboundCampaignsAllDivisionviews(pageSize, pageNumber, id, name, divisionId, mediaType, sortOrder)
 
 Query across all types of campaigns
 
@@ -3195,25 +3096,23 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **id** | [**List&lt;String&gt;**](String.html)| Campaign ID(s) | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| Campaign ID(s) | [optional] 
 | **name** | **String**| Campaign name(s) | [optional] 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] 
-| **mediaType** | [**List&lt;String&gt;**](String.html)| Media type(s) | [optional]<br />**Values**: email, sms, voice 
+| **divisionId** | [**List&lt;String&gt;**](String)| Division ID(s) | [optional] 
+| **mediaType** | [**List&lt;String&gt;**](String)| Media type(s) | [optional]<br />**Values**: email, sms, voice 
 | **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CommonCampaignDivisionViewEntityListing**](CommonCampaignDivisionViewEntityListing.html)
+[**CommonCampaignDivisionViewEntityListing**](CommonCampaignDivisionViewEntityListing)
 
-<a name="getOutboundCampaignsDivisionview"></a>
 
 # **getOutboundCampaignsDivisionview**
 
 
-
-> [CampaignDivisionView](CampaignDivisionView.html) getOutboundCampaignsDivisionview(campaignId)
+> [CampaignDivisionView](CampaignDivisionView) getOutboundCampaignsDivisionview(campaignId)
 
 Get a basic Campaign information object
 
@@ -3268,15 +3167,13 @@ try {
 
 ### Return type
 
-[**CampaignDivisionView**](CampaignDivisionView.html)
+[**CampaignDivisionView**](CampaignDivisionView)
 
-<a name="getOutboundCampaignsDivisionviews"></a>
 
 # **getOutboundCampaignsDivisionviews**
 
 
-
-> [CampaignDivisionViewListing](CampaignDivisionViewListing.html) getOutboundCampaignsDivisionviews(pageSize, pageNumber, filterType, name, id, sortBy, sortOrder)
+> [CampaignDivisionViewListing](CampaignDivisionViewListing) getOutboundCampaignsDivisionviews(pageSize, pageNumber, filterType, name, id, sortBy, sortOrder)
 
 Query a list of basic Campaign information objects
 
@@ -3335,7 +3232,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith 
 | **name** | **String**| Name | [optional] 
-| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| id | [optional] 
 | **sortBy** | **String**| Sort by | [optional] 
 | **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending 
 {: class="table-striped"}
@@ -3343,15 +3240,13 @@ try {
 
 ### Return type
 
-[**CampaignDivisionViewListing**](CampaignDivisionViewListing.html)
+[**CampaignDivisionViewListing**](CampaignDivisionViewListing)
 
-<a name="getOutboundContactlist"></a>
 
 # **getOutboundContactlist**
 
 
-
-> [ContactList](ContactList.html) getOutboundContactlist(contactListId, includeImportStatus, includeSize)
+> [ContactList](ContactList) getOutboundContactlist(contactListId, includeImportStatus, includeSize)
 
 Get a dialer contact list.
 
@@ -3408,15 +3303,13 @@ try {
 
 ### Return type
 
-[**ContactList**](ContactList.html)
+[**ContactList**](ContactList)
 
-<a name="getOutboundContactlistContact"></a>
 
 # **getOutboundContactlistContact**
 
 
-
-> [DialerContact](DialerContact.html) getOutboundContactlistContact(contactListId, contactId)
+> [DialerContact](DialerContact) getOutboundContactlistContact(contactListId, contactId)
 
 Get a contact.
 
@@ -3471,15 +3364,13 @@ try {
 
 ### Return type
 
-[**DialerContact**](DialerContact.html)
+[**DialerContact**](DialerContact)
 
-<a name="getOutboundContactlistContactsBulkJob"></a>
 
 # **getOutboundContactlistContactsBulkJob**
 
 
-
-> [ContactsBulkOperationJob](ContactsBulkOperationJob.html) getOutboundContactlistContactsBulkJob(contactListId, jobId)
+> [ContactsBulkOperationJob](ContactsBulkOperationJob) getOutboundContactlistContactsBulkJob(contactListId, jobId)
 
 Get bulk operation job.
 
@@ -3534,15 +3425,13 @@ try {
 
 ### Return type
 
-[**ContactsBulkOperationJob**](ContactsBulkOperationJob.html)
+[**ContactsBulkOperationJob**](ContactsBulkOperationJob)
 
-<a name="getOutboundContactlistContactsBulkJobs"></a>
 
 # **getOutboundContactlistContactsBulkJobs**
 
 
-
-> [ContactsBulkOperationJobListing](ContactsBulkOperationJobListing.html) getOutboundContactlistContactsBulkJobs(contactListId)
+> [ContactsBulkOperationJobListing](ContactsBulkOperationJobListing) getOutboundContactlistContactsBulkJobs(contactListId)
 
 Get 10 most recent bulk operation jobs associated with contact list.
 
@@ -3595,15 +3484,13 @@ try {
 
 ### Return type
 
-[**ContactsBulkOperationJobListing**](ContactsBulkOperationJobListing.html)
+[**ContactsBulkOperationJobListing**](ContactsBulkOperationJobListing)
 
-<a name="getOutboundContactlistExport"></a>
 
 # **getOutboundContactlistExport**
 
 
-
-> [ExportUri](ExportUri.html) getOutboundContactlistExport(contactListId, download)
+> [ExportUri](ExportUri) getOutboundContactlistExport(contactListId, download)
 
 Get the URI of a contact list export.
 
@@ -3659,15 +3546,13 @@ try {
 
 ### Return type
 
-[**ExportUri**](ExportUri.html)
+[**ExportUri**](ExportUri)
 
-<a name="getOutboundContactlistImportstatus"></a>
 
 # **getOutboundContactlistImportstatus**
 
 
-
-> [ImportStatus](ImportStatus.html) getOutboundContactlistImportstatus(contactListId)
+> [ImportStatus](ImportStatus) getOutboundContactlistImportstatus(contactListId)
 
 Get dialer contactList import status.
 
@@ -3720,15 +3605,13 @@ try {
 
 ### Return type
 
-[**ImportStatus**](ImportStatus.html)
+[**ImportStatus**](ImportStatus)
 
-<a name="getOutboundContactlistTimezonemappingpreview"></a>
 
 # **getOutboundContactlistTimezonemappingpreview**
 
 
-
-> [TimeZoneMappingPreview](TimeZoneMappingPreview.html) getOutboundContactlistTimezonemappingpreview(contactListId)
+> [TimeZoneMappingPreview](TimeZoneMappingPreview) getOutboundContactlistTimezonemappingpreview(contactListId)
 
 Preview the result of applying Automatic Time Zone Mapping to a contact list
 
@@ -3781,15 +3664,13 @@ try {
 
 ### Return type
 
-[**TimeZoneMappingPreview**](TimeZoneMappingPreview.html)
+[**TimeZoneMappingPreview**](TimeZoneMappingPreview)
 
-<a name="getOutboundContactlistfilter"></a>
 
 # **getOutboundContactlistfilter**
 
 
-
-> [ContactListFilter](ContactListFilter.html) getOutboundContactlistfilter(contactListFilterId)
+> [ContactListFilter](ContactListFilter) getOutboundContactlistfilter(contactListFilterId)
 
 Get Contact list filter
 
@@ -3842,15 +3723,13 @@ try {
 
 ### Return type
 
-[**ContactListFilter**](ContactListFilter.html)
+[**ContactListFilter**](ContactListFilter)
 
-<a name="getOutboundContactlistfilters"></a>
 
 # **getOutboundContactlistfilters**
 
 
-
-> [ContactListFilterEntityListing](ContactListFilterEntityListing.html) getOutboundContactlistfilters(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder, contactListId)
+> [ContactListFilterEntityListing](ContactListFilterEntityListing) getOutboundContactlistfilters(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder, contactListId)
 
 Query Contact list filters
 
@@ -3917,15 +3796,13 @@ try {
 
 ### Return type
 
-[**ContactListFilterEntityListing**](ContactListFilterEntityListing.html)
+[**ContactListFilterEntityListing**](ContactListFilterEntityListing)
 
-<a name="getOutboundContactlists"></a>
 
 # **getOutboundContactlists**
 
 
-
-> [ContactListEntityListing](ContactListEntityListing.html) getOutboundContactlists(includeImportStatus, includeSize, pageSize, pageNumber, allowEmptyResult, filterType, name, id, divisionId, sortBy, sortOrder)
+> [ContactListEntityListing](ContactListEntityListing) getOutboundContactlists(includeImportStatus, includeSize, pageSize, pageNumber, allowEmptyResult, filterType, name, id, divisionId, sortBy, sortOrder)
 
 Query a list of contact lists.
 
@@ -3989,8 +3866,8 @@ try {
 | **allowEmptyResult** | **Boolean**| Whether to return an empty page when there are no results for that page | [optional] [default to false] 
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith 
 | **name** | **String**| Name | [optional] 
-| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| id | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String)| Division ID(s) | [optional] 
 | **sortBy** | **String**| Sort by | [optional] 
 | **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending 
 {: class="table-striped"}
@@ -3998,15 +3875,13 @@ try {
 
 ### Return type
 
-[**ContactListEntityListing**](ContactListEntityListing.html)
+[**ContactListEntityListing**](ContactListEntityListing)
 
-<a name="getOutboundContactlistsDivisionview"></a>
 
 # **getOutboundContactlistsDivisionview**
 
 
-
-> [ContactListDivisionView](ContactListDivisionView.html) getOutboundContactlistsDivisionview(contactListId, includeImportStatus, includeSize)
+> [ContactListDivisionView](ContactListDivisionView) getOutboundContactlistsDivisionview(contactListId, includeImportStatus, includeSize)
 
 Get a basic ContactList information object
 
@@ -4065,15 +3940,13 @@ try {
 
 ### Return type
 
-[**ContactListDivisionView**](ContactListDivisionView.html)
+[**ContactListDivisionView**](ContactListDivisionView)
 
-<a name="getOutboundContactlistsDivisionviews"></a>
 
 # **getOutboundContactlistsDivisionviews**
 
 
-
-> [ContactListDivisionViewListing](ContactListDivisionViewListing.html) getOutboundContactlistsDivisionviews(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, sortBy, sortOrder)
+> [ContactListDivisionViewListing](ContactListDivisionViewListing) getOutboundContactlistsDivisionviews(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, sortBy, sortOrder)
 
 Query a list of simplified contact list objects.
 
@@ -4136,7 +4009,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith 
 | **name** | **String**| Name | [optional] 
-| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| id | [optional] 
 | **sortBy** | **String**| Sort by | [optional] 
 | **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending 
 {: class="table-striped"}
@@ -4144,15 +4017,13 @@ try {
 
 ### Return type
 
-[**ContactListDivisionViewListing**](ContactListDivisionViewListing.html)
+[**ContactListDivisionViewListing**](ContactListDivisionViewListing)
 
-<a name="getOutboundContactlisttemplate"></a>
 
 # **getOutboundContactlisttemplate**
 
 
-
-> [ContactListTemplate](ContactListTemplate.html) getOutboundContactlisttemplate(contactListTemplateId)
+> [ContactListTemplate](ContactListTemplate) getOutboundContactlisttemplate(contactListTemplateId)
 
 Get Contact List Template
 
@@ -4205,15 +4076,13 @@ try {
 
 ### Return type
 
-[**ContactListTemplate**](ContactListTemplate.html)
+[**ContactListTemplate**](ContactListTemplate)
 
-<a name="getOutboundContactlisttemplates"></a>
 
 # **getOutboundContactlisttemplates**
 
 
-
-> [ContactListTemplateEntityListing](ContactListTemplateEntityListing.html) getOutboundContactlisttemplates(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
+> [ContactListTemplateEntityListing](ContactListTemplateEntityListing) getOutboundContactlisttemplates(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
 
 Query a list of contact list templates
 
@@ -4278,15 +4147,13 @@ try {
 
 ### Return type
 
-[**ContactListTemplateEntityListing**](ContactListTemplateEntityListing.html)
+[**ContactListTemplateEntityListing**](ContactListTemplateEntityListing)
 
-<a name="getOutboundDigitalruleset"></a>
 
 # **getOutboundDigitalruleset**
 
 
-
-> [DigitalRuleSet](DigitalRuleSet.html) getOutboundDigitalruleset(digitalRuleSetId)
+> [DigitalRuleSet](DigitalRuleSet) getOutboundDigitalruleset(digitalRuleSetId)
 
 Get an Outbound Digital Rule Set
 
@@ -4339,15 +4206,13 @@ try {
 
 ### Return type
 
-[**DigitalRuleSet**](DigitalRuleSet.html)
+[**DigitalRuleSet**](DigitalRuleSet)
 
-<a name="getOutboundDigitalrulesets"></a>
 
 # **getOutboundDigitalrulesets**
 
 
-
-> [DigitalRuleSetEntityListing](DigitalRuleSetEntityListing.html) getOutboundDigitalrulesets(pageSize, pageNumber, sortBy, sortOrder, name, id)
+> [DigitalRuleSetEntityListing](DigitalRuleSetEntityListing) getOutboundDigitalrulesets(pageSize, pageNumber, sortBy, sortOrder, name, id)
 
 Query a list of Outbound Digital Rule Sets
 
@@ -4404,21 +4269,19 @@ try {
 | **sortBy** | **String**| The field to sort by | [optional] [default to name]<br />**Values**: name 
 | **sortOrder** | **String**| The direction to sort | [optional] [default to ascending]<br />**Values**: ascending, descending 
 | **name** | **String**| Name | [optional] 
-| **id** | [**List&lt;String&gt;**](String.html)| A list of digital rule set ids to bulk fetch | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| A list of digital rule set ids to bulk fetch | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DigitalRuleSetEntityListing**](DigitalRuleSetEntityListing.html)
+[**DigitalRuleSetEntityListing**](DigitalRuleSetEntityListing)
 
-<a name="getOutboundDnclist"></a>
 
 # **getOutboundDnclist**
 
 
-
-> [DncList](DncList.html) getOutboundDnclist(dncListId, includeImportStatus, includeSize)
+> [DncList](DncList) getOutboundDnclist(dncListId, includeImportStatus, includeSize)
 
 Get dialer DNC list
 
@@ -4475,15 +4338,13 @@ try {
 
 ### Return type
 
-[**DncList**](DncList.html)
+[**DncList**](DncList)
 
-<a name="getOutboundDnclistExport"></a>
 
 # **getOutboundDnclistExport**
 
 
-
-> [ExportUri](ExportUri.html) getOutboundDnclistExport(dncListId, download)
+> [ExportUri](ExportUri) getOutboundDnclistExport(dncListId, download)
 
 Get the URI of a DNC list export.
 
@@ -4539,15 +4400,13 @@ try {
 
 ### Return type
 
-[**ExportUri**](ExportUri.html)
+[**ExportUri**](ExportUri)
 
-<a name="getOutboundDnclistImportstatus"></a>
 
 # **getOutboundDnclistImportstatus**
 
 
-
-> [ImportStatus](ImportStatus.html) getOutboundDnclistImportstatus(dncListId)
+> [ImportStatus](ImportStatus) getOutboundDnclistImportstatus(dncListId)
 
 Get dialer dncList import status.
 
@@ -4600,15 +4459,13 @@ try {
 
 ### Return type
 
-[**ImportStatus**](ImportStatus.html)
+[**ImportStatus**](ImportStatus)
 
-<a name="getOutboundDnclists"></a>
 
 # **getOutboundDnclists**
 
 
-
-> [DncListEntityListing](DncListEntityListing.html) getOutboundDnclists(includeImportStatus, includeSize, pageSize, pageNumber, allowEmptyResult, filterType, name, dncSourceType, divisionId, sortBy, sortOrder)
+> [DncListEntityListing](DncListEntityListing) getOutboundDnclists(includeImportStatus, includeSize, pageSize, pageNumber, allowEmptyResult, filterType, name, dncSourceType, divisionId, sortBy, sortOrder)
 
 Query dialer DNC lists
 
@@ -4673,7 +4530,7 @@ try {
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith 
 | **name** | **String**| Name | [optional] 
 | **dncSourceType** | **String**| DncSourceType | [optional]<br />**Values**: rds, rds_custom, dnc.com, gryphon 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String)| Division ID(s) | [optional] 
 | **sortBy** | **String**| Sort by | [optional] 
 | **sortOrder** | **String**| Sort order | [optional]<br />**Values**: ascending, descending 
 {: class="table-striped"}
@@ -4681,15 +4538,13 @@ try {
 
 ### Return type
 
-[**DncListEntityListing**](DncListEntityListing.html)
+[**DncListEntityListing**](DncListEntityListing)
 
-<a name="getOutboundDnclistsDivisionview"></a>
 
 # **getOutboundDnclistsDivisionview**
 
 
-
-> [DncListDivisionView](DncListDivisionView.html) getOutboundDnclistsDivisionview(dncListId, includeImportStatus, includeSize)
+> [DncListDivisionView](DncListDivisionView) getOutboundDnclistsDivisionview(dncListId, includeImportStatus, includeSize)
 
 Get a basic DncList information object
 
@@ -4748,15 +4603,13 @@ try {
 
 ### Return type
 
-[**DncListDivisionView**](DncListDivisionView.html)
+[**DncListDivisionView**](DncListDivisionView)
 
-<a name="getOutboundDnclistsDivisionviews"></a>
 
 # **getOutboundDnclistsDivisionviews**
 
 
-
-> [DncListDivisionViewListing](DncListDivisionViewListing.html) getOutboundDnclistsDivisionviews(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, dncSourceType, id, sortBy, sortOrder)
+> [DncListDivisionViewListing](DncListDivisionViewListing) getOutboundDnclistsDivisionviews(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, dncSourceType, id, sortBy, sortOrder)
 
 Query a list of simplified dnc list objects.
 
@@ -4821,7 +4674,7 @@ try {
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith 
 | **name** | **String**| Name | [optional] 
 | **dncSourceType** | **String**| DncSourceType | [optional]<br />**Values**: rds, rds_custom, dnc.com, gryphon 
-| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| id | [optional] 
 | **sortBy** | **String**| Sort by | [optional] 
 | **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending 
 {: class="table-striped"}
@@ -4829,15 +4682,13 @@ try {
 
 ### Return type
 
-[**DncListDivisionViewListing**](DncListDivisionViewListing.html)
+[**DncListDivisionViewListing**](DncListDivisionViewListing)
 
-<a name="getOutboundEvent"></a>
 
 # **getOutboundEvent**
 
 
-
-> [EventLog](EventLog.html) getOutboundEvent(eventId)
+> [EventLog](EventLog) getOutboundEvent(eventId)
 
 Get Dialer Event
 
@@ -4890,15 +4741,13 @@ try {
 
 ### Return type
 
-[**EventLog**](EventLog.html)
+[**EventLog**](EventLog)
 
-<a name="getOutboundEvents"></a>
 
 # **getOutboundEvents**
 
 
-
-> [DialerEventEntityListing](DialerEventEntityListing.html) getOutboundEvents(pageSize, pageNumber, filterType, category, level, sortBy, sortOrder)
+> [DialerEventEntityListing](DialerEventEntityListing) getOutboundEvents(pageSize, pageNumber, filterType, category, level, sortBy, sortOrder)
 
 Query Event Logs
 
@@ -4963,15 +4812,13 @@ try {
 
 ### Return type
 
-[**DialerEventEntityListing**](DialerEventEntityListing.html)
+[**DialerEventEntityListing**](DialerEventEntityListing)
 
-<a name="getOutboundFilespecificationtemplate"></a>
 
 # **getOutboundFilespecificationtemplate**
 
 
-
-> [FileSpecificationTemplate](FileSpecificationTemplate.html) getOutboundFilespecificationtemplate(fileSpecificationTemplateId)
+> [FileSpecificationTemplate](FileSpecificationTemplate) getOutboundFilespecificationtemplate(fileSpecificationTemplateId)
 
 Get File Specification Template
 
@@ -5024,15 +4871,13 @@ try {
 
 ### Return type
 
-[**FileSpecificationTemplate**](FileSpecificationTemplate.html)
+[**FileSpecificationTemplate**](FileSpecificationTemplate)
 
-<a name="getOutboundFilespecificationtemplates"></a>
 
 # **getOutboundFilespecificationtemplates**
 
 
-
-> [FileSpecificationTemplateEntityListing](FileSpecificationTemplateEntityListing.html) getOutboundFilespecificationtemplates(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
+> [FileSpecificationTemplateEntityListing](FileSpecificationTemplateEntityListing) getOutboundFilespecificationtemplates(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
 
 Query File Specification Templates
 
@@ -5097,15 +4942,13 @@ try {
 
 ### Return type
 
-[**FileSpecificationTemplateEntityListing**](FileSpecificationTemplateEntityListing.html)
+[**FileSpecificationTemplateEntityListing**](FileSpecificationTemplateEntityListing)
 
-<a name="getOutboundImporttemplate"></a>
 
 # **getOutboundImporttemplate**
 
 
-
-> [ImportTemplate](ImportTemplate.html) getOutboundImporttemplate(importTemplateId, includeImportStatus)
+> [ImportTemplate](ImportTemplate) getOutboundImporttemplate(importTemplateId, includeImportStatus)
 
 Get Import Template
 
@@ -5160,15 +5003,13 @@ try {
 
 ### Return type
 
-[**ImportTemplate**](ImportTemplate.html)
+[**ImportTemplate**](ImportTemplate)
 
-<a name="getOutboundImporttemplateImportstatus"></a>
 
 # **getOutboundImporttemplateImportstatus**
 
 
-
-> [ImportStatus](ImportStatus.html) getOutboundImporttemplateImportstatus(importTemplateId, listNamePrefix)
+> [ImportStatus](ImportStatus) getOutboundImporttemplateImportstatus(importTemplateId, listNamePrefix)
 
 Get the import status for an import template.
 
@@ -5223,15 +5064,13 @@ try {
 
 ### Return type
 
-[**ImportStatus**](ImportStatus.html)
+[**ImportStatus**](ImportStatus)
 
-<a name="getOutboundImporttemplates"></a>
 
 # **getOutboundImporttemplates**
 
 
-
-> [ImportTemplateEntityListing](ImportTemplateEntityListing.html) getOutboundImporttemplates(includeImportStatus, pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder, contactListTemplateId)
+> [ImportTemplateEntityListing](ImportTemplateEntityListing) getOutboundImporttemplates(includeImportStatus, pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder, contactListTemplateId)
 
 Query Import Templates
 
@@ -5300,15 +5139,13 @@ try {
 
 ### Return type
 
-[**ImportTemplateEntityListing**](ImportTemplateEntityListing.html)
+[**ImportTemplateEntityListing**](ImportTemplateEntityListing)
 
-<a name="getOutboundMessagingcampaign"></a>
 
 # **getOutboundMessagingcampaign**
 
 
-
-> [MessagingCampaign](MessagingCampaign.html) getOutboundMessagingcampaign(messagingCampaignId)
+> [MessagingCampaign](MessagingCampaign) getOutboundMessagingcampaign(messagingCampaignId)
 
 Get an Outbound Messaging Campaign
 
@@ -5362,15 +5199,13 @@ try {
 
 ### Return type
 
-[**MessagingCampaign**](MessagingCampaign.html)
+[**MessagingCampaign**](MessagingCampaign)
 
-<a name="getOutboundMessagingcampaignDiagnostics"></a>
 
 # **getOutboundMessagingcampaignDiagnostics**
 
 
-
-> [MessagingCampaignDiagnostics](MessagingCampaignDiagnostics.html) getOutboundMessagingcampaignDiagnostics(messagingCampaignId)
+> [MessagingCampaignDiagnostics](MessagingCampaignDiagnostics) getOutboundMessagingcampaignDiagnostics(messagingCampaignId)
 
 Get messaging campaign diagnostics
 
@@ -5424,15 +5259,13 @@ try {
 
 ### Return type
 
-[**MessagingCampaignDiagnostics**](MessagingCampaignDiagnostics.html)
+[**MessagingCampaignDiagnostics**](MessagingCampaignDiagnostics)
 
-<a name="getOutboundMessagingcampaignProgress"></a>
 
 # **getOutboundMessagingcampaignProgress**
 
 
-
-> [CampaignProgress](CampaignProgress.html) getOutboundMessagingcampaignProgress(messagingCampaignId)
+> [CampaignProgress](CampaignProgress) getOutboundMessagingcampaignProgress(messagingCampaignId)
 
 Get messaging campaign's progress
 
@@ -5486,15 +5319,13 @@ try {
 
 ### Return type
 
-[**CampaignProgress**](CampaignProgress.html)
+[**CampaignProgress**](CampaignProgress)
 
-<a name="getOutboundMessagingcampaigns"></a>
 
 # **getOutboundMessagingcampaigns**
 
 
-
-> [MessagingCampaignEntityListing](MessagingCampaignEntityListing.html) getOutboundMessagingcampaigns(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, type, senderSmsPhoneNumber, id)
+> [MessagingCampaignEntityListing](MessagingCampaignEntityListing) getOutboundMessagingcampaigns(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, type, senderSmsPhoneNumber, id)
 
 Query a list of Messaging Campaigns
 
@@ -5557,24 +5388,22 @@ try {
 | **sortOrder** | **String**| The direction to sort | [optional] [default to ascending]<br />**Values**: ascending, descending 
 | **name** | **String**| Name | [optional] 
 | **contactListId** | **String**| Contact List ID | [optional] 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String)| Division ID(s) | [optional] 
 | **type** | **String**| Campaign Type | [optional]<br />**Values**: EMAIL, SMS 
 | **senderSmsPhoneNumber** | **String**| Sender SMS Phone Number | [optional] 
-| **id** | [**List&lt;String&gt;**](String.html)| A list of messaging campaign ids to bulk fetch | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| A list of messaging campaign ids to bulk fetch | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**MessagingCampaignEntityListing**](MessagingCampaignEntityListing.html)
+[**MessagingCampaignEntityListing**](MessagingCampaignEntityListing)
 
-<a name="getOutboundMessagingcampaignsDivisionview"></a>
 
 # **getOutboundMessagingcampaignsDivisionview**
 
 
-
-> [MessagingCampaignDivisionView](MessagingCampaignDivisionView.html) getOutboundMessagingcampaignsDivisionview(messagingCampaignId)
+> [MessagingCampaignDivisionView](MessagingCampaignDivisionView) getOutboundMessagingcampaignsDivisionview(messagingCampaignId)
 
 Get a basic Messaging Campaign information object
 
@@ -5630,15 +5459,13 @@ try {
 
 ### Return type
 
-[**MessagingCampaignDivisionView**](MessagingCampaignDivisionView.html)
+[**MessagingCampaignDivisionView**](MessagingCampaignDivisionView)
 
-<a name="getOutboundMessagingcampaignsDivisionviews"></a>
 
 # **getOutboundMessagingcampaignsDivisionviews**
 
 
-
-> [MessagingCampaignDivisionViewEntityListing](MessagingCampaignDivisionViewEntityListing.html) getOutboundMessagingcampaignsDivisionviews(pageSize, pageNumber, sortOrder, name, type, id, senderSmsPhoneNumber)
+> [MessagingCampaignDivisionViewEntityListing](MessagingCampaignDivisionViewEntityListing) getOutboundMessagingcampaignsDivisionviews(pageSize, pageNumber, sortOrder, name, type, id, senderSmsPhoneNumber)
 
 Query a list of basic Messaging Campaign information objects
 
@@ -5699,22 +5526,20 @@ try {
 | **sortOrder** | **String**| The direction to sort | [optional] [default to a]<br />**Values**: ascending, descending 
 | **name** | **String**| Name | [optional] 
 | **type** | **String**| Campaign Type | [optional]<br />**Values**: EMAIL, SMS 
-| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| id | [optional] 
 | **senderSmsPhoneNumber** | **String**| Sender SMS Phone Number | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**MessagingCampaignDivisionViewEntityListing**](MessagingCampaignDivisionViewEntityListing.html)
+[**MessagingCampaignDivisionViewEntityListing**](MessagingCampaignDivisionViewEntityListing)
 
-<a name="getOutboundRuleset"></a>
 
 # **getOutboundRuleset**
 
 
-
-> [RuleSet](RuleSet.html) getOutboundRuleset(ruleSetId)
+> [RuleSet](RuleSet) getOutboundRuleset(ruleSetId)
 
 Get a Rule Set by ID.
 
@@ -5767,15 +5592,13 @@ try {
 
 ### Return type
 
-[**RuleSet**](RuleSet.html)
+[**RuleSet**](RuleSet)
 
-<a name="getOutboundRulesets"></a>
 
 # **getOutboundRulesets**
 
 
-
-> [RuleSetEntityListing](RuleSetEntityListing.html) getOutboundRulesets(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
+> [RuleSetEntityListing](RuleSetEntityListing) getOutboundRulesets(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
 
 Query a list of Rule Sets.
 
@@ -5840,15 +5663,13 @@ try {
 
 ### Return type
 
-[**RuleSetEntityListing**](RuleSetEntityListing.html)
+[**RuleSetEntityListing**](RuleSetEntityListing)
 
-<a name="getOutboundSchedulesCampaign"></a>
 
 # **getOutboundSchedulesCampaign**
 
 
-
-> [CampaignSchedule](CampaignSchedule.html) getOutboundSchedulesCampaign(campaignId)
+> [CampaignSchedule](CampaignSchedule) getOutboundSchedulesCampaign(campaignId)
 
 Get a dialer campaign schedule.
 
@@ -5901,15 +5722,13 @@ try {
 
 ### Return type
 
-[**CampaignSchedule**](CampaignSchedule.html)
+[**CampaignSchedule**](CampaignSchedule)
 
-<a name="getOutboundSchedulesCampaigns"></a>
 
 # **getOutboundSchedulesCampaigns**
 
 
-
-> [List&lt;CampaignSchedule&gt;](CampaignSchedule.html) getOutboundSchedulesCampaigns()
+> [List&lt;CampaignSchedule&gt;](CampaignSchedule) getOutboundSchedulesCampaigns()
 
 Query for a list of dialer campaign schedules.
 
@@ -5958,15 +5777,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**List&lt;CampaignSchedule&gt;**](CampaignSchedule.html)
+[**List&lt;CampaignSchedule&gt;**](CampaignSchedule)
 
-<a name="getOutboundSchedulesEmailcampaign"></a>
 
 # **getOutboundSchedulesEmailcampaign**
 
 
-
-> [EmailCampaignSchedule](EmailCampaignSchedule.html) getOutboundSchedulesEmailcampaign(emailCampaignId)
+> [EmailCampaignSchedule](EmailCampaignSchedule) getOutboundSchedulesEmailcampaign(emailCampaignId)
 
 Get an email campaign schedule.
 
@@ -6019,15 +5836,13 @@ try {
 
 ### Return type
 
-[**EmailCampaignSchedule**](EmailCampaignSchedule.html)
+[**EmailCampaignSchedule**](EmailCampaignSchedule)
 
-<a name="getOutboundSchedulesEmailcampaigns"></a>
 
 # **getOutboundSchedulesEmailcampaigns**
 
 
-
-> [EmailCampaignScheduleEntityListing](EmailCampaignScheduleEntityListing.html) getOutboundSchedulesEmailcampaigns()
+> [EmailCampaignScheduleEntityListing](EmailCampaignScheduleEntityListing) getOutboundSchedulesEmailcampaigns()
 
 Query for a list of email campaign schedules.
 
@@ -6076,15 +5891,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**EmailCampaignScheduleEntityListing**](EmailCampaignScheduleEntityListing.html)
+[**EmailCampaignScheduleEntityListing**](EmailCampaignScheduleEntityListing)
 
-<a name="getOutboundSchedulesMessagingcampaign"></a>
 
 # **getOutboundSchedulesMessagingcampaign**
 
 
-
-> [MessagingCampaignSchedule](MessagingCampaignSchedule.html) getOutboundSchedulesMessagingcampaign(messagingCampaignId)
+> [MessagingCampaignSchedule](MessagingCampaignSchedule) getOutboundSchedulesMessagingcampaign(messagingCampaignId)
 
 Get a messaging campaign schedule.
 
@@ -6137,15 +5950,13 @@ try {
 
 ### Return type
 
-[**MessagingCampaignSchedule**](MessagingCampaignSchedule.html)
+[**MessagingCampaignSchedule**](MessagingCampaignSchedule)
 
-<a name="getOutboundSchedulesMessagingcampaigns"></a>
 
 # **getOutboundSchedulesMessagingcampaigns**
 
 
-
-> [MessagingCampaignScheduleEntityListing](MessagingCampaignScheduleEntityListing.html) getOutboundSchedulesMessagingcampaigns()
+> [MessagingCampaignScheduleEntityListing](MessagingCampaignScheduleEntityListing) getOutboundSchedulesMessagingcampaigns()
 
 Query for a list of messaging campaign schedules.
 
@@ -6194,15 +6005,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**MessagingCampaignScheduleEntityListing**](MessagingCampaignScheduleEntityListing.html)
+[**MessagingCampaignScheduleEntityListing**](MessagingCampaignScheduleEntityListing)
 
-<a name="getOutboundSchedulesSequence"></a>
 
 # **getOutboundSchedulesSequence**
 
 
-
-> [SequenceSchedule](SequenceSchedule.html) getOutboundSchedulesSequence(sequenceId)
+> [SequenceSchedule](SequenceSchedule) getOutboundSchedulesSequence(sequenceId)
 
 Get a dialer sequence schedule.
 
@@ -6255,15 +6064,13 @@ try {
 
 ### Return type
 
-[**SequenceSchedule**](SequenceSchedule.html)
+[**SequenceSchedule**](SequenceSchedule)
 
-<a name="getOutboundSchedulesSequences"></a>
 
 # **getOutboundSchedulesSequences**
 
 
-
-> [List&lt;SequenceSchedule&gt;](SequenceSchedule.html) getOutboundSchedulesSequences()
+> [List&lt;SequenceSchedule&gt;](SequenceSchedule) getOutboundSchedulesSequences()
 
 Query for a list of dialer sequence schedules.
 
@@ -6312,15 +6119,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**List&lt;SequenceSchedule&gt;**](SequenceSchedule.html)
+[**List&lt;SequenceSchedule&gt;**](SequenceSchedule)
 
-<a name="getOutboundSequence"></a>
 
 # **getOutboundSequence**
 
 
-
-> [CampaignSequence](CampaignSequence.html) getOutboundSequence(sequenceId)
+> [CampaignSequence](CampaignSequence) getOutboundSequence(sequenceId)
 
 Get a dialer campaign sequence.
 
@@ -6373,15 +6178,13 @@ try {
 
 ### Return type
 
-[**CampaignSequence**](CampaignSequence.html)
+[**CampaignSequence**](CampaignSequence)
 
-<a name="getOutboundSequences"></a>
 
 # **getOutboundSequences**
 
 
-
-> [CampaignSequenceEntityListing](CampaignSequenceEntityListing.html) getOutboundSequences(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
+> [CampaignSequenceEntityListing](CampaignSequenceEntityListing) getOutboundSequences(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
 
 Query a list of dialer campaign sequences.
 
@@ -6446,15 +6249,13 @@ try {
 
 ### Return type
 
-[**CampaignSequenceEntityListing**](CampaignSequenceEntityListing.html)
+[**CampaignSequenceEntityListing**](CampaignSequenceEntityListing)
 
-<a name="getOutboundSettings"></a>
 
 # **getOutboundSettings**
 
 
-
-> [OutboundSettings](OutboundSettings.html) getOutboundSettings()
+> [OutboundSettings](OutboundSettings) getOutboundSettings()
 
 Get the outbound settings for this organization
 
@@ -6503,15 +6304,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**OutboundSettings**](OutboundSettings.html)
+[**OutboundSettings**](OutboundSettings)
 
-<a name="getOutboundWrapupcodemappings"></a>
 
 # **getOutboundWrapupcodemappings**
 
 
-
-> [WrapUpCodeMapping](WrapUpCodeMapping.html) getOutboundWrapupcodemappings()
+> [WrapUpCodeMapping](WrapUpCodeMapping) getOutboundWrapupcodemappings()
 
 Get the Dialer wrap up code mapping.
 
@@ -6560,12 +6359,10 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**WrapUpCodeMapping**](WrapUpCodeMapping.html)
+[**WrapUpCodeMapping**](WrapUpCodeMapping)
 
-<a name="patchOutboundCampaign"></a>
 
 # **patchOutboundCampaign**
-
 
 
 > Void patchOutboundCampaign(campaignId, body)
@@ -6616,7 +6413,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **campaignId** | **String**| Campaign ID | 
-| **body** | [**CampaignPatchRequest**](CampaignPatchRequest.html)| CampaignPatchRequest | 
+| **body** | [**CampaignPatchRequest**](CampaignPatchRequest)| CampaignPatchRequest | 
 {: class="table-striped"}
 
 
@@ -6624,10 +6421,8 @@ try {
 
 null (empty response body)
 
-<a name="patchOutboundDnclistCustomexclusioncolumns"></a>
 
 # **patchOutboundDnclistCustomexclusioncolumns**
-
 
 
 > Void patchOutboundDnclistCustomexclusioncolumns(dncListId, body)
@@ -6680,7 +6475,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **dncListId** | **String**| DncList ID | 
-| **body** | [**DncPatchCustomExclusionColumnsRequest**](DncPatchCustomExclusionColumnsRequest.html)| DNC Custom exclusion column entries | 
+| **body** | [**DncPatchCustomExclusionColumnsRequest**](DncPatchCustomExclusionColumnsRequest)| DNC Custom exclusion column entries | 
 {: class="table-striped"}
 
 
@@ -6688,10 +6483,8 @@ try {
 
 null (empty response body)
 
-<a name="patchOutboundDnclistEmailaddresses"></a>
 
 # **patchOutboundDnclistEmailaddresses**
-
 
 
 > Void patchOutboundDnclistEmailaddresses(dncListId, body)
@@ -6744,7 +6537,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **dncListId** | **String**| DncList ID | 
-| **body** | [**DncPatchEmailsRequest**](DncPatchEmailsRequest.html)| DNC Emails | 
+| **body** | [**DncPatchEmailsRequest**](DncPatchEmailsRequest)| DNC Emails | 
 {: class="table-striped"}
 
 
@@ -6752,10 +6545,8 @@ try {
 
 null (empty response body)
 
-<a name="patchOutboundDnclistPhonenumbers"></a>
 
 # **patchOutboundDnclistPhonenumbers**
-
 
 
 > Void patchOutboundDnclistPhonenumbers(dncListId, body)
@@ -6808,7 +6599,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **dncListId** | **String**| DncList ID | 
-| **body** | [**DncPatchPhoneNumbersRequest**](DncPatchPhoneNumbersRequest.html)| DNC Phone Numbers | 
+| **body** | [**DncPatchPhoneNumbersRequest**](DncPatchPhoneNumbersRequest)| DNC Phone Numbers | 
 {: class="table-striped"}
 
 
@@ -6816,10 +6607,8 @@ try {
 
 null (empty response body)
 
-<a name="patchOutboundSettings"></a>
 
 # **patchOutboundSettings**
-
 
 
 > Void patchOutboundSettings(body)
@@ -6868,7 +6657,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**OutboundSettings**](OutboundSettings.html)| outboundSettings | 
+| **body** | [**OutboundSettings**](OutboundSettings)| outboundSettings | 
 {: class="table-striped"}
 
 
@@ -6876,13 +6665,11 @@ try {
 
 null (empty response body)
 
-<a name="postOutboundAttemptlimits"></a>
 
 # **postOutboundAttemptlimits**
 
 
-
-> [AttemptLimits](AttemptLimits.html) postOutboundAttemptlimits(body)
+> [AttemptLimits](AttemptLimits) postOutboundAttemptlimits(body)
 
 Create attempt limits
 
@@ -6929,21 +6716,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**AttemptLimits**](AttemptLimits.html)| AttemptLimits | 
+| **body** | [**AttemptLimits**](AttemptLimits)| AttemptLimits | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AttemptLimits**](AttemptLimits.html)
+[**AttemptLimits**](AttemptLimits)
 
-<a name="postOutboundCallabletimesets"></a>
 
 # **postOutboundCallabletimesets**
 
 
-
-> [CallableTimeSet](CallableTimeSet.html) postOutboundCallabletimesets(body)
+> [CallableTimeSet](CallableTimeSet) postOutboundCallabletimesets(body)
 
 Create callable time set
 
@@ -6990,21 +6775,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CallableTimeSet**](CallableTimeSet.html)| DialerCallableTimeSet | 
+| **body** | [**CallableTimeSet**](CallableTimeSet)| DialerCallableTimeSet | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CallableTimeSet**](CallableTimeSet.html)
+[**CallableTimeSet**](CallableTimeSet)
 
-<a name="postOutboundCallanalysisresponsesets"></a>
 
 # **postOutboundCallanalysisresponsesets**
 
 
-
-> [ResponseSet](ResponseSet.html) postOutboundCallanalysisresponsesets(body)
+> [ResponseSet](ResponseSet) postOutboundCallanalysisresponsesets(body)
 
 Create a dialer call analysis response set.
 
@@ -7051,18 +6834,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ResponseSet**](ResponseSet.html)| ResponseSet | 
+| **body** | [**ResponseSet**](ResponseSet)| ResponseSet | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ResponseSet**](ResponseSet.html)
+[**ResponseSet**](ResponseSet)
 
-<a name="postOutboundCampaignAgentownedmappingpreview"></a>
 
 # **postOutboundCampaignAgentownedmappingpreview**
-
 
 
 > Empty postOutboundCampaignAgentownedmappingpreview(campaignId)
@@ -7122,13 +6903,14 @@ try {
 
 **Empty**
 
-<a name="postOutboundCampaignCallbackSchedule"></a>
 
 # **postOutboundCampaignCallbackSchedule**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [ContactCallbackRequest](ContactCallbackRequest.html) postOutboundCampaignCallbackSchedule(campaignId, body)
+> [ContactCallbackRequest](ContactCallbackRequest) postOutboundCampaignCallbackSchedule(campaignId, body)
 
 Schedule a Callback for a Dialer Campaign (Deprecated)
 
@@ -7178,21 +6960,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **campaignId** | **String**| Campaign ID | 
-| **body** | [**ContactCallbackRequest**](ContactCallbackRequest.html)| ContactCallbackRequest | 
+| **body** | [**ContactCallbackRequest**](ContactCallbackRequest)| ContactCallbackRequest | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ContactCallbackRequest**](ContactCallbackRequest.html)
+[**ContactCallbackRequest**](ContactCallbackRequest)
 
-<a name="postOutboundCampaignrules"></a>
 
 # **postOutboundCampaignrules**
 
 
-
-> [CampaignRule](CampaignRule.html) postOutboundCampaignrules(body)
+> [CampaignRule](CampaignRule) postOutboundCampaignrules(body)
 
 Create Campaign Rule
 
@@ -7239,21 +7019,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CampaignRule**](CampaignRule.html)| CampaignRule | 
+| **body** | [**CampaignRule**](CampaignRule)| CampaignRule | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CampaignRule**](CampaignRule.html)
+[**CampaignRule**](CampaignRule)
 
-<a name="postOutboundCampaigns"></a>
 
 # **postOutboundCampaigns**
 
 
-
-> [Campaign](Campaign.html) postOutboundCampaigns(body)
+> [Campaign](Campaign) postOutboundCampaigns(body)
 
 Create a campaign.
 
@@ -7300,21 +7078,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Campaign**](Campaign.html)| Campaign | 
+| **body** | [**Campaign**](Campaign)| Campaign | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Campaign**](Campaign.html)
+[**Campaign**](Campaign)
 
-<a name="postOutboundCampaignsProgress"></a>
 
 # **postOutboundCampaignsProgress**
 
 
-
-> [List&lt;CampaignProgress&gt;](CampaignProgress.html) postOutboundCampaignsProgress(body)
+> [List&lt;CampaignProgress&gt;](CampaignProgress) postOutboundCampaignsProgress(body)
 
 Get progress for a list of campaigns
 
@@ -7361,18 +7137,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**List&lt;String&gt;**](String.html)| Campaign IDs | 
+| **body** | [**List&lt;String&gt;**](String)| Campaign IDs | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**List&lt;CampaignProgress&gt;**](CampaignProgress.html)
+[**List&lt;CampaignProgress&gt;**](CampaignProgress)
 
-<a name="postOutboundContactlistClear"></a>
 
 # **postOutboundContactlistClear**
-
 
 
 > Void postOutboundContactlistClear(contactListId)
@@ -7429,13 +7203,11 @@ try {
 
 null (empty response body)
 
-<a name="postOutboundContactlistContacts"></a>
 
 # **postOutboundContactlistContacts**
 
 
-
-> [List&lt;DialerContact&gt;](DialerContact.html) postOutboundContactlistContacts(contactListId, body, priority, clearSystemData, doNotQueue)
+> [List&lt;DialerContact&gt;](DialerContact) postOutboundContactlistContacts(contactListId, body, priority, clearSystemData, doNotQueue)
 
 Add contacts to a contact list.
 
@@ -7487,7 +7259,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **contactListId** | **String**| Contact List ID | 
-| **body** | [**List&lt;WritableDialerContact&gt;**](WritableDialerContact.html)| Contact | 
+| **body** | [**List&lt;WritableDialerContact&gt;**](WritableDialerContact)| Contact | 
 | **priority** | **Boolean**| Contact priority. True means the contact(s) will be dialed next; false means the contact will go to the end of the contact queue. | [optional] 
 | **clearSystemData** | **Boolean**| Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won&#39;t. | [optional] 
 | **doNotQueue** | **Boolean**| Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts, this parameter has no effect; False means that updated contacts will be re-queued, according to the &#39;priority&#39; parameter. | [optional] 
@@ -7496,15 +7268,13 @@ try {
 
 ### Return type
 
-[**List&lt;DialerContact&gt;**](DialerContact.html)
+[**List&lt;DialerContact&gt;**](DialerContact)
 
-<a name="postOutboundContactlistContactsBulk"></a>
 
 # **postOutboundContactlistContactsBulk**
 
 
-
-> [List&lt;DialerContact&gt;](DialerContact.html) postOutboundContactlistContactsBulk(contactListId, body)
+> [List&lt;DialerContact&gt;](DialerContact) postOutboundContactlistContactsBulk(contactListId, body)
 
 Get contacts from a contact list.
 
@@ -7553,21 +7323,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **contactListId** | **String**| Contact List ID | 
-| **body** | [**List&lt;String&gt;**](String.html)| ContactIds to get. | 
+| **body** | [**List&lt;String&gt;**](String)| ContactIds to get. | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**List&lt;DialerContact&gt;**](DialerContact.html)
+[**List&lt;DialerContact&gt;**](DialerContact)
 
-<a name="postOutboundContactlistContactsBulkRemove"></a>
 
 # **postOutboundContactlistContactsBulkRemove**
 
 
-
-> [ContactsBulkOperationJob](ContactsBulkOperationJob.html) postOutboundContactlistContactsBulkRemove(contactListId, body)
+> [ContactsBulkOperationJob](ContactsBulkOperationJob) postOutboundContactlistContactsBulkRemove(contactListId, body)
 
 Start an async job to delete contacts using a filter.
 
@@ -7616,21 +7384,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **contactListId** | **String**| Contact List ID | 
-| **body** | [**ContactBulkSearchParameters**](ContactBulkSearchParameters.html)| Contact filter information. | 
+| **body** | [**ContactBulkSearchParameters**](ContactBulkSearchParameters)| Contact filter information. | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ContactsBulkOperationJob**](ContactsBulkOperationJob.html)
+[**ContactsBulkOperationJob**](ContactsBulkOperationJob)
 
-<a name="postOutboundContactlistContactsBulkUpdate"></a>
 
 # **postOutboundContactlistContactsBulkUpdate**
 
 
-
-> [ContactsBulkOperationJob](ContactsBulkOperationJob.html) postOutboundContactlistContactsBulkUpdate(contactListId, body)
+> [ContactsBulkOperationJob](ContactsBulkOperationJob) postOutboundContactlistContactsBulkUpdate(contactListId, body)
 
 Start an async job to bulk edit contacts.
 
@@ -7679,21 +7445,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **contactListId** | **String**| Contact List ID | 
-| **body** | [**ContactBulkEditRequest**](ContactBulkEditRequest.html)| Contact bulk edit request information. | 
+| **body** | [**ContactBulkEditRequest**](ContactBulkEditRequest)| Contact bulk edit request information. | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ContactsBulkOperationJob**](ContactsBulkOperationJob.html)
+[**ContactsBulkOperationJob**](ContactsBulkOperationJob)
 
-<a name="postOutboundContactlistContactsSearch"></a>
 
 # **postOutboundContactlistContactsSearch**
 
 
-
-> [ContactListingResponse](ContactListingResponse.html) postOutboundContactlistContactsSearch(contactListId, body)
+> [ContactListingResponse](ContactListingResponse) postOutboundContactlistContactsSearch(contactListId, body)
 
 Query contacts from a contact list.
 
@@ -7742,21 +7506,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **contactListId** | **String**| Contact List ID | 
-| **body** | [**ContactListingRequest**](ContactListingRequest.html)| Contact search parameters. | 
+| **body** | [**ContactListingRequest**](ContactListingRequest)| Contact search parameters. | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ContactListingResponse**](ContactListingResponse.html)
+[**ContactListingResponse**](ContactListingResponse)
 
-<a name="postOutboundContactlistExport"></a>
 
 # **postOutboundContactlistExport**
 
 
-
-> [DomainEntityRef](DomainEntityRef.html) postOutboundContactlistExport(contactListId, body)
+> [DomainEntityRef](DomainEntityRef) postOutboundContactlistExport(contactListId, body)
 
 Initiate the export of a contact list.
 
@@ -7808,21 +7570,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **contactListId** | **String**| ContactList ID | 
-| **body** | [**ContactsExportRequest**](ContactsExportRequest.html)| Export information to get | [optional] 
+| **body** | [**ContactsExportRequest**](ContactsExportRequest)| Export information to get | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DomainEntityRef**](DomainEntityRef.html)
+[**DomainEntityRef**](DomainEntityRef)
 
-<a name="postOutboundContactlistfilters"></a>
 
 # **postOutboundContactlistfilters**
 
 
-
-> [ContactListFilter](ContactListFilter.html) postOutboundContactlistfilters(body)
+> [ContactListFilter](ContactListFilter) postOutboundContactlistfilters(body)
 
 Create Contact List Filter
 
@@ -7869,21 +7629,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ContactListFilter**](ContactListFilter.html)| ContactListFilter | 
+| **body** | [**ContactListFilter**](ContactListFilter)| ContactListFilter | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ContactListFilter**](ContactListFilter.html)
+[**ContactListFilter**](ContactListFilter)
 
-<a name="postOutboundContactlistfiltersBulkRetrieve"></a>
 
 # **postOutboundContactlistfiltersBulkRetrieve**
 
 
-
-> [ContactListFilterEntityListing](ContactListFilterEntityListing.html) postOutboundContactlistfiltersBulkRetrieve(body)
+> [ContactListFilterEntityListing](ContactListFilterEntityListing) postOutboundContactlistfiltersBulkRetrieve(body)
 
 Retrieve multiple contact list filters
 
@@ -7930,21 +7688,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ContactListFilterBulkRetrieveBody**](ContactListFilterBulkRetrieveBody.html)| The contact list filters to retrieve | 
+| **body** | [**ContactListFilterBulkRetrieveBody**](ContactListFilterBulkRetrieveBody)| The contact list filters to retrieve | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ContactListFilterEntityListing**](ContactListFilterEntityListing.html)
+[**ContactListFilterEntityListing**](ContactListFilterEntityListing)
 
-<a name="postOutboundContactlistfiltersPreview"></a>
 
 # **postOutboundContactlistfiltersPreview**
 
 
-
-> [FilterPreviewResponse](FilterPreviewResponse.html) postOutboundContactlistfiltersPreview(body)
+> [FilterPreviewResponse](FilterPreviewResponse) postOutboundContactlistfiltersPreview(body)
 
 Get a preview of the output of a contact list filter
 
@@ -7991,21 +7747,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ContactListFilter**](ContactListFilter.html)| ContactListFilter | 
+| **body** | [**ContactListFilter**](ContactListFilter)| ContactListFilter | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**FilterPreviewResponse**](FilterPreviewResponse.html)
+[**FilterPreviewResponse**](FilterPreviewResponse)
 
-<a name="postOutboundContactlists"></a>
 
 # **postOutboundContactlists**
 
 
-
-> [ContactList](ContactList.html) postOutboundContactlists(body)
+> [ContactList](ContactList) postOutboundContactlists(body)
 
 Create a contact List.
 
@@ -8052,21 +7806,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ContactList**](ContactList.html)| ContactList | 
+| **body** | [**ContactList**](ContactList)| ContactList | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ContactList**](ContactList.html)
+[**ContactList**](ContactList)
 
-<a name="postOutboundContactlisttemplates"></a>
 
 # **postOutboundContactlisttemplates**
 
 
-
-> [ContactListTemplate](ContactListTemplate.html) postOutboundContactlisttemplates(body)
+> [ContactListTemplate](ContactListTemplate) postOutboundContactlisttemplates(body)
 
 Create Contact List Template
 
@@ -8113,21 +7865,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ContactListTemplate**](ContactListTemplate.html)| ContactListTemplate | 
+| **body** | [**ContactListTemplate**](ContactListTemplate)| ContactListTemplate | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ContactListTemplate**](ContactListTemplate.html)
+[**ContactListTemplate**](ContactListTemplate)
 
-<a name="postOutboundContactlisttemplatesBulkAdd"></a>
 
 # **postOutboundContactlisttemplatesBulkAdd**
 
 
-
-> [ContactListTemplateEntityListing](ContactListTemplateEntityListing.html) postOutboundContactlisttemplatesBulkAdd(body)
+> [ContactListTemplateEntityListing](ContactListTemplateEntityListing) postOutboundContactlisttemplatesBulkAdd(body)
 
 Add multiple contact list templates
 
@@ -8174,21 +7924,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**List&lt;ContactListTemplate&gt;**](ContactListTemplate.html)| contact list template(s) to add | 
+| **body** | [**List&lt;ContactListTemplate&gt;**](ContactListTemplate)| contact list template(s) to add | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ContactListTemplateEntityListing**](ContactListTemplateEntityListing.html)
+[**ContactListTemplateEntityListing**](ContactListTemplateEntityListing)
 
-<a name="postOutboundContactlisttemplatesBulkRetrieve"></a>
 
 # **postOutboundContactlisttemplatesBulkRetrieve**
 
 
-
-> [ContactListTemplateEntityListing](ContactListTemplateEntityListing.html) postOutboundContactlisttemplatesBulkRetrieve(body)
+> [ContactListTemplateEntityListing](ContactListTemplateEntityListing) postOutboundContactlisttemplatesBulkRetrieve(body)
 
 Get multiple contact list templates
 
@@ -8235,18 +7983,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ContactListTemplateBulkRetrieveBody**](ContactListTemplateBulkRetrieveBody.html)| contact list templates to get | 
+| **body** | [**ContactListTemplateBulkRetrieveBody**](ContactListTemplateBulkRetrieveBody)| contact list templates to get | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ContactListTemplateEntityListing**](ContactListTemplateEntityListing.html)
+[**ContactListTemplateEntityListing**](ContactListTemplateEntityListing)
 
-<a name="postOutboundConversationDnc"></a>
 
 # **postOutboundConversationDnc**
-
 
 
 > Void postOutboundConversationDnc(conversationId)
@@ -8303,13 +8049,11 @@ try {
 
 null (empty response body)
 
-<a name="postOutboundDigitalrulesets"></a>
 
 # **postOutboundDigitalrulesets**
 
 
-
-> [DigitalRuleSet](DigitalRuleSet.html) postOutboundDigitalrulesets(body)
+> [DigitalRuleSet](DigitalRuleSet) postOutboundDigitalrulesets(body)
 
 Create an Outbound Digital Rule Set
 
@@ -8356,18 +8100,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**DigitalRuleSet**](DigitalRuleSet.html)| Digital Rule Set | 
+| **body** | [**DigitalRuleSet**](DigitalRuleSet)| Digital Rule Set | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DigitalRuleSet**](DigitalRuleSet.html)
+[**DigitalRuleSet**](DigitalRuleSet)
 
-<a name="postOutboundDnclistEmailaddresses"></a>
 
 # **postOutboundDnclistEmailaddresses**
-
 
 
 > Void postOutboundDnclistEmailaddresses(dncListId, body)
@@ -8420,7 +8162,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **dncListId** | **String**| DncList ID | 
-| **body** | [**List&lt;String&gt;**](String.html)| DNC email addresses | 
+| **body** | [**List&lt;String&gt;**](String)| DNC email addresses | 
 {: class="table-striped"}
 
 
@@ -8428,13 +8170,11 @@ try {
 
 null (empty response body)
 
-<a name="postOutboundDnclistExport"></a>
 
 # **postOutboundDnclistExport**
 
 
-
-> [DomainEntityRef](DomainEntityRef.html) postOutboundDnclistExport(dncListId)
+> [DomainEntityRef](DomainEntityRef) postOutboundDnclistExport(dncListId)
 
 Initiate the export of a dnc list.
 
@@ -8490,12 +8230,10 @@ try {
 
 ### Return type
 
-[**DomainEntityRef**](DomainEntityRef.html)
+[**DomainEntityRef**](DomainEntityRef)
 
-<a name="postOutboundDnclistPhonenumbers"></a>
 
 # **postOutboundDnclistPhonenumbers**
-
 
 
 > Void postOutboundDnclistPhonenumbers(dncListId, body, expirationDateTime)
@@ -8549,7 +8287,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **dncListId** | **String**| DncList ID | 
-| **body** | [**List&lt;String&gt;**](String.html)| DNC Phone Numbers | 
+| **body** | [**List&lt;String&gt;**](String)| DNC Phone Numbers | 
 | **expirationDateTime** | **String**| Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format | [optional] 
 {: class="table-striped"}
 
@@ -8558,13 +8296,11 @@ try {
 
 null (empty response body)
 
-<a name="postOutboundDnclists"></a>
 
 # **postOutboundDnclists**
 
 
-
-> [DncList](DncList.html) postOutboundDnclists(body)
+> [DncList](DncList) postOutboundDnclists(body)
 
 Create dialer DNC list
 
@@ -8611,21 +8347,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**DncListCreate**](DncListCreate.html)| DncList | 
+| **body** | [**DncListCreate**](DncListCreate)| DncList | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DncList**](DncList.html)
+[**DncList**](DncList)
 
-<a name="postOutboundFilespecificationtemplates"></a>
 
 # **postOutboundFilespecificationtemplates**
 
 
-
-> [FileSpecificationTemplate](FileSpecificationTemplate.html) postOutboundFilespecificationtemplates(body)
+> [FileSpecificationTemplate](FileSpecificationTemplate) postOutboundFilespecificationtemplates(body)
 
 Create File Specification Template
 
@@ -8672,21 +8406,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**FileSpecificationTemplate**](FileSpecificationTemplate.html)| FileSpecificationTemplate | 
+| **body** | [**FileSpecificationTemplate**](FileSpecificationTemplate)| FileSpecificationTemplate | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**FileSpecificationTemplate**](FileSpecificationTemplate.html)
+[**FileSpecificationTemplate**](FileSpecificationTemplate)
 
-<a name="postOutboundImporttemplates"></a>
 
 # **postOutboundImporttemplates**
 
 
-
-> [ImportTemplate](ImportTemplate.html) postOutboundImporttemplates(body)
+> [ImportTemplate](ImportTemplate) postOutboundImporttemplates(body)
 
 Create Import Template
 
@@ -8733,21 +8465,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ImportTemplate**](ImportTemplate.html)| ImportTemplate | 
+| **body** | [**ImportTemplate**](ImportTemplate)| ImportTemplate | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ImportTemplate**](ImportTemplate.html)
+[**ImportTemplate**](ImportTemplate)
 
-<a name="postOutboundImporttemplatesBulkAdd"></a>
 
 # **postOutboundImporttemplatesBulkAdd**
 
 
-
-> [ImportTemplateEntityListing](ImportTemplateEntityListing.html) postOutboundImporttemplatesBulkAdd(body)
+> [ImportTemplateEntityListing](ImportTemplateEntityListing) postOutboundImporttemplatesBulkAdd(body)
 
 Add multiple import templates
 
@@ -8794,21 +8524,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**List&lt;ImportTemplate&gt;**](ImportTemplate.html)| import template(s) to add | 
+| **body** | [**List&lt;ImportTemplate&gt;**](ImportTemplate)| import template(s) to add | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ImportTemplateEntityListing**](ImportTemplateEntityListing.html)
+[**ImportTemplateEntityListing**](ImportTemplateEntityListing)
 
-<a name="postOutboundMessagingcampaigns"></a>
 
 # **postOutboundMessagingcampaigns**
 
 
-
-> [MessagingCampaign](MessagingCampaign.html) postOutboundMessagingcampaigns(body)
+> [MessagingCampaign](MessagingCampaign) postOutboundMessagingcampaigns(body)
 
 Create a Messaging Campaign
 
@@ -8856,21 +8584,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**MessagingCampaign**](MessagingCampaign.html)| Messaging Campaign | 
+| **body** | [**MessagingCampaign**](MessagingCampaign)| Messaging Campaign | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**MessagingCampaign**](MessagingCampaign.html)
+[**MessagingCampaign**](MessagingCampaign)
 
-<a name="postOutboundMessagingcampaignsProgress"></a>
 
 # **postOutboundMessagingcampaignsProgress**
 
 
-
-> [List&lt;CampaignProgress&gt;](CampaignProgress.html) postOutboundMessagingcampaignsProgress(body)
+> [List&lt;CampaignProgress&gt;](CampaignProgress) postOutboundMessagingcampaignsProgress(body)
 
 Get progress for a list of messaging campaigns
 
@@ -8918,21 +8644,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**List&lt;String&gt;**](String.html)| Messaging Campaign IDs | 
+| **body** | [**List&lt;String&gt;**](String)| Messaging Campaign IDs | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**List&lt;CampaignProgress&gt;**](CampaignProgress.html)
+[**List&lt;CampaignProgress&gt;**](CampaignProgress)
 
-<a name="postOutboundRulesets"></a>
 
 # **postOutboundRulesets**
 
 
-
-> [RuleSet](RuleSet.html) postOutboundRulesets(body)
+> [RuleSet](RuleSet) postOutboundRulesets(body)
 
 Create a Rule Set.
 
@@ -8979,21 +8703,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**RuleSet**](RuleSet.html)| RuleSet | 
+| **body** | [**RuleSet**](RuleSet)| RuleSet | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**RuleSet**](RuleSet.html)
+[**RuleSet**](RuleSet)
 
-<a name="postOutboundSequences"></a>
 
 # **postOutboundSequences**
 
 
-
-> [CampaignSequence](CampaignSequence.html) postOutboundSequences(body)
+> [CampaignSequence](CampaignSequence) postOutboundSequences(body)
 
 Create a new campaign sequence.
 
@@ -9040,21 +8762,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CampaignSequence**](CampaignSequence.html)| Organization | 
+| **body** | [**CampaignSequence**](CampaignSequence)| Organization | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CampaignSequence**](CampaignSequence.html)
+[**CampaignSequence**](CampaignSequence)
 
-<a name="putOutboundAttemptlimit"></a>
 
 # **putOutboundAttemptlimit**
 
 
-
-> [AttemptLimits](AttemptLimits.html) putOutboundAttemptlimit(attemptLimitsId, body)
+> [AttemptLimits](AttemptLimits) putOutboundAttemptlimit(attemptLimitsId, body)
 
 Update attempt limits
 
@@ -9103,21 +8823,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **attemptLimitsId** | **String**| Attempt limits ID | 
-| **body** | [**AttemptLimits**](AttemptLimits.html)| AttemptLimits | 
+| **body** | [**AttemptLimits**](AttemptLimits)| AttemptLimits | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AttemptLimits**](AttemptLimits.html)
+[**AttemptLimits**](AttemptLimits)
 
-<a name="putOutboundCallabletimeset"></a>
 
 # **putOutboundCallabletimeset**
 
 
-
-> [CallableTimeSet](CallableTimeSet.html) putOutboundCallabletimeset(callableTimeSetId, body)
+> [CallableTimeSet](CallableTimeSet) putOutboundCallabletimeset(callableTimeSetId, body)
 
 Update callable time set
 
@@ -9166,21 +8884,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **callableTimeSetId** | **String**| Callable Time Set ID | 
-| **body** | [**CallableTimeSet**](CallableTimeSet.html)| DialerCallableTimeSet | 
+| **body** | [**CallableTimeSet**](CallableTimeSet)| DialerCallableTimeSet | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CallableTimeSet**](CallableTimeSet.html)
+[**CallableTimeSet**](CallableTimeSet)
 
-<a name="putOutboundCallanalysisresponseset"></a>
 
 # **putOutboundCallanalysisresponseset**
 
 
-
-> [ResponseSet](ResponseSet.html) putOutboundCallanalysisresponseset(callAnalysisSetId, body)
+> [ResponseSet](ResponseSet) putOutboundCallanalysisresponseset(callAnalysisSetId, body)
 
 Update a dialer call analysis response set.
 
@@ -9229,21 +8945,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **callAnalysisSetId** | **String**| Call Analysis Response Set ID | 
-| **body** | [**ResponseSet**](ResponseSet.html)| ResponseSet | 
+| **body** | [**ResponseSet**](ResponseSet)| ResponseSet | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ResponseSet**](ResponseSet.html)
+[**ResponseSet**](ResponseSet)
 
-<a name="putOutboundCampaign"></a>
 
 # **putOutboundCampaign**
 
 
-
-> [Campaign](Campaign.html) putOutboundCampaign(campaignId, body)
+> [Campaign](Campaign) putOutboundCampaign(campaignId, body)
 
 Update a campaign.
 
@@ -9292,18 +9006,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **campaignId** | **String**| Campaign ID | 
-| **body** | [**Campaign**](Campaign.html)| Campaign | 
+| **body** | [**Campaign**](Campaign)| Campaign | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Campaign**](Campaign.html)
+[**Campaign**](Campaign)
 
-<a name="putOutboundCampaignAgent"></a>
 
 # **putOutboundCampaignAgent**
-
 
 
 > String putOutboundCampaignAgent(campaignId, userId, body)
@@ -9358,7 +9070,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **campaignId** | **String**| Campaign ID | 
 | **userId** | **String**| Agent&#39;s user ID | 
-| **body** | [**Agent**](Agent.html)| agent | 
+| **body** | [**Agent**](Agent)| agent | 
 {: class="table-striped"}
 
 
@@ -9366,13 +9078,11 @@ try {
 
 **String**
 
-<a name="putOutboundCampaignrule"></a>
 
 # **putOutboundCampaignrule**
 
 
-
-> [CampaignRule](CampaignRule.html) putOutboundCampaignrule(campaignRuleId, body)
+> [CampaignRule](CampaignRule) putOutboundCampaignrule(campaignRuleId, body)
 
 Update Campaign Rule
 
@@ -9421,21 +9131,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **campaignRuleId** | **String**| Campaign Rule ID | 
-| **body** | [**CampaignRule**](CampaignRule.html)| CampaignRule | 
+| **body** | [**CampaignRule**](CampaignRule)| CampaignRule | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CampaignRule**](CampaignRule.html)
+[**CampaignRule**](CampaignRule)
 
-<a name="putOutboundContactlist"></a>
 
 # **putOutboundContactlist**
 
 
-
-> [ContactList](ContactList.html) putOutboundContactlist(contactListId, body)
+> [ContactList](ContactList) putOutboundContactlist(contactListId, body)
 
 Update a contact list.
 
@@ -9484,21 +9192,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **contactListId** | **String**| ContactList ID | 
-| **body** | [**ContactList**](ContactList.html)| ContactList | 
+| **body** | [**ContactList**](ContactList)| ContactList | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ContactList**](ContactList.html)
+[**ContactList**](ContactList)
 
-<a name="putOutboundContactlistContact"></a>
 
 # **putOutboundContactlistContact**
 
 
-
-> [DialerContact](DialerContact.html) putOutboundContactlistContact(contactListId, contactId, body)
+> [DialerContact](DialerContact) putOutboundContactlistContact(contactListId, contactId, body)
 
 Update a contact.
 
@@ -9549,21 +9255,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **contactListId** | **String**| Contact List ID | 
 | **contactId** | **String**| Contact ID | 
-| **body** | [**DialerContact**](DialerContact.html)| Contact | 
+| **body** | [**DialerContact**](DialerContact)| Contact | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DialerContact**](DialerContact.html)
+[**DialerContact**](DialerContact)
 
-<a name="putOutboundContactlistfilter"></a>
 
 # **putOutboundContactlistfilter**
 
 
-
-> [ContactListFilter](ContactListFilter.html) putOutboundContactlistfilter(contactListFilterId, body)
+> [ContactListFilter](ContactListFilter) putOutboundContactlistfilter(contactListFilterId, body)
 
 Update Contact List Filter
 
@@ -9612,21 +9316,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **contactListFilterId** | **String**| Contact List Filter ID | 
-| **body** | [**ContactListFilter**](ContactListFilter.html)| ContactListFilter | 
+| **body** | [**ContactListFilter**](ContactListFilter)| ContactListFilter | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ContactListFilter**](ContactListFilter.html)
+[**ContactListFilter**](ContactListFilter)
 
-<a name="putOutboundContactlisttemplate"></a>
 
 # **putOutboundContactlisttemplate**
 
 
-
-> [ContactListTemplate](ContactListTemplate.html) putOutboundContactlisttemplate(contactListTemplateId, body)
+> [ContactListTemplate](ContactListTemplate) putOutboundContactlisttemplate(contactListTemplateId, body)
 
 Update a contact list template.
 
@@ -9675,21 +9377,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **contactListTemplateId** | **String**| ContactListTemplate ID | 
-| **body** | [**ContactListTemplate**](ContactListTemplate.html)| ContactListTemplate | 
+| **body** | [**ContactListTemplate**](ContactListTemplate)| ContactListTemplate | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ContactListTemplate**](ContactListTemplate.html)
+[**ContactListTemplate**](ContactListTemplate)
 
-<a name="putOutboundDigitalruleset"></a>
 
 # **putOutboundDigitalruleset**
 
 
-
-> [DigitalRuleSet](DigitalRuleSet.html) putOutboundDigitalruleset(digitalRuleSetId, body)
+> [DigitalRuleSet](DigitalRuleSet) putOutboundDigitalruleset(digitalRuleSetId, body)
 
 Update an Outbound Digital Rule Set
 
@@ -9738,21 +9438,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **digitalRuleSetId** | **String**| The Digital Rule Set ID | 
-| **body** | [**DigitalRuleSet**](DigitalRuleSet.html)| Digital Rule Set | 
+| **body** | [**DigitalRuleSet**](DigitalRuleSet)| Digital Rule Set | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DigitalRuleSet**](DigitalRuleSet.html)
+[**DigitalRuleSet**](DigitalRuleSet)
 
-<a name="putOutboundDnclist"></a>
 
 # **putOutboundDnclist**
 
 
-
-> [DncList](DncList.html) putOutboundDnclist(dncListId, body)
+> [DncList](DncList) putOutboundDnclist(dncListId, body)
 
 Update dialer DNC list
 
@@ -9801,21 +9499,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **dncListId** | **String**| DncList ID | 
-| **body** | [**DncList**](DncList.html)| DncList | 
+| **body** | [**DncList**](DncList)| DncList | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DncList**](DncList.html)
+[**DncList**](DncList)
 
-<a name="putOutboundFilespecificationtemplate"></a>
 
 # **putOutboundFilespecificationtemplate**
 
 
-
-> [FileSpecificationTemplate](FileSpecificationTemplate.html) putOutboundFilespecificationtemplate(fileSpecificationTemplateId, body)
+> [FileSpecificationTemplate](FileSpecificationTemplate) putOutboundFilespecificationtemplate(fileSpecificationTemplateId, body)
 
 Update File Specification Template
 
@@ -9864,21 +9560,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **fileSpecificationTemplateId** | **String**| File Specification Template ID | 
-| **body** | [**FileSpecificationTemplate**](FileSpecificationTemplate.html)| fileSpecificationTemplate | 
+| **body** | [**FileSpecificationTemplate**](FileSpecificationTemplate)| fileSpecificationTemplate | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**FileSpecificationTemplate**](FileSpecificationTemplate.html)
+[**FileSpecificationTemplate**](FileSpecificationTemplate)
 
-<a name="putOutboundImporttemplate"></a>
 
 # **putOutboundImporttemplate**
 
 
-
-> [ImportTemplate](ImportTemplate.html) putOutboundImporttemplate(importTemplateId, body)
+> [ImportTemplate](ImportTemplate) putOutboundImporttemplate(importTemplateId, body)
 
 Update Import Template
 
@@ -9927,21 +9621,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **importTemplateId** | **String**| Import Template ID | 
-| **body** | [**ImportTemplate**](ImportTemplate.html)| importTemplate | 
+| **body** | [**ImportTemplate**](ImportTemplate)| importTemplate | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ImportTemplate**](ImportTemplate.html)
+[**ImportTemplate**](ImportTemplate)
 
-<a name="putOutboundMessagingcampaign"></a>
 
 # **putOutboundMessagingcampaign**
 
 
-
-> [MessagingCampaign](MessagingCampaign.html) putOutboundMessagingcampaign(messagingCampaignId, body)
+> [MessagingCampaign](MessagingCampaign) putOutboundMessagingcampaign(messagingCampaignId, body)
 
 Update an Outbound Messaging Campaign
 
@@ -9991,21 +9683,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **messagingCampaignId** | **String**| The Messaging Campaign ID | 
-| **body** | [**MessagingCampaign**](MessagingCampaign.html)| MessagingCampaign | 
+| **body** | [**MessagingCampaign**](MessagingCampaign)| MessagingCampaign | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**MessagingCampaign**](MessagingCampaign.html)
+[**MessagingCampaign**](MessagingCampaign)
 
-<a name="putOutboundRuleset"></a>
 
 # **putOutboundRuleset**
 
 
-
-> [RuleSet](RuleSet.html) putOutboundRuleset(ruleSetId, body)
+> [RuleSet](RuleSet) putOutboundRuleset(ruleSetId, body)
 
 Update a Rule Set.
 
@@ -10054,21 +9744,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **ruleSetId** | **String**| Rule Set ID | 
-| **body** | [**RuleSet**](RuleSet.html)| RuleSet | 
+| **body** | [**RuleSet**](RuleSet)| RuleSet | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**RuleSet**](RuleSet.html)
+[**RuleSet**](RuleSet)
 
-<a name="putOutboundSchedulesCampaign"></a>
 
 # **putOutboundSchedulesCampaign**
 
 
-
-> [CampaignSchedule](CampaignSchedule.html) putOutboundSchedulesCampaign(campaignId, body)
+> [CampaignSchedule](CampaignSchedule) putOutboundSchedulesCampaign(campaignId, body)
 
 Update a new campaign schedule.
 
@@ -10117,21 +9805,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **campaignId** | **String**| Campaign ID | 
-| **body** | [**CampaignSchedule**](CampaignSchedule.html)| CampaignSchedule | 
+| **body** | [**CampaignSchedule**](CampaignSchedule)| CampaignSchedule | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CampaignSchedule**](CampaignSchedule.html)
+[**CampaignSchedule**](CampaignSchedule)
 
-<a name="putOutboundSchedulesEmailcampaign"></a>
 
 # **putOutboundSchedulesEmailcampaign**
 
 
-
-> [EmailCampaignSchedule](EmailCampaignSchedule.html) putOutboundSchedulesEmailcampaign(emailCampaignId, body)
+> [EmailCampaignSchedule](EmailCampaignSchedule) putOutboundSchedulesEmailcampaign(emailCampaignId, body)
 
 Update an email campaign schedule.
 
@@ -10180,21 +9866,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **emailCampaignId** | **String**| Email Campaign ID | 
-| **body** | [**EmailCampaignSchedule**](EmailCampaignSchedule.html)| EmailCampaignSchedule | 
+| **body** | [**EmailCampaignSchedule**](EmailCampaignSchedule)| EmailCampaignSchedule | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**EmailCampaignSchedule**](EmailCampaignSchedule.html)
+[**EmailCampaignSchedule**](EmailCampaignSchedule)
 
-<a name="putOutboundSchedulesMessagingcampaign"></a>
 
 # **putOutboundSchedulesMessagingcampaign**
 
 
-
-> [MessagingCampaignSchedule](MessagingCampaignSchedule.html) putOutboundSchedulesMessagingcampaign(messagingCampaignId, body)
+> [MessagingCampaignSchedule](MessagingCampaignSchedule) putOutboundSchedulesMessagingcampaign(messagingCampaignId, body)
 
 Update a new messaging campaign schedule.
 
@@ -10243,21 +9927,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **messagingCampaignId** | **String**| Messaging Campaign ID | 
-| **body** | [**MessagingCampaignSchedule**](MessagingCampaignSchedule.html)| MessagingCampaignSchedule | 
+| **body** | [**MessagingCampaignSchedule**](MessagingCampaignSchedule)| MessagingCampaignSchedule | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**MessagingCampaignSchedule**](MessagingCampaignSchedule.html)
+[**MessagingCampaignSchedule**](MessagingCampaignSchedule)
 
-<a name="putOutboundSchedulesSequence"></a>
 
 # **putOutboundSchedulesSequence**
 
 
-
-> [SequenceSchedule](SequenceSchedule.html) putOutboundSchedulesSequence(sequenceId, body)
+> [SequenceSchedule](SequenceSchedule) putOutboundSchedulesSequence(sequenceId, body)
 
 Update a new sequence schedule.
 
@@ -10306,21 +9988,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sequenceId** | **String**| Sequence ID | 
-| **body** | [**SequenceSchedule**](SequenceSchedule.html)| SequenceSchedule | 
+| **body** | [**SequenceSchedule**](SequenceSchedule)| SequenceSchedule | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**SequenceSchedule**](SequenceSchedule.html)
+[**SequenceSchedule**](SequenceSchedule)
 
-<a name="putOutboundSequence"></a>
 
 # **putOutboundSequence**
 
 
-
-> [CampaignSequence](CampaignSequence.html) putOutboundSequence(sequenceId, body)
+> [CampaignSequence](CampaignSequence) putOutboundSequence(sequenceId, body)
 
 Update a new campaign sequence.
 
@@ -10369,21 +10049,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sequenceId** | **String**| Campaign Sequence ID | 
-| **body** | [**CampaignSequence**](CampaignSequence.html)| Organization | 
+| **body** | [**CampaignSequence**](CampaignSequence)| Organization | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CampaignSequence**](CampaignSequence.html)
+[**CampaignSequence**](CampaignSequence)
 
-<a name="putOutboundWrapupcodemappings"></a>
 
 # **putOutboundWrapupcodemappings**
 
 
-
-> [WrapUpCodeMapping](WrapUpCodeMapping.html) putOutboundWrapupcodemappings(body)
+> [WrapUpCodeMapping](WrapUpCodeMapping) putOutboundWrapupcodemappings(body)
 
 Update the Dialer wrap up code mapping.
 
@@ -10430,11 +10108,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**WrapUpCodeMapping**](WrapUpCodeMapping.html)| wrapUpCodeMapping | 
+| **body** | [**WrapUpCodeMapping**](WrapUpCodeMapping)| wrapUpCodeMapping | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**WrapUpCodeMapping**](WrapUpCodeMapping.html)
+[**WrapUpCodeMapping**](WrapUpCodeMapping)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

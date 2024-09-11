@@ -1,15 +1,13 @@
----
-title: ConversationTagsUpdate
----
-## ConversationTagsUpdate
+# ConversationTagsUpdate
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **externalTag** | <!----><!---->**String**<!----> | The external tag associated with the conversation. |  |
-{: class="table table-striped"}
+| **externalTag** | **String** | The external tag associated with the conversation. |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,16 +1,14 @@
----
-title: NamedEntityDefinition
----
-## NamedEntityDefinition
+# NamedEntityDefinition
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | <!----><!---->**String**<!----> | The name of the entity. |  |
-| **type** | <!----><!---->**String**<!----> | The name of the entity type. |  |
-{: class="table table-striped"}
+| **name** | **String** | The name of the entity. |  |
+| **type** | **String** | The name of the entity type. |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,18 +1,16 @@
----
-title: ImportReport
----
-## ImportReport
+# ImportReport
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **errors** | <!----><!---->[**List&lt;ImportError&gt;**](ImportError.html)<!----> |  |  [optional] |
-| **validated** | <!----><!---->[**ResultCounters**](ResultCounters.html)<!----> |  |  [optional] |
-| **imported** | <!----><!---->[**ResultCounters**](ResultCounters.html)<!----> |  |  [optional] |
-| **totalDocuments** | <!----><!---->**Integer**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **errors** | [**List&lt;ImportError&gt;**](ImportError) |  |  [optional] |
+| **validated** | [**ResultCounters**](ResultCounters) |  |  [optional] |
+| **imported** | [**ResultCounters**](ResultCounters) |  |  [optional] |
+| **totalDocuments** | **Integer** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

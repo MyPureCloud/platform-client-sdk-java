@@ -1,27 +1,25 @@
----
-title: StatisticalSummary
----
-## StatisticalSummary
+# StatisticalSummary
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **max** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-| **min** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-| **count** | <!----><!---->**Long**<!----> |  |  [optional] |
-| **countNegative** | <!----><!---->**Long**<!----> |  |  [optional] |
-| **countPositive** | <!----><!---->**Long**<!----> |  |  [optional] |
-| **sum** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-| **current** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-| **ratio** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-| **numerator** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-| **denominator** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-| **target** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-| **p95** | <!----><!---->**Long**<!----> |  |  [optional] |
-| **p99** | <!----><!---->**Long**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **max** | [**BigDecimal**](BigDecimal) |  |  [optional] |
+| **min** | [**BigDecimal**](BigDecimal) |  |  [optional] |
+| **count** | **Long** |  |  [optional] |
+| **countNegative** | **Long** |  |  [optional] |
+| **countPositive** | **Long** |  |  [optional] |
+| **sum** | [**BigDecimal**](BigDecimal) |  |  [optional] |
+| **current** | [**BigDecimal**](BigDecimal) |  |  [optional] |
+| **ratio** | [**BigDecimal**](BigDecimal) |  |  [optional] |
+| **numerator** | [**BigDecimal**](BigDecimal) |  |  [optional] |
+| **denominator** | [**BigDecimal**](BigDecimal) |  |  [optional] |
+| **target** | [**BigDecimal**](BigDecimal) |  |  [optional] |
+| **p95** | **Long** |  |  [optional] |
+| **p99** | **Long** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

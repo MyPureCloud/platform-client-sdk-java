@@ -1,19 +1,13 @@
----
-title: ConversationDisconnectSettings
----
-## ConversationDisconnectSettings
+# ConversationDisconnectSettings
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **enabled** | <!----><!---->**Boolean**<!----> | whether or not conversation disconnect setting is enabled |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Conversation disconnect type |  [optional] |
-{: class="table table-striped"}
+| **enabled** | **Boolean** | whether or not conversation disconnect setting is enabled |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Conversation disconnect type |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -22,7 +16,8 @@ title: ConversationDisconnectSettings
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | SEND | &quot;Send&quot; | 
 | READONLY | &quot;ReadOnly&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

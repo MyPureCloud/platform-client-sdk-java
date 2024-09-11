@@ -1,15 +1,13 @@
----
-title: PolicyErrors
----
-## PolicyErrors
+# PolicyErrors
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **policyErrorMessages** | <!----><!---->[**List&lt;PolicyErrorMessage&gt;**](PolicyErrorMessage.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **policyErrorMessages** | [**List&lt;PolicyErrorMessage&gt;**](PolicyErrorMessage) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

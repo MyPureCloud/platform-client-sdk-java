@@ -1,20 +1,14 @@
----
-title: ScheduleUploadProcessingResponse
----
-## ScheduleUploadProcessingResponse
+# ScheduleUploadProcessingResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> | The status of the operation |  [optional] |
-| **operationId** | <!----><!---->**String**<!----> | The ID for the operation |  [optional] |
-| **result** | <!----><!---->[**BuScheduleMetadata**](BuScheduleMetadata.html)<!----> | The result of the operation.  Null unless status == Complete |  [optional] |
-{: class="table table-striped"}
+| **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the operation |  [optional] |
+| **operationId** | **String** | The ID for the operation |  [optional] |
+| **result** | [**BuScheduleMetadata**](BuScheduleMetadata) | The result of the operation.  Null unless status == Complete |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -25,7 +19,8 @@ title: ScheduleUploadProcessingResponse
 | COMPLETE | &quot;Complete&quot; | 
 | CANCELED | &quot;Canceled&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

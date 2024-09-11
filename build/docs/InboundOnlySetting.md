@@ -1,18 +1,12 @@
----
-title: InboundOnlySetting
----
-## InboundOnlySetting
+# InboundOnlySetting
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **inbound** | [**InboundEnum**](#InboundEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **inbound** | [**InboundEnum**](#Enum--InboundEnum) |  |  [optional] |
 
-
-<a name="InboundEnum"></a>
 
 ## Enum: InboundEnum
 
@@ -21,7 +15,8 @@ title: InboundOnlySetting
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ENABLED | &quot;Enabled&quot; | 
 | DISABLED | &quot;Disabled&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

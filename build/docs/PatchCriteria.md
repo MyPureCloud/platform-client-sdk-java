@@ -1,21 +1,15 @@
----
-title: PatchCriteria
----
-## PatchCriteria
+# PatchCriteria
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **key** | <!----><!---->**String**<!----> | The criteria key. |  [optional] |
-| **values** | <!----><!---->**List&lt;String&gt;**<!----> | The criteria values. |  [optional] |
-| **shouldIgnoreCase** | <!----><!---->**Boolean**<!----> | Should criteria be case insensitive. |  [optional] |
-| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | The comparison operator. |  [optional] |
-{: class="table table-striped"}
+| **key** | **String** | The criteria key. |  [optional] |
+| **values** | **List&lt;String&gt;** | The criteria values. |  [optional] |
+| **shouldIgnoreCase** | **Boolean** | Should criteria be case insensitive. |  [optional] |
+| **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | The comparison operator. |  [optional] |
 
-
-<a name="OperatorEnum"></a>
 
 ## Enum: OperatorEnum
 
@@ -34,7 +28,8 @@ title: PatchCriteria
 | LESSTHANOREQUAL | &quot;lessThanOrEqual&quot; | 
 | STARTSWITH | &quot;startsWith&quot; | 
 | ENDSWITH | &quot;endsWith&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

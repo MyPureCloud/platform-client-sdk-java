@@ -1,22 +1,16 @@
----
-title: ForecastSourceDayPointer
----
-## ForecastSourceDayPointer
+# ForecastSourceDayPointer
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **dayOfWeek** | [**DayOfWeekEnum**](#DayOfWeekEnum)<!----> | The forecast day of week for this source data |  [optional] |
-| **weight** | <!----><!---->**Integer**<!----> | The relative weight to apply to this source data item for weighted averages |  [optional] |
-| **date** | <!----><!---->**String**<!----> | The date this source data represents, in yyyy-MM-dd format |  [optional] |
-| **fileName** | <!----><!---->**String**<!----> | The name of the source file this data came from if it originated from a data import |  [optional] |
-| **dataKey** | <!----><!---->**String**<!----> | The key to look up the forecast source data for this source day |  [optional] |
-{: class="table table-striped"}
+| **dayOfWeek** | [**DayOfWeekEnum**](#Enum--DayOfWeekEnum) | The forecast day of week for this source data |  [optional] |
+| **weight** | **Integer** | The relative weight to apply to this source data item for weighted averages |  [optional] |
+| **date** | **String** | The date this source data represents, in yyyy-MM-dd format |  [optional] |
+| **fileName** | **String** | The name of the source file this data came from if it originated from a data import |  [optional] |
+| **dataKey** | **String** | The key to look up the forecast source data for this source day |  [optional] |
 
-
-<a name="DayOfWeekEnum"></a>
 
 ## Enum: DayOfWeekEnum
 
@@ -31,7 +25,8 @@ title: ForecastSourceDayPointer
 | FRIDAY | &quot;Friday&quot; | 
 | SATURDAY | &quot;Saturday&quot; | 
 | EIGHTHDAY | &quot;EighthDay&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

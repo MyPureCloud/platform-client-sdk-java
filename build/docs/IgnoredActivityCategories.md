@@ -1,18 +1,12 @@
----
-title: IgnoredActivityCategories
----
-## IgnoredActivityCategories
+# IgnoredActivityCategories
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **values** | <!---->[**List&lt;ValuesEnum&gt;**](#ValuesEnum)<!----> | Activity categories list |  [optional] |
-{: class="table table-striped"}
+| **values** | [**List<ValuesEnum>**](#Enum--ValuesEnum) | Activity categories list |  [optional] |
 
-
-<a name="ValuesEnum"></a>
 
 ## Enum: ValuesEnum
 
@@ -27,7 +21,8 @@ title: IgnoredActivityCategories
 | TRAINING | &quot;Training&quot; |
 | UNAVAILABLE | &quot;Unavailable&quot; |
 | UNSCHEDULED | &quot;Unscheduled&quot; |
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

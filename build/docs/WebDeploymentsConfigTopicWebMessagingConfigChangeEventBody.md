@@ -1,20 +1,14 @@
----
-title: WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody
----
-## WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody
+# WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **version** | <!----><!---->**String**<!----> |  |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **version** | **String** |  |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -26,7 +20,8 @@ title: WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody
 | INACTIVE | &quot;Inactive&quot; | 
 | ERROR | &quot;Error&quot; | 
 | DELETING | &quot;Deleting&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

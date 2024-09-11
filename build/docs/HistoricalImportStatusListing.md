@@ -1,15 +1,13 @@
----
-title: HistoricalImportStatusListing
----
-## HistoricalImportStatusListing
+# HistoricalImportStatusListing
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | <!----><!---->[**List&lt;HistoricalImportStatus&gt;**](HistoricalImportStatus.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **entities** | [**List&lt;HistoricalImportStatus&gt;**](HistoricalImportStatus) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

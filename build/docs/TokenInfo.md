@@ -1,19 +1,17 @@
----
-title: TokenInfo
----
-## TokenInfo
+# TokenInfo
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **organization** | <!----><!---->[**NamedEntity**](NamedEntity.html)<!----> | The current organization |  [optional] |
-| **homeOrganization** | <!----><!---->[**NamedEntity**](NamedEntity.html)<!----> | The token's home organization |  [optional] |
-| **authorizedScope** | <!----><!---->**List&lt;String&gt;**<!----> | The list of scopes authorized for the OAuth client |  [optional] |
-| **clonedUser** | <!----><!---->[**TokenInfoClonedUser**](TokenInfoClonedUser.html)<!----> | Only present when a user is a clone of trustee user in the trustor org. |  [optional] |
-| **oAuthClient** | <!----><!---->[**OrgOAuthClient**](OrgOAuthClient.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **organization** | [**NamedEntity**](NamedEntity) | The current organization |  [optional] |
+| **homeOrganization** | [**NamedEntity**](NamedEntity) | The token's home organization |  [optional] |
+| **authorizedScope** | **List&lt;String&gt;** | The list of scopes authorized for the OAuth client |  [optional] |
+| **clonedUser** | [**TokenInfoClonedUser**](TokenInfoClonedUser) | Only present when a user is a clone of trustee user in the trustor org. |  [optional] |
+| **oAuthClient** | [**OrgOAuthClient**](OrgOAuthClient) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,15 +1,13 @@
----
-title: AiScoringSetting
----
-## AiScoringSetting
+# AiScoringSetting
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **enabled** | <!----><!---->**Boolean**<!----> | True if AI Scoring feature is configured. |  [optional] |
-{: class="table table-striped"}
+| **enabled** | **Boolean** | True if AI Scoring feature is configured. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

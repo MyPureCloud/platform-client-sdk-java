@@ -1,22 +1,16 @@
----
-title: CreateAlternativeShiftTradeRequest
----
-## CreateAlternativeShiftTradeRequest
+# CreateAlternativeShiftTradeRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **jobId** | <!----><!---->**String**<!----> | The ID of this alternative shift job |  |
-| **dropShiftReferenceKeys** | <!----><!---->**List&lt;String&gt;**<!----> | A list of offered shift reference keys an agent wants to drop |  [optional] |
-| **pickupShiftReferenceKeys** | <!----><!---->**List&lt;String&gt;**<!----> | A list of offered shift reference keys an agent wants to pick up |  [optional] |
-| **alternativeShiftTradeGranularity** | [**AlternativeShiftTradeGranularityEnum**](#AlternativeShiftTradeGranularityEnum)<!----> | The granularity of alternative shifts to be traded |  |
-| **expirationDate** | <!----><!---->[**Date**](Date.html)<!----> | The date when the trade will expire in ISO-8601 format. The trade cannot be approved after expiration |  [optional] |
-{: class="table table-striped"}
+| **jobId** | **String** | The ID of this alternative shift job |  |
+| **dropShiftReferenceKeys** | **List&lt;String&gt;** | A list of offered shift reference keys an agent wants to drop |  [optional] |
+| **pickupShiftReferenceKeys** | **List&lt;String&gt;** | A list of offered shift reference keys an agent wants to pick up |  [optional] |
+| **alternativeShiftTradeGranularity** | [**AlternativeShiftTradeGranularityEnum**](#Enum--AlternativeShiftTradeGranularityEnum) | The granularity of alternative shifts to be traded |  |
+| **expirationDate** | [**Date**](Date) | The date when the trade will expire in ISO-8601 format. The trade cannot be approved after expiration |  [optional] |
 
-
-<a name="AlternativeShiftTradeGranularityEnum"></a>
 
 ## Enum: AlternativeShiftTradeGranularityEnum
 
@@ -24,7 +18,8 @@ title: CreateAlternativeShiftTradeRequest
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | DAILY | &quot;Daily&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,26 +1,20 @@
----
-title: JourneyOutcomeEventsNotificationReferrer
----
-## JourneyOutcomeEventsNotificationReferrer
+# JourneyOutcomeEventsNotificationReferrer
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **url** | <!----><!---->**String**<!----> |  |  [optional] |
-| **domain** | <!----><!---->**String**<!----> |  |  [optional] |
-| **hostname** | <!----><!---->**String**<!----> |  |  [optional] |
-| **keywords** | <!----><!---->**String**<!----> |  |  [optional] |
-| **pathname** | <!----><!---->**String**<!----> |  |  [optional] |
-| **queryString** | <!----><!---->**String**<!----> |  |  [optional] |
-| **fragment** | <!----><!---->**String**<!----> |  |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **medium** | [**MediumEnum**](#MediumEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **url** | **String** |  |  [optional] |
+| **domain** | **String** |  |  [optional] |
+| **hostname** | **String** |  |  [optional] |
+| **keywords** | **String** |  |  [optional] |
+| **pathname** | **String** |  |  [optional] |
+| **queryString** | **String** |  |  [optional] |
+| **fragment** | **String** |  |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **medium** | [**MediumEnum**](#Enum--MediumEnum) |  |  [optional] |
 
-
-<a name="MediumEnum"></a>
 
 ## Enum: MediumEnum
 
@@ -33,7 +27,8 @@ title: JourneyOutcomeEventsNotificationReferrer
 | EMAIL | &quot;email&quot; | 
 | UNKNOWN | &quot;unknown&quot; | 
 | PAID | &quot;paid&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

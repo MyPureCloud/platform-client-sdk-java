@@ -1,15 +1,13 @@
----
-title: ConversationContentCarousel
----
-## ConversationContentCarousel
+# ConversationContentCarousel
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **cards** | <!----><!---->[**List&lt;ConversationContentCard&gt;**](ConversationContentCard.html)<!----> | An array of card objects. |  |
-{: class="table table-striped"}
+| **cards** | [**List&lt;ConversationContentCard&gt;**](ConversationContentCard) | An array of card objects. |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

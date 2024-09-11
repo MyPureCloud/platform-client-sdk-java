@@ -1,19 +1,13 @@
----
-title: TeamActivityQueryMetric
----
-## TeamActivityQueryMetric
+# TeamActivityQueryMetric
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **metric** | [**MetricEnum**](#MetricEnum)<!----> | The requested metric |  |
-| **details** | <!----><!---->**Boolean**<!----> | Flag for including observation details for this metric in the response |  [optional] |
-{: class="table table-striped"}
+| **metric** | [**MetricEnum**](#Enum--MetricEnum) | The requested metric |  |
+| **details** | **Boolean** | Flag for including observation details for this metric in the response |  [optional] |
 
-
-<a name="MetricEnum"></a>
 
 ## Enum: MetricEnum
 
@@ -24,7 +18,8 @@ title: TeamActivityQueryMetric
 | OTEAMONQUEUEUSERS | &quot;oTeamOnQueueUsers&quot; | 
 | OTEAMPRESENCES | &quot;oTeamPresences&quot; | 
 | OTEAMROUTINGSTATUSES | &quot;oTeamRoutingStatuses&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

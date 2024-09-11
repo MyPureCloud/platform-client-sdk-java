@@ -1,15 +1,13 @@
----
-title: UserInsightsTrendTotalItem
----
-## UserInsightsTrendTotalItem
+# UserInsightsTrendTotalItem
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **trends** | <!----><!---->[**UserInsightsTrends**](UserInsightsTrends.html)<!----> | Trends for the metric |  [optional] |
-{: class="table table-striped"}
+| **trends** | [**UserInsightsTrends**](UserInsightsTrends) | Trends for the metric |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

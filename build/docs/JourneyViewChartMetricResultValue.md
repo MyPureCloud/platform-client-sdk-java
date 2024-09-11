@@ -1,16 +1,14 @@
----
-title: JourneyViewChartMetricResultValue
----
-## JourneyViewChartMetricResultValue
+# JourneyViewChartMetricResultValue
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **value** | <!----><!---->**Integer**<!----> | Value for this metric |  [optional] |
-| **groupByAttributes** | <!----><!---->[**List&lt;GroupByAttribute&gt;**](GroupByAttribute.html)<!----> | Group by attributes for this metric |  [optional] |
-{: class="table table-striped"}
+| **value** | **Integer** | Value for this metric |  [optional] |
+| **groupByAttributes** | [**List&lt;GroupByAttribute&gt;**](GroupByAttribute) | Group by attributes for this metric |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

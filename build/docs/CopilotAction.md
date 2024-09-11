@@ -1,19 +1,13 @@
----
-title: CopilotAction
----
-## CopilotAction
+# CopilotAction
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **actionType** | [**ActionTypeEnum**](#ActionTypeEnum)<!----> | Type of action. |  |
-| **attributes** | <!----><!---->**Map&lt;String, String&gt;**<!----> | Action specific attributes, if any. Maximum 100 of string key-value pair allowed. |  [optional] |
-{: class="table table-striped"}
+| **actionType** | [**ActionTypeEnum**](#Enum--ActionTypeEnum) | Type of action. |  |
+| **attributes** | **Map&lt;String, String&gt;** | Action specific attributes, if any. Maximum 100 of string key-value pair allowed. |  [optional] |
 
-
-<a name="ActionTypeEnum"></a>
 
 ## Enum: ActionTypeEnum
 
@@ -23,7 +17,8 @@ title: CopilotAction
 | KNOWLEDGEARTICLE | &quot;KnowledgeArticle&quot; | 
 | CANNEDRESPONSE | &quot;CannedResponse&quot; | 
 | SCRIPT | &quot;Script&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

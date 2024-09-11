@@ -1,23 +1,17 @@
----
-title: FlowHealthIntentUtterance
----
-## FlowHealthIntentUtterance
+# FlowHealthIntentUtterance
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **text** | <!----><!---->**String**<!----> | Utterance Text. |  [optional] |
-| **issueCount** | <!----><!---->**Long**<!----> | Number of issues found for this utterance. |  [optional] |
-| **staticValidationResults** | <!---->[**List&lt;StaticValidationResultsEnum&gt;**](#StaticValidationResultsEnum)<!----> | Validation results for this utterance. |  [optional] |
-| **outlierInfo** | <!----><!---->[**OutlierInfo**](OutlierInfo.html)<!----> | Details about this utterance being an outlier or not. |  [optional] |
-| **confusionInfo** | <!----><!---->[**ConfusionInfo**](ConfusionInfo.html)<!----> | Confusion details with other utterances. |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **text** | **String** | Utterance Text. |  [optional] |
+| **issueCount** | **Long** | Number of issues found for this utterance. |  [optional] |
+| **staticValidationResults** | [**List<StaticValidationResultsEnum>**](#Enum--StaticValidationResultsEnum) | Validation results for this utterance. |  [optional] |
+| **outlierInfo** | [**OutlierInfo**](OutlierInfo) | Details about this utterance being an outlier or not. |  [optional] |
+| **confusionInfo** | [**ConfusionInfo**](ConfusionInfo) | Confusion details with other utterances. |  [optional] |
 
-
-<a name="StaticValidationResultsEnum"></a>
 
 ## Enum: StaticValidationResultsEnum
 
@@ -27,7 +21,8 @@ title: FlowHealthIntentUtterance
 | TOOMANYUTTERANCES | &quot;TooManyUtterances&quot; |
 | UTTERANCETOOSHORT | &quot;UtteranceTooShort&quot; |
 | UTTERANCETOOLONG | &quot;UtteranceTooLong&quot; |
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

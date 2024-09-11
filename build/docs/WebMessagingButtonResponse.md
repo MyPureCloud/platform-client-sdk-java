@@ -1,21 +1,15 @@
----
-title: WebMessagingButtonResponse
----
-## WebMessagingButtonResponse
+# WebMessagingButtonResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | An ID assigned to the button response (Deprecated). |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Describes the button that resulted in the Button Response. |  [optional] |
-| **text** | <!----><!---->**String**<!----> | The response text from the button click. |  |
-| **payload** | <!----><!---->**String**<!----> | The response payload associated with the clicked button. |  |
-{: class="table table-striped"}
+| **id** | **String** | An ID assigned to the button response (Deprecated). |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Describes the button that resulted in the Button Response. |  [optional] |
+| **text** | **String** | The response text from the button click. |  |
+| **payload** | **String** | The response payload associated with the clicked button. |  |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -24,7 +18,8 @@ title: WebMessagingButtonResponse
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | BUTTON | &quot;Button&quot; | 
 | QUICKREPLY | &quot;QuickReply&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

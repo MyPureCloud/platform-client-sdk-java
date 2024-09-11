@@ -1,78 +1,73 @@
----
-title: JourneyApi
----
-## JourneyApi
+# JourneyApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteJourneyActionmap**](JourneyApi.html#deleteJourneyActionmap) | Delete single action map. |
-| [**deleteJourneyActiontemplate**](JourneyApi.html#deleteJourneyActiontemplate) | Delete a single action template. |
-| [**deleteJourneyOutcome**](JourneyApi.html#deleteJourneyOutcome) | Delete an outcome. |
-| [**deleteJourneyOutcomesPredictor**](JourneyApi.html#deleteJourneyOutcomesPredictor) | Delete an outcome predictor. |
-| [**deleteJourneySegment**](JourneyApi.html#deleteJourneySegment) | Delete a segment. |
-| [**deleteJourneyView**](JourneyApi.html#deleteJourneyView) | Delete a Journey View by ID |
-| [**getAnalyticsJourneysAggregatesJob**](JourneyApi.html#getAnalyticsJourneysAggregatesJob) | Get status for async query for journey aggregates |
-| [**getAnalyticsJourneysAggregatesJobResults**](JourneyApi.html#getAnalyticsJourneysAggregatesJobResults) | Fetch a page of results for an async aggregates query |
-| [**getExternalcontactsContactJourneySessions**](JourneyApi.html#getExternalcontactsContactJourneySessions) | Retrieve all sessions for a given external contact. |
-| [**getJourneyActionmap**](JourneyApi.html#getJourneyActionmap) | Retrieve a single action map. |
-| [**getJourneyActionmaps**](JourneyApi.html#getJourneyActionmaps) | Retrieve all action maps. |
-| [**getJourneyActionmapsEstimatesJob**](JourneyApi.html#getJourneyActionmapsEstimatesJob) | Get status of job. |
-| [**getJourneyActionmapsEstimatesJobResults**](JourneyApi.html#getJourneyActionmapsEstimatesJobResults) | Get estimates from completed job. |
-| [**getJourneyActiontarget**](JourneyApi.html#getJourneyActiontarget) | Retrieve a single action target. |
-| [**getJourneyActiontargets**](JourneyApi.html#getJourneyActiontargets) | Retrieve all action targets. |
-| [**getJourneyActiontemplate**](JourneyApi.html#getJourneyActiontemplate) | Retrieve a single action template. |
-| [**getJourneyActiontemplates**](JourneyApi.html#getJourneyActiontemplates) | Retrieve all action templates. |
-| [**getJourneyDeploymentCustomerPing**](JourneyApi.html#getJourneyDeploymentCustomerPing) | Send a ping. |
-| [**getJourneyOutcome**](JourneyApi.html#getJourneyOutcome) | Retrieve a single outcome. |
-| [**getJourneyOutcomes**](JourneyApi.html#getJourneyOutcomes) | Retrieve all outcomes. |
-| [**getJourneyOutcomesAttributionsJob**](JourneyApi.html#getJourneyOutcomesAttributionsJob) | Get job status. |
-| [**getJourneyOutcomesAttributionsJobResults**](JourneyApi.html#getJourneyOutcomesAttributionsJobResults) | Get outcome attribution entities from completed job. |
-| [**getJourneyOutcomesPredictor**](JourneyApi.html#getJourneyOutcomesPredictor) | Retrieve a single outcome predictor. |
-| [**getJourneyOutcomesPredictors**](JourneyApi.html#getJourneyOutcomesPredictors) | Retrieve all outcome predictors. |
-| [**getJourneySegment**](JourneyApi.html#getJourneySegment) | Retrieve a single segment. |
-| [**getJourneySegments**](JourneyApi.html#getJourneySegments) | Retrieve all segments. |
-| [**getJourneySession**](JourneyApi.html#getJourneySession) | Retrieve a single session. |
-| [**getJourneySessionEvents**](JourneyApi.html#getJourneySessionEvents) | Retrieve all events for a given session. |
-| [**getJourneySessionOutcomescores**](JourneyApi.html#getJourneySessionOutcomescores) | Retrieve latest outcome score associated with a session for all outcomes. |
-| [**getJourneyView**](JourneyApi.html#getJourneyView) | Get a Journey View by ID |
-| [**getJourneyViewVersion**](JourneyApi.html#getJourneyViewVersion) | Get a Journey View by ID and version |
-| [**getJourneyViewVersionJob**](JourneyApi.html#getJourneyViewVersionJob) | Get the job for a journey view version. |
-| [**getJourneyViewVersionJobResults**](JourneyApi.html#getJourneyViewVersionJobResults) | Get the result of a job for a journey view version. |
-| [**getJourneyViewVersionJobsLatest**](JourneyApi.html#getJourneyViewVersionJobsLatest) | Get the latest job of a journey view version. |
-| [**getJourneyViews**](JourneyApi.html#getJourneyViews) | Get a list of Journey Views |
-| [**getJourneyViewsEventdefinition**](JourneyApi.html#getJourneyViewsEventdefinition) | Get an Event Definition |
-| [**getJourneyViewsEventdefinitions**](JourneyApi.html#getJourneyViewsEventdefinitions) | Get a list of Event Definitions |
-| [**getJourneyViewsJobs**](JourneyApi.html#getJourneyViewsJobs) | Get the jobs for an organization. |
-| [**patchJourneyActionmap**](JourneyApi.html#patchJourneyActionmap) | Update single action map. |
-| [**patchJourneyActiontarget**](JourneyApi.html#patchJourneyActiontarget) | Update a single action target. |
-| [**patchJourneyActiontemplate**](JourneyApi.html#patchJourneyActiontemplate) | Update a single action template. |
-| [**patchJourneyOutcome**](JourneyApi.html#patchJourneyOutcome) | Update an outcome. |
-| [**patchJourneySegment**](JourneyApi.html#patchJourneySegment) | Update a segment. |
-| [**postAnalyticsJourneysAggregatesJobs**](JourneyApi.html#postAnalyticsJourneysAggregatesJobs) | Query for journey aggregates asynchronously |
-| [**postAnalyticsJourneysAggregatesQuery**](JourneyApi.html#postAnalyticsJourneysAggregatesQuery) | Query for journey aggregates |
-| [**postJourneyActionmaps**](JourneyApi.html#postJourneyActionmaps) | Create an action map. |
-| [**postJourneyActionmapsEstimatesJobs**](JourneyApi.html#postJourneyActionmapsEstimatesJobs) | Query for estimates |
-| [**postJourneyActiontemplates**](JourneyApi.html#postJourneyActiontemplates) | Create a single action template. |
-| [**postJourneyDeploymentActionevent**](JourneyApi.html#postJourneyDeploymentActionevent) | Sends an action event, which is used for changing the state of actions that have been offered to the user. |
-| [**postJourneyDeploymentAppevents**](JourneyApi.html#postJourneyDeploymentAppevents) | Send a journey app event, used for tracking customer activity on an application. |
-| [**postJourneyDeploymentWebevents**](JourneyApi.html#postJourneyDeploymentWebevents) | Send a journey web event, used for tracking customer activity on a website. |
-| [**postJourneyFlowsPathsQuery**](JourneyApi.html#postJourneyFlowsPathsQuery) | Query for flow paths. |
-| [**postJourneyOutcomes**](JourneyApi.html#postJourneyOutcomes) | Create an outcome. |
-| [**postJourneyOutcomesAttributionsJobs**](JourneyApi.html#postJourneyOutcomesAttributionsJobs) | Create Outcome Attributions |
-| [**postJourneyOutcomesPredictors**](JourneyApi.html#postJourneyOutcomesPredictors) | Create an outcome predictor. |
-| [**postJourneySegments**](JourneyApi.html#postJourneySegments) | Create a segment. |
-| [**postJourneyViewVersionJobs**](JourneyApi.html#postJourneyViewVersionJobs) | Submit a job request for a journey view version. |
-| [**postJourneyViewVersions**](JourneyApi.html#postJourneyViewVersions) | Update a Journey View by ID |
-| [**postJourneyViews**](JourneyApi.html#postJourneyViews) | Create a new Journey View |
-| [**postJourneyViewsEncodingsValidate**](JourneyApi.html#postJourneyViewsEncodingsValidate) | Validate whether an encoding exist for a label/value combination. |
+| [**deleteJourneyActionmap**](JourneyApi#deleteJourneyActionmap) | Delete single action map. |
+| [**deleteJourneyActiontemplate**](JourneyApi#deleteJourneyActiontemplate) | Delete a single action template. |
+| [**deleteJourneyOutcome**](JourneyApi#deleteJourneyOutcome) | Delete an outcome. |
+| [**deleteJourneyOutcomesPredictor**](JourneyApi#deleteJourneyOutcomesPredictor) | Delete an outcome predictor. |
+| [**deleteJourneySegment**](JourneyApi#deleteJourneySegment) | Delete a segment. |
+| [**deleteJourneyView**](JourneyApi#deleteJourneyView) | Delete a Journey View by ID |
+| [**getAnalyticsJourneysAggregatesJob**](JourneyApi#getAnalyticsJourneysAggregatesJob) | Get status for async query for journey aggregates |
+| [**getAnalyticsJourneysAggregatesJobResults**](JourneyApi#getAnalyticsJourneysAggregatesJobResults) | Fetch a page of results for an async aggregates query |
+| [**getExternalcontactsContactJourneySessions**](JourneyApi#getExternalcontactsContactJourneySessions) | Retrieve all sessions for a given external contact. |
+| [**getJourneyActionmap**](JourneyApi#getJourneyActionmap) | Retrieve a single action map. |
+| [**getJourneyActionmaps**](JourneyApi#getJourneyActionmaps) | Retrieve all action maps. |
+| [**getJourneyActionmapsEstimatesJob**](JourneyApi#getJourneyActionmapsEstimatesJob) | Get status of job. |
+| [**getJourneyActionmapsEstimatesJobResults**](JourneyApi#getJourneyActionmapsEstimatesJobResults) | Get estimates from completed job. |
+| [**getJourneyActiontarget**](JourneyApi#getJourneyActiontarget) | Retrieve a single action target. |
+| [**getJourneyActiontargets**](JourneyApi#getJourneyActiontargets) | Retrieve all action targets. |
+| [**getJourneyActiontemplate**](JourneyApi#getJourneyActiontemplate) | Retrieve a single action template. |
+| [**getJourneyActiontemplates**](JourneyApi#getJourneyActiontemplates) | Retrieve all action templates. |
+| [**getJourneyDeploymentCustomerPing**](JourneyApi#getJourneyDeploymentCustomerPing) | Send a ping. |
+| [**getJourneyOutcome**](JourneyApi#getJourneyOutcome) | Retrieve a single outcome. |
+| [**getJourneyOutcomes**](JourneyApi#getJourneyOutcomes) | Retrieve all outcomes. |
+| [**getJourneyOutcomesAttributionsJob**](JourneyApi#getJourneyOutcomesAttributionsJob) | Get job status. |
+| [**getJourneyOutcomesAttributionsJobResults**](JourneyApi#getJourneyOutcomesAttributionsJobResults) | Get outcome attribution entities from completed job. |
+| [**getJourneyOutcomesPredictor**](JourneyApi#getJourneyOutcomesPredictor) | Retrieve a single outcome predictor. |
+| [**getJourneyOutcomesPredictors**](JourneyApi#getJourneyOutcomesPredictors) | Retrieve all outcome predictors. |
+| [**getJourneySegment**](JourneyApi#getJourneySegment) | Retrieve a single segment. |
+| [**getJourneySegments**](JourneyApi#getJourneySegments) | Retrieve all segments. |
+| [**getJourneySession**](JourneyApi#getJourneySession) | Retrieve a single session. |
+| [**getJourneySessionEvents**](JourneyApi#getJourneySessionEvents) | Retrieve all events for a given session. |
+| [**getJourneySessionOutcomescores**](JourneyApi#getJourneySessionOutcomescores) | Retrieve latest outcome score associated with a session for all outcomes. |
+| [**getJourneyView**](JourneyApi#getJourneyView) | Get a Journey View by ID |
+| [**getJourneyViewVersion**](JourneyApi#getJourneyViewVersion) | Get a Journey View by ID and version |
+| [**getJourneyViewVersionJob**](JourneyApi#getJourneyViewVersionJob) | Get the job for a journey view version. |
+| [**getJourneyViewVersionJobResults**](JourneyApi#getJourneyViewVersionJobResults) | Get the result of a job for a journey view version. |
+| [**getJourneyViewVersionJobsLatest**](JourneyApi#getJourneyViewVersionJobsLatest) | Get the latest job of a journey view version. |
+| [**getJourneyViews**](JourneyApi#getJourneyViews) | Get a list of Journey Views |
+| [**getJourneyViewsEventdefinition**](JourneyApi#getJourneyViewsEventdefinition) | Get an Event Definition |
+| [**getJourneyViewsEventdefinitions**](JourneyApi#getJourneyViewsEventdefinitions) | Get a list of Event Definitions |
+| [**getJourneyViewsJobs**](JourneyApi#getJourneyViewsJobs) | Get the jobs for an organization. |
+| [**patchJourneyActionmap**](JourneyApi#patchJourneyActionmap) | Update single action map. |
+| [**patchJourneyActiontarget**](JourneyApi#patchJourneyActiontarget) | Update a single action target. |
+| [**patchJourneyActiontemplate**](JourneyApi#patchJourneyActiontemplate) | Update a single action template. |
+| [**patchJourneyOutcome**](JourneyApi#patchJourneyOutcome) | Update an outcome. |
+| [**patchJourneySegment**](JourneyApi#patchJourneySegment) | Update a segment. |
+| [**postAnalyticsJourneysAggregatesJobs**](JourneyApi#postAnalyticsJourneysAggregatesJobs) | Query for journey aggregates asynchronously |
+| [**postAnalyticsJourneysAggregatesQuery**](JourneyApi#postAnalyticsJourneysAggregatesQuery) | Query for journey aggregates |
+| [**postJourneyActionmaps**](JourneyApi#postJourneyActionmaps) | Create an action map. |
+| [**postJourneyActionmapsEstimatesJobs**](JourneyApi#postJourneyActionmapsEstimatesJobs) | Query for estimates |
+| [**postJourneyActiontemplates**](JourneyApi#postJourneyActiontemplates) | Create a single action template. |
+| [**postJourneyDeploymentActionevent**](JourneyApi#postJourneyDeploymentActionevent) | Sends an action event, which is used for changing the state of actions that have been offered to the user. |
+| [**postJourneyDeploymentAppevents**](JourneyApi#postJourneyDeploymentAppevents) | Send a journey app event, used for tracking customer activity on an application. |
+| [**postJourneyDeploymentWebevents**](JourneyApi#postJourneyDeploymentWebevents) | Send a journey web event, used for tracking customer activity on a website. |
+| [**postJourneyFlowsPathsQuery**](JourneyApi#postJourneyFlowsPathsQuery) | Query for flow paths. |
+| [**postJourneyOutcomes**](JourneyApi#postJourneyOutcomes) | Create an outcome. |
+| [**postJourneyOutcomesAttributionsJobs**](JourneyApi#postJourneyOutcomesAttributionsJobs) | Create Outcome Attributions |
+| [**postJourneyOutcomesPredictors**](JourneyApi#postJourneyOutcomesPredictors) | Create an outcome predictor. |
+| [**postJourneySegments**](JourneyApi#postJourneySegments) | Create a segment. |
+| [**postJourneyViewVersionJobs**](JourneyApi#postJourneyViewVersionJobs) | Submit a job request for a journey view version. |
+| [**postJourneyViewVersions**](JourneyApi#postJourneyViewVersions) | Update a Journey View by ID |
+| [**postJourneyViews**](JourneyApi#postJourneyViews) | Create a new Journey View |
+| [**postJourneyViewsEncodingsValidate**](JourneyApi#postJourneyViewsEncodingsValidate) | Validate whether an encoding exist for a label/value combination. |
 {: class="table-striped"}
 
-<a name="deleteJourneyActionmap"></a>
 
 # **deleteJourneyActionmap**
-
 
 
 > Void deleteJourneyActionmap(actionMapId)
@@ -129,10 +124,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteJourneyActiontemplate"></a>
 
 # **deleteJourneyActiontemplate**
-
 
 
 > Void deleteJourneyActiontemplate(actionTemplateId, hardDelete)
@@ -191,10 +184,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteJourneyOutcome"></a>
 
 # **deleteJourneyOutcome**
-
 
 
 > Void deleteJourneyOutcome(outcomeId)
@@ -251,10 +242,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteJourneyOutcomesPredictor"></a>
 
 # **deleteJourneyOutcomesPredictor**
-
 
 
 > Void deleteJourneyOutcomesPredictor(predictorId)
@@ -311,10 +300,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteJourneySegment"></a>
 
 # **deleteJourneySegment**
-
 
 
 > Void deleteJourneySegment(segmentId)
@@ -371,10 +358,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteJourneyView"></a>
 
 # **deleteJourneyView**
-
 
 
 > Void deleteJourneyView(viewId)
@@ -433,13 +418,11 @@ try {
 
 null (empty response body)
 
-<a name="getAnalyticsJourneysAggregatesJob"></a>
 
 # **getAnalyticsJourneysAggregatesJob**
 
 
-
-> [AsyncQueryStatus](AsyncQueryStatus.html) getAnalyticsJourneysAggregatesJob(jobId)
+> [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsJourneysAggregatesJob(jobId)
 
 Get status for async query for journey aggregates
 
@@ -494,15 +477,13 @@ try {
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
-<a name="getAnalyticsJourneysAggregatesJobResults"></a>
 
 # **getAnalyticsJourneysAggregatesJobResults**
 
 
-
-> [JourneyAsyncAggregateQueryResponse](JourneyAsyncAggregateQueryResponse.html) getAnalyticsJourneysAggregatesJobResults(jobId, cursor)
+> [JourneyAsyncAggregateQueryResponse](JourneyAsyncAggregateQueryResponse) getAnalyticsJourneysAggregatesJobResults(jobId, cursor)
 
 Fetch a page of results for an async aggregates query
 
@@ -559,15 +540,13 @@ try {
 
 ### Return type
 
-[**JourneyAsyncAggregateQueryResponse**](JourneyAsyncAggregateQueryResponse.html)
+[**JourneyAsyncAggregateQueryResponse**](JourneyAsyncAggregateQueryResponse)
 
-<a name="getExternalcontactsContactJourneySessions"></a>
 
 # **getExternalcontactsContactJourneySessions**
 
 
-
-> [SessionListing](SessionListing.html) getExternalcontactsContactJourneySessions(contactId, pageSize, after, includeMerged)
+> [SessionListing](SessionListing) getExternalcontactsContactJourneySessions(contactId, pageSize, after, includeMerged)
 
 Retrieve all sessions for a given external contact.
 
@@ -626,15 +605,13 @@ try {
 
 ### Return type
 
-[**SessionListing**](SessionListing.html)
+[**SessionListing**](SessionListing)
 
-<a name="getJourneyActionmap"></a>
 
 # **getJourneyActionmap**
 
 
-
-> [ActionMap](ActionMap.html) getJourneyActionmap(actionMapId)
+> [ActionMap](ActionMap) getJourneyActionmap(actionMapId)
 
 Retrieve a single action map.
 
@@ -687,15 +664,13 @@ try {
 
 ### Return type
 
-[**ActionMap**](ActionMap.html)
+[**ActionMap**](ActionMap)
 
-<a name="getJourneyActionmaps"></a>
 
 # **getJourneyActionmaps**
 
 
-
-> [ActionMapListing](ActionMapListing.html) getJourneyActionmaps(pageNumber, pageSize, sortBy, filterField, filterValue, actionMapIds, queryFields, queryValue)
+> [ActionMapListing](ActionMapListing) getJourneyActionmaps(pageNumber, pageSize, sortBy, filterField, filterValue, actionMapIds, queryFields, queryValue)
 
 Retrieve all action maps.
 
@@ -754,20 +729,18 @@ try {
 | **sortBy** | **String**| Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy&#x3D;displayName,-createdDate). | [optional] 
 | **filterField** | **String**| Field to filter by (e.g. filterField&#x3D;weight or filterField&#x3D;action.actionTemplate.id). Requires &#39;filterField&#39; to also be set. | [optional] 
 | **filterValue** | **String**| Value to filter by. Requires &#39;filterValue&#39; to also be set. | [optional] 
-| **actionMapIds** | [**List&lt;String&gt;**](String.html)| IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request. | [optional] 
-| **queryFields** | [**List&lt;String&gt;**](String.html)| Action Map field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional] 
+| **actionMapIds** | [**List&lt;String&gt;**](String)| IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request. | [optional] 
+| **queryFields** | [**List&lt;String&gt;**](String)| Action Map field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional] 
 | **queryValue** | **String**| Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ActionMapListing**](ActionMapListing.html)
+[**ActionMapListing**](ActionMapListing)
 
-<a name="getJourneyActionmapsEstimatesJob"></a>
 
 # **getJourneyActionmapsEstimatesJob**
-
 
 
 > String getJourneyActionmapsEstimatesJob(jobId)
@@ -825,13 +798,11 @@ try {
 
 **String**
 
-<a name="getJourneyActionmapsEstimatesJobResults"></a>
 
 # **getJourneyActionmapsEstimatesJobResults**
 
 
-
-> [ActionMapEstimateResult](ActionMapEstimateResult.html) getJourneyActionmapsEstimatesJobResults(jobId)
+> [ActionMapEstimateResult](ActionMapEstimateResult) getJourneyActionmapsEstimatesJobResults(jobId)
 
 Get estimates from completed job.
 
@@ -884,15 +855,13 @@ try {
 
 ### Return type
 
-[**ActionMapEstimateResult**](ActionMapEstimateResult.html)
+[**ActionMapEstimateResult**](ActionMapEstimateResult)
 
-<a name="getJourneyActiontarget"></a>
 
 # **getJourneyActiontarget**
 
 
-
-> [ActionTarget](ActionTarget.html) getJourneyActiontarget(actionTargetId)
+> [ActionTarget](ActionTarget) getJourneyActiontarget(actionTargetId)
 
 Retrieve a single action target.
 
@@ -945,15 +914,13 @@ try {
 
 ### Return type
 
-[**ActionTarget**](ActionTarget.html)
+[**ActionTarget**](ActionTarget)
 
-<a name="getJourneyActiontargets"></a>
 
 # **getJourneyActiontargets**
 
 
-
-> [ActionTargetListing](ActionTargetListing.html) getJourneyActiontargets(pageNumber, pageSize)
+> [ActionTargetListing](ActionTargetListing) getJourneyActiontargets(pageNumber, pageSize)
 
 Retrieve all action targets.
 
@@ -1008,15 +975,13 @@ try {
 
 ### Return type
 
-[**ActionTargetListing**](ActionTargetListing.html)
+[**ActionTargetListing**](ActionTargetListing)
 
-<a name="getJourneyActiontemplate"></a>
 
 # **getJourneyActiontemplate**
 
 
-
-> [ActionTemplate](ActionTemplate.html) getJourneyActiontemplate(actionTemplateId)
+> [ActionTemplate](ActionTemplate) getJourneyActiontemplate(actionTemplateId)
 
 Retrieve a single action template.
 
@@ -1069,15 +1034,13 @@ try {
 
 ### Return type
 
-[**ActionTemplate**](ActionTemplate.html)
+[**ActionTemplate**](ActionTemplate)
 
-<a name="getJourneyActiontemplates"></a>
 
 # **getJourneyActiontemplates**
 
 
-
-> [ActionTemplateListing](ActionTemplateListing.html) getJourneyActiontemplates(pageNumber, pageSize, sortBy, mediaType, state, queryFields, queryValue)
+> [ActionTemplateListing](ActionTemplateListing) getJourneyActiontemplates(pageNumber, pageSize, sortBy, mediaType, state, queryFields, queryValue)
 
 Retrieve all action templates.
 
@@ -1135,22 +1098,20 @@ try {
 | **sortBy** | **String**| Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy&#x3D;name,-createdDate). | [optional] 
 | **mediaType** | **String**| Media type | [optional]<br />**Values**: webchat, webMessagingOffer, contentOffer, integrationAction, architectFlow, openAction 
 | **state** | **String**| Action template state. | [optional]<br />**Values**: Active, Inactive, Deleted 
-| **queryFields** | [**List&lt;String&gt;**](String.html)| ActionTemplate field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional] 
+| **queryFields** | [**List&lt;String&gt;**](String)| ActionTemplate field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional] 
 | **queryValue** | **String**| Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ActionTemplateListing**](ActionTemplateListing.html)
+[**ActionTemplateListing**](ActionTemplateListing)
 
-<a name="getJourneyDeploymentCustomerPing"></a>
 
 # **getJourneyDeploymentCustomerPing**
 
 
-
-> [DeploymentPing](DeploymentPing.html) getJourneyDeploymentCustomerPing(deploymentId, customerCookieId, dl, dt, appNamespace, sessionId, sinceLastBeaconMilliseconds)
+> [DeploymentPing](DeploymentPing) getJourneyDeploymentCustomerPing(deploymentId, customerCookieId, dl, dt, appNamespace, sessionId, sinceLastBeaconMilliseconds)
 
 Send a ping.
 
@@ -1201,15 +1162,13 @@ try {
 
 ### Return type
 
-[**DeploymentPing**](DeploymentPing.html)
+[**DeploymentPing**](DeploymentPing)
 
-<a name="getJourneyOutcome"></a>
 
 # **getJourneyOutcome**
 
 
-
-> [Outcome](Outcome.html) getJourneyOutcome(outcomeId)
+> [Outcome](Outcome) getJourneyOutcome(outcomeId)
 
 Retrieve a single outcome.
 
@@ -1262,15 +1221,13 @@ try {
 
 ### Return type
 
-[**Outcome**](Outcome.html)
+[**Outcome**](Outcome)
 
-<a name="getJourneyOutcomes"></a>
 
 # **getJourneyOutcomes**
 
 
-
-> [OutcomeListing](OutcomeListing.html) getJourneyOutcomes(pageNumber, pageSize, sortBy, outcomeIds, queryFields, queryValue)
+> [OutcomeListing](OutcomeListing) getJourneyOutcomes(pageNumber, pageSize, sortBy, outcomeIds, queryFields, queryValue)
 
 Retrieve all outcomes.
 
@@ -1325,23 +1282,21 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **sortBy** | **String**| Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy&#x3D;displayName,-createdDate). | [optional] 
-| **outcomeIds** | [**List&lt;String&gt;**](String.html)| IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request. | [optional] 
-| **queryFields** | [**List&lt;String&gt;**](String.html)| Outcome field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional] 
+| **outcomeIds** | [**List&lt;String&gt;**](String)| IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request. | [optional] 
+| **queryFields** | [**List&lt;String&gt;**](String)| Outcome field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional] 
 | **queryValue** | **String**| Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**OutcomeListing**](OutcomeListing.html)
+[**OutcomeListing**](OutcomeListing)
 
-<a name="getJourneyOutcomesAttributionsJob"></a>
 
 # **getJourneyOutcomesAttributionsJob**
 
 
-
-> [OutcomeAttributionJobStateResponse](OutcomeAttributionJobStateResponse.html) getJourneyOutcomesAttributionsJob(jobId)
+> [OutcomeAttributionJobStateResponse](OutcomeAttributionJobStateResponse) getJourneyOutcomesAttributionsJob(jobId)
 
 Get job status.
 
@@ -1396,15 +1351,13 @@ try {
 
 ### Return type
 
-[**OutcomeAttributionJobStateResponse**](OutcomeAttributionJobStateResponse.html)
+[**OutcomeAttributionJobStateResponse**](OutcomeAttributionJobStateResponse)
 
-<a name="getJourneyOutcomesAttributionsJobResults"></a>
 
 # **getJourneyOutcomesAttributionsJobResults**
 
 
-
-> [OutcomeAttributionResponseListing](OutcomeAttributionResponseListing.html) getJourneyOutcomesAttributionsJobResults(jobId)
+> [OutcomeAttributionResponseListing](OutcomeAttributionResponseListing) getJourneyOutcomesAttributionsJobResults(jobId)
 
 Get outcome attribution entities from completed job.
 
@@ -1459,15 +1412,13 @@ try {
 
 ### Return type
 
-[**OutcomeAttributionResponseListing**](OutcomeAttributionResponseListing.html)
+[**OutcomeAttributionResponseListing**](OutcomeAttributionResponseListing)
 
-<a name="getJourneyOutcomesPredictor"></a>
 
 # **getJourneyOutcomesPredictor**
 
 
-
-> [OutcomePredictor](OutcomePredictor.html) getJourneyOutcomesPredictor(predictorId)
+> [OutcomePredictor](OutcomePredictor) getJourneyOutcomesPredictor(predictorId)
 
 Retrieve a single outcome predictor.
 
@@ -1520,15 +1471,13 @@ try {
 
 ### Return type
 
-[**OutcomePredictor**](OutcomePredictor.html)
+[**OutcomePredictor**](OutcomePredictor)
 
-<a name="getJourneyOutcomesPredictors"></a>
 
 # **getJourneyOutcomesPredictors**
 
 
-
-> [OutcomePredictorListing](OutcomePredictorListing.html) getJourneyOutcomesPredictors()
+> [OutcomePredictorListing](OutcomePredictorListing) getJourneyOutcomesPredictors()
 
 Retrieve all outcome predictors.
 
@@ -1577,15 +1526,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**OutcomePredictorListing**](OutcomePredictorListing.html)
+[**OutcomePredictorListing**](OutcomePredictorListing)
 
-<a name="getJourneySegment"></a>
 
 # **getJourneySegment**
 
 
-
-> [JourneySegment](JourneySegment.html) getJourneySegment(segmentId)
+> [JourneySegment](JourneySegment) getJourneySegment(segmentId)
 
 Retrieve a single segment.
 
@@ -1638,15 +1585,13 @@ try {
 
 ### Return type
 
-[**JourneySegment**](JourneySegment.html)
+[**JourneySegment**](JourneySegment)
 
-<a name="getJourneySegments"></a>
 
 # **getJourneySegments**
 
 
-
-> [SegmentListing](SegmentListing.html) getJourneySegments(sortBy, pageSize, pageNumber, isActive, segmentIds, queryFields, queryValue)
+> [SegmentListing](SegmentListing) getJourneySegments(sortBy, pageSize, pageNumber, isActive, segmentIds, queryFields, queryValue)
 
 Retrieve all segments.
 
@@ -1703,23 +1648,21 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **isActive** | **Boolean**| Determines whether or not to show only active segments. | [optional] 
-| **segmentIds** | [**List&lt;String&gt;**](String.html)| IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request. | [optional] 
-| **queryFields** | [**List&lt;String&gt;**](String.html)| Segment field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional] 
+| **segmentIds** | [**List&lt;String&gt;**](String)| IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request. | [optional] 
+| **queryFields** | [**List&lt;String&gt;**](String)| Segment field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional] 
 | **queryValue** | **String**| Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**SegmentListing**](SegmentListing.html)
+[**SegmentListing**](SegmentListing)
 
-<a name="getJourneySession"></a>
 
 # **getJourneySession**
 
 
-
-> [Session](Session.html) getJourneySession(sessionId)
+> [Session](Session) getJourneySession(sessionId)
 
 Retrieve a single session.
 
@@ -1773,15 +1716,13 @@ try {
 
 ### Return type
 
-[**Session**](Session.html)
+[**Session**](Session)
 
-<a name="getJourneySessionEvents"></a>
 
 # **getJourneySessionEvents**
 
 
-
-> [EventListing](EventListing.html) getJourneySessionEvents(sessionId, pageSize, after, eventType)
+> [EventListing](EventListing) getJourneySessionEvents(sessionId, pageSize, after, eventType)
 
 Retrieve all events for a given session.
 
@@ -1840,15 +1781,13 @@ try {
 
 ### Return type
 
-[**EventListing**](EventListing.html)
+[**EventListing**](EventListing)
 
-<a name="getJourneySessionOutcomescores"></a>
 
 # **getJourneySessionOutcomescores**
 
 
-
-> [OutcomeScoresResult](OutcomeScoresResult.html) getJourneySessionOutcomescores(sessionId)
+> [OutcomeScoresResult](OutcomeScoresResult) getJourneySessionOutcomescores(sessionId)
 
 Retrieve latest outcome score associated with a session for all outcomes.
 
@@ -1901,15 +1840,13 @@ try {
 
 ### Return type
 
-[**OutcomeScoresResult**](OutcomeScoresResult.html)
+[**OutcomeScoresResult**](OutcomeScoresResult)
 
-<a name="getJourneyView"></a>
 
 # **getJourneyView**
 
 
-
-> [JourneyView](JourneyView.html) getJourneyView(viewId)
+> [JourneyView](JourneyView) getJourneyView(viewId)
 
 Get a Journey View by ID
 
@@ -1964,15 +1901,13 @@ try {
 
 ### Return type
 
-[**JourneyView**](JourneyView.html)
+[**JourneyView**](JourneyView)
 
-<a name="getJourneyViewVersion"></a>
 
 # **getJourneyViewVersion**
 
 
-
-> [JourneyView](JourneyView.html) getJourneyViewVersion(viewId, versionId)
+> [JourneyView](JourneyView) getJourneyViewVersion(viewId, versionId)
 
 Get a Journey View by ID and version
 
@@ -2027,15 +1962,13 @@ try {
 
 ### Return type
 
-[**JourneyView**](JourneyView.html)
+[**JourneyView**](JourneyView)
 
-<a name="getJourneyViewVersionJob"></a>
 
 # **getJourneyViewVersionJob**
 
 
-
-> [JourneyViewJob](JourneyViewJob.html) getJourneyViewVersionJob(viewId, journeyVersionId, jobId)
+> [JourneyViewJob](JourneyViewJob) getJourneyViewVersionJob(viewId, journeyVersionId, jobId)
 
 Get the job for a journey view version.
 
@@ -2094,15 +2027,13 @@ try {
 
 ### Return type
 
-[**JourneyViewJob**](JourneyViewJob.html)
+[**JourneyViewJob**](JourneyViewJob)
 
-<a name="getJourneyViewVersionJobResults"></a>
 
 # **getJourneyViewVersionJobResults**
 
 
-
-> [JourneyViewResult](JourneyViewResult.html) getJourneyViewVersionJobResults(viewId, journeyViewVersion, jobId)
+> [JourneyViewResult](JourneyViewResult) getJourneyViewVersionJobResults(viewId, journeyViewVersion, jobId)
 
 Get the result of a job for a journey view version.
 
@@ -2161,15 +2092,13 @@ try {
 
 ### Return type
 
-[**JourneyViewResult**](JourneyViewResult.html)
+[**JourneyViewResult**](JourneyViewResult)
 
-<a name="getJourneyViewVersionJobsLatest"></a>
 
 # **getJourneyViewVersionJobsLatest**
 
 
-
-> [JourneyViewJob](JourneyViewJob.html) getJourneyViewVersionJobsLatest(viewId, journeyVersionId)
+> [JourneyViewJob](JourneyViewJob) getJourneyViewVersionJobsLatest(viewId, journeyVersionId)
 
 Get the latest job of a journey view version.
 
@@ -2226,15 +2155,13 @@ try {
 
 ### Return type
 
-[**JourneyViewJob**](JourneyViewJob.html)
+[**JourneyViewJob**](JourneyViewJob)
 
-<a name="getJourneyViews"></a>
 
 # **getJourneyViews**
 
 
-
-> [JourneyViewListing](JourneyViewListing.html) getJourneyViews(pageNumber, pageSize, nameOrCreatedBy, expand, id)
+> [JourneyViewListing](JourneyViewListing) getJourneyViews(pageNumber, pageSize, nameOrCreatedBy, expand, id)
 
 Get a list of Journey Views
 
@@ -2295,15 +2222,13 @@ try {
 
 ### Return type
 
-[**JourneyViewListing**](JourneyViewListing.html)
+[**JourneyViewListing**](JourneyViewListing)
 
-<a name="getJourneyViewsEventdefinition"></a>
 
 # **getJourneyViewsEventdefinition**
 
 
-
-> [JourneyEventDefinition](JourneyEventDefinition.html) getJourneyViewsEventdefinition(eventDefinitionId)
+> [JourneyEventDefinition](JourneyEventDefinition) getJourneyViewsEventdefinition(eventDefinitionId)
 
 Get an Event Definition
 
@@ -2358,15 +2283,13 @@ try {
 
 ### Return type
 
-[**JourneyEventDefinition**](JourneyEventDefinition.html)
+[**JourneyEventDefinition**](JourneyEventDefinition)
 
-<a name="getJourneyViewsEventdefinitions"></a>
 
 # **getJourneyViewsEventdefinitions**
 
 
-
-> [JourneyEventDefinitionListing](JourneyEventDefinitionListing.html) getJourneyViewsEventdefinitions()
+> [JourneyEventDefinitionListing](JourneyEventDefinitionListing) getJourneyViewsEventdefinitions()
 
 Get a list of Event Definitions
 
@@ -2417,15 +2340,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**JourneyEventDefinitionListing**](JourneyEventDefinitionListing.html)
+[**JourneyEventDefinitionListing**](JourneyEventDefinitionListing)
 
-<a name="getJourneyViewsJobs"></a>
 
 # **getJourneyViewsJobs**
 
 
-
-> [JourneyViewJobListing](JourneyViewJobListing.html) getJourneyViewsJobs(pageNumber, pageSize, interval, statuses)
+> [JourneyViewJobListing](JourneyViewJobListing) getJourneyViewsJobs(pageNumber, pageSize, interval, statuses)
 
 Get the jobs for an organization.
 
@@ -2484,15 +2405,13 @@ try {
 
 ### Return type
 
-[**JourneyViewJobListing**](JourneyViewJobListing.html)
+[**JourneyViewJobListing**](JourneyViewJobListing)
 
-<a name="patchJourneyActionmap"></a>
 
 # **patchJourneyActionmap**
 
 
-
-> [ActionMap](ActionMap.html) patchJourneyActionmap(actionMapId, body)
+> [ActionMap](ActionMap) patchJourneyActionmap(actionMapId, body)
 
 Update single action map.
 
@@ -2541,21 +2460,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **actionMapId** | **String**| ID of the action map. | 
-| **body** | [**PatchActionMap**](PatchActionMap.html)|  | [optional] 
+| **body** | [**PatchActionMap**](PatchActionMap)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ActionMap**](ActionMap.html)
+[**ActionMap**](ActionMap)
 
-<a name="patchJourneyActiontarget"></a>
 
 # **patchJourneyActiontarget**
 
 
-
-> [ActionTarget](ActionTarget.html) patchJourneyActiontarget(actionTargetId, body)
+> [ActionTarget](ActionTarget) patchJourneyActiontarget(actionTargetId, body)
 
 Update a single action target.
 
@@ -2604,21 +2521,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **actionTargetId** | **String**| ID of the action target. | 
-| **body** | [**PatchActionTarget**](PatchActionTarget.html)|  | [optional] 
+| **body** | [**PatchActionTarget**](PatchActionTarget)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ActionTarget**](ActionTarget.html)
+[**ActionTarget**](ActionTarget)
 
-<a name="patchJourneyActiontemplate"></a>
 
 # **patchJourneyActiontemplate**
 
 
-
-> [ActionTemplate](ActionTemplate.html) patchJourneyActiontemplate(actionTemplateId, body)
+> [ActionTemplate](ActionTemplate) patchJourneyActiontemplate(actionTemplateId, body)
 
 Update a single action template.
 
@@ -2667,21 +2582,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **actionTemplateId** | **String**| ID of the action template. | 
-| **body** | [**PatchActionTemplate**](PatchActionTemplate.html)|  | [optional] 
+| **body** | [**PatchActionTemplate**](PatchActionTemplate)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ActionTemplate**](ActionTemplate.html)
+[**ActionTemplate**](ActionTemplate)
 
-<a name="patchJourneyOutcome"></a>
 
 # **patchJourneyOutcome**
 
 
-
-> [Outcome](Outcome.html) patchJourneyOutcome(outcomeId, body)
+> [Outcome](Outcome) patchJourneyOutcome(outcomeId, body)
 
 Update an outcome.
 
@@ -2730,21 +2643,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **outcomeId** | **String**| ID of the outcome. | 
-| **body** | [**PatchOutcome**](PatchOutcome.html)|  | [optional] 
+| **body** | [**PatchOutcome**](PatchOutcome)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Outcome**](Outcome.html)
+[**Outcome**](Outcome)
 
-<a name="patchJourneySegment"></a>
 
 # **patchJourneySegment**
 
 
-
-> [JourneySegment](JourneySegment.html) patchJourneySegment(segmentId, body)
+> [JourneySegment](JourneySegment) patchJourneySegment(segmentId, body)
 
 Update a segment.
 
@@ -2793,21 +2704,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **segmentId** | **String**| ID of the segment. | 
-| **body** | [**PatchSegment**](PatchSegment.html)|  | [optional] 
+| **body** | [**PatchSegment**](PatchSegment)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**JourneySegment**](JourneySegment.html)
+[**JourneySegment**](JourneySegment)
 
-<a name="postAnalyticsJourneysAggregatesJobs"></a>
 
 # **postAnalyticsJourneysAggregatesJobs**
 
 
-
-> [AsyncQueryResponse](AsyncQueryResponse.html) postAnalyticsJourneysAggregatesJobs(body)
+> [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsJourneysAggregatesJobs(body)
 
 Query for journey aggregates asynchronously
 
@@ -2856,21 +2765,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**JourneyAsyncAggregationQuery**](JourneyAsyncAggregationQuery.html)| query | 
+| **body** | [**JourneyAsyncAggregationQuery**](JourneyAsyncAggregationQuery)| query | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
-<a name="postAnalyticsJourneysAggregatesQuery"></a>
 
 # **postAnalyticsJourneysAggregatesQuery**
 
 
-
-> [JourneyAggregateQueryResponse](JourneyAggregateQueryResponse.html) postAnalyticsJourneysAggregatesQuery(body)
+> [JourneyAggregateQueryResponse](JourneyAggregateQueryResponse) postAnalyticsJourneysAggregatesQuery(body)
 
 Query for journey aggregates
 
@@ -2917,21 +2824,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**JourneyAggregationQuery**](JourneyAggregationQuery.html)| query | 
+| **body** | [**JourneyAggregationQuery**](JourneyAggregationQuery)| query | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**JourneyAggregateQueryResponse**](JourneyAggregateQueryResponse.html)
+[**JourneyAggregateQueryResponse**](JourneyAggregateQueryResponse)
 
-<a name="postJourneyActionmaps"></a>
 
 # **postJourneyActionmaps**
 
 
-
-> [ActionMap](ActionMap.html) postJourneyActionmaps(body)
+> [ActionMap](ActionMap) postJourneyActionmaps(body)
 
 Create an action map.
 
@@ -2978,21 +2883,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ActionMap**](ActionMap.html)|  | [optional] 
+| **body** | [**ActionMap**](ActionMap)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ActionMap**](ActionMap.html)
+[**ActionMap**](ActionMap)
 
-<a name="postJourneyActionmapsEstimatesJobs"></a>
 
 # **postJourneyActionmapsEstimatesJobs**
 
 
-
-> [EstimateJobAsyncResponse](EstimateJobAsyncResponse.html) postJourneyActionmapsEstimatesJobs(body)
+> [EstimateJobAsyncResponse](EstimateJobAsyncResponse) postJourneyActionmapsEstimatesJobs(body)
 
 Query for estimates
 
@@ -3039,21 +2942,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ActionMapEstimateRequest**](ActionMapEstimateRequest.html)| audience estimator request | 
+| **body** | [**ActionMapEstimateRequest**](ActionMapEstimateRequest)| audience estimator request | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**EstimateJobAsyncResponse**](EstimateJobAsyncResponse.html)
+[**EstimateJobAsyncResponse**](EstimateJobAsyncResponse)
 
-<a name="postJourneyActiontemplates"></a>
 
 # **postJourneyActiontemplates**
 
 
-
-> [ActionTemplate](ActionTemplate.html) postJourneyActiontemplates(body)
+> [ActionTemplate](ActionTemplate) postJourneyActiontemplates(body)
 
 Create a single action template.
 
@@ -3100,18 +3001,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ActionTemplate**](ActionTemplate.html)|  | [optional] 
+| **body** | [**ActionTemplate**](ActionTemplate)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ActionTemplate**](ActionTemplate.html)
+[**ActionTemplate**](ActionTemplate)
 
-<a name="postJourneyDeploymentActionevent"></a>
 
 # **postJourneyDeploymentActionevent**
-
 
 
 > Void postJourneyDeploymentActionevent(deploymentId, body)
@@ -3148,7 +3047,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **deploymentId** | **String**| The ID of the deployment sending the beacon. | 
-| **body** | [**ActionEventRequest**](ActionEventRequest.html)|  | 
+| **body** | [**ActionEventRequest**](ActionEventRequest)|  | 
 {: class="table-striped"}
 
 
@@ -3156,13 +3055,11 @@ try {
 
 null (empty response body)
 
-<a name="postJourneyDeploymentAppevents"></a>
 
 # **postJourneyDeploymentAppevents**
 
 
-
-> [AppEventResponse](AppEventResponse.html) postJourneyDeploymentAppevents(deploymentId, body)
+> [AppEventResponse](AppEventResponse) postJourneyDeploymentAppevents(deploymentId, body)
 
 Send a journey app event, used for tracking customer activity on an application.
 
@@ -3197,21 +3094,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **deploymentId** | **String**| The ID of the deployment sending the app event. | 
-| **body** | [**AppEventRequest**](AppEventRequest.html)|  | [optional] 
+| **body** | [**AppEventRequest**](AppEventRequest)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AppEventResponse**](AppEventResponse.html)
+[**AppEventResponse**](AppEventResponse)
 
-<a name="postJourneyDeploymentWebevents"></a>
 
 # **postJourneyDeploymentWebevents**
 
 
-
-> [WebEventResponse](WebEventResponse.html) postJourneyDeploymentWebevents(deploymentId, body)
+> [WebEventResponse](WebEventResponse) postJourneyDeploymentWebevents(deploymentId, body)
 
 Send a journey web event, used for tracking customer activity on a website.
 
@@ -3246,21 +3141,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **deploymentId** | **String**| The ID of the deployment sending the web event. | 
-| **body** | [**WebEventRequest**](WebEventRequest.html)|  | [optional] 
+| **body** | [**WebEventRequest**](WebEventRequest)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**WebEventResponse**](WebEventResponse.html)
+[**WebEventResponse**](WebEventResponse)
 
-<a name="postJourneyFlowsPathsQuery"></a>
 
 # **postJourneyFlowsPathsQuery**
 
 
-
-> [FlowPaths](FlowPaths.html) postJourneyFlowsPathsQuery(body)
+> [FlowPaths](FlowPaths) postJourneyFlowsPathsQuery(body)
 
 Query for flow paths.
 
@@ -3307,21 +3200,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**FlowPathsQuery**](FlowPathsQuery.html)|  | [optional] 
+| **body** | [**FlowPathsQuery**](FlowPathsQuery)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**FlowPaths**](FlowPaths.html)
+[**FlowPaths**](FlowPaths)
 
-<a name="postJourneyOutcomes"></a>
 
 # **postJourneyOutcomes**
 
 
-
-> [Outcome](Outcome.html) postJourneyOutcomes(body)
+> [Outcome](Outcome) postJourneyOutcomes(body)
 
 Create an outcome.
 
@@ -3368,21 +3259,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**OutcomeRequest**](OutcomeRequest.html)|  | [optional] 
+| **body** | [**OutcomeRequest**](OutcomeRequest)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Outcome**](Outcome.html)
+[**Outcome**](Outcome)
 
-<a name="postJourneyOutcomesAttributionsJobs"></a>
 
 # **postJourneyOutcomesAttributionsJobs**
 
 
-
-> [OutcomeAttributionAsyncResponse](OutcomeAttributionAsyncResponse.html) postJourneyOutcomesAttributionsJobs(body)
+> [OutcomeAttributionAsyncResponse](OutcomeAttributionAsyncResponse) postJourneyOutcomesAttributionsJobs(body)
 
 Create Outcome Attributions
 
@@ -3431,21 +3320,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**OutcomeAttributionListing**](OutcomeAttributionListing.html)| outcome attribution request | [optional] 
+| **body** | [**OutcomeAttributionListing**](OutcomeAttributionListing)| outcome attribution request | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**OutcomeAttributionAsyncResponse**](OutcomeAttributionAsyncResponse.html)
+[**OutcomeAttributionAsyncResponse**](OutcomeAttributionAsyncResponse)
 
-<a name="postJourneyOutcomesPredictors"></a>
 
 # **postJourneyOutcomesPredictors**
 
 
-
-> [OutcomePredictor](OutcomePredictor.html) postJourneyOutcomesPredictors(body)
+> [OutcomePredictor](OutcomePredictor) postJourneyOutcomesPredictors(body)
 
 Create an outcome predictor.
 
@@ -3492,21 +3379,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**OutcomePredictorRequest**](OutcomePredictorRequest.html)|  | [optional] 
+| **body** | [**OutcomePredictorRequest**](OutcomePredictorRequest)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**OutcomePredictor**](OutcomePredictor.html)
+[**OutcomePredictor**](OutcomePredictor)
 
-<a name="postJourneySegments"></a>
 
 # **postJourneySegments**
 
 
-
-> [JourneySegment](JourneySegment.html) postJourneySegments(body)
+> [JourneySegment](JourneySegment) postJourneySegments(body)
 
 Create a segment.
 
@@ -3553,21 +3438,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**JourneySegmentRequest**](JourneySegmentRequest.html)|  | [optional] 
+| **body** | [**JourneySegmentRequest**](JourneySegmentRequest)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**JourneySegment**](JourneySegment.html)
+[**JourneySegment**](JourneySegment)
 
-<a name="postJourneyViewVersionJobs"></a>
 
 # **postJourneyViewVersionJobs**
 
 
-
-> [JourneyViewJob](JourneyViewJob.html) postJourneyViewVersionJobs(viewId, journeyVersionId)
+> [JourneyViewJob](JourneyViewJob) postJourneyViewVersionJobs(viewId, journeyVersionId)
 
 Submit a job request for a journey view version.
 
@@ -3624,15 +3507,13 @@ try {
 
 ### Return type
 
-[**JourneyViewJob**](JourneyViewJob.html)
+[**JourneyViewJob**](JourneyViewJob)
 
-<a name="postJourneyViewVersions"></a>
 
 # **postJourneyViewVersions**
 
 
-
-> [JourneyView](JourneyView.html) postJourneyViewVersions(viewId, body)
+> [JourneyView](JourneyView) postJourneyViewVersions(viewId, body)
 
 Update a Journey View by ID
 
@@ -3683,21 +3564,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **viewId** | **String**| viewId | 
-| **body** | [**JourneyView**](JourneyView.html)| JourneyView | 
+| **body** | [**JourneyView**](JourneyView)| JourneyView | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**JourneyView**](JourneyView.html)
+[**JourneyView**](JourneyView)
 
-<a name="postJourneyViews"></a>
 
 # **postJourneyViews**
 
 
-
-> [JourneyView](JourneyView.html) postJourneyViews(body)
+> [JourneyView](JourneyView) postJourneyViews(body)
 
 Create a new Journey View
 
@@ -3744,21 +3623,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**JourneyView**](JourneyView.html)| JourneyView | 
+| **body** | [**JourneyView**](JourneyView)| JourneyView | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**JourneyView**](JourneyView.html)
+[**JourneyView**](JourneyView)
 
-<a name="postJourneyViewsEncodingsValidate"></a>
 
 # **postJourneyViewsEncodingsValidate**
 
 
-
-> [EntityListing](EntityListing.html) postJourneyViewsEncodingsValidate(body)
+> [EntityListing](EntityListing) postJourneyViewsEncodingsValidate(body)
 
 Validate whether an encoding exist for a label/value combination.
 
@@ -3809,11 +3686,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**List&lt;Label&gt;**](Label.html)|  | [optional] 
+| **body** | [**List&lt;Label&gt;**](Label)|  | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**EntityListing**](EntityListing.html)
+[**EntityListing**](EntityListing)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

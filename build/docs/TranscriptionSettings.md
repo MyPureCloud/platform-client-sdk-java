@@ -1,23 +1,17 @@
----
-title: TranscriptionSettings
----
-## TranscriptionSettings
+# TranscriptionSettings
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **transcription** | [**TranscriptionEnum**](#TranscriptionEnum)<!----> | Setting to enable/disable transcription capability |  |
-| **transcriptionConfidenceThreshold** | <!----><!---->**Integer**<!----> | Configure confidence threshold. The possible values are from 1 to 100. |  |
-| **lowLatencyTranscriptionEnabled** | <!----><!---->**Boolean**<!----> | Boolean flag indicating whether low latency transcription via Notification API is enabled |  [optional] |
-| **contentSearchEnabled** | <!----><!---->**Boolean**<!----> | Setting to enable/disable content search |  [optional] |
-| **pciDssRedactionEnabled** | <!----><!---->**Boolean**<!----> | Setting to enable/disable PCI DSS Redaction |  [optional] |
-| **piiRedactionEnabled** | <!----><!---->**Boolean**<!----> | Setting to enable/disable PII Redaction |  [optional] |
-{: class="table table-striped"}
+| **transcription** | [**TranscriptionEnum**](#Enum--TranscriptionEnum) | Setting to enable/disable transcription capability |  |
+| **transcriptionConfidenceThreshold** | **Integer** | Configure confidence threshold. The possible values are from 1 to 100. |  |
+| **lowLatencyTranscriptionEnabled** | **Boolean** | Boolean flag indicating whether low latency transcription via Notification API is enabled |  [optional] |
+| **contentSearchEnabled** | **Boolean** | Setting to enable/disable content search |  [optional] |
+| **pciDssRedactionEnabled** | **Boolean** | Setting to enable/disable PCI DSS Redaction |  [optional] |
+| **piiRedactionEnabled** | **Boolean** | Setting to enable/disable PII Redaction |  [optional] |
 
-
-<a name="TranscriptionEnum"></a>
 
 ## Enum: TranscriptionEnum
 
@@ -27,7 +21,8 @@ title: TranscriptionSettings
 | DISABLED | &quot;Disabled&quot; | 
 | ENABLEDGLOBALLY | &quot;EnabledGlobally&quot; | 
 | ENABLEDQUEUEFLOW | &quot;EnabledQueueFlow&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

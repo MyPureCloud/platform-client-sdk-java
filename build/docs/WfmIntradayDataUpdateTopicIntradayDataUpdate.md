@@ -1,21 +1,19 @@
----
-title: WfmIntradayDataUpdateTopicIntradayDataUpdate
----
-## WfmIntradayDataUpdateTopicIntradayDataUpdate
+# WfmIntradayDataUpdateTopicIntradayDataUpdate
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **startDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **endDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **intervalLengthMinutes** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **numberOfIntervals** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **metrics** | <!----><!---->[**List&lt;WfmIntradayDataUpdateTopicIntradayMetric&gt;**](WfmIntradayDataUpdateTopicIntradayMetric.html)<!----> |  |  [optional] |
-| **queueIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **intradayDataGroupings** | <!----><!---->[**List&lt;WfmIntradayDataUpdateTopicIntradayDataGroup&gt;**](WfmIntradayDataUpdateTopicIntradayDataGroup.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **startDate** | [**Date**](Date) |  |  [optional] |
+| **endDate** | [**Date**](Date) |  |  [optional] |
+| **intervalLengthMinutes** | **Integer** |  |  [optional] |
+| **numberOfIntervals** | **Integer** |  |  [optional] |
+| **metrics** | [**List&lt;WfmIntradayDataUpdateTopicIntradayMetric&gt;**](WfmIntradayDataUpdateTopicIntradayMetric) |  |  [optional] |
+| **queueIds** | **List&lt;String&gt;** |  |  [optional] |
+| **intradayDataGroupings** | [**List&lt;WfmIntradayDataUpdateTopicIntradayDataGroup&gt;**](WfmIntradayDataUpdateTopicIntradayDataGroup) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

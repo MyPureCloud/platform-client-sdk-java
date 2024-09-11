@@ -1,16 +1,14 @@
----
-title: TextBotOutputPrompts
----
-## TextBotOutputPrompts
+# TextBotOutputPrompts
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **outputLanguage** | <!----><!---->**String**<!----> | The ISO code of the output language for this prompt item. |  |
-| **textPrompts** | <!----><!---->[**TextBotModeOutputPrompts**](TextBotModeOutputPrompts.html)<!----> | Text output prompts, if any. |  [optional] |
-{: class="table table-striped"}
+| **outputLanguage** | **String** | The ISO code of the output language for this prompt item. |  |
+| **textPrompts** | [**TextBotModeOutputPrompts**](TextBotModeOutputPrompts) | Text output prompts, if any. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

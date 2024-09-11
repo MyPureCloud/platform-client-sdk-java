@@ -1,21 +1,15 @@
----
-title: WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice
----
-## WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice
+# WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **downloadUrl** | <!----><!---->**String**<!----> |  |  [optional] |
-| **downloadUrls** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **queryState** | [**QueryStateEnum**](#QueryStateEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **downloadUrl** | **String** |  |  [optional] |
+| **downloadUrls** | **List&lt;String&gt;** |  |  [optional] |
+| **queryState** | [**QueryStateEnum**](#Enum--QueryStateEnum) |  |  [optional] |
 
-
-<a name="QueryStateEnum"></a>
 
 ## Enum: QueryStateEnum
 
@@ -26,7 +20,8 @@ title: WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalc
 | COMPLETE | &quot;Complete&quot; | 
 | CANCELED | &quot;Canceled&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

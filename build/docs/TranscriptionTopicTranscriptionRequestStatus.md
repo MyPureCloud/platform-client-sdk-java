@@ -1,19 +1,13 @@
----
-title: TranscriptionTopicTranscriptionRequestStatus
----
-## TranscriptionTopicTranscriptionRequestStatus
+# TranscriptionTopicTranscriptionRequestStatus
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **offsetMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **offsetMs** | **Integer** |  |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -23,7 +17,8 @@ title: TranscriptionTopicTranscriptionRequestStatus
 | UNKNOWN | &quot;UNKNOWN&quot; | 
 | SESSION_ONGOING | &quot;SESSION_ONGOING&quot; | 
 | SESSION_ENDED | &quot;SESSION_ENDED&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

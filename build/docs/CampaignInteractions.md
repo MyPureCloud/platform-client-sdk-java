@@ -1,20 +1,18 @@
----
-title: CampaignInteractions
----
-## CampaignInteractions
+# CampaignInteractions
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **campaign** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
-| **pendingInteractions** | <!----><!---->[**List&lt;CampaignInteraction&gt;**](CampaignInteraction.html)<!----> |  |  [optional] |
-| **proceedingInteractions** | <!----><!---->[**List&lt;CampaignInteraction&gt;**](CampaignInteraction.html)<!----> |  |  [optional] |
-| **previewingInteractions** | <!----><!---->[**List&lt;CampaignInteraction&gt;**](CampaignInteraction.html)<!----> |  |  [optional] |
-| **interactingInteractions** | <!----><!---->[**List&lt;CampaignInteraction&gt;**](CampaignInteraction.html)<!----> |  |  [optional] |
-| **scheduledInteractions** | <!----><!---->[**List&lt;CampaignInteraction&gt;**](CampaignInteraction.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **campaign** | [**DomainEntityRef**](DomainEntityRef) |  |  [optional] |
+| **pendingInteractions** | [**List&lt;CampaignInteraction&gt;**](CampaignInteraction) |  |  [optional] |
+| **proceedingInteractions** | [**List&lt;CampaignInteraction&gt;**](CampaignInteraction) |  |  [optional] |
+| **previewingInteractions** | [**List&lt;CampaignInteraction&gt;**](CampaignInteraction) |  |  [optional] |
+| **interactingInteractions** | [**List&lt;CampaignInteraction&gt;**](CampaignInteraction) |  |  [optional] |
+| **scheduledInteractions** | [**List&lt;CampaignInteraction&gt;**](CampaignInteraction) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

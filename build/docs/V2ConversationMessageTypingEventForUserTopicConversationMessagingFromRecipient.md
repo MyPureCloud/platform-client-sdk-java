@@ -1,25 +1,19 @@
----
-title: V2ConversationMessageTypingEventForUserTopicConversationMessagingFromRecipient
----
-## V2ConversationMessageTypingEventForUserTopicConversationMessagingFromRecipient
+# V2ConversationMessageTypingEventForUserTopicConversationMessagingFromRecipient
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **nickname** | <!----><!---->**String**<!----> |  |  [optional] |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **idType** | [**IdTypeEnum**](#IdTypeEnum)<!----> |  |  [optional] |
-| **image** | <!----><!---->**String**<!----> |  |  [optional] |
-| **firstName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **lastName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **email** | <!----><!---->**String**<!----> |  |  [optional] |
-| **additionalIds** | <!----><!---->[**List&lt;V2ConversationMessageTypingEventForUserTopicConversationRecipientAdditionalIdentifier&gt;**](V2ConversationMessageTypingEventForUserTopicConversationRecipientAdditionalIdentifier.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **nickname** | **String** |  |  [optional] |
+| **id** | **String** |  |  [optional] |
+| **idType** | [**IdTypeEnum**](#Enum--IdTypeEnum) |  |  [optional] |
+| **image** | **String** |  |  [optional] |
+| **firstName** | **String** |  |  [optional] |
+| **lastName** | **String** |  |  [optional] |
+| **email** | **String** |  |  [optional] |
+| **additionalIds** | [**List&lt;V2ConversationMessageTypingEventForUserTopicConversationRecipientAdditionalIdentifier&gt;**](V2ConversationMessageTypingEventForUserTopicConversationRecipientAdditionalIdentifier) |  |  [optional] |
 
-
-<a name="IdTypeEnum"></a>
 
 ## Enum: IdTypeEnum
 
@@ -29,7 +23,8 @@ title: V2ConversationMessageTypingEventForUserTopicConversationMessagingFromReci
 | EMAIL | &quot;Email&quot; | 
 | PHONE | &quot;Phone&quot; | 
 | OPAQUE | &quot;Opaque&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

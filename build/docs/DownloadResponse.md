@@ -1,24 +1,18 @@
----
-title: DownloadResponse
----
-## DownloadResponse
+# DownloadResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **contentLocationUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **imageUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **thumbnails** | <!----><!---->[**List&lt;DocumentThumbnail&gt;**](DocumentThumbnail.html)<!----> |  |  [optional] |
-| **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
-| **resultUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **contentLocationUri** | **String** |  |  [optional] |
+| **imageUri** | **String** |  |  [optional] |
+| **thumbnails** | [**List&lt;DocumentThumbnail&gt;**](DocumentThumbnail) |  |  [optional] |
+| **state** | [**StateEnum**](#Enum--StateEnum) |  |  [optional] |
+| **resultUri** | **String** |  |  [optional] |
+| **selfUri** | **String** |  |  [optional] |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -27,7 +21,8 @@ title: DownloadResponse
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | RUNNING | &quot;Running&quot; | 
 | COMPLETED | &quot;Completed&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

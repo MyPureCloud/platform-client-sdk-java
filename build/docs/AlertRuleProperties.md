@@ -1,20 +1,14 @@
----
-title: AlertRuleProperties
----
-## AlertRuleProperties
+# AlertRuleProperties
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> | The name of the object. |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of rule being alerted. |  |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** | The name of the object. |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of rule being alerted. |  |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -25,7 +19,8 @@ title: AlertRuleProperties
 | USERPRESENCE | &quot;UserPresence&quot; | 
 | WORKFORCEMANAGEMENT | &quot;WorkforceManagement&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

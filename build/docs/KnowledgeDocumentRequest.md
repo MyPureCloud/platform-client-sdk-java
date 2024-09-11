@@ -1,22 +1,16 @@
----
-title: KnowledgeDocumentRequest
----
-## KnowledgeDocumentRequest
+# KnowledgeDocumentRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Document type according to assigned template |  |
-| **externalUrl** | <!----><!---->**String**<!----> | External Url to the document |  [optional] |
-| **faq** | <!----><!---->[**DocumentFaq**](DocumentFaq.html)<!----> | Faq document details |  [optional] |
-| **categories** | <!----><!---->[**List&lt;DocumentCategoryInput&gt;**](DocumentCategoryInput.html)<!----> | Document categories |  [optional] |
-| **article** | <!----><!---->[**DocumentArticle**](DocumentArticle.html)<!----> | Article details |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Document type according to assigned template |  |
+| **externalUrl** | **String** | External Url to the document |  [optional] |
+| **faq** | [**DocumentFaq**](DocumentFaq) | Faq document details |  [optional] |
+| **categories** | [**List&lt;DocumentCategoryInput&gt;**](DocumentCategoryInput) | Document categories |  [optional] |
+| **article** | [**DocumentArticle**](DocumentArticle) | Article details |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -25,7 +19,8 @@ title: KnowledgeDocumentRequest
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | FAQ | &quot;Faq&quot; | 
 | ARTICLE | &quot;Article&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,19 +1,13 @@
----
-title: ShiftTradeMatchViolation
----
-## ShiftTradeMatchViolation
+# ShiftTradeMatchViolation
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of constraint violation |  [optional] |
-| **params** | <!----><!---->**Map&lt;String, String&gt;**<!----> | Clarifying user params for constructing helpful error messages |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of constraint violation |  [optional] |
+| **params** | **Map&lt;String, String&gt;** | Clarifying user params for constructing helpful error messages |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -51,7 +45,8 @@ title: ShiftTradeMatchViolation
 | WEEKSCHEDULEDIFFERENT | &quot;WeekScheduleDifferent&quot; | 
 | WEEKSCHEDULEDOESNOTEXIST | &quot;WeekScheduleDoesNotExist&quot; | 
 | WEEKSCHEDULEUNPUBLISHED | &quot;WeekScheduleUnpublished&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

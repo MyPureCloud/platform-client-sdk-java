@@ -1,19 +1,13 @@
----
-title: WidgetClientConfigV1
----
-## WidgetClientConfigV1
+# WidgetClientConfigV1
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **webChatSkin** | [**WebChatSkinEnum**](#WebChatSkinEnum)<!----> |  |  [optional] |
-| **authenticationUrl** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **webChatSkin** | [**WebChatSkinEnum**](#Enum--WebChatSkinEnum) |  |  [optional] |
+| **authenticationUrl** | **String** |  |  [optional] |
 
-
-<a name="WebChatSkinEnum"></a>
 
 ## Enum: WebChatSkinEnum
 
@@ -22,7 +16,8 @@ title: WidgetClientConfigV1
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | BASIC | &quot;basic&quot; | 
 | MODERN_CARET_SKIN | &quot;modern-caret-skin&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

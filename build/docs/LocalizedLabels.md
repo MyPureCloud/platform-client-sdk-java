@@ -1,19 +1,13 @@
----
-title: LocalizedLabels
----
-## LocalizedLabels
+# LocalizedLabels
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **key** | [**KeyEnum**](#KeyEnum)<!----> | Contains localized label key used in messenger homescreen |  [optional] |
-| **value** | <!----><!---->**String**<!----> | Contains localized label value used in messenger homescreen |  [optional] |
-{: class="table table-striped"}
+| **key** | [**KeyEnum**](#Enum--KeyEnum) | Contains localized label key used in messenger homescreen |  [optional] |
+| **value** | **String** | Contains localized label value used in messenger homescreen |  [optional] |
 
-
-<a name="KeyEnum"></a>
 
 ## Enum: KeyEnum
 
@@ -22,7 +16,8 @@ title: LocalizedLabels
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | MESSENGERHOMEHEADERTITLE | &quot;MessengerHomeHeaderTitle&quot; | 
 | MESSENGERHOMEHEADERSUBTITLE | &quot;MessengerHomeHeaderSubTitle&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

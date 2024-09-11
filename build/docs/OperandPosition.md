@@ -1,21 +1,15 @@
----
-title: OperandPosition
----
-## OperandPosition
+# OperandPosition
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **startingPositionValue** | <!----><!---->**Integer**<!----> | Defines starting point of a position range - number of seconds or words from the start or from the end of the interaction |  [optional] |
-| **startingPositionDirection** | [**StartingPositionDirectionEnum**](#StartingPositionDirectionEnum)<!----> | Dictates starting position directionality |  [optional] |
-| **endingPositionValue** | <!----><!---->**Integer**<!----> | Defines ending point of a position range - number of seconds or words from the start or from the end of the interaction |  [optional] |
-| **endingPositionDirection** | [**EndingPositionDirectionEnum**](#EndingPositionDirectionEnum)<!----> | Dictates ending position directionality |  [optional] |
-{: class="table table-striped"}
+| **startingPositionValue** | **Integer** | Defines starting point of a position range - number of seconds or words from the start or from the end of the interaction |  [optional] |
+| **startingPositionDirection** | [**StartingPositionDirectionEnum**](#Enum--StartingPositionDirectionEnum) | Dictates starting position directionality |  [optional] |
+| **endingPositionValue** | **Integer** | Defines ending point of a position range - number of seconds or words from the start or from the end of the interaction |  [optional] |
+| **endingPositionDirection** | [**EndingPositionDirectionEnum**](#Enum--EndingPositionDirectionEnum) | Dictates ending position directionality |  [optional] |
 
-
-<a name="StartingPositionDirectionEnum"></a>
 
 ## Enum: StartingPositionDirectionEnum
 
@@ -24,10 +18,7 @@ title: OperandPosition
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | FROMSTART | &quot;FromStart&quot; | 
 | FROMEND | &quot;FromEnd&quot; | 
-{: class="table table-striped"}
 
-
-<a name="EndingPositionDirectionEnum"></a>
 
 ## Enum: EndingPositionDirectionEnum
 
@@ -36,7 +27,8 @@ title: OperandPosition
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | FROMSTART | &quot;FromStart&quot; | 
 | FROMEND | &quot;FromEnd&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

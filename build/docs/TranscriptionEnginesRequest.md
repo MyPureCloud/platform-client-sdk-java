@@ -1,15 +1,13 @@
----
-title: TranscriptionEnginesRequest
----
-## TranscriptionEnginesRequest
+# TranscriptionEnginesRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **transcriptionEngines** | <!----><!---->[**List&lt;ProgramTranscriptionEngine&gt;**](ProgramTranscriptionEngine.html)<!----> | The transcription engine setting |  |
-{: class="table table-striped"}
+| **transcriptionEngines** | [**List&lt;ProgramTranscriptionEngine&gt;**](ProgramTranscriptionEngine) | The transcription engine setting |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

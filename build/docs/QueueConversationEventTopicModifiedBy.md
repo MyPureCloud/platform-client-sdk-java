@@ -1,16 +1,14 @@
----
-title: QueueConversationEventTopicModifiedBy
----
-## QueueConversationEventTopicModifiedBy
+# QueueConversationEventTopicModifiedBy
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The id of the user if the updater is an internal user. |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for the user if the updater is an internal user. |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The id of the user if the updater is an internal user. |  [optional] |
+| **selfUri** | **String** | The URI for the user if the updater is an internal user. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

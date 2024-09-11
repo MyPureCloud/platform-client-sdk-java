@@ -1,16 +1,14 @@
----
-title: AssignmentError
----
-## AssignmentError
+# AssignmentError
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **user** | <!----><!---->[**UserReference**](UserReference.html)<!----> | A user that is failed to be removed from the performance profile |  [optional] |
-| **message** | <!----><!---->**String**<!----> | Error message from membership assignment |  [optional] |
-{: class="table table-striped"}
+| **user** | [**UserReference**](UserReference) | A user that is failed to be removed from the performance profile |  [optional] |
+| **message** | **String** | Error message from membership assignment |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

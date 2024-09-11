@@ -1,19 +1,17 @@
----
-title: DomainOrgRoleDifference
----
-## DomainOrgRoleDifference
+# DomainOrgRoleDifference
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **removedPermissionPolicies** | <!----><!---->[**List&lt;DomainPermissionPolicy&gt;**](DomainPermissionPolicy.html)<!----> |  |  [optional] |
-| **addedPermissionPolicies** | <!----><!---->[**List&lt;DomainPermissionPolicy&gt;**](DomainPermissionPolicy.html)<!----> |  |  [optional] |
-| **samePermissionPolicies** | <!----><!---->[**List&lt;DomainPermissionPolicy&gt;**](DomainPermissionPolicy.html)<!----> |  |  [optional] |
-| **userOrgRole** | <!----><!---->[**DomainOrganizationRole**](DomainOrganizationRole.html)<!----> |  |  [optional] |
-| **roleFromDefault** | <!----><!---->[**DomainOrganizationRole**](DomainOrganizationRole.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **removedPermissionPolicies** | [**List&lt;DomainPermissionPolicy&gt;**](DomainPermissionPolicy) |  |  [optional] |
+| **addedPermissionPolicies** | [**List&lt;DomainPermissionPolicy&gt;**](DomainPermissionPolicy) |  |  [optional] |
+| **samePermissionPolicies** | [**List&lt;DomainPermissionPolicy&gt;**](DomainPermissionPolicy) |  |  [optional] |
+| **userOrgRole** | [**DomainOrganizationRole**](DomainOrganizationRole) |  |  [optional] |
+| **roleFromDefault** | [**DomainOrganizationRole**](DomainOrganizationRole) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

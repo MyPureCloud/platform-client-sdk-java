@@ -1,26 +1,20 @@
----
-title: V2MobiusAlertsTopicConditionRulePredicate
----
-## V2MobiusAlertsTopicConditionRulePredicate
+# V2MobiusAlertsTopicConditionRulePredicate
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **entity** | <!----><!---->[**V2MobiusAlertsTopicEntityProperties**](V2MobiusAlertsTopicEntityProperties.html)<!----> |  |  [optional] |
-| **metric** | <!----><!---->**String**<!----> |  |  [optional] |
-| **metricType** | [**MetricTypeEnum**](#MetricTypeEnum)<!----> |  |  [optional] |
-| **metricValueType** | [**MetricValueTypeEnum**](#MetricValueTypeEnum)<!----> |  |  [optional] |
-| **value** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-| **status** | <!----><!---->**String**<!----> |  |  [optional] |
-| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> |  |  [optional] |
-| **comparisonOperator** | [**ComparisonOperatorEnum**](#ComparisonOperatorEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **entity** | [**V2MobiusAlertsTopicEntityProperties**](V2MobiusAlertsTopicEntityProperties) |  |  [optional] |
+| **metric** | **String** |  |  [optional] |
+| **metricType** | [**MetricTypeEnum**](#Enum--MetricTypeEnum) |  |  [optional] |
+| **metricValueType** | [**MetricValueTypeEnum**](#Enum--MetricValueTypeEnum) |  |  [optional] |
+| **value** | [**BigDecimal**](BigDecimal) |  |  [optional] |
+| **status** | **String** |  |  [optional] |
+| **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) |  |  [optional] |
+| **comparisonOperator** | [**ComparisonOperatorEnum**](#Enum--ComparisonOperatorEnum) |  |  [optional] |
 
-
-<a name="MetricTypeEnum"></a>
 
 ## Enum: MetricTypeEnum
 
@@ -30,10 +24,7 @@ title: V2MobiusAlertsTopicConditionRulePredicate
 | INTERVAL | &quot;Interval&quot; | 
 | INSTANCE | &quot;Instance&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
-
-<a name="MetricValueTypeEnum"></a>
 
 ## Enum: MetricValueTypeEnum
 
@@ -48,10 +39,7 @@ title: V2MobiusAlertsTopicConditionRulePredicate
 | MIN | &quot;Min&quot; | 
 | MAX | &quot;Max&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
-
-<a name="MediaTypeEnum"></a>
 
 ## Enum: MediaTypeEnum
 
@@ -66,10 +54,7 @@ title: V2MobiusAlertsTopicConditionRulePredicate
 | SCREENSHARE | &quot;Screenshare&quot; | 
 | COBROWSE | &quot;Cobrowse&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
-
-<a name="ComparisonOperatorEnum"></a>
 
 ## Enum: ComparisonOperatorEnum
 
@@ -83,7 +68,8 @@ title: V2MobiusAlertsTopicConditionRulePredicate
 | EQ | &quot;Eq&quot; | 
 | NE | &quot;Ne&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

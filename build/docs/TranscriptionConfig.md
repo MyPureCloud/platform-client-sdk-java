@@ -1,18 +1,12 @@
----
-title: TranscriptionConfig
----
-## TranscriptionConfig
+# TranscriptionConfig
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **vendorName** | [**VendorNameEnum**](#VendorNameEnum)<!----> | The name of the vendor used for speech transcription. |  |
-{: class="table table-striped"}
+| **vendorName** | [**VendorNameEnum**](#Enum--VendorNameEnum) | The name of the vendor used for speech transcription. |  |
 
-
-<a name="VendorNameEnum"></a>
 
 ## Enum: VendorNameEnum
 
@@ -22,7 +16,8 @@ title: TranscriptionConfig
 | GOOGLEDIALOGFLOW | &quot;GoogleDialogflow&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 | GENESYS | &quot;Genesys&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

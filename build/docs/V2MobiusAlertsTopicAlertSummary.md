@@ -1,22 +1,16 @@
----
-title: V2MobiusAlertsTopicAlertSummary
----
-## V2MobiusAlertsTopicAlertSummary
+# V2MobiusAlertsTopicAlertSummary
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | <!----><!---->[**List&lt;V2MobiusAlertsTopicAlertSummaryEntity&gt;**](V2MobiusAlertsTopicAlertSummaryEntity.html)<!----> |  |  [optional] |
-| **conversation** | <!----><!---->[**V2MobiusAlertsTopicAddressableEntityRef**](V2MobiusAlertsTopicAddressableEntityRef.html)<!----> |  |  [optional] |
-| **metricType** | [**MetricTypeEnum**](#MetricTypeEnum)<!----> |  |  [optional] |
-| **isTeamMemberRuleSummary** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **teamMemberRuleSummary** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **entities** | [**List&lt;V2MobiusAlertsTopicAlertSummaryEntity&gt;**](V2MobiusAlertsTopicAlertSummaryEntity) |  |  [optional] |
+| **conversation** | [**V2MobiusAlertsTopicAddressableEntityRef**](V2MobiusAlertsTopicAddressableEntityRef) |  |  [optional] |
+| **metricType** | [**MetricTypeEnum**](#Enum--MetricTypeEnum) |  |  [optional] |
+| **isTeamMemberRuleSummary** | **Boolean** |  |  [optional] |
+| **teamMemberRuleSummary** | **Boolean** |  |  [optional] |
 
-
-<a name="MetricTypeEnum"></a>
 
 ## Enum: MetricTypeEnum
 
@@ -26,7 +20,8 @@ title: V2MobiusAlertsTopicAlertSummary
 | INTERVAL | &quot;Interval&quot; | 
 | INSTANCE | &quot;Instance&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

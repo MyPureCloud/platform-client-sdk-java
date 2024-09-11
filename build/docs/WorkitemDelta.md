@@ -1,40 +1,38 @@
----
-title: WorkitemDelta
----
-## WorkitemDelta
+# WorkitemDelta
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
-| **description** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
-| **languageId** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
-| **utilizationLabelId** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
-| **priority** | <!----><!---->[**WorkitemsAttributeChangeInteger**](WorkitemsAttributeChangeInteger.html)<!----> |  |  [optional] |
-| **skillIds** | <!----><!---->[**WorkitemsAttributeChangeList**](WorkitemsAttributeChangeList.html)<!----> |  |  [optional] |
-| **preferredAgentIds** | <!----><!---->[**WorkitemsAttributeChangeList**](WorkitemsAttributeChangeList.html)<!----> |  |  [optional] |
-| **dateDue** | <!----><!---->[**WorkitemsAttributeChangeInstant**](WorkitemsAttributeChangeInstant.html)<!----> |  |  [optional] |
-| **dateExpires** | <!----><!---->[**WorkitemsAttributeChangeInstant**](WorkitemsAttributeChangeInstant.html)<!----> |  |  [optional] |
-| **durationSeconds** | <!----><!---->[**WorkitemsAttributeChangeInteger**](WorkitemsAttributeChangeInteger.html)<!----> |  |  [optional] |
-| **statusId** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
-| **reporterId** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
-| **externalContactId** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
-| **assigneeId** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
-| **workbinId** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
-| **queueId** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
-| **externalTag** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
-| **wrapupId** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
-| **ttl** | <!----><!---->[**WorkitemsAttributeChangeInteger**](WorkitemsAttributeChangeInteger.html)<!----> |  |  [optional] |
-| **dateClosed** | <!----><!---->[**WorkitemsAttributeChangeInstant**](WorkitemsAttributeChangeInstant.html)<!----> |  |  [optional] |
-| **assignmentState** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
-| **autoStatusTransition** | <!----><!---->[**WorkitemsAttributeChangeBoolean**](WorkitemsAttributeChangeBoolean.html)<!----> |  |  [optional] |
-| **customFields** | <!----><!---->[**WorkitemsAttributeChangeMap**](WorkitemsAttributeChangeMap.html)<!----> |  |  [optional] |
-| **dateModified** | <!----><!---->[**WorkitemsAttributeChangeInstant**](WorkitemsAttributeChangeInstant.html)<!----> |  |  [optional] |
-| **modifiedBy** | <!----><!---->[**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html)<!----> |  |  [optional] |
-| **statusCategory** | <!----><!---->[**WorkitemsAttributeChangeWorkitemStatusCategory**](WorkitemsAttributeChangeWorkitemStatusCategory.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **name** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
+| **description** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
+| **languageId** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
+| **utilizationLabelId** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
+| **priority** | [**WorkitemsAttributeChangeInteger**](WorkitemsAttributeChangeInteger) |  |  [optional] |
+| **skillIds** | [**WorkitemsAttributeChangeList**](WorkitemsAttributeChangeList) |  |  [optional] |
+| **preferredAgentIds** | [**WorkitemsAttributeChangeList**](WorkitemsAttributeChangeList) |  |  [optional] |
+| **dateDue** | [**WorkitemsAttributeChangeInstant**](WorkitemsAttributeChangeInstant) |  |  [optional] |
+| **dateExpires** | [**WorkitemsAttributeChangeInstant**](WorkitemsAttributeChangeInstant) |  |  [optional] |
+| **durationSeconds** | [**WorkitemsAttributeChangeInteger**](WorkitemsAttributeChangeInteger) |  |  [optional] |
+| **statusId** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
+| **reporterId** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
+| **externalContactId** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
+| **assigneeId** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
+| **workbinId** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
+| **queueId** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
+| **externalTag** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
+| **wrapupId** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
+| **ttl** | [**WorkitemsAttributeChangeInteger**](WorkitemsAttributeChangeInteger) |  |  [optional] |
+| **dateClosed** | [**WorkitemsAttributeChangeInstant**](WorkitemsAttributeChangeInstant) |  |  [optional] |
+| **assignmentState** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
+| **autoStatusTransition** | [**WorkitemsAttributeChangeBoolean**](WorkitemsAttributeChangeBoolean) |  |  [optional] |
+| **customFields** | [**WorkitemsAttributeChangeMap**](WorkitemsAttributeChangeMap) |  |  [optional] |
+| **dateModified** | [**WorkitemsAttributeChangeInstant**](WorkitemsAttributeChangeInstant) |  |  [optional] |
+| **modifiedBy** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
+| **statusCategory** | [**WorkitemsAttributeChangeWorkitemStatusCategory**](WorkitemsAttributeChangeWorkitemStatusCategory) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

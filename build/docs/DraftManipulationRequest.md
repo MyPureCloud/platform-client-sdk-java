@@ -1,19 +1,13 @@
----
-title: DraftManipulationRequest
----
-## DraftManipulationRequest
+# DraftManipulationRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **translate** | <!----><!---->[**HistoryHeadersTranslation**](HistoryHeadersTranslation.html)<!----> | A set of definitions to translate email attributes and correctly display date and time, for a given language |  [optional] |
-| **draftType** | [**DraftTypeEnum**](#DraftTypeEnum)<!----> | The kind of draft that as to be treated. Used to prefix response subject or auto-include information |  [optional] |
-{: class="table table-striped"}
+| **translate** | [**HistoryHeadersTranslation**](HistoryHeadersTranslation) | A set of definitions to translate email attributes and correctly display date and time, for a given language |  [optional] |
+| **draftType** | [**DraftTypeEnum**](#Enum--DraftTypeEnum) | The kind of draft that as to be treated. Used to prefix response subject or auto-include information |  [optional] |
 
-
-<a name="DraftTypeEnum"></a>
 
 ## Enum: DraftTypeEnum
 
@@ -23,7 +17,8 @@ title: DraftManipulationRequest
 | REPLY | &quot;Reply&quot; | 
 | REPLYALL | &quot;ReplyAll&quot; | 
 | FORWARD | &quot;Forward&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

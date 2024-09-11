@@ -1,31 +1,22 @@
----
-title: AlternativeShiftBuSettingsResponse
----
-## AlternativeShiftBuSettingsResponse
+# AlternativeShiftBuSettingsResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **enabledGranularities** | <!---->[**List&lt;EnabledGranularitiesEnum&gt;**](#EnabledGranularitiesEnum)<!----> | The granularity at which alternative shifts is allowed. An empty list means Alternative Shifts is disabled |  |
-| **minMinutesBeforeStartTime** | <!----><!---->**Integer**<!----> | The minimum number of minutes before the start of a shift that an alternative shift can be automatically approved |  |
-| **retainedActivityCategories** | <!---->[**List&lt;RetainedActivityCategoriesEnum&gt;**](#RetainedActivityCategoriesEnum)<!----> | Categories of activities that are required to remain at the same time slot for the alternative shifts offered. An empty list represents no retained activities |  |
-| **metadata** | <!----><!---->[**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata.html)<!----> | Version metadata for this business unit's alternative shift settings |  |
-{: class="table table-striped"}
+| **enabledGranularities** | [**List<EnabledGranularitiesEnum>**](#Enum--EnabledGranularitiesEnum) | The granularity at which alternative shifts is allowed. An empty list means Alternative Shifts is disabled |  |
+| **minMinutesBeforeStartTime** | **Integer** | The minimum number of minutes before the start of a shift that an alternative shift can be automatically approved |  |
+| **retainedActivityCategories** | [**List<RetainedActivityCategoriesEnum>**](#Enum--RetainedActivityCategoriesEnum) | Categories of activities that are required to remain at the same time slot for the alternative shifts offered. An empty list represents no retained activities |  |
+| **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Version metadata for this business unit's alternative shift settings |  |
 
-
-<a name="EnabledGranularitiesEnum"></a>
 
 ## Enum: EnabledGranularitiesEnum
 
 | Name | Value |
 | ---- | ----- |
 | DAILY | &quot;Daily&quot; |
-{: class="table table-striped"}
 
-
-<a name="RetainedActivityCategoriesEnum"></a>
 
 ## Enum: RetainedActivityCategoriesEnum
 
@@ -38,7 +29,8 @@ title: AlternativeShiftBuSettingsResponse
 | TIMEOFF | &quot;TimeOff&quot; |
 | TRAINING | &quot;Training&quot; |
 | UNAVAILABLE | &quot;Unavailable&quot; |
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

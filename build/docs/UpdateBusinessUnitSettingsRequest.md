@@ -1,22 +1,16 @@
----
-title: UpdateBusinessUnitSettingsRequest
----
-## UpdateBusinessUnitSettingsRequest
+# UpdateBusinessUnitSettingsRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **startDayOfWeek** | [**StartDayOfWeekEnum**](#StartDayOfWeekEnum)<!----> | The start day of week for this business unit |  [optional] |
-| **timeZone** | <!----><!---->**String**<!----> | The time zone for this business unit, using the Olsen tz database format |  [optional] |
-| **shortTermForecasting** | <!----><!---->[**BuShortTermForecastingSettings**](BuShortTermForecastingSettings.html)<!----> | Short term forecasting settings |  [optional] |
-| **scheduling** | <!----><!---->[**BuSchedulingSettingsRequest**](BuSchedulingSettingsRequest.html)<!----> | Scheduling settings |  [optional] |
-| **metadata** | <!----><!---->[**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata.html)<!----> | Version metadata for this business unit |  |
-{: class="table table-striped"}
+| **startDayOfWeek** | [**StartDayOfWeekEnum**](#Enum--StartDayOfWeekEnum) | The start day of week for this business unit |  [optional] |
+| **timeZone** | **String** | The time zone for this business unit, using the Olsen tz database format |  [optional] |
+| **shortTermForecasting** | [**BuShortTermForecastingSettings**](BuShortTermForecastingSettings) | Short term forecasting settings |  [optional] |
+| **scheduling** | [**BuSchedulingSettingsRequest**](BuSchedulingSettingsRequest) | Scheduling settings |  [optional] |
+| **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Version metadata for this business unit |  |
 
-
-<a name="StartDayOfWeekEnum"></a>
 
 ## Enum: StartDayOfWeekEnum
 
@@ -30,7 +24,8 @@ title: UpdateBusinessUnitSettingsRequest
 | THURSDAY | &quot;Thursday&quot; | 
 | FRIDAY | &quot;Friday&quot; | 
 | SATURDAY | &quot;Saturday&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

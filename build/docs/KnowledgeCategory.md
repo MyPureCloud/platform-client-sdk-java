@@ -1,25 +1,19 @@
----
-title: KnowledgeCategory
----
-## KnowledgeCategory
+# KnowledgeCategory
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> | Category name |  |
-| **description** | <!----><!---->**String**<!----> | Category description |  [optional] |
-| **knowledgeBase** | <!----><!---->[**KnowledgeBase**](KnowledgeBase.html)<!----> | Knowledge base which category does belong to |  [optional] |
-| **languageCode** | [**LanguageCodeEnum**](#LanguageCodeEnum)<!----> | Actual language of the category |  [optional] |
-| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Category creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | Category last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** | Category name |  |
+| **description** | **String** | Category description |  [optional] |
+| **knowledgeBase** | [**KnowledgeBase**](KnowledgeBase) | Knowledge base which category does belong to |  [optional] |
+| **languageCode** | [**LanguageCodeEnum**](#Enum--LanguageCodeEnum) | Actual language of the category |  [optional] |
+| **dateCreated** | [**Date**](Date) | Category creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **dateModified** | [**Date**](Date) | Category last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="LanguageCodeEnum"></a>
 
 ## Enum: LanguageCodeEnum
 
@@ -72,7 +66,8 @@ title: KnowledgeCategory
 | HU_HU | &quot;hu-HU&quot; | 
 | VI_VN | &quot;vi-VN&quot; | 
 | UK_UA | &quot;uk-UA&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

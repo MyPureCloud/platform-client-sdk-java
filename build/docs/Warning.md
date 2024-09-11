@@ -1,20 +1,14 @@
----
-title: Warning
----
-## Warning
+# Warning
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **value** | <!----><!---->**Integer**<!----> | The value for the warning configuration. |  [optional] |
-| **rangeType** | [**RangeTypeEnum**](#RangeTypeEnum)<!----> | The range type for the warning configuration. |  [optional] |
-| **color** | <!----><!---->**String**<!----> | The color for the warning configuration in RGB hexadecimal format (for example \"#FF0000\" represents red). |  [optional] |
-{: class="table table-striped"}
+| **value** | **Integer** | The value for the warning configuration. |  [optional] |
+| **rangeType** | [**RangeTypeEnum**](#Enum--RangeTypeEnum) | The range type for the warning configuration. |  [optional] |
+| **color** | **String** | The color for the warning configuration in RGB hexadecimal format (for example \"#FF0000\" represents red). |  [optional] |
 
-
-<a name="RangeTypeEnum"></a>
 
 ## Enum: RangeTypeEnum
 
@@ -24,7 +18,8 @@ title: Warning
 | OVER | &quot;OVER&quot; | 
 | UNDER | &quot;UNDER&quot; | 
 | BETWEEN | &quot;BETWEEN&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

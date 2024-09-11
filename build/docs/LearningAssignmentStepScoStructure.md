@@ -1,22 +1,16 @@
----
-title: LearningAssignmentStepScoStructure
----
-## LearningAssignmentStepScoStructure
+# LearningAssignmentStepScoStructure
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The id of this SCO in the course manifest |  [optional] |
-| **name** | <!----><!---->**String**<!----> | The name of this SCO in the course manifest |  [optional] |
-| **successStatus** | [**SuccessStatusEnum**](#SuccessStatusEnum)<!----> | The success status of this SCO |  [optional] |
-| **completionStatus** | [**CompletionStatusEnum**](#CompletionStatusEnum)<!----> | The completion status of this SCO |  [optional] |
-| **children** | <!----><!---->[**List&lt;LearningAssignmentStepScoStructure&gt;**](LearningAssignmentStepScoStructure.html)<!----> | Child items belonging to this SCO in the course manifest |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The id of this SCO in the course manifest |  [optional] |
+| **name** | **String** | The name of this SCO in the course manifest |  [optional] |
+| **successStatus** | [**SuccessStatusEnum**](#Enum--SuccessStatusEnum) | The success status of this SCO |  [optional] |
+| **completionStatus** | [**CompletionStatusEnum**](#Enum--CompletionStatusEnum) | The completion status of this SCO |  [optional] |
+| **children** | [**List&lt;LearningAssignmentStepScoStructure&gt;**](LearningAssignmentStepScoStructure) | Child items belonging to this SCO in the course manifest |  [optional] |
 
-
-<a name="SuccessStatusEnum"></a>
 
 ## Enum: SuccessStatusEnum
 
@@ -26,10 +20,7 @@ title: LearningAssignmentStepScoStructure
 | PASSED | &quot;Passed&quot; | 
 | FAILED | &quot;Failed&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
-
-<a name="CompletionStatusEnum"></a>
 
 ## Enum: CompletionStatusEnum
 
@@ -40,7 +31,8 @@ title: LearningAssignmentStepScoStructure
 | INCOMPLETE | &quot;Incomplete&quot; | 
 | NOTATTEMPTED | &quot;NotAttempted&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

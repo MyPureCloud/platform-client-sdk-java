@@ -1,21 +1,15 @@
----
-title: DialerResponsesetConfigChangeReaction
----
-## DialerResponsesetConfigChangeReaction
+# DialerResponsesetConfigChangeReaction
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **data** | <!----><!---->**String**<!----> |  |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **reactionType** | [**ReactionTypeEnum**](#ReactionTypeEnum)<!----> |  |  [optional] |
-| **additionalProperties** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **data** | **String** |  |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **reactionType** | [**ReactionTypeEnum**](#Enum--ReactionTypeEnum) |  |  [optional] |
+| **additionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
-
-<a name="ReactionTypeEnum"></a>
 
 ## Enum: ReactionTypeEnum
 
@@ -26,7 +20,8 @@ title: DialerResponsesetConfigChangeReaction
 | TRANSFER | &quot;transfer&quot; | 
 | TRANSFER_FLOW | &quot;transfer_flow&quot; | 
 | PLAY_FILE | &quot;play_file&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

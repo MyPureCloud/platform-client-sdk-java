@@ -1,19 +1,13 @@
----
-title: QueryResponseMetric
----
-## QueryResponseMetric
+# QueryResponseMetric
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **metric** | [**MetricEnum**](#MetricEnum)<!----> | The metric this applies to |  [optional] |
-| **stats** | <!----><!---->[**QueryResponseStats**](QueryResponseStats.html)<!----> | The aggregated values for this metric |  [optional] |
-{: class="table table-striped"}
+| **metric** | [**MetricEnum**](#Enum--MetricEnum) | The metric this applies to |  [optional] |
+| **stats** | [**QueryResponseStats**](QueryResponseStats) | The aggregated values for this metric |  [optional] |
 
-
-<a name="MetricEnum"></a>
 
 ## Enum: MetricEnum
 
@@ -26,7 +20,8 @@ title: QueryResponseMetric
 | NCOMPLETEACTIVITIES | &quot;nCompleteActivities&quot; | 
 | NOVERDUEACTIVITIES | &quot;nOverdueActivities&quot; | 
 | NINVALIDSCHEDULEACTIVITIES | &quot;nInvalidScheduleActivities&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

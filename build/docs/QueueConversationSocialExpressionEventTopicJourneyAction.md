@@ -1,16 +1,14 @@
----
-title: QueueConversationSocialExpressionEventTopicJourneyAction
----
-## QueueConversationSocialExpressionEventTopicJourneyAction
+# QueueConversationSocialExpressionEventTopicJourneyAction
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The ID of an action from the Journey System (an action is spawned from an actionMap) |  [optional] |
-| **actionMap** | <!----><!---->[**QueueConversationSocialExpressionEventTopicJourneyActionMap**](QueueConversationSocialExpressionEventTopicJourneyActionMap.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The ID of an action from the Journey System (an action is spawned from an actionMap) |  [optional] |
+| **actionMap** | [**QueueConversationSocialExpressionEventTopicJourneyActionMap**](QueueConversationSocialExpressionEventTopicJourneyActionMap) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

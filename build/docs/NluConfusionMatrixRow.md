@@ -1,16 +1,14 @@
----
-title: NluConfusionMatrixRow
----
-## NluConfusionMatrixRow
+# NluConfusionMatrixRow
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | <!----><!---->**String**<!----> | The name of the intent for the row. |  |
-| **columns** | <!----><!---->[**List&lt;NluConfusionMatrixColumn&gt;**](NluConfusionMatrixColumn.html)<!----> | The columns of confusion matrix for the intent |  |
-{: class="table table-striped"}
+| **name** | **String** | The name of the intent for the row. |  |
+| **columns** | [**List&lt;NluConfusionMatrixColumn&gt;**](NluConfusionMatrixColumn) | The columns of confusion matrix for the intent |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

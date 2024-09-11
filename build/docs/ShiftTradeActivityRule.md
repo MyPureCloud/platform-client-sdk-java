@@ -1,20 +1,14 @@
----
-title: ShiftTradeActivityRule
----
-## ShiftTradeActivityRule
+# ShiftTradeActivityRule
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **activityCategory** | [**ActivityCategoryEnum**](#ActivityCategoryEnum)<!----> | The activity category to which to apply this rule |  |
-| **action** | [**ActionEnum**](#ActionEnum)<!----> | The action this rule invokes |  |
-| **activityCodeIdReplacement** | <!----><!---->**String**<!----> | The activity code ID with which to replace activities belonging to the original category if applicable (required if action == Replace, must be a default activity code ID) |  [optional] |
-{: class="table table-striped"}
+| **activityCategory** | [**ActivityCategoryEnum**](#Enum--ActivityCategoryEnum) | The activity category to which to apply this rule |  |
+| **action** | [**ActionEnum**](#Enum--ActionEnum) | The action this rule invokes |  |
+| **activityCodeIdReplacement** | **String** | The activity code ID with which to replace activities belonging to the original category if applicable (required if action == Replace, must be a default activity code ID) |  [optional] |
 
-
-<a name="ActivityCategoryEnum"></a>
 
 ## Enum: ActivityCategoryEnum
 
@@ -30,10 +24,7 @@ title: ShiftTradeActivityRule
 | TRAINING | &quot;Training&quot; | 
 | UNAVAILABLE | &quot;Unavailable&quot; | 
 | UNSCHEDULED | &quot;Unscheduled&quot; | 
-{: class="table table-striped"}
 
-
-<a name="ActionEnum"></a>
 
 ## Enum: ActionEnum
 
@@ -43,7 +34,8 @@ title: ShiftTradeActivityRule
 | REPLACE | &quot;Replace&quot; | 
 | DONOTALLOWTRADE | &quot;DoNotAllowTrade&quot; | 
 | KEEPWITHSCHEDULE | &quot;KeepWithSchedule&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

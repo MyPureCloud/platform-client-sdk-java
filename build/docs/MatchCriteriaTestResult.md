@@ -1,24 +1,18 @@
----
-title: MatchCriteriaTestResult
----
-## MatchCriteriaTestResult
+# MatchCriteriaTestResult
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **jsonPath** | <!----><!---->**String**<!----> | The Goessner json path of the field to match |  [optional] |
-| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | The type of operation to perform for matching check |  [optional] |
-| **value** | <!----><!---->[**JsonNode**](JsonNode.html)<!----> | The value to match on. Only one of value and values can be included |  [optional] |
-| **values** | <!----><!---->[**List&lt;JsonNode&gt;**](JsonNode.html)<!----> | The list of values to match on. Only one of value and values can be included |  [optional] |
-| **generatedJsonPathCondition** | <!----><!---->**String**<!----> | The generated json path condition |  [optional] |
-| **match** | <!----><!---->**Boolean**<!----> | Did the generated json path condition match |  [optional] |
-| **jsonPathExtraction** | <!----><!---->[**List&lt;MatchTestResult&gt;**](MatchTestResult.html)<!----> | The json paths and their values that were compared |  [optional] |
-{: class="table table-striped"}
+| **jsonPath** | **String** | The Goessner json path of the field to match |  [optional] |
+| **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | The type of operation to perform for matching check |  [optional] |
+| **value** | [**JsonNode**](JsonNode) | The value to match on. Only one of value and values can be included |  [optional] |
+| **values** | [**List&lt;JsonNode&gt;**](JsonNode) | The list of values to match on. Only one of value and values can be included |  [optional] |
+| **generatedJsonPathCondition** | **String** | The generated json path condition |  [optional] |
+| **match** | **Boolean** | Did the generated json path condition match |  [optional] |
+| **jsonPathExtraction** | [**List&lt;MatchTestResult&gt;**](MatchTestResult) | The json paths and their values that were compared |  [optional] |
 
-
-<a name="OperatorEnum"></a>
 
 ## Enum: OperatorEnum
 
@@ -37,7 +31,8 @@ title: MatchCriteriaTestResult
 | ALL | &quot;All&quot; | 
 | EXISTS | &quot;Exists&quot; | 
 | SIZE | &quot;Size&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

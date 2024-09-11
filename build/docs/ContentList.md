@@ -1,24 +1,18 @@
----
-title: ContentList
----
-## ContentList
+# ContentList
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | A unique ID assigned to this rich message content. |  [optional] |
-| **listType** | [**ListTypeEnum**](#ListTypeEnum)<!----> | The type of list this instance represents. |  [optional] |
-| **title** | <!----><!---->**String**<!----> | Text to show in the title. |  [optional] |
-| **description** | <!----><!---->**String**<!----> | Text to show in the description. |  [optional] |
-| **submitLabel** | <!----><!---->**String**<!----> | Label for Submit button. |  [optional] |
-| **actions** | <!----><!---->[**ContentActions**](ContentActions.html)<!----> | The list actions (Deprecated). |  [optional] |
-| **components** | <!----><!---->[**List&lt;ListItemComponent&gt;**](ListItemComponent.html)<!----> | An array of component objects. |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | A unique ID assigned to this rich message content. |  [optional] |
+| **listType** | [**ListTypeEnum**](#Enum--ListTypeEnum) | The type of list this instance represents. |  [optional] |
+| **title** | **String** | Text to show in the title. |  [optional] |
+| **description** | **String** | Text to show in the description. |  [optional] |
+| **submitLabel** | **String** | Label for Submit button. |  [optional] |
+| **actions** | [**ContentActions**](ContentActions) | The list actions (Deprecated). |  [optional] |
+| **components** | [**List&lt;ListItemComponent&gt;**](ListItemComponent) | An array of component objects. |  [optional] |
 
-
-<a name="ListTypeEnum"></a>
 
 ## Enum: ListTypeEnum
 
@@ -27,7 +21,8 @@ title: ContentList
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | SELECTION | &quot;Selection&quot; | 
 | VERTICAL | &quot;Vertical&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

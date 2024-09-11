@@ -1,15 +1,13 @@
----
-title: WfmIntradayDataUpdateTopicIntradayPerformancePredictionAgentData
----
-## WfmIntradayDataUpdateTopicIntradayPerformancePredictionAgentData
+# WfmIntradayDataUpdateTopicIntradayPerformancePredictionAgentData
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **interactingTimeSeconds** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **interactingTimeSeconds** | [**BigDecimal**](BigDecimal) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

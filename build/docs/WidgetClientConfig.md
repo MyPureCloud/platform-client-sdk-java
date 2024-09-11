@@ -1,18 +1,16 @@
----
-title: WidgetClientConfig
----
-## WidgetClientConfig
+# WidgetClientConfig
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **v1** | <!----><!---->[**WidgetClientConfigV1**](WidgetClientConfigV1.html)<!----> |  |  [optional] |
-| **v2** | <!----><!---->**Object**<!----> |  |  [optional] |
-| **v1Http** | <!----><!---->[**WidgetClientConfigV1Http**](WidgetClientConfigV1Http.html)<!----> |  |  [optional] |
-| **thirdParty** | <!----><!---->**Object**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **v1** | [**WidgetClientConfigV1**](WidgetClientConfigV1) |  |  [optional] |
+| **v2** | **Object** |  |  [optional] |
+| **v1Http** | [**WidgetClientConfigV1Http**](WidgetClientConfigV1Http) |  |  [optional] |
+| **thirdParty** | **Object** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,17 +1,15 @@
----
-title: DialerCallabletimesetConfigChangeCallableTime
----
-## DialerCallabletimesetConfigChangeCallableTime
+# DialerCallabletimesetConfigChangeCallableTime
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **timeSlots** | <!----><!---->[**List&lt;DialerCallabletimesetConfigChangeTimeSlot&gt;**](DialerCallabletimesetConfigChangeTimeSlot.html)<!----> | The time slots |  [optional] |
-| **timeZoneId** | <!----><!---->**String**<!----> | The ISO ID for the timezone |  [optional] |
-| **additionalProperties** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **timeSlots** | [**List&lt;DialerCallabletimesetConfigChangeTimeSlot&gt;**](DialerCallabletimesetConfigChangeTimeSlot) | The time slots |  [optional] |
+| **timeZoneId** | **String** | The ISO ID for the timezone |  [optional] |
+| **additionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,23 +1,17 @@
----
-title: StatusChange
----
-## StatusChange
+# StatusChange
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **dateStatusChanged** | <!----><!---->[**Date**](Date.html)<!----> | The date of this status change. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> | The status the change request transitioned to |  [optional] |
-| **previousStatus** | [**PreviousStatusEnum**](#PreviousStatusEnum)<!----> | The status the change request transitioned from |  [optional] |
-| **namespace** | [**NamespaceEnum**](#NamespaceEnum)<!----> | The namespace for the status change |  [optional] |
-| **message** | <!----><!---->**String**<!----> | A short message describing the status change |  [optional] |
-| **rejectReason** | [**RejectReasonEnum**](#RejectReasonEnum)<!----> | The reason for rejecting the limit override request |  [optional] |
-{: class="table table-striped"}
+| **dateStatusChanged** | [**Date**](Date) | The date of this status change. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) | The status the change request transitioned to |  [optional] |
+| **previousStatus** | [**PreviousStatusEnum**](#Enum--PreviousStatusEnum) | The status the change request transitioned from |  [optional] |
+| **namespace** | [**NamespaceEnum**](#Enum--NamespaceEnum) | The namespace for the status change |  [optional] |
+| **message** | **String** | A short message describing the status change |  [optional] |
+| **rejectReason** | [**RejectReasonEnum**](#Enum--RejectReasonEnum) | The reason for rejecting the limit override request |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -37,10 +31,7 @@ title: StatusChange
 | CHANGEIMPLEMENTED | &quot;ChangeImplemented&quot; | 
 | IMPLEMENTINGROLLBACK | &quot;ImplementingRollback&quot; | 
 | ROLLBACKIMPLEMENTED | &quot;RollbackImplemented&quot; | 
-{: class="table table-striped"}
 
-
-<a name="PreviousStatusEnum"></a>
 
 ## Enum: PreviousStatusEnum
 
@@ -60,10 +51,7 @@ title: StatusChange
 | CHANGEIMPLEMENTED | &quot;ChangeImplemented&quot; | 
 | IMPLEMENTINGROLLBACK | &quot;ImplementingRollback&quot; | 
 | ROLLBACKIMPLEMENTED | &quot;RollbackImplemented&quot; | 
-{: class="table table-striped"}
 
-
-<a name="NamespaceEnum"></a>
 
 ## Enum: NamespaceEnum
 
@@ -139,10 +127,7 @@ title: StatusChange
 | WORKFORCE_MANAGEMENT_FORECAST | &quot;workforce.management.forecast&quot; | 
 | WORKFORCE_MANAGEMENT | &quot;workforce.management&quot; | 
 | SYSTEM | &quot;system&quot; | 
-{: class="table table-striped"}
 
-
-<a name="RejectReasonEnum"></a>
 
 ## Enum: RejectReasonEnum
 
@@ -154,7 +139,8 @@ title: StatusChange
 | PLATFORMMISUSE | &quot;PlatformMisuse&quot; | 
 | PLATFORMSTABILITY | &quot;PlatformStability&quot; | 
 | OTHERREASON | &quot;OtherReason&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

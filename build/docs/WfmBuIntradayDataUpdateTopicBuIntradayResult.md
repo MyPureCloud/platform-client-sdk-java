@@ -1,25 +1,19 @@
----
-title: WfmBuIntradayDataUpdateTopicBuIntradayResult
----
-## WfmBuIntradayDataUpdateTopicBuIntradayResult
+# WfmBuIntradayDataUpdateTopicBuIntradayResult
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **startDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **endDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **intervalLengthMinutes** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **intradayDataGroupings** | <!----><!---->[**List&lt;WfmBuIntradayDataUpdateTopicBuIntradayDataGroup&gt;**](WfmBuIntradayDataUpdateTopicBuIntradayDataGroup.html)<!----> |  |  [optional] |
-| **categories** | <!---->[**List&lt;CategoriesEnum&gt;**](#CategoriesEnum)<!----> |  |  [optional] |
-| **noDataReason** | <!----><!---->**String**<!----> |  |  [optional] |
-| **schedule** | <!----><!---->[**WfmBuIntradayDataUpdateTopicBuScheduleReference**](WfmBuIntradayDataUpdateTopicBuScheduleReference.html)<!----> |  |  [optional] |
-| **shortTermForecast** | <!----><!---->[**WfmBuIntradayDataUpdateTopicBuShortTermForecastReference**](WfmBuIntradayDataUpdateTopicBuShortTermForecastReference.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **startDate** | [**Date**](Date) |  |  [optional] |
+| **endDate** | [**Date**](Date) |  |  [optional] |
+| **intervalLengthMinutes** | **Integer** |  |  [optional] |
+| **intradayDataGroupings** | [**List&lt;WfmBuIntradayDataUpdateTopicBuIntradayDataGroup&gt;**](WfmBuIntradayDataUpdateTopicBuIntradayDataGroup) |  |  [optional] |
+| **categories** | [**List<CategoriesEnum>**](#Enum--CategoriesEnum) |  |  [optional] |
+| **noDataReason** | **String** |  |  [optional] |
+| **schedule** | [**WfmBuIntradayDataUpdateTopicBuScheduleReference**](WfmBuIntradayDataUpdateTopicBuScheduleReference) |  |  [optional] |
+| **shortTermForecast** | [**WfmBuIntradayDataUpdateTopicBuShortTermForecastReference**](WfmBuIntradayDataUpdateTopicBuShortTermForecastReference) |  |  [optional] |
 
-
-<a name="CategoriesEnum"></a>
 
 ## Enum: CategoriesEnum
 
@@ -28,7 +22,8 @@ title: WfmBuIntradayDataUpdateTopicBuIntradayResult
 | FORECASTDATA | &quot;ForecastData&quot; |
 | SCHEDULEDATA | &quot;ScheduleData&quot; |
 | PERFORMANCEPREDICTIONDATA | &quot;PerformancePredictionData&quot; |
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

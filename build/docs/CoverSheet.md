@@ -1,16 +1,14 @@
----
-title: CoverSheet
----
-## CoverSheet
+# CoverSheet
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **notes** | <!----><!---->**String**<!----> | Text to be added to the coversheet |  [optional] |
-| **locale** | <!----><!---->**String**<!----> | Locale, e.g. = en-US |  [optional] |
-{: class="table table-striped"}
+| **notes** | **String** | Text to be added to the coversheet |  [optional] |
+| **locale** | **String** | Locale, e.g. = en-US |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

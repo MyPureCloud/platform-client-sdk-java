@@ -1,20 +1,14 @@
----
-title: KnowledgeBaseReference
----
-## KnowledgeBaseReference
+# KnowledgeBaseReference
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the knowledge base. |  |
-| **languageCode** | [**LanguageCodeEnum**](#LanguageCodeEnum)<!----> | Language of the knowledge base |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the knowledge base. |  |
+| **languageCode** | [**LanguageCodeEnum**](#Enum--LanguageCodeEnum) | Language of the knowledge base |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="LanguageCodeEnum"></a>
 
 ## Enum: LanguageCodeEnum
 
@@ -67,7 +61,8 @@ title: KnowledgeBaseReference
 | HU_HU | &quot;hu-HU&quot; | 
 | VI_VN | &quot;vi-VN&quot; | 
 | UK_UA | &quot;uk-UA&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,45 +1,39 @@
----
-title: UserEndDetailEventTopicUserEndEvent
----
-## UserEndDetailEventTopicUserEndEvent
+# UserEndDetailEventTopicUserEndEvent
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **eventTime** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **conversationId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **participantId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **sessionId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum)<!----> |  |  [optional] |
-| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> |  |  [optional] |
-| **provider** | <!----><!---->**String**<!----> |  |  [optional] |
-| **direction** | [**DirectionEnum**](#DirectionEnum)<!----> |  |  [optional] |
-| **ani** | <!----><!---->**String**<!----> |  |  [optional] |
-| **dnis** | <!----><!---->**String**<!----> |  |  [optional] |
-| **addressTo** | <!----><!---->**String**<!----> |  |  [optional] |
-| **addressFrom** | <!----><!---->**String**<!----> |  |  [optional] |
-| **callbackUserName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **callbackNumbers** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **callbackScheduledTime** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **subject** | <!----><!---->**String**<!----> |  |  [optional] |
-| **messageType** | [**MessageTypeEnum**](#MessageTypeEnum)<!----> |  |  [optional] |
-| **userId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **divisionId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **queueId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **interactingDurationMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **heldDurationMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **alertingDurationMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **contactingDurationMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **dialingDurationMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **callbackDurationMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **conversationExternalContactIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **conversationExternalOrganizationIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **eventTime** | **Integer** |  |  [optional] |
+| **conversationId** | **String** |  |  [optional] |
+| **participantId** | **String** |  |  [optional] |
+| **sessionId** | **String** |  |  [optional] |
+| **disconnectType** | [**DisconnectTypeEnum**](#Enum--DisconnectTypeEnum) |  |  [optional] |
+| **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) |  |  [optional] |
+| **provider** | **String** |  |  [optional] |
+| **direction** | [**DirectionEnum**](#Enum--DirectionEnum) |  |  [optional] |
+| **ani** | **String** |  |  [optional] |
+| **dnis** | **String** |  |  [optional] |
+| **addressTo** | **String** |  |  [optional] |
+| **addressFrom** | **String** |  |  [optional] |
+| **callbackUserName** | **String** |  |  [optional] |
+| **callbackNumbers** | **List&lt;String&gt;** |  |  [optional] |
+| **callbackScheduledTime** | **Integer** |  |  [optional] |
+| **subject** | **String** |  |  [optional] |
+| **messageType** | [**MessageTypeEnum**](#Enum--MessageTypeEnum) |  |  [optional] |
+| **userId** | **String** |  |  [optional] |
+| **divisionId** | **String** |  |  [optional] |
+| **queueId** | **String** |  |  [optional] |
+| **interactingDurationMs** | **Integer** |  |  [optional] |
+| **heldDurationMs** | **Integer** |  |  [optional] |
+| **alertingDurationMs** | **Integer** |  |  [optional] |
+| **contactingDurationMs** | **Integer** |  |  [optional] |
+| **dialingDurationMs** | **Integer** |  |  [optional] |
+| **callbackDurationMs** | **Integer** |  |  [optional] |
+| **conversationExternalContactIds** | **List&lt;String&gt;** |  |  [optional] |
+| **conversationExternalOrganizationIds** | **List&lt;String&gt;** |  |  [optional] |
 
-
-<a name="DisconnectTypeEnum"></a>
 
 ## Enum: DisconnectTypeEnum
 
@@ -65,10 +59,7 @@ title: UserEndDetailEventTopicUserEndEvent
 | UNCALLABLE | &quot;UNCALLABLE&quot; | 
 | DND_ENDPOINT | &quot;DND_ENDPOINT&quot; | 
 | DND_TRANSFER | &quot;DND_TRANSFER&quot; | 
-{: class="table table-striped"}
 
-
-<a name="MediaTypeEnum"></a>
 
 ## Enum: MediaTypeEnum
 
@@ -84,10 +75,7 @@ title: UserEndDetailEventTopicUserEndEvent
 | VIDEO | &quot;VIDEO&quot; | 
 | SCREENSHARE | &quot;SCREENSHARE&quot; | 
 | MESSAGE | &quot;MESSAGE&quot; | 
-{: class="table table-striped"}
 
-
-<a name="DirectionEnum"></a>
 
 ## Enum: DirectionEnum
 
@@ -97,10 +85,7 @@ title: UserEndDetailEventTopicUserEndEvent
 | UNKNOWN | &quot;UNKNOWN&quot; | 
 | INBOUND | &quot;INBOUND&quot; | 
 | OUTBOUND | &quot;OUTBOUND&quot; | 
-{: class="table table-striped"}
 
-
-<a name="MessageTypeEnum"></a>
 
 ## Enum: MessageTypeEnum
 
@@ -117,7 +102,8 @@ title: UserEndDetailEventTopicUserEndEvent
 | OPEN | &quot;OPEN&quot; | 
 | INSTAGRAM | &quot;INSTAGRAM&quot; | 
 | APPLE | &quot;APPLE&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

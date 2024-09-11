@@ -1,16 +1,14 @@
----
-title: ArchitectFlowFields
----
-## ArchitectFlowFields
+# ArchitectFlowFields
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **architectFlow** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | The architect flow. |  [optional] |
-| **flowRequestMappings** | <!----><!---->[**List&lt;RequestMapping&gt;**](RequestMapping.html)<!----> | Collection of Architect Flow Request Mappings to use. |  [optional] |
-{: class="table table-striped"}
+| **architectFlow** | [**AddressableEntityRef**](AddressableEntityRef) | The architect flow. |  [optional] |
+| **flowRequestMappings** | [**List&lt;RequestMapping&gt;**](RequestMapping) | Collection of Architect Flow Request Mappings to use. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

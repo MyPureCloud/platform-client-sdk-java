@@ -1,22 +1,16 @@
----
-title: ContactIdentifier
----
-## ContactIdentifier
+# ContactIdentifier
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of this identifier |  |
-| **value** | <!----><!---->**String**<!----> | The string value of the identifier. Will vary in syntax by type. |  |
-| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of this identifier |  |
+| **value** | **String** | The string value of the identifier. Will vary in syntax by type. |  |
+| **dateCreated** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -31,7 +25,8 @@ title: ContactIdentifier
 | PHONE | &quot;Phone&quot; | 
 | COOKIE | &quot;Cookie&quot; | 
 | EXTERNALID | &quot;ExternalId&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

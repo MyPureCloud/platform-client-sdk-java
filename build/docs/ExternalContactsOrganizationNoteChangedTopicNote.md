@@ -1,25 +1,19 @@
----
-title: ExternalContactsOrganizationNoteChangedTopicNote
----
-## ExternalContactsOrganizationNoteChangedTopicNote
+# ExternalContactsOrganizationNoteChangedTopicNote
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **division** | <!----><!---->[**ExternalContactsOrganizationNoteChangedTopicDivision**](ExternalContactsOrganizationNoteChangedTopicDivision.html)<!----> |  |  [optional] |
-| **entityId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **entityType** | [**EntityTypeEnum**](#EntityTypeEnum)<!----> |  |  [optional] |
-| **noteText** | <!----><!---->**String**<!----> |  |  [optional] |
-| **createdBy** | <!----><!---->[**ExternalContactsOrganizationNoteChangedTopicUser**](ExternalContactsOrganizationNoteChangedTopicUser.html)<!----> |  |  [optional] |
-| **createDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **modifyDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **division** | [**ExternalContactsOrganizationNoteChangedTopicDivision**](ExternalContactsOrganizationNoteChangedTopicDivision) |  |  [optional] |
+| **entityId** | **String** |  |  [optional] |
+| **entityType** | [**EntityTypeEnum**](#Enum--EntityTypeEnum) |  |  [optional] |
+| **noteText** | **String** |  |  [optional] |
+| **createdBy** | [**ExternalContactsOrganizationNoteChangedTopicUser**](ExternalContactsOrganizationNoteChangedTopicUser) |  |  [optional] |
+| **createDate** | [**Date**](Date) |  |  [optional] |
+| **modifyDate** | [**Date**](Date) |  |  [optional] |
 
-
-<a name="EntityTypeEnum"></a>
 
 ## Enum: EntityTypeEnum
 
@@ -28,7 +22,8 @@ title: ExternalContactsOrganizationNoteChangedTopicNote
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | CONTACT | &quot;Contact&quot; | 
 | ORGANIZATION | &quot;Organization&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

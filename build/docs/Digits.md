@@ -1,15 +1,13 @@
----
-title: Digits
----
-## Digits
+# Digits
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **digits** | <!----><!---->**String**<!----> | A string representing the digits pressed on phone. |  [optional] |
-{: class="table table-striped"}
+| **digits** | **String** | A string representing the digits pressed on phone. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

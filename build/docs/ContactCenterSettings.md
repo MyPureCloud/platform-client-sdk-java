@@ -1,15 +1,13 @@
----
-title: ContactCenterSettings
----
-## ContactCenterSettings
+# ContactCenterSettings
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **removeSkillsFromBlindTransfer** | <!----><!---->**Boolean**<!----> | Strip skills from transfer |  [optional] |
-{: class="table table-striped"}
+| **removeSkillsFromBlindTransfer** | **Boolean** | Strip skills from transfer |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

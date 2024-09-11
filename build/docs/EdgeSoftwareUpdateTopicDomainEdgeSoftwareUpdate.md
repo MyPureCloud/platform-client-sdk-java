@@ -1,22 +1,16 @@
----
-title: EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate
----
-## EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate
+# EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
-| **downloadStartTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **executeStartTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **executeStopTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
+| **downloadStartTime** | [**Date**](Date) |  |  [optional] |
+| **executeStartTime** | [**Date**](Date) |  |  [optional] |
+| **executeStopTime** | [**Date**](Date) |  |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -32,7 +26,8 @@ title: EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate
 | FAILED | &quot;FAILED&quot; | 
 | SUCCEEDED | &quot;SUCCEEDED&quot; | 
 | DELETE | &quot;DELETE&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,19 +1,13 @@
----
-title: WorkitemsEventsNotificationCustomAttribute
----
-## WorkitemsEventsNotificationCustomAttribute
+# WorkitemsEventsNotificationCustomAttribute
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **dataType** | [**DataTypeEnum**](#DataTypeEnum)<!----> |  |  [optional] |
-| **value** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **dataType** | [**DataTypeEnum**](#Enum--DataTypeEnum) |  |  [optional] |
+| **value** | **String** |  |  [optional] |
 
-
-<a name="DataTypeEnum"></a>
 
 ## Enum: DataTypeEnum
 
@@ -25,7 +19,8 @@ title: WorkitemsEventsNotificationCustomAttribute
 | NUMBER | &quot;number&quot; | 
 | BOOLEAN$ | &quot;boolean$&quot; | 
 | INTEGER | &quot;integer&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

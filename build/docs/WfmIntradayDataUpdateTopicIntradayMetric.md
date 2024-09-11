@@ -1,19 +1,13 @@
----
-title: WfmIntradayDataUpdateTopicIntradayMetric
----
-## WfmIntradayDataUpdateTopicIntradayMetric
+# WfmIntradayDataUpdateTopicIntradayMetric
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **category** | [**CategoryEnum**](#CategoryEnum)<!----> |  |  [optional] |
-| **version** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **category** | [**CategoryEnum**](#Enum--CategoryEnum) |  |  [optional] |
+| **version** | **String** |  |  [optional] |
 
-
-<a name="CategoryEnum"></a>
 
 ## Enum: CategoryEnum
 
@@ -26,7 +20,8 @@ title: WfmIntradayDataUpdateTopicIntradayMetric
 | SCHEDULEDATA | &quot;ScheduleData&quot; | 
 | PERFORMANCEPREDICTIONAGENTDATA | &quot;PerformancePredictionAgentData&quot; | 
 | PERFORMANCEPREDICTIONQUEUEDATA | &quot;PerformancePredictionQueueData&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

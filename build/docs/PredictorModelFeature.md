@@ -1,20 +1,14 @@
----
-title: PredictorModelFeature
----
-## PredictorModelFeature
+# PredictorModelFeature
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of feature. |  [optional] |
-| **percentageImportance** | <!----><!---->**Double**<!----> | The percentage of how important a feature is in the model. |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of feature. |  [optional] |
+| **percentageImportance** | **Double** | The percentage of how important a feature is in the model. |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -24,7 +18,8 @@ title: PredictorModelFeature
 | USER | &quot;User&quot; | 
 | CUSTOMER | &quot;Customer&quot; | 
 | OTHER | &quot;Other&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

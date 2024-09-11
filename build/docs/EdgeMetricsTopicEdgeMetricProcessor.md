@@ -1,19 +1,17 @@
----
-title: EdgeMetricsTopicEdgeMetricProcessor
----
-## EdgeMetricsTopicEdgeMetricProcessor
+# EdgeMetricsTopicEdgeMetricProcessor
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **cpuId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **idleTimePct** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **activeTimePct** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **privilegedTimePct** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **userTimePct** | <!----><!---->**Integer**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **cpuId** | **String** |  |  [optional] |
+| **idleTimePct** | **Integer** |  |  [optional] |
+| **activeTimePct** | **Integer** |  |  [optional] |
+| **privilegedTimePct** | **Integer** |  |  [optional] |
+| **userTimePct** | **Integer** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

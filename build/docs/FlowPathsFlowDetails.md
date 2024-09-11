@@ -1,21 +1,15 @@
----
-title: FlowPathsFlowDetails
----
-## FlowPathsFlowDetails
+# FlowPathsFlowDetails
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **version** | <!----><!---->**String**<!----> | The version of the flow. |  |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of the flow. |  |
-| **count** | <!----><!---->**Integer**<!----> | Count of all journeys that include this element in the given flow. |  |
-| **flow** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | The identifier of the flow. |  |
-{: class="table table-striped"}
+| **version** | **String** | The version of the flow. |  |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of the flow. |  |
+| **count** | **Integer** | Count of all journeys that include this element in the given flow. |  |
+| **flow** | [**AddressableEntityRef**](AddressableEntityRef) | The identifier of the flow. |  |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -29,7 +23,8 @@ title: FlowPathsFlowDetails
 | INBOUNDSHORTMESSAGE | &quot;InboundShortMessage&quot; | 
 | INBOUNDEMAIL | &quot;InboundEmail&quot; | 
 | OUTBOUNDCALL | &quot;OutboundCall&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

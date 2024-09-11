@@ -1,25 +1,19 @@
----
-title: KnowledgeDocumentsAnswerFilter
----
-## KnowledgeDocumentsAnswerFilter
+# KnowledgeDocumentsAnswerFilter
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **query** | <!----><!---->**String**<!----> | The search query. |  [optional] |
-| **language** | [**LanguageEnum**](#LanguageEnum)<!----> | The language of the documents. |  [optional] |
-| **appType** | [**AppTypeEnum**](#AppTypeEnum)<!----> | The appType |  [optional] |
-| **queryType** | [**QueryTypeEnum**](#QueryTypeEnum)<!----> | The query type |  [optional] |
-| **searchId** | <!----><!---->**String**<!----> | The search id. |  [optional] |
-| **insertHighlightIntoVariationContent** | <!----><!---->**Boolean**<!----> | If specified - insert highlight data into the variation content. |  [optional] |
-| **answerMode** | <!---->[**List&lt;AnswerModeEnum&gt;**](#AnswerModeEnum)<!----> | Allows extracted answers from an article (AnswerHighlight) and/or AI-generated answers (AnswerGeneration). Default mode: AnswerHighlight |  [optional] |
-| **variationIds** | <!----><!---->**List&lt;String&gt;**<!----> | The variation Ids to answer. |  |
-{: class="table table-striped"}
+| **query** | **String** | The search query. |  [optional] |
+| **language** | [**LanguageEnum**](#Enum--LanguageEnum) | The language of the documents. |  [optional] |
+| **appType** | [**AppTypeEnum**](#Enum--AppTypeEnum) | The appType |  [optional] |
+| **queryType** | [**QueryTypeEnum**](#Enum--QueryTypeEnum) | The query type |  [optional] |
+| **searchId** | **String** | The search id. |  [optional] |
+| **insertHighlightIntoVariationContent** | **Boolean** | If specified - insert highlight data into the variation content. |  [optional] |
+| **answerMode** | [**List<AnswerModeEnum>**](#Enum--AnswerModeEnum) | Allows extracted answers from an article (AnswerHighlight) and/or AI-generated answers (AnswerGeneration). Default mode: AnswerHighlight |  [optional] |
+| **variationIds** | **List&lt;String&gt;** | The variation Ids to answer. |  |
 
-
-<a name="LanguageEnum"></a>
 
 ## Enum: LanguageEnum
 
@@ -72,10 +66,7 @@ title: KnowledgeDocumentsAnswerFilter
 | HU_HU | &quot;hu-HU&quot; | 
 | VI_VN | &quot;vi-VN&quot; | 
 | UK_UA | &quot;uk-UA&quot; | 
-{: class="table table-striped"}
 
-
-<a name="AppTypeEnum"></a>
 
 ## Enum: AppTypeEnum
 
@@ -87,10 +78,7 @@ title: KnowledgeDocumentsAnswerFilter
 | MESSENGERKNOWLEDGEAPP | &quot;MessengerKnowledgeApp&quot; | 
 | SMARTADVISOR | &quot;SmartAdvisor&quot; | 
 | SUPPORTCENTER | &quot;SupportCenter&quot; | 
-{: class="table table-striped"}
 
-
-<a name="QueryTypeEnum"></a>
 
 ## Enum: QueryTypeEnum
 
@@ -104,10 +92,7 @@ title: KnowledgeDocumentsAnswerFilter
 | MANUALSEARCH | &quot;ManualSearch&quot; | 
 | RECOMMENDATION | &quot;Recommendation&quot; | 
 | SUGGESTION | &quot;Suggestion&quot; | 
-{: class="table table-striped"}
 
-
-<a name="AnswerModeEnum"></a>
 
 ## Enum: AnswerModeEnum
 
@@ -115,7 +100,8 @@ title: KnowledgeDocumentsAnswerFilter
 | ---- | ----- |
 | ANSWERHIGHLIGHT | &quot;AnswerHighlight&quot; |
 | ANSWERGENERATION | &quot;AnswerGeneration&quot; |
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

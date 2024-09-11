@@ -1,20 +1,14 @@
----
-title: WorkitemQueryJobFilter
----
-## WorkitemQueryJobFilter
+# WorkitemQueryJobFilter
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | <!----><!---->**String**<!----> | Attribute name. |  |
-| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | Filter operator. |  |
-| **values** | <!----><!---->**List&lt;String&gt;**<!----> | List of values to be used in the filter. |  |
-{: class="table table-striped"}
+| **name** | **String** | Attribute name. |  |
+| **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | Filter operator. |  |
+| **values** | **List&lt;String&gt;** | List of values to be used in the filter. |  |
 
-
-<a name="OperatorEnum"></a>
 
 ## Enum: OperatorEnum
 
@@ -31,7 +25,8 @@ title: WorkitemQueryJobFilter
 | CONTAINS | &quot;CONTAINS&quot; | 
 | BETWEEN | &quot;BETWEEN&quot; | 
 | BEGINS_WITH | &quot;BEGINS_WITH&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

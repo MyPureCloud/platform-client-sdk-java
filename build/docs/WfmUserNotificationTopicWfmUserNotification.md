@@ -1,28 +1,22 @@
----
-title: WfmUserNotificationTopicWfmUserNotification
----
-## WfmUserNotificationTopicWfmUserNotification
+# WfmUserNotificationTopicWfmUserNotification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **mutableGroupId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **timestamp** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-| **shiftTrade** | <!----><!---->[**WfmUserNotificationTopicShiftTradeNotification**](WfmUserNotificationTopicShiftTradeNotification.html)<!----> |  |  [optional] |
-| **timeOffRequest** | <!----><!---->[**WfmUserNotificationTopicTimeOffRequestNotification**](WfmUserNotificationTopicTimeOffRequestNotification.html)<!----> |  |  [optional] |
-| **adherenceExplanation** | <!----><!---->[**WfmUserNotificationTopicAdherenceExplanationNotification**](WfmUserNotificationTopicAdherenceExplanationNotification.html)<!----> |  |  [optional] |
-| **alternativeShift** | <!----><!---->[**WfmUserNotificationTopicAlternativeShiftNotification**](WfmUserNotificationTopicAlternativeShiftNotification.html)<!----> |  |  [optional] |
-| **agentNotification** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **otherNotificationIdsInGroup** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **markedAsRead** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **mutableGroupId** | **String** |  |  [optional] |
+| **timestamp** | [**Date**](Date) |  |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
+| **shiftTrade** | [**WfmUserNotificationTopicShiftTradeNotification**](WfmUserNotificationTopicShiftTradeNotification) |  |  [optional] |
+| **timeOffRequest** | [**WfmUserNotificationTopicTimeOffRequestNotification**](WfmUserNotificationTopicTimeOffRequestNotification) |  |  [optional] |
+| **adherenceExplanation** | [**WfmUserNotificationTopicAdherenceExplanationNotification**](WfmUserNotificationTopicAdherenceExplanationNotification) |  |  [optional] |
+| **alternativeShift** | [**WfmUserNotificationTopicAlternativeShiftNotification**](WfmUserNotificationTopicAlternativeShiftNotification) |  |  [optional] |
+| **agentNotification** | **Boolean** |  |  [optional] |
+| **otherNotificationIdsInGroup** | **List&lt;String&gt;** |  |  [optional] |
+| **markedAsRead** | **Boolean** |  |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -33,7 +27,8 @@ title: WfmUserNotificationTopicWfmUserNotification
 | TIMEOFFREQUEST | &quot;TimeOffRequest&quot; | 
 | ADHERENCEEXPLANATION | &quot;AdherenceExplanation&quot; | 
 | ALTERNATIVESHIFT | &quot;AlternativeShift&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

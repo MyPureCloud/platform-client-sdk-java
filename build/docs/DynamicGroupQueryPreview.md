@@ -1,15 +1,13 @@
----
-title: DynamicGroupQueryPreview
----
-## DynamicGroupQueryPreview
+# DynamicGroupQueryPreview
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **userCount** | <!----><!---->**Integer**<!----> | Number of Users that match the DynamicGroupQuery |  [optional] |
-{: class="table table-striped"}
+| **userCount** | **Integer** | Number of Users that match the DynamicGroupQuery |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

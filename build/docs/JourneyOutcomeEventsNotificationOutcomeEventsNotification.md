@@ -1,27 +1,21 @@
----
-title: JourneyOutcomeEventsNotificationOutcomeEventsNotification
----
-## JourneyOutcomeEventsNotificationOutcomeEventsNotification
+# JourneyOutcomeEventsNotificationOutcomeEventsNotification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **correlationId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **externalContact** | <!----><!---->[**JourneyOutcomeEventsNotificationExternalContact**](JourneyOutcomeEventsNotificationExternalContact.html)<!----> |  |  [optional] |
-| **createdDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **customerId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **customerIdType** | <!----><!---->**String**<!----> |  |  [optional] |
-| **session** | <!----><!---->[**JourneyOutcomeEventsNotificationSession**](JourneyOutcomeEventsNotificationSession.html)<!----> |  |  [optional] |
-| **eventType** | [**EventTypeEnum**](#EventTypeEnum)<!----> |  |  [optional] |
-| **outcomeAchievedEvent** | <!----><!---->[**JourneyOutcomeEventsNotificationOutcomeAchievedMessage**](JourneyOutcomeEventsNotificationOutcomeAchievedMessage.html)<!----> |  |  [optional] |
-| **outcomeAttributionEventMessage** | <!----><!---->[**JourneyOutcomeEventsNotificationOutcomeAttributionMessage**](JourneyOutcomeEventsNotificationOutcomeAttributionMessage.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **correlationId** | **String** |  |  [optional] |
+| **externalContact** | [**JourneyOutcomeEventsNotificationExternalContact**](JourneyOutcomeEventsNotificationExternalContact) |  |  [optional] |
+| **createdDate** | [**Date**](Date) |  |  [optional] |
+| **customerId** | **String** |  |  [optional] |
+| **customerIdType** | **String** |  |  [optional] |
+| **session** | [**JourneyOutcomeEventsNotificationSession**](JourneyOutcomeEventsNotificationSession) |  |  [optional] |
+| **eventType** | [**EventTypeEnum**](#Enum--EventTypeEnum) |  |  [optional] |
+| **outcomeAchievedEvent** | [**JourneyOutcomeEventsNotificationOutcomeAchievedMessage**](JourneyOutcomeEventsNotificationOutcomeAchievedMessage) |  |  [optional] |
+| **outcomeAttributionEventMessage** | [**JourneyOutcomeEventsNotificationOutcomeAttributionMessage**](JourneyOutcomeEventsNotificationOutcomeAttributionMessage) |  |  [optional] |
 
-
-<a name="EventTypeEnum"></a>
 
 ## Enum: EventTypeEnum
 
@@ -30,7 +24,8 @@ title: JourneyOutcomeEventsNotificationOutcomeEventsNotification
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | OUTCOMEACHIEVEDEVENT | &quot;OutcomeAchievedEvent&quot; | 
 | OUTCOMEATTRIBUTIONEVENT | &quot;OutcomeAttributionEvent&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

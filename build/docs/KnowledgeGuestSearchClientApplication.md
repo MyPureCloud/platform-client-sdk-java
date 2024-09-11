@@ -1,21 +1,15 @@
----
-title: KnowledgeGuestSearchClientApplication
----
-## KnowledgeGuestSearchClientApplication
+# KnowledgeGuestSearchClientApplication
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Application type. |  |
-| **deployment** | <!----><!---->[**EntityReference**](EntityReference.html)<!----> | Application details when type is MessengerKnowledgeApp or SupportCenter. |  [optional] |
-| **botFlow** | <!----><!---->[**EntityReference**](EntityReference.html)<!----> | Application details when type is BotFlow. |  [optional] |
-| **assistant** | <!----><!---->[**EntityReference**](EntityReference.html)<!----> | Application details when type is Assistant. |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Application type. |  |
+| **deployment** | [**EntityReference**](EntityReference) | Application details when type is MessengerKnowledgeApp or SupportCenter. |  [optional] |
+| **botFlow** | [**EntityReference**](EntityReference) | Application details when type is BotFlow. |  [optional] |
+| **assistant** | [**EntityReference**](EntityReference) | Application details when type is Assistant. |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -27,7 +21,8 @@ title: KnowledgeGuestSearchClientApplication
 | MESSENGERKNOWLEDGEAPP | &quot;MessengerKnowledgeApp&quot; | 
 | SMARTADVISOR | &quot;SmartAdvisor&quot; | 
 | SUPPORTCENTER | &quot;SupportCenter&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,19 +1,13 @@
----
-title: LearningAssignmentUpdate
----
-## LearningAssignmentUpdate
+# LearningAssignmentUpdate
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **state** | [**StateEnum**](#StateEnum)<!----> | The Learning Assignment state |  [optional] |
-| **assessment** | <!----><!---->[**LearningAssessment**](LearningAssessment.html)<!----> | An updated Assessment |  [optional] |
-{: class="table table-striped"}
+| **state** | [**StateEnum**](#Enum--StateEnum) | The Learning Assignment state |  [optional] |
+| **assessment** | [**LearningAssessment**](LearningAssessment) | An updated Assessment |  [optional] |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -26,7 +20,8 @@ title: LearningAssignmentUpdate
 | DELETED | &quot;Deleted&quot; | 
 | NOTCOMPLETED | &quot;NotCompleted&quot; | 
 | INVALIDSCHEDULE | &quot;InvalidSchedule&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

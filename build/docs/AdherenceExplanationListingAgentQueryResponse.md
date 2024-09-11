@@ -1,15 +1,13 @@
----
-title: AdherenceExplanationListingAgentQueryResponse
----
-## AdherenceExplanationListingAgentQueryResponse
+# AdherenceExplanationListingAgentQueryResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | <!----><!---->[**List&lt;AdherenceExplanationResponse&gt;**](AdherenceExplanationResponse.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **entities** | [**List&lt;AdherenceExplanationResponse&gt;**](AdherenceExplanationResponse) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

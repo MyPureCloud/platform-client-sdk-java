@@ -1,24 +1,18 @@
----
-title: TransferResponse
----
-## TransferResponse
+# TransferResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The id of the command. |  [optional] |
-| **state** | [**StateEnum**](#StateEnum)<!----> | The state of the command. |  [optional] |
-| **dateIssued** | <!----><!---->[**Date**](Date.html)<!----> | The date/time that this command was issued. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **initiator** | <!----><!---->[**TransferInitiator**](TransferInitiator.html)<!----> | The initiator of the command. |  [optional] |
-| **modifiedBy** | <!----><!---->[**TransferResponseModifiedBy**](TransferResponseModifiedBy.html)<!----> | The user or entity that modified the command. |  [optional] |
-| **destination** | <!----><!---->[**TransferDestination**](TransferDestination.html)<!----> | The destination of the command. |  [optional] |
-| **transferType** | [**TransferTypeEnum**](#TransferTypeEnum)<!----> | The type of transfer to perform. |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The id of the command. |  [optional] |
+| **state** | [**StateEnum**](#Enum--StateEnum) | The state of the command. |  [optional] |
+| **dateIssued** | [**Date**](Date) | The date/time that this command was issued. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **initiator** | [**TransferInitiator**](TransferInitiator) | The initiator of the command. |  [optional] |
+| **modifiedBy** | [**TransferResponseModifiedBy**](TransferResponseModifiedBy) | The user or entity that modified the command. |  [optional] |
+| **destination** | [**TransferDestination**](TransferDestination) | The destination of the command. |  [optional] |
+| **transferType** | [**TransferTypeEnum**](#Enum--TransferTypeEnum) | The type of transfer to perform. |  [optional] |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -32,10 +26,7 @@ title: TransferResponse
 | FAILED | &quot;Failed&quot; | 
 | TIMEOUT | &quot;Timeout&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
-
-<a name="TransferTypeEnum"></a>
 
 ## Enum: TransferTypeEnum
 
@@ -44,7 +35,8 @@ title: TransferResponse
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ATTENDED | &quot;Attended&quot; | 
 | UNATTENDED | &quot;Unattended&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

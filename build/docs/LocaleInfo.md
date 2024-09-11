@@ -1,20 +1,14 @@
----
-title: LocaleInfo
----
-## LocaleInfo
+# LocaleInfo
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> | Status of health computation for this flow version. |  [optional] |
-| **errorInfo** | <!----><!---->[**FlowHealthErrorInfo**](FlowHealthErrorInfo.html)<!----> | Error details for the flow version, if any. |  [optional] |
-| **flowVersionInfo** | <!----><!---->[**LocaleFlowVersionInfo**](LocaleFlowVersionInfo.html)<!----> | Info about given flow version. |  [optional] |
-{: class="table table-striped"}
+| **status** | [**StatusEnum**](#Enum--StatusEnum) | Status of health computation for this flow version. |  [optional] |
+| **errorInfo** | [**FlowHealthErrorInfo**](FlowHealthErrorInfo) | Error details for the flow version, if any. |  [optional] |
+| **flowVersionInfo** | [**LocaleFlowVersionInfo**](LocaleFlowVersionInfo) | Info about given flow version. |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -24,7 +18,8 @@ title: LocaleInfo
 | INPROGRESS | &quot;InProgress&quot; | 
 | COMPLETED | &quot;Completed&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

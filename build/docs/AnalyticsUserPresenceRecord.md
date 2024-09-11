@@ -1,21 +1,15 @@
----
-title: AnalyticsUserPresenceRecord
----
-## AnalyticsUserPresenceRecord
+# AnalyticsUserPresenceRecord
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **startTime** | <!----><!---->[**Date**](Date.html)<!----> | The start time of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **endTime** | <!----><!---->[**Date**](Date.html)<!----> | The end time of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **systemPresence** | [**SystemPresenceEnum**](#SystemPresenceEnum)<!----> | The user's system presence |  [optional] |
-| **organizationPresenceId** | <!----><!---->**String**<!----> | The identifier for the user's organization presence |  [optional] |
-{: class="table table-striped"}
+| **startTime** | [**Date**](Date) | The start time of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **endTime** | [**Date**](Date) | The end time of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **systemPresence** | [**SystemPresenceEnum**](#Enum--SystemPresenceEnum) | The user's system presence |  [optional] |
+| **organizationPresenceId** | **String** | The identifier for the user's organization presence |  [optional] |
 
-
-<a name="SystemPresenceEnum"></a>
 
 ## Enum: SystemPresenceEnum
 
@@ -32,7 +26,8 @@ title: AnalyticsUserPresenceRecord
 | TRAINING | &quot;TRAINING&quot; | 
 | MEETING | &quot;MEETING&quot; | 
 | BREAK | &quot;BREAK&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

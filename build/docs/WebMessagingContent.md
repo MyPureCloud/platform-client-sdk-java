@@ -1,24 +1,18 @@
----
-title: WebMessagingContent
----
-## WebMessagingContent
+# WebMessagingContent
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **contentType** | [**ContentTypeEnum**](#ContentTypeEnum)<!----> | Type of this content element. If contentType = \"Attachment\" only one item is allowed. |  [optional] |
-| **attachment** | <!----><!---->[**WebMessagingAttachment**](WebMessagingAttachment.html)<!----> | Attachment content. |  [optional] |
-| **quickReply** | <!----><!---->[**WebMessagingQuickReply**](WebMessagingQuickReply.html)<!----> | Quick reply content. |  [optional] |
-| **buttonResponse** | <!----><!---->[**WebMessagingButtonResponse**](WebMessagingButtonResponse.html)<!----> | Button response content. |  [optional] |
-| **generic** | <!----><!---->[**WebMessagingGeneric**](WebMessagingGeneric.html)<!----> | Generic content (Deprecated). |  [optional] |
-| **card** | <!----><!---->[**ContentCard**](ContentCard.html)<!----> | Card content |  [optional] |
-| **carousel** | <!----><!---->[**ContentCarousel**](ContentCarousel.html)<!----> | Carousel content |  [optional] |
-{: class="table table-striped"}
+| **contentType** | [**ContentTypeEnum**](#Enum--ContentTypeEnum) | Type of this content element. If contentType = \"Attachment\" only one item is allowed. |  [optional] |
+| **attachment** | [**WebMessagingAttachment**](WebMessagingAttachment) | Attachment content. |  [optional] |
+| **quickReply** | [**WebMessagingQuickReply**](WebMessagingQuickReply) | Quick reply content. |  [optional] |
+| **buttonResponse** | [**WebMessagingButtonResponse**](WebMessagingButtonResponse) | Button response content. |  [optional] |
+| **generic** | [**WebMessagingGeneric**](WebMessagingGeneric) | Generic content (Deprecated). |  [optional] |
+| **card** | [**ContentCard**](ContentCard) | Card content |  [optional] |
+| **carousel** | [**ContentCarousel**](ContentCarousel) | Carousel content |  [optional] |
 
-
-<a name="ContentTypeEnum"></a>
 
 ## Enum: ContentTypeEnum
 
@@ -31,7 +25,8 @@ title: WebMessagingContent
 | GENERICTEMPLATE | &quot;GenericTemplate&quot; | 
 | CARD | &quot;Card&quot; | 
 | CAROUSEL | &quot;Carousel&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,22 +1,16 @@
----
-title: WorkdayValuesMetricItem
----
-## WorkdayValuesMetricItem
+# WorkdayValuesMetricItem
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **metric** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | Gamification metric for the average and the trend |  [optional] |
-| **metricDefinition** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | Gamification metric definition for the average and the trend |  [optional] |
-| **average** | <!----><!---->**Double**<!----> | The average value of the metric |  [optional] |
-| **unitType** | [**UnitTypeEnum**](#UnitTypeEnum)<!----> | The unit type of the metric value |  [optional] |
-| **trend** | <!----><!---->[**List&lt;WorkdayValuesTrendItem&gt;**](WorkdayValuesTrendItem.html)<!----> | The metric value trend |  [optional] |
-{: class="table table-striped"}
+| **metric** | [**AddressableEntityRef**](AddressableEntityRef) | Gamification metric for the average and the trend |  [optional] |
+| **metricDefinition** | [**DomainEntityRef**](DomainEntityRef) | Gamification metric definition for the average and the trend |  [optional] |
+| **average** | **Double** | The average value of the metric |  [optional] |
+| **unitType** | [**UnitTypeEnum**](#Enum--UnitTypeEnum) | The unit type of the metric value |  [optional] |
+| **trend** | [**List&lt;WorkdayValuesTrendItem&gt;**](WorkdayValuesTrendItem) | The metric value trend |  [optional] |
 
-
-<a name="UnitTypeEnum"></a>
 
 ## Enum: UnitTypeEnum
 
@@ -30,7 +24,8 @@ title: WorkdayValuesMetricItem
 | NUMBER | &quot;Number&quot; | 
 | ATTENDANCESTATUS | &quot;AttendanceStatus&quot; | 
 | UNIT | &quot;Unit&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

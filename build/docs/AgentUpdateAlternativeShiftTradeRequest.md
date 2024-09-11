@@ -1,19 +1,13 @@
----
-title: AgentUpdateAlternativeShiftTradeRequest
----
-## AgentUpdateAlternativeShiftTradeRequest
+# AgentUpdateAlternativeShiftTradeRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **state** | [**StateEnum**](#StateEnum)<!----> | The new state of this alternative shift trade |  [optional] |
-| **metadata** | <!----><!---->[**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata.html)<!----> | Version metadata for this alternative shift trade |  |
-{: class="table table-striped"}
+| **state** | [**StateEnum**](#Enum--StateEnum) | The new state of this alternative shift trade |  [optional] |
+| **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Version metadata for this alternative shift trade |  |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -21,7 +15,8 @@ title: AgentUpdateAlternativeShiftTradeRequest
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | CANCELED | &quot;Canceled&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

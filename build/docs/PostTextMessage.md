@@ -1,20 +1,14 @@
----
-title: PostTextMessage
----
-## PostTextMessage
+# PostTextMessage
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Message type |  |
-| **text** | <!----><!---->**String**<!----> | Message text. If type is structured, used as fallback for clients that do not support particular structured content |  [optional] |
-| **content** | <!----><!---->[**List&lt;ConversationMessageContent&gt;**](ConversationMessageContent.html)<!----> | A list of content elements in message |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | Message type |  |
+| **text** | **String** | Message text. If type is structured, used as fallback for clients that do not support particular structured content |  [optional] |
+| **content** | [**List&lt;ConversationMessageContent&gt;**](ConversationMessageContent) | A list of content elements in message |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -27,7 +21,8 @@ title: PostTextMessage
 | EVENT | &quot;Event&quot; | 
 | MESSAGE | &quot;Message&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

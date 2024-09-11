@@ -1,18 +1,12 @@
----
-title: LearningModuleJobRequest
----
-## LearningModuleJobRequest
+# LearningModuleJobRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **action** | [**ActionEnum**](#ActionEnum)<!----> | The type for the learning module job |  |
-{: class="table table-striped"}
+| **action** | [**ActionEnum**](#Enum--ActionEnum) | The type for the learning module job |  |
 
-
-<a name="ActionEnum"></a>
 
 ## Enum: ActionEnum
 
@@ -23,7 +17,8 @@ title: LearningModuleJobRequest
 | GRACEFULARCHIVE | &quot;GracefulArchive&quot; | 
 | IMMEDIATEARCHIVE | &quot;ImmediateArchive&quot; | 
 | UNARCHIVE | &quot;Unarchive&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

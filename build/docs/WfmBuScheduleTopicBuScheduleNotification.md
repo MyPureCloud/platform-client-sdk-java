@@ -1,21 +1,15 @@
----
-title: WfmBuScheduleTopicBuScheduleNotification
----
-## WfmBuScheduleTopicBuScheduleNotification
+# WfmBuScheduleTopicBuScheduleNotification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
-| **operationId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **eventType** | [**EventTypeEnum**](#EventTypeEnum)<!----> |  |  [optional] |
-| **result** | <!----><!---->[**WfmBuScheduleTopicBuScheduleMetadata**](WfmBuScheduleTopicBuScheduleMetadata.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
+| **operationId** | **String** |  |  [optional] |
+| **eventType** | [**EventTypeEnum**](#Enum--EventTypeEnum) |  |  [optional] |
+| **result** | [**WfmBuScheduleTopicBuScheduleMetadata**](WfmBuScheduleTopicBuScheduleMetadata) |  |  [optional] |
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -26,10 +20,7 @@ title: WfmBuScheduleTopicBuScheduleNotification
 | COMPLETE | &quot;Complete&quot; | 
 | CANCELED | &quot;Canceled&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
-
-<a name="EventTypeEnum"></a>
 
 ## Enum: EventTypeEnum
 
@@ -40,7 +31,8 @@ title: WfmBuScheduleTopicBuScheduleNotification
 | IMPORT | &quot;Import&quot; | 
 | COPY | &quot;Copy&quot; | 
 | DELETE | &quot;Delete&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

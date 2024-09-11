@@ -1,23 +1,17 @@
----
-title: WorkitemQueryJobCreate
----
-## WorkitemQueryJobCreate
+# WorkitemQueryJobCreate
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **pageSize** | <!----><!---->**Integer**<!----> | The total page size requested. Default 25 |  [optional] |
-| **pageNumber** | <!----><!---->**Integer**<!----> | The page number requested |  [optional] |
-| **filters** | <!----><!---->[**List&lt;WorkitemQueryJobFilter&gt;**](WorkitemQueryJobFilter.html)<!----> | List of filter objects to be used in the search. |  |
-| **expands** | <!---->[**List&lt;ExpandsEnum&gt;**](#ExpandsEnum)<!----> | List of entity attributes to be expanded in the result. |  [optional] |
-| **attributes** | <!----><!---->**List&lt;String&gt;**<!----> | List of entity attributes to be retrieved in the result. |  [optional] |
-| **sort** | <!----><!---->[**WorkitemQueryJobSort**](WorkitemQueryJobSort.html)<!----> | Sort |  [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer** | The total page size requested. Default 25 |  [optional] |
+| **pageNumber** | **Integer** | The page number requested |  [optional] |
+| **filters** | [**List&lt;WorkitemQueryJobFilter&gt;**](WorkitemQueryJobFilter) | List of filter objects to be used in the search. |  |
+| **expands** | [**List<ExpandsEnum>**](#Enum--ExpandsEnum) | List of entity attributes to be expanded in the result. |  [optional] |
+| **attributes** | **List&lt;String&gt;** | List of entity attributes to be retrieved in the result. |  [optional] |
+| **sort** | [**WorkitemQueryJobSort**](WorkitemQueryJobSort) | Sort |  [optional] |
 
-
-<a name="ExpandsEnum"></a>
 
 ## Enum: ExpandsEnum
 
@@ -29,7 +23,8 @@ title: WorkitemQueryJobCreate
 | ASSIGNEE | &quot;assignee&quot; |
 | REPORTER | &quot;reporter&quot; |
 | QUEUE | &quot;queue&quot; |
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

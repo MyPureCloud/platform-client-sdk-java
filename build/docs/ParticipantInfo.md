@@ -1,16 +1,14 @@
----
-title: ParticipantInfo
----
-## ParticipantInfo
+# ParticipantInfo
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **activeParticipantCount** | <!----><!---->**Integer**<!----> | The number of active participants in the video conference. |  [optional] |
-| **version** | <!----><!---->**Integer**<!----> | The version of the participant count. |  [optional] |
-{: class="table table-striped"}
+| **activeParticipantCount** | **Integer** | The number of active participants in the video conference. |  [optional] |
+| **version** | **Integer** | The version of the participant count. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

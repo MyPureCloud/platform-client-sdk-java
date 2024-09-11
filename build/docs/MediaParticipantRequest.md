@@ -1,24 +1,18 @@
----
-title: MediaParticipantRequest
----
-## MediaParticipantRequest
+# MediaParticipantRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **wrapup** | <!----><!---->[**WrapupInput**](WrapupInput.html)<!----> | Wrap-up to assign to this participant. |  [optional] |
-| **state** | [**StateEnum**](#StateEnum)<!----> | The state to update to set for this participant's communications.  Possible values are: 'connected' and 'disconnected'. |  [optional] |
-| **recording** | <!----><!---->**Boolean**<!----> | True to enable recording of this participant, otherwise false to disable recording. |  [optional] |
-| **muted** | <!----><!---->**Boolean**<!----> | True to mute this conversation participant. |  [optional] |
-| **confined** | <!----><!---->**Boolean**<!----> | True to confine this conversation participant.  Should only be used for ad-hoc conferences |  [optional] |
-| **held** | <!----><!---->**Boolean**<!----> | True to hold this conversation participant. |  [optional] |
-| **wrapupSkipped** | <!----><!---->**Boolean**<!----> | True to skip wrap-up for this participant. |  [optional] |
-{: class="table table-striped"}
+| **wrapup** | [**WrapupInput**](WrapupInput) | Wrap-up to assign to this participant. |  [optional] |
+| **state** | [**StateEnum**](#Enum--StateEnum) | The state to update to set for this participant's communications.  Possible values are: 'connected' and 'disconnected'. |  [optional] |
+| **recording** | **Boolean** | True to enable recording of this participant, otherwise false to disable recording. |  [optional] |
+| **muted** | **Boolean** | True to mute this conversation participant. |  [optional] |
+| **confined** | **Boolean** | True to confine this conversation participant.  Should only be used for ad-hoc conferences |  [optional] |
+| **held** | **Boolean** | True to hold this conversation participant. |  [optional] |
+| **wrapupSkipped** | **Boolean** | True to skip wrap-up for this participant. |  [optional] |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -37,7 +31,8 @@ title: MediaParticipantRequest
 | TRANSMITTING | &quot;transmitting&quot; | 
 | PARKED | &quot;parked&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

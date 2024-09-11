@@ -1,15 +1,13 @@
----
-title: AdditionalLanguagesSynonyms
----
-## AdditionalLanguagesSynonyms
+# AdditionalLanguagesSynonyms
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **synonyms** | <!----><!---->**List&lt;String&gt;**<!----> | Synonyms for additional language |  [optional] |
-{: class="table table-striped"}
+| **synonyms** | **List&lt;String&gt;** | Synonyms for additional language |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

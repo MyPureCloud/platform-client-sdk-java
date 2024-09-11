@@ -1,15 +1,13 @@
----
-title: UnreadFields
----
-## UnreadFields
+# UnreadFields
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **state** | <!----><!---->**Boolean**<!----> | The new unread state of the alert |  |
-{: class="table table-striped"}
+| **state** | **Boolean** | The new unread state of the alert |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

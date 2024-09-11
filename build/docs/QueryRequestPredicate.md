@@ -1,19 +1,13 @@
----
-title: QueryRequestPredicate
----
-## QueryRequestPredicate
+# QueryRequestPredicate
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **dimension** | [**DimensionEnum**](#DimensionEnum)<!----> | The dimension to be filtered |  |
-| **value** | <!----><!---->**String**<!----> | The value to filter by |  |
-{: class="table table-striped"}
+| **dimension** | [**DimensionEnum**](#Enum--DimensionEnum) | The dimension to be filtered |  |
+| **value** | **String** | The value to filter by |  |
 
-
-<a name="DimensionEnum"></a>
 
 ## Enum: DimensionEnum
 
@@ -23,7 +17,8 @@ title: QueryRequestPredicate
 | ATTENDEEID | &quot;attendeeId&quot; | 
 | FACILITATORID | &quot;facilitatorId&quot; | 
 | STATUS | &quot;status&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

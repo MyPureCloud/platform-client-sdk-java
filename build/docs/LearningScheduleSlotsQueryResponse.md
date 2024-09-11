@@ -1,16 +1,14 @@
----
-title: LearningScheduleSlotsQueryResponse
----
-## LearningScheduleSlotsQueryResponse
+# LearningScheduleSlotsQueryResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **suggestedSlots** | <!----><!---->[**List&lt;LearningSlot&gt;**](LearningSlot.html)<!----> | List of slots where Learning activity can be scheduled |  [optional] |
-| **wfmScheduleActivities** | <!----><!---->[**List&lt;LearningSlotWfmScheduleActivity&gt;**](LearningSlotWfmScheduleActivity.html)<!----> | Detailed data for WFM scheduled activities |  [optional] |
-{: class="table table-striped"}
+| **suggestedSlots** | [**List&lt;LearningSlot&gt;**](LearningSlot) | List of slots where Learning activity can be scheduled |  [optional] |
+| **wfmScheduleActivities** | [**List&lt;LearningSlotWfmScheduleActivity&gt;**](LearningSlotWfmScheduleActivity) | Detailed data for WFM scheduled activities |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,19 +1,13 @@
----
-title: WfmMoveAgentsCompleteTopicWfmMoveAgentData
----
-## WfmMoveAgentsCompleteTopicWfmMoveAgentData
+# WfmMoveAgentsCompleteTopicWfmMoveAgentData
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **user** | <!----><!---->[**WfmMoveAgentsCompleteTopicUserReference**](WfmMoveAgentsCompleteTopicUserReference.html)<!----> |  |  [optional] |
-| **result** | [**ResultEnum**](#ResultEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **user** | [**WfmMoveAgentsCompleteTopicUserReference**](WfmMoveAgentsCompleteTopicUserReference) |  |  [optional] |
+| **result** | [**ResultEnum**](#Enum--ResultEnum) |  |  [optional] |
 
-
-<a name="ResultEnum"></a>
 
 ## Enum: ResultEnum
 
@@ -28,7 +22,8 @@ title: WfmMoveAgentsCompleteTopicWfmMoveAgentData
 | MOVINGTODIFFERENTMANAGEMENTUNIT | &quot;MovingToDifferentManagementUnit&quot; | 
 | NOTHINGTODO | &quot;NothingToDo&quot; | 
 | SOURCEMANAGEMENTUNITNOTAUTHORIZED | &quot;SourceManagementUnitNotAuthorized&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

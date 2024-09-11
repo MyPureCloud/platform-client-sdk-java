@@ -1,22 +1,16 @@
----
-title: ConversationMessageEvent
----
-## ConversationMessageEvent
+# ConversationMessageEvent
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **eventType** | [**EventTypeEnum**](#EventTypeEnum)<!----> | Type of this event element |  |
-| **coBrowse** | <!----><!---->[**ConversationEventCoBrowse**](ConversationEventCoBrowse.html)<!----> | CoBrowse event. |  [optional] |
-| **typing** | <!----><!---->[**ConversationEventTyping**](ConversationEventTyping.html)<!----> | Typing event. |  [optional] |
-| **presence** | <!----><!---->[**ConversationEventPresence**](ConversationEventPresence.html)<!----> | Presence event. |  [optional] |
-| **video** | <!----><!---->[**ConversationEventVideo**](ConversationEventVideo.html)<!----> | Video event. |  [optional] |
-{: class="table table-striped"}
+| **eventType** | [**EventTypeEnum**](#Enum--EventTypeEnum) | Type of this event element |  |
+| **coBrowse** | [**ConversationEventCoBrowse**](ConversationEventCoBrowse) | CoBrowse event. |  [optional] |
+| **typing** | [**ConversationEventTyping**](ConversationEventTyping) | Typing event. |  [optional] |
+| **presence** | [**ConversationEventPresence**](ConversationEventPresence) | Presence event. |  [optional] |
+| **video** | [**ConversationEventVideo**](ConversationEventVideo) | Video event. |  [optional] |
 
-
-<a name="EventTypeEnum"></a>
 
 ## Enum: EventTypeEnum
 
@@ -28,7 +22,8 @@ title: ConversationMessageEvent
 | PRESENCE | &quot;Presence&quot; | 
 | VIDEO | &quot;Video&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

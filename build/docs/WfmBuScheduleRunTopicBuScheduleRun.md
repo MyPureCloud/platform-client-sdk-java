@@ -1,27 +1,21 @@
----
-title: WfmBuScheduleRunTopicBuScheduleRun
----
-## WfmBuScheduleRunTopicBuScheduleRun
+# WfmBuScheduleRunTopicBuScheduleRun
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **percentComplete** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-| **intradayRescheduling** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
-| **weekCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **schedule** | <!----><!---->[**WfmBuScheduleRunTopicBuScheduleReference**](WfmBuScheduleRunTopicBuScheduleReference.html)<!----> |  |  [optional] |
-| **schedulingCanceledBy** | <!----><!---->[**WfmBuScheduleRunTopicUserReference**](WfmBuScheduleRunTopicUserReference.html)<!----> |  |  [optional] |
-| **schedulingCompletedTime** | <!----><!---->**String**<!----> |  |  [optional] |
-| **messageCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **messageSeverityCounts** | <!----><!---->[**List&lt;WfmBuScheduleRunTopicSchedulerMessageSeverityCount&gt;**](WfmBuScheduleRunTopicSchedulerMessageSeverityCount.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **percentComplete** | [**BigDecimal**](BigDecimal) |  |  [optional] |
+| **intradayRescheduling** | **Boolean** |  |  [optional] |
+| **state** | [**StateEnum**](#Enum--StateEnum) |  |  [optional] |
+| **weekCount** | **Integer** |  |  [optional] |
+| **schedule** | [**WfmBuScheduleRunTopicBuScheduleReference**](WfmBuScheduleRunTopicBuScheduleReference) |  |  [optional] |
+| **schedulingCanceledBy** | [**WfmBuScheduleRunTopicUserReference**](WfmBuScheduleRunTopicUserReference) |  |  [optional] |
+| **schedulingCompletedTime** | **String** |  |  [optional] |
+| **messageCount** | **Integer** |  |  [optional] |
+| **messageSeverityCounts** | [**List&lt;WfmBuScheduleRunTopicSchedulerMessageSeverityCount&gt;**](WfmBuScheduleRunTopicSchedulerMessageSeverityCount) |  |  [optional] |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -34,7 +28,8 @@ title: WfmBuScheduleRunTopicBuScheduleRun
 | CANCELED | &quot;Canceled&quot; | 
 | FAILED | &quot;Failed&quot; | 
 | COMPLETE | &quot;Complete&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

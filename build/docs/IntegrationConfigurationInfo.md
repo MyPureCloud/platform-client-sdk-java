@@ -1,15 +1,13 @@
----
-title: IntegrationConfigurationInfo
----
-## IntegrationConfigurationInfo
+# IntegrationConfigurationInfo
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **current** | <!----><!---->[**IntegrationConfiguration**](IntegrationConfiguration.html)<!----> | The current, active configuration for the integration. |  [optional] |
-{: class="table table-striped"}
+| **current** | [**IntegrationConfiguration**](IntegrationConfiguration) | The current, active configuration for the integration. |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

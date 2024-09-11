@@ -1,17 +1,15 @@
----
-title: ConversationCobrowseEventTopicJourneyContext
----
-## ConversationCobrowseEventTopicJourneyContext
+# ConversationCobrowseEventTopicJourneyContext
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **customer** | <!----><!---->[**ConversationCobrowseEventTopicJourneyCustomer**](ConversationCobrowseEventTopicJourneyCustomer.html)<!----> |  |  [optional] |
-| **customerSession** | <!----><!---->[**ConversationCobrowseEventTopicJourneyCustomerSession**](ConversationCobrowseEventTopicJourneyCustomerSession.html)<!----> |  |  [optional] |
-| **triggeringAction** | <!----><!---->[**ConversationCobrowseEventTopicJourneyAction**](ConversationCobrowseEventTopicJourneyAction.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **customer** | [**ConversationCobrowseEventTopicJourneyCustomer**](ConversationCobrowseEventTopicJourneyCustomer) |  |  [optional] |
+| **customerSession** | [**ConversationCobrowseEventTopicJourneyCustomerSession**](ConversationCobrowseEventTopicJourneyCustomerSession) |  |  [optional] |
+| **triggeringAction** | [**ConversationCobrowseEventTopicJourneyAction**](ConversationCobrowseEventTopicJourneyAction) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

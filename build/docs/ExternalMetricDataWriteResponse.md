@@ -1,16 +1,14 @@
----
-title: ExternalMetricDataWriteResponse
----
-## ExternalMetricDataWriteResponse
+# ExternalMetricDataWriteResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **processedEntities** | <!----><!---->[**List&lt;ExternalMetricDataProcessedItem&gt;**](ExternalMetricDataProcessedItem.html)<!----> | The list of processed entities |  [optional] |
-| **unprocessedEntities** | <!----><!---->[**List&lt;ExternalMetricDataUnprocessedItem&gt;**](ExternalMetricDataUnprocessedItem.html)<!----> | The list of unprocessed entities |  [optional] |
-{: class="table table-striped"}
+| **processedEntities** | [**List&lt;ExternalMetricDataProcessedItem&gt;**](ExternalMetricDataProcessedItem) | The list of processed entities |  [optional] |
+| **unprocessedEntities** | [**List&lt;ExternalMetricDataUnprocessedItem&gt;**](ExternalMetricDataUnprocessedItem) | The list of unprocessed entities |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

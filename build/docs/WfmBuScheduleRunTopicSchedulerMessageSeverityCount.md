@@ -1,19 +1,13 @@
----
-title: WfmBuScheduleRunTopicSchedulerMessageSeverityCount
----
-## WfmBuScheduleRunTopicSchedulerMessageSeverityCount
+# WfmBuScheduleRunTopicSchedulerMessageSeverityCount
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **severity** | [**SeverityEnum**](#SeverityEnum)<!----> |  |  [optional] |
-| **count** | <!----><!---->**Integer**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **severity** | [**SeverityEnum**](#Enum--SeverityEnum) |  |  [optional] |
+| **count** | **Integer** |  |  [optional] |
 
-
-<a name="SeverityEnum"></a>
 
 ## Enum: SeverityEnum
 
@@ -24,7 +18,8 @@ title: WfmBuScheduleRunTopicSchedulerMessageSeverityCount
 | INFORMATION | &quot;Information&quot; | 
 | WARNING | &quot;Warning&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,17 +1,15 @@
----
-title: WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData
----
-## WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData
+# WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **serviceLevelPercent** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-| **averageSpeedOfAnswerSeconds** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-| **occupancyPercent** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **serviceLevelPercent** | [**BigDecimal**](BigDecimal) |  |  [optional] |
+| **averageSpeedOfAnswerSeconds** | [**BigDecimal**](BigDecimal) |  |  [optional] |
+| **occupancyPercent** | [**BigDecimal**](BigDecimal) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

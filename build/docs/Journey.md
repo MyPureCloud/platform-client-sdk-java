@@ -1,15 +1,13 @@
----
-title: Journey
----
-## Journey
+# Journey
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **patterns** | <!----><!---->[**List&lt;JourneyPattern&gt;**](JourneyPattern.html)<!----> | A list of zero or more patterns to match. |  |
-{: class="table table-striped"}
+| **patterns** | [**List&lt;JourneyPattern&gt;**](JourneyPattern) | A list of zero or more patterns to match. |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

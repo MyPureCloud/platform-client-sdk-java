@@ -1,19 +1,13 @@
----
-title: ArchiveRetention
----
-## ArchiveRetention
+# ArchiveRetention
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **days** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **storageMedium** | [**StorageMediumEnum**](#StorageMediumEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **days** | **Integer** |  |  [optional] |
+| **storageMedium** | [**StorageMediumEnum**](#Enum--StorageMediumEnum) |  |  [optional] |
 
-
-<a name="StorageMediumEnum"></a>
 
 ## Enum: StorageMediumEnum
 
@@ -21,7 +15,8 @@ title: ArchiveRetention
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | CLOUDARCHIVE | &quot;CLOUDARCHIVE&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,21 +1,15 @@
----
-title: HistoricalAdherenceActuals
----
-## HistoricalAdherenceActuals
+# HistoricalAdherenceActuals
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **actualActivityCategory** | [**ActualActivityCategoryEnum**](#ActualActivityCategoryEnum)<!----> | Activity in which the user is actually engaged |  [optional] |
-| **actualSecondaryPresenceLookupId** | <!----><!---->**String**<!----> | The lookup ID used to retrieve the actual secondary status from map of lookup ID to corresponding secondary presence ID |  [optional] |
-| **startOffsetSeconds** | <!----><!---->**Integer**<!----> | Actual start offset in seconds relative to query start time |  [optional] |
-| **endOffsetSeconds** | <!----><!---->**Integer**<!----> | Actual end offset in seconds relative to query start time |  [optional] |
-{: class="table table-striped"}
+| **actualActivityCategory** | [**ActualActivityCategoryEnum**](#Enum--ActualActivityCategoryEnum) | Activity in which the user is actually engaged |  [optional] |
+| **actualSecondaryPresenceLookupId** | **String** | The lookup ID used to retrieve the actual secondary status from map of lookup ID to corresponding secondary presence ID |  [optional] |
+| **startOffsetSeconds** | **Integer** | Actual start offset in seconds relative to query start time |  [optional] |
+| **endOffsetSeconds** | **Integer** | Actual end offset in seconds relative to query start time |  [optional] |
 
-
-<a name="ActualActivityCategoryEnum"></a>
 
 ## Enum: ActualActivityCategoryEnum
 
@@ -31,7 +25,8 @@ title: HistoricalAdherenceActuals
 | TRAINING | &quot;Training&quot; | 
 | UNAVAILABLE | &quot;Unavailable&quot; | 
 | UNSCHEDULED | &quot;Unscheduled&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

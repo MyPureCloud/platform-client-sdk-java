@@ -1,20 +1,14 @@
----
-title: DocumentBodyListBlock
----
-## DocumentBodyListBlock
+# DocumentBodyListBlock
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of the list block. |  |
-| **blocks** | <!----><!---->[**List&lt;DocumentListContentBlock&gt;**](DocumentListContentBlock.html)<!----> | The list of items for an OrderedList or an UnorderedList. |  |
-| **properties** | <!----><!---->[**DocumentBodyListItemProperties**](DocumentBodyListItemProperties.html)<!----> | The properties for the list block. |  [optional] |
-{: class="table table-striped"}
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of the list block. |  |
+| **blocks** | [**List&lt;DocumentListContentBlock&gt;**](DocumentListContentBlock) | The list of items for an OrderedList or an UnorderedList. |  |
+| **properties** | [**DocumentBodyListItemProperties**](DocumentBodyListItemProperties) | The properties for the list block. |  [optional] |
 
-
-<a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
 
@@ -22,7 +16,8 @@ title: DocumentBodyListBlock
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | LISTITEM | &quot;ListItem&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

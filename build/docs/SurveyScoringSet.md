@@ -1,17 +1,15 @@
----
-title: SurveyScoringSet
----
-## SurveyScoringSet
+# SurveyScoringSet
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **totalScore** | <!----><!---->**Float**<!----> |  |  [optional] |
-| **npsScore** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **questionGroupScores** | <!----><!---->[**List&lt;SurveyQuestionGroupScore&gt;**](SurveyQuestionGroupScore.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **totalScore** | **Float** |  |  [optional] |
+| **npsScore** | **Integer** |  |  [optional] |
+| **questionGroupScores** | [**List&lt;SurveyQuestionGroupScore&gt;**](SurveyQuestionGroupScore) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

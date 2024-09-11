@@ -1,40 +1,35 @@
----
-title: CoachingApi
----
-## CoachingApi
+# CoachingApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteCoachingAppointment**](CoachingApi.html#deleteCoachingAppointment) | Delete an existing appointment |
-| [**deleteCoachingAppointmentAnnotation**](CoachingApi.html#deleteCoachingAppointmentAnnotation) | Delete an existing annotation |
-| [**getCoachingAppointment**](CoachingApi.html#getCoachingAppointment) | Retrieve an appointment |
-| [**getCoachingAppointmentAnnotation**](CoachingApi.html#getCoachingAppointmentAnnotation) | Retrieve an annotation. |
-| [**getCoachingAppointmentAnnotations**](CoachingApi.html#getCoachingAppointmentAnnotations) | Get a list of annotations. |
-| [**getCoachingAppointmentStatuses**](CoachingApi.html#getCoachingAppointmentStatuses) | Get the list of status changes for a coaching appointment. |
-| [**getCoachingAppointments**](CoachingApi.html#getCoachingAppointments) | Get appointments for users and optional date range |
-| [**getCoachingAppointmentsMe**](CoachingApi.html#getCoachingAppointmentsMe) | Get my appointments for a given date range |
-| [**getCoachingNotification**](CoachingApi.html#getCoachingNotification) | Get an existing notification |
-| [**getCoachingNotifications**](CoachingApi.html#getCoachingNotifications) | Retrieve the list of your notifications. |
-| [**patchCoachingAppointment**](CoachingApi.html#patchCoachingAppointment) | Update an existing appointment |
-| [**patchCoachingAppointmentAnnotation**](CoachingApi.html#patchCoachingAppointmentAnnotation) | Update an existing annotation. |
-| [**patchCoachingAppointmentStatus**](CoachingApi.html#patchCoachingAppointmentStatus) | Update the status of a coaching appointment |
-| [**patchCoachingNotification**](CoachingApi.html#patchCoachingNotification) | Update an existing notification. |
-| [**postCoachingAppointmentAnnotations**](CoachingApi.html#postCoachingAppointmentAnnotations) | Create a new annotation. |
-| [**postCoachingAppointmentConversations**](CoachingApi.html#postCoachingAppointmentConversations) | Add a conversation to an appointment |
-| [**postCoachingAppointments**](CoachingApi.html#postCoachingAppointments) | Create a new appointment |
-| [**postCoachingAppointmentsAggregatesQuery**](CoachingApi.html#postCoachingAppointmentsAggregatesQuery) | Retrieve aggregated appointment data |
-| [**postCoachingScheduleslotsQuery**](CoachingApi.html#postCoachingScheduleslotsQuery) | Get list of possible slots where a coaching appointment can be scheduled. |
+| [**deleteCoachingAppointment**](CoachingApi#deleteCoachingAppointment) | Delete an existing appointment |
+| [**deleteCoachingAppointmentAnnotation**](CoachingApi#deleteCoachingAppointmentAnnotation) | Delete an existing annotation |
+| [**getCoachingAppointment**](CoachingApi#getCoachingAppointment) | Retrieve an appointment |
+| [**getCoachingAppointmentAnnotation**](CoachingApi#getCoachingAppointmentAnnotation) | Retrieve an annotation. |
+| [**getCoachingAppointmentAnnotations**](CoachingApi#getCoachingAppointmentAnnotations) | Get a list of annotations. |
+| [**getCoachingAppointmentStatuses**](CoachingApi#getCoachingAppointmentStatuses) | Get the list of status changes for a coaching appointment. |
+| [**getCoachingAppointments**](CoachingApi#getCoachingAppointments) | Get appointments for users and optional date range |
+| [**getCoachingAppointmentsMe**](CoachingApi#getCoachingAppointmentsMe) | Get my appointments for a given date range |
+| [**getCoachingNotification**](CoachingApi#getCoachingNotification) | Get an existing notification |
+| [**getCoachingNotifications**](CoachingApi#getCoachingNotifications) | Retrieve the list of your notifications. |
+| [**patchCoachingAppointment**](CoachingApi#patchCoachingAppointment) | Update an existing appointment |
+| [**patchCoachingAppointmentAnnotation**](CoachingApi#patchCoachingAppointmentAnnotation) | Update an existing annotation. |
+| [**patchCoachingAppointmentStatus**](CoachingApi#patchCoachingAppointmentStatus) | Update the status of a coaching appointment |
+| [**patchCoachingNotification**](CoachingApi#patchCoachingNotification) | Update an existing notification. |
+| [**postCoachingAppointmentAnnotations**](CoachingApi#postCoachingAppointmentAnnotations) | Create a new annotation. |
+| [**postCoachingAppointmentConversations**](CoachingApi#postCoachingAppointmentConversations) | Add a conversation to an appointment |
+| [**postCoachingAppointments**](CoachingApi#postCoachingAppointments) | Create a new appointment |
+| [**postCoachingAppointmentsAggregatesQuery**](CoachingApi#postCoachingAppointmentsAggregatesQuery) | Retrieve aggregated appointment data |
+| [**postCoachingScheduleslotsQuery**](CoachingApi#postCoachingScheduleslotsQuery) | Get list of possible slots where a coaching appointment can be scheduled. |
 {: class="table-striped"}
 
-<a name="deleteCoachingAppointment"></a>
 
 # **deleteCoachingAppointment**
 
 
-
-> [CoachingAppointmentReference](CoachingAppointmentReference.html) deleteCoachingAppointment(appointmentId)
+> [CoachingAppointmentReference](CoachingAppointmentReference) deleteCoachingAppointment(appointmentId)
 
 Delete an existing appointment
 
@@ -89,12 +84,10 @@ try {
 
 ### Return type
 
-[**CoachingAppointmentReference**](CoachingAppointmentReference.html)
+[**CoachingAppointmentReference**](CoachingAppointmentReference)
 
-<a name="deleteCoachingAppointmentAnnotation"></a>
 
 # **deleteCoachingAppointmentAnnotation**
-
 
 
 > Void deleteCoachingAppointmentAnnotation(appointmentId, annotationId)
@@ -156,13 +149,11 @@ try {
 
 null (empty response body)
 
-<a name="getCoachingAppointment"></a>
 
 # **getCoachingAppointment**
 
 
-
-> [CoachingAppointmentResponse](CoachingAppointmentResponse.html) getCoachingAppointment(appointmentId)
+> [CoachingAppointmentResponse](CoachingAppointmentResponse) getCoachingAppointment(appointmentId)
 
 Retrieve an appointment
 
@@ -217,15 +208,13 @@ try {
 
 ### Return type
 
-[**CoachingAppointmentResponse**](CoachingAppointmentResponse.html)
+[**CoachingAppointmentResponse**](CoachingAppointmentResponse)
 
-<a name="getCoachingAppointmentAnnotation"></a>
 
 # **getCoachingAppointmentAnnotation**
 
 
-
-> [CoachingAnnotation](CoachingAnnotation.html) getCoachingAppointmentAnnotation(appointmentId, annotationId)
+> [CoachingAnnotation](CoachingAnnotation) getCoachingAppointmentAnnotation(appointmentId, annotationId)
 
 Retrieve an annotation.
 
@@ -283,15 +272,13 @@ try {
 
 ### Return type
 
-[**CoachingAnnotation**](CoachingAnnotation.html)
+[**CoachingAnnotation**](CoachingAnnotation)
 
-<a name="getCoachingAppointmentAnnotations"></a>
 
 # **getCoachingAppointmentAnnotations**
 
 
-
-> [CoachingAnnotationList](CoachingAnnotationList.html) getCoachingAppointmentAnnotations(appointmentId, pageNumber, pageSize)
+> [CoachingAnnotationList](CoachingAnnotationList) getCoachingAppointmentAnnotations(appointmentId, pageNumber, pageSize)
 
 Get a list of annotations.
 
@@ -351,15 +338,13 @@ try {
 
 ### Return type
 
-[**CoachingAnnotationList**](CoachingAnnotationList.html)
+[**CoachingAnnotationList**](CoachingAnnotationList)
 
-<a name="getCoachingAppointmentStatuses"></a>
 
 # **getCoachingAppointmentStatuses**
 
 
-
-> [CoachingAppointmentStatusResponseList](CoachingAppointmentStatusResponseList.html) getCoachingAppointmentStatuses(appointmentId, pageNumber, pageSize)
+> [CoachingAppointmentStatusResponseList](CoachingAppointmentStatusResponseList) getCoachingAppointmentStatuses(appointmentId, pageNumber, pageSize)
 
 Get the list of status changes for a coaching appointment.
 
@@ -418,15 +403,13 @@ try {
 
 ### Return type
 
-[**CoachingAppointmentStatusResponseList**](CoachingAppointmentStatusResponseList.html)
+[**CoachingAppointmentStatusResponseList**](CoachingAppointmentStatusResponseList)
 
-<a name="getCoachingAppointments"></a>
 
 # **getCoachingAppointments**
 
 
-
-> [CoachingAppointmentResponseList](CoachingAppointmentResponseList.html) getCoachingAppointments(userIds, interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue, intervalCondition)
+> [CoachingAppointmentResponseList](CoachingAppointmentResponseList) getCoachingAppointments(userIds, interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue, intervalCondition)
 
 Get appointments for users and optional date range
 
@@ -483,14 +466,14 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userIds** | [**List&lt;String&gt;**](String.html)| The user IDs for which to retrieve appointments | 
+| **userIds** | [**List&lt;String&gt;**](String)| The user IDs for which to retrieve appointments | 
 | **interval** | **String**| Interval to filter data by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
-| **statuses** | [**List&lt;String&gt;**](String.html)| Appointment Statuses to filter by | [optional]<br />**Values**: Scheduled, InProgress, Completed, InvalidSchedule 
-| **facilitatorIds** | [**List&lt;String&gt;**](String.html)| The facilitator IDs for which to retrieve appointments | [optional] 
+| **statuses** | [**List&lt;String&gt;**](String)| Appointment Statuses to filter by | [optional]<br />**Values**: Scheduled, InProgress, Completed, InvalidSchedule 
+| **facilitatorIds** | [**List&lt;String&gt;**](String)| The facilitator IDs for which to retrieve appointments | [optional] 
 | **sortOrder** | **String**| Sort (by due date) either Asc or Desc | [optional]<br />**Values**: Desc, Asc 
-| **relationships** | [**List&lt;String&gt;**](String.html)| Relationships to filter by | [optional]<br />**Values**: Creator, Facilitator, Attendee 
+| **relationships** | [**List&lt;String&gt;**](String)| Relationships to filter by | [optional]<br />**Values**: Creator, Facilitator, Attendee 
 | **completionInterval** | **String**| Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional] 
 | **overdue** | **String**| Overdue status to filter by | [optional]<br />**Values**: True, False, Any 
 | **intervalCondition** | **String**| Filter condition for interval | [optional]<br />**Values**: StartsIn, Overlaps 
@@ -499,15 +482,13 @@ try {
 
 ### Return type
 
-[**CoachingAppointmentResponseList**](CoachingAppointmentResponseList.html)
+[**CoachingAppointmentResponseList**](CoachingAppointmentResponseList)
 
-<a name="getCoachingAppointmentsMe"></a>
 
 # **getCoachingAppointmentsMe**
 
 
-
-> [CoachingAppointmentResponseList](CoachingAppointmentResponseList.html) getCoachingAppointmentsMe(interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue, intervalCondition)
+> [CoachingAppointmentResponseList](CoachingAppointmentResponseList) getCoachingAppointmentsMe(interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue, intervalCondition)
 
 Get my appointments for a given date range
 
@@ -565,10 +546,10 @@ try {
 | **interval** | **String**| Interval to filter data by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
-| **statuses** | [**List&lt;String&gt;**](String.html)| Appointment Statuses to filter by | [optional]<br />**Values**: Scheduled, InProgress, Completed, InvalidSchedule 
-| **facilitatorIds** | [**List&lt;String&gt;**](String.html)| The facilitator IDs for which to retrieve appointments | [optional] 
+| **statuses** | [**List&lt;String&gt;**](String)| Appointment Statuses to filter by | [optional]<br />**Values**: Scheduled, InProgress, Completed, InvalidSchedule 
+| **facilitatorIds** | [**List&lt;String&gt;**](String)| The facilitator IDs for which to retrieve appointments | [optional] 
 | **sortOrder** | **String**| Sort (by due date) either Asc or Desc | [optional]<br />**Values**: Desc, Asc 
-| **relationships** | [**List&lt;String&gt;**](String.html)| Relationships to filter by | [optional]<br />**Values**: Creator, Facilitator, Attendee 
+| **relationships** | [**List&lt;String&gt;**](String)| Relationships to filter by | [optional]<br />**Values**: Creator, Facilitator, Attendee 
 | **completionInterval** | **String**| Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional] 
 | **overdue** | **String**| Overdue status to filter by | [optional]<br />**Values**: True, False, Any 
 | **intervalCondition** | **String**| Filter condition for interval | [optional]<br />**Values**: StartsIn, Overlaps 
@@ -577,15 +558,13 @@ try {
 
 ### Return type
 
-[**CoachingAppointmentResponseList**](CoachingAppointmentResponseList.html)
+[**CoachingAppointmentResponseList**](CoachingAppointmentResponseList)
 
-<a name="getCoachingNotification"></a>
 
 # **getCoachingNotification**
 
 
-
-> [CoachingNotification](CoachingNotification.html) getCoachingNotification(notificationId, expand)
+> [CoachingNotification](CoachingNotification) getCoachingNotification(notificationId, expand)
 
 Get an existing notification
 
@@ -636,21 +615,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **notificationId** | **String**| The ID of the notification. | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Indicates a field in the response which should be expanded. | [optional]<br />**Values**: appointment 
+| **expand** | [**List&lt;String&gt;**](String)| Indicates a field in the response which should be expanded. | [optional]<br />**Values**: appointment 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CoachingNotification**](CoachingNotification.html)
+[**CoachingNotification**](CoachingNotification)
 
-<a name="getCoachingNotifications"></a>
 
 # **getCoachingNotifications**
 
 
-
-> [CoachingNotificationList](CoachingNotificationList.html) getCoachingNotifications(pageNumber, pageSize, expand)
+> [CoachingNotificationList](CoachingNotificationList) getCoachingNotifications(pageNumber, pageSize, expand)
 
 Retrieve the list of your notifications.
 
@@ -700,21 +677,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
-| **expand** | [**List&lt;String&gt;**](String.html)| Indicates a field in the response which should be expanded. | [optional]<br />**Values**: appointment 
+| **expand** | [**List&lt;String&gt;**](String)| Indicates a field in the response which should be expanded. | [optional]<br />**Values**: appointment 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CoachingNotificationList**](CoachingNotificationList.html)
+[**CoachingNotificationList**](CoachingNotificationList)
 
-<a name="patchCoachingAppointment"></a>
 
 # **patchCoachingAppointment**
 
 
-
-> [CoachingAppointmentResponse](CoachingAppointmentResponse.html) patchCoachingAppointment(appointmentId, body)
+> [CoachingAppointmentResponse](CoachingAppointmentResponse) patchCoachingAppointment(appointmentId, body)
 
 Update an existing appointment
 
@@ -765,21 +740,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **appointmentId** | **String**| The ID of the coaching appointment. | 
-| **body** | [**UpdateCoachingAppointmentRequest**](UpdateCoachingAppointmentRequest.html)| The new version of the appointment | 
+| **body** | [**UpdateCoachingAppointmentRequest**](UpdateCoachingAppointmentRequest)| The new version of the appointment | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CoachingAppointmentResponse**](CoachingAppointmentResponse.html)
+[**CoachingAppointmentResponse**](CoachingAppointmentResponse)
 
-<a name="patchCoachingAppointmentAnnotation"></a>
 
 # **patchCoachingAppointmentAnnotation**
 
 
-
-> [CoachingAnnotation](CoachingAnnotation.html) patchCoachingAppointmentAnnotation(appointmentId, annotationId, body)
+> [CoachingAnnotation](CoachingAnnotation) patchCoachingAppointmentAnnotation(appointmentId, annotationId, body)
 
 Update an existing annotation.
 
@@ -833,21 +806,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **appointmentId** | **String**| The ID of the coaching appointment. | 
 | **annotationId** | **String**| The ID of the annotation. | 
-| **body** | [**CoachingAnnotation**](CoachingAnnotation.html)| The new version of the annotation | 
+| **body** | [**CoachingAnnotation**](CoachingAnnotation)| The new version of the annotation | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CoachingAnnotation**](CoachingAnnotation.html)
+[**CoachingAnnotation**](CoachingAnnotation)
 
-<a name="patchCoachingAppointmentStatus"></a>
 
 # **patchCoachingAppointmentStatus**
 
 
-
-> [CoachingAppointmentStatusResponse](CoachingAppointmentStatusResponse.html) patchCoachingAppointmentStatus(appointmentId, body)
+> [CoachingAppointmentStatusResponse](CoachingAppointmentStatusResponse) patchCoachingAppointmentStatus(appointmentId, body)
 
 Update the status of a coaching appointment
 
@@ -898,21 +869,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **appointmentId** | **String**| The ID of the coaching appointment. | 
-| **body** | [**CoachingAppointmentStatusRequest**](CoachingAppointmentStatusRequest.html)| Updated status of the coaching appointment | 
+| **body** | [**CoachingAppointmentStatusRequest**](CoachingAppointmentStatusRequest)| Updated status of the coaching appointment | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CoachingAppointmentStatusResponse**](CoachingAppointmentStatusResponse.html)
+[**CoachingAppointmentStatusResponse**](CoachingAppointmentStatusResponse)
 
-<a name="patchCoachingNotification"></a>
 
 # **patchCoachingNotification**
 
 
-
-> [CoachingNotification](CoachingNotification.html) patchCoachingNotification(notificationId, body)
+> [CoachingNotification](CoachingNotification) patchCoachingNotification(notificationId, body)
 
 Update an existing notification.
 
@@ -962,21 +931,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **notificationId** | **String**| The ID of the notification. | 
-| **body** | [**CoachingNotification**](CoachingNotification.html)| Change the read state of a notification | 
+| **body** | [**CoachingNotification**](CoachingNotification)| Change the read state of a notification | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CoachingNotification**](CoachingNotification.html)
+[**CoachingNotification**](CoachingNotification)
 
-<a name="postCoachingAppointmentAnnotations"></a>
 
 # **postCoachingAppointmentAnnotations**
 
 
-
-> [CoachingAnnotation](CoachingAnnotation.html) postCoachingAppointmentAnnotations(appointmentId, body)
+> [CoachingAnnotation](CoachingAnnotation) postCoachingAppointmentAnnotations(appointmentId, body)
 
 Create a new annotation.
 
@@ -1028,21 +995,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **appointmentId** | **String**| The ID of the coaching appointment. | 
-| **body** | [**CoachingAnnotationCreateRequest**](CoachingAnnotationCreateRequest.html)| The annotation to add | 
+| **body** | [**CoachingAnnotationCreateRequest**](CoachingAnnotationCreateRequest)| The annotation to add | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CoachingAnnotation**](CoachingAnnotation.html)
+[**CoachingAnnotation**](CoachingAnnotation)
 
-<a name="postCoachingAppointmentConversations"></a>
 
 # **postCoachingAppointmentConversations**
 
 
-
-> [AddConversationResponse](AddConversationResponse.html) postCoachingAppointmentConversations(appointmentId, body)
+> [AddConversationResponse](AddConversationResponse) postCoachingAppointmentConversations(appointmentId, body)
 
 Add a conversation to an appointment
 
@@ -1094,21 +1059,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **appointmentId** | **String**| The ID of the coaching appointment. | 
-| **body** | [**AddConversationRequest**](AddConversationRequest.html)| body | 
+| **body** | [**AddConversationRequest**](AddConversationRequest)| body | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AddConversationResponse**](AddConversationResponse.html)
+[**AddConversationResponse**](AddConversationResponse)
 
-<a name="postCoachingAppointments"></a>
 
 # **postCoachingAppointments**
 
 
-
-> [CoachingAppointmentResponse](CoachingAppointmentResponse.html) postCoachingAppointments(body)
+> [CoachingAppointmentResponse](CoachingAppointmentResponse) postCoachingAppointments(body)
 
 Create a new appointment
 
@@ -1155,21 +1118,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CreateCoachingAppointmentRequest**](CreateCoachingAppointmentRequest.html)| The appointment to add | 
+| **body** | [**CreateCoachingAppointmentRequest**](CreateCoachingAppointmentRequest)| The appointment to add | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CoachingAppointmentResponse**](CoachingAppointmentResponse.html)
+[**CoachingAppointmentResponse**](CoachingAppointmentResponse)
 
-<a name="postCoachingAppointmentsAggregatesQuery"></a>
 
 # **postCoachingAppointmentsAggregatesQuery**
 
 
-
-> [CoachingAppointmentAggregateResponse](CoachingAppointmentAggregateResponse.html) postCoachingAppointmentsAggregatesQuery(body)
+> [CoachingAppointmentAggregateResponse](CoachingAppointmentAggregateResponse) postCoachingAppointmentsAggregatesQuery(body)
 
 Retrieve aggregated appointment data
 
@@ -1216,21 +1177,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CoachingAppointmentAggregateRequest**](CoachingAppointmentAggregateRequest.html)| Aggregate Request | 
+| **body** | [**CoachingAppointmentAggregateRequest**](CoachingAppointmentAggregateRequest)| Aggregate Request | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CoachingAppointmentAggregateResponse**](CoachingAppointmentAggregateResponse.html)
+[**CoachingAppointmentAggregateResponse**](CoachingAppointmentAggregateResponse)
 
-<a name="postCoachingScheduleslotsQuery"></a>
 
 # **postCoachingScheduleslotsQuery**
 
 
-
-> [CoachingSlotsResponse](CoachingSlotsResponse.html) postCoachingScheduleslotsQuery(body)
+> [CoachingSlotsResponse](CoachingSlotsResponse) postCoachingScheduleslotsQuery(body)
 
 Get list of possible slots where a coaching appointment can be scheduled.
 
@@ -1277,11 +1236,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CoachingSlotsRequest**](CoachingSlotsRequest.html)| The slot search request | 
+| **body** | [**CoachingSlotsRequest**](CoachingSlotsRequest)| The slot search request | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CoachingSlotsResponse**](CoachingSlotsResponse.html)
+[**CoachingSlotsResponse**](CoachingSlotsResponse)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

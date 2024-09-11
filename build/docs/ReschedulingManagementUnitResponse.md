@@ -1,16 +1,14 @@
----
-title: ReschedulingManagementUnitResponse
----
-## ReschedulingManagementUnitResponse
+# ReschedulingManagementUnitResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **managementUnit** | <!----><!---->[**ManagementUnitReference**](ManagementUnitReference.html)<!----> | The management unit |  [optional] |
-| **applied** | <!----><!---->**Boolean**<!----> | Whether the rescheduling run is applied for the given management unit |  [optional] |
-{: class="table table-striped"}
+| **managementUnit** | [**ManagementUnitReference**](ManagementUnitReference) | The management unit |  [optional] |
+| **applied** | **Boolean** | Whether the rescheduling run is applied for the given management unit |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

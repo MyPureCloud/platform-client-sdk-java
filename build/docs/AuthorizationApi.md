@@ -1,62 +1,57 @@
----
-title: AuthorizationApi
----
-## AuthorizationApi
+# AuthorizationApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteAuthorizationDivision**](AuthorizationApi.html#deleteAuthorizationDivision) | Delete a division. |
-| [**deleteAuthorizationRole**](AuthorizationApi.html#deleteAuthorizationRole) | Delete an organization role. |
-| [**deleteAuthorizationSubjectDivisionRole**](AuthorizationApi.html#deleteAuthorizationSubjectDivisionRole) | Delete a grant of a role in a division |
-| [**getAuthorizationDivision**](AuthorizationApi.html#getAuthorizationDivision) | Returns an authorization division. |
-| [**getAuthorizationDivisionGrants**](AuthorizationApi.html#getAuthorizationDivisionGrants) | Gets all grants for a given division. |
-| [**getAuthorizationDivisions**](AuthorizationApi.html#getAuthorizationDivisions) | Retrieve a list of all divisions defined for the organization |
-| [**getAuthorizationDivisionsHome**](AuthorizationApi.html#getAuthorizationDivisionsHome) | Retrieve the home division for the organization. |
-| [**getAuthorizationDivisionsLimit**](AuthorizationApi.html#getAuthorizationDivisionsLimit) | Returns the maximum allowed number of divisions. |
-| [**getAuthorizationDivisionspermittedMe**](AuthorizationApi.html#getAuthorizationDivisionspermittedMe) | Returns which divisions the current user has the given permission in. |
-| [**getAuthorizationDivisionspermittedPagedMe**](AuthorizationApi.html#getAuthorizationDivisionspermittedPagedMe) | Returns which divisions the current user has the given permission in. |
-| [**getAuthorizationDivisionspermittedPagedSubjectId**](AuthorizationApi.html#getAuthorizationDivisionspermittedPagedSubjectId) | Returns which divisions the specified user has the given permission in. |
-| [**getAuthorizationPermissions**](AuthorizationApi.html#getAuthorizationPermissions) | Get all permissions. |
-| [**getAuthorizationProducts**](AuthorizationApi.html#getAuthorizationProducts) | Get the list of enabled products |
-| [**getAuthorizationRole**](AuthorizationApi.html#getAuthorizationRole) | Get a single organization role. |
-| [**getAuthorizationRoleComparedefaultRightRoleId**](AuthorizationApi.html#getAuthorizationRoleComparedefaultRightRoleId) | Get an org role to default role comparison |
-| [**getAuthorizationRoleSubjectgrants**](AuthorizationApi.html#getAuthorizationRoleSubjectgrants) | Get the subjects' granted divisions in the specified role. |
-| [**getAuthorizationRoleUsers**](AuthorizationApi.html#getAuthorizationRoleUsers) | Get a list of the users in a specified role. |
-| [**getAuthorizationRoles**](AuthorizationApi.html#getAuthorizationRoles) | Retrieve a list of all roles defined for the organization |
-| [**getAuthorizationRolesSettings**](AuthorizationApi.html#getAuthorizationRolesSettings) | Get authorization role settings |
-| [**getAuthorizationSettings**](AuthorizationApi.html#getAuthorizationSettings) | Get authorization settings |
-| [**getAuthorizationSubject**](AuthorizationApi.html#getAuthorizationSubject) | Returns a listing of roles and permissions for a user. |
-| [**getAuthorizationSubjectsMe**](AuthorizationApi.html#getAuthorizationSubjectsMe) | Returns a listing of roles and permissions for the currently authenticated user. |
-| [**getAuthorizationSubjectsRolecounts**](AuthorizationApi.html#getAuthorizationSubjectsRolecounts) | Get the count of roles granted to a list of subjects |
-| [**getUserRoles**](AuthorizationApi.html#getUserRoles) | Returns a listing of roles and permissions for a user. |
-| [**patchAuthorizationRole**](AuthorizationApi.html#patchAuthorizationRole) | Patch Organization Role for needsUpdate Field |
-| [**patchAuthorizationSettings**](AuthorizationApi.html#patchAuthorizationSettings) | Change authorization settings |
-| [**postAuthorizationDivisionObject**](AuthorizationApi.html#postAuthorizationDivisionObject) | Assign a list of objects to a division |
-| [**postAuthorizationDivisionRestore**](AuthorizationApi.html#postAuthorizationDivisionRestore) | Recreate a previously deleted division. |
-| [**postAuthorizationDivisions**](AuthorizationApi.html#postAuthorizationDivisions) | Create a division. |
-| [**postAuthorizationRole**](AuthorizationApi.html#postAuthorizationRole) | Bulk-grant subjects and divisions with an organization role. |
-| [**postAuthorizationRoleComparedefaultRightRoleId**](AuthorizationApi.html#postAuthorizationRoleComparedefaultRightRoleId) | Get an unsaved org role to default role comparison |
-| [**postAuthorizationRoles**](AuthorizationApi.html#postAuthorizationRoles) | Create an organization role. |
-| [**postAuthorizationRolesDefault**](AuthorizationApi.html#postAuthorizationRolesDefault) | Restores all default roles |
-| [**postAuthorizationSubjectBulkadd**](AuthorizationApi.html#postAuthorizationSubjectBulkadd) | Bulk-grant roles and divisions to a subject. |
-| [**postAuthorizationSubjectBulkremove**](AuthorizationApi.html#postAuthorizationSubjectBulkremove) | Bulk-remove grants from a subject. |
-| [**postAuthorizationSubjectBulkreplace**](AuthorizationApi.html#postAuthorizationSubjectBulkreplace) | Replace subject's roles and divisions with the exact list supplied in the request. |
-| [**postAuthorizationSubjectDivisionRole**](AuthorizationApi.html#postAuthorizationSubjectDivisionRole) | Make a grant of a role in a division |
-| [**putAuthorizationDivision**](AuthorizationApi.html#putAuthorizationDivision) | Update a division. |
-| [**putAuthorizationRole**](AuthorizationApi.html#putAuthorizationRole) | Update an organization role. |
-| [**putAuthorizationRoleUsersAdd**](AuthorizationApi.html#putAuthorizationRoleUsersAdd) | Sets the users for the role |
-| [**putAuthorizationRoleUsersRemove**](AuthorizationApi.html#putAuthorizationRoleUsersRemove) | Removes the users from the role |
-| [**putAuthorizationRolesDefault**](AuthorizationApi.html#putAuthorizationRolesDefault) | Restore specified default roles |
-| [**putAuthorizationRolesSettings**](AuthorizationApi.html#putAuthorizationRolesSettings) | Change authorization role settings |
-| [**putUserRoles**](AuthorizationApi.html#putUserRoles) | Sets the user's roles |
+| [**deleteAuthorizationDivision**](AuthorizationApi#deleteAuthorizationDivision) | Delete a division. |
+| [**deleteAuthorizationRole**](AuthorizationApi#deleteAuthorizationRole) | Delete an organization role. |
+| [**deleteAuthorizationSubjectDivisionRole**](AuthorizationApi#deleteAuthorizationSubjectDivisionRole) | Delete a grant of a role in a division |
+| [**getAuthorizationDivision**](AuthorizationApi#getAuthorizationDivision) | Returns an authorization division. |
+| [**getAuthorizationDivisionGrants**](AuthorizationApi#getAuthorizationDivisionGrants) | Gets all grants for a given division. |
+| [**getAuthorizationDivisions**](AuthorizationApi#getAuthorizationDivisions) | Retrieve a list of all divisions defined for the organization |
+| [**getAuthorizationDivisionsHome**](AuthorizationApi#getAuthorizationDivisionsHome) | Retrieve the home division for the organization. |
+| [**getAuthorizationDivisionsLimit**](AuthorizationApi#getAuthorizationDivisionsLimit) | Returns the maximum allowed number of divisions. |
+| [**getAuthorizationDivisionspermittedMe**](AuthorizationApi#getAuthorizationDivisionspermittedMe) | Returns which divisions the current user has the given permission in. |
+| [**getAuthorizationDivisionspermittedPagedMe**](AuthorizationApi#getAuthorizationDivisionspermittedPagedMe) | Returns which divisions the current user has the given permission in. |
+| [**getAuthorizationDivisionspermittedPagedSubjectId**](AuthorizationApi#getAuthorizationDivisionspermittedPagedSubjectId) | Returns which divisions the specified user has the given permission in. |
+| [**getAuthorizationPermissions**](AuthorizationApi#getAuthorizationPermissions) | Get all permissions. |
+| [**getAuthorizationProducts**](AuthorizationApi#getAuthorizationProducts) | Get the list of enabled products |
+| [**getAuthorizationRole**](AuthorizationApi#getAuthorizationRole) | Get a single organization role. |
+| [**getAuthorizationRoleComparedefaultRightRoleId**](AuthorizationApi#getAuthorizationRoleComparedefaultRightRoleId) | Get an org role to default role comparison |
+| [**getAuthorizationRoleSubjectgrants**](AuthorizationApi#getAuthorizationRoleSubjectgrants) | Get the subjects' granted divisions in the specified role. |
+| [**getAuthorizationRoleUsers**](AuthorizationApi#getAuthorizationRoleUsers) | Get a list of the users in a specified role. |
+| [**getAuthorizationRoles**](AuthorizationApi#getAuthorizationRoles) | Retrieve a list of all roles defined for the organization |
+| [**getAuthorizationRolesSettings**](AuthorizationApi#getAuthorizationRolesSettings) | Get authorization role settings |
+| [**getAuthorizationSettings**](AuthorizationApi#getAuthorizationSettings) | Get authorization settings |
+| [**getAuthorizationSubject**](AuthorizationApi#getAuthorizationSubject) | Returns a listing of roles and permissions for a user. |
+| [**getAuthorizationSubjectsMe**](AuthorizationApi#getAuthorizationSubjectsMe) | Returns a listing of roles and permissions for the currently authenticated user. |
+| [**getAuthorizationSubjectsRolecounts**](AuthorizationApi#getAuthorizationSubjectsRolecounts) | Get the count of roles granted to a list of subjects |
+| [**getUserRoles**](AuthorizationApi#getUserRoles) | Returns a listing of roles and permissions for a user. |
+| [**patchAuthorizationRole**](AuthorizationApi#patchAuthorizationRole) | Patch Organization Role for needsUpdate Field |
+| [**patchAuthorizationSettings**](AuthorizationApi#patchAuthorizationSettings) | Change authorization settings |
+| [**postAuthorizationDivisionObject**](AuthorizationApi#postAuthorizationDivisionObject) | Assign a list of objects to a division |
+| [**postAuthorizationDivisionRestore**](AuthorizationApi#postAuthorizationDivisionRestore) | Recreate a previously deleted division. |
+| [**postAuthorizationDivisions**](AuthorizationApi#postAuthorizationDivisions) | Create a division. |
+| [**postAuthorizationRole**](AuthorizationApi#postAuthorizationRole) | Bulk-grant subjects and divisions with an organization role. |
+| [**postAuthorizationRoleComparedefaultRightRoleId**](AuthorizationApi#postAuthorizationRoleComparedefaultRightRoleId) | Get an unsaved org role to default role comparison |
+| [**postAuthorizationRoles**](AuthorizationApi#postAuthorizationRoles) | Create an organization role. |
+| [**postAuthorizationRolesDefault**](AuthorizationApi#postAuthorizationRolesDefault) | Restores all default roles |
+| [**postAuthorizationSubjectBulkadd**](AuthorizationApi#postAuthorizationSubjectBulkadd) | Bulk-grant roles and divisions to a subject. |
+| [**postAuthorizationSubjectBulkremove**](AuthorizationApi#postAuthorizationSubjectBulkremove) | Bulk-remove grants from a subject. |
+| [**postAuthorizationSubjectBulkreplace**](AuthorizationApi#postAuthorizationSubjectBulkreplace) | Replace subject's roles and divisions with the exact list supplied in the request. |
+| [**postAuthorizationSubjectDivisionRole**](AuthorizationApi#postAuthorizationSubjectDivisionRole) | Make a grant of a role in a division |
+| [**putAuthorizationDivision**](AuthorizationApi#putAuthorizationDivision) | Update a division. |
+| [**putAuthorizationRole**](AuthorizationApi#putAuthorizationRole) | Update an organization role. |
+| [**putAuthorizationRoleUsersAdd**](AuthorizationApi#putAuthorizationRoleUsersAdd) | Sets the users for the role |
+| [**putAuthorizationRoleUsersRemove**](AuthorizationApi#putAuthorizationRoleUsersRemove) | Removes the users from the role |
+| [**putAuthorizationRolesDefault**](AuthorizationApi#putAuthorizationRolesDefault) | Restore specified default roles |
+| [**putAuthorizationRolesSettings**](AuthorizationApi#putAuthorizationRolesSettings) | Change authorization role settings |
+| [**putUserRoles**](AuthorizationApi#putUserRoles) | Sets the user's roles |
 {: class="table-striped"}
 
-<a name="deleteAuthorizationDivision"></a>
 
 # **deleteAuthorizationDivision**
-
 
 
 > Void deleteAuthorizationDivision(divisionId, force)
@@ -115,10 +110,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteAuthorizationRole"></a>
 
 # **deleteAuthorizationRole**
-
 
 
 > Void deleteAuthorizationRole(roleId)
@@ -175,10 +168,8 @@ try {
 
 null (empty response body)
 
-<a name="deleteAuthorizationSubjectDivisionRole"></a>
 
 # **deleteAuthorizationSubjectDivisionRole**
-
 
 
 > Void deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId)
@@ -239,13 +230,11 @@ try {
 
 null (empty response body)
 
-<a name="getAuthorizationDivision"></a>
 
 # **getAuthorizationDivision**
 
 
-
-> [AuthzDivision](AuthzDivision.html) getAuthorizationDivision(divisionId, objectCount)
+> [AuthzDivision](AuthzDivision) getAuthorizationDivision(divisionId, objectCount)
 
 Returns an authorization division.
 
@@ -299,15 +288,13 @@ try {
 
 ### Return type
 
-[**AuthzDivision**](AuthzDivision.html)
+[**AuthzDivision**](AuthzDivision)
 
-<a name="getAuthorizationDivisionGrants"></a>
 
 # **getAuthorizationDivisionGrants**
 
 
-
-> [AuthzDivisionGrantEntityListing](AuthzDivisionGrantEntityListing.html) getAuthorizationDivisionGrants(divisionId, pageNumber, pageSize)
+> [AuthzDivisionGrantEntityListing](AuthzDivisionGrantEntityListing) getAuthorizationDivisionGrants(divisionId, pageNumber, pageSize)
 
 Gets all grants for a given division.
 
@@ -366,15 +353,13 @@ try {
 
 ### Return type
 
-[**AuthzDivisionGrantEntityListing**](AuthzDivisionGrantEntityListing.html)
+[**AuthzDivisionGrantEntityListing**](AuthzDivisionGrantEntityListing)
 
-<a name="getAuthorizationDivisions"></a>
 
 # **getAuthorizationDivisions**
 
 
-
-> [AuthzDivisionEntityListing](AuthzDivisionEntityListing.html) getAuthorizationDivisions(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, objectCount, id, name)
+> [AuthzDivisionEntityListing](AuthzDivisionEntityListing) getAuthorizationDivisions(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, objectCount, id, name)
 
 Retrieve a list of all divisions defined for the organization
 
@@ -433,26 +418,24 @@ try {
 | **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
 | **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
 | **sortBy** | **String**| variable name requested to sort by | [optional] 
-| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
+| **expand** | [**List&lt;String&gt;**](String)| variable name requested by expand list | [optional] 
 | **nextPage** | **String**| next page token | [optional] 
 | **previousPage** | **String**| Previous page token | [optional] 
 | **objectCount** | **Boolean**| Include the count of objects contained in the division | [optional] [default to false] 
-| **id** | [**List&lt;String&gt;**](String.html)| Optionally request specific divisions by their IDs | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| Optionally request specific divisions by their IDs | [optional] 
 | **name** | **String**| Search term to filter by division name | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AuthzDivisionEntityListing**](AuthzDivisionEntityListing.html)
+[**AuthzDivisionEntityListing**](AuthzDivisionEntityListing)
 
-<a name="getAuthorizationDivisionsHome"></a>
 
 # **getAuthorizationDivisionsHome**
 
 
-
-> [AuthzDivision](AuthzDivision.html) getAuthorizationDivisionsHome()
+> [AuthzDivision](AuthzDivision) getAuthorizationDivisionsHome()
 
 Retrieve the home division for the organization.
 
@@ -502,12 +485,10 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**AuthzDivision**](AuthzDivision.html)
+[**AuthzDivision**](AuthzDivision)
 
-<a name="getAuthorizationDivisionsLimit"></a>
 
 # **getAuthorizationDivisionsLimit**
-
 
 
 > Integer getAuthorizationDivisionsLimit()
@@ -560,13 +541,14 @@ This endpoint does not require any parameters.
 
 **Integer**
 
-<a name="getAuthorizationDivisionspermittedMe"></a>
 
 # **getAuthorizationDivisionspermittedMe**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [List&lt;AuthzDivision&gt;](AuthzDivision.html) getAuthorizationDivisionspermittedMe(permission, name)
+> [List&lt;AuthzDivision&gt;](AuthzDivision) getAuthorizationDivisionspermittedMe(permission, name)
 
 Returns which divisions the current user has the given permission in.
 
@@ -622,15 +604,13 @@ try {
 
 ### Return type
 
-[**List&lt;AuthzDivision&gt;**](AuthzDivision.html)
+[**List&lt;AuthzDivision&gt;**](AuthzDivision)
 
-<a name="getAuthorizationDivisionspermittedPagedMe"></a>
 
 # **getAuthorizationDivisionspermittedPagedMe**
 
 
-
-> [DivsPermittedEntityListing](DivsPermittedEntityListing.html) getAuthorizationDivisionspermittedPagedMe(permission, pageNumber, pageSize)
+> [DivsPermittedEntityListing](DivsPermittedEntityListing) getAuthorizationDivisionspermittedPagedMe(permission, pageNumber, pageSize)
 
 Returns which divisions the current user has the given permission in.
 
@@ -686,15 +666,16 @@ try {
 
 ### Return type
 
-[**DivsPermittedEntityListing**](DivsPermittedEntityListing.html)
+[**DivsPermittedEntityListing**](DivsPermittedEntityListing)
 
-<a name="getAuthorizationDivisionspermittedPagedSubjectId"></a>
 
 # **getAuthorizationDivisionspermittedPagedSubjectId**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-> [DivsPermittedEntityListing](DivsPermittedEntityListing.html) getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, pageNumber, pageSize)
+> [DivsPermittedEntityListing](DivsPermittedEntityListing) getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, pageNumber, pageSize)
 
 Returns which divisions the specified user has the given permission in.
 
@@ -754,15 +735,13 @@ try {
 
 ### Return type
 
-[**DivsPermittedEntityListing**](DivsPermittedEntityListing.html)
+[**DivsPermittedEntityListing**](DivsPermittedEntityListing)
 
-<a name="getAuthorizationPermissions"></a>
 
 # **getAuthorizationPermissions**
 
 
-
-> [PermissionCollectionEntityListing](PermissionCollectionEntityListing.html) getAuthorizationPermissions(pageSize, pageNumber, queryType, query)
+> [PermissionCollectionEntityListing](PermissionCollectionEntityListing) getAuthorizationPermissions(pageSize, pageNumber, queryType, query)
 
 Get all permissions.
 
@@ -822,15 +801,13 @@ try {
 
 ### Return type
 
-[**PermissionCollectionEntityListing**](PermissionCollectionEntityListing.html)
+[**PermissionCollectionEntityListing**](PermissionCollectionEntityListing)
 
-<a name="getAuthorizationProducts"></a>
 
 # **getAuthorizationProducts**
 
 
-
-> [OrganizationProductEntityListing](OrganizationProductEntityListing.html) getAuthorizationProducts()
+> [OrganizationProductEntityListing](OrganizationProductEntityListing) getAuthorizationProducts()
 
 Get the list of enabled products
 
@@ -880,15 +857,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**OrganizationProductEntityListing**](OrganizationProductEntityListing.html)
+[**OrganizationProductEntityListing**](OrganizationProductEntityListing)
 
-<a name="getAuthorizationRole"></a>
 
 # **getAuthorizationRole**
 
 
-
-> [DomainOrganizationRole](DomainOrganizationRole.html) getAuthorizationRole(roleId, userCount, expand)
+> [DomainOrganizationRole](DomainOrganizationRole) getAuthorizationRole(roleId, userCount, expand)
 
 Get a single organization role.
 
@@ -941,21 +916,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **roleId** | **String**| Role ID | 
 | **userCount** | **Boolean**| Fetch the count of users who have this role granted in at least one division. Setting this value or defaulting to &#39;true&#39; can lead to slower load times or timeouts for role queries with large member counts. | [optional] [default to true]<br />**Values**: true, false 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. \&quot;unusedPermissions\&quot; returns the permissions not used for the role | [optional]<br />**Values**: unusedPermissions 
+| **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand. \&quot;unusedPermissions\&quot; returns the permissions not used for the role | [optional]<br />**Values**: unusedPermissions 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DomainOrganizationRole**](DomainOrganizationRole.html)
+[**DomainOrganizationRole**](DomainOrganizationRole)
 
-<a name="getAuthorizationRoleComparedefaultRightRoleId"></a>
 
 # **getAuthorizationRoleComparedefaultRightRoleId**
 
 
-
-> [DomainOrgRoleDifference](DomainOrgRoleDifference.html) getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId)
+> [DomainOrgRoleDifference](DomainOrgRoleDifference) getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId)
 
 Get an org role to default role comparison
 
@@ -1012,15 +985,13 @@ try {
 
 ### Return type
 
-[**DomainOrgRoleDifference**](DomainOrgRoleDifference.html)
+[**DomainOrgRoleDifference**](DomainOrgRoleDifference)
 
-<a name="getAuthorizationRoleSubjectgrants"></a>
 
 # **getAuthorizationRoleSubjectgrants**
 
 
-
-> [SubjectDivisionGrantsEntityListing](SubjectDivisionGrantsEntityListing.html) getAuthorizationRoleSubjectgrants(roleId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage)
+> [SubjectDivisionGrantsEntityListing](SubjectDivisionGrantsEntityListing) getAuthorizationRoleSubjectgrants(roleId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage)
 
 Get the subjects' granted divisions in the specified role.
 
@@ -1079,7 +1050,7 @@ try {
 | **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
 | **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
 | **sortBy** | **String**| variable name requested to sort by | [optional] 
-| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
+| **expand** | [**List&lt;String&gt;**](String)| variable name requested by expand list | [optional] 
 | **nextPage** | **String**| next page token | [optional] 
 | **previousPage** | **String**| Previous page token | [optional] 
 {: class="table-striped"}
@@ -1087,15 +1058,13 @@ try {
 
 ### Return type
 
-[**SubjectDivisionGrantsEntityListing**](SubjectDivisionGrantsEntityListing.html)
+[**SubjectDivisionGrantsEntityListing**](SubjectDivisionGrantsEntityListing)
 
-<a name="getAuthorizationRoleUsers"></a>
 
 # **getAuthorizationRoleUsers**
 
 
-
-> [UserEntityListing](UserEntityListing.html) getAuthorizationRoleUsers(roleId, pageSize, pageNumber)
+> [UserEntityListing](UserEntityListing) getAuthorizationRoleUsers(roleId, pageSize, pageNumber)
 
 Get a list of the users in a specified role.
 
@@ -1153,15 +1122,13 @@ try {
 
 ### Return type
 
-[**UserEntityListing**](UserEntityListing.html)
+[**UserEntityListing**](UserEntityListing)
 
-<a name="getAuthorizationRoles"></a>
 
 # **getAuthorizationRoles**
 
 
-
-> [OrganizationRoleEntityListing](OrganizationRoleEntityListing.html) getAuthorizationRoles(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, permission, defaultRoleId, userCount, id)
+> [OrganizationRoleEntityListing](OrganizationRoleEntityListing) getAuthorizationRoles(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, permission, defaultRoleId, userCount, id)
 
 Retrieve a list of all roles defined for the organization
 
@@ -1221,28 +1188,26 @@ try {
 | **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
 | **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
 | **sortBy** | **String**| variable name requested to sort by | [optional] 
-| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
+| **expand** | [**List&lt;String&gt;**](String)| variable name requested by expand list | [optional] 
 | **nextPage** | **String**| next page token | [optional] 
 | **previousPage** | **String**| Previous page token | [optional] 
 | **name** | **String**|  | [optional] 
-| **permission** | [**List&lt;String&gt;**](String.html)|  | [optional] 
-| **defaultRoleId** | [**List&lt;String&gt;**](String.html)|  | [optional] 
+| **permission** | [**List&lt;String&gt;**](String)|  | [optional] 
+| **defaultRoleId** | [**List&lt;String&gt;**](String)|  | [optional] 
 | **userCount** | **Boolean**|  | [optional] [default to true] 
-| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| id | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html)
+[**OrganizationRoleEntityListing**](OrganizationRoleEntityListing)
 
-<a name="getAuthorizationRolesSettings"></a>
 
 # **getAuthorizationRolesSettings**
 
 
-
-> [RoleSettings](RoleSettings.html) getAuthorizationRolesSettings()
+> [RoleSettings](RoleSettings) getAuthorizationRolesSettings()
 
 Get authorization role settings
 
@@ -1292,15 +1257,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**RoleSettings**](RoleSettings.html)
+[**RoleSettings**](RoleSettings)
 
-<a name="getAuthorizationSettings"></a>
 
 # **getAuthorizationSettings**
 
 
-
-> [AuthorizationSettings](AuthorizationSettings.html) getAuthorizationSettings()
+> [AuthorizationSettings](AuthorizationSettings) getAuthorizationSettings()
 
 Get authorization settings
 
@@ -1350,15 +1313,13 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**AuthorizationSettings**](AuthorizationSettings.html)
+[**AuthorizationSettings**](AuthorizationSettings)
 
-<a name="getAuthorizationSubject"></a>
 
 # **getAuthorizationSubject**
 
 
-
-> [AuthzSubject](AuthzSubject.html) getAuthorizationSubject(subjectId, includeDuplicates)
+> [AuthzSubject](AuthzSubject) getAuthorizationSubject(subjectId, includeDuplicates)
 
 Returns a listing of roles and permissions for a user.
 
@@ -1413,15 +1374,13 @@ try {
 
 ### Return type
 
-[**AuthzSubject**](AuthzSubject.html)
+[**AuthzSubject**](AuthzSubject)
 
-<a name="getAuthorizationSubjectsMe"></a>
 
 # **getAuthorizationSubjectsMe**
 
 
-
-> [AuthzSubject](AuthzSubject.html) getAuthorizationSubjectsMe(includeDuplicates)
+> [AuthzSubject](AuthzSubject) getAuthorizationSubjectsMe(includeDuplicates)
 
 Returns a listing of roles and permissions for the currently authenticated user.
 
@@ -1473,12 +1432,10 @@ try {
 
 ### Return type
 
-[**AuthzSubject**](AuthzSubject.html)
+[**AuthzSubject**](AuthzSubject)
 
-<a name="getAuthorizationSubjectsRolecounts"></a>
 
 # **getAuthorizationSubjectsRolecounts**
-
 
 
 > Map&lt;String, Object&gt; getAuthorizationSubjectsRolecounts(id)
@@ -1528,7 +1485,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] 
+| **id** | [**List&lt;String&gt;**](String)| id | [optional] 
 {: class="table-striped"}
 
 
@@ -1536,13 +1493,11 @@ try {
 
 **Map&lt;String, Object&gt;**
 
-<a name="getUserRoles"></a>
 
 # **getUserRoles**
 
 
-
-> [UserAuthorization](UserAuthorization.html) getUserRoles(subjectId)
+> [UserAuthorization](UserAuthorization) getUserRoles(subjectId)
 
 Returns a listing of roles and permissions for a user.
 
@@ -1595,15 +1550,13 @@ try {
 
 ### Return type
 
-[**UserAuthorization**](UserAuthorization.html)
+[**UserAuthorization**](UserAuthorization)
 
-<a name="patchAuthorizationRole"></a>
 
 # **patchAuthorizationRole**
 
 
-
-> [DomainOrganizationRole](DomainOrganizationRole.html) patchAuthorizationRole(roleId, body)
+> [DomainOrganizationRole](DomainOrganizationRole) patchAuthorizationRole(roleId, body)
 
 Patch Organization Role for needsUpdate Field
 
@@ -1654,21 +1607,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **roleId** | **String**| Role ID | 
-| **body** | [**DomainOrganizationRole**](DomainOrganizationRole.html)| Organization role | 
+| **body** | [**DomainOrganizationRole**](DomainOrganizationRole)| Organization role | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DomainOrganizationRole**](DomainOrganizationRole.html)
+[**DomainOrganizationRole**](DomainOrganizationRole)
 
-<a name="patchAuthorizationSettings"></a>
 
 # **patchAuthorizationSettings**
 
 
-
-> [AuthorizationSettings](AuthorizationSettings.html) patchAuthorizationSettings(body)
+> [AuthorizationSettings](AuthorizationSettings) patchAuthorizationSettings(body)
 
 Change authorization settings
 
@@ -1718,18 +1669,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**AuthorizationSettings**](AuthorizationSettings.html)| Authorization Settings | 
+| **body** | [**AuthorizationSettings**](AuthorizationSettings)| Authorization Settings | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AuthorizationSettings**](AuthorizationSettings.html)
+[**AuthorizationSettings**](AuthorizationSettings)
 
-<a name="postAuthorizationDivisionObject"></a>
 
 # **postAuthorizationDivisionObject**
-
 
 
 > Void postAuthorizationDivisionObject(divisionId, objectType, body)
@@ -1783,7 +1732,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **divisionId** | **String**| Division ID | 
 | **objectType** | **String**| The type of the objects. Must be one of the valid object types |<br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, EMAILCAMPAIGN, MESSAGINGCAMPAIGN, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, FLOWMILESTONE, FLOWOUTCOME, USER, CALLROUTE, EMERGENCYGROUPS, ROUTINGSCHEDULES, ROUTINGSCHEDULEGROUPS, DATATABLES, TEAM, WORKBIN, WORKTYPE, EXTENSIONPOOL, SKILLGROUP, SCRIPT 
-| **body** | [**List&lt;String&gt;**](String.html)| Object Id List | 
+| **body** | [**List&lt;String&gt;**](String)| Object Id List | 
 {: class="table-striped"}
 
 
@@ -1791,13 +1740,11 @@ try {
 
 null (empty response body)
 
-<a name="postAuthorizationDivisionRestore"></a>
 
 # **postAuthorizationDivisionRestore**
 
 
-
-> [AuthzDivision](AuthzDivision.html) postAuthorizationDivisionRestore(divisionId, body)
+> [AuthzDivision](AuthzDivision) postAuthorizationDivisionRestore(divisionId, body)
 
 Recreate a previously deleted division.
 
@@ -1846,21 +1793,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **divisionId** | **String**| Division ID | 
-| **body** | [**AuthzDivision**](AuthzDivision.html)| Recreated division data | [optional] 
+| **body** | [**AuthzDivision**](AuthzDivision)| Recreated division data | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AuthzDivision**](AuthzDivision.html)
+[**AuthzDivision**](AuthzDivision)
 
-<a name="postAuthorizationDivisions"></a>
 
 # **postAuthorizationDivisions**
 
 
-
-> [AuthzDivision](AuthzDivision.html) postAuthorizationDivisions(body)
+> [AuthzDivision](AuthzDivision) postAuthorizationDivisions(body)
 
 Create a division.
 
@@ -1908,18 +1853,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**AuthzDivision**](AuthzDivision.html)| Division | 
+| **body** | [**AuthzDivision**](AuthzDivision)| Division | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AuthzDivision**](AuthzDivision.html)
+[**AuthzDivision**](AuthzDivision)
 
-<a name="postAuthorizationRole"></a>
 
 # **postAuthorizationRole**
-
 
 
 > Void postAuthorizationRole(roleId, body, subjectType)
@@ -1971,7 +1914,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **roleId** | **String**| Role ID | 
-| **body** | [**SubjectDivisions**](SubjectDivisions.html)| Subjects and Divisions | 
+| **body** | [**SubjectDivisions**](SubjectDivisions)| Subjects and Divisions | 
 | **subjectType** | **String**| what the type of the subjects are (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] 
 {: class="table-striped"}
 
@@ -1980,13 +1923,11 @@ try {
 
 null (empty response body)
 
-<a name="postAuthorizationRoleComparedefaultRightRoleId"></a>
 
 # **postAuthorizationRoleComparedefaultRightRoleId**
 
 
-
-> [DomainOrgRoleDifference](DomainOrgRoleDifference.html) postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId, body)
+> [DomainOrgRoleDifference](DomainOrgRoleDifference) postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId, body)
 
 Get an unsaved org role to default role comparison
 
@@ -2039,21 +1980,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **leftRoleId** | **String**| Left Role ID | 
 | **rightRoleId** | **String**| Right Role id | 
-| **body** | [**DomainOrganizationRole**](DomainOrganizationRole.html)| Organization role | 
+| **body** | [**DomainOrganizationRole**](DomainOrganizationRole)| Organization role | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DomainOrgRoleDifference**](DomainOrgRoleDifference.html)
+[**DomainOrgRoleDifference**](DomainOrgRoleDifference)
 
-<a name="postAuthorizationRoles"></a>
 
 # **postAuthorizationRoles**
 
 
-
-> [DomainOrganizationRole](DomainOrganizationRole.html) postAuthorizationRoles(body)
+> [DomainOrganizationRole](DomainOrganizationRole) postAuthorizationRoles(body)
 
 Create an organization role.
 
@@ -2100,21 +2039,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**DomainOrganizationRoleCreate**](DomainOrganizationRoleCreate.html)| Organization role | 
+| **body** | [**DomainOrganizationRoleCreate**](DomainOrganizationRoleCreate)| Organization role | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DomainOrganizationRole**](DomainOrganizationRole.html)
+[**DomainOrganizationRole**](DomainOrganizationRole)
 
-<a name="postAuthorizationRolesDefault"></a>
 
 # **postAuthorizationRolesDefault**
 
 
-
-> [OrganizationRoleEntityListing](OrganizationRoleEntityListing.html) postAuthorizationRolesDefault(force)
+> [OrganizationRoleEntityListing](OrganizationRoleEntityListing) postAuthorizationRolesDefault(force)
 
 Restores all default roles
 
@@ -2169,12 +2106,10 @@ try {
 
 ### Return type
 
-[**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html)
+[**OrganizationRoleEntityListing**](OrganizationRoleEntityListing)
 
-<a name="postAuthorizationSubjectBulkadd"></a>
 
 # **postAuthorizationSubjectBulkadd**
-
 
 
 > Void postAuthorizationSubjectBulkadd(subjectId, body, subjectType)
@@ -2226,7 +2161,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **subjectId** | **String**| Subject ID (user or group) | 
-| **body** | [**RoleDivisionGrants**](RoleDivisionGrants.html)| Pairs of role and division IDs | 
+| **body** | [**RoleDivisionGrants**](RoleDivisionGrants)| Pairs of role and division IDs | 
 | **subjectType** | **String**| what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] 
 {: class="table-striped"}
 
@@ -2235,10 +2170,8 @@ try {
 
 null (empty response body)
 
-<a name="postAuthorizationSubjectBulkremove"></a>
 
 # **postAuthorizationSubjectBulkremove**
-
 
 
 > Void postAuthorizationSubjectBulkremove(subjectId, body)
@@ -2289,7 +2222,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **subjectId** | **String**| Subject ID (user or group) | 
-| **body** | [**RoleDivisionGrants**](RoleDivisionGrants.html)| Pairs of role and division IDs | 
+| **body** | [**RoleDivisionGrants**](RoleDivisionGrants)| Pairs of role and division IDs | 
 {: class="table-striped"}
 
 
@@ -2297,10 +2230,8 @@ try {
 
 null (empty response body)
 
-<a name="postAuthorizationSubjectBulkreplace"></a>
 
 # **postAuthorizationSubjectBulkreplace**
-
 
 
 > Void postAuthorizationSubjectBulkreplace(subjectId, body, subjectType)
@@ -2355,7 +2286,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **subjectId** | **String**| Subject ID (user or group) | 
-| **body** | [**RoleDivisionGrants**](RoleDivisionGrants.html)| Pairs of role and division IDs | 
+| **body** | [**RoleDivisionGrants**](RoleDivisionGrants)| Pairs of role and division IDs | 
 | **subjectType** | **String**| what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] 
 {: class="table-striped"}
 
@@ -2364,10 +2295,8 @@ try {
 
 null (empty response body)
 
-<a name="postAuthorizationSubjectDivisionRole"></a>
 
 # **postAuthorizationSubjectDivisionRole**
-
 
 
 > Void postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, subjectType)
@@ -2430,13 +2359,11 @@ try {
 
 null (empty response body)
 
-<a name="putAuthorizationDivision"></a>
 
 # **putAuthorizationDivision**
 
 
-
-> [AuthzDivision](AuthzDivision.html) putAuthorizationDivision(divisionId, body)
+> [AuthzDivision](AuthzDivision) putAuthorizationDivision(divisionId, body)
 
 Update a division.
 
@@ -2485,21 +2412,19 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **divisionId** | **String**| Division ID | 
-| **body** | [**AuthzDivision**](AuthzDivision.html)| Updated division data | 
+| **body** | [**AuthzDivision**](AuthzDivision)| Updated division data | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AuthzDivision**](AuthzDivision.html)
+[**AuthzDivision**](AuthzDivision)
 
-<a name="putAuthorizationRole"></a>
 
 # **putAuthorizationRole**
 
 
-
-> [DomainOrganizationRole](DomainOrganizationRole.html) putAuthorizationRole(roleId, body)
+> [DomainOrganizationRole](DomainOrganizationRole) putAuthorizationRole(roleId, body)
 
 Update an organization role.
 
@@ -2550,18 +2475,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **roleId** | **String**| Role ID | 
-| **body** | [**DomainOrganizationRoleUpdate**](DomainOrganizationRoleUpdate.html)| Organization role | 
+| **body** | [**DomainOrganizationRoleUpdate**](DomainOrganizationRoleUpdate)| Organization role | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DomainOrganizationRole**](DomainOrganizationRole.html)
+[**DomainOrganizationRole**](DomainOrganizationRole)
 
-<a name="putAuthorizationRoleUsersAdd"></a>
 
 # **putAuthorizationRoleUsersAdd**
-
 
 
 > List&lt;String&gt; putAuthorizationRoleUsersAdd(roleId, body)
@@ -2613,7 +2536,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **roleId** | **String**| Role ID | 
-| **body** | [**List&lt;String&gt;**](String.html)| List of user IDs | 
+| **body** | [**List&lt;String&gt;**](String)| List of user IDs | 
 {: class="table-striped"}
 
 
@@ -2621,10 +2544,8 @@ try {
 
 **List&lt;String&gt;**
 
-<a name="putAuthorizationRoleUsersRemove"></a>
 
 # **putAuthorizationRoleUsersRemove**
-
 
 
 > List&lt;String&gt; putAuthorizationRoleUsersRemove(roleId, body)
@@ -2676,7 +2597,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **roleId** | **String**| Role ID | 
-| **body** | [**List&lt;String&gt;**](String.html)| List of user IDs | 
+| **body** | [**List&lt;String&gt;**](String)| List of user IDs | 
 {: class="table-striped"}
 
 
@@ -2684,13 +2605,11 @@ try {
 
 **List&lt;String&gt;**
 
-<a name="putAuthorizationRolesDefault"></a>
 
 # **putAuthorizationRolesDefault**
 
 
-
-> [OrganizationRoleEntityListing](OrganizationRoleEntityListing.html) putAuthorizationRolesDefault(body)
+> [OrganizationRoleEntityListing](OrganizationRoleEntityListing) putAuthorizationRolesDefault(body)
 
 Restore specified default roles
 
@@ -2737,21 +2656,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**List&lt;DomainOrganizationRole&gt;**](DomainOrganizationRole.html)| Organization roles list | 
+| **body** | [**List&lt;DomainOrganizationRole&gt;**](DomainOrganizationRole)| Organization roles list | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html)
+[**OrganizationRoleEntityListing**](OrganizationRoleEntityListing)
 
-<a name="putAuthorizationRolesSettings"></a>
 
 # **putAuthorizationRolesSettings**
 
 
-
-> [RoleSettings](RoleSettings.html) putAuthorizationRolesSettings(body)
+> [RoleSettings](RoleSettings) putAuthorizationRolesSettings(body)
 
 Change authorization role settings
 
@@ -2801,21 +2718,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**RoleSettings**](RoleSettings.html)| Authorization Role Settings | 
+| **body** | [**RoleSettings**](RoleSettings)| Authorization Role Settings | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**RoleSettings**](RoleSettings.html)
+[**RoleSettings**](RoleSettings)
 
-<a name="putUserRoles"></a>
 
 # **putUserRoles**
 
 
-
-> [UserAuthorization](UserAuthorization.html) putUserRoles(subjectId, body)
+> [UserAuthorization](UserAuthorization) putUserRoles(subjectId, body)
 
 Sets the user's roles
 
@@ -2864,11 +2779,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **subjectId** | **String**| User ID | 
-| **body** | [**List&lt;String&gt;**](String.html)| List of roles | 
+| **body** | [**List&lt;String&gt;**](String)| List of roles | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**UserAuthorization**](UserAuthorization.html)
+[**UserAuthorization**](UserAuthorization)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,17 +1,15 @@
----
-title: TopicPhrase
----
-## TopicPhrase
+# TopicPhrase
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **text** | <!----><!---->**String**<!----> |  |  [optional] |
-| **utteranceCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **text** | **String** |  |  [optional] |
+| **utteranceCount** | **Integer** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

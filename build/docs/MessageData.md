@@ -1,34 +1,28 @@
----
-title: MessageData
----
-## MessageData
+# MessageData
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **providerMessageId** | <!----><!---->**String**<!----> | The unique identifier of the message from provider |  [optional] |
-| **timestamp** | <!----><!---->[**Date**](Date.html)<!----> | The time when the message was received or sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
-| **fromAddress** | <!----><!---->**String**<!----> | The sender of the text message. |  [optional] |
-| **toAddress** | <!----><!---->**String**<!----> | The recipient of the text message. |  [optional] |
-| **direction** | [**DirectionEnum**](#DirectionEnum)<!----> | The direction of the message. |  [optional] |
-| **messengerType** | [**MessengerTypeEnum**](#MessengerTypeEnum)<!----> | Type of text messenger. |  [optional] |
-| **textBody** | <!----><!---->**String**<!----> | The body of the text message. (Deprecated - Instead use normalizedMessage.text) |  |
-| **status** | [**StatusEnum**](#StatusEnum)<!----> | The status of the message. |  |
-| **media** | <!----><!---->[**List&lt;MessageMedia&gt;**](MessageMedia.html)<!----> | The media details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment) |  [optional] |
-| **stickers** | <!----><!---->[**List&lt;MessageSticker&gt;**](MessageSticker.html)<!----> | The sticker details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment |  [optional] |
-| **normalizedMessage** | <!----><!---->[**ConversationNormalizedMessage**](ConversationNormalizedMessage.html)<!----> | The message into normalized format |  [optional] |
-| **normalizedReceipts** | <!----><!---->[**List&lt;ConversationNormalizedMessage&gt;**](ConversationNormalizedMessage.html)<!----> | The delivery event associated with this message in normalized format, if the message direction was outbound |  [optional] |
-| **createdBy** | <!----><!---->[**User**](User.html)<!----> | User who sent this message. |  [optional] |
-| **conversationId** | <!----><!---->**String**<!----> | The id of the conversation of this message. |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **providerMessageId** | **String** | The unique identifier of the message from provider |  [optional] |
+| **timestamp** | [**Date**](Date) | The time when the message was received or sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
+| **fromAddress** | **String** | The sender of the text message. |  [optional] |
+| **toAddress** | **String** | The recipient of the text message. |  [optional] |
+| **direction** | [**DirectionEnum**](#Enum--DirectionEnum) | The direction of the message. |  [optional] |
+| **messengerType** | [**MessengerTypeEnum**](#Enum--MessengerTypeEnum) | Type of text messenger. |  [optional] |
+| **textBody** | **String** | The body of the text message. (Deprecated - Instead use normalizedMessage.text) |  |
+| **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the message. |  |
+| **media** | [**List&lt;MessageMedia&gt;**](MessageMedia) | The media details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment) |  [optional] |
+| **stickers** | [**List&lt;MessageSticker&gt;**](MessageSticker) | The sticker details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment |  [optional] |
+| **normalizedMessage** | [**ConversationNormalizedMessage**](ConversationNormalizedMessage) | The message into normalized format |  [optional] |
+| **normalizedReceipts** | [**List&lt;ConversationNormalizedMessage&gt;**](ConversationNormalizedMessage) | The delivery event associated with this message in normalized format, if the message direction was outbound |  [optional] |
+| **createdBy** | [**User**](User) | User who sent this message. |  [optional] |
+| **conversationId** | **String** | The id of the conversation of this message. |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="DirectionEnum"></a>
 
 ## Enum: DirectionEnum
 
@@ -37,10 +31,7 @@ title: MessageData
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INBOUND | &quot;inbound&quot; | 
 | OUTBOUND | &quot;outbound&quot; | 
-{: class="table table-striped"}
 
-
-<a name="MessengerTypeEnum"></a>
 
 ## Enum: MessengerTypeEnum
 
@@ -54,10 +45,7 @@ title: MessageData
 | WEBMESSAGING | &quot;webmessaging&quot; | 
 | INSTAGRAM | &quot;instagram&quot; | 
 | OPEN | &quot;open&quot; | 
-{: class="table table-striped"}
 
-
-<a name="StatusEnum"></a>
 
 ## Enum: StatusEnum
 
@@ -73,7 +61,8 @@ title: MessageData
 | READ | &quot;read&quot; | 
 | REMOVED | &quot;removed&quot; | 
 | PUBLISHED | &quot;published&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

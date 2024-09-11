@@ -1,23 +1,17 @@
----
-title: AlertSummaryEntity
----
-## AlertSummaryEntity
+# AlertSummaryEntity
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entityType** | [**EntityTypeEnum**](#EntityTypeEnum)<!----> | Specifies the type of entity being evaluated |  |
-| **user** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | User id of the entity being monitored |  [optional] |
-| **group** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | Group id of the entity being monitored |  [optional] |
-| **queue** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | Queue id of the entity being monitored |  [optional] |
-| **team** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | Team id of the entity being monitored |  [optional] |
-| **alerting** | <!----><!---->**Boolean**<!----> | Flag that indicated if the entity is current causing the alert to be triggered |  |
-{: class="table table-striped"}
+| **entityType** | [**EntityTypeEnum**](#Enum--EntityTypeEnum) | Specifies the type of entity being evaluated |  |
+| **user** | [**AddressableEntityRef**](AddressableEntityRef) | User id of the entity being monitored |  [optional] |
+| **group** | [**AddressableEntityRef**](AddressableEntityRef) | Group id of the entity being monitored |  [optional] |
+| **queue** | [**AddressableEntityRef**](AddressableEntityRef) | Queue id of the entity being monitored |  [optional] |
+| **team** | [**AddressableEntityRef**](AddressableEntityRef) | Team id of the entity being monitored |  [optional] |
+| **alerting** | **Boolean** | Flag that indicated if the entity is current causing the alert to be triggered |  |
 
-
-<a name="EntityTypeEnum"></a>
 
 ## Enum: EntityTypeEnum
 
@@ -29,7 +23,8 @@ title: AlertSummaryEntity
 | QUEUE | &quot;Queue&quot; | 
 | TEAM | &quot;Team&quot; | 
 | TEAMMEMBERS | &quot;TeamMembers&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

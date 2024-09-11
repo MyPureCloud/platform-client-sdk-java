@@ -1,20 +1,14 @@
----
-title: QueueConversationEventTopicAfterCallWork
----
-## QueueConversationEventTopicAfterCallWork
+# QueueConversationEventTopicAfterCallWork
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **state** | [**StateEnum**](#StateEnum)<!----> | The communication's after-call work state. |  [optional] |
-| **startTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this communication started after-call work in the cloud clock. |  [optional] |
-| **endTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this communication ended after-call work in the cloud clock. |  [optional] |
-{: class="table table-striped"}
+| **state** | [**StateEnum**](#Enum--StateEnum) | The communication's after-call work state. |  [optional] |
+| **startTime** | [**Date**](Date) | The timestamp when this communication started after-call work in the cloud clock. |  [optional] |
+| **endTime** | [**Date**](Date) | The timestamp when this communication ended after-call work in the cloud clock. |  [optional] |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -26,7 +20,8 @@ title: QueueConversationEventTopicAfterCallWork
 | PENDING | &quot;pending&quot; | 
 | COMPLETE | &quot;complete&quot; | 
 | NOTAPPLICABLE | &quot;notApplicable&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -1,22 +1,16 @@
----
-title: ConversationEncryptionConfiguration
----
-## ConversationEncryptionConfiguration
+# ConversationEncryptionConfiguration
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
-| **url** | <!----><!---->**String**<!----> | keyConfigurationType is always KmsSymmetric, and should be the arn to the key alias for the master key |  |
-| **keyConfigurationType** | [**KeyConfigurationTypeEnum**](#KeyConfigurationTypeEnum)<!----> | Type should be 'KmsSymmetric' when create or update Key configurations, 'None' to disable configuration. |  |
-| **lastError** | <!----><!---->[**ErrorBody**](ErrorBody.html)<!----> | The error message related to the configuration |  [optional] |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **url** | **String** | keyConfigurationType is always KmsSymmetric, and should be the arn to the key alias for the master key |  |
+| **keyConfigurationType** | [**KeyConfigurationTypeEnum**](#Enum--KeyConfigurationTypeEnum) | Type should be 'KmsSymmetric' when create or update Key configurations, 'None' to disable configuration. |  |
+| **lastError** | [**ErrorBody**](ErrorBody) | The error message related to the configuration |  [optional] |
+| **selfUri** | **String** | The URI for this object |  [optional] |
 
-
-<a name="KeyConfigurationTypeEnum"></a>
 
 ## Enum: KeyConfigurationTypeEnum
 
@@ -27,7 +21,8 @@ title: ConversationEncryptionConfiguration
 | LOCALKEYMANAGER | &quot;LocalKeyManager&quot; | 
 | NATIVE | &quot;Native&quot; | 
 | NONE | &quot;None&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

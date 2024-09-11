@@ -1,22 +1,16 @@
----
-title: JourneyWebEventsNotificationEventAction
----
-## JourneyWebEventsNotificationEventAction
+# JourneyWebEventsNotificationEventAction
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **createdDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
-| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> |  |  [optional] |
-| **prompt** | <!----><!---->**String**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **createdDate** | [**Date**](Date) |  |  [optional] |
+| **state** | [**StateEnum**](#Enum--StateEnum) |  |  [optional] |
+| **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) |  |  [optional] |
+| **prompt** | **String** |  |  [optional] |
 
-
-<a name="StateEnum"></a>
 
 ## Enum: StateEnum
 
@@ -37,10 +31,7 @@ title: JourneyWebEventsNotificationEventAction
 | ABANDONED | &quot;abandoned&quot; | 
 | COMPLETED | &quot;completed&quot; | 
 | FREQUENCYCAPREACHED | &quot;frequencyCapReached&quot; | 
-{: class="table table-striped"}
 
-
-<a name="MediaTypeEnum"></a>
 
 ## Enum: MediaTypeEnum
 
@@ -51,7 +42,8 @@ title: JourneyWebEventsNotificationEventAction
 | WEBMESSAGINGOFFER | &quot;webMessagingOffer&quot; | 
 | CONTENTOFFER | &quot;contentOffer&quot; | 
 | ARCHITECTFLOW | &quot;architectFlow&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

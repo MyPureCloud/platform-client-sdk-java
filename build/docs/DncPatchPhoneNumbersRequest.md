@@ -1,20 +1,14 @@
----
-title: DncPatchPhoneNumbersRequest
----
-## DncPatchPhoneNumbersRequest
+# DncPatchPhoneNumbersRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **action** | [**ActionEnum**](#ActionEnum)<!----> | The action to perform |  [optional] |
-| **phoneNumbers** | <!----><!---->**List&lt;String&gt;**<!----> | The list of phone numbers to Add to / Remove from the DNC list  |  [optional] |
-| **expirationDateTime** | <!----><!---->**String**<!----> | Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format |  [optional] |
-{: class="table table-striped"}
+| **action** | [**ActionEnum**](#Enum--ActionEnum) | The action to perform |  [optional] |
+| **phoneNumbers** | **List&lt;String&gt;** | The list of phone numbers to Add to / Remove from the DNC list  |  [optional] |
+| **expirationDateTime** | **String** | Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format |  [optional] |
 
-
-<a name="ActionEnum"></a>
 
 ## Enum: ActionEnum
 
@@ -23,7 +17,8 @@ title: DncPatchPhoneNumbersRequest
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ADD | &quot;Add&quot; | 
 | REMOVE | &quot;Remove&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

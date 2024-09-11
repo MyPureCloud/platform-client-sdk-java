@@ -1,17 +1,15 @@
----
-title: Compliance
----
-## Compliance
+# Compliance
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **stopSettings** | <!----><!---->[**List&lt;StopSettings&gt;**](StopSettings.html)<!----> | List of configurations for 'StopSettings' compliance |  |
-| **optInSettings** | <!----><!---->[**List&lt;OptInSettings&gt;**](OptInSettings.html)<!----> | List of configurations for 'OptInSettings' compliance |  |
-| **helpSettings** | <!----><!---->[**List&lt;HelpSettings&gt;**](HelpSettings.html)<!----> | List of configurations for 'HelpSettings' compliance |  |
-{: class="table table-striped"}
+| **stopSettings** | [**List&lt;StopSettings&gt;**](StopSettings) | List of configurations for 'StopSettings' compliance |  |
+| **optInSettings** | [**List&lt;OptInSettings&gt;**](OptInSettings) | List of configurations for 'OptInSettings' compliance |  |
+| **helpSettings** | [**List&lt;HelpSettings&gt;**](HelpSettings) | List of configurations for 'HelpSettings' compliance |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

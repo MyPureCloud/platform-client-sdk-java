@@ -1,15 +1,13 @@
----
-title: ChatUserSettings
----
-## ChatUserSettings
+# ChatUserSettings
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **mobile** | <!----><!---->[**MobileSettings**](MobileSettings.html)<!----> | Settings for mobile devices |  |
-{: class="table table-striped"}
+| **mobile** | [**MobileSettings**](MobileSettings) | Settings for mobile devices |  |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

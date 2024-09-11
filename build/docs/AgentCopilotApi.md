@@ -1,23 +1,18 @@
----
-title: AgentCopilotApi
----
-## AgentCopilotApi
+# AgentCopilotApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**getAssistantCopilot**](AgentCopilotApi.html#getAssistantCopilot) | Get copilot configuration of an assistant. |
-| [**putAssistantCopilot**](AgentCopilotApi.html#putAssistantCopilot) | Update agent copilot configuration |
+| [**getAssistantCopilot**](AgentCopilotApi#getAssistantCopilot) | Get copilot configuration of an assistant. |
+| [**putAssistantCopilot**](AgentCopilotApi#putAssistantCopilot) | Update agent copilot configuration |
 {: class="table-striped"}
 
-<a name="getAssistantCopilot"></a>
 
 # **getAssistantCopilot**
 
 
-
-> [Copilot](Copilot.html) getAssistantCopilot(assistantId)
+> [Copilot](Copilot) getAssistantCopilot(assistantId)
 
 Get copilot configuration of an assistant.
 
@@ -70,15 +65,13 @@ try {
 
 ### Return type
 
-[**Copilot**](Copilot.html)
+[**Copilot**](Copilot)
 
-<a name="putAssistantCopilot"></a>
 
 # **putAssistantCopilot**
 
 
-
-> [Copilot](Copilot.html) putAssistantCopilot(assistantId, body)
+> [Copilot](Copilot) putAssistantCopilot(assistantId, body)
 
 Update agent copilot configuration
 
@@ -127,11 +120,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **assistantId** | **String**| Assistant ID | 
-| **body** | [**Copilot**](Copilot.html)|  | 
+| **body** | [**Copilot**](Copilot)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**Copilot**](Copilot.html)
+[**Copilot**](Copilot)
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

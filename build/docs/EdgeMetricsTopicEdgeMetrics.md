@@ -1,22 +1,20 @@
----
-title: EdgeMetricsTopicEdgeMetrics
----
-## EdgeMetricsTopicEdgeMetrics
+# EdgeMetricsTopicEdgeMetrics
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **edge** | <!----><!---->[**EdgeMetricsTopicUriReference**](EdgeMetricsTopicUriReference.html)<!----> |  |  [optional] |
-| **eventTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
-| **upTimeMsec** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **processors** | <!----><!---->[**List&lt;EdgeMetricsTopicEdgeMetricProcessor&gt;**](EdgeMetricsTopicEdgeMetricProcessor.html)<!----> |  |  [optional] |
-| **memory** | <!----><!---->[**List&lt;EdgeMetricsTopicEdgeMetricMemory&gt;**](EdgeMetricsTopicEdgeMetricMemory.html)<!----> |  |  [optional] |
-| **disks** | <!----><!---->[**List&lt;EdgeMetricsTopicEdgeMetricDisk&gt;**](EdgeMetricsTopicEdgeMetricDisk.html)<!----> |  |  [optional] |
-| **subsystems** | <!----><!---->[**List&lt;EdgeMetricsTopicEdgeMetricSubsystem&gt;**](EdgeMetricsTopicEdgeMetricSubsystem.html)<!----> |  |  [optional] |
-| **networks** | <!----><!---->[**List&lt;EdgeMetricsTopicEdgeMetricNetworks&gt;**](EdgeMetricsTopicEdgeMetricNetworks.html)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **edge** | [**EdgeMetricsTopicUriReference**](EdgeMetricsTopicUriReference) |  |  [optional] |
+| **eventTime** | [**Date**](Date) |  |  [optional] |
+| **upTimeMsec** | **Integer** |  |  [optional] |
+| **processors** | [**List&lt;EdgeMetricsTopicEdgeMetricProcessor&gt;**](EdgeMetricsTopicEdgeMetricProcessor) |  |  [optional] |
+| **memory** | [**List&lt;EdgeMetricsTopicEdgeMetricMemory&gt;**](EdgeMetricsTopicEdgeMetricMemory) |  |  [optional] |
+| **disks** | [**List&lt;EdgeMetricsTopicEdgeMetricDisk&gt;**](EdgeMetricsTopicEdgeMetricDisk) |  |  [optional] |
+| **subsystems** | [**List&lt;EdgeMetricsTopicEdgeMetricSubsystem&gt;**](EdgeMetricsTopicEdgeMetricSubsystem) |  |  [optional] |
+| **networks** | [**List&lt;EdgeMetricsTopicEdgeMetricNetworks&gt;**](EdgeMetricsTopicEdgeMetricNetworks) |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

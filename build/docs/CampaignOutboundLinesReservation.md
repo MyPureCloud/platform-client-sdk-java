@@ -1,16 +1,14 @@
----
-title: CampaignOutboundLinesReservation
----
-## CampaignOutboundLinesReservation
+# CampaignOutboundLinesReservation
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **campaign** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The Campaign |  [optional] |
-| **linesReserved** | <!----><!---->**Integer**<!----> | The number of lines reserved for the campaign |  [optional] |
-{: class="table table-striped"}
+| **campaign** | [**DomainEntityRef**](DomainEntityRef) | The Campaign |  [optional] |
+| **linesReserved** | **Integer** | The number of lines reserved for the campaign |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

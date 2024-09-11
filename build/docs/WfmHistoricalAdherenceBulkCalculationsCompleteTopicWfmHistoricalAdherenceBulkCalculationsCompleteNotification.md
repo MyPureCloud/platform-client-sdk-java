@@ -1,20 +1,14 @@
----
-title: WfmHistoricalAdherenceBulkCalculationsCompleteTopicWfmHistoricalAdherenceBulkCalculationsCompleteNotification
----
-## WfmHistoricalAdherenceBulkCalculationsCompleteTopicWfmHistoricalAdherenceBulkCalculationsCompleteNotification
+# WfmHistoricalAdherenceBulkCalculationsCompleteTopicWfmHistoricalAdherenceBulkCalculationsCompleteNotification
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> |  |  [optional] |
-| **downloadUrls** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **queryState** | [**QueryStateEnum**](#QueryStateEnum)<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **id** | **String** |  |  [optional] |
+| **downloadUrls** | **List&lt;String&gt;** |  |  [optional] |
+| **queryState** | [**QueryStateEnum**](#Enum--QueryStateEnum) |  |  [optional] |
 
-
-<a name="QueryStateEnum"></a>
 
 ## Enum: QueryStateEnum
 
@@ -25,7 +19,8 @@ title: WfmHistoricalAdherenceBulkCalculationsCompleteTopicWfmHistoricalAdherence
 | COMPLETE | &quot;Complete&quot; | 
 | ERROR | &quot;Error&quot; | 
 | PROCESSING | &quot;Processing&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

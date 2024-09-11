@@ -1,17 +1,15 @@
----
-title: BulkFetchNotesResponse
----
-## BulkFetchNotesResponse
+# BulkFetchNotesResponse
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **results** | <!----><!---->[**List&lt;BulkResponseResultNoteEntity&gt;**](BulkResponseResultNoteEntity.html)<!----> |  |  [optional] |
-| **errorCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **errorIndexes** | <!----><!---->**List&lt;Integer&gt;**<!----> |  |  [optional] |
-{: class="table table-striped"}
+| **results** | [**List&lt;BulkResponseResultNoteEntity&gt;**](BulkResponseResultNoteEntity) |  |  [optional] |
+| **errorCount** | **Integer** |  |  [optional] |
+| **errorIndexes** | **List&lt;Integer&gt;** |  |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

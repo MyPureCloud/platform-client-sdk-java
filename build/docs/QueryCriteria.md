@@ -1,23 +1,17 @@
----
-title: QueryCriteria
----
-## QueryCriteria
+# QueryCriteria
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **criteriaKey** | [**CriteriaKeyEnum**](#CriteriaKeyEnum)<!----> | The is the name of the criteria that can be queried. |  [optional] |
-| **criteriaGroups** | <!---->[**List&lt;CriteriaGroupsEnum&gt;**](#CriteriaGroupsEnum)<!----> | The executionData type that this criteria item can be used on. |  [optional] |
-| **description** | <!----><!---->**String**<!----> | The is the description of the criteria. |  [optional] |
-| **operators** | <!----><!---->**List&lt;String&gt;**<!----> | A list of operators that can be used on this criteria. |  [optional] |
-| **dataType** | [**DataTypeEnum**](#DataTypeEnum)<!----> | The type of data for the criteria (string, int, etc). |  [optional] |
-| **categoryInfo** | <!----><!---->[**CriteriaCategoryInfo**](CriteriaCategoryInfo.html)<!----> | A logical grouping and display order for this item. |  [optional] |
-{: class="table table-striped"}
+| **criteriaKey** | [**CriteriaKeyEnum**](#Enum--CriteriaKeyEnum) | The is the name of the criteria that can be queried. |  [optional] |
+| **criteriaGroups** | [**List<CriteriaGroupsEnum>**](#Enum--CriteriaGroupsEnum) | The executionData type that this criteria item can be used on. |  [optional] |
+| **description** | **String** | The is the description of the criteria. |  [optional] |
+| **operators** | **List&lt;String&gt;** | A list of operators that can be used on this criteria. |  [optional] |
+| **dataType** | [**DataTypeEnum**](#Enum--DataTypeEnum) | The type of data for the criteria (string, int, etc). |  [optional] |
+| **categoryInfo** | [**CriteriaCategoryInfo**](CriteriaCategoryInfo) | A logical grouping and display order for this item. |  [optional] |
 
-
-<a name="CriteriaKeyEnum"></a>
 
 ## Enum: CriteriaKeyEnum
 
@@ -45,10 +39,7 @@ title: QueryCriteria
 | BOTERRORREASON | &quot;BotErrorReason&quot; | 
 | BOTFLOWEXECUTIONID | &quot;BotFlowExecutionId&quot; | 
 | BOTOBJECTEXECUTIONID | &quot;BotObjectExecutionId&quot; | 
-{: class="table table-striped"}
 
-
-<a name="CriteriaGroupsEnum"></a>
 
 ## Enum: CriteriaGroupsEnum
 
@@ -56,10 +47,7 @@ title: QueryCriteria
 | ---- | ----- |
 | FLOW | &quot;flow&quot; |
 | BOT | &quot;bot&quot; |
-{: class="table table-striped"}
 
-
-<a name="DataTypeEnum"></a>
 
 ## Enum: DataTypeEnum
 
@@ -69,7 +57,8 @@ title: QueryCriteria
 | STRING | &quot;string&quot; | 
 | GUID | &quot;guid&quot; | 
 | DATETIME | &quot;dateTime&quot; | 
-{: class="table table-striped"}
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

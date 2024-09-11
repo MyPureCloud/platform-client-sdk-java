@@ -1,16 +1,14 @@
----
-title: AuditQueryEntity
----
-## AuditQueryEntity
+# AuditQueryEntity
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | <!----><!---->**String**<!----> | Name of the Entity |  [optional] |
-| **actions** | <!----><!---->**List&lt;String&gt;**<!----> | List of Actions |  [optional] |
-{: class="table table-striped"}
+| **name** | **String** | Name of the Entity |  [optional] |
+| **actions** | **List&lt;String&gt;** | List of Actions |  [optional] |
 
 
 
+
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_
