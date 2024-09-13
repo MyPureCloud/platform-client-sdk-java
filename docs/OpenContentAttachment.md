@@ -12,7 +12,6 @@
 | **text** | **String** | Text associated with attachment such as an image caption. |  [optional] |
 | **sha256** | **String** | Secure hash of the attachment content. |  [optional] |
 | **filename** | **String** | Suggested file name for attachment. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -25,9 +24,8 @@
 | AUDIO | &quot;Audio&quot; | 
 | FILE | &quot;File&quot; | 
 | LINK | &quot;Link&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

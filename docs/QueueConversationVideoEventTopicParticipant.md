@@ -44,7 +44,6 @@
 | **socialExpressions** | [**List&lt;QueueConversationVideoEventTopicSocialExpression&gt;**](QueueConversationVideoEventTopicSocialExpression) |  |  [optional] |
 | **videos** | [**List&lt;QueueConversationVideoEventTopicVideo&gt;**](QueueConversationVideoEventTopicVideo) |  |  [optional] |
 | **workflow** | [**QueueConversationVideoEventTopicWorkflow**](QueueConversationVideoEventTopicWorkflow) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ScreenRecordingStateEnum
@@ -58,9 +57,8 @@
 | STOPPED | &quot;stopped&quot; | 
 | ERROR | &quot;error&quot; | 
 | TIMEOUT | &quot;timeout&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

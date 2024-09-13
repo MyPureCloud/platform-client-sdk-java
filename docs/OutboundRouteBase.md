@@ -22,7 +22,6 @@
 | **distribution** | [**DistributionEnum**](#Enum--DistributionEnum) |  |  [optional] |
 | **externalTrunkBases** | [**List&lt;DomainEntityRef&gt;**](DomainEntityRef) | Trunk base settings of trunkType \"EXTERNAL\".  This base must also be set on an edge logical interface for correct routing. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -33,7 +32,6 @@
 | ACTIVE | &quot;active&quot; | 
 | INACTIVE | &quot;inactive&quot; | 
 | DELETED | &quot;deleted&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DistributionEnum
@@ -43,9 +41,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | SEQUENTIAL | &quot;SEQUENTIAL&quot; | 
 | RANDOM | &quot;RANDOM&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

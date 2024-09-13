@@ -16,7 +16,6 @@
 | **coreSite** | **Boolean** | The core site |  [optional] |
 | **primaryCoreSites** | [**List&lt;DomainEntityRef&gt;**](DomainEntityRef) | List of site ids names and selfUris for the primary core sites |  [optional] |
 | **secondaryCoreSites** | [**List&lt;DomainEntityRef&gt;**](DomainEntityRef) | List of site ids names and selfUris for the secondary core sites |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -27,7 +26,6 @@
 | DIRECT | &quot;Direct&quot; | 
 | INDIRECT | &quot;Indirect&quot; | 
 | CLOUDPROXY | &quot;CloudProxy&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: MediaModelEnum
@@ -37,9 +35,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | PREMISES | &quot;Premises&quot; | 
 | CLOUD | &quot;Cloud&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

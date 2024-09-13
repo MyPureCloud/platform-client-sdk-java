@@ -9,7 +9,6 @@
 | **metrics** | [**List<MetricsEnum>**](#Enum--MetricsEnum) | The list of metrics to be returned. If omitted, all metrics are returned. |  [optional] |
 | **groupBy** | [**List<GroupByEnum>**](#Enum--GroupByEnum) | Specifies if the aggregated data is combined into a single set of metrics (groupBy is empty or not specified), or contains an element per attendeeId (groupBy is \"attendeeId\") |  [optional] |
 | **filter** | [**LearningAssignmentAggregateQueryRequestFilter**](LearningAssignmentAggregateQueryRequestFilter) | The filter applied to the data.  This is ANDed with the interval parameter.  |  |
-{: class="table table-striped"}
 
 
 ## Enum: MetricsEnum
@@ -26,7 +25,6 @@
 | NFAILEDACTIVITIES | &quot;nFailedActivities&quot; |
 | OACTIVITYSCORE | &quot;oActivityScore&quot; |
 | NNOTCOMPLETEDACTIVITIES | &quot;nNotCompletedActivities&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: GroupByEnum
@@ -34,9 +32,8 @@
 | Name | Value |
 | ---- | ----- |
 | ATTENDEEID | &quot;attendeeId&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

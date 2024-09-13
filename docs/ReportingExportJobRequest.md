@@ -25,7 +25,6 @@
 | **recipientEmails** | **List&lt;String&gt;** | The list of email recipients for the exports |  [optional] |
 | **includeDurationFormatInHeader** | **Boolean** | Indicates whether to include selected duration format to the column headers |  [optional] |
 | **durationFormat** | [**DurationFormatEnum**](#Enum--DurationFormatEnum) | Indicates the duration format for the exports |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ExportFormatEnum
@@ -35,7 +34,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | CSV | &quot;CSV&quot; | 
 | PDF | &quot;PDF&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ViewTypeEnum
@@ -157,7 +155,8 @@
 | MESSAGING_QUEUE_PERFORMANCE_SUMMARY_VIEW | &quot;MESSAGING_QUEUE_PERFORMANCE_SUMMARY_VIEW&quot; | 
 | MESSAGING_QUEUE_PERFORMANCE_DETAIL_VIEW | &quot;MESSAGING_QUEUE_PERFORMANCE_DETAIL_VIEW&quot; | 
 | SOCIAL_LISTENING_VIEW | &quot;SOCIAL_LISTENING_VIEW&quot; | 
-{: class="table table-striped"}
+| SOCIAL_LISTENING_POSTS_VIEW | &quot;SOCIAL_LISTENING_POSTS_VIEW&quot; | 
+| AGENT_PERFORMANCE_TIMELINE_DETAIL_VIEW | &quot;AGENT_PERFORMANCE_TIMELINE_DETAIL_VIEW&quot; | 
 
 
 ## Enum: CsvDelimiterEnum
@@ -167,7 +166,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | SEMICOLON | &quot;SEMICOLON&quot; | 
 | COMMA | &quot;COMMA&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DurationFormatEnum
@@ -179,9 +177,8 @@
 | MILLISECONDS | &quot;Milliseconds&quot; | 
 | HHMMSS | &quot;Hhmmss&quot; | 
 | HMS | &quot;Hms&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -57,7 +57,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteTaskmanagementWorkbin**
 
 
-
 > Void deleteTaskmanagementWorkbin(workbinId)
 
 Delete a workbin
@@ -114,7 +113,6 @@ null (empty response body)
 
 
 # **deleteTaskmanagementWorkitem**
-
 
 
 > Void deleteTaskmanagementWorkitem(workitemId)
@@ -175,7 +173,6 @@ null (empty response body)
 # **deleteTaskmanagementWorkitemsSchema**
 
 
-
 > Void deleteTaskmanagementWorkitemsSchema(schemaId)
 
 Delete a schema
@@ -234,7 +231,6 @@ null (empty response body)
 # **deleteTaskmanagementWorktype**
 
 
-
 > Void deleteTaskmanagementWorktype(worktypeId)
 
 Delete a worktype
@@ -291,7 +287,6 @@ null (empty response body)
 
 
 # **deleteTaskmanagementWorktypeStatus**
-
 
 
 > Void deleteTaskmanagementWorktypeStatus(worktypeId, statusId)
@@ -354,7 +349,6 @@ null (empty response body)
 # **getTaskmanagementWorkbin**
 
 
-
 > [Workbin](Workbin) getTaskmanagementWorkbin(workbinId)
 
 Get a workbin
@@ -412,7 +406,6 @@ try {
 
 
 # **getTaskmanagementWorkbinHistory**
-
 
 
 > [WorkbinChangeListing](WorkbinChangeListing) getTaskmanagementWorkbinHistory(workbinId, after, pageSize, sortOrder)
@@ -482,7 +475,6 @@ try {
 # **getTaskmanagementWorkbinVersion**
 
 
-
 > [WorkbinVersion](WorkbinVersion) getTaskmanagementWorkbinVersion(workbinId, entityVersion)
 
 Get a version of a workbin
@@ -544,7 +536,6 @@ try {
 
 
 # **getTaskmanagementWorkbinVersions**
-
 
 
 > [WorkbinVersionListing](WorkbinVersionListing) getTaskmanagementWorkbinVersions(workbinId, after, pageSize, sortOrder)
@@ -614,7 +605,6 @@ try {
 # **getTaskmanagementWorkitem**
 
 
-
 > [Workitem](Workitem) getTaskmanagementWorkitem(workitemId, expands)
 
 Get a workitem
@@ -674,7 +664,6 @@ try {
 
 
 # **getTaskmanagementWorkitemHistory**
-
 
 
 > [WorkitemChangeListing](WorkitemChangeListing) getTaskmanagementWorkitemHistory(workitemId, after, pageSize, sortOrder)
@@ -742,7 +731,6 @@ try {
 
 
 # **getTaskmanagementWorkitemUserWrapups**
-
 
 
 > [WorkitemWrapup](WorkitemWrapup) getTaskmanagementWorkitemUserWrapups(workitemId, userId, expands, after, pageSize, sortOrder)
@@ -814,7 +802,6 @@ try {
 # **getTaskmanagementWorkitemVersion**
 
 
-
 > [WorkitemVersion](WorkitemVersion) getTaskmanagementWorkitemVersion(workitemId, entityVersion)
 
 Get a version of a workitem
@@ -876,7 +863,6 @@ try {
 
 
 # **getTaskmanagementWorkitemVersions**
-
 
 
 > [WorkitemVersionListing](WorkitemVersionListing) getTaskmanagementWorkitemVersions(workitemId, after, pageSize, sortOrder)
@@ -946,7 +932,6 @@ try {
 # **getTaskmanagementWorkitemWrapups**
 
 
-
 > [WorkitemWrapupEntityListing](WorkitemWrapupEntityListing) getTaskmanagementWorkitemWrapups(workitemId, expands, after, pageSize, sortOrder)
 
 Get all wrapup codes added for all users for a workitem.
@@ -1014,7 +999,6 @@ try {
 # **getTaskmanagementWorkitemsQueryJob**
 
 
-
 > [WorkitemQueryJobResponse](WorkitemQueryJobResponse) getTaskmanagementWorkitemsQueryJob(jobId)
 
 Get the workitem query job associated with the job id.
@@ -1072,7 +1056,6 @@ try {
 
 
 # **getTaskmanagementWorkitemsQueryJobResults**
-
 
 
 > [WorkitemPagedEntityListing](WorkitemPagedEntityListing) getTaskmanagementWorkitemsQueryJobResults(jobId)
@@ -1134,7 +1117,6 @@ try {
 # **getTaskmanagementWorkitemsSchema**
 
 
-
 > [DataSchema](DataSchema) getTaskmanagementWorkitemsSchema(schemaId)
 
 Get a schema
@@ -1192,7 +1174,6 @@ try {
 
 
 # **getTaskmanagementWorkitemsSchemaVersion**
-
 
 
 > [DataSchema](DataSchema) getTaskmanagementWorkitemsSchemaVersion(schemaId, versionId)
@@ -1256,7 +1237,6 @@ try {
 # **getTaskmanagementWorkitemsSchemaVersions**
 
 
-
 > [DataSchema](DataSchema) getTaskmanagementWorkitemsSchemaVersions(schemaId)
 
 Get all versions of a schema
@@ -1316,7 +1296,6 @@ try {
 # **getTaskmanagementWorkitemsSchemas**
 
 
-
 > [DataSchemaListing](DataSchemaListing) getTaskmanagementWorkitemsSchemas()
 
 Get a list of schemas.
@@ -1372,7 +1351,6 @@ This endpoint does not require any parameters.
 # **getTaskmanagementWorktype**
 
 
-
 > [Worktype](Worktype) getTaskmanagementWorktype(worktypeId, expands)
 
 Get a worktype
@@ -1422,7 +1400,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **worktypeId** | **String**| Worktype id | 
-| **expands** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand. | [optional]<br />**Values**: defaultQueue, defaultSkills, defaultLanguage, schema 
+| **expands** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand. | [optional]<br />**Values**: defaultQueue, defaultSkills, defaultLanguage, schema, flow 
 {: class="table-striped"}
 
 
@@ -1432,7 +1410,6 @@ try {
 
 
 # **getTaskmanagementWorktypeHistory**
-
 
 
 > [WorktypeChangeListing](WorktypeChangeListing) getTaskmanagementWorktypeHistory(worktypeId, after, pageSize, sortOrder, fields)
@@ -1504,7 +1481,6 @@ try {
 # **getTaskmanagementWorktypeStatus**
 
 
-
 > [WorkitemStatus](WorkitemStatus) getTaskmanagementWorktypeStatus(worktypeId, statusId)
 
 Get a status
@@ -1566,7 +1542,6 @@ try {
 # **getTaskmanagementWorktypeStatuses**
 
 
-
 > [WorkitemStatusListing](WorkitemStatusListing) getTaskmanagementWorktypeStatuses(worktypeId)
 
 Get list of statuses for this worktype.
@@ -1624,7 +1599,6 @@ try {
 
 
 # **getTaskmanagementWorktypeVersion**
-
 
 
 > [WorktypeVersion](WorktypeVersion) getTaskmanagementWorktypeVersion(worktypeId, entityVersion)
@@ -1688,7 +1662,6 @@ try {
 
 
 # **getTaskmanagementWorktypeVersions**
-
 
 
 > [WorktypeVersionListing](WorktypeVersionListing) getTaskmanagementWorktypeVersions(worktypeId, after, pageSize, sortOrder)
@@ -1758,7 +1731,6 @@ try {
 # **patchTaskmanagementWorkbin**
 
 
-
 > [Workbin](Workbin) patchTaskmanagementWorkbin(workbinId, body)
 
 Update the attributes of a workbin
@@ -1818,7 +1790,6 @@ try {
 
 
 # **patchTaskmanagementWorkitem**
-
 
 
 > [Workitem](Workitem) patchTaskmanagementWorkitem(workitemId, body)
@@ -1883,7 +1854,6 @@ try {
 # **patchTaskmanagementWorkitemAssignment**
 
 
-
 > Void patchTaskmanagementWorkitemAssignment(workitemId, body)
 
 Attempts to manually assign a specified workitem to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
@@ -1943,7 +1913,6 @@ null (empty response body)
 
 
 # **patchTaskmanagementWorkitemUserWrapups**
-
 
 
 > [WorkitemWrapup](WorkitemWrapup) patchTaskmanagementWorkitemUserWrapups(workitemId, userId, body)
@@ -2009,7 +1978,6 @@ try {
 # **patchTaskmanagementWorkitemUsersMeWrapups**
 
 
-
 > [WorkitemWrapup](WorkitemWrapup) patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body)
 
 Add/Remove a wrapup code for the current user in a workitem.
@@ -2071,7 +2039,6 @@ try {
 # **patchTaskmanagementWorktype**
 
 
-
 > [Worktype](Worktype) patchTaskmanagementWorktype(worktypeId, body)
 
 Update the attributes of a worktype
@@ -2131,7 +2098,6 @@ try {
 
 
 # **patchTaskmanagementWorktypeStatus**
-
 
 
 > [WorkitemStatus](WorkitemStatus) patchTaskmanagementWorktypeStatus(worktypeId, statusId, body)
@@ -2197,7 +2163,6 @@ try {
 # **postTaskmanagementWorkbins**
 
 
-
 > [Workbin](Workbin) postTaskmanagementWorkbins(body)
 
 Create a workbin
@@ -2255,7 +2220,6 @@ try {
 
 
 # **postTaskmanagementWorkbinsQuery**
-
 
 
 > [WorkbinQueryEntityListing](WorkbinQueryEntityListing) postTaskmanagementWorkbinsQuery(body)
@@ -2317,7 +2281,6 @@ try {
 # **postTaskmanagementWorkitemAcdCancel**
 
 
-
 > [Workitem](Workitem) postTaskmanagementWorkitemAcdCancel(workitemId)
 
 Cancel the assignment process for a workitem that is currently queued for assignment through ACD.
@@ -2377,7 +2340,6 @@ try {
 # **postTaskmanagementWorkitemDisconnect**
 
 
-
 > [Workitem](Workitem) postTaskmanagementWorkitemDisconnect(workitemId)
 
 Disconnect the assignee of the workitem
@@ -2435,7 +2397,6 @@ try {
 
 
 # **postTaskmanagementWorkitemTerminate**
-
 
 
 > [Workitem](Workitem) postTaskmanagementWorkitemTerminate(workitemId, body)
@@ -2499,7 +2460,6 @@ try {
 # **postTaskmanagementWorkitems**
 
 
-
 > [Workitem](Workitem) postTaskmanagementWorkitems(body)
 
 Create a workitem
@@ -2557,7 +2517,6 @@ try {
 
 
 # **postTaskmanagementWorkitemsQuery**
-
 
 
 > [WorkitemPostQueryEntityListing](WorkitemPostQueryEntityListing) postTaskmanagementWorkitemsQuery(body)
@@ -2623,7 +2582,6 @@ try {
 # **postTaskmanagementWorkitemsQueryJobs**
 
 
-
 > [WorkitemQueryJobResponse](WorkitemQueryJobResponse) postTaskmanagementWorkitemsQueryJobs(body)
 
 Create a workitem query job
@@ -2683,7 +2641,6 @@ try {
 # **postTaskmanagementWorkitemsSchemas**
 
 
-
 > [DataSchema](DataSchema) postTaskmanagementWorkitemsSchemas(body)
 
 Create a schema
@@ -2741,7 +2698,6 @@ try {
 
 
 # **postTaskmanagementWorktypeStatuses**
-
 
 
 > [WorkitemStatus](WorkitemStatus) postTaskmanagementWorktypeStatuses(worktypeId, body)
@@ -2805,7 +2761,6 @@ try {
 # **postTaskmanagementWorktypes**
 
 
-
 > [Worktype](Worktype) postTaskmanagementWorktypes(body)
 
 Create a worktype
@@ -2863,7 +2818,6 @@ try {
 
 
 # **postTaskmanagementWorktypesQuery**
-
 
 
 > [WorktypeQueryEntityListing](WorktypeQueryEntityListing) postTaskmanagementWorktypesQuery(body)
@@ -2925,7 +2879,6 @@ try {
 # **putTaskmanagementWorkitemsSchema**
 
 
-
 > [DataSchema](DataSchema) putTaskmanagementWorkitemsSchema(schemaId, body)
 
 Update a schema
@@ -2984,4 +2937,4 @@ try {
 [**DataSchema**](DataSchema)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

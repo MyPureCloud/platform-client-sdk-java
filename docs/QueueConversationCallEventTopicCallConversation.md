@@ -14,7 +14,6 @@
 | **recordingState** | [**RecordingStateEnum**](#Enum--RecordingStateEnum) |  |  [optional] |
 | **securePause** | **Boolean** |  |  [optional] |
 | **maxParticipants** | **Integer** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: RecordingStateEnum
@@ -25,9 +24,8 @@
 | NONE | &quot;none&quot; | 
 | ACTIVE | &quot;active&quot; | 
 | PAUSED | &quot;paused&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

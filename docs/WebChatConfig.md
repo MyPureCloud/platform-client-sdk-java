@@ -6,7 +6,6 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **webChatSkin** | [**WebChatSkinEnum**](#Enum--WebChatSkinEnum) | css class to be applied to the web chat widget. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: WebChatSkinEnum
@@ -16,9 +15,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | BASIC | &quot;basic&quot; | 
 | MODERN_CARET_SKIN | &quot;modern-caret-skin&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -9,7 +9,6 @@
 | **selector** | [**SelectorEnum**](#Enum--SelectorEnum) | The learning module rule selector |  |
 | **value** | **List&lt;String&gt;** | The value of rules |  |
 | **order** | **Integer** | The order of rules in learning module rule |  |
-{: class="table table-striped"}
 
 
 ## Enum: OperationEnum
@@ -19,7 +18,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INCLUDE | &quot;Include&quot; | 
 | EXCLUDE | &quot;Exclude&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: SelectorEnum
@@ -35,9 +33,8 @@
 | QUEUE | &quot;Queue&quot; | 
 | ROLE | &quot;Role&quot; | 
 | TEAM | &quot;Team&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

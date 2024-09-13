@@ -11,7 +11,6 @@
 | **conditionValue** | **Double** | The limit value, beyond which a rule evaluates as true |  [optional] |
 | **groups** | [**List&lt;MemberGroup&gt;**](MemberGroup) | The group(s) to activate if the rule evaluates as true |  [optional] |
 | **waitSeconds** | **Integer** | The number of seconds to wait in this rule, if it evaluates as true, before evaluating the next rule.  For the final rule, this is ignored, so need not be specified. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MetricEnum
@@ -21,7 +20,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ESTIMATEDWAITTIME | &quot;EstimatedWaitTime&quot; | 
 | SERVICELEVEL | &quot;ServiceLevel&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: OperatorEnum
@@ -33,9 +31,8 @@
 | GREATERTHANOREQUALTO | &quot;GreaterThanOrEqualTo&quot; | 
 | LESSTHAN | &quot;LessThan&quot; | 
 | LESSTHANOREQUALTO | &quot;LessThanOrEqualTo&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

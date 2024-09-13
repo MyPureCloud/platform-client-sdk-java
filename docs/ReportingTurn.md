@@ -17,7 +17,6 @@
 | **askActionResult** | [**AskActionResultEnum**](#Enum--AskActionResultEnum) | Result of the bot flow 'ask' action. |  [optional] |
 | **sessionEndDetails** | [**SessionEndDetails**](SessionEndDetails) | The details related to end of bot flow session. |  [optional] |
 | **conversation** | [**AddressableEntityRef**](AddressableEntityRef) | The conversation details, across potentially multiple Bot Flow sessions. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: AskActionResultEnum
@@ -42,9 +41,8 @@
 | SUCCESSDISAMBIGUATIONNONE | &quot;SuccessDisambiguationNone&quot; | 
 | NOMATCHDISAMBIGUATION | &quot;NoMatchDisambiguation&quot; | 
 | NOINPUTDISAMBIGUATION | &quot;NoInputDisambiguation&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

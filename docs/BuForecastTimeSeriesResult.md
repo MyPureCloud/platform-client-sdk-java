@@ -8,7 +8,6 @@
 | **metric** | [**MetricEnum**](#Enum--MetricEnum) | The metric this result applies to |  [optional] |
 | **forecastingMethod** | [**ForecastingMethodEnum**](#Enum--ForecastingMethodEnum) | The forecasting method that was used for this metric |  [optional] |
 | **forecastType** | [**ForecastTypeEnum**](#Enum--ForecastTypeEnum) | The forecasting type in this forecast result |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MetricEnum
@@ -18,7 +17,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | OFFERED | &quot;Offered&quot; | 
 | AVERAGEHANDLETIMESECONDS | &quot;AverageHandleTimeSeconds&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ForecastingMethodEnum
@@ -52,7 +50,6 @@
 | THETA | &quot;Theta&quot; | 
 | ENSEMBLE | &quot;Ensemble&quot; | 
 | OTHER | &quot;Other&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ForecastTypeEnum
@@ -62,9 +59,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | LONGTERM | &quot;LongTerm&quot; | 
 | SHORTTERM | &quot;ShortTerm&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -42,7 +42,6 @@
 | **parkTime** | [**Date**](Date) | The time when this participant's communication was last parked.  Does not reset on resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **roomId** | **String** | The ID of the chat room. |  [optional] |
 | **avatarImageUrl** | **String** | If available, the URI to the avatar image of this communication. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -62,7 +61,6 @@
 | TRANSMITTING | &quot;transmitting&quot; | 
 | PARKED | &quot;parked&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DirectionEnum
@@ -72,7 +70,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INBOUND | &quot;inbound&quot; | 
 | OUTBOUND | &quot;outbound&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DisconnectTypeEnum
@@ -96,7 +93,6 @@
 | PEER | &quot;peer&quot; | 
 | OTHER | &quot;other&quot; | 
 | SPAM | &quot;spam&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: FlaggedReasonEnum
@@ -105,9 +101,8 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | GENERAL | &quot;general&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

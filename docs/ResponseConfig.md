@@ -9,9 +9,8 @@
 | **translationMapDefaults** | **Map&lt;String, String&gt;** | Map 'attribute name' and 'default value' pairs used as fallback values if JSON path extraction fails for specified key. |  [optional] |
 | **successTemplate** | **String** | Velocity template to build response to return from Action. |  [optional] |
 | **successTemplateUri** | **String** | URI to retrieve success template. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

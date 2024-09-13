@@ -69,7 +69,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteConversationRecordingAnnotation**
 
 
-
 > Void deleteConversationRecordingAnnotation(conversationId, recordingId, annotationId)
 
 Delete annotation
@@ -132,7 +131,6 @@ null (empty response body)
 # **deleteOrphanrecording**
 
 
-
 > [OrphanRecording](OrphanRecording) deleteOrphanrecording(orphanId)
 
 Deletes a single orphan recording
@@ -190,7 +188,6 @@ try {
 
 
 # **deleteRecordingCrossplatformMediaretentionpolicies**
-
 
 
 > Void deleteRecordingCrossplatformMediaretentionpolicies(ids)
@@ -253,7 +250,6 @@ null (empty response body)
 # **deleteRecordingCrossplatformMediaretentionpolicy**
 
 
-
 > Void deleteRecordingCrossplatformMediaretentionpolicy(policyId)
 
 Delete a media retention policy
@@ -312,7 +308,6 @@ null (empty response body)
 # **deleteRecordingJob**
 
 
-
 > Void deleteRecordingJob(jobId)
 
 Delete the recording bulk job
@@ -369,7 +364,6 @@ null (empty response body)
 
 
 # **deleteRecordingMediaretentionpolicies**
-
 
 
 > Void deleteRecordingMediaretentionpolicies(ids)
@@ -432,7 +426,6 @@ null (empty response body)
 # **deleteRecordingMediaretentionpolicy**
 
 
-
 > Void deleteRecordingMediaretentionpolicy(policyId)
 
 Delete a media retention policy
@@ -489,7 +482,6 @@ null (empty response body)
 
 
 # **getConversationRecording**
-
 
 
 > [Recording](Recording) getConversationRecording(conversationId, recordingId, formatId, emailFormatId, chatFormatId, messageFormatId, download, fileName, locale, mediaFormats)
@@ -570,7 +562,6 @@ try {
 # **getConversationRecordingAnnotation**
 
 
-
 > [Annotation](Annotation) getConversationRecordingAnnotation(conversationId, recordingId, annotationId)
 
 Get annotation
@@ -634,7 +625,6 @@ try {
 # **getConversationRecordingAnnotations**
 
 
-
 > [List&lt;Annotation&gt;](Annotation) getConversationRecordingAnnotations(conversationId, recordingId)
 
 Get annotations for recording
@@ -694,7 +684,6 @@ try {
 
 
 # **getConversationRecordingmetadata**
-
 
 
 > [List&lt;RecordingMetadata&gt;](RecordingMetadata) getConversationRecordingmetadata(conversationId)
@@ -757,7 +746,6 @@ try {
 # **getConversationRecordingmetadataRecordingId**
 
 
-
 > [RecordingMetadata](RecordingMetadata) getConversationRecordingmetadataRecordingId(conversationId, recordingId)
 
 Get metadata for a specific recording. Does not return playable media.
@@ -818,7 +806,6 @@ try {
 
 
 # **getConversationRecordings**
-
 
 
 > [List&lt;Recording&gt;](Recording) getConversationRecordings(conversationId, maxWaitMs, formatId, mediaFormats)
@@ -887,7 +874,6 @@ try {
 # **getOrphanrecording**
 
 
-
 > [OrphanRecording](OrphanRecording) getOrphanrecording(orphanId)
 
 Gets a single orphan recording
@@ -945,7 +931,6 @@ try {
 
 
 # **getOrphanrecordingMedia**
-
 
 
 > [Recording](Recording) getOrphanrecordingMedia(orphanId, formatId, emailFormatId, chatFormatId, messageFormatId, download, fileName, locale, mediaFormats)
@@ -1025,7 +1010,6 @@ try {
 # **getOrphanrecordings**
 
 
-
 > [OrphanRecordingListing](OrphanRecordingListing) getOrphanrecordings(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, hasConversation, media)
 
 Gets all orphan recordings
@@ -1099,7 +1083,6 @@ try {
 # **getRecordingBatchrequest**
 
 
-
 > [BatchDownloadJobStatusResult](BatchDownloadJobStatusResult) getRecordingBatchrequest(jobId)
 
 Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.
@@ -1156,7 +1139,6 @@ try {
 
 
 # **getRecordingCrossplatformMediaretentionpolicies**
-
 
 
 > [PolicyEntityListing](PolicyEntityListing) getRecordingCrossplatformMediaretentionpolicies(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors, deleteDaysThreshold)
@@ -1240,7 +1222,6 @@ try {
 # **getRecordingCrossplatformMediaretentionpolicy**
 
 
-
 > [CrossPlatformPolicy](CrossPlatformPolicy) getRecordingCrossplatformMediaretentionpolicy(policyId)
 
 Get a media retention policy
@@ -1300,7 +1281,6 @@ try {
 # **getRecordingJob**
 
 
-
 > [RecordingJob](RecordingJob) getRecordingJob(jobId)
 
 Get the status of the job associated with the job id.
@@ -1358,7 +1338,6 @@ try {
 
 
 # **getRecordingJobFailedrecordings**
-
 
 
 > [FailedRecordingEntityListing](FailedRecordingEntityListing) getRecordingJobFailedrecordings(jobId, pageSize, pageNumber, includeTotal, cursor)
@@ -1426,7 +1405,6 @@ try {
 
 
 # **getRecordingJobs**
-
 
 
 > [RecordingJobEntityListing](RecordingJobEntityListing) getRecordingJobs(pageSize, pageNumber, sortBy, state, showOnlyMyJobs, jobType, includeTotal, cursor)
@@ -1502,7 +1480,6 @@ try {
 # **getRecordingKeyconfiguration**
 
 
-
 > [RecordingEncryptionConfiguration](RecordingEncryptionConfiguration) getRecordingKeyconfiguration(keyConfigurationId)
 
 Get the encryption key configurations
@@ -1562,7 +1539,6 @@ try {
 # **getRecordingKeyconfigurations**
 
 
-
 > [RecordingEncryptionConfigurationListing](RecordingEncryptionConfigurationListing) getRecordingKeyconfigurations()
 
 Get a list of key configurations data
@@ -1616,7 +1592,6 @@ This endpoint does not require any parameters.
 
 
 # **getRecordingMediaretentionpolicies**
-
 
 
 > [PolicyEntityListing](PolicyEntityListing) getRecordingMediaretentionpolicies(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors, deleteDaysThreshold)
@@ -1700,7 +1675,6 @@ try {
 # **getRecordingMediaretentionpolicy**
 
 
-
 > [Policy](Policy) getRecordingMediaretentionpolicy(policyId)
 
 Get a media retention policy
@@ -1758,7 +1732,6 @@ try {
 
 
 # **getRecordingRecordingkeys**
-
 
 
 > [EncryptionKeyEntityListing](EncryptionKeyEntityListing) getRecordingRecordingkeys(pageSize, pageNumber)
@@ -1822,7 +1795,6 @@ try {
 # **getRecordingRecordingkeysRotationschedule**
 
 
-
 > [KeyRotationSchedule](KeyRotationSchedule) getRecordingRecordingkeysRotationschedule()
 
 Get key rotation schedule
@@ -1876,7 +1848,6 @@ This endpoint does not require any parameters.
 
 
 # **getRecordingSettings**
-
 
 
 > [RecordingSettings](RecordingSettings) getRecordingSettings(createDefault)
@@ -1939,7 +1910,6 @@ try {
 # **getRecordingUploadsReport**
 
 
-
 > [RecordingUploadReport](RecordingUploadReport) getRecordingUploadsReport(reportId)
 
 Get the status of a recording upload status report
@@ -1997,7 +1967,6 @@ try {
 
 
 # **getRecordingsRetentionQuery**
-
 
 
 > [RecordingRetentionCursorEntityListing](RecordingRetentionCursorEntityListing) getRecordingsRetentionQuery(retentionThresholdDays, cursor, pageSize)
@@ -2062,7 +2031,9 @@ try {
 
 # **getRecordingsScreensessions**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [ScreenRecordingSessionListing](ScreenRecordingSessionListing) getRecordingsScreensessions(pageSize, pageNumber)
 
@@ -2127,7 +2098,6 @@ try {
 # **getRecordingsScreensessionsDetails**
 
 
-
 > [ScreenRecordingActiveSessions](ScreenRecordingActiveSessions) getRecordingsScreensessionsDetails()
 
 Retrieves an object containing the total number of concurrent active screen recordings
@@ -2181,7 +2151,6 @@ This endpoint does not require any parameters.
 
 
 # **patchRecordingCrossplatformMediaretentionpolicy**
-
 
 
 > [CrossPlatformPolicy](CrossPlatformPolicy) patchRecordingCrossplatformMediaretentionpolicy(policyId, body)
@@ -2245,7 +2214,6 @@ try {
 # **patchRecordingMediaretentionpolicy**
 
 
-
 > [Policy](Policy) patchRecordingMediaretentionpolicy(policyId, body)
 
 Patch a media retention policy
@@ -2306,7 +2274,9 @@ try {
 
 # **patchRecordingsScreensession**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Void patchRecordingsScreensession(recordingSessionId, body)
 
@@ -2368,7 +2338,6 @@ null (empty response body)
 
 
 # **postConversationRecordingAnnotations**
-
 
 
 > [Annotation](Annotation) postConversationRecordingAnnotations(conversationId, recordingId, body)
@@ -2434,7 +2403,6 @@ try {
 # **postRecordingBatchrequests**
 
 
-
 > [BatchDownloadJobSubmissionResult](BatchDownloadJobSubmissionResult) postRecordingBatchrequests(body)
 
 Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
@@ -2493,7 +2461,6 @@ try {
 
 
 # **postRecordingCrossplatformMediaretentionpolicies**
-
 
 
 > [CrossPlatformPolicy](CrossPlatformPolicy) postRecordingCrossplatformMediaretentionpolicies(body)
@@ -2557,7 +2524,6 @@ try {
 # **postRecordingJobs**
 
 
-
 > [RecordingJob](RecordingJob) postRecordingJobs(body)
 
 Create a recording bulk job.
@@ -2619,7 +2585,6 @@ try {
 # **postRecordingKeyconfigurations**
 
 
-
 > [RecordingEncryptionConfiguration](RecordingEncryptionConfiguration) postRecordingKeyconfigurations(body)
 
 Setup configurations for encryption key creation
@@ -2677,7 +2642,6 @@ try {
 
 
 # **postRecordingKeyconfigurationsValidate**
-
 
 
 > [RecordingEncryptionConfiguration](RecordingEncryptionConfiguration) postRecordingKeyconfigurationsValidate(body)
@@ -2739,7 +2703,6 @@ try {
 # **postRecordingLocalkeys**
 
 
-
 > [EncryptionKey](EncryptionKey) postRecordingLocalkeys(body)
 
 create a local key management recording key
@@ -2797,7 +2760,6 @@ try {
 
 
 # **postRecordingMediaretentionpolicies**
-
 
 
 > [Policy](Policy) postRecordingMediaretentionpolicies(body)
@@ -2861,7 +2823,6 @@ try {
 # **postRecordingRecordingkeys**
 
 
-
 > [EncryptionKey](EncryptionKey) postRecordingRecordingkeys()
 
 Create encryption key
@@ -2915,7 +2876,6 @@ This endpoint does not require any parameters.
 
 
 # **postRecordingUploadsReports**
-
 
 
 > [RecordingUploadReport](RecordingUploadReport) postRecordingUploadsReports(body)
@@ -2977,7 +2937,6 @@ try {
 # **postRecordingsDeletionprotection**
 
 
-
 > [List&lt;AddressableEntityRef&gt;](AddressableEntityRef) postRecordingsDeletionprotection(body)
 
 Get a list of conversations with protected recordings
@@ -3034,7 +2993,6 @@ try {
 
 
 # **postRecordingsScreensessionsAcknowledge**
-
 
 
 > Void postRecordingsScreensessionsAcknowledge(body)
@@ -3094,7 +3052,6 @@ null (empty response body)
 # **postRecordingsScreensessionsMetadata**
 
 
-
 > Void postRecordingsScreensessionsMetadata(body)
 
 Provide meta-data a screen recording.
@@ -3150,7 +3107,6 @@ null (empty response body)
 
 
 # **putConversationRecording**
-
 
 
 > [Recording](Recording) putConversationRecording(conversationId, recordingId, body, clearExport)
@@ -3222,7 +3178,6 @@ try {
 # **putConversationRecordingAnnotation**
 
 
-
 > [Annotation](Annotation) putConversationRecordingAnnotation(conversationId, recordingId, annotationId, body)
 
 Update annotation
@@ -3290,7 +3245,6 @@ try {
 # **putOrphanrecording**
 
 
-
 > [Recording](Recording) putOrphanrecording(orphanId, body)
 
 Updates an orphan recording to a regular recording with retention values
@@ -3354,7 +3308,6 @@ try {
 # **putRecordingCrossplatformMediaretentionpolicy**
 
 
-
 > [CrossPlatformPolicy](CrossPlatformPolicy) putRecordingCrossplatformMediaretentionpolicy(policyId, body)
 
 Update a media retention policy
@@ -3416,7 +3369,6 @@ try {
 
 
 # **putRecordingJob**
-
 
 
 > [RecordingJob](RecordingJob) putRecordingJob(jobId, body)
@@ -3484,7 +3436,6 @@ try {
 # **putRecordingKeyconfiguration**
 
 
-
 > [RecordingEncryptionConfiguration](RecordingEncryptionConfiguration) putRecordingKeyconfiguration(keyConfigurationId, body)
 
 Update the encryption key configurations
@@ -3544,7 +3495,6 @@ try {
 
 
 # **putRecordingMediaretentionpolicy**
-
 
 
 > [Policy](Policy) putRecordingMediaretentionpolicy(policyId, body)
@@ -3610,7 +3560,6 @@ try {
 # **putRecordingRecordingkeysRotationschedule**
 
 
-
 > [KeyRotationSchedule](KeyRotationSchedule) putRecordingRecordingkeysRotationschedule(body)
 
 Update key rotation schedule
@@ -3668,7 +3617,6 @@ try {
 
 
 # **putRecordingSettings**
-
 
 
 > [RecordingSettings](RecordingSettings) putRecordingSettings(body)
@@ -3730,7 +3678,6 @@ try {
 # **putRecordingsDeletionprotection**
 
 
-
 > Void putRecordingsDeletionprotection(protect, body)
 
 Apply or revoke recording protection for conversations
@@ -3789,4 +3736,4 @@ try {
 null (empty response body)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

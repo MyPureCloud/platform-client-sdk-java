@@ -11,7 +11,6 @@
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | The group type |  [optional] |
 | **memberCount** | **Integer** | The number of members in this group |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -22,9 +21,8 @@
 | TEAM | &quot;TEAM&quot; | 
 | GROUP | &quot;GROUP&quot; | 
 | SKILLGROUP | &quot;SKILLGROUP&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -9,7 +9,6 @@
 | **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | The type of operation to perform for matching check |  [optional] |
 | **value** | [**JsonNode**](JsonNode) | The value to match on. Only one of value and values can be included |  [optional] |
 | **values** | [**List&lt;JsonNode&gt;**](JsonNode) | The list of values to match on. Only one of value and values can be included |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: OperatorEnum
@@ -29,9 +28,8 @@
 | ALL | &quot;All&quot; | 
 | EXISTS | &quot;Exists&quot; | 
 | SIZE | &quot;Size&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

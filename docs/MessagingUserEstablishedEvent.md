@@ -14,9 +14,8 @@
 | **afterCallWorkRequired** | **Boolean** | Indicates whether or not this user will be required to complete after call work. |  [optional] |
 | **initialConfiguration** | [**MessagingInitialConfiguration**](MessagingInitialConfiguration) | Metadata about this communication. |  |
 | **sourceConfiguration** | [**SourceConfiguration**](SourceConfiguration) | Metadata about the source of this communication's interaction. |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

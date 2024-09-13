@@ -12,7 +12,6 @@
 | **serviceName** | **String** | Service name for the audit query. |  [optional] |
 | **filters** | [**List&lt;AuditQueryFilter&gt;**](AuditQueryFilter) | Filters for the audit query. |  [optional] |
 | **sort** | [**List&lt;AuditQuerySort&gt;**](AuditQuerySort) | Sort parameter for the audit query. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -25,9 +24,8 @@
 | SUCCEEDED | &quot;Succeeded&quot; | 
 | FAILED | &quot;Failed&quot; | 
 | CANCELLED | &quot;Cancelled&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

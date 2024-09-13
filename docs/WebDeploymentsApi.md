@@ -29,7 +29,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteWebdeploymentsConfiguration**
 
 
-
 > Void deleteWebdeploymentsConfiguration(configurationId)
 
 Delete all versions of a configuration
@@ -86,7 +85,6 @@ null (empty response body)
 
 
 # **deleteWebdeploymentsDeployment**
-
 
 
 > Void deleteWebdeploymentsDeployment(deploymentId)
@@ -147,7 +145,6 @@ null (empty response body)
 # **deleteWebdeploymentsDeploymentCobrowseSessionId**
 
 
-
 > Empty deleteWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId)
 
 Deletes a cobrowse session
@@ -195,7 +192,6 @@ try {
 # **deleteWebdeploymentsTokenRevoke**
 
 
-
 > Void deleteWebdeploymentsTokenRevoke(xJourneySessionId, xJourneySessionType)
 
 Invalidate JWT
@@ -240,7 +236,6 @@ null (empty response body)
 
 
 # **getWebdeploymentsConfigurationVersion**
-
 
 
 > [WebDeploymentConfigurationVersion](WebDeploymentConfigurationVersion) getWebdeploymentsConfigurationVersion(configurationId, versionId)
@@ -304,7 +299,6 @@ try {
 # **getWebdeploymentsConfigurationVersions**
 
 
-
 > [WebDeploymentConfigurationVersionEntityListing](WebDeploymentConfigurationVersionEntityListing) getWebdeploymentsConfigurationVersions(configurationId)
 
 Get the versions of a configuration
@@ -366,7 +360,6 @@ try {
 # **getWebdeploymentsConfigurationVersionsDraft**
 
 
-
 > [WebDeploymentConfigurationVersion](WebDeploymentConfigurationVersion) getWebdeploymentsConfigurationVersionsDraft(configurationId)
 
 Get the configuration draft
@@ -426,7 +419,6 @@ try {
 # **getWebdeploymentsConfigurations**
 
 
-
 > [WebDeploymentConfigurationVersionEntityListing](WebDeploymentConfigurationVersionEntityListing) getWebdeploymentsConfigurations(showOnlyPublished)
 
 View configuration drafts
@@ -484,7 +476,6 @@ try {
 
 
 # **getWebdeploymentsDeployment**
-
 
 
 > [WebDeployment](WebDeployment) getWebdeploymentsDeployment(deploymentId, expand)
@@ -548,7 +539,6 @@ try {
 # **getWebdeploymentsDeploymentCobrowseSessionId**
 
 
-
 > [CobrowseWebMessagingSession](CobrowseWebMessagingSession) getWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId)
 
 Retrieves a cobrowse session
@@ -594,7 +584,6 @@ try {
 
 
 # **getWebdeploymentsDeploymentConfigurations**
-
 
 
 > [WebDeploymentActiveConfigurationOnDeployment](WebDeploymentActiveConfigurationOnDeployment) getWebdeploymentsDeploymentConfigurations(deploymentId, type, expand)
@@ -659,7 +648,6 @@ try {
 # **getWebdeploymentsDeployments**
 
 
-
 > [ExpandableWebDeploymentEntityListing](ExpandableWebDeploymentEntityListing) getWebdeploymentsDeployments(expand)
 
 Get deployments
@@ -717,7 +705,6 @@ try {
 
 
 # **postWebdeploymentsConfigurationVersionsDraftPublish**
-
 
 
 > [WebDeploymentConfigurationVersion](WebDeploymentConfigurationVersion) postWebdeploymentsConfigurationVersionsDraftPublish(configurationId)
@@ -780,7 +767,6 @@ try {
 # **postWebdeploymentsConfigurations**
 
 
-
 > [WebDeploymentConfigurationVersion](WebDeploymentConfigurationVersion) postWebdeploymentsConfigurations(configurationVersion)
 
 Create a configuration draft
@@ -838,7 +824,6 @@ try {
 
 
 # **postWebdeploymentsDeployments**
-
 
 
 > [WebDeployment](WebDeployment) postWebdeploymentsDeployments(deployment)
@@ -900,7 +885,6 @@ try {
 # **postWebdeploymentsTokenOauthcodegrantjwtexchange**
 
 
-
 > [WebDeploymentsAuthorizationResponse](WebDeploymentsAuthorizationResponse) postWebdeploymentsTokenOauthcodegrantjwtexchange(body)
 
 Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
@@ -946,7 +930,6 @@ try {
 # **postWebdeploymentsTokenRefresh**
 
 
-
 > [SignedData](SignedData) postWebdeploymentsTokenRefresh(body)
 
 Refresh a JWT.
@@ -990,7 +973,6 @@ try {
 
 
 # **putWebdeploymentsConfigurationVersionsDraft**
-
 
 
 > [WebDeploymentConfigurationVersion](WebDeploymentConfigurationVersion) putWebdeploymentsConfigurationVersionsDraft(configurationId, configurationVersion)
@@ -1054,7 +1036,6 @@ try {
 # **putWebdeploymentsDeployment**
 
 
-
 > [WebDeployment](WebDeployment) putWebdeploymentsDeployment(deploymentId, deployment)
 
 Update a deployment
@@ -1113,4 +1094,4 @@ try {
 [**WebDeployment**](WebDeployment)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

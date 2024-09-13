@@ -12,9 +12,8 @@
 | **messageParams** | **Map&lt;String, String&gt;** | Used in conjunction with messageWithParams. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'john.doe' |  [optional] |
 | **contextId** | **String** | The correlation Id or context Id for this message. If left blank the Public API will look at the HTTP response header 'ININ-Correlation-Id' instead. |  [optional] |
 | **uri** | **String** |  |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

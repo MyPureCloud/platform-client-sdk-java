@@ -14,7 +14,6 @@
 | **displayAttributes** | [**JourneyViewChartDisplayAttributes**](JourneyViewChartDisplayAttributes) | Optional display attributes for rendering the chart |  [optional] |
 | **groupByMax** | **Integer** | A maximum on the number of values being grouped by |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: GroupByTimeEnum
@@ -26,9 +25,8 @@
 | WEEK | &quot;Week&quot; | 
 | MONTH | &quot;Month&quot; | 
 | YEAR | &quot;Year&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

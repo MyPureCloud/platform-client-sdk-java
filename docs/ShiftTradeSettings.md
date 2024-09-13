@@ -18,7 +18,6 @@
 | **requiresMatchingSkills** | **Boolean** | Whether to constrain shift trades to agents with matching skills |  [optional] |
 | **requiresMatchingPlanningGroups** | **Boolean** | Whether to constrain shift trades to agents with matching planning groups |  [optional] |
 | **activityCategoryRules** | [**List&lt;ShiftTradeActivityRule&gt;**](ShiftTradeActivityRule) | Rules that specify what to do with activity categories that are part of a shift defined in a trade |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: UnequalPaidEnum
@@ -29,7 +28,6 @@
 | ALLOW | &quot;Allow&quot; | 
 | DISALLOW | &quot;Disallow&quot; | 
 | ADMINREVIEW | &quot;AdminReview&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: OneSidedEnum
@@ -40,7 +38,6 @@
 | ALLOW | &quot;Allow&quot; | 
 | DISALLOW | &quot;Disallow&quot; | 
 | ADMINREVIEW | &quot;AdminReview&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: WeeklyMinPaidViolationsEnum
@@ -51,7 +48,6 @@
 | ALLOW | &quot;Allow&quot; | 
 | DISALLOW | &quot;Disallow&quot; | 
 | ADMINREVIEW | &quot;AdminReview&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: WeeklyMaxPaidViolationsEnum
@@ -62,9 +58,8 @@
 | ALLOW | &quot;Allow&quot; | 
 | DISALLOW | &quot;Disallow&quot; | 
 | ADMINREVIEW | &quot;AdminReview&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

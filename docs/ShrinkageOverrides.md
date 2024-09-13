@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **clear** | **Boolean** | Set true to clear the shrinkage interval overrides |  [optional] |
 | **values** | [**List&lt;ShrinkageOverride&gt;**](ShrinkageOverride) | List of interval shrinkage overrides |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

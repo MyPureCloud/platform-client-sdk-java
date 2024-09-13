@@ -9,7 +9,6 @@
 | **lengthInMinutes** | **Integer** | Length of Learning activity slot in minutes |  [optional] |
 | **staffingDifference** | **Double** | Difference between scheduled and forecast headcount for this slot after scheduling the Learning activity |  [optional] |
 | **differenceRating** | [**DifferenceRatingEnum**](#Enum--DifferenceRatingEnum) | Rating based on the staffing difference for scheduled slot |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: DifferenceRatingEnum
@@ -20,9 +19,8 @@
 | POOR | &quot;Poor&quot; | 
 | NEUTRAL | &quot;Neutral&quot; | 
 | GOOD | &quot;Good&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

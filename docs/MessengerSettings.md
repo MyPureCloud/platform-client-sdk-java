@@ -12,7 +12,6 @@
 | **apps** | [**MessengerApps**](MessengerApps) | The apps embedded in the messenger |  [optional] |
 | **homeScreen** | [**MessengerHomeScreen**](MessengerHomeScreen) | The homescreen settings for messenger |  [optional] |
 | **sessionPersistenceType** | [**SessionPersistenceTypeEnum**](#Enum--SessionPersistenceTypeEnum) | The session persistence type for messenger |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: SessionPersistenceTypeEnum
@@ -22,9 +21,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ACROSSSUBDOMAINS | &quot;AcrossSubdomains&quot; | 
 | DOMAINORSUBDOMAINONLY | &quot;DomainOrSubdomainOnly&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

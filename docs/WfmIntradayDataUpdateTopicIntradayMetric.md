@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **category** | [**CategoryEnum**](#Enum--CategoryEnum) |  |  [optional] |
 | **version** | **String** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: CategoryEnum
@@ -21,9 +20,8 @@
 | SCHEDULEDATA | &quot;ScheduleData&quot; | 
 | PERFORMANCEPREDICTIONAGENTDATA | &quot;PerformancePredictionAgentData&quot; | 
 | PERFORMANCEPREDICTIONQUEUEDATA | &quot;PerformancePredictionQueueData&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

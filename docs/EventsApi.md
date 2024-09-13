@@ -13,7 +13,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **postEventsConversations**
 
 
-
 > [BatchEventResponse](BatchEventResponse) postEventsConversations(body)
 
 Publish Conversation Batch Events
@@ -71,7 +70,6 @@ try {
 
 
 # **postEventsUsersPresence**
-
 
 
 > [BatchEventResponse](BatchEventResponse) postEventsUsersPresence(body)
@@ -133,7 +131,6 @@ try {
 # **postEventsUsersRoutingstatus**
 
 
-
 > [BatchEventResponse](BatchEventResponse) postEventsUsersRoutingstatus(body)
 
 Publish Agent Routing Status Batch Events
@@ -190,4 +187,4 @@ try {
 [**BatchEventResponse**](BatchEventResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

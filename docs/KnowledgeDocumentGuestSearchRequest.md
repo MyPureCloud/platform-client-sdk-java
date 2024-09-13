@@ -15,7 +15,6 @@
 | **sessionId** | **String** | Session ID of the search. |  [optional] |
 | **answerHighlightTopResults** | **Integer** | The number of articles to be sent for answer-highlighting. Can range from 1-5. |  [optional] |
 | **includeDraftDocuments** | **Boolean** | Indicates whether the search results would also include draft documents. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: QueryTypeEnum
@@ -26,9 +25,8 @@
 | AUTOSEARCH | &quot;AutoSearch&quot; | 
 | MANUALSEARCH | &quot;ManualSearch&quot; | 
 | SUGGESTION | &quot;Suggestion&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

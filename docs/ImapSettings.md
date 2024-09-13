@@ -8,7 +8,6 @@
 | **integration** | [**DomainEntityRef**](DomainEntityRef) | The IMAP server integration to use for ingesting emails. |  [optional] |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | Imap Server Status |  [optional] |
 | **errorInfo** | [**EmailErrorInfo**](EmailErrorInfo) | Additional Imap Server error information |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -22,9 +21,8 @@
 | INACTIVE | &quot;Inactive&quot; | 
 | INTEGRATIONDELETED | &quot;IntegrationDeleted&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

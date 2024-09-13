@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **name** | **String** | The case-sensitive name of a routing language configured in Genesys Cloud. |  |
 | **proficiency** | **Double** | A rating from 0.0 to 5.0 that indicates how fluent an agent is in a particular language. ACD interactions are routed to agents with higher proficiency ratings. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

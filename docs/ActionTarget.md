@@ -16,7 +16,6 @@
 | **selfUri** | **String** | The URI for this object |  [optional] |
 | **createdDate** | [**Date**](Date) | The date the target was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **modifiedDate** | [**Date**](Date) | The date the target was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: SupportedMediaTypesEnum
@@ -30,7 +29,6 @@
 | MESSAGING | &quot;messaging&quot; |
 | SOCIAL | &quot;social&quot; |
 | WEBCHAT | &quot;webchat&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -41,9 +39,8 @@
 | ACTIVE | &quot;active&quot; | 
 | INACTIVE | &quot;inactive&quot; | 
 | DELETED | &quot;deleted&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -10,7 +10,6 @@
 | **expirationDate** | [**Date**](Date) | The time at which results for this query will expire. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **submissionDate** | [**Date**](Date) | The time at which the query was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **completionDate** | [**Date**](Date) | The time at which the query completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -24,9 +23,8 @@
 | CANCELLED | &quot;CANCELLED&quot; | 
 | FULFILLED | &quot;FULFILLED&quot; | 
 | EXPIRED | &quot;EXPIRED&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

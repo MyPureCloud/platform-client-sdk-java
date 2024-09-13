@@ -10,9 +10,8 @@
 | **completedCount** | **Integer** | number of external contacts who completed the journey forward |  [optional] |
 | **dropoutCount** | **Integer** | number of external contacts who did not make it to the next element |  [optional] |
 | **flowCount** | **Integer** | number of external contacts who moved from one element to next element but did not complete the journey |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

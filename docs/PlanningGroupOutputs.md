@@ -10,9 +10,8 @@
 | **occupancyPerInterval** | **List&lt;Double&gt;** | List of Occupancy percentage (0.0-100.0) results per interval |  |
 | **averageSpeedOfAnswerSecondsPerInterval** | **List&lt;Double&gt;** | List of Average Speed of Answer (in seconds) results per interval |  |
 | **abandonRatePerInterval** | **List&lt;Double&gt;** | List of Abandon rate percentage (0.0-100.0) results per interval |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

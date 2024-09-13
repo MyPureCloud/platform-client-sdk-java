@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **level** | [**LevelEnum**](#Enum--LevelEnum) | The logLevel for this characteristics set |  [optional] |
 | **characteristics** | [**FlowCharacteristics**](FlowCharacteristics) | Shows what characteristics are enabled for this log level |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: LevelEnum
@@ -21,9 +20,8 @@
 | NOTES | &quot;Notes&quot; | 
 | VERBOSENOTES | &quot;VerboseNotes&quot; | 
 | ALL | &quot;All&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

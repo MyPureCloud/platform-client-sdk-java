@@ -10,7 +10,6 @@
 | **memberType** | [**MemberTypeEnum**](#Enum--MemberTypeEnum) |  |  [optional] |
 | **member** | [**SharedEntity**](SharedEntity) | The member that will have access to this share. Only required if a list of members is not provided. |  [optional] |
 | **members** | [**List&lt;CreateShareRequestMember&gt;**](CreateShareRequestMember) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: SharedEntityTypeEnum
@@ -19,7 +18,6 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | DOCUMENT | &quot;DOCUMENT&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: MemberTypeEnum
@@ -30,9 +28,8 @@
 | USER | &quot;USER&quot; | 
 | GROUP | &quot;GROUP&quot; | 
 | PUBLIC | &quot;PUBLIC&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

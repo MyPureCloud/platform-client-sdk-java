@@ -20,7 +20,6 @@
 | **productPlatform** | [**ProductPlatformEnum**](#Enum--ProductPlatformEnum) | Organizations Originating Platform. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 | **features** | **Map&lt;String, Boolean&gt;** | The state of features available for the organization. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -31,7 +30,6 @@
 | ACTIVE | &quot;active&quot; | 
 | INACTIVE | &quot;inactive&quot; | 
 | DELETED | &quot;deleted&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ProductPlatformEnum
@@ -46,9 +44,8 @@
 | PURECONNECT | &quot;PureConnect&quot; | 
 | PURECONNECTCLOUD | &quot;PureConnectCloud&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

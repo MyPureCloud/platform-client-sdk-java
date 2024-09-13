@@ -13,9 +13,8 @@
 | **timeAllowed** | [**TimeAllowed**](TimeAllowed) |  |  [optional] |
 | **teams** | [**List&lt;Team&gt;**](Team) | Teams to match conversations against |  [optional] |
 | **duration** | [**DurationCondition**](DurationCondition) |  |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

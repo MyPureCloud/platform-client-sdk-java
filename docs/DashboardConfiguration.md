@@ -20,7 +20,6 @@
 | **shared** | **Boolean** | The flag to indicate if the dashboard is shared |  [optional] |
 | **dashboardsSharedWith** | [**DashboardsSharedWith**](DashboardsSharedWith) | The list of users and teams the dashboard is shared with |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: LayoutTypeEnum
@@ -30,9 +29,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | GRID | &quot;Grid&quot; | 
 | FLOW | &quot;Flow&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -19,7 +19,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **getLicenseDefinition**
 
 
-
 > [LicenseDefinition](LicenseDefinition) getLicenseDefinition(licenseId)
 
 Get PureCloud license definition.
@@ -80,7 +79,6 @@ try {
 # **getLicenseDefinitions**
 
 
-
 > [List&lt;LicenseDefinition&gt;](LicenseDefinition) getLicenseDefinitions()
 
 Get all PureCloud license definitions available for the organization.
@@ -135,7 +133,6 @@ This endpoint does not require any parameters.
 
 
 # **getLicenseToggle**
-
 
 
 > [LicenseOrgToggle](LicenseOrgToggle) getLicenseToggle(featureName)
@@ -196,7 +193,6 @@ try {
 # **getLicenseUser**
 
 
-
 > [LicenseUser](LicenseUser) getLicenseUser(userId)
 
 Get licenses for specified user.
@@ -255,7 +251,6 @@ try {
 
 
 # **getLicenseUsers**
-
 
 
 > [UserLicensesEntityListing](UserLicensesEntityListing) getLicenseUsers(pageSize, pageNumber)
@@ -320,7 +315,6 @@ try {
 # **postLicenseInfer**
 
 
-
 > List&lt;String&gt; postLicenseInfer(body)
 
 Get a list of licenses inferred based on a list of roleIds
@@ -377,7 +371,6 @@ try {
 
 
 # **postLicenseOrganization**
-
 
 
 > [List&lt;LicenseUpdateStatus&gt;](LicenseUpdateStatus) postLicenseOrganization(body)
@@ -439,7 +432,6 @@ try {
 # **postLicenseToggle**
 
 
-
 > [LicenseOrgToggle](LicenseOrgToggle) postLicenseToggle(featureName)
 
 Deprecated. No alternative required - this endpoint has no effect
@@ -496,7 +488,6 @@ try {
 
 
 # **postLicenseUsers**
-
 
 
 > Map&lt;String, Object&gt; postLicenseUsers(body)
@@ -556,4 +547,4 @@ try {
 **Map&lt;String, Object&gt;**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

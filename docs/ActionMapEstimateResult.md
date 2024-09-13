@@ -9,9 +9,8 @@
 | **totalSessionCount** | **Integer** | Total number of sessions. |  [optional] |
 | **perSegmentCounts** | [**List&lt;SegmentEstimateCount&gt;**](SegmentEstimateCount) | Number of sessions qualified for Action map per segment. |  [optional] |
 | **outcomesScoresCount** | **Integer** | Difference made by outcome criteria to number of sessions qualified for Action map. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

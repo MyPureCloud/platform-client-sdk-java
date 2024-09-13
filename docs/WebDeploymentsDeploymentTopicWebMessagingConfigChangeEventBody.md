@@ -8,7 +8,6 @@
 | **id** | **String** |  |  [optional] |
 | **version** | **String** |  |  [optional] |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -21,9 +20,8 @@
 | INACTIVE | &quot;Inactive&quot; | 
 | ERROR | &quot;Error&quot; | 
 | DELETING | &quot;Deleting&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

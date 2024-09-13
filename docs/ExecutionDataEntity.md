@@ -9,9 +9,8 @@
 | **downloadUri** | **String** | A downloadable link to the execution data file. |  [optional] |
 | **failed** | **Boolean** | If the retrieval failed (not found, no permission, etc;), this will be set true. |  [optional] |
 | **statusCode** | **String** | This will contain the http status code for the failure |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

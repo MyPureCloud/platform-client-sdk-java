@@ -9,9 +9,8 @@
 | **phoneColumn** | **String** | The Contact List column specifying the phone number to send a message to. |  |
 | **senderSmsPhoneNumber** | [**SmsPhoneNumberRef**](SmsPhoneNumberRef) | A reference to the SMS Phone Number that will be used as the sender of a message. |  |
 | **contentTemplate** | [**DomainEntityRef**](DomainEntityRef) | The content template used to formulate the message to send to the contact. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

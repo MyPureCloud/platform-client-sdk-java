@@ -24,7 +24,6 @@
 | **site** | [**Site**](Site) | The site associated to the outbound route. |  [optional] |
 | **managed** | **Boolean** | Is this outbound route being managed remotely. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -35,7 +34,6 @@
 | ACTIVE | &quot;active&quot; | 
 | INACTIVE | &quot;inactive&quot; | 
 | DELETED | &quot;deleted&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DistributionEnum
@@ -45,9 +43,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | SEQUENTIAL | &quot;SEQUENTIAL&quot; | 
 | RANDOM | &quot;RANDOM&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

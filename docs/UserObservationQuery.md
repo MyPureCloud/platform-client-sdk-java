@@ -8,7 +8,6 @@
 | **filter** | [**UserObservationQueryFilter**](UserObservationQueryFilter) | Filter to return a subset of observations. Expresses boolean logical predicates as well as dimensional filters |  |
 | **metrics** | [**List<MetricsEnum>**](#Enum--MetricsEnum) | Behaves like a SQL SELECT clause. Only named metrics will be retrieved. |  |
 | **detailMetrics** | [**List<DetailMetricsEnum>**](#Enum--DetailMetricsEnum) | Metrics for which to include additional detailed observations |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MetricsEnum
@@ -17,7 +16,6 @@
 | ---- | ----- |
 | OACTIVEQUEUES | &quot;oActiveQueues&quot; |
 | OMEMBERQUEUES | &quot;oMemberQueues&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: DetailMetricsEnum
@@ -26,9 +24,8 @@
 | ---- | ----- |
 | OACTIVEQUEUES | &quot;oActiveQueues&quot; |
 | OMEMBERQUEUES | &quot;oMemberQueues&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

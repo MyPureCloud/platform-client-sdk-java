@@ -28,7 +28,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteGroup**
 
 
-
 > Void deleteGroup(groupId)
 
 Delete group
@@ -85,7 +84,6 @@ null (empty response body)
 
 
 # **deleteGroupDynamicsettings**
-
 
 
 > Void deleteGroupDynamicsettings(groupId)
@@ -148,7 +146,6 @@ null (empty response body)
 # **deleteGroupMembers**
 
 
-
 > Empty deleteGroupMembers(groupId, ids)
 
 Remove members
@@ -208,7 +205,9 @@ try {
 
 # **getFieldconfig**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [FieldConfig](FieldConfig) getFieldconfig(type)
 
@@ -268,7 +267,6 @@ try {
 # **getGroup**
 
 
-
 > [Group](Group) getGroup(groupId)
 
 Get group
@@ -325,7 +323,6 @@ try {
 
 
 # **getGroupDynamicsettings**
-
 
 
 > [DynamicGroupDefinition](DynamicGroupDefinition) getGroupDynamicsettings(groupId)
@@ -389,7 +386,6 @@ try {
 # **getGroupIndividuals**
 
 
-
 > [UserEntityListing](UserEntityListing) getGroupIndividuals(groupId)
 
 Get all individuals associated with the group
@@ -446,7 +442,6 @@ try {
 
 
 # **getGroupMembers**
-
 
 
 > [UserEntityListing](UserEntityListing) getGroupMembers(groupId, pageSize, pageNumber, sortOrder, expand)
@@ -514,7 +509,9 @@ try {
 
 # **getGroupProfile**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [GroupProfile](GroupProfile) getGroupProfile(groupId, fields)
 
@@ -576,7 +573,6 @@ try {
 
 
 # **getGroups**
-
 
 
 > [GroupEntityListing](GroupEntityListing) getGroups(pageSize, pageNumber, id, jabberId, sortOrder)
@@ -645,7 +641,6 @@ try {
 # **getGroupsSearch**
 
 
-
 > [GroupsSearchResponse](GroupsSearchResponse) getGroupsSearch(q64, expand)
 
 Search groups using the q64 value returned from a previous search
@@ -705,7 +700,9 @@ try {
 
 # **getProfilesGroups**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [GroupProfileEntityListing](GroupProfileEntityListing) getProfilesGroups(pageSize, pageNumber, id, jabberId, sortOrder)
 
@@ -775,7 +772,6 @@ try {
 # **postGroupMembers**
 
 
-
 > Empty postGroupMembers(groupId, body)
 
 Add members
@@ -836,7 +832,6 @@ try {
 # **postGroups**
 
 
-
 > [Group](Group) postGroups(body)
 
 Create a group
@@ -895,7 +890,9 @@ try {
 
 # **postGroupsDynamicsettingsPreview**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [DynamicGroupQueryPreview](DynamicGroupQueryPreview) postGroupsDynamicsettingsPreview(body)
 
@@ -958,7 +955,6 @@ try {
 # **postGroupsSearch**
 
 
-
 > [GroupsSearchResponse](GroupsSearchResponse) postGroupsSearch(body)
 
 Search groups
@@ -1015,7 +1011,6 @@ try {
 
 
 # **putGroup**
-
 
 
 > [Group](Group) putGroup(groupId, body)
@@ -1079,7 +1074,6 @@ try {
 # **putGroupDynamicsettings**
 
 
-
 > Void putGroupDynamicsettings(groupId, body)
 
 Create / Update dynamic group definition
@@ -1139,4 +1133,4 @@ try {
 null (empty response body)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -13,7 +13,6 @@
 | **dateCreated** | [**Date**](Date) | Date the assessment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **dateModified** | [**Date**](Date) | Date the assessment was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **dateSubmitted** | [**Date**](Date) | Date the assessment was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -24,9 +23,8 @@
 | PENDING | &quot;Pending&quot; | 
 | INPROGRESS | &quot;InProgress&quot; | 
 | FINISHED | &quot;Finished&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

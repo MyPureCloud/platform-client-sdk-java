@@ -9,9 +9,8 @@
 | **link** | **String** | URL link for the documentation entity. Will be returned in responses for certain entities. |  [optional] |
 | **title** | **String** | The title of the documentation entity. Will be returned in responses for certain entities. |  [optional] |
 | **type** | **String** | The search type. Will be returned in responses for certain entities. |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

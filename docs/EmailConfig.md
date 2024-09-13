@@ -9,9 +9,8 @@
 | **contentTemplate** | [**DomainEntityRef**](DomainEntityRef) | The content template used to formulate the email to send to the contact. |  [optional] |
 | **fromAddress** | [**FromEmailAddress**](FromEmailAddress) | The email address that will be used as the sender of the email. |  |
 | **replyToAddress** | [**ReplyToEmailAddress**](ReplyToEmailAddress) | The email address from which any reply will be sent. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

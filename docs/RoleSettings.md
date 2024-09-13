@@ -9,9 +9,8 @@
 | **backfillEnabled** | **Boolean** | Boolean showing if organization is opted in or not to role backfills |  [optional] |
 | **authorizationGrantDivisionAware** | **Boolean** | Boolean enabling enforcement of division aware for authorization grant add and delete |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

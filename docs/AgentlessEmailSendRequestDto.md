@@ -13,7 +13,6 @@
 | **subject** | **String** | The subject of the message. |  [optional] |
 | **textBody** | **String** | The Content of the message, in plain text. |  [optional] |
 | **htmlBody** | **String** | The Content of the message, in HTML. Links, images and styles are allowed |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: SenderTypeEnum
@@ -24,9 +23,8 @@
 | OUTBOUND | &quot;Outbound&quot; | 
 | INBOUND | &quot;Inbound&quot; | 
 | INTEGRATION | &quot;Integration&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

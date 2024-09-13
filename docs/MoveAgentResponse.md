@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **user** | [**UserReference**](UserReference) | The user associated with the move |  [optional] |
 | **result** | [**ResultEnum**](#Enum--ResultEnum) | The result of the move |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ResultEnum
@@ -23,9 +22,8 @@
 | MOVINGTODIFFERENTMANAGEMENTUNIT | &quot;MovingToDifferentManagementUnit&quot; | 
 | NOTHINGTODO | &quot;NothingToDo&quot; | 
 | SOURCEMANAGEMENTUNITNOTAUTHORIZED | &quot;SourceManagementUnitNotAuthorized&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

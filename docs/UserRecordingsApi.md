@@ -17,7 +17,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteUserrecording**
 
 
-
 > Void deleteUserrecording(recordingId)
 
 Delete a user recording.
@@ -73,7 +72,6 @@ null (empty response body)
 
 
 # **getUserrecording**
-
 
 
 > [UserRecording](UserRecording) getUserrecording(recordingId, expand)
@@ -135,7 +133,9 @@ try {
 
 # **getUserrecordingMedia**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [DownloadResponse](DownloadResponse) getUserrecordingMedia(recordingId, formatId, async)
 
@@ -201,7 +201,6 @@ try {
 # **getUserrecordingTranscoding**
 
 
-
 > [DownloadResponse](DownloadResponse) getUserrecordingTranscoding(recordingId, formatId)
 
 Download a user recording.
@@ -261,7 +260,6 @@ try {
 
 
 # **getUserrecordings**
-
 
 
 > [UserRecordingEntityListing](UserRecordingEntityListing) getUserrecordings(pageSize, pageNumber, expand)
@@ -326,7 +324,6 @@ try {
 # **getUserrecordingsSummary**
 
 
-
 > [FaxSummary](FaxSummary) getUserrecordingsSummary()
 
 Get user recording summary
@@ -379,7 +376,6 @@ This endpoint does not require any parameters.
 
 
 # **putUserrecording**
-
 
 
 > [UserRecording](UserRecording) putUserrecording(recordingId, body, expand)
@@ -441,4 +437,4 @@ try {
 [**UserRecording**](UserRecording)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -22,7 +22,6 @@
 | **minimumMonthlyAmount** | **String** | Minimum amount that will be charged for the month |  [optional] |
 | **inRampPeriod** | **Boolean** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: SubscriptionTypeEnum
@@ -38,9 +37,8 @@
 | DEV_ORG_MONTH_TO_MONTH | &quot;DEV_ORG_MONTH_TO_MONTH&quot; | 
 | DEV_ORG_PREPAY_MONTHLY_COMMITMENT | &quot;DEV_ORG_PREPAY_MONTHLY_COMMITMENT&quot; | 
 | DEV_ORG_PREPAY | &quot;DEV_ORG_PREPAY&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

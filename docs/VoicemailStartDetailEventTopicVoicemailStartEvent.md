@@ -19,7 +19,6 @@
 | **divisionId** | **String** |  |  [optional] |
 | **conversationExternalContactIds** | **List&lt;String&gt;** |  |  [optional] |
 | **conversationExternalOrganizationIds** | **List&lt;String&gt;** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -36,7 +35,6 @@
 | VIDEO | &quot;VIDEO&quot; | 
 | SCREENSHARE | &quot;SCREENSHARE&quot; | 
 | MESSAGE | &quot;MESSAGE&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DirectionEnum
@@ -47,9 +45,8 @@
 | UNKNOWN | &quot;UNKNOWN&quot; | 
 | INBOUND | &quot;INBOUND&quot; | 
 | OUTBOUND | &quot;OUTBOUND&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

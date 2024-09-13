@@ -8,9 +8,8 @@
 | **user** | [**UserReference**](UserReference) | The user object for this leaderboard rank |  [optional] |
 | **rank** | **Integer** | The rank of the user |  [optional] |
 | **points** | **Long** | The points collected by the user |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -22,7 +22,6 @@
 | **invokingContext** | [**V2FlowExecutionDataFlowidTopicInvokingContext**](V2FlowExecutionDataFlowidTopicInvokingContext) |  |  [optional] |
 | **startDateTime** | [**Date**](Date) | The start date time for this flow instance execution data. |  [optional] |
 | **warnings** | [**List&lt;V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo&gt;**](V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo) | If the flow encountered a warning during execution, this is an array of the warnings. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MessageTypeEnum
@@ -39,9 +38,8 @@
 | WHATSAPP | &quot;whatsapp&quot; | 
 | WEBMESSAGING | &quot;webmessaging&quot; | 
 | OPEN | &quot;open&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

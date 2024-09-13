@@ -14,7 +14,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **getTextbotsBotsSearch**
 
 
-
 > [BotSearchResponseEntityListing](BotSearchResponseEntityListing) getTextbotsBotsSearch(botType, botName, botId, pageSize)
 
 Find bots using the currently configured friendly name or ID.
@@ -82,7 +81,6 @@ try {
 # **postTextbotsBotflowsSessionTurns**
 
 
-
 > [TextBotFlowTurnResponse](TextBotFlowTurnResponse) postTextbotsBotflowsSessionTurns(sessionId, turnRequest)
 
 Issue a bot flow turn event
@@ -146,7 +144,6 @@ try {
 # **postTextbotsBotflowsSessions**
 
 
-
 > [TextBotFlowLaunchResponse](TextBotFlowLaunchResponse) postTextbotsBotflowsSessions(launchRequest)
 
 Create an execution instance of a bot flow definition.
@@ -208,7 +205,6 @@ try {
 # **postTextbotsBotsExecute**
 
 
-
 > [PostTextResponse](PostTextResponse) postTextbotsBotsExecute(postTextRequest)
 
 Send an intent to a bot to start a dialog/interact with it via text
@@ -267,4 +263,4 @@ try {
 [**PostTextResponse**](PostTextResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

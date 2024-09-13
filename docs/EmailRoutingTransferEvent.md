@@ -16,7 +16,6 @@
 | **destinationQueueId** | **String** | The id (V4 UUID) of the desired destination queue that the object communication should be transferred to. |  |
 | **languageId** | **String** | The unique identifier (V4 UUID) for the language that should be used to determine the destination for the conversation. |  [optional] |
 | **skillIds** | **List&lt;String&gt;** | The unique identifiers (V4 UUID) for the skills that should be used to determine the destination for the conversation. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TransferTypeEnum
@@ -26,9 +25,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ATTENDED | &quot;Attended&quot; | 
 | UNATTENDED | &quot;Unattended&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

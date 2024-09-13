@@ -32,7 +32,6 @@
 | **afterCallWorkRequired** | **Boolean** | Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested. |  [optional] |
 | **queueMediaSettings** | [**ConversationQueueMediaSettings**](ConversationQueueMediaSettings) | Represents the queue settings for this media type. |  [optional] |
 | **parkTime** | [**Date**](Date) | Represents the time when an email was put into parked state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -46,7 +45,6 @@
 | NONE | &quot;none&quot; | 
 | PARKED | &quot;parked&quot; | 
 | TRANSMITTING | &quot;transmitting&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: InitialStateEnum
@@ -60,7 +58,6 @@
 | NONE | &quot;none&quot; | 
 | PARKED | &quot;parked&quot; | 
 | TRANSMITTING | &quot;transmitting&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DirectionEnum
@@ -70,7 +67,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INBOUND | &quot;inbound&quot; | 
 | OUTBOUND | &quot;outbound&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DisconnectTypeEnum
@@ -94,9 +90,8 @@
 | OTHER | &quot;other&quot; | 
 | SPAM | &quot;spam&quot; | 
 | UNCALLABLE | &quot;uncallable&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

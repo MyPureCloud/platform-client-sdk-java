@@ -14,7 +14,6 @@
 | **rankingTiebreakerType** | [**RankingTiebreakerTypeEnum**](#Enum--RankingTiebreakerTypeEnum) | Ranking tiebreaker |  [optional] |
 | **workPlanFieldsVisibleToAgents** | [**ListWrapperAgentWorkPlanField**](ListWrapperAgentWorkPlanField) | The work plan fields visible to agents whenever work plan preferences are made |  [optional] |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The state of the bid |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: AgentRankingTypeEnum
@@ -24,7 +23,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | HIREDATE | &quot;HireDate&quot; | 
 | PERFORMANCE | &quot;Performance&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: RankingTiebreakerTypeEnum
@@ -36,7 +34,6 @@
 | PERFORMANCE | &quot;Performance&quot; | 
 | CUSTOM | &quot;Custom&quot; | 
 | RANDOMLYASSIGN | &quot;RandomlyAssign&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -52,9 +49,8 @@
 | CLOSED | &quot;Closed&quot; | 
 | PROCESSED | &quot;Processed&quot; | 
 | PUBLISHED | &quot;Published&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

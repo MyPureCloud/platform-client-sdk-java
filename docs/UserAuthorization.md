@@ -9,9 +9,8 @@
 | **unusedRoles** | [**List&lt;DomainRole&gt;**](DomainRole) | A collection of the roles the user is not using |  [optional] |
 | **permissions** | **List&lt;String&gt;** | A collection of the permissions granted by all assigned roles |  [optional] |
 | **permissionPolicies** | [**List&lt;ResourcePermissionPolicy&gt;**](ResourcePermissionPolicy) | The policies configured for assigned permissions. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

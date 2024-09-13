@@ -12,7 +12,6 @@
 | **errorCode** | **String** | Client defined error code (when state transitions to errored) |  [optional] |
 | **errorMessage** | **String** | Message of the error returned when the action fails (when state transitions to errored) |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ActionStateEnum
@@ -34,9 +33,8 @@
 | ABANDONED | &quot;abandoned&quot; | 
 | COMPLETED | &quot;completed&quot; | 
 | FREQUENCYCAPREACHED | &quot;frequencyCapReached&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

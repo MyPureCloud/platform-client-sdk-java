@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **agentGroupId** | **String** | Conditional group routing agent group identifier |  [optional] |
 | **agentGroupType** | [**AgentGroupTypeEnum**](#Enum--AgentGroupTypeEnum) | Conditional group routing agent group type |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: AgentGroupTypeEnum
@@ -18,9 +17,8 @@
 | GROUP | &quot;Group&quot; | 
 | SKILLGROUP | &quot;SkillGroup&quot; | 
 | TEAM | &quot;Team&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

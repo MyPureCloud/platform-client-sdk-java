@@ -23,7 +23,6 @@
 | **reviewedBy** | [**UserReference**](UserReference) | The user who reviewed this shift trade |  [optional] |
 | **reviewedDate** | [**Date**](Date) | The timestamp when this shift trade was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Version data for this trade |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -37,9 +36,8 @@
 | DENIED | &quot;Denied&quot; | 
 | EXPIRED | &quot;Expired&quot; | 
 | CANCELED | &quot;Canceled&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

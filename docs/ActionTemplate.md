@@ -15,7 +15,6 @@
 | **selfUri** | **String** | The URI for this object |  [optional] |
 | **createdDate** | [**Date**](Date) | Date when action template was created in ISO-8601 format. |  [optional] |
 | **modifiedDate** | [**Date**](Date) | Date when action template was last modified in ISO-8601 format. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -29,7 +28,6 @@
 | INTEGRATIONACTION | &quot;integrationAction&quot; | 
 | ARCHITECTFLOW | &quot;architectFlow&quot; | 
 | OPENACTION | &quot;openAction&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -40,9 +38,8 @@
 | ACTIVE | &quot;Active&quot; | 
 | INACTIVE | &quot;Inactive&quot; | 
 | DELETED | &quot;Deleted&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

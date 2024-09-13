@@ -16,7 +16,6 @@
 | **articleCount** | **Integer** | The count representing the number of documents of type Article in the KnowledgeBase |  [optional] |
 | **published** | **Boolean** | Flag that indicates the knowledge base is published |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: CoreLanguageEnum
@@ -70,9 +69,8 @@
 | HU_HU | &quot;hu-HU&quot; | 
 | VI_VN | &quot;vi-VN&quot; | 
 | UK_UA | &quot;uk-UA&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **dimension** | [**DimensionEnum**](#Enum--DimensionEnum) | Each predicates specifies a dimension. |  |
 | **value** | **String** | Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational (deprecated), AssessedContent (deprecated), Assessment (deprecated), External, Native |  |
-{: class="table table-striped"}
 
 
 ## Enum: DimensionEnum
@@ -19,9 +18,8 @@
 | TYPE | &quot;type&quot; | 
 | MODULEID | &quot;moduleId&quot; | 
 | ISPASSED | &quot;isPassed&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

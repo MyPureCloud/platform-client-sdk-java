@@ -15,7 +15,6 @@
 | **blockingPageUrlConditions** | [**List&lt;JourneyWebActionEventsNotificationActionMapPageUrlCondition&gt;**](JourneyWebActionEventsNotificationActionMapPageUrlCondition) |  |  [optional] |
 | **blockingScheduleGroup** | [**JourneyWebActionEventsNotificationScheduleGroup**](JourneyWebActionEventsNotificationScheduleGroup) |  |  [optional] |
 | **blockingEmergencyScheduleGroup** | [**JourneyWebActionEventsNotificationEmergencyGroup**](JourneyWebActionEventsNotificationEmergencyGroup) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: BlockingReasonEnum
@@ -32,7 +31,6 @@
 | NOAVAILABLEAGENTS | &quot;NoAvailableAgents&quot; | 
 | FREQUENCYCAPPING | &quot;FrequencyCapping&quot; | 
 | OFFEREDOUTSIDESCHEDULE | &quot;OfferedOutsideSchedule&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: BlockingFrequencyCapBehaviourEnum
@@ -44,9 +42,8 @@
 | CAPONCEFINALIZED | &quot;CapOnceFinalized&quot; | 
 | CAPONCEREJECTED | &quot;CapOnceRejected&quot; | 
 | CAPFORPERIOD | &quot;CapForPeriod&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

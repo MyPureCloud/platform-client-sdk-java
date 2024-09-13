@@ -16,9 +16,8 @@
 | **featuresJava** | **Boolean** | Whether Java is installed. |  |
 | **featuresPdf** | **Boolean** | Whether the browser recognizes PDFs. |  |
 | **featuresWebrtc** | **Boolean** | Whether WebRTC is supported. |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

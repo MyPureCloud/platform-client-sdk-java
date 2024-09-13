@@ -22,9 +22,8 @@
 | **defaultQueueId** | **String** | The ID of the default queue for Workitems created from the Worktype. Must be a valid UUID. |  [optional] |
 | **defaultLanguageId** | **String** | The ID of the default language for Workitems created from the Worktype. Must be a valid UUID. |  [optional] |
 | **defaultSkillIds** | **List&lt;String&gt;** | The IDs of the default skills for Workitems created from the Worktype. Must be valid UUIDs. Maximum of 20 IDs |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

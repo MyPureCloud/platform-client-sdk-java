@@ -18,7 +18,6 @@
 | **presentation** | [**List&lt;MetadataPresentation&gt;**](MetadataPresentation) | presentation of data fields to be gathered for the accelerator |  [optional] |
 | **results** | [**MetadataResults**](MetadataResults) | resources created or modified as a result of running the accelerator |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: OriginEnum
@@ -29,7 +28,6 @@
 | COMMUNITY | &quot;Community&quot; | 
 | PARTNER | &quot;Partner&quot; | 
 | GENESYS | &quot;Genesys&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -40,9 +38,8 @@
 | MODULE | &quot;Module&quot; | 
 | ACCELERATOR | &quot;Accelerator&quot; | 
 | BLUEPRINT | &quot;Blueprint&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

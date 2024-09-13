@@ -9,7 +9,6 @@
 | **comparator** | [**ComparatorEnum**](#Enum--ComparatorEnum) | Comparator that will be applied to the proficiency |  |
 | **proficiency** | **Integer** | The skill proficiency that will be used for the language skill. Integer range 0-5 |  |
 | **childConditions** | [**List&lt;DynamicGroupSkillCondition&gt;**](DynamicGroupSkillCondition) | Nested conditions to be applied to this skill condition |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ComparatorEnum
@@ -23,9 +22,8 @@
 | GREATERTHAN | &quot;GreaterThan&quot; | 
 | GREATERTHANOREQUALTO | &quot;GreaterThanOrEqualTo&quot; | 
 | LESSTHANOREQUALTO | &quot;LessThanOrEqualTo&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -10,7 +10,6 @@
 | **metricType** | [**MetricTypeEnum**](#Enum--MetricTypeEnum) |  |  [optional] |
 | **isTeamMemberRuleSummary** | **Boolean** |  |  [optional] |
 | **teamMemberRuleSummary** | **Boolean** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MetricTypeEnum
@@ -21,9 +20,8 @@
 | INTERVAL | &quot;Interval&quot; | 
 | INSTANCE | &quot;Instance&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

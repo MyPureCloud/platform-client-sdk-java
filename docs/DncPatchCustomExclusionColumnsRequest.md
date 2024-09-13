@@ -8,7 +8,6 @@
 | **action** | [**ActionEnum**](#Enum--ActionEnum) | The action to perform |  [optional] |
 | **customExclusionColumnEntries** | **List&lt;String&gt;** | The list of custom exclusion column entries to Add to / Remove from the DNC list  |  [optional] |
 | **expirationDateTime** | **String** | Expiration date for DNC customExclusionColumnEntries in yyyy-MM-ddTHH:mmZ format |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ActionEnum
@@ -18,9 +17,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ADD | &quot;Add&quot; | 
 | REMOVE | &quot;Remove&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

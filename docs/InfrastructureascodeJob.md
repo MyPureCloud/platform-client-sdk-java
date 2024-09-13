@@ -15,7 +15,6 @@
 | **results** | **String** | The output results of the terraform job |  [optional] |
 | **rollbackResults** | **String** | The results of rolling back the job if there were errors.  Not returned if job was successful. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -29,9 +28,8 @@
 | COMPLETE | &quot;Complete&quot; | 
 | FAILED | &quot;Failed&quot; | 
 | INCOMPLETE | &quot;Incomplete&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

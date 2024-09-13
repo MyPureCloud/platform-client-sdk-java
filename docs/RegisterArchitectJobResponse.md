@@ -9,9 +9,8 @@
 | **presignedUrl** | **String** | Presigned URL to upload the file in S3 |  [optional] |
 | **headers** | **Map&lt;String, String&gt;** | Required headers when uploading a file through PUT request to the URL |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

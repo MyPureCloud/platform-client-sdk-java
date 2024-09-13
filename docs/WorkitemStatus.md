@@ -15,7 +15,6 @@
 | **statusTransitionTime** | **String** | Time is represented as an ISO-8601 string without a timezone. For example: HH:mm:ss.SSS |  [optional] |
 | **worktype** | [**WorktypeReference**](WorktypeReference) | The Worktype containing the Status. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: CategoryEnum
@@ -28,9 +27,8 @@
 | WAITING | &quot;Waiting&quot; | 
 | CLOSED | &quot;Closed&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

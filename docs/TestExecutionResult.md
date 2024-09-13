@@ -9,9 +9,8 @@
 | **error** | [**ErrorBody**](ErrorBody) | The final error encountered during the test that resulted in test failure |  [optional] |
 | **finalResult** | **Object** | The final result of the test. This is the response that would be returned during normal action execution |  [optional] |
 | **success** | **Boolean** | Indicates whether or not the test was a success |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

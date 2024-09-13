@@ -14,7 +14,6 @@
 | **reason** | [**ReasonEnum**](#Enum--ReasonEnum) |  |  [optional] |
 | **message** | **String** |  |  [optional] |
 | **data** | **Map&lt;String, Object&gt;** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: SystemTopicTypeEnum
@@ -25,7 +24,6 @@
 | NO_LONGER_SUBSCRIBED | &quot;no_longer_subscribed&quot; | 
 | SUBSCRIPTION_CHANGED | &quot;subscription_changed&quot; | 
 | TOKEN_REVOKED | &quot;token_revoked&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ReasonEnum
@@ -35,9 +33,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ANOTHER_CHANNEL_SUBSCRIBED | &quot;another_channel_subscribed&quot; | 
 | USER_TOKENS_REVOKED | &quot;user_tokens_revoked&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **name** | **String** | The name of the intent for the row. |  |
 | **columns** | [**List&lt;NluConfusionMatrixColumn&gt;**](NluConfusionMatrixColumn) | The columns of confusion matrix for the intent |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

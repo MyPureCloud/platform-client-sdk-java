@@ -9,7 +9,6 @@
 | **groupByTitle** | **String** | A title for the grouped by attributes (aka the x axis) |  [optional] |
 | **metricsTitle** | **String** | A title for the metrics (aka the y axis) |  [optional] |
 | **showLegend** | **Boolean** | Whether to show a legend |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -20,9 +19,8 @@
 | COLUMN | &quot;Column&quot; | 
 | BAR | &quot;Bar&quot; | 
 | LINE | &quot;Line&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

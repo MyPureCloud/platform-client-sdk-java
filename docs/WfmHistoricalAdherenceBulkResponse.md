@@ -8,9 +8,8 @@
 | **job** | [**WfmHistoricalAdherenceBulkJobReference**](WfmHistoricalAdherenceBulkJobReference) | A reference to the job that was started by the request |  [optional] |
 | **downloadUrls** | **List&lt;String&gt;** | The uri list to GET the results of the Historical Adherence query. This field is populated only if query state is Complete |  [optional] |
 | **downloadResult** | [**WfmHistoricalAdherenceBulkResult**](WfmHistoricalAdherenceBulkResult) | Results will always come via downloadUrls; however the schema is included for documentation |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

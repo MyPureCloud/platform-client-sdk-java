@@ -32,7 +32,6 @@
 | **callerId** | **String** | The phone number displayed to recipients of the phone call. The value should conform to the E164 format. |  [optional] |
 | **callerIdName** | **String** | The name displayed to recipients of the phone call. |  [optional] |
 | **queueMediaSettings** | [**QueueConversationSocialExpressionEventTopicQueueMediaSettings**](QueueConversationSocialExpressionEventTopicQueueMediaSettings) | Represents the queue setting for this media. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -50,7 +49,6 @@
 | SCHEDULED | &quot;scheduled&quot; | 
 | UPLOADING | &quot;uploading&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: InitialStateEnum
@@ -68,7 +66,6 @@
 | SCHEDULED | &quot;scheduled&quot; | 
 | UPLOADING | &quot;uploading&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DirectionEnum
@@ -78,7 +75,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INBOUND | &quot;inbound&quot; | 
 | OUTBOUND | &quot;outbound&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DisconnectTypeEnum
@@ -104,9 +100,8 @@
 | OTHER | &quot;other&quot; | 
 | SPAM | &quot;spam&quot; | 
 | UNCALLABLE | &quot;uncallable&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

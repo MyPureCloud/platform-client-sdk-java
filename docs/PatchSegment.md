@@ -15,9 +15,8 @@
 | **journey** | [**PatchJourney**](PatchJourney) | The pattern of rules defining the segment. |  [optional] |
 | **externalSegment** | [**PatchExternalSegment**](PatchExternalSegment) | Details of an entity corresponding to this segment in an external system. |  [optional] |
 | **assignmentExpirationDays** | **Integer** | Time, in days, from when the segment is assigned until it is automatically unassigned. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

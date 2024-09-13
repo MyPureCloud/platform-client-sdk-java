@@ -9,7 +9,6 @@
 | **conditions** | [**List&lt;V2MobiusRulesTopicCondition&gt;**](V2MobiusRulesTopicCondition) |  |  [optional] |
 | **predicates** | [**List&lt;V2MobiusRulesTopicConditionRulePredicate&gt;**](V2MobiusRulesTopicConditionRulePredicate) |  |  [optional] |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -21,9 +20,8 @@
 | OR | &quot;Or&quot; | 
 | NOT | &quot;Not&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

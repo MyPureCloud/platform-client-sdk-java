@@ -10,9 +10,8 @@
 | **delete** | **Boolean** | If marked true for updating an existing user schedule, it will be deleted |  [optional] |
 | **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Version metadata for this schedule |  |
 | **workPlanId** | **String** | ID of the work plan associated with the user during schedule creation |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

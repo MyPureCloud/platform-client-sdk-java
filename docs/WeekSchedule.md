@@ -16,9 +16,8 @@
 | **userSchedules** | [**Map&lt;String, UserSchedule&gt;**](UserSchedule) | User schedules in the week |  [optional] |
 | **headcountForecast** | [**HeadcountForecast**](HeadcountForecast) | Headcount information for the week schedule |  [optional] |
 | **agentSchedulesVersion** | **Integer** | Version of agent schedules in the week schedule |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

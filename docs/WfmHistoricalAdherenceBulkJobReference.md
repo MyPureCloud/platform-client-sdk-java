@@ -8,7 +8,6 @@
 | **id** | **String** | The ID of the historical adherence bulk job to listen for via notification or query using the jobs route |  [optional] |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the historical adherence bulk job |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -19,9 +18,8 @@
 | PROCESSING | &quot;Processing&quot; | 
 | COMPLETE | &quot;Complete&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

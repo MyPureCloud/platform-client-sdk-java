@@ -11,9 +11,8 @@
 | **startDate** | [**Date**](Date) | The start date of the schedules. Only populated on notifications. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **endDate** | [**Date**](Date) | The end date of the schedules. Only populated on notifications. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **updates** | [**List&lt;BuAgentScheduleUpdate&gt;**](BuAgentScheduleUpdate) | The list of updates for the schedule. Only used in notifications |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

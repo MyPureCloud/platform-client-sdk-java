@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of the argument associated with violation messages |  [optional] |
 | **value** | **String** | The value of the argument |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -37,9 +36,8 @@
 | WEEKLYPAIDTIMEMINUTES | &quot;WeeklyPaidTimeMinutes&quot; | 
 | WEEKS | &quot;Weeks&quot; | 
 | WORKTIMEMINUTES | &quot;WorkTimeMinutes&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

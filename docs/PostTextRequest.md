@@ -19,7 +19,6 @@
 | **googleDialogflow** | [**GoogleDialogflowCustomSettings**](GoogleDialogflowCustomSettings) | Provider specific settings, if any |  [optional] |
 | **genesysBotConnector** | [**GenesysBotConnector**](GenesysBotConnector) | Provider specific settings, if any |  [optional] |
 | **nuanceMixDlg** | [**NuanceMixDlgSettings**](NuanceMixDlgSettings) | Provider specific settings, if any |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: BotChannelsEnum
@@ -30,7 +29,6 @@
 | CALLBACK | &quot;Callback&quot; |
 | MESSAGING | &quot;Messaging&quot; |
 | WEBCHAT | &quot;Webchat&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: MessagingPlatformTypeEnum
@@ -55,9 +53,8 @@
 | INSTAGRAM | &quot;Instagram&quot; | 
 | OTHER | &quot;Other&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

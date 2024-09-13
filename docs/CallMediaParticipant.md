@@ -57,7 +57,6 @@
 | **bargedTime** | [**Date**](Date) | The timestamp when this participant was connected to the barge conference in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **securePause** | **Boolean** | True when the recording of this call is in secure pause status. |  [optional] |
 | **disposition** | [**Disposition**](Disposition) | Call resolution data for Dialer bulk make calls commands. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -77,7 +76,6 @@
 | TRANSMITTING | &quot;transmitting&quot; | 
 | PARKED | &quot;parked&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DirectionEnum
@@ -87,7 +85,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INBOUND | &quot;inbound&quot; | 
 | OUTBOUND | &quot;outbound&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DisconnectTypeEnum
@@ -111,7 +108,6 @@
 | PEER | &quot;peer&quot; | 
 | OTHER | &quot;other&quot; | 
 | SPAM | &quot;spam&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: FlaggedReasonEnum
@@ -120,7 +116,6 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | GENERAL | &quot;general&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: RecordingStateEnum
@@ -131,9 +126,8 @@
 | NONE | &quot;none&quot; | 
 | ACTIVE | &quot;active&quot; | 
 | PAUSED | &quot;paused&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

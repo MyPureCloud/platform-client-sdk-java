@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **value** | **String** | The ID of the manager. |  [optional] |
 | **ref** | **String** | The reference URI of the manager's user record. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

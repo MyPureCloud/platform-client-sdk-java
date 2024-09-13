@@ -15,7 +15,6 @@
 | **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
 | **failedObjects** | [**List&lt;FailedObject&gt;**](FailedObject) |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -28,9 +27,8 @@
 | NOTBUILT | &quot;NOTBUILT&quot; | 
 | OPERATIONAL | &quot;OPERATIONAL&quot; | 
 | OPERATIONALNEEDSREBUILD | &quot;OPERATIONALNEEDSREBUILD&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

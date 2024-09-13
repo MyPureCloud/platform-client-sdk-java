@@ -18,7 +18,6 @@
 | **customListNameFormatValue** | **String** | Custom value for the list name format, at least %N is required. Any character other than the specified tokens will be used as is. Available tokens: %N: ListNamePrefix; %P: Part number; %F: Filter name; %C: Column value; YYYY: year; MM: month; DD: day; hh: hour; mm: minute; ss: second. |  [optional] |
 | **importStatus** | [**ImportStatus**](ImportStatus) | The status of the import process. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ListNameFormatEnum
@@ -33,9 +32,8 @@
 | LISTNAMEPREFIXMONTHDAYYEARPART | &quot;ListNamePrefixMonthDayYearPart&quot; | 
 | LISTNAMEPREFIXMONTHDAYYEARHOURMINUTESECONDPART | &quot;ListNamePrefixMonthDayYearHourMinuteSecondPart&quot; | 
 | CUSTOM | &quot;Custom&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

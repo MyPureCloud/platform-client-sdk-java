@@ -8,7 +8,6 @@
 | **id** | **String** |  |  [optional] |
 | **parameters** | [**CampaignRuleParameters**](CampaignRuleParameters) | The parameters for the CampaignRuleCondition. |  |
 | **conditionType** | [**ConditionTypeEnum**](#Enum--ConditionTypeEnum) | The type of condition to evaluate. |  |
-{: class="table table-striped"}
 
 
 ## Enum: ConditionTypeEnum
@@ -24,9 +23,8 @@
 | CAMPAIGNBUSINESSNEUTRAL | &quot;campaignBusinessNeutral&quot; | 
 | CAMPAIGNVALIDATTEMPTS | &quot;campaignValidAttempts&quot; | 
 | CAMPAIGNRIGHTPARTYCONTACTS | &quot;campaignRightPartyContacts&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

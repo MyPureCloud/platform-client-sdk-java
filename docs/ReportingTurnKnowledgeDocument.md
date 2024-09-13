@@ -9,9 +9,8 @@
 | **question** | **String** | The the question that was used to match against the search query. |  [optional] |
 | **answer** | **String** | The corresponding answer to the question. |  [optional] |
 | **confidence** | **Double** | The confidence score of how well the question matched the search query. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -36,7 +36,6 @@
 | **mergeSet** | [**List&lt;ContactAddressableEntityRef&gt;**](ContactAddressableEntityRef) | The set of all contacts that are a part of the merge tree. If null, this contact is not a part of any merge. |  [optional] |
 | **mergeOperation** | [**MergeOperation**](MergeOperation) | Information about the merge history of this contact. If null, this contact is not a part of any merge. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -47,9 +46,8 @@
 | EPHEMERAL | &quot;Ephemeral&quot; | 
 | IDENTIFIED | &quot;Identified&quot; | 
 | CURATED | &quot;Curated&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

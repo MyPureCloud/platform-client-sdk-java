@@ -10,7 +10,6 @@
 | **statuses** | [**List<StatusesEnum>**](#Enum--StatusesEnum) | The set of statuses to filter time off requests |  [optional] |
 | **substatuses** | [**List<SubstatusesEnum>**](#Enum--SubstatusesEnum) | The set of substatuses to filter time off requests |  [optional] |
 | **dateRange** | [**DateRange**](DateRange) | The inclusive range of dates to filter time off requests |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusesEnum
@@ -18,7 +17,6 @@
 | Name | Value |
 | ---- | ----- |
 | PENDING | &quot;PENDING&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: SubstatusesEnum
@@ -33,9 +31,8 @@
 | REMOVEDFROMWAITLIST | &quot;RemovedFromWaitlist&quot; |
 | WAITLISTED | &quot;Waitlisted&quot; |
 | OVERLAPSRESTRICTEDACTIVITYCODE | &quot;OverlapsRestrictedActivityCode&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

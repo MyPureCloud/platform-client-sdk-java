@@ -12,9 +12,8 @@
 | **priority** | **Long** | The priority to assign to the conversation for routing. |  [optional] |
 | **attributes** | **Map&lt;String, String&gt;** | The list of attributes to associate with the customer participant. |  [optional] |
 | **customerName** | **String** | The name of the customer participating in the web chat. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

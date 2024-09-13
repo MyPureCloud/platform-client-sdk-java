@@ -10,9 +10,8 @@
 | **inProgressCount** | **Integer** | The total number of users who have the assignment in InProgress state |  [optional] |
 | **assignedCount** | **Integer** | The total number of users who have the assignment in Assigned state |  [optional] |
 | **notCompletedCount** | **Integer** | The total number of users who have their assignment overdue |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

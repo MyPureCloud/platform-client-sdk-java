@@ -13,7 +13,6 @@
 | **dncSourceType** | [**DncSourceTypeEnum**](#Enum--DncSourceTypeEnum) | The type of the DncList. |  [optional] |
 | **contactMethod** | [**ContactMethodEnum**](#Enum--ContactMethodEnum) | The contact method. Required if dncSourceType is rds. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: DncSourceTypeEnum
@@ -25,7 +24,6 @@
 | RDS_CUSTOM | &quot;rds_custom&quot; | 
 | DNC_COM | &quot;dnc.com&quot; | 
 | GRYPHON | &quot;gryphon&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ContactMethodEnum
@@ -36,9 +34,8 @@
 | EMAIL | &quot;Email&quot; | 
 | PHONE | &quot;Phone&quot; | 
 | ANY | &quot;Any&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **engagementType** | [**EngagementTypeEnum**](#Enum--EngagementTypeEnum) | The type of engagement with the suggestion. |  |
 | **feedback** | [**SuggestionFeedback**](SuggestionFeedback) | The given feedback on the suggestion, if any. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: EngagementTypeEnum
@@ -19,9 +18,8 @@
 | COPIED | &quot;Copied&quot; | 
 | OPENED | &quot;Opened&quot; | 
 | FEEDBACK | &quot;Feedback&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

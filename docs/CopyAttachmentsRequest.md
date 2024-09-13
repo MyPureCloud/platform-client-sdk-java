@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **sourceMessage** | [**DomainEntityRef**](DomainEntityRef) | A reference to the email message within the current conversation that owns the attachments to be copied |  |
 | **attachments** | [**List&lt;Attachment&gt;**](Attachment) | A list of attachments that will be copied from the source message to the current draft |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

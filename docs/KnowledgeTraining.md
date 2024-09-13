@@ -15,7 +15,6 @@
 | **knowledgeDocumentsState** | [**KnowledgeDocumentsStateEnum**](#Enum--KnowledgeDocumentsStateEnum) | State of the Trained Documents, which can be one of these Draft, Active, Discarded, Archived. |  [optional] |
 | **datePromoted** | [**Date**](Date) | Trained Documents Promoted date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -27,7 +26,6 @@
 | INPROGRESS | &quot;InProgress&quot; | 
 | SUCCEEDED | &quot;Succeeded&quot; | 
 | FAILED | &quot;Failed&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: KnowledgeDocumentsStateEnum
@@ -39,9 +37,8 @@
 | ACTIVE | &quot;Active&quot; | 
 | DISCARDED | &quot;Discarded&quot; | 
 | ARCHIVED | &quot;Archived&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

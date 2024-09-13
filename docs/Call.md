@@ -38,7 +38,6 @@
 | **agentAssistantId** | **String** | UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation. |  [optional] |
 | **queueMediaSettings** | [**ConversationQueueMediaSettings**](ConversationQueueMediaSettings) | Represents the queue settings for this media type. |  [optional] |
 | **disposition** | [**Disposition**](Disposition) | Call resolution data for Dialer bulk make calls commands. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -57,7 +56,6 @@
 | UPLOADING | &quot;uploading&quot; | 
 | TRANSMITTING | &quot;transmitting&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: InitialStateEnum
@@ -76,7 +74,6 @@
 | UPLOADING | &quot;uploading&quot; | 
 | TRANSMITTING | &quot;transmitting&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DirectionEnum
@@ -86,7 +83,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INBOUND | &quot;inbound&quot; | 
 | OUTBOUND | &quot;outbound&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: RecordingStateEnum
@@ -97,7 +93,6 @@
 | NONE | &quot;none&quot; | 
 | ACTIVE | &quot;active&quot; | 
 | PAUSED | &quot;paused&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DisconnectTypeEnum
@@ -123,9 +118,8 @@
 | OTHER | &quot;other&quot; | 
 | SPAM | &quot;spam&quot; | 
 | UNCALLABLE | &quot;uncallable&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -12,9 +12,8 @@
 | **published** | **Boolean** | If true, assessment form is published |  [optional] |
 | **passPercent** | **Integer** | The pass percent for the assessment form |  |
 | **questionGroups** | [**List&lt;AssessmentFormQuestionGroup&gt;**](AssessmentFormQuestionGroup) | A list of question groups |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

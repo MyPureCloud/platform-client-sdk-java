@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of the message |  [optional] |
 | **arguments** | [**List&lt;SchedulerMessageArgument&gt;**](SchedulerMessageArgument) | The arguments describing the message |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -60,9 +59,8 @@
 | UNABLETOSCHEDULEPLANNINGPERIODMINPAIDTIME | &quot;UnableToSchedulePlanningPeriodMinPaidTime&quot; | 
 | UNABLETOSCHEDULESHIFTVARIANCE | &quot;UnableToScheduleShiftVariance&quot; | 
 | UNABLETOSCHEDULEWORKDAY | &quot;UnableToScheduleWorkDay&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

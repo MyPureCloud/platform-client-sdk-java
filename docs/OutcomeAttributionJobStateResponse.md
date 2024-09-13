@@ -11,7 +11,6 @@
 | **percentFailedThreshold** | **Integer** | Optional percent failed threshold for validation errors; if reached will halt the job. Default is 5 percent, allowed values 0 to 100. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 | **createdDate** | [**Date**](Date) | Date when the job was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -23,9 +22,8 @@
 | COMPLETED | &quot;Completed&quot; | 
 | COMPLETEDWITHERRORS | &quot;CompletedWithErrors&quot; | 
 | FAILED | &quot;Failed&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

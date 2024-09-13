@@ -48,7 +48,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteIdentityprovider**
 
 
-
 > Void deleteIdentityprovider(providerId)
 
 Delete Identity Provider
@@ -107,7 +106,6 @@ null (empty response body)
 # **deleteIdentityprovidersAdfs**
 
 
-
 > Empty deleteIdentityprovidersAdfs()
 
 Delete ADFS Identity Provider
@@ -161,7 +159,6 @@ This endpoint does not require any parameters.
 
 
 # **deleteIdentityprovidersCic**
-
 
 
 > Empty deleteIdentityprovidersCic()
@@ -219,7 +216,6 @@ This endpoint does not require any parameters.
 # **deleteIdentityprovidersGeneric**
 
 
-
 > Empty deleteIdentityprovidersGeneric()
 
 Delete Generic SAML Identity Provider
@@ -273,7 +269,6 @@ This endpoint does not require any parameters.
 
 
 # **deleteIdentityprovidersGsuite**
-
 
 
 > Empty deleteIdentityprovidersGsuite()
@@ -331,7 +326,6 @@ This endpoint does not require any parameters.
 # **deleteIdentityprovidersIdentitynow**
 
 
-
 > Empty deleteIdentityprovidersIdentitynow()
 
 Delete IdentityNow Provider
@@ -385,7 +379,6 @@ This endpoint does not require any parameters.
 
 
 # **deleteIdentityprovidersOkta**
-
 
 
 > Empty deleteIdentityprovidersOkta()
@@ -443,7 +436,6 @@ This endpoint does not require any parameters.
 # **deleteIdentityprovidersOnelogin**
 
 
-
 > Empty deleteIdentityprovidersOnelogin()
 
 Delete OneLogin Identity Provider
@@ -497,7 +489,6 @@ This endpoint does not require any parameters.
 
 
 # **deleteIdentityprovidersPing**
-
 
 
 > Empty deleteIdentityprovidersPing()
@@ -555,7 +546,6 @@ This endpoint does not require any parameters.
 # **deleteIdentityprovidersPurecloud**
 
 
-
 > Empty deleteIdentityprovidersPurecloud()
 
 Delete PureCloud Identity Provider
@@ -609,7 +599,6 @@ This endpoint does not require any parameters.
 
 
 # **deleteIdentityprovidersPureengage**
-
 
 
 > Empty deleteIdentityprovidersPureengage()
@@ -667,7 +656,6 @@ This endpoint does not require any parameters.
 # **deleteIdentityprovidersSalesforce**
 
 
-
 > Empty deleteIdentityprovidersSalesforce()
 
 Delete Salesforce Identity Provider
@@ -721,7 +709,6 @@ This endpoint does not require any parameters.
 
 
 # **getIdentityprovider**
-
 
 
 > [CustomProvider](CustomProvider) getIdentityprovider(providerId)
@@ -783,7 +770,6 @@ try {
 # **getIdentityproviders**
 
 
-
 > [IdentityProviderEntityListing](IdentityProviderEntityListing) getIdentityproviders()
 
 The list of identity providers
@@ -837,7 +823,6 @@ This endpoint does not require any parameters.
 
 
 # **getIdentityprovidersAdfs**
-
 
 
 > [ADFS](ADFS) getIdentityprovidersAdfs()
@@ -895,7 +880,6 @@ This endpoint does not require any parameters.
 # **getIdentityprovidersCic**
 
 
-
 > [CustomerInteractionCenter](CustomerInteractionCenter) getIdentityprovidersCic()
 
 Get Customer Interaction Center (CIC) Identity Provider
@@ -949,7 +933,6 @@ This endpoint does not require any parameters.
 
 
 # **getIdentityprovidersGeneric**
-
 
 
 > [GenericSAML](GenericSAML) getIdentityprovidersGeneric()
@@ -1007,7 +990,6 @@ This endpoint does not require any parameters.
 # **getIdentityprovidersGsuite**
 
 
-
 > [GSuite](GSuite) getIdentityprovidersGsuite()
 
 Get G Suite Identity Provider
@@ -1061,7 +1043,6 @@ This endpoint does not require any parameters.
 
 
 # **getIdentityprovidersIdentitynow**
-
 
 
 > [IdentityNow](IdentityNow) getIdentityprovidersIdentitynow()
@@ -1119,7 +1100,6 @@ This endpoint does not require any parameters.
 # **getIdentityprovidersOkta**
 
 
-
 > [Okta](Okta) getIdentityprovidersOkta()
 
 Get Okta Identity Provider
@@ -1173,7 +1153,6 @@ This endpoint does not require any parameters.
 
 
 # **getIdentityprovidersOnelogin**
-
 
 
 > [OneLogin](OneLogin) getIdentityprovidersOnelogin()
@@ -1231,7 +1210,6 @@ This endpoint does not require any parameters.
 # **getIdentityprovidersPing**
 
 
-
 > [PingIdentity](PingIdentity) getIdentityprovidersPing()
 
 Get Ping Identity Provider
@@ -1285,7 +1263,6 @@ This endpoint does not require any parameters.
 
 
 # **getIdentityprovidersPurecloud**
-
 
 
 > [PureCloud](PureCloud) getIdentityprovidersPurecloud()
@@ -1343,7 +1320,6 @@ This endpoint does not require any parameters.
 # **getIdentityprovidersPureengage**
 
 
-
 > [PureEngage](PureEngage) getIdentityprovidersPureengage()
 
 Get PureEngage Identity Provider
@@ -1399,7 +1375,6 @@ This endpoint does not require any parameters.
 # **getIdentityprovidersSalesforce**
 
 
-
 > [Salesforce](Salesforce) getIdentityprovidersSalesforce()
 
 Get Salesforce Identity Provider
@@ -1453,7 +1428,6 @@ This endpoint does not require any parameters.
 
 
 # **postIdentityproviders**
-
 
 
 > [CustomProvider](CustomProvider) postIdentityproviders(body)
@@ -1513,7 +1487,6 @@ try {
 
 
 # **putIdentityprovider**
-
 
 
 > [CustomProvider](CustomProvider) putIdentityprovider(providerId, body)
@@ -1577,7 +1550,6 @@ try {
 # **putIdentityprovidersAdfs**
 
 
-
 > [IdentityProvider](IdentityProvider) putIdentityprovidersAdfs(body)
 
 Update/Create ADFS Identity Provider
@@ -1636,7 +1608,6 @@ try {
 
 
 # **putIdentityprovidersCic**
-
 
 
 > [IdentityProvider](IdentityProvider) putIdentityprovidersCic(body)
@@ -1699,7 +1670,6 @@ try {
 # **putIdentityprovidersGeneric**
 
 
-
 > [IdentityProvider](IdentityProvider) putIdentityprovidersGeneric(body)
 
 Update/Create Generic SAML Identity Provider
@@ -1758,7 +1728,6 @@ try {
 
 
 # **putIdentityprovidersGsuite**
-
 
 
 > [IdentityProvider](IdentityProvider) putIdentityprovidersGsuite(body)
@@ -1821,7 +1790,6 @@ try {
 # **putIdentityprovidersIdentitynow**
 
 
-
 > [IdentityNow](IdentityNow) putIdentityprovidersIdentitynow(body)
 
 Update/Create IdentityNow Provider
@@ -1880,7 +1848,6 @@ try {
 
 
 # **putIdentityprovidersOkta**
-
 
 
 > [IdentityProvider](IdentityProvider) putIdentityprovidersOkta(body)
@@ -1943,7 +1910,6 @@ try {
 # **putIdentityprovidersOnelogin**
 
 
-
 > [IdentityProvider](IdentityProvider) putIdentityprovidersOnelogin(body)
 
 Update/Create OneLogin Identity Provider
@@ -2002,7 +1968,6 @@ try {
 
 
 # **putIdentityprovidersPing**
-
 
 
 > [IdentityProvider](IdentityProvider) putIdentityprovidersPing(body)
@@ -2065,7 +2030,6 @@ try {
 # **putIdentityprovidersPurecloud**
 
 
-
 > [IdentityProvider](IdentityProvider) putIdentityprovidersPurecloud(body)
 
 Update/Create PureCloud Identity Provider
@@ -2124,7 +2088,6 @@ try {
 
 
 # **putIdentityprovidersPureengage**
-
 
 
 > [IdentityProvider](IdentityProvider) putIdentityprovidersPureengage(body)
@@ -2187,7 +2150,6 @@ try {
 # **putIdentityprovidersSalesforce**
 
 
-
 > [IdentityProvider](IdentityProvider) putIdentityprovidersSalesforce(body)
 
 Update/Create Salesforce Identity Provider
@@ -2245,4 +2207,4 @@ try {
 [**IdentityProvider**](IdentityProvider)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

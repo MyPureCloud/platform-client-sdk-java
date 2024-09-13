@@ -10,9 +10,8 @@
 | **exportDate** | [**Date**](Date) | The orphan recording's export date. Must be greater than 1 day from now if set. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **integrationId** | **String** | IntegrationId to access AWS S3 bucket for export. This field is required if exportDate is set. |  [optional] |
 | **conversationId** | **String** | A conversation Id that this orphan's recording is to be attached to. If not present, the conversationId will be deduced from the recording media. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

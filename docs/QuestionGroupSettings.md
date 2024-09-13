@@ -8,9 +8,8 @@
 | **questionGroupIndex** | **Integer** | This field represents the location of the Question Group in the form. Note: Indexes are zero-based |  [optional] |
 | **questionGroupContextId** | **String** | The context id of the question group in the form. |  [optional] |
 | **questionSettings** | [**List&lt;QuestionSettings&gt;**](QuestionSettings) |  |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

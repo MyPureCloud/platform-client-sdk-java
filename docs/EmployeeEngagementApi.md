@@ -15,7 +15,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteEmployeeengagementCelebration**
 
 
-
 > Void deleteEmployeeengagementCelebration(celebrationId)
 
 Deletes a celebration
@@ -72,7 +71,6 @@ null (empty response body)
 
 
 # **getEmployeeengagementCelebrations**
-
 
 
 > [GetCelebrationListing](GetCelebrationListing) getEmployeeengagementCelebrations(pageNumber, pageSize)
@@ -136,7 +134,6 @@ try {
 # **getEmployeeengagementRecognition**
 
 
-
 > [Recognition](Recognition) getEmployeeengagementRecognition(recognitionId)
 
 Gets a single recognition
@@ -194,7 +191,6 @@ try {
 
 
 # **patchEmployeeengagementCelebration**
-
 
 
 > Void patchEmployeeengagementCelebration(celebrationId, body)
@@ -257,7 +253,6 @@ null (empty response body)
 # **postEmployeeengagementRecognitions**
 
 
-
 > [RecognitionBase](RecognitionBase) postEmployeeengagementRecognitions(body)
 
 Creates a recognition
@@ -314,4 +309,4 @@ try {
 [**RecognitionBase**](RecognitionBase)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

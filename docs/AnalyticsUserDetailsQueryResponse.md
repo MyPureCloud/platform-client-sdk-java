@@ -8,9 +8,8 @@
 | **userDetails** | [**List&lt;AnalyticsUserDetail&gt;**](AnalyticsUserDetail) |  |  [optional] |
 | **aggregations** | [**List&lt;AggregationResult&gt;**](AggregationResult) |  |  [optional] |
 | **totalHits** | **Integer** |  |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

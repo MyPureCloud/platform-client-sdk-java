@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **intents** | [**List&lt;DetectedIntent&gt;**](DetectedIntent) | The detected intents. |  [optional] |
 | **dialogActs** | [**List&lt;DetectedDialogAct&gt;**](DetectedDialogAct) | The detected dialog acts. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

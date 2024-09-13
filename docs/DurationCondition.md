@@ -9,7 +9,6 @@
 | **durationOperator** | **String** |  |  [optional] |
 | **durationRange** | **String** |  |  [optional] |
 | **durationMode** | [**DurationModeEnum**](#Enum--DurationModeEnum) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: DurationTargetEnum
@@ -19,7 +18,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | DURATION | &quot;DURATION&quot; | 
 | DURATION_RANGE | &quot;DURATION_RANGE&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DurationModeEnum
@@ -30,9 +28,8 @@
 | BETWEEN | &quot;Between&quot; | 
 | OVER | &quot;Over&quot; | 
 | UNDER | &quot;Under&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

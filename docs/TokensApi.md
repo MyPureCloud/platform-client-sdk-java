@@ -16,7 +16,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteToken**
 
 
-
 > Void deleteToken(userId)
 
 Delete all auth tokens for the specified user.
@@ -75,7 +74,6 @@ null (empty response body)
 # **deleteTokensMe**
 
 
-
 > Void deleteTokensMe()
 
 Delete auth token used to make the request.
@@ -127,7 +125,6 @@ null (empty response body)
 
 
 # **getTokensMe**
-
 
 
 > [TokenInfo](TokenInfo) getTokensMe(preserveIdleTTL)
@@ -188,7 +185,6 @@ try {
 # **getTokensTimeout**
 
 
-
 > [IdleTokenTimeout](IdleTokenTimeout) getTokensTimeout()
 
 Get the current Idle Token Timeout Value
@@ -244,7 +240,6 @@ This endpoint does not require any parameters.
 # **headTokensMe**
 
 
-
 > Void headTokensMe()
 
 Verify user token
@@ -296,7 +291,6 @@ null (empty response body)
 
 
 # **putTokensTimeout**
-
 
 
 > [IdleTokenTimeout](IdleTokenTimeout) putTokensTimeout(body)
@@ -355,4 +349,4 @@ try {
 [**IdleTokenTimeout**](IdleTokenTimeout)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

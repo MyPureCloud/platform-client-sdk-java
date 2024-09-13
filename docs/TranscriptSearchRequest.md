@@ -13,7 +13,6 @@
 | **returnFields** | **List&lt;String&gt;** |  |  [optional] |
 | **types** | **List&lt;String&gt;** | Resource domain type to search |  |
 | **query** | [**List&lt;TranscriptSearchCriteria&gt;**](TranscriptSearchCriteria) | The search criteria |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: SortOrderEnum
@@ -24,9 +23,8 @@
 | ASC | &quot;ASC&quot; | 
 | DESC | &quot;DESC&quot; | 
 | SCORE | &quot;SCORE&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

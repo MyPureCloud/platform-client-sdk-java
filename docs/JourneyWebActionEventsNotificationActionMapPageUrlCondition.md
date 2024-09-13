@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **values** | **List&lt;String&gt;** |  |  [optional] |
 | **operator** | [**OperatorEnum**](#Enum--OperatorEnum) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: OperatorEnum
@@ -30,9 +29,8 @@
 | NOTCONTAINSANY | &quot;notContainsAny&quot; | 
 | CONTAINSALL | &quot;containsAll&quot; | 
 | NOTCONTAINSAL | &quot;notContainsAl&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

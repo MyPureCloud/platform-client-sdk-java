@@ -13,9 +13,8 @@
 | **offerWeekDate** | [**LocalDate**](LocalDate) | The first date of the week for the schedule we are querying in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **shifts** | [**List&lt;AlternativeShiftAgentScheduledShift&gt;**](AlternativeShiftAgentScheduledShift) | The shifts the agent is scheduled for at the time the offer is created |  |
 | **alternativeDays** | [**List&lt;AlternativeShiftAgentScheduledShift&gt;**](AlternativeShiftAgentScheduledShift) | The offered alternative shift days in this week at the time the offer is created |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

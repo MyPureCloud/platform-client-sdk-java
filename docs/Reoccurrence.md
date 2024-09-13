@@ -13,9 +13,8 @@
 | **range** | [**Range**](Range) | The schedule range e.g.: EndDate/NoEnd/Numbered |  |
 | **alterations** | [**List&lt;Alteration&gt;**](Alteration) | Modifications to the original recurrence schedule (Exclusions/Inclusions) |  [optional] |
 | **nextOccurrenceDetails** | [**NextOccurrenceDetails**](NextOccurrenceDetails) | The next occurrence details for the next start and end occurrences for the recurrence |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

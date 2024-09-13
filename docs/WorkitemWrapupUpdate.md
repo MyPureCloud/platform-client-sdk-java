@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **action** | [**ActionEnum**](#Enum--ActionEnum) | Action to be performed for the wrapup code. |  |
 | **wrapupCode** | **String** | The wrapup code which will be added/removed. |  |
-{: class="table table-striped"}
 
 
 ## Enum: ActionEnum
@@ -17,9 +16,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ADD | &quot;Add&quot; | 
 | REMOVE | &quot;Remove&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

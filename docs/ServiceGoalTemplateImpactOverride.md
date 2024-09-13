@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **enabled** | **Boolean** | Whether service goal overrides are enabled for this service goal template |  |
 | **impact** | [**WfmServiceGoalImpactSettings**](WfmServiceGoalImpactSettings) | Settings controlling max percent increase and decrease of service goals for this service goal template |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

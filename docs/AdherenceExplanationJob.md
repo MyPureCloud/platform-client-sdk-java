@@ -14,7 +14,6 @@
 | **agentQueryResponseTemplate** | [**AdherenceExplanationListingAgentQueryResponse**](AdherenceExplanationListingAgentQueryResponse) | Schema template for deserializing data returned from the downloadUrl. Use if type == 'QueryAgentExplanations' |  [optional] |
 | **buQueryResponseTemplate** | [**AdherenceExplanationListingBuQueryResponse**](AdherenceExplanationListingBuQueryResponse) | Schema template for deserializing data returned from the downloadUrl. Use if type == 'QueryBuExplanations' |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -26,7 +25,6 @@
 | UPDATEEXPLANATION | &quot;UpdateExplanation&quot; | 
 | QUERYAGENTEXPLANATIONS | &quot;QueryAgentExplanations&quot; | 
 | QUERYBUEXPLANATIONS | &quot;QueryBuExplanations&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -37,9 +35,8 @@
 | PROCESSING | &quot;Processing&quot; | 
 | COMPLETE | &quot;Complete&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

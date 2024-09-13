@@ -10,9 +10,8 @@
 | **screenName** | **String** | twitter user.screen_name |  [optional] |
 | **verified** | **Boolean** | whether this data has been verified using the twitter API |  [optional] |
 | **profileUrl** | **String** | url of user's twitter profile |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

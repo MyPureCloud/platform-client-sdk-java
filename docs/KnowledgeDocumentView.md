@@ -13,7 +13,6 @@
 | **application** | [**KnowledgeSearchClientApplication**](KnowledgeSearchClientApplication) | The client application from which the document was viewed. |  |
 | **sessionId** | **String** | The unique identifier of the knowledge session in which the document was viewed. |  [optional] |
 | **conversationContext** | [**KnowledgeConversationContext**](KnowledgeConversationContext) | Conversation context information if the document was viewed in the context of a conversation. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: QueryTypeEnum
@@ -28,7 +27,6 @@
 | MANUALSEARCH | &quot;ManualSearch&quot; | 
 | RECOMMENDATION | &quot;Recommendation&quot; | 
 | SUGGESTION | &quot;Suggestion&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: SurfacingMethodEnum
@@ -40,9 +38,8 @@
 | ARTICLE | &quot;Article&quot; | 
 | SNIPPET | &quot;Snippet&quot; | 
 | HIGHLIGHT | &quot;Highlight&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

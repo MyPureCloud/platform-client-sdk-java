@@ -13,9 +13,8 @@
 | **context** | [**PatchContext**](PatchContext) | The context of the outcome. |  [optional] |
 | **journey** | [**PatchJourney**](PatchJourney) | The pattern of rules defining the filter of the outcome. |  [optional] |
 | **associatedValueField** | [**PatchAssociatedValueField**](PatchAssociatedValueField) | The field from the event indicating the associated value. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

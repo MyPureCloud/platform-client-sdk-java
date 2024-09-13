@@ -9,7 +9,6 @@
 | **dateModified** | [**Date**](Date) | The date the model was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **retrainingErrors** | [**List&lt;PredictorModelRetrainingError&gt;**](PredictorModelRetrainingError) | The model's retraining errors. |  [optional] |
 | **state** | [**StateEnum**](#Enum--StateEnum) | The state of the model |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -20,7 +19,6 @@
 | VOICE | &quot;voice&quot; | 
 | EMAIL | &quot;email&quot; | 
 | MESSAGE | &quot;message&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -32,9 +30,8 @@
 | ERROR | &quot;Error&quot; | 
 | INVALIDDATASET | &quot;InvalidDataset&quot; | 
 | INACTIVE | &quot;Inactive&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

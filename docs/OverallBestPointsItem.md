@@ -11,7 +11,6 @@
 | **points** | **Integer** | Gamification points |  [optional] |
 | **dateStartWorkday** | [**LocalDate**](LocalDate) | Start workday of the best points aggregation interval. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
 | **dateEndWorkday** | [**LocalDate**](LocalDate) | End workday of the best points aggregation interval. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: GranularityTypeEnum
@@ -22,9 +21,8 @@
 | DAILY | &quot;Daily&quot; | 
 | WEEKLY | &quot;Weekly&quot; | 
 | MONTHLY | &quot;Monthly&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

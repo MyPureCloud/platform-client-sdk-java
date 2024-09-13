@@ -10,7 +10,6 @@
 | **average** | **Double** | The average value of the metric |  [optional] |
 | **unitType** | [**UnitTypeEnum**](#Enum--UnitTypeEnum) | The unit type of the metric value |  [optional] |
 | **trend** | [**List&lt;WorkdayValuesTrendItem&gt;**](WorkdayValuesTrendItem) | The metric value trend |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: UnitTypeEnum
@@ -25,9 +24,8 @@
 | NUMBER | &quot;Number&quot; | 
 | ATTENDANCESTATUS | &quot;AttendanceStatus&quot; | 
 | UNIT | &quot;Unit&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

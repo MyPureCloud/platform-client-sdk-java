@@ -13,7 +13,6 @@
 | **lastName** | **String** | Last name of the recipient. |  [optional] |
 | **email** | **String** | E-mail address of the recipient. |  [optional] |
 | **additionalIds** | [**List&lt;RecipientAdditionalIdentifier&gt;**](RecipientAdditionalIdentifier) | List of recipient additional identifiers |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: IdTypeEnum
@@ -25,9 +24,8 @@
 | PHONE | &quot;Phone&quot; | 
 | OPAQUE | &quot;Opaque&quot; | 
 | TOPIC | &quot;Topic&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

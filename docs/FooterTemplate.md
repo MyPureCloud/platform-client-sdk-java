@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | Specifies the type represented by Footer. |  [optional] |
 | **applicableResources** | [**List<ApplicableResourcesEnum>**](#Enum--ApplicableResourcesEnum) | Specifies the canned response template where the footer can be used. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -16,7 +15,6 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | SIGNATURE | &quot;Signature&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ApplicableResourcesEnum
@@ -24,9 +22,8 @@
 | Name | Value |
 | ---- | ----- |
 | CAMPAIGN | &quot;Campaign&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

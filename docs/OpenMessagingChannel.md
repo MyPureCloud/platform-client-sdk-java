@@ -13,7 +13,6 @@
 | **from** | [**OpenMessagingFromRecipient**](OpenMessagingFromRecipient) | Information about the recipient the message is received from. |  |
 | **time** | [**Date**](Date) | Original time of the event. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
 | **metadata** | **Object** | Information about the channel. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: PlatformEnum
@@ -22,7 +21,6 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | OPEN | &quot;Open&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -31,9 +29,8 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | PRIVATE | &quot;Private&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

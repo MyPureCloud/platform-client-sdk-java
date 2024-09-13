@@ -24,7 +24,6 @@
 | **site** | [**DomainEntityRef**](DomainEntityRef) |  |  [optional] |
 | **dids** | **List&lt;String&gt;** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -35,9 +34,8 @@
 | ACTIVE | &quot;active&quot; | 
 | INACTIVE | &quot;inactive&quot; | 
 | DELETED | &quot;deleted&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

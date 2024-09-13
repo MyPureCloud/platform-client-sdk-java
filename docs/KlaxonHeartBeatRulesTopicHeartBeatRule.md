@@ -14,7 +14,6 @@
 | **notificationUsers** | [**List&lt;KlaxonHeartBeatRulesTopicNotificationUser&gt;**](KlaxonHeartBeatRulesTopicNotificationUser) |  |  [optional] |
 | **alertTypes** | [**List<AlertTypesEnum>**](#Enum--AlertTypesEnum) |  |  [optional] |
 | **ruleType** | [**RuleTypeEnum**](#Enum--RuleTypeEnum) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: AlertTypesEnum
@@ -24,7 +23,6 @@
 | SMS | &quot;SMS&quot; |
 | DEVICE | &quot;DEVICE&quot; |
 | EMAIL | &quot;EMAIL&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: RuleTypeEnum
@@ -33,9 +31,8 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | EDGE | &quot;EDGE&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

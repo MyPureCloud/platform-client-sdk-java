@@ -11,9 +11,8 @@
 | **versions** | [**List&lt;BotConnectorBotVersion&gt;**](BotConnectorBotVersion) | This bots versions, limit of 50 per bot |  |
 | **botCompositeTag** | **String** | A system-generated string that contains metadata about this bot. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

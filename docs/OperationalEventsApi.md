@@ -12,7 +12,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **getUsageEventsDefinition**
 
 
-
 > [EventDefinition](EventDefinition) getUsageEventsDefinition(eventDefinitionId)
 
 Get an operational event definition by its id
@@ -72,7 +71,6 @@ try {
 # **getUsageEventsDefinitions**
 
 
-
 > [EventDefinitionListing](EventDefinitionListing) getUsageEventsDefinitions()
 
 Get all operational event definitions
@@ -125,4 +123,4 @@ This endpoint does not require any parameters.
 [**EventDefinitionListing**](EventDefinitionListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

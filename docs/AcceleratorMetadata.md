@@ -13,7 +13,6 @@
 | **classification** | **String** | architectural classification into which the accelerator belongs |  [optional] |
 | **tags** | **List&lt;String&gt;** | tags |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: OriginEnum
@@ -24,7 +23,6 @@
 | COMMUNITY | &quot;Community&quot; | 
 | PARTNER | &quot;Partner&quot; | 
 | GENESYS | &quot;Genesys&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -35,9 +33,8 @@
 | MODULE | &quot;Module&quot; | 
 | ACCELERATOR | &quot;Accelerator&quot; | 
 | BLUEPRINT | &quot;Blueprint&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

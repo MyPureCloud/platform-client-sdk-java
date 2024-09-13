@@ -14,7 +14,6 @@
 | **language** | [**LanguageEnum**](#Enum--LanguageEnum) | The target language of the Lex bot |  [optional] |
 | **intents** | [**List&lt;LexIntent&gt;**](LexIntent) | An array of Intents associated with this bot alias |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -26,7 +25,6 @@
 | READY | &quot;READY&quot; | 
 | FAILED | &quot;FAILED&quot; | 
 | NOT_BUILT | &quot;NOT_BUILT&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: LanguageEnum
@@ -35,9 +33,8 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | EN_US | &quot;en-US&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

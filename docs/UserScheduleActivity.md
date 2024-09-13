@@ -12,9 +12,8 @@
 | **countsAsPaidTime** | **Boolean** | Whether this activity is paid |  [optional] |
 | **isDstFallback** | **Boolean** | Whether this activity spans a DST fallback |  [optional] |
 | **timeOffRequestId** | **String** | Time off request id of this activity |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

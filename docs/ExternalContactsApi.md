@@ -7,6 +7,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteExternalcontactsContact**](ExternalContactsApi#deleteExternalcontactsContact) | Delete an external contact |
 | [**deleteExternalcontactsContactNote**](ExternalContactsApi#deleteExternalcontactsContactNote) | Delete a note for an external contact |
 | [**deleteExternalcontactsContactsSchema**](ExternalContactsApi#deleteExternalcontactsContactsSchema) | Delete a schema |
+| [**deleteExternalcontactsExternalsource**](ExternalContactsApi#deleteExternalcontactsExternalsource) | Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable. |
 | [**deleteExternalcontactsOrganization**](ExternalContactsApi#deleteExternalcontactsOrganization) | Delete an external organization |
 | [**deleteExternalcontactsOrganizationNote**](ExternalContactsApi#deleteExternalcontactsOrganizationNote) | Delete a note for an external organization |
 | [**deleteExternalcontactsOrganizationTrustor**](ExternalContactsApi#deleteExternalcontactsOrganizationTrustor) | Unlink the Trustor for this External Organization |
@@ -22,6 +23,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getExternalcontactsContactsSchemaVersion**](ExternalContactsApi#getExternalcontactsContactsSchemaVersion) | Get a specific version of a schema |
 | [**getExternalcontactsContactsSchemaVersions**](ExternalContactsApi#getExternalcontactsContactsSchemaVersions) | Get all versions of an external contact's schema |
 | [**getExternalcontactsContactsSchemas**](ExternalContactsApi#getExternalcontactsContactsSchemas) | Get a list of schemas. |
+| [**getExternalcontactsExternalsource**](ExternalContactsApi#getExternalcontactsExternalsource) | Fetch an External Source |
+| [**getExternalcontactsExternalsources**](ExternalContactsApi#getExternalcontactsExternalsources) | Fetch a list of External Sources |
 | [**getExternalcontactsOrganization**](ExternalContactsApi#getExternalcontactsOrganization) | Fetch an external organization |
 | [**getExternalcontactsOrganizationContacts**](ExternalContactsApi#getExternalcontactsOrganizationContacts) | Search for external contacts in an external organization |
 | [**getExternalcontactsOrganizationNote**](ExternalContactsApi#getExternalcontactsOrganizationNote) | Fetch a note for an external organization |
@@ -60,6 +63,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postExternalcontactsContactPromotion**](ExternalContactsApi#postExternalcontactsContactPromotion) | Promote an observed contact (ephemeral or identified) to a curated contact |
 | [**postExternalcontactsContacts**](ExternalContactsApi#postExternalcontactsContacts) | Create an external contact |
 | [**postExternalcontactsContactsSchemas**](ExternalContactsApi#postExternalcontactsContactsSchemas) | Create a schema |
+| [**postExternalcontactsExternalsources**](ExternalContactsApi#postExternalcontactsExternalsources) | Create an External Source |
 | [**postExternalcontactsIdentifierlookup**](ExternalContactsApi#postExternalcontactsIdentifierlookup) | Fetch a contact using an identifier type and value. |
 | [**postExternalcontactsMergeContacts**](ExternalContactsApi#postExternalcontactsMergeContacts) | Merge two contacts into a new contact record |
 | [**postExternalcontactsOrganizationNotes**](ExternalContactsApi#postExternalcontactsOrganizationNotes) | Create a note for an external organization |
@@ -70,6 +74,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putExternalcontactsContactNote**](ExternalContactsApi#putExternalcontactsContactNote) | Update a note for an external contact |
 | [**putExternalcontactsContactsSchema**](ExternalContactsApi#putExternalcontactsContactsSchema) | Update a schema |
 | [**putExternalcontactsConversation**](ExternalContactsApi#putExternalcontactsConversation) | Associate/disassociate an external contact with a conversation |
+| [**putExternalcontactsExternalsource**](ExternalContactsApi#putExternalcontactsExternalsource) | Update an External Source |
 | [**putExternalcontactsOrganization**](ExternalContactsApi#putExternalcontactsOrganization) | Update an external organization |
 | [**putExternalcontactsOrganizationNote**](ExternalContactsApi#putExternalcontactsOrganizationNote) | Update a note for an external organization |
 | [**putExternalcontactsOrganizationTrustorTrustorId**](ExternalContactsApi#putExternalcontactsOrganizationTrustorTrustorId) | Links a Trustor with an External Organization |
@@ -79,7 +84,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 
 # **deleteExternalcontactsContact**
-
 
 
 > Empty deleteExternalcontactsContact(contactId)
@@ -140,7 +144,6 @@ try {
 
 
 # **deleteExternalcontactsContactNote**
-
 
 
 > Empty deleteExternalcontactsContactNote(contactId, noteId)
@@ -205,7 +208,6 @@ try {
 # **deleteExternalcontactsContactsSchema**
 
 
-
 > Void deleteExternalcontactsContactsSchema(schemaId)
 
 Delete a schema
@@ -261,8 +263,68 @@ try {
 null (empty response body)
 
 
-# **deleteExternalcontactsOrganization**
+# **deleteExternalcontactsExternalsource**
 
+
+> Empty deleteExternalcontactsExternalsource(externalSourceId)
+
+Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.
+
+deleteExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/externalcontacts/externalsources/{externalSourceId}  
+
+Requires ANY permissions: 
+
+* externalContacts:externalSource:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String externalSourceId = "externalSourceId_example"; // String | External Source ID
+try {
+    Empty result = apiInstance.deleteExternalcontactsExternalsource(externalSourceId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#deleteExternalcontactsExternalsource");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **externalSourceId** | **String**| External Source ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+**Empty**
+
+
+# **deleteExternalcontactsOrganization**
 
 
 > Empty deleteExternalcontactsOrganization(externalOrganizationId)
@@ -323,7 +385,6 @@ try {
 
 
 # **deleteExternalcontactsOrganizationNote**
-
 
 
 > Empty deleteExternalcontactsOrganizationNote(externalOrganizationId, noteId)
@@ -388,7 +449,6 @@ try {
 # **deleteExternalcontactsOrganizationTrustor**
 
 
-
 > Void deleteExternalcontactsOrganizationTrustor(externalOrganizationId)
 
 Unlink the Trustor for this External Organization
@@ -445,7 +505,6 @@ null (empty response body)
 
 
 # **deleteExternalcontactsRelationship**
-
 
 
 > Empty deleteExternalcontactsRelationship(relationshipId)
@@ -508,7 +567,6 @@ try {
 # **getExternalcontactsContact**
 
 
-
 > [ExternalContact](ExternalContact) getExternalcontactsContact(contactId, expand)
 
 Fetch an external contact
@@ -543,7 +601,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 String contactId = "contactId_example"; // String | ExternalContact ID
-List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand (externalOrganization,externalDataSources,identifiers)
+List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand
 try {
     ExternalContact result = apiInstance.getExternalcontactsContact(contactId, expand);
     System.out.println(result);
@@ -559,7 +617,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **contactId** | **String**| ExternalContact ID | 
-| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand (externalOrganization,externalDataSources,identifiers) | [optional]<br />**Values**: externalOrganization, externalDataSources, identifiers 
+| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources 
 {: class="table-striped"}
 
 
@@ -569,7 +627,6 @@ try {
 
 
 # **getExternalcontactsContactIdentifiers**
-
 
 
 > [EntityListing](EntityListing) getExternalcontactsContactIdentifiers(contactId)
@@ -629,7 +686,6 @@ try {
 
 
 # **getExternalcontactsContactJourneySessions**
-
 
 
 > [SessionListing](SessionListing) getExternalcontactsContactJourneySessions(contactId, pageSize, after, includeMerged)
@@ -697,7 +753,6 @@ try {
 # **getExternalcontactsContactNote**
 
 
-
 > [Note](Note) getExternalcontactsContactNote(contactId, noteId, expand)
 
 Fetch a note for an external contact
@@ -760,7 +815,6 @@ try {
 
 
 # **getExternalcontactsContactNotes**
-
 
 
 > [NoteListing](NoteListing) getExternalcontactsContactNotes(contactId, pageSize, pageNumber, sortOrder, expand)
@@ -831,7 +885,6 @@ try {
 # **getExternalcontactsContactUnresolved**
 
 
-
 > [ExternalContact](ExternalContact) getExternalcontactsContactUnresolved(contactId, expand)
 
 Fetch an unresolved external contact
@@ -893,7 +946,6 @@ try {
 # **getExternalcontactsContacts**
 
 
-
 > [ContactListing](ContactListing) getExternalcontactsContacts(pageSize, pageNumber, q, sortOrder, expand)
 
 Search for external contacts
@@ -950,7 +1002,7 @@ try {
 | **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] 
 | **q** | **String**| User supplied search keywords (no special syntax is currently supported) | [optional] 
 | **sortOrder** | **String**| The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \&quot;firstName:asc\&quot;, \&quot;title:desc\&quot; | [optional] 
-| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources, identifiers 
+| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources 
 {: class="table-striped"}
 
 
@@ -960,7 +1012,6 @@ try {
 
 
 # **getExternalcontactsContactsSchema**
-
 
 
 > [DataSchema](DataSchema) getExternalcontactsContactsSchema(schemaId)
@@ -1020,7 +1071,6 @@ try {
 
 
 # **getExternalcontactsContactsSchemaVersion**
-
 
 
 > [DataSchema](DataSchema) getExternalcontactsContactsSchemaVersion(schemaId, versionId)
@@ -1084,7 +1134,6 @@ try {
 # **getExternalcontactsContactsSchemaVersions**
 
 
-
 > [DataSchema](DataSchema) getExternalcontactsContactsSchemaVersions(schemaId)
 
 Get all versions of an external contact's schema
@@ -1144,7 +1193,6 @@ try {
 # **getExternalcontactsContactsSchemas**
 
 
-
 > [DataSchemaListing](DataSchemaListing) getExternalcontactsContactsSchemas()
 
 Get a list of schemas.
@@ -1197,8 +1245,139 @@ This endpoint does not require any parameters.
 [**DataSchemaListing**](DataSchemaListing)
 
 
-# **getExternalcontactsOrganization**
+# **getExternalcontactsExternalsource**
 
+
+> [ExternalSource](ExternalSource) getExternalcontactsExternalsource(externalSourceId)
+
+Fetch an External Source
+
+getExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/externalsources/{externalSourceId}  
+
+Requires ANY permissions: 
+
+* externalContacts:externalSource:view
+* externalContacts:contact:view
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String externalSourceId = "externalSourceId_example"; // String | External Source ID
+try {
+    ExternalSource result = apiInstance.getExternalcontactsExternalsource(externalSourceId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsExternalsource");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **externalSourceId** | **String**| External Source ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ExternalSource**](ExternalSource)
+
+
+# **getExternalcontactsExternalsources**
+
+
+> [CursorExternalSourceListing](CursorExternalSourceListing) getExternalcontactsExternalsources(cursor, limit, name, active)
+
+Fetch a list of External Sources
+
+getExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/externalsources  
+
+Requires ANY permissions: 
+
+* externalContacts:externalSource:view
+* externalContacts:contact:view
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+Integer limit = 56; // Integer | The number of ExternalSources per page; must be between 10 and 200, default is 100
+String name = "name_example"; // String | Filter by external source name. Filtering is prefix filtering and not an exact match
+Boolean active = true; // Boolean | Filter by active status of external source
+try {
+    CursorExternalSourceListing result = apiInstance.getExternalcontactsExternalsources(cursor, limit, name, active);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsExternalsources");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **cursor** | **String**| Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional] 
+| **limit** | **Integer**| The number of ExternalSources per page; must be between 10 and 200, default is 100 | [optional] 
+| **name** | **String**| Filter by external source name. Filtering is prefix filtering and not an exact match | [optional] 
+| **active** | **Boolean**| Filter by active status of external source | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CursorExternalSourceListing**](CursorExternalSourceListing)
+
+
+# **getExternalcontactsOrganization**
 
 
 > [ExternalOrganization](ExternalOrganization) getExternalcontactsOrganization(externalOrganizationId, expand, includeTrustors)
@@ -1265,7 +1444,6 @@ try {
 # **getExternalcontactsOrganizationContacts**
 
 
-
 > [ContactListing](ContactListing) getExternalcontactsOrganizationContacts(externalOrganizationId, pageSize, pageNumber, q, sortOrder, expand)
 
 Search for external contacts in an external organization
@@ -1324,7 +1502,7 @@ try {
 | **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] 
 | **q** | **String**| User supplied search keywords (no special syntax is currently supported) | [optional] 
 | **sortOrder** | **String**| The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \&quot;firstName:asc\&quot;, \&quot;title:desc\&quot; | [optional] 
-| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources, identifiers 
+| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources 
 {: class="table-striped"}
 
 
@@ -1334,7 +1512,6 @@ try {
 
 
 # **getExternalcontactsOrganizationNote**
-
 
 
 > [Note](Note) getExternalcontactsOrganizationNote(externalOrganizationId, noteId, expand)
@@ -1399,7 +1576,6 @@ try {
 
 
 # **getExternalcontactsOrganizationNotes**
-
 
 
 > [NoteListing](NoteListing) getExternalcontactsOrganizationNotes(externalOrganizationId, pageSize, pageNumber, sortOrder, expand)
@@ -1470,7 +1646,6 @@ try {
 # **getExternalcontactsOrganizationRelationships**
 
 
-
 > [RelationshipListing](RelationshipListing) getExternalcontactsOrganizationRelationships(externalOrganizationId, pageSize, pageNumber, expand, sortOrder)
 
 Fetch a relationship for an external organization
@@ -1537,7 +1712,6 @@ try {
 
 
 # **getExternalcontactsOrganizations**
-
 
 
 > [ExternalOrganizationListing](ExternalOrganizationListing) getExternalcontactsOrganizations(pageSize, pageNumber, q, trustorId, sortOrder, expand, includeTrustors)
@@ -1612,7 +1786,6 @@ try {
 # **getExternalcontactsOrganizationsSchema**
 
 
-
 > [DataSchema](DataSchema) getExternalcontactsOrganizationsSchema(schemaId)
 
 Get a schema
@@ -1670,7 +1843,6 @@ try {
 
 
 # **getExternalcontactsOrganizationsSchemaVersion**
-
 
 
 > [DataSchema](DataSchema) getExternalcontactsOrganizationsSchemaVersion(schemaId, versionId)
@@ -1734,7 +1906,6 @@ try {
 # **getExternalcontactsOrganizationsSchemaVersions**
 
 
-
 > [DataSchema](DataSchema) getExternalcontactsOrganizationsSchemaVersions(schemaId)
 
 Get all versions of an external organization's schema
@@ -1794,7 +1965,6 @@ try {
 # **getExternalcontactsOrganizationsSchemas**
 
 
-
 > [DataSchemaListing](DataSchemaListing) getExternalcontactsOrganizationsSchemas()
 
 Get a list of schemas.
@@ -1848,7 +2018,6 @@ This endpoint does not require any parameters.
 
 
 # **getExternalcontactsRelationship**
-
 
 
 > [Relationship](Relationship) getExternalcontactsRelationship(relationshipId, expand)
@@ -1913,7 +2082,6 @@ try {
 # **getExternalcontactsReversewhitepageslookup**
 
 
-
 > [ReverseWhitepagesLookupResult](ReverseWhitepagesLookupResult) getExternalcontactsReversewhitepageslookup(lookupVal, expand)
 
 Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
@@ -1973,7 +2141,6 @@ try {
 
 
 # **getExternalcontactsScanContacts**
-
 
 
 > [CursorContactListing](CursorContactListing) getExternalcontactsScanContacts(limit, cursor)
@@ -2038,7 +2205,6 @@ try {
 # **getExternalcontactsScanNotes**
 
 
-
 > [CursorNoteListing](CursorNoteListing) getExternalcontactsScanNotes(limit, cursor)
 
 Scan for notes using paging
@@ -2099,7 +2265,6 @@ try {
 
 
 # **getExternalcontactsScanOrganizations**
-
 
 
 > [CursorOrganizationListing](CursorOrganizationListing) getExternalcontactsScanOrganizations(limit, cursor)
@@ -2164,7 +2329,6 @@ try {
 # **getExternalcontactsScanRelationships**
 
 
-
 > [CursorRelationshipListing](CursorRelationshipListing) getExternalcontactsScanRelationships(limit, cursor)
 
 Scan for relationships
@@ -2225,7 +2389,6 @@ try {
 
 
 # **patchExternalcontactsContactIdentifiers**
-
 
 
 > [ContactIdentifier](ContactIdentifier) patchExternalcontactsContactIdentifiers(contactId, body)
@@ -2289,7 +2452,6 @@ try {
 # **postExternalcontactsBulkContacts**
 
 
-
 > [BulkFetchContactsResponse](BulkFetchContactsResponse) postExternalcontactsBulkContacts(body)
 
 Bulk fetch contacts
@@ -2347,7 +2509,6 @@ try {
 
 
 # **postExternalcontactsBulkContactsAdd**
-
 
 
 > [BulkContactsResponse](BulkContactsResponse) postExternalcontactsBulkContactsAdd(body)
@@ -2409,7 +2570,6 @@ try {
 # **postExternalcontactsBulkContactsRemove**
 
 
-
 > [BulkDeleteResponse](BulkDeleteResponse) postExternalcontactsBulkContactsRemove(body)
 
 Bulk remove contacts
@@ -2467,7 +2627,6 @@ try {
 
 
 # **postExternalcontactsBulkContactsUnresolved**
-
 
 
 > [BulkFetchContactsResponse](BulkFetchContactsResponse) postExternalcontactsBulkContactsUnresolved(body)
@@ -2529,7 +2688,6 @@ try {
 # **postExternalcontactsBulkContactsUpdate**
 
 
-
 > [BulkContactsResponse](BulkContactsResponse) postExternalcontactsBulkContactsUpdate(body)
 
 Bulk update contacts
@@ -2587,7 +2745,6 @@ try {
 
 
 # **postExternalcontactsBulkNotes**
-
 
 
 > [BulkFetchNotesResponse](BulkFetchNotesResponse) postExternalcontactsBulkNotes(body)
@@ -2650,7 +2807,6 @@ try {
 # **postExternalcontactsBulkNotesAdd**
 
 
-
 > [BulkNotesResponse](BulkNotesResponse) postExternalcontactsBulkNotesAdd(body)
 
 Bulk add notes
@@ -2709,7 +2865,6 @@ try {
 
 
 # **postExternalcontactsBulkNotesRemove**
-
 
 
 > [BulkDeleteResponse](BulkDeleteResponse) postExternalcontactsBulkNotesRemove(body)
@@ -2772,7 +2927,6 @@ try {
 # **postExternalcontactsBulkNotesUpdate**
 
 
-
 > [BulkNotesResponse](BulkNotesResponse) postExternalcontactsBulkNotesUpdate(body)
 
 Bulk update notes
@@ -2831,7 +2985,6 @@ try {
 
 
 # **postExternalcontactsBulkOrganizations**
-
 
 
 > [BulkFetchOrganizationsResponse](BulkFetchOrganizationsResponse) postExternalcontactsBulkOrganizations(body)
@@ -2893,7 +3046,6 @@ try {
 # **postExternalcontactsBulkOrganizationsAdd**
 
 
-
 > [BulkOrganizationsResponse](BulkOrganizationsResponse) postExternalcontactsBulkOrganizationsAdd(body)
 
 Bulk add organizations
@@ -2951,7 +3103,6 @@ try {
 
 
 # **postExternalcontactsBulkOrganizationsRemove**
-
 
 
 > [BulkDeleteResponse](BulkDeleteResponse) postExternalcontactsBulkOrganizationsRemove(body)
@@ -3013,7 +3164,6 @@ try {
 # **postExternalcontactsBulkOrganizationsUpdate**
 
 
-
 > [BulkOrganizationsResponse](BulkOrganizationsResponse) postExternalcontactsBulkOrganizationsUpdate(body)
 
 Bulk update organizations
@@ -3071,7 +3221,6 @@ try {
 
 
 # **postExternalcontactsBulkRelationships**
-
 
 
 > [BulkFetchRelationshipsResponse](BulkFetchRelationshipsResponse) postExternalcontactsBulkRelationships(body)
@@ -3134,7 +3283,6 @@ try {
 # **postExternalcontactsBulkRelationshipsAdd**
 
 
-
 > [BulkRelationshipsResponse](BulkRelationshipsResponse) postExternalcontactsBulkRelationshipsAdd(body)
 
 Bulk add relationships
@@ -3193,7 +3341,6 @@ try {
 
 
 # **postExternalcontactsBulkRelationshipsRemove**
-
 
 
 > [BulkDeleteResponse](BulkDeleteResponse) postExternalcontactsBulkRelationshipsRemove(body)
@@ -3256,7 +3403,6 @@ try {
 # **postExternalcontactsBulkRelationshipsUpdate**
 
 
-
 > [BulkRelationshipsResponse](BulkRelationshipsResponse) postExternalcontactsBulkRelationshipsUpdate(body)
 
 Bulk update relationships
@@ -3315,7 +3461,6 @@ try {
 
 
 # **postExternalcontactsContactNotes**
-
 
 
 > [Note](Note) postExternalcontactsContactNotes(contactId, body)
@@ -3380,7 +3525,6 @@ try {
 # **postExternalcontactsContactPromotion**
 
 
-
 > [ExternalContact](ExternalContact) postExternalcontactsContactPromotion(contactId)
 
 Promote an observed contact (ephemeral or identified) to a curated contact
@@ -3438,7 +3582,6 @@ try {
 
 
 # **postExternalcontactsContacts**
-
 
 
 > [ExternalContact](ExternalContact) postExternalcontactsContacts(body)
@@ -3501,7 +3644,6 @@ try {
 # **postExternalcontactsContactsSchemas**
 
 
-
 > [DataSchema](DataSchema) postExternalcontactsContactsSchemas(body)
 
 Create a schema
@@ -3558,8 +3700,68 @@ try {
 [**DataSchema**](DataSchema)
 
 
-# **postExternalcontactsIdentifierlookup**
+# **postExternalcontactsExternalsources**
 
+
+> [ExternalSource](ExternalSource) postExternalcontactsExternalsources(body)
+
+Create an External Source
+
+postExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/externalcontacts/externalsources  
+
+Requires ANY permissions: 
+
+* externalContacts:externalSource:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+ExternalSource body = new ExternalSource(); // ExternalSource | External Source
+try {
+    ExternalSource result = apiInstance.postExternalcontactsExternalsources(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#postExternalcontactsExternalsources");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ExternalSource**](ExternalSource)| External Source | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ExternalSource**](ExternalSource)
+
+
+# **postExternalcontactsIdentifierlookup**
 
 
 > [ExternalContact](ExternalContact) postExternalcontactsIdentifierlookup(identifier, expand)
@@ -3614,7 +3816,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **identifier** | [**ContactIdentifier**](ContactIdentifier)|  | 
-| **expand** | [**List&lt;String&gt;**](String)| which field, if any, to expand | [optional]<br />**Values**: externalOrganization, identifiers 
+| **expand** | [**List&lt;String&gt;**](String)| which field, if any, to expand | [optional]<br />**Values**: externalOrganization, identifiers, externalSources 
 {: class="table-striped"}
 
 
@@ -3624,7 +3826,6 @@ try {
 
 
 # **postExternalcontactsMergeContacts**
-
 
 
 > [ExternalContact](ExternalContact) postExternalcontactsMergeContacts(body)
@@ -3686,7 +3887,6 @@ try {
 
 
 # **postExternalcontactsOrganizationNotes**
-
 
 
 > [Note](Note) postExternalcontactsOrganizationNotes(externalOrganizationId, body)
@@ -3751,7 +3951,6 @@ try {
 # **postExternalcontactsOrganizations**
 
 
-
 > [ExternalOrganization](ExternalOrganization) postExternalcontactsOrganizations(body)
 
 Create an external organization
@@ -3812,7 +4011,6 @@ try {
 # **postExternalcontactsOrganizationsSchemas**
 
 
-
 > [DataSchema](DataSchema) postExternalcontactsOrganizationsSchemas(body)
 
 Create a schema
@@ -3870,7 +4068,6 @@ try {
 
 
 # **postExternalcontactsRelationships**
-
 
 
 > [Relationship](Relationship) postExternalcontactsRelationships(body)
@@ -3933,7 +4130,6 @@ try {
 # **putExternalcontactsContact**
 
 
-
 > [ExternalContact](ExternalContact) putExternalcontactsContact(contactId, body)
 
 Update an external contact
@@ -3994,7 +4190,6 @@ try {
 
 
 # **putExternalcontactsContactNote**
-
 
 
 > [Note](Note) putExternalcontactsContactNote(contactId, noteId, body)
@@ -4061,7 +4256,6 @@ try {
 # **putExternalcontactsContactsSchema**
 
 
-
 > [DataSchema](DataSchema) putExternalcontactsContactsSchema(schemaId, body)
 
 Update a schema
@@ -4121,7 +4315,6 @@ try {
 
 
 # **putExternalcontactsConversation**
-
 
 
 > Void putExternalcontactsConversation(conversationId, body)
@@ -4184,8 +4377,70 @@ try {
 null (empty response body)
 
 
-# **putExternalcontactsOrganization**
+# **putExternalcontactsExternalsource**
 
+
+> [ExternalSource](ExternalSource) putExternalcontactsExternalsource(externalSourceId, body)
+
+Update an External Source
+
+putExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/externalcontacts/externalsources/{externalSourceId}  
+
+Requires ANY permissions: 
+
+* externalContacts:externalSource:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String externalSourceId = "externalSourceId_example"; // String | External Source ID
+ExternalSource body = new ExternalSource(); // ExternalSource | External Source
+try {
+    ExternalSource result = apiInstance.putExternalcontactsExternalsource(externalSourceId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#putExternalcontactsExternalsource");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **externalSourceId** | **String**| External Source ID | 
+| **body** | [**ExternalSource**](ExternalSource)| External Source | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ExternalSource**](ExternalSource)
+
+
+# **putExternalcontactsOrganization**
 
 
 > [ExternalOrganization](ExternalOrganization) putExternalcontactsOrganization(externalOrganizationId, body)
@@ -4248,7 +4503,6 @@ try {
 
 
 # **putExternalcontactsOrganizationNote**
-
 
 
 > [Note](Note) putExternalcontactsOrganizationNote(externalOrganizationId, noteId, body)
@@ -4315,7 +4569,6 @@ try {
 # **putExternalcontactsOrganizationTrustorTrustorId**
 
 
-
 > [ExternalOrganizationTrustorLink](ExternalOrganizationTrustorLink) putExternalcontactsOrganizationTrustorTrustorId(externalOrganizationId, trustorId)
 
 Links a Trustor with an External Organization
@@ -4375,7 +4628,6 @@ try {
 
 
 # **putExternalcontactsOrganizationsSchema**
-
 
 
 > [DataSchema](DataSchema) putExternalcontactsOrganizationsSchema(schemaId, body)
@@ -4439,7 +4691,6 @@ try {
 # **putExternalcontactsRelationship**
 
 
-
 > [Relationship](Relationship) putExternalcontactsRelationship(relationshipId, body)
 
 Update a relationship
@@ -4499,4 +4750,4 @@ try {
 [**Relationship**](Relationship)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

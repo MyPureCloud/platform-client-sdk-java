@@ -11,9 +11,8 @@
 | **gte** | [**JourneyViewElementFilterRangeData**](JourneyViewElementFilterRangeData) | comparator: greater than or equal |  [optional] |
 | **eq** | [**JourneyViewElementFilterRangeData**](JourneyViewElementFilterRangeData) | comparator: is equal to |  [optional] |
 | **neq** | [**JourneyViewElementFilterRangeData**](JourneyViewElementFilterRangeData) | comparator: is not equal to |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

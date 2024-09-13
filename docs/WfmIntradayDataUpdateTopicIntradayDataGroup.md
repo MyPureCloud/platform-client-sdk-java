@@ -12,7 +12,6 @@
 | **historicalQueueDataPerInterval** | [**List&lt;WfmIntradayDataUpdateTopicIntradayHistoricalQueueData&gt;**](WfmIntradayDataUpdateTopicIntradayHistoricalQueueData) |  |  [optional] |
 | **performancePredictionAgentDataPerInterval** | [**List&lt;WfmIntradayDataUpdateTopicIntradayPerformancePredictionAgentData&gt;**](WfmIntradayDataUpdateTopicIntradayPerformancePredictionAgentData) |  |  [optional] |
 | **performancePredictionQueueDataPerInterval** | [**List&lt;WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData&gt;**](WfmIntradayDataUpdateTopicIntradayPerformancePredictionQueueData) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -25,9 +24,8 @@
 | EMAIL | &quot;Email&quot; | 
 | CALLBACK | &quot;Callback&quot; | 
 | MESSAGE | &quot;Message&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

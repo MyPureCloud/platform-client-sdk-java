@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **roleId** | **String** | Role to be associated with the given division which forms a grant |  |
 | **divisionId** | **String** | Division associated with the given role which forms a grant |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

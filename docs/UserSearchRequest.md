@@ -14,7 +14,6 @@
 | **query** | [**List&lt;UserSearchCriteria&gt;**](UserSearchCriteria) |  |  [optional] |
 | **integrationPresenceSource** | [**IntegrationPresenceSourceEnum**](#Enum--IntegrationPresenceSourceEnum) | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100. |  [optional] |
 | **enforcePermissions** | **Boolean** | This property only applies to api/v2/user/search; when set to true add additional search criteria to filter users by: directory:user:view |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: SortOrderEnum
@@ -25,7 +24,6 @@
 | ASC | &quot;ASC&quot; | 
 | DESC | &quot;DESC&quot; | 
 | SCORE | &quot;SCORE&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: IntegrationPresenceSourceEnum
@@ -36,9 +34,8 @@
 | MICROSOFTTEAMS | &quot;MicrosoftTeams&quot; | 
 | ZOOMPHONE | &quot;ZoomPhone&quot; | 
 | EIGHTBYEIGHT | &quot;EightByEight&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

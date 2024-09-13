@@ -16,7 +16,6 @@
 | **user** | [**UserReference**](UserReference) | The user of this notification |  [optional] |
 | **appointment** | [**CoachingAppointmentResponse**](CoachingAppointmentResponse) | The appointment |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ActionTypeEnum
@@ -28,7 +27,6 @@
 | UPDATE | &quot;Update&quot; | 
 | DELETE | &quot;Delete&quot; | 
 | STATUSCHANGE | &quot;StatusChange&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: RelationshipEnum
@@ -39,7 +37,6 @@
 | ATTENDEE | &quot;Attendee&quot; | 
 | CREATOR | &quot;Creator&quot; | 
 | FACILITATOR | &quot;Facilitator&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -51,9 +48,8 @@
 | INPROGRESS | &quot;InProgress&quot; | 
 | COMPLETED | &quot;Completed&quot; | 
 | INVALIDSCHEDULE | &quot;InvalidSchedule&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -17,7 +17,6 @@
 | **examplePhrases** | [**List&lt;DictionaryFeedbackExamplePhrase&gt;**](DictionaryFeedbackExamplePhrase) | A list of at least 3 and up to 20 unique phrases that are example usage of the term |  |
 | **soundsLike** | **List&lt;String&gt;** | A list of up to 10 terms that give examples of how the term sounds |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: SourceEnum
@@ -26,9 +25,8 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | MANUAL | &quot;Manual&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

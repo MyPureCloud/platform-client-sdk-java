@@ -9,9 +9,8 @@
 | **name** | **String** | The name of the time off type configured in integration. |  |
 | **hrisIntegrationId** | **String** | The ID of the integration. |  |
 | **secondaryId** | **String** | Secondary ID of the time off type, if configured in integration. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

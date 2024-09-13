@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **user** | [**UserReference**](UserReference) | User reference |  [optional] |
 | **availableTimes** | [**List&lt;AvailableTime&gt;**](AvailableTime) | Periods of availability to schedule coaching appointment for an user |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

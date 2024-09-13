@@ -8,7 +8,6 @@
 | **id** | **String** |  |  [optional] |
 | **operator** | [**OperatorEnum**](#Enum--OperatorEnum) |  |  [optional] |
 | **values** | **List&lt;String&gt;** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: OperatorEnum
@@ -25,9 +24,8 @@
 | GREATERTHAN | &quot;GREATERTHAN&quot; | 
 | GREATERTHANEQUALS | &quot;GREATERTHANEQUALS&quot; | 
 | CONTAINS | &quot;CONTAINS&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -20,7 +20,6 @@
 | **annotations** | [**List&lt;Annotation&gt;**](Annotation) | List of annotations |  [optional] |
 | **realtimeLocation** | **Long** | Offset of annotation (milliseconds) from start of the recording before removing the cumulative duration of all pauses before this annotation |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ReasonEnum
@@ -31,9 +30,8 @@
 | HOLD | &quot;Hold&quot; | 
 | SECUREPAUSE | &quot;SecurePause&quot; | 
 | FLOWORQUEUE | &quot;FlowOrQueue&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

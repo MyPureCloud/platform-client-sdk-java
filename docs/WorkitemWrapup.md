@@ -10,9 +10,8 @@
 | **modifiedBy** | [**UserReference**](UserReference) | The user who added the wrapup code to the workitem. |  [optional] |
 | **user** | [**UserReference**](UserReference) | The user for whom wrapup code was added. This may be the same as modifiedBy. |  [optional] |
 | **dateModified** | [**Date**](Date) | The modified date of the Workitem when the wrapup code was added. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

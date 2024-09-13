@@ -19,9 +19,8 @@
 | **configurationOverrides** | [**ConfigurationOverrides**](ConfigurationOverrides) | the priority property within ConfigurationOverides indicates whether or not the contact to be placed in front of the queue or at the end of the queue |  [optional] |
 | **dateCreated** | [**Date**](Date) | Timestamp for when the contact was added. Contacts added prior to 2023 September 1 may be missing this value. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

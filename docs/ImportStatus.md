@@ -12,7 +12,6 @@
 | **failureReason** | **String** | if the import has failed, the reason for the failure |  [optional] |
 | **targetContactListIds** | **List&lt;String&gt;** | The contact list Ids for target contact lists. |  [optional] |
 | **listNamePrefix** | **String** | The prefix for the contact list name |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -22,9 +21,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | IN_PROGRESS | &quot;IN_PROGRESS&quot; | 
 | FAILED | &quot;FAILED&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -8,9 +8,8 @@
 | **outcomeId** | **String** | The outcome ID. |  |
 | **maximumPercentile** | **Float** | Percentile value for the selected outcome, at or above which the action map will trigger. |  |
 | **fallbackPercentile** | **Float** | Additional percentile condition, where if set, the action map will trigger if the current outcome percentile is lower or equal to the value. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

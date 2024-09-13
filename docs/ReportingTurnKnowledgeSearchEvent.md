@@ -10,9 +10,8 @@
 | **documents** | [**List&lt;ReportingTurnKnowledgeDocument&gt;**](ReportingTurnKnowledgeDocument) | The list of search documents that the feedback applies to. |  [optional] |
 | **searchQuery** | **String** | The search query that was used to search the Knowledge Base documents for a matching question. |  [optional] |
 | **answerDocumentId** | **String** | The document ID of the search answer. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

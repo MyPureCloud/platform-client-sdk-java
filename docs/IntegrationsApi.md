@@ -93,7 +93,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteIntegration**
 
 
-
 > [Integration](Integration) deleteIntegration(integrationId)
 
 Delete integration.
@@ -151,7 +150,6 @@ try {
 
 
 # **deleteIntegrationsAction**
-
 
 
 > Void deleteIntegrationsAction(actionId)
@@ -212,7 +210,6 @@ null (empty response body)
 # **deleteIntegrationsActionDraft**
 
 
-
 > Void deleteIntegrationsActionDraft(actionId)
 
 Delete a Draft
@@ -271,7 +268,6 @@ null (empty response body)
 # **deleteIntegrationsCredential**
 
 
-
 > Void deleteIntegrationsCredential(credentialId)
 
 Delete a set of credentials
@@ -328,7 +324,6 @@ null (empty response body)
 
 
 # **getIntegration**
-
 
 
 > [Integration](Integration) getIntegration(integrationId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage)
@@ -402,7 +397,6 @@ try {
 # **getIntegrationConfigCurrent**
 
 
-
 > [IntegrationConfiguration](IntegrationConfiguration) getIntegrationConfigCurrent(integrationId)
 
 Get integration configuration.
@@ -460,7 +454,6 @@ try {
 
 
 # **getIntegrations**
-
 
 
 > [IntegrationEntityListing](IntegrationEntityListing) getIntegrations(pageSize, pageNumber, sortBy, expand, nextPage, previousPage)
@@ -532,7 +525,6 @@ try {
 # **getIntegrationsAction**
 
 
-
 > [Action](Action) getIntegrationsAction(actionId, expand, includeConfig)
 
 Retrieves a single Action matching id.
@@ -595,7 +587,6 @@ try {
 
 
 # **getIntegrationsActionDraft**
-
 
 
 > [Action](Action) getIntegrationsActionDraft(actionId, expand, includeConfig)
@@ -662,7 +653,6 @@ try {
 # **getIntegrationsActionDraftFunction**
 
 
-
 > [FunctionConfig](FunctionConfig) getIntegrationsActionDraftFunction(actionId)
 
 Get draft function settings for Action
@@ -722,7 +712,6 @@ try {
 
 
 # **getIntegrationsActionDraftSchema**
-
 
 
 > [JsonSchemaDocument](JsonSchemaDocument) getIntegrationsActionDraftSchema(actionId, fileName)
@@ -787,7 +776,6 @@ try {
 # **getIntegrationsActionDraftTemplate**
 
 
-
 > String getIntegrationsActionDraftTemplate(actionId, fileName)
 
 Retrieve templates for a Draft based on filename.
@@ -850,7 +838,6 @@ try {
 # **getIntegrationsActionDraftValidation**
 
 
-
 > [DraftValidationResult](DraftValidationResult) getIntegrationsActionDraftValidation(actionId)
 
 Validate current Draft configuration.
@@ -908,7 +895,6 @@ try {
 
 
 # **getIntegrationsActionFunction**
-
 
 
 > [FunctionConfig](FunctionConfig) getIntegrationsActionFunction(actionId)
@@ -970,7 +956,6 @@ try {
 
 
 # **getIntegrationsActionSchema**
-
 
 
 > [JsonSchemaDocument](JsonSchemaDocument) getIntegrationsActionSchema(actionId, fileName)
@@ -1035,7 +1020,6 @@ try {
 # **getIntegrationsActionTemplate**
 
 
-
 > String getIntegrationsActionTemplate(actionId, fileName)
 
 Retrieve text of templates for an action based on filename.
@@ -1096,7 +1080,6 @@ try {
 
 
 # **getIntegrationsActions**
-
 
 
 > [ActionEntityListing](ActionEntityListing) getIntegrationsActions(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, ids, secure, includeAuthActions)
@@ -1179,7 +1162,6 @@ try {
 # **getIntegrationsActionsCategories**
 
 
-
 > [CategoryEntityListing](CategoryEntityListing) getIntegrationsActionsCategories(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, secure)
 
 Retrieves all categories of available Actions
@@ -1252,7 +1234,6 @@ try {
 # **getIntegrationsActionsCertificates**
 
 
-
 > [ActionCertificateListing](ActionCertificateListing) getIntegrationsActionsCertificates(status, type)
 
 Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress.
@@ -1314,7 +1295,6 @@ try {
 # **getIntegrationsActionsCertificatesTruststore**
 
 
-
 > [TrustedCertificates](TrustedCertificates) getIntegrationsActionsCertificatesTruststore()
 
 Retrieves basic info about trusted root CA certificates
@@ -1368,7 +1348,6 @@ This endpoint does not require any parameters.
 
 
 # **getIntegrationsActionsDrafts**
-
 
 
 > [ActionEntityListing](ActionEntityListing) getIntegrationsActionsDrafts(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, ids, secure, includeAuthActions)
@@ -1451,7 +1430,6 @@ try {
 # **getIntegrationsActionsFunctionsRuntimes**
 
 
-
 > [List&lt;FunctionRuntime&gt;](FunctionRuntime) getIntegrationsActionsFunctionsRuntimes()
 
 Get action function settings for Action
@@ -1507,7 +1485,6 @@ This endpoint does not require any parameters.
 
 
 # **getIntegrationsBotconnectorIntegrationIdBot**
-
 
 
 > [BotConnectorBot](BotConnectorBot) getIntegrationsBotconnectorIntegrationIdBot(integrationId, botId, version)
@@ -1571,7 +1548,6 @@ try {
 
 
 # **getIntegrationsBotconnectorIntegrationIdBotVersions**
-
 
 
 > [BotConnectorBotVersionSummaryEntityListing](BotConnectorBotVersionSummaryEntityListing) getIntegrationsBotconnectorIntegrationIdBotVersions(integrationId, botId, pageNumber, pageSize)
@@ -1639,7 +1615,6 @@ try {
 # **getIntegrationsBotconnectorIntegrationIdBots**
 
 
-
 > [BotList](BotList) getIntegrationsBotconnectorIntegrationIdBots(integrationId)
 
 Get a list of botConnector bots for this integration
@@ -1697,7 +1672,6 @@ try {
 
 
 # **getIntegrationsBotconnectorIntegrationIdBotsSummaries**
-
 
 
 > [BotConnectorBotSummaryEntityListing](BotConnectorBotSummaryEntityListing) getIntegrationsBotconnectorIntegrationIdBotsSummaries(integrationId, pageNumber, pageSize)
@@ -1761,7 +1735,6 @@ try {
 
 
 # **getIntegrationsClientapps**
-
 
 
 > [ClientAppEntityListing](ClientAppEntityListing) getIntegrationsClientapps(pageSize, pageNumber, sortBy, expand, nextPage, previousPage)
@@ -1831,7 +1804,9 @@ try {
 
 # **getIntegrationsClientappsUnifiedcommunications**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [UCIntegrationListing](UCIntegrationListing) getIntegrationsClientappsUnifiedcommunications(pageSize, pageNumber, sortBy, expand, nextPage, previousPage)
 
@@ -1904,7 +1879,6 @@ try {
 # **getIntegrationsCredential**
 
 
-
 > [Credential](Credential) getIntegrationsCredential(credentialId)
 
 Get a single credential with sensitive fields redacted
@@ -1962,7 +1936,6 @@ try {
 
 
 # **getIntegrationsCredentials**
-
 
 
 > [CredentialInfoListing](CredentialInfoListing) getIntegrationsCredentials(pageNumber, pageSize)
@@ -2026,7 +1999,6 @@ try {
 # **getIntegrationsCredentialsTypes**
 
 
-
 > [CredentialTypeListing](CredentialTypeListing) getIntegrationsCredentialsTypes()
 
 List all credential types
@@ -2080,7 +2052,6 @@ This endpoint does not require any parameters.
 
 
 # **getIntegrationsSpeechDialogflowAgent**
-
 
 
 > [DialogflowAgent](DialogflowAgent) getIntegrationsSpeechDialogflowAgent(agentId)
@@ -2140,7 +2111,6 @@ try {
 
 
 # **getIntegrationsSpeechDialogflowAgents**
-
 
 
 > [DialogflowAgentSummaryEntityListing](DialogflowAgentSummaryEntityListing) getIntegrationsSpeechDialogflowAgents(pageNumber, pageSize, name)
@@ -2206,7 +2176,6 @@ try {
 # **getIntegrationsSpeechDialogflowcxAgent**
 
 
-
 > [DialogflowCXAgent](DialogflowCXAgent) getIntegrationsSpeechDialogflowcxAgent(agentId)
 
 Get details about a Dialogflow CX agent
@@ -2264,7 +2233,6 @@ try {
 
 
 # **getIntegrationsSpeechDialogflowcxAgents**
-
 
 
 > [DialogflowCXAgentSummaryEntityListing](DialogflowCXAgentSummaryEntityListing) getIntegrationsSpeechDialogflowcxAgents(pageNumber, pageSize, name)
@@ -2330,7 +2298,6 @@ try {
 # **getIntegrationsSpeechLexBotAlias**
 
 
-
 > [LexBotAlias](LexBotAlias) getIntegrationsSpeechLexBotAlias(aliasId)
 
 Get details about a Lex bot alias
@@ -2388,7 +2355,6 @@ try {
 
 
 # **getIntegrationsSpeechLexBotBotIdAliases**
-
 
 
 > [LexBotAliasEntityListing](LexBotAliasEntityListing) getIntegrationsSpeechLexBotBotIdAliases(botId, pageNumber, pageSize, status, name)
@@ -2458,7 +2424,6 @@ try {
 # **getIntegrationsSpeechLexBots**
 
 
-
 > [LexBotEntityListing](LexBotEntityListing) getIntegrationsSpeechLexBots(pageNumber, pageSize, name)
 
 Get a list of Lex bots in the customers' AWS accounts
@@ -2522,7 +2487,6 @@ try {
 # **getIntegrationsSpeechLexv2BotAlias**
 
 
-
 > [LexV2BotAlias](LexV2BotAlias) getIntegrationsSpeechLexv2BotAlias(aliasId)
 
 Get details about a Lex V2 bot alias
@@ -2580,7 +2544,6 @@ try {
 
 
 # **getIntegrationsSpeechLexv2BotBotIdAliases**
-
 
 
 > [LexV2BotAliasEntityListing](LexV2BotAliasEntityListing) getIntegrationsSpeechLexv2BotBotIdAliases(botId, pageNumber, pageSize, status, name)
@@ -2650,7 +2613,6 @@ try {
 # **getIntegrationsSpeechLexv2Bots**
 
 
-
 > [LexV2BotEntityListing](LexV2BotEntityListing) getIntegrationsSpeechLexv2Bots(pageNumber, pageSize, name)
 
 Get a list of Lex V2 bots
@@ -2712,7 +2674,6 @@ try {
 
 
 # **getIntegrationsSpeechNuanceNuanceIntegrationIdBot**
-
 
 
 > [NuanceBot](NuanceBot) getIntegrationsSpeechNuanceNuanceIntegrationIdBot(nuanceIntegrationId, botId, expand, targetChannel)
@@ -2780,7 +2741,6 @@ try {
 # **getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob**
 
 
-
 > [AsyncJob](AsyncJob) getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(nuanceIntegrationId, botId, jobId)
 
 Get the status of an asynchronous Nuance bot GET job
@@ -2844,7 +2804,6 @@ try {
 # **getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults**
 
 
-
 > [NuanceBot](NuanceBot) getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(nuanceIntegrationId, botId, jobId)
 
 Get the result of an asynchronous Nuance bot GET job
@@ -2906,7 +2865,6 @@ try {
 
 
 # **getIntegrationsSpeechNuanceNuanceIntegrationIdBots**
-
 
 
 > [NuanceBotEntityListing](NuanceBotEntityListing) getIntegrationsSpeechNuanceNuanceIntegrationIdBots(nuanceIntegrationId, pageNumber, pageSize, onlyRegisteredBots)
@@ -2976,7 +2934,6 @@ try {
 # **getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob**
 
 
-
 > [AsyncJob](AsyncJob) getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(nuanceIntegrationId, jobId)
 
 Get the status of an asynchronous Nuance bots GET job
@@ -3036,7 +2993,6 @@ try {
 
 
 # **getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults**
-
 
 
 > [NuanceBotEntityListing](NuanceBotEntityListing) getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(nuanceIntegrationId, jobId)
@@ -3100,7 +3056,6 @@ try {
 # **getIntegrationsSpeechSttEngine**
 
 
-
 > [SttEngineEntity](SttEngineEntity) getIntegrationsSpeechSttEngine(engineId)
 
 Get details about a STT engine
@@ -3158,7 +3113,6 @@ try {
 
 
 # **getIntegrationsSpeechSttEngines**
-
 
 
 > [SttEngineEntityListing](SttEngineEntityListing) getIntegrationsSpeechSttEngines(pageNumber, pageSize, name)
@@ -3224,7 +3178,6 @@ try {
 # **getIntegrationsSpeechTtsEngine**
 
 
-
 > [TtsEngineEntity](TtsEngineEntity) getIntegrationsSpeechTtsEngine(engineId, includeVoices)
 
 Get details about a TTS engine
@@ -3284,7 +3237,6 @@ try {
 
 
 # **getIntegrationsSpeechTtsEngineVoice**
-
 
 
 > [TtsVoiceEntity](TtsVoiceEntity) getIntegrationsSpeechTtsEngineVoice(engineId, voiceId)
@@ -3348,7 +3300,6 @@ try {
 # **getIntegrationsSpeechTtsEngineVoices**
 
 
-
 > [TtsVoiceEntityListing](TtsVoiceEntityListing) getIntegrationsSpeechTtsEngineVoices(engineId, pageNumber, pageSize)
 
 Get a list of voices for a TTS engine
@@ -3410,7 +3361,6 @@ try {
 
 
 # **getIntegrationsSpeechTtsEngines**
-
 
 
 > [TtsEngineEntityListing](TtsEngineEntityListing) getIntegrationsSpeechTtsEngines(pageNumber, pageSize, includeVoices, name, language)
@@ -3480,7 +3430,6 @@ try {
 # **getIntegrationsSpeechTtsSettings**
 
 
-
 > [TtsSettings](TtsSettings) getIntegrationsSpeechTtsSettings()
 
 Get TTS settings for an org
@@ -3534,7 +3483,6 @@ This endpoint does not require any parameters.
 
 
 # **getIntegrationsType**
-
 
 
 > [IntegrationType](IntegrationType) getIntegrationsType(typeId)
@@ -3596,7 +3544,6 @@ try {
 # **getIntegrationsTypeConfigschema**
 
 
-
 > [JsonSchemaDocument](JsonSchemaDocument) getIntegrationsTypeConfigschema(typeId, configType)
 
 Get properties config schema for an integration type.
@@ -3656,7 +3603,6 @@ try {
 
 
 # **getIntegrationsTypes**
-
 
 
 > [IntegrationTypeEntityListing](IntegrationTypeEntityListing) getIntegrationsTypes(pageSize, pageNumber, sortBy, expand, nextPage, previousPage)
@@ -3728,7 +3674,6 @@ try {
 # **getIntegrationsUnifiedcommunicationsClientapp**
 
 
-
 > [UnifiedCommunicationsIntegration](UnifiedCommunicationsIntegration) getIntegrationsUnifiedcommunicationsClientapp(ucIntegrationId)
 
 UC integration client application configuration.
@@ -3788,7 +3733,6 @@ try {
 
 
 # **getIntegrationsUnifiedcommunicationsClientapps**
-
 
 
 > [UnifiedCommunicationsIntegrationListing](UnifiedCommunicationsIntegrationListing) getIntegrationsUnifiedcommunicationsClientapps(pageSize, pageNumber, sortBy, expand, nextPage, previousPage)
@@ -3862,7 +3806,6 @@ try {
 # **getIntegrationsUserapps**
 
 
-
 > [UserAppEntityListing](UserAppEntityListing) getIntegrationsUserapps(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, appHost)
 
 List permitted user app integrations for the logged in user
@@ -3931,7 +3874,6 @@ try {
 
 
 # **patchIntegration**
-
 
 
 > [Integration](Integration) patchIntegration(integrationId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, body)
@@ -4007,7 +3949,6 @@ try {
 # **patchIntegrationsAction**
 
 
-
 > [Action](Action) patchIntegrationsAction(actionId, body)
 
 Patch an Action
@@ -4067,7 +4008,6 @@ try {
 
 
 # **patchIntegrationsActionDraft**
-
 
 
 > [Action](Action) patchIntegrationsActionDraft(actionId, body)
@@ -4131,7 +4071,6 @@ try {
 # **postIntegrations**
 
 
-
 > [Integration](Integration) postIntegrations(body)
 
 Create an integration.
@@ -4191,7 +4130,6 @@ try {
 # **postIntegrationsActionDraft**
 
 
-
 > [Action](Action) postIntegrationsActionDraft(actionId)
 
 Create a new Draft from existing Action
@@ -4249,7 +4187,6 @@ try {
 
 
 # **postIntegrationsActionDraftFunctionUpload**
-
 
 
 > [FunctionUploadResponse](FunctionUploadResponse) postIntegrationsActionDraftFunctionUpload(actionId, body)
@@ -4315,7 +4252,6 @@ try {
 # **postIntegrationsActionDraftPublish**
 
 
-
 > [Action](Action) postIntegrationsActionDraftPublish(actionId, body)
 
 Publish a Draft and make it the active Action configuration
@@ -4377,7 +4313,6 @@ try {
 # **postIntegrationsActionDraftTest**
 
 
-
 > [TestExecutionResult](TestExecutionResult) postIntegrationsActionDraftTest(actionId, body)
 
 Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging.
@@ -4437,7 +4372,6 @@ try {
 
 
 # **postIntegrationsActionExecute**
-
 
 
 > Object postIntegrationsActionExecute(actionId, body)
@@ -4502,7 +4436,6 @@ try {
 # **postIntegrationsActionTest**
 
 
-
 > [TestExecutionResult](TestExecutionResult) postIntegrationsActionTest(actionId, body)
 
 Test the execution of an action. Responses will show execution steps broken out with intermediate results to help in debugging.
@@ -4565,7 +4498,6 @@ try {
 # **postIntegrationsActions**
 
 
-
 > [Action](Action) postIntegrationsActions(body)
 
 Create a new Action. Not supported for 'Function Integration' actions. Function integrations must be created as drafts to allow managing of uploading required ZIP function package before they may be used as a published action.
@@ -4623,7 +4555,6 @@ try {
 
 
 # **postIntegrationsActionsDrafts**
-
 
 
 > [Action](Action) postIntegrationsActionsDrafts(body)
@@ -4685,7 +4616,6 @@ try {
 # **postIntegrationsCredentials**
 
 
-
 > [CredentialInfo](CredentialInfo) postIntegrationsCredentials(body)
 
 Create a set of credentials
@@ -4743,7 +4673,6 @@ try {
 
 
 # **postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs**
-
 
 
 > [AsyncJob](AsyncJob) postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(nuanceIntegrationId, botId, expand, body)
@@ -4811,7 +4740,6 @@ try {
 # **postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs**
 
 
-
 > [AsyncJob](AsyncJob) postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(nuanceIntegrationId, pageNumber, pageSize, onlyRegisteredBots)
 
 Get a list of Nuance bots in the specified Integration asynchronously
@@ -4877,7 +4805,6 @@ try {
 # **postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate**
 
 
-
 > Void postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(nuanceIntegrationId, settings)
 
 Try out a single credential for a Nuance bot to know if the secret is correct
@@ -4936,7 +4863,6 @@ null (empty response body)
 
 
 # **putIntegrationConfigCurrent**
-
 
 
 > [IntegrationConfiguration](IntegrationConfiguration) putIntegrationConfigCurrent(integrationId, body)
@@ -4998,7 +4924,6 @@ try {
 
 
 # **putIntegrationsActionDraftFunction**
-
 
 
 > [FunctionConfig](FunctionConfig) putIntegrationsActionDraftFunction(actionId, body)
@@ -5064,7 +4989,6 @@ try {
 # **putIntegrationsBotconnectorIntegrationIdBots**
 
 
-
 > Void putIntegrationsBotconnectorIntegrationIdBots(integrationId, botList)
 
 Set a list of botConnector bots plus versions for this integration
@@ -5123,7 +5047,6 @@ null (empty response body)
 
 
 # **putIntegrationsCredential**
-
 
 
 > [CredentialInfo](CredentialInfo) putIntegrationsCredential(credentialId, body)
@@ -5187,7 +5110,6 @@ try {
 # **putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings**
 
 
-
 > Void putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(nuanceIntegrationId, settings)
 
 Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
@@ -5248,7 +5170,6 @@ null (empty response body)
 # **putIntegrationsSpeechTtsSettings**
 
 
-
 > [TtsSettings](TtsSettings) putIntegrationsSpeechTtsSettings(body)
 
 Update TTS settings for an org
@@ -5306,7 +5227,6 @@ try {
 
 
 # **putIntegrationsUnifiedcommunicationThirdpartypresences**
-
 
 
 > String putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegrationId, body)
@@ -5369,4 +5289,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

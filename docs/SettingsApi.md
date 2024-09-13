@@ -18,7 +18,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteUsersAgentuiAgentsAutoanswerAgentIdSettings**
 
 
-
 > Void deleteUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId)
 
 Delete agent auto answer settings
@@ -77,7 +76,6 @@ null (empty response body)
 # **getEmailsSettings**
 
 
-
 > [EmailSettings](EmailSettings) getEmailsSettings()
 
 Get email Contact Center settings
@@ -133,14 +131,11 @@ This endpoint does not require any parameters.
 # **getSettingsExecutiondata**
 
 
-
 > [ExecutionDataGlobalSettingsResponse](ExecutionDataGlobalSettingsResponse) getSettingsExecutiondata()
 
 Get the execution history enabled setting.
 
 Get the execution history enabled setting.
-
-getSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/settings/executiondata  
 
@@ -191,7 +186,6 @@ This endpoint does not require any parameters.
 
 
 # **getUsersAgentuiAgentsAutoanswerAgentIdSettings**
-
 
 
 > [AutoAnswerSettings](AutoAnswerSettings) getUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId)
@@ -253,7 +247,6 @@ try {
 # **patchEmailsSettings**
 
 
-
 > [EmailSettings](EmailSettings) patchEmailsSettings(body)
 
 Patch email Contact Center settings
@@ -313,14 +306,11 @@ try {
 # **patchSettingsExecutiondata**
 
 
-
 > [ExecutionDataGlobalSettingsResponse](ExecutionDataGlobalSettingsResponse) patchSettingsExecutiondata(body)
 
 Edit the execution history on off setting.
 
 Edit the execution history on off setting.
-
-patchSettingsExecutiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/settings/executiondata  
 
@@ -375,7 +365,6 @@ try {
 
 
 # **patchUsersAgentuiAgentsAutoanswerAgentIdSettings**
-
 
 
 > [AutoAnswerSettings](AutoAnswerSettings) patchUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
@@ -439,7 +428,6 @@ try {
 # **putUsersAgentuiAgentsAutoanswerAgentIdSettings**
 
 
-
 > [AutoAnswerSettings](AutoAnswerSettings) putUsersAgentuiAgentsAutoanswerAgentIdSettings(agentId, body)
 
 Set agent auto answer settings
@@ -498,4 +486,4 @@ try {
 [**AutoAnswerSettings**](AutoAnswerSettings)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

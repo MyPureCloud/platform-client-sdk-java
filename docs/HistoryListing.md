@@ -25,7 +25,6 @@
 | **total** | **Long** |  |  [optional] |
 | **entities** | [**List&lt;HistoryEntry&gt;**](HistoryEntry) |  |  [optional] |
 | **pageCount** | **Integer** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ActionNameEnum
@@ -45,7 +44,6 @@
 | STATE_CHANGE | &quot;STATE_CHANGE&quot; | 
 | UPDATE | &quot;UPDATE&quot; | 
 | VALIDATE | &quot;VALIDATE&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ActionStatusEnum
@@ -60,9 +58,8 @@
 | PENDING_BACKEND_NOTIFICATION | &quot;PENDING_BACKEND_NOTIFICATION&quot; | 
 | SUCCESS | &quot;SUCCESS&quot; | 
 | FAILURE | &quot;FAILURE&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

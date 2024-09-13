@@ -10,7 +10,6 @@
 | **typing** | [**ConversationEventTyping**](ConversationEventTyping) | Typing event. |  [optional] |
 | **presence** | [**ConversationEventPresence**](ConversationEventPresence) | Presence event. |  [optional] |
 | **video** | [**ConversationEventVideo**](ConversationEventVideo) | Video event. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: EventTypeEnum
@@ -23,9 +22,8 @@
 | PRESENCE | &quot;Presence&quot; | 
 | VIDEO | &quot;Video&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

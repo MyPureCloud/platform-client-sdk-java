@@ -12,7 +12,6 @@
 | **confined** | **Boolean** | True to confine this conversation participant.  Should only be used for ad-hoc conferences |  [optional] |
 | **held** | **Boolean** | True to hold this conversation participant. |  [optional] |
 | **wrapupSkipped** | **Boolean** | True to skip wrap-up for this participant. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -32,9 +31,8 @@
 | TRANSMITTING | &quot;transmitting&quot; | 
 | PARKED | &quot;parked&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

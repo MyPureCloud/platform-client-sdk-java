@@ -10,7 +10,6 @@
 | **comparisonValue** | **String** | The value to compare against for this condition |  |
 | **inverted** | **Boolean** | If true, inverts the result of evaluating this Predicate. Default is false. |  |
 | **outputFieldMissingResolution** | **Boolean** | The result of this predicate if the requested output field is missing from the data action's result |  |
-{: class="table table-striped"}
 
 
 ## Enum: OutputOperatorEnum
@@ -28,9 +27,8 @@
 | ENDSWITH | &quot;EndsWith&quot; | 
 | BEFORE | &quot;Before&quot; | 
 | AFTER | &quot;After&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

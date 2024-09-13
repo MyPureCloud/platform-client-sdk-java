@@ -9,7 +9,6 @@
 | **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) | The media type of the given queue associated with the route path |  [optional] |
 | **language** | [**LanguageReference**](LanguageReference) | The ID of the language associated with the route path |  [optional] |
 | **skills** | [**List&lt;RoutingSkillReference&gt;**](RoutingSkillReference) | The set of skills associated with the route path |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -22,9 +21,8 @@
 | EMAIL | &quot;Email&quot; | 
 | CALLBACK | &quot;Callback&quot; | 
 | MESSAGE | &quot;Message&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

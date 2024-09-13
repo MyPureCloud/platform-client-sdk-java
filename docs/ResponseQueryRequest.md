@@ -9,9 +9,8 @@
 | **pageSize** | **Integer** | The maximum number of hits to return. Default: 25, Maximum: 500. |  [optional] |
 | **pageNumber** | **Integer** | Page Number |  [optional] |
 | **filters** | [**List&lt;ResponseFilter&gt;**](ResponseFilter) | Filter the query results. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

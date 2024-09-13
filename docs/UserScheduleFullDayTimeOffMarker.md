@@ -11,9 +11,8 @@
 | **lengthInMinutes** | **Integer** | The length in minutes of this time off marker |  [optional] |
 | **description** | **String** | The description associated with the time off request that this marker corresponds to |  [optional] |
 | **delete** | **Boolean** | If marked true for updating an existing full day time off marker, it will be deleted |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

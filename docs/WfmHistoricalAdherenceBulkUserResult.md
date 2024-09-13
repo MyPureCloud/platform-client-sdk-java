@@ -12,7 +12,6 @@
 | **exceptionInfo** | [**List&lt;HistoricalAdherenceExceptionInfo&gt;**](HistoricalAdherenceExceptionInfo) | List of adherence exceptions for this user |  [optional] |
 | **actuals** | [**List&lt;HistoricalAdherenceActuals&gt;**](HistoricalAdherenceActuals) | List of adherence actuals for this user |  [optional] |
 | **dayMetrics** | [**List&lt;WfmHistoricalAdherenceBulkUserDayMetrics&gt;**](WfmHistoricalAdherenceBulkUserDayMetrics) | Adherence and conformance metrics for days in query range |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ImpactEnum
@@ -24,9 +23,8 @@
 | NEGATIVE | &quot;Negative&quot; | 
 | NEUTRAL | &quot;Neutral&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

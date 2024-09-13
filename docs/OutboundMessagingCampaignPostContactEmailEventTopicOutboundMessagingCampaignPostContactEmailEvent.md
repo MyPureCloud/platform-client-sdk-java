@@ -16,7 +16,6 @@
 | **outboundContactListId** | **String** |  |  [optional] |
 | **outboundContactId** | **String** |  |  [optional] |
 | **isCampaignAlwaysRunning** | **Boolean** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: OutboundCampaignTypeEnum
@@ -27,7 +26,6 @@
 | UNKNOWN | &quot;UNKNOWN&quot; | 
 | EMAIL | &quot;EMAIL&quot; | 
 | SMS | &quot;SMS&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: WrapupCodeEnum
@@ -39,9 +37,8 @@
 | OUTBOUND_MESSAGE_SENT | &quot;OUTBOUND_MESSAGE_SENT&quot; | 
 | OUTBOUND_MESSAGE_FAILED | &quot;OUTBOUND_MESSAGE_FAILED&quot; | 
 | OUTBOUND_MESSAGE_THROTTLED | &quot;OUTBOUND_MESSAGE_THROTTLED&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

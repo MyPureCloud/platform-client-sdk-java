@@ -12,7 +12,6 @@
 | **version** | **Integer** | Required for updates, must match the version number of the most recent update |  [optional] |
 | **defaultSet** | [**List<DefaultSetEnum>**](#Enum--DefaultSetEnum) |  |  [optional] |
 | **mapping** | [**Map&lt;String, List&lt;String&gt;&gt;**](List) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: DefaultSetEnum
@@ -22,9 +21,8 @@
 | CONTACT_UNCALLABLE | &quot;CONTACT_UNCALLABLE&quot; |
 | NUMBER_UNCALLABLE | &quot;NUMBER_UNCALLABLE&quot; |
 | RIGHT_PARTY_CONTACT | &quot;RIGHT_PARTY_CONTACT&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

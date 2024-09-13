@@ -12,9 +12,8 @@
 | **version** | **Integer** | Required for updates, must match the version number of the most recent update |  [optional] |
 | **callableTimes** | [**List&lt;CallableTime&gt;**](CallableTime) | The list of CallableTimes for which it is acceptable to place outbound calls. |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

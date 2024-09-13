@@ -14,7 +14,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **getGeolocationsSettings**
 
 
-
 > [GeolocationSettings](GeolocationSettings) getGeolocationsSettings()
 
 Get a organization's GeolocationSettings
@@ -67,7 +66,6 @@ This endpoint does not require any parameters.
 
 
 # **getUserGeolocation**
-
 
 
 > [Geolocation](Geolocation) getUserGeolocation(userId, clientId)
@@ -130,7 +128,6 @@ try {
 # **patchGeolocationsSettings**
 
 
-
 > [GeolocationSettings](GeolocationSettings) patchGeolocationsSettings(body)
 
 Patch a organization's GeolocationSettings
@@ -188,7 +185,6 @@ try {
 
 
 # **patchUserGeolocation**
-
 
 
 > [Geolocation](Geolocation) patchUserGeolocation(userId, clientId, body)
@@ -252,4 +248,4 @@ try {
 [**Geolocation**](Geolocation)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

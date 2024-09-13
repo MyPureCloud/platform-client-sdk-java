@@ -13,7 +13,6 @@
 | **entity** | [**CommonRulePredicateEntity**](CommonRulePredicateEntity) | The entity whose metric is being represented. |  |
 | **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) | The media type of the conversation the metric describes. |  [optional] |
 | **metric** | [**MetricEnum**](#Enum--MetricEnum) | The metric being evaluated. |  |
-{: class="table table-striped"}
 
 
 ## Enum: MetricTypeEnum
@@ -23,7 +22,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INTERVAL | &quot;Interval&quot; | 
 | INSTANCE | &quot;Instance&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: MetricValueTypeEnum
@@ -38,7 +36,6 @@
 | PERCENTAGE | &quot;Percentage&quot; | 
 | AVERAGE | &quot;Average&quot; | 
 | OBSERVATION | &quot;Observation&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ComparisonOperatorEnum
@@ -52,7 +49,6 @@
 | LTE | &quot;Lte&quot; | 
 | EQ | &quot;Eq&quot; | 
 | NE | &quot;Ne&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -65,7 +61,6 @@
 | EMAIL | &quot;Email&quot; | 
 | CALLBACK | &quot;Callback&quot; | 
 | MESSAGE | &quot;Message&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: MetricEnum
@@ -100,9 +95,8 @@
 | OINTERACTING | &quot;oInteracting&quot; | 
 | TFLOWOUT | &quot;tFlowOut&quot; | 
 | TADHERENCESTATUS | &quot;tAdherenceStatus&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

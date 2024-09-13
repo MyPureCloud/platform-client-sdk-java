@@ -18,9 +18,8 @@
 | **queueId** | **String** | The id (V4 UUID) of the queue that the user is calling on behalf of. Applies to outbound calls only. |  [optional] |
 | **initialConfiguration** | [**InitialConfiguration**](InitialConfiguration) | Metadata about this communication. |  |
 | **sourceConfiguration** | [**SourceConfiguration**](SourceConfiguration) | Metadata about the source of this communication's interaction. |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

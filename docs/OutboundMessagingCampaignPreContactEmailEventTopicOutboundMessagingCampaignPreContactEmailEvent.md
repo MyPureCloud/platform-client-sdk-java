@@ -15,7 +15,6 @@
 | **outboundContactListId** | **String** |  |  [optional] |
 | **outboundContactId** | **String** |  |  [optional] |
 | **isCampaignAlwaysRunning** | **Boolean** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: OutboundCampaignTypeEnum
@@ -26,7 +25,6 @@
 | UNKNOWN | &quot;UNKNOWN&quot; | 
 | EMAIL | &quot;EMAIL&quot; | 
 | SMS | &quot;SMS&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: WrapupCodeEnum
@@ -49,9 +47,8 @@
 | ININ_OUTBOUND_INTERNAL_ERROR_SKIPPED | &quot;ININ_OUTBOUND_INTERNAL_ERROR_SKIPPED&quot; | 
 | ININ_OUTBOUND_ON_DO_NOT_CALL_LIST | &quot;ININ_OUTBOUND_ON_DO_NOT_CALL_LIST&quot; | 
 | ININ_OUTBOUND_NOT_CALLABLE_TIME | &quot;ININ_OUTBOUND_NOT_CALLABLE_TIME&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

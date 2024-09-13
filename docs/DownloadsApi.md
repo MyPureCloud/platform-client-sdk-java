@@ -11,7 +11,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **getDownload**
 
 
-
 > [UrlResponse](UrlResponse) getDownload(downloadId, contentDisposition, issueRedirect, redirectToAuth)
 
 Issues a redirect to a signed secure download URL for specified download
@@ -75,4 +74,4 @@ try {
 [**UrlResponse**](UrlResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

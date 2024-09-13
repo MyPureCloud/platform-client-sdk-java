@@ -46,7 +46,6 @@
 | **sdkLibrary** | [**JourneySessionEventsNotificationSdkLibrary**](JourneySessionEventsNotificationSdkLibrary) |  |  [optional] |
 | **networkConnectivity** | [**JourneySessionEventsNotificationNetworkConnectivity**](JourneySessionEventsNotificationNetworkConnectivity) |  |  [optional] |
 | **divisionIds** | **List&lt;String&gt;** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: OriginatingDirectionEnum
@@ -57,7 +56,6 @@
 | UNKNOWN | &quot;Unknown&quot; | 
 | INBOUND | &quot;Inbound&quot; | 
 | OUTBOUND | &quot;Outbound&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: LastUserDisconnectTypeEnum
@@ -84,7 +82,6 @@
 | UNCALLABLE | &quot;Uncallable&quot; | 
 | DONOTDISTURBENDPOINT | &quot;DoNotDisturbEndpoint&quot; | 
 | DONOTDISTURBTRANSFER | &quot;DoNotDisturbTransfer&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: LastAcdOutcomeEnum
@@ -96,9 +93,8 @@
 | ABANDON | &quot;Abandon&quot; | 
 | ANSWERED | &quot;Answered&quot; | 
 | FLOWOUT | &quot;FlowOut&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

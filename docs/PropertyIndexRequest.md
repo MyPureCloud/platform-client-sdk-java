@@ -8,9 +8,8 @@
 | **sessionId** | **String** | Attach properties to a segment in the indicated session |  |
 | **targetDate** | [**Date**](Date) | Attach properties to a segment covering a specific point in time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
 | **properties** | [**List&lt;AnalyticsProperty&gt;**](AnalyticsProperty) | The list of properties to index |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

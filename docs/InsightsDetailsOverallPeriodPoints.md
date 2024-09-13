@@ -11,9 +11,8 @@
 | **percentOfGoal** | **Double** | Percentage of the goal |  [optional] |
 | **rankTotalPoints** | **Integer** | The agent's rank in leader board for points on this metric |  [optional] |
 | **rankPercentagePoints** | **Integer** | The agent's rank in leader board for percentage on this metric |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

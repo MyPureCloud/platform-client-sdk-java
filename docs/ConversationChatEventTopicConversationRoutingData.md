@@ -10,9 +10,8 @@
 | **priority** | **Integer** | The priority of the conversation to use for routing decisions |  [optional] |
 | **skills** | [**List&lt;ConversationChatEventTopicUriReference&gt;**](ConversationChatEventTopicUriReference) | The skills to use for routing decisions |  [optional] |
 | **scoredAgents** | [**List&lt;ConversationChatEventTopicScoredAgent&gt;**](ConversationChatEventTopicScoredAgent) | A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

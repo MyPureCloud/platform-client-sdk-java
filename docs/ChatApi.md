@@ -42,7 +42,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteChatsRoomMessage**
 
 
-
 > Void deleteChatsRoomMessage(roomJid, messageId)
 
 Delete a message in a room
@@ -102,7 +101,6 @@ null (empty response body)
 
 
 # **deleteChatsRoomMessagesPin**
-
 
 
 > Void deleteChatsRoomMessagesPin(roomJid, pinnedMessageId)
@@ -166,7 +164,6 @@ null (empty response body)
 # **deleteChatsRoomParticipant**
 
 
-
 > Void deleteChatsRoomParticipant(roomJid, userId)
 
 Remove a user from a room.
@@ -228,7 +225,6 @@ null (empty response body)
 # **deleteChatsUserMessage**
 
 
-
 > Void deleteChatsUserMessage(userId, messageId)
 
 Delete a message to a user
@@ -288,7 +284,6 @@ null (empty response body)
 
 
 # **deleteChatsUserMessagesPin**
-
 
 
 > Void deleteChatsUserMessagesPin(userId, pinnedMessageId)
@@ -354,7 +349,6 @@ null (empty response body)
 # **getChatsMessage**
 
 
-
 > [ChatMessageResponse](ChatMessageResponse) getChatsMessage(messageId)
 
 Get a message
@@ -414,7 +408,6 @@ try {
 
 
 # **getChatsRoom**
-
 
 
 > [Room](Room) getChatsRoom(roomJid)
@@ -477,7 +470,6 @@ try {
 # **getChatsRoomMessage**
 
 
-
 > [ChatMessageEntityListing](ChatMessageEntityListing) getChatsRoomMessage(roomJid, messageIds)
 
 Get messages by id(s) from a room
@@ -538,7 +530,6 @@ try {
 
 
 # **getChatsRoomMessages**
-
 
 
 > [ChatMessageEntityListing](ChatMessageEntityListing) getChatsRoomMessages(roomJid, limit, before, after)
@@ -607,7 +598,6 @@ try {
 # **getChatsRoomParticipant**
 
 
-
 > [RoomParticipant](RoomParticipant) getChatsRoomParticipant(roomJid, participantJid)
 
 Get a room participant
@@ -666,7 +656,6 @@ try {
 
 
 # **getChatsRoomParticipants**
-
 
 
 > [RoomParticipantsResponse](RoomParticipantsResponse) getChatsRoomParticipants(roomJid)
@@ -729,7 +718,6 @@ try {
 # **getChatsSettings**
 
 
-
 > [ChatSettings](ChatSettings) getChatsSettings()
 
 Get Chat Settings.
@@ -784,7 +772,6 @@ This endpoint does not require any parameters.
 
 
 # **getChatsThreadMessages**
-
 
 
 > [ChatMessageEntityListing](ChatMessageEntityListing) getChatsThreadMessages(threadId, limit, before, after)
@@ -853,7 +840,6 @@ try {
 # **getChatsUser**
 
 
-
 > [OneOnOne](OneOnOne) getChatsUser(userId)
 
 Get information for a 1on1
@@ -916,7 +902,6 @@ try {
 # **getChatsUserMessage**
 
 
-
 > [ChatMessageEntityListing](ChatMessageEntityListing) getChatsUserMessage(userId, messageIds)
 
 Get messages by id(s) from a 1on1
@@ -977,7 +962,6 @@ try {
 
 
 # **getChatsUserMessages**
-
 
 
 > [ChatMessageResponse](ChatMessageResponse) getChatsUserMessages(userId, limit, before, after)
@@ -1046,7 +1030,6 @@ try {
 # **getChatsUserSettings**
 
 
-
 > [ChatUserSettings](ChatUserSettings) getChatsUserSettings(userId)
 
 Get a user's chat settings
@@ -1109,7 +1092,6 @@ try {
 # **getChatsUsersMeSettings**
 
 
-
 > [ChatUserSettings](ChatUserSettings) getChatsUsersMeSettings()
 
 Get a user's chat settings
@@ -1164,7 +1146,6 @@ This endpoint does not require any parameters.
 
 
 # **patchChatsRoom**
-
 
 
 > Void patchChatsRoom(roomJid, body)
@@ -1226,7 +1207,6 @@ null (empty response body)
 
 
 # **patchChatsRoomMessage**
-
 
 
 > [ChatSendMessageResponse](ChatSendMessageResponse) patchChatsRoomMessage(roomJid, messageId, body)
@@ -1293,7 +1273,6 @@ try {
 # **patchChatsSettings**
 
 
-
 > [ChatSettings](ChatSettings) patchChatsSettings(body)
 
 Patch Chat Settings.
@@ -1351,7 +1330,6 @@ try {
 
 
 # **patchChatsUserMessage**
-
 
 
 > [ChatSendMessageResponse](ChatSendMessageResponse) patchChatsUserMessage(userId, messageId, body)
@@ -1418,7 +1396,6 @@ try {
 # **patchChatsUserSettings**
 
 
-
 > [ChatUserSettings](ChatUserSettings) patchChatsUserSettings(userId, body)
 
 Update a user's chat settings
@@ -1483,7 +1460,6 @@ try {
 # **patchChatsUsersMeSettings**
 
 
-
 > [ChatUserSettings](ChatUserSettings) patchChatsUsersMeSettings(body)
 
 Update a user's chat settings
@@ -1542,7 +1518,6 @@ try {
 
 
 # **postChatsRoomMessages**
-
 
 
 > [ChatSendMessageResponse](ChatSendMessageResponse) postChatsRoomMessages(roomJid, body)
@@ -1607,7 +1582,6 @@ try {
 # **postChatsRoomMessagesPins**
 
 
-
 > Void postChatsRoomMessagesPins(roomJid, body)
 
 Add pinned messages for a room, up to a maximum of 5 pinned messages
@@ -1667,7 +1641,6 @@ null (empty response body)
 
 
 # **postChatsRoomParticipant**
-
 
 
 > Void postChatsRoomParticipant(roomJid, userId)
@@ -1731,7 +1704,6 @@ null (empty response body)
 # **postChatsRooms**
 
 
-
 > [CreateRoomResponse](CreateRoomResponse) postChatsRooms(body)
 
 Create an adhoc room
@@ -1790,7 +1762,6 @@ try {
 
 
 # **postChatsUserMessages**
-
 
 
 > [ChatSendMessageResponse](ChatSendMessageResponse) postChatsUserMessages(userId, body)
@@ -1853,7 +1824,6 @@ try {
 
 
 # **postChatsUserMessagesPins**
-
 
 
 > Void postChatsUserMessagesPins(userId, body)
@@ -1919,7 +1889,6 @@ null (empty response body)
 # **putChatsMessageReactions**
 
 
-
 > Void putChatsMessageReactions(messageId, body)
 
 Update reactions to a message
@@ -1981,7 +1950,6 @@ null (empty response body)
 # **putChatsSettings**
 
 
-
 > [ChatSettings](ChatSettings) putChatsSettings(body)
 
 Update Chat Settings.
@@ -2038,4 +2006,4 @@ try {
 [**ChatSettings**](ChatSettings)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

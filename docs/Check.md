@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **result** | [**ResultEnum**](#Enum--ResultEnum) | The result of a check executed. This indicates if the check was successful or not. |  [optional] |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of check executed. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ResultEnum
@@ -20,7 +19,6 @@
 | UNKNOWN | &quot;Unknown&quot; | 
 | SKIPPED | &quot;Skipped&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -38,9 +36,8 @@
 | USERVARIANCE | &quot;UserVariance&quot; | 
 | DATACOVERAGE | &quot;DataCoverage&quot; | 
 | MODELQUALITY | &quot;ModelQuality&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

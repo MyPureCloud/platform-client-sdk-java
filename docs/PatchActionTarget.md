@@ -10,9 +10,8 @@
 | **serviceLevel** | [**ServiceLevel**](ServiceLevel) | Service Level of the action target. Chat offers for the target will be throttled with the aim of achieving this service level. |  [optional] |
 | **shortAbandonThreshold** | **Integer** | Indicates the non-default short abandon threshold |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

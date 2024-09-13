@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **eventName** | **String** | Name of event triggered after period of inactivity. |  |
 | **idleAfterSeconds** | **Long** | Number of seconds of inactivity before an event is triggered. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

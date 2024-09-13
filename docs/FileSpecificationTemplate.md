@@ -20,7 +20,6 @@
 | **columnInformation** | [**List&lt;Column&gt;**](Column) | Columns specification |  [optional] |
 | **preprocessingRules** | [**List&lt;PreprocessingRule&gt;**](PreprocessingRule) | Preprocessing rules |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: FormatEnum
@@ -30,7 +29,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | FIXEDLENGTH | &quot;FixedLength&quot; | 
 | DELIMITED | &quot;Delimited&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DelimiterEnum
@@ -44,9 +42,8 @@
 | TAB | &quot;Tab&quot; | 
 | SEMICOLON | &quot;Semicolon&quot; | 
 | CUSTOM | &quot;Custom&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

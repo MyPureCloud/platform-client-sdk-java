@@ -11,7 +11,6 @@
 | **textBody** | **String** | The text of the message to send. This field is required in the case of SMS messenger type. Maximum character counts are: SMS - 765 characters, other channels - 2000 characters. |  [optional] |
 | **messagingTemplate** | [**MessagingTemplateRequest**](MessagingTemplateRequest) | The messaging template to use in the case of WhatsApp messenger type. This field is required when using WhatsApp messenger type |  [optional] |
 | **useExistingActiveConversation** | **Boolean** | Use an existing active conversation to send the agentless outbound message. Set this parameter to 'true' to use active conversation. Default value: false |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ToAddressMessengerTypeEnum
@@ -22,9 +21,8 @@
 | SMS | &quot;sms&quot; | 
 | WHATSAPP | &quot;whatsapp&quot; | 
 | OPEN | &quot;open&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

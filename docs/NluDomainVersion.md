@@ -20,7 +20,6 @@
 | **entityTypes** | [**List&lt;NamedEntityTypeDefinition&gt;**](NamedEntityTypeDefinition) | The entity types defined for this NLU domain version. |  [optional] |
 | **entities** | [**List&lt;NamedEntityDefinition&gt;**](NamedEntityDefinition) | The entities defined for this NLU domain version.This field is mutually exclusive with entityTypeBindings |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TrainingStatusEnum
@@ -33,7 +32,6 @@
 | TRAINED | &quot;Trained&quot; | 
 | ERROR | &quot;Error&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: EvaluationStatusEnum
@@ -45,9 +43,8 @@
 | EVALUATING | &quot;Evaluating&quot; | 
 | EVALUATED | &quot;Evaluated&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -9,9 +9,8 @@
 | **namespace** | **String** | Namespace of the application (e.g. com.genesys.bancodinero). |  |
 | **version** | **String** | Version of the application (e.g. 5.9.27). |  |
 | **buildNumber** | **String** | Build number of the application (e.g. 701). |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

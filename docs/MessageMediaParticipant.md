@@ -49,7 +49,6 @@
 | **authenticated** | **Boolean** | If true, the participant member is authenticated. |  [optional] |
 | **monitoredParticipantId** | **String** | The ID of the participant being monitored when performing a message monitor. |  [optional] |
 | **monitoredParticipant** | [**AddressableEntityRef**](AddressableEntityRef) | The participant being monitored when performing a message monitor. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -69,7 +68,6 @@
 | TRANSMITTING | &quot;transmitting&quot; | 
 | PARKED | &quot;parked&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DirectionEnum
@@ -79,7 +77,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INBOUND | &quot;inbound&quot; | 
 | OUTBOUND | &quot;outbound&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DisconnectTypeEnum
@@ -103,7 +100,6 @@
 | PEER | &quot;peer&quot; | 
 | OTHER | &quot;other&quot; | 
 | SPAM | &quot;spam&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: FlaggedReasonEnum
@@ -112,7 +108,6 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | GENERAL | &quot;general&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -131,9 +126,8 @@
 | WEBMESSAGING | &quot;webmessaging&quot; | 
 | OPEN | &quot;open&quot; | 
 | INSTAGRAM | &quot;instagram&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -107,7 +107,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteAnalyticsConversationsDetailsJob**
 
 
-
 > Void deleteAnalyticsConversationsDetailsJob(jobId)
 
 Delete/cancel an async details job
@@ -167,7 +166,6 @@ null (empty response body)
 # **deleteAnalyticsUsersDetailsJob**
 
 
-
 > Void deleteAnalyticsUsersDetailsJob(jobId)
 
 Delete/cancel an async request
@@ -224,7 +222,6 @@ null (empty response body)
 
 
 # **getAnalyticsActionsAggregatesJob**
-
 
 
 > [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsActionsAggregatesJob(jobId)
@@ -287,7 +284,6 @@ try {
 
 
 # **getAnalyticsActionsAggregatesJobResults**
-
 
 
 > [ActionAsyncAggregateQueryResponse](ActionAsyncAggregateQueryResponse) getAnalyticsActionsAggregatesJobResults(jobId, cursor)
@@ -354,7 +350,6 @@ try {
 # **getAnalyticsAgentcopilotsAggregatesJob**
 
 
-
 > [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsAgentcopilotsAggregatesJob(jobId)
 
 Get status for async query for agent copilot aggregates
@@ -414,7 +409,6 @@ try {
 
 
 # **getAnalyticsAgentcopilotsAggregatesJobResults**
-
 
 
 > [AgentCopilotAsyncAggregateQueryResponse](AgentCopilotAsyncAggregateQueryResponse) getAnalyticsAgentcopilotsAggregatesJobResults(jobId, cursor)
@@ -478,7 +472,6 @@ try {
 
 
 # **getAnalyticsBotflowDivisionsReportingturns**
-
 
 
 > [ReportingTurnsResponse](ReportingTurnsResponse) getAnalyticsBotflowDivisionsReportingturns(botFlowId, after, pageSize, interval, actionId, sessionId, language, askActionResults)
@@ -555,7 +548,9 @@ try {
 
 # **getAnalyticsBotflowReportingturns**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [ReportingTurnsResponse](ReportingTurnsResponse) getAnalyticsBotflowReportingturns(botFlowId, after, pageSize, interval, actionId, sessionId, language, askActionResults)
 
@@ -632,7 +627,6 @@ try {
 # **getAnalyticsBotflowSessions**
 
 
-
 > [SessionsResponse](SessionsResponse) getAnalyticsBotflowSessions(botFlowId, after, pageSize, interval, botResultCategories, endLanguage)
 
 Get Bot Flow Sessions.
@@ -704,7 +698,6 @@ try {
 # **getAnalyticsBotsAggregatesJob**
 
 
-
 > [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsBotsAggregatesJob(jobId)
 
 Get status for async query for bot aggregates
@@ -764,7 +757,6 @@ try {
 
 
 # **getAnalyticsBotsAggregatesJobResults**
-
 
 
 > [BotAsyncAggregateQueryResponse](BotAsyncAggregateQueryResponse) getAnalyticsBotsAggregatesJobResults(jobId, cursor)
@@ -830,7 +822,6 @@ try {
 # **getAnalyticsConversationDetails**
 
 
-
 > [AnalyticsConversationWithoutAttributes](AnalyticsConversationWithoutAttributes) getAnalyticsConversationDetails(conversationId)
 
 Get a conversation by id
@@ -889,7 +880,6 @@ try {
 
 
 # **getAnalyticsConversationsAggregatesJob**
-
 
 
 > [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsConversationsAggregatesJob(jobId)
@@ -951,7 +941,6 @@ try {
 
 
 # **getAnalyticsConversationsAggregatesJobResults**
-
 
 
 > [ConversationAsyncAggregateQueryResponse](ConversationAsyncAggregateQueryResponse) getAnalyticsConversationsAggregatesJobResults(jobId, cursor)
@@ -1017,7 +1006,6 @@ try {
 # **getAnalyticsConversationsDetails**
 
 
-
 > [AnalyticsConversationWithoutAttributesMultiGetResponse](AnalyticsConversationWithoutAttributesMultiGetResponse) getAnalyticsConversationsDetails(id)
 
 Gets multiple conversations by id
@@ -1078,7 +1066,6 @@ try {
 # **getAnalyticsConversationsDetailsJob**
 
 
-
 > [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsConversationsDetailsJob(jobId)
 
 Get status for async query for conversation details
@@ -1137,7 +1124,6 @@ try {
 
 
 # **getAnalyticsConversationsDetailsJobResults**
-
 
 
 > [AnalyticsConversationAsyncQueryResponse](AnalyticsConversationAsyncQueryResponse) getAnalyticsConversationsDetailsJobResults(jobId, cursor, pageSize)
@@ -1204,7 +1190,6 @@ try {
 # **getAnalyticsConversationsDetailsJobsAvailability**
 
 
-
 > [DataAvailabilityResponse](DataAvailabilityResponse) getAnalyticsConversationsDetailsJobsAvailability()
 
 Lookup the datalake availability date and time
@@ -1260,7 +1245,6 @@ This endpoint does not require any parameters.
 # **getAnalyticsDataretentionSettings**
 
 
-
 > [AnalyticsDataRetentionResponse](AnalyticsDataRetentionResponse) getAnalyticsDataretentionSettings()
 
 Get analytics data retention setting
@@ -1314,7 +1298,6 @@ This endpoint does not require any parameters.
 
 
 # **getAnalyticsEvaluationsAggregatesJob**
-
 
 
 > [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsEvaluationsAggregatesJob(jobId)
@@ -1376,7 +1359,6 @@ try {
 
 
 # **getAnalyticsEvaluationsAggregatesJobResults**
-
 
 
 > [EvaluationAsyncAggregateQueryResponse](EvaluationAsyncAggregateQueryResponse) getAnalyticsEvaluationsAggregatesJobResults(jobId, cursor)
@@ -1442,7 +1424,6 @@ try {
 # **getAnalyticsFlowexecutionsAggregatesJob**
 
 
-
 > [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsFlowexecutionsAggregatesJob(jobId)
 
 Get status for async query for flow execution aggregates
@@ -1502,7 +1483,6 @@ try {
 
 
 # **getAnalyticsFlowexecutionsAggregatesJobResults**
-
 
 
 > [FlowExecutionAsyncAggregateQueryResponse](FlowExecutionAsyncAggregateQueryResponse) getAnalyticsFlowexecutionsAggregatesJobResults(jobId, cursor)
@@ -1568,7 +1548,6 @@ try {
 # **getAnalyticsFlowsAggregatesJob**
 
 
-
 > [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsFlowsAggregatesJob(jobId)
 
 Get status for async query for Flow aggregates
@@ -1628,7 +1607,6 @@ try {
 
 
 # **getAnalyticsFlowsAggregatesJobResults**
-
 
 
 > [FlowAsyncAggregateQueryResponse](FlowAsyncAggregateQueryResponse) getAnalyticsFlowsAggregatesJobResults(jobId, cursor)
@@ -1694,7 +1672,6 @@ try {
 # **getAnalyticsJourneysAggregatesJob**
 
 
-
 > [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsJourneysAggregatesJob(jobId)
 
 Get status for async query for journey aggregates
@@ -1754,7 +1731,6 @@ try {
 
 
 # **getAnalyticsJourneysAggregatesJobResults**
-
 
 
 > [JourneyAsyncAggregateQueryResponse](JourneyAsyncAggregateQueryResponse) getAnalyticsJourneysAggregatesJobResults(jobId, cursor)
@@ -1820,7 +1796,6 @@ try {
 # **getAnalyticsKnowledgeAggregatesJob**
 
 
-
 > [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsKnowledgeAggregatesJob(jobId)
 
 Get status for async query for knowledge aggregates
@@ -1880,7 +1855,6 @@ try {
 
 
 # **getAnalyticsKnowledgeAggregatesJobResults**
-
 
 
 > [KnowledgeAsyncAggregateQueryResponse](KnowledgeAsyncAggregateQueryResponse) getAnalyticsKnowledgeAggregatesJobResults(jobId, cursor)
@@ -1946,7 +1920,6 @@ try {
 # **getAnalyticsReportingDashboardsUser**
 
 
-
 > [DashboardUser](DashboardUser) getAnalyticsReportingDashboardsUser(userId)
 
 Get dashboards summary for a user
@@ -2004,7 +1977,6 @@ try {
 
 
 # **getAnalyticsReportingDashboardsUsers**
-
 
 
 > [DashboardUserListing](DashboardUserListing) getAnalyticsReportingDashboardsUsers(sortBy, pageNumber, pageSize, id, state)
@@ -2074,7 +2046,6 @@ try {
 # **getAnalyticsReportingExports**
 
 
-
 > [ReportingExportJobListing](ReportingExportJobListing) getAnalyticsReportingExports(pageNumber, pageSize)
 
 Get all view export requests for a user
@@ -2136,7 +2107,6 @@ try {
 # **getAnalyticsReportingExportsMetadata**
 
 
-
 > [ReportingExportMetadataJobListing](ReportingExportMetadataJobListing) getAnalyticsReportingExportsMetadata()
 
 Get all export metadata
@@ -2190,7 +2160,6 @@ This endpoint does not require any parameters.
 
 
 # **getAnalyticsReportingSettings**
-
 
 
 > [AnalyticsReportingSettings](AnalyticsReportingSettings) getAnalyticsReportingSettings()
@@ -2247,8 +2216,7 @@ This endpoint does not require any parameters.
 # **getAnalyticsReportingSettingsDashboardsQuery**
 
 
-
-> [DashboardConfigurationListing](DashboardConfigurationListing) getAnalyticsReportingSettingsDashboardsQuery(dashboardType, dashboardAccessFilter, sortBy, pageNumber, pageSize)
+> [DashboardConfigurationListing](DashboardConfigurationListing) getAnalyticsReportingSettingsDashboardsQuery(dashboardType, dashboardAccessFilter, name, sortBy, pageNumber, pageSize)
 
 Get list of dashboard configurations
 
@@ -2282,11 +2250,12 @@ Configuration.setDefaultApiClient(apiClient);
 AnalyticsApi apiInstance = new AnalyticsApi();
 String dashboardType = "dashboardType_example"; // String | List dashboard of given type
 String dashboardAccessFilter = "dashboardAccessFilter_example"; // String | Filter dashboard based on the owner of dashboard
+String name = "name_example"; // String | name of the dashboard
 String sortBy = "desc"; // String | 
 Integer pageNumber = 1; // Integer | 
 Integer pageSize = 9; // Integer | 
 try {
-    DashboardConfigurationListing result = apiInstance.getAnalyticsReportingSettingsDashboardsQuery(dashboardType, dashboardAccessFilter, sortBy, pageNumber, pageSize);
+    DashboardConfigurationListing result = apiInstance.getAnalyticsReportingSettingsDashboardsQuery(dashboardType, dashboardAccessFilter, name, sortBy, pageNumber, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AnalyticsApi#getAnalyticsReportingSettingsDashboardsQuery");
@@ -2301,6 +2270,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **dashboardType** | **String**| List dashboard of given type |<br />**Values**: All, Public, Private, Shared, Favorites 
 | **dashboardAccessFilter** | **String**| Filter dashboard based on the owner of dashboard |<br />**Values**: OwnedByMe, OwnedByAnyone, NotOwnedByMe 
+| **name** | **String**| name of the dashboard | [optional] 
 | **sortBy** | **String**|  | [optional] [default to desc] 
 | **pageNumber** | **Integer**|  | [optional] [default to 1] 
 | **pageSize** | **Integer**|  | [optional] [default to 9] 
@@ -2313,7 +2283,6 @@ try {
 
 
 # **getAnalyticsReportingSettingsUserDashboards**
-
 
 
 > [DashboardConfigurationListing](DashboardConfigurationListing) getAnalyticsReportingSettingsUserDashboards(userId, sortBy, pageNumber, pageSize, publicOnly, favoriteOnly, name)
@@ -2387,7 +2356,6 @@ try {
 # **getAnalyticsResolutionsAggregatesJob**
 
 
-
 > [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsResolutionsAggregatesJob(jobId)
 
 Get status for async query for resolution aggregates
@@ -2447,7 +2415,6 @@ try {
 
 
 # **getAnalyticsResolutionsAggregatesJobResults**
-
 
 
 > [ResolutionAsyncAggregateQueryResponse](ResolutionAsyncAggregateQueryResponse) getAnalyticsResolutionsAggregatesJobResults(jobId, cursor)
@@ -2513,7 +2480,6 @@ try {
 # **getAnalyticsSurveysAggregatesJob**
 
 
-
 > [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsSurveysAggregatesJob(jobId)
 
 Get status for async query for survey aggregates
@@ -2573,7 +2539,6 @@ try {
 
 
 # **getAnalyticsSurveysAggregatesJobResults**
-
 
 
 > [SurveyAsyncAggregateQueryResponse](SurveyAsyncAggregateQueryResponse) getAnalyticsSurveysAggregatesJobResults(jobId, cursor)
@@ -2639,7 +2604,6 @@ try {
 # **getAnalyticsTaskmanagementAggregatesJob**
 
 
-
 > [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsTaskmanagementAggregatesJob(jobId)
 
 Get status for async query for task management aggregates
@@ -2699,7 +2663,6 @@ try {
 
 
 # **getAnalyticsTaskmanagementAggregatesJobResults**
-
 
 
 > [TaskManagementAsyncAggregateQueryResponse](TaskManagementAsyncAggregateQueryResponse) getAnalyticsTaskmanagementAggregatesJobResults(jobId, cursor)
@@ -2765,7 +2728,6 @@ try {
 # **getAnalyticsTranscriptsAggregatesJob**
 
 
-
 > [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsTranscriptsAggregatesJob(jobId)
 
 Get status for async query for transcript aggregates
@@ -2825,7 +2787,6 @@ try {
 
 
 # **getAnalyticsTranscriptsAggregatesJobResults**
-
 
 
 > [TranscriptAsyncAggregateQueryResponse](TranscriptAsyncAggregateQueryResponse) getAnalyticsTranscriptsAggregatesJobResults(jobId, cursor)
@@ -2891,7 +2852,6 @@ try {
 # **getAnalyticsUsersAggregatesJob**
 
 
-
 > [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsUsersAggregatesJob(jobId)
 
 Get status for async query for user aggregates
@@ -2951,7 +2911,6 @@ try {
 
 
 # **getAnalyticsUsersAggregatesJobResults**
-
 
 
 > [UserAsyncAggregateQueryResponse](UserAsyncAggregateQueryResponse) getAnalyticsUsersAggregatesJobResults(jobId, cursor)
@@ -3017,7 +2976,6 @@ try {
 # **getAnalyticsUsersDetailsJob**
 
 
-
 > [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsUsersDetailsJob(jobId)
 
 Get status for async query for user details
@@ -3075,7 +3033,6 @@ try {
 
 
 # **getAnalyticsUsersDetailsJobResults**
-
 
 
 > [AnalyticsUserDetailsAsyncQueryResponse](AnalyticsUserDetailsAsyncQueryResponse) getAnalyticsUsersDetailsJobResults(jobId, cursor, pageSize)
@@ -3141,7 +3098,6 @@ try {
 # **getAnalyticsUsersDetailsJobsAvailability**
 
 
-
 > [DataAvailabilityResponse](DataAvailabilityResponse) getAnalyticsUsersDetailsJobsAvailability()
 
 Lookup the datalake availability date and time
@@ -3195,7 +3151,6 @@ This endpoint does not require any parameters.
 
 
 # **patchAnalyticsReportingSettings**
-
 
 
 > [AnalyticsReportingSettings](AnalyticsReportingSettings) patchAnalyticsReportingSettings(body)
@@ -3255,7 +3210,6 @@ try {
 
 
 # **postAnalyticsActionsAggregatesJobs**
-
 
 
 > [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsActionsAggregatesJobs(body)
@@ -3320,7 +3274,6 @@ try {
 # **postAnalyticsActionsAggregatesQuery**
 
 
-
 > [ActionAggregateQueryResponse](ActionAggregateQueryResponse) postAnalyticsActionsAggregatesQuery(body)
 
 Query for action aggregates
@@ -3379,7 +3332,6 @@ try {
 
 
 # **postAnalyticsAgentcopilotsAggregatesJobs**
-
 
 
 > [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsAgentcopilotsAggregatesJobs(body)
@@ -3443,12 +3395,9 @@ try {
 # **postAnalyticsAgentcopilotsAggregatesQuery**
 
 
-
 > [AgentCopilotAggregateQueryResponse](AgentCopilotAggregateQueryResponse) postAnalyticsAgentcopilotsAggregatesQuery(body)
 
 Query for agent copilot aggregates
-
-postAnalyticsAgentcopilotsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/agentcopilots/aggregates/query  
 
@@ -3503,7 +3452,6 @@ try {
 
 
 # **postAnalyticsBotsAggregatesJobs**
-
 
 
 > [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsBotsAggregatesJobs(body)
@@ -3567,7 +3515,6 @@ try {
 # **postAnalyticsBotsAggregatesQuery**
 
 
-
 > [BotAggregateQueryResponse](BotAggregateQueryResponse) postAnalyticsBotsAggregatesQuery(body)
 
 Query for bot aggregates
@@ -3625,7 +3572,6 @@ try {
 
 
 # **postAnalyticsConversationDetailsProperties**
-
 
 
 > [PropertyIndexRequest](PropertyIndexRequest) postAnalyticsConversationDetailsProperties(conversationId, body)
@@ -3687,7 +3633,6 @@ try {
 
 
 # **postAnalyticsConversationsActivityQuery**
-
 
 
 > [ConversationActivityResponse](ConversationActivityResponse) postAnalyticsConversationsActivityQuery(body, pageSize, pageNumber)
@@ -3753,7 +3698,6 @@ try {
 # **postAnalyticsConversationsAggregatesJobs**
 
 
-
 > [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsConversationsAggregatesJobs(body)
 
 Query for conversation aggregates asynchronously
@@ -3815,7 +3759,6 @@ try {
 # **postAnalyticsConversationsAggregatesQuery**
 
 
-
 > [ConversationAggregateQueryResponse](ConversationAggregateQueryResponse) postAnalyticsConversationsAggregatesQuery(body)
 
 Query for conversation aggregates
@@ -3873,7 +3816,6 @@ try {
 
 
 # **postAnalyticsConversationsDetailsJobs**
-
 
 
 > [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsConversationsDetailsJobs(body)
@@ -3936,7 +3878,6 @@ try {
 # **postAnalyticsConversationsDetailsQuery**
 
 
-
 > [AnalyticsConversationQueryResponse](AnalyticsConversationQueryResponse) postAnalyticsConversationsDetailsQuery(body)
 
 Query for conversation details
@@ -3997,7 +3938,6 @@ try {
 # **postAnalyticsConversationsTranscriptsQuery**
 
 
-
 > [AnalyticsConversationWithoutAttributesMultiGetResponse](AnalyticsConversationWithoutAttributesMultiGetResponse) postAnalyticsConversationsTranscriptsQuery(body)
 
 Search resources.
@@ -4055,7 +3995,6 @@ try {
 
 
 # **postAnalyticsEvaluationsAggregatesJobs**
-
 
 
 > [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsEvaluationsAggregatesJobs(body)
@@ -4119,7 +4058,6 @@ try {
 # **postAnalyticsEvaluationsAggregatesQuery**
 
 
-
 > [EvaluationAggregateQueryResponse](EvaluationAggregateQueryResponse) postAnalyticsEvaluationsAggregatesQuery(body)
 
 Query for evaluation aggregates
@@ -4177,7 +4115,6 @@ try {
 
 
 # **postAnalyticsFlowexecutionsAggregatesJobs**
-
 
 
 > [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsFlowexecutionsAggregatesJobs(body)
@@ -4241,7 +4178,6 @@ try {
 # **postAnalyticsFlowexecutionsAggregatesQuery**
 
 
-
 > [FlowExecutionAggregateQueryResponse](FlowExecutionAggregateQueryResponse) postAnalyticsFlowexecutionsAggregatesQuery(body)
 
 Query for flow execution aggregates
@@ -4299,7 +4235,6 @@ try {
 
 
 # **postAnalyticsFlowsActivityQuery**
-
 
 
 > [FlowActivityResponse](FlowActivityResponse) postAnalyticsFlowsActivityQuery(body, pageSize, pageNumber)
@@ -4365,7 +4300,6 @@ try {
 # **postAnalyticsFlowsAggregatesJobs**
 
 
-
 > [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsFlowsAggregatesJobs(body)
 
 Query for flow aggregates asynchronously
@@ -4427,7 +4361,6 @@ try {
 # **postAnalyticsFlowsAggregatesQuery**
 
 
-
 > [FlowAggregateQueryResponse](FlowAggregateQueryResponse) postAnalyticsFlowsAggregatesQuery(body)
 
 Query for flow aggregates
@@ -4487,7 +4420,6 @@ try {
 # **postAnalyticsFlowsObservationsQuery**
 
 
-
 > [FlowObservationQueryResponse](FlowObservationQueryResponse) postAnalyticsFlowsObservationsQuery(body)
 
 Query for flow observations
@@ -4545,7 +4477,6 @@ try {
 
 
 # **postAnalyticsJourneysAggregatesJobs**
-
 
 
 > [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsJourneysAggregatesJobs(body)
@@ -4609,7 +4540,6 @@ try {
 # **postAnalyticsJourneysAggregatesQuery**
 
 
-
 > [JourneyAggregateQueryResponse](JourneyAggregateQueryResponse) postAnalyticsJourneysAggregatesQuery(body)
 
 Query for journey aggregates
@@ -4667,7 +4597,6 @@ try {
 
 
 # **postAnalyticsKnowledgeAggregatesJobs**
-
 
 
 > [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsKnowledgeAggregatesJobs(body)
@@ -4731,7 +4660,6 @@ try {
 # **postAnalyticsKnowledgeAggregatesQuery**
 
 
-
 > [KnowledgeAggregateQueryResponse](KnowledgeAggregateQueryResponse) postAnalyticsKnowledgeAggregatesQuery(body)
 
 Query for knowledge aggregates
@@ -4791,7 +4719,6 @@ try {
 # **postAnalyticsQueuesObservationsQuery**
 
 
-
 > [QueueObservationQueryResponse](QueueObservationQueryResponse) postAnalyticsQueuesObservationsQuery(body)
 
 Query for queue observations
@@ -4849,7 +4776,6 @@ try {
 
 
 # **postAnalyticsRatelimitsAggregatesQuery**
-
 
 
 > [RateLimitAggregateQueryResponse](RateLimitAggregateQueryResponse) postAnalyticsRatelimitsAggregatesQuery(body)
@@ -4913,7 +4839,6 @@ try {
 # **postAnalyticsReportingDashboardsUsersBulkRemove**
 
 
-
 > Void postAnalyticsReportingDashboardsUsersBulkRemove(body)
 
 Bulk delete dashboards owned by other user(s)
@@ -4971,7 +4896,6 @@ null (empty response body)
 
 
 # **postAnalyticsReportingExports**
-
 
 
 > [ReportingExportJobResponse](ReportingExportJobResponse) postAnalyticsReportingExports(body)
@@ -5035,7 +4959,6 @@ try {
 # **postAnalyticsReportingSettingsDashboardsBulkRemove**
 
 
-
 > Void postAnalyticsReportingSettingsDashboardsBulkRemove(body)
 
 Bulk remove dashboard configurations
@@ -5092,7 +5015,6 @@ null (empty response body)
 
 
 # **postAnalyticsReportingSettingsDashboardsQuery**
-
 
 
 > [DashboardConfigurationListing](DashboardConfigurationListing) postAnalyticsReportingSettingsDashboardsQuery(body)
@@ -5154,7 +5076,6 @@ try {
 # **postAnalyticsResolutionsAggregatesJobs**
 
 
-
 > [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsResolutionsAggregatesJobs(body)
 
 Query for resolution aggregates asynchronously
@@ -5214,7 +5135,6 @@ try {
 
 
 # **postAnalyticsRoutingActivityQuery**
-
 
 
 > [RoutingActivityResponse](RoutingActivityResponse) postAnalyticsRoutingActivityQuery(body, pageSize, pageNumber)
@@ -5280,7 +5200,6 @@ try {
 # **postAnalyticsSurveysAggregatesJobs**
 
 
-
 > [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsSurveysAggregatesJobs(body)
 
 Query for survey aggregates asynchronously
@@ -5342,7 +5261,6 @@ try {
 # **postAnalyticsSurveysAggregatesQuery**
 
 
-
 > [SurveyAggregateQueryResponse](SurveyAggregateQueryResponse) postAnalyticsSurveysAggregatesQuery(body)
 
 Query for survey aggregates
@@ -5400,7 +5318,6 @@ try {
 
 
 # **postAnalyticsTaskmanagementAggregatesJobs**
-
 
 
 > [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsTaskmanagementAggregatesJobs(body)
@@ -5464,7 +5381,6 @@ try {
 # **postAnalyticsTaskmanagementAggregatesQuery**
 
 
-
 > [TaskManagementAggregateQueryResponse](TaskManagementAggregateQueryResponse) postAnalyticsTaskmanagementAggregatesQuery(body)
 
 Query for task management aggregates
@@ -5524,7 +5440,6 @@ try {
 
 
 # **postAnalyticsTeamsActivityQuery**
-
 
 
 > [TeamActivityResponse](TeamActivityResponse) postAnalyticsTeamsActivityQuery(body, pageSize, pageNumber)
@@ -5590,7 +5505,6 @@ try {
 # **postAnalyticsTranscriptsAggregatesJobs**
 
 
-
 > [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsTranscriptsAggregatesJobs(body)
 
 Query for transcript aggregates asynchronously
@@ -5652,7 +5566,6 @@ try {
 # **postAnalyticsTranscriptsAggregatesQuery**
 
 
-
 > [TranscriptAggregateQueryResponse](TranscriptAggregateQueryResponse) postAnalyticsTranscriptsAggregatesQuery(body)
 
 Query for transcript aggregates
@@ -5710,7 +5623,6 @@ try {
 
 
 # **postAnalyticsUsersActivityQuery**
-
 
 
 > [UserActivityResponse](UserActivityResponse) postAnalyticsUsersActivityQuery(body, pageSize, pageNumber)
@@ -5776,7 +5688,6 @@ try {
 # **postAnalyticsUsersAggregatesJobs**
 
 
-
 > [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsUsersAggregatesJobs(body)
 
 Query for user aggregates asynchronously
@@ -5838,7 +5749,6 @@ try {
 # **postAnalyticsUsersAggregatesQuery**
 
 
-
 > [UserAggregateQueryResponse](UserAggregateQueryResponse) postAnalyticsUsersAggregatesQuery(body)
 
 Query for user aggregates
@@ -5896,7 +5806,6 @@ try {
 
 
 # **postAnalyticsUsersDetailsJobs**
-
 
 
 > [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsUsersDetailsJobs(body)
@@ -5958,7 +5867,6 @@ try {
 # **postAnalyticsUsersDetailsQuery**
 
 
-
 > [AnalyticsUserDetailsQueryResponse](AnalyticsUserDetailsQueryResponse) postAnalyticsUsersDetailsQuery(body)
 
 Query for user details
@@ -6016,7 +5924,6 @@ try {
 
 
 # **postAnalyticsUsersObservationsQuery**
-
 
 
 > [UserObservationQueryResponse](UserObservationQueryResponse) postAnalyticsUsersObservationsQuery(body)
@@ -6078,7 +5985,6 @@ try {
 # **putAnalyticsDataretentionSettings**
 
 
-
 > [AnalyticsDataRetentionResponse](AnalyticsDataRetentionResponse) putAnalyticsDataretentionSettings(body)
 
 Update analytics data retention setting
@@ -6135,4 +6041,4 @@ try {
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -9,7 +9,6 @@
 | **startingPositionDirection** | [**StartingPositionDirectionEnum**](#Enum--StartingPositionDirectionEnum) | Dictates starting position directionality |  [optional] |
 | **endingPositionValue** | **Integer** | Defines ending point of a position range - number of seconds or words from the start or from the end of the interaction |  [optional] |
 | **endingPositionDirection** | [**EndingPositionDirectionEnum**](#Enum--EndingPositionDirectionEnum) | Dictates ending position directionality |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StartingPositionDirectionEnum
@@ -19,7 +18,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | FROMSTART | &quot;FromStart&quot; | 
 | FROMEND | &quot;FromEnd&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: EndingPositionDirectionEnum
@@ -29,9 +27,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | FROMSTART | &quot;FromStart&quot; | 
 | FROMEND | &quot;FromEnd&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

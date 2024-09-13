@@ -11,9 +11,8 @@
 | **userIds** | **List&lt;String&gt;** | The userIds to report on. If null or not set, adherence will be computed for all the users in management unit or requested teamIds |  [optional] |
 | **includeExceptions** | **Boolean** | Whether user exceptions should be returned as part of the results |  [optional] |
 | **teamIds** | **List&lt;String&gt;** | The teamIds to report on. If null or not set, adherence will be computed for requested users if applicable or otherwise all users in the management unit. Note: If teamIds is also specified, only adherence for users in the requested teams will be returned |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

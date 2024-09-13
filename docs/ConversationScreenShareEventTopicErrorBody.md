@@ -15,9 +15,8 @@
 | **contextId** | **String** |  |  [optional] |
 | **details** | [**List&lt;ConversationScreenShareEventTopicDetail&gt;**](ConversationScreenShareEventTopicDetail) |  |  [optional] |
 | **errors** | [**List&lt;ConversationScreenShareEventTopicErrorBody&gt;**](ConversationScreenShareEventTopicErrorBody) |  |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -70,7 +70,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteJourneyActionmap**
 
 
-
 > Void deleteJourneyActionmap(actionMapId)
 
 Delete single action map.
@@ -127,7 +126,6 @@ null (empty response body)
 
 
 # **deleteJourneyActiontemplate**
-
 
 
 > Void deleteJourneyActiontemplate(actionTemplateId, hardDelete)
@@ -190,7 +188,6 @@ null (empty response body)
 # **deleteJourneyOutcome**
 
 
-
 > Void deleteJourneyOutcome(outcomeId)
 
 Delete an outcome.
@@ -247,7 +244,6 @@ null (empty response body)
 
 
 # **deleteJourneyOutcomesPredictor**
-
 
 
 > Void deleteJourneyOutcomesPredictor(predictorId)
@@ -308,7 +304,6 @@ null (empty response body)
 # **deleteJourneySegment**
 
 
-
 > Void deleteJourneySegment(segmentId)
 
 Delete a segment.
@@ -367,14 +362,11 @@ null (empty response body)
 # **deleteJourneyView**
 
 
-
 > Void deleteJourneyView(viewId)
 
 Delete a Journey View by ID
 
 deletes all versions
-
-deleteJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/journey/views/{viewId}  
 
@@ -428,7 +420,6 @@ null (empty response body)
 
 
 # **getAnalyticsJourneysAggregatesJob**
-
 
 
 > [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsJourneysAggregatesJob(jobId)
@@ -492,7 +483,6 @@ try {
 # **getAnalyticsJourneysAggregatesJobResults**
 
 
-
 > [JourneyAsyncAggregateQueryResponse](JourneyAsyncAggregateQueryResponse) getAnalyticsJourneysAggregatesJobResults(jobId, cursor)
 
 Fetch a page of results for an async aggregates query
@@ -554,7 +544,6 @@ try {
 
 
 # **getExternalcontactsContactJourneySessions**
-
 
 
 > [SessionListing](SessionListing) getExternalcontactsContactJourneySessions(contactId, pageSize, after, includeMerged)
@@ -622,7 +611,6 @@ try {
 # **getJourneyActionmap**
 
 
-
 > [ActionMap](ActionMap) getJourneyActionmap(actionMapId)
 
 Retrieve a single action map.
@@ -680,7 +668,6 @@ try {
 
 
 # **getJourneyActionmaps**
-
 
 
 > [ActionMapListing](ActionMapListing) getJourneyActionmaps(pageNumber, pageSize, sortBy, filterField, filterValue, actionMapIds, queryFields, queryValue)
@@ -756,7 +743,6 @@ try {
 # **getJourneyActionmapsEstimatesJob**
 
 
-
 > String getJourneyActionmapsEstimatesJob(jobId)
 
 Get status of job.
@@ -814,7 +800,6 @@ try {
 
 
 # **getJourneyActionmapsEstimatesJobResults**
-
 
 
 > [ActionMapEstimateResult](ActionMapEstimateResult) getJourneyActionmapsEstimatesJobResults(jobId)
@@ -876,7 +861,6 @@ try {
 # **getJourneyActiontarget**
 
 
-
 > [ActionTarget](ActionTarget) getJourneyActiontarget(actionTargetId)
 
 Retrieve a single action target.
@@ -934,7 +918,6 @@ try {
 
 
 # **getJourneyActiontargets**
-
 
 
 > [ActionTargetListing](ActionTargetListing) getJourneyActiontargets(pageNumber, pageSize)
@@ -998,7 +981,6 @@ try {
 # **getJourneyActiontemplate**
 
 
-
 > [ActionTemplate](ActionTemplate) getJourneyActiontemplate(actionTemplateId)
 
 Retrieve a single action template.
@@ -1056,7 +1038,6 @@ try {
 
 
 # **getJourneyActiontemplates**
-
 
 
 > [ActionTemplateListing](ActionTemplateListing) getJourneyActiontemplates(pageNumber, pageSize, sortBy, mediaType, state, queryFields, queryValue)
@@ -1130,7 +1111,6 @@ try {
 # **getJourneyDeploymentCustomerPing**
 
 
-
 > [DeploymentPing](DeploymentPing) getJourneyDeploymentCustomerPing(deploymentId, customerCookieId, dl, dt, appNamespace, sessionId, sinceLastBeaconMilliseconds)
 
 Send a ping.
@@ -1186,7 +1166,6 @@ try {
 
 
 # **getJourneyOutcome**
-
 
 
 > [Outcome](Outcome) getJourneyOutcome(outcomeId)
@@ -1246,7 +1225,6 @@ try {
 
 
 # **getJourneyOutcomes**
-
 
 
 > [OutcomeListing](OutcomeListing) getJourneyOutcomes(pageNumber, pageSize, sortBy, outcomeIds, queryFields, queryValue)
@@ -1318,7 +1296,6 @@ try {
 # **getJourneyOutcomesAttributionsJob**
 
 
-
 > [OutcomeAttributionJobStateResponse](OutcomeAttributionJobStateResponse) getJourneyOutcomesAttributionsJob(jobId)
 
 Get job status.
@@ -1378,7 +1355,6 @@ try {
 
 
 # **getJourneyOutcomesAttributionsJobResults**
-
 
 
 > [OutcomeAttributionResponseListing](OutcomeAttributionResponseListing) getJourneyOutcomesAttributionsJobResults(jobId)
@@ -1442,7 +1418,6 @@ try {
 # **getJourneyOutcomesPredictor**
 
 
-
 > [OutcomePredictor](OutcomePredictor) getJourneyOutcomesPredictor(predictorId)
 
 Retrieve a single outcome predictor.
@@ -1502,7 +1477,6 @@ try {
 # **getJourneyOutcomesPredictors**
 
 
-
 > [OutcomePredictorListing](OutcomePredictorListing) getJourneyOutcomesPredictors()
 
 Retrieve all outcome predictors.
@@ -1556,7 +1530,6 @@ This endpoint does not require any parameters.
 
 
 # **getJourneySegment**
-
 
 
 > [JourneySegment](JourneySegment) getJourneySegment(segmentId)
@@ -1616,7 +1589,6 @@ try {
 
 
 # **getJourneySegments**
-
 
 
 > [SegmentListing](SegmentListing) getJourneySegments(sortBy, pageSize, pageNumber, isActive, segmentIds, queryFields, queryValue)
@@ -1690,7 +1662,6 @@ try {
 # **getJourneySession**
 
 
-
 > [Session](Session) getJourneySession(sessionId)
 
 Retrieve a single session.
@@ -1749,7 +1720,6 @@ try {
 
 
 # **getJourneySessionEvents**
-
 
 
 > [EventListing](EventListing) getJourneySessionEvents(sessionId, pageSize, after, eventType)
@@ -1817,7 +1787,6 @@ try {
 # **getJourneySessionOutcomescores**
 
 
-
 > [OutcomeScoresResult](OutcomeScoresResult) getJourneySessionOutcomescores(sessionId)
 
 Retrieve latest outcome score associated with a session for all outcomes.
@@ -1877,14 +1846,11 @@ try {
 # **getJourneyView**
 
 
-
 > [JourneyView](JourneyView) getJourneyView(viewId)
 
 Get a Journey View by ID
 
 returns the latest version
-
-getJourneyView is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/journey/views/{viewId}  
 
@@ -1941,12 +1907,9 @@ try {
 # **getJourneyViewVersion**
 
 
-
 > [JourneyView](JourneyView) getJourneyViewVersion(viewId, versionId)
 
 Get a Journey View by ID and version
-
-getJourneyViewVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/journey/views/{viewId}/versions/{versionId}  
 
@@ -2005,14 +1968,11 @@ try {
 # **getJourneyViewVersionJob**
 
 
-
 > [JourneyViewJob](JourneyViewJob) getJourneyViewVersionJob(viewId, journeyVersionId, jobId)
 
 Get the job for a journey view version.
 
 used for long descriptions
-
-getJourneyViewVersionJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}  
 
@@ -2073,14 +2033,11 @@ try {
 # **getJourneyViewVersionJobResults**
 
 
-
 > [JourneyViewResult](JourneyViewResult) getJourneyViewVersionJobResults(viewId, journeyViewVersion, jobId)
 
 Get the result of a job for a journey view version.
 
 used for long descriptions
-
-getJourneyViewVersionJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results  
 
@@ -2141,14 +2098,11 @@ try {
 # **getJourneyViewVersionJobsLatest**
 
 
-
 > [JourneyViewJob](JourneyViewJob) getJourneyViewVersionJobsLatest(viewId, journeyVersionId)
 
 Get the latest job of a journey view version.
 
 used for long descriptions
-
-getJourneyViewVersionJobsLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/latest  
 
@@ -2207,12 +2161,9 @@ try {
 # **getJourneyViews**
 
 
-
-> [JourneyViewListing](JourneyViewListing) getJourneyViews(pageNumber, pageSize, nameOrCreatedBy, expand)
+> [JourneyViewListing](JourneyViewListing) getJourneyViews(pageNumber, pageSize, nameOrCreatedBy, expand, id)
 
 Get a list of Journey Views
-
-getJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/journey/views  
 
@@ -2246,8 +2197,9 @@ Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String nameOrCreatedBy = "nameOrCreatedBy_example"; // String | Journey View Name or Created By
 String expand = "expand_example"; // String | Parameter to request additional data to return in Journey payload
+String id = "id_example"; // String | Parameter to request a list of Journey Views by id, separated by commas. Limit of 100 items.
 try {
-    JourneyViewListing result = apiInstance.getJourneyViews(pageNumber, pageSize, nameOrCreatedBy, expand);
+    JourneyViewListing result = apiInstance.getJourneyViews(pageNumber, pageSize, nameOrCreatedBy, expand, id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling JourneyApi#getJourneyViews");
@@ -2264,6 +2216,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **nameOrCreatedBy** | **String**| Journey View Name or Created By | [optional] 
 | **expand** | **String**| Parameter to request additional data to return in Journey payload | [optional]<br />**Values**: charts 
+| **id** | **String**| Parameter to request a list of Journey Views by id, separated by commas. Limit of 100 items. | [optional] 
 {: class="table-striped"}
 
 
@@ -2273,7 +2226,6 @@ try {
 
 
 # **getJourneyViewsEventdefinition**
-
 
 
 > [JourneyEventDefinition](JourneyEventDefinition) getJourneyViewsEventdefinition(eventDefinitionId)
@@ -2337,7 +2289,6 @@ try {
 # **getJourneyViewsEventdefinitions**
 
 
-
 > [JourneyEventDefinitionListing](JourneyEventDefinitionListing) getJourneyViewsEventdefinitions()
 
 Get a list of Event Definitions
@@ -2395,12 +2346,9 @@ This endpoint does not require any parameters.
 # **getJourneyViewsJobs**
 
 
-
 > [JourneyViewJobListing](JourneyViewJobListing) getJourneyViewsJobs(pageNumber, pageSize, interval, statuses)
 
 Get the jobs for an organization.
-
-getJourneyViewsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/journey/views/jobs  
 
@@ -2461,7 +2409,6 @@ try {
 
 
 # **patchJourneyActionmap**
-
 
 
 > [ActionMap](ActionMap) patchJourneyActionmap(actionMapId, body)
@@ -2525,7 +2472,6 @@ try {
 # **patchJourneyActiontarget**
 
 
-
 > [ActionTarget](ActionTarget) patchJourneyActiontarget(actionTargetId, body)
 
 Update a single action target.
@@ -2585,7 +2531,6 @@ try {
 
 
 # **patchJourneyActiontemplate**
-
 
 
 > [ActionTemplate](ActionTemplate) patchJourneyActiontemplate(actionTemplateId, body)
@@ -2649,7 +2594,6 @@ try {
 # **patchJourneyOutcome**
 
 
-
 > [Outcome](Outcome) patchJourneyOutcome(outcomeId, body)
 
 Update an outcome.
@@ -2709,7 +2653,6 @@ try {
 
 
 # **patchJourneySegment**
-
 
 
 > [JourneySegment](JourneySegment) patchJourneySegment(segmentId, body)
@@ -2773,7 +2716,6 @@ try {
 # **postAnalyticsJourneysAggregatesJobs**
 
 
-
 > [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsJourneysAggregatesJobs(body)
 
 Query for journey aggregates asynchronously
@@ -2835,7 +2777,6 @@ try {
 # **postAnalyticsJourneysAggregatesQuery**
 
 
-
 > [JourneyAggregateQueryResponse](JourneyAggregateQueryResponse) postAnalyticsJourneysAggregatesQuery(body)
 
 Query for journey aggregates
@@ -2893,7 +2834,6 @@ try {
 
 
 # **postJourneyActionmaps**
-
 
 
 > [ActionMap](ActionMap) postJourneyActionmaps(body)
@@ -2955,7 +2895,6 @@ try {
 # **postJourneyActionmapsEstimatesJobs**
 
 
-
 > [EstimateJobAsyncResponse](EstimateJobAsyncResponse) postJourneyActionmapsEstimatesJobs(body)
 
 Query for estimates
@@ -3013,7 +2952,6 @@ try {
 
 
 # **postJourneyActiontemplates**
-
 
 
 > [ActionTemplate](ActionTemplate) postJourneyActiontemplates(body)
@@ -3075,7 +3013,6 @@ try {
 # **postJourneyDeploymentActionevent**
 
 
-
 > Void postJourneyDeploymentActionevent(deploymentId, body)
 
 Sends an action event, which is used for changing the state of actions that have been offered to the user.
@@ -3120,7 +3057,6 @@ null (empty response body)
 
 
 # **postJourneyDeploymentAppevents**
-
 
 
 > [AppEventResponse](AppEventResponse) postJourneyDeploymentAppevents(deploymentId, body)
@@ -3170,7 +3106,6 @@ try {
 # **postJourneyDeploymentWebevents**
 
 
-
 > [WebEventResponse](WebEventResponse) postJourneyDeploymentWebevents(deploymentId, body)
 
 Send a journey web event, used for tracking customer activity on a website.
@@ -3216,7 +3151,6 @@ try {
 
 
 # **postJourneyFlowsPathsQuery**
-
 
 
 > [FlowPaths](FlowPaths) postJourneyFlowsPathsQuery(body)
@@ -3278,7 +3212,6 @@ try {
 # **postJourneyOutcomes**
 
 
-
 > [Outcome](Outcome) postJourneyOutcomes(body)
 
 Create an outcome.
@@ -3336,7 +3269,6 @@ try {
 
 
 # **postJourneyOutcomesAttributionsJobs**
-
 
 
 > [OutcomeAttributionAsyncResponse](OutcomeAttributionAsyncResponse) postJourneyOutcomesAttributionsJobs(body)
@@ -3400,7 +3332,6 @@ try {
 # **postJourneyOutcomesPredictors**
 
 
-
 > [OutcomePredictor](OutcomePredictor) postJourneyOutcomesPredictors(body)
 
 Create an outcome predictor.
@@ -3458,7 +3389,6 @@ try {
 
 
 # **postJourneySegments**
-
 
 
 > [JourneySegment](JourneySegment) postJourneySegments(body)
@@ -3520,14 +3450,11 @@ try {
 # **postJourneyViewVersionJobs**
 
 
-
 > [JourneyViewJob](JourneyViewJob) postJourneyViewVersionJobs(viewId, journeyVersionId)
 
 Submit a job request for a journey view version.
 
 used for long descriptions
-
-postJourneyViewVersionJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs  
 
@@ -3586,14 +3513,11 @@ try {
 # **postJourneyViewVersions**
 
 
-
 > [JourneyView](JourneyView) postJourneyViewVersions(viewId, body)
 
 Update a Journey View by ID
 
 creates a new version
-
-postJourneyViewVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/journey/views/{viewId}/versions  
 
@@ -3652,12 +3576,9 @@ try {
 # **postJourneyViews**
 
 
-
 > [JourneyView](JourneyView) postJourneyViews(body)
 
 Create a new Journey View
-
-postJourneyViews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/journey/views  
 
@@ -3712,7 +3633,6 @@ try {
 
 
 # **postJourneyViewsEncodingsValidate**
-
 
 
 > [EntityListing](EntityListing) postJourneyViewsEncodingsValidate(body)
@@ -3775,4 +3695,4 @@ try {
 [**EntityListing**](EntityListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

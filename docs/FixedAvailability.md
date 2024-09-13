@@ -8,7 +8,6 @@
 | **availabilityRange** | [**AvailabilityRange**](AvailabilityRange) | The range of time of day the activity can be scheduled |  [optional] |
 | **dateRange** | [**RequiredLocalDateRange**](RequiredLocalDateRange) | The range of date for which the activity plan could be scheduled |  [optional] |
 | **daysOfWeek** | [**List<DaysOfWeekEnum>**](#Enum--DaysOfWeekEnum) | The days of week available for scheduling. Empty list or null means daysOfWeek is not considered |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: DaysOfWeekEnum
@@ -22,9 +21,8 @@
 | THURSDAY | &quot;Thursday&quot; |
 | FRIDAY | &quot;Friday&quot; |
 | SATURDAY | &quot;Saturday&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

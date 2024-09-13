@@ -21,7 +21,6 @@
 | **modifiedDate** | [**Date**](Date) | The date the activity plan was modified, in ISO-8601 format |  |
 | **modifiedBy** | [**UserReference**](UserReference) | The last user to modify this activity plan |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -31,7 +30,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INDIVIDUAL | &quot;Individual&quot; | 
 | GROUP | &quot;Group&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: OptimizationObjectiveEnum
@@ -41,7 +39,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | FAVORSERVICEGOALS | &quot;FavorServiceGoals&quot; | 
 | FAVORSCHEDULINGALL | &quot;FavorSchedulingAll&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -51,9 +48,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ACTIVE | &quot;Active&quot; | 
 | INACTIVE | &quot;Inactive&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -10,7 +10,6 @@
 | **operands** | [**List&lt;DomainResourceConditionValue&gt;**](DomainResourceConditionValue) |  |  [optional] |
 | **conjunction** | [**ConjunctionEnum**](#Enum--ConjunctionEnum) |  |  [optional] |
 | **terms** | [**List&lt;DomainResourceConditionNode&gt;**](DomainResourceConditionNode) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: OperatorEnum
@@ -24,7 +23,6 @@
 | GT | &quot;GT&quot; | 
 | LE | &quot;LE&quot; | 
 | LT | &quot;LT&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ConjunctionEnum
@@ -34,9 +32,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | AND | &quot;AND&quot; | 
 | OR | &quot;OR&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

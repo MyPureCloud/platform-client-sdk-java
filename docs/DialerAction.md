@@ -14,7 +14,6 @@
 | **contactIdField** | **String** | The input field from the data action that the contactId will be passed to for this condition. Valid for a dataActionBehavior. |  [optional] |
 | **callAnalysisResultField** | **String** | The input field from the data action that the callAnalysisResult will be passed to for this condition. Valid for a wrapup dataActionBehavior. |  [optional] |
 | **agentWrapupField** | **String** | The input field from the data action that the agentWrapup will be passed to for this condition. Valid for a wrapup dataActionBehavior. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -25,7 +24,6 @@
 | ACTION | &quot;Action&quot; | 
 | MODIFYCONTACTATTRIBUTE | &quot;modifyContactAttribute&quot; | 
 | DATAACTIONBEHAVIOR | &quot;dataActionBehavior&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ActionTypeNameEnum
@@ -44,7 +42,6 @@
 | SET_CALLER_ID | &quot;SET_CALLER_ID&quot; | 
 | SET_SKILLS | &quot;SET_SKILLS&quot; | 
 | DATA_ACTION | &quot;DATA_ACTION&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: UpdateOptionEnum
@@ -56,9 +53,8 @@
 | INCREMENT | &quot;INCREMENT&quot; | 
 | DECREMENT | &quot;DECREMENT&quot; | 
 | CURRENT_TIME | &quot;CURRENT_TIME&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

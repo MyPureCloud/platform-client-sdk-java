@@ -15,7 +15,6 @@
 | **answerOptions** | [**List&lt;AnswerOption&gt;**](AnswerOption) | Options from which to choose an answer for this question. Only used by Multiple Choice type questions. |  [optional] |
 | **isKill** | **Boolean** |  |  [optional] |
 | **isCritical** | **Boolean** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -27,9 +26,8 @@
 | FREETEXTQUESTION | &quot;freeTextQuestion&quot; | 
 | NPSQUESTION | &quot;npsQuestion&quot; | 
 | READONLYTEXTBLOCKQUESTION | &quot;readOnlyTextBlockQuestion&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

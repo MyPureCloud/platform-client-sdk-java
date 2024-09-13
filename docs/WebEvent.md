@@ -21,9 +21,8 @@
 | **traits** | [**Map&lt;String, CustomEventAttribute&gt;**](CustomEventAttribute) | User-defined traits associated with a particular event. |  |
 | **searchQuery** | **String** | Represents the keywords in a customer search query. |  [optional] |
 | **authenticated** | **Boolean** | Indicates whether the event was produced during an authenticated session. |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

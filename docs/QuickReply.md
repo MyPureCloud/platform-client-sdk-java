@@ -10,7 +10,6 @@
 | **url** | **String** | The location of the image file associated with quick reply |  [optional] |
 | **action** | [**ActionEnum**](#Enum--ActionEnum) | Specifies the type of action that is triggered upon clicking the quick reply. Currently, the only supported action is \"Message\" which sends a message using the quick reply text. |  [optional] |
 | **isSelected** | **Boolean** | Indicates if the quick reply option is selected by end customer |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ActionEnum
@@ -19,9 +18,8 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | MESSAGE | &quot;Message&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

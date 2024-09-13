@@ -10,9 +10,8 @@
 | **agentIds** | [**ListWrapperString**](ListWrapperString) | Agent IDs who participate in this bid group |  [optional] |
 | **workPlans** | [**ListWrapperBidGroupWorkPlanRequest**](ListWrapperBidGroupWorkPlanRequest) | The list of work plans used in this bid group |  [optional] |
 | **planningGroupIds** | [**ListWrapperString**](ListWrapperString) | The planning group IDs selected in this bid group |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

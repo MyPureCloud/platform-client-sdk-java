@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **category** | [**CategoryEnum**](#Enum--CategoryEnum) | Category (use case) of the paths within a given domain. |  |
 | **flows** | [**List&lt;FlowPathsFlowFilter&gt;**](FlowPathsFlowFilter) | List of flows to query the paths result. |  |
-{: class="table table-striped"}
 
 
 ## Enum: CategoryEnum
@@ -23,9 +22,8 @@
 | ERROR | &quot;Error&quot; | 
 | RECOGNITIONFAILURE | &quot;RecognitionFailure&quot; | 
 | TRANSFER | &quot;Transfer&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

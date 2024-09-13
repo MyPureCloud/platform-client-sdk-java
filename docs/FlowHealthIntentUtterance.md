@@ -11,7 +11,6 @@
 | **staticValidationResults** | [**List<StaticValidationResultsEnum>**](#Enum--StaticValidationResultsEnum) | Validation results for this utterance. |  [optional] |
 | **outlierInfo** | [**OutlierInfo**](OutlierInfo) | Details about this utterance being an outlier or not. |  [optional] |
 | **confusionInfo** | [**ConfusionInfo**](ConfusionInfo) | Confusion details with other utterances. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StaticValidationResultsEnum
@@ -22,9 +21,8 @@
 | TOOMANYUTTERANCES | &quot;TooManyUtterances&quot; |
 | UTTERANCETOOSHORT | &quot;UtteranceTooShort&quot; |
 | UTTERANCETOOLONG | &quot;UtteranceTooLong&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

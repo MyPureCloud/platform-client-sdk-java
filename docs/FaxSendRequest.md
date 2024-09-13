@@ -14,7 +14,6 @@
 | **coverSheet** | [**CoverSheet**](CoverSheet) | Data for coversheet generation. |  [optional] |
 | **timeZoneOffsetMinutes** | **Integer** | Time zone offset minutes from GMT |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ContentTypeEnum
@@ -27,9 +26,8 @@
 | APPLICATION_MSWORD | &quot;application/msword&quot; | 
 | APPLICATION_VND_OASIS_OPENDOCUMENT_TEXT | &quot;application/vnd.oasis.opendocument.text&quot; | 
 | APPLICATION_VND_OPENXMLFORMATS_OFFICEDOCUMENT_WORDPROCESSINGML_DOCUMENT | &quot;application/vnd.openxmlformats-officedocument.wordprocessingml.document&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -22,7 +22,6 @@
 | **extensionPool** | [**DomainEntityRef**](DomainEntityRef) |  |  [optional] |
 | **ownerType** | [**OwnerTypeEnum**](#Enum--OwnerTypeEnum) |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -33,7 +32,6 @@
 | ACTIVE | &quot;active&quot; | 
 | INACTIVE | &quot;inactive&quot; | 
 | DELETED | &quot;deleted&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: OwnerTypeEnum
@@ -45,9 +43,8 @@
 | PHONE | &quot;PHONE&quot; | 
 | IVR_CONFIG | &quot;IVR_CONFIG&quot; | 
 | GROUP | &quot;GROUP&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

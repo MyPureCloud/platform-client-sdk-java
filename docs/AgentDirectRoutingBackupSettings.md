@@ -10,9 +10,8 @@
 | **waitForAgent** | **Boolean** | Flag indicating if Direct Routing interactions should wait for Direct Routing agent or go immediately to selected backup. |  [optional] |
 | **agentWaitSeconds** | **Integer** | Time (in seconds) that a Direct Routing interaction will wait for Direct Routing agent before going to selected backup. Valid range [60, 864000]. |  [optional] |
 | **backedUpUsers** | **List&lt;String&gt;** | Set of users that this user is a backup for. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

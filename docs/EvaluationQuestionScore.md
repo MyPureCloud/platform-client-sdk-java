@@ -13,9 +13,8 @@
 | **assistedAnswerId** | **String** | AnswerId found with evaluation assistance conditions |  [optional] |
 | **failedKillQuestion** | **Boolean** | Applicable only on fatal questions. Indicates that the answer selected was not the highest score available for the question |  [optional] |
 | **comments** | **String** | Comments from the evaluator specific to this question |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

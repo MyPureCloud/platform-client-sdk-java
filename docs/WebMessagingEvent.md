@@ -8,7 +8,6 @@
 | **eventType** | [**EventTypeEnum**](#Enum--EventTypeEnum) | Type of this event element |  |
 | **coBrowse** | [**WebMessagingEventCoBrowse**](WebMessagingEventCoBrowse) | Cobrowse event. |  [optional] |
 | **presence** | [**WebMessagingEventPresence**](WebMessagingEventPresence) | Presence event. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: EventTypeEnum
@@ -18,9 +17,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | COBROWSE | &quot;CoBrowse&quot; | 
 | PRESENCE | &quot;Presence&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

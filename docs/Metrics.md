@@ -24,7 +24,6 @@
 | **precision** | **Integer** | Precision of linked external metric |  [optional] |
 | **timeDisplayUnit** | [**TimeDisplayUnitEnum**](#Enum--TimeDisplayUnitEnum) | The time unit in which the metric should be displayed -- this parameter is ignored when displaying non-time values |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: UnitTypeEnum
@@ -39,7 +38,6 @@
 | NUMBER | &quot;Number&quot; | 
 | ATTENDANCESTATUS | &quot;AttendanceStatus&quot; | 
 | UNIT | &quot;Unit&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: TimeDisplayUnitEnum
@@ -51,9 +49,8 @@
 | SECONDS | &quot;Seconds&quot; | 
 | MINUTES | &quot;Minutes&quot; | 
 | HOURS | &quot;Hours&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

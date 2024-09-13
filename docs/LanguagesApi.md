@@ -17,7 +17,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteLanguage**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Void deleteLanguage(languageId)
 
@@ -78,7 +80,9 @@ null (empty response body)
 
 # **getLanguage**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [Language](Language) getLanguage(languageId)
 
@@ -140,7 +144,9 @@ try {
 
 # **getLanguages**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [LanguageEntityListing](LanguageEntityListing) getLanguages(pageSize, pageNumber, sortOrder, name)
 
@@ -209,7 +215,6 @@ try {
 # **getLanguagesTranslations**
 
 
-
 > [AvailableTranslations](AvailableTranslations) getLanguagesTranslations()
 
 Get all available languages for translation
@@ -262,7 +267,6 @@ This endpoint does not require any parameters.
 
 
 # **getLanguagesTranslationsBuiltin**
-
 
 
 > Map&lt;String, Object&gt; getLanguagesTranslationsBuiltin(language)
@@ -323,7 +327,6 @@ try {
 # **getLanguagesTranslationsOrganization**
 
 
-
 > Map&lt;String, Object&gt; getLanguagesTranslationsOrganization(language)
 
 Get effective translation for an organization by language
@@ -380,7 +383,6 @@ try {
 
 
 # **getLanguagesTranslationsUser**
-
 
 
 > Map&lt;String, Object&gt; getLanguagesTranslationsUser(userId)
@@ -440,7 +442,9 @@ try {
 
 # **postLanguages**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [Language](Language) postLanguages(body)
 
@@ -500,4 +504,4 @@ try {
 [**Language**](Language)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

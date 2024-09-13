@@ -12,9 +12,8 @@
 | **sessionMaxPercentile** | **Integer** | (Deprecated: use the 'quantile' field instead) Represents the maximum likelihood percentile score reached for a given outcome by the current session. |  [optional] |
 | **quantile** | **Float** | Represents the quantity of sessions that have a maximum probability less than the predicted probability. |  [optional] |
 | **sessionMaxQuantile** | **Float** | Represents the quantity of sessions that have a maximum probability less than the predicted session max probability. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

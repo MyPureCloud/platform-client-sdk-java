@@ -14,7 +14,6 @@
 | **digitalWordsPosition** | [**OperandPosition**](OperandPosition) | Dictates when the operand must occur in a digital interaction |  [optional] |
 | **infixOperator** | [**InfixOperator**](InfixOperator) | Defines a logical operation that is applied on the current operand, against the following operand |  [optional] |
 | **operands** | [**List&lt;Operand&gt;**](Operand) | Contains a new level of operands |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -25,9 +24,8 @@
 | TERM | &quot;Term&quot; | 
 | TOPIC | &quot;Topic&quot; | 
 | OPERANDGROUP | &quot;OperandGroup&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

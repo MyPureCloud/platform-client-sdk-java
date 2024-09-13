@@ -10,7 +10,6 @@
 | **isPaid** | **Boolean** | Indicates if this availability period is paid in Workforce Management schedule |  [optional] |
 | **activityCategory** | [**ActivityCategoryEnum**](#Enum--ActivityCategoryEnum) | Workforce Management activity category for this availability period |  [optional] |
 | **wfmSchedule** | [**WfmScheduleReference**](WfmScheduleReference) | Workforce Management schedule information associated with the available time |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ActivityCategoryEnum
@@ -26,9 +25,8 @@
 | TIMEOFF | &quot;TimeOff&quot; | 
 | TRAINING | &quot;Training&quot; | 
 | UNAVAILABLE | &quot;Unavailable&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

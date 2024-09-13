@@ -18,7 +18,6 @@
 | **secondaryGranularity** | **String** | The granularity of the 'secondaryValues' modification as stored behind the scenes, expressed in the ISO-8601 duration format. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H |  [optional] |
 | **enabled** | **Boolean** | Whether the modification is enabled for the forecast |  |
 | **planningGroupIds** | **List&lt;String&gt;** | The IDs of the planning groups to which this forecast modification applies |  |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -35,7 +34,6 @@
 | CHANGEVALUEOVERRANGE | &quot;ChangeValueOverRange&quot; | 
 | SETVALUESFORINTERVALSET | &quot;SetValuesForIntervalSet&quot; | 
 | SETMULTIGRANULARITYVALUESFORINTERVALSET | &quot;SetMultiGranularityValuesForIntervalSet&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: MetricEnum
@@ -45,7 +43,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | OFFERED | &quot;Offered&quot; | 
 | AVERAGEHANDLETIMESECONDS | &quot;AverageHandleTimeSeconds&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: LegacyMetricEnum
@@ -57,9 +54,8 @@
 | AVERAGEHANDLETIMESECONDS | &quot;AverageHandleTimeSeconds&quot; | 
 | AVERAGETALKTIMESECONDS | &quot;AverageTalkTimeSeconds&quot; | 
 | OFFERED | &quot;Offered&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

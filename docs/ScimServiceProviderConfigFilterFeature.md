@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **supported** | **Boolean** | Indicates whether configuration options are supported. |  [optional] |
 | **maxResults** | **Integer** | The maximum number of results returned from a filtered query. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

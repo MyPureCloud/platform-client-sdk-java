@@ -24,7 +24,6 @@
 | **dateAssigneeChanged** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **assignee** | [**EvaluationCreateUser**](EvaluationCreateUser) |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ResourceTypeEnum
@@ -33,7 +32,6 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | EMAIL | &quot;EMAIL&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -46,9 +44,8 @@
 | FINISHED | &quot;FINISHED&quot; | 
 | INREVIEW | &quot;INREVIEW&quot; | 
 | RETRACTED | &quot;RETRACTED&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

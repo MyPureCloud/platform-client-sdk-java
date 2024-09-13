@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **property** | [**PropertyEnum**](#Enum--PropertyEnum) | Name of the property to filter. |  |
 | **value** | **String** | Value of the property to filter. |  |
-{: class="table table-striped"}
 
 
 ## Enum: PropertyEnum
@@ -24,9 +23,8 @@
 | ENTITYID | &quot;EntityId&quot; | 
 | CONVERSATIONID | &quot;ConversationId&quot; | 
 | SERVICENAME | &quot;ServiceName&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

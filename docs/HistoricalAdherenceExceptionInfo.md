@@ -16,7 +16,6 @@
 | **routingStatus** | [**RoutingStatusEnum**](#Enum--RoutingStatusEnum) | Actual underlying routing status, used to determine whether a user is actually in adherence when OnQueue |  [optional] |
 | **impact** | [**ImpactEnum**](#Enum--ImpactEnum) | The impact of the current adherence state for this user |  [optional] |
 | **secondaryPresenceLookupId** | **String** | The lookup ID used to retrieve the actual secondary status from map of lookup ID to corresponding secondary presence ID |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ScheduledActivityCategoryEnum
@@ -33,7 +32,6 @@
 | TRAINING | &quot;Training&quot; | 
 | UNAVAILABLE | &quot;Unavailable&quot; | 
 | UNSCHEDULED | &quot;Unscheduled&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ActualActivityCategoryEnum
@@ -50,7 +48,6 @@
 | TRAINING | &quot;Training&quot; | 
 | UNAVAILABLE | &quot;Unavailable&quot; | 
 | UNSCHEDULED | &quot;Unscheduled&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: SystemPresenceEnum
@@ -68,7 +65,6 @@
 | TRAINING | &quot;Training&quot; | 
 | MEETING | &quot;Meeting&quot; | 
 | BREAK | &quot;Break&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: RoutingStatusEnum
@@ -81,7 +77,6 @@
 | INTERACTING | &quot;INTERACTING&quot; | 
 | NOT_RESPONDING | &quot;NOT_RESPONDING&quot; | 
 | COMMUNICATING | &quot;COMMUNICATING&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ImpactEnum
@@ -93,9 +88,8 @@
 | NEGATIVE | &quot;Negative&quot; | 
 | NEUTRAL | &quot;Neutral&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

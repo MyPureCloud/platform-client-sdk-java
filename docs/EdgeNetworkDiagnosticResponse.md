@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **commandCorrelationId** | **String** | UUID of each executed command on edge |  [optional] |
 | **diagnostics** | **String** | Response string of executed command from edge |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

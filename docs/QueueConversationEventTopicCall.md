@@ -35,7 +35,6 @@
 | **afterCallWorkRequired** | **Boolean** | Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested. |  [optional] |
 | **agentAssistantId** | **String** | UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation. |  [optional] |
 | **queueMediaSettings** | [**QueueConversationEventTopicQueueMediaSettings**](QueueConversationEventTopicQueueMediaSettings) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -54,7 +53,6 @@
 | CONVERTING | &quot;converting&quot; | 
 | TRANSMITTING | &quot;transmitting&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: InitialStateEnum
@@ -73,7 +71,6 @@
 | CONVERTING | &quot;converting&quot; | 
 | TRANSMITTING | &quot;transmitting&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: RecordingStateEnum
@@ -84,7 +81,6 @@
 | NONE | &quot;none&quot; | 
 | ACTIVE | &quot;active&quot; | 
 | PAUSED | &quot;paused&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DisconnectTypeEnum
@@ -110,7 +106,6 @@
 | OTHER | &quot;other&quot; | 
 | SPAM | &quot;spam&quot; | 
 | UNCALLABLE | &quot;uncallable&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DirectionEnum
@@ -120,9 +115,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | OUTBOUND | &quot;outbound&quot; | 
 | INBOUND | &quot;inbound&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

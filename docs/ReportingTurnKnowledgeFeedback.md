@@ -8,9 +8,8 @@
 | **searchId** | **String** | The ID of the original knowledge search that this feedback relates to. |  [optional] |
 | **rating** | **Integer** | The feedback rating for the search (1.0 - 5.0). 1 = Negative, 5 = Positive. |  [optional] |
 | **documents** | [**List&lt;ReportingTurnKnowledgeDocument&gt;**](ReportingTurnKnowledgeDocument) | The list of search documents that the feedback applies to. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

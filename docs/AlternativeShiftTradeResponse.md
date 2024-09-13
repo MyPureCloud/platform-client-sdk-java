@@ -22,7 +22,6 @@
 | **violations** | [**List<ViolationsEnum>**](#Enum--ViolationsEnum) | A list of trade match violations |  |
 | **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Version metadata for this alternative shift trade |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -35,7 +34,6 @@
 | EXPIRED | &quot;Expired&quot; | 
 | SUBMITTED | &quot;Submitted&quot; | 
 | APPROVED | &quot;Approved&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ProcessingStatusEnum
@@ -49,7 +47,6 @@
 | SCHEDULEUPDATED | &quot;ScheduleUpdated&quot; | 
 | WAITINGFORREVIEW | &quot;WaitingForReview&quot; | 
 | REVIEWING | &quot;Reviewing&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ViolationsEnum
@@ -57,9 +54,8 @@
 | Name | Value |
 | ---- | ----- |
 | SERVICEGOALSNOTMET | &quot;ServiceGoalsNotMet&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

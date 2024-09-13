@@ -17,7 +17,6 @@
 | **senderCommunicationId** | **String** | Communication of sender (v2 chats only) |  [optional] |
 | **participantPurpose** | **String** | Participant purpose of sender (v2 chats only) |  [optional] |
 | **user** | [**ChatMessageUser**](ChatMessageUser) | The user information for the sender (if available) |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: BodyTypeEnum
@@ -32,9 +31,8 @@
 | MEMBERJOIN | &quot;MEMBERJOIN&quot; | 
 | MEMBERLEAVE | &quot;MEMBERLEAVE&quot; | 
 | MEDIAREQUEST | &quot;MEDIAREQUEST&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

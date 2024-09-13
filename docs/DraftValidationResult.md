@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **valid** | **Boolean** | Indicates if configuration is valid |  [optional] |
 | **errors** | [**List&lt;ErrorBody&gt;**](ErrorBody) | List of errors causing validation failure |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

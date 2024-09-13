@@ -13,7 +13,6 @@
 | **occurrence** | [**ActivityPlanOccurrenceReference**](ActivityPlanOccurrenceReference) | The occurrence associated with this job if type == 'DeleteOccurrence' |  [optional] |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of the job |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -24,7 +23,6 @@
 | PROCESSING | &quot;Processing&quot; | 
 | COMPLETE | &quot;Complete&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -34,9 +32,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | RUNPLAN | &quot;RunPlan&quot; | 
 | DELETEOCCURRENCE | &quot;DeleteOccurrence&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

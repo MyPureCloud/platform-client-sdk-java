@@ -32,7 +32,6 @@
 | **agentAssistantId** | **String** | UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation. |  [optional] |
 | **byoSmsIntegrationId** | **String** |  |  [optional] |
 | **queueMediaSettings** | [**QueueConversationVideoEventTopicQueueMediaSettings**](QueueConversationVideoEventTopicQueueMediaSettings) | Represents the queue setting for this media. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -43,7 +42,6 @@
 | ALERTING | &quot;alerting&quot; | 
 | CONNECTED | &quot;connected&quot; | 
 | DISCONNECTED | &quot;disconnected&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: InitialStateEnum
@@ -54,7 +52,6 @@
 | ALERTING | &quot;alerting&quot; | 
 | CONNECTED | &quot;connected&quot; | 
 | DISCONNECTED | &quot;disconnected&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DirectionEnum
@@ -64,7 +61,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | OUTBOUND | &quot;outbound&quot; | 
 | INBOUND | &quot;inbound&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DisconnectTypeEnum
@@ -90,7 +86,6 @@
 | OTHER | &quot;other&quot; | 
 | SPAM | &quot;spam&quot; | 
 | UNCALLABLE | &quot;uncallable&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -111,9 +106,8 @@
 | WEBMESSAGING | &quot;webmessaging&quot; | 
 | OPEN | &quot;open&quot; | 
 | INSTAGRAM | &quot;instagram&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

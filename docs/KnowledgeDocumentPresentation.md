@@ -12,7 +12,6 @@
 | **sessionId** | **String** | Knowledge session ID. |  [optional] |
 | **conversationContext** | [**KnowledgeConversationContext**](KnowledgeConversationContext) | Conversation context information if the documents were presented in the context of a conversation. |  [optional] |
 | **application** | [**KnowledgeSearchClientApplication**](KnowledgeSearchClientApplication) | The client application in which the documents were presented. |  |
-{: class="table table-striped"}
 
 
 ## Enum: QueryTypeEnum
@@ -27,7 +26,6 @@
 | MANUALSEARCH | &quot;ManualSearch&quot; | 
 | RECOMMENDATION | &quot;Recommendation&quot; | 
 | SUGGESTION | &quot;Suggestion&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: SurfacingMethodEnum
@@ -39,9 +37,8 @@
 | ARTICLE | &quot;Article&quot; | 
 | SNIPPET | &quot;Snippet&quot; | 
 | HIGHLIGHT | &quot;Highlight&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

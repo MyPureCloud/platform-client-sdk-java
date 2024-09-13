@@ -9,9 +9,8 @@
 | **selfUri** | **String** | The URI for this object |  [optional] |
 | **weekDate** | **String** | The weekDate of the short term forecast in yyyy-MM-dd format |  |
 | **description** | **String** | The description of the short term forecast |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

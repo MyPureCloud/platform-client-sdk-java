@@ -8,7 +8,6 @@
 | **data** | **String** | Parameter for this reaction. For transfer_flow, this would be the outbound flow id. |  [optional] |
 | **name** | **String** | Name of the parameter for this reaction. For transfer_flow, this would be the outbound flow name. |  [optional] |
 | **reactionType** | [**ReactionTypeEnum**](#Enum--ReactionTypeEnum) | The reaction to take for a given call analysis result. |  |
-{: class="table table-striped"}
 
 
 ## Enum: ReactionTypeEnum
@@ -20,9 +19,8 @@
 | TRANSFER | &quot;transfer&quot; | 
 | TRANSFER_FLOW | &quot;transfer_flow&quot; | 
 | PLAY_FILE | &quot;play_file&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

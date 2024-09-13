@@ -13,7 +13,6 @@
 | **outlierInfo** | [**OutlierInfo**](OutlierInfo) | Details about this utterance being an outlier or not. |  [optional] |
 | **confusionInfo** | [**ConfusionDetails**](ConfusionDetails) | Confusion details with other utterances. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: LanguageEnum
@@ -37,7 +36,6 @@
 | PT_BR | &quot;pt-br&quot; | 
 | PT_PT | &quot;pt-pt&quot; | 
 | NL_NL | &quot;nl-nl&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StaticValidationResultsEnum
@@ -48,9 +46,8 @@
 | TOOMANYUTTERANCES | &quot;TooManyUtterances&quot; |
 | UTTERANCETOOSHORT | &quot;UtteranceTooShort&quot; |
 | UTTERANCETOOLONG | &quot;UtteranceTooLong&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

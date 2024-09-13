@@ -17,7 +17,6 @@
 | **conversationContext** | [**KnowledgeConversationContextResponse**](KnowledgeConversationContextResponse) | Conversation context information if the search is initiated in the context of a conversation. |  [optional] |
 | **confidenceThreshold** | **Float** | The confidence threshold for the search results. If applied, the returned results will have an equal or higher confidence than the threshold. |  [optional] |
 | **answerGeneration** | [**KnowledgeAnswerGenerationResponse**](KnowledgeAnswerGenerationResponse) | The results with AI-generated answer if the answerMode request property contains \"AnswerGeneration\". |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: QueryTypeEnum
@@ -28,9 +27,8 @@
 | AUTOSEARCH | &quot;AutoSearch&quot; | 
 | MANUALSEARCH | &quot;ManualSearch&quot; | 
 | SUGGESTION | &quot;Suggestion&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

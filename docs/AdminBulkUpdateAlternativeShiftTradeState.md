@@ -8,7 +8,6 @@
 | **tradeId** | **String** | The ID of the trade for this alternative shift trade |  |
 | **state** | [**StateEnum**](#Enum--StateEnum) | The new alternative shift trade state |  |
 | **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Version metadata for this alternative shift trade |  |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -18,9 +17,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | APPROVED | &quot;Approved&quot; | 
 | DENIED | &quot;Denied&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

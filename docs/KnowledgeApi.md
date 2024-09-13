@@ -54,6 +54,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchKnowledgeKnowledgebase**](KnowledgeApi#patchKnowledgeKnowledgebase) | Update knowledge base |
 | [**patchKnowledgeKnowledgebaseCategory**](KnowledgeApi#patchKnowledgeKnowledgebaseCategory) | Update category |
 | [**patchKnowledgeKnowledgebaseDocument**](KnowledgeApi#patchKnowledgeKnowledgebaseDocument) | Update document. |
+| [**patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId**](KnowledgeApi#patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId) | Update feedback on a document |
 | [**patchKnowledgeKnowledgebaseDocumentVariation**](KnowledgeApi#patchKnowledgeKnowledgebaseDocumentVariation) | Update a variation for a document. |
 | [**patchKnowledgeKnowledgebaseDocumentsSearchSearchId**](KnowledgeApi#patchKnowledgeKnowledgebaseDocumentsSearchSearchId) | Update search result. |
 | [**patchKnowledgeKnowledgebaseImportJob**](KnowledgeApi#patchKnowledgeKnowledgebaseImportJob) | Start import job |
@@ -68,6 +69,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postKnowledgeGuestSessionDocumentCopies**](KnowledgeApi#postKnowledgeGuestSessionDocumentCopies) | Indicate that the document was copied by the user. |
 | [**postKnowledgeGuestSessionDocumentFeedback**](KnowledgeApi#postKnowledgeGuestSessionDocumentFeedback) | Give feedback on a document |
 | [**postKnowledgeGuestSessionDocumentViews**](KnowledgeApi#postKnowledgeGuestSessionDocumentViews) | Create view event for a document. |
+| [**postKnowledgeGuestSessionDocumentsAnswers**](KnowledgeApi#postKnowledgeGuestSessionDocumentsAnswers) | Answer documents. |
 | [**postKnowledgeGuestSessionDocumentsPresentations**](KnowledgeApi#postKnowledgeGuestSessionDocumentsPresentations) | Indicate that documents were presented to the user. |
 | [**postKnowledgeGuestSessionDocumentsSearch**](KnowledgeApi#postKnowledgeGuestSessionDocumentsSearch) | Search the documents in a guest session. |
 | [**postKnowledgeGuestSessionDocumentsSearchSuggestions**](KnowledgeApi#postKnowledgeGuestSessionDocumentsSearchSuggestions) | Query the knowledge documents to provide suggestions for auto completion. |
@@ -79,6 +81,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postKnowledgeKnowledgebaseDocumentVersions**](KnowledgeApi#postKnowledgeKnowledgebaseDocumentVersions) | Creates or restores a document version. |
 | [**postKnowledgeKnowledgebaseDocumentViews**](KnowledgeApi#postKnowledgeKnowledgebaseDocumentViews) | Create view for a document. |
 | [**postKnowledgeKnowledgebaseDocuments**](KnowledgeApi#postKnowledgeKnowledgebaseDocuments) | Create document. |
+| [**postKnowledgeKnowledgebaseDocumentsAnswers**](KnowledgeApi#postKnowledgeKnowledgebaseDocumentsAnswers) | Answer documents. |
 | [**postKnowledgeKnowledgebaseDocumentsBulkRemove**](KnowledgeApi#postKnowledgeKnowledgebaseDocumentsBulkRemove) | Bulk remove documents. |
 | [**postKnowledgeKnowledgebaseDocumentsBulkUpdate**](KnowledgeApi#postKnowledgeKnowledgebaseDocumentsBulkUpdate) | Bulk update documents. |
 | [**postKnowledgeKnowledgebaseDocumentsPresentations**](KnowledgeApi#postKnowledgeKnowledgebaseDocumentsPresentations) | Indicate that documents were presented to the user. |
@@ -104,7 +107,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 
 # **deleteKnowledgeKnowledgebase**
-
 
 
 > [KnowledgeBase](KnowledgeBase) deleteKnowledgeKnowledgebase(knowledgeBaseId)
@@ -164,7 +166,6 @@ try {
 
 
 # **deleteKnowledgeKnowledgebaseCategory**
-
 
 
 > [CategoryResponse](CategoryResponse) deleteKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId)
@@ -228,7 +229,6 @@ try {
 # **deleteKnowledgeKnowledgebaseDocument**
 
 
-
 > Void deleteKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId)
 
 Delete document.
@@ -287,7 +287,6 @@ null (empty response body)
 
 
 # **deleteKnowledgeKnowledgebaseDocumentVariation**
-
 
 
 > Void deleteKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId)
@@ -353,7 +352,6 @@ null (empty response body)
 # **deleteKnowledgeKnowledgebaseExportJob**
 
 
-
 > Void deleteKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId)
 
 Delete export job
@@ -412,7 +410,6 @@ null (empty response body)
 
 
 # **deleteKnowledgeKnowledgebaseImportJob**
-
 
 
 > Void deleteKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId)
@@ -475,7 +472,6 @@ null (empty response body)
 # **deleteKnowledgeKnowledgebaseLabel**
 
 
-
 > [LabelResponse](LabelResponse) deleteKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId)
 
 Delete label
@@ -536,7 +532,9 @@ try {
 
 # **deleteKnowledgeKnowledgebaseLanguageCategory**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [KnowledgeCategory](KnowledgeCategory) deleteKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode)
 
@@ -600,7 +598,9 @@ try {
 
 # **deleteKnowledgeKnowledgebaseLanguageDocument**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [KnowledgeDocument](KnowledgeDocument) deleteKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode)
 
@@ -664,7 +664,9 @@ try {
 
 # **deleteKnowledgeKnowledgebaseLanguageDocumentsImport**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Void deleteKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId)
 
@@ -726,7 +728,6 @@ null (empty response body)
 
 
 # **getKnowledgeGuestSessionCategories**
-
 
 
 > [GuestCategoryResponseListing](GuestCategoryResponseListing) getKnowledgeGuestSessionCategories(sessionId, before, after, pageSize, parentId, isRoot, name, sortBy, expand, includeDocumentCount)
@@ -792,7 +793,6 @@ try {
 # **getKnowledgeGuestSessionDocument**
 
 
-
 > [KnowledgeGuestDocumentResponse](KnowledgeGuestDocumentResponse) getKnowledgeGuestSessionDocument(sessionId, documentId)
 
 Get a knowledge document by ID.
@@ -838,7 +838,6 @@ try {
 
 
 # **getKnowledgeGuestSessionDocuments**
-
 
 
 > [KnowledgeGuestDocumentResponseListing](KnowledgeGuestDocumentResponseListing) getKnowledgeGuestSessionDocuments(sessionId, categoryId, pageSize)
@@ -888,7 +887,6 @@ try {
 
 
 # **getKnowledgeKnowledgebase**
-
 
 
 > [KnowledgeBase](KnowledgeBase) getKnowledgeKnowledgebase(knowledgeBaseId)
@@ -948,7 +946,6 @@ try {
 
 
 # **getKnowledgeKnowledgebaseCategories**
-
 
 
 > [CategoryResponseListing](CategoryResponseListing) getKnowledgeKnowledgebaseCategories(knowledgeBaseId, before, after, pageSize, parentId, isRoot, name, sortBy, expand, includeDocumentCount)
@@ -1028,7 +1025,6 @@ try {
 # **getKnowledgeKnowledgebaseCategory**
 
 
-
 > [CategoryResponse](CategoryResponse) getKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId)
 
 Get category
@@ -1088,7 +1084,6 @@ try {
 
 
 # **getKnowledgeKnowledgebaseDocument**
-
 
 
 > [KnowledgeDocumentResponse](KnowledgeDocumentResponse) getKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, expand, state)
@@ -1154,7 +1149,6 @@ try {
 
 
 # **getKnowledgeKnowledgebaseDocumentFeedback**
-
 
 
 > [KnowledgeDocumentFeedbackResponseListing](KnowledgeDocumentFeedbackResponseListing) getKnowledgeKnowledgebaseDocumentFeedback(knowledgeBaseId, documentId, before, after, pageSize, onlyCommented, documentVersionId, documentVariationId, appType, queryType, userId, queueId, state)
@@ -1240,7 +1234,6 @@ try {
 # **getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId**
 
 
-
 > [KnowledgeDocumentFeedbackResponse](KnowledgeDocumentFeedbackResponse) getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId, documentId, feedbackId)
 
 Get a single feedback record given on a document
@@ -1302,7 +1295,6 @@ try {
 
 
 # **getKnowledgeKnowledgebaseDocumentVariation**
-
 
 
 > [DocumentVariation](DocumentVariation) getKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, documentState)
@@ -1368,7 +1360,6 @@ try {
 
 
 # **getKnowledgeKnowledgebaseDocumentVariations**
-
 
 
 > [DocumentVariationListing](DocumentVariationListing) getKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, before, after, pageSize, documentState)
@@ -1440,7 +1431,6 @@ try {
 # **getKnowledgeKnowledgebaseDocumentVersion**
 
 
-
 > [KnowledgeDocumentVersion](KnowledgeDocumentVersion) getKnowledgeKnowledgebaseDocumentVersion(knowledgeBaseId, documentId, versionId, expand)
 
 Get document version.
@@ -1506,7 +1496,6 @@ try {
 # **getKnowledgeKnowledgebaseDocumentVersionVariation**
 
 
-
 > [KnowledgeDocumentVersionVariation](KnowledgeDocumentVersionVariation) getKnowledgeKnowledgebaseDocumentVersionVariation(knowledgeBaseId, documentId, versionId, variationId)
 
 Get variation for the given document version.
@@ -1570,7 +1559,6 @@ try {
 
 
 # **getKnowledgeKnowledgebaseDocumentVersionVariations**
-
 
 
 > [KnowledgeDocumentVersionVariationListing](KnowledgeDocumentVersionVariationListing) getKnowledgeKnowledgebaseDocumentVersionVariations(knowledgeBaseId, documentId, versionId, before, after, pageSize)
@@ -1642,7 +1630,6 @@ try {
 # **getKnowledgeKnowledgebaseDocumentVersions**
 
 
-
 > [KnowledgeDocumentVersionListing](KnowledgeDocumentVersionListing) getKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId, documentId, before, after, pageSize, expand)
 
 Get document versions.
@@ -1710,7 +1697,6 @@ try {
 
 
 # **getKnowledgeKnowledgebaseDocuments**
-
 
 
 > [KnowledgeDocumentResponseListing](KnowledgeDocumentResponseListing) getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, before, after, pageSize, interval, documentId, categoryId, includeSubcategories, includeDrafts, labelIds, expand, externalIds)
@@ -1794,7 +1780,6 @@ try {
 # **getKnowledgeKnowledgebaseExportJob**
 
 
-
 > [KnowledgeExportJobResponse](KnowledgeExportJobResponse) getKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId)
 
 Get export job report
@@ -1854,7 +1839,6 @@ try {
 
 
 # **getKnowledgeKnowledgebaseImportJob**
-
 
 
 > [KnowledgeImportJobResponse](KnowledgeImportJobResponse) getKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, expand)
@@ -1920,7 +1904,6 @@ try {
 # **getKnowledgeKnowledgebaseLabel**
 
 
-
 > [LabelResponse](LabelResponse) getKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId)
 
 Get label
@@ -1980,7 +1963,6 @@ try {
 
 
 # **getKnowledgeKnowledgebaseLabels**
-
 
 
 > [LabelListing](LabelListing) getKnowledgeKnowledgebaseLabels(knowledgeBaseId, before, after, pageSize, name, includeDocumentCount)
@@ -2051,7 +2033,9 @@ try {
 
 # **getKnowledgeKnowledgebaseLanguageCategories**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [CategoryListing](CategoryListing) getKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, before, after, limit, pageSize, name)
 
@@ -2123,7 +2107,9 @@ try {
 
 # **getKnowledgeKnowledgebaseLanguageCategory**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [KnowledgeExtendedCategory](KnowledgeExtendedCategory) getKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode)
 
@@ -2187,7 +2173,9 @@ try {
 
 # **getKnowledgeKnowledgebaseLanguageDocument**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [KnowledgeDocument](KnowledgeDocument) getKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode)
 
@@ -2251,7 +2239,9 @@ try {
 
 # **getKnowledgeKnowledgebaseLanguageDocumentUpload**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [KnowledgeDocumentContentUpload](KnowledgeDocumentContentUpload) getKnowledgeKnowledgebaseLanguageDocumentUpload(documentId, knowledgeBaseId, languageCode, uploadId)
 
@@ -2319,7 +2309,9 @@ try {
 
 # **getKnowledgeKnowledgebaseLanguageDocuments**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [DocumentListing](DocumentListing) getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, before, after, limit, pageSize, categories, title, sortBy, sortOrder, documentIds)
 
@@ -2399,7 +2391,9 @@ try {
 
 # **getKnowledgeKnowledgebaseLanguageDocumentsImport**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [KnowledgeImport](KnowledgeImport) getKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId)
 
@@ -2463,7 +2457,9 @@ try {
 
 # **getKnowledgeKnowledgebaseLanguageTraining**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [KnowledgeTraining](KnowledgeTraining) getKnowledgeKnowledgebaseLanguageTraining(knowledgeBaseId, languageCode, trainingId)
 
@@ -2527,7 +2523,9 @@ try {
 
 # **getKnowledgeKnowledgebaseLanguageTrainings**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [TrainingListing](TrainingListing) getKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode, before, after, limit, pageSize, knowledgeDocumentsState)
 
@@ -2598,7 +2596,6 @@ try {
 
 
 # **getKnowledgeKnowledgebaseOperations**
-
 
 
 > [OperationListing](OperationListing) getKnowledgeKnowledgebaseOperations(knowledgeBaseId, before, after, pageSize, userId, type, status, interval, sourceId)
@@ -2678,7 +2675,6 @@ try {
 # **getKnowledgeKnowledgebaseOperationsUsersQuery**
 
 
-
 > [OperationCreatorUserResponse](OperationCreatorUserResponse) getKnowledgeKnowledgebaseOperationsUsersQuery(knowledgeBaseId)
 
 Get ids of operation creator users and oauth clients
@@ -2738,7 +2734,6 @@ try {
 
 
 # **getKnowledgeKnowledgebaseParseJob**
-
 
 
 > [KnowledgeParseJobResponse](KnowledgeParseJobResponse) getKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, expand)
@@ -2806,7 +2801,6 @@ try {
 # **getKnowledgeKnowledgebaseUnansweredGroup**
 
 
-
 > [UnansweredGroup](UnansweredGroup) getKnowledgeKnowledgebaseUnansweredGroup(knowledgeBaseId, groupId, app, dateStart, dateEnd)
 
 Get knowledge base unanswered group for a particular groupId
@@ -2872,7 +2866,6 @@ try {
 
 
 # **getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup**
-
 
 
 > [UnansweredPhraseGroup](UnansweredPhraseGroup) getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, app, dateStart, dateEnd)
@@ -2944,7 +2937,6 @@ try {
 # **getKnowledgeKnowledgebaseUnansweredGroups**
 
 
-
 > [UnansweredGroups](UnansweredGroups) getKnowledgeKnowledgebaseUnansweredGroups(knowledgeBaseId, app, dateStart, dateEnd)
 
 Get knowledge base unanswered groups
@@ -3010,7 +3002,6 @@ try {
 # **getKnowledgeKnowledgebaseUploadsUrlsJob**
 
 
-
 > [GetUploadSourceUrlJobStatusResponse](GetUploadSourceUrlJobStatusResponse) getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId)
 
 Get content upload from URL job status
@@ -3072,7 +3063,6 @@ try {
 
 
 # **getKnowledgeKnowledgebases**
-
 
 
 > [KnowledgeBaseListing](KnowledgeBaseListing) getKnowledgeKnowledgebases(before, after, limit, pageSize, name, coreLanguage, published, sortBy, sortOrder)
@@ -3150,7 +3140,6 @@ try {
 # **patchKnowledgeGuestSessionDocumentsSearchSearchId**
 
 
-
 > Void patchKnowledgeGuestSessionDocumentsSearchSearchId(sessionId, searchId, body)
 
 Update search result.
@@ -3197,7 +3186,6 @@ null (empty response body)
 
 
 # **patchKnowledgeKnowledgebase**
-
 
 
 > [KnowledgeBase](KnowledgeBase) patchKnowledgeKnowledgebase(knowledgeBaseId, body)
@@ -3259,7 +3247,6 @@ try {
 
 
 # **patchKnowledgeKnowledgebaseCategory**
-
 
 
 > [CategoryResponse](CategoryResponse) patchKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId, body)
@@ -3325,7 +3312,6 @@ try {
 # **patchKnowledgeKnowledgebaseDocument**
 
 
-
 > [KnowledgeDocumentResponse](KnowledgeDocumentResponse) patchKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, body)
 
 Update document.
@@ -3386,8 +3372,72 @@ try {
 [**KnowledgeDocumentResponse**](KnowledgeDocumentResponse)
 
 
-# **patchKnowledgeKnowledgebaseDocumentVariation**
+# **patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId**
 
+
+> [KnowledgeDocumentFeedbackResponse](KnowledgeDocumentFeedbackResponse) patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId, documentId, feedbackId, body)
+
+Update feedback on a document
+
+Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback/{feedbackId}  
+
+Requires ANY permissions: 
+
+* knowledge:feedback:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
+String documentId = "documentId_example"; // String | Document ID.
+String feedbackId = "feedbackId_example"; // String | Feedback ID.
+KnowledgeDocumentFeedbackUpdateRequest body = new KnowledgeDocumentFeedbackUpdateRequest(); // KnowledgeDocumentFeedbackUpdateRequest | 
+try {
+    KnowledgeDocumentFeedbackResponse result = apiInstance.patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId, documentId, feedbackId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID. | 
+| **documentId** | **String**| Document ID. | 
+| **feedbackId** | **String**| Feedback ID. | 
+| **body** | [**KnowledgeDocumentFeedbackUpdateRequest**](KnowledgeDocumentFeedbackUpdateRequest)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**KnowledgeDocumentFeedbackResponse**](KnowledgeDocumentFeedbackResponse)
+
+
+# **patchKnowledgeKnowledgebaseDocumentVariation**
 
 
 > [DocumentVariation](DocumentVariation) patchKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, body)
@@ -3455,7 +3505,6 @@ try {
 # **patchKnowledgeKnowledgebaseDocumentsSearchSearchId**
 
 
-
 > Void patchKnowledgeKnowledgebaseDocumentsSearchSearchId(knowledgeBaseId, searchId, body)
 
 Update search result.
@@ -3516,7 +3565,6 @@ null (empty response body)
 
 
 # **patchKnowledgeKnowledgebaseImportJob**
-
 
 
 > [KnowledgeImportJobResponse](KnowledgeImportJobResponse) patchKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, body)
@@ -3582,7 +3630,6 @@ try {
 # **patchKnowledgeKnowledgebaseLabel**
 
 
-
 > [LabelResponse](LabelResponse) patchKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId, body)
 
 Update label
@@ -3645,7 +3692,9 @@ try {
 
 # **patchKnowledgeKnowledgebaseLanguageCategory**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [KnowledgeExtendedCategory](KnowledgeExtendedCategory) patchKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode, body)
 
@@ -3711,7 +3760,9 @@ try {
 
 # **patchKnowledgeKnowledgebaseLanguageDocument**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [KnowledgeDocument](KnowledgeDocument) patchKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode, body)
 
@@ -3777,7 +3828,9 @@ try {
 
 # **patchKnowledgeKnowledgebaseLanguageDocuments**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [DocumentListing](DocumentListing) patchKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body)
 
@@ -3841,7 +3894,9 @@ try {
 
 # **patchKnowledgeKnowledgebaseLanguageDocumentsImport**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [KnowledgeImport](KnowledgeImport) patchKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId, body)
 
@@ -3909,7 +3964,6 @@ try {
 # **patchKnowledgeKnowledgebaseParseJob**
 
 
-
 > Void patchKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, body)
 
 Send update to the parse operation
@@ -3972,7 +4026,6 @@ null (empty response body)
 
 
 # **patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup**
-
 
 
 > [UnansweredPhraseGroupUpdateResponse](UnansweredPhraseGroupUpdateResponse) patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, body)
@@ -4041,7 +4094,6 @@ try {
 # **postKnowledgeDocumentuploads**
 
 
-
 > [UploadUrlResponse](UploadUrlResponse) postKnowledgeDocumentuploads(body)
 
 Creates a presigned URL for uploading a knowledge import file with a set of documents
@@ -4101,7 +4153,6 @@ try {
 # **postKnowledgeGuestSessionDocumentCopies**
 
 
-
 > Void postKnowledgeGuestSessionDocumentCopies(sessionId, documentId, body)
 
 Indicate that the document was copied by the user.
@@ -4148,7 +4199,6 @@ null (empty response body)
 
 
 # **postKnowledgeGuestSessionDocumentFeedback**
-
 
 
 > [KnowledgeGuestDocumentFeedback](KnowledgeGuestDocumentFeedback) postKnowledgeGuestSessionDocumentFeedback(sessionId, documentId, body)
@@ -4200,7 +4250,6 @@ try {
 # **postKnowledgeGuestSessionDocumentViews**
 
 
-
 > Void postKnowledgeGuestSessionDocumentViews(sessionId, documentId, body)
 
 Create view event for a document.
@@ -4246,8 +4295,54 @@ try {
 null (empty response body)
 
 
-# **postKnowledgeGuestSessionDocumentsPresentations**
+# **postKnowledgeGuestSessionDocumentsAnswers**
 
+
+> [KnowledgeGuestAnswerDocumentsResponse](KnowledgeGuestAnswerDocumentsResponse) postKnowledgeGuestSessionDocumentsAnswers(sessionId, body)
+
+Answer documents.
+
+Wraps POST /api/v2/knowledge/guest/sessions/{sessionId}/documents/answers  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String sessionId = "sessionId_example"; // String | Knowledge guest session ID.
+KnowledgeDocumentsAnswerFilter body = new KnowledgeDocumentsAnswerFilter(); // KnowledgeDocumentsAnswerFilter | 
+try {
+    KnowledgeGuestAnswerDocumentsResponse result = apiInstance.postKnowledgeGuestSessionDocumentsAnswers(sessionId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeGuestSessionDocumentsAnswers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sessionId** | **String**| Knowledge guest session ID. | 
+| **body** | [**KnowledgeDocumentsAnswerFilter**](KnowledgeDocumentsAnswerFilter)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**KnowledgeGuestAnswerDocumentsResponse**](KnowledgeGuestAnswerDocumentsResponse)
+
+
+# **postKnowledgeGuestSessionDocumentsPresentations**
 
 
 > Void postKnowledgeGuestSessionDocumentsPresentations(sessionId, body)
@@ -4294,7 +4389,6 @@ null (empty response body)
 
 
 # **postKnowledgeGuestSessionDocumentsSearch**
-
 
 
 > [KnowledgeDocumentGuestSearch](KnowledgeDocumentGuestSearch) postKnowledgeGuestSessionDocumentsSearch(sessionId, expand, body)
@@ -4346,7 +4440,6 @@ try {
 # **postKnowledgeGuestSessionDocumentsSearchSuggestions**
 
 
-
 > [KnowledgeGuestDocumentSuggestion](KnowledgeGuestDocumentSuggestion) postKnowledgeGuestSessionDocumentsSearchSuggestions(sessionId, body)
 
 Query the knowledge documents to provide suggestions for auto completion.
@@ -4394,7 +4487,6 @@ try {
 # **postKnowledgeGuestSessions**
 
 
-
 > [KnowledgeGuestSession](KnowledgeGuestSession) postKnowledgeGuestSessions(body)
 
 Create guest session
@@ -4438,7 +4530,6 @@ try {
 
 
 # **postKnowledgeKnowledgebaseCategories**
-
 
 
 > [CategoryResponse](CategoryResponse) postKnowledgeKnowledgebaseCategories(knowledgeBaseId, body)
@@ -4500,7 +4591,6 @@ try {
 
 
 # **postKnowledgeKnowledgebaseDocumentCopies**
-
 
 
 > Void postKnowledgeKnowledgebaseDocumentCopies(knowledgeBaseId, documentId, body)
@@ -4565,7 +4655,6 @@ null (empty response body)
 # **postKnowledgeKnowledgebaseDocumentFeedback**
 
 
-
 > [KnowledgeDocumentFeedbackResponse](KnowledgeDocumentFeedbackResponse) postKnowledgeKnowledgebaseDocumentFeedback(knowledgeBaseId, documentId, body)
 
 Give feedback on a document
@@ -4627,7 +4716,6 @@ try {
 
 
 # **postKnowledgeKnowledgebaseDocumentVariations**
-
 
 
 > [DocumentVariation](DocumentVariation) postKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, body)
@@ -4694,7 +4782,6 @@ try {
 # **postKnowledgeKnowledgebaseDocumentVersions**
 
 
-
 > [KnowledgeDocumentVersion](KnowledgeDocumentVersion) postKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId, documentId, body)
 
 Creates or restores a document version.
@@ -4756,7 +4843,6 @@ try {
 
 
 # **postKnowledgeKnowledgebaseDocumentViews**
-
 
 
 > Void postKnowledgeKnowledgebaseDocumentViews(knowledgeBaseId, documentId, body)
@@ -4821,7 +4907,6 @@ null (empty response body)
 # **postKnowledgeKnowledgebaseDocuments**
 
 
-
 > [KnowledgeDocumentResponse](KnowledgeDocumentResponse) postKnowledgeKnowledgebaseDocuments(knowledgeBaseId, body)
 
 Create document.
@@ -4880,8 +4965,69 @@ try {
 [**KnowledgeDocumentResponse**](KnowledgeDocumentResponse)
 
 
-# **postKnowledgeKnowledgebaseDocumentsBulkRemove**
+# **postKnowledgeKnowledgebaseDocumentsAnswers**
 
+
+> [KnowledgeAnswerDocumentsResponse](KnowledgeAnswerDocumentsResponse) postKnowledgeKnowledgebaseDocumentsAnswers(knowledgeBaseId, body)
+
+Answer documents.
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/answers  
+
+Requires ALL permissions: 
+
+* knowledge:document:view
+* knowledge:documentAnswer:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+KnowledgeDocumentsAnswerFilter body = new KnowledgeDocumentsAnswerFilter(); // KnowledgeDocumentsAnswerFilter | 
+try {
+    KnowledgeAnswerDocumentsResponse result = apiInstance.postKnowledgeKnowledgebaseDocumentsAnswers(knowledgeBaseId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeKnowledgebaseDocumentsAnswers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **body** | [**KnowledgeDocumentsAnswerFilter**](KnowledgeDocumentsAnswerFilter)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**KnowledgeAnswerDocumentsResponse**](KnowledgeAnswerDocumentsResponse)
+
+
+# **postKnowledgeKnowledgebaseDocumentsBulkRemove**
 
 
 > [BulkResponse](BulkResponse) postKnowledgeKnowledgebaseDocumentsBulkRemove(knowledgeBaseId, body)
@@ -4947,7 +5093,6 @@ try {
 # **postKnowledgeKnowledgebaseDocumentsBulkUpdate**
 
 
-
 > [BulkResponse](BulkResponse) postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId, body)
 
 Bulk update documents.
@@ -5011,7 +5156,6 @@ try {
 # **postKnowledgeKnowledgebaseDocumentsPresentations**
 
 
-
 > Void postKnowledgeKnowledgebaseDocumentsPresentations(knowledgeBaseId, body)
 
 Indicate that documents were presented to the user.
@@ -5070,7 +5214,6 @@ null (empty response body)
 
 
 # **postKnowledgeKnowledgebaseDocumentsQuery**
-
 
 
 > [KnowledgeDocumentQueryResponse](KnowledgeDocumentQueryResponse) postKnowledgeKnowledgebaseDocumentsQuery(knowledgeBaseId, expand, body)
@@ -5136,7 +5279,6 @@ try {
 # **postKnowledgeKnowledgebaseDocumentsSearch**
 
 
-
 > [KnowledgeDocumentSearch](KnowledgeDocumentSearch) postKnowledgeKnowledgebaseDocumentsSearch(knowledgeBaseId, expand, body)
 
 Search the documents in a knowledge base.
@@ -5200,7 +5342,6 @@ try {
 # **postKnowledgeKnowledgebaseDocumentsSearchSuggestions**
 
 
-
 > [KnowledgeDocumentSuggestion](KnowledgeDocumentSuggestion) postKnowledgeKnowledgebaseDocumentsSearchSuggestions(knowledgeBaseId, body)
 
 Query the knowledge documents to provide suggestions for auto completion.
@@ -5260,7 +5401,6 @@ try {
 
 
 # **postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd**
-
 
 
 > [BulkResponse](BulkResponse) postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(knowledgeBaseId, body)
@@ -5326,7 +5466,6 @@ try {
 # **postKnowledgeKnowledgebaseExportJobs**
 
 
-
 > [KnowledgeExportJobResponse](KnowledgeExportJobResponse) postKnowledgeKnowledgebaseExportJobs(knowledgeBaseId, body)
 
 Create export job
@@ -5386,7 +5525,6 @@ try {
 
 
 # **postKnowledgeKnowledgebaseImportJobs**
-
 
 
 > [KnowledgeImportJobResponse](KnowledgeImportJobResponse) postKnowledgeKnowledgebaseImportJobs(knowledgeBaseId, body)
@@ -5450,7 +5588,6 @@ try {
 # **postKnowledgeKnowledgebaseLabels**
 
 
-
 > [LabelResponse](LabelResponse) postKnowledgeKnowledgebaseLabels(knowledgeBaseId, body)
 
 Create new label
@@ -5511,7 +5648,9 @@ try {
 
 # **postKnowledgeKnowledgebaseLanguageCategories**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [KnowledgeExtendedCategory](KnowledgeExtendedCategory) postKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, body)
 
@@ -5575,7 +5714,9 @@ try {
 
 # **postKnowledgeKnowledgebaseLanguageDocumentUploads**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [KnowledgeDocumentContentUpload](KnowledgeDocumentContentUpload) postKnowledgeKnowledgebaseLanguageDocumentUploads(documentId, knowledgeBaseId, languageCode, body)
 
@@ -5643,7 +5784,9 @@ try {
 
 # **postKnowledgeKnowledgebaseLanguageDocuments**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [KnowledgeDocument](KnowledgeDocument) postKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body)
 
@@ -5707,7 +5850,9 @@ try {
 
 # **postKnowledgeKnowledgebaseLanguageDocumentsImports**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [KnowledgeImport](KnowledgeImport) postKnowledgeKnowledgebaseLanguageDocumentsImports(knowledgeBaseId, languageCode, body)
 
@@ -5771,7 +5916,9 @@ try {
 
 # **postKnowledgeKnowledgebaseLanguageTrainingPromote**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [KnowledgeTraining](KnowledgeTraining) postKnowledgeKnowledgebaseLanguageTrainingPromote(knowledgeBaseId, languageCode, trainingId)
 
@@ -5835,7 +5982,9 @@ try {
 
 # **postKnowledgeKnowledgebaseLanguageTrainings**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [KnowledgeTraining](KnowledgeTraining) postKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode)
 
@@ -5896,7 +6045,6 @@ try {
 
 
 # **postKnowledgeKnowledgebaseParseJobImport**
-
 
 
 > Void postKnowledgeKnowledgebaseParseJobImport(knowledgeBaseId, parseJobId, body)
@@ -5963,7 +6111,6 @@ null (empty response body)
 # **postKnowledgeKnowledgebaseParseJobs**
 
 
-
 > [KnowledgeParseJobResponse](KnowledgeParseJobResponse) postKnowledgeKnowledgebaseParseJobs(knowledgeBaseId, body)
 
 Create parse job
@@ -6026,7 +6173,9 @@ try {
 
 # **postKnowledgeKnowledgebaseSearch**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [KnowledgeSearchResponse](KnowledgeSearchResponse) postKnowledgeKnowledgebaseSearch(knowledgeBaseId, body)
 
@@ -6087,7 +6236,6 @@ try {
 
 
 # **postKnowledgeKnowledgebaseUploadsUrlsJobs**
-
 
 
 > [CreateUploadSourceUrlJobResponse](CreateUploadSourceUrlJobResponse) postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body)
@@ -6153,7 +6301,6 @@ try {
 # **postKnowledgeKnowledgebases**
 
 
-
 > [KnowledgeBase](KnowledgeBase) postKnowledgeKnowledgebases(body)
 
 Create new knowledge base
@@ -6210,4 +6357,4 @@ try {
 [**KnowledgeBase**](KnowledgeBase)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

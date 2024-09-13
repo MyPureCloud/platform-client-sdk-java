@@ -35,7 +35,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteVoicemailMessage**
 
 
-
 > Void deleteVoicemailMessage(messageId)
 
 Delete a voicemail message.
@@ -95,7 +94,6 @@ null (empty response body)
 # **deleteVoicemailMessages**
 
 
-
 > Void deleteVoicemailMessages()
 
 Delete all voicemail messages
@@ -147,7 +145,6 @@ null (empty response body)
 
 
 # **getVoicemailGroupMailbox**
-
 
 
 > [VoicemailMailboxInfo](VoicemailMailboxInfo) getVoicemailGroupMailbox(groupId)
@@ -206,7 +203,6 @@ try {
 
 
 # **getVoicemailGroupMessages**
-
 
 
 > [VoicemailMessageEntityListing](VoicemailMessageEntityListing) getVoicemailGroupMessages(groupId, pageSize, pageNumber)
@@ -271,7 +267,6 @@ try {
 # **getVoicemailGroupPolicy**
 
 
-
 > [VoicemailGroupPolicy](VoicemailGroupPolicy) getVoicemailGroupPolicy(groupId)
 
 Get a group's voicemail policy
@@ -332,7 +327,6 @@ try {
 # **getVoicemailMailbox**
 
 
-
 > [VoicemailMailboxInfo](VoicemailMailboxInfo) getVoicemailMailbox()
 
 Get the current user's mailbox information
@@ -387,7 +381,6 @@ This endpoint does not require any parameters.
 # **getVoicemailMeMailbox**
 
 
-
 > [VoicemailMailboxInfo](VoicemailMailboxInfo) getVoicemailMeMailbox()
 
 Get the current user's mailbox information
@@ -440,7 +433,6 @@ This endpoint does not require any parameters.
 
 
 # **getVoicemailMeMessages**
-
 
 
 > [VoicemailMessageEntityListing](VoicemailMessageEntityListing) getVoicemailMeMessages(pageSize, pageNumber)
@@ -503,7 +495,6 @@ try {
 # **getVoicemailMePolicy**
 
 
-
 > [VoicemailUserPolicy](VoicemailUserPolicy) getVoicemailMePolicy()
 
 Get the current user's voicemail policy
@@ -556,7 +547,6 @@ This endpoint does not require any parameters.
 
 
 # **getVoicemailMessage**
-
 
 
 > [VoicemailMessage](VoicemailMessage) getVoicemailMessage(messageId, expand)
@@ -619,7 +609,6 @@ try {
 # **getVoicemailMessageMedia**
 
 
-
 > [VoicemailMediaInfo](VoicemailMediaInfo) getVoicemailMessageMedia(messageId, formatId)
 
 Get media playback URI for this voicemail message
@@ -678,7 +667,6 @@ try {
 
 
 # **getVoicemailMessages**
-
 
 
 > [VoicemailMessageEntityListing](VoicemailMessageEntityListing) getVoicemailMessages(ids, expand)
@@ -741,7 +729,6 @@ try {
 # **getVoicemailPolicy**
 
 
-
 > [VoicemailOrganizationPolicy](VoicemailOrganizationPolicy) getVoicemailPolicy()
 
 Get a policy
@@ -795,7 +782,6 @@ This endpoint does not require any parameters.
 
 
 # **getVoicemailQueueMessages**
-
 
 
 > [VoicemailMessageEntityListing](VoicemailMessageEntityListing) getVoicemailQueueMessages(queueId, pageSize, pageNumber)
@@ -861,7 +847,6 @@ try {
 # **getVoicemailSearch**
 
 
-
 > [VoicemailsSearchResponse](VoicemailsSearchResponse) getVoicemailSearch(q64, expand)
 
 Search voicemails using the q64 value returned from a previous search
@@ -922,7 +907,6 @@ try {
 # **getVoicemailUserpolicy**
 
 
-
 > [VoicemailUserPolicy](VoicemailUserPolicy) getVoicemailUserpolicy(userId)
 
 Get a user's voicemail policy
@@ -979,7 +963,6 @@ try {
 
 
 # **patchVoicemailGroupPolicy**
-
 
 
 > [VoicemailGroupPolicy](VoicemailGroupPolicy) patchVoicemailGroupPolicy(groupId, body)
@@ -1044,7 +1027,6 @@ try {
 # **patchVoicemailMePolicy**
 
 
-
 > [VoicemailUserPolicy](VoicemailUserPolicy) patchVoicemailMePolicy(body)
 
 Update the current user's voicemail policy
@@ -1101,7 +1083,6 @@ try {
 
 
 # **patchVoicemailMessage**
-
 
 
 > [VoicemailMessage](VoicemailMessage) patchVoicemailMessage(messageId, body)
@@ -1166,7 +1147,6 @@ try {
 # **patchVoicemailUserpolicy**
 
 
-
 > [VoicemailUserPolicy](VoicemailUserPolicy) patchVoicemailUserpolicy(userId, body)
 
 Update a user's voicemail policy
@@ -1227,7 +1207,6 @@ try {
 # **postVoicemailMessages**
 
 
-
 > [VoicemailMessage](VoicemailMessage) postVoicemailMessages(body)
 
 Copy a voicemail message to a user or group
@@ -1286,7 +1265,6 @@ try {
 # **postVoicemailSearch**
 
 
-
 > [VoicemailsSearchResponse](VoicemailsSearchResponse) postVoicemailSearch(body)
 
 Search voicemails
@@ -1343,7 +1321,6 @@ try {
 
 
 # **putVoicemailMessage**
-
 
 
 > [VoicemailMessage](VoicemailMessage) putVoicemailMessage(messageId, body)
@@ -1408,7 +1385,6 @@ try {
 # **putVoicemailPolicy**
 
 
-
 > [VoicemailOrganizationPolicy](VoicemailOrganizationPolicy) putVoicemailPolicy(body)
 
 Update a policy
@@ -1466,7 +1442,6 @@ try {
 
 
 # **putVoicemailUserpolicy**
-
 
 
 > [VoicemailUserPolicy](VoicemailUserPolicy) putVoicemailUserpolicy(userId, body)
@@ -1527,4 +1502,4 @@ try {
 [**VoicemailUserPolicy**](VoicemailUserPolicy)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

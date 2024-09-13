@@ -24,7 +24,6 @@
 | **requestedRoutings** | [**List<RequestedRoutingsEnum>**](#Enum--RequestedRoutingsEnum) | All routing types for requested/attempted routing methods |  [optional] |
 | **usedRouting** | [**UsedRoutingEnum**](#Enum--UsedRoutingEnum) | Complete routing method |  [optional] |
 | **scoredAgents** | [**List&lt;AnalyticsScoredAgent&gt;**](AnalyticsScoredAgent) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: DirectionEnum
@@ -34,7 +33,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INBOUND | &quot;inbound&quot; | 
 | OUTBOUND | &quot;outbound&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: RequestedRoutingsEnum
@@ -50,7 +48,6 @@
 | PREFERRED | &quot;Preferred&quot; |
 | STANDARD | &quot;Standard&quot; |
 | VIP | &quot;Vip&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: UsedRoutingEnum
@@ -67,9 +64,8 @@
 | PREFERRED | &quot;Preferred&quot; | 
 | STANDARD | &quot;Standard&quot; | 
 | VIP | &quot;Vip&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

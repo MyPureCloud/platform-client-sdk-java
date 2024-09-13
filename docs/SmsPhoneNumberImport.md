@@ -12,7 +12,6 @@
 | **integrationId** | **String** | The id of the Genesys Cloud integration this phone number belongs to. |  |
 | **compliance** | [**Compliance**](Compliance) | Compliance configuration for short codes, including help, stop and opt in. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: PhoneNumberTypeEnum
@@ -24,9 +23,8 @@
 | MOBILE | &quot;mobile&quot; | 
 | TOLLFREE | &quot;tollfree&quot; | 
 | SHORTCODE | &quot;shortcode&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

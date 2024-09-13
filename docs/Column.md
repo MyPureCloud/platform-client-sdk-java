@@ -9,9 +9,8 @@
 | **columnNumber** | **Integer** | 0 based column number in delimited file format |  [optional] |
 | **startPosition** | **Integer** | Zero-based position of the first column's character. Mandatory for Fixed position/length file format. |  [optional] |
 | **length** | **Integer** | Column width. Mandatory for Fixed position/length file format. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

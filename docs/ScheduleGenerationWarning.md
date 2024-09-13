@@ -13,7 +13,6 @@
 | **unableToMeetMaxPaidForTheWeek** | **Boolean** | Whether the schedule exceeded the maximum paid time for the week defined in the agent work plan |  [optional] |
 | **noNeedDays** | [**List<NoNeedDaysEnum>**](#Enum--NoNeedDaysEnum) | Days agent was scheduled but there was no need to meet. The scheduled days have no effect on service levels |  [optional] |
 | **shiftsTooCloseTogether** | **Boolean** | Whether the schedule did not meet the minimum time between shifts defined in the agent work plan |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: UnableToScheduleRequiredDaysEnum
@@ -27,7 +26,6 @@
 | THURSDAY | &quot;Thursday&quot; |
 | FRIDAY | &quot;Friday&quot; |
 | SATURDAY | &quot;Saturday&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: NoNeedDaysEnum
@@ -41,9 +39,8 @@
 | THURSDAY | &quot;Thursday&quot; |
 | FRIDAY | &quot;Friday&quot; |
 | SATURDAY | &quot;Saturday&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

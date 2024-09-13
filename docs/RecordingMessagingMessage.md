@@ -23,7 +23,6 @@
 | **story** | [**RecordingContentStory**](RecordingContentStory) | Ephemeral story content. |  [optional] |
 | **cards** | [**List&lt;Card&gt;**](Card) | List of cards offered for this message |  [optional] |
 | **contentType** | [**ContentTypeEnum**](#Enum--ContentTypeEnum) | Indicates the content type for this message |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ContentTypeEnum
@@ -44,9 +43,8 @@
 | REACTIONS | &quot;Reactions&quot; | 
 | MENTION | &quot;Mention&quot; | 
 | BUTTONRESPONSE | &quot;ButtonResponse&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

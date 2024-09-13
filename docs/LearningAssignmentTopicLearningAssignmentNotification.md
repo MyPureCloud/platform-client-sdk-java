@@ -20,7 +20,6 @@
 | **percentageScore** | [**BigDecimal**](BigDecimal) |  |  [optional] |
 | **isPassed** | **Boolean** |  |  [optional] |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -34,7 +33,6 @@
 | DELETED | &quot;Deleted&quot; | 
 | NOTCOMPLETED | &quot;NotCompleted&quot; | 
 | INVALIDSCHEDULE | &quot;InvalidSchedule&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -45,9 +43,8 @@
 | UNKNOWN | &quot;Unknown&quot; | 
 | NATIVE | &quot;Native&quot; | 
 | EXTERNAL | &quot;External&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -11,7 +11,6 @@
 | **fileUrl** | **String** | Url of a file with query result. |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 | **user** | [**AddressableEntityRef**](AddressableEntityRef) | Details of the user that created the job |  |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -22,9 +21,8 @@
 | RUNNING | &quot;Running&quot; | 
 | FAILED | &quot;Failed&quot; | 
 | SUCCEEDED | &quot;Succeeded&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

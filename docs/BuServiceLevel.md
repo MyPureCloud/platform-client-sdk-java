@@ -8,9 +8,8 @@
 | **include** | **Boolean** | Whether to include service level targets in the associated configuration |  |
 | **percent** | **Integer** | Service level target percent answered. Required if include == true |  [optional] |
 | **seconds** | **Integer** | Service level target answer time. Required if include == true |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

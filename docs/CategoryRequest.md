@@ -9,7 +9,6 @@
 | **description** | **String** | The description of the category |  [optional] |
 | **interactionType** | [**InteractionTypeEnum**](#Enum--InteractionTypeEnum) | The type of interaction the category will apply to |  |
 | **criteria** | [**Operand**](Operand) | A collection of conditions joined together by logical operation to provide more refined filtering of conversations |  |
-{: class="table table-striped"}
 
 
 ## Enum: InteractionTypeEnum
@@ -20,9 +19,8 @@
 | VOICE | &quot;Voice&quot; | 
 | DIGITAL | &quot;Digital&quot; | 
 | ALL | &quot;All&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

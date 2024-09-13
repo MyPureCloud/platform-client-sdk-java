@@ -10,9 +10,8 @@
 | **planningGroups** | [**List&lt;ForecastPlanningGroupData&gt;**](ForecastPlanningGroupData) | The short term planning group data |  |
 | **longTermPlanningGroups** | [**List&lt;LongTermForecastPlanningGroupData&gt;**](LongTermForecastPlanningGroupData) | The long term planning group data |  [optional] |
 | **canUseForScheduling** | **Boolean** | Whether this forecast can be used for scheduling |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -10,7 +10,6 @@
 | **metric** | **String** | For numericRange aggregations |  [optional] |
 | **count** | **Long** |  |  [optional] |
 | **results** | [**List&lt;AggregationResultEntry&gt;**](AggregationResultEntry) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -20,9 +19,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | TERMFREQUENCY | &quot;termFrequency&quot; | 
 | NUMERICRANGE | &quot;numericRange&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

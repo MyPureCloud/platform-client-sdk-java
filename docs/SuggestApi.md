@@ -14,7 +14,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **getSearch**
 
 
-
 > [JsonNodeSearchResponse](JsonNodeSearchResponse) getSearch(q64, expand, profile)
 
 Search using the q64 value returned from a previous search.
@@ -76,7 +75,6 @@ try {
 
 
 # **getSearchSuggest**
-
 
 
 > [JsonNodeSearchResponse](JsonNodeSearchResponse) getSearchSuggest(q64, expand, profile)
@@ -142,7 +140,6 @@ try {
 # **postSearch**
 
 
-
 > [JsonNodeSearchResponse](JsonNodeSearchResponse) postSearch(body, profile)
 
 Search resources.
@@ -204,7 +201,6 @@ try {
 # **postSearchSuggest**
 
 
-
 > [JsonNodeSearchResponse](JsonNodeSearchResponse) postSearchSuggest(body, profile)
 
 Suggest resources.
@@ -263,4 +259,4 @@ try {
 [**JsonNodeSearchResponse**](JsonNodeSearchResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

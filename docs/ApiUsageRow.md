@@ -18,9 +18,8 @@
 | **status429** | **Long** | Number of requests resulting in a 429 HTTP status code, this is a subset of the count returned with status400 |  [optional] |
 | **requests** | **Long** | Total number of requests |  [optional] |
 | **date** | [**Date**](Date) | Date of requests, based on granularity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -9,7 +9,6 @@
 | **dimension** | [**DimensionEnum**](#Enum--DimensionEnum) | Left hand side for dimension predicates |  [optional] |
 | **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | Optional operator, default is matches |  [optional] |
 | **value** | **String** | Right hand side for dimension predicates |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -20,7 +19,6 @@
 | DIMENSION | &quot;dimension&quot; | 
 | PROPERTY | &quot;property&quot; | 
 | METRIC | &quot;metric&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DimensionEnum
@@ -37,7 +35,6 @@
 | SYSTEMPRESENCE | &quot;systemPresence&quot; | 
 | TEAMID | &quot;teamId&quot; | 
 | USERID | &quot;userId&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: OperatorEnum
@@ -48,9 +45,8 @@
 | MATCHES | &quot;matches&quot; | 
 | EXISTS | &quot;exists&quot; | 
 | NOTEXISTS | &quot;notExists&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

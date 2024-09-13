@@ -16,7 +16,6 @@
 | **pinnedMessages** | [**List&lt;AddressableEntityRef&gt;**](AddressableEntityRef) | Room's pinned messages |  [optional] |
 | **jid** | **String** | The jid of the room |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: RoomTypeEnum
@@ -29,9 +28,8 @@
 | GROUP | &quot;group&quot; | 
 | ONEONONE | &quot;oneOnOne&quot; | 
 | SUPERVISORASSISTANCE | &quot;supervisorAssistance&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

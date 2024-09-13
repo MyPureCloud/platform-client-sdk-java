@@ -8,7 +8,6 @@
 | **timeOffRequest** | [**TimeOffRequestReference**](TimeOffRequestReference) | The time off request associated with this integration status |  |
 | **integrationStatus** | [**IntegrationStatusEnum**](#Enum--IntegrationStatusEnum) | The value of integration status for the time off request |  |
 | **user** | [**UserReference**](UserReference) | The user to whom the time off request belongs |  |
-{: class="table table-striped"}
 
 
 ## Enum: IntegrationStatusEnum
@@ -20,9 +19,8 @@
 | ERROR | &quot;Error&quot; | 
 | AUTOMATICALLYCOMPLETE | &quot;AutomaticallyComplete&quot; | 
 | MANUALLYCOMPLETE | &quot;ManuallyComplete&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

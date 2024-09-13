@@ -11,9 +11,8 @@
 | **activities** | [**List&lt;BuAgentScheduleActivity&gt;**](BuAgentScheduleActivity) | The activities associated with this shift |  [optional] |
 | **manuallyEdited** | **Boolean** | Whether this shift was manually edited. This is only set by clients and is used for rescheduling |  [optional] |
 | **schedule** | [**BuScheduleReference**](BuScheduleReference) | The schedule to which this shift belongs |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

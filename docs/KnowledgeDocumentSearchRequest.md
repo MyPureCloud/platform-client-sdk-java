@@ -22,7 +22,6 @@
 | **confidenceThreshold** | **Float** | The confidence threshold for the search results. If applied, the returned results will have an equal or higher confidence than the threshold. The value should be between 0 to 1. |  [optional] |
 | **answerHighlightTopResults** | **Integer** | The number of articles to be sent for answer-highlighting. Can range from 1-5. |  [optional] |
 | **answerMode** | [**List<AnswerModeEnum>**](#Enum--AnswerModeEnum) | Allows extracted answers from an article (AnswerHighlight) and/or AI-generated answers (AnswerGeneration). Default mode: AnswerHighlight. Use this property with answerHighlightTopResults. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: QueryTypeEnum
@@ -33,7 +32,6 @@
 | AUTOSEARCH | &quot;AutoSearch&quot; | 
 | MANUALSEARCH | &quot;ManualSearch&quot; | 
 | SUGGESTION | &quot;Suggestion&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: SortOrderEnum
@@ -43,7 +41,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ASC | &quot;Asc&quot; | 
 | DESC | &quot;Desc&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: SortByEnum
@@ -56,7 +53,6 @@
 | DATEMODIFIED | &quot;DateModified&quot; | 
 | CATEGORYNAME | &quot;CategoryName&quot; | 
 | LABELNAME | &quot;LabelName&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: AnswerModeEnum
@@ -65,9 +61,8 @@
 | ---- | ----- |
 | ANSWERHIGHLIGHT | &quot;AnswerHighlight&quot; |
 | ANSWERGENERATION | &quot;AnswerGeneration&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

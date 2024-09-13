@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **word** | **String** | Find term in interaction |  |
 | **participantType** | [**ParticipantTypeEnum**](#Enum--ParticipantTypeEnum) | Dictates if term operand must come from the internal, external or both participants |  |
-{: class="table table-striped"}
 
 
 ## Enum: ParticipantTypeEnum
@@ -18,9 +17,8 @@
 | INTERNAL | &quot;Internal&quot; | 
 | EXTERNAL | &quot;External&quot; | 
 | BOTH | &quot;Both&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

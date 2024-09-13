@@ -8,9 +8,8 @@
 | **url** | **String** | Presigned URL to PUT the file to |  [optional] |
 | **uploadKey** | **String** | Key that identifies the file in the storage including the file name |  [optional] |
 | **headers** | **Map&lt;String, String&gt;** | Required headers when uploading a file through PUT request to the URL |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

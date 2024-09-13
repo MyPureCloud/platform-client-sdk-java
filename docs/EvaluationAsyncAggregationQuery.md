@@ -15,7 +15,6 @@
 | **views** | [**List&lt;EvaluationAggregationView&gt;**](EvaluationAggregationView) | Custom derived metric views |  [optional] |
 | **alternateTimeDimension** | [**AlternateTimeDimensionEnum**](#Enum--AlternateTimeDimensionEnum) | Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event. |  [optional] |
 | **pageSize** | **Integer** | The number of results per page |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: GroupByEnum
@@ -38,7 +37,6 @@
 | RESCORED | &quot;rescored&quot; |
 | TEAMID | &quot;teamId&quot; |
 | USERID | &quot;userId&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: MetricsEnum
@@ -50,7 +48,6 @@
 | NEVALUATIONSRESCORED | &quot;nEvaluationsRescored&quot; |
 | OTOTALCRITICALSCORE | &quot;oTotalCriticalScore&quot; |
 | OTOTALSCORE | &quot;oTotalScore&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: AlternateTimeDimensionEnum
@@ -62,9 +59,8 @@
 | EVALUATIONCREATEDDATE | &quot;evaluationCreatedDate&quot; | 
 | EVALUATIONRELEASEDATE | &quot;evaluationReleaseDate&quot; | 
 | EVENTTIME | &quot;eventTime&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

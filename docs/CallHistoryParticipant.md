@@ -24,7 +24,6 @@
 | **sipResponseCodes** | **List&lt;Long&gt;** | Indicates SIP Response codes associated with the participant |  [optional] |
 | **flaggedReason** | [**FlaggedReasonEnum**](#Enum--FlaggedReasonEnum) | The reason specifying why participant flagged the conversation. |  [optional] |
 | **outboundCampaign** | [**Campaign**](Campaign) | The outbound campaign associated with the participant |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: DirectionEnum
@@ -34,7 +33,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INBOUND | &quot;inbound&quot; | 
 | OUTBOUND | &quot;outbound&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DisconnectTypeEnum
@@ -58,7 +56,6 @@
 | PEER | &quot;peer&quot; | 
 | OTHER | &quot;other&quot; | 
 | SPAM | &quot;spam&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: FlaggedReasonEnum
@@ -67,9 +64,8 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | GENERAL | &quot;general&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

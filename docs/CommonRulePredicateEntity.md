@@ -10,7 +10,6 @@
 | **group** | [**AddressableEntityRef**](AddressableEntityRef) | Group id of the entity being monitored |  [optional] |
 | **queue** | [**AddressableEntityRef**](AddressableEntityRef) | Queue id of the entity being monitored |  [optional] |
 | **team** | [**AddressableEntityRef**](AddressableEntityRef) | Team id of the entity being monitored |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: EntityTypeEnum
@@ -23,9 +22,8 @@
 | QUEUE | &quot;Queue&quot; | 
 | TEAM | &quot;Team&quot; | 
 | TEAMMEMBERS | &quot;TeamMembers&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -246,7 +246,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteWorkforcemanagementBusinessunit**
 
 
-
 > Void deleteWorkforcemanagementBusinessunit(businessUnitId)
 
 Delete business unit
@@ -305,7 +304,6 @@ null (empty response body)
 
 
 # **deleteWorkforcemanagementBusinessunitActivitycode**
-
 
 
 > Void deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId)
@@ -368,7 +366,6 @@ null (empty response body)
 # **deleteWorkforcemanagementBusinessunitPlanninggroup**
 
 
-
 > Void deleteWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId)
 
 Deletes the planning group
@@ -427,7 +424,6 @@ null (empty response body)
 
 
 # **deleteWorkforcemanagementBusinessunitSchedulingRun**
-
 
 
 > Void deleteWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId)
@@ -490,7 +486,6 @@ null (empty response body)
 # **deleteWorkforcemanagementBusinessunitServicegoaltemplate**
 
 
-
 > Void deleteWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId)
 
 Delete a service goal template
@@ -549,7 +544,6 @@ null (empty response body)
 
 
 # **deleteWorkforcemanagementBusinessunitStaffinggroup**
-
 
 
 > Void deleteWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId)
@@ -612,7 +606,6 @@ null (empty response body)
 # **deleteWorkforcemanagementBusinessunitTimeofflimit**
 
 
-
 > Void deleteWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId)
 
 Deletes a time-off limit object
@@ -673,7 +666,6 @@ null (empty response body)
 # **deleteWorkforcemanagementBusinessunitTimeoffplan**
 
 
-
 > Void deleteWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId)
 
 Deletes a time-off plan
@@ -732,7 +724,6 @@ null (empty response body)
 
 
 # **deleteWorkforcemanagementBusinessunitWeekSchedule**
-
 
 
 > [BuAsyncScheduleResponse](BuAsyncScheduleResponse) deleteWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId)
@@ -796,7 +787,6 @@ try {
 
 
 # **deleteWorkforcemanagementBusinessunitWeekShorttermforecast**
-
 
 
 > Void deleteWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId)
@@ -863,7 +853,6 @@ null (empty response body)
 # **deleteWorkforcemanagementBusinessunitWorkplanbid**
 
 
-
 > Void deleteWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId)
 
 Delete a work plan bid
@@ -922,7 +911,6 @@ null (empty response body)
 
 
 # **deleteWorkforcemanagementBusinessunitWorkplanbidGroup**
-
 
 
 > Void deleteWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId)
@@ -987,7 +975,6 @@ null (empty response body)
 # **deleteWorkforcemanagementCalendarUrlIcs**
 
 
-
 > Void deleteWorkforcemanagementCalendarUrlIcs()
 
 Disable generated calendar link for the current user
@@ -1040,7 +1027,6 @@ null (empty response body)
 
 
 # **deleteWorkforcemanagementManagementunit**
-
 
 
 > Void deleteWorkforcemanagementManagementunit(managementUnitId)
@@ -1099,7 +1085,6 @@ null (empty response body)
 
 
 # **deleteWorkforcemanagementManagementunitTimeofflimit**
-
 
 
 > Void deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId)
@@ -1162,7 +1147,6 @@ null (empty response body)
 # **deleteWorkforcemanagementManagementunitTimeoffplan**
 
 
-
 > Void deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId)
 
 Deletes a time off plan
@@ -1221,7 +1205,6 @@ null (empty response body)
 
 
 # **deleteWorkforcemanagementManagementunitWorkplan**
-
 
 
 > Void deleteWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId)
@@ -1284,7 +1267,6 @@ null (empty response body)
 # **deleteWorkforcemanagementManagementunitWorkplanrotation**
 
 
-
 > Void deleteWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId)
 
 Delete a work plan rotation
@@ -1343,7 +1325,6 @@ null (empty response body)
 
 
 # **getWorkforcemanagementAdherence**
-
 
 
 > [List&lt;UserScheduleAdherence&gt;](UserScheduleAdherence) getWorkforcemanagementAdherence(userId)
@@ -1405,7 +1386,6 @@ try {
 # **getWorkforcemanagementAdherenceExplanation**
 
 
-
 > [AdherenceExplanationResponse](AdherenceExplanationResponse) getWorkforcemanagementAdherenceExplanation(explanationId)
 
 Get an adherence explanation for the current user
@@ -1463,7 +1443,6 @@ try {
 
 
 # **getWorkforcemanagementAdherenceExplanationsJob**
-
 
 
 > [AdherenceExplanationJob](AdherenceExplanationJob) getWorkforcemanagementAdherenceExplanationsJob(jobId)
@@ -1526,7 +1505,6 @@ try {
 # **getWorkforcemanagementAdherenceHistoricalBulkJob**
 
 
-
 > [WfmHistoricalAdherenceBulkResponse](WfmHistoricalAdherenceBulkResponse) getWorkforcemanagementAdherenceHistoricalBulkJob(jobId)
 
 Request to fetch the status of the historical adherence bulk job. Only the user who started the operation can query the status
@@ -1585,7 +1563,6 @@ try {
 
 
 # **getWorkforcemanagementAdherenceHistoricalJob**
-
 
 
 > [WfmHistoricalAdherenceResponse](WfmHistoricalAdherenceResponse) getWorkforcemanagementAdherenceHistoricalJob(jobId)
@@ -1649,7 +1626,6 @@ try {
 # **getWorkforcemanagementAgentAdherenceExplanation**
 
 
-
 > [AdherenceExplanationResponse](AdherenceExplanationResponse) getWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId)
 
 Get an adherence explanation
@@ -1709,7 +1685,6 @@ try {
 
 
 # **getWorkforcemanagementAgentManagementunit**
-
 
 
 > [AgentManagementUnitReference](AgentManagementUnitReference) getWorkforcemanagementAgentManagementunit(agentId)
@@ -1775,7 +1750,6 @@ try {
 
 
 # **getWorkforcemanagementAgentsMeManagementunit**
-
 
 
 > [AgentManagementUnitReference](AgentManagementUnitReference) getWorkforcemanagementAgentsMeManagementunit()
@@ -1890,7 +1864,6 @@ This endpoint does not require any parameters.
 # **getWorkforcemanagementAlternativeshiftsOffersJob**
 
 
-
 > [AlternativeShiftJobResponse](AlternativeShiftJobResponse) getWorkforcemanagementAlternativeshiftsOffersJob(jobId)
 
 Query the status of an alternative shift offers operation. Only the user who started the operation can query the status
@@ -1950,7 +1923,6 @@ try {
 
 
 # **getWorkforcemanagementAlternativeshiftsOffersSearchJob**
-
 
 
 > [AlternativeShiftJobResponse](AlternativeShiftJobResponse) getWorkforcemanagementAlternativeshiftsOffersSearchJob(jobId)
@@ -2014,7 +1986,6 @@ try {
 # **getWorkforcemanagementAlternativeshiftsSettings**
 
 
-
 > [AlternativeShiftBuSettingsResponse](AlternativeShiftBuSettingsResponse) getWorkforcemanagementAlternativeshiftsSettings()
 
 Get alternative shifts settings from the current logged in agent’s business unit
@@ -2068,7 +2039,6 @@ This endpoint does not require any parameters.
 
 
 # **getWorkforcemanagementAlternativeshiftsTrade**
-
 
 
 > [AlternativeShiftTradeResponse](AlternativeShiftTradeResponse) getWorkforcemanagementAlternativeshiftsTrade(tradeId)
@@ -2130,7 +2100,6 @@ try {
 # **getWorkforcemanagementAlternativeshiftsTrades**
 
 
-
 > [ListAlternativeShiftTradesResponse](ListAlternativeShiftTradesResponse) getWorkforcemanagementAlternativeshiftsTrades(forceAsync)
 
 Get a list of my alternative shifts trades
@@ -2188,7 +2157,6 @@ try {
 
 
 # **getWorkforcemanagementAlternativeshiftsTradesJob**
-
 
 
 > [AlternativeShiftJobResponse](AlternativeShiftJobResponse) getWorkforcemanagementAlternativeshiftsTradesJob(jobId)
@@ -2252,7 +2220,6 @@ try {
 # **getWorkforcemanagementAlternativeshiftsTradesStateJob**
 
 
-
 > [AlternativeShiftJobResponse](AlternativeShiftJobResponse) getWorkforcemanagementAlternativeshiftsTradesStateJob(jobId)
 
 Query the status of an alternative shift trade state operation. Only the user who started the operation can query the status
@@ -2312,7 +2279,6 @@ try {
 
 
 # **getWorkforcemanagementBusinessunit**
-
 
 
 > [BusinessUnitResponse](BusinessUnitResponse) getWorkforcemanagementBusinessunit(businessUnitId, expand)
@@ -2436,7 +2402,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. | 
-| **expand** | [**List&lt;String&gt;**](String)| Include to access additional data on the business unit | [optional]<br />**Values**: settings, settings.timeZone, settings.startDayOfWeek, settings.shortTermForecasting, settings.scheduling 
+| **expand** | [**List&lt;String&gt;**](String)| Include to access additional data on the business unit | [optional]<br />**Values**: settings, settings.timeZone, settings.startDayOfWeek, settings.shortTermForecasting, settings.scheduling, settings.notifications.scheduling, settings.learning, settings.coaching 
 {: class="table-striped"}
 
 
@@ -2446,7 +2412,6 @@ try {
 
 
 # **getWorkforcemanagementBusinessunitActivitycode**
-
 
 
 > [BusinessUnitActivityCode](BusinessUnitActivityCode) getWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId)
@@ -2508,7 +2473,6 @@ try {
 
 
 # **getWorkforcemanagementBusinessunitActivitycodes**
-
 
 
 > [BusinessUnitActivityCodeListing](BusinessUnitActivityCodeListing) getWorkforcemanagementBusinessunitActivitycodes(businessUnitId, forceDownloadService)
@@ -2630,7 +2594,6 @@ try {
 # **getWorkforcemanagementBusinessunitActivityplan**
 
 
-
 > [ActivityPlanResponse](ActivityPlanResponse) getWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId)
 
 Get an activity plan
@@ -2690,7 +2653,6 @@ try {
 
 
 # **getWorkforcemanagementBusinessunitActivityplanRunsJob**
-
 
 
 > [ActivityPlanRunJobResponse](ActivityPlanRunJobResponse) getWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId, activityPlanId, jobId)
@@ -2756,7 +2718,6 @@ try {
 # **getWorkforcemanagementBusinessunitActivityplans**
 
 
-
 > [ActivityPlanListing](ActivityPlanListing) getWorkforcemanagementBusinessunitActivityplans(businessUnitId, state)
 
 Get activity plans
@@ -2818,7 +2779,6 @@ try {
 # **getWorkforcemanagementBusinessunitActivityplansJobs**
 
 
-
 > [ActivityPlanJobListing](ActivityPlanJobListing) getWorkforcemanagementBusinessunitActivityplansJobs(businessUnitId)
 
 Gets the latest job for all activity plans in the business unit
@@ -2876,7 +2836,6 @@ try {
 
 
 # **getWorkforcemanagementBusinessunitAlternativeshiftsSettings**
-
 
 
 > [AlternativeShiftBuSettingsResponse](AlternativeShiftBuSettingsResponse) getWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId)
@@ -2938,7 +2897,6 @@ try {
 # **getWorkforcemanagementBusinessunitAlternativeshiftsTrade**
 
 
-
 > [AlternativeShiftTradeResponse](AlternativeShiftTradeResponse) getWorkforcemanagementBusinessunitAlternativeshiftsTrade(businessUnitId, tradeId)
 
 Get an alternative shifts trade in a business unit for a given trade ID
@@ -2998,7 +2956,6 @@ try {
 
 
 # **getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob**
-
 
 
 > [BuAlternativeShiftJobResponse](BuAlternativeShiftJobResponse) getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob(businessUnitId, jobId)
@@ -3064,7 +3021,6 @@ try {
 # **getWorkforcemanagementBusinessunitIntradayPlanninggroups**
 
 
-
 > [WfmIntradayPlanningGroupListing](WfmIntradayPlanningGroupListing) getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUnitId, date)
 
 Get intraday planning groups for the given date
@@ -3124,7 +3080,6 @@ try {
 
 
 # **getWorkforcemanagementBusinessunitManagementunits**
-
 
 
 > [ManagementUnitListing](ManagementUnitListing) getWorkforcemanagementBusinessunitManagementunits(businessUnitId, feature, divisionId)
@@ -3189,7 +3144,6 @@ try {
 # **getWorkforcemanagementBusinessunitPlanninggroup**
 
 
-
 > [PlanningGroup](PlanningGroup) getWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId)
 
 Get a planning group
@@ -3249,7 +3203,6 @@ try {
 
 
 # **getWorkforcemanagementBusinessunitPlanninggroups**
-
 
 
 > [PlanningGroupList](PlanningGroupList) getWorkforcemanagementBusinessunitPlanninggroups(businessUnitId)
@@ -3316,7 +3269,6 @@ try {
 # **getWorkforcemanagementBusinessunitSchedulingRun**
 
 
-
 > [BuScheduleRun](BuScheduleRun) getWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId)
 
 Get a scheduling run
@@ -3377,7 +3329,6 @@ try {
 
 
 # **getWorkforcemanagementBusinessunitSchedulingRunResult**
-
 
 
 > [BuRescheduleResult](BuRescheduleResult) getWorkforcemanagementBusinessunitSchedulingRunResult(businessUnitId, runId, managementUnitIds, expand)
@@ -3446,7 +3397,6 @@ try {
 # **getWorkforcemanagementBusinessunitSchedulingRuns**
 
 
-
 > [BuScheduleRunListing](BuScheduleRunListing) getWorkforcemanagementBusinessunitSchedulingRuns(businessUnitId)
 
 Get the list of scheduling runs
@@ -3505,7 +3455,6 @@ try {
 
 
 # **getWorkforcemanagementBusinessunitServicegoaltemplate**
-
 
 
 > [ServiceGoalTemplate](ServiceGoalTemplate) getWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, expand)
@@ -3571,7 +3520,6 @@ try {
 # **getWorkforcemanagementBusinessunitServicegoaltemplates**
 
 
-
 > [ServiceGoalTemplateList](ServiceGoalTemplateList) getWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, expand)
 
 Gets list of service goal templates
@@ -3635,7 +3583,6 @@ try {
 # **getWorkforcemanagementBusinessunitStaffinggroup**
 
 
-
 > [StaffingGroupResponse](StaffingGroupResponse) getWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId)
 
 Gets a staffing group
@@ -3697,7 +3644,6 @@ try {
 # **getWorkforcemanagementBusinessunitStaffinggroups**
 
 
-
 > [StaffingGroupListing](StaffingGroupListing) getWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, managementUnitId)
 
 Gets a list of staffing groups
@@ -3757,7 +3703,6 @@ try {
 
 
 # **getWorkforcemanagementBusinessunitTimeofflimit**
-
 
 
 > [BuTimeOffLimitResponse](BuTimeOffLimitResponse) getWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId)
@@ -3823,7 +3768,6 @@ try {
 # **getWorkforcemanagementBusinessunitTimeofflimits**
 
 
-
 > [BuTimeOffLimitListing](BuTimeOffLimitListing) getWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, managementUnitId)
 
 Gets a list of time-off limit objects
@@ -3884,7 +3828,6 @@ try {
 
 
 # **getWorkforcemanagementBusinessunitTimeoffplan**
-
 
 
 > [BuTimeOffPlanResponse](BuTimeOffPlanResponse) getWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId)
@@ -3948,7 +3891,6 @@ try {
 # **getWorkforcemanagementBusinessunitTimeoffplans**
 
 
-
 > [BuTimeOffPlanListing](BuTimeOffPlanListing) getWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, managementUnitId, forceDownloadService)
 
 Gets a list of time-off plans
@@ -4010,7 +3952,6 @@ try {
 
 
 # **getWorkforcemanagementBusinessunitWeekSchedule**
-
 
 
 > [BuScheduleMetadata](BuScheduleMetadata) getWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId, expand)
@@ -4079,7 +4020,6 @@ try {
 # **getWorkforcemanagementBusinessunitWeekScheduleGenerationresults**
 
 
-
 > [ScheduleGenerationResult](ScheduleGenerationResult) getWorkforcemanagementBusinessunitWeekScheduleGenerationresults(businessUnitId, weekId, scheduleId)
 
 Get the generation results for a generated schedule
@@ -4142,7 +4082,6 @@ try {
 
 
 # **getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast**
-
 
 
 > [BuHeadcountForecastResponse](BuHeadcountForecastResponse) getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast(businessUnitId, weekId, scheduleId, forceDownload)
@@ -4211,7 +4150,6 @@ try {
 # **getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent**
 
 
-
 > [BuAgentScheduleHistoryResponse](BuAgentScheduleHistoryResponse) getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(businessUnitId, weekId, scheduleId, agentId)
 
 Loads agent's schedule history.
@@ -4278,7 +4216,6 @@ try {
 # **getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions**
 
 
-
 > [PerformancePredictionResponse](PerformancePredictionResponse) getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions(businessUnitId, weekId, scheduleId)
 
 Get the performance prediction for the associated schedule
@@ -4341,7 +4278,6 @@ try {
 
 
 # **getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation**
-
 
 
 > [PerformancePredictionRecalculationResponse](PerformancePredictionRecalculationResponse) getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation(businessUnitId, weekId, scheduleId, recalculationId)
@@ -4408,7 +4344,6 @@ try {
 
 
 # **getWorkforcemanagementBusinessunitWeekSchedules**
-
 
 
 > [BuScheduleListing](BuScheduleListing) getWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, weekId, includeOnlyPublished, expand)
@@ -4479,7 +4414,6 @@ try {
 # **getWorkforcemanagementBusinessunitWeekShorttermforecast**
 
 
-
 > [BuShortTermForecast](BuShortTermForecast) getWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId, expand)
 
 Get a short term forecast
@@ -4543,7 +4477,6 @@ try {
 
 
 # **getWorkforcemanagementBusinessunitWeekShorttermforecastData**
-
 
 
 > [BuForecastResultResponse](BuForecastResultResponse) getWorkforcemanagementBusinessunitWeekShorttermforecastData(businessUnitId, weekDateId, forecastId, weekNumber, forceDownloadService)
@@ -4615,7 +4548,6 @@ try {
 # **getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults**
 
 
-
 > [BuForecastGenerationResult](BuForecastGenerationResult) getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults(businessUnitId, weekDateId, forecastId)
 
 Gets the forecast generation results
@@ -4677,7 +4609,6 @@ try {
 
 
 # **getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata**
-
 
 
 > [LongTermForecastResultResponse](LongTermForecastResultResponse) getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata(businessUnitId, weekDateId, forecastId, forceDownloadService)
@@ -4747,7 +4678,6 @@ try {
 # **getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups**
 
 
-
 > [ForecastPlanningGroupsResponse](ForecastPlanningGroupsResponse) getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups(businessUnitId, weekDateId, forecastId)
 
 Gets the forecast planning group snapshot
@@ -4811,7 +4741,6 @@ try {
 
 
 # **getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement**
-
 
 
 > [BuForecastStaffingRequirementsResultResponse](BuForecastStaffingRequirementsResultResponse) getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(businessUnitId, weekDateId, forecastId, weekNumbers)
@@ -4879,7 +4808,6 @@ try {
 # **getWorkforcemanagementBusinessunitWeekShorttermforecasts**
 
 
-
 > [BuShortTermForecastListing](BuShortTermForecastListing) getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUnitId, weekDateId)
 
 Get short term forecasts
@@ -4944,7 +4872,6 @@ try {
 # **getWorkforcemanagementBusinessunitWorkplanbid**
 
 
-
 > [WorkPlanBid](WorkPlanBid) getWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId)
 
 Get a work plan bid
@@ -5004,7 +4931,6 @@ try {
 
 
 # **getWorkforcemanagementBusinessunitWorkplanbidGroup**
-
 
 
 > [WorkPlanBidGroupResponse](WorkPlanBidGroupResponse) getWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId)
@@ -5070,7 +4996,6 @@ try {
 # **getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences**
 
 
-
 > [AdminAgentWorkPlanPreferenceResponse](AdminAgentWorkPlanPreferenceResponse) getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId)
 
 Gets the work plan preferences of all the agents in the work plan bid group
@@ -5134,7 +5059,6 @@ try {
 # **getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary**
 
 
-
 > [WorkPlanBidGroupSummaryList](WorkPlanBidGroupSummaryList) getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary(businessUnitId, bidId)
 
 Get summary of bid groups that belong to a work plan bid
@@ -5196,7 +5120,6 @@ try {
 # **getWorkforcemanagementBusinessunitWorkplanbids**
 
 
-
 > [WorkPlanBidListResponse](WorkPlanBidListResponse) getWorkforcemanagementBusinessunitWorkplanbids(businessUnitId)
 
 Get list of work plan bids
@@ -5254,7 +5177,6 @@ try {
 
 
 # **getWorkforcemanagementBusinessunits**
-
 
 
 > [BusinessUnitListing](BusinessUnitListing) getWorkforcemanagementBusinessunits(feature, divisionId)
@@ -5317,7 +5239,6 @@ try {
 # **getWorkforcemanagementBusinessunitsDivisionviews**
 
 
-
 > [BusinessUnitListing](BusinessUnitListing) getWorkforcemanagementBusinessunitsDivisionviews(divisionId)
 
 Get business units across divisions
@@ -5377,7 +5298,6 @@ try {
 # **getWorkforcemanagementCalendarDataIcs**
 
 
-
 > String getWorkforcemanagementCalendarDataIcs(calendarId)
 
 Get ics formatted calendar based on shareable link
@@ -5421,7 +5341,6 @@ try {
 
 
 # **getWorkforcemanagementCalendarUrlIcs**
-
 
 
 > [CalendarUrlResponse](CalendarUrlResponse) getWorkforcemanagementCalendarUrlIcs()
@@ -5480,7 +5399,6 @@ This endpoint does not require any parameters.
 # **getWorkforcemanagementHistoricaldataDeletejob**
 
 
-
 > [HistoricalImportDeleteJobResponse](HistoricalImportDeleteJobResponse) getWorkforcemanagementHistoricaldataDeletejob()
 
 Retrieves delete job status for historical data imports of the organization
@@ -5534,7 +5452,6 @@ This endpoint does not require any parameters.
 
 
 # **getWorkforcemanagementHistoricaldataImportstatus**
-
 
 
 > [HistoricalImportStatusListing](HistoricalImportStatusListing) getWorkforcemanagementHistoricaldataImportstatus()
@@ -5592,7 +5509,6 @@ This endpoint does not require any parameters.
 # **getWorkforcemanagementIntegrationsHris**
 
 
-
 > [WfmIntegrationListing](WfmIntegrationListing) getWorkforcemanagementIntegrationsHris()
 
 Get integrations
@@ -5646,7 +5562,6 @@ This endpoint does not require any parameters.
 
 
 # **getWorkforcemanagementIntegrationsHrisTimeofftypesJob**
-
 
 
 > [HrisTimeOffTypesJobResponse](HrisTimeOffTypesJobResponse) getWorkforcemanagementIntegrationsHrisTimeofftypesJob(jobId)
@@ -5705,7 +5620,6 @@ try {
 
 
 # **getWorkforcemanagementManagementunit**
-
 
 
 > [ManagementUnit](ManagementUnit) getWorkforcemanagementManagementunit(managementUnitId, expand)
@@ -5833,7 +5747,9 @@ try {
 
 # **getWorkforcemanagementManagementunitActivitycodes**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [ActivityCodeContainer](ActivityCodeContainer) getWorkforcemanagementManagementunitActivitycodes(managementUnitId)
 
@@ -5934,7 +5850,6 @@ try {
 # **getWorkforcemanagementManagementunitAdherence**
 
 
-
 > [UserScheduleAdherenceListing](UserScheduleAdherenceListing) getWorkforcemanagementManagementunitAdherence(managementUnitId, forceDownloadService)
 
 Get a list of user schedule adherence records for the requested management unit
@@ -5994,7 +5909,6 @@ try {
 
 
 # **getWorkforcemanagementManagementunitAgent**
-
 
 
 > [WfmAgent](WfmAgent) getWorkforcemanagementManagementunitAgent(managementUnitId, agentId, excludeCapabilities, expand)
@@ -6062,7 +5976,6 @@ try {
 # **getWorkforcemanagementManagementunitAgentShifttrades**
 
 
-
 > [ShiftTradeListResponse](ShiftTradeListResponse) getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId, agentId)
 
 Gets all the shift trades for a given agent
@@ -6125,7 +6038,6 @@ try {
 # **getWorkforcemanagementManagementunitShifttradesMatched**
 
 
-
 > [ShiftTradeMatchesSummaryResponse](ShiftTradeMatchesSummaryResponse) getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId)
 
 Gets a summary of all shift trades in the matched state
@@ -6186,7 +6098,6 @@ try {
 # **getWorkforcemanagementManagementunitShifttradesUsers**
 
 
-
 > [WfmUserEntityListing](WfmUserEntityListing) getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId)
 
 Gets list of users available for whom you can send direct shift trade requests
@@ -6244,7 +6155,6 @@ try {
 
 
 # **getWorkforcemanagementManagementunitTimeofflimit**
-
 
 
 > [TimeOffLimit](TimeOffLimit) getWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId)
@@ -6310,7 +6220,6 @@ try {
 # **getWorkforcemanagementManagementunitTimeofflimits**
 
 
-
 > [TimeOffLimitListing](TimeOffLimitListing) getWorkforcemanagementManagementunitTimeofflimits(managementUnitId)
 
 Gets a list of time off limit objects under management unit.
@@ -6371,7 +6280,6 @@ try {
 
 
 # **getWorkforcemanagementManagementunitTimeoffplan**
-
 
 
 > [TimeOffPlan](TimeOffPlan) getWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId)
@@ -6435,7 +6343,6 @@ try {
 # **getWorkforcemanagementManagementunitTimeoffplans**
 
 
-
 > [TimeOffPlanListing](TimeOffPlanListing) getWorkforcemanagementManagementunitTimeoffplans(managementUnitId)
 
 Gets a list of time off plans
@@ -6493,7 +6400,6 @@ try {
 
 
 # **getWorkforcemanagementManagementunitUserTimeoffrequest**
-
 
 
 > [TimeOffRequestResponse](TimeOffRequestResponse) getWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId)
@@ -6557,7 +6463,6 @@ try {
 
 
 # **getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits**
-
 
 
 > [QueryTimeOffLimitValuesResponse](QueryTimeOffLimitValuesResponse) getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(managementUnitId, userId, timeOffRequestId)
@@ -6624,7 +6529,6 @@ try {
 # **getWorkforcemanagementManagementunitUserTimeoffrequests**
 
 
-
 > [TimeOffRequestList](TimeOffRequestList) getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId, recentlyReviewed)
 
 Get a list of time off requests for a given user
@@ -6686,7 +6590,6 @@ try {
 
 
 # **getWorkforcemanagementManagementunitUsers**
-
 
 
 > [WfmUserEntityListing](WfmUserEntityListing) getWorkforcemanagementManagementunitUsers(managementUnitId)
@@ -6755,7 +6658,9 @@ try {
 
 # **getWorkforcemanagementManagementunitWeekSchedule**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [WeekScheduleResponse](WeekScheduleResponse) getWorkforcemanagementManagementunitWeekSchedule(managementUnitId, weekId, scheduleId, expand, forceDownloadService)
 
@@ -6824,7 +6729,9 @@ try {
 
 # **getWorkforcemanagementManagementunitWeekSchedules**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [WeekScheduleListResponse](WeekScheduleListResponse) getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId, includeOnlyPublished, earliestWeekDate, latestWeekDate)
 
@@ -6894,7 +6801,6 @@ try {
 # **getWorkforcemanagementManagementunitWeekShifttrades**
 
 
-
 > [WeekShiftTradeListResponse](WeekShiftTradeListResponse) getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, evaluateMatches, forceDownloadService)
 
 Gets all the shift trades for a given week
@@ -6959,7 +6865,6 @@ try {
 
 
 # **getWorkforcemanagementManagementunitWorkplan**
-
 
 
 > [WorkPlan](WorkPlan) getWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, includeOnly)
@@ -7027,7 +6932,6 @@ try {
 # **getWorkforcemanagementManagementunitWorkplanrotation**
 
 
-
 > [WorkPlanRotationResponse](WorkPlanRotationResponse) getWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId)
 
 Get a work plan rotation
@@ -7087,7 +6991,6 @@ try {
 
 
 # **getWorkforcemanagementManagementunitWorkplanrotations**
-
 
 
 > [WorkPlanRotationListResponse](WorkPlanRotationListResponse) getWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, expand)
@@ -7150,7 +7053,6 @@ try {
 
 
 # **getWorkforcemanagementManagementunitWorkplans**
-
 
 
 > [WorkPlanListResponse](WorkPlanListResponse) getWorkforcemanagementManagementunitWorkplans(managementUnitId, expand, exclude)
@@ -7222,7 +7124,6 @@ try {
 # **getWorkforcemanagementManagementunits**
 
 
-
 > [ManagementUnitListing](ManagementUnitListing) getWorkforcemanagementManagementunits(pageSize, pageNumber, expand, feature, divisionId)
 
 Get management units
@@ -7289,7 +7190,6 @@ try {
 # **getWorkforcemanagementManagementunitsDivisionviews**
 
 
-
 > [ManagementUnitListing](ManagementUnitListing) getWorkforcemanagementManagementunitsDivisionviews(divisionId)
 
 Get management units across divisions
@@ -7349,7 +7249,6 @@ try {
 # **getWorkforcemanagementNotifications**
 
 
-
 > [NotificationsResponse](NotificationsResponse) getWorkforcemanagementNotifications()
 
 Get a list of notifications for the current user
@@ -7404,7 +7303,6 @@ This endpoint does not require any parameters.
 
 
 # **getWorkforcemanagementSchedulingjob**
-
 
 
 > [SchedulingStatusResponse](SchedulingStatusResponse) getWorkforcemanagementSchedulingjob(jobId)
@@ -7466,7 +7364,6 @@ try {
 # **getWorkforcemanagementShifttrades**
 
 
-
 > [ShiftTradeListResponse](ShiftTradeListResponse) getWorkforcemanagementShifttrades()
 
 Gets all of my shift trades
@@ -7522,7 +7419,6 @@ This endpoint does not require any parameters.
 
 
 # **getWorkforcemanagementShrinkageJob**
-
 
 
 > [WfmHistoricalShrinkageResponse](WfmHistoricalShrinkageResponse) getWorkforcemanagementShrinkageJob(jobId)
@@ -7583,7 +7479,6 @@ try {
 # **getWorkforcemanagementTimeoffbalanceJob**
 
 
-
 > [TimeOffBalanceJobResponse](TimeOffBalanceJobResponse) getWorkforcemanagementTimeoffbalanceJob(jobId)
 
 Query the results of time off types job
@@ -7640,7 +7535,6 @@ try {
 
 
 # **getWorkforcemanagementTimeoffrequest**
-
 
 
 > [TimeOffRequestResponse](TimeOffRequestResponse) getWorkforcemanagementTimeoffrequest(timeOffRequestId)
@@ -7703,7 +7597,6 @@ try {
 # **getWorkforcemanagementTimeoffrequestWaitlistpositions**
 
 
-
 > [WaitlistPositionListing](WaitlistPositionListing) getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequestId)
 
 Get the daily waitlist positions of a time off request for the current user
@@ -7761,7 +7654,6 @@ try {
 
 
 # **getWorkforcemanagementTimeoffrequests**
-
 
 
 > [TimeOffRequestList](TimeOffRequestList) getWorkforcemanagementTimeoffrequests(recentlyReviewed)
@@ -7824,7 +7716,6 @@ try {
 # **getWorkforcemanagementUserWorkplanbidranks**
 
 
-
 > [WorkPlanBidRanks](WorkPlanBidRanks) getWorkforcemanagementUserWorkplanbidranks(userId)
 
 Get work plan bid ranks for a user
@@ -7882,7 +7773,6 @@ try {
 
 
 # **getWorkforcemanagementWorkplanbidPreferences**
-
 
 
 > [AgentWorkPlanBiddingPreferenceResponse](AgentWorkPlanBiddingPreferenceResponse) getWorkforcemanagementWorkplanbidPreferences(bidId)
@@ -7944,7 +7834,6 @@ try {
 # **getWorkforcemanagementWorkplanbidWorkplans**
 
 
-
 > [AgentWorkPlanListResponse](AgentWorkPlanListResponse) getWorkforcemanagementWorkplanbidWorkplans(bidId)
 
 Gets an agent's work plans for a bid
@@ -8004,7 +7893,6 @@ try {
 # **getWorkforcemanagementWorkplanbids**
 
 
-
 > [AgentWorkPlanBids](AgentWorkPlanBids) getWorkforcemanagementWorkplanbids()
 
 Gets the list of work plan bids that belong to an agent
@@ -8058,7 +7946,6 @@ This endpoint does not require any parameters.
 
 
 # **patchWorkforcemanagementAgentAdherenceExplanation**
-
 
 
 > [AdherenceExplanationAsyncResponse](AdherenceExplanationAsyncResponse) patchWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId, body)
@@ -8124,7 +8011,6 @@ try {
 # **patchWorkforcemanagementAlternativeshiftsTrade**
 
 
-
 > [AlternativeShiftTradeResponse](AlternativeShiftTradeResponse) patchWorkforcemanagementAlternativeshiftsTrade(tradeId, body)
 
 Update my alternative shifts trade by trade ID
@@ -8186,7 +8072,6 @@ try {
 # **patchWorkforcemanagementAlternativeshiftsTradesStateJobs**
 
 
-
 > [AlternativeShiftAsyncResponse](AlternativeShiftAsyncResponse) patchWorkforcemanagementAlternativeshiftsTradesStateJobs(body)
 
 Bulk update alternative shift trade states
@@ -8244,7 +8129,6 @@ try {
 
 
 # **patchWorkforcemanagementBusinessunit**
-
 
 
 > [BusinessUnitResponse](BusinessUnitResponse) patchWorkforcemanagementBusinessunit(businessUnitId, body)
@@ -8308,7 +8192,6 @@ try {
 # **patchWorkforcemanagementBusinessunitActivitycode**
 
 
-
 > [BusinessUnitActivityCode](BusinessUnitActivityCode) patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, body)
 
 Update an activity code
@@ -8370,7 +8253,6 @@ try {
 
 
 # **patchWorkforcemanagementBusinessunitActivityplan**
-
 
 
 > [ActivityPlanResponse](ActivityPlanResponse) patchWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId, body)
@@ -8438,7 +8320,6 @@ try {
 # **patchWorkforcemanagementBusinessunitAlternativeshiftsSettings**
 
 
-
 > [AlternativeShiftBuSettingsResponse](AlternativeShiftBuSettingsResponse) patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId, body)
 
 Update alternative shifts settings for a business unit
@@ -8498,7 +8379,6 @@ try {
 
 
 # **patchWorkforcemanagementBusinessunitPlanninggroup**
-
 
 
 > [PlanningGroup](PlanningGroup) patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, body)
@@ -8564,7 +8444,6 @@ try {
 # **patchWorkforcemanagementBusinessunitSchedulingRun**
 
 
-
 > Void patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId, body)
 
 Mark a schedule run as applied
@@ -8625,7 +8504,6 @@ null (empty response body)
 
 
 # **patchWorkforcemanagementBusinessunitServicegoaltemplate**
-
 
 
 > [ServiceGoalTemplate](ServiceGoalTemplate) patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, body)
@@ -8691,7 +8569,6 @@ try {
 # **patchWorkforcemanagementBusinessunitStaffinggroup**
 
 
-
 > [StaffingGroupResponse](StaffingGroupResponse) patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId, body)
 
 Updates a staffing group
@@ -8753,7 +8630,6 @@ try {
 
 
 # **patchWorkforcemanagementBusinessunitTimeoffplan**
-
 
 
 > [BuTimeOffPlanResponse](BuTimeOffPlanResponse) patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId, body)
@@ -8819,7 +8695,6 @@ try {
 # **patchWorkforcemanagementBusinessunitWorkplanbid**
 
 
-
 > [WorkPlanBid](WorkPlanBid) patchWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId, body)
 
 Update work plan bid
@@ -8881,7 +8756,6 @@ try {
 
 
 # **patchWorkforcemanagementBusinessunitWorkplanbidGroup**
-
 
 
 > [WorkPlanBidGroupResponse](WorkPlanBidGroupResponse) patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId, body)
@@ -8949,7 +8823,6 @@ try {
 # **patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences**
 
 
-
 > [AdminAgentWorkPlanPreferenceResponse](AdminAgentWorkPlanPreferenceResponse) patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId, body)
 
 Overrides the assigned work plan for the specified agents
@@ -9015,7 +8888,6 @@ try {
 # **patchWorkforcemanagementManagementunit**
 
 
-
 > [ManagementUnit](ManagementUnit) patchWorkforcemanagementManagementunit(managementUnitId, body)
 
 Update the requested management unit
@@ -9077,7 +8949,6 @@ try {
 # **patchWorkforcemanagementManagementunitAgents**
 
 
-
 > Void patchWorkforcemanagementManagementunitAgents(managementUnitId, body)
 
 Update agent configurations
@@ -9136,7 +9007,6 @@ null (empty response body)
 
 
 # **patchWorkforcemanagementManagementunitTimeofflimit**
-
 
 
 > [TimeOffLimit](TimeOffLimit) patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, body)
@@ -9204,7 +9074,6 @@ try {
 # **patchWorkforcemanagementManagementunitTimeoffplan**
 
 
-
 > [TimeOffPlan](TimeOffPlan) patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, body)
 
 Updates a time off plan
@@ -9266,7 +9135,6 @@ try {
 
 
 # **patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus**
-
 
 
 > [UserTimeOffIntegrationStatusResponse](UserTimeOffIntegrationStatusResponse) patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId, timeOffRequestId, userId, body)
@@ -9334,7 +9202,6 @@ try {
 # **patchWorkforcemanagementManagementunitUserTimeoffrequest**
 
 
-
 > [TimeOffRequestResponse](TimeOffRequestResponse) patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, body)
 
 Update a time off request
@@ -9398,7 +9265,6 @@ try {
 
 
 # **patchWorkforcemanagementManagementunitWeekShifttrade**
-
 
 
 > [ShiftTradeResponse](ShiftTradeResponse) patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId, weekDateId, tradeId, body)
@@ -9466,7 +9332,6 @@ try {
 # **patchWorkforcemanagementManagementunitWorkplan**
 
 
-
 > [WorkPlan](WorkPlan) patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, validationMode, body)
 
 Update a work plan
@@ -9532,7 +9397,6 @@ try {
 # **patchWorkforcemanagementManagementunitWorkplanrotation**
 
 
-
 > [WorkPlanRotationResponse](WorkPlanRotationResponse) patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId, body)
 
 Update a work plan rotation
@@ -9596,7 +9460,6 @@ try {
 # **patchWorkforcemanagementTimeoffrequest**
 
 
-
 > [TimeOffRequestResponse](TimeOffRequestResponse) patchWorkforcemanagementTimeoffrequest(timeOffRequestId, body)
 
 Update a time off request for the current user
@@ -9656,7 +9519,6 @@ try {
 
 
 # **patchWorkforcemanagementUserWorkplanbidranks**
-
 
 
 > [WorkPlanBidRanks](WorkPlanBidRanks) patchWorkforcemanagementUserWorkplanbidranks(userId, body)
@@ -9720,7 +9582,6 @@ try {
 # **patchWorkforcemanagementUsersWorkplanbidranksBulk**
 
 
-
 > [EntityListing](EntityListing) patchWorkforcemanagementUsersWorkplanbidranksBulk(body)
 
 Update bulk work plan bid ranks on users. Max 50 users can be updated at a time.
@@ -9778,7 +9639,6 @@ try {
 
 
 # **patchWorkforcemanagementWorkplanbidPreferences**
-
 
 
 > [AgentWorkPlanBiddingPreferenceResponse](AgentWorkPlanBiddingPreferenceResponse) patchWorkforcemanagementWorkplanbidPreferences(bidId, body)
@@ -9842,7 +9702,6 @@ try {
 # **postWorkforcemanagementAdherenceExplanations**
 
 
-
 > [AdherenceExplanationAsyncResponse](AdherenceExplanationAsyncResponse) postWorkforcemanagementAdherenceExplanations(body)
 
 Submit an adherence explanation for the current user
@@ -9900,7 +9759,6 @@ try {
 
 
 # **postWorkforcemanagementAdherenceExplanationsQuery**
-
 
 
 > [QueryAdherenceExplanationsResponse](QueryAdherenceExplanationsResponse) postWorkforcemanagementAdherenceExplanationsQuery(body, forceAsync, forceDownloadService)
@@ -9965,7 +9823,9 @@ try {
 
 # **postWorkforcemanagementAdherenceHistorical**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [WfmHistoricalAdherenceResponse](WfmHistoricalAdherenceResponse) postWorkforcemanagementAdherenceHistorical(body)
 
@@ -10024,7 +9884,6 @@ try {
 
 
 # **postWorkforcemanagementAdherenceHistoricalBulk**
-
 
 
 > [WfmHistoricalAdherenceBulkResponse](WfmHistoricalAdherenceBulkResponse) postWorkforcemanagementAdherenceHistoricalBulk(body)
@@ -10086,7 +9945,6 @@ try {
 # **postWorkforcemanagementAgentAdherenceExplanations**
 
 
-
 > [AdherenceExplanationAsyncResponse](AdherenceExplanationAsyncResponse) postWorkforcemanagementAgentAdherenceExplanations(agentId, body)
 
 Add an adherence explanation for the requested user
@@ -10146,7 +10004,6 @@ try {
 
 
 # **postWorkforcemanagementAgentAdherenceExplanationsQuery**
-
 
 
 > [AgentQueryAdherenceExplanationsResponse](AgentQueryAdherenceExplanationsResponse) postWorkforcemanagementAgentAdherenceExplanationsQuery(agentId, body, forceAsync, forceDownloadService)
@@ -10214,7 +10071,6 @@ try {
 # **postWorkforcemanagementAgents**
 
 
-
 > [MoveAgentsResponse](MoveAgentsResponse) postWorkforcemanagementAgents(body)
 
 Move agents in and out of management unit
@@ -10272,7 +10128,6 @@ try {
 
 
 # **postWorkforcemanagementAgentsIntegrationsHrisQuery**
-
 
 
 > [AgentsIntegrationsListing](AgentsIntegrationsListing) postWorkforcemanagementAgentsIntegrationsHrisQuery(body)
@@ -10334,7 +10189,6 @@ try {
 # **postWorkforcemanagementAgentsMePossibleworkshifts**
 
 
-
 > [AgentPossibleWorkShiftsResponse](AgentPossibleWorkShiftsResponse) postWorkforcemanagementAgentsMePossibleworkshifts(body)
 
 Get agent possible work shifts for requested time frame
@@ -10392,7 +10246,6 @@ try {
 
 
 # **postWorkforcemanagementAgentschedulesMine**
-
 
 
 > [BuCurrentAgentScheduleSearchResponse](BuCurrentAgentScheduleSearchResponse) postWorkforcemanagementAgentschedulesMine(body)
@@ -10454,7 +10307,6 @@ try {
 # **postWorkforcemanagementAlternativeshiftsOffersJobs**
 
 
-
 > [AlternativeShiftAsyncResponse](AlternativeShiftAsyncResponse) postWorkforcemanagementAlternativeshiftsOffersJobs(body)
 
 Request a list of alternative shift offers for a given schedule
@@ -10512,7 +10364,6 @@ try {
 
 
 # **postWorkforcemanagementAlternativeshiftsOffersSearchJobs**
-
 
 
 > [AlternativeShiftAsyncResponse](AlternativeShiftAsyncResponse) postWorkforcemanagementAlternativeshiftsOffersSearchJobs(body)
@@ -10574,7 +10425,6 @@ try {
 # **postWorkforcemanagementAlternativeshiftsTrades**
 
 
-
 > [AlternativeShiftTradeResponse](AlternativeShiftTradeResponse) postWorkforcemanagementAlternativeshiftsTrades(body)
 
 Create my alternative shift trade using an existing offer's jobId
@@ -10632,7 +10482,6 @@ try {
 
 
 # **postWorkforcemanagementBusinessunitActivitycodes**
-
 
 
 > [BusinessUnitActivityCode](BusinessUnitActivityCode) postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, body)
@@ -10694,7 +10543,6 @@ try {
 
 
 # **postWorkforcemanagementBusinessunitActivityplanRunsJobs**
-
 
 
 > [ActivityPlanJobResponse](ActivityPlanJobResponse) postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnitId, activityPlanId)
@@ -10760,7 +10608,6 @@ try {
 # **postWorkforcemanagementBusinessunitActivityplans**
 
 
-
 > [ActivityPlanResponse](ActivityPlanResponse) postWorkforcemanagementBusinessunitActivityplans(businessUnitId, body)
 
 Create an activity plan
@@ -10820,7 +10667,6 @@ try {
 
 
 # **postWorkforcemanagementBusinessunitAdherenceExplanationsQuery**
-
 
 
 > [BuQueryAdherenceExplanationsResponse](BuQueryAdherenceExplanationsResponse) postWorkforcemanagementBusinessunitAdherenceExplanationsQuery(businessUnitId, body, forceAsync, forceDownloadService)
@@ -10886,7 +10732,6 @@ try {
 
 
 # **postWorkforcemanagementBusinessunitAgentschedulesSearch**
-
 
 
 > [BuAsyncAgentSchedulesSearchResponse](BuAsyncAgentSchedulesSearchResponse) postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId, forceAsync, forceDownloadService, body)
@@ -10955,7 +10800,6 @@ try {
 # **postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch**
 
 
-
 > [BuListAlternativeShiftTradesResponse](BuListAlternativeShiftTradesResponse) postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch(businessUnitId, body, forceAsync)
 
 List alternative shifts trades for a given management unit or agent
@@ -11017,7 +10861,6 @@ try {
 
 
 # **postWorkforcemanagementBusinessunitIntraday**
-
 
 
 > [AsyncIntradayResponse](AsyncIntradayResponse) postWorkforcemanagementBusinessunitIntraday(businessUnitId, forceAsync, body)
@@ -11083,7 +10926,6 @@ try {
 # **postWorkforcemanagementBusinessunitPlanninggroups**
 
 
-
 > [PlanningGroup](PlanningGroup) postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, body)
 
 Adds a new planning group
@@ -11143,7 +10985,6 @@ try {
 
 
 # **postWorkforcemanagementBusinessunitServicegoaltemplates**
-
 
 
 > [ServiceGoalTemplate](ServiceGoalTemplate) postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, body)
@@ -11207,7 +11048,6 @@ try {
 # **postWorkforcemanagementBusinessunitStaffinggroups**
 
 
-
 > [StaffingGroupResponse](StaffingGroupResponse) postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, body)
 
 Creates a new staffing group
@@ -11267,7 +11107,6 @@ try {
 
 
 # **postWorkforcemanagementBusinessunitStaffinggroupsQuery**
-
 
 
 > [UserStaffingGroupListing](UserStaffingGroupListing) postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId, body)
@@ -11331,7 +11170,6 @@ try {
 # **postWorkforcemanagementBusinessunitTimeofflimits**
 
 
-
 > [BuTimeOffLimitResponse](BuTimeOffLimitResponse) postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, body)
 
 Creates a new time-off limit object
@@ -11391,7 +11229,6 @@ try {
 
 
 # **postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery**
-
 
 
 > [BuTimeOffLimitValuesResponse](BuTimeOffLimitValuesResponse) postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId, body)
@@ -11455,7 +11292,6 @@ try {
 # **postWorkforcemanagementBusinessunitTimeoffplans**
 
 
-
 > [BuTimeOffPlanResponse](BuTimeOffPlanResponse) postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, body)
 
 Creates a new time-off plan
@@ -11515,7 +11351,6 @@ try {
 
 
 # **postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery**
-
 
 
 > [BuAsyncAgentSchedulesQueryResponse](BuAsyncAgentSchedulesQueryResponse) postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery(businessUnitId, weekId, scheduleId, body, forceAsync, forceDownloadService)
@@ -11588,7 +11423,6 @@ try {
 # **postWorkforcemanagementBusinessunitWeekScheduleCopy**
 
 
-
 > [BuAsyncScheduleResponse](BuAsyncScheduleResponse) postWorkforcemanagementBusinessunitWeekScheduleCopy(businessUnitId, weekId, scheduleId, body)
 
 Copy a schedule
@@ -11652,7 +11486,6 @@ try {
 
 
 # **postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations**
-
 
 
 > [PerformancePredictionRecalculationResponse](PerformancePredictionRecalculationResponse) postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(businessUnitId, weekId, scheduleId, body)
@@ -11720,7 +11553,6 @@ try {
 # **postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl**
 
 
-
 > [PerformancePredictionRecalculationUploadResponse](PerformancePredictionRecalculationUploadResponse) postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(businessUnitId, weekId, scheduleId, body)
 
 Upload daily activity changes to be able to request a performance prediction recalculation
@@ -11786,7 +11618,6 @@ try {
 # **postWorkforcemanagementBusinessunitWeekScheduleReschedule**
 
 
-
 > [BuAsyncScheduleRunResponse](BuAsyncScheduleRunResponse) postWorkforcemanagementBusinessunitWeekScheduleReschedule(businessUnitId, weekId, scheduleId, body)
 
 Start a rescheduling run
@@ -11850,7 +11681,6 @@ try {
 
 
 # **postWorkforcemanagementBusinessunitWeekScheduleUpdate**
-
 
 
 > [BuAsyncScheduleResponse](BuAsyncScheduleResponse) postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId, weekId, scheduleId, body)
@@ -11920,7 +11750,6 @@ try {
 # **postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl**
 
 
-
 > [UpdateScheduleUploadResponse](UpdateScheduleUploadResponse) postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(businessUnitId, weekId, scheduleId, body)
 
 Creates a signed upload URL for updating a schedule
@@ -11988,7 +11817,6 @@ try {
 # **postWorkforcemanagementBusinessunitWeekSchedules**
 
 
-
 > [BuScheduleMetadata](BuScheduleMetadata) postWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, weekId, body)
 
 Create a blank schedule
@@ -12052,7 +11880,6 @@ try {
 # **postWorkforcemanagementBusinessunitWeekSchedulesGenerate**
 
 
-
 > [BuAsyncScheduleRunResponse](BuAsyncScheduleRunResponse) postWorkforcemanagementBusinessunitWeekSchedulesGenerate(businessUnitId, weekId, body)
 
 Generate a schedule
@@ -12114,7 +11941,6 @@ try {
 
 
 # **postWorkforcemanagementBusinessunitWeekSchedulesImport**
-
 
 
 > [ScheduleUploadProcessingResponse](ScheduleUploadProcessingResponse) postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitId, weekId, body)
@@ -12182,7 +12008,6 @@ try {
 # **postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl**
 
 
-
 > [ImportScheduleUploadResponse](ImportScheduleUploadResponse) postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(businessUnitId, weekId, body)
 
 Creates a signed upload URL for importing a schedule
@@ -12246,7 +12071,6 @@ try {
 
 
 # **postWorkforcemanagementBusinessunitWeekShorttermforecastCopy**
-
 
 
 > [AsyncForecastOperationResult](AsyncForecastOperationResult) postWorkforcemanagementBusinessunitWeekShorttermforecastCopy(businessUnitId, weekDateId, forecastId, body, forceAsync)
@@ -12316,7 +12140,6 @@ try {
 # **postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate**
 
 
-
 > [AsyncForecastOperationResult](AsyncForecastOperationResult) postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(businessUnitId, weekDateId, body, forceAsync)
 
 Generate a short term forecast
@@ -12380,7 +12203,6 @@ try {
 
 
 # **postWorkforcemanagementBusinessunitWeekShorttermforecastsImport**
-
 
 
 > [ImportForecastResponse](ImportForecastResponse) postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId, weekDateId, body)
@@ -12448,7 +12270,6 @@ try {
 # **postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl**
 
 
-
 > [ImportForecastUploadResponse](ImportForecastUploadResponse) postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(businessUnitId, weekDateId, body)
 
 Creates a signed upload URL for importing a short term forecast
@@ -12514,7 +12335,6 @@ try {
 # **postWorkforcemanagementBusinessunitWorkplanbidCopy**
 
 
-
 > [WorkPlanBid](WorkPlanBid) postWorkforcemanagementBusinessunitWorkplanbidCopy(businessUnitId, bidId, body)
 
 Copy a work plan bid
@@ -12576,7 +12396,6 @@ try {
 
 
 # **postWorkforcemanagementBusinessunitWorkplanbidGroups**
-
 
 
 > [WorkPlanBidGroupResponse](WorkPlanBidGroupResponse) postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId, bidId, body)
@@ -12642,7 +12461,6 @@ try {
 # **postWorkforcemanagementBusinessunitWorkplanbids**
 
 
-
 > [WorkPlanBid](WorkPlanBid) postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId, body)
 
 Create a new work plan bid
@@ -12702,7 +12520,6 @@ try {
 
 
 # **postWorkforcemanagementBusinessunits**
-
 
 
 > [BusinessUnitResponse](BusinessUnitResponse) postWorkforcemanagementBusinessunits(body)
@@ -12766,7 +12583,6 @@ try {
 # **postWorkforcemanagementCalendarUrlIcs**
 
 
-
 > [CalendarUrlResponse](CalendarUrlResponse) postWorkforcemanagementCalendarUrlIcs(language)
 
 Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
@@ -12827,7 +12643,6 @@ try {
 # **postWorkforcemanagementHistoricaldataDeletejob**
 
 
-
 > [HistoricalImportDeleteJobResponse](HistoricalImportDeleteJobResponse) postWorkforcemanagementHistoricaldataDeletejob()
 
 Delete the entries of the historical data imports in the organization
@@ -12881,7 +12696,6 @@ This endpoint does not require any parameters.
 
 
 # **postWorkforcemanagementHistoricaldataValidate**
-
 
 
 > Void postWorkforcemanagementHistoricaldataValidate(body)
@@ -12942,7 +12756,6 @@ null (empty response body)
 # **postWorkforcemanagementIntegrationsHriTimeofftypesJobs**
 
 
-
 > [HrisTimeOffTypesResponse](HrisTimeOffTypesResponse) postWorkforcemanagementIntegrationsHriTimeofftypesJobs(hrisIntegrationId)
 
 Get list of time off types configured in integration
@@ -13000,7 +12813,6 @@ try {
 
 
 # **postWorkforcemanagementManagementunitAgentschedulesSearch**
-
 
 
 > [BuAsyncAgentSchedulesSearchResponse](BuAsyncAgentSchedulesSearchResponse) postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, forceAsync, forceDownloadService, body)
@@ -13069,7 +12881,6 @@ try {
 # **postWorkforcemanagementManagementunitHistoricaladherencequery**
 
 
-
 > [WfmHistoricalAdherenceResponse](WfmHistoricalAdherenceResponse) postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId, body)
 
 Request a historical adherence report
@@ -13131,7 +12942,6 @@ try {
 
 
 # **postWorkforcemanagementManagementunitMove**
-
 
 
 > [MoveManagementUnitResponse](MoveManagementUnitResponse) postWorkforcemanagementManagementunitMove(managementUnitId, body)
@@ -13196,7 +13006,9 @@ try {
 
 # **postWorkforcemanagementManagementunitSchedulesSearch**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [UserScheduleContainer](UserScheduleContainer) postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, body)
 
@@ -13258,7 +13070,6 @@ try {
 
 
 # **postWorkforcemanagementManagementunitShrinkageJobs**
-
 
 
 > [WfmHistoricalShrinkageResponse](WfmHistoricalShrinkageResponse) postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId, body)
@@ -13324,7 +13135,6 @@ try {
 # **postWorkforcemanagementManagementunitTimeofflimits**
 
 
-
 > [TimeOffLimit](TimeOffLimit) postWorkforcemanagementManagementunitTimeofflimits(managementUnitId, body)
 
 Creates a new time off limit object under management unit.
@@ -13388,7 +13198,6 @@ try {
 # **postWorkforcemanagementManagementunitTimeofflimitsValuesQuery**
 
 
-
 > [QueryTimeOffLimitValuesResponse](QueryTimeOffLimitValuesResponse) postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId, body)
 
 Retrieves time off limit related values based on a given set of filters.
@@ -13448,7 +13257,6 @@ try {
 
 
 # **postWorkforcemanagementManagementunitTimeoffplans**
-
 
 
 > [TimeOffPlan](TimeOffPlan) postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, body)
@@ -13512,7 +13320,6 @@ try {
 # **postWorkforcemanagementManagementunitTimeoffrequests**
 
 
-
 > [TimeOffRequestList](TimeOffRequestList) postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId, body)
 
 Create a new time off request
@@ -13574,7 +13381,6 @@ try {
 # **postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery**
 
 
-
 > [UserTimeOffIntegrationStatusResponseListing](UserTimeOffIntegrationStatusResponseListing) postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(managementUnitId, body)
 
 Retrieves integration statuses for a list of time off requests
@@ -13634,7 +13440,6 @@ try {
 
 
 # **postWorkforcemanagementManagementunitTimeoffrequestsQuery**
-
 
 
 > [TimeOffRequestListing](TimeOffRequestListing) postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId, forceDownloadService, body)
@@ -13702,7 +13507,6 @@ try {
 # **postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery**
 
 
-
 > [WaitlistPositionListing](WaitlistPositionListing) postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId, body)
 
 Retrieves daily waitlist position for a list of time off requests
@@ -13762,7 +13566,6 @@ try {
 
 
 # **postWorkforcemanagementManagementunitUserTimeoffbalanceJobs**
-
 
 
 > [TimeOffBalancesResponse](TimeOffBalancesResponse) postWorkforcemanagementManagementunitUserTimeoffbalanceJobs(managementUnitId, userId, body)
@@ -13828,7 +13631,6 @@ try {
 # **postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs**
 
 
-
 > [TimeOffBalancesResponse](TimeOffBalancesResponse) postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs(managementUnitId, userId, timeOffRequestId)
 
 Query time off balances for dates spanned by a given time off request
@@ -13892,7 +13694,6 @@ try {
 # **postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate**
 
 
-
 > [EstimateAvailableTimeOffResponse](EstimateAvailableTimeOffResponse) postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId, userId, body)
 
 Estimates available time off for an agent
@@ -13954,7 +13755,6 @@ try {
 
 
 # **postWorkforcemanagementManagementunitWeekShifttradeMatch**
-
 
 
 > [MatchShiftTradeResponse](MatchShiftTradeResponse) postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId, weekDateId, tradeId, body)
@@ -14022,7 +13822,6 @@ try {
 # **postWorkforcemanagementManagementunitWeekShifttrades**
 
 
-
 > [ShiftTradeResponse](ShiftTradeResponse) postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, body)
 
 Adds a shift trade
@@ -14084,7 +13883,6 @@ try {
 
 
 # **postWorkforcemanagementManagementunitWeekShifttradesSearch**
-
 
 
 > [SearchShiftTradesResponse](SearchShiftTradesResponse) postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId, weekDateId, body, forceDownloadService)
@@ -14150,7 +13948,6 @@ try {
 
 
 # **postWorkforcemanagementManagementunitWeekShifttradesStateBulk**
-
 
 
 > [BulkUpdateShiftTradeStateResponse](BulkUpdateShiftTradeStateResponse) postWorkforcemanagementManagementunitWeekShifttradesStateBulk(managementUnitId, weekDateId, body, forceAsync)
@@ -14221,7 +14018,6 @@ try {
 # **postWorkforcemanagementManagementunitWorkplanCopy**
 
 
-
 > [WorkPlan](WorkPlan) postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId, workPlanId, body)
 
 Create a copy of work plan
@@ -14283,7 +14079,6 @@ try {
 
 
 # **postWorkforcemanagementManagementunitWorkplanValidate**
-
 
 
 > [ValidateWorkPlanResponse](ValidateWorkPlanResponse) postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, expand, body)
@@ -14352,7 +14147,6 @@ try {
 # **postWorkforcemanagementManagementunitWorkplanrotationCopy**
 
 
-
 > [WorkPlanRotationResponse](WorkPlanRotationResponse) postWorkforcemanagementManagementunitWorkplanrotationCopy(managementUnitId, workPlanRotationId, body)
 
 Create a copy of work plan rotation
@@ -14416,7 +14210,6 @@ try {
 # **postWorkforcemanagementManagementunitWorkplanrotations**
 
 
-
 > [WorkPlanRotationResponse](WorkPlanRotationResponse) postWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, body)
 
 Create a new work plan rotation
@@ -14476,7 +14269,6 @@ try {
 
 
 # **postWorkforcemanagementManagementunitWorkplans**
-
 
 
 > [WorkPlan](WorkPlan) postWorkforcemanagementManagementunitWorkplans(managementUnitId, validationMode, body)
@@ -14542,7 +14334,6 @@ try {
 # **postWorkforcemanagementManagementunits**
 
 
-
 > [ManagementUnit](ManagementUnit) postWorkforcemanagementManagementunits(body)
 
 Add a management unit
@@ -14604,7 +14395,6 @@ try {
 # **postWorkforcemanagementNotificationsUpdate**
 
 
-
 > [UpdateNotificationsResponse](UpdateNotificationsResponse) postWorkforcemanagementNotificationsUpdate(body)
 
 Mark a list of notifications as read or unread
@@ -14662,7 +14452,9 @@ try {
 
 # **postWorkforcemanagementSchedules**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [UserScheduleContainer](UserScheduleContainer) postWorkforcemanagementSchedules(body)
 
@@ -14721,7 +14513,6 @@ try {
 
 
 # **postWorkforcemanagementTeamAdherenceHistorical**
-
 
 
 > [WfmHistoricalAdherenceResponse](WfmHistoricalAdherenceResponse) postWorkforcemanagementTeamAdherenceHistorical(teamId, body)
@@ -14787,7 +14578,6 @@ try {
 # **postWorkforcemanagementTeamShrinkageJobs**
 
 
-
 > [WfmHistoricalShrinkageResponse](WfmHistoricalShrinkageResponse) postWorkforcemanagementTeamShrinkageJobs(teamId, body)
 
 Request a historical shrinkage report
@@ -14851,7 +14641,6 @@ try {
 # **postWorkforcemanagementTimeoffbalanceJobs**
 
 
-
 > [TimeOffBalancesResponse](TimeOffBalancesResponse) postWorkforcemanagementTimeoffbalanceJobs(body)
 
 Query time off balances for the current user for specified activity code and dates
@@ -14909,7 +14698,6 @@ try {
 
 
 # **postWorkforcemanagementTimeofflimitsAvailableQuery**
-
 
 
 > [AvailableTimeOffResponse](AvailableTimeOffResponse) postWorkforcemanagementTimeofflimitsAvailableQuery(body)
@@ -14971,7 +14759,6 @@ try {
 # **postWorkforcemanagementTimeoffrequests**
 
 
-
 > [TimeOffRequestResponse](TimeOffRequestResponse) postWorkforcemanagementTimeoffrequests(body)
 
 Create a time off request for the current user
@@ -15029,7 +14816,6 @@ try {
 
 
 # **postWorkforcemanagementTimeoffrequestsEstimate**
-
 
 
 > [EstimateAvailableTimeOffResponse](EstimateAvailableTimeOffResponse) postWorkforcemanagementTimeoffrequestsEstimate(body)
@@ -15091,7 +14877,6 @@ try {
 # **postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery**
 
 
-
 > [TimeOffIntegrationStatusResponseListing](TimeOffIntegrationStatusResponseListing) postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(body)
 
 Retrieves integration statuses for a list of current user time off requests
@@ -15149,7 +14934,6 @@ try {
 
 
 # **putWorkforcemanagementAgentIntegrationsHris**
-
 
 
 > [AgentIntegrationsResponse](AgentIntegrationsResponse) putWorkforcemanagementAgentIntegrationsHris(agentId, body)
@@ -15211,7 +14995,6 @@ try {
 
 
 # **putWorkforcemanagementBusinessunitTimeofflimitValues**
-
 
 
 > [BuTimeOffLimitResponse](BuTimeOffLimitResponse) putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId, timeOffLimitId, body)
@@ -15279,7 +15062,6 @@ try {
 # **putWorkforcemanagementManagementunitTimeofflimitValues**
 
 
-
 > [TimeOffLimit](TimeOffLimit) putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId, timeOffLimitId, body)
 
 Sets daily values for a date range of time off limit object
@@ -15342,4 +15124,4 @@ try {
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

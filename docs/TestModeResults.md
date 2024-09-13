@@ -9,9 +9,8 @@
 | **targetValidation** | [**TestTargetOperation**](TestTargetOperation) | Information about the validation of the trigger target |  [optional] |
 | **jsonPathValidation** | [**TestMatchesOperation**](TestMatchesOperation) | Information about the json path matching criteria |  [optional] |
 | **triggerMatches** | **Boolean** | Whether the trigger would have matched on the provided event body |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

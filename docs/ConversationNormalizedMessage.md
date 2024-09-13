@@ -18,7 +18,6 @@
 | **direction** | [**DirectionEnum**](#Enum--DirectionEnum) | The direction of the message. |  [optional] |
 | **metadata** | **Map&lt;String, String&gt;** | Additional metadata about this message. |  [optional] |
 | **byoSmsIntegrationId** | **String** | The internal id representing the customer supplied sms integration message. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -32,7 +31,6 @@
 | EVENT | &quot;Event&quot; | 
 | MESSAGE | &quot;Message&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -46,7 +44,6 @@
 | FAILED | &quot;Failed&quot; | 
 | PUBLISHED | &quot;Published&quot; | 
 | REMOVED | &quot;Removed&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: OriginatingEntityEnum
@@ -56,7 +53,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | HUMAN | &quot;Human&quot; | 
 | BOT | &quot;Bot&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DirectionEnum
@@ -66,9 +62,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INBOUND | &quot;Inbound&quot; | 
 | OUTBOUND | &quot;Outbound&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -8,9 +8,8 @@
 | **description** | **String** | The description for the schedule |  |
 | **shortTermForecast** | [**BuShortTermForecastReference**](BuShortTermForecastReference) | The forecast to use when generating the schedule.  Note that the forecast must fully encompass the schedule's start week + week count |  [optional] |
 | **weekCount** | **Integer** | The number of weeks in the schedule. One extra day is added at the end |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

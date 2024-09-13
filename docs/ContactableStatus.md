@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **contactable** | **Boolean** | Indicates whether or not the entire contact is contactable for the associated media type. |  [optional] |
 | **columnStatus** | [**Map&lt;String, ColumnStatus&gt;**](ColumnStatus) | A map of individual contact method columns to whether the individual column is contactable for the associated media type. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

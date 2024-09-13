@@ -11,7 +11,6 @@
 | **category** | [**CategoryEnum**](#Enum--CategoryEnum) | The category of the rule. |  |
 | **conditions** | [**List&lt;Condition&gt;**](Condition) | A list of Conditions. All of the Conditions must evaluate to true to trigger the actions. |  |
 | **actions** | [**List&lt;DialerAction&gt;**](DialerAction) | The list of actions to be taken if the conditions are true. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: CategoryEnum
@@ -21,9 +20,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | DIALER_PRECALL | &quot;DIALER_PRECALL&quot; | 
 | DIALER_WRAPUP | &quot;DIALER_WRAPUP&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

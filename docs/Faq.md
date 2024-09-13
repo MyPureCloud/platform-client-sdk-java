@@ -11,9 +11,8 @@
 | **documentUrl** | **String** | URL pointing to a web page if document was sourced from a URL. |  [optional] |
 | **documentDisplayName** | **String** | A human-readable description of the document, e.g. 'Sample store FAQ' |  [optional] |
 | **confidence** | **Float** | Value between 0 and 1. 1 corresponds to very confident, 0 to not confident at all |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

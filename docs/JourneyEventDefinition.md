@@ -11,7 +11,6 @@
 | **description** | **String** | The description of this event definition |  |
 | **jsonSchema** | [**JsonSchemaDocument**](JsonSchemaDocument) | The JSON schema of this event definition |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: SourceEnum
@@ -21,9 +20,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | NATIVE | &quot;Native&quot; | 
 | CUSTOM | &quot;Custom&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

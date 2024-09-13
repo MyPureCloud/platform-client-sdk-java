@@ -6,7 +6,6 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **action** | [**ActionEnum**](#Enum--ActionEnum) | The type for the learning module job |  |
-{: class="table table-striped"}
 
 
 ## Enum: ActionEnum
@@ -18,9 +17,8 @@
 | GRACEFULARCHIVE | &quot;GracefulArchive&quot; | 
 | IMMEDIATEARCHIVE | &quot;ImmediateArchive&quot; | 
 | UNARCHIVE | &quot;Unarchive&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -15,7 +15,6 @@
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | Group's filling status |  [optional] |
 | **skillConditions** | [**List&lt;SkillGroupCondition&gt;**](SkillGroupCondition) | Conditions for this group |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -25,9 +24,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INPROGRESS | &quot;InProgress&quot; | 
 | COMPLETE | &quot;Complete&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

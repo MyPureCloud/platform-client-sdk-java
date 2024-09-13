@@ -21,7 +21,6 @@
 | **sourceOrphaningId** | **String** | An identifier used during recovery operations by the supplying hybrid platform to track back and determine which interaction this recording is associated with |  [optional] |
 | **region** | [**RegionEnum**](#Enum--RegionEnum) |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ProviderTypeEnum
@@ -35,7 +34,6 @@
 | SCREEN_RECORDING | &quot;SCREEN_RECORDING&quot; | 
 | PUREENGAGE | &quot;PUREENGAGE&quot; | 
 | PURECONNECT | &quot;PURECONNECT&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -47,7 +45,6 @@
 | CHAT | &quot;CHAT&quot; | 
 | EMAIL | &quot;EMAIL&quot; | 
 | SCREEN | &quot;SCREEN&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: MediaSubtypeEnum
@@ -59,7 +56,6 @@
 | STATION | &quot;Station&quot; | 
 | CONSULT | &quot;Consult&quot; | 
 | SCREEN | &quot;Screen&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: FileStateEnum
@@ -73,7 +69,6 @@
 | RESTORED | &quot;RESTORED&quot; | 
 | RESTORING | &quot;RESTORING&quot; | 
 | UPLOADING | &quot;UPLOADING&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: OrphanStatusEnum
@@ -86,7 +81,6 @@
 | CONVERSATION_NOT_COMPLETE | &quot;CONVERSATION_NOT_COMPLETE&quot; | 
 | CONVERSATION_NOT_EVALUATED | &quot;CONVERSATION_NOT_EVALUATED&quot; | 
 | EVALUATED | &quot;EVALUATED&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: RegionEnum
@@ -113,9 +107,8 @@
 | SA_EAST_1 | &quot;sa-east-1&quot; | 
 | US_EAST_1 | &quot;us-east-1&quot; | 
 | US_WEST_2 | &quot;us-west-2&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -6,7 +6,6 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the adherence explanation |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -17,9 +16,8 @@
 | PENDING | &quot;Pending&quot; | 
 | APPROVED | &quot;Approved&quot; | 
 | DENIED | &quot;Denied&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

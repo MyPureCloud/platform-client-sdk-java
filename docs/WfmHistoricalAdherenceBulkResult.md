@@ -10,9 +10,8 @@
 | **managementUnitId** | **String** | The ID of the management unit for this result |  [optional] |
 | **userResults** | [**List&lt;WfmHistoricalAdherenceBulkUserResult&gt;**](WfmHistoricalAdherenceBulkUserResult) | The individual results for each user |  [optional] |
 | **lookupIdToSecondaryPresenceId** | **Map&lt;String, String&gt;** | Map of secondary presence lookup ID to corresponding secondary presence ID |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

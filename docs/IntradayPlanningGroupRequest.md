@@ -9,7 +9,6 @@
 | **categories** | [**List<CategoriesEnum>**](#Enum--CategoriesEnum) | The metric categories |  |
 | **planningGroupIds** | **List&lt;String&gt;** | The IDs of the planning groups for which to fetch data.  Omitting or passing an empty list will return all available planning groups |  [optional] |
 | **intervalLengthMinutes** | **Integer** | The period/interval in minutes for which to aggregate the data. Required, defaults to 15 |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: CategoriesEnum
@@ -19,9 +18,8 @@
 | FORECASTDATA | &quot;ForecastData&quot; |
 | SCHEDULEDATA | &quot;ScheduleData&quot; |
 | PERFORMANCEPREDICTIONDATA | &quot;PerformancePredictionData&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

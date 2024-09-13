@@ -15,7 +15,6 @@
 | **shareableContentObject** | [**LearningShareableContentObject**](LearningShareableContentObject) | The SCO (Shareable Content Object) data |  [optional] |
 | **signedCookie** | [**LearningAssignmentStepSignedCookie**](LearningAssignmentStepSignedCookie) | The signed cookie information needed to access the content of this step (if required) |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: SuccessStatusEnum
@@ -26,7 +25,6 @@
 | PASSED | &quot;Passed&quot; | 
 | FAILED | &quot;Failed&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: CompletionStatusEnum
@@ -38,9 +36,8 @@
 | INCOMPLETE | &quot;Incomplete&quot; | 
 | NOTATTEMPTED | &quot;NotAttempted&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

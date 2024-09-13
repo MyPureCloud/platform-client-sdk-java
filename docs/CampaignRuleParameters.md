@@ -14,7 +14,6 @@
 | **relativeWeight** | **Integer** | The relative weight to set a campaign to. Required for the 'setCampaignWeight' action. |  [optional] |
 | **maxCallsPerAgent** | [**BigDecimal**](BigDecimal) | The maximum number of calls per agent to set a campaign to. Required for the 'setCampaignMaxCallsPerAgent' action. |  [optional] |
 | **queue** | [**DomainEntityRef**](DomainEntityRef) | The queue a campaign to. Required for the 'changeCampaignQueue' action. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: OperatorEnum
@@ -27,7 +26,6 @@
 | GREATERTHANEQUALTO | &quot;greaterThanEqualTo&quot; | 
 | LESSTHAN | &quot;lessThan&quot; | 
 | LESSTHANEQUALTO | &quot;lessThanEqualTo&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: PriorityEnum
@@ -40,7 +38,6 @@
 | _3 | &quot;3&quot; | 
 | _4 | &quot;4&quot; | 
 | _5 | &quot;5&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DialingModeEnum
@@ -54,9 +51,8 @@
 | PREDICTIVE | &quot;predictive&quot; | 
 | PROGRESSIVE | &quot;progressive&quot; | 
 | EXTERNAL | &quot;external&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

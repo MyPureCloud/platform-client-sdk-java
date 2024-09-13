@@ -8,7 +8,6 @@
 | **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
 | **existingValue** | **String** |  |  [optional] |
 | **updatedValue** | **String** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -21,9 +20,8 @@
 | PHONE | &quot;PHONE&quot; | 
 | EMAIL | &quot;EMAIL&quot; | 
 | TWITTER | &quot;TWITTER&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

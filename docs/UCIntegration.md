@@ -16,7 +16,6 @@
 | **polledPresence** | **Boolean** | polledPresence |  |
 | **userPermissions** | **List&lt;String&gt;** | userPermissions |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: IntegrationPresenceSourceEnum
@@ -27,9 +26,8 @@
 | MICROSOFTTEAMS | &quot;MicrosoftTeams&quot; | 
 | ZOOMPHONE | &quot;ZoomPhone&quot; | 
 | EIGHTBYEIGHT | &quot;EightByEight&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

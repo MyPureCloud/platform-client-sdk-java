@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **actions** | [**List&lt;DeploymentWebAction&gt;**](DeploymentWebAction) | Collection of actions to be offered or displayed to the visitor. |  [optional] |
 | **pollIntervalMilliseconds** | **Integer** | Custom poll interval in milliseconds; when the return value is -1, disable pings. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

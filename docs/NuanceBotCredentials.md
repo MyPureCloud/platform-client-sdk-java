@@ -9,9 +9,8 @@
 | **clientId** | **String** | The credentials client ID |  |
 | **clientSecret** | **String** | The credentials client secret |  [optional] |
 | **clientSecretProvided** | **Boolean** | True if the credentials secret is set (but not returned due to security reasons) |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

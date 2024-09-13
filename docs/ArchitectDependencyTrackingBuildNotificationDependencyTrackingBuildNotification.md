@@ -9,9 +9,8 @@
 | **user** | [**ArchitectDependencyTrackingBuildNotificationUser**](ArchitectDependencyTrackingBuildNotificationUser) |  |  [optional] |
 | **client** | [**ArchitectDependencyTrackingBuildNotificationClient**](ArchitectDependencyTrackingBuildNotificationClient) |  |  [optional] |
 | **startTime** | [**Date**](Date) | The time the last build started, in ISO 8601 format |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

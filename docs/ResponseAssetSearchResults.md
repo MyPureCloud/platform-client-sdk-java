@@ -10,9 +10,8 @@
 | **pageSize** | **Integer** | The current page size |  [optional] |
 | **pageNumber** | **Integer** | The current page number |  [optional] |
 | **results** | [**List&lt;ResponseAsset&gt;**](ResponseAsset) | Search results |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

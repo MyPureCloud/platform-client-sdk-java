@@ -10,9 +10,8 @@
 | **probability** | **Float** | Additional probability condition, where if set, the action map will trigger if the current outcome probability is lower or equal to the value. |  [optional] |
 | **quantile** | **Float** | Represents the quantity of sessions that have a maximum probability less than the predicted probability. |  [optional] |
 | **maxQuantile** | **Float** | Represents the quantity of sessions that have a maximum probability less than the predicted session max probability. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

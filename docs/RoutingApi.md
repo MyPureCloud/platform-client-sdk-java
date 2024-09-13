@@ -53,6 +53,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingPredictors**](RoutingApi#getRoutingPredictors) | Retrieve all predictors. |
 | [**getRoutingPredictorsKeyperformanceindicators**](RoutingApi#getRoutingPredictorsKeyperformanceindicators) | Get a list of Key Performance Indicators |
 | [**getRoutingQueue**](RoutingApi#getRoutingQueue) | Get details about this queue. |
+| [**getRoutingQueueAssistant**](RoutingApi#getRoutingQueueAssistant) | Get an assistant associated with a queue. |
 | [**getRoutingQueueComparisonperiod**](RoutingApi#getRoutingQueueComparisonperiod) | Get a Comparison Period. |
 | [**getRoutingQueueComparisonperiods**](RoutingApi#getRoutingQueueComparisonperiods) | Get list of comparison periods |
 | [**getRoutingQueueEstimatedwaittime**](RoutingApi#getRoutingQueueEstimatedwaittime) | Get Estimated Wait Time |
@@ -159,7 +160,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteRoutingAssessment**
 
 
-
 > Void deleteRoutingAssessment(assessmentId)
 
 Delete single benefit assessment.
@@ -218,7 +218,6 @@ null (empty response body)
 # **deleteRoutingDirectroutingbackupSettingsMe**
 
 
-
 > Void deleteRoutingDirectroutingbackupSettingsMe()
 
 Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
@@ -271,7 +270,6 @@ null (empty response body)
 
 
 # **deleteRoutingEmailDomain**
-
 
 
 > Void deleteRoutingEmailDomain(domainId)
@@ -330,7 +328,6 @@ null (empty response body)
 
 
 # **deleteRoutingEmailDomainRoute**
-
 
 
 > Void deleteRoutingEmailDomainRoute(domainName, routeId)
@@ -393,7 +390,6 @@ null (empty response body)
 # **deleteRoutingEmailOutboundDomain**
 
 
-
 > Void deleteRoutingEmailOutboundDomain(domainId)
 
 Delete an outbound domain
@@ -450,7 +446,6 @@ null (empty response body)
 
 
 # **deleteRoutingLanguage**
-
 
 
 > Void deleteRoutingLanguage(languageId)
@@ -511,7 +506,6 @@ null (empty response body)
 # **deleteRoutingPredictor**
 
 
-
 > Void deleteRoutingPredictor(predictorId)
 
 Delete single predictor.
@@ -569,7 +563,6 @@ null (empty response body)
 
 
 # **deleteRoutingQueue**
-
 
 
 > Void deleteRoutingQueue(queueId, forceDelete)
@@ -632,7 +625,6 @@ null (empty response body)
 # **deleteRoutingQueueMember**
 
 
-
 > Void deleteRoutingQueueMember(queueId, memberId)
 
 Delete a queue member.
@@ -693,7 +685,9 @@ null (empty response body)
 
 # **deleteRoutingQueueUser**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Void deleteRoutingQueueUser(queueId, memberId)
 
@@ -756,7 +750,6 @@ null (empty response body)
 # **deleteRoutingQueueWrapupcode**
 
 
-
 > Void deleteRoutingQueueWrapupcode(queueId, codeId)
 
 Delete a wrap-up code from a queue
@@ -817,7 +810,6 @@ null (empty response body)
 # **deleteRoutingSettings**
 
 
-
 > Void deleteRoutingSettings()
 
 Delete an organization's routing settings
@@ -870,7 +862,6 @@ null (empty response body)
 
 
 # **deleteRoutingSkill**
-
 
 
 > Void deleteRoutingSkill(skillId)
@@ -931,7 +922,6 @@ null (empty response body)
 # **deleteRoutingSkillgroup**
 
 
-
 > Void deleteRoutingSkillgroup(skillGroupId)
 
 Remove skill group definition
@@ -988,7 +978,6 @@ null (empty response body)
 
 
 # **deleteRoutingSmsAddress**
-
 
 
 > Void deleteRoutingSmsAddress(addressId)
@@ -1049,7 +1038,6 @@ null (empty response body)
 # **deleteRoutingSmsPhonenumber**
 
 
-
 > Void deleteRoutingSmsPhonenumber(addressId)
 
 Delete a phone number provisioned for SMS.
@@ -1106,7 +1094,6 @@ null (empty response body)
 
 
 # **deleteRoutingUserDirectroutingbackupSettings**
-
 
 
 > Void deleteRoutingUserDirectroutingbackupSettings(userId)
@@ -1167,7 +1154,6 @@ null (empty response body)
 # **deleteRoutingUserUtilization**
 
 
-
 > Void deleteRoutingUserUtilization(userId)
 
 Delete the user's max utilization settings and revert to the organization-wide default.
@@ -1226,7 +1212,6 @@ null (empty response body)
 # **deleteRoutingUtilization**
 
 
-
 > Void deleteRoutingUtilization()
 
 Delete the organization-wide max utilization settings and revert to the system default.
@@ -1279,7 +1264,6 @@ null (empty response body)
 
 
 # **deleteRoutingUtilizationLabel**
-
 
 
 > Void deleteRoutingUtilizationLabel(labelId, forceDelete)
@@ -1340,7 +1324,6 @@ null (empty response body)
 
 
 # **deleteRoutingUtilizationTag**
-
 
 
 > Void deleteRoutingUtilizationTag(tagId, forceDelete)
@@ -1405,7 +1388,6 @@ null (empty response body)
 # **deleteRoutingWrapupcode**
 
 
-
 > Void deleteRoutingWrapupcode(codeId)
 
 Delete wrap-up code
@@ -1462,7 +1444,6 @@ null (empty response body)
 
 
 # **deleteUserRoutinglanguage**
-
 
 
 > Void deleteUserRoutinglanguage(userId, languageId)
@@ -1526,7 +1507,6 @@ null (empty response body)
 # **deleteUserRoutingskill**
 
 
-
 > Void deleteUserRoutingskill(userId, skillId)
 
 Remove routing skill from user
@@ -1587,7 +1567,6 @@ null (empty response body)
 # **getRoutingAssessment**
 
 
-
 > [BenefitAssessment](BenefitAssessment) getRoutingAssessment(assessmentId)
 
 Retrieve a single benefit assessment.
@@ -1645,7 +1624,6 @@ try {
 
 
 # **getRoutingAssessments**
-
 
 
 > [AssessmentListing](AssessmentListing) getRoutingAssessments(before, after, limit, pageSize, queueId)
@@ -1716,7 +1694,6 @@ try {
 # **getRoutingAssessmentsJob**
 
 
-
 > [BenefitAssessmentJob](BenefitAssessmentJob) getRoutingAssessmentsJob(jobId)
 
 Retrieve a single benefit assessments job.
@@ -1774,7 +1751,6 @@ try {
 
 
 # **getRoutingAssessmentsJobs**
-
 
 
 > [AssessmentJobListing](AssessmentJobListing) getRoutingAssessmentsJobs(divisionId)
@@ -1836,7 +1812,6 @@ try {
 # **getRoutingAvailablemediatypes**
 
 
-
 > [AvailableMediaTypeEntityListing](AvailableMediaTypeEntityListing) getRoutingAvailablemediatypes()
 
 Get available media types
@@ -1889,7 +1864,6 @@ This endpoint does not require any parameters.
 
 
 # **getRoutingDirectroutingbackupSettingsMe**
-
 
 
 > [AgentDirectRoutingBackupSettings](AgentDirectRoutingBackupSettings) getRoutingDirectroutingbackupSettingsMe()
@@ -1945,7 +1919,6 @@ This endpoint does not require any parameters.
 
 
 # **getRoutingEmailDomain**
-
 
 
 > [InboundDomain](InboundDomain) getRoutingEmailDomain(domainId)
@@ -2007,7 +1980,6 @@ try {
 # **getRoutingEmailDomainRoute**
 
 
-
 > [InboundRoute](InboundRoute) getRoutingEmailDomainRoute(domainName, routeId)
 
 Get a route
@@ -2067,7 +2039,6 @@ try {
 
 
 # **getRoutingEmailDomainRoutes**
-
 
 
 > [InboundRouteEntityListing](InboundRouteEntityListing) getRoutingEmailDomainRoutes(domainName, pageSize, pageNumber, pattern)
@@ -2135,7 +2106,6 @@ try {
 # **getRoutingEmailDomains**
 
 
-
 > [InboundDomainEntityListing](InboundDomainEntityListing) getRoutingEmailDomains(pageSize, pageNumber, excludeStatus, filter)
 
 Get domains
@@ -2201,7 +2171,6 @@ try {
 # **getRoutingEmailOutboundDomain**
 
 
-
 > [OutboundDomain](OutboundDomain) getRoutingEmailOutboundDomain(domainId)
 
 Get domain
@@ -2259,7 +2228,6 @@ try {
 
 
 # **getRoutingEmailOutboundDomainActivation**
-
 
 
 > [EmailOutboundDomainResult](EmailOutboundDomainResult) getRoutingEmailOutboundDomainActivation(domainId)
@@ -2321,7 +2289,6 @@ try {
 # **getRoutingEmailOutboundDomainSearch**
 
 
-
 > [OutboundDomain](OutboundDomain) getRoutingEmailOutboundDomainSearch(domainId)
 
 Search a domain across organizations
@@ -2379,7 +2346,6 @@ try {
 
 
 # **getRoutingEmailOutboundDomains**
-
 
 
 > [OutboundDomainEntityListing](OutboundDomainEntityListing) getRoutingEmailOutboundDomains(filter)
@@ -2441,7 +2407,6 @@ try {
 # **getRoutingEmailSetup**
 
 
-
 > [EmailSetup](EmailSetup) getRoutingEmailSetup()
 
 Get email setup
@@ -2495,7 +2460,6 @@ This endpoint does not require any parameters.
 
 
 # **getRoutingLanguage**
-
 
 
 > [Language](Language) getRoutingLanguage(languageId)
@@ -2554,7 +2518,6 @@ try {
 
 
 # **getRoutingLanguages**
-
 
 
 > [LanguageEntityListing](LanguageEntityListing) getRoutingLanguages(pageSize, pageNumber, sortOrder, name, id)
@@ -2623,7 +2586,6 @@ try {
 # **getRoutingMessageRecipient**
 
 
-
 > [Recipient](Recipient) getRoutingMessageRecipient(recipientId)
 
 Get a recipient
@@ -2681,7 +2643,6 @@ try {
 
 
 # **getRoutingMessageRecipients**
-
 
 
 > [RecipientListing](RecipientListing) getRoutingMessageRecipients(messengerType, name, pageSize, pageNumber)
@@ -2749,7 +2710,6 @@ try {
 # **getRoutingPredictor**
 
 
-
 > [Predictor](Predictor) getRoutingPredictor(predictorId)
 
 Retrieve a single predictor.
@@ -2807,7 +2767,6 @@ try {
 
 
 # **getRoutingPredictorModelFeatures**
-
 
 
 > [PredictorModelFeatureListing](PredictorModelFeatureListing) getRoutingPredictorModelFeatures(predictorId, modelId)
@@ -2871,7 +2830,6 @@ try {
 # **getRoutingPredictorModels**
 
 
-
 > [PredictorModels](PredictorModels) getRoutingPredictorModels(predictorId)
 
 Retrieve Predictor Models and Top Features.
@@ -2929,7 +2887,6 @@ try {
 
 
 # **getRoutingPredictors**
-
 
 
 > [PredictorListing](PredictorListing) getRoutingPredictors(before, after, limit, pageSize, queueId)
@@ -3000,7 +2957,6 @@ try {
 # **getRoutingPredictorsKeyperformanceindicators**
 
 
-
 > [List&lt;KeyPerformanceIndicator&gt;](KeyPerformanceIndicator) getRoutingPredictorsKeyperformanceindicators(kpiGroup, expand)
 
 Get a list of Key Performance Indicators
@@ -3062,7 +3018,6 @@ try {
 # **getRoutingQueue**
 
 
-
 > [Queue](Queue) getRoutingQueue(queueId)
 
 Get details about this queue.
@@ -3119,8 +3074,68 @@ try {
 [**Queue**](Queue)
 
 
-# **getRoutingQueueComparisonperiod**
+# **getRoutingQueueAssistant**
 
+
+> [AssistantQueue](AssistantQueue) getRoutingQueueAssistant(queueId, expand)
+
+Get an assistant associated with a queue.
+
+Wraps GET /api/v2/routing/queues/{queueId}/assistant  
+
+Requires ALL permissions: 
+
+* assistants:queue:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String queueId = "queueId_example"; // String | Queue ID
+String expand = "expand_example"; // String | Which fields, if any, to expand.
+try {
+    AssistantQueue result = apiInstance.getRoutingQueueAssistant(queueId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingQueueAssistant");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **queueId** | **String**| Queue ID | 
+| **expand** | **String**| Which fields, if any, to expand. | [optional]<br />**Values**: assistant 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AssistantQueue**](AssistantQueue)
+
+
+# **getRoutingQueueComparisonperiod**
 
 
 > [ComparisonPeriod](ComparisonPeriod) getRoutingQueueComparisonperiod(queueId, comparisonPeriodId)
@@ -3185,7 +3200,6 @@ try {
 # **getRoutingQueueComparisonperiods**
 
 
-
 > [ComparisonPeriodListing](ComparisonPeriodListing) getRoutingQueueComparisonperiods(queueId)
 
 Get list of comparison periods
@@ -3244,7 +3258,6 @@ try {
 
 
 # **getRoutingQueueEstimatedwaittime**
-
 
 
 > [EstimatedWaitTimePredictions](EstimatedWaitTimePredictions) getRoutingQueueEstimatedwaittime(queueId, conversationId)
@@ -3308,7 +3321,6 @@ try {
 # **getRoutingQueueMediatypeEstimatedwaittime**
 
 
-
 > [EstimatedWaitTimePredictions](EstimatedWaitTimePredictions) getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType)
 
 Get Estimated Wait Time
@@ -3368,7 +3380,6 @@ try {
 
 
 # **getRoutingQueueMembers**
-
 
 
 > [QueueMemberEntityListing](QueueMemberEntityListing) getRoutingQueueMembers(queueId, pageNumber, pageSize, sortOrder, expand, name, profileSkills, skills, languages, routingStatus, presence, memberBy, joined)
@@ -3456,7 +3467,9 @@ try {
 
 # **getRoutingQueueUsers**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [QueueMemberEntityListingV1](QueueMemberEntityListingV1) getRoutingQueueUsers(queueId, pageNumber, pageSize, sortOrder, expand, joined, name, profileSkills, skills, languages, routingStatus, presence)
 
@@ -3540,7 +3553,6 @@ try {
 # **getRoutingQueueWrapupcodes**
 
 
-
 > [WrapupCodeEntityListing](WrapupCodeEntityListing) getRoutingQueueWrapupcodes(queueId, pageSize, pageNumber)
 
 Get the wrap-up codes for a queue
@@ -3602,7 +3614,6 @@ try {
 
 
 # **getRoutingQueues**
-
 
 
 > [QueueEntityListing](QueueEntityListing) getRoutingQueues(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, cannedResponseLibraryId, hasPeer)
@@ -3680,7 +3691,6 @@ try {
 # **getRoutingQueuesDivisionviews**
 
 
-
 > [QueueEntityListing](QueueEntityListing) getRoutingQueuesDivisionviews(pageSize, pageNumber, sortBy, sortOrder, name, id, divisionId)
 
 Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
@@ -3752,7 +3762,6 @@ try {
 # **getRoutingQueuesDivisionviewsAll**
 
 
-
 > [QueueEntityListing](QueueEntityListing) getRoutingQueuesDivisionviewsAll(pageSize, pageNumber, sortOrder)
 
 Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization.
@@ -3814,7 +3823,6 @@ try {
 
 
 # **getRoutingQueuesMe**
-
 
 
 > [UserQueueEntityListing](UserQueueEntityListing) getRoutingQueuesMe(pageNumber, pageSize, joined, sortOrder)
@@ -3881,7 +3889,6 @@ try {
 # **getRoutingSettings**
 
 
-
 > [RoutingSettings](RoutingSettings) getRoutingSettings()
 
 Get an organization's routing settings
@@ -3934,7 +3941,6 @@ This endpoint does not require any parameters.
 
 
 # **getRoutingSettingsContactcenter**
-
 
 
 > [ContactCenterSettings](ContactCenterSettings) getRoutingSettingsContactcenter()
@@ -3991,7 +3997,6 @@ This endpoint does not require any parameters.
 # **getRoutingSettingsTranscription**
 
 
-
 > [TranscriptionSettings](TranscriptionSettings) getRoutingSettingsTranscription()
 
 Get Transcription Settings
@@ -4045,7 +4050,6 @@ This endpoint does not require any parameters.
 
 
 # **getRoutingSkill**
-
 
 
 > [RoutingSkill](RoutingSkill) getRoutingSkill(skillId)
@@ -4106,7 +4110,6 @@ try {
 # **getRoutingSkillgroup**
 
 
-
 > [SkillGroup](SkillGroup) getRoutingSkillgroup(skillGroupId)
 
 Get skill group
@@ -4164,7 +4167,6 @@ try {
 
 
 # **getRoutingSkillgroupMembers**
-
 
 
 > [SkillGroupMemberEntityListing](SkillGroupMemberEntityListing) getRoutingSkillgroupMembers(skillGroupId, pageSize, after, before, expand)
@@ -4234,7 +4236,6 @@ try {
 # **getRoutingSkillgroupMembersDivisions**
 
 
-
 > [SkillGroupMemberDivisionList](SkillGroupMemberDivisionList) getRoutingSkillgroupMembersDivisions(skillGroupId, expand)
 
 Get list of member divisions for this skill group.
@@ -4294,7 +4295,6 @@ try {
 
 
 # **getRoutingSkillgroups**
-
 
 
 > [SkillGroupEntityListing](SkillGroupEntityListing) getRoutingSkillgroups(pageSize, name, after, before)
@@ -4362,7 +4362,6 @@ try {
 # **getRoutingSkills**
 
 
-
 > [SkillEntityListing](SkillEntityListing) getRoutingSkills(pageSize, pageNumber, name, id)
 
 Get the list of routing skills.
@@ -4427,7 +4426,6 @@ try {
 # **getRoutingSmsAddress**
 
 
-
 > [SmsAddress](SmsAddress) getRoutingSmsAddress(addressId)
 
 Get an Address by Id for SMS
@@ -4485,7 +4483,6 @@ try {
 
 
 # **getRoutingSmsAddresses**
-
 
 
 > [SmsAddressEntityListing](SmsAddressEntityListing) getRoutingSmsAddresses(pageSize, pageNumber)
@@ -4547,7 +4544,6 @@ try {
 
 
 # **getRoutingSmsAvailablephonenumbers**
-
 
 
 > [SMSAvailablePhoneNumberEntityListing](SMSAvailablePhoneNumberEntityListing) getRoutingSmsAvailablephonenumbers(countryCode, phoneNumberType, region, city, areaCode, pattern, addressRequirement)
@@ -4623,7 +4619,6 @@ try {
 # **getRoutingSmsPhonenumber**
 
 
-
 > [SmsPhoneNumber](SmsPhoneNumber) getRoutingSmsPhonenumber(addressId, expand)
 
 Get a phone number provisioned for SMS.
@@ -4683,7 +4678,6 @@ try {
 
 
 # **getRoutingSmsPhonenumbers**
-
 
 
 > [SmsPhoneNumberEntityListing](SmsPhoneNumberEntityListing) getRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, countryCode, pageSize, pageNumber, sortBy, sortOrder, language, integrationId, supportedContentId)
@@ -4765,7 +4759,6 @@ try {
 # **getRoutingUserDirectroutingbackupSettings**
 
 
-
 > [AgentDirectRoutingBackupSettings](AgentDirectRoutingBackupSettings) getRoutingUserDirectroutingbackupSettings(userId)
 
 Get the user's Direct Routing Backup settings.
@@ -4823,7 +4816,6 @@ try {
 
 
 # **getRoutingUserUtilization**
-
 
 
 > [AgentMaxUtilizationResponse](AgentMaxUtilizationResponse) getRoutingUserUtilization(userId)
@@ -4886,7 +4878,6 @@ try {
 # **getRoutingUtilization**
 
 
-
 > [UtilizationResponse](UtilizationResponse) getRoutingUtilization()
 
 Get the organization-wide max utilization settings.
@@ -4941,7 +4932,6 @@ This endpoint does not require any parameters.
 
 
 # **getRoutingUtilizationLabel**
-
 
 
 > [UtilizationLabel](UtilizationLabel) getRoutingUtilizationLabel(labelId)
@@ -5003,7 +4993,6 @@ try {
 # **getRoutingUtilizationLabelAgents**
 
 
-
 > List&lt;Object&gt; getRoutingUtilizationLabelAgents(labelId)
 
 Get list of agent ids associated with a utilization label
@@ -5061,7 +5050,6 @@ try {
 
 
 # **getRoutingUtilizationLabels**
-
 
 
 > [UtilizationLabelEntityListing](UtilizationLabelEntityListing) getRoutingUtilizationLabels(pageSize, pageNumber, sortOrder, name)
@@ -5129,7 +5117,6 @@ try {
 # **getRoutingUtilizationTag**
 
 
-
 > [UtilizationTag](UtilizationTag) getRoutingUtilizationTag(tagId)
 
 Get details about this utilization tag
@@ -5191,7 +5178,6 @@ try {
 # **getRoutingUtilizationTagAgents**
 
 
-
 > List&lt;Object&gt; getRoutingUtilizationTagAgents(tagId)
 
 Get list of agent ids associated with a utilization tag
@@ -5251,7 +5237,6 @@ try {
 
 
 # **getRoutingUtilizationTags**
-
 
 
 > [UtilizationTagEntityListing](UtilizationTagEntityListing) getRoutingUtilizationTags(pageSize, pageNumber, sortOrder, name)
@@ -5321,7 +5306,6 @@ try {
 # **getRoutingWrapupcode**
 
 
-
 > [WrapupCode](WrapupCode) getRoutingWrapupcode(codeId)
 
 Get details about this wrap-up code.
@@ -5379,7 +5363,6 @@ try {
 
 
 # **getRoutingWrapupcodes**
-
 
 
 > [WrapupCodeEntityListing](WrapupCodeEntityListing) getRoutingWrapupcodes(pageSize, pageNumber, sortBy, sortOrder, name, id, divisionId)
@@ -5453,7 +5436,6 @@ try {
 # **getRoutingWrapupcodesDivisionview**
 
 
-
 > [WrapupCode](WrapupCode) getRoutingWrapupcodesDivisionview(codeId)
 
 Get a simplified wrap-up code.
@@ -5511,7 +5493,6 @@ try {
 
 
 # **getRoutingWrapupcodesDivisionviews**
-
 
 
 > [WrapupCodeEntityListing](WrapupCodeEntityListing) getRoutingWrapupcodesDivisionviews(pageSize, pageNumber, name, id, divisionId, includeState)
@@ -5585,7 +5566,6 @@ try {
 # **getUserQueues**
 
 
-
 > [UserQueueEntityListing](UserQueueEntityListing) getUserQueues(userId, pageSize, pageNumber, joined, divisionId)
 
 Get queues for user
@@ -5655,7 +5635,6 @@ try {
 # **getUserRoutinglanguages**
 
 
-
 > [UserLanguageEntityListing](UserLanguageEntityListing) getUserRoutinglanguages(userId, pageSize, pageNumber, sortOrder)
 
 List routing language for user
@@ -5720,7 +5699,6 @@ try {
 # **getUserRoutingskills**
 
 
-
 > [UserSkillEntityListing](UserSkillEntityListing) getUserRoutingskills(userId, pageSize, pageNumber, sortOrder)
 
 List routing skills for user
@@ -5783,7 +5761,6 @@ try {
 
 
 # **getUserSkillgroups**
-
 
 
 > [UserSkillGroupEntityListing](UserSkillGroupEntityListing) getUserSkillgroups(userId, pageSize, after, before)
@@ -5851,7 +5828,6 @@ try {
 # **patchRoutingConversation**
 
 
-
 > [RoutingConversationAttributesResponse](RoutingConversationAttributesResponse) patchRoutingConversation(conversationId, body)
 
 Update attributes of an in-queue conversation
@@ -5915,7 +5891,6 @@ try {
 # **patchRoutingEmailDomain**
 
 
-
 > [InboundDomain](InboundDomain) patchRoutingEmailDomain(domainId, body)
 
 Update domain settings
@@ -5975,7 +5950,6 @@ try {
 
 
 # **patchRoutingEmailDomainValidate**
-
 
 
 > [InboundDomain](InboundDomain) patchRoutingEmailDomainValidate(domainId, body)
@@ -6039,7 +6013,6 @@ try {
 # **patchRoutingPredictor**
 
 
-
 > [Predictor](Predictor) patchRoutingPredictor(predictorId, body)
 
 Update single predictor.
@@ -6100,7 +6073,6 @@ try {
 
 
 # **patchRoutingQueueMember**
-
 
 
 > Void patchRoutingQueueMember(queueId, memberId, body)
@@ -6166,7 +6138,6 @@ null (empty response body)
 # **patchRoutingQueueMembers**
 
 
-
 > [QueueMemberEntityListing](QueueMemberEntityListing) patchRoutingQueueMembers(queueId, body)
 
 Join or unjoin a set of users for a queue
@@ -6228,7 +6199,9 @@ try {
 
 # **patchRoutingQueueUser**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Void patchRoutingQueueUser(queueId, memberId, body)
 
@@ -6292,7 +6265,9 @@ null (empty response body)
 
 # **patchRoutingQueueUsers**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [QueueMemberEntityListingV1](QueueMemberEntityListingV1) patchRoutingQueueUsers(queueId, body)
 
@@ -6356,7 +6331,6 @@ try {
 # **patchRoutingSettingsContactcenter**
 
 
-
 > Void patchRoutingSettingsContactcenter(body)
 
 Update Contact Center Settings
@@ -6413,7 +6387,6 @@ null (empty response body)
 
 
 # **patchRoutingSettingsTranscription**
-
 
 
 > [TranscriptionSettings](TranscriptionSettings) patchRoutingSettingsTranscription(body)
@@ -6475,7 +6448,6 @@ try {
 # **patchRoutingSkillgroup**
 
 
-
 > [SkillGroup](SkillGroup) patchRoutingSkillgroup(skillGroupId, body)
 
 Update skill group definition
@@ -6535,7 +6507,6 @@ try {
 
 
 # **patchUserQueue**
-
 
 
 > [UserQueue](UserQueue) patchUserQueue(queueId, userId, body)
@@ -6602,7 +6573,6 @@ try {
 # **patchUserQueues**
 
 
-
 > [UserQueueEntityListing](UserQueueEntityListing) patchUserQueues(userId, body, divisionId)
 
 Join or unjoin a set of queues for a user
@@ -6665,7 +6635,6 @@ try {
 
 
 # **patchUserRoutinglanguage**
-
 
 
 > [UserRoutingLanguage](UserRoutingLanguage) patchUserRoutinglanguage(userId, languageId, body)
@@ -6732,7 +6701,6 @@ try {
 # **patchUserRoutinglanguagesBulk**
 
 
-
 > [UserLanguageEntityListing](UserLanguageEntityListing) patchUserRoutinglanguagesBulk(userId, body)
 
 Add bulk routing language to user. Max limit 50 languages
@@ -6793,7 +6761,6 @@ try {
 
 
 # **patchUserRoutingskillsBulk**
-
 
 
 > [UserSkillEntityListing](UserSkillEntityListing) patchUserRoutingskillsBulk(userId, body)
@@ -6857,7 +6824,6 @@ try {
 # **postAnalyticsQueuesObservationsQuery**
 
 
-
 > [QueueObservationQueryResponse](QueueObservationQueryResponse) postAnalyticsQueuesObservationsQuery(body)
 
 Query for queue observations
@@ -6915,7 +6881,6 @@ try {
 
 
 # **postAnalyticsRoutingActivityQuery**
-
 
 
 > [RoutingActivityResponse](RoutingActivityResponse) postAnalyticsRoutingActivityQuery(body, pageSize, pageNumber)
@@ -6981,7 +6946,6 @@ try {
 # **postRoutingAssessments**
 
 
-
 > [BenefitAssessment](BenefitAssessment) postRoutingAssessments(body)
 
 Create a benefit assessment.
@@ -7040,7 +7004,6 @@ try {
 
 
 # **postRoutingAssessmentsJobs**
-
 
 
 > [BenefitAssessmentJob](BenefitAssessmentJob) postRoutingAssessmentsJobs(body)
@@ -7102,7 +7065,6 @@ try {
 # **postRoutingEmailDomainRoutes**
 
 
-
 > [InboundRoute](InboundRoute) postRoutingEmailDomainRoutes(domainName, body)
 
 Create a route
@@ -7162,7 +7124,6 @@ try {
 
 
 # **postRoutingEmailDomainTestconnection**
-
 
 
 > [TestMessage](TestMessage) postRoutingEmailDomainTestconnection(domainId, body)
@@ -7228,7 +7189,6 @@ try {
 # **postRoutingEmailDomains**
 
 
-
 > [InboundDomain](InboundDomain) postRoutingEmailDomains(body)
 
 Create a domain
@@ -7286,7 +7246,6 @@ try {
 
 
 # **postRoutingEmailOutboundDomains**
-
 
 
 > [EmailOutboundDomainResult](EmailOutboundDomainResult) postRoutingEmailOutboundDomains(body)
@@ -7348,7 +7307,6 @@ try {
 # **postRoutingEmailOutboundDomainsSimulated**
 
 
-
 > [EmailOutboundDomainResult](EmailOutboundDomainResult) postRoutingEmailOutboundDomainsSimulated(body)
 
 Create a simulated domain
@@ -7406,7 +7364,6 @@ try {
 
 
 # **postRoutingLanguages**
-
 
 
 > [Language](Language) postRoutingLanguages(body)
@@ -7468,7 +7425,6 @@ try {
 # **postRoutingPredictors**
 
 
-
 > [Predictor](Predictor) postRoutingPredictors(body)
 
 Create a predictor.
@@ -7527,7 +7483,6 @@ try {
 
 
 # **postRoutingQueueMembers**
-
 
 
 > Void postRoutingQueueMembers(queueId, body, delete)
@@ -7592,7 +7547,9 @@ null (empty response body)
 
 # **postRoutingQueueUsers**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Void postRoutingQueueUsers(queueId, body, delete)
 
@@ -7657,7 +7614,6 @@ null (empty response body)
 # **postRoutingQueueWrapupcodes**
 
 
-
 > [List&lt;WrapupCode&gt;](WrapupCode) postRoutingQueueWrapupcodes(queueId, body)
 
 Add up to 100 wrap-up codes to a queue
@@ -7719,7 +7675,6 @@ try {
 # **postRoutingQueues**
 
 
-
 > [Queue](Queue) postRoutingQueues(body)
 
 Create a queue
@@ -7777,7 +7732,6 @@ try {
 
 
 # **postRoutingSkillgroupMembersDivisions**
-
 
 
 > Void postRoutingSkillgroupMembersDivisions(skillGroupId, body)
@@ -7840,7 +7794,6 @@ null (empty response body)
 # **postRoutingSkillgroups**
 
 
-
 > [SkillGroupWithMemberDivisions](SkillGroupWithMemberDivisions) postRoutingSkillgroups(body)
 
 Create a skill group
@@ -7898,7 +7851,6 @@ try {
 
 
 # **postRoutingSkills**
-
 
 
 > [RoutingSkill](RoutingSkill) postRoutingSkills(body)
@@ -7960,7 +7912,6 @@ try {
 # **postRoutingSmsAddresses**
 
 
-
 > [SmsAddress](SmsAddress) postRoutingSmsAddresses(body)
 
 Provision an Address for SMS
@@ -8020,7 +7971,6 @@ try {
 # **postRoutingSmsPhonenumbers**
 
 
-
 > [SmsPhoneNumber](SmsPhoneNumber) postRoutingSmsPhonenumbers(body)
 
 Provision a phone number for SMS
@@ -8078,7 +8028,6 @@ try {
 
 
 # **postRoutingSmsPhonenumbersAlphanumeric**
-
 
 
 > [SmsPhoneNumber](SmsPhoneNumber) postRoutingSmsPhonenumbersAlphanumeric(body)
@@ -8142,7 +8091,6 @@ try {
 # **postRoutingSmsPhonenumbersImport**
 
 
-
 > [SmsPhoneNumber](SmsPhoneNumber) postRoutingSmsPhonenumbersImport(body)
 
 Imports a phone number for SMS
@@ -8202,7 +8150,6 @@ try {
 # **postRoutingUtilizationLabels**
 
 
-
 > [UtilizationLabel](UtilizationLabel) postRoutingUtilizationLabels(body)
 
 Create a utilization label
@@ -8260,7 +8207,6 @@ try {
 
 
 # **postRoutingUtilizationTags**
-
 
 
 > [UtilizationTag](UtilizationTag) postRoutingUtilizationTags(body)
@@ -8324,7 +8270,6 @@ try {
 # **postRoutingWrapupcodes**
 
 
-
 > [WrapupCode](WrapupCode) postRoutingWrapupcodes(body)
 
 Create a wrap-up code
@@ -8382,7 +8327,6 @@ try {
 
 
 # **postUserRoutinglanguages**
-
 
 
 > [UserRoutingLanguage](UserRoutingLanguage) postUserRoutinglanguages(userId, body)
@@ -8447,7 +8391,6 @@ try {
 # **postUserRoutingskills**
 
 
-
 > [UserRoutingSkill](UserRoutingSkill) postUserRoutingskills(userId, body)
 
 Add routing skill to user
@@ -8509,7 +8452,6 @@ try {
 # **putRoutingDirectroutingbackupSettingsMe**
 
 
-
 > [AgentDirectRoutingBackupSettings](AgentDirectRoutingBackupSettings) putRoutingDirectroutingbackupSettingsMe(body)
 
 Update the user's Direct Routing Backup settings.
@@ -8567,7 +8509,6 @@ try {
 
 
 # **putRoutingEmailDomainRoute**
-
 
 
 > [InboundRoute](InboundRoute) putRoutingEmailDomainRoute(domainName, routeId, body)
@@ -8633,7 +8574,6 @@ try {
 # **putRoutingEmailOutboundDomainActivation**
 
 
-
 > [EmailOutboundDomainResult](EmailOutboundDomainResult) putRoutingEmailOutboundDomainActivation(domainId)
 
 Request an activation status (cname + dkim) update of an outbound domain
@@ -8691,7 +8631,6 @@ try {
 
 
 # **putRoutingMessageRecipient**
-
 
 
 > [Recipient](Recipient) putRoutingMessageRecipient(recipientId, body)
@@ -8755,7 +8694,6 @@ try {
 # **putRoutingQueue**
 
 
-
 > [Queue](Queue) putRoutingQueue(queueId, body)
 
 Update a queue
@@ -8817,7 +8755,6 @@ try {
 # **putRoutingSettings**
 
 
-
 > [RoutingSettings](RoutingSettings) putRoutingSettings(body)
 
 Update an organization's routing settings
@@ -8877,7 +8814,6 @@ try {
 # **putRoutingSettingsTranscription**
 
 
-
 > [TranscriptionSettings](TranscriptionSettings) putRoutingSettingsTranscription(body)
 
 Update Transcription Settings
@@ -8935,7 +8871,6 @@ try {
 
 
 # **putRoutingSmsPhonenumber**
-
 
 
 > [SmsPhoneNumber](SmsPhoneNumber) putRoutingSmsPhonenumber(addressId, body)
@@ -8999,7 +8934,6 @@ try {
 # **putRoutingUserDirectroutingbackupSettings**
 
 
-
 > [AgentDirectRoutingBackupSettings](AgentDirectRoutingBackupSettings) putRoutingUserDirectroutingbackupSettings(userId, body)
 
 Update the user's Direct Routing Backup settings.
@@ -9059,7 +8993,6 @@ try {
 
 
 # **putRoutingUserUtilization**
-
 
 
 > [AgentMaxUtilizationResponse](AgentMaxUtilizationResponse) putRoutingUserUtilization(userId, body)
@@ -9123,7 +9056,6 @@ try {
 # **putRoutingUtilization**
 
 
-
 > [UtilizationResponse](UtilizationResponse) putRoutingUtilization(body)
 
 Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
@@ -9181,7 +9113,6 @@ try {
 
 
 # **putRoutingUtilizationLabel**
-
 
 
 > [UtilizationLabel](UtilizationLabel) putRoutingUtilizationLabel(labelId, body)
@@ -9245,7 +9176,6 @@ try {
 # **putRoutingWrapupcode**
 
 
-
 > [WrapupCode](WrapupCode) putRoutingWrapupcode(codeId, body)
 
 Update wrap-up code
@@ -9305,7 +9235,6 @@ try {
 
 
 # **putUserRoutingskill**
-
 
 
 > [UserRoutingSkill](UserRoutingSkill) putUserRoutingskill(userId, skillId, body)
@@ -9371,7 +9300,6 @@ try {
 # **putUserRoutingskillsBulk**
 
 
-
 > [UserSkillEntityListing](UserSkillEntityListing) putUserRoutingskillsBulk(userId, body)
 
 Replace all routing skills assigned to a user
@@ -9430,4 +9358,4 @@ try {
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **resolution** | **String** | Height and/or width of image. ex: 640x480 or x128 |  [optional] |
 | **imageUri** | **String** |  |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

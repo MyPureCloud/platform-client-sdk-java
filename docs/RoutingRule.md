@@ -8,7 +8,6 @@
 | **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | matching operator.  MEETS_THRESHOLD matches any agent with a score at or above the rule's threshold.  ANY matches all specified agents, regardless of score. |  [optional] |
 | **threshold** | **Integer** | threshold required for routing attempt (generally an agent score).  may be null for operator ANY. |  [optional] |
 | **waitSeconds** | **Double** | seconds to wait in this rule before moving to the next |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: OperatorEnum
@@ -18,9 +17,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | MEETS_THRESHOLD | &quot;MEETS_THRESHOLD&quot; | 
 | ANY | &quot;ANY&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -9,7 +9,6 @@
 | **fileType** | [**FileTypeEnum**](#Enum--FileTypeEnum) | File type of the document |  |
 | **sourceId** | **String** | Knowledge integration source id. |  [optional] |
 | **jsonFileVersion** | **Integer** | Requested version of the exported json file. Available versions are 2 and 3, default is 2 |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: FileTypeEnum
@@ -20,9 +19,8 @@
 | JSON | &quot;Json&quot; | 
 | CSV | &quot;Csv&quot; | 
 | XLSX | &quot;Xlsx&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

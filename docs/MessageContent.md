@@ -21,7 +21,6 @@
 | **carousel** | [**ContentCarousel**](ContentCarousel) | Carousel content |  [optional] |
 | **text** | [**ContentText**](ContentText) | Text content. |  [optional] |
 | **quickReplyV2** | [**ContentQuickReplyV2**](ContentQuickReplyV2) | Quick reply V2 content. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ContentTypeEnum
@@ -44,9 +43,8 @@
 | CAROUSEL | &quot;Carousel&quot; | 
 | TEXT | &quot;Text&quot; | 
 | QUICKREPLYV2 | &quot;QuickReplyV2&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

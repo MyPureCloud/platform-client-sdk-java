@@ -13,7 +13,6 @@
 | **order** | **Integer** | The order of inform step in a learning module |  |
 | **displayName** | **String** | The display name for the inform step |  [optional] |
 | **description** | **String** | The description for the inform step |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -26,9 +25,8 @@
 | GENESYSBUILTINCOURSE | &quot;GenesysBuiltInCourse&quot; | 
 | RICHTEXT | &quot;RichText&quot; | 
 | SCORM | &quot;Scorm&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

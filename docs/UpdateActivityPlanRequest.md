@@ -15,7 +15,6 @@
 | **optimizationObjective** | [**OptimizationObjectiveEnum**](#Enum--OptimizationObjectiveEnum) | The optimization objective of this activity plan |  [optional] |
 | **state** | [**StateEnum**](#Enum--StateEnum) | The state of this activity plan |  [optional] |
 | **fixedAvailability** | [**ListWrapperFixedAvailability**](ListWrapperFixedAvailability) | Fixed availability configuration for the activity plan |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: OptimizationObjectiveEnum
@@ -25,7 +24,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | FAVORSERVICEGOALS | &quot;FavorServiceGoals&quot; | 
 | FAVORSCHEDULINGALL | &quot;FavorSchedulingAll&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -35,9 +33,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ACTIVE | &quot;Active&quot; | 
 | INACTIVE | &quot;Inactive&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

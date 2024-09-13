@@ -17,7 +17,6 @@
 | **dateDisplayed** | [**Date**](Date) | The displayed date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **dateAcknowledged** | [**Date**](Date) | The acknowledged date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -29,7 +28,6 @@
 | CONGRATULATIONS | &quot;Congratulations&quot; | 
 | HIGHPERFORMANCE | &quot;HighPerformance&quot; | 
 | COMPANYVALUES | &quot;CompanyValues&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ContextTypeEnum
@@ -41,9 +39,8 @@
 | INSIGHTS | &quot;Insights&quot; | 
 | DEVELOPMENT | &quot;Development&quot; | 
 | SCORECARD | &quot;Scorecard&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

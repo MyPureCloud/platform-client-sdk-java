@@ -13,7 +13,6 @@
 | **completionPercentage** | **Float** | The completion percentage for this step |  [optional] |
 | **percentageScore** | **Float** | The percentage score for this step |  [optional] |
 | **signedCookie** | [**LearningAssignmentStepSignedCookie**](LearningAssignmentStepSignedCookie) | The signed cookie information needed to access the content of this step (if required) |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: SuccessStatusEnum
@@ -24,7 +23,6 @@
 | PASSED | &quot;Passed&quot; | 
 | FAILED | &quot;Failed&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: CompletionStatusEnum
@@ -36,9 +34,8 @@
 | INCOMPLETE | &quot;Incomplete&quot; | 
 | NOTATTEMPTED | &quot;NotAttempted&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

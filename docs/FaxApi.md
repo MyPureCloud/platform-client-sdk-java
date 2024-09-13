@@ -18,7 +18,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteFaxDocument**
 
 
-
 > Void deleteFaxDocument(documentId)
 
 Delete a fax document.
@@ -74,7 +73,6 @@ null (empty response body)
 
 
 # **getFaxDocument**
-
 
 
 > [FaxDocument](FaxDocument) getFaxDocument(documentId)
@@ -135,7 +133,6 @@ try {
 # **getFaxDocumentContent**
 
 
-
 > [DownloadResponse](DownloadResponse) getFaxDocumentContent(documentId)
 
 Download a fax document.
@@ -192,7 +189,6 @@ try {
 
 
 # **getFaxDocuments**
-
 
 
 > [FaxDocumentEntityListing](FaxDocumentEntityListing) getFaxDocuments(pageSize, pageNumber)
@@ -255,7 +251,6 @@ try {
 # **getFaxSettings**
 
 
-
 > [FaxConfig](FaxConfig) getFaxSettings()
 
 Get organization config for given organization
@@ -310,7 +305,6 @@ This endpoint does not require any parameters.
 # **getFaxSummary**
 
 
-
 > [FaxSummary](FaxSummary) getFaxSummary()
 
 Get fax summary
@@ -363,7 +357,6 @@ This endpoint does not require any parameters.
 
 
 # **putFaxDocument**
-
 
 
 > [FaxDocument](FaxDocument) putFaxDocument(documentId, body)
@@ -426,7 +419,6 @@ try {
 # **putFaxSettings**
 
 
-
 > [FaxConfig](FaxConfig) putFaxSettings(body)
 
 Update/write organization config for given organization
@@ -483,4 +475,4 @@ try {
 [**FaxConfig**](FaxConfig)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -11,7 +11,6 @@
 | **commandId** | **String** | The id (V4 UUID) used to identify the transfer already started by the external platform. |  |
 | **finalState** | [**FinalStateEnum**](#Enum--FinalStateEnum) | Indicates whether the transfer completed successfully, was cancelled, or failed for some reason. |  |
 | **objectCommunicationId** | **String** | The id (V4 UUID) of the communication that was being transferred. |  |
-{: class="table table-striped"}
 
 
 ## Enum: FinalStateEnum
@@ -22,9 +21,8 @@
 | COMPLETED | &quot;Completed&quot; | 
 | CANCELED | &quot;Canceled&quot; | 
 | FAILED | &quot;Failed&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

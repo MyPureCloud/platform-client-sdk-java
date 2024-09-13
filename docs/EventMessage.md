@@ -11,7 +11,6 @@
 | **messageParams** | **Map&lt;String, Object&gt;** |  |  [optional] |
 | **documentationUri** | **String** |  |  [optional] |
 | **resourceURIs** | **List&lt;String&gt;** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: CodeEnum
@@ -112,9 +111,8 @@
 | RECURRING_SCHEDULE_ENDED | &quot;RECURRING_SCHEDULE_ENDED&quot; | 
 | RECURRING_SCHEDULE_MISSED_OCCURRENCES | &quot;RECURRING_SCHEDULE_MISSED_OCCURRENCES&quot; | 
 | VERSION_CONFLICT | &quot;VERSION_CONFLICT&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

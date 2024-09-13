@@ -32,7 +32,6 @@
 | **integration** | [**DomainEntityRef**](DomainEntityRef) | The Genesys Cloud integration this phone number belongs to. |  [optional] |
 | **compliance** | [**Compliance**](Compliance) | Compliance configuration for short codes, including help, stop and opt in. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: PhoneNumberTypeEnum
@@ -45,7 +44,6 @@
 | TOLLFREE | &quot;tollfree&quot; | 
 | SHORTCODE | &quot;shortcode&quot; | 
 | ALPHANUMERIC | &quot;alphanumeric&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: PhoneNumberStatusEnum
@@ -59,7 +57,6 @@
 | PENDING | &quot;PENDING&quot; | 
 | PENDING_CANCELLATION | &quot;PENDING_CANCELLATION&quot; | 
 | INITIATED | &quot;INITIATED&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: CapabilitiesEnum
@@ -69,7 +66,6 @@
 | SMS | &quot;sms&quot; |
 | MMS | &quot;mms&quot; |
 | VOICE | &quot;voice&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: AutoRenewableEnum
@@ -78,7 +74,6 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | QUARTERLY | &quot;Quarterly&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ShortCodeBillingTypeEnum
@@ -88,9 +83,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | BASIC | &quot;Basic&quot; | 
 | VANITY | &quot;Vanity&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -11,7 +11,6 @@
 | **uploadStatus** | [**DomainEntityRef**](DomainEntityRef) |  |  [optional] |
 | **uploadDestinationUri** | **String** |  |  [optional] |
 | **uploadMethod** | [**UploadMethodEnum**](#Enum--UploadMethodEnum) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: UploadMethodEnum
@@ -21,9 +20,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | SINGLE_PUT | &quot;SINGLE_PUT&quot; | 
 | MULTIPART_POST | &quot;MULTIPART_POST&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

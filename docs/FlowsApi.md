@@ -16,7 +16,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **getAnalyticsFlowsAggregatesJob**
 
 
-
 > [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsFlowsAggregatesJob(jobId)
 
 Get status for async query for Flow aggregates
@@ -76,7 +75,6 @@ try {
 
 
 # **getAnalyticsFlowsAggregatesJobResults**
-
 
 
 > [FlowAsyncAggregateQueryResponse](FlowAsyncAggregateQueryResponse) getAnalyticsFlowsAggregatesJobResults(jobId, cursor)
@@ -142,7 +140,6 @@ try {
 # **postAnalyticsFlowsActivityQuery**
 
 
-
 > [FlowActivityResponse](FlowActivityResponse) postAnalyticsFlowsActivityQuery(body, pageSize, pageNumber)
 
 Query for flow activity observations
@@ -206,7 +203,6 @@ try {
 # **postAnalyticsFlowsAggregatesJobs**
 
 
-
 > [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsFlowsAggregatesJobs(body)
 
 Query for flow aggregates asynchronously
@@ -268,7 +264,6 @@ try {
 # **postAnalyticsFlowsAggregatesQuery**
 
 
-
 > [FlowAggregateQueryResponse](FlowAggregateQueryResponse) postAnalyticsFlowsAggregatesQuery(body)
 
 Query for flow aggregates
@@ -328,7 +323,6 @@ try {
 # **postAnalyticsFlowsObservationsQuery**
 
 
-
 > [FlowObservationQueryResponse](FlowObservationQueryResponse) postAnalyticsFlowsObservationsQuery(body)
 
 Query for flow observations
@@ -385,4 +379,4 @@ try {
 [**FlowObservationQueryResponse**](FlowObservationQueryResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

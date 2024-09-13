@@ -13,7 +13,6 @@
 | **termCount** | **Integer** |  |  [optional] |
 | **termType** | [**TermTypeEnum**](#Enum--TermTypeEnum) |  |  [optional] |
 | **terms** | [**List&lt;FacetTerm&gt;**](FacetTerm) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TermTypeEnum
@@ -27,9 +26,8 @@
 | DATERANGE | &quot;DATERANGE&quot; | 
 | DATEHISTOGRAM | &quot;DATEHISTOGRAM&quot; | 
 | ID | &quot;ID&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

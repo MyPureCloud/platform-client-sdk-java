@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | Type of the Identifier |  |
 | **value** | **String** | The Identifier value. |  |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -20,9 +19,8 @@
 | TOPIC | &quot;Topic&quot; | 
 | INGESTIONRULE | &quot;IngestionRule&quot; | 
 | INGESTIONRULEVERSION | &quot;IngestionRuleVersion&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -10,9 +10,8 @@
 | **timeOff** | [**TimeOffRequestSettings**](TimeOffRequestSettings) | Time off request settings for this management unit |  [optional] |
 | **scheduling** | [**SchedulingSettingsRequest**](SchedulingSettingsRequest) | Scheduling settings for this management unit |  [optional] |
 | **shiftTrading** | [**ShiftTradeSettings**](ShiftTradeSettings) | Shift trade settings for this management unit |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

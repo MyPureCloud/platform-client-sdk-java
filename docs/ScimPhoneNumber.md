@@ -8,7 +8,6 @@
 | **value** | **String** | The phone number in E.164 or tel URI format, for example, tel:+nnnnnnnn; ext=xxxxx. |  [optional] |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of phone number. |  [optional] |
 | **primary** | **Boolean** | Indicates whether the phone number is the primary phone number. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -26,9 +25,8 @@
 | MICROSOFTTEAMS | &quot;microsoftteams&quot; | 
 | ZOOMPHONE | &quot;zoomphone&quot; | 
 | EIGHTBYEIGHT | &quot;eightbyeight&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

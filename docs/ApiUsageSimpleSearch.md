@@ -10,7 +10,6 @@
 | **oauthClientNames** | **List&lt;String&gt;** | Behaves like a SQL WHERE with multiple IN operators. Specifies a list of OAuth client names to be queried. |  [optional] |
 | **httpMethods** | [**List<HttpMethodsEnum>**](#Enum--HttpMethodsEnum) | Behaves like a SQL WHERE with multiple IN operators. Specifies a list of HTTP methods to be queried. |  [optional] |
 | **templateUris** | **List&lt;String&gt;** | Behaves like a SQL WHERE with multiple IN operators. Specifies a list of Template Uris to be queried. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MetricsEnum
@@ -26,7 +25,6 @@
 | STATUS400 | &quot;Status400&quot; |
 | STATUS500 | &quot;Status500&quot; |
 | STATUS429 | &quot;Status429&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: HttpMethodsEnum
@@ -42,9 +40,8 @@
 | CONNECT | &quot;CONNECT&quot; |
 | OPTIONS | &quot;OPTIONS&quot; |
 | TRACE | &quot;TRACE&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

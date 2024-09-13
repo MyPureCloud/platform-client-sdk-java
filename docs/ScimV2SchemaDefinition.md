@@ -10,9 +10,8 @@
 | **description** | **String** | The description of the schema. |  [optional] |
 | **attributes** | [**List&lt;ScimV2SchemaAttribute&gt;**](ScimV2SchemaAttribute) | The list of service provider attributes. |  [optional] |
 | **meta** | [**ScimMetadata**](ScimMetadata) | The metadata of the SCIM resource. Only \"location\" and \"resourceType\" are set for \"Schema\" resources. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

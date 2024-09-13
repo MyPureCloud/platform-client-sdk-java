@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | Specifies how the predicates will be applied together. |  |
 | **predicates** | [**List&lt;DocumentQueryPredicate&gt;**](DocumentQueryPredicate) | To apply multiple conditions. Limit of 10 predicates across all clauses. |  |
-{: class="table table-striped"}
 
 
 ## Enum: OperatorEnum
@@ -17,9 +16,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | OR | &quot;Or&quot; | 
 | AND | &quot;And&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

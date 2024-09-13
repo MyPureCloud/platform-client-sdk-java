@@ -12,7 +12,6 @@
 | **state** | [**StateEnum**](#Enum--StateEnum) | Outcome Attribution Touchpoint status. |  |
 | **message** | **String** | Additional information on the state of the touchpoint entity, populated when the touchpoint has an error. |  [optional] |
 | **createdDate** | [**Date**](Date) | Date conversation happened. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -23,7 +22,6 @@
 | EMAIL | &quot;Email&quot; | 
 | MESSAGE | &quot;Message&quot; | 
 | VOICE | &quot;Voice&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -35,9 +33,8 @@
 | VALID | &quot;Valid&quot; | 
 | INVALID | &quot;Invalid&quot; | 
 | FAILED | &quot;Failed&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **job** | [**HrisTimeOffTypesJobReference**](HrisTimeOffTypesJobReference) | The asynchronous job handling the query |  [optional] |
 | **entities** | [**List&lt;HrisTimeOffTypeResponse&gt;**](HrisTimeOffTypeResponse) | List of time off types. It is available only via notification |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

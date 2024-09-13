@@ -11,7 +11,6 @@
 | **borderStyle** | [**BorderStyleEnum**](#Enum--BorderStyleEnum) | The border style for the table row. |  [optional] |
 | **borderColor** | **String** | The border color for the table row. For example black color - #000000 |  [optional] |
 | **backgroundColor** | **String** | The background color for the table row. For example black color - #000000 |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: RowTypeEnum
@@ -22,7 +21,6 @@
 | HEADER | &quot;Header&quot; | 
 | FOOTER | &quot;Footer&quot; | 
 | BODY | &quot;Body&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: AlignmentEnum
@@ -33,7 +31,6 @@
 | CENTER | &quot;Center&quot; | 
 | LEFT | &quot;Left&quot; | 
 | RIGHT | &quot;Right&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: BorderStyleEnum
@@ -51,9 +48,8 @@
 | OUTSET | &quot;Outset&quot; | 
 | HIDDEN | &quot;Hidden&quot; | 
 | NONE | &quot;None&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

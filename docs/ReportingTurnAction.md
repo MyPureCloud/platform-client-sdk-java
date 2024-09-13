@@ -9,7 +9,6 @@
 | **actionName** | **String** | The name of the action in the bot flow. |  [optional] |
 | **actionNumber** | **Integer** | The number of the action in the bot flow. |  [optional] |
 | **actionType** | [**ActionTypeEnum**](#Enum--ActionTypeEnum) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ActionTypeEnum
@@ -78,10 +77,11 @@
 | SETUTILIZATIONLABELACTION | &quot;SetUtilizationLabelAction&quot; | 
 | SETWRAPUPCODEACTION | &quot;SetWrapupCodeAction&quot; | 
 | TRANSFERPUREMATCHACTION | &quot;TransferPureMatchAction&quot; | 
+| GETATTRIBUTESACTION | &quot;GetAttributesAction&quot; | 
+| SETATTRIBUTESACTION | &quot;SetAttributesAction&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

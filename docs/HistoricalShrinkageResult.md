@@ -12,9 +12,8 @@
 | **aggregatedShrinkage** | [**HistoricalShrinkageAggregateResponse**](HistoricalShrinkageAggregateResponse) | Aggregated shrinkage data for all the activity categories |  [optional] |
 | **shrinkageForActivityCategories** | [**List&lt;HistoricalShrinkageActivityCategoryResponse&gt;**](HistoricalShrinkageActivityCategoryResponse) | Shrinkage for activity categories |  [optional] |
 | **businessUnitIds** | **List&lt;String&gt;** | List of all business units of all the agents in response |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

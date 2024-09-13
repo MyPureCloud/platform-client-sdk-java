@@ -13,7 +13,6 @@
 | **presenceAggregations** | [**List&lt;AnalyticsQueryAggregation&gt;**](AnalyticsQueryAggregation) | Include faceted search and aggregate roll-ups of presence data in your search results. This does not function as a filter, but rather, summary data about the presence results matching your filters |  [optional] |
 | **routingStatusAggregations** | [**List&lt;AnalyticsQueryAggregation&gt;**](AnalyticsQueryAggregation) | Include faceted search and aggregate roll-ups of agent routing status data in your search results. This does not function as a filter, but rather, summary data about the agent routing status results matching your filters |  [optional] |
 | **paging** | [**PagingSpec**](PagingSpec) | Page size and number to control iterating through large result sets. Default page size is 25 |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: OrderEnum
@@ -24,9 +23,8 @@
 | ASC | &quot;asc&quot; | 
 | DESC | &quot;desc&quot; | 
 | UNORDERED | &quot;unordered&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

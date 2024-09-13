@@ -6,7 +6,6 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -17,9 +16,8 @@
 | UNKNOWN | &quot;Unknown&quot; | 
 | CONTENTOFFER | &quot;ContentOffer&quot; | 
 | WEBCHAT | &quot;Webchat&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

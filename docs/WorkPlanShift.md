@@ -30,7 +30,6 @@
 | **id** | **String** | ID of the shift. This is required only for the case of updating an existing shift |  [optional] |
 | **delete** | **Boolean** | If marked true for updating an existing shift, the shift will be permanently deleted |  [optional] |
 | **validationId** | **String** | ID of shift in the context of work plan validation |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: DayOffRuleEnum
@@ -40,9 +39,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | NEXTDAYOFF | &quot;NextDayOff&quot; | 
 | PREVIOUSDAYOFF | &quot;PreviousDayOff&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

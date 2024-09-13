@@ -8,7 +8,6 @@
 | **recipient** | **String** | The entity to receive the notification. |  |
 | **notificationTypes** | [**List<NotificationTypesEnum>**](#Enum--NotificationTypesEnum) | The notification types the user will receive. |  |
 | **locale** | **String** | The locale whose language will be used when sending alerts.  Locale should be in theformat language_COUNTRY where language is always lower case and country is always upper case. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: NotificationTypesEnum
@@ -19,9 +18,8 @@
 | DEVICE | &quot;Device&quot; |
 | EMAIL | &quot;Email&quot; |
 | PUSH | &quot;Push&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

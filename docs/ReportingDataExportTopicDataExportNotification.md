@@ -22,7 +22,6 @@
 | **scheduleExpression** | **String** |  |  [optional] |
 | **scheduleStaticLinkUrl** | **String** |  |  [optional] |
 | **exportAllowedToRerun** | **Boolean** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -37,7 +36,6 @@
 | COMPLETED | &quot;COMPLETED&quot; | 
 | COMPLETED_WITH_PARTIAL_RESULTS | &quot;COMPLETED_WITH_PARTIAL_RESULTS&quot; | 
 | FAILED | &quot;FAILED&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ExportFormatEnum
@@ -47,7 +45,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | CSV | &quot;CSV&quot; | 
 | PDF | &quot;PDF&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ViewTypeEnum
@@ -146,7 +143,6 @@
 | EMAIL_QUEUE_PERFORMANCE_DETAIL_VIEW | &quot;EMAIL_QUEUE_PERFORMANCE_DETAIL_VIEW&quot; | 
 | MESSAGING_QUEUE_PERFORMANCE_SUMMARY_VIEW | &quot;MESSAGING_QUEUE_PERFORMANCE_SUMMARY_VIEW&quot; | 
 | MESSAGING_QUEUE_PERFORMANCE_DETAIL_VIEW | &quot;MESSAGING_QUEUE_PERFORMANCE_DETAIL_VIEW&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ExportErrorMessagesTypeEnum
@@ -172,7 +168,6 @@
 | SEARCH_CRITERIA_VALUES_EXCEED_LIMIT | &quot;SEARCH_CRITERIA_VALUES_EXCEED_LIMIT&quot; | 
 | EXPORT_EMAIL_FILE_SIZE_EXCEEDED_LIMIT | &quot;EXPORT_EMAIL_FILE_SIZE_EXCEEDED_LIMIT&quot; | 
 | CIRCUIT_BREAKER_OPEN_FOR_VIEW_TYPE | &quot;CIRCUIT_BREAKER_OPEN_FOR_VIEW_TYPE&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: InnerEnum
@@ -182,9 +177,8 @@
 | SENT | &quot;Sent&quot; |
 | PENDING | &quot;Pending&quot; |
 | FAILED | &quot;Failed&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

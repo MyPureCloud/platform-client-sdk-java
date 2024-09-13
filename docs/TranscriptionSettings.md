@@ -11,7 +11,6 @@
 | **contentSearchEnabled** | **Boolean** | Setting to enable/disable content search |  [optional] |
 | **pciDssRedactionEnabled** | **Boolean** | Setting to enable/disable PCI DSS Redaction |  [optional] |
 | **piiRedactionEnabled** | **Boolean** | Setting to enable/disable PII Redaction |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TranscriptionEnum
@@ -22,9 +21,8 @@
 | DISABLED | &quot;Disabled&quot; | 
 | ENABLEDGLOBALLY | &quot;EnabledGlobally&quot; | 
 | ENABLEDQUEUEFLOW | &quot;EnabledQueueFlow&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

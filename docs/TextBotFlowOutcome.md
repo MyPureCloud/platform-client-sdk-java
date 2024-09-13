@@ -10,7 +10,6 @@
 | **dateStart** | [**Date**](Date) | The timestamp for when the Flow Outcome began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **dateEnd** | [**Date**](Date) | The timestamp for when the Flow Outcome finished. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **milestones** | [**List&lt;TextBotFlowMilestone&gt;**](TextBotFlowMilestone) | The Flow Milestones for the Flow Outcome. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: OutcomeValueEnum
@@ -20,9 +19,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | SUCCESS | &quot;SUCCESS&quot; | 
 | FAILURE | &quot;FAILURE&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

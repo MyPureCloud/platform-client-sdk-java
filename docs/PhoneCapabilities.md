@@ -14,7 +14,6 @@
 | **noCloudProvisioning** | **Boolean** |  |  [optional] |
 | **mediaCodecs** | [**List<MediaCodecsEnum>**](#Enum--MediaCodecsEnum) |  |  [optional] |
 | **cdm** | **Boolean** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MediaCodecsEnum
@@ -26,9 +25,8 @@
 | AUDIO_PCMA | &quot;audio/pcma&quot; |
 | AUDIO_G729 | &quot;audio/g729&quot; |
 | AUDIO_G722 | &quot;audio/g722&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

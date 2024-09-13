@@ -19,7 +19,6 @@
 | **transports** | [**List<TransportsEnum>**](#Enum--TransportsEnum) | Transports that support events for the topic |  [optional] |
 | **publicApiTemplateUriPaths** | **List&lt;String&gt;** |  |  [optional] |
 | **topicParameters** | **List&lt;String&gt;** | Parameters in the topic name that can be substituted, in the order they appear in the topic name |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: VisibilityEnum
@@ -29,7 +28,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | PUBLIC | &quot;Public&quot; | 
 | PREVIEW | &quot;Preview&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: TransportsEnum
@@ -40,9 +38,8 @@
 | WEBSOCKET | &quot;Websocket&quot; |
 | EVENTBRIDGE | &quot;EventBridge&quot; |
 | PROCESSAUTOMATION | &quot;ProcessAutomation&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

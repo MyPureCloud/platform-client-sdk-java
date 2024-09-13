@@ -17,7 +17,6 @@
 | **timestamp** | [**Date**](Date) | The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 | **user** | [**AddressableEntityRef**](AddressableEntityRef) | Details of the user created the job |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MessengerTypeEnum
@@ -28,9 +27,8 @@
 | SMS | &quot;sms&quot; | 
 | WHATSAPP | &quot;whatsapp&quot; | 
 | OPEN | &quot;open&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

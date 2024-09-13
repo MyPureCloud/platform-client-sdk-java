@@ -9,7 +9,6 @@
 | **startDate** | [**Date**](Date) | The start timestamp of the adherence explanation in ISO-8601 format |  |
 | **lengthMinutes** | **Integer** | The length of the adherence explanation in minutes |  |
 | **notes** | **String** | Notes about the adherence explanation |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -18,9 +17,8 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | LATE | &quot;Late&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

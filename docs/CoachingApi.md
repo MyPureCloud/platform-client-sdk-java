@@ -29,7 +29,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteCoachingAppointment**
 
 
-
 > [CoachingAppointmentReference](CoachingAppointmentReference) deleteCoachingAppointment(appointmentId)
 
 Delete an existing appointment
@@ -89,7 +88,6 @@ try {
 
 
 # **deleteCoachingAppointmentAnnotation**
-
 
 
 > Void deleteCoachingAppointmentAnnotation(appointmentId, annotationId)
@@ -155,7 +153,6 @@ null (empty response body)
 # **getCoachingAppointment**
 
 
-
 > [CoachingAppointmentResponse](CoachingAppointmentResponse) getCoachingAppointment(appointmentId)
 
 Retrieve an appointment
@@ -215,7 +212,6 @@ try {
 
 
 # **getCoachingAppointmentAnnotation**
-
 
 
 > [CoachingAnnotation](CoachingAnnotation) getCoachingAppointmentAnnotation(appointmentId, annotationId)
@@ -280,7 +276,6 @@ try {
 
 
 # **getCoachingAppointmentAnnotations**
-
 
 
 > [CoachingAnnotationList](CoachingAnnotationList) getCoachingAppointmentAnnotations(appointmentId, pageNumber, pageSize)
@@ -349,7 +344,6 @@ try {
 # **getCoachingAppointmentStatuses**
 
 
-
 > [CoachingAppointmentStatusResponseList](CoachingAppointmentStatusResponseList) getCoachingAppointmentStatuses(appointmentId, pageNumber, pageSize)
 
 Get the list of status changes for a coaching appointment.
@@ -413,7 +407,6 @@ try {
 
 
 # **getCoachingAppointments**
-
 
 
 > [CoachingAppointmentResponseList](CoachingAppointmentResponseList) getCoachingAppointments(userIds, interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue, intervalCondition)
@@ -495,7 +488,6 @@ try {
 # **getCoachingAppointmentsMe**
 
 
-
 > [CoachingAppointmentResponseList](CoachingAppointmentResponseList) getCoachingAppointmentsMe(interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue, intervalCondition)
 
 Get my appointments for a given date range
@@ -572,7 +564,6 @@ try {
 # **getCoachingNotification**
 
 
-
 > [CoachingNotification](CoachingNotification) getCoachingNotification(notificationId, expand)
 
 Get an existing notification
@@ -634,7 +625,6 @@ try {
 
 
 # **getCoachingNotifications**
-
 
 
 > [CoachingNotificationList](CoachingNotificationList) getCoachingNotifications(pageNumber, pageSize, expand)
@@ -699,7 +689,6 @@ try {
 # **patchCoachingAppointment**
 
 
-
 > [CoachingAppointmentResponse](CoachingAppointmentResponse) patchCoachingAppointment(appointmentId, body)
 
 Update an existing appointment
@@ -761,7 +750,6 @@ try {
 
 
 # **patchCoachingAppointmentAnnotation**
-
 
 
 > [CoachingAnnotation](CoachingAnnotation) patchCoachingAppointmentAnnotation(appointmentId, annotationId, body)
@@ -830,7 +818,6 @@ try {
 # **patchCoachingAppointmentStatus**
 
 
-
 > [CoachingAppointmentStatusResponse](CoachingAppointmentStatusResponse) patchCoachingAppointmentStatus(appointmentId, body)
 
 Update the status of a coaching appointment
@@ -894,7 +881,6 @@ try {
 # **patchCoachingNotification**
 
 
-
 > [CoachingNotification](CoachingNotification) patchCoachingNotification(notificationId, body)
 
 Update an existing notification.
@@ -955,7 +941,6 @@ try {
 
 
 # **postCoachingAppointmentAnnotations**
-
 
 
 > [CoachingAnnotation](CoachingAnnotation) postCoachingAppointmentAnnotations(appointmentId, body)
@@ -1022,7 +1007,6 @@ try {
 # **postCoachingAppointmentConversations**
 
 
-
 > [AddConversationResponse](AddConversationResponse) postCoachingAppointmentConversations(appointmentId, body)
 
 Add a conversation to an appointment
@@ -1087,7 +1071,6 @@ try {
 # **postCoachingAppointments**
 
 
-
 > [CoachingAppointmentResponse](CoachingAppointmentResponse) postCoachingAppointments(body)
 
 Create a new appointment
@@ -1145,7 +1128,6 @@ try {
 
 
 # **postCoachingAppointmentsAggregatesQuery**
-
 
 
 > [CoachingAppointmentAggregateResponse](CoachingAppointmentAggregateResponse) postCoachingAppointmentsAggregatesQuery(body)
@@ -1207,7 +1189,6 @@ try {
 # **postCoachingScheduleslotsQuery**
 
 
-
 > [CoachingSlotsResponse](CoachingSlotsResponse) postCoachingScheduleslotsQuery(body)
 
 Get list of possible slots where a coaching appointment can be scheduled.
@@ -1264,4 +1245,4 @@ try {
 [**CoachingSlotsResponse**](CoachingSlotsResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **division** | [**DomainEntityRef**](DomainEntityRef) | A division the conversation belongs to. |  [optional] |
 | **entities** | [**List&lt;DomainEntityRef&gt;**](DomainEntityRef) | The entities on the conversation within the division. These are the users, queues, work flows, etc. that can be on conversations and and be assigned to different divisions. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

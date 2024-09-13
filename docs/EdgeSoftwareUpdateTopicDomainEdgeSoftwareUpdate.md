@@ -10,7 +10,6 @@
 | **downloadStartTime** | [**Date**](Date) |  |  [optional] |
 | **executeStartTime** | [**Date**](Date) |  |  [optional] |
 | **executeStopTime** | [**Date**](Date) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -27,9 +26,8 @@
 | FAILED | &quot;FAILED&quot; | 
 | SUCCEEDED | &quot;SUCCEEDED&quot; | 
 | DELETE | &quot;DELETE&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

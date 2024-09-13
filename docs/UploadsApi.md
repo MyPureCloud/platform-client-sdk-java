@@ -19,7 +19,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **getKnowledgeKnowledgebaseUploadsUrlsJob**
 
 
-
 > [GetUploadSourceUrlJobStatusResponse](GetUploadSourceUrlJobStatusResponse) getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId)
 
 Get content upload from URL job status
@@ -81,7 +80,6 @@ try {
 
 
 # **postIntegrationsActionDraftFunctionUpload**
-
 
 
 > [FunctionUploadResponse](FunctionUploadResponse) postIntegrationsActionDraftFunctionUpload(actionId, body)
@@ -147,7 +145,6 @@ try {
 # **postKnowledgeDocumentuploads**
 
 
-
 > [UploadUrlResponse](UploadUrlResponse) postKnowledgeDocumentuploads(body)
 
 Creates a presigned URL for uploading a knowledge import file with a set of documents
@@ -205,7 +202,6 @@ try {
 
 
 # **postKnowledgeKnowledgebaseUploadsUrlsJobs**
-
 
 
 > [CreateUploadSourceUrlJobResponse](CreateUploadSourceUrlJobResponse) postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body)
@@ -271,7 +267,6 @@ try {
 # **postLanguageunderstandingMinerUploads**
 
 
-
 > [UploadUrlResponse](UploadUrlResponse) postLanguageunderstandingMinerUploads(minerId, body)
 
 Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner
@@ -333,7 +328,6 @@ try {
 # **postUploadsLearningCoverart**
 
 
-
 > [UploadUrlResponse](UploadUrlResponse) postUploadsLearningCoverart(body)
 
 Generates pre-signed URL to upload cover art for learning modules
@@ -391,7 +385,6 @@ try {
 
 
 # **postUploadsPublicassetsImages**
-
 
 
 > [UploadUrlResponse](UploadUrlResponse) postUploadsPublicassetsImages(body)
@@ -453,7 +446,6 @@ try {
 # **postUploadsRecordings**
 
 
-
 > [UploadUrlResponse](UploadUrlResponse) postUploadsRecordings(body)
 
 Creates presigned url for uploading a recording file
@@ -513,7 +505,6 @@ try {
 # **postUploadsWorkforcemanagementHistoricaldataCsv**
 
 
-
 > [UploadUrlResponse](UploadUrlResponse) postUploadsWorkforcemanagementHistoricaldataCsv(body)
 
 Creates presigned url for uploading WFM historical data file. Requires data in csv format.
@@ -570,4 +561,4 @@ try {
 [**UploadUrlResponse**](UploadUrlResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

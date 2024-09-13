@@ -11,9 +11,8 @@
 | **timezone** | **String** | The time zone used for aggregating metric values |  [optional] |
 | **results** | [**List&lt;WorkdayValuesMetricItem&gt;**](WorkdayValuesMetricItem) | The metric value averages |  [optional] |
 | **performanceProfile** | [**AddressableEntityRef**](AddressableEntityRef) | The targeted performance profile for the average points |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

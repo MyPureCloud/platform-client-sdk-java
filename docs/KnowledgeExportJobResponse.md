@@ -19,7 +19,6 @@
 | **errorInformation** | [**ErrorBody**](ErrorBody) | Any error information, or null of the processing is not in failed state. |  [optional] |
 | **source** | [**KnowledgeOperationSource**](KnowledgeOperationSource) | Source of the export job. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: FileTypeEnum
@@ -30,7 +29,6 @@
 | JSON | &quot;Json&quot; | 
 | CSV | &quot;Csv&quot; | 
 | XLSX | &quot;Xlsx&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -49,9 +47,8 @@
 | FAILED | &quot;Failed&quot; | 
 | ABORTREQUESTED | &quot;AbortRequested&quot; | 
 | ABORTED | &quot;Aborted&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

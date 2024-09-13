@@ -14,7 +14,6 @@
 | **dateStart** | [**Date**](Date) |  |  [optional] |
 | **lengthInMinutes** | **Integer** |  |  [optional] |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ActionTypeEnum
@@ -26,7 +25,6 @@
 | UPDATE | &quot;Update&quot; | 
 | DELETE | &quot;Delete&quot; | 
 | STATUSCHANGE | &quot;StatusChange&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: RelationshipEnum
@@ -37,7 +35,6 @@
 | ATTENDEE | &quot;Attendee&quot; | 
 | FACILITATOR | &quot;Facilitator&quot; | 
 | CREATOR | &quot;Creator&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -49,9 +46,8 @@
 | INPROGRESS | &quot;InProgress&quot; | 
 | COMPLETED | &quot;Completed&quot; | 
 | INVALIDSCHEDULE | &quot;InvalidSchedule&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

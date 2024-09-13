@@ -8,9 +8,8 @@
 | **eventId** | **String** | A unique (V4 UUID) eventId for this event |  |
 | **eventDateTime** | [**Date**](Date) | A Date Time representing the time this event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
 | **conversationId** | **String** | A unique Id (V4 UUID) identifying this conversation |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

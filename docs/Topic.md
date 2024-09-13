@@ -20,7 +20,6 @@
 | **publishedBy** | [**AddressableEntityRef**](AddressableEntityRef) |  |  [optional] |
 | **datePublished** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StrictnessEnum
@@ -34,7 +33,6 @@
 | _72 | &quot;72&quot; | 
 | _85 | &quot;85&quot; | 
 | _90 | &quot;90&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ParticipantsEnum
@@ -45,9 +43,8 @@
 | EXTERNAL | &quot;External&quot; | 
 | INTERNAL | &quot;Internal&quot; | 
 | ALL | &quot;All&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -26,7 +26,6 @@
 | **remainingRestorationsAllowedForOrg** | **Integer** | The remaining archive restorations the organization has. |  [optional] |
 | **sessionId** | **String** | The session id represents an external resource id, such as email, call, chat, etc |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MediaSubtypeEnum
@@ -38,7 +37,6 @@
 | STATION | &quot;Station&quot; | 
 | CONSULT | &quot;Consult&quot; | 
 | SCREEN | &quot;Screen&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: FileStateEnum
@@ -53,7 +51,6 @@
 | RESTORING | &quot;RESTORING&quot; | 
 | UPLOADING | &quot;UPLOADING&quot; | 
 | ERROR | &quot;ERROR&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ArchiveMediumEnum
@@ -62,9 +59,8 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | CLOUDARCHIVE | &quot;CLOUDARCHIVE&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

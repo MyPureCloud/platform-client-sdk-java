@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **intervalType** | [**IntervalTypeEnum**](#Enum--IntervalTypeEnum) | The granularity of the reporting interval period |  |
 | **intervalValue** | **Integer** | The value of the reporting interval period for a given interval type |  |
-{: class="table table-striped"}
 
 
 ## Enum: IntervalTypeEnum
@@ -18,9 +17,8 @@
 | DAY | &quot;Day&quot; | 
 | WEEK | &quot;Week&quot; | 
 | MONTH | &quot;Month&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

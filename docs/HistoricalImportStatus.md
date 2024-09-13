@@ -14,7 +14,6 @@
 | **dateModified** | [**Date**](Date) | Date in which the historical import is modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **active** | **Boolean** | Whether this historical import is active or not |  [optional] |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | Whether this historical import is of type csv or json |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -30,7 +29,6 @@
 | CANCELLED | &quot;Cancelled&quot; | 
 | PURGED | &quot;Purged&quot; | 
 | PURGEPENDING | &quot;PurgePending&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -40,9 +38,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | CSV | &quot;Csv&quot; | 
 | JSON | &quot;Json&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

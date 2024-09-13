@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **integrationAction** | [**PatchIntegrationAction**](PatchIntegrationAction) | Reference to the Integration Action to be used when integrationAction type is qualified |  [optional] |
 | **requestMappings** | [**List&lt;RequestMapping&gt;**](RequestMapping) | Collection of Request Mappings to use |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

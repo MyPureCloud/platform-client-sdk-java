@@ -10,7 +10,6 @@
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The language release status |  [optional] |
 | **supportedEntityTypes** | **List&lt;String&gt;** | The supported entity types for this language |  [optional] |
 | **supportedEntityTypeConfiguration** | [**SupportedEntityTypeStatus**](SupportedEntityTypeStatus) | The configuration for the supported entity types |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -21,9 +20,8 @@
 | EARLY_PREVIEW | &quot;EARLY_PREVIEW&quot; | 
 | PREVIEW | &quot;PREVIEW&quot; | 
 | GA | &quot;GA&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -33,7 +33,6 @@
 | **showOfflineAgents** | **Boolean** | Indicates to show offline agent widget. |  [optional] |
 | **selectedStatuses** | [**List<SelectedStatusesEnum>**](#Enum--SelectedStatusesEnum) | Indicates the selected statuses used to filter the agent widget in the dashboard. |  [optional] |
 | **agentInteractionSortOrder** | [**AgentInteractionSortOrderEnum**](#Enum--AgentInteractionSortOrderEnum) | The sort order of the interactions in the agent status widget. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -49,7 +48,6 @@
 | AGENT_STATUS | &quot;AGENT_STATUS&quot; | 
 | REALTIME_ADHERENCE | &quot;REALTIME_ADHERENCE&quot; | 
 | WEB_CONTENT_URL | &quot;WEB_CONTENT_URL&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: MetricsEnum
@@ -276,7 +274,6 @@
 | TOTAL_PARK_TIME | &quot;TOTAL_PARK_TIME&quot; |
 | MIN_PARK_TIME | &quot;MIN_PARK_TIME&quot; |
 | MAX_PARK_TIME | &quot;MAX_PARK_TIME&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: SortOrderEnum
@@ -286,7 +283,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ASCENDING | &quot;ascending&quot; | 
 | DESCENDING | &quot;descending&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: SortKeyEnum
@@ -296,7 +292,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | NAME | &quot;Name&quot; | 
 | DURATION | &quot;Duration&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: PeriodsEnum
@@ -316,7 +311,6 @@
 | PRIOR_30_DAYS | &quot;PRIOR_30_DAYS&quot; |
 | PAST_30_DAYS_TO_DATE | &quot;PAST_30_DAYS_TO_DATE&quot; |
 | PRIOR_3_MONTHS | &quot;PRIOR_3_MONTHS&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypesEnum
@@ -332,7 +326,6 @@
 | UNKNOWN | &quot;unknown&quot; |
 | VIDEO | &quot;video&quot; |
 | VOICE | &quot;voice&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: SelectedStatusesEnum
@@ -355,7 +348,6 @@
 | OFFQUEUE | &quot;OffQueue&quot; |
 | ONLINE | &quot;Online&quot; |
 | OFFLINE | &quot;Offline&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: AgentInteractionSortOrderEnum
@@ -365,9 +357,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ASCENDING | &quot;ascending&quot; | 
 | DESCENDING | &quot;descending&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

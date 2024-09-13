@@ -24,7 +24,6 @@
 | **propertyChanges** | [**List&lt;PropertyChange&gt;**](PropertyChange) | List of properties that were changed and changes made to those properties. |  [optional] |
 | **context** | **Map&lt;String, String&gt;** | Additional context for this message. |  [optional] |
 | **entityChanges** | [**List&lt;EntityChange&gt;**](EntityChange) | List of entities that were changed and changes made to those entities. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: LevelEnum
@@ -35,7 +34,6 @@
 | USER | &quot;USER&quot; | 
 | SYSTEM | &quot;SYSTEM&quot; | 
 | GENESYS_INTERNAL | &quot;GENESYS_INTERNAL&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -46,9 +44,8 @@
 | SUCCESS | &quot;SUCCESS&quot; | 
 | FAILURE | &quot;FAILURE&quot; | 
 | WARNING | &quot;WARNING&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

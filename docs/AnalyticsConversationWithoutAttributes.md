@@ -22,7 +22,6 @@
 | **surveys** | [**List&lt;AnalyticsSurvey&gt;**](AnalyticsSurvey) | Surveys associated with this conversation |  [optional] |
 | **resolutions** | [**List&lt;AnalyticsResolution&gt;**](AnalyticsResolution) | Resolutions associated with this conversation |  [optional] |
 | **participants** | [**List&lt;AnalyticsParticipantWithoutAttributes&gt;**](AnalyticsParticipantWithoutAttributes) | Participants in the conversation |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ConversationInitiatorEnum
@@ -49,7 +48,6 @@
 | VOICEMAIL | &quot;voicemail&quot; | 
 | VOICESURVEYFLOW | &quot;voicesurveyflow&quot; | 
 | WORKFLOW | &quot;workflow&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: OriginatingDirectionEnum
@@ -59,9 +57,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INBOUND | &quot;inbound&quot; | 
 | OUTBOUND | &quot;outbound&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

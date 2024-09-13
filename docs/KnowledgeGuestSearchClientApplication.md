@@ -9,7 +9,6 @@
 | **deployment** | [**EntityReference**](EntityReference) | Application details when type is MessengerKnowledgeApp or SupportCenter. |  [optional] |
 | **botFlow** | [**EntityReference**](EntityReference) | Application details when type is BotFlow. |  [optional] |
 | **assistant** | [**EntityReference**](EntityReference) | Application details when type is Assistant. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -22,9 +21,8 @@
 | MESSENGERKNOWLEDGEAPP | &quot;MessengerKnowledgeApp&quot; | 
 | SMARTADVISOR | &quot;SmartAdvisor&quot; | 
 | SUPPORTCENTER | &quot;SupportCenter&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

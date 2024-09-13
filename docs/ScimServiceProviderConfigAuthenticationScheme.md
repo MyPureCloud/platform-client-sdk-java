@@ -11,7 +11,6 @@
 | **documentationUri** | **String** | The HTTP-addressable URL that points to the authentication scheme's usage documentation. |  [optional] |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of authentication scheme. |  |
 | **primary** | **Boolean** | Indicates whether this authentication scheme is the primary method of authentication. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -24,9 +23,8 @@
 | OAUTHBEARERTOKEN | &quot;oauthbearertoken&quot; | 
 | HTTPBASIC | &quot;httpbasic&quot; | 
 | HTTPDIGEST | &quot;httpdigest&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

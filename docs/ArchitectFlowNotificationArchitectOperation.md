@@ -15,7 +15,6 @@
 | **errorCode** | **String** | The error code, if the action failed |  [optional] |
 | **errorMessageParams** | [**ArchitectFlowNotificationErrorMessageParams**](ArchitectFlowNotificationErrorMessageParams) |  |  [optional] |
 | **errorDetails** | [**List&lt;ArchitectFlowNotificationErrorDetail&gt;**](ArchitectFlowNotificationErrorDetail) | The error details, if the action failed |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ActionNameEnum
@@ -35,7 +34,6 @@
 | STATE_CHANGE | &quot;STATE_CHANGE&quot; | 
 | UPDATE | &quot;UPDATE&quot; | 
 | VALIDATE | &quot;VALIDATE&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ActionStatusEnum
@@ -50,9 +48,8 @@
 | PENDING_BACKEND_NOTIFICATION | &quot;PENDING_BACKEND_NOTIFICATION&quot; | 
 | SUCCESS | &quot;SUCCESS&quot; | 
 | FAILURE | &quot;FAILURE&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

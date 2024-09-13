@@ -8,7 +8,6 @@
 | **name** | **String** | Attribute name. |  |
 | **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | Filter operator. |  |
 | **values** | **List&lt;String&gt;** | List of values to be used in the filter. |  |
-{: class="table table-striped"}
 
 
 ## Enum: OperatorEnum
@@ -26,9 +25,8 @@
 | CONTAINS | &quot;CONTAINS&quot; | 
 | BETWEEN | &quot;BETWEEN&quot; | 
 | BEGINS_WITH | &quot;BEGINS_WITH&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -10,9 +10,8 @@
 | **idleTimePct** | **Double** | Percent time processor was idle. |  [optional] |
 | **privilegedTimePct** | **Double** | Percent time processor spent in privileged mode. |  [optional] |
 | **userTimePct** | **Double** | Percent time processor spent in user mode. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -18,7 +18,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteProcessautomationTrigger**
 
 
-
 > Void deleteProcessautomationTrigger(triggerId)
 
 Delete a Trigger
@@ -75,7 +74,6 @@ null (empty response body)
 
 
 # **getProcessautomationTrigger**
-
 
 
 > [Trigger](Trigger) getProcessautomationTrigger(triggerId)
@@ -136,7 +134,6 @@ try {
 
 
 # **getProcessautomationTriggers**
-
 
 
 > [TriggerEntityListing](TriggerEntityListing) getProcessautomationTriggers(before, after, pageSize, topicName, enabled, hasDelayBy)
@@ -209,7 +206,6 @@ try {
 # **getProcessautomationTriggersTopics**
 
 
-
 > [TopicCursorEntityListing](TopicCursorEntityListing) getProcessautomationTriggersTopics(before, after, pageSize)
 
 Get topics available for organization
@@ -274,7 +270,6 @@ try {
 # **postProcessautomationTriggerTest**
 
 
-
 > [TestModeResults](TestModeResults) postProcessautomationTriggerTest(triggerId, body)
 
 Test the matching of a Trigger based on provided event body
@@ -336,7 +331,6 @@ try {
 # **postProcessautomationTriggers**
 
 
-
 > [Trigger](Trigger) postProcessautomationTriggers(body)
 
 Create a Trigger
@@ -394,7 +388,6 @@ try {
 
 
 # **postProcessautomationTriggersTopicTest**
-
 
 
 > [TestModeEventResults](TestModeEventResults) postProcessautomationTriggersTopicTest(topicName, body)
@@ -458,7 +451,6 @@ try {
 # **putProcessautomationTrigger**
 
 
-
 > [Trigger](Trigger) putProcessautomationTrigger(triggerId, body)
 
 Update a Trigger
@@ -517,4 +509,4 @@ try {
 [**Trigger**](Trigger)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

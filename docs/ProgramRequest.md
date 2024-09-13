@@ -9,9 +9,8 @@
 | **description** | **String** | The program description |  [optional] |
 | **topicIds** | **List&lt;String&gt;** | The ids of topics associated to the program |  [optional] |
 | **tags** | **List&lt;String&gt;** | The program tags |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **entities** | [**List&lt;LearningAssignment&gt;**](LearningAssignment) | The learning assignments that were assigned correctly |  [optional] |
 | **disallowedEntities** | [**List&lt;DisallowedEntityLearningAssignmentItem&gt;**](DisallowedEntityLearningAssignmentItem) | The items that were not allowed to be assigned |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

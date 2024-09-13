@@ -15,7 +15,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteMobiledevice**
 
 
-
 > Void deleteMobiledevice(deviceId)
 
 Delete device
@@ -71,7 +70,6 @@ null (empty response body)
 
 
 # **getMobiledevice**
-
 
 
 > [UserDevice](UserDevice) getMobiledevice(deviceId)
@@ -130,7 +128,6 @@ try {
 
 
 # **getMobiledevices**
-
 
 
 > [DirectoryUserDevicesListing](DirectoryUserDevicesListing) getMobiledevices(pageSize, pageNumber, sortOrder)
@@ -195,7 +192,6 @@ try {
 # **postMobiledevices**
 
 
-
 > [UserDevice](UserDevice) postMobiledevices(body)
 
 Create User device
@@ -252,7 +248,6 @@ try {
 
 
 # **putMobiledevice**
-
 
 
 > [UserDevice](UserDevice) putMobiledevice(deviceId, body)
@@ -312,4 +307,4 @@ try {
 [**UserDevice**](UserDevice)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

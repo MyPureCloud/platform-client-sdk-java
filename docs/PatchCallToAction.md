@@ -8,7 +8,6 @@
 | **text** | **String** | Text displayed on the call to action button. |  [optional] |
 | **url** | **String** | URL to open when user clicks on the call to action button. |  [optional] |
 | **target** | [**TargetEnum**](#Enum--TargetEnum) | Where the URL should be opened when the user clicks on the call to action button. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TargetEnum
@@ -18,9 +17,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | BLANK | &quot;Blank&quot; | 
 | SELF | &quot;Self&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

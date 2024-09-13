@@ -11,7 +11,6 @@
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the job |  |
 | **journeyView** | [**JourneyView**](JourneyView) | The journey view for which the job is executed |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -23,9 +22,8 @@
 | EXECUTING | &quot;Executing&quot; | 
 | COMPLETE | &quot;Complete&quot; | 
 | FAILED | &quot;Failed&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -9,9 +9,8 @@
 | **shifts** | [**List&lt;BuAgentScheduleShift&gt;**](BuAgentScheduleShift) | The list of changed shifts |  [optional] |
 | **fullDayTimeOffMarkers** | [**List&lt;BuFullDayTimeOffMarker&gt;**](BuFullDayTimeOffMarker) | The list of changed full day time off markers |  [optional] |
 | **deletes** | [**BuAgentScheduleHistoryDeletedChange**](BuAgentScheduleHistoryDeletedChange) | The deleted shifts, full day time off markers, or the entire agent schedule |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -11,9 +11,8 @@
 | **suggestedDocuments** | [**List&lt;UnansweredGroupSuggestedDocument&gt;**](UnansweredGroupSuggestedDocument) | Represents a list of documents that may be linked to an unanswered group |  [optional] |
 | **statistics** | [**KnowledgeGroupStatistics**](KnowledgeGroupStatistics) | Statistics object containing the various hit counts for an unanswered group |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

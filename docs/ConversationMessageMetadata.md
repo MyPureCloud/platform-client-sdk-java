@@ -8,7 +8,6 @@
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | Message type. |  [optional] |
 | **events** | [**List&lt;ConversationMessageMetadataEvent&gt;**](ConversationMessageMetadataEvent) | List of events metadata |  [optional] |
 | **content** | [**List&lt;ConversationMessageMetadataContent&gt;**](ConversationMessageMetadataContent) | List of message content |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -22,9 +21,8 @@
 | EVENT | &quot;Event&quot; | 
 | MESSAGE | &quot;Message&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

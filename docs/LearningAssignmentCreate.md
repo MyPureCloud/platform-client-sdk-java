@@ -9,9 +9,8 @@
 | **userId** | **String** | The User for whom the assignment is assigned |  |
 | **recommendedCompletionDate** | [**Date**](Date) | The recommended completion date of assignment. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **lengthInMinutes** | **Integer** | The length in minutes of assignment |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

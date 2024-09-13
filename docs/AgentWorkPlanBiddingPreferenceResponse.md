@@ -12,7 +12,6 @@
 | **overrideReason** | [**OverrideReasonEnum**](#Enum--OverrideReasonEnum) | The reason why the assigned work plan has been overridden. This must be null without an override work plan |  [optional] |
 | **agentWorkPlanBidPreferences** | [**List&lt;AgentWorkPlanBiddingPreference&gt;**](AgentWorkPlanBiddingPreference) | The list of work plan bidding preferences |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: OverrideReasonEnum
@@ -24,9 +23,8 @@
 | CHANGEOFCIRCUMSTANCE | &quot;ChangeOfCircumstance&quot; | 
 | NEWHIRE | &quot;NewHire&quot; | 
 | EMPLOYEEMOVE | &quot;EmployeeMove&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -10,7 +10,6 @@
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | Message receipt status. |  |
 | **reasons** | [**List&lt;ConversationReason&gt;**](ConversationReason) | List of reasons for a message receipt that indicates the message has failed. Only used with Failed status. |  [optional] |
 | **isFinalReceipt** | **Boolean** | Indicates if this is the last message receipt for this message, or if another message receipt can be expected. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -23,9 +22,8 @@
 | FAILED | &quot;Failed&quot; | 
 | PUBLISHED | &quot;Published&quot; | 
 | REMOVED | &quot;Removed&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

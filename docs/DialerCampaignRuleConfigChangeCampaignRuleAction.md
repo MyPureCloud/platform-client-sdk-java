@@ -10,7 +10,6 @@
 | **actionType** | [**ActionTypeEnum**](#Enum--ActionTypeEnum) | The type of this action |  [optional] |
 | **campaignRuleActionEntities** | [**DialerCampaignRuleConfigChangeCampaignRuleActionEntities**](DialerCampaignRuleConfigChangeCampaignRuleActionEntities) |  |  [optional] |
 | **additionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ActionTypeEnum
@@ -24,9 +23,8 @@
 | TURNOFFSEQUENCE | &quot;turnOffSequence&quot; | 
 | SETCAMPAIGNPRIORITY | &quot;setCampaignPriority&quot; | 
 | RECYCLECAMPAIGN | &quot;recycleCampaign&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

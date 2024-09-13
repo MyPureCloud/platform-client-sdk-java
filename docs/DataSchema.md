@@ -14,7 +14,6 @@
 | **dateCreated** | [**Date**](Date) | The date and time this schema was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **jsonSchema** | [**JsonSchemaDocument**](JsonSchemaDocument) | A JSON schema defining the extension to the built-in entity type. |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: AppliesToEnum
@@ -25,9 +24,8 @@
 | EXTERNAL_ORGANIZATION | &quot;EXTERNAL_ORGANIZATION&quot; |
 | OPEN_ACTION | &quot;OPEN_ACTION&quot; |
 | WORKITEM | &quot;WORKITEM&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -11,7 +11,6 @@
 | **communicationId** | **String** | A unique Id (V4 UUID) identifying this communication |  |
 | **disconnectType** | [**DisconnectTypeEnum**](#Enum--DisconnectTypeEnum) | Indicates how this communication was ended. |  |
 | **destinationConversationId** | **String** | The id (V4 UUID) of the conversation that the communication is being moved to when conversations are merged. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: DisconnectTypeEnum
@@ -28,9 +27,8 @@
 | TRANSFERCONFERENCE | &quot;TransferConference&quot; | 
 | TRANSFERCONSULT | &quot;TransferConsult&quot; | 
 | TRANSFERUSER | &quot;TransferUser&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

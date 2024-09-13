@@ -10,9 +10,8 @@
 | **maxCallsPerAgent** | [**BigDecimal**](BigDecimal) | The maximum number of calls that can be placed per agent on this campaign |  [optional] |
 | **dynamicLineBalancingSettings** | [**DynamicLineBalancingSettingsPatchRequest**](DynamicLineBalancingSettingsPatchRequest) | Dynamic line balancing settings |  [optional] |
 | **queue** | [**AddressableEntityRef**](AddressableEntityRef) | The Queue for this Campaign to route calls to. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

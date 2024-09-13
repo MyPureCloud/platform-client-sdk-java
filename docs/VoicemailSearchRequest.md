@@ -12,7 +12,6 @@
 | **sort** | [**List&lt;SearchSort&gt;**](SearchSort) | Multi-value sort order, list of multiple sort values |  [optional] |
 | **expand** | **List&lt;String&gt;** | Provides more details about a specified resource |  [optional] |
 | **query** | [**List&lt;VoicemailSearchCriteria&gt;**](VoicemailSearchCriteria) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: SortOrderEnum
@@ -23,9 +22,8 @@
 | ASC | &quot;ASC&quot; | 
 | DESC | &quot;DESC&quot; | 
 | SCORE | &quot;SCORE&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

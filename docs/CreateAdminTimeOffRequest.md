@@ -15,7 +15,6 @@
 | **durationMinutes** | **List&lt;Integer&gt;** | Daily durations for each day of this time off request in minutes |  [optional] |
 | **payableMinutes** | **List&lt;Integer&gt;** | Payable minutes for each day of this time off request |  [optional] |
 | **paid** | **Boolean** | Whether this is a paid time off request |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -25,9 +24,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | PENDING | &quot;PENDING&quot; | 
 | APPROVED | &quot;APPROVED&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

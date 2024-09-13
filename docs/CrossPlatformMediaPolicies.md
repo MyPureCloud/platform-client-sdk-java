@@ -9,9 +9,8 @@
 | **chatPolicy** | [**CrossPlatformChatMediaPolicy**](CrossPlatformChatMediaPolicy) | Conditions and actions for chats |  [optional] |
 | **emailPolicy** | [**CrossPlatformEmailMediaPolicy**](CrossPlatformEmailMediaPolicy) | Conditions and actions for emails |  [optional] |
 | **messagePolicy** | [**CrossPlatformMessageMediaPolicy**](CrossPlatformMessageMediaPolicy) | Conditions and actions for messages |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

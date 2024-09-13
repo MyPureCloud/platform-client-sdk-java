@@ -10,7 +10,6 @@
 | **signedUrlTimeoutSeconds** | **Integer** | The number of seconds the presigned URL is valid for (from 1 to 604800 seconds). If none provided, defaults to 600 seconds |  [optional] |
 | **contentType** | [**ContentTypeEnum**](#Enum--ContentTypeEnum) | The content type of the file to upload. |  |
 | **serverSideEncryption** | [**ServerSideEncryptionEnum**](#Enum--ServerSideEncryptionEnum) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ContentTypeEnum
@@ -23,7 +22,6 @@
 | IMAGE_JPEG | &quot;image/jpeg&quot; | 
 | IMAGE_JPG | &quot;image/jpg&quot; | 
 | IMAGE_PNG | &quot;image/png&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ServerSideEncryptionEnum
@@ -32,9 +30,8 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | AES256 | &quot;AES256&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

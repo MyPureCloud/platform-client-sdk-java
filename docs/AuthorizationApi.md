@@ -54,7 +54,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteAuthorizationDivision**
 
 
-
 > Void deleteAuthorizationDivision(divisionId, force)
 
 Delete a division.
@@ -115,7 +114,6 @@ null (empty response body)
 # **deleteAuthorizationRole**
 
 
-
 > Void deleteAuthorizationRole(roleId)
 
 Delete an organization role.
@@ -172,7 +170,6 @@ null (empty response body)
 
 
 # **deleteAuthorizationSubjectDivisionRole**
-
 
 
 > Void deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId)
@@ -237,7 +234,6 @@ null (empty response body)
 # **getAuthorizationDivision**
 
 
-
 > [AuthzDivision](AuthzDivision) getAuthorizationDivision(divisionId, objectCount)
 
 Returns an authorization division.
@@ -296,7 +292,6 @@ try {
 
 
 # **getAuthorizationDivisionGrants**
-
 
 
 > [AuthzDivisionGrantEntityListing](AuthzDivisionGrantEntityListing) getAuthorizationDivisionGrants(divisionId, pageNumber, pageSize)
@@ -362,7 +357,6 @@ try {
 
 
 # **getAuthorizationDivisions**
-
 
 
 > [AuthzDivisionEntityListing](AuthzDivisionEntityListing) getAuthorizationDivisions(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, objectCount, id, name)
@@ -441,7 +435,6 @@ try {
 # **getAuthorizationDivisionsHome**
 
 
-
 > [AuthzDivision](AuthzDivision) getAuthorizationDivisionsHome()
 
 Retrieve the home division for the organization.
@@ -498,7 +491,6 @@ This endpoint does not require any parameters.
 # **getAuthorizationDivisionsLimit**
 
 
-
 > Integer getAuthorizationDivisionsLimit()
 
 Returns the maximum allowed number of divisions.
@@ -552,7 +544,9 @@ This endpoint does not require any parameters.
 
 # **getAuthorizationDivisionspermittedMe**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [List&lt;AuthzDivision&gt;](AuthzDivision) getAuthorizationDivisionspermittedMe(permission, name)
 
@@ -616,7 +610,6 @@ try {
 # **getAuthorizationDivisionspermittedPagedMe**
 
 
-
 > [DivsPermittedEntityListing](DivsPermittedEntityListing) getAuthorizationDivisionspermittedPagedMe(permission, pageNumber, pageSize)
 
 Returns which divisions the current user has the given permission in.
@@ -678,7 +671,9 @@ try {
 
 # **getAuthorizationDivisionspermittedPagedSubjectId**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [DivsPermittedEntityListing](DivsPermittedEntityListing) getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, pageNumber, pageSize)
 
@@ -744,7 +739,6 @@ try {
 
 
 # **getAuthorizationPermissions**
-
 
 
 > [PermissionCollectionEntityListing](PermissionCollectionEntityListing) getAuthorizationPermissions(pageSize, pageNumber, queryType, query)
@@ -813,7 +807,6 @@ try {
 # **getAuthorizationProducts**
 
 
-
 > [OrganizationProductEntityListing](OrganizationProductEntityListing) getAuthorizationProducts()
 
 Get the list of enabled products
@@ -868,7 +861,6 @@ This endpoint does not require any parameters.
 
 
 # **getAuthorizationRole**
-
 
 
 > [DomainOrganizationRole](DomainOrganizationRole) getAuthorizationRole(roleId, userCount, expand)
@@ -936,7 +928,6 @@ try {
 # **getAuthorizationRoleComparedefaultRightRoleId**
 
 
-
 > [DomainOrgRoleDifference](DomainOrgRoleDifference) getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId)
 
 Get an org role to default role comparison
@@ -998,7 +989,6 @@ try {
 
 
 # **getAuthorizationRoleSubjectgrants**
-
 
 
 > [SubjectDivisionGrantsEntityListing](SubjectDivisionGrantsEntityListing) getAuthorizationRoleSubjectgrants(roleId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage)
@@ -1074,7 +1064,6 @@ try {
 # **getAuthorizationRoleUsers**
 
 
-
 > [UserEntityListing](UserEntityListing) getAuthorizationRoleUsers(roleId, pageSize, pageNumber)
 
 Get a list of the users in a specified role.
@@ -1137,7 +1126,6 @@ try {
 
 
 # **getAuthorizationRoles**
-
 
 
 > [OrganizationRoleEntityListing](OrganizationRoleEntityListing) getAuthorizationRoles(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, permission, defaultRoleId, userCount, id)
@@ -1219,7 +1207,6 @@ try {
 # **getAuthorizationRolesSettings**
 
 
-
 > [RoleSettings](RoleSettings) getAuthorizationRolesSettings()
 
 Get authorization role settings
@@ -1276,7 +1263,6 @@ This endpoint does not require any parameters.
 # **getAuthorizationSettings**
 
 
-
 > [AuthorizationSettings](AuthorizationSettings) getAuthorizationSettings()
 
 Get authorization settings
@@ -1331,7 +1317,6 @@ This endpoint does not require any parameters.
 
 
 # **getAuthorizationSubject**
-
 
 
 > [AuthzSubject](AuthzSubject) getAuthorizationSubject(subjectId, includeDuplicates)
@@ -1395,7 +1380,6 @@ try {
 # **getAuthorizationSubjectsMe**
 
 
-
 > [AuthzSubject](AuthzSubject) getAuthorizationSubjectsMe(includeDuplicates)
 
 Returns a listing of roles and permissions for the currently authenticated user.
@@ -1452,7 +1436,6 @@ try {
 
 
 # **getAuthorizationSubjectsRolecounts**
-
 
 
 > Map&lt;String, Object&gt; getAuthorizationSubjectsRolecounts(id)
@@ -1514,7 +1497,6 @@ try {
 # **getUserRoles**
 
 
-
 > [UserAuthorization](UserAuthorization) getUserRoles(subjectId)
 
 Returns a listing of roles and permissions for a user.
@@ -1572,7 +1554,6 @@ try {
 
 
 # **patchAuthorizationRole**
-
 
 
 > [DomainOrganizationRole](DomainOrganizationRole) patchAuthorizationRole(roleId, body)
@@ -1638,7 +1619,6 @@ try {
 # **patchAuthorizationSettings**
 
 
-
 > [AuthorizationSettings](AuthorizationSettings) patchAuthorizationSettings(body)
 
 Change authorization settings
@@ -1699,7 +1679,6 @@ try {
 
 
 # **postAuthorizationDivisionObject**
-
 
 
 > Void postAuthorizationDivisionObject(divisionId, objectType, body)
@@ -1765,7 +1744,6 @@ null (empty response body)
 # **postAuthorizationDivisionRestore**
 
 
-
 > [AuthzDivision](AuthzDivision) postAuthorizationDivisionRestore(divisionId, body)
 
 Recreate a previously deleted division.
@@ -1825,7 +1803,6 @@ try {
 
 
 # **postAuthorizationDivisions**
-
 
 
 > [AuthzDivision](AuthzDivision) postAuthorizationDivisions(body)
@@ -1888,7 +1865,6 @@ try {
 # **postAuthorizationRole**
 
 
-
 > Void postAuthorizationRole(roleId, body, subjectType)
 
 Bulk-grant subjects and divisions with an organization role.
@@ -1949,7 +1925,6 @@ null (empty response body)
 
 
 # **postAuthorizationRoleComparedefaultRightRoleId**
-
 
 
 > [DomainOrgRoleDifference](DomainOrgRoleDifference) postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId, body)
@@ -2017,7 +1992,6 @@ try {
 # **postAuthorizationRoles**
 
 
-
 > [DomainOrganizationRole](DomainOrganizationRole) postAuthorizationRoles(body)
 
 Create an organization role.
@@ -2075,7 +2049,6 @@ try {
 
 
 # **postAuthorizationRolesDefault**
-
 
 
 > [OrganizationRoleEntityListing](OrganizationRoleEntityListing) postAuthorizationRolesDefault(force)
@@ -2137,7 +2110,6 @@ try {
 
 
 # **postAuthorizationSubjectBulkadd**
-
 
 
 > Void postAuthorizationSubjectBulkadd(subjectId, body, subjectType)
@@ -2202,7 +2174,6 @@ null (empty response body)
 # **postAuthorizationSubjectBulkremove**
 
 
-
 > Void postAuthorizationSubjectBulkremove(subjectId, body)
 
 Bulk-remove grants from a subject.
@@ -2261,7 +2232,6 @@ null (empty response body)
 
 
 # **postAuthorizationSubjectBulkreplace**
-
 
 
 > Void postAuthorizationSubjectBulkreplace(subjectId, body, subjectType)
@@ -2329,7 +2299,6 @@ null (empty response body)
 # **postAuthorizationSubjectDivisionRole**
 
 
-
 > Void postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, subjectType)
 
 Make a grant of a role in a division
@@ -2394,7 +2363,6 @@ null (empty response body)
 # **putAuthorizationDivision**
 
 
-
 > [AuthzDivision](AuthzDivision) putAuthorizationDivision(divisionId, body)
 
 Update a division.
@@ -2454,7 +2422,6 @@ try {
 
 
 # **putAuthorizationRole**
-
 
 
 > [DomainOrganizationRole](DomainOrganizationRole) putAuthorizationRole(roleId, body)
@@ -2520,7 +2487,6 @@ try {
 # **putAuthorizationRoleUsersAdd**
 
 
-
 > List&lt;String&gt; putAuthorizationRoleUsersAdd(roleId, body)
 
 Sets the users for the role
@@ -2580,7 +2546,6 @@ try {
 
 
 # **putAuthorizationRoleUsersRemove**
-
 
 
 > List&lt;String&gt; putAuthorizationRoleUsersRemove(roleId, body)
@@ -2644,7 +2609,6 @@ try {
 # **putAuthorizationRolesDefault**
 
 
-
 > [OrganizationRoleEntityListing](OrganizationRoleEntityListing) putAuthorizationRolesDefault(body)
 
 Restore specified default roles
@@ -2702,7 +2666,6 @@ try {
 
 
 # **putAuthorizationRolesSettings**
-
 
 
 > [RoleSettings](RoleSettings) putAuthorizationRolesSettings(body)
@@ -2767,7 +2730,6 @@ try {
 # **putUserRoles**
 
 
-
 > [UserAuthorization](UserAuthorization) putUserRoles(subjectId, body)
 
 Sets the user's roles
@@ -2826,4 +2788,4 @@ try {
 [**UserAuthorization**](UserAuthorization)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

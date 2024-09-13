@@ -8,9 +8,8 @@
 | **name** | **String** | The name of the entity type. |  |
 | **description** | **String** | Description of the of the named entity type. |  [optional] |
 | **mechanism** | [**NamedEntityTypeMechanism**](NamedEntityTypeMechanism) | The mechanism enabling detection of the named entity type. |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

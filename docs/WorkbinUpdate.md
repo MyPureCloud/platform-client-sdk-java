@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **name** | **String** | Workbin name. Valid length between 3 and 256 characters. |  [optional] |
 | **description** | **String** | Workbin description. Maximum length of 512 characters. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -15,7 +15,6 @@
 | **dependentColumnIds** | [**Map&lt;String, List&lt;String&gt;&gt;**](List) | The list of dependent column ids for the export metadata |  [optional] |
 | **availableColumnIds** | **List&lt;String&gt;** | The list of available column ids for the export metadata |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ViewTypeEnum
@@ -137,9 +136,10 @@
 | MESSAGING_QUEUE_PERFORMANCE_SUMMARY_VIEW | &quot;MESSAGING_QUEUE_PERFORMANCE_SUMMARY_VIEW&quot; | 
 | MESSAGING_QUEUE_PERFORMANCE_DETAIL_VIEW | &quot;MESSAGING_QUEUE_PERFORMANCE_DETAIL_VIEW&quot; | 
 | SOCIAL_LISTENING_VIEW | &quot;SOCIAL_LISTENING_VIEW&quot; | 
-{: class="table table-striped"}
+| SOCIAL_LISTENING_POSTS_VIEW | &quot;SOCIAL_LISTENING_POSTS_VIEW&quot; | 
+| AGENT_PERFORMANCE_TIMELINE_DETAIL_VIEW | &quot;AGENT_PERFORMANCE_TIMELINE_DETAIL_VIEW&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

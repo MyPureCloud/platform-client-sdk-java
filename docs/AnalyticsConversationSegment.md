@@ -30,7 +30,6 @@
 | **wrapUpTags** | **List&lt;String&gt;** | Tag(s) assigned during after-call work |  [optional] |
 | **scoredAgents** | [**List&lt;AnalyticsScoredAgent&gt;**](AnalyticsScoredAgent) | Scored agents |  [optional] |
 | **properties** | [**List&lt;AnalyticsProperty&gt;**](AnalyticsProperty) | Additional segment properties |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: DisconnectTypeEnum
@@ -56,7 +55,6 @@
 | TRANSFER | &quot;transfer&quot; | 
 | TRANSPORTFAILURE | &quot;transportFailure&quot; | 
 | UNCALLABLE | &quot;uncallable&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: SegmentTypeEnum
@@ -85,9 +83,8 @@
 | UPLOADING | &quot;uploading&quot; | 
 | VOICEMAIL | &quot;voicemail&quot; | 
 | WRAPUP | &quot;wrapup&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

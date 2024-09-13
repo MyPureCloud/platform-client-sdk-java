@@ -8,7 +8,6 @@
 | **cidr** | **String** |  |  [optional] |
 | **service** | [**ServiceEnum**](#Enum--ServiceEnum) |  |  [optional] |
 | **region** | **String** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ServiceEnum
@@ -21,9 +20,9 @@
 | AUDIOHOOK | &quot;audiohook&quot; | 
 | OPEN_MESSAGING | &quot;open-messaging&quot; | 
 | API | &quot;api&quot; | 
-{: class="table table-striped"}
+| AUDIO_CONNECTOR | &quot;audio-connector&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

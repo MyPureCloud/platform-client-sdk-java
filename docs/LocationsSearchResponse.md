@@ -14,9 +14,8 @@
 | **nextPage** | **String** | Q64 value for the next page of results |  [optional] |
 | **types** | **List&lt;String&gt;** | Resource types the search was performed against |  |
 | **results** | [**List&lt;LocationDefinition&gt;**](LocationDefinition) | Search results |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

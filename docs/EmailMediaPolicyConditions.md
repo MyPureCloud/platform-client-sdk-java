@@ -13,7 +13,6 @@
 | **timeAllowed** | [**TimeAllowed**](TimeAllowed) |  |  [optional] |
 | **teams** | [**List&lt;Team&gt;**](Team) | Teams to match conversations against |  [optional] |
 | **customerParticipation** | [**CustomerParticipationEnum**](#Enum--CustomerParticipationEnum) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: CustomerParticipationEnum
@@ -23,9 +22,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | YES | &quot;YES&quot; | 
 | NO | &quot;NO&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

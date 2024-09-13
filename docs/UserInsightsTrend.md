@@ -13,7 +13,6 @@
 | **user** | [**UserReference**](UserReference) | The query user |  [optional] |
 | **entities** | [**List&lt;UserInsightsTrendMetricItem&gt;**](UserInsightsTrendMetricItem) | The list of insights trend for each metric |  [optional] |
 | **total** | [**UserInsightsTrendTotalItem**](UserInsightsTrendTotalItem) | The insights trend in total |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: GranularityEnum
@@ -24,9 +23,8 @@
 | DAILY | &quot;Daily&quot; | 
 | WEEKLY | &quot;Weekly&quot; | 
 | MONTHLY | &quot;Monthly&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **current** | [**IntegrationConfiguration**](IntegrationConfiguration) | The current, active configuration for the integration. |  [optional] |
 | **effective** | [**EffectiveConfiguration**](EffectiveConfiguration) | The effective configuration for the app, containing the integration specific configuration along with overrides specified in the integration type. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

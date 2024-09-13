@@ -11,7 +11,6 @@
 | **availableMinutesPerInterval** | **List&lt;Integer&gt;** | The list of available time off values in minutes per granularity interval |  [optional] |
 | **waitlistedRequestsPerInterval** | **List&lt;Integer&gt;** | The current number of waitlisted time off requests for every interval per granularity |  [optional] |
 | **waitlistEnabled** | **Boolean** | Whether the time off request can be waitlisted |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: GranularityEnum
@@ -20,9 +19,8 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | DAILY | &quot;Daily&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

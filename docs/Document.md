@@ -36,7 +36,6 @@
 | **sharingStatus** | [**SharingStatusEnum**](#Enum--SharingStatusEnum) |  |  [optional] |
 | **downloadSharingUri** | **String** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: SystemTypeEnum
@@ -47,7 +46,6 @@
 | DOCUMENT | &quot;DOCUMENT&quot; | 
 | FAX | &quot;FAX&quot; | 
 | RECORDING | &quot;RECORDING&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: UploadMethodEnum
@@ -57,7 +55,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | SINGLE_PUT | &quot;SINGLE_PUT&quot; | 
 | MULTIPART_POST | &quot;MULTIPART_POST&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: SharingStatusEnum
@@ -68,9 +65,8 @@
 | NONE | &quot;NONE&quot; | 
 | LIMITED | &quot;LIMITED&quot; | 
 | PUBLIC | &quot;PUBLIC&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

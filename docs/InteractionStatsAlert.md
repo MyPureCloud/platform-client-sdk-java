@@ -22,7 +22,6 @@
 | **alertTypes** | [**List<AlertTypesEnum>**](#Enum--AlertTypesEnum) | A collection of notification methods. |  |
 | **ruleUri** | **String** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: DimensionEnum
@@ -32,7 +31,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | QUEUEID | &quot;queueId&quot; | 
 | USERID | &quot;userId&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: MetricEnum
@@ -50,7 +48,6 @@
 | TWAIT | &quot;tWait&quot; | 
 | THELD | &quot;tHeld&quot; | 
 | TACW | &quot;tAcw&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -63,7 +60,6 @@
 | EMAIL | &quot;email&quot; | 
 | CALLBACK | &quot;callback&quot; | 
 | MESSAGE | &quot;message&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: NumericRangeEnum
@@ -77,7 +73,6 @@
 | LTE | &quot;lte&quot; | 
 | EQ | &quot;eq&quot; | 
 | NE | &quot;ne&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StatisticEnum
@@ -89,7 +84,6 @@
 | MIN | &quot;min&quot; | 
 | RATIO | &quot;ratio&quot; | 
 | MAX | &quot;max&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: AlertTypesEnum
@@ -99,9 +93,8 @@
 | SMS | &quot;SMS&quot; |
 | DEVICE | &quot;DEVICE&quot; |
 | EMAIL | &quot;EMAIL&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

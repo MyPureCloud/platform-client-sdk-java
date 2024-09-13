@@ -10,7 +10,6 @@
 | **shouldIgnoreCase** | **Boolean** | Should criteria be case insensitive. |  [optional] |
 | **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | The comparison operator. |  [optional] |
 | **entityType** | [**EntityTypeEnum**](#Enum--EntityTypeEnum) | The entity to match the pattern against. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: OperatorEnum
@@ -30,7 +29,6 @@
 | LESSTHANOREQUAL | &quot;lessThanOrEqual&quot; | 
 | STARTSWITH | &quot;startsWith&quot; | 
 | ENDSWITH | &quot;endsWith&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: EntityTypeEnum
@@ -39,9 +37,8 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | VISIT | &quot;visit&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

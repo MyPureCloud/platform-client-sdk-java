@@ -17,7 +17,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **getAuditsQueryRealtimeServicemapping**
 
 
-
 > [AuditQueryServiceMapping](AuditQueryServiceMapping) getAuditsQueryRealtimeServicemapping()
 
 Get service mapping information used in realtime audits.
@@ -73,7 +72,6 @@ This endpoint does not require any parameters.
 # **getAuditsQueryServicemapping**
 
 
-
 > [AuditQueryServiceMapping](AuditQueryServiceMapping) getAuditsQueryServicemapping()
 
 Get service mapping information used in audits.
@@ -127,7 +125,6 @@ This endpoint does not require any parameters.
 
 
 # **getAuditsQueryTransactionId**
-
 
 
 > [AuditQueryExecutionStatusResponse](AuditQueryExecutionStatusResponse) getAuditsQueryTransactionId(transactionId)
@@ -187,7 +184,6 @@ try {
 
 
 # **getAuditsQueryTransactionIdResults**
-
 
 
 > [AuditQueryExecutionResultsResponse](AuditQueryExecutionResultsResponse) getAuditsQueryTransactionIdResults(transactionId, cursor, pageSize, expand, allowRedirect)
@@ -257,7 +253,6 @@ try {
 # **postAuditsQuery**
 
 
-
 > [AuditQueryExecutionStatusResponse](AuditQueryExecutionStatusResponse) postAuditsQuery(body)
 
 Create audit query execution
@@ -317,7 +312,6 @@ try {
 
 
 # **postAuditsQueryRealtime**
-
 
 
 > [AuditRealtimeQueryResultsResponse](AuditRealtimeQueryResultsResponse) postAuditsQueryRealtime(body, expand)
@@ -383,7 +377,6 @@ try {
 # **postAuditsQueryRealtimeRelated**
 
 
-
 > [AuditRealtimeRelatedResultsResponse](AuditRealtimeRelatedResultsResponse) postAuditsQueryRealtimeRelated(body, expand)
 
 Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id.
@@ -442,4 +435,4 @@ try {
 [**AuditRealtimeRelatedResultsResponse**](AuditRealtimeRelatedResultsResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

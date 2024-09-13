@@ -8,9 +8,8 @@
 | **recurrencePeriod** | [**RecurrencePeriod**](RecurrencePeriod) | The recurrence period of the activity plan |  |
 | **minimumTimeBetweenOccurrences** | [**RecurrencePeriod**](RecurrencePeriod) | Constraint indicating the minimum time in hours between recurrences of the activity plan |  |
 | **endAfter** | [**RecurrenceEndSettings**](RecurrenceEndSettings) | Settings controlling when to end the recurrence for the activity plan |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

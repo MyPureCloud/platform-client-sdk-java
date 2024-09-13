@@ -9,7 +9,6 @@
 | **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
 | **events** | [**List&lt;V2ConversationMessageTypingEventForUserTopicConversationMessageEvent&gt;**](V2ConversationMessageTypingEventForUserTopicConversationMessageEvent) |  |  [optional] |
 | **direction** | [**DirectionEnum**](#Enum--DirectionEnum) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -18,7 +17,6 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | EVENT | &quot;Event&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DirectionEnum
@@ -28,9 +26,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INBOUND | &quot;Inbound&quot; | 
 | OUTBOUND | &quot;Outbound&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -22,7 +22,6 @@
 | **createdBy** | [**User**](User) | User who sent this message. |  [optional] |
 | **conversationId** | **String** | The id of the conversation of this message. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: DirectionEnum
@@ -32,7 +31,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INBOUND | &quot;inbound&quot; | 
 | OUTBOUND | &quot;outbound&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: MessengerTypeEnum
@@ -47,7 +45,6 @@
 | WEBMESSAGING | &quot;webmessaging&quot; | 
 | INSTAGRAM | &quot;instagram&quot; | 
 | OPEN | &quot;open&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -64,9 +61,8 @@
 | READ | &quot;read&quot; | 
 | REMOVED | &quot;removed&quot; | 
 | PUBLISHED | &quot;published&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

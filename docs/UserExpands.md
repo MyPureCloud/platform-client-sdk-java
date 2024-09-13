@@ -13,9 +13,8 @@
 | **geolocation** | [**Geolocation**](Geolocation) | Current geolocation position |  [optional] |
 | **station** | [**UserStations**](UserStations) | Effective, default, and last station information |  [optional] |
 | **authorization** | [**UserAuthorization**](UserAuthorization) | Roles and permissions assigned to the user |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **results** | [**List&lt;FlowActivityData&gt;**](FlowActivityData) | Query results |  [optional] |
 | **entityIdDimension** | [**EntityIdDimensionEnum**](#Enum--EntityIdDimensionEnum) | Dimension that is used as an entityId |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: EntityIdDimensionEnum
@@ -39,9 +38,8 @@
 | TEAMID | &quot;teamId&quot; | 
 | USEDROUTING | &quot;usedRouting&quot; | 
 | USERID | &quot;userId&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

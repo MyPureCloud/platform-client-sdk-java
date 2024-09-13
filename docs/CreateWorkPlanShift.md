@@ -27,7 +27,6 @@
 | **constrainDayOff** | **Boolean** | Whether day off rule is enabled |  [optional] |
 | **dayOffRule** | [**DayOffRuleEnum**](#Enum--DayOffRuleEnum) | The day off rule for agents to have next day off or previous day off. used if constrainDayOff = true |  [optional] |
 | **activities** | [**List&lt;CreateWorkPlanActivity&gt;**](CreateWorkPlanActivity) | Activities configured for this shift |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: DayOffRuleEnum
@@ -37,9 +36,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | NEXTDAYOFF | &quot;NextDayOff&quot; | 
 | PREVIOUSDAYOFF | &quot;PreviousDayOff&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

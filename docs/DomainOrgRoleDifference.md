@@ -10,9 +10,8 @@
 | **samePermissionPolicies** | [**List&lt;DomainPermissionPolicy&gt;**](DomainPermissionPolicy) |  |  [optional] |
 | **userOrgRole** | [**DomainOrganizationRole**](DomainOrganizationRole) |  |  [optional] |
 | **roleFromDefault** | [**DomainOrganizationRole**](DomainOrganizationRole) |  |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

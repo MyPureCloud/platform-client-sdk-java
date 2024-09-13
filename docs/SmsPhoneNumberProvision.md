@@ -12,7 +12,6 @@
 | **name** | **String** |  |  [optional] |
 | **addressId** | **String** | The id of an address added on your account. Due to regulatory requirements in some countries, an address may be required when provisioning a sms number. In those cases you should provide the provisioned sms address id here |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: PhoneNumberTypeEnum
@@ -24,9 +23,8 @@
 | MOBILE | &quot;mobile&quot; | 
 | TOLLFREE | &quot;tollfree&quot; | 
 | SHORTCODE | &quot;shortcode&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -11,7 +11,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **getWebmessagingMessages**
 
 
-
 > [WebMessagingMessageEntityList](WebMessagingMessageEntityList) getWebmessagingMessages(pageSize, pageNumber)
 
 Get the messages for a web messaging session.
@@ -56,4 +55,4 @@ try {
 [**WebMessagingMessageEntityList**](WebMessagingMessageEntityList)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

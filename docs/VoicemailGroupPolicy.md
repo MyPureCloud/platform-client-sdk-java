@@ -18,7 +18,6 @@
 | **groupAlertType** | [**GroupAlertTypeEnum**](#Enum--GroupAlertTypeEnum) | Specifies if the members in this group should be contacted randomly, in a specific order, or by round-robin. |  [optional] |
 | **interactiveResponsePromptId** | **String** | The prompt to use when connecting a user to a Group Ring call |  [optional] |
 | **interactiveResponseRequired** | **Boolean** | Whether user should be prompted with a confirmation prompt when connecting to a Group Ring call |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: GroupAlertTypeEnum
@@ -29,9 +28,8 @@
 | RANDOM | &quot;RANDOM&quot; | 
 | ROUND_ROBIN | &quot;ROUND_ROBIN&quot; | 
 | SEQUENTIAL | &quot;SEQUENTIAL&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

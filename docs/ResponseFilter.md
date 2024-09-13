@@ -8,7 +8,6 @@
 | **name** | **String** | Field to filter on. Allowed values are 'name', 'libraryId', 'text.contentType', 'messagingTemplate' and 'responseType' |  |
 | **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | Filter operation: IN, EQUALS, NOTEQUALS. |  |
 | **values** | **List&lt;String&gt;** | Values to filter on. If name is 'responseType' then allowed values are 'CampaignSmsTemplate', 'CampaignEmailTemplate', 'Footer' and 'Signature' |  |
-{: class="table table-striped"}
 
 
 ## Enum: OperatorEnum
@@ -19,9 +18,8 @@
 | IN | &quot;IN&quot; | 
 | EQUALS | &quot;EQUALS&quot; | 
 | NOTEQUALS | &quot;NOTEQUALS&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

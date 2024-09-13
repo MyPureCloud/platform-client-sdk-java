@@ -11,7 +11,6 @@
 | **sentimentTrendClass** | [**SentimentTrendClassEnum**](#Enum--SentimentTrendClassEnum) | The Sentiment Trend Class |  [optional] |
 | **empathyScores** | [**List&lt;EmpathyScore&gt;**](EmpathyScore) | The Empathy Scores |  [optional] |
 | **participantMetrics** | [**ParticipantMetrics**](ParticipantMetrics) | The Participant Metrics |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: SentimentTrendClassEnum
@@ -25,9 +24,8 @@
 | NOCHANGE | &quot;NoChange&quot; | 
 | SLIGHTLYIMPROVING | &quot;SlightlyImproving&quot; | 
 | IMPROVING | &quot;Improving&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -15,7 +15,6 @@
 | **clientType** | [**ClientTypeEnum**](#Enum--ClientTypeEnum) | The type of display widget for which this Deployment is configured, which controls the administrator settings shown. |  [optional] |
 | **clientConfig** | [**WidgetClientConfig**](WidgetClientConfig) | The client configuration options that should be made available to the clients of this Deployment. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ClientTypeEnum
@@ -27,9 +26,8 @@
 | V2 | &quot;v2&quot; | 
 | V1_HTTP | &quot;v1-http&quot; | 
 | THIRD_PARTY | &quot;third-party&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

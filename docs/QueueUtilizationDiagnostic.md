@@ -14,9 +14,8 @@
 | **usersOnACampaignCall** | **Integer** | The number of users currently engaged in a campaign call |  [optional] |
 | **usersOnDifferentEdgeGroup** | **Integer** | The number of users whose station is homed to an edge different from the campaign |  [optional] |
 | **usersOnANonCampaignCall** | **Integer** | The number of users currently engaged in a communication that is not part of the campaign |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

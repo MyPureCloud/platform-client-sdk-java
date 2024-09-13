@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **url** | **String** | The location of the sticker, useful for retrieving it |  [optional] |
 | **id** | **String** | The unique id of the the sticker object. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

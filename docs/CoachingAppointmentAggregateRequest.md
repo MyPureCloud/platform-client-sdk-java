@@ -9,7 +9,6 @@
 | **metrics** | [**List<MetricsEnum>**](#Enum--MetricsEnum) | A list of metrics to aggregate.  If omitted, all metrics are returned. |  [optional] |
 | **groupBy** | [**List<GroupByEnum>**](#Enum--GroupByEnum) | An optional list of items by which to group the result data. |  [optional] |
 | **filter** | [**QueryRequestFilter**](QueryRequestFilter) | The filter applied to the data |  |
-{: class="table table-striped"}
 
 
 ## Enum: MetricsEnum
@@ -22,7 +21,6 @@
 | NCOMPLETEACTIVITIES | &quot;nCompleteActivities&quot; |
 | NOVERDUEACTIVITIES | &quot;nOverdueActivities&quot; |
 | NINVALIDSCHEDULEACTIVITIES | &quot;nInvalidScheduleActivities&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: GroupByEnum
@@ -30,9 +28,8 @@
 | Name | Value |
 | ---- | ----- |
 | ATTENDEEID | &quot;attendeeId&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

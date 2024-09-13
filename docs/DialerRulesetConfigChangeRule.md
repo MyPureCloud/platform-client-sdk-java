@@ -12,7 +12,6 @@
 | **order** | **Integer** | The ranked order of the rule; rules are processed from lowest number to highest |  [optional] |
 | **category** | [**CategoryEnum**](#Enum--CategoryEnum) | The category of the rule |  [optional] |
 | **actions** | [**List&lt;DialerRulesetConfigChangeAction&gt;**](DialerRulesetConfigChangeAction) | The list of rule actions to be taken if the conditions are true |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: CategoryEnum
@@ -22,9 +21,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | DIALER_PRECALL | &quot;DIALER_PRECALL&quot; | 
 | DIALER_WRAPUP | &quot;DIALER_WRAPUP&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

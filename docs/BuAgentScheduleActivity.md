@@ -15,7 +15,6 @@
 | **timeOffRequestSyncVersion** | **Integer** | The sync version of the partial day time off request for which the scheduled activity is associated, if applicable |  [optional] |
 | **externalActivityId** | **String** | The ID of the external activity associated with this activity, if applicable |  [optional] |
 | **externalActivityType** | [**ExternalActivityTypeEnum**](#Enum--ExternalActivityTypeEnum) | The type of the external activity associated with this activity, if applicable |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ExternalActivityTypeEnum
@@ -26,9 +25,8 @@
 | ACTIVITYPLAN | &quot;ActivityPlan&quot; | 
 | COACHING | &quot;Coaching&quot; | 
 | LEARNING | &quot;Learning&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

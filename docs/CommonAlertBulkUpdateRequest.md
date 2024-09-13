@@ -9,7 +9,6 @@
 | **alertIds** | **List&lt;String&gt;** | The user supplied alert ids to be muted |  |
 | **muteSnooze** | [**MuteSnoozeFields**](MuteSnoozeFields) | The fields need for a mute or snooze requests |  [optional] |
 | **unread** | [**UnreadFields**](UnreadFields) | The fields need for an unread update requests |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -20,9 +19,8 @@
 | MUTE | &quot;Mute&quot; | 
 | SNOOZE | &quot;Snooze&quot; | 
 | UNREAD | &quot;Unread&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

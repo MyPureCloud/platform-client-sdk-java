@@ -30,7 +30,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **getFieldconfig**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [FieldConfig](FieldConfig) getFieldconfig(type)
 
@@ -90,7 +92,6 @@ try {
 # **getOrganizationsAuthenticationSettings**
 
 
-
 > [OrgAuthSettings](OrgAuthSettings) getOrganizationsAuthenticationSettings()
 
 Gets the organization's settings
@@ -145,7 +146,9 @@ This endpoint does not require any parameters.
 
 # **getOrganizationsEmbeddedintegration**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [EmbeddedIntegration](EmbeddedIntegration) getOrganizationsEmbeddedintegration()
 
@@ -202,7 +205,9 @@ This endpoint does not require any parameters.
 
 # **getOrganizationsIpaddressauthentication**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [IpAddressAuthentication](IpAddressAuthentication) getOrganizationsIpaddressauthentication()
 
@@ -259,7 +264,6 @@ This endpoint does not require any parameters.
 
 
 # **getOrganizationsLimitsChangerequest**
-
 
 
 > [LimitChangeRequestDetails](LimitChangeRequestDetails) getOrganizationsLimitsChangerequest(requestId)
@@ -319,7 +323,6 @@ try {
 
 
 # **getOrganizationsLimitsChangerequests**
-
 
 
 > [LimitChangeRequestsEntityListing](LimitChangeRequestsEntityListing) getOrganizationsLimitsChangerequests(after, before, status, pageSize, expand)
@@ -391,7 +394,6 @@ try {
 # **getOrganizationsLimitsDocs**
 
 
-
 > [LimitDocumentation](LimitDocumentation) getOrganizationsLimitsDocs()
 
 Get limit documentation
@@ -446,7 +448,6 @@ This endpoint does not require any parameters.
 # **getOrganizationsLimitsDocsFreetrial**
 
 
-
 > [FreeTrialLimitDocs](FreeTrialLimitDocs) getOrganizationsLimitsDocsFreetrial()
 
 Get free trial limit documentation
@@ -499,7 +500,6 @@ This endpoint does not require any parameters.
 
 
 # **getOrganizationsLimitsNamespace**
-
 
 
 > [LimitsEntityListing](LimitsEntityListing) getOrganizationsLimitsNamespace(namespaceName)
@@ -558,7 +558,6 @@ try {
 
 
 # **getOrganizationsLimitsNamespaceCounts**
-
 
 
 > [LimitCountListing](LimitCountListing) getOrganizationsLimitsNamespaceCounts(namespaceName, cursor, entityId, userId)
@@ -628,7 +627,6 @@ try {
 # **getOrganizationsLimitsNamespaceDefaults**
 
 
-
 > [LimitsEntityListing](LimitsEntityListing) getOrganizationsLimitsNamespaceDefaults(namespaceName)
 
 Get the default limits in a namespace for an organization
@@ -685,7 +683,6 @@ try {
 
 
 # **getOrganizationsLimitsNamespaceLimitCounts**
-
 
 
 > [LimitCountListing](LimitCountListing) getOrganizationsLimitsNamespaceLimitCounts(namespaceName, limitName, entityId, userId, cursor)
@@ -757,7 +754,6 @@ try {
 # **getOrganizationsLimitsNamespaces**
 
 
-
 > Object getOrganizationsLimitsNamespaces(pageSize, pageNumber)
 
 Get the available limit namespaces
@@ -818,7 +814,6 @@ try {
 # **getOrganizationsMe**
 
 
-
 > [Organization](Organization) getOrganizationsMe()
 
 Get organization.
@@ -872,7 +867,9 @@ This endpoint does not require any parameters.
 
 # **getOrganizationsWhitelist**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [OrgWhitelistSettings](OrgWhitelistSettings) getOrganizationsWhitelist()
 
@@ -926,7 +923,6 @@ This endpoint does not require any parameters.
 
 
 # **patchOrganizationsAuthenticationSettings**
-
 
 
 > [OrgAuthSettings](OrgAuthSettings) patchOrganizationsAuthenticationSettings(body)
@@ -986,7 +982,6 @@ try {
 
 
 # **patchOrganizationsFeature**
-
 
 
 > [OrganizationFeatures](OrganizationFeatures) patchOrganizationsFeature(featureName, enabled)
@@ -1049,7 +1044,9 @@ try {
 
 # **putOrganizationsEmbeddedintegration**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [EmbeddedIntegration](EmbeddedIntegration) putOrganizationsEmbeddedintegration(body)
 
@@ -1111,7 +1108,9 @@ try {
 
 # **putOrganizationsIpaddressauthentication**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [IpAddressAuthentication](IpAddressAuthentication) putOrganizationsIpaddressauthentication(body)
 
@@ -1174,7 +1173,6 @@ try {
 # **putOrganizationsMe**
 
 
-
 > [Organization](Organization) putOrganizationsMe(body)
 
 Update organization.
@@ -1233,7 +1231,9 @@ try {
 
 # **putOrganizationsWhitelist**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [OrgWhitelistSettings](OrgWhitelistSettings) putOrganizationsWhitelist(body)
 
@@ -1291,4 +1291,4 @@ try {
 [**OrgWhitelistSettings**](OrgWhitelistSettings)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

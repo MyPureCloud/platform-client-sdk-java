@@ -9,9 +9,8 @@
 | **name** | **String** | Name of action, Can be up to 256 characters long |  [optional] |
 | **config** | [**ActionConfig**](ActionConfig) | Configuration to support request and response processing |  [optional] |
 | **version** | **Integer** | Version of this action |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

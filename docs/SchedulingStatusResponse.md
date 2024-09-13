@@ -10,7 +10,6 @@
 | **errorDetails** | [**List&lt;SchedulingProcessingError&gt;**](SchedulingProcessingError) | If the request could not be properly processed, error details will be given here. |  [optional] |
 | **schedulingResultUri** | **String** | The uri of the scheduling result. It has a value if the status is 'Success'. |  [optional] |
 | **percentComplete** | **Integer** | The percentage of the job that is complete. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -23,9 +22,8 @@
 | FAILED | &quot;Failed&quot; | 
 | ONGOING | &quot;Ongoing&quot; | 
 | PARTIALFAILURE | &quot;PartialFailure&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

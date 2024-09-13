@@ -14,7 +14,6 @@
 | **phoneAssignmentToEdgeType** | [**PhoneAssignmentToEdgeTypeEnum**](#Enum--PhoneAssignmentToEdgeTypeEnum) | The phone status's edge assignment type. |  [optional] |
 | **edge** | [**DomainEntityRef**](DomainEntityRef) | The URI of the edge that provided this status information. |  [optional] |
 | **selfUri** | **String** | The URI for this object. Deprecated. Do not use. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: OperationalStatusEnum
@@ -26,7 +25,6 @@
 | DEGRADED | &quot;DEGRADED&quot; | 
 | OFFLINE | &quot;OFFLINE&quot; | 
 | UNKNOWN | &quot;UNKNOWN&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: EdgesStatusEnum
@@ -38,7 +36,6 @@
 | MIXED_SERVICE | &quot;MIXED_SERVICE&quot; | 
 | OUT_OF_SERVICE | &quot;OUT_OF_SERVICE&quot; | 
 | NO_EDGES | &quot;NO_EDGES&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: PhoneAssignmentToEdgeTypeEnum
@@ -48,9 +45,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | PRIMARY | &quot;PRIMARY&quot; | 
 | SECONDARY | &quot;SECONDARY&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

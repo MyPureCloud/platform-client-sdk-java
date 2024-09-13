@@ -14,7 +14,6 @@
 | **stickers** | [**List&lt;MessageSticker&gt;**](MessageSticker) | One or more stickers associated with this message, if any |  [optional] |
 | **messageMetadata** | [**ConversationMessageMetadata**](ConversationMessageMetadata) | Information that describes the content of the message, if any |  [optional] |
 | **errorInfo** | [**ErrorBody**](ErrorBody) | Provider specific error information for a communication. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MessageStatusEnum
@@ -31,9 +30,8 @@
 | READ | &quot;read&quot; | 
 | REMOVED | &quot;removed&quot; | 
 | PUBLISHED | &quot;published&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

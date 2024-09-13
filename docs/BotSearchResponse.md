@@ -10,7 +10,6 @@
 | **botType** | [**BotTypeEnum**](#Enum--BotTypeEnum) | The provider of the bot |  |
 | **description** | **String** | The description of the bot |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: BotTypeEnum
@@ -27,9 +26,8 @@
 | GENESYSBOTFLOW | &quot;GenesysBotFlow&quot; | 
 | GENESYSDIGITALBOTFLOW | &quot;GenesysDigitalBotFlow&quot; | 
 | GENESYSVOICESURVEYFLOW | &quot;GenesysVoiceSurveyFlow&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

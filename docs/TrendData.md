@@ -9,9 +9,8 @@
 | **dateEndWorkday** | [**LocalDate**](LocalDate) | End workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
 | **percentOfGoal** | **Double** | Percent of goal |  [optional] |
 | **averageValue** | **Double** | Average metric value |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

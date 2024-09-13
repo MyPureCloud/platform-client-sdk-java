@@ -9,7 +9,6 @@
 | **dateFinished** | [**Date**](Date) | Finished time of address verification process. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **dateStarted** | [**Date**](Date) | Time started of address verification process. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **service** | **String** | Third party service used for address verification |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -22,9 +21,8 @@
 | RETRY | &quot;Retry&quot; | 
 | COMPLETE | &quot;Complete&quot; | 
 | FAILED | &quot;Failed&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -8,7 +8,6 @@
 | **fields** | [**List<FieldsEnum>**](#Enum--FieldsEnum) | Specifies the document fields to be matched against. |  |
 | **values** | **List&lt;String&gt;** | Specifies the values of the fields to be matched against. |  |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | Specifies the matching criteria between the fields and values. |  |
-{: class="table table-striped"}
 
 
 ## Enum: FieldsEnum
@@ -29,7 +28,6 @@
 | VARIATIONID | &quot;variationId&quot; |
 | VISIBLE | &quot;visible&quot; |
 | STATE | &quot;state&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -42,9 +40,8 @@
 | CONTAINS | &quot;Contains&quot; | 
 | MATCHALL | &quot;MatchAll&quot; | 
 | MATCHANY | &quot;MatchAny&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -8,7 +8,6 @@
 | **key** | [**KeyEnum**](#Enum--KeyEnum) | The id of the criteria to be checked. |  [optional] |
 | **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | The operator used to check on the criteria id. |  [optional] |
 | **value** | **String** | The target value used to query on. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: KeyEnum
@@ -37,7 +36,6 @@
 | BOTERRORREASON | &quot;BotErrorReason&quot; | 
 | BOTFLOWEXECUTIONID | &quot;BotFlowExecutionId&quot; | 
 | BOTOBJECTEXECUTIONID | &quot;BotObjectExecutionId&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: OperatorEnum
@@ -53,9 +51,8 @@
 | NOT | &quot;not&quot; | 
 | BEGINS | &quot;begins&quot; | 
 | NOT_NULL | &quot;not_null&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

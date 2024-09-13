@@ -48,7 +48,6 @@
 | **offlineConfigCalled** | **Boolean** | True if the offline edge configuration endpoint has been called for this edge. |  [optional] |
 | **osName** | **String** | The name provided by the operating system of the Edge. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -59,7 +58,6 @@
 | ACTIVE | &quot;active&quot; | 
 | INACTIVE | &quot;inactive&quot; | 
 | DELETED | &quot;deleted&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StatusCodeEnum
@@ -79,7 +77,6 @@
 | UNPAIRING | &quot;UNPAIRING&quot; | 
 | UNPAIRED | &quot;UNPAIRED&quot; | 
 | INITIALIZING | &quot;INITIALIZING&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: OnlineStatusEnum
@@ -89,7 +86,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ONLINE | &quot;ONLINE&quot; | 
 | OFFLINE | &quot;OFFLINE&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: EdgeDeploymentTypeEnum
@@ -102,7 +98,6 @@
 | CDM | &quot;CDM&quot; | 
 | CHS | &quot;CHS&quot; | 
 | INVALID | &quot;INVALID&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: CertTypeEnum
@@ -114,7 +109,6 @@
 | PUBLIC | &quot;Public&quot; | 
 | CHINA | &quot;China&quot; | 
 | NOTREQUESTED | &quot;NotRequested&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: CallDrainingStateEnum
@@ -127,9 +121,8 @@
 | WAIT_TIMEOUT | &quot;WAIT_TIMEOUT&quot; | 
 | TERMINATE | &quot;TERMINATE&quot; | 
 | COMPLETE | &quot;COMPLETE&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

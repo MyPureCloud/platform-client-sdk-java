@@ -11,9 +11,8 @@
 | **homeDivision** | **Boolean** | A flag indicating whether this division is the \"Home\" (default) division. Cannot be modified and any supplied value will be ignored on create or update. |  [optional] |
 | **objectCounts** | **Map&lt;String, Long&gt;** | A count of objects in this division, grouped by type. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

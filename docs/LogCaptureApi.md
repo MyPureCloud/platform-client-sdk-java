@@ -17,7 +17,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteDiagnosticsLogcaptureBrowserUser**
 
 
-
 > Void deleteDiagnosticsLogcaptureBrowserUser(userId)
 
 Disable browser log capture for the user
@@ -74,7 +73,6 @@ null (empty response body)
 
 
 # **getDiagnosticsLogcaptureBrowserEntriesDownloadJob**
-
 
 
 > [LogCaptureDownloadExecutionResponse](LogCaptureDownloadExecutionResponse) getDiagnosticsLogcaptureBrowserEntriesDownloadJob(jobId)
@@ -136,7 +134,6 @@ try {
 # **getDiagnosticsLogcaptureBrowserUser**
 
 
-
 > [LogCaptureUserConfiguration](LogCaptureUserConfiguration) getDiagnosticsLogcaptureBrowserUser(userId)
 
 Get log capture configuration for the user
@@ -194,7 +191,6 @@ try {
 
 
 # **getDiagnosticsLogcaptureBrowserUsers**
-
 
 
 > [PagelessEntityListing](PagelessEntityListing) getDiagnosticsLogcaptureBrowserUsers(includeExpired)
@@ -256,7 +252,6 @@ try {
 # **postDiagnosticsLogcaptureBrowserEntriesDownloadJobs**
 
 
-
 > [LogCaptureDownloadExecutionResponse](LogCaptureDownloadExecutionResponse) postDiagnosticsLogcaptureBrowserEntriesDownloadJobs(body)
 
 Creates an async download execution
@@ -314,7 +309,6 @@ try {
 
 
 # **postDiagnosticsLogcaptureBrowserEntriesQuery**
-
 
 
 > [LogCaptureQueryResponse](LogCaptureQueryResponse) postDiagnosticsLogcaptureBrowserEntriesQuery(before, after, pageSize, body)
@@ -382,7 +376,6 @@ try {
 # **postDiagnosticsLogcaptureBrowserUser**
 
 
-
 > [LogCaptureUserConfiguration](LogCaptureUserConfiguration) postDiagnosticsLogcaptureBrowserUser(userId, body)
 
 Enable log capture for a user or update expiration
@@ -441,4 +434,4 @@ try {
 [**LogCaptureUserConfiguration**](LogCaptureUserConfiguration)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

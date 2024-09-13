@@ -12,7 +12,6 @@
 | **modifiedBy** | [**QueueConversationEventTopicModifiedBy**](QueueConversationEventTopicModifiedBy) |  |  [optional] |
 | **destination** | [**QueueConversationEventTopicDestination**](QueueConversationEventTopicDestination) |  |  [optional] |
 | **transferType** | [**TransferTypeEnum**](#Enum--TransferTypeEnum) | The type of transfer to perform. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -27,7 +26,6 @@
 | FAILED | &quot;failed&quot; | 
 | TIMEOUT | &quot;timeout&quot; | 
 | UNKNOWN | &quot;unknown&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: TransferTypeEnum
@@ -37,9 +35,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ATTENDED | &quot;attended&quot; | 
 | UNATTENDED | &quot;unattended&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

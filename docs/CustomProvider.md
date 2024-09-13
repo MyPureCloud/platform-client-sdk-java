@@ -21,7 +21,6 @@
 | **ssoBinding** | [**SsoBindingEnum**](#Enum--SsoBindingEnum) |  |  [optional] |
 | **signAuthnRequests** | **Boolean** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: NameIdentifierFormatEnum
@@ -37,7 +36,6 @@
 | URN_OASIS_NAMES_TC_SAML_2_0_NAMEID_FORMAT_ENTITY | &quot;urn:oasis:names:tc:SAML:2.0:nameid-format:entity&quot; | 
 | URN_OASIS_NAMES_TC_SAML_2_0_NAMEID_FORMAT_PERSISTENT | &quot;urn:oasis:names:tc:SAML:2.0:nameid-format:persistent&quot; | 
 | URN_OASIS_NAMES_TC_SAML_2_0_NAMEID_FORMAT_TRANSIENT | &quot;urn:oasis:names:tc:SAML:2.0:nameid-format:transient&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: SsoBindingEnum
@@ -47,9 +45,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | URN_OASIS_NAMES_TC_SAML_2_0_BINDINGS_HTTP_POST | &quot;urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST&quot; | 
 | URN_OASIS_NAMES_TC_SAML_2_0_BINDINGS_HTTP_REDIRECT | &quot;urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

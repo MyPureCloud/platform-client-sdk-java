@@ -12,9 +12,8 @@
 | **title** | [**PatchTextStyleProperties**](PatchTextStyleProperties) | Properties for customizing the appearance of the title text. |  [optional] |
 | **headline** | [**PatchTextStyleProperties**](PatchTextStyleProperties) | Properties for customizing the appearance of the headline text. |  [optional] |
 | **body** | [**PatchTextStyleProperties**](PatchTextStyleProperties) | Properties for customizing the appearance of the body text. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

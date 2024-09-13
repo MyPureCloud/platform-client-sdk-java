@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | Type of the work plan constraint in this message |  [optional] |
 | **arguments** | [**List&lt;WorkPlanValidationMessageArgument&gt;**](WorkPlanValidationMessageArgument) | Arguments of the message that provide information about the constraint that is being conflicted with, such as the value of the constraint |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -49,9 +48,8 @@
 | WORKPLANMINIMUMWORKINGDAYSPERWEEK | &quot;WorkPlanMinimumWorkingDaysPerWeek&quot; | 
 | WORKPLANOPTIONALDAYS | &quot;WorkPlanOptionalDays&quot; | 
 | WORKPLANPAIDTIMEGRANULARITYMINUTES | &quot;WorkPlanPaidTimeGranularityMinutes&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

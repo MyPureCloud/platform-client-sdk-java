@@ -9,9 +9,8 @@
 | **name** | **String** | The environment name |  |
 | **environmentDesignation** | **String** | The environment type, usually a value like SANDBOX or PRODUCTION |  |
 | **executionHost** | **String** | The host used to execute this bot, similar to 'api.nuance.com:443' |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

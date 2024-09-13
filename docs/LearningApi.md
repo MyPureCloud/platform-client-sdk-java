@@ -45,7 +45,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteLearningAssignment**
 
 
-
 > Void deleteLearningAssignment(assignmentId)
 
 Delete a learning assignment
@@ -102,7 +101,6 @@ null (empty response body)
 
 
 # **deleteLearningModule**
-
 
 
 > Void deleteLearningModule(moduleId)
@@ -163,7 +161,6 @@ null (empty response body)
 
 
 # **getLearningAssignment**
-
 
 
 > [LearningAssignment](LearningAssignment) getLearningAssignment(assignmentId, expand)
@@ -227,7 +224,6 @@ try {
 
 
 # **getLearningAssignmentStep**
-
 
 
 > [LearningAssignmentStep](LearningAssignmentStep) getLearningAssignmentStep(assignmentId, stepId, shareableContentObjectId, defaultShareableContentObject, expand)
@@ -297,7 +293,6 @@ try {
 
 
 # **getLearningAssignments**
-
 
 
 > [LearningAssignmentsDomainEntity](LearningAssignmentsDomainEntity) getLearningAssignments(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, pass, minPercentageScore, maxPercentageScore, sortOrder, sortBy, userId, types, states, expand)
@@ -389,7 +384,6 @@ try {
 # **getLearningAssignmentsMe**
 
 
-
 > [LearningAssignmentsDomainEntity](LearningAssignmentsDomainEntity) getLearningAssignmentsMe(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, pass, minPercentageScore, maxPercentageScore, sortOrder, sortBy, types, states, expand)
 
 List of Learning Assignments assigned to current user
@@ -474,7 +468,6 @@ try {
 # **getLearningModule**
 
 
-
 > [LearningModule](LearningModule) getLearningModule(moduleId, expand)
 
 Get a learning module
@@ -534,7 +527,6 @@ try {
 
 
 # **getLearningModuleJob**
-
 
 
 > [LearningModuleJobResponse](LearningModuleJobResponse) getLearningModuleJob(moduleId, jobId)
@@ -598,7 +590,6 @@ try {
 # **getLearningModulePreview**
 
 
-
 > [LearningModulePreviewGetResponse](LearningModulePreviewGetResponse) getLearningModulePreview(moduleId)
 
 Get a learning module preview
@@ -658,7 +649,6 @@ try {
 # **getLearningModuleRule**
 
 
-
 > [LearningModuleRule](LearningModuleRule) getLearningModuleRule(moduleId)
 
 Get a learning module rule
@@ -716,7 +706,6 @@ try {
 
 
 # **getLearningModuleVersion**
-
 
 
 > [LearningModule](LearningModule) getLearningModuleVersion(moduleId, versionId, expand)
@@ -780,7 +769,6 @@ try {
 
 
 # **getLearningModules**
-
 
 
 > [LearningModulesDomainEntityListing](LearningModulesDomainEntityListing) getLearningModules(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses, externalIds)
@@ -862,7 +850,6 @@ try {
 # **getLearningModulesAssignments**
 
 
-
 > [AssignedLearningModuleDomainEntityListing](AssignedLearningModuleDomainEntityListing) getLearningModulesAssignments(userIds, pageSize, pageNumber, searchTerm, overdue, assignmentStates, expand)
 
 Get all learning modules of an organization including assignments for a specific user
@@ -935,7 +922,6 @@ try {
 # **getLearningModulesCoverartCoverArtId**
 
 
-
 > [LearningModuleCoverArtResponse](LearningModuleCoverArtResponse) getLearningModulesCoverartCoverArtId(coverArtId)
 
 Get a specific Learning Module cover art using ID
@@ -995,7 +981,6 @@ try {
 # **getLearningScormScormId**
 
 
-
 > [LearningScormResponse](LearningScormResponse) getLearningScormScormId(scormId)
 
 Get Learning SCORM Result
@@ -1053,7 +1038,6 @@ try {
 
 
 # **patchLearningAssignment**
-
 
 
 > [LearningAssignment](LearningAssignment) patchLearningAssignment(assignmentId, body)
@@ -1116,7 +1100,6 @@ try {
 # **patchLearningAssignmentReschedule**
 
 
-
 > [LearningAssignment](LearningAssignment) patchLearningAssignmentReschedule(assignmentId, body)
 
 Reschedule Learning Assignment
@@ -1176,7 +1159,6 @@ try {
 
 
 # **patchLearningAssignmentStep**
-
 
 
 > [LearningAssignmentStep](LearningAssignmentStep) patchLearningAssignmentStep(assignmentId, stepId, body)
@@ -1244,7 +1226,6 @@ try {
 # **patchLearningModuleUserAssignments**
 
 
-
 > [LearningAssignment](LearningAssignment) patchLearningModuleUserAssignments(moduleId, userId, body)
 
 Update an external assignment for a specific user
@@ -1308,7 +1289,6 @@ try {
 # **postLearningAssessmentsScoring**
 
 
-
 > [AssessmentScoringSet](AssessmentScoringSet) postLearningAssessmentsScoring(body)
 
 Score learning assessment for preview
@@ -1368,7 +1348,6 @@ try {
 
 
 # **postLearningAssignmentReassign**
-
 
 
 > [LearningAssignment](LearningAssignment) postLearningAssignmentReassign(assignmentId)
@@ -1432,7 +1411,6 @@ try {
 # **postLearningAssignmentReset**
 
 
-
 > [LearningAssignment](LearningAssignment) postLearningAssignmentReset(assignmentId)
 
 Reset Learning Assignment
@@ -1494,7 +1472,6 @@ try {
 # **postLearningAssignments**
 
 
-
 > [LearningAssignment](LearningAssignment) postLearningAssignments(body)
 
 Create Learning Assignment
@@ -1552,7 +1529,6 @@ try {
 
 
 # **postLearningAssignmentsAggregatesQuery**
-
 
 
 > [LearningAssignmentAggregateResponse](LearningAssignmentAggregateResponse) postLearningAssignmentsAggregatesQuery(body)
@@ -1614,7 +1590,6 @@ try {
 # **postLearningAssignmentsBulkadd**
 
 
-
 > [LearningAssignmentBulkAddResponse](LearningAssignmentBulkAddResponse) postLearningAssignmentsBulkadd(body)
 
 Add multiple learning assignments
@@ -1674,7 +1649,6 @@ try {
 # **postLearningAssignmentsBulkremove**
 
 
-
 > [LearningAssignmentBulkRemoveResponse](LearningAssignmentBulkRemoveResponse) postLearningAssignmentsBulkremove(body)
 
 Remove multiple Learning Assignments
@@ -1732,7 +1706,6 @@ try {
 
 
 # **postLearningModuleJobs**
-
 
 
 > [LearningModuleJobResponse](LearningModuleJobResponse) postLearningModuleJobs(moduleId, body)
@@ -1798,7 +1771,6 @@ try {
 # **postLearningModulePublish**
 
 
-
 > [LearningModulePublishResponse](LearningModulePublishResponse) postLearningModulePublish(moduleId, body)
 
 Publish a Learning module
@@ -1860,7 +1832,6 @@ try {
 # **postLearningModules**
 
 
-
 > [LearningModule](LearningModule) postLearningModules(body)
 
 Create a new learning module
@@ -1920,7 +1891,6 @@ try {
 
 
 # **postLearningRulesQuery**
-
 
 
 > [LearningAssignmentUserListing](LearningAssignmentUserListing) postLearningRulesQuery(pageSize, pageNumber, body)
@@ -1988,7 +1958,6 @@ try {
 # **postLearningScheduleslotsQuery**
 
 
-
 > [LearningScheduleSlotsQueryResponse](LearningScheduleSlotsQueryResponse) postLearningScheduleslotsQuery(body)
 
 Get list of possible slots where a learning activity can be scheduled.
@@ -2048,7 +2017,6 @@ try {
 # **postLearningScorm**
 
 
-
 > [LearningScormUploadResponse](LearningScormUploadResponse) postLearningScorm(body)
 
 Create a SCORM package upload request
@@ -2106,7 +2074,6 @@ try {
 
 
 # **putLearningModule**
-
 
 
 > [LearningModule](LearningModule) putLearningModule(moduleId, body)
@@ -2172,7 +2139,6 @@ try {
 # **putLearningModulePreview**
 
 
-
 > [LearningModulePreviewUpdateResponse](LearningModulePreviewUpdateResponse) putLearningModulePreview(moduleId, body)
 
 Update a learning module preview
@@ -2236,7 +2202,6 @@ try {
 # **putLearningModuleRule**
 
 
-
 > [LearningModuleRule](LearningModuleRule) putLearningModuleRule(moduleId, body)
 
 Update a learning module rule
@@ -2297,4 +2262,4 @@ try {
 [**LearningModuleRule**](LearningModuleRule)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

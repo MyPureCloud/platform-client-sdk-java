@@ -8,9 +8,8 @@
 | **metric** | **String** |  |  [optional] |
 | **qualifier** | **String** |  |  [optional] |
 | **stats** | [**StatisticalSummary**](StatisticalSummary) |  |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

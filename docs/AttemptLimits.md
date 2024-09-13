@@ -16,7 +16,6 @@
 | **resetPeriod** | [**ResetPeriodEnum**](#Enum--ResetPeriodEnum) | After how long the number of attempts will be set back to 0. Defaults to NEVER. |  [optional] |
 | **recallEntries** | [**Map&lt;String, RecallEntry&gt;**](RecallEntry) | Configuration for recall attempts. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ResetPeriodEnum
@@ -26,9 +25,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | NEVER | &quot;NEVER&quot; | 
 | TODAY | &quot;TODAY&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -9,7 +9,6 @@
 | **inputEventType** | [**InputEventTypeEnum**](#Enum--InputEventTypeEnum) | Indicates the type of input event being requested. If appropriate, fill out the matching user input object details on this request. |  |
 | **inputEventUserInput** | [**TextBotUserInputEvent**](TextBotUserInputEvent) | The data for the input event of this turn if it is a user input event. Only one inputEvent may be set. |  [optional] |
 | **inputEventError** | [**TextBotErrorInputEvent**](TextBotErrorInputEvent) | The data for the input event of this turn if it is an error event. Only one inputEvent may be set. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: InputEventTypeEnum
@@ -24,9 +23,8 @@
 | NOINPUT | &quot;NoInput&quot; | 
 | USERDISCONNECT | &quot;UserDisconnect&quot; | 
 | CLIENTSESSIONEXPIRED | &quot;ClientSessionExpired&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

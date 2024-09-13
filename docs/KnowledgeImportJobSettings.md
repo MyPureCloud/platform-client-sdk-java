@@ -9,9 +9,8 @@
 | **visible** | **Boolean** | If specified, import will override the visibility of the imported documents. |  [optional] |
 | **categoryId** | **String** | If specified, import will override the category of the imported documents. |  [optional] |
 | **labelIds** | **List&lt;String&gt;** | If specified, import will add this labels to the imported documents. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

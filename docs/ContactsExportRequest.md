@@ -8,9 +8,8 @@
 | **contactListFilterId** | **String** | Contact List Filter ID. |  [optional] |
 | **criteria** | [**ContactBulkSearchCriteria**](ContactBulkSearchCriteria) | Criteria to filter the contacts by. |  [optional] |
 | **contactIds** | **List&lt;String&gt;** | Contact IDs to be exported. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

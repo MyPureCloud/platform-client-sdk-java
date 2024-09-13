@@ -12,7 +12,6 @@
 | **scheduleDataPerInterval** | [**List&lt;BuIntradayScheduleData&gt;**](BuIntradayScheduleData) | Schedule data per interval for this date range |  [optional] |
 | **performancePredictionDataSummary** | [**IntradayPerformancePredictionData**](IntradayPerformancePredictionData) | Performance prediction data summary for this date range |  [optional] |
 | **performancePredictionDataPerInterval** | [**List&lt;IntradayPerformancePredictionData&gt;**](IntradayPerformancePredictionData) | Performance prediction data per interval for this date range |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -25,9 +24,8 @@
 | EMAIL | &quot;Email&quot; | 
 | CALLBACK | &quot;Callback&quot; | 
 | MESSAGE | &quot;Message&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -11,7 +11,6 @@
 | **dkimVerificationResult** | [**VerificationResult**](VerificationResult) | DKIM registration Status |  [optional] |
 | **senderType** | [**SenderTypeEnum**](#Enum--SenderTypeEnum) | Sender Type |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: SenderTypeEnum
@@ -22,9 +21,8 @@
 | UNKNOWN | &quot;Unknown&quot; | 
 | EMAILDOMAIN | &quot;EmailDomain&quot; | 
 | MOCKEMAILDOMAIN | &quot;MockEmailDomain&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

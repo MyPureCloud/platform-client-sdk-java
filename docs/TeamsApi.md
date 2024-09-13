@@ -20,7 +20,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteTeam**
 
 
-
 > Void deleteTeam(teamId)
 
 Delete team
@@ -77,7 +76,6 @@ null (empty response body)
 
 
 # **deleteTeamMembers**
-
 
 
 > Void deleteTeamMembers(teamId, id)
@@ -140,7 +138,6 @@ null (empty response body)
 # **getTeam**
 
 
-
 > [Team](Team) getTeam(teamId)
 
 Get team
@@ -198,7 +195,6 @@ try {
 
 
 # **getTeamMembers**
-
 
 
 > [TeamMemberEntityListing](TeamMemberEntityListing) getTeamMembers(teamId, pageSize, before, after, expand)
@@ -268,7 +264,6 @@ try {
 # **getTeams**
 
 
-
 > [TeamEntityListing](TeamEntityListing) getTeams(pageSize, name, after, before, expand)
 
 Get Team listing
@@ -336,7 +331,6 @@ try {
 # **patchTeam**
 
 
-
 > [Team](Team) patchTeam(teamId, body)
 
 Update team
@@ -396,7 +390,6 @@ try {
 
 
 # **postAnalyticsTeamsActivityQuery**
-
 
 
 > [TeamActivityResponse](TeamActivityResponse) postAnalyticsTeamsActivityQuery(body, pageSize, pageNumber)
@@ -462,7 +455,6 @@ try {
 # **postTeamMembers**
 
 
-
 > [TeamMemberAddListingResponse](TeamMemberAddListingResponse) postTeamMembers(teamId, body)
 
 Add team members
@@ -524,7 +516,6 @@ try {
 # **postTeams**
 
 
-
 > [Team](Team) postTeams(body)
 
 Create a team
@@ -584,7 +575,6 @@ try {
 # **postTeamsSearch**
 
 
-
 > [TeamsSearchResponse](TeamsSearchResponse) postTeamsSearch(body)
 
 Search resources.
@@ -641,4 +631,4 @@ try {
 [**TeamsSearchResponse**](TeamsSearchResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -15,7 +15,6 @@
 | **isFinalReceipt** | **Boolean** | Indicates if this is the last message receipt for this message, or if another message receipt can be expected. |  [optional] |
 | **direction** | [**DirectionEnum**](#Enum--DirectionEnum) | The direction of the message. |  [optional] |
 | **metadata** | **Map&lt;String, String&gt;** | Additional metadata about this message. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -25,7 +24,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | TEXT | &quot;Text&quot; | 
 | RECEIPT | &quot;Receipt&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -39,7 +37,6 @@
 | FAILED | &quot;Failed&quot; | 
 | PUBLISHED | &quot;Published&quot; | 
 | REMOVED | &quot;Removed&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DirectionEnum
@@ -49,9 +46,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INBOUND | &quot;Inbound&quot; | 
 | OUTBOUND | &quot;Outbound&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

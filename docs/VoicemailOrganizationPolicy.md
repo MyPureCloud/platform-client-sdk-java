@@ -16,9 +16,8 @@
 | **disableEmailPii** | **Boolean** | Removes any PII from emails. This overrides any analogous group configuration value. This is always true if HIPAA is enabled or unknown for an organization. |  [optional] |
 | **maximumRecordingTimeSeconds** | **Integer** | Default value for the maximum length of time in seconds of a recorded voicemail |  [optional] |
 | **modifiedDate** | [**Date**](Date) | The date the policy was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

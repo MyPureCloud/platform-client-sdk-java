@@ -18,7 +18,6 @@
 | **state** | [**StateEnum**](#Enum--StateEnum) | The state of the feedback. |  [optional] |
 | **document** | [**KnowledgeGuestDocumentVersionReference**](KnowledgeGuestDocumentVersionReference) | The document on which feedback was given. |  |
 | **application** | [**KnowledgeGuestSearchClientApplication**](KnowledgeGuestSearchClientApplication) | The client application from which feedback was given. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: RatingEnum
@@ -28,7 +27,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | NEGATIVE | &quot;Negative&quot; | 
 | POSITIVE | &quot;Positive&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ReasonEnum
@@ -38,7 +36,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | DOCUMENTCONTENT | &quot;DocumentContent&quot; | 
 | SEARCHRESULTS | &quot;SearchResults&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: QueryTypeEnum
@@ -53,7 +50,6 @@
 | MANUALSEARCH | &quot;ManualSearch&quot; | 
 | RECOMMENDATION | &quot;Recommendation&quot; | 
 | SUGGESTION | &quot;Suggestion&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: SurfacingMethodEnum
@@ -65,7 +61,6 @@
 | ARTICLE | &quot;Article&quot; | 
 | SNIPPET | &quot;Snippet&quot; | 
 | HIGHLIGHT | &quot;Highlight&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -75,9 +70,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | DRAFT | &quot;Draft&quot; | 
 | FINAL | &quot;Final&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

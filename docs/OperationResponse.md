@@ -13,7 +13,6 @@
 | **dateModified** | [**Date**](Date) | Operation last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **source** | [**KnowledgeOperationSource**](KnowledgeOperationSource) | Source of the operation. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -25,9 +24,8 @@
 | EXPORT | &quot;Export&quot; | 
 | PARSE | &quot;Parse&quot; | 
 | SYNC | &quot;Sync&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

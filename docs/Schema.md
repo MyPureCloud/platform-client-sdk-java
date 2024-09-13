@@ -10,9 +10,8 @@
 | **type** | **List&lt;String&gt;** | An array of fundamental JSON Schema primitive types on which the core type is based |  [optional] |
 | **items** | [**Items**](Items) | Denotes the type and pattern of the items in an enum core type |  [optional] |
 | **pattern** | **String** | For the \"date\" and \"datetime\" core types, denotes the regex prescribing the allowable date/datetime format |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

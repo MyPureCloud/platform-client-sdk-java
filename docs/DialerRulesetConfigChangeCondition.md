@@ -22,7 +22,6 @@
 | **agentWrapupField** | **String** | The input field from the data action that the agentWrapup will be passed to for this condition. Valid for a wrapup dataActionCondition. |  [optional] |
 | **contactColumnToDataActionFieldMappings** | [**List&lt;DialerRulesetConfigChangeContactColumnToDataActionFieldMapping&gt;**](DialerRulesetConfigChangeContactColumnToDataActionFieldMapping) | A list of mappings defining which contact data fields will be passed to which data action input fields for this condition. Valid for a dataActionCondition. |  [optional] |
 | **predicates** | [**List&lt;DialerRulesetConfigChangeDataActionConditionPredicate&gt;**](DialerRulesetConfigChangeDataActionConditionPredicate) | A list of predicates defining the comparisons to use for this condition. Required for a dataActionCondition. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ValueTypeEnum
@@ -34,7 +33,6 @@
 | NUMERIC | &quot;NUMERIC&quot; | 
 | DATETIME | &quot;DATETIME&quot; | 
 | PERIOD | &quot;PERIOD&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: OperatorEnum
@@ -52,7 +50,6 @@
 | ENDS_WITH | &quot;ENDS_WITH&quot; | 
 | BEFORE | &quot;BEFORE&quot; | 
 | AFTER | &quot;AFTER&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: PropertyTypeEnum
@@ -64,9 +61,8 @@
 | LAST_ATTEMPT_OVERALL | &quot;LAST_ATTEMPT_OVERALL&quot; | 
 | LAST_RESULT_BY_COLUMN | &quot;LAST_RESULT_BY_COLUMN&quot; | 
 | LAST_RESULT_OVERALL | &quot;LAST_RESULT_OVERALL&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

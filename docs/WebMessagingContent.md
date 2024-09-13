@@ -12,7 +12,6 @@
 | **generic** | [**WebMessagingGeneric**](WebMessagingGeneric) | Generic content (Deprecated). |  [optional] |
 | **card** | [**ContentCard**](ContentCard) | Card content |  [optional] |
 | **carousel** | [**ContentCarousel**](ContentCarousel) | Carousel content |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ContentTypeEnum
@@ -26,9 +25,8 @@
 | GENERICTEMPLATE | &quot;GenericTemplate&quot; | 
 | CARD | &quot;Card&quot; | 
 | CAROUSEL | &quot;Carousel&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

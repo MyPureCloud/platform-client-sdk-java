@@ -13,7 +13,6 @@
 | **createdBy** | [**ExternalContactsContactNoteChangedTopicUser**](ExternalContactsContactNoteChangedTopicUser) |  |  [optional] |
 | **createDate** | [**Date**](Date) |  |  [optional] |
 | **modifyDate** | [**Date**](Date) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: EntityTypeEnum
@@ -23,9 +22,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | CONTACT | &quot;Contact&quot; | 
 | ORGANIZATION | &quot;Organization&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -22,7 +22,6 @@
 | **action** | [**ActionEnum**](#Enum--ActionEnum) |  |  [optional] |
 | **alertSummary** | [**V2MobiusAlertsTopicAlertSummary**](V2MobiusAlertsTopicAlertSummary) |  |  [optional] |
 | **sendExitingAlarmNotification** | **Boolean** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ActionEnum
@@ -39,9 +38,8 @@
 | BULK_DELETE | &quot;BULK_DELETE&quot; | 
 | BULK_UPDATE | &quot;BULK_UPDATE&quot; | 
 | UNREAD_COUNT_UPDATE | &quot;UNREAD_COUNT_UPDATE&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -9,9 +9,8 @@
 | **gte** | [**BigDecimal**](BigDecimal) | Greater than or equal to |  [optional] |
 | **lt** | [**BigDecimal**](BigDecimal) | Less than |  [optional] |
 | **lte** | [**BigDecimal**](BigDecimal) | Less than or equal to |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -17,9 +17,8 @@
 | **isCancellable** | **Boolean** | Indicates whether the item is cancellable |  [optional] |
 | **bundleQuantity** | **String** | Quantity multiplier for this charge |  [optional] |
 | **isThirdParty** | **Boolean** | A charge from a third party entity |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

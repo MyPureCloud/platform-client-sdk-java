@@ -72,7 +72,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteQualityCalibration**
 
 
-
 > [Calibration](Calibration) deleteQualityCalibration(calibrationId, calibratorId)
 
 Delete a calibration by id.
@@ -132,7 +131,6 @@ try {
 
 
 # **deleteQualityConversationEvaluation**
-
 
 
 > [EvaluationResponse](EvaluationResponse) deleteQualityConversationEvaluation(conversationId, evaluationId, expand)
@@ -197,7 +195,9 @@ try {
 
 # **deleteQualityForm**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Void deleteQualityForm(formId)
 
@@ -255,7 +255,6 @@ null (empty response body)
 
 
 # **deleteQualityFormsEvaluation**
-
 
 
 > Void deleteQualityFormsEvaluation(formId)
@@ -316,7 +315,6 @@ null (empty response body)
 # **deleteQualityFormsSurvey**
 
 
-
 > Void deleteQualityFormsSurvey(formId)
 
 Delete a survey form.
@@ -373,7 +371,6 @@ null (empty response body)
 
 
 # **getAnalyticsEvaluationsAggregatesJob**
-
 
 
 > [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsEvaluationsAggregatesJob(jobId)
@@ -435,7 +432,6 @@ try {
 
 
 # **getAnalyticsEvaluationsAggregatesJobResults**
-
 
 
 > [EvaluationAsyncAggregateQueryResponse](EvaluationAsyncAggregateQueryResponse) getAnalyticsEvaluationsAggregatesJobResults(jobId, cursor)
@@ -501,7 +497,6 @@ try {
 # **getAnalyticsSurveysAggregatesJob**
 
 
-
 > [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsSurveysAggregatesJob(jobId)
 
 Get status for async query for survey aggregates
@@ -561,7 +556,6 @@ try {
 
 
 # **getAnalyticsSurveysAggregatesJobResults**
-
 
 
 > [SurveyAsyncAggregateQueryResponse](SurveyAsyncAggregateQueryResponse) getAnalyticsSurveysAggregatesJobResults(jobId, cursor)
@@ -625,7 +619,6 @@ try {
 
 
 # **getQualityAgentsActivity**
-
 
 
 > [AgentActivityEntityListing](AgentActivityEntityListing) getQualityAgentsActivity(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group, agentTeamId, formContextId)
@@ -715,7 +708,6 @@ try {
 # **getQualityCalibration**
 
 
-
 > [Calibration](Calibration) getQualityCalibration(calibrationId, calibratorId, conversationId)
 
 Get a calibration by id.  Requires either calibrator id or conversation id
@@ -777,7 +769,6 @@ try {
 
 
 # **getQualityCalibrations**
-
 
 
 > [CalibrationEntityListing](CalibrationEntityListing) getQualityCalibrations(calibratorId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, startTime, endTime)
@@ -859,7 +850,6 @@ try {
 # **getQualityConversationEvaluation**
 
 
-
 > [EvaluationResponse](EvaluationResponse) getQualityConversationEvaluation(conversationId, evaluationId, expand)
 
 Get an evaluation
@@ -925,7 +915,6 @@ try {
 # **getQualityConversationSurveys**
 
 
-
 > [List&lt;Survey&gt;](Survey) getQualityConversationSurveys(conversationId)
 
 Get the surveys for a conversation
@@ -985,7 +974,6 @@ try {
 # **getQualityConversationsAuditsQueryTransactionId**
 
 
-
 > [QualityAuditQueryExecutionStatusResponse](QualityAuditQueryExecutionStatusResponse) getQualityConversationsAuditsQueryTransactionId(transactionId)
 
 Get status of audit query execution
@@ -1043,7 +1031,6 @@ try {
 
 
 # **getQualityConversationsAuditsQueryTransactionIdResults**
-
 
 
 > [QualityAuditQueryExecutionResultsResponse](QualityAuditQueryExecutionResultsResponse) getQualityConversationsAuditsQueryTransactionIdResults(transactionId, cursor, pageSize, expand)
@@ -1109,7 +1096,6 @@ try {
 
 
 # **getQualityEvaluationsQuery**
-
 
 
 > [EvaluationEntityListing](EvaluationEntityListing) getQualityEvaluationsQuery(pageSize, pageNumber, expand, previousPage, conversationId, agentUserId, agentTeamId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, formContextId, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder)
@@ -1209,7 +1195,6 @@ try {
 # **getQualityEvaluatorsActivity**
 
 
-
 > [EvaluatorActivityEntityListing](EvaluatorActivityEntityListing) getQualityEvaluatorsActivity(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, name, permission, group, agentTeamId)
 
 Get an evaluator activity
@@ -1290,7 +1275,9 @@ try {
 
 # **getQualityForm**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [EvaluationFormResponse](EvaluationFormResponse) getQualityForm(formId)
 
@@ -1350,7 +1337,9 @@ try {
 
 # **getQualityFormVersions**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [EvaluationFormResponseEntityListing](EvaluationFormResponseEntityListing) getQualityFormVersions(formId, pageSize, pageNumber)
 
@@ -1414,7 +1403,9 @@ try {
 
 # **getQualityForms**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [EvaluationFormResponseEntityListing](EvaluationFormResponseEntityListing) getQualityForms(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder)
 
@@ -1489,7 +1480,6 @@ try {
 # **getQualityFormsEvaluation**
 
 
-
 > [EvaluationFormResponse](EvaluationFormResponse) getQualityFormsEvaluation(formId)
 
 Get an evaluation form
@@ -1547,7 +1537,6 @@ try {
 
 
 # **getQualityFormsEvaluationVersions**
-
 
 
 > [EvaluationFormResponseEntityListing](EvaluationFormResponseEntityListing) getQualityFormsEvaluationVersions(formId, pageSize, pageNumber, sortOrder)
@@ -1613,7 +1602,6 @@ try {
 
 
 # **getQualityFormsEvaluations**
-
 
 
 > [EvaluationFormResponseEntityListing](EvaluationFormResponseEntityListing) getQualityFormsEvaluations(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder)
@@ -1691,7 +1679,6 @@ try {
 # **getQualityFormsEvaluationsBulkContexts**
 
 
-
 > [List&lt;EvaluationFormResponse&gt;](EvaluationFormResponse) getQualityFormsEvaluationsBulkContexts(contextId)
 
 Retrieve a list of the latest published evaluation form versions by context ids
@@ -1751,7 +1738,6 @@ try {
 # **getQualityFormsSurvey**
 
 
-
 > [SurveyForm](SurveyForm) getQualityFormsSurvey(formId)
 
 Get a survey form
@@ -1809,7 +1795,6 @@ try {
 
 
 # **getQualityFormsSurveyVersions**
-
 
 
 > [SurveyFormEntityListing](SurveyFormEntityListing) getQualityFormsSurveyVersions(formId, pageSize, pageNumber)
@@ -1873,7 +1858,6 @@ try {
 
 
 # **getQualityFormsSurveys**
-
 
 
 > [SurveyFormEntityListing](SurveyFormEntityListing) getQualityFormsSurveys(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder)
@@ -1949,7 +1933,6 @@ try {
 # **getQualityFormsSurveysBulk**
 
 
-
 > [SurveyFormEntityListing](SurveyFormEntityListing) getQualityFormsSurveysBulk(id)
 
 Retrieve a list of survey forms by their ids
@@ -2007,7 +1990,6 @@ try {
 
 
 # **getQualityFormsSurveysBulkContexts**
-
 
 
 > [List&lt;SurveyForm&gt;](SurveyForm) getQualityFormsSurveysBulkContexts(contextId, published)
@@ -2070,7 +2052,9 @@ try {
 
 # **getQualityPublishedform**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [EvaluationFormResponse](EvaluationFormResponse) getQualityPublishedform(formId)
 
@@ -2130,7 +2114,9 @@ try {
 
 # **getQualityPublishedforms**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [EvaluationFormResponseEntityListing](EvaluationFormResponseEntityListing) getQualityPublishedforms(pageSize, pageNumber, name, onlyLatestPerContext)
 
@@ -2197,7 +2183,6 @@ try {
 # **getQualityPublishedformsEvaluation**
 
 
-
 > [EvaluationFormResponse](EvaluationFormResponse) getQualityPublishedformsEvaluation(formId)
 
 Get the most recent published version of an evaluation form.
@@ -2255,7 +2240,6 @@ try {
 
 
 # **getQualityPublishedformsEvaluations**
-
 
 
 > [EvaluationFormResponseEntityListing](EvaluationFormResponseEntityListing) getQualityPublishedformsEvaluations(pageSize, pageNumber, name, onlyLatestPerContext)
@@ -2323,7 +2307,6 @@ try {
 # **getQualityPublishedformsSurvey**
 
 
-
 > [SurveyForm](SurveyForm) getQualityPublishedformsSurvey(formId)
 
 Get the most recent published version of a survey form.
@@ -2381,7 +2364,6 @@ try {
 
 
 # **getQualityPublishedformsSurveys**
-
 
 
 > [SurveyFormEntityListing](SurveyFormEntityListing) getQualityPublishedformsSurveys(pageSize, pageNumber, name, onlyLatestEnabledPerContext)
@@ -2449,7 +2431,6 @@ try {
 # **getQualitySurvey**
 
 
-
 > [Survey](Survey) getQualitySurvey(surveyId)
 
 Get a survey for a conversation
@@ -2509,7 +2490,6 @@ try {
 # **getQualitySurveysScorable**
 
 
-
 > [ScorableSurvey](ScorableSurvey) getQualitySurveysScorable(customerSurveyUrl)
 
 Get a survey as an end-customer, for the purposes of scoring it.
@@ -2553,7 +2533,6 @@ try {
 
 
 # **patchQualityFormsSurvey**
-
 
 
 > [SurveyForm](SurveyForm) patchQualityFormsSurvey(formId, body)
@@ -2617,7 +2596,6 @@ try {
 # **postAnalyticsEvaluationsAggregatesJobs**
 
 
-
 > [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsEvaluationsAggregatesJobs(body)
 
 Query for evaluation aggregates asynchronously
@@ -2679,7 +2657,6 @@ try {
 # **postAnalyticsEvaluationsAggregatesQuery**
 
 
-
 > [EvaluationAggregateQueryResponse](EvaluationAggregateQueryResponse) postAnalyticsEvaluationsAggregatesQuery(body)
 
 Query for evaluation aggregates
@@ -2737,7 +2714,6 @@ try {
 
 
 # **postAnalyticsSurveysAggregatesJobs**
-
 
 
 > [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsSurveysAggregatesJobs(body)
@@ -2801,7 +2777,6 @@ try {
 # **postAnalyticsSurveysAggregatesQuery**
 
 
-
 > [SurveyAggregateQueryResponse](SurveyAggregateQueryResponse) postAnalyticsSurveysAggregatesQuery(body)
 
 Query for survey aggregates
@@ -2859,7 +2834,6 @@ try {
 
 
 # **postQualityCalibrations**
-
 
 
 > [Calibration](Calibration) postQualityCalibrations(body, expand)
@@ -2921,7 +2895,6 @@ try {
 
 
 # **postQualityConversationEvaluations**
-
 
 
 > [Evaluation](Evaluation) postQualityConversationEvaluations(conversationId, body, expand)
@@ -2987,7 +2960,6 @@ try {
 # **postQualityConversationsAuditsQuery**
 
 
-
 > [QualityAuditQueryExecutionStatusResponse](QualityAuditQueryExecutionStatusResponse) postQualityConversationsAuditsQuery(body)
 
 Create audit query execution
@@ -3045,7 +3017,6 @@ try {
 
 
 # **postQualityEvaluationsAggregatesQueryMe**
-
 
 
 > [EvaluationAggregateQueryResponse](EvaluationAggregateQueryResponse) postQualityEvaluationsAggregatesQueryMe(body)
@@ -3106,7 +3077,6 @@ try {
 # **postQualityEvaluationsScoring**
 
 
-
 > [EvaluationScoringSet](EvaluationScoringSet) postQualityEvaluationsScoring(body)
 
 Score evaluation
@@ -3164,7 +3134,9 @@ try {
 
 # **postQualityForms**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [EvaluationFormResponse](EvaluationFormResponse) postQualityForms(body)
 
@@ -3223,7 +3195,6 @@ try {
 
 
 # **postQualityFormsEvaluations**
-
 
 
 > [EvaluationFormResponse](EvaluationFormResponse) postQualityFormsEvaluations(body)
@@ -3285,7 +3256,6 @@ try {
 # **postQualityFormsSurveys**
 
 
-
 > [SurveyForm](SurveyForm) postQualityFormsSurveys(body)
 
 Create a survey form.
@@ -3344,7 +3314,9 @@ try {
 
 # **postQualityPublishedforms**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [EvaluationFormResponse](EvaluationFormResponse) postQualityPublishedforms(body)
 
@@ -3403,7 +3375,6 @@ try {
 
 
 # **postQualityPublishedformsEvaluations**
-
 
 
 > [EvaluationFormResponse](EvaluationFormResponse) postQualityPublishedformsEvaluations(body)
@@ -3465,7 +3436,6 @@ try {
 # **postQualityPublishedformsSurveys**
 
 
-
 > [SurveyForm](SurveyForm) postQualityPublishedformsSurveys(body)
 
 Publish a survey form.
@@ -3525,7 +3495,6 @@ try {
 # **postQualitySurveysScoring**
 
 
-
 > [SurveyScoringSet](SurveyScoringSet) postQualitySurveysScoring(body)
 
 Score survey
@@ -3582,7 +3551,6 @@ try {
 
 
 # **putQualityCalibration**
-
 
 
 > [Calibration](Calibration) putQualityCalibration(calibrationId, body)
@@ -3644,7 +3612,6 @@ try {
 
 
 # **putQualityConversationEvaluation**
-
 
 
 > [EvaluationResponse](EvaluationResponse) putQualityConversationEvaluation(conversationId, evaluationId, body, expand)
@@ -3715,7 +3682,9 @@ try {
 
 # **putQualityForm**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [EvaluationFormResponse](EvaluationFormResponse) putQualityForm(formId, body)
 
@@ -3778,7 +3747,6 @@ try {
 # **putQualityFormsEvaluation**
 
 
-
 > [EvaluationFormResponse](EvaluationFormResponse) putQualityFormsEvaluation(formId, body)
 
 Update an evaluation form.
@@ -3838,7 +3806,6 @@ try {
 
 
 # **putQualityFormsEvaluationAiscoringSettings**
-
 
 
 > [AiScoringSettings](AiScoringSettings) putQualityFormsEvaluationAiscoringSettings(formId, body)
@@ -3904,7 +3871,6 @@ try {
 # **putQualityFormsSurvey**
 
 
-
 > [SurveyForm](SurveyForm) putQualityFormsSurvey(formId, body)
 
 Update a survey form.
@@ -3966,7 +3932,6 @@ try {
 # **putQualitySurveysScorable**
 
 
-
 > [ScorableSurvey](ScorableSurvey) putQualitySurveysScorable(customerSurveyUrl, body)
 
 Update a survey as an end-customer, for the purposes of scoring it.
@@ -4011,4 +3976,4 @@ try {
 [**ScorableSurvey**](ScorableSurvey)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

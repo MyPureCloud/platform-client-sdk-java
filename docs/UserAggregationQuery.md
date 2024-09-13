@@ -14,7 +14,6 @@
 | **flattenMultivaluedDimensions** | **Boolean** | Flattens any multivalued dimensions used in response groups (e.g. ['a','b','c']->'a,b,c') |  [optional] |
 | **views** | [**List&lt;UserAggregationView&gt;**](UserAggregationView) | Custom derived metric views |  [optional] |
 | **alternateTimeDimension** | [**AlternateTimeDimensionEnum**](#Enum--AlternateTimeDimensionEnum) | Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: GroupByEnum
@@ -22,7 +21,6 @@
 | Name | Value |
 | ---- | ----- |
 | USERID | &quot;userId&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: MetricsEnum
@@ -32,7 +30,6 @@
 | TAGENTROUTINGSTATUS | &quot;tAgentRoutingStatus&quot; |
 | TORGANIZATIONPRESENCE | &quot;tOrganizationPresence&quot; |
 | TSYSTEMPRESENCE | &quot;tSystemPresence&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: AlternateTimeDimensionEnum
@@ -41,9 +38,8 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | EVENTTIME | &quot;eventTime&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

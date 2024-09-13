@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **trade** | [**ShiftTradeResponse**](ShiftTradeResponse) | The shift trade details |  [optional] |
 | **matchReview** | [**ShiftTradeMatchReviewResponse**](ShiftTradeMatchReviewResponse) | A preview of what the schedule would look like if the shift trade is approved plus any violations |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

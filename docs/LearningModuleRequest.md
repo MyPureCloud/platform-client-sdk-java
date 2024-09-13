@@ -17,7 +17,6 @@
 | **externalId** | **String** | The external ID of the learning module. Maximum length: 50 characters. |  [optional] |
 | **enforceContentOrder** | **Boolean** | If true, learning module content should be viewed one by one in order |  [optional] |
 | **reviewAssessmentResults** | [**ReviewAssessmentResults**](ReviewAssessmentResults) | Allows to view Assessment results in detail |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -30,9 +29,8 @@
 | ASSESSMENT | &quot;Assessment&quot; | 
 | EXTERNAL | &quot;External&quot; | 
 | NATIVE | &quot;Native&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

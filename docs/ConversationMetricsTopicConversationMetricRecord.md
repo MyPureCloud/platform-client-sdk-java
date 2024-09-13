@@ -88,7 +88,6 @@
 | **wrapUpCode** | **String** | Wrap up code |  [optional] |
 | **proposedAgents** | [**List&lt;ConversationMetricsTopicConversationProposedAgent&gt;**](ConversationMetricsTopicConversationProposedAgent) | Proposed agents |  [optional] |
 | **scoredAgents** | [**List&lt;ConversationMetricsTopicConversationScoredAgent&gt;**](ConversationMetricsTopicConversationScoredAgent) | Scored agents |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MetricEnum
@@ -145,7 +144,6 @@
 | TTALKCOMPLETE | &quot;tTalkComplete&quot; | 
 | TUSERRESPONSETIME | &quot;tUserResponseTime&quot; | 
 | TVOICEMAIL | &quot;tVoicemail&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ActiveRoutingEnum
@@ -162,7 +160,6 @@
 | PREFERRED | &quot;Preferred&quot; | 
 | STANDARD | &quot;Standard&quot; | 
 | VIP | &quot;Vip&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ConversationInitiatorEnum
@@ -189,7 +186,6 @@
 | VOICEMAIL | &quot;voicemail&quot; | 
 | VOICESURVEYFLOW | &quot;voicesurveyflow&quot; | 
 | WORKFLOW | &quot;workflow&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DeliveryStatusEnum
@@ -205,7 +201,6 @@
 | READ | &quot;Read&quot; | 
 | RECEIVED | &quot;Received&quot; | 
 | SENT | &quot;Sent&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DirectionEnum
@@ -215,7 +210,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INBOUND | &quot;inbound&quot; | 
 | OUTBOUND | &quot;outbound&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DisconnectTypeEnum
@@ -241,7 +235,6 @@
 | TRANSFERDND | &quot;transferDnd&quot; | 
 | TRANSPORTFAILURE | &quot;transportFailure&quot; | 
 | UNCALLABLE | &quot;uncallable&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: FlaggedReasonEnum
@@ -250,7 +243,6 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | GENERAL | &quot;general&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -267,7 +259,6 @@
 | UNKNOWN | &quot;unknown&quot; | 
 | VIDEO | &quot;video&quot; | 
 | VOICE | &quot;voice&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: OriginatingDirectionEnum
@@ -277,7 +268,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INBOUND | &quot;inbound&quot; | 
 | OUTBOUND | &quot;outbound&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: PurposeEnum
@@ -304,7 +294,6 @@
 | VOICEMAIL | &quot;voicemail&quot; | 
 | VOICESURVEYFLOW | &quot;voicesurveyflow&quot; | 
 | WORKFLOW | &quot;workflow&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: RequestedRoutingsEnum
@@ -320,7 +309,6 @@
 | PREFERRED | &quot;Preferred&quot; |
 | STANDARD | &quot;Standard&quot; |
 | VIP | &quot;Vip&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: RoutingRuleTypeEnum
@@ -332,7 +320,6 @@
 | CONDITIONAL | &quot;Conditional&quot; | 
 | PREDICTIVE | &quot;Predictive&quot; | 
 | PREFERRED | &quot;Preferred&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: UsedRoutingEnum
@@ -349,9 +336,8 @@
 | PREFERRED | &quot;Preferred&quot; | 
 | STANDARD | &quot;Standard&quot; | 
 | VIP | &quot;Vip&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -15,9 +15,8 @@
 | **retentionDuration** | [**RetentionDuration**](RetentionDuration) |  |  [optional] |
 | **mediaTranscriptions** | [**List&lt;MediaTranscription&gt;**](MediaTranscription) |  |  [optional] |
 | **integrationExport** | [**IntegrationExport**](IntegrationExport) | Policy action for exporting recordings using an integration to 3rd party s3. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

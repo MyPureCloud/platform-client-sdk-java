@@ -19,7 +19,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteAuthorizationDivision**
 
 
-
 > Void deleteAuthorizationDivision(divisionId, force)
 
 Delete a division.
@@ -80,7 +79,6 @@ null (empty response body)
 # **getAuthorizationDivision**
 
 
-
 > [AuthzDivision](AuthzDivision) getAuthorizationDivision(divisionId, objectCount)
 
 Returns an authorization division.
@@ -139,7 +137,6 @@ try {
 
 
 # **getAuthorizationDivisions**
-
 
 
 > [AuthzDivisionEntityListing](AuthzDivisionEntityListing) getAuthorizationDivisions(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, objectCount, id, name)
@@ -218,7 +215,6 @@ try {
 # **getAuthorizationDivisionsHome**
 
 
-
 > [AuthzDivision](AuthzDivision) getAuthorizationDivisionsHome()
 
 Retrieve the home division for the organization.
@@ -275,7 +271,6 @@ This endpoint does not require any parameters.
 # **getAuthorizationDivisionsLimit**
 
 
-
 > Integer getAuthorizationDivisionsLimit()
 
 Returns the maximum allowed number of divisions.
@@ -328,7 +323,6 @@ This endpoint does not require any parameters.
 
 
 # **postAuthorizationDivisionObject**
-
 
 
 > Void postAuthorizationDivisionObject(divisionId, objectType, body)
@@ -394,7 +388,6 @@ null (empty response body)
 # **postAuthorizationDivisionRestore**
 
 
-
 > [AuthzDivision](AuthzDivision) postAuthorizationDivisionRestore(divisionId, body)
 
 Recreate a previously deleted division.
@@ -454,7 +447,6 @@ try {
 
 
 # **postAuthorizationDivisions**
-
 
 
 > [AuthzDivision](AuthzDivision) postAuthorizationDivisions(body)
@@ -517,7 +509,6 @@ try {
 # **putAuthorizationDivision**
 
 
-
 > [AuthzDivision](AuthzDivision) putAuthorizationDivision(divisionId, body)
 
 Update a division.
@@ -576,4 +567,4 @@ try {
 [**AuthzDivision**](AuthzDivision)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

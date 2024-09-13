@@ -11,9 +11,8 @@
 | **commandId** | **String** | The id (V4 UUID) used to identify the transfer already started by the external platform. |  |
 | **objectCommunicationId** | **String** | The id (V4 UUID) of the communication that is being transferred. |  |
 | **destinationCommunicationId** | **String** | The id (V4 UUID) of the communication that is being transferred to. |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -11,7 +11,6 @@
 | **value** | **String** | A value to use for aggregation |  [optional] |
 | **size** | **Integer** | The number aggregations results to return out of the entire result set |  [optional] |
 | **order** | [**List<OrderEnum>**](#Enum--OrderEnum) | The order in which aggregation results are sorted |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -21,7 +20,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | TERM | &quot;TERM&quot; | 
 | COUNT | &quot;COUNT&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: OrderEnum
@@ -32,9 +30,8 @@
 | VALUE_ASC | &quot;VALUE_ASC&quot; |
 | COUNT_DESC | &quot;COUNT_DESC&quot; |
 | COUNT_ASC | &quot;COUNT_ASC&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

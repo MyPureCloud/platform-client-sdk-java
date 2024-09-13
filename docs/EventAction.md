@@ -10,7 +10,6 @@
 | **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) | The media type used to deliver the action (e.g. email, webhook). |  |
 | **prompt** | **String** | Prompt of the action to be displayed/sent to the visitor. |  |
 | **createdDate** | [**Date**](Date) | Timestamp indicating when the action was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -32,7 +31,6 @@
 | ABANDONED | &quot;abandoned&quot; | 
 | COMPLETED | &quot;completed&quot; | 
 | FREQUENCYCAPREACHED | &quot;frequencyCapReached&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -46,9 +44,8 @@
 | INTEGRATIONACTION | &quot;integrationAction&quot; | 
 | ARCHITECTFLOW | &quot;architectFlow&quot; | 
 | OPENACTION | &quot;openAction&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

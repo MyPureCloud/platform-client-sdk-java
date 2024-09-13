@@ -15,9 +15,8 @@
 | **appId** | **String** | The app Id of Facebook app. The appId is required when a customer wants to use their own approved Facebook app. |  [optional] |
 | **appSecret** | **String** | The app Secret of Facebook app. The appSecret is required when appId is provided. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

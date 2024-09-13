@@ -53,7 +53,6 @@
 | **timeoutSeconds** | **Integer** |  |  [optional] |
 | **callbackScheduledTime** | [**Date**](Date) |  |  [optional] |
 | **automatedCallbackConfigId** | **String** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -74,7 +73,6 @@
 | SCHEDULED | &quot;scheduled&quot; | 
 | PARKED | &quot;parked&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: InitialStateEnum
@@ -95,7 +93,6 @@
 | SCHEDULED | &quot;scheduled&quot; | 
 | PARKED | &quot;parked&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DirectionEnum
@@ -105,7 +102,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INBOUND | &quot;inbound&quot; | 
 | OUTBOUND | &quot;outbound&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DisconnectTypeEnum
@@ -131,7 +127,6 @@
 | OTHER | &quot;other&quot; | 
 | SPAM | &quot;spam&quot; | 
 | UNCALLABLE | &quot;uncallable&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: FlaggedReasonEnum
@@ -140,9 +135,8 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | GENERAL | &quot;general&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -12,7 +12,6 @@
 | **dateTrained** | [**Date**](Date) | DateTime indicating when the model was last trained. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) | The media type of the model. |  [optional] |
 | **features** | [**List&lt;PredictorModelFeature&gt;**](PredictorModelFeature) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -23,9 +22,8 @@
 | VOICE | &quot;voice&quot; | 
 | EMAIL | &quot;email&quot; | 
 | MESSAGE | &quot;message&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

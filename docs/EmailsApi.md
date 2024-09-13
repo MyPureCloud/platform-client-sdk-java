@@ -12,7 +12,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **getEmailsSettings**
 
 
-
 > [EmailSettings](EmailSettings) getEmailsSettings()
 
 Get email Contact Center settings
@@ -66,7 +65,6 @@ This endpoint does not require any parameters.
 
 
 # **patchEmailsSettings**
-
 
 
 > [EmailSettings](EmailSettings) patchEmailsSettings(body)
@@ -125,4 +123,4 @@ try {
 [**EmailSettings**](EmailSettings)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

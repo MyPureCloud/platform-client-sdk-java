@@ -15,9 +15,8 @@
 | **regionName** | **String** | Geolocation's region name. |  [optional] |
 | **source** | **String** | The source that was used to determine the geolocation information. |  [optional] |
 | **timezone** | **String** | Geolocation's timezone. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

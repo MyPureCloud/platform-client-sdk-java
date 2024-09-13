@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **openAction** | [**DomainEntityRef**](DomainEntityRef) | The specific type of the open action. |  |
 | **configurationFields** | **Map&lt;String, Object&gt;** | Custom fields defined in the schema referenced by the open action type selected. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

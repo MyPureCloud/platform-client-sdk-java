@@ -10,7 +10,6 @@
 | **actionTypes** | [**List<ActionTypesEnum>**](#Enum--ActionTypesEnum) | The is a list of action types the organization has access to. |  [optional] |
 | **errorCodes** | **List&lt;String&gt;** | The is a list of potential error codes the organization may encounter. |  [optional] |
 | **warningCodes** | **List&lt;String&gt;** | The is a list of potential warning codes the organization may encounter. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: FlowTypesEnum
@@ -35,7 +34,6 @@
 | VOICESURVEY | &quot;voicesurvey&quot; |
 | WORKFLOW | &quot;workflow&quot; |
 | WORKITEM | &quot;workitem&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: ActionTypesEnum
@@ -177,9 +175,8 @@
 | MENUTRANSFERFLOWSECURE | &quot;menuTransferFlowSecure&quot; |
 | MENUTRANSFERUSER | &quot;menuTransferUser&quot; |
 | MENUTRANSFERVOICEMAIL | &quot;menuTransferVoicemail&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

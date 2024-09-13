@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **combiningOperation** | [**CombiningOperationEnum**](#Enum--CombiningOperationEnum) |  |  [optional] |
 | **predicates** | **List&lt;Object&gt;** | A list of strings, each representing the location in the form of the Answer Option to depend on. In the format of \"/form/questionGroup/{questionGroupIndex}/question/{questionIndex}/answer/{answerIndex}\" or, to assume the current question group, \"../question/{questionIndex}/answer/{answerIndex}\". Note: Indexes are zero-based |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: CombiningOperationEnum
@@ -17,9 +16,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | AND | &quot;AND&quot; | 
 | OR | &quot;OR&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

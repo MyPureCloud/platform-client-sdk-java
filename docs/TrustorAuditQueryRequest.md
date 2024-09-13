@@ -12,9 +12,8 @@
 | **queryPhrase** | **String** | Word or phrase to look for in audit bodies. |  [optional] |
 | **facets** | [**List&lt;Facet&gt;**](Facet) | Facet information to be returned with the query results. |  [optional] |
 | **filters** | [**List&lt;Filter&gt;**](Filter) | Additional custom filters to be applied to the query. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

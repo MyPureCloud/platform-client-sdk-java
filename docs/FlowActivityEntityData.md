@@ -30,7 +30,6 @@
 | **usedRouting** | [**UsedRoutingEnum**](#Enum--UsedRoutingEnum) | Complete routing method |  [optional] |
 | **userId** | **String** | Unique identifier for the user |  [optional] |
 | **scoredAgents** | [**List&lt;FlowActivityScoredAgent&gt;**](FlowActivityScoredAgent) | Scored agents |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MetricEnum
@@ -39,7 +38,6 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | OFLOW | &quot;oFlow&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ActiveRoutingEnum
@@ -56,7 +54,6 @@
 | PREFERRED | &quot;Preferred&quot; | 
 | STANDARD | &quot;Standard&quot; | 
 | VIP | &quot;Vip&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DirectionEnum
@@ -66,7 +63,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INBOUND | &quot;inbound&quot; | 
 | OUTBOUND | &quot;outbound&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: FlowTypeEnum
@@ -93,7 +89,6 @@
 | VOICESURVEY | &quot;VOICESURVEY&quot; | 
 | WORKFLOW | &quot;WORKFLOW&quot; | 
 | WORKITEM | &quot;WORKITEM&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -110,7 +105,6 @@
 | UNKNOWN | &quot;unknown&quot; | 
 | VIDEO | &quot;video&quot; | 
 | VOICE | &quot;voice&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: RequestedRoutingsEnum
@@ -126,7 +120,6 @@
 | PREFERRED | &quot;Preferred&quot; |
 | STANDARD | &quot;Standard&quot; |
 | VIP | &quot;Vip&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: UsedRoutingEnum
@@ -143,9 +136,8 @@
 | PREFERRED | &quot;Preferred&quot; | 
 | STANDARD | &quot;Standard&quot; | 
 | VIP | &quot;Vip&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

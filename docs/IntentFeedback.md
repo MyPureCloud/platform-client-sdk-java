@@ -9,7 +9,6 @@
 | **probability** | **Double** | The probability of the detected intent. |  [optional] |
 | **entities** | [**List&lt;DetectedNamedEntity&gt;**](DetectedNamedEntity) | The collection of named entities detected. |  [optional] |
 | **assessment** | [**AssessmentEnum**](#Enum--AssessmentEnum) | The assessment on the detection for feedback text. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: AssessmentEnum
@@ -21,9 +20,8 @@
 | CORRECT | &quot;Correct&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 | DISABLED | &quot;Disabled&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

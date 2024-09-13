@@ -10,7 +10,6 @@
 | **skills** | **List&lt;String&gt;** | The list of skill names to use for routing. |  [optional] |
 | **language** | **String** | The language name to use for routing. |  [optional] |
 | **priority** | **Long** | The priority to assign to the conversation for routing. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TargetTypeEnum
@@ -19,9 +18,8 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | QUEUE | &quot;QUEUE&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

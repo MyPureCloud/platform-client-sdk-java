@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **emailWrapupCodes** | **List&lt;String&gt;** | A list of wrapup code identifiers to match for Email. |  [optional] |
 | **smsWrapupCodes** | **List&lt;String&gt;** | A list of wrapup code identifiers to match for SMS. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

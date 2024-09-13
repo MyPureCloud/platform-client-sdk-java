@@ -22,7 +22,6 @@
 | **services** | [**List<ServicesEnum>**](#Enum--ServicesEnum) | The service(s) that the authority can be used to authenticate. |  |
 | **certificateDetails** | [**List&lt;CertificateDetails&gt;**](CertificateDetails) | The details of the parsed certificate(s). |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -33,7 +32,6 @@
 | ACTIVE | &quot;active&quot; | 
 | INACTIVE | &quot;inactive&quot; | 
 | DELETED | &quot;deleted&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -43,7 +41,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | MANAGED | &quot;MANAGED&quot; | 
 | REMOTE | &quot;REMOTE&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ServicesEnum
@@ -53,9 +50,8 @@
 | SIP | &quot;SIP&quot; |
 | PROVISION | &quot;PROVISION&quot; |
 | PROVISION_PHONE | &quot;PROVISION_PHONE&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

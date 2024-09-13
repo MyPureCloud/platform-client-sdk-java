@@ -11,7 +11,6 @@
 | **queue** | [**V2MobiusAlertsTopicAlertingAddressableEntityRef**](V2MobiusAlertsTopicAlertingAddressableEntityRef) |  |  [optional] |
 | **team** | [**V2MobiusAlertsTopicAlertingAddressableEntityRef**](V2MobiusAlertsTopicAlertingAddressableEntityRef) |  |  [optional] |
 | **alerting** | **Boolean** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: EntityTypeEnum
@@ -26,9 +25,8 @@
 | EDGE | &quot;Edge&quot; | 
 | TEAM | &quot;Team&quot; | 
 | TEAMMEMBERS | &quot;TeamMembers&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

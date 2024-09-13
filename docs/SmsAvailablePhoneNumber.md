@@ -15,7 +15,6 @@
 | **phoneNumberType** | [**PhoneNumberTypeEnum**](#Enum--PhoneNumberTypeEnum) | The type of phone number available for provisioning. |  [optional] |
 | **addressRequirement** | [**AddressRequirementEnum**](#Enum--AddressRequirementEnum) | The address requirement needed for provisioning this number. If there is a requirement, the address must be the residence or place of business of the individual or entity using the phone number. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: CapabilitiesEnum
@@ -25,7 +24,6 @@
 | SMS | &quot;sms&quot; |
 | MMS | &quot;mms&quot; |
 | VOICE | &quot;voice&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: PhoneNumberTypeEnum
@@ -38,7 +36,6 @@
 | TOLLFREE | &quot;tollfree&quot; | 
 | SHORTCODE | &quot;shortcode&quot; | 
 | ALPHANUMERIC | &quot;alphanumeric&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: AddressRequirementEnum
@@ -50,9 +47,8 @@
 | ANY | &quot;any&quot; | 
 | LOCAL | &quot;local&quot; | 
 | FOREIGN | &quot;foreign&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

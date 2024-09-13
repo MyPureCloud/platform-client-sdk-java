@@ -11,7 +11,6 @@
 | **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
 | **exceptions** | [**List&lt;WfmActivityPlanRunJobCompleteTopicActivityPlanJobException&gt;**](WfmActivityPlanRunJobCompleteTopicActivityPlanJobException) |  |  [optional] |
 | **error** | [**WfmActivityPlanRunJobCompleteTopicErrorBody**](WfmActivityPlanRunJobCompleteTopicErrorBody) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -21,7 +20,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | RUNPLAN | &quot;RunPlan&quot; | 
 | DELETEOCCURRENCE | &quot;DeleteOccurrence&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -32,9 +30,8 @@
 | PROCESSING | &quot;Processing&quot; | 
 | COMPLETE | &quot;Complete&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

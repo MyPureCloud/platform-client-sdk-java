@@ -15,7 +15,6 @@
 | **views** | [**List&lt;FlowAggregationView&gt;**](FlowAggregationView) | Custom derived metric views |  [optional] |
 | **alternateTimeDimension** | [**AlternateTimeDimensionEnum**](#Enum--AlternateTimeDimensionEnum) | Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event. |  [optional] |
 | **pageSize** | **Integer** | The number of results per page |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: GroupByEnum
@@ -121,7 +120,6 @@
 | VIDEOPRESENT | &quot;videoPresent&quot; |
 | WAITINGINTERACTIONCOUNT | &quot;waitingInteractionCount&quot; |
 | WRAPUPCODE | &quot;wrapUpCode&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: MetricsEnum
@@ -137,7 +135,6 @@
 | TFLOWDISCONNECT | &quot;tFlowDisconnect&quot; |
 | TFLOWEXIT | &quot;tFlowExit&quot; |
 | TFLOWOUTCOME | &quot;tFlowOutcome&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: AlternateTimeDimensionEnum
@@ -146,9 +143,8 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | EVENTTIME | &quot;eventTime&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

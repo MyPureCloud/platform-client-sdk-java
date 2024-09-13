@@ -11,9 +11,8 @@
 | **pageSize** | **Integer** | Number of records according to the page size |  [optional] |
 | **pageNumber** | **Integer** | Current page number for the returned records |  [optional] |
 | **results** | [**List&lt;KnowledgeSearchDocumentV1&gt;**](KnowledgeSearchDocumentV1) | Results associated to the search response |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

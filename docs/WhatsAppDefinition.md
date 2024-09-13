@@ -8,9 +8,8 @@
 | **name** | **String** | The messaging template name. |  |
 | **namespace** | **String** | The messaging template namespace. |  |
 | **language** | **String** | The messaging template language configured for this template. This is a WhatsApp specific value. For example, 'en_US' |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -13,7 +13,6 @@
 | **divisionId** | **String** |  |  [optional] |
 | **deactivated** | **Boolean** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -23,7 +22,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | SYSTEM | &quot;System&quot; | 
 | USER | &quot;User&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: SystemPresenceEnum
@@ -41,9 +39,8 @@
 | TRAINING | &quot;Training&quot; | 
 | MEETING | &quot;Meeting&quot; | 
 | BREAK | &quot;Break&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

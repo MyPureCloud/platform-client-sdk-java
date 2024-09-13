@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **messengerType** | [**MessengerTypeEnum**](#Enum--MessengerTypeEnum) | The type of messenger |  |
 | **timeoutInMinutes** | **Long** | The conversation threading window timeout (Minutes) of specified messenger type |  |
-{: class="table table-striped"}
 
 
 ## Enum: MessengerTypeEnum
@@ -22,9 +21,8 @@
 | WEBMESSAGING | &quot;webmessaging&quot; | 
 | INSTAGRAM | &quot;instagram&quot; | 
 | OPEN | &quot;open&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

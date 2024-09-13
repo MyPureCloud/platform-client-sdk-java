@@ -8,7 +8,6 @@
 | **operation** | [**OperationEnum**](#Enum--OperationEnum) | The operation for this part |  |
 | **selector** | [**SelectorEnum**](#Enum--SelectorEnum) | The type of item being selected by this part |  |
 | **ids** | **List&lt;String&gt;** | The ids for the selector; the results of these are ORed together |  |
-{: class="table table-striped"}
 
 
 ## Enum: OperationEnum
@@ -18,7 +17,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INCLUDE | &quot;Include&quot; | 
 | EXCLUDE | &quot;Exclude&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: SelectorEnum
@@ -32,9 +30,8 @@
 | QUEUE | &quot;Queue&quot; | 
 | DIVISION | &quot;Division&quot; | 
 | MANAGEMENTUNIT | &quot;ManagementUnit&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

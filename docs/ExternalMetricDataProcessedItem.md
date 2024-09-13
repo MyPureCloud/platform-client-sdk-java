@@ -14,7 +14,6 @@
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of the metric data. The default value is Total. |  [optional] |
 | **totalValue** | [**BigDecimal**](BigDecimal) | The total value of the metric data. |  [optional] |
 | **totalCount** | **Integer** | The total number of data points. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -24,9 +23,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | TOTAL | &quot;Total&quot; | 
 | CUMULATIVE | &quot;Cumulative&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

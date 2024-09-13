@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **startOccurrenceDetails** | [**OccurrenceDetails**](OccurrenceDetails) | The details for the next start occurrence for the recurrence. |  [optional] |
 | **endOccurrenceDetails** | [**OccurrenceDetails**](OccurrenceDetails) | The details for the next end occurrence for the recurrence. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

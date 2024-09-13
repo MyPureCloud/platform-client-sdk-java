@@ -14,9 +14,8 @@
 | **privateComments** | **String** | Overall private comments from the evaluator |  [optional] |
 | **agentComments** | **String** | Comments from the agent while reviewing evaluation results |  [optional] |
 | **transcriptTopics** | [**List&lt;TranscriptTopic&gt;**](TranscriptTopic) | List of topics found within the conversation's transcripts |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

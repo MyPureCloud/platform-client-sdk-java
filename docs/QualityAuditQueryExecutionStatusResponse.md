@@ -11,7 +11,6 @@
 | **interval** | **String** | Interval for the audit query. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss |  [optional] |
 | **filters** | [**List&lt;QualityAuditQueryFilter&gt;**](QualityAuditQueryFilter) | Filters for the audit query. |  [optional] |
 | **sort** | [**List&lt;AuditQuerySort&gt;**](AuditQuerySort) | Sort parameter for the audit query. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -24,9 +23,8 @@
 | SUCCEEDED | &quot;Succeeded&quot; | 
 | FAILED | &quot;Failed&quot; | 
 | CANCELLED | &quot;Cancelled&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

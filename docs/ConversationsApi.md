@@ -247,7 +247,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteAnalyticsConversationsDetailsJob**
 
 
-
 > Void deleteAnalyticsConversationsDetailsJob(jobId)
 
 Delete/cancel an async details job
@@ -305,7 +304,6 @@ null (empty response body)
 
 
 # **deleteConversationParticipantCode**
-
 
 
 > Void deleteConversationParticipantCode(conversationId, participantId, addCommunicationCode)
@@ -369,7 +367,6 @@ null (empty response body)
 # **deleteConversationParticipantFlaggedreason**
 
 
-
 > Void deleteConversationParticipantFlaggedreason(conversationId, participantId)
 
 Remove flagged reason from conversation participant.
@@ -427,7 +424,6 @@ null (empty response body)
 
 
 # **deleteConversationsCallParticipantConsult**
-
 
 
 > Void deleteConversationsCallParticipantConsult(conversationId, participantId)
@@ -489,7 +485,6 @@ null (empty response body)
 # **deleteConversationsEmailMessagesDraftAttachment**
 
 
-
 > Void deleteConversationsEmailMessagesDraftAttachment(conversationId, attachmentId)
 
 Delete attachment from draft
@@ -547,7 +542,6 @@ null (empty response body)
 
 
 # **deleteConversationsMessagesCachedmediaCachedMediaItemId**
-
 
 
 > Void deleteConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId)
@@ -608,7 +602,6 @@ null (empty response body)
 # **deleteConversationsMessagingIntegrationsFacebookIntegrationId**
 
 
-
 > Void deleteConversationsMessagingIntegrationsFacebookIntegrationId(integrationId)
 
 Delete a Facebook messaging integration
@@ -667,7 +660,6 @@ null (empty response body)
 # **deleteConversationsMessagingIntegrationsInstagramIntegrationId**
 
 
-
 > Void deleteConversationsMessagingIntegrationsInstagramIntegrationId(integrationId)
 
 Delete Instagram messaging integration
@@ -724,7 +716,6 @@ null (empty response body)
 
 
 # **deleteConversationsMessagingIntegrationsOpenIntegrationId**
-
 
 
 > Void deleteConversationsMessagingIntegrationsOpenIntegrationId(integrationId)
@@ -787,7 +778,6 @@ null (empty response body)
 # **deleteConversationsMessagingIntegrationsWhatsappIntegrationId**
 
 
-
 > [WhatsAppIntegration](WhatsAppIntegration) deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId)
 
 Delete a WhatsApp messaging integration
@@ -845,7 +835,6 @@ try {
 
 
 # **deleteConversationsMessagingSetting**
-
 
 
 > Void deleteConversationsMessagingSetting(messageSettingId)
@@ -906,7 +895,6 @@ null (empty response body)
 # **deleteConversationsMessagingSettingsDefault**
 
 
-
 > Void deleteConversationsMessagingSettingsDefault()
 
 Delete the organization's default setting, a global default will be applied to integrations without settings
@@ -961,7 +949,6 @@ null (empty response body)
 
 
 # **deleteConversationsMessagingSupportedcontentSupportedContentId**
-
 
 
 > Void deleteConversationsMessagingSupportedcontentSupportedContentId(supportedContentId)
@@ -1020,7 +1007,6 @@ null (empty response body)
 
 
 # **getAnalyticsConversationDetails**
-
 
 
 > [AnalyticsConversationWithoutAttributes](AnalyticsConversationWithoutAttributes) getAnalyticsConversationDetails(conversationId)
@@ -1083,7 +1069,6 @@ try {
 # **getAnalyticsConversationsAggregatesJob**
 
 
-
 > [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsConversationsAggregatesJob(jobId)
 
 Get status for async query for conversation aggregates
@@ -1143,7 +1128,6 @@ try {
 
 
 # **getAnalyticsConversationsAggregatesJobResults**
-
 
 
 > [ConversationAsyncAggregateQueryResponse](ConversationAsyncAggregateQueryResponse) getAnalyticsConversationsAggregatesJobResults(jobId, cursor)
@@ -1209,7 +1193,6 @@ try {
 # **getAnalyticsConversationsDetails**
 
 
-
 > [AnalyticsConversationWithoutAttributesMultiGetResponse](AnalyticsConversationWithoutAttributesMultiGetResponse) getAnalyticsConversationsDetails(id)
 
 Gets multiple conversations by id
@@ -1270,7 +1253,6 @@ try {
 # **getAnalyticsConversationsDetailsJob**
 
 
-
 > [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsConversationsDetailsJob(jobId)
 
 Get status for async query for conversation details
@@ -1329,7 +1311,6 @@ try {
 
 
 # **getAnalyticsConversationsDetailsJobResults**
-
 
 
 > [AnalyticsConversationAsyncQueryResponse](AnalyticsConversationAsyncQueryResponse) getAnalyticsConversationsDetailsJobResults(jobId, cursor, pageSize)
@@ -1396,7 +1377,6 @@ try {
 # **getAnalyticsConversationsDetailsJobsAvailability**
 
 
-
 > [DataAvailabilityResponse](DataAvailabilityResponse) getAnalyticsConversationsDetailsJobsAvailability()
 
 Lookup the datalake availability date and time
@@ -1450,7 +1430,6 @@ This endpoint does not require any parameters.
 
 
 # **getConversation**
-
 
 
 > [Conversation](Conversation) getConversation(conversationId)
@@ -1510,7 +1489,6 @@ try {
 
 
 # **getConversationParticipantSecureivrsession**
-
 
 
 > [SecureSession](SecureSession) getConversationParticipantSecureivrsession(conversationId, participantId, secureSessionId)
@@ -1575,7 +1553,6 @@ try {
 # **getConversationParticipantSecureivrsessions**
 
 
-
 > [SecureSessionEntityListing](SecureSessionEntityListing) getConversationParticipantSecureivrsessions(conversationId, participantId)
 
 Get a list of secure sessions for this participant.
@@ -1634,7 +1611,6 @@ try {
 
 
 # **getConversationParticipantWrapup**
-
 
 
 > [AssignedWrapupCode](AssignedWrapupCode) getConversationParticipantWrapup(conversationId, participantId, provisional)
@@ -1699,7 +1675,6 @@ try {
 # **getConversationParticipantWrapupcodes**
 
 
-
 > [List&lt;WrapupCode&gt;](WrapupCode) getConversationParticipantWrapupcodes(conversationId, participantId)
 
 Get list of wrapup codes for this conversation participant
@@ -1758,7 +1733,6 @@ try {
 
 
 # **getConversationSecureattributes**
-
 
 
 > [ConversationSecureAttributes](ConversationSecureAttributes) getConversationSecureattributes(conversationId)
@@ -1820,7 +1794,6 @@ try {
 # **getConversationSuggestion**
 
 
-
 > [Suggestion](Suggestion) getConversationSuggestion(conversationId, suggestionId)
 
 Get Suggestion.
@@ -1880,7 +1853,6 @@ try {
 
 
 # **getConversationSuggestions**
-
 
 
 > [SuggestionListing](SuggestionListing) getConversationSuggestions(conversationId, before, after, pageSize, type, state)
@@ -1952,7 +1924,6 @@ try {
 # **getConversations**
 
 
-
 > [ConversationEntityListing](ConversationEntityListing) getConversations(communicationType)
 
 Get active conversations for the logged in user
@@ -2011,7 +1982,6 @@ try {
 # **getConversationsCall**
 
 
-
 > [CallConversation](CallConversation) getConversationsCall(conversationId)
 
 Get call conversation
@@ -2068,7 +2038,6 @@ try {
 
 
 # **getConversationsCallParticipantCommunicationWrapup**
-
 
 
 > [AssignedWrapupCode](AssignedWrapupCode) getConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)
@@ -2135,7 +2104,6 @@ try {
 # **getConversationsCallParticipantWrapup**
 
 
-
 > [AssignedWrapupCode](AssignedWrapupCode) getConversationsCallParticipantWrapup(conversationId, participantId, provisional)
 
 Get the wrap-up for this conversation participant. 
@@ -2198,7 +2166,6 @@ try {
 # **getConversationsCallParticipantWrapupcodes**
 
 
-
 > [List&lt;WrapupCode&gt;](WrapupCode) getConversationsCallParticipantWrapupcodes(conversationId, participantId)
 
 Get list of wrapup codes for this conversation participant
@@ -2259,7 +2226,6 @@ try {
 # **getConversationsCallback**
 
 
-
 > [CallbackConversation](CallbackConversation) getConversationsCallback(conversationId)
 
 Get callback conversation
@@ -2316,7 +2282,6 @@ try {
 
 
 # **getConversationsCallbackParticipantCommunicationWrapup**
-
 
 
 > [AssignedWrapupCode](AssignedWrapupCode) getConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)
@@ -2383,7 +2348,6 @@ try {
 # **getConversationsCallbackParticipantWrapup**
 
 
-
 > [AssignedWrapupCode](AssignedWrapupCode) getConversationsCallbackParticipantWrapup(conversationId, participantId, provisional)
 
 Get the wrap-up for this conversation participant. 
@@ -2446,7 +2410,6 @@ try {
 # **getConversationsCallbackParticipantWrapupcodes**
 
 
-
 > [List&lt;WrapupCode&gt;](WrapupCode) getConversationsCallbackParticipantWrapupcodes(conversationId, participantId)
 
 Get list of wrapup codes for this conversation participant
@@ -2507,7 +2470,6 @@ try {
 # **getConversationsCallbacks**
 
 
-
 > [CallbackConversationEntityListing](CallbackConversationEntityListing) getConversationsCallbacks()
 
 Get active callback conversations for the logged in user
@@ -2562,7 +2524,6 @@ This endpoint does not require any parameters.
 # **getConversationsCalls**
 
 
-
 > [CallConversationEntityListing](CallConversationEntityListing) getConversationsCalls()
 
 Get active call conversations for the logged in user
@@ -2615,7 +2576,6 @@ This endpoint does not require any parameters.
 
 
 # **getConversationsCallsHistory**
-
 
 
 > [CallHistoryConversationEntityListing](CallHistoryConversationEntityListing) getConversationsCallsHistory(pageSize, pageNumber, interval, expand)
@@ -2682,7 +2642,6 @@ try {
 # **getConversationsCallsMaximumconferenceparties**
 
 
-
 > [MaxParticipants](MaxParticipants) getConversationsCallsMaximumconferenceparties()
 
 Get the maximum number of participants that this user can have on a conference
@@ -2735,7 +2694,6 @@ This endpoint does not require any parameters.
 
 
 # **getConversationsChat**
-
 
 
 > [ChatConversation](ChatConversation) getConversationsChat(conversationId)
@@ -2794,7 +2752,6 @@ try {
 
 
 # **getConversationsChatMessage**
-
 
 
 > [WebChatMessage](WebChatMessage) getConversationsChatMessage(conversationId, messageId)
@@ -2857,7 +2814,6 @@ try {
 
 
 # **getConversationsChatMessages**
-
 
 
 > [WebChatMessageEntityList](WebChatMessageEntityList) getConversationsChatMessages(conversationId, after, before, sortOrder, maxResults)
@@ -2928,7 +2884,6 @@ try {
 # **getConversationsChatParticipantCommunicationWrapup**
 
 
-
 > [AssignedWrapupCode](AssignedWrapupCode) getConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)
 
 Get the wrap-up for this conversation communication. 
@@ -2993,7 +2948,6 @@ try {
 # **getConversationsChatParticipantWrapup**
 
 
-
 > [AssignedWrapupCode](AssignedWrapupCode) getConversationsChatParticipantWrapup(conversationId, participantId, provisional)
 
 Get the wrap-up for this conversation participant. 
@@ -3056,7 +3010,6 @@ try {
 # **getConversationsChatParticipantWrapupcodes**
 
 
-
 > [List&lt;WrapupCode&gt;](WrapupCode) getConversationsChatParticipantWrapupcodes(conversationId, participantId)
 
 Get list of wrapup codes for this conversation participant
@@ -3117,7 +3070,6 @@ try {
 # **getConversationsChats**
 
 
-
 > [ChatConversationEntityListing](ChatConversationEntityListing) getConversationsChats()
 
 Get active chat conversations for the logged in user
@@ -3170,7 +3122,6 @@ This endpoint does not require any parameters.
 
 
 # **getConversationsCobrowsesession**
-
 
 
 > [CobrowseConversation](CobrowseConversation) getConversationsCobrowsesession(conversationId)
@@ -3230,7 +3181,9 @@ try {
 
 # **getConversationsCobrowsesessionParticipantCommunicationWrapup**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [AssignedWrapupCode](AssignedWrapupCode) getConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)
 
@@ -3297,7 +3250,9 @@ try {
 
 # **getConversationsCobrowsesessionParticipantWrapup**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [AssignedWrapupCode](AssignedWrapupCode) getConversationsCobrowsesessionParticipantWrapup(conversationId, participantId, provisional)
 
@@ -3362,7 +3317,9 @@ try {
 
 # **getConversationsCobrowsesessionParticipantWrapupcodes**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [List&lt;WrapupCode&gt;](WrapupCode) getConversationsCobrowsesessionParticipantWrapupcodes(conversationId, participantId)
 
@@ -3426,7 +3383,6 @@ try {
 # **getConversationsCobrowsesessions**
 
 
-
 > [CobrowseConversationEntityListing](CobrowseConversationEntityListing) getConversationsCobrowsesessions()
 
 Get active cobrowse conversations for the logged in user
@@ -3479,7 +3435,6 @@ This endpoint does not require any parameters.
 
 
 # **getConversationsEmail**
-
 
 
 > [EmailConversation](EmailConversation) getConversationsEmail(conversationId)
@@ -3538,7 +3493,6 @@ try {
 
 
 # **getConversationsEmailMessage**
-
 
 
 > [EmailMessage](EmailMessage) getConversationsEmailMessage(conversationId, messageId)
@@ -3601,7 +3555,6 @@ try {
 # **getConversationsEmailMessages**
 
 
-
 > [EmailMessagePreviewListing](EmailMessagePreviewListing) getConversationsEmailMessages(conversationId)
 
 Get conversation messages
@@ -3660,7 +3613,6 @@ try {
 # **getConversationsEmailMessagesDraft**
 
 
-
 > [EmailMessage](EmailMessage) getConversationsEmailMessagesDraft(conversationId)
 
 Get conversation draft reply
@@ -3717,7 +3669,6 @@ try {
 
 
 # **getConversationsEmailParticipantCommunicationWrapup**
-
 
 
 > [AssignedWrapupCode](AssignedWrapupCode) getConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)
@@ -3784,7 +3735,6 @@ try {
 # **getConversationsEmailParticipantWrapup**
 
 
-
 > [AssignedWrapupCode](AssignedWrapupCode) getConversationsEmailParticipantWrapup(conversationId, participantId, provisional)
 
 Get the wrap-up for this conversation participant. 
@@ -3847,7 +3797,6 @@ try {
 # **getConversationsEmailParticipantWrapupcodes**
 
 
-
 > [List&lt;WrapupCode&gt;](WrapupCode) getConversationsEmailParticipantWrapupcodes(conversationId, participantId)
 
 Get list of wrapup codes for this conversation participant
@@ -3908,7 +3857,6 @@ try {
 # **getConversationsEmailSettings**
 
 
-
 > [EmailsSettings](EmailsSettings) getConversationsEmailSettings(conversationId)
 
 Get emails settings for a given conversation
@@ -3967,7 +3915,6 @@ try {
 # **getConversationsEmails**
 
 
-
 > [EmailConversationEntityListing](EmailConversationEntityListing) getConversationsEmails()
 
 Get active email conversations for the logged in user
@@ -4020,7 +3967,6 @@ This endpoint does not require any parameters.
 
 
 # **getConversationsKeyconfiguration**
-
 
 
 > [ConversationEncryptionConfiguration](ConversationEncryptionConfiguration) getConversationsKeyconfiguration(keyconfigurationsId)
@@ -4082,7 +4028,6 @@ try {
 # **getConversationsKeyconfigurations**
 
 
-
 > [ConversationEncryptionConfigurationListing](ConversationEncryptionConfigurationListing) getConversationsKeyconfigurations()
 
 Get a list of key configurations data
@@ -4136,7 +4081,6 @@ This endpoint does not require any parameters.
 
 
 # **getConversationsMessage**
-
 
 
 > [MessageConversation](MessageConversation) getConversationsMessage(conversationId)
@@ -4195,7 +4139,6 @@ try {
 
 
 # **getConversationsMessageCommunicationMessagesMediaMediaId**
-
 
 
 > [MessageMediaData](MessageMediaData) getConversationsMessageCommunicationMessagesMediaMediaId(conversationId, communicationId, mediaId)
@@ -4264,7 +4207,6 @@ try {
 # **getConversationsMessageDetails**
 
 
-
 > [MessageData](MessageData) getConversationsMessageDetails(messageId, useNormalizedMessage)
 
 Get message
@@ -4325,7 +4267,6 @@ try {
 
 
 # **getConversationsMessageMessage**
-
 
 
 > [MessageData](MessageData) getConversationsMessageMessage(conversationId, messageId, useNormalizedMessage)
@@ -4392,7 +4333,6 @@ try {
 # **getConversationsMessageParticipantCommunicationWrapup**
 
 
-
 > [AssignedWrapupCode](AssignedWrapupCode) getConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)
 
 Get the wrap-up for this conversation communication. 
@@ -4457,7 +4397,6 @@ try {
 # **getConversationsMessageParticipantWrapup**
 
 
-
 > [AssignedWrapupCode](AssignedWrapupCode) getConversationsMessageParticipantWrapup(conversationId, participantId, provisional)
 
 Get the wrap-up for this conversation participant. 
@@ -4520,7 +4459,6 @@ try {
 # **getConversationsMessageParticipantWrapupcodes**
 
 
-
 > [List&lt;WrapupCode&gt;](WrapupCode) getConversationsMessageParticipantWrapupcodes(conversationId, participantId)
 
 Get list of wrapup codes for this conversation participant
@@ -4581,7 +4519,6 @@ try {
 # **getConversationsMessages**
 
 
-
 > [MessageConversationEntityListing](MessageConversationEntityListing) getConversationsMessages()
 
 Get active message conversations for the logged in user
@@ -4634,7 +4571,6 @@ This endpoint does not require any parameters.
 
 
 # **getConversationsMessagesCachedmedia**
-
 
 
 > [CachedMediaItemEntityListing](CachedMediaItemEntityListing) getConversationsMessagesCachedmedia(pageSize, pageNumber, url)
@@ -4700,7 +4636,6 @@ try {
 # **getConversationsMessagesCachedmediaCachedMediaItemId**
 
 
-
 > [CachedMediaItem](CachedMediaItem) getConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId)
 
 Get a cached media item
@@ -4760,7 +4695,6 @@ try {
 # **getConversationsMessagingFacebookApp**
 
 
-
 > [FacebookAppCredentials](FacebookAppCredentials) getConversationsMessagingFacebookApp()
 
 Get Genesys Facebook App Id
@@ -4814,7 +4748,6 @@ This endpoint does not require any parameters.
 
 
 # **getConversationsMessagingFacebookPermissions**
-
 
 
 > [FacebookPermissionEntityListing](FacebookPermissionEntityListing) getConversationsMessagingFacebookPermissions()
@@ -4872,7 +4805,6 @@ This endpoint does not require any parameters.
 
 
 # **getConversationsMessagingIntegrations**
-
 
 
 > [MessagingIntegrationEntityListing](MessagingIntegrationEntityListing) getConversationsMessagingIntegrations(pageSize, pageNumber, expand, supportedContentId, messagingSettingId)
@@ -4942,7 +4874,6 @@ try {
 # **getConversationsMessagingIntegrationsFacebook**
 
 
-
 > [FacebookIntegrationEntityListing](FacebookIntegrationEntityListing) getConversationsMessagingIntegrationsFacebook(pageSize, pageNumber, expand, supportedContentId, messagingSettingId)
 
 Get a list of Facebook Integrations
@@ -5010,7 +4941,6 @@ try {
 # **getConversationsMessagingIntegrationsFacebookIntegrationId**
 
 
-
 > [FacebookIntegration](FacebookIntegration) getConversationsMessagingIntegrationsFacebookIntegrationId(integrationId, expand)
 
 Get a Facebook messaging integration
@@ -5070,7 +5000,6 @@ try {
 
 
 # **getConversationsMessagingIntegrationsInstagram**
-
 
 
 > [InstagramIntegrationEntityListing](InstagramIntegrationEntityListing) getConversationsMessagingIntegrationsInstagram(pageSize, pageNumber, expand, supportedContentId, messagingSettingId)
@@ -5140,7 +5069,6 @@ try {
 # **getConversationsMessagingIntegrationsInstagramIntegrationId**
 
 
-
 > [InstagramIntegration](InstagramIntegration) getConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, expand)
 
 Get Instagram messaging integration
@@ -5200,7 +5128,6 @@ try {
 
 
 # **getConversationsMessagingIntegrationsOpen**
-
 
 
 > [OpenIntegrationEntityListing](OpenIntegrationEntityListing) getConversationsMessagingIntegrationsOpen(pageSize, pageNumber, expand, supportedContentId, messagingSettingId)
@@ -5272,7 +5199,6 @@ try {
 # **getConversationsMessagingIntegrationsOpenIntegrationId**
 
 
-
 > [OpenIntegration](OpenIntegration) getConversationsMessagingIntegrationsOpenIntegrationId(integrationId, expand)
 
 Get an Open messaging integration
@@ -5334,7 +5260,6 @@ try {
 
 
 # **getConversationsMessagingIntegrationsWhatsapp**
-
 
 
 > [WhatsAppIntegrationEntityListing](WhatsAppIntegrationEntityListing) getConversationsMessagingIntegrationsWhatsapp(pageSize, pageNumber, expand, supportedContentId, messagingSettingId)
@@ -5404,7 +5329,6 @@ try {
 # **getConversationsMessagingIntegrationsWhatsappIntegrationId**
 
 
-
 > [WhatsAppIntegration](WhatsAppIntegration) getConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, expand)
 
 Get a WhatsApp messaging integration
@@ -5466,7 +5390,6 @@ try {
 # **getConversationsMessagingSetting**
 
 
-
 > [MessagingSetting](MessagingSetting) getConversationsMessagingSetting(messageSettingId)
 
 Get a messaging setting
@@ -5524,7 +5447,6 @@ try {
 
 
 # **getConversationsMessagingSettings**
-
 
 
 > [MessagingConfigListing](MessagingConfigListing) getConversationsMessagingSettings(pageSize, pageNumber)
@@ -5588,7 +5510,6 @@ try {
 # **getConversationsMessagingSettingsDefault**
 
 
-
 > [MessagingSetting](MessagingSetting) getConversationsMessagingSettingsDefault()
 
 Get the organization's default settings that will be used as the default when creating an integration.
@@ -5644,7 +5565,6 @@ This endpoint does not require any parameters.
 
 
 # **getConversationsMessagingSupportedcontent**
-
 
 
 > [SupportedContentListing](SupportedContentListing) getConversationsMessagingSupportedcontent(pageSize, pageNumber)
@@ -5708,7 +5628,6 @@ try {
 # **getConversationsMessagingSupportedcontentDefault**
 
 
-
 > [SupportedContent](SupportedContent) getConversationsMessagingSupportedcontentDefault()
 
 Get the organization's default supported content profile that will be used as the default when creating an integration.
@@ -5764,7 +5683,6 @@ This endpoint does not require any parameters.
 
 
 # **getConversationsMessagingSupportedcontentSupportedContentId**
-
 
 
 > [SupportedContent](SupportedContent) getConversationsMessagingSupportedcontentSupportedContentId(supportedContentId)
@@ -5826,7 +5744,6 @@ try {
 # **getConversationsMessagingThreadingtimeline**
 
 
-
 > [ConversationThreadingWindow](ConversationThreadingWindow) getConversationsMessagingThreadingtimeline()
 
 Get conversation threading window timeline for each messaging type
@@ -5883,7 +5800,9 @@ This endpoint does not require any parameters.
 
 # **getConversationsScreenshareParticipantCommunicationWrapup**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [AssignedWrapupCode](AssignedWrapupCode) getConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)
 
@@ -5951,7 +5870,6 @@ try {
 # **getConversationsSettings**
 
 
-
 > [Settings](Settings) getConversationsSettings()
 
 Get Settings
@@ -6005,7 +5923,6 @@ This endpoint does not require any parameters.
 
 
 # **getConversationsSocialParticipantCommunicationWrapup**
-
 
 
 > [AssignedWrapupCode](AssignedWrapupCode) getConversationsSocialParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)
@@ -6072,7 +5989,6 @@ try {
 # **getConversationsVideoDetails**
 
 
-
 > [VideoConferenceDetails](VideoConferenceDetails) getConversationsVideoDetails(conferenceId)
 
 Get video conference details (e.g. the current number of active participants).
@@ -6132,7 +6048,6 @@ try {
 
 
 # **getConversationsVideoParticipantCommunicationWrapup**
-
 
 
 > [AssignedWrapupCode](AssignedWrapupCode) getConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, provisional)
@@ -6199,7 +6114,6 @@ try {
 # **getConversationsVideosMeeting**
 
 
-
 > [MeetingIdRecord](MeetingIdRecord) getConversationsVideosMeeting(meetingId)
 
 Gets a record for a given meetingId
@@ -6259,7 +6173,6 @@ try {
 
 
 # **patchConversationParticipant**
-
 
 
 > Void patchConversationParticipant(conversationId, participantId, body)
@@ -6326,7 +6239,6 @@ null (empty response body)
 # **patchConversationParticipantAttributes**
 
 
-
 > Void patchConversationParticipantAttributes(conversationId, participantId, body)
 
 Update the attributes on a conversation participant.
@@ -6386,7 +6298,6 @@ null (empty response body)
 
 
 # **patchConversationSecureattributes**
-
 
 
 > String patchConversationSecureattributes(conversationId, body)
@@ -6450,7 +6361,6 @@ try {
 # **patchConversationUtilizationlabel**
 
 
-
 > String patchConversationUtilizationlabel(conversationId, body)
 
 Update the utilization label on a conversation. When there is no value provided, the system default label is applied
@@ -6512,7 +6422,6 @@ try {
 
 
 # **patchConversationsAftercallworkConversationIdParticipantCommunication**
-
 
 
 > [AfterCallWorkUpdate](AfterCallWorkUpdate) patchConversationsAftercallworkConversationIdParticipantCommunication(conversationId, participantId, communicationId, body)
@@ -6580,7 +6489,6 @@ try {
 # **patchConversationsCall**
 
 
-
 > [Conversation](Conversation) patchConversationsCall(conversationId, body)
 
 Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants
@@ -6640,7 +6548,6 @@ try {
 
 
 # **patchConversationsCallParticipant**
-
 
 
 > Void patchConversationsCallParticipant(conversationId, participantId, body)
@@ -6705,7 +6612,6 @@ null (empty response body)
 # **patchConversationsCallParticipantAttributes**
 
 
-
 > [ParticipantAttributes](ParticipantAttributes) patchConversationsCallParticipantAttributes(conversationId, participantId, body)
 
 Update the attributes on a conversation participant.
@@ -6766,7 +6672,6 @@ try {
 
 
 # **patchConversationsCallParticipantCommunication**
-
 
 
 > Empty patchConversationsCallParticipantCommunication(conversationId, participantId, communicationId, body)
@@ -6833,7 +6738,6 @@ try {
 # **patchConversationsCallParticipantConsult**
 
 
-
 > [ConsultTransferResponse](ConsultTransferResponse) patchConversationsCallParticipantConsult(conversationId, participantId, body)
 
 Change who can speak
@@ -6896,7 +6800,6 @@ try {
 # **patchConversationsCallback**
 
 
-
 > [Conversation](Conversation) patchConversationsCallback(conversationId, body)
 
 Update a conversation by disconnecting all of the participants
@@ -6956,7 +6859,6 @@ try {
 
 
 # **patchConversationsCallbackParticipant**
-
 
 
 > Void patchConversationsCallbackParticipant(conversationId, participantId, body)
@@ -7021,7 +6923,6 @@ null (empty response body)
 # **patchConversationsCallbackParticipantAttributes**
 
 
-
 > [ParticipantAttributes](ParticipantAttributes) patchConversationsCallbackParticipantAttributes(conversationId, participantId, body)
 
 Update the attributes on a conversation participant.
@@ -7082,7 +6983,6 @@ try {
 
 
 # **patchConversationsCallbackParticipantCommunication**
-
 
 
 > Empty patchConversationsCallbackParticipantCommunication(conversationId, participantId, communicationId, body)
@@ -7149,7 +7049,6 @@ try {
 # **patchConversationsCallbacks**
 
 
-
 > [PatchCallbackResponse](PatchCallbackResponse) patchConversationsCallbacks(body)
 
 Update a scheduled callback
@@ -7207,7 +7106,6 @@ try {
 
 
 # **patchConversationsChat**
-
 
 
 > [Conversation](Conversation) patchConversationsChat(conversationId, body)
@@ -7269,7 +7167,6 @@ try {
 
 
 # **patchConversationsChatParticipant**
-
 
 
 > Void patchConversationsChatParticipant(conversationId, participantId, body)
@@ -7334,7 +7231,6 @@ null (empty response body)
 # **patchConversationsChatParticipantAttributes**
 
 
-
 > [ParticipantAttributes](ParticipantAttributes) patchConversationsChatParticipantAttributes(conversationId, participantId, body)
 
 Update the attributes on a conversation participant.
@@ -7395,7 +7291,6 @@ try {
 
 
 # **patchConversationsChatParticipantCommunication**
-
 
 
 > Empty patchConversationsChatParticipantCommunication(conversationId, participantId, communicationId, body)
@@ -7461,7 +7356,9 @@ try {
 
 # **patchConversationsCobrowsesession**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [Conversation](Conversation) patchConversationsCobrowsesession(conversationId, body)
 
@@ -7525,7 +7422,9 @@ try {
 
 # **patchConversationsCobrowsesessionParticipant**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Void patchConversationsCobrowsesessionParticipant(conversationId, participantId, body)
 
@@ -7590,7 +7489,9 @@ null (empty response body)
 
 # **patchConversationsCobrowsesessionParticipantAttributes**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [ParticipantAttributes](ParticipantAttributes) patchConversationsCobrowsesessionParticipantAttributes(conversationId, participantId, body)
 
@@ -7655,7 +7556,9 @@ try {
 
 # **patchConversationsCobrowsesessionParticipantCommunication**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Empty patchConversationsCobrowsesessionParticipantCommunication(conversationId, participantId, communicationId, body)
 
@@ -7723,7 +7626,6 @@ try {
 # **patchConversationsEmail**
 
 
-
 > [Conversation](Conversation) patchConversationsEmail(conversationId, body)
 
 Update a conversation by disconnecting all of the participants
@@ -7783,7 +7685,6 @@ try {
 
 
 # **patchConversationsEmailMessagesDraft**
-
 
 
 > [EmailMessage](EmailMessage) patchConversationsEmailMessagesDraft(conversationId, autoFill, discard, body)
@@ -7850,7 +7751,6 @@ try {
 # **patchConversationsEmailParticipant**
 
 
-
 > Void patchConversationsEmailParticipant(conversationId, participantId, body)
 
 Update conversation participant
@@ -7913,7 +7813,6 @@ null (empty response body)
 # **patchConversationsEmailParticipantAttributes**
 
 
-
 > [ParticipantAttributes](ParticipantAttributes) patchConversationsEmailParticipantAttributes(conversationId, participantId, body)
 
 Update the attributes on a conversation participant.
@@ -7974,7 +7873,6 @@ try {
 
 
 # **patchConversationsEmailParticipantCommunication**
-
 
 
 > Empty patchConversationsEmailParticipantCommunication(conversationId, participantId, communicationId, body)
@@ -8041,7 +7939,6 @@ try {
 # **patchConversationsEmailParticipantParkingstate**
 
 
-
 > Void patchConversationsEmailParticipantParkingstate(conversationId, participantId, body)
 
 Update conversation by setting its parking state
@@ -8106,7 +8003,6 @@ null (empty response body)
 # **patchConversationsMessage**
 
 
-
 > [Conversation](Conversation) patchConversationsMessage(conversationId, body)
 
 Update a conversation by disconnecting all of the participants
@@ -8166,7 +8062,6 @@ try {
 
 
 # **patchConversationsMessageParticipant**
-
 
 
 > Void patchConversationsMessageParticipant(conversationId, participantId, body)
@@ -8231,7 +8126,6 @@ null (empty response body)
 # **patchConversationsMessageParticipantAttributes**
 
 
-
 > [ParticipantAttributes](ParticipantAttributes) patchConversationsMessageParticipantAttributes(conversationId, participantId, body)
 
 Update the attributes on a conversation participant.
@@ -8292,7 +8186,6 @@ try {
 
 
 # **patchConversationsMessageParticipantCommunication**
-
 
 
 > Empty patchConversationsMessageParticipantCommunication(conversationId, participantId, communicationId, body)
@@ -8359,7 +8252,6 @@ try {
 # **patchConversationsMessagingIntegrationsFacebookIntegrationId**
 
 
-
 > [FacebookIntegration](FacebookIntegration) patchConversationsMessagingIntegrationsFacebookIntegrationId(integrationId, body)
 
 Update Facebook messaging integration
@@ -8421,7 +8313,6 @@ try {
 # **patchConversationsMessagingIntegrationsInstagramIntegrationId**
 
 
-
 > [InstagramIntegration](InstagramIntegration) patchConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, body)
 
 Update Instagram messaging integration
@@ -8481,7 +8372,6 @@ try {
 
 
 # **patchConversationsMessagingIntegrationsOpenIntegrationId**
-
 
 
 > [OpenIntegration](OpenIntegration) patchConversationsMessagingIntegrationsOpenIntegrationId(integrationId, body)
@@ -8547,7 +8437,6 @@ try {
 # **patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId**
 
 
-
 > [WhatsAppIntegration](WhatsAppIntegration) patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId(integrationId, body)
 
 Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
@@ -8611,7 +8500,6 @@ try {
 # **patchConversationsMessagingIntegrationsWhatsappIntegrationId**
 
 
-
 > [WhatsAppIntegration](WhatsAppIntegration) patchConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, body)
 
 Update a WhatsApp messaging integration
@@ -8671,7 +8559,6 @@ try {
 
 
 # **patchConversationsMessagingSetting**
-
 
 
 > [MessagingSetting](MessagingSetting) patchConversationsMessagingSetting(messageSettingId, body)
@@ -8735,7 +8622,6 @@ try {
 # **patchConversationsMessagingSupportedcontentSupportedContentId**
 
 
-
 > [SupportedContent](SupportedContent) patchConversationsMessagingSupportedcontentSupportedContentId(supportedContentId, body)
 
 Update a supported content profile
@@ -8797,7 +8683,6 @@ try {
 # **patchConversationsSettings**
 
 
-
 > Void patchConversationsSettings(body)
 
 Update Settings
@@ -8854,7 +8739,6 @@ null (empty response body)
 
 
 # **postAnalyticsConversationDetailsProperties**
-
 
 
 > [PropertyIndexRequest](PropertyIndexRequest) postAnalyticsConversationDetailsProperties(conversationId, body)
@@ -8916,7 +8800,6 @@ try {
 
 
 # **postAnalyticsConversationsActivityQuery**
-
 
 
 > [ConversationActivityResponse](ConversationActivityResponse) postAnalyticsConversationsActivityQuery(body, pageSize, pageNumber)
@@ -8982,7 +8865,6 @@ try {
 # **postAnalyticsConversationsAggregatesJobs**
 
 
-
 > [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsConversationsAggregatesJobs(body)
 
 Query for conversation aggregates asynchronously
@@ -9044,7 +8926,6 @@ try {
 # **postAnalyticsConversationsAggregatesQuery**
 
 
-
 > [ConversationAggregateQueryResponse](ConversationAggregateQueryResponse) postAnalyticsConversationsAggregatesQuery(body)
 
 Query for conversation aggregates
@@ -9102,7 +8983,6 @@ try {
 
 
 # **postAnalyticsConversationsDetailsJobs**
-
 
 
 > [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsConversationsDetailsJobs(body)
@@ -9165,7 +9045,6 @@ try {
 # **postAnalyticsConversationsDetailsQuery**
 
 
-
 > [AnalyticsConversationQueryResponse](AnalyticsConversationQueryResponse) postAnalyticsConversationsDetailsQuery(body)
 
 Query for conversation details
@@ -9224,7 +9103,6 @@ try {
 
 
 # **postConversationAssign**
-
 
 
 > String postConversationAssign(conversationId, body)
@@ -9297,7 +9175,6 @@ try {
 # **postConversationBarge**
 
 
-
 > Void postConversationBarge(conversationId)
 
 Barge a conversation creating a barged in conference of connected participants.
@@ -9354,7 +9231,6 @@ null (empty response body)
 
 
 # **postConversationCobrowse**
-
 
 
 > [CobrowseWebMessagingSession](CobrowseWebMessagingSession) postConversationCobrowse(conversationId)
@@ -9417,7 +9293,6 @@ try {
 # **postConversationDisconnect**
 
 
-
 > String postConversationDisconnect(conversationId)
 
 Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.
@@ -9475,7 +9350,6 @@ try {
 
 
 # **postConversationParticipantCallbacks**
-
 
 
 > Void postConversationParticipantCallbacks(conversationId, participantId, body)
@@ -9540,7 +9414,6 @@ null (empty response body)
 # **postConversationParticipantDigits**
 
 
-
 > Void postConversationParticipantDigits(conversationId, participantId, body)
 
 Sends DTMF to the participant
@@ -9600,7 +9473,6 @@ null (empty response body)
 
 
 # **postConversationParticipantReplace**
-
 
 
 > Void postConversationParticipantReplace(conversationId, participantId, body)
@@ -9663,7 +9535,6 @@ null (empty response body)
 
 
 # **postConversationParticipantReplaceAgent**
-
 
 
 > Void postConversationParticipantReplaceAgent(conversationId, participantId, body)
@@ -9729,7 +9600,6 @@ null (empty response body)
 # **postConversationParticipantReplaceExternal**
 
 
-
 > Void postConversationParticipantReplaceExternal(conversationId, participantId, body)
 
 Replace this participant with the an external contact
@@ -9791,7 +9661,6 @@ null (empty response body)
 
 
 # **postConversationParticipantReplaceQueue**
-
 
 
 > Void postConversationParticipantReplaceQueue(conversationId, participantId, body)
@@ -9857,7 +9726,6 @@ null (empty response body)
 # **postConversationParticipantSecureivrsessions**
 
 
-
 > [SecureSession](SecureSession) postConversationParticipantSecureivrsessions(conversationId, participantId, body)
 
 Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
@@ -9918,7 +9786,6 @@ try {
 
 
 # **postConversationSuggestionEngagement**
-
 
 
 > [SuggestionEngagement](SuggestionEngagement) postConversationSuggestionEngagement(conversationId, suggestionId, body)
@@ -9984,7 +9851,6 @@ try {
 # **postConversationSuggestionsFeedback**
 
 
-
 > Void postConversationSuggestionsFeedback(conversationId, body)
 
 Suggestion feedback.
@@ -10043,7 +9909,6 @@ null (empty response body)
 
 
 # **postConversationSummaryFeedback**
-
 
 
 > Void postConversationSummaryFeedback(conversationId, summaryId, body)
@@ -10108,7 +9973,6 @@ null (empty response body)
 # **postConversationsCall**
 
 
-
 > [Conversation](Conversation) postConversationsCall(conversationId, body)
 
 Place a new call as part of a callback conversation.
@@ -10167,7 +10031,6 @@ try {
 
 
 # **postConversationsCallParticipantBarge**
-
 
 
 > Void postConversationsCallParticipantBarge(conversationId, participantId)
@@ -10230,7 +10093,6 @@ null (empty response body)
 # **postConversationsCallParticipantCoach**
 
 
-
 > Void postConversationsCallParticipantCoach(conversationId, participantId)
 
 Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.
@@ -10289,7 +10151,6 @@ null (empty response body)
 
 
 # **postConversationsCallParticipantCommunicationWrapup**
-
 
 
 > Void postConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)
@@ -10356,7 +10217,6 @@ null (empty response body)
 # **postConversationsCallParticipantConsult**
 
 
-
 > [ConsultTransferResponse](ConsultTransferResponse) postConversationsCallParticipantConsult(conversationId, participantId, body)
 
 Initiate and update consult transfer
@@ -10418,7 +10278,6 @@ try {
 
 
 # **postConversationsCallParticipantConsultAgent**
-
 
 
 > [ConsultTransferResponse](ConsultTransferResponse) postConversationsCallParticipantConsultAgent(conversationId, participantId, body)
@@ -10485,7 +10344,6 @@ try {
 # **postConversationsCallParticipantConsultExternal**
 
 
-
 > [ConsultTransferResponse](ConsultTransferResponse) postConversationsCallParticipantConsultExternal(conversationId, participantId, body)
 
 Initiate a consult transfer to an external contact
@@ -10548,7 +10406,6 @@ try {
 
 
 # **postConversationsCallParticipantConsultQueue**
-
 
 
 > [ConsultTransferResponse](ConsultTransferResponse) postConversationsCallParticipantConsultQueue(conversationId, participantId, body)
@@ -10615,7 +10472,6 @@ try {
 # **postConversationsCallParticipantMonitor**
 
 
-
 > Void postConversationsCallParticipantMonitor(conversationId, participantId)
 
 Listen in on the conversation from the point of view of a given participant.
@@ -10674,7 +10530,6 @@ null (empty response body)
 
 
 # **postConversationsCallParticipantReplace**
-
 
 
 > Void postConversationsCallParticipantReplace(conversationId, participantId, body)
@@ -10739,7 +10594,6 @@ null (empty response body)
 # **postConversationsCallParticipants**
 
 
-
 > [Conversation](Conversation) postConversationsCallParticipants(conversationId, body)
 
 Add participants to a conversation
@@ -10798,7 +10652,6 @@ try {
 
 
 # **postConversationsCallbackParticipantCommunicationWrapup**
-
 
 
 > Void postConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)
@@ -10865,7 +10718,6 @@ null (empty response body)
 # **postConversationsCallbackParticipantReplace**
 
 
-
 > Void postConversationsCallbackParticipantReplace(conversationId, participantId, body)
 
 Replace this participant with the specified user and/or address
@@ -10928,7 +10780,6 @@ null (empty response body)
 # **postConversationsCallbacks**
 
 
-
 > [CreateCallbackResponse](CreateCallbackResponse) postConversationsCallbacks(body)
 
 Create a Callback
@@ -10988,7 +10839,6 @@ try {
 # **postConversationsCallbacksBulkDisconnect**
 
 
-
 > Void postConversationsCallbacksBulkDisconnect(body)
 
 Disconnect multiple scheduled callbacks
@@ -11045,7 +10895,6 @@ null (empty response body)
 
 
 # **postConversationsCallbacksBulkUpdate**
-
 
 
 > [BulkCallbackPatchResponse](BulkCallbackPatchResponse) postConversationsCallbacksBulkUpdate(body)
@@ -11107,7 +10956,6 @@ try {
 # **postConversationsCalls**
 
 
-
 > [CreateCallResponse](CreateCallResponse) postConversationsCalls(body)
 
 Create a call conversation
@@ -11165,7 +11013,6 @@ try {
 
 
 # **postConversationsChatCommunicationMessages**
-
 
 
 > [WebChatMessage](WebChatMessage) postConversationsChatCommunicationMessages(conversationId, communicationId, body)
@@ -11230,7 +11077,6 @@ try {
 # **postConversationsChatCommunicationTyping**
 
 
-
 > [WebChatTyping](WebChatTyping) postConversationsChatCommunicationTyping(conversationId, communicationId)
 
 Send a typing-indicator on behalf of a communication in a chat conversation.
@@ -11289,7 +11135,6 @@ try {
 
 
 # **postConversationsChatParticipantCommunicationWrapup**
-
 
 
 > Void postConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)
@@ -11356,7 +11201,6 @@ null (empty response body)
 # **postConversationsChatParticipantReplace**
 
 
-
 > Void postConversationsChatParticipantReplace(conversationId, participantId, body)
 
 Replace this participant with the specified user and/or address
@@ -11419,7 +11263,6 @@ null (empty response body)
 # **postConversationsChats**
 
 
-
 > [ChatConversation](ChatConversation) postConversationsChats(body)
 
 Create a web chat conversation
@@ -11478,7 +11321,9 @@ try {
 
 # **postConversationsCobrowsesessionParticipantCommunicationWrapup**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Void postConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)
 
@@ -11545,7 +11390,9 @@ null (empty response body)
 
 # **postConversationsCobrowsesessionParticipantReplace**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Void postConversationsCobrowsesessionParticipantReplace(conversationId, participantId, body)
 
@@ -11611,7 +11458,6 @@ null (empty response body)
 # **postConversationsEmailInboundmessages**
 
 
-
 > [EmailConversation](EmailConversation) postConversationsEmailInboundmessages(conversationId, body)
 
 Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
@@ -11670,7 +11516,6 @@ try {
 
 
 # **postConversationsEmailMessages**
-
 
 
 > [EmailMessageReply](EmailMessageReply) postConversationsEmailMessages(conversationId, body)
@@ -11733,7 +11578,6 @@ try {
 # **postConversationsEmailMessagesDraftAttachmentsCopy**
 
 
-
 > [EmailMessage](EmailMessage) postConversationsEmailMessagesDraftAttachmentsCopy(conversationId, body)
 
 Copy attachments from an email message to the current draft.
@@ -11792,7 +11636,6 @@ try {
 
 
 # **postConversationsEmailParticipantCommunicationWrapup**
-
 
 
 > Void postConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)
@@ -11859,7 +11702,6 @@ null (empty response body)
 # **postConversationsEmailParticipantReplace**
 
 
-
 > Void postConversationsEmailParticipantReplace(conversationId, participantId, body)
 
 Replace this participant with the specified user and/or address
@@ -11922,7 +11764,6 @@ null (empty response body)
 # **postConversationsEmailReconnect**
 
 
-
 > Void postConversationsEmailReconnect(conversationId)
 
 Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
@@ -11979,7 +11820,6 @@ null (empty response body)
 
 
 # **postConversationsEmails**
-
 
 
 > [EmailConversation](EmailConversation) postConversationsEmails(body)
@@ -12043,7 +11883,6 @@ try {
 # **postConversationsEmailsAgentless**
 
 
-
 > [AgentlessEmailSendResponseDto](AgentlessEmailSendResponseDto) postConversationsEmailsAgentless(body)
 
 Create an email conversation, per API
@@ -12104,7 +11943,6 @@ try {
 # **postConversationsFaxes**
 
 
-
 > [FaxSendResponse](FaxSendResponse) postConversationsFaxes(body)
 
 Create Fax Conversation
@@ -12161,7 +11999,6 @@ try {
 
 
 # **postConversationsKeyconfigurations**
-
 
 
 > [ConversationEncryptionConfiguration](ConversationEncryptionConfiguration) postConversationsKeyconfigurations(body)
@@ -12223,7 +12060,6 @@ try {
 # **postConversationsKeyconfigurationsValidate**
 
 
-
 > [ConversationEncryptionConfiguration](ConversationEncryptionConfiguration) postConversationsKeyconfigurationsValidate(body)
 
 Validate encryption key configurations without saving it
@@ -12281,7 +12117,6 @@ try {
 
 
 # **postConversationsMessageCommunicationMessages**
-
 
 
 > [MessageData](MessageData) postConversationsMessageCommunicationMessages(conversationId, communicationId, body, useNormalizedMessage)
@@ -12352,7 +12187,6 @@ try {
 # **postConversationsMessageCommunicationMessagesMedia**
 
 
-
 > [MessageMediaData](MessageMediaData) postConversationsMessageCommunicationMessagesMedia(conversationId, communicationId)
 
 Create media
@@ -12416,7 +12250,6 @@ try {
 
 
 # **postConversationsMessageCommunicationTyping**
-
 
 
 > Void postConversationsMessageCommunicationTyping(conversationId, communicationId, body)
@@ -12484,7 +12317,6 @@ null (empty response body)
 # **postConversationsMessageInboundOpenEvent**
 
 
-
 > [OpenEventNormalizedMessage](OpenEventNormalizedMessage) postConversationsMessageInboundOpenEvent(integrationId, body)
 
 Send an inbound Open Event Message
@@ -12546,7 +12378,6 @@ try {
 
 
 # **postConversationsMessageInboundOpenMessage**
-
 
 
 > [OpenMessageNormalizedMessage](OpenMessageNormalizedMessage) postConversationsMessageInboundOpenMessage(integrationId, body)
@@ -12612,7 +12443,6 @@ try {
 # **postConversationsMessageInboundOpenReceipt**
 
 
-
 > [OpenReceiptNormalizedMessage](OpenReceiptNormalizedMessage) postConversationsMessageInboundOpenReceipt(integrationId, body)
 
 Send an inbound Open Receipt Message
@@ -12674,7 +12504,6 @@ try {
 
 
 # **postConversationsMessageMessagesBulk**
-
 
 
 > [TextMessageListing](TextMessageListing) postConversationsMessageMessagesBulk(conversationId, useNormalizedMessage, body)
@@ -12743,7 +12572,6 @@ try {
 # **postConversationsMessageParticipantCommunicationWrapup**
 
 
-
 > Void postConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)
 
 Apply wrap-up for this conversation communication
@@ -12808,7 +12636,6 @@ null (empty response body)
 # **postConversationsMessageParticipantMonitor**
 
 
-
 > Void postConversationsMessageParticipantMonitor(conversationId, participantId)
 
 Listen in on the conversation from the point of view of a given participant.
@@ -12867,7 +12694,6 @@ null (empty response body)
 
 
 # **postConversationsMessageParticipantReplace**
-
 
 
 > Void postConversationsMessageParticipantReplace(conversationId, participantId, body)
@@ -12932,7 +12758,6 @@ null (empty response body)
 # **postConversationsMessages**
 
 
-
 > [CreateOutboundMessagingConversationResponse](CreateOutboundMessagingConversationResponse) postConversationsMessages(body)
 
 Create an outbound messaging conversation.
@@ -12992,7 +12817,6 @@ try {
 
 
 # **postConversationsMessagesAgentless**
-
 
 
 > [SendAgentlessOutboundMessageResponse](SendAgentlessOutboundMessageResponse) postConversationsMessagesAgentless(body)
@@ -13055,7 +12879,9 @@ try {
 
 # **postConversationsMessagesInboundOpen**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [OpenNormalizedMessage](OpenNormalizedMessage) postConversationsMessagesInboundOpen(body)
 
@@ -13118,7 +12944,6 @@ try {
 # **postConversationsMessagingIntegrationsFacebook**
 
 
-
 > [FacebookIntegration](FacebookIntegration) postConversationsMessagingIntegrationsFacebook(body)
 
 Create a Facebook Integration
@@ -13178,7 +13003,6 @@ try {
 # **postConversationsMessagingIntegrationsInstagram**
 
 
-
 > [InstagramIntegration](InstagramIntegration) postConversationsMessagingIntegrationsInstagram(body)
 
 Create Instagram Integration
@@ -13236,7 +13060,6 @@ try {
 
 
 # **postConversationsMessagingIntegrationsOpen**
-
 
 
 > [OpenIntegration](OpenIntegration) postConversationsMessagingIntegrationsOpen(body)
@@ -13299,7 +13122,9 @@ try {
 
 # **postConversationsMessagingIntegrationsWhatsapp**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [WhatsAppIntegration](WhatsAppIntegration) postConversationsMessagingIntegrationsWhatsapp(body)
 
@@ -13360,7 +13185,6 @@ try {
 
 
 # **postConversationsMessagingIntegrationsWhatsappEmbeddedsignup**
-
 
 
 > [WhatsAppIntegration](WhatsAppIntegration) postConversationsMessagingIntegrationsWhatsappEmbeddedsignup(body)
@@ -13424,7 +13248,6 @@ try {
 # **postConversationsMessagingSettings**
 
 
-
 > [MessagingSetting](MessagingSetting) postConversationsMessagingSettings(body)
 
 Create a messaging setting
@@ -13482,7 +13305,6 @@ try {
 
 
 # **postConversationsMessagingSupportedcontent**
-
 
 
 > [SupportedContent](SupportedContent) postConversationsMessagingSupportedcontent(body)
@@ -13544,7 +13366,6 @@ try {
 # **postConversationsParticipantsAttributesSearch**
 
 
-
 > [JsonCursorSearchResponse](JsonCursorSearchResponse) postConversationsParticipantsAttributesSearch(body)
 
 Search conversations
@@ -13603,7 +13424,9 @@ try {
 
 # **postConversationsScreenshareParticipantCommunicationWrapup**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Void postConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)
 
@@ -13671,7 +13494,6 @@ null (empty response body)
 # **postConversationsSocialParticipantCommunicationWrapup**
 
 
-
 > Void postConversationsSocialParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)
 
 Apply wrap-up for this conversation communication
@@ -13734,7 +13556,6 @@ null (empty response body)
 
 
 # **postConversationsVideoParticipantCommunicationWrapup**
-
 
 
 > Void postConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, body)
@@ -13801,7 +13622,6 @@ null (empty response body)
 # **postConversationsVideosMeetings**
 
 
-
 > [MeetingIdRecord](MeetingIdRecord) postConversationsVideosMeetings(body)
 
 Generate a meetingId for a given conferenceId
@@ -13863,7 +13683,6 @@ try {
 # **putConversationParticipantFlaggedreason**
 
 
-
 > Void putConversationParticipantFlaggedreason(conversationId, participantId)
 
 Set flagged reason on conversation participant to indicate bad conversation quality.
@@ -13921,7 +13740,6 @@ null (empty response body)
 
 
 # **putConversationSecureattributes**
-
 
 
 > String putConversationSecureattributes(conversationId, body)
@@ -13985,7 +13803,6 @@ try {
 # **putConversationTags**
 
 
-
 > String putConversationTags(conversationId, body)
 
 Update the tags on a conversation.
@@ -14045,7 +13862,6 @@ try {
 
 
 # **putConversationsCallParticipantCommunicationUuidata**
-
 
 
 > Empty putConversationsCallParticipantCommunicationUuidata(conversationId, participantId, communicationId, body)
@@ -14112,7 +13928,6 @@ try {
 # **putConversationsCallRecordingstate**
 
 
-
 > String putConversationsCallRecordingstate(conversationId, body)
 
 Update a conversation by setting its recording state
@@ -14172,7 +13987,6 @@ try {
 
 
 # **putConversationsCallbackRecordingstate**
-
 
 
 > String putConversationsCallbackRecordingstate(conversationId, body)
@@ -14236,7 +14050,6 @@ try {
 # **putConversationsChatRecordingstate**
 
 
-
 > String putConversationsChatRecordingstate(conversationId, body)
 
 Update a conversation by setting its recording state
@@ -14296,7 +14109,6 @@ try {
 
 
 # **putConversationsCobrowsesessionRecordingstate**
-
 
 
 > String putConversationsCobrowsesessionRecordingstate(conversationId, body)
@@ -14360,7 +14172,6 @@ try {
 # **putConversationsEmailMessagesDraft**
 
 
-
 > [EmailMessage](EmailMessage) putConversationsEmailMessagesDraft(conversationId, body)
 
 Update conversation draft reply
@@ -14419,7 +14230,6 @@ try {
 
 
 # **putConversationsEmailRecordingstate**
-
 
 
 > String putConversationsEmailRecordingstate(conversationId, body)
@@ -14483,7 +14293,6 @@ try {
 # **putConversationsKeyconfiguration**
 
 
-
 > [ConversationEncryptionConfiguration](ConversationEncryptionConfiguration) putConversationsKeyconfiguration(keyconfigurationsId, body)
 
 Update the encryption key configurations
@@ -14543,7 +14352,6 @@ try {
 
 
 # **putConversationsMessageRecordingstate**
-
 
 
 > String putConversationsMessageRecordingstate(conversationId, body)
@@ -14607,7 +14415,6 @@ try {
 # **putConversationsMessagingSettingsDefault**
 
 
-
 > [MessagingSetting](MessagingSetting) putConversationsMessagingSettingsDefault(body)
 
 Set the organization's default setting that may be applied to to integrations without settings
@@ -14667,7 +14474,6 @@ try {
 
 
 # **putConversationsMessagingSupportedcontentDefault**
-
 
 
 > [SupportedContent](SupportedContent) putConversationsMessagingSupportedcontentDefault(body)
@@ -14731,7 +14537,6 @@ try {
 # **putConversationsMessagingThreadingtimeline**
 
 
-
 > [ConversationThreadingWindow](ConversationThreadingWindow) putConversationsMessagingThreadingtimeline(body)
 
 Update conversation threading window timeline for each messaging type
@@ -14792,7 +14597,9 @@ try {
 
 # **putConversationsScreenshareRecordingstate**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > String putConversationsScreenshareRecordingstate(conversationId, body)
 
@@ -14857,7 +14664,6 @@ try {
 # **putConversationsSocialRecordingstate**
 
 
-
 > String putConversationsSocialRecordingstate(conversationId, body)
 
 Update a conversation by setting its recording state
@@ -14919,7 +14725,6 @@ try {
 # **putConversationsVideoRecordingstate**
 
 
-
 > String putConversationsVideoRecordingstate(conversationId, body)
 
 Update a conversation by setting its recording state
@@ -14978,4 +14783,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -12,9 +12,8 @@
 | **activities** | [**List&lt;UserScheduleActivity&gt;**](UserScheduleActivity) | List of activities in this shift |  [optional] |
 | **delete** | **Boolean** | If marked true for updating this schedule shift, it will be deleted |  [optional] |
 | **manuallyEdited** | **Boolean** | Whether the shift was set as manually edited |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

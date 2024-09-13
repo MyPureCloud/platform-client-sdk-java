@@ -10,9 +10,8 @@
 | **startIndex** | **Long** | The 1-based index of the first result returned by this request. Add this to \"itemsPerPage\" when requesting the next page of results. |  [optional] |
 | **itemsPerPage** | **Long** | The number of resources returned per page. |  [optional] |
 | **resources** | [**List&lt;ScimConfigResourceType&gt;**](ScimConfigResourceType) | The list of requested resources. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -9,9 +9,8 @@
 | **type** | **String** | The type of the filter, DATE or STRING. |  |
 | **operator** | **String** | The operation that the filter performs. |  |
 | **values** | **List&lt;String&gt;** | The values to make the filter comparison against. |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -10,7 +10,6 @@
 | **searchId** | **String** | The search that surfaced the viewed document. |  [optional] |
 | **queryType** | [**QueryTypeEnum**](#Enum--QueryTypeEnum) | The type of the query that surfaced the document. |  [optional] |
 | **surfacingMethod** | [**SurfacingMethodEnum**](#Enum--SurfacingMethodEnum) | The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: QueryTypeEnum
@@ -25,7 +24,6 @@
 | MANUALSEARCH | &quot;ManualSearch&quot; | 
 | RECOMMENDATION | &quot;Recommendation&quot; | 
 | SUGGESTION | &quot;Suggestion&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: SurfacingMethodEnum
@@ -37,9 +35,8 @@
 | ARTICLE | &quot;Article&quot; | 
 | SNIPPET | &quot;Snippet&quot; | 
 | HIGHLIGHT | &quot;Highlight&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

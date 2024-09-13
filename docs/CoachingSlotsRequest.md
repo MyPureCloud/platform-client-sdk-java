@@ -10,9 +10,8 @@
 | **attendeeIds** | **List&lt;String&gt;** | List of attendees to determine coaching appointment slots |  |
 | **facilitatorIds** | **List&lt;String&gt;** | List of facilitators to determine coaching appointment slots |  [optional] |
 | **interruptibleAppointmentIds** | **List&lt;String&gt;** | List of appointment ids to exclude from consideration when determining blocked slots |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

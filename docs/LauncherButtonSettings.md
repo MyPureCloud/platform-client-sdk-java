@@ -6,7 +6,6 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **visibility** | [**VisibilityEnum**](#Enum--VisibilityEnum) | The visibility settings for the button |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: VisibilityEnum
@@ -17,9 +16,8 @@
 | ON | &quot;On&quot; | 
 | OFF | &quot;Off&quot; | 
 | ONDEMAND | &quot;OnDemand&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

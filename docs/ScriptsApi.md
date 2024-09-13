@@ -24,7 +24,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **getScript**
 
 
-
 > [Script](Script) getScript(scriptId)
 
 Get a script
@@ -82,7 +81,6 @@ try {
 
 
 # **getScriptPage**
-
 
 
 > [Page](Page) getScriptPage(scriptId, pageId, scriptDataVersion)
@@ -148,7 +146,6 @@ try {
 # **getScriptPages**
 
 
-
 > [List&lt;Page&gt;](Page) getScriptPages(scriptId, scriptDataVersion)
 
 Get the list of pages
@@ -208,7 +205,6 @@ try {
 
 
 # **getScripts**
-
 
 
 > [ScriptEntityListing](ScriptEntityListing) getScripts(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder, scriptDataVersion, divisionIds)
@@ -288,7 +284,6 @@ try {
 # **getScriptsDivisionviews**
 
 
-
 > [ScriptEntityListing](ScriptEntityListing) getScriptsDivisionviews(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder, scriptDataVersion, divisionIds)
 
 Get the metadata for a list of scripts
@@ -366,7 +361,6 @@ try {
 # **getScriptsPublished**
 
 
-
 > [ScriptEntityListing](ScriptEntityListing) getScriptsPublished(pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion, divisionIds)
 
 Get the published scripts.
@@ -438,7 +432,6 @@ try {
 
 
 # **getScriptsPublishedDivisionviews**
-
 
 
 > [ScriptEntityListing](ScriptEntityListing) getScriptsPublishedDivisionviews(pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion, divisionIds)
@@ -514,7 +507,6 @@ try {
 # **getScriptsPublishedScriptId**
 
 
-
 > [Script](Script) getScriptsPublishedScriptId(scriptId, scriptDataVersion)
 
 Get the published script.
@@ -574,7 +566,6 @@ try {
 
 
 # **getScriptsPublishedScriptIdPage**
-
 
 
 > [Page](Page) getScriptsPublishedScriptIdPage(scriptId, pageId, scriptDataVersion)
@@ -640,7 +631,6 @@ try {
 # **getScriptsPublishedScriptIdPages**
 
 
-
 > [List&lt;Page&gt;](Page) getScriptsPublishedScriptIdPages(scriptId, scriptDataVersion)
 
 Get the list of published pages
@@ -700,7 +690,6 @@ try {
 
 
 # **getScriptsPublishedScriptIdVariables**
-
 
 
 > Object getScriptsPublishedScriptIdVariables(scriptId, input, output, type, scriptDataVersion)
@@ -770,7 +759,6 @@ try {
 # **getScriptsUploadStatus**
 
 
-
 > [ImportScriptStatusResponse](ImportScriptStatusResponse) getScriptsUploadStatus(uploadId, longPoll)
 
 Get the upload status of an imported script
@@ -830,7 +818,6 @@ try {
 
 
 # **postScriptExport**
-
 
 
 > [ExportScriptResponse](ExportScriptResponse) postScriptExport(scriptId, body)
@@ -894,7 +881,6 @@ try {
 # **postScriptsPublished**
 
 
-
 > [Script](Script) postScriptsPublished(scriptDataVersion, body)
 
 Publish a script.
@@ -953,4 +939,4 @@ try {
 [**Script**](Script)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

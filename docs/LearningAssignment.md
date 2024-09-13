@@ -30,7 +30,6 @@
 | **user** | [**UserReference**](UserReference) | The user to whom the assignment is assigned |  [optional] |
 | **assessmentForm** | [**AssessmentForm**](AssessmentForm) | The assessment form associated with this assignment |  [optional] |
 | **lengthInMinutes** | **Integer** | The length in minutes of the assignment |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -44,9 +43,8 @@
 | DELETED | &quot;Deleted&quot; | 
 | NOTCOMPLETED | &quot;NotCompleted&quot; | 
 | INVALIDSCHEDULE | &quot;InvalidSchedule&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **interval** | [**Date**](Date) | The start date-time for this headcount interval in ISO-8601 format, must be within the 8 day schedule |  |
 | **value** | **Double** | Headcount value for this interval |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

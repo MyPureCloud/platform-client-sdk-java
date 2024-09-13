@@ -8,7 +8,6 @@
 | **dateWorkday** | [**LocalDate**](LocalDate) | the workday date of this attendance status. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
 | **attendanceStatusType** | [**AttendanceStatusTypeEnum**](#Enum--AttendanceStatusTypeEnum) | the attendance status |  [optional] |
 | **hasEvaluation** | [**HasEvaluationEnum**](#Enum--HasEvaluationEnum) | the quality evaluation score status |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: AttendanceStatusTypeEnum
@@ -21,7 +20,6 @@
 | ABSENT | &quot;Absent&quot; | 
 | PRESENT | &quot;Present&quot; | 
 | NOSCHEDULE | &quot;NoSchedule&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: HasEvaluationEnum
@@ -31,9 +29,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | HASQUALITYEVALUATION | &quot;HasQualityEvaluation&quot; | 
 | NOQUALITYEVALUATION | &quot;NoQualityEvaluation&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

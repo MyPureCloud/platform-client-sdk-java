@@ -12,7 +12,6 @@
 | **modifiedBy** | [**TransferResponseModifiedBy**](TransferResponseModifiedBy) | The user or entity that modified the command. |  [optional] |
 | **destination** | [**TransferDestination**](TransferDestination) | The destination of the command. |  [optional] |
 | **transferType** | [**TransferTypeEnum**](#Enum--TransferTypeEnum) | The type of transfer to perform. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -27,7 +26,6 @@
 | FAILED | &quot;Failed&quot; | 
 | TIMEOUT | &quot;Timeout&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: TransferTypeEnum
@@ -37,9 +35,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ATTENDED | &quot;Attended&quot; | 
 | UNATTENDED | &quot;Unattended&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

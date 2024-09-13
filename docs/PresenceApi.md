@@ -37,7 +37,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deletePresenceDefinition0**
 
 
-
 > Void deletePresenceDefinition0(definitionId)
 
 Delete a Presence Definition
@@ -95,7 +94,6 @@ null (empty response body)
 
 
 # **deletePresenceSource**
-
 
 
 > Void deletePresenceSource(sourceId)
@@ -156,7 +154,9 @@ null (empty response body)
 
 # **deletePresencedefinition**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Void deletePresencedefinition(presenceId)
 
@@ -214,7 +214,6 @@ null (empty response body)
 
 
 # **getPresenceDefinition0**
-
 
 
 > [OrganizationPresenceDefinition](OrganizationPresenceDefinition) getPresenceDefinition0(definitionId, localeCode)
@@ -276,7 +275,6 @@ try {
 
 
 # **getPresenceDefinitions0**
-
 
 
 > [OrganizationPresenceDefinitionEntityListing](OrganizationPresenceDefinitionEntityListing) getPresenceDefinitions0(deactivated, divisionId, localeCode)
@@ -342,7 +340,6 @@ try {
 # **getPresenceSettings**
 
 
-
 > [PresenceSettings](PresenceSettings) getPresenceSettings()
 
 Get the presence settings
@@ -396,7 +393,6 @@ This endpoint does not require any parameters.
 
 
 # **getPresenceSource**
-
 
 
 > [Source](Source) getPresenceSource(sourceId)
@@ -458,7 +454,6 @@ try {
 # **getPresenceSources**
 
 
-
 > [SourceEntityListing](SourceEntityListing) getPresenceSources(deactivated)
 
 Get a list of Presence Sources
@@ -516,7 +511,6 @@ try {
 
 
 # **getPresenceUserPrimarysource**
-
 
 
 > [UserPrimarySource](UserPrimarySource) getPresenceUserPrimarysource(userId)
@@ -577,7 +571,9 @@ try {
 
 # **getPresencedefinition**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [OrganizationPresence](OrganizationPresence) getPresencedefinition(presenceId, localeCode)
 
@@ -639,7 +635,9 @@ try {
 
 # **getPresencedefinitions**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [OrganizationPresenceEntityListing](OrganizationPresenceEntityListing) getPresencedefinitions(pageNumber, pageSize, deleted, localeCode)
 
@@ -705,7 +703,6 @@ try {
 # **getSystempresences**
 
 
-
 > [List&lt;SystemPresence&gt;](SystemPresence) getSystempresences()
 
 Get the list of SystemPresences
@@ -758,7 +755,6 @@ This endpoint does not require any parameters.
 
 
 # **getUserPresence**
-
 
 
 > [UserPresence](UserPresence) getUserPresence(userId, sourceId)
@@ -823,7 +819,6 @@ try {
 # **getUserPresencesPurecloud**
 
 
-
 > [UserPresence](UserPresence) getUserPresencesPurecloud(userId)
 
 Get a user's Genesys Cloud presence.
@@ -882,7 +877,6 @@ try {
 
 
 # **getUsersPresenceBulk**
-
 
 
 > [List&lt;UcUserPresence&gt;](UcUserPresence) getUsersPresenceBulk(sourceId, id)
@@ -945,7 +939,6 @@ try {
 # **getUsersPresencesPurecloudBulk**
 
 
-
 > [List&lt;UcUserPresence&gt;](UcUserPresence) getUsersPresencesPurecloudBulk(id)
 
 Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source
@@ -1002,7 +995,6 @@ try {
 
 
 # **patchUserPresence**
-
 
 
 > [UserPresence](UserPresence) patchUserPresence(userId, sourceId, body)
@@ -1069,7 +1061,6 @@ try {
 # **patchUserPresencesPurecloud**
 
 
-
 > [UserPresence](UserPresence) patchUserPresencesPurecloud(userId, body)
 
 Patch a Genesys Cloud user's presence
@@ -1132,7 +1123,6 @@ try {
 # **postPresenceDefinitions0**
 
 
-
 > [OrganizationPresenceDefinition](OrganizationPresenceDefinition) postPresenceDefinitions0(body)
 
 Create a Presence Definition
@@ -1190,7 +1180,6 @@ try {
 
 
 # **postPresenceSources**
-
 
 
 > [Source](Source) postPresenceSources(body)
@@ -1251,7 +1240,9 @@ try {
 
 # **postPresencedefinitions**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [OrganizationPresence](OrganizationPresence) postPresencedefinitions(body)
 
@@ -1310,7 +1301,6 @@ try {
 
 
 # **putPresenceDefinition0**
-
 
 
 > [OrganizationPresenceDefinition](OrganizationPresenceDefinition) putPresenceDefinition0(definitionId, body)
@@ -1374,7 +1364,6 @@ try {
 # **putPresenceSettings**
 
 
-
 > [PresenceSettings](PresenceSettings) putPresenceSettings(body)
 
 Update the presence settings
@@ -1432,7 +1421,6 @@ try {
 
 
 # **putPresenceSource**
-
 
 
 > [Source](Source) putPresenceSource(sourceId, body)
@@ -1496,7 +1484,6 @@ try {
 # **putPresenceUserPrimarysource**
 
 
-
 > [UserPrimarySource](UserPrimarySource) putPresenceUserPrimarysource(userId, body)
 
 Update a user's Primary Presence Source
@@ -1557,7 +1544,9 @@ try {
 
 # **putPresencedefinition**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [OrganizationPresence](OrganizationPresence) putPresencedefinition(presenceId, body)
 
@@ -1620,7 +1609,6 @@ try {
 # **putUsersPresencesBulk**
 
 
-
 > [List&lt;UserPresence&gt;](UserPresence) putUsersPresencesBulk(body)
 
 Update bulk user Presences
@@ -1677,4 +1665,4 @@ try {
 [**List&lt;UserPresence&gt;**](UserPresence)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

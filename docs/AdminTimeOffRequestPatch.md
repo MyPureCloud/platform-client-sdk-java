@@ -15,7 +15,6 @@
 | **durationMinutes** | **List&lt;Integer&gt;** | Daily durations for each day of this time off request in minutes |  [optional] |
 | **payableMinutes** | **List&lt;Integer&gt;** | Payable minutes for each day of this time off request |  [optional] |
 | **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Version metadata for the time off request |  |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -26,9 +25,8 @@
 | PENDING | &quot;PENDING&quot; | 
 | APPROVED | &quot;APPROVED&quot; | 
 | DENIED | &quot;DENIED&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -20,9 +20,8 @@
 | **uuiData** | **String** | User to User Information (UUI) data managed by SIP session application. |  [optional] |
 | **externalContactId** | **String** | The external contact with which to associate the call. |  [optional] |
 | **label** | **String** | An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

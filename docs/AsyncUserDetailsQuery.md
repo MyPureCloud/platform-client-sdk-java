@@ -11,7 +11,6 @@
 | **routingStatusFilters** | [**List&lt;RoutingStatusDetailQueryFilter&gt;**](RoutingStatusDetailQueryFilter) | Filters that target agent routing status-level data |  [optional] |
 | **order** | [**OrderEnum**](#Enum--OrderEnum) | Sort the result set in ascending/descending order. Default is ascending |  [optional] |
 | **limit** | **Integer** | Specify number of results to be returned |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: OrderEnum
@@ -22,9 +21,8 @@
 | ASC | &quot;asc&quot; | 
 | DESC | &quot;desc&quot; | 
 | UNORDERED | &quot;unordered&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

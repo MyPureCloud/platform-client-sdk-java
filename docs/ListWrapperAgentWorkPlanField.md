@@ -6,7 +6,6 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **values** | [**List<ValuesEnum>**](#Enum--ValuesEnum) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ValuesEnum
@@ -15,9 +14,8 @@
 | ---- | ----- |
 | NAME | &quot;Name&quot; |
 | PAIDHOURS | &quot;PaidHours&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -10,9 +10,8 @@
 | **nickname** | **String** | Nickname or display name of the recipient. |  [optional] |
 | **image** | **String** | URL of an image that represents the recipient. |  [optional] |
 | **additionalIds** | [**List&lt;RecipientAdditionalIdentifier&gt;**](RecipientAdditionalIdentifier) | List of recipient additional identifiers |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

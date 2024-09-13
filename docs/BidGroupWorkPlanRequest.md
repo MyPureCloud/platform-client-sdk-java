@@ -9,9 +9,8 @@
 | **overrideAgentCount** | **Integer** | The modified agent count for this work plan |  [optional] |
 | **suggestedAgentCount** | **Integer** | The number of agents needed for this work plan to produce the optimal schedule |  [optional] |
 | **agentCountRange** | [**AgentCountRange**](AgentCountRange) | The range of agent slot count per work plan. The suggested slot count must be in agent count range |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

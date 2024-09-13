@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **fileName** | **String** | Name of the file to upload.File name can only contain letters, numbers, and the following special characters: + - _ . ' ( ) |  |
 | **signedUrlTimeoutSeconds** | **Integer** | The number of seconds the presigned URL is valid for (from 1 to 604800 seconds). If none provided, defaults to 900 seconds |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

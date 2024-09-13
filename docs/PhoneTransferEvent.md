@@ -14,7 +14,6 @@
 | **targetCommunicationId** | **String** | The id (V4 UUID) of the communication that is being transferred away from. In many cases this will be the same as the `initiatingCommunicationId`. |  |
 | **objectCommunicationId** | **String** | The id (V4 UUID) of the communication that is being transferred. |  |
 | **destinationPhoneNumber** | **String** | The desired destination phone number that the object communication should be transferred to. |  |
-{: class="table table-striped"}
 
 
 ## Enum: TransferTypeEnum
@@ -24,9 +23,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ATTENDED | &quot;Attended&quot; | 
 | UNATTENDED | &quot;Unattended&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

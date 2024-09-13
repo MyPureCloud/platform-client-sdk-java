@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **shiftLength** | [**ShiftLengthEnum**](#Enum--ShiftLengthEnum) | The shift length option to apply if no forecast is supplied |  [optional] |
 | **shiftStart** | [**ShiftStartEnum**](#Enum--ShiftStartEnum) | The shift start option to apply if no forecast is supplied |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ShiftLengthEnum
@@ -19,7 +18,6 @@
 | MEDIAN | &quot;Median&quot; | 
 | LONGEST | &quot;Longest&quot; | 
 | RANDOM | &quot;Random&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ShiftStartEnum
@@ -31,9 +29,8 @@
 | MEDIAN | &quot;Median&quot; | 
 | LATEST | &quot;Latest&quot; | 
 | RANDOM | &quot;Random&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -8,9 +8,8 @@
 | **friendlyName** | **String** | The friendly name of the email address. |  [optional] |
 | **localPart** | **String** | The local part of the email address. |  [optional] |
 | **domain** | [**OutboundMessagingMessagingCampaignConfigChangeUriReference**](OutboundMessagingMessagingCampaignConfigChangeUriReference) | A UriReference for a resource |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

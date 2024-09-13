@@ -9,7 +9,6 @@
 | **text** | **String** | Text to show inside the Button reply. This is also used as the response text after clicking on the Button. |  [optional] |
 | **payload** | **String** | Content of the textback payload after clicking a button |  [optional] |
 | **messageType** | [**MessageTypeEnum**](#Enum--MessageTypeEnum) | Button response message type that captures QuickReply , Cards and Carousel .This is used  as label for Card selection |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -20,7 +19,6 @@
 | BUTTON | &quot;Button&quot; | 
 | DATEPICKER | &quot;DatePicker&quot; | 
 | QUICKREPLY | &quot;QuickReply&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: MessageTypeEnum
@@ -31,9 +29,8 @@
 | QUICKREPLY | &quot;QuickReply&quot; | 
 | CARD | &quot;Card&quot; | 
 | CAROUSEL | &quot;Carousel&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

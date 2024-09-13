@@ -8,9 +8,8 @@
 | **name** | **String** | The name of the staffing group |  [optional] |
 | **userIds** | [**SetWrapperString**](SetWrapperString) | The set of user Ids to associate with the staffing group |  [optional] |
 | **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Version metadata for the staffing group |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

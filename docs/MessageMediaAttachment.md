@@ -10,7 +10,6 @@
 | **contentLength** | **Long** | The optional content length of the the media object, in bytes. |  [optional] |
 | **name** | **String** | The name of the media object. |  [optional] |
 | **id** | **String** | A globally unique identifier for the media object. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -21,9 +20,8 @@
 | IMAGE_PNG | &quot;image/png&quot; | 
 | IMAGE_JPEG | &quot;image/jpeg&quot; | 
 | IMAGE_GIF | &quot;image/gif&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

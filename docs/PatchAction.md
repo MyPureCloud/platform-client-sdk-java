@@ -13,7 +13,6 @@
 | **architectFlowFields** | [**ArchitectFlowFields**](ArchitectFlowFields) | Architect Flow Id and input contract. |  [optional] |
 | **webMessagingOfferFields** | [**PatchWebMessagingOfferFields**](PatchWebMessagingOfferFields) | Admin-configurable fields of a web messaging offer action. |  [optional] |
 | **openActionFields** | [**OpenActionFields**](OpenActionFields) | Admin-configurable fields of an open action. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -27,9 +26,8 @@
 | INTEGRATIONACTION | &quot;integrationAction&quot; | 
 | ARCHITECTFLOW | &quot;architectFlow&quot; | 
 | OPENACTION | &quot;openAction&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

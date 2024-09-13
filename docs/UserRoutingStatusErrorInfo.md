@@ -11,9 +11,8 @@
 | **userMessage** | **String** | A customer friendly message. This should be a complete sentence, use proper grammar and only include information useful to a customer. This is not a dev message and should not include things like Org Id |  [optional] |
 | **userParamsMessage** | **String** | This is the same as userMessage except it uses template fields for variable replacement. For instance: 'User {username} was not found' |  [optional] |
 | **userParams** | [**List&lt;UserRoutingStatusUserParam&gt;**](UserRoutingStatusUserParam) | Used in conjunction with userParamsMessage. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'chuck.pulfer' |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

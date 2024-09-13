@@ -10,9 +10,8 @@
 | **attributes** | [**JourneyViewElementAttributes**](JourneyViewElementAttributes) | Required attributes of the element |  |
 | **filter** | [**JourneyViewElementFilter**](JourneyViewElementFilter) | Any filters applied to this element |  [optional] |
 | **followedBy** | [**List&lt;JourneyViewLink&gt;**](JourneyViewLink) | A list of JourneyViewLink objects, listing the elements downstream of this element |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

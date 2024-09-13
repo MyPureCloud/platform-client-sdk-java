@@ -8,9 +8,8 @@
 | **name** | **String** | The verified name associated with this phone number. |  |
 | **phoneNumber** | **String** | The display name associated with this phone number. It's typically the E.164 representation of the number. |  [optional] |
 | **status** | **String** | The status of this phone number. |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

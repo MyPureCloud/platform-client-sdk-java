@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **clauses** | [**List&lt;ContactListFilterClause&gt;**](ContactListFilterClause) | Groups of conditions to filter the contacts by. |  [optional] |
 | **filterType** | [**FilterTypeEnum**](#Enum--FilterTypeEnum) | How to join clauses together. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: FilterTypeEnum
@@ -17,9 +16,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | AND | &quot;AND&quot; | 
 | OR | &quot;OR&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

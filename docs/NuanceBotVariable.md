@@ -11,9 +11,8 @@
 | **reserved** | **Boolean** | True if the variable is a reserved variable |  [optional] |
 | **simpleVariableInfo** | **String** | The type information for this variable |  [optional] |
 | **complexGenericVariableInfo** | [**ComplexVariableInfo**](ComplexVariableInfo) | The type information for this variable |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

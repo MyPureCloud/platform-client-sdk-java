@@ -13,7 +13,6 @@
 | **body** | **String** | Body text of the content offer. |  [optional] |
 | **callToAction** | [**PatchCallToAction**](PatchCallToAction) | Properties customizing the call to action button on the content offer. |  [optional] |
 | **style** | [**PatchContentOfferStylingConfiguration**](PatchContentOfferStylingConfiguration) | Properties customizing the styling of the content offer. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: DisplayModeEnum
@@ -24,7 +23,6 @@
 | MODAL | &quot;Modal&quot; | 
 | OVERLAY | &quot;Overlay&quot; | 
 | TOAST | &quot;Toast&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: LayoutModeEnum
@@ -38,9 +36,8 @@
 | RIGHTTEXT | &quot;RightText&quot; | 
 | TOPTEXT | &quot;TopText&quot; | 
 | BOTTOMTEXT | &quot;BottomText&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

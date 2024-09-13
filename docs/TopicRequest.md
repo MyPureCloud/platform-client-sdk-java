@@ -13,7 +13,6 @@
 | **dialect** | **String** | The topic dialect |  |
 | **participants** | [**ParticipantsEnum**](#Enum--ParticipantsEnum) | The topic participants, default value is All |  [optional] |
 | **phrases** | [**List&lt;Phrase&gt;**](Phrase) | The topic phrases |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StrictnessEnum
@@ -27,7 +26,6 @@
 | _72 | &quot;72&quot; | 
 | _85 | &quot;85&quot; | 
 | _90 | &quot;90&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ParticipantsEnum
@@ -38,9 +36,8 @@
 | EXTERNAL | &quot;External&quot; | 
 | INTERNAL | &quot;Internal&quot; | 
 | ALL | &quot;All&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

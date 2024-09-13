@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **contentType** | [**ContentTypeEnum**](#Enum--ContentTypeEnum) | Type of this content element. |  [optional] |
 | **subType** | [**SubTypeEnum**](#Enum--SubTypeEnum) | Content subtype |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ContentTypeEnum
@@ -27,7 +26,6 @@
 | TEXT | &quot;Text&quot; | 
 | QUICKREPLYV2 | &quot;QuickReplyV2&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: SubTypeEnum
@@ -46,9 +44,8 @@
 | QUICKREPLY | &quot;QuickReply&quot; | 
 | POSTBACK | &quot;Postback&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

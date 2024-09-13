@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **violationMessages** | [**List&lt;WorkPlanConfigurationViolationMessage&gt;**](WorkPlanConfigurationViolationMessage) | Messages for work plan violating some rules such as no shifts in a work plan |  [optional] |
 | **constraintConflictMessage** | [**ConstraintConflictMessage**](ConstraintConflictMessage) | This field is not null when there is a set of work plan constraints that conflict thus agent schedules cannot be generated |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

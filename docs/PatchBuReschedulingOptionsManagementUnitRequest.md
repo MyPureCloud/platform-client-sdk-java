@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String** | The management unit portion of the rescheduling run to update |  |
 | **applied** | **Boolean** | Whether to mark the run as applied.  Only applies to reschedule runs.  Once applied, a run cannot be un-marked as applied |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

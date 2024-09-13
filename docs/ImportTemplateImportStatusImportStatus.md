@@ -13,7 +13,6 @@
 | **targetContactListIds** | **List&lt;String&gt;** | The ids for target contact lists |  [optional] |
 | **listNamePrefix** | **String** | The prefix used for target contact list names |  [optional] |
 | **additionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ImportStateEnum
@@ -23,9 +22,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | IN_PROGRESS | &quot;IN_PROGRESS&quot; | 
 | FAILED | &quot;FAILED&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

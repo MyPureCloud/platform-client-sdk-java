@@ -13,7 +13,6 @@
 | **endpoints** | [**List&lt;DomainEntityRef&gt;**](DomainEntityRef) |  |  [optional] |
 | **lineTypes** | [**List<LineTypesEnum>**](#Enum--LineTypesEnum) |  |  [optional] |
 | **addressFamilyId** | **String** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: LineTypesEnum
@@ -24,9 +23,8 @@
 | NETWORK | &quot;NETWORK&quot; |
 | TRUNK | &quot;TRUNK&quot; |
 | STATION | &quot;STATION&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

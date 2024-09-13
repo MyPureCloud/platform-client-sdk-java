@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **unorderedType** | [**UnorderedTypeEnum**](#Enum--UnorderedTypeEnum) | The type of icon for the unordered list. |  [optional] |
 | **orderedType** | [**OrderedTypeEnum**](#Enum--OrderedTypeEnum) | The type of icon for the ordered list. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: UnorderedTypeEnum
@@ -19,7 +18,6 @@
 | SQUARE | &quot;Square&quot; | 
 | CIRCLE | &quot;Circle&quot; | 
 | NONE | &quot;None&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: OrderedTypeEnum
@@ -34,9 +32,8 @@
 | UPPERALPHA | &quot;UpperAlpha&quot; | 
 | UPPERROMAN | &quot;UpperRoman&quot; | 
 | NONE | &quot;None&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

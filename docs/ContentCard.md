@@ -11,9 +11,8 @@
 | **video** | **String** | URL of a video. |  [optional] |
 | **defaultAction** | [**ContentCardAction**](ContentCardAction) | The default button action. |  [optional] |
 | **actions** | [**List&lt;ContentCardAction&gt;**](ContentCardAction) | An array of action objects. |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

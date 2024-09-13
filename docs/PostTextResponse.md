@@ -15,7 +15,6 @@
 | **genesysDialogEngine** | **Map&lt;String, Object&gt;** | Raw data response from Genesys' Dialogengine (if called) |  [optional] |
 | **genesysBotConnector** | **Map&lt;String, Object&gt;** | Raw data response from Genesys' BotConnector (if called) |  [optional] |
 | **nuanceMixDlg** | **Map&lt;String, Object&gt;** | Raw data response from Nuance Mix Dlg (if called) |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: BotStateEnum
@@ -26,9 +25,8 @@
 | COMPLETE | &quot;Complete&quot; | 
 | FAILED | &quot;Failed&quot; | 
 | MOREDATA | &quot;MoreData&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

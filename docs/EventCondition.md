@@ -11,7 +11,6 @@
 | **streamType** | [**StreamTypeEnum**](#Enum--StreamTypeEnum) | The stream type for which this condition can be satisfied. |  |
 | **sessionType** | **String** | The session type for which this condition can be satisfied. |  |
 | **eventName** | **String** | The name of the event for which this condition can be satisfied. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: OperatorEnum
@@ -31,7 +30,6 @@
 | LESSTHANOREQUAL | &quot;lessThanOrEqual&quot; | 
 | STARTSWITH | &quot;startsWith&quot; | 
 | ENDSWITH | &quot;endsWith&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StreamTypeEnum
@@ -43,9 +41,8 @@
 | CUSTOM | &quot;Custom&quot; | 
 | CONVERSATION | &quot;Conversation&quot; | 
 | APP | &quot;App&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

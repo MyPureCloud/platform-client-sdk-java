@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **dataType** | [**DataTypeEnum**](#Enum--DataTypeEnum) |  |  [optional] |
 | **value** | **String** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: DataTypeEnum
@@ -20,9 +19,8 @@
 | NUMBER | &quot;number&quot; | 
 | BOOLEAN$ | &quot;boolean$&quot; | 
 | INTEGER | &quot;integer&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

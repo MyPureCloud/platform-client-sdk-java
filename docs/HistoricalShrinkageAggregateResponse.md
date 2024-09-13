@@ -13,9 +13,8 @@
 | **unpaidShrinkageSeconds** | **Integer** | Aggregated shrinkage value in seconds for unpaid activities |  [optional] |
 | **plannedShrinkageSeconds** | **Integer** | Aggregated shrinkage value in seconds for planned activities |  [optional] |
 | **unplannedShrinkageSeconds** | **Integer** | Aggregated shrinkage value in seconds for unplanned activities |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

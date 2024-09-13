@@ -25,7 +25,6 @@
 | **emailConfig** | [**EmailConfig**](EmailConfig) | Configuration for this messaging campaign to send Email messages. |  [optional] |
 | **smsConfig** | [**SmsConfig**](SmsConfig) | Configuration for this messaging campaign to send SMS messages. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: CampaignStatusEnum
@@ -39,9 +38,8 @@
 | COMPLETE | &quot;complete&quot; | 
 | INVALID | &quot;invalid&quot; | 
 | FORCED_OFF | &quot;forced_off&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

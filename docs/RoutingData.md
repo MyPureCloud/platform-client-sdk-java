@@ -13,9 +13,8 @@
 | **preferredAgentIds** | **List&lt;String&gt;** | A list of agents to be preferred in routing |  [optional] |
 | **scoredAgents** | [**List&lt;ScoredAgent&gt;**](ScoredAgent) | A list of scored agents for routing decisions. For Agent Owned Callbacks use one scored agent with a score of 100. |  [optional] |
 | **routingFlags** | **List&lt;String&gt;** | An array of flags indicating how the conversation should be routed. Use \"AGENT_OWNED_CALLBACK\" when creating an Agent Owned Callback. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -21,7 +21,6 @@
 | **selfUri** | **String** | The URI for this object |  [optional] |
 | **conversation** | [**AddressableEntityRef**](AddressableEntityRef) | The conversation that the suggestions correspond to. |  [optional] |
 | **assistant** | [**AddressableEntityRef**](AddressableEntityRef) | The assistant that was used to provide the suggestions. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -35,7 +34,6 @@
 | KNOWLEDGESEARCH | &quot;KnowledgeSearch&quot; | 
 | CANNEDRESPONSE | &quot;CannedResponse&quot; | 
 | SCRIPT | &quot;Script&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: TriggerTypeEnum
@@ -49,7 +47,6 @@
 | CONVERSATIONTRANSFER | &quot;ConversationTransfer&quot; | 
 | CONVERSATIONEND | &quot;ConversationEnd&quot; | 
 | INTENT | &quot;Intent&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -62,9 +59,8 @@
 | DISMISSED | &quot;Dismissed&quot; | 
 | FAILED | &quot;Failed&quot; | 
 | RATED | &quot;Rated&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

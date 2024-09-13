@@ -12,7 +12,6 @@
 | **channels** | [**List<ChannelsEnum>**](#Enum--ChannelsEnum) | Cobrowse channels for web messenger |  [optional] |
 | **readonlySelectors** | **List&lt;String&gt;** | Readonly patterns that will apply to pages being shared |  [optional] |
 | **pauseCriteria** | [**List&lt;PauseCriteria&gt;**](PauseCriteria) | Pause criteria that will pause cobrowse if some of them are met in the user's URL |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ChannelsEnum
@@ -21,9 +20,8 @@
 | ---- | ----- |
 | WEBMESSAGING | &quot;Webmessaging&quot; |
 | VOICE | &quot;Voice&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

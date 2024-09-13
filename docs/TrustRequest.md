@@ -12,9 +12,8 @@
 | **users** | [**List&lt;OrgUser&gt;**](OrgUser) | The list of trustee users that are requesting access. |  [optional] |
 | **groups** | [**List&lt;TrustGroup&gt;**](TrustGroup) | The list of trustee groups that are requesting access. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

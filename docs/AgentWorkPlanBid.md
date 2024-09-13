@@ -13,7 +13,6 @@
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The state of the bid |  |
 | **workPlanFieldsVisibleToAgents** | [**List<WorkPlanFieldsVisibleToAgentsEnum>**](#Enum--WorkPlanFieldsVisibleToAgentsEnum) | The work plan fields visible to agents whenever work plan preferences are made |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -29,7 +28,6 @@
 | CLOSED | &quot;Closed&quot; | 
 | PROCESSED | &quot;Processed&quot; | 
 | PUBLISHED | &quot;Published&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: WorkPlanFieldsVisibleToAgentsEnum
@@ -38,9 +36,8 @@
 | ---- | ----- |
 | NAME | &quot;Name&quot; |
 | PAIDHOURS | &quot;PaidHours&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

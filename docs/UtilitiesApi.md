@@ -14,7 +14,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **getDate**
 
 
-
 > [ServerDate](ServerDate) getDate()
 
 Get the current system date/time
@@ -69,7 +68,6 @@ This endpoint does not require any parameters.
 # **getIpranges**
 
 
-
 > [IpAddressRangeListing](IpAddressRangeListing) getIpranges()
 
 Get public ip address ranges for Genesys Cloud
@@ -122,7 +120,6 @@ This endpoint does not require any parameters.
 
 
 # **getTimezones**
-
 
 
 > [TimeZoneEntityListing](TimeZoneEntityListing) getTimezones(pageSize, pageNumber)
@@ -185,7 +182,6 @@ try {
 # **postCertificateDetails**
 
 
-
 > [ParsedCertificate](ParsedCertificate) postCertificateDetails(body)
 
 Returns the information about an X509 PEM encoded certificate or certificate chain.
@@ -241,4 +237,4 @@ try {
 [**ParsedCertificate**](ParsedCertificate)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

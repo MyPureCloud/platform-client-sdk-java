@@ -9,7 +9,6 @@
 | **granularity** | [**GranularityEnum**](#Enum--GranularityEnum) | Date granularity of the results |  [optional] |
 | **metrics** | [**List<MetricsEnum>**](#Enum--MetricsEnum) | Behaves like a SQL SELECT clause. Enables retrieving only named metrics. If omitted, all metrics that are available will be returned (like SELECT *). |  [optional] |
 | **groupBy** | [**List<GroupByEnum>**](#Enum--GroupByEnum) | Behaves like a SQL GROUPBY. Allows for multiple levels of grouping as a list of dimensions. Partitions resulting aggregate computations into distinct named subgroups rather than across the entire result set as if it were one group. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: GranularityEnum
@@ -20,7 +19,6 @@
 | DAY | &quot;Day&quot; | 
 | WEEK | &quot;Week&quot; | 
 | MONTH | &quot;Month&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: MetricsEnum
@@ -33,7 +31,6 @@
 | STATUS500 | &quot;Status500&quot; |
 | STATUS429 | &quot;Status429&quot; |
 | REQUESTS | &quot;Requests&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: GroupByEnum
@@ -45,9 +42,8 @@
 | USERID | &quot;UserId&quot; |
 | TEMPLATEURI | &quot;TemplateUri&quot; |
 | HTTPMETHOD | &quot;HttpMethod&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

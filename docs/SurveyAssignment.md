@@ -10,9 +10,8 @@
 | **inviteTimeInterval** | **String** | An ISO 8601 repeated interval consisting of the number of repetitions, the start datetime, and the interval (e.g. R2/2018-03-01T13:00:00Z/P1M10DT2H30M). Total duration must not exceed 90 days. |  [optional] |
 | **sendingUser** | **String** | User together with sendingDomain used to send email, null to use no-reply |  [optional] |
 | **sendingDomain** | **String** | Validated email domain, required |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

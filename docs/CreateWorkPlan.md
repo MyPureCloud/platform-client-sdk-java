@@ -33,7 +33,6 @@
 | **shiftStartVariances** | [**ListWrapperShiftStartVariance**](ListWrapperShiftStartVariance) | Variance in minutes among start times of shifts in this work plan |  [optional] |
 | **shifts** | [**List&lt;CreateWorkPlanShift&gt;**](CreateWorkPlanShift) | Shifts in this work plan |  [optional] |
 | **agents** | [**List&lt;UserReference&gt;**](UserReference) | Agents in this work plan |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ShiftStartVarianceTypeEnum
@@ -43,9 +42,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | SHIFTSTART | &quot;ShiftStart&quot; | 
 | SHIFTSTARTANDPAIDDURATION | &quot;ShiftStartAndPaidDuration&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

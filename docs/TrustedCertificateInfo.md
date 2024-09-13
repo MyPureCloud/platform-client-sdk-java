@@ -8,9 +8,8 @@
 | **description** | **String** | The description of the certificate |  [optional] |
 | **serialNumber** | **String** | The serial number of the certificate |  [optional] |
 | **signature** | **String** | The signature of the certificate |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

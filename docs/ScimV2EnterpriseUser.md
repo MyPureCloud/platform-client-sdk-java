@@ -9,9 +9,8 @@
 | **department** | **String** | The department that the user belongs to. |  [optional] |
 | **manager** | [**Manager**](Manager) | The user's manager. |  [optional] |
 | **employeeNumber** | **String** | The user's employee number. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

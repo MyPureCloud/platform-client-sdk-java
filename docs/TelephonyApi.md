@@ -16,7 +16,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **getTelephonyMediaregions**
 
 
-
 > [MediaRegions](MediaRegions) getTelephonyMediaregions()
 
 Retrieve the list of AWS regions media can stream through.
@@ -70,7 +69,6 @@ This endpoint does not require any parameters.
 
 
 # **getTelephonySipmessagesConversation**
-
 
 
 > [Callmessage](Callmessage) getTelephonySipmessagesConversation(conversationId)
@@ -134,7 +132,6 @@ try {
 # **getTelephonySipmessagesConversationHeaders**
 
 
-
 > [Callheader](Callheader) getTelephonySipmessagesConversationHeaders(conversationId, keys)
 
 Get SIP headers.
@@ -196,7 +193,6 @@ try {
 
 
 # **getTelephonySiptraces**
-
 
 
 > [SipSearchResult](SipSearchResult) getTelephonySiptraces(dateStart, dateEnd, callId, toUser, fromUser, conversationId)
@@ -270,7 +266,6 @@ try {
 # **getTelephonySiptracesDownloadDownloadId**
 
 
-
 > [SignedUrlResponse](SignedUrlResponse) getTelephonySiptracesDownloadDownloadId(downloadId)
 
 Get signed S3 URL for a pcap download
@@ -330,7 +325,6 @@ try {
 # **postTelephonySiptracesDownload**
 
 
-
 > [SipDownloadResponse](SipDownloadResponse) postTelephonySiptracesDownload(sIPSearchPublicRequest)
 
 Request a download of a pcap file to S3
@@ -387,4 +381,4 @@ try {
 [**SipDownloadResponse**](SipDownloadResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

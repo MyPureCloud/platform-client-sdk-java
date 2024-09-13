@@ -11,9 +11,8 @@
 | **scheduling** | [**SchedulingSettingsResponse**](SchedulingSettingsResponse) | Scheduling settings for this management unit. These settings are only available if you have the permission wfm:managementUnit:view |  [optional] |
 | **shiftTrading** | [**ShiftTradeSettings**](ShiftTradeSettings) | Shift trade settings for this management unit |  [optional] |
 | **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Version info metadata for the associated management unit |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

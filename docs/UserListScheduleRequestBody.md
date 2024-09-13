@@ -9,9 +9,8 @@
 | **startDate** | [**Date**](Date) | Beginning of the range of schedules to fetch, in ISO-8601 format |  |
 | **endDate** | [**Date**](Date) | End of the range of schedules to fetch, in ISO-8601 format |  |
 | **loadFullWeeks** | **Boolean** | Whether to load the full week's schedule (for the requested users) of any week overlapping the start/end date query parameters, defaults to false |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

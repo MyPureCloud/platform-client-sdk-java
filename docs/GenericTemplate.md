@@ -10,9 +10,8 @@
 | **url** | **String** | URL of an image. |  [optional] |
 | **components** | [**List&lt;RecordingButtonComponent&gt;**](RecordingButtonComponent) | List of button components offered with this message content. |  [optional] |
 | **actions** | [**RecordingContentActions**](RecordingContentActions) | Actions to be taken. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

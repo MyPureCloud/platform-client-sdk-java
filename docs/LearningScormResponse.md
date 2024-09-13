@@ -11,7 +11,6 @@
 | **errorMessage** | **String** | The error message associated with the error code |  [optional] |
 | **percentageUnpacked** | **Float** | The percentage of the SCORM package that has been unpacked |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -23,9 +22,8 @@
 | UNPACKING | &quot;Unpacking&quot; | 
 | ERROR | &quot;Error&quot; | 
 | READY | &quot;Ready&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **eventType** | [**EventTypeEnum**](#Enum--EventTypeEnum) | Type of this event element |  [optional] |
 | **subType** | [**SubTypeEnum**](#Enum--SubTypeEnum) | Event subtype |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: EventTypeEnum
@@ -20,7 +19,6 @@
 | PRESENCE | &quot;Presence&quot; | 
 | VIDEO | &quot;Video&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: SubTypeEnum
@@ -38,9 +36,8 @@
 | CLEAR | &quot;Clear&quot; | 
 | SIGNIN | &quot;SignIn&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

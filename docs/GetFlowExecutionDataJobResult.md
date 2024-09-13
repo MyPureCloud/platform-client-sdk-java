@@ -10,7 +10,6 @@
 | **entities** | [**List&lt;ExecutionDataEntity&gt;**](ExecutionDataEntity) | On jobState = Success this field will be populated with the list of results of files for download. |  [optional] |
 | **jobState** | [**JobStateEnum**](#Enum--JobStateEnum) | The state of the backend process to prep the files for download. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: JobStateEnum
@@ -22,9 +21,8 @@
 | RUNNING | &quot;Running&quot; | 
 | SUCCESS | &quot;Success&quot; | 
 | FAILED | &quot;Failed&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

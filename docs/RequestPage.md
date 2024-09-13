@@ -9,9 +9,8 @@
 | **title** | **String** | Title of the page. |  |
 | **keywords** | **String** | Keywords from the HTML <meta> tag of the page. |  [optional] |
 | **lang** | **String** | ISO 639-1 language code for the page as defined in the <html> tag. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

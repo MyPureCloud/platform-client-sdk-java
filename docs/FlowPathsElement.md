@@ -12,7 +12,6 @@
 | **flowOutcomeValue** | [**FlowOutcomeValueEnum**](#Enum--FlowOutcomeValueEnum) | The value of the flow outcome, if the element type is Outcome. |  [optional] |
 | **flowMilestone** | [**AddressableEntityRef**](AddressableEntityRef) | The flow milestone, set if the element type is Milestone. |  [optional] |
 | **flowOutcome** | [**AddressableEntityRef**](AddressableEntityRef) | The flow outcome, set if the element type is Outcome or Milestone. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -30,7 +29,6 @@
 | RECOGNITIONFAILURE | &quot;RecognitionFailure&quot; | 
 | ROOT | &quot;Root&quot; | 
 | TRANSFERTOACD | &quot;TransferToAcd&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: FlowOutcomeValueEnum
@@ -41,9 +39,8 @@
 | FAILURE | &quot;FAILURE&quot; | 
 | SUCCESS | &quot;SUCCESS&quot; | 
 | UNKNOWN | &quot;UNKNOWN&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

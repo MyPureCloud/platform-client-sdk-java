@@ -28,7 +28,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteResponsemanagementLibrary**
 
 
-
 > Void deleteResponsemanagementLibrary(libraryId)
 
 Delete an existing response library.
@@ -87,7 +86,6 @@ null (empty response body)
 
 
 # **deleteResponsemanagementResponse**
-
 
 
 > Void deleteResponsemanagementResponse(responseId)
@@ -150,7 +148,6 @@ null (empty response body)
 # **deleteResponsemanagementResponseasset**
 
 
-
 > Void deleteResponsemanagementResponseasset(responseAssetId)
 
 Delete response asset
@@ -207,7 +204,6 @@ null (empty response body)
 
 
 # **getResponsemanagementLibraries**
-
 
 
 > [LibraryEntityListing](LibraryEntityListing) getResponsemanagementLibraries(pageNumber, pageSize, messagingTemplateFilter, libraryPrefix)
@@ -275,7 +271,6 @@ try {
 # **getResponsemanagementLibrary**
 
 
-
 > [Library](Library) getResponsemanagementLibrary(libraryId)
 
 Get details about an existing response library.
@@ -333,7 +328,6 @@ try {
 
 
 # **getResponsemanagementResponse**
-
 
 
 > [Response](Response) getResponsemanagementResponse(responseId, expand)
@@ -397,7 +391,6 @@ try {
 # **getResponsemanagementResponseasset**
 
 
-
 > [ResponseAsset](ResponseAsset) getResponsemanagementResponseasset(responseAssetId)
 
 Get response asset information
@@ -457,7 +450,6 @@ try {
 # **getResponsemanagementResponseassetsStatusStatusId**
 
 
-
 > [ResponseAssetStatus](ResponseAssetStatus) getResponsemanagementResponseassetsStatusStatusId(statusId)
 
 Get response asset upload status
@@ -515,7 +507,6 @@ try {
 
 
 # **getResponsemanagementResponses**
-
 
 
 > [ResponseEntityListing](ResponseEntityListing) getResponsemanagementResponses(libraryId, pageNumber, pageSize, expand)
@@ -583,7 +574,6 @@ try {
 # **postResponsemanagementLibraries**
 
 
-
 > [Library](Library) postResponsemanagementLibraries(body)
 
 Create a response library.
@@ -643,7 +633,6 @@ try {
 # **postResponsemanagementLibrariesBulk**
 
 
-
 > [LibraryEntityListing](LibraryEntityListing) postResponsemanagementLibrariesBulk(body)
 
 Get response libraries.
@@ -701,7 +690,6 @@ try {
 
 
 # **postResponsemanagementResponseassetsSearch**
-
 
 
 > [ResponseAssetSearchResults](ResponseAssetSearchResults) postResponsemanagementResponseassetsSearch(body, expand)
@@ -765,7 +753,6 @@ try {
 # **postResponsemanagementResponseassetsUploads**
 
 
-
 > [CreateResponseAssetResponse](CreateResponseAssetResponse) postResponsemanagementResponseassetsUploads(body)
 
 Creates pre-signed url for uploading response asset
@@ -823,7 +810,6 @@ try {
 
 
 # **postResponsemanagementResponses**
-
 
 
 > [Response](Response) postResponsemanagementResponses(body, expand)
@@ -887,7 +873,6 @@ try {
 # **postResponsemanagementResponsesQuery**
 
 
-
 > [ResponseQueryResults](ResponseQueryResults) postResponsemanagementResponsesQuery(body)
 
 Query responses
@@ -945,7 +930,6 @@ try {
 
 
 # **putResponsemanagementLibrary**
-
 
 
 > [Library](Library) putResponsemanagementLibrary(libraryId, body)
@@ -1009,7 +993,6 @@ try {
 
 
 # **putResponsemanagementResponse**
-
 
 
 > [Response](Response) putResponsemanagementResponse(responseId, body, expand)
@@ -1077,7 +1060,6 @@ try {
 # **putResponsemanagementResponseasset**
 
 
-
 > [ResponseAsset](ResponseAsset) putResponsemanagementResponseasset(responseAssetId, body)
 
 Update response asset
@@ -1136,4 +1118,4 @@ try {
 [**ResponseAsset**](ResponseAsset)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

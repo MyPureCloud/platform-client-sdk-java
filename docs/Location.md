@@ -10,9 +10,8 @@
 | **coordinates** | **Map&lt;String, Double&gt;** | Users coordinates on the floorplan. Only used when floorplanImage is set |  [optional] |
 | **notes** | **String** | Optional description on the users location |  [optional] |
 | **locationDefinition** | [**LocationDefinition**](LocationDefinition) |  |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -12,9 +12,8 @@
 | **code** | **String** | The wrapup-code (V4 UUID) used to disposition this interaction. If this value is not provided the disposition is considered skipped. |  [optional] |
 | **notes** | **String** | Text entered by the agent to describe the interaction or disposition. Ignored if the disposition is considered skipped. |  [optional] |
 | **tags** | **List&lt;String&gt;** | The list of tags selected by the agent to describe the interaction or disposition. Ignored if the disposition is considered skipped. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

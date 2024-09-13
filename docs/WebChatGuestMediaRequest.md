@@ -12,7 +12,6 @@
 | **communicationId** | **String** | The ID of the new media communication, if applicable. |  [optional] |
 | **securityKey** | **String** | The security information related to a media request. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypesEnum
@@ -21,7 +20,6 @@
 | ---- | ----- |
 | COBROWSE | &quot;COBROWSE&quot; |
 | SCREENSHARE | &quot;SCREENSHARE&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -35,9 +33,8 @@
 | TIMEDOUT | &quot;TIMEDOUT&quot; | 
 | CANCELLED | &quot;CANCELLED&quot; | 
 | ERRORED | &quot;ERRORED&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -14,7 +14,6 @@
 | **keyConfigurationType** | [**KeyConfigurationTypeEnum**](#Enum--KeyConfigurationTypeEnum) | Key type used in this configuration |  [optional] |
 | **kmsKeyArn** | **String** | ARN of internal key to be wrapped by AWS KMS Symmetric key |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: KeyConfigurationTypeEnum
@@ -26,9 +25,8 @@
 | LOCALKEYMANAGER | &quot;LocalKeyManager&quot; | 
 | NATIVE | &quot;Native&quot; | 
 | NONE | &quot;None&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

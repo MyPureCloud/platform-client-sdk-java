@@ -17,7 +17,6 @@
 | **speechTextAnalyticsProgramId** | **String** |  |  [optional] |
 | **agentAssistEnabled** | **Boolean** |  |  [optional] |
 | **voiceTranscriptionEnabled** | **Boolean** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ChannelEnum
@@ -29,9 +28,8 @@
 | INTERNAL | &quot;INTERNAL&quot; | 
 | EXTERNAL | &quot;EXTERNAL&quot; | 
 | BOTH | &quot;BOTH&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -9,9 +9,8 @@
 | **lengthInMinutes** | **Integer** | The duration of coaching appointment to schedule in 15 minutes granularity |  |
 | **userIds** | **List&lt;String&gt;** | The user IDs for which to fetch schedules. Must be only 1. |  |
 | **interruptibleAssignmentId** | **String** | Assignment ID to exclude from consideration when determining blocked slots |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

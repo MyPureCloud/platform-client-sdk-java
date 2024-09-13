@@ -12,7 +12,6 @@
 | **intervalLengthMinutes** | **Integer** | The period/interval in minutes for which to aggregate the data |  |
 | **state** | [**StateEnum**](#Enum--StateEnum) | The state of the staffing requirements generation |  |
 | **results** | [**List&lt;BuForecastStaffingRequirementsResult&gt;**](BuForecastStaffingRequirementsResult) | The forecast staffing requirement results, Will be populated when state == 'Complete' |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -23,9 +22,8 @@
 | PROCESSING | &quot;Processing&quot; | 
 | COMPLETE | &quot;Complete&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

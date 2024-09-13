@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **eventType** | [**EventTypeEnum**](#Enum--EventTypeEnum) |  |  [optional] |
 | **typing** | [**V2ConversationMessageTypingEventForWorkflowTopicConversationEventTyping**](V2ConversationMessageTypingEventForWorkflowTopicConversationEventTyping) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: EventTypeEnum
@@ -17,9 +16,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | COBROWSE | &quot;CoBrowse&quot; | 
 | TYPING | &quot;Typing&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

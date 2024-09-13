@@ -11,9 +11,8 @@
 | **memberInfo** | [**GuestMemberInfo**](GuestMemberInfo) | The guest member info to use for the new chat conversation. |  |
 | **memberAuthToken** | **String** | If the guest member is an authenticated member (ie, not anonymous) his JWT is provided here. The token will have been previously generated with the \"POST /api/v2/signeddata\" resource. |  [optional] |
 | **journeyContext** | [**JourneyContext**](JourneyContext) | A subset of the Journey System's data relevant to this conversation/session request (for external linkage and internal usage/context). |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

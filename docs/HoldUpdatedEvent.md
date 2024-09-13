@@ -10,9 +10,8 @@
 | **conversationId** | **String** | A unique Id (V4 UUID) identifying this conversation |  |
 | **communicationId** | **String** | A unique Id (V4 UUID) identifying this communication |  |
 | **held** | **Boolean** | Indicates whether this communication is held. |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -12,9 +12,8 @@
 | **metadata** | [**Map&lt;String, MetadataAttribute&gt;**](MetadataAttribute) | A map that contains custom metadata about the article answer. |  [optional] |
 | **version** | [**AddressableEntityRef**](AddressableEntityRef) | The version of the Article. |  [optional] |
 | **variations** | [**List&lt;AddressableEntityRef&gt;**](AddressableEntityRef) | Variations of the Article. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

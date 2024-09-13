@@ -9,9 +9,8 @@
 | **registerState** | **Boolean** | True if last REGISTER message had positive response; false if error response or no response. |  [optional] |
 | **registerStateTime** | [**Date**](Date) | ISO 8601 format UTC absolute date & time of the last change of the register state. |  [optional] |
 | **errorInfo** | [**TrunkErrorInfo**](TrunkErrorInfo) |  |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -14,7 +14,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **getGdprRequest**
 
 
-
 > [GDPRRequest](GDPRRequest) getGdprRequest(requestId)
 
 Get an existing GDPR request
@@ -72,7 +71,6 @@ try {
 
 
 # **getGdprRequests**
-
 
 
 > [GDPRRequestEntityListing](GDPRRequestEntityListing) getGdprRequests(pageSize, pageNumber)
@@ -136,7 +134,6 @@ try {
 # **getGdprSubjects**
 
 
-
 > [GDPRSubjectEntityListing](GDPRSubjectEntityListing) getGdprSubjects(searchType, searchValue)
 
 Get GDPR subjects
@@ -198,7 +195,6 @@ try {
 # **postGdprRequests**
 
 
-
 > [GDPRRequest](GDPRRequest) postGdprRequests(body, deleteConfirmed)
 
 Submit a new GDPR request
@@ -257,4 +253,4 @@ try {
 [**GDPRRequest**](GDPRRequest)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

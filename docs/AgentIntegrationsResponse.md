@@ -9,9 +9,8 @@
 | **selectedIntegration** | [**WfmIntegrationReference**](WfmIntegrationReference) | The integration selected for the agent. If not set, no integration will be used for the agent |  [optional] |
 | **userSelected** | **Boolean** | Whether the integration association has been manually selected |  [optional] |
 | **associatedIntegrations** | [**List&lt;AgentIntegrationAssociationResponse&gt;**](AgentIntegrationAssociationResponse) | The list of integrations associated with the agent |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

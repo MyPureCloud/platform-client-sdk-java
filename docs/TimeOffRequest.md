@@ -26,7 +26,6 @@
 | **syncVersion** | **Integer** | The sync version of this time off request for which the scheduled activity is associated |  [optional] |
 | **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | The version metadata of the time off request |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -38,7 +37,6 @@
 | APPROVED | &quot;APPROVED&quot; | 
 | DENIED | &quot;DENIED&quot; | 
 | CANCELED | &quot;CANCELED&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: SubstatusEnum
@@ -54,9 +52,8 @@
 | REMOVEDFROMWAITLIST | &quot;RemovedFromWaitlist&quot; | 
 | WAITLISTED | &quot;Waitlisted&quot; | 
 | OVERLAPSRESTRICTEDACTIVITYCODE | &quot;OverlapsRestrictedActivityCode&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

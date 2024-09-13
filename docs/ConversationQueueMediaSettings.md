@@ -9,9 +9,8 @@
 | **autoAnswerAlertToneSeconds** | **Double** | Specifies the duration of the alerting sound to be played for auto answered interactions. |  [optional] |
 | **manualAnswerAlertToneSeconds** | **Double** | Specifies the duration of the alerting sound to be played for manually answered interactions. |  [optional] |
 | **enableAutoAnswer** | **Boolean** | Flag to indicate if auto answer is enabled for the given media type or media subtype. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

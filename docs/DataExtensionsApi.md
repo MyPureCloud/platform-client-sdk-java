@@ -13,7 +13,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **getDataextensionsCoretype**
 
 
-
 > [Coretype](Coretype) getDataextensionsCoretype(coretypeName)
 
 Get a specific named core type.
@@ -73,7 +72,6 @@ try {
 # **getDataextensionsCoretypes**
 
 
-
 > [CoretypeListing](CoretypeListing) getDataextensionsCoretypes()
 
 Get the core types from which all schemas are built.
@@ -129,7 +127,6 @@ This endpoint does not require any parameters.
 # **getDataextensionsLimits**
 
 
-
 > [SchemaQuantityLimits](SchemaQuantityLimits) getDataextensionsLimits()
 
 Get quantitative limits on schemas
@@ -182,4 +179,4 @@ This endpoint does not require any parameters.
 [**SchemaQuantityLimits**](SchemaQuantityLimits)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

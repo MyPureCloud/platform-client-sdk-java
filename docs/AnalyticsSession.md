@@ -88,7 +88,6 @@
 | **flow** | [**AnalyticsFlow**](AnalyticsFlow) | IVR flow execution associated with this session |  [optional] |
 | **metrics** | [**List&lt;AnalyticsSessionMetric&gt;**](AnalyticsSessionMetric) | List of metrics for this session |  [optional] |
 | **segments** | [**List&lt;AnalyticsConversationSegment&gt;**](AnalyticsConversationSegment) | List of segments for this session |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: DeliveryStatusEnum
@@ -104,7 +103,6 @@
 | READ | &quot;Read&quot; | 
 | RECEIVED | &quot;Received&quot; | 
 | SENT | &quot;Sent&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DirectionEnum
@@ -114,7 +112,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INBOUND | &quot;inbound&quot; | 
 | OUTBOUND | &quot;outbound&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -131,7 +128,6 @@
 | UNKNOWN | &quot;unknown&quot; | 
 | VIDEO | &quot;video&quot; | 
 | VOICE | &quot;voice&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: RequestedRoutingsEnum
@@ -147,7 +143,6 @@
 | PREFERRED | &quot;Preferred&quot; |
 | STANDARD | &quot;Standard&quot; |
 | VIP | &quot;Vip&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: RoutingRuleTypeEnum
@@ -159,7 +154,6 @@
 | CONDITIONAL | &quot;Conditional&quot; | 
 | PREDICTIVE | &quot;Predictive&quot; | 
 | PREFERRED | &quot;Preferred&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: UsedRoutingEnum
@@ -176,9 +170,8 @@
 | PREFERRED | &quot;Preferred&quot; | 
 | STANDARD | &quot;Standard&quot; | 
 | VIP | &quot;Vip&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

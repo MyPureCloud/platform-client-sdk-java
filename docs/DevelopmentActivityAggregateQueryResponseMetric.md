@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **metric** | [**MetricEnum**](#Enum--MetricEnum) | The metric this applies to |  [optional] |
 | **stats** | [**DevelopmentActivityAggregateQueryResponseStatistics**](DevelopmentActivityAggregateQueryResponseStatistics) | The aggregated values for this metric |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MetricEnum
@@ -25,9 +24,8 @@
 | NFAILEDACTIVITIES | &quot;nFailedActivities&quot; | 
 | OACTIVITYSCORE | &quot;oActivityScore&quot; | 
 | NNOTCOMPLETEDACTIVITIES | &quot;nNotCompletedActivities&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

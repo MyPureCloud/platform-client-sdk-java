@@ -8,9 +8,8 @@
 | **maxSimultaneousStreams** | **Integer** | Maximum number of simultaneous screen recording streams |  [optional] |
 | **maxConfigurableScreenRecordingStreams** | **Integer** | Upper limit that maxSimultaneousStreams can be configured |  [optional] |
 | **regionalRecordingStorageEnabled** | **Boolean** | Store call recordings in the region where they are intended to be recorded, otherwise in the organization's home region |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

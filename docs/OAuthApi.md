@@ -23,7 +23,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteOauthClient**
 
 
-
 > Void deleteOauthClient(clientId)
 
 Delete OAuth Client
@@ -80,7 +79,6 @@ null (empty response body)
 
 
 # **getOauthAuthorization**
-
 
 
 > [OAuthAuthorization](OAuthAuthorization) getOauthAuthorization(clientId, acceptLanguage)
@@ -144,7 +142,6 @@ try {
 # **getOauthAuthorizations**
 
 
-
 > [OAuthAuthorizationListing](OAuthAuthorizationListing) getOauthAuthorizations(acceptLanguage)
 
 List clients that have been authorized, requested, or revoked by the resource owner
@@ -204,7 +201,6 @@ try {
 # **getOauthClient**
 
 
-
 > [OAuthClient](OAuthClient) getOauthClient(clientId)
 
 Get OAuth Client
@@ -262,7 +258,6 @@ try {
 
 
 # **getOauthClientUsageQueryResult**
-
 
 
 > [ApiUsageQueryResult](ApiUsageQueryResult) getOauthClientUsageQueryResult(executionId, clientId)
@@ -325,7 +320,6 @@ try {
 
 
 # **getOauthClientUsageSummary**
-
 
 
 > [UsageExecutionResult](UsageExecutionResult) getOauthClientUsageSummary(clientId, days)
@@ -392,7 +386,6 @@ try {
 # **getOauthClients**
 
 
-
 > [OAuthClientEntityListing](OAuthClientEntityListing) getOauthClients()
 
 The list of OAuth clients
@@ -446,7 +439,6 @@ This endpoint does not require any parameters.
 
 
 # **getOauthScope**
-
 
 
 > [OAuthScope](OAuthScope) getOauthScope(scopeId, acceptLanguage)
@@ -509,7 +501,6 @@ try {
 # **getOauthScopes**
 
 
-
 > [OAuthScopeListing](OAuthScopeListing) getOauthScopes(acceptLanguage)
 
 The list of OAuth scopes
@@ -566,7 +557,6 @@ try {
 
 
 # **postOauthClientSecret**
-
 
 
 > [OAuthClient](OAuthClient) postOauthClientSecret(clientId)
@@ -628,7 +618,6 @@ try {
 
 
 # **postOauthClientUsageQuery**
-
 
 
 > [UsageExecutionResult](UsageExecutionResult) postOauthClientUsageQuery(clientId, body)
@@ -695,7 +684,6 @@ try {
 # **postOauthClients**
 
 
-
 > [OAuthClient](OAuthClient) postOauthClients(body)
 
 Create OAuth client
@@ -757,7 +745,6 @@ try {
 # **putOauthClient**
 
 
-
 > [OAuthClient](OAuthClient) putOauthClient(clientId, body)
 
 Update OAuth Client
@@ -816,4 +803,4 @@ try {
 [**OAuthClient**](OAuthClient)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

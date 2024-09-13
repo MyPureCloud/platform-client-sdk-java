@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **key** | [**KeyEnum**](#Enum--KeyEnum) | Contains localized label key used in messenger homescreen |  [optional] |
 | **value** | **String** | Contains localized label value used in messenger homescreen |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: KeyEnum
@@ -17,9 +16,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | MESSENGERHOMEHEADERTITLE | &quot;MessengerHomeHeaderTitle&quot; | 
 | MESSENGERHOMEHEADERSUBTITLE | &quot;MessengerHomeHeaderSubTitle&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

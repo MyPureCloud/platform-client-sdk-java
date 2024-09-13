@@ -18,7 +18,6 @@
 | **surveyType** | [**SurveyTypeEnum**](#Enum--SurveyTypeEnum) | The type of the survey |  [optional] |
 | **userId** | **String** | ID of the agent the survey was performed against |  [optional] |
 | **oSurveyTotalScore** | **Long** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: SurveyTypeEnum
@@ -28,9 +27,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | WEB | &quot;Web&quot; | 
 | VOICE | &quot;Voice&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

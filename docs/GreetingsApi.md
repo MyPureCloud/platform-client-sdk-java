@@ -26,7 +26,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteGreeting**
 
 
-
 > Void deleteGreeting(greetingId)
 
 Deletes a Greeting with the given GreetingId
@@ -82,7 +81,6 @@ null (empty response body)
 
 
 # **getGreeting**
-
 
 
 > [Greeting](Greeting) getGreeting(greetingId)
@@ -141,7 +139,6 @@ try {
 
 
 # **getGreetingMedia**
-
 
 
 > [GreetingMediaInfo](GreetingMediaInfo) getGreetingMedia(greetingId, formatId)
@@ -204,7 +201,6 @@ try {
 # **getGreetings**
 
 
-
 > [DomainEntityListing](DomainEntityListing) getGreetings(pageSize, pageNumber)
 
 Gets an Organization's Greetings
@@ -265,7 +261,6 @@ try {
 # **getGreetingsDefaults**
 
 
-
 > [DefaultGreetingList](DefaultGreetingList) getGreetingsDefaults()
 
 Get an Organization's DefaultGreetingList
@@ -318,7 +313,6 @@ This endpoint does not require any parameters.
 
 
 # **getGroupGreetings**
-
 
 
 > [GreetingListing](GreetingListing) getGroupGreetings(groupId, pageSize, pageNumber)
@@ -383,7 +377,6 @@ try {
 # **getGroupGreetingsDefaults**
 
 
-
 > [DefaultGreetingList](DefaultGreetingList) getGroupGreetingsDefaults(groupId)
 
 Grabs the list of Default Greetings given a Group's ID
@@ -440,7 +433,6 @@ try {
 
 
 # **getUserGreetings**
-
 
 
 > [DomainEntityListing](DomainEntityListing) getUserGreetings(userId, pageSize, pageNumber)
@@ -505,7 +497,6 @@ try {
 # **getUserGreetingsDefaults**
 
 
-
 > [DefaultGreetingList](DefaultGreetingList) getUserGreetingsDefaults(userId)
 
 Grabs the list of Default Greetings given a User's ID
@@ -564,7 +555,6 @@ try {
 # **postGreetings**
 
 
-
 > [Greeting](Greeting) postGreetings(body)
 
 Create a Greeting for an Organization
@@ -621,7 +611,6 @@ try {
 
 
 # **postGroupGreetings**
-
 
 
 > [Greeting](Greeting) postGroupGreetings(groupId, body)
@@ -684,7 +673,6 @@ try {
 # **postUserGreetings**
 
 
-
 > [Greeting](Greeting) postUserGreetings(userId, body)
 
 Creates a Greeting for a User
@@ -743,7 +731,6 @@ try {
 
 
 # **putGreeting**
-
 
 
 > [Greeting](Greeting) putGreeting(greetingId, body)
@@ -806,7 +793,6 @@ try {
 # **putGreetingsDefaults**
 
 
-
 > [DefaultGreetingList](DefaultGreetingList) putGreetingsDefaults(body)
 
 Update an Organization's DefaultGreetingList
@@ -863,7 +849,6 @@ try {
 
 
 # **putGroupGreetingsDefaults**
-
 
 
 > [DefaultGreetingList](DefaultGreetingList) putGroupGreetingsDefaults(groupId, body)
@@ -926,7 +911,6 @@ try {
 # **putUserGreetingsDefaults**
 
 
-
 > [DefaultGreetingList](DefaultGreetingList) putUserGreetingsDefaults(userId, body)
 
 Updates the DefaultGreetingList of the specified User
@@ -984,4 +968,4 @@ try {
 [**DefaultGreetingList**](DefaultGreetingList)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

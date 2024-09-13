@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **body** | **String** | The message body. Note that message bodies are limited to 4,000 characters. |  |
 | **bodyType** | [**BodyTypeEnum**](#Enum--BodyTypeEnum) | The purpose of the message within the conversation, such as a standard text entry versus a greeting. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: BodyTypeEnum
@@ -20,9 +19,8 @@
 | MEMBER_JOIN | &quot;member-join&quot; | 
 | MEMBER_LEAVE | &quot;member-leave&quot; | 
 | MEDIA_REQUEST | &quot;media-request&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

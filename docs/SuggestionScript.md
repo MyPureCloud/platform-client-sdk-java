@@ -8,9 +8,8 @@
 | **script** | [**AddressableEntityRef**](AddressableEntityRef) | The suggested script. |  [optional] |
 | **page** | [**AddressableEntityRef**](AddressableEntityRef) | The page of the script. |  [optional] |
 | **data** | **Map&lt;String, String&gt;** | The payload for the script. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

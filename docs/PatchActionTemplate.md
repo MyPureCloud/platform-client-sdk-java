@@ -11,7 +11,6 @@
 | **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) | Media type of action described by the action template. |  [optional] |
 | **state** | [**StateEnum**](#Enum--StateEnum) | Whether the action template is currently active, inactive or deleted. |  [optional] |
 | **contentOffer** | [**PatchContentOffer**](PatchContentOffer) | Properties used to configure an action of type content offer |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -25,7 +24,6 @@
 | INTEGRATIONACTION | &quot;integrationAction&quot; | 
 | ARCHITECTFLOW | &quot;architectFlow&quot; | 
 | OPENACTION | &quot;openAction&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -36,9 +34,8 @@
 | ACTIVE | &quot;Active&quot; | 
 | INACTIVE | &quot;Inactive&quot; | 
 | DELETED | &quot;Deleted&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

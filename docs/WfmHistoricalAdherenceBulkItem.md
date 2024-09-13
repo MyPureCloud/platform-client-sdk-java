@@ -11,9 +11,8 @@
 | **userIds** | **List&lt;String&gt;** | The IDs of the users to query. If not included, will query every user in the management unit |  [optional] |
 | **includeExceptions** | **Boolean** | Whether user exceptions should be returned as part of the results. Defaults to false if not specified. |  [optional] |
 | **includeActuals** | **Boolean** | Whether user actual activities should be returned as part of the results. Defaults to false if not specified. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

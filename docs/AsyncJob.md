@@ -8,7 +8,6 @@
 | **id** | **String** |  |  [optional] |
 | **selfUri** | **String** |  |  [optional] |
 | **state** | [**StateEnum**](#Enum--StateEnum) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -20,9 +19,8 @@
 | COMPLETED | &quot;Completed&quot; | 
 | FAILED | &quot;Failed&quot; | 
 | CANCELLED | &quot;Cancelled&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

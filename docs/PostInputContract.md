@@ -6,9 +6,8 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **inputSchema** | [**JsonSchemaDocument**](JsonSchemaDocument) | JSON Schema that defines the body of the request that the client (edge/architect/postman) is sending to the service, on the /execute path. |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

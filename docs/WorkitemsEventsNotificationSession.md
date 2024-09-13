@@ -11,7 +11,6 @@
 | **dateSessionStart** | **String** |  |  [optional] |
 | **dateSessionEnd** | **String** |  |  [optional] |
 | **assignmentSegments** | [**List&lt;WorkitemsEventsNotificationAssignmentSegment&gt;**](WorkitemsEventsNotificationAssignmentSegment) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -24,7 +23,6 @@
 | QUEUEASSIGNMENT | &quot;QueueAssignment&quot; | 
 | DIRECTASSIGNMENT | &quot;DirectAssignment&quot; | 
 | AGENTCOMPLETE | &quot;AgentComplete&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -35,9 +33,8 @@
 | UNKNOWN | &quot;Unknown&quot; | 
 | ACTIVE | &quot;Active&quot; | 
 | COMPLETED | &quot;Completed&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

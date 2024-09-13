@@ -16,7 +16,6 @@
 | **alternateTimeDimension** | [**AlternateTimeDimensionEnum**](#Enum--AlternateTimeDimensionEnum) | Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event. |  [optional] |
 | **queryType** | [**QueryTypeEnum**](#Enum--QueryTypeEnum) | Query type to use. Use groupBy for all matching results, and topN for just top N results for the requested metric (group by exactly 1 dimension) |  [optional] |
 | **limit** | **Integer** | How many results you want in the topN list. Only applicable for topN query type. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: GroupByEnum
@@ -44,7 +43,6 @@
 | TRIGGERTYPE | &quot;triggerType&quot; |
 | USERID | &quot;userId&quot; |
 | UTTERANCEID | &quot;utteranceId&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: MetricsEnum
@@ -56,7 +54,6 @@
 | NKNOWLEDGEARTICLESUGGESTIONS | &quot;nKnowledgeArticleSuggestions&quot; |
 | NKNOWLEDGESEARCHSUGGESTIONS | &quot;nKnowledgeSearchSuggestions&quot; |
 | NSCRIPTSUGGESTIONS | &quot;nScriptSuggestions&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: AlternateTimeDimensionEnum
@@ -65,7 +62,6 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | EVENTTIME | &quot;eventTime&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: QueryTypeEnum
@@ -75,9 +71,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | GROUPBY | &quot;groupBy&quot; | 
 | TOPN | &quot;topN&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

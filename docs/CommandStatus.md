@@ -13,7 +13,6 @@
 | **commandType** | [**CommandTypeEnum**](#Enum--CommandTypeEnum) |  |  [optional] |
 | **document** | [**Document**](Document) |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusCodeEnum
@@ -26,7 +25,6 @@
 | ERROR | &quot;ERROR&quot; | 
 | CANCELING | &quot;CANCELING&quot; | 
 | CANCELED | &quot;CANCELED&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: CommandTypeEnum
@@ -44,9 +42,8 @@
 | REINDEX | &quot;REINDEX&quot; | 
 | CLEANUP | &quot;CLEANUP&quot; | 
 | REPLACEDOCUMENT | &quot;REPLACEDOCUMENT&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

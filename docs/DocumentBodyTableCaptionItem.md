@@ -11,7 +11,6 @@
 | **image** | [**DocumentBodyImage**](DocumentBodyImage) | Image. It must contain a value if the type of the block is Image. |  [optional] |
 | **video** | [**DocumentBodyVideo**](DocumentBodyVideo) | Video. It must contain a value if the type of the block is Video. |  [optional] |
 | **list** | [**DocumentBodyList**](DocumentBodyList) | List. It must contain a value if the type of the block is UnorderedList or OrderedList. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -25,9 +24,8 @@
 | VIDEO | &quot;Video&quot; | 
 | ORDEREDLIST | &quot;OrderedList&quot; | 
 | UNORDEREDLIST | &quot;UnorderedList&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

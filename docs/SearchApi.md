@@ -35,7 +35,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **getDocumentationGknSearch**
 
 
-
 > [GKNDocumentationSearchResponse](GKNDocumentationSearchResponse) getDocumentationGknSearch(q64)
 
 Search gkn documentation using the q64 value returned from a previous search
@@ -81,7 +80,6 @@ try {
 # **getDocumentationSearch**
 
 
-
 > [DocumentationSearchResponse](DocumentationSearchResponse) getDocumentationSearch(q64)
 
 Search documentation using the q64 value returned from a previous search
@@ -125,7 +123,6 @@ try {
 
 
 # **getGroupsSearch**
-
 
 
 > [GroupsSearchResponse](GroupsSearchResponse) getGroupsSearch(q64, expand)
@@ -188,7 +185,6 @@ try {
 # **getLocationsSearch**
 
 
-
 > [LocationsSearchResponse](LocationsSearchResponse) getLocationsSearch(q64, expand)
 
 Search locations using the q64 value returned from a previous search
@@ -247,7 +243,6 @@ try {
 
 
 # **getSearch**
-
 
 
 > [JsonNodeSearchResponse](JsonNodeSearchResponse) getSearch(q64, expand, profile)
@@ -313,7 +308,6 @@ try {
 # **getSearchSuggest**
 
 
-
 > [JsonNodeSearchResponse](JsonNodeSearchResponse) getSearchSuggest(q64, expand, profile)
 
 Suggest resources using the q64 value returned from a previous suggest query.
@@ -375,7 +369,6 @@ try {
 
 
 # **getUsersSearch**
-
 
 
 > [UsersSearchResponse](UsersSearchResponse) getUsersSearch(q64, expand, integrationPresenceSource)
@@ -441,7 +434,6 @@ try {
 # **getVoicemailSearch**
 
 
-
 > [VoicemailsSearchResponse](VoicemailsSearchResponse) getVoicemailSearch(q64, expand)
 
 Search voicemails using the q64 value returned from a previous search
@@ -500,7 +492,6 @@ try {
 
 
 # **postAnalyticsConversationsTranscriptsQuery**
-
 
 
 > [AnalyticsConversationWithoutAttributesMultiGetResponse](AnalyticsConversationWithoutAttributesMultiGetResponse) postAnalyticsConversationsTranscriptsQuery(body)
@@ -562,7 +553,6 @@ try {
 # **postConversationsParticipantsAttributesSearch**
 
 
-
 > [JsonCursorSearchResponse](JsonCursorSearchResponse) postConversationsParticipantsAttributesSearch(body)
 
 Search conversations
@@ -622,7 +612,6 @@ try {
 # **postDocumentationAllSearch**
 
 
-
 > [JsonNodeSearchResponse](JsonNodeSearchResponse) postDocumentationAllSearch(body)
 
 Search all documents
@@ -670,7 +659,6 @@ try {
 # **postDocumentationGknSearch**
 
 
-
 > [GKNDocumentationSearchResponse](GKNDocumentationSearchResponse) postDocumentationGknSearch(body)
 
 Search gkn documentation
@@ -716,7 +704,6 @@ try {
 # **postDocumentationSearch**
 
 
-
 > [DocumentationSearchResponse](DocumentationSearchResponse) postDocumentationSearch(body)
 
 Search documentation
@@ -760,7 +747,6 @@ try {
 
 
 # **postGroupsSearch**
-
 
 
 > [GroupsSearchResponse](GroupsSearchResponse) postGroupsSearch(body)
@@ -820,7 +806,9 @@ try {
 
 # **postKnowledgeKnowledgebaseSearch**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [KnowledgeSearchResponse](KnowledgeSearchResponse) postKnowledgeKnowledgebaseSearch(knowledgeBaseId, body)
 
@@ -883,7 +871,6 @@ try {
 # **postLocationsSearch**
 
 
-
 > [LocationsSearchResponse](LocationsSearchResponse) postLocationsSearch(body)
 
 Search locations
@@ -940,7 +927,6 @@ try {
 
 
 # **postSearch**
-
 
 
 > [JsonNodeSearchResponse](JsonNodeSearchResponse) postSearch(body, profile)
@@ -1004,7 +990,6 @@ try {
 # **postSearchSuggest**
 
 
-
 > [JsonNodeSearchResponse](JsonNodeSearchResponse) postSearchSuggest(body, profile)
 
 Suggest resources.
@@ -1064,7 +1049,6 @@ try {
 
 
 # **postSpeechandtextanalyticsTranscriptsSearch**
-
 
 
 > [JsonSearchResponse](JsonSearchResponse) postSpeechandtextanalyticsTranscriptsSearch(body)
@@ -1127,7 +1111,6 @@ try {
 # **postTeamsSearch**
 
 
-
 > [TeamsSearchResponse](TeamsSearchResponse) postTeamsSearch(body)
 
 Search resources.
@@ -1185,7 +1168,6 @@ try {
 
 
 # **postUsersSearch**
-
 
 
 > [UsersSearchResponse](UsersSearchResponse) postUsersSearch(body)
@@ -1247,7 +1229,6 @@ try {
 # **postUsersSearchConversationTarget**
 
 
-
 > [UsersSearchResponse](UsersSearchResponse) postUsersSearchConversationTarget(body)
 
 Search users as conversation targets
@@ -1307,7 +1288,6 @@ try {
 
 
 # **postUsersSearchQueuemembersManage**
-
 
 
 > [UsersSearchResponse](UsersSearchResponse) postUsersSearchQueuemembersManage(body)
@@ -1372,7 +1352,6 @@ try {
 # **postUsersSearchTeamsAssign**
 
 
-
 > [UsersSearchResponse](UsersSearchResponse) postUsersSearchTeamsAssign(body)
 
 Search users assigned to teams
@@ -1432,7 +1411,6 @@ try {
 # **postVoicemailSearch**
 
 
-
 > [VoicemailsSearchResponse](VoicemailsSearchResponse) postVoicemailSearch(body)
 
 Search voicemails
@@ -1488,4 +1466,4 @@ try {
 [**VoicemailsSearchResponse**](VoicemailsSearchResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

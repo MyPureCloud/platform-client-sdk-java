@@ -17,7 +17,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **getOauthClientUsageQueryResult**
 
 
-
 > [ApiUsageQueryResult](ApiUsageQueryResult) getOauthClientUsageQueryResult(executionId, clientId)
 
 Get the results of a usage query
@@ -78,7 +77,6 @@ try {
 
 
 # **getOauthClientUsageSummary**
-
 
 
 > [UsageExecutionResult](UsageExecutionResult) getOauthClientUsageSummary(clientId, days)
@@ -145,7 +143,6 @@ try {
 # **getUsageQueryExecutionIdResults**
 
 
-
 > [ApiUsageQueryResult](ApiUsageQueryResult) getUsageQueryExecutionIdResults(executionId)
 
 Get the results of a usage query
@@ -204,7 +201,6 @@ try {
 
 
 # **getUsageSimplesearchExecutionIdResults**
-
 
 
 > [ApiUsageQueryResult](ApiUsageQueryResult) getUsageSimplesearchExecutionIdResults(executionId, after, pageSize)
@@ -271,7 +267,6 @@ try {
 # **postOauthClientUsageQuery**
 
 
-
 > [UsageExecutionResult](UsageExecutionResult) postOauthClientUsageQuery(clientId, body)
 
 Query for OAuth client API usage
@@ -336,7 +331,6 @@ try {
 # **postUsageQuery**
 
 
-
 > [UsageExecutionResult](UsageExecutionResult) postUsageQuery(body)
 
 Query organization API Usage - 
@@ -399,7 +393,6 @@ try {
 # **postUsageSimplesearch**
 
 
-
 > [UsageExecutionResult](UsageExecutionResult) postUsageSimplesearch(body)
 
 Search organization API Usage
@@ -459,4 +452,4 @@ try {
 [**UsageExecutionResult**](UsageExecutionResult)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

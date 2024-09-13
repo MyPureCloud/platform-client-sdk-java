@@ -9,7 +9,6 @@
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of the adherence explanation job |  [optional] |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the adherence explanation job |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -21,7 +20,6 @@
 | UPDATEEXPLANATION | &quot;UpdateExplanation&quot; | 
 | QUERYAGENTEXPLANATIONS | &quot;QueryAgentExplanations&quot; | 
 | QUERYBUEXPLANATIONS | &quot;QueryBuExplanations&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -32,9 +30,8 @@
 | PROCESSING | &quot;Processing&quot; | 
 | COMPLETE | &quot;Complete&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -12,9 +12,8 @@
 | **reservedLines** | **Integer** | Number of reserved outbound lines in Campaign's Edge Group or Site |  [optional] |
 | **campaignsWithReservedLines** | [**List&lt;CampaignOutboundLinesReservation&gt;**](CampaignOutboundLinesReservation) | Information about campaigns with reserving lines in Campaign's Edge Group or Site |  [optional] |
 | **campaignsWithDynamicallyAllocatedLines** | [**List&lt;CampaignOutboundLinesAllocation&gt;**](CampaignOutboundLinesAllocation) | Information about campaigns using dynamic lines allocation in Campaign's Edge Group or Site |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

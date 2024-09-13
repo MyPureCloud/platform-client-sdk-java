@@ -13,9 +13,8 @@
 | **timeZoneRescheduledCallsCount** | **Integer** | Current number of time zone rescheduled calls on the campaign |  [optional] |
 | **filteredOutContactsCount** | **Integer** | Number of contacts that don't match filter. This is currently supported only for Campaigns with dynamic filter on. |  [optional] |
 | **campaignSkillStatistics** | [**CampaignSkillStatistics**](CampaignSkillStatistics) | Information regarding the campaign's skills |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

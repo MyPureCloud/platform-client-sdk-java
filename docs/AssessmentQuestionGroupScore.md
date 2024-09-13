@@ -21,9 +21,8 @@
 | **totalNonCriticalScoreUnweighted** | **Float** | The total unweighted score for the non-critical questions |  [optional] |
 | **maxTotalNonCriticalScoreUnweighted** | **Float** | The maximum unweighted total score for the non-critical questions |  [optional] |
 | **questionScores** | [**List&lt;AssessmentQuestionScore&gt;**](AssessmentQuestionScore) | The individual question scores |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

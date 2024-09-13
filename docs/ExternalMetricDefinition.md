@@ -16,7 +16,6 @@
 | **inUse** | **Boolean** | True if the External Metric Definition is in use |  [optional] |
 | **dateLastRefreshed** | [**Date**](Date) | The last date and time that the metric data was refreshed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: UnitEnum
@@ -28,7 +27,6 @@
 | PERCENT | &quot;Percent&quot; | 
 | NUMBER | &quot;Number&quot; | 
 | CURRENCY | &quot;Currency&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DefaultObjectiveTypeEnum
@@ -39,9 +37,8 @@
 | HIGHERISBETTER | &quot;HigherIsBetter&quot; | 
 | LOWERISBETTER | &quot;LowerIsBetter&quot; | 
 | TARGETAREA | &quot;TargetArea&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

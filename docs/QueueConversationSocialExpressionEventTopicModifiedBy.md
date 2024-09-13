@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** | The id of the user if the updater is an internal user. |  [optional] |
 | **selfUri** | **String** | The URI for the user if the updater is an internal user. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

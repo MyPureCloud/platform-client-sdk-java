@@ -18,7 +18,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteLocation**
 
 
-
 > Void deleteLocation(locationId)
 
 Delete a location
@@ -75,7 +74,6 @@ null (empty response body)
 
 
 # **getLocation**
-
 
 
 > [LocationDefinition](LocationDefinition) getLocation(locationId, expand)
@@ -138,7 +136,6 @@ try {
 # **getLocationSublocations**
 
 
-
 > [LocationEntityListing](LocationEntityListing) getLocationSublocations(locationId)
 
 Get sublocations for location ID.
@@ -195,7 +192,6 @@ try {
 
 
 # **getLocations**
-
 
 
 > [LocationEntityListing](LocationEntityListing) getLocations(pageSize, pageNumber, id, sortOrder)
@@ -262,7 +258,6 @@ try {
 # **getLocationsSearch**
 
 
-
 > [LocationsSearchResponse](LocationsSearchResponse) getLocationsSearch(q64, expand)
 
 Search locations using the q64 value returned from a previous search
@@ -321,7 +316,6 @@ try {
 
 
 # **patchLocation**
-
 
 
 > [LocationDefinition](LocationDefinition) patchLocation(locationId, body)
@@ -385,7 +379,6 @@ try {
 # **postLocations**
 
 
-
 > [LocationDefinition](LocationDefinition) postLocations(body)
 
 Create a location
@@ -445,7 +438,6 @@ try {
 # **postLocationsSearch**
 
 
-
 > [LocationsSearchResponse](LocationsSearchResponse) postLocationsSearch(body)
 
 Search locations
@@ -501,4 +493,4 @@ try {
 [**LocationsSearchResponse**](LocationsSearchResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

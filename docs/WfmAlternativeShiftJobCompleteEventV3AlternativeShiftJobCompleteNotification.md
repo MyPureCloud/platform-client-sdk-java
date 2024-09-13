@@ -10,7 +10,6 @@
 | **status** | [**StatusEnum**](#Enum--StatusEnum) |  |  [optional] |
 | **downloadUrl** | **String** |  |  [optional] |
 | **error** | [**WfmAlternativeShiftJobCompleteEventV3ErrorBody**](WfmAlternativeShiftJobCompleteEventV3ErrorBody) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -23,7 +22,6 @@
 | LISTUSERTRADES | &quot;ListUserTrades&quot; | 
 | SEARCHTRADES | &quot;SearchTrades&quot; | 
 | BULKUPDATETRADES | &quot;BulkUpdateTrades&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -34,9 +32,8 @@
 | PROCESSING | &quot;Processing&quot; | 
 | COMPLETE | &quot;Complete&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

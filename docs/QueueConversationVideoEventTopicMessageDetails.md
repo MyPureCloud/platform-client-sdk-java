@@ -13,7 +13,6 @@
 | **errorInfo** | [**QueueConversationVideoEventTopicErrorDetails**](QueueConversationVideoEventTopicErrorDetails) | Detailed information about an error response. |  [optional] |
 | **stickers** | [**List&lt;QueueConversationVideoEventTopicMessageSticker&gt;**](QueueConversationVideoEventTopicMessageSticker) | A list of stickers included in the message |  [optional] |
 | **messageMetadata** | [**QueueConversationVideoEventTopicMessageMetadata**](QueueConversationVideoEventTopicMessageMetadata) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MessageStatusEnum
@@ -30,9 +29,8 @@
 | READ | &quot;read&quot; | 
 | REMOVED | &quot;removed&quot; | 
 | PUBLISHED | &quot;published&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -14,7 +14,6 @@
 | **countAgainstTimeOffLimits** | **Boolean** | Whether this time-off plan should count against time-off limits. Default is false |  [optional] |
 | **businessUnitAssociation** | [**CreateTimeOffPlanBusinessUnitAssociation**](CreateTimeOffPlanBusinessUnitAssociation) | Business unit association, if the time-off plan belongs to a business unit. managementUnitAssociation must not be set if this is populated |  [optional] |
 | **managementUnitAssociation** | [**CreateTimeOffPlanManagementUnitAssociation**](CreateTimeOffPlanManagementUnitAssociation) | Management unit association, if the time-off plan belongs to a management unit. businessUnitAssociation must not be set if this is populated |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: AutoApprovalRuleEnum
@@ -27,9 +26,8 @@
 | CHECKLIMITS | &quot;CheckLimits&quot; | 
 | CHECKACTIVITYCODES | &quot;CheckActivityCodes&quot; | 
 | CHECKLIMITSANDACTIVITYCODES | &quot;CheckLimitsAndActivityCodes&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

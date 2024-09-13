@@ -10,7 +10,6 @@
 | **state** | [**StateEnum**](#Enum--StateEnum) |  |  [optional] |
 | **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) |  |  [optional] |
 | **prompt** | **String** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -32,7 +31,6 @@
 | ABANDONED | &quot;abandoned&quot; | 
 | COMPLETED | &quot;completed&quot; | 
 | FREQUENCYCAPREACHED | &quot;frequencyCapReached&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -44,9 +42,8 @@
 | WEBMESSAGINGOFFER | &quot;webMessagingOffer&quot; | 
 | CONTENTOFFER | &quot;contentOffer&quot; | 
 | ARCHITECTFLOW | &quot;architectFlow&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

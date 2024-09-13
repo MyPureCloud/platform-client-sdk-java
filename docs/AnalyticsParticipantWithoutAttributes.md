@@ -15,7 +15,6 @@
 | **teamId** | **String** | The team ID the user is a member of |  [optional] |
 | **userId** | **String** | Unique identifier for the user |  [optional] |
 | **sessions** | [**List&lt;AnalyticsSession&gt;**](AnalyticsSession) | List of sessions associated to this participant |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: FlaggedReasonEnum
@@ -24,7 +23,6 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | GENERAL | &quot;general&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: PurposeEnum
@@ -51,9 +49,8 @@
 | VOICEMAIL | &quot;voicemail&quot; | 
 | VOICESURVEYFLOW | &quot;voicesurveyflow&quot; | 
 | WORKFLOW | &quot;workflow&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

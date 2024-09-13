@@ -11,7 +11,6 @@
 | **documentType** | [**DocumentTypeEnum**](#Enum--DocumentTypeEnum) | Document type to be used while searching |  [optional] |
 | **languageCode** | **String** | query search for specific languageCode |  |
 | **searchOnDraftDocuments** | **Boolean** | If true the search query will be executed on draft documents, else it will be on active documents |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: DocumentTypeEnum
@@ -21,9 +20,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | FAQ | &quot;Faq&quot; | 
 | ARTICLE | &quot;Article&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

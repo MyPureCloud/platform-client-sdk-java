@@ -12,7 +12,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **getBillingReportsBillableusage**
 
 
-
 > [BillingUsageReport](BillingUsageReport) getBillingReportsBillableusage(startDate, endDate)
 
 Get a report of the billable license usages
@@ -77,7 +76,6 @@ try {
 # **getBillingTrusteebillingoverviewTrustorOrgId**
 
 
-
 > [TrusteeBillingOverview](TrusteeBillingOverview) getBillingTrusteebillingoverviewTrustorOrgId(trustorOrgId, billingPeriodIndex)
 
 Get the billing overview for an organization that is managed by a partner.
@@ -138,4 +136,4 @@ try {
 [**TrusteeBillingOverview**](TrusteeBillingOverview)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

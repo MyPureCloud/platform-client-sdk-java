@@ -14,7 +14,6 @@
 | **answerOptions** | [**List&lt;AnswerOption&gt;**](AnswerOption) | Options from which to choose an answer for this question. Only used by Multiple Choice type questions. |  [optional] |
 | **maxResponseCharacters** | **Integer** | How many characters are allowed in the text response to this question. Used by NPS and Free Text question types. |  [optional] |
 | **explanationPrompt** | **String** | Prompt for details explaining the chosen NPS score. Used by NPS questions. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -26,9 +25,8 @@
 | FREETEXTQUESTION | &quot;freeTextQuestion&quot; | 
 | NPSQUESTION | &quot;npsQuestion&quot; | 
 | READONLYTEXTBLOCKQUESTION | &quot;readOnlyTextBlockQuestion&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -12,7 +12,6 @@
 | **sourceParticipantId** | **String** | Unique identifier for the participant initiating the secure session. |  [optional] |
 | **disconnect** | **Boolean** | If true, disconnect the agent after creating the session |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -23,9 +22,8 @@
 | PENDING | &quot;PENDING&quot; | 
 | COMPLETED | &quot;COMPLETED&quot; | 
 | FAILED | &quot;FAILED&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

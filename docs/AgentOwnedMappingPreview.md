@@ -11,9 +11,8 @@
 | **exists** | **Boolean** | Whether the user exists |  [optional] |
 | **isQueueMember** | **Boolean** | Whether the user is a member of the campaign's queue |  [optional] |
 | **recordCount** | **Integer** | The number of contact records whose agent-owned column matches the raw value |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

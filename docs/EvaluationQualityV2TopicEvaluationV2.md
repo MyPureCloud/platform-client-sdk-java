@@ -42,7 +42,6 @@
 | **agentCommentHasUpdated** | **Boolean** |  |  [optional] |
 | **previousRescoreCount** | **Integer** |  |  [optional] |
 | **previousEvaluatorUserId** | **String** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -55,7 +54,6 @@
 | FINISHED | &quot;Finished&quot; | 
 | INREVIEW | &quot;InReview&quot; | 
 | RETRACTED | &quot;Retracted&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: PreviousStatusEnum
@@ -68,9 +66,8 @@
 | FINISHED | &quot;Finished&quot; | 
 | INREVIEW | &quot;InReview&quot; | 
 | RETRACTED | &quot;Retracted&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

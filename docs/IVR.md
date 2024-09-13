@@ -23,7 +23,6 @@
 | **holidayHoursFlow** | [**DomainEntityRef**](DomainEntityRef) | The Architect flow to execute during an organization's holiday hours. |  [optional] |
 | **scheduleGroup** | [**DomainEntityRef**](DomainEntityRef) | The schedule group defining the open and closed hours for an organization.  If this is provided, an open flow and a closed flow must be specified as well. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -34,9 +33,8 @@
 | ACTIVE | &quot;active&quot; | 
 | INACTIVE | &quot;inactive&quot; | 
 | DELETED | &quot;deleted&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

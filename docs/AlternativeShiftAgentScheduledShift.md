@@ -10,9 +10,8 @@
 | **startDate** | [**Date**](Date) | The start date of this shift in ISO-8601 format |  |
 | **lengthMinutes** | **Integer** | The length of this shift in minutes |  |
 | **activities** | [**List&lt;BuAgentScheduleActivity&gt;**](BuAgentScheduleActivity) | A list of activities in this shift |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

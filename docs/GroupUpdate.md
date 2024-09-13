@@ -17,7 +17,6 @@
 | **rolesEnabled** | **Boolean** | Allow roles to be assigned to this group |  [optional] |
 | **ownerIds** | **List&lt;String&gt;** | Owners of the group |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -28,7 +27,6 @@
 | ACTIVE | &quot;active&quot; | 
 | INACTIVE | &quot;inactive&quot; | 
 | DELETED | &quot;deleted&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: VisibilityEnum
@@ -39,9 +37,8 @@
 | PUBLIC | &quot;public&quot; | 
 | OWNERIDS | &quot;ownerIds&quot; | 
 | MEMBERS | &quot;members&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -5,10 +5,10 @@
 [![platform-client-v2](https://maven-badges.herokuapp.com/maven-central/com.mypurecloud/platform-client-v2/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.mypurecloud/platform-client-v2)
 [![Release Notes Badge](https://developer-content.genesys.cloud/images/sdk-release-notes.png)](https://github.com/MyPureCloud/platform-client-sdk-java/blob/master/releaseNotes.md)
 
-* **Documentation** https://developer.genesys.cloud/devapps/sdk/docexplorer/purecloudjava/
+* **Documentation** https://mypurecloud.github.io/platform-client-sdk-java/
 * **Source** https://github.com/MyPureCloud/platform-client-sdk-java
 
-Documentation version: com.mypurecloud.sdk.v2:platform-client-v2:208.0.0
+Documentation version: com.mypurecloud.sdk.v2:platform-client-v2:209.0.1
 
 ## Install Using maven
 

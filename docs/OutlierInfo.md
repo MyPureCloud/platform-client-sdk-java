@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **outlier** | **Boolean** | Boolean to identify if an outlier or not. |  [optional] |
 | **score** | **Float** | Outlier score for this utterance. The score is always 0 or greater and higher the score, the more outlier. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

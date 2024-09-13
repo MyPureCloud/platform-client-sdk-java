@@ -10,9 +10,8 @@
 | **dispositionParameters** | [**DispositionParameters**](DispositionParameters) | Contains various parameters related to call analysis. |  [optional] |
 | **detectedSpeechStart** | [**Date**](Date) | Absolute time when the speech started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **detectedSpeechEnd** | [**Date**](Date) | Absolute time when the speech ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

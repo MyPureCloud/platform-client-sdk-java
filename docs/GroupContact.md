@@ -10,7 +10,6 @@
 | **display** | **String** | Formatted version of the address property |  [optional] |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | Contact type of the address |  |
 | **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) | Media type of the address |  |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -20,7 +19,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | GROUPRING | &quot;GROUPRING&quot; | 
 | GROUPPHONE | &quot;GROUPPHONE&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -29,9 +27,8 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | PHONE | &quot;PHONE&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

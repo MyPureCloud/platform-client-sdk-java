@@ -28,7 +28,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteWebchatDeployment**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Void deleteWebchatDeployment(deploymentId)
 
@@ -88,7 +90,6 @@ null (empty response body)
 # **deleteWebchatGuestConversationMember**
 
 
-
 > Void deleteWebchatGuestConversationMember(conversationId, memberId)
 
 Remove a member from a chat conversation
@@ -145,7 +146,6 @@ null (empty response body)
 # **deleteWebchatSettings**
 
 
-
 > Void deleteWebchatSettings()
 
 Remove WebChat deployment settings
@@ -199,7 +199,9 @@ null (empty response body)
 
 # **getWebchatDeployment**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [WebChatDeployment](WebChatDeployment) getWebchatDeployment(deploymentId)
 
@@ -259,7 +261,9 @@ try {
 
 # **getWebchatDeployments**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [WebChatDeploymentEntityListing](WebChatDeploymentEntityListing) getWebchatDeployments()
 
@@ -315,7 +319,9 @@ This endpoint does not require any parameters.
 
 # **getWebchatGuestConversationMediarequest**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [WebChatGuestMediaRequest](WebChatGuestMediaRequest) getWebchatGuestConversationMediarequest(conversationId, mediaRequestId)
 
@@ -376,7 +382,6 @@ try {
 # **getWebchatGuestConversationMediarequests**
 
 
-
 > [WebChatGuestMediaRequestEntityList](WebChatGuestMediaRequestEntityList) getWebchatGuestConversationMediarequests(conversationId)
 
 Get all media requests to the guest in the conversation
@@ -430,7 +435,6 @@ try {
 
 
 # **getWebchatGuestConversationMember**
-
 
 
 > [WebChatMemberInfo](WebChatMemberInfo) getWebchatGuestConversationMember(conversationId, memberId)
@@ -488,7 +492,6 @@ try {
 
 
 # **getWebchatGuestConversationMembers**
-
 
 
 > [WebChatMemberInfoEntityList](WebChatMemberInfoEntityList) getWebchatGuestConversationMembers(conversationId, pageSize, pageNumber, excludeDisconnectedMembers)
@@ -552,7 +555,6 @@ try {
 # **getWebchatGuestConversationMessage**
 
 
-
 > [WebChatMessage](WebChatMessage) getWebchatGuestConversationMessage(conversationId, messageId)
 
 Get a web chat conversation message
@@ -608,7 +610,6 @@ try {
 
 
 # **getWebchatGuestConversationMessages**
-
 
 
 > [WebChatMessageEntityList](WebChatMessageEntityList) getWebchatGuestConversationMessages(conversationId, after, before, sortOrder, maxResults)
@@ -674,7 +675,6 @@ try {
 # **getWebchatSettings**
 
 
-
 > [WebChatSettings](WebChatSettings) getWebchatSettings()
 
 Get WebChat deployment settings
@@ -729,7 +729,9 @@ This endpoint does not require any parameters.
 
 # **patchWebchatGuestConversationMediarequest**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [WebChatGuestMediaRequest](WebChatGuestMediaRequest) patchWebchatGuestConversationMediarequest(conversationId, mediaRequestId, body)
 
@@ -791,7 +793,9 @@ try {
 
 # **postWebchatDeployments**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [WebChatDeployment](WebChatDeployment) postWebchatDeployments(body)
 
@@ -850,7 +854,6 @@ try {
 
 
 # **postWebchatGuestConversationMemberMessages**
-
 
 
 > [WebChatMessage](WebChatMessage) postWebchatGuestConversationMemberMessages(conversationId, memberId, body)
@@ -912,7 +915,6 @@ try {
 # **postWebchatGuestConversationMemberTyping**
 
 
-
 > [WebChatTyping](WebChatTyping) postWebchatGuestConversationMemberTyping(conversationId, memberId)
 
 Send a typing-indicator in a chat conversation.
@@ -970,7 +972,6 @@ try {
 # **postWebchatGuestConversations**
 
 
-
 > [CreateWebChatConversationResponse](CreateWebChatConversationResponse) postWebchatGuestConversations(body)
 
 Create an ACD chat conversation from an external customer.
@@ -1017,7 +1018,9 @@ try {
 
 # **putWebchatDeployment**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [WebChatDeployment](WebChatDeployment) putWebchatDeployment(deploymentId, body)
 
@@ -1080,7 +1083,6 @@ try {
 # **putWebchatSettings**
 
 
-
 > [WebChatSettings](WebChatSettings) putWebchatSettings(body)
 
 Update WebChat deployment settings
@@ -1137,4 +1139,4 @@ try {
 [**WebChatSettings**](WebChatSettings)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

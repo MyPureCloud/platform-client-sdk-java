@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **name** | **String** | The intent name |  |
 | **parameters** | [**Map&lt;String, DialogflowParameter&gt;**](DialogflowParameter) | An object mapping parameter names to Parameter objects |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

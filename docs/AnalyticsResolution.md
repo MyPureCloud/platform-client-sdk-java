@@ -9,9 +9,8 @@
 | **queueId** | **String** | The ID of the last queue on which the conversation was handled. |  [optional] |
 | **userId** | **String** | The ID of the last user who handled the conversation. |  [optional] |
 | **nNextContactAvoided** | **Long** |  |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -13,9 +13,9 @@
 | **conversationDisconnect** | [**ConversationDisconnectSettings**](ConversationDisconnectSettings) | The conversation disconnect settings for the messenger app |  [optional] |
 | **conversationClear** | [**ConversationClearSettings**](ConversationClearSettings) | The conversation clear settings for the messenger app |  [optional] |
 | **humanize** | [**Humanize**](Humanize) | The humanize conversations settings for the messenger app |  [optional] |
-{: class="table table-striped"}
+| **notifications** | [**NotificationsSettings**](NotificationsSettings) | The notification settings for messenger apps |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

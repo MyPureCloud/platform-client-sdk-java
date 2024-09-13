@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **min** | **Long** | A non-negative integer for a text-based schema field denoting the minimum smallest length a string field can contain for a schema instance. |  |
 | **max** | **Long** | A non-negative integer for a text-based schema field denoting the maximum smallest length string the field can contain for a schema instance. |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

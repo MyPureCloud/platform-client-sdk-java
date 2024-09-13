@@ -17,7 +17,6 @@
 | **scope** | [**ScopeEnum**](#Enum--ScopeEnum) | The scope for the table cell. |  [optional] |
 | **colSpan** | **Integer** | The colSpan for the table cell. |  [optional] |
 | **rowSpan** | **Integer** | The rowSpan for the table cell. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: CellTypeEnum
@@ -27,7 +26,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | CELL | &quot;Cell&quot; | 
 | HEADERCELL | &quot;HeaderCell&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: HorizontalAlignEnum
@@ -38,7 +36,6 @@
 | CENTER | &quot;Center&quot; | 
 | LEFT | &quot;Left&quot; | 
 | RIGHT | &quot;Right&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: VerticalAlignEnum
@@ -49,7 +46,6 @@
 | TOP | &quot;Top&quot; | 
 | MIDDLE | &quot;Middle&quot; | 
 | BOTTOM | &quot;Bottom&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: BorderStyleEnum
@@ -67,7 +63,6 @@
 | OUTSET | &quot;Outset&quot; | 
 | HIDDEN | &quot;Hidden&quot; | 
 | NONE | &quot;None&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ScopeEnum
@@ -80,9 +75,8 @@
 | ROWGROUP | &quot;RowGroup&quot; | 
 | COLUMNGROUP | &quot;ColumnGroup&quot; | 
 | NONE | &quot;None&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

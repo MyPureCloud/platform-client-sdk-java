@@ -10,9 +10,8 @@
 | **max** | **Long** | The maximum value of the limit. |  [optional] |
 | **entityId** | **String** | The entity which makes this count unique. The context of what the entity is would be dependant on the limit. May not be applicable for all limits. |  [optional] |
 | **userId** | **String** | The user which makes this count unique. May not be applicable for all limits. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

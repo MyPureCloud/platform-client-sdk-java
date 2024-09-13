@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **name** | **String** | Facebook permission name |  [optional] |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | Facebook permission type |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -19,9 +18,8 @@
 | FACEBOOKPUBLIC | &quot;FacebookPublic&quot; | 
 | INSTAGRAMPRIVATE | &quot;InstagramPrivate&quot; | 
 | WHATSAPPPRIVATE | &quot;WhatsAppPrivate&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

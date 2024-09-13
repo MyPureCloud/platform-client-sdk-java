@@ -14,9 +14,8 @@
 | **contactsMappedToMultipleZonesUsingZipCode** | **Long** | The total number of contacts that mapped to multiple time zones and were mapped using the zip code column |  [optional] |
 | **contactsInDefaultWindow** | **Long** | The total number of contacts that will be dialed during the default window |  [optional] |
 | **contactListSize** | **Long** | The total number of contacts in the contact list |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

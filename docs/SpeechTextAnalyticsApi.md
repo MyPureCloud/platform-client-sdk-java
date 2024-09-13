@@ -59,7 +59,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteSpeechandtextanalyticsCategory**
 
 
-
 > Void deleteSpeechandtextanalyticsCategory(categoryId)
 
 Delete a Speech & Text Analytics category by ID
@@ -118,7 +117,6 @@ null (empty response body)
 # **deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId**
 
 
-
 > Void deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId)
 
 Delete a Speech & Text Analytics DictionaryFeedback by Id
@@ -175,7 +173,6 @@ null (empty response body)
 
 
 # **deleteSpeechandtextanalyticsProgram**
-
 
 
 > [DeleteProgramResponse](DeleteProgramResponse) deleteSpeechandtextanalyticsProgram(programId, forceDelete)
@@ -239,7 +236,6 @@ try {
 # **deleteSpeechandtextanalyticsSentimentfeedback**
 
 
-
 > Void deleteSpeechandtextanalyticsSentimentfeedback()
 
 Delete All Speech & Text Analytics SentimentFeedback
@@ -292,7 +288,6 @@ null (empty response body)
 
 
 # **deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId**
-
 
 
 > Void deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId(sentimentFeedbackId)
@@ -353,7 +348,6 @@ null (empty response body)
 # **deleteSpeechandtextanalyticsTopic**
 
 
-
 > Void deleteSpeechandtextanalyticsTopic(topicId)
 
 Delete a Speech & Text Analytics topic by id
@@ -410,7 +404,6 @@ null (empty response body)
 
 
 # **getSpeechandtextanalyticsCategories**
-
 
 
 > [CategoriesEntityListing](CategoriesEntityListing) getSpeechandtextanalyticsCategories(pageSize, pageNumber, name, sortOrder, sortBy, ids)
@@ -482,7 +475,6 @@ try {
 # **getSpeechandtextanalyticsCategory**
 
 
-
 > [StaCategory](StaCategory) getSpeechandtextanalyticsCategory(categoryId)
 
 Get a Speech & Text Analytics Category by ID
@@ -540,7 +532,6 @@ try {
 
 
 # **getSpeechandtextanalyticsConversation**
-
 
 
 > [ConversationMetrics](ConversationMetrics) getSpeechandtextanalyticsConversation(conversationId)
@@ -601,7 +592,6 @@ try {
 
 
 # **getSpeechandtextanalyticsConversationCategories**
-
 
 
 > [ConversationCategoriesEntityListing](ConversationCategoriesEntityListing) getSpeechandtextanalyticsConversationCategories(conversationId, pageSize, pageNumber)
@@ -667,7 +657,6 @@ try {
 # **getSpeechandtextanalyticsConversationCommunicationTranscripturl**
 
 
-
 > [TranscriptUrl](TranscriptUrl) getSpeechandtextanalyticsConversationCommunicationTranscripturl(conversationId, communicationId)
 
 Get the pre-signed S3 URL for the transcript of a specific communication of a conversation
@@ -730,7 +719,6 @@ try {
 # **getSpeechandtextanalyticsConversationCommunicationTranscripturls**
 
 
-
 > [TranscriptUrls](TranscriptUrls) getSpeechandtextanalyticsConversationCommunicationTranscripturls(conversationId, communicationId)
 
 Get the list of pre-signed S3 URL for the transcripts of a specific communication of a conversation
@@ -791,7 +779,6 @@ try {
 
 
 # **getSpeechandtextanalyticsDictionaryfeedback**
-
 
 
 > [DictionaryFeedbackEntityListing](DictionaryFeedbackEntityListing) getSpeechandtextanalyticsDictionaryfeedback(dialect, nextPage, pageSize)
@@ -857,7 +844,6 @@ try {
 # **getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId**
 
 
-
 > [DictionaryFeedback](DictionaryFeedback) getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId)
 
 Get a Speech & Text Analytics dictionary feedback by id
@@ -915,7 +901,6 @@ try {
 
 
 # **getSpeechandtextanalyticsProgram**
-
 
 
 > [Program](Program) getSpeechandtextanalyticsProgram(programId)
@@ -977,7 +962,6 @@ try {
 # **getSpeechandtextanalyticsProgramMappings**
 
 
-
 > [ProgramMappings](ProgramMappings) getSpeechandtextanalyticsProgramMappings(programId)
 
 Get Speech & Text Analytics program mappings to queues and flows by id
@@ -1037,7 +1021,6 @@ try {
 # **getSpeechandtextanalyticsProgramTranscriptionengines**
 
 
-
 > [ProgramTranscriptionEngines](ProgramTranscriptionEngines) getSpeechandtextanalyticsProgramTranscriptionengines(programId)
 
 Get transcription engine settings of a program
@@ -1095,7 +1078,6 @@ try {
 
 
 # **getSpeechandtextanalyticsPrograms**
-
 
 
 > [ProgramsEntityListing](ProgramsEntityListing) getSpeechandtextanalyticsPrograms(nextPage, pageSize, state)
@@ -1161,7 +1143,6 @@ try {
 # **getSpeechandtextanalyticsProgramsGeneralJob**
 
 
-
 > [GeneralProgramJob](GeneralProgramJob) getSpeechandtextanalyticsProgramsGeneralJob(jobId)
 
 Get a Speech & Text Analytics general program job by id
@@ -1222,7 +1203,6 @@ try {
 
 
 # **getSpeechandtextanalyticsProgramsMappings**
-
 
 
 > [ProgramsMappingsEntityListing](ProgramsMappingsEntityListing) getSpeechandtextanalyticsProgramsMappings(nextPage, pageSize)
@@ -1286,7 +1266,6 @@ try {
 # **getSpeechandtextanalyticsProgramsPublishjob**
 
 
-
 > [ProgramJob](ProgramJob) getSpeechandtextanalyticsProgramsPublishjob(jobId)
 
 Get a Speech & Text Analytics publish programs job by id
@@ -1346,7 +1325,6 @@ try {
 # **getSpeechandtextanalyticsProgramsTranscriptionenginesDialects**
 
 
-
 > [SupportedDialectsEntityListing](SupportedDialectsEntityListing) getSpeechandtextanalyticsProgramsTranscriptionenginesDialects()
 
 Get supported dialects for each transcription engine
@@ -1399,7 +1377,6 @@ This endpoint does not require any parameters.
 
 
 # **getSpeechandtextanalyticsProgramsUnpublished**
-
 
 
 > [UnpublishedProgramsEntityListing](UnpublishedProgramsEntityListing) getSpeechandtextanalyticsProgramsUnpublished(nextPage, pageSize)
@@ -1463,7 +1440,6 @@ try {
 # **getSpeechandtextanalyticsSentimentDialects**
 
 
-
 > [EntityListing](EntityListing) getSpeechandtextanalyticsSentimentDialects()
 
 Get the list of Speech & Text Analytics sentiment supported dialects
@@ -1516,7 +1492,6 @@ This endpoint does not require any parameters.
 
 
 # **getSpeechandtextanalyticsSentimentfeedback**
-
 
 
 > [SentimentFeedbackEntityListing](SentimentFeedbackEntityListing) getSpeechandtextanalyticsSentimentfeedback(dialect)
@@ -1578,7 +1553,6 @@ try {
 # **getSpeechandtextanalyticsSettings**
 
 
-
 > [SpeechTextAnalyticsSettingsResponse](SpeechTextAnalyticsSettingsResponse) getSpeechandtextanalyticsSettings()
 
 Get Speech And Text Analytics Settings
@@ -1632,7 +1606,6 @@ This endpoint does not require any parameters.
 
 
 # **getSpeechandtextanalyticsTopic**
-
 
 
 > [Topic](Topic) getSpeechandtextanalyticsTopic(topicId)
@@ -1692,7 +1665,6 @@ try {
 
 
 # **getSpeechandtextanalyticsTopics**
-
 
 
 > [TopicsEntityListing](TopicsEntityListing) getSpeechandtextanalyticsTopics(nextPage, pageSize, state, name, ids, dialects, sortBy, sortOrder)
@@ -1768,7 +1740,6 @@ try {
 # **getSpeechandtextanalyticsTopicsDialects**
 
 
-
 > [EntityListing](EntityListing) getSpeechandtextanalyticsTopicsDialects()
 
 Get list of supported Speech & Text Analytics topics dialects
@@ -1821,7 +1792,6 @@ This endpoint does not require any parameters.
 
 
 # **getSpeechandtextanalyticsTopicsGeneral**
-
 
 
 > [GeneralTopicsEntityListing](GeneralTopicsEntityListing) getSpeechandtextanalyticsTopicsGeneral(dialect)
@@ -1883,7 +1853,6 @@ try {
 # **getSpeechandtextanalyticsTopicsGeneralStatus**
 
 
-
 > [UnifiedGeneralTopicEntityListing](UnifiedGeneralTopicEntityListing) getSpeechandtextanalyticsTopicsGeneralStatus(dialect)
 
 Get the list of general topics from the org and the system with their current status
@@ -1941,7 +1910,6 @@ try {
 
 
 # **getSpeechandtextanalyticsTopicsPublishjob**
-
 
 
 > [TopicJob](TopicJob) getSpeechandtextanalyticsTopicsPublishjob(jobId)
@@ -2003,7 +1971,6 @@ try {
 # **patchSpeechandtextanalyticsSettings**
 
 
-
 > [SpeechTextAnalyticsSettingsResponse](SpeechTextAnalyticsSettingsResponse) patchSpeechandtextanalyticsSettings(body)
 
 Patch Speech And Text Analytics Settings
@@ -2061,7 +2028,6 @@ try {
 
 
 # **postSpeechandtextanalyticsCategories**
-
 
 
 > [StaCategory](StaCategory) postSpeechandtextanalyticsCategories(body)
@@ -2123,7 +2089,6 @@ try {
 # **postSpeechandtextanalyticsDictionaryfeedback**
 
 
-
 > [DictionaryFeedback](DictionaryFeedback) postSpeechandtextanalyticsDictionaryfeedback(body)
 
 Create a Speech & Text Analytics DictionaryFeedback
@@ -2183,7 +2148,6 @@ try {
 # **postSpeechandtextanalyticsPrograms**
 
 
-
 > [Program](Program) postSpeechandtextanalyticsPrograms(body)
 
 Create new Speech & Text Analytics program
@@ -2241,7 +2205,6 @@ try {
 
 
 # **postSpeechandtextanalyticsProgramsGeneralJobs**
-
 
 
 > [GeneralProgramJob](GeneralProgramJob) postSpeechandtextanalyticsProgramsGeneralJobs(body)
@@ -2306,7 +2269,6 @@ try {
 # **postSpeechandtextanalyticsProgramsPublishjobs**
 
 
-
 > [ProgramJob](ProgramJob) postSpeechandtextanalyticsProgramsPublishjobs(body)
 
 Create new Speech & Text Analytics publish programs job
@@ -2364,7 +2326,6 @@ try {
 
 
 # **postSpeechandtextanalyticsSentimentfeedback**
-
 
 
 > [SentimentFeedback](SentimentFeedback) postSpeechandtextanalyticsSentimentfeedback(body)
@@ -2426,7 +2387,6 @@ try {
 # **postSpeechandtextanalyticsTopics**
 
 
-
 > [Topic](Topic) postSpeechandtextanalyticsTopics(body)
 
 Create new Speech & Text Analytics topic
@@ -2484,7 +2444,6 @@ try {
 
 
 # **postSpeechandtextanalyticsTopicsPublishjobs**
-
 
 
 > [TopicJob](TopicJob) postSpeechandtextanalyticsTopicsPublishjobs(body)
@@ -2546,7 +2505,6 @@ try {
 # **postSpeechandtextanalyticsTranscriptsSearch**
 
 
-
 > [JsonSearchResponse](JsonSearchResponse) postSpeechandtextanalyticsTranscriptsSearch(body)
 
 Search resources.
@@ -2605,7 +2563,6 @@ try {
 
 
 # **putSpeechandtextanalyticsCategory**
-
 
 
 > [StaCategory](StaCategory) putSpeechandtextanalyticsCategory(categoryId, body)
@@ -2669,7 +2626,6 @@ try {
 # **putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId**
 
 
-
 > [DictionaryFeedback](DictionaryFeedback) putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId, body)
 
 Update existing Speech & Text Analytics dictionary feedback by id
@@ -2729,7 +2685,6 @@ try {
 
 
 # **putSpeechandtextanalyticsProgram**
-
 
 
 > [Program](Program) putSpeechandtextanalyticsProgram(programId, body)
@@ -2793,7 +2748,6 @@ try {
 # **putSpeechandtextanalyticsProgramMappings**
 
 
-
 > [ProgramMappings](ProgramMappings) putSpeechandtextanalyticsProgramMappings(programId, body)
 
 Set Speech & Text Analytics program mappings to queues and flows
@@ -2853,7 +2807,6 @@ try {
 
 
 # **putSpeechandtextanalyticsProgramTranscriptionengines**
-
 
 
 > [ProgramTranscriptionEngines](ProgramTranscriptionEngines) putSpeechandtextanalyticsProgramTranscriptionengines(programId, body)
@@ -2917,7 +2870,6 @@ try {
 # **putSpeechandtextanalyticsSettings**
 
 
-
 > [SpeechTextAnalyticsSettingsResponse](SpeechTextAnalyticsSettingsResponse) putSpeechandtextanalyticsSettings(body)
 
 Update Speech And Text Analytics Settings
@@ -2975,7 +2927,6 @@ try {
 
 
 # **putSpeechandtextanalyticsTopic**
-
 
 
 > [Topic](Topic) putSpeechandtextanalyticsTopic(topicId, body)
@@ -3036,4 +2987,4 @@ try {
 [**Topic**](Topic)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

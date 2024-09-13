@@ -24,7 +24,6 @@
 | **edgePath** | **String** | The path of this file on the Edge. |  [optional] |
 | **downloadId** | **String** | The download ID to use with the downloads API. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -35,7 +34,6 @@
 | ACTIVE | &quot;active&quot; | 
 | INACTIVE | &quot;inactive&quot; | 
 | DELETED | &quot;deleted&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: UploadStatusEnum
@@ -47,9 +45,8 @@
 | NOT_UPLOADED | &quot;NOT_UPLOADED&quot; | 
 | UPLOADED | &quot;UPLOADED&quot; | 
 | ERROR_ON_UPLOAD | &quot;ERROR_ON_UPLOAD&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

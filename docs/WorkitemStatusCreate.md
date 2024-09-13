@@ -12,7 +12,6 @@
 | **defaultDestinationStatusId** | **String** | Default destination status to which this Status will transition to if auto status transition enabled. |  [optional] |
 | **statusTransitionDelaySeconds** | **Integer** | Delay in seconds for auto status transition. Required if defaultDestinationStatusId is provided. |  [optional] |
 | **statusTransitionTime** | **String** | Time is represented as an ISO-8601 string without a timezone. For example: HH:mm:ss.SSS |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: CategoryEnum
@@ -25,9 +24,8 @@
 | WAITING | &quot;Waiting&quot; | 
 | CLOSED | &quot;Closed&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

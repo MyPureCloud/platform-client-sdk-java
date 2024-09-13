@@ -9,7 +9,6 @@
 | **endDate** | [**Date**](Date) | End of the date range to query in ISO-8601 format. If it is not set, end date will be set to current time |  [optional] |
 | **timeZone** | **String** | The time zone, in olson format, to use in defining days when computing shrinkage for requested granularity. If it is not set, the business unit time zone will be used. The results will be returned as UTC timestamps regardless of the time zone input. |  [optional] |
 | **granularity** | [**GranularityEnum**](#Enum--GranularityEnum) | Shrinkage aggregation interval granularity. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: GranularityEnum
@@ -19,9 +18,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | DAILY | &quot;Daily&quot; | 
 | WEEKLY | &quot;Weekly&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

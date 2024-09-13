@@ -21,7 +21,6 @@
 | **href** | **String** | The href from the course manifest for this SCO. |  [optional] |
 | **parameters** | **String** | The parameters from the course manifest for this SCO. |  [optional] |
 | **launchData** | **String** | The launch data from the course manifest for this SCO. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: LessonStatusEnum
@@ -35,7 +34,6 @@
 | INCOMPLETE | &quot;Incomplete&quot; | 
 | BROWSED | &quot;Browsed&quot; | 
 | NOTATTEMPTED | &quot;NotAttempted&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ExitEnum
@@ -47,7 +45,6 @@
 | SUSPEND | &quot;Suspend&quot; | 
 | LOGOUT | &quot;Logout&quot; | 
 | EMPTY | &quot;Empty&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: CreditEnum
@@ -57,7 +54,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | CREDIT | &quot;Credit&quot; | 
 | NOCREDIT | &quot;NoCredit&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: EntryEnum
@@ -68,7 +64,6 @@
 | ABINITIO | &quot;AbInitio&quot; | 
 | RESUME | &quot;Resume&quot; | 
 | EMPTY | &quot;Empty&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ModeEnum
@@ -79,9 +74,8 @@
 | BROWSE | &quot;Browse&quot; | 
 | NORMAL | &quot;Normal&quot; | 
 | REVIEW | &quot;Review&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

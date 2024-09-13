@@ -9,7 +9,6 @@
 | **inputModes** | [**List<InputModesEnum>**](#Enum--InputModesEnum) | The input modes for the channel. |  |
 | **outputModes** | [**List<OutputModesEnum>**](#Enum--OutputModesEnum) | The output modes for the channel. |  |
 | **userAgent** | [**TextBotUserAgent**](TextBotUserAgent) | Information about the end user agent calling the bot flow. |  |
-{: class="table table-striped"}
 
 
 ## Enum: NameEnum
@@ -20,7 +19,6 @@
 | CHAT | &quot;Chat&quot; | 
 | CALL | &quot;Call&quot; | 
 | MESSAGING | &quot;Messaging&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: InputModesEnum
@@ -30,7 +28,6 @@
 | TEXT | &quot;Text&quot; |
 | VOICE | &quot;Voice&quot; |
 | DTMF | &quot;DTMF&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: OutputModesEnum
@@ -39,9 +36,8 @@
 | ---- | ----- |
 | TEXT | &quot;Text&quot; |
 | VOICE | &quot;Voice&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -15,7 +15,6 @@
 | **maxParticipants** | **Integer** | If this is a conference conversation, then this field indicates the maximum number of participants allowed to participant in the conference. |  [optional] |
 | **securePause** | **Boolean** | True when the recording of this conversation is in secure pause status. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: RecordingStateEnum
@@ -26,9 +25,8 @@
 | NONE | &quot;none&quot; | 
 | ACTIVE | &quot;active&quot; | 
 | PAUSED | &quot;paused&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

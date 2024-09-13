@@ -8,9 +8,8 @@
 | **userId** | **String** | The identifier for the user |  [optional] |
 | **primaryPresence** | [**List&lt;AnalyticsUserPresenceRecord&gt;**](AnalyticsUserPresenceRecord) | The presence records for the user |  [optional] |
 | **routingStatus** | [**List&lt;AnalyticsRoutingStatusRecord&gt;**](AnalyticsRoutingStatusRecord) | The ACD routing status records for the user |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

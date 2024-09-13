@@ -10,7 +10,6 @@
 | **agentId** | **String** | Unique identifier of the agent. |  |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The agent's current routing status. |  |
 | **sourceId** | **String** | The agent's source platform Id. |  |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -23,9 +22,8 @@
 | INTERACTING | &quot;Interacting&quot; | 
 | COMMUNICATING | &quot;Communicating&quot; | 
 | NOTRESPONDING | &quot;NotResponding&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

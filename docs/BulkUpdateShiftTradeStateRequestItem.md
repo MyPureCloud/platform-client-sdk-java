@@ -8,7 +8,6 @@
 | **id** | **String** | The globally unique identifier for the object. |  [optional] |
 | **state** | [**StateEnum**](#Enum--StateEnum) | The new state to set on the shift trade |  |
 | **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Version metadata for the shift trade |  |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -22,9 +21,8 @@
 | DENIED | &quot;Denied&quot; | 
 | EXPIRED | &quot;Expired&quot; | 
 | CANCELED | &quot;Canceled&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

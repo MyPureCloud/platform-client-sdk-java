@@ -14,7 +14,6 @@
 | **agentRankingType** | [**AgentRankingTypeEnum**](#Enum--AgentRankingTypeEnum) |  |  [optional] |
 | **rankingTiebreakerType** | [**RankingTiebreakerTypeEnum**](#Enum--RankingTiebreakerTypeEnum) |  |  [optional] |
 | **workPlanFieldsVisibleToAgents** | [**List<WorkPlanFieldsVisibleToAgentsEnum>**](#Enum--WorkPlanFieldsVisibleToAgentsEnum) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -31,7 +30,6 @@
 | CLOSED | &quot;Closed&quot; | 
 | PROCESSED | &quot;Processed&quot; | 
 | PUBLISHED | &quot;Published&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: AgentRankingTypeEnum
@@ -42,7 +40,6 @@
 | UNKNOWN | &quot;Unknown&quot; | 
 | HIREDATE | &quot;HireDate&quot; | 
 | PERFORMANCE | &quot;Performance&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: RankingTiebreakerTypeEnum
@@ -55,7 +52,6 @@
 | PERFORMANCE | &quot;Performance&quot; | 
 | CUSTOM | &quot;Custom&quot; | 
 | RANDOMLYASSIGN | &quot;RandomlyAssign&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: WorkPlanFieldsVisibleToAgentsEnum
@@ -65,9 +61,8 @@
 | UNKNOWN | &quot;Unknown&quot; |
 | NAME | &quot;Name&quot; |
 | PAIDHOURS | &quot;PaidHours&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

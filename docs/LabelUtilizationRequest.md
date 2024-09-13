@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **maximumCapacity** | **Integer** | Defines the maximum number of interactions with this label that an agent can handle at one time. |  [optional] |
 | **interruptingLabelIds** | **List&lt;String&gt;** | Defines other labels that can interrupt an interaction with this label. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

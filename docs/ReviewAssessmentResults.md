@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **byAssignees** | **Boolean** | If true, learning assignment results can be seen in detail by assignees |  [optional] |
 | **byViewers** | **Boolean** | If true, learning assignment results can be seen in detail by people who are eligible to view |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

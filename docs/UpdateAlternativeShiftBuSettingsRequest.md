@@ -9,9 +9,8 @@
 | **minMinutesBeforeStartTime** | **Integer** | The minimum number of minutes before the start of a shift that an alternative shift can be automatically approved |  [optional] |
 | **retainedActivityCategories** | [**ListWrapperAlternativeShiftBuSettingsActivityCategory**](ListWrapperAlternativeShiftBuSettingsActivityCategory) | Categories of activities that are required to remain at the same time slot for the alternative shifts offered. An empty list indicates no retained activities |  [optional] |
 | **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Version metadata for this business unit's alternative shift settings |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

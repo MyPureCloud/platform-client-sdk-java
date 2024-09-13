@@ -11,7 +11,6 @@
 | **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) | Media type for filtering conversations. |  [optional] |
 | **participantType** | [**ParticipantTypeEnum**](#Enum--ParticipantTypeEnum) | Type of the participant, either agent, customer or both. |  [optional] |
 | **queueIds** | **List&lt;String&gt;** | List of queue IDs for filtering conversations. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -23,7 +22,6 @@
 | CALL | &quot;Call&quot; | 
 | MESSAGE | &quot;Message&quot; | 
 | EMAIL | &quot;Email&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ParticipantTypeEnum
@@ -34,9 +32,8 @@
 | CUSTOMER | &quot;Customer&quot; | 
 | AGENT | &quot;Agent&quot; | 
 | BOTH | &quot;Both&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

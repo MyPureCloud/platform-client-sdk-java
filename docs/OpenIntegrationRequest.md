@@ -13,9 +13,8 @@
 | **outboundNotificationWebhookSignatureSecretToken** | **String** | The outbound notification webhook signature secret token. This token must be longer than 15 characters. |  |
 | **webhookHeaders** | **Map&lt;String, String&gt;** | The user specified headers for the Open messaging integration. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

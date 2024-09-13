@@ -16,7 +16,6 @@
 | **countsAsWorkTime** | **Boolean** | Indicates whether or not the activity should be counted as contiguous work time for calculating daily constraints |  [optional] |
 | **agentTimeOffSelectable** | **Boolean** | Whether an agent can select this activity code when creating or editing a time off request. Null if the activity's category is not time off. |  [optional] |
 | **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Version metadata for the associated management unit's list of activity codes |  |
-{: class="table table-striped"}
 
 
 ## Enum: CategoryEnum
@@ -33,9 +32,8 @@
 | TRAINING | &quot;Training&quot; | 
 | UNAVAILABLE | &quot;Unavailable&quot; | 
 | UNSCHEDULED | &quot;Unscheduled&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

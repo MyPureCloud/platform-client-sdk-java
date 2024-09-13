@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **internalErrorCode** | [**InternalErrorCodeEnum**](#Enum--InternalErrorCodeEnum) | An internal code representing the type of error. BadJson for 'Unable to parse json.' NotFound for 'Resource not found.' Fail for 'An unexpected server error occured.' |  [optional] |
 | **description** | **String** | A text description of the error |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: InternalErrorCodeEnum
@@ -18,9 +17,8 @@
 | BADJSON | &quot;BadJson&quot; | 
 | NOTFOUND | &quot;NotFound&quot; | 
 | FAIL | &quot;Fail&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

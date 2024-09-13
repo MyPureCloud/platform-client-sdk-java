@@ -11,7 +11,6 @@
 | **flowLocation** | [**TextBotFlowLocation**](TextBotFlowLocation) | Describes where in the Bot Flow the user was when the exit occurred. |  [optional] |
 | **outputData** | [**TextBotInputOutputData**](TextBotInputOutputData) | The output data for the bot flow. |  [optional] |
 | **flowOutcomes** | [**List&lt;TextBotFlowOutcome&gt;**](TextBotFlowOutcome) | The list of Flow Outcomes for the bot flow and their details. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ReasonEnum
@@ -24,9 +23,8 @@
 | TRIGGEREDBYFLOW | &quot;TriggeredByFlow&quot; | 
 | ERROR | &quot;Error&quot; | 
 | RECOGNITIONFAILURE | &quot;RecognitionFailure&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

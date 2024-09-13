@@ -12,7 +12,6 @@
 | **utterance** | [**Entity**](Entity) | The utterance in the voice conversation, after which the suggestion was raised, if any. |  [optional] |
 | **message** | [**AddressableEntityRef**](AddressableEntityRef) | The message in the digital conversation, after which the suggestion was raised, if any. |  [optional] |
 | **queryStatement** | **String** | The query statement used when generating the suggestion, if any. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -23,9 +22,8 @@
 | MESSAGE | &quot;Message&quot; | 
 | VOICE | &quot;Voice&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

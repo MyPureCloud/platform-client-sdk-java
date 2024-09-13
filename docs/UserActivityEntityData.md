@@ -15,9 +15,8 @@
 | **systemPresence** | **String** | System presence |  [optional] |
 | **teamId** | **String** | The team ID the user is a member of |  [optional] |
 | **userId** | **String** | Unique identifier for the user |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

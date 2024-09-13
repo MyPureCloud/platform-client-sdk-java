@@ -11,9 +11,8 @@
 | **errorSchemaUri** | **String** | URI to retrieve error schema |  [optional] |
 | **successSchemaFlattened** | [**JsonSchemaDocument**](JsonSchemaDocument) | JSON schema that defines the transformed, successful result that will be sent back to the caller. The schema is transformed based on Architect's flattened format. If the 'flatten' query parameter is supplied as true, this field will be returned. Either successSchema or successSchemaFlattened will be returned, not both. |  [optional] |
 | **errorSchemaFlattened** | **Object** | JSON schema that defines the body of response when request is not successful. The schema is transformed based on Architect's flattened format. If the 'flatten' query parameter is supplied as true, this field will be returned. Either errorSchema or errorSchemaFlattened will be returned, not both. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

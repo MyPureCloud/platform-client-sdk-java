@@ -15,7 +15,6 @@
 | **document** | [**AddressableEntityRef**](AddressableEntityRef) | ID of the document for which article content is to be uploaded |  [optional] |
 | **errorMessage** | **String** | Error message when upload fails |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ContentTypeEnum
@@ -25,7 +24,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | BODY | &quot;Body&quot; | 
 | ATTACHMENT | &quot;Attachment&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -36,9 +34,8 @@
 | VALIDATIONFAILED | &quot;ValidationFailed&quot; | 
 | INPROGRESS | &quot;InProgress&quot; | 
 | COMPLETED | &quot;Completed&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

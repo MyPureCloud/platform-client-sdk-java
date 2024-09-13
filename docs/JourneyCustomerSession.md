@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** | An ID of a Customer/User's session within the Journey System at a point-in-time |  |
 | **type** | **String** | The type of the Customer/User's session within the Journey System (e.g. web, app) |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

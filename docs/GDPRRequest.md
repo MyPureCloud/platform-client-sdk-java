@@ -15,7 +15,6 @@
 | **subject** | [**GDPRSubject**](GDPRSubject) | The subject of the GDPR request |  |
 | **resultsUrl** | **String** | The location where the results of the request can be retrieved |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: RequestTypeEnum
@@ -26,7 +25,6 @@
 | GDPR_EXPORT | &quot;GDPR_EXPORT&quot; | 
 | GDPR_UPDATE | &quot;GDPR_UPDATE&quot; | 
 | GDPR_DELETE | &quot;GDPR_DELETE&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -41,9 +39,8 @@
 | COMPLETED | &quot;COMPLETED&quot; | 
 | ERROR | &quot;ERROR&quot; | 
 | FINALIZING | &quot;FINALIZING&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -31,7 +31,6 @@
 | **coverArt** | [**LearningModuleCoverArtResponse**](LearningModuleCoverArtResponse) | The cover art for the learning module |  [optional] |
 | **lengthInMinutes** | **Integer** | The recommended time in minutes to complete the module |  [optional] |
 | **archivalMode** | [**ArchivalModeEnum**](#Enum--ArchivalModeEnum) | The mode of archival for learning module |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: SourceEnum
@@ -41,7 +40,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | USERCREATED | &quot;UserCreated&quot; | 
 | GENESYSBEYOND | &quot;GenesysBeyond&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -54,7 +52,6 @@
 | ASSESSMENT | &quot;Assessment&quot; | 
 | EXTERNAL | &quot;External&quot; | 
 | NATIVE | &quot;Native&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ArchivalModeEnum
@@ -64,9 +61,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | GRACEFUL | &quot;Graceful&quot; | 
 | IMMEDIATE | &quot;Immediate&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

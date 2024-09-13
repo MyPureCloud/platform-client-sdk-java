@@ -43,7 +43,6 @@
 | **peerId** | **String** | The ID of an associated external queue. |  [optional] |
 | **suppressInQueueCallRecording** | **Boolean** | Indicates whether recording in-queue calls is suppressed for this queue. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ScoringMethodEnum
@@ -53,7 +52,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | TIMESTAMPANDPRIORITY | &quot;TimestampAndPriority&quot; | 
 | PRIORITYONLY | &quot;PriorityOnly&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: SkillEvaluationMethodEnum
@@ -64,9 +62,8 @@
 | NONE | &quot;NONE&quot; | 
 | BEST | &quot;BEST&quot; | 
 | ALL | &quot;ALL&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -16,7 +16,6 @@
 | **evaluationFormContextIds** | **List&lt;String&gt;** | The ids of associated evaluation form context, for Quality Evaluation Score metrics |  [optional] |
 | **initialDirection** | [**InitialDirectionEnum**](#Enum--InitialDirectionEnum) | The initial direction to filter on |  [optional] |
 | **dateStart** | [**LocalDate**](LocalDate) | start date of the objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypesEnum
@@ -32,7 +31,6 @@
 | UNKNOWN | &quot;unknown&quot; |
 | VIDEO | &quot;video&quot; |
 | VOICE | &quot;voice&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: TopicIdsFilterTypeEnum
@@ -42,7 +40,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | AND | &quot;and&quot; | 
 | OR | &quot;or&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: InitialDirectionEnum
@@ -52,9 +49,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INBOUND | &quot;inbound&quot; | 
 | OUTBOUND | &quot;outbound&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

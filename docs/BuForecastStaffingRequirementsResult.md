@@ -9,9 +9,8 @@
 | **downloadUrl** | **String** | The url to get the requirements results for this week |  |
 | **downloadUrlExpirationDate** | [**Date**](Date) | The expiration date of the download url, as an ISO-8601 string |  |
 | **planningGroupStaffingRequirements** | [**List&lt;StaffingRequirementsPlanningGroupData&gt;**](StaffingRequirementsPlanningGroupData) | Results will always come via downloadUrl, however the schema is included for documentation |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

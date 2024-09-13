@@ -9,9 +9,8 @@
 | **division** | [**Division**](Division) | The targeted division for the average points |  [optional] |
 | **averagePoints** | **Double** | The average points per agent earned within the division |  [optional] |
 | **performanceProfile** | [**AddressableEntityRef**](AddressableEntityRef) | The targeted performance profile for the average points |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

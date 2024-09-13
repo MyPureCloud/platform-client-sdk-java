@@ -11,9 +11,8 @@
 | **config** | [**ActionConfig**](ActionConfig) | Configuration to support request and response processing |  |
 | **contract** | [**ActionContractInput**](ActionContractInput) | Action contract |  |
 | **secure** | **Boolean** | Indication of whether or not the action is designed to accept sensitive data |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

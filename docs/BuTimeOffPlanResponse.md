@@ -18,7 +18,6 @@
 | **managementUnitAssociation** | [**TimeOffPlanManagementUnitAssociation**](TimeOffPlanManagementUnitAssociation) | Management Unit association, if the time-off plan belongs to a management unit. businessUnitAssociation must not be set if this is populated |  [optional] |
 | **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Version metadata for the time-off plan |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: AutoApprovalRuleEnum
@@ -31,9 +30,8 @@
 | CHECKLIMITS | &quot;CheckLimits&quot; | 
 | CHECKACTIVITYCODES | &quot;CheckActivityCodes&quot; | 
 | CHECKLIMITSANDACTIVITYCODES | &quot;CheckLimitsAndActivityCodes&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

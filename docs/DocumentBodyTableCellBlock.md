@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **blocks** | [**List&lt;DocumentTableContentBlock&gt;**](DocumentTableContentBlock) | The list of content blocks for the table. |  |
 | **properties** | [**DocumentBodyTableCellBlockProperties**](DocumentBodyTableCellBlockProperties) | The properties for the table cell. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

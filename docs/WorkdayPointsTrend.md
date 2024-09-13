@@ -11,7 +11,6 @@
 | **dayOfWeek** | [**DayOfWeekEnum**](#Enum--DayOfWeekEnum) | Aggregated for same day comparison |  [optional] |
 | **averagePoints** | **Double** | The total average points |  [optional] |
 | **trend** | [**List&lt;WorkdayPointsTrendItem&gt;**](WorkdayPointsTrendItem) | Daily points trends |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: DayOfWeekEnum
@@ -26,9 +25,8 @@
 | THURSDAY | &quot;Thursday&quot; | 
 | FRIDAY | &quot;Friday&quot; | 
 | SATURDAY | &quot;Saturday&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -15,7 +15,6 @@
 | **interval** | **String** | Specifies the date and time range of data being queried. Results will include all conversations that had activity during the interval. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss |  |
 | **limit** | **Integer** | Specify number of results to be returned |  [optional] |
 | **startOfDayIntervalMatching** | **Boolean** | Add a filter to only include conversations that started after the beginning of the interval start date (UTC) |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: OrderEnum
@@ -26,7 +25,6 @@
 | ASC | &quot;asc&quot; | 
 | DESC | &quot;desc&quot; | 
 | UNORDERED | &quot;unordered&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: OrderByEnum
@@ -38,9 +36,8 @@
 | CONVERSATIONEND | &quot;conversationEnd&quot; | 
 | SEGMENTSTART | &quot;segmentStart&quot; | 
 | SEGMENTEND | &quot;segmentEnd&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

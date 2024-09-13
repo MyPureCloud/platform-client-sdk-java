@@ -130,7 +130,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteTelephonyProvidersEdge**
 
 
-
 > Void deleteTelephonyProvidersEdge(edgeId)
 
 Delete a edge.
@@ -187,7 +186,6 @@ null (empty response body)
 
 
 # **deleteTelephonyProvidersEdgeLogicalinterface**
-
 
 
 > Void deleteTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId)
@@ -250,7 +248,6 @@ null (empty response body)
 # **deleteTelephonyProvidersEdgeSoftwareupdate**
 
 
-
 > Void deleteTelephonyProvidersEdgeSoftwareupdate(edgeId)
 
 Cancels any in-progress update for this edge.
@@ -306,7 +303,6 @@ null (empty response body)
 
 
 # **deleteTelephonyProvidersEdgesCertificateauthority**
-
 
 
 > Void deleteTelephonyProvidersEdgesCertificateauthority(certificateId)
@@ -367,7 +363,6 @@ null (empty response body)
 # **deleteTelephonyProvidersEdgesDidpool**
 
 
-
 > Void deleteTelephonyProvidersEdgesDidpool(didPoolId)
 
 Delete a DID Pool by ID.
@@ -424,7 +419,6 @@ null (empty response body)
 
 
 # **deleteTelephonyProvidersEdgesEdgegroup**
-
 
 
 > Void deleteTelephonyProvidersEdgesEdgegroup(edgeGroupId)
@@ -485,7 +479,6 @@ null (empty response body)
 # **deleteTelephonyProvidersEdgesExtensionpool**
 
 
-
 > Void deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId)
 
 Delete an extension pool by ID
@@ -542,7 +535,6 @@ null (empty response body)
 
 
 # **deleteTelephonyProvidersEdgesPhone**
-
 
 
 > Void deleteTelephonyProvidersEdgesPhone(phoneId)
@@ -603,7 +595,6 @@ null (empty response body)
 # **deleteTelephonyProvidersEdgesPhonebasesetting**
 
 
-
 > Void deleteTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
 
 Delete a Phone Base Settings by ID
@@ -662,7 +653,6 @@ null (empty response body)
 # **deleteTelephonyProvidersEdgesSite**
 
 
-
 > Void deleteTelephonyProvidersEdgesSite(siteId)
 
 Delete a Site by ID
@@ -719,7 +709,6 @@ null (empty response body)
 
 
 # **deleteTelephonyProvidersEdgesSiteOutboundroute**
-
 
 
 > Void deleteTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId)
@@ -782,7 +771,6 @@ null (empty response body)
 # **deleteTelephonyProvidersEdgesTrunkbasesetting**
 
 
-
 > Void deleteTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId)
 
 Delete a Trunk Base Settings object by ID
@@ -839,7 +827,6 @@ null (empty response body)
 
 
 # **getTelephonyProvidersEdge**
-
 
 
 > [Edge](Edge) getTelephonyProvidersEdge(edgeId, expand)
@@ -903,7 +890,6 @@ try {
 # **getTelephonyProvidersEdgeDiagnosticNslookup**
 
 
-
 > [EdgeNetworkDiagnosticResponse](EdgeNetworkDiagnosticResponse) getTelephonyProvidersEdgeDiagnosticNslookup(edgeId)
 
 Get networking-related information from an Edge for a target IP or host.
@@ -961,7 +947,6 @@ try {
 
 
 # **getTelephonyProvidersEdgeDiagnosticPing**
-
 
 
 > [EdgeNetworkDiagnosticResponse](EdgeNetworkDiagnosticResponse) getTelephonyProvidersEdgeDiagnosticPing(edgeId)
@@ -1023,7 +1008,6 @@ try {
 # **getTelephonyProvidersEdgeDiagnosticRoute**
 
 
-
 > [EdgeNetworkDiagnosticResponse](EdgeNetworkDiagnosticResponse) getTelephonyProvidersEdgeDiagnosticRoute(edgeId)
 
 Get networking-related information from an Edge for a target IP or host.
@@ -1083,7 +1067,6 @@ try {
 # **getTelephonyProvidersEdgeDiagnosticTracepath**
 
 
-
 > [EdgeNetworkDiagnosticResponse](EdgeNetworkDiagnosticResponse) getTelephonyProvidersEdgeDiagnosticTracepath(edgeId)
 
 Get networking-related information from an Edge for a target IP or host.
@@ -1141,7 +1124,6 @@ try {
 
 
 # **getTelephonyProvidersEdgeLogicalinterface**
-
 
 
 > [DomainLogicalInterface](DomainLogicalInterface) getTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, expand)
@@ -1207,7 +1189,6 @@ try {
 # **getTelephonyProvidersEdgeLogicalinterfaces**
 
 
-
 > [LogicalInterfaceEntityListing](LogicalInterfaceEntityListing) getTelephonyProvidersEdgeLogicalinterfaces(edgeId, expand)
 
 Get edge logical interfaces.
@@ -1271,7 +1252,6 @@ try {
 # **getTelephonyProvidersEdgeLogsJob**
 
 
-
 > [EdgeLogsJob](EdgeLogsJob) getTelephonyProvidersEdgeLogsJob(edgeId, jobId)
 
 Get an Edge logs job.
@@ -1333,7 +1313,6 @@ try {
 # **getTelephonyProvidersEdgeMetrics**
 
 
-
 > [EdgeMetrics](EdgeMetrics) getTelephonyProvidersEdgeMetrics(edgeId)
 
 Get the edge metrics.
@@ -1391,7 +1370,6 @@ try {
 
 
 # **getTelephonyProvidersEdgePhysicalinterface**
-
 
 
 > [DomainPhysicalInterface](DomainPhysicalInterface) getTelephonyProvidersEdgePhysicalinterface(edgeId, interfaceId)
@@ -1457,7 +1435,6 @@ try {
 # **getTelephonyProvidersEdgePhysicalinterfaces**
 
 
-
 > [PhysicalInterfaceEntityListing](PhysicalInterfaceEntityListing) getTelephonyProvidersEdgePhysicalinterfaces(edgeId)
 
 Retrieve a list of all configured physical interfaces from a specific edge.
@@ -1515,7 +1492,6 @@ try {
 
 
 # **getTelephonyProvidersEdgeSetuppackage**
-
 
 
 > [VmPairingInfo](VmPairingInfo) getTelephonyProvidersEdgeSetuppackage(edgeId)
@@ -1577,7 +1553,6 @@ try {
 # **getTelephonyProvidersEdgeSoftwareupdate**
 
 
-
 > [DomainEdgeSoftwareUpdateDto](DomainEdgeSoftwareUpdateDto) getTelephonyProvidersEdgeSoftwareupdate(edgeId)
 
 Gets software update status information about any edge.
@@ -1636,7 +1611,6 @@ try {
 # **getTelephonyProvidersEdgeSoftwareversions**
 
 
-
 > [DomainEdgeSoftwareVersionDtoEntityListing](DomainEdgeSoftwareVersionDtoEntityListing) getTelephonyProvidersEdgeSoftwareversions(edgeId)
 
 Gets all the available software versions for this edge.
@@ -1693,7 +1667,6 @@ try {
 
 
 # **getTelephonyProvidersEdgeTrunks**
-
 
 
 > [TrunkEntityListing](TrunkEntityListing) getTelephonyProvidersEdgeTrunks(edgeId, pageNumber, pageSize, sortBy, sortOrder, trunkBaseId, trunkType)
@@ -1769,7 +1742,6 @@ try {
 # **getTelephonyProvidersEdges**
 
 
-
 > [EdgeEntityListing](EdgeEntityListing) getTelephonyProvidersEdges(pageSize, pageNumber, name, siteId, edgeGroupId, sortBy, managed, showCloudMedia)
 
 Get the list of edges.
@@ -1843,7 +1815,6 @@ try {
 # **getTelephonyProvidersEdgesCertificateauthorities**
 
 
-
 > [CertificateAuthorityEntityListing](CertificateAuthorityEntityListing) getTelephonyProvidersEdgesCertificateauthorities()
 
 Get the list of certificate authorities.
@@ -1897,7 +1868,6 @@ This endpoint does not require any parameters.
 
 
 # **getTelephonyProvidersEdgesCertificateauthority**
-
 
 
 > [DomainCertificateAuthority](DomainCertificateAuthority) getTelephonyProvidersEdgesCertificateauthority(certificateId)
@@ -1959,7 +1929,6 @@ try {
 # **getTelephonyProvidersEdgesDid**
 
 
-
 > [DID](DID) getTelephonyProvidersEdgesDid(didId)
 
 Get a DID by ID.
@@ -2019,7 +1988,6 @@ try {
 # **getTelephonyProvidersEdgesDidpool**
 
 
-
 > [DIDPool](DIDPool) getTelephonyProvidersEdgesDidpool(didPoolId)
 
 Get a DID Pool by ID.
@@ -2077,7 +2045,6 @@ try {
 
 
 # **getTelephonyProvidersEdgesDidpools**
-
 
 
 > [DIDPoolEntityListing](DIDPoolEntityListing) getTelephonyProvidersEdgesDidpools(pageSize, pageNumber, sortBy, id)
@@ -2143,7 +2110,6 @@ try {
 
 
 # **getTelephonyProvidersEdgesDidpoolsDids**
-
 
 
 > [DIDNumberEntityListing](DIDNumberEntityListing) getTelephonyProvidersEdgesDidpoolsDids(type, id, numberMatch, pageSize, pageNumber, sortOrder)
@@ -2213,7 +2179,6 @@ try {
 
 
 # **getTelephonyProvidersEdgesDids**
-
 
 
 > [DIDEntityListing](DIDEntityListing) getTelephonyProvidersEdgesDids(pageSize, pageNumber, sortBy, sortOrder, phoneNumber, ownerId, didPoolId, id)
@@ -2289,7 +2254,6 @@ try {
 # **getTelephonyProvidersEdgesEdgegroup**
 
 
-
 > [EdgeGroup](EdgeGroup) getTelephonyProvidersEdgesEdgegroup(edgeGroupId, expand)
 
 Get edge group.
@@ -2351,7 +2315,6 @@ try {
 # **getTelephonyProvidersEdgesEdgegroupEdgetrunkbase**
 
 
-
 > [EdgeTrunkBase](EdgeTrunkBase) getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId)
 
 Gets the edge trunk base associated with the edge group
@@ -2411,7 +2374,6 @@ try {
 
 
 # **getTelephonyProvidersEdgesEdgegroups**
-
 
 
 > [EdgeGroupEntityListing](EdgeGroupEntityListing) getTelephonyProvidersEdgesEdgegroups(pageSize, pageNumber, name, sortBy, managed)
@@ -2481,7 +2443,6 @@ try {
 # **getTelephonyProvidersEdgesEdgeversionreport**
 
 
-
 > [EdgeVersionReport](EdgeVersionReport) getTelephonyProvidersEdgesEdgeversionreport()
 
 Get the edge version report.
@@ -2538,7 +2499,6 @@ This endpoint does not require any parameters.
 # **getTelephonyProvidersEdgesExpired**
 
 
-
 > [ExpiredEdgeListing](ExpiredEdgeListing) getTelephonyProvidersEdgesExpired()
 
 List of edges more than 4 edge versions behind the latest software.
@@ -2593,7 +2553,6 @@ This endpoint does not require any parameters.
 
 
 # **getTelephonyProvidersEdgesExtension**
-
 
 
 > [Extension](Extension) getTelephonyProvidersEdgesExtension(extensionId)
@@ -2655,7 +2614,6 @@ try {
 # **getTelephonyProvidersEdgesExtensionpool**
 
 
-
 > [ExtensionPool](ExtensionPool) getTelephonyProvidersEdgesExtensionpool(extensionPoolId)
 
 Get an extension pool by ID
@@ -2713,7 +2671,6 @@ try {
 
 
 # **getTelephonyProvidersEdgesExtensionpools**
-
 
 
 > [ExtensionPoolEntityListing](ExtensionPoolEntityListing) getTelephonyProvidersEdgesExtensionpools(pageSize, pageNumber, sortBy, number)
@@ -2779,7 +2736,6 @@ try {
 
 
 # **getTelephonyProvidersEdgesExtensionpoolsDivisionviews**
-
 
 
 > [ExtensionPoolDivisionViewEntityListing](ExtensionPoolDivisionViewEntityListing) getTelephonyProvidersEdgesExtensionpoolsDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId)
@@ -2855,7 +2811,6 @@ try {
 # **getTelephonyProvidersEdgesExtensions**
 
 
-
 > [ExtensionEntityListing](ExtensionEntityListing) getTelephonyProvidersEdgesExtensions(pageSize, pageNumber, sortBy, sortOrder, number)
 
 Get a listing of extensions
@@ -2923,7 +2878,6 @@ try {
 # **getTelephonyProvidersEdgesLine**
 
 
-
 > [Line](Line) getTelephonyProvidersEdgesLine(lineId)
 
 Get a Line by ID
@@ -2983,7 +2937,6 @@ try {
 # **getTelephonyProvidersEdgesLinebasesetting**
 
 
-
 > [LineBase](LineBase) getTelephonyProvidersEdgesLinebasesetting(lineBaseId)
 
 Get a line base settings object by ID
@@ -3041,7 +2994,6 @@ try {
 
 
 # **getTelephonyProvidersEdgesLinebasesettings**
-
 
 
 > [LineBaseEntityListing](LineBaseEntityListing) getTelephonyProvidersEdgesLinebasesettings(pageNumber, pageSize, sortBy, sortOrder, expand)
@@ -3111,7 +3063,6 @@ try {
 # **getTelephonyProvidersEdgesLines**
 
 
-
 > [LineEntityListing](LineEntityListing) getTelephonyProvidersEdgesLines(pageSize, pageNumber, name, sortBy, expand)
 
 Get a list of Lines
@@ -3179,7 +3130,6 @@ try {
 # **getTelephonyProvidersEdgesLinesTemplate**
 
 
-
 > [Line](Line) getTelephonyProvidersEdgesLinesTemplate(lineBaseSettingsId)
 
 Get a Line instance template based on a Line Base Settings object. This object can then be modified and saved as a new Line instance
@@ -3237,7 +3187,6 @@ try {
 
 
 # **getTelephonyProvidersEdgesLogicalinterfaces**
-
 
 
 > [LogicalInterfaceEntityListing](LogicalInterfaceEntityListing) getTelephonyProvidersEdgesLogicalinterfaces(edgeIds, expand)
@@ -3303,7 +3252,6 @@ try {
 # **getTelephonyProvidersEdgesMediastatisticsConversation**
 
 
-
 > [MediaStatisticsListing](MediaStatisticsListing) getTelephonyProvidersEdgesMediastatisticsConversation(conversationId)
 
 Get media endpoint statistics events.
@@ -3363,7 +3311,6 @@ try {
 
 
 # **getTelephonyProvidersEdgesMediastatisticsConversationCommunication**
-
 
 
 > [MediaStatistics](MediaStatistics) getTelephonyProvidersEdgesMediastatisticsConversationCommunication(conversationId, communicationId)
@@ -3429,7 +3376,6 @@ try {
 # **getTelephonyProvidersEdgesMetrics**
 
 
-
 > [List&lt;EdgeMetrics&gt;](EdgeMetrics) getTelephonyProvidersEdgesMetrics(edgeIds)
 
 Get the metrics for a list of edges.
@@ -3487,7 +3433,6 @@ try {
 
 
 # **getTelephonyProvidersEdgesOutboundroutes**
-
 
 
 > [OutboundRouteEntityListing](OutboundRouteEntityListing) getTelephonyProvidersEdgesOutboundroutes(pageSize, pageNumber, name, siteId, externalTrunkBasesIds, sortBy)
@@ -3559,7 +3504,6 @@ try {
 # **getTelephonyProvidersEdgesPhone**
 
 
-
 > [Phone](Phone) getTelephonyProvidersEdgesPhone(phoneId)
 
 Get a Phone by ID
@@ -3619,7 +3563,6 @@ try {
 # **getTelephonyProvidersEdgesPhonebasesetting**
 
 
-
 > [PhoneBase](PhoneBase) getTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
 
 Get a Phone Base Settings object by ID
@@ -3677,7 +3620,6 @@ try {
 
 
 # **getTelephonyProvidersEdgesPhonebasesettings**
-
 
 
 > [PhoneBaseEntityListing](PhoneBaseEntityListing) getTelephonyProvidersEdgesPhonebasesettings(pageSize, pageNumber, sortBy, sortOrder, expand, name)
@@ -3749,7 +3691,6 @@ try {
 # **getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases**
 
 
-
 > [PhoneMetaBaseEntityListing](PhoneMetaBaseEntityListing) getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(pageSize, pageNumber)
 
 Get a list of available makes and models to create a new Phone Base Settings
@@ -3811,7 +3752,6 @@ try {
 # **getTelephonyProvidersEdgesPhonebasesettingsTemplate**
 
 
-
 > [PhoneBase](PhoneBase) getTelephonyProvidersEdgesPhonebasesettingsTemplate(phoneMetabaseId)
 
 Get a Phone Base Settings instance template from a given make and model. This object can then be modified and saved as a new Phone Base Settings instance
@@ -3869,7 +3809,6 @@ try {
 
 
 # **getTelephonyProvidersEdgesPhones**
-
 
 
 > [PhoneEntityListing](PhoneEntityListing) getTelephonyProvidersEdgesPhones(pageNumber, pageSize, sortBy, sortOrder, siteId, webRtcUserId, phoneBaseSettingsId, linesLoggedInUserId, linesDefaultForUserId, phoneHardwareId, linesId, linesName, name, statusOperationalStatus, secondaryStatusOperationalStatus, expand, fields)
@@ -3963,7 +3902,6 @@ try {
 # **getTelephonyProvidersEdgesPhonesTemplate**
 
 
-
 > [Phone](Phone) getTelephonyProvidersEdgesPhonesTemplate(phoneBaseSettingsId)
 
 Get a Phone instance template based on a Phone Base Settings object. This object can then be modified and saved as a new Phone instance
@@ -4021,7 +3959,6 @@ try {
 
 
 # **getTelephonyProvidersEdgesPhysicalinterfaces**
-
 
 
 > [PhysicalInterfaceEntityListing](PhysicalInterfaceEntityListing) getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds)
@@ -4085,7 +4022,6 @@ try {
 # **getTelephonyProvidersEdgesSite**
 
 
-
 > [Site](Site) getTelephonyProvidersEdgesSite(siteId)
 
 Get a Site by ID.
@@ -4144,7 +4080,6 @@ try {
 
 
 # **getTelephonyProvidersEdgesSiteNumberplan**
-
 
 
 > [NumberPlan](NumberPlan) getTelephonyProvidersEdgesSiteNumberplan(siteId, numberPlanId)
@@ -4208,7 +4143,6 @@ try {
 # **getTelephonyProvidersEdgesSiteNumberplans**
 
 
-
 > [List&lt;NumberPlan&gt;](NumberPlan) getTelephonyProvidersEdgesSiteNumberplans(siteId)
 
 Get the list of Number Plans for this Site. Only fetches the first 200 records.
@@ -4266,7 +4200,6 @@ try {
 
 
 # **getTelephonyProvidersEdgesSiteNumberplansClassifications**
-
 
 
 > List&lt;String&gt; getTelephonyProvidersEdgesSiteNumberplansClassifications(siteId, classification)
@@ -4330,7 +4263,6 @@ try {
 # **getTelephonyProvidersEdgesSiteOutboundroute**
 
 
-
 > [OutboundRouteBase](OutboundRouteBase) getTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId)
 
 Get an outbound route
@@ -4390,7 +4322,6 @@ try {
 
 
 # **getTelephonyProvidersEdgesSiteOutboundroutes**
-
 
 
 > [OutboundRouteBaseEntityListing](OutboundRouteBaseEntityListing) getTelephonyProvidersEdgesSiteOutboundroutes(siteId, pageSize, pageNumber, name, externalTrunkBasesIds, sortBy)
@@ -4462,7 +4393,6 @@ try {
 # **getTelephonyProvidersEdgesSiteSiteconnections**
 
 
-
 > [SiteConnections](SiteConnections) getTelephonyProvidersEdgesSiteSiteconnections(siteId)
 
 Get site connections for a site.
@@ -4521,7 +4451,6 @@ try {
 
 
 # **getTelephonyProvidersEdgesSites**
-
 
 
 > [SiteEntityListing](SiteEntityListing) getTelephonyProvidersEdgesSites(pageSize, pageNumber, sortBy, sortOrder, name, locationId, managed, expand)
@@ -4596,7 +4525,6 @@ try {
 # **getTelephonyProvidersEdgesTimezones**
 
 
-
 > [TimeZoneEntityListing](TimeZoneEntityListing) getTelephonyProvidersEdgesTimezones(pageSize, pageNumber)
 
 Get a list of Edge-compatible time zones
@@ -4655,7 +4583,6 @@ try {
 
 
 # **getTelephonyProvidersEdgesTrunk**
-
 
 
 > [Trunk](Trunk) getTelephonyProvidersEdgesTrunk(trunkId)
@@ -4717,7 +4644,6 @@ try {
 # **getTelephonyProvidersEdgesTrunkMetrics**
 
 
-
 > [TrunkMetrics](TrunkMetrics) getTelephonyProvidersEdgesTrunkMetrics(trunkId)
 
 Get the trunk metrics.
@@ -4775,7 +4701,6 @@ try {
 
 
 # **getTelephonyProvidersEdgesTrunkbasesetting**
-
 
 
 > [TrunkBase](TrunkBase) getTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, ignoreHidden)
@@ -4839,7 +4764,6 @@ try {
 
 
 # **getTelephonyProvidersEdgesTrunkbasesettings**
-
 
 
 > [TrunkBaseEntityListing](TrunkBaseEntityListing) getTelephonyProvidersEdgesTrunkbasesettings(pageNumber, pageSize, sortBy, sortOrder, recordingEnabled, ignoreHidden, managed, expand, name)
@@ -4919,7 +4843,6 @@ try {
 # **getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases**
 
 
-
 > [TrunkMetabaseEntityListing](TrunkMetabaseEntityListing) getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(type, pageSize, pageNumber)
 
 Get a list of available makes and models to create a new Trunk Base Settings
@@ -4983,7 +4906,6 @@ try {
 # **getTelephonyProvidersEdgesTrunkbasesettingsTemplate**
 
 
-
 > [TrunkBase](TrunkBase) getTelephonyProvidersEdgesTrunkbasesettingsTemplate(trunkMetabaseId)
 
 Get a Trunk Base Settings instance template from a given make and model. This object can then be modified and saved as a new Trunk Base Settings instance
@@ -5041,7 +4963,6 @@ try {
 
 
 # **getTelephonyProvidersEdgesTrunks**
-
 
 
 > [TrunkEntityListing](TrunkEntityListing) getTelephonyProvidersEdgesTrunks(pageNumber, pageSize, sortBy, sortOrder, edgeId, trunkBaseId, trunkType)
@@ -5117,7 +5038,6 @@ try {
 # **getTelephonyProvidersEdgesTrunksMetrics**
 
 
-
 > [List&lt;TrunkMetrics&gt;](TrunkMetrics) getTelephonyProvidersEdgesTrunksMetrics(trunkIds)
 
 Get the metrics for a list of trunks.
@@ -5175,7 +5095,6 @@ try {
 
 
 # **getTelephonyProvidersEdgesTrunkswithrecording**
-
 
 
 > [TrunkRecordingEnabledCount](TrunkRecordingEnabledCount) getTelephonyProvidersEdgesTrunkswithrecording(trunkType)
@@ -5236,7 +5155,6 @@ try {
 
 
 # **patchTelephonyProvidersEdgesSiteSiteconnections**
-
 
 
 > [SiteConnections](SiteConnections) patchTelephonyProvidersEdgesSiteSiteconnections(siteId, body)
@@ -5300,7 +5218,6 @@ try {
 # **postTelephonyProvidersEdgeDiagnosticNslookup**
 
 
-
 > [EdgeNetworkDiagnostic](EdgeNetworkDiagnostic) postTelephonyProvidersEdgeDiagnosticNslookup(edgeId, body)
 
 Nslookup request command to collect networking-related information from an Edge for a target IP or host.
@@ -5360,7 +5277,6 @@ try {
 
 
 # **postTelephonyProvidersEdgeDiagnosticPing**
-
 
 
 > [EdgeNetworkDiagnostic](EdgeNetworkDiagnostic) postTelephonyProvidersEdgeDiagnosticPing(edgeId, body)
@@ -5424,7 +5340,6 @@ try {
 # **postTelephonyProvidersEdgeDiagnosticRoute**
 
 
-
 > [EdgeNetworkDiagnostic](EdgeNetworkDiagnostic) postTelephonyProvidersEdgeDiagnosticRoute(edgeId, body)
 
 Route request command to collect networking-related information from an Edge for a target IP or host.
@@ -5486,7 +5401,6 @@ try {
 # **postTelephonyProvidersEdgeDiagnosticTracepath**
 
 
-
 > [EdgeNetworkDiagnostic](EdgeNetworkDiagnostic) postTelephonyProvidersEdgeDiagnosticTracepath(edgeId, body)
 
 Tracepath request command to collect networking-related information from an Edge for a target IP or host.
@@ -5546,7 +5460,6 @@ try {
 
 
 # **postTelephonyProvidersEdgeLogicalinterfaces**
-
 
 
 > [DomainLogicalInterface](DomainLogicalInterface) postTelephonyProvidersEdgeLogicalinterfaces(edgeId, body)
@@ -5612,7 +5525,6 @@ try {
 # **postTelephonyProvidersEdgeLogsJobUpload**
 
 
-
 > Void postTelephonyProvidersEdgeLogsJobUpload(edgeId, jobId, body)
 
 Request that the specified fileIds be uploaded from the Edge.
@@ -5673,7 +5585,6 @@ null (empty response body)
 
 
 # **postTelephonyProvidersEdgeLogsJobs**
-
 
 
 > [EdgeLogsJobResponse](EdgeLogsJobResponse) postTelephonyProvidersEdgeLogsJobs(edgeId, body)
@@ -5737,7 +5648,6 @@ try {
 # **postTelephonyProvidersEdgeReboot**
 
 
-
 > String postTelephonyProvidersEdgeReboot(edgeId, body)
 
 Reboot an Edge
@@ -5799,7 +5709,6 @@ try {
 # **postTelephonyProvidersEdgeSoftwareupdate**
 
 
-
 > [DomainEdgeSoftwareUpdateDto](DomainEdgeSoftwareUpdateDto) postTelephonyProvidersEdgeSoftwareupdate(edgeId, body)
 
 Starts a software update for this edge.
@@ -5858,7 +5767,6 @@ try {
 
 
 # **postTelephonyProvidersEdgeStatuscode**
-
 
 
 > String postTelephonyProvidersEdgeStatuscode(edgeId, body)
@@ -5922,7 +5830,6 @@ try {
 # **postTelephonyProvidersEdgeUnpair**
 
 
-
 > String postTelephonyProvidersEdgeUnpair(edgeId)
 
 Unpair an Edge
@@ -5980,7 +5887,6 @@ try {
 
 
 # **postTelephonyProvidersEdges**
-
 
 
 > [Edge](Edge) postTelephonyProvidersEdges(body)
@@ -6042,7 +5948,6 @@ try {
 # **postTelephonyProvidersEdgesAddressvalidation**
 
 
-
 > [ValidateAddressResponse](ValidateAddressResponse) postTelephonyProvidersEdgesAddressvalidation(body)
 
 Validates a street address
@@ -6099,7 +6004,6 @@ try {
 
 
 # **postTelephonyProvidersEdgesCertificateauthorities**
-
 
 
 > [DomainCertificateAuthority](DomainCertificateAuthority) postTelephonyProvidersEdgesCertificateauthorities(body)
@@ -6161,7 +6065,6 @@ try {
 # **postTelephonyProvidersEdgesDidpools**
 
 
-
 > [DIDPool](DIDPool) postTelephonyProvidersEdgesDidpools(body)
 
 Create a new DID pool
@@ -6219,7 +6122,6 @@ try {
 
 
 # **postTelephonyProvidersEdgesEdgegroups**
-
 
 
 > [EdgeGroup](EdgeGroup) postTelephonyProvidersEdgesEdgegroups(body)
@@ -6281,7 +6183,6 @@ try {
 # **postTelephonyProvidersEdgesExtensionpools**
 
 
-
 > [ExtensionPool](ExtensionPool) postTelephonyProvidersEdgesExtensionpools(body)
 
 Create a new extension pool
@@ -6341,7 +6242,6 @@ try {
 # **postTelephonyProvidersEdgesPhoneReboot**
 
 
-
 > Void postTelephonyProvidersEdgesPhoneReboot(phoneId)
 
 Reboot a Phone
@@ -6398,7 +6298,6 @@ null (empty response body)
 
 
 # **postTelephonyProvidersEdgesPhonebasesettings**
-
 
 
 > [PhoneBase](PhoneBase) postTelephonyProvidersEdgesPhonebasesettings(body)
@@ -6460,7 +6359,6 @@ try {
 # **postTelephonyProvidersEdgesPhones**
 
 
-
 > [Phone](Phone) postTelephonyProvidersEdgesPhones(body)
 
 Create a new Phone
@@ -6520,7 +6418,6 @@ try {
 # **postTelephonyProvidersEdgesPhonesReboot**
 
 
-
 > Void postTelephonyProvidersEdgesPhonesReboot(body)
 
 Reboot Multiple Phones
@@ -6577,7 +6474,6 @@ null (empty response body)
 
 
 # **postTelephonyProvidersEdgesSiteOutboundroutes**
-
 
 
 > [OutboundRouteBase](OutboundRouteBase) postTelephonyProvidersEdgesSiteOutboundroutes(siteId, body)
@@ -6641,7 +6537,6 @@ try {
 # **postTelephonyProvidersEdgesSites**
 
 
-
 > [Site](Site) postTelephonyProvidersEdgesSites(body)
 
 Create a Site.
@@ -6699,7 +6594,6 @@ try {
 
 
 # **postTelephonyProvidersEdgesTrunkbasesettings**
-
 
 
 > [TrunkBase](TrunkBase) postTelephonyProvidersEdgesTrunkbasesettings(body)
@@ -6761,7 +6655,6 @@ try {
 # **putTelephonyProvidersEdge**
 
 
-
 > [Edge](Edge) putTelephonyProvidersEdge(edgeId, body)
 
 Update a edge.
@@ -6821,7 +6714,6 @@ try {
 
 
 # **putTelephonyProvidersEdgeLogicalinterface**
-
 
 
 > [DomainLogicalInterface](DomainLogicalInterface) putTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, body)
@@ -6887,7 +6779,6 @@ try {
 # **putTelephonyProvidersEdgesCertificateauthority**
 
 
-
 > [DomainCertificateAuthority](DomainCertificateAuthority) putTelephonyProvidersEdgesCertificateauthority(certificateId, body)
 
 Update a certificate authority.
@@ -6947,7 +6838,6 @@ try {
 
 
 # **putTelephonyProvidersEdgesDidpool**
-
 
 
 > [DIDPool](DIDPool) putTelephonyProvidersEdgesDidpool(didPoolId, body)
@@ -7011,7 +6901,6 @@ try {
 # **putTelephonyProvidersEdgesEdgegroup**
 
 
-
 > [EdgeGroup](EdgeGroup) putTelephonyProvidersEdgesEdgegroup(edgeGroupId, body)
 
 Update an edge group.
@@ -7071,7 +6960,6 @@ try {
 
 
 # **putTelephonyProvidersEdgesEdgegroupEdgetrunkbase**
-
 
 
 > [EdgeTrunkBase](EdgeTrunkBase) putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId, body)
@@ -7137,7 +7025,6 @@ try {
 # **putTelephonyProvidersEdgesExtensionpool**
 
 
-
 > [ExtensionPool](ExtensionPool) putTelephonyProvidersEdgesExtensionpool(extensionPoolId, body)
 
 Update an extension pool by ID
@@ -7197,7 +7084,6 @@ try {
 
 
 # **putTelephonyProvidersEdgesPhone**
-
 
 
 > [Phone](Phone) putTelephonyProvidersEdgesPhone(phoneId, body)
@@ -7261,7 +7147,6 @@ try {
 # **putTelephonyProvidersEdgesPhonebasesetting**
 
 
-
 > [PhoneBase](PhoneBase) putTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, body)
 
 Update a Phone Base Settings by ID
@@ -7321,7 +7206,6 @@ try {
 
 
 # **putTelephonyProvidersEdgesSite**
-
 
 
 > [Site](Site) putTelephonyProvidersEdgesSite(siteId, body)
@@ -7385,7 +7269,6 @@ try {
 # **putTelephonyProvidersEdgesSiteNumberplans**
 
 
-
 > [List&lt;NumberPlan&gt;](NumberPlan) putTelephonyProvidersEdgesSiteNumberplans(siteId, body)
 
 Update the list of Number Plans. A user can update maximum 200 number plans at a time.
@@ -7445,7 +7328,6 @@ try {
 
 
 # **putTelephonyProvidersEdgesSiteOutboundroute**
-
 
 
 > [OutboundRouteBase](OutboundRouteBase) putTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId, body)
@@ -7511,7 +7393,6 @@ try {
 # **putTelephonyProvidersEdgesSiteSiteconnections**
 
 
-
 > [SiteConnections](SiteConnections) putTelephonyProvidersEdgesSiteSiteconnections(siteId, body)
 
 Update site connections for a site.
@@ -7573,7 +7454,6 @@ try {
 # **putTelephonyProvidersEdgesTrunkbasesetting**
 
 
-
 > [TrunkBase](TrunkBase) putTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, body)
 
 Update a Trunk Base Settings object by ID
@@ -7632,4 +7512,4 @@ try {
 [**TrunkBase**](TrunkBase)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

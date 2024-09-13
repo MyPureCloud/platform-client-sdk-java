@@ -11,7 +11,6 @@
 | **command** | [**CommandEnum**](#Enum--CommandEnum) | The command executed by the Architect Job |  [optional] |
 | **messages** | [**List&lt;ArchitectJobMessage&gt;**](ArchitectJobMessage) | Warnings and Errors messages of the Architect Job |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -23,7 +22,6 @@
 | STARTED | &quot;Started&quot; | 
 | SUCCESS | &quot;Success&quot; | 
 | FAILURE | &quot;Failure&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: CommandEnum
@@ -34,9 +32,8 @@
 | PUBLISH | &quot;Publish&quot; | 
 | CREATE | &quot;Create&quot; | 
 | UPDATE | &quot;Update&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -8,7 +8,6 @@
 | **startDate** | [**LocalDate**](LocalDate) | Start date of the range. The end date is determined by 'granularity' and the size of 'limitMinutesPerInterval'. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **granularity** | [**GranularityEnum**](#Enum--GranularityEnum) | Granularity choice for the time off limit |  |
 | **limitMinutesPerInterval** | **List&lt;Integer&gt;** | The list of time off limit values in minutes per granularity interval. If 'null' is specified, then interval specific value is cleared. Such interval will have 'defaultLimitMinutes' value |  |
-{: class="table table-striped"}
 
 
 ## Enum: GranularityEnum
@@ -17,9 +16,8 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | DAILY | &quot;Daily&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

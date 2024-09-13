@@ -11,7 +11,6 @@
 | **reviewedDate** | [**Date**](Date) | The date the request was reviewed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **failureReason** | [**FailureReasonEnum**](#Enum--FailureReasonEnum) | The reason the update failed, if applicable |  [optional] |
 | **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Version metadata for the shift trade |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -25,7 +24,6 @@
 | DENIED | &quot;Denied&quot; | 
 | EXPIRED | &quot;Expired&quot; | 
 | CANCELED | &quot;Canceled&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: FailureReasonEnum
@@ -42,9 +40,8 @@
 | RECEIVINGAGENTSHIFTNOTFOUND | &quot;ReceivingAgentShiftNotFound&quot; | 
 | SCHEDULENOTPUBLISHED | &quot;ScheduleNotPublished&quot; | 
 | TRANSITIONNOTALLOWED | &quot;TransitionNotAllowed&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

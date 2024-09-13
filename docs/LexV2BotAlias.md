@@ -15,7 +15,6 @@
 | **language** | **String** | The target language of the Lex V2 bot |  [optional] |
 | **intents** | [**List&lt;LexV2Intent&gt;**](LexV2Intent) | An array of Intents associated with this bot alias |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -27,9 +26,8 @@
 | AVAILABLE | &quot;Available&quot; | 
 | DELETING | &quot;Deleting&quot; | 
 | FAILED | &quot;Failed&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -13,9 +13,8 @@
 | **schemaExtensions** | [**List&lt;ScimConfigResourceTypeSchemaExtension&gt;**](ScimConfigResourceTypeSchemaExtension) | The list of schema extensions for the resource type. |  [optional] |
 | **endpoint** | **String** | The HTTP-addressable endpoint of the resource type. Appears after the base URL. |  [optional] |
 | **meta** | [**ScimMetadata**](ScimMetadata) | The metadata of the SCIM resource. Only \"location\" and \"resourceType\" are set for \"ResourceType\" resources. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

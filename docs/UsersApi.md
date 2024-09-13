@@ -107,7 +107,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteAnalyticsUsersDetailsJob**
 
 
-
 > Void deleteAnalyticsUsersDetailsJob(jobId)
 
 Delete/cancel an async request
@@ -164,7 +163,6 @@ null (empty response body)
 
 
 # **deleteAuthorizationSubjectDivisionRole**
-
 
 
 > Void deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId)
@@ -229,7 +227,6 @@ null (empty response body)
 # **deleteRoutingDirectroutingbackupSettingsMe**
 
 
-
 > Void deleteRoutingDirectroutingbackupSettingsMe()
 
 Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
@@ -282,7 +279,6 @@ null (empty response body)
 
 
 # **deleteRoutingUserDirectroutingbackupSettings**
-
 
 
 > Void deleteRoutingUserDirectroutingbackupSettings(userId)
@@ -343,7 +339,6 @@ null (empty response body)
 # **deleteRoutingUserUtilization**
 
 
-
 > Void deleteRoutingUserUtilization(userId)
 
 Delete the user's max utilization settings and revert to the organization-wide default.
@@ -402,7 +397,6 @@ null (empty response body)
 # **deleteUser**
 
 
-
 > Empty deleteUser(userId)
 
 Delete user
@@ -411,6 +405,7 @@ Wraps DELETE /api/v2/users/{userId}
 
 Requires ANY permissions: 
 
+* admin
 * directory:user:delete
 * directory:organization:admin
 
@@ -461,7 +456,6 @@ try {
 
 
 # **deleteUserRoutinglanguage**
-
 
 
 > Void deleteUserRoutinglanguage(userId, languageId)
@@ -525,7 +519,6 @@ null (empty response body)
 # **deleteUserRoutingskill**
 
 
-
 > Void deleteUserRoutingskill(userId, skillId)
 
 Remove routing skill from user
@@ -586,7 +579,6 @@ null (empty response body)
 # **deleteUserStationAssociatedstation**
 
 
-
 > Void deleteUserStationAssociatedstation(userId)
 
 Clear associated station
@@ -642,7 +634,6 @@ null (empty response body)
 
 
 # **deleteUserStationDefaultstation**
-
 
 
 > Void deleteUserStationDefaultstation(userId)
@@ -702,7 +693,6 @@ null (empty response body)
 
 
 # **deleteUserVerifier**
-
 
 
 > Void deleteUserVerifier(userId, verifierId)
@@ -765,7 +755,6 @@ null (empty response body)
 # **getAnalyticsUsersAggregatesJob**
 
 
-
 > [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsUsersAggregatesJob(jobId)
 
 Get status for async query for user aggregates
@@ -825,7 +814,6 @@ try {
 
 
 # **getAnalyticsUsersAggregatesJobResults**
-
 
 
 > [UserAsyncAggregateQueryResponse](UserAsyncAggregateQueryResponse) getAnalyticsUsersAggregatesJobResults(jobId, cursor)
@@ -891,7 +879,6 @@ try {
 # **getAnalyticsUsersDetailsJob**
 
 
-
 > [AsyncQueryStatus](AsyncQueryStatus) getAnalyticsUsersDetailsJob(jobId)
 
 Get status for async query for user details
@@ -949,7 +936,6 @@ try {
 
 
 # **getAnalyticsUsersDetailsJobResults**
-
 
 
 > [AnalyticsUserDetailsAsyncQueryResponse](AnalyticsUserDetailsAsyncQueryResponse) getAnalyticsUsersDetailsJobResults(jobId, cursor, pageSize)
@@ -1015,7 +1001,6 @@ try {
 # **getAnalyticsUsersDetailsJobsAvailability**
 
 
-
 > [DataAvailabilityResponse](DataAvailabilityResponse) getAnalyticsUsersDetailsJobsAvailability()
 
 Lookup the datalake availability date and time
@@ -1070,7 +1055,9 @@ This endpoint does not require any parameters.
 
 # **getAuthorizationDivisionspermittedMe**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [List&lt;AuthzDivision&gt;](AuthzDivision) getAuthorizationDivisionspermittedMe(permission, name)
 
@@ -1134,7 +1121,6 @@ try {
 # **getAuthorizationDivisionspermittedPagedMe**
 
 
-
 > [DivsPermittedEntityListing](DivsPermittedEntityListing) getAuthorizationDivisionspermittedPagedMe(permission, pageNumber, pageSize)
 
 Returns which divisions the current user has the given permission in.
@@ -1196,7 +1182,9 @@ try {
 
 # **getAuthorizationDivisionspermittedPagedSubjectId**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [DivsPermittedEntityListing](DivsPermittedEntityListing) getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, pageNumber, pageSize)
 
@@ -1264,7 +1252,6 @@ try {
 # **getAuthorizationSubject**
 
 
-
 > [AuthzSubject](AuthzSubject) getAuthorizationSubject(subjectId, includeDuplicates)
 
 Returns a listing of roles and permissions for a user.
@@ -1326,7 +1313,6 @@ try {
 # **getAuthorizationSubjectsMe**
 
 
-
 > [AuthzSubject](AuthzSubject) getAuthorizationSubjectsMe(includeDuplicates)
 
 Returns a listing of roles and permissions for the currently authenticated user.
@@ -1384,7 +1370,9 @@ try {
 
 # **getFieldconfig**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [FieldConfig](FieldConfig) getFieldconfig(type)
 
@@ -1443,7 +1431,9 @@ try {
 
 # **getProfilesUsers**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [UserProfileEntityListing](UserProfileEntityListing) getProfilesUsers(pageSize, pageNumber, id, jid, sortOrder, expand, integrationPresenceSource)
 
@@ -1517,7 +1507,6 @@ try {
 # **getRoutingDirectroutingbackupSettingsMe**
 
 
-
 > [AgentDirectRoutingBackupSettings](AgentDirectRoutingBackupSettings) getRoutingDirectroutingbackupSettingsMe()
 
 Get the user's Direct Routing Backup settings.
@@ -1571,7 +1560,6 @@ This endpoint does not require any parameters.
 
 
 # **getRoutingUserDirectroutingbackupSettings**
-
 
 
 > [AgentDirectRoutingBackupSettings](AgentDirectRoutingBackupSettings) getRoutingUserDirectroutingbackupSettings(userId)
@@ -1633,7 +1621,6 @@ try {
 # **getRoutingUserUtilization**
 
 
-
 > [AgentMaxUtilizationResponse](AgentMaxUtilizationResponse) getRoutingUserUtilization(userId)
 
 Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
@@ -1692,7 +1679,6 @@ try {
 
 
 # **getUser**
-
 
 
 > [User](User) getUser(userId, expand, integrationPresenceSource, state)
@@ -1759,7 +1745,6 @@ try {
 # **getUserAdjacents**
 
 
-
 > [Adjacents](Adjacents) getUserAdjacents(userId, expand)
 
 Get adjacents
@@ -1820,7 +1805,6 @@ try {
 # **getUserCallforwarding**
 
 
-
 > [CallForwarding](CallForwarding) getUserCallforwarding(userId)
 
 Get a user's CallForwarding
@@ -1877,7 +1861,6 @@ try {
 
 
 # **getUserDirectreports**
-
 
 
 > [List&lt;User&gt;](User) getUserDirectreports(userId, expand)
@@ -1939,7 +1922,9 @@ try {
 
 # **getUserFavorites**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [UserEntityListing](UserEntityListing) getUserFavorites(userId, pageSize, pageNumber, sortOrder, expand)
 
@@ -2007,7 +1992,6 @@ try {
 # **getUserGeolocation**
 
 
-
 > [Geolocation](Geolocation) getUserGeolocation(userId, clientId)
 
 Get a user's Geolocation
@@ -2068,7 +2052,6 @@ try {
 # **getUserOutofoffice**
 
 
-
 > [OutOfOffice](OutOfOffice) getUserOutofoffice(userId)
 
 Get a OutOfOffice
@@ -2126,7 +2109,9 @@ try {
 
 # **getUserProfile**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [UserProfile](UserProfile) getUserProfile(userId, expand, integrationPresenceSource)
 
@@ -2192,7 +2177,6 @@ try {
 # **getUserProfileskills**
 
 
-
 > List&lt;String&gt; getUserProfileskills(userId)
 
 List profile skills for a user
@@ -2250,7 +2234,6 @@ try {
 
 
 # **getUserQueues**
-
 
 
 > [UserQueueEntityListing](UserQueueEntityListing) getUserQueues(userId, pageSize, pageNumber, joined, divisionId)
@@ -2322,7 +2305,6 @@ try {
 # **getUserRoles**
 
 
-
 > [UserAuthorization](UserAuthorization) getUserRoles(subjectId)
 
 Returns a listing of roles and permissions for a user.
@@ -2380,7 +2362,6 @@ try {
 
 
 # **getUserRoutinglanguages**
-
 
 
 > [UserLanguageEntityListing](UserLanguageEntityListing) getUserRoutinglanguages(userId, pageSize, pageNumber, sortOrder)
@@ -2447,7 +2428,6 @@ try {
 # **getUserRoutingskills**
 
 
-
 > [UserSkillEntityListing](UserSkillEntityListing) getUserRoutingskills(userId, pageSize, pageNumber, sortOrder)
 
 List routing skills for user
@@ -2512,7 +2492,6 @@ try {
 # **getUserRoutingstatus**
 
 
-
 > [RoutingStatus](RoutingStatus) getUserRoutingstatus(userId)
 
 Fetch the routing status of a user
@@ -2569,7 +2548,6 @@ try {
 
 
 # **getUserSkillgroups**
-
 
 
 > [UserSkillGroupEntityListing](UserSkillGroupEntityListing) getUserSkillgroups(userId, pageSize, after, before)
@@ -2637,7 +2615,6 @@ try {
 # **getUserState**
 
 
-
 > [UserState](UserState) getUserState(userId)
 
 Get user state information.
@@ -2695,7 +2672,6 @@ try {
 
 
 # **getUserStation**
-
 
 
 > [UserStations](UserStations) getUserStation(userId)
@@ -2756,7 +2732,6 @@ try {
 # **getUserSuperiors**
 
 
-
 > [List&lt;User&gt;](User) getUserSuperiors(userId, expand)
 
 Get superiors
@@ -2815,7 +2790,6 @@ try {
 
 
 # **getUserTrustors**
-
 
 
 > [TrustorEntityListing](TrustorEntityListing) getUserTrustors(userId, pageSize, pageNumber)
@@ -2881,7 +2855,6 @@ try {
 # **getUserVerifiers**
 
 
-
 > [VerifierEntityListing](VerifierEntityListing) getUserVerifiers(userId)
 
 Get a list of verifiers
@@ -2939,7 +2912,6 @@ try {
 
 
 # **getUsers**
-
 
 
 > [UserEntityListing](UserEntityListing) getUsers(pageSize, pageNumber, id, jabberId, sortOrder, expand, integrationPresenceSource, state)
@@ -3012,7 +2984,6 @@ try {
 
 
 # **getUsersDevelopmentActivities**
-
 
 
 > [DevelopmentActivityListing](DevelopmentActivityListing) getUsersDevelopmentActivities(userId, moduleId, interval, completionInterval, overdue, pass, pageSize, pageNumber, sortOrder, types, statuses, relationship)
@@ -3099,7 +3070,6 @@ try {
 # **getUsersDevelopmentActivitiesMe**
 
 
-
 > [DevelopmentActivityListing](DevelopmentActivityListing) getUsersDevelopmentActivitiesMe(moduleId, interval, completionInterval, overdue, pass, pageSize, pageNumber, sortOrder, types, statuses, relationship)
 
 Get list of Development Activities for current user
@@ -3180,7 +3150,6 @@ try {
 # **getUsersDevelopmentActivity**
 
 
-
 > [DevelopmentActivity](DevelopmentActivity) getUsersDevelopmentActivity(activityId, type)
 
 Get a Development Activity
@@ -3245,7 +3214,6 @@ try {
 # **getUsersMe**
 
 
-
 > [UserMe](UserMe) getUsersMe(expand, integrationPresenceSource)
 
 Get current user details.
@@ -3306,7 +3274,6 @@ try {
 
 
 # **getUsersSearch**
-
 
 
 > [UsersSearchResponse](UsersSearchResponse) getUsersSearch(q64, expand, integrationPresenceSource)
@@ -3372,7 +3339,6 @@ try {
 # **patchUser**
 
 
-
 > [User](User) patchUser(userId, body)
 
 Update user
@@ -3381,6 +3347,7 @@ Wraps PATCH /api/v2/users/{userId}
 
 Requires ANY permissions: 
 
+* admin
 * directory:user:edit
 * directory:organization:admin
 
@@ -3433,7 +3400,6 @@ try {
 
 
 # **patchUserCallforwarding**
-
 
 
 > [CallForwarding](CallForwarding) patchUserCallforwarding(userId, body)
@@ -3495,7 +3461,6 @@ try {
 
 
 # **patchUserGeolocation**
-
 
 
 > [Geolocation](Geolocation) patchUserGeolocation(userId, clientId, body)
@@ -3562,7 +3527,6 @@ try {
 # **patchUserQueue**
 
 
-
 > [UserQueue](UserQueue) patchUserQueue(queueId, userId, body)
 
 Join or unjoin a queue for a user
@@ -3625,7 +3589,6 @@ try {
 
 
 # **patchUserQueues**
-
 
 
 > [UserQueueEntityListing](UserQueueEntityListing) patchUserQueues(userId, body, divisionId)
@@ -3692,7 +3655,6 @@ try {
 # **patchUserRoutinglanguage**
 
 
-
 > [UserRoutingLanguage](UserRoutingLanguage) patchUserRoutinglanguage(userId, languageId, body)
 
 Update routing language proficiency or state.
@@ -3757,7 +3719,6 @@ try {
 # **patchUserRoutinglanguagesBulk**
 
 
-
 > [UserLanguageEntityListing](UserLanguageEntityListing) patchUserRoutinglanguagesBulk(userId, body)
 
 Add bulk routing language to user. Max limit 50 languages
@@ -3818,7 +3779,6 @@ try {
 
 
 # **patchUserRoutingskillsBulk**
-
 
 
 > [UserSkillEntityListing](UserSkillEntityListing) patchUserRoutingskillsBulk(userId, body)
@@ -3882,7 +3842,6 @@ try {
 # **patchUsersBulk**
 
 
-
 > [UserEntityListing](UserEntityListing) patchUsersBulk(body)
 
 Update bulk acd autoanswer on users. Max 50 users can be updated at a time.
@@ -3941,7 +3900,6 @@ try {
 
 
 # **postAnalyticsUsersActivityQuery**
-
 
 
 > [UserActivityResponse](UserActivityResponse) postAnalyticsUsersActivityQuery(body, pageSize, pageNumber)
@@ -4007,7 +3965,6 @@ try {
 # **postAnalyticsUsersAggregatesJobs**
 
 
-
 > [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsUsersAggregatesJobs(body)
 
 Query for user aggregates asynchronously
@@ -4069,7 +4026,6 @@ try {
 # **postAnalyticsUsersAggregatesQuery**
 
 
-
 > [UserAggregateQueryResponse](UserAggregateQueryResponse) postAnalyticsUsersAggregatesQuery(body)
 
 Query for user aggregates
@@ -4127,7 +4083,6 @@ try {
 
 
 # **postAnalyticsUsersDetailsJobs**
-
 
 
 > [AsyncQueryResponse](AsyncQueryResponse) postAnalyticsUsersDetailsJobs(body)
@@ -4189,7 +4144,6 @@ try {
 # **postAnalyticsUsersDetailsQuery**
 
 
-
 > [AnalyticsUserDetailsQueryResponse](AnalyticsUserDetailsQueryResponse) postAnalyticsUsersDetailsQuery(body)
 
 Query for user details
@@ -4249,7 +4203,6 @@ try {
 # **postAnalyticsUsersObservationsQuery**
 
 
-
 > [UserObservationQueryResponse](UserObservationQueryResponse) postAnalyticsUsersObservationsQuery(body)
 
 Query for user observations
@@ -4307,7 +4260,6 @@ try {
 
 
 # **postAuthorizationSubjectBulkadd**
-
 
 
 > Void postAuthorizationSubjectBulkadd(subjectId, body, subjectType)
@@ -4372,7 +4324,6 @@ null (empty response body)
 # **postAuthorizationSubjectBulkremove**
 
 
-
 > Void postAuthorizationSubjectBulkremove(subjectId, body)
 
 Bulk-remove grants from a subject.
@@ -4431,7 +4382,6 @@ null (empty response body)
 
 
 # **postAuthorizationSubjectBulkreplace**
-
 
 
 > Void postAuthorizationSubjectBulkreplace(subjectId, body, subjectType)
@@ -4499,7 +4449,6 @@ null (empty response body)
 # **postAuthorizationSubjectDivisionRole**
 
 
-
 > Void postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, subjectType)
 
 Make a grant of a role in a division
@@ -4562,7 +4511,6 @@ null (empty response body)
 
 
 # **postUserExternalid**
-
 
 
 > [List&lt;UserExternalIdentifier&gt;](UserExternalIdentifier) postUserExternalid(userId, body)
@@ -4628,7 +4576,6 @@ try {
 # **postUserInvite**
 
 
-
 > Void postUserInvite(userId, force)
 
 Send an activation email to the user
@@ -4637,6 +4584,7 @@ Wraps POST /api/v2/users/{userId}/invite
 
 Requires ANY permissions: 
 
+* admin
 * directory:organization:admin
 * directory:userPassword:edit
 
@@ -4688,7 +4636,6 @@ null (empty response body)
 
 
 # **postUserPassword**
-
 
 
 > Void postUserPassword(userId, body)
@@ -4749,7 +4696,6 @@ null (empty response body)
 
 
 # **postUserRoutinglanguages**
-
 
 
 > [UserRoutingLanguage](UserRoutingLanguage) postUserRoutinglanguages(userId, body)
@@ -4814,7 +4760,6 @@ try {
 # **postUserRoutingskills**
 
 
-
 > [UserRoutingSkill](UserRoutingSkill) postUserRoutingskills(userId, body)
 
 Add routing skill to user
@@ -4876,7 +4821,6 @@ try {
 # **postUsers**
 
 
-
 > [User](User) postUsers(body)
 
 Create user
@@ -4936,7 +4880,6 @@ try {
 
 
 # **postUsersDevelopmentActivitiesAggregatesQuery**
-
 
 
 > [DevelopmentActivityAggregateResponse](DevelopmentActivityAggregateResponse) postUsersDevelopmentActivitiesAggregatesQuery(body)
@@ -5001,7 +4944,6 @@ try {
 # **postUsersMePassword**
 
 
-
 > Void postUsersMePassword(body)
 
 Change your password
@@ -5057,7 +4999,6 @@ null (empty response body)
 
 
 # **postUsersSearch**
-
 
 
 > [UsersSearchResponse](UsersSearchResponse) postUsersSearch(body)
@@ -5119,7 +5060,6 @@ try {
 # **postUsersSearchConversationTarget**
 
 
-
 > [UsersSearchResponse](UsersSearchResponse) postUsersSearchConversationTarget(body)
 
 Search users as conversation targets
@@ -5179,7 +5119,6 @@ try {
 
 
 # **postUsersSearchQueuemembersManage**
-
 
 
 > [UsersSearchResponse](UsersSearchResponse) postUsersSearchQueuemembersManage(body)
@@ -5244,7 +5183,6 @@ try {
 # **postUsersSearchTeamsAssign**
 
 
-
 > [UsersSearchResponse](UsersSearchResponse) postUsersSearchTeamsAssign(body)
 
 Search users assigned to teams
@@ -5304,7 +5242,6 @@ try {
 # **putRoutingDirectroutingbackupSettingsMe**
 
 
-
 > [AgentDirectRoutingBackupSettings](AgentDirectRoutingBackupSettings) putRoutingDirectroutingbackupSettingsMe(body)
 
 Update the user's Direct Routing Backup settings.
@@ -5362,7 +5299,6 @@ try {
 
 
 # **putRoutingUserDirectroutingbackupSettings**
-
 
 
 > [AgentDirectRoutingBackupSettings](AgentDirectRoutingBackupSettings) putRoutingUserDirectroutingbackupSettings(userId, body)
@@ -5426,7 +5362,6 @@ try {
 # **putRoutingUserUtilization**
 
 
-
 > [AgentMaxUtilizationResponse](AgentMaxUtilizationResponse) putRoutingUserUtilization(userId, body)
 
 Update the user's max utilization settings.  Include only those media types requiring custom configuration.
@@ -5486,7 +5421,6 @@ try {
 
 
 # **putUserCallforwarding**
-
 
 
 > [CallForwarding](CallForwarding) putUserCallforwarding(userId, body)
@@ -5550,7 +5484,6 @@ try {
 # **putUserOutofoffice**
 
 
-
 > [OutOfOffice](OutOfOffice) putUserOutofoffice(userId, body)
 
 Update an OutOfOffice
@@ -5609,7 +5542,6 @@ try {
 
 
 # **putUserProfileskills**
-
 
 
 > List&lt;String&gt; putUserProfileskills(userId, body)
@@ -5673,7 +5605,6 @@ try {
 # **putUserRoles**
 
 
-
 > [UserAuthorization](UserAuthorization) putUserRoles(subjectId, body)
 
 Sets the user's roles
@@ -5733,7 +5664,6 @@ try {
 
 
 # **putUserRoutingskill**
-
 
 
 > [UserRoutingSkill](UserRoutingSkill) putUserRoutingskill(userId, skillId, body)
@@ -5799,7 +5729,6 @@ try {
 # **putUserRoutingskillsBulk**
 
 
-
 > [UserSkillEntityListing](UserSkillEntityListing) putUserRoutingskillsBulk(userId, body)
 
 Replace all routing skills assigned to a user
@@ -5861,7 +5790,6 @@ try {
 # **putUserRoutingstatus**
 
 
-
 > [RoutingStatus](RoutingStatus) putUserRoutingstatus(userId, body)
 
 Update the routing status of a user
@@ -5920,7 +5848,6 @@ try {
 
 
 # **putUserState**
-
 
 
 > [UserState](UserState) putUserState(userId, body)
@@ -5984,7 +5911,6 @@ try {
 # **putUserStationAssociatedstationStationId**
 
 
-
 > Void putUserStationAssociatedstationStationId(userId, stationId)
 
 Set associated station
@@ -6042,7 +5968,6 @@ null (empty response body)
 
 
 # **putUserStationDefaultstationStationId**
-
 
 
 > Void putUserStationDefaultstationStationId(userId, stationId)
@@ -6106,7 +6031,6 @@ null (empty response body)
 # **putUserVerifier**
 
 
-
 > [Verifier](Verifier) putUserVerifier(userId, verifierId, body)
 
 Update a verifier
@@ -6167,4 +6091,4 @@ try {
 [**Verifier**](Verifier)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

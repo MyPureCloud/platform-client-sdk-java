@@ -11,9 +11,8 @@
 | **contentType** | **String** | The type of file the attachment is. |  [optional] |
 | **contentLength** | **Integer** | The length of the attachment file. |  [optional] |
 | **inlineImage** | **Boolean** | Whether or not the attachment was attached inline., |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

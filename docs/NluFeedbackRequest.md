@@ -9,9 +9,8 @@
 | **intents** | [**List&lt;IntentFeedback&gt;**](IntentFeedback) | Detected intent of the utterance |  |
 | **versionId** | **String** | The domain version ID of the feedback. |  |
 | **language** | **String** | The language of the version to which feedback is linked, e.g. en-us, de-de |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -201,7 +201,6 @@
 | **screenMonitorUserIds** | **List&lt;String&gt;** | The list of Screen Monitor User Ids |  [optional] |
 | **dashboardType** | [**DashboardTypeEnum**](#Enum--DashboardTypeEnum) | The type of dashboard being filtered |  [optional] |
 | **dashboardAccessFilter** | [**DashboardAccessFilterEnum**](#Enum--DashboardAccessFilterEnum) | The type of dashboard access being filtered |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypesEnum
@@ -217,7 +216,6 @@
 | UNKNOWN | &quot;unknown&quot; |
 | VIDEO | &quot;video&quot; |
 | VOICE | &quot;voice&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: DirectionsEnum
@@ -226,7 +224,6 @@
 | ---- | ----- |
 | INBOUND | &quot;inbound&quot; |
 | OUTBOUND | &quot;outbound&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: OriginatingDirectionsEnum
@@ -235,7 +232,6 @@
 | ---- | ----- |
 | INBOUND | &quot;inbound&quot; |
 | OUTBOUND | &quot;outbound&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: MessageTypesEnum
@@ -250,7 +246,6 @@
 | WEBMESSAGING | &quot;webmessaging&quot; |
 | OPEN | &quot;open&quot; |
 | INSTAGRAM | &quot;instagram&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: FlowOutcomeValuesEnum
@@ -259,7 +254,6 @@
 | ---- | ----- |
 | SUCCESS | &quot;SUCCESS&quot; |
 | FAILURE | &quot;FAILURE&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: FlowDestinationTypesEnum
@@ -276,7 +270,6 @@
 | USER_VOICEMAIL | &quot;USER_VOICEMAIL&quot; |
 | GROUP_VOICEMAIL | &quot;GROUP_VOICEMAIL&quot; |
 | RETURN_TO_AGENT | &quot;RETURN_TO_AGENT&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: FlowDisconnectReasonsEnum
@@ -286,7 +279,6 @@
 | FLOW_DISCONNECT | &quot;FLOW_DISCONNECT&quot; |
 | FLOW_ERROR_DISCONNECT | &quot;FLOW_ERROR_DISCONNECT&quot; |
 | DISCONNECT | &quot;DISCONNECT&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: FlowTypesEnum
@@ -311,7 +303,6 @@
 | VOICESURVEY | &quot;voicesurvey&quot; |
 | WORKFLOW | &quot;workflow&quot; |
 | WORKITEM | &quot;workitem&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: FlowEntryTypesEnum
@@ -323,7 +314,6 @@
 | DNIS | &quot;dnis&quot; |
 | FLOW | &quot;flow&quot; |
 | OUTBOUND | &quot;outbound&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: UsedRoutingTypesEnum
@@ -339,7 +329,6 @@
 | PREFERRED | &quot;Preferred&quot; |
 | STANDARD | &quot;Standard&quot; |
 | VIP | &quot;Vip&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: RequestedRoutingTypesEnum
@@ -355,7 +344,6 @@
 | PREFERRED | &quot;Preferred&quot; |
 | STANDARD | &quot;Standard&quot; |
 | VIP | &quot;Vip&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: ParticipantPurposesEnum
@@ -364,7 +352,6 @@
 | ---- | ----- |
 | INTERNAL | &quot;internal&quot; |
 | EXTERNAL | &quot;external&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: JourneyActionMapTypesEnum
@@ -377,7 +364,6 @@
 | INTEGRATIONACTION | &quot;integrationAction&quot; |
 | ARCHITECTFLOW | &quot;architectFlow&quot; |
 | OPENACTION | &quot;openAction&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: DevelopmentRoleListEnum
@@ -387,7 +373,6 @@
 | CREATOR | &quot;Creator&quot; |
 | FACILITATOR | &quot;Facilitator&quot; |
 | ATTENDEE | &quot;Attendee&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: DevelopmentTypeListEnum
@@ -400,7 +385,6 @@
 | ASSESSEDCONTENT | &quot;AssessedContent&quot; |
 | EXTERNAL | &quot;External&quot; |
 | NATIVE | &quot;Native&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: DevelopmentStatusListEnum
@@ -413,7 +397,6 @@
 | INPROGRESS | &quot;InProgress&quot; |
 | COMPLETED | &quot;Completed&quot; |
 | NOTCOMPLETED | &quot;NotCompleted&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: BotMessageTypesEnum
@@ -435,7 +418,6 @@
 | DISCORD | &quot;Discord&quot; |
 | TWITTERDIRECTMESSAGE | &quot;TwitterDirectMessage&quot; |
 | OTHER | &quot;Other&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: BotProviderListEnum
@@ -447,7 +429,6 @@
 | AMAZON | &quot;Amazon&quot; |
 | GOOGLE | &quot;Google&quot; |
 | NUANCE | &quot;Nuance&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: BotProductListEnum
@@ -467,7 +448,6 @@
 | GOOGLEDIALOGFLOWCXRESELL | &quot;GoogleDialogFlowCxResell&quot; |
 | GOOGLESTTBOTFLOW | &quot;GoogleSttBotFlow&quot; |
 | MICROSOFTSTTBOTFLOW | &quot;MicrosoftSttBotFlow&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: BotRecognitionFailureReasonListEnum
@@ -482,7 +462,6 @@
 | NOMATCHCONFIRMATION | &quot;NoMatchConfirmation&quot; |
 | NOMATCHDISAMBIGUATION | &quot;NoMatchDisambiguation&quot; |
 | MAXWRONGMATCH | &quot;MaxWrongMatch&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: BotResultListEnum
@@ -500,7 +479,6 @@
 | DISCONNECTERROR | &quot;DisconnectError&quot; |
 | DISCONNECTRECOGNITIONFAILURE | &quot;DisconnectRecognitionFailure&quot; |
 | TRANSFERTOACD | &quot;TransferToACD&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: BlockedReasonsEnum
@@ -515,7 +493,6 @@
 | OFFEREDOUTSIDESCHEDULE | &quot;OfferedOutsideSchedule&quot; |
 | SERVICELEVELTHROTTLING | &quot;ServiceLevelThrottling&quot; |
 | NOAVAILABLEAGENTS | &quot;NoAvailableAgents&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: EmailDeliveryStatusListEnum
@@ -530,7 +507,6 @@
 | READ | &quot;Read&quot; |
 | RECEIVED | &quot;Received&quot; |
 | SENT | &quot;Sent&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: AvailableDashboardEnum
@@ -540,7 +516,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | PUBLIC | &quot;Public&quot; | 
 | PRIVATE | &quot;Private&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: EvaluationStatusesEnum
@@ -552,7 +527,6 @@
 | INREVIEW | &quot;InReview&quot; |
 | PENDING | &quot;Pending&quot; |
 | RETRACTED | &quot;Retracted&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: UserStateEnum
@@ -564,7 +538,6 @@
 | ACTIVE | &quot;Active&quot; | 
 | INACTIVE | &quot;Inactive&quot; | 
 | DELETED | &quot;Deleted&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: SurveyTypesEnum
@@ -573,7 +546,6 @@
 | ---- | ----- |
 | WEB | &quot;Web&quot; |
 | VOICE | &quot;Voice&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: SurveyResponseStatusesEnum
@@ -583,7 +555,6 @@
 | UNKNOWN | &quot;Unknown&quot; |
 | FULLRESPONSE | &quot;FullResponse&quot; |
 | PARTIALRESPONSE | &quot;PartialResponse&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: BotFlowTypesEnum
@@ -594,7 +565,6 @@
 | BOT | &quot;Bot&quot; |
 | DIGITALBOT | &quot;DigitalBot&quot; |
 | VOICESURVEY | &quot;VoiceSurvey&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: DashboardTypeEnum
@@ -607,7 +577,6 @@
 | PRIVATE | &quot;Private&quot; | 
 | SHARED | &quot;Shared&quot; | 
 | FAVORITES | &quot;Favorites&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DashboardAccessFilterEnum
@@ -618,9 +587,8 @@
 | OWNEDBYME | &quot;OwnedByMe&quot; | 
 | OWNEDBYANYONE | &quot;OwnedByAnyone&quot; | 
 | NOTOWNEDBYME | &quot;NotOwnedByMe&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

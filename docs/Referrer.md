@@ -14,7 +14,6 @@
 | **fragment** | **String** | Referrer URL fragment. |  [optional] |
 | **name** | **String** | Name of referrer (e.g. Yahoo!, Google, InfoSpace). |  [optional] |
 | **medium** | [**MediumEnum**](#Enum--MediumEnum) | Type of referrer (e.g. search, social). |  |
-{: class="table table-striped"}
 
 
 ## Enum: MediumEnum
@@ -28,9 +27,8 @@
 | EMAIL | &quot;email&quot; | 
 | UNKNOWN | &quot;unknown&quot; | 
 | PAID | &quot;paid&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

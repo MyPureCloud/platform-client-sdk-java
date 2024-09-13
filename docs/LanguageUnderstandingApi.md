@@ -44,7 +44,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteLanguageunderstandingDomain**
 
 
-
 > Void deleteLanguageunderstandingDomain(domainId)
 
 Delete an NLU Domain.
@@ -102,7 +101,6 @@ null (empty response body)
 
 
 # **deleteLanguageunderstandingDomainFeedbackFeedbackId**
-
 
 
 > Void deleteLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedbackId)
@@ -166,7 +164,6 @@ null (empty response body)
 # **deleteLanguageunderstandingDomainVersion**
 
 
-
 > Void deleteLanguageunderstandingDomainVersion(domainId, domainVersionId)
 
 Delete an NLU Domain Version
@@ -228,7 +225,6 @@ null (empty response body)
 # **deleteLanguageunderstandingMiner**
 
 
-
 > Void deleteLanguageunderstandingMiner(minerId)
 
 Delete a miner.
@@ -285,7 +281,6 @@ null (empty response body)
 
 
 # **deleteLanguageunderstandingMinerDraft**
-
 
 
 > Void deleteLanguageunderstandingMinerDraft(minerId, draftId)
@@ -348,7 +343,6 @@ null (empty response body)
 # **getLanguageunderstandingDomain**
 
 
-
 > [NluDomain](NluDomain) getLanguageunderstandingDomain(domainId)
 
 Find an NLU Domain.
@@ -407,7 +401,6 @@ try {
 
 
 # **getLanguageunderstandingDomainFeedback**
-
 
 
 > [NluFeedbackListing](NluFeedbackListing) getLanguageunderstandingDomainFeedback(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, language, pageNumber, pageSize, enableCursorPagination, includeTrainingUtterances, after, fields)
@@ -494,7 +487,6 @@ try {
 # **getLanguageunderstandingDomainFeedbackFeedbackId**
 
 
-
 > [NluFeedbackResponse](NluFeedbackResponse) getLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedbackId, fields)
 
 Find a Feedback
@@ -557,7 +549,6 @@ try {
 
 
 # **getLanguageunderstandingDomainVersion**
-
 
 
 > [NluDomainVersion](NluDomainVersion) getLanguageunderstandingDomainVersion(domainId, domainVersionId, includeUtterances)
@@ -624,7 +615,6 @@ try {
 # **getLanguageunderstandingDomainVersionReport**
 
 
-
 > [NluDomainVersionQualityReport](NluDomainVersionQualityReport) getLanguageunderstandingDomainVersionReport(domainId, domainVersionId)
 
 Retrieved quality report for the specified NLU Domain Version
@@ -685,7 +675,6 @@ try {
 
 
 # **getLanguageunderstandingDomainVersions**
-
 
 
 > [NluDomainVersionListing](NluDomainVersionListing) getLanguageunderstandingDomainVersions(domainId, includeUtterances, pageNumber, pageSize)
@@ -754,7 +743,6 @@ try {
 # **getLanguageunderstandingDomains**
 
 
-
 > [NluDomainListing](NluDomainListing) getLanguageunderstandingDomains(pageNumber, pageSize)
 
 Get all NLU Domains.
@@ -817,7 +805,6 @@ try {
 # **getLanguageunderstandingMiner**
 
 
-
 > [Miner](Miner) getLanguageunderstandingMiner(minerId)
 
 Get information about a miner.
@@ -875,7 +862,6 @@ try {
 
 
 # **getLanguageunderstandingMinerDraft**
-
 
 
 > [Draft](Draft) getLanguageunderstandingMinerDraft(minerId, draftId, draftIntentId, draftTopicId)
@@ -943,7 +929,6 @@ try {
 # **getLanguageunderstandingMinerDrafts**
 
 
-
 > [DraftListing](DraftListing) getLanguageunderstandingMinerDrafts(minerId)
 
 Retrieve the list of drafts created.
@@ -1001,7 +986,6 @@ try {
 
 
 # **getLanguageunderstandingMinerIntent**
-
 
 
 > [MinerIntent](MinerIntent) getLanguageunderstandingMinerIntent(minerId, intentId, expand)
@@ -1067,7 +1051,6 @@ try {
 # **getLanguageunderstandingMinerIntents**
 
 
-
 > [MinedIntentsListing](MinedIntentsListing) getLanguageunderstandingMinerIntents(minerId, expand)
 
 Retrieve a list of mined intents.
@@ -1127,7 +1110,6 @@ try {
 
 
 # **getLanguageunderstandingMinerTopic**
-
 
 
 > [MinerTopic](MinerTopic) getLanguageunderstandingMinerTopic(minerId, topicId, expand)
@@ -1193,7 +1175,6 @@ try {
 # **getLanguageunderstandingMinerTopicPhrase**
 
 
-
 > [MinerTopicPhrase](MinerTopicPhrase) getLanguageunderstandingMinerTopicPhrase(minerId, topicId, phraseId)
 
 Retrieves utterances related to a phrase in a topic.
@@ -1257,7 +1238,6 @@ try {
 # **getLanguageunderstandingMinerTopics**
 
 
-
 > [MinerTopicsListing](MinerTopicsListing) getLanguageunderstandingMinerTopics(minerId)
 
 Retrieve a list of mined topics.
@@ -1315,7 +1295,6 @@ try {
 
 
 # **getLanguageunderstandingMiners**
-
 
 
 > [MinerListing](MinerListing) getLanguageunderstandingMiners(minerType)
@@ -1377,7 +1356,6 @@ try {
 # **getLanguageunderstandingSettings**
 
 
-
 > [NluOrganization](NluOrganization) getLanguageunderstandingSettings()
 
 Get Organization Configuration
@@ -1433,7 +1411,6 @@ This endpoint does not require any parameters.
 
 
 # **patchLanguageunderstandingDomain**
-
 
 
 > [NluDomain](NluDomain) patchLanguageunderstandingDomain(domainId, body)
@@ -1496,7 +1473,6 @@ try {
 
 
 # **patchLanguageunderstandingMinerDraft**
-
 
 
 > [Draft](Draft) patchLanguageunderstandingMinerDraft(minerId, draftId, body)
@@ -1562,7 +1538,6 @@ try {
 # **postLanguageunderstandingDomainFeedback**
 
 
-
 > [NluFeedbackResponse](NluFeedbackResponse) postLanguageunderstandingDomainFeedback(domainId, body)
 
 Create feedback for the NLU Domain Version.
@@ -1623,7 +1598,6 @@ try {
 
 
 # **postLanguageunderstandingDomainVersionDetect**
-
 
 
 > [NluDetectionResponse](NluDetectionResponse) postLanguageunderstandingDomainVersionDetect(domainId, domainVersionId, body)
@@ -1690,7 +1664,6 @@ try {
 # **postLanguageunderstandingDomainVersionPublish**
 
 
-
 > [NluDomainVersion](NluDomainVersion) postLanguageunderstandingDomainVersionPublish(domainId, domainVersionId)
 
 Publish the draft NLU Domain Version.
@@ -1753,7 +1726,6 @@ try {
 # **postLanguageunderstandingDomainVersionTrain**
 
 
-
 > [NluDomainVersionTrainingResponse](NluDomainVersionTrainingResponse) postLanguageunderstandingDomainVersionTrain(domainId, domainVersionId)
 
 Train the draft NLU Domain Version.
@@ -1814,7 +1786,6 @@ try {
 
 
 # **postLanguageunderstandingDomainVersions**
-
 
 
 > [NluDomainVersion](NluDomainVersion) postLanguageunderstandingDomainVersions(domainId, body, includeUtterances)
@@ -1881,7 +1852,6 @@ try {
 # **postLanguageunderstandingDomains**
 
 
-
 > [NluDomain](NluDomain) postLanguageunderstandingDomains(body)
 
 Create an NLU Domain.
@@ -1940,7 +1910,6 @@ try {
 
 
 # **postLanguageunderstandingMinerDrafts**
-
 
 
 > [Draft](Draft) postLanguageunderstandingMinerDrafts(minerId, body)
@@ -2004,7 +1973,6 @@ try {
 # **postLanguageunderstandingMinerExecute**
 
 
-
 > [Miner](Miner) postLanguageunderstandingMinerExecute(minerId, body)
 
 Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
@@ -2066,7 +2034,6 @@ try {
 # **postLanguageunderstandingMiners**
 
 
-
 > [Miner](Miner) postLanguageunderstandingMiners(body)
 
 Create a unique miner.
@@ -2124,7 +2091,6 @@ try {
 
 
 # **putLanguageunderstandingDomainVersion**
-
 
 
 > [NluDomainVersion](NluDomainVersion) putLanguageunderstandingDomainVersion(domainId, domainVersionId, body)
@@ -2188,4 +2154,4 @@ try {
 [**NluDomainVersion**](NluDomainVersion)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

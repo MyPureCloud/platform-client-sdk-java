@@ -14,7 +14,6 @@
 | **failureReason** | [**ErrorInfo**](ErrorInfo) | Information on failure reason. |  [optional] |
 | **downloadURI** | **String** | URI to download the original backup contacts. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -25,7 +24,6 @@
 | INPROGRESS | &quot;InProgress&quot; | 
 | COMPLETE | &quot;Complete&quot; | 
 | FAILED | &quot;Failed&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -35,9 +33,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | BULKDELETE | &quot;BulkDelete&quot; | 
 | BULKEDIT | &quot;BulkEdit&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -38,7 +38,6 @@
 | **hasAssistanceFailed** | **Boolean** | Is true when evaluation assistance didn't execute successfully |  [optional] |
 | **evaluationSource** | [**EvaluationSource**](EvaluationSource) | The source that created the evaluation. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -51,7 +50,6 @@
 | FINISHED | &quot;FINISHED&quot; | 
 | INREVIEW | &quot;INREVIEW&quot; | 
 | RETRACTED | &quot;RETRACTED&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -67,7 +65,6 @@
 | SOCIAL_EXPRESSION | &quot;SOCIAL_EXPRESSION&quot; |
 | VIDEO | &quot;VIDEO&quot; |
 | SCREENSHARE | &quot;SCREENSHARE&quot; |
-{: class="table table-striped"}
 
 
 ## Enum: ResourceTypeEnum
@@ -76,9 +73,8 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | EMAIL | &quot;EMAIL&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

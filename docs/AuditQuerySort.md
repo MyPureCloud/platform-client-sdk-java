@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **name** | [**NameEnum**](#Enum--NameEnum) | Name of the property to sort. |  |
 | **sortOrder** | [**SortOrderEnum**](#Enum--SortOrderEnum) | Sort Order |  |
-{: class="table table-striped"}
 
 
 ## Enum: NameEnum
@@ -16,7 +15,6 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | TIMESTAMP | &quot;Timestamp&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: SortOrderEnum
@@ -26,9 +24,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ASCENDING | &quot;ascending&quot; | 
 | DESCENDING | &quot;descending&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -11,7 +11,6 @@
 | **feedbackValue** | [**FeedbackValueEnum**](#Enum--FeedbackValueEnum) | The sentiment feedback value for the given phrase |  |
 | **dateCreated** | [**Date**](Date) | The Timestamp when sentiment feedback created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **createdBy** | [**AddressableEntityRef**](AddressableEntityRef) | The Id of user who created the sentiment feedback |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: FeedbackValueEnum
@@ -22,9 +21,8 @@
 | NEUTRAL | &quot;Neutral&quot; | 
 | POSITIVE | &quot;Positive&quot; | 
 | NEGATIVE | &quot;Negative&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

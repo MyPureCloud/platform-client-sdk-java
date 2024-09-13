@@ -14,7 +14,6 @@
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the coaching appointment. |  [optional] |
 | **wfmSchedule** | [**WfmScheduleReference**](WfmScheduleReference) | The Workforce Management schedule the appointment is associated with. |  [optional] |
 | **externalLinks** | **List&lt;String&gt;** | The list of external links related to the appointment |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -25,9 +24,8 @@
 | SCHEDULED | &quot;Scheduled&quot; | 
 | INPROGRESS | &quot;InProgress&quot; | 
 | COMPLETED | &quot;Completed&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

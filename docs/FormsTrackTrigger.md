@@ -9,9 +9,8 @@
 | **formName** | **String** | Prefix for the form submitted or abandoned event name. |  |
 | **captureDataOnFormAbandon** | **Boolean** | Whether to capture the form data in the form abandoned event. |  |
 | **captureDataOnFormSubmit** | **Boolean** | Whether to capture the form data in the form submitted event. |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

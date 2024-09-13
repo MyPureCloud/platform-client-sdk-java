@@ -9,9 +9,8 @@
 | **name** | **String** | The SupportedContent profile name |  [optional] |
 | **selfUri** | **String** | The SupportedContent profile URI |  [optional] |
 | **mediaTypes** | [**MediaTypes**](MediaTypes) | Media types definition for the supported content |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

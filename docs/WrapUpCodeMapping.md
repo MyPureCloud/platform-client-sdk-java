@@ -13,7 +13,6 @@
 | **defaultSet** | [**List<DefaultSetEnum>**](#Enum--DefaultSetEnum) | The default set of wrap-up flags. These will be used if there is no entry for a given wrap-up code in the mapping. |  [optional] |
 | **mapping** | [**Map&lt;String, List&lt;String&gt;&gt;**](List) | A map from wrap-up code identifiers to a set of wrap-up flags. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: DefaultSetEnum
@@ -26,9 +25,8 @@
 | BUSINESS_SUCCESS | &quot;BUSINESS_SUCCESS&quot; |
 | BUSINESS_FAILURE | &quot;BUSINESS_FAILURE&quot; |
 | BUSINESS_NEUTRAL | &quot;BUSINESS_NEUTRAL&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

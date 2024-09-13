@@ -26,7 +26,6 @@
 | **dialerSystemParticipantId** | **String** | conversation participant id that is the dialer system participant to monitor the call from dialer perspective |  [optional] |
 | **dialingMode** | **String** |  |  [optional] |
 | **skills** | [**List&lt;DomainEntityRef&gt;**](DomainEntityRef) | Any skills that are attached to the call for routing |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: DispositionEnum
@@ -42,9 +41,8 @@
 | SIT_CALLABLE | &quot;SIT_CALLABLE&quot; | 
 | SIT_UNCALLABLE | &quot;SIT_UNCALLABLE&quot; | 
 | FAX | &quot;FAX&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

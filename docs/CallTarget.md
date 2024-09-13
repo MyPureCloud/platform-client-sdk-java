@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of call |  [optional] |
 | **value** | **String** | The id of the station or an E.164 formatted phone number |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -17,9 +16,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | STATION | &quot;STATION&quot; | 
 | PHONENUMBER | &quot;PHONENUMBER&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

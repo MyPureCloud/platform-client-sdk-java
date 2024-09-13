@@ -10,9 +10,8 @@
 | **pageNumber** | **Integer** | Page number. |  |
 | **pageSize** | **Integer** | Page size. The max that will be returned is 100. |  |
 | **contactSorts** | [**List&lt;ContactSort&gt;**](ContactSort) | The order in which to sort contacts. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

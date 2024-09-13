@@ -17,7 +17,6 @@
 | **returned** | [**ReturnedEnum**](#Enum--ReturnedEnum) | The circumstances under which an attribute and its values are returned in response to a GET, PUT, POST, or PATCH request. |  [optional] |
 | **uniqueness** | [**UniquenessEnum**](#Enum--UniquenessEnum) | The method by which the service provider enforces the uniqueness of an attribute value. A server can reject a value by returning the HTTP response code 400 (Bad Request). A client can enforce uniqueness to a greater degree than the server provider enforces. For example, a client could make a value unique even though the server has \"uniqueness\" set to \"none\". |  [optional] |
 | **referenceTypes** | [**List<ReferenceTypesEnum>**](#Enum--ReferenceTypesEnum) | The list of SCIM resource types that may be referenced. Only applies when \"type\" is set to \"reference\". |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -32,7 +31,6 @@
 | DATETIME | &quot;dateTime&quot; | 
 | REFERENCE | &quot;reference&quot; | 
 | COMPLEX | &quot;complex&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: MutabilityEnum
@@ -44,7 +42,6 @@
 | READONLY | &quot;readOnly&quot; | 
 | IMMUTABLE | &quot;immutable&quot; | 
 | WRITEONLY | &quot;writeOnly&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ReturnedEnum
@@ -56,7 +53,6 @@
 | NEVER | &quot;never&quot; | 
 | DEFAULT | &quot;default&quot; | 
 | REQUEST | &quot;request&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: UniquenessEnum
@@ -67,7 +63,6 @@
 | NONE | &quot;none&quot; | 
 | SERVER | &quot;server&quot; | 
 | GLOBAL | &quot;global&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ReferenceTypesEnum
@@ -78,9 +73,8 @@
 | GROUP | &quot;Group&quot; |
 | EXTERNAL | &quot;external&quot; |
 | URI | &quot;uri&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

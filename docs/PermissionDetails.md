@@ -9,7 +9,6 @@
 | **permissions** | **List&lt;String&gt;** | List of required permissions |  [optional] |
 | **allowsCurrentUser** | **Boolean** | Whether the current user can subscribe, when division permissions are otherwise required |  [optional] |
 | **enforced** | **Boolean** | Whether or not this permission requirement is enforced |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -22,9 +21,8 @@
 | REQUIRESDIVISIONPERMISSIONS | &quot;requiresDivisionPermissions&quot; | 
 | REQUIRESANYDIVISIONPERMISSIONS | &quot;requiresAnyDivisionPermissions&quot; | 
 | REQUIRESUSERBECONVERSATIONPARTICIPANT | &quot;requiresUserBeConversationParticipant&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -16,7 +16,6 @@
 | **agentNotification** | **Boolean** |  |  [optional] |
 | **otherNotificationIdsInGroup** | **List&lt;String&gt;** |  |  [optional] |
 | **markedAsRead** | **Boolean** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -28,9 +27,8 @@
 | TIMEOFFREQUEST | &quot;TimeOffRequest&quot; | 
 | ADHERENCEEXPLANATION | &quot;AdherenceExplanation&quot; | 
 | ALTERNATIVESHIFT | &quot;AlternativeShift&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

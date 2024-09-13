@@ -10,7 +10,6 @@
 | **steps** | [**List&lt;LearningModulePreviewUpdateStep&gt;**](LearningModulePreviewUpdateStep) | The assignment Steps |  [optional] |
 | **assessment** | [**LearningAssessment**](LearningAssessment) | The assessment for learning module |  [optional] |
 | **assessmentForm** | [**AssessmentForm**](AssessmentForm) | The assessment form for learning module |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -24,9 +23,8 @@
 | DELETED | &quot;Deleted&quot; | 
 | NOTCOMPLETED | &quot;NotCompleted&quot; | 
 | INVALIDSCHEDULE | &quot;InvalidSchedule&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -9,7 +9,6 @@
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the alternative shift job |  |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of alternative shift asynchronous job |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -20,7 +19,6 @@
 | PROCESSING | &quot;Processing&quot; | 
 | COMPLETE | &quot;Complete&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -33,9 +31,8 @@
 | LISTUSERTRADES | &quot;ListUserTrades&quot; | 
 | SEARCHTRADES | &quot;SearchTrades&quot; | 
 | BULKUPDATETRADES | &quot;BulkUpdateTrades&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

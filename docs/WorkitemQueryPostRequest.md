@@ -12,7 +12,6 @@
 | **after** | **String** | The cursor that points to the end of the set of entities that has been returned. |  [optional] |
 | **sort** | [**WorkitemQuerySort**](WorkitemQuerySort) | Sort |  [optional] |
 | **expands** | [**List<ExpandsEnum>**](#Enum--ExpandsEnum) | List of entity attributes to be expanded in the result. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: SelectEnum
@@ -21,7 +20,6 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | COUNT | &quot;Count&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ExpandsEnum
@@ -34,9 +32,8 @@
 | ASSIGNEE | &quot;assignee&quot; |
 | REPORTER | &quot;reporter&quot; |
 | QUEUE | &quot;queue&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

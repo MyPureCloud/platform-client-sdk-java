@@ -12,7 +12,6 @@
 | **lowerLimitPoints** | **Integer** | lower limit points |  |
 | **upperLimitValue** | **Integer** | upper limit value |  [optional] |
 | **lowerLimitValue** | **Integer** | lower limit value |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: DirectionTypeEnum
@@ -23,7 +22,6 @@
 | UP | &quot;Up&quot; | 
 | DOWN | &quot;Down&quot; | 
 | FLAT | &quot;Flat&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ZoneTypeEnum
@@ -35,9 +33,8 @@
 | TARGET | &quot;Target&quot; | 
 | GREAT | &quot;Great&quot; | 
 | OUT | &quot;Out&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

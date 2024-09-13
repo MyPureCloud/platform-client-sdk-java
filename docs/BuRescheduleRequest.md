@@ -14,9 +14,8 @@
 | **doNotChangeDailyPaidTime** | **Boolean** | Instructs the scheduler whether it is allowed to change daily paid time |  |
 | **doNotChangeShiftStartTimes** | **Boolean** | Instructs the scheduler whether it is allowed to change shift start times |  |
 | **doNotChangeManuallyEditedShifts** | **Boolean** | Instructs the scheduler whether it is allowed to change manually edited shifts |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

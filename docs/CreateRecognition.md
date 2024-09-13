@@ -11,7 +11,6 @@
 | **note** | **String** | The note of the recognition. Max length of 800 characters (optional) |  [optional] |
 | **contextType** | [**ContextTypeEnum**](#Enum--ContextTypeEnum) | The context type (optional) |  [optional] |
 | **contextId** | **String** | The context id (optional) |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -23,7 +22,6 @@
 | CONGRATULATIONS | &quot;Congratulations&quot; | 
 | HIGHPERFORMANCE | &quot;HighPerformance&quot; | 
 | COMPANYVALUES | &quot;CompanyValues&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ContextTypeEnum
@@ -35,9 +33,8 @@
 | INSIGHTS | &quot;Insights&quot; | 
 | DEVELOPMENT | &quot;Development&quot; | 
 | SCORECARD | &quot;Scorecard&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

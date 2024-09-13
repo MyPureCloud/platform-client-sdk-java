@@ -6,7 +6,6 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **when** | [**WhenEnum**](#Enum--WhenEnum) | When the user should receive notifications |  |
-{: class="table table-striped"}
 
 
 ## Enum: WhenEnum
@@ -16,9 +15,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ALWAYS | &quot;Always&quot; | 
 | ONLYWHENINACTIVE | &quot;OnlyWhenInactive&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

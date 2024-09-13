@@ -151,7 +151,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteArchitectEmergencygroup**
 
 
-
 > Void deleteArchitectEmergencygroup(emergencyGroupId)
 
 Deletes a emergency group by ID
@@ -208,7 +207,6 @@ null (empty response body)
 
 
 # **deleteArchitectGrammar**
-
 
 
 > Empty deleteArchitectGrammar(grammarId)
@@ -270,7 +268,6 @@ try {
 
 
 # **deleteArchitectGrammarLanguage**
-
 
 
 > Void deleteArchitectGrammarLanguage(grammarId, languageCode)
@@ -335,7 +332,6 @@ null (empty response body)
 # **deleteArchitectGrammarLanguageFilesDtmf**
 
 
-
 > Void deleteArchitectGrammarLanguageFilesDtmf(grammarId, languageCode)
 
 Clear the DTMF mode file for the grammar language if there is one
@@ -396,7 +392,6 @@ null (empty response body)
 
 
 # **deleteArchitectGrammarLanguageFilesVoice**
-
 
 
 > Void deleteArchitectGrammarLanguageFilesVoice(grammarId, languageCode)
@@ -461,7 +456,6 @@ null (empty response body)
 # **deleteArchitectIvr**
 
 
-
 > Void deleteArchitectIvr(ivrId)
 
 Delete an IVR Config.
@@ -518,7 +512,6 @@ null (empty response body)
 
 
 # **deleteArchitectPrompt**
-
 
 
 > Void deleteArchitectPrompt(promptId, allResources)
@@ -581,7 +574,6 @@ null (empty response body)
 # **deleteArchitectPromptResource**
 
 
-
 > Void deleteArchitectPromptResource(promptId, languageCode)
 
 Delete specified user prompt resource
@@ -642,7 +634,6 @@ null (empty response body)
 # **deleteArchitectPromptResourceAudio**
 
 
-
 > Void deleteArchitectPromptResourceAudio(promptId, languageCode)
 
 Delete specified user prompt resource audio
@@ -701,7 +692,6 @@ null (empty response body)
 
 
 # **deleteArchitectPrompts**
-
 
 
 > [Operation](Operation) deleteArchitectPrompts(id)
@@ -765,7 +755,6 @@ try {
 # **deleteArchitectSchedule**
 
 
-
 > Void deleteArchitectSchedule(scheduleId)
 
 Delete a schedule by id
@@ -824,7 +813,6 @@ null (empty response body)
 # **deleteArchitectSchedulegroup**
 
 
-
 > Void deleteArchitectSchedulegroup(scheduleGroupId)
 
 Deletes a schedule group by ID
@@ -881,7 +869,6 @@ null (empty response body)
 
 
 # **deleteArchitectSystempromptResource**
-
 
 
 > Void deleteArchitectSystempromptResource(promptId, languageCode)
@@ -944,7 +931,6 @@ null (empty response body)
 # **deleteFlow**
 
 
-
 > Void deleteFlow(flowId)
 
 Delete flow
@@ -1001,7 +987,6 @@ null (empty response body)
 
 
 # **deleteFlowInstancesSettingsLoglevels**
-
 
 
 > Void deleteFlowInstancesSettingsLoglevels(flowId)
@@ -1062,7 +1047,6 @@ null (empty response body)
 
 
 # **deleteFlows**
-
 
 
 > [Operation](Operation) deleteFlows(id)
@@ -1126,7 +1110,6 @@ try {
 # **deleteFlowsDatatable**
 
 
-
 > Void deleteFlowsDatatable(datatableId, force)
 
 deletes a specific datatable by id
@@ -1187,7 +1170,6 @@ null (empty response body)
 
 
 # **deleteFlowsDatatableRow**
-
 
 
 > Void deleteFlowsDatatableRow(datatableId, rowId)
@@ -1253,7 +1235,6 @@ null (empty response body)
 # **deleteFlowsInstancesSettingsLoglevelsDefault**
 
 
-
 > Void deleteFlowsInstancesSettingsLoglevelsDefault()
 
 Resets the org log level to default, base
@@ -1308,7 +1289,6 @@ null (empty response body)
 
 
 # **deleteFlowsMilestone**
-
 
 
 > Empty deleteFlowsMilestone(milestoneId)
@@ -1368,7 +1348,6 @@ try {
 
 
 # **getArchitectDependencytracking**
-
 
 
 > [DependencyObjectEntityListing](DependencyObjectEntityListing) getArchitectDependencytracking(name, pageNumber, pageSize, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType)
@@ -1444,7 +1423,6 @@ try {
 # **getArchitectDependencytrackingBuild**
 
 
-
 > [DependencyStatus](DependencyStatus) getArchitectDependencytrackingBuild()
 
 Get Dependency Tracking build status for an organization
@@ -1498,7 +1476,6 @@ This endpoint does not require any parameters.
 
 
 # **getArchitectDependencytrackingConsumedresources**
-
 
 
 > [ConsumedResourcesEntityListing](ConsumedResourcesEntityListing) getArchitectDependencytrackingConsumedresources(id, version, objectType, resourceType, pageNumber, pageSize)
@@ -1568,7 +1545,6 @@ try {
 
 
 # **getArchitectDependencytrackingConsumingresources**
-
 
 
 > [ConsumingResourcesEntityListing](ConsumingResourcesEntityListing) getArchitectDependencytrackingConsumingresources(id, objectType, resourceType, version, pageNumber, pageSize, flowFilter)
@@ -1642,7 +1618,6 @@ try {
 # **getArchitectDependencytrackingDeletedresourceconsumers**
 
 
-
 > [DependencyObjectEntityListing](DependencyObjectEntityListing) getArchitectDependencytrackingDeletedresourceconsumers(name, objectType, flowFilter, consumedResources, consumedResourceType, pageNumber, pageSize)
 
 Get Dependency Tracking objects that consume deleted resources
@@ -1712,7 +1687,6 @@ try {
 
 
 # **getArchitectDependencytrackingObject**
-
 
 
 > [DependencyObject](DependencyObject) getArchitectDependencytrackingObject(id, version, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType, consumedResourceRequest)
@@ -1788,7 +1762,6 @@ try {
 # **getArchitectDependencytrackingType**
 
 
-
 > [DependencyType](DependencyType) getArchitectDependencytrackingType(typeId)
 
 Get a Dependency Tracking type.
@@ -1846,7 +1819,6 @@ try {
 
 
 # **getArchitectDependencytrackingTypes**
-
 
 
 > [DependencyTypeEntityListing](DependencyTypeEntityListing) getArchitectDependencytrackingTypes(pageNumber, pageSize)
@@ -1908,7 +1880,6 @@ try {
 
 
 # **getArchitectDependencytrackingUpdatedresourceconsumers**
-
 
 
 > [DependencyObjectEntityListing](DependencyObjectEntityListing) getArchitectDependencytrackingUpdatedresourceconsumers(name, objectType, consumedResources, consumedResourceType, pageNumber, pageSize)
@@ -1980,7 +1951,6 @@ try {
 # **getArchitectEmergencygroup**
 
 
-
 > [EmergencyGroup](EmergencyGroup) getArchitectEmergencygroup(emergencyGroupId)
 
 Gets a emergency group by ID
@@ -2038,7 +2008,6 @@ try {
 
 
 # **getArchitectEmergencygroups**
-
 
 
 > [EmergencyGroupListing](EmergencyGroupListing) getArchitectEmergencygroups(pageNumber, pageSize, sortBy, sortOrder, name)
@@ -2106,7 +2075,6 @@ try {
 
 
 # **getArchitectEmergencygroupsDivisionviews**
-
 
 
 > [EmergencyGroupDivisionViewEntityListing](EmergencyGroupDivisionViewEntityListing) getArchitectEmergencygroupsDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId)
@@ -2182,7 +2150,6 @@ try {
 # **getArchitectGrammar**
 
 
-
 > [Grammar](Grammar) getArchitectGrammar(grammarId, includeFileUrls)
 
 Get a grammar
@@ -2248,7 +2215,6 @@ try {
 # **getArchitectGrammarLanguage**
 
 
-
 > [GrammarLanguage](GrammarLanguage) getArchitectGrammarLanguage(grammarId, languageCode)
 
 Get a grammar language.
@@ -2310,7 +2276,6 @@ try {
 
 
 # **getArchitectGrammars**
-
 
 
 > [GrammarListing](GrammarListing) getArchitectGrammars(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, includeFileUrls)
@@ -2392,7 +2357,6 @@ try {
 # **getArchitectIvr**
 
 
-
 > [IVR](IVR) getArchitectIvr(ivrId)
 
 Get an IVR config.
@@ -2450,7 +2414,6 @@ try {
 
 
 # **getArchitectIvrs**
-
 
 
 > [IVREntityListing](IVREntityListing) getArchitectIvrs(pageNumber, pageSize, sortBy, sortOrder, name, dnis, scheduleGroup)
@@ -2524,7 +2487,6 @@ try {
 # **getArchitectIvrsDivisionviews**
 
 
-
 > [IVRDivisionViewEntityListing](IVRDivisionViewEntityListing) getArchitectIvrsDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId)
 
 Get a pageable list of basic ivr configuration information objects filterable by query parameters.
@@ -2596,7 +2558,6 @@ try {
 # **getArchitectPrompt**
 
 
-
 > [Prompt](Prompt) getArchitectPrompt(promptId, includeMediaUris, includeResources, language)
 
 Get specified user prompt
@@ -2660,7 +2621,6 @@ try {
 
 
 # **getArchitectPromptHistoryHistoryId**
-
 
 
 > [HistoryListing](HistoryListing) getArchitectPromptHistoryHistoryId(promptId, historyId, pageNumber, pageSize, sortOrder, sortBy, action)
@@ -2734,7 +2694,6 @@ try {
 # **getArchitectPromptResource**
 
 
-
 > [PromptAsset](PromptAsset) getArchitectPromptResource(promptId, languageCode)
 
 Get specified user prompt resource
@@ -2794,7 +2753,6 @@ try {
 
 
 # **getArchitectPromptResources**
-
 
 
 > [PromptAssetEntityListing](PromptAssetEntityListing) getArchitectPromptResources(promptId, pageNumber, pageSize)
@@ -2860,7 +2818,6 @@ try {
 
 
 # **getArchitectPrompts**
-
 
 
 > [PromptEntityListing](PromptEntityListing) getArchitectPrompts(pageNumber, pageSize, name, description, nameOrDescription, sortBy, sortOrder, includeMediaUris, includeResources, language)
@@ -2942,7 +2899,6 @@ try {
 # **getArchitectSchedule**
 
 
-
 > [Schedule](Schedule) getArchitectSchedule(scheduleId)
 
 Get a schedule by ID
@@ -3002,7 +2958,6 @@ try {
 # **getArchitectSchedulegroup**
 
 
-
 > [ScheduleGroup](ScheduleGroup) getArchitectSchedulegroup(scheduleGroupId)
 
 Gets a schedule group by ID
@@ -3060,7 +3015,6 @@ try {
 
 
 # **getArchitectSchedulegroups**
-
 
 
 > [ScheduleGroupEntityListing](ScheduleGroupEntityListing) getArchitectSchedulegroups(pageNumber, pageSize, sortBy, sortOrder, name, scheduleIds, divisionId)
@@ -3134,7 +3088,6 @@ try {
 # **getArchitectSchedulegroupsDivisionviews**
 
 
-
 > [ScheduleGroupDivisionViewEntityListing](ScheduleGroupDivisionViewEntityListing) getArchitectSchedulegroupsDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId)
 
 Get a pageable list of basic schedule group configuration information objects filterable by query parameters.
@@ -3206,7 +3159,6 @@ try {
 # **getArchitectSchedules**
 
 
-
 > [ScheduleEntityListing](ScheduleEntityListing) getArchitectSchedules(pageNumber, pageSize, sortBy, sortOrder, name, divisionId)
 
 Get a list of schedules.
@@ -3274,7 +3226,6 @@ try {
 
 
 # **getArchitectSchedulesDivisionviews**
-
 
 
 > [ScheduleDivisionViewEntityListing](ScheduleDivisionViewEntityListing) getArchitectSchedulesDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId)
@@ -3348,7 +3299,6 @@ try {
 # **getArchitectSystemprompt**
 
 
-
 > [SystemPrompt](SystemPrompt) getArchitectSystemprompt(promptId, includeMediaUris, includeResources, language)
 
 Get a system prompt
@@ -3412,7 +3362,6 @@ try {
 
 
 # **getArchitectSystempromptHistoryHistoryId**
-
 
 
 > [HistoryListing](HistoryListing) getArchitectSystempromptHistoryHistoryId(promptId, historyId, pageNumber, pageSize, sortOrder, sortBy, action)
@@ -3486,7 +3435,6 @@ try {
 # **getArchitectSystempromptResource**
 
 
-
 > [SystemPromptAsset](SystemPromptAsset) getArchitectSystempromptResource(promptId, languageCode)
 
 Get a system prompt resource.
@@ -3546,7 +3494,6 @@ try {
 
 
 # **getArchitectSystempromptResources**
-
 
 
 > [SystemPromptAssetEntityListing](SystemPromptAssetEntityListing) getArchitectSystempromptResources(promptId, pageNumber, pageSize, sortBy, sortOrder)
@@ -3614,7 +3561,6 @@ try {
 
 
 # **getArchitectSystemprompts**
-
 
 
 > [SystemPromptEntityListing](SystemPromptEntityListing) getArchitectSystemprompts(pageNumber, pageSize, sortBy, sortOrder, name, description, nameOrDescription, includeMediaUris, includeResources, language)
@@ -3694,7 +3640,6 @@ try {
 # **getFlow**
 
 
-
 > [Flow](Flow) getFlow(flowId, deleted)
 
 Get flow
@@ -3754,7 +3699,6 @@ try {
 
 
 # **getFlowHistoryHistoryId**
-
 
 
 > [HistoryListing](HistoryListing) getFlowHistoryHistoryId(flowId, historyId, pageNumber, pageSize, sortOrder, sortBy, action)
@@ -3828,7 +3772,6 @@ try {
 # **getFlowInstancesSettingsLoglevels**
 
 
-
 > [FlowSettingsResponse](FlowSettingsResponse) getFlowInstancesSettingsLoglevels(flowId, expand)
 
 Retrieves the log level for a flow by flow id.
@@ -3892,7 +3835,6 @@ try {
 # **getFlowLatestconfiguration**
 
 
-
 > Object getFlowLatestconfiguration(flowId, deleted)
 
 Get the latest configuration for flow
@@ -3952,7 +3894,6 @@ try {
 
 
 # **getFlowVersion**
-
 
 
 > [FlowVersion](FlowVersion) getFlowVersion(flowId, versionId, deleted)
@@ -4018,7 +3959,6 @@ try {
 # **getFlowVersionConfiguration**
 
 
-
 > Object getFlowVersionConfiguration(flowId, versionId, deleted)
 
 Create flow version configuration
@@ -4080,7 +4020,6 @@ try {
 
 
 # **getFlowVersionHealth**
-
 
 
 > [FlowHealth](FlowHealth) getFlowVersionHealth(flowId, versionId, language)
@@ -4146,7 +4085,6 @@ try {
 # **getFlowVersionIntentHealth**
 
 
-
 > [FlowHealthIntent](FlowHealthIntent) getFlowVersionIntentHealth(flowId, versionId, intentId, language)
 
 Get health scores and other health metrics for a specific intent. This includes the health metrics for each utterance in an intent.
@@ -4210,7 +4148,6 @@ try {
 
 
 # **getFlowVersionIntentUtteranceHealth**
-
 
 
 > [FlowHealthUtterance](FlowHealthUtterance) getFlowVersionIntentUtteranceHealth(flowId, versionId, intentId, utteranceId, language)
@@ -4280,7 +4217,6 @@ try {
 # **getFlowVersions**
 
 
-
 > [FlowVersionEntityListing](FlowVersionEntityListing) getFlowVersions(flowId, pageNumber, pageSize, deleted)
 
 Get flow version list
@@ -4344,7 +4280,6 @@ try {
 
 
 # **getFlows**
-
 
 
 > [FlowEntityListing](FlowEntityListing) getFlows(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, lockedByClientId, secure, deleted, includeSchemas, publishedAfter, publishedBefore, divisionId)
@@ -4444,7 +4379,6 @@ try {
 # **getFlowsDatatable**
 
 
-
 > [DataTable](DataTable) getFlowsDatatable(datatableId, expand)
 
 Returns a specific datatable by id
@@ -4506,7 +4440,6 @@ try {
 
 
 # **getFlowsDatatableExportJob**
-
 
 
 > [DataTableExportJob](DataTableExportJob) getFlowsDatatableExportJob(datatableId, exportJobId)
@@ -4573,7 +4506,6 @@ try {
 # **getFlowsDatatableImportJob**
 
 
-
 > [DataTableImportJob](DataTableImportJob) getFlowsDatatableImportJob(datatableId, importJobId)
 
 Returns the state information about an import job
@@ -4636,7 +4568,6 @@ try {
 
 
 # **getFlowsDatatableImportJobs**
-
 
 
 > [DataTableImportEntityListing](DataTableImportEntityListing) getFlowsDatatableImportJobs(datatableId, pageNumber, pageSize)
@@ -4705,7 +4636,6 @@ try {
 # **getFlowsDatatableRow**
 
 
-
 > Map&lt;String, Object&gt; getFlowsDatatableRow(datatableId, rowId, showbrief)
 
 Returns a specific row for the datatable
@@ -4770,7 +4700,6 @@ try {
 
 
 # **getFlowsDatatableRows**
-
 
 
 > [DataTableRowEntityListing](DataTableRowEntityListing) getFlowsDatatableRows(datatableId, pageNumber, pageSize, showbrief, sortOrder)
@@ -4841,7 +4770,6 @@ try {
 
 
 # **getFlowsDatatables**
-
 
 
 > [DataTablesDomainEntityListing](DataTablesDomainEntityListing) getFlowsDatatables(expand, pageNumber, pageSize, sortBy, sortOrder, divisionId, name)
@@ -4917,7 +4845,6 @@ try {
 # **getFlowsDatatablesDivisionview**
 
 
-
 > [DataTable](DataTable) getFlowsDatatablesDivisionview(datatableId, expand)
 
 Returns a specific datatable by id
@@ -4979,7 +4906,6 @@ try {
 
 
 # **getFlowsDatatablesDivisionviews**
-
 
 
 > [DataTablesDomainEntityListing](DataTablesDomainEntityListing) getFlowsDatatablesDivisionviews(expand, pageNumber, pageSize, sortBy, sortOrder, divisionId, name)
@@ -5053,7 +4979,6 @@ try {
 
 
 # **getFlowsDivisionviews**
-
 
 
 > [FlowDivisionViewEntityListing](FlowDivisionViewEntityListing) getFlowsDivisionviews(type, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore, divisionId, includeSchemas)
@@ -5139,7 +5064,6 @@ try {
 # **getFlowsExecution**
 
 
-
 > [FlowRuntimeExecution](FlowRuntimeExecution) getFlowsExecution(flowExecutionId)
 
 Get a flow execution's details. Flow execution details are available for several days after the flow is started.
@@ -5197,7 +5121,6 @@ try {
 
 
 # **getFlowsInstance**
-
 
 
 > [GetFlowExecutionDataJobResult](GetFlowExecutionDataJobResult) getFlowsInstance(instanceId, expand)
@@ -5263,7 +5186,6 @@ try {
 # **getFlowsInstancesJob**
 
 
-
 > [GetFlowExecutionDataJobResult](GetFlowExecutionDataJobResult) getFlowsInstancesJob(jobId)
 
 Get the status and/or results of an asynchronous flow execution data retrieval job
@@ -5321,7 +5243,6 @@ try {
 
 
 # **getFlowsInstancesQuerycapabilities**
-
 
 
 > [FlowsQueryCriteriaResponse](FlowsQueryCriteriaResponse) getFlowsInstancesQuerycapabilities(expand)
@@ -5385,7 +5306,6 @@ try {
 # **getFlowsInstancesSettingsExecutiondata**
 
 
-
 > [ExecutionDataFlowSettingsResponse](ExecutionDataFlowSettingsResponse) getFlowsInstancesSettingsExecutiondata()
 
 Get the execution history enabled setting.
@@ -5441,7 +5361,6 @@ This endpoint does not require any parameters.
 
 
 # **getFlowsInstancesSettingsLoglevels**
-
 
 
 > [FlowSettingsResponseEntityListing](FlowSettingsResponseEntityListing) getFlowsInstancesSettingsLoglevels(expand, pageNumber, pageSize)
@@ -5510,7 +5429,6 @@ try {
 # **getFlowsInstancesSettingsLoglevelsCharacteristics**
 
 
-
 > [FlowLogLevelCharacteristicsDefinitions](FlowLogLevelCharacteristicsDefinitions) getFlowsInstancesSettingsLoglevelsCharacteristics()
 
 Gets the available flow log level characteristics for this organization.
@@ -5567,7 +5485,6 @@ This endpoint does not require any parameters.
 
 
 # **getFlowsInstancesSettingsLoglevelsDefault**
-
 
 
 > [FlowSettingsResponse](FlowSettingsResponse) getFlowsInstancesSettingsLoglevelsDefault(expand)
@@ -5631,7 +5548,6 @@ try {
 # **getFlowsJob**
 
 
-
 > [ArchitectJobStateResponse](ArchitectJobStateResponse) getFlowsJob(jobId, expand)
 
 Fetch Architect Job Status
@@ -5693,7 +5609,6 @@ try {
 # **getFlowsMilestone**
 
 
-
 > [FlowMilestone](FlowMilestone) getFlowsMilestone(milestoneId)
 
 Get a flow milestone
@@ -5753,7 +5668,6 @@ try {
 
 
 # **getFlowsMilestones**
-
 
 
 > [FlowMilestoneListing](FlowMilestoneListing) getFlowsMilestones(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, divisionId)
@@ -5833,7 +5747,6 @@ try {
 # **getFlowsMilestonesDivisionviews**
 
 
-
 > [FlowMilestoneDivisionViewEntityListing](FlowMilestoneDivisionViewEntityListing) getFlowsMilestonesDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId)
 
 Get a pageable list of basic flow milestone information objects filterable by query parameters.
@@ -5907,7 +5820,6 @@ try {
 # **getFlowsOutcome**
 
 
-
 > [FlowOutcome](FlowOutcome) getFlowsOutcome(flowOutcomeId)
 
 Get a flow outcome
@@ -5967,7 +5879,6 @@ try {
 
 
 # **getFlowsOutcomes**
-
 
 
 > [FlowOutcomeListing](FlowOutcomeListing) getFlowsOutcomes(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, divisionId)
@@ -6047,7 +5958,6 @@ try {
 # **getFlowsOutcomesDivisionviews**
 
 
-
 > [FlowOutcomeDivisionViewEntityListing](FlowOutcomeDivisionViewEntityListing) getFlowsOutcomesDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId)
 
 Get a pageable list of basic flow outcome information objects filterable by query parameters.
@@ -6121,7 +6031,6 @@ try {
 # **patchArchitectGrammar**
 
 
-
 > [Grammar](Grammar) patchArchitectGrammar(grammarId, body)
 
 Updates a grammar
@@ -6183,7 +6092,6 @@ try {
 
 
 # **patchArchitectGrammarLanguage**
-
 
 
 > [GrammarLanguage](GrammarLanguage) patchArchitectGrammarLanguage(grammarId, languageCode, body)
@@ -6251,7 +6159,6 @@ try {
 # **patchFlowsInstancesSettingsExecutiondata**
 
 
-
 > [ExecutionDataFlowSettingsResponse](ExecutionDataFlowSettingsResponse) patchFlowsInstancesSettingsExecutiondata(body)
 
 Edit the execution history enabled setting.
@@ -6313,7 +6220,6 @@ try {
 # **postArchitectDependencytrackingBuild**
 
 
-
 > Void postArchitectDependencytrackingBuild()
 
 Rebuild Dependency Tracking data for an organization
@@ -6368,7 +6274,6 @@ null (empty response body)
 
 
 # **postArchitectEmergencygroups**
-
 
 
 > [EmergencyGroup](EmergencyGroup) postArchitectEmergencygroups(body)
@@ -6428,7 +6333,6 @@ try {
 
 
 # **postArchitectGrammarLanguageFilesDtmf**
-
 
 
 > [UploadUrlResponse](UploadUrlResponse) postArchitectGrammarLanguageFilesDtmf(grammarId, languageCode, body)
@@ -6496,7 +6400,6 @@ try {
 # **postArchitectGrammarLanguageFilesVoice**
 
 
-
 > [UploadUrlResponse](UploadUrlResponse) postArchitectGrammarLanguageFilesVoice(grammarId, languageCode, body)
 
 Creates a presigned URL for uploading a grammar voice mode file
@@ -6562,7 +6465,6 @@ try {
 # **postArchitectGrammarLanguages**
 
 
-
 > [GrammarLanguage](GrammarLanguage) postArchitectGrammarLanguages(grammarId, body)
 
 Create a new language for a given grammar
@@ -6626,7 +6528,6 @@ try {
 # **postArchitectGrammars**
 
 
-
 > [Grammar](Grammar) postArchitectGrammars(body)
 
 Create a new grammar
@@ -6688,7 +6589,6 @@ try {
 # **postArchitectIvrs**
 
 
-
 > [IVR](IVR) postArchitectIvrs(body)
 
 Create IVR config.
@@ -6746,7 +6646,6 @@ try {
 
 
 # **postArchitectPromptHistory**
-
 
 
 > [Operation](Operation) postArchitectPromptHistory(promptId)
@@ -6810,7 +6709,6 @@ try {
 # **postArchitectPromptResources**
 
 
-
 > [PromptAsset](PromptAsset) postArchitectPromptResources(promptId, body)
 
 Create a new user prompt resource
@@ -6872,7 +6770,6 @@ try {
 # **postArchitectPrompts**
 
 
-
 > [Prompt](Prompt) postArchitectPrompts(body)
 
 Create a new user prompt
@@ -6930,7 +6827,6 @@ try {
 
 
 # **postArchitectSchedulegroups**
-
 
 
 > [ScheduleGroup](ScheduleGroup) postArchitectSchedulegroups(body)
@@ -6992,7 +6888,6 @@ try {
 # **postArchitectSchedules**
 
 
-
 > [Schedule](Schedule) postArchitectSchedules(body)
 
 Create a new schedule.
@@ -7050,7 +6945,6 @@ try {
 
 
 # **postArchitectSystempromptHistory**
-
 
 
 > [Operation](Operation) postArchitectSystempromptHistory(promptId)
@@ -7114,7 +7008,6 @@ try {
 # **postArchitectSystempromptResources**
 
 
-
 > [SystemPromptAsset](SystemPromptAsset) postArchitectSystempromptResources(promptId, body)
 
 Create system prompt resource override.
@@ -7176,7 +7069,6 @@ try {
 # **postFlowHistory**
 
 
-
 > [Operation](Operation) postFlowHistory(flowId)
 
 Generate flow history
@@ -7236,7 +7128,6 @@ try {
 
 
 # **postFlowInstancesSettingsLoglevels**
-
 
 
 > [FlowSettingsResponse](FlowSettingsResponse) postFlowInstancesSettingsLoglevels(flowId, body, expand)
@@ -7304,7 +7195,6 @@ try {
 # **postFlowVersions**
 
 
-
 > [FlowVersion](FlowVersion) postFlowVersions(flowId, body)
 
 Create flow version
@@ -7366,7 +7256,6 @@ try {
 # **postFlows**
 
 
-
 > [Flow](Flow) postFlows(body, language)
 
 Create flow
@@ -7426,7 +7315,6 @@ try {
 
 
 # **postFlowsActionsCheckin**
-
 
 
 > [Operation](Operation) postFlowsActionsCheckin(flow)
@@ -7491,7 +7379,6 @@ try {
 # **postFlowsActionsCheckout**
 
 
-
 > [Flow](Flow) postFlowsActionsCheckout(flow)
 
 Check-out flow
@@ -7551,7 +7438,6 @@ try {
 # **postFlowsActionsDeactivate**
 
 
-
 > [Flow](Flow) postFlowsActionsDeactivate(flow)
 
 Deactivate flow
@@ -7609,7 +7495,6 @@ try {
 
 
 # **postFlowsActionsPublish**
-
 
 
 > [Operation](Operation) postFlowsActionsPublish(flow, version)
@@ -7676,7 +7561,6 @@ try {
 # **postFlowsActionsRevert**
 
 
-
 > [Flow](Flow) postFlowsActionsRevert(flow)
 
 Revert flow
@@ -7734,7 +7618,6 @@ try {
 
 
 # **postFlowsActionsUnlock**
-
 
 
 > [Flow](Flow) postFlowsActionsUnlock(flow)
@@ -7798,7 +7681,6 @@ try {
 # **postFlowsDatatableExportJobs**
 
 
-
 > [DataTableExportJob](DataTableExportJob) postFlowsDatatableExportJobs(datatableId)
 
 Begin an export process for exporting all rows from a datatable
@@ -7859,7 +7741,6 @@ try {
 
 
 # **postFlowsDatatableImportJobs**
-
 
 
 > [DataTableImportJob](DataTableImportJob) postFlowsDatatableImportJobs(datatableId, body)
@@ -7926,7 +7807,6 @@ try {
 # **postFlowsDatatableRows**
 
 
-
 > Map&lt;String, Object&gt; postFlowsDatatableRows(datatableId, dataTableRow)
 
 Create a new row entry for the datatable.
@@ -7991,7 +7871,6 @@ try {
 # **postFlowsDatatables**
 
 
-
 > [DataTable](DataTable) postFlowsDatatables(body)
 
 Create a new datatable with the specified json-schema definition
@@ -8051,7 +7930,6 @@ try {
 
 
 # **postFlowsExecutions**
-
 
 
 > [FlowExecutionLaunchResponse](FlowExecutionLaunchResponse) postFlowsExecutions(flowLaunchRequest)
@@ -8115,7 +7993,6 @@ try {
 # **postFlowsInstancesJobs**
 
 
-
 > [GetFlowExecutionDataJobResult](GetFlowExecutionDataJobResult) postFlowsInstancesJobs(body, expand)
 
 Start a process (job) that will prepare a list of execution data IDs for download.
@@ -8177,7 +8054,6 @@ try {
 
 
 # **postFlowsInstancesQuery**
-
 
 
 > [FlowResultEntityListing](FlowResultEntityListing) postFlowsInstancesQuery(body, indexOnly, pageSize)
@@ -8245,7 +8121,6 @@ try {
 # **postFlowsJobs**
 
 
-
 > [RegisterArchitectJobResponse](RegisterArchitectJobResponse) postFlowsJobs()
 
 Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
@@ -8299,7 +8174,6 @@ This endpoint does not require any parameters.
 
 
 # **postFlowsMilestones**
-
 
 
 > [FlowMilestone](FlowMilestone) postFlowsMilestones(body)
@@ -8359,7 +8233,6 @@ try {
 
 
 # **postFlowsOutcomes**
-
 
 
 > [FlowOutcome](FlowOutcome) postFlowsOutcomes(body)
@@ -8423,7 +8296,6 @@ try {
 # **putArchitectEmergencygroup**
 
 
-
 > [EmergencyGroup](EmergencyGroup) putArchitectEmergencygroup(emergencyGroupId, body)
 
 Updates a emergency group by ID
@@ -8483,7 +8355,6 @@ try {
 
 
 # **putArchitectIvr**
-
 
 
 > [IVR](IVR) putArchitectIvr(ivrId, body)
@@ -8547,7 +8418,6 @@ try {
 # **putArchitectPrompt**
 
 
-
 > [Prompt](Prompt) putArchitectPrompt(promptId, body)
 
 Update specified user prompt
@@ -8607,7 +8477,6 @@ try {
 
 
 # **putArchitectPromptResource**
-
 
 
 > [PromptAsset](PromptAsset) putArchitectPromptResource(promptId, languageCode, body)
@@ -8673,7 +8542,6 @@ try {
 # **putArchitectSchedule**
 
 
-
 > [Schedule](Schedule) putArchitectSchedule(scheduleId, body)
 
 Update schedule by ID
@@ -8735,7 +8603,6 @@ try {
 # **putArchitectSchedulegroup**
 
 
-
 > [ScheduleGroup](ScheduleGroup) putArchitectSchedulegroup(scheduleGroupId, body)
 
 Updates a schedule group by ID
@@ -8795,7 +8662,6 @@ try {
 
 
 # **putArchitectSystempromptResource**
-
 
 
 > [SystemPromptAsset](SystemPromptAsset) putArchitectSystempromptResource(promptId, languageCode, body)
@@ -8861,7 +8727,6 @@ try {
 # **putFlow**
 
 
-
 > [Flow](Flow) putFlow(flowId, body)
 
 Update flow
@@ -8921,7 +8786,6 @@ try {
 
 
 # **putFlowInstancesSettingsLoglevels**
-
 
 
 > [FlowSettingsResponse](FlowSettingsResponse) putFlowInstancesSettingsLoglevels(flowId, body, expand)
@@ -8989,7 +8853,6 @@ try {
 # **putFlowsDatatable**
 
 
-
 > [DataTable](DataTable) putFlowsDatatable(datatableId, body, expand)
 
 Updates a specific datatable by id
@@ -9053,7 +8916,6 @@ try {
 
 
 # **putFlowsDatatableRow**
-
 
 
 > Map&lt;String, Object&gt; putFlowsDatatableRow(datatableId, rowId, body)
@@ -9122,7 +8984,6 @@ try {
 # **putFlowsInstancesSettingsLoglevelsDefault**
 
 
-
 > [FlowSettingsResponse](FlowSettingsResponse) putFlowsInstancesSettingsLoglevelsDefault(body, expand)
 
 Edit the flow default log level.
@@ -9186,7 +9047,6 @@ try {
 # **putFlowsMilestone**
 
 
-
 > [FlowMilestone](FlowMilestone) putFlowsMilestone(milestoneId, body)
 
 Updates a flow milestone
@@ -9246,7 +9106,6 @@ try {
 
 
 # **putFlowsOutcome**
-
 
 
 > [Operation](Operation) putFlowsOutcome(flowOutcomeId, body)
@@ -9309,4 +9168,4 @@ try {
 [**Operation**](Operation)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

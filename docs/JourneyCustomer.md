@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** | An ID of a customer within the Journey System at a point-in-time.  Note that a customer entity can have multiple customerIds based on the stitching process.  Depending on the context within the PureCloud conversation, this may or may not be mutable. |  |
 | **idType** | **String** | The type of the customerId within the Journey System (e.g. cookie). |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

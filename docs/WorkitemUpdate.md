@@ -28,7 +28,6 @@
 | **languageId** | **String** | The ID of language of the Workitem. Must be a valid UUID. |  [optional] |
 | **utilizationLabelId** | **String** | The ID of the utilization label of the Workitem. Must be a valid UUID. |  [optional] |
 | **preferredAgentIds** | **List&lt;String&gt;** | The preferred agent IDs of the Workitem. Must be valid UUIDs. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: AssignmentStateEnum
@@ -49,7 +48,6 @@
 | PARKED | &quot;Parked&quot; | 
 | HELD | &quot;Held&quot; | 
 | ACDEXPIRED | &quot;AcdExpired&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: AssignmentOperationEnum
@@ -59,9 +57,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | AGENTASSIGNMENTALERTING | &quot;AgentAssignmentAlerting&quot; | 
 | QUEUEASSIGNMENTALERTING | &quot;QueueAssignmentAlerting&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

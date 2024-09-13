@@ -17,9 +17,8 @@
 | **isScreenMonitored** | **Boolean** | Indicates filtering for screenMonitored |  [optional] |
 | **filterWrapUpNotes** | **Boolean** | Indicates filtering for WrapUpNotes |  [optional] |
 | **matchAll** | **Boolean** | Indicates comparison operation, TRUE indicates filters will use AND logic, FALSE indicates OR logic |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

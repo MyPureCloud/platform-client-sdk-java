@@ -18,7 +18,6 @@
 | **modifiedBy** | [**DomainEntityRef**](DomainEntityRef) | User reference that last modified this Integration |  [optional] |
 | **version** | **Integer** | Version number required for updates. |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -33,7 +32,6 @@
 | INCOMPLETE | &quot;Incomplete&quot; | 
 | DELETING | &quot;Deleting&quot; | 
 | DELETIONFAILED | &quot;DeletionFailed&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: MessengerTypeEnum
@@ -48,9 +46,8 @@
 | WEBMESSAGING | &quot;webmessaging&quot; | 
 | INSTAGRAM | &quot;instagram&quot; | 
 | OPEN | &quot;open&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

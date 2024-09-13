@@ -12,7 +12,6 @@
 | **assessmentCompletionPercentage** | **Float** | The assessment completion percentage of assignment |  [optional] |
 | **completionPercentage** | **Float** | The overall completion percentage of assignment |  [optional] |
 | **steps** | [**List&lt;LearningModulePreviewGetResponseStep&gt;**](LearningModulePreviewGetResponseStep) | List of assignment steps |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -26,9 +25,8 @@
 | DELETED | &quot;Deleted&quot; | 
 | NOTCOMPLETED | &quot;NotCompleted&quot; | 
 | INVALIDSCHEDULE | &quot;InvalidSchedule&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

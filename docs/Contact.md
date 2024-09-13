@@ -12,7 +12,6 @@
 | **extension** | **String** | Use internal extension instead of address. Mutually exclusive with the address field. |  [optional] |
 | **countryCode** | **String** |  |  [optional] |
 | **integration** | **String** | Integration tag value if this number is associated with an external integration. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -23,7 +22,6 @@
 | PHONE | &quot;PHONE&quot; | 
 | EMAIL | &quot;EMAIL&quot; | 
 | SMS | &quot;SMS&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -40,9 +38,8 @@
 | MOBILE | &quot;MOBILE&quot; | 
 | MAIN | &quot;MAIN&quot; | 
 | OTHER | &quot;OTHER&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

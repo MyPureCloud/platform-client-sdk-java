@@ -12,7 +12,6 @@
 | **lastName** | **String** | Last name of the recipient. |  [optional] |
 | **image** | **String** | URL of an image that represents the recipient. |  [optional] |
 | **email** | **String** | E-mail address of the recipient. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: IdTypeEnum
@@ -23,9 +22,8 @@
 | EMAIL | &quot;Email&quot; | 
 | PHONE | &quot;Phone&quot; | 
 | OPAQUE | &quot;Opaque&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

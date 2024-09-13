@@ -10,9 +10,8 @@
 | **description** | **String** | An optional description of the bot. |  [optional] |
 | **botCompositeTag** | **String** | A system-generated string that contains metadata about this bot. |  [optional] |
 | **version** | **String** | The name of the version. |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

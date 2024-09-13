@@ -8,9 +8,8 @@
 | **startTime** | **String** | The start time of the interval as an ISO-8601 string, i.e. HH:mm:ss |  |
 | **stopTime** | **String** | The end time of the interval as an ISO-8601 string, i.e. HH:mm:ss |  |
 | **day** | **Integer** | The day of the interval. Valid values: [1-7], representing Monday through Sunday |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

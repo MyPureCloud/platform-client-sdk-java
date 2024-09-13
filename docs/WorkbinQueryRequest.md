@@ -11,7 +11,6 @@
 | **attributes** | **List&lt;String&gt;** | List of entity attributes to be retrieved in the result. |  [optional] |
 | **after** | **String** | The cursor that points to the end of the set of entities that has been returned. |  [optional] |
 | **sort** | [**WorkbinQuerySort**](WorkbinQuerySort) | Sort |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: SelectEnum
@@ -20,9 +19,8 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | COUNT | &quot;Count&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

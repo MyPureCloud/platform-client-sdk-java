@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **reactionType** | [**ReactionTypeEnum**](#Enum--ReactionTypeEnum) | Type of reaction. |  |
 | **count** | **Integer** | Number of users that reacted this way to the message. |  |
-{: class="table table-striped"}
 
 
 ## Enum: ReactionTypeEnum
@@ -27,9 +26,8 @@
 | SHARE | &quot;Share&quot; | 
 | COMMENT | &quot;Comment&quot; | 
 | VIEW | &quot;View&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -11,9 +11,8 @@
 | **activityCodeId** | **String** | The ID of the activity code associated with the time off marker |  [optional] |
 | **paid** | **Boolean** | Whether the time off marker is paid |  [optional] |
 | **timeOffRequestId** | **String** | The ID of the time off request |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

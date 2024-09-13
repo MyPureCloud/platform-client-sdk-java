@@ -17,7 +17,6 @@
 | **errorCode** | **String** | Predictor error code - optional details on why the predictor went into error state. |  [optional] |
 | **models** | [**List&lt;PredictorModelBrief&gt;**](PredictorModelBrief) | Predictor's models |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -28,9 +27,8 @@
 | CREATED | &quot;Created&quot; | 
 | ERROR | &quot;Error&quot; | 
 | ACTIVE | &quot;Active&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

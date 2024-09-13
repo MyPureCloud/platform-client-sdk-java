@@ -19,7 +19,6 @@
 | **rejectReason** | [**RejectReasonEnum**](#Enum--RejectReasonEnum) | The reason for rejecting the limit override request |  [optional] |
 | **approvalNamespaces** | [**List&lt;ApprovalNamespace&gt;**](ApprovalNamespace) | The approval breakdown for this override request. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: NamespaceEnum
@@ -96,7 +95,6 @@
 | WORKFORCE_MANAGEMENT_FORECAST | &quot;workforce.management.forecast&quot; | 
 | WORKFORCE_MANAGEMENT | &quot;workforce.management&quot; | 
 | SYSTEM | &quot;system&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -117,7 +115,6 @@
 | CHANGEIMPLEMENTED | &quot;ChangeImplemented&quot; | 
 | IMPLEMENTINGROLLBACK | &quot;ImplementingRollback&quot; | 
 | ROLLBACKIMPLEMENTED | &quot;RollbackImplemented&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: RejectReasonEnum
@@ -130,9 +127,8 @@
 | PLATFORMMISUSE | &quot;PlatformMisuse&quot; | 
 | PLATFORMSTABILITY | &quot;PlatformStability&quot; | 
 | OTHERREASON | &quot;OtherReason&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

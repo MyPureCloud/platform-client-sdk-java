@@ -9,9 +9,8 @@
 | **languageInfo** | [**Map&lt;String, LocaleInfo&gt;**](LocaleInfo) | Each language's status about its health computation. |  [optional] |
 | **intents** | [**List&lt;FlowHealthIntentInfo&gt;**](FlowHealthIntentInfo) | Health metrics information for the intents. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

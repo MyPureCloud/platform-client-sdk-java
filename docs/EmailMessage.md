@@ -23,7 +23,6 @@
 | **emailSizeBytes** | **Integer** | Indicates an estimation of the size of the current email as a whole, in its final, ready to be sent form. |  [optional] |
 | **maxEmailSizeBytes** | **Integer** | Indicates the maximum allowed size for an email to be send via SMTP server, based on the email domain configuration |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -34,7 +33,6 @@
 | CREATED | &quot;Created&quot; | 
 | READY | &quot;Ready&quot; | 
 | EDITED | &quot;Edited&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DraftTypeEnum
@@ -45,9 +43,8 @@
 | REPLY | &quot;Reply&quot; | 
 | REPLYALL | &quot;ReplyAll&quot; | 
 | FORWARD | &quot;Forward&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

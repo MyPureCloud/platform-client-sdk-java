@@ -12,7 +12,6 @@
 | **daysBeforeStartToExpireFromWaitlist** | **Integer** | The number of days before the time off request start date for when the request will be expired from the waitlist. |  [optional] |
 | **hrisTimeOffType** | [**HrisTimeOffType**](HrisTimeOffType) | Time off type, if this time off plan is associated with the integration. |  [optional] |
 | **active** | **Boolean** | Whether this time off plan should be used by agents. |  |
-{: class="table table-striped"}
 
 
 ## Enum: AutoApprovalRuleEnum
@@ -25,9 +24,8 @@
 | CHECKLIMITS | &quot;CheckLimits&quot; | 
 | CHECKACTIVITYCODES | &quot;CheckActivityCodes&quot; | 
 | CHECKLIMITSANDACTIVITYCODES | &quot;CheckLimitsAndActivityCodes&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

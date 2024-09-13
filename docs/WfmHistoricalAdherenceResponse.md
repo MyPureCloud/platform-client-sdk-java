@@ -10,7 +10,6 @@
 | **downloadResult** | [**WfmHistoricalAdherenceResultWrapper**](WfmHistoricalAdherenceResultWrapper) | Result will always come via downloadUrls; however the schema is included for documentation |  [optional] |
 | **downloadUrls** | **List&lt;String&gt;** | The uri list to GET the results of the Historical Adherence query. For notification purposes only |  [optional] |
 | **queryState** | [**QueryStateEnum**](#Enum--QueryStateEnum) | The state of the adherence query |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: QueryStateEnum
@@ -21,9 +20,8 @@
 | PROCESSING | &quot;Processing&quot; | 
 | COMPLETE | &quot;Complete&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

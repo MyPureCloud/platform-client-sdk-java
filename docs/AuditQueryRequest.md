@@ -9,9 +9,8 @@
 | **serviceName** | **String** | Name of the service to query audits for. |  |
 | **filters** | [**List&lt;AuditQueryFilter&gt;**](AuditQueryFilter) | Additional filters for the query. |  [optional] |
 | **sort** | [**List&lt;AuditQuerySort&gt;**](AuditQuerySort) | Sort parameter for the query. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

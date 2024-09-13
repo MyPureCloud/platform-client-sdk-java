@@ -10,7 +10,6 @@
 | **value** | **String** | The string value of the identifier. Will vary in syntax by type. |  |
 | **dateCreated** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -26,9 +25,8 @@
 | PHONE | &quot;Phone&quot; | 
 | COOKIE | &quot;Cookie&quot; | 
 | EXTERNALID | &quot;ExternalId&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

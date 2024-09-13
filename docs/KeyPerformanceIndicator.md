@@ -20,7 +20,6 @@
 | **kpiGroup** | [**KpiGroupEnum**](#Enum--KpiGroupEnum) | The group the Key Performance Indicator belongs to. |  [optional] |
 | **queues** | **List&lt;String&gt;** | Queue IDs on which KPI specification is used. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: OptimizationTypeEnum
@@ -30,7 +29,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | MAXIMIZATION | &quot;Maximization&quot; | 
 | MINIMIZATION | &quot;Minimization&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ProblemTypeEnum
@@ -40,7 +38,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | CLASSIFICATION | &quot;Classification&quot; | 
 | REGRESSION | &quot;Regression&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: KpiTypeEnum
@@ -53,7 +50,6 @@
 | RETENTION | &quot;Retention&quot; | 
 | SALESVALUE | &quot;SalesValue&quot; | 
 | HANDLETIME | &quot;HandleTime&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: SourceEnum
@@ -64,7 +60,6 @@
 | WRAPUPCODE | &quot;WrapUpCode&quot; | 
 | OUTCOME | &quot;Outcome&quot; | 
 | NONE | &quot;None&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -74,7 +69,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ENABLED | &quot;Enabled&quot; | 
 | DISABLED | &quot;Disabled&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: KpiGroupEnum
@@ -84,9 +78,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | STANDARD | &quot;Standard&quot; | 
 | CUSTOM | &quot;Custom&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

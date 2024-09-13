@@ -10,9 +10,8 @@
 | **weeklyPossibleWorkShifts** | [**List&lt;PossibleWorkShiftsForWeek&gt;**](PossibleWorkShiftsForWeek) | Each element is a weekly effective work plan that can be used for multiple weeks |  [optional] |
 | **schedulerIntervalLengthMinutes** | **Integer** | Number of minutes in each interval in the intervalScheduleProbabilities |  [optional] |
 | **timeZone** | **String** | The time zone of the business unit |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

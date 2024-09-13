@@ -8,9 +8,8 @@
 | **workPlan** | [**WorkPlanReference**](WorkPlanReference) | The work plan reference associated with this response |  [optional] |
 | **valid** | **Boolean** | Whether the work plan is valid or not |  [optional] |
 | **messages** | [**ValidateWorkPlanMessages**](ValidateWorkPlanMessages) | Validation messages for this work plan |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

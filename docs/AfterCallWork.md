@@ -8,7 +8,6 @@
 | **startTime** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **endTime** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **state** | [**StateEnum**](#Enum--StateEnum) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -21,9 +20,8 @@
 | SKIPPED | &quot;skipped&quot; | 
 | PENDING | &quot;pending&quot; | 
 | COMPLETE | &quot;complete&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

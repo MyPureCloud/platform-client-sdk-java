@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** | The ID of the shift from a user's schedule |  |
 | **startDate** | [**Date**](Date) | The start date for the shift in the user's schedule in ISO-8601 format. For example: YYYY-MM-DDThh:mm:ss.SSSZ |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

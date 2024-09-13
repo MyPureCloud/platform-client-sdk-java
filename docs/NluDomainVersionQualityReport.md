@@ -8,9 +8,8 @@
 | **version** | [**NluDomainVersion**](NluDomainVersion) | The domain and version details of the quality report |  |
 | **confusionMatrix** | [**List&lt;NluConfusionMatrixRow&gt;**](NluConfusionMatrixRow) | The confusion matrix for the Domain Version |  |
 | **summary** | [**NluQualityReportSummary**](NluQualityReportSummary) | The quality report summary for the Domain Version |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -8,9 +8,8 @@
 | **user** | [**UserReference**](UserReference) | The user (agent) for whom the management unit was requested |  [optional] |
 | **managementUnit** | [**ManagementUnitReference**](ManagementUnitReference) | The management to which the user (agent) belongs |  [optional] |
 | **businessUnit** | [**BusinessUnitReference**](BusinessUnitReference) | The business unit to which the user (agent) belongs. Populate with expand=businessUnit |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

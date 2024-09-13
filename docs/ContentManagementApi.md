@@ -46,7 +46,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteContentmanagementDocument**
 
 
-
 > Void deleteContentmanagementDocument(documentId, override)
 
 Delete a document.
@@ -104,7 +103,6 @@ null (empty response body)
 
 
 # **deleteContentmanagementShare**
-
 
 
 > Void deleteContentmanagementShare(shareId)
@@ -166,7 +164,6 @@ null (empty response body)
 # **deleteContentmanagementStatusStatusId**
 
 
-
 > Void deleteContentmanagementStatusStatusId(statusId)
 
 Cancel the command for this status
@@ -222,7 +219,6 @@ null (empty response body)
 
 
 # **deleteContentmanagementWorkspace**
-
 
 
 > Void deleteContentmanagementWorkspace(workspaceId, moveChildrenToWorkspaceId)
@@ -284,7 +280,6 @@ null (empty response body)
 # **deleteContentmanagementWorkspaceMember**
 
 
-
 > Void deleteContentmanagementWorkspaceMember(workspaceId, memberId)
 
 Delete a member from a workspace
@@ -342,7 +337,6 @@ null (empty response body)
 
 
 # **deleteContentmanagementWorkspaceTagvalue**
-
 
 
 > Void deleteContentmanagementWorkspaceTagvalue(workspaceId, tagId)
@@ -406,7 +400,6 @@ null (empty response body)
 # **getContentmanagementDocument**
 
 
-
 > [Document](Document) getContentmanagementDocument(documentId, expand)
 
 Get a document.
@@ -465,7 +458,6 @@ try {
 
 
 # **getContentmanagementDocumentContent**
-
 
 
 > [DownloadResponse](DownloadResponse) getContentmanagementDocumentContent(documentId, disposition, contentType)
@@ -529,7 +521,9 @@ try {
 
 # **getContentmanagementDocuments**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [DocumentEntityListing](DocumentEntityListing) getContentmanagementDocuments(workspaceId, name, expand, pageSize, pageNumber, sortBy, sortOrder)
 
@@ -601,7 +595,6 @@ try {
 # **getContentmanagementQuery**
 
 
-
 > [QueryResults](QueryResults) getContentmanagementQuery(queryPhrase, pageSize, pageNumber, sortBy, sortOrder, expand)
 
 Query content
@@ -670,7 +663,6 @@ try {
 # **getContentmanagementSecurityprofile**
 
 
-
 > [SecurityProfile](SecurityProfile) getContentmanagementSecurityprofile(securityProfileId)
 
 Get a Security Profile
@@ -729,7 +721,6 @@ try {
 # **getContentmanagementSecurityprofiles**
 
 
-
 > [SecurityProfileEntityListing](SecurityProfileEntityListing) getContentmanagementSecurityprofiles()
 
 Get a List of Security Profiles
@@ -782,7 +773,6 @@ This endpoint does not require any parameters.
 
 
 # **getContentmanagementShare**
-
 
 
 > [Share](Share) getContentmanagementShare(shareId, expand)
@@ -843,7 +833,6 @@ try {
 
 
 # **getContentmanagementSharedSharedId**
-
 
 
 > [SharedResponse](SharedResponse) getContentmanagementSharedSharedId(sharedId, redirect, disposition, contentType, expand)
@@ -914,7 +903,6 @@ try {
 # **getContentmanagementShares**
 
 
-
 > [ShareEntityListing](ShareEntityListing) getContentmanagementShares(entityId, expand, pageSize, pageNumber)
 
 Gets a list of shares.  You must specify at least one filter (e.g. entityId).
@@ -981,7 +969,6 @@ try {
 # **getContentmanagementStatus**
 
 
-
 > [CommandStatusEntityListing](CommandStatusEntityListing) getContentmanagementStatus(pageSize, pageNumber)
 
 Get a list of statuses for pending operations
@@ -1042,7 +1029,6 @@ try {
 # **getContentmanagementStatusStatusId**
 
 
-
 > [CommandStatus](CommandStatus) getContentmanagementStatusStatusId(statusId)
 
 Get a status.
@@ -1101,7 +1087,6 @@ try {
 # **getContentmanagementUsage**
 
 
-
 > [Usage](Usage) getContentmanagementUsage()
 
 Get usage details.
@@ -1154,7 +1139,6 @@ This endpoint does not require any parameters.
 
 
 # **getContentmanagementWorkspace**
-
 
 
 > [Workspace](Workspace) getContentmanagementWorkspace(workspaceId, expand)
@@ -1215,7 +1199,6 @@ try {
 
 
 # **getContentmanagementWorkspaceDocuments**
-
 
 
 > [DocumentEntityListing](DocumentEntityListing) getContentmanagementWorkspaceDocuments(workspaceId, expand, pageSize, pageNumber, sortBy, sortOrder)
@@ -1286,7 +1269,6 @@ try {
 # **getContentmanagementWorkspaceMember**
 
 
-
 > [WorkspaceMember](WorkspaceMember) getContentmanagementWorkspaceMember(workspaceId, memberId, expand)
 
 Get a workspace member
@@ -1347,7 +1329,6 @@ try {
 
 
 # **getContentmanagementWorkspaceMembers**
-
 
 
 > [WorkspaceMemberEntityListing](WorkspaceMemberEntityListing) getContentmanagementWorkspaceMembers(workspaceId, pageSize, pageNumber, expand)
@@ -1414,7 +1395,6 @@ try {
 # **getContentmanagementWorkspaceTagvalue**
 
 
-
 > [TagValue](TagValue) getContentmanagementWorkspaceTagvalue(workspaceId, tagId, expand)
 
 Get a workspace tag
@@ -1475,7 +1455,6 @@ try {
 
 
 # **getContentmanagementWorkspaceTagvalues**
-
 
 
 > [TagValueEntityListing](TagValueEntityListing) getContentmanagementWorkspaceTagvalues(workspaceId, value, pageSize, pageNumber, expand)
@@ -1544,7 +1523,6 @@ try {
 # **getContentmanagementWorkspaces**
 
 
-
 > [WorkspaceEntityListing](WorkspaceEntityListing) getContentmanagementWorkspaces(pageSize, pageNumber, access, expand)
 
 Get a list of workspaces.
@@ -1611,7 +1589,6 @@ try {
 # **postContentmanagementDocument**
 
 
-
 > [Document](Document) postContentmanagementDocument(documentId, body, expand, override)
 
 Update a document.
@@ -1676,7 +1653,6 @@ try {
 # **postContentmanagementDocumentContent**
 
 
-
 > [ReplaceResponse](ReplaceResponse) postContentmanagementDocumentContent(documentId, body, override)
 
 Replace the contents of a document.
@@ -1737,7 +1713,6 @@ try {
 
 
 # **postContentmanagementDocuments**
-
 
 
 > [Document](Document) postContentmanagementDocuments(body, copySource, moveSource, override)
@@ -1804,7 +1779,6 @@ try {
 # **postContentmanagementQuery**
 
 
-
 > [QueryResults](QueryResults) postContentmanagementQuery(body, expand)
 
 Query content
@@ -1865,7 +1839,6 @@ try {
 # **postContentmanagementShares**
 
 
-
 > [CreateShareResponse](CreateShareResponse) postContentmanagementShares(body)
 
 Creates a new share or updates an existing share if the entity has already been shared
@@ -1922,7 +1895,6 @@ try {
 
 
 # **postContentmanagementWorkspaceTagvalues**
-
 
 
 > [TagValue](TagValue) postContentmanagementWorkspaceTagvalues(workspaceId, body)
@@ -1983,7 +1955,6 @@ try {
 
 
 # **postContentmanagementWorkspaceTagvaluesQuery**
-
 
 
 > [TagValueEntityListing](TagValueEntityListing) postContentmanagementWorkspaceTagvaluesQuery(workspaceId, body, expand)
@@ -2048,7 +2019,6 @@ try {
 # **postContentmanagementWorkspaces**
 
 
-
 > [Workspace](Workspace) postContentmanagementWorkspaces(body)
 
 Create a group workspace
@@ -2105,7 +2075,6 @@ try {
 
 
 # **putContentmanagementWorkspace**
-
 
 
 > [Workspace](Workspace) putContentmanagementWorkspace(workspaceId, body)
@@ -2166,7 +2135,6 @@ try {
 
 
 # **putContentmanagementWorkspaceMember**
-
 
 
 > [WorkspaceMember](WorkspaceMember) putContentmanagementWorkspaceMember(workspaceId, memberId, body)
@@ -2231,7 +2199,6 @@ try {
 # **putContentmanagementWorkspaceTagvalue**
 
 
-
 > [TagValue](TagValue) putContentmanagementWorkspaceTagvalue(workspaceId, tagId, body)
 
 Update a workspace tag. Will update all documents with the new tag value.
@@ -2291,4 +2258,4 @@ try {
 [**TagValue**](TagValue)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

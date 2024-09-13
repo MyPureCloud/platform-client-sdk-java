@@ -29,7 +29,6 @@
 | **supportedLanguages** | [**List&lt;SupportedLanguage&gt;**](SupportedLanguage) | List of supported languages for this version of the flow |  [optional] |
 | **compatibleFlowTypes** | [**List<CompatibleFlowTypesEnum>**](#Enum--CompatibleFlowTypesEnum) | Compatible flow types designate which flow types are allowed to embed a flow’s configuration within their own flow configuration.  Currently the only flows that can be embedded are Common Module flows and the embedding flow can invoke them using the Call Common Module action. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -40,7 +39,6 @@
 | PUBLISH | &quot;PUBLISH&quot; | 
 | CHECKIN | &quot;CHECKIN&quot; | 
 | SAVE | &quot;SAVE&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: CompatibleFlowTypesEnum
@@ -66,9 +64,8 @@
 | VOICESURVEY | &quot;VOICESURVEY&quot; |
 | WORKFLOW | &quot;WORKFLOW&quot; |
 | WORKITEM | &quot;WORKITEM&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

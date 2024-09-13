@@ -14,7 +14,6 @@
 | **modifiedBy** | [**User**](User) | User that modified this recipient |  [optional] |
 | **messengerType** | [**MessengerTypeEnum**](#Enum--MessengerTypeEnum) | The messenger type for this recipient |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MessengerTypeEnum
@@ -29,9 +28,8 @@
 | WEBMESSAGING | &quot;webmessaging&quot; | 
 | INSTAGRAM | &quot;instagram&quot; | 
 | OPEN | &quot;open&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

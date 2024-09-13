@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **exceptionType** | [**ExceptionTypeEnum**](#Enum--ExceptionTypeEnum) |  |  [optional] |
 | **occurrences** | [**List&lt;WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference&gt;**](WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ExceptionTypeEnum
@@ -17,9 +16,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | UNSCHEDULEDATTENDEES | &quot;UnscheduledAttendees&quot; | 
 | SESSIONSNOTDELETED | &quot;SessionsNotDeleted&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

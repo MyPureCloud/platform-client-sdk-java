@@ -8,9 +8,8 @@
 | **serviceLevel** | [**WfmServiceGoalImpact**](WfmServiceGoalImpact) | Allowed service level percent increase and decrease; undefined if the goal is not enabled |  [optional] |
 | **averageSpeedOfAnswer** | [**WfmServiceGoalImpact**](WfmServiceGoalImpact) | Allowed average speed of answer percent increase and decrease; undefined if the goal is not enabled |  [optional] |
 | **abandonRate** | [**WfmServiceGoalImpact**](WfmServiceGoalImpact) | Allowed abandon rate percent increase and decrease; undefined if the goal is not enabled |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

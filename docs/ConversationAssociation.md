@@ -9,7 +9,6 @@
 | **conversationId** | **String** | Conversation ID |  |
 | **communicationId** | **String** | Communication ID |  |
 | **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) | Media type |  |
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -26,9 +25,8 @@
 | SOCIAL_EXPRESSION | &quot;SOCIAL_EXPRESSION&quot; | 
 | VIDEO | &quot;VIDEO&quot; | 
 | SCREENSHARE | &quot;SCREENSHARE&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

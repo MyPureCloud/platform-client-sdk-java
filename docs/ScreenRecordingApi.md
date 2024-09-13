@@ -11,7 +11,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **postScreenrecordingToken**
 
 
-
 > [SignedData](SignedData) postScreenrecordingToken(body)
 
 Sign identifying information for screen recording
@@ -67,4 +66,4 @@ try {
 [**SignedData**](SignedData)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

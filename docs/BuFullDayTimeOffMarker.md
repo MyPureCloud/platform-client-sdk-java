@@ -13,9 +13,8 @@
 | **payableMinutes** | **Integer** | Payable minutes for the time off marker |  [optional] |
 | **timeOffRequestId** | **String** | The ID of the time off request |  [optional] |
 | **timeOffRequestSyncVersion** | **Integer** | The sync version of the full day time off request for which the scheduled activity is associated |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

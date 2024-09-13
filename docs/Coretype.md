@@ -16,9 +16,8 @@
 | **itemValidationFields** | **List&lt;String&gt;** | Specific to the \"tag\" core type, this is an array of strings naming the tag item fields of the core type subject to validation |  [optional] |
 | **itemValidationLimits** | [**ItemValidationLimits**](ItemValidationLimits) | A structure denoting the system-imposed minimum and maximum string length for string-array based core types such as \"tag\" and \"enum\".  Forexample, the validationLimits for a schema field using a tag core type specify the min/max values for a minimum string length (minLength) constraint supplied by a schema author on individual tags.  Similarly, the maxLength's min/max specifies maximum string length constraint supplied by a schema author for the same field's tags. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -21,7 +21,6 @@
 | **securePause** | **Boolean** | True when the recording of this conversation is in secure pause status. |  [optional] |
 | **utilizationLabelId** | **String** | An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: RecordingStateEnum
@@ -32,7 +31,6 @@
 | ACTIVE | &quot;ACTIVE&quot; | 
 | PAUSED | &quot;PAUSED&quot; | 
 | NONE | &quot;NONE&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -52,9 +50,8 @@
 | TRANSMITTING | &quot;transmitting&quot; | 
 | PARKED | &quot;parked&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -9,9 +9,8 @@
 | **eventName** | **String** | If set this eventName will be used to initiate the dialogflow bot rather than language processing on the input text.  See https://cloud.google.com/dialogflow/es/docs/events-overview |  [optional] |
 | **webhookQueryParameters** | **Map&lt;String, String&gt;** | Parameters passed to the fulfillment webhook of the bot (if any). |  [optional] |
 | **eventInputParameters** | **Map&lt;String, String&gt;** | Parameters passed to the event input of the bot. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

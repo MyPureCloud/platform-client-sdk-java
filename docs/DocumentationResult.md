@@ -25,9 +25,8 @@
 | **releasenoteTag** | **List&lt;Integer&gt;** | The releasenote tag of the documentation entity. Will be returned in responses for certain entities. |  [optional] |
 | **serviceArea** | **List&lt;Integer&gt;** | The service area of the documentation entity. Will be returned in responses for certain entities. |  [optional] |
 | **videoCategories** | **List&lt;Integer&gt;** | The video categories of the documentation entity. Will be returned in responses for certain entities. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

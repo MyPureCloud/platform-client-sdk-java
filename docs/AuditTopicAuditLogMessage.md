@@ -21,7 +21,6 @@
 | **entity** | [**AuditTopicDomainEntityRef**](AuditTopicDomainEntityRef) |  |  [optional] |
 | **propertyChanges** | [**List&lt;AuditTopicPropertyChange&gt;**](AuditTopicPropertyChange) |  |  [optional] |
 | **context** | **Map&lt;String, String&gt;** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ServiceNameEnum
@@ -77,7 +76,6 @@
 | NERSERVICE | &quot;NerService&quot; | 
 | ONBOARDING | &quot;Onboarding&quot; | 
 | SOCIALLISTENING | &quot;SocialListening&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ActionEnum
@@ -200,7 +198,6 @@
 | INITIATE | &quot;Initiate&quot; | 
 | REVERSEMANUALLY | &quot;ReverseManually&quot; | 
 | PROVISIONED | &quot;Provisioned&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: EntityTypeEnum
@@ -424,9 +421,8 @@
 | JOURNEYVIEW | &quot;JourneyView&quot; | 
 | CUSTOMENTITY | &quot;CustomEntity&quot; | 
 | DIRECTORYFEATURE | &quot;DirectoryFeature&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

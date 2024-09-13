@@ -10,9 +10,8 @@
 | **chat** | [**MediaSettings**](MediaSettings) | The queue media settings for chat interactions. |  [optional] |
 | **email** | [**MediaSettings**](MediaSettings) | The queue media settings for email interactions. |  [optional] |
 | **message** | [**MediaSettings**](MediaSettings) | The queue media settings for message interactions. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

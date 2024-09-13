@@ -9,7 +9,6 @@
 | **channel** | [**OpenMessagingChannel**](OpenMessagingChannel) | Channel-specific information that describes the message and the message channel/provider. |  |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | Message type. |  |
 | **events** | [**List&lt;OpenMessageEvent&gt;**](OpenMessageEvent) | List of event elements. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -18,9 +17,8 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | EVENT | &quot;Event&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

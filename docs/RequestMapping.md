@@ -9,7 +9,6 @@
 | **attributeType** | [**AttributeTypeEnum**](#Enum--AttributeTypeEnum) | Type of the value supplied |  [optional] |
 | **mappingType** | [**MappingTypeEnum**](#Enum--MappingTypeEnum) | Method of finding value to use with Attribute |  [optional] |
 | **value** | **String** | Value to supply for the specified Attribute |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: AttributeTypeEnum
@@ -21,7 +20,6 @@
 | NUMBER | &quot;Number&quot; | 
 | INTEGER | &quot;Integer&quot; | 
 | BOOLEAN | &quot;Boolean&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: MappingTypeEnum
@@ -31,9 +29,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | LOOKUP | &quot;Lookup&quot; | 
 | HARDCODED | &quot;HardCoded&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

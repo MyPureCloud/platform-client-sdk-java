@@ -27,7 +27,6 @@
 | **afterCallWork** | [**AfterCallWork**](AfterCallWork) | After-call work for the communication. |  [optional] |
 | **afterCallWorkRequired** | **Boolean** | Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested. |  [optional] |
 | **queueMediaSettings** | [**ConversationQueueMediaSettings**](ConversationQueueMediaSettings) | Represents the queue settings for this media type. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -43,7 +42,6 @@
 | DISCONNECTED | &quot;disconnected&quot; | 
 | TERMINATED | &quot;terminated&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: InitialStateEnum
@@ -59,7 +57,6 @@
 | DISCONNECTED | &quot;disconnected&quot; | 
 | TERMINATED | &quot;terminated&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DirectionEnum
@@ -69,7 +66,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INBOUND | &quot;inbound&quot; | 
 | OUTBOUND | &quot;outbound&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DisconnectTypeEnum
@@ -89,9 +85,8 @@
 | OTHER | &quot;other&quot; | 
 | UNCALLABLE | &quot;uncallable&quot; | 
 | TIMEOUT | &quot;timeout&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

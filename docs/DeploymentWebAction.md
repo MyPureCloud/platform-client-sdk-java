@@ -15,7 +15,6 @@
 | **webMessagingOfferProperties** | [**WebMessagingOfferProperties**](WebMessagingOfferProperties) | Web messaging offer specific properties. |  [optional] |
 | **contentOfferProperties** | [**ContentOffer**](ContentOffer) | Content offer specific properties. |  [optional] |
 | **openActionProperties** | [**OpenActionProperties**](OpenActionProperties) | Open action specific properties. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -29,9 +28,8 @@
 | INTEGRATIONACTION | &quot;integrationAction&quot; | 
 | ARCHITECTFLOW | &quot;architectFlow&quot; | 
 | OPENACTION | &quot;openAction&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

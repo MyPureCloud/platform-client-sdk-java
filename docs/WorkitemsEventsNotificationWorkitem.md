@@ -38,7 +38,6 @@
 | **wrapup** | [**WorkitemsEventsNotificationWrapup**](WorkitemsEventsNotificationWrapup) |  |  [optional] |
 | **sessions** | [**List&lt;WorkitemsEventsNotificationSession&gt;**](WorkitemsEventsNotificationSession) |  |  [optional] |
 | **skillIds** | **List&lt;String&gt;** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusCategoryEnum
@@ -51,7 +50,6 @@
 | INPROGRESS | &quot;InProgress&quot; | 
 | WAITING | &quot;Waiting&quot; | 
 | CLOSED | &quot;Closed&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: OperationEnum
@@ -79,7 +77,6 @@
 | ARCHIVE | &quot;archive&quot; | 
 | UNARCHIVE | &quot;unarchive&quot; | 
 | RESCHEDULE | &quot;reschedule&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: AssignmentStateEnum
@@ -100,9 +97,8 @@
 | ACDCANCELLED | &quot;AcdCancelled&quot; | 
 | TERMINATED | &quot;Terminated&quot; | 
 | ACDEXPIRED | &quot;AcdExpired&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

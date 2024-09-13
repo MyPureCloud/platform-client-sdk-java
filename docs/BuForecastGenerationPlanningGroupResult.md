@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **planningGroupId** | **String** | The ID of the planning group |  [optional] |
 | **metricResults** | [**List&lt;BuForecastTimeSeriesResult&gt;**](BuForecastTimeSeriesResult) | The generation results for the associated planning group |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

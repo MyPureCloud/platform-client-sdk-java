@@ -14,9 +14,8 @@
 | **timeZoneRescheduledCalls** | **Integer** | Number of campaign calls currently timezone rescheduled |  [optional] |
 | **filteredOutContactsCount** | **Integer** | Number of contacts that don't match filter. This is currently supported only for Campaigns with dynamic filter on. |  [optional] |
 | **linesUtilization** | [**CampaignLinesUtilization**](CampaignLinesUtilization) | Information on the campaign's lines utilization |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

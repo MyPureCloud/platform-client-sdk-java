@@ -12,7 +12,6 @@
 | **keyConfigurationType** | [**KeyConfigurationTypeEnum**](#Enum--KeyConfigurationTypeEnum) | Type should be LocalKeyManager or KmsSymmetric when create or update Key configurations; 'Native' for disabling configuration. |  |
 | **lastError** | [**ErrorBody**](ErrorBody) | The error message related to the configuration |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: KeyConfigurationTypeEnum
@@ -24,9 +23,8 @@
 | LOCALKEYMANAGER | &quot;LocalKeyManager&quot; | 
 | NATIVE | &quot;Native&quot; | 
 | NONE | &quot;None&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

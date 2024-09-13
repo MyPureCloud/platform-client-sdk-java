@@ -27,9 +27,8 @@
 | **externalTag** | **String** | The external tag of the Workitem. |  [optional] |
 | **skillIds** | **List&lt;String&gt;** | The skill IDs of the Workitem. Must be valid UUIDs. |  [optional] |
 | **preferredAgentIds** | **List&lt;String&gt;** | The preferred agent IDs of the Workitem. Must be valid UUIDs. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -13,9 +13,8 @@
 | **defaultUser** | [**User**](User) |  |  [optional] |
 | **providerInfo** | **Map&lt;String, String&gt;** | Provider-specific info for this station, e.g. { \"edgeGroupId\": \"ffe7b15c-a9cc-4f4c-88f5-781327819a49\" } |  [optional] |
 | **webRtcCallAppearances** | **Integer** | The number of call appearances on the station. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -18,7 +18,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteNotificationsChannelSubscriptions**
 
 
-
 > Void deleteNotificationsChannelSubscriptions(channelId)
 
 Remove all subscriptions
@@ -74,7 +73,6 @@ null (empty response body)
 
 
 # **getNotificationsAvailabletopics**
-
 
 
 > [AvailableTopicEntityListing](AvailableTopicEntityListing) getNotificationsAvailabletopics(expand, includePreview)
@@ -137,7 +135,6 @@ try {
 # **getNotificationsChannelSubscriptions**
 
 
-
 > [ChannelTopicEntityListing](ChannelTopicEntityListing) getNotificationsChannelSubscriptions(channelId)
 
 The list of all subscriptions for this channel
@@ -194,7 +191,6 @@ try {
 
 
 # **getNotificationsChannels**
-
 
 
 > [ChannelEntityListing](ChannelEntityListing) getNotificationsChannels(includechannels)
@@ -255,7 +251,6 @@ try {
 # **headNotificationsChannel**
 
 
-
 > Void headNotificationsChannel(channelId)
 
 Verify a channel still exists and is valid
@@ -313,7 +308,6 @@ null (empty response body)
 
 
 # **postNotificationsChannelSubscriptions**
-
 
 
 > [ChannelTopicEntityListing](ChannelTopicEntityListing) postNotificationsChannelSubscriptions(channelId, body, ignoreErrors)
@@ -378,7 +372,6 @@ try {
 # **postNotificationsChannels**
 
 
-
 > [Channel](Channel) postNotificationsChannels()
 
 Create a new channel
@@ -433,7 +426,6 @@ This endpoint does not require any parameters.
 
 
 # **putNotificationsChannelSubscriptions**
-
 
 
 > [ChannelTopicEntityListing](ChannelTopicEntityListing) putNotificationsChannelSubscriptions(channelId, body, ignoreErrors)
@@ -495,4 +487,4 @@ try {
 [**ChannelTopicEntityListing**](ChannelTopicEntityListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

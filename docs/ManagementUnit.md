@@ -17,7 +17,6 @@
 | **dateModified** | [**Date**](Date) | The date and time at which this entity was last modified.  Deprecated, use field from settings.metadata instead. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **modifiedBy** | [**UserReference**](UserReference) | The user who last modified this entity.  Deprecated, use field from settings.metadata instead |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StartDayOfWeekEnum
@@ -32,9 +31,8 @@
 | THURSDAY | &quot;Thursday&quot; | 
 | FRIDAY | &quot;Friday&quot; | 
 | SATURDAY | &quot;Saturday&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

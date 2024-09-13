@@ -13,9 +13,8 @@
 | **notes** | **String** | Notes about the integration. |  |
 | **credentials** | [**Map&lt;String, CredentialInfo&gt;**](CredentialInfo) | Credentials required by the integration. The required keys are indicated in the credentials property of the Integration Type |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

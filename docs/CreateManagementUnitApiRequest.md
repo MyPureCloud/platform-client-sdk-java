@@ -11,7 +11,6 @@
 | **settings** | [**CreateManagementUnitSettingsRequest**](CreateManagementUnitSettingsRequest) | The configuration for the management unit.  If omitted, reasonable defaults will be assigned |  [optional] |
 | **divisionId** | **String** | The id of the division to which this management unit belongs.  Defaults to home division ID |  [optional] |
 | **businessUnitId** | **String** | The id of the business unit to which this management unit belongs |  |
-{: class="table table-striped"}
 
 
 ## Enum: StartDayOfWeekEnum
@@ -26,9 +25,8 @@
 | THURSDAY | &quot;Thursday&quot; | 
 | FRIDAY | &quot;Friday&quot; | 
 | SATURDAY | &quot;Saturday&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

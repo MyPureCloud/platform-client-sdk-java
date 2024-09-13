@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **results** | [**List&lt;TeamActivityData&gt;**](TeamActivityData) | Query results |  [optional] |
 | **entityIdDimension** | [**EntityIdDimensionEnum**](#Enum--EntityIdDimensionEnum) | Dimension that is used as an entityId |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: EntityIdDimensionEnum
@@ -24,9 +23,8 @@
 | SYSTEMPRESENCE | &quot;systemPresence&quot; | 
 | TEAMID | &quot;teamId&quot; | 
 | USERID | &quot;userId&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

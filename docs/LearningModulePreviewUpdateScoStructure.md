@@ -11,7 +11,6 @@
 | **completionStatus** | [**CompletionStatusEnum**](#Enum--CompletionStatusEnum) | The completion status of this SCO |  [optional] |
 | **percentageScore** | **Float** | Percentage Score |  [optional] |
 | **children** | [**List&lt;LearningModulePreviewUpdateScoStructure&gt;**](LearningModulePreviewUpdateScoStructure) | Child items belonging to this SCO in the course manifest |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: SuccessStatusEnum
@@ -22,7 +21,6 @@
 | PASSED | &quot;Passed&quot; | 
 | FAILED | &quot;Failed&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: CompletionStatusEnum
@@ -34,9 +32,8 @@
 | INCOMPLETE | &quot;Incomplete&quot; | 
 | NOTATTEMPTED | &quot;NotAttempted&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

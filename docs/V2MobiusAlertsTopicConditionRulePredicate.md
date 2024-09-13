@@ -14,7 +14,6 @@
 | **status** | **String** |  |  [optional] |
 | **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) |  |  [optional] |
 | **comparisonOperator** | [**ComparisonOperatorEnum**](#Enum--ComparisonOperatorEnum) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MetricTypeEnum
@@ -25,7 +24,6 @@
 | INTERVAL | &quot;Interval&quot; | 
 | INSTANCE | &quot;Instance&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: MetricValueTypeEnum
@@ -41,7 +39,6 @@
 | MIN | &quot;Min&quot; | 
 | MAX | &quot;Max&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -57,7 +54,6 @@
 | SCREENSHARE | &quot;Screenshare&quot; | 
 | COBROWSE | &quot;Cobrowse&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ComparisonOperatorEnum
@@ -72,9 +68,8 @@
 | EQ | &quot;Eq&quot; | 
 | NE | &quot;Ne&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

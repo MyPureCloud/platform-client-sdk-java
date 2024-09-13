@@ -17,7 +17,6 @@
 | **reviewedBy** | [**UserReference**](UserReference) | The user who reviewed the adherence explanation, if applicable |  [optional] |
 | **reviewedDate** | [**Date**](Date) | The timestamp for when the adherence explanation was reviewed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -26,7 +25,6 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | LATE | &quot;Late&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -37,9 +35,8 @@
 | PENDING | &quot;Pending&quot; | 
 | APPROVED | &quot;Approved&quot; | 
 | DENIED | &quot;Denied&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

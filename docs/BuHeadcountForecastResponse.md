@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **result** | [**BuHeadcountForecast**](BuHeadcountForecast) | The headcount forecast, null when downloadUrl is provided |  [optional] |
 | **downloadUrl** | **String** | Download URL.  Null unless the response is too large to pass directly through the api |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

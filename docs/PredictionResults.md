@@ -8,7 +8,6 @@
 | **intent** | [**IntentEnum**](#Enum--IntentEnum) | Indicates the media type scope of this estimated wait time |  [optional] |
 | **formula** | [**FormulaEnum**](#Enum--FormulaEnum) | Indicates the estimated wait time Formula |  |
 | **estimatedWaitTimeSeconds** | **Integer** | Estimated wait time in seconds |  |
-{: class="table table-striped"}
 
 
 ## Enum: IntentEnum
@@ -24,7 +23,6 @@
 | SOCIALEXPRESSION | &quot;SOCIALEXPRESSION&quot; | 
 | VIDEOCOMM | &quot;VIDEOCOMM&quot; | 
 | MESSAGE | &quot;MESSAGE&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: FormulaEnum
@@ -36,9 +34,8 @@
 | SIMPLE | &quot;SIMPLE&quot; | 
 | ABANDON | &quot;ABANDON&quot; | 
 | PATIENCE_ABANDON | &quot;PATIENCE_ABANDON&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

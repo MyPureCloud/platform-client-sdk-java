@@ -10,9 +10,8 @@
 | **entityType** | **String** | Type of the entity that was changed |  [optional] |
 | **oldValues** | **List&lt;String&gt;** | Previous values for the entity. |  [optional] |
 | **newValues** | **List&lt;String&gt;** | New values for the entity. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -8,9 +8,8 @@
 | **stopSettings** | [**List&lt;StopSettings&gt;**](StopSettings) | List of configurations for 'StopSettings' compliance |  |
 | **optInSettings** | [**List&lt;OptInSettings&gt;**](OptInSettings) | List of configurations for 'OptInSettings' compliance |  |
 | **helpSettings** | [**List&lt;HelpSettings&gt;**](HelpSettings) | List of configurations for 'HelpSettings' compliance |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

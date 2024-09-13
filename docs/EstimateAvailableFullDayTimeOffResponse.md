@@ -9,9 +9,8 @@
 | **durationMinutes** | **Integer** | An estimation of time off request length in minutes |  |
 | **payableMinutes** | **Integer** | An estimation of payable part of time off request in minutes |  |
 | **flexible** | **Boolean** | Whether there is flexibility for a user to choose different hours than the system estimated |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -15,7 +15,6 @@
 | **roleDivisions** | [**List&lt;RoleDivision&gt;**](RoleDivision) | Set of roles and their corresponding divisions associated with this client. Roles and divisions only apply to clients using the client_credential grant |  [optional] |
 | **state** | [**StateEnum**](#Enum--StateEnum) | The state of the OAuth client. Active: The OAuth client can be used to create access tokens. This is the default state. Disabled: Access tokens created by the client are invalid and new ones cannot be created. Inactive: Access tokens cannot be created with this OAuth client and it will be deleted. |  [optional] |
 | **dateToDelete** | [**Date**](Date) | The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: AuthorizedGrantTypeEnum
@@ -28,7 +27,6 @@
 | SAML2_BEARER | &quot;SAML2-BEARER&quot; | 
 | PASSWORD | &quot;PASSWORD&quot; | 
 | CLIENT_CREDENTIALS | &quot;CLIENT-CREDENTIALS&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -39,9 +37,8 @@
 | ACTIVE | &quot;active&quot; | 
 | DISABLED | &quot;disabled&quot; | 
 | INACTIVE | &quot;inactive&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

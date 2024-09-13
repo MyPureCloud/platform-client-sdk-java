@@ -23,7 +23,6 @@
 | **submittedBy** | **String** |  |  [optional] |
 | **modifiedDate** | **String** |  |  [optional] |
 | **modifiedBy** | **String** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -35,7 +34,6 @@
 | APPROVED | &quot;APPROVED&quot; | 
 | DENIED | &quot;DENIED&quot; | 
 | CANCELED | &quot;CANCELED&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: SubstatusEnum
@@ -51,9 +49,8 @@
 | OVERLAPSRESTRICTEDACTIVITYCODE | &quot;OverlapsRestrictedActivityCode&quot; | 
 | REMOVEDFROMWAITLIST | &quot;RemovedFromWaitlist&quot; | 
 | WAITLISTED | &quot;Waitlisted&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

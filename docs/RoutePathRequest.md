@@ -10,7 +10,6 @@
 | **languageId** | **String** | The ID of the language to associate with the route path |  [optional] |
 | **skillIds** | **List&lt;String&gt;** | The set of skill IDs to associate with the route path |  [optional] |
 | **sourcePlanningGroup** | [**SourcePlanningGroupRequest**](SourcePlanningGroupRequest) | The planning group from which to take route paths. This property is only needed if a route path already exists in another planning group.Note that taking a route path from another planning group will modify the other planning group |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -23,9 +22,8 @@
 | EMAIL | &quot;Email&quot; | 
 | CALLBACK | &quot;Callback&quot; | 
 | MESSAGE | &quot;Message&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

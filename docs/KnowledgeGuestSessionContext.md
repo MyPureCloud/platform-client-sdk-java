@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** | The context id associated with the session. |  |
 | **values** | [**List&lt;Entity&gt;**](Entity) | The list of knowledge context values associated with the session. |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

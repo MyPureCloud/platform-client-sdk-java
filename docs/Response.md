@@ -20,7 +20,6 @@
 | **assets** | [**List&lt;AddressableEntityRef&gt;**](AddressableEntityRef) | Assets used in the response |  [optional] |
 | **footer** | [**FooterTemplate**](FooterTemplate) | Footer template definition for responseType.Footer. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: InteractionTypeEnum
@@ -31,7 +30,6 @@
 | CHAT | &quot;chat&quot; | 
 | EMAIL | &quot;email&quot; | 
 | TWITTER | &quot;twitter&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ResponseTypeEnum
@@ -43,9 +41,8 @@
 | CAMPAIGNSMSTEMPLATE | &quot;CampaignSmsTemplate&quot; | 
 | CAMPAIGNEMAILTEMPLATE | &quot;CampaignEmailTemplate&quot; | 
 | FOOTER | &quot;Footer&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

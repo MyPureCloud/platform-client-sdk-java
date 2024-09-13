@@ -10,9 +10,8 @@
 | **activityCodeId** | **String** | The ID of the activity code for this activity |  [optional] |
 | **countsAsPaidTime** | **Boolean** | Whether this activity counts as paid time |  [optional] |
 | **payableMinutes** | **Integer** | Payable minutes for this activity |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

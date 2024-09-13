@@ -18,7 +18,6 @@
 | **authenticatedGuest** | **Boolean** | If true, the guest member is an authenticated guest. |  [optional] |
 | **customFields** | **Map&lt;String, String&gt;** | Any custom fields of information pertaining to this member. |  [optional] |
 | **state** | [**StateEnum**](#Enum--StateEnum) | The connection state of this member. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: RoleEnum
@@ -30,7 +29,6 @@
 | CUSTOMER | &quot;CUSTOMER&quot; | 
 | WORKFLOW | &quot;WORKFLOW&quot; | 
 | ACD | &quot;ACD&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -41,9 +39,8 @@
 | CONNECTED | &quot;CONNECTED&quot; | 
 | DISCONNECTED | &quot;DISCONNECTED&quot; | 
 | ALERTING | &quot;ALERTING&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

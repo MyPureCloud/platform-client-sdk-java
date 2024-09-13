@@ -8,7 +8,6 @@
 | **kpi** | **String** | Name of the key performance indicator assessed. |  [optional] |
 | **assessmentResult** | [**AssessmentResultEnum**](#Enum--AssessmentResultEnum) | The overall result of the assessment for a key performance indicator. |  [optional] |
 | **checks** | [**List&lt;Check&gt;**](Check) | Set of checks executed as part of an assessment. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: AssessmentResultEnum
@@ -21,9 +20,8 @@
 | HIGH | &quot;High&quot; | 
 | LOW | &quot;Low&quot; | 
 | ERROR | &quot;Error&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

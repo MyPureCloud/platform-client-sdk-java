@@ -13,7 +13,6 @@
 | **shortTermForecast** | [**BuShortTermForecastReference**](BuShortTermForecastReference) | Short term forecast reference |  [optional] |
 | **schedule** | [**BuScheduleReference**](BuScheduleReference) | Schedule reference |  [optional] |
 | **intradayDataGroupings** | [**List&lt;BuIntradayDataGroup&gt;**](BuIntradayDataGroup) | Intraday data grouped by a single media type and set of planning group IDs |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: NoDataReasonEnum
@@ -23,7 +22,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | NOPUBLISHEDSCHEDULE | &quot;NoPublishedSchedule&quot; | 
 | NOSOURCEFORECAST | &quot;NoSourceForecast&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: CategoriesEnum
@@ -33,9 +31,8 @@
 | FORECASTDATA | &quot;ForecastData&quot; |
 | SCHEDULEDATA | &quot;ScheduleData&quot; |
 | PERFORMANCEPREDICTIONDATA | &quot;PerformancePredictionData&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

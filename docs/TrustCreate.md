@@ -10,9 +10,8 @@
 | **users** | [**List&lt;TrustMemberCreate&gt;**](TrustMemberCreate) | The list of users and their roles to which access will be granted. The users are from the trustee and the roles are from the trustor. If no users are specified, at least one group is required. |  [optional] |
 | **groups** | [**List&lt;TrustMemberCreate&gt;**](TrustMemberCreate) | The list of groups and their roles to which access will be granted. The groups are from the trustee and the roles are from the trustor. If no groups are specified, at least one user is required. |  [optional] |
 | **dateExpired** | [**Date**](Date) | The expiration date of the trust. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

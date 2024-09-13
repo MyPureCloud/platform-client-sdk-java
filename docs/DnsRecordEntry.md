@@ -8,7 +8,6 @@
 | **host** | **String** | the hostname of the DNS entry |  [optional] |
 | **recordContents** | **String** | the payload of the DNS entry |  [optional] |
 | **verificationStatus** | [**VerificationStatusEnum**](#Enum--VerificationStatusEnum) | the current status of the related verification process |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: VerificationStatusEnum
@@ -20,9 +19,8 @@
 | VERIFIED | &quot;Verified&quot; | 
 | FAILED | &quot;Failed&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

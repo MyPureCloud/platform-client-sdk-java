@@ -13,7 +13,6 @@
 | **stickers** | [**List&lt;QueueConversationMessageEventTopicMessageSticker&gt;**](QueueConversationMessageEventTopicMessageSticker) |  |  [optional] |
 | **errorInfo** | [**QueueConversationMessageEventTopicErrorDetails**](QueueConversationMessageEventTopicErrorDetails) |  |  [optional] |
 | **messageMetadata** | [**QueueConversationMessageEventTopicMessageMetadata**](QueueConversationMessageEventTopicMessageMetadata) |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: MessageStatusEnum
@@ -30,9 +29,8 @@
 | READ | &quot;read&quot; | 
 | REMOVED | &quot;removed&quot; | 
 | PUBLISHED | &quot;published&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

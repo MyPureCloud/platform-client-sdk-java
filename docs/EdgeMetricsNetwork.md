@@ -10,9 +10,8 @@
 | **receivedBytesPerSec** | **Integer** | Number of byes received per second. |  [optional] |
 | **bandwidthBitsPerSec** | **Double** | Total bandwidth of the adapter in bits per second. |  [optional] |
 | **utilizationPct** | **Double** | Percent utilization of the network adapter. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -21,7 +21,6 @@
 | **wrapup** | [**Wrapup**](Wrapup) | Call wrap up or disposition data. |  [optional] |
 | **afterCallWork** | [**AfterCallWork**](AfterCallWork) | After-call work for the communication. |  [optional] |
 | **afterCallWorkRequired** | **Boolean** | Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StateEnum
@@ -37,7 +36,6 @@
 | DISCONNECTED | &quot;disconnected&quot; | 
 | TERMINATED | &quot;terminated&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: InitialStateEnum
@@ -53,7 +51,6 @@
 | DISCONNECTED | &quot;disconnected&quot; | 
 | TERMINATED | &quot;terminated&quot; | 
 | NONE | &quot;none&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DisconnectTypeEnum
@@ -77,9 +74,8 @@
 | OTHER | &quot;other&quot; | 
 | SPAM | &quot;spam&quot; | 
 | UNCALLABLE | &quot;uncallable&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

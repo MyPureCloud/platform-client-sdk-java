@@ -13,7 +13,6 @@
 | **uploadUrl** | **String** | The URL returned to upload an attachment |  [optional] |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the media, indicates if the media is in the process of uploading. If the upload fails, the media becomes invalid |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -24,9 +23,8 @@
 | UPLOADING | &quot;uploading&quot; | 
 | VALID | &quot;valid&quot; | 
 | INVALID | &quot;invalid&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

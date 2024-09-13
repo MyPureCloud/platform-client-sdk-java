@@ -73,7 +73,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteEmployeeperformanceExternalmetricsDefinition**
 
 
-
 > Void deleteEmployeeperformanceExternalmetricsDefinition(metricId)
 
 Delete an External Metric Definition
@@ -130,7 +129,6 @@ null (empty response body)
 
 
 # **getEmployeeperformanceExternalmetricsDefinition**
-
 
 
 > [ExternalMetricDefinition](ExternalMetricDefinition) getEmployeeperformanceExternalmetricsDefinition(metricId)
@@ -192,7 +190,6 @@ try {
 # **getEmployeeperformanceExternalmetricsDefinitions**
 
 
-
 > [ExternalMetricDefinitionListing](ExternalMetricDefinitionListing) getEmployeeperformanceExternalmetricsDefinitions(pageSize, pageNumber)
 
 Get a list of External Metric Definitions of an organization, sorted by name in ascending order
@@ -252,7 +249,6 @@ try {
 
 
 # **getGamificationInsights**
-
 
 
 > [InsightsSummary](InsightsSummary) getGamificationInsights(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, pageSize, pageNumber, sortKey, sortMetricId, sortOrder, userIds)
@@ -334,7 +330,6 @@ try {
 # **getGamificationInsightsDetails**
 
 
-
 > [InsightsDetails](InsightsDetails) getGamificationInsightsDetails(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday)
 
 Get insights details for the current user
@@ -400,7 +395,6 @@ try {
 
 
 # **getGamificationInsightsGroupsTrends**
-
 
 
 > [InsightsTrend](InsightsTrend) getGamificationInsightsGroupsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)
@@ -474,7 +468,6 @@ try {
 # **getGamificationInsightsGroupsTrendsAll**
 
 
-
 > [InsightsTrend](InsightsTrend) getGamificationInsightsGroupsTrendsAll(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)
 
 Get insights overall trend
@@ -546,7 +539,6 @@ try {
 # **getGamificationInsightsMembers**
 
 
-
 > [InsightsAgents](InsightsAgents) getGamificationInsightsMembers(filterType, filterId, granularity, startWorkday)
 
 Query users in a profile during a period of time
@@ -610,7 +602,6 @@ try {
 
 
 # **getGamificationInsightsTrends**
-
 
 
 > [UserInsightsTrend](UserInsightsTrend) getGamificationInsightsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)
@@ -684,7 +675,6 @@ try {
 # **getGamificationInsightsUserDetails**
 
 
-
 > [InsightsDetails](InsightsDetails) getGamificationInsightsUserDetails(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday)
 
 Get insights details for the user
@@ -752,7 +742,6 @@ try {
 
 
 # **getGamificationInsightsUserTrends**
-
 
 
 > [UserInsightsTrend](UserInsightsTrend) getGamificationInsightsUserTrends(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)
@@ -828,7 +817,6 @@ try {
 # **getGamificationLeaderboard**
 
 
-
 > [Leaderboard](Leaderboard) getGamificationLeaderboard(startWorkday, endWorkday, metricId)
 
 Leaderboard of the requesting user's division or performance profile
@@ -890,7 +878,6 @@ try {
 
 
 # **getGamificationLeaderboardAll**
-
 
 
 > [Leaderboard](Leaderboard) getGamificationLeaderboardAll(filterType, filterId, startWorkday, endWorkday, metricId)
@@ -960,7 +947,6 @@ try {
 # **getGamificationLeaderboardAllBestpoints**
 
 
-
 > [OverallBestPoints](OverallBestPoints) getGamificationLeaderboardAllBestpoints(filterType, filterId)
 
 Best Points by division or performance profile
@@ -1022,7 +1008,6 @@ try {
 # **getGamificationLeaderboardBestpoints**
 
 
-
 > [OverallBestPoints](OverallBestPoints) getGamificationLeaderboardBestpoints()
 
 Best Points of the requesting user's current performance profile or division
@@ -1076,7 +1061,6 @@ This endpoint does not require any parameters.
 
 
 # **getGamificationMetricdefinition**
-
 
 
 > [MetricDefinition](MetricDefinition) getGamificationMetricdefinition(metricDefinitionId)
@@ -1138,7 +1122,6 @@ try {
 # **getGamificationMetricdefinitions**
 
 
-
 > [GetMetricDefinitionsResponse](GetMetricDefinitionsResponse) getGamificationMetricdefinitions()
 
 All metric definitions
@@ -1194,7 +1177,6 @@ This endpoint does not require any parameters.
 
 
 # **getGamificationProfile**
-
 
 
 > [PerformanceProfile](PerformanceProfile) getGamificationProfile(profileId)
@@ -1258,7 +1240,6 @@ try {
 # **getGamificationProfileMembers**
 
 
-
 > [MemberListing](MemberListing) getGamificationProfileMembers(profileId)
 
 Members of a given performance profile
@@ -1316,7 +1297,6 @@ try {
 
 
 # **getGamificationProfileMetric**
-
 
 
 > [Metric](Metric) getGamificationProfileMetric(profileId, metricId, workday)
@@ -1382,7 +1362,6 @@ try {
 
 
 # **getGamificationProfileMetrics**
-
 
 
 > [GetMetricResponse](GetMetricResponse) getGamificationProfileMetrics(profileId, expand, workday, metricIds)
@@ -1452,7 +1431,6 @@ try {
 # **getGamificationProfileMetricsObjectivedetails**
 
 
-
 > [GetMetricsResponse](GetMetricsResponse) getGamificationProfileMetricsObjectivedetails(profileId, workday)
 
 All metrics for a given performance profile with objective details such as order and maxPoints
@@ -1516,7 +1494,6 @@ try {
 # **getGamificationProfiles**
 
 
-
 > [GetProfilesResponse](GetProfilesResponse) getGamificationProfiles()
 
 All performance profiles
@@ -1572,7 +1549,6 @@ This endpoint does not require any parameters.
 
 
 # **getGamificationProfilesUser**
-
 
 
 > [PerformanceProfile](PerformanceProfile) getGamificationProfilesUser(userId, workday)
@@ -1638,7 +1614,6 @@ try {
 # **getGamificationProfilesUsersMe**
 
 
-
 > [PerformanceProfile](PerformanceProfile) getGamificationProfilesUsersMe(workday)
 
 Performance profile of the requesting user
@@ -1695,7 +1670,6 @@ try {
 
 
 # **getGamificationScorecards**
-
 
 
 > [WorkdayMetricListing](WorkdayMetricListing) getGamificationScorecards(workday, expand)
@@ -1759,7 +1733,6 @@ try {
 # **getGamificationScorecardsAttendance**
 
 
-
 > [AttendanceStatusListing](AttendanceStatusListing) getGamificationScorecardsAttendance(startWorkday, endWorkday)
 
 Attendance status metrics of the requesting user
@@ -1821,7 +1794,6 @@ try {
 # **getGamificationScorecardsBestpoints**
 
 
-
 > [UserBestPoints](UserBestPoints) getGamificationScorecardsBestpoints()
 
 Best points of the requesting user
@@ -1875,7 +1847,6 @@ This endpoint does not require any parameters.
 
 
 # **getGamificationScorecardsPointsAlltime**
-
 
 
 > [AllTimePoints](AllTimePoints) getGamificationScorecardsPointsAlltime(endWorkday)
@@ -1937,7 +1908,6 @@ try {
 # **getGamificationScorecardsPointsAverage**
 
 
-
 > [SingleWorkdayAveragePoints](SingleWorkdayAveragePoints) getGamificationScorecardsPointsAverage(workday)
 
 Average points of the requesting user's division or performance profile
@@ -1995,7 +1965,6 @@ try {
 
 
 # **getGamificationScorecardsPointsTrends**
-
 
 
 > [WorkdayPointsTrend](WorkdayPointsTrend) getGamificationScorecardsPointsTrends(startWorkday, endWorkday, dayOfWeek)
@@ -2059,7 +2028,6 @@ try {
 
 
 # **getGamificationScorecardsProfileMetricUserValuesTrends**
-
 
 
 > [MetricValueTrendAverage](MetricValueTrendAverage) getGamificationScorecardsProfileMetricUserValuesTrends(profileId, metricId, userId, startWorkday, endWorkday, referenceWorkday, timeZone)
@@ -2131,7 +2099,6 @@ try {
 
 
 # **getGamificationScorecardsProfileMetricUsersValuesTrends**
-
 
 
 > [MetricValueTrendAverage](MetricValueTrendAverage) getGamificationScorecardsProfileMetricUsersValuesTrends(profileId, metricId, filterType, startWorkday, endWorkday, filterId, referenceWorkday, timeZone)
@@ -2207,7 +2174,6 @@ try {
 # **getGamificationScorecardsProfileMetricValuesTrends**
 
 
-
 > [MetricValueTrendAverage](MetricValueTrendAverage) getGamificationScorecardsProfileMetricValuesTrends(profileId, metricId, startWorkday, endWorkday, filterType, referenceWorkday, timeZone)
 
 Average performance values trends by metric of the requesting user
@@ -2279,7 +2245,6 @@ try {
 # **getGamificationScorecardsUser**
 
 
-
 > [WorkdayMetricListing](WorkdayMetricListing) getGamificationScorecardsUser(userId, workday, expand)
 
 Workday performance metrics for a user
@@ -2341,7 +2306,6 @@ try {
 
 
 # **getGamificationScorecardsUserAttendance**
-
 
 
 > [AttendanceStatusListing](AttendanceStatusListing) getGamificationScorecardsUserAttendance(userId, startWorkday, endWorkday)
@@ -2407,7 +2371,6 @@ try {
 # **getGamificationScorecardsUserBestpoints**
 
 
-
 > [UserBestPoints](UserBestPoints) getGamificationScorecardsUserBestpoints(userId)
 
 Best points of a user
@@ -2465,7 +2428,6 @@ try {
 
 
 # **getGamificationScorecardsUserPointsAlltime**
-
 
 
 > [AllTimePoints](AllTimePoints) getGamificationScorecardsUserPointsAlltime(userId, endWorkday)
@@ -2527,7 +2489,6 @@ try {
 
 
 # **getGamificationScorecardsUserPointsTrends**
-
 
 
 > [WorkdayPointsTrend](WorkdayPointsTrend) getGamificationScorecardsUserPointsTrends(userId, startWorkday, endWorkday, dayOfWeek)
@@ -2595,7 +2556,6 @@ try {
 # **getGamificationScorecardsUserValuesTrends**
 
 
-
 > [WorkdayValuesTrend](WorkdayValuesTrend) getGamificationScorecardsUserValuesTrends(userId, startWorkday, endWorkday, timeZone)
 
 Values trends of a user
@@ -2661,7 +2621,6 @@ try {
 # **getGamificationScorecardsUsersPointsAverage**
 
 
-
 > [SingleWorkdayAveragePoints](SingleWorkdayAveragePoints) getGamificationScorecardsUsersPointsAverage(filterType, filterId, workday)
 
 Workday average points by target group
@@ -2723,7 +2682,6 @@ try {
 
 
 # **getGamificationScorecardsUsersValuesAverage**
-
 
 
 > [SingleWorkdayAverageValues](SingleWorkdayAverageValues) getGamificationScorecardsUsersValuesAverage(filterType, filterId, workday, timeZone)
@@ -2789,7 +2747,6 @@ try {
 
 
 # **getGamificationScorecardsUsersValuesTrends**
-
 
 
 > [WorkdayValuesTrend](WorkdayValuesTrend) getGamificationScorecardsUsersValuesTrends(filterType, filterId, startWorkday, endWorkday, timeZone)
@@ -2859,7 +2816,6 @@ try {
 # **getGamificationScorecardsValuesAverage**
 
 
-
 > [SingleWorkdayAverageValues](SingleWorkdayAverageValues) getGamificationScorecardsValuesAverage(workday, timeZone)
 
 Average values of the requesting user's division or performance profile
@@ -2919,7 +2875,6 @@ try {
 
 
 # **getGamificationScorecardsValuesTrends**
-
 
 
 > [WorkdayValuesTrend](WorkdayValuesTrend) getGamificationScorecardsValuesTrends(startWorkday, endWorkday, filterType, referenceWorkday, timeZone)
@@ -2989,7 +2944,6 @@ try {
 # **getGamificationStatus**
 
 
-
 > [GamificationStatus](GamificationStatus) getGamificationStatus()
 
 Gamification activation status
@@ -3045,7 +2999,6 @@ This endpoint does not require any parameters.
 
 
 # **getGamificationTemplate**
-
 
 
 > [ObjectiveTemplate](ObjectiveTemplate) getGamificationTemplate(templateId)
@@ -3107,7 +3060,6 @@ try {
 # **getGamificationTemplates**
 
 
-
 > [GetTemplatesResponse](GetTemplatesResponse) getGamificationTemplates()
 
 All objective templates
@@ -3161,7 +3113,6 @@ This endpoint does not require any parameters.
 
 
 # **patchEmployeeperformanceExternalmetricsDefinition**
-
 
 
 > [ExternalMetricDefinition](ExternalMetricDefinition) patchEmployeeperformanceExternalmetricsDefinition(metricId, body)
@@ -3225,7 +3176,6 @@ try {
 # **postEmployeeperformanceExternalmetricsData**
 
 
-
 > [ExternalMetricDataWriteResponse](ExternalMetricDataWriteResponse) postEmployeeperformanceExternalmetricsData(body)
 
 Write External Metric Data
@@ -3283,7 +3233,6 @@ try {
 
 
 # **postEmployeeperformanceExternalmetricsDefinitions**
-
 
 
 > [ExternalMetricDefinition](ExternalMetricDefinition) postEmployeeperformanceExternalmetricsDefinitions(body)
@@ -3345,7 +3294,6 @@ try {
 # **postGamificationProfileActivate**
 
 
-
 > [PerformanceProfile](PerformanceProfile) postGamificationProfileActivate(profileId)
 
 Activate a performance profile
@@ -3405,7 +3353,6 @@ try {
 # **postGamificationProfileDeactivate**
 
 
-
 > [PerformanceProfile](PerformanceProfile) postGamificationProfileDeactivate(profileId)
 
 Deactivate a performance profile
@@ -3463,7 +3410,6 @@ try {
 
 
 # **postGamificationProfileMembers**
-
 
 
 > [Assignment](Assignment) postGamificationProfileMembers(profileId, body)
@@ -3527,7 +3473,6 @@ try {
 # **postGamificationProfileMembersValidate**
 
 
-
 > [AssignmentValidation](AssignmentValidation) postGamificationProfileMembersValidate(profileId, body)
 
 Validate member assignment
@@ -3587,7 +3532,6 @@ try {
 
 
 # **postGamificationProfileMetricLink**
-
 
 
 > [Metric](Metric) postGamificationProfileMetricLink(sourceProfileId, sourceMetricId, body)
@@ -3653,7 +3597,6 @@ try {
 # **postGamificationProfileMetrics**
 
 
-
 > [Metric](Metric) postGamificationProfileMetrics(profileId, body)
 
 Creates a gamified metric with a given metric definition and metric objective under in a performance profile
@@ -3713,7 +3656,6 @@ try {
 
 
 # **postGamificationProfiles**
-
 
 
 > [PerformanceProfile](PerformanceProfile) postGamificationProfiles(body, copyMetrics)
@@ -3777,7 +3719,6 @@ try {
 # **postGamificationProfilesUserQuery**
 
 
-
 > [UserProfilesInDateRange](UserProfilesInDateRange) postGamificationProfilesUserQuery(userId, body)
 
 Query performance profiles in date range for a user
@@ -3839,7 +3780,6 @@ try {
 # **postGamificationProfilesUsersMeQuery**
 
 
-
 > [UserProfilesInDateRange](UserProfilesInDateRange) postGamificationProfilesUsersMeQuery(body)
 
 Query performance profiles in date range for the current user
@@ -3896,7 +3836,6 @@ try {
 
 
 # **putGamificationProfile**
-
 
 
 > [PerformanceProfile](PerformanceProfile) putGamificationProfile(profileId, body)
@@ -3958,7 +3897,6 @@ try {
 
 
 # **putGamificationProfileMetric**
-
 
 
 > [Metric](Metric) putGamificationProfileMetric(profileId, metricId, body)
@@ -4024,7 +3962,6 @@ try {
 # **putGamificationStatus**
 
 
-
 > [GamificationStatus](GamificationStatus) putGamificationStatus(status)
 
 Update gamification activation status
@@ -4081,4 +4018,4 @@ try {
 [**GamificationStatus**](GamificationStatus)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -8,9 +8,8 @@
 | **success** | **Integer** | Number of imported articles. |  |
 | **failure** | **Integer** | Number of articles failed to import. |  |
 | **errors** | [**List&lt;ErrorBody&gt;**](ErrorBody) | Error information about the failures. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

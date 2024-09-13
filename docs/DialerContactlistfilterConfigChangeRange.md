@@ -11,9 +11,8 @@
 | **maxInclusive** | **Boolean** | Whether or not to include the maximum in the range |  [optional] |
 | **inSet** | **List&lt;String&gt;** | Elements that apply to the IN operator |  [optional] |
 | **additionalProperties** | **Map&lt;String, Object&gt;** |  |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

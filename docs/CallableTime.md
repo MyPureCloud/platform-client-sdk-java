@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **timeSlots** | [**List&lt;CampaignTimeSlot&gt;**](CampaignTimeSlot) | The time intervals for which it is acceptable to place outbound calls. |  |
 | **timeZoneId** | **String** | The time zone for the time slots; for example, Africa/Abidjan |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

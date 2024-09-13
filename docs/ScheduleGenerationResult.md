@@ -10,9 +10,8 @@
 | **messageCount** | **Integer** | The number of schedule generation messages for this schedule generation run |  [optional] |
 | **messages** | [**List&lt;ScheduleGenerationMessage&gt;**](ScheduleGenerationMessage) | User facing messages related to the schedule generation run |  [optional] |
 | **messageSeverities** | [**List&lt;SchedulerMessageTypeSeverity&gt;**](SchedulerMessageTypeSeverity) | The list of messages by severity in this schedule generation run |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

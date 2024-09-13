@@ -16,7 +16,6 @@
 | **outputData** | **Map&lt;String, Object&gt;** | List of the flow's output variables, if any. Output variables are only supplied for Completed flows. |  [optional] |
 | **conversation** | [**DomainEntityRef**](DomainEntityRef) | The conversation to which this Flow execution is related |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -30,9 +29,8 @@
 | TERMINATED | &quot;TERMINATED&quot; | 
 | COMPLETED | &quot;COMPLETED&quot; | 
 | FAILED | &quot;FAILED&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

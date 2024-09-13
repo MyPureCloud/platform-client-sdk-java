@@ -28,7 +28,6 @@
 | **conversationsValidCount** | **Integer** | Number of conversations/recordings/transcripts that were found valid for mining purposes. |  [optional] |
 | **getminedItemCount** | **Integer** | Number of intents or topics based on the miner type. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: LanguageEnum
@@ -49,7 +48,6 @@
 | PT_PT | &quot;pt-pt&quot; | 
 | PT_BR | &quot;pt-br&quot; | 
 | IT_IT | &quot;it-it&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: MinerTypeEnum
@@ -59,7 +57,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INTENT | &quot;Intent&quot; | 
 | TOPIC | &quot;Topic&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -85,7 +82,6 @@
 | MININGERROR | &quot;MiningError&quot; | 
 | MODELVALIDATIONERROR | &quot;ModelValidationError&quot; | 
 | DELETED | &quot;Deleted&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: MediaTypeEnum
@@ -97,7 +93,6 @@
 | CALL | &quot;Call&quot; | 
 | MESSAGE | &quot;Message&quot; | 
 | EMAIL | &quot;Email&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ParticipantTypeEnum
@@ -108,9 +103,8 @@
 | CUSTOMER | &quot;Customer&quot; | 
 | AGENT | &quot;Agent&quot; | 
 | BOTH | &quot;Both&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -15,7 +15,6 @@
 | **dateCreated** | [**Date**](Date) | Timestamp indicating when the session was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **dateCompleted** | [**Date**](Date) | Timestamp indicating when the session was completed. Note: The 'interval' query param uses this timestamp to filter the output. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **conversation** | [**AddressableEntityRef**](AddressableEntityRef) | The conversation details, across potentially multiple Bot Flow sessions. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: BotResultEnum
@@ -34,7 +33,6 @@
 | DISCONNECTERROR | &quot;DisconnectError&quot; | 
 | DISCONNECTRECOGNITIONFAILURE | &quot;DisconnectRecognitionFailure&quot; | 
 | TRANSFERTOACD | &quot;TransferToACD&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: BotResultCategoryEnum
@@ -51,9 +49,8 @@
 | BOTDISCONNECT | &quot;BotDisconnect&quot; | 
 | SESSIONEXPIRED | &quot;SessionExpired&quot; | 
 | TRANSFER | &quot;Transfer&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

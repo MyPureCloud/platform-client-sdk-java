@@ -14,7 +14,6 @@
 | **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Metadata for this forecast |  [optional] |
 | **canUseForScheduling** | **Boolean** | Whether this forecast can be used for scheduling |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: CreationMethodEnum
@@ -26,9 +25,8 @@
 | IMPORTEDHISTORICALWEIGHTEDAVERAGE | &quot;ImportedHistoricalWeightedAverage&quot; | 
 | HISTORICALWEIGHTEDAVERAGE | &quot;HistoricalWeightedAverage&quot; | 
 | ADVANCED | &quot;Advanced&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

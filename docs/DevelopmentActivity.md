@@ -22,7 +22,6 @@
 | **facilitator** | [**UserReference**](UserReference) | Facilitator of the activity |  [optional] |
 | **attendees** | [**List&lt;UserReference&gt;**](UserReference) | List of users attending the activity |  [optional] |
 | **isOverdue** | **Boolean** | Indicates if the activity is overdue |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ArchivalModeEnum
@@ -32,7 +31,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | GRACEFUL | &quot;Graceful&quot; | 
 | IMMEDIATE | &quot;Immediate&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -46,7 +44,6 @@
 | ASSESSMENT | &quot;Assessment&quot; | 
 | EXTERNAL | &quot;External&quot; | 
 | NATIVE | &quot;Native&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: StatusEnum
@@ -59,9 +56,8 @@
 | COMPLETED | &quot;Completed&quot; | 
 | INVALIDSCHEDULE | &quot;InvalidSchedule&quot; | 
 | NOTCOMPLETED | &quot;NotCompleted&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

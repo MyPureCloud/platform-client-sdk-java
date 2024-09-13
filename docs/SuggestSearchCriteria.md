@@ -13,7 +13,6 @@
 | **group** | [**List&lt;SuggestSearchCriteria&gt;**](SuggestSearchCriteria) | Groups multiple conditions |  [optional] |
 | **dateFormat** | **String** | Set date format for criteria values when using date range search type.  Supports Java date format syntax, example yyyy-MM-dd'T'HH:mm:ss.SSSX. |  [optional] |
 | **fields** | **List&lt;String&gt;** | Field names to search against |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: OperatorEnum
@@ -24,9 +23,8 @@
 | AND | &quot;AND&quot; | 
 | OR | &quot;OR&quot; | 
 | NOT | &quot;NOT&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

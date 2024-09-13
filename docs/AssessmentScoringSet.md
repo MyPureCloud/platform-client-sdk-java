@@ -13,7 +13,6 @@
 | **comments** | **String** | Comments provided for these answers. |  [optional] |
 | **agentComments** | **String** | Comments provided by agent. |  [optional] |
 | **isPassed** | **Boolean** | True if the assessment was passed |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: FailureReasonsEnum
@@ -23,9 +22,8 @@
 | SCORE | &quot;Score&quot; |
 | CRITICALSCORE | &quot;CriticalScore&quot; |
 | KILLQUESTION | &quot;KillQuestion&quot; |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -11,9 +11,8 @@
 | **inputData** | [**TextBotInputOutputData**](TextBotInputOutputData) | Input values to the flow. Valid values are defined by the flow's input JSON schema. |  [optional] |
 | **channel** | [**TextBotChannel**](TextBotChannel) | Channel information relevant to the bot flow. |  |
 | **language** | **String** | The language that the bot will use in the session. Validated against list of supported languages and if the value is omitted or is invalid, the default language will be used. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -8,9 +8,8 @@
 | **message** | **String** | The body of the message |  |
 | **mentions** | **List&lt;String&gt;** | user ids to be notified |  [optional] |
 | **threadId** | **String** | The thread id of the message |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -15,7 +15,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteWidgetsDeployment**
 
 
-
 > Void deleteWidgetsDeployment(deploymentId)
 
 Delete a Widget deployment
@@ -73,7 +72,6 @@ null (empty response body)
 
 
 # **getWidgetsDeployment**
-
 
 
 > [WidgetDeployment](WidgetDeployment) getWidgetsDeployment(deploymentId)
@@ -136,7 +134,6 @@ try {
 # **getWidgetsDeployments**
 
 
-
 > [WidgetDeploymentEntityListing](WidgetDeploymentEntityListing) getWidgetsDeployments()
 
 List Widget deployments
@@ -191,7 +188,6 @@ This endpoint does not require any parameters.
 
 
 # **postWidgetsDeployments**
-
 
 
 > [WidgetDeployment](WidgetDeployment) postWidgetsDeployments(body)
@@ -254,7 +250,6 @@ try {
 # **putWidgetsDeployment**
 
 
-
 > [WidgetDeployment](WidgetDeployment) putWidgetsDeployment(deploymentId, body)
 
 Update a Widget deployment
@@ -314,4 +309,4 @@ try {
 [**WidgetDeployment**](WidgetDeployment)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

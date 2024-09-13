@@ -11,9 +11,8 @@
 | **autoAnswerAlertToneSeconds** | **Double** | How long to play the alerting tone for an auto-answer interaction |  [optional] |
 | **manualAnswerAlertToneSeconds** | **Double** | How long to play the alerting tone for a manual-answer interaction |  [optional] |
 | **subTypeSettings** | [**Map&lt;String, BaseMediaSettings&gt;**](BaseMediaSettings) | Map of media subtype to media subtype specific settings. |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

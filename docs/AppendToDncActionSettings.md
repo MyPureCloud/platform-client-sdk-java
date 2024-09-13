@@ -8,7 +8,6 @@
 | **expire** | **Boolean** | Whether to expire the record appended to the DNC list. |  |
 | **expirationDuration** | **String** | If 'expire' is set to true, how long to keep the record. |  [optional] |
 | **listType** | [**ListTypeEnum**](#Enum--ListTypeEnum) | The Dnc List Type to append entries to |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ListTypeEnum
@@ -18,9 +17,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | RDS | &quot;Rds&quot; | 
 | RDSCUSTOM | &quot;RdsCustom&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

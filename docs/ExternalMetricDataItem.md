@@ -12,7 +12,6 @@
 | **value** | [**BigDecimal**](BigDecimal) | The value of the metric data. When value is null, the metric data will be deleted. |  |
 | **count** | **Integer** | The number of data points. The default value is 0 when type is Cumulative and the metric data already exists, otherwise 1. When total count reaches 0, the metric data will be deleted. |  [optional] |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of the metric data. The default value is Total. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -22,9 +21,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | TOTAL | &quot;Total&quot; | 
 | CUMULATIVE | &quot;Cumulative&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

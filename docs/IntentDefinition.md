@@ -11,9 +11,8 @@
 | **entityNameReferences** | **List&lt;String&gt;** | The references for the named entity used in this intent.This field is mutually exclusive with entityTypeBindings |  [optional] |
 | **utterances** | [**List&lt;NluUtterance&gt;**](NluUtterance) | The utterances that act as training phrases for the intent. |  |
 | **additionalLanguages** | [**Map&lt;String, AdditionalLanguagesIntent&gt;**](AdditionalLanguagesIntent) | Additional languages for intents |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

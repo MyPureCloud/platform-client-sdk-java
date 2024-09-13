@@ -16,7 +16,6 @@
 | **markedAsRead** | **Boolean** | Whether this notification has been marked \"read\" |  |
 | **agentNotification** | **Boolean** | Whether this notification is for an agent |  [optional] |
 | **otherNotificationIdsInGroup** | **List&lt;String&gt;** | Other notification IDs in group.  This field is only populated in real-time notifications |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -28,9 +27,8 @@
 | SHIFTTRADE | &quot;ShiftTrade&quot; | 
 | TIMEOFFREQUEST | &quot;TimeOffRequest&quot; | 
 | ALTERNATIVESHIFT | &quot;AlternativeShift&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

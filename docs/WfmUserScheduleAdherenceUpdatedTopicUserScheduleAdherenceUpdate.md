@@ -23,7 +23,6 @@
 | **activeQueues** | [**List&lt;WfmUserScheduleAdherenceUpdatedTopicQueueReference&gt;**](WfmUserScheduleAdherenceUpdatedTopicQueueReference) |  |  [optional] |
 | **activeQueuesModifiedTime** | [**Date**](Date) |  |  [optional] |
 | **removedFromManagementUnit** | **Boolean** |  |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: RoutingStatusEnum
@@ -38,7 +37,6 @@
 | NOT_RESPONDING | &quot;NOT_RESPONDING&quot; | 
 | COMMUNICATING | &quot;COMMUNICATING&quot; | 
 | OFFLINE | &quot;OFFLINE&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: AdherenceStateEnum
@@ -52,9 +50,8 @@
 | UNKNOWN | &quot;Unknown&quot; | 
 | IGNORED | &quot;Ignored&quot; | 
 | EXPLAINED | &quot;Explained&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

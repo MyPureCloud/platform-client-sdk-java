@@ -6,7 +6,6 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **integrationStatus** | [**IntegrationStatusEnum**](#Enum--IntegrationStatusEnum) | The integration status value for the time off request |  |
-{: class="table table-striped"}
 
 
 ## Enum: IntegrationStatusEnum
@@ -18,9 +17,8 @@
 | ERROR | &quot;Error&quot; | 
 | AUTOMATICALLYCOMPLETE | &quot;AutomaticallyComplete&quot; | 
 | MANUALLYCOMPLETE | &quot;ManuallyComplete&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

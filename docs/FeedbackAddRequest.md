@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **summary** | **String** | Agent's summary for the conversation |  |
 | **rating** | [**RatingEnum**](#Enum--RatingEnum) | Agent’s rating for the system-generated summary. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: RatingEnum
@@ -17,9 +16,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | POSITIVE | &quot;Positive&quot; | 
 | NEGATIVE | &quot;Negative&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -52,7 +52,6 @@
 | **startAcwTime** | [**Date**](Date) | The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **endAcwTime** | [**Date**](Date) | The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **bargedParticipantId** | **String** | If this participant barged in a participant's call, then this will be the id of the targeted participant. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: WrapupPromptEnum
@@ -65,7 +64,6 @@
 | AGENTREQUESTED | &quot;agentRequested&quot; | 
 | TIMEOUT | &quot;timeout&quot; | 
 | FORCEDTIMEOUT | &quot;forcedTimeout&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: ScreenRecordingStateEnum
@@ -79,7 +77,6 @@
 | STOPPED | &quot;stopped&quot; | 
 | ERROR | &quot;error&quot; | 
 | TIMEOUT | &quot;timeout&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: FlaggedReasonEnum
@@ -88,9 +85,8 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | GENERAL | &quot;general&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

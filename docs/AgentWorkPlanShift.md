@@ -18,9 +18,8 @@
 | **minimumPaidTimeMinutes** | **Integer** | Minimum paid time in minutes configured for the shift. Used if flexiblePaidTime == true |  |
 | **maximumPaidTimeMinutes** | **Integer** | Maximum paid time in minutes configured for the shift. Used if flexiblePaidTime == true |  |
 | **activities** | [**List&lt;AgentWorkPlanActivity&gt;**](AgentWorkPlanActivity) | Activities configured for this shift |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

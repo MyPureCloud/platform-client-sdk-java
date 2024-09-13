@@ -12,9 +12,8 @@
 | **percentageBenefit** | **Double** | The percentage benefit on this queue for the duration of the comparison period |  [optional] |
 | **kpiResults** | [**List&lt;KpiResult&gt;**](KpiResult) | KPI results for each metric |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

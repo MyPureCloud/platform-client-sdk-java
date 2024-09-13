@@ -14,7 +14,6 @@
 | **direction** | [**DirectionEnum**](#Enum--DirectionEnum) | The direction of the message.  Direction is always from the perspective of the Genesys Cloud platform.  An Inbound message is one sent from a guest to the Genesys Cloud Platform.  An Outbound message is one sent from the Genesys Cloud Platform to a guest. |  [optional] |
 | **originatingEntity** | [**OriginatingEntityEnum**](#Enum--OriginatingEntityEnum) | Specifies if this message was sent by a human agent or bot. The platform may use this to apply appropriate provider policies. |  [optional] |
 | **metadata** | **Map&lt;String, String&gt;** | Additional metadata about this message. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: TypeEnum
@@ -26,7 +25,6 @@
 | STRUCTURED | &quot;Structured&quot; | 
 | RECEIPT | &quot;Receipt&quot; | 
 | EVENT | &quot;Event&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: DirectionEnum
@@ -36,7 +34,6 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | INBOUND | &quot;Inbound&quot; | 
 | OUTBOUND | &quot;Outbound&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: OriginatingEntityEnum
@@ -46,9 +43,8 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | HUMAN | &quot;Human&quot; | 
 | BOT | &quot;Bot&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

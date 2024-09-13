@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **managementUnitIds** | **List&lt;String&gt;** | The IDs of management units to which this time-off plan applies. This must not be set if staffingGroupIds is populated |  [optional] |
 | **staffingGroupIds** | **List&lt;String&gt;** | The IDs of staffing groups to which this time-off plan applies. This must not be set if managementUnitIds is populated |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

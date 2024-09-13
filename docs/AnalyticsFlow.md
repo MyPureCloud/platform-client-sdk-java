@@ -20,7 +20,6 @@
 | **transferTargetName** | **String** | The name of a flow transfer target |  [optional] |
 | **transferType** | **String** | The type of transfer for flows that ended with a transfer |  [optional] |
 | **outcomes** | [**List&lt;AnalyticsFlowOutcome&gt;**](AnalyticsFlowOutcome) | Flow outcomes |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: EntryTypeEnum
@@ -33,7 +32,6 @@
 | DNIS | &quot;dnis&quot; | 
 | FLOW | &quot;flow&quot; | 
 | OUTBOUND | &quot;outbound&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: FlowTypeEnum
@@ -60,9 +58,8 @@
 | VOICESURVEY | &quot;VOICESURVEY&quot; | 
 | WORKFLOW | &quot;WORKFLOW&quot; | 
 | WORKITEM | &quot;WORKITEM&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

@@ -40,7 +40,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteScimUser**
 
 
-
 > Empty deleteScimUser(userId, ifMatch)
 
 Delete a user
@@ -102,7 +101,6 @@ try {
 # **deleteScimV2User**
 
 
-
 > Empty deleteScimV2User(userId, ifMatch)
 
 Delete a user
@@ -162,7 +160,6 @@ try {
 
 
 # **getScimGroup**
-
 
 
 > [ScimV2Group](ScimV2Group) getScimGroup(groupId, attributes, excludedAttributes, ifNoneMatch)
@@ -228,7 +225,6 @@ try {
 
 
 # **getScimGroups**
-
 
 
 > [ScimGroupListResponse](ScimGroupListResponse) getScimGroups(startIndex, count, attributes, excludedAttributes, filter)
@@ -298,7 +294,6 @@ try {
 # **getScimResourcetype**
 
 
-
 > [ScimConfigResourceType](ScimConfigResourceType) getScimResourcetype(resourceType)
 
 Get a resource type
@@ -357,7 +352,6 @@ try {
 # **getScimResourcetypes**
 
 
-
 > [ScimConfigResourceTypesListResponse](ScimConfigResourceTypesListResponse) getScimResourcetypes()
 
 Get a list of resource types
@@ -410,7 +404,6 @@ This endpoint does not require any parameters.
 
 
 # **getScimSchema**
-
 
 
 > [ScimV2SchemaDefinition](ScimV2SchemaDefinition) getScimSchema(schemaId)
@@ -471,7 +464,6 @@ try {
 # **getScimSchemas**
 
 
-
 > [ScimV2SchemaListResponse](ScimV2SchemaListResponse) getScimSchemas(filter)
 
 Get a list of SCIM schemas
@@ -530,7 +522,6 @@ try {
 # **getScimServiceproviderconfig**
 
 
-
 > [ScimServiceProviderConfig](ScimServiceProviderConfig) getScimServiceproviderconfig(ifNoneMatch)
 
 Get a service provider's configuration
@@ -587,7 +578,6 @@ try {
 
 
 # **getScimUser**
-
 
 
 > [ScimV2User](ScimV2User) getScimUser(userId, attributes, excludedAttributes, ifNoneMatch)
@@ -652,7 +642,6 @@ try {
 
 
 # **getScimUsers**
-
 
 
 > [ScimUserListResponse](ScimUserListResponse) getScimUsers(startIndex, count, attributes, excludedAttributes, filter)
@@ -723,7 +712,6 @@ try {
 # **getScimV2Group**
 
 
-
 > [ScimV2Group](ScimV2Group) getScimV2Group(groupId, attributes, excludedAttributes, ifNoneMatch)
 
 Get a group
@@ -787,7 +775,6 @@ try {
 
 
 # **getScimV2Groups**
-
 
 
 > [ScimGroupListResponse](ScimGroupListResponse) getScimV2Groups(filter, startIndex, count, attributes, excludedAttributes)
@@ -857,7 +844,6 @@ try {
 # **getScimV2Resourcetype**
 
 
-
 > [ScimConfigResourceType](ScimConfigResourceType) getScimV2Resourcetype(resourceType)
 
 Get a resource type
@@ -916,7 +902,6 @@ try {
 # **getScimV2Resourcetypes**
 
 
-
 > [ScimConfigResourceTypesListResponse](ScimConfigResourceTypesListResponse) getScimV2Resourcetypes()
 
 Get a list of resource types
@@ -969,7 +954,6 @@ This endpoint does not require any parameters.
 
 
 # **getScimV2Schema**
-
 
 
 > [ScimV2SchemaDefinition](ScimV2SchemaDefinition) getScimV2Schema(schemaId)
@@ -1030,7 +1014,6 @@ try {
 # **getScimV2Schemas**
 
 
-
 > [ScimV2SchemaListResponse](ScimV2SchemaListResponse) getScimV2Schemas(filter)
 
 Get a list of SCIM schemas
@@ -1089,7 +1072,6 @@ try {
 # **getScimV2Serviceproviderconfig**
 
 
-
 > [ScimServiceProviderConfig](ScimServiceProviderConfig) getScimV2Serviceproviderconfig(ifNoneMatch)
 
 Get a service provider's configuration
@@ -1146,7 +1128,6 @@ try {
 
 
 # **getScimV2User**
-
 
 
 > [ScimV2User](ScimV2User) getScimV2User(userId, attributes, excludedAttributes, ifNoneMatch)
@@ -1211,7 +1192,6 @@ try {
 
 
 # **getScimV2Users**
-
 
 
 > [ScimUserListResponse](ScimUserListResponse) getScimV2Users(startIndex, count, attributes, excludedAttributes, filter)
@@ -1282,7 +1262,6 @@ try {
 # **patchScimGroup**
 
 
-
 > [ScimV2Group](ScimV2Group) patchScimGroup(groupId, body, ifMatch)
 
 Modify a group
@@ -1344,7 +1323,6 @@ try {
 
 
 # **patchScimUser**
-
 
 
 > [ScimV2User](ScimV2User) patchScimUser(userId, body, ifMatch)
@@ -1416,7 +1394,6 @@ try {
 # **patchScimV2Group**
 
 
-
 > [ScimV2Group](ScimV2Group) patchScimV2Group(groupId, body, ifMatch)
 
 Modify a group
@@ -1478,7 +1455,6 @@ try {
 
 
 # **patchScimV2User**
-
 
 
 > [ScimV2User](ScimV2User) patchScimV2User(userId, body, ifMatch)
@@ -1550,7 +1526,6 @@ try {
 # **postScimUsers**
 
 
-
 > [ScimV2User](ScimV2User) postScimUsers(body)
 
 Create a user
@@ -1613,7 +1588,6 @@ try {
 
 
 # **postScimV2Users**
-
 
 
 > [ScimV2User](ScimV2User) postScimV2Users(body)
@@ -1680,7 +1654,6 @@ try {
 # **putScimGroup**
 
 
-
 > [ScimV2Group](ScimV2Group) putScimGroup(groupId, body, ifMatch)
 
 Replace a group
@@ -1742,7 +1715,6 @@ try {
 
 
 # **putScimUser**
-
 
 
 > [ScimV2User](ScimV2User) putScimUser(userId, body, ifMatch)
@@ -1814,7 +1786,6 @@ try {
 # **putScimV2Group**
 
 
-
 > [ScimV2Group](ScimV2Group) putScimV2Group(groupId, body, ifMatch)
 
 Replace a group
@@ -1876,7 +1847,6 @@ try {
 
 
 # **putScimV2User**
-
 
 
 > [ScimV2User](ScimV2User) putScimV2User(userId, body, ifMatch)
@@ -1945,4 +1915,4 @@ try {
 [**ScimV2User**](ScimV2User)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

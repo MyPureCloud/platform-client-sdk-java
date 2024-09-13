@@ -16,7 +16,6 @@
 | **dayMetrics** | [**List&lt;HistoricalAdherenceDayMetrics&gt;**](HistoricalAdherenceDayMetrics) | Adherence and conformance metrics for days in query range |  [optional] |
 | **actualsEndDate** | [**Date**](Date) | The end date of the actual activities in ISO-8601 format. |  [optional] |
 | **actuals** | [**List&lt;HistoricalAdherenceActuals&gt;**](HistoricalAdherenceActuals) | List of actual activity with offset for this user |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: ImpactEnum
@@ -28,9 +27,8 @@
 | NEGATIVE | &quot;Negative&quot; | 
 | NEUTRAL | &quot;Neutral&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

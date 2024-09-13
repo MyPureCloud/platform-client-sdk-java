@@ -34,7 +34,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 # **deleteAlertingAlert**
 
 
-
 > Void deleteAlertingAlert(alertId)
 
 Delete an alert
@@ -92,7 +91,9 @@ null (empty response body)
 
 # **deleteAlertingInteractionstatsAlert**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Void deleteAlertingInteractionstatsAlert(alertId)
 
@@ -153,7 +154,9 @@ null (empty response body)
 
 # **deleteAlertingInteractionstatsRule**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Void deleteAlertingInteractionstatsRule(ruleId)
 
@@ -215,7 +218,6 @@ null (empty response body)
 # **deleteAlertingRule**
 
 
-
 > Void deleteAlertingRule(ruleId)
 
 Delete a rule.
@@ -272,7 +274,6 @@ null (empty response body)
 
 
 # **getAlertingAlert**
-
 
 
 > [CommonAlert](CommonAlert) getAlertingAlert(alertId)
@@ -333,7 +334,9 @@ try {
 
 # **getAlertingAlertsActive**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [ActiveAlertCount](ActiveAlertCount) getAlertingAlertsActive()
 
@@ -390,7 +393,9 @@ This endpoint does not require any parameters.
 
 # **getAlertingInteractionstatsAlert**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [InteractionStatsAlert](InteractionStatsAlert) getAlertingInteractionstatsAlert(alertId, expand)
 
@@ -454,7 +459,9 @@ try {
 
 # **getAlertingInteractionstatsAlerts**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [InteractionStatsAlertContainer](InteractionStatsAlertContainer) getAlertingInteractionstatsAlerts(expand)
 
@@ -516,7 +523,9 @@ try {
 
 # **getAlertingInteractionstatsAlertsUnread**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [UnreadMetric](UnreadMetric) getAlertingInteractionstatsAlertsUnread()
 
@@ -573,7 +582,9 @@ This endpoint does not require any parameters.
 
 # **getAlertingInteractionstatsRule**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [InteractionStatsRule](InteractionStatsRule) getAlertingInteractionstatsRule(ruleId, expand)
 
@@ -637,7 +648,9 @@ try {
 
 # **getAlertingInteractionstatsRules**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [InteractionStatsRuleContainer](InteractionStatsRuleContainer) getAlertingInteractionstatsRules(expand)
 
@@ -700,7 +713,6 @@ try {
 # **getAlertingRule**
 
 
-
 > [CommonRule](CommonRule) getAlertingRule(ruleId)
 
 Get a rule.
@@ -758,7 +770,6 @@ try {
 
 
 # **patchAlertingAlert**
-
 
 
 > [CommonAlert](CommonAlert) patchAlertingAlert(alertId, body)
@@ -824,7 +835,6 @@ try {
 # **patchAlertingAlertsBulk**
 
 
-
 > [BulkResponse](BulkResponse) patchAlertingAlertsBulk(body)
 
 Bulk alert updates
@@ -882,7 +892,6 @@ try {
 
 
 # **patchAlertingRulesBulk**
-
 
 
 > [BulkResponse](BulkResponse) patchAlertingRulesBulk(body)
@@ -944,7 +953,6 @@ try {
 # **postAlertingAlertsQuery**
 
 
-
 > [AlertListing](AlertListing) postAlertingAlertsQuery(body)
 
 Gets a paged list of alerts. The max page size is 50
@@ -1003,7 +1011,9 @@ try {
 
 # **postAlertingInteractionstatsRules**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [InteractionStatsRule](InteractionStatsRule) postAlertingInteractionstatsRules(body, expand)
 
@@ -1068,7 +1078,6 @@ try {
 # **postAlertingRules**
 
 
-
 > [CommonRule](CommonRule) postAlertingRules(body)
 
 Create a Rule.
@@ -1126,7 +1135,6 @@ try {
 
 
 # **postAlertingRulesBulkRemove**
-
 
 
 > [BulkResponse](BulkResponse) postAlertingRulesBulkRemove(body)
@@ -1188,7 +1196,6 @@ try {
 # **postAlertingRulesQuery**
 
 
-
 > [CommonRuleContainer](CommonRuleContainer) postAlertingRulesQuery(body)
 
 Get a paged list of rules.  The max size of the page is 50 items.
@@ -1246,7 +1253,6 @@ try {
 
 
 # **putAlertingAlert**
-
 
 
 > [UnreadStatus](UnreadStatus) putAlertingAlert(alertId, body)
@@ -1309,7 +1315,9 @@ try {
 
 # **putAlertingInteractionstatsAlert**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [UnreadStatus](UnreadStatus) putAlertingInteractionstatsAlert(alertId, body, expand)
 
@@ -1375,7 +1383,9 @@ try {
 
 # **putAlertingInteractionstatsRule**
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [InteractionStatsRule](InteractionStatsRule) putAlertingInteractionstatsRule(ruleId, body, expand)
 
@@ -1442,7 +1452,6 @@ try {
 # **putAlertingRule**
 
 
-
 > [CommonRule](CommonRule) putAlertingRule(ruleId, body)
 
 Update a rule
@@ -1501,4 +1510,4 @@ try {
 [**CommonRule**](CommonRule)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

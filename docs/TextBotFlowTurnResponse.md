@@ -12,7 +12,6 @@
 | **nextActionDisconnect** | [**TextBotDisconnectAction**](TextBotDisconnectAction) | The next action directive for this turn if it is a Disconnect type. |  [optional] |
 | **nextActionWaitForInput** | [**TextBotWaitForInputAction**](TextBotWaitForInputAction) | The next action directive for this turn if it is a WaitForInput type. |  [optional] |
 | **nextActionExit** | [**TextBotExitAction**](TextBotExitAction) | The next action directive for this turn if it is an Exit type. |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: NextActionTypeEnum
@@ -24,9 +23,8 @@
 | DISCONNECT | &quot;Disconnect&quot; | 
 | WAITFORINPUT | &quot;WaitForInput&quot; | 
 | EXIT | &quot;Exit&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

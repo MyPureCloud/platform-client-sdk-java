@@ -10,9 +10,8 @@
 | **associatedValue** | [**BigDecimal**](BigDecimal) | The total value associated with the customer's outcome. |  |
 | **touchpoints** | [**List&lt;Touchpoint&gt;**](Touchpoint) | List of interactions that led to this outcome being achieved. |  |
 | **createdDate** | [**Date**](Date) | Date outcome was achieved. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

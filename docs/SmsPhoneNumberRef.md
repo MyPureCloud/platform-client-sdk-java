@@ -7,9 +7,8 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **phoneNumber** | **String** | A phone number provisioned for SMS communications in E.164 format. E.g. +13175555555 or +34234234234 |  |
 | **selfUri** | **String** |  |  [optional] |
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_

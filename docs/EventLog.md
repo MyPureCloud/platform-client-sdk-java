@@ -15,7 +15,6 @@
 | **correlationId** | **String** |  |  [optional] |
 | **eventMessage** | [**EventMessage**](EventMessage) |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
-{: class="table table-striped"}
 
 
 ## Enum: LevelEnum
@@ -26,7 +25,6 @@
 | INFO | &quot;INFO&quot; | 
 | WARNING | &quot;WARNING&quot; | 
 | ERROR | &quot;ERROR&quot; | 
-{: class="table table-striped"}
 
 
 ## Enum: CategoryEnum
@@ -52,9 +50,8 @@
 | SCHEDULE | &quot;SCHEDULE&quot; | 
 | MESSAGING_CAMPAIGN_SCHEDULE | &quot;MESSAGING_CAMPAIGN_SCHEDULE&quot; | 
 | EMAIL_CAMPAIGN_SCHEDULE | &quot;EMAIL_CAMPAIGN_SCHEDULE&quot; | 
-{: class="table table-striped"}
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:208.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_
