@@ -52,8 +52,9 @@ Delete a document.
 
 Wraps DELETE /api/v2/contentmanagement/documents/{documentId}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* content_management_user
 
 ### Example
 
@@ -406,8 +407,9 @@ Get a document.
 
 Wraps GET /api/v2/contentmanagement/documents/{documentId}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* content_management_user
 
 ### Example
 
@@ -466,8 +468,9 @@ Download a document.
 
 Wraps GET /api/v2/contentmanagement/documents/{documentId}/content  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* content_management_user
 
 ### Example
 
@@ -1595,8 +1598,9 @@ Update a document.
 
 Wraps POST /api/v2/contentmanagement/documents/{documentId}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* content_management_user
 
 ### Example
 
@@ -1659,8 +1663,9 @@ Replace the contents of a document.
 
 Wraps POST /api/v2/contentmanagement/documents/{documentId}/content  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* content_management_user
 
 ### Example
 
@@ -2258,4 +2263,4 @@ try {
 [**TagValue**](TagValue)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.1.0_

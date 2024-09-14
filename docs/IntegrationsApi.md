@@ -35,6 +35,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getIntegrationsCredential**](IntegrationsApi#getIntegrationsCredential) | Get a single credential with sensitive fields redacted |
 | [**getIntegrationsCredentials**](IntegrationsApi#getIntegrationsCredentials) | List multiple sets of credentials |
 | [**getIntegrationsCredentialsTypes**](IntegrationsApi#getIntegrationsCredentialsTypes) | List all credential types |
+| [**getIntegrationsSpeechAudioconnector**](IntegrationsApi#getIntegrationsSpeechAudioconnector) | Get a list of Audio Connector integrations |
+| [**getIntegrationsSpeechAudioconnectorIntegrationId**](IntegrationsApi#getIntegrationsSpeechAudioconnectorIntegrationId) | Get an Audio Connector integration |
 | [**getIntegrationsSpeechDialogflowAgent**](IntegrationsApi#getIntegrationsSpeechDialogflowAgent) | Get details about a Dialogflow agent |
 | [**getIntegrationsSpeechDialogflowAgents**](IntegrationsApi#getIntegrationsSpeechDialogflowAgents) | Get a list of Dialogflow agents in the customers' Google accounts |
 | [**getIntegrationsSpeechDialogflowcxAgent**](IntegrationsApi#getIntegrationsSpeechDialogflowcxAgent) | Get details about a Dialogflow CX agent |
@@ -2049,6 +2051,126 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**CredentialTypeListing**](CredentialTypeListing)
+
+
+# **getIntegrationsSpeechAudioconnector**
+
+
+> [AudioConnectorIntegrationEntityListing](AudioConnectorIntegrationEntityListing) getIntegrationsSpeechAudioconnector(pageNumber, pageSize)
+
+Get a list of Audio Connector integrations
+
+Wraps GET /api/v2/integrations/speech/audioconnector  
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+try {
+    AudioConnectorIntegrationEntityListing result = apiInstance.getIntegrationsSpeechAudioconnector(pageNumber, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsSpeechAudioconnector");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AudioConnectorIntegrationEntityListing**](AudioConnectorIntegrationEntityListing)
+
+
+# **getIntegrationsSpeechAudioconnectorIntegrationId**
+
+
+> [AudioConnectorIntegration](AudioConnectorIntegration) getIntegrationsSpeechAudioconnectorIntegrationId(integrationId)
+
+Get an Audio Connector integration
+
+Wraps GET /api/v2/integrations/speech/audioconnector/{integrationId}  
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String integrationId = "integrationId_example"; // String | The integration ID
+try {
+    AudioConnectorIntegration result = apiInstance.getIntegrationsSpeechAudioconnectorIntegrationId(integrationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsSpeechAudioconnectorIntegrationId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| The integration ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AudioConnectorIntegration**](AudioConnectorIntegration)
 
 
 # **getIntegrationsSpeechDialogflowAgent**
@@ -5289,4 +5411,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.1.0_

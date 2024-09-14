@@ -213,8 +213,6 @@ null (empty response body)
 
 Delete a grammar.
 
-deleteArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/architect/grammars/{grammarId}  
 
 Requires ALL permissions: 
@@ -273,8 +271,6 @@ try {
 > Void deleteArchitectGrammarLanguage(grammarId, languageCode)
 
 Delete specified grammar language
-
-deleteArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/architect/grammars/{grammarId}/languages/{languageCode}  
 
@@ -336,8 +332,6 @@ null (empty response body)
 
 Clear the DTMF mode file for the grammar language if there is one
 
-deleteArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf  
 
 Requires ALL permissions: 
@@ -397,8 +391,6 @@ null (empty response body)
 > Void deleteArchitectGrammarLanguageFilesVoice(grammarId, languageCode)
 
 Clear the voice mode file for the grammar language if there is one
-
-deleteArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice  
 
@@ -2156,8 +2148,6 @@ Get a grammar
 
 Returns a specified grammar
 
-getArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/architect/grammars/{grammarId}  
 
 Requires ALL permissions: 
@@ -2218,8 +2208,6 @@ try {
 > [GrammarLanguage](GrammarLanguage) getArchitectGrammarLanguage(grammarId, languageCode)
 
 Get a grammar language.
-
-getArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/architect/grammars/{grammarId}/languages/{languageCode}  
 
@@ -2283,8 +2271,6 @@ try {
 Get a pageable list of grammars, filtered by query parameters
 
 Multiple IDs can be specified, in which case all matching grammars will be returned, and no other parameters will be evaluated.
-
-getArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/architect/grammars  
 
@@ -6035,8 +6021,6 @@ try {
 
 Updates a grammar
 
-patchArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PATCH /api/v2/architect/grammars/{grammarId}  
 
 Requires ALL permissions: 
@@ -6097,8 +6081,6 @@ try {
 > [GrammarLanguage](GrammarLanguage) patchArchitectGrammarLanguage(grammarId, languageCode, body)
 
 Updates a grammar language
-
-patchArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/architect/grammars/{grammarId}/languages/{languageCode}  
 
@@ -6339,8 +6321,6 @@ try {
 
 Creates a presigned URL for uploading a grammar DTMF mode file
 
-postArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf  
 
 Requires ALL permissions: 
@@ -6403,8 +6383,6 @@ try {
 > [UploadUrlResponse](UploadUrlResponse) postArchitectGrammarLanguageFilesVoice(grammarId, languageCode, body)
 
 Creates a presigned URL for uploading a grammar voice mode file
-
-postArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice  
 
@@ -6469,8 +6447,6 @@ try {
 
 Create a new language for a given grammar
 
-postArchitectGrammarLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/architect/grammars/{grammarId}/languages  
 
 Requires ALL permissions: 
@@ -6531,8 +6507,6 @@ try {
 > [Grammar](Grammar) postArchitectGrammars(body)
 
 Create a new grammar
-
-postArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/architect/grammars  
 
@@ -9168,4 +9142,4 @@ try {
 [**Operation**](Operation)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.1.0_
