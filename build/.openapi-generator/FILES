@@ -322,6 +322,8 @@ docs/AttributeDetailEventTopicCommunication.md
 docs/AttributeFilterItem.md
 docs/AtzmTimeSlot.md
 docs/AtzmTimeSlotWithTimeZone.md
+docs/AudioConnectorIntegration.md
+docs/AudioConnectorIntegrationEntityListing.md
 docs/AudioState.md
 docs/AudioUpdatedEvent.md
 docs/AuditApi.json
@@ -930,6 +932,7 @@ docs/ConversationContentLocation.md
 docs/ConversationContentNotificationTemplate.md
 docs/ConversationContentQuickReply.md
 docs/ConversationContentQuickReplyV2.md
+docs/ConversationContentReaction.md
 docs/ConversationContentStory.md
 docs/ConversationContentText.md
 docs/ConversationDeletionProtectionQuery.md
@@ -956,6 +959,9 @@ docs/ConversationEmailEventTopicUriReference.md
 docs/ConversationEmailEventTopicWrapup.md
 docs/ConversationEncryptionConfiguration.md
 docs/ConversationEncryptionConfigurationListing.md
+docs/ConversationEnrichment.md
+docs/ConversationEnrichmentLanguage.md
+docs/ConversationEnrichmentSentimentV2.md
 docs/ConversationEntityListing.md
 docs/ConversationEventCoBrowse.md
 docs/ConversationEventPresence.md
@@ -5551,6 +5557,8 @@ docs/getIntegrationsClientappsUnifiedcommunications-example.txt
 docs/getIntegrationsCredential-example.txt
 docs/getIntegrationsCredentials-example.txt
 docs/getIntegrationsCredentialsTypes-example.txt
+docs/getIntegrationsSpeechAudioconnector-example.txt
+docs/getIntegrationsSpeechAudioconnectorIntegrationId-example.txt
 docs/getIntegrationsSpeechDialogflowAgent-example.txt
 docs/getIntegrationsSpeechDialogflowAgents-example.txt
 docs/getIntegrationsSpeechDialogflowcxAgent-example.txt
@@ -8333,6 +8341,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetIntegrationsCredentialReques
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetIntegrationsCredentialsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetIntegrationsCredentialsTypesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetIntegrationsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetIntegrationsSpeechAudioconnectorIntegrationIdRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetIntegrationsSpeechAudioconnectorRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetIntegrationsSpeechDialogflowAgentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetIntegrationsSpeechDialogflowAgentsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetIntegrationsSpeechDialogflowcxAgentRequest.java
@@ -10507,6 +10517,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/AttributeDetailEventTopicCommunicatio
 src/main/java/com/mypurecloud/sdk/v2/model/AttributeFilterItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/AtzmTimeSlot.java
 src/main/java/com/mypurecloud/sdk/v2/model/AtzmTimeSlotWithTimeZone.java
+src/main/java/com/mypurecloud/sdk/v2/model/AudioConnectorIntegration.java
+src/main/java/com/mypurecloud/sdk/v2/model/AudioConnectorIntegrationEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/AudioState.java
 src/main/java/com/mypurecloud/sdk/v2/model/AudioUpdatedEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/AuditLogMessage.java
@@ -11101,6 +11113,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentLocation.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentNotificationTemplate.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentQuickReply.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentQuickReplyV2.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentReaction.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentStory.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentText.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationDeletionProtectionQuery.java
@@ -11127,6 +11140,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationEmailEventTopicUriReferen
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEmailEventTopicWrapup.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEncryptionConfiguration.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEncryptionConfigurationListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationEnrichment.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationEnrichmentLanguage.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationEnrichmentSentimentV2.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEventCoBrowse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEventPresence.java

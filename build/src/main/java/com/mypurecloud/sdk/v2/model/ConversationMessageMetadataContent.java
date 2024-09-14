@@ -42,6 +42,7 @@ public class ConversationMessageMetadataContent  implements Serializable {
  @JsonDeserialize(using = ContentTypeEnumDeserializer.class)
   public enum ContentTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    REACTIONS("Reactions"),
     ATTACHMENT("Attachment"),
     LOCATION("Location"),
     QUICKREPLY("QuickReply"),

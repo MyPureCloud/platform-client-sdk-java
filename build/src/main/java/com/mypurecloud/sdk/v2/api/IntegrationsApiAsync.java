@@ -17,6 +17,8 @@ import com.mypurecloud.sdk.v2.model.Action;
 import com.mypurecloud.sdk.v2.model.ActionCertificateListing;
 import com.mypurecloud.sdk.v2.model.ActionEntityListing;
 import com.mypurecloud.sdk.v2.model.AsyncJob;
+import com.mypurecloud.sdk.v2.model.AudioConnectorIntegration;
+import com.mypurecloud.sdk.v2.model.AudioConnectorIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.BotConnectorBot;
 import com.mypurecloud.sdk.v2.model.BotConnectorBotSummaryEntityListing;
 import com.mypurecloud.sdk.v2.model.BotConnectorBotVersionSummaryEntityListing;
@@ -106,6 +108,8 @@ import com.mypurecloud.sdk.v2.api.request.GetIntegrationsClientappsUnifiedcommun
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialsTypesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechAudioconnectorRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechAudioconnectorIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechDialogflowAgentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechDialogflowAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechDialogflowcxAgentRequest;
@@ -2499,6 +2503,156 @@ public class IntegrationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CredentialTypeListing> response = (ApiResponse<CredentialTypeListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of Audio Connector integrations
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AudioConnectorIntegrationEntityListing> getIntegrationsSpeechAudioconnectorAsync(GetIntegrationsSpeechAudioconnectorRequest request, final AsyncApiCallback<AudioConnectorIntegrationEntityListing> callback) {
+    try {
+      final SettableFuture<AudioConnectorIntegrationEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AudioConnectorIntegrationEntityListing>() {}, new AsyncApiCallback<ApiResponse<AudioConnectorIntegrationEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AudioConnectorIntegrationEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of Audio Connector integrations
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AudioConnectorIntegrationEntityListing>> getIntegrationsSpeechAudioconnectorAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AudioConnectorIntegrationEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AudioConnectorIntegrationEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AudioConnectorIntegrationEntityListing>() {}, new AsyncApiCallback<ApiResponse<AudioConnectorIntegrationEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AudioConnectorIntegrationEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AudioConnectorIntegrationEntityListing> response = (ApiResponse<AudioConnectorIntegrationEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AudioConnectorIntegrationEntityListing> response = (ApiResponse<AudioConnectorIntegrationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an Audio Connector integration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AudioConnectorIntegration> getIntegrationsSpeechAudioconnectorIntegrationIdAsync(GetIntegrationsSpeechAudioconnectorIntegrationIdRequest request, final AsyncApiCallback<AudioConnectorIntegration> callback) {
+    try {
+      final SettableFuture<AudioConnectorIntegration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AudioConnectorIntegration>() {}, new AsyncApiCallback<ApiResponse<AudioConnectorIntegration>>() {
+        @Override
+        public void onCompleted(ApiResponse<AudioConnectorIntegration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an Audio Connector integration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AudioConnectorIntegration>> getIntegrationsSpeechAudioconnectorIntegrationIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AudioConnectorIntegration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AudioConnectorIntegration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AudioConnectorIntegration>() {}, new AsyncApiCallback<ApiResponse<AudioConnectorIntegration>>() {
+        @Override
+        public void onCompleted(ApiResponse<AudioConnectorIntegration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AudioConnectorIntegration> response = (ApiResponse<AudioConnectorIntegration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AudioConnectorIntegration> response = (ApiResponse<AudioConnectorIntegration>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

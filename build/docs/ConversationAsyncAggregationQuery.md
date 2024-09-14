@@ -70,6 +70,7 @@
 | MEDIATYPE | &quot;mediaType&quot; |
 | MESSAGETYPE | &quot;messageType&quot; |
 | ORIGINATINGDIRECTION | &quot;originatingDirection&quot; |
+| ORIGINATINGSOCIALMEDIAPUBLIC | &quot;originatingSocialMediaPublic&quot; |
 | OUTBOUNDCAMPAIGNID | &quot;outboundCampaignId&quot; |
 | OUTBOUNDCONTACTID | &quot;outboundContactId&quot; |
 | OUTBOUNDCONTACTLISTID | &quot;outboundContactListId&quot; |
@@ -174,4 +175,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.1.0_

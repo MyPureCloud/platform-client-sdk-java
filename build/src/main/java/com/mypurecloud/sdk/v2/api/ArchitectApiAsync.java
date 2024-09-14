@@ -326,7 +326,6 @@ public class ArchitectApiAsync {
   /**
    * Delete a grammar.
    * 
-   * deleteArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -361,7 +360,6 @@ public class ArchitectApiAsync {
   /**
    * Delete a grammar.
    * 
-   * deleteArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -403,7 +401,6 @@ public class ArchitectApiAsync {
   /**
    * Delete specified grammar language
    * 
-   * deleteArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -438,7 +435,6 @@ public class ArchitectApiAsync {
   /**
    * Delete specified grammar language
    * 
-   * deleteArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -480,7 +476,6 @@ public class ArchitectApiAsync {
   /**
    * Clear the DTMF mode file for the grammar language if there is one
    * 
-   * deleteArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -515,7 +510,6 @@ public class ArchitectApiAsync {
   /**
    * Clear the DTMF mode file for the grammar language if there is one
    * 
-   * deleteArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -557,7 +551,6 @@ public class ArchitectApiAsync {
   /**
    * Clear the voice mode file for the grammar language if there is one
    * 
-   * deleteArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -592,7 +585,6 @@ public class ArchitectApiAsync {
   /**
    * Clear the voice mode file for the grammar language if there is one
    * 
-   * deleteArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2659,7 +2651,6 @@ public class ArchitectApiAsync {
   /**
    * Get a grammar
    * Returns a specified grammar
-   * getArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2694,7 +2685,6 @@ public class ArchitectApiAsync {
   /**
    * Get a grammar
    * Returns a specified grammar
-   * getArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2736,7 +2726,6 @@ public class ArchitectApiAsync {
   /**
    * Get a grammar language.
    * 
-   * getArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2771,7 +2760,6 @@ public class ArchitectApiAsync {
   /**
    * Get a grammar language.
    * 
-   * getArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2813,7 +2801,6 @@ public class ArchitectApiAsync {
   /**
    * Get a pageable list of grammars, filtered by query parameters
    * Multiple IDs can be specified, in which case all matching grammars will be returned, and no other parameters will be evaluated.
-   * getArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2848,7 +2835,6 @@ public class ArchitectApiAsync {
   /**
    * Get a pageable list of grammars, filtered by query parameters
    * Multiple IDs can be specified, in which case all matching grammars will be returned, and no other parameters will be evaluated.
-   * getArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7015,7 +7001,6 @@ public class ArchitectApiAsync {
   /**
    * Updates a grammar
    * 
-   * patchArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7050,7 +7035,6 @@ public class ArchitectApiAsync {
   /**
    * Updates a grammar
    * 
-   * patchArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7092,7 +7076,6 @@ public class ArchitectApiAsync {
   /**
    * Updates a grammar language
    * 
-   * patchArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7127,7 +7110,6 @@ public class ArchitectApiAsync {
   /**
    * Updates a grammar language
    * 
-   * patchArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7394,7 +7376,6 @@ public class ArchitectApiAsync {
   /**
    * Creates a presigned URL for uploading a grammar DTMF mode file
    * 
-   * postArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7429,7 +7410,6 @@ public class ArchitectApiAsync {
   /**
    * Creates a presigned URL for uploading a grammar DTMF mode file
    * 
-   * postArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7471,7 +7451,6 @@ public class ArchitectApiAsync {
   /**
    * Creates a presigned URL for uploading a grammar voice mode file
    * 
-   * postArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7506,7 +7485,6 @@ public class ArchitectApiAsync {
   /**
    * Creates a presigned URL for uploading a grammar voice mode file
    * 
-   * postArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7548,7 +7526,6 @@ public class ArchitectApiAsync {
   /**
    * Create a new language for a given grammar
    * 
-   * postArchitectGrammarLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7583,7 +7560,6 @@ public class ArchitectApiAsync {
   /**
    * Create a new language for a given grammar
    * 
-   * postArchitectGrammarLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7625,7 +7601,6 @@ public class ArchitectApiAsync {
   /**
    * Create a new grammar
    * 
-   * postArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7660,7 +7635,6 @@ public class ArchitectApiAsync {
   /**
    * Create a new grammar
    * 
-   * postArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

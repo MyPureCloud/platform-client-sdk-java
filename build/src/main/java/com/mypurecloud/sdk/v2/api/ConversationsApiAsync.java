@@ -8015,7 +8015,6 @@ public class ConversationsApiAsync {
   /**
    * Update the utilization label on a conversation. When there is no value provided, the system default label is applied
    * 
-   * patchConversationUtilizationlabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8050,7 +8049,6 @@ public class ConversationsApiAsync {
   /**
    * Update the utilization label on a conversation. When there is no value provided, the system default label is applied
    * 
-   * patchConversationUtilizationlabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

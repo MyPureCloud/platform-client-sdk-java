@@ -25,14 +25,14 @@ public class BuActivitySettingsRequest  implements Serializable {
 
   
   /**
-   * Default Activity Code ID settings
+   * The ID of the activity code. This is the activity code that will be used by default for agent development activities added to the schedule
    **/
   public BuActivitySettingsRequest defaultActivityCodeId(String defaultActivityCodeId) {
     this.defaultActivityCodeId = defaultActivityCodeId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Default Activity Code ID settings")
+  @ApiModelProperty(example = "null", value = "The ID of the activity code. This is the activity code that will be used by default for agent development activities added to the schedule")
   @JsonProperty("defaultActivityCodeId")
   public String getDefaultActivityCodeId() {
     return defaultActivityCodeId;

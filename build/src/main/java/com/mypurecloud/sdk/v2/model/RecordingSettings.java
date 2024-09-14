@@ -24,6 +24,8 @@ public class RecordingSettings  implements Serializable {
   private Integer maxSimultaneousStreams = null;
   private Integer maxConfigurableScreenRecordingStreams = null;
   private Boolean regionalRecordingStorageEnabled = null;
+  private Integer recordingPlaybackUrlTtl = null;
+  private Integer recordingBatchDownloadUrlTtl = null;
 
   
   /**
@@ -80,6 +82,42 @@ public class RecordingSettings  implements Serializable {
   }
 
 
+  /**
+   * The duration in minutes for which the generated URL for recording playback remains valid.The default duration is set to 60 minutes, with a minimum allowable duration of 2 minutes and a maximum of 60 minutes.
+   **/
+  public RecordingSettings recordingPlaybackUrlTtl(Integer recordingPlaybackUrlTtl) {
+    this.recordingPlaybackUrlTtl = recordingPlaybackUrlTtl;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The duration in minutes for which the generated URL for recording playback remains valid.The default duration is set to 60 minutes, with a minimum allowable duration of 2 minutes and a maximum of 60 minutes.")
+  @JsonProperty("recordingPlaybackUrlTtl")
+  public Integer getRecordingPlaybackUrlTtl() {
+    return recordingPlaybackUrlTtl;
+  }
+  public void setRecordingPlaybackUrlTtl(Integer recordingPlaybackUrlTtl) {
+    this.recordingPlaybackUrlTtl = recordingPlaybackUrlTtl;
+  }
+
+
+  /**
+   * TThe duration in minutes for which the generated URL for recording batch download remains valid.The default duration is set to 60 minutes, with a minimum allowable duration of 2 minutes and a maximum of 60 minutes.
+   **/
+  public RecordingSettings recordingBatchDownloadUrlTtl(Integer recordingBatchDownloadUrlTtl) {
+    this.recordingBatchDownloadUrlTtl = recordingBatchDownloadUrlTtl;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "TThe duration in minutes for which the generated URL for recording batch download remains valid.The default duration is set to 60 minutes, with a minimum allowable duration of 2 minutes and a maximum of 60 minutes.")
+  @JsonProperty("recordingBatchDownloadUrlTtl")
+  public Integer getRecordingBatchDownloadUrlTtl() {
+    return recordingBatchDownloadUrlTtl;
+  }
+  public void setRecordingBatchDownloadUrlTtl(Integer recordingBatchDownloadUrlTtl) {
+    this.recordingBatchDownloadUrlTtl = recordingBatchDownloadUrlTtl;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -92,12 +130,14 @@ public class RecordingSettings  implements Serializable {
 
     return Objects.equals(this.maxSimultaneousStreams, recordingSettings.maxSimultaneousStreams) &&
             Objects.equals(this.maxConfigurableScreenRecordingStreams, recordingSettings.maxConfigurableScreenRecordingStreams) &&
-            Objects.equals(this.regionalRecordingStorageEnabled, recordingSettings.regionalRecordingStorageEnabled);
+            Objects.equals(this.regionalRecordingStorageEnabled, recordingSettings.regionalRecordingStorageEnabled) &&
+            Objects.equals(this.recordingPlaybackUrlTtl, recordingSettings.recordingPlaybackUrlTtl) &&
+            Objects.equals(this.recordingBatchDownloadUrlTtl, recordingSettings.recordingBatchDownloadUrlTtl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(maxSimultaneousStreams, maxConfigurableScreenRecordingStreams, regionalRecordingStorageEnabled);
+    return Objects.hash(maxSimultaneousStreams, maxConfigurableScreenRecordingStreams, regionalRecordingStorageEnabled, recordingPlaybackUrlTtl, recordingBatchDownloadUrlTtl);
   }
 
   @Override
@@ -108,6 +148,8 @@ public class RecordingSettings  implements Serializable {
     sb.append("    maxSimultaneousStreams: ").append(toIndentedString(maxSimultaneousStreams)).append("\n");
     sb.append("    maxConfigurableScreenRecordingStreams: ").append(toIndentedString(maxConfigurableScreenRecordingStreams)).append("\n");
     sb.append("    regionalRecordingStorageEnabled: ").append(toIndentedString(regionalRecordingStorageEnabled)).append("\n");
+    sb.append("    recordingPlaybackUrlTtl: ").append(toIndentedString(recordingPlaybackUrlTtl)).append("\n");
+    sb.append("    recordingBatchDownloadUrlTtl: ").append(toIndentedString(recordingBatchDownloadUrlTtl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -24,6 +24,8 @@ import com.mypurecloud.sdk.v2.model.Action;
 import com.mypurecloud.sdk.v2.model.ActionCertificateListing;
 import com.mypurecloud.sdk.v2.model.ActionEntityListing;
 import com.mypurecloud.sdk.v2.model.AsyncJob;
+import com.mypurecloud.sdk.v2.model.AudioConnectorIntegration;
+import com.mypurecloud.sdk.v2.model.AudioConnectorIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.BotConnectorBot;
 import com.mypurecloud.sdk.v2.model.BotConnectorBotSummaryEntityListing;
 import com.mypurecloud.sdk.v2.model.BotConnectorBotVersionSummaryEntityListing;

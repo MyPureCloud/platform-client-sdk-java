@@ -5,9 +5,9 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **defaultActivityCodeId** | **String** | Default Activity Code ID settings |  [optional] |
+| **defaultActivityCodeId** | **String** | The ID of the activity code. This is the activity code that will be used by default for agent development activities added to the schedule |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:209.0.1_
+_com.mypurecloud.sdk.v2:platform-client-v2:209.1.0_

@@ -322,7 +322,6 @@ public class ArchitectApi {
   /**
    * Delete a grammar.
    * 
-   * deleteArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param grammarId grammar ID (required)
    * @return Empty
    * @throws ApiException if the request fails on the server
@@ -335,7 +334,6 @@ public class ArchitectApi {
   /**
    * Delete a grammar.
    * 
-   * deleteArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param grammarId grammar ID (required)
    * @return Empty
    * @throws IOException if the request fails to be processed
@@ -354,7 +352,6 @@ public class ArchitectApi {
   /**
    * Delete a grammar.
    * 
-   * deleteArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Empty
    * @throws ApiException if the request fails on the server
@@ -374,7 +371,6 @@ public class ArchitectApi {
   /**
    * Delete a grammar.
    * 
-   * deleteArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -404,7 +400,6 @@ public class ArchitectApi {
   /**
    * Delete specified grammar language
    * 
-   * deleteArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param grammarId Grammar ID (required)
    * @param languageCode Language (required)
    * @throws ApiException if the request fails on the server
@@ -417,7 +412,6 @@ public class ArchitectApi {
   /**
    * Delete specified grammar language
    * 
-   * deleteArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param grammarId Grammar ID (required)
    * @param languageCode Language (required)
    * @throws IOException if the request fails to be processed
@@ -438,7 +432,6 @@ public class ArchitectApi {
   /**
    * Delete specified grammar language
    * 
-   * deleteArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -457,7 +450,6 @@ public class ArchitectApi {
   /**
    * Delete specified grammar language
    * 
-   * deleteArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -487,7 +479,6 @@ public class ArchitectApi {
   /**
    * Clear the DTMF mode file for the grammar language if there is one
    * 
-   * deleteArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param grammarId Grammar ID (required)
    * @param languageCode Language (required)
    * @throws ApiException if the request fails on the server
@@ -500,7 +491,6 @@ public class ArchitectApi {
   /**
    * Clear the DTMF mode file for the grammar language if there is one
    * 
-   * deleteArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param grammarId Grammar ID (required)
    * @param languageCode Language (required)
    * @throws IOException if the request fails to be processed
@@ -521,7 +511,6 @@ public class ArchitectApi {
   /**
    * Clear the DTMF mode file for the grammar language if there is one
    * 
-   * deleteArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -540,7 +529,6 @@ public class ArchitectApi {
   /**
    * Clear the DTMF mode file for the grammar language if there is one
    * 
-   * deleteArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -570,7 +558,6 @@ public class ArchitectApi {
   /**
    * Clear the voice mode file for the grammar language if there is one
    * 
-   * deleteArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param grammarId Grammar ID (required)
    * @param languageCode Language (required)
    * @throws ApiException if the request fails on the server
@@ -583,7 +570,6 @@ public class ArchitectApi {
   /**
    * Clear the voice mode file for the grammar language if there is one
    * 
-   * deleteArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param grammarId Grammar ID (required)
    * @param languageCode Language (required)
    * @throws IOException if the request fails to be processed
@@ -604,7 +590,6 @@ public class ArchitectApi {
   /**
    * Clear the voice mode file for the grammar language if there is one
    * 
-   * deleteArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -623,7 +608,6 @@ public class ArchitectApi {
   /**
    * Clear the voice mode file for the grammar language if there is one
    * 
-   * deleteArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2927,7 +2911,6 @@ public class ArchitectApi {
   /**
    * Get a grammar
    * Returns a specified grammar
-   * getArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param grammarId grammar ID (required)
    * @param includeFileUrls Include grammar language file URLs (optional)
    * @return Grammar
@@ -2941,7 +2924,6 @@ public class ArchitectApi {
   /**
    * Get a grammar
    * Returns a specified grammar
-   * getArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param grammarId grammar ID (required)
    * @param includeFileUrls Include grammar language file URLs (optional)
    * @return Grammar
@@ -2963,7 +2945,6 @@ public class ArchitectApi {
   /**
    * Get a grammar
    * Returns a specified grammar
-   * getArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Grammar
    * @throws ApiException if the request fails on the server
@@ -2983,7 +2964,6 @@ public class ArchitectApi {
   /**
    * Get a grammar
    * Returns a specified grammar
-   * getArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3013,7 +2993,6 @@ public class ArchitectApi {
   /**
    * Get a grammar language.
    * 
-   * getArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param grammarId Grammar ID (required)
    * @param languageCode Language (required)
    * @return GrammarLanguage
@@ -3027,7 +3006,6 @@ public class ArchitectApi {
   /**
    * Get a grammar language.
    * 
-   * getArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param grammarId Grammar ID (required)
    * @param languageCode Language (required)
    * @return GrammarLanguage
@@ -3049,7 +3027,6 @@ public class ArchitectApi {
   /**
    * Get a grammar language.
    * 
-   * getArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return GrammarLanguage
    * @throws ApiException if the request fails on the server
@@ -3069,7 +3046,6 @@ public class ArchitectApi {
   /**
    * Get a grammar language.
    * 
-   * getArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3099,7 +3075,6 @@ public class ArchitectApi {
   /**
    * Get a pageable list of grammars, filtered by query parameters
    * Multiple IDs can be specified, in which case all matching grammars will be returned, and no other parameters will be evaluated.
-   * getArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param sortBy Sort by (optional, default to id)
@@ -3120,7 +3095,6 @@ public class ArchitectApi {
   /**
    * Get a pageable list of grammars, filtered by query parameters
    * Multiple IDs can be specified, in which case all matching grammars will be returned, and no other parameters will be evaluated.
-   * getArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param sortBy Sort by (optional, default to id)
@@ -3163,7 +3137,6 @@ public class ArchitectApi {
   /**
    * Get a pageable list of grammars, filtered by query parameters
    * Multiple IDs can be specified, in which case all matching grammars will be returned, and no other parameters will be evaluated.
-   * getArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return GrammarListing
    * @throws ApiException if the request fails on the server
@@ -3183,7 +3156,6 @@ public class ArchitectApi {
   /**
    * Get a pageable list of grammars, filtered by query parameters
    * Multiple IDs can be specified, in which case all matching grammars will be returned, and no other parameters will be evaluated.
-   * getArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -8251,7 +8223,6 @@ public class ArchitectApi {
   /**
    * Updates a grammar
    * 
-   * patchArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param grammarId grammar ID (required)
    * @param body  (optional)
    * @return Grammar
@@ -8265,7 +8236,6 @@ public class ArchitectApi {
   /**
    * Updates a grammar
    * 
-   * patchArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param grammarId grammar ID (required)
    * @param body  (optional)
    * @return Grammar
@@ -8287,7 +8257,6 @@ public class ArchitectApi {
   /**
    * Updates a grammar
    * 
-   * patchArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Grammar
    * @throws ApiException if the request fails on the server
@@ -8307,7 +8276,6 @@ public class ArchitectApi {
   /**
    * Updates a grammar
    * 
-   * patchArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -8337,7 +8305,6 @@ public class ArchitectApi {
   /**
    * Updates a grammar language
    * 
-   * patchArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param grammarId Grammar ID (required)
    * @param languageCode Language (required)
    * @param body  (optional)
@@ -8352,7 +8319,6 @@ public class ArchitectApi {
   /**
    * Updates a grammar language
    * 
-   * patchArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param grammarId Grammar ID (required)
    * @param languageCode Language (required)
    * @param body  (optional)
@@ -8377,7 +8343,6 @@ public class ArchitectApi {
   /**
    * Updates a grammar language
    * 
-   * patchArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return GrammarLanguage
    * @throws ApiException if the request fails on the server
@@ -8397,7 +8362,6 @@ public class ArchitectApi {
   /**
    * Updates a grammar language
    * 
-   * patchArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -8654,7 +8618,6 @@ public class ArchitectApi {
   /**
    * Creates a presigned URL for uploading a grammar DTMF mode file
    * 
-   * postArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param grammarId Grammar ID (required)
    * @param languageCode Language (required)
    * @param body query (required)
@@ -8669,7 +8632,6 @@ public class ArchitectApi {
   /**
    * Creates a presigned URL for uploading a grammar DTMF mode file
    * 
-   * postArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param grammarId Grammar ID (required)
    * @param languageCode Language (required)
    * @param body query (required)
@@ -8694,7 +8656,6 @@ public class ArchitectApi {
   /**
    * Creates a presigned URL for uploading a grammar DTMF mode file
    * 
-   * postArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return UploadUrlResponse
    * @throws ApiException if the request fails on the server
@@ -8714,7 +8675,6 @@ public class ArchitectApi {
   /**
    * Creates a presigned URL for uploading a grammar DTMF mode file
    * 
-   * postArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -8744,7 +8704,6 @@ public class ArchitectApi {
   /**
    * Creates a presigned URL for uploading a grammar voice mode file
    * 
-   * postArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param grammarId Grammar ID (required)
    * @param languageCode Language (required)
    * @param body query (required)
@@ -8759,7 +8718,6 @@ public class ArchitectApi {
   /**
    * Creates a presigned URL for uploading a grammar voice mode file
    * 
-   * postArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param grammarId Grammar ID (required)
    * @param languageCode Language (required)
    * @param body query (required)
@@ -8784,7 +8742,6 @@ public class ArchitectApi {
   /**
    * Creates a presigned URL for uploading a grammar voice mode file
    * 
-   * postArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return UploadUrlResponse
    * @throws ApiException if the request fails on the server
@@ -8804,7 +8761,6 @@ public class ArchitectApi {
   /**
    * Creates a presigned URL for uploading a grammar voice mode file
    * 
-   * postArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -8834,7 +8790,6 @@ public class ArchitectApi {
   /**
    * Create a new language for a given grammar
    * 
-   * postArchitectGrammarLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param grammarId Grammar ID (required)
    * @param body  (required)
    * @return GrammarLanguage
@@ -8848,7 +8803,6 @@ public class ArchitectApi {
   /**
    * Create a new language for a given grammar
    * 
-   * postArchitectGrammarLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param grammarId Grammar ID (required)
    * @param body  (required)
    * @return GrammarLanguage
@@ -8870,7 +8824,6 @@ public class ArchitectApi {
   /**
    * Create a new language for a given grammar
    * 
-   * postArchitectGrammarLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return GrammarLanguage
    * @throws ApiException if the request fails on the server
@@ -8890,7 +8843,6 @@ public class ArchitectApi {
   /**
    * Create a new language for a given grammar
    * 
-   * postArchitectGrammarLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -8920,7 +8872,6 @@ public class ArchitectApi {
   /**
    * Create a new grammar
    * 
-   * postArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body  (required)
    * @return Grammar
    * @throws ApiException if the request fails on the server
@@ -8933,7 +8884,6 @@ public class ArchitectApi {
   /**
    * Create a new grammar
    * 
-   * postArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body  (required)
    * @return Grammar
    * @throws IOException if the request fails to be processed
@@ -8952,7 +8902,6 @@ public class ArchitectApi {
   /**
    * Create a new grammar
    * 
-   * postArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Grammar
    * @throws ApiException if the request fails on the server
@@ -8972,7 +8921,6 @@ public class ArchitectApi {
   /**
    * Create a new grammar
    * 
-   * postArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

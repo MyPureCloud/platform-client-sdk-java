@@ -96,6 +96,7 @@ public class ConversationAggregationQuery  implements Serializable {
     MEDIATYPE("mediaType"),
     MESSAGETYPE("messageType"),
     ORIGINATINGDIRECTION("originatingDirection"),
+    ORIGINATINGSOCIALMEDIAPUBLIC("originatingSocialMediaPublic"),
     OUTBOUNDCAMPAIGNID("outboundCampaignId"),
     OUTBOUNDCONTACTID("outboundContactId"),
     OUTBOUNDCONTACTLISTID("outboundContactListId"),

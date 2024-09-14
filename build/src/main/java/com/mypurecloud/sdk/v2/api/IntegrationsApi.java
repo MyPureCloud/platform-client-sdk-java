@@ -14,6 +14,8 @@ import com.mypurecloud.sdk.v2.model.Action;
 import com.mypurecloud.sdk.v2.model.ActionCertificateListing;
 import com.mypurecloud.sdk.v2.model.ActionEntityListing;
 import com.mypurecloud.sdk.v2.model.AsyncJob;
+import com.mypurecloud.sdk.v2.model.AudioConnectorIntegration;
+import com.mypurecloud.sdk.v2.model.AudioConnectorIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.BotConnectorBot;
 import com.mypurecloud.sdk.v2.model.BotConnectorBotSummaryEntityListing;
 import com.mypurecloud.sdk.v2.model.BotConnectorBotVersionSummaryEntityListing;
@@ -103,6 +105,8 @@ import com.mypurecloud.sdk.v2.api.request.GetIntegrationsClientappsUnifiedcommun
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialsTypesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechAudioconnectorRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechAudioconnectorIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechDialogflowAgentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechDialogflowAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechDialogflowcxAgentRequest;
@@ -2838,6 +2842,166 @@ public class IntegrationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CredentialTypeListing> response = (ApiResponse<CredentialTypeListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a list of Audio Connector integrations
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return AudioConnectorIntegrationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AudioConnectorIntegrationEntityListing getIntegrationsSpeechAudioconnector(Integer pageNumber, Integer pageSize) throws IOException, ApiException {
+    return  getIntegrationsSpeechAudioconnector(createGetIntegrationsSpeechAudioconnectorRequest(pageNumber, pageSize));
+  }
+
+  /**
+   * Get a list of Audio Connector integrations
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return AudioConnectorIntegrationEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AudioConnectorIntegrationEntityListing> getIntegrationsSpeechAudioconnectorWithHttpInfo(Integer pageNumber, Integer pageSize) throws IOException {
+    return getIntegrationsSpeechAudioconnector(createGetIntegrationsSpeechAudioconnectorRequest(pageNumber, pageSize).withHttpInfo());
+  }
+
+  private GetIntegrationsSpeechAudioconnectorRequest createGetIntegrationsSpeechAudioconnectorRequest(Integer pageNumber, Integer pageSize) {
+    return GetIntegrationsSpeechAudioconnectorRequest.builder()
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * Get a list of Audio Connector integrations
+   * 
+   * @param request The request object
+   * @return AudioConnectorIntegrationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AudioConnectorIntegrationEntityListing getIntegrationsSpeechAudioconnector(GetIntegrationsSpeechAudioconnectorRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AudioConnectorIntegrationEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AudioConnectorIntegrationEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of Audio Connector integrations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AudioConnectorIntegrationEntityListing> getIntegrationsSpeechAudioconnector(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AudioConnectorIntegrationEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AudioConnectorIntegrationEntityListing> response = (ApiResponse<AudioConnectorIntegrationEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AudioConnectorIntegrationEntityListing> response = (ApiResponse<AudioConnectorIntegrationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get an Audio Connector integration
+   * 
+   * @param integrationId The integration ID (required)
+   * @return AudioConnectorIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AudioConnectorIntegration getIntegrationsSpeechAudioconnectorIntegrationId(String integrationId) throws IOException, ApiException {
+    return  getIntegrationsSpeechAudioconnectorIntegrationId(createGetIntegrationsSpeechAudioconnectorIntegrationIdRequest(integrationId));
+  }
+
+  /**
+   * Get an Audio Connector integration
+   * 
+   * @param integrationId The integration ID (required)
+   * @return AudioConnectorIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AudioConnectorIntegration> getIntegrationsSpeechAudioconnectorIntegrationIdWithHttpInfo(String integrationId) throws IOException {
+    return getIntegrationsSpeechAudioconnectorIntegrationId(createGetIntegrationsSpeechAudioconnectorIntegrationIdRequest(integrationId).withHttpInfo());
+  }
+
+  private GetIntegrationsSpeechAudioconnectorIntegrationIdRequest createGetIntegrationsSpeechAudioconnectorIntegrationIdRequest(String integrationId) {
+    return GetIntegrationsSpeechAudioconnectorIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .build();
+  }
+
+  /**
+   * Get an Audio Connector integration
+   * 
+   * @param request The request object
+   * @return AudioConnectorIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AudioConnectorIntegration getIntegrationsSpeechAudioconnectorIntegrationId(GetIntegrationsSpeechAudioconnectorIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AudioConnectorIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AudioConnectorIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an Audio Connector integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AudioConnectorIntegration> getIntegrationsSpeechAudioconnectorIntegrationId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AudioConnectorIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AudioConnectorIntegration> response = (ApiResponse<AudioConnectorIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AudioConnectorIntegration> response = (ApiResponse<AudioConnectorIntegration>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

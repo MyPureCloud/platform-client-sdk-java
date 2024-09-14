@@ -8672,7 +8672,6 @@ public class ConversationsApi {
   /**
    * Update the utilization label on a conversation. When there is no value provided, the system default label is applied
    * 
-   * patchConversationUtilizationlabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversation ID (required)
    * @param body Conversation Utilization Label (required)
    * @return String
@@ -8686,7 +8685,6 @@ public class ConversationsApi {
   /**
    * Update the utilization label on a conversation. When there is no value provided, the system default label is applied
    * 
-   * patchConversationUtilizationlabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversation ID (required)
    * @param body Conversation Utilization Label (required)
    * @return String
@@ -8708,7 +8706,6 @@ public class ConversationsApi {
   /**
    * Update the utilization label on a conversation. When there is no value provided, the system default label is applied
    * 
-   * patchConversationUtilizationlabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return String
    * @throws ApiException if the request fails on the server
@@ -8728,7 +8725,6 @@ public class ConversationsApi {
   /**
    * Update the utilization label on a conversation. When there is no value provided, the system default label is applied
    * 
-   * patchConversationUtilizationlabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
