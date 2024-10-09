@@ -18,6 +18,7 @@
 | **rulesVisible** | **Boolean** | Are membership rules visible to the person requesting to view the group |  |
 | **visibility** | [**VisibilityEnum**](#Enum--VisibilityEnum) | Who can view this group |  |
 | **rolesEnabled** | **Boolean** | Allow roles to be assigned to this group |  [optional] |
+| **includeOwners** | **Boolean** | Allow owners to be included as members of the group |  [optional] |
 | **ownerIds** | **List&lt;String&gt;** | Owners of the group |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
@@ -53,4 +54,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:209.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:210.0.0_

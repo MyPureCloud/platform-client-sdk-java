@@ -13,6 +13,7 @@
 | **stickers** | [**List&lt;ConversationMessageEventTopicMessageSticker&gt;**](ConversationMessageEventTopicMessageSticker) |  |  [optional] |
 | **errorInfo** | [**ConversationMessageEventTopicErrorDetails**](ConversationMessageEventTopicErrorDetails) |  |  [optional] |
 | **messageMetadata** | [**ConversationMessageEventTopicMessageMetadata**](ConversationMessageEventTopicMessageMetadata) |  |  [optional] |
+| **socialVisibility** | [**SocialVisibilityEnum**](#Enum--SocialVisibilityEnum) |  |  [optional] |
 
 
 ## Enum: MessageStatusEnum
@@ -31,6 +32,15 @@
 | PUBLISHED | &quot;published&quot; | 
 
 
+## Enum: SocialVisibilityEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| PRIVATE | &quot;private&quot; | 
+| PUBLIC | &quot;public&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:209.1.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:210.0.0_

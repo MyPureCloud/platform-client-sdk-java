@@ -45,6 +45,7 @@
 | VIDEO | &quot;VIDEO&quot; | 
 | SCREENSHARE | &quot;SCREENSHARE&quot; | 
 | MESSAGE | &quot;MESSAGE&quot; | 
+| INTERNALMESSAGE | &quot;INTERNALMESSAGE&quot; | 
 
 
 ## Enum: DirectionEnum
@@ -112,4 +113,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:209.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:210.0.0_

@@ -14,9 +14,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteKnowledgeKnowledgebaseLanguageCategory**](KnowledgeApi#deleteKnowledgeKnowledgebaseLanguageCategory) | Delete category |
 | [**deleteKnowledgeKnowledgebaseLanguageDocument**](KnowledgeApi#deleteKnowledgeKnowledgebaseLanguageDocument) | Delete document |
 | [**deleteKnowledgeKnowledgebaseLanguageDocumentsImport**](KnowledgeApi#deleteKnowledgeKnowledgebaseLanguageDocumentsImport) | Delete import operation |
+| [**deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId**](KnowledgeApi#deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId) | Delete Salesforce Knowledge integration source |
+| [**deleteKnowledgeKnowledgebaseSourcesServicenowSourceId**](KnowledgeApi#deleteKnowledgeKnowledgebaseSourcesServicenowSourceId) | Delete ServiceNow Knowledge integration source |
+| [**deleteKnowledgeKnowledgebaseSynchronizeJob**](KnowledgeApi#deleteKnowledgeKnowledgebaseSynchronizeJob) | Delete synchronization job |
 | [**getKnowledgeGuestSessionCategories**](KnowledgeApi#getKnowledgeGuestSessionCategories) | Get categories |
 | [**getKnowledgeGuestSessionDocument**](KnowledgeApi#getKnowledgeGuestSessionDocument) | Get a knowledge document by ID. |
 | [**getKnowledgeGuestSessionDocuments**](KnowledgeApi#getKnowledgeGuestSessionDocuments) | Get documents. |
+| [**getKnowledgeIntegrationOptions**](KnowledgeApi#getKnowledgeIntegrationOptions) | Get sync options available for a knowledge-connect integration |
 | [**getKnowledgeKnowledgebase**](KnowledgeApi#getKnowledgeKnowledgebase) | Get knowledge base |
 | [**getKnowledgeKnowledgebaseCategories**](KnowledgeApi#getKnowledgeKnowledgebaseCategories) | Get categories |
 | [**getKnowledgeKnowledgebaseCategory**](KnowledgeApi#getKnowledgeKnowledgebaseCategory) | Get category |
@@ -45,6 +49,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getKnowledgeKnowledgebaseOperations**](KnowledgeApi#getKnowledgeKnowledgebaseOperations) | Get operations |
 | [**getKnowledgeKnowledgebaseOperationsUsersQuery**](KnowledgeApi#getKnowledgeKnowledgebaseOperationsUsersQuery) | Get ids of operation creator users and oauth clients |
 | [**getKnowledgeKnowledgebaseParseJob**](KnowledgeApi#getKnowledgeKnowledgebaseParseJob) | Get parse job report |
+| [**getKnowledgeKnowledgebaseSources**](KnowledgeApi#getKnowledgeKnowledgebaseSources) | Get Knowledge integration sources |
+| [**getKnowledgeKnowledgebaseSourcesSalesforceSourceId**](KnowledgeApi#getKnowledgeKnowledgebaseSourcesSalesforceSourceId) | Get Salesforce Knowledge integration source |
+| [**getKnowledgeKnowledgebaseSourcesServicenowSourceId**](KnowledgeApi#getKnowledgeKnowledgebaseSourcesServicenowSourceId) | Get ServiceNow Knowledge integration source |
+| [**getKnowledgeKnowledgebaseSynchronizeJob**](KnowledgeApi#getKnowledgeKnowledgebaseSynchronizeJob) | Get synchronization job report |
 | [**getKnowledgeKnowledgebaseUnansweredGroup**](KnowledgeApi#getKnowledgeKnowledgebaseUnansweredGroup) | Get knowledge base unanswered group for a particular groupId |
 | [**getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup**](KnowledgeApi#getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup) | Get knowledge base unanswered phrase group for a particular phraseGroupId |
 | [**getKnowledgeKnowledgebaseUnansweredGroups**](KnowledgeApi#getKnowledgeKnowledgebaseUnansweredGroups) | Get knowledge base unanswered groups |
@@ -64,6 +72,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchKnowledgeKnowledgebaseLanguageDocuments**](KnowledgeApi#patchKnowledgeKnowledgebaseLanguageDocuments) | Update documents collection |
 | [**patchKnowledgeKnowledgebaseLanguageDocumentsImport**](KnowledgeApi#patchKnowledgeKnowledgebaseLanguageDocumentsImport) | Start import operation |
 | [**patchKnowledgeKnowledgebaseParseJob**](KnowledgeApi#patchKnowledgeKnowledgebaseParseJob) | Send update to the parse operation |
+| [**patchKnowledgeKnowledgebaseSynchronizeJob**](KnowledgeApi#patchKnowledgeKnowledgebaseSynchronizeJob) | Update synchronization job |
 | [**patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup**](KnowledgeApi#patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup) | Update a Knowledge base unanswered phrase group |
 | [**postKnowledgeDocumentuploads**](KnowledgeApi#postKnowledgeDocumentuploads) | Creates a presigned URL for uploading a knowledge import file with a set of documents |
 | [**postKnowledgeGuestSessionDocumentCopies**](KnowledgeApi#postKnowledgeGuestSessionDocumentCopies) | Indicate that the document was copied by the user. |
@@ -101,8 +110,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postKnowledgeKnowledgebaseParseJobImport**](KnowledgeApi#postKnowledgeKnowledgebaseParseJobImport) | Import the parsed articles |
 | [**postKnowledgeKnowledgebaseParseJobs**](KnowledgeApi#postKnowledgeKnowledgebaseParseJobs) | Create parse job |
 | [**postKnowledgeKnowledgebaseSearch**](KnowledgeApi#postKnowledgeKnowledgebaseSearch) | Search Documents |
+| [**postKnowledgeKnowledgebaseSourcesSalesforce**](KnowledgeApi#postKnowledgeKnowledgebaseSourcesSalesforce) | Create Salesforce Knowledge integration source |
+| [**postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync**](KnowledgeApi#postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync) | Start sync on Salesforce Knowledge integration source |
+| [**postKnowledgeKnowledgebaseSourcesServicenow**](KnowledgeApi#postKnowledgeKnowledgebaseSourcesServicenow) | Create ServiceNow Knowledge integration source |
+| [**postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync**](KnowledgeApi#postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync) | Start synchronization on ServiceNow Knowledge integration source |
+| [**postKnowledgeKnowledgebaseSynchronizeJobs**](KnowledgeApi#postKnowledgeKnowledgebaseSynchronizeJobs) | Create synchronization job |
 | [**postKnowledgeKnowledgebaseUploadsUrlsJobs**](KnowledgeApi#postKnowledgeKnowledgebaseUploadsUrlsJobs) | Create content upload from URL job |
 | [**postKnowledgeKnowledgebases**](KnowledgeApi#postKnowledgeKnowledgebases) | Create new knowledge base |
+| [**putKnowledgeKnowledgebaseSourcesSalesforceSourceId**](KnowledgeApi#putKnowledgeKnowledgebaseSourcesSalesforceSourceId) | Update Salesforce Knowledge integration source |
+| [**putKnowledgeKnowledgebaseSourcesServicenowSourceId**](KnowledgeApi#putKnowledgeKnowledgebaseSourcesServicenowSourceId) | Update ServiceNow Knowledge integration source |
 {: class="table-striped"}
 
 
@@ -727,6 +743,192 @@ try {
 null (empty response body)
 
 
+# **deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId**
+
+
+> Void deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId)
+
+Delete Salesforce Knowledge integration source
+
+deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}  
+
+Requires ALL permissions: 
+
+* knowledge:integrationSource:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+String sourceId = "sourceId_example"; // String | Source ID
+try {
+    apiInstance.deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **sourceId** | **String**| Source ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteKnowledgeKnowledgebaseSourcesServicenowSourceId**
+
+
+> Void deleteKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId)
+
+Delete ServiceNow Knowledge integration source
+
+deleteKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}  
+
+Requires ALL permissions: 
+
+* knowledge:integrationSource:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+String sourceId = "sourceId_example"; // String | Source ID
+try {
+    apiInstance.deleteKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#deleteKnowledgeKnowledgebaseSourcesServicenowSourceId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **sourceId** | **String**| Source ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteKnowledgeKnowledgebaseSynchronizeJob**
+
+
+> Void deleteKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId)
+
+Delete synchronization job
+
+deleteKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}  
+
+Requires ALL permissions: 
+
+* knowledge:syncJob:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+String syncJobId = "syncJobId_example"; // String | Synchronization job ID
+try {
+    apiInstance.deleteKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#deleteKnowledgeKnowledgebaseSynchronizeJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **syncJobId** | **String**| Synchronization job ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
 # **getKnowledgeGuestSessionCategories**
 
 
@@ -884,6 +1086,67 @@ try {
 ### Return type
 
 [**KnowledgeGuestDocumentResponseListing**](KnowledgeGuestDocumentResponseListing)
+
+
+# **getKnowledgeIntegrationOptions**
+
+
+> [KnowledgeIntegrationOptionsResponse](KnowledgeIntegrationOptionsResponse) getKnowledgeIntegrationOptions(integrationId)
+
+Get sync options available for a knowledge-connect integration
+
+getKnowledgeIntegrationOptions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/knowledge/integrations/{integrationId}/options  
+
+Requires ALL permissions: 
+
+* knowledge:integrationOptions:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String integrationId = "integrationId_example"; // String | Integration ID
+try {
+    KnowledgeIntegrationOptionsResponse result = apiInstance.getKnowledgeIntegrationOptions(integrationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#getKnowledgeIntegrationOptions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| Integration ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**KnowledgeIntegrationOptionsResponse**](KnowledgeIntegrationOptionsResponse)
 
 
 # **getKnowledgeKnowledgebase**
@@ -2798,6 +3061,266 @@ try {
 [**KnowledgeParseJobResponse**](KnowledgeParseJobResponse)
 
 
+# **getKnowledgeKnowledgebaseSources**
+
+
+> [List&lt;SourceBaseResponse&gt;](SourceBaseResponse) getKnowledgeKnowledgebaseSources(knowledgeBaseId, type, expand, ids)
+
+Get Knowledge integration sources
+
+getKnowledgeKnowledgebaseSources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources  
+
+Requires ALL permissions: 
+
+* knowledge:integrationSource:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+String type = "type_example"; // String | If specified, retrieves integration sources with specified integration type.
+List<String> expand = Arrays.asList(null); // List<String> | The specified entity attributes will be filled. Comma separated values expected.
+List<String> ids = Arrays.asList(null); // List<String> | If specified, retrieves integration sources with specified IDs.
+try {
+    List<SourceBaseResponse> result = apiInstance.getKnowledgeKnowledgebaseSources(knowledgeBaseId, type, expand, ids);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#getKnowledgeKnowledgebaseSources");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **type** | **String**| If specified, retrieves integration sources with specified integration type. | [optional]<br />**Values**: Salesforce, ServiceNow 
+| **expand** | [**List&lt;String&gt;**](String)| The specified entity attributes will be filled. Comma separated values expected. | [optional]<br />**Values**: lastsync 
+| **ids** | [**List&lt;String&gt;**](String)| If specified, retrieves integration sources with specified IDs. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**List&lt;SourceBaseResponse&gt;**](SourceBaseResponse)
+
+
+# **getKnowledgeKnowledgebaseSourcesSalesforceSourceId**
+
+
+> [SalesforceSourceResponse](SalesforceSourceResponse) getKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, expand)
+
+Get Salesforce Knowledge integration source
+
+getKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}  
+
+Requires ALL permissions: 
+
+* knowledge:integrationSource:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+String sourceId = "sourceId_example"; // String | Source ID
+List<String> expand = Arrays.asList(null); // List<String> | The specified entity attributes will be filled. Comma separated values expected.
+try {
+    SalesforceSourceResponse result = apiInstance.getKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#getKnowledgeKnowledgebaseSourcesSalesforceSourceId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **sourceId** | **String**| Source ID | 
+| **expand** | [**List&lt;String&gt;**](String)| The specified entity attributes will be filled. Comma separated values expected. | [optional]<br />**Values**: lastsync 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SalesforceSourceResponse**](SalesforceSourceResponse)
+
+
+# **getKnowledgeKnowledgebaseSourcesServicenowSourceId**
+
+
+> [ServiceNowSourceResponse](ServiceNowSourceResponse) getKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, expand)
+
+Get ServiceNow Knowledge integration source
+
+getKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}  
+
+Requires ALL permissions: 
+
+* knowledge:integrationSource:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+String sourceId = "sourceId_example"; // String | Source ID
+List<String> expand = Arrays.asList(null); // List<String> | The specified entity attributes will be filled. Comma separated values expected.
+try {
+    ServiceNowSourceResponse result = apiInstance.getKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#getKnowledgeKnowledgebaseSourcesServicenowSourceId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **sourceId** | **String**| Source ID | 
+| **expand** | [**List&lt;String&gt;**](String)| The specified entity attributes will be filled. Comma separated values expected. | [optional]<br />**Values**: lastsync 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ServiceNowSourceResponse**](ServiceNowSourceResponse)
+
+
+# **getKnowledgeKnowledgebaseSynchronizeJob**
+
+
+> [KnowledgeSyncJobResponse](KnowledgeSyncJobResponse) getKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId)
+
+Get synchronization job report
+
+getKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}  
+
+Requires ALL permissions: 
+
+* knowledge:syncJob:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+String syncJobId = "syncJobId_example"; // String | Synchronization job ID
+try {
+    KnowledgeSyncJobResponse result = apiInstance.getKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#getKnowledgeKnowledgebaseSynchronizeJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **syncJobId** | **String**| Synchronization job ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**KnowledgeSyncJobResponse**](KnowledgeSyncJobResponse)
+
+
 # **getKnowledgeKnowledgebaseUnansweredGroup**
 
 
@@ -4023,6 +4546,71 @@ try {
 ### Return type
 
 null (empty response body)
+
+
+# **patchKnowledgeKnowledgebaseSynchronizeJob**
+
+
+> [KnowledgeSyncJobResponse](KnowledgeSyncJobResponse) patchKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId, body)
+
+Update synchronization job
+
+patchKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}  
+
+Requires ALL permissions: 
+
+* knowledge:syncJob:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+String syncJobId = "syncJobId_example"; // String | Synchronization job ID
+SyncStatusRequest body = new SyncStatusRequest(); // SyncStatusRequest | 
+try {
+    KnowledgeSyncJobResponse result = apiInstance.patchKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#patchKnowledgeKnowledgebaseSynchronizeJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **syncJobId** | **String**| Synchronization job ID | 
+| **body** | [**SyncStatusRequest**](SyncStatusRequest)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**KnowledgeSyncJobResponse**](KnowledgeSyncJobResponse)
 
 
 # **patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup**
@@ -6235,6 +6823,321 @@ try {
 [**KnowledgeSearchResponse**](KnowledgeSearchResponse)
 
 
+# **postKnowledgeKnowledgebaseSourcesSalesforce**
+
+
+> [KnowledgeSyncJobResponse](KnowledgeSyncJobResponse) postKnowledgeKnowledgebaseSourcesSalesforce(knowledgeBaseId, body)
+
+Create Salesforce Knowledge integration source
+
+postKnowledgeKnowledgebaseSourcesSalesforce is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce  
+
+Requires ALL permissions: 
+
+* knowledge:integrationSource:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+SalesforceSourceRequest body = new SalesforceSourceRequest(); // SalesforceSourceRequest | 
+try {
+    KnowledgeSyncJobResponse result = apiInstance.postKnowledgeKnowledgebaseSourcesSalesforce(knowledgeBaseId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeKnowledgebaseSourcesSalesforce");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **body** | [**SalesforceSourceRequest**](SalesforceSourceRequest)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**KnowledgeSyncJobResponse**](KnowledgeSyncJobResponse)
+
+
+# **postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync**
+
+
+> [SourceSyncResponse](SourceSyncResponse) postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(knowledgeBaseId, sourceId)
+
+Start sync on Salesforce Knowledge integration source
+
+postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}/sync  
+
+Requires ALL permissions: 
+
+* knowledge:integrationSource:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+String sourceId = "sourceId_example"; // String | Source ID
+try {
+    SourceSyncResponse result = apiInstance.postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(knowledgeBaseId, sourceId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **sourceId** | **String**| Source ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SourceSyncResponse**](SourceSyncResponse)
+
+
+# **postKnowledgeKnowledgebaseSourcesServicenow**
+
+
+> [KnowledgeSyncJobResponse](KnowledgeSyncJobResponse) postKnowledgeKnowledgebaseSourcesServicenow(knowledgeBaseId, body)
+
+Create ServiceNow Knowledge integration source
+
+postKnowledgeKnowledgebaseSourcesServicenow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow  
+
+Requires ALL permissions: 
+
+* knowledge:integrationSource:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+ServiceNowSourceRequest body = new ServiceNowSourceRequest(); // ServiceNowSourceRequest | 
+try {
+    KnowledgeSyncJobResponse result = apiInstance.postKnowledgeKnowledgebaseSourcesServicenow(knowledgeBaseId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeKnowledgebaseSourcesServicenow");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **body** | [**ServiceNowSourceRequest**](ServiceNowSourceRequest)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**KnowledgeSyncJobResponse**](KnowledgeSyncJobResponse)
+
+
+# **postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync**
+
+
+> [SourceSyncResponse](SourceSyncResponse) postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(knowledgeBaseId, sourceId)
+
+Start synchronization on ServiceNow Knowledge integration source
+
+postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}/sync  
+
+Requires ALL permissions: 
+
+* knowledge:integrationSource:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+String sourceId = "sourceId_example"; // String | Source ID
+try {
+    SourceSyncResponse result = apiInstance.postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(knowledgeBaseId, sourceId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **sourceId** | **String**| Source ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SourceSyncResponse**](SourceSyncResponse)
+
+
+# **postKnowledgeKnowledgebaseSynchronizeJobs**
+
+
+> [KnowledgeSyncJobResponse](KnowledgeSyncJobResponse) postKnowledgeKnowledgebaseSynchronizeJobs(knowledgeBaseId, body)
+
+Create synchronization job
+
+postKnowledgeKnowledgebaseSynchronizeJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs  
+
+Requires ALL permissions: 
+
+* knowledge:syncJob:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+KnowledgeSyncJobRequest body = new KnowledgeSyncJobRequest(); // KnowledgeSyncJobRequest | 
+try {
+    KnowledgeSyncJobResponse result = apiInstance.postKnowledgeKnowledgebaseSynchronizeJobs(knowledgeBaseId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeKnowledgebaseSynchronizeJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **body** | [**KnowledgeSyncJobRequest**](KnowledgeSyncJobRequest)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**KnowledgeSyncJobResponse**](KnowledgeSyncJobResponse)
+
+
 # **postKnowledgeKnowledgebaseUploadsUrlsJobs**
 
 
@@ -6357,4 +7260,134 @@ try {
 [**KnowledgeBase**](KnowledgeBase)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:209.1.0_
+# **putKnowledgeKnowledgebaseSourcesSalesforceSourceId**
+
+
+> [SalesforceSourceResponse](SalesforceSourceResponse) putKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, body)
+
+Update Salesforce Knowledge integration source
+
+putKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}  
+
+Requires ALL permissions: 
+
+* knowledge:integrationSource:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+String sourceId = "sourceId_example"; // String | Source ID
+SalesforceSourceRequest body = new SalesforceSourceRequest(); // SalesforceSourceRequest | 
+try {
+    SalesforceSourceResponse result = apiInstance.putKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#putKnowledgeKnowledgebaseSourcesSalesforceSourceId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **sourceId** | **String**| Source ID | 
+| **body** | [**SalesforceSourceRequest**](SalesforceSourceRequest)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SalesforceSourceResponse**](SalesforceSourceResponse)
+
+
+# **putKnowledgeKnowledgebaseSourcesServicenowSourceId**
+
+
+> [ServiceNowSourceResponse](ServiceNowSourceResponse) putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, body)
+
+Update ServiceNow Knowledge integration source
+
+putKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}  
+
+Requires ALL permissions: 
+
+* knowledge:integrationSource:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+String sourceId = "sourceId_example"; // String | Source ID
+ServiceNowSourceRequest body = new ServiceNowSourceRequest(); // ServiceNowSourceRequest | 
+try {
+    ServiceNowSourceResponse result = apiInstance.putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#putKnowledgeKnowledgebaseSourcesServicenowSourceId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **sourceId** | **String**| Source ID | 
+| **body** | [**ServiceNowSourceRequest**](ServiceNowSourceRequest)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ServiceNowSourceResponse**](ServiceNowSourceResponse)
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:210.0.0_

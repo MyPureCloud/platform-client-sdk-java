@@ -680,7 +680,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WebDeploymentsApi apiInstance = new WebDeploymentsApi();
-List<String> expand = Arrays.asList(null); // List<String> | The specified entity attributes will be filled. Comma separated values expected.
+List<String> expand = Arrays.asList(null); // List<String> | The specified entity attributes will be filled. Comma separated values expected. 
 try {
     ExpandableWebDeploymentEntityListing result = apiInstance.getWebdeploymentsDeployments(expand);
     System.out.println(result);
@@ -695,7 +695,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **expand** | [**List&lt;String&gt;**](String)| The specified entity attributes will be filled. Comma separated values expected. | [optional]<br />**Values**: Configuration, SupportedContent 
+| **expand** | [**List&lt;String&gt;**](String)| The specified entity attributes will be filled. Comma separated values expected.  | [optional]<br />**Values**: Configuration, SupportedContent 
 {: class="table-striped"}
 
 
@@ -1094,4 +1094,4 @@ try {
 [**WebDeployment**](WebDeployment)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:209.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:210.0.0_

@@ -49,6 +49,7 @@
 | **flowMilestoneIds** | **List&lt;String&gt;** | The ID of a flow outcome milestone |  [optional] |
 | **flowName** | **String** | The name of this flow at the time of flow execution |  [optional] |
 | **flowOutType** | **String** | Type of flow out that occurred when emitting tFlowOut. |  [optional] |
+| **flowSubType** | [**FlowSubTypeEnum**](#Enum--FlowSubTypeEnum) | Represents the subtype of the flow. For example a Digital Bot Flow that has been upgraded with Virtual Agent capabilities. |  [optional] |
 | **flowType** | [**FlowTypeEnum**](#Enum--FlowTypeEnum) | The type of this flow |  [optional] |
 | **flowVersion** | **String** | The version of this flow |  [optional] |
 | **groupId** | **String** | Unique identifier for a PureCloud group |  [optional] |
@@ -232,6 +233,14 @@
 | GENERAL | &quot;general&quot; | 
 
 
+## Enum: FlowSubTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| VIRTUAL_AGENT | &quot;VIRTUAL_AGENT&quot; | 
+
+
 ## Enum: FlowTypeEnum
 
 | Name | Value |
@@ -353,4 +362,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:209.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:210.0.0_

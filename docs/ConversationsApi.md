@@ -32,6 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationSecureattributes**](ConversationsApi#getConversationSecureattributes) | Get the secure attributes on a conversation. |
 | [**getConversationSuggestion**](ConversationsApi#getConversationSuggestion) | Get Suggestion. |
 | [**getConversationSuggestions**](ConversationsApi#getConversationSuggestions) | Get all suggestions for a conversation. |
+| [**getConversationSummaries**](ConversationsApi#getConversationSummaries) | Get the summaries of the conversation. |
 | [**getConversations**](ConversationsApi#getConversations) | Get active conversations for the logged in user |
 | [**getConversationsCall**](ConversationsApi#getConversationsCall) | Get call conversation |
 | [**getConversationsCallParticipantCommunicationWrapup**](ConversationsApi#getConversationsCallParticipantCommunicationWrapup) | Get the wrap-up for this conversation communication.  |
@@ -1919,6 +1920,67 @@ try {
 ### Return type
 
 [**SuggestionListing**](SuggestionListing)
+
+
+# **getConversationSummaries**
+
+
+> [ConversationSummariesGetResponse](ConversationSummariesGetResponse) getConversationSummaries(conversationId)
+
+Get the summaries of the conversation.
+
+getConversationSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/conversations/{conversationId}/summaries  
+
+Requires ALL permissions: 
+
+* conversation:summary:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | Conversation ID
+try {
+    ConversationSummariesGetResponse result = apiInstance.getConversationSummaries(conversationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationSummaries");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| Conversation ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ConversationSummariesGetResponse**](ConversationSummariesGetResponse)
 
 
 # **getConversations**
@@ -14781,4 +14843,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:209.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:210.0.0_

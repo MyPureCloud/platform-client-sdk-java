@@ -15,8 +15,9 @@
 | **contextId** | **String** |  |  [optional] |
 | **details** | [**List&lt;QueueConversationCobrowseEventTopicDetail&gt;**](QueueConversationCobrowseEventTopicDetail) |  |  [optional] |
 | **errors** | [**List&lt;QueueConversationCobrowseEventTopicErrorBody&gt;**](QueueConversationCobrowseEventTopicErrorBody) |  |  [optional] |
+| **limit** | [**QueueConversationCobrowseEventTopicLimit**](QueueConversationCobrowseEventTopicLimit) |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:209.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:210.0.0_
