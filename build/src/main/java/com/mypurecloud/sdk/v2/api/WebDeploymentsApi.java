@@ -940,7 +940,7 @@ public class WebDeploymentsApi {
   /**
    * Get deployments
    * 
-   * @param expand The specified entity attributes will be filled. Comma separated values expected. (optional)
+   * @param expand The specified entity attributes will be filled. Comma separated values expected.  (optional)
    * @return ExpandableWebDeploymentEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -952,7 +952,7 @@ public class WebDeploymentsApi {
   /**
    * Get deployments
    * 
-   * @param expand The specified entity attributes will be filled. Comma separated values expected. (optional)
+   * @param expand The specified entity attributes will be filled. Comma separated values expected.  (optional)
    * @return ExpandableWebDeploymentEntityListing
    * @throws IOException if the request fails to be processed
    */

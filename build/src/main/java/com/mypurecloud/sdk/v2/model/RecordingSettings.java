@@ -101,14 +101,14 @@ public class RecordingSettings  implements Serializable {
 
 
   /**
-   * TThe duration in minutes for which the generated URL for recording batch download remains valid.The default duration is set to 60 minutes, with a minimum allowable duration of 2 minutes and a maximum of 60 minutes.
+   * The duration in minutes for which the generated URL for recording batch download remains valid.The default duration is set to 60 minutes, with a minimum allowable duration of 2 minutes and a maximum of 60 minutes.
    **/
   public RecordingSettings recordingBatchDownloadUrlTtl(Integer recordingBatchDownloadUrlTtl) {
     this.recordingBatchDownloadUrlTtl = recordingBatchDownloadUrlTtl;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "TThe duration in minutes for which the generated URL for recording batch download remains valid.The default duration is set to 60 minutes, with a minimum allowable duration of 2 minutes and a maximum of 60 minutes.")
+  @ApiModelProperty(example = "null", value = "The duration in minutes for which the generated URL for recording batch download remains valid.The default duration is set to 60 minutes, with a minimum allowable duration of 2 minutes and a maximum of 60 minutes.")
   @JsonProperty("recordingBatchDownloadUrlTtl")
   public Integer getRecordingBatchDownloadUrlTtl() {
     return recordingBatchDownloadUrlTtl;

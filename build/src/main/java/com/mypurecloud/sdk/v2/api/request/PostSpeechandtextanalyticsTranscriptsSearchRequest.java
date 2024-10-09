@@ -22,6 +22,7 @@ import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.CategoriesEntityListing;
 import com.mypurecloud.sdk.v2.model.CategoryRequest;
+import com.mypurecloud.sdk.v2.model.CommunicationTranslationList;
 import com.mypurecloud.sdk.v2.model.ConversationCategoriesEntityListing;
 import com.mypurecloud.sdk.v2.model.ConversationMetrics;
 import com.mypurecloud.sdk.v2.model.DeleteProgramResponse;
@@ -57,6 +58,7 @@ import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
 import com.mypurecloud.sdk.v2.model.TranscriptUrl;
 import com.mypurecloud.sdk.v2.model.TranscriptUrls;
 import com.mypurecloud.sdk.v2.model.TranscriptionEnginesRequest;
+import com.mypurecloud.sdk.v2.model.TranslateSupportedLanguageList;
 import com.mypurecloud.sdk.v2.model.UnifiedGeneralTopicEntityListing;
 import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 

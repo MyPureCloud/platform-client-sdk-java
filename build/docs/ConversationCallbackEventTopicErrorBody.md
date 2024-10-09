@@ -15,8 +15,9 @@
 | **contextId** | **String** |  |  [optional] |
 | **details** | [**List&lt;ConversationCallbackEventTopicDetail&gt;**](ConversationCallbackEventTopicDetail) |  |  [optional] |
 | **errors** | [**List&lt;ConversationCallbackEventTopicErrorBody&gt;**](ConversationCallbackEventTopicErrorBody) |  |  [optional] |
+| **limit** | [**ConversationCallbackEventTopicLimit**](ConversationCallbackEventTopicLimit) |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:209.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:210.0.0_

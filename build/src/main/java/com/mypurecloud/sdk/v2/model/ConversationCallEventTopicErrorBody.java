@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationCallEventTopicDetail;
+import com.mypurecloud.sdk.v2.model.ConversationCallEventTopicLimit;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -36,6 +37,7 @@ public class ConversationCallEventTopicErrorBody  implements Serializable {
   private String contextId = null;
   private List<ConversationCallEventTopicDetail> details = new ArrayList<ConversationCallEventTopicDetail>();
   private List<ConversationCallEventTopicErrorBody> errors = new ArrayList<ConversationCallEventTopicErrorBody>();
+  private ConversationCallEventTopicLimit limit = null;
 
   
   /**
@@ -208,6 +210,23 @@ public class ConversationCallEventTopicErrorBody  implements Serializable {
   }
 
 
+  /**
+   **/
+  public ConversationCallEventTopicErrorBody limit(ConversationCallEventTopicLimit limit) {
+    this.limit = limit;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("limit")
+  public ConversationCallEventTopicLimit getLimit() {
+    return limit;
+  }
+  public void setLimit(ConversationCallEventTopicLimit limit) {
+    this.limit = limit;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -227,12 +246,13 @@ public class ConversationCallEventTopicErrorBody  implements Serializable {
             Objects.equals(this.messageParams, conversationCallEventTopicErrorBody.messageParams) &&
             Objects.equals(this.contextId, conversationCallEventTopicErrorBody.contextId) &&
             Objects.equals(this.details, conversationCallEventTopicErrorBody.details) &&
-            Objects.equals(this.errors, conversationCallEventTopicErrorBody.errors);
+            Objects.equals(this.errors, conversationCallEventTopicErrorBody.errors) &&
+            Objects.equals(this.limit, conversationCallEventTopicErrorBody.limit);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(message, code, status, entityId, entityName, messageWithParams, messageParams, contextId, details, errors);
+    return Objects.hash(message, code, status, entityId, entityName, messageWithParams, messageParams, contextId, details, errors, limit);
   }
 
   @Override
@@ -250,6 +270,7 @@ public class ConversationCallEventTopicErrorBody  implements Serializable {
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
     sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
     sb.append("}");
     return sb.toString();
   }

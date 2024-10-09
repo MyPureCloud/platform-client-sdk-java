@@ -179,6 +179,7 @@ docs/AlertRequest.md
 docs/AlertRuleProperties.md
 docs/AlertSummary.md
 docs/AlertSummaryEntity.md
+docs/AlertablePresences.md
 docs/AlertingApi.json
 docs/AlertingApi.md
 docs/AlertingUnreadStatus.md
@@ -625,6 +626,7 @@ docs/CampaignRuleCondition.md
 docs/CampaignRuleConditionGroup.md
 docs/CampaignRuleEntities.md
 docs/CampaignRuleEntityListing.md
+docs/CampaignRuleExecutionSettings.md
 docs/CampaignRuleParameters.md
 docs/CampaignSchedule.md
 docs/CampaignSequence.md
@@ -708,6 +710,10 @@ docs/CobrowseMediaParticipant.md
 docs/CobrowseSettings.md
 docs/CobrowseWebMessagingSession.md
 docs/Cobrowsesession.md
+docs/CollaborateChatAdhocMessageEventTopicCollaborateChatEntity.md
+docs/CollaborateChatAdhocMessageEventTopicCollaborateChatMessage.md
+docs/CollaborateChatGroupMessageEventTopicCollaborateChatEntity.md
+docs/CollaborateChatGroupMessageEventTopicCollaborateChatMessage.md
 docs/Column.md
 docs/ColumnDataTypeSpecification.md
 docs/ColumnStatus.md
@@ -729,6 +735,8 @@ docs/CommonRulePredicateEntity.md
 docs/CommunicationAnsweredEvent.md
 docs/CommunicationDispositionAppliedEvent.md
 docs/CommunicationEndedEvent.md
+docs/CommunicationTranslation.md
+docs/CommunicationTranslationList.md
 docs/ComparisonPeriod.md
 docs/ComparisonPeriodListing.md
 docs/ComplexVariableInfo.md
@@ -868,6 +876,7 @@ docs/ConversationCallEventTopicJourneyActionMap.md
 docs/ConversationCallEventTopicJourneyContext.md
 docs/ConversationCallEventTopicJourneyCustomer.md
 docs/ConversationCallEventTopicJourneyCustomerSession.md
+docs/ConversationCallEventTopicLimit.md
 docs/ConversationCallEventTopicQueueMediaSettings.md
 docs/ConversationCallEventTopicScoredAgent.md
 docs/ConversationCallEventTopicUriReference.md
@@ -883,6 +892,7 @@ docs/ConversationCallbackEventTopicJourneyActionMap.md
 docs/ConversationCallbackEventTopicJourneyContext.md
 docs/ConversationCallbackEventTopicJourneyCustomer.md
 docs/ConversationCallbackEventTopicJourneyCustomerSession.md
+docs/ConversationCallbackEventTopicLimit.md
 docs/ConversationCallbackEventTopicPhoneNumberColumn.md
 docs/ConversationCallbackEventTopicQueueMediaSettings.md
 docs/ConversationCallbackEventTopicScoredAgent.md
@@ -904,6 +914,7 @@ docs/ConversationChatEventTopicJourneyActionMap.md
 docs/ConversationChatEventTopicJourneyContext.md
 docs/ConversationChatEventTopicJourneyCustomer.md
 docs/ConversationChatEventTopicJourneyCustomerSession.md
+docs/ConversationChatEventTopicLimit.md
 docs/ConversationChatEventTopicQueueMediaSettings.md
 docs/ConversationChatEventTopicScoredAgent.md
 docs/ConversationChatEventTopicUriReference.md
@@ -919,6 +930,7 @@ docs/ConversationCobrowseEventTopicJourneyActionMap.md
 docs/ConversationCobrowseEventTopicJourneyContext.md
 docs/ConversationCobrowseEventTopicJourneyCustomer.md
 docs/ConversationCobrowseEventTopicJourneyCustomerSession.md
+docs/ConversationCobrowseEventTopicLimit.md
 docs/ConversationCobrowseEventTopicQueueMediaSettings.md
 docs/ConversationCobrowseEventTopicScoredAgent.md
 docs/ConversationCobrowseEventTopicUriReference.md
@@ -942,6 +954,7 @@ docs/ConversationDetailQueryPredicate.md
 docs/ConversationDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification.md
 docs/ConversationDisconnectSettings.md
 docs/ConversationDivisionMembership.md
+docs/ConversationEditedSummary.md
 docs/ConversationEmailEventTopicAttachment.md
 docs/ConversationEmailEventTopicConversationRoutingData.md
 docs/ConversationEmailEventTopicDetail.md
@@ -953,6 +966,7 @@ docs/ConversationEmailEventTopicJourneyActionMap.md
 docs/ConversationEmailEventTopicJourneyContext.md
 docs/ConversationEmailEventTopicJourneyCustomer.md
 docs/ConversationEmailEventTopicJourneyCustomerSession.md
+docs/ConversationEmailEventTopicLimit.md
 docs/ConversationEmailEventTopicQueueMediaSettings.md
 docs/ConversationEmailEventTopicScoredAgent.md
 docs/ConversationEmailEventTopicUriReference.md
@@ -981,6 +995,8 @@ docs/ConversationEventTopicEmail.md
 docs/ConversationEventTopicErrorDetails.md
 docs/ConversationEventTopicFaxStatus.md
 docs/ConversationEventTopicInitiator.md
+docs/ConversationEventTopicInternalMessage.md
+docs/ConversationEventTopicInternalMessageDetails.md
 docs/ConversationEventTopicJourneyAction.md
 docs/ConversationEventTopicJourneyActionMap.md
 docs/ConversationEventTopicJourneyContext.md
@@ -1020,6 +1036,7 @@ docs/ConversationMessageEventTopicJourneyActionMap.md
 docs/ConversationMessageEventTopicJourneyContext.md
 docs/ConversationMessageEventTopicJourneyCustomer.md
 docs/ConversationMessageEventTopicJourneyCustomerSession.md
+docs/ConversationMessageEventTopicLimit.md
 docs/ConversationMessageEventTopicMessageConversation.md
 docs/ConversationMessageEventTopicMessageDetails.md
 docs/ConversationMessageEventTopicMessageMedia.md
@@ -1066,6 +1083,7 @@ docs/ConversationScreenShareEventTopicJourneyActionMap.md
 docs/ConversationScreenShareEventTopicJourneyContext.md
 docs/ConversationScreenShareEventTopicJourneyCustomer.md
 docs/ConversationScreenShareEventTopicJourneyCustomerSession.md
+docs/ConversationScreenShareEventTopicLimit.md
 docs/ConversationScreenShareEventTopicQueueMediaSettings.md
 docs/ConversationScreenShareEventTopicScoredAgent.md
 docs/ConversationScreenShareEventTopicScreenShareConversation.md
@@ -1073,6 +1091,7 @@ docs/ConversationScreenShareEventTopicScreenShareMediaParticipant.md
 docs/ConversationScreenShareEventTopicUriReference.md
 docs/ConversationScreenShareEventTopicWrapup.md
 docs/ConversationSecureAttributes.md
+docs/ConversationSessionSummary.md
 docs/ConversationSocialExpressionEventTopicConversationRoutingData.md
 docs/ConversationSocialExpressionEventTopicDetail.md
 docs/ConversationSocialExpressionEventTopicErrorBody.md
@@ -1081,12 +1100,19 @@ docs/ConversationSocialExpressionEventTopicJourneyActionMap.md
 docs/ConversationSocialExpressionEventTopicJourneyContext.md
 docs/ConversationSocialExpressionEventTopicJourneyCustomer.md
 docs/ConversationSocialExpressionEventTopicJourneyCustomerSession.md
+docs/ConversationSocialExpressionEventTopicLimit.md
 docs/ConversationSocialExpressionEventTopicQueueMediaSettings.md
 docs/ConversationSocialExpressionEventTopicScoredAgent.md
 docs/ConversationSocialExpressionEventTopicSocialConversation.md
 docs/ConversationSocialExpressionEventTopicSocialMediaParticipant.md
 docs/ConversationSocialExpressionEventTopicUriReference.md
 docs/ConversationSocialExpressionEventTopicWrapup.md
+docs/ConversationSummariesGetResponse.md
+docs/ConversationSummary.md
+docs/ConversationSummaryFollowup.md
+docs/ConversationSummaryReason.md
+docs/ConversationSummaryResolution.md
+docs/ConversationSummaryWrapupCode.md
 docs/ConversationTagsUpdate.md
 docs/ConversationThreadingWindow.md
 docs/ConversationThreadingWindowSetting.md
@@ -1101,6 +1127,7 @@ docs/ConversationVideoEventTopicJourneyActionMap.md
 docs/ConversationVideoEventTopicJourneyContext.md
 docs/ConversationVideoEventTopicJourneyCustomer.md
 docs/ConversationVideoEventTopicJourneyCustomerSession.md
+docs/ConversationVideoEventTopicLimit.md
 docs/ConversationVideoEventTopicQueueMediaSettings.md
 docs/ConversationVideoEventTopicScoredAgent.md
 docs/ConversationVideoEventTopicUriReference.md
@@ -1116,6 +1143,7 @@ docs/CopilotFallbackAction.md
 docs/CopilotNluDomain.md
 docs/CopilotNluDomainVersion.md
 docs/CopilotRule.md
+docs/CopilotTranscriptionConfig.md
 docs/CopyAttachmentsRequest.md
 docs/CopyBuForecastRequest.md
 docs/CopyVoicemailMessage.md
@@ -1990,6 +2018,7 @@ docs/GrammarLanguage.md
 docs/GrammarLanguageFileMetadata.md
 docs/GrammarLanguageUpdate.md
 docs/GrammarListing.md
+docs/GraphApiSettings.md
 docs/Greeting.md
 docs/GreetingAudioFile.md
 docs/GreetingListing.md
@@ -2132,6 +2161,8 @@ docs/InteractionStatsAlert.md
 docs/InteractionStatsAlertContainer.md
 docs/InteractionStatsRule.md
 docs/InteractionStatsRuleContainer.md
+docs/InternalMessage.md
+docs/InternalMessageDetails.md
 docs/IntradayPerformancePredictionData.md
 docs/IntradayPlanningGroupRequest.md
 docs/InvalidAssignment.md
@@ -2402,6 +2433,10 @@ docs/KnowledgeImportJobRequest.md
 docs/KnowledgeImportJobResponse.md
 docs/KnowledgeImportJobSettings.md
 docs/KnowledgeImportJobStatistics.md
+docs/KnowledgeIntegrationFilter.md
+docs/KnowledgeIntegrationFilterValue.md
+docs/KnowledgeIntegrationOptionsResponse.md
+docs/KnowledgeIntegrationReference.md
 docs/KnowledgeOperationSource.md
 docs/KnowledgeParseImportResult.md
 docs/KnowledgeParseJobRequest.md
@@ -2415,6 +2450,10 @@ docs/KnowledgeSearchDocumentV1.md
 docs/KnowledgeSearchRequest.md
 docs/KnowledgeSearchResponse.md
 docs/KnowledgeSuggestionConfig.md
+docs/KnowledgeSyncJobReport.md
+docs/KnowledgeSyncJobRequest.md
+docs/KnowledgeSyncJobResponse.md
+docs/KnowledgeSyncJobStatistics.md
 docs/KnowledgeTraining.md
 docs/KpiResult.md
 docs/Label.md
@@ -2893,6 +2932,20 @@ docs/OutboundMessagingCampaignPreContactEmailEventTopicEmailAttributes.md
 docs/OutboundMessagingCampaignPreContactEmailEventTopicOutboundMessagingCampaignPreContactEmailEvent.md
 docs/OutboundMessagingCampaignPreContactSmsEventTopicOutboundMessagingCampaignPreContactSMSEvent.md
 docs/OutboundMessagingCampaignPreContactSmsEventTopicSMSAttributes.md
+docs/OutboundMessagingEmailCampaignConfigChangeContactSort.md
+docs/OutboundMessagingEmailCampaignConfigChangeEmailConfig.md
+docs/OutboundMessagingEmailCampaignConfigChangeErrorDetail.md
+docs/OutboundMessagingEmailCampaignConfigChangeFromEmailAddress.md
+docs/OutboundMessagingEmailCampaignConfigChangeMessagingCampaign.md
+docs/OutboundMessagingEmailCampaignConfigChangeObject.md
+docs/OutboundMessagingEmailCampaignConfigChangeReplyToEmailAddress.md
+docs/OutboundMessagingEmailCampaignConfigChangeResponseRef.md
+docs/OutboundMessagingEmailCampaignConfigChangeSmsConfig.md
+docs/OutboundMessagingEmailCampaignConfigChangeSmsPhoneNumberRef.md
+docs/OutboundMessagingEmailCampaignConfigChangeUriReference.md
+docs/OutboundMessagingEmailCampaignProgressEventCampaignProgress.md
+docs/OutboundMessagingEmailCampaignProgressEventObject.md
+docs/OutboundMessagingEmailCampaignProgressEventUriReference.md
 docs/OutboundMessagingMessagingCampaignConfigChangeContactSort.md
 docs/OutboundMessagingMessagingCampaignConfigChangeEmailConfig.md
 docs/OutboundMessagingMessagingCampaignConfigChangeErrorDetail.md
@@ -2941,6 +2994,7 @@ docs/OverallBestPointsItem.md
 docs/PINConfiguration.md
 docs/Page.md
 docs/PagedNamespaceListing.md
+docs/PagedSkillCombinationListing.md
 docs/PagelessDomainEntityListingEvaluationVersion.md
 docs/PagelessEntityListing.md
 docs/PagingSpec.md
@@ -3027,6 +3081,7 @@ docs/PhoneTransferEvent.md
 docs/PhonesReboot.md
 docs/Phrase.md
 docs/PhraseAssociations.md
+docs/PhraseTranslation.md
 docs/PhysicalInterfaceEntityListing.md
 docs/PingIdentity.md
 docs/PinnedMessageRequest.md
@@ -3149,6 +3204,7 @@ docs/QueueConversationCallEventTopicJourneyActionMap.md
 docs/QueueConversationCallEventTopicJourneyContext.md
 docs/QueueConversationCallEventTopicJourneyCustomer.md
 docs/QueueConversationCallEventTopicJourneyCustomerSession.md
+docs/QueueConversationCallEventTopicLimit.md
 docs/QueueConversationCallEventTopicQueueMediaSettings.md
 docs/QueueConversationCallEventTopicScoredAgent.md
 docs/QueueConversationCallEventTopicUriReference.md
@@ -3164,6 +3220,7 @@ docs/QueueConversationCallbackEventTopicJourneyActionMap.md
 docs/QueueConversationCallbackEventTopicJourneyContext.md
 docs/QueueConversationCallbackEventTopicJourneyCustomer.md
 docs/QueueConversationCallbackEventTopicJourneyCustomerSession.md
+docs/QueueConversationCallbackEventTopicLimit.md
 docs/QueueConversationCallbackEventTopicPhoneNumberColumn.md
 docs/QueueConversationCallbackEventTopicQueueMediaSettings.md
 docs/QueueConversationCallbackEventTopicScoredAgent.md
@@ -3180,6 +3237,7 @@ docs/QueueConversationChatEventTopicJourneyActionMap.md
 docs/QueueConversationChatEventTopicJourneyContext.md
 docs/QueueConversationChatEventTopicJourneyCustomer.md
 docs/QueueConversationChatEventTopicJourneyCustomerSession.md
+docs/QueueConversationChatEventTopicLimit.md
 docs/QueueConversationChatEventTopicQueueMediaSettings.md
 docs/QueueConversationChatEventTopicScoredAgent.md
 docs/QueueConversationChatEventTopicUriReference.md
@@ -3194,6 +3252,7 @@ docs/QueueConversationCobrowseEventTopicJourneyActionMap.md
 docs/QueueConversationCobrowseEventTopicJourneyContext.md
 docs/QueueConversationCobrowseEventTopicJourneyCustomer.md
 docs/QueueConversationCobrowseEventTopicJourneyCustomerSession.md
+docs/QueueConversationCobrowseEventTopicLimit.md
 docs/QueueConversationCobrowseEventTopicQueueMediaSettings.md
 docs/QueueConversationCobrowseEventTopicScoredAgent.md
 docs/QueueConversationCobrowseEventTopicUriReference.md
@@ -3209,6 +3268,7 @@ docs/QueueConversationEmailEventTopicJourneyActionMap.md
 docs/QueueConversationEmailEventTopicJourneyContext.md
 docs/QueueConversationEmailEventTopicJourneyCustomer.md
 docs/QueueConversationEmailEventTopicJourneyCustomerSession.md
+docs/QueueConversationEmailEventTopicLimit.md
 docs/QueueConversationEmailEventTopicQueueMediaSettings.md
 docs/QueueConversationEmailEventTopicScoredAgent.md
 docs/QueueConversationEmailEventTopicUriReference.md
@@ -3229,6 +3289,8 @@ docs/QueueConversationEventTopicEmail.md
 docs/QueueConversationEventTopicErrorDetails.md
 docs/QueueConversationEventTopicFaxStatus.md
 docs/QueueConversationEventTopicInitiator.md
+docs/QueueConversationEventTopicInternalMessage.md
+docs/QueueConversationEventTopicInternalMessageDetails.md
 docs/QueueConversationEventTopicJourneyAction.md
 docs/QueueConversationEventTopicJourneyActionMap.md
 docs/QueueConversationEventTopicJourneyContext.md
@@ -3264,6 +3326,7 @@ docs/QueueConversationMessageEventTopicJourneyActionMap.md
 docs/QueueConversationMessageEventTopicJourneyContext.md
 docs/QueueConversationMessageEventTopicJourneyCustomer.md
 docs/QueueConversationMessageEventTopicJourneyCustomerSession.md
+docs/QueueConversationMessageEventTopicLimit.md
 docs/QueueConversationMessageEventTopicMessageConversation.md
 docs/QueueConversationMessageEventTopicMessageDetails.md
 docs/QueueConversationMessageEventTopicMessageMedia.md
@@ -3284,6 +3347,7 @@ docs/QueueConversationScreenShareEventTopicJourneyActionMap.md
 docs/QueueConversationScreenShareEventTopicJourneyContext.md
 docs/QueueConversationScreenShareEventTopicJourneyCustomer.md
 docs/QueueConversationScreenShareEventTopicJourneyCustomerSession.md
+docs/QueueConversationScreenShareEventTopicLimit.md
 docs/QueueConversationScreenShareEventTopicQueueMediaSettings.md
 docs/QueueConversationScreenShareEventTopicScoredAgent.md
 docs/QueueConversationScreenShareEventTopicScreenShareConversation.md
@@ -3306,6 +3370,8 @@ docs/QueueConversationSocialExpressionEventTopicEmail.md
 docs/QueueConversationSocialExpressionEventTopicErrorDetails.md
 docs/QueueConversationSocialExpressionEventTopicFaxStatus.md
 docs/QueueConversationSocialExpressionEventTopicInitiator.md
+docs/QueueConversationSocialExpressionEventTopicInternalMessage.md
+docs/QueueConversationSocialExpressionEventTopicInternalMessageDetails.md
 docs/QueueConversationSocialExpressionEventTopicJourneyAction.md
 docs/QueueConversationSocialExpressionEventTopicJourneyActionMap.md
 docs/QueueConversationSocialExpressionEventTopicJourneyContext.md
@@ -3348,6 +3414,8 @@ docs/QueueConversationVideoEventTopicEmail.md
 docs/QueueConversationVideoEventTopicErrorDetails.md
 docs/QueueConversationVideoEventTopicFaxStatus.md
 docs/QueueConversationVideoEventTopicInitiator.md
+docs/QueueConversationVideoEventTopicInternalMessage.md
+docs/QueueConversationVideoEventTopicInternalMessageDetails.md
 docs/QueueConversationVideoEventTopicJourneyAction.md
 docs/QueueConversationVideoEventTopicJourneyActionMap.md
 docs/QueueConversationVideoEventTopicJourneyContext.md
@@ -3573,6 +3641,9 @@ docs/SCIMApi.md
 docs/SIPSearchPublicRequest.md
 docs/SMSAvailablePhoneNumberEntityListing.md
 docs/Salesforce.md
+docs/SalesforceSettings.md
+docs/SalesforceSourceRequest.md
+docs/SalesforceSourceResponse.md
 docs/Schedule.md
 docs/ScheduleActivity.md
 docs/ScheduleDivisionViewEntityListing.md
@@ -3689,6 +3760,9 @@ docs/ServiceGoalTemplateImpactOverride.md
 docs/ServiceGoalTemplateList.md
 docs/ServiceGoalTemplateReference.md
 docs/ServiceLevel.md
+docs/ServiceNowSettings.md
+docs/ServiceNowSourceRequest.md
+docs/ServiceNowSourceResponse.md
 docs/Session.md
 docs/SessionEndDetails.md
 docs/SessionLastEvent.md
@@ -3740,6 +3814,7 @@ docs/Site.md
 docs/SiteConnection.md
 docs/SiteConnections.md
 docs/SiteEntityListing.md
+docs/SkillCombinationInfo.md
 docs/SkillEntityListing.md
 docs/SkillGroup.md
 docs/SkillGroupCondition.md
@@ -3768,10 +3843,13 @@ docs/SocialExpression.md
 docs/SocialHandle.md
 docs/SortItem.md
 docs/Source.md
+docs/SourceBaseResponse.md
 docs/SourceConfiguration.md
 docs/SourceEntity.md
 docs/SourceEntityListing.md
+docs/SourceLastSync.md
 docs/SourcePlanningGroupRequest.md
+docs/SourceSyncResponse.md
 docs/SpeechTextAnalyticsApi.json
 docs/SpeechTextAnalyticsApi.md
 docs/SpeechTextAnalyticsSettingsRequest.md
@@ -3879,6 +3957,7 @@ docs/SurveyQuestionGroup.md
 docs/SurveyQuestionGroupScore.md
 docs/SurveyQuestionScore.md
 docs/SurveyScoringSet.md
+docs/SyncStatusRequest.md
 docs/SystemMessageObject.md
 docs/SystemMessageSystemMessage.md
 docs/SystemPresence.md
@@ -4030,6 +4109,7 @@ docs/TranscriptSearchCriteria.md
 docs/TranscriptSearchRequest.md
 docs/TranscriptTopic.md
 docs/TranscriptTopics.md
+docs/TranscriptTranslation.md
 docs/TranscriptUrl.md
 docs/TranscriptUrls.md
 docs/TranscriptionConfig.md
@@ -4049,6 +4129,8 @@ docs/TransferResponseModifiedBy.md
 docs/TransferToAgentRequest.md
 docs/TransferToExternalRequest.md
 docs/TransferToQueueRequest.md
+docs/TranslateSupportedLanguage.md
+docs/TranslateSupportedLanguageList.md
 docs/TrendData.md
 docs/Trigger.md
 docs/TriggerEntityListing.md
@@ -4327,6 +4409,9 @@ docs/V2FlowExecutionDataFlowidTopicInvokingContext.md
 docs/V2FlowExecutionDataFlowidTopicJourneyActionMap.md
 docs/V2FlowExecutionDataFlowidTopicProcessAutomation.md
 docs/V2FlowExecutionDataFlowidTopicQuality.md
+docs/V2FlowExecutionDataFlowidTopicWorkitem.md
+docs/V2IntegrationPresenceEventOrganizationPresence.md
+docs/V2IntegrationPresenceEventPresenceActivityEvent.md
 docs/V2MobiusAlertsTopicAddressableEntityRef.md
 docs/V2MobiusAlertsTopicAlert.md
 docs/V2MobiusAlertsTopicAlertNotification.md
@@ -4345,6 +4430,8 @@ docs/V2MobiusRulesTopicCondition.md
 docs/V2MobiusRulesTopicConditionRulePredicate.md
 docs/V2MobiusRulesTopicEntityProperties.md
 docs/V2MobiusRulesTopicRule.md
+docs/V2WebMessagingUndeliveredMessageTopicMessage.md
+docs/V2WebMessagingUndeliveredMessageTopicWebMessagingUndeliveredMessageEventBody.md
 docs/V2WemEngagementCelebrationUpdatesTopicEngagementCelebration.md
 docs/V2WemEngagementCelebrationUpdatesTopicSourceEntity.md
 docs/V2WemEngagementCelebrationUpdatesTopicUserId.md
@@ -4916,6 +5003,9 @@ docs/deleteKnowledgeKnowledgebaseLabel-example.txt
 docs/deleteKnowledgeKnowledgebaseLanguageCategory-example.txt
 docs/deleteKnowledgeKnowledgebaseLanguageDocument-example.txt
 docs/deleteKnowledgeKnowledgebaseLanguageDocumentsImport-example.txt
+docs/deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId-example.txt
+docs/deleteKnowledgeKnowledgebaseSourcesServicenowSourceId-example.txt
+docs/deleteKnowledgeKnowledgebaseSynchronizeJob-example.txt
 docs/deleteLanguage-example.txt
 docs/deleteLanguageunderstandingDomain-example.txt
 docs/deleteLanguageunderstandingDomainFeedbackFeedbackId-example.txt
@@ -5035,6 +5125,7 @@ docs/deleteTeamMembers-example.txt
 docs/deleteTelephonyProvidersEdge-example.txt
 docs/deleteTelephonyProvidersEdgeLogicalinterface-example.txt
 docs/deleteTelephonyProvidersEdgeSoftwareupdate-example.txt
+docs/deleteTelephonyProvidersEdgesAlertablepresences-example.txt
 docs/deleteTelephonyProvidersEdgesCertificateauthority-example.txt
 docs/deleteTelephonyProvidersEdgesDidpool-example.txt
 docs/deleteTelephonyProvidersEdgesEdgegroup-example.txt
@@ -5290,6 +5381,7 @@ docs/getConversationRecordings-example.txt
 docs/getConversationSecureattributes-example.txt
 docs/getConversationSuggestion-example.txt
 docs/getConversationSuggestions-example.txt
+docs/getConversationSummaries-example.txt
 docs/getConversations-example.txt
 docs/getConversationsCall-example.txt
 docs/getConversationsCallParticipantCommunicationWrapup-example.txt
@@ -5621,6 +5713,7 @@ docs/getJourneyViewsJobs-example.txt
 docs/getKnowledgeGuestSessionCategories-example.txt
 docs/getKnowledgeGuestSessionDocument-example.txt
 docs/getKnowledgeGuestSessionDocuments-example.txt
+docs/getKnowledgeIntegrationOptions-example.txt
 docs/getKnowledgeKnowledgebase-example.txt
 docs/getKnowledgeKnowledgebaseCategories-example.txt
 docs/getKnowledgeKnowledgebaseCategory-example.txt
@@ -5649,6 +5742,10 @@ docs/getKnowledgeKnowledgebaseLanguageTrainings-example.txt
 docs/getKnowledgeKnowledgebaseOperations-example.txt
 docs/getKnowledgeKnowledgebaseOperationsUsersQuery-example.txt
 docs/getKnowledgeKnowledgebaseParseJob-example.txt
+docs/getKnowledgeKnowledgebaseSources-example.txt
+docs/getKnowledgeKnowledgebaseSourcesSalesforceSourceId-example.txt
+docs/getKnowledgeKnowledgebaseSourcesServicenowSourceId-example.txt
+docs/getKnowledgeKnowledgebaseSynchronizeJob-example.txt
 docs/getKnowledgeKnowledgebaseUnansweredGroup-example.txt
 docs/getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup-example.txt
 docs/getKnowledgeKnowledgebaseUnansweredGroups-example.txt
@@ -5769,6 +5866,7 @@ docs/getOutboundCampaignDiagnostics-example.txt
 docs/getOutboundCampaignInteractions-example.txt
 docs/getOutboundCampaignLinedistribution-example.txt
 docs/getOutboundCampaignProgress-example.txt
+docs/getOutboundCampaignSkillcombinations-example.txt
 docs/getOutboundCampaignStats-example.txt
 docs/getOutboundCampaignrule-example.txt
 docs/getOutboundCampaignrules-example.txt
@@ -6019,6 +6117,8 @@ docs/getSpeechandtextanalyticsTopicsDialects-example.txt
 docs/getSpeechandtextanalyticsTopicsGeneral-example.txt
 docs/getSpeechandtextanalyticsTopicsGeneralStatus-example.txt
 docs/getSpeechandtextanalyticsTopicsPublishjob-example.txt
+docs/getSpeechandtextanalyticsTranslationsLanguageConversation-example.txt
+docs/getSpeechandtextanalyticsTranslationsLanguages-example.txt
 docs/getStation-example.txt
 docs/getStations-example.txt
 docs/getSystempresences-example.txt
@@ -6064,6 +6164,7 @@ docs/getTelephonyProvidersEdgeSoftwareupdate-example.txt
 docs/getTelephonyProvidersEdgeSoftwareversions-example.txt
 docs/getTelephonyProvidersEdgeTrunks-example.txt
 docs/getTelephonyProvidersEdges-example.txt
+docs/getTelephonyProvidersEdgesAlertablepresences-example.txt
 docs/getTelephonyProvidersEdgesCertificateauthorities-example.txt
 docs/getTelephonyProvidersEdgesCertificateauthority-example.txt
 docs/getTelephonyProvidersEdgesDid-example.txt
@@ -6405,6 +6506,7 @@ docs/patchKnowledgeKnowledgebaseLanguageDocument-example.txt
 docs/patchKnowledgeKnowledgebaseLanguageDocuments-example.txt
 docs/patchKnowledgeKnowledgebaseLanguageDocumentsImport-example.txt
 docs/patchKnowledgeKnowledgebaseParseJob-example.txt
+docs/patchKnowledgeKnowledgebaseSynchronizeJob-example.txt
 docs/patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup-example.txt
 docs/patchLanguageunderstandingDomain-example.txt
 docs/patchLanguageunderstandingMinerDraft-example.txt
@@ -6860,6 +6962,11 @@ docs/postKnowledgeKnowledgebaseParseJobImport-example.txt
 docs/postKnowledgeKnowledgebaseParseJobs-example.txt
 docs/postKnowledgeKnowledgebaseSearch-example.txt
 docs/postKnowledgeKnowledgebaseSearch-example.txt
+docs/postKnowledgeKnowledgebaseSourcesSalesforce-example.txt
+docs/postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync-example.txt
+docs/postKnowledgeKnowledgebaseSourcesServicenow-example.txt
+docs/postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync-example.txt
+docs/postKnowledgeKnowledgebaseSynchronizeJobs-example.txt
 docs/postKnowledgeKnowledgebaseUploadsUrlsJobs-example.txt
 docs/postKnowledgeKnowledgebaseUploadsUrlsJobs-example.txt
 docs/postKnowledgeKnowledgebases-example.txt
@@ -7281,6 +7388,8 @@ docs/putIntegrationsCredential-example.txt
 docs/putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings-example.txt
 docs/putIntegrationsSpeechTtsSettings-example.txt
 docs/putIntegrationsUnifiedcommunicationThirdpartypresences-example.txt
+docs/putKnowledgeKnowledgebaseSourcesSalesforceSourceId-example.txt
+docs/putKnowledgeKnowledgebaseSourcesServicenowSourceId-example.txt
 docs/putLanguageunderstandingDomainVersion-example.txt
 docs/putLearningModule-example.txt
 docs/putLearningModulePreview-example.txt
@@ -7377,6 +7486,7 @@ docs/putSpeechandtextanalyticsTopic-example.txt
 docs/putTaskmanagementWorkitemsSchema-example.txt
 docs/putTelephonyProvidersEdge-example.txt
 docs/putTelephonyProvidersEdgeLogicalinterface-example.txt
+docs/putTelephonyProvidersEdgesAlertablepresences-example.txt
 docs/putTelephonyProvidersEdgesCertificateauthority-example.txt
 docs/putTelephonyProvidersEdgesDidpool-example.txt
 docs/putTelephonyProvidersEdgesEdgegroup-example.txt
@@ -7700,6 +7810,9 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteKnowledgeKnowledgebaseLan
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteKnowledgeKnowledgebaseLanguageDocumentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteKnowledgeKnowledgebaseLanguageDocumentsImportRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteKnowledgeKnowledgebaseRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteKnowledgeKnowledgebaseSynchronizeJobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteLanguageRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteLanguageunderstandingDomainFeedbackFeedbackIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteLanguageunderstandingDomainRequest.java
@@ -7819,6 +7932,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTeamRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTelephonyProvidersEdgeLogicalinterfaceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTelephonyProvidersEdgeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTelephonyProvidersEdgeSoftwareupdateRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTelephonyProvidersEdgesAlertablepresencesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTelephonyProvidersEdgesCertificateauthorityRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTelephonyProvidersEdgesDidpoolRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTelephonyProvidersEdgesEdgegroupRequest.java
@@ -8074,6 +8188,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationSecureattributesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationSuggestionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationSuggestionsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationSummariesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCallParticipantCommunicationWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCallParticipantWrapupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetConversationsCallParticipantWrapupcodesRequest.java
@@ -8405,6 +8520,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneyViewsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeGuestSessionCategoriesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeGuestSessionDocumentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeGuestSessionDocumentsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeIntegrationOptionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseCategoriesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseCategoryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdRequest.java
@@ -8433,6 +8549,10 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseOperat
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseOperationsUsersQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseParseJobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseSourcesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseSynchronizeJobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseUnansweredGroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetKnowledgeKnowledgebaseUnansweredGroupsRequest.java
@@ -8553,6 +8673,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetOutboundCampaignInteractions
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOutboundCampaignLinedistributionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOutboundCampaignProgressRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOutboundCampaignRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetOutboundCampaignSkillcombinationsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOutboundCampaignStatsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOutboundCampaignruleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetOutboundCampaignrulesRequest.java
@@ -8803,6 +8924,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetSpeechandtextanalyticsTopics
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetSpeechandtextanalyticsTopicsGeneralStatusRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetSpeechandtextanalyticsTopicsPublishjobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetSpeechandtextanalyticsTopicsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetSpeechandtextanalyticsTranslationsLanguageConversationRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetSpeechandtextanalyticsTranslationsLanguagesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetStationRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetStationsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetSystempresencesRequest.java
@@ -8847,6 +8970,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgeSetupp
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgeSoftwareupdateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgeSoftwareversionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgeTrunksRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgesAlertablepresencesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgesCertificateauthoritiesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgesCertificateauthorityRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTelephonyProvidersEdgesDidRequest.java
@@ -9189,6 +9313,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PatchKnowledgeKnowledgebaseLang
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchKnowledgeKnowledgebaseLanguageDocumentsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchKnowledgeKnowledgebaseParseJobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchKnowledgeKnowledgebaseRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchKnowledgeKnowledgebaseSynchronizeJobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchLanguageunderstandingDomainRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchLanguageunderstandingMinerDraftRequest.java
@@ -9644,6 +9769,11 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostKnowledgeKnowledgebaseParse
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostKnowledgeKnowledgebaseParseJobsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostKnowledgeKnowledgebaseSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostKnowledgeKnowledgebaseSearchRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostKnowledgeKnowledgebaseSourcesSalesforceRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostKnowledgeKnowledgebaseSourcesServicenowRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostKnowledgeKnowledgebaseSourcesServicenowSourceIdSyncRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostKnowledgeKnowledgebaseSynchronizeJobsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostKnowledgeKnowledgebaseUploadsUrlsJobsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostKnowledgeKnowledgebaseUploadsUrlsJobsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostKnowledgeKnowledgebasesRequest.java
@@ -10065,6 +10195,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PutIntegrationsCredentialReques
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutIntegrationsSpeechTtsSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutIntegrationsUnifiedcommunicationThirdpartypresencesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PutKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PutKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutLanguageunderstandingDomainVersionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutLearningModulePreviewRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutLearningModuleRequest.java
@@ -10161,6 +10293,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PutSpeechandtextanalyticsTopicR
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutTaskmanagementWorkitemsSchemaRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgeLogicalinterfaceRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgeRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgesAlertablepresencesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgesCertificateauthorityRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgesDidpoolRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutTelephonyProvidersEdgesEdgegroupEdgetrunkbaseRequest.java
@@ -10380,6 +10513,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/AlertRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/AlertRuleProperties.java
 src/main/java/com/mypurecloud/sdk/v2/model/AlertSummary.java
 src/main/java/com/mypurecloud/sdk/v2/model/AlertSummaryEntity.java
+src/main/java/com/mypurecloud/sdk/v2/model/AlertablePresences.java
 src/main/java/com/mypurecloud/sdk/v2/model/AlertingUnreadStatus.java
 src/main/java/com/mypurecloud/sdk/v2/model/AllTimePoints.java
 src/main/java/com/mypurecloud/sdk/v2/model/Alteration.java
@@ -10814,6 +10948,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/CampaignRuleCondition.java
 src/main/java/com/mypurecloud/sdk/v2/model/CampaignRuleConditionGroup.java
 src/main/java/com/mypurecloud/sdk/v2/model/CampaignRuleEntities.java
 src/main/java/com/mypurecloud/sdk/v2/model/CampaignRuleEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/CampaignRuleExecutionSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/CampaignRuleParameters.java
 src/main/java/com/mypurecloud/sdk/v2/model/CampaignSchedule.java
 src/main/java/com/mypurecloud/sdk/v2/model/CampaignSequence.java
@@ -10891,6 +11026,10 @@ src/main/java/com/mypurecloud/sdk/v2/model/CobrowseMediaParticipant.java
 src/main/java/com/mypurecloud/sdk/v2/model/CobrowseSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/CobrowseWebMessagingSession.java
 src/main/java/com/mypurecloud/sdk/v2/model/Cobrowsesession.java
+src/main/java/com/mypurecloud/sdk/v2/model/CollaborateChatAdhocMessageEventTopicCollaborateChatEntity.java
+src/main/java/com/mypurecloud/sdk/v2/model/CollaborateChatAdhocMessageEventTopicCollaborateChatMessage.java
+src/main/java/com/mypurecloud/sdk/v2/model/CollaborateChatGroupMessageEventTopicCollaborateChatEntity.java
+src/main/java/com/mypurecloud/sdk/v2/model/CollaborateChatGroupMessageEventTopicCollaborateChatMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/Column.java
 src/main/java/com/mypurecloud/sdk/v2/model/ColumnDataTypeSpecification.java
 src/main/java/com/mypurecloud/sdk/v2/model/ColumnStatus.java
@@ -10912,6 +11051,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/CommonRulePredicateEntity.java
 src/main/java/com/mypurecloud/sdk/v2/model/CommunicationAnsweredEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/CommunicationDispositionAppliedEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/CommunicationEndedEvent.java
+src/main/java/com/mypurecloud/sdk/v2/model/CommunicationTranslation.java
+src/main/java/com/mypurecloud/sdk/v2/model/CommunicationTranslationList.java
 src/main/java/com/mypurecloud/sdk/v2/model/ComparisonPeriod.java
 src/main/java/com/mypurecloud/sdk/v2/model/ComparisonPeriodListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/ComplexVariableInfo.java
@@ -11049,6 +11190,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationCallEventTopicJourneyActi
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationCallEventTopicJourneyContext.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationCallEventTopicJourneyCustomer.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationCallEventTopicJourneyCustomerSession.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationCallEventTopicLimit.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationCallEventTopicQueueMediaSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationCallEventTopicScoredAgent.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationCallEventTopicUriReference.java
@@ -11064,6 +11206,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationCallbackEventTopicJourney
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationCallbackEventTopicJourneyContext.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationCallbackEventTopicJourneyCustomer.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationCallbackEventTopicJourneyCustomerSession.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationCallbackEventTopicLimit.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationCallbackEventTopicPhoneNumberColumn.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationCallbackEventTopicQueueMediaSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationCallbackEventTopicScoredAgent.java
@@ -11085,6 +11228,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationChatEventTopicJourneyActi
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationChatEventTopicJourneyContext.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationChatEventTopicJourneyCustomer.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationChatEventTopicJourneyCustomerSession.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationChatEventTopicLimit.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationChatEventTopicQueueMediaSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationChatEventTopicScoredAgent.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationChatEventTopicUriReference.java
@@ -11100,6 +11244,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationCobrowseEventTopicJourney
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationCobrowseEventTopicJourneyContext.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationCobrowseEventTopicJourneyCustomer.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationCobrowseEventTopicJourneyCustomerSession.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationCobrowseEventTopicLimit.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationCobrowseEventTopicQueueMediaSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationCobrowseEventTopicScoredAgent.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationCobrowseEventTopicUriReference.java
@@ -11123,6 +11268,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationDetailQueryPredicate.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationDisconnectSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationDivisionMembership.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationEditedSummary.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEmailEventTopicAttachment.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEmailEventTopicConversationRoutingData.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEmailEventTopicDetail.java
@@ -11134,6 +11280,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationEmailEventTopicJourneyAct
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEmailEventTopicJourneyContext.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEmailEventTopicJourneyCustomer.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEmailEventTopicJourneyCustomerSession.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationEmailEventTopicLimit.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEmailEventTopicQueueMediaSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEmailEventTopicScoredAgent.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEmailEventTopicUriReference.java
@@ -11162,6 +11309,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationEventTopicEmail.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEventTopicErrorDetails.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEventTopicFaxStatus.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEventTopicInitiator.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationEventTopicInternalMessage.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationEventTopicInternalMessageDetails.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEventTopicJourneyAction.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEventTopicJourneyActionMap.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationEventTopicJourneyContext.java
@@ -11201,6 +11350,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationMessageEventTopicJourneyA
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationMessageEventTopicJourneyContext.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationMessageEventTopicJourneyCustomer.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationMessageEventTopicJourneyCustomerSession.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationMessageEventTopicLimit.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationMessageEventTopicMessageConversation.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationMessageEventTopicMessageDetails.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationMessageEventTopicMessageMedia.java
@@ -11247,6 +11397,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationScreenShareEventTopicJour
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationScreenShareEventTopicJourneyContext.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationScreenShareEventTopicJourneyCustomer.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationScreenShareEventTopicJourneyCustomerSession.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationScreenShareEventTopicLimit.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationScreenShareEventTopicQueueMediaSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationScreenShareEventTopicScoredAgent.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationScreenShareEventTopicScreenShareConversation.java
@@ -11254,6 +11405,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationScreenShareEventTopicScre
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationScreenShareEventTopicUriReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationScreenShareEventTopicWrapup.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationSecureAttributes.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationSessionSummary.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationSocialExpressionEventTopicConversationRoutingData.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationSocialExpressionEventTopicDetail.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationSocialExpressionEventTopicErrorBody.java
@@ -11262,12 +11414,19 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationSocialExpressionEventTopi
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationSocialExpressionEventTopicJourneyContext.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationSocialExpressionEventTopicJourneyCustomer.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationSocialExpressionEventTopicJourneyCustomerSession.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationSocialExpressionEventTopicLimit.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationSocialExpressionEventTopicQueueMediaSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationSocialExpressionEventTopicScoredAgent.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationSocialExpressionEventTopicSocialConversation.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationSocialExpressionEventTopicSocialMediaParticipant.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationSocialExpressionEventTopicUriReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationSocialExpressionEventTopicWrapup.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationSummariesGetResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationSummary.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationSummaryFollowup.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationSummaryReason.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationSummaryResolution.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationSummaryWrapupCode.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationTagsUpdate.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationThreadingWindow.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationThreadingWindowSetting.java
@@ -11282,6 +11441,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationVideoEventTopicJourneyAct
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationVideoEventTopicJourneyContext.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationVideoEventTopicJourneyCustomer.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationVideoEventTopicJourneyCustomerSession.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationVideoEventTopicLimit.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationVideoEventTopicQueueMediaSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationVideoEventTopicScoredAgent.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationVideoEventTopicUriReference.java
@@ -11295,6 +11455,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/CopilotFallbackAction.java
 src/main/java/com/mypurecloud/sdk/v2/model/CopilotNluDomain.java
 src/main/java/com/mypurecloud/sdk/v2/model/CopilotNluDomainVersion.java
 src/main/java/com/mypurecloud/sdk/v2/model/CopilotRule.java
+src/main/java/com/mypurecloud/sdk/v2/model/CopilotTranscriptionConfig.java
 src/main/java/com/mypurecloud/sdk/v2/model/CopyAttachmentsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/CopyBuForecastRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/CopyVoicemailMessage.java
@@ -12147,6 +12308,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/GrammarLanguage.java
 src/main/java/com/mypurecloud/sdk/v2/model/GrammarLanguageFileMetadata.java
 src/main/java/com/mypurecloud/sdk/v2/model/GrammarLanguageUpdate.java
 src/main/java/com/mypurecloud/sdk/v2/model/GrammarListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/GraphApiSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/Greeting.java
 src/main/java/com/mypurecloud/sdk/v2/model/GreetingAudioFile.java
 src/main/java/com/mypurecloud/sdk/v2/model/GreetingListing.java
@@ -12279,6 +12441,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/InteractionStatsAlert.java
 src/main/java/com/mypurecloud/sdk/v2/model/InteractionStatsAlertContainer.java
 src/main/java/com/mypurecloud/sdk/v2/model/InteractionStatsRule.java
 src/main/java/com/mypurecloud/sdk/v2/model/InteractionStatsRuleContainer.java
+src/main/java/com/mypurecloud/sdk/v2/model/InternalMessage.java
+src/main/java/com/mypurecloud/sdk/v2/model/InternalMessageDetails.java
 src/main/java/com/mypurecloud/sdk/v2/model/IntradayPerformancePredictionData.java
 src/main/java/com/mypurecloud/sdk/v2/model/IntradayPlanningGroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/InvalidAssignment.java
@@ -12545,6 +12709,10 @@ src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeImportJobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeImportJobResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeImportJobSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeImportJobStatistics.java
+src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeIntegrationFilter.java
+src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeIntegrationFilterValue.java
+src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeIntegrationOptionsResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeIntegrationReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeOperationSource.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeParseImportResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeParseJobRequest.java
@@ -12558,6 +12726,10 @@ src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeSearchDocumentV1.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeSearchResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeSuggestionConfig.java
+src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeSyncJobReport.java
+src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeSyncJobRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeSyncJobResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeSyncJobStatistics.java
 src/main/java/com/mypurecloud/sdk/v2/model/KnowledgeTraining.java
 src/main/java/com/mypurecloud/sdk/v2/model/KpiResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/Label.java
@@ -13006,6 +13178,20 @@ src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingCampaignPreContactEm
 src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingCampaignPreContactEmailEventTopicOutboundMessagingCampaignPreContactEmailEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingCampaignPreContactSmsEventTopicOutboundMessagingCampaignPreContactSMSEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingCampaignPreContactSmsEventTopicSMSAttributes.java
+src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingEmailCampaignConfigChangeContactSort.java
+src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingEmailCampaignConfigChangeEmailConfig.java
+src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingEmailCampaignConfigChangeErrorDetail.java
+src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingEmailCampaignConfigChangeFromEmailAddress.java
+src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingEmailCampaignConfigChangeMessagingCampaign.java
+src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingEmailCampaignConfigChangeObject.java
+src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingEmailCampaignConfigChangeReplyToEmailAddress.java
+src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingEmailCampaignConfigChangeResponseRef.java
+src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingEmailCampaignConfigChangeSmsConfig.java
+src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingEmailCampaignConfigChangeSmsPhoneNumberRef.java
+src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingEmailCampaignConfigChangeUriReference.java
+src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingEmailCampaignProgressEventCampaignProgress.java
+src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingEmailCampaignProgressEventObject.java
+src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingEmailCampaignProgressEventUriReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingMessagingCampaignConfigChangeContactSort.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingMessagingCampaignConfigChangeEmailConfig.java
 src/main/java/com/mypurecloud/sdk/v2/model/OutboundMessagingMessagingCampaignConfigChangeErrorDetail.java
@@ -13054,6 +13240,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/OverallBestPointsItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/PINConfiguration.java
 src/main/java/com/mypurecloud/sdk/v2/model/Page.java
 src/main/java/com/mypurecloud/sdk/v2/model/PagedNamespaceListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/PagedSkillCombinationListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/PagelessDomainEntityListingEvaluationVersion.java
 src/main/java/com/mypurecloud/sdk/v2/model/PagelessEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/PagingSpec.java
@@ -13140,6 +13327,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/PhoneTransferEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/PhonesReboot.java
 src/main/java/com/mypurecloud/sdk/v2/model/Phrase.java
 src/main/java/com/mypurecloud/sdk/v2/model/PhraseAssociations.java
+src/main/java/com/mypurecloud/sdk/v2/model/PhraseTranslation.java
 src/main/java/com/mypurecloud/sdk/v2/model/PhysicalInterfaceEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/PingIdentity.java
 src/main/java/com/mypurecloud/sdk/v2/model/PinnedMessageRequest.java
@@ -13256,6 +13444,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationCallEventTopicJourne
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationCallEventTopicJourneyContext.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationCallEventTopicJourneyCustomer.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationCallEventTopicJourneyCustomerSession.java
+src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationCallEventTopicLimit.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationCallEventTopicQueueMediaSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationCallEventTopicScoredAgent.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationCallEventTopicUriReference.java
@@ -13271,6 +13460,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationCallbackEventTopicJo
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationCallbackEventTopicJourneyContext.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationCallbackEventTopicJourneyCustomer.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationCallbackEventTopicJourneyCustomerSession.java
+src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationCallbackEventTopicLimit.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationCallbackEventTopicPhoneNumberColumn.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationCallbackEventTopicQueueMediaSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationCallbackEventTopicScoredAgent.java
@@ -13287,6 +13477,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationChatEventTopicJourne
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationChatEventTopicJourneyContext.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationChatEventTopicJourneyCustomer.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationChatEventTopicJourneyCustomerSession.java
+src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationChatEventTopicLimit.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationChatEventTopicQueueMediaSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationChatEventTopicScoredAgent.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationChatEventTopicUriReference.java
@@ -13301,6 +13492,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationCobrowseEventTopicJo
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationCobrowseEventTopicJourneyContext.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationCobrowseEventTopicJourneyCustomer.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationCobrowseEventTopicJourneyCustomerSession.java
+src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationCobrowseEventTopicLimit.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationCobrowseEventTopicQueueMediaSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationCobrowseEventTopicScoredAgent.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationCobrowseEventTopicUriReference.java
@@ -13316,6 +13508,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEmailEventTopicJourn
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEmailEventTopicJourneyContext.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEmailEventTopicJourneyCustomer.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEmailEventTopicJourneyCustomerSession.java
+src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEmailEventTopicLimit.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEmailEventTopicQueueMediaSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEmailEventTopicScoredAgent.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEmailEventTopicUriReference.java
@@ -13336,6 +13529,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEventTopicEmail.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEventTopicErrorDetails.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEventTopicFaxStatus.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEventTopicInitiator.java
+src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEventTopicInternalMessage.java
+src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEventTopicInternalMessageDetails.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEventTopicJourneyAction.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEventTopicJourneyActionMap.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationEventTopicJourneyContext.java
@@ -13371,6 +13566,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationMessageEventTopicJou
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationMessageEventTopicJourneyContext.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationMessageEventTopicJourneyCustomer.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationMessageEventTopicJourneyCustomerSession.java
+src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationMessageEventTopicLimit.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationMessageEventTopicMessageConversation.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationMessageEventTopicMessageDetails.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationMessageEventTopicMessageMedia.java
@@ -13391,6 +13587,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationScreenShareEventTopi
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationScreenShareEventTopicJourneyContext.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationScreenShareEventTopicJourneyCustomer.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationScreenShareEventTopicJourneyCustomerSession.java
+src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationScreenShareEventTopicLimit.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationScreenShareEventTopicQueueMediaSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationScreenShareEventTopicScoredAgent.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationScreenShareEventTopicScreenShareConversation.java
@@ -13413,6 +13610,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEven
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEventTopicErrorDetails.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEventTopicFaxStatus.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEventTopicInitiator.java
+src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEventTopicInternalMessage.java
+src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEventTopicInternalMessageDetails.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEventTopicJourneyAction.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEventTopicJourneyActionMap.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationSocialExpressionEventTopicJourneyContext.java
@@ -13455,6 +13654,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicEmail
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicErrorDetails.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicFaxStatus.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicInitiator.java
+src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicInternalMessage.java
+src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicInternalMessageDetails.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicJourneyAction.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicJourneyActionMap.java
 src/main/java/com/mypurecloud/sdk/v2/model/QueueConversationVideoEventTopicJourneyContext.java
@@ -13672,6 +13873,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/RuleSetEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/SIPSearchPublicRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/SMSAvailablePhoneNumberEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/Salesforce.java
+src/main/java/com/mypurecloud/sdk/v2/model/SalesforceSettings.java
+src/main/java/com/mypurecloud/sdk/v2/model/SalesforceSourceRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/SalesforceSourceResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/Schedule.java
 src/main/java/com/mypurecloud/sdk/v2/model/ScheduleActivity.java
 src/main/java/com/mypurecloud/sdk/v2/model/ScheduleDivisionViewEntityListing.java
@@ -13782,6 +13986,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/ServiceGoalTemplateImpactOverride.jav
 src/main/java/com/mypurecloud/sdk/v2/model/ServiceGoalTemplateList.java
 src/main/java/com/mypurecloud/sdk/v2/model/ServiceGoalTemplateReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/ServiceLevel.java
+src/main/java/com/mypurecloud/sdk/v2/model/ServiceNowSettings.java
+src/main/java/com/mypurecloud/sdk/v2/model/ServiceNowSourceRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/ServiceNowSourceResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/Session.java
 src/main/java/com/mypurecloud/sdk/v2/model/SessionEndDetails.java
 src/main/java/com/mypurecloud/sdk/v2/model/SessionLastEvent.java
@@ -13831,6 +14038,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/Site.java
 src/main/java/com/mypurecloud/sdk/v2/model/SiteConnection.java
 src/main/java/com/mypurecloud/sdk/v2/model/SiteConnections.java
 src/main/java/com/mypurecloud/sdk/v2/model/SiteEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/SkillCombinationInfo.java
 src/main/java/com/mypurecloud/sdk/v2/model/SkillEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/SkillGroup.java
 src/main/java/com/mypurecloud/sdk/v2/model/SkillGroupCondition.java
@@ -13859,10 +14067,13 @@ src/main/java/com/mypurecloud/sdk/v2/model/SocialExpression.java
 src/main/java/com/mypurecloud/sdk/v2/model/SocialHandle.java
 src/main/java/com/mypurecloud/sdk/v2/model/SortItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/Source.java
+src/main/java/com/mypurecloud/sdk/v2/model/SourceBaseResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/SourceConfiguration.java
 src/main/java/com/mypurecloud/sdk/v2/model/SourceEntity.java
 src/main/java/com/mypurecloud/sdk/v2/model/SourceEntityListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/SourceLastSync.java
 src/main/java/com/mypurecloud/sdk/v2/model/SourcePlanningGroupRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/SourceSyncResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/SpeechTextAnalyticsSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/SpeechTextAnalyticsSettingsResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/SplittingInformation.java
@@ -13964,6 +14175,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/SurveyQuestionGroup.java
 src/main/java/com/mypurecloud/sdk/v2/model/SurveyQuestionGroupScore.java
 src/main/java/com/mypurecloud/sdk/v2/model/SurveyQuestionScore.java
 src/main/java/com/mypurecloud/sdk/v2/model/SurveyScoringSet.java
+src/main/java/com/mypurecloud/sdk/v2/model/SyncStatusRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/SystemMessageObject.java
 src/main/java/com/mypurecloud/sdk/v2/model/SystemMessageSystemMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/SystemPresence.java
@@ -14103,6 +14315,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/TranscriptSearchCriteria.java
 src/main/java/com/mypurecloud/sdk/v2/model/TranscriptSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/TranscriptTopic.java
 src/main/java/com/mypurecloud/sdk/v2/model/TranscriptTopics.java
+src/main/java/com/mypurecloud/sdk/v2/model/TranscriptTranslation.java
 src/main/java/com/mypurecloud/sdk/v2/model/TranscriptUrl.java
 src/main/java/com/mypurecloud/sdk/v2/model/TranscriptUrls.java
 src/main/java/com/mypurecloud/sdk/v2/model/TranscriptionConfig.java
@@ -14122,6 +14335,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/TransferResponseModifiedBy.java
 src/main/java/com/mypurecloud/sdk/v2/model/TransferToAgentRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/TransferToExternalRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/TransferToQueueRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/TranslateSupportedLanguage.java
+src/main/java/com/mypurecloud/sdk/v2/model/TranslateSupportedLanguageList.java
 src/main/java/com/mypurecloud/sdk/v2/model/TrendData.java
 src/main/java/com/mypurecloud/sdk/v2/model/Trigger.java
 src/main/java/com/mypurecloud/sdk/v2/model/TriggerEntityListing.java
@@ -14390,6 +14605,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/V2FlowExecutionDataFlowidTopicInvokin
 src/main/java/com/mypurecloud/sdk/v2/model/V2FlowExecutionDataFlowidTopicJourneyActionMap.java
 src/main/java/com/mypurecloud/sdk/v2/model/V2FlowExecutionDataFlowidTopicProcessAutomation.java
 src/main/java/com/mypurecloud/sdk/v2/model/V2FlowExecutionDataFlowidTopicQuality.java
+src/main/java/com/mypurecloud/sdk/v2/model/V2FlowExecutionDataFlowidTopicWorkitem.java
+src/main/java/com/mypurecloud/sdk/v2/model/V2IntegrationPresenceEventOrganizationPresence.java
+src/main/java/com/mypurecloud/sdk/v2/model/V2IntegrationPresenceEventPresenceActivityEvent.java
 src/main/java/com/mypurecloud/sdk/v2/model/V2MobiusAlertsTopicAddressableEntityRef.java
 src/main/java/com/mypurecloud/sdk/v2/model/V2MobiusAlertsTopicAlert.java
 src/main/java/com/mypurecloud/sdk/v2/model/V2MobiusAlertsTopicAlertNotification.java
@@ -14408,6 +14626,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/V2MobiusRulesTopicCondition.java
 src/main/java/com/mypurecloud/sdk/v2/model/V2MobiusRulesTopicConditionRulePredicate.java
 src/main/java/com/mypurecloud/sdk/v2/model/V2MobiusRulesTopicEntityProperties.java
 src/main/java/com/mypurecloud/sdk/v2/model/V2MobiusRulesTopicRule.java
+src/main/java/com/mypurecloud/sdk/v2/model/V2WebMessagingUndeliveredMessageTopicMessage.java
+src/main/java/com/mypurecloud/sdk/v2/model/V2WebMessagingUndeliveredMessageTopicWebMessagingUndeliveredMessageEventBody.java
 src/main/java/com/mypurecloud/sdk/v2/model/V2WemEngagementCelebrationUpdatesTopicEngagementCelebration.java
 src/main/java/com/mypurecloud/sdk/v2/model/V2WemEngagementCelebrationUpdatesTopicSourceEntity.java
 src/main/java/com/mypurecloud/sdk/v2/model/V2WemEngagementCelebrationUpdatesTopicUserId.java

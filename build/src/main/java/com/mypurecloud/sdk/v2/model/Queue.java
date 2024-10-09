@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AcwSettings;
 import com.mypurecloud.sdk.v2.model.AgentOwnedRouting;
 import com.mypurecloud.sdk.v2.model.Bullseye;
+import com.mypurecloud.sdk.v2.model.CannedResponseLibraries;
 import com.mypurecloud.sdk.v2.model.ConditionalGroupRouting;
 import com.mypurecloud.sdk.v2.model.DirectRouting;
 import com.mypurecloud.sdk.v2.model.Division;
@@ -160,6 +161,7 @@ public class Queue  implements Serializable {
   private DomainEntityRef whisperPrompt = null;
   private DomainEntityRef onHoldPrompt = null;
   private Boolean autoAnswerOnly = null;
+  private CannedResponseLibraries cannedResponseLibraries = null;
   private Boolean enableTranscription = null;
   private Boolean enableAudioMonitoring = null;
   private Boolean enableManualAssignment = null;
@@ -581,6 +583,24 @@ public class Queue  implements Serializable {
 
 
   /**
+   * Canned response library IDs and mode with which they are associated with the queue
+   **/
+  public Queue cannedResponseLibraries(CannedResponseLibraries cannedResponseLibraries) {
+    this.cannedResponseLibraries = cannedResponseLibraries;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Canned response library IDs and mode with which they are associated with the queue")
+  @JsonProperty("cannedResponseLibraries")
+  public CannedResponseLibraries getCannedResponseLibraries() {
+    return cannedResponseLibraries;
+  }
+  public void setCannedResponseLibraries(CannedResponseLibraries cannedResponseLibraries) {
+    this.cannedResponseLibraries = cannedResponseLibraries;
+  }
+
+
+  /**
    * Indicates whether voice transcription is enabled for this queue.
    **/
   public Queue enableTranscription(Boolean enableTranscription) {
@@ -837,6 +857,7 @@ public class Queue  implements Serializable {
             Objects.equals(this.whisperPrompt, queue.whisperPrompt) &&
             Objects.equals(this.onHoldPrompt, queue.onHoldPrompt) &&
             Objects.equals(this.autoAnswerOnly, queue.autoAnswerOnly) &&
+            Objects.equals(this.cannedResponseLibraries, queue.cannedResponseLibraries) &&
             Objects.equals(this.enableTranscription, queue.enableTranscription) &&
             Objects.equals(this.enableAudioMonitoring, queue.enableAudioMonitoring) &&
             Objects.equals(this.enableManualAssignment, queue.enableManualAssignment) &&
@@ -854,7 +875,7 @@ public class Queue  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, conditionalGroupRouting, bullseye, scoringMethod, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, autoAnswerOnly, enableTranscription, enableAudioMonitoring, enableManualAssignment, agentOwnedRouting, directRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, suppressInQueueCallRecording, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, conditionalGroupRouting, bullseye, scoringMethod, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, autoAnswerOnly, cannedResponseLibraries, enableTranscription, enableAudioMonitoring, enableManualAssignment, agentOwnedRouting, directRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, suppressInQueueCallRecording, selfUri);
   }
 
   @Override
@@ -887,6 +908,7 @@ public class Queue  implements Serializable {
     sb.append("    whisperPrompt: ").append(toIndentedString(whisperPrompt)).append("\n");
     sb.append("    onHoldPrompt: ").append(toIndentedString(onHoldPrompt)).append("\n");
     sb.append("    autoAnswerOnly: ").append(toIndentedString(autoAnswerOnly)).append("\n");
+    sb.append("    cannedResponseLibraries: ").append(toIndentedString(cannedResponseLibraries)).append("\n");
     sb.append("    enableTranscription: ").append(toIndentedString(enableTranscription)).append("\n");
     sb.append("    enableAudioMonitoring: ").append(toIndentedString(enableAudioMonitoring)).append("\n");
     sb.append("    enableManualAssignment: ").append(toIndentedString(enableManualAssignment)).append("\n");

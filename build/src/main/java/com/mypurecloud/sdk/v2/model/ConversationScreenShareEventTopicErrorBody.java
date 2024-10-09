@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationScreenShareEventTopicDetail;
+import com.mypurecloud.sdk.v2.model.ConversationScreenShareEventTopicLimit;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -36,6 +37,7 @@ public class ConversationScreenShareEventTopicErrorBody  implements Serializable
   private String contextId = null;
   private List<ConversationScreenShareEventTopicDetail> details = new ArrayList<ConversationScreenShareEventTopicDetail>();
   private List<ConversationScreenShareEventTopicErrorBody> errors = new ArrayList<ConversationScreenShareEventTopicErrorBody>();
+  private ConversationScreenShareEventTopicLimit limit = null;
 
   
   /**
@@ -208,6 +210,23 @@ public class ConversationScreenShareEventTopicErrorBody  implements Serializable
   }
 
 
+  /**
+   **/
+  public ConversationScreenShareEventTopicErrorBody limit(ConversationScreenShareEventTopicLimit limit) {
+    this.limit = limit;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("limit")
+  public ConversationScreenShareEventTopicLimit getLimit() {
+    return limit;
+  }
+  public void setLimit(ConversationScreenShareEventTopicLimit limit) {
+    this.limit = limit;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -227,12 +246,13 @@ public class ConversationScreenShareEventTopicErrorBody  implements Serializable
             Objects.equals(this.messageParams, conversationScreenShareEventTopicErrorBody.messageParams) &&
             Objects.equals(this.contextId, conversationScreenShareEventTopicErrorBody.contextId) &&
             Objects.equals(this.details, conversationScreenShareEventTopicErrorBody.details) &&
-            Objects.equals(this.errors, conversationScreenShareEventTopicErrorBody.errors);
+            Objects.equals(this.errors, conversationScreenShareEventTopicErrorBody.errors) &&
+            Objects.equals(this.limit, conversationScreenShareEventTopicErrorBody.limit);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(message, code, status, entityId, entityName, messageWithParams, messageParams, contextId, details, errors);
+    return Objects.hash(message, code, status, entityId, entityName, messageWithParams, messageParams, contextId, details, errors, limit);
   }
 
   @Override
@@ -250,6 +270,7 @@ public class ConversationScreenShareEventTopicErrorBody  implements Serializable
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
     sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
     sb.append("}");
     return sb.toString();
   }

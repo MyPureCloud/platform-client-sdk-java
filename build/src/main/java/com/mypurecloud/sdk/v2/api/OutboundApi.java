@@ -83,6 +83,7 @@ import com.mypurecloud.sdk.v2.model.MessagingCampaignEntityListing;
 import com.mypurecloud.sdk.v2.model.MessagingCampaignSchedule;
 import com.mypurecloud.sdk.v2.model.MessagingCampaignScheduleEntityListing;
 import com.mypurecloud.sdk.v2.model.OutboundSettings;
+import com.mypurecloud.sdk.v2.model.PagedSkillCombinationListing;
 import com.mypurecloud.sdk.v2.model.ResponseSet;
 import com.mypurecloud.sdk.v2.model.ResponseSetEntityListing;
 import com.mypurecloud.sdk.v2.model.RuleSet;
@@ -135,6 +136,7 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignDiagnosticsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignInteractionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignLinedistributionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignProgressRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignSkillcombinationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignStatsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignruleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignrulesRequest;
@@ -3576,6 +3578,92 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CampaignProgress> response = (ApiResponse<CampaignProgress>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the remaining and total contact count for each skill combination in a skills campaign
+   * 
+   * @param campaignId Campaign ID (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return PagedSkillCombinationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PagedSkillCombinationListing getOutboundCampaignSkillcombinations(String campaignId, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
+    return  getOutboundCampaignSkillcombinations(createGetOutboundCampaignSkillcombinationsRequest(campaignId, pageNumber, pageSize));
+  }
+
+  /**
+   * Get the remaining and total contact count for each skill combination in a skills campaign
+   * 
+   * @param campaignId Campaign ID (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return PagedSkillCombinationListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PagedSkillCombinationListing> getOutboundCampaignSkillcombinationsWithHttpInfo(String campaignId, Integer pageNumber, Integer pageSize) throws IOException {
+    return getOutboundCampaignSkillcombinations(createGetOutboundCampaignSkillcombinationsRequest(campaignId, pageNumber, pageSize).withHttpInfo());
+  }
+
+  private GetOutboundCampaignSkillcombinationsRequest createGetOutboundCampaignSkillcombinationsRequest(String campaignId, Integer pageNumber, Integer pageSize) {
+    return GetOutboundCampaignSkillcombinationsRequest.builder()
+            .withCampaignId(campaignId)
+
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * Get the remaining and total contact count for each skill combination in a skills campaign
+   * 
+   * @param request The request object
+   * @return PagedSkillCombinationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PagedSkillCombinationListing getOutboundCampaignSkillcombinations(GetOutboundCampaignSkillcombinationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PagedSkillCombinationListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PagedSkillCombinationListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the remaining and total contact count for each skill combination in a skills campaign
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PagedSkillCombinationListing> getOutboundCampaignSkillcombinations(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PagedSkillCombinationListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PagedSkillCombinationListing> response = (ApiResponse<PagedSkillCombinationListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PagedSkillCombinationListing> response = (ApiResponse<PagedSkillCombinationListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

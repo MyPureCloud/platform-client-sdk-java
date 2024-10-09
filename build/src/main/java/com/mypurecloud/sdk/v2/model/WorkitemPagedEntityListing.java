@@ -27,6 +27,8 @@ public class WorkitemPagedEntityListing  implements Serializable {
   private List<Workitem> entities = new ArrayList<Workitem>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
+  private Long total = null;
+  private Integer pageCount = null;
 
   
   /**
@@ -47,14 +49,13 @@ public class WorkitemPagedEntityListing  implements Serializable {
 
 
   /**
-   * The total page size requested
    **/
   public WorkitemPagedEntityListing pageSize(Integer pageSize) {
     this.pageSize = pageSize;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The total page size requested")
+  @ApiModelProperty(example = "null", value = "")
   @JsonProperty("pageSize")
   public Integer getPageSize() {
     return pageSize;
@@ -65,20 +66,53 @@ public class WorkitemPagedEntityListing  implements Serializable {
 
 
   /**
-   * The page number requested
    **/
   public WorkitemPagedEntityListing pageNumber(Integer pageNumber) {
     this.pageNumber = pageNumber;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The page number requested")
+  @ApiModelProperty(example = "null", value = "")
   @JsonProperty("pageNumber")
   public Integer getPageNumber() {
     return pageNumber;
   }
   public void setPageNumber(Integer pageNumber) {
     this.pageNumber = pageNumber;
+  }
+
+
+  /**
+   **/
+  public WorkitemPagedEntityListing total(Long total) {
+    this.total = total;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("total")
+  public Long getTotal() {
+    return total;
+  }
+  public void setTotal(Long total) {
+    this.total = total;
+  }
+
+
+  /**
+   **/
+  public WorkitemPagedEntityListing pageCount(Integer pageCount) {
+    this.pageCount = pageCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("pageCount")
+  public Integer getPageCount() {
+    return pageCount;
+  }
+  public void setPageCount(Integer pageCount) {
+    this.pageCount = pageCount;
   }
 
 
@@ -94,12 +128,14 @@ public class WorkitemPagedEntityListing  implements Serializable {
 
     return Objects.equals(this.entities, workitemPagedEntityListing.entities) &&
             Objects.equals(this.pageSize, workitemPagedEntityListing.pageSize) &&
-            Objects.equals(this.pageNumber, workitemPagedEntityListing.pageNumber);
+            Objects.equals(this.pageNumber, workitemPagedEntityListing.pageNumber) &&
+            Objects.equals(this.total, workitemPagedEntityListing.total) &&
+            Objects.equals(this.pageCount, workitemPagedEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber);
+    return Objects.hash(entities, pageSize, pageNumber, total, pageCount);
   }
 
   @Override
@@ -110,6 +146,8 @@ public class WorkitemPagedEntityListing  implements Serializable {
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
+    sb.append("    total: ").append(toIndentedString(total)).append("\n");
+    sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

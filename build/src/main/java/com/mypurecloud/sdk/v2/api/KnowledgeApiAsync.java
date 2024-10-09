@@ -81,12 +81,15 @@ import com.mypurecloud.sdk.v2.model.KnowledgeGuestSession;
 import com.mypurecloud.sdk.v2.model.KnowledgeImport;
 import com.mypurecloud.sdk.v2.model.KnowledgeImportJobRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeImportJobResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeIntegrationOptionsResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeParseJobRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeParseJobRequestImport;
 import com.mypurecloud.sdk.v2.model.KnowledgeParseJobRequestPatch;
 import com.mypurecloud.sdk.v2.model.KnowledgeParseJobResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeSyncJobRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeSyncJobResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeTraining;
 import com.mypurecloud.sdk.v2.model.LabelCreateRequest;
 import com.mypurecloud.sdk.v2.model.LabelListing;
@@ -95,7 +98,14 @@ import com.mypurecloud.sdk.v2.model.LabelUpdateRequest;
 import java.time.LocalDate;
 import com.mypurecloud.sdk.v2.model.OperationCreatorUserResponse;
 import com.mypurecloud.sdk.v2.model.OperationListing;
+import com.mypurecloud.sdk.v2.model.SalesforceSourceRequest;
+import com.mypurecloud.sdk.v2.model.SalesforceSourceResponse;
 import com.mypurecloud.sdk.v2.model.SearchUpdateRequest;
+import com.mypurecloud.sdk.v2.model.ServiceNowSourceRequest;
+import com.mypurecloud.sdk.v2.model.ServiceNowSourceResponse;
+import com.mypurecloud.sdk.v2.model.SourceBaseResponse;
+import com.mypurecloud.sdk.v2.model.SourceSyncResponse;
+import com.mypurecloud.sdk.v2.model.SyncStatusRequest;
 import com.mypurecloud.sdk.v2.model.TrainingListing;
 import com.mypurecloud.sdk.v2.model.UnansweredGroup;
 import com.mypurecloud.sdk.v2.model.UnansweredGroups;
@@ -116,9 +126,13 @@ import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseLabelReque
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseLanguageCategoryRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseLanguageDocumentRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseLanguageDocumentsImportRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseSynchronizeJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeGuestSessionCategoriesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeGuestSessionDocumentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeGuestSessionDocumentsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeIntegrationOptionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseCategoriesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseCategoryRequest;
@@ -147,6 +161,10 @@ import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageTrain
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseOperationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseOperationsUsersQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseParseJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseSourcesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseSynchronizeJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseUnansweredGroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseUnansweredGroupsRequest;
@@ -166,6 +184,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseLanguageDoc
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseLanguageDocumentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseLanguageDocumentsImportRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseParseJobRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseSynchronizeJobRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeDocumentuploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentCopiesRequest;
@@ -203,8 +222,15 @@ import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseLanguageTrai
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseParseJobImportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseParseJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseSourcesSalesforceRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseSourcesServicenowRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseSourcesServicenowSourceIdSyncRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseSynchronizeJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseUploadsUrlsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebasesRequest;
+import com.mypurecloud.sdk.v2.api.request.PutKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PutKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -981,6 +1007,237 @@ public class KnowledgeApiAsync {
   }
 
   /**
+   * Delete Salesforce Knowledge integration source
+   * 
+   * deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteKnowledgeKnowledgebaseSourcesSalesforceSourceIdAsync(DeleteKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete Salesforce Knowledge integration source
+   * 
+   * deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteKnowledgeKnowledgebaseSourcesSalesforceSourceIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete ServiceNow Knowledge integration source
+   * 
+   * deleteKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteKnowledgeKnowledgebaseSourcesServicenowSourceIdAsync(DeleteKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete ServiceNow Knowledge integration source
+   * 
+   * deleteKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteKnowledgeKnowledgebaseSourcesServicenowSourceIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete synchronization job
+   * 
+   * deleteKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteKnowledgeKnowledgebaseSynchronizeJobAsync(DeleteKnowledgeKnowledgebaseSynchronizeJobRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete synchronization job
+   * 
+   * deleteKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteKnowledgeKnowledgebaseSynchronizeJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get categories
    * 
    * @param request the request object
@@ -1194,6 +1451,83 @@ public class KnowledgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<KnowledgeGuestDocumentResponseListing> response = (ApiResponse<KnowledgeGuestDocumentResponseListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get sync options available for a knowledge-connect integration
+   * 
+   * getKnowledgeIntegrationOptions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<KnowledgeIntegrationOptionsResponse> getKnowledgeIntegrationOptionsAsync(GetKnowledgeIntegrationOptionsRequest request, final AsyncApiCallback<KnowledgeIntegrationOptionsResponse> callback) {
+    try {
+      final SettableFuture<KnowledgeIntegrationOptionsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KnowledgeIntegrationOptionsResponse>() {}, new AsyncApiCallback<ApiResponse<KnowledgeIntegrationOptionsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<KnowledgeIntegrationOptionsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get sync options available for a knowledge-connect integration
+   * 
+   * getKnowledgeIntegrationOptions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<KnowledgeIntegrationOptionsResponse>> getKnowledgeIntegrationOptionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<KnowledgeIntegrationOptionsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<KnowledgeIntegrationOptionsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<KnowledgeIntegrationOptionsResponse>() {}, new AsyncApiCallback<ApiResponse<KnowledgeIntegrationOptionsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<KnowledgeIntegrationOptionsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KnowledgeIntegrationOptionsResponse> response = (ApiResponse<KnowledgeIntegrationOptionsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KnowledgeIntegrationOptionsResponse> response = (ApiResponse<KnowledgeIntegrationOptionsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3330,6 +3664,314 @@ public class KnowledgeApiAsync {
   }
 
   /**
+   * Get Knowledge integration sources
+   * 
+   * getKnowledgeKnowledgebaseSources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<List<SourceBaseResponse>> getKnowledgeKnowledgebaseSourcesAsync(GetKnowledgeKnowledgebaseSourcesRequest request, final AsyncApiCallback<List<SourceBaseResponse>> callback) {
+    try {
+      final SettableFuture<List<SourceBaseResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<SourceBaseResponse>>() {}, new AsyncApiCallback<ApiResponse<List<SourceBaseResponse>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<SourceBaseResponse>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Knowledge integration sources
+   * 
+   * getKnowledgeKnowledgebaseSources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<List<SourceBaseResponse>>> getKnowledgeKnowledgebaseSourcesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<SourceBaseResponse>>> callback) {
+    try {
+      final SettableFuture<ApiResponse<List<SourceBaseResponse>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<SourceBaseResponse>>() {}, new AsyncApiCallback<ApiResponse<List<SourceBaseResponse>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<SourceBaseResponse>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<SourceBaseResponse>> response = (ApiResponse<List<SourceBaseResponse>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<SourceBaseResponse>> response = (ApiResponse<List<SourceBaseResponse>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Salesforce Knowledge integration source
+   * 
+   * getKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SalesforceSourceResponse> getKnowledgeKnowledgebaseSourcesSalesforceSourceIdAsync(GetKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest request, final AsyncApiCallback<SalesforceSourceResponse> callback) {
+    try {
+      final SettableFuture<SalesforceSourceResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SalesforceSourceResponse>() {}, new AsyncApiCallback<ApiResponse<SalesforceSourceResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<SalesforceSourceResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Salesforce Knowledge integration source
+   * 
+   * getKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SalesforceSourceResponse>> getKnowledgeKnowledgebaseSourcesSalesforceSourceIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SalesforceSourceResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SalesforceSourceResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SalesforceSourceResponse>() {}, new AsyncApiCallback<ApiResponse<SalesforceSourceResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<SalesforceSourceResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SalesforceSourceResponse> response = (ApiResponse<SalesforceSourceResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SalesforceSourceResponse> response = (ApiResponse<SalesforceSourceResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get ServiceNow Knowledge integration source
+   * 
+   * getKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ServiceNowSourceResponse> getKnowledgeKnowledgebaseSourcesServicenowSourceIdAsync(GetKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest request, final AsyncApiCallback<ServiceNowSourceResponse> callback) {
+    try {
+      final SettableFuture<ServiceNowSourceResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ServiceNowSourceResponse>() {}, new AsyncApiCallback<ApiResponse<ServiceNowSourceResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ServiceNowSourceResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get ServiceNow Knowledge integration source
+   * 
+   * getKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ServiceNowSourceResponse>> getKnowledgeKnowledgebaseSourcesServicenowSourceIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ServiceNowSourceResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ServiceNowSourceResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ServiceNowSourceResponse>() {}, new AsyncApiCallback<ApiResponse<ServiceNowSourceResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ServiceNowSourceResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ServiceNowSourceResponse> response = (ApiResponse<ServiceNowSourceResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ServiceNowSourceResponse> response = (ApiResponse<ServiceNowSourceResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get synchronization job report
+   * 
+   * getKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<KnowledgeSyncJobResponse> getKnowledgeKnowledgebaseSynchronizeJobAsync(GetKnowledgeKnowledgebaseSynchronizeJobRequest request, final AsyncApiCallback<KnowledgeSyncJobResponse> callback) {
+    try {
+      final SettableFuture<KnowledgeSyncJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KnowledgeSyncJobResponse>() {}, new AsyncApiCallback<ApiResponse<KnowledgeSyncJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<KnowledgeSyncJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get synchronization job report
+   * 
+   * getKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<KnowledgeSyncJobResponse>> getKnowledgeKnowledgebaseSynchronizeJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<KnowledgeSyncJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<KnowledgeSyncJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<KnowledgeSyncJobResponse>() {}, new AsyncApiCallback<ApiResponse<KnowledgeSyncJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<KnowledgeSyncJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KnowledgeSyncJobResponse> response = (ApiResponse<KnowledgeSyncJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KnowledgeSyncJobResponse> response = (ApiResponse<KnowledgeSyncJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get knowledge base unanswered group for a particular groupId
    * 
    * @param request the request object
@@ -4755,6 +5397,83 @@ public class KnowledgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update synchronization job
+   * 
+   * patchKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<KnowledgeSyncJobResponse> patchKnowledgeKnowledgebaseSynchronizeJobAsync(PatchKnowledgeKnowledgebaseSynchronizeJobRequest request, final AsyncApiCallback<KnowledgeSyncJobResponse> callback) {
+    try {
+      final SettableFuture<KnowledgeSyncJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KnowledgeSyncJobResponse>() {}, new AsyncApiCallback<ApiResponse<KnowledgeSyncJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<KnowledgeSyncJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update synchronization job
+   * 
+   * patchKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<KnowledgeSyncJobResponse>> patchKnowledgeKnowledgebaseSynchronizeJobAsync(ApiRequest<SyncStatusRequest> request, final AsyncApiCallback<ApiResponse<KnowledgeSyncJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<KnowledgeSyncJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<KnowledgeSyncJobResponse>() {}, new AsyncApiCallback<ApiResponse<KnowledgeSyncJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<KnowledgeSyncJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KnowledgeSyncJobResponse> response = (ApiResponse<KnowledgeSyncJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KnowledgeSyncJobResponse> response = (ApiResponse<KnowledgeSyncJobResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -7568,6 +8287,391 @@ public class KnowledgeApiAsync {
   }
 
   /**
+   * Create Salesforce Knowledge integration source
+   * 
+   * postKnowledgeKnowledgebaseSourcesSalesforce is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<KnowledgeSyncJobResponse> postKnowledgeKnowledgebaseSourcesSalesforceAsync(PostKnowledgeKnowledgebaseSourcesSalesforceRequest request, final AsyncApiCallback<KnowledgeSyncJobResponse> callback) {
+    try {
+      final SettableFuture<KnowledgeSyncJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KnowledgeSyncJobResponse>() {}, new AsyncApiCallback<ApiResponse<KnowledgeSyncJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<KnowledgeSyncJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create Salesforce Knowledge integration source
+   * 
+   * postKnowledgeKnowledgebaseSourcesSalesforce is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<KnowledgeSyncJobResponse>> postKnowledgeKnowledgebaseSourcesSalesforceAsync(ApiRequest<SalesforceSourceRequest> request, final AsyncApiCallback<ApiResponse<KnowledgeSyncJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<KnowledgeSyncJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<KnowledgeSyncJobResponse>() {}, new AsyncApiCallback<ApiResponse<KnowledgeSyncJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<KnowledgeSyncJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KnowledgeSyncJobResponse> response = (ApiResponse<KnowledgeSyncJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KnowledgeSyncJobResponse> response = (ApiResponse<KnowledgeSyncJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Start sync on Salesforce Knowledge integration source
+   * 
+   * postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SourceSyncResponse> postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncAsync(PostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncRequest request, final AsyncApiCallback<SourceSyncResponse> callback) {
+    try {
+      final SettableFuture<SourceSyncResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SourceSyncResponse>() {}, new AsyncApiCallback<ApiResponse<SourceSyncResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<SourceSyncResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Start sync on Salesforce Knowledge integration source
+   * 
+   * postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SourceSyncResponse>> postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SourceSyncResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SourceSyncResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SourceSyncResponse>() {}, new AsyncApiCallback<ApiResponse<SourceSyncResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<SourceSyncResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SourceSyncResponse> response = (ApiResponse<SourceSyncResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SourceSyncResponse> response = (ApiResponse<SourceSyncResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create ServiceNow Knowledge integration source
+   * 
+   * postKnowledgeKnowledgebaseSourcesServicenow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<KnowledgeSyncJobResponse> postKnowledgeKnowledgebaseSourcesServicenowAsync(PostKnowledgeKnowledgebaseSourcesServicenowRequest request, final AsyncApiCallback<KnowledgeSyncJobResponse> callback) {
+    try {
+      final SettableFuture<KnowledgeSyncJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KnowledgeSyncJobResponse>() {}, new AsyncApiCallback<ApiResponse<KnowledgeSyncJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<KnowledgeSyncJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create ServiceNow Knowledge integration source
+   * 
+   * postKnowledgeKnowledgebaseSourcesServicenow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<KnowledgeSyncJobResponse>> postKnowledgeKnowledgebaseSourcesServicenowAsync(ApiRequest<ServiceNowSourceRequest> request, final AsyncApiCallback<ApiResponse<KnowledgeSyncJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<KnowledgeSyncJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<KnowledgeSyncJobResponse>() {}, new AsyncApiCallback<ApiResponse<KnowledgeSyncJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<KnowledgeSyncJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KnowledgeSyncJobResponse> response = (ApiResponse<KnowledgeSyncJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KnowledgeSyncJobResponse> response = (ApiResponse<KnowledgeSyncJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Start synchronization on ServiceNow Knowledge integration source
+   * 
+   * postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SourceSyncResponse> postKnowledgeKnowledgebaseSourcesServicenowSourceIdSyncAsync(PostKnowledgeKnowledgebaseSourcesServicenowSourceIdSyncRequest request, final AsyncApiCallback<SourceSyncResponse> callback) {
+    try {
+      final SettableFuture<SourceSyncResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SourceSyncResponse>() {}, new AsyncApiCallback<ApiResponse<SourceSyncResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<SourceSyncResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Start synchronization on ServiceNow Knowledge integration source
+   * 
+   * postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SourceSyncResponse>> postKnowledgeKnowledgebaseSourcesServicenowSourceIdSyncAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SourceSyncResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SourceSyncResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SourceSyncResponse>() {}, new AsyncApiCallback<ApiResponse<SourceSyncResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<SourceSyncResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SourceSyncResponse> response = (ApiResponse<SourceSyncResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SourceSyncResponse> response = (ApiResponse<SourceSyncResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create synchronization job
+   * 
+   * postKnowledgeKnowledgebaseSynchronizeJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<KnowledgeSyncJobResponse> postKnowledgeKnowledgebaseSynchronizeJobsAsync(PostKnowledgeKnowledgebaseSynchronizeJobsRequest request, final AsyncApiCallback<KnowledgeSyncJobResponse> callback) {
+    try {
+      final SettableFuture<KnowledgeSyncJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KnowledgeSyncJobResponse>() {}, new AsyncApiCallback<ApiResponse<KnowledgeSyncJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<KnowledgeSyncJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create synchronization job
+   * 
+   * postKnowledgeKnowledgebaseSynchronizeJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<KnowledgeSyncJobResponse>> postKnowledgeKnowledgebaseSynchronizeJobsAsync(ApiRequest<KnowledgeSyncJobRequest> request, final AsyncApiCallback<ApiResponse<KnowledgeSyncJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<KnowledgeSyncJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<KnowledgeSyncJobResponse>() {}, new AsyncApiCallback<ApiResponse<KnowledgeSyncJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<KnowledgeSyncJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KnowledgeSyncJobResponse> response = (ApiResponse<KnowledgeSyncJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KnowledgeSyncJobResponse> response = (ApiResponse<KnowledgeSyncJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Create content upload from URL job
    * 
    * postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
@@ -7708,6 +8812,160 @@ public class KnowledgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<KnowledgeBase> response = (ApiResponse<KnowledgeBase>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update Salesforce Knowledge integration source
+   * 
+   * putKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SalesforceSourceResponse> putKnowledgeKnowledgebaseSourcesSalesforceSourceIdAsync(PutKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest request, final AsyncApiCallback<SalesforceSourceResponse> callback) {
+    try {
+      final SettableFuture<SalesforceSourceResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SalesforceSourceResponse>() {}, new AsyncApiCallback<ApiResponse<SalesforceSourceResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<SalesforceSourceResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update Salesforce Knowledge integration source
+   * 
+   * putKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SalesforceSourceResponse>> putKnowledgeKnowledgebaseSourcesSalesforceSourceIdAsync(ApiRequest<SalesforceSourceRequest> request, final AsyncApiCallback<ApiResponse<SalesforceSourceResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SalesforceSourceResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SalesforceSourceResponse>() {}, new AsyncApiCallback<ApiResponse<SalesforceSourceResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<SalesforceSourceResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SalesforceSourceResponse> response = (ApiResponse<SalesforceSourceResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SalesforceSourceResponse> response = (ApiResponse<SalesforceSourceResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update ServiceNow Knowledge integration source
+   * 
+   * putKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ServiceNowSourceResponse> putKnowledgeKnowledgebaseSourcesServicenowSourceIdAsync(PutKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest request, final AsyncApiCallback<ServiceNowSourceResponse> callback) {
+    try {
+      final SettableFuture<ServiceNowSourceResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ServiceNowSourceResponse>() {}, new AsyncApiCallback<ApiResponse<ServiceNowSourceResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ServiceNowSourceResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update ServiceNow Knowledge integration source
+   * 
+   * putKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ServiceNowSourceResponse>> putKnowledgeKnowledgebaseSourcesServicenowSourceIdAsync(ApiRequest<ServiceNowSourceRequest> request, final AsyncApiCallback<ApiResponse<ServiceNowSourceResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ServiceNowSourceResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ServiceNowSourceResponse>() {}, new AsyncApiCallback<ApiResponse<ServiceNowSourceResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ServiceNowSourceResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ServiceNowSourceResponse> response = (ApiResponse<ServiceNowSourceResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ServiceNowSourceResponse> response = (ApiResponse<ServiceNowSourceResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

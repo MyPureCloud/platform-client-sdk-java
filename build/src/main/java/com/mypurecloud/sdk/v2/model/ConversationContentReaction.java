@@ -51,7 +51,10 @@ public class ConversationContentReaction  implements Serializable {
     ANGRY("Angry"),
     THANKFUL("Thankful"),
     PRIDE("Pride"),
-    CARE("Care");
+    CARE("Care"),
+    SHARE("Share"),
+    COMMENT("Comment"),
+    VIEW("View");
 
     private String value;
 

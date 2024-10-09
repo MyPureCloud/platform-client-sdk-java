@@ -53,6 +53,7 @@ public class ConversationMessagingChannel  implements Serializable {
     WHATSAPP("Whatsapp"),
     WEBMESSAGING("WebMessaging"),
     OPEN("Open"),
+    APPLE("Apple"),
     SMS("Sms");
 
     private String value;

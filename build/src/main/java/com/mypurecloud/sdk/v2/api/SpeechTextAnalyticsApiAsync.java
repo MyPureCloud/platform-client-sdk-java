@@ -15,6 +15,7 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.CategoriesEntityListing;
 import com.mypurecloud.sdk.v2.model.CategoryRequest;
+import com.mypurecloud.sdk.v2.model.CommunicationTranslationList;
 import com.mypurecloud.sdk.v2.model.ConversationCategoriesEntityListing;
 import com.mypurecloud.sdk.v2.model.ConversationMetrics;
 import com.mypurecloud.sdk.v2.model.DeleteProgramResponse;
@@ -50,6 +51,7 @@ import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
 import com.mypurecloud.sdk.v2.model.TranscriptUrl;
 import com.mypurecloud.sdk.v2.model.TranscriptUrls;
 import com.mypurecloud.sdk.v2.model.TranscriptionEnginesRequest;
+import com.mypurecloud.sdk.v2.model.TranslateSupportedLanguageList;
 import com.mypurecloud.sdk.v2.model.UnifiedGeneralTopicEntityListing;
 import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 
@@ -86,6 +88,8 @@ import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsDialect
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsGeneralRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsGeneralStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsPublishjobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTranslationsLanguageConversationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTranslationsLanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSpeechandtextanalyticsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsCategoriesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsDictionaryfeedbackRequest;
@@ -2511,6 +2515,160 @@ public class SpeechTextAnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<TopicJob> response = (ApiResponse<TopicJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Translate all communication(s) for an interaction.
+   * 
+   * getSpeechandtextanalyticsTranslationsLanguageConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CommunicationTranslationList> getSpeechandtextanalyticsTranslationsLanguageConversationAsync(GetSpeechandtextanalyticsTranslationsLanguageConversationRequest request, final AsyncApiCallback<CommunicationTranslationList> callback) {
+    try {
+      final SettableFuture<CommunicationTranslationList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CommunicationTranslationList>() {}, new AsyncApiCallback<ApiResponse<CommunicationTranslationList>>() {
+        @Override
+        public void onCompleted(ApiResponse<CommunicationTranslationList> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Translate all communication(s) for an interaction.
+   * 
+   * getSpeechandtextanalyticsTranslationsLanguageConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CommunicationTranslationList>> getSpeechandtextanalyticsTranslationsLanguageConversationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CommunicationTranslationList>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CommunicationTranslationList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CommunicationTranslationList>() {}, new AsyncApiCallback<ApiResponse<CommunicationTranslationList>>() {
+        @Override
+        public void onCompleted(ApiResponse<CommunicationTranslationList> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CommunicationTranslationList> response = (ApiResponse<CommunicationTranslationList>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CommunicationTranslationList> response = (ApiResponse<CommunicationTranslationList>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get supported translation languages
+   * 
+   * getSpeechandtextanalyticsTranslationsLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TranslateSupportedLanguageList> getSpeechandtextanalyticsTranslationsLanguagesAsync(GetSpeechandtextanalyticsTranslationsLanguagesRequest request, final AsyncApiCallback<TranslateSupportedLanguageList> callback) {
+    try {
+      final SettableFuture<TranslateSupportedLanguageList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TranslateSupportedLanguageList>() {}, new AsyncApiCallback<ApiResponse<TranslateSupportedLanguageList>>() {
+        @Override
+        public void onCompleted(ApiResponse<TranslateSupportedLanguageList> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get supported translation languages
+   * 
+   * getSpeechandtextanalyticsTranslationsLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TranslateSupportedLanguageList>> getSpeechandtextanalyticsTranslationsLanguagesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TranslateSupportedLanguageList>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TranslateSupportedLanguageList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TranslateSupportedLanguageList>() {}, new AsyncApiCallback<ApiResponse<TranslateSupportedLanguageList>>() {
+        @Override
+        public void onCompleted(ApiResponse<TranslateSupportedLanguageList> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TranslateSupportedLanguageList> response = (ApiResponse<TranslateSupportedLanguageList>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TranslateSupportedLanguageList> response = (ApiResponse<TranslateSupportedLanguageList>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

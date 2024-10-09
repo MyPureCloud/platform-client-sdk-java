@@ -12,6 +12,7 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.CategoriesEntityListing;
 import com.mypurecloud.sdk.v2.model.CategoryRequest;
+import com.mypurecloud.sdk.v2.model.CommunicationTranslationList;
 import com.mypurecloud.sdk.v2.model.ConversationCategoriesEntityListing;
 import com.mypurecloud.sdk.v2.model.ConversationMetrics;
 import com.mypurecloud.sdk.v2.model.DeleteProgramResponse;
@@ -47,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
 import com.mypurecloud.sdk.v2.model.TranscriptUrl;
 import com.mypurecloud.sdk.v2.model.TranscriptUrls;
 import com.mypurecloud.sdk.v2.model.TranscriptionEnginesRequest;
+import com.mypurecloud.sdk.v2.model.TranslateSupportedLanguageList;
 import com.mypurecloud.sdk.v2.model.UnifiedGeneralTopicEntityListing;
 import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 
@@ -83,6 +85,8 @@ import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsDialect
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsGeneralRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsGeneralStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsPublishjobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTranslationsLanguageConversationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTranslationsLanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSpeechandtextanalyticsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsCategoriesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsDictionaryfeedbackRequest;
@@ -2667,6 +2671,178 @@ public class SpeechTextAnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TopicJob> response = (ApiResponse<TopicJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Translate all communication(s) for an interaction.
+   * 
+   * getSpeechandtextanalyticsTranslationsLanguageConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param languageId Target translation language (required)
+   * @param conversationId Conversation id (required)
+   * @param communicationId Communication id associated with the conversation (optional)
+   * @param recordingId Recording id associated with the communication (optional)
+   * @return CommunicationTranslationList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CommunicationTranslationList getSpeechandtextanalyticsTranslationsLanguageConversation(String languageId, String conversationId, String communicationId, String recordingId) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsTranslationsLanguageConversation(createGetSpeechandtextanalyticsTranslationsLanguageConversationRequest(languageId, conversationId, communicationId, recordingId));
+  }
+
+  /**
+   * Translate all communication(s) for an interaction.
+   * 
+   * getSpeechandtextanalyticsTranslationsLanguageConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param languageId Target translation language (required)
+   * @param conversationId Conversation id (required)
+   * @param communicationId Communication id associated with the conversation (optional)
+   * @param recordingId Recording id associated with the communication (optional)
+   * @return CommunicationTranslationList
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CommunicationTranslationList> getSpeechandtextanalyticsTranslationsLanguageConversationWithHttpInfo(String languageId, String conversationId, String communicationId, String recordingId) throws IOException {
+    return getSpeechandtextanalyticsTranslationsLanguageConversation(createGetSpeechandtextanalyticsTranslationsLanguageConversationRequest(languageId, conversationId, communicationId, recordingId).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsTranslationsLanguageConversationRequest createGetSpeechandtextanalyticsTranslationsLanguageConversationRequest(String languageId, String conversationId, String communicationId, String recordingId) {
+    return GetSpeechandtextanalyticsTranslationsLanguageConversationRequest.builder()
+            .withLanguageId(languageId)
+
+            .withConversationId(conversationId)
+
+            .withCommunicationId(communicationId)
+
+            .withRecordingId(recordingId)
+
+            .build();
+  }
+
+  /**
+   * Translate all communication(s) for an interaction.
+   * 
+   * getSpeechandtextanalyticsTranslationsLanguageConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return CommunicationTranslationList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CommunicationTranslationList getSpeechandtextanalyticsTranslationsLanguageConversation(GetSpeechandtextanalyticsTranslationsLanguageConversationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CommunicationTranslationList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CommunicationTranslationList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Translate all communication(s) for an interaction.
+   * 
+   * getSpeechandtextanalyticsTranslationsLanguageConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CommunicationTranslationList> getSpeechandtextanalyticsTranslationsLanguageConversation(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CommunicationTranslationList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CommunicationTranslationList> response = (ApiResponse<CommunicationTranslationList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CommunicationTranslationList> response = (ApiResponse<CommunicationTranslationList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get supported translation languages
+   * 
+   * getSpeechandtextanalyticsTranslationsLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return TranslateSupportedLanguageList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TranslateSupportedLanguageList getSpeechandtextanalyticsTranslationsLanguages() throws IOException, ApiException {
+    return  getSpeechandtextanalyticsTranslationsLanguages(createGetSpeechandtextanalyticsTranslationsLanguagesRequest());
+  }
+
+  /**
+   * Get supported translation languages
+   * 
+   * getSpeechandtextanalyticsTranslationsLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return TranslateSupportedLanguageList
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TranslateSupportedLanguageList> getSpeechandtextanalyticsTranslationsLanguagesWithHttpInfo() throws IOException {
+    return getSpeechandtextanalyticsTranslationsLanguages(createGetSpeechandtextanalyticsTranslationsLanguagesRequest().withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsTranslationsLanguagesRequest createGetSpeechandtextanalyticsTranslationsLanguagesRequest() {
+    return GetSpeechandtextanalyticsTranslationsLanguagesRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get supported translation languages
+   * 
+   * getSpeechandtextanalyticsTranslationsLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return TranslateSupportedLanguageList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TranslateSupportedLanguageList getSpeechandtextanalyticsTranslationsLanguages(GetSpeechandtextanalyticsTranslationsLanguagesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TranslateSupportedLanguageList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TranslateSupportedLanguageList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get supported translation languages
+   * 
+   * getSpeechandtextanalyticsTranslationsLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TranslateSupportedLanguageList> getSpeechandtextanalyticsTranslationsLanguages(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TranslateSupportedLanguageList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TranslateSupportedLanguageList> response = (ApiResponse<TranslateSupportedLanguageList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TranslateSupportedLanguageList> response = (ApiResponse<TranslateSupportedLanguageList>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

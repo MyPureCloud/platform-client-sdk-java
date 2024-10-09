@@ -46,6 +46,7 @@ public class FacebookPermission  implements Serializable {
     FACEBOOKPRIVATE("FacebookPrivate"),
     FACEBOOKPUBLIC("FacebookPublic"),
     INSTAGRAMPRIVATE("InstagramPrivate"),
+    INSTAGRAMPUBLIC("InstagramPublic"),
     WHATSAPPPRIVATE("WhatsAppPrivate");
 
     private String value;

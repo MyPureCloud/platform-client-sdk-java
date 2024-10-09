@@ -57,6 +57,7 @@ import com.mypurecloud.sdk.v2.model.ConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.ConversationParticipantSearchRequest;
 import com.mypurecloud.sdk.v2.model.ConversationQuery;
 import com.mypurecloud.sdk.v2.model.ConversationSecureAttributes;
+import com.mypurecloud.sdk.v2.model.ConversationSummariesGetResponse;
 import com.mypurecloud.sdk.v2.model.ConversationTagsUpdate;
 import com.mypurecloud.sdk.v2.model.ConversationThreadingWindow;
 import com.mypurecloud.sdk.v2.model.ConversationUser;
@@ -190,6 +191,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantWrapupcodesR
 import com.mypurecloud.sdk.v2.api.request.GetConversationSecureattributesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationSuggestionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationSuggestionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationSummariesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsCallRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsCallParticipantCommunicationWrapupRequest;
@@ -2641,6 +2643,88 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<SuggestionListing> response = (ApiResponse<SuggestionListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the summaries of the conversation.
+   * 
+   * getConversationSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId Conversation ID (required)
+   * @return ConversationSummariesGetResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationSummariesGetResponse getConversationSummaries(String conversationId) throws IOException, ApiException {
+    return  getConversationSummaries(createGetConversationSummariesRequest(conversationId));
+  }
+
+  /**
+   * Get the summaries of the conversation.
+   * 
+   * getConversationSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param conversationId Conversation ID (required)
+   * @return ConversationSummariesGetResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationSummariesGetResponse> getConversationSummariesWithHttpInfo(String conversationId) throws IOException {
+    return getConversationSummaries(createGetConversationSummariesRequest(conversationId).withHttpInfo());
+  }
+
+  private GetConversationSummariesRequest createGetConversationSummariesRequest(String conversationId) {
+    return GetConversationSummariesRequest.builder()
+            .withConversationId(conversationId)
+
+            .build();
+  }
+
+  /**
+   * Get the summaries of the conversation.
+   * 
+   * getConversationSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ConversationSummariesGetResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationSummariesGetResponse getConversationSummaries(GetConversationSummariesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConversationSummariesGetResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConversationSummariesGetResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the summaries of the conversation.
+   * 
+   * getConversationSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationSummariesGetResponse> getConversationSummaries(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConversationSummariesGetResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationSummariesGetResponse> response = (ApiResponse<ConversationSummariesGetResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationSummariesGetResponse> response = (ApiResponse<ConversationSummariesGetResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

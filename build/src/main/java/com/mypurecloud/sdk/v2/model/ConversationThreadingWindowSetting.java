@@ -47,7 +47,8 @@ public class ConversationThreadingWindowSetting  implements Serializable {
     WHATSAPP("whatsapp"),
     WEBMESSAGING("webmessaging"),
     INSTAGRAM("instagram"),
-    OPEN("open");
+    OPEN("open"),
+    APPLE("apple");
 
     private String value;
 

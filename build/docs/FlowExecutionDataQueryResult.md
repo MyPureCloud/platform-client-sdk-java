@@ -12,6 +12,7 @@
 | **flowId** | **String** | The id of the flow that was executed. |  [optional] |
 | **flowVersion** | **String** | The version of the flow that was executed. |  [optional] |
 | **conversationId** | **String** | The id of the conversation that executed this flow. |  [optional] |
+| **workitemId** | **String** | The id of the workitem that executed this flow. |  [optional] |
 | **flowType** | [**FlowTypeEnum**](#Enum--FlowTypeEnum) | The type of flow. |  [optional] |
 | **flowErrorReason** | **String** | If the flow errored out this is the reason. |  [optional] |
 | **flowWarningReason** | **String** | If the flow had a warning, this is the reason. |  [optional] |
@@ -46,4 +47,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:209.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:210.0.0_

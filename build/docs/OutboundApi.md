@@ -46,6 +46,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOutboundCampaignInteractions**](OutboundApi#getOutboundCampaignInteractions) | Get dialer campaign interactions. |
 | [**getOutboundCampaignLinedistribution**](OutboundApi#getOutboundCampaignLinedistribution) | Get line distribution information for campaigns using same Edge Group or Site as given campaign |
 | [**getOutboundCampaignProgress**](OutboundApi#getOutboundCampaignProgress) | Get campaign progress |
+| [**getOutboundCampaignSkillcombinations**](OutboundApi#getOutboundCampaignSkillcombinations) | Get the remaining and total contact count for each skill combination in a skills campaign |
 | [**getOutboundCampaignStats**](OutboundApi#getOutboundCampaignStats) | Get statistics about a Dialer Campaign |
 | [**getOutboundCampaignrule**](OutboundApi#getOutboundCampaignrule) | Get Campaign Rule |
 | [**getOutboundCampaignrules**](OutboundApi#getOutboundCampaignrules) | Query Campaign Rule list |
@@ -2689,6 +2690,69 @@ try {
 ### Return type
 
 [**CampaignProgress**](CampaignProgress)
+
+
+# **getOutboundCampaignSkillcombinations**
+
+
+> [PagedSkillCombinationListing](PagedSkillCombinationListing) getOutboundCampaignSkillcombinations(campaignId, pageNumber, pageSize)
+
+Get the remaining and total contact count for each skill combination in a skills campaign
+
+Wraps GET /api/v2/outbound/campaigns/{campaignId}/skillcombinations  
+
+Requires ANY permissions: 
+
+* outbound:campaign:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String campaignId = "campaignId_example"; // String | Campaign ID
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+try {
+    PagedSkillCombinationListing result = apiInstance.getOutboundCampaignSkillcombinations(campaignId, pageNumber, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundCampaignSkillcombinations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaignId** | **String**| Campaign ID | 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**PagedSkillCombinationListing**](PagedSkillCombinationListing)
 
 
 # **getOutboundCampaignStats**
@@ -10117,4 +10181,4 @@ try {
 [**WrapUpCodeMapping**](WrapUpCodeMapping)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:209.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:210.0.0_

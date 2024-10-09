@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.ConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.ConversationParticipantSearchRequest;
 import com.mypurecloud.sdk.v2.model.ConversationQuery;
 import com.mypurecloud.sdk.v2.model.ConversationSecureAttributes;
+import com.mypurecloud.sdk.v2.model.ConversationSummariesGetResponse;
 import com.mypurecloud.sdk.v2.model.ConversationTagsUpdate;
 import com.mypurecloud.sdk.v2.model.ConversationThreadingWindow;
 import com.mypurecloud.sdk.v2.model.ConversationUser;
@@ -193,6 +194,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantWrapupcodesR
 import com.mypurecloud.sdk.v2.api.request.GetConversationSecureattributesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationSuggestionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationSuggestionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationSummariesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsCallRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsCallParticipantCommunicationWrapupRequest;
@@ -2514,6 +2516,83 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<SuggestionListing> response = (ApiResponse<SuggestionListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the summaries of the conversation.
+   * 
+   * getConversationSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ConversationSummariesGetResponse> getConversationSummariesAsync(GetConversationSummariesRequest request, final AsyncApiCallback<ConversationSummariesGetResponse> callback) {
+    try {
+      final SettableFuture<ConversationSummariesGetResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConversationSummariesGetResponse>() {}, new AsyncApiCallback<ApiResponse<ConversationSummariesGetResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationSummariesGetResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the summaries of the conversation.
+   * 
+   * getConversationSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ConversationSummariesGetResponse>> getConversationSummariesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ConversationSummariesGetResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ConversationSummariesGetResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ConversationSummariesGetResponse>() {}, new AsyncApiCallback<ApiResponse<ConversationSummariesGetResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationSummariesGetResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationSummariesGetResponse> response = (ApiResponse<ConversationSummariesGetResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationSummariesGetResponse> response = (ApiResponse<ConversationSummariesGetResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

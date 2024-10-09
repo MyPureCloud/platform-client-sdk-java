@@ -49,7 +49,8 @@ public class JourneySessionEventsNotificationConversationChannel  implements Ser
     COBROWSE("Cobrowse"),
     VIDEO("Video"),
     SCREENSHARE("Screenshare"),
-    MESSAGE("Message");
+    MESSAGE("Message"),
+    INTERNALMESSAGE("InternalMessage");
 
     private String value;
 

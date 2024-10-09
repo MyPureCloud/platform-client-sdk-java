@@ -49,7 +49,8 @@ public class ConversationMessagingToRecipient  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     EMAIL("Email"),
     PHONE("Phone"),
-    OPAQUE("Opaque");
+    OPAQUE("Opaque"),
+    TOPIC("Topic");
 
     private String value;
 

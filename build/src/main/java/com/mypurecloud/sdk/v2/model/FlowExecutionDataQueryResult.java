@@ -31,6 +31,7 @@ public class FlowExecutionDataQueryResult  implements Serializable {
   private String flowId = null;
   private String flowVersion = null;
   private String conversationId = null;
+  private String workitemId = null;
 
   private static class FlowTypeEnumDeserializer extends StdDeserializer<FlowTypeEnum> {
     public FlowTypeEnumDeserializer() {
@@ -216,6 +217,24 @@ public class FlowExecutionDataQueryResult  implements Serializable {
 
 
   /**
+   * The id of the workitem that executed this flow.
+   **/
+  public FlowExecutionDataQueryResult workitemId(String workitemId) {
+    this.workitemId = workitemId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The id of the workitem that executed this flow.")
+  @JsonProperty("workitemId")
+  public String getWorkitemId() {
+    return workitemId;
+  }
+  public void setWorkitemId(String workitemId) {
+    this.workitemId = workitemId;
+  }
+
+
+  /**
    * The type of flow.
    **/
   public FlowExecutionDataQueryResult flowType(FlowTypeEnum flowType) {
@@ -311,6 +330,7 @@ public class FlowExecutionDataQueryResult  implements Serializable {
             Objects.equals(this.flowId, flowExecutionDataQueryResult.flowId) &&
             Objects.equals(this.flowVersion, flowExecutionDataQueryResult.flowVersion) &&
             Objects.equals(this.conversationId, flowExecutionDataQueryResult.conversationId) &&
+            Objects.equals(this.workitemId, flowExecutionDataQueryResult.workitemId) &&
             Objects.equals(this.flowType, flowExecutionDataQueryResult.flowType) &&
             Objects.equals(this.flowErrorReason, flowExecutionDataQueryResult.flowErrorReason) &&
             Objects.equals(this.flowWarningReason, flowExecutionDataQueryResult.flowWarningReason) &&
@@ -320,7 +340,7 @@ public class FlowExecutionDataQueryResult  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, startDateTime, endDateTime, flowId, flowVersion, conversationId, flowType, flowErrorReason, flowWarningReason, flowName, selfUri);
+    return Objects.hash(id, name, startDateTime, endDateTime, flowId, flowVersion, conversationId, workitemId, flowType, flowErrorReason, flowWarningReason, flowName, selfUri);
   }
 
   @Override
@@ -335,6 +355,7 @@ public class FlowExecutionDataQueryResult  implements Serializable {
     sb.append("    flowId: ").append(toIndentedString(flowId)).append("\n");
     sb.append("    flowVersion: ").append(toIndentedString(flowVersion)).append("\n");
     sb.append("    conversationId: ").append(toIndentedString(conversationId)).append("\n");
+    sb.append("    workitemId: ").append(toIndentedString(workitemId)).append("\n");
     sb.append("    flowType: ").append(toIndentedString(flowType)).append("\n");
     sb.append("    flowErrorReason: ").append(toIndentedString(flowErrorReason)).append("\n");
     sb.append("    flowWarningReason: ").append(toIndentedString(flowWarningReason)).append("\n");

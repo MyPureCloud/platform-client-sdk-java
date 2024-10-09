@@ -92,6 +92,54 @@ public class QueueConversationVideoEventTopicMessageDetails  implements Serializ
   private List<QueueConversationVideoEventTopicMessageSticker> stickers = new ArrayList<QueueConversationVideoEventTopicMessageSticker>();
   private QueueConversationVideoEventTopicMessageMetadata messageMetadata = null;
 
+  private static class SocialVisibilityEnumDeserializer extends StdDeserializer<SocialVisibilityEnum> {
+    public SocialVisibilityEnumDeserializer() {
+      super(SocialVisibilityEnumDeserializer.class);
+    }
+
+    @Override
+    public SocialVisibilityEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SocialVisibilityEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * For social media messages, the visibility of the message in the originating social platform
+   */
+ @JsonDeserialize(using = SocialVisibilityEnumDeserializer.class)
+  public enum SocialVisibilityEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    PRIVATE("private"),
+    PUBLIC("public");
+
+    private String value;
+
+    SocialVisibilityEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SocialVisibilityEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SocialVisibilityEnum value : SocialVisibilityEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SocialVisibilityEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private SocialVisibilityEnum socialVisibility = null;
+
   
   /**
    * UUID identifying the message media.
@@ -236,6 +284,24 @@ public class QueueConversationVideoEventTopicMessageDetails  implements Serializ
   }
 
 
+  /**
+   * For social media messages, the visibility of the message in the originating social platform
+   **/
+  public QueueConversationVideoEventTopicMessageDetails socialVisibility(SocialVisibilityEnum socialVisibility) {
+    this.socialVisibility = socialVisibility;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "For social media messages, the visibility of the message in the originating social platform")
+  @JsonProperty("socialVisibility")
+  public SocialVisibilityEnum getSocialVisibility() {
+    return socialVisibility;
+  }
+  public void setSocialVisibility(SocialVisibilityEnum socialVisibility) {
+    this.socialVisibility = socialVisibility;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -253,12 +319,13 @@ public class QueueConversationVideoEventTopicMessageDetails  implements Serializ
             Objects.equals(this.media, queueConversationVideoEventTopicMessageDetails.media) &&
             Objects.equals(this.errorInfo, queueConversationVideoEventTopicMessageDetails.errorInfo) &&
             Objects.equals(this.stickers, queueConversationVideoEventTopicMessageDetails.stickers) &&
-            Objects.equals(this.messageMetadata, queueConversationVideoEventTopicMessageDetails.messageMetadata);
+            Objects.equals(this.messageMetadata, queueConversationVideoEventTopicMessageDetails.messageMetadata) &&
+            Objects.equals(this.socialVisibility, queueConversationVideoEventTopicMessageDetails.socialVisibility);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(messageId, messageTime, messageStatus, messageSegmentCount, media, errorInfo, stickers, messageMetadata);
+    return Objects.hash(messageId, messageTime, messageStatus, messageSegmentCount, media, errorInfo, stickers, messageMetadata, socialVisibility);
   }
 
   @Override
@@ -274,6 +341,7 @@ public class QueueConversationVideoEventTopicMessageDetails  implements Serializ
     sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("    stickers: ").append(toIndentedString(stickers)).append("\n");
     sb.append("    messageMetadata: ").append(toIndentedString(messageMetadata)).append("\n");
+    sb.append("    socialVisibility: ").append(toIndentedString(socialVisibility)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -504,6 +504,53 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
   private String flowName = null;
   private String flowOutType = null;
 
+  private static class FlowSubTypeEnumDeserializer extends StdDeserializer<FlowSubTypeEnum> {
+    public FlowSubTypeEnumDeserializer() {
+      super(FlowSubTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public FlowSubTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return FlowSubTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Represents the subtype of the flow. For example a Digital Bot Flow that has been upgraded with Virtual Agent capabilities.
+   */
+ @JsonDeserialize(using = FlowSubTypeEnumDeserializer.class)
+  public enum FlowSubTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    VIRTUAL_AGENT("VIRTUAL_AGENT");
+
+    private String value;
+
+    FlowSubTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static FlowSubTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (FlowSubTypeEnum value : FlowSubTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return FlowSubTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private FlowSubTypeEnum flowSubType = null;
+
   private static class FlowTypeEnumDeserializer extends StdDeserializer<FlowTypeEnum> {
     public FlowTypeEnumDeserializer() {
       super(FlowTypeEnumDeserializer.class);
@@ -1737,6 +1784,24 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
 
 
   /**
+   * Represents the subtype of the flow. For example a Digital Bot Flow that has been upgraded with Virtual Agent capabilities.
+   **/
+  public FlowMetricsTopicFlowMetricRecord flowSubType(FlowSubTypeEnum flowSubType) {
+    this.flowSubType = flowSubType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Represents the subtype of the flow. For example a Digital Bot Flow that has been upgraded with Virtual Agent capabilities.")
+  @JsonProperty("flowSubType")
+  public FlowSubTypeEnum getFlowSubType() {
+    return flowSubType;
+  }
+  public void setFlowSubType(FlowSubTypeEnum flowSubType) {
+    this.flowSubType = flowSubType;
+  }
+
+
+  /**
    * The type of this flow
    **/
   public FlowMetricsTopicFlowMetricRecord flowType(FlowTypeEnum flowType) {
@@ -2762,6 +2827,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
             Objects.equals(this.flowMilestoneIds, flowMetricsTopicFlowMetricRecord.flowMilestoneIds) &&
             Objects.equals(this.flowName, flowMetricsTopicFlowMetricRecord.flowName) &&
             Objects.equals(this.flowOutType, flowMetricsTopicFlowMetricRecord.flowOutType) &&
+            Objects.equals(this.flowSubType, flowMetricsTopicFlowMetricRecord.flowSubType) &&
             Objects.equals(this.flowType, flowMetricsTopicFlowMetricRecord.flowType) &&
             Objects.equals(this.flowVersion, flowMetricsTopicFlowMetricRecord.flowVersion) &&
             Objects.equals(this.groupId, flowMetricsTopicFlowMetricRecord.groupId) &&
@@ -2820,7 +2886,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(metric, metricDate, value, recordId, activeRouting, activeSkillIds, addressFrom, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, conversationId, conversationInitiator, convertedFrom, convertedTo, customerParticipation, deliveryStatus, destinationAddresses, direction, disconnectType, divisionIds, dnis, edgeId, eligibleAgentCounts, endingLanguage, entryReason, entryType, errorCode, exitReason, extendedDeliveryStatus, externalContactId, externalMediaCount, externalOrganizationId, externalTag, firstQueue, flaggedReason, flowId, flowInType, flowMilestoneIds, flowName, flowOutType, flowType, flowVersion, groupId, interactionType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, knowledgeBaseId, mediaCount, mediaType, messageType, originatingDirection, outboundCampaignId, outboundContactId, outboundContactListId, participantName, peerId, provider, purpose, queueId, recognitionFailureReason, remote, removedSkillIds, requestedLanguageId, requestedRoutingSkillIds, requestedRoutings, roomId, routingPriority, routingRing, routingRule, routingRuleType, selectedAgentId, selectedAgentRank, selfServed, sessionDnis, sessionId, startingLanguage, stationId, teamId, transferTargetAddress, transferTargetName, transferType, usedRouting, userId, videoPresent, waitingInteractionCounts, wrapUpCode, proposedAgents, outcomes, scoredAgents);
+    return Objects.hash(metric, metricDate, value, recordId, activeRouting, activeSkillIds, addressFrom, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, conversationId, conversationInitiator, convertedFrom, convertedTo, customerParticipation, deliveryStatus, destinationAddresses, direction, disconnectType, divisionIds, dnis, edgeId, eligibleAgentCounts, endingLanguage, entryReason, entryType, errorCode, exitReason, extendedDeliveryStatus, externalContactId, externalMediaCount, externalOrganizationId, externalTag, firstQueue, flaggedReason, flowId, flowInType, flowMilestoneIds, flowName, flowOutType, flowSubType, flowType, flowVersion, groupId, interactionType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, knowledgeBaseId, mediaCount, mediaType, messageType, originatingDirection, outboundCampaignId, outboundContactId, outboundContactListId, participantName, peerId, provider, purpose, queueId, recognitionFailureReason, remote, removedSkillIds, requestedLanguageId, requestedRoutingSkillIds, requestedRoutings, roomId, routingPriority, routingRing, routingRule, routingRuleType, selectedAgentId, selectedAgentRank, selfServed, sessionDnis, sessionId, startingLanguage, stationId, teamId, transferTargetAddress, transferTargetName, transferType, usedRouting, userId, videoPresent, waitingInteractionCounts, wrapUpCode, proposedAgents, outcomes, scoredAgents);
   }
 
   @Override
@@ -2872,6 +2938,7 @@ public class FlowMetricsTopicFlowMetricRecord  implements Serializable {
     sb.append("    flowMilestoneIds: ").append(toIndentedString(flowMilestoneIds)).append("\n");
     sb.append("    flowName: ").append(toIndentedString(flowName)).append("\n");
     sb.append("    flowOutType: ").append(toIndentedString(flowOutType)).append("\n");
+    sb.append("    flowSubType: ").append(toIndentedString(flowSubType)).append("\n");
     sb.append("    flowType: ").append(toIndentedString(flowType)).append("\n");
     sb.append("    flowVersion: ").append(toIndentedString(flowVersion)).append("\n");
     sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");

@@ -201,6 +201,7 @@
 | **screenMonitorUserIds** | **List&lt;String&gt;** | The list of Screen Monitor User Ids |  [optional] |
 | **dashboardType** | [**DashboardTypeEnum**](#Enum--DashboardTypeEnum) | The type of dashboard being filtered |  [optional] |
 | **dashboardAccessFilter** | [**DashboardAccessFilterEnum**](#Enum--DashboardAccessFilterEnum) | The type of dashboard access being filtered |  [optional] |
+| **transcriptDurationMilliseconds** | [**List&lt;NumericRange&gt;**](NumericRange) | The transcript durations in milliseconds used to filter the view |  [optional] |
 
 
 ## Enum: MediaTypesEnum
@@ -212,6 +213,7 @@
 | COBROWSE | &quot;cobrowse&quot; |
 | EMAIL | &quot;email&quot; |
 | MESSAGE | &quot;message&quot; |
+| INTERNALMESSAGE | &quot;internalmessage&quot; |
 | SCREENSHARE | &quot;screenshare&quot; |
 | UNKNOWN | &quot;unknown&quot; |
 | VIDEO | &quot;video&quot; |
@@ -591,4 +593,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:209.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:210.0.0_

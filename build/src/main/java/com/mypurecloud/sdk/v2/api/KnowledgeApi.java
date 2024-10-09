@@ -78,12 +78,15 @@ import com.mypurecloud.sdk.v2.model.KnowledgeGuestSession;
 import com.mypurecloud.sdk.v2.model.KnowledgeImport;
 import com.mypurecloud.sdk.v2.model.KnowledgeImportJobRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeImportJobResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeIntegrationOptionsResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeParseJobRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeParseJobRequestImport;
 import com.mypurecloud.sdk.v2.model.KnowledgeParseJobRequestPatch;
 import com.mypurecloud.sdk.v2.model.KnowledgeParseJobResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeSyncJobRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeSyncJobResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeTraining;
 import com.mypurecloud.sdk.v2.model.LabelCreateRequest;
 import com.mypurecloud.sdk.v2.model.LabelListing;
@@ -92,7 +95,14 @@ import com.mypurecloud.sdk.v2.model.LabelUpdateRequest;
 import java.time.LocalDate;
 import com.mypurecloud.sdk.v2.model.OperationCreatorUserResponse;
 import com.mypurecloud.sdk.v2.model.OperationListing;
+import com.mypurecloud.sdk.v2.model.SalesforceSourceRequest;
+import com.mypurecloud.sdk.v2.model.SalesforceSourceResponse;
 import com.mypurecloud.sdk.v2.model.SearchUpdateRequest;
+import com.mypurecloud.sdk.v2.model.ServiceNowSourceRequest;
+import com.mypurecloud.sdk.v2.model.ServiceNowSourceResponse;
+import com.mypurecloud.sdk.v2.model.SourceBaseResponse;
+import com.mypurecloud.sdk.v2.model.SourceSyncResponse;
+import com.mypurecloud.sdk.v2.model.SyncStatusRequest;
 import com.mypurecloud.sdk.v2.model.TrainingListing;
 import com.mypurecloud.sdk.v2.model.UnansweredGroup;
 import com.mypurecloud.sdk.v2.model.UnansweredGroups;
@@ -113,9 +123,13 @@ import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseLabelReque
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseLanguageCategoryRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseLanguageDocumentRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseLanguageDocumentsImportRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseSynchronizeJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeGuestSessionCategoriesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeGuestSessionDocumentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeGuestSessionDocumentsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeIntegrationOptionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseCategoriesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseCategoryRequest;
@@ -144,6 +158,10 @@ import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageTrain
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseOperationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseOperationsUsersQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseParseJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseSourcesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseSynchronizeJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseUnansweredGroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseUnansweredGroupsRequest;
@@ -163,6 +181,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseLanguageDoc
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseLanguageDocumentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseLanguageDocumentsImportRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseParseJobRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseSynchronizeJobRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseUnansweredGroupPhrasegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeDocumentuploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeGuestSessionDocumentCopiesRequest;
@@ -200,8 +219,15 @@ import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseLanguageTrai
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseParseJobImportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseParseJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseSourcesSalesforceRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseSourcesServicenowRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseSourcesServicenowSourceIdSyncRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseSynchronizeJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseUploadsUrlsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebasesRequest;
+import com.mypurecloud.sdk.v2.api.request.PutKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PutKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -1050,6 +1076,255 @@ public class KnowledgeApi {
   }
 
   /**
+   * Delete Salesforce Knowledge integration source
+   * 
+   * deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param sourceId Source ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId(String knowledgeBaseId, String sourceId) throws IOException, ApiException {
+     deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId(createDeleteKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest(knowledgeBaseId, sourceId));
+  }
+
+  /**
+   * Delete Salesforce Knowledge integration source
+   * 
+   * deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param sourceId Source ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteKnowledgeKnowledgebaseSourcesSalesforceSourceIdWithHttpInfo(String knowledgeBaseId, String sourceId) throws IOException {
+    return deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId(createDeleteKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest(knowledgeBaseId, sourceId).withHttpInfo());
+  }
+
+  private DeleteKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest createDeleteKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest(String knowledgeBaseId, String sourceId) {
+    return DeleteKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withSourceId(sourceId)
+
+            .build();
+  }
+
+  /**
+   * Delete Salesforce Knowledge integration source
+   * 
+   * deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId(DeleteKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete Salesforce Knowledge integration source
+   * 
+   * deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete ServiceNow Knowledge integration source
+   * 
+   * deleteKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param sourceId Source ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteKnowledgeKnowledgebaseSourcesServicenowSourceId(String knowledgeBaseId, String sourceId) throws IOException, ApiException {
+     deleteKnowledgeKnowledgebaseSourcesServicenowSourceId(createDeleteKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest(knowledgeBaseId, sourceId));
+  }
+
+  /**
+   * Delete ServiceNow Knowledge integration source
+   * 
+   * deleteKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param sourceId Source ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteKnowledgeKnowledgebaseSourcesServicenowSourceIdWithHttpInfo(String knowledgeBaseId, String sourceId) throws IOException {
+    return deleteKnowledgeKnowledgebaseSourcesServicenowSourceId(createDeleteKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest(knowledgeBaseId, sourceId).withHttpInfo());
+  }
+
+  private DeleteKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest createDeleteKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest(String knowledgeBaseId, String sourceId) {
+    return DeleteKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withSourceId(sourceId)
+
+            .build();
+  }
+
+  /**
+   * Delete ServiceNow Knowledge integration source
+   * 
+   * deleteKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteKnowledgeKnowledgebaseSourcesServicenowSourceId(DeleteKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete ServiceNow Knowledge integration source
+   * 
+   * deleteKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteKnowledgeKnowledgebaseSourcesServicenowSourceId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete synchronization job
+   * 
+   * deleteKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param syncJobId Synchronization job ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteKnowledgeKnowledgebaseSynchronizeJob(String knowledgeBaseId, String syncJobId) throws IOException, ApiException {
+     deleteKnowledgeKnowledgebaseSynchronizeJob(createDeleteKnowledgeKnowledgebaseSynchronizeJobRequest(knowledgeBaseId, syncJobId));
+  }
+
+  /**
+   * Delete synchronization job
+   * 
+   * deleteKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param syncJobId Synchronization job ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteKnowledgeKnowledgebaseSynchronizeJobWithHttpInfo(String knowledgeBaseId, String syncJobId) throws IOException {
+    return deleteKnowledgeKnowledgebaseSynchronizeJob(createDeleteKnowledgeKnowledgebaseSynchronizeJobRequest(knowledgeBaseId, syncJobId).withHttpInfo());
+  }
+
+  private DeleteKnowledgeKnowledgebaseSynchronizeJobRequest createDeleteKnowledgeKnowledgebaseSynchronizeJobRequest(String knowledgeBaseId, String syncJobId) {
+    return DeleteKnowledgeKnowledgebaseSynchronizeJobRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withSyncJobId(syncJobId)
+
+            .build();
+  }
+
+  /**
+   * Delete synchronization job
+   * 
+   * deleteKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteKnowledgeKnowledgebaseSynchronizeJob(DeleteKnowledgeKnowledgebaseSynchronizeJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete synchronization job
+   * 
+   * deleteKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteKnowledgeKnowledgebaseSynchronizeJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get categories
    * 
    * @param sessionId Knowledge guest session ID. (required)
@@ -1327,6 +1602,88 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<KnowledgeGuestDocumentResponseListing> response = (ApiResponse<KnowledgeGuestDocumentResponseListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get sync options available for a knowledge-connect integration
+   * 
+   * getKnowledgeIntegrationOptions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param integrationId Integration ID (required)
+   * @return KnowledgeIntegrationOptionsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeIntegrationOptionsResponse getKnowledgeIntegrationOptions(String integrationId) throws IOException, ApiException {
+    return  getKnowledgeIntegrationOptions(createGetKnowledgeIntegrationOptionsRequest(integrationId));
+  }
+
+  /**
+   * Get sync options available for a knowledge-connect integration
+   * 
+   * getKnowledgeIntegrationOptions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param integrationId Integration ID (required)
+   * @return KnowledgeIntegrationOptionsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeIntegrationOptionsResponse> getKnowledgeIntegrationOptionsWithHttpInfo(String integrationId) throws IOException {
+    return getKnowledgeIntegrationOptions(createGetKnowledgeIntegrationOptionsRequest(integrationId).withHttpInfo());
+  }
+
+  private GetKnowledgeIntegrationOptionsRequest createGetKnowledgeIntegrationOptionsRequest(String integrationId) {
+    return GetKnowledgeIntegrationOptionsRequest.builder()
+            .withIntegrationId(integrationId)
+
+            .build();
+  }
+
+  /**
+   * Get sync options available for a knowledge-connect integration
+   * 
+   * getKnowledgeIntegrationOptions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return KnowledgeIntegrationOptionsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeIntegrationOptionsResponse getKnowledgeIntegrationOptions(GetKnowledgeIntegrationOptionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeIntegrationOptionsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeIntegrationOptionsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get sync options available for a knowledge-connect integration
+   * 
+   * getKnowledgeIntegrationOptions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeIntegrationOptionsResponse> getKnowledgeIntegrationOptions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeIntegrationOptionsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeIntegrationOptionsResponse> response = (ApiResponse<KnowledgeIntegrationOptionsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeIntegrationOptionsResponse> response = (ApiResponse<KnowledgeIntegrationOptionsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4020,6 +4377,366 @@ public class KnowledgeApi {
   }
 
   /**
+   * Get Knowledge integration sources
+   * 
+   * getKnowledgeKnowledgebaseSources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param type If specified, retrieves integration sources with specified integration type. (optional)
+   * @param expand The specified entity attributes will be filled. Comma separated values expected. (optional)
+   * @param ids If specified, retrieves integration sources with specified IDs. (optional)
+   * @return List<SourceBaseResponse>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<SourceBaseResponse> getKnowledgeKnowledgebaseSources(String knowledgeBaseId, String type, List<String> expand, List<String> ids) throws IOException, ApiException {
+    return  getKnowledgeKnowledgebaseSources(createGetKnowledgeKnowledgebaseSourcesRequest(knowledgeBaseId, type, expand, ids));
+  }
+
+  /**
+   * Get Knowledge integration sources
+   * 
+   * getKnowledgeKnowledgebaseSources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param type If specified, retrieves integration sources with specified integration type. (optional)
+   * @param expand The specified entity attributes will be filled. Comma separated values expected. (optional)
+   * @param ids If specified, retrieves integration sources with specified IDs. (optional)
+   * @return List<SourceBaseResponse>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<SourceBaseResponse>> getKnowledgeKnowledgebaseSourcesWithHttpInfo(String knowledgeBaseId, String type, List<String> expand, List<String> ids) throws IOException {
+    return getKnowledgeKnowledgebaseSources(createGetKnowledgeKnowledgebaseSourcesRequest(knowledgeBaseId, type, expand, ids).withHttpInfo());
+  }
+
+  private GetKnowledgeKnowledgebaseSourcesRequest createGetKnowledgeKnowledgebaseSourcesRequest(String knowledgeBaseId, String type, List<String> expand, List<String> ids) {
+    return GetKnowledgeKnowledgebaseSourcesRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withType(type)
+
+            .withExpand(expand)
+
+            .withIds(ids)
+
+            .build();
+  }
+
+  /**
+   * Get Knowledge integration sources
+   * 
+   * getKnowledgeKnowledgebaseSources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return List<SourceBaseResponse>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<SourceBaseResponse> getKnowledgeKnowledgebaseSources(GetKnowledgeKnowledgebaseSourcesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<SourceBaseResponse>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<SourceBaseResponse>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Knowledge integration sources
+   * 
+   * getKnowledgeKnowledgebaseSources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<SourceBaseResponse>> getKnowledgeKnowledgebaseSources(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<SourceBaseResponse>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<SourceBaseResponse>> response = (ApiResponse<List<SourceBaseResponse>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<SourceBaseResponse>> response = (ApiResponse<List<SourceBaseResponse>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get Salesforce Knowledge integration source
+   * 
+   * getKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param sourceId Source ID (required)
+   * @param expand The specified entity attributes will be filled. Comma separated values expected. (optional)
+   * @return SalesforceSourceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SalesforceSourceResponse getKnowledgeKnowledgebaseSourcesSalesforceSourceId(String knowledgeBaseId, String sourceId, List<String> expand) throws IOException, ApiException {
+    return  getKnowledgeKnowledgebaseSourcesSalesforceSourceId(createGetKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest(knowledgeBaseId, sourceId, expand));
+  }
+
+  /**
+   * Get Salesforce Knowledge integration source
+   * 
+   * getKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param sourceId Source ID (required)
+   * @param expand The specified entity attributes will be filled. Comma separated values expected. (optional)
+   * @return SalesforceSourceResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SalesforceSourceResponse> getKnowledgeKnowledgebaseSourcesSalesforceSourceIdWithHttpInfo(String knowledgeBaseId, String sourceId, List<String> expand) throws IOException {
+    return getKnowledgeKnowledgebaseSourcesSalesforceSourceId(createGetKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest(knowledgeBaseId, sourceId, expand).withHttpInfo());
+  }
+
+  private GetKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest createGetKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest(String knowledgeBaseId, String sourceId, List<String> expand) {
+    return GetKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withSourceId(sourceId)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Get Salesforce Knowledge integration source
+   * 
+   * getKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return SalesforceSourceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SalesforceSourceResponse getKnowledgeKnowledgebaseSourcesSalesforceSourceId(GetKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SalesforceSourceResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SalesforceSourceResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Salesforce Knowledge integration source
+   * 
+   * getKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SalesforceSourceResponse> getKnowledgeKnowledgebaseSourcesSalesforceSourceId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SalesforceSourceResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SalesforceSourceResponse> response = (ApiResponse<SalesforceSourceResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SalesforceSourceResponse> response = (ApiResponse<SalesforceSourceResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get ServiceNow Knowledge integration source
+   * 
+   * getKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param sourceId Source ID (required)
+   * @param expand The specified entity attributes will be filled. Comma separated values expected. (optional)
+   * @return ServiceNowSourceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ServiceNowSourceResponse getKnowledgeKnowledgebaseSourcesServicenowSourceId(String knowledgeBaseId, String sourceId, List<String> expand) throws IOException, ApiException {
+    return  getKnowledgeKnowledgebaseSourcesServicenowSourceId(createGetKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest(knowledgeBaseId, sourceId, expand));
+  }
+
+  /**
+   * Get ServiceNow Knowledge integration source
+   * 
+   * getKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param sourceId Source ID (required)
+   * @param expand The specified entity attributes will be filled. Comma separated values expected. (optional)
+   * @return ServiceNowSourceResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ServiceNowSourceResponse> getKnowledgeKnowledgebaseSourcesServicenowSourceIdWithHttpInfo(String knowledgeBaseId, String sourceId, List<String> expand) throws IOException {
+    return getKnowledgeKnowledgebaseSourcesServicenowSourceId(createGetKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest(knowledgeBaseId, sourceId, expand).withHttpInfo());
+  }
+
+  private GetKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest createGetKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest(String knowledgeBaseId, String sourceId, List<String> expand) {
+    return GetKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withSourceId(sourceId)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Get ServiceNow Knowledge integration source
+   * 
+   * getKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ServiceNowSourceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ServiceNowSourceResponse getKnowledgeKnowledgebaseSourcesServicenowSourceId(GetKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ServiceNowSourceResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ServiceNowSourceResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get ServiceNow Knowledge integration source
+   * 
+   * getKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ServiceNowSourceResponse> getKnowledgeKnowledgebaseSourcesServicenowSourceId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ServiceNowSourceResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ServiceNowSourceResponse> response = (ApiResponse<ServiceNowSourceResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ServiceNowSourceResponse> response = (ApiResponse<ServiceNowSourceResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get synchronization job report
+   * 
+   * getKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param syncJobId Synchronization job ID (required)
+   * @return KnowledgeSyncJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeSyncJobResponse getKnowledgeKnowledgebaseSynchronizeJob(String knowledgeBaseId, String syncJobId) throws IOException, ApiException {
+    return  getKnowledgeKnowledgebaseSynchronizeJob(createGetKnowledgeKnowledgebaseSynchronizeJobRequest(knowledgeBaseId, syncJobId));
+  }
+
+  /**
+   * Get synchronization job report
+   * 
+   * getKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param syncJobId Synchronization job ID (required)
+   * @return KnowledgeSyncJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeSyncJobResponse> getKnowledgeKnowledgebaseSynchronizeJobWithHttpInfo(String knowledgeBaseId, String syncJobId) throws IOException {
+    return getKnowledgeKnowledgebaseSynchronizeJob(createGetKnowledgeKnowledgebaseSynchronizeJobRequest(knowledgeBaseId, syncJobId).withHttpInfo());
+  }
+
+  private GetKnowledgeKnowledgebaseSynchronizeJobRequest createGetKnowledgeKnowledgebaseSynchronizeJobRequest(String knowledgeBaseId, String syncJobId) {
+    return GetKnowledgeKnowledgebaseSynchronizeJobRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withSyncJobId(syncJobId)
+
+            .build();
+  }
+
+  /**
+   * Get synchronization job report
+   * 
+   * getKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return KnowledgeSyncJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeSyncJobResponse getKnowledgeKnowledgebaseSynchronizeJob(GetKnowledgeKnowledgebaseSynchronizeJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeSyncJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeSyncJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get synchronization job report
+   * 
+   * getKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeSyncJobResponse> getKnowledgeKnowledgebaseSynchronizeJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeSyncJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeSyncJobResponse> response = (ApiResponse<KnowledgeSyncJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeSyncJobResponse> response = (ApiResponse<KnowledgeSyncJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get knowledge base unanswered group for a particular groupId
    * 
    * @param knowledgeBaseId Knowledge base ID (required)
@@ -5724,6 +6441,96 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update synchronization job
+   * 
+   * patchKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param syncJobId Synchronization job ID (required)
+   * @param body  (required)
+   * @return KnowledgeSyncJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeSyncJobResponse patchKnowledgeKnowledgebaseSynchronizeJob(String knowledgeBaseId, String syncJobId, SyncStatusRequest body) throws IOException, ApiException {
+    return  patchKnowledgeKnowledgebaseSynchronizeJob(createPatchKnowledgeKnowledgebaseSynchronizeJobRequest(knowledgeBaseId, syncJobId, body));
+  }
+
+  /**
+   * Update synchronization job
+   * 
+   * patchKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param syncJobId Synchronization job ID (required)
+   * @param body  (required)
+   * @return KnowledgeSyncJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeSyncJobResponse> patchKnowledgeKnowledgebaseSynchronizeJobWithHttpInfo(String knowledgeBaseId, String syncJobId, SyncStatusRequest body) throws IOException {
+    return patchKnowledgeKnowledgebaseSynchronizeJob(createPatchKnowledgeKnowledgebaseSynchronizeJobRequest(knowledgeBaseId, syncJobId, body).withHttpInfo());
+  }
+
+  private PatchKnowledgeKnowledgebaseSynchronizeJobRequest createPatchKnowledgeKnowledgebaseSynchronizeJobRequest(String knowledgeBaseId, String syncJobId, SyncStatusRequest body) {
+    return PatchKnowledgeKnowledgebaseSynchronizeJobRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withSyncJobId(syncJobId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update synchronization job
+   * 
+   * patchKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return KnowledgeSyncJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeSyncJobResponse patchKnowledgeKnowledgebaseSynchronizeJob(PatchKnowledgeKnowledgebaseSynchronizeJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeSyncJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeSyncJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update synchronization job
+   * 
+   * patchKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeSyncJobResponse> patchKnowledgeKnowledgebaseSynchronizeJob(ApiRequest<SyncStatusRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeSyncJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeSyncJobResponse> response = (ApiResponse<KnowledgeSyncJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeSyncJobResponse> response = (ApiResponse<KnowledgeSyncJobResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -8866,6 +9673,436 @@ public class KnowledgeApi {
   }
 
   /**
+   * Create Salesforce Knowledge integration source
+   * 
+   * postKnowledgeKnowledgebaseSourcesSalesforce is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param body  (required)
+   * @return KnowledgeSyncJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeSyncJobResponse postKnowledgeKnowledgebaseSourcesSalesforce(String knowledgeBaseId, SalesforceSourceRequest body) throws IOException, ApiException {
+    return  postKnowledgeKnowledgebaseSourcesSalesforce(createPostKnowledgeKnowledgebaseSourcesSalesforceRequest(knowledgeBaseId, body));
+  }
+
+  /**
+   * Create Salesforce Knowledge integration source
+   * 
+   * postKnowledgeKnowledgebaseSourcesSalesforce is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param body  (required)
+   * @return KnowledgeSyncJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeSyncJobResponse> postKnowledgeKnowledgebaseSourcesSalesforceWithHttpInfo(String knowledgeBaseId, SalesforceSourceRequest body) throws IOException {
+    return postKnowledgeKnowledgebaseSourcesSalesforce(createPostKnowledgeKnowledgebaseSourcesSalesforceRequest(knowledgeBaseId, body).withHttpInfo());
+  }
+
+  private PostKnowledgeKnowledgebaseSourcesSalesforceRequest createPostKnowledgeKnowledgebaseSourcesSalesforceRequest(String knowledgeBaseId, SalesforceSourceRequest body) {
+    return PostKnowledgeKnowledgebaseSourcesSalesforceRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create Salesforce Knowledge integration source
+   * 
+   * postKnowledgeKnowledgebaseSourcesSalesforce is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return KnowledgeSyncJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeSyncJobResponse postKnowledgeKnowledgebaseSourcesSalesforce(PostKnowledgeKnowledgebaseSourcesSalesforceRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeSyncJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeSyncJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create Salesforce Knowledge integration source
+   * 
+   * postKnowledgeKnowledgebaseSourcesSalesforce is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeSyncJobResponse> postKnowledgeKnowledgebaseSourcesSalesforce(ApiRequest<SalesforceSourceRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeSyncJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeSyncJobResponse> response = (ApiResponse<KnowledgeSyncJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeSyncJobResponse> response = (ApiResponse<KnowledgeSyncJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Start sync on Salesforce Knowledge integration source
+   * 
+   * postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param sourceId Source ID (required)
+   * @return SourceSyncResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SourceSyncResponse postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(String knowledgeBaseId, String sourceId) throws IOException, ApiException {
+    return  postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(createPostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncRequest(knowledgeBaseId, sourceId));
+  }
+
+  /**
+   * Start sync on Salesforce Knowledge integration source
+   * 
+   * postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param sourceId Source ID (required)
+   * @return SourceSyncResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SourceSyncResponse> postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncWithHttpInfo(String knowledgeBaseId, String sourceId) throws IOException {
+    return postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(createPostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncRequest(knowledgeBaseId, sourceId).withHttpInfo());
+  }
+
+  private PostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncRequest createPostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncRequest(String knowledgeBaseId, String sourceId) {
+    return PostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withSourceId(sourceId)
+
+            .build();
+  }
+
+  /**
+   * Start sync on Salesforce Knowledge integration source
+   * 
+   * postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return SourceSyncResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SourceSyncResponse postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(PostKnowledgeKnowledgebaseSourcesSalesforceSourceIdSyncRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SourceSyncResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SourceSyncResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Start sync on Salesforce Knowledge integration source
+   * 
+   * postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SourceSyncResponse> postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SourceSyncResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SourceSyncResponse> response = (ApiResponse<SourceSyncResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SourceSyncResponse> response = (ApiResponse<SourceSyncResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create ServiceNow Knowledge integration source
+   * 
+   * postKnowledgeKnowledgebaseSourcesServicenow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param body  (required)
+   * @return KnowledgeSyncJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeSyncJobResponse postKnowledgeKnowledgebaseSourcesServicenow(String knowledgeBaseId, ServiceNowSourceRequest body) throws IOException, ApiException {
+    return  postKnowledgeKnowledgebaseSourcesServicenow(createPostKnowledgeKnowledgebaseSourcesServicenowRequest(knowledgeBaseId, body));
+  }
+
+  /**
+   * Create ServiceNow Knowledge integration source
+   * 
+   * postKnowledgeKnowledgebaseSourcesServicenow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param body  (required)
+   * @return KnowledgeSyncJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeSyncJobResponse> postKnowledgeKnowledgebaseSourcesServicenowWithHttpInfo(String knowledgeBaseId, ServiceNowSourceRequest body) throws IOException {
+    return postKnowledgeKnowledgebaseSourcesServicenow(createPostKnowledgeKnowledgebaseSourcesServicenowRequest(knowledgeBaseId, body).withHttpInfo());
+  }
+
+  private PostKnowledgeKnowledgebaseSourcesServicenowRequest createPostKnowledgeKnowledgebaseSourcesServicenowRequest(String knowledgeBaseId, ServiceNowSourceRequest body) {
+    return PostKnowledgeKnowledgebaseSourcesServicenowRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create ServiceNow Knowledge integration source
+   * 
+   * postKnowledgeKnowledgebaseSourcesServicenow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return KnowledgeSyncJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeSyncJobResponse postKnowledgeKnowledgebaseSourcesServicenow(PostKnowledgeKnowledgebaseSourcesServicenowRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeSyncJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeSyncJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create ServiceNow Knowledge integration source
+   * 
+   * postKnowledgeKnowledgebaseSourcesServicenow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeSyncJobResponse> postKnowledgeKnowledgebaseSourcesServicenow(ApiRequest<ServiceNowSourceRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeSyncJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeSyncJobResponse> response = (ApiResponse<KnowledgeSyncJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeSyncJobResponse> response = (ApiResponse<KnowledgeSyncJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Start synchronization on ServiceNow Knowledge integration source
+   * 
+   * postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param sourceId Source ID (required)
+   * @return SourceSyncResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SourceSyncResponse postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(String knowledgeBaseId, String sourceId) throws IOException, ApiException {
+    return  postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(createPostKnowledgeKnowledgebaseSourcesServicenowSourceIdSyncRequest(knowledgeBaseId, sourceId));
+  }
+
+  /**
+   * Start synchronization on ServiceNow Knowledge integration source
+   * 
+   * postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param sourceId Source ID (required)
+   * @return SourceSyncResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SourceSyncResponse> postKnowledgeKnowledgebaseSourcesServicenowSourceIdSyncWithHttpInfo(String knowledgeBaseId, String sourceId) throws IOException {
+    return postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(createPostKnowledgeKnowledgebaseSourcesServicenowSourceIdSyncRequest(knowledgeBaseId, sourceId).withHttpInfo());
+  }
+
+  private PostKnowledgeKnowledgebaseSourcesServicenowSourceIdSyncRequest createPostKnowledgeKnowledgebaseSourcesServicenowSourceIdSyncRequest(String knowledgeBaseId, String sourceId) {
+    return PostKnowledgeKnowledgebaseSourcesServicenowSourceIdSyncRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withSourceId(sourceId)
+
+            .build();
+  }
+
+  /**
+   * Start synchronization on ServiceNow Knowledge integration source
+   * 
+   * postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return SourceSyncResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SourceSyncResponse postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(PostKnowledgeKnowledgebaseSourcesServicenowSourceIdSyncRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SourceSyncResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SourceSyncResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Start synchronization on ServiceNow Knowledge integration source
+   * 
+   * postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SourceSyncResponse> postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SourceSyncResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SourceSyncResponse> response = (ApiResponse<SourceSyncResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SourceSyncResponse> response = (ApiResponse<SourceSyncResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create synchronization job
+   * 
+   * postKnowledgeKnowledgebaseSynchronizeJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param body  (required)
+   * @return KnowledgeSyncJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeSyncJobResponse postKnowledgeKnowledgebaseSynchronizeJobs(String knowledgeBaseId, KnowledgeSyncJobRequest body) throws IOException, ApiException {
+    return  postKnowledgeKnowledgebaseSynchronizeJobs(createPostKnowledgeKnowledgebaseSynchronizeJobsRequest(knowledgeBaseId, body));
+  }
+
+  /**
+   * Create synchronization job
+   * 
+   * postKnowledgeKnowledgebaseSynchronizeJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param body  (required)
+   * @return KnowledgeSyncJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeSyncJobResponse> postKnowledgeKnowledgebaseSynchronizeJobsWithHttpInfo(String knowledgeBaseId, KnowledgeSyncJobRequest body) throws IOException {
+    return postKnowledgeKnowledgebaseSynchronizeJobs(createPostKnowledgeKnowledgebaseSynchronizeJobsRequest(knowledgeBaseId, body).withHttpInfo());
+  }
+
+  private PostKnowledgeKnowledgebaseSynchronizeJobsRequest createPostKnowledgeKnowledgebaseSynchronizeJobsRequest(String knowledgeBaseId, KnowledgeSyncJobRequest body) {
+    return PostKnowledgeKnowledgebaseSynchronizeJobsRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create synchronization job
+   * 
+   * postKnowledgeKnowledgebaseSynchronizeJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return KnowledgeSyncJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeSyncJobResponse postKnowledgeKnowledgebaseSynchronizeJobs(PostKnowledgeKnowledgebaseSynchronizeJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeSyncJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeSyncJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create synchronization job
+   * 
+   * postKnowledgeKnowledgebaseSynchronizeJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeSyncJobResponse> postKnowledgeKnowledgebaseSynchronizeJobs(ApiRequest<KnowledgeSyncJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeSyncJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeSyncJobResponse> response = (ApiResponse<KnowledgeSyncJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeSyncJobResponse> response = (ApiResponse<KnowledgeSyncJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create content upload from URL job
    * 
    * postKnowledgeKnowledgebaseUploadsUrlsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
@@ -9025,6 +10262,186 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<KnowledgeBase> response = (ApiResponse<KnowledgeBase>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update Salesforce Knowledge integration source
+   * 
+   * putKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param sourceId Source ID (required)
+   * @param body  (required)
+   * @return SalesforceSourceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SalesforceSourceResponse putKnowledgeKnowledgebaseSourcesSalesforceSourceId(String knowledgeBaseId, String sourceId, SalesforceSourceRequest body) throws IOException, ApiException {
+    return  putKnowledgeKnowledgebaseSourcesSalesforceSourceId(createPutKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest(knowledgeBaseId, sourceId, body));
+  }
+
+  /**
+   * Update Salesforce Knowledge integration source
+   * 
+   * putKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param sourceId Source ID (required)
+   * @param body  (required)
+   * @return SalesforceSourceResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SalesforceSourceResponse> putKnowledgeKnowledgebaseSourcesSalesforceSourceIdWithHttpInfo(String knowledgeBaseId, String sourceId, SalesforceSourceRequest body) throws IOException {
+    return putKnowledgeKnowledgebaseSourcesSalesforceSourceId(createPutKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest(knowledgeBaseId, sourceId, body).withHttpInfo());
+  }
+
+  private PutKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest createPutKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest(String knowledgeBaseId, String sourceId, SalesforceSourceRequest body) {
+    return PutKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withSourceId(sourceId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update Salesforce Knowledge integration source
+   * 
+   * putKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return SalesforceSourceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SalesforceSourceResponse putKnowledgeKnowledgebaseSourcesSalesforceSourceId(PutKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SalesforceSourceResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SalesforceSourceResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update Salesforce Knowledge integration source
+   * 
+   * putKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SalesforceSourceResponse> putKnowledgeKnowledgebaseSourcesSalesforceSourceId(ApiRequest<SalesforceSourceRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SalesforceSourceResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SalesforceSourceResponse> response = (ApiResponse<SalesforceSourceResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SalesforceSourceResponse> response = (ApiResponse<SalesforceSourceResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update ServiceNow Knowledge integration source
+   * 
+   * putKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param sourceId Source ID (required)
+   * @param body  (required)
+   * @return ServiceNowSourceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ServiceNowSourceResponse putKnowledgeKnowledgebaseSourcesServicenowSourceId(String knowledgeBaseId, String sourceId, ServiceNowSourceRequest body) throws IOException, ApiException {
+    return  putKnowledgeKnowledgebaseSourcesServicenowSourceId(createPutKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest(knowledgeBaseId, sourceId, body));
+  }
+
+  /**
+   * Update ServiceNow Knowledge integration source
+   * 
+   * putKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param sourceId Source ID (required)
+   * @param body  (required)
+   * @return ServiceNowSourceResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ServiceNowSourceResponse> putKnowledgeKnowledgebaseSourcesServicenowSourceIdWithHttpInfo(String knowledgeBaseId, String sourceId, ServiceNowSourceRequest body) throws IOException {
+    return putKnowledgeKnowledgebaseSourcesServicenowSourceId(createPutKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest(knowledgeBaseId, sourceId, body).withHttpInfo());
+  }
+
+  private PutKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest createPutKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest(String knowledgeBaseId, String sourceId, ServiceNowSourceRequest body) {
+    return PutKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+
+            .withSourceId(sourceId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update ServiceNow Knowledge integration source
+   * 
+   * putKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ServiceNowSourceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ServiceNowSourceResponse putKnowledgeKnowledgebaseSourcesServicenowSourceId(PutKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ServiceNowSourceResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ServiceNowSourceResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update ServiceNow Knowledge integration source
+   * 
+   * putKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ServiceNowSourceResponse> putKnowledgeKnowledgebaseSourcesServicenowSourceId(ApiRequest<ServiceNowSourceRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ServiceNowSourceResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ServiceNowSourceResponse> response = (ApiResponse<ServiceNowSourceResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ServiceNowSourceResponse> response = (ApiResponse<ServiceNowSourceResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

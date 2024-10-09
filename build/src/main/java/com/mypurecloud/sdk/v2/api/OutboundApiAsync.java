@@ -86,6 +86,7 @@ import com.mypurecloud.sdk.v2.model.MessagingCampaignEntityListing;
 import com.mypurecloud.sdk.v2.model.MessagingCampaignSchedule;
 import com.mypurecloud.sdk.v2.model.MessagingCampaignScheduleEntityListing;
 import com.mypurecloud.sdk.v2.model.OutboundSettings;
+import com.mypurecloud.sdk.v2.model.PagedSkillCombinationListing;
 import com.mypurecloud.sdk.v2.model.ResponseSet;
 import com.mypurecloud.sdk.v2.model.ResponseSetEntityListing;
 import com.mypurecloud.sdk.v2.model.RuleSet;
@@ -138,6 +139,7 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignDiagnosticsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignInteractionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignLinedistributionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignProgressRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignSkillcombinationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignStatsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignruleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignrulesRequest;
@@ -3415,6 +3417,81 @@ public class OutboundApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CampaignProgress> response = (ApiResponse<CampaignProgress>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the remaining and total contact count for each skill combination in a skills campaign
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<PagedSkillCombinationListing> getOutboundCampaignSkillcombinationsAsync(GetOutboundCampaignSkillcombinationsRequest request, final AsyncApiCallback<PagedSkillCombinationListing> callback) {
+    try {
+      final SettableFuture<PagedSkillCombinationListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PagedSkillCombinationListing>() {}, new AsyncApiCallback<ApiResponse<PagedSkillCombinationListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<PagedSkillCombinationListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the remaining and total contact count for each skill combination in a skills campaign
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<PagedSkillCombinationListing>> getOutboundCampaignSkillcombinationsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PagedSkillCombinationListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<PagedSkillCombinationListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PagedSkillCombinationListing>() {}, new AsyncApiCallback<ApiResponse<PagedSkillCombinationListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<PagedSkillCombinationListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PagedSkillCombinationListing> response = (ApiResponse<PagedSkillCombinationListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PagedSkillCombinationListing> response = (ApiResponse<PagedSkillCombinationListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -23,6 +23,7 @@ import java.io.Serializable;
 public class LogCaptureUserConfiguration  implements Serializable {
   
   private String id = null;
+  private Date dateStarted = null;
   private Date dateExpired = null;
   private String selfUri = null;
 
@@ -31,6 +32,13 @@ public class LogCaptureUserConfiguration  implements Serializable {
   @JsonProperty("id")
   public String getId() {
     return id;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "Indicates when log capture was enabled for the user. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateStarted")
+  public Date getDateStarted() {
+    return dateStarted;
   }
 
 
@@ -70,13 +78,14 @@ public class LogCaptureUserConfiguration  implements Serializable {
     LogCaptureUserConfiguration logCaptureUserConfiguration = (LogCaptureUserConfiguration) o;
 
     return Objects.equals(this.id, logCaptureUserConfiguration.id) &&
+            Objects.equals(this.dateStarted, logCaptureUserConfiguration.dateStarted) &&
             Objects.equals(this.dateExpired, logCaptureUserConfiguration.dateExpired) &&
             Objects.equals(this.selfUri, logCaptureUserConfiguration.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, dateExpired, selfUri);
+    return Objects.hash(id, dateStarted, dateExpired, selfUri);
   }
 
   @Override
@@ -85,6 +94,7 @@ public class LogCaptureUserConfiguration  implements Serializable {
     sb.append("class LogCaptureUserConfiguration {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    dateStarted: ").append(toIndentedString(dateStarted)).append("\n");
     sb.append("    dateExpired: ").append(toIndentedString(dateExpired)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

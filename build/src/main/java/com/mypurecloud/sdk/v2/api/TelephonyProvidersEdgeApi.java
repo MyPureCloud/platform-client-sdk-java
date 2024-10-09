@@ -10,6 +10,7 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.AlertablePresences;
 import com.mypurecloud.sdk.v2.model.CertificateAuthorityEntityListing;
 import com.mypurecloud.sdk.v2.model.DID;
 import com.mypurecloud.sdk.v2.model.DIDEntityListing;
@@ -82,6 +83,7 @@ import com.mypurecloud.sdk.v2.model.VmPairingInfo;
 import com.mypurecloud.sdk.v2.api.request.DeleteTelephonyProvidersEdgeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTelephonyProvidersEdgeLogicalinterfaceRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTelephonyProvidersEdgeSoftwareupdateRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteTelephonyProvidersEdgesAlertablepresencesRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTelephonyProvidersEdgesCertificateauthorityRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTelephonyProvidersEdgesDidpoolRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTelephonyProvidersEdgesEdgegroupRequest;
@@ -107,6 +109,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeSoftwareupdat
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeSoftwareversionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeTrunksRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesAlertablepresencesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesCertificateauthoritiesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesCertificateauthorityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesDidRequest;
@@ -187,6 +190,7 @@ import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSitesReques
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesTrunkbasesettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgeRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgeLogicalinterfaceRequest;
+import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesAlertablepresencesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesCertificateauthorityRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesDidpoolRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesEdgegroupRequest;
@@ -425,6 +429,77 @@ public class TelephonyProvidersEdgeApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteTelephonyProvidersEdgeSoftwareupdate(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Deletes alertable presences overrides.
+   * 
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteTelephonyProvidersEdgesAlertablepresences() throws IOException, ApiException {
+     deleteTelephonyProvidersEdgesAlertablepresences(createDeleteTelephonyProvidersEdgesAlertablepresencesRequest());
+  }
+
+  /**
+   * Deletes alertable presences overrides.
+   * 
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteTelephonyProvidersEdgesAlertablepresencesWithHttpInfo() throws IOException {
+    return deleteTelephonyProvidersEdgesAlertablepresences(createDeleteTelephonyProvidersEdgesAlertablepresencesRequest().withHttpInfo());
+  }
+
+  private DeleteTelephonyProvidersEdgesAlertablepresencesRequest createDeleteTelephonyProvidersEdgesAlertablepresencesRequest() {
+    return DeleteTelephonyProvidersEdgesAlertablepresencesRequest.builder()
+            .build();
+  }
+
+  /**
+   * Deletes alertable presences overrides.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteTelephonyProvidersEdgesAlertablepresences(DeleteTelephonyProvidersEdgesAlertablepresencesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Deletes alertable presences overrides.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteTelephonyProvidersEdgesAlertablepresences(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -2445,6 +2520,84 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EdgeEntityListing> response = (ApiResponse<EdgeEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the list alertable presences. The 'type' query parameter can be used to If there are any overrides, this is the list of overrides; if there are no overrides, it is the default list.
+   * 
+   * @param type  (optional)
+   * @return AlertablePresences
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlertablePresences getTelephonyProvidersEdgesAlertablepresences(String type) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgesAlertablepresences(createGetTelephonyProvidersEdgesAlertablepresencesRequest(type));
+  }
+
+  /**
+   * Get the list alertable presences. The 'type' query parameter can be used to If there are any overrides, this is the list of overrides; if there are no overrides, it is the default list.
+   * 
+   * @param type  (optional)
+   * @return AlertablePresences
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlertablePresences> getTelephonyProvidersEdgesAlertablepresencesWithHttpInfo(String type) throws IOException {
+    return getTelephonyProvidersEdgesAlertablepresences(createGetTelephonyProvidersEdgesAlertablepresencesRequest(type).withHttpInfo());
+  }
+
+  private GetTelephonyProvidersEdgesAlertablepresencesRequest createGetTelephonyProvidersEdgesAlertablepresencesRequest(String type) {
+    return GetTelephonyProvidersEdgesAlertablepresencesRequest.builder()
+            .withType(type)
+
+            .build();
+  }
+
+  /**
+   * Get the list alertable presences. The 'type' query parameter can be used to If there are any overrides, this is the list of overrides; if there are no overrides, it is the default list.
+   * 
+   * @param request The request object
+   * @return AlertablePresences
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AlertablePresences getTelephonyProvidersEdgesAlertablepresences(GetTelephonyProvidersEdgesAlertablepresencesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AlertablePresences> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AlertablePresences>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the list alertable presences. The 'type' query parameter can be used to If there are any overrides, this is the list of overrides; if there are no overrides, it is the default list.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AlertablePresences> getTelephonyProvidersEdgesAlertablepresences(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AlertablePresences>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlertablePresences> response = (ApiResponse<AlertablePresences>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AlertablePresences> response = (ApiResponse<AlertablePresences>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -9152,6 +9305,81 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DomainLogicalInterface> response = (ApiResponse<DomainLogicalInterface>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Creates or updates alertable presences overrides.
+   * 
+   * @param body Alertable Presences Overrides (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void putTelephonyProvidersEdgesAlertablepresences(AlertablePresences body) throws IOException, ApiException {
+     putTelephonyProvidersEdgesAlertablepresences(createPutTelephonyProvidersEdgesAlertablepresencesRequest(body));
+  }
+
+  /**
+   * Creates or updates alertable presences overrides.
+   * 
+   * @param body Alertable Presences Overrides (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> putTelephonyProvidersEdgesAlertablepresencesWithHttpInfo(AlertablePresences body) throws IOException {
+    return putTelephonyProvidersEdgesAlertablepresences(createPutTelephonyProvidersEdgesAlertablepresencesRequest(body).withHttpInfo());
+  }
+
+  private PutTelephonyProvidersEdgesAlertablepresencesRequest createPutTelephonyProvidersEdgesAlertablepresencesRequest(AlertablePresences body) {
+    return PutTelephonyProvidersEdgesAlertablepresencesRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Creates or updates alertable presences overrides.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void putTelephonyProvidersEdgesAlertablepresences(PutTelephonyProvidersEdgesAlertablepresencesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Creates or updates alertable presences overrides.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> putTelephonyProvidersEdgesAlertablepresences(ApiRequest<AlertablePresences> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

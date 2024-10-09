@@ -6,10 +6,12 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **entities** | [**List&lt;Workitem&gt;**](Workitem) |  |  [optional] |
-| **pageSize** | **Integer** | The total page size requested |  [optional] |
-| **pageNumber** | **Integer** | The page number requested |  [optional] |
+| **pageSize** | **Integer** |  |  [optional] |
+| **pageNumber** | **Integer** |  |  [optional] |
+| **total** | **Long** |  |  [optional] |
+| **pageCount** | **Integer** |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:209.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:210.0.0_

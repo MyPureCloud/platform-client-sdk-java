@@ -56,6 +56,7 @@
 | **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) | The session media type |  [optional] |
 | **messageType** | **String** | Message type for messaging services. E.g.: sms, facebook, twitter, line |  [optional] |
 | **originatingDirection** | [**OriginatingDirectionEnum**](#Enum--OriginatingDirectionEnum) | The original direction of the conversation |  [optional] |
+| **originatingSocialMediaPublic** | **Boolean** | Indicates that the conversation originated from a public message on social media |  [optional] |
 | **outboundCampaignId** | **String** | (Dialer) Unique identifier of the outbound campaign |  [optional] |
 | **outboundContactId** | **String** | (Dialer) Unique identifier of the contact |  [optional] |
 | **outboundContactListId** | **String** | (Dialer) Unique identifier of the contact list that this contact belongs to |  [optional] |
@@ -340,4 +341,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:209.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:210.0.0_

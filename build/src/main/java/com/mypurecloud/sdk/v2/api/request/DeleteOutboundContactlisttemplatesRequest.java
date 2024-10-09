@@ -93,6 +93,7 @@ import com.mypurecloud.sdk.v2.model.MessagingCampaignEntityListing;
 import com.mypurecloud.sdk.v2.model.MessagingCampaignSchedule;
 import com.mypurecloud.sdk.v2.model.MessagingCampaignScheduleEntityListing;
 import com.mypurecloud.sdk.v2.model.OutboundSettings;
+import com.mypurecloud.sdk.v2.model.PagedSkillCombinationListing;
 import com.mypurecloud.sdk.v2.model.ResponseSet;
 import com.mypurecloud.sdk.v2.model.ResponseSetEntityListing;
 import com.mypurecloud.sdk.v2.model.RuleSet;

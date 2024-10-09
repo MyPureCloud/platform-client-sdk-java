@@ -54,7 +54,8 @@ public class ConversationChannel  implements Serializable {
     COBROWSE("Cobrowse"),
     VIDEO("Video"),
     SCREENSHARE("Screenshare"),
-    MESSAGE("Message");
+    MESSAGE("Message"),
+    INTERNALMESSAGE("InternalMessage");
 
     private String value;
 

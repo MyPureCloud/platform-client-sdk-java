@@ -600,6 +600,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     }
   }
   private OriginatingDirectionEnum originatingDirection = null;
+  private Boolean originatingSocialMediaPublic = null;
   private String outboundCampaignId = null;
   private String outboundContactId = null;
   private String outboundContactListId = null;
@@ -1773,6 +1774,24 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
 
 
   /**
+   * Indicates that the conversation originated from a public message on social media
+   **/
+  public ConversationMetricsTopicConversationMetricRecord originatingSocialMediaPublic(Boolean originatingSocialMediaPublic) {
+    this.originatingSocialMediaPublic = originatingSocialMediaPublic;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates that the conversation originated from a public message on social media")
+  @JsonProperty("originatingSocialMediaPublic")
+  public Boolean getOriginatingSocialMediaPublic() {
+    return originatingSocialMediaPublic;
+  }
+  public void setOriginatingSocialMediaPublic(Boolean originatingSocialMediaPublic) {
+    this.originatingSocialMediaPublic = originatingSocialMediaPublic;
+  }
+
+
+  /**
    * (Dialer) Unique identifier of the outbound campaign
    **/
   public ConversationMetricsTopicConversationMetricRecord outboundCampaignId(String outboundCampaignId) {
@@ -2409,6 +2428,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
             Objects.equals(this.mediaType, conversationMetricsTopicConversationMetricRecord.mediaType) &&
             Objects.equals(this.messageType, conversationMetricsTopicConversationMetricRecord.messageType) &&
             Objects.equals(this.originatingDirection, conversationMetricsTopicConversationMetricRecord.originatingDirection) &&
+            Objects.equals(this.originatingSocialMediaPublic, conversationMetricsTopicConversationMetricRecord.originatingSocialMediaPublic) &&
             Objects.equals(this.outboundCampaignId, conversationMetricsTopicConversationMetricRecord.outboundCampaignId) &&
             Objects.equals(this.outboundContactId, conversationMetricsTopicConversationMetricRecord.outboundContactId) &&
             Objects.equals(this.outboundContactListId, conversationMetricsTopicConversationMetricRecord.outboundContactListId) &&
@@ -2445,7 +2465,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
 
   @Override
   public int hashCode() {
-    return Objects.hash(metric, metricDate, value, recordId, activeRouting, activeSkillIds, addressFrom, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, conversationId, conversationInitiator, convertedFrom, convertedTo, customerParticipation, deliveryStatus, destinationAddresses, direction, disconnectType, divisionIds, dnis, edgeId, eligibleAgentCounts, errorCode, extendedDeliveryStatus, externalContactId, externalMediaCount, externalOrganizationId, externalTag, firstQueue, flaggedReason, flowInType, flowOutType, groupId, interactionType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, knowledgeBaseIds, mediaCount, mediaType, messageType, originatingDirection, outboundCampaignId, outboundContactId, outboundContactListId, participantName, peerId, provider, purpose, queueId, remote, removedSkillIds, requestedLanguageId, requestedRoutingSkillIds, requestedRoutings, roomId, routingPriority, routingRing, routingRule, routingRuleType, selectedAgentId, selectedAgentRank, selfServed, sessionDnis, sessionId, stationId, teamId, usedRouting, userId, videoPresent, waitingInteractionCounts, wrapUpCode, proposedAgents, scoredAgents);
+    return Objects.hash(metric, metricDate, value, recordId, activeRouting, activeSkillIds, addressFrom, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, conversationId, conversationInitiator, convertedFrom, convertedTo, customerParticipation, deliveryStatus, destinationAddresses, direction, disconnectType, divisionIds, dnis, edgeId, eligibleAgentCounts, errorCode, extendedDeliveryStatus, externalContactId, externalMediaCount, externalOrganizationId, externalTag, firstQueue, flaggedReason, flowInType, flowOutType, groupId, interactionType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, knowledgeBaseIds, mediaCount, mediaType, messageType, originatingDirection, originatingSocialMediaPublic, outboundCampaignId, outboundContactId, outboundContactListId, participantName, peerId, provider, purpose, queueId, remote, removedSkillIds, requestedLanguageId, requestedRoutingSkillIds, requestedRoutings, roomId, routingPriority, routingRing, routingRule, routingRuleType, selectedAgentId, selectedAgentRank, selfServed, sessionDnis, sessionId, stationId, teamId, usedRouting, userId, videoPresent, waitingInteractionCounts, wrapUpCode, proposedAgents, scoredAgents);
   }
 
   @Override
@@ -2504,6 +2524,7 @@ public class ConversationMetricsTopicConversationMetricRecord  implements Serial
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
     sb.append("    messageType: ").append(toIndentedString(messageType)).append("\n");
     sb.append("    originatingDirection: ").append(toIndentedString(originatingDirection)).append("\n");
+    sb.append("    originatingSocialMediaPublic: ").append(toIndentedString(originatingSocialMediaPublic)).append("\n");
     sb.append("    outboundCampaignId: ").append(toIndentedString(outboundCampaignId)).append("\n");
     sb.append("    outboundContactId: ").append(toIndentedString(outboundContactId)).append("\n");
     sb.append("    outboundContactListId: ").append(toIndentedString(outboundContactListId)).append("\n");

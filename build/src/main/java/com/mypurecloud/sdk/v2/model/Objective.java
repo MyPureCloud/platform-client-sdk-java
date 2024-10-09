@@ -54,6 +54,7 @@ public class Objective  implements Serializable {
     COBROWSE("cobrowse"),
     EMAIL("email"),
     MESSAGE("message"),
+    INTERNALMESSAGE("internalmessage"),
     SCREENSHARE("screenshare"),
     UNKNOWN("unknown"),
     VIDEO("video"),

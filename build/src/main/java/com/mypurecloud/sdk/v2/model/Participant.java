@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.ConversationChat;
 import com.mypurecloud.sdk.v2.model.ConversationRoutingData;
 import com.mypurecloud.sdk.v2.model.Email;
 import com.mypurecloud.sdk.v2.model.Evaluation;
+import com.mypurecloud.sdk.v2.model.InternalMessage;
 import com.mypurecloud.sdk.v2.model.Message;
 import com.mypurecloud.sdk.v2.model.Screenshare;
 import com.mypurecloud.sdk.v2.model.SocialExpression;
@@ -232,6 +233,7 @@ public class Participant  implements Serializable {
   private FlaggedReasonEnum flaggedReason = null;
   private Date startAcwTime = null;
   private Date endAcwTime = null;
+  private List<InternalMessage> internalMessages = new ArrayList<InternalMessage>();
   private String bargedParticipantId = null;
 
   
@@ -1054,6 +1056,23 @@ public class Participant  implements Serializable {
 
 
   /**
+   **/
+  public Participant internalMessages(List<InternalMessage> internalMessages) {
+    this.internalMessages = internalMessages;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("internalMessages")
+  public List<InternalMessage> getInternalMessages() {
+    return internalMessages;
+  }
+  public void setInternalMessages(List<InternalMessage> internalMessages) {
+    this.internalMessages = internalMessages;
+  }
+
+
+  /**
    * If this participant barged in a participant's call, then this will be the id of the targeted participant.
    **/
   public Participant bargedParticipantId(String bargedParticipantId) {
@@ -1127,12 +1146,13 @@ public class Participant  implements Serializable {
             Objects.equals(this.flaggedReason, participant.flaggedReason) &&
             Objects.equals(this.startAcwTime, participant.startAcwTime) &&
             Objects.equals(this.endAcwTime, participant.endAcwTime) &&
+            Objects.equals(this.internalMessages, participant.internalMessages) &&
             Objects.equals(this.bargedParticipantId, participant.bargedParticipantId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, startTime, endTime, connectedTime, name, userUri, userId, externalContactId, externalOrganizationId, queueId, groupId, teamId, queueName, purpose, participantType, consultParticipantId, address, ani, aniName, dnis, locale, wrapupRequired, wrapupPrompt, wrapupTimeoutMs, wrapupSkipped, wrapup, mediaRoles, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, evaluations, screenRecordingState, flaggedReason, startAcwTime, endAcwTime, bargedParticipantId);
+    return Objects.hash(id, startTime, endTime, connectedTime, name, userUri, userId, externalContactId, externalOrganizationId, queueId, groupId, teamId, queueName, purpose, participantType, consultParticipantId, address, ani, aniName, dnis, locale, wrapupRequired, wrapupPrompt, wrapupTimeoutMs, wrapupSkipped, wrapup, mediaRoles, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, evaluations, screenRecordingState, flaggedReason, startAcwTime, endAcwTime, internalMessages, bargedParticipantId);
   }
 
   @Override
@@ -1186,6 +1206,7 @@ public class Participant  implements Serializable {
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
     sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
+    sb.append("    internalMessages: ").append(toIndentedString(internalMessages)).append("\n");
     sb.append("    bargedParticipantId: ").append(toIndentedString(bargedParticipantId)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -132,6 +132,8 @@ public class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadReques
     }
   }
   private TypeEnum type = null;
+  private String fileName = null;
+  private Integer fileSize = null;
 
   
   /**
@@ -287,6 +289,40 @@ public class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadReques
   }
 
 
+  /**
+   **/
+  public WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate fileName(String fileName) {
+    this.fileName = fileName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("fileName")
+  public String getFileName() {
+    return fileName;
+  }
+  public void setFileName(String fileName) {
+    this.fileName = fileName;
+  }
+
+
+  /**
+   **/
+  public WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate fileSize(Integer fileSize) {
+    this.fileSize = fileSize;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("fileSize")
+  public Integer getFileSize() {
+    return fileSize;
+  }
+  public void setFileSize(Integer fileSize) {
+    this.fileSize = fileSize;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -305,12 +341,14 @@ public class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadReques
             Objects.equals(this.status, wfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.status) &&
             Objects.equals(this.error, wfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.error) &&
             Objects.equals(this.active, wfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.active) &&
-            Objects.equals(this.type, wfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.type);
+            Objects.equals(this.type, wfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.type) &&
+            Objects.equals(this.fileName, wfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.fileName) &&
+            Objects.equals(this.fileSize, wfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.fileSize);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(requestId, dateImportStarted, dateImportEnded, dateCreated, dateModified, status, error, active, type);
+    return Objects.hash(requestId, dateImportStarted, dateImportEnded, dateCreated, dateModified, status, error, active, type, fileName, fileSize);
   }
 
   @Override
@@ -327,6 +365,8 @@ public class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadReques
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
+    sb.append("    fileSize: ").append(toIndentedString(fileSize)).append("\n");
     sb.append("}");
     return sb.toString();
   }

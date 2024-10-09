@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicC
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicCobrowse;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicConversationRoutingData;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicEmail;
+import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicInternalMessage;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicMessage;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicScreenshare;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicSocialExpression;
@@ -125,6 +126,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
   private List<QueueConversationSocialExpressionEventTopicCobrowse> cobrowsesessions = new ArrayList<QueueConversationSocialExpressionEventTopicCobrowse>();
   private List<QueueConversationSocialExpressionEventTopicEmail> emails = new ArrayList<QueueConversationSocialExpressionEventTopicEmail>();
   private List<QueueConversationSocialExpressionEventTopicMessage> messages = new ArrayList<QueueConversationSocialExpressionEventTopicMessage>();
+  private List<QueueConversationSocialExpressionEventTopicInternalMessage> internalMessages = new ArrayList<QueueConversationSocialExpressionEventTopicInternalMessage>();
   private List<QueueConversationSocialExpressionEventTopicScreenshare> screenshares = new ArrayList<QueueConversationSocialExpressionEventTopicScreenshare>();
   private List<QueueConversationSocialExpressionEventTopicSocialExpression> socialExpressions = new ArrayList<QueueConversationSocialExpressionEventTopicSocialExpression>();
   private List<QueueConversationSocialExpressionEventTopicVideo> videos = new ArrayList<QueueConversationSocialExpressionEventTopicVideo>();
@@ -755,6 +757,23 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
 
   /**
    **/
+  public QueueConversationSocialExpressionEventTopicParticipant internalMessages(List<QueueConversationSocialExpressionEventTopicInternalMessage> internalMessages) {
+    this.internalMessages = internalMessages;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("internalMessages")
+  public List<QueueConversationSocialExpressionEventTopicInternalMessage> getInternalMessages() {
+    return internalMessages;
+  }
+  public void setInternalMessages(List<QueueConversationSocialExpressionEventTopicInternalMessage> internalMessages) {
+    this.internalMessages = internalMessages;
+  }
+
+
+  /**
+   **/
   public QueueConversationSocialExpressionEventTopicParticipant screenshares(List<QueueConversationSocialExpressionEventTopicScreenshare> screenshares) {
     this.screenshares = screenshares;
     return this;
@@ -866,6 +885,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
             Objects.equals(this.cobrowsesessions, queueConversationSocialExpressionEventTopicParticipant.cobrowsesessions) &&
             Objects.equals(this.emails, queueConversationSocialExpressionEventTopicParticipant.emails) &&
             Objects.equals(this.messages, queueConversationSocialExpressionEventTopicParticipant.messages) &&
+            Objects.equals(this.internalMessages, queueConversationSocialExpressionEventTopicParticipant.internalMessages) &&
             Objects.equals(this.screenshares, queueConversationSocialExpressionEventTopicParticipant.screenshares) &&
             Objects.equals(this.socialExpressions, queueConversationSocialExpressionEventTopicParticipant.socialExpressions) &&
             Objects.equals(this.videos, queueConversationSocialExpressionEventTopicParticipant.videos) &&
@@ -874,7 +894,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, bargedParticipantId, mediaRoles, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, workflow);
+    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, bargedParticipantId, mediaRoles, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, internalMessages, screenshares, socialExpressions, videos, workflow);
   }
 
   @Override
@@ -917,6 +937,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     sb.append("    cobrowsesessions: ").append(toIndentedString(cobrowsesessions)).append("\n");
     sb.append("    emails: ").append(toIndentedString(emails)).append("\n");
     sb.append("    messages: ").append(toIndentedString(messages)).append("\n");
+    sb.append("    internalMessages: ").append(toIndentedString(internalMessages)).append("\n");
     sb.append("    screenshares: ").append(toIndentedString(screenshares)).append("\n");
     sb.append("    socialExpressions: ").append(toIndentedString(socialExpressions)).append("\n");
     sb.append("    videos: ").append(toIndentedString(videos)).append("\n");

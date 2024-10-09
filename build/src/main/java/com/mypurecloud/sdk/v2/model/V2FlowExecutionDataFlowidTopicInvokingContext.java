@@ -15,6 +15,7 @@ import com.mypurecloud.sdk.v2.model.V2FlowExecutionDataFlowidTopicFlow;
 import com.mypurecloud.sdk.v2.model.V2FlowExecutionDataFlowidTopicJourneyActionMap;
 import com.mypurecloud.sdk.v2.model.V2FlowExecutionDataFlowidTopicProcessAutomation;
 import com.mypurecloud.sdk.v2.model.V2FlowExecutionDataFlowidTopicQuality;
+import com.mypurecloud.sdk.v2.model.V2FlowExecutionDataFlowidTopicWorkitem;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -30,6 +31,7 @@ public class V2FlowExecutionDataFlowidTopicInvokingContext  implements Serializa
   private V2FlowExecutionDataFlowidTopicJourneyActionMap journeyActionMap = null;
   private V2FlowExecutionDataFlowidTopicProcessAutomation processAutomation = null;
   private V2FlowExecutionDataFlowidTopicQuality quality = null;
+  private V2FlowExecutionDataFlowidTopicWorkitem workitem = null;
 
   
   /**
@@ -100,6 +102,23 @@ public class V2FlowExecutionDataFlowidTopicInvokingContext  implements Serializa
   }
 
 
+  /**
+   **/
+  public V2FlowExecutionDataFlowidTopicInvokingContext workitem(V2FlowExecutionDataFlowidTopicWorkitem workitem) {
+    this.workitem = workitem;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("workitem")
+  public V2FlowExecutionDataFlowidTopicWorkitem getWorkitem() {
+    return workitem;
+  }
+  public void setWorkitem(V2FlowExecutionDataFlowidTopicWorkitem workitem) {
+    this.workitem = workitem;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -113,12 +132,13 @@ public class V2FlowExecutionDataFlowidTopicInvokingContext  implements Serializa
     return Objects.equals(this.flow, v2FlowExecutionDataFlowidTopicInvokingContext.flow) &&
             Objects.equals(this.journeyActionMap, v2FlowExecutionDataFlowidTopicInvokingContext.journeyActionMap) &&
             Objects.equals(this.processAutomation, v2FlowExecutionDataFlowidTopicInvokingContext.processAutomation) &&
-            Objects.equals(this.quality, v2FlowExecutionDataFlowidTopicInvokingContext.quality);
+            Objects.equals(this.quality, v2FlowExecutionDataFlowidTopicInvokingContext.quality) &&
+            Objects.equals(this.workitem, v2FlowExecutionDataFlowidTopicInvokingContext.workitem);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(flow, journeyActionMap, processAutomation, quality);
+    return Objects.hash(flow, journeyActionMap, processAutomation, quality, workitem);
   }
 
   @Override
@@ -130,6 +150,7 @@ public class V2FlowExecutionDataFlowidTopicInvokingContext  implements Serializa
     sb.append("    journeyActionMap: ").append(toIndentedString(journeyActionMap)).append("\n");
     sb.append("    processAutomation: ").append(toIndentedString(processAutomation)).append("\n");
     sb.append("    quality: ").append(toIndentedString(quality)).append("\n");
+    sb.append("    workitem: ").append(toIndentedString(workitem)).append("\n");
     sb.append("}");
     return sb.toString();
   }

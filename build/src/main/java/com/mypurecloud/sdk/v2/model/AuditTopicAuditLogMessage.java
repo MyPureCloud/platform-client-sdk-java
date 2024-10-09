@@ -268,7 +268,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     DOWNLOADCAPTURE("DownloadCapture"),
     INITIATE("Initiate"),
     REVERSEMANUALLY("ReverseManually"),
-    PROVISIONED("Provisioned");
+    PROVISIONED("Provisioned"),
+    UPDATEABORTED("UpdateAborted");
 
     private String value;
 

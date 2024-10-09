@@ -45,6 +45,7 @@ public class CriteriaItem  implements Serializable {
     FLOWSTARTDATETIME("FlowStartDateTime"),
     FLOWENDDATETIME("FlowEndDateTime"),
     CONVERSATIONID("ConversationId"),
+    WORKITEMID("WorkitemId"),
     FLOWTYPE("FlowType"),
     FLOWID("FlowId"),
     FLOWERRORREASON("FlowErrorReason"),

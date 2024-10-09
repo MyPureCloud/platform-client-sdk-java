@@ -22,6 +22,7 @@ import java.io.Serializable;
 public class Intent  implements Serializable {
   
   private String name = null;
+  private String description = null;
 
   
   /**
@@ -41,6 +42,23 @@ public class Intent  implements Serializable {
   }
 
 
+  /**
+   **/
+  public Intent description(String description) {
+    this.description = description;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("description")
+  public String getDescription() {
+    return description;
+  }
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -51,12 +69,13 @@ public class Intent  implements Serializable {
     }
     Intent intent = (Intent) o;
 
-    return Objects.equals(this.name, intent.name);
+    return Objects.equals(this.name, intent.name) &&
+            Objects.equals(this.description, intent.description);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name);
+    return Objects.hash(name, description);
   }
 
   @Override
@@ -65,6 +84,7 @@ public class Intent  implements Serializable {
     sb.append("class Intent {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("}");
     return sb.toString();
   }

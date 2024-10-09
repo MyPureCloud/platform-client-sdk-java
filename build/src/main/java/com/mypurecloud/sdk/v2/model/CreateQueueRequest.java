@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AcwSettings;
 import com.mypurecloud.sdk.v2.model.AgentOwnedRouting;
 import com.mypurecloud.sdk.v2.model.Bullseye;
+import com.mypurecloud.sdk.v2.model.CannedResponseLibraries;
 import com.mypurecloud.sdk.v2.model.ConditionalGroupRouting;
 import com.mypurecloud.sdk.v2.model.DirectRouting;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -160,6 +161,7 @@ public class CreateQueueRequest  implements Serializable {
   private DomainEntityRef whisperPrompt = null;
   private DomainEntityRef onHoldPrompt = null;
   private Boolean autoAnswerOnly = null;
+  private CannedResponseLibraries cannedResponseLibraries = null;
   private Boolean enableTranscription = null;
   private Boolean enableAudioMonitoring = null;
   private Boolean enableManualAssignment = null;
@@ -583,6 +585,24 @@ public class CreateQueueRequest  implements Serializable {
 
 
   /**
+   * Canned response library IDs and mode with which they are associated with the queue
+   **/
+  public CreateQueueRequest cannedResponseLibraries(CannedResponseLibraries cannedResponseLibraries) {
+    this.cannedResponseLibraries = cannedResponseLibraries;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Canned response library IDs and mode with which they are associated with the queue")
+  @JsonProperty("cannedResponseLibraries")
+  public CannedResponseLibraries getCannedResponseLibraries() {
+    return cannedResponseLibraries;
+  }
+  public void setCannedResponseLibraries(CannedResponseLibraries cannedResponseLibraries) {
+    this.cannedResponseLibraries = cannedResponseLibraries;
+  }
+
+
+  /**
    * Indicates whether voice transcription is enabled for this queue.
    **/
   public CreateQueueRequest enableTranscription(Boolean enableTranscription) {
@@ -857,6 +877,7 @@ public class CreateQueueRequest  implements Serializable {
             Objects.equals(this.whisperPrompt, createQueueRequest.whisperPrompt) &&
             Objects.equals(this.onHoldPrompt, createQueueRequest.onHoldPrompt) &&
             Objects.equals(this.autoAnswerOnly, createQueueRequest.autoAnswerOnly) &&
+            Objects.equals(this.cannedResponseLibraries, createQueueRequest.cannedResponseLibraries) &&
             Objects.equals(this.enableTranscription, createQueueRequest.enableTranscription) &&
             Objects.equals(this.enableAudioMonitoring, createQueueRequest.enableAudioMonitoring) &&
             Objects.equals(this.enableManualAssignment, createQueueRequest.enableManualAssignment) &&
@@ -875,7 +896,7 @@ public class CreateQueueRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, conditionalGroupRouting, bullseye, scoringMethod, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, autoAnswerOnly, enableTranscription, enableAudioMonitoring, enableManualAssignment, agentOwnedRouting, directRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, suppressInQueueCallRecording, sourceQueueId, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, conditionalGroupRouting, bullseye, scoringMethod, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, autoAnswerOnly, cannedResponseLibraries, enableTranscription, enableAudioMonitoring, enableManualAssignment, agentOwnedRouting, directRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, suppressInQueueCallRecording, sourceQueueId, selfUri);
   }
 
   @Override
@@ -908,6 +929,7 @@ public class CreateQueueRequest  implements Serializable {
     sb.append("    whisperPrompt: ").append(toIndentedString(whisperPrompt)).append("\n");
     sb.append("    onHoldPrompt: ").append(toIndentedString(onHoldPrompt)).append("\n");
     sb.append("    autoAnswerOnly: ").append(toIndentedString(autoAnswerOnly)).append("\n");
+    sb.append("    cannedResponseLibraries: ").append(toIndentedString(cannedResponseLibraries)).append("\n");
     sb.append("    enableTranscription: ").append(toIndentedString(enableTranscription)).append("\n");
     sb.append("    enableAudioMonitoring: ").append(toIndentedString(enableAudioMonitoring)).append("\n");
     sb.append("    enableManualAssignment: ").append(toIndentedString(enableManualAssignment)).append("\n");

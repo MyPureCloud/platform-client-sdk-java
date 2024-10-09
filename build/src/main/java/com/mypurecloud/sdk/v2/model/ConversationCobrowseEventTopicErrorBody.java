@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationCobrowseEventTopicDetail;
+import com.mypurecloud.sdk.v2.model.ConversationCobrowseEventTopicLimit;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -36,6 +37,7 @@ public class ConversationCobrowseEventTopicErrorBody  implements Serializable {
   private String contextId = null;
   private List<ConversationCobrowseEventTopicDetail> details = new ArrayList<ConversationCobrowseEventTopicDetail>();
   private List<ConversationCobrowseEventTopicErrorBody> errors = new ArrayList<ConversationCobrowseEventTopicErrorBody>();
+  private ConversationCobrowseEventTopicLimit limit = null;
 
   
   /**
@@ -208,6 +210,23 @@ public class ConversationCobrowseEventTopicErrorBody  implements Serializable {
   }
 
 
+  /**
+   **/
+  public ConversationCobrowseEventTopicErrorBody limit(ConversationCobrowseEventTopicLimit limit) {
+    this.limit = limit;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("limit")
+  public ConversationCobrowseEventTopicLimit getLimit() {
+    return limit;
+  }
+  public void setLimit(ConversationCobrowseEventTopicLimit limit) {
+    this.limit = limit;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -227,12 +246,13 @@ public class ConversationCobrowseEventTopicErrorBody  implements Serializable {
             Objects.equals(this.messageParams, conversationCobrowseEventTopicErrorBody.messageParams) &&
             Objects.equals(this.contextId, conversationCobrowseEventTopicErrorBody.contextId) &&
             Objects.equals(this.details, conversationCobrowseEventTopicErrorBody.details) &&
-            Objects.equals(this.errors, conversationCobrowseEventTopicErrorBody.errors);
+            Objects.equals(this.errors, conversationCobrowseEventTopicErrorBody.errors) &&
+            Objects.equals(this.limit, conversationCobrowseEventTopicErrorBody.limit);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(message, code, status, entityId, entityName, messageWithParams, messageParams, contextId, details, errors);
+    return Objects.hash(message, code, status, entityId, entityName, messageWithParams, messageParams, contextId, details, errors, limit);
   }
 
   @Override
@@ -250,6 +270,7 @@ public class ConversationCobrowseEventTopicErrorBody  implements Serializable {
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
     sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
     sb.append("}");
     return sb.toString();
   }

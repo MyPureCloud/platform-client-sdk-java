@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallbackEventTopicDetail;
+import com.mypurecloud.sdk.v2.model.QueueConversationCallbackEventTopicLimit;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -36,6 +37,7 @@ public class QueueConversationCallbackEventTopicErrorBody  implements Serializab
   private String contextId = null;
   private List<QueueConversationCallbackEventTopicDetail> details = new ArrayList<QueueConversationCallbackEventTopicDetail>();
   private List<QueueConversationCallbackEventTopicErrorBody> errors = new ArrayList<QueueConversationCallbackEventTopicErrorBody>();
+  private QueueConversationCallbackEventTopicLimit limit = null;
 
   
   /**
@@ -208,6 +210,23 @@ public class QueueConversationCallbackEventTopicErrorBody  implements Serializab
   }
 
 
+  /**
+   **/
+  public QueueConversationCallbackEventTopicErrorBody limit(QueueConversationCallbackEventTopicLimit limit) {
+    this.limit = limit;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("limit")
+  public QueueConversationCallbackEventTopicLimit getLimit() {
+    return limit;
+  }
+  public void setLimit(QueueConversationCallbackEventTopicLimit limit) {
+    this.limit = limit;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -227,12 +246,13 @@ public class QueueConversationCallbackEventTopicErrorBody  implements Serializab
             Objects.equals(this.messageParams, queueConversationCallbackEventTopicErrorBody.messageParams) &&
             Objects.equals(this.contextId, queueConversationCallbackEventTopicErrorBody.contextId) &&
             Objects.equals(this.details, queueConversationCallbackEventTopicErrorBody.details) &&
-            Objects.equals(this.errors, queueConversationCallbackEventTopicErrorBody.errors);
+            Objects.equals(this.errors, queueConversationCallbackEventTopicErrorBody.errors) &&
+            Objects.equals(this.limit, queueConversationCallbackEventTopicErrorBody.limit);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(message, code, status, entityId, entityName, messageWithParams, messageParams, contextId, details, errors);
+    return Objects.hash(message, code, status, entityId, entityName, messageWithParams, messageParams, contextId, details, errors, limit);
   }
 
   @Override
@@ -250,6 +270,7 @@ public class QueueConversationCallbackEventTopicErrorBody  implements Serializab
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
     sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
     sb.append("}");
     return sb.toString();
   }

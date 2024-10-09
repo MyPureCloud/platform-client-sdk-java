@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicDetail;
+import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicLimit;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -36,6 +37,7 @@ public class ConversationSocialExpressionEventTopicErrorBody  implements Seriali
   private String contextId = null;
   private List<ConversationSocialExpressionEventTopicDetail> details = new ArrayList<ConversationSocialExpressionEventTopicDetail>();
   private List<ConversationSocialExpressionEventTopicErrorBody> errors = new ArrayList<ConversationSocialExpressionEventTopicErrorBody>();
+  private ConversationSocialExpressionEventTopicLimit limit = null;
 
   
   /**
@@ -208,6 +210,23 @@ public class ConversationSocialExpressionEventTopicErrorBody  implements Seriali
   }
 
 
+  /**
+   **/
+  public ConversationSocialExpressionEventTopicErrorBody limit(ConversationSocialExpressionEventTopicLimit limit) {
+    this.limit = limit;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("limit")
+  public ConversationSocialExpressionEventTopicLimit getLimit() {
+    return limit;
+  }
+  public void setLimit(ConversationSocialExpressionEventTopicLimit limit) {
+    this.limit = limit;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -227,12 +246,13 @@ public class ConversationSocialExpressionEventTopicErrorBody  implements Seriali
             Objects.equals(this.messageParams, conversationSocialExpressionEventTopicErrorBody.messageParams) &&
             Objects.equals(this.contextId, conversationSocialExpressionEventTopicErrorBody.contextId) &&
             Objects.equals(this.details, conversationSocialExpressionEventTopicErrorBody.details) &&
-            Objects.equals(this.errors, conversationSocialExpressionEventTopicErrorBody.errors);
+            Objects.equals(this.errors, conversationSocialExpressionEventTopicErrorBody.errors) &&
+            Objects.equals(this.limit, conversationSocialExpressionEventTopicErrorBody.limit);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(message, code, status, entityId, entityName, messageWithParams, messageParams, contextId, details, errors);
+    return Objects.hash(message, code, status, entityId, entityName, messageWithParams, messageParams, contextId, details, errors, limit);
   }
 
   @Override
@@ -250,6 +270,7 @@ public class ConversationSocialExpressionEventTopicErrorBody  implements Seriali
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
     sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
     sb.append("}");
     return sb.toString();
   }

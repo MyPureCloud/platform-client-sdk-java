@@ -93,6 +93,54 @@ public class ConversationMessageEventTopicMessageDetails  implements Serializabl
   private ConversationMessageEventTopicErrorDetails errorInfo = null;
   private ConversationMessageEventTopicMessageMetadata messageMetadata = null;
 
+  private static class SocialVisibilityEnumDeserializer extends StdDeserializer<SocialVisibilityEnum> {
+    public SocialVisibilityEnumDeserializer() {
+      super(SocialVisibilityEnumDeserializer.class);
+    }
+
+    @Override
+    public SocialVisibilityEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SocialVisibilityEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets socialVisibility
+   */
+ @JsonDeserialize(using = SocialVisibilityEnumDeserializer.class)
+  public enum SocialVisibilityEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    PRIVATE("private"),
+    PUBLIC("public");
+
+    private String value;
+
+    SocialVisibilityEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SocialVisibilityEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SocialVisibilityEnum value : SocialVisibilityEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SocialVisibilityEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private SocialVisibilityEnum socialVisibility = null;
+
   
   /**
    **/
@@ -230,6 +278,23 @@ public class ConversationMessageEventTopicMessageDetails  implements Serializabl
   }
 
 
+  /**
+   **/
+  public ConversationMessageEventTopicMessageDetails socialVisibility(SocialVisibilityEnum socialVisibility) {
+    this.socialVisibility = socialVisibility;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("socialVisibility")
+  public SocialVisibilityEnum getSocialVisibility() {
+    return socialVisibility;
+  }
+  public void setSocialVisibility(SocialVisibilityEnum socialVisibility) {
+    this.socialVisibility = socialVisibility;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -247,12 +312,13 @@ public class ConversationMessageEventTopicMessageDetails  implements Serializabl
             Objects.equals(this.media, conversationMessageEventTopicMessageDetails.media) &&
             Objects.equals(this.stickers, conversationMessageEventTopicMessageDetails.stickers) &&
             Objects.equals(this.errorInfo, conversationMessageEventTopicMessageDetails.errorInfo) &&
-            Objects.equals(this.messageMetadata, conversationMessageEventTopicMessageDetails.messageMetadata);
+            Objects.equals(this.messageMetadata, conversationMessageEventTopicMessageDetails.messageMetadata) &&
+            Objects.equals(this.socialVisibility, conversationMessageEventTopicMessageDetails.socialVisibility);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(message, messageTime, messageSegmentCount, messageStatus, media, stickers, errorInfo, messageMetadata);
+    return Objects.hash(message, messageTime, messageSegmentCount, messageStatus, media, stickers, errorInfo, messageMetadata, socialVisibility);
   }
 
   @Override
@@ -268,6 +334,7 @@ public class ConversationMessageEventTopicMessageDetails  implements Serializabl
     sb.append("    stickers: ").append(toIndentedString(stickers)).append("\n");
     sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("    messageMetadata: ").append(toIndentedString(messageMetadata)).append("\n");
+    sb.append("    socialVisibility: ").append(toIndentedString(socialVisibility)).append("\n");
     sb.append("}");
     return sb.toString();
   }

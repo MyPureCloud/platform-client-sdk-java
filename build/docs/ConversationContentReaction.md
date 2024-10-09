@@ -24,8 +24,11 @@
 | THANKFUL | &quot;Thankful&quot; | 
 | PRIDE | &quot;Pride&quot; | 
 | CARE | &quot;Care&quot; | 
+| SHARE | &quot;Share&quot; | 
+| COMMENT | &quot;Comment&quot; | 
+| VIEW | &quot;View&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:209.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:210.0.0_

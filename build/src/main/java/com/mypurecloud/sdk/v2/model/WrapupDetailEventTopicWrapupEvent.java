@@ -55,7 +55,8 @@ public class WrapupDetailEventTopicWrapupEvent  implements Serializable {
     COBROWSE("COBROWSE"),
     VIDEO("VIDEO"),
     SCREENSHARE("SCREENSHARE"),
-    MESSAGE("MESSAGE");
+    MESSAGE("MESSAGE"),
+    INTERNALMESSAGE("INTERNALMESSAGE");
 
     private String value;
 
