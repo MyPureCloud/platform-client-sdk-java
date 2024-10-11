@@ -39,6 +39,8 @@ import com.mypurecloud.sdk.v2.model.JourneyEventDefinitionListing;
 import com.mypurecloud.sdk.v2.model.JourneySegment;
 import com.mypurecloud.sdk.v2.model.JourneySegmentRequest;
 import com.mypurecloud.sdk.v2.model.JourneyView;
+import com.mypurecloud.sdk.v2.model.JourneyViewChart;
+import com.mypurecloud.sdk.v2.model.JourneyViewChartResult;
 import com.mypurecloud.sdk.v2.model.JourneyViewJob;
 import com.mypurecloud.sdk.v2.model.JourneyViewJobListing;
 import com.mypurecloud.sdk.v2.model.JourneyViewListing;
@@ -98,8 +100,11 @@ import com.mypurecloud.sdk.v2.api.request.GetJourneySessionEventsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneySessionOutcomescoresRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewVersionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyViewVersionChartRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyViewVersionChartVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewVersionJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewVersionJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyViewVersionJobResultsChartRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewVersionJobsLatestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsEventdefinitionRequest;
@@ -110,6 +115,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontargetRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneySegmentRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchJourneyViewVersionJobRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsJourneysAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsJourneysAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyActionmapsRequest;
@@ -127,6 +133,7 @@ import com.mypurecloud.sdk.v2.api.request.PostJourneyViewVersionJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyViewVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyViewsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyViewsEncodingsValidateRequest;
+import com.mypurecloud.sdk.v2.api.request.PutJourneyViewVersionRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -2718,6 +2725,182 @@ public class JourneyApi {
   }
 
   /**
+   * Get a Chart by ID
+   * returns the latest version
+   * @param viewId viewId (required)
+   * @param journeyViewVersion Journey View Version (required)
+   * @param chartId chartId (required)
+   * @return JourneyViewChart
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyViewChart getJourneyViewVersionChart(String viewId, String journeyViewVersion, String chartId) throws IOException, ApiException {
+    return  getJourneyViewVersionChart(createGetJourneyViewVersionChartRequest(viewId, journeyViewVersion, chartId));
+  }
+
+  /**
+   * Get a Chart by ID
+   * returns the latest version
+   * @param viewId viewId (required)
+   * @param journeyViewVersion Journey View Version (required)
+   * @param chartId chartId (required)
+   * @return JourneyViewChart
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyViewChart> getJourneyViewVersionChartWithHttpInfo(String viewId, String journeyViewVersion, String chartId) throws IOException {
+    return getJourneyViewVersionChart(createGetJourneyViewVersionChartRequest(viewId, journeyViewVersion, chartId).withHttpInfo());
+  }
+
+  private GetJourneyViewVersionChartRequest createGetJourneyViewVersionChartRequest(String viewId, String journeyViewVersion, String chartId) {
+    return GetJourneyViewVersionChartRequest.builder()
+            .withViewId(viewId)
+
+            .withJourneyViewVersion(journeyViewVersion)
+
+            .withChartId(chartId)
+
+            .build();
+  }
+
+  /**
+   * Get a Chart by ID
+   * returns the latest version
+   * @param request The request object
+   * @return JourneyViewChart
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyViewChart getJourneyViewVersionChart(GetJourneyViewVersionChartRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JourneyViewChart> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneyViewChart>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Chart by ID
+   * returns the latest version
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyViewChart> getJourneyViewVersionChart(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JourneyViewChart>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyViewChart> response = (ApiResponse<JourneyViewChart>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyViewChart> response = (ApiResponse<JourneyViewChart>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a Chart by ID and version
+   * 
+   * @param viewId viewId (required)
+   * @param journeyViewVersion Journey View Version (required)
+   * @param chartId chartId (required)
+   * @param chartVersion chartVersion (required)
+   * @return JourneyViewChart
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyViewChart getJourneyViewVersionChartVersion(String viewId, String journeyViewVersion, String chartId, String chartVersion) throws IOException, ApiException {
+    return  getJourneyViewVersionChartVersion(createGetJourneyViewVersionChartVersionRequest(viewId, journeyViewVersion, chartId, chartVersion));
+  }
+
+  /**
+   * Get a Chart by ID and version
+   * 
+   * @param viewId viewId (required)
+   * @param journeyViewVersion Journey View Version (required)
+   * @param chartId chartId (required)
+   * @param chartVersion chartVersion (required)
+   * @return JourneyViewChart
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyViewChart> getJourneyViewVersionChartVersionWithHttpInfo(String viewId, String journeyViewVersion, String chartId, String chartVersion) throws IOException {
+    return getJourneyViewVersionChartVersion(createGetJourneyViewVersionChartVersionRequest(viewId, journeyViewVersion, chartId, chartVersion).withHttpInfo());
+  }
+
+  private GetJourneyViewVersionChartVersionRequest createGetJourneyViewVersionChartVersionRequest(String viewId, String journeyViewVersion, String chartId, String chartVersion) {
+    return GetJourneyViewVersionChartVersionRequest.builder()
+            .withViewId(viewId)
+
+            .withJourneyViewVersion(journeyViewVersion)
+
+            .withChartId(chartId)
+
+            .withChartVersion(chartVersion)
+
+            .build();
+  }
+
+  /**
+   * Get a Chart by ID and version
+   * 
+   * @param request The request object
+   * @return JourneyViewChart
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyViewChart getJourneyViewVersionChartVersion(GetJourneyViewVersionChartVersionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JourneyViewChart> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneyViewChart>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Chart by ID and version
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyViewChart> getJourneyViewVersionChartVersion(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JourneyViewChart>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyViewChart> response = (ApiResponse<JourneyViewChart>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyViewChart> response = (ApiResponse<JourneyViewChart>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get the job for a journey view version.
    * used for long descriptions
    * @param viewId Journey View Id (required)
@@ -2885,6 +3068,96 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<JourneyViewResult> response = (ApiResponse<JourneyViewResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the chart result associated with a journey view job.
+   * 
+   * @param viewId Journey View Id (required)
+   * @param journeyVersionId Journey View Version (required)
+   * @param jobId JobId (required)
+   * @param chartId ChartId (required)
+   * @return JourneyViewChartResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyViewChartResult getJourneyViewVersionJobResultsChart(String viewId, String journeyVersionId, String jobId, String chartId) throws IOException, ApiException {
+    return  getJourneyViewVersionJobResultsChart(createGetJourneyViewVersionJobResultsChartRequest(viewId, journeyVersionId, jobId, chartId));
+  }
+
+  /**
+   * Get the chart result associated with a journey view job.
+   * 
+   * @param viewId Journey View Id (required)
+   * @param journeyVersionId Journey View Version (required)
+   * @param jobId JobId (required)
+   * @param chartId ChartId (required)
+   * @return JourneyViewChartResult
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyViewChartResult> getJourneyViewVersionJobResultsChartWithHttpInfo(String viewId, String journeyVersionId, String jobId, String chartId) throws IOException {
+    return getJourneyViewVersionJobResultsChart(createGetJourneyViewVersionJobResultsChartRequest(viewId, journeyVersionId, jobId, chartId).withHttpInfo());
+  }
+
+  private GetJourneyViewVersionJobResultsChartRequest createGetJourneyViewVersionJobResultsChartRequest(String viewId, String journeyVersionId, String jobId, String chartId) {
+    return GetJourneyViewVersionJobResultsChartRequest.builder()
+            .withViewId(viewId)
+
+            .withJourneyVersionId(journeyVersionId)
+
+            .withJobId(jobId)
+
+            .withChartId(chartId)
+
+            .build();
+  }
+
+  /**
+   * Get the chart result associated with a journey view job.
+   * 
+   * @param request The request object
+   * @return JourneyViewChartResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyViewChartResult getJourneyViewVersionJobResultsChart(GetJourneyViewVersionJobResultsChartRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JourneyViewChartResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneyViewChartResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the chart result associated with a journey view job.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyViewChartResult> getJourneyViewVersionJobResultsChart(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JourneyViewChartResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyViewChartResult> response = (ApiResponse<JourneyViewChartResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyViewChartResult> response = (ApiResponse<JourneyViewChartResult>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -3721,6 +3994,96 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<JourneySegment> response = (ApiResponse<JourneySegment>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update the job for a journey view version. Only the status can be changed and only to Cancelled
+   * used for long descriptions
+   * @param viewId Journey View Id (required)
+   * @param journeyVersionId Journey View Version (required)
+   * @param jobId JobId (required)
+   * @param body journeyViewJob (required)
+   * @return JourneyViewJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyViewJob patchJourneyViewVersionJob(String viewId, String journeyVersionId, String jobId, JourneyViewJob body) throws IOException, ApiException {
+    return  patchJourneyViewVersionJob(createPatchJourneyViewVersionJobRequest(viewId, journeyVersionId, jobId, body));
+  }
+
+  /**
+   * Update the job for a journey view version. Only the status can be changed and only to Cancelled
+   * used for long descriptions
+   * @param viewId Journey View Id (required)
+   * @param journeyVersionId Journey View Version (required)
+   * @param jobId JobId (required)
+   * @param body journeyViewJob (required)
+   * @return JourneyViewJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyViewJob> patchJourneyViewVersionJobWithHttpInfo(String viewId, String journeyVersionId, String jobId, JourneyViewJob body) throws IOException {
+    return patchJourneyViewVersionJob(createPatchJourneyViewVersionJobRequest(viewId, journeyVersionId, jobId, body).withHttpInfo());
+  }
+
+  private PatchJourneyViewVersionJobRequest createPatchJourneyViewVersionJobRequest(String viewId, String journeyVersionId, String jobId, JourneyViewJob body) {
+    return PatchJourneyViewVersionJobRequest.builder()
+            .withViewId(viewId)
+
+            .withJourneyVersionId(journeyVersionId)
+
+            .withJobId(jobId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the job for a journey view version. Only the status can be changed and only to Cancelled
+   * used for long descriptions
+   * @param request The request object
+   * @return JourneyViewJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyViewJob patchJourneyViewVersionJob(PatchJourneyViewVersionJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JourneyViewJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneyViewJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the job for a journey view version. Only the status can be changed and only to Cancelled
+   * used for long descriptions
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyViewJob> patchJourneyViewVersionJob(ApiRequest<JourneyViewJob> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JourneyViewJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyViewJob> response = (ApiResponse<JourneyViewJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyViewJob> response = (ApiResponse<JourneyViewJob>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5076,6 +5439,92 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EntityListing> response = (ApiResponse<EntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update a Journey View by ID and version
+   * does not create a new version
+   * @param viewId viewId (required)
+   * @param versionId versionId (required)
+   * @param body JourneyView (required)
+   * @return JourneyView
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyView putJourneyViewVersion(String viewId, String versionId, JourneyView body) throws IOException, ApiException {
+    return  putJourneyViewVersion(createPutJourneyViewVersionRequest(viewId, versionId, body));
+  }
+
+  /**
+   * Update a Journey View by ID and version
+   * does not create a new version
+   * @param viewId viewId (required)
+   * @param versionId versionId (required)
+   * @param body JourneyView (required)
+   * @return JourneyView
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyView> putJourneyViewVersionWithHttpInfo(String viewId, String versionId, JourneyView body) throws IOException {
+    return putJourneyViewVersion(createPutJourneyViewVersionRequest(viewId, versionId, body).withHttpInfo());
+  }
+
+  private PutJourneyViewVersionRequest createPutJourneyViewVersionRequest(String viewId, String versionId, JourneyView body) {
+    return PutJourneyViewVersionRequest.builder()
+            .withViewId(viewId)
+
+            .withVersionId(versionId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update a Journey View by ID and version
+   * does not create a new version
+   * @param request The request object
+   * @return JourneyView
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyView putJourneyViewVersion(PutJourneyViewVersionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JourneyView> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneyView>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a Journey View by ID and version
+   * does not create a new version
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyView> putJourneyViewVersion(ApiRequest<JourneyView> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JourneyView>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyView> response = (ApiResponse<JourneyView>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyView> response = (ApiResponse<JourneyView>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

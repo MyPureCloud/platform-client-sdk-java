@@ -82,6 +82,7 @@ public class MessagingRecipient  implements Serializable {
   private String firstName = null;
   private String lastName = null;
   private String email = null;
+  private String externalContactId = null;
   private List<RecipientAdditionalIdentifier> additionalIds = new ArrayList<RecipientAdditionalIdentifier>();
 
   
@@ -157,6 +158,24 @@ public class MessagingRecipient  implements Serializable {
 
 
   /**
+   * The identifier of the external contact.
+   **/
+  public MessagingRecipient externalContactId(String externalContactId) {
+    this.externalContactId = externalContactId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The identifier of the external contact.")
+  @JsonProperty("externalContactId")
+  public String getExternalContactId() {
+    return externalContactId;
+  }
+  public void setExternalContactId(String externalContactId) {
+    this.externalContactId = externalContactId;
+  }
+
+
+  /**
    * List of recipient additional identifiers
    **/
   public MessagingRecipient additionalIds(List<RecipientAdditionalIdentifier> additionalIds) {
@@ -191,12 +210,13 @@ public class MessagingRecipient  implements Serializable {
             Objects.equals(this.firstName, messagingRecipient.firstName) &&
             Objects.equals(this.lastName, messagingRecipient.lastName) &&
             Objects.equals(this.email, messagingRecipient.email) &&
+            Objects.equals(this.externalContactId, messagingRecipient.externalContactId) &&
             Objects.equals(this.additionalIds, messagingRecipient.additionalIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(nickname, id, idType, image, firstName, lastName, email, additionalIds);
+    return Objects.hash(nickname, id, idType, image, firstName, lastName, email, externalContactId, additionalIds);
   }
 
   @Override
@@ -211,6 +231,7 @@ public class MessagingRecipient  implements Serializable {
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
     sb.append("    additionalIds: ").append(toIndentedString(additionalIds)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -30,6 +30,7 @@ public class IntentDefinition  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private String description = null;
   private List<NamedEntityTypeBinding> entityTypeBindings = new ArrayList<NamedEntityTypeBinding>();
   private List<String> entityNameReferences = new ArrayList<String>();
   private List<NluUtterance> utterances = new ArrayList<NluUtterance>();
@@ -58,6 +59,24 @@ public class IntentDefinition  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+
+  /**
+   * The description of the intent.
+   **/
+  public IntentDefinition description(String description) {
+    this.description = description;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The description of the intent.")
+  @JsonProperty("description")
+  public String getDescription() {
+    return description;
+  }
+  public void setDescription(String description) {
+    this.description = description;
   }
 
 
@@ -134,6 +153,7 @@ public class IntentDefinition  implements Serializable {
 
     return Objects.equals(this.id, intentDefinition.id) &&
             Objects.equals(this.name, intentDefinition.name) &&
+            Objects.equals(this.description, intentDefinition.description) &&
             Objects.equals(this.entityTypeBindings, intentDefinition.entityTypeBindings) &&
             Objects.equals(this.entityNameReferences, intentDefinition.entityNameReferences) &&
             Objects.equals(this.utterances, intentDefinition.utterances) &&
@@ -142,7 +162,7 @@ public class IntentDefinition  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, entityTypeBindings, entityNameReferences, utterances, additionalLanguages);
+    return Objects.hash(id, name, description, entityTypeBindings, entityNameReferences, utterances, additionalLanguages);
   }
 
   @Override
@@ -152,6 +172,7 @@ public class IntentDefinition  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    entityTypeBindings: ").append(toIndentedString(entityTypeBindings)).append("\n");
     sb.append("    entityNameReferences: ").append(toIndentedString(entityNameReferences)).append("\n");
     sb.append("    utterances: ").append(toIndentedString(utterances)).append("\n");

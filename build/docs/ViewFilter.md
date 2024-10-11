@@ -202,6 +202,18 @@
 | **dashboardType** | [**DashboardTypeEnum**](#Enum--DashboardTypeEnum) | The type of dashboard being filtered |  [optional] |
 | **dashboardAccessFilter** | [**DashboardAccessFilterEnum**](#Enum--DashboardAccessFilterEnum) | The type of dashboard access being filtered |  [optional] |
 | **transcriptDurationMilliseconds** | [**List&lt;NumericRange&gt;**](NumericRange) | The transcript durations in milliseconds used to filter the view |  [optional] |
+| **socialCountries** | **List&lt;String&gt;** | List of countries for social filtering |  [optional] |
+| **socialLanguages** | **List&lt;String&gt;** | List of languages for social filtering |  [optional] |
+| **socialChannels** | [**List<SocialChannelsEnum>**](#Enum--SocialChannelsEnum) | List of channels for social filtering |  [optional] |
+| **socialSentimentCategory** | [**List<SocialSentimentCategoryEnum>**](#Enum--SocialSentimentCategoryEnum) | The sentiment of the social post |  [optional] |
+| **socialTopicIds** | **List&lt;String&gt;** | The list of topicIds for social filtering |  [optional] |
+| **socialIngestionRuleIds** | **List&lt;String&gt;** | The list of ingestion ruleIds for social filtering |  [optional] |
+| **socialConversationCreated** | **Boolean** | Filter to indicate if the post has created a conversation |  [optional] |
+| **socialContentType** | [**List<SocialContentTypeEnum>**](#Enum--SocialContentTypeEnum) | The list of content Type for social filtering |  [optional] |
+| **socialKeywords** | [**List&lt;SocialKeyword&gt;**](SocialKeyword) | The list of keywords for social filtering |  [optional] |
+| **socialPostEscalated** | **Boolean** | Filter to indicate if the post is escalated |  [optional] |
+| **socialClassifications** | [**List<SocialClassificationsEnum>**](#Enum--SocialClassificationsEnum) | Indicates if a social message was public or private |  [optional] |
+| **filterUsersByManagerIds** | **List&lt;String&gt;** | The manager ids used to fetch associated users for the view |  [optional] |
 
 
 ## Enum: MediaTypesEnum
@@ -212,8 +224,8 @@
 | CHAT | &quot;chat&quot; |
 | COBROWSE | &quot;cobrowse&quot; |
 | EMAIL | &quot;email&quot; |
-| MESSAGE | &quot;message&quot; |
 | INTERNALMESSAGE | &quot;internalmessage&quot; |
+| MESSAGE | &quot;message&quot; |
 | SCREENSHARE | &quot;screenshare&quot; |
 | UNKNOWN | &quot;unknown&quot; |
 | VIDEO | &quot;video&quot; |
@@ -591,6 +603,43 @@
 | NOTOWNEDBYME | &quot;NotOwnedByMe&quot; | 
 
 
+## Enum: SocialChannelsEnum
+
+| Name | Value |
+| ---- | ----- |
+| TWITTER | &quot;Twitter&quot; |
+| FACEBOOK | &quot;Facebook&quot; |
+| INSTAGRAM | &quot;Instagram&quot; |
+| OPEN | &quot;Open&quot; |
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:210.0.0_
+## Enum: SocialSentimentCategoryEnum
+
+| Name | Value |
+| ---- | ----- |
+| POSITIVE | &quot;Positive&quot; |
+| NEGATIVE | &quot;Negative&quot; |
+| NEUTRAL | &quot;Neutral&quot; |
+| UNKNOWN | &quot;Unknown&quot; |
+
+
+## Enum: SocialContentTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| TEXT | &quot;Text&quot; |
+| IMAGE | &quot;Image&quot; |
+| VIDEO | &quot;Video&quot; |
+
+
+## Enum: SocialClassificationsEnum
+
+| Name | Value |
+| ---- | ----- |
+| PUBLIC | &quot;Public&quot; |
+| PRIVATE | &quot;Private&quot; |
+
+
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_

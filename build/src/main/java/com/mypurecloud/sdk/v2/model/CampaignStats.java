@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.CampaignBusinessCategoryMetrics;
 import com.mypurecloud.sdk.v2.model.CampaignLinesUtilization;
 import com.mypurecloud.sdk.v2.model.ConnectRate;
 import io.swagger.annotations.ApiModel;
@@ -31,7 +32,10 @@ public class CampaignStats  implements Serializable {
   private Integer scheduledCalls = null;
   private Integer timeZoneRescheduledCalls = null;
   private Integer filteredOutContactsCount = null;
+  private Integer rightPartyContactsCount = null;
+  private Integer validAttempts = null;
   private CampaignLinesUtilization linesUtilization = null;
+  private CampaignBusinessCategoryMetrics businessCategoryMetrics = null;
 
   
   @ApiModelProperty(example = "null", value = "Information regarding the campaign's connect rate")
@@ -90,10 +94,31 @@ public class CampaignStats  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Information on the campaign's number of Right Party Contacts")
+  @JsonProperty("rightPartyContactsCount")
+  public Integer getRightPartyContactsCount() {
+    return rightPartyContactsCount;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "Information on the campaign's valid attempts")
+  @JsonProperty("validAttempts")
+  public Integer getValidAttempts() {
+    return validAttempts;
+  }
+
+
   @ApiModelProperty(example = "null", value = "Information on the campaign's lines utilization")
   @JsonProperty("linesUtilization")
   public CampaignLinesUtilization getLinesUtilization() {
     return linesUtilization;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "Information on the campaign's business category metrics")
+  @JsonProperty("businessCategoryMetrics")
+  public CampaignBusinessCategoryMetrics getBusinessCategoryMetrics() {
+    return businessCategoryMetrics;
   }
 
 
@@ -115,12 +140,15 @@ public class CampaignStats  implements Serializable {
             Objects.equals(this.scheduledCalls, campaignStats.scheduledCalls) &&
             Objects.equals(this.timeZoneRescheduledCalls, campaignStats.timeZoneRescheduledCalls) &&
             Objects.equals(this.filteredOutContactsCount, campaignStats.filteredOutContactsCount) &&
-            Objects.equals(this.linesUtilization, campaignStats.linesUtilization);
+            Objects.equals(this.rightPartyContactsCount, campaignStats.rightPartyContactsCount) &&
+            Objects.equals(this.validAttempts, campaignStats.validAttempts) &&
+            Objects.equals(this.linesUtilization, campaignStats.linesUtilization) &&
+            Objects.equals(this.businessCategoryMetrics, campaignStats.businessCategoryMetrics);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contactRate, idleAgents, effectiveIdleAgents, adjustedCallsPerAgent, outstandingCalls, scheduledCalls, timeZoneRescheduledCalls, filteredOutContactsCount, linesUtilization);
+    return Objects.hash(contactRate, idleAgents, effectiveIdleAgents, adjustedCallsPerAgent, outstandingCalls, scheduledCalls, timeZoneRescheduledCalls, filteredOutContactsCount, rightPartyContactsCount, validAttempts, linesUtilization, businessCategoryMetrics);
   }
 
   @Override
@@ -136,7 +164,10 @@ public class CampaignStats  implements Serializable {
     sb.append("    scheduledCalls: ").append(toIndentedString(scheduledCalls)).append("\n");
     sb.append("    timeZoneRescheduledCalls: ").append(toIndentedString(timeZoneRescheduledCalls)).append("\n");
     sb.append("    filteredOutContactsCount: ").append(toIndentedString(filteredOutContactsCount)).append("\n");
+    sb.append("    rightPartyContactsCount: ").append(toIndentedString(rightPartyContactsCount)).append("\n");
+    sb.append("    validAttempts: ").append(toIndentedString(validAttempts)).append("\n");
     sb.append("    linesUtilization: ").append(toIndentedString(linesUtilization)).append("\n");
+    sb.append("    businessCategoryMetrics: ").append(toIndentedString(businessCategoryMetrics)).append("\n");
     sb.append("}");
     return sb.toString();
   }

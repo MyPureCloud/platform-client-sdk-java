@@ -47,7 +47,9 @@ public class IpAddressRange  implements Serializable {
     AUDIOHOOK("audiohook"),
     OPEN_MESSAGING("open-messaging"),
     API("api"),
-    AUDIO_CONNECTOR("audio-connector");
+    AUDIO_CONNECTOR("audio-connector"),
+    BYOT_STT("byot-stt"),
+    BOT_CONNECTOR("bot-connector");
 
     private String value;
 

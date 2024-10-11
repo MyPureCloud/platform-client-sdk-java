@@ -74,8 +74,8 @@
 | CHAT | &quot;chat&quot; | 
 | COBROWSE | &quot;cobrowse&quot; | 
 | EMAIL | &quot;email&quot; | 
-| MESSAGE | &quot;message&quot; | 
 | INTERNALMESSAGE | &quot;internalmessage&quot; | 
+| MESSAGE | &quot;message&quot; | 
 | SCREENSHARE | &quot;screenshare&quot; | 
 | UNKNOWN | &quot;unknown&quot; | 
 | VIDEO | &quot;video&quot; | 
@@ -115,4 +115,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:210.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_

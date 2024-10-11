@@ -202,6 +202,20 @@ public class PostConversationsMessageInboundOpenMessageRequest {
 	    return this;
 	} 
 
+	private Boolean prefetchConversationId;
+	public Boolean getPrefetchConversationId() {
+		return this.prefetchConversationId;
+	}
+
+	public void setPrefetchConversationId(Boolean prefetchConversationId) {
+		this.prefetchConversationId = prefetchConversationId;
+	}
+
+	public PostConversationsMessageInboundOpenMessageRequest withPrefetchConversationId(Boolean prefetchConversationId) {
+	    this.setPrefetchConversationId(prefetchConversationId);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -236,6 +250,9 @@ public class PostConversationsMessageInboundOpenMessageRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/conversations/messages/{integrationId}/inbound/open/message")
                 .withPathParameter("integrationId", integrationId)
+        
+
+                .withQueryParameters("prefetchConversationId", "", prefetchConversationId)
         
                 .withBody(body)
 
@@ -272,6 +289,11 @@ public class PostConversationsMessageInboundOpenMessageRequest {
 
 		public Builder withBody(OpenInboundNormalizedMessage body) {
 			request.setBody(body);
+			return this;
+		}
+
+		public Builder withPrefetchConversationId(Boolean prefetchConversationId) {
+			request.setPrefetchConversationId(prefetchConversationId);
 			return this;
 		}
 

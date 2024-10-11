@@ -125,7 +125,8 @@ public class GetUserProfileRequest {
 		LASTTOKENISSUED("lasttokenissued"),
 		AUTHORIZATION_UNUSEDROLES("authorization.unusedRoles"),
 		TEAM("team"),
-		WORKPLANBIDRANKS("workPlanBidRanks");
+		WORKPLANBIDRANKS("workPlanBidRanks"),
+		EXTERNALCONTACTSSETTINGS("externalContactsSettings");
 
 		private String value;
 

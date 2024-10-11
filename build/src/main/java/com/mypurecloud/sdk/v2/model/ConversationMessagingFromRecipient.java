@@ -81,6 +81,7 @@ public class ConversationMessagingFromRecipient  implements Serializable {
   private String firstName = null;
   private String lastName = null;
   private String email = null;
+  private String externalContactId = null;
   private List<ConversationRecipientAdditionalIdentifier> additionalIds = new ArrayList<ConversationRecipientAdditionalIdentifier>();
 
   
@@ -177,6 +178,24 @@ public class ConversationMessagingFromRecipient  implements Serializable {
   }
 
 
+  /**
+   * The identifier of the external contact.
+   **/
+  public ConversationMessagingFromRecipient externalContactId(String externalContactId) {
+    this.externalContactId = externalContactId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The identifier of the external contact.")
+  @JsonProperty("externalContactId")
+  public String getExternalContactId() {
+    return externalContactId;
+  }
+  public void setExternalContactId(String externalContactId) {
+    this.externalContactId = externalContactId;
+  }
+
+
   @ApiModelProperty(example = "null", value = "List of recipient additional identifiers")
   @JsonProperty("additionalIds")
   public List<ConversationRecipientAdditionalIdentifier> getAdditionalIds() {
@@ -201,12 +220,13 @@ public class ConversationMessagingFromRecipient  implements Serializable {
             Objects.equals(this.firstName, conversationMessagingFromRecipient.firstName) &&
             Objects.equals(this.lastName, conversationMessagingFromRecipient.lastName) &&
             Objects.equals(this.email, conversationMessagingFromRecipient.email) &&
+            Objects.equals(this.externalContactId, conversationMessagingFromRecipient.externalContactId) &&
             Objects.equals(this.additionalIds, conversationMessagingFromRecipient.additionalIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(nickname, id, idType, image, firstName, lastName, email, additionalIds);
+    return Objects.hash(nickname, id, idType, image, firstName, lastName, email, externalContactId, additionalIds);
   }
 
   @Override
@@ -221,6 +241,7 @@ public class ConversationMessagingFromRecipient  implements Serializable {
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
     sb.append("    additionalIds: ").append(toIndentedString(additionalIds)).append("\n");
     sb.append("}");
     return sb.toString();

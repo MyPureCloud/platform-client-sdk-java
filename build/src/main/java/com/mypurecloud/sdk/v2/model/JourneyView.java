@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.JourneyViewChart;
 import com.mypurecloud.sdk.v2.model.JourneyViewElement;
 import com.mypurecloud.sdk.v2.model.JourneyViewUser;
 import io.swagger.annotations.ApiModel;
@@ -36,6 +37,7 @@ public class JourneyView  implements Serializable {
   private String interval = null;
   private String duration = null;
   private List<JourneyViewElement> elements = new ArrayList<JourneyViewElement>();
+  private List<JourneyViewChart> charts = new ArrayList<JourneyViewChart>();
   private Date dateCreated = null;
   private Date dateModified = null;
   private String selfUri = null;
@@ -158,6 +160,24 @@ public class JourneyView  implements Serializable {
   }
 
 
+  /**
+   * A list of charts to measure within context of the elements of the the journey view
+   **/
+  public JourneyView charts(List<JourneyViewChart> charts) {
+    this.charts = charts;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of charts to measure within context of the elements of the the journey view")
+  @JsonProperty("charts")
+  public List<JourneyViewChart> getCharts() {
+    return charts;
+  }
+  public void setCharts(List<JourneyViewChart> charts) {
+    this.charts = charts;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The date when the journey view was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
@@ -198,6 +218,7 @@ public class JourneyView  implements Serializable {
             Objects.equals(this.interval, journeyView.interval) &&
             Objects.equals(this.duration, journeyView.duration) &&
             Objects.equals(this.elements, journeyView.elements) &&
+            Objects.equals(this.charts, journeyView.charts) &&
             Objects.equals(this.dateCreated, journeyView.dateCreated) &&
             Objects.equals(this.dateModified, journeyView.dateModified) &&
             Objects.equals(this.selfUri, journeyView.selfUri);
@@ -205,7 +226,7 @@ public class JourneyView  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, createdBy, modifiedBy, interval, duration, elements, dateCreated, dateModified, selfUri);
+    return Objects.hash(id, name, description, version, createdBy, modifiedBy, interval, duration, elements, charts, dateCreated, dateModified, selfUri);
   }
 
   @Override
@@ -222,6 +243,7 @@ public class JourneyView  implements Serializable {
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
     sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
     sb.append("    elements: ").append(toIndentedString(elements)).append("\n");
+    sb.append("    charts: ").append(toIndentedString(charts)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

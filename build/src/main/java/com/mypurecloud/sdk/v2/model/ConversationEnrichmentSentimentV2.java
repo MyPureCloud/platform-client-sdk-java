@@ -42,6 +42,7 @@ public class ConversationEnrichmentSentimentV2  implements Serializable {
  @JsonDeserialize(using = TagEnumDeserializer.class)
   public enum TagEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("Unknown"),
     POSITIVE("Positive"),
     NEGATIVE("Negative"),
     NEUTRAL("Neutral");

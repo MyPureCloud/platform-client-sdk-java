@@ -10903,7 +10903,6 @@ public class ConversationsApi {
   /**
    * Update conversation by setting its parking state
    * 
-   * patchConversationsEmailParticipantParkingstate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Parking update request (required)
@@ -10917,7 +10916,6 @@ public class ConversationsApi {
   /**
    * Update conversation by setting its parking state
    * 
-   * patchConversationsEmailParticipantParkingstate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param body Parking update request (required)
@@ -10941,7 +10939,6 @@ public class ConversationsApi {
   /**
    * Update conversation by setting its parking state
    * 
-   * patchConversationsEmailParticipantParkingstate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -10960,7 +10957,6 @@ public class ConversationsApi {
   /**
    * Update conversation by setting its parking state
    * 
-   * patchConversationsEmailParticipantParkingstate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -16817,12 +16813,13 @@ public class ConversationsApi {
    * Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
    * @param integrationId integrationId (required)
    * @param body NormalizedMessage (required)
+   * @param prefetchConversationId Indicates whether or not to prefetch conversationId (optional, default to false)
    * @return OpenMessageNormalizedMessage
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OpenMessageNormalizedMessage postConversationsMessageInboundOpenMessage(String integrationId, OpenInboundNormalizedMessage body) throws IOException, ApiException {
-    return  postConversationsMessageInboundOpenMessage(createPostConversationsMessageInboundOpenMessageRequest(integrationId, body));
+  public OpenMessageNormalizedMessage postConversationsMessageInboundOpenMessage(String integrationId, OpenInboundNormalizedMessage body, Boolean prefetchConversationId) throws IOException, ApiException {
+    return  postConversationsMessageInboundOpenMessage(createPostConversationsMessageInboundOpenMessageRequest(integrationId, body, prefetchConversationId));
   }
 
   /**
@@ -16830,18 +16827,21 @@ public class ConversationsApi {
    * Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
    * @param integrationId integrationId (required)
    * @param body NormalizedMessage (required)
+   * @param prefetchConversationId Indicates whether or not to prefetch conversationId (optional, default to false)
    * @return OpenMessageNormalizedMessage
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OpenMessageNormalizedMessage> postConversationsMessageInboundOpenMessageWithHttpInfo(String integrationId, OpenInboundNormalizedMessage body) throws IOException {
-    return postConversationsMessageInboundOpenMessage(createPostConversationsMessageInboundOpenMessageRequest(integrationId, body).withHttpInfo());
+  public ApiResponse<OpenMessageNormalizedMessage> postConversationsMessageInboundOpenMessageWithHttpInfo(String integrationId, OpenInboundNormalizedMessage body, Boolean prefetchConversationId) throws IOException {
+    return postConversationsMessageInboundOpenMessage(createPostConversationsMessageInboundOpenMessageRequest(integrationId, body, prefetchConversationId).withHttpInfo());
   }
 
-  private PostConversationsMessageInboundOpenMessageRequest createPostConversationsMessageInboundOpenMessageRequest(String integrationId, OpenInboundNormalizedMessage body) {
+  private PostConversationsMessageInboundOpenMessageRequest createPostConversationsMessageInboundOpenMessageRequest(String integrationId, OpenInboundNormalizedMessage body, Boolean prefetchConversationId) {
     return PostConversationsMessageInboundOpenMessageRequest.builder()
             .withIntegrationId(integrationId)
 
             .withBody(body)
+
+            .withPrefetchConversationId(prefetchConversationId)
 
             .build();
   }

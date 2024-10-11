@@ -28,6 +28,14 @@ import com.mypurecloud.sdk.v2.model.Workitem;
 import com.mypurecloud.sdk.v2.model.WorkitemChangeListing;
 import com.mypurecloud.sdk.v2.model.WorkitemCreate;
 import com.mypurecloud.sdk.v2.model.WorkitemManualAssign;
+import com.mypurecloud.sdk.v2.model.WorkitemOnAttributeChangeRule;
+import com.mypurecloud.sdk.v2.model.WorkitemOnAttributeChangeRuleCreate;
+import com.mypurecloud.sdk.v2.model.WorkitemOnAttributeChangeRuleListing;
+import com.mypurecloud.sdk.v2.model.WorkitemOnAttributeChangeRuleUpdate;
+import com.mypurecloud.sdk.v2.model.WorkitemOnCreateRule;
+import com.mypurecloud.sdk.v2.model.WorkitemOnCreateRuleCreate;
+import com.mypurecloud.sdk.v2.model.WorkitemOnCreateRuleListing;
+import com.mypurecloud.sdk.v2.model.WorkitemOnCreateRuleUpdate;
 import com.mypurecloud.sdk.v2.model.WorkitemPagedEntityListing;
 import com.mypurecloud.sdk.v2.model.WorkitemPostQueryEntityListing;
 import com.mypurecloud.sdk.v2.model.WorkitemQueryJobCreate;
@@ -58,6 +66,8 @@ import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorkbinRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorkitemRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorkitemsSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorktypeRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorktypeFlowsOnattributechangeRuleRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorktypeFlowsOncreateRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorktypeStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkbinRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkbinHistoryRequest;
@@ -76,6 +86,10 @@ import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemaVersio
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemaVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeFlowsOnattributechangeRuleRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeFlowsOnattributechangeRulesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeFlowsOncreateRuleRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeFlowsOncreateRulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeHistoryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeStatusesRequest;
@@ -87,6 +101,8 @@ import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorkitemAssignmentR
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorkitemUserWrapupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorkitemUsersMeWrapupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorktypeRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorktypeFlowsOnattributechangeRuleRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorktypeFlowsOncreateRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorktypeStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkbinsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkbinsQueryRequest;
@@ -97,6 +113,8 @@ import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsQueryJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsSchemasRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorktypeFlowsOnattributechangeRulesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorktypeFlowsOncreateRulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorktypeStatusesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorktypesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorktypesQueryRequest;
@@ -387,6 +405,156 @@ public class TaskManagementApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteTaskmanagementWorktypeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a rule
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteTaskmanagementWorktypeFlowsOnattributechangeRuleAsync(DeleteTaskmanagementWorktypeFlowsOnattributechangeRuleRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a rule
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteTaskmanagementWorktypeFlowsOnattributechangeRuleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a rule
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteTaskmanagementWorktypeFlowsOncreateRuleAsync(DeleteTaskmanagementWorktypeFlowsOncreateRuleRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a rule
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteTaskmanagementWorktypeFlowsOncreateRuleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -1783,6 +1951,306 @@ public class TaskManagementApiAsync {
   }
 
   /**
+   * Get an attribute change rule
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WorkitemOnAttributeChangeRule> getTaskmanagementWorktypeFlowsOnattributechangeRuleAsync(GetTaskmanagementWorktypeFlowsOnattributechangeRuleRequest request, final AsyncApiCallback<WorkitemOnAttributeChangeRule> callback) {
+    try {
+      final SettableFuture<WorkitemOnAttributeChangeRule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WorkitemOnAttributeChangeRule>() {}, new AsyncApiCallback<ApiResponse<WorkitemOnAttributeChangeRule>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemOnAttributeChangeRule> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an attribute change rule
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WorkitemOnAttributeChangeRule>> getTaskmanagementWorktypeFlowsOnattributechangeRuleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WorkitemOnAttributeChangeRule>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WorkitemOnAttributeChangeRule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WorkitemOnAttributeChangeRule>() {}, new AsyncApiCallback<ApiResponse<WorkitemOnAttributeChangeRule>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemOnAttributeChangeRule> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemOnAttributeChangeRule> response = (ApiResponse<WorkitemOnAttributeChangeRule>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemOnAttributeChangeRule> response = (ApiResponse<WorkitemOnAttributeChangeRule>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get all attribute-change rules for a worktype
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WorkitemOnAttributeChangeRuleListing> getTaskmanagementWorktypeFlowsOnattributechangeRulesAsync(GetTaskmanagementWorktypeFlowsOnattributechangeRulesRequest request, final AsyncApiCallback<WorkitemOnAttributeChangeRuleListing> callback) {
+    try {
+      final SettableFuture<WorkitemOnAttributeChangeRuleListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WorkitemOnAttributeChangeRuleListing>() {}, new AsyncApiCallback<ApiResponse<WorkitemOnAttributeChangeRuleListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemOnAttributeChangeRuleListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get all attribute-change rules for a worktype
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WorkitemOnAttributeChangeRuleListing>> getTaskmanagementWorktypeFlowsOnattributechangeRulesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WorkitemOnAttributeChangeRuleListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WorkitemOnAttributeChangeRuleListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WorkitemOnAttributeChangeRuleListing>() {}, new AsyncApiCallback<ApiResponse<WorkitemOnAttributeChangeRuleListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemOnAttributeChangeRuleListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemOnAttributeChangeRuleListing> response = (ApiResponse<WorkitemOnAttributeChangeRuleListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemOnAttributeChangeRuleListing> response = (ApiResponse<WorkitemOnAttributeChangeRuleListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an on-create rule
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WorkitemOnCreateRule> getTaskmanagementWorktypeFlowsOncreateRuleAsync(GetTaskmanagementWorktypeFlowsOncreateRuleRequest request, final AsyncApiCallback<WorkitemOnCreateRule> callback) {
+    try {
+      final SettableFuture<WorkitemOnCreateRule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WorkitemOnCreateRule>() {}, new AsyncApiCallback<ApiResponse<WorkitemOnCreateRule>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemOnCreateRule> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an on-create rule
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WorkitemOnCreateRule>> getTaskmanagementWorktypeFlowsOncreateRuleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WorkitemOnCreateRule>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WorkitemOnCreateRule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WorkitemOnCreateRule>() {}, new AsyncApiCallback<ApiResponse<WorkitemOnCreateRule>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemOnCreateRule> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemOnCreateRule> response = (ApiResponse<WorkitemOnCreateRule>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemOnCreateRule> response = (ApiResponse<WorkitemOnCreateRule>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get all on-create rules for a worktype
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WorkitemOnCreateRuleListing> getTaskmanagementWorktypeFlowsOncreateRulesAsync(GetTaskmanagementWorktypeFlowsOncreateRulesRequest request, final AsyncApiCallback<WorkitemOnCreateRuleListing> callback) {
+    try {
+      final SettableFuture<WorkitemOnCreateRuleListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WorkitemOnCreateRuleListing>() {}, new AsyncApiCallback<ApiResponse<WorkitemOnCreateRuleListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemOnCreateRuleListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get all on-create rules for a worktype
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WorkitemOnCreateRuleListing>> getTaskmanagementWorktypeFlowsOncreateRulesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WorkitemOnCreateRuleListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WorkitemOnCreateRuleListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WorkitemOnCreateRuleListing>() {}, new AsyncApiCallback<ApiResponse<WorkitemOnCreateRuleListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemOnCreateRuleListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemOnCreateRuleListing> response = (ApiResponse<WorkitemOnCreateRuleListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemOnCreateRuleListing> response = (ApiResponse<WorkitemOnCreateRuleListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get a listing of a worktype's attribute change history
    * 
    * getTaskmanagementWorktypeHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
@@ -2614,6 +3082,156 @@ public class TaskManagementApiAsync {
   }
 
   /**
+   * Update the attributes of a rule
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WorkitemOnAttributeChangeRule> patchTaskmanagementWorktypeFlowsOnattributechangeRuleAsync(PatchTaskmanagementWorktypeFlowsOnattributechangeRuleRequest request, final AsyncApiCallback<WorkitemOnAttributeChangeRule> callback) {
+    try {
+      final SettableFuture<WorkitemOnAttributeChangeRule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WorkitemOnAttributeChangeRule>() {}, new AsyncApiCallback<ApiResponse<WorkitemOnAttributeChangeRule>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemOnAttributeChangeRule> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the attributes of a rule
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WorkitemOnAttributeChangeRule>> patchTaskmanagementWorktypeFlowsOnattributechangeRuleAsync(ApiRequest<WorkitemOnAttributeChangeRuleUpdate> request, final AsyncApiCallback<ApiResponse<WorkitemOnAttributeChangeRule>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WorkitemOnAttributeChangeRule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WorkitemOnAttributeChangeRule>() {}, new AsyncApiCallback<ApiResponse<WorkitemOnAttributeChangeRule>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemOnAttributeChangeRule> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemOnAttributeChangeRule> response = (ApiResponse<WorkitemOnAttributeChangeRule>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemOnAttributeChangeRule> response = (ApiResponse<WorkitemOnAttributeChangeRule>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the attributes of a rule
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WorkitemOnCreateRule> patchTaskmanagementWorktypeFlowsOncreateRuleAsync(PatchTaskmanagementWorktypeFlowsOncreateRuleRequest request, final AsyncApiCallback<WorkitemOnCreateRule> callback) {
+    try {
+      final SettableFuture<WorkitemOnCreateRule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WorkitemOnCreateRule>() {}, new AsyncApiCallback<ApiResponse<WorkitemOnCreateRule>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemOnCreateRule> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the attributes of a rule
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WorkitemOnCreateRule>> patchTaskmanagementWorktypeFlowsOncreateRuleAsync(ApiRequest<WorkitemOnCreateRuleUpdate> request, final AsyncApiCallback<ApiResponse<WorkitemOnCreateRule>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WorkitemOnCreateRule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WorkitemOnCreateRule>() {}, new AsyncApiCallback<ApiResponse<WorkitemOnCreateRule>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemOnCreateRule> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemOnCreateRule> response = (ApiResponse<WorkitemOnCreateRule>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemOnCreateRule> response = (ApiResponse<WorkitemOnCreateRule>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Update the attributes of a status
    * 
    * @param request the request object
@@ -3354,6 +3972,156 @@ public class TaskManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add an attribute-change rule to a worktype
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WorkitemOnAttributeChangeRule> postTaskmanagementWorktypeFlowsOnattributechangeRulesAsync(PostTaskmanagementWorktypeFlowsOnattributechangeRulesRequest request, final AsyncApiCallback<WorkitemOnAttributeChangeRule> callback) {
+    try {
+      final SettableFuture<WorkitemOnAttributeChangeRule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WorkitemOnAttributeChangeRule>() {}, new AsyncApiCallback<ApiResponse<WorkitemOnAttributeChangeRule>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemOnAttributeChangeRule> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add an attribute-change rule to a worktype
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WorkitemOnAttributeChangeRule>> postTaskmanagementWorktypeFlowsOnattributechangeRulesAsync(ApiRequest<WorkitemOnAttributeChangeRuleCreate> request, final AsyncApiCallback<ApiResponse<WorkitemOnAttributeChangeRule>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WorkitemOnAttributeChangeRule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WorkitemOnAttributeChangeRule>() {}, new AsyncApiCallback<ApiResponse<WorkitemOnAttributeChangeRule>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemOnAttributeChangeRule> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemOnAttributeChangeRule> response = (ApiResponse<WorkitemOnAttributeChangeRule>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemOnAttributeChangeRule> response = (ApiResponse<WorkitemOnAttributeChangeRule>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add an on-create rule to a worktype
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WorkitemOnCreateRule> postTaskmanagementWorktypeFlowsOncreateRulesAsync(PostTaskmanagementWorktypeFlowsOncreateRulesRequest request, final AsyncApiCallback<WorkitemOnCreateRule> callback) {
+    try {
+      final SettableFuture<WorkitemOnCreateRule> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WorkitemOnCreateRule>() {}, new AsyncApiCallback<ApiResponse<WorkitemOnCreateRule>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemOnCreateRule> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add an on-create rule to a worktype
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WorkitemOnCreateRule>> postTaskmanagementWorktypeFlowsOncreateRulesAsync(ApiRequest<WorkitemOnCreateRuleCreate> request, final AsyncApiCallback<ApiResponse<WorkitemOnCreateRule>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WorkitemOnCreateRule>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WorkitemOnCreateRule>() {}, new AsyncApiCallback<ApiResponse<WorkitemOnCreateRule>>() {
+        @Override
+        public void onCompleted(ApiResponse<WorkitemOnCreateRule> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemOnCreateRule> response = (ApiResponse<WorkitemOnCreateRule>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WorkitemOnCreateRule> response = (ApiResponse<WorkitemOnCreateRule>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

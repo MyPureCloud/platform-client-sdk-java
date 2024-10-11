@@ -50,14 +50,15 @@ public class Annotation  implements Serializable {
     }
   }
   /**
-   * Reason for a pause annotation. Valid values: Hold,SecurePause,FlowOrQueue
+   * Reason for a pause annotation. Valid values: Hold,SecurePause,FlowOrQueue,Pause
    */
  @JsonDeserialize(using = ReasonEnumDeserializer.class)
   public enum ReasonEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     HOLD("Hold"),
     SECUREPAUSE("SecurePause"),
-    FLOWORQUEUE("FlowOrQueue");
+    FLOWORQUEUE("FlowOrQueue"),
+    PAUSE("Pause");
 
     private String value;
 
@@ -275,7 +276,7 @@ public class Annotation  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "Reason for a pause annotation. Valid values: Hold,SecurePause,FlowOrQueue")
+  @ApiModelProperty(example = "null", value = "Reason for a pause annotation. Valid values: Hold,SecurePause,FlowOrQueue,Pause")
   @JsonProperty("reason")
   public ReasonEnum getReason() {
     return reason;

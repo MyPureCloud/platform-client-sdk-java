@@ -1856,10 +1856,8 @@ Get the Recording Settings for the Organization
 
 Wraps GET /api/v2/recording/settings  
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* recording:screenRecording:view
-* recording:settings:editScreenRecordings
 
 ### Example
 
@@ -3628,6 +3626,8 @@ Wraps PUT /api/v2/recording/settings
 Requires ANY permissions: 
 
 * recording:settings:editScreenRecordings
+* recording:settings:editRegionalStorage
+* recording:settings:editUrlExpiration
 
 ### Example
 
@@ -3736,4 +3736,4 @@ try {
 null (empty response body)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:210.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_

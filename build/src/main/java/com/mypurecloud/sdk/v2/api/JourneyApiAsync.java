@@ -42,6 +42,8 @@ import com.mypurecloud.sdk.v2.model.JourneyEventDefinitionListing;
 import com.mypurecloud.sdk.v2.model.JourneySegment;
 import com.mypurecloud.sdk.v2.model.JourneySegmentRequest;
 import com.mypurecloud.sdk.v2.model.JourneyView;
+import com.mypurecloud.sdk.v2.model.JourneyViewChart;
+import com.mypurecloud.sdk.v2.model.JourneyViewChartResult;
 import com.mypurecloud.sdk.v2.model.JourneyViewJob;
 import com.mypurecloud.sdk.v2.model.JourneyViewJobListing;
 import com.mypurecloud.sdk.v2.model.JourneyViewListing;
@@ -101,8 +103,11 @@ import com.mypurecloud.sdk.v2.api.request.GetJourneySessionEventsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneySessionOutcomescoresRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewVersionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyViewVersionChartRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyViewVersionChartVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewVersionJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewVersionJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyViewVersionJobResultsChartRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewVersionJobsLatestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsEventdefinitionRequest;
@@ -113,6 +118,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontargetRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneySegmentRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchJourneyViewVersionJobRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsJourneysAggregatesJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsJourneysAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyActionmapsRequest;
@@ -130,6 +136,7 @@ import com.mypurecloud.sdk.v2.api.request.PostJourneyViewVersionJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyViewVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyViewsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyViewsEncodingsValidateRequest;
+import com.mypurecloud.sdk.v2.api.request.PutJourneyViewVersionRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -2483,6 +2490,156 @@ public class JourneyApiAsync {
   }
 
   /**
+   * Get a Chart by ID
+   * returns the latest version
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<JourneyViewChart> getJourneyViewVersionChartAsync(GetJourneyViewVersionChartRequest request, final AsyncApiCallback<JourneyViewChart> callback) {
+    try {
+      final SettableFuture<JourneyViewChart> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<JourneyViewChart>() {}, new AsyncApiCallback<ApiResponse<JourneyViewChart>>() {
+        @Override
+        public void onCompleted(ApiResponse<JourneyViewChart> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a Chart by ID
+   * returns the latest version
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<JourneyViewChart>> getJourneyViewVersionChartAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<JourneyViewChart>> callback) {
+    try {
+      final SettableFuture<ApiResponse<JourneyViewChart>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<JourneyViewChart>() {}, new AsyncApiCallback<ApiResponse<JourneyViewChart>>() {
+        @Override
+        public void onCompleted(ApiResponse<JourneyViewChart> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JourneyViewChart> response = (ApiResponse<JourneyViewChart>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JourneyViewChart> response = (ApiResponse<JourneyViewChart>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a Chart by ID and version
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<JourneyViewChart> getJourneyViewVersionChartVersionAsync(GetJourneyViewVersionChartVersionRequest request, final AsyncApiCallback<JourneyViewChart> callback) {
+    try {
+      final SettableFuture<JourneyViewChart> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<JourneyViewChart>() {}, new AsyncApiCallback<ApiResponse<JourneyViewChart>>() {
+        @Override
+        public void onCompleted(ApiResponse<JourneyViewChart> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a Chart by ID and version
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<JourneyViewChart>> getJourneyViewVersionChartVersionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<JourneyViewChart>> callback) {
+    try {
+      final SettableFuture<ApiResponse<JourneyViewChart>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<JourneyViewChart>() {}, new AsyncApiCallback<ApiResponse<JourneyViewChart>>() {
+        @Override
+        public void onCompleted(ApiResponse<JourneyViewChart> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JourneyViewChart> response = (ApiResponse<JourneyViewChart>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JourneyViewChart> response = (ApiResponse<JourneyViewChart>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get the job for a journey view version.
    * used for long descriptions
    * @param request the request object
@@ -2621,6 +2778,81 @@ public class JourneyApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<JourneyViewResult> response = (ApiResponse<JourneyViewResult>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the chart result associated with a journey view job.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<JourneyViewChartResult> getJourneyViewVersionJobResultsChartAsync(GetJourneyViewVersionJobResultsChartRequest request, final AsyncApiCallback<JourneyViewChartResult> callback) {
+    try {
+      final SettableFuture<JourneyViewChartResult> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<JourneyViewChartResult>() {}, new AsyncApiCallback<ApiResponse<JourneyViewChartResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<JourneyViewChartResult> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the chart result associated with a journey view job.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<JourneyViewChartResult>> getJourneyViewVersionJobResultsChartAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<JourneyViewChartResult>> callback) {
+    try {
+      final SettableFuture<ApiResponse<JourneyViewChartResult>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<JourneyViewChartResult>() {}, new AsyncApiCallback<ApiResponse<JourneyViewChartResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<JourneyViewChartResult> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JourneyViewChartResult> response = (ApiResponse<JourneyViewChartResult>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JourneyViewChartResult> response = (ApiResponse<JourneyViewChartResult>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3375,6 +3607,81 @@ public class JourneyApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<JourneySegment> response = (ApiResponse<JourneySegment>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the job for a journey view version. Only the status can be changed and only to Cancelled
+   * used for long descriptions
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<JourneyViewJob> patchJourneyViewVersionJobAsync(PatchJourneyViewVersionJobRequest request, final AsyncApiCallback<JourneyViewJob> callback) {
+    try {
+      final SettableFuture<JourneyViewJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<JourneyViewJob>() {}, new AsyncApiCallback<ApiResponse<JourneyViewJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<JourneyViewJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the job for a journey view version. Only the status can be changed and only to Cancelled
+   * used for long descriptions
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<JourneyViewJob>> patchJourneyViewVersionJobAsync(ApiRequest<JourneyViewJob> request, final AsyncApiCallback<ApiResponse<JourneyViewJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<JourneyViewJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<JourneyViewJob>() {}, new AsyncApiCallback<ApiResponse<JourneyViewJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<JourneyViewJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JourneyViewJob> response = (ApiResponse<JourneyViewJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JourneyViewJob> response = (ApiResponse<JourneyViewJob>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -4656,6 +4963,81 @@ public class JourneyApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<EntityListing> response = (ApiResponse<EntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a Journey View by ID and version
+   * does not create a new version
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<JourneyView> putJourneyViewVersionAsync(PutJourneyViewVersionRequest request, final AsyncApiCallback<JourneyView> callback) {
+    try {
+      final SettableFuture<JourneyView> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<JourneyView>() {}, new AsyncApiCallback<ApiResponse<JourneyView>>() {
+        @Override
+        public void onCompleted(ApiResponse<JourneyView> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a Journey View by ID and version
+   * does not create a new version
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<JourneyView>> putJourneyViewVersionAsync(ApiRequest<JourneyView> request, final AsyncApiCallback<ApiResponse<JourneyView>> callback) {
+    try {
+      final SettableFuture<ApiResponse<JourneyView>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<JourneyView>() {}, new AsyncApiCallback<ApiResponse<JourneyView>>() {
+        @Override
+        public void onCompleted(ApiResponse<JourneyView> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JourneyView> response = (ApiResponse<JourneyView>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JourneyView> response = (ApiResponse<JourneyView>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

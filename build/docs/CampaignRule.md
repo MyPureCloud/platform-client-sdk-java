@@ -15,9 +15,20 @@
 | **campaignRuleActions** | [**List&lt;CampaignRuleAction&gt;**](CampaignRuleAction) | The list of actions that are executed if the conditions are satisfied. |  |
 | **matchAnyConditions** | **Boolean** |  |  [optional] |
 | **enabled** | **Boolean** | Whether or not this CampaignRule is currently enabled. Required on updates. |  [optional] |
+| **campaignRuleProcessing** | [**CampaignRuleProcessingEnum**](#Enum--CampaignRuleProcessingEnum) | CampaignRule processing algorithm |  [optional] |
+| **conditionGroups** | [**List&lt;CampaignRuleConditionGroup&gt;**](CampaignRuleConditionGroup) | List of condition groups that are evaluated, used only with campaignRuleProcessing=\"v2\" |  [optional] |
+| **executionSettings** | [**CampaignRuleExecutionSettings**](CampaignRuleExecutionSettings) | CampaignRule execution settings |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
+## Enum: CampaignRuleProcessingEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| V2 | &quot;v2&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:210.0.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_

@@ -49,6 +49,8 @@ import com.mypurecloud.sdk.v2.model.JourneyEventDefinitionListing;
 import com.mypurecloud.sdk.v2.model.JourneySegment;
 import com.mypurecloud.sdk.v2.model.JourneySegmentRequest;
 import com.mypurecloud.sdk.v2.model.JourneyView;
+import com.mypurecloud.sdk.v2.model.JourneyViewChart;
+import com.mypurecloud.sdk.v2.model.JourneyViewChartResult;
 import com.mypurecloud.sdk.v2.model.JourneyViewJob;
 import com.mypurecloud.sdk.v2.model.JourneyViewJobListing;
 import com.mypurecloud.sdk.v2.model.JourneyViewListing;

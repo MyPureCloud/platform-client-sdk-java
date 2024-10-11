@@ -612,7 +612,7 @@ public class WebDeploymentsApi {
   /**
    * View configuration drafts
    * 
-   * @param showOnlyPublished Get only configuration drafts with published versions (optional, default to false)
+   * @param showOnlyPublished Filter by published status. (optional)
    * @return WebDeploymentConfigurationVersionEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -624,7 +624,7 @@ public class WebDeploymentsApi {
   /**
    * View configuration drafts
    * 
-   * @param showOnlyPublished Get only configuration drafts with published versions (optional, default to false)
+   * @param showOnlyPublished Filter by published status. (optional)
    * @return WebDeploymentConfigurationVersionEntityListing
    * @throws IOException if the request fails to be processed
    */

@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.DivisionEntityRef;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -25,7 +26,7 @@ import java.io.Serializable;
 public class ConversationDivisionMembership  implements Serializable {
   
   private DomainEntityRef division = null;
-  private List<DomainEntityRef> entities = new ArrayList<DomainEntityRef>();
+  private List<DivisionEntityRef> entities = new ArrayList<DivisionEntityRef>();
 
   
   /**
@@ -49,17 +50,17 @@ public class ConversationDivisionMembership  implements Serializable {
   /**
    * The entities on the conversation within the division. These are the users, queues, work flows, etc. that can be on conversations and and be assigned to different divisions.
    **/
-  public ConversationDivisionMembership entities(List<DomainEntityRef> entities) {
+  public ConversationDivisionMembership entities(List<DivisionEntityRef> entities) {
     this.entities = entities;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The entities on the conversation within the division. These are the users, queues, work flows, etc. that can be on conversations and and be assigned to different divisions.")
   @JsonProperty("entities")
-  public List<DomainEntityRef> getEntities() {
+  public List<DivisionEntityRef> getEntities() {
     return entities;
   }
-  public void setEntities(List<DomainEntityRef> entities) {
+  public void setEntities(List<DivisionEntityRef> entities) {
     this.entities = entities;
   }
 

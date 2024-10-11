@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationProperties;
 import com.mypurecloud.sdk.v2.model.NumericRange;
+import com.mypurecloud.sdk.v2.model.SocialKeyword;
 import com.mypurecloud.sdk.v2.model.TranscriptTopics;
 import com.mypurecloud.sdk.v2.model.Transcripts;
 import io.swagger.annotations.ApiModel;
@@ -50,8 +51,8 @@ public class ViewFilter  implements Serializable {
     CHAT("chat"),
     COBROWSE("cobrowse"),
     EMAIL("email"),
-    MESSAGE("message"),
     INTERNALMESSAGE("internalmessage"),
+    MESSAGE("message"),
     SCREENSHARE("screenshare"),
     UNKNOWN("unknown"),
     VIDEO("video"),
@@ -1790,6 +1791,207 @@ public class ViewFilter  implements Serializable {
   }
   private DashboardAccessFilterEnum dashboardAccessFilter = null;
   private List<NumericRange> transcriptDurationMilliseconds = new ArrayList<NumericRange>();
+  private List<String> socialCountries = new ArrayList<String>();
+  private List<String> socialLanguages = new ArrayList<String>();
+
+  private static class SocialChannelsEnumDeserializer extends StdDeserializer<SocialChannelsEnum> {
+    public SocialChannelsEnumDeserializer() {
+      super(SocialChannelsEnumDeserializer.class);
+    }
+
+    @Override
+    public SocialChannelsEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SocialChannelsEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets socialChannels
+   */
+ @JsonDeserialize(using = SocialChannelsEnumDeserializer.class)
+  public enum SocialChannelsEnum {
+    TWITTER("Twitter"),
+    FACEBOOK("Facebook"),
+    INSTAGRAM("Instagram"),
+    OPEN("Open");
+
+    private String value;
+
+    SocialChannelsEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SocialChannelsEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SocialChannelsEnum value : SocialChannelsEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SocialChannelsEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<SocialChannelsEnum> socialChannels = new ArrayList<SocialChannelsEnum>();
+
+  private static class SocialSentimentCategoryEnumDeserializer extends StdDeserializer<SocialSentimentCategoryEnum> {
+    public SocialSentimentCategoryEnumDeserializer() {
+      super(SocialSentimentCategoryEnumDeserializer.class);
+    }
+
+    @Override
+    public SocialSentimentCategoryEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SocialSentimentCategoryEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets socialSentimentCategory
+   */
+ @JsonDeserialize(using = SocialSentimentCategoryEnumDeserializer.class)
+  public enum SocialSentimentCategoryEnum {
+    POSITIVE("Positive"),
+    NEGATIVE("Negative"),
+    NEUTRAL("Neutral"),
+    UNKNOWN("Unknown");
+
+    private String value;
+
+    SocialSentimentCategoryEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SocialSentimentCategoryEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SocialSentimentCategoryEnum value : SocialSentimentCategoryEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SocialSentimentCategoryEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<SocialSentimentCategoryEnum> socialSentimentCategory = new ArrayList<SocialSentimentCategoryEnum>();
+  private List<String> socialTopicIds = new ArrayList<String>();
+  private List<String> socialIngestionRuleIds = new ArrayList<String>();
+  private Boolean socialConversationCreated = null;
+
+  private static class SocialContentTypeEnumDeserializer extends StdDeserializer<SocialContentTypeEnum> {
+    public SocialContentTypeEnumDeserializer() {
+      super(SocialContentTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public SocialContentTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SocialContentTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets socialContentType
+   */
+ @JsonDeserialize(using = SocialContentTypeEnumDeserializer.class)
+  public enum SocialContentTypeEnum {
+    TEXT("Text"),
+    IMAGE("Image"),
+    VIDEO("Video");
+
+    private String value;
+
+    SocialContentTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SocialContentTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SocialContentTypeEnum value : SocialContentTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SocialContentTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<SocialContentTypeEnum> socialContentType = new ArrayList<SocialContentTypeEnum>();
+  private List<SocialKeyword> socialKeywords = new ArrayList<SocialKeyword>();
+  private Boolean socialPostEscalated = null;
+
+  private static class SocialClassificationsEnumDeserializer extends StdDeserializer<SocialClassificationsEnum> {
+    public SocialClassificationsEnumDeserializer() {
+      super(SocialClassificationsEnumDeserializer.class);
+    }
+
+    @Override
+    public SocialClassificationsEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SocialClassificationsEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets socialClassifications
+   */
+ @JsonDeserialize(using = SocialClassificationsEnumDeserializer.class)
+  public enum SocialClassificationsEnum {
+    PUBLIC("Public"),
+    PRIVATE("Private");
+
+    private String value;
+
+    SocialClassificationsEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SocialClassificationsEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SocialClassificationsEnum value : SocialClassificationsEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SocialClassificationsEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<SocialClassificationsEnum> socialClassifications = new ArrayList<SocialClassificationsEnum>();
+  private List<String> filterUsersByManagerIds = new ArrayList<String>();
 
   
   /**
@@ -5338,6 +5540,222 @@ public class ViewFilter  implements Serializable {
   }
 
 
+  /**
+   * List of countries for social filtering
+   **/
+  public ViewFilter socialCountries(List<String> socialCountries) {
+    this.socialCountries = socialCountries;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of countries for social filtering")
+  @JsonProperty("socialCountries")
+  public List<String> getSocialCountries() {
+    return socialCountries;
+  }
+  public void setSocialCountries(List<String> socialCountries) {
+    this.socialCountries = socialCountries;
+  }
+
+
+  /**
+   * List of languages for social filtering
+   **/
+  public ViewFilter socialLanguages(List<String> socialLanguages) {
+    this.socialLanguages = socialLanguages;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of languages for social filtering")
+  @JsonProperty("socialLanguages")
+  public List<String> getSocialLanguages() {
+    return socialLanguages;
+  }
+  public void setSocialLanguages(List<String> socialLanguages) {
+    this.socialLanguages = socialLanguages;
+  }
+
+
+  /**
+   * List of channels for social filtering
+   **/
+  public ViewFilter socialChannels(List<SocialChannelsEnum> socialChannels) {
+    this.socialChannels = socialChannels;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of channels for social filtering")
+  @JsonProperty("socialChannels")
+  public List<SocialChannelsEnum> getSocialChannels() {
+    return socialChannels;
+  }
+  public void setSocialChannels(List<SocialChannelsEnum> socialChannels) {
+    this.socialChannels = socialChannels;
+  }
+
+
+  /**
+   * The sentiment of the social post
+   **/
+  public ViewFilter socialSentimentCategory(List<SocialSentimentCategoryEnum> socialSentimentCategory) {
+    this.socialSentimentCategory = socialSentimentCategory;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The sentiment of the social post")
+  @JsonProperty("socialSentimentCategory")
+  public List<SocialSentimentCategoryEnum> getSocialSentimentCategory() {
+    return socialSentimentCategory;
+  }
+  public void setSocialSentimentCategory(List<SocialSentimentCategoryEnum> socialSentimentCategory) {
+    this.socialSentimentCategory = socialSentimentCategory;
+  }
+
+
+  /**
+   * The list of topicIds for social filtering
+   **/
+  public ViewFilter socialTopicIds(List<String> socialTopicIds) {
+    this.socialTopicIds = socialTopicIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of topicIds for social filtering")
+  @JsonProperty("socialTopicIds")
+  public List<String> getSocialTopicIds() {
+    return socialTopicIds;
+  }
+  public void setSocialTopicIds(List<String> socialTopicIds) {
+    this.socialTopicIds = socialTopicIds;
+  }
+
+
+  /**
+   * The list of ingestion ruleIds for social filtering
+   **/
+  public ViewFilter socialIngestionRuleIds(List<String> socialIngestionRuleIds) {
+    this.socialIngestionRuleIds = socialIngestionRuleIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of ingestion ruleIds for social filtering")
+  @JsonProperty("socialIngestionRuleIds")
+  public List<String> getSocialIngestionRuleIds() {
+    return socialIngestionRuleIds;
+  }
+  public void setSocialIngestionRuleIds(List<String> socialIngestionRuleIds) {
+    this.socialIngestionRuleIds = socialIngestionRuleIds;
+  }
+
+
+  /**
+   * Filter to indicate if the post has created a conversation
+   **/
+  public ViewFilter socialConversationCreated(Boolean socialConversationCreated) {
+    this.socialConversationCreated = socialConversationCreated;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Filter to indicate if the post has created a conversation")
+  @JsonProperty("socialConversationCreated")
+  public Boolean getSocialConversationCreated() {
+    return socialConversationCreated;
+  }
+  public void setSocialConversationCreated(Boolean socialConversationCreated) {
+    this.socialConversationCreated = socialConversationCreated;
+  }
+
+
+  /**
+   * The list of content Type for social filtering
+   **/
+  public ViewFilter socialContentType(List<SocialContentTypeEnum> socialContentType) {
+    this.socialContentType = socialContentType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of content Type for social filtering")
+  @JsonProperty("socialContentType")
+  public List<SocialContentTypeEnum> getSocialContentType() {
+    return socialContentType;
+  }
+  public void setSocialContentType(List<SocialContentTypeEnum> socialContentType) {
+    this.socialContentType = socialContentType;
+  }
+
+
+  /**
+   * The list of keywords for social filtering
+   **/
+  public ViewFilter socialKeywords(List<SocialKeyword> socialKeywords) {
+    this.socialKeywords = socialKeywords;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of keywords for social filtering")
+  @JsonProperty("socialKeywords")
+  public List<SocialKeyword> getSocialKeywords() {
+    return socialKeywords;
+  }
+  public void setSocialKeywords(List<SocialKeyword> socialKeywords) {
+    this.socialKeywords = socialKeywords;
+  }
+
+
+  /**
+   * Filter to indicate if the post is escalated
+   **/
+  public ViewFilter socialPostEscalated(Boolean socialPostEscalated) {
+    this.socialPostEscalated = socialPostEscalated;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Filter to indicate if the post is escalated")
+  @JsonProperty("socialPostEscalated")
+  public Boolean getSocialPostEscalated() {
+    return socialPostEscalated;
+  }
+  public void setSocialPostEscalated(Boolean socialPostEscalated) {
+    this.socialPostEscalated = socialPostEscalated;
+  }
+
+
+  /**
+   * Indicates if a social message was public or private
+   **/
+  public ViewFilter socialClassifications(List<SocialClassificationsEnum> socialClassifications) {
+    this.socialClassifications = socialClassifications;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates if a social message was public or private")
+  @JsonProperty("socialClassifications")
+  public List<SocialClassificationsEnum> getSocialClassifications() {
+    return socialClassifications;
+  }
+  public void setSocialClassifications(List<SocialClassificationsEnum> socialClassifications) {
+    this.socialClassifications = socialClassifications;
+  }
+
+
+  /**
+   * The manager ids used to fetch associated users for the view
+   **/
+  public ViewFilter filterUsersByManagerIds(List<String> filterUsersByManagerIds) {
+    this.filterUsersByManagerIds = filterUsersByManagerIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The manager ids used to fetch associated users for the view")
+  @JsonProperty("filterUsersByManagerIds")
+  public List<String> getFilterUsersByManagerIds() {
+    return filterUsersByManagerIds;
+  }
+  public void setFilterUsersByManagerIds(List<String> filterUsersByManagerIds) {
+    this.filterUsersByManagerIds = filterUsersByManagerIds;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -5544,12 +5962,24 @@ public class ViewFilter  implements Serializable {
             Objects.equals(this.screenMonitorUserIds, viewFilter.screenMonitorUserIds) &&
             Objects.equals(this.dashboardType, viewFilter.dashboardType) &&
             Objects.equals(this.dashboardAccessFilter, viewFilter.dashboardAccessFilter) &&
-            Objects.equals(this.transcriptDurationMilliseconds, viewFilter.transcriptDurationMilliseconds);
+            Objects.equals(this.transcriptDurationMilliseconds, viewFilter.transcriptDurationMilliseconds) &&
+            Objects.equals(this.socialCountries, viewFilter.socialCountries) &&
+            Objects.equals(this.socialLanguages, viewFilter.socialLanguages) &&
+            Objects.equals(this.socialChannels, viewFilter.socialChannels) &&
+            Objects.equals(this.socialSentimentCategory, viewFilter.socialSentimentCategory) &&
+            Objects.equals(this.socialTopicIds, viewFilter.socialTopicIds) &&
+            Objects.equals(this.socialIngestionRuleIds, viewFilter.socialIngestionRuleIds) &&
+            Objects.equals(this.socialConversationCreated, viewFilter.socialConversationCreated) &&
+            Objects.equals(this.socialContentType, viewFilter.socialContentType) &&
+            Objects.equals(this.socialKeywords, viewFilter.socialKeywords) &&
+            Objects.equals(this.socialPostEscalated, viewFilter.socialPostEscalated) &&
+            Objects.equals(this.socialClassifications, viewFilter.socialClassifications) &&
+            Objects.equals(this.filterUsersByManagerIds, viewFilter.filterUsersByManagerIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, managementUnitIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds, transcriptTopics, journeyFrequencyCapReasons, journeyBlockingActionMapIds, journeyActionTargetIds, journeyBlockingScheduleGroupIds, journeyBlockingEmergencyScheduleGroupIds, journeyUrlEqualConditions, journeyUrlNotEqualConditions, journeyUrlStartsWithConditions, journeyUrlEndsWithConditions, journeyUrlContainsAnyConditions, journeyUrlNotContainsAnyConditions, journeyUrlContainsAllConditions, journeyUrlNotContainsAllConditions, flowMilestoneIds, isAssessmentPassed, conversationInitiators, hasCustomerParticipated, isAcdInteraction, hasFax, dataActionIds, actionCategoryName, integrationIds, responseStatuses, availableDashboard, favouriteDashboard, myDashboard, stationErrors, canonicalContactIds, alertRuleIds, evaluationFormContextIds, evaluationStatuses, workbinIds, worktypeIds, workitemIds, workitemAssigneeIds, workitemStatuses, isAnalyzedForSensitiveData, hasSensitiveData, hasPciData, hasPiiData, subPath, userState, isClearedByCustomer, evaluationAssigneeIds, evaluationAssigned, assistantIds, knowledgeBaseIds, isParked, agentEmpathyScore, surveyTypes, surveyResponseStatuses, botFlowTypes, agentTalkDurationMilliseconds, customerTalkDurationMilliseconds, overtalkDurationMilliseconds, silenceDurationMilliseconds, acdDurationMilliseconds, ivrDurationMilliseconds, otherDurationMilliseconds, agentTalkPercentage, customerTalkPercentage, overtalkPercentage, silencePercentage, acdPercentage, ivrPercentage, otherPercentage, overtalkInstances, isScreenRecorded, screenMonitorUserIds, dashboardType, dashboardAccessFilter, transcriptDurationMilliseconds);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, managementUnitIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds, transcriptTopics, journeyFrequencyCapReasons, journeyBlockingActionMapIds, journeyActionTargetIds, journeyBlockingScheduleGroupIds, journeyBlockingEmergencyScheduleGroupIds, journeyUrlEqualConditions, journeyUrlNotEqualConditions, journeyUrlStartsWithConditions, journeyUrlEndsWithConditions, journeyUrlContainsAnyConditions, journeyUrlNotContainsAnyConditions, journeyUrlContainsAllConditions, journeyUrlNotContainsAllConditions, flowMilestoneIds, isAssessmentPassed, conversationInitiators, hasCustomerParticipated, isAcdInteraction, hasFax, dataActionIds, actionCategoryName, integrationIds, responseStatuses, availableDashboard, favouriteDashboard, myDashboard, stationErrors, canonicalContactIds, alertRuleIds, evaluationFormContextIds, evaluationStatuses, workbinIds, worktypeIds, workitemIds, workitemAssigneeIds, workitemStatuses, isAnalyzedForSensitiveData, hasSensitiveData, hasPciData, hasPiiData, subPath, userState, isClearedByCustomer, evaluationAssigneeIds, evaluationAssigned, assistantIds, knowledgeBaseIds, isParked, agentEmpathyScore, surveyTypes, surveyResponseStatuses, botFlowTypes, agentTalkDurationMilliseconds, customerTalkDurationMilliseconds, overtalkDurationMilliseconds, silenceDurationMilliseconds, acdDurationMilliseconds, ivrDurationMilliseconds, otherDurationMilliseconds, agentTalkPercentage, customerTalkPercentage, overtalkPercentage, silencePercentage, acdPercentage, ivrPercentage, otherPercentage, overtalkInstances, isScreenRecorded, screenMonitorUserIds, dashboardType, dashboardAccessFilter, transcriptDurationMilliseconds, socialCountries, socialLanguages, socialChannels, socialSentimentCategory, socialTopicIds, socialIngestionRuleIds, socialConversationCreated, socialContentType, socialKeywords, socialPostEscalated, socialClassifications, filterUsersByManagerIds);
   }
 
   @Override
@@ -5754,6 +6184,18 @@ public class ViewFilter  implements Serializable {
     sb.append("    dashboardType: ").append(toIndentedString(dashboardType)).append("\n");
     sb.append("    dashboardAccessFilter: ").append(toIndentedString(dashboardAccessFilter)).append("\n");
     sb.append("    transcriptDurationMilliseconds: ").append(toIndentedString(transcriptDurationMilliseconds)).append("\n");
+    sb.append("    socialCountries: ").append(toIndentedString(socialCountries)).append("\n");
+    sb.append("    socialLanguages: ").append(toIndentedString(socialLanguages)).append("\n");
+    sb.append("    socialChannels: ").append(toIndentedString(socialChannels)).append("\n");
+    sb.append("    socialSentimentCategory: ").append(toIndentedString(socialSentimentCategory)).append("\n");
+    sb.append("    socialTopicIds: ").append(toIndentedString(socialTopicIds)).append("\n");
+    sb.append("    socialIngestionRuleIds: ").append(toIndentedString(socialIngestionRuleIds)).append("\n");
+    sb.append("    socialConversationCreated: ").append(toIndentedString(socialConversationCreated)).append("\n");
+    sb.append("    socialContentType: ").append(toIndentedString(socialContentType)).append("\n");
+    sb.append("    socialKeywords: ").append(toIndentedString(socialKeywords)).append("\n");
+    sb.append("    socialPostEscalated: ").append(toIndentedString(socialPostEscalated)).append("\n");
+    sb.append("    socialClassifications: ").append(toIndentedString(socialClassifications)).append("\n");
+    sb.append("    filterUsersByManagerIds: ").append(toIndentedString(filterUsersByManagerIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

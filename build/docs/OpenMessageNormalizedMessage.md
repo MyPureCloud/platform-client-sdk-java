@@ -11,6 +11,7 @@
 | **text** | **String** | Message text. |  [optional] |
 | **content** | [**List&lt;OpenMessageContent&gt;**](OpenMessageContent) | List of content elements. |  [optional] |
 | **metadata** | **Map&lt;String, String&gt;** | Additional metadata about this message. |  [optional] |
+| **conversationId** | **String** | The conversationId context for the message |  [optional] |
 
 
 ## Enum: TypeEnum
@@ -23,4 +24,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:210.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_

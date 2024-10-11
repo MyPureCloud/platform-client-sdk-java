@@ -185,6 +185,7 @@ public class Group  implements Serializable {
   private VisibilityEnum visibility = null;
   private Boolean rolesEnabled = null;
   private Boolean includeOwners = null;
+  private Boolean callsEnabled = null;
   private List<User> owners = new ArrayList<User>();
   private String selfUri = null;
 
@@ -384,6 +385,24 @@ public class Group  implements Serializable {
 
 
   /**
+   * Allow calls to be placed to this group.
+   **/
+  public Group callsEnabled(Boolean callsEnabled) {
+    this.callsEnabled = callsEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Allow calls to be placed to this group.")
+  @JsonProperty("callsEnabled")
+  public Boolean getCallsEnabled() {
+    return callsEnabled;
+  }
+  public void setCallsEnabled(Boolean callsEnabled) {
+    this.callsEnabled = callsEnabled;
+  }
+
+
+  /**
    * Owners of the group
    **/
   public Group owners(List<User> owners) {
@@ -432,13 +451,14 @@ public class Group  implements Serializable {
             Objects.equals(this.visibility, group.visibility) &&
             Objects.equals(this.rolesEnabled, group.rolesEnabled) &&
             Objects.equals(this.includeOwners, group.includeOwners) &&
+            Objects.equals(this.callsEnabled, group.callsEnabled) &&
             Objects.equals(this.owners, group.owners) &&
             Objects.equals(this.selfUri, group.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, dateModified, memberCount, state, version, type, images, addresses, rulesVisible, visibility, rolesEnabled, includeOwners, owners, selfUri);
+    return Objects.hash(id, name, description, dateModified, memberCount, state, version, type, images, addresses, rulesVisible, visibility, rolesEnabled, includeOwners, callsEnabled, owners, selfUri);
   }
 
   @Override
@@ -460,6 +480,7 @@ public class Group  implements Serializable {
     sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
     sb.append("    rolesEnabled: ").append(toIndentedString(rolesEnabled)).append("\n");
     sb.append("    includeOwners: ").append(toIndentedString(includeOwners)).append("\n");
+    sb.append("    callsEnabled: ").append(toIndentedString(callsEnabled)).append("\n");
     sb.append("    owners: ").append(toIndentedString(owners)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

@@ -11,9 +11,12 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CampaignRuleAction;
 import com.mypurecloud.sdk.v2.model.CampaignRuleCondition;
+import com.mypurecloud.sdk.v2.model.CampaignRuleConditionGroup;
 import com.mypurecloud.sdk.v2.model.CampaignRuleEntities;
+import com.mypurecloud.sdk.v2.model.CampaignRuleExecutionSettings;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -37,6 +40,55 @@ public class CampaignRule  implements Serializable {
   private List<CampaignRuleAction> campaignRuleActions = new ArrayList<CampaignRuleAction>();
   private Boolean matchAnyConditions = null;
   private Boolean enabled = null;
+
+  private static class CampaignRuleProcessingEnumDeserializer extends StdDeserializer<CampaignRuleProcessingEnum> {
+    public CampaignRuleProcessingEnumDeserializer() {
+      super(CampaignRuleProcessingEnumDeserializer.class);
+    }
+
+    @Override
+    public CampaignRuleProcessingEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return CampaignRuleProcessingEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * CampaignRule processing algorithm
+   */
+ @JsonDeserialize(using = CampaignRuleProcessingEnumDeserializer.class)
+  public enum CampaignRuleProcessingEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    V2("v2");
+
+    private String value;
+
+    CampaignRuleProcessingEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static CampaignRuleProcessingEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (CampaignRuleProcessingEnum value : CampaignRuleProcessingEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return CampaignRuleProcessingEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private CampaignRuleProcessingEnum campaignRuleProcessing = null;
+  private List<CampaignRuleConditionGroup> conditionGroups = new ArrayList<CampaignRuleConditionGroup>();
+  private CampaignRuleExecutionSettings executionSettings = null;
   private String selfUri = null;
 
   
@@ -186,6 +238,60 @@ public class CampaignRule  implements Serializable {
   }
 
 
+  /**
+   * CampaignRule processing algorithm
+   **/
+  public CampaignRule campaignRuleProcessing(CampaignRuleProcessingEnum campaignRuleProcessing) {
+    this.campaignRuleProcessing = campaignRuleProcessing;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "CampaignRule processing algorithm")
+  @JsonProperty("campaignRuleProcessing")
+  public CampaignRuleProcessingEnum getCampaignRuleProcessing() {
+    return campaignRuleProcessing;
+  }
+  public void setCampaignRuleProcessing(CampaignRuleProcessingEnum campaignRuleProcessing) {
+    this.campaignRuleProcessing = campaignRuleProcessing;
+  }
+
+
+  /**
+   * List of condition groups that are evaluated, used only with campaignRuleProcessing=\"v2\"
+   **/
+  public CampaignRule conditionGroups(List<CampaignRuleConditionGroup> conditionGroups) {
+    this.conditionGroups = conditionGroups;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of condition groups that are evaluated, used only with campaignRuleProcessing=\"v2\"")
+  @JsonProperty("conditionGroups")
+  public List<CampaignRuleConditionGroup> getConditionGroups() {
+    return conditionGroups;
+  }
+  public void setConditionGroups(List<CampaignRuleConditionGroup> conditionGroups) {
+    this.conditionGroups = conditionGroups;
+  }
+
+
+  /**
+   * CampaignRule execution settings
+   **/
+  public CampaignRule executionSettings(CampaignRuleExecutionSettings executionSettings) {
+    this.executionSettings = executionSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "CampaignRule execution settings")
+  @JsonProperty("executionSettings")
+  public CampaignRuleExecutionSettings getExecutionSettings() {
+    return executionSettings;
+  }
+  public void setExecutionSettings(CampaignRuleExecutionSettings executionSettings) {
+    this.executionSettings = executionSettings;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -213,12 +319,15 @@ public class CampaignRule  implements Serializable {
             Objects.equals(this.campaignRuleActions, campaignRule.campaignRuleActions) &&
             Objects.equals(this.matchAnyConditions, campaignRule.matchAnyConditions) &&
             Objects.equals(this.enabled, campaignRule.enabled) &&
+            Objects.equals(this.campaignRuleProcessing, campaignRule.campaignRuleProcessing) &&
+            Objects.equals(this.conditionGroups, campaignRule.conditionGroups) &&
+            Objects.equals(this.executionSettings, campaignRule.executionSettings) &&
             Objects.equals(this.selfUri, campaignRule.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, campaignRuleEntities, campaignRuleConditions, campaignRuleActions, matchAnyConditions, enabled, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, campaignRuleEntities, campaignRuleConditions, campaignRuleActions, matchAnyConditions, enabled, campaignRuleProcessing, conditionGroups, executionSettings, selfUri);
   }
 
   @Override
@@ -236,6 +345,9 @@ public class CampaignRule  implements Serializable {
     sb.append("    campaignRuleActions: ").append(toIndentedString(campaignRuleActions)).append("\n");
     sb.append("    matchAnyConditions: ").append(toIndentedString(matchAnyConditions)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    sb.append("    campaignRuleProcessing: ").append(toIndentedString(campaignRuleProcessing)).append("\n");
+    sb.append("    conditionGroups: ").append(toIndentedString(conditionGroups)).append("\n");
+    sb.append("    executionSettings: ").append(toIndentedString(executionSettings)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

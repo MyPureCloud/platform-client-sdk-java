@@ -112,6 +112,7 @@ public class GetUsersMeRequest {
 		AUTHORIZATION_UNUSEDROLES("authorization.unusedRoles"),
 		TEAM("team"),
 		WORKPLANBIDRANKS("workPlanBidRanks"),
+		EXTERNALCONTACTSSETTINGS("externalContactsSettings"),
 		PROFILESKILLS("profileSkills"),
 		CERTIFICATIONS("certifications"),
 		LOCATIONS("locations"),

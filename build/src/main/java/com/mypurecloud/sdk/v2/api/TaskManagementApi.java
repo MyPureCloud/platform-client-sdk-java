@@ -25,6 +25,14 @@ import com.mypurecloud.sdk.v2.model.Workitem;
 import com.mypurecloud.sdk.v2.model.WorkitemChangeListing;
 import com.mypurecloud.sdk.v2.model.WorkitemCreate;
 import com.mypurecloud.sdk.v2.model.WorkitemManualAssign;
+import com.mypurecloud.sdk.v2.model.WorkitemOnAttributeChangeRule;
+import com.mypurecloud.sdk.v2.model.WorkitemOnAttributeChangeRuleCreate;
+import com.mypurecloud.sdk.v2.model.WorkitemOnAttributeChangeRuleListing;
+import com.mypurecloud.sdk.v2.model.WorkitemOnAttributeChangeRuleUpdate;
+import com.mypurecloud.sdk.v2.model.WorkitemOnCreateRule;
+import com.mypurecloud.sdk.v2.model.WorkitemOnCreateRuleCreate;
+import com.mypurecloud.sdk.v2.model.WorkitemOnCreateRuleListing;
+import com.mypurecloud.sdk.v2.model.WorkitemOnCreateRuleUpdate;
 import com.mypurecloud.sdk.v2.model.WorkitemPagedEntityListing;
 import com.mypurecloud.sdk.v2.model.WorkitemPostQueryEntityListing;
 import com.mypurecloud.sdk.v2.model.WorkitemQueryJobCreate;
@@ -55,6 +63,8 @@ import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorkbinRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorkitemRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorkitemsSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorktypeRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorktypeFlowsOnattributechangeRuleRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorktypeFlowsOncreateRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTaskmanagementWorktypeStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkbinRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkbinHistoryRequest;
@@ -73,6 +83,10 @@ import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemaVersio
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemaVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorkitemsSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeFlowsOnattributechangeRuleRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeFlowsOnattributechangeRulesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeFlowsOncreateRuleRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeFlowsOncreateRulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeHistoryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTaskmanagementWorktypeStatusesRequest;
@@ -84,6 +98,8 @@ import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorkitemAssignmentR
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorkitemUserWrapupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorkitemUsersMeWrapupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorktypeRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorktypeFlowsOnattributechangeRuleRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorktypeFlowsOncreateRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTaskmanagementWorktypeStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkbinsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkbinsQueryRequest;
@@ -94,6 +110,8 @@ import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsQueryJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorkitemsSchemasRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorktypeFlowsOnattributechangeRulesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorktypeFlowsOncreateRulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorktypeStatusesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorktypesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTaskmanagementWorktypesQueryRequest;
@@ -395,6 +413,164 @@ public class TaskManagementApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteTaskmanagementWorktype(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete a rule
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param ruleId ruleId (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteTaskmanagementWorktypeFlowsOnattributechangeRule(String worktypeId, String ruleId) throws IOException, ApiException {
+     deleteTaskmanagementWorktypeFlowsOnattributechangeRule(createDeleteTaskmanagementWorktypeFlowsOnattributechangeRuleRequest(worktypeId, ruleId));
+  }
+
+  /**
+   * Delete a rule
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param ruleId ruleId (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteTaskmanagementWorktypeFlowsOnattributechangeRuleWithHttpInfo(String worktypeId, String ruleId) throws IOException {
+    return deleteTaskmanagementWorktypeFlowsOnattributechangeRule(createDeleteTaskmanagementWorktypeFlowsOnattributechangeRuleRequest(worktypeId, ruleId).withHttpInfo());
+  }
+
+  private DeleteTaskmanagementWorktypeFlowsOnattributechangeRuleRequest createDeleteTaskmanagementWorktypeFlowsOnattributechangeRuleRequest(String worktypeId, String ruleId) {
+    return DeleteTaskmanagementWorktypeFlowsOnattributechangeRuleRequest.builder()
+            .withWorktypeId(worktypeId)
+
+            .withRuleId(ruleId)
+
+            .build();
+  }
+
+  /**
+   * Delete a rule
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteTaskmanagementWorktypeFlowsOnattributechangeRule(DeleteTaskmanagementWorktypeFlowsOnattributechangeRuleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a rule
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteTaskmanagementWorktypeFlowsOnattributechangeRule(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete a rule
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param ruleId ruleId (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteTaskmanagementWorktypeFlowsOncreateRule(String worktypeId, String ruleId) throws IOException, ApiException {
+     deleteTaskmanagementWorktypeFlowsOncreateRule(createDeleteTaskmanagementWorktypeFlowsOncreateRuleRequest(worktypeId, ruleId));
+  }
+
+  /**
+   * Delete a rule
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param ruleId ruleId (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteTaskmanagementWorktypeFlowsOncreateRuleWithHttpInfo(String worktypeId, String ruleId) throws IOException {
+    return deleteTaskmanagementWorktypeFlowsOncreateRule(createDeleteTaskmanagementWorktypeFlowsOncreateRuleRequest(worktypeId, ruleId).withHttpInfo());
+  }
+
+  private DeleteTaskmanagementWorktypeFlowsOncreateRuleRequest createDeleteTaskmanagementWorktypeFlowsOncreateRuleRequest(String worktypeId, String ruleId) {
+    return DeleteTaskmanagementWorktypeFlowsOncreateRuleRequest.builder()
+            .withWorktypeId(worktypeId)
+
+            .withRuleId(ruleId)
+
+            .build();
+  }
+
+  /**
+   * Delete a rule
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteTaskmanagementWorktypeFlowsOncreateRule(DeleteTaskmanagementWorktypeFlowsOncreateRuleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a rule
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteTaskmanagementWorktypeFlowsOncreateRule(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -1946,6 +2122,342 @@ public class TaskManagementApi {
   }
 
   /**
+   * Get an attribute change rule
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param ruleId ruleId (required)
+   * @return WorkitemOnAttributeChangeRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemOnAttributeChangeRule getTaskmanagementWorktypeFlowsOnattributechangeRule(String worktypeId, String ruleId) throws IOException, ApiException {
+    return  getTaskmanagementWorktypeFlowsOnattributechangeRule(createGetTaskmanagementWorktypeFlowsOnattributechangeRuleRequest(worktypeId, ruleId));
+  }
+
+  /**
+   * Get an attribute change rule
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param ruleId ruleId (required)
+   * @return WorkitemOnAttributeChangeRule
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemOnAttributeChangeRule> getTaskmanagementWorktypeFlowsOnattributechangeRuleWithHttpInfo(String worktypeId, String ruleId) throws IOException {
+    return getTaskmanagementWorktypeFlowsOnattributechangeRule(createGetTaskmanagementWorktypeFlowsOnattributechangeRuleRequest(worktypeId, ruleId).withHttpInfo());
+  }
+
+  private GetTaskmanagementWorktypeFlowsOnattributechangeRuleRequest createGetTaskmanagementWorktypeFlowsOnattributechangeRuleRequest(String worktypeId, String ruleId) {
+    return GetTaskmanagementWorktypeFlowsOnattributechangeRuleRequest.builder()
+            .withWorktypeId(worktypeId)
+
+            .withRuleId(ruleId)
+
+            .build();
+  }
+
+  /**
+   * Get an attribute change rule
+   * 
+   * @param request The request object
+   * @return WorkitemOnAttributeChangeRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemOnAttributeChangeRule getTaskmanagementWorktypeFlowsOnattributechangeRule(GetTaskmanagementWorktypeFlowsOnattributechangeRuleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkitemOnAttributeChangeRule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkitemOnAttributeChangeRule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an attribute change rule
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemOnAttributeChangeRule> getTaskmanagementWorktypeFlowsOnattributechangeRule(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkitemOnAttributeChangeRule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemOnAttributeChangeRule> response = (ApiResponse<WorkitemOnAttributeChangeRule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemOnAttributeChangeRule> response = (ApiResponse<WorkitemOnAttributeChangeRule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get all attribute-change rules for a worktype
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
+   * @return WorkitemOnAttributeChangeRuleListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemOnAttributeChangeRuleListing getTaskmanagementWorktypeFlowsOnattributechangeRules(String worktypeId, String after, Integer pageSize) throws IOException, ApiException {
+    return  getTaskmanagementWorktypeFlowsOnattributechangeRules(createGetTaskmanagementWorktypeFlowsOnattributechangeRulesRequest(worktypeId, after, pageSize));
+  }
+
+  /**
+   * Get all attribute-change rules for a worktype
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
+   * @return WorkitemOnAttributeChangeRuleListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemOnAttributeChangeRuleListing> getTaskmanagementWorktypeFlowsOnattributechangeRulesWithHttpInfo(String worktypeId, String after, Integer pageSize) throws IOException {
+    return getTaskmanagementWorktypeFlowsOnattributechangeRules(createGetTaskmanagementWorktypeFlowsOnattributechangeRulesRequest(worktypeId, after, pageSize).withHttpInfo());
+  }
+
+  private GetTaskmanagementWorktypeFlowsOnattributechangeRulesRequest createGetTaskmanagementWorktypeFlowsOnattributechangeRulesRequest(String worktypeId, String after, Integer pageSize) {
+    return GetTaskmanagementWorktypeFlowsOnattributechangeRulesRequest.builder()
+            .withWorktypeId(worktypeId)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * Get all attribute-change rules for a worktype
+   * 
+   * @param request The request object
+   * @return WorkitemOnAttributeChangeRuleListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemOnAttributeChangeRuleListing getTaskmanagementWorktypeFlowsOnattributechangeRules(GetTaskmanagementWorktypeFlowsOnattributechangeRulesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkitemOnAttributeChangeRuleListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkitemOnAttributeChangeRuleListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get all attribute-change rules for a worktype
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemOnAttributeChangeRuleListing> getTaskmanagementWorktypeFlowsOnattributechangeRules(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkitemOnAttributeChangeRuleListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemOnAttributeChangeRuleListing> response = (ApiResponse<WorkitemOnAttributeChangeRuleListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemOnAttributeChangeRuleListing> response = (ApiResponse<WorkitemOnAttributeChangeRuleListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get an on-create rule
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param ruleId ruleId (required)
+   * @return WorkitemOnCreateRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemOnCreateRule getTaskmanagementWorktypeFlowsOncreateRule(String worktypeId, String ruleId) throws IOException, ApiException {
+    return  getTaskmanagementWorktypeFlowsOncreateRule(createGetTaskmanagementWorktypeFlowsOncreateRuleRequest(worktypeId, ruleId));
+  }
+
+  /**
+   * Get an on-create rule
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param ruleId ruleId (required)
+   * @return WorkitemOnCreateRule
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemOnCreateRule> getTaskmanagementWorktypeFlowsOncreateRuleWithHttpInfo(String worktypeId, String ruleId) throws IOException {
+    return getTaskmanagementWorktypeFlowsOncreateRule(createGetTaskmanagementWorktypeFlowsOncreateRuleRequest(worktypeId, ruleId).withHttpInfo());
+  }
+
+  private GetTaskmanagementWorktypeFlowsOncreateRuleRequest createGetTaskmanagementWorktypeFlowsOncreateRuleRequest(String worktypeId, String ruleId) {
+    return GetTaskmanagementWorktypeFlowsOncreateRuleRequest.builder()
+            .withWorktypeId(worktypeId)
+
+            .withRuleId(ruleId)
+
+            .build();
+  }
+
+  /**
+   * Get an on-create rule
+   * 
+   * @param request The request object
+   * @return WorkitemOnCreateRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemOnCreateRule getTaskmanagementWorktypeFlowsOncreateRule(GetTaskmanagementWorktypeFlowsOncreateRuleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkitemOnCreateRule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkitemOnCreateRule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an on-create rule
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemOnCreateRule> getTaskmanagementWorktypeFlowsOncreateRule(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkitemOnCreateRule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemOnCreateRule> response = (ApiResponse<WorkitemOnCreateRule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemOnCreateRule> response = (ApiResponse<WorkitemOnCreateRule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get all on-create rules for a worktype
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
+   * @return WorkitemOnCreateRuleListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemOnCreateRuleListing getTaskmanagementWorktypeFlowsOncreateRules(String worktypeId, String after, Integer pageSize) throws IOException, ApiException {
+    return  getTaskmanagementWorktypeFlowsOncreateRules(createGetTaskmanagementWorktypeFlowsOncreateRulesRequest(worktypeId, after, pageSize));
+  }
+
+  /**
+   * Get all on-create rules for a worktype
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional, default to 25)
+   * @return WorkitemOnCreateRuleListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemOnCreateRuleListing> getTaskmanagementWorktypeFlowsOncreateRulesWithHttpInfo(String worktypeId, String after, Integer pageSize) throws IOException {
+    return getTaskmanagementWorktypeFlowsOncreateRules(createGetTaskmanagementWorktypeFlowsOncreateRulesRequest(worktypeId, after, pageSize).withHttpInfo());
+  }
+
+  private GetTaskmanagementWorktypeFlowsOncreateRulesRequest createGetTaskmanagementWorktypeFlowsOncreateRulesRequest(String worktypeId, String after, Integer pageSize) {
+    return GetTaskmanagementWorktypeFlowsOncreateRulesRequest.builder()
+            .withWorktypeId(worktypeId)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * Get all on-create rules for a worktype
+   * 
+   * @param request The request object
+   * @return WorkitemOnCreateRuleListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemOnCreateRuleListing getTaskmanagementWorktypeFlowsOncreateRules(GetTaskmanagementWorktypeFlowsOncreateRulesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkitemOnCreateRuleListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkitemOnCreateRuleListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get all on-create rules for a worktype
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemOnCreateRuleListing> getTaskmanagementWorktypeFlowsOncreateRules(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkitemOnCreateRuleListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemOnCreateRuleListing> response = (ApiResponse<WorkitemOnCreateRuleListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemOnCreateRuleListing> response = (ApiResponse<WorkitemOnCreateRuleListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a listing of a worktype's attribute change history
    * 
    * getTaskmanagementWorktypeHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
@@ -2877,6 +3389,178 @@ public class TaskManagementApi {
   }
 
   /**
+   * Update the attributes of a rule
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param ruleId ruleId (required)
+   * @param body Rule (required)
+   * @return WorkitemOnAttributeChangeRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemOnAttributeChangeRule patchTaskmanagementWorktypeFlowsOnattributechangeRule(String worktypeId, String ruleId, WorkitemOnAttributeChangeRuleUpdate body) throws IOException, ApiException {
+    return  patchTaskmanagementWorktypeFlowsOnattributechangeRule(createPatchTaskmanagementWorktypeFlowsOnattributechangeRuleRequest(worktypeId, ruleId, body));
+  }
+
+  /**
+   * Update the attributes of a rule
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param ruleId ruleId (required)
+   * @param body Rule (required)
+   * @return WorkitemOnAttributeChangeRule
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemOnAttributeChangeRule> patchTaskmanagementWorktypeFlowsOnattributechangeRuleWithHttpInfo(String worktypeId, String ruleId, WorkitemOnAttributeChangeRuleUpdate body) throws IOException {
+    return patchTaskmanagementWorktypeFlowsOnattributechangeRule(createPatchTaskmanagementWorktypeFlowsOnattributechangeRuleRequest(worktypeId, ruleId, body).withHttpInfo());
+  }
+
+  private PatchTaskmanagementWorktypeFlowsOnattributechangeRuleRequest createPatchTaskmanagementWorktypeFlowsOnattributechangeRuleRequest(String worktypeId, String ruleId, WorkitemOnAttributeChangeRuleUpdate body) {
+    return PatchTaskmanagementWorktypeFlowsOnattributechangeRuleRequest.builder()
+            .withWorktypeId(worktypeId)
+
+            .withRuleId(ruleId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the attributes of a rule
+   * 
+   * @param request The request object
+   * @return WorkitemOnAttributeChangeRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemOnAttributeChangeRule patchTaskmanagementWorktypeFlowsOnattributechangeRule(PatchTaskmanagementWorktypeFlowsOnattributechangeRuleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkitemOnAttributeChangeRule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkitemOnAttributeChangeRule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the attributes of a rule
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemOnAttributeChangeRule> patchTaskmanagementWorktypeFlowsOnattributechangeRule(ApiRequest<WorkitemOnAttributeChangeRuleUpdate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkitemOnAttributeChangeRule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemOnAttributeChangeRule> response = (ApiResponse<WorkitemOnAttributeChangeRule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemOnAttributeChangeRule> response = (ApiResponse<WorkitemOnAttributeChangeRule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update the attributes of a rule
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param ruleId ruleId (required)
+   * @param body Rule (required)
+   * @return WorkitemOnCreateRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemOnCreateRule patchTaskmanagementWorktypeFlowsOncreateRule(String worktypeId, String ruleId, WorkitemOnCreateRuleUpdate body) throws IOException, ApiException {
+    return  patchTaskmanagementWorktypeFlowsOncreateRule(createPatchTaskmanagementWorktypeFlowsOncreateRuleRequest(worktypeId, ruleId, body));
+  }
+
+  /**
+   * Update the attributes of a rule
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param ruleId ruleId (required)
+   * @param body Rule (required)
+   * @return WorkitemOnCreateRule
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemOnCreateRule> patchTaskmanagementWorktypeFlowsOncreateRuleWithHttpInfo(String worktypeId, String ruleId, WorkitemOnCreateRuleUpdate body) throws IOException {
+    return patchTaskmanagementWorktypeFlowsOncreateRule(createPatchTaskmanagementWorktypeFlowsOncreateRuleRequest(worktypeId, ruleId, body).withHttpInfo());
+  }
+
+  private PatchTaskmanagementWorktypeFlowsOncreateRuleRequest createPatchTaskmanagementWorktypeFlowsOncreateRuleRequest(String worktypeId, String ruleId, WorkitemOnCreateRuleUpdate body) {
+    return PatchTaskmanagementWorktypeFlowsOncreateRuleRequest.builder()
+            .withWorktypeId(worktypeId)
+
+            .withRuleId(ruleId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the attributes of a rule
+   * 
+   * @param request The request object
+   * @return WorkitemOnCreateRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemOnCreateRule patchTaskmanagementWorktypeFlowsOncreateRule(PatchTaskmanagementWorktypeFlowsOncreateRuleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkitemOnCreateRule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkitemOnCreateRule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the attributes of a rule
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemOnCreateRule> patchTaskmanagementWorktypeFlowsOncreateRule(ApiRequest<WorkitemOnCreateRuleUpdate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkitemOnCreateRule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemOnCreateRule> response = (ApiResponse<WorkitemOnCreateRule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemOnCreateRule> response = (ApiResponse<WorkitemOnCreateRule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update the attributes of a status
    * 
    * @param worktypeId Worktype id (required)
@@ -3668,6 +4352,170 @@ public class TaskManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Add an attribute-change rule to a worktype
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param body Rule (required)
+   * @return WorkitemOnAttributeChangeRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemOnAttributeChangeRule postTaskmanagementWorktypeFlowsOnattributechangeRules(String worktypeId, WorkitemOnAttributeChangeRuleCreate body) throws IOException, ApiException {
+    return  postTaskmanagementWorktypeFlowsOnattributechangeRules(createPostTaskmanagementWorktypeFlowsOnattributechangeRulesRequest(worktypeId, body));
+  }
+
+  /**
+   * Add an attribute-change rule to a worktype
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param body Rule (required)
+   * @return WorkitemOnAttributeChangeRule
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemOnAttributeChangeRule> postTaskmanagementWorktypeFlowsOnattributechangeRulesWithHttpInfo(String worktypeId, WorkitemOnAttributeChangeRuleCreate body) throws IOException {
+    return postTaskmanagementWorktypeFlowsOnattributechangeRules(createPostTaskmanagementWorktypeFlowsOnattributechangeRulesRequest(worktypeId, body).withHttpInfo());
+  }
+
+  private PostTaskmanagementWorktypeFlowsOnattributechangeRulesRequest createPostTaskmanagementWorktypeFlowsOnattributechangeRulesRequest(String worktypeId, WorkitemOnAttributeChangeRuleCreate body) {
+    return PostTaskmanagementWorktypeFlowsOnattributechangeRulesRequest.builder()
+            .withWorktypeId(worktypeId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Add an attribute-change rule to a worktype
+   * 
+   * @param request The request object
+   * @return WorkitemOnAttributeChangeRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemOnAttributeChangeRule postTaskmanagementWorktypeFlowsOnattributechangeRules(PostTaskmanagementWorktypeFlowsOnattributechangeRulesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkitemOnAttributeChangeRule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkitemOnAttributeChangeRule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Add an attribute-change rule to a worktype
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemOnAttributeChangeRule> postTaskmanagementWorktypeFlowsOnattributechangeRules(ApiRequest<WorkitemOnAttributeChangeRuleCreate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkitemOnAttributeChangeRule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemOnAttributeChangeRule> response = (ApiResponse<WorkitemOnAttributeChangeRule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemOnAttributeChangeRule> response = (ApiResponse<WorkitemOnAttributeChangeRule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Add an on-create rule to a worktype
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param body Rule (required)
+   * @return WorkitemOnCreateRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemOnCreateRule postTaskmanagementWorktypeFlowsOncreateRules(String worktypeId, WorkitemOnCreateRuleCreate body) throws IOException, ApiException {
+    return  postTaskmanagementWorktypeFlowsOncreateRules(createPostTaskmanagementWorktypeFlowsOncreateRulesRequest(worktypeId, body));
+  }
+
+  /**
+   * Add an on-create rule to a worktype
+   * 
+   * @param worktypeId Worktype id (required)
+   * @param body Rule (required)
+   * @return WorkitemOnCreateRule
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemOnCreateRule> postTaskmanagementWorktypeFlowsOncreateRulesWithHttpInfo(String worktypeId, WorkitemOnCreateRuleCreate body) throws IOException {
+    return postTaskmanagementWorktypeFlowsOncreateRules(createPostTaskmanagementWorktypeFlowsOncreateRulesRequest(worktypeId, body).withHttpInfo());
+  }
+
+  private PostTaskmanagementWorktypeFlowsOncreateRulesRequest createPostTaskmanagementWorktypeFlowsOncreateRulesRequest(String worktypeId, WorkitemOnCreateRuleCreate body) {
+    return PostTaskmanagementWorktypeFlowsOncreateRulesRequest.builder()
+            .withWorktypeId(worktypeId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Add an on-create rule to a worktype
+   * 
+   * @param request The request object
+   * @return WorkitemOnCreateRule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkitemOnCreateRule postTaskmanagementWorktypeFlowsOncreateRules(PostTaskmanagementWorktypeFlowsOncreateRulesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkitemOnCreateRule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkitemOnCreateRule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Add an on-create rule to a worktype
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkitemOnCreateRule> postTaskmanagementWorktypeFlowsOncreateRules(ApiRequest<WorkitemOnCreateRuleCreate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkitemOnCreateRule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemOnCreateRule> response = (ApiResponse<WorkitemOnCreateRule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkitemOnCreateRule> response = (ApiResponse<WorkitemOnCreateRule>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

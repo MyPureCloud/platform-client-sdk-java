@@ -88,6 +88,7 @@ public class UnifiedCommunicationsIntegration  implements Serializable {
   private Map<String, UCI10n> i10n = null;
   private Boolean polledPresence = null;
   private Integer pollIntervalSec = null;
+  private Boolean includeBadge = null;
   private List<String> userPermissions = new ArrayList<String>();
   private List<String> oauthScopes = new ArrayList<String>();
   private String selfUri = null;
@@ -173,6 +174,13 @@ public class UnifiedCommunicationsIntegration  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "includeBadge")
+  @JsonProperty("includeBadge")
+  public Boolean getIncludeBadge() {
+    return includeBadge;
+  }
+
+
   @ApiModelProperty(example = "null", required = true, value = "userPermissions")
   @JsonProperty("userPermissions")
   public List<String> getUserPermissions() {
@@ -224,6 +232,7 @@ public class UnifiedCommunicationsIntegration  implements Serializable {
             Objects.equals(this.i10n, unifiedCommunicationsIntegration.i10n) &&
             Objects.equals(this.polledPresence, unifiedCommunicationsIntegration.polledPresence) &&
             Objects.equals(this.pollIntervalSec, unifiedCommunicationsIntegration.pollIntervalSec) &&
+            Objects.equals(this.includeBadge, unifiedCommunicationsIntegration.includeBadge) &&
             Objects.equals(this.userPermissions, unifiedCommunicationsIntegration.userPermissions) &&
             Objects.equals(this.oauthScopes, unifiedCommunicationsIntegration.oauthScopes) &&
             Objects.equals(this.selfUri, unifiedCommunicationsIntegration.selfUri);
@@ -231,7 +240,7 @@ public class UnifiedCommunicationsIntegration  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, ucIntegrationKey, integrationPresenceSource, pbxPermission, icon, badgeIcons, i10n, polledPresence, pollIntervalSec, userPermissions, oauthScopes, selfUri);
+    return Objects.hash(id, name, ucIntegrationKey, integrationPresenceSource, pbxPermission, icon, badgeIcons, i10n, polledPresence, pollIntervalSec, includeBadge, userPermissions, oauthScopes, selfUri);
   }
 
   @Override
@@ -249,6 +258,7 @@ public class UnifiedCommunicationsIntegration  implements Serializable {
     sb.append("    i10n: ").append(toIndentedString(i10n)).append("\n");
     sb.append("    polledPresence: ").append(toIndentedString(polledPresence)).append("\n");
     sb.append("    pollIntervalSec: ").append(toIndentedString(pollIntervalSec)).append("\n");
+    sb.append("    includeBadge: ").append(toIndentedString(includeBadge)).append("\n");
     sb.append("    userPermissions: ").append(toIndentedString(userPermissions)).append("\n");
     sb.append("    oauthScopes: ").append(toIndentedString(oauthScopes)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

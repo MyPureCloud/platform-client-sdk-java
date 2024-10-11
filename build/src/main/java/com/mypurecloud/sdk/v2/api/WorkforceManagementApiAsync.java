@@ -43,6 +43,7 @@ import com.mypurecloud.sdk.v2.model.AgentWorkPlanBids;
 import com.mypurecloud.sdk.v2.model.AgentWorkPlanListResponse;
 import com.mypurecloud.sdk.v2.model.AgentsBidAssignedWorkPlanOverrideRequest;
 import com.mypurecloud.sdk.v2.model.AgentsIntegrationsListing;
+import com.mypurecloud.sdk.v2.model.AgentsWorkPlansResponse;
 import com.mypurecloud.sdk.v2.model.AlternativeShiftAsyncResponse;
 import com.mypurecloud.sdk.v2.model.AlternativeShiftBuSettingsResponse;
 import com.mypurecloud.sdk.v2.model.AlternativeShiftJobResponse;
@@ -123,6 +124,7 @@ import com.mypurecloud.sdk.v2.model.EstimateAvailableTimeOffRequest;
 import com.mypurecloud.sdk.v2.model.EstimateAvailableTimeOffResponse;
 import com.mypurecloud.sdk.v2.model.ForecastPlanningGroupsResponse;
 import com.mypurecloud.sdk.v2.model.GenerateBuForecastRequest;
+import com.mypurecloud.sdk.v2.model.GetAgentsWorkPlansRequest;
 import com.mypurecloud.sdk.v2.model.HistoricalImportDeleteJobResponse;
 import com.mypurecloud.sdk.v2.model.HistoricalImportStatusListing;
 import com.mypurecloud.sdk.v2.model.HrisTimeOffTypesJobResponse;
@@ -192,6 +194,8 @@ import com.mypurecloud.sdk.v2.model.UpdateAgentWorkPlanBiddingPreference;
 import com.mypurecloud.sdk.v2.model.UpdateAlternativeShiftBuSettingsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateBusinessUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateManagementUnitRequest;
+import com.mypurecloud.sdk.v2.model.UpdateMuAgentWorkPlansBatchRequest;
+import com.mypurecloud.sdk.v2.model.UpdateMuAgentWorkPlansBatchResponse;
 import com.mypurecloud.sdk.v2.model.UpdateMuAgentsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateNotificationsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateNotificationsResponse;
@@ -383,6 +387,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitWo
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitAgentsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitAgentsWorkplansBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeofflimitRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeoffplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatusRequest;
@@ -444,6 +449,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementCalendarUrlIcsR
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementHistoricaldataDeletejobRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementHistoricaldataValidateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementIntegrationsHriTimeofftypesJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitAgentschedulesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitHistoricaladherencequeryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitMoveRequest;
@@ -10857,6 +10863,81 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Updates agent work plan configuration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UpdateMuAgentWorkPlansBatchResponse> patchWorkforcemanagementManagementunitAgentsWorkplansBulkAsync(PatchWorkforcemanagementManagementunitAgentsWorkplansBulkRequest request, final AsyncApiCallback<UpdateMuAgentWorkPlansBatchResponse> callback) {
+    try {
+      final SettableFuture<UpdateMuAgentWorkPlansBatchResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UpdateMuAgentWorkPlansBatchResponse>() {}, new AsyncApiCallback<ApiResponse<UpdateMuAgentWorkPlansBatchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<UpdateMuAgentWorkPlansBatchResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Updates agent work plan configuration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UpdateMuAgentWorkPlansBatchResponse>> patchWorkforcemanagementManagementunitAgentsWorkplansBulkAsync(ApiRequest<UpdateMuAgentWorkPlansBatchRequest> request, final AsyncApiCallback<ApiResponse<UpdateMuAgentWorkPlansBatchResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UpdateMuAgentWorkPlansBatchResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UpdateMuAgentWorkPlansBatchResponse>() {}, new AsyncApiCallback<ApiResponse<UpdateMuAgentWorkPlansBatchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<UpdateMuAgentWorkPlansBatchResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UpdateMuAgentWorkPlansBatchResponse> response = (ApiResponse<UpdateMuAgentWorkPlansBatchResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UpdateMuAgentWorkPlansBatchResponse> response = (ApiResponse<UpdateMuAgentWorkPlansBatchResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Updates a time off limit object.
    * Updates time off limit object properties, but not daily values.
    * @param request the request object
@@ -15422,6 +15503,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<HrisTimeOffTypesResponse> response = (ApiResponse<HrisTimeOffTypesResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get agents work plans configuration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentsWorkPlansResponse> postWorkforcemanagementManagementunitAgentsWorkplansQueryAsync(PostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest request, final AsyncApiCallback<AgentsWorkPlansResponse> callback) {
+    try {
+      final SettableFuture<AgentsWorkPlansResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentsWorkPlansResponse>() {}, new AsyncApiCallback<ApiResponse<AgentsWorkPlansResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentsWorkPlansResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get agents work plans configuration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentsWorkPlansResponse>> postWorkforcemanagementManagementunitAgentsWorkplansQueryAsync(ApiRequest<GetAgentsWorkPlansRequest> request, final AsyncApiCallback<ApiResponse<AgentsWorkPlansResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentsWorkPlansResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentsWorkPlansResponse>() {}, new AsyncApiCallback<ApiResponse<AgentsWorkPlansResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentsWorkPlansResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentsWorkPlansResponse> response = (ApiResponse<AgentsWorkPlansResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentsWorkPlansResponse> response = (ApiResponse<AgentsWorkPlansResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -24,28 +24,13 @@ import java.io.Serializable;
 
 public class ExpandableWebDeploymentEntityListing  implements Serializable {
   
-  private Long total = null;
   private List<ExpandableWebDeployment> entities = new ArrayList<ExpandableWebDeployment>();
+  private String nextUri = null;
   private String selfUri = null;
+  private String previousUri = null;
+  private Long total = null;
 
   
-  /**
-   **/
-  public ExpandableWebDeploymentEntityListing total(Long total) {
-    this.total = total;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("total")
-  public Long getTotal() {
-    return total;
-  }
-  public void setTotal(Long total) {
-    this.total = total;
-  }
-
-
   /**
    **/
   public ExpandableWebDeploymentEntityListing entities(List<ExpandableWebDeployment> entities) {
@@ -60,6 +45,23 @@ public class ExpandableWebDeploymentEntityListing  implements Serializable {
   }
   public void setEntities(List<ExpandableWebDeployment> entities) {
     this.entities = entities;
+  }
+
+
+  /**
+   **/
+  public ExpandableWebDeploymentEntityListing nextUri(String nextUri) {
+    this.nextUri = nextUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("nextUri")
+  public String getNextUri() {
+    return nextUri;
+  }
+  public void setNextUri(String nextUri) {
+    this.nextUri = nextUri;
   }
 
 
@@ -80,6 +82,40 @@ public class ExpandableWebDeploymentEntityListing  implements Serializable {
   }
 
 
+  /**
+   **/
+  public ExpandableWebDeploymentEntityListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
+  }
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
+  }
+
+
+  /**
+   **/
+  public ExpandableWebDeploymentEntityListing total(Long total) {
+    this.total = total;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("total")
+  public Long getTotal() {
+    return total;
+  }
+  public void setTotal(Long total) {
+    this.total = total;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -90,14 +126,16 @@ public class ExpandableWebDeploymentEntityListing  implements Serializable {
     }
     ExpandableWebDeploymentEntityListing expandableWebDeploymentEntityListing = (ExpandableWebDeploymentEntityListing) o;
 
-    return Objects.equals(this.total, expandableWebDeploymentEntityListing.total) &&
-            Objects.equals(this.entities, expandableWebDeploymentEntityListing.entities) &&
-            Objects.equals(this.selfUri, expandableWebDeploymentEntityListing.selfUri);
+    return Objects.equals(this.entities, expandableWebDeploymentEntityListing.entities) &&
+            Objects.equals(this.nextUri, expandableWebDeploymentEntityListing.nextUri) &&
+            Objects.equals(this.selfUri, expandableWebDeploymentEntityListing.selfUri) &&
+            Objects.equals(this.previousUri, expandableWebDeploymentEntityListing.previousUri) &&
+            Objects.equals(this.total, expandableWebDeploymentEntityListing.total);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(total, entities, selfUri);
+    return Objects.hash(entities, nextUri, selfUri, previousUri, total);
   }
 
   @Override
@@ -105,9 +143,11 @@ public class ExpandableWebDeploymentEntityListing  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ExpandableWebDeploymentEntityListing {\n");
     
-    sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
+    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
+    sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("}");
     return sb.toString();
   }

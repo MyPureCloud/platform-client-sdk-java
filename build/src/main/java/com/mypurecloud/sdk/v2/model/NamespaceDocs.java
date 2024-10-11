@@ -24,10 +24,28 @@ import java.io.Serializable;
 
 public class NamespaceDocs  implements Serializable {
   
+  private String name = null;
   private String friendlyName = null;
   private List<LimitDocs> limits = new ArrayList<LimitDocs>();
 
   
+  /**
+   **/
+  public NamespaceDocs name(String name) {
+    this.name = name;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+
   /**
    **/
   public NamespaceDocs friendlyName(String friendlyName) {
@@ -72,13 +90,14 @@ public class NamespaceDocs  implements Serializable {
     }
     NamespaceDocs namespaceDocs = (NamespaceDocs) o;
 
-    return Objects.equals(this.friendlyName, namespaceDocs.friendlyName) &&
+    return Objects.equals(this.name, namespaceDocs.name) &&
+            Objects.equals(this.friendlyName, namespaceDocs.friendlyName) &&
             Objects.equals(this.limits, namespaceDocs.limits);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(friendlyName, limits);
+    return Objects.hash(name, friendlyName, limits);
   }
 
   @Override
@@ -86,6 +105,7 @@ public class NamespaceDocs  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class NamespaceDocs {\n");
     
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    friendlyName: ").append(toIndentedString(friendlyName)).append("\n");
     sb.append("    limits: ").append(toIndentedString(limits)).append("\n");
     sb.append("}");

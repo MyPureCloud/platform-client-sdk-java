@@ -54,8 +54,11 @@ public class InfrastructureascodeJob  implements Serializable {
     QUEUED("Queued"),
     RUNNING("Running"),
     COMPLETE("Complete"),
+    INTERNALERROR("InternalError"),
+    INCOMPLETE("Incomplete"),
     FAILED("Failed"),
-    INCOMPLETE("Incomplete");
+    ROLLBACKFAILED("RollbackFailed"),
+    ROLLBACKCOMPLETE("RollbackComplete");
 
     private String value;
 

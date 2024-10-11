@@ -168,6 +168,7 @@ public class GetUserFavoritesRequest {
 		AUTHORIZATION_UNUSEDROLES("authorization.unusedRoles"),
 		TEAM("team"),
 		WORKPLANBIDRANKS("workPlanBidRanks"),
+		EXTERNALCONTACTSSETTINGS("externalContactsSettings"),
 		PROFILESKILLS("profileSkills"),
 		CERTIFICATIONS("certifications"),
 		LOCATIONS("locations"),

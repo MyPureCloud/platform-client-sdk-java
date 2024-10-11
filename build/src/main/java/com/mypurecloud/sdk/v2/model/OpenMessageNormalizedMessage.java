@@ -81,6 +81,7 @@ public class OpenMessageNormalizedMessage  implements Serializable {
   private String text = null;
   private List<OpenMessageContent> content = new ArrayList<OpenMessageContent>();
   private Map<String, String> metadata = null;
+  private String conversationId = null;
 
   
   /**
@@ -191,6 +192,24 @@ public class OpenMessageNormalizedMessage  implements Serializable {
   }
 
 
+  /**
+   * The conversationId context for the message
+   **/
+  public OpenMessageNormalizedMessage conversationId(String conversationId) {
+    this.conversationId = conversationId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The conversationId context for the message")
+  @JsonProperty("conversationId")
+  public String getConversationId() {
+    return conversationId;
+  }
+  public void setConversationId(String conversationId) {
+    this.conversationId = conversationId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -206,12 +225,13 @@ public class OpenMessageNormalizedMessage  implements Serializable {
             Objects.equals(this.type, openMessageNormalizedMessage.type) &&
             Objects.equals(this.text, openMessageNormalizedMessage.text) &&
             Objects.equals(this.content, openMessageNormalizedMessage.content) &&
-            Objects.equals(this.metadata, openMessageNormalizedMessage.metadata);
+            Objects.equals(this.metadata, openMessageNormalizedMessage.metadata) &&
+            Objects.equals(this.conversationId, openMessageNormalizedMessage.conversationId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, channel, type, text, content, metadata);
+    return Objects.hash(id, channel, type, text, content, metadata, conversationId);
   }
 
   @Override
@@ -225,6 +245,7 @@ public class OpenMessageNormalizedMessage  implements Serializable {
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    conversationId: ").append(toIndentedString(conversationId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

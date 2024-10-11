@@ -40,6 +40,7 @@ import com.mypurecloud.sdk.v2.model.AgentWorkPlanBids;
 import com.mypurecloud.sdk.v2.model.AgentWorkPlanListResponse;
 import com.mypurecloud.sdk.v2.model.AgentsBidAssignedWorkPlanOverrideRequest;
 import com.mypurecloud.sdk.v2.model.AgentsIntegrationsListing;
+import com.mypurecloud.sdk.v2.model.AgentsWorkPlansResponse;
 import com.mypurecloud.sdk.v2.model.AlternativeShiftAsyncResponse;
 import com.mypurecloud.sdk.v2.model.AlternativeShiftBuSettingsResponse;
 import com.mypurecloud.sdk.v2.model.AlternativeShiftJobResponse;
@@ -120,6 +121,7 @@ import com.mypurecloud.sdk.v2.model.EstimateAvailableTimeOffRequest;
 import com.mypurecloud.sdk.v2.model.EstimateAvailableTimeOffResponse;
 import com.mypurecloud.sdk.v2.model.ForecastPlanningGroupsResponse;
 import com.mypurecloud.sdk.v2.model.GenerateBuForecastRequest;
+import com.mypurecloud.sdk.v2.model.GetAgentsWorkPlansRequest;
 import com.mypurecloud.sdk.v2.model.HistoricalImportDeleteJobResponse;
 import com.mypurecloud.sdk.v2.model.HistoricalImportStatusListing;
 import com.mypurecloud.sdk.v2.model.HrisTimeOffTypesJobResponse;
@@ -189,6 +191,8 @@ import com.mypurecloud.sdk.v2.model.UpdateAgentWorkPlanBiddingPreference;
 import com.mypurecloud.sdk.v2.model.UpdateAlternativeShiftBuSettingsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateBusinessUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateManagementUnitRequest;
+import com.mypurecloud.sdk.v2.model.UpdateMuAgentWorkPlansBatchRequest;
+import com.mypurecloud.sdk.v2.model.UpdateMuAgentWorkPlansBatchResponse;
 import com.mypurecloud.sdk.v2.model.UpdateMuAgentsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateNotificationsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateNotificationsResponse;
@@ -380,6 +384,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitWo
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitWorkplanbidGroupPreferencesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitAgentsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitAgentsWorkplansBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeofflimitRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeoffplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatusRequest;
@@ -441,6 +446,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementCalendarUrlIcsR
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementHistoricaldataDeletejobRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementHistoricaldataValidateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementIntegrationsHriTimeofftypesJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitAgentschedulesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitHistoricaladherencequeryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitMoveRequest;
@@ -11792,6 +11798,88 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Updates agent work plan configuration
+   * 
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+   * @param body body (optional)
+   * @return UpdateMuAgentWorkPlansBatchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UpdateMuAgentWorkPlansBatchResponse patchWorkforcemanagementManagementunitAgentsWorkplansBulk(String managementUnitId, UpdateMuAgentWorkPlansBatchRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementManagementunitAgentsWorkplansBulk(createPatchWorkforcemanagementManagementunitAgentsWorkplansBulkRequest(managementUnitId, body));
+  }
+
+  /**
+   * Updates agent work plan configuration
+   * 
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+   * @param body body (optional)
+   * @return UpdateMuAgentWorkPlansBatchResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UpdateMuAgentWorkPlansBatchResponse> patchWorkforcemanagementManagementunitAgentsWorkplansBulkWithHttpInfo(String managementUnitId, UpdateMuAgentWorkPlansBatchRequest body) throws IOException {
+    return patchWorkforcemanagementManagementunitAgentsWorkplansBulk(createPatchWorkforcemanagementManagementunitAgentsWorkplansBulkRequest(managementUnitId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementManagementunitAgentsWorkplansBulkRequest createPatchWorkforcemanagementManagementunitAgentsWorkplansBulkRequest(String managementUnitId, UpdateMuAgentWorkPlansBatchRequest body) {
+    return PatchWorkforcemanagementManagementunitAgentsWorkplansBulkRequest.builder()
+            .withManagementUnitId(managementUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Updates agent work plan configuration
+   * 
+   * @param request The request object
+   * @return UpdateMuAgentWorkPlansBatchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UpdateMuAgentWorkPlansBatchResponse patchWorkforcemanagementManagementunitAgentsWorkplansBulk(PatchWorkforcemanagementManagementunitAgentsWorkplansBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UpdateMuAgentWorkPlansBatchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UpdateMuAgentWorkPlansBatchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Updates agent work plan configuration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UpdateMuAgentWorkPlansBatchResponse> patchWorkforcemanagementManagementunitAgentsWorkplansBulk(ApiRequest<UpdateMuAgentWorkPlansBatchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UpdateMuAgentWorkPlansBatchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UpdateMuAgentWorkPlansBatchResponse> response = (ApiResponse<UpdateMuAgentWorkPlansBatchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UpdateMuAgentWorkPlansBatchResponse> response = (ApiResponse<UpdateMuAgentWorkPlansBatchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Updates a time off limit object.
    * Updates time off limit object properties, but not daily values.
    * @param managementUnitId The ID of the management unit. (required)
@@ -16918,6 +17006,92 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<HrisTimeOffTypesResponse> response = (ApiResponse<HrisTimeOffTypesResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get agents work plans configuration
+   * 
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @param body body (optional)
+   * @return AgentsWorkPlansResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentsWorkPlansResponse postWorkforcemanagementManagementunitAgentsWorkplansQuery(String managementUnitId, Boolean forceDownloadService, GetAgentsWorkPlansRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitAgentsWorkplansQuery(createPostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest(managementUnitId, forceDownloadService, body));
+  }
+
+  /**
+   * Get agents work plans configuration
+   * 
+   * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+   * @param body body (optional)
+   * @return AgentsWorkPlansResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentsWorkPlansResponse> postWorkforcemanagementManagementunitAgentsWorkplansQueryWithHttpInfo(String managementUnitId, Boolean forceDownloadService, GetAgentsWorkPlansRequest body) throws IOException {
+    return postWorkforcemanagementManagementunitAgentsWorkplansQuery(createPostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest(managementUnitId, forceDownloadService, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest createPostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest(String managementUnitId, Boolean forceDownloadService, GetAgentsWorkPlansRequest body) {
+    return PostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest.builder()
+            .withManagementUnitId(managementUnitId)
+
+            .withForceDownloadService(forceDownloadService)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Get agents work plans configuration
+   * 
+   * @param request The request object
+   * @return AgentsWorkPlansResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentsWorkPlansResponse postWorkforcemanagementManagementunitAgentsWorkplansQuery(PostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentsWorkPlansResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentsWorkPlansResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get agents work plans configuration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentsWorkPlansResponse> postWorkforcemanagementManagementunitAgentsWorkplansQuery(ApiRequest<GetAgentsWorkPlansRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentsWorkPlansResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentsWorkPlansResponse> response = (ApiResponse<AgentsWorkPlansResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentsWorkPlansResponse> response = (ApiResponse<AgentsWorkPlansResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

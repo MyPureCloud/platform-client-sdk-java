@@ -160,10 +160,12 @@ docs/AgentWorkPlanBiddingPreferenceResponse.md
 docs/AgentWorkPlanBids.md
 docs/AgentWorkPlanListResponse.md
 docs/AgentWorkPlanShift.md
+docs/AgentWorkPlans.md
 docs/AgentlessEmailSendRequestDto.md
 docs/AgentlessEmailSendResponseDto.md
 docs/AgentsBidAssignedWorkPlanOverrideRequest.md
 docs/AgentsIntegrationsListing.md
+docs/AgentsWorkPlansResponse.md
 docs/AggregateMetricData.md
 docs/AggregateViewData.md
 docs/AggregationRange.md
@@ -1421,6 +1423,7 @@ docs/DisconnectReason.md
 docs/Disposition.md
 docs/DispositionParameters.md
 docs/Division.md
+docs/DivisionEntityRef.md
 docs/DivisionReference.md
 docs/DivsPermittedEntityListing.md
 docs/DncList.md
@@ -1778,6 +1781,7 @@ docs/ExternalContactsRelationshipChangedTopicRelationship.md
 docs/ExternalContactsRelationshipChangedTopicTicker.md
 docs/ExternalContactsRelationshipChangedTopicTwitterId.md
 docs/ExternalContactsRelationshipChangedTopicUser.md
+docs/ExternalContactsSettings.md
 docs/ExternalContactsUnresolvedContactChangedTopicContact.md
 docs/ExternalContactsUnresolvedContactChangedTopicContactAddress.md
 docs/ExternalContactsUnresolvedContactChangedTopicDataSchema.md
@@ -2000,6 +2004,7 @@ docs/GeolocationApi.json
 docs/GeolocationApi.md
 docs/GeolocationEventGeolocation.md
 docs/GeolocationSettings.md
+docs/GetAgentsWorkPlansRequest.md
 docs/GetAlertQuery.md
 docs/GetCelebrationListing.md
 docs/GetFlowExecutionDataJobResult.md
@@ -2087,6 +2092,7 @@ docs/IdentityProviderApi.json
 docs/IdentityProviderApi.md
 docs/IdentityProviderEntityListing.md
 docs/IdentityResolutionConfig.md
+docs/IdentityResolutionQueueConfig.md
 docs/IdleEventTrigger.md
 docs/IdleTokenTimeout.md
 docs/IgnoredActivityCategories.md
@@ -2776,6 +2782,7 @@ docs/MoveAgentsResponse.md
 docs/MoveManagementUnitRequest.md
 docs/MoveManagementUnitResponse.md
 docs/MuAgentQueueTimeRequest.md
+docs/MuAgentsWorkPlansResult.md
 docs/MuRescheduleResultWrapper.md
 docs/MutableUserPresence.md
 docs/MuteSnoozeFields.md
@@ -3841,6 +3848,7 @@ docs/SmsPhoneNumberRef.md
 docs/SmsProvisioningStatus.md
 docs/SocialExpression.md
 docs/SocialHandle.md
+docs/SocialKeyword.md
 docs/SortItem.md
 docs/Source.md
 docs/SourceBaseResponse.md
@@ -4224,6 +4232,10 @@ docs/UpdateContactColumnActionSettings.md
 docs/UpdateDraftInput.md
 docs/UpdateManagementUnitRequest.md
 docs/UpdateMuAgentRequest.md
+docs/UpdateMuAgentWorkPlanFailureResponse.md
+docs/UpdateMuAgentWorkPlanRequest.md
+docs/UpdateMuAgentWorkPlansBatchRequest.md
+docs/UpdateMuAgentWorkPlansBatchResponse.md
 docs/UpdateMuAgentsRequest.md
 docs/UpdateNotificationResponse.md
 docs/UpdateNotificationsRequest.md
@@ -4311,6 +4323,7 @@ docs/UserLicenses.md
 docs/UserLicensesEntityListing.md
 docs/UserListScheduleRequestBody.md
 docs/UserMe.md
+docs/UserNextActivityReminder.md
 docs/UserObservationDataContainer.md
 docs/UserObservationQuery.md
 docs/UserObservationQueryClause.md
@@ -4766,6 +4779,8 @@ docs/WorkPlanConstraintMessage.md
 docs/WorkPlanListItemResponse.md
 docs/WorkPlanListResponse.md
 docs/WorkPlanOverride.md
+docs/WorkPlanOverrideListWrapperWorkPlanOverrideRequest.md
+docs/WorkPlanOverrideRequest.md
 docs/WorkPlanPatternRequest.md
 docs/WorkPlanPatternResponse.md
 docs/WorkPlanReference.md
@@ -4805,6 +4820,16 @@ docs/WorkitemDelta.md
 docs/WorkitemFilter.md
 docs/WorkitemFlowReference.md
 docs/WorkitemManualAssign.md
+docs/WorkitemOnAttributeChangeCondition.md
+docs/WorkitemOnAttributeChangeConditionUpdate.md
+docs/WorkitemOnAttributeChangeRule.md
+docs/WorkitemOnAttributeChangeRuleCreate.md
+docs/WorkitemOnAttributeChangeRuleListing.md
+docs/WorkitemOnAttributeChangeRuleUpdate.md
+docs/WorkitemOnCreateRule.md
+docs/WorkitemOnCreateRuleCreate.md
+docs/WorkitemOnCreateRuleListing.md
+docs/WorkitemOnCreateRuleUpdate.md
 docs/WorkitemPagedEntityListing.md
 docs/WorkitemPostQueryEntityListing.md
 docs/WorkitemQueryJobCreate.md
@@ -4816,6 +4841,7 @@ docs/WorkitemQueryPostRequest.md
 docs/WorkitemQuerySort.md
 docs/WorkitemQueueReference.md
 docs/WorkitemReference.md
+docs/WorkitemRuleAction.md
 docs/WorkitemRuleSettings.md
 docs/WorkitemSchema.md
 docs/WorkitemScoredAgent.md
@@ -5119,6 +5145,8 @@ docs/deleteTaskmanagementWorkbin-example.txt
 docs/deleteTaskmanagementWorkitem-example.txt
 docs/deleteTaskmanagementWorkitemsSchema-example.txt
 docs/deleteTaskmanagementWorktype-example.txt
+docs/deleteTaskmanagementWorktypeFlowsOnattributechangeRule-example.txt
+docs/deleteTaskmanagementWorktypeFlowsOncreateRule-example.txt
 docs/deleteTaskmanagementWorktypeStatus-example.txt
 docs/deleteTeam-example.txt
 docs/deleteTeamMembers-example.txt
@@ -5703,8 +5731,11 @@ docs/getJourneySessionEvents-example.txt
 docs/getJourneySessionOutcomescores-example.txt
 docs/getJourneyView-example.txt
 docs/getJourneyViewVersion-example.txt
+docs/getJourneyViewVersionChart-example.txt
+docs/getJourneyViewVersionChartVersion-example.txt
 docs/getJourneyViewVersionJob-example.txt
 docs/getJourneyViewVersionJobResults-example.txt
+docs/getJourneyViewVersionJobResultsChart-example.txt
 docs/getJourneyViewVersionJobsLatest-example.txt
 docs/getJourneyViews-example.txt
 docs/getJourneyViewsEventdefinition-example.txt
@@ -6139,6 +6170,10 @@ docs/getTaskmanagementWorkitemsSchemaVersion-example.txt
 docs/getTaskmanagementWorkitemsSchemaVersions-example.txt
 docs/getTaskmanagementWorkitemsSchemas-example.txt
 docs/getTaskmanagementWorktype-example.txt
+docs/getTaskmanagementWorktypeFlowsOnattributechangeRule-example.txt
+docs/getTaskmanagementWorktypeFlowsOnattributechangeRules-example.txt
+docs/getTaskmanagementWorktypeFlowsOncreateRule-example.txt
+docs/getTaskmanagementWorktypeFlowsOncreateRules-example.txt
 docs/getTaskmanagementWorktypeHistory-example.txt
 docs/getTaskmanagementWorktypeStatus-example.txt
 docs/getTaskmanagementWorktypeStatuses-example.txt
@@ -6492,6 +6527,7 @@ docs/patchJourneyActiontarget-example.txt
 docs/patchJourneyActiontemplate-example.txt
 docs/patchJourneyOutcome-example.txt
 docs/patchJourneySegment-example.txt
+docs/patchJourneyViewVersionJob-example.txt
 docs/patchKnowledgeGuestSessionDocumentsSearchSearchId-example.txt
 docs/patchKnowledgeKnowledgebase-example.txt
 docs/patchKnowledgeKnowledgebaseCategory-example.txt
@@ -6551,6 +6587,8 @@ docs/patchTaskmanagementWorkitemAssignment-example.txt
 docs/patchTaskmanagementWorkitemUserWrapups-example.txt
 docs/patchTaskmanagementWorkitemUsersMeWrapups-example.txt
 docs/patchTaskmanagementWorktype-example.txt
+docs/patchTaskmanagementWorktypeFlowsOnattributechangeRule-example.txt
+docs/patchTaskmanagementWorktypeFlowsOncreateRule-example.txt
 docs/patchTaskmanagementWorktypeStatus-example.txt
 docs/patchTeam-example.txt
 docs/patchTelephonyProvidersEdgesSiteSiteconnections-example.txt
@@ -6595,6 +6633,7 @@ docs/patchWorkforcemanagementBusinessunitWorkplanbidGroup-example.txt
 docs/patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences-example.txt
 docs/patchWorkforcemanagementManagementunit-example.txt
 docs/patchWorkforcemanagementManagementunitAgents-example.txt
+docs/patchWorkforcemanagementManagementunitAgentsWorkplansBulk-example.txt
 docs/patchWorkforcemanagementManagementunitTimeofflimit-example.txt
 docs/patchWorkforcemanagementManagementunitTimeoffplan-example.txt
 docs/patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus-example.txt
@@ -7139,6 +7178,8 @@ docs/postTaskmanagementWorkitems-example.txt
 docs/postTaskmanagementWorkitemsQuery-example.txt
 docs/postTaskmanagementWorkitemsQueryJobs-example.txt
 docs/postTaskmanagementWorkitemsSchemas-example.txt
+docs/postTaskmanagementWorktypeFlowsOnattributechangeRules-example.txt
+docs/postTaskmanagementWorktypeFlowsOncreateRules-example.txt
 docs/postTaskmanagementWorktypeStatuses-example.txt
 docs/postTaskmanagementWorktypes-example.txt
 docs/postTaskmanagementWorktypesQuery-example.txt
@@ -7262,6 +7303,7 @@ docs/postWorkforcemanagementCalendarUrlIcs-example.txt
 docs/postWorkforcemanagementHistoricaldataDeletejob-example.txt
 docs/postWorkforcemanagementHistoricaldataValidate-example.txt
 docs/postWorkforcemanagementIntegrationsHriTimeofftypesJobs-example.txt
+docs/postWorkforcemanagementManagementunitAgentsWorkplansQuery-example.txt
 docs/postWorkforcemanagementManagementunitAgentschedulesSearch-example.txt
 docs/postWorkforcemanagementManagementunitHistoricaladherencequery-example.txt
 docs/postWorkforcemanagementManagementunitMove-example.txt
@@ -7388,6 +7430,7 @@ docs/putIntegrationsCredential-example.txt
 docs/putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings-example.txt
 docs/putIntegrationsSpeechTtsSettings-example.txt
 docs/putIntegrationsUnifiedcommunicationThirdpartypresences-example.txt
+docs/putJourneyViewVersion-example.txt
 docs/putKnowledgeKnowledgebaseSourcesSalesforceSourceId-example.txt
 docs/putKnowledgeKnowledgebaseSourcesServicenowSourceId-example.txt
 docs/putLanguageunderstandingDomainVersion-example.txt
@@ -7925,6 +7968,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteStationAssociateduserRequ
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTaskmanagementWorkbinRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTaskmanagementWorkitemRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTaskmanagementWorkitemsSchemaRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTaskmanagementWorktypeFlowsOnattributechangeRuleRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTaskmanagementWorktypeFlowsOncreateRuleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTaskmanagementWorktypeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTaskmanagementWorktypeStatusRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/DeleteTeamMembersRequest.java
@@ -8509,7 +8554,10 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneySessionEventsRequest.
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneySessionOutcomescoresRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneySessionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneyViewRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneyViewVersionChartRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneyViewVersionChartVersionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneyViewVersionJobRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneyViewVersionJobResultsChartRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneyViewVersionJobResultsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneyViewVersionJobsLatestRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetJourneyViewVersionRequest.java
@@ -8945,6 +8993,10 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorkitemsSchem
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorkitemsSchemaVersionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorkitemsSchemaVersionsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorkitemsSchemasRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorktypeFlowsOnattributechangeRuleRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorktypeFlowsOnattributechangeRulesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorktypeFlowsOncreateRuleRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorktypeFlowsOncreateRulesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorktypeHistoryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorktypeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/GetTaskmanagementWorktypeStatusRequest.java
@@ -9299,6 +9351,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PatchJourneyActiontargetRequest
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchJourneyActiontemplateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchJourneyOutcomeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchJourneySegmentRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchJourneyViewVersionJobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchKnowledgeGuestSessionDocumentsSearchSearchIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchKnowledgeKnowledgebaseCategoryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdRequest.java
@@ -9357,6 +9410,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PatchTaskmanagementWorkitemAssi
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchTaskmanagementWorkitemRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchTaskmanagementWorkitemUserWrapupsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchTaskmanagementWorkitemUsersMeWrapupsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchTaskmanagementWorktypeFlowsOnattributechangeRuleRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchTaskmanagementWorktypeFlowsOncreateRuleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchTaskmanagementWorktypeRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchTaskmanagementWorktypeStatusRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchTeamRequest.java
@@ -9401,6 +9456,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementBusines
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementBusinessunitWorkplanbidGroupRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementBusinessunitWorkplanbidRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementManagementunitAgentsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementManagementunitAgentsWorkplansBulkRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementManagementunitRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementManagementunitTimeofflimitRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PatchWorkforcemanagementManagementunitTimeoffplanRequest.java
@@ -9946,6 +10002,8 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostTaskmanagementWorkitemsQuer
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTaskmanagementWorkitemsQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTaskmanagementWorkitemsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTaskmanagementWorkitemsSchemasRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostTaskmanagementWorktypeFlowsOnattributechangeRulesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostTaskmanagementWorktypeFlowsOncreateRulesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTaskmanagementWorktypeStatusesRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTaskmanagementWorktypesQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostTaskmanagementWorktypesRequest.java
@@ -10069,6 +10127,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementCalendar
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementHistoricaldataDeletejobRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementHistoricaldataValidateRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementIntegrationsHriTimeofftypesJobsRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementManagementunitAgentsWorkplansQueryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementManagementunitAgentschedulesSearchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementManagementunitHistoricaladherencequeryRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PostWorkforcemanagementManagementunitMoveRequest.java
@@ -10195,6 +10254,7 @@ src/main/java/com/mypurecloud/sdk/v2/api/request/PutIntegrationsCredentialReques
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutIntegrationsSpeechTtsSettingsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutIntegrationsUnifiedcommunicationThirdpartypresencesRequest.java
+src/main/java/com/mypurecloud/sdk/v2/api/request/PutJourneyViewVersionRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest.java
 src/main/java/com/mypurecloud/sdk/v2/api/request/PutLanguageunderstandingDomainVersionRequest.java
@@ -10494,10 +10554,12 @@ src/main/java/com/mypurecloud/sdk/v2/model/AgentWorkPlanBiddingPreferenceRespons
 src/main/java/com/mypurecloud/sdk/v2/model/AgentWorkPlanBids.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentWorkPlanListResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentWorkPlanShift.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentWorkPlans.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentlessEmailSendRequestDto.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentlessEmailSendResponseDto.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentsBidAssignedWorkPlanOverrideRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/AgentsIntegrationsListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/AgentsWorkPlansResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/AggregateMetricData.java
 src/main/java/com/mypurecloud/sdk/v2/model/AggregateViewData.java
 src/main/java/com/mypurecloud/sdk/v2/model/AggregationRange.java
@@ -11731,6 +11793,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/DisconnectReason.java
 src/main/java/com/mypurecloud/sdk/v2/model/Disposition.java
 src/main/java/com/mypurecloud/sdk/v2/model/DispositionParameters.java
 src/main/java/com/mypurecloud/sdk/v2/model/Division.java
+src/main/java/com/mypurecloud/sdk/v2/model/DivisionEntityRef.java
 src/main/java/com/mypurecloud/sdk/v2/model/DivisionReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/DivsPermittedEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/DncList.java
@@ -12078,6 +12141,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsRelationshipChangedTo
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsRelationshipChangedTopicTicker.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsRelationshipChangedTopicTwitterId.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsRelationshipChangedTopicUser.java
+src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChangedTopicContact.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChangedTopicContactAddress.java
 src/main/java/com/mypurecloud/sdk/v2/model/ExternalContactsUnresolvedContactChangedTopicDataSchema.java
@@ -12290,6 +12354,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/GenesysBotConnector.java
 src/main/java/com/mypurecloud/sdk/v2/model/Geolocation.java
 src/main/java/com/mypurecloud/sdk/v2/model/GeolocationEventGeolocation.java
 src/main/java/com/mypurecloud/sdk/v2/model/GeolocationSettings.java
+src/main/java/com/mypurecloud/sdk/v2/model/GetAgentsWorkPlansRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/GetAlertQuery.java
 src/main/java/com/mypurecloud/sdk/v2/model/GetCelebrationListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/GetFlowExecutionDataJobResult.java
@@ -12371,6 +12436,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/IdentityNow.java
 src/main/java/com/mypurecloud/sdk/v2/model/IdentityProvider.java
 src/main/java/com/mypurecloud/sdk/v2/model/IdentityProviderEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/IdentityResolutionConfig.java
+src/main/java/com/mypurecloud/sdk/v2/model/IdentityResolutionQueueConfig.java
 src/main/java/com/mypurecloud/sdk/v2/model/IdleEventTrigger.java
 src/main/java/com/mypurecloud/sdk/v2/model/IdleTokenTimeout.java
 src/main/java/com/mypurecloud/sdk/v2/model/IgnoredActivityCategories.java
@@ -13036,6 +13102,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/MoveAgentsResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/MoveManagementUnitRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/MoveManagementUnitResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/MuAgentQueueTimeRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/MuAgentsWorkPlansResult.java
 src/main/java/com/mypurecloud/sdk/v2/model/MuRescheduleResultWrapper.java
 src/main/java/com/mypurecloud/sdk/v2/model/MutableUserPresence.java
 src/main/java/com/mypurecloud/sdk/v2/model/MuteSnoozeFields.java
@@ -14065,6 +14132,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/SmsPhoneNumberRef.java
 src/main/java/com/mypurecloud/sdk/v2/model/SmsProvisioningStatus.java
 src/main/java/com/mypurecloud/sdk/v2/model/SocialExpression.java
 src/main/java/com/mypurecloud/sdk/v2/model/SocialHandle.java
+src/main/java/com/mypurecloud/sdk/v2/model/SocialKeyword.java
 src/main/java/com/mypurecloud/sdk/v2/model/SortItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/Source.java
 src/main/java/com/mypurecloud/sdk/v2/model/SourceBaseResponse.java
@@ -14430,6 +14498,10 @@ src/main/java/com/mypurecloud/sdk/v2/model/UpdateContactColumnActionSettings.jav
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateDraftInput.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateManagementUnitRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateMuAgentRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/UpdateMuAgentWorkPlanFailureResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/UpdateMuAgentWorkPlanRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/UpdateMuAgentWorkPlansBatchRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/UpdateMuAgentWorkPlansBatchResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateMuAgentsRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateNotificationResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/UpdateNotificationsRequest.java
@@ -14513,6 +14585,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/UserLicenses.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserLicensesEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserListScheduleRequestBody.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserMe.java
+src/main/java/com/mypurecloud/sdk/v2/model/UserNextActivityReminder.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserObservationDataContainer.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserObservationQuery.java
 src/main/java/com/mypurecloud/sdk/v2/model/UserObservationQueryClause.java
@@ -14952,6 +15025,8 @@ src/main/java/com/mypurecloud/sdk/v2/model/WorkPlanConstraintMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkPlanListItemResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkPlanListResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkPlanOverride.java
+src/main/java/com/mypurecloud/sdk/v2/model/WorkPlanOverrideListWrapperWorkPlanOverrideRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/WorkPlanOverrideRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkPlanPatternRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkPlanPatternResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkPlanReference.java
@@ -14989,6 +15064,16 @@ src/main/java/com/mypurecloud/sdk/v2/model/WorkitemDelta.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemFilter.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemFlowReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemManualAssign.java
+src/main/java/com/mypurecloud/sdk/v2/model/WorkitemOnAttributeChangeCondition.java
+src/main/java/com/mypurecloud/sdk/v2/model/WorkitemOnAttributeChangeConditionUpdate.java
+src/main/java/com/mypurecloud/sdk/v2/model/WorkitemOnAttributeChangeRule.java
+src/main/java/com/mypurecloud/sdk/v2/model/WorkitemOnAttributeChangeRuleCreate.java
+src/main/java/com/mypurecloud/sdk/v2/model/WorkitemOnAttributeChangeRuleListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/WorkitemOnAttributeChangeRuleUpdate.java
+src/main/java/com/mypurecloud/sdk/v2/model/WorkitemOnCreateRule.java
+src/main/java/com/mypurecloud/sdk/v2/model/WorkitemOnCreateRuleCreate.java
+src/main/java/com/mypurecloud/sdk/v2/model/WorkitemOnCreateRuleListing.java
+src/main/java/com/mypurecloud/sdk/v2/model/WorkitemOnCreateRuleUpdate.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemPagedEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemPostQueryEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemQueryJobCreate.java
@@ -15000,6 +15085,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/WorkitemQueryPostRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemQuerySort.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemQueueReference.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemReference.java
+src/main/java/com/mypurecloud/sdk/v2/model/WorkitemRuleAction.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemRuleSettings.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemSchema.java
 src/main/java/com/mypurecloud/sdk/v2/model/WorkitemScoredAgent.java

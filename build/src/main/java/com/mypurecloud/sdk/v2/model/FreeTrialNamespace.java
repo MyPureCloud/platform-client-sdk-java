@@ -24,10 +24,28 @@ import java.io.Serializable;
 
 public class FreeTrialNamespace  implements Serializable {
   
+  private String name = null;
   private String friendlyName = null;
   private List<FreeTrialLimit> limits = new ArrayList<FreeTrialLimit>();
 
   
+  /**
+   **/
+  public FreeTrialNamespace name(String name) {
+    this.name = name;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+
   /**
    **/
   public FreeTrialNamespace friendlyName(String friendlyName) {
@@ -72,13 +90,14 @@ public class FreeTrialNamespace  implements Serializable {
     }
     FreeTrialNamespace freeTrialNamespace = (FreeTrialNamespace) o;
 
-    return Objects.equals(this.friendlyName, freeTrialNamespace.friendlyName) &&
+    return Objects.equals(this.name, freeTrialNamespace.name) &&
+            Objects.equals(this.friendlyName, freeTrialNamespace.friendlyName) &&
             Objects.equals(this.limits, freeTrialNamespace.limits);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(friendlyName, limits);
+    return Objects.hash(name, friendlyName, limits);
   }
 
   @Override
@@ -86,6 +105,7 @@ public class FreeTrialNamespace  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class FreeTrialNamespace {\n");
     
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    friendlyName: ").append(toIndentedString(friendlyName)).append("\n");
     sb.append("    limits: ").append(toIndentedString(limits)).append("\n");
     sb.append("}");

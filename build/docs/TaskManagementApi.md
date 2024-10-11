@@ -8,6 +8,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteTaskmanagementWorkitem**](TaskManagementApi#deleteTaskmanagementWorkitem) | Delete a workitem |
 | [**deleteTaskmanagementWorkitemsSchema**](TaskManagementApi#deleteTaskmanagementWorkitemsSchema) | Delete a schema |
 | [**deleteTaskmanagementWorktype**](TaskManagementApi#deleteTaskmanagementWorktype) | Delete a worktype |
+| [**deleteTaskmanagementWorktypeFlowsOnattributechangeRule**](TaskManagementApi#deleteTaskmanagementWorktypeFlowsOnattributechangeRule) | Delete a rule |
+| [**deleteTaskmanagementWorktypeFlowsOncreateRule**](TaskManagementApi#deleteTaskmanagementWorktypeFlowsOncreateRule) | Delete a rule |
 | [**deleteTaskmanagementWorktypeStatus**](TaskManagementApi#deleteTaskmanagementWorktypeStatus) | Delete a status |
 | [**getTaskmanagementWorkbin**](TaskManagementApi#getTaskmanagementWorkbin) | Get a workbin |
 | [**getTaskmanagementWorkbinHistory**](TaskManagementApi#getTaskmanagementWorkbinHistory) | Get a listing of a workbin's attribute change history |
@@ -26,6 +28,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTaskmanagementWorkitemsSchemaVersions**](TaskManagementApi#getTaskmanagementWorkitemsSchemaVersions) | Get all versions of a schema |
 | [**getTaskmanagementWorkitemsSchemas**](TaskManagementApi#getTaskmanagementWorkitemsSchemas) | Get a list of schemas. |
 | [**getTaskmanagementWorktype**](TaskManagementApi#getTaskmanagementWorktype) | Get a worktype |
+| [**getTaskmanagementWorktypeFlowsOnattributechangeRule**](TaskManagementApi#getTaskmanagementWorktypeFlowsOnattributechangeRule) | Get an attribute change rule |
+| [**getTaskmanagementWorktypeFlowsOnattributechangeRules**](TaskManagementApi#getTaskmanagementWorktypeFlowsOnattributechangeRules) | Get all attribute-change rules for a worktype |
+| [**getTaskmanagementWorktypeFlowsOncreateRule**](TaskManagementApi#getTaskmanagementWorktypeFlowsOncreateRule) | Get an on-create rule |
+| [**getTaskmanagementWorktypeFlowsOncreateRules**](TaskManagementApi#getTaskmanagementWorktypeFlowsOncreateRules) | Get all on-create rules for a worktype |
 | [**getTaskmanagementWorktypeHistory**](TaskManagementApi#getTaskmanagementWorktypeHistory) | Get a listing of a worktype's attribute change history |
 | [**getTaskmanagementWorktypeStatus**](TaskManagementApi#getTaskmanagementWorktypeStatus) | Get a status |
 | [**getTaskmanagementWorktypeStatuses**](TaskManagementApi#getTaskmanagementWorktypeStatuses) | Get list of statuses for this worktype. |
@@ -37,6 +43,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchTaskmanagementWorkitemUserWrapups**](TaskManagementApi#patchTaskmanagementWorkitemUserWrapups) | Add/Remove a wrapup code for a given user in a workitem. |
 | [**patchTaskmanagementWorkitemUsersMeWrapups**](TaskManagementApi#patchTaskmanagementWorkitemUsersMeWrapups) | Add/Remove a wrapup code for the current user in a workitem. |
 | [**patchTaskmanagementWorktype**](TaskManagementApi#patchTaskmanagementWorktype) | Update the attributes of a worktype |
+| [**patchTaskmanagementWorktypeFlowsOnattributechangeRule**](TaskManagementApi#patchTaskmanagementWorktypeFlowsOnattributechangeRule) | Update the attributes of a rule |
+| [**patchTaskmanagementWorktypeFlowsOncreateRule**](TaskManagementApi#patchTaskmanagementWorktypeFlowsOncreateRule) | Update the attributes of a rule |
 | [**patchTaskmanagementWorktypeStatus**](TaskManagementApi#patchTaskmanagementWorktypeStatus) | Update the attributes of a status |
 | [**postTaskmanagementWorkbins**](TaskManagementApi#postTaskmanagementWorkbins) | Create a workbin |
 | [**postTaskmanagementWorkbinsQuery**](TaskManagementApi#postTaskmanagementWorkbinsQuery) | Query for workbins |
@@ -47,6 +55,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postTaskmanagementWorkitemsQuery**](TaskManagementApi#postTaskmanagementWorkitemsQuery) | Query for workitems |
 | [**postTaskmanagementWorkitemsQueryJobs**](TaskManagementApi#postTaskmanagementWorkitemsQueryJobs) | Create a workitem query job |
 | [**postTaskmanagementWorkitemsSchemas**](TaskManagementApi#postTaskmanagementWorkitemsSchemas) | Create a schema |
+| [**postTaskmanagementWorktypeFlowsOnattributechangeRules**](TaskManagementApi#postTaskmanagementWorktypeFlowsOnattributechangeRules) | Add an attribute-change rule to a worktype |
+| [**postTaskmanagementWorktypeFlowsOncreateRules**](TaskManagementApi#postTaskmanagementWorktypeFlowsOncreateRules) | Add an on-create rule to a worktype |
 | [**postTaskmanagementWorktypeStatuses**](TaskManagementApi#postTaskmanagementWorktypeStatuses) | Add a status to a worktype |
 | [**postTaskmanagementWorktypes**](TaskManagementApi#postTaskmanagementWorktypes) | Create a worktype |
 | [**postTaskmanagementWorktypesQuery**](TaskManagementApi#postTaskmanagementWorktypesQuery) | Query for worktypes |
@@ -278,6 +288,126 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **worktypeId** | **String**| Worktype id | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteTaskmanagementWorktypeFlowsOnattributechangeRule**
+
+
+> Void deleteTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId)
+
+Delete a rule
+
+Wraps DELETE /api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId}  
+
+Requires ANY permissions: 
+
+* workitems:flowRuleOnAttributeChange:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+String worktypeId = "worktypeId_example"; // String | Worktype id
+String ruleId = "ruleId_example"; // String | ruleId
+try {
+    apiInstance.deleteTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#deleteTaskmanagementWorktypeFlowsOnattributechangeRule");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **worktypeId** | **String**| Worktype id | 
+| **ruleId** | **String**| ruleId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteTaskmanagementWorktypeFlowsOncreateRule**
+
+
+> Void deleteTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId)
+
+Delete a rule
+
+Wraps DELETE /api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules/{ruleId}  
+
+Requires ANY permissions: 
+
+* workitems:flowRuleOnCreate:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+String worktypeId = "worktypeId_example"; // String | Worktype id
+String ruleId = "ruleId_example"; // String | ruleId
+try {
+    apiInstance.deleteTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#deleteTaskmanagementWorktypeFlowsOncreateRule");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **worktypeId** | **String**| Worktype id | 
+| **ruleId** | **String**| ruleId | 
 {: class="table-striped"}
 
 
@@ -1409,6 +1539,254 @@ try {
 [**Worktype**](Worktype)
 
 
+# **getTaskmanagementWorktypeFlowsOnattributechangeRule**
+
+
+> [WorkitemOnAttributeChangeRule](WorkitemOnAttributeChangeRule) getTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId)
+
+Get an attribute change rule
+
+Wraps GET /api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId}  
+
+Requires ANY permissions: 
+
+* workitems:flowRuleOnAttributeChange:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+String worktypeId = "worktypeId_example"; // String | Worktype id
+String ruleId = "ruleId_example"; // String | ruleId
+try {
+    WorkitemOnAttributeChangeRule result = apiInstance.getTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#getTaskmanagementWorktypeFlowsOnattributechangeRule");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **worktypeId** | **String**| Worktype id | 
+| **ruleId** | **String**| ruleId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WorkitemOnAttributeChangeRule**](WorkitemOnAttributeChangeRule)
+
+
+# **getTaskmanagementWorktypeFlowsOnattributechangeRules**
+
+
+> [WorkitemOnAttributeChangeRuleListing](WorkitemOnAttributeChangeRuleListing) getTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId, after, pageSize)
+
+Get all attribute-change rules for a worktype
+
+Wraps GET /api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules  
+
+Requires ANY permissions: 
+
+* workitems:flowRuleOnAttributeChange:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+String worktypeId = "worktypeId_example"; // String | Worktype id
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+Integer pageSize = 25; // Integer | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
+try {
+    WorkitemOnAttributeChangeRuleListing result = apiInstance.getTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId, after, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#getTaskmanagementWorktypeFlowsOnattributechangeRules");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **worktypeId** | **String**| Worktype id | 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **Integer**| Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an &#x60;after&#x60; key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] [default to 25] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WorkitemOnAttributeChangeRuleListing**](WorkitemOnAttributeChangeRuleListing)
+
+
+# **getTaskmanagementWorktypeFlowsOncreateRule**
+
+
+> [WorkitemOnCreateRule](WorkitemOnCreateRule) getTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId)
+
+Get an on-create rule
+
+Wraps GET /api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules/{ruleId}  
+
+Requires ANY permissions: 
+
+* workitems:flowRuleOnCreate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+String worktypeId = "worktypeId_example"; // String | Worktype id
+String ruleId = "ruleId_example"; // String | ruleId
+try {
+    WorkitemOnCreateRule result = apiInstance.getTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#getTaskmanagementWorktypeFlowsOncreateRule");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **worktypeId** | **String**| Worktype id | 
+| **ruleId** | **String**| ruleId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WorkitemOnCreateRule**](WorkitemOnCreateRule)
+
+
+# **getTaskmanagementWorktypeFlowsOncreateRules**
+
+
+> [WorkitemOnCreateRuleListing](WorkitemOnCreateRuleListing) getTaskmanagementWorktypeFlowsOncreateRules(worktypeId, after, pageSize)
+
+Get all on-create rules for a worktype
+
+Wraps GET /api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules  
+
+Requires ANY permissions: 
+
+* workitems:flowRuleOnCreate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+String worktypeId = "worktypeId_example"; // String | Worktype id
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+Integer pageSize = 25; // Integer | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
+try {
+    WorkitemOnCreateRuleListing result = apiInstance.getTaskmanagementWorktypeFlowsOncreateRules(worktypeId, after, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#getTaskmanagementWorktypeFlowsOncreateRules");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **worktypeId** | **String**| Worktype id | 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **Integer**| Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an &#x60;after&#x60; key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] [default to 25] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WorkitemOnCreateRuleListing**](WorkitemOnCreateRuleListing)
+
+
 # **getTaskmanagementWorktypeHistory**
 
 
@@ -2097,6 +2475,132 @@ try {
 [**Worktype**](Worktype)
 
 
+# **patchTaskmanagementWorktypeFlowsOnattributechangeRule**
+
+
+> [WorkitemOnAttributeChangeRule](WorkitemOnAttributeChangeRule) patchTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId, body)
+
+Update the attributes of a rule
+
+Wraps PATCH /api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId}  
+
+Requires ANY permissions: 
+
+* workitems:flowRuleOnAttributeChange:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+String worktypeId = "worktypeId_example"; // String | Worktype id
+String ruleId = "ruleId_example"; // String | ruleId
+WorkitemOnAttributeChangeRuleUpdate body = new WorkitemOnAttributeChangeRuleUpdate(); // WorkitemOnAttributeChangeRuleUpdate | Rule
+try {
+    WorkitemOnAttributeChangeRule result = apiInstance.patchTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#patchTaskmanagementWorktypeFlowsOnattributechangeRule");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **worktypeId** | **String**| Worktype id | 
+| **ruleId** | **String**| ruleId | 
+| **body** | [**WorkitemOnAttributeChangeRuleUpdate**](WorkitemOnAttributeChangeRuleUpdate)| Rule | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WorkitemOnAttributeChangeRule**](WorkitemOnAttributeChangeRule)
+
+
+# **patchTaskmanagementWorktypeFlowsOncreateRule**
+
+
+> [WorkitemOnCreateRule](WorkitemOnCreateRule) patchTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId, body)
+
+Update the attributes of a rule
+
+Wraps PATCH /api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules/{ruleId}  
+
+Requires ANY permissions: 
+
+* workitems:flowRuleOnCreate:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+String worktypeId = "worktypeId_example"; // String | Worktype id
+String ruleId = "ruleId_example"; // String | ruleId
+WorkitemOnCreateRuleUpdate body = new WorkitemOnCreateRuleUpdate(); // WorkitemOnCreateRuleUpdate | Rule
+try {
+    WorkitemOnCreateRule result = apiInstance.patchTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#patchTaskmanagementWorktypeFlowsOncreateRule");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **worktypeId** | **String**| Worktype id | 
+| **ruleId** | **String**| ruleId | 
+| **body** | [**WorkitemOnCreateRuleUpdate**](WorkitemOnCreateRuleUpdate)| Rule | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WorkitemOnCreateRule**](WorkitemOnCreateRule)
+
+
 # **patchTaskmanagementWorktypeStatus**
 
 
@@ -2697,6 +3201,128 @@ try {
 [**DataSchema**](DataSchema)
 
 
+# **postTaskmanagementWorktypeFlowsOnattributechangeRules**
+
+
+> [WorkitemOnAttributeChangeRule](WorkitemOnAttributeChangeRule) postTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId, body)
+
+Add an attribute-change rule to a worktype
+
+Wraps POST /api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules  
+
+Requires ANY permissions: 
+
+* workitems:flowRuleOnAttributeChange:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+String worktypeId = "worktypeId_example"; // String | Worktype id
+WorkitemOnAttributeChangeRuleCreate body = new WorkitemOnAttributeChangeRuleCreate(); // WorkitemOnAttributeChangeRuleCreate | Rule
+try {
+    WorkitemOnAttributeChangeRule result = apiInstance.postTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#postTaskmanagementWorktypeFlowsOnattributechangeRules");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **worktypeId** | **String**| Worktype id | 
+| **body** | [**WorkitemOnAttributeChangeRuleCreate**](WorkitemOnAttributeChangeRuleCreate)| Rule | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WorkitemOnAttributeChangeRule**](WorkitemOnAttributeChangeRule)
+
+
+# **postTaskmanagementWorktypeFlowsOncreateRules**
+
+
+> [WorkitemOnCreateRule](WorkitemOnCreateRule) postTaskmanagementWorktypeFlowsOncreateRules(worktypeId, body)
+
+Add an on-create rule to a worktype
+
+Wraps POST /api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules  
+
+Requires ANY permissions: 
+
+* workitems:flowRuleOnCreate:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TaskManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TaskManagementApi apiInstance = new TaskManagementApi();
+String worktypeId = "worktypeId_example"; // String | Worktype id
+WorkitemOnCreateRuleCreate body = new WorkitemOnCreateRuleCreate(); // WorkitemOnCreateRuleCreate | Rule
+try {
+    WorkitemOnCreateRule result = apiInstance.postTaskmanagementWorktypeFlowsOncreateRules(worktypeId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TaskManagementApi#postTaskmanagementWorktypeFlowsOncreateRules");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **worktypeId** | **String**| Worktype id | 
+| **body** | [**WorkitemOnCreateRuleCreate**](WorkitemOnCreateRuleCreate)| Rule | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WorkitemOnCreateRule**](WorkitemOnCreateRule)
+
+
 # **postTaskmanagementWorktypeStatuses**
 
 
@@ -2937,4 +3563,4 @@ try {
 [**DataSchema**](DataSchema)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:210.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_

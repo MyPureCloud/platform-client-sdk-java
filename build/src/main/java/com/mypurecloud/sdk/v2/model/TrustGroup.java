@@ -186,6 +186,7 @@ public class TrustGroup  implements Serializable {
   private VisibilityEnum visibility = null;
   private Boolean rolesEnabled = null;
   private Boolean includeOwners = null;
+  private Boolean callsEnabled = null;
   private List<User> owners = new ArrayList<User>();
   private Date dateCreated = null;
   private OrgUser createdBy = null;
@@ -386,6 +387,24 @@ public class TrustGroup  implements Serializable {
 
 
   /**
+   * Allow calls to be placed to this group.
+   **/
+  public TrustGroup callsEnabled(Boolean callsEnabled) {
+    this.callsEnabled = callsEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Allow calls to be placed to this group.")
+  @JsonProperty("callsEnabled")
+  public Boolean getCallsEnabled() {
+    return callsEnabled;
+  }
+  public void setCallsEnabled(Boolean callsEnabled) {
+    this.callsEnabled = callsEnabled;
+  }
+
+
+  /**
    * Owners of the group
    **/
   public TrustGroup owners(List<User> owners) {
@@ -441,6 +460,7 @@ public class TrustGroup  implements Serializable {
             Objects.equals(this.visibility, trustGroup.visibility) &&
             Objects.equals(this.rolesEnabled, trustGroup.rolesEnabled) &&
             Objects.equals(this.includeOwners, trustGroup.includeOwners) &&
+            Objects.equals(this.callsEnabled, trustGroup.callsEnabled) &&
             Objects.equals(this.owners, trustGroup.owners) &&
             Objects.equals(this.dateCreated, trustGroup.dateCreated) &&
             Objects.equals(this.createdBy, trustGroup.createdBy);
@@ -448,7 +468,7 @@ public class TrustGroup  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, dateModified, memberCount, state, version, type, images, addresses, rulesVisible, visibility, rolesEnabled, includeOwners, owners, dateCreated, createdBy);
+    return Objects.hash(id, name, description, dateModified, memberCount, state, version, type, images, addresses, rulesVisible, visibility, rolesEnabled, includeOwners, callsEnabled, owners, dateCreated, createdBy);
   }
 
   @Override
@@ -470,6 +490,7 @@ public class TrustGroup  implements Serializable {
     sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
     sb.append("    rolesEnabled: ").append(toIndentedString(rolesEnabled)).append("\n");
     sb.append("    includeOwners: ").append(toIndentedString(includeOwners)).append("\n");
+    sb.append("    callsEnabled: ").append(toIndentedString(callsEnabled)).append("\n");
     sb.append("    owners: ").append(toIndentedString(owners)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
