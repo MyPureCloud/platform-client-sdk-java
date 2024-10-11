@@ -8003,8 +8003,6 @@ try {
 
 Update conversation by setting its parking state
 
-patchConversationsEmailParticipantParkingstate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/parkingstate  
 
 Requires ANY permissions: 
@@ -12440,7 +12438,7 @@ try {
 # **postConversationsMessageInboundOpenMessage**
 
 
-> [OpenMessageNormalizedMessage](OpenMessageNormalizedMessage) postConversationsMessageInboundOpenMessage(integrationId, body)
+> [OpenMessageNormalizedMessage](OpenMessageNormalizedMessage) postConversationsMessageInboundOpenMessage(integrationId, body, prefetchConversationId)
 
 Send inbound Open Message
 
@@ -12476,8 +12474,9 @@ Configuration.setDefaultApiClient(apiClient);
 ConversationsApi apiInstance = new ConversationsApi();
 String integrationId = "integrationId_example"; // String | integrationId
 OpenInboundNormalizedMessage body = new OpenInboundNormalizedMessage(); // OpenInboundNormalizedMessage | NormalizedMessage
+Boolean prefetchConversationId = false; // Boolean | Indicates whether or not to prefetch conversationId
 try {
-    OpenMessageNormalizedMessage result = apiInstance.postConversationsMessageInboundOpenMessage(integrationId, body);
+    OpenMessageNormalizedMessage result = apiInstance.postConversationsMessageInboundOpenMessage(integrationId, body, prefetchConversationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#postConversationsMessageInboundOpenMessage");
@@ -12492,6 +12491,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **integrationId** | **String**| integrationId | 
 | **body** | [**OpenInboundNormalizedMessage**](OpenInboundNormalizedMessage)| NormalizedMessage | 
+| **prefetchConversationId** | **Boolean**| Indicates whether or not to prefetch conversationId | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -14843,4 +14843,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:210.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_

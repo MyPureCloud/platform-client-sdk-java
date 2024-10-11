@@ -451,7 +451,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WebDeploymentsApi apiInstance = new WebDeploymentsApi();
-Boolean showOnlyPublished = false; // Boolean | Get only configuration drafts with published versions
+Boolean showOnlyPublished = true; // Boolean | Filter by published status.
 try {
     WebDeploymentConfigurationVersionEntityListing result = apiInstance.getWebdeploymentsConfigurations(showOnlyPublished);
     System.out.println(result);
@@ -466,7 +466,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **showOnlyPublished** | **Boolean**| Get only configuration drafts with published versions | [optional] [default to false] 
+| **showOnlyPublished** | **Boolean**| Filter by published status. | [optional] 
 {: class="table-striped"}
 
 
@@ -1094,4 +1094,4 @@ try {
 [**WebDeployment**](WebDeployment)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:210.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_

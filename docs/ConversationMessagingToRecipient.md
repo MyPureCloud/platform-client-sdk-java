@@ -12,6 +12,7 @@
 | **firstName** | **String** | First name of the recipient. |  [optional] |
 | **lastName** | **String** | Last name of the recipient. |  [optional] |
 | **email** | **String** | E-mail address of the recipient. |  [optional] |
+| **externalContactId** | **String** | The identifier of the external contact. |  [optional] |
 | **additionalIds** | [**List&lt;ConversationRecipientAdditionalIdentifier&gt;**](ConversationRecipientAdditionalIdentifier) | List of recipient additional identifiers |  [optional] |
 
 
@@ -28,4 +29,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:210.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_

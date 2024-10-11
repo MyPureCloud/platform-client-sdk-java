@@ -5,11 +5,13 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **total** | **Long** |  |  [optional] |
 | **entities** | [**List&lt;ExpandableWebDeployment&gt;**](ExpandableWebDeployment) |  |  [optional] |
+| **nextUri** | **String** |  |  [optional] |
 | **selfUri** | **String** |  |  [optional] |
+| **previousUri** | **String** |  |  [optional] |
+| **total** | **Long** |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:210.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_

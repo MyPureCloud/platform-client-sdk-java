@@ -210,6 +210,7 @@
 | SEARCH_CRITERIA_VALUES_EXCEED_LIMIT | &quot;SEARCH_CRITERIA_VALUES_EXCEED_LIMIT&quot; | 
 | EXPORT_EMAIL_FILE_SIZE_EXCEEDED_LIMIT | &quot;EXPORT_EMAIL_FILE_SIZE_EXCEEDED_LIMIT&quot; | 
 | CIRCUIT_BREAKER_OPEN_FOR_VIEW_TYPE | &quot;CIRCUIT_BREAKER_OPEN_FOR_VIEW_TYPE&quot; | 
+| BAD_REQUEST_SCHEDULED_RUN | &quot;BAD_REQUEST_SCHEDULED_RUN&quot; | 
 
 
 ## Enum: CsvDelimiterEnum
@@ -243,4 +244,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:210.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_

@@ -21,8 +21,10 @@
 | OPEN_MESSAGING | &quot;open-messaging&quot; | 
 | API | &quot;api&quot; | 
 | AUDIO_CONNECTOR | &quot;audio-connector&quot; | 
+| BYOT_STT | &quot;byot-stt&quot; | 
+| BOT_CONNECTOR | &quot;bot-connector&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:210.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_
