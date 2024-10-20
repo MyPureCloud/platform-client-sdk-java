@@ -838,7 +838,7 @@ try {
 # **getContentmanagementSharedSharedId**
 
 
-> [SharedResponse](SharedResponse) getContentmanagementSharedSharedId(sharedId, redirect, disposition, contentType, expand)
+> [SharedResponse](SharedResponse) getContentmanagementSharedSharedId(sharedId, disposition, contentType, expand)
 
 Get shared documents. Securely download a shared document.
 
@@ -872,12 +872,11 @@ Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String sharedId = "sharedId_example"; // String | Shared ID
-Boolean redirect = true; // Boolean | Turn on or off redirect
 String disposition = "attachment"; // String | Request how the share content will be downloaded: attached as a file or inline. Default is attachment.
 String contentType = "contentType_example"; // String | The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav
 String expand = "expand_example"; // String | Expand some document fields
 try {
-    SharedResponse result = apiInstance.getContentmanagementSharedSharedId(sharedId, redirect, disposition, contentType, expand);
+    SharedResponse result = apiInstance.getContentmanagementSharedSharedId(sharedId, disposition, contentType, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ContentManagementApi#getContentmanagementSharedSharedId");
@@ -891,7 +890,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sharedId** | **String**| Shared ID | 
-| **redirect** | **Boolean**| Turn on or off redirect | [optional] [default to true] 
 | **disposition** | **String**| Request how the share content will be downloaded: attached as a file or inline. Default is attachment. | [optional] [default to attachment]<br />**Values**: attachment, inline, none 
 | **contentType** | **String**| The requested format for the specified document. If supported, the document will be returned in that format. Example contentType&#x3D;audio/wav | [optional] 
 | **expand** | **String**| Expand some document fields | [optional]<br />**Values**: document.acl 
@@ -2263,4 +2261,4 @@ try {
 [**TagValue**](TagValue)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_

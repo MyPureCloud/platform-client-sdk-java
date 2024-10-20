@@ -9908,10 +9908,15 @@ try {
 
 # **postConversationSuggestionsFeedback**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > Void postConversationSuggestionsFeedback(conversationId, body)
 
 Suggestion feedback.
+
+Google Agent Assist offering within Genesys will no longer be supported
 
 Wraps POST /api/v2/conversations/{conversationId}/suggestions/feedback  
 
@@ -14843,4 +14848,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_

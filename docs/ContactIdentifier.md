@@ -21,6 +21,7 @@
 | SOCIALFACEBOOK | &quot;SocialFacebook&quot; | 
 | SOCIALTWITTER | &quot;SocialTwitter&quot; | 
 | SOCIALWHATSAPP | &quot;SocialWhatsapp&quot; | 
+| SOCIALINSTAGRAM | &quot;SocialInstagram&quot; | 
 | EMAIL | &quot;Email&quot; | 
 | PHONE | &quot;Phone&quot; | 
 | COOKIE | &quot;Cookie&quot; | 
@@ -29,4 +30,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_

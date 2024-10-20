@@ -1064,7 +1064,7 @@ try {
 # **getAuthorizationRoleUsers**
 
 
-> [UserEntityListing](UserEntityListing) getAuthorizationRoleUsers(roleId, pageSize, pageNumber)
+> [UserReferenceEntityListing](UserReferenceEntityListing) getAuthorizationRoleUsers(roleId, pageSize, pageNumber)
 
 Get a list of the users in a specified role.
 
@@ -1101,7 +1101,7 @@ String roleId = "roleId_example"; // String | Role ID
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 try {
-    UserEntityListing result = apiInstance.getAuthorizationRoleUsers(roleId, pageSize, pageNumber);
+    UserReferenceEntityListing result = apiInstance.getAuthorizationRoleUsers(roleId, pageSize, pageNumber);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AuthorizationApi#getAuthorizationRoleUsers");
@@ -1122,7 +1122,7 @@ try {
 
 ### Return type
 
-[**UserEntityListing**](UserEntityListing)
+[**UserReferenceEntityListing**](UserReferenceEntityListing)
 
 
 # **getAuthorizationRoles**
@@ -2788,4 +2788,4 @@ try {
 [**UserAuthorization**](UserAuthorization)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_

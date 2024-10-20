@@ -27,9 +27,11 @@
 | SETCAMPAIGNNUMBEROFLINES | &quot;setCampaignNumberOfLines&quot; | 
 | SETCAMPAIGNWEIGHT | &quot;setCampaignWeight&quot; | 
 | SETCAMPAIGNMAXCALLSPERAGENT | &quot;setCampaignMaxCallsPerAgent&quot; | 
+| SETCAMPAIGNMESSAGESPERMINUTE | &quot;setCampaignMessagesPerMinute&quot; | 
 | CHANGECAMPAIGNQUEUE | &quot;changeCampaignQueue&quot; | 
+| CHANGECAMPAIGNTEMPLATE | &quot;changeCampaignTemplate&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_

@@ -750,8 +750,6 @@ null (empty response body)
 
 Delete Salesforce Knowledge integration source
 
-deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}  
 
 Requires ALL permissions: 
@@ -812,8 +810,6 @@ null (empty response body)
 
 Delete ServiceNow Knowledge integration source
 
-deleteKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}  
 
 Requires ALL permissions: 
@@ -873,8 +869,6 @@ null (empty response body)
 > Void deleteKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId)
 
 Delete synchronization job
-
-deleteKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}  
 
@@ -1094,8 +1088,6 @@ try {
 > [KnowledgeIntegrationOptionsResponse](KnowledgeIntegrationOptionsResponse) getKnowledgeIntegrationOptions(integrationId)
 
 Get sync options available for a knowledge-connect integration
-
-getKnowledgeIntegrationOptions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/knowledge/integrations/{integrationId}/options  
 
@@ -2865,8 +2857,6 @@ try {
 
 Get operations
 
-getKnowledgeKnowledgebaseOperations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations  
 
 Requires ALL permissions: 
@@ -2941,8 +2931,6 @@ try {
 > [OperationCreatorUserResponse](OperationCreatorUserResponse) getKnowledgeKnowledgebaseOperationsUsersQuery(knowledgeBaseId)
 
 Get ids of operation creator users and oauth clients
-
-getKnowledgeKnowledgebaseOperationsUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query  
 
@@ -3068,8 +3056,6 @@ try {
 
 Get Knowledge integration sources
 
-getKnowledgeKnowledgebaseSources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources  
 
 Requires ALL permissions: 
@@ -3135,8 +3121,6 @@ try {
 
 Get Salesforce Knowledge integration source
 
-getKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}  
 
 Requires ALL permissions: 
@@ -3200,8 +3184,6 @@ try {
 
 Get ServiceNow Knowledge integration source
 
-getKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}  
 
 Requires ALL permissions: 
@@ -3264,8 +3246,6 @@ try {
 > [KnowledgeSyncJobResponse](KnowledgeSyncJobResponse) getKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId)
 
 Get synchronization job report
-
-getKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}  
 
@@ -4554,8 +4534,6 @@ null (empty response body)
 > [KnowledgeSyncJobResponse](KnowledgeSyncJobResponse) patchKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId, body)
 
 Update synchronization job
-
-patchKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}  
 
@@ -6830,8 +6808,6 @@ try {
 
 Create Salesforce Knowledge integration source
 
-postKnowledgeKnowledgebaseSourcesSalesforce is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce  
 
 Requires ALL permissions: 
@@ -6892,8 +6868,6 @@ try {
 > [SourceSyncResponse](SourceSyncResponse) postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(knowledgeBaseId, sourceId)
 
 Start sync on Salesforce Knowledge integration source
-
-postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}/sync  
 
@@ -6956,8 +6930,6 @@ try {
 
 Create ServiceNow Knowledge integration source
 
-postKnowledgeKnowledgebaseSourcesServicenow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow  
 
 Requires ALL permissions: 
@@ -7019,8 +6991,6 @@ try {
 
 Start synchronization on ServiceNow Knowledge integration source
 
-postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}/sync  
 
 Requires ALL permissions: 
@@ -7081,8 +7051,6 @@ try {
 > [KnowledgeSyncJobResponse](KnowledgeSyncJobResponse) postKnowledgeKnowledgebaseSynchronizeJobs(knowledgeBaseId, body)
 
 Create synchronization job
-
-postKnowledgeKnowledgebaseSynchronizeJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs  
 
@@ -7267,8 +7235,6 @@ try {
 
 Update Salesforce Knowledge integration source
 
-putKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}  
 
 Requires ALL permissions: 
@@ -7332,8 +7298,6 @@ try {
 
 Update ServiceNow Knowledge integration source
 
-putKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}  
 
 Requires ALL permissions: 
@@ -7390,4 +7354,4 @@ try {
 [**ServiceNowSourceResponse**](ServiceNowSourceResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_

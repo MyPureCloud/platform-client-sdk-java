@@ -26,6 +26,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOrgauthorizationTrusteeUserRoles**](OrganizationAuthorizationApi#getOrgauthorizationTrusteeUserRoles) | Get Trustee User Roles |
 | [**getOrgauthorizationTrusteeUsers**](OrganizationAuthorizationApi#getOrgauthorizationTrusteeUsers) | The list of trustee users for this organization (i.e. users granted access to this organization). |
 | [**getOrgauthorizationTrustees**](OrganizationAuthorizationApi#getOrgauthorizationTrustees) | The list of trustees for this organization (i.e. organizations granted access to this organization). |
+| [**getOrgauthorizationTrusteesCare**](OrganizationAuthorizationApi#getOrgauthorizationTrusteesCare) | Get Customer Care organization ids. |
 | [**getOrgauthorizationTrusteesDefault**](OrganizationAuthorizationApi#getOrgauthorizationTrusteesDefault) | Get organization authorization trust with Customer Care, if one exists. |
 | [**getOrgauthorizationTrustor**](OrganizationAuthorizationApi#getOrgauthorizationTrustor) | Get Org Trust |
 | [**getOrgauthorizationTrustorCloneduser**](OrganizationAuthorizationApi#getOrgauthorizationTrustorCloneduser) | Get Cloned User |
@@ -40,6 +41,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postOrgauthorizationTrusteeUsers**](OrganizationAuthorizationApi#postOrgauthorizationTrusteeUsers) | Add a user to the trust. |
 | [**postOrgauthorizationTrustees**](OrganizationAuthorizationApi#postOrgauthorizationTrustees) | Create a new organization authorization trust. This is required to grant other organizations access to your organization. |
 | [**postOrgauthorizationTrusteesAudits**](OrganizationAuthorizationApi#postOrgauthorizationTrusteesAudits) | Get Org Trustee Audits |
+| [**postOrgauthorizationTrusteesCare**](OrganizationAuthorizationApi#postOrgauthorizationTrusteesCare) | Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization. |
 | [**postOrgauthorizationTrusteesDefault**](OrganizationAuthorizationApi#postOrgauthorizationTrusteesDefault) | Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization. |
 | [**postOrgauthorizationTrustorAudits**](OrganizationAuthorizationApi#postOrgauthorizationTrustorAudits) | Get Org Trustor Audits |
 | [**putOrgauthorizationTrustee**](OrganizationAuthorizationApi#putOrgauthorizationTrustee) | Update Org Trust |
@@ -1380,6 +1382,62 @@ try {
 [**TrustEntityListing**](TrustEntityListing)
 
 
+# **getOrgauthorizationTrusteesCare**
+
+
+> [TrusteeReferenceList](TrusteeReferenceList) getOrgauthorizationTrusteesCare()
+
+Get Customer Care organization ids.
+
+Wraps GET /api/v2/orgauthorization/trustees/care  
+
+Requires ANY permissions: 
+
+* authorization:orgTrustee:view
+* authorization:orgTrusteeUser:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();
+try {
+    TrusteeReferenceList result = apiInstance.getOrgauthorizationTrusteesCare();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationAuthorizationApi#getOrgauthorizationTrusteesCare");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**TrusteeReferenceList**](TrusteeReferenceList)
+
+
 # **getOrgauthorizationTrusteesDefault**
 
 
@@ -2232,6 +2290,72 @@ try {
 **Object**
 
 
+# **postOrgauthorizationTrusteesCare**
+
+
+> [TrustEntityListing](TrustEntityListing) postOrgauthorizationTrusteesCare(assignDefaultRole, autoExpire, assignFullAccess, allowTrustedUserAccess)
+
+Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
+
+Wraps POST /api/v2/orgauthorization/trustees/care  
+
+Requires ALL permissions: 
+
+* authorization:orgTrustee:add
+* authorization:orgTrusteeUser:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();
+Boolean assignDefaultRole = true; // Boolean | Assign Admin role to default pairing with Customer Care
+Boolean autoExpire = true; // Boolean | Automatically expire pairing after 30 days
+Boolean assignFullAccess = true; // Boolean | Grant Customer Care full access to the organization
+Boolean allowTrustedUserAccess = true; // Boolean | Make Customer Care a Trusted User
+try {
+    TrustEntityListing result = apiInstance.postOrgauthorizationTrusteesCare(assignDefaultRole, autoExpire, assignFullAccess, allowTrustedUserAccess);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationAuthorizationApi#postOrgauthorizationTrusteesCare");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **assignDefaultRole** | **Boolean**| Assign Admin role to default pairing with Customer Care | [optional] 
+| **autoExpire** | **Boolean**| Automatically expire pairing after 30 days | [optional] 
+| **assignFullAccess** | **Boolean**| Grant Customer Care full access to the organization | [optional] 
+| **allowTrustedUserAccess** | **Boolean**| Make Customer Care a Trusted User | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TrustEntityListing**](TrustEntityListing)
+
+
 # **postOrgauthorizationTrusteesDefault**
 
 
@@ -2857,4 +2981,4 @@ try {
 [**TrustUser**](TrustUser)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_

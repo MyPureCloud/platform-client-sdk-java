@@ -5,10 +5,10 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **blocks** | [**List&lt;DocumentTableContentBlock&gt;**](DocumentTableContentBlock) | The list of content blocks for the table. |  |
 | **properties** | [**DocumentBodyTableCellBlockProperties**](DocumentBodyTableCellBlockProperties) | The properties for the table cell. |  [optional] |
+| **blocks** | [**List&lt;DocumentTableContentBlock&gt;**](DocumentTableContentBlock) | The list of content blocks for the table. |  |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_

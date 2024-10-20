@@ -2432,8 +2432,6 @@ try {
 
 Get an Event Definition
 
-getJourneyViewsEventdefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/journey/views/eventdefinitions/{eventDefinitionId}  
 
 Requires ALL permissions: 
@@ -2492,8 +2490,6 @@ try {
 > [JourneyEventDefinitionListing](JourneyEventDefinitionListing) getJourneyViewsEventdefinitions()
 
 Get a list of Event Definitions
-
-getJourneyViewsEventdefinitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/journey/views/eventdefinitions  
 
@@ -3908,8 +3904,6 @@ Validate whether an encoding exist for a label/value combination.
 
 True indicates a valid encoding
 
-postJourneyViewsEncodingsValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/journey/views/encodings/validate  
 
 Requires ALL permissions: 
@@ -4027,4 +4021,4 @@ try {
 [**JourneyView**](JourneyView)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_

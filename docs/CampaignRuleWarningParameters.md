@@ -1,0 +1,52 @@
+# CampaignRuleWarningParameters
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **actionId** | **String** | ID of action |  [optional] |
+| **conditionId** | **String** | ID of condition |  [optional] |
+| **actionType** | [**ActionTypeEnum**](#Enum--ActionTypeEnum) | Type of action |  [optional] |
+| **conditionType** | [**ConditionTypeEnum**](#Enum--ConditionTypeEnum) | Type of condition |  [optional] |
+
+
+## Enum: ActionTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| TURNONCAMPAIGN | &quot;turnOnCampaign&quot; | 
+| TURNOFFCAMPAIGN | &quot;turnOffCampaign&quot; | 
+| TURNONSEQUENCE | &quot;turnOnSequence&quot; | 
+| TURNOFFSEQUENCE | &quot;turnOffSequence&quot; | 
+| SETCAMPAIGNPRIORITY | &quot;setCampaignPriority&quot; | 
+| RECYCLECAMPAIGN | &quot;recycleCampaign&quot; | 
+| SETCAMPAIGNDIALINGMODE | &quot;setCampaignDialingMode&quot; | 
+| SETCAMPAIGNABANDONRATE | &quot;setCampaignAbandonRate&quot; | 
+| SETCAMPAIGNNUMBEROFLINES | &quot;setCampaignNumberOfLines&quot; | 
+| SETCAMPAIGNWEIGHT | &quot;setCampaignWeight&quot; | 
+| SETCAMPAIGNMAXCALLSPERAGENT | &quot;setCampaignMaxCallsPerAgent&quot; | 
+| SETCAMPAIGNMESSAGESPERMINUTE | &quot;setCampaignMessagesPerMinute&quot; | 
+| CHANGECAMPAIGNQUEUE | &quot;changeCampaignQueue&quot; | 
+| CHANGECAMPAIGNTEMPLATE | &quot;changeCampaignTemplate&quot; | 
+
+
+## Enum: ConditionTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| CAMPAIGNPROGRESS | &quot;campaignProgress&quot; | 
+| CAMPAIGNAGENTS | &quot;campaignAgents&quot; | 
+| CAMPAIGNRECORDSATTEMPTED | &quot;campaignRecordsAttempted&quot; | 
+| CAMPAIGNBUSINESSSUCCESS | &quot;campaignBusinessSuccess&quot; | 
+| CAMPAIGNBUSINESSFAILURE | &quot;campaignBusinessFailure&quot; | 
+| CAMPAIGNBUSINESSNEUTRAL | &quot;campaignBusinessNeutral&quot; | 
+| CAMPAIGNVALIDATTEMPTS | &quot;campaignValidAttempts&quot; | 
+| CAMPAIGNRIGHTPARTYCONTACTS | &quot;campaignRightPartyContacts&quot; | 
+
+
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_
