@@ -96,7 +96,8 @@ public class ResolutionAggregateQueryPredicate  implements Serializable {
     QUEUEID("queueId"),
     REQUESTEDROUTING("requestedRouting"),
     USEDROUTING("usedRouting"),
-    USERID("userId");
+    USERID("userId"),
+    WRAPUPDATE("wrapUpDate");
 
     private String value;
 

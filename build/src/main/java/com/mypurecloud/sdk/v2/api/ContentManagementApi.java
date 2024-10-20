@@ -1170,7 +1170,6 @@ public class ContentManagementApi {
    * Get shared documents. Securely download a shared document.
    * This method requires the download sharing URI obtained in the get document response (downloadSharingUri). Documents may be shared between users in the same workspace. Documents may also be shared between any user by creating a content management share.
    * @param sharedId Shared ID (required)
-   * @param redirect Turn on or off redirect (optional, default to true)
    * @param disposition Request how the share content will be downloaded: attached as a file or inline. Default is attachment. (optional, default to attachment)
    * @param contentType The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav (optional)
    * @param expand Expand some document fields (optional)
@@ -1178,30 +1177,27 @@ public class ContentManagementApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SharedResponse getContentmanagementSharedSharedId(String sharedId, Boolean redirect, String disposition, String contentType, String expand) throws IOException, ApiException {
-    return  getContentmanagementSharedSharedId(createGetContentmanagementSharedSharedIdRequest(sharedId, redirect, disposition, contentType, expand));
+  public SharedResponse getContentmanagementSharedSharedId(String sharedId, String disposition, String contentType, String expand) throws IOException, ApiException {
+    return  getContentmanagementSharedSharedId(createGetContentmanagementSharedSharedIdRequest(sharedId, disposition, contentType, expand));
   }
 
   /**
    * Get shared documents. Securely download a shared document.
    * This method requires the download sharing URI obtained in the get document response (downloadSharingUri). Documents may be shared between users in the same workspace. Documents may also be shared between any user by creating a content management share.
    * @param sharedId Shared ID (required)
-   * @param redirect Turn on or off redirect (optional, default to true)
    * @param disposition Request how the share content will be downloaded: attached as a file or inline. Default is attachment. (optional, default to attachment)
    * @param contentType The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav (optional)
    * @param expand Expand some document fields (optional)
    * @return SharedResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SharedResponse> getContentmanagementSharedSharedIdWithHttpInfo(String sharedId, Boolean redirect, String disposition, String contentType, String expand) throws IOException {
-    return getContentmanagementSharedSharedId(createGetContentmanagementSharedSharedIdRequest(sharedId, redirect, disposition, contentType, expand).withHttpInfo());
+  public ApiResponse<SharedResponse> getContentmanagementSharedSharedIdWithHttpInfo(String sharedId, String disposition, String contentType, String expand) throws IOException {
+    return getContentmanagementSharedSharedId(createGetContentmanagementSharedSharedIdRequest(sharedId, disposition, contentType, expand).withHttpInfo());
   }
 
-  private GetContentmanagementSharedSharedIdRequest createGetContentmanagementSharedSharedIdRequest(String sharedId, Boolean redirect, String disposition, String contentType, String expand) {
+  private GetContentmanagementSharedSharedIdRequest createGetContentmanagementSharedSharedIdRequest(String sharedId, String disposition, String contentType, String expand) {
     return GetContentmanagementSharedSharedIdRequest.builder()
             .withSharedId(sharedId)
-
-            .withRedirect(redirect)
 
             .withDisposition(disposition)
 

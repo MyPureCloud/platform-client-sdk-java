@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.ConversationReference;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.QueueReference;
@@ -93,6 +94,56 @@ public class Survey  implements Serializable {
   private Date completedDate = null;
   private SurveyErrorDetails surveyErrorDetails = null;
   private Team agentTeam = null;
+
+  private static class SurveyTypeEnumDeserializer extends StdDeserializer<SurveyTypeEnum> {
+    public SurveyTypeEnumDeserializer() {
+      super(SurveyTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public SurveyTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SurveyTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Type of the survey
+   */
+ @JsonDeserialize(using = SurveyTypeEnumDeserializer.class)
+  public enum SurveyTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    WEB("Web"),
+    VOICE("Voice");
+
+    private String value;
+
+    SurveyTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SurveyTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SurveyTypeEnum value : SurveyTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SurveyTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private SurveyTypeEnum surveyType = null;
+  private Boolean missingRequiredAnswer = null;
+  private AddressableEntityRef flow = null;
   private String selfUri = null;
 
   
@@ -277,6 +328,60 @@ public class Survey  implements Serializable {
   }
 
 
+  /**
+   * Type of the survey
+   **/
+  public Survey surveyType(SurveyTypeEnum surveyType) {
+    this.surveyType = surveyType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Type of the survey")
+  @JsonProperty("surveyType")
+  public SurveyTypeEnum getSurveyType() {
+    return surveyType;
+  }
+  public void setSurveyType(SurveyTypeEnum surveyType) {
+    this.surveyType = surveyType;
+  }
+
+
+  /**
+   * True if any of the required questions for the survey form have not been answered. Null if survey is not finished.
+   **/
+  public Survey missingRequiredAnswer(Boolean missingRequiredAnswer) {
+    this.missingRequiredAnswer = missingRequiredAnswer;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "True if any of the required questions for the survey form have not been answered. Null if survey is not finished.")
+  @JsonProperty("missingRequiredAnswer")
+  public Boolean getMissingRequiredAnswer() {
+    return missingRequiredAnswer;
+  }
+  public void setMissingRequiredAnswer(Boolean missingRequiredAnswer) {
+    this.missingRequiredAnswer = missingRequiredAnswer;
+  }
+
+
+  /**
+   * An Architect flow that executed in order to collect the answers for this survey.
+   **/
+  public Survey flow(AddressableEntityRef flow) {
+    this.flow = flow;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "An Architect flow that executed in order to collect the answers for this survey.")
+  @JsonProperty("flow")
+  public AddressableEntityRef getFlow() {
+    return flow;
+  }
+  public void setFlow(AddressableEntityRef flow) {
+    this.flow = flow;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -305,12 +410,15 @@ public class Survey  implements Serializable {
             Objects.equals(this.completedDate, survey.completedDate) &&
             Objects.equals(this.surveyErrorDetails, survey.surveyErrorDetails) &&
             Objects.equals(this.agentTeam, survey.agentTeam) &&
+            Objects.equals(this.surveyType, survey.surveyType) &&
+            Objects.equals(this.missingRequiredAnswer, survey.missingRequiredAnswer) &&
+            Objects.equals(this.flow, survey.flow) &&
             Objects.equals(this.selfUri, survey.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversation, surveyForm, agent, status, queue, answers, completedDate, surveyErrorDetails, agentTeam, selfUri);
+    return Objects.hash(id, name, conversation, surveyForm, agent, status, queue, answers, completedDate, surveyErrorDetails, agentTeam, surveyType, missingRequiredAnswer, flow, selfUri);
   }
 
   @Override
@@ -329,6 +437,9 @@ public class Survey  implements Serializable {
     sb.append("    completedDate: ").append(toIndentedString(completedDate)).append("\n");
     sb.append("    surveyErrorDetails: ").append(toIndentedString(surveyErrorDetails)).append("\n");
     sb.append("    agentTeam: ").append(toIndentedString(agentTeam)).append("\n");
+    sb.append("    surveyType: ").append(toIndentedString(surveyType)).append("\n");
+    sb.append("    missingRequiredAnswer: ").append(toIndentedString(missingRequiredAnswer)).append("\n");
+    sb.append("    flow: ").append(toIndentedString(flow)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -56,7 +56,9 @@ public class CampaignRuleAction  implements Serializable {
     SETCAMPAIGNNUMBEROFLINES("setCampaignNumberOfLines"),
     SETCAMPAIGNWEIGHT("setCampaignWeight"),
     SETCAMPAIGNMAXCALLSPERAGENT("setCampaignMaxCallsPerAgent"),
-    CHANGECAMPAIGNQUEUE("changeCampaignQueue");
+    SETCAMPAIGNMESSAGESPERMINUTE("setCampaignMessagesPerMinute"),
+    CHANGECAMPAIGNQUEUE("changeCampaignQueue"),
+    CHANGECAMPAIGNTEMPLATE("changeCampaignTemplate");
 
     private String value;
 

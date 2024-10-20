@@ -12303,10 +12303,11 @@ public class ConversationsApiAsync {
 
   /**
    * Suggestion feedback.
-   * 
+   * Google Agent Assist offering within Genesys will no longer be supported
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<Void> postConversationSuggestionsFeedbackAsync(PostConversationSuggestionsFeedbackRequest request, final AsyncApiCallback<Void> callback) {
     try {
@@ -12337,10 +12338,11 @@ public class ConversationsApiAsync {
 
   /**
    * Suggestion feedback.
-   * 
+   * Google Agent Assist offering within Genesys will no longer be supported
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<Void>> postConversationSuggestionsFeedbackAsync(ApiRequest<Feedback> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {

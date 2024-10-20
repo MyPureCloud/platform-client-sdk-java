@@ -63,7 +63,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getFlowInstancesSettingsLoglevels**](ArchitectApi#getFlowInstancesSettingsLoglevels) | Retrieves the log level for a flow by flow id. |
 | [**getFlowLatestconfiguration**](ArchitectApi#getFlowLatestconfiguration) | Get the latest configuration for flow |
 | [**getFlowVersion**](ArchitectApi#getFlowVersion) | Get flow version |
-| [**getFlowVersionConfiguration**](ArchitectApi#getFlowVersionConfiguration) | Create flow version configuration |
+| [**getFlowVersionConfiguration**](ArchitectApi#getFlowVersionConfiguration) | Get flow version configuration |
 | [**getFlowVersionHealth**](ArchitectApi#getFlowVersionHealth) | Get overall health scores for all intents present in the NLU domain version associated with the bot flow version. |
 | [**getFlowVersionIntentHealth**](ArchitectApi#getFlowVersionIntentHealth) | Get health scores and other health metrics for a specific intent. This includes the health metrics for each utterance in an intent. |
 | [**getFlowVersionIntentUtteranceHealth**](ArchitectApi#getFlowVersionIntentUtteranceHealth) | Get health metrics associated with a specific utterance of an intent. |
@@ -3947,7 +3947,7 @@ try {
 
 > Object getFlowVersionConfiguration(flowId, versionId, deleted)
 
-Create flow version configuration
+Get flow version configuration
 
 Wraps GET /api/v2/flows/{flowId}/versions/{versionId}/configuration  
 
@@ -9142,4 +9142,4 @@ try {
 [**Operation**](Operation)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_

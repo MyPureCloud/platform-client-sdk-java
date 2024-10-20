@@ -143,14 +143,14 @@ public class Assistant  implements Serializable {
 
 
   /**
-   * Configuration of Dialogflow used to assist the agent with transcriptions and knowledge suggestions.
+   * (Deprecated: use the 'knowledgeSuggestionConfig' for genesys knowledge suggestions) Configuration of Dialogflow used to assist the agent with transcriptions and knowledge suggestions.
    **/
   public Assistant googleDialogflowConfig(GoogleDialogflowConfig googleDialogflowConfig) {
     this.googleDialogflowConfig = googleDialogflowConfig;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Configuration of Dialogflow used to assist the agent with transcriptions and knowledge suggestions.")
+  @ApiModelProperty(example = "null", value = "(Deprecated: use the 'knowledgeSuggestionConfig' for genesys knowledge suggestions) Configuration of Dialogflow used to assist the agent with transcriptions and knowledge suggestions.")
   @JsonProperty("googleDialogflowConfig")
   public GoogleDialogflowConfig getGoogleDialogflowConfig() {
     return googleDialogflowConfig;

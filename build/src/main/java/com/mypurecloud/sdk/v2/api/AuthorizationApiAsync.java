@@ -32,7 +32,7 @@ import com.mypurecloud.sdk.v2.model.RoleSettings;
 import com.mypurecloud.sdk.v2.model.SubjectDivisionGrantsEntityListing;
 import com.mypurecloud.sdk.v2.model.SubjectDivisions;
 import com.mypurecloud.sdk.v2.model.UserAuthorization;
-import com.mypurecloud.sdk.v2.model.UserEntityListing;
+import com.mypurecloud.sdk.v2.model.UserReferenceEntityListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationDivisionRequest;
@@ -1309,13 +1309,13 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<UserEntityListing> getAuthorizationRoleUsersAsync(GetAuthorizationRoleUsersRequest request, final AsyncApiCallback<UserEntityListing> callback) {
+  public Future<UserReferenceEntityListing> getAuthorizationRoleUsersAsync(GetAuthorizationRoleUsersRequest request, final AsyncApiCallback<UserReferenceEntityListing> callback) {
     try {
-      final SettableFuture<UserEntityListing> future = SettableFuture.create();
+      final SettableFuture<UserReferenceEntityListing> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserEntityListing>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserReferenceEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserReferenceEntityListing>>() {
         @Override
-        public void onCompleted(ApiResponse<UserEntityListing> response) {
+        public void onCompleted(ApiResponse<UserReferenceEntityListing> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -1343,13 +1343,13 @@ public class AuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<UserEntityListing>> getAuthorizationRoleUsersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UserEntityListing>> callback) {
+  public Future<ApiResponse<UserReferenceEntityListing>> getAuthorizationRoleUsersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UserReferenceEntityListing>> callback) {
     try {
-      final SettableFuture<ApiResponse<UserEntityListing>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<UserReferenceEntityListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<UserEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserEntityListing>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<UserReferenceEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserReferenceEntityListing>>() {
         @Override
-        public void onCompleted(ApiResponse<UserEntityListing> response) {
+        public void onCompleted(ApiResponse<UserReferenceEntityListing> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -1357,7 +1357,7 @@ public class AuthorizationApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<UserEntityListing> response = (ApiResponse<UserEntityListing>)(ApiResponse<?>)exception;
+            ApiResponse<UserReferenceEntityListing> response = (ApiResponse<UserReferenceEntityListing>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -1365,7 +1365,7 @@ public class AuthorizationApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<UserEntityListing> response = (ApiResponse<UserEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<UserReferenceEntityListing> response = (ApiResponse<UserReferenceEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

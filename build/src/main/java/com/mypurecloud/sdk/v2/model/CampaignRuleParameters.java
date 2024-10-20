@@ -184,6 +184,9 @@ public class CampaignRuleParameters  implements Serializable {
   private Integer relativeWeight = null;
   private BigDecimal maxCallsPerAgent = null;
   private DomainEntityRef queue = null;
+  private Integer messagesPerMinute = null;
+  private DomainEntityRef smsContentTemplate = null;
+  private DomainEntityRef emailContentTemplate = null;
 
   
   /**
@@ -348,6 +351,60 @@ public class CampaignRuleParameters  implements Serializable {
   }
 
 
+  /**
+   * The number of messages per minute to set a messaging campaign to.
+   **/
+  public CampaignRuleParameters messagesPerMinute(Integer messagesPerMinute) {
+    this.messagesPerMinute = messagesPerMinute;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The number of messages per minute to set a messaging campaign to.")
+  @JsonProperty("messagesPerMinute")
+  public Integer getMessagesPerMinute() {
+    return messagesPerMinute;
+  }
+  public void setMessagesPerMinute(Integer messagesPerMinute) {
+    this.messagesPerMinute = messagesPerMinute;
+  }
+
+
+  /**
+   * The content template to set a SMS campaign to.
+   **/
+  public CampaignRuleParameters smsContentTemplate(DomainEntityRef smsContentTemplate) {
+    this.smsContentTemplate = smsContentTemplate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The content template to set a SMS campaign to.")
+  @JsonProperty("smsContentTemplate")
+  public DomainEntityRef getSmsContentTemplate() {
+    return smsContentTemplate;
+  }
+  public void setSmsContentTemplate(DomainEntityRef smsContentTemplate) {
+    this.smsContentTemplate = smsContentTemplate;
+  }
+
+
+  /**
+   * The content template to set a Email campaign to.
+   **/
+  public CampaignRuleParameters emailContentTemplate(DomainEntityRef emailContentTemplate) {
+    this.emailContentTemplate = emailContentTemplate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The content template to set a Email campaign to.")
+  @JsonProperty("emailContentTemplate")
+  public DomainEntityRef getEmailContentTemplate() {
+    return emailContentTemplate;
+  }
+  public void setEmailContentTemplate(DomainEntityRef emailContentTemplate) {
+    this.emailContentTemplate = emailContentTemplate;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -366,12 +423,15 @@ public class CampaignRuleParameters  implements Serializable {
             Objects.equals(this.outboundLineCount, campaignRuleParameters.outboundLineCount) &&
             Objects.equals(this.relativeWeight, campaignRuleParameters.relativeWeight) &&
             Objects.equals(this.maxCallsPerAgent, campaignRuleParameters.maxCallsPerAgent) &&
-            Objects.equals(this.queue, campaignRuleParameters.queue);
+            Objects.equals(this.queue, campaignRuleParameters.queue) &&
+            Objects.equals(this.messagesPerMinute, campaignRuleParameters.messagesPerMinute) &&
+            Objects.equals(this.smsContentTemplate, campaignRuleParameters.smsContentTemplate) &&
+            Objects.equals(this.emailContentTemplate, campaignRuleParameters.emailContentTemplate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(operator, value, priority, dialingMode, abandonRate, outboundLineCount, relativeWeight, maxCallsPerAgent, queue);
+    return Objects.hash(operator, value, priority, dialingMode, abandonRate, outboundLineCount, relativeWeight, maxCallsPerAgent, queue, messagesPerMinute, smsContentTemplate, emailContentTemplate);
   }
 
   @Override
@@ -388,6 +448,9 @@ public class CampaignRuleParameters  implements Serializable {
     sb.append("    relativeWeight: ").append(toIndentedString(relativeWeight)).append("\n");
     sb.append("    maxCallsPerAgent: ").append(toIndentedString(maxCallsPerAgent)).append("\n");
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
+    sb.append("    messagesPerMinute: ").append(toIndentedString(messagesPerMinute)).append("\n");
+    sb.append("    smsContentTemplate: ").append(toIndentedString(smsContentTemplate)).append("\n");
+    sb.append("    emailContentTemplate: ").append(toIndentedString(emailContentTemplate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

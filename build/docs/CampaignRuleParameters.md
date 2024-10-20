@@ -14,6 +14,9 @@
 | **relativeWeight** | **Integer** | The relative weight to set a campaign to. Required for the 'setCampaignWeight' action. |  [optional] |
 | **maxCallsPerAgent** | [**BigDecimal**](BigDecimal) | The maximum number of calls per agent to set a campaign to. Required for the 'setCampaignMaxCallsPerAgent' action. |  [optional] |
 | **queue** | [**DomainEntityRef**](DomainEntityRef) | The queue a campaign to. Required for the 'changeCampaignQueue' action. |  [optional] |
+| **messagesPerMinute** | **Integer** | The number of messages per minute to set a messaging campaign to. |  [optional] |
+| **smsContentTemplate** | [**DomainEntityRef**](DomainEntityRef) | The content template to set a SMS campaign to. |  [optional] |
+| **emailContentTemplate** | [**DomainEntityRef**](DomainEntityRef) | The content template to set a Email campaign to. |  [optional] |
 
 
 ## Enum: OperatorEnum
@@ -55,4 +58,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_

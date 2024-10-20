@@ -48,7 +48,8 @@ public class RoutePathRequest  implements Serializable {
     CHAT("Chat"),
     EMAIL("Email"),
     CALLBACK("Callback"),
-    MESSAGE("Message");
+    MESSAGE("Message"),
+    WORKITEM("Workitem");
 
     private String value;
 

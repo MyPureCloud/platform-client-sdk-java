@@ -29,8 +29,8 @@ public class SttEngineEntityListing  implements Serializable, PagedResource<SttE
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String firstUri = null;
   private String lastUri = null;
+  private String firstUri = null;
   private String selfUri = null;
   private String nextUri = null;
   private String previousUri = null;
@@ -107,23 +107,6 @@ public class SttEngineEntityListing  implements Serializable, PagedResource<SttE
 
   /**
    **/
-  public SttEngineEntityListing firstUri(String firstUri) {
-    this.firstUri = firstUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("firstUri")
-  public String getFirstUri() {
-    return firstUri;
-  }
-  public void setFirstUri(String firstUri) {
-    this.firstUri = firstUri;
-  }
-
-
-  /**
-   **/
   public SttEngineEntityListing lastUri(String lastUri) {
     this.lastUri = lastUri;
     return this;
@@ -136,6 +119,23 @@ public class SttEngineEntityListing  implements Serializable, PagedResource<SttE
   }
   public void setLastUri(String lastUri) {
     this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
+  public SttEngineEntityListing firstUri(String firstUri) {
+    this.firstUri = firstUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("firstUri")
+  public String getFirstUri() {
+    return firstUri;
+  }
+  public void setFirstUri(String firstUri) {
+    this.firstUri = firstUri;
   }
 
 
@@ -221,8 +221,8 @@ public class SttEngineEntityListing  implements Serializable, PagedResource<SttE
             Objects.equals(this.pageSize, sttEngineEntityListing.pageSize) &&
             Objects.equals(this.pageNumber, sttEngineEntityListing.pageNumber) &&
             Objects.equals(this.total, sttEngineEntityListing.total) &&
-            Objects.equals(this.firstUri, sttEngineEntityListing.firstUri) &&
             Objects.equals(this.lastUri, sttEngineEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, sttEngineEntityListing.firstUri) &&
             Objects.equals(this.selfUri, sttEngineEntityListing.selfUri) &&
             Objects.equals(this.nextUri, sttEngineEntityListing.nextUri) &&
             Objects.equals(this.previousUri, sttEngineEntityListing.previousUri) &&
@@ -231,7 +231,7 @@ public class SttEngineEntityListing  implements Serializable, PagedResource<SttE
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, lastUri, selfUri, nextUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, lastUri, firstUri, selfUri, nextUri, previousUri, pageCount);
   }
 
   @Override
@@ -243,8 +243,8 @@ public class SttEngineEntityListing  implements Serializable, PagedResource<SttE
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");

@@ -3017,7 +3017,6 @@ public class JourneyApiAsync {
   /**
    * Get an Event Definition
    * 
-   * getJourneyViewsEventdefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3052,7 +3051,6 @@ public class JourneyApiAsync {
   /**
    * Get an Event Definition
    * 
-   * getJourneyViewsEventdefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3094,7 +3092,6 @@ public class JourneyApiAsync {
   /**
    * Get a list of Event Definitions
    * 
-   * getJourneyViewsEventdefinitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3129,7 +3126,6 @@ public class JourneyApiAsync {
   /**
    * Get a list of Event Definitions
    * 
-   * getJourneyViewsEventdefinitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4900,7 +4896,6 @@ public class JourneyApiAsync {
   /**
    * Validate whether an encoding exist for a label/value combination.
    * True indicates a valid encoding
-   * postJourneyViewsEncodingsValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4935,7 +4930,6 @@ public class JourneyApiAsync {
   /**
    * Validate whether an encoding exist for a label/value combination.
    * True indicates a valid encoding
-   * postJourneyViewsEncodingsValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

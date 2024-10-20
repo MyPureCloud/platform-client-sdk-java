@@ -1009,7 +1009,6 @@ public class KnowledgeApiAsync {
   /**
    * Delete Salesforce Knowledge integration source
    * 
-   * deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1044,7 +1043,6 @@ public class KnowledgeApiAsync {
   /**
    * Delete Salesforce Knowledge integration source
    * 
-   * deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1086,7 +1084,6 @@ public class KnowledgeApiAsync {
   /**
    * Delete ServiceNow Knowledge integration source
    * 
-   * deleteKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1121,7 +1118,6 @@ public class KnowledgeApiAsync {
   /**
    * Delete ServiceNow Knowledge integration source
    * 
-   * deleteKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1163,7 +1159,6 @@ public class KnowledgeApiAsync {
   /**
    * Delete synchronization job
    * 
-   * deleteKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1198,7 +1193,6 @@ public class KnowledgeApiAsync {
   /**
    * Delete synchronization job
    * 
-   * deleteKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1465,7 +1459,6 @@ public class KnowledgeApiAsync {
   /**
    * Get sync options available for a knowledge-connect integration
    * 
-   * getKnowledgeIntegrationOptions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1500,7 +1493,6 @@ public class KnowledgeApiAsync {
   /**
    * Get sync options available for a knowledge-connect integration
    * 
-   * getKnowledgeIntegrationOptions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3435,7 +3427,6 @@ public class KnowledgeApiAsync {
   /**
    * Get operations
    * 
-   * getKnowledgeKnowledgebaseOperations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3470,7 +3461,6 @@ public class KnowledgeApiAsync {
   /**
    * Get operations
    * 
-   * getKnowledgeKnowledgebaseOperations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3512,7 +3502,6 @@ public class KnowledgeApiAsync {
   /**
    * Get ids of operation creator users and oauth clients
    * 
-   * getKnowledgeKnowledgebaseOperationsUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3547,7 +3536,6 @@ public class KnowledgeApiAsync {
   /**
    * Get ids of operation creator users and oauth clients
    * 
-   * getKnowledgeKnowledgebaseOperationsUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3666,7 +3654,6 @@ public class KnowledgeApiAsync {
   /**
    * Get Knowledge integration sources
    * 
-   * getKnowledgeKnowledgebaseSources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3701,7 +3688,6 @@ public class KnowledgeApiAsync {
   /**
    * Get Knowledge integration sources
    * 
-   * getKnowledgeKnowledgebaseSources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3743,7 +3729,6 @@ public class KnowledgeApiAsync {
   /**
    * Get Salesforce Knowledge integration source
    * 
-   * getKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3778,7 +3763,6 @@ public class KnowledgeApiAsync {
   /**
    * Get Salesforce Knowledge integration source
    * 
-   * getKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3820,7 +3804,6 @@ public class KnowledgeApiAsync {
   /**
    * Get ServiceNow Knowledge integration source
    * 
-   * getKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3855,7 +3838,6 @@ public class KnowledgeApiAsync {
   /**
    * Get ServiceNow Knowledge integration source
    * 
-   * getKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3897,7 +3879,6 @@ public class KnowledgeApiAsync {
   /**
    * Get synchronization job report
    * 
-   * getKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3932,7 +3913,6 @@ public class KnowledgeApiAsync {
   /**
    * Get synchronization job report
    * 
-   * getKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5411,7 +5391,6 @@ public class KnowledgeApiAsync {
   /**
    * Update synchronization job
    * 
-   * patchKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5446,7 +5425,6 @@ public class KnowledgeApiAsync {
   /**
    * Update synchronization job
    * 
-   * patchKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8289,7 +8267,6 @@ public class KnowledgeApiAsync {
   /**
    * Create Salesforce Knowledge integration source
    * 
-   * postKnowledgeKnowledgebaseSourcesSalesforce is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8324,7 +8301,6 @@ public class KnowledgeApiAsync {
   /**
    * Create Salesforce Knowledge integration source
    * 
-   * postKnowledgeKnowledgebaseSourcesSalesforce is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8366,7 +8342,6 @@ public class KnowledgeApiAsync {
   /**
    * Start sync on Salesforce Knowledge integration source
    * 
-   * postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8401,7 +8376,6 @@ public class KnowledgeApiAsync {
   /**
    * Start sync on Salesforce Knowledge integration source
    * 
-   * postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8443,7 +8417,6 @@ public class KnowledgeApiAsync {
   /**
    * Create ServiceNow Knowledge integration source
    * 
-   * postKnowledgeKnowledgebaseSourcesServicenow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8478,7 +8451,6 @@ public class KnowledgeApiAsync {
   /**
    * Create ServiceNow Knowledge integration source
    * 
-   * postKnowledgeKnowledgebaseSourcesServicenow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8520,7 +8492,6 @@ public class KnowledgeApiAsync {
   /**
    * Start synchronization on ServiceNow Knowledge integration source
    * 
-   * postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8555,7 +8526,6 @@ public class KnowledgeApiAsync {
   /**
    * Start synchronization on ServiceNow Knowledge integration source
    * 
-   * postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8597,7 +8567,6 @@ public class KnowledgeApiAsync {
   /**
    * Create synchronization job
    * 
-   * postKnowledgeKnowledgebaseSynchronizeJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8632,7 +8601,6 @@ public class KnowledgeApiAsync {
   /**
    * Create synchronization job
    * 
-   * postKnowledgeKnowledgebaseSynchronizeJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8826,7 +8794,6 @@ public class KnowledgeApiAsync {
   /**
    * Update Salesforce Knowledge integration source
    * 
-   * putKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8861,7 +8828,6 @@ public class KnowledgeApiAsync {
   /**
    * Update Salesforce Knowledge integration source
    * 
-   * putKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8903,7 +8869,6 @@ public class KnowledgeApiAsync {
   /**
    * Update ServiceNow Knowledge integration source
    * 
-   * putKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8938,7 +8903,6 @@ public class KnowledgeApiAsync {
   /**
    * Update ServiceNow Knowledge integration source
    * 
-   * putKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

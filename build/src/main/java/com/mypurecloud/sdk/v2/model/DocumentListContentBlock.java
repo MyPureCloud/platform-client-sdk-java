@@ -79,8 +79,8 @@ public class DocumentListContentBlock  implements Serializable {
   private TypeEnum type = null;
   private DocumentText text = null;
   private DocumentBodyImage image = null;
-  private DocumentBodyList list = null;
   private DocumentBodyVideo video = null;
+  private DocumentBodyList list = null;
 
   
   /**
@@ -138,24 +138,6 @@ public class DocumentListContentBlock  implements Serializable {
 
 
   /**
-   * List. It must contain a value if the type of the block is UnorderedList or OrderedList.
-   **/
-  public DocumentListContentBlock list(DocumentBodyList list) {
-    this.list = list;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "List. It must contain a value if the type of the block is UnorderedList or OrderedList.")
-  @JsonProperty("list")
-  public DocumentBodyList getList() {
-    return list;
-  }
-  public void setList(DocumentBodyList list) {
-    this.list = list;
-  }
-
-
-  /**
    * Video. It must contain a value if the type of the block is Video.
    **/
   public DocumentListContentBlock video(DocumentBodyVideo video) {
@@ -173,6 +155,24 @@ public class DocumentListContentBlock  implements Serializable {
   }
 
 
+  /**
+   * List. It must contain a value if the type of the block is UnorderedList or OrderedList.
+   **/
+  public DocumentListContentBlock list(DocumentBodyList list) {
+    this.list = list;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List. It must contain a value if the type of the block is UnorderedList or OrderedList.")
+  @JsonProperty("list")
+  public DocumentBodyList getList() {
+    return list;
+  }
+  public void setList(DocumentBodyList list) {
+    this.list = list;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -186,13 +186,13 @@ public class DocumentListContentBlock  implements Serializable {
     return Objects.equals(this.type, documentListContentBlock.type) &&
             Objects.equals(this.text, documentListContentBlock.text) &&
             Objects.equals(this.image, documentListContentBlock.image) &&
-            Objects.equals(this.list, documentListContentBlock.list) &&
-            Objects.equals(this.video, documentListContentBlock.video);
+            Objects.equals(this.video, documentListContentBlock.video) &&
+            Objects.equals(this.list, documentListContentBlock.list);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, text, image, list, video);
+    return Objects.hash(type, text, image, video, list);
   }
 
   @Override
@@ -203,8 +203,8 @@ public class DocumentListContentBlock  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
-    sb.append("    list: ").append(toIndentedString(list)).append("\n");
     sb.append("    video: ").append(toIndentedString(video)).append("\n");
+    sb.append("    list: ").append(toIndentedString(list)).append("\n");
     sb.append("}");
     return sb.toString();
   }

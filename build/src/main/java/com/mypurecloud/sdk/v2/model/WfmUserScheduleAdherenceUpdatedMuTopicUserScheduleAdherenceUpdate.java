@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.WfmUserScheduleAdherenceUpdatedMuTopicActivi
 import com.mypurecloud.sdk.v2.model.WfmUserScheduleAdherenceUpdatedMuTopicQueueReference;
 import com.mypurecloud.sdk.v2.model.WfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation;
 import com.mypurecloud.sdk.v2.model.WfmUserScheduleAdherenceUpdatedMuTopicUriReference;
+import com.mypurecloud.sdk.v2.model.WfmUserScheduleAdherenceUpdatedMuTopicUserNextActivityReminder;
 import com.mypurecloud.sdk.v2.model.WfmUserScheduleAdherenceUpdatedMuTopicUserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -151,6 +152,8 @@ public class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate  
   private List<WfmUserScheduleAdherenceUpdatedMuTopicQueueReference> activeQueues = new ArrayList<WfmUserScheduleAdherenceUpdatedMuTopicQueueReference>();
   private Date activeQueuesModifiedTime = null;
   private Boolean removedFromManagementUnit = null;
+  private Boolean suppressOnTimeReminder = null;
+  private List<WfmUserScheduleAdherenceUpdatedMuTopicUserNextActivityReminder> nextActivityReminders = new ArrayList<WfmUserScheduleAdherenceUpdatedMuTopicUserNextActivityReminder>();
 
   
   /**
@@ -459,6 +462,40 @@ public class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate  
   }
 
 
+  /**
+   **/
+  public WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate suppressOnTimeReminder(Boolean suppressOnTimeReminder) {
+    this.suppressOnTimeReminder = suppressOnTimeReminder;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("suppressOnTimeReminder")
+  public Boolean getSuppressOnTimeReminder() {
+    return suppressOnTimeReminder;
+  }
+  public void setSuppressOnTimeReminder(Boolean suppressOnTimeReminder) {
+    this.suppressOnTimeReminder = suppressOnTimeReminder;
+  }
+
+
+  /**
+   **/
+  public WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate nextActivityReminders(List<WfmUserScheduleAdherenceUpdatedMuTopicUserNextActivityReminder> nextActivityReminders) {
+    this.nextActivityReminders = nextActivityReminders;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("nextActivityReminders")
+  public List<WfmUserScheduleAdherenceUpdatedMuTopicUserNextActivityReminder> getNextActivityReminders() {
+    return nextActivityReminders;
+  }
+  public void setNextActivityReminders(List<WfmUserScheduleAdherenceUpdatedMuTopicUserNextActivityReminder> nextActivityReminders) {
+    this.nextActivityReminders = nextActivityReminders;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -486,12 +523,14 @@ public class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate  
             Objects.equals(this.presenceUpdateTime, wfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate.presenceUpdateTime) &&
             Objects.equals(this.activeQueues, wfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate.activeQueues) &&
             Objects.equals(this.activeQueuesModifiedTime, wfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate.activeQueuesModifiedTime) &&
-            Objects.equals(this.removedFromManagementUnit, wfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate.removedFromManagementUnit);
+            Objects.equals(this.removedFromManagementUnit, wfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate.removedFromManagementUnit) &&
+            Objects.equals(this.suppressOnTimeReminder, wfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate.suppressOnTimeReminder) &&
+            Objects.equals(this.nextActivityReminders, wfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate.nextActivityReminders);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(user, managementUnitId, team, scheduledActivityCategory, scheduledActivityCode, systemPresence, organizationSecondaryPresenceId, routingStatus, actualActivityCategory, isOutOfOffice, adherenceState, impact, adherenceExplanation, adherenceChangeTime, presenceUpdateTime, activeQueues, activeQueuesModifiedTime, removedFromManagementUnit);
+    return Objects.hash(user, managementUnitId, team, scheduledActivityCategory, scheduledActivityCode, systemPresence, organizationSecondaryPresenceId, routingStatus, actualActivityCategory, isOutOfOffice, adherenceState, impact, adherenceExplanation, adherenceChangeTime, presenceUpdateTime, activeQueues, activeQueuesModifiedTime, removedFromManagementUnit, suppressOnTimeReminder, nextActivityReminders);
   }
 
   @Override
@@ -517,6 +556,8 @@ public class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate  
     sb.append("    activeQueues: ").append(toIndentedString(activeQueues)).append("\n");
     sb.append("    activeQueuesModifiedTime: ").append(toIndentedString(activeQueuesModifiedTime)).append("\n");
     sb.append("    removedFromManagementUnit: ").append(toIndentedString(removedFromManagementUnit)).append("\n");
+    sb.append("    suppressOnTimeReminder: ").append(toIndentedString(suppressOnTimeReminder)).append("\n");
+    sb.append("    nextActivityReminders: ").append(toIndentedString(nextActivityReminders)).append("\n");
     sb.append("}");
     return sb.toString();
   }

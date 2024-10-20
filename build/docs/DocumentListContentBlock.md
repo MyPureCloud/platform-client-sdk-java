@@ -8,8 +8,8 @@
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of the list block. |  |
 | **text** | [**DocumentText**](DocumentText) | Text. It must contain a value if the type of the block is Text. |  [optional] |
 | **image** | [**DocumentBodyImage**](DocumentBodyImage) | Image. It must contain a value if the type of the block is Image. |  [optional] |
-| **list** | [**DocumentBodyList**](DocumentBodyList) | List. It must contain a value if the type of the block is UnorderedList or OrderedList. |  [optional] |
 | **video** | [**DocumentBodyVideo**](DocumentBodyVideo) | Video. It must contain a value if the type of the block is Video. |  [optional] |
+| **list** | [**DocumentBodyList**](DocumentBodyList) | List. It must contain a value if the type of the block is UnorderedList or OrderedList. |  [optional] |
 
 
 ## Enum: TypeEnum
@@ -26,4 +26,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_

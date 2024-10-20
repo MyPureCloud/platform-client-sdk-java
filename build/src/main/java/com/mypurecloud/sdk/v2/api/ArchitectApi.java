@@ -5415,7 +5415,7 @@ public class ArchitectApi {
   }
 
   /**
-   * Create flow version configuration
+   * Get flow version configuration
    * 
    * @param flowId Flow ID (required)
    * @param versionId Version ID (required)
@@ -5429,7 +5429,7 @@ public class ArchitectApi {
   }
 
   /**
-   * Create flow version configuration
+   * Get flow version configuration
    * 
    * @param flowId Flow ID (required)
    * @param versionId Version ID (required)
@@ -5453,7 +5453,7 @@ public class ArchitectApi {
   }
 
   /**
-   * Create flow version configuration
+   * Get flow version configuration
    * 
    * @param request The request object
    * @return Object
@@ -5472,7 +5472,7 @@ public class ArchitectApi {
   }
 
   /**
-   * Create flow version configuration
+   * Get flow version configuration
    * 
    * @param request The request object
    * @return the response

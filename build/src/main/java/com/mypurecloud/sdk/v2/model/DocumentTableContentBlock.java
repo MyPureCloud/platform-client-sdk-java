@@ -81,10 +81,10 @@ public class DocumentTableContentBlock  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private DocumentBodyParagraph paragraph = null;
   private DocumentText text = null;
   private DocumentBodyImage image = null;
   private DocumentBodyVideo video = null;
+  private DocumentBodyParagraph paragraph = null;
   private DocumentBodyList list = null;
   private DocumentBodyTable table = null;
 
@@ -104,24 +104,6 @@ public class DocumentTableContentBlock  implements Serializable {
   }
   public void setType(TypeEnum type) {
     this.type = type;
-  }
-
-
-  /**
-   * Paragraph. It must contain a value if the type of the block is Paragraph.
-   **/
-  public DocumentTableContentBlock paragraph(DocumentBodyParagraph paragraph) {
-    this.paragraph = paragraph;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Paragraph. It must contain a value if the type of the block is Paragraph.")
-  @JsonProperty("paragraph")
-  public DocumentBodyParagraph getParagraph() {
-    return paragraph;
-  }
-  public void setParagraph(DocumentBodyParagraph paragraph) {
-    this.paragraph = paragraph;
   }
 
 
@@ -180,6 +162,24 @@ public class DocumentTableContentBlock  implements Serializable {
 
 
   /**
+   * Paragraph. It must contain a value if the type of the block is Paragraph.
+   **/
+  public DocumentTableContentBlock paragraph(DocumentBodyParagraph paragraph) {
+    this.paragraph = paragraph;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Paragraph. It must contain a value if the type of the block is Paragraph.")
+  @JsonProperty("paragraph")
+  public DocumentBodyParagraph getParagraph() {
+    return paragraph;
+  }
+  public void setParagraph(DocumentBodyParagraph paragraph) {
+    this.paragraph = paragraph;
+  }
+
+
+  /**
    * List. It must contain a value if the type of the block is UnorderedList or OrderedList.
    **/
   public DocumentTableContentBlock list(DocumentBodyList list) {
@@ -226,17 +226,17 @@ public class DocumentTableContentBlock  implements Serializable {
     DocumentTableContentBlock documentTableContentBlock = (DocumentTableContentBlock) o;
 
     return Objects.equals(this.type, documentTableContentBlock.type) &&
-            Objects.equals(this.paragraph, documentTableContentBlock.paragraph) &&
             Objects.equals(this.text, documentTableContentBlock.text) &&
             Objects.equals(this.image, documentTableContentBlock.image) &&
             Objects.equals(this.video, documentTableContentBlock.video) &&
+            Objects.equals(this.paragraph, documentTableContentBlock.paragraph) &&
             Objects.equals(this.list, documentTableContentBlock.list) &&
             Objects.equals(this.table, documentTableContentBlock.table);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, paragraph, text, image, video, list, table);
+    return Objects.hash(type, text, image, video, paragraph, list, table);
   }
 
   @Override
@@ -245,10 +245,10 @@ public class DocumentTableContentBlock  implements Serializable {
     sb.append("class DocumentTableContentBlock {\n");
     
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    paragraph: ").append(toIndentedString(paragraph)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("    video: ").append(toIndentedString(video)).append("\n");
+    sb.append("    paragraph: ").append(toIndentedString(paragraph)).append("\n");
     sb.append("    list: ").append(toIndentedString(list)).append("\n");
     sb.append("    table: ").append(toIndentedString(table)).append("\n");
     sb.append("}");

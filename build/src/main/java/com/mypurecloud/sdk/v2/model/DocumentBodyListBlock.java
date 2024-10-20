@@ -73,8 +73,8 @@ public class DocumentBodyListBlock  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<DocumentListContentBlock> blocks = new ArrayList<DocumentListContentBlock>();
   private DocumentBodyListItemProperties properties = null;
+  private List<DocumentListContentBlock> blocks = new ArrayList<DocumentListContentBlock>();
 
   
   /**
@@ -96,24 +96,6 @@ public class DocumentBodyListBlock  implements Serializable {
 
 
   /**
-   * The list of items for an OrderedList or an UnorderedList.
-   **/
-  public DocumentBodyListBlock blocks(List<DocumentListContentBlock> blocks) {
-    this.blocks = blocks;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "The list of items for an OrderedList or an UnorderedList.")
-  @JsonProperty("blocks")
-  public List<DocumentListContentBlock> getBlocks() {
-    return blocks;
-  }
-  public void setBlocks(List<DocumentListContentBlock> blocks) {
-    this.blocks = blocks;
-  }
-
-
-  /**
    * The properties for the list block.
    **/
   public DocumentBodyListBlock properties(DocumentBodyListItemProperties properties) {
@@ -131,6 +113,24 @@ public class DocumentBodyListBlock  implements Serializable {
   }
 
 
+  /**
+   * The list of items for an OrderedList or an UnorderedList.
+   **/
+  public DocumentBodyListBlock blocks(List<DocumentListContentBlock> blocks) {
+    this.blocks = blocks;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The list of items for an OrderedList or an UnorderedList.")
+  @JsonProperty("blocks")
+  public List<DocumentListContentBlock> getBlocks() {
+    return blocks;
+  }
+  public void setBlocks(List<DocumentListContentBlock> blocks) {
+    this.blocks = blocks;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -142,13 +142,13 @@ public class DocumentBodyListBlock  implements Serializable {
     DocumentBodyListBlock documentBodyListBlock = (DocumentBodyListBlock) o;
 
     return Objects.equals(this.type, documentBodyListBlock.type) &&
-            Objects.equals(this.blocks, documentBodyListBlock.blocks) &&
-            Objects.equals(this.properties, documentBodyListBlock.properties);
+            Objects.equals(this.properties, documentBodyListBlock.properties) &&
+            Objects.equals(this.blocks, documentBodyListBlock.blocks);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, blocks, properties);
+    return Objects.hash(type, properties, blocks);
   }
 
   @Override
@@ -157,8 +157,8 @@ public class DocumentBodyListBlock  implements Serializable {
     sb.append("class DocumentBodyListBlock {\n");
     
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    blocks: ").append(toIndentedString(blocks)).append("\n");
     sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
+    sb.append("    blocks: ").append(toIndentedString(blocks)).append("\n");
     sb.append("}");
     return sb.toString();
   }

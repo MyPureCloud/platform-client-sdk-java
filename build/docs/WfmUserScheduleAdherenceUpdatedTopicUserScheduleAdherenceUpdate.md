@@ -23,6 +23,8 @@
 | **activeQueues** | [**List&lt;WfmUserScheduleAdherenceUpdatedTopicQueueReference&gt;**](WfmUserScheduleAdherenceUpdatedTopicQueueReference) |  |  [optional] |
 | **activeQueuesModifiedTime** | [**Date**](Date) |  |  [optional] |
 | **removedFromManagementUnit** | **Boolean** |  |  [optional] |
+| **suppressOnTimeReminder** | **Boolean** |  |  [optional] |
+| **nextActivityReminders** | [**List&lt;WfmUserScheduleAdherenceUpdatedTopicUserNextActivityReminder&gt;**](WfmUserScheduleAdherenceUpdatedTopicUserNextActivityReminder) |  |  [optional] |
 
 
 ## Enum: RoutingStatusEnum
@@ -54,4 +56,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_

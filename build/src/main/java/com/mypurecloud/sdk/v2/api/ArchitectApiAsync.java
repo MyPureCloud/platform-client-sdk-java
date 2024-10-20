@@ -4674,7 +4674,7 @@ public class ArchitectApiAsync {
   }
 
   /**
-   * Create flow version configuration
+   * Get flow version configuration
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -4708,7 +4708,7 @@ public class ArchitectApiAsync {
   }
 
   /**
-   * Create flow version configuration
+   * Get flow version configuration
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

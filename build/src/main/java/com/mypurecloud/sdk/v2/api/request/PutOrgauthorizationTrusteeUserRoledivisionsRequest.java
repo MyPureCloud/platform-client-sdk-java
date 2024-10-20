@@ -36,6 +36,7 @@ import com.mypurecloud.sdk.v2.model.TrustUser;
 import com.mypurecloud.sdk.v2.model.TrustUserEntityListing;
 import com.mypurecloud.sdk.v2.model.Trustee;
 import com.mypurecloud.sdk.v2.model.TrusteeAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.TrusteeReferenceList;
 import com.mypurecloud.sdk.v2.model.Trustor;
 import com.mypurecloud.sdk.v2.model.TrustorAuditQueryRequest;
 import com.mypurecloud.sdk.v2.model.TrustorEntityListing;

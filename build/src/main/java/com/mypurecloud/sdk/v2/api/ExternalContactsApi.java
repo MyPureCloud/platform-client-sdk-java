@@ -27,6 +27,13 @@ import com.mypurecloud.sdk.v2.model.BulkRelationshipsResponse;
 import com.mypurecloud.sdk.v2.model.ContactIdentifier;
 import com.mypurecloud.sdk.v2.model.ContactListing;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
+import com.mypurecloud.sdk.v2.model.CsvJobRequest;
+import com.mypurecloud.sdk.v2.model.CsvJobResponse;
+import com.mypurecloud.sdk.v2.model.CsvSettings;
+import com.mypurecloud.sdk.v2.model.CsvUploadDetailsResponse;
+import com.mypurecloud.sdk.v2.model.CsvUploadPreviewResponse;
+import com.mypurecloud.sdk.v2.model.CsvUploadRequest;
+import com.mypurecloud.sdk.v2.model.CsvUploadResponse;
 import com.mypurecloud.sdk.v2.model.CursorContactListing;
 import com.mypurecloud.sdk.v2.model.CursorExternalSourceListing;
 import com.mypurecloud.sdk.v2.model.CursorNoteListing;
@@ -42,6 +49,7 @@ import com.mypurecloud.sdk.v2.model.ExternalOrganizationListing;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationTrustorLink;
 import com.mypurecloud.sdk.v2.model.ExternalSource;
 import com.mypurecloud.sdk.v2.model.IdentifierClaimRequest;
+import com.mypurecloud.sdk.v2.model.Listing;
 import com.mypurecloud.sdk.v2.model.MergeRequest;
 import com.mypurecloud.sdk.v2.model.Note;
 import com.mypurecloud.sdk.v2.model.NoteListing;
@@ -55,6 +63,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsContactRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsContactNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsContactsSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsExternalsourceRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsImportCsvSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsOrganizationNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsOrganizationTrustorRequest;
@@ -72,6 +81,10 @@ import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemaVersi
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsExternalsourceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsExternalsourcesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportCsvSettingRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportCsvSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportCsvUploadDetailsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportCsvUploadPreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationNoteRequest;
@@ -112,6 +125,9 @@ import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsExternalsourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsIdentifierlookupRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsImportCsvJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsImportCsvSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsImportCsvUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsMergeContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsOrganizationNotesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsOrganizationsRequest;
@@ -122,6 +138,7 @@ import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsContactNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsContactsSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsExternalsourceRequest;
+import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsImportCsvSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsOrganizationNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsOrganizationTrustorTrustorIdRequest;
@@ -458,6 +475,81 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete settings for CSV import
+   * 
+   * @param settingsId Settings id (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteExternalcontactsImportCsvSetting(String settingsId) throws IOException, ApiException {
+     deleteExternalcontactsImportCsvSetting(createDeleteExternalcontactsImportCsvSettingRequest(settingsId));
+  }
+
+  /**
+   * Delete settings for CSV import
+   * 
+   * @param settingsId Settings id (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteExternalcontactsImportCsvSettingWithHttpInfo(String settingsId) throws IOException {
+    return deleteExternalcontactsImportCsvSetting(createDeleteExternalcontactsImportCsvSettingRequest(settingsId).withHttpInfo());
+  }
+
+  private DeleteExternalcontactsImportCsvSettingRequest createDeleteExternalcontactsImportCsvSettingRequest(String settingsId) {
+    return DeleteExternalcontactsImportCsvSettingRequest.builder()
+            .withSettingsId(settingsId)
+
+            .build();
+  }
+
+  /**
+   * Delete settings for CSV import
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteExternalcontactsImportCsvSetting(DeleteExternalcontactsImportCsvSettingRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete settings for CSV import
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteExternalcontactsImportCsvSetting(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1865,6 +1957,326 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CursorExternalSourceListing> response = (ApiResponse<CursorExternalSourceListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get settings for CSV import
+   * 
+   * @param settingsId Settings id (required)
+   * @return CsvSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CsvSettings getExternalcontactsImportCsvSetting(String settingsId) throws IOException, ApiException {
+    return  getExternalcontactsImportCsvSetting(createGetExternalcontactsImportCsvSettingRequest(settingsId));
+  }
+
+  /**
+   * Get settings for CSV import
+   * 
+   * @param settingsId Settings id (required)
+   * @return CsvSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CsvSettings> getExternalcontactsImportCsvSettingWithHttpInfo(String settingsId) throws IOException {
+    return getExternalcontactsImportCsvSetting(createGetExternalcontactsImportCsvSettingRequest(settingsId).withHttpInfo());
+  }
+
+  private GetExternalcontactsImportCsvSettingRequest createGetExternalcontactsImportCsvSettingRequest(String settingsId) {
+    return GetExternalcontactsImportCsvSettingRequest.builder()
+            .withSettingsId(settingsId)
+
+            .build();
+  }
+
+  /**
+   * Get settings for CSV import
+   * 
+   * @param request The request object
+   * @return CsvSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CsvSettings getExternalcontactsImportCsvSetting(GetExternalcontactsImportCsvSettingRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CsvSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CsvSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get settings for CSV import
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CsvSettings> getExternalcontactsImportCsvSetting(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CsvSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CsvSettings> response = (ApiResponse<CsvSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CsvSettings> response = (ApiResponse<CsvSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Retrieve all settings for organization filtered by externalSettingsId if provided
+   * 
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param externalSettingsId External Settings Id to filter the list. (optional)
+   * @return Listing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Listing getExternalcontactsImportCsvSettings(String after, String pageSize, String externalSettingsId) throws IOException, ApiException {
+    return  getExternalcontactsImportCsvSettings(createGetExternalcontactsImportCsvSettingsRequest(after, pageSize, externalSettingsId));
+  }
+
+  /**
+   * Retrieve all settings for organization filtered by externalSettingsId if provided
+   * 
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param externalSettingsId External Settings Id to filter the list. (optional)
+   * @return Listing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Listing> getExternalcontactsImportCsvSettingsWithHttpInfo(String after, String pageSize, String externalSettingsId) throws IOException {
+    return getExternalcontactsImportCsvSettings(createGetExternalcontactsImportCsvSettingsRequest(after, pageSize, externalSettingsId).withHttpInfo());
+  }
+
+  private GetExternalcontactsImportCsvSettingsRequest createGetExternalcontactsImportCsvSettingsRequest(String after, String pageSize, String externalSettingsId) {
+    return GetExternalcontactsImportCsvSettingsRequest.builder()
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .withExternalSettingsId(externalSettingsId)
+
+            .build();
+  }
+
+  /**
+   * Retrieve all settings for organization filtered by externalSettingsId if provided
+   * 
+   * @param request The request object
+   * @return Listing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Listing getExternalcontactsImportCsvSettings(GetExternalcontactsImportCsvSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Listing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Listing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve all settings for organization filtered by externalSettingsId if provided
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Listing> getExternalcontactsImportCsvSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Listing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Listing> response = (ApiResponse<Listing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Listing> response = (ApiResponse<Listing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get details for CSV upload
+   * 
+   * @param uploadId Upload id (required)
+   * @return CsvUploadDetailsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CsvUploadDetailsResponse getExternalcontactsImportCsvUploadDetails(String uploadId) throws IOException, ApiException {
+    return  getExternalcontactsImportCsvUploadDetails(createGetExternalcontactsImportCsvUploadDetailsRequest(uploadId));
+  }
+
+  /**
+   * Get details for CSV upload
+   * 
+   * @param uploadId Upload id (required)
+   * @return CsvUploadDetailsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CsvUploadDetailsResponse> getExternalcontactsImportCsvUploadDetailsWithHttpInfo(String uploadId) throws IOException {
+    return getExternalcontactsImportCsvUploadDetails(createGetExternalcontactsImportCsvUploadDetailsRequest(uploadId).withHttpInfo());
+  }
+
+  private GetExternalcontactsImportCsvUploadDetailsRequest createGetExternalcontactsImportCsvUploadDetailsRequest(String uploadId) {
+    return GetExternalcontactsImportCsvUploadDetailsRequest.builder()
+            .withUploadId(uploadId)
+
+            .build();
+  }
+
+  /**
+   * Get details for CSV upload
+   * 
+   * @param request The request object
+   * @return CsvUploadDetailsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CsvUploadDetailsResponse getExternalcontactsImportCsvUploadDetails(GetExternalcontactsImportCsvUploadDetailsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CsvUploadDetailsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CsvUploadDetailsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get details for CSV upload
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CsvUploadDetailsResponse> getExternalcontactsImportCsvUploadDetails(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CsvUploadDetailsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CsvUploadDetailsResponse> response = (ApiResponse<CsvUploadDetailsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CsvUploadDetailsResponse> response = (ApiResponse<CsvUploadDetailsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get preview for CSV upload
+   * 
+   * @param uploadId Upload id (required)
+   * @return CsvUploadPreviewResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CsvUploadPreviewResponse getExternalcontactsImportCsvUploadPreview(String uploadId) throws IOException, ApiException {
+    return  getExternalcontactsImportCsvUploadPreview(createGetExternalcontactsImportCsvUploadPreviewRequest(uploadId));
+  }
+
+  /**
+   * Get preview for CSV upload
+   * 
+   * @param uploadId Upload id (required)
+   * @return CsvUploadPreviewResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CsvUploadPreviewResponse> getExternalcontactsImportCsvUploadPreviewWithHttpInfo(String uploadId) throws IOException {
+    return getExternalcontactsImportCsvUploadPreview(createGetExternalcontactsImportCsvUploadPreviewRequest(uploadId).withHttpInfo());
+  }
+
+  private GetExternalcontactsImportCsvUploadPreviewRequest createGetExternalcontactsImportCsvUploadPreviewRequest(String uploadId) {
+    return GetExternalcontactsImportCsvUploadPreviewRequest.builder()
+            .withUploadId(uploadId)
+
+            .build();
+  }
+
+  /**
+   * Get preview for CSV upload
+   * 
+   * @param request The request object
+   * @return CsvUploadPreviewResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CsvUploadPreviewResponse getExternalcontactsImportCsvUploadPreview(GetExternalcontactsImportCsvUploadPreviewRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CsvUploadPreviewResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CsvUploadPreviewResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get preview for CSV upload
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CsvUploadPreviewResponse> getExternalcontactsImportCsvUploadPreview(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CsvUploadPreviewResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CsvUploadPreviewResponse> response = (ApiResponse<CsvUploadPreviewResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CsvUploadPreviewResponse> response = (ApiResponse<CsvUploadPreviewResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5122,6 +5534,240 @@ public class ExternalContactsApi {
   }
 
   /**
+   * Create CSV import job
+   * 
+   * @param body ImportRequest (required)
+   * @return CsvJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CsvJobResponse postExternalcontactsImportCsvJobs(CsvJobRequest body) throws IOException, ApiException {
+    return  postExternalcontactsImportCsvJobs(createPostExternalcontactsImportCsvJobsRequest(body));
+  }
+
+  /**
+   * Create CSV import job
+   * 
+   * @param body ImportRequest (required)
+   * @return CsvJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CsvJobResponse> postExternalcontactsImportCsvJobsWithHttpInfo(CsvJobRequest body) throws IOException {
+    return postExternalcontactsImportCsvJobs(createPostExternalcontactsImportCsvJobsRequest(body).withHttpInfo());
+  }
+
+  private PostExternalcontactsImportCsvJobsRequest createPostExternalcontactsImportCsvJobsRequest(CsvJobRequest body) {
+    return PostExternalcontactsImportCsvJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create CSV import job
+   * 
+   * @param request The request object
+   * @return CsvJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CsvJobResponse postExternalcontactsImportCsvJobs(PostExternalcontactsImportCsvJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CsvJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CsvJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create CSV import job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CsvJobResponse> postExternalcontactsImportCsvJobs(ApiRequest<CsvJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CsvJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CsvJobResponse> response = (ApiResponse<CsvJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CsvJobResponse> response = (ApiResponse<CsvJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create settings for CSV import
+   * 
+   * @param body Settings (required)
+   * @return CsvSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CsvSettings postExternalcontactsImportCsvSettings(CsvSettings body) throws IOException, ApiException {
+    return  postExternalcontactsImportCsvSettings(createPostExternalcontactsImportCsvSettingsRequest(body));
+  }
+
+  /**
+   * Create settings for CSV import
+   * 
+   * @param body Settings (required)
+   * @return CsvSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CsvSettings> postExternalcontactsImportCsvSettingsWithHttpInfo(CsvSettings body) throws IOException {
+    return postExternalcontactsImportCsvSettings(createPostExternalcontactsImportCsvSettingsRequest(body).withHttpInfo());
+  }
+
+  private PostExternalcontactsImportCsvSettingsRequest createPostExternalcontactsImportCsvSettingsRequest(CsvSettings body) {
+    return PostExternalcontactsImportCsvSettingsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create settings for CSV import
+   * 
+   * @param request The request object
+   * @return CsvSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CsvSettings postExternalcontactsImportCsvSettings(PostExternalcontactsImportCsvSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CsvSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CsvSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create settings for CSV import
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CsvSettings> postExternalcontactsImportCsvSettings(ApiRequest<CsvSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CsvSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CsvSettings> response = (ApiResponse<CsvSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CsvSettings> response = (ApiResponse<CsvSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get url for CSV upload
+   * 
+   * @param body UploadRequest (required)
+   * @return CsvUploadResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CsvUploadResponse postExternalcontactsImportCsvUploads(CsvUploadRequest body) throws IOException, ApiException {
+    return  postExternalcontactsImportCsvUploads(createPostExternalcontactsImportCsvUploadsRequest(body));
+  }
+
+  /**
+   * Get url for CSV upload
+   * 
+   * @param body UploadRequest (required)
+   * @return CsvUploadResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CsvUploadResponse> postExternalcontactsImportCsvUploadsWithHttpInfo(CsvUploadRequest body) throws IOException {
+    return postExternalcontactsImportCsvUploads(createPostExternalcontactsImportCsvUploadsRequest(body).withHttpInfo());
+  }
+
+  private PostExternalcontactsImportCsvUploadsRequest createPostExternalcontactsImportCsvUploadsRequest(CsvUploadRequest body) {
+    return PostExternalcontactsImportCsvUploadsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Get url for CSV upload
+   * 
+   * @param request The request object
+   * @return CsvUploadResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CsvUploadResponse postExternalcontactsImportCsvUploads(PostExternalcontactsImportCsvUploadsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CsvUploadResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CsvUploadResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get url for CSV upload
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CsvUploadResponse> postExternalcontactsImportCsvUploads(ApiRequest<CsvUploadRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CsvUploadResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CsvUploadResponse> response = (ApiResponse<CsvUploadResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CsvUploadResponse> response = (ApiResponse<CsvUploadResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Merge two contacts into a new contact record
    * Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
    * @param body MergeRequest (required)
@@ -5926,6 +6572,88 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ExternalSource> response = (ApiResponse<ExternalSource>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update settings for CSV import
+   * 
+   * @param settingsId Settings id (required)
+   * @param body Settings (required)
+   * @return CsvSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CsvSettings putExternalcontactsImportCsvSetting(String settingsId, CsvSettings body) throws IOException, ApiException {
+    return  putExternalcontactsImportCsvSetting(createPutExternalcontactsImportCsvSettingRequest(settingsId, body));
+  }
+
+  /**
+   * Update settings for CSV import
+   * 
+   * @param settingsId Settings id (required)
+   * @param body Settings (required)
+   * @return CsvSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CsvSettings> putExternalcontactsImportCsvSettingWithHttpInfo(String settingsId, CsvSettings body) throws IOException {
+    return putExternalcontactsImportCsvSetting(createPutExternalcontactsImportCsvSettingRequest(settingsId, body).withHttpInfo());
+  }
+
+  private PutExternalcontactsImportCsvSettingRequest createPutExternalcontactsImportCsvSettingRequest(String settingsId, CsvSettings body) {
+    return PutExternalcontactsImportCsvSettingRequest.builder()
+            .withSettingsId(settingsId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update settings for CSV import
+   * 
+   * @param request The request object
+   * @return CsvSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CsvSettings putExternalcontactsImportCsvSetting(PutExternalcontactsImportCsvSettingRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CsvSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CsvSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update settings for CSV import
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CsvSettings> putExternalcontactsImportCsvSetting(ApiRequest<CsvSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CsvSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CsvSettings> response = (ApiResponse<CsvSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CsvSettings> response = (ApiResponse<CsvSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

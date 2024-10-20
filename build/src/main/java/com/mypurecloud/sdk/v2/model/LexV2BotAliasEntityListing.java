@@ -29,8 +29,8 @@ public class LexV2BotAliasEntityListing  implements Serializable, PagedResource<
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String firstUri = null;
   private String lastUri = null;
+  private String firstUri = null;
   private String selfUri = null;
   private String nextUri = null;
   private String previousUri = null;
@@ -107,23 +107,6 @@ public class LexV2BotAliasEntityListing  implements Serializable, PagedResource<
 
   /**
    **/
-  public LexV2BotAliasEntityListing firstUri(String firstUri) {
-    this.firstUri = firstUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("firstUri")
-  public String getFirstUri() {
-    return firstUri;
-  }
-  public void setFirstUri(String firstUri) {
-    this.firstUri = firstUri;
-  }
-
-
-  /**
-   **/
   public LexV2BotAliasEntityListing lastUri(String lastUri) {
     this.lastUri = lastUri;
     return this;
@@ -136,6 +119,23 @@ public class LexV2BotAliasEntityListing  implements Serializable, PagedResource<
   }
   public void setLastUri(String lastUri) {
     this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
+  public LexV2BotAliasEntityListing firstUri(String firstUri) {
+    this.firstUri = firstUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("firstUri")
+  public String getFirstUri() {
+    return firstUri;
+  }
+  public void setFirstUri(String firstUri) {
+    this.firstUri = firstUri;
   }
 
 
@@ -221,8 +221,8 @@ public class LexV2BotAliasEntityListing  implements Serializable, PagedResource<
             Objects.equals(this.pageSize, lexV2BotAliasEntityListing.pageSize) &&
             Objects.equals(this.pageNumber, lexV2BotAliasEntityListing.pageNumber) &&
             Objects.equals(this.total, lexV2BotAliasEntityListing.total) &&
-            Objects.equals(this.firstUri, lexV2BotAliasEntityListing.firstUri) &&
             Objects.equals(this.lastUri, lexV2BotAliasEntityListing.lastUri) &&
+            Objects.equals(this.firstUri, lexV2BotAliasEntityListing.firstUri) &&
             Objects.equals(this.selfUri, lexV2BotAliasEntityListing.selfUri) &&
             Objects.equals(this.nextUri, lexV2BotAliasEntityListing.nextUri) &&
             Objects.equals(this.previousUri, lexV2BotAliasEntityListing.previousUri) &&
@@ -231,7 +231,7 @@ public class LexV2BotAliasEntityListing  implements Serializable, PagedResource<
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, lastUri, selfUri, nextUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, lastUri, firstUri, selfUri, nextUri, previousUri, pageCount);
   }
 
   @Override
@@ -243,8 +243,8 @@ public class LexV2BotAliasEntityListing  implements Serializable, PagedResource<
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");

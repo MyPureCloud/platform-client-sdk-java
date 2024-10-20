@@ -25,28 +25,10 @@ import java.io.Serializable;
 
 public class DocumentBodyTable  implements Serializable {
   
-  private List<DocumentBodyTableRowBlock> rows = new ArrayList<DocumentBodyTableRowBlock>();
   private DocumentBodyTableProperties properties = null;
+  private List<DocumentBodyTableRowBlock> rows = new ArrayList<DocumentBodyTableRowBlock>();
 
   
-  /**
-   * The list of rows for the table.
-   **/
-  public DocumentBodyTable rows(List<DocumentBodyTableRowBlock> rows) {
-    this.rows = rows;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "The list of rows for the table.")
-  @JsonProperty("rows")
-  public List<DocumentBodyTableRowBlock> getRows() {
-    return rows;
-  }
-  public void setRows(List<DocumentBodyTableRowBlock> rows) {
-    this.rows = rows;
-  }
-
-
   /**
    * The properties for the table.
    **/
@@ -65,6 +47,24 @@ public class DocumentBodyTable  implements Serializable {
   }
 
 
+  /**
+   * The list of rows for the table.
+   **/
+  public DocumentBodyTable rows(List<DocumentBodyTableRowBlock> rows) {
+    this.rows = rows;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The list of rows for the table.")
+  @JsonProperty("rows")
+  public List<DocumentBodyTableRowBlock> getRows() {
+    return rows;
+  }
+  public void setRows(List<DocumentBodyTableRowBlock> rows) {
+    this.rows = rows;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -75,13 +75,13 @@ public class DocumentBodyTable  implements Serializable {
     }
     DocumentBodyTable documentBodyTable = (DocumentBodyTable) o;
 
-    return Objects.equals(this.rows, documentBodyTable.rows) &&
-            Objects.equals(this.properties, documentBodyTable.properties);
+    return Objects.equals(this.properties, documentBodyTable.properties) &&
+            Objects.equals(this.rows, documentBodyTable.rows);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(rows, properties);
+    return Objects.hash(properties, rows);
   }
 
   @Override
@@ -89,8 +89,8 @@ public class DocumentBodyTable  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class DocumentBodyTable {\n");
     
-    sb.append("    rows: ").append(toIndentedString(rows)).append("\n");
     sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
+    sb.append("    rows: ").append(toIndentedString(rows)).append("\n");
     sb.append("}");
     return sb.toString();
   }

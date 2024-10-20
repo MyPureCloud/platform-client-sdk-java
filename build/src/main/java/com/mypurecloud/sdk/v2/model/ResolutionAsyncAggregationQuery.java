@@ -148,7 +148,8 @@ public class ResolutionAsyncAggregationQuery  implements Serializable {
  @JsonDeserialize(using = AlternateTimeDimensionEnumDeserializer.class)
   public enum AlternateTimeDimensionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    EVENTTIME("eventTime");
+    EVENTTIME("eventTime"),
+    WRAPUPDATE("wrapUpDate");
 
     private String value;
 

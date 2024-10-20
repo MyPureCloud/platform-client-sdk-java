@@ -25,28 +25,10 @@ import java.io.Serializable;
 
 public class DocumentBodyTableRowBlock  implements Serializable {
   
-  private List<DocumentBodyTableCellBlock> cells = new ArrayList<DocumentBodyTableCellBlock>();
   private DocumentBodyTableRowBlockProperties properties = null;
+  private List<DocumentBodyTableCellBlock> cells = new ArrayList<DocumentBodyTableCellBlock>();
 
   
-  /**
-   * The list of cells for the table.
-   **/
-  public DocumentBodyTableRowBlock cells(List<DocumentBodyTableCellBlock> cells) {
-    this.cells = cells;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "The list of cells for the table.")
-  @JsonProperty("cells")
-  public List<DocumentBodyTableCellBlock> getCells() {
-    return cells;
-  }
-  public void setCells(List<DocumentBodyTableCellBlock> cells) {
-    this.cells = cells;
-  }
-
-
   /**
    * The properties for the table rows.
    **/
@@ -65,6 +47,24 @@ public class DocumentBodyTableRowBlock  implements Serializable {
   }
 
 
+  /**
+   * The list of cells for the table.
+   **/
+  public DocumentBodyTableRowBlock cells(List<DocumentBodyTableCellBlock> cells) {
+    this.cells = cells;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The list of cells for the table.")
+  @JsonProperty("cells")
+  public List<DocumentBodyTableCellBlock> getCells() {
+    return cells;
+  }
+  public void setCells(List<DocumentBodyTableCellBlock> cells) {
+    this.cells = cells;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -75,13 +75,13 @@ public class DocumentBodyTableRowBlock  implements Serializable {
     }
     DocumentBodyTableRowBlock documentBodyTableRowBlock = (DocumentBodyTableRowBlock) o;
 
-    return Objects.equals(this.cells, documentBodyTableRowBlock.cells) &&
-            Objects.equals(this.properties, documentBodyTableRowBlock.properties);
+    return Objects.equals(this.properties, documentBodyTableRowBlock.properties) &&
+            Objects.equals(this.cells, documentBodyTableRowBlock.cells);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cells, properties);
+    return Objects.hash(properties, cells);
   }
 
   @Override
@@ -89,8 +89,8 @@ public class DocumentBodyTableRowBlock  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class DocumentBodyTableRowBlock {\n");
     
-    sb.append("    cells: ").append(toIndentedString(cells)).append("\n");
     sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
+    sb.append("    cells: ").append(toIndentedString(cells)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -16,6 +16,9 @@
 | **completedDate** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **surveyErrorDetails** | [**SurveyErrorDetails**](SurveyErrorDetails) | Additional information about what happened when the survey is in Error status. |  [optional] |
 | **agentTeam** | [**Team**](Team) | The team that the agent belongs to |  [optional] |
+| **surveyType** | [**SurveyTypeEnum**](#Enum--SurveyTypeEnum) | Type of the survey |  [optional] |
+| **missingRequiredAnswer** | **Boolean** | True if any of the required questions for the survey form have not been answered. Null if survey is not finished. |  [optional] |
+| **flow** | [**AddressableEntityRef**](AddressableEntityRef) | An Architect flow that executed in order to collect the answers for this survey. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -33,6 +36,15 @@
 | EXPIRED | &quot;Expired&quot; | 
 
 
+## Enum: SurveyTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| WEB | &quot;Web&quot; | 
+| VOICE | &quot;Voice&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_

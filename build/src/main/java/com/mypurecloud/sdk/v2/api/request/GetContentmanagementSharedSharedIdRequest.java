@@ -65,20 +65,6 @@ public class GetContentmanagementSharedSharedIdRequest {
 	    return this;
 	} 
 
-	private Boolean redirect;
-	public Boolean getRedirect() {
-		return this.redirect;
-	}
-
-	public void setRedirect(Boolean redirect) {
-		this.redirect = redirect;
-	}
-
-	public GetContentmanagementSharedSharedIdRequest withRedirect(Boolean redirect) {
-	    this.setRedirect(redirect);
-	    return this;
-	} 
-
 	private String disposition;
 	public String getDisposition() {
 		return this.disposition;
@@ -212,9 +198,6 @@ public class GetContentmanagementSharedSharedIdRequest {
                 .withPathParameter("sharedId", sharedId)
         
 
-                .withQueryParameters("redirect", "", redirect)
-        
-
                 .withQueryParameters("disposition", "", disposition)
         
 
@@ -251,11 +234,6 @@ public class GetContentmanagementSharedSharedIdRequest {
 
 		public Builder withSharedId(String sharedId) {
 			request.setSharedId(sharedId);
-			return this;
-		}
-
-		public Builder withRedirect(Boolean redirect) {
-			request.setRedirect(redirect);
 			return this;
 		}
 

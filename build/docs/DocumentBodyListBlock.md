@@ -6,8 +6,8 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of the list block. |  |
-| **blocks** | [**List&lt;DocumentListContentBlock&gt;**](DocumentListContentBlock) | The list of items for an OrderedList or an UnorderedList. |  |
 | **properties** | [**DocumentBodyListItemProperties**](DocumentBodyListItemProperties) | The properties for the list block. |  [optional] |
+| **blocks** | [**List&lt;DocumentListContentBlock&gt;**](DocumentListContentBlock) | The list of items for an OrderedList or an UnorderedList. |  |
 
 
 ## Enum: TypeEnum
@@ -20,4 +20,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_

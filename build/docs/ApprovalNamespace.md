@@ -15,13 +15,6 @@
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
-| AGENT_ASSISTANT | &quot;agent.assistant&quot; | 
-| ANALYTICS_ALERTING | &quot;analytics.alerting&quot; | 
-| ANALYTICS | &quot;analytics&quot; | 
-| ANALYTICS_REALTIME | &quot;analytics.realtime&quot; | 
-| ANALYTICS_REPORTING_SETTINGS | &quot;analytics.reporting.settings&quot; | 
-| ARCHITECT | &quot;architect&quot; | 
-| AUDIOHOOK | &quot;audiohook&quot; | 
 | AUDIT | &quot;audit&quot; | 
 | AUTH_API | &quot;auth.api&quot; | 
 | AUTHORIZATION | &quot;authorization&quot; | 
@@ -83,6 +76,13 @@
 | WEBHOOKS | &quot;webhooks&quot; | 
 | WORKFORCE_MANAGEMENT_FORECAST | &quot;workforce.management.forecast&quot; | 
 | WORKFORCE_MANAGEMENT | &quot;workforce.management&quot; | 
+| AGENT_ASSISTANT | &quot;agent.assistant&quot; | 
+| ANALYTICS_ALERTING | &quot;analytics.alerting&quot; | 
+| ANALYTICS | &quot;analytics&quot; | 
+| ANALYTICS_REALTIME | &quot;analytics.realtime&quot; | 
+| ANALYTICS_REPORTING_SETTINGS | &quot;analytics.reporting.settings&quot; | 
+| ARCHITECT | &quot;architect&quot; | 
+| AUDIOHOOK | &quot;audiohook&quot; | 
 | SYSTEM | &quot;system&quot; | 
 
 
@@ -118,4 +118,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_

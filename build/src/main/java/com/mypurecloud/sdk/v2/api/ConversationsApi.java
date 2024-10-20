@@ -13442,11 +13442,12 @@ public class ConversationsApi {
 
   /**
    * Suggestion feedback.
-   * 
+   * Google Agent Assist offering within Genesys will no longer be supported
    * @param conversationId Conversation ID (required)
    * @param body SuggestionFeedback (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationSuggestionsFeedback(String conversationId, Feedback body) throws IOException, ApiException {
      postConversationSuggestionsFeedback(createPostConversationSuggestionsFeedbackRequest(conversationId, body));
@@ -13454,10 +13455,11 @@ public class ConversationsApi {
 
   /**
    * Suggestion feedback.
-   * 
+   * Google Agent Assist offering within Genesys will no longer be supported
    * @param conversationId Conversation ID (required)
    * @param body SuggestionFeedback (required)
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationSuggestionsFeedbackWithHttpInfo(String conversationId, Feedback body) throws IOException {
     return postConversationSuggestionsFeedback(createPostConversationSuggestionsFeedbackRequest(conversationId, body).withHttpInfo());
@@ -13474,10 +13476,11 @@ public class ConversationsApi {
 
   /**
    * Suggestion feedback.
-   * 
+   * Google Agent Assist offering within Genesys will no longer be supported
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public void postConversationSuggestionsFeedback(PostConversationSuggestionsFeedbackRequest request) throws IOException, ApiException {
     try {
@@ -13492,10 +13495,11 @@ public class ConversationsApi {
 
   /**
    * Suggestion feedback.
-   * 
+   * Google Agent Assist offering within Genesys will no longer be supported
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<Void> postConversationSuggestionsFeedback(ApiRequest<Feedback> request) throws IOException {
     try {

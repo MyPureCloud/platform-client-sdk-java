@@ -1078,7 +1078,6 @@ public class KnowledgeApi {
   /**
    * Delete Salesforce Knowledge integration source
    * 
-   * deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param sourceId Source ID (required)
    * @throws ApiException if the request fails on the server
@@ -1091,7 +1090,6 @@ public class KnowledgeApi {
   /**
    * Delete Salesforce Knowledge integration source
    * 
-   * deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param sourceId Source ID (required)
    * @throws IOException if the request fails to be processed
@@ -1112,7 +1110,6 @@ public class KnowledgeApi {
   /**
    * Delete Salesforce Knowledge integration source
    * 
-   * deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1131,7 +1128,6 @@ public class KnowledgeApi {
   /**
    * Delete Salesforce Knowledge integration source
    * 
-   * deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1161,7 +1157,6 @@ public class KnowledgeApi {
   /**
    * Delete ServiceNow Knowledge integration source
    * 
-   * deleteKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param sourceId Source ID (required)
    * @throws ApiException if the request fails on the server
@@ -1174,7 +1169,6 @@ public class KnowledgeApi {
   /**
    * Delete ServiceNow Knowledge integration source
    * 
-   * deleteKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param sourceId Source ID (required)
    * @throws IOException if the request fails to be processed
@@ -1195,7 +1189,6 @@ public class KnowledgeApi {
   /**
    * Delete ServiceNow Knowledge integration source
    * 
-   * deleteKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1214,7 +1207,6 @@ public class KnowledgeApi {
   /**
    * Delete ServiceNow Knowledge integration source
    * 
-   * deleteKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1244,7 +1236,6 @@ public class KnowledgeApi {
   /**
    * Delete synchronization job
    * 
-   * deleteKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param syncJobId Synchronization job ID (required)
    * @throws ApiException if the request fails on the server
@@ -1257,7 +1248,6 @@ public class KnowledgeApi {
   /**
    * Delete synchronization job
    * 
-   * deleteKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param syncJobId Synchronization job ID (required)
    * @throws IOException if the request fails to be processed
@@ -1278,7 +1268,6 @@ public class KnowledgeApi {
   /**
    * Delete synchronization job
    * 
-   * deleteKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1297,7 +1286,6 @@ public class KnowledgeApi {
   /**
    * Delete synchronization job
    * 
-   * deleteKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1609,7 +1597,6 @@ public class KnowledgeApi {
   /**
    * Get sync options available for a knowledge-connect integration
    * 
-   * getKnowledgeIntegrationOptions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param integrationId Integration ID (required)
    * @return KnowledgeIntegrationOptionsResponse
    * @throws ApiException if the request fails on the server
@@ -1622,7 +1609,6 @@ public class KnowledgeApi {
   /**
    * Get sync options available for a knowledge-connect integration
    * 
-   * getKnowledgeIntegrationOptions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param integrationId Integration ID (required)
    * @return KnowledgeIntegrationOptionsResponse
    * @throws IOException if the request fails to be processed
@@ -1641,7 +1627,6 @@ public class KnowledgeApi {
   /**
    * Get sync options available for a knowledge-connect integration
    * 
-   * getKnowledgeIntegrationOptions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return KnowledgeIntegrationOptionsResponse
    * @throws ApiException if the request fails on the server
@@ -1661,7 +1646,6 @@ public class KnowledgeApi {
   /**
    * Get sync options available for a knowledge-connect integration
    * 
-   * getKnowledgeIntegrationOptions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4093,7 +4077,6 @@ public class KnowledgeApi {
   /**
    * Get operations
    * 
-   * getKnowledgeKnowledgebaseOperations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
@@ -4114,7 +4097,6 @@ public class KnowledgeApi {
   /**
    * Get operations
    * 
-   * getKnowledgeKnowledgebaseOperations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
@@ -4157,7 +4139,6 @@ public class KnowledgeApi {
   /**
    * Get operations
    * 
-   * getKnowledgeKnowledgebaseOperations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return OperationListing
    * @throws ApiException if the request fails on the server
@@ -4177,7 +4158,6 @@ public class KnowledgeApi {
   /**
    * Get operations
    * 
-   * getKnowledgeKnowledgebaseOperations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4207,7 +4187,6 @@ public class KnowledgeApi {
   /**
    * Get ids of operation creator users and oauth clients
    * 
-   * getKnowledgeKnowledgebaseOperationsUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @return OperationCreatorUserResponse
    * @throws ApiException if the request fails on the server
@@ -4220,7 +4199,6 @@ public class KnowledgeApi {
   /**
    * Get ids of operation creator users and oauth clients
    * 
-   * getKnowledgeKnowledgebaseOperationsUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @return OperationCreatorUserResponse
    * @throws IOException if the request fails to be processed
@@ -4239,7 +4217,6 @@ public class KnowledgeApi {
   /**
    * Get ids of operation creator users and oauth clients
    * 
-   * getKnowledgeKnowledgebaseOperationsUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return OperationCreatorUserResponse
    * @throws ApiException if the request fails on the server
@@ -4259,7 +4236,6 @@ public class KnowledgeApi {
   /**
    * Get ids of operation creator users and oauth clients
    * 
-   * getKnowledgeKnowledgebaseOperationsUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4379,7 +4355,6 @@ public class KnowledgeApi {
   /**
    * Get Knowledge integration sources
    * 
-   * getKnowledgeKnowledgebaseSources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param type If specified, retrieves integration sources with specified integration type. (optional)
    * @param expand The specified entity attributes will be filled. Comma separated values expected. (optional)
@@ -4395,7 +4370,6 @@ public class KnowledgeApi {
   /**
    * Get Knowledge integration sources
    * 
-   * getKnowledgeKnowledgebaseSources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param type If specified, retrieves integration sources with specified integration type. (optional)
    * @param expand The specified entity attributes will be filled. Comma separated values expected. (optional)
@@ -4423,7 +4397,6 @@ public class KnowledgeApi {
   /**
    * Get Knowledge integration sources
    * 
-   * getKnowledgeKnowledgebaseSources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return List<SourceBaseResponse>
    * @throws ApiException if the request fails on the server
@@ -4443,7 +4416,6 @@ public class KnowledgeApi {
   /**
    * Get Knowledge integration sources
    * 
-   * getKnowledgeKnowledgebaseSources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4473,7 +4445,6 @@ public class KnowledgeApi {
   /**
    * Get Salesforce Knowledge integration source
    * 
-   * getKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param sourceId Source ID (required)
    * @param expand The specified entity attributes will be filled. Comma separated values expected. (optional)
@@ -4488,7 +4459,6 @@ public class KnowledgeApi {
   /**
    * Get Salesforce Knowledge integration source
    * 
-   * getKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param sourceId Source ID (required)
    * @param expand The specified entity attributes will be filled. Comma separated values expected. (optional)
@@ -4513,7 +4483,6 @@ public class KnowledgeApi {
   /**
    * Get Salesforce Knowledge integration source
    * 
-   * getKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return SalesforceSourceResponse
    * @throws ApiException if the request fails on the server
@@ -4533,7 +4502,6 @@ public class KnowledgeApi {
   /**
    * Get Salesforce Knowledge integration source
    * 
-   * getKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4563,7 +4531,6 @@ public class KnowledgeApi {
   /**
    * Get ServiceNow Knowledge integration source
    * 
-   * getKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param sourceId Source ID (required)
    * @param expand The specified entity attributes will be filled. Comma separated values expected. (optional)
@@ -4578,7 +4545,6 @@ public class KnowledgeApi {
   /**
    * Get ServiceNow Knowledge integration source
    * 
-   * getKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param sourceId Source ID (required)
    * @param expand The specified entity attributes will be filled. Comma separated values expected. (optional)
@@ -4603,7 +4569,6 @@ public class KnowledgeApi {
   /**
    * Get ServiceNow Knowledge integration source
    * 
-   * getKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ServiceNowSourceResponse
    * @throws ApiException if the request fails on the server
@@ -4623,7 +4588,6 @@ public class KnowledgeApi {
   /**
    * Get ServiceNow Knowledge integration source
    * 
-   * getKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4653,7 +4617,6 @@ public class KnowledgeApi {
   /**
    * Get synchronization job report
    * 
-   * getKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param syncJobId Synchronization job ID (required)
    * @return KnowledgeSyncJobResponse
@@ -4667,7 +4630,6 @@ public class KnowledgeApi {
   /**
    * Get synchronization job report
    * 
-   * getKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param syncJobId Synchronization job ID (required)
    * @return KnowledgeSyncJobResponse
@@ -4689,7 +4651,6 @@ public class KnowledgeApi {
   /**
    * Get synchronization job report
    * 
-   * getKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return KnowledgeSyncJobResponse
    * @throws ApiException if the request fails on the server
@@ -4709,7 +4670,6 @@ public class KnowledgeApi {
   /**
    * Get synchronization job report
    * 
-   * getKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6448,7 +6408,6 @@ public class KnowledgeApi {
   /**
    * Update synchronization job
    * 
-   * patchKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param syncJobId Synchronization job ID (required)
    * @param body  (required)
@@ -6463,7 +6422,6 @@ public class KnowledgeApi {
   /**
    * Update synchronization job
    * 
-   * patchKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param syncJobId Synchronization job ID (required)
    * @param body  (required)
@@ -6488,7 +6446,6 @@ public class KnowledgeApi {
   /**
    * Update synchronization job
    * 
-   * patchKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return KnowledgeSyncJobResponse
    * @throws ApiException if the request fails on the server
@@ -6508,7 +6465,6 @@ public class KnowledgeApi {
   /**
    * Update synchronization job
    * 
-   * patchKnowledgeKnowledgebaseSynchronizeJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -9675,7 +9631,6 @@ public class KnowledgeApi {
   /**
    * Create Salesforce Knowledge integration source
    * 
-   * postKnowledgeKnowledgebaseSourcesSalesforce is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param body  (required)
    * @return KnowledgeSyncJobResponse
@@ -9689,7 +9644,6 @@ public class KnowledgeApi {
   /**
    * Create Salesforce Knowledge integration source
    * 
-   * postKnowledgeKnowledgebaseSourcesSalesforce is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param body  (required)
    * @return KnowledgeSyncJobResponse
@@ -9711,7 +9665,6 @@ public class KnowledgeApi {
   /**
    * Create Salesforce Knowledge integration source
    * 
-   * postKnowledgeKnowledgebaseSourcesSalesforce is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return KnowledgeSyncJobResponse
    * @throws ApiException if the request fails on the server
@@ -9731,7 +9684,6 @@ public class KnowledgeApi {
   /**
    * Create Salesforce Knowledge integration source
    * 
-   * postKnowledgeKnowledgebaseSourcesSalesforce is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -9761,7 +9713,6 @@ public class KnowledgeApi {
   /**
    * Start sync on Salesforce Knowledge integration source
    * 
-   * postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param sourceId Source ID (required)
    * @return SourceSyncResponse
@@ -9775,7 +9726,6 @@ public class KnowledgeApi {
   /**
    * Start sync on Salesforce Knowledge integration source
    * 
-   * postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param sourceId Source ID (required)
    * @return SourceSyncResponse
@@ -9797,7 +9747,6 @@ public class KnowledgeApi {
   /**
    * Start sync on Salesforce Knowledge integration source
    * 
-   * postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return SourceSyncResponse
    * @throws ApiException if the request fails on the server
@@ -9817,7 +9766,6 @@ public class KnowledgeApi {
   /**
    * Start sync on Salesforce Knowledge integration source
    * 
-   * postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -9847,7 +9795,6 @@ public class KnowledgeApi {
   /**
    * Create ServiceNow Knowledge integration source
    * 
-   * postKnowledgeKnowledgebaseSourcesServicenow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param body  (required)
    * @return KnowledgeSyncJobResponse
@@ -9861,7 +9808,6 @@ public class KnowledgeApi {
   /**
    * Create ServiceNow Knowledge integration source
    * 
-   * postKnowledgeKnowledgebaseSourcesServicenow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param body  (required)
    * @return KnowledgeSyncJobResponse
@@ -9883,7 +9829,6 @@ public class KnowledgeApi {
   /**
    * Create ServiceNow Knowledge integration source
    * 
-   * postKnowledgeKnowledgebaseSourcesServicenow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return KnowledgeSyncJobResponse
    * @throws ApiException if the request fails on the server
@@ -9903,7 +9848,6 @@ public class KnowledgeApi {
   /**
    * Create ServiceNow Knowledge integration source
    * 
-   * postKnowledgeKnowledgebaseSourcesServicenow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -9933,7 +9877,6 @@ public class KnowledgeApi {
   /**
    * Start synchronization on ServiceNow Knowledge integration source
    * 
-   * postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param sourceId Source ID (required)
    * @return SourceSyncResponse
@@ -9947,7 +9890,6 @@ public class KnowledgeApi {
   /**
    * Start synchronization on ServiceNow Knowledge integration source
    * 
-   * postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param sourceId Source ID (required)
    * @return SourceSyncResponse
@@ -9969,7 +9911,6 @@ public class KnowledgeApi {
   /**
    * Start synchronization on ServiceNow Knowledge integration source
    * 
-   * postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return SourceSyncResponse
    * @throws ApiException if the request fails on the server
@@ -9989,7 +9930,6 @@ public class KnowledgeApi {
   /**
    * Start synchronization on ServiceNow Knowledge integration source
    * 
-   * postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -10019,7 +9959,6 @@ public class KnowledgeApi {
   /**
    * Create synchronization job
    * 
-   * postKnowledgeKnowledgebaseSynchronizeJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param body  (required)
    * @return KnowledgeSyncJobResponse
@@ -10033,7 +9972,6 @@ public class KnowledgeApi {
   /**
    * Create synchronization job
    * 
-   * postKnowledgeKnowledgebaseSynchronizeJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param body  (required)
    * @return KnowledgeSyncJobResponse
@@ -10055,7 +9993,6 @@ public class KnowledgeApi {
   /**
    * Create synchronization job
    * 
-   * postKnowledgeKnowledgebaseSynchronizeJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return KnowledgeSyncJobResponse
    * @throws ApiException if the request fails on the server
@@ -10075,7 +10012,6 @@ public class KnowledgeApi {
   /**
    * Create synchronization job
    * 
-   * postKnowledgeKnowledgebaseSynchronizeJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -10269,7 +10205,6 @@ public class KnowledgeApi {
   /**
    * Update Salesforce Knowledge integration source
    * 
-   * putKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param sourceId Source ID (required)
    * @param body  (required)
@@ -10284,7 +10219,6 @@ public class KnowledgeApi {
   /**
    * Update Salesforce Knowledge integration source
    * 
-   * putKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param sourceId Source ID (required)
    * @param body  (required)
@@ -10309,7 +10243,6 @@ public class KnowledgeApi {
   /**
    * Update Salesforce Knowledge integration source
    * 
-   * putKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return SalesforceSourceResponse
    * @throws ApiException if the request fails on the server
@@ -10329,7 +10262,6 @@ public class KnowledgeApi {
   /**
    * Update Salesforce Knowledge integration source
    * 
-   * putKnowledgeKnowledgebaseSourcesSalesforceSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -10359,7 +10291,6 @@ public class KnowledgeApi {
   /**
    * Update ServiceNow Knowledge integration source
    * 
-   * putKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param sourceId Source ID (required)
    * @param body  (required)
@@ -10374,7 +10305,6 @@ public class KnowledgeApi {
   /**
    * Update ServiceNow Knowledge integration source
    * 
-   * putKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param sourceId Source ID (required)
    * @param body  (required)
@@ -10399,7 +10329,6 @@ public class KnowledgeApi {
   /**
    * Update ServiceNow Knowledge integration source
    * 
-   * putKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ServiceNowSourceResponse
    * @throws ApiException if the request fails on the server
@@ -10419,7 +10348,6 @@ public class KnowledgeApi {
   /**
    * Update ServiceNow Knowledge integration source
    * 
-   * putKnowledgeKnowledgebaseSourcesServicenowSourceId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

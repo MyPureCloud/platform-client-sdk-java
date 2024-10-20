@@ -33,6 +33,7 @@
 | REQUESTEDROUTING | &quot;requestedRouting&quot; | 
 | USEDROUTING | &quot;usedRouting&quot; | 
 | USERID | &quot;userId&quot; | 
+| WRAPUPDATE | &quot;wrapUpDate&quot; | 
 
 
 ## Enum: OperatorEnum
@@ -47,4 +48,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:211.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_

@@ -47,6 +47,7 @@ public class ContactIdentifier  implements Serializable {
     SOCIALFACEBOOK("SocialFacebook"),
     SOCIALTWITTER("SocialTwitter"),
     SOCIALWHATSAPP("SocialWhatsapp"),
+    SOCIALINSTAGRAM("SocialInstagram"),
     EMAIL("Email"),
     PHONE("Phone"),
     COOKIE("Cookie"),

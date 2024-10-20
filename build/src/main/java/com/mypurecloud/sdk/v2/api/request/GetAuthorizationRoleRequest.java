@@ -39,7 +39,7 @@ import com.mypurecloud.sdk.v2.model.RoleSettings;
 import com.mypurecloud.sdk.v2.model.SubjectDivisionGrantsEntityListing;
 import com.mypurecloud.sdk.v2.model.SubjectDivisions;
 import com.mypurecloud.sdk.v2.model.UserAuthorization;
-import com.mypurecloud.sdk.v2.model.UserEntityListing;
+import com.mypurecloud.sdk.v2.model.UserReferenceEntityListing;
 
 public class GetAuthorizationRoleRequest {
 

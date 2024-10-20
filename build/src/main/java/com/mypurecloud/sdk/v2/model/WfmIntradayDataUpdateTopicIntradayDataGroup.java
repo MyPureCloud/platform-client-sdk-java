@@ -53,7 +53,8 @@ public class WfmIntradayDataUpdateTopicIntradayDataGroup  implements Serializabl
     CHAT("Chat"),
     EMAIL("Email"),
     CALLBACK("Callback"),
-    MESSAGE("Message");
+    MESSAGE("Message"),
+    WORKITEM("Workitem");
 
     private String value;
 

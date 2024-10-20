@@ -13,9 +13,9 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DocumentBodyImage;
-import com.mypurecloud.sdk.v2.model.DocumentBodyList;
+import com.mypurecloud.sdk.v2.model.DocumentBodyListWithHighlight;
 import com.mypurecloud.sdk.v2.model.DocumentBodyParagraphWithHighlight;
-import com.mypurecloud.sdk.v2.model.DocumentBodyTable;
+import com.mypurecloud.sdk.v2.model.DocumentBodyTableWithHighlight;
 import com.mypurecloud.sdk.v2.model.DocumentBodyVideo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -81,9 +81,9 @@ public class DocumentBodyBlockWithHighlight  implements Serializable {
   private TypeEnum type = null;
   private DocumentBodyImage image = null;
   private DocumentBodyVideo video = null;
-  private DocumentBodyList list = null;
-  private DocumentBodyTable table = null;
   private DocumentBodyParagraphWithHighlight paragraph = null;
+  private DocumentBodyListWithHighlight list = null;
+  private DocumentBodyTableWithHighlight table = null;
 
   
   /**
@@ -141,42 +141,6 @@ public class DocumentBodyBlockWithHighlight  implements Serializable {
 
 
   /**
-   * List. It must contain a value if the type of the block is UnorderedList or OrderedList.
-   **/
-  public DocumentBodyBlockWithHighlight list(DocumentBodyList list) {
-    this.list = list;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "List. It must contain a value if the type of the block is UnorderedList or OrderedList.")
-  @JsonProperty("list")
-  public DocumentBodyList getList() {
-    return list;
-  }
-  public void setList(DocumentBodyList list) {
-    this.list = list;
-  }
-
-
-  /**
-   * Table. It must contain a value if type of the block is Table.
-   **/
-  public DocumentBodyBlockWithHighlight table(DocumentBodyTable table) {
-    this.table = table;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Table. It must contain a value if type of the block is Table.")
-  @JsonProperty("table")
-  public DocumentBodyTable getTable() {
-    return table;
-  }
-  public void setTable(DocumentBodyTable table) {
-    this.table = table;
-  }
-
-
-  /**
    * Paragraph. It must contain a value if the type of the block is Paragraph.
    **/
   public DocumentBodyBlockWithHighlight paragraph(DocumentBodyParagraphWithHighlight paragraph) {
@@ -194,6 +158,42 @@ public class DocumentBodyBlockWithHighlight  implements Serializable {
   }
 
 
+  /**
+   * List. It must contain a value if the type of the block is UnorderedList or OrderedList.
+   **/
+  public DocumentBodyBlockWithHighlight list(DocumentBodyListWithHighlight list) {
+    this.list = list;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List. It must contain a value if the type of the block is UnorderedList or OrderedList.")
+  @JsonProperty("list")
+  public DocumentBodyListWithHighlight getList() {
+    return list;
+  }
+  public void setList(DocumentBodyListWithHighlight list) {
+    this.list = list;
+  }
+
+
+  /**
+   * Table. It must contain a value if type of the block is Table.
+   **/
+  public DocumentBodyBlockWithHighlight table(DocumentBodyTableWithHighlight table) {
+    this.table = table;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Table. It must contain a value if type of the block is Table.")
+  @JsonProperty("table")
+  public DocumentBodyTableWithHighlight getTable() {
+    return table;
+  }
+  public void setTable(DocumentBodyTableWithHighlight table) {
+    this.table = table;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -207,14 +207,14 @@ public class DocumentBodyBlockWithHighlight  implements Serializable {
     return Objects.equals(this.type, documentBodyBlockWithHighlight.type) &&
             Objects.equals(this.image, documentBodyBlockWithHighlight.image) &&
             Objects.equals(this.video, documentBodyBlockWithHighlight.video) &&
+            Objects.equals(this.paragraph, documentBodyBlockWithHighlight.paragraph) &&
             Objects.equals(this.list, documentBodyBlockWithHighlight.list) &&
-            Objects.equals(this.table, documentBodyBlockWithHighlight.table) &&
-            Objects.equals(this.paragraph, documentBodyBlockWithHighlight.paragraph);
+            Objects.equals(this.table, documentBodyBlockWithHighlight.table);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, image, video, list, table, paragraph);
+    return Objects.hash(type, image, video, paragraph, list, table);
   }
 
   @Override
@@ -225,9 +225,9 @@ public class DocumentBodyBlockWithHighlight  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("    video: ").append(toIndentedString(video)).append("\n");
+    sb.append("    paragraph: ").append(toIndentedString(paragraph)).append("\n");
     sb.append("    list: ").append(toIndentedString(list)).append("\n");
     sb.append("    table: ").append(toIndentedString(table)).append("\n");
-    sb.append("    paragraph: ").append(toIndentedString(paragraph)).append("\n");
     sb.append("}");
     return sb.toString();
   }

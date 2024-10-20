@@ -29,6 +29,7 @@ import com.mypurecloud.sdk.v2.model.TrustUser;
 import com.mypurecloud.sdk.v2.model.TrustUserEntityListing;
 import com.mypurecloud.sdk.v2.model.Trustee;
 import com.mypurecloud.sdk.v2.model.TrusteeAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.TrusteeReferenceList;
 import com.mypurecloud.sdk.v2.model.Trustor;
 import com.mypurecloud.sdk.v2.model.TrustorAuditQueryRequest;
 import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
@@ -57,6 +58,7 @@ import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeUserRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteesCareRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteesDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrustorRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrustorCloneduserRequest;
@@ -71,6 +73,7 @@ import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteeGroupsReque
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteeUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteesAuditsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteesCareRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteesDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrustorAuditsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrusteeRequest;
@@ -1755,6 +1758,81 @@ public class OrganizationAuthorizationApiAsync {
   }
 
   /**
+   * Get Customer Care organization ids.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TrusteeReferenceList> getOrgauthorizationTrusteesCareAsync(GetOrgauthorizationTrusteesCareRequest request, final AsyncApiCallback<TrusteeReferenceList> callback) {
+    try {
+      final SettableFuture<TrusteeReferenceList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TrusteeReferenceList>() {}, new AsyncApiCallback<ApiResponse<TrusteeReferenceList>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrusteeReferenceList> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Customer Care organization ids.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TrusteeReferenceList>> getOrgauthorizationTrusteesCareAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TrusteeReferenceList>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TrusteeReferenceList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TrusteeReferenceList>() {}, new AsyncApiCallback<ApiResponse<TrusteeReferenceList>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrusteeReferenceList> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrusteeReferenceList> response = (ApiResponse<TrusteeReferenceList>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrusteeReferenceList> response = (ApiResponse<TrusteeReferenceList>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get organization authorization trust with Customer Care, if one exists.
    * 
    * @param request the request object
@@ -2793,6 +2871,81 @@ public class OrganizationAuthorizationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TrustEntityListing> postOrgauthorizationTrusteesCareAsync(PostOrgauthorizationTrusteesCareRequest request, final AsyncApiCallback<TrustEntityListing> callback) {
+    try {
+      final SettableFuture<TrustEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TrustEntityListing>() {}, new AsyncApiCallback<ApiResponse<TrustEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrustEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TrustEntityListing>> postOrgauthorizationTrusteesCareAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TrustEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TrustEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TrustEntityListing>() {}, new AsyncApiCallback<ApiResponse<TrustEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrustEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrustEntityListing> response = (ApiResponse<TrustEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrustEntityListing> response = (ApiResponse<TrustEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

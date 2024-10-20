@@ -12,10 +12,12 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WorkitemQueryJobFilter;
+import com.mypurecloud.sdk.v2.model.WorkitemQueryJobQueryFilters;
 import com.mypurecloud.sdk.v2.model.WorkitemQueryJobSort;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import java.io.Serializable;
@@ -28,6 +30,7 @@ public class WorkitemQueryJobCreate  implements Serializable {
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private List<WorkitemQueryJobFilter> filters = new ArrayList<WorkitemQueryJobFilter>();
+  private List<WorkitemQueryJobQueryFilters> queryFilters = new ArrayList<WorkitemQueryJobQueryFilters>();
 
   private static class ExpandsEnumDeserializer extends StdDeserializer<ExpandsEnum> {
     public ExpandsEnumDeserializer() {
@@ -81,6 +84,8 @@ public class WorkitemQueryJobCreate  implements Serializable {
   private List<ExpandsEnum> expands = new ArrayList<ExpandsEnum>();
   private List<String> attributes = new ArrayList<String>();
   private WorkitemQueryJobSort sort = null;
+  private Date dateIntervalStart = null;
+  private Date dateIntervalEnd = null;
 
   
   /**
@@ -141,6 +146,24 @@ public class WorkitemQueryJobCreate  implements Serializable {
 
 
   /**
+   * Query filters for nested attributes.
+   **/
+  public WorkitemQueryJobCreate queryFilters(List<WorkitemQueryJobQueryFilters> queryFilters) {
+    this.queryFilters = queryFilters;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Query filters for nested attributes.")
+  @JsonProperty("queryFilters")
+  public List<WorkitemQueryJobQueryFilters> getQueryFilters() {
+    return queryFilters;
+  }
+  public void setQueryFilters(List<WorkitemQueryJobQueryFilters> queryFilters) {
+    this.queryFilters = queryFilters;
+  }
+
+
+  /**
    * List of entity attributes to be expanded in the result.
    **/
   public WorkitemQueryJobCreate expands(List<ExpandsEnum> expands) {
@@ -194,6 +217,42 @@ public class WorkitemQueryJobCreate  implements Serializable {
   }
 
 
+  /**
+   * Interval start date to use to filter results based on create date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public WorkitemQueryJobCreate dateIntervalStart(Date dateIntervalStart) {
+    this.dateIntervalStart = dateIntervalStart;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Interval start date to use to filter results based on create date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateIntervalStart")
+  public Date getDateIntervalStart() {
+    return dateIntervalStart;
+  }
+  public void setDateIntervalStart(Date dateIntervalStart) {
+    this.dateIntervalStart = dateIntervalStart;
+  }
+
+
+  /**
+   * Interval end date to use to filter results based on create date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public WorkitemQueryJobCreate dateIntervalEnd(Date dateIntervalEnd) {
+    this.dateIntervalEnd = dateIntervalEnd;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Interval end date to use to filter results based on create date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateIntervalEnd")
+  public Date getDateIntervalEnd() {
+    return dateIntervalEnd;
+  }
+  public void setDateIntervalEnd(Date dateIntervalEnd) {
+    this.dateIntervalEnd = dateIntervalEnd;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -207,14 +266,17 @@ public class WorkitemQueryJobCreate  implements Serializable {
     return Objects.equals(this.pageSize, workitemQueryJobCreate.pageSize) &&
             Objects.equals(this.pageNumber, workitemQueryJobCreate.pageNumber) &&
             Objects.equals(this.filters, workitemQueryJobCreate.filters) &&
+            Objects.equals(this.queryFilters, workitemQueryJobCreate.queryFilters) &&
             Objects.equals(this.expands, workitemQueryJobCreate.expands) &&
             Objects.equals(this.attributes, workitemQueryJobCreate.attributes) &&
-            Objects.equals(this.sort, workitemQueryJobCreate.sort);
+            Objects.equals(this.sort, workitemQueryJobCreate.sort) &&
+            Objects.equals(this.dateIntervalStart, workitemQueryJobCreate.dateIntervalStart) &&
+            Objects.equals(this.dateIntervalEnd, workitemQueryJobCreate.dateIntervalEnd);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(pageSize, pageNumber, filters, expands, attributes, sort);
+    return Objects.hash(pageSize, pageNumber, filters, queryFilters, expands, attributes, sort, dateIntervalStart, dateIntervalEnd);
   }
 
   @Override
@@ -225,9 +287,12 @@ public class WorkitemQueryJobCreate  implements Serializable {
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    filters: ").append(toIndentedString(filters)).append("\n");
+    sb.append("    queryFilters: ").append(toIndentedString(queryFilters)).append("\n");
     sb.append("    expands: ").append(toIndentedString(expands)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
+    sb.append("    dateIntervalStart: ").append(toIndentedString(dateIntervalStart)).append("\n");
+    sb.append("    dateIntervalEnd: ").append(toIndentedString(dateIntervalEnd)).append("\n");
     sb.append("}");
     return sb.toString();
   }

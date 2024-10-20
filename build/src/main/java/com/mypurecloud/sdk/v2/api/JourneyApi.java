@@ -3341,7 +3341,6 @@ public class JourneyApi {
   /**
    * Get an Event Definition
    * 
-   * getJourneyViewsEventdefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param eventDefinitionId Event Definition ID (required)
    * @return JourneyEventDefinition
    * @throws ApiException if the request fails on the server
@@ -3354,7 +3353,6 @@ public class JourneyApi {
   /**
    * Get an Event Definition
    * 
-   * getJourneyViewsEventdefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param eventDefinitionId Event Definition ID (required)
    * @return JourneyEventDefinition
    * @throws IOException if the request fails to be processed
@@ -3373,7 +3371,6 @@ public class JourneyApi {
   /**
    * Get an Event Definition
    * 
-   * getJourneyViewsEventdefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return JourneyEventDefinition
    * @throws ApiException if the request fails on the server
@@ -3393,7 +3390,6 @@ public class JourneyApi {
   /**
    * Get an Event Definition
    * 
-   * getJourneyViewsEventdefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3423,7 +3419,6 @@ public class JourneyApi {
   /**
    * Get a list of Event Definitions
    * 
-   * getJourneyViewsEventdefinitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return JourneyEventDefinitionListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -3435,7 +3430,6 @@ public class JourneyApi {
   /**
    * Get a list of Event Definitions
    * 
-   * getJourneyViewsEventdefinitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return JourneyEventDefinitionListing
    * @throws IOException if the request fails to be processed
    */
@@ -3451,7 +3445,6 @@ public class JourneyApi {
   /**
    * Get a list of Event Definitions
    * 
-   * getJourneyViewsEventdefinitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return JourneyEventDefinitionListing
    * @throws ApiException if the request fails on the server
@@ -3471,7 +3464,6 @@ public class JourneyApi {
   /**
    * Get a list of Event Definitions
    * 
-   * getJourneyViewsEventdefinitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5364,7 +5356,6 @@ public class JourneyApi {
   /**
    * Validate whether an encoding exist for a label/value combination.
    * True indicates a valid encoding
-   * postJourneyViewsEncodingsValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body  (optional)
    * @return EntityListing
    * @throws ApiException if the request fails on the server
@@ -5377,7 +5368,6 @@ public class JourneyApi {
   /**
    * Validate whether an encoding exist for a label/value combination.
    * True indicates a valid encoding
-   * postJourneyViewsEncodingsValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body  (optional)
    * @return EntityListing
    * @throws IOException if the request fails to be processed
@@ -5396,7 +5386,6 @@ public class JourneyApi {
   /**
    * Validate whether an encoding exist for a label/value combination.
    * True indicates a valid encoding
-   * postJourneyViewsEncodingsValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return EntityListing
    * @throws ApiException if the request fails on the server
@@ -5416,7 +5405,6 @@ public class JourneyApi {
   /**
    * Validate whether an encoding exist for a label/value combination.
    * True indicates a valid encoding
-   * postJourneyViewsEncodingsValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

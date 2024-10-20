@@ -167,6 +167,7 @@ public class Campaign  implements Serializable {
   private List<DomainEntityRef> contactListFilters = new ArrayList<DomainEntityRef>();
   private DomainEntityRef division = null;
   private DynamicContactQueueingSettings dynamicContactQueueingSettings = null;
+  private List<String> skillColumns = new ArrayList<String>();
   private Integer maxCallsPerAgent = null;
   private Boolean callbackAutoAnswer = null;
   private DynamicLineBalancingSettings dynamicLineBalancingSettings = null;
@@ -724,6 +725,24 @@ public class Campaign  implements Serializable {
 
 
   /**
+   * The skill columns on the ContactList that this Campaign should take into account when dialing
+   **/
+  public Campaign skillColumns(List<String> skillColumns) {
+    this.skillColumns = skillColumns;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The skill columns on the ContactList that this Campaign should take into account when dialing")
+  @JsonProperty("skillColumns")
+  public List<String> getSkillColumns() {
+    return skillColumns;
+  }
+  public void setSkillColumns(List<String> skillColumns) {
+    this.skillColumns = skillColumns;
+  }
+
+
+  /**
    * The maximum number of calls that can be placed per agent on this campaign
    **/
   public Campaign maxCallsPerAgent(Integer maxCallsPerAgent) {
@@ -827,6 +846,7 @@ public class Campaign  implements Serializable {
             Objects.equals(this.contactListFilters, campaign.contactListFilters) &&
             Objects.equals(this.division, campaign.division) &&
             Objects.equals(this.dynamicContactQueueingSettings, campaign.dynamicContactQueueingSettings) &&
+            Objects.equals(this.skillColumns, campaign.skillColumns) &&
             Objects.equals(this.maxCallsPerAgent, campaign.maxCallsPerAgent) &&
             Objects.equals(this.callbackAutoAnswer, campaign.callbackAutoAnswer) &&
             Objects.equals(this.dynamicLineBalancingSettings, campaign.dynamicLineBalancingSettings) &&
@@ -835,7 +855,7 @@ public class Campaign  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, site, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, errors, callerName, callerAddress, outboundLineCount, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, alwaysRunning, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, division, dynamicContactQueueingSettings, maxCallsPerAgent, callbackAutoAnswer, dynamicLineBalancingSettings, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, site, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, errors, callerName, callerAddress, outboundLineCount, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, alwaysRunning, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, division, dynamicContactQueueingSettings, skillColumns, maxCallsPerAgent, callbackAutoAnswer, dynamicLineBalancingSettings, selfUri);
   }
 
   @Override
@@ -876,6 +896,7 @@ public class Campaign  implements Serializable {
     sb.append("    contactListFilters: ").append(toIndentedString(contactListFilters)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    dynamicContactQueueingSettings: ").append(toIndentedString(dynamicContactQueueingSettings)).append("\n");
+    sb.append("    skillColumns: ").append(toIndentedString(skillColumns)).append("\n");
     sb.append("    maxCallsPerAgent: ").append(toIndentedString(maxCallsPerAgent)).append("\n");
     sb.append("    callbackAutoAnswer: ").append(toIndentedString(callbackAutoAnswer)).append("\n");
     sb.append("    dynamicLineBalancingSettings: ").append(toIndentedString(dynamicLineBalancingSettings)).append("\n");

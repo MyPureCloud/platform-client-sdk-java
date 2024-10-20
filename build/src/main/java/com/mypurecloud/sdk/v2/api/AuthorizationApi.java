@@ -29,7 +29,7 @@ import com.mypurecloud.sdk.v2.model.RoleSettings;
 import com.mypurecloud.sdk.v2.model.SubjectDivisionGrantsEntityListing;
 import com.mypurecloud.sdk.v2.model.SubjectDivisions;
 import com.mypurecloud.sdk.v2.model.UserAuthorization;
-import com.mypurecloud.sdk.v2.model.UserEntityListing;
+import com.mypurecloud.sdk.v2.model.UserReferenceEntityListing;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationDivisionRequest;
@@ -1463,11 +1463,11 @@ public class AuthorizationApi {
    * @param roleId Role ID (required)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
-   * @return UserEntityListing
+   * @return UserReferenceEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UserEntityListing getAuthorizationRoleUsers(String roleId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+  public UserReferenceEntityListing getAuthorizationRoleUsers(String roleId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
     return  getAuthorizationRoleUsers(createGetAuthorizationRoleUsersRequest(roleId, pageSize, pageNumber));
   }
 
@@ -1477,10 +1477,10 @@ public class AuthorizationApi {
    * @param roleId Role ID (required)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
-   * @return UserEntityListing
+   * @return UserReferenceEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserEntityListing> getAuthorizationRoleUsersWithHttpInfo(String roleId, Integer pageSize, Integer pageNumber) throws IOException {
+  public ApiResponse<UserReferenceEntityListing> getAuthorizationRoleUsersWithHttpInfo(String roleId, Integer pageSize, Integer pageNumber) throws IOException {
     return getAuthorizationRoleUsers(createGetAuthorizationRoleUsersRequest(roleId, pageSize, pageNumber).withHttpInfo());
   }
 
@@ -1499,13 +1499,13 @@ public class AuthorizationApi {
    * Get a list of the users in a specified role.
    * Get an array of the UUIDs of the users in the specified role.
    * @param request The request object
-   * @return UserEntityListing
+   * @return UserReferenceEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UserEntityListing getAuthorizationRoleUsers(GetAuthorizationRoleUsersRequest request) throws IOException, ApiException {
+  public UserReferenceEntityListing getAuthorizationRoleUsers(GetAuthorizationRoleUsersRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<UserEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserEntityListing>() {});
+      ApiResponse<UserReferenceEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserReferenceEntityListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -1521,13 +1521,13 @@ public class AuthorizationApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserEntityListing> getAuthorizationRoleUsers(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<UserReferenceEntityListing> getAuthorizationRoleUsers(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<UserEntityListing>() {});
+      return pcapiClient.invoke(request, new TypeReference<UserReferenceEntityListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<UserEntityListing> response = (ApiResponse<UserEntityListing>)(ApiResponse<?>)exception;
+      ApiResponse<UserReferenceEntityListing> response = (ApiResponse<UserReferenceEntityListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1538,7 +1538,7 @@ public class AuthorizationApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<UserEntityListing> response = (ApiResponse<UserEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<UserReferenceEntityListing> response = (ApiResponse<UserReferenceEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

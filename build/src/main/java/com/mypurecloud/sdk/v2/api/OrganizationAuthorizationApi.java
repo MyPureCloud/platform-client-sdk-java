@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.TrustUser;
 import com.mypurecloud.sdk.v2.model.TrustUserEntityListing;
 import com.mypurecloud.sdk.v2.model.Trustee;
 import com.mypurecloud.sdk.v2.model.TrusteeAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.TrusteeReferenceList;
 import com.mypurecloud.sdk.v2.model.Trustor;
 import com.mypurecloud.sdk.v2.model.TrustorAuditQueryRequest;
 import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
@@ -54,6 +55,7 @@ import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeUserRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteesCareRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteesDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrustorRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrustorCloneduserRequest;
@@ -68,6 +70,7 @@ import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteeGroupsReque
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteeUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteesAuditsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteesCareRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteesDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrustorAuditsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrusteeRequest;
@@ -1853,6 +1856,80 @@ public class OrganizationAuthorizationApi {
   }
 
   /**
+   * Get Customer Care organization ids.
+   * 
+   * @return TrusteeReferenceList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrusteeReferenceList getOrgauthorizationTrusteesCare() throws IOException, ApiException {
+    return  getOrgauthorizationTrusteesCare(createGetOrgauthorizationTrusteesCareRequest());
+  }
+
+  /**
+   * Get Customer Care organization ids.
+   * 
+   * @return TrusteeReferenceList
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrusteeReferenceList> getOrgauthorizationTrusteesCareWithHttpInfo() throws IOException {
+    return getOrgauthorizationTrusteesCare(createGetOrgauthorizationTrusteesCareRequest().withHttpInfo());
+  }
+
+  private GetOrgauthorizationTrusteesCareRequest createGetOrgauthorizationTrusteesCareRequest() {
+    return GetOrgauthorizationTrusteesCareRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get Customer Care organization ids.
+   * 
+   * @param request The request object
+   * @return TrusteeReferenceList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrusteeReferenceList getOrgauthorizationTrusteesCare(GetOrgauthorizationTrusteesCareRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TrusteeReferenceList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TrusteeReferenceList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Customer Care organization ids.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrusteeReferenceList> getOrgauthorizationTrusteesCare(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TrusteeReferenceList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrusteeReferenceList> response = (ApiResponse<TrusteeReferenceList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrusteeReferenceList> response = (ApiResponse<TrusteeReferenceList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get organization authorization trust with Customer Care, if one exists.
    * 
    * @return Trustee
@@ -2992,6 +3069,96 @@ public class OrganizationAuthorizationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
+   * 
+   * @param assignDefaultRole Assign Admin role to default pairing with Customer Care (optional)
+   * @param autoExpire Automatically expire pairing after 30 days (optional)
+   * @param assignFullAccess Grant Customer Care full access to the organization (optional)
+   * @param allowTrustedUserAccess Make Customer Care a Trusted User (optional)
+   * @return TrustEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrustEntityListing postOrgauthorizationTrusteesCare(Boolean assignDefaultRole, Boolean autoExpire, Boolean assignFullAccess, Boolean allowTrustedUserAccess) throws IOException, ApiException {
+    return  postOrgauthorizationTrusteesCare(createPostOrgauthorizationTrusteesCareRequest(assignDefaultRole, autoExpire, assignFullAccess, allowTrustedUserAccess));
+  }
+
+  /**
+   * Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
+   * 
+   * @param assignDefaultRole Assign Admin role to default pairing with Customer Care (optional)
+   * @param autoExpire Automatically expire pairing after 30 days (optional)
+   * @param assignFullAccess Grant Customer Care full access to the organization (optional)
+   * @param allowTrustedUserAccess Make Customer Care a Trusted User (optional)
+   * @return TrustEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrustEntityListing> postOrgauthorizationTrusteesCareWithHttpInfo(Boolean assignDefaultRole, Boolean autoExpire, Boolean assignFullAccess, Boolean allowTrustedUserAccess) throws IOException {
+    return postOrgauthorizationTrusteesCare(createPostOrgauthorizationTrusteesCareRequest(assignDefaultRole, autoExpire, assignFullAccess, allowTrustedUserAccess).withHttpInfo());
+  }
+
+  private PostOrgauthorizationTrusteesCareRequest createPostOrgauthorizationTrusteesCareRequest(Boolean assignDefaultRole, Boolean autoExpire, Boolean assignFullAccess, Boolean allowTrustedUserAccess) {
+    return PostOrgauthorizationTrusteesCareRequest.builder()
+            .withAssignDefaultRole(assignDefaultRole)
+
+            .withAutoExpire(autoExpire)
+
+            .withAssignFullAccess(assignFullAccess)
+
+            .withAllowTrustedUserAccess(allowTrustedUserAccess)
+
+            .build();
+  }
+
+  /**
+   * Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
+   * 
+   * @param request The request object
+   * @return TrustEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrustEntityListing postOrgauthorizationTrusteesCare(PostOrgauthorizationTrusteesCareRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TrustEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TrustEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrustEntityListing> postOrgauthorizationTrusteesCare(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TrustEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrustEntityListing> response = (ApiResponse<TrustEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrustEntityListing> response = (ApiResponse<TrustEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

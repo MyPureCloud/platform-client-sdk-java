@@ -30,6 +30,13 @@ import com.mypurecloud.sdk.v2.model.BulkRelationshipsResponse;
 import com.mypurecloud.sdk.v2.model.ContactIdentifier;
 import com.mypurecloud.sdk.v2.model.ContactListing;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
+import com.mypurecloud.sdk.v2.model.CsvJobRequest;
+import com.mypurecloud.sdk.v2.model.CsvJobResponse;
+import com.mypurecloud.sdk.v2.model.CsvSettings;
+import com.mypurecloud.sdk.v2.model.CsvUploadDetailsResponse;
+import com.mypurecloud.sdk.v2.model.CsvUploadPreviewResponse;
+import com.mypurecloud.sdk.v2.model.CsvUploadRequest;
+import com.mypurecloud.sdk.v2.model.CsvUploadResponse;
 import com.mypurecloud.sdk.v2.model.CursorContactListing;
 import com.mypurecloud.sdk.v2.model.CursorExternalSourceListing;
 import com.mypurecloud.sdk.v2.model.CursorNoteListing;
@@ -45,6 +52,7 @@ import com.mypurecloud.sdk.v2.model.ExternalOrganizationListing;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationTrustorLink;
 import com.mypurecloud.sdk.v2.model.ExternalSource;
 import com.mypurecloud.sdk.v2.model.IdentifierClaimRequest;
+import com.mypurecloud.sdk.v2.model.Listing;
 import com.mypurecloud.sdk.v2.model.MergeRequest;
 import com.mypurecloud.sdk.v2.model.Note;
 import com.mypurecloud.sdk.v2.model.NoteListing;
@@ -58,6 +66,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsContactRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsContactNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsContactsSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsExternalsourceRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsImportCsvSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsOrganizationNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsOrganizationTrustorRequest;
@@ -75,6 +84,10 @@ import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemaVersi
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsExternalsourceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsExternalsourcesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportCsvSettingRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportCsvSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportCsvUploadDetailsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsImportCsvUploadPreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationNoteRequest;
@@ -115,6 +128,9 @@ import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsExternalsourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsIdentifierlookupRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsImportCsvJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsImportCsvSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsImportCsvUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsMergeContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsOrganizationNotesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsOrganizationsRequest;
@@ -125,6 +141,7 @@ import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsContactNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsContactsSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsExternalsourceRequest;
+import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsImportCsvSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsOrganizationNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsOrganizationTrustorTrustorIdRequest;
@@ -440,6 +457,81 @@ public class ExternalContactsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete settings for CSV import
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteExternalcontactsImportCsvSettingAsync(DeleteExternalcontactsImportCsvSettingRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete settings for CSV import
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteExternalcontactsImportCsvSettingAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1719,6 +1811,306 @@ public class ExternalContactsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CursorExternalSourceListing> response = (ApiResponse<CursorExternalSourceListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get settings for CSV import
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CsvSettings> getExternalcontactsImportCsvSettingAsync(GetExternalcontactsImportCsvSettingRequest request, final AsyncApiCallback<CsvSettings> callback) {
+    try {
+      final SettableFuture<CsvSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CsvSettings>() {}, new AsyncApiCallback<ApiResponse<CsvSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<CsvSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get settings for CSV import
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CsvSettings>> getExternalcontactsImportCsvSettingAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CsvSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CsvSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CsvSettings>() {}, new AsyncApiCallback<ApiResponse<CsvSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<CsvSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CsvSettings> response = (ApiResponse<CsvSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CsvSettings> response = (ApiResponse<CsvSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve all settings for organization filtered by externalSettingsId if provided
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Listing> getExternalcontactsImportCsvSettingsAsync(GetExternalcontactsImportCsvSettingsRequest request, final AsyncApiCallback<Listing> callback) {
+    try {
+      final SettableFuture<Listing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Listing>() {}, new AsyncApiCallback<ApiResponse<Listing>>() {
+        @Override
+        public void onCompleted(ApiResponse<Listing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve all settings for organization filtered by externalSettingsId if provided
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Listing>> getExternalcontactsImportCsvSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Listing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Listing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Listing>() {}, new AsyncApiCallback<ApiResponse<Listing>>() {
+        @Override
+        public void onCompleted(ApiResponse<Listing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Listing> response = (ApiResponse<Listing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Listing> response = (ApiResponse<Listing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get details for CSV upload
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CsvUploadDetailsResponse> getExternalcontactsImportCsvUploadDetailsAsync(GetExternalcontactsImportCsvUploadDetailsRequest request, final AsyncApiCallback<CsvUploadDetailsResponse> callback) {
+    try {
+      final SettableFuture<CsvUploadDetailsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CsvUploadDetailsResponse>() {}, new AsyncApiCallback<ApiResponse<CsvUploadDetailsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CsvUploadDetailsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get details for CSV upload
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CsvUploadDetailsResponse>> getExternalcontactsImportCsvUploadDetailsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CsvUploadDetailsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CsvUploadDetailsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CsvUploadDetailsResponse>() {}, new AsyncApiCallback<ApiResponse<CsvUploadDetailsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CsvUploadDetailsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CsvUploadDetailsResponse> response = (ApiResponse<CsvUploadDetailsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CsvUploadDetailsResponse> response = (ApiResponse<CsvUploadDetailsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get preview for CSV upload
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CsvUploadPreviewResponse> getExternalcontactsImportCsvUploadPreviewAsync(GetExternalcontactsImportCsvUploadPreviewRequest request, final AsyncApiCallback<CsvUploadPreviewResponse> callback) {
+    try {
+      final SettableFuture<CsvUploadPreviewResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CsvUploadPreviewResponse>() {}, new AsyncApiCallback<ApiResponse<CsvUploadPreviewResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CsvUploadPreviewResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get preview for CSV upload
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CsvUploadPreviewResponse>> getExternalcontactsImportCsvUploadPreviewAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CsvUploadPreviewResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CsvUploadPreviewResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CsvUploadPreviewResponse>() {}, new AsyncApiCallback<ApiResponse<CsvUploadPreviewResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CsvUploadPreviewResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CsvUploadPreviewResponse> response = (ApiResponse<CsvUploadPreviewResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CsvUploadPreviewResponse> response = (ApiResponse<CsvUploadPreviewResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -4733,6 +5125,231 @@ public class ExternalContactsApiAsync {
   }
 
   /**
+   * Create CSV import job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CsvJobResponse> postExternalcontactsImportCsvJobsAsync(PostExternalcontactsImportCsvJobsRequest request, final AsyncApiCallback<CsvJobResponse> callback) {
+    try {
+      final SettableFuture<CsvJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CsvJobResponse>() {}, new AsyncApiCallback<ApiResponse<CsvJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CsvJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create CSV import job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CsvJobResponse>> postExternalcontactsImportCsvJobsAsync(ApiRequest<CsvJobRequest> request, final AsyncApiCallback<ApiResponse<CsvJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CsvJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CsvJobResponse>() {}, new AsyncApiCallback<ApiResponse<CsvJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CsvJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CsvJobResponse> response = (ApiResponse<CsvJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CsvJobResponse> response = (ApiResponse<CsvJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create settings for CSV import
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CsvSettings> postExternalcontactsImportCsvSettingsAsync(PostExternalcontactsImportCsvSettingsRequest request, final AsyncApiCallback<CsvSettings> callback) {
+    try {
+      final SettableFuture<CsvSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CsvSettings>() {}, new AsyncApiCallback<ApiResponse<CsvSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<CsvSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create settings for CSV import
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CsvSettings>> postExternalcontactsImportCsvSettingsAsync(ApiRequest<CsvSettings> request, final AsyncApiCallback<ApiResponse<CsvSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CsvSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CsvSettings>() {}, new AsyncApiCallback<ApiResponse<CsvSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<CsvSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CsvSettings> response = (ApiResponse<CsvSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CsvSettings> response = (ApiResponse<CsvSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get url for CSV upload
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CsvUploadResponse> postExternalcontactsImportCsvUploadsAsync(PostExternalcontactsImportCsvUploadsRequest request, final AsyncApiCallback<CsvUploadResponse> callback) {
+    try {
+      final SettableFuture<CsvUploadResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CsvUploadResponse>() {}, new AsyncApiCallback<ApiResponse<CsvUploadResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CsvUploadResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get url for CSV upload
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CsvUploadResponse>> postExternalcontactsImportCsvUploadsAsync(ApiRequest<CsvUploadRequest> request, final AsyncApiCallback<ApiResponse<CsvUploadResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CsvUploadResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CsvUploadResponse>() {}, new AsyncApiCallback<ApiResponse<CsvUploadResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CsvUploadResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CsvUploadResponse> response = (ApiResponse<CsvUploadResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CsvUploadResponse> response = (ApiResponse<CsvUploadResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Merge two contacts into a new contact record
    * Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
    * @param request the request object
@@ -5473,6 +6090,81 @@ public class ExternalContactsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ExternalSource> response = (ApiResponse<ExternalSource>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update settings for CSV import
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CsvSettings> putExternalcontactsImportCsvSettingAsync(PutExternalcontactsImportCsvSettingRequest request, final AsyncApiCallback<CsvSettings> callback) {
+    try {
+      final SettableFuture<CsvSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CsvSettings>() {}, new AsyncApiCallback<ApiResponse<CsvSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<CsvSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update settings for CSV import
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CsvSettings>> putExternalcontactsImportCsvSettingAsync(ApiRequest<CsvSettings> request, final AsyncApiCallback<ApiResponse<CsvSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CsvSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CsvSettings>() {}, new AsyncApiCallback<ApiResponse<CsvSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<CsvSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CsvSettings> response = (ApiResponse<CsvSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CsvSettings> response = (ApiResponse<CsvSettings>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
