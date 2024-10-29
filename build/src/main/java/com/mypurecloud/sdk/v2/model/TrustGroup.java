@@ -13,9 +13,9 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.GroupContact;
+import com.mypurecloud.sdk.v2.model.Image;
 import com.mypurecloud.sdk.v2.model.OrgUser;
 import com.mypurecloud.sdk.v2.model.User;
-import com.mypurecloud.sdk.v2.model.UserImage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -132,7 +132,7 @@ public class TrustGroup  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private List<UserImage> images = new ArrayList<UserImage>();
+  private List<Image> images = new ArrayList<Image>();
   private List<GroupContact> addresses = new ArrayList<GroupContact>();
   private Boolean rulesVisible = null;
 
@@ -282,17 +282,17 @@ public class TrustGroup  implements Serializable {
 
   /**
    **/
-  public TrustGroup images(List<UserImage> images) {
+  public TrustGroup images(List<Image> images) {
     this.images = images;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("images")
-  public List<UserImage> getImages() {
+  public List<Image> getImages() {
     return images;
   }
-  public void setImages(List<UserImage> images) {
+  public void setImages(List<Image> images) {
     this.images = images;
   }
 

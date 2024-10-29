@@ -114,6 +114,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postOutboundCallanalysisresponsesets**](OutboundApi#postOutboundCallanalysisresponsesets) | Create a dialer call analysis response set. |
 | [**postOutboundCampaignAgentownedmappingpreview**](OutboundApi#postOutboundCampaignAgentownedmappingpreview) | Initiate request for a preview of how agents will be mapped to this campaign's contact list. |
 | [**postOutboundCampaignCallbackSchedule**](OutboundApi#postOutboundCampaignCallbackSchedule) | Schedule a Callback for a Dialer Campaign (Deprecated) |
+| [**postOutboundCampaignStart**](OutboundApi#postOutboundCampaignStart) | Start the campaign |
+| [**postOutboundCampaignStop**](OutboundApi#postOutboundCampaignStop) | Stop the campaign |
 | [**postOutboundCampaignrules**](OutboundApi#postOutboundCampaignrules) | Create Campaign Rule |
 | [**postOutboundCampaigns**](OutboundApi#postOutboundCampaigns) | Create a campaign. |
 | [**postOutboundCampaignsProgress**](OutboundApi#postOutboundCampaignsProgress) | Get progress for a list of campaigns |
@@ -140,6 +142,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postOutboundFilespecificationtemplates**](OutboundApi#postOutboundFilespecificationtemplates) | Create File Specification Template |
 | [**postOutboundImporttemplates**](OutboundApi#postOutboundImporttemplates) | Create Import Template |
 | [**postOutboundImporttemplatesBulkAdd**](OutboundApi#postOutboundImporttemplatesBulkAdd) | Add multiple import templates |
+| [**postOutboundMessagingcampaignStart**](OutboundApi#postOutboundMessagingcampaignStart) | Start the campaign |
+| [**postOutboundMessagingcampaignStop**](OutboundApi#postOutboundMessagingcampaignStop) | Stop the campaign |
 | [**postOutboundMessagingcampaigns**](OutboundApi#postOutboundMessagingcampaigns) | Create a Messaging Campaign |
 | [**postOutboundMessagingcampaignsProgress**](OutboundApi#postOutboundMessagingcampaignsProgress) | Get progress for a list of messaging campaigns |
 | [**postOutboundRulesets**](OutboundApi#postOutboundRulesets) | Create a Rule Set. |
@@ -7033,6 +7037,122 @@ try {
 [**ContactCallbackRequest**](ContactCallbackRequest)
 
 
+# **postOutboundCampaignStart**
+
+
+> Void postOutboundCampaignStart(campaignId)
+
+Start the campaign
+
+Wraps POST /api/v2/outbound/campaigns/{campaignId}/start  
+
+Requires ANY permissions: 
+
+* outbound:campaign:start
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String campaignId = "campaignId_example"; // String | Campaign ID
+try {
+    apiInstance.postOutboundCampaignStart(campaignId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#postOutboundCampaignStart");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaignId** | **String**| Campaign ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **postOutboundCampaignStop**
+
+
+> Void postOutboundCampaignStop(campaignId)
+
+Stop the campaign
+
+Wraps POST /api/v2/outbound/campaigns/{campaignId}/stop  
+
+Requires ANY permissions: 
+
+* outbound:campaign:stop
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String campaignId = "campaignId_example"; // String | Campaign ID
+try {
+    apiInstance.postOutboundCampaignStop(campaignId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#postOutboundCampaignStop");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaignId** | **String**| Campaign ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
 # **postOutboundCampaignrules**
 
 
@@ -8595,6 +8715,128 @@ try {
 ### Return type
 
 [**ImportTemplateEntityListing**](ImportTemplateEntityListing)
+
+
+# **postOutboundMessagingcampaignStart**
+
+
+> Void postOutboundMessagingcampaignStart(messagingCampaignId)
+
+Start the campaign
+
+Documented permissions are applicable based on campaign type.
+
+Wraps POST /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/start  
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaign:start
+* outbound:emailCampaign:start
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+try {
+    apiInstance.postOutboundMessagingcampaignStart(messagingCampaignId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#postOutboundMessagingcampaignStart");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **messagingCampaignId** | **String**| The Messaging Campaign ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **postOutboundMessagingcampaignStop**
+
+
+> Void postOutboundMessagingcampaignStop(messagingCampaignId)
+
+Stop the campaign
+
+Documented permissions are applicable based on campaign type.
+
+Wraps POST /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/stop  
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaign:stop
+* outbound:emailCampaign:stop
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+try {
+    apiInstance.postOutboundMessagingcampaignStop(messagingCampaignId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#postOutboundMessagingcampaignStop");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **messagingCampaignId** | **String**| The Messaging Campaign ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 
 # **postOutboundMessagingcampaigns**
@@ -10181,4 +10423,4 @@ try {
 [**WrapUpCodeMapping**](WrapUpCodeMapping)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_

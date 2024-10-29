@@ -38,6 +38,8 @@ import com.mypurecloud.sdk.v2.api.request.GetVoicemailMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetVoicemailPolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.GetVoicemailQueueMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetVoicemailSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.GetVoicemailUserMailboxRequest;
+import com.mypurecloud.sdk.v2.api.request.GetVoicemailUserMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetVoicemailUserpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchVoicemailGroupPolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchVoicemailMePolicyRequest;
@@ -1242,6 +1244,170 @@ public class VoicemailApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<VoicemailsSearchResponse> response = (ApiResponse<VoicemailsSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a user's mailbox information
+   * 
+   * @param userId userId (required)
+   * @return VoicemailMailboxInfo
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public VoicemailMailboxInfo getVoicemailUserMailbox(String userId) throws IOException, ApiException {
+    return  getVoicemailUserMailbox(createGetVoicemailUserMailboxRequest(userId));
+  }
+
+  /**
+   * Get a user's mailbox information
+   * 
+   * @param userId userId (required)
+   * @return VoicemailMailboxInfo
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<VoicemailMailboxInfo> getVoicemailUserMailboxWithHttpInfo(String userId) throws IOException {
+    return getVoicemailUserMailbox(createGetVoicemailUserMailboxRequest(userId).withHttpInfo());
+  }
+
+  private GetVoicemailUserMailboxRequest createGetVoicemailUserMailboxRequest(String userId) {
+    return GetVoicemailUserMailboxRequest.builder()
+            .withUserId(userId)
+
+            .build();
+  }
+
+  /**
+   * Get a user's mailbox information
+   * 
+   * @param request The request object
+   * @return VoicemailMailboxInfo
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public VoicemailMailboxInfo getVoicemailUserMailbox(GetVoicemailUserMailboxRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<VoicemailMailboxInfo> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VoicemailMailboxInfo>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a user's mailbox information
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<VoicemailMailboxInfo> getVoicemailUserMailbox(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VoicemailMailboxInfo>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailMailboxInfo> response = (ApiResponse<VoicemailMailboxInfo>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailMailboxInfo> response = (ApiResponse<VoicemailMailboxInfo>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * List voicemail messages
+   * 
+   * @param userId User ID (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return VoicemailMessageEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public VoicemailMessageEntityListing getVoicemailUserMessages(String userId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getVoicemailUserMessages(createGetVoicemailUserMessagesRequest(userId, pageSize, pageNumber));
+  }
+
+  /**
+   * List voicemail messages
+   * 
+   * @param userId User ID (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return VoicemailMessageEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<VoicemailMessageEntityListing> getVoicemailUserMessagesWithHttpInfo(String userId, Integer pageSize, Integer pageNumber) throws IOException {
+    return getVoicemailUserMessages(createGetVoicemailUserMessagesRequest(userId, pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetVoicemailUserMessagesRequest createGetVoicemailUserMessagesRequest(String userId, Integer pageSize, Integer pageNumber) {
+    return GetVoicemailUserMessagesRequest.builder()
+            .withUserId(userId)
+
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .build();
+  }
+
+  /**
+   * List voicemail messages
+   * 
+   * @param request The request object
+   * @return VoicemailMessageEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public VoicemailMessageEntityListing getVoicemailUserMessages(GetVoicemailUserMessagesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<VoicemailMessageEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VoicemailMessageEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * List voicemail messages
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<VoicemailMessageEntityListing> getVoicemailUserMessages(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VoicemailMessageEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailMessageEntityListing> response = (ApiResponse<VoicemailMessageEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailMessageEntityListing> response = (ApiResponse<VoicemailMessageEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

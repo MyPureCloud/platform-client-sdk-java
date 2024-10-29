@@ -86,6 +86,7 @@ public class DashboardConfiguration  implements Serializable {
   private LayoutTypeEnum layoutType = null;
   private Date dateCreated = null;
   private Date dateModified = null;
+  private Date dateDeleted = null;
   private AddressableEntityRef createdBy = null;
   private Boolean shared = null;
   private DashboardsSharedWith dashboardsSharedWith = null;
@@ -268,6 +269,24 @@ public class DashboardConfiguration  implements Serializable {
   }
 
 
+  /**
+   * The deleted date of the dashboard. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public DashboardConfiguration dateDeleted(Date dateDeleted) {
+    this.dateDeleted = dateDeleted;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The deleted date of the dashboard. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateDeleted")
+  public Date getDateDeleted() {
+    return dateDeleted;
+  }
+  public void setDateDeleted(Date dateDeleted) {
+    this.dateDeleted = dateDeleted;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The id of user who created the dashboard")
   @JsonProperty("createdBy")
   public AddressableEntityRef getCreatedBy() {
@@ -339,6 +358,7 @@ public class DashboardConfiguration  implements Serializable {
             Objects.equals(this.layoutType, dashboardConfiguration.layoutType) &&
             Objects.equals(this.dateCreated, dashboardConfiguration.dateCreated) &&
             Objects.equals(this.dateModified, dashboardConfiguration.dateModified) &&
+            Objects.equals(this.dateDeleted, dashboardConfiguration.dateDeleted) &&
             Objects.equals(this.createdBy, dashboardConfiguration.createdBy) &&
             Objects.equals(this.shared, dashboardConfiguration.shared) &&
             Objects.equals(this.dashboardsSharedWith, dashboardConfiguration.dashboardsSharedWith) &&
@@ -347,7 +367,7 @@ public class DashboardConfiguration  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, rows, columns, widgets, favorite, publicDashboard, restricted, layoutType, dateCreated, dateModified, createdBy, shared, dashboardsSharedWith, selfUri);
+    return Objects.hash(id, name, rows, columns, widgets, favorite, publicDashboard, restricted, layoutType, dateCreated, dateModified, dateDeleted, createdBy, shared, dashboardsSharedWith, selfUri);
   }
 
   @Override
@@ -366,6 +386,7 @@ public class DashboardConfiguration  implements Serializable {
     sb.append("    layoutType: ").append(toIndentedString(layoutType)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
+    sb.append("    dateDeleted: ").append(toIndentedString(dateDeleted)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    shared: ").append(toIndentedString(shared)).append("\n");
     sb.append("    dashboardsSharedWith: ").append(toIndentedString(dashboardsSharedWith)).append("\n");

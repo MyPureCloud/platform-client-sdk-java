@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.WorkitemRuleSettings;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -33,6 +34,7 @@ public class WorktypeUpdate  implements Serializable {
   private Boolean assignmentEnabled = null;
   private String schemaId = null;
   private Integer serviceLevelTarget = null;
+  private WorkitemRuleSettings ruleSettings = null;
   private String description = null;
   private String defaultStatusId = null;
   private Integer schemaVersion = null;
@@ -224,6 +226,24 @@ public class WorktypeUpdate  implements Serializable {
 
 
   /**
+   * Settings for the worktypes rules.
+   **/
+  public WorktypeUpdate ruleSettings(WorkitemRuleSettings ruleSettings) {
+    this.ruleSettings = ruleSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Settings for the worktypes rules.")
+  @JsonProperty("ruleSettings")
+  public WorkitemRuleSettings getRuleSettings() {
+    return ruleSettings;
+  }
+  public void setRuleSettings(WorkitemRuleSettings ruleSettings) {
+    this.ruleSettings = ruleSettings;
+  }
+
+
+  /**
    * The description of the Worktype. Maximum length of 512 characters.
    **/
   public WorktypeUpdate description(String description) {
@@ -351,6 +371,7 @@ public class WorktypeUpdate  implements Serializable {
             Objects.equals(this.assignmentEnabled, worktypeUpdate.assignmentEnabled) &&
             Objects.equals(this.schemaId, worktypeUpdate.schemaId) &&
             Objects.equals(this.serviceLevelTarget, worktypeUpdate.serviceLevelTarget) &&
+            Objects.equals(this.ruleSettings, worktypeUpdate.ruleSettings) &&
             Objects.equals(this.description, worktypeUpdate.description) &&
             Objects.equals(this.defaultStatusId, worktypeUpdate.defaultStatusId) &&
             Objects.equals(this.schemaVersion, worktypeUpdate.schemaVersion) &&
@@ -361,7 +382,7 @@ public class WorktypeUpdate  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, defaultWorkbinId, defaultDurationSeconds, defaultExpirationSeconds, defaultDueDurationSeconds, defaultPriority, defaultTtlSeconds, assignmentEnabled, schemaId, serviceLevelTarget, description, defaultStatusId, schemaVersion, defaultLanguageId, defaultSkillIds, defaultQueueId);
+    return Objects.hash(name, defaultWorkbinId, defaultDurationSeconds, defaultExpirationSeconds, defaultDueDurationSeconds, defaultPriority, defaultTtlSeconds, assignmentEnabled, schemaId, serviceLevelTarget, ruleSettings, description, defaultStatusId, schemaVersion, defaultLanguageId, defaultSkillIds, defaultQueueId);
   }
 
   @Override
@@ -379,6 +400,7 @@ public class WorktypeUpdate  implements Serializable {
     sb.append("    assignmentEnabled: ").append(toIndentedString(assignmentEnabled)).append("\n");
     sb.append("    schemaId: ").append(toIndentedString(schemaId)).append("\n");
     sb.append("    serviceLevelTarget: ").append(toIndentedString(serviceLevelTarget)).append("\n");
+    sb.append("    ruleSettings: ").append(toIndentedString(ruleSettings)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    defaultStatusId: ").append(toIndentedString(defaultStatusId)).append("\n");
     sb.append("    schemaVersion: ").append(toIndentedString(schemaVersion)).append("\n");

@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.NamedEntityTypeItem;
+import com.mypurecloud.sdk.v2.model.NamedEntityTypeMechanismExample;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -46,6 +47,7 @@ public class NamedEntityTypeMechanism  implements Serializable {
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    AI("AI"),
     DYNAMICLIST("DynamicList"),
     LIST("List"),
     REGEX("Regex"),
@@ -77,6 +79,57 @@ public class NamedEntityTypeMechanism  implements Serializable {
     }
   }
   private TypeEnum type = null;
+
+  private static class SubTypeEnumDeserializer extends StdDeserializer<SubTypeEnum> {
+    public SubTypeEnumDeserializer() {
+      super(SubTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public SubTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SubTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Subtype of detection mechanism
+   */
+ @JsonDeserialize(using = SubTypeEnumDeserializer.class)
+  public enum SubTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ALPHANUMERIC("Alphanumeric"),
+    NUMBERSEQUENCE("NumberSequence"),
+    FREEFORM("FreeForm");
+
+    private String value;
+
+    SubTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SubTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SubTypeEnum value : SubTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SubTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private SubTypeEnum subType = null;
+  private Integer maxLength = null;
+  private List<NamedEntityTypeMechanismExample> examples = new ArrayList<NamedEntityTypeMechanismExample>();
 
   
   /**
@@ -133,6 +186,60 @@ public class NamedEntityTypeMechanism  implements Serializable {
   }
 
 
+  /**
+   * Subtype of detection mechanism
+   **/
+  public NamedEntityTypeMechanism subType(SubTypeEnum subType) {
+    this.subType = subType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Subtype of detection mechanism")
+  @JsonProperty("subType")
+  public SubTypeEnum getSubType() {
+    return subType;
+  }
+  public void setSubType(SubTypeEnum subType) {
+    this.subType = subType;
+  }
+
+
+  /**
+   * The maximum length of the entity resolved value
+   **/
+  public NamedEntityTypeMechanism maxLength(Integer maxLength) {
+    this.maxLength = maxLength;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The maximum length of the entity resolved value")
+  @JsonProperty("maxLength")
+  public Integer getMaxLength() {
+    return maxLength;
+  }
+  public void setMaxLength(Integer maxLength) {
+    this.maxLength = maxLength;
+  }
+
+
+  /**
+   * Examples for entity detection
+   **/
+  public NamedEntityTypeMechanism examples(List<NamedEntityTypeMechanismExample> examples) {
+    this.examples = examples;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Examples for entity detection")
+  @JsonProperty("examples")
+  public List<NamedEntityTypeMechanismExample> getExamples() {
+    return examples;
+  }
+  public void setExamples(List<NamedEntityTypeMechanismExample> examples) {
+    this.examples = examples;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -145,12 +252,15 @@ public class NamedEntityTypeMechanism  implements Serializable {
 
     return Objects.equals(this.items, namedEntityTypeMechanism.items) &&
             Objects.equals(this.restricted, namedEntityTypeMechanism.restricted) &&
-            Objects.equals(this.type, namedEntityTypeMechanism.type);
+            Objects.equals(this.type, namedEntityTypeMechanism.type) &&
+            Objects.equals(this.subType, namedEntityTypeMechanism.subType) &&
+            Objects.equals(this.maxLength, namedEntityTypeMechanism.maxLength) &&
+            Objects.equals(this.examples, namedEntityTypeMechanism.examples);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(items, restricted, type);
+    return Objects.hash(items, restricted, type, subType, maxLength, examples);
   }
 
   @Override
@@ -161,6 +271,9 @@ public class NamedEntityTypeMechanism  implements Serializable {
     sb.append("    items: ").append(toIndentedString(items)).append("\n");
     sb.append("    restricted: ").append(toIndentedString(restricted)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    subType: ").append(toIndentedString(subType)).append("\n");
+    sb.append("    maxLength: ").append(toIndentedString(maxLength)).append("\n");
+    sb.append("    examples: ").append(toIndentedString(examples)).append("\n");
     sb.append("}");
     return sb.toString();
   }

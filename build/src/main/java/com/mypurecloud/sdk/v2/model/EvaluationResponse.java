@@ -123,6 +123,7 @@ public class EvaluationResponse  implements Serializable {
     COBROWSE("COBROWSE"),
     EMAIL("EMAIL"),
     MESSAGE("MESSAGE"),
+    INTERNAL_MESSAGE("INTERNAL_MESSAGE"),
     SOCIAL_EXPRESSION("SOCIAL_EXPRESSION"),
     VIDEO("VIDEO"),
     SCREENSHARE("SCREENSHARE");

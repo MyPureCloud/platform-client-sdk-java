@@ -48,6 +48,7 @@ public class DataSchema  implements Serializable {
  @JsonDeserialize(using = AppliesToEnumDeserializer.class)
   public enum AppliesToEnum {
     CONTACT("CONTACT"),
+    CONVERSATION("CONVERSATION"),
     EXTERNAL_ORGANIZATION("EXTERNAL_ORGANIZATION"),
     OPEN_ACTION("OPEN_ACTION"),
     WORKITEM("WORKITEM");
@@ -138,7 +139,7 @@ public class DataSchema  implements Serializable {
   }
 
 
-  @ApiModelProperty(example = "null", value = "One of \"CONTACT\" or \"EXTERNAL_ORGANIZATION\".  Indicates the built-in entity type to which this schema applies.")
+  @ApiModelProperty(example = "null", value = "Indicates the built-in entity type to which this schema applies.")
   @JsonProperty("appliesTo")
   public List<AppliesToEnum> getAppliesTo() {
     return appliesTo;

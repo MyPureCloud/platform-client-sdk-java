@@ -11,7 +11,9 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.BaseMediaSettings;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.ServiceLevel;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -32,9 +34,158 @@ public class CallbackMediaSettings  implements Serializable {
   private Double autoAnswerAlertToneSeconds = null;
   private Double manualAnswerAlertToneSeconds = null;
   private Map<String, BaseMediaSettings> subTypeSettings = null;
+
+  private static class ModeEnumDeserializer extends StdDeserializer<ModeEnum> {
+    public ModeEnumDeserializer() {
+      super(ModeEnumDeserializer.class);
+    }
+
+    @Override
+    public ModeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ModeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The mode callbacks will use on this queue.
+   */
+ @JsonDeserialize(using = ModeEnumDeserializer.class)
+  public enum ModeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    AGENTFIRST("AgentFirst"),
+    CUSTOMERFIRST("CustomerFirst");
+
+    private String value;
+
+    ModeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ModeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ModeEnum value : ModeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ModeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ModeEnum mode = null;
   private Boolean enableAutoDialAndEnd = null;
   private Integer autoDialDelaySeconds = null;
   private Integer autoEndDelaySeconds = null;
+  private Double pacingModifier = null;
+
+  private static class LiveVoiceReactionTypeEnumDeserializer extends StdDeserializer<LiveVoiceReactionTypeEnum> {
+    public LiveVoiceReactionTypeEnumDeserializer() {
+      super(LiveVoiceReactionTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public LiveVoiceReactionTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return LiveVoiceReactionTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The action to take if a live voice is detected during the outbound call of a customer first callback.
+   */
+ @JsonDeserialize(using = LiveVoiceReactionTypeEnumDeserializer.class)
+  public enum LiveVoiceReactionTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    HANGUP("HangUp"),
+    TRANSFERTOQUEUE("TransferToQueue"),
+    TRANSFERTOFLOW("TransferToFlow");
+
+    private String value;
+
+    LiveVoiceReactionTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static LiveVoiceReactionTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (LiveVoiceReactionTypeEnum value : LiveVoiceReactionTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return LiveVoiceReactionTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private LiveVoiceReactionTypeEnum liveVoiceReactionType = null;
+  private DomainEntityRef liveVoiceFlow = null;
+
+  private static class AnsweringMachineReactionTypeEnumDeserializer extends StdDeserializer<AnsweringMachineReactionTypeEnum> {
+    public AnsweringMachineReactionTypeEnumDeserializer() {
+      super(AnsweringMachineReactionTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public AnsweringMachineReactionTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return AnsweringMachineReactionTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The action to take if an answering machine is detected during the outbound call of a customer first callback.
+   */
+ @JsonDeserialize(using = AnsweringMachineReactionTypeEnumDeserializer.class)
+  public enum AnsweringMachineReactionTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    HANGUP("HangUp"),
+    TRANSFERTOQUEUE("TransferToQueue"),
+    TRANSFERTOFLOW("TransferToFlow");
+
+    private String value;
+
+    AnsweringMachineReactionTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static AnsweringMachineReactionTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (AnsweringMachineReactionTypeEnum value : AnsweringMachineReactionTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return AnsweringMachineReactionTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private AnsweringMachineReactionTypeEnum answeringMachineReactionType = null;
+  private DomainEntityRef answeringMachineFlow = null;
 
   
   /**
@@ -146,6 +297,24 @@ public class CallbackMediaSettings  implements Serializable {
 
 
   /**
+   * The mode callbacks will use on this queue.
+   **/
+  public CallbackMediaSettings mode(ModeEnum mode) {
+    this.mode = mode;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The mode callbacks will use on this queue.")
+  @JsonProperty("mode")
+  public ModeEnum getMode() {
+    return mode;
+  }
+  public void setMode(ModeEnum mode) {
+    this.mode = mode;
+  }
+
+
+  /**
    * Flag to enable Auto-Dial and Auto-End automation for callbacks on this queue.
    **/
   public CallbackMediaSettings enableAutoDialAndEnd(Boolean enableAutoDialAndEnd) {
@@ -199,6 +368,96 @@ public class CallbackMediaSettings  implements Serializable {
   }
 
 
+  /**
+   * Controls the maximum number of outbound calls at one time when mode is CustomerFirst.
+   **/
+  public CallbackMediaSettings pacingModifier(Double pacingModifier) {
+    this.pacingModifier = pacingModifier;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Controls the maximum number of outbound calls at one time when mode is CustomerFirst.")
+  @JsonProperty("pacingModifier")
+  public Double getPacingModifier() {
+    return pacingModifier;
+  }
+  public void setPacingModifier(Double pacingModifier) {
+    this.pacingModifier = pacingModifier;
+  }
+
+
+  /**
+   * The action to take if a live voice is detected during the outbound call of a customer first callback.
+   **/
+  public CallbackMediaSettings liveVoiceReactionType(LiveVoiceReactionTypeEnum liveVoiceReactionType) {
+    this.liveVoiceReactionType = liveVoiceReactionType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The action to take if a live voice is detected during the outbound call of a customer first callback.")
+  @JsonProperty("liveVoiceReactionType")
+  public LiveVoiceReactionTypeEnum getLiveVoiceReactionType() {
+    return liveVoiceReactionType;
+  }
+  public void setLiveVoiceReactionType(LiveVoiceReactionTypeEnum liveVoiceReactionType) {
+    this.liveVoiceReactionType = liveVoiceReactionType;
+  }
+
+
+  /**
+   * The inbound flow to transfer to if a live voice is detected during the outbound call of a customer first callback.
+   **/
+  public CallbackMediaSettings liveVoiceFlow(DomainEntityRef liveVoiceFlow) {
+    this.liveVoiceFlow = liveVoiceFlow;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The inbound flow to transfer to if a live voice is detected during the outbound call of a customer first callback.")
+  @JsonProperty("liveVoiceFlow")
+  public DomainEntityRef getLiveVoiceFlow() {
+    return liveVoiceFlow;
+  }
+  public void setLiveVoiceFlow(DomainEntityRef liveVoiceFlow) {
+    this.liveVoiceFlow = liveVoiceFlow;
+  }
+
+
+  /**
+   * The action to take if an answering machine is detected during the outbound call of a customer first callback.
+   **/
+  public CallbackMediaSettings answeringMachineReactionType(AnsweringMachineReactionTypeEnum answeringMachineReactionType) {
+    this.answeringMachineReactionType = answeringMachineReactionType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The action to take if an answering machine is detected during the outbound call of a customer first callback.")
+  @JsonProperty("answeringMachineReactionType")
+  public AnsweringMachineReactionTypeEnum getAnsweringMachineReactionType() {
+    return answeringMachineReactionType;
+  }
+  public void setAnsweringMachineReactionType(AnsweringMachineReactionTypeEnum answeringMachineReactionType) {
+    this.answeringMachineReactionType = answeringMachineReactionType;
+  }
+
+
+  /**
+   * The inbound flow to transfer to if an answering machine is detected during the outbound call of a customer first callback when answeringMachineReactionType is set to TransferToFlow.
+   **/
+  public CallbackMediaSettings answeringMachineFlow(DomainEntityRef answeringMachineFlow) {
+    this.answeringMachineFlow = answeringMachineFlow;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The inbound flow to transfer to if an answering machine is detected during the outbound call of a customer first callback when answeringMachineReactionType is set to TransferToFlow.")
+  @JsonProperty("answeringMachineFlow")
+  public DomainEntityRef getAnsweringMachineFlow() {
+    return answeringMachineFlow;
+  }
+  public void setAnsweringMachineFlow(DomainEntityRef answeringMachineFlow) {
+    this.answeringMachineFlow = answeringMachineFlow;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -215,14 +474,20 @@ public class CallbackMediaSettings  implements Serializable {
             Objects.equals(this.autoAnswerAlertToneSeconds, callbackMediaSettings.autoAnswerAlertToneSeconds) &&
             Objects.equals(this.manualAnswerAlertToneSeconds, callbackMediaSettings.manualAnswerAlertToneSeconds) &&
             Objects.equals(this.subTypeSettings, callbackMediaSettings.subTypeSettings) &&
+            Objects.equals(this.mode, callbackMediaSettings.mode) &&
             Objects.equals(this.enableAutoDialAndEnd, callbackMediaSettings.enableAutoDialAndEnd) &&
             Objects.equals(this.autoDialDelaySeconds, callbackMediaSettings.autoDialDelaySeconds) &&
-            Objects.equals(this.autoEndDelaySeconds, callbackMediaSettings.autoEndDelaySeconds);
+            Objects.equals(this.autoEndDelaySeconds, callbackMediaSettings.autoEndDelaySeconds) &&
+            Objects.equals(this.pacingModifier, callbackMediaSettings.pacingModifier) &&
+            Objects.equals(this.liveVoiceReactionType, callbackMediaSettings.liveVoiceReactionType) &&
+            Objects.equals(this.liveVoiceFlow, callbackMediaSettings.liveVoiceFlow) &&
+            Objects.equals(this.answeringMachineReactionType, callbackMediaSettings.answeringMachineReactionType) &&
+            Objects.equals(this.answeringMachineFlow, callbackMediaSettings.answeringMachineFlow);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enableAutoAnswer, alertingTimeoutSeconds, serviceLevel, autoAnswerAlertToneSeconds, manualAnswerAlertToneSeconds, subTypeSettings, enableAutoDialAndEnd, autoDialDelaySeconds, autoEndDelaySeconds);
+    return Objects.hash(enableAutoAnswer, alertingTimeoutSeconds, serviceLevel, autoAnswerAlertToneSeconds, manualAnswerAlertToneSeconds, subTypeSettings, mode, enableAutoDialAndEnd, autoDialDelaySeconds, autoEndDelaySeconds, pacingModifier, liveVoiceReactionType, liveVoiceFlow, answeringMachineReactionType, answeringMachineFlow);
   }
 
   @Override
@@ -236,9 +501,15 @@ public class CallbackMediaSettings  implements Serializable {
     sb.append("    autoAnswerAlertToneSeconds: ").append(toIndentedString(autoAnswerAlertToneSeconds)).append("\n");
     sb.append("    manualAnswerAlertToneSeconds: ").append(toIndentedString(manualAnswerAlertToneSeconds)).append("\n");
     sb.append("    subTypeSettings: ").append(toIndentedString(subTypeSettings)).append("\n");
+    sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
     sb.append("    enableAutoDialAndEnd: ").append(toIndentedString(enableAutoDialAndEnd)).append("\n");
     sb.append("    autoDialDelaySeconds: ").append(toIndentedString(autoDialDelaySeconds)).append("\n");
     sb.append("    autoEndDelaySeconds: ").append(toIndentedString(autoEndDelaySeconds)).append("\n");
+    sb.append("    pacingModifier: ").append(toIndentedString(pacingModifier)).append("\n");
+    sb.append("    liveVoiceReactionType: ").append(toIndentedString(liveVoiceReactionType)).append("\n");
+    sb.append("    liveVoiceFlow: ").append(toIndentedString(liveVoiceFlow)).append("\n");
+    sb.append("    answeringMachineReactionType: ").append(toIndentedString(answeringMachineReactionType)).append("\n");
+    sb.append("    answeringMachineFlow: ").append(toIndentedString(answeringMachineFlow)).append("\n");
     sb.append("}");
     return sb.toString();
   }

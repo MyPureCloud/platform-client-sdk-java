@@ -17,8 +17,8 @@ import com.mypurecloud.sdk.v2.model.Chat;
 import com.mypurecloud.sdk.v2.model.Contact;
 import com.mypurecloud.sdk.v2.model.EmployerInfo;
 import com.mypurecloud.sdk.v2.model.Group;
+import com.mypurecloud.sdk.v2.model.Image;
 import com.mypurecloud.sdk.v2.model.Location;
-import com.mypurecloud.sdk.v2.model.UserImage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -42,7 +42,7 @@ public class UpdateUser  implements Serializable {
   private String username = null;
   private String preferredName = null;
   private String manager = null;
-  private List<UserImage> images = new ArrayList<UserImage>();
+  private List<Image> images = new ArrayList<Image>();
   private Integer version = null;
   private List<String> profileSkills = new ArrayList<String>();
   private List<Location> locations = new ArrayList<Location>();
@@ -274,17 +274,17 @@ public class UpdateUser  implements Serializable {
 
   /**
    **/
-  public UpdateUser images(List<UserImage> images) {
+  public UpdateUser images(List<Image> images) {
     this.images = images;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("images")
-  public List<UserImage> getImages() {
+  public List<Image> getImages() {
     return images;
   }
-  public void setImages(List<UserImage> images) {
+  public void setImages(List<Image> images) {
     this.images = images;
   }
 

@@ -204,6 +204,8 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundCallabletimesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCallanalysisresponsesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignAgentownedmappingpreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignCallbackScheduleRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignStartRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignStopRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignrulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignsProgressRequest;
@@ -230,6 +232,8 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundFilespecificationtemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundImporttemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundImporttemplatesBulkAddRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundMessagingcampaignStartRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundMessagingcampaignStopRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundMessagingcampaignsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundMessagingcampaignsProgressRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundRulesetsRequest;
@@ -9488,6 +9492,156 @@ public class OutboundApi {
   }
 
   /**
+   * Start the campaign
+   * 
+   * @param campaignId Campaign ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postOutboundCampaignStart(String campaignId) throws IOException, ApiException {
+     postOutboundCampaignStart(createPostOutboundCampaignStartRequest(campaignId));
+  }
+
+  /**
+   * Start the campaign
+   * 
+   * @param campaignId Campaign ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postOutboundCampaignStartWithHttpInfo(String campaignId) throws IOException {
+    return postOutboundCampaignStart(createPostOutboundCampaignStartRequest(campaignId).withHttpInfo());
+  }
+
+  private PostOutboundCampaignStartRequest createPostOutboundCampaignStartRequest(String campaignId) {
+    return PostOutboundCampaignStartRequest.builder()
+            .withCampaignId(campaignId)
+
+            .build();
+  }
+
+  /**
+   * Start the campaign
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postOutboundCampaignStart(PostOutboundCampaignStartRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Start the campaign
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postOutboundCampaignStart(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Stop the campaign
+   * 
+   * @param campaignId Campaign ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postOutboundCampaignStop(String campaignId) throws IOException, ApiException {
+     postOutboundCampaignStop(createPostOutboundCampaignStopRequest(campaignId));
+  }
+
+  /**
+   * Stop the campaign
+   * 
+   * @param campaignId Campaign ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postOutboundCampaignStopWithHttpInfo(String campaignId) throws IOException {
+    return postOutboundCampaignStop(createPostOutboundCampaignStopRequest(campaignId).withHttpInfo());
+  }
+
+  private PostOutboundCampaignStopRequest createPostOutboundCampaignStopRequest(String campaignId) {
+    return PostOutboundCampaignStopRequest.builder()
+            .withCampaignId(campaignId)
+
+            .build();
+  }
+
+  /**
+   * Stop the campaign
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postOutboundCampaignStop(PostOutboundCampaignStopRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Stop the campaign
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postOutboundCampaignStop(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create Campaign Rule
    * 
    * @param body CampaignRule (required)
@@ -11547,6 +11701,156 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ImportTemplateEntityListing> response = (ApiResponse<ImportTemplateEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Start the campaign
+   * Documented permissions are applicable based on campaign type.
+   * @param messagingCampaignId The Messaging Campaign ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postOutboundMessagingcampaignStart(String messagingCampaignId) throws IOException, ApiException {
+     postOutboundMessagingcampaignStart(createPostOutboundMessagingcampaignStartRequest(messagingCampaignId));
+  }
+
+  /**
+   * Start the campaign
+   * Documented permissions are applicable based on campaign type.
+   * @param messagingCampaignId The Messaging Campaign ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postOutboundMessagingcampaignStartWithHttpInfo(String messagingCampaignId) throws IOException {
+    return postOutboundMessagingcampaignStart(createPostOutboundMessagingcampaignStartRequest(messagingCampaignId).withHttpInfo());
+  }
+
+  private PostOutboundMessagingcampaignStartRequest createPostOutboundMessagingcampaignStartRequest(String messagingCampaignId) {
+    return PostOutboundMessagingcampaignStartRequest.builder()
+            .withMessagingCampaignId(messagingCampaignId)
+
+            .build();
+  }
+
+  /**
+   * Start the campaign
+   * Documented permissions are applicable based on campaign type.
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postOutboundMessagingcampaignStart(PostOutboundMessagingcampaignStartRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Start the campaign
+   * Documented permissions are applicable based on campaign type.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postOutboundMessagingcampaignStart(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Stop the campaign
+   * Documented permissions are applicable based on campaign type.
+   * @param messagingCampaignId The Messaging Campaign ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postOutboundMessagingcampaignStop(String messagingCampaignId) throws IOException, ApiException {
+     postOutboundMessagingcampaignStop(createPostOutboundMessagingcampaignStopRequest(messagingCampaignId));
+  }
+
+  /**
+   * Stop the campaign
+   * Documented permissions are applicable based on campaign type.
+   * @param messagingCampaignId The Messaging Campaign ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postOutboundMessagingcampaignStopWithHttpInfo(String messagingCampaignId) throws IOException {
+    return postOutboundMessagingcampaignStop(createPostOutboundMessagingcampaignStopRequest(messagingCampaignId).withHttpInfo());
+  }
+
+  private PostOutboundMessagingcampaignStopRequest createPostOutboundMessagingcampaignStopRequest(String messagingCampaignId) {
+    return PostOutboundMessagingcampaignStopRequest.builder()
+            .withMessagingCampaignId(messagingCampaignId)
+
+            .build();
+  }
+
+  /**
+   * Stop the campaign
+   * Documented permissions are applicable based on campaign type.
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postOutboundMessagingcampaignStop(PostOutboundMessagingcampaignStopRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Stop the campaign
+   * Documented permissions are applicable based on campaign type.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postOutboundMessagingcampaignStop(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

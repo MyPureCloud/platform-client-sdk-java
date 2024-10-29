@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.CategoryResponse;
-import com.mypurecloud.sdk.v2.model.DocumentVariation;
+import com.mypurecloud.sdk.v2.model.DocumentVariationResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeBaseReference;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentAlternative;
 import com.mypurecloud.sdk.v2.model.LabelResponse;
@@ -100,7 +100,7 @@ public class KnowledgeDocumentResponse  implements Serializable {
   private String externalUrl = null;
   private AddressableEntityRef source = null;
   private Boolean readonly = null;
-  private List<DocumentVariation> variations = new ArrayList<DocumentVariation>();
+  private List<DocumentVariationResponse> variations = new ArrayList<DocumentVariationResponse>();
   private String selfUri = null;
 
   
@@ -434,17 +434,17 @@ public class KnowledgeDocumentResponse  implements Serializable {
   /**
    * Variations of the document.
    **/
-  public KnowledgeDocumentResponse variations(List<DocumentVariation> variations) {
+  public KnowledgeDocumentResponse variations(List<DocumentVariationResponse> variations) {
     this.variations = variations;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Variations of the document.")
   @JsonProperty("variations")
-  public List<DocumentVariation> getVariations() {
+  public List<DocumentVariationResponse> getVariations() {
     return variations;
   }
-  public void setVariations(List<DocumentVariation> variations) {
+  public void setVariations(List<DocumentVariationResponse> variations) {
     this.variations = variations;
   }
 

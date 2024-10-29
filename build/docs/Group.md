@@ -13,7 +13,7 @@
 | **state** | [**StateEnum**](#Enum--StateEnum) | Active, inactive, or deleted state. |  [optional] |
 | **version** | **Integer** | Current version for this resource. |  [optional] |
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | Type of group. |  |
-| **images** | [**List&lt;UserImage&gt;**](UserImage) |  |  [optional] |
+| **images** | [**List&lt;Image&gt;**](Image) |  |  [optional] |
 | **addresses** | [**List&lt;GroupContact&gt;**](GroupContact) |  |  [optional] |
 | **rulesVisible** | **Boolean** | Are membership rules visible to the person requesting to view the group |  |
 | **visibility** | [**VisibilityEnum**](#Enum--VisibilityEnum) | Who can view this group |  |
@@ -55,4 +55,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_

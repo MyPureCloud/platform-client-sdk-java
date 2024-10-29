@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.UserImage;
+import com.mypurecloud.sdk.v2.model.Image;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ public class ChatMessageUser  implements Serializable {
   private String name = null;
   private String displayName = null;
   private String username = null;
-  private List<UserImage> images = new ArrayList<UserImage>();
+  private List<Image> images = new ArrayList<Image>();
 
   
   /**
@@ -101,17 +101,17 @@ public class ChatMessageUser  implements Serializable {
 
   /**
    **/
-  public ChatMessageUser images(List<UserImage> images) {
+  public ChatMessageUser images(List<Image> images) {
     this.images = images;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("images")
-  public List<UserImage> getImages() {
+  public List<Image> getImages() {
     return images;
   }
-  public void setImages(List<UserImage> images) {
+  public void setImages(List<Image> images) {
     this.images = images;
   }
 

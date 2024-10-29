@@ -13,9 +13,9 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
-import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.SupportedContentReference;
 import com.mypurecloud.sdk.v2.model.WebDeploymentConfigurationVersionEntityRef;
+import com.mypurecloud.sdk.v2.model.WebDeploymentFlowEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -40,7 +40,7 @@ public class WebDeployment  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private AddressableEntityRef lastModifiedUser = null;
-  private DomainEntityRef flow = null;
+  private WebDeploymentFlowEntityRef flow = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -224,17 +224,17 @@ public class WebDeployment  implements Serializable {
   /**
    * A reference to the inboundshortmessage flow used by this deployment
    **/
-  public WebDeployment flow(DomainEntityRef flow) {
+  public WebDeployment flow(WebDeploymentFlowEntityRef flow) {
     this.flow = flow;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "A reference to the inboundshortmessage flow used by this deployment")
   @JsonProperty("flow")
-  public DomainEntityRef getFlow() {
+  public WebDeploymentFlowEntityRef getFlow() {
     return flow;
   }
-  public void setFlow(DomainEntityRef flow) {
+  public void setFlow(WebDeploymentFlowEntityRef flow) {
     this.flow = flow;
   }
 

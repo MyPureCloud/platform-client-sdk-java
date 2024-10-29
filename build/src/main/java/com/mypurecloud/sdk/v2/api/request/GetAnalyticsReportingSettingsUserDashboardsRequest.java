@@ -209,6 +209,20 @@ public class GetAnalyticsReportingSettingsUserDashboardsRequest {
 	    return this;
 	} 
 
+	private Boolean deletedOnly;
+	public Boolean getDeletedOnly() {
+		return this.deletedOnly;
+	}
+
+	public void setDeletedOnly(Boolean deletedOnly) {
+		this.deletedOnly = deletedOnly;
+	}
+
+	public GetAnalyticsReportingSettingsUserDashboardsRequest withDeletedOnly(Boolean deletedOnly) {
+	    this.setDeletedOnly(deletedOnly);
+	    return this;
+	} 
+
 	private String name;
 	public String getName() {
 		return this.name;
@@ -269,6 +283,9 @@ public class GetAnalyticsReportingSettingsUserDashboardsRequest {
                 .withQueryParameters("favoriteOnly", "", favoriteOnly)
         
 
+                .withQueryParameters("deletedOnly", "", deletedOnly)
+        
+
                 .withQueryParameters("name", "", name)
         
 		.withCustomHeaders(customHeaders)
@@ -324,6 +341,11 @@ public class GetAnalyticsReportingSettingsUserDashboardsRequest {
 
 		public Builder withFavoriteOnly(Boolean favoriteOnly) {
 			request.setFavoriteOnly(favoriteOnly);
+			return this;
+		}
+
+		public Builder withDeletedOnly(Boolean deletedOnly) {
+			request.setDeletedOnly(deletedOnly);
 			return this;
 		}
 

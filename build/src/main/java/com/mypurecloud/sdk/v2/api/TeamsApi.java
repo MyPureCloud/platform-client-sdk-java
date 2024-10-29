@@ -208,28 +208,32 @@ public class TeamsApi {
    * Get team
    * 
    * @param teamId Team ID (required)
+   * @param expand Expand the division name (optional)
    * @return Team
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Team getTeam(String teamId) throws IOException, ApiException {
-    return  getTeam(createGetTeamRequest(teamId));
+  public Team getTeam(String teamId, String expand) throws IOException, ApiException {
+    return  getTeam(createGetTeamRequest(teamId, expand));
   }
 
   /**
    * Get team
    * 
    * @param teamId Team ID (required)
+   * @param expand Expand the division name (optional)
    * @return Team
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Team> getTeamWithHttpInfo(String teamId) throws IOException {
-    return getTeam(createGetTeamRequest(teamId).withHttpInfo());
+  public ApiResponse<Team> getTeamWithHttpInfo(String teamId, String expand) throws IOException {
+    return getTeam(createGetTeamRequest(teamId, expand).withHttpInfo());
   }
 
-  private GetTeamRequest createGetTeamRequest(String teamId) {
+  private GetTeamRequest createGetTeamRequest(String teamId, String expand) {
     return GetTeamRequest.builder()
             .withTeamId(teamId)
+
+            .withExpand(expand)
 
             .build();
   }

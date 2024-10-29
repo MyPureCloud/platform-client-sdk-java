@@ -19,8 +19,9 @@ import com.mypurecloud.sdk.v2.model.CategoryUpdateRequest;
 import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobRequest;
 import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobResponse;
 import com.mypurecloud.sdk.v2.model.DocumentListing;
-import com.mypurecloud.sdk.v2.model.DocumentVariation;
-import com.mypurecloud.sdk.v2.model.DocumentVariationListing;
+import com.mypurecloud.sdk.v2.model.DocumentVariationRequest;
+import com.mypurecloud.sdk.v2.model.DocumentVariationResponse;
+import com.mypurecloud.sdk.v2.model.DocumentVariationResponseListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.GetUploadSourceUrlJobStatusResponse;
 import com.mypurecloud.sdk.v2.model.GuestCategoryResponseListing;
@@ -39,6 +40,7 @@ import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkUpdateRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkVersionAddRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentContentUpload;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentCopy;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentCreateRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedback;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedbackResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedbackResponseListing;
@@ -2255,11 +2257,11 @@ public class KnowledgeApi {
    * @param documentId Globally unique identifier for a document. (required)
    * @param knowledgeBaseId Globally unique identifier for a knowledge base. (required)
    * @param documentState The state of the document. (optional)
-   * @return DocumentVariation
+   * @return DocumentVariationResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DocumentVariation getKnowledgeKnowledgebaseDocumentVariation(String documentVariationId, String documentId, String knowledgeBaseId, String documentState) throws IOException, ApiException {
+  public DocumentVariationResponse getKnowledgeKnowledgebaseDocumentVariation(String documentVariationId, String documentId, String knowledgeBaseId, String documentState) throws IOException, ApiException {
     return  getKnowledgeKnowledgebaseDocumentVariation(createGetKnowledgeKnowledgebaseDocumentVariationRequest(documentVariationId, documentId, knowledgeBaseId, documentState));
   }
 
@@ -2270,10 +2272,10 @@ public class KnowledgeApi {
    * @param documentId Globally unique identifier for a document. (required)
    * @param knowledgeBaseId Globally unique identifier for a knowledge base. (required)
    * @param documentState The state of the document. (optional)
-   * @return DocumentVariation
+   * @return DocumentVariationResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DocumentVariation> getKnowledgeKnowledgebaseDocumentVariationWithHttpInfo(String documentVariationId, String documentId, String knowledgeBaseId, String documentState) throws IOException {
+  public ApiResponse<DocumentVariationResponse> getKnowledgeKnowledgebaseDocumentVariationWithHttpInfo(String documentVariationId, String documentId, String knowledgeBaseId, String documentState) throws IOException {
     return getKnowledgeKnowledgebaseDocumentVariation(createGetKnowledgeKnowledgebaseDocumentVariationRequest(documentVariationId, documentId, knowledgeBaseId, documentState).withHttpInfo());
   }
 
@@ -2294,13 +2296,13 @@ public class KnowledgeApi {
    * Get a variation for a document.
    * 
    * @param request The request object
-   * @return DocumentVariation
+   * @return DocumentVariationResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DocumentVariation getKnowledgeKnowledgebaseDocumentVariation(GetKnowledgeKnowledgebaseDocumentVariationRequest request) throws IOException, ApiException {
+  public DocumentVariationResponse getKnowledgeKnowledgebaseDocumentVariation(GetKnowledgeKnowledgebaseDocumentVariationRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<DocumentVariation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DocumentVariation>() {});
+      ApiResponse<DocumentVariationResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DocumentVariationResponse>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -2316,13 +2318,13 @@ public class KnowledgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DocumentVariation> getKnowledgeKnowledgebaseDocumentVariation(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<DocumentVariationResponse> getKnowledgeKnowledgebaseDocumentVariation(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<DocumentVariation>() {});
+      return pcapiClient.invoke(request, new TypeReference<DocumentVariationResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<DocumentVariation> response = (ApiResponse<DocumentVariation>)(ApiResponse<?>)exception;
+      ApiResponse<DocumentVariationResponse> response = (ApiResponse<DocumentVariationResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -2333,7 +2335,7 @@ public class KnowledgeApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<DocumentVariation> response = (ApiResponse<DocumentVariation>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<DocumentVariationResponse> response = (ApiResponse<DocumentVariationResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2347,11 +2349,11 @@ public class KnowledgeApi {
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param documentState The state of the document. (optional)
-   * @return DocumentVariationListing
+   * @return DocumentVariationResponseListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DocumentVariationListing getKnowledgeKnowledgebaseDocumentVariations(String knowledgeBaseId, String documentId, String before, String after, String pageSize, String documentState) throws IOException, ApiException {
+  public DocumentVariationResponseListing getKnowledgeKnowledgebaseDocumentVariations(String knowledgeBaseId, String documentId, String before, String after, String pageSize, String documentState) throws IOException, ApiException {
     return  getKnowledgeKnowledgebaseDocumentVariations(createGetKnowledgeKnowledgebaseDocumentVariationsRequest(knowledgeBaseId, documentId, before, after, pageSize, documentState));
   }
 
@@ -2364,10 +2366,10 @@ public class KnowledgeApi {
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param documentState The state of the document. (optional)
-   * @return DocumentVariationListing
+   * @return DocumentVariationResponseListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DocumentVariationListing> getKnowledgeKnowledgebaseDocumentVariationsWithHttpInfo(String knowledgeBaseId, String documentId, String before, String after, String pageSize, String documentState) throws IOException {
+  public ApiResponse<DocumentVariationResponseListing> getKnowledgeKnowledgebaseDocumentVariationsWithHttpInfo(String knowledgeBaseId, String documentId, String before, String after, String pageSize, String documentState) throws IOException {
     return getKnowledgeKnowledgebaseDocumentVariations(createGetKnowledgeKnowledgebaseDocumentVariationsRequest(knowledgeBaseId, documentId, before, after, pageSize, documentState).withHttpInfo());
   }
 
@@ -2392,13 +2394,13 @@ public class KnowledgeApi {
    * Get variations for a document.
    * 
    * @param request The request object
-   * @return DocumentVariationListing
+   * @return DocumentVariationResponseListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DocumentVariationListing getKnowledgeKnowledgebaseDocumentVariations(GetKnowledgeKnowledgebaseDocumentVariationsRequest request) throws IOException, ApiException {
+  public DocumentVariationResponseListing getKnowledgeKnowledgebaseDocumentVariations(GetKnowledgeKnowledgebaseDocumentVariationsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<DocumentVariationListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DocumentVariationListing>() {});
+      ApiResponse<DocumentVariationResponseListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DocumentVariationResponseListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -2414,13 +2416,13 @@ public class KnowledgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DocumentVariationListing> getKnowledgeKnowledgebaseDocumentVariations(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<DocumentVariationResponseListing> getKnowledgeKnowledgebaseDocumentVariations(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<DocumentVariationListing>() {});
+      return pcapiClient.invoke(request, new TypeReference<DocumentVariationResponseListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<DocumentVariationListing> response = (ApiResponse<DocumentVariationListing>)(ApiResponse<?>)exception;
+      ApiResponse<DocumentVariationResponseListing> response = (ApiResponse<DocumentVariationResponseListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -2431,7 +2433,7 @@ public class KnowledgeApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<DocumentVariationListing> response = (ApiResponse<DocumentVariationListing>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<DocumentVariationResponseListing> response = (ApiResponse<DocumentVariationResponseListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5608,11 +5610,11 @@ public class KnowledgeApi {
    * @param documentId Globally unique identifier for a document. (required)
    * @param knowledgeBaseId Globally unique identifier for a knowledge base. (required)
    * @param body  (required)
-   * @return DocumentVariation
+   * @return DocumentVariationResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DocumentVariation patchKnowledgeKnowledgebaseDocumentVariation(String documentVariationId, String documentId, String knowledgeBaseId, DocumentVariation body) throws IOException, ApiException {
+  public DocumentVariationResponse patchKnowledgeKnowledgebaseDocumentVariation(String documentVariationId, String documentId, String knowledgeBaseId, DocumentVariationRequest body) throws IOException, ApiException {
     return  patchKnowledgeKnowledgebaseDocumentVariation(createPatchKnowledgeKnowledgebaseDocumentVariationRequest(documentVariationId, documentId, knowledgeBaseId, body));
   }
 
@@ -5623,14 +5625,14 @@ public class KnowledgeApi {
    * @param documentId Globally unique identifier for a document. (required)
    * @param knowledgeBaseId Globally unique identifier for a knowledge base. (required)
    * @param body  (required)
-   * @return DocumentVariation
+   * @return DocumentVariationResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DocumentVariation> patchKnowledgeKnowledgebaseDocumentVariationWithHttpInfo(String documentVariationId, String documentId, String knowledgeBaseId, DocumentVariation body) throws IOException {
+  public ApiResponse<DocumentVariationResponse> patchKnowledgeKnowledgebaseDocumentVariationWithHttpInfo(String documentVariationId, String documentId, String knowledgeBaseId, DocumentVariationRequest body) throws IOException {
     return patchKnowledgeKnowledgebaseDocumentVariation(createPatchKnowledgeKnowledgebaseDocumentVariationRequest(documentVariationId, documentId, knowledgeBaseId, body).withHttpInfo());
   }
 
-  private PatchKnowledgeKnowledgebaseDocumentVariationRequest createPatchKnowledgeKnowledgebaseDocumentVariationRequest(String documentVariationId, String documentId, String knowledgeBaseId, DocumentVariation body) {
+  private PatchKnowledgeKnowledgebaseDocumentVariationRequest createPatchKnowledgeKnowledgebaseDocumentVariationRequest(String documentVariationId, String documentId, String knowledgeBaseId, DocumentVariationRequest body) {
     return PatchKnowledgeKnowledgebaseDocumentVariationRequest.builder()
             .withDocumentVariationId(documentVariationId)
 
@@ -5647,13 +5649,13 @@ public class KnowledgeApi {
    * Update a variation for a document.
    * 
    * @param request The request object
-   * @return DocumentVariation
+   * @return DocumentVariationResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DocumentVariation patchKnowledgeKnowledgebaseDocumentVariation(PatchKnowledgeKnowledgebaseDocumentVariationRequest request) throws IOException, ApiException {
+  public DocumentVariationResponse patchKnowledgeKnowledgebaseDocumentVariation(PatchKnowledgeKnowledgebaseDocumentVariationRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<DocumentVariation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DocumentVariation>() {});
+      ApiResponse<DocumentVariationResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DocumentVariationResponse>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -5669,13 +5671,13 @@ public class KnowledgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DocumentVariation> patchKnowledgeKnowledgebaseDocumentVariation(ApiRequest<DocumentVariation> request) throws IOException {
+  public ApiResponse<DocumentVariationResponse> patchKnowledgeKnowledgebaseDocumentVariation(ApiRequest<DocumentVariationRequest> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<DocumentVariation>() {});
+      return pcapiClient.invoke(request, new TypeReference<DocumentVariationResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<DocumentVariation> response = (ApiResponse<DocumentVariation>)(ApiResponse<?>)exception;
+      ApiResponse<DocumentVariationResponse> response = (ApiResponse<DocumentVariationResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -5686,7 +5688,7 @@ public class KnowledgeApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<DocumentVariation> response = (ApiResponse<DocumentVariation>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<DocumentVariationResponse> response = (ApiResponse<DocumentVariationResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -7575,11 +7577,11 @@ public class KnowledgeApi {
    * @param knowledgeBaseId Globally unique identifier for the knowledge base. (required)
    * @param documentId Globally unique identifier for the document. (required)
    * @param body  (required)
-   * @return DocumentVariation
+   * @return DocumentVariationResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DocumentVariation postKnowledgeKnowledgebaseDocumentVariations(String knowledgeBaseId, String documentId, DocumentVariation body) throws IOException, ApiException {
+  public DocumentVariationResponse postKnowledgeKnowledgebaseDocumentVariations(String knowledgeBaseId, String documentId, DocumentVariationRequest body) throws IOException, ApiException {
     return  postKnowledgeKnowledgebaseDocumentVariations(createPostKnowledgeKnowledgebaseDocumentVariationsRequest(knowledgeBaseId, documentId, body));
   }
 
@@ -7589,14 +7591,14 @@ public class KnowledgeApi {
    * @param knowledgeBaseId Globally unique identifier for the knowledge base. (required)
    * @param documentId Globally unique identifier for the document. (required)
    * @param body  (required)
-   * @return DocumentVariation
+   * @return DocumentVariationResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DocumentVariation> postKnowledgeKnowledgebaseDocumentVariationsWithHttpInfo(String knowledgeBaseId, String documentId, DocumentVariation body) throws IOException {
+  public ApiResponse<DocumentVariationResponse> postKnowledgeKnowledgebaseDocumentVariationsWithHttpInfo(String knowledgeBaseId, String documentId, DocumentVariationRequest body) throws IOException {
     return postKnowledgeKnowledgebaseDocumentVariations(createPostKnowledgeKnowledgebaseDocumentVariationsRequest(knowledgeBaseId, documentId, body).withHttpInfo());
   }
 
-  private PostKnowledgeKnowledgebaseDocumentVariationsRequest createPostKnowledgeKnowledgebaseDocumentVariationsRequest(String knowledgeBaseId, String documentId, DocumentVariation body) {
+  private PostKnowledgeKnowledgebaseDocumentVariationsRequest createPostKnowledgeKnowledgebaseDocumentVariationsRequest(String knowledgeBaseId, String documentId, DocumentVariationRequest body) {
     return PostKnowledgeKnowledgebaseDocumentVariationsRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
 
@@ -7611,13 +7613,13 @@ public class KnowledgeApi {
    * Create a variation for a document.
    * 
    * @param request The request object
-   * @return DocumentVariation
+   * @return DocumentVariationResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DocumentVariation postKnowledgeKnowledgebaseDocumentVariations(PostKnowledgeKnowledgebaseDocumentVariationsRequest request) throws IOException, ApiException {
+  public DocumentVariationResponse postKnowledgeKnowledgebaseDocumentVariations(PostKnowledgeKnowledgebaseDocumentVariationsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<DocumentVariation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DocumentVariation>() {});
+      ApiResponse<DocumentVariationResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DocumentVariationResponse>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -7633,13 +7635,13 @@ public class KnowledgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DocumentVariation> postKnowledgeKnowledgebaseDocumentVariations(ApiRequest<DocumentVariation> request) throws IOException {
+  public ApiResponse<DocumentVariationResponse> postKnowledgeKnowledgebaseDocumentVariations(ApiRequest<DocumentVariationRequest> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<DocumentVariation>() {});
+      return pcapiClient.invoke(request, new TypeReference<DocumentVariationResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<DocumentVariation> response = (ApiResponse<DocumentVariation>)(ApiResponse<?>)exception;
+      ApiResponse<DocumentVariationResponse> response = (ApiResponse<DocumentVariationResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -7650,7 +7652,7 @@ public class KnowledgeApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<DocumentVariation> response = (ApiResponse<DocumentVariation>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<DocumentVariationResponse> response = (ApiResponse<DocumentVariationResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -7833,7 +7835,7 @@ public class KnowledgeApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public KnowledgeDocumentResponse postKnowledgeKnowledgebaseDocuments(String knowledgeBaseId, KnowledgeDocumentReq body) throws IOException, ApiException {
+  public KnowledgeDocumentResponse postKnowledgeKnowledgebaseDocuments(String knowledgeBaseId, KnowledgeDocumentCreateRequest body) throws IOException, ApiException {
     return  postKnowledgeKnowledgebaseDocuments(createPostKnowledgeKnowledgebaseDocumentsRequest(knowledgeBaseId, body));
   }
 
@@ -7845,11 +7847,11 @@ public class KnowledgeApi {
    * @return KnowledgeDocumentResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KnowledgeDocumentResponse> postKnowledgeKnowledgebaseDocumentsWithHttpInfo(String knowledgeBaseId, KnowledgeDocumentReq body) throws IOException {
+  public ApiResponse<KnowledgeDocumentResponse> postKnowledgeKnowledgebaseDocumentsWithHttpInfo(String knowledgeBaseId, KnowledgeDocumentCreateRequest body) throws IOException {
     return postKnowledgeKnowledgebaseDocuments(createPostKnowledgeKnowledgebaseDocumentsRequest(knowledgeBaseId, body).withHttpInfo());
   }
 
-  private PostKnowledgeKnowledgebaseDocumentsRequest createPostKnowledgeKnowledgebaseDocumentsRequest(String knowledgeBaseId, KnowledgeDocumentReq body) {
+  private PostKnowledgeKnowledgebaseDocumentsRequest createPostKnowledgeKnowledgebaseDocumentsRequest(String knowledgeBaseId, KnowledgeDocumentCreateRequest body) {
     return PostKnowledgeKnowledgebaseDocumentsRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
 
@@ -7884,7 +7886,7 @@ public class KnowledgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KnowledgeDocumentResponse> postKnowledgeKnowledgebaseDocuments(ApiRequest<KnowledgeDocumentReq> request) throws IOException {
+  public ApiResponse<KnowledgeDocumentResponse> postKnowledgeKnowledgebaseDocuments(ApiRequest<KnowledgeDocumentCreateRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<KnowledgeDocumentResponse>() {});
     }

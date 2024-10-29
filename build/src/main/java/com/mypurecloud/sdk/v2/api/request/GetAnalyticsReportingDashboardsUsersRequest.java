@@ -225,6 +225,20 @@ public class GetAnalyticsReportingDashboardsUsersRequest {
 		}
 	}
 
+	private Boolean deletedOnly;
+	public Boolean getDeletedOnly() {
+		return this.deletedOnly;
+	}
+
+	public void setDeletedOnly(Boolean deletedOnly) {
+		this.deletedOnly = deletedOnly;
+	}
+
+	public GetAnalyticsReportingDashboardsUsersRequest withDeletedOnly(Boolean deletedOnly) {
+	    this.setDeletedOnly(deletedOnly);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -262,6 +276,9 @@ public class GetAnalyticsReportingDashboardsUsersRequest {
         
 
                 .withQueryParameters("state", "", state)
+        
+
+                .withQueryParameters("deletedOnly", "", deletedOnly)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -316,6 +333,11 @@ public class GetAnalyticsReportingDashboardsUsersRequest {
 		    request.setState(state.toString());
 
 		    return this;
+		}
+
+		public Builder withDeletedOnly(Boolean deletedOnly) {
+			request.setDeletedOnly(deletedOnly);
+			return this;
 		}
 
 

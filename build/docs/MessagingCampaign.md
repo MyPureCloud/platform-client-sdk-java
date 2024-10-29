@@ -38,8 +38,9 @@
 | COMPLETE | &quot;complete&quot; | 
 | INVALID | &quot;invalid&quot; | 
 | FORCED_OFF | &quot;forced_off&quot; | 
+| FORCED_STOPPING | &quot;forced_stopping&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_

@@ -29,8 +29,9 @@ import com.mypurecloud.sdk.v2.model.CategoryUpdateRequest;
 import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobRequest;
 import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobResponse;
 import com.mypurecloud.sdk.v2.model.DocumentListing;
-import com.mypurecloud.sdk.v2.model.DocumentVariation;
-import com.mypurecloud.sdk.v2.model.DocumentVariationListing;
+import com.mypurecloud.sdk.v2.model.DocumentVariationRequest;
+import com.mypurecloud.sdk.v2.model.DocumentVariationResponse;
+import com.mypurecloud.sdk.v2.model.DocumentVariationResponseListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.GetUploadSourceUrlJobStatusResponse;
 import com.mypurecloud.sdk.v2.model.GuestCategoryResponseListing;
@@ -49,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkUpdateRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkVersionAddRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentContentUpload;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentCopy;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentCreateRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedback;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedbackResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedbackResponseListing;
@@ -138,16 +140,16 @@ public class PostKnowledgeKnowledgebaseDocumentsRequest {
 	    return this;
 	} 
 
-	private KnowledgeDocumentReq body;
-	public KnowledgeDocumentReq getBody() {
+	private KnowledgeDocumentCreateRequest body;
+	public KnowledgeDocumentCreateRequest getBody() {
 		return this.body;
 	}
 
-	public void setBody(KnowledgeDocumentReq body) {
+	public void setBody(KnowledgeDocumentCreateRequest body) {
 		this.body = body;
 	}
 
-	public PostKnowledgeKnowledgebaseDocumentsRequest withBody(KnowledgeDocumentReq body) {
+	public PostKnowledgeKnowledgebaseDocumentsRequest withBody(KnowledgeDocumentCreateRequest body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -171,7 +173,7 @@ public class PostKnowledgeKnowledgebaseDocumentsRequest {
         return this;
     }
 
-    public ApiRequest<KnowledgeDocumentReq> withHttpInfo() {
+    public ApiRequest<KnowledgeDocumentCreateRequest> withHttpInfo() {
         
         // verify the required parameter 'knowledgeBaseId' is set
         if (this.knowledgeBaseId == null) {
@@ -201,7 +203,7 @@ public class PostKnowledgeKnowledgebaseDocumentsRequest {
 	}
 
 
-	public static Builder builder(String knowledgeBaseId, KnowledgeDocumentReq body) {
+	public static Builder builder(String knowledgeBaseId, KnowledgeDocumentCreateRequest body) {
 	    return new Builder()
 	            .withRequiredParams(knowledgeBaseId, body);
 	}
@@ -220,14 +222,14 @@ public class PostKnowledgeKnowledgebaseDocumentsRequest {
 			return this;
 		}
 
-		public Builder withBody(KnowledgeDocumentReq body) {
+		public Builder withBody(KnowledgeDocumentCreateRequest body) {
 			request.setBody(body);
 			return this;
 		}
 
 
 
-		public Builder withRequiredParams(String knowledgeBaseId, KnowledgeDocumentReq body) {
+		public Builder withRequiredParams(String knowledgeBaseId, KnowledgeDocumentCreateRequest body) {
 			request.setKnowledgeBaseId(knowledgeBaseId);
 			request.setBody(body);
 

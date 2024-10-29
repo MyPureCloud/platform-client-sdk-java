@@ -26,14 +26,14 @@ public class ConversationEnrichmentLanguage  implements Serializable {
 
   
   /**
-   * The ISO 639-3 detected language code of this message.
+   * The IETF detected language code of this message.
    **/
   public ConversationEnrichmentLanguage language(String language) {
     this.language = language;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The ISO 639-3 detected language code of this message.")
+  @ApiModelProperty(example = "null", required = true, value = "The IETF detected language code of this message.")
   @JsonProperty("language")
   public String getLanguage() {
     return language;

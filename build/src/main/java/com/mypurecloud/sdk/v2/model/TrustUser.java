@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.Division;
 import com.mypurecloud.sdk.v2.model.EmployerInfo;
 import com.mypurecloud.sdk.v2.model.Geolocation;
 import com.mypurecloud.sdk.v2.model.Group;
+import com.mypurecloud.sdk.v2.model.Image;
 import com.mypurecloud.sdk.v2.model.Location;
 import com.mypurecloud.sdk.v2.model.OAuthLastTokenIssued;
 import com.mypurecloud.sdk.v2.model.OutOfOffice;
@@ -28,7 +29,6 @@ import com.mypurecloud.sdk.v2.model.TrustUserDetails;
 import com.mypurecloud.sdk.v2.model.User;
 import com.mypurecloud.sdk.v2.model.UserAuthorization;
 import com.mypurecloud.sdk.v2.model.UserConversationSummary;
-import com.mypurecloud.sdk.v2.model.UserImage;
 import com.mypurecloud.sdk.v2.model.UserPresence;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
@@ -107,7 +107,7 @@ public class TrustUser  implements Serializable {
   private String title = null;
   private String username = null;
   private User manager = null;
-  private List<UserImage> images = new ArrayList<UserImage>();
+  private List<Image> images = new ArrayList<Image>();
   private Integer version = null;
   private List<String> certifications = new ArrayList<String>();
   private Biography biography = null;
@@ -313,17 +313,17 @@ public class TrustUser  implements Serializable {
 
   /**
    **/
-  public TrustUser images(List<UserImage> images) {
+  public TrustUser images(List<Image> images) {
     this.images = images;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("images")
-  public List<UserImage> getImages() {
+  public List<Image> getImages() {
     return images;
   }
-  public void setImages(List<UserImage> images) {
+  public void setImages(List<Image> images) {
     this.images = images;
   }
 

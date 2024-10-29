@@ -33,6 +33,7 @@ import com.mypurecloud.sdk.v2.model.AuthzSubject;
 import com.mypurecloud.sdk.v2.model.CallForwarding;
 import com.mypurecloud.sdk.v2.model.ChangeMyPasswordRequest;
 import com.mypurecloud.sdk.v2.model.ChangePasswordRequest;
+import com.mypurecloud.sdk.v2.model.ChatItemCursorListing;
 import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
 import com.mypurecloud.sdk.v2.model.DevelopmentActivity;

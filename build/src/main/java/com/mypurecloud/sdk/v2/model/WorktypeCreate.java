@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.WorkitemRuleSettings;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -33,6 +34,7 @@ public class WorktypeCreate  implements Serializable {
   private Boolean assignmentEnabled = null;
   private String schemaId = null;
   private Integer serviceLevelTarget = null;
+  private WorkitemRuleSettings ruleSettings = null;
   private String description = null;
   private String divisionId = null;
   private Boolean disableDefaultStatusCreation = null;
@@ -225,6 +227,24 @@ public class WorktypeCreate  implements Serializable {
 
 
   /**
+   * Settings for the worktypes rules.
+   **/
+  public WorktypeCreate ruleSettings(WorkitemRuleSettings ruleSettings) {
+    this.ruleSettings = ruleSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Settings for the worktypes rules.")
+  @JsonProperty("ruleSettings")
+  public WorkitemRuleSettings getRuleSettings() {
+    return ruleSettings;
+  }
+  public void setRuleSettings(WorkitemRuleSettings ruleSettings) {
+    this.ruleSettings = ruleSettings;
+  }
+
+
+  /**
    * The description of the Worktype. Maximum length of 512 characters.
    **/
   public WorktypeCreate description(String description) {
@@ -370,6 +390,7 @@ public class WorktypeCreate  implements Serializable {
             Objects.equals(this.assignmentEnabled, worktypeCreate.assignmentEnabled) &&
             Objects.equals(this.schemaId, worktypeCreate.schemaId) &&
             Objects.equals(this.serviceLevelTarget, worktypeCreate.serviceLevelTarget) &&
+            Objects.equals(this.ruleSettings, worktypeCreate.ruleSettings) &&
             Objects.equals(this.description, worktypeCreate.description) &&
             Objects.equals(this.divisionId, worktypeCreate.divisionId) &&
             Objects.equals(this.disableDefaultStatusCreation, worktypeCreate.disableDefaultStatusCreation) &&
@@ -381,7 +402,7 @@ public class WorktypeCreate  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, defaultWorkbinId, defaultDurationSeconds, defaultExpirationSeconds, defaultDueDurationSeconds, defaultPriority, defaultTtlSeconds, assignmentEnabled, schemaId, serviceLevelTarget, description, divisionId, disableDefaultStatusCreation, schemaVersion, defaultQueueId, defaultLanguageId, defaultSkillIds);
+    return Objects.hash(name, defaultWorkbinId, defaultDurationSeconds, defaultExpirationSeconds, defaultDueDurationSeconds, defaultPriority, defaultTtlSeconds, assignmentEnabled, schemaId, serviceLevelTarget, ruleSettings, description, divisionId, disableDefaultStatusCreation, schemaVersion, defaultQueueId, defaultLanguageId, defaultSkillIds);
   }
 
   @Override
@@ -399,6 +420,7 @@ public class WorktypeCreate  implements Serializable {
     sb.append("    assignmentEnabled: ").append(toIndentedString(assignmentEnabled)).append("\n");
     sb.append("    schemaId: ").append(toIndentedString(schemaId)).append("\n");
     sb.append("    serviceLevelTarget: ").append(toIndentedString(serviceLevelTarget)).append("\n");
+    sb.append("    ruleSettings: ").append(toIndentedString(ruleSettings)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    divisionId: ").append(toIndentedString(divisionId)).append("\n");
     sb.append("    disableDefaultStatusCreation: ").append(toIndentedString(disableDefaultStatusCreation)).append("\n");

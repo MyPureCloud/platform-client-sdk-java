@@ -2759,12 +2759,13 @@ public class AnalyticsApi {
    * @param pageSize  (optional, default to 25)
    * @param id A list of user IDs to fetch by bulk (optional)
    * @param state Only list users of this state (optional)
+   * @param deletedOnly Only list deleted dashboards that are still recoverable (optional)
    * @return DashboardUserListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DashboardUserListing getAnalyticsReportingDashboardsUsers(String sortBy, Integer pageNumber, Integer pageSize, List<String> id, String state) throws IOException, ApiException {
-    return  getAnalyticsReportingDashboardsUsers(createGetAnalyticsReportingDashboardsUsersRequest(sortBy, pageNumber, pageSize, id, state));
+  public DashboardUserListing getAnalyticsReportingDashboardsUsers(String sortBy, Integer pageNumber, Integer pageSize, List<String> id, String state, Boolean deletedOnly) throws IOException, ApiException {
+    return  getAnalyticsReportingDashboardsUsers(createGetAnalyticsReportingDashboardsUsersRequest(sortBy, pageNumber, pageSize, id, state, deletedOnly));
   }
 
   /**
@@ -2775,14 +2776,15 @@ public class AnalyticsApi {
    * @param pageSize  (optional, default to 25)
    * @param id A list of user IDs to fetch by bulk (optional)
    * @param state Only list users of this state (optional)
+   * @param deletedOnly Only list deleted dashboards that are still recoverable (optional)
    * @return DashboardUserListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DashboardUserListing> getAnalyticsReportingDashboardsUsersWithHttpInfo(String sortBy, Integer pageNumber, Integer pageSize, List<String> id, String state) throws IOException {
-    return getAnalyticsReportingDashboardsUsers(createGetAnalyticsReportingDashboardsUsersRequest(sortBy, pageNumber, pageSize, id, state).withHttpInfo());
+  public ApiResponse<DashboardUserListing> getAnalyticsReportingDashboardsUsersWithHttpInfo(String sortBy, Integer pageNumber, Integer pageSize, List<String> id, String state, Boolean deletedOnly) throws IOException {
+    return getAnalyticsReportingDashboardsUsers(createGetAnalyticsReportingDashboardsUsersRequest(sortBy, pageNumber, pageSize, id, state, deletedOnly).withHttpInfo());
   }
 
-  private GetAnalyticsReportingDashboardsUsersRequest createGetAnalyticsReportingDashboardsUsersRequest(String sortBy, Integer pageNumber, Integer pageSize, List<String> id, String state) {
+  private GetAnalyticsReportingDashboardsUsersRequest createGetAnalyticsReportingDashboardsUsersRequest(String sortBy, Integer pageNumber, Integer pageSize, List<String> id, String state, Boolean deletedOnly) {
     return GetAnalyticsReportingDashboardsUsersRequest.builder()
             .withSortBy(sortBy)
 
@@ -2793,6 +2795,8 @@ public class AnalyticsApi {
             .withId(id)
 
             .withState(state)
+
+            .withDeletedOnly(deletedOnly)
 
             .build();
   }
@@ -3182,13 +3186,14 @@ public class AnalyticsApi {
    * @param pageSize  (optional, default to 50)
    * @param publicOnly If true, retrieve only public dashboards (optional)
    * @param favoriteOnly If true, retrieve only favorite dashboards (optional)
+   * @param deletedOnly If true, retrieve only deleted dashboards that are still recoverable (optional)
    * @param name retrieve dashboards that match with given name (optional)
    * @return DashboardConfigurationListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DashboardConfigurationListing getAnalyticsReportingSettingsUserDashboards(String userId, String sortBy, Integer pageNumber, Integer pageSize, Boolean publicOnly, Boolean favoriteOnly, String name) throws IOException, ApiException {
-    return  getAnalyticsReportingSettingsUserDashboards(createGetAnalyticsReportingSettingsUserDashboardsRequest(userId, sortBy, pageNumber, pageSize, publicOnly, favoriteOnly, name));
+  public DashboardConfigurationListing getAnalyticsReportingSettingsUserDashboards(String userId, String sortBy, Integer pageNumber, Integer pageSize, Boolean publicOnly, Boolean favoriteOnly, Boolean deletedOnly, String name) throws IOException, ApiException {
+    return  getAnalyticsReportingSettingsUserDashboards(createGetAnalyticsReportingSettingsUserDashboardsRequest(userId, sortBy, pageNumber, pageSize, publicOnly, favoriteOnly, deletedOnly, name));
   }
 
   /**
@@ -3200,15 +3205,16 @@ public class AnalyticsApi {
    * @param pageSize  (optional, default to 50)
    * @param publicOnly If true, retrieve only public dashboards (optional)
    * @param favoriteOnly If true, retrieve only favorite dashboards (optional)
+   * @param deletedOnly If true, retrieve only deleted dashboards that are still recoverable (optional)
    * @param name retrieve dashboards that match with given name (optional)
    * @return DashboardConfigurationListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DashboardConfigurationListing> getAnalyticsReportingSettingsUserDashboardsWithHttpInfo(String userId, String sortBy, Integer pageNumber, Integer pageSize, Boolean publicOnly, Boolean favoriteOnly, String name) throws IOException {
-    return getAnalyticsReportingSettingsUserDashboards(createGetAnalyticsReportingSettingsUserDashboardsRequest(userId, sortBy, pageNumber, pageSize, publicOnly, favoriteOnly, name).withHttpInfo());
+  public ApiResponse<DashboardConfigurationListing> getAnalyticsReportingSettingsUserDashboardsWithHttpInfo(String userId, String sortBy, Integer pageNumber, Integer pageSize, Boolean publicOnly, Boolean favoriteOnly, Boolean deletedOnly, String name) throws IOException {
+    return getAnalyticsReportingSettingsUserDashboards(createGetAnalyticsReportingSettingsUserDashboardsRequest(userId, sortBy, pageNumber, pageSize, publicOnly, favoriteOnly, deletedOnly, name).withHttpInfo());
   }
 
-  private GetAnalyticsReportingSettingsUserDashboardsRequest createGetAnalyticsReportingSettingsUserDashboardsRequest(String userId, String sortBy, Integer pageNumber, Integer pageSize, Boolean publicOnly, Boolean favoriteOnly, String name) {
+  private GetAnalyticsReportingSettingsUserDashboardsRequest createGetAnalyticsReportingSettingsUserDashboardsRequest(String userId, String sortBy, Integer pageNumber, Integer pageSize, Boolean publicOnly, Boolean favoriteOnly, Boolean deletedOnly, String name) {
     return GetAnalyticsReportingSettingsUserDashboardsRequest.builder()
             .withUserId(userId)
 
@@ -3221,6 +3227,8 @@ public class AnalyticsApi {
             .withPublicOnly(publicOnly)
 
             .withFavoriteOnly(favoriteOnly)
+
+            .withDeletedOnly(deletedOnly)
 
             .withName(name)
 
@@ -6594,7 +6602,7 @@ public class AnalyticsApi {
   }
 
   /**
-   * Bulk delete dashboards owned by other user(s)
+   * Bulk soft delete dashboards owned by other user(s)
    * 
    * @param body List of userIds (required)
    * @throws ApiException if the request fails on the server
@@ -6605,7 +6613,7 @@ public class AnalyticsApi {
   }
 
   /**
-   * Bulk delete dashboards owned by other user(s)
+   * Bulk soft delete dashboards owned by other user(s)
    * 
    * @param body List of userIds (required)
    * @throws IOException if the request fails to be processed
@@ -6622,7 +6630,7 @@ public class AnalyticsApi {
   }
 
   /**
-   * Bulk delete dashboards owned by other user(s)
+   * Bulk soft delete dashboards owned by other user(s)
    * 
    * @param request The request object
    * @throws ApiException if the request fails on the server
@@ -6640,7 +6648,7 @@ public class AnalyticsApi {
   }
 
   /**
-   * Bulk delete dashboards owned by other user(s)
+   * Bulk soft delete dashboards owned by other user(s)
    * 
    * @param request The request object
    * @return the response
@@ -6747,7 +6755,7 @@ public class AnalyticsApi {
   }
 
   /**
-   * Bulk remove dashboard configurations
+   * Bulk soft delete dashboard configurations
    * 
    * @param body  (required)
    * @throws ApiException if the request fails on the server
@@ -6758,7 +6766,7 @@ public class AnalyticsApi {
   }
 
   /**
-   * Bulk remove dashboard configurations
+   * Bulk soft delete dashboard configurations
    * 
    * @param body  (required)
    * @throws IOException if the request fails to be processed
@@ -6775,7 +6783,7 @@ public class AnalyticsApi {
   }
 
   /**
-   * Bulk remove dashboard configurations
+   * Bulk soft delete dashboard configurations
    * 
    * @param request The request object
    * @throws ApiException if the request fails on the server
@@ -6793,7 +6801,7 @@ public class AnalyticsApi {
   }
 
   /**
-   * Bulk remove dashboard configurations
+   * Bulk soft delete dashboard configurations
    * 
    * @param request The request object
    * @return the response
@@ -7312,7 +7320,6 @@ public class AnalyticsApi {
   /**
    * Query for task management aggregates
    * 
-   * postAnalyticsTaskmanagementAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return TaskManagementAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -7325,7 +7332,6 @@ public class AnalyticsApi {
   /**
    * Query for task management aggregates
    * 
-   * postAnalyticsTaskmanagementAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body query (required)
    * @return TaskManagementAggregateQueryResponse
    * @throws IOException if the request fails to be processed
@@ -7344,7 +7350,6 @@ public class AnalyticsApi {
   /**
    * Query for task management aggregates
    * 
-   * postAnalyticsTaskmanagementAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return TaskManagementAggregateQueryResponse
    * @throws ApiException if the request fails on the server
@@ -7364,7 +7369,6 @@ public class AnalyticsApi {
   /**
    * Query for task management aggregates
    * 
-   * postAnalyticsTaskmanagementAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

@@ -10,6 +10,9 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
@@ -18,8 +21,27 @@ import java.io.Serializable;
 
 public class WorkitemRuleSettings  implements Serializable {
   
+  private Boolean flowRulesEnabled = null;
 
   
+  /**
+   * When set to true, the worktypes flow rules will be processed. Default value is false.
+   **/
+  public WorkitemRuleSettings flowRulesEnabled(Boolean flowRulesEnabled) {
+    this.flowRulesEnabled = flowRulesEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "When set to true, the worktypes flow rules will be processed. Default value is false.")
+  @JsonProperty("flowRulesEnabled")
+  public Boolean getFlowRulesEnabled() {
+    return flowRulesEnabled;
+  }
+  public void setFlowRulesEnabled(Boolean flowRulesEnabled) {
+    this.flowRulesEnabled = flowRulesEnabled;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -28,13 +50,14 @@ public class WorkitemRuleSettings  implements Serializable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
+    WorkitemRuleSettings workitemRuleSettings = (WorkitemRuleSettings) o;
 
-    return true;
+    return Objects.equals(this.flowRulesEnabled, workitemRuleSettings.flowRulesEnabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash();
+    return Objects.hash(flowRulesEnabled);
   }
 
   @Override
@@ -42,6 +65,7 @@ public class WorkitemRuleSettings  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class WorkitemRuleSettings {\n");
     
+    sb.append("    flowRulesEnabled: ").append(toIndentedString(flowRulesEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.AuthzSubject;
 import com.mypurecloud.sdk.v2.model.CallForwarding;
 import com.mypurecloud.sdk.v2.model.ChangeMyPasswordRequest;
 import com.mypurecloud.sdk.v2.model.ChangePasswordRequest;
+import com.mypurecloud.sdk.v2.model.ChatItemCursorListing;
 import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
 import com.mypurecloud.sdk.v2.model.DevelopmentActivity;
@@ -121,6 +122,7 @@ import com.mypurecloud.sdk.v2.api.request.GetUserSuperiorsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserTrustorsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserVerifiersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersChatsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersDevelopmentActivitiesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersDevelopmentActivitiesMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersDevelopmentActivityRequest;
@@ -4065,6 +4067,92 @@ public class UsersApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UserEntityListing> response = (ApiResponse<UserEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get chats for a user
+   * 
+   * @param excludeClosed Whether or not to exclude closed chats (optional)
+   * @param includePresence Whether or not to include user presence (optional)
+   * @param after The key to start after (optional)
+   * @return ChatItemCursorListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ChatItemCursorListing getUsersChatsMe(Boolean excludeClosed, Boolean includePresence, String after) throws IOException, ApiException {
+    return  getUsersChatsMe(createGetUsersChatsMeRequest(excludeClosed, includePresence, after));
+  }
+
+  /**
+   * Get chats for a user
+   * 
+   * @param excludeClosed Whether or not to exclude closed chats (optional)
+   * @param includePresence Whether or not to include user presence (optional)
+   * @param after The key to start after (optional)
+   * @return ChatItemCursorListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ChatItemCursorListing> getUsersChatsMeWithHttpInfo(Boolean excludeClosed, Boolean includePresence, String after) throws IOException {
+    return getUsersChatsMe(createGetUsersChatsMeRequest(excludeClosed, includePresence, after).withHttpInfo());
+  }
+
+  private GetUsersChatsMeRequest createGetUsersChatsMeRequest(Boolean excludeClosed, Boolean includePresence, String after) {
+    return GetUsersChatsMeRequest.builder()
+            .withExcludeClosed(excludeClosed)
+
+            .withIncludePresence(includePresence)
+
+            .withAfter(after)
+
+            .build();
+  }
+
+  /**
+   * Get chats for a user
+   * 
+   * @param request The request object
+   * @return ChatItemCursorListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ChatItemCursorListing getUsersChatsMe(GetUsersChatsMeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ChatItemCursorListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ChatItemCursorListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get chats for a user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ChatItemCursorListing> getUsersChatsMe(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ChatItemCursorListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChatItemCursorListing> response = (ApiResponse<ChatItemCursorListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ChatItemCursorListing> response = (ApiResponse<ChatItemCursorListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

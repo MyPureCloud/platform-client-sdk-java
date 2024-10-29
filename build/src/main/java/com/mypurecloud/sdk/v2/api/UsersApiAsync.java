@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.AuthzSubject;
 import com.mypurecloud.sdk.v2.model.CallForwarding;
 import com.mypurecloud.sdk.v2.model.ChangeMyPasswordRequest;
 import com.mypurecloud.sdk.v2.model.ChangePasswordRequest;
+import com.mypurecloud.sdk.v2.model.ChatItemCursorListing;
 import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
 import com.mypurecloud.sdk.v2.model.DevelopmentActivity;
@@ -124,6 +125,7 @@ import com.mypurecloud.sdk.v2.api.request.GetUserSuperiorsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserTrustorsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserVerifiersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersChatsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersDevelopmentActivitiesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersDevelopmentActivitiesMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersDevelopmentActivityRequest;
@@ -3723,6 +3725,81 @@ public class UsersApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<UserEntityListing> response = (ApiResponse<UserEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get chats for a user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ChatItemCursorListing> getUsersChatsMeAsync(GetUsersChatsMeRequest request, final AsyncApiCallback<ChatItemCursorListing> callback) {
+    try {
+      final SettableFuture<ChatItemCursorListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ChatItemCursorListing>() {}, new AsyncApiCallback<ApiResponse<ChatItemCursorListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ChatItemCursorListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get chats for a user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ChatItemCursorListing>> getUsersChatsMeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ChatItemCursorListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ChatItemCursorListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ChatItemCursorListing>() {}, new AsyncApiCallback<ApiResponse<ChatItemCursorListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ChatItemCursorListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ChatItemCursorListing> response = (ApiResponse<ChatItemCursorListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ChatItemCursorListing> response = (ApiResponse<ChatItemCursorListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

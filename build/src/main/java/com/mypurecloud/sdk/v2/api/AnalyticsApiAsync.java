@@ -6085,7 +6085,7 @@ public class AnalyticsApiAsync {
   }
 
   /**
-   * Bulk delete dashboards owned by other user(s)
+   * Bulk soft delete dashboards owned by other user(s)
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -6119,7 +6119,7 @@ public class AnalyticsApiAsync {
   }
 
   /**
-   * Bulk delete dashboards owned by other user(s)
+   * Bulk soft delete dashboards owned by other user(s)
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -6235,7 +6235,7 @@ public class AnalyticsApiAsync {
   }
 
   /**
-   * Bulk remove dashboard configurations
+   * Bulk soft delete dashboard configurations
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -6269,7 +6269,7 @@ public class AnalyticsApiAsync {
   }
 
   /**
-   * Bulk remove dashboard configurations
+   * Bulk soft delete dashboard configurations
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -6768,7 +6768,6 @@ public class AnalyticsApiAsync {
   /**
    * Query for task management aggregates
    * 
-   * postAnalyticsTaskmanagementAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6803,7 +6802,6 @@ public class AnalyticsApiAsync {
   /**
    * Query for task management aggregates
    * 
-   * postAnalyticsTaskmanagementAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

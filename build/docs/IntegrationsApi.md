@@ -5411,4 +5411,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_

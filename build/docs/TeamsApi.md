@@ -138,7 +138,7 @@ null (empty response body)
 # **getTeam**
 
 
-> [Team](Team) getTeam(teamId)
+> [Team](Team) getTeam(teamId, expand)
 
 Get team
 
@@ -171,8 +171,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 TeamsApi apiInstance = new TeamsApi();
 String teamId = "teamId_example"; // String | Team ID
+String expand = "expand_example"; // String | Expand the division name
 try {
-    Team result = apiInstance.getTeam(teamId);
+    Team result = apiInstance.getTeam(teamId, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TeamsApi#getTeam");
@@ -186,6 +187,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **teamId** | **String**| Team ID | 
+| **expand** | **String**| Expand the division name | [optional]<br />**Values**: entities.division 
 {: class="table-striped"}
 
 
@@ -631,4 +633,4 @@ try {
 [**TeamsSearchResponse**](TeamsSearchResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_

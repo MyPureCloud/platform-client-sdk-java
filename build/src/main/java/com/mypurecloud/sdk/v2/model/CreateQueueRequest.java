@@ -765,13 +765,14 @@ public class CreateQueueRequest  implements Serializable {
 
 
   /**
+   * The default email address to use for outbound email from this queue.
    **/
   public CreateQueueRequest outboundEmailAddress(QueueEmailAddress outboundEmailAddress) {
     this.outboundEmailAddress = outboundEmailAddress;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The default email address to use for outbound email from this queue.")
   @JsonProperty("outboundEmailAddress")
   public QueueEmailAddress getOutboundEmailAddress() {
     return outboundEmailAddress;

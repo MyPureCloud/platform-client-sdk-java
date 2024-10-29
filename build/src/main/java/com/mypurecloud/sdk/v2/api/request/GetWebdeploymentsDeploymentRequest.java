@@ -63,7 +63,8 @@ public class GetWebdeploymentsDeploymentRequest {
 	} 
 
 	public enum expandValues { 
-		SUPPORTEDCONTENT("supportedContent");
+		SUPPORTEDCONTENT("supportedContent"),
+		FLOWDETAILS("flowDetails");
 
 		private String value;
 

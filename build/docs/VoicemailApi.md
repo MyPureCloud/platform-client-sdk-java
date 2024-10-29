@@ -19,6 +19,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getVoicemailPolicy**](VoicemailApi#getVoicemailPolicy) | Get a policy |
 | [**getVoicemailQueueMessages**](VoicemailApi#getVoicemailQueueMessages) | List voicemail messages |
 | [**getVoicemailSearch**](VoicemailApi#getVoicemailSearch) | Search voicemails using the q64 value returned from a previous search |
+| [**getVoicemailUserMailbox**](VoicemailApi#getVoicemailUserMailbox) | Get a user's mailbox information |
+| [**getVoicemailUserMessages**](VoicemailApi#getVoicemailUserMessages) | List voicemail messages |
 | [**getVoicemailUserpolicy**](VoicemailApi#getVoicemailUserpolicy) | Get a user's voicemail policy |
 | [**patchVoicemailGroupPolicy**](VoicemailApi#patchVoicemailGroupPolicy) | Update a group's voicemail policy |
 | [**patchVoicemailMePolicy**](VoicemailApi#patchVoicemailMePolicy) | Update the current user's voicemail policy |
@@ -904,6 +906,128 @@ try {
 [**VoicemailsSearchResponse**](VoicemailsSearchResponse)
 
 
+# **getVoicemailUserMailbox**
+
+
+> [VoicemailMailboxInfo](VoicemailMailboxInfo) getVoicemailUserMailbox(userId)
+
+Get a user's mailbox information
+
+Wraps GET /api/v2/voicemail/users/{userId}/mailbox  
+
+Requires ANY permissions: 
+
+* voicemail:mailbox:viewOther
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.VoicemailApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+VoicemailApi apiInstance = new VoicemailApi();
+String userId = "userId_example"; // String | userId
+try {
+    VoicemailMailboxInfo result = apiInstance.getVoicemailUserMailbox(userId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VoicemailApi#getVoicemailUserMailbox");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| userId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**VoicemailMailboxInfo**](VoicemailMailboxInfo)
+
+
+# **getVoicemailUserMessages**
+
+
+> [VoicemailMessageEntityListing](VoicemailMessageEntityListing) getVoicemailUserMessages(userId, pageSize, pageNumber)
+
+List voicemail messages
+
+Wraps GET /api/v2/voicemail/users/{userId}/messages  
+
+Requires ANY permissions: 
+
+* voicemail:voicemail:viewOther
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.VoicemailApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+VoicemailApi apiInstance = new VoicemailApi();
+String userId = "userId_example"; // String | User ID
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+try {
+    VoicemailMessageEntityListing result = apiInstance.getVoicemailUserMessages(userId, pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VoicemailApi#getVoicemailUserMessages");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**VoicemailMessageEntityListing**](VoicemailMessageEntityListing)
+
+
 # **getVoicemailUserpolicy**
 
 
@@ -1502,4 +1626,4 @@ try {
 [**VoicemailUserPolicy**](VoicemailUserPolicy)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_

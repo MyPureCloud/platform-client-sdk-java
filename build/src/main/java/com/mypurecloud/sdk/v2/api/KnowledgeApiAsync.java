@@ -22,8 +22,9 @@ import com.mypurecloud.sdk.v2.model.CategoryUpdateRequest;
 import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobRequest;
 import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobResponse;
 import com.mypurecloud.sdk.v2.model.DocumentListing;
-import com.mypurecloud.sdk.v2.model.DocumentVariation;
-import com.mypurecloud.sdk.v2.model.DocumentVariationListing;
+import com.mypurecloud.sdk.v2.model.DocumentVariationRequest;
+import com.mypurecloud.sdk.v2.model.DocumentVariationResponse;
+import com.mypurecloud.sdk.v2.model.DocumentVariationResponseListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.GetUploadSourceUrlJobStatusResponse;
 import com.mypurecloud.sdk.v2.model.GuestCategoryResponseListing;
@@ -42,6 +43,7 @@ import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkUpdateRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkVersionAddRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentContentUpload;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentCopy;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentCreateRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedback;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedbackResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedbackResponseListing;
@@ -1988,13 +1990,13 @@ public class KnowledgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DocumentVariation> getKnowledgeKnowledgebaseDocumentVariationAsync(GetKnowledgeKnowledgebaseDocumentVariationRequest request, final AsyncApiCallback<DocumentVariation> callback) {
+  public Future<DocumentVariationResponse> getKnowledgeKnowledgebaseDocumentVariationAsync(GetKnowledgeKnowledgebaseDocumentVariationRequest request, final AsyncApiCallback<DocumentVariationResponse> callback) {
     try {
-      final SettableFuture<DocumentVariation> future = SettableFuture.create();
+      final SettableFuture<DocumentVariationResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DocumentVariation>() {}, new AsyncApiCallback<ApiResponse<DocumentVariation>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DocumentVariationResponse>() {}, new AsyncApiCallback<ApiResponse<DocumentVariationResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<DocumentVariation> response) {
+        public void onCompleted(ApiResponse<DocumentVariationResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -2022,13 +2024,13 @@ public class KnowledgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DocumentVariation>> getKnowledgeKnowledgebaseDocumentVariationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DocumentVariation>> callback) {
+  public Future<ApiResponse<DocumentVariationResponse>> getKnowledgeKnowledgebaseDocumentVariationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DocumentVariationResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<DocumentVariation>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<DocumentVariationResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<DocumentVariation>() {}, new AsyncApiCallback<ApiResponse<DocumentVariation>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<DocumentVariationResponse>() {}, new AsyncApiCallback<ApiResponse<DocumentVariationResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<DocumentVariation> response) {
+        public void onCompleted(ApiResponse<DocumentVariationResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -2036,7 +2038,7 @@ public class KnowledgeApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<DocumentVariation> response = (ApiResponse<DocumentVariation>)(ApiResponse<?>)exception;
+            ApiResponse<DocumentVariationResponse> response = (ApiResponse<DocumentVariationResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -2044,7 +2046,7 @@ public class KnowledgeApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<DocumentVariation> response = (ApiResponse<DocumentVariation>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<DocumentVariationResponse> response = (ApiResponse<DocumentVariationResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2063,13 +2065,13 @@ public class KnowledgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DocumentVariationListing> getKnowledgeKnowledgebaseDocumentVariationsAsync(GetKnowledgeKnowledgebaseDocumentVariationsRequest request, final AsyncApiCallback<DocumentVariationListing> callback) {
+  public Future<DocumentVariationResponseListing> getKnowledgeKnowledgebaseDocumentVariationsAsync(GetKnowledgeKnowledgebaseDocumentVariationsRequest request, final AsyncApiCallback<DocumentVariationResponseListing> callback) {
     try {
-      final SettableFuture<DocumentVariationListing> future = SettableFuture.create();
+      final SettableFuture<DocumentVariationResponseListing> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DocumentVariationListing>() {}, new AsyncApiCallback<ApiResponse<DocumentVariationListing>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DocumentVariationResponseListing>() {}, new AsyncApiCallback<ApiResponse<DocumentVariationResponseListing>>() {
         @Override
-        public void onCompleted(ApiResponse<DocumentVariationListing> response) {
+        public void onCompleted(ApiResponse<DocumentVariationResponseListing> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -2097,13 +2099,13 @@ public class KnowledgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DocumentVariationListing>> getKnowledgeKnowledgebaseDocumentVariationsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DocumentVariationListing>> callback) {
+  public Future<ApiResponse<DocumentVariationResponseListing>> getKnowledgeKnowledgebaseDocumentVariationsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DocumentVariationResponseListing>> callback) {
     try {
-      final SettableFuture<ApiResponse<DocumentVariationListing>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<DocumentVariationResponseListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<DocumentVariationListing>() {}, new AsyncApiCallback<ApiResponse<DocumentVariationListing>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<DocumentVariationResponseListing>() {}, new AsyncApiCallback<ApiResponse<DocumentVariationResponseListing>>() {
         @Override
-        public void onCompleted(ApiResponse<DocumentVariationListing> response) {
+        public void onCompleted(ApiResponse<DocumentVariationResponseListing> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -2111,7 +2113,7 @@ public class KnowledgeApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<DocumentVariationListing> response = (ApiResponse<DocumentVariationListing>)(ApiResponse<?>)exception;
+            ApiResponse<DocumentVariationResponseListing> response = (ApiResponse<DocumentVariationResponseListing>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -2119,7 +2121,7 @@ public class KnowledgeApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<DocumentVariationListing> response = (ApiResponse<DocumentVariationListing>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<DocumentVariationResponseListing> response = (ApiResponse<DocumentVariationResponseListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -4710,13 +4712,13 @@ public class KnowledgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DocumentVariation> patchKnowledgeKnowledgebaseDocumentVariationAsync(PatchKnowledgeKnowledgebaseDocumentVariationRequest request, final AsyncApiCallback<DocumentVariation> callback) {
+  public Future<DocumentVariationResponse> patchKnowledgeKnowledgebaseDocumentVariationAsync(PatchKnowledgeKnowledgebaseDocumentVariationRequest request, final AsyncApiCallback<DocumentVariationResponse> callback) {
     try {
-      final SettableFuture<DocumentVariation> future = SettableFuture.create();
+      final SettableFuture<DocumentVariationResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DocumentVariation>() {}, new AsyncApiCallback<ApiResponse<DocumentVariation>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DocumentVariationResponse>() {}, new AsyncApiCallback<ApiResponse<DocumentVariationResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<DocumentVariation> response) {
+        public void onCompleted(ApiResponse<DocumentVariationResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -4744,13 +4746,13 @@ public class KnowledgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DocumentVariation>> patchKnowledgeKnowledgebaseDocumentVariationAsync(ApiRequest<DocumentVariation> request, final AsyncApiCallback<ApiResponse<DocumentVariation>> callback) {
+  public Future<ApiResponse<DocumentVariationResponse>> patchKnowledgeKnowledgebaseDocumentVariationAsync(ApiRequest<DocumentVariationRequest> request, final AsyncApiCallback<ApiResponse<DocumentVariationResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<DocumentVariation>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<DocumentVariationResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<DocumentVariation>() {}, new AsyncApiCallback<ApiResponse<DocumentVariation>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<DocumentVariationResponse>() {}, new AsyncApiCallback<ApiResponse<DocumentVariationResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<DocumentVariation> response) {
+        public void onCompleted(ApiResponse<DocumentVariationResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -4758,7 +4760,7 @@ public class KnowledgeApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<DocumentVariation> response = (ApiResponse<DocumentVariation>)(ApiResponse<?>)exception;
+            ApiResponse<DocumentVariationResponse> response = (ApiResponse<DocumentVariationResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -4766,7 +4768,7 @@ public class KnowledgeApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<DocumentVariation> response = (ApiResponse<DocumentVariation>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<DocumentVariationResponse> response = (ApiResponse<DocumentVariationResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -6445,13 +6447,13 @@ public class KnowledgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DocumentVariation> postKnowledgeKnowledgebaseDocumentVariationsAsync(PostKnowledgeKnowledgebaseDocumentVariationsRequest request, final AsyncApiCallback<DocumentVariation> callback) {
+  public Future<DocumentVariationResponse> postKnowledgeKnowledgebaseDocumentVariationsAsync(PostKnowledgeKnowledgebaseDocumentVariationsRequest request, final AsyncApiCallback<DocumentVariationResponse> callback) {
     try {
-      final SettableFuture<DocumentVariation> future = SettableFuture.create();
+      final SettableFuture<DocumentVariationResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DocumentVariation>() {}, new AsyncApiCallback<ApiResponse<DocumentVariation>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DocumentVariationResponse>() {}, new AsyncApiCallback<ApiResponse<DocumentVariationResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<DocumentVariation> response) {
+        public void onCompleted(ApiResponse<DocumentVariationResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -6479,13 +6481,13 @@ public class KnowledgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DocumentVariation>> postKnowledgeKnowledgebaseDocumentVariationsAsync(ApiRequest<DocumentVariation> request, final AsyncApiCallback<ApiResponse<DocumentVariation>> callback) {
+  public Future<ApiResponse<DocumentVariationResponse>> postKnowledgeKnowledgebaseDocumentVariationsAsync(ApiRequest<DocumentVariationRequest> request, final AsyncApiCallback<ApiResponse<DocumentVariationResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<DocumentVariation>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<DocumentVariationResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<DocumentVariation>() {}, new AsyncApiCallback<ApiResponse<DocumentVariation>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<DocumentVariationResponse>() {}, new AsyncApiCallback<ApiResponse<DocumentVariationResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<DocumentVariation> response) {
+        public void onCompleted(ApiResponse<DocumentVariationResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -6493,7 +6495,7 @@ public class KnowledgeApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<DocumentVariation> response = (ApiResponse<DocumentVariation>)(ApiResponse<?>)exception;
+            ApiResponse<DocumentVariationResponse> response = (ApiResponse<DocumentVariationResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -6501,7 +6503,7 @@ public class KnowledgeApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<DocumentVariation> response = (ApiResponse<DocumentVariation>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<DocumentVariationResponse> response = (ApiResponse<DocumentVariationResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -6704,7 +6706,7 @@ public class KnowledgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<KnowledgeDocumentResponse>> postKnowledgeKnowledgebaseDocumentsAsync(ApiRequest<KnowledgeDocumentReq> request, final AsyncApiCallback<ApiResponse<KnowledgeDocumentResponse>> callback) {
+  public Future<ApiResponse<KnowledgeDocumentResponse>> postKnowledgeKnowledgebaseDocumentsAsync(ApiRequest<KnowledgeDocumentCreateRequest> request, final AsyncApiCallback<ApiResponse<KnowledgeDocumentResponse>> callback) {
     try {
       final SettableFuture<ApiResponse<KnowledgeDocumentResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

@@ -1552,7 +1552,7 @@ try {
 # **getKnowledgeKnowledgebaseDocumentVariation**
 
 
-> [DocumentVariation](DocumentVariation) getKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, documentState)
+> [DocumentVariationResponse](DocumentVariationResponse) getKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, documentState)
 
 Get a variation for a document.
 
@@ -1589,7 +1589,7 @@ String documentId = "documentId_example"; // String | Globally unique identifier
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Globally unique identifier for a knowledge base.
 String documentState = "documentState_example"; // String | The state of the document.
 try {
-    DocumentVariation result = apiInstance.getKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, documentState);
+    DocumentVariationResponse result = apiInstance.getKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, documentState);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KnowledgeApi#getKnowledgeKnowledgebaseDocumentVariation");
@@ -1611,13 +1611,13 @@ try {
 
 ### Return type
 
-[**DocumentVariation**](DocumentVariation)
+[**DocumentVariationResponse**](DocumentVariationResponse)
 
 
 # **getKnowledgeKnowledgebaseDocumentVariations**
 
 
-> [DocumentVariationListing](DocumentVariationListing) getKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, before, after, pageSize, documentState)
+> [DocumentVariationResponseListing](DocumentVariationResponseListing) getKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, before, after, pageSize, documentState)
 
 Get variations for a document.
 
@@ -1656,7 +1656,7 @@ String after = "after_example"; // String | The cursor that points to the end of
 String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
 String documentState = "documentState_example"; // String | The state of the document.
 try {
-    DocumentVariationListing result = apiInstance.getKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, before, after, pageSize, documentState);
+    DocumentVariationResponseListing result = apiInstance.getKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, before, after, pageSize, documentState);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KnowledgeApi#getKnowledgeKnowledgebaseDocumentVariations");
@@ -1680,7 +1680,7 @@ try {
 
 ### Return type
 
-[**DocumentVariationListing**](DocumentVariationListing)
+[**DocumentVariationResponseListing**](DocumentVariationResponseListing)
 
 
 # **getKnowledgeKnowledgebaseDocumentVersion**
@@ -3943,7 +3943,7 @@ try {
 # **patchKnowledgeKnowledgebaseDocumentVariation**
 
 
-> [DocumentVariation](DocumentVariation) patchKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, body)
+> [DocumentVariationResponse](DocumentVariationResponse) patchKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, body)
 
 Update a variation for a document.
 
@@ -3978,9 +3978,9 @@ KnowledgeApi apiInstance = new KnowledgeApi();
 String documentVariationId = "documentVariationId_example"; // String | Globally unique identifier for a document variation.
 String documentId = "documentId_example"; // String | Globally unique identifier for a document.
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Globally unique identifier for a knowledge base.
-DocumentVariation body = new DocumentVariation(); // DocumentVariation | 
+DocumentVariationRequest body = new DocumentVariationRequest(); // DocumentVariationRequest | 
 try {
-    DocumentVariation result = apiInstance.patchKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, body);
+    DocumentVariationResponse result = apiInstance.patchKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KnowledgeApi#patchKnowledgeKnowledgebaseDocumentVariation");
@@ -3996,13 +3996,13 @@ try {
 | **documentVariationId** | **String**| Globally unique identifier for a document variation. | 
 | **documentId** | **String**| Globally unique identifier for a document. | 
 | **knowledgeBaseId** | **String**| Globally unique identifier for a knowledge base. | 
-| **body** | [**DocumentVariation**](DocumentVariation)|  | 
+| **body** | [**DocumentVariationRequest**](DocumentVariationRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DocumentVariation**](DocumentVariation)
+[**DocumentVariationResponse**](DocumentVariationResponse)
 
 
 # **patchKnowledgeKnowledgebaseDocumentsSearchSearchId**
@@ -5284,7 +5284,7 @@ try {
 # **postKnowledgeKnowledgebaseDocumentVariations**
 
 
-> [DocumentVariation](DocumentVariation) postKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, body)
+> [DocumentVariationResponse](DocumentVariationResponse) postKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, body)
 
 Create a variation for a document.
 
@@ -5319,9 +5319,9 @@ Configuration.setDefaultApiClient(apiClient);
 KnowledgeApi apiInstance = new KnowledgeApi();
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Globally unique identifier for the knowledge base.
 String documentId = "documentId_example"; // String | Globally unique identifier for the document.
-DocumentVariation body = new DocumentVariation(); // DocumentVariation | 
+DocumentVariationRequest body = new DocumentVariationRequest(); // DocumentVariationRequest | 
 try {
-    DocumentVariation result = apiInstance.postKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, body);
+    DocumentVariationResponse result = apiInstance.postKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KnowledgeApi#postKnowledgeKnowledgebaseDocumentVariations");
@@ -5336,13 +5336,13 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Globally unique identifier for the knowledge base. | 
 | **documentId** | **String**| Globally unique identifier for the document. | 
-| **body** | [**DocumentVariation**](DocumentVariation)|  | 
+| **body** | [**DocumentVariationRequest**](DocumentVariationRequest)|  | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**DocumentVariation**](DocumentVariation)
+[**DocumentVariationResponse**](DocumentVariationResponse)
 
 
 # **postKnowledgeKnowledgebaseDocumentVersions**
@@ -5506,7 +5506,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 KnowledgeApi apiInstance = new KnowledgeApi();
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-KnowledgeDocumentReq body = new KnowledgeDocumentReq(); // KnowledgeDocumentReq | 
+KnowledgeDocumentCreateRequest body = new KnowledgeDocumentCreateRequest(); // KnowledgeDocumentCreateRequest | 
 try {
     KnowledgeDocumentResponse result = apiInstance.postKnowledgeKnowledgebaseDocuments(knowledgeBaseId, body);
     System.out.println(result);
@@ -5522,7 +5522,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **body** | [**KnowledgeDocumentReq**](KnowledgeDocumentReq)|  | 
+| **body** | [**KnowledgeDocumentCreateRequest**](KnowledgeDocumentCreateRequest)|  | 
 {: class="table-striped"}
 
 
@@ -7354,4 +7354,4 @@ try {
 [**ServiceNowSourceResponse**](ServiceNowSourceResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_

@@ -81,9 +81,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsKnowledgeAggregatesQuery**](AnalyticsApi#postAnalyticsKnowledgeAggregatesQuery) | Query for knowledge aggregates |
 | [**postAnalyticsQueuesObservationsQuery**](AnalyticsApi#postAnalyticsQueuesObservationsQuery) | Query for queue observations |
 | [**postAnalyticsRatelimitsAggregatesQuery**](AnalyticsApi#postAnalyticsRatelimitsAggregatesQuery) | Query for limits rate limit aggregates. Data populated when limits reach 90% of the maximum. Not a source of truth for limits hit but a best effort estimate. |
-| [**postAnalyticsReportingDashboardsUsersBulkRemove**](AnalyticsApi#postAnalyticsReportingDashboardsUsersBulkRemove) | Bulk delete dashboards owned by other user(s) |
+| [**postAnalyticsReportingDashboardsUsersBulkRemove**](AnalyticsApi#postAnalyticsReportingDashboardsUsersBulkRemove) | Bulk soft delete dashboards owned by other user(s) |
 | [**postAnalyticsReportingExports**](AnalyticsApi#postAnalyticsReportingExports) | Generate a view export request |
-| [**postAnalyticsReportingSettingsDashboardsBulkRemove**](AnalyticsApi#postAnalyticsReportingSettingsDashboardsBulkRemove) | Bulk remove dashboard configurations |
+| [**postAnalyticsReportingSettingsDashboardsBulkRemove**](AnalyticsApi#postAnalyticsReportingSettingsDashboardsBulkRemove) | Bulk soft delete dashboard configurations |
 | [**postAnalyticsReportingSettingsDashboardsQuery**](AnalyticsApi#postAnalyticsReportingSettingsDashboardsQuery) | Query dashboard configurations |
 | [**postAnalyticsResolutionsAggregatesJobs**](AnalyticsApi#postAnalyticsResolutionsAggregatesJobs) | Query for resolution aggregates asynchronously |
 | [**postAnalyticsRoutingActivityQuery**](AnalyticsApi#postAnalyticsRoutingActivityQuery) | Query for user activity observations |
@@ -1979,7 +1979,7 @@ try {
 # **getAnalyticsReportingDashboardsUsers**
 
 
-> [DashboardUserListing](DashboardUserListing) getAnalyticsReportingDashboardsUsers(sortBy, pageNumber, pageSize, id, state)
+> [DashboardUserListing](DashboardUserListing) getAnalyticsReportingDashboardsUsers(sortBy, pageNumber, pageSize, id, state, deletedOnly)
 
 Get dashboards summary for users in a org
 
@@ -2016,8 +2016,9 @@ Integer pageNumber = 1; // Integer |
 Integer pageSize = 25; // Integer | 
 List<String> id = Arrays.asList(null); // List<String> | A list of user IDs to fetch by bulk
 String state = "state_example"; // String | Only list users of this state
+Boolean deletedOnly = true; // Boolean | Only list deleted dashboards that are still recoverable
 try {
-    DashboardUserListing result = apiInstance.getAnalyticsReportingDashboardsUsers(sortBy, pageNumber, pageSize, id, state);
+    DashboardUserListing result = apiInstance.getAnalyticsReportingDashboardsUsers(sortBy, pageNumber, pageSize, id, state, deletedOnly);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AnalyticsApi#getAnalyticsReportingDashboardsUsers");
@@ -2035,6 +2036,7 @@ try {
 | **pageSize** | **Integer**|  | [optional] [default to 25] 
 | **id** | [**List&lt;String&gt;**](String)| A list of user IDs to fetch by bulk | [optional] 
 | **state** | **String**| Only list users of this state | [optional]<br />**Values**: active, inactive 
+| **deletedOnly** | **Boolean**| Only list deleted dashboards that are still recoverable | [optional] 
 {: class="table-striped"}
 
 
@@ -2268,7 +2270,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **dashboardType** | **String**| List dashboard of given type |<br />**Values**: All, Public, Private, Shared, Favorites 
+| **dashboardType** | **String**| List dashboard of given type |<br />**Values**: All, Public, Private, Shared, Favorites, Deleted 
 | **dashboardAccessFilter** | **String**| Filter dashboard based on the owner of dashboard |<br />**Values**: OwnedByMe, OwnedByAnyone, NotOwnedByMe 
 | **name** | **String**| name of the dashboard | [optional] 
 | **sortBy** | **String**|  | [optional] [default to desc] 
@@ -2285,7 +2287,7 @@ try {
 # **getAnalyticsReportingSettingsUserDashboards**
 
 
-> [DashboardConfigurationListing](DashboardConfigurationListing) getAnalyticsReportingSettingsUserDashboards(userId, sortBy, pageNumber, pageSize, publicOnly, favoriteOnly, name)
+> [DashboardConfigurationListing](DashboardConfigurationListing) getAnalyticsReportingSettingsUserDashboards(userId, sortBy, pageNumber, pageSize, publicOnly, favoriteOnly, deletedOnly, name)
 
 Get list of dashboards for an user
 
@@ -2323,9 +2325,10 @@ Integer pageNumber = 1; // Integer |
 Integer pageSize = 50; // Integer | 
 Boolean publicOnly = true; // Boolean | If true, retrieve only public dashboards
 Boolean favoriteOnly = true; // Boolean | If true, retrieve only favorite dashboards
+Boolean deletedOnly = true; // Boolean | If true, retrieve only deleted dashboards that are still recoverable
 String name = "name_example"; // String | retrieve dashboards that match with given name
 try {
-    DashboardConfigurationListing result = apiInstance.getAnalyticsReportingSettingsUserDashboards(userId, sortBy, pageNumber, pageSize, publicOnly, favoriteOnly, name);
+    DashboardConfigurationListing result = apiInstance.getAnalyticsReportingSettingsUserDashboards(userId, sortBy, pageNumber, pageSize, publicOnly, favoriteOnly, deletedOnly, name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AnalyticsApi#getAnalyticsReportingSettingsUserDashboards");
@@ -2344,6 +2347,7 @@ try {
 | **pageSize** | **Integer**|  | [optional] [default to 50] 
 | **publicOnly** | **Boolean**| If true, retrieve only public dashboards | [optional] 
 | **favoriteOnly** | **Boolean**| If true, retrieve only favorite dashboards | [optional] 
+| **deletedOnly** | **Boolean**| If true, retrieve only deleted dashboards that are still recoverable | [optional] 
 | **name** | **String**| retrieve dashboards that match with given name | [optional] 
 {: class="table-striped"}
 
@@ -4841,7 +4845,7 @@ try {
 
 > Void postAnalyticsReportingDashboardsUsersBulkRemove(body)
 
-Bulk delete dashboards owned by other user(s)
+Bulk soft delete dashboards owned by other user(s)
 
 Wraps POST /api/v2/analytics/reporting/dashboards/users/bulk/remove  
 
@@ -4961,7 +4965,7 @@ try {
 
 > Void postAnalyticsReportingSettingsDashboardsBulkRemove(body)
 
-Bulk remove dashboard configurations
+Bulk soft delete dashboard configurations
 
 Wraps POST /api/v2/analytics/reporting/settings/dashboards/bulk/remove  
 
@@ -5384,8 +5388,6 @@ try {
 > [TaskManagementAggregateQueryResponse](TaskManagementAggregateQueryResponse) postAnalyticsTaskmanagementAggregatesQuery(body)
 
 Query for task management aggregates
-
-postAnalyticsTaskmanagementAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/taskmanagement/aggregates/query  
 
@@ -6041,4 +6043,4 @@ try {
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_

@@ -53,7 +53,7 @@ public class WhatsAppDefinition  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The messaging template namespace.")
+  @ApiModelProperty(example = "null", value = "The messaging template namespace.")
   @JsonProperty("namespace")
   public String getNamespace() {
     return namespace;

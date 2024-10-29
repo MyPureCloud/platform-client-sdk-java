@@ -13,7 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CredentialSpecification;
 import com.mypurecloud.sdk.v2.model.HelpLink;
-import com.mypurecloud.sdk.v2.model.UserImage;
+import com.mypurecloud.sdk.v2.model.Image;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -34,7 +34,7 @@ public class IntegrationType  implements Serializable {
   private String description = null;
   private String provider = null;
   private String category = null;
-  private List<UserImage> images = new ArrayList<UserImage>();
+  private List<Image> images = new ArrayList<Image>();
   private String configPropertiesSchemaUri = null;
   private String configAdvancedSchemaUri = null;
   private String helpUri = null;
@@ -113,7 +113,7 @@ public class IntegrationType  implements Serializable {
 
   @ApiModelProperty(example = "null", value = "Collection of logos.")
   @JsonProperty("images")
-  public List<UserImage> getImages() {
+  public List<Image> getImages() {
     return images;
   }
 

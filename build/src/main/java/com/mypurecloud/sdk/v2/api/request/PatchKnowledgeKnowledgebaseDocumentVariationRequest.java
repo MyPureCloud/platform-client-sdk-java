@@ -29,8 +29,9 @@ import com.mypurecloud.sdk.v2.model.CategoryUpdateRequest;
 import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobRequest;
 import com.mypurecloud.sdk.v2.model.CreateUploadSourceUrlJobResponse;
 import com.mypurecloud.sdk.v2.model.DocumentListing;
-import com.mypurecloud.sdk.v2.model.DocumentVariation;
-import com.mypurecloud.sdk.v2.model.DocumentVariationListing;
+import com.mypurecloud.sdk.v2.model.DocumentVariationRequest;
+import com.mypurecloud.sdk.v2.model.DocumentVariationResponse;
+import com.mypurecloud.sdk.v2.model.DocumentVariationResponseListing;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.GetUploadSourceUrlJobStatusResponse;
 import com.mypurecloud.sdk.v2.model.GuestCategoryResponseListing;
@@ -49,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkUpdateRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkVersionAddRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentContentUpload;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentCopy;
+import com.mypurecloud.sdk.v2.model.KnowledgeDocumentCreateRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedback;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedbackResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentFeedbackResponseListing;
@@ -166,16 +168,16 @@ public class PatchKnowledgeKnowledgebaseDocumentVariationRequest {
 	    return this;
 	} 
 
-	private DocumentVariation body;
-	public DocumentVariation getBody() {
+	private DocumentVariationRequest body;
+	public DocumentVariationRequest getBody() {
 		return this.body;
 	}
 
-	public void setBody(DocumentVariation body) {
+	public void setBody(DocumentVariationRequest body) {
 		this.body = body;
 	}
 
-	public PatchKnowledgeKnowledgebaseDocumentVariationRequest withBody(DocumentVariation body) {
+	public PatchKnowledgeKnowledgebaseDocumentVariationRequest withBody(DocumentVariationRequest body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -199,7 +201,7 @@ public class PatchKnowledgeKnowledgebaseDocumentVariationRequest {
         return this;
     }
 
-    public ApiRequest<DocumentVariation> withHttpInfo() {
+    public ApiRequest<DocumentVariationRequest> withHttpInfo() {
         
         // verify the required parameter 'documentVariationId' is set
         if (this.documentVariationId == null) {
@@ -243,7 +245,7 @@ public class PatchKnowledgeKnowledgebaseDocumentVariationRequest {
 	}
 
 
-	public static Builder builder(String documentVariationId, String documentId, String knowledgeBaseId, DocumentVariation body) {
+	public static Builder builder(String documentVariationId, String documentId, String knowledgeBaseId, DocumentVariationRequest body) {
 	    return new Builder()
 	            .withRequiredParams(documentVariationId, documentId, knowledgeBaseId, body);
 	}
@@ -272,14 +274,14 @@ public class PatchKnowledgeKnowledgebaseDocumentVariationRequest {
 			return this;
 		}
 
-		public Builder withBody(DocumentVariation body) {
+		public Builder withBody(DocumentVariationRequest body) {
 			request.setBody(body);
 			return this;
 		}
 
 
 
-		public Builder withRequiredParams(String documentVariationId, String documentId, String knowledgeBaseId, DocumentVariation body) {
+		public Builder withRequiredParams(String documentVariationId, String documentId, String knowledgeBaseId, DocumentVariationRequest body) {
 			request.setDocumentVariationId(documentVariationId);
 			request.setDocumentId(documentId);
 			request.setKnowledgeBaseId(knowledgeBaseId);

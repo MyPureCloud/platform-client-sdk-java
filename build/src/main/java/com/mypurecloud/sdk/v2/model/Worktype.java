@@ -16,7 +16,9 @@ import com.mypurecloud.sdk.v2.model.LanguageReference;
 import com.mypurecloud.sdk.v2.model.RoutingSkillReference;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import com.mypurecloud.sdk.v2.model.WorkbinReference;
+import com.mypurecloud.sdk.v2.model.WorkitemFlowReference;
 import com.mypurecloud.sdk.v2.model.WorkitemQueueReference;
+import com.mypurecloud.sdk.v2.model.WorkitemRuleSettings;
 import com.mypurecloud.sdk.v2.model.WorkitemSchema;
 import com.mypurecloud.sdk.v2.model.WorkitemStatus;
 import com.mypurecloud.sdk.v2.model.WorkitemStatusReference;
@@ -54,6 +56,8 @@ public class Worktype  implements Serializable {
   private Boolean assignmentEnabled = null;
   private WorkitemSchema schema = null;
   private Integer serviceLevelTarget = null;
+  private WorkitemRuleSettings ruleSettings = null;
+  private WorkitemFlowReference flow = null;
   private String selfUri = null;
 
   
@@ -424,6 +428,42 @@ public class Worktype  implements Serializable {
   }
 
 
+  /**
+   * Settings for the worktypes rules.
+   **/
+  public Worktype ruleSettings(WorkitemRuleSettings ruleSettings) {
+    this.ruleSettings = ruleSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Settings for the worktypes rules.")
+  @JsonProperty("ruleSettings")
+  public WorkitemRuleSettings getRuleSettings() {
+    return ruleSettings;
+  }
+  public void setRuleSettings(WorkitemRuleSettings ruleSettings) {
+    this.ruleSettings = ruleSettings;
+  }
+
+
+  /**
+   * The flow associated with the Worktype.
+   **/
+  public Worktype flow(WorkitemFlowReference flow) {
+    this.flow = flow;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The flow associated with the Worktype.")
+  @JsonProperty("flow")
+  public WorkitemFlowReference getFlow() {
+    return flow;
+  }
+  public void setFlow(WorkitemFlowReference flow) {
+    this.flow = flow;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -462,12 +502,14 @@ public class Worktype  implements Serializable {
             Objects.equals(this.assignmentEnabled, worktype.assignmentEnabled) &&
             Objects.equals(this.schema, worktype.schema) &&
             Objects.equals(this.serviceLevelTarget, worktype.serviceLevelTarget) &&
+            Objects.equals(this.ruleSettings, worktype.ruleSettings) &&
+            Objects.equals(this.flow, worktype.flow) &&
             Objects.equals(this.selfUri, worktype.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, defaultWorkbin, defaultStatus, statuses, defaultDurationSeconds, defaultExpirationSeconds, defaultDueDurationSeconds, defaultPriority, defaultLanguage, defaultTtlSeconds, modifiedBy, defaultQueue, defaultSkills, assignmentEnabled, schema, serviceLevelTarget, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, defaultWorkbin, defaultStatus, statuses, defaultDurationSeconds, defaultExpirationSeconds, defaultDueDurationSeconds, defaultPriority, defaultLanguage, defaultTtlSeconds, modifiedBy, defaultQueue, defaultSkills, assignmentEnabled, schema, serviceLevelTarget, ruleSettings, flow, selfUri);
   }
 
   @Override
@@ -496,6 +538,8 @@ public class Worktype  implements Serializable {
     sb.append("    assignmentEnabled: ").append(toIndentedString(assignmentEnabled)).append("\n");
     sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
     sb.append("    serviceLevelTarget: ").append(toIndentedString(serviceLevelTarget)).append("\n");
+    sb.append("    ruleSettings: ").append(toIndentedString(ruleSettings)).append("\n");
+    sb.append("    flow: ").append(toIndentedString(flow)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
