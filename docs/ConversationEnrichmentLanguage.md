@@ -5,9 +5,9 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **language** | **String** | The ISO 639-3 detected language code of this message. |  |
+| **language** | **String** | The IETF detected language code of this message. |  |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_

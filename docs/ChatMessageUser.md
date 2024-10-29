@@ -9,9 +9,9 @@
 | **name** | **String** |  |  [optional] |
 | **displayName** | **String** |  |  [optional] |
 | **username** | **String** |  |  [optional] |
-| **images** | [**List&lt;UserImage&gt;**](UserImage) |  |  [optional] |
+| **images** | [**List&lt;Image&gt;**](Image) |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_

@@ -5,8 +5,9 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
+| **flowRulesEnabled** | **Boolean** | When set to true, the worktypes flow rules will be processed. Default value is false. |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_

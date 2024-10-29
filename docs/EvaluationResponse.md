@@ -61,6 +61,7 @@
 | COBROWSE | &quot;COBROWSE&quot; |
 | EMAIL | &quot;EMAIL&quot; |
 | MESSAGE | &quot;MESSAGE&quot; |
+| INTERNAL_MESSAGE | &quot;INTERNAL_MESSAGE&quot; |
 | SOCIAL_EXPRESSION | &quot;SOCIAL_EXPRESSION&quot; |
 | VIDEO | &quot;VIDEO&quot; |
 | SCREENSHARE | &quot;SCREENSHARE&quot; |
@@ -76,4 +77,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_

@@ -51,6 +51,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUserTrustors**](UsersApi#getUserTrustors) | List the organizations that have authorized/trusted the user. |
 | [**getUserVerifiers**](UsersApi#getUserVerifiers) | Get a list of verifiers |
 | [**getUsers**](UsersApi#getUsers) | Get the list of available users. |
+| [**getUsersChatsMe**](UsersApi#getUsersChatsMe) | Get chats for a user |
 | [**getUsersDevelopmentActivities**](UsersApi#getUsersDevelopmentActivities) | Get list of Development Activities |
 | [**getUsersDevelopmentActivitiesMe**](UsersApi#getUsersDevelopmentActivitiesMe) | Get list of Development Activities for current user |
 | [**getUsersDevelopmentActivity**](UsersApi#getUsersDevelopmentActivity) | Get a Development Activity |
@@ -2981,6 +2982,70 @@ try {
 ### Return type
 
 [**UserEntityListing**](UserEntityListing)
+
+
+# **getUsersChatsMe**
+
+
+> [ChatItemCursorListing](ChatItemCursorListing) getUsersChatsMe(excludeClosed, includePresence, after)
+
+Get chats for a user
+
+Wraps GET /api/v2/users/chats/me  
+
+Requires ANY permissions: 
+
+* chat:chat:access
+* user:chats:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+Boolean excludeClosed = true; // Boolean | Whether or not to exclude closed chats
+Boolean includePresence = true; // Boolean | Whether or not to include user presence
+String after = "after_example"; // String | The key to start after
+try {
+    ChatItemCursorListing result = apiInstance.getUsersChatsMe(excludeClosed, includePresence, after);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getUsersChatsMe");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **excludeClosed** | **Boolean**| Whether or not to exclude closed chats | [optional] 
+| **includePresence** | **Boolean**| Whether or not to include user presence | [optional] 
+| **after** | **String**| The key to start after | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ChatItemCursorListing**](ChatItemCursorListing)
 
 
 # **getUsersDevelopmentActivities**
@@ -6091,4 +6156,4 @@ try {
 [**Verifier**](Verifier)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_

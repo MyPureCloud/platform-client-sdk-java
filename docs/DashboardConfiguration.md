@@ -16,6 +16,7 @@
 | **layoutType** | [**LayoutTypeEnum**](#Enum--LayoutTypeEnum) | The layout type of the dashboard |  [optional] |
 | **dateCreated** | [**Date**](Date) | The created date of the dashboard. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
 | **dateModified** | [**Date**](Date) | The last modified date of the dashboard. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
+| **dateDeleted** | [**Date**](Date) | The deleted date of the dashboard. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
 | **createdBy** | [**AddressableEntityRef**](AddressableEntityRef) | The id of user who created the dashboard |  [optional] |
 | **shared** | **Boolean** | The flag to indicate if the dashboard is shared |  [optional] |
 | **dashboardsSharedWith** | [**DashboardsSharedWith**](DashboardsSharedWith) | The list of users and teams the dashboard is shared with |  [optional] |
@@ -33,4 +34,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_

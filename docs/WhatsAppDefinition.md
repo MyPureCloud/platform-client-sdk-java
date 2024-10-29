@@ -6,10 +6,10 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **name** | **String** | The messaging template name. |  |
-| **namespace** | **String** | The messaging template namespace. |  |
+| **namespace** | **String** | The messaging template namespace. |  [optional] |
 | **language** | **String** | The messaging template language configured for this template. This is a WhatsApp specific value. For example, 'en_US' |  |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:212.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_
