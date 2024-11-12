@@ -74,6 +74,7 @@ public class ContentFileResponse  implements Serializable {
   private TypeEnum type = null;
   private String checksum = null;
   private Long size = null;
+  private String contentUrl = null;
 
   
   /**
@@ -148,6 +149,24 @@ public class ContentFileResponse  implements Serializable {
   }
 
 
+  /**
+   * Public download url for content. Needs to be expanded
+   **/
+  public ContentFileResponse contentUrl(String contentUrl) {
+    this.contentUrl = contentUrl;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "Public download url for content. Needs to be expanded")
+  @JsonProperty("contentUrl")
+  public String getContentUrl() {
+    return contentUrl;
+  }
+  public void setContentUrl(String contentUrl) {
+    this.contentUrl = contentUrl;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -161,12 +180,13 @@ public class ContentFileResponse  implements Serializable {
     return Objects.equals(this.name, contentFileResponse.name) &&
             Objects.equals(this.type, contentFileResponse.type) &&
             Objects.equals(this.checksum, contentFileResponse.checksum) &&
-            Objects.equals(this.size, contentFileResponse.size);
+            Objects.equals(this.size, contentFileResponse.size) &&
+            Objects.equals(this.contentUrl, contentFileResponse.contentUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, type, checksum, size);
+    return Objects.hash(name, type, checksum, size, contentUrl);
   }
 
   @Override
@@ -178,6 +198,7 @@ public class ContentFileResponse  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    checksum: ").append(toIndentedString(checksum)).append("\n");
     sb.append("    size: ").append(toIndentedString(size)).append("\n");
+    sb.append("    contentUrl: ").append(toIndentedString(contentUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

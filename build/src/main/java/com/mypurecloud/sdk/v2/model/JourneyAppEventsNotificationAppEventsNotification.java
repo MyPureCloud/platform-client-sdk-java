@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.JourneyAppEventsNotificationExternalContact;
 import com.mypurecloud.sdk.v2.model.JourneyAppEventsNotificationOutcomeAchievedMessage;
 import com.mypurecloud.sdk.v2.model.JourneyAppEventsNotificationSegmentAssignmentMessage;
 import com.mypurecloud.sdk.v2.model.JourneyAppEventsNotificationSession;
+import com.mypurecloud.sdk.v2.model.JourneyAppEventsNotificationWebActionMessage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -56,7 +57,8 @@ public class JourneyAppEventsNotificationAppEventsNotification  implements Seria
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     APPEVENT("AppEvent"),
     OUTCOMEACHIEVEDEVENT("OutcomeAchievedEvent"),
-    SEGMENTASSIGNMENTEVENT("SegmentAssignmentEvent");
+    SEGMENTASSIGNMENTEVENT("SegmentAssignmentEvent"),
+    WEBACTIONEVENT("WebActionEvent");
 
     private String value;
 
@@ -87,6 +89,7 @@ public class JourneyAppEventsNotificationAppEventsNotification  implements Seria
   private JourneyAppEventsNotificationAppMessage appEvent = null;
   private JourneyAppEventsNotificationOutcomeAchievedMessage outcomeAchievedEvent = null;
   private JourneyAppEventsNotificationSegmentAssignmentMessage segmentAssignmentEvent = null;
+  private JourneyAppEventsNotificationWebActionMessage webActionEvent = null;
 
   
   /**
@@ -276,6 +279,23 @@ public class JourneyAppEventsNotificationAppEventsNotification  implements Seria
   }
 
 
+  /**
+   **/
+  public JourneyAppEventsNotificationAppEventsNotification webActionEvent(JourneyAppEventsNotificationWebActionMessage webActionEvent) {
+    this.webActionEvent = webActionEvent;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("webActionEvent")
+  public JourneyAppEventsNotificationWebActionMessage getWebActionEvent() {
+    return webActionEvent;
+  }
+  public void setWebActionEvent(JourneyAppEventsNotificationWebActionMessage webActionEvent) {
+    this.webActionEvent = webActionEvent;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -296,12 +316,13 @@ public class JourneyAppEventsNotificationAppEventsNotification  implements Seria
             Objects.equals(this.eventType, journeyAppEventsNotificationAppEventsNotification.eventType) &&
             Objects.equals(this.appEvent, journeyAppEventsNotificationAppEventsNotification.appEvent) &&
             Objects.equals(this.outcomeAchievedEvent, journeyAppEventsNotificationAppEventsNotification.outcomeAchievedEvent) &&
-            Objects.equals(this.segmentAssignmentEvent, journeyAppEventsNotificationAppEventsNotification.segmentAssignmentEvent);
+            Objects.equals(this.segmentAssignmentEvent, journeyAppEventsNotificationAppEventsNotification.segmentAssignmentEvent) &&
+            Objects.equals(this.webActionEvent, journeyAppEventsNotificationAppEventsNotification.webActionEvent);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, correlationId, externalContact, createdDate, customerId, customerIdType, session, eventType, appEvent, outcomeAchievedEvent, segmentAssignmentEvent);
+    return Objects.hash(id, correlationId, externalContact, createdDate, customerId, customerIdType, session, eventType, appEvent, outcomeAchievedEvent, segmentAssignmentEvent, webActionEvent);
   }
 
   @Override
@@ -320,6 +341,7 @@ public class JourneyAppEventsNotificationAppEventsNotification  implements Seria
     sb.append("    appEvent: ").append(toIndentedString(appEvent)).append("\n");
     sb.append("    outcomeAchievedEvent: ").append(toIndentedString(outcomeAchievedEvent)).append("\n");
     sb.append("    segmentAssignmentEvent: ").append(toIndentedString(segmentAssignmentEvent)).append("\n");
+    sb.append("    webActionEvent: ").append(toIndentedString(webActionEvent)).append("\n");
     sb.append("}");
     return sb.toString();
   }

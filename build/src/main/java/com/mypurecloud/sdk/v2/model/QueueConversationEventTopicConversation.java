@@ -11,8 +11,9 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicConversationDivisionMembership;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicParticipant;
-import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicRecentTransfer;
+import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicTransferResponse;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -28,12 +29,13 @@ public class QueueConversationEventTopicConversation  implements Serializable {
   private String id = null;
   private Integer maxParticipants = null;
   private List<QueueConversationEventTopicParticipant> participants = new ArrayList<QueueConversationEventTopicParticipant>();
-  private List<QueueConversationEventTopicRecentTransfer> recentTransfers = new ArrayList<QueueConversationEventTopicRecentTransfer>();
+  private List<QueueConversationEventTopicTransferResponse> recentTransfers = new ArrayList<QueueConversationEventTopicTransferResponse>();
   private String recordingState = null;
   private String address = null;
   private String externalTag = null;
   private String utilizationLabelId = null;
   private Boolean securePause = null;
+  private List<QueueConversationEventTopicConversationDivisionMembership> divisions = new ArrayList<QueueConversationEventTopicConversationDivisionMembership>();
 
   
   /**
@@ -89,17 +91,17 @@ public class QueueConversationEventTopicConversation  implements Serializable {
 
   /**
    **/
-  public QueueConversationEventTopicConversation recentTransfers(List<QueueConversationEventTopicRecentTransfer> recentTransfers) {
+  public QueueConversationEventTopicConversation recentTransfers(List<QueueConversationEventTopicTransferResponse> recentTransfers) {
     this.recentTransfers = recentTransfers;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("recentTransfers")
-  public List<QueueConversationEventTopicRecentTransfer> getRecentTransfers() {
+  public List<QueueConversationEventTopicTransferResponse> getRecentTransfers() {
     return recentTransfers;
   }
-  public void setRecentTransfers(List<QueueConversationEventTopicRecentTransfer> recentTransfers) {
+  public void setRecentTransfers(List<QueueConversationEventTopicTransferResponse> recentTransfers) {
     this.recentTransfers = recentTransfers;
   }
 
@@ -189,6 +191,23 @@ public class QueueConversationEventTopicConversation  implements Serializable {
   }
 
 
+  /**
+   **/
+  public QueueConversationEventTopicConversation divisions(List<QueueConversationEventTopicConversationDivisionMembership> divisions) {
+    this.divisions = divisions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("divisions")
+  public List<QueueConversationEventTopicConversationDivisionMembership> getDivisions() {
+    return divisions;
+  }
+  public void setDivisions(List<QueueConversationEventTopicConversationDivisionMembership> divisions) {
+    this.divisions = divisions;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -207,12 +226,13 @@ public class QueueConversationEventTopicConversation  implements Serializable {
             Objects.equals(this.address, queueConversationEventTopicConversation.address) &&
             Objects.equals(this.externalTag, queueConversationEventTopicConversation.externalTag) &&
             Objects.equals(this.utilizationLabelId, queueConversationEventTopicConversation.utilizationLabelId) &&
-            Objects.equals(this.securePause, queueConversationEventTopicConversation.securePause);
+            Objects.equals(this.securePause, queueConversationEventTopicConversation.securePause) &&
+            Objects.equals(this.divisions, queueConversationEventTopicConversation.divisions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag, utilizationLabelId, securePause);
+    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag, utilizationLabelId, securePause, divisions);
   }
 
   @Override
@@ -229,6 +249,7 @@ public class QueueConversationEventTopicConversation  implements Serializable {
     sb.append("    externalTag: ").append(toIndentedString(externalTag)).append("\n");
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
     sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
+    sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

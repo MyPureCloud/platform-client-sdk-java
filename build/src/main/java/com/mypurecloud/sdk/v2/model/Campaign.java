@@ -166,6 +166,7 @@ public class Campaign  implements Serializable {
   private Integer priority = null;
   private List<DomainEntityRef> contactListFilters = new ArrayList<DomainEntityRef>();
   private DomainEntityRef division = null;
+  private String agentOwnedColumn = null;
   private DynamicContactQueueingSettings dynamicContactQueueingSettings = null;
   private List<String> skillColumns = new ArrayList<String>();
   private Integer maxCallsPerAgent = null;
@@ -707,6 +708,24 @@ public class Campaign  implements Serializable {
 
 
   /**
+   * Name of the contact list column containing the id of the agent who owns the record. Only applicable to preview campaigns.
+   **/
+  public Campaign agentOwnedColumn(String agentOwnedColumn) {
+    this.agentOwnedColumn = agentOwnedColumn;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Name of the contact list column containing the id of the agent who owns the record. Only applicable to preview campaigns.")
+  @JsonProperty("agentOwnedColumn")
+  public String getAgentOwnedColumn() {
+    return agentOwnedColumn;
+  }
+  public void setAgentOwnedColumn(String agentOwnedColumn) {
+    this.agentOwnedColumn = agentOwnedColumn;
+  }
+
+
+  /**
    * Settings for dynamic queueing of contacts.
    **/
   public Campaign dynamicContactQueueingSettings(DynamicContactQueueingSettings dynamicContactQueueingSettings) {
@@ -845,6 +864,7 @@ public class Campaign  implements Serializable {
             Objects.equals(this.priority, campaign.priority) &&
             Objects.equals(this.contactListFilters, campaign.contactListFilters) &&
             Objects.equals(this.division, campaign.division) &&
+            Objects.equals(this.agentOwnedColumn, campaign.agentOwnedColumn) &&
             Objects.equals(this.dynamicContactQueueingSettings, campaign.dynamicContactQueueingSettings) &&
             Objects.equals(this.skillColumns, campaign.skillColumns) &&
             Objects.equals(this.maxCallsPerAgent, campaign.maxCallsPerAgent) &&
@@ -855,7 +875,7 @@ public class Campaign  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, site, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, errors, callerName, callerAddress, outboundLineCount, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, alwaysRunning, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, division, dynamicContactQueueingSettings, skillColumns, maxCallsPerAgent, callbackAutoAnswer, dynamicLineBalancingSettings, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, site, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, errors, callerName, callerAddress, outboundLineCount, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, alwaysRunning, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, division, agentOwnedColumn, dynamicContactQueueingSettings, skillColumns, maxCallsPerAgent, callbackAutoAnswer, dynamicLineBalancingSettings, selfUri);
   }
 
   @Override
@@ -895,6 +915,7 @@ public class Campaign  implements Serializable {
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    contactListFilters: ").append(toIndentedString(contactListFilters)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
+    sb.append("    agentOwnedColumn: ").append(toIndentedString(agentOwnedColumn)).append("\n");
     sb.append("    dynamicContactQueueingSettings: ").append(toIndentedString(dynamicContactQueueingSettings)).append("\n");
     sb.append("    skillColumns: ").append(toIndentedString(skillColumns)).append("\n");
     sb.append("    maxCallsPerAgent: ").append(toIndentedString(maxCallsPerAgent)).append("\n");

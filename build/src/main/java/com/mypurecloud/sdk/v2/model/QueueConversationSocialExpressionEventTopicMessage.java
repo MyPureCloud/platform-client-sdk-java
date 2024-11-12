@@ -286,7 +286,8 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     KAKAO("kakao"),
     WEBMESSAGING("webmessaging"),
     OPEN("open"),
-    INSTAGRAM("instagram");
+    INSTAGRAM("instagram"),
+    APPLE("apple");
 
     private String value;
 

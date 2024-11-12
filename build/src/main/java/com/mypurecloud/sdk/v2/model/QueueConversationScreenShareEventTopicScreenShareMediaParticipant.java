@@ -285,6 +285,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
   private Integer alertingTimeoutMs = null;
   private String provider = null;
   private QueueConversationScreenShareEventTopicUriReference externalContact = null;
+  private String externalContactInitialDivisionId = null;
   private QueueConversationScreenShareEventTopicUriReference externalOrganization = null;
   private QueueConversationScreenShareEventTopicWrapup wrapup = null;
   private QueueConversationScreenShareEventTopicConversationRoutingData conversationRoutingData = null;
@@ -793,6 +794,23 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
 
   /**
    **/
+  public QueueConversationScreenShareEventTopicScreenShareMediaParticipant externalContactInitialDivisionId(String externalContactInitialDivisionId) {
+    this.externalContactInitialDivisionId = externalContactInitialDivisionId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("externalContactInitialDivisionId")
+  public String getExternalContactInitialDivisionId() {
+    return externalContactInitialDivisionId;
+  }
+  public void setExternalContactInitialDivisionId(String externalContactInitialDivisionId) {
+    this.externalContactInitialDivisionId = externalContactInitialDivisionId;
+  }
+
+
+  /**
+   **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant externalOrganization(QueueConversationScreenShareEventTopicUriReference externalOrganization) {
     this.externalOrganization = externalOrganization;
     return this;
@@ -1099,6 +1117,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
             Objects.equals(this.alertingTimeoutMs, queueConversationScreenShareEventTopicScreenShareMediaParticipant.alertingTimeoutMs) &&
             Objects.equals(this.provider, queueConversationScreenShareEventTopicScreenShareMediaParticipant.provider) &&
             Objects.equals(this.externalContact, queueConversationScreenShareEventTopicScreenShareMediaParticipant.externalContact) &&
+            Objects.equals(this.externalContactInitialDivisionId, queueConversationScreenShareEventTopicScreenShareMediaParticipant.externalContactInitialDivisionId) &&
             Objects.equals(this.externalOrganization, queueConversationScreenShareEventTopicScreenShareMediaParticipant.externalOrganization) &&
             Objects.equals(this.wrapup, queueConversationScreenShareEventTopicScreenShareMediaParticipant.wrapup) &&
             Objects.equals(this.conversationRoutingData, queueConversationScreenShareEventTopicScreenShareMediaParticipant.conversationRoutingData) &&
@@ -1119,7 +1138,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, context, peerCount, sharing);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, context, peerCount, sharing);
   }
 
   @Override
@@ -1153,6 +1172,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     sb.append("    alertingTimeoutMs: ").append(toIndentedString(alertingTimeoutMs)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
+    sb.append("    externalContactInitialDivisionId: ").append(toIndentedString(externalContactInitialDivisionId)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");

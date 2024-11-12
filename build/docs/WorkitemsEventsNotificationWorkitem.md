@@ -38,6 +38,7 @@
 | **wrapup** | [**WorkitemsEventsNotificationWrapup**](WorkitemsEventsNotificationWrapup) |  |  [optional] |
 | **sessions** | [**List&lt;WorkitemsEventsNotificationSession&gt;**](WorkitemsEventsNotificationSession) |  |  [optional] |
 | **skillIds** | **List&lt;String&gt;** |  |  [optional] |
+| **scriptId** | **String** |  |  [optional] |
 
 
 ## Enum: StatusCategoryEnum
@@ -101,4 +102,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_

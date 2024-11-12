@@ -202,6 +202,7 @@
 | **dashboardType** | [**DashboardTypeEnum**](#Enum--DashboardTypeEnum) | The type of dashboard being filtered |  [optional] |
 | **dashboardAccessFilter** | [**DashboardAccessFilterEnum**](#Enum--DashboardAccessFilterEnum) | The type of dashboard access being filtered |  [optional] |
 | **transcriptDurationMilliseconds** | [**List&lt;NumericRange&gt;**](NumericRange) | The transcript durations in milliseconds used to filter the view |  [optional] |
+| **workitemsStatuses** | [**List&lt;WorkitemStatusFilter&gt;**](WorkitemStatusFilter) | The list of workitem status with worktype |  [optional] |
 | **socialCountries** | **List&lt;String&gt;** | List of countries for social filtering |  [optional] |
 | **socialLanguages** | **List&lt;String&gt;** | List of languages for social filtering |  [optional] |
 | **socialChannels** | [**List<SocialChannelsEnum>**](#Enum--SocialChannelsEnum) | List of channels for social filtering |  [optional] |
@@ -214,6 +215,7 @@
 | **socialPostEscalated** | **Boolean** | Filter to indicate if the post is escalated |  [optional] |
 | **socialClassifications** | [**List<SocialClassificationsEnum>**](#Enum--SocialClassificationsEnum) | Indicates if a social message was public or private |  [optional] |
 | **filterUsersByManagerIds** | **List&lt;String&gt;** | The manager ids used to fetch associated users for the view |  [optional] |
+| **slideshowIds** | **List&lt;String&gt;** | List of Dashboard slideshowIds to be filtered |  [optional] |
 
 
 ## Enum: MediaTypesEnum
@@ -643,4 +645,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_

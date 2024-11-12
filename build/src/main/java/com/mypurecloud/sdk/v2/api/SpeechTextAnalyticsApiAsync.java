@@ -2527,7 +2527,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Translate all communication(s) for an interaction.
+   * Translate a single interaction recording (or an email conversation)
    * 
    * getSpeechandtextanalyticsTranslationsLanguageConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
@@ -2562,7 +2562,7 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
-   * Translate all communication(s) for an interaction.
+   * Translate a single interaction recording (or an email conversation)
    * 
    * getSpeechandtextanalyticsTranslationsLanguageConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object

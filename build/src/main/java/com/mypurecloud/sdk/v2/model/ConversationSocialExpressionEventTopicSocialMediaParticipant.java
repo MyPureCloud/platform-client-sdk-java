@@ -285,6 +285,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
   private Integer alertingTimeoutMs = null;
   private String provider = null;
   private ConversationSocialExpressionEventTopicUriReference externalContact = null;
+  private String externalContactInitialDivisionId = null;
   private ConversationSocialExpressionEventTopicUriReference externalOrganization = null;
   private ConversationSocialExpressionEventTopicWrapup wrapup = null;
   private ConversationSocialExpressionEventTopicConversationRoutingData conversationRoutingData = null;
@@ -794,6 +795,23 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
 
   /**
    **/
+  public ConversationSocialExpressionEventTopicSocialMediaParticipant externalContactInitialDivisionId(String externalContactInitialDivisionId) {
+    this.externalContactInitialDivisionId = externalContactInitialDivisionId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("externalContactInitialDivisionId")
+  public String getExternalContactInitialDivisionId() {
+    return externalContactInitialDivisionId;
+  }
+  public void setExternalContactInitialDivisionId(String externalContactInitialDivisionId) {
+    this.externalContactInitialDivisionId = externalContactInitialDivisionId;
+  }
+
+
+  /**
+   **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant externalOrganization(ConversationSocialExpressionEventTopicUriReference externalOrganization) {
     this.externalOrganization = externalOrganization;
     return this;
@@ -1117,6 +1135,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
             Objects.equals(this.alertingTimeoutMs, conversationSocialExpressionEventTopicSocialMediaParticipant.alertingTimeoutMs) &&
             Objects.equals(this.provider, conversationSocialExpressionEventTopicSocialMediaParticipant.provider) &&
             Objects.equals(this.externalContact, conversationSocialExpressionEventTopicSocialMediaParticipant.externalContact) &&
+            Objects.equals(this.externalContactInitialDivisionId, conversationSocialExpressionEventTopicSocialMediaParticipant.externalContactInitialDivisionId) &&
             Objects.equals(this.externalOrganization, conversationSocialExpressionEventTopicSocialMediaParticipant.externalOrganization) &&
             Objects.equals(this.wrapup, conversationSocialExpressionEventTopicSocialMediaParticipant.wrapup) &&
             Objects.equals(this.conversationRoutingData, conversationSocialExpressionEventTopicSocialMediaParticipant.conversationRoutingData) &&
@@ -1138,7 +1157,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, socialMediaId, socialMediaHub, socialUserName, previewText);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, socialMediaId, socialMediaHub, socialUserName, previewText);
   }
 
   @Override
@@ -1172,6 +1191,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     sb.append("    alertingTimeoutMs: ").append(toIndentedString(alertingTimeoutMs)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
+    sb.append("    externalContactInitialDivisionId: ").append(toIndentedString(externalContactInitialDivisionId)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");

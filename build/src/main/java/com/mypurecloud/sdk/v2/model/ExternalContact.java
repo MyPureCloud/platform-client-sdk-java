@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.ContactAddress;
 import com.mypurecloud.sdk.v2.model.ContactAddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.DataSchema;
 import com.mypurecloud.sdk.v2.model.ExternalDataSource;
+import com.mypurecloud.sdk.v2.model.ExternalId;
 import com.mypurecloud.sdk.v2.model.ExternalOrganization;
 import com.mypurecloud.sdk.v2.model.FacebookId;
 import com.mypurecloud.sdk.v2.model.LineId;
@@ -56,6 +57,7 @@ public class ExternalContact  implements Serializable {
   private LineId lineId = null;
   private WhatsAppId whatsAppId = null;
   private FacebookId facebookId = null;
+  private List<ExternalId> externalIds = new ArrayList<ExternalId>();
   private Date modifyDate = null;
   private Date createDate = null;
   private ExternalOrganization externalOrganization = null;
@@ -429,6 +431,24 @@ public class ExternalContact  implements Serializable {
 
 
   /**
+   * A list of external identifiers that identify this contact in an external system
+   **/
+  public ExternalContact externalIds(List<ExternalId> externalIds) {
+    this.externalIds = externalIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of external identifiers that identify this contact in an external system")
+  @JsonProperty("externalIds")
+  public List<ExternalId> getExternalIds() {
+    return externalIds;
+  }
+  public void setExternalIds(List<ExternalId> externalIds) {
+    this.externalIds = externalIds;
+  }
+
+
+  /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public ExternalContact modifyDate(Date modifyDate) {
@@ -622,6 +642,7 @@ public class ExternalContact  implements Serializable {
             Objects.equals(this.lineId, externalContact.lineId) &&
             Objects.equals(this.whatsAppId, externalContact.whatsAppId) &&
             Objects.equals(this.facebookId, externalContact.facebookId) &&
+            Objects.equals(this.externalIds, externalContact.externalIds) &&
             Objects.equals(this.modifyDate, externalContact.modifyDate) &&
             Objects.equals(this.createDate, externalContact.createDate) &&
             Objects.equals(this.externalOrganization, externalContact.externalOrganization) &&
@@ -639,7 +660,7 @@ public class ExternalContact  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, twitterId, lineId, whatsAppId, facebookId, modifyDate, createDate, externalOrganization, surveyOptOut, externalSystemUrl, schema, customFields, externalDataSources, type, canonicalContact, mergeSet, mergeOperation, selfUri);
+    return Objects.hash(id, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, twitterId, lineId, whatsAppId, facebookId, externalIds, modifyDate, createDate, externalOrganization, surveyOptOut, externalSystemUrl, schema, customFields, externalDataSources, type, canonicalContact, mergeSet, mergeOperation, selfUri);
   }
 
   @Override
@@ -665,6 +686,7 @@ public class ExternalContact  implements Serializable {
     sb.append("    lineId: ").append(toIndentedString(lineId)).append("\n");
     sb.append("    whatsAppId: ").append(toIndentedString(whatsAppId)).append("\n");
     sb.append("    facebookId: ").append(toIndentedString(facebookId)).append("\n");
+    sb.append("    externalIds: ").append(toIndentedString(externalIds)).append("\n");
     sb.append("    modifyDate: ").append(toIndentedString(modifyDate)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");

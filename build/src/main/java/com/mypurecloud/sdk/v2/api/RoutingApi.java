@@ -1947,7 +1947,7 @@ public class RoutingApi {
   }
 
   /**
-   * Remove routing language from user
+   * Remove a routing language from a user
    * 
    * @param userId User ID (required)
    * @param languageId languageId (required)
@@ -1959,7 +1959,7 @@ public class RoutingApi {
   }
 
   /**
-   * Remove routing language from user
+   * Remove a routing language from a user
    * 
    * @param userId User ID (required)
    * @param languageId languageId (required)
@@ -1979,7 +1979,7 @@ public class RoutingApi {
   }
 
   /**
-   * Remove routing language from user
+   * Remove a routing language from a user
    * 
    * @param request The request object
    * @throws ApiException if the request fails on the server
@@ -1997,7 +1997,7 @@ public class RoutingApi {
   }
 
   /**
-   * Remove routing language from user
+   * Remove a routing language from a user
    * 
    * @param request The request object
    * @return the response
@@ -2026,7 +2026,7 @@ public class RoutingApi {
   }
 
   /**
-   * Remove routing skill from user
+   * Remove a routing skill from a user
    * 
    * @param userId User ID (required)
    * @param skillId skillId (required)
@@ -2038,7 +2038,7 @@ public class RoutingApi {
   }
 
   /**
-   * Remove routing skill from user
+   * Remove a routing skill from a user
    * 
    * @param userId User ID (required)
    * @param skillId skillId (required)
@@ -2058,7 +2058,7 @@ public class RoutingApi {
   }
 
   /**
-   * Remove routing skill from user
+   * Remove a routing skill from a user
    * 
    * @param request The request object
    * @throws ApiException if the request fails on the server
@@ -2076,7 +2076,7 @@ public class RoutingApi {
   }
 
   /**
-   * Remove routing skill from user
+   * Remove a routing skill from a user
    * 
    * @param request The request object
    * @return the response
@@ -7651,7 +7651,7 @@ public class RoutingApi {
   }
 
   /**
-   * List routing language for user
+   * List routing languages assigned to a user
    * 
    * @param userId User ID (required)
    * @param pageSize Page size (optional, default to 25)
@@ -7666,7 +7666,7 @@ public class RoutingApi {
   }
 
   /**
-   * List routing language for user
+   * List routing languages assigned to a user
    * 
    * @param userId User ID (required)
    * @param pageSize Page size (optional, default to 25)
@@ -7693,7 +7693,7 @@ public class RoutingApi {
   }
 
   /**
-   * List routing language for user
+   * List routing languages assigned to a user
    * 
    * @param request The request object
    * @return UserLanguageEntityListing
@@ -7712,7 +7712,7 @@ public class RoutingApi {
   }
 
   /**
-   * List routing language for user
+   * List routing languages assigned to a user
    * 
    * @param request The request object
    * @return the response
@@ -7741,7 +7741,7 @@ public class RoutingApi {
   }
 
   /**
-   * List routing skills for user
+   * List routing skills assigned to a user
    * 
    * @param userId User ID (required)
    * @param pageSize Page size (optional, default to 25)
@@ -7756,7 +7756,7 @@ public class RoutingApi {
   }
 
   /**
-   * List routing skills for user
+   * List routing skills assigned to a user
    * 
    * @param userId User ID (required)
    * @param pageSize Page size (optional, default to 25)
@@ -7783,7 +7783,7 @@ public class RoutingApi {
   }
 
   /**
-   * List routing skills for user
+   * List routing skills assigned to a user
    * 
    * @param request The request object
    * @return UserSkillEntityListing
@@ -7802,7 +7802,7 @@ public class RoutingApi {
   }
 
   /**
-   * List routing skills for user
+   * List routing skills assigned to a user
    * 
    * @param request The request object
    * @return the response
@@ -8994,7 +8994,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update routing language proficiency or state.
+   * Update an assigned routing language's proficiency
    * 
    * @param userId User ID (required)
    * @param languageId languageId (required)
@@ -9008,7 +9008,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update routing language proficiency or state.
+   * Update an assigned routing language's proficiency
    * 
    * @param userId User ID (required)
    * @param languageId languageId (required)
@@ -9032,7 +9032,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update routing language proficiency or state.
+   * Update an assigned routing language's proficiency
    * 
    * @param request The request object
    * @return UserRoutingLanguage
@@ -9051,7 +9051,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update routing language proficiency or state.
+   * Update an assigned routing language's proficiency
    * 
    * @param request The request object
    * @return the response
@@ -9080,7 +9080,7 @@ public class RoutingApi {
   }
 
   /**
-   * Add bulk routing language to user. Max limit 50 languages
+   * Assign multiple routing languages to a user. Max 50 routing languages in request body
    * 
    * @param userId User ID (required)
    * @param body Language (required)
@@ -9093,7 +9093,7 @@ public class RoutingApi {
   }
 
   /**
-   * Add bulk routing language to user. Max limit 50 languages
+   * Assign multiple routing languages to a user. Max 50 routing languages in request body
    * 
    * @param userId User ID (required)
    * @param body Language (required)
@@ -9114,7 +9114,7 @@ public class RoutingApi {
   }
 
   /**
-   * Add bulk routing language to user. Max limit 50 languages
+   * Assign multiple routing languages to a user. Max 50 routing languages in request body
    * 
    * @param request The request object
    * @return UserLanguageEntityListing
@@ -9133,7 +9133,7 @@ public class RoutingApi {
   }
 
   /**
-   * Add bulk routing language to user. Max limit 50 languages
+   * Assign multiple routing languages to a user. Max 50 routing languages in request body
    * 
    * @param request The request object
    * @return the response
@@ -9162,7 +9162,7 @@ public class RoutingApi {
   }
 
   /**
-   * Bulk add routing skills to user
+   * Assign multiple routing skills to a user
    * 
    * @param userId User ID (required)
    * @param body Skill (required)
@@ -9175,7 +9175,7 @@ public class RoutingApi {
   }
 
   /**
-   * Bulk add routing skills to user
+   * Assign multiple routing skills to a user
    * 
    * @param userId User ID (required)
    * @param body Skill (required)
@@ -9196,7 +9196,7 @@ public class RoutingApi {
   }
 
   /**
-   * Bulk add routing skills to user
+   * Assign multiple routing skills to a user
    * 
    * @param request The request object
    * @return UserSkillEntityListing
@@ -9215,7 +9215,7 @@ public class RoutingApi {
   }
 
   /**
-   * Bulk add routing skills to user
+   * Assign multiple routing skills to a user
    * 
    * @param request The request object
    * @return the response
@@ -11237,7 +11237,7 @@ public class RoutingApi {
   }
 
   /**
-   * Add routing language to user
+   * Assign a routing language to a user
    * 
    * @param userId User ID (required)
    * @param body Language (required)
@@ -11250,7 +11250,7 @@ public class RoutingApi {
   }
 
   /**
-   * Add routing language to user
+   * Assign a routing language to a user
    * 
    * @param userId User ID (required)
    * @param body Language (required)
@@ -11271,7 +11271,7 @@ public class RoutingApi {
   }
 
   /**
-   * Add routing language to user
+   * Assign a routing language to a user
    * 
    * @param request The request object
    * @return UserRoutingLanguage
@@ -11290,7 +11290,7 @@ public class RoutingApi {
   }
 
   /**
-   * Add routing language to user
+   * Assign a routing language to a user
    * 
    * @param request The request object
    * @return the response
@@ -11319,7 +11319,7 @@ public class RoutingApi {
   }
 
   /**
-   * Add routing skill to user
+   * Assign a routing skill to a user
    * 
    * @param userId User ID (required)
    * @param body Skill (required)
@@ -11332,7 +11332,7 @@ public class RoutingApi {
   }
 
   /**
-   * Add routing skill to user
+   * Assign a routing skill to a user
    * 
    * @param userId User ID (required)
    * @param body Skill (required)
@@ -11353,7 +11353,7 @@ public class RoutingApi {
   }
 
   /**
-   * Add routing skill to user
+   * Assign a routing skill to a user
    * 
    * @param request The request object
    * @return UserRoutingSkill
@@ -11372,7 +11372,7 @@ public class RoutingApi {
   }
 
   /**
-   * Add routing skill to user
+   * Assign a routing skill to a user
    * 
    * @param request The request object
    * @return the response
@@ -12451,7 +12451,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update routing skill proficiency or state.
+   * Update an assigned routing skill's proficiency
    * 
    * @param userId User ID (required)
    * @param skillId skillId (required)
@@ -12465,7 +12465,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update routing skill proficiency or state.
+   * Update an assigned routing skill's proficiency
    * 
    * @param userId User ID (required)
    * @param skillId skillId (required)
@@ -12489,7 +12489,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update routing skill proficiency or state.
+   * Update an assigned routing skill's proficiency
    * 
    * @param request The request object
    * @return UserRoutingSkill
@@ -12508,7 +12508,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update routing skill proficiency or state.
+   * Update an assigned routing skill's proficiency
    * 
    * @param request The request object
    * @return the response
@@ -12537,7 +12537,7 @@ public class RoutingApi {
   }
 
   /**
-   * Replace all routing skills assigned to a user
+   * Assign multiple routing skills to a user, replacing any current assignments
    * 
    * @param userId User ID (required)
    * @param body Skill (required)
@@ -12550,7 +12550,7 @@ public class RoutingApi {
   }
 
   /**
-   * Replace all routing skills assigned to a user
+   * Assign multiple routing skills to a user, replacing any current assignments
    * 
    * @param userId User ID (required)
    * @param body Skill (required)
@@ -12571,7 +12571,7 @@ public class RoutingApi {
   }
 
   /**
-   * Replace all routing skills assigned to a user
+   * Assign multiple routing skills to a user, replacing any current assignments
    * 
    * @param request The request object
    * @return UserSkillEntityListing
@@ -12590,7 +12590,7 @@ public class RoutingApi {
   }
 
   /**
-   * Replace all routing skills assigned to a user
+   * Assign multiple routing skills to a user, replacing any current assignments
    * 
    * @param request The request object
    * @return the response

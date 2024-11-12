@@ -2676,13 +2676,13 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Translate all communication(s) for an interaction.
+   * Translate a single interaction recording (or an email conversation)
    * 
    * getSpeechandtextanalyticsTranslationsLanguageConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param languageId Target translation language (required)
    * @param conversationId Conversation id (required)
-   * @param communicationId Communication id associated with the conversation (optional)
-   * @param recordingId Recording id associated with the communication (optional)
+   * @param communicationId Communication id associated with the conversation. Please provide a valid communicationId when requesting non-email interactions. (optional)
+   * @param recordingId Recording id associated with the communication. Please provide a valid recordingId when requesting voice interactions. (optional)
    * @return CommunicationTranslationList
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2692,13 +2692,13 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Translate all communication(s) for an interaction.
+   * Translate a single interaction recording (or an email conversation)
    * 
    * getSpeechandtextanalyticsTranslationsLanguageConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param languageId Target translation language (required)
    * @param conversationId Conversation id (required)
-   * @param communicationId Communication id associated with the conversation (optional)
-   * @param recordingId Recording id associated with the communication (optional)
+   * @param communicationId Communication id associated with the conversation. Please provide a valid communicationId when requesting non-email interactions. (optional)
+   * @param recordingId Recording id associated with the communication. Please provide a valid recordingId when requesting voice interactions. (optional)
    * @return CommunicationTranslationList
    * @throws IOException if the request fails to be processed
    */
@@ -2720,7 +2720,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Translate all communication(s) for an interaction.
+   * Translate a single interaction recording (or an email conversation)
    * 
    * getSpeechandtextanalyticsTranslationsLanguageConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
@@ -2740,7 +2740,7 @@ public class SpeechTextAnalyticsApi {
   }
 
   /**
-   * Translate all communication(s) for an interaction.
+   * Translate a single interaction recording (or an email conversation)
    * 
    * getSpeechandtextanalyticsTranslationsLanguageConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object

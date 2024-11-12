@@ -245,6 +245,7 @@ public class Session  implements Serializable {
   }
   private LastAcdOutcomeEnum lastAcdOutcome = null;
   private Boolean authenticated = null;
+  private String lastScreen = null;
   private String selfUri = null;
   private Date createdDate = null;
   private Date endedDate = null;
@@ -938,6 +939,24 @@ public class Session  implements Serializable {
   }
 
 
+  /**
+   * The app screen name where the customer's last app interaction occurred.
+   **/
+  public Session lastScreen(String lastScreen) {
+    this.lastScreen = lastScreen;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The app screen name where the customer's last app interaction occurred.")
+  @JsonProperty("lastScreen")
+  public String getLastScreen() {
+    return lastScreen;
+  }
+  public void setLastScreen(String lastScreen) {
+    this.lastScreen = lastScreen;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -1079,6 +1098,7 @@ public class Session  implements Serializable {
             Objects.equals(this.lastUserDisconnectType, session.lastUserDisconnectType) &&
             Objects.equals(this.lastAcdOutcome, session.lastAcdOutcome) &&
             Objects.equals(this.authenticated, session.authenticated) &&
+            Objects.equals(this.lastScreen, session.lastScreen) &&
             Objects.equals(this.selfUri, session.selfUri) &&
             Objects.equals(this.createdDate, session.createdDate) &&
             Objects.equals(this.endedDate, session.endedDate) &&
@@ -1090,7 +1110,7 @@ public class Session  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, customerId, customerIdType, type, externalId, externalUrl, shortId, outcomeAchievements, segmentAssignments, attributes, attributeLists, browser, device, geolocation, ipAddress, ipOrganization, lastPage, mktCampaign, referrer, app, sdkLibrary, networkConnectivity, searchTerms, userAgentString, durationInSeconds, eventCount, pageviewCount, screenviewCount, lastEvent, lastConnectedQueue, lastConnectedUser, lastUserDisposition, conversationChannels, originatingDirection, conversationSubject, lastUserDisconnectType, lastAcdOutcome, authenticated, selfUri, createdDate, endedDate, externalContact, awayDate, idleDate, conversation);
+    return Objects.hash(id, customerId, customerIdType, type, externalId, externalUrl, shortId, outcomeAchievements, segmentAssignments, attributes, attributeLists, browser, device, geolocation, ipAddress, ipOrganization, lastPage, mktCampaign, referrer, app, sdkLibrary, networkConnectivity, searchTerms, userAgentString, durationInSeconds, eventCount, pageviewCount, screenviewCount, lastEvent, lastConnectedQueue, lastConnectedUser, lastUserDisposition, conversationChannels, originatingDirection, conversationSubject, lastUserDisconnectType, lastAcdOutcome, authenticated, lastScreen, selfUri, createdDate, endedDate, externalContact, awayDate, idleDate, conversation);
   }
 
   @Override
@@ -1136,6 +1156,7 @@ public class Session  implements Serializable {
     sb.append("    lastUserDisconnectType: ").append(toIndentedString(lastUserDisconnectType)).append("\n");
     sb.append("    lastAcdOutcome: ").append(toIndentedString(lastAcdOutcome)).append("\n");
     sb.append("    authenticated: ").append(toIndentedString(authenticated)).append("\n");
+    sb.append("    lastScreen: ").append(toIndentedString(lastScreen)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     sb.append("    endedDate: ").append(toIndentedString(endedDate)).append("\n");

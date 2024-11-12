@@ -40,6 +40,7 @@
 | KNOWLEDGE | &quot;Knowledge&quot; | 
 | COACHING | &quot;Coaching&quot; | 
 | LEARNING | &quot;Learning&quot; | 
+| GAMIFICATION | &quot;Gamification&quot; | 
 | EMPLOYEEENGAGEMENT | &quot;EmployeeEngagement&quot; | 
 | WORKFORCEMANAGEMENT | &quot;WorkforceManagement&quot; | 
 | TRIGGERS | &quot;Triggers&quot; | 
@@ -49,7 +50,6 @@
 | TELEPHONY | &quot;Telephony&quot; | 
 | OUTBOUND | &quot;Outbound&quot; | 
 | ROUTING | &quot;Routing&quot; | 
-| GAMIFICATION | &quot;Gamification&quot; | 
 | INTEGRATIONS | &quot;Integrations&quot; | 
 | WEBHOOKS | &quot;Webhooks&quot; | 
 | ANALYTICSREPORTING | &quot;AnalyticsReporting&quot; | 
@@ -138,6 +138,8 @@
 | UNASSIGN | &quot;Unassign&quot; | 
 | RESET | &quot;Reset&quot; | 
 | RESCHEDULE | &quot;Reschedule&quot; | 
+| COMPLETE | &quot;Complete&quot; | 
+| CANCEL | &quot;Cancel&quot; | 
 | UNPUBLISH | &quot;Unpublish&quot; | 
 | PURGE | &quot;Purge&quot; | 
 | PROCESSED | &quot;Processed&quot; | 
@@ -189,7 +191,6 @@
 | APPROVE | &quot;Approve&quot; | 
 | REJECT | &quot;Reject&quot; | 
 | REVERSE | &quot;Reverse&quot; | 
-| CANCEL | &quot;Cancel&quot; | 
 | HARDDELETE | &quot;HardDelete&quot; | 
 | SOFTDELETE | &quot;SoftDelete&quot; | 
 | SUBMIT | &quot;Submit&quot; | 
@@ -278,6 +279,7 @@
 | MODULE | &quot;Module&quot; | 
 | RULE | &quot;Rule&quot; | 
 | ASSIGNMENT | &quot;Assignment&quot; | 
+| CONTEST | &quot;Contest&quot; | 
 | RECOGNITION | &quot;Recognition&quot; | 
 | ACTIVITYCODE | &quot;ActivityCode&quot; | 
 | ACTIVITYPLAN | &quot;ActivityPlan&quot; | 
@@ -400,6 +402,7 @@
 | EXTERNALORGANIZATIONSCHEMA | &quot;ExternalOrganizationSchema&quot; | 
 | WORKBIN | &quot;Workbin&quot; | 
 | WORKTYPE | &quot;Worktype&quot; | 
+| BULKJOB | &quot;BulkJob&quot; | 
 | CREDENTIAL | &quot;Credential&quot; | 
 | NUMBERORDER | &quot;NumberOrder&quot; | 
 | ENTERPRISEAGREEMENT | &quot;EnterpriseAgreement&quot; | 
@@ -426,4 +429,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_

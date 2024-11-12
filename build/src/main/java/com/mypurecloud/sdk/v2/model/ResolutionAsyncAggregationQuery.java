@@ -143,7 +143,7 @@ public class ResolutionAsyncAggregationQuery  implements Serializable {
     }
   }
   /**
-   * Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.
+   * Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event and choosing \"wrapUpDate\" uses the date when conversation is ended
    */
  @JsonDeserialize(using = AlternateTimeDimensionEnumDeserializer.class)
   public enum AlternateTimeDimensionEnum {
@@ -325,14 +325,14 @@ public class ResolutionAsyncAggregationQuery  implements Serializable {
 
 
   /**
-   * Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.
+   * Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event and choosing \"wrapUpDate\" uses the date when conversation is ended
    **/
   public ResolutionAsyncAggregationQuery alternateTimeDimension(AlternateTimeDimensionEnum alternateTimeDimension) {
     this.alternateTimeDimension = alternateTimeDimension;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.")
+  @ApiModelProperty(example = "null", value = "Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event and choosing \"wrapUpDate\" uses the date when conversation is ended")
   @JsonProperty("alternateTimeDimension")
   public AlternateTimeDimensionEnum getAlternateTimeDimension() {
     return alternateTimeDimension;

@@ -45,6 +45,8 @@ import com.mypurecloud.sdk.v2.model.JourneyViewJob;
 import com.mypurecloud.sdk.v2.model.JourneyViewJobListing;
 import com.mypurecloud.sdk.v2.model.JourneyViewListing;
 import com.mypurecloud.sdk.v2.model.JourneyViewResult;
+import com.mypurecloud.sdk.v2.model.JourneyViewSchedule;
+import com.mypurecloud.sdk.v2.model.JourneyViewScheduleListing;
 import com.mypurecloud.sdk.v2.model.Label;
 import com.mypurecloud.sdk.v2.model.Outcome;
 import com.mypurecloud.sdk.v2.model.OutcomeAttributionAsyncResponse;
@@ -75,6 +77,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteJourneyOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneyOutcomesPredictorRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneySegmentRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteJourneyViewRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteJourneyViewSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsJourneysAggregatesJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsJourneysAggregatesJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactJourneySessionsRequest;
@@ -99,6 +102,7 @@ import com.mypurecloud.sdk.v2.api.request.GetJourneySessionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneySessionEventsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneySessionOutcomescoresRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyViewSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewVersionChartRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewVersionChartVersionRequest;
@@ -110,6 +114,7 @@ import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsEventdefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsEventdefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActionmapRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontargetRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontemplateRequest;
@@ -129,10 +134,12 @@ import com.mypurecloud.sdk.v2.api.request.PostJourneyOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyOutcomesAttributionsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyOutcomesPredictorsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneySegmentsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostJourneyViewSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyViewVersionJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyViewVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyViewsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostJourneyViewsEncodingsValidateRequest;
+import com.mypurecloud.sdk.v2.api.request.PutJourneyViewSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutJourneyViewVersionRequest;
 
 import java.io.IOException;
@@ -602,6 +609,84 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete the Schedule of a JourneyView
+   * used for long descriptions
+   * @param viewId Journey View Id (required)
+   * @return JourneyViewSchedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyViewSchedule deleteJourneyViewSchedules(String viewId) throws IOException, ApiException {
+    return  deleteJourneyViewSchedules(createDeleteJourneyViewSchedulesRequest(viewId));
+  }
+
+  /**
+   * Delete the Schedule of a JourneyView
+   * used for long descriptions
+   * @param viewId Journey View Id (required)
+   * @return JourneyViewSchedule
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyViewSchedule> deleteJourneyViewSchedulesWithHttpInfo(String viewId) throws IOException {
+    return deleteJourneyViewSchedules(createDeleteJourneyViewSchedulesRequest(viewId).withHttpInfo());
+  }
+
+  private DeleteJourneyViewSchedulesRequest createDeleteJourneyViewSchedulesRequest(String viewId) {
+    return DeleteJourneyViewSchedulesRequest.builder()
+            .withViewId(viewId)
+
+            .build();
+  }
+
+  /**
+   * Delete the Schedule of a JourneyView
+   * used for long descriptions
+   * @param request The request object
+   * @return JourneyViewSchedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyViewSchedule deleteJourneyViewSchedules(DeleteJourneyViewSchedulesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JourneyViewSchedule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneyViewSchedule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Delete the Schedule of a JourneyView
+   * used for long descriptions
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyViewSchedule> deleteJourneyViewSchedules(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JourneyViewSchedule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyViewSchedule> response = (ApiResponse<JourneyViewSchedule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyViewSchedule> response = (ApiResponse<JourneyViewSchedule>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2643,6 +2728,84 @@ public class JourneyApi {
   }
 
   /**
+   * Get the Schedule for a JourneyView
+   * used for long descriptions
+   * @param viewId Journey View Id (required)
+   * @return JourneyViewSchedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyViewSchedule getJourneyViewSchedules(String viewId) throws IOException, ApiException {
+    return  getJourneyViewSchedules(createGetJourneyViewSchedulesRequest(viewId));
+  }
+
+  /**
+   * Get the Schedule for a JourneyView
+   * used for long descriptions
+   * @param viewId Journey View Id (required)
+   * @return JourneyViewSchedule
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyViewSchedule> getJourneyViewSchedulesWithHttpInfo(String viewId) throws IOException {
+    return getJourneyViewSchedules(createGetJourneyViewSchedulesRequest(viewId).withHttpInfo());
+  }
+
+  private GetJourneyViewSchedulesRequest createGetJourneyViewSchedulesRequest(String viewId) {
+    return GetJourneyViewSchedulesRequest.builder()
+            .withViewId(viewId)
+
+            .build();
+  }
+
+  /**
+   * Get the Schedule for a JourneyView
+   * used for long descriptions
+   * @param request The request object
+   * @return JourneyViewSchedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyViewSchedule getJourneyViewSchedules(GetJourneyViewSchedulesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JourneyViewSchedule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneyViewSchedule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the Schedule for a JourneyView
+   * used for long descriptions
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyViewSchedule> getJourneyViewSchedules(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JourneyViewSchedule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyViewSchedule> response = (ApiResponse<JourneyViewSchedule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyViewSchedule> response = (ApiResponse<JourneyViewSchedule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a Journey View by ID and version
    * 
    * @param viewId viewId (required)
@@ -3576,6 +3739,88 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<JourneyViewJobListing> response = (ApiResponse<JourneyViewJobListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the journey schedules for an organization.
+   * 
+   * @param pageNumber The number of the page to return (optional, default to 1)
+   * @param pageSize Max number of entities to return (optional, default to 25)
+   * @return JourneyViewScheduleListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyViewScheduleListing getJourneyViewsSchedules(Integer pageNumber, Integer pageSize) throws IOException, ApiException {
+    return  getJourneyViewsSchedules(createGetJourneyViewsSchedulesRequest(pageNumber, pageSize));
+  }
+
+  /**
+   * Get the journey schedules for an organization.
+   * 
+   * @param pageNumber The number of the page to return (optional, default to 1)
+   * @param pageSize Max number of entities to return (optional, default to 25)
+   * @return JourneyViewScheduleListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyViewScheduleListing> getJourneyViewsSchedulesWithHttpInfo(Integer pageNumber, Integer pageSize) throws IOException {
+    return getJourneyViewsSchedules(createGetJourneyViewsSchedulesRequest(pageNumber, pageSize).withHttpInfo());
+  }
+
+  private GetJourneyViewsSchedulesRequest createGetJourneyViewsSchedulesRequest(Integer pageNumber, Integer pageSize) {
+    return GetJourneyViewsSchedulesRequest.builder()
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * Get the journey schedules for an organization.
+   * 
+   * @param request The request object
+   * @return JourneyViewScheduleListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyViewScheduleListing getJourneyViewsSchedules(GetJourneyViewsSchedulesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JourneyViewScheduleListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneyViewScheduleListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the journey schedules for an organization.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyViewScheduleListing> getJourneyViewsSchedules(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JourneyViewScheduleListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyViewScheduleListing> response = (ApiResponse<JourneyViewScheduleListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyViewScheduleListing> response = (ApiResponse<JourneyViewScheduleListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5112,6 +5357,88 @@ public class JourneyApi {
   }
 
   /**
+   * Add a new Schedule to a JourneyView
+   * 
+   * @param viewId Journey View Id (required)
+   * @param body journeyViewSchedule (required)
+   * @return JourneyViewSchedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyViewSchedule postJourneyViewSchedules(String viewId, JourneyViewSchedule body) throws IOException, ApiException {
+    return  postJourneyViewSchedules(createPostJourneyViewSchedulesRequest(viewId, body));
+  }
+
+  /**
+   * Add a new Schedule to a JourneyView
+   * 
+   * @param viewId Journey View Id (required)
+   * @param body journeyViewSchedule (required)
+   * @return JourneyViewSchedule
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyViewSchedule> postJourneyViewSchedulesWithHttpInfo(String viewId, JourneyViewSchedule body) throws IOException {
+    return postJourneyViewSchedules(createPostJourneyViewSchedulesRequest(viewId, body).withHttpInfo());
+  }
+
+  private PostJourneyViewSchedulesRequest createPostJourneyViewSchedulesRequest(String viewId, JourneyViewSchedule body) {
+    return PostJourneyViewSchedulesRequest.builder()
+            .withViewId(viewId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Add a new Schedule to a JourneyView
+   * 
+   * @param request The request object
+   * @return JourneyViewSchedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyViewSchedule postJourneyViewSchedules(PostJourneyViewSchedulesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JourneyViewSchedule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneyViewSchedule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Add a new Schedule to a JourneyView
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyViewSchedule> postJourneyViewSchedules(ApiRequest<JourneyViewSchedule> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JourneyViewSchedule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyViewSchedule> response = (ApiResponse<JourneyViewSchedule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyViewSchedule> response = (ApiResponse<JourneyViewSchedule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Submit a job request for a journey view version.
    * used for long descriptions
    * @param viewId Journey View Id (required)
@@ -5427,6 +5754,88 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EntityListing> response = (ApiResponse<EntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update the Schedule for a JourneyView
+   * used for long descriptions
+   * @param viewId Journey View Id (required)
+   * @param body journeyViewSchedule (required)
+   * @return JourneyViewSchedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyViewSchedule putJourneyViewSchedules(String viewId, JourneyViewSchedule body) throws IOException, ApiException {
+    return  putJourneyViewSchedules(createPutJourneyViewSchedulesRequest(viewId, body));
+  }
+
+  /**
+   * Update the Schedule for a JourneyView
+   * used for long descriptions
+   * @param viewId Journey View Id (required)
+   * @param body journeyViewSchedule (required)
+   * @return JourneyViewSchedule
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyViewSchedule> putJourneyViewSchedulesWithHttpInfo(String viewId, JourneyViewSchedule body) throws IOException {
+    return putJourneyViewSchedules(createPutJourneyViewSchedulesRequest(viewId, body).withHttpInfo());
+  }
+
+  private PutJourneyViewSchedulesRequest createPutJourneyViewSchedulesRequest(String viewId, JourneyViewSchedule body) {
+    return PutJourneyViewSchedulesRequest.builder()
+            .withViewId(viewId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the Schedule for a JourneyView
+   * used for long descriptions
+   * @param request The request object
+   * @return JourneyViewSchedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyViewSchedule putJourneyViewSchedules(PutJourneyViewSchedulesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JourneyViewSchedule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneyViewSchedule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the Schedule for a JourneyView
+   * used for long descriptions
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyViewSchedule> putJourneyViewSchedules(ApiRequest<JourneyViewSchedule> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JourneyViewSchedule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyViewSchedule> response = (ApiResponse<JourneyViewSchedule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyViewSchedule> response = (ApiResponse<JourneyViewSchedule>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

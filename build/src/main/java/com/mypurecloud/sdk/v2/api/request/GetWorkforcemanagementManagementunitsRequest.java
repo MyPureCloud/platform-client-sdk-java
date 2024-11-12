@@ -365,6 +365,7 @@ public class GetWorkforcemanagementManagementunitsRequest {
 		BUSCHEDULES("BuSchedules"),
 		SERVICEGOALTEMPLATES("ServiceGoalTemplates"),
 		PLANNINGGROUPS("PlanningGroups"),
+		LONGTERMSTAFFING("LongTermStaffing"),
 		SHIFTTRADING("ShiftTrading"),
 		SHORTTERMFORECASTS("ShortTermForecasts"),
 		BUSHORTTERMFORECASTS("BuShortTermForecasts"),

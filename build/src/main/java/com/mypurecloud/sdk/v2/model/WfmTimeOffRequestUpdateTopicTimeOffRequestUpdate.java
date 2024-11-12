@@ -138,6 +138,8 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
   private List<String> partialDayStartDateTimes = new ArrayList<String>();
   private List<String> fullDayManagementUnitDates = new ArrayList<String>();
   private Integer dailyDurationMinutes = null;
+  private List<Integer> durationMinutes = new ArrayList<Integer>();
+  private List<Integer> payableMinutes = new ArrayList<Integer>();
   private String notes = null;
   private String reviewedDate = null;
   private String reviewedBy = null;
@@ -336,6 +338,40 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
 
   /**
    **/
+  public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate durationMinutes(List<Integer> durationMinutes) {
+    this.durationMinutes = durationMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("durationMinutes")
+  public List<Integer> getDurationMinutes() {
+    return durationMinutes;
+  }
+  public void setDurationMinutes(List<Integer> durationMinutes) {
+    this.durationMinutes = durationMinutes;
+  }
+
+
+  /**
+   **/
+  public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate payableMinutes(List<Integer> payableMinutes) {
+    this.payableMinutes = payableMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("payableMinutes")
+  public List<Integer> getPayableMinutes() {
+    return payableMinutes;
+  }
+  public void setPayableMinutes(List<Integer> payableMinutes) {
+    this.payableMinutes = payableMinutes;
+  }
+
+
+  /**
+   **/
   public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate notes(String notes) {
     this.notes = notes;
     return this;
@@ -474,6 +510,8 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
             Objects.equals(this.partialDayStartDateTimes, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.partialDayStartDateTimes) &&
             Objects.equals(this.fullDayManagementUnitDates, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.fullDayManagementUnitDates) &&
             Objects.equals(this.dailyDurationMinutes, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.dailyDurationMinutes) &&
+            Objects.equals(this.durationMinutes, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.durationMinutes) &&
+            Objects.equals(this.payableMinutes, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.payableMinutes) &&
             Objects.equals(this.notes, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.notes) &&
             Objects.equals(this.reviewedDate, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.reviewedDate) &&
             Objects.equals(this.reviewedBy, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.reviewedBy) &&
@@ -485,7 +523,7 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, user, isFullDayRequest, markedAsRead, activityCodeId, paid, status, substatus, partialDayStartDateTimes, fullDayManagementUnitDates, dailyDurationMinutes, notes, reviewedDate, reviewedBy, submittedDate, submittedBy, modifiedDate, modifiedBy);
+    return Objects.hash(id, user, isFullDayRequest, markedAsRead, activityCodeId, paid, status, substatus, partialDayStartDateTimes, fullDayManagementUnitDates, dailyDurationMinutes, durationMinutes, payableMinutes, notes, reviewedDate, reviewedBy, submittedDate, submittedBy, modifiedDate, modifiedBy);
   }
 
   @Override
@@ -504,6 +542,8 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     sb.append("    partialDayStartDateTimes: ").append(toIndentedString(partialDayStartDateTimes)).append("\n");
     sb.append("    fullDayManagementUnitDates: ").append(toIndentedString(fullDayManagementUnitDates)).append("\n");
     sb.append("    dailyDurationMinutes: ").append(toIndentedString(dailyDurationMinutes)).append("\n");
+    sb.append("    durationMinutes: ").append(toIndentedString(durationMinutes)).append("\n");
+    sb.append("    payableMinutes: ").append(toIndentedString(payableMinutes)).append("\n");
     sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
     sb.append("    reviewedDate: ").append(toIndentedString(reviewedDate)).append("\n");
     sb.append("    reviewedBy: ").append(toIndentedString(reviewedBy)).append("\n");

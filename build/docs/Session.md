@@ -43,6 +43,7 @@
 | **lastUserDisconnectType** | [**LastUserDisconnectTypeEnum**](#Enum--LastUserDisconnectTypeEnum) | Disconnect reason for the last user connected to the conversation. |  [optional] |
 | **lastAcdOutcome** | [**LastAcdOutcomeEnum**](#Enum--LastAcdOutcomeEnum) | Last ACD outcome for the conversation. |  [optional] |
 | **authenticated** | **Boolean** | Indicates whether or not the session is authenticated. |  |
+| **lastScreen** | **String** | The app screen name where the customer's last app interaction occurred. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 | **createdDate** | [**Date**](Date) | Timestamp indicating when the session was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
 | **endedDate** | [**Date**](Date) | Timestamp indicating when the session was ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
@@ -101,4 +102,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_

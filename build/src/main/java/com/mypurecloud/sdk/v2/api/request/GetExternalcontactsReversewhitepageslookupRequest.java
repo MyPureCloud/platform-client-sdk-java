@@ -100,7 +100,8 @@ public class GetExternalcontactsReversewhitepageslookupRequest {
 
 	public enum expandValues { 
 		CONTACTS_EXTERNALORGANIZATION("contacts.externalOrganization"),
-		EXTERNALDATASOURCES("externalDataSources");
+		EXTERNALDATASOURCES("externalDataSources"),
+		DIVISION("division");
 
 		private String value;
 

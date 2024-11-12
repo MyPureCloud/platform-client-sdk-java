@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getLocationsSearch**](SearchApi#getLocationsSearch) | Search locations using the q64 value returned from a previous search |
 | [**getSearch**](SearchApi#getSearch) | Search using the q64 value returned from a previous search. |
 | [**getSearchSuggest**](SearchApi#getSearchSuggest) | Suggest resources using the q64 value returned from a previous suggest query. |
+| [**getTelephonyProvidersEdgesSitesSearch**](SearchApi#getTelephonyProvidersEdgesSitesSearch) | Search sites using the q64 value returned from a previous search |
 | [**getUsersSearch**](SearchApi#getUsersSearch) | Search users using the q64 value returned from a previous search |
 | [**getVoicemailSearch**](SearchApi#getVoicemailSearch) | Search voicemails using the q64 value returned from a previous search |
 | [**postAnalyticsConversationsTranscriptsQuery**](SearchApi#postAnalyticsConversationsTranscriptsQuery) | Search resources. |
@@ -24,6 +25,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postSearchSuggest**](SearchApi#postSearchSuggest) | Suggest resources. |
 | [**postSpeechandtextanalyticsTranscriptsSearch**](SearchApi#postSpeechandtextanalyticsTranscriptsSearch) | Search resources. |
 | [**postTeamsSearch**](SearchApi#postTeamsSearch) | Search resources. |
+| [**postTelephonyProvidersEdgesSitesSearch**](SearchApi#postTelephonyProvidersEdgesSitesSearch) | Search sites |
 | [**postUsersSearch**](SearchApi#postUsersSearch) | Search users |
 | [**postUsersSearchConversationTarget**](SearchApi#postUsersSearchConversationTarget) | Search users as conversation targets |
 | [**postUsersSearchQueuemembersManage**](SearchApi#postUsersSearchQueuemembersManage) | Search manage queue member |
@@ -366,6 +368,68 @@ try {
 ### Return type
 
 [**JsonNodeSearchResponse**](JsonNodeSearchResponse)
+
+
+# **getTelephonyProvidersEdgesSitesSearch**
+
+
+> [SitesSearchResponse](SitesSearchResponse) getTelephonyProvidersEdgesSitesSearch(q64, expand)
+
+Search sites using the q64 value returned from a previous search
+
+Wraps GET /api/v2/telephony/providers/edges/sites/search  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+* telephony:sites:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SearchApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SearchApi apiInstance = new SearchApi();
+String q64 = "q64_example"; // String | q64
+List<String> expand = Arrays.asList(null); // List<String> | expand
+try {
+    SitesSearchResponse result = apiInstance.getTelephonyProvidersEdgesSitesSearch(q64, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SearchApi#getTelephonyProvidersEdgesSitesSearch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **q64** | **String**| q64 | 
+| **expand** | [**List&lt;String&gt;**](String)| expand | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SitesSearchResponse**](SitesSearchResponse)
 
 
 # **getUsersSearch**
@@ -1167,6 +1231,66 @@ try {
 [**TeamsSearchResponse**](TeamsSearchResponse)
 
 
+# **postTelephonyProvidersEdgesSitesSearch**
+
+
+> [SitesSearchResponse](SitesSearchResponse) postTelephonyProvidersEdgesSitesSearch(body)
+
+Search sites
+
+Wraps POST /api/v2/telephony/providers/edges/sites/search  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+* telephony:sites:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SearchApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SearchApi apiInstance = new SearchApi();
+SiteSearchRequest body = new SiteSearchRequest(); // SiteSearchRequest | Search request options
+try {
+    SitesSearchResponse result = apiInstance.postTelephonyProvidersEdgesSitesSearch(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SearchApi#postTelephonyProvidersEdgesSitesSearch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**SiteSearchRequest**](SiteSearchRequest)| Search request options | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SitesSearchResponse**](SitesSearchResponse)
+
+
 # **postUsersSearch**
 
 
@@ -1466,4 +1590,4 @@ try {
 [**VoicemailsSearchResponse**](VoicemailsSearchResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_

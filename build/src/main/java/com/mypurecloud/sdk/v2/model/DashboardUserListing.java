@@ -29,11 +29,11 @@ public class DashboardUserListing  implements Serializable, PagedResource<Dashbo
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
+  private String previousUri = null;
   private String lastUri = null;
   private String firstUri = null;
   private String selfUri = null;
   private String nextUri = null;
-  private String previousUri = null;
   private Integer pageCount = null;
 
   
@@ -107,6 +107,23 @@ public class DashboardUserListing  implements Serializable, PagedResource<Dashbo
 
   /**
    **/
+  public DashboardUserListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
+  }
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
+  }
+
+
+  /**
+   **/
   public DashboardUserListing lastUri(String lastUri) {
     this.lastUri = lastUri;
     return this;
@@ -175,23 +192,6 @@ public class DashboardUserListing  implements Serializable, PagedResource<Dashbo
 
   /**
    **/
-  public DashboardUserListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
-  }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
-  }
-
-
-  /**
-   **/
   public DashboardUserListing pageCount(Integer pageCount) {
     this.pageCount = pageCount;
     return this;
@@ -221,17 +221,17 @@ public class DashboardUserListing  implements Serializable, PagedResource<Dashbo
             Objects.equals(this.pageSize, dashboardUserListing.pageSize) &&
             Objects.equals(this.pageNumber, dashboardUserListing.pageNumber) &&
             Objects.equals(this.total, dashboardUserListing.total) &&
+            Objects.equals(this.previousUri, dashboardUserListing.previousUri) &&
             Objects.equals(this.lastUri, dashboardUserListing.lastUri) &&
             Objects.equals(this.firstUri, dashboardUserListing.firstUri) &&
             Objects.equals(this.selfUri, dashboardUserListing.selfUri) &&
             Objects.equals(this.nextUri, dashboardUserListing.nextUri) &&
-            Objects.equals(this.previousUri, dashboardUserListing.previousUri) &&
             Objects.equals(this.pageCount, dashboardUserListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, lastUri, firstUri, selfUri, nextUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, previousUri, lastUri, firstUri, selfUri, nextUri, pageCount);
   }
 
   @Override
@@ -243,11 +243,11 @@ public class DashboardUserListing  implements Serializable, PagedResource<Dashbo
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

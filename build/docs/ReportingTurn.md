@@ -28,6 +28,7 @@
 | SUCCESSCONFIRMATIONYES | &quot;SuccessConfirmationYes&quot; | 
 | SUCCESSCONFIRMATIONNO | &quot;SuccessConfirmationNo&quot; | 
 | SKIPPEDCOLLECTION | &quot;SkippedCollection&quot; | 
+| PARTIALCOLLECTION | &quot;PartialCollection&quot; | 
 | NOMATCHCOLLECTION | &quot;NoMatchCollection&quot; | 
 | NOMATCHCONFIRMATION | &quot;NoMatchConfirmation&quot; | 
 | AGENTREQUESTEDBYUSER | &quot;AgentRequestedByUser&quot; | 
@@ -45,4 +46,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_

@@ -101,7 +101,8 @@ public class PostExternalcontactsIdentifierlookupRequest {
 	public enum expandValues { 
 		EXTERNALORGANIZATION("externalOrganization"),
 		IDENTIFIERS("identifiers"),
-		EXTERNALSOURCES("externalSources");
+		EXTERNALSOURCES("externalSources"),
+		DIVISION("division");
 
 		private String value;
 

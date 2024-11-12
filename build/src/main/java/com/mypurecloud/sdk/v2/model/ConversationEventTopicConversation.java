@@ -11,8 +11,9 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.ConversationEventTopicConversationDivisionMembership;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicParticipant;
-import com.mypurecloud.sdk.v2.model.ConversationEventTopicRecentTransfer;
+import com.mypurecloud.sdk.v2.model.ConversationEventTopicTransferResponse;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -28,12 +29,13 @@ public class ConversationEventTopicConversation  implements Serializable {
   private String id = null;
   private Integer maxParticipants = null;
   private List<ConversationEventTopicParticipant> participants = new ArrayList<ConversationEventTopicParticipant>();
-  private List<ConversationEventTopicRecentTransfer> recentTransfers = new ArrayList<ConversationEventTopicRecentTransfer>();
+  private List<ConversationEventTopicTransferResponse> recentTransfers = new ArrayList<ConversationEventTopicTransferResponse>();
   private String recordingState = null;
   private String address = null;
   private String externalTag = null;
   private String utilizationLabelId = null;
   private Boolean securePause = null;
+  private List<ConversationEventTopicConversationDivisionMembership> divisions = new ArrayList<ConversationEventTopicConversationDivisionMembership>();
 
   
   /**
@@ -89,17 +91,17 @@ public class ConversationEventTopicConversation  implements Serializable {
 
   /**
    **/
-  public ConversationEventTopicConversation recentTransfers(List<ConversationEventTopicRecentTransfer> recentTransfers) {
+  public ConversationEventTopicConversation recentTransfers(List<ConversationEventTopicTransferResponse> recentTransfers) {
     this.recentTransfers = recentTransfers;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("recentTransfers")
-  public List<ConversationEventTopicRecentTransfer> getRecentTransfers() {
+  public List<ConversationEventTopicTransferResponse> getRecentTransfers() {
     return recentTransfers;
   }
-  public void setRecentTransfers(List<ConversationEventTopicRecentTransfer> recentTransfers) {
+  public void setRecentTransfers(List<ConversationEventTopicTransferResponse> recentTransfers) {
     this.recentTransfers = recentTransfers;
   }
 
@@ -189,6 +191,23 @@ public class ConversationEventTopicConversation  implements Serializable {
   }
 
 
+  /**
+   **/
+  public ConversationEventTopicConversation divisions(List<ConversationEventTopicConversationDivisionMembership> divisions) {
+    this.divisions = divisions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("divisions")
+  public List<ConversationEventTopicConversationDivisionMembership> getDivisions() {
+    return divisions;
+  }
+  public void setDivisions(List<ConversationEventTopicConversationDivisionMembership> divisions) {
+    this.divisions = divisions;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -207,12 +226,13 @@ public class ConversationEventTopicConversation  implements Serializable {
             Objects.equals(this.address, conversationEventTopicConversation.address) &&
             Objects.equals(this.externalTag, conversationEventTopicConversation.externalTag) &&
             Objects.equals(this.utilizationLabelId, conversationEventTopicConversation.utilizationLabelId) &&
-            Objects.equals(this.securePause, conversationEventTopicConversation.securePause);
+            Objects.equals(this.securePause, conversationEventTopicConversation.securePause) &&
+            Objects.equals(this.divisions, conversationEventTopicConversation.divisions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag, utilizationLabelId, securePause);
+    return Objects.hash(id, maxParticipants, participants, recentTransfers, recordingState, address, externalTag, utilizationLabelId, securePause, divisions);
   }
 
   @Override
@@ -229,6 +249,7 @@ public class ConversationEventTopicConversation  implements Serializable {
     sb.append("    externalTag: ").append(toIndentedString(externalTag)).append("\n");
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
     sb.append("    securePause: ").append(toIndentedString(securePause)).append("\n");
+    sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

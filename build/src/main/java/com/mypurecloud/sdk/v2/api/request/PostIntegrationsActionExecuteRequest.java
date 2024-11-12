@@ -113,6 +113,20 @@ public class PostIntegrationsActionExecuteRequest {
 	    return this;
 	} 
 
+	private Boolean flatten;
+	public Boolean getFlatten() {
+		return this.flatten;
+	}
+
+	public void setFlatten(Boolean flatten) {
+		this.flatten = flatten;
+	}
+
+	public PostIntegrationsActionExecuteRequest withFlatten(Boolean flatten) {
+	    this.setFlatten(flatten);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -147,6 +161,9 @@ public class PostIntegrationsActionExecuteRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/integrations/actions/{actionId}/execute")
                 .withPathParameter("actionId", actionId)
+        
+
+                .withQueryParameters("flatten", "", flatten)
         
                 .withBody(body)
 
@@ -183,6 +200,11 @@ public class PostIntegrationsActionExecuteRequest {
 
 		public Builder withBody(Object body) {
 			request.setBody(body);
+			return this;
+		}
+
+		public Builder withFlatten(Boolean flatten) {
+			request.setFlatten(flatten);
 			return this;
 		}
 

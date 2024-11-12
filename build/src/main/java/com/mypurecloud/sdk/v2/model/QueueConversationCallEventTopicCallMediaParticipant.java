@@ -286,6 +286,7 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
   private Integer alertingTimeoutMs = null;
   private String provider = null;
   private QueueConversationCallEventTopicUriReference externalContact = null;
+  private String externalContactInitialDivisionId = null;
   private QueueConversationCallEventTopicUriReference externalOrganization = null;
   private QueueConversationCallEventTopicWrapup wrapup = null;
   private QueueConversationCallEventTopicConversationRoutingData conversationRoutingData = null;
@@ -854,6 +855,23 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
 
   /**
    **/
+  public QueueConversationCallEventTopicCallMediaParticipant externalContactInitialDivisionId(String externalContactInitialDivisionId) {
+    this.externalContactInitialDivisionId = externalContactInitialDivisionId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("externalContactInitialDivisionId")
+  public String getExternalContactInitialDivisionId() {
+    return externalContactInitialDivisionId;
+  }
+  public void setExternalContactInitialDivisionId(String externalContactInitialDivisionId) {
+    this.externalContactInitialDivisionId = externalContactInitialDivisionId;
+  }
+
+
+  /**
+   **/
   public QueueConversationCallEventTopicCallMediaParticipant externalOrganization(QueueConversationCallEventTopicUriReference externalOrganization) {
     this.externalOrganization = externalOrganization;
     return this;
@@ -1364,6 +1382,7 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
             Objects.equals(this.alertingTimeoutMs, queueConversationCallEventTopicCallMediaParticipant.alertingTimeoutMs) &&
             Objects.equals(this.provider, queueConversationCallEventTopicCallMediaParticipant.provider) &&
             Objects.equals(this.externalContact, queueConversationCallEventTopicCallMediaParticipant.externalContact) &&
+            Objects.equals(this.externalContactInitialDivisionId, queueConversationCallEventTopicCallMediaParticipant.externalContactInitialDivisionId) &&
             Objects.equals(this.externalOrganization, queueConversationCallEventTopicCallMediaParticipant.externalOrganization) &&
             Objects.equals(this.wrapup, queueConversationCallEventTopicCallMediaParticipant.wrapup) &&
             Objects.equals(this.conversationRoutingData, queueConversationCallEventTopicCallMediaParticipant.conversationRoutingData) &&
@@ -1396,7 +1415,7 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, muted, confined, recording, recordingState, securePause, group, ani, dnis, documentId, monitoredParticipantId, coachedParticipantId, bargedParticipantId, bargedTime, consultParticipantId, faxStatus);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, muted, confined, recording, recordingState, securePause, group, ani, dnis, documentId, monitoredParticipantId, coachedParticipantId, bargedParticipantId, bargedTime, consultParticipantId, faxStatus);
   }
 
   @Override
@@ -1430,6 +1449,7 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
     sb.append("    alertingTimeoutMs: ").append(toIndentedString(alertingTimeoutMs)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
+    sb.append("    externalContactInitialDivisionId: ").append(toIndentedString(externalContactInitialDivisionId)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");

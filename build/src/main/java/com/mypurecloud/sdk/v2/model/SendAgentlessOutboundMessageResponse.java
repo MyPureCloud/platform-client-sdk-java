@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.MessageData;
-import com.mypurecloud.sdk.v2.model.MessagingTemplateRequest;
+import com.mypurecloud.sdk.v2.model.SendMessagingTemplateRequest;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -80,7 +80,7 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
   }
   private MessengerTypeEnum messengerType = null;
   private String textBody = null;
-  private MessagingTemplateRequest messagingTemplate = null;
+  private SendMessagingTemplateRequest messagingTemplate = null;
   private Boolean useExistingActiveConversation = null;
   private MessageData message = null;
   private Date timestamp = null;
@@ -168,14 +168,14 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
 
 
   /**
-   * The body of the text message.
+   * The body of the text message. (Deprecated - Instead use message.normalizedMessage.text)
    **/
   public SendAgentlessOutboundMessageResponse textBody(String textBody) {
     this.textBody = textBody;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The body of the text message.")
+  @ApiModelProperty(example = "null", value = "The body of the text message. (Deprecated - Instead use message.normalizedMessage.text)")
   @JsonProperty("textBody")
   public String getTextBody() {
     return textBody;
@@ -186,19 +186,19 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
 
 
   /**
-   * The messaging template sent
+   * The messaging template sent. (Deprecated - Instead use message.normalizedMessage.content[#].template)
    **/
-  public SendAgentlessOutboundMessageResponse messagingTemplate(MessagingTemplateRequest messagingTemplate) {
+  public SendAgentlessOutboundMessageResponse messagingTemplate(SendMessagingTemplateRequest messagingTemplate) {
     this.messagingTemplate = messagingTemplate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The messaging template sent")
+  @ApiModelProperty(example = "null", value = "The messaging template sent. (Deprecated - Instead use message.normalizedMessage.content[#].template)")
   @JsonProperty("messagingTemplate")
-  public MessagingTemplateRequest getMessagingTemplate() {
+  public SendMessagingTemplateRequest getMessagingTemplate() {
     return messagingTemplate;
   }
-  public void setMessagingTemplate(MessagingTemplateRequest messagingTemplate) {
+  public void setMessagingTemplate(SendMessagingTemplateRequest messagingTemplate) {
     this.messagingTemplate = messagingTemplate;
   }
 

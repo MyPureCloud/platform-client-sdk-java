@@ -236,6 +236,7 @@ public class WorkitemsEventsNotificationWorkitem  implements Serializable {
   private WorkitemsEventsNotificationWrapup wrapup = null;
   private List<WorkitemsEventsNotificationSession> sessions = new ArrayList<WorkitemsEventsNotificationSession>();
   private List<String> skillIds = new ArrayList<String>();
+  private String scriptId = null;
 
   
   /**
@@ -799,6 +800,23 @@ public class WorkitemsEventsNotificationWorkitem  implements Serializable {
   }
 
 
+  /**
+   **/
+  public WorkitemsEventsNotificationWorkitem scriptId(String scriptId) {
+    this.scriptId = scriptId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("scriptId")
+  public String getScriptId() {
+    return scriptId;
+  }
+  public void setScriptId(String scriptId) {
+    this.scriptId = scriptId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -841,12 +859,13 @@ public class WorkitemsEventsNotificationWorkitem  implements Serializable {
             Objects.equals(this.customFields, workitemsEventsNotificationWorkitem.customFields) &&
             Objects.equals(this.wrapup, workitemsEventsNotificationWorkitem.wrapup) &&
             Objects.equals(this.sessions, workitemsEventsNotificationWorkitem.sessions) &&
-            Objects.equals(this.skillIds, workitemsEventsNotificationWorkitem.skillIds);
+            Objects.equals(this.skillIds, workitemsEventsNotificationWorkitem.skillIds) &&
+            Objects.equals(this.scriptId, workitemsEventsNotificationWorkitem.scriptId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, typeId, description, languageId, priority, dateCreated, dateModified, dateDue, dateExpires, dateAssignmentStateChanged, durationSeconds, ttl, statusId, statusCategory, dateClosed, workbinId, reporterId, assigneeId, externalContactId, externalTag, wrapupId, modifiedBy, operation, changes, assignmentState, assignmentId, alertTimeoutSeconds, queueId, customFields, wrapup, sessions, skillIds);
+    return Objects.hash(id, name, typeId, description, languageId, priority, dateCreated, dateModified, dateDue, dateExpires, dateAssignmentStateChanged, durationSeconds, ttl, statusId, statusCategory, dateClosed, workbinId, reporterId, assigneeId, externalContactId, externalTag, wrapupId, modifiedBy, operation, changes, assignmentState, assignmentId, alertTimeoutSeconds, queueId, customFields, wrapup, sessions, skillIds, scriptId);
   }
 
   @Override
@@ -887,6 +906,7 @@ public class WorkitemsEventsNotificationWorkitem  implements Serializable {
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    sessions: ").append(toIndentedString(sessions)).append("\n");
     sb.append("    skillIds: ").append(toIndentedString(skillIds)).append("\n");
+    sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

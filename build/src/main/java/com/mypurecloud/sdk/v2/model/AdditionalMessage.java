@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.MessagingTemplateRequest;
+import com.mypurecloud.sdk.v2.model.SendMessagingTemplateRequest;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ public class AdditionalMessage  implements Serializable {
   private String textBody = null;
   private List<String> mediaIds = new ArrayList<String>();
   private List<String> stickerIds = new ArrayList<String>();
-  private MessagingTemplateRequest messagingTemplate = null;
+  private SendMessagingTemplateRequest messagingTemplate = null;
 
   
   /**
@@ -87,17 +87,17 @@ public class AdditionalMessage  implements Serializable {
   /**
    * The messaging template use to send a predefined canned response with the message
    **/
-  public AdditionalMessage messagingTemplate(MessagingTemplateRequest messagingTemplate) {
+  public AdditionalMessage messagingTemplate(SendMessagingTemplateRequest messagingTemplate) {
     this.messagingTemplate = messagingTemplate;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The messaging template use to send a predefined canned response with the message")
   @JsonProperty("messagingTemplate")
-  public MessagingTemplateRequest getMessagingTemplate() {
+  public SendMessagingTemplateRequest getMessagingTemplate() {
     return messagingTemplate;
   }
-  public void setMessagingTemplate(MessagingTemplateRequest messagingTemplate) {
+  public void setMessagingTemplate(SendMessagingTemplateRequest messagingTemplate) {
     this.messagingTemplate = messagingTemplate;
   }
 

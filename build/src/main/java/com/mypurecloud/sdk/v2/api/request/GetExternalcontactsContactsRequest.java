@@ -144,7 +144,8 @@ public class GetExternalcontactsContactsRequest {
 		EXTERNALORGANIZATION("externalOrganization"),
 		EXTERNALDATASOURCES("externalDataSources"),
 		IDENTIFIERS("identifiers"),
-		EXTERNALSOURCES("externalSources");
+		EXTERNALSOURCES("externalSources"),
+		DIVISION("division");
 
 		private String value;
 

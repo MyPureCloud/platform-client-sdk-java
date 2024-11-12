@@ -1017,12 +1017,13 @@ public class IntegrationsApi {
    * 
    * @param actionId actionId (required)
    * @param fileName Name of schema file to be retrieved for this draft. (required)
+   * @param flatten Indicates the response should be reformatted, based on Architect's flattening format. (optional, default to false)
    * @return JsonSchemaDocument
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public JsonSchemaDocument getIntegrationsActionDraftSchema(String actionId, String fileName) throws IOException, ApiException {
-    return  getIntegrationsActionDraftSchema(createGetIntegrationsActionDraftSchemaRequest(actionId, fileName));
+  public JsonSchemaDocument getIntegrationsActionDraftSchema(String actionId, String fileName, Boolean flatten) throws IOException, ApiException {
+    return  getIntegrationsActionDraftSchema(createGetIntegrationsActionDraftSchemaRequest(actionId, fileName, flatten));
   }
 
   /**
@@ -1030,18 +1031,21 @@ public class IntegrationsApi {
    * 
    * @param actionId actionId (required)
    * @param fileName Name of schema file to be retrieved for this draft. (required)
+   * @param flatten Indicates the response should be reformatted, based on Architect's flattening format. (optional, default to false)
    * @return JsonSchemaDocument
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<JsonSchemaDocument> getIntegrationsActionDraftSchemaWithHttpInfo(String actionId, String fileName) throws IOException {
-    return getIntegrationsActionDraftSchema(createGetIntegrationsActionDraftSchemaRequest(actionId, fileName).withHttpInfo());
+  public ApiResponse<JsonSchemaDocument> getIntegrationsActionDraftSchemaWithHttpInfo(String actionId, String fileName, Boolean flatten) throws IOException {
+    return getIntegrationsActionDraftSchema(createGetIntegrationsActionDraftSchemaRequest(actionId, fileName, flatten).withHttpInfo());
   }
 
-  private GetIntegrationsActionDraftSchemaRequest createGetIntegrationsActionDraftSchemaRequest(String actionId, String fileName) {
+  private GetIntegrationsActionDraftSchemaRequest createGetIntegrationsActionDraftSchemaRequest(String actionId, String fileName, Boolean flatten) {
     return GetIntegrationsActionDraftSchemaRequest.builder()
             .withActionId(actionId)
 
             .withFileName(fileName)
+
+            .withFlatten(flatten)
 
             .build();
   }
@@ -1341,12 +1345,13 @@ public class IntegrationsApi {
    * 
    * @param actionId actionId (required)
    * @param fileName Name of schema file to be retrieved for this action. (required)
+   * @param flatten Indicates the response should be reformatted, based on Architect's flattening format. (optional, default to false)
    * @return JsonSchemaDocument
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public JsonSchemaDocument getIntegrationsActionSchema(String actionId, String fileName) throws IOException, ApiException {
-    return  getIntegrationsActionSchema(createGetIntegrationsActionSchemaRequest(actionId, fileName));
+  public JsonSchemaDocument getIntegrationsActionSchema(String actionId, String fileName, Boolean flatten) throws IOException, ApiException {
+    return  getIntegrationsActionSchema(createGetIntegrationsActionSchemaRequest(actionId, fileName, flatten));
   }
 
   /**
@@ -1354,18 +1359,21 @@ public class IntegrationsApi {
    * 
    * @param actionId actionId (required)
    * @param fileName Name of schema file to be retrieved for this action. (required)
+   * @param flatten Indicates the response should be reformatted, based on Architect's flattening format. (optional, default to false)
    * @return JsonSchemaDocument
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<JsonSchemaDocument> getIntegrationsActionSchemaWithHttpInfo(String actionId, String fileName) throws IOException {
-    return getIntegrationsActionSchema(createGetIntegrationsActionSchemaRequest(actionId, fileName).withHttpInfo());
+  public ApiResponse<JsonSchemaDocument> getIntegrationsActionSchemaWithHttpInfo(String actionId, String fileName, Boolean flatten) throws IOException {
+    return getIntegrationsActionSchema(createGetIntegrationsActionSchemaRequest(actionId, fileName, flatten).withHttpInfo());
   }
 
-  private GetIntegrationsActionSchemaRequest createGetIntegrationsActionSchemaRequest(String actionId, String fileName) {
+  private GetIntegrationsActionSchemaRequest createGetIntegrationsActionSchemaRequest(String actionId, String fileName, Boolean flatten) {
     return GetIntegrationsActionSchemaRequest.builder()
             .withActionId(actionId)
 
             .withFileName(fileName)
+
+            .withFlatten(flatten)
 
             .build();
   }
@@ -6083,12 +6091,13 @@ public class IntegrationsApi {
    * 
    * @param actionId actionId (required)
    * @param body Map of parameters used for variable substitution. (required)
+   * @param flatten Indicates the response should be reformatted, based on Architect's flattening format. (optional, default to false)
    * @return TestExecutionResult
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public TestExecutionResult postIntegrationsActionDraftTest(String actionId, Object body) throws IOException, ApiException {
-    return  postIntegrationsActionDraftTest(createPostIntegrationsActionDraftTestRequest(actionId, body));
+  public TestExecutionResult postIntegrationsActionDraftTest(String actionId, Object body, Boolean flatten) throws IOException, ApiException {
+    return  postIntegrationsActionDraftTest(createPostIntegrationsActionDraftTestRequest(actionId, body, flatten));
   }
 
   /**
@@ -6096,18 +6105,21 @@ public class IntegrationsApi {
    * 
    * @param actionId actionId (required)
    * @param body Map of parameters used for variable substitution. (required)
+   * @param flatten Indicates the response should be reformatted, based on Architect's flattening format. (optional, default to false)
    * @return TestExecutionResult
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TestExecutionResult> postIntegrationsActionDraftTestWithHttpInfo(String actionId, Object body) throws IOException {
-    return postIntegrationsActionDraftTest(createPostIntegrationsActionDraftTestRequest(actionId, body).withHttpInfo());
+  public ApiResponse<TestExecutionResult> postIntegrationsActionDraftTestWithHttpInfo(String actionId, Object body, Boolean flatten) throws IOException {
+    return postIntegrationsActionDraftTest(createPostIntegrationsActionDraftTestRequest(actionId, body, flatten).withHttpInfo());
   }
 
-  private PostIntegrationsActionDraftTestRequest createPostIntegrationsActionDraftTestRequest(String actionId, Object body) {
+  private PostIntegrationsActionDraftTestRequest createPostIntegrationsActionDraftTestRequest(String actionId, Object body, Boolean flatten) {
     return PostIntegrationsActionDraftTestRequest.builder()
             .withActionId(actionId)
 
             .withBody(body)
+
+            .withFlatten(flatten)
 
             .build();
   }
@@ -6165,12 +6177,13 @@ public class IntegrationsApi {
    * 
    * @param actionId actionId (required)
    * @param body Map of parameters used for variable substitution. (required)
+   * @param flatten Indicates the response should be reformatted, based on Architect's flattening format. (optional, default to false)
    * @return Object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Object postIntegrationsActionExecute(String actionId, Object body) throws IOException, ApiException {
-    return  postIntegrationsActionExecute(createPostIntegrationsActionExecuteRequest(actionId, body));
+  public Object postIntegrationsActionExecute(String actionId, Object body, Boolean flatten) throws IOException, ApiException {
+    return  postIntegrationsActionExecute(createPostIntegrationsActionExecuteRequest(actionId, body, flatten));
   }
 
   /**
@@ -6178,18 +6191,21 @@ public class IntegrationsApi {
    * 
    * @param actionId actionId (required)
    * @param body Map of parameters used for variable substitution. (required)
+   * @param flatten Indicates the response should be reformatted, based on Architect's flattening format. (optional, default to false)
    * @return Object
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Object> postIntegrationsActionExecuteWithHttpInfo(String actionId, Object body) throws IOException {
-    return postIntegrationsActionExecute(createPostIntegrationsActionExecuteRequest(actionId, body).withHttpInfo());
+  public ApiResponse<Object> postIntegrationsActionExecuteWithHttpInfo(String actionId, Object body, Boolean flatten) throws IOException {
+    return postIntegrationsActionExecute(createPostIntegrationsActionExecuteRequest(actionId, body, flatten).withHttpInfo());
   }
 
-  private PostIntegrationsActionExecuteRequest createPostIntegrationsActionExecuteRequest(String actionId, Object body) {
+  private PostIntegrationsActionExecuteRequest createPostIntegrationsActionExecuteRequest(String actionId, Object body, Boolean flatten) {
     return PostIntegrationsActionExecuteRequest.builder()
             .withActionId(actionId)
 
             .withBody(body)
+
+            .withFlatten(flatten)
 
             .build();
   }
@@ -6247,12 +6263,13 @@ public class IntegrationsApi {
    * 
    * @param actionId actionId (required)
    * @param body Map of parameters used for variable substitution. (required)
+   * @param flatten Indicates the response should be reformatted, based on Architect's flattening format. (optional, default to false)
    * @return TestExecutionResult
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public TestExecutionResult postIntegrationsActionTest(String actionId, Object body) throws IOException, ApiException {
-    return  postIntegrationsActionTest(createPostIntegrationsActionTestRequest(actionId, body));
+  public TestExecutionResult postIntegrationsActionTest(String actionId, Object body, Boolean flatten) throws IOException, ApiException {
+    return  postIntegrationsActionTest(createPostIntegrationsActionTestRequest(actionId, body, flatten));
   }
 
   /**
@@ -6260,18 +6277,21 @@ public class IntegrationsApi {
    * 
    * @param actionId actionId (required)
    * @param body Map of parameters used for variable substitution. (required)
+   * @param flatten Indicates the response should be reformatted, based on Architect's flattening format. (optional, default to false)
    * @return TestExecutionResult
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TestExecutionResult> postIntegrationsActionTestWithHttpInfo(String actionId, Object body) throws IOException {
-    return postIntegrationsActionTest(createPostIntegrationsActionTestRequest(actionId, body).withHttpInfo());
+  public ApiResponse<TestExecutionResult> postIntegrationsActionTestWithHttpInfo(String actionId, Object body, Boolean flatten) throws IOException {
+    return postIntegrationsActionTest(createPostIntegrationsActionTestRequest(actionId, body, flatten).withHttpInfo());
   }
 
-  private PostIntegrationsActionTestRequest createPostIntegrationsActionTestRequest(String actionId, Object body) {
+  private PostIntegrationsActionTestRequest createPostIntegrationsActionTestRequest(String actionId, Object body, Boolean flatten) {
     return PostIntegrationsActionTestRequest.builder()
             .withActionId(actionId)
 
             .withBody(body)
+
+            .withFlatten(flatten)
 
             .build();
   }

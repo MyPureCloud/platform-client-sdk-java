@@ -285,6 +285,7 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
   private Integer alertingTimeoutMs = null;
   private String provider = null;
   private QueueConversationCobrowseEventTopicUriReference externalContact = null;
+  private String externalContactInitialDivisionId = null;
   private QueueConversationCobrowseEventTopicUriReference externalOrganization = null;
   private QueueConversationCobrowseEventTopicWrapup wrapup = null;
   private QueueConversationCobrowseEventTopicConversationRoutingData conversationRoutingData = null;
@@ -795,6 +796,23 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
 
   /**
    **/
+  public QueueConversationCobrowseEventTopicCobrowseMediaParticipant externalContactInitialDivisionId(String externalContactInitialDivisionId) {
+    this.externalContactInitialDivisionId = externalContactInitialDivisionId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("externalContactInitialDivisionId")
+  public String getExternalContactInitialDivisionId() {
+    return externalContactInitialDivisionId;
+  }
+  public void setExternalContactInitialDivisionId(String externalContactInitialDivisionId) {
+    this.externalContactInitialDivisionId = externalContactInitialDivisionId;
+  }
+
+
+  /**
+   **/
   public QueueConversationCobrowseEventTopicCobrowseMediaParticipant externalOrganization(QueueConversationCobrowseEventTopicUriReference externalOrganization) {
     this.externalOrganization = externalOrganization;
     return this;
@@ -1135,6 +1153,7 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
             Objects.equals(this.alertingTimeoutMs, queueConversationCobrowseEventTopicCobrowseMediaParticipant.alertingTimeoutMs) &&
             Objects.equals(this.provider, queueConversationCobrowseEventTopicCobrowseMediaParticipant.provider) &&
             Objects.equals(this.externalContact, queueConversationCobrowseEventTopicCobrowseMediaParticipant.externalContact) &&
+            Objects.equals(this.externalContactInitialDivisionId, queueConversationCobrowseEventTopicCobrowseMediaParticipant.externalContactInitialDivisionId) &&
             Objects.equals(this.externalOrganization, queueConversationCobrowseEventTopicCobrowseMediaParticipant.externalOrganization) &&
             Objects.equals(this.wrapup, queueConversationCobrowseEventTopicCobrowseMediaParticipant.wrapup) &&
             Objects.equals(this.conversationRoutingData, queueConversationCobrowseEventTopicCobrowseMediaParticipant.conversationRoutingData) &&
@@ -1157,7 +1176,7 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, cobrowseSessionId, cobrowseRole, viewerUrl, providerEventTime, controlling);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, cobrowseSessionId, cobrowseRole, viewerUrl, providerEventTime, controlling);
   }
 
   @Override
@@ -1191,6 +1210,7 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
     sb.append("    alertingTimeoutMs: ").append(toIndentedString(alertingTimeoutMs)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
+    sb.append("    externalContactInitialDivisionId: ").append(toIndentedString(externalContactInitialDivisionId)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");

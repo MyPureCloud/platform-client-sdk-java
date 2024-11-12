@@ -101,7 +101,8 @@ public class GetExternalcontactsContactUnresolvedRequest {
 	public enum expandValues { 
 		EXTERNALORGANIZATION("externalOrganization"),
 		EXTERNALDATASOURCES("externalDataSources"),
-		IDENTIFIERS("identifiers");
+		IDENTIFIERS("identifiers"),
+		DIVISION("division");
 
 		private String value;
 

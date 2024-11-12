@@ -250,6 +250,7 @@ public class GetAnalyticsBotflowDivisionsReportingturnsRequest {
 		NOMATCHCONFIRMATION("NoMatchConfirmation"),
 		NOMATCHDISAMBIGUATION("NoMatchDisambiguation"),
 		SUCCESSCOLLECTION("SuccessCollection"),
+		SKIPPEDCOLLECTION("SkippedCollection"),
 		SUCCESSCONFIRMATIONNO("SuccessConfirmationNo"),
 		SUCCESSCONFIRMATIONYES("SuccessConfirmationYes"),
 		SUCCESSDISAMBIGUATION("SuccessDisambiguation"),

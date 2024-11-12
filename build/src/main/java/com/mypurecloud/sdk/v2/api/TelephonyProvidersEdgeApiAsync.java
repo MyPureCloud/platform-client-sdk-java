@@ -70,6 +70,8 @@ import com.mypurecloud.sdk.v2.model.PhysicalInterfaceEntityListing;
 import com.mypurecloud.sdk.v2.model.Site;
 import com.mypurecloud.sdk.v2.model.SiteConnections;
 import com.mypurecloud.sdk.v2.model.SiteEntityListing;
+import com.mypurecloud.sdk.v2.model.SiteSearchRequest;
+import com.mypurecloud.sdk.v2.model.SitesSearchResponse;
 import com.mypurecloud.sdk.v2.model.TimeZoneEntityListing;
 import com.mypurecloud.sdk.v2.model.Trunk;
 import com.mypurecloud.sdk.v2.model.TrunkBase;
@@ -156,6 +158,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteOutbound
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteOutboundroutesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteSiteconnectionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSitesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSitesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTimezonesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkMetricsRequest;
@@ -190,6 +193,7 @@ import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhonesReque
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhonesRebootRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSiteOutboundroutesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSitesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSitesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesTrunkbasesettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgeRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgeLogicalinterfaceRequest;
@@ -5705,6 +5709,81 @@ public class TelephonyProvidersEdgeApiAsync {
   }
 
   /**
+   * Search sites using the q64 value returned from a previous search
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SitesSearchResponse> getTelephonyProvidersEdgesSitesSearchAsync(GetTelephonyProvidersEdgesSitesSearchRequest request, final AsyncApiCallback<SitesSearchResponse> callback) {
+    try {
+      final SettableFuture<SitesSearchResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SitesSearchResponse>() {}, new AsyncApiCallback<ApiResponse<SitesSearchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<SitesSearchResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Search sites using the q64 value returned from a previous search
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SitesSearchResponse>> getTelephonyProvidersEdgesSitesSearchAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SitesSearchResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SitesSearchResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SitesSearchResponse>() {}, new AsyncApiCallback<ApiResponse<SitesSearchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<SitesSearchResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SitesSearchResponse> response = (ApiResponse<SitesSearchResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SitesSearchResponse> response = (ApiResponse<SitesSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get a list of Edge-compatible time zones
    * 
    * @param request the request object
@@ -8243,6 +8322,81 @@ public class TelephonyProvidersEdgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Site> response = (ApiResponse<Site>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Search sites
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SitesSearchResponse> postTelephonyProvidersEdgesSitesSearchAsync(PostTelephonyProvidersEdgesSitesSearchRequest request, final AsyncApiCallback<SitesSearchResponse> callback) {
+    try {
+      final SettableFuture<SitesSearchResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SitesSearchResponse>() {}, new AsyncApiCallback<ApiResponse<SitesSearchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<SitesSearchResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Search sites
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SitesSearchResponse>> postTelephonyProvidersEdgesSitesSearchAsync(ApiRequest<SiteSearchRequest> request, final AsyncApiCallback<ApiResponse<SitesSearchResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SitesSearchResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SitesSearchResponse>() {}, new AsyncApiCallback<ApiResponse<SitesSearchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<SitesSearchResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SitesSearchResponse> response = (ApiResponse<SitesSearchResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SitesSearchResponse> response = (ApiResponse<SitesSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -142,7 +142,8 @@ public class GetExternalcontactsContactNotesRequest {
 
 	public enum expandValues { 
 		AUTHOR("author"),
-		EXTERNALDATASOURCES("externalDataSources");
+		EXTERNALDATASOURCES("externalDataSources"),
+		DIVISION("division");
 
 		private String value;
 

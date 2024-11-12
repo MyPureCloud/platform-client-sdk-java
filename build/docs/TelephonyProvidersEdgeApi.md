@@ -77,6 +77,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTelephonyProvidersEdgesSiteOutboundroutes**](TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesSiteOutboundroutes) | Get outbound routes |
 | [**getTelephonyProvidersEdgesSiteSiteconnections**](TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesSiteSiteconnections) | Get site connections for a site. |
 | [**getTelephonyProvidersEdgesSites**](TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesSites) | Get the list of Sites. |
+| [**getTelephonyProvidersEdgesSitesSearch**](TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesSitesSearch) | Search sites using the q64 value returned from a previous search |
 | [**getTelephonyProvidersEdgesTimezones**](TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesTimezones) | Get a list of Edge-compatible time zones |
 | [**getTelephonyProvidersEdgesTrunk**](TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesTrunk) | Get a Trunk by ID |
 | [**getTelephonyProvidersEdgesTrunkMetrics**](TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesTrunkMetrics) | Get the trunk metrics. |
@@ -111,6 +112,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postTelephonyProvidersEdgesPhonesReboot**](TelephonyProvidersEdgeApi#postTelephonyProvidersEdgesPhonesReboot) | Reboot Multiple Phones |
 | [**postTelephonyProvidersEdgesSiteOutboundroutes**](TelephonyProvidersEdgeApi#postTelephonyProvidersEdgesSiteOutboundroutes) | Create outbound route |
 | [**postTelephonyProvidersEdgesSites**](TelephonyProvidersEdgeApi#postTelephonyProvidersEdgesSites) | Create a Site. |
+| [**postTelephonyProvidersEdgesSitesSearch**](TelephonyProvidersEdgeApi#postTelephonyProvidersEdgesSitesSearch) | Search sites |
 | [**postTelephonyProvidersEdgesTrunkbasesettings**](TelephonyProvidersEdgeApi#postTelephonyProvidersEdgesTrunkbasesettings) | Create a Trunk Base Settings object |
 | [**putTelephonyProvidersEdge**](TelephonyProvidersEdgeApi#putTelephonyProvidersEdge) | Update a edge. |
 | [**putTelephonyProvidersEdgeLogicalinterface**](TelephonyProvidersEdgeApi#putTelephonyProvidersEdgeLogicalinterface) | Update an edge logical interface. |
@@ -4638,6 +4640,68 @@ try {
 [**SiteEntityListing**](SiteEntityListing)
 
 
+# **getTelephonyProvidersEdgesSitesSearch**
+
+
+> [SitesSearchResponse](SitesSearchResponse) getTelephonyProvidersEdgesSitesSearch(q64, expand)
+
+Search sites using the q64 value returned from a previous search
+
+Wraps GET /api/v2/telephony/providers/edges/sites/search  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+* telephony:sites:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
+String q64 = "q64_example"; // String | q64
+List<String> expand = Arrays.asList(null); // List<String> | expand
+try {
+    SitesSearchResponse result = apiInstance.getTelephonyProvidersEdgesSitesSearch(q64, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesSitesSearch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **q64** | **String**| q64 | 
+| **expand** | [**List&lt;String&gt;**](String)| expand | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SitesSearchResponse**](SitesSearchResponse)
+
+
 # **getTelephonyProvidersEdgesTimezones**
 
 
@@ -6709,6 +6773,66 @@ try {
 [**Site**](Site)
 
 
+# **postTelephonyProvidersEdgesSitesSearch**
+
+
+> [SitesSearchResponse](SitesSearchResponse) postTelephonyProvidersEdgesSitesSearch(body)
+
+Search sites
+
+Wraps POST /api/v2/telephony/providers/edges/sites/search  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+* telephony:sites:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
+SiteSearchRequest body = new SiteSearchRequest(); // SiteSearchRequest | Search request options
+try {
+    SitesSearchResponse result = apiInstance.postTelephonyProvidersEdgesSitesSearch(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyProvidersEdgeApi#postTelephonyProvidersEdgesSitesSearch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**SiteSearchRequest**](SiteSearchRequest)| Search request options | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SitesSearchResponse**](SitesSearchResponse)
+
+
 # **postTelephonyProvidersEdgesTrunkbasesettings**
 
 
@@ -7686,4 +7810,4 @@ try {
 [**TrunkBase**](TrunkBase)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_

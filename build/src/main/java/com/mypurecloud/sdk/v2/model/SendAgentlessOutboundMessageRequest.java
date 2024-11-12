@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.MessagingTemplateRequest;
+import com.mypurecloud.sdk.v2.model.SendMessagingTemplateRequest;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -75,7 +75,7 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
   }
   private ToAddressMessengerTypeEnum toAddressMessengerType = null;
   private String textBody = null;
-  private MessagingTemplateRequest messagingTemplate = null;
+  private SendMessagingTemplateRequest messagingTemplate = null;
   private Boolean useExistingActiveConversation = null;
 
   
@@ -154,17 +154,17 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
   /**
    * The messaging template to use in the case of WhatsApp messenger type. This field is required when using WhatsApp messenger type
    **/
-  public SendAgentlessOutboundMessageRequest messagingTemplate(MessagingTemplateRequest messagingTemplate) {
+  public SendAgentlessOutboundMessageRequest messagingTemplate(SendMessagingTemplateRequest messagingTemplate) {
     this.messagingTemplate = messagingTemplate;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The messaging template to use in the case of WhatsApp messenger type. This field is required when using WhatsApp messenger type")
   @JsonProperty("messagingTemplate")
-  public MessagingTemplateRequest getMessagingTemplate() {
+  public SendMessagingTemplateRequest getMessagingTemplate() {
     return messagingTemplate;
   }
-  public void setMessagingTemplate(MessagingTemplateRequest messagingTemplate) {
+  public void setMessagingTemplate(SendMessagingTemplateRequest messagingTemplate) {
     this.messagingTemplate = messagingTemplate;
   }
 

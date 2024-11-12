@@ -67,6 +67,8 @@ import com.mypurecloud.sdk.v2.model.PhysicalInterfaceEntityListing;
 import com.mypurecloud.sdk.v2.model.Site;
 import com.mypurecloud.sdk.v2.model.SiteConnections;
 import com.mypurecloud.sdk.v2.model.SiteEntityListing;
+import com.mypurecloud.sdk.v2.model.SiteSearchRequest;
+import com.mypurecloud.sdk.v2.model.SitesSearchResponse;
 import com.mypurecloud.sdk.v2.model.TimeZoneEntityListing;
 import com.mypurecloud.sdk.v2.model.Trunk;
 import com.mypurecloud.sdk.v2.model.TrunkBase;
@@ -153,6 +155,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteOutbound
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteOutboundroutesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteSiteconnectionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSitesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSitesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTimezonesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkMetricsRequest;
@@ -187,6 +190,7 @@ import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhonesReque
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhonesRebootRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSiteOutboundroutesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSitesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSitesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesTrunkbasesettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgeRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgeLogicalinterfaceRequest;
@@ -6297,6 +6301,88 @@ public class TelephonyProvidersEdgeApi {
   }
 
   /**
+   * Search sites using the q64 value returned from a previous search
+   * 
+   * @param q64 q64 (required)
+   * @param expand expand (optional)
+   * @return SitesSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SitesSearchResponse getTelephonyProvidersEdgesSitesSearch(String q64, List<String> expand) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgesSitesSearch(createGetTelephonyProvidersEdgesSitesSearchRequest(q64, expand));
+  }
+
+  /**
+   * Search sites using the q64 value returned from a previous search
+   * 
+   * @param q64 q64 (required)
+   * @param expand expand (optional)
+   * @return SitesSearchResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SitesSearchResponse> getTelephonyProvidersEdgesSitesSearchWithHttpInfo(String q64, List<String> expand) throws IOException {
+    return getTelephonyProvidersEdgesSitesSearch(createGetTelephonyProvidersEdgesSitesSearchRequest(q64, expand).withHttpInfo());
+  }
+
+  private GetTelephonyProvidersEdgesSitesSearchRequest createGetTelephonyProvidersEdgesSitesSearchRequest(String q64, List<String> expand) {
+    return GetTelephonyProvidersEdgesSitesSearchRequest.builder()
+            .withQ64(q64)
+
+            .withExpand(expand)
+
+            .build();
+  }
+
+  /**
+   * Search sites using the q64 value returned from a previous search
+   * 
+   * @param request The request object
+   * @return SitesSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SitesSearchResponse getTelephonyProvidersEdgesSitesSearch(GetTelephonyProvidersEdgesSitesSearchRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SitesSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SitesSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Search sites using the q64 value returned from a previous search
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SitesSearchResponse> getTelephonyProvidersEdgesSitesSearch(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SitesSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SitesSearchResponse> response = (ApiResponse<SitesSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SitesSearchResponse> response = (ApiResponse<SitesSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get a list of Edge-compatible time zones
    * 
    * @param pageSize Page size (optional, default to 1000)
@@ -9059,6 +9145,84 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Site> response = (ApiResponse<Site>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Search sites
+   * 
+   * @param body Search request options (required)
+   * @return SitesSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SitesSearchResponse postTelephonyProvidersEdgesSitesSearch(SiteSearchRequest body) throws IOException, ApiException {
+    return  postTelephonyProvidersEdgesSitesSearch(createPostTelephonyProvidersEdgesSitesSearchRequest(body));
+  }
+
+  /**
+   * Search sites
+   * 
+   * @param body Search request options (required)
+   * @return SitesSearchResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SitesSearchResponse> postTelephonyProvidersEdgesSitesSearchWithHttpInfo(SiteSearchRequest body) throws IOException {
+    return postTelephonyProvidersEdgesSitesSearch(createPostTelephonyProvidersEdgesSitesSearchRequest(body).withHttpInfo());
+  }
+
+  private PostTelephonyProvidersEdgesSitesSearchRequest createPostTelephonyProvidersEdgesSitesSearchRequest(SiteSearchRequest body) {
+    return PostTelephonyProvidersEdgesSitesSearchRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Search sites
+   * 
+   * @param request The request object
+   * @return SitesSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SitesSearchResponse postTelephonyProvidersEdgesSitesSearch(PostTelephonyProvidersEdgesSitesSearchRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SitesSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SitesSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Search sites
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SitesSearchResponse> postTelephonyProvidersEdgesSitesSearch(ApiRequest<SiteSearchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SitesSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SitesSearchResponse> response = (ApiResponse<SitesSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SitesSearchResponse> response = (ApiResponse<SitesSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

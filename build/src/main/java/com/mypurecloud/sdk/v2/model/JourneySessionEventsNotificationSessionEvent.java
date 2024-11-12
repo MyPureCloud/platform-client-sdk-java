@@ -245,6 +245,7 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
   private JourneySessionEventsNotificationSdkLibrary sdkLibrary = null;
   private JourneySessionEventsNotificationNetworkConnectivity networkConnectivity = null;
   private List<String> divisionIds = new ArrayList<String>();
+  private String lastScreen = null;
 
   
   /**
@@ -944,6 +945,23 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
   }
 
 
+  /**
+   **/
+  public JourneySessionEventsNotificationSessionEvent lastScreen(String lastScreen) {
+    this.lastScreen = lastScreen;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastScreen")
+  public String getLastScreen() {
+    return lastScreen;
+  }
+  public void setLastScreen(String lastScreen) {
+    this.lastScreen = lastScreen;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -994,12 +1012,13 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
             Objects.equals(this.app, journeySessionEventsNotificationSessionEvent.app) &&
             Objects.equals(this.sdkLibrary, journeySessionEventsNotificationSessionEvent.sdkLibrary) &&
             Objects.equals(this.networkConnectivity, journeySessionEventsNotificationSessionEvent.networkConnectivity) &&
-            Objects.equals(this.divisionIds, journeySessionEventsNotificationSessionEvent.divisionIds);
+            Objects.equals(this.divisionIds, journeySessionEventsNotificationSessionEvent.divisionIds) &&
+            Objects.equals(this.lastScreen, journeySessionEventsNotificationSessionEvent.lastScreen);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, selfUri, createdDate, endedDate, externalContact, customerId, customerIdType, type, outcomeAchievements, segmentAssignments, awayDate, browser, device, geolocation, idleDate, ipAddress, ipOrganization, lastPage, mktCampaign, referrer, searchTerms, userAgentString, durationInSeconds, eventCount, pageviewCount, screenviewCount, lastEvent, conversation, originatingDirection, conversationSubject, lastUserDisposition, lastConnectedUser, lastConnectedQueue, conversationChannels, lastUserDisconnectType, lastAcdOutcome, authenticated, app, sdkLibrary, networkConnectivity, divisionIds);
+    return Objects.hash(id, selfUri, createdDate, endedDate, externalContact, customerId, customerIdType, type, outcomeAchievements, segmentAssignments, awayDate, browser, device, geolocation, idleDate, ipAddress, ipOrganization, lastPage, mktCampaign, referrer, searchTerms, userAgentString, durationInSeconds, eventCount, pageviewCount, screenviewCount, lastEvent, conversation, originatingDirection, conversationSubject, lastUserDisposition, lastConnectedUser, lastConnectedQueue, conversationChannels, lastUserDisconnectType, lastAcdOutcome, authenticated, app, sdkLibrary, networkConnectivity, divisionIds, lastScreen);
   }
 
   @Override
@@ -1048,6 +1067,7 @@ public class JourneySessionEventsNotificationSessionEvent  implements Serializab
     sb.append("    sdkLibrary: ").append(toIndentedString(sdkLibrary)).append("\n");
     sb.append("    networkConnectivity: ").append(toIndentedString(networkConnectivity)).append("\n");
     sb.append("    divisionIds: ").append(toIndentedString(divisionIds)).append("\n");
+    sb.append("    lastScreen: ").append(toIndentedString(lastScreen)).append("\n");
     sb.append("}");
     return sb.toString();
   }

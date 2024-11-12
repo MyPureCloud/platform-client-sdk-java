@@ -1931,7 +1931,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Remove routing language from user
+   * Remove a routing language from a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1965,7 +1965,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Remove routing language from user
+   * Remove a routing language from a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2006,7 +2006,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Remove routing skill from user
+   * Remove a routing skill from a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2040,7 +2040,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Remove routing skill from user
+   * Remove a routing skill from a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -6964,7 +6964,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * List routing language for user
+   * List routing languages assigned to a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -6998,7 +6998,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * List routing language for user
+   * List routing languages assigned to a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -7039,7 +7039,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * List routing skills for user
+   * List routing skills assigned to a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -7073,7 +7073,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * List routing skills for user
+   * List routing skills assigned to a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -8168,7 +8168,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Update routing language proficiency or state.
+   * Update an assigned routing language's proficiency
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -8202,7 +8202,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Update routing language proficiency or state.
+   * Update an assigned routing language's proficiency
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -8243,7 +8243,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Add bulk routing language to user. Max limit 50 languages
+   * Assign multiple routing languages to a user. Max 50 routing languages in request body
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -8277,7 +8277,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Add bulk routing language to user. Max limit 50 languages
+   * Assign multiple routing languages to a user. Max 50 routing languages in request body
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -8318,7 +8318,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Bulk add routing skills to user
+   * Assign multiple routing skills to a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -8352,7 +8352,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Bulk add routing skills to user
+   * Assign multiple routing skills to a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -10274,7 +10274,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Add routing language to user
+   * Assign a routing language to a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -10308,7 +10308,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Add routing language to user
+   * Assign a routing language to a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -10349,7 +10349,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Add routing skill to user
+   * Assign a routing skill to a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -10383,7 +10383,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Add routing skill to user
+   * Assign a routing skill to a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -11399,7 +11399,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Update routing skill proficiency or state.
+   * Update an assigned routing skill's proficiency
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -11433,7 +11433,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Update routing skill proficiency or state.
+   * Update an assigned routing skill's proficiency
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -11474,7 +11474,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Replace all routing skills assigned to a user
+   * Assign multiple routing skills to a user, replacing any current assignments
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -11508,7 +11508,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Replace all routing skills assigned to a user
+   * Assign multiple routing skills to a user, replacing any current assignments
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

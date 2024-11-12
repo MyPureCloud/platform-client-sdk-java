@@ -55,6 +55,8 @@ import com.mypurecloud.sdk.v2.model.JourneyViewJob;
 import com.mypurecloud.sdk.v2.model.JourneyViewJobListing;
 import com.mypurecloud.sdk.v2.model.JourneyViewListing;
 import com.mypurecloud.sdk.v2.model.JourneyViewResult;
+import com.mypurecloud.sdk.v2.model.JourneyViewSchedule;
+import com.mypurecloud.sdk.v2.model.JourneyViewScheduleListing;
 import com.mypurecloud.sdk.v2.model.Label;
 import com.mypurecloud.sdk.v2.model.Outcome;
 import com.mypurecloud.sdk.v2.model.OutcomeAttributionAsyncResponse;

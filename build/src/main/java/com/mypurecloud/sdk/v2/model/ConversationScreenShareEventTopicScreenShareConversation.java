@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.ConversationScreenShareEventTopicConversationDivisionMembership;
 import com.mypurecloud.sdk.v2.model.ConversationScreenShareEventTopicScreenShareMediaParticipant;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -30,6 +31,7 @@ public class ConversationScreenShareEventTopicScreenShareConversation  implement
   private List<String> otherMediaUris = new ArrayList<String>();
   private String address = null;
   private String utilizationLabelId = null;
+  private List<ConversationScreenShareEventTopicConversationDivisionMembership> divisions = new ArrayList<ConversationScreenShareEventTopicConversationDivisionMembership>();
 
   
   /**
@@ -134,6 +136,23 @@ public class ConversationScreenShareEventTopicScreenShareConversation  implement
   }
 
 
+  /**
+   **/
+  public ConversationScreenShareEventTopicScreenShareConversation divisions(List<ConversationScreenShareEventTopicConversationDivisionMembership> divisions) {
+    this.divisions = divisions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("divisions")
+  public List<ConversationScreenShareEventTopicConversationDivisionMembership> getDivisions() {
+    return divisions;
+  }
+  public void setDivisions(List<ConversationScreenShareEventTopicConversationDivisionMembership> divisions) {
+    this.divisions = divisions;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -149,12 +168,13 @@ public class ConversationScreenShareEventTopicScreenShareConversation  implement
             Objects.equals(this.participants, conversationScreenShareEventTopicScreenShareConversation.participants) &&
             Objects.equals(this.otherMediaUris, conversationScreenShareEventTopicScreenShareConversation.otherMediaUris) &&
             Objects.equals(this.address, conversationScreenShareEventTopicScreenShareConversation.address) &&
-            Objects.equals(this.utilizationLabelId, conversationScreenShareEventTopicScreenShareConversation.utilizationLabelId);
+            Objects.equals(this.utilizationLabelId, conversationScreenShareEventTopicScreenShareConversation.utilizationLabelId) &&
+            Objects.equals(this.divisions, conversationScreenShareEventTopicScreenShareConversation.divisions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId);
+    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId, divisions);
   }
 
   @Override
@@ -168,6 +188,7 @@ public class ConversationScreenShareEventTopicScreenShareConversation  implement
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
+    sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

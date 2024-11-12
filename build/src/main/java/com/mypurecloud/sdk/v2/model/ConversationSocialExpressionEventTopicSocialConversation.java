@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicConversationDivisionMembership;
 import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicSocialMediaParticipant;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -30,6 +31,7 @@ public class ConversationSocialExpressionEventTopicSocialConversation  implement
   private List<String> otherMediaUris = new ArrayList<String>();
   private String address = null;
   private String utilizationLabelId = null;
+  private List<ConversationSocialExpressionEventTopicConversationDivisionMembership> divisions = new ArrayList<ConversationSocialExpressionEventTopicConversationDivisionMembership>();
 
   
   /**
@@ -134,6 +136,23 @@ public class ConversationSocialExpressionEventTopicSocialConversation  implement
   }
 
 
+  /**
+   **/
+  public ConversationSocialExpressionEventTopicSocialConversation divisions(List<ConversationSocialExpressionEventTopicConversationDivisionMembership> divisions) {
+    this.divisions = divisions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("divisions")
+  public List<ConversationSocialExpressionEventTopicConversationDivisionMembership> getDivisions() {
+    return divisions;
+  }
+  public void setDivisions(List<ConversationSocialExpressionEventTopicConversationDivisionMembership> divisions) {
+    this.divisions = divisions;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -149,12 +168,13 @@ public class ConversationSocialExpressionEventTopicSocialConversation  implement
             Objects.equals(this.participants, conversationSocialExpressionEventTopicSocialConversation.participants) &&
             Objects.equals(this.otherMediaUris, conversationSocialExpressionEventTopicSocialConversation.otherMediaUris) &&
             Objects.equals(this.address, conversationSocialExpressionEventTopicSocialConversation.address) &&
-            Objects.equals(this.utilizationLabelId, conversationSocialExpressionEventTopicSocialConversation.utilizationLabelId);
+            Objects.equals(this.utilizationLabelId, conversationSocialExpressionEventTopicSocialConversation.utilizationLabelId) &&
+            Objects.equals(this.divisions, conversationSocialExpressionEventTopicSocialConversation.divisions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId);
+    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId, divisions);
   }
 
   @Override
@@ -168,6 +188,7 @@ public class ConversationSocialExpressionEventTopicSocialConversation  implement
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
+    sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

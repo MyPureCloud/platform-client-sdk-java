@@ -394,7 +394,6 @@ public class ExternalContactsApiAsync {
   /**
    * Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.
    * 
-   * deleteExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -429,7 +428,6 @@ public class ExternalContactsApiAsync {
   /**
    * Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.
    * 
-   * deleteExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1671,7 +1669,6 @@ public class ExternalContactsApiAsync {
   /**
    * Fetch an External Source
    * 
-   * getExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1706,7 +1703,6 @@ public class ExternalContactsApiAsync {
   /**
    * Fetch an External Source
    * 
-   * getExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1748,7 +1744,6 @@ public class ExternalContactsApiAsync {
   /**
    * Fetch a list of External Sources
    * 
-   * getExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1783,7 +1778,6 @@ public class ExternalContactsApiAsync {
   /**
    * Fetch a list of External Sources
    * 
-   * getExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4975,7 +4969,6 @@ public class ExternalContactsApiAsync {
   /**
    * Create an External Source
    * 
-   * postExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5010,7 +5003,6 @@ public class ExternalContactsApiAsync {
   /**
    * Create an External Source
    * 
-   * postExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6027,7 +6019,6 @@ public class ExternalContactsApiAsync {
   /**
    * Update an External Source
    * 
-   * putExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6062,7 +6053,6 @@ public class ExternalContactsApiAsync {
   /**
    * Update an External Source
    * 
-   * putExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

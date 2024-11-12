@@ -45,6 +45,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
   private Date endTime = null;
   private String userId = null;
   private String externalContactId = null;
+  private String externalContactInitialDivisionId = null;
   private String externalOrganizationId = null;
   private String name = null;
   private String queueId = null;
@@ -220,6 +221,24 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
   }
   public void setExternalContactId(String externalContactId) {
     this.externalContactId = externalContactId;
+  }
+
+
+  /**
+   * If this participant represents an external contact, then this will be the initial division for the external contact. This value will not be updated if the external contact is reassigned.
+   **/
+  public QueueConversationVideoEventTopicParticipant externalContactInitialDivisionId(String externalContactInitialDivisionId) {
+    this.externalContactInitialDivisionId = externalContactInitialDivisionId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If this participant represents an external contact, then this will be the initial division for the external contact. This value will not be updated if the external contact is reassigned.")
+  @JsonProperty("externalContactInitialDivisionId")
+  public String getExternalContactInitialDivisionId() {
+    return externalContactInitialDivisionId;
+  }
+  public void setExternalContactInitialDivisionId(String externalContactInitialDivisionId) {
+    this.externalContactInitialDivisionId = externalContactInitialDivisionId;
   }
 
 
@@ -855,6 +874,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
             Objects.equals(this.endTime, queueConversationVideoEventTopicParticipant.endTime) &&
             Objects.equals(this.userId, queueConversationVideoEventTopicParticipant.userId) &&
             Objects.equals(this.externalContactId, queueConversationVideoEventTopicParticipant.externalContactId) &&
+            Objects.equals(this.externalContactInitialDivisionId, queueConversationVideoEventTopicParticipant.externalContactInitialDivisionId) &&
             Objects.equals(this.externalOrganizationId, queueConversationVideoEventTopicParticipant.externalOrganizationId) &&
             Objects.equals(this.name, queueConversationVideoEventTopicParticipant.name) &&
             Objects.equals(this.queueId, queueConversationVideoEventTopicParticipant.queueId) &&
@@ -894,7 +914,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, bargedParticipantId, mediaRoles, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, internalMessages, screenshares, socialExpressions, videos, workflow);
+    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalContactInitialDivisionId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, bargedParticipantId, mediaRoles, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, internalMessages, screenshares, socialExpressions, videos, workflow);
   }
 
   @Override
@@ -907,6 +927,7 @@ public class QueueConversationVideoEventTopicParticipant  implements Serializabl
     sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
+    sb.append("    externalContactInitialDivisionId: ").append(toIndentedString(externalContactInitialDivisionId)).append("\n");
     sb.append("    externalOrganizationId: ").append(toIndentedString(externalOrganizationId)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");

@@ -1552,7 +1552,7 @@ try {
 # **getKnowledgeKnowledgebaseDocumentVariation**
 
 
-> [DocumentVariationResponse](DocumentVariationResponse) getKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, documentState)
+> [DocumentVariationResponse](DocumentVariationResponse) getKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, documentState, expand)
 
 Get a variation for a document.
 
@@ -1588,8 +1588,9 @@ String documentVariationId = "documentVariationId_example"; // String | Globally
 String documentId = "documentId_example"; // String | Globally unique identifier for a document.
 String knowledgeBaseId = "knowledgeBaseId_example"; // String | Globally unique identifier for a knowledge base.
 String documentState = "documentState_example"; // String | The state of the document.
+List<String> expand = Arrays.asList(null); // List<String> | The specified entity attributes will be filled. Comma separated values expected.
 try {
-    DocumentVariationResponse result = apiInstance.getKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, documentState);
+    DocumentVariationResponse result = apiInstance.getKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, documentState, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KnowledgeApi#getKnowledgeKnowledgebaseDocumentVariation");
@@ -1606,6 +1607,7 @@ try {
 | **documentId** | **String**| Globally unique identifier for a document. | 
 | **knowledgeBaseId** | **String**| Globally unique identifier for a knowledge base. | 
 | **documentState** | **String**| The state of the document. | [optional]<br />**Values**: Draft, Published 
+| **expand** | [**List&lt;String&gt;**](String)| The specified entity attributes will be filled. Comma separated values expected. | [optional]<br />**Values**: contentUrl 
 {: class="table-striped"}
 
 
@@ -1617,7 +1619,7 @@ try {
 # **getKnowledgeKnowledgebaseDocumentVariations**
 
 
-> [DocumentVariationResponseListing](DocumentVariationResponseListing) getKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, before, after, pageSize, documentState)
+> [DocumentVariationResponseListing](DocumentVariationResponseListing) getKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, before, after, pageSize, documentState, expand)
 
 Get variations for a document.
 
@@ -1655,8 +1657,9 @@ String before = "before_example"; // String | The cursor that points to the star
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
 String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
 String documentState = "documentState_example"; // String | The state of the document.
+List<String> expand = Arrays.asList(null); // List<String> | The specified entity attributes will be filled. Comma separated values expected.
 try {
-    DocumentVariationResponseListing result = apiInstance.getKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, before, after, pageSize, documentState);
+    DocumentVariationResponseListing result = apiInstance.getKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, before, after, pageSize, documentState, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KnowledgeApi#getKnowledgeKnowledgebaseDocumentVariations");
@@ -1675,6 +1678,7 @@ try {
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
 | **documentState** | **String**| The state of the document. | [optional]<br />**Values**: Draft, Published 
+| **expand** | [**List&lt;String&gt;**](String)| The specified entity attributes will be filled. Comma separated values expected. | [optional]<br />**Values**: contentUrl 
 {: class="table-striped"}
 
 
@@ -7354,4 +7358,4 @@ try {
 [**ServiceNowSourceResponse**](ServiceNowSourceResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_

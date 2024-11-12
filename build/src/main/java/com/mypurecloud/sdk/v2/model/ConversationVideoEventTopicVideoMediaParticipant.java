@@ -285,6 +285,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
   private Integer alertingTimeoutMs = null;
   private String provider = null;
   private ConversationVideoEventTopicUriReference externalContact = null;
+  private String externalContactInitialDivisionId = null;
   private ConversationVideoEventTopicUriReference externalOrganization = null;
   private ConversationVideoEventTopicWrapup wrapup = null;
   private ConversationVideoEventTopicConversationRoutingData conversationRoutingData = null;
@@ -796,6 +797,23 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
 
   /**
    **/
+  public ConversationVideoEventTopicVideoMediaParticipant externalContactInitialDivisionId(String externalContactInitialDivisionId) {
+    this.externalContactInitialDivisionId = externalContactInitialDivisionId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("externalContactInitialDivisionId")
+  public String getExternalContactInitialDivisionId() {
+    return externalContactInitialDivisionId;
+  }
+  public void setExternalContactInitialDivisionId(String externalContactInitialDivisionId) {
+    this.externalContactInitialDivisionId = externalContactInitialDivisionId;
+  }
+
+
+  /**
+   **/
   public ConversationVideoEventTopicVideoMediaParticipant externalOrganization(ConversationVideoEventTopicUriReference externalOrganization) {
     this.externalOrganization = externalOrganization;
     return this;
@@ -1153,6 +1171,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
             Objects.equals(this.alertingTimeoutMs, conversationVideoEventTopicVideoMediaParticipant.alertingTimeoutMs) &&
             Objects.equals(this.provider, conversationVideoEventTopicVideoMediaParticipant.provider) &&
             Objects.equals(this.externalContact, conversationVideoEventTopicVideoMediaParticipant.externalContact) &&
+            Objects.equals(this.externalContactInitialDivisionId, conversationVideoEventTopicVideoMediaParticipant.externalContactInitialDivisionId) &&
             Objects.equals(this.externalOrganization, conversationVideoEventTopicVideoMediaParticipant.externalOrganization) &&
             Objects.equals(this.wrapup, conversationVideoEventTopicVideoMediaParticipant.wrapup) &&
             Objects.equals(this.conversationRoutingData, conversationVideoEventTopicVideoMediaParticipant.conversationRoutingData) &&
@@ -1176,7 +1195,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, audioMuted, videoMuted, sharingScreen, peerCount, context, msids);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, audioMuted, videoMuted, sharingScreen, peerCount, context, msids);
   }
 
   @Override
@@ -1210,6 +1229,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     sb.append("    alertingTimeoutMs: ").append(toIndentedString(alertingTimeoutMs)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
+    sb.append("    externalContactInitialDivisionId: ").append(toIndentedString(externalContactInitialDivisionId)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");

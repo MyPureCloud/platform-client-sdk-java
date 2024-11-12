@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationChatEventTopicChatMediaParticipant;
+import com.mypurecloud.sdk.v2.model.QueueConversationChatEventTopicConversationDivisionMembership;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -30,6 +31,7 @@ public class QueueConversationChatEventTopicChatConversation  implements Seriali
   private List<String> otherMediaUris = new ArrayList<String>();
   private String address = null;
   private String utilizationLabelId = null;
+  private List<QueueConversationChatEventTopicConversationDivisionMembership> divisions = new ArrayList<QueueConversationChatEventTopicConversationDivisionMembership>();
 
   
   /**
@@ -134,6 +136,23 @@ public class QueueConversationChatEventTopicChatConversation  implements Seriali
   }
 
 
+  /**
+   **/
+  public QueueConversationChatEventTopicChatConversation divisions(List<QueueConversationChatEventTopicConversationDivisionMembership> divisions) {
+    this.divisions = divisions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("divisions")
+  public List<QueueConversationChatEventTopicConversationDivisionMembership> getDivisions() {
+    return divisions;
+  }
+  public void setDivisions(List<QueueConversationChatEventTopicConversationDivisionMembership> divisions) {
+    this.divisions = divisions;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -149,12 +168,13 @@ public class QueueConversationChatEventTopicChatConversation  implements Seriali
             Objects.equals(this.participants, queueConversationChatEventTopicChatConversation.participants) &&
             Objects.equals(this.otherMediaUris, queueConversationChatEventTopicChatConversation.otherMediaUris) &&
             Objects.equals(this.address, queueConversationChatEventTopicChatConversation.address) &&
-            Objects.equals(this.utilizationLabelId, queueConversationChatEventTopicChatConversation.utilizationLabelId);
+            Objects.equals(this.utilizationLabelId, queueConversationChatEventTopicChatConversation.utilizationLabelId) &&
+            Objects.equals(this.divisions, queueConversationChatEventTopicChatConversation.divisions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId);
+    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId, divisions);
   }
 
   @Override
@@ -168,6 +188,7 @@ public class QueueConversationChatEventTopicChatConversation  implements Seriali
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
+    sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

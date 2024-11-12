@@ -287,6 +287,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
   private Integer alertingTimeoutMs = null;
   private String provider = null;
   private ConversationCallbackEventTopicUriReference externalContact = null;
+  private String externalContactInitialDivisionId = null;
   private ConversationCallbackEventTopicUriReference externalOrganization = null;
   private ConversationCallbackEventTopicWrapup wrapup = null;
   private ConversationCallbackEventTopicConversationRoutingData conversationRoutingData = null;
@@ -801,6 +802,23 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
 
   /**
    **/
+  public ConversationCallbackEventTopicCallbackMediaParticipant externalContactInitialDivisionId(String externalContactInitialDivisionId) {
+    this.externalContactInitialDivisionId = externalContactInitialDivisionId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("externalContactInitialDivisionId")
+  public String getExternalContactInitialDivisionId() {
+    return externalContactInitialDivisionId;
+  }
+  public void setExternalContactInitialDivisionId(String externalContactInitialDivisionId) {
+    this.externalContactInitialDivisionId = externalContactInitialDivisionId;
+  }
+
+
+  /**
+   **/
   public ConversationCallbackEventTopicCallbackMediaParticipant externalOrganization(ConversationCallbackEventTopicUriReference externalOrganization) {
     this.externalOrganization = externalOrganization;
     return this;
@@ -1209,6 +1227,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
             Objects.equals(this.alertingTimeoutMs, conversationCallbackEventTopicCallbackMediaParticipant.alertingTimeoutMs) &&
             Objects.equals(this.provider, conversationCallbackEventTopicCallbackMediaParticipant.provider) &&
             Objects.equals(this.externalContact, conversationCallbackEventTopicCallbackMediaParticipant.externalContact) &&
+            Objects.equals(this.externalContactInitialDivisionId, conversationCallbackEventTopicCallbackMediaParticipant.externalContactInitialDivisionId) &&
             Objects.equals(this.externalOrganization, conversationCallbackEventTopicCallbackMediaParticipant.externalOrganization) &&
             Objects.equals(this.wrapup, conversationCallbackEventTopicCallbackMediaParticipant.wrapup) &&
             Objects.equals(this.conversationRoutingData, conversationCallbackEventTopicCallbackMediaParticipant.conversationRoutingData) &&
@@ -1235,7 +1254,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, externalCampaign, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, externalCampaign, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
   }
 
   @Override
@@ -1269,6 +1288,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
     sb.append("    alertingTimeoutMs: ").append(toIndentedString(alertingTimeoutMs)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
+    sb.append("    externalContactInitialDivisionId: ").append(toIndentedString(externalContactInitialDivisionId)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");

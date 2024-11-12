@@ -62,6 +62,7 @@ public class ApiClient implements AutoCloseable {
 
     private final Map<String, String> defaultHeaderMap;
     private String basePath;
+    private GatewayConfiguration gatewayConfiguration;
     private final Boolean shouldThrowErrors;
     private Boolean shouldRefreshAccessToken;
     private int refreshTokenWaitTime;
@@ -135,6 +136,13 @@ public class ApiClient implements AutoCloseable {
         this.loggingConfiguration = builder.loggingConfiguration;
         if (this.loggingConfiguration != null) {
             applyLoggingConfiguration(this.loggingConfiguration);
+        }
+
+        GatewayConfiguration gatewayConfiguration = builder.gatewayConfiguration;
+        if (gatewayConfiguration != null && gatewayConfiguration.getHost() != null && !gatewayConfiguration.getHost().isEmpty()) {
+            this.gatewayConfiguration = gatewayConfiguration;
+        } else {
+            this.gatewayConfiguration = null;
         }
         
         String configFilePath = builder.configFilePath;
@@ -242,6 +250,32 @@ public class ApiClient implements AutoCloseable {
 
     public void setRetryConfiguration(RetryConfiguration retryConfig) {
         this.retryConfiguration = retryConfig;
+    }
+
+    public GatewayConfiguration getGatewayConfiguration() {
+        return this.gatewayConfiguration;
+    }
+
+    public void setGatewayConfiguration(GatewayConfiguration gatewayConfig) {
+        this.gatewayConfiguration = gatewayConfig;
+    }
+
+    public void setGateway(String host,
+            String protocol,
+            int port,
+            String pathParamsLogin,
+            String pathParamsApi,
+            String username,
+            String password) {
+        this.gatewayConfiguration = new GatewayConfiguration(host, protocol, port, pathParamsLogin, pathParamsApi, username, password);
+    }
+
+    public void setGateway(String host,
+            String protocol,
+            int port,
+            String pathParamsLogin,
+            String pathParamsApi) {
+        this.gatewayConfiguration = new GatewayConfiguration(host, protocol, port, pathParamsLogin, pathParamsApi);
     }
 
     /**
@@ -615,6 +649,42 @@ public class ApiClient implements AutoCloseable {
         return objectMapper.readValue(obj, type);
     }
 
+    private String getConfUrl(String pathType, String basePath) {
+        if (pathType != null && pathType.equals("login")) {
+            if (this.gatewayConfiguration == null || this.gatewayConfiguration.getHost() == null ) {
+                String[] parts = basePath.split("\\.", 2);
+                String confUrl = "https://login." + parts[1];
+                return confUrl;
+            } else {
+                String confUrl = this.gatewayConfiguration.getProtocol() + "://" + this.gatewayConfiguration.getHost();
+                if (this.gatewayConfiguration.getPort() > 0) confUrl = confUrl + ":" + String.valueOf(this.gatewayConfiguration.getPort());
+                if (this.gatewayConfiguration.getPathParamsLogin() != null && !this.gatewayConfiguration.getPathParamsLogin().isEmpty()) {
+                    if (this.gatewayConfiguration.getPathParamsLogin().startsWith("/")) {
+                        confUrl = confUrl + this.gatewayConfiguration.getPathParamsLogin();
+                    } else {
+                        confUrl = confUrl + "/" + this.gatewayConfiguration.getPathParamsLogin();
+                    }
+                }
+                return confUrl;
+            }
+        } else {
+            if (this.gatewayConfiguration == null || this.gatewayConfiguration.getHost() == null ) {
+                return basePath;
+            } else {
+                String confUrl = this.gatewayConfiguration.getProtocol() + "://" + this.gatewayConfiguration.getHost();
+                if (this.gatewayConfiguration.getPort() > 0) confUrl = confUrl + ":" + String.valueOf(this.gatewayConfiguration.getPort());
+                if (this.gatewayConfiguration.getPathParamsApi() != null && !this.gatewayConfiguration.getPathParamsApi().isEmpty()) {
+                    if (this.gatewayConfiguration.getPathParamsApi().startsWith("/")) {
+                        confUrl = confUrl + this.gatewayConfiguration.getPathParamsApi();
+                    } else {
+                        confUrl = confUrl + "/" + this.gatewayConfiguration.getPathParamsApi();
+                    }
+                }
+                return confUrl;
+            }
+        }
+	}
+
     /**
      * Build full URL by concatenating base path, the given sub path and query parameters.
      *
@@ -632,10 +702,9 @@ public class ApiClient implements AutoCloseable {
 
         final StringBuilder url = new StringBuilder();
         if (isAuthRequest) {
-            String[] parts = basePath.split("\\.", 2);
-            url.append("https://login.").append(parts[1]).append(path);
+            url.append(this.getConfUrl("login", basePath)).append(path);
         } else {
-            url.append(basePath).append(path);
+            url.append(this.getConfUrl("api", basePath)).append(path);
         }
 
         if (queryParams != null && !queryParams.isEmpty()) {
@@ -990,6 +1059,7 @@ public class ApiClient implements AutoCloseable {
             builder.dateFormat = client.dateFormat;
             builder.objectMapper = client.objectMapper;
             builder.basePath = client.basePath;
+            builder.gatewayConfiguration = client.gatewayConfiguration;
             builder.retryConfiguration = client.retryConfiguration;
             builder.loggingConfiguration = client.loggingConfiguration;
             builder.shouldThrowErrors = client.shouldThrowErrors;
@@ -1011,6 +1081,7 @@ public class ApiClient implements AutoCloseable {
         private ObjectMapper objectMapper;
         private DateFormat dateFormat;
         private String basePath;
+        private GatewayConfiguration gatewayConfiguration;
         private RetryConfiguration retryConfiguration;
         private LoggingConfiguration loggingConfiguration;
         private Boolean shouldThrowErrors = true;
@@ -1021,9 +1092,10 @@ public class ApiClient implements AutoCloseable {
         private Boolean autoReloadConfig = true;
 
         private Builder(ConnectorProperties properties) {
+            this.gatewayConfiguration = new GatewayConfiguration();
             this.properties = (properties != null) ? properties.copy() : new ConnectorProperties();
             withUserAgent(DEFAULT_USER_AGENT);
-            withDefaultHeader("purecloud-sdk", "213.0.0");
+            withDefaultHeader("purecloud-sdk", "214.0.0");
         }
 
         public Builder withDefaultHeader(String header, String value) {
@@ -1057,6 +1129,31 @@ public class ApiClient implements AutoCloseable {
         }
          public Builder withBasePath(PureCloudRegionHosts region){
             this.basePath = region.getApiHost();
+            return this;
+        }
+
+        public Builder withGatewayConfiguration(GatewayConfiguration gatewayConfiguration) {
+            this.gatewayConfiguration = gatewayConfiguration;
+            return this;
+        }
+
+        public Builder withGateway(String host,
+            String protocol,
+            int port,
+            String pathParamsLogin,
+            String pathParamsApi,
+            String username,
+            String password) {
+            this.gatewayConfiguration = new GatewayConfiguration(host, protocol, port, pathParamsLogin, pathParamsApi, username, password);
+            return this;
+        }
+
+        public Builder withGateway(String host,
+            String protocol,
+            int port,
+            String pathParamsLogin,
+            String pathParamsApi) {
+            this.gatewayConfiguration = new GatewayConfiguration(host, protocol, port, pathParamsLogin, pathParamsApi);
             return this;
         }
 
@@ -1434,7 +1531,6 @@ public class ApiClient implements AutoCloseable {
             return logFilePath;
         }
     }
-
 
     public static class Retry {
         private long backoffIntervalMs;

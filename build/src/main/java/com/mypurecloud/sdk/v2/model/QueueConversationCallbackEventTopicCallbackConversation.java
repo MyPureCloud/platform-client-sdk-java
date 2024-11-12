@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallbackEventTopicCallbackMediaParticipant;
+import com.mypurecloud.sdk.v2.model.QueueConversationCallbackEventTopicConversationDivisionMembership;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -30,6 +31,7 @@ public class QueueConversationCallbackEventTopicCallbackConversation  implements
   private List<String> otherMediaUris = new ArrayList<String>();
   private String address = null;
   private String utilizationLabelId = null;
+  private List<QueueConversationCallbackEventTopicConversationDivisionMembership> divisions = new ArrayList<QueueConversationCallbackEventTopicConversationDivisionMembership>();
 
   
   /**
@@ -134,6 +136,23 @@ public class QueueConversationCallbackEventTopicCallbackConversation  implements
   }
 
 
+  /**
+   **/
+  public QueueConversationCallbackEventTopicCallbackConversation divisions(List<QueueConversationCallbackEventTopicConversationDivisionMembership> divisions) {
+    this.divisions = divisions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("divisions")
+  public List<QueueConversationCallbackEventTopicConversationDivisionMembership> getDivisions() {
+    return divisions;
+  }
+  public void setDivisions(List<QueueConversationCallbackEventTopicConversationDivisionMembership> divisions) {
+    this.divisions = divisions;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -149,12 +168,13 @@ public class QueueConversationCallbackEventTopicCallbackConversation  implements
             Objects.equals(this.participants, queueConversationCallbackEventTopicCallbackConversation.participants) &&
             Objects.equals(this.otherMediaUris, queueConversationCallbackEventTopicCallbackConversation.otherMediaUris) &&
             Objects.equals(this.address, queueConversationCallbackEventTopicCallbackConversation.address) &&
-            Objects.equals(this.utilizationLabelId, queueConversationCallbackEventTopicCallbackConversation.utilizationLabelId);
+            Objects.equals(this.utilizationLabelId, queueConversationCallbackEventTopicCallbackConversation.utilizationLabelId) &&
+            Objects.equals(this.divisions, queueConversationCallbackEventTopicCallbackConversation.divisions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId);
+    return Objects.hash(id, name, participants, otherMediaUris, address, utilizationLabelId, divisions);
   }
 
   @Override
@@ -168,6 +188,7 @@ public class QueueConversationCallbackEventTopicCallbackConversation  implements
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    utilizationLabelId: ").append(toIndentedString(utilizationLabelId)).append("\n");
+    sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

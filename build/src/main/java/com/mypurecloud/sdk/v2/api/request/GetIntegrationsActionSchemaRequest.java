@@ -113,6 +113,20 @@ public class GetIntegrationsActionSchemaRequest {
 	    return this;
 	} 
 
+	private Boolean flatten;
+	public Boolean getFlatten() {
+		return this.flatten;
+	}
+
+	public void setFlatten(Boolean flatten) {
+		this.flatten = flatten;
+	}
+
+	public GetIntegrationsActionSchemaRequest withFlatten(Boolean flatten) {
+	    this.setFlatten(flatten);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -150,6 +164,9 @@ public class GetIntegrationsActionSchemaRequest {
         
                 .withPathParameter("fileName", fileName)
         
+
+                .withQueryParameters("flatten", "", flatten)
+        
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -183,6 +200,11 @@ public class GetIntegrationsActionSchemaRequest {
 
 		public Builder withFileName(String fileName) {
 			request.setFileName(fileName);
+			return this;
+		}
+
+		public Builder withFlatten(Boolean flatten) {
+			request.setFlatten(flatten);
 			return this;
 		}
 

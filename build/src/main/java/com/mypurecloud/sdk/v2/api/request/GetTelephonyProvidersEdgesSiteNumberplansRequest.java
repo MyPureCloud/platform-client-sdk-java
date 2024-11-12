@@ -77,6 +77,8 @@ import com.mypurecloud.sdk.v2.model.PhysicalInterfaceEntityListing;
 import com.mypurecloud.sdk.v2.model.Site;
 import com.mypurecloud.sdk.v2.model.SiteConnections;
 import com.mypurecloud.sdk.v2.model.SiteEntityListing;
+import com.mypurecloud.sdk.v2.model.SiteSearchRequest;
+import com.mypurecloud.sdk.v2.model.SitesSearchResponse;
 import com.mypurecloud.sdk.v2.model.TimeZoneEntityListing;
 import com.mypurecloud.sdk.v2.model.Trunk;
 import com.mypurecloud.sdk.v2.model.TrunkBase;

@@ -99,7 +99,8 @@ public class GetExternalcontactsOrganizationRequest {
 	} 
 
 	public enum expandValues { 
-		EXTERNALDATASOURCES("externalDataSources");
+		EXTERNALDATASOURCES("externalDataSources"),
+		DIVISION("division");
 
 		private String value;
 

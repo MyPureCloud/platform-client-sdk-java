@@ -26,6 +26,7 @@ public class InstagramId  implements Serializable {
   
   private List<InstagramScopedId> ids = new ArrayList<InstagramScopedId>();
   private String displayName = null;
+  private String handle = null;
 
   
   /**
@@ -64,6 +65,24 @@ public class InstagramId  implements Serializable {
   }
 
 
+  /**
+   * The handle of the person who owns this Instagram account
+   **/
+  public InstagramId handle(String handle) {
+    this.handle = handle;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The handle of the person who owns this Instagram account")
+  @JsonProperty("handle")
+  public String getHandle() {
+    return handle;
+  }
+  public void setHandle(String handle) {
+    this.handle = handle;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -75,12 +94,13 @@ public class InstagramId  implements Serializable {
     InstagramId instagramId = (InstagramId) o;
 
     return Objects.equals(this.ids, instagramId.ids) &&
-            Objects.equals(this.displayName, instagramId.displayName);
+            Objects.equals(this.displayName, instagramId.displayName) &&
+            Objects.equals(this.handle, instagramId.handle);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(ids, displayName);
+    return Objects.hash(ids, displayName, handle);
   }
 
   @Override
@@ -90,6 +110,7 @@ public class InstagramId  implements Serializable {
     
     sb.append("    ids: ").append(toIndentedString(ids)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
+    sb.append("    handle: ").append(toIndentedString(handle)).append("\n");
     sb.append("}");
     return sb.toString();
   }

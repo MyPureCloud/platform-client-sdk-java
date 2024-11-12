@@ -155,6 +155,41 @@ public class Configuration {
       retryConfiguration.setRetryMax(parser.getInt("retry", "retry_max"));
       defaultApiClient.setRetryConfiguration(retryConfiguration);
     }
+    // Gateway Configuration
+    String gatewayHost = parser.getString("gateway", "host");
+    if (gatewayHost != null && !gatewayHost.isEmpty()) {
+        GatewayConfiguration gatewayConfiguration = new GatewayConfiguration();
+        gatewayConfiguration.setHost(gatewayHost);
+
+        String gatewayProtocol = parser.getString("gateway", "protocol");
+        if (gatewayProtocol != null && !gatewayProtocol.isEmpty()) {
+            gatewayConfiguration.setProtocol(gatewayProtocol);
+        }
+        String gatewayPort = parser.getString("gateway", "port");
+        if (gatewayPort != null && !gatewayPort.isEmpty()) {
+            gatewayConfiguration.setPort(parser.getInt("gateway", "port"));
+        }
+        String gatewayPathParamsLogin = parser.getString("gateway", "path_params_login");
+        if (gatewayPathParamsLogin != null && !gatewayPathParamsLogin.isEmpty()) {
+            gatewayConfiguration.setPathParamsLogin(gatewayPathParamsLogin);
+        }
+        String gatewayPathParamsApi = parser.getString("gateway", "path_params_api");
+        if (gatewayPathParamsApi != null && !gatewayPathParamsApi.isEmpty()) {
+            gatewayConfiguration.setPathParamsApi(gatewayPathParamsApi);
+        }
+        String gatewayUsername = parser.getString("gateway", "username");
+        if (gatewayUsername != null && !gatewayUsername.isEmpty()) {
+            gatewayConfiguration.setUsername(gatewayUsername);
+        }
+        String gatewayPassword = parser.getString("gateway", "password");
+        if (gatewayPassword != null && !gatewayPassword.isEmpty()) {
+            gatewayConfiguration.setPassword(gatewayPassword);
+        }
+
+        defaultApiClient.setGatewayConfiguration(gatewayConfiguration);
+    } else {
+      defaultApiClient.setGatewayConfiguration(null);
+    }
   }
   
   private class ConfigurationParser {

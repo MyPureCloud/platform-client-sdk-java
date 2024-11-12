@@ -2257,12 +2257,13 @@ public class KnowledgeApi {
    * @param documentId Globally unique identifier for a document. (required)
    * @param knowledgeBaseId Globally unique identifier for a knowledge base. (required)
    * @param documentState The state of the document. (optional)
+   * @param expand The specified entity attributes will be filled. Comma separated values expected. (optional)
    * @return DocumentVariationResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DocumentVariationResponse getKnowledgeKnowledgebaseDocumentVariation(String documentVariationId, String documentId, String knowledgeBaseId, String documentState) throws IOException, ApiException {
-    return  getKnowledgeKnowledgebaseDocumentVariation(createGetKnowledgeKnowledgebaseDocumentVariationRequest(documentVariationId, documentId, knowledgeBaseId, documentState));
+  public DocumentVariationResponse getKnowledgeKnowledgebaseDocumentVariation(String documentVariationId, String documentId, String knowledgeBaseId, String documentState, List<String> expand) throws IOException, ApiException {
+    return  getKnowledgeKnowledgebaseDocumentVariation(createGetKnowledgeKnowledgebaseDocumentVariationRequest(documentVariationId, documentId, knowledgeBaseId, documentState, expand));
   }
 
   /**
@@ -2272,14 +2273,15 @@ public class KnowledgeApi {
    * @param documentId Globally unique identifier for a document. (required)
    * @param knowledgeBaseId Globally unique identifier for a knowledge base. (required)
    * @param documentState The state of the document. (optional)
+   * @param expand The specified entity attributes will be filled. Comma separated values expected. (optional)
    * @return DocumentVariationResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DocumentVariationResponse> getKnowledgeKnowledgebaseDocumentVariationWithHttpInfo(String documentVariationId, String documentId, String knowledgeBaseId, String documentState) throws IOException {
-    return getKnowledgeKnowledgebaseDocumentVariation(createGetKnowledgeKnowledgebaseDocumentVariationRequest(documentVariationId, documentId, knowledgeBaseId, documentState).withHttpInfo());
+  public ApiResponse<DocumentVariationResponse> getKnowledgeKnowledgebaseDocumentVariationWithHttpInfo(String documentVariationId, String documentId, String knowledgeBaseId, String documentState, List<String> expand) throws IOException {
+    return getKnowledgeKnowledgebaseDocumentVariation(createGetKnowledgeKnowledgebaseDocumentVariationRequest(documentVariationId, documentId, knowledgeBaseId, documentState, expand).withHttpInfo());
   }
 
-  private GetKnowledgeKnowledgebaseDocumentVariationRequest createGetKnowledgeKnowledgebaseDocumentVariationRequest(String documentVariationId, String documentId, String knowledgeBaseId, String documentState) {
+  private GetKnowledgeKnowledgebaseDocumentVariationRequest createGetKnowledgeKnowledgebaseDocumentVariationRequest(String documentVariationId, String documentId, String knowledgeBaseId, String documentState, List<String> expand) {
     return GetKnowledgeKnowledgebaseDocumentVariationRequest.builder()
             .withDocumentVariationId(documentVariationId)
 
@@ -2288,6 +2290,8 @@ public class KnowledgeApi {
             .withKnowledgeBaseId(knowledgeBaseId)
 
             .withDocumentState(documentState)
+
+            .withExpand(expand)
 
             .build();
   }
@@ -2349,12 +2353,13 @@ public class KnowledgeApi {
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param documentState The state of the document. (optional)
+   * @param expand The specified entity attributes will be filled. Comma separated values expected. (optional)
    * @return DocumentVariationResponseListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DocumentVariationResponseListing getKnowledgeKnowledgebaseDocumentVariations(String knowledgeBaseId, String documentId, String before, String after, String pageSize, String documentState) throws IOException, ApiException {
-    return  getKnowledgeKnowledgebaseDocumentVariations(createGetKnowledgeKnowledgebaseDocumentVariationsRequest(knowledgeBaseId, documentId, before, after, pageSize, documentState));
+  public DocumentVariationResponseListing getKnowledgeKnowledgebaseDocumentVariations(String knowledgeBaseId, String documentId, String before, String after, String pageSize, String documentState, List<String> expand) throws IOException, ApiException {
+    return  getKnowledgeKnowledgebaseDocumentVariations(createGetKnowledgeKnowledgebaseDocumentVariationsRequest(knowledgeBaseId, documentId, before, after, pageSize, documentState, expand));
   }
 
   /**
@@ -2366,14 +2371,15 @@ public class KnowledgeApi {
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param documentState The state of the document. (optional)
+   * @param expand The specified entity attributes will be filled. Comma separated values expected. (optional)
    * @return DocumentVariationResponseListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DocumentVariationResponseListing> getKnowledgeKnowledgebaseDocumentVariationsWithHttpInfo(String knowledgeBaseId, String documentId, String before, String after, String pageSize, String documentState) throws IOException {
-    return getKnowledgeKnowledgebaseDocumentVariations(createGetKnowledgeKnowledgebaseDocumentVariationsRequest(knowledgeBaseId, documentId, before, after, pageSize, documentState).withHttpInfo());
+  public ApiResponse<DocumentVariationResponseListing> getKnowledgeKnowledgebaseDocumentVariationsWithHttpInfo(String knowledgeBaseId, String documentId, String before, String after, String pageSize, String documentState, List<String> expand) throws IOException {
+    return getKnowledgeKnowledgebaseDocumentVariations(createGetKnowledgeKnowledgebaseDocumentVariationsRequest(knowledgeBaseId, documentId, before, after, pageSize, documentState, expand).withHttpInfo());
   }
 
-  private GetKnowledgeKnowledgebaseDocumentVariationsRequest createGetKnowledgeKnowledgebaseDocumentVariationsRequest(String knowledgeBaseId, String documentId, String before, String after, String pageSize, String documentState) {
+  private GetKnowledgeKnowledgebaseDocumentVariationsRequest createGetKnowledgeKnowledgebaseDocumentVariationsRequest(String knowledgeBaseId, String documentId, String before, String after, String pageSize, String documentState, List<String> expand) {
     return GetKnowledgeKnowledgebaseDocumentVariationsRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
 
@@ -2386,6 +2392,8 @@ public class KnowledgeApi {
             .withPageSize(pageSize)
 
             .withDocumentState(documentState)
+
+            .withExpand(expand)
 
             .build();
   }

@@ -400,7 +400,6 @@ public class ExternalContactsApi {
   /**
    * Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.
    * 
-   * deleteExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param externalSourceId External Source ID (required)
    * @return Empty
    * @throws ApiException if the request fails on the server
@@ -413,7 +412,6 @@ public class ExternalContactsApi {
   /**
    * Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.
    * 
-   * deleteExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param externalSourceId External Source ID (required)
    * @return Empty
    * @throws IOException if the request fails to be processed
@@ -432,7 +430,6 @@ public class ExternalContactsApi {
   /**
    * Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.
    * 
-   * deleteExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Empty
    * @throws ApiException if the request fails on the server
@@ -452,7 +449,6 @@ public class ExternalContactsApi {
   /**
    * Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.
    * 
-   * deleteExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1301,7 +1297,7 @@ public class ExternalContactsApi {
    * Fetch an unresolved external contact
    * 
    * @param contactId ExternalContact ID (required)
-   * @param expand which fields, if any, to expand (externalOrganization,externalDataSources,identifiers) (optional)
+   * @param expand which fields, if any, to expand (optional)
    * @return ExternalContact
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1314,7 +1310,7 @@ public class ExternalContactsApi {
    * Fetch an unresolved external contact
    * 
    * @param contactId ExternalContact ID (required)
-   * @param expand which fields, if any, to expand (externalOrganization,externalDataSources,identifiers) (optional)
+   * @param expand which fields, if any, to expand (optional)
    * @return ExternalContact
    * @throws IOException if the request fails to be processed
    */
@@ -1788,7 +1784,6 @@ public class ExternalContactsApi {
   /**
    * Fetch an External Source
    * 
-   * getExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param externalSourceId External Source ID (required)
    * @return ExternalSource
    * @throws ApiException if the request fails on the server
@@ -1801,7 +1796,6 @@ public class ExternalContactsApi {
   /**
    * Fetch an External Source
    * 
-   * getExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param externalSourceId External Source ID (required)
    * @return ExternalSource
    * @throws IOException if the request fails to be processed
@@ -1820,7 +1814,6 @@ public class ExternalContactsApi {
   /**
    * Fetch an External Source
    * 
-   * getExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ExternalSource
    * @throws ApiException if the request fails on the server
@@ -1840,7 +1833,6 @@ public class ExternalContactsApi {
   /**
    * Fetch an External Source
    * 
-   * getExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1870,7 +1862,6 @@ public class ExternalContactsApi {
   /**
    * Fetch a list of External Sources
    * 
-   * getExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
    * @param limit The number of ExternalSources per page; must be between 10 and 200, default is 100 (optional)
    * @param name Filter by external source name. Filtering is prefix filtering and not an exact match (optional)
@@ -1886,7 +1877,6 @@ public class ExternalContactsApi {
   /**
    * Fetch a list of External Sources
    * 
-   * getExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
    * @param limit The number of ExternalSources per page; must be between 10 and 200, default is 100 (optional)
    * @param name Filter by external source name. Filtering is prefix filtering and not an exact match (optional)
@@ -1914,7 +1904,6 @@ public class ExternalContactsApi {
   /**
    * Fetch a list of External Sources
    * 
-   * getExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return CursorExternalSourceListing
    * @throws ApiException if the request fails on the server
@@ -1934,7 +1923,6 @@ public class ExternalContactsApi {
   /**
    * Fetch a list of External Sources
    * 
-   * getExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2285,7 +2273,7 @@ public class ExternalContactsApi {
    * Fetch an external organization
    * 
    * @param externalOrganizationId External Organization ID (required)
-   * @param expand which fields, if any, to expand (externalDataSources) (optional)
+   * @param expand which fields, if any, to expand (optional)
    * @param includeTrustors (true or false) whether or not to include trustor information embedded in the externalOrganization (optional)
    * @return ExternalOrganization
    * @throws ApiException if the request fails on the server
@@ -2299,7 +2287,7 @@ public class ExternalContactsApi {
    * Fetch an external organization
    * 
    * @param externalOrganizationId External Organization ID (required)
-   * @param expand which fields, if any, to expand (externalDataSources) (optional)
+   * @param expand which fields, if any, to expand (optional)
    * @param includeTrustors (true or false) whether or not to include trustor information embedded in the externalOrganization (optional)
    * @return ExternalOrganization
    * @throws IOException if the request fails to be processed
@@ -5372,7 +5360,6 @@ public class ExternalContactsApi {
   /**
    * Create an External Source
    * 
-   * postExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body External Source (required)
    * @return ExternalSource
    * @throws ApiException if the request fails on the server
@@ -5385,7 +5372,6 @@ public class ExternalContactsApi {
   /**
    * Create an External Source
    * 
-   * postExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body External Source (required)
    * @return ExternalSource
    * @throws IOException if the request fails to be processed
@@ -5404,7 +5390,6 @@ public class ExternalContactsApi {
   /**
    * Create an External Source
    * 
-   * postExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ExternalSource
    * @throws ApiException if the request fails on the server
@@ -5424,7 +5409,6 @@ public class ExternalContactsApi {
   /**
    * Create an External Source
    * 
-   * postExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6493,7 +6477,6 @@ public class ExternalContactsApi {
   /**
    * Update an External Source
    * 
-   * putExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param externalSourceId External Source ID (required)
    * @param body External Source (required)
    * @return ExternalSource
@@ -6507,7 +6490,6 @@ public class ExternalContactsApi {
   /**
    * Update an External Source
    * 
-   * putExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param externalSourceId External Source ID (required)
    * @param body External Source (required)
    * @return ExternalSource
@@ -6529,7 +6511,6 @@ public class ExternalContactsApi {
   /**
    * Update an External Source
    * 
-   * putExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ExternalSource
    * @throws ApiException if the request fails on the server
@@ -6549,7 +6530,6 @@ public class ExternalContactsApi {
   /**
    * Update an External Source
    * 
-   * putExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

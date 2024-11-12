@@ -286,6 +286,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
   private Integer alertingTimeoutMs = null;
   private String provider = null;
   private ConversationMessageEventTopicUriReference externalContact = null;
+  private String externalContactInitialDivisionId = null;
   private ConversationMessageEventTopicUriReference externalOrganization = null;
   private ConversationMessageEventTopicWrapup wrapup = null;
   private ConversationMessageEventTopicConversationRoutingData conversationRoutingData = null;
@@ -377,7 +378,8 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     KAKAO("kakao"),
     WEBMESSAGING("webmessaging"),
     OPEN("open"),
-    INSTAGRAM("instagram");
+    INSTAGRAM("instagram"),
+    APPLE("apple");
 
     private String value;
 
@@ -855,6 +857,23 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
 
   /**
    **/
+  public ConversationMessageEventTopicMessageMediaParticipant externalContactInitialDivisionId(String externalContactInitialDivisionId) {
+    this.externalContactInitialDivisionId = externalContactInitialDivisionId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("externalContactInitialDivisionId")
+  public String getExternalContactInitialDivisionId() {
+    return externalContactInitialDivisionId;
+  }
+  public void setExternalContactInitialDivisionId(String externalContactInitialDivisionId) {
+    this.externalContactInitialDivisionId = externalContactInitialDivisionId;
+  }
+
+
+  /**
+   **/
   public ConversationMessageEventTopicMessageMediaParticipant externalOrganization(ConversationMessageEventTopicUriReference externalOrganization) {
     this.externalOrganization = externalOrganization;
     return this;
@@ -1212,6 +1231,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
             Objects.equals(this.alertingTimeoutMs, conversationMessageEventTopicMessageMediaParticipant.alertingTimeoutMs) &&
             Objects.equals(this.provider, conversationMessageEventTopicMessageMediaParticipant.provider) &&
             Objects.equals(this.externalContact, conversationMessageEventTopicMessageMediaParticipant.externalContact) &&
+            Objects.equals(this.externalContactInitialDivisionId, conversationMessageEventTopicMessageMediaParticipant.externalContactInitialDivisionId) &&
             Objects.equals(this.externalOrganization, conversationMessageEventTopicMessageMediaParticipant.externalOrganization) &&
             Objects.equals(this.wrapup, conversationMessageEventTopicMessageMediaParticipant.wrapup) &&
             Objects.equals(this.conversationRoutingData, conversationMessageEventTopicMessageMediaParticipant.conversationRoutingData) &&
@@ -1235,7 +1255,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, messages, type, recipientCountry, recipientType, byoSmsIntegrationId, monitoredParticipantId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, messages, type, recipientCountry, recipientType, byoSmsIntegrationId, monitoredParticipantId);
   }
 
   @Override
@@ -1269,6 +1289,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     sb.append("    alertingTimeoutMs: ").append(toIndentedString(alertingTimeoutMs)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
+    sb.append("    externalContactInitialDivisionId: ").append(toIndentedString(externalContactInitialDivisionId)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");
