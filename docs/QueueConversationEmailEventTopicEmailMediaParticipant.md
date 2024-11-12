@@ -31,6 +31,7 @@
 | **alertingTimeoutMs** | **Integer** |  |  [optional] |
 | **provider** | **String** |  |  [optional] |
 | **externalContact** | [**QueueConversationEmailEventTopicUriReference**](QueueConversationEmailEventTopicUriReference) |  |  [optional] |
+| **externalContactInitialDivisionId** | **String** |  |  [optional] |
 | **externalOrganization** | [**QueueConversationEmailEventTopicUriReference**](QueueConversationEmailEventTopicUriReference) |  |  [optional] |
 | **wrapup** | [**QueueConversationEmailEventTopicWrapup**](QueueConversationEmailEventTopicWrapup) |  |  [optional] |
 | **conversationRoutingData** | [**QueueConversationEmailEventTopicConversationRoutingData**](QueueConversationEmailEventTopicConversationRoutingData) |  |  [optional] |
@@ -136,4 +137,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_

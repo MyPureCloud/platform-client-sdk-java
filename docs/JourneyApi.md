@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteJourneyOutcomesPredictor**](JourneyApi#deleteJourneyOutcomesPredictor) | Delete an outcome predictor. |
 | [**deleteJourneySegment**](JourneyApi#deleteJourneySegment) | Delete a segment. |
 | [**deleteJourneyView**](JourneyApi#deleteJourneyView) | Delete a Journey View by ID |
+| [**deleteJourneyViewSchedules**](JourneyApi#deleteJourneyViewSchedules) | Delete the Schedule of a JourneyView |
 | [**getAnalyticsJourneysAggregatesJob**](JourneyApi#getAnalyticsJourneysAggregatesJob) | Get status for async query for journey aggregates |
 | [**getAnalyticsJourneysAggregatesJobResults**](JourneyApi#getAnalyticsJourneysAggregatesJobResults) | Fetch a page of results for an async aggregates query |
 | [**getExternalcontactsContactJourneySessions**](JourneyApi#getExternalcontactsContactJourneySessions) | Retrieve all sessions for a given external contact. |
@@ -34,6 +35,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getJourneySessionEvents**](JourneyApi#getJourneySessionEvents) | Retrieve all events for a given session. |
 | [**getJourneySessionOutcomescores**](JourneyApi#getJourneySessionOutcomescores) | Retrieve latest outcome score associated with a session for all outcomes. |
 | [**getJourneyView**](JourneyApi#getJourneyView) | Get a Journey View by ID |
+| [**getJourneyViewSchedules**](JourneyApi#getJourneyViewSchedules) | Get the Schedule for a JourneyView |
 | [**getJourneyViewVersion**](JourneyApi#getJourneyViewVersion) | Get a Journey View by ID and version |
 | [**getJourneyViewVersionChart**](JourneyApi#getJourneyViewVersionChart) | Get a Chart by ID |
 | [**getJourneyViewVersionChartVersion**](JourneyApi#getJourneyViewVersionChartVersion) | Get a Chart by ID and version |
@@ -45,6 +47,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getJourneyViewsEventdefinition**](JourneyApi#getJourneyViewsEventdefinition) | Get an Event Definition |
 | [**getJourneyViewsEventdefinitions**](JourneyApi#getJourneyViewsEventdefinitions) | Get a list of Event Definitions |
 | [**getJourneyViewsJobs**](JourneyApi#getJourneyViewsJobs) | Get the jobs for an organization. |
+| [**getJourneyViewsSchedules**](JourneyApi#getJourneyViewsSchedules) | Get the journey schedules for an organization. |
 | [**patchJourneyActionmap**](JourneyApi#patchJourneyActionmap) | Update single action map. |
 | [**patchJourneyActiontarget**](JourneyApi#patchJourneyActiontarget) | Update a single action target. |
 | [**patchJourneyActiontemplate**](JourneyApi#patchJourneyActiontemplate) | Update a single action template. |
@@ -64,10 +67,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postJourneyOutcomesAttributionsJobs**](JourneyApi#postJourneyOutcomesAttributionsJobs) | Create Outcome Attributions |
 | [**postJourneyOutcomesPredictors**](JourneyApi#postJourneyOutcomesPredictors) | Create an outcome predictor. |
 | [**postJourneySegments**](JourneyApi#postJourneySegments) | Create a segment. |
+| [**postJourneyViewSchedules**](JourneyApi#postJourneyViewSchedules) | Add a new Schedule to a JourneyView |
 | [**postJourneyViewVersionJobs**](JourneyApi#postJourneyViewVersionJobs) | Submit a job request for a journey view version. |
 | [**postJourneyViewVersions**](JourneyApi#postJourneyViewVersions) | Update a Journey View by ID |
 | [**postJourneyViews**](JourneyApi#postJourneyViews) | Create a new Journey View |
 | [**postJourneyViewsEncodingsValidate**](JourneyApi#postJourneyViewsEncodingsValidate) | Validate whether an encoding exist for a label/value combination. |
+| [**putJourneyViewSchedules**](JourneyApi#putJourneyViewSchedules) | Update the Schedule for a JourneyView |
 | [**putJourneyViewVersion**](JourneyApi#putJourneyViewVersion) | Update a Journey View by ID and version |
 {: class="table-striped"}
 
@@ -422,6 +427,67 @@ try {
 ### Return type
 
 null (empty response body)
+
+
+# **deleteJourneyViewSchedules**
+
+
+> [JourneyViewSchedule](JourneyViewSchedule) deleteJourneyViewSchedules(viewId)
+
+Delete the Schedule of a JourneyView
+
+used for long descriptions
+
+Wraps DELETE /api/v2/journey/views/{viewId}/schedules  
+
+Requires ALL permissions: 
+
+* journey:viewsSchedule:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String viewId = "viewId_example"; // String | Journey View Id
+try {
+    JourneyViewSchedule result = apiInstance.deleteJourneyViewSchedules(viewId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#deleteJourneyViewSchedules");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **viewId** | **String**| Journey View Id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**JourneyViewSchedule**](JourneyViewSchedule)
 
 
 # **getAnalyticsJourneysAggregatesJob**
@@ -1909,6 +1975,67 @@ try {
 [**JourneyView**](JourneyView)
 
 
+# **getJourneyViewSchedules**
+
+
+> [JourneyViewSchedule](JourneyViewSchedule) getJourneyViewSchedules(viewId)
+
+Get the Schedule for a JourneyView
+
+used for long descriptions
+
+Wraps GET /api/v2/journey/views/{viewId}/schedules  
+
+Requires ALL permissions: 
+
+* journey:viewsSchedule:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String viewId = "viewId_example"; // String | Journey View Id
+try {
+    JourneyViewSchedule result = apiInstance.getJourneyViewSchedules(viewId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyViewSchedules");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **viewId** | **String**| Journey View Id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**JourneyViewSchedule**](JourneyViewSchedule)
+
+
 # **getJourneyViewVersion**
 
 
@@ -2602,6 +2729,67 @@ try {
 ### Return type
 
 [**JourneyViewJobListing**](JourneyViewJobListing)
+
+
+# **getJourneyViewsSchedules**
+
+
+> [JourneyViewScheduleListing](JourneyViewScheduleListing) getJourneyViewsSchedules(pageNumber, pageSize)
+
+Get the journey schedules for an organization.
+
+Wraps GET /api/v2/journey/views/schedules  
+
+Requires ALL permissions: 
+
+* journey:viewsSchedule:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+Integer pageNumber = 1; // Integer | The number of the page to return
+Integer pageSize = 25; // Integer | Max number of entities to return
+try {
+    JourneyViewScheduleListing result = apiInstance.getJourneyViewsSchedules(pageNumber, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyViewsSchedules");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| The number of the page to return | [optional] [default to 1] 
+| **pageSize** | **Integer**| Max number of entities to return | [optional] [default to 25] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**JourneyViewScheduleListing**](JourneyViewScheduleListing)
 
 
 # **patchJourneyActionmap**
@@ -3710,6 +3898,67 @@ try {
 [**JourneySegment**](JourneySegment)
 
 
+# **postJourneyViewSchedules**
+
+
+> [JourneyViewSchedule](JourneyViewSchedule) postJourneyViewSchedules(viewId, body)
+
+Add a new Schedule to a JourneyView
+
+Wraps POST /api/v2/journey/views/{viewId}/schedules  
+
+Requires ALL permissions: 
+
+* journey:viewsSchedule:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String viewId = "viewId_example"; // String | Journey View Id
+JourneyViewSchedule body = new JourneyViewSchedule(); // JourneyViewSchedule | journeyViewSchedule
+try {
+    JourneyViewSchedule result = apiInstance.postJourneyViewSchedules(viewId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#postJourneyViewSchedules");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **viewId** | **String**| Journey View Id | 
+| **body** | [**JourneyViewSchedule**](JourneyViewSchedule)| journeyViewSchedule | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**JourneyViewSchedule**](JourneyViewSchedule)
+
+
 # **postJourneyViewVersionJobs**
 
 
@@ -3956,6 +4205,69 @@ try {
 [**EntityListing**](EntityListing)
 
 
+# **putJourneyViewSchedules**
+
+
+> [JourneyViewSchedule](JourneyViewSchedule) putJourneyViewSchedules(viewId, body)
+
+Update the Schedule for a JourneyView
+
+used for long descriptions
+
+Wraps PUT /api/v2/journey/views/{viewId}/schedules  
+
+Requires ALL permissions: 
+
+* journey:viewsSchedule:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String viewId = "viewId_example"; // String | Journey View Id
+JourneyViewSchedule body = new JourneyViewSchedule(); // JourneyViewSchedule | journeyViewSchedule
+try {
+    JourneyViewSchedule result = apiInstance.putJourneyViewSchedules(viewId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#putJourneyViewSchedules");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **viewId** | **String**| Journey View Id | 
+| **body** | [**JourneyViewSchedule**](JourneyViewSchedule)| journeyViewSchedule | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**JourneyViewSchedule**](JourneyViewSchedule)
+
+
 # **putJourneyViewVersion**
 
 
@@ -4021,4 +4333,4 @@ try {
 [**JourneyView**](JourneyView)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_

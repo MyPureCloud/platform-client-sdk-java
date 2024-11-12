@@ -14,6 +14,7 @@
 | **statusTransitionDelaySeconds** | **Integer** | Delay in seconds for auto status transition |  [optional] |
 | **statusTransitionTime** | **String** | Time is represented as an ISO-8601 string without a timezone. For example: HH:mm:ss.SSS |  [optional] |
 | **worktype** | [**WorktypeReference**](WorktypeReference) | The Worktype containing the Status. |  [optional] |
+| **autoTerminateWorkitem** | **Boolean** | Terminate workitem on selection of status. Applicable only for statuses in the Closed category. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -31,4 +32,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_

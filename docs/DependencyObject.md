@@ -35,6 +35,7 @@
 | CONTACTLIST | &quot;CONTACTLIST&quot; | 
 | DATAACTION | &quot;DATAACTION&quot; | 
 | DATATABLE | &quot;DATATABLE&quot; | 
+| DECISIONTABLE | &quot;DECISIONTABLE&quot; | 
 | DIALOGENGINEBOT | &quot;DIALOGENGINEBOT&quot; | 
 | DIALOGENGINEBOTVERSION | &quot;DIALOGENGINEBOTVERSION&quot; | 
 | DIALOGFLOWAGENT | &quot;DIALOGFLOWAGENT&quot; | 
@@ -96,4 +97,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_

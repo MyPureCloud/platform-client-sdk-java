@@ -16,6 +16,7 @@
 | **appEvent** | [**JourneyAppEventsNotificationAppMessage**](JourneyAppEventsNotificationAppMessage) |  |  [optional] |
 | **outcomeAchievedEvent** | [**JourneyAppEventsNotificationOutcomeAchievedMessage**](JourneyAppEventsNotificationOutcomeAchievedMessage) |  |  [optional] |
 | **segmentAssignmentEvent** | [**JourneyAppEventsNotificationSegmentAssignmentMessage**](JourneyAppEventsNotificationSegmentAssignmentMessage) |  |  [optional] |
+| **webActionEvent** | [**JourneyAppEventsNotificationWebActionMessage**](JourneyAppEventsNotificationWebActionMessage) |  |  [optional] |
 
 
 ## Enum: EventTypeEnum
@@ -26,8 +27,9 @@
 | APPEVENT | &quot;AppEvent&quot; | 
 | OUTCOMEACHIEVEDEVENT | &quot;OutcomeAchievedEvent&quot; | 
 | SEGMENTASSIGNMENTEVENT | &quot;SegmentAssignmentEvent&quot; | 
+| WEBACTIONEVENT | &quot;WebActionEvent&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_

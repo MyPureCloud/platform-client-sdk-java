@@ -16,6 +16,8 @@
 | **partialDayStartDateTimes** | **List&lt;String&gt;** |  |  [optional] |
 | **fullDayManagementUnitDates** | **List&lt;String&gt;** |  |  [optional] |
 | **dailyDurationMinutes** | **Integer** |  |  [optional] |
+| **durationMinutes** | **List&lt;Integer&gt;** |  |  [optional] |
+| **payableMinutes** | **List&lt;Integer&gt;** |  |  [optional] |
 | **notes** | **String** |  |  [optional] |
 | **reviewedDate** | **String** |  |  [optional] |
 | **reviewedBy** | **String** |  |  [optional] |
@@ -53,4 +55,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_

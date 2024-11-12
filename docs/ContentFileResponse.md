@@ -9,6 +9,7 @@
 | **type** | [**TypeEnum**](#Enum--TypeEnum) | The file format |  |
 | **checksum** | **String** | The checksum of the file |  |
 | **size** | **Long** | The size of the file in bytes |  |
+| **contentUrl** | **String** | Public download url for content. Needs to be expanded |  |
 
 
 ## Enum: TypeEnum
@@ -23,4 +24,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_

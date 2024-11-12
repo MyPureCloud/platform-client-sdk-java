@@ -36,7 +36,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getSpeechandtextanalyticsTopicsGeneral**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopicsGeneral) | Get the Speech & Text Analytics general topics for a given dialect |
 | [**getSpeechandtextanalyticsTopicsGeneralStatus**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopicsGeneralStatus) | Get the list of general topics from the org and the system with their current status |
 | [**getSpeechandtextanalyticsTopicsPublishjob**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopicsPublishjob) | Get a Speech & Text Analytics publish topics job by id |
-| [**getSpeechandtextanalyticsTranslationsLanguageConversation**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTranslationsLanguageConversation) | Translate all communication(s) for an interaction. |
+| [**getSpeechandtextanalyticsTranslationsLanguageConversation**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTranslationsLanguageConversation) | Translate a single interaction recording (or an email conversation) |
 | [**getSpeechandtextanalyticsTranslationsLanguages**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsTranslationsLanguages) | Get supported translation languages |
 | [**patchSpeechandtextanalyticsSettings**](SpeechTextAnalyticsApi#patchSpeechandtextanalyticsSettings) | Patch Speech And Text Analytics Settings |
 | [**postSpeechandtextanalyticsCategories**](SpeechTextAnalyticsApi#postSpeechandtextanalyticsCategories) | Create new Speech & Text Analytics category |
@@ -1975,7 +1975,7 @@ try {
 
 > [CommunicationTranslationList](CommunicationTranslationList) getSpeechandtextanalyticsTranslationsLanguageConversation(languageId, conversationId, communicationId, recordingId)
 
-Translate all communication(s) for an interaction.
+Translate a single interaction recording (or an email conversation)
 
 getSpeechandtextanalyticsTranslationsLanguageConversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
@@ -2009,8 +2009,8 @@ Configuration.setDefaultApiClient(apiClient);
 SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
 String languageId = "languageId_example"; // String | Target translation language
 String conversationId = "conversationId_example"; // String | Conversation id
-String communicationId = "communicationId_example"; // String | Communication id associated with the conversation
-String recordingId = "recordingId_example"; // String | Recording id associated with the communication
+String communicationId = "communicationId_example"; // String | Communication id associated with the conversation. Please provide a valid communicationId when requesting non-email interactions.
+String recordingId = "recordingId_example"; // String | Recording id associated with the communication. Please provide a valid recordingId when requesting voice interactions.
 try {
     CommunicationTranslationList result = apiInstance.getSpeechandtextanalyticsTranslationsLanguageConversation(languageId, conversationId, communicationId, recordingId);
     System.out.println(result);
@@ -2027,8 +2027,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **languageId** | **String**| Target translation language | 
 | **conversationId** | **String**| Conversation id | 
-| **communicationId** | **String**| Communication id associated with the conversation | [optional] 
-| **recordingId** | **String**| Recording id associated with the communication | [optional] 
+| **communicationId** | **String**| Communication id associated with the conversation. Please provide a valid communicationId when requesting non-email interactions. | [optional] 
+| **recordingId** | **String**| Recording id associated with the communication. Please provide a valid recordingId when requesting voice interactions. | [optional] 
 {: class="table-striped"}
 
 
@@ -3113,4 +3113,4 @@ try {
 [**Topic**](Topic)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_

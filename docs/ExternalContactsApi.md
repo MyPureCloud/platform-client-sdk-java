@@ -279,8 +279,6 @@ null (empty response body)
 
 Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.
 
-deleteExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/externalcontacts/externalsources/{externalSourceId}  
 
 Requires ANY permissions: 
@@ -684,7 +682,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **contactId** | **String**| ExternalContact ID | 
-| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources 
+| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources, division 
 {: class="table-striped"}
 
 
@@ -872,7 +870,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **contactId** | **String**| ExternalContact Id | 
 | **noteId** | **String**| Note Id | 
-| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: author, externalDataSources 
+| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: author, externalDataSources, division 
 {: class="table-striped"}
 
 
@@ -940,7 +938,7 @@ try {
 | **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] 
 | **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] 
 | **sortOrder** | **String**| The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. \&quot;createDate:asc\&quot;, \&quot;createDate:desc\&quot; | [optional] 
-| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: author, externalDataSources 
+| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: author, externalDataSources, division 
 {: class="table-striped"}
 
 
@@ -985,7 +983,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 String contactId = "contactId_example"; // String | ExternalContact ID
-List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand (externalOrganization,externalDataSources,identifiers)
+List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand
 try {
     ExternalContact result = apiInstance.getExternalcontactsContactUnresolved(contactId, expand);
     System.out.println(result);
@@ -1001,7 +999,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **contactId** | **String**| ExternalContact ID | 
-| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand (externalOrganization,externalDataSources,identifiers) | [optional]<br />**Values**: externalOrganization, externalDataSources, identifiers 
+| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources, identifiers, division 
 {: class="table-striped"}
 
 
@@ -1069,7 +1067,7 @@ try {
 | **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] 
 | **q** | **String**| User supplied search keywords (no special syntax is currently supported) | [optional] 
 | **sortOrder** | **String**| The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \&quot;firstName:asc\&quot;, \&quot;title:desc\&quot; | [optional] 
-| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources 
+| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources, division 
 {: class="table-striped"}
 
 
@@ -1319,8 +1317,6 @@ This endpoint does not require any parameters.
 
 Fetch an External Source
 
-getExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/externalcontacts/externalsources/{externalSourceId}  
 
 Requires ANY permissions: 
@@ -1381,8 +1377,6 @@ try {
 > [CursorExternalSourceListing](CursorExternalSourceListing) getExternalcontactsExternalsources(cursor, limit, name, active)
 
 Fetch a list of External Sources
-
-getExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/externalcontacts/externalsources  
 
@@ -1721,7 +1715,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 String externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
-List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand (externalDataSources)
+List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand
 Boolean includeTrustors = true; // Boolean | (true or false) whether or not to include trustor information embedded in the externalOrganization
 try {
     ExternalOrganization result = apiInstance.getExternalcontactsOrganization(externalOrganizationId, expand, includeTrustors);
@@ -1738,7 +1732,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **externalOrganizationId** | **String**| External Organization ID | 
-| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand (externalDataSources) | [optional]<br />**Values**: externalDataSources 
+| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: externalDataSources, division 
 | **includeTrustors** | **Boolean**| (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional] 
 {: class="table-striped"}
 
@@ -1809,7 +1803,7 @@ try {
 | **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] 
 | **q** | **String**| User supplied search keywords (no special syntax is currently supported) | [optional] 
 | **sortOrder** | **String**| The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \&quot;firstName:asc\&quot;, \&quot;title:desc\&quot; | [optional] 
-| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources 
+| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources, division 
 {: class="table-striped"}
 
 
@@ -1873,7 +1867,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **externalOrganizationId** | **String**| External Organization Id | 
 | **noteId** | **String**| Note Id | 
-| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: author, externalDataSources 
+| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: author, externalDataSources, division 
 {: class="table-striped"}
 
 
@@ -1941,7 +1935,7 @@ try {
 | **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] 
 | **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] 
 | **sortOrder** | **String**| The Note field to sort by. Any of: [createDate]. Direction: [asc, desc]. e.g. \&quot;createDate:asc\&quot;, \&quot;createDate:desc\&quot; | [optional] 
-| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: author, externalDataSources 
+| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: author, externalDataSources, division 
 {: class="table-striped"}
 
 
@@ -2008,7 +2002,7 @@ try {
 | **externalOrganizationId** | **String**| External Organization ID | 
 | **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] 
 | **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] 
-| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: externalDataSources 
+| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: externalDataSources, division 
 | **sortOrder** | **String**| The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. \&quot;createDate:asc\&quot;, \&quot;relationship:desc\&quot; | [optional] 
 {: class="table-striped"}
 
@@ -2080,7 +2074,7 @@ try {
 | **q** | **String**| Search query | [optional] 
 | **trustorId** | [**List&lt;String&gt;**](String)| Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested | [optional] 
 | **sortOrder** | **String**| The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. \&quot;companyType:asc\&quot;, \&quot;industry:desc\&quot; | [optional] 
-| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: externalDataSources 
+| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: externalDataSources, division 
 | **includeTrustors** | **Boolean**| (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional] 
 {: class="table-striped"}
 
@@ -2377,7 +2371,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **relationshipId** | **String**| Relationship Id | 
-| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: externalDataSources 
+| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: externalDataSources, division 
 {: class="table-striped"}
 
 
@@ -2438,7 +2432,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **lookupVal** | **String**| User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) | 
-| **expand** | [**List&lt;String&gt;**](String)| which field, if any, to expand | [optional]<br />**Values**: contacts.externalOrganization, externalDataSources 
+| **expand** | [**List&lt;String&gt;**](String)| which field, if any, to expand | [optional]<br />**Values**: contacts.externalOrganization, externalDataSources, division 
 {: class="table-striped"}
 
 
@@ -4014,8 +4008,6 @@ try {
 
 Create an External Source
 
-postExternalcontactsExternalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/externalcontacts/externalsources  
 
 Requires ANY permissions: 
@@ -4123,7 +4115,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **identifier** | [**ContactIdentifier**](ContactIdentifier)|  | 
-| **expand** | [**List&lt;String&gt;**](String)| which field, if any, to expand | [optional]<br />**Values**: externalOrganization, identifiers, externalSources 
+| **expand** | [**List&lt;String&gt;**](String)| which field, if any, to expand | [optional]<br />**Values**: externalOrganization, identifiers, externalSources, division 
 {: class="table-striped"}
 
 
@@ -4868,8 +4860,6 @@ null (empty response body)
 
 Update an External Source
 
-putExternalcontactsExternalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/externalcontacts/externalsources/{externalSourceId}  
 
 Requires ANY permissions: 
@@ -5295,4 +5285,4 @@ try {
 [**Relationship**](Relationship)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_

@@ -716,7 +716,7 @@ try {
 # **getIntegrationsActionDraftSchema**
 
 
-> [JsonSchemaDocument](JsonSchemaDocument) getIntegrationsActionDraftSchema(actionId, fileName)
+> [JsonSchemaDocument](JsonSchemaDocument) getIntegrationsActionDraftSchema(actionId, fileName, flatten)
 
 Retrieve schema for a Draft based on filename.
 
@@ -751,8 +751,9 @@ Configuration.setDefaultApiClient(apiClient);
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
 String fileName = "fileName_example"; // String | Name of schema file to be retrieved for this draft.
+Boolean flatten = false; // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
 try {
-    JsonSchemaDocument result = apiInstance.getIntegrationsActionDraftSchema(actionId, fileName);
+    JsonSchemaDocument result = apiInstance.getIntegrationsActionDraftSchema(actionId, fileName, flatten);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsActionDraftSchema");
@@ -767,6 +768,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **actionId** | **String**| actionId | 
 | **fileName** | **String**| Name of schema file to be retrieved for this draft. | 
+| **flatten** | **Boolean**| Indicates the response should be reformatted, based on Architect&#39;s flattening format. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -960,7 +962,7 @@ try {
 # **getIntegrationsActionSchema**
 
 
-> [JsonSchemaDocument](JsonSchemaDocument) getIntegrationsActionSchema(actionId, fileName)
+> [JsonSchemaDocument](JsonSchemaDocument) getIntegrationsActionSchema(actionId, fileName, flatten)
 
 Retrieve schema for an action based on filename.
 
@@ -995,8 +997,9 @@ Configuration.setDefaultApiClient(apiClient);
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
 String fileName = "fileName_example"; // String | Name of schema file to be retrieved for this action.
+Boolean flatten = false; // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
 try {
-    JsonSchemaDocument result = apiInstance.getIntegrationsActionSchema(actionId, fileName);
+    JsonSchemaDocument result = apiInstance.getIntegrationsActionSchema(actionId, fileName, flatten);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsActionSchema");
@@ -1011,6 +1014,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **actionId** | **String**| actionId | 
 | **fileName** | **String**| Name of schema file to be retrieved for this action. | 
+| **flatten** | **Boolean**| Indicates the response should be reformatted, based on Architect&#39;s flattening format. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -4435,7 +4439,7 @@ try {
 # **postIntegrationsActionDraftTest**
 
 
-> [TestExecutionResult](TestExecutionResult) postIntegrationsActionDraftTest(actionId, body)
+> [TestExecutionResult](TestExecutionResult) postIntegrationsActionDraftTest(actionId, body, flatten)
 
 Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging.
 
@@ -4469,8 +4473,9 @@ Configuration.setDefaultApiClient(apiClient);
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
 Object body = new HashMap(); // Object | Map of parameters used for variable substitution.
+Boolean flatten = false; // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
 try {
-    TestExecutionResult result = apiInstance.postIntegrationsActionDraftTest(actionId, body);
+    TestExecutionResult result = apiInstance.postIntegrationsActionDraftTest(actionId, body, flatten);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsApi#postIntegrationsActionDraftTest");
@@ -4485,6 +4490,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **actionId** | **String**| actionId | 
 | **body** | [**Object**](Object)| Map of parameters used for variable substitution. | 
+| **flatten** | **Boolean**| Indicates the response should be reformatted, based on Architect&#39;s flattening format. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -4496,7 +4502,7 @@ try {
 # **postIntegrationsActionExecute**
 
 
-> Object postIntegrationsActionExecute(actionId, body)
+> Object postIntegrationsActionExecute(actionId, body, flatten)
 
 Execute Action and return response from 3rd party.  Responses will follow the schemas defined on the Action for success and error.
 
@@ -4531,8 +4537,9 @@ Configuration.setDefaultApiClient(apiClient);
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
 Object body = new HashMap(); // Object | Map of parameters used for variable substitution.
+Boolean flatten = false; // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
 try {
-    Object result = apiInstance.postIntegrationsActionExecute(actionId, body);
+    Object result = apiInstance.postIntegrationsActionExecute(actionId, body, flatten);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsApi#postIntegrationsActionExecute");
@@ -4547,6 +4554,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **actionId** | **String**| actionId | 
 | **body** | [**Object**](Object)| Map of parameters used for variable substitution. | 
+| **flatten** | **Boolean**| Indicates the response should be reformatted, based on Architect&#39;s flattening format. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -4558,7 +4566,7 @@ try {
 # **postIntegrationsActionTest**
 
 
-> [TestExecutionResult](TestExecutionResult) postIntegrationsActionTest(actionId, body)
+> [TestExecutionResult](TestExecutionResult) postIntegrationsActionTest(actionId, body, flatten)
 
 Test the execution of an action. Responses will show execution steps broken out with intermediate results to help in debugging.
 
@@ -4593,8 +4601,9 @@ Configuration.setDefaultApiClient(apiClient);
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
 Object body = new HashMap(); // Object | Map of parameters used for variable substitution.
+Boolean flatten = false; // Boolean | Indicates the response should be reformatted, based on Architect's flattening format.
 try {
-    TestExecutionResult result = apiInstance.postIntegrationsActionTest(actionId, body);
+    TestExecutionResult result = apiInstance.postIntegrationsActionTest(actionId, body, flatten);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsApi#postIntegrationsActionTest");
@@ -4609,6 +4618,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **actionId** | **String**| actionId | 
 | **body** | [**Object**](Object)| Map of parameters used for variable substitution. | 
+| **flatten** | **Boolean**| Indicates the response should be reformatted, based on Architect&#39;s flattening format. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -5411,4 +5421,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_

@@ -58,12 +58,20 @@
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| AGENT_ASSISTANT | &quot;agent.assistant&quot; | 
+| ANALYTICS_ALERTING | &quot;analytics.alerting&quot; | 
+| ANALYTICS | &quot;analytics&quot; | 
+| ANALYTICS_REALTIME | &quot;analytics.realtime&quot; | 
+| ANALYTICS_REPORTING_SETTINGS | &quot;analytics.reporting.settings&quot; | 
+| ARCHITECT | &quot;architect&quot; | 
+| AUDIOHOOK | &quot;audiohook&quot; | 
 | AUDIT | &quot;audit&quot; | 
 | AUTH_API | &quot;auth.api&quot; | 
 | AUTHORIZATION | &quot;authorization&quot; | 
 | AUTOMATION_TESTING | &quot;automation.testing&quot; | 
 | BOTS | &quot;bots&quot; | 
 | BOTS_VOICE | &quot;bots.voice&quot; | 
+| BUSINESS_RULES | &quot;business.rules&quot; | 
 | CALLBACK | &quot;callback&quot; | 
 | COBROWSE | &quot;cobrowse&quot; | 
 | CONTENT_MANAGEMENT | &quot;content.management&quot; | 
@@ -75,6 +83,7 @@
 | EMPLOYEE_ENGAGEMENT | &quot;employee.engagement&quot; | 
 | EVENT_ORCHESTRATION | &quot;event.orchestration&quot; | 
 | EXTERNAL_CONTACTS | &quot;external.contacts&quot; | 
+| GAMIFICATION | &quot;gamification&quot; | 
 | GCV | &quot;gcv&quot; | 
 | GDPR | &quot;gdpr&quot; | 
 | GROUPS | &quot;groups&quot; | 
@@ -119,13 +128,6 @@
 | WEBHOOKS | &quot;webhooks&quot; | 
 | WORKFORCE_MANAGEMENT_FORECAST | &quot;workforce.management.forecast&quot; | 
 | WORKFORCE_MANAGEMENT | &quot;workforce.management&quot; | 
-| AGENT_ASSISTANT | &quot;agent.assistant&quot; | 
-| ANALYTICS_ALERTING | &quot;analytics.alerting&quot; | 
-| ANALYTICS | &quot;analytics&quot; | 
-| ANALYTICS_REALTIME | &quot;analytics.realtime&quot; | 
-| ANALYTICS_REPORTING_SETTINGS | &quot;analytics.reporting.settings&quot; | 
-| ARCHITECT | &quot;architect&quot; | 
-| AUDIOHOOK | &quot;audiohook&quot; | 
 | SYSTEM | &quot;system&quot; | 
 
 
@@ -143,4 +145,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_

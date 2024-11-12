@@ -184,6 +184,8 @@
 | SOCIAL_LISTENING_VIEW | &quot;SOCIAL_LISTENING_VIEW&quot; | 
 | SOCIAL_LISTENING_POSTS_VIEW | &quot;SOCIAL_LISTENING_POSTS_VIEW&quot; | 
 | AGENT_PERFORMANCE_TIMELINE_DETAIL_VIEW | &quot;AGENT_PERFORMANCE_TIMELINE_DETAIL_VIEW&quot; | 
+| DASHBOARD_SLIDESHOWS | &quot;DASHBOARD_SLIDESHOWS&quot; | 
+| DASHBOARD_SLIDESHOWS_DETAIL | &quot;DASHBOARD_SLIDESHOWS_DETAIL&quot; | 
 
 
 ## Enum: ExportErrorMessagesTypeEnum
@@ -244,4 +246,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:213.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_
