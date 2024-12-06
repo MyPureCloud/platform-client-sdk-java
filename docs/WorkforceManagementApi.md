@@ -6837,7 +6837,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-LocalDate weekDateId = new LocalDate(); // LocalDate | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate weekDateId = new LocalDate(); // LocalDate | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 Boolean evaluateMatches = true; // Boolean | Whether to evaluate the matches for violations
 Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
 try {
@@ -6855,7 +6855,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
-| **weekDateId** | **LocalDate**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **weekDateId** | **LocalDate**| The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **evaluateMatches** | **Boolean**| Whether to evaluate the matches for violations | [optional] [default to true] 
 | **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional] 
 {: class="table-striped"}
@@ -9363,7 +9363,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-LocalDate weekDateId = new LocalDate(); // LocalDate | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate weekDateId = new LocalDate(); // LocalDate | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 String tradeId = "tradeId_example"; // String | The ID of the shift trade to update
 PatchShiftTradeRequest body = new PatchShiftTradeRequest(); // PatchShiftTradeRequest | body
 try {
@@ -9381,7 +9381,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
-| **weekDateId** | **LocalDate**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **weekDateId** | **LocalDate**| The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **tradeId** | **String**| The ID of the shift trade to update | 
 | **body** | [**PatchShiftTradeRequest**](PatchShiftTradeRequest)| body | 
 {: class="table-striped"}
@@ -13916,7 +13916,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-LocalDate weekDateId = new LocalDate(); // LocalDate | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate weekDateId = new LocalDate(); // LocalDate | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 String tradeId = "tradeId_example"; // String | The ID of the shift trade to update
 MatchShiftTradeRequest body = new MatchShiftTradeRequest(); // MatchShiftTradeRequest | body
 try {
@@ -13934,7 +13934,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
-| **weekDateId** | **LocalDate**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **weekDateId** | **LocalDate**| The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **tradeId** | **String**| The ID of the shift trade to update | 
 | **body** | [**MatchShiftTradeRequest**](MatchShiftTradeRequest)| body | 
 {: class="table-striped"}
@@ -13981,7 +13981,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-LocalDate weekDateId = new LocalDate(); // LocalDate | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate weekDateId = new LocalDate(); // LocalDate | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 AddShiftTradeRequest body = new AddShiftTradeRequest(); // AddShiftTradeRequest | body
 try {
     ShiftTradeResponse result = apiInstance.postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, body);
@@ -13998,7 +13998,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
-| **weekDateId** | **LocalDate**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **weekDateId** | **LocalDate**| The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **body** | [**AddShiftTradeRequest**](AddShiftTradeRequest)| body | 
 {: class="table-striped"}
 
@@ -14044,7 +14044,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-LocalDate weekDateId = new LocalDate(); // LocalDate | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate weekDateId = new LocalDate(); // LocalDate | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 SearchShiftTradesRequest body = new SearchShiftTradesRequest(); // SearchShiftTradesRequest | body
 Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
 try {
@@ -14062,7 +14062,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
-| **weekDateId** | **LocalDate**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **weekDateId** | **LocalDate**| The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **body** | [**SearchShiftTradesRequest**](SearchShiftTradesRequest)| body | 
 | **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional] 
 {: class="table-striped"}
@@ -14112,7 +14112,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-LocalDate weekDateId = new LocalDate(); // LocalDate | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate weekDateId = new LocalDate(); // LocalDate | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 BulkShiftTradeStateUpdateRequest body = new BulkShiftTradeStateUpdateRequest(); // BulkShiftTradeStateUpdateRequest | body
 Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
 try {
@@ -14130,7 +14130,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
-| **weekDateId** | **LocalDate**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **weekDateId** | **LocalDate**| The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **body** | [**BulkShiftTradeStateUpdateRequest**](BulkShiftTradeStateUpdateRequest)| body | 
 | **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional] 
 {: class="table-striped"}
@@ -15250,4 +15250,4 @@ try {
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_

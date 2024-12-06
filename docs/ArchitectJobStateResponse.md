@@ -32,8 +32,9 @@
 | PUBLISH | &quot;Publish&quot; | 
 | CREATE | &quot;Create&quot; | 
 | UPDATE | &quot;Update&quot; | 
+| EXPORT | &quot;Export&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_

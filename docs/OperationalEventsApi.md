@@ -6,6 +6,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**getUsageEventsDefinition**](OperationalEventsApi#getUsageEventsDefinition) | Get an operational event definition by its id |
 | [**getUsageEventsDefinitions**](OperationalEventsApi#getUsageEventsDefinitions) | Get all operational event definitions |
+| [**postUsageEventsAggregatesQuery**](OperationalEventsApi#postUsageEventsAggregatesQuery) | Get aggregates for operational events in a timeframe. |
+| [**postUsageEventsQuery**](OperationalEventsApi#postUsageEventsQuery) | Query operational events in a timeframe. |
 {: class="table-striped"}
 
 
@@ -123,4 +125,128 @@ This endpoint does not require any parameters.
 [**EventDefinitionListing**](EventDefinitionListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_
+# **postUsageEventsAggregatesQuery**
+
+
+> [EventAggregatesResponse](EventAggregatesResponse) postUsageEventsAggregatesQuery(body)
+
+Get aggregates for operational events in a timeframe.
+
+Wraps POST /api/v2/usage/events/aggregates/query  
+
+Requires ALL permissions: 
+
+* usage:events:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OperationalEventsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OperationalEventsApi apiInstance = new OperationalEventsApi();
+EventAggregatesQueryRequest body = new EventAggregatesQueryRequest(); // EventAggregatesQueryRequest | 
+try {
+    EventAggregatesResponse result = apiInstance.postUsageEventsAggregatesQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OperationalEventsApi#postUsageEventsAggregatesQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**EventAggregatesQueryRequest**](EventAggregatesQueryRequest)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EventAggregatesResponse**](EventAggregatesResponse)
+
+
+# **postUsageEventsQuery**
+
+
+> [EventQueryResponse](EventQueryResponse) postUsageEventsQuery(before, after, pageSize, body)
+
+Query operational events in a timeframe.
+
+Wraps POST /api/v2/usage/events/query  
+
+Requires ALL permissions: 
+
+* usage:events:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OperationalEventsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OperationalEventsApi apiInstance = new OperationalEventsApi();
+String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+EventQueryRequest body = new EventQueryRequest(); // EventQueryRequest | 
+try {
+    EventQueryResponse result = apiInstance.postUsageEventsQuery(before, after, pageSize, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OperationalEventsApi#postUsageEventsQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+| **body** | [**EventQueryRequest**](EventQueryRequest)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EventQueryResponse**](EventQueryResponse)
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_

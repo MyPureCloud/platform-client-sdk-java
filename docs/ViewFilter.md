@@ -216,6 +216,7 @@
 | **socialClassifications** | [**List<SocialClassificationsEnum>**](#Enum--SocialClassificationsEnum) | Indicates if a social message was public or private |  [optional] |
 | **filterUsersByManagerIds** | **List&lt;String&gt;** | The manager ids used to fetch associated users for the view |  [optional] |
 | **slideshowIds** | **List&lt;String&gt;** | List of Dashboard slideshowIds to be filtered |  [optional] |
+| **conferenced** | **Boolean** | Filter to indicate if the conversation has conference |  [optional] |
 
 
 ## Enum: MediaTypesEnum
@@ -262,6 +263,7 @@
 | WEBMESSAGING | &quot;webmessaging&quot; |
 | OPEN | &quot;open&quot; |
 | INSTAGRAM | &quot;instagram&quot; |
+| APPLE | &quot;apple&quot; |
 
 
 ## Enum: FlowOutcomeValuesEnum
@@ -645,4 +647,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_

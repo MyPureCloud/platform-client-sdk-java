@@ -37,6 +37,7 @@
 | INCOMPLETE | &quot;Incomplete&quot; | 
 | DELETING | &quot;Deleting&quot; | 
 | DELETIONFAILED | &quot;DeletionFailed&quot; | 
+| FAILED | &quot;Failed&quot; | 
 
 
 ## Enum: ActivationStatusCodeEnum
@@ -64,4 +65,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_

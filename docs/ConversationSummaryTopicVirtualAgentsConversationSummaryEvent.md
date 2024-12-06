@@ -20,6 +20,7 @@
 | **wrapUpCodes** | [**List&lt;ConversationSummaryTopicVirtualAgentsConversationWrapUpCode&gt;**](ConversationSummaryTopicVirtualAgentsConversationWrapUpCode) |  |  [optional] |
 | **triggerSource** | [**ConversationSummaryTopicVirtualAgentsTriggerSource**](ConversationSummaryTopicVirtualAgentsTriggerSource) |  |  [optional] |
 | **lastEditedBy** | [**ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant**](ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant) |  |  [optional] |
+| **errorType** | [**ErrorTypeEnum**](#Enum--ErrorTypeEnum) |  |  [optional] |
 
 
 ## Enum: MessageTypeEnum
@@ -49,6 +50,16 @@
 | EMAIL | &quot;EMAIL&quot; | 
 
 
+## Enum: ErrorTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;UNKNOWN&quot; | 
+| CONVERSATION_TOO_LONG | &quot;CONVERSATION_TOO_LONG&quot; | 
+| CONVERSATION_TOO_SHORT | &quot;CONVERSATION_TOO_SHORT&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_

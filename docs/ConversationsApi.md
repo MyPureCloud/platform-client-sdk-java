@@ -1929,8 +1929,6 @@ try {
 
 Get the summaries of the conversation.
 
-getConversationSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/conversations/{conversationId}/summaries  
 
 Requires ALL permissions: 
@@ -14848,4 +14846,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_

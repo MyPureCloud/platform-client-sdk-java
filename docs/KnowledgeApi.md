@@ -1085,7 +1085,7 @@ try {
 # **getKnowledgeIntegrationOptions**
 
 
-> [KnowledgeIntegrationOptionsResponse](KnowledgeIntegrationOptionsResponse) getKnowledgeIntegrationOptions(integrationId)
+> [KnowledgeIntegrationOptionsResponse](KnowledgeIntegrationOptionsResponse) getKnowledgeIntegrationOptions(integrationId, knowledgeBaseIds)
 
 Get sync options available for a knowledge-connect integration
 
@@ -1118,8 +1118,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 KnowledgeApi apiInstance = new KnowledgeApi();
 String integrationId = "integrationId_example"; // String | Integration ID
+List<String> knowledgeBaseIds = Arrays.asList(null); // List<String> | Narrowing down filtering option results by knowledge base.
 try {
-    KnowledgeIntegrationOptionsResponse result = apiInstance.getKnowledgeIntegrationOptions(integrationId);
+    KnowledgeIntegrationOptionsResponse result = apiInstance.getKnowledgeIntegrationOptions(integrationId, knowledgeBaseIds);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KnowledgeApi#getKnowledgeIntegrationOptions");
@@ -1133,6 +1134,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **integrationId** | **String**| Integration ID | 
+| **knowledgeBaseIds** | [**List&lt;String&gt;**](String)| Narrowing down filtering option results by knowledge base. | [optional] 
 {: class="table-striped"}
 
 
@@ -7358,4 +7360,4 @@ try {
 [**ServiceNowSourceResponse**](ServiceNowSourceResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_

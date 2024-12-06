@@ -269,7 +269,7 @@ try {
 | **name** | **String**| Name filter | [optional] 
 | **feature** | **String**| Feature filter | [optional] 
 | **flowId** | **String**| Secure flow id filter | [optional] 
-| **sortBy** | **String**| SortBy | [optional]<br />**Values**: modifiedDate, createdDate 
+| **sortBy** | **String**| SortBy | [optional]<br />**Values**: modifiedDate, createdDate, name 
 | **sortOrder** | **String**| SortOrder | [optional]<br />**Values**: ascending, descending 
 | **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] 
 | **divisionIds** | **String**| Filters scripts to requested divisionIds | [optional] 
@@ -346,7 +346,7 @@ try {
 | **name** | **String**| Name filter | [optional] 
 | **feature** | **String**| Feature filter | [optional] 
 | **flowId** | **String**| Secure flow id filter | [optional] 
-| **sortBy** | **String**| SortBy | [optional]<br />**Values**: modifiedDate, createdDate 
+| **sortBy** | **String**| SortBy | [optional]<br />**Values**: modifiedDate, createdDate, name 
 | **sortOrder** | **String**| SortOrder | [optional]<br />**Values**: ascending, descending 
 | **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] 
 | **divisionIds** | **String**| Filters scripts to requested divisionIds | [optional] 
@@ -939,4 +939,4 @@ try {
 [**Script**](Script)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_

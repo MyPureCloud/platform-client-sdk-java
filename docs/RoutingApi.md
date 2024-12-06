@@ -1038,11 +1038,11 @@ null (empty response body)
 # **deleteRoutingSmsPhonenumber**
 
 
-> Void deleteRoutingSmsPhonenumber(addressId)
+> Void deleteRoutingSmsPhonenumber(phoneNumberId)
 
 Delete a phone number provisioned for SMS.
 
-Wraps DELETE /api/v2/routing/sms/phonenumbers/{addressId}  
+Wraps DELETE /api/v2/routing/sms/phonenumbers/{phoneNumberId}  
 
 Requires ALL permissions: 
 
@@ -1070,9 +1070,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
-String addressId = "addressId_example"; // String | Address ID
+String phoneNumberId = "phoneNumberId_example"; // String | phone number
 try {
-    apiInstance.deleteRoutingSmsPhonenumber(addressId);
+    apiInstance.deleteRoutingSmsPhonenumber(phoneNumberId);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#deleteRoutingSmsPhonenumber");
     e.printStackTrace();
@@ -1084,7 +1084,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **addressId** | **String**| Address ID | 
+| **phoneNumberId** | **String**| phone number | 
 {: class="table-striped"}
 
 
@@ -3321,7 +3321,7 @@ try {
 # **getRoutingQueueMediatypeEstimatedwaittime**
 
 
-> [EstimatedWaitTimePredictions](EstimatedWaitTimePredictions) getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType)
+> [EstimatedWaitTimePredictions](EstimatedWaitTimePredictions) getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType, labelId)
 
 Get Estimated Wait Time
 
@@ -3355,8 +3355,9 @@ Configuration.setDefaultApiClient(apiClient);
 RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | queueId
 String mediaType = "mediaType_example"; // String | mediaType
+String labelId = "labelId_example"; // String | Unique id that represents the interaction label used with media type for EWT calculation
 try {
-    EstimatedWaitTimePredictions result = apiInstance.getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType);
+    EstimatedWaitTimePredictions result = apiInstance.getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType, labelId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingQueueMediatypeEstimatedwaittime");
@@ -3370,7 +3371,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **queueId** | **String**| queueId | 
-| **mediaType** | **String**| mediaType | 
+| **mediaType** | **String**| mediaType |<br />**Values**: all, call, chat, callback, email, videoComm, message 
+| **labelId** | **String**| Unique id that represents the interaction label used with media type for EWT calculation | [optional] 
 {: class="table-striped"}
 
 
@@ -4619,11 +4621,11 @@ try {
 # **getRoutingSmsPhonenumber**
 
 
-> [SmsPhoneNumber](SmsPhoneNumber) getRoutingSmsPhonenumber(addressId, expand)
+> [SmsPhoneNumber](SmsPhoneNumber) getRoutingSmsPhonenumber(phoneNumberId, expand)
 
 Get a phone number provisioned for SMS.
 
-Wraps GET /api/v2/routing/sms/phonenumbers/{addressId}  
+Wraps GET /api/v2/routing/sms/phonenumbers/{phoneNumberId}  
 
 Requires ALL permissions: 
 
@@ -4651,10 +4653,10 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
-String addressId = "addressId_example"; // String | Address ID
+String phoneNumberId = "phoneNumberId_example"; // String | phone number
 String expand = "expand_example"; // String | Expand response with additional information
 try {
-    SmsPhoneNumber result = apiInstance.getRoutingSmsPhonenumber(addressId, expand);
+    SmsPhoneNumber result = apiInstance.getRoutingSmsPhonenumber(phoneNumberId, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingSmsPhonenumber");
@@ -4667,7 +4669,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **addressId** | **String**| Address ID | 
+| **phoneNumberId** | **String**| phone number | 
 | **expand** | **String**| Expand response with additional information | [optional]<br />**Values**: compliance, supportedContent 
 {: class="table-striped"}
 
@@ -8873,11 +8875,11 @@ try {
 # **putRoutingSmsPhonenumber**
 
 
-> [SmsPhoneNumber](SmsPhoneNumber) putRoutingSmsPhonenumber(addressId, body)
+> [SmsPhoneNumber](SmsPhoneNumber) putRoutingSmsPhonenumber(phoneNumberId, body)
 
 Update a phone number provisioned for SMS.
 
-Wraps PUT /api/v2/routing/sms/phonenumbers/{addressId}  
+Wraps PUT /api/v2/routing/sms/phonenumbers/{phoneNumberId}  
 
 Requires ALL permissions: 
 
@@ -8905,10 +8907,10 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
-String addressId = "addressId_example"; // String | Address ID
+String phoneNumberId = "phoneNumberId_example"; // String | phone number
 SmsPhoneNumber body = new SmsPhoneNumber(); // SmsPhoneNumber | SmsPhoneNumber
 try {
-    SmsPhoneNumber result = apiInstance.putRoutingSmsPhonenumber(addressId, body);
+    SmsPhoneNumber result = apiInstance.putRoutingSmsPhonenumber(phoneNumberId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#putRoutingSmsPhonenumber");
@@ -8921,7 +8923,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **addressId** | **String**| Address ID | 
+| **phoneNumberId** | **String**| phone number | 
 | **body** | [**SmsPhoneNumber**](SmsPhoneNumber)| SmsPhoneNumber | 
 {: class="table-striped"}
 
@@ -9358,4 +9360,4 @@ try {
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_

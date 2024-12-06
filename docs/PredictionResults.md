@@ -8,6 +8,7 @@
 | **intent** | [**IntentEnum**](#Enum--IntentEnum) | Indicates the media type scope of this estimated wait time |  [optional] |
 | **formula** | [**FormulaEnum**](#Enum--FormulaEnum) | Indicates the estimated wait time Formula |  |
 | **estimatedWaitTimeSeconds** | **Integer** | Estimated wait time in seconds |  |
+| **label** | [**AddressableEntityRef**](AddressableEntityRef) | This specifies the interaction label scoped to this estimated wait time calculation |  [optional] |
 
 
 ## Enum: IntentEnum
@@ -38,4 +39,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_
