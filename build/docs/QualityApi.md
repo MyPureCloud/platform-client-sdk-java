@@ -621,7 +621,7 @@ try {
 # **getQualityAgentsActivity**
 
 
-> [AgentActivityEntityListing](AgentActivityEntityListing) getQualityAgentsActivity(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group, agentTeamId, formContextId)
+> [AgentActivityEntityListing](AgentActivityEntityListing) getQualityAgentsActivity(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group, agentTeamId, formContextId, userState)
 
 Gets a list of Agent Activities
 
@@ -669,8 +669,9 @@ String name = "name_example"; // String | name
 String group = "group_example"; // String | group id
 String agentTeamId = "agentTeamId_example"; // String | team id of agents requested
 String formContextId = "formContextId_example"; // String | shared id between form versions
+String userState = "Legacy"; // String | 'Legacy' fetches active and inactive users when evaluatorUserId or no user filters are supplied; otherwise fetches active users.  'Any' fetches users of 'active', 'inactive' and 'deleted' states.
 try {
-    AgentActivityEntityListing result = apiInstance.getQualityAgentsActivity(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group, agentTeamId, formContextId);
+    AgentActivityEntityListing result = apiInstance.getQualityAgentsActivity(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group, agentTeamId, formContextId, userState);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityAgentsActivity");
@@ -697,6 +698,7 @@ try {
 | **group** | **String**| group id | [optional] 
 | **agentTeamId** | **String**| team id of agents requested | [optional] 
 | **formContextId** | **String**| shared id between form versions | [optional] 
+| **userState** | **String**| &#39;Legacy&#39; fetches active and inactive users when evaluatorUserId or no user filters are supplied; otherwise fetches active users.  &#39;Any&#39; fetches users of &#39;active&#39;, &#39;inactive&#39; and &#39;deleted&#39; states. | [optional] [default to Legacy]<br />**Values**: Any, Legacy 
 {: class="table-striped"}
 
 
@@ -1098,7 +1100,7 @@ try {
 # **getQualityEvaluationsQuery**
 
 
-> [EvaluationEntityListing](EvaluationEntityListing) getQualityEvaluationsQuery(pageSize, pageNumber, expand, previousPage, conversationId, agentUserId, agentTeamId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, formContextId, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder)
+> [EvaluationEntityListing](EvaluationEntityListing) getQualityEvaluationsQuery(pageSize, pageNumber, expand, previousPage, conversationId, agentUserId, agentTeamId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, formContextId, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder, includeDeletedUsers)
 
 Queries Evaluations and returns a paged list
 
@@ -1151,8 +1153,9 @@ Boolean agentHasRead = true; // Boolean | agent has the evaluation
 Boolean expandAnswerTotalScores = true; // Boolean | get the total scores for evaluations. NOTE: The answers will only be populated if this parameter is set to true in the request.
 Integer maximum = 56; // Integer | the maximum number of results to return
 String sortOrder = "sortOrder_example"; // String | NOTE: Does not work when conversationId is supplied.
+Boolean includeDeletedUsers = false; // Boolean | Allow returning an agent or evaluator user with a 'delete' status. Defaults to false.
 try {
-    EvaluationEntityListing result = apiInstance.getQualityEvaluationsQuery(pageSize, pageNumber, expand, previousPage, conversationId, agentUserId, agentTeamId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, formContextId, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder);
+    EvaluationEntityListing result = apiInstance.getQualityEvaluationsQuery(pageSize, pageNumber, expand, previousPage, conversationId, agentUserId, agentTeamId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, formContextId, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder, includeDeletedUsers);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityEvaluationsQuery");
@@ -1184,6 +1187,7 @@ try {
 | **expandAnswerTotalScores** | **Boolean**| get the total scores for evaluations. NOTE: The answers will only be populated if this parameter is set to true in the request. | [optional] 
 | **maximum** | **Integer**| the maximum number of results to return | [optional] 
 | **sortOrder** | **String**| NOTE: Does not work when conversationId is supplied. | [optional] 
+| **includeDeletedUsers** | **Boolean**| Allow returning an agent or evaluator user with a &#39;delete&#39; status. Defaults to false. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -3976,4 +3980,4 @@ try {
 [**ScorableSurvey**](ScorableSurvey)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_

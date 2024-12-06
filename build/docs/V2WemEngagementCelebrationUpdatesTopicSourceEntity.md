@@ -19,8 +19,12 @@
 | CONGRATULATIONS | &quot;CONGRATULATIONS&quot; | 
 | HIGH_PERFORMANCE | &quot;HIGH_PERFORMANCE&quot; | 
 | COMPANY_VALUES | &quot;COMPANY_VALUES&quot; | 
+| COMPETITION | &quot;COMPETITION&quot; | 
+| RACE | &quot;RACE&quot; | 
+| RAFFLE | &quot;RAFFLE&quot; | 
+| TEAM_GOAL | &quot;TEAM_GOAL&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_

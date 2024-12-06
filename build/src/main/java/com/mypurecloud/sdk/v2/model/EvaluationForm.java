@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityListingEvaluationForm;
 import com.mypurecloud.sdk.v2.model.EvaluationQuestionGroup;
+import com.mypurecloud.sdk.v2.model.EvaluationSettings;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -33,6 +34,7 @@ public class EvaluationForm  implements Serializable {
   private String contextId = null;
   private List<EvaluationQuestionGroup> questionGroups = new ArrayList<EvaluationQuestionGroup>();
   private DomainEntityListingEvaluationForm publishedVersions = null;
+  private EvaluationSettings evaluationSettings = null;
   private String selfUri = null;
 
   
@@ -149,6 +151,24 @@ public class EvaluationForm  implements Serializable {
   }
 
 
+  /**
+   * Settings for evaluations associated with this form
+   **/
+  public EvaluationForm evaluationSettings(EvaluationSettings evaluationSettings) {
+    this.evaluationSettings = evaluationSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Settings for evaluations associated with this form")
+  @JsonProperty("evaluationSettings")
+  public EvaluationSettings getEvaluationSettings() {
+    return evaluationSettings;
+  }
+  public void setEvaluationSettings(EvaluationSettings evaluationSettings) {
+    this.evaluationSettings = evaluationSettings;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -173,12 +193,13 @@ public class EvaluationForm  implements Serializable {
             Objects.equals(this.contextId, evaluationForm.contextId) &&
             Objects.equals(this.questionGroups, evaluationForm.questionGroups) &&
             Objects.equals(this.publishedVersions, evaluationForm.publishedVersions) &&
+            Objects.equals(this.evaluationSettings, evaluationForm.evaluationSettings) &&
             Objects.equals(this.selfUri, evaluationForm.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, modifiedDate, published, contextId, questionGroups, publishedVersions, selfUri);
+    return Objects.hash(id, name, modifiedDate, published, contextId, questionGroups, publishedVersions, evaluationSettings, selfUri);
   }
 
   @Override
@@ -193,6 +214,7 @@ public class EvaluationForm  implements Serializable {
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
     sb.append("    questionGroups: ").append(toIndentedString(questionGroups)).append("\n");
     sb.append("    publishedVersions: ").append(toIndentedString(publishedVersions)).append("\n");
+    sb.append("    evaluationSettings: ").append(toIndentedString(evaluationSettings)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

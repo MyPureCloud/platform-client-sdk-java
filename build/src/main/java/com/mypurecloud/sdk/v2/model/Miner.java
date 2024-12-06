@@ -61,7 +61,8 @@ public class Miner  implements Serializable {
     DE_DE("de-de"),
     PT_PT("pt-pt"),
     PT_BR("pt-br"),
-    IT_IT("it-it");
+    IT_IT("it-it"),
+    NL_NL("nl-nl");
 
     private String value;
 

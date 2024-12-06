@@ -122,6 +122,54 @@ public class KnowledgeIntegrationFilter  implements Serializable {
     }
   }
   private TypeEnum type = null;
+
+  private static class ActionEnumDeserializer extends StdDeserializer<ActionEnum> {
+    public ActionEnumDeserializer() {
+      super(ActionEnumDeserializer.class);
+    }
+
+    @Override
+    public ActionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ActionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Filter action.
+   */
+ @JsonDeserialize(using = ActionEnumDeserializer.class)
+  public enum ActionEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    NONE("None"),
+    FILTERUPDATE("FilterUpdate");
+
+    private String value;
+
+    ActionEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ActionEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ActionEnum value : ActionEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ActionEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ActionEnum action = null;
   private List<KnowledgeIntegrationFilterValue> values = new ArrayList<KnowledgeIntegrationFilterValue>();
 
   
@@ -162,6 +210,24 @@ public class KnowledgeIntegrationFilter  implements Serializable {
 
 
   /**
+   * Filter action.
+   **/
+  public KnowledgeIntegrationFilter action(ActionEnum action) {
+    this.action = action;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Filter action.")
+  @JsonProperty("action")
+  public ActionEnum getAction() {
+    return action;
+  }
+  public void setAction(ActionEnum action) {
+    this.action = action;
+  }
+
+
+  /**
    * Available options of the filter setting.
    **/
   public KnowledgeIntegrationFilter values(List<KnowledgeIntegrationFilterValue> values) {
@@ -191,12 +257,13 @@ public class KnowledgeIntegrationFilter  implements Serializable {
 
     return Objects.equals(this.name, knowledgeIntegrationFilter.name) &&
             Objects.equals(this.type, knowledgeIntegrationFilter.type) &&
+            Objects.equals(this.action, knowledgeIntegrationFilter.action) &&
             Objects.equals(this.values, knowledgeIntegrationFilter.values);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, type, values);
+    return Objects.hash(name, type, action, values);
   }
 
   @Override
@@ -206,6 +273,7 @@ public class KnowledgeIntegrationFilter  implements Serializable {
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    action: ").append(toIndentedString(action)).append("\n");
     sb.append("    values: ").append(toIndentedString(values)).append("\n");
     sb.append("}");
     return sb.toString();

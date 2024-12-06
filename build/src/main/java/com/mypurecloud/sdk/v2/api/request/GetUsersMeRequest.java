@@ -141,7 +141,8 @@ public class GetUsersMeRequest {
 		FIELDCONFIGS("fieldconfigs"),
 		TOKEN("token"),
 		TRUSTORS("trustors"),
-		LOGCAPTURE("logCapture");
+		LOGCAPTURE("logCapture"),
+		AUTOANSWERSETTINGS("autoanswersettings");
 
 		private String value;
 

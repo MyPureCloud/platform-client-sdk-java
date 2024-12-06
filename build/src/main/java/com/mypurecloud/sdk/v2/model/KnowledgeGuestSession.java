@@ -30,6 +30,7 @@ public class KnowledgeGuestSession  implements Serializable {
   private String customerId = null;
   private String pageUrl = null;
   private List<KnowledgeGuestSessionContext> contexts = new ArrayList<KnowledgeGuestSessionContext>();
+  private String journeySessionId = null;
 
   
   @ApiModelProperty(example = "null", value = "Session ID.")
@@ -111,6 +112,24 @@ public class KnowledgeGuestSession  implements Serializable {
   }
 
 
+  /**
+   * Journey session ID. Used to get the segments of the customer to filter search results.
+   **/
+  public KnowledgeGuestSession journeySessionId(String journeySessionId) {
+    this.journeySessionId = journeySessionId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Journey session ID. Used to get the segments of the customer to filter search results.")
+  @JsonProperty("journeySessionId")
+  public String getJourneySessionId() {
+    return journeySessionId;
+  }
+  public void setJourneySessionId(String journeySessionId) {
+    this.journeySessionId = journeySessionId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -125,12 +144,13 @@ public class KnowledgeGuestSession  implements Serializable {
             Objects.equals(this.app, knowledgeGuestSession.app) &&
             Objects.equals(this.customerId, knowledgeGuestSession.customerId) &&
             Objects.equals(this.pageUrl, knowledgeGuestSession.pageUrl) &&
-            Objects.equals(this.contexts, knowledgeGuestSession.contexts);
+            Objects.equals(this.contexts, knowledgeGuestSession.contexts) &&
+            Objects.equals(this.journeySessionId, knowledgeGuestSession.journeySessionId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, app, customerId, pageUrl, contexts);
+    return Objects.hash(id, app, customerId, pageUrl, contexts, journeySessionId);
   }
 
   @Override
@@ -143,6 +163,7 @@ public class KnowledgeGuestSession  implements Serializable {
     sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
     sb.append("    pageUrl: ").append(toIndentedString(pageUrl)).append("\n");
     sb.append("    contexts: ").append(toIndentedString(contexts)).append("\n");
+    sb.append("    journeySessionId: ").append(toIndentedString(journeySessionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

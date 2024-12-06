@@ -86,14 +86,14 @@ public class ShiftTradeNotification  implements Serializable {
 
   
   /**
-   * The start date of the schedule with which this trade is associated
+   * The start week date of the initiating shift of the shift trade in yyyy-MM-dd format
    **/
   public ShiftTradeNotification weekDate(String weekDate) {
     this.weekDate = weekDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The start date of the schedule with which this trade is associated")
+  @ApiModelProperty(example = "null", value = "The start week date of the initiating shift of the shift trade in yyyy-MM-dd format")
   @JsonProperty("weekDate")
   public String getWeekDate() {
     return weekDate;

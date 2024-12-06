@@ -45,14 +45,14 @@ public class WeekShiftTradeMatchesSummaryResponse  implements Serializable {
 
 
   /**
-   * The number of trades in the Matched state for the given week
+   * The number of trades in the Matched state with the initiating shift in the given week
    **/
   public WeekShiftTradeMatchesSummaryResponse count(Integer count) {
     this.count = count;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The number of trades in the Matched state for the given week")
+  @ApiModelProperty(example = "null", value = "The number of trades in the Matched state with the initiating shift in the given week")
   @JsonProperty("count")
   public Integer getCount() {
     return count;

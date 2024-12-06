@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -127,6 +128,7 @@ public class PredictionResults  implements Serializable {
   }
   private FormulaEnum formula = null;
   private Integer estimatedWaitTimeSeconds = null;
+  private AddressableEntityRef label = null;
 
   
   /**
@@ -183,6 +185,24 @@ public class PredictionResults  implements Serializable {
   }
 
 
+  /**
+   * This specifies the interaction label scoped to this estimated wait time calculation
+   **/
+  public PredictionResults label(AddressableEntityRef label) {
+    this.label = label;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "This specifies the interaction label scoped to this estimated wait time calculation")
+  @JsonProperty("label")
+  public AddressableEntityRef getLabel() {
+    return label;
+  }
+  public void setLabel(AddressableEntityRef label) {
+    this.label = label;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -195,12 +215,13 @@ public class PredictionResults  implements Serializable {
 
     return Objects.equals(this.intent, predictionResults.intent) &&
             Objects.equals(this.formula, predictionResults.formula) &&
-            Objects.equals(this.estimatedWaitTimeSeconds, predictionResults.estimatedWaitTimeSeconds);
+            Objects.equals(this.estimatedWaitTimeSeconds, predictionResults.estimatedWaitTimeSeconds) &&
+            Objects.equals(this.label, predictionResults.label);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(intent, formula, estimatedWaitTimeSeconds);
+    return Objects.hash(intent, formula, estimatedWaitTimeSeconds, label);
   }
 
   @Override
@@ -211,6 +232,7 @@ public class PredictionResults  implements Serializable {
     sb.append("    intent: ").append(toIndentedString(intent)).append("\n");
     sb.append("    formula: ").append(toIndentedString(formula)).append("\n");
     sb.append("    estimatedWaitTimeSeconds: ").append(toIndentedString(estimatedWaitTimeSeconds)).append("\n");
+    sb.append("    label: ").append(toIndentedString(label)).append("\n");
     sb.append("}");
     return sb.toString();
   }

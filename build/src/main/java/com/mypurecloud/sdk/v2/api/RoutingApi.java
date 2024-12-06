@@ -1416,27 +1416,27 @@ public class RoutingApi {
   /**
    * Delete a phone number provisioned for SMS.
    * 
-   * @param addressId Address ID (required)
+   * @param phoneNumberId phone number (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void deleteRoutingSmsPhonenumber(String addressId) throws IOException, ApiException {
-     deleteRoutingSmsPhonenumber(createDeleteRoutingSmsPhonenumberRequest(addressId));
+  public void deleteRoutingSmsPhonenumber(String phoneNumberId) throws IOException, ApiException {
+     deleteRoutingSmsPhonenumber(createDeleteRoutingSmsPhonenumberRequest(phoneNumberId));
   }
 
   /**
    * Delete a phone number provisioned for SMS.
    * 
-   * @param addressId Address ID (required)
+   * @param phoneNumberId phone number (required)
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteRoutingSmsPhonenumberWithHttpInfo(String addressId) throws IOException {
-    return deleteRoutingSmsPhonenumber(createDeleteRoutingSmsPhonenumberRequest(addressId).withHttpInfo());
+  public ApiResponse<Void> deleteRoutingSmsPhonenumberWithHttpInfo(String phoneNumberId) throws IOException {
+    return deleteRoutingSmsPhonenumber(createDeleteRoutingSmsPhonenumberRequest(phoneNumberId).withHttpInfo());
   }
 
-  private DeleteRoutingSmsPhonenumberRequest createDeleteRoutingSmsPhonenumberRequest(String addressId) {
+  private DeleteRoutingSmsPhonenumberRequest createDeleteRoutingSmsPhonenumberRequest(String phoneNumberId) {
     return DeleteRoutingSmsPhonenumberRequest.builder()
-            .withAddressId(addressId)
+            .withPhoneNumberId(phoneNumberId)
 
             .build();
   }
@@ -4467,12 +4467,13 @@ public class RoutingApi {
    * 
    * @param queueId queueId (required)
    * @param mediaType mediaType (required)
+   * @param labelId Unique id that represents the interaction label used with media type for EWT calculation (optional)
    * @return EstimatedWaitTimePredictions
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EstimatedWaitTimePredictions getRoutingQueueMediatypeEstimatedwaittime(String queueId, String mediaType) throws IOException, ApiException {
-    return  getRoutingQueueMediatypeEstimatedwaittime(createGetRoutingQueueMediatypeEstimatedwaittimeRequest(queueId, mediaType));
+  public EstimatedWaitTimePredictions getRoutingQueueMediatypeEstimatedwaittime(String queueId, String mediaType, String labelId) throws IOException, ApiException {
+    return  getRoutingQueueMediatypeEstimatedwaittime(createGetRoutingQueueMediatypeEstimatedwaittimeRequest(queueId, mediaType, labelId));
   }
 
   /**
@@ -4480,18 +4481,21 @@ public class RoutingApi {
    * 
    * @param queueId queueId (required)
    * @param mediaType mediaType (required)
+   * @param labelId Unique id that represents the interaction label used with media type for EWT calculation (optional)
    * @return EstimatedWaitTimePredictions
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EstimatedWaitTimePredictions> getRoutingQueueMediatypeEstimatedwaittimeWithHttpInfo(String queueId, String mediaType) throws IOException {
-    return getRoutingQueueMediatypeEstimatedwaittime(createGetRoutingQueueMediatypeEstimatedwaittimeRequest(queueId, mediaType).withHttpInfo());
+  public ApiResponse<EstimatedWaitTimePredictions> getRoutingQueueMediatypeEstimatedwaittimeWithHttpInfo(String queueId, String mediaType, String labelId) throws IOException {
+    return getRoutingQueueMediatypeEstimatedwaittime(createGetRoutingQueueMediatypeEstimatedwaittimeRequest(queueId, mediaType, labelId).withHttpInfo());
   }
 
-  private GetRoutingQueueMediatypeEstimatedwaittimeRequest createGetRoutingQueueMediatypeEstimatedwaittimeRequest(String queueId, String mediaType) {
+  private GetRoutingQueueMediatypeEstimatedwaittimeRequest createGetRoutingQueueMediatypeEstimatedwaittimeRequest(String queueId, String mediaType, String labelId) {
     return GetRoutingQueueMediatypeEstimatedwaittimeRequest.builder()
             .withQueueId(queueId)
 
             .withMediaType(mediaType)
+
+            .withLabelId(labelId)
 
             .build();
   }
@@ -6269,31 +6273,31 @@ public class RoutingApi {
   /**
    * Get a phone number provisioned for SMS.
    * 
-   * @param addressId Address ID (required)
+   * @param phoneNumberId phone number (required)
    * @param expand Expand response with additional information (optional)
    * @return SmsPhoneNumber
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SmsPhoneNumber getRoutingSmsPhonenumber(String addressId, String expand) throws IOException, ApiException {
-    return  getRoutingSmsPhonenumber(createGetRoutingSmsPhonenumberRequest(addressId, expand));
+  public SmsPhoneNumber getRoutingSmsPhonenumber(String phoneNumberId, String expand) throws IOException, ApiException {
+    return  getRoutingSmsPhonenumber(createGetRoutingSmsPhonenumberRequest(phoneNumberId, expand));
   }
 
   /**
    * Get a phone number provisioned for SMS.
    * 
-   * @param addressId Address ID (required)
+   * @param phoneNumberId phone number (required)
    * @param expand Expand response with additional information (optional)
    * @return SmsPhoneNumber
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SmsPhoneNumber> getRoutingSmsPhonenumberWithHttpInfo(String addressId, String expand) throws IOException {
-    return getRoutingSmsPhonenumber(createGetRoutingSmsPhonenumberRequest(addressId, expand).withHttpInfo());
+  public ApiResponse<SmsPhoneNumber> getRoutingSmsPhonenumberWithHttpInfo(String phoneNumberId, String expand) throws IOException {
+    return getRoutingSmsPhonenumber(createGetRoutingSmsPhonenumberRequest(phoneNumberId, expand).withHttpInfo());
   }
 
-  private GetRoutingSmsPhonenumberRequest createGetRoutingSmsPhonenumberRequest(String addressId, String expand) {
+  private GetRoutingSmsPhonenumberRequest createGetRoutingSmsPhonenumberRequest(String phoneNumberId, String expand) {
     return GetRoutingSmsPhonenumberRequest.builder()
-            .withAddressId(addressId)
+            .withPhoneNumberId(phoneNumberId)
 
             .withExpand(expand)
 
@@ -11965,31 +11969,31 @@ public class RoutingApi {
   /**
    * Update a phone number provisioned for SMS.
    * 
-   * @param addressId Address ID (required)
+   * @param phoneNumberId phone number (required)
    * @param body SmsPhoneNumber (required)
    * @return SmsPhoneNumber
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SmsPhoneNumber putRoutingSmsPhonenumber(String addressId, SmsPhoneNumber body) throws IOException, ApiException {
-    return  putRoutingSmsPhonenumber(createPutRoutingSmsPhonenumberRequest(addressId, body));
+  public SmsPhoneNumber putRoutingSmsPhonenumber(String phoneNumberId, SmsPhoneNumber body) throws IOException, ApiException {
+    return  putRoutingSmsPhonenumber(createPutRoutingSmsPhonenumberRequest(phoneNumberId, body));
   }
 
   /**
    * Update a phone number provisioned for SMS.
    * 
-   * @param addressId Address ID (required)
+   * @param phoneNumberId phone number (required)
    * @param body SmsPhoneNumber (required)
    * @return SmsPhoneNumber
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SmsPhoneNumber> putRoutingSmsPhonenumberWithHttpInfo(String addressId, SmsPhoneNumber body) throws IOException {
-    return putRoutingSmsPhonenumber(createPutRoutingSmsPhonenumberRequest(addressId, body).withHttpInfo());
+  public ApiResponse<SmsPhoneNumber> putRoutingSmsPhonenumberWithHttpInfo(String phoneNumberId, SmsPhoneNumber body) throws IOException {
+    return putRoutingSmsPhonenumber(createPutRoutingSmsPhonenumberRequest(phoneNumberId, body).withHttpInfo());
   }
 
-  private PutRoutingSmsPhonenumberRequest createPutRoutingSmsPhonenumberRequest(String addressId, SmsPhoneNumber body) {
+  private PutRoutingSmsPhonenumberRequest createPutRoutingSmsPhonenumberRequest(String phoneNumberId, SmsPhoneNumber body) {
     return PutRoutingSmsPhonenumberRequest.builder()
-            .withAddressId(addressId)
+            .withPhoneNumberId(phoneNumberId)
 
             .withBody(body)
 

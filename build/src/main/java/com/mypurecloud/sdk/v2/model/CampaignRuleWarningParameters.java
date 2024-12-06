@@ -106,6 +106,7 @@ public class CampaignRuleWarningParameters  implements Serializable {
     CAMPAIGNPROGRESS("campaignProgress"),
     CAMPAIGNAGENTS("campaignAgents"),
     CAMPAIGNRECORDSATTEMPTED("campaignRecordsAttempted"),
+    CAMPAIGNCONTACTSMESSAGED("campaignContactsMessaged"),
     CAMPAIGNBUSINESSSUCCESS("campaignBusinessSuccess"),
     CAMPAIGNBUSINESSFAILURE("campaignBusinessFailure"),
     CAMPAIGNBUSINESSNEUTRAL("campaignBusinessNeutral"),

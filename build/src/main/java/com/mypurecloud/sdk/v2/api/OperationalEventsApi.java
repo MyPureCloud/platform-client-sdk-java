@@ -11,12 +11,18 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.EventAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.model.EventAggregatesResponse;
 import com.mypurecloud.sdk.v2.model.EventDefinition;
 import com.mypurecloud.sdk.v2.model.EventDefinitionListing;
+import com.mypurecloud.sdk.v2.model.EventQueryRequest;
+import com.mypurecloud.sdk.v2.model.EventQueryResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetUsageEventsDefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsageEventsDefinitionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostUsageEventsAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostUsageEventsQueryRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -183,6 +189,174 @@ public class OperationalEventsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EventDefinitionListing> response = (ApiResponse<EventDefinitionListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get aggregates for operational events in a timeframe.
+   * 
+   * @param body  (optional)
+   * @return EventAggregatesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EventAggregatesResponse postUsageEventsAggregatesQuery(EventAggregatesQueryRequest body) throws IOException, ApiException {
+    return  postUsageEventsAggregatesQuery(createPostUsageEventsAggregatesQueryRequest(body));
+  }
+
+  /**
+   * Get aggregates for operational events in a timeframe.
+   * 
+   * @param body  (optional)
+   * @return EventAggregatesResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EventAggregatesResponse> postUsageEventsAggregatesQueryWithHttpInfo(EventAggregatesQueryRequest body) throws IOException {
+    return postUsageEventsAggregatesQuery(createPostUsageEventsAggregatesQueryRequest(body).withHttpInfo());
+  }
+
+  private PostUsageEventsAggregatesQueryRequest createPostUsageEventsAggregatesQueryRequest(EventAggregatesQueryRequest body) {
+    return PostUsageEventsAggregatesQueryRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Get aggregates for operational events in a timeframe.
+   * 
+   * @param request The request object
+   * @return EventAggregatesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EventAggregatesResponse postUsageEventsAggregatesQuery(PostUsageEventsAggregatesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EventAggregatesResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EventAggregatesResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get aggregates for operational events in a timeframe.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EventAggregatesResponse> postUsageEventsAggregatesQuery(ApiRequest<EventAggregatesQueryRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EventAggregatesResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EventAggregatesResponse> response = (ApiResponse<EventAggregatesResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EventAggregatesResponse> response = (ApiResponse<EventAggregatesResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query operational events in a timeframe.
+   * 
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param body  (optional)
+   * @return EventQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EventQueryResponse postUsageEventsQuery(String before, String after, String pageSize, EventQueryRequest body) throws IOException, ApiException {
+    return  postUsageEventsQuery(createPostUsageEventsQueryRequest(before, after, pageSize, body));
+  }
+
+  /**
+   * Query operational events in a timeframe.
+   * 
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param body  (optional)
+   * @return EventQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EventQueryResponse> postUsageEventsQueryWithHttpInfo(String before, String after, String pageSize, EventQueryRequest body) throws IOException {
+    return postUsageEventsQuery(createPostUsageEventsQueryRequest(before, after, pageSize, body).withHttpInfo());
+  }
+
+  private PostUsageEventsQueryRequest createPostUsageEventsQueryRequest(String before, String after, String pageSize, EventQueryRequest body) {
+    return PostUsageEventsQueryRequest.builder()
+            .withBefore(before)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Query operational events in a timeframe.
+   * 
+   * @param request The request object
+   * @return EventQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EventQueryResponse postUsageEventsQuery(PostUsageEventsQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EventQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EventQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query operational events in a timeframe.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EventQueryResponse> postUsageEventsQuery(ApiRequest<EventQueryRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EventQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EventQueryResponse> response = (ApiResponse<EventQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EventQueryResponse> response = (ApiResponse<EventQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

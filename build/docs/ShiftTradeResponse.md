@@ -6,7 +6,7 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** | The ID of this shift trade |  [optional] |
-| **weekDate** | [**LocalDate**](LocalDate) | The start week date of the associated schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
+| **weekDate** | [**LocalDate**](LocalDate) | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
 | **schedule** | [**BuScheduleReferenceForMuRoute**](BuScheduleReferenceForMuRoute) | A reference to the associated schedule |  [optional] |
 | **state** | [**StateEnum**](#Enum--StateEnum) | The state of this shift trade |  [optional] |
 | **initiatingUser** | [**UserReference**](UserReference) | The user who initiated this trade |  [optional] |
@@ -40,4 +40,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_

@@ -257,6 +257,50 @@ public class GetQualityAgentsActivityRequest {
 	    return this;
 	} 
 
+	private String userState;
+	public String getUserState() {
+		return this.userState;
+	}
+
+	public void setUserState(String userState) {
+		this.userState = userState;
+	}
+
+	public GetQualityAgentsActivityRequest withUserState(String userState) {
+	    this.setUserState(userState);
+	    return this;
+	} 
+
+	public enum userStateValues { 
+		ANY("Any"),
+		LEGACY("Legacy");
+
+		private String value;
+
+		userStateValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static userStateValues fromString(String key) {
+			if (key == null) return null;
+
+			for (userStateValues value : userStateValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return userStateValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -321,6 +365,9 @@ public class GetQualityAgentsActivityRequest {
         
 
                 .withQueryParameters("formContextId", "", formContextId)
+        
+
+                .withQueryParameters("userState", "", userState)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -411,6 +458,20 @@ public class GetQualityAgentsActivityRequest {
 		public Builder withFormContextId(String formContextId) {
 			request.setFormContextId(formContextId);
 			return this;
+		}
+
+		public Builder withUserState(String userState) {
+			request.setUserState(userState);
+			return this;
+		}
+
+
+
+		
+		public Builder withUserState(userStateValues userState) {
+		    request.setUserState(userState.toString());
+
+		    return this;
 		}
 
 

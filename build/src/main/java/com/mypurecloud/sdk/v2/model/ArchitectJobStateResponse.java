@@ -99,7 +99,8 @@ public class ArchitectJobStateResponse  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     PUBLISH("Publish"),
     CREATE("Create"),
-    UPDATE("Update");
+    UPDATE("Update"),
+    EXPORT("Export");
 
     private String value;
 

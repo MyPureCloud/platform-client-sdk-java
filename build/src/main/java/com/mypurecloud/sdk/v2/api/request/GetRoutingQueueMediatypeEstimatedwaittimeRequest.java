@@ -143,6 +143,55 @@ public class GetRoutingQueueMediatypeEstimatedwaittimeRequest {
 	    return this;
 	} 
 
+	public enum mediaTypeValues { 
+		ALL("all"),
+		CALL("call"),
+		CHAT("chat"),
+		CALLBACK("callback"),
+		EMAIL("email"),
+		VIDEOCOMM("videoComm"),
+		MESSAGE("message");
+
+		private String value;
+
+		mediaTypeValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static mediaTypeValues fromString(String key) {
+			if (key == null) return null;
+
+			for (mediaTypeValues value : mediaTypeValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return mediaTypeValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+
+	private String labelId;
+	public String getLabelId() {
+		return this.labelId;
+	}
+
+	public void setLabelId(String labelId) {
+		this.labelId = labelId;
+	}
+
+	public GetRoutingQueueMediatypeEstimatedwaittimeRequest withLabelId(String labelId) {
+	    this.setLabelId(labelId);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -180,6 +229,9 @@ public class GetRoutingQueueMediatypeEstimatedwaittimeRequest {
         
                 .withPathParameter("mediaType", mediaType)
         
+
+                .withQueryParameters("labelId", "", labelId)
+        
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -213,6 +265,20 @@ public class GetRoutingQueueMediatypeEstimatedwaittimeRequest {
 
 		public Builder withMediaType(String mediaType) {
 			request.setMediaType(mediaType);
+			return this;
+		}
+
+
+
+		
+		public Builder withMediaType(mediaTypeValues mediaType) {
+		    request.setMediaType(mediaType.toString());
+
+		    return this;
+		}
+
+		public Builder withLabelId(String labelId) {
+			request.setLabelId(labelId);
 			return this;
 		}
 

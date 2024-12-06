@@ -1600,28 +1600,32 @@ public class KnowledgeApi {
    * Get sync options available for a knowledge-connect integration
    * 
    * @param integrationId Integration ID (required)
+   * @param knowledgeBaseIds Narrowing down filtering option results by knowledge base. (optional)
    * @return KnowledgeIntegrationOptionsResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public KnowledgeIntegrationOptionsResponse getKnowledgeIntegrationOptions(String integrationId) throws IOException, ApiException {
-    return  getKnowledgeIntegrationOptions(createGetKnowledgeIntegrationOptionsRequest(integrationId));
+  public KnowledgeIntegrationOptionsResponse getKnowledgeIntegrationOptions(String integrationId, List<String> knowledgeBaseIds) throws IOException, ApiException {
+    return  getKnowledgeIntegrationOptions(createGetKnowledgeIntegrationOptionsRequest(integrationId, knowledgeBaseIds));
   }
 
   /**
    * Get sync options available for a knowledge-connect integration
    * 
    * @param integrationId Integration ID (required)
+   * @param knowledgeBaseIds Narrowing down filtering option results by knowledge base. (optional)
    * @return KnowledgeIntegrationOptionsResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KnowledgeIntegrationOptionsResponse> getKnowledgeIntegrationOptionsWithHttpInfo(String integrationId) throws IOException {
-    return getKnowledgeIntegrationOptions(createGetKnowledgeIntegrationOptionsRequest(integrationId).withHttpInfo());
+  public ApiResponse<KnowledgeIntegrationOptionsResponse> getKnowledgeIntegrationOptionsWithHttpInfo(String integrationId, List<String> knowledgeBaseIds) throws IOException {
+    return getKnowledgeIntegrationOptions(createGetKnowledgeIntegrationOptionsRequest(integrationId, knowledgeBaseIds).withHttpInfo());
   }
 
-  private GetKnowledgeIntegrationOptionsRequest createGetKnowledgeIntegrationOptionsRequest(String integrationId) {
+  private GetKnowledgeIntegrationOptionsRequest createGetKnowledgeIntegrationOptionsRequest(String integrationId, List<String> knowledgeBaseIds) {
     return GetKnowledgeIntegrationOptionsRequest.builder()
             .withIntegrationId(integrationId)
+
+            .withKnowledgeBaseIds(knowledgeBaseIds)
 
             .build();
   }

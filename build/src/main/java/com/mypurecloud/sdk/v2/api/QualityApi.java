@@ -880,12 +880,13 @@ public class QualityApi {
    * @param group group id (optional)
    * @param agentTeamId team id of agents requested (optional)
    * @param formContextId shared id between form versions (optional)
+   * @param userState 'Legacy' fetches active and inactive users when evaluatorUserId or no user filters are supplied; otherwise fetches active users.  'Any' fetches users of 'active', 'inactive' and 'deleted' states. (optional, default to Legacy)
    * @return AgentActivityEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AgentActivityEntityListing getQualityAgentsActivity(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Date startTime, Date endTime, List<String> agentUserId, String evaluatorUserId, String name, String group, String agentTeamId, String formContextId) throws IOException, ApiException {
-    return  getQualityAgentsActivity(createGetQualityAgentsActivityRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group, agentTeamId, formContextId));
+  public AgentActivityEntityListing getQualityAgentsActivity(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Date startTime, Date endTime, List<String> agentUserId, String evaluatorUserId, String name, String group, String agentTeamId, String formContextId, String userState) throws IOException, ApiException {
+    return  getQualityAgentsActivity(createGetQualityAgentsActivityRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group, agentTeamId, formContextId, userState));
   }
 
   /**
@@ -905,14 +906,15 @@ public class QualityApi {
    * @param group group id (optional)
    * @param agentTeamId team id of agents requested (optional)
    * @param formContextId shared id between form versions (optional)
+   * @param userState 'Legacy' fetches active and inactive users when evaluatorUserId or no user filters are supplied; otherwise fetches active users.  'Any' fetches users of 'active', 'inactive' and 'deleted' states. (optional, default to Legacy)
    * @return AgentActivityEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AgentActivityEntityListing> getQualityAgentsActivityWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Date startTime, Date endTime, List<String> agentUserId, String evaluatorUserId, String name, String group, String agentTeamId, String formContextId) throws IOException {
-    return getQualityAgentsActivity(createGetQualityAgentsActivityRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group, agentTeamId, formContextId).withHttpInfo());
+  public ApiResponse<AgentActivityEntityListing> getQualityAgentsActivityWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Date startTime, Date endTime, List<String> agentUserId, String evaluatorUserId, String name, String group, String agentTeamId, String formContextId, String userState) throws IOException {
+    return getQualityAgentsActivity(createGetQualityAgentsActivityRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group, agentTeamId, formContextId, userState).withHttpInfo());
   }
 
-  private GetQualityAgentsActivityRequest createGetQualityAgentsActivityRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Date startTime, Date endTime, List<String> agentUserId, String evaluatorUserId, String name, String group, String agentTeamId, String formContextId) {
+  private GetQualityAgentsActivityRequest createGetQualityAgentsActivityRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Date startTime, Date endTime, List<String> agentUserId, String evaluatorUserId, String name, String group, String agentTeamId, String formContextId, String userState) {
     return GetQualityAgentsActivityRequest.builder()
             .withPageSize(pageSize)
 
@@ -941,6 +943,8 @@ public class QualityApi {
             .withAgentTeamId(agentTeamId)
 
             .withFormContextId(formContextId)
+
+            .withUserState(userState)
 
             .build();
   }
@@ -1547,12 +1551,13 @@ public class QualityApi {
    * @param expandAnswerTotalScores get the total scores for evaluations. NOTE: The answers will only be populated if this parameter is set to true in the request. (optional)
    * @param maximum the maximum number of results to return (optional)
    * @param sortOrder NOTE: Does not work when conversationId is supplied. (optional)
+   * @param includeDeletedUsers Allow returning an agent or evaluator user with a 'delete' status. Defaults to false. (optional, default to false)
    * @return EvaluationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EvaluationEntityListing getQualityEvaluationsQuery(Integer pageSize, Integer pageNumber, List<String> expand, String previousPage, String conversationId, String agentUserId, String agentTeamId, String evaluatorUserId, String assigneeUserId, String queueId, String startTime, String endTime, String formContextId, List<String> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum, String sortOrder) throws IOException, ApiException {
-    return  getQualityEvaluationsQuery(createGetQualityEvaluationsQueryRequest(pageSize, pageNumber, expand, previousPage, conversationId, agentUserId, agentTeamId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, formContextId, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder));
+  public EvaluationEntityListing getQualityEvaluationsQuery(Integer pageSize, Integer pageNumber, List<String> expand, String previousPage, String conversationId, String agentUserId, String agentTeamId, String evaluatorUserId, String assigneeUserId, String queueId, String startTime, String endTime, String formContextId, List<String> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum, String sortOrder, Boolean includeDeletedUsers) throws IOException, ApiException {
+    return  getQualityEvaluationsQuery(createGetQualityEvaluationsQueryRequest(pageSize, pageNumber, expand, previousPage, conversationId, agentUserId, agentTeamId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, formContextId, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder, includeDeletedUsers));
   }
 
   /**
@@ -1577,14 +1582,15 @@ public class QualityApi {
    * @param expandAnswerTotalScores get the total scores for evaluations. NOTE: The answers will only be populated if this parameter is set to true in the request. (optional)
    * @param maximum the maximum number of results to return (optional)
    * @param sortOrder NOTE: Does not work when conversationId is supplied. (optional)
+   * @param includeDeletedUsers Allow returning an agent or evaluator user with a 'delete' status. Defaults to false. (optional, default to false)
    * @return EvaluationEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationEntityListing> getQualityEvaluationsQueryWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> expand, String previousPage, String conversationId, String agentUserId, String agentTeamId, String evaluatorUserId, String assigneeUserId, String queueId, String startTime, String endTime, String formContextId, List<String> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum, String sortOrder) throws IOException {
-    return getQualityEvaluationsQuery(createGetQualityEvaluationsQueryRequest(pageSize, pageNumber, expand, previousPage, conversationId, agentUserId, agentTeamId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, formContextId, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder).withHttpInfo());
+  public ApiResponse<EvaluationEntityListing> getQualityEvaluationsQueryWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> expand, String previousPage, String conversationId, String agentUserId, String agentTeamId, String evaluatorUserId, String assigneeUserId, String queueId, String startTime, String endTime, String formContextId, List<String> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum, String sortOrder, Boolean includeDeletedUsers) throws IOException {
+    return getQualityEvaluationsQuery(createGetQualityEvaluationsQueryRequest(pageSize, pageNumber, expand, previousPage, conversationId, agentUserId, agentTeamId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, formContextId, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder, includeDeletedUsers).withHttpInfo());
   }
 
-  private GetQualityEvaluationsQueryRequest createGetQualityEvaluationsQueryRequest(Integer pageSize, Integer pageNumber, List<String> expand, String previousPage, String conversationId, String agentUserId, String agentTeamId, String evaluatorUserId, String assigneeUserId, String queueId, String startTime, String endTime, String formContextId, List<String> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum, String sortOrder) {
+  private GetQualityEvaluationsQueryRequest createGetQualityEvaluationsQueryRequest(Integer pageSize, Integer pageNumber, List<String> expand, String previousPage, String conversationId, String agentUserId, String agentTeamId, String evaluatorUserId, String assigneeUserId, String queueId, String startTime, String endTime, String formContextId, List<String> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum, String sortOrder, Boolean includeDeletedUsers) {
     return GetQualityEvaluationsQueryRequest.builder()
             .withPageSize(pageSize)
 
@@ -1623,6 +1629,8 @@ public class QualityApi {
             .withMaximum(maximum)
 
             .withSortOrder(sortOrder)
+
+            .withIncludeDeletedUsers(includeDeletedUsers)
 
             .build();
   }

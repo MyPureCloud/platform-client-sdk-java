@@ -10,8 +10,9 @@
 | **customerId** | **String** | An arbitrary ID for the customer starting the session. Used to track multiple sessions started by the same customer. |  |
 | **pageUrl** | **String** | URL of the page where the session is started. |  [optional] |
 | **contexts** | [**List&lt;KnowledgeGuestSessionContext&gt;**](KnowledgeGuestSessionContext) | The session contexts. |  [optional] |
+| **journeySessionId** | **String** | Journey session ID. Used to get the segments of the customer to filter search results. |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_

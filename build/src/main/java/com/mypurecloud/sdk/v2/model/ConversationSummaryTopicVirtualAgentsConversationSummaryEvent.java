@@ -151,6 +151,55 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
   private ConversationSummaryTopicVirtualAgentsTriggerSource triggerSource = null;
   private ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant lastEditedBy = null;
 
+  private static class ErrorTypeEnumDeserializer extends StdDeserializer<ErrorTypeEnum> {
+    public ErrorTypeEnumDeserializer() {
+      super(ErrorTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ErrorTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ErrorTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets errorType
+   */
+ @JsonDeserialize(using = ErrorTypeEnumDeserializer.class)
+  public enum ErrorTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("UNKNOWN"),
+    CONVERSATION_TOO_LONG("CONVERSATION_TOO_LONG"),
+    CONVERSATION_TOO_SHORT("CONVERSATION_TOO_SHORT");
+
+    private String value;
+
+    ErrorTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ErrorTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ErrorTypeEnum value : ErrorTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ErrorTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ErrorTypeEnum errorType = null;
+
   
   /**
    **/
@@ -407,6 +456,23 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
   }
 
 
+  /**
+   **/
+  public ConversationSummaryTopicVirtualAgentsConversationSummaryEvent errorType(ErrorTypeEnum errorType) {
+    this.errorType = errorType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("errorType")
+  public ErrorTypeEnum getErrorType() {
+    return errorType;
+  }
+  public void setErrorType(ErrorTypeEnum errorType) {
+    this.errorType = errorType;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -431,12 +497,13 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
             Objects.equals(this.resolution, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.resolution) &&
             Objects.equals(this.wrapUpCodes, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.wrapUpCodes) &&
             Objects.equals(this.triggerSource, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.triggerSource) &&
-            Objects.equals(this.lastEditedBy, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.lastEditedBy);
+            Objects.equals(this.lastEditedBy, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.lastEditedBy) &&
+            Objects.equals(this.errorType, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.errorType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationId, participants, communicationIds, createdDate, messageType, mediaType, summaryId, language, summary, headline, reason, resolution, wrapUpCodes, triggerSource, lastEditedBy);
+    return Objects.hash(conversationId, participants, communicationIds, createdDate, messageType, mediaType, summaryId, language, summary, headline, reason, resolution, wrapUpCodes, triggerSource, lastEditedBy, errorType);
   }
 
   @Override
@@ -459,6 +526,7 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
     sb.append("    wrapUpCodes: ").append(toIndentedString(wrapUpCodes)).append("\n");
     sb.append("    triggerSource: ").append(toIndentedString(triggerSource)).append("\n");
     sb.append("    lastEditedBy: ").append(toIndentedString(lastEditedBy)).append("\n");
+    sb.append("    errorType: ").append(toIndentedString(errorType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

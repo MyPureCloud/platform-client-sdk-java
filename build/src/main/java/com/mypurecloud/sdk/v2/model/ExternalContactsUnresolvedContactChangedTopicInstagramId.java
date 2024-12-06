@@ -26,6 +26,7 @@ public class ExternalContactsUnresolvedContactChangedTopicInstagramId  implement
   
   private List<ExternalContactsUnresolvedContactChangedTopicInstagramScopedId> ids = new ArrayList<ExternalContactsUnresolvedContactChangedTopicInstagramScopedId>();
   private String displayName = null;
+  private String handle = null;
 
   
   /**
@@ -62,6 +63,23 @@ public class ExternalContactsUnresolvedContactChangedTopicInstagramId  implement
   }
 
 
+  /**
+   **/
+  public ExternalContactsUnresolvedContactChangedTopicInstagramId handle(String handle) {
+    this.handle = handle;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("handle")
+  public String getHandle() {
+    return handle;
+  }
+  public void setHandle(String handle) {
+    this.handle = handle;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -73,12 +91,13 @@ public class ExternalContactsUnresolvedContactChangedTopicInstagramId  implement
     ExternalContactsUnresolvedContactChangedTopicInstagramId externalContactsUnresolvedContactChangedTopicInstagramId = (ExternalContactsUnresolvedContactChangedTopicInstagramId) o;
 
     return Objects.equals(this.ids, externalContactsUnresolvedContactChangedTopicInstagramId.ids) &&
-            Objects.equals(this.displayName, externalContactsUnresolvedContactChangedTopicInstagramId.displayName);
+            Objects.equals(this.displayName, externalContactsUnresolvedContactChangedTopicInstagramId.displayName) &&
+            Objects.equals(this.handle, externalContactsUnresolvedContactChangedTopicInstagramId.handle);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(ids, displayName);
+    return Objects.hash(ids, displayName, handle);
   }
 
   @Override
@@ -88,6 +107,7 @@ public class ExternalContactsUnresolvedContactChangedTopicInstagramId  implement
     
     sb.append("    ids: ").append(toIndentedString(ids)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
+    sb.append("    handle: ").append(toIndentedString(handle)).append("\n");
     sb.append("}");
     return sb.toString();
   }

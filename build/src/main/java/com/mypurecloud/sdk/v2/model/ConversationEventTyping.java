@@ -91,10 +91,21 @@ public class ConversationEventTyping  implements Serializable {
   }
 
 
+  /**
+   * The duration of the Typing event in milliseconds.
+   **/
+  public ConversationEventTyping duration(Long duration) {
+    this.duration = duration;
+    return this;
+  }
+  
   @ApiModelProperty(example = "null", value = "The duration of the Typing event in milliseconds.")
   @JsonProperty("duration")
   public Long getDuration() {
     return duration;
+  }
+  public void setDuration(Long duration) {
+    this.duration = duration;
   }
 
 

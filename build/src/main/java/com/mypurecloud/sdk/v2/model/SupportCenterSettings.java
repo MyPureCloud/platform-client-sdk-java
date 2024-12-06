@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.SupportCenterCategory;
 import com.mypurecloud.sdk.v2.model.SupportCenterCustomMessage;
 import com.mypurecloud.sdk.v2.model.SupportCenterFeedbackSettings;
+import com.mypurecloud.sdk.v2.model.SupportCenterLabelFilter;
 import com.mypurecloud.sdk.v2.model.SupportCenterScreen;
 import com.mypurecloud.sdk.v2.model.SupportCenterStyleSetting;
 import io.swagger.annotations.ApiModel;
@@ -84,6 +85,7 @@ public class SupportCenterSettings  implements Serializable {
   private RouterTypeEnum routerType = null;
   private List<SupportCenterScreen> screens = new ArrayList<SupportCenterScreen>();
   private List<SupportCenterCategory> enabledCategories = new ArrayList<SupportCenterCategory>();
+  private SupportCenterLabelFilter labelFilter = null;
   private SupportCenterStyleSetting styleSetting = null;
   private SupportCenterFeedbackSettings feedback = null;
 
@@ -197,6 +199,24 @@ public class SupportCenterSettings  implements Serializable {
 
 
   /**
+   * Document label filter. If set, only documents having at least one of the specified labels will be returned by knowledge document query operations.
+   **/
+  public SupportCenterSettings labelFilter(SupportCenterLabelFilter labelFilter) {
+    this.labelFilter = labelFilter;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Document label filter. If set, only documents having at least one of the specified labels will be returned by knowledge document query operations.")
+  @JsonProperty("labelFilter")
+  public SupportCenterLabelFilter getLabelFilter() {
+    return labelFilter;
+  }
+  public void setLabelFilter(SupportCenterLabelFilter labelFilter) {
+    this.labelFilter = labelFilter;
+  }
+
+
+  /**
    * Style attributes for knowledge portal (previously support center)
    **/
   public SupportCenterSettings styleSetting(SupportCenterStyleSetting styleSetting) {
@@ -248,13 +268,14 @@ public class SupportCenterSettings  implements Serializable {
             Objects.equals(this.routerType, supportCenterSettings.routerType) &&
             Objects.equals(this.screens, supportCenterSettings.screens) &&
             Objects.equals(this.enabledCategories, supportCenterSettings.enabledCategories) &&
+            Objects.equals(this.labelFilter, supportCenterSettings.labelFilter) &&
             Objects.equals(this.styleSetting, supportCenterSettings.styleSetting) &&
             Objects.equals(this.feedback, supportCenterSettings.feedback);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, knowledgeBase, customMessages, routerType, screens, enabledCategories, styleSetting, feedback);
+    return Objects.hash(enabled, knowledgeBase, customMessages, routerType, screens, enabledCategories, labelFilter, styleSetting, feedback);
   }
 
   @Override
@@ -268,6 +289,7 @@ public class SupportCenterSettings  implements Serializable {
     sb.append("    routerType: ").append(toIndentedString(routerType)).append("\n");
     sb.append("    screens: ").append(toIndentedString(screens)).append("\n");
     sb.append("    enabledCategories: ").append(toIndentedString(enabledCategories)).append("\n");
+    sb.append("    labelFilter: ").append(toIndentedString(labelFilter)).append("\n");
     sb.append("    styleSetting: ").append(toIndentedString(styleSetting)).append("\n");
     sb.append("    feedback: ").append(toIndentedString(feedback)).append("\n");
     sb.append("}");

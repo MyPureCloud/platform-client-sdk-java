@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobResult;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -29,6 +30,54 @@ public class BatchDownloadJobStatusResult  implements Serializable {
   private Integer expectedResultCount = null;
   private Integer resultCount = null;
   private Integer errorCount = null;
+
+  private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
+    public StatusEnumDeserializer() {
+      super(StatusEnumDeserializer.class);
+    }
+
+    @Override
+    public StatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Current status of the job. This could be either IN_PROGRESS or COMPLETED. A job is considered completed when all the submitted requests have been processed and fulfilled.
+   */
+ @JsonDeserialize(using = StatusEnumDeserializer.class)
+  public enum StatusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    INPROGRESS("InProgress"),
+    COMPLETED("Completed");
+
+    private String value;
+
+    StatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static StatusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (StatusEnum value : StatusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return StatusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private StatusEnum status = null;
   private List<BatchDownloadJobResult> results = new ArrayList<BatchDownloadJobResult>();
   private String selfUri = null;
 
@@ -113,6 +162,24 @@ public class BatchDownloadJobStatusResult  implements Serializable {
 
 
   /**
+   * Current status of the job. This could be either IN_PROGRESS or COMPLETED. A job is considered completed when all the submitted requests have been processed and fulfilled.
+   **/
+  public BatchDownloadJobStatusResult status(StatusEnum status) {
+    this.status = status;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Current status of the job. This could be either IN_PROGRESS or COMPLETED. A job is considered completed when all the submitted requests have been processed and fulfilled.")
+  @JsonProperty("status")
+  public StatusEnum getStatus() {
+    return status;
+  }
+  public void setStatus(StatusEnum status) {
+    this.status = status;
+  }
+
+
+  /**
    * Current set of results for the job.
    **/
   public BatchDownloadJobStatusResult results(List<BatchDownloadJobResult> results) {
@@ -152,13 +219,14 @@ public class BatchDownloadJobStatusResult  implements Serializable {
             Objects.equals(this.expectedResultCount, batchDownloadJobStatusResult.expectedResultCount) &&
             Objects.equals(this.resultCount, batchDownloadJobStatusResult.resultCount) &&
             Objects.equals(this.errorCount, batchDownloadJobStatusResult.errorCount) &&
+            Objects.equals(this.status, batchDownloadJobStatusResult.status) &&
             Objects.equals(this.results, batchDownloadJobStatusResult.results) &&
             Objects.equals(this.selfUri, batchDownloadJobStatusResult.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, jobId, expectedResultCount, resultCount, errorCount, results, selfUri);
+    return Objects.hash(id, jobId, expectedResultCount, resultCount, errorCount, status, results, selfUri);
   }
 
   @Override
@@ -171,6 +239,7 @@ public class BatchDownloadJobStatusResult  implements Serializable {
     sb.append("    expectedResultCount: ").append(toIndentedString(expectedResultCount)).append("\n");
     sb.append("    resultCount: ").append(toIndentedString(resultCount)).append("\n");
     sb.append("    errorCount: ").append(toIndentedString(errorCount)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    results: ").append(toIndentedString(results)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

@@ -98,6 +98,7 @@ public class AgentCopilotAggregateQueryPredicate  implements Serializable {
     ENGAGEMENTTYPE("engagementType"),
     EXTERNALCONTACTID("externalContactId"),
     FEEDBACKRATING("feedbackRating"),
+    HASANSWERHIGHLIGHT("hasAnswerHighlight"),
     KNOWLEDGEBASEDOCUMENTID("knowledgeBaseDocumentId"),
     KNOWLEDGEBASEDOCUMENTVERSIONID("knowledgeBaseDocumentVersionId"),
     MEDIATYPE("mediaType"),

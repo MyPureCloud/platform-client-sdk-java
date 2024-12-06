@@ -55,6 +55,7 @@ public class ArchitectFlowOutcomeNotificationArchitectOperation  implements Seri
     CREATE("CREATE"),
     CHECKIN("CHECKIN"),
     CHECKOUT("CHECKOUT"),
+    DEACTIVATE("DEACTIVATE"),
     DEBUG("DEBUG"),
     DELETE("DELETE"),
     HISTORY("HISTORY"),

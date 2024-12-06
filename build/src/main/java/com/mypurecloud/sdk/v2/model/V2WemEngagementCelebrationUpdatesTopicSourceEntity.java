@@ -46,7 +46,11 @@ public class V2WemEngagementCelebrationUpdatesTopicSourceEntity  implements Seri
     THANK_YOU("THANK_YOU"),
     CONGRATULATIONS("CONGRATULATIONS"),
     HIGH_PERFORMANCE("HIGH_PERFORMANCE"),
-    COMPANY_VALUES("COMPANY_VALUES");
+    COMPANY_VALUES("COMPANY_VALUES"),
+    COMPETITION("COMPETITION"),
+    RACE("RACE"),
+    RAFFLE("RAFFLE"),
+    TEAM_GOAL("TEAM_GOAL");
 
     private String value;
 

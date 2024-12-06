@@ -21,8 +21,9 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | ONCREATE | &quot;OnCreate&quot; | 
 | ONATTRIBUTECHANGE | &quot;OnAttributeChange&quot; | 
+| DATE | &quot;Date&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_

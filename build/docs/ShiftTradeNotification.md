@@ -5,7 +5,7 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **weekDate** | **String** | The start date of the schedule with which this trade is associated |  [optional] |
+| **weekDate** | **String** | The start week date of the initiating shift of the shift trade in yyyy-MM-dd format |  [optional] |
 | **tradeId** | **String** | The ID of the shift trade |  [optional] |
 | **oneSided** | **Boolean** | Whether this is a one sided shift trade |  [optional] |
 | **newState** | [**NewStateEnum**](#Enum--NewStateEnum) | The new state of the shift trade, null if there was no change |  [optional] |
@@ -30,4 +30,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_

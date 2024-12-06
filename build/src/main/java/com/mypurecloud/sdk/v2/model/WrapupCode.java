@@ -26,6 +26,7 @@ public class WrapupCode  implements Serializable {
   private String id = null;
   private String name = null;
   private StarrableDivision division = null;
+  private String description = null;
   private Date dateCreated = null;
   private Date dateModified = null;
   private String createdBy = null;
@@ -73,6 +74,24 @@ public class WrapupCode  implements Serializable {
   }
   public void setDivision(StarrableDivision division) {
     this.division = division;
+  }
+
+
+  /**
+   * The wrap-up code description.
+   **/
+  public WrapupCode description(String description) {
+    this.description = description;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The wrap-up code description.")
+  @JsonProperty("description")
+  public String getDescription() {
+    return description;
+  }
+  public void setDescription(String description) {
+    this.description = description;
   }
 
 
@@ -168,6 +187,7 @@ public class WrapupCode  implements Serializable {
     return Objects.equals(this.id, wrapupCode.id) &&
             Objects.equals(this.name, wrapupCode.name) &&
             Objects.equals(this.division, wrapupCode.division) &&
+            Objects.equals(this.description, wrapupCode.description) &&
             Objects.equals(this.dateCreated, wrapupCode.dateCreated) &&
             Objects.equals(this.dateModified, wrapupCode.dateModified) &&
             Objects.equals(this.createdBy, wrapupCode.createdBy) &&
@@ -177,7 +197,7 @@ public class WrapupCode  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, dateCreated, dateModified, createdBy, modifiedBy, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, createdBy, modifiedBy, selfUri);
   }
 
   @Override
@@ -188,6 +208,7 @@ public class WrapupCode  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");

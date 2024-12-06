@@ -8843,7 +8843,7 @@ public class WorkforceManagementApi {
    * Gets all the shift trades for a given week
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param evaluateMatches Whether to evaluate the matches for violations (optional, default to true)
    * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
    * @return WeekShiftTradeListResponse
@@ -8858,7 +8858,7 @@ public class WorkforceManagementApi {
    * Gets all the shift trades for a given week
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param evaluateMatches Whether to evaluate the matches for violations (optional, default to true)
    * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
    * @return WeekShiftTradeListResponse
@@ -12235,7 +12235,7 @@ public class WorkforceManagementApi {
    * Updates a shift trade. This route can only be called by the initiating agent
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param tradeId The ID of the shift trade to update (required)
    * @param body body (required)
    * @return ShiftTradeResponse
@@ -12250,7 +12250,7 @@ public class WorkforceManagementApi {
    * Updates a shift trade. This route can only be called by the initiating agent
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param tradeId The ID of the shift trade to update (required)
    * @param body body (required)
    * @return ShiftTradeResponse
@@ -18358,7 +18358,7 @@ public class WorkforceManagementApi {
    * Matches a shift trade. This route can only be called by the receiving agent
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param tradeId The ID of the shift trade to update (required)
    * @param body body (required)
    * @return MatchShiftTradeResponse
@@ -18373,7 +18373,7 @@ public class WorkforceManagementApi {
    * Matches a shift trade. This route can only be called by the receiving agent
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param tradeId The ID of the shift trade to update (required)
    * @param body body (required)
    * @return MatchShiftTradeResponse
@@ -18448,7 +18448,7 @@ public class WorkforceManagementApi {
    * Adds a shift trade
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param body body (required)
    * @return ShiftTradeResponse
    * @throws ApiException if the request fails on the server
@@ -18462,7 +18462,7 @@ public class WorkforceManagementApi {
    * Adds a shift trade
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param body body (required)
    * @return ShiftTradeResponse
    * @throws IOException if the request fails to be processed
@@ -18534,7 +18534,7 @@ public class WorkforceManagementApi {
    * Searches for potential shift trade matches for the current agent
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param body body (required)
    * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
    * @return SearchShiftTradesResponse
@@ -18549,7 +18549,7 @@ public class WorkforceManagementApi {
    * Searches for potential shift trade matches for the current agent
    * 
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param body body (required)
    * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
    * @return SearchShiftTradesResponse
@@ -18624,7 +18624,7 @@ public class WorkforceManagementApi {
    * Updates the state of a batch of shift trades
    * Admin functionality is not supported with \"mine\".
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param body body (required)
    * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
    * @return BulkUpdateShiftTradeStateResponse
@@ -18639,7 +18639,7 @@ public class WorkforceManagementApi {
    * Updates the state of a batch of shift trades
    * Admin functionality is not supported with \"mine\".
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param weekDateId The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param body body (required)
    * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
    * @return BulkUpdateShiftTradeStateResponse

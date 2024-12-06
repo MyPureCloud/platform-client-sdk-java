@@ -48,7 +48,8 @@ public class V2WemEngagementCelebrationUpdatesTopicEngagementCelebration  implem
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     UNKNOWN("UNKNOWN"),
-    RECOGNITION("RECOGNITION");
+    RECOGNITION("RECOGNITION"),
+    CONTEST_COMPLETE("CONTEST_COMPLETE");
 
     private String value;
 

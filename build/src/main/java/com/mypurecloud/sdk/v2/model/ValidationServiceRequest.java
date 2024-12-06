@@ -24,7 +24,6 @@ public class ValidationServiceRequest  implements Serializable {
   
   private Date dateImportEnded = null;
   private String uploadKey = null;
-  private String fileName = null;
 
   
   /**
@@ -63,24 +62,6 @@ public class ValidationServiceRequest  implements Serializable {
   }
 
 
-  /**
-   * Name of the uploaded file
-   **/
-  public ValidationServiceRequest fileName(String fileName) {
-    this.fileName = fileName;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Name of the uploaded file")
-  @JsonProperty("fileName")
-  public String getFileName() {
-    return fileName;
-  }
-  public void setFileName(String fileName) {
-    this.fileName = fileName;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -92,13 +73,12 @@ public class ValidationServiceRequest  implements Serializable {
     ValidationServiceRequest validationServiceRequest = (ValidationServiceRequest) o;
 
     return Objects.equals(this.dateImportEnded, validationServiceRequest.dateImportEnded) &&
-            Objects.equals(this.uploadKey, validationServiceRequest.uploadKey) &&
-            Objects.equals(this.fileName, validationServiceRequest.fileName);
+            Objects.equals(this.uploadKey, validationServiceRequest.uploadKey);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dateImportEnded, uploadKey, fileName);
+    return Objects.hash(dateImportEnded, uploadKey);
   }
 
   @Override
@@ -108,7 +88,6 @@ public class ValidationServiceRequest  implements Serializable {
     
     sb.append("    dateImportEnded: ").append(toIndentedString(dateImportEnded)).append("\n");
     sb.append("    uploadKey: ").append(toIndentedString(uploadKey)).append("\n");
-    sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
     sb.append("}");
     return sb.toString();
   }

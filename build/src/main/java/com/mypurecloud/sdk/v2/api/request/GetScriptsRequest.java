@@ -131,7 +131,8 @@ public class GetScriptsRequest {
 
 	public enum sortByValues { 
 		MODIFIEDDATE("modifiedDate"),
-		CREATEDDATE("createdDate");
+		CREATEDDATE("createdDate"),
+		NAME("name");
 
 		private String value;
 

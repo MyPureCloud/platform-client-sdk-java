@@ -21,8 +21,12 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.EventAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.model.EventAggregatesResponse;
 import com.mypurecloud.sdk.v2.model.EventDefinition;
 import com.mypurecloud.sdk.v2.model.EventDefinitionListing;
+import com.mypurecloud.sdk.v2.model.EventQueryRequest;
+import com.mypurecloud.sdk.v2.model.EventQueryResponse;
 
 public class GetUsageEventsDefinitionRequest {
 

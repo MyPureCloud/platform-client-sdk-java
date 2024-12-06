@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.DomainEntityRef;
+import com.mypurecloud.sdk.v2.model.DivisionedDomainEntityRef;
 import com.mypurecloud.sdk.v2.model.ScheduleInterval;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -33,7 +33,7 @@ public class CampaignSchedule  implements Serializable {
   private Integer version = null;
   private List<ScheduleInterval> intervals = new ArrayList<ScheduleInterval>();
   private String timeZone = null;
-  private DomainEntityRef campaign = null;
+  private DivisionedDomainEntityRef campaign = null;
   private String selfUri = null;
 
   
@@ -132,17 +132,17 @@ public class CampaignSchedule  implements Serializable {
   /**
    * The Campaign that this CampaignSchedule is for.
    **/
-  public CampaignSchedule campaign(DomainEntityRef campaign) {
+  public CampaignSchedule campaign(DivisionedDomainEntityRef campaign) {
     this.campaign = campaign;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "The Campaign that this CampaignSchedule is for.")
   @JsonProperty("campaign")
-  public DomainEntityRef getCampaign() {
+  public DivisionedDomainEntityRef getCampaign() {
     return campaign;
   }
-  public void setCampaign(DomainEntityRef campaign) {
+  public void setCampaign(DivisionedDomainEntityRef campaign) {
     this.campaign = campaign;
   }
 

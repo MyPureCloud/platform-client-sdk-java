@@ -10,6 +10,11 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.UserReferenceWithName;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
@@ -18,8 +23,94 @@ import java.io.Serializable;
 
 public class EvaluationSettingsAssignee  implements Serializable {
   
+  private UserReferenceWithName user = null;
+
+  private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
+    public TypeEnumDeserializer() {
+      super(TypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The assignee type. Valid values: Original, Individual, None
+   */
+ @JsonDeserialize(using = TypeEnumDeserializer.class)
+  public enum TypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ORIGINAL("Original"),
+    INDIVIDUAL("Individual"),
+    NONE("None");
+
+    private String value;
+
+    TypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TypeEnum value : TypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private TypeEnum type = null;
 
   
+  /**
+   * The user the dispute should be assigned to
+   **/
+  public EvaluationSettingsAssignee user(UserReferenceWithName user) {
+    this.user = user;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The user the dispute should be assigned to")
+  @JsonProperty("user")
+  public UserReferenceWithName getUser() {
+    return user;
+  }
+  public void setUser(UserReferenceWithName user) {
+    this.user = user;
+  }
+
+
+  /**
+   * The assignee type. Valid values: Original, Individual, None
+   **/
+  public EvaluationSettingsAssignee type(TypeEnum type) {
+    this.type = type;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The assignee type. Valid values: Original, Individual, None")
+  @JsonProperty("type")
+  public TypeEnum getType() {
+    return type;
+  }
+  public void setType(TypeEnum type) {
+    this.type = type;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -28,13 +119,15 @@ public class EvaluationSettingsAssignee  implements Serializable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
+    EvaluationSettingsAssignee evaluationSettingsAssignee = (EvaluationSettingsAssignee) o;
 
-    return true;
+    return Objects.equals(this.user, evaluationSettingsAssignee.user) &&
+            Objects.equals(this.type, evaluationSettingsAssignee.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash();
+    return Objects.hash(user, type);
   }
 
   @Override
@@ -42,6 +135,8 @@ public class EvaluationSettingsAssignee  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class EvaluationSettingsAssignee {\n");
     
+    sb.append("    user: ").append(toIndentedString(user)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }

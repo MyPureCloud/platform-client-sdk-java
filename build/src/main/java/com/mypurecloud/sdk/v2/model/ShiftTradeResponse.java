@@ -119,14 +119,14 @@ public class ShiftTradeResponse  implements Serializable {
 
 
   /**
-   * The start week date of the associated schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+   * The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
   public ShiftTradeResponse weekDate(LocalDate weekDate) {
     this.weekDate = weekDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The start week date of the associated schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
+  @ApiModelProperty(example = "null", value = "The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("weekDate")
   public LocalDate getWeekDate() {
     return weekDate;

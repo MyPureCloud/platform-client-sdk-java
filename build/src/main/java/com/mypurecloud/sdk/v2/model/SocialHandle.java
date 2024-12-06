@@ -36,7 +36,7 @@ public class SocialHandle  implements Serializable {
     }
   }
   /**
-   * Gets or Sets type
+   * Social Handle Type
    */
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
@@ -73,13 +73,14 @@ public class SocialHandle  implements Serializable {
 
   
   /**
+   * Social Handle Type
    **/
   public SocialHandle type(TypeEnum type) {
     this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Social Handle Type")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;

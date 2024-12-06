@@ -2650,7 +2650,6 @@ public class ConversationsApi {
   /**
    * Get the summaries of the conversation.
    * 
-   * getConversationSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId Conversation ID (required)
    * @return ConversationSummariesGetResponse
    * @throws ApiException if the request fails on the server
@@ -2663,7 +2662,6 @@ public class ConversationsApi {
   /**
    * Get the summaries of the conversation.
    * 
-   * getConversationSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param conversationId Conversation ID (required)
    * @return ConversationSummariesGetResponse
    * @throws IOException if the request fails to be processed
@@ -2682,7 +2680,6 @@ public class ConversationsApi {
   /**
    * Get the summaries of the conversation.
    * 
-   * getConversationSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ConversationSummariesGetResponse
    * @throws ApiException if the request fails on the server
@@ -2702,7 +2699,6 @@ public class ConversationsApi {
   /**
    * Get the summaries of the conversation.
    * 
-   * getConversationSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

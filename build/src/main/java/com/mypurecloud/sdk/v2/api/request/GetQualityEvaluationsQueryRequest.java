@@ -327,6 +327,20 @@ public class GetQualityEvaluationsQueryRequest {
 	    return this;
 	} 
 
+	private Boolean includeDeletedUsers;
+	public Boolean getIncludeDeletedUsers() {
+		return this.includeDeletedUsers;
+	}
+
+	public void setIncludeDeletedUsers(Boolean includeDeletedUsers) {
+		this.includeDeletedUsers = includeDeletedUsers;
+	}
+
+	public GetQualityEvaluationsQueryRequest withIncludeDeletedUsers(Boolean includeDeletedUsers) {
+	    this.setIncludeDeletedUsers(includeDeletedUsers);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -406,6 +420,9 @@ public class GetQualityEvaluationsQueryRequest {
         
 
                 .withQueryParameters("sortOrder", "", sortOrder)
+        
+
+                .withQueryParameters("includeDeletedUsers", "", includeDeletedUsers)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -520,6 +537,11 @@ public class GetQualityEvaluationsQueryRequest {
 
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
+			return this;
+		}
+
+		public Builder withIncludeDeletedUsers(Boolean includeDeletedUsers) {
+			request.setIncludeDeletedUsers(includeDeletedUsers);
 			return this;
 		}
 

@@ -55,6 +55,7 @@ public class ArchitectPromptNotificationArchitectOperation  implements Serializa
     CREATE("CREATE"),
     CHECKIN("CHECKIN"),
     CHECKOUT("CHECKOUT"),
+    DEACTIVATE("DEACTIVATE"),
     DEBUG("DEBUG"),
     DELETE("DELETE"),
     HISTORY("HISTORY"),

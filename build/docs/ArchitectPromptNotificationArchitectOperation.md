@@ -25,6 +25,7 @@
 | CREATE | &quot;CREATE&quot; | 
 | CHECKIN | &quot;CHECKIN&quot; | 
 | CHECKOUT | &quot;CHECKOUT&quot; | 
+| DEACTIVATE | &quot;DEACTIVATE&quot; | 
 | DEBUG | &quot;DEBUG&quot; | 
 | DELETE | &quot;DELETE&quot; | 
 | HISTORY | &quot;HISTORY&quot; | 
@@ -52,4 +53,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_

@@ -140,6 +140,20 @@ public class GetKnowledgeIntegrationOptionsRequest {
 	    return this;
 	} 
 
+	private List<String> knowledgeBaseIds;
+	public List<String> getKnowledgeBaseIds() {
+		return this.knowledgeBaseIds;
+	}
+
+	public void setKnowledgeBaseIds(List<String> knowledgeBaseIds) {
+		this.knowledgeBaseIds = knowledgeBaseIds;
+	}
+
+	public GetKnowledgeIntegrationOptionsRequest withKnowledgeBaseIds(List<String> knowledgeBaseIds) {
+	    this.setKnowledgeBaseIds(knowledgeBaseIds);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -170,6 +184,9 @@ public class GetKnowledgeIntegrationOptionsRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/knowledge/integrations/{integrationId}/options")
                 .withPathParameter("integrationId", integrationId)
         
+
+                .withQueryParameters("knowledgeBaseIds", "multi", knowledgeBaseIds)
+        
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -198,6 +215,11 @@ public class GetKnowledgeIntegrationOptionsRequest {
 
 		public Builder withIntegrationId(String integrationId) {
 			request.setIntegrationId(integrationId);
+			return this;
+		}
+
+		public Builder withKnowledgeBaseIds(List<String> knowledgeBaseIds) {
+			request.setKnowledgeBaseIds(knowledgeBaseIds);
 			return this;
 		}
 

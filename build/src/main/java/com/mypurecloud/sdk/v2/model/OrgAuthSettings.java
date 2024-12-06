@@ -29,6 +29,7 @@ public class OrgAuthSettings  implements Serializable {
   private List<String> domainAllowlist = new ArrayList<String>();
   private List<String> ipAddressAllowlist = new ArrayList<String>();
   private PasswordRequirements passwordRequirements = null;
+  private List<String> inactivityTimeoutExclusions = new ArrayList<String>();
 
   
   /**
@@ -121,6 +122,24 @@ public class OrgAuthSettings  implements Serializable {
   }
 
 
+  /**
+   * The list of exempt apis from inactivity timeout.
+   **/
+  public OrgAuthSettings inactivityTimeoutExclusions(List<String> inactivityTimeoutExclusions) {
+    this.inactivityTimeoutExclusions = inactivityTimeoutExclusions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of exempt apis from inactivity timeout.")
+  @JsonProperty("inactivityTimeoutExclusions")
+  public List<String> getInactivityTimeoutExclusions() {
+    return inactivityTimeoutExclusions;
+  }
+  public void setInactivityTimeoutExclusions(List<String> inactivityTimeoutExclusions) {
+    this.inactivityTimeoutExclusions = inactivityTimeoutExclusions;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -135,12 +154,13 @@ public class OrgAuthSettings  implements Serializable {
             Objects.equals(this.domainAllowlistEnabled, orgAuthSettings.domainAllowlistEnabled) &&
             Objects.equals(this.domainAllowlist, orgAuthSettings.domainAllowlist) &&
             Objects.equals(this.ipAddressAllowlist, orgAuthSettings.ipAddressAllowlist) &&
-            Objects.equals(this.passwordRequirements, orgAuthSettings.passwordRequirements);
+            Objects.equals(this.passwordRequirements, orgAuthSettings.passwordRequirements) &&
+            Objects.equals(this.inactivityTimeoutExclusions, orgAuthSettings.inactivityTimeoutExclusions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(multifactorAuthenticationRequired, domainAllowlistEnabled, domainAllowlist, ipAddressAllowlist, passwordRequirements);
+    return Objects.hash(multifactorAuthenticationRequired, domainAllowlistEnabled, domainAllowlist, ipAddressAllowlist, passwordRequirements, inactivityTimeoutExclusions);
   }
 
   @Override
@@ -153,6 +173,7 @@ public class OrgAuthSettings  implements Serializable {
     sb.append("    domainAllowlist: ").append(toIndentedString(domainAllowlist)).append("\n");
     sb.append("    ipAddressAllowlist: ").append(toIndentedString(ipAddressAllowlist)).append("\n");
     sb.append("    passwordRequirements: ").append(toIndentedString(passwordRequirements)).append("\n");
+    sb.append("    inactivityTimeoutExclusions: ").append(toIndentedString(inactivityTimeoutExclusions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

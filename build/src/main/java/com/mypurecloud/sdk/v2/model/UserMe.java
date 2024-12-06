@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Adjacents;
+import com.mypurecloud.sdk.v2.model.AutoAnswerSettings;
 import com.mypurecloud.sdk.v2.model.Biography;
 import com.mypurecloud.sdk.v2.model.Chat;
 import com.mypurecloud.sdk.v2.model.Contact;
@@ -140,6 +141,7 @@ public class UserMe  implements Serializable {
   private WorkPlanBidRanks workPlanBidRanks = null;
   private List<UserRoutingSkill> skills = new ArrayList<UserRoutingSkill>();
   private List<UserRoutingLanguage> languages = new ArrayList<UserRoutingLanguage>();
+  private AutoAnswerSettings autoAnswerSettings = null;
   private Boolean acdAutoAnswer = null;
   private String languagePreference = null;
   private OAuthLastTokenIssued lastTokenIssued = null;
@@ -548,6 +550,13 @@ public class UserMe  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Auto answer settings for this user")
+  @JsonProperty("autoAnswerSettings")
+  public AutoAnswerSettings getAutoAnswerSettings() {
+    return autoAnswerSettings;
+  }
+
+
   /**
    * acd auto answer
    **/
@@ -759,6 +768,7 @@ public class UserMe  implements Serializable {
             Objects.equals(this.workPlanBidRanks, userMe.workPlanBidRanks) &&
             Objects.equals(this.skills, userMe.skills) &&
             Objects.equals(this.languages, userMe.languages) &&
+            Objects.equals(this.autoAnswerSettings, userMe.autoAnswerSettings) &&
             Objects.equals(this.acdAutoAnswer, userMe.acdAutoAnswer) &&
             Objects.equals(this.languagePreference, userMe.languagePreference) &&
             Objects.equals(this.lastTokenIssued, userMe.lastTokenIssued) &&
@@ -784,7 +794,7 @@ public class UserMe  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, certifications, biography, employerInfo, preferredName, routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, team, workPlanBidRanks, skills, languages, acdAutoAnswer, languagePreference, lastTokenIssued, dateLastLogin, date, geolocationSettings, organization, presenceDefinitions, divisionedPresenceDefinitions, locationDefinitions, orgAuthorization, favorites, superiors, directReports, adjacents, routingSkills, fieldConfigs, token, trustors, orgProducts, selfUri);
+    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, certifications, biography, employerInfo, preferredName, routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, team, workPlanBidRanks, skills, languages, autoAnswerSettings, acdAutoAnswer, languagePreference, lastTokenIssued, dateLastLogin, date, geolocationSettings, organization, presenceDefinitions, divisionedPresenceDefinitions, locationDefinitions, orgAuthorization, favorites, superiors, directReports, adjacents, routingSkills, fieldConfigs, token, trustors, orgProducts, selfUri);
   }
 
   @Override
@@ -825,6 +835,7 @@ public class UserMe  implements Serializable {
     sb.append("    workPlanBidRanks: ").append(toIndentedString(workPlanBidRanks)).append("\n");
     sb.append("    skills: ").append(toIndentedString(skills)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
+    sb.append("    autoAnswerSettings: ").append(toIndentedString(autoAnswerSettings)).append("\n");
     sb.append("    acdAutoAnswer: ").append(toIndentedString(acdAutoAnswer)).append("\n");
     sb.append("    languagePreference: ").append(toIndentedString(languagePreference)).append("\n");
     sb.append("    lastTokenIssued: ").append(toIndentedString(lastTokenIssued)).append("\n");

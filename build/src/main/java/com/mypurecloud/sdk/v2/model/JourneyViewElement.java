@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.JourneyViewElementAttributes;
+import com.mypurecloud.sdk.v2.model.JourneyViewElementDisplayAttributes;
 import com.mypurecloud.sdk.v2.model.JourneyViewElementFilter;
 import com.mypurecloud.sdk.v2.model.JourneyViewLink;
 import io.swagger.annotations.ApiModel;
@@ -30,6 +31,7 @@ public class JourneyViewElement  implements Serializable {
   private String id = null;
   private String name = null;
   private JourneyViewElementAttributes attributes = null;
+  private JourneyViewElementDisplayAttributes displayAttributes = null;
   private JourneyViewElementFilter filter = null;
   private List<JourneyViewLink> followedBy = new ArrayList<JourneyViewLink>();
 
@@ -89,6 +91,24 @@ public class JourneyViewElement  implements Serializable {
 
 
   /**
+   * Attributes that defines the visualization of the element in the journey view
+   **/
+  public JourneyViewElement displayAttributes(JourneyViewElementDisplayAttributes displayAttributes) {
+    this.displayAttributes = displayAttributes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Attributes that defines the visualization of the element in the journey view")
+  @JsonProperty("displayAttributes")
+  public JourneyViewElementDisplayAttributes getDisplayAttributes() {
+    return displayAttributes;
+  }
+  public void setDisplayAttributes(JourneyViewElementDisplayAttributes displayAttributes) {
+    this.displayAttributes = displayAttributes;
+  }
+
+
+  /**
    * Any filters applied to this element
    **/
   public JourneyViewElement filter(JourneyViewElementFilter filter) {
@@ -137,13 +157,14 @@ public class JourneyViewElement  implements Serializable {
     return Objects.equals(this.id, journeyViewElement.id) &&
             Objects.equals(this.name, journeyViewElement.name) &&
             Objects.equals(this.attributes, journeyViewElement.attributes) &&
+            Objects.equals(this.displayAttributes, journeyViewElement.displayAttributes) &&
             Objects.equals(this.filter, journeyViewElement.filter) &&
             Objects.equals(this.followedBy, journeyViewElement.followedBy);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, attributes, filter, followedBy);
+    return Objects.hash(id, name, attributes, displayAttributes, filter, followedBy);
   }
 
   @Override
@@ -154,6 +175,7 @@ public class JourneyViewElement  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
+    sb.append("    displayAttributes: ").append(toIndentedString(displayAttributes)).append("\n");
     sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
     sb.append("    followedBy: ").append(toIndentedString(followedBy)).append("\n");
     sb.append("}");

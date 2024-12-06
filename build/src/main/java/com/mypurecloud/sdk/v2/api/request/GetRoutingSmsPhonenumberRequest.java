@@ -115,17 +115,17 @@ import com.mypurecloud.sdk.v2.model.WritableEntity;
 
 public class GetRoutingSmsPhonenumberRequest {
 
-	private String addressId;
-	public String getAddressId() {
-		return this.addressId;
+	private String phoneNumberId;
+	public String getPhoneNumberId() {
+		return this.phoneNumberId;
 	}
 
-	public void setAddressId(String addressId) {
-		this.addressId = addressId;
+	public void setPhoneNumberId(String phoneNumberId) {
+		this.phoneNumberId = phoneNumberId;
 	}
 
-	public GetRoutingSmsPhonenumberRequest withAddressId(String addressId) {
-	    this.setAddressId(addressId);
+	public GetRoutingSmsPhonenumberRequest withPhoneNumberId(String phoneNumberId) {
+	    this.setPhoneNumberId(phoneNumberId);
 	    return this;
 	} 
 
@@ -194,14 +194,14 @@ public class GetRoutingSmsPhonenumberRequest {
 
     public ApiRequest<Void> withHttpInfo() {
         
-        // verify the required parameter 'addressId' is set
-        if (this.addressId == null) {
-            throw new IllegalStateException("Missing the required parameter 'addressId' when building request for GetRoutingSmsPhonenumberRequest.");
+        // verify the required parameter 'phoneNumberId' is set
+        if (this.phoneNumberId == null) {
+            throw new IllegalStateException("Missing the required parameter 'phoneNumberId' when building request for GetRoutingSmsPhonenumberRequest.");
         }
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/routing/sms/phonenumbers/{addressId}")
-                .withPathParameter("addressId", addressId)
+        return ApiRequestBuilder.create("GET", "/api/v2/routing/sms/phonenumbers/{phoneNumberId}")
+                .withPathParameter("phoneNumberId", phoneNumberId)
         
 
                 .withQueryParameters("expand", "", expand)
@@ -218,9 +218,9 @@ public class GetRoutingSmsPhonenumberRequest {
 	}
 
 
-	public static Builder builder(String addressId) {
+	public static Builder builder(String phoneNumberId) {
 	    return new Builder()
-	            .withRequiredParams(addressId);
+	            .withRequiredParams(phoneNumberId);
 	}
 
 
@@ -232,8 +232,8 @@ public class GetRoutingSmsPhonenumberRequest {
 		}
 
 
-		public Builder withAddressId(String addressId) {
-			request.setAddressId(addressId);
+		public Builder withPhoneNumberId(String phoneNumberId) {
+			request.setPhoneNumberId(phoneNumberId);
 			return this;
 		}
 
@@ -253,8 +253,8 @@ public class GetRoutingSmsPhonenumberRequest {
 
 
 
-		public Builder withRequiredParams(String addressId) {
-			request.setAddressId(addressId);
+		public Builder withRequiredParams(String phoneNumberId) {
+			request.setPhoneNumberId(phoneNumberId);
 
 			return this;
 		}
@@ -262,9 +262,9 @@ public class GetRoutingSmsPhonenumberRequest {
 
 		public GetRoutingSmsPhonenumberRequest build() {
             
-            // verify the required parameter 'addressId' is set
-            if (request.addressId == null) {
-                throw new IllegalStateException("Missing the required parameter 'addressId' when building request for GetRoutingSmsPhonenumberRequest.");
+            // verify the required parameter 'phoneNumberId' is set
+            if (request.phoneNumberId == null) {
+                throw new IllegalStateException("Missing the required parameter 'phoneNumberId' when building request for GetRoutingSmsPhonenumberRequest.");
             }
             
 			return request;

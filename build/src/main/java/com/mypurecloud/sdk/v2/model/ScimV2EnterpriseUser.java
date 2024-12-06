@@ -27,6 +27,7 @@ public class ScimV2EnterpriseUser  implements Serializable {
   private String department = null;
   private Manager manager = null;
   private String employeeNumber = null;
+  private String dateHire = null;
 
   
   /**
@@ -101,6 +102,24 @@ public class ScimV2EnterpriseUser  implements Serializable {
   }
 
 
+  /**
+   * The user's hire date. Format in JSON will be YYYY-MM-DD.
+   **/
+  public ScimV2EnterpriseUser dateHire(String dateHire) {
+    this.dateHire = dateHire;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The user's hire date. Format in JSON will be YYYY-MM-DD.")
+  @JsonProperty("dateHire")
+  public String getDateHire() {
+    return dateHire;
+  }
+  public void setDateHire(String dateHire) {
+    this.dateHire = dateHire;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -114,12 +133,13 @@ public class ScimV2EnterpriseUser  implements Serializable {
     return Objects.equals(this.division, scimV2EnterpriseUser.division) &&
             Objects.equals(this.department, scimV2EnterpriseUser.department) &&
             Objects.equals(this.manager, scimV2EnterpriseUser.manager) &&
-            Objects.equals(this.employeeNumber, scimV2EnterpriseUser.employeeNumber);
+            Objects.equals(this.employeeNumber, scimV2EnterpriseUser.employeeNumber) &&
+            Objects.equals(this.dateHire, scimV2EnterpriseUser.dateHire);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(division, department, manager, employeeNumber);
+    return Objects.hash(division, department, manager, employeeNumber, dateHire);
   }
 
   @Override
@@ -131,6 +151,7 @@ public class ScimV2EnterpriseUser  implements Serializable {
     sb.append("    department: ").append(toIndentedString(department)).append("\n");
     sb.append("    manager: ").append(toIndentedString(manager)).append("\n");
     sb.append("    employeeNumber: ").append(toIndentedString(employeeNumber)).append("\n");
+    sb.append("    dateHire: ").append(toIndentedString(dateHire)).append("\n");
     sb.append("}");
     return sb.toString();
   }

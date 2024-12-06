@@ -47,7 +47,8 @@ public class WorkitemOnAttributeChangeRule  implements Serializable {
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ONCREATE("OnCreate"),
-    ONATTRIBUTECHANGE("OnAttributeChange");
+    ONATTRIBUTECHANGE("OnAttributeChange"),
+    DATE("Date");
 
     private String value;
 

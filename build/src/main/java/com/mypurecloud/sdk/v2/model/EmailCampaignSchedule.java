@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.DomainEntityRef;
+import com.mypurecloud.sdk.v2.model.DivisionedDomainEntityRef;
 import com.mypurecloud.sdk.v2.model.ScheduleInterval;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -33,7 +33,7 @@ public class EmailCampaignSchedule  implements Serializable {
   private Integer version = null;
   private List<ScheduleInterval> intervals = new ArrayList<ScheduleInterval>();
   private String timeZone = null;
-  private DomainEntityRef emailCampaign = null;
+  private DivisionedDomainEntityRef emailCampaign = null;
   private String selfUri = null;
 
   
@@ -132,17 +132,17 @@ public class EmailCampaignSchedule  implements Serializable {
   /**
    * The Campaign that this email campaign schedule is for.
    **/
-  public EmailCampaignSchedule emailCampaign(DomainEntityRef emailCampaign) {
+  public EmailCampaignSchedule emailCampaign(DivisionedDomainEntityRef emailCampaign) {
     this.emailCampaign = emailCampaign;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "The Campaign that this email campaign schedule is for.")
   @JsonProperty("emailCampaign")
-  public DomainEntityRef getEmailCampaign() {
+  public DivisionedDomainEntityRef getEmailCampaign() {
     return emailCampaign;
   }
-  public void setEmailCampaign(DomainEntityRef emailCampaign) {
+  public void setEmailCampaign(DivisionedDomainEntityRef emailCampaign) {
     this.emailCampaign = emailCampaign;
   }
 

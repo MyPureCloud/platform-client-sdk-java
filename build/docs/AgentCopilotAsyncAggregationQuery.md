@@ -30,6 +30,7 @@
 | ENGAGEMENTTYPE | &quot;engagementType&quot; |
 | EXTERNALCONTACTID | &quot;externalContactId&quot; |
 | FEEDBACKRATING | &quot;feedbackRating&quot; |
+| HASANSWERHIGHLIGHT | &quot;hasAnswerHighlight&quot; |
 | KNOWLEDGEBASEDOCUMENTID | &quot;knowledgeBaseDocumentId&quot; |
 | KNOWLEDGEBASEDOCUMENTVERSIONID | &quot;knowledgeBaseDocumentVersionId&quot; |
 | MEDIATYPE | &quot;mediaType&quot; |
@@ -76,4 +77,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_

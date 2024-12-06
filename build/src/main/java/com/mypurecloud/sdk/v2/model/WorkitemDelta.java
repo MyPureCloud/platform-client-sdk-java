@@ -54,6 +54,7 @@ public class WorkitemDelta  implements Serializable {
   private WorkitemsAttributeChangeInstant dateModified = null;
   private WorkitemsAttributeChangeString modifiedBy = null;
   private WorkitemsAttributeChangeWorkitemStatusCategory statusCategory = null;
+  private WorkitemsAttributeChangeString scriptId = null;
 
   
   /**
@@ -498,6 +499,23 @@ public class WorkitemDelta  implements Serializable {
   }
 
 
+  /**
+   **/
+  public WorkitemDelta scriptId(WorkitemsAttributeChangeString scriptId) {
+    this.scriptId = scriptId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("scriptId")
+  public WorkitemsAttributeChangeString getScriptId() {
+    return scriptId;
+  }
+  public void setScriptId(WorkitemsAttributeChangeString scriptId) {
+    this.scriptId = scriptId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -533,12 +551,13 @@ public class WorkitemDelta  implements Serializable {
             Objects.equals(this.customFields, workitemDelta.customFields) &&
             Objects.equals(this.dateModified, workitemDelta.dateModified) &&
             Objects.equals(this.modifiedBy, workitemDelta.modifiedBy) &&
-            Objects.equals(this.statusCategory, workitemDelta.statusCategory);
+            Objects.equals(this.statusCategory, workitemDelta.statusCategory) &&
+            Objects.equals(this.scriptId, workitemDelta.scriptId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, languageId, utilizationLabelId, priority, skillIds, preferredAgentIds, dateDue, dateExpires, durationSeconds, statusId, reporterId, externalContactId, assigneeId, workbinId, queueId, externalTag, wrapupId, ttl, dateClosed, assignmentState, autoStatusTransition, customFields, dateModified, modifiedBy, statusCategory);
+    return Objects.hash(name, description, languageId, utilizationLabelId, priority, skillIds, preferredAgentIds, dateDue, dateExpires, durationSeconds, statusId, reporterId, externalContactId, assigneeId, workbinId, queueId, externalTag, wrapupId, ttl, dateClosed, assignmentState, autoStatusTransition, customFields, dateModified, modifiedBy, statusCategory, scriptId);
   }
 
   @Override
@@ -572,6 +591,7 @@ public class WorkitemDelta  implements Serializable {
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    statusCategory: ").append(toIndentedString(statusCategory)).append("\n");
+    sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

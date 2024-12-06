@@ -40,6 +40,7 @@
 | CAMPAIGNPROGRESS | &quot;campaignProgress&quot; | 
 | CAMPAIGNAGENTS | &quot;campaignAgents&quot; | 
 | CAMPAIGNRECORDSATTEMPTED | &quot;campaignRecordsAttempted&quot; | 
+| CAMPAIGNCONTACTSMESSAGED | &quot;campaignContactsMessaged&quot; | 
 | CAMPAIGNBUSINESSSUCCESS | &quot;campaignBusinessSuccess&quot; | 
 | CAMPAIGNBUSINESSFAILURE | &quot;campaignBusinessFailure&quot; | 
 | CAMPAIGNBUSINESSNEUTRAL | &quot;campaignBusinessNeutral&quot; | 
@@ -49,4 +50,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:214.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_
