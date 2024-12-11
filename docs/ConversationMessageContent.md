@@ -35,9 +35,10 @@
 | CAROUSEL | &quot;Carousel&quot; | 
 | TEXT | &quot;Text&quot; | 
 | QUICKREPLYV2 | &quot;QuickReplyV2&quot; | 
+| DATEPICKER | &quot;DatePicker&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:216.0.0_

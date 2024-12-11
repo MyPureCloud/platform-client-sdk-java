@@ -23,6 +23,7 @@
 | **queueId** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
 | **externalTag** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
 | **wrapupId** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
+| **wrapup** | [**WorkitemsAttributeChangeWrapupDelta**](WorkitemsAttributeChangeWrapupDelta) |  |  [optional] |
 | **ttl** | [**WorkitemsAttributeChangeInteger**](WorkitemsAttributeChangeInteger) |  |  [optional] |
 | **dateClosed** | [**WorkitemsAttributeChangeInstant**](WorkitemsAttributeChangeInstant) |  |  [optional] |
 | **assignmentState** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString) |  |  [optional] |
@@ -36,4 +37,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:216.0.0_

@@ -7,11 +7,11 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **entities** | [**List&lt;Program&gt;**](Program) |  |  [optional] |
 | **pageSize** | **Integer** |  |  [optional] |
-| **nextUri** | **String** |  |  [optional] |
 | **selfUri** | **String** |  |  [optional] |
 | **pageCount** | **Integer** |  |  [optional] |
+| **nextUri** | **String** |  |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:216.0.0_

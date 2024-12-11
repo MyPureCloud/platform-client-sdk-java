@@ -6531,7 +6531,7 @@ try {
 # **getWorkforcemanagementManagementunitUserTimeoffrequests**
 
 
-> [TimeOffRequestList](TimeOffRequestList) getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId, recentlyReviewed)
+> [TimeOffRequestList](TimeOffRequestList) getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId)
 
 Get a list of time off requests for a given user
 
@@ -6565,9 +6565,8 @@ Configuration.setDefaultApiClient(apiClient);
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 String userId = "userId_example"; // String | The userId to whom the Time Off Request applies.
-Boolean recentlyReviewed = false; // Boolean | Limit results to requests that have been reviewed within the preceding 30 days
 try {
-    TimeOffRequestList result = apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId, recentlyReviewed);
+    TimeOffRequestList result = apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementManagementunitUserTimeoffrequests");
@@ -6582,7 +6581,6 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **userId** | **String**| The userId to whom the Time Off Request applies. | 
-| **recentlyReviewed** | **Boolean**| Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -7658,7 +7656,7 @@ try {
 # **getWorkforcemanagementTimeoffrequests**
 
 
-> [TimeOffRequestList](TimeOffRequestList) getWorkforcemanagementTimeoffrequests(recentlyReviewed)
+> [TimeOffRequestList](TimeOffRequestList) getWorkforcemanagementTimeoffrequests()
 
 Get a list of time off requests for the current user
 
@@ -7691,9 +7689,8 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-Boolean recentlyReviewed = false; // Boolean | Limit results to requests that have been reviewed within the preceding 30 days
 try {
-    TimeOffRequestList result = apiInstance.getWorkforcemanagementTimeoffrequests(recentlyReviewed);
+    TimeOffRequestList result = apiInstance.getWorkforcemanagementTimeoffrequests();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementTimeoffrequests");
@@ -7703,11 +7700,8 @@ try {
 
 ### Parameters
 
+This endpoint does not require any parameters.
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **recentlyReviewed** | **Boolean**| Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] 
-{: class="table-striped"}
 
 
 ### Return type
@@ -15250,4 +15244,4 @@ try {
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:216.0.0_

@@ -77,6 +77,7 @@
 | SCHEDULEGROUP | &quot;SCHEDULEGROUP&quot; | 
 | SECUREACTION | &quot;SECUREACTION&quot; | 
 | SECURECALLFLOW | &quot;SECURECALLFLOW&quot; | 
+| SMSPHONENUMBER | &quot;SMSPHONENUMBER&quot; | 
 | STTENGINE | &quot;STTENGINE&quot; | 
 | SURVEYFORM | &quot;SURVEYFORM&quot; | 
 | SURVEYINVITEFLOW | &quot;SURVEYINVITEFLOW&quot; | 
@@ -97,4 +98,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:216.0.0_

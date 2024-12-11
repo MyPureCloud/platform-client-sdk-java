@@ -8,8 +8,9 @@
 | **knowledgeBaseIds** | **List&lt;String&gt;** | Filter source by knowledge base ids. |  [optional] |
 | **language** | **String** | Filter source by language. |  [optional] |
 | **categories** | **List&lt;String&gt;** | Filter source by categories. |  [optional] |
+| **baseUrl** | **String** | The base URL to resources. |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:216.0.0_

@@ -8,6 +8,7 @@
 | **enabled** | **Boolean** | Whether or not cobrowse is enabled |  [optional] |
 | **allowAgentControl** | **Boolean** | Whether the viewer should have option to request control |  [optional] |
 | **allowAgentNavigation** | **Boolean** | Whether the viewer should have option to request navigation |  [optional] |
+| **allowDraw** | **Boolean** | Should cobrowse draw be enabled |  [optional] |
 | **maskSelectors** | **List&lt;String&gt;** | Mask patterns that will apply to pages being shared |  [optional] |
 | **channels** | [**List<ChannelsEnum>**](#Enum--ChannelsEnum) | Cobrowse channels for web messenger |  [optional] |
 | **readonlySelectors** | **List&lt;String&gt;** | Readonly patterns that will apply to pages being shared |  [optional] |
@@ -24,4 +25,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:216.0.0_

@@ -436,8 +436,6 @@ null (empty response body)
 
 Delete the Schedule of a JourneyView
 
-used for long descriptions
-
 Wraps DELETE /api/v2/journey/views/{viewId}/schedules  
 
 Requires ALL permissions: 
@@ -1982,8 +1980,6 @@ try {
 
 Get the Schedule for a JourneyView
 
-used for long descriptions
-
 Wraps GET /api/v2/journey/views/{viewId}/schedules  
 
 Requires ALL permissions: 
@@ -2234,8 +2230,6 @@ try {
 
 Get the job for a journey view version.
 
-used for long descriptions
-
 Wraps GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}  
 
 Requires ALL permissions: 
@@ -2298,8 +2292,6 @@ try {
 > [JourneyViewResult](JourneyViewResult) getJourneyViewVersionJobResults(viewId, journeyViewVersion, jobId)
 
 Get the result of a job for a journey view version.
-
-used for long descriptions
 
 Wraps GET /api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results  
 
@@ -2428,8 +2420,6 @@ try {
 > [JourneyViewJob](JourneyViewJob) getJourneyViewVersionJobsLatest(viewId, journeyVersionId)
 
 Get the latest job of a journey view version.
-
-used for long descriptions
 
 Wraps GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/latest  
 
@@ -3103,8 +3093,6 @@ try {
 > [JourneyViewJob](JourneyViewJob) patchJourneyViewVersionJob(viewId, journeyVersionId, jobId, body)
 
 Update the job for a journey view version. Only the status can be changed and only to Cancelled
-
-used for long descriptions
 
 Wraps PATCH /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}  
 
@@ -3966,8 +3954,6 @@ try {
 
 Submit a job request for a journey view version.
 
-used for long descriptions
-
 Wraps POST /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs  
 
 Requires ALL permissions: 
@@ -4212,8 +4198,6 @@ try {
 
 Update the Schedule for a JourneyView
 
-used for long descriptions
-
 Wraps PUT /api/v2/journey/views/{viewId}/schedules  
 
 Requires ALL permissions: 
@@ -4333,4 +4317,4 @@ try {
 [**JourneyView**](JourneyView)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:215.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:216.0.0_
